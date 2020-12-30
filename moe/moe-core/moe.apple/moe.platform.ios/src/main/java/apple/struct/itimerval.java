@@ -34,20 +34,32 @@ public final class itimerval extends StructObject {
         setIt_value(it_value);
     }
 
+    /**
+     * timer interval
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native timeval it_interval();
 
+    /**
+     * timer interval
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setIt_interval(@ByValue timeval value);
 
+    /**
+     * current value
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native timeval it_value();
 
+    /**
+     * current value
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setIt_value(@ByValue timeval value);

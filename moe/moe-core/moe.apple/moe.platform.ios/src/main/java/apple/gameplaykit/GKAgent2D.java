@@ -42,6 +42,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A 2D specalization of an agent that moves on a 2-axis logical coordinate system. This coordinate system does not
+ * need to match the visual coordinate system of the delegate. One simple case of that is isometric 2D content where the
+ * game model is on a flat 2D plane but the visuals are displayed on an angle where one of the logical axes are used for
+ * simulated depth as well as some translation in the display plane.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -165,14 +171,24 @@ public class GKAgent2D extends GKAgent implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native GKAgent2D initWithCoder(NSCoder coder);
 
+    /**
+     * Z rotation of the agent on the logical XY plane
+     */
     @Generated
     @Selector("rotation")
     public native float rotation();
 
+    /**
+     * Z rotation of the agent on the logical XY plane
+     */
     @Generated
     @Selector("setRotation:")
     public native void setRotation(float value);
 
+    /**
+     * Overridden from GKComponent.
+     * Updates this agent with the current behavior, generating a force to reach its goals and applying that force.
+     */
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double seconds);

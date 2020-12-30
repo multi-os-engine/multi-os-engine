@@ -189,6 +189,9 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * Base unit - watts
+     */
     @Generated
     @Selector("terawatts")
     public static native NSUnitPower terawatts();

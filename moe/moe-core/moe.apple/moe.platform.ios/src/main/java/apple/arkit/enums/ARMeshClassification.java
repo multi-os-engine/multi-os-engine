@@ -3,6 +3,9 @@ package apple.arkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * A value describing the classification of a mesh face.
+ */
 @Generated
 public final class ARMeshClassification {
     @Generated

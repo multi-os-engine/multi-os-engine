@@ -26,11 +26,17 @@ public final class ClassKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSErrorCodeDomain();
 
+    /**
+     * @abstract   Any object that caused a failure will be available in - [NSError userInfo]; under this key.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSErrorObjectKey();
 
+    /**
+     * @abstract   If multiple objects cause errors we return an error with code `CLSErrorCodePartialFailure` which will contain an array of errors in - [NSError userInfo]; under this key.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNLossGradient
+ * @dependency This depends on Metal.framework.
+ * @discussion The MPSNNLossGradient filter specifies the gradient filter for @ref MPSNNForwardLoss.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -76,6 +81,12 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property   computeLabelGradients
+     * @abstract   The computeLabelGradients property is used to control whether the loss gradient
+     *             filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.
+     *             Default: NO.
+     */
     @Generated
     @Selector("computeLabelGradients")
     public native boolean computeLabelGradients();
@@ -109,6 +120,9 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Selector("initWithCoder:")
     public native MPSNNLossGradient initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract <NSSecureCoding> support
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNNLossGradient initWithCoderDevice(NSCoder aDecoder,
@@ -118,6 +132,12 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Selector("initWithDevice:")
     public native MPSNNLossGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Initialize the loss gradient filter with a loss descriptor.
+     * @param      device                   The device the filter will run on.
+     * @param      lossDescriptor           The loss descriptor.
+     * @return     A valid MPSNNLossGradient object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:lossDescriptor:")
     public native MPSNNLossGradient initWithDeviceLossDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
@@ -148,6 +168,9 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Selector("labelSmoothing")
     public native float labelSmoothing();
 
+    /**
+     * See MPSCNNLossDescriptor for information about the following properties.
+     */
     @Generated
     @Selector("lossType")
     public native int lossType();
@@ -175,6 +198,12 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   computeLabelGradients
+     * @abstract   The computeLabelGradients property is used to control whether the loss gradient
+     *             filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.
+     *             Default: NO.
+     */
     @Generated
     @Selector("setComputeLabelGradients:")
     public native void setComputeLabelGradients(boolean value);

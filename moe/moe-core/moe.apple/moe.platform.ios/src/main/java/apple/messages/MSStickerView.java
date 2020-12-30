@@ -50,6 +50,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MSStickerView
+ * @abstract   A UIView subclass that can display sticker assets.
+ * @discussion This class is a UIView subclass intended to display stickers. It provides
+ * drag and drop functionality so that user may drag the displayed sticker from this
+ * view and place it in the Messages transcript.
+ */
 @Generated
 @Library("Messages")
 @Runtime(ObjCRuntime.class)
@@ -348,6 +355,10 @@ public class MSStickerView extends UIView {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property   animationDuration
+     * @abstract   The amount of time it takes to go through one cycle of the sticker animation.
+     */
     @Generated
     @Selector("animationDuration")
     public native double animationDuration();
@@ -411,26 +422,57 @@ public class MSStickerView extends UIView {
     @Selector("initWithFrame:")
     public native MSStickerView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * @method   initWithFrame:sticker:
+     * @abstract   Initializes a MSStickerView with a frame and a MSSticker conforming object to display.
+     */
     @Generated
     @Selector("initWithFrame:sticker:")
     public native MSStickerView initWithFrameSticker(@ByValue CGRect frame, MSSticker sticker);
 
+    /**
+     * @method   isAnimating
+     * @abstract   Returns a Boolean value indicating whether the animation is running.
+     */
     @Generated
     @Selector("isAnimating")
     public native boolean isAnimating();
 
+    /**
+     * @property   sticker
+     * @abstract   The MSSticker object to display.
+     * @discussion Set this property to nil to remove the current sticker. Setting the
+     * sticker property does not change the size of a MSStickerView. Call sizeToFit to
+     * adjust the size of the view to match the sticker.
+     */
     @Generated
     @Selector("setSticker:")
     public native void setSticker(MSSticker value);
 
+    /**
+     * @method    startAnimating
+     * @abstract  Starts animating the sticker in the receiver.
+     * @discussion This method always starts the animation from the first frame.
+     */
     @Generated
     @Selector("startAnimating")
     public native void startAnimating();
 
+    /**
+     * @property   sticker
+     * @abstract   The MSSticker object to display.
+     * @discussion Set this property to nil to remove the current sticker. Setting the
+     * sticker property does not change the size of a MSStickerView. Call sizeToFit to
+     * adjust the size of the view to match the sticker.
+     */
     @Generated
     @Selector("sticker")
     public native MSSticker sticker();
 
+    /**
+     * @method    stopAnimating
+     * @abstract  Stops animating the sticker in the receiver.
+     */
     @Generated
     @Selector("stopAnimating")
     public native void stopAnimating();

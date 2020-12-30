@@ -100,21 +100,33 @@ public class PHAssetCollection extends PHCollection {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Smart Albums are not supported, only Albums and Moments
+     */
     @Generated
     @Selector("fetchAssetCollectionsContainingAsset:withType:options:")
     public static native PHFetchResult<? extends PHAssetCollection> fetchAssetCollectionsContainingAssetWithTypeOptions(
             PHAsset asset, @NInt long type, PHFetchOptions options);
 
+    /**
+     * assetGroupURLs are URLs retrieved from ALAssetGroup's ALAssetsGroupPropertyURL
+     */
     @Generated
     @Selector("fetchAssetCollectionsWithALAssetGroupURLs:options:")
     public static native PHFetchResult<? extends PHAssetCollection> fetchAssetCollectionsWithALAssetGroupURLsOptions(
             NSArray<? extends NSURL> assetGroupURLs, PHFetchOptions options);
 
+    /**
+     * Fetch asset collections of a single type matching the provided local identifiers (type is inferred from the local identifiers)
+     */
     @Generated
     @Selector("fetchAssetCollectionsWithLocalIdentifiers:options:")
     public static native PHFetchResult<? extends PHAssetCollection> fetchAssetCollectionsWithLocalIdentifiersOptions(
             NSArray<String> identifiers, PHFetchOptions options);
 
+    /**
+     * Fetch asset collections of a single type and subtype provided (use PHAssetCollectionSubtypeAny to match all subtypes)
+     */
     @Generated
     @Selector("fetchAssetCollectionsWithType:subtype:options:")
     public static native PHFetchResult<? extends PHAssetCollection> fetchAssetCollectionsWithTypeSubtypeOptions(
@@ -192,6 +204,9 @@ public class PHAssetCollection extends PHCollection {
     public static native PHAssetCollection transientAssetCollectionWithAssetFetchResultTitle(
             PHFetchResult<? extends PHAsset> fetchResult, String title);
 
+    /**
+     * These asset collections are only in-memory and are not persisted to disk
+     */
     @Generated
     @Selector("transientAssetCollectionWithAssets:title:")
     public static native PHAssetCollection transientAssetCollectionWithAssetsTitle(NSArray<? extends PHAsset> assets,
@@ -220,6 +235,9 @@ public class PHAssetCollection extends PHCollection {
     @Selector("endDate")
     public native NSDate endDate();
 
+    /**
+     * These counts are just estimates; the actual count of objects returned from a fetch should be used if you care about accuracy. Returns NSNotFound if a count cannot be quickly returned.
+     */
     @Generated
     @Selector("estimatedAssetCount")
     @NUInt

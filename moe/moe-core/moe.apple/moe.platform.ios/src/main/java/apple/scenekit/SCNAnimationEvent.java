@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNAnimationEvent encapsulates a block to trigger at a specific time.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -69,6 +72,13 @@ public class SCNAnimationEvent extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @method animationEventWithKeyTime:block:
+     * @abstract Returns an animation event instance
+     * @param time The relative time to trigger the event.
+     * @param eventBlock The block to call when the event is triggered.
+     * @discussion "time" is relative to animation duration and therefor it has to be a value in the range [0,1].
+     */
     @Generated
     @Selector("animationEventWithKeyTime:block:")
     public static native SCNAnimationEvent animationEventWithKeyTimeBlock(@NFloat double time,

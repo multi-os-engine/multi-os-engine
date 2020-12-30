@@ -156,6 +156,9 @@ public class UIMenuController extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * default is UIMenuControllerArrowDefault
+     */
     @Generated
     @Selector("arrowDirection")
     @NInt
@@ -165,6 +168,9 @@ public class UIMenuController extends NSObject {
     @Selector("init")
     public native UIMenuController init();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("isMenuVisible")
     public native boolean isMenuVisible();
@@ -178,14 +184,23 @@ public class UIMenuController extends NSObject {
     @ByValue
     public native CGRect menuFrame();
 
+    /**
+     * default is nil. these are in addition to the standard items
+     */
     @Generated
     @Selector("menuItems")
     public native NSArray<? extends UIMenuItem> menuItems();
 
+    /**
+     * default is UIMenuControllerArrowDefault
+     */
     @Generated
     @Selector("setArrowDirection:")
     public native void setArrowDirection(@NInt long value);
 
+    /**
+     * default is nil. these are in addition to the standard items
+     */
     @Generated
     @Selector("setMenuItems:")
     public native void setMenuItems(NSArray<? extends UIMenuItem> value);

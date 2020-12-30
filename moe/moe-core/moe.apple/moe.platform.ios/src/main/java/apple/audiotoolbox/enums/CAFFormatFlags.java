@@ -18,6 +18,11 @@ package apple.audiotoolbox.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * these are the flags if the format ID is 'lpcm'
+ * <CoreAudioTypes/CoreAudioTypes.h> declares some of the format constants
+ * that can be used as Data Formats in a CAF file
+ */
 @Generated
 public final class CAFFormatFlags {
     @Generated public static final int Float = 0x00000001;

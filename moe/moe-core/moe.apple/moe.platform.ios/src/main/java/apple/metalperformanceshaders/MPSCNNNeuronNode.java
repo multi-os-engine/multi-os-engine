@@ -23,6 +23,23 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract virtual base class for MPSCNNNeuron nodes
+ * @discussion This is a virtual base class only. Please create a
+ *             subclass using +newNeuronNodeWithSouce:descriptor or
+ *             by making one of the subclasses directly. Better yet, skip
+ *             the node entirely and specify the neuron function directly in
+ *             your MPSCNNConvolutionDataSource.descriptor.neuronDescriptor.
+ * 
+ *             MPSCNNNeuronNodes are provided as a representational convenience.
+ *             However, you are usually better off incorporating your neuron
+ *             into the MPSCNNConvolutionDataSource when possible. The MPSNNGraph
+ *             will attempt to optimize away the neuron pass by fusing it with a
+ *             preceeding convolution, but it might be prevented from doing so
+ *             if the neuron pass has a custom padding method or more than one
+ *             node reads from the convolution result. The graph -debugDescription
+ *             should reveal what happened.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -37,6 +54,9 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
         super(peer);
     }
 
+    /**
+     * @abstract filter parameter a
+     */
     @Generated
     @Selector("a")
     public native float a();
@@ -59,6 +79,9 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @abstract filter parameter b
+     */
     @Generated
     @Selector("b")
     public native float b();
@@ -146,10 +169,16 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract filter parameter c
+     */
     @Generated
     @Selector("c")
     public native float c();
 
+    /**
+     * @abstract Create a neuron node of the appropriate type with a MPSNNNeuronDescriptor
+     */
     @Generated
     @Selector("nodeWithSource:descriptor:")
     public static native MPSCNNNeuronNode nodeWithSourceDescriptor(MPSNNImageNode sourceNode,

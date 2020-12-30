@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The command system to build or rebuild.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -73,6 +76,9 @@ public class UIMenuSystem extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The context command system.
+     */
     @Generated
     @Selector("contextSystem")
     public static native UIMenuSystem contextSystem();
@@ -115,6 +121,9 @@ public class UIMenuSystem extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The main command system.
+     */
     @Generated
     @Selector("mainSystem")
     public static native UIMenuSystem mainSystem();
@@ -133,10 +142,16 @@ public class UIMenuSystem extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Trigger a rebuild of this system at a suitable time.
+     */
     @Generated
     @Selector("setNeedsRebuild")
     public native void setNeedsRebuild();
 
+    /**
+     * Trigger a revalidate of this system at a suitable time.
+     */
     @Generated
     @Selector("setNeedsRevalidate")
     public native void setNeedsRevalidate();

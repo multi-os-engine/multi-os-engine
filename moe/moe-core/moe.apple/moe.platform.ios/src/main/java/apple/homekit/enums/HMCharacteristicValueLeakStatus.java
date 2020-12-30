@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueLeakDetectionStatus
+ * 
+ * @constant  HMCharacteristicValueLeakDetectionStatusNone        Leak is not detected.
+ * @constant  HMCharacteristicValueLeakDetectionStatusDetected    Leak is detected.
+ */
 @Generated
 public final class HMCharacteristicValueLeakStatus {
     @Generated @NInt public static final long None = 0x0000000000000000L;

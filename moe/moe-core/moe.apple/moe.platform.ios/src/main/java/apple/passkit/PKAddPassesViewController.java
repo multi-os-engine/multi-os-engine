@@ -187,6 +187,10 @@ public class PKAddPassesViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native PKAddPassesViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * controller should be presented with -presentViewController:animated:completion:
+     * pass should be a pass you want the user to add.
+     */
     @Generated
     @Selector("initWithPass:")
     public native PKAddPassesViewController initWithPass(PKPass pass);

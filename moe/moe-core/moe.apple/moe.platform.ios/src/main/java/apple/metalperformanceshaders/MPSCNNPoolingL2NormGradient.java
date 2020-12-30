@@ -26,6 +26,30 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MPSCNNPoolingL2NormGradient
+ * @dependency This depends on Metal.framework
+ * @discussion Specifies the filter for computing the gradient of the L2-Norm pooling filter.
+ *             The operation backpropagates a gradient vector using chain rule.
+ * 
+ *             L2-Norm pooling forward pass is defined as:
+ * 
+ *                 out(x) = sqrt( sum_{dx \in Window(x)} in(s*x+dx) * in(s*x+dx) ), where
+ * 
+ *             the pooling window definition 'Window(x)' follows MPSCNNPooling specification and
+ *             's' is the pixel stride and in() is the source input image.
+ * 
+ *             Hence the partial derivative of the output value wrt. to the input value needed in the
+ *             gradient backpropagation in MPSCNNPoolingGradient is:
+ * 
+ *                 d out(x)/d in(y) = sum_{dx \in Window(x)} delta_{s*x+dx, y} in(s*x+dx) / out(x), where
+ * 
+ *             delta_{x,y} is the Kronecker delta symbol for which
+ * 
+ *                 delta_{x,y} =  {  1, when x == y
+ *                                {  0, otherwise,
+ *             and out(x) is the L2-norm pooling value at point 'x' defined above.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -97,6 +121,13 @@ public class MPSCNNPoolingL2NormGradient extends MPSCNNPoolingGradient {
     @Selector("initWithCoder:")
     public native MPSCNNPoolingL2NormGradient initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion See @ref MPSKernel#initWithCoder.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPoolingL2NormGradient
+     * @param      device      The MTLDevice on which to make the MPSCNNPoolingL2NormGradient
+     * @return     A new MPSCNNPoolingL2NormGradient object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSCNNPoolingL2NormGradient initWithCoderDevice(NSCoder aDecoder,
@@ -111,6 +142,15 @@ public class MPSCNNPoolingL2NormGradient extends MPSCNNPoolingGradient {
     public native MPSCNNPoolingL2NormGradient initWithDeviceKernelWidthKernelHeight(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
+    /**
+     * @abstract  Initialize a gradient L2-norm pooling filter
+     * @param      device              The device the filter will run on
+     * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
+     * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.
+     * @param      strideInPixelsX     The input stride (upsampling factor) in the x dimension.
+     * @param      strideInPixelsY     The input stride (upsampling factor) in the y dimension.
+     * @return     A valid MPSCNNPoolingL2NormGradient object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")
     public native MPSCNNPoolingL2NormGradient initWithDeviceKernelWidthKernelHeightStrideInPixelsXStrideInPixelsY(

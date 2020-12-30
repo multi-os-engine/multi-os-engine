@@ -159,10 +159,16 @@ public class UIAccessibilityCustomRotorItemResult extends NSObject {
     public native UIAccessibilityCustomRotorItemResult initWithTargetElementTargetRange(
             @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject targetElement, UITextRange targetRange);
 
+    /**
+     * A UIAccessibilityCustomRotorItemResult references a real element that will be messaged for other accessibility properties.
+     */
     @Generated
     @Selector("setTargetElement:")
     public native void setTargetElement_unsafe(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject value);
 
+    /**
+     * A UIAccessibilityCustomRotorItemResult references a real element that will be messaged for other accessibility properties.
+     */
     @Generated
     public void setTargetElement(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject value) {
         Object __old = targetElement();
@@ -175,15 +181,26 @@ public class UIAccessibilityCustomRotorItemResult extends NSObject {
         }
     }
 
+    /**
+     * Optionally, a target range can be used to search within an element (like a UITextView).
+     * If targetRange is nil, the search should begin from the start/end of the element depending on the search direction.
+     */
     @Generated
     @Selector("setTargetRange:")
     public native void setTargetRange(UITextRange value);
 
+    /**
+     * A UIAccessibilityCustomRotorItemResult references a real element that will be messaged for other accessibility properties.
+     */
     @Generated
     @Selector("targetElement")
     @MappedReturn(ObjCObjectMapper.class)
     public native apple.protocol.NSObject targetElement();
 
+    /**
+     * Optionally, a target range can be used to search within an element (like a UITextView).
+     * If targetRange is nil, the search should begin from the start/end of the element depending on the search direction.
+     */
     @Generated
     @Selector("targetRange")
     public native UITextRange targetRange();

@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Pointer slides under the given view and disappears as the view scales up and gains a shadow.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)

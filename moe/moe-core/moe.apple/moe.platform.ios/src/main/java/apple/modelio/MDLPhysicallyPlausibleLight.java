@@ -43,6 +43,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MDLPhysicallyPlausibleLight
+ * @abstract A light with characteristics representing plausible real world lights
+ * 
+ * @property color The color of the light.
+ * @property lumens The brightness of the light.
+ * @property innerConeAngle Within this cone, light is at maximum brightness. Units are degrees.
+ * @property outerConeAngle Between the inner cone angle and the outer, light 
+ *           quadratically attenuates to zero.
+ * @property attenuationStartDistance. Within the attenuation start distance, the
+ *           light is maximally bright.
+ * @property attenuationEndDistance. Beyond this distance, there is no light.
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -183,10 +196,18 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
     @Selector("init")
     public native MDLPhysicallyPlausibleLight init();
 
+    /**
+     * 90 means down the light axis to perpendicular is spanned (lightType will be MDLLightSpot)
+     * 180 means down the light axis to up the light axis is spanned (lightType will be MDLLightPoint)
+     * default is 22.5 degrees
+     */
     @Generated
     @Selector("innerConeAngle")
     public native float innerConeAngle();
 
+    /**
+     * default light intensity is 1000 lumens
+     */
     @Generated
     @Selector("lumens")
     public native float lumens();
@@ -207,14 +228,26 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
     @Selector("setColor:")
     public native void setColor(CGColorRef value);
 
+    /**
+     * Light color specified by color temperature, in degrees Kelvin
+     * @discussion default color is 6500K, cool daylight.
+     */
     @Generated
     @Selector("setColorByTemperature:")
     public native void setColorByTemperature(float temperature);
 
+    /**
+     * 90 means down the light axis to perpendicular is spanned (lightType will be MDLLightSpot)
+     * 180 means down the light axis to up the light axis is spanned (lightType will be MDLLightPoint)
+     * default is 22.5 degrees
+     */
     @Generated
     @Selector("setInnerConeAngle:")
     public native void setInnerConeAngle(float value);
 
+    /**
+     * default light intensity is 1000 lumens
+     */
     @Generated
     @Selector("setLumens:")
     public native void setLumens(float value);

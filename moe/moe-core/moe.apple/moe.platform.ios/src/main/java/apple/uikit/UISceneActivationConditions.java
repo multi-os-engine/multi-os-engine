@@ -59,6 +59,9 @@ public class UISceneActivationConditions extends NSObject implements NSSecureCod
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * default is [NSPredicate predicateWithValue:YES]
+     */
     @Generated
     @Selector("canActivateForTargetContentIdentifierPredicate")
     public native NSPredicate canActivateForTargetContentIdentifierPredicate();
@@ -133,6 +136,9 @@ public class UISceneActivationConditions extends NSObject implements NSSecureCod
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * default is [NSPredicate predicateWithValue:NO];
+     */
     @Generated
     @Selector("prefersToActivateForTargetContentIdentifierPredicate")
     public native NSPredicate prefersToActivateForTargetContentIdentifierPredicate();
@@ -145,10 +151,16 @@ public class UISceneActivationConditions extends NSObject implements NSSecureCod
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * default is [NSPredicate predicateWithValue:YES]
+     */
     @Generated
     @Selector("setCanActivateForTargetContentIdentifierPredicate:")
     public native void setCanActivateForTargetContentIdentifierPredicate(NSPredicate value);
 
+    /**
+     * default is [NSPredicate predicateWithValue:NO];
+     */
     @Generated
     @Selector("setPrefersToActivateForTargetContentIdentifierPredicate:")
     public native void setPrefersToActivateForTargetContentIdentifierPredicate(NSPredicate value);

@@ -79,6 +79,9 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
     public static native Object confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the mediaItem with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithMediaItemToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -92,6 +95,9 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * This resolution result is to ask Siri to disambiguate between the provided INMediaItem.
+     */
     @Generated
     @Selector("disambiguationWithMediaItemsToDisambiguate:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -156,11 +162,18 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INMediaItem. The resolvedMediaItem can be different than the original INMediaItem. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedMediaItem:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedMediaItem(INMediaItem resolvedMediaItem);
 
+    /**
+     * Convenience method to return multiple success resolution results for an array of INMediaItems
+     */
     @Generated
     @Selector("successesWithResolvedMediaItems:")
     public static native NSArray<? extends INMediaItemResolutionResult> successesWithResolvedMediaItems(

@@ -113,11 +113,17 @@ public class UIPointerRegionRequest extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The location of the pointer in the interaction's view's coordinate space.
+     */
     @Generated
     @Selector("location")
     @ByValue
     public native CGPoint location();
 
+    /**
+     * Key modifier flags representing keyboard keys pressed by the user at the time of this request.
+     */
     @Generated
     @Selector("modifiers")
     @NInt

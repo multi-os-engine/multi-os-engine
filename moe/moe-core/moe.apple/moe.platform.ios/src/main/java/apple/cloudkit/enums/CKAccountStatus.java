@@ -19,6 +19,13 @@ package apple.cloudkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum CKAccountStatus
+ * @constant CKAccountStatusCouldNotDetermine An error occurred when getting the account status, consult the corresponding NSError.
+ * @constant CKAccountStatusAvailable The iCloud account credentials are available for this application
+ * @constant Parental Controls / Device Management has denied access to iCloud account credentials
+ * @constant No iCloud account is logged in on this device
+ */
 @Generated
 public final class CKAccountStatus {
     @Generated @NInt public static final long CouldNotDetermine = 0x0000000000000000L;

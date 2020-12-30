@@ -50,21 +50,33 @@ public final class MediaPlayer {
     @CFunction
     public static native boolean MPVolumeSettingsAlertIsVisible();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaEntityPropertyPersistentID();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyPersistentID();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyMediaType();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -75,46 +87,73 @@ public final class MediaPlayer {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyAlbumTitle();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyAlbumPersistentID();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyArtist();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyArtistPersistentID();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyAlbumArtist();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyAlbumArtistPersistentID();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyGenre();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyGenrePersistentID();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyComposer();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -160,6 +199,9 @@ public final class MediaPlayer {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyLyrics();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -185,26 +227,41 @@ public final class MediaPlayer {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyAssetURL();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyIsCloudItem();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyHasProtectedAsset();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyPodcastTitle();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyPodcastPersistentID();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -240,26 +297,42 @@ public final class MediaPlayer {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyDateAdded();
 
+    /**
+     * Any items or playlists which were previously cached should be re-evaluated from queries when MPMediaLibraryDidChangeNotification is posted.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaLibraryDidChangeNotification();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaPlaylistPropertyPersistentID();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaPlaylistPropertyName();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaPlaylistPropertyPlaylistAttributes();
 
+    /**
+     * For playlists with attribute MPMediaPlaylistAttributeGenius, the seedItems are the MPMediaItems which were used to the generate the playlist.
+     * Returns nil for playlists without MPMediaPlaylistAttributeGenius set.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -275,41 +348,66 @@ public final class MediaPlayer {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaPlaylistPropertyAuthorDisplayName();
 
+    /**
+     * Posted when the prepared state changes of an object conforming to the MPMediaPlayback protocol changes.
+     * This supersedes MPMoviePlayerContentPreloadDidFinishNotification.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaPlaybackIsPreparedToPlayDidChangeNotification();
 
+    /**
+     * Posted when the scaling mode changes.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerScalingModeDidChangeNotification();
 
+    /**
+     * Posted when movie playback ends or a user exits playback.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerPlaybackDidFinishNotification();
 
+    /**
+     * NSNumber (MPMovieFinishReason)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerPlaybackDidFinishReasonUserInfoKey();
 
+    /**
+     * Posted when the playback state changes, either programatically or by the user.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerPlaybackStateDidChangeNotification();
 
+    /**
+     * Posted when the network load state changes.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerLoadStateDidChangeNotification();
 
+    /**
+     * Posted when the currently playing movie changes.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerNowPlayingMovieDidChangeNotification();
 
+    /**
+     * Posted when the movie player enters or exits fullscreen mode.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -330,31 +428,50 @@ public final class MediaPlayer {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerDidExitFullscreenNotification();
 
+    /**
+     * NSNumber of double (NSTimeInterval)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerFullscreenAnimationDurationUserInfoKey();
 
+    /**
+     * NSNumber of NSUInteger (UIViewAnimationCurve)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerFullscreenAnimationCurveUserInfoKey();
 
+    /**
+     * Posted when the movie player begins or ends playing video via AirPlay.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerIsAirPlayVideoActiveDidChangeNotification();
 
+    /**
+     * Posted when the ready for display state changes.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerReadyForDisplayDidChangeNotification();
 
+    /**
+     * Calling -prepareToPlay on the movie player will begin determining movie properties asynchronously.
+     * These notifications are posted when the associated movie property becomes available.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMovieMediaTypesAvailableNotification();
 
+    /**
+     * Posted if the movieSourceType is MPMovieSourceTypeUnknown when preparing for playback.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -370,81 +487,129 @@ public final class MediaPlayer {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMovieNaturalSizeAvailableNotification();
 
+    /**
+     * Posted when each thumbnail image request is completed.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerThumbnailImageRequestDidFinishNotification();
 
+    /**
+     * UIImage, may be nil if an error occurred.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerThumbnailImageKey();
 
+    /**
+     * NSNumber (double)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerThumbnailTimeKey();
 
+    /**
+     * NSError
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerThumbnailErrorKey();
 
+    /**
+     * Posted when new timed metadata arrives.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerTimedMetadataUpdatedNotification();
 
+    /**
+     * NSDictionary of the most recent MPTimedMetadata objects.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerTimedMetadataUserInfoKey();
 
+    /**
+     * NSString
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerTimedMetadataKeyName();
 
+    /**
+     * NSString
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerTimedMetadataKeyInfo();
 
+    /**
+     * NSString
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerTimedMetadataKeyMIMEType();
 
+    /**
+     * NSString
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerTimedMetadataKeyDataType();
 
+    /**
+     * NSString (ISO 639-2)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerTimedMetadataKeyLanguageCode();
 
+    /**
+     * Posted when the playback state changes, either programatically or by the user.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMusicPlayerControllerPlaybackStateDidChangeNotification();
 
+    /**
+     * Posted when the currently playing media item changes.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMusicPlayerControllerNowPlayingItemDidChangeNotification();
 
+    /**
+     * Posted when the current volume changes.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMusicPlayerControllerVolumeDidChangeNotification();
 
+    /**
+     * Posted when the wirelessRoutesAvailable property changes.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPVolumeViewWirelessRoutesAvailableDidChangeNotification();
 
+    /**
+     * Posted when the wirelessRouteActive property changes.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -455,81 +620,131 @@ public final class MediaPlayer {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPErrorDomain();
 
+    /**
+     * NSNumber (double)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyElapsedPlaybackTime();
 
+    /**
+     * NSNumber (double)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyPlaybackRate();
 
+    /**
+     * NSNumber (double)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyDefaultPlaybackRate();
 
+    /**
+     * NSNumber (NSUInteger)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyPlaybackQueueIndex();
 
+    /**
+     * NSNumber (NSUInteger)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyPlaybackQueueCount();
 
+    /**
+     * NSNumber (NSUInteger)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyChapterNumber();
 
+    /**
+     * NSNumber (NSUInteger)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyChapterCount();
 
+    /**
+     * NSNumber (BOOL)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyIsLiveStream();
 
+    /**
+     * NSArrayRef of MPNowPlayingInfoLanguageOptionGroup
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyAvailableLanguageOptions();
 
+    /**
+     * NSArray of MPNowPlayingInfoLanguageOption
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyCurrentLanguageOptions();
 
+    /**
+     * NSString
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoCollectionIdentifier();
 
+    /**
+     * NSString
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyExternalContentIdentifier();
 
+    /**
+     * NSString
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyExternalUserProfileIdentifier();
 
+    /**
+     * NSNumber (float)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyPlaybackProgress();
 
+    /**
+     * NSNumber (MPNowPlayingInfoMediaType)
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyMediaType();
 
+    /**
+     * Common values used to to populate MPNowPlayingInfoLanguageOption's
+     * characteristics property.
+     * See the AVMediaSelectionOption documentation about Media Characteristics for more details.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -580,31 +795,49 @@ public final class MediaPlayer {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPLanguageOptionCharacteristicVoiceOverTranslation();
 
+    /**
+     * Matches the id used by MPMusicPlayerController to enqueue store tracks
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyPlaybackStoreID();
 
+    /**
+     * Posted when the queue changes
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMusicPlayerControllerQueueDidChangeNotification();
 
+    /**
+     * NSString
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyServiceIdentifier();
 
+    /**
+     * NSURL
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyAssetURL();
 
+    /**
+     * NSDate
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyCurrentPlaybackDate();
 
+    /**
+     * filterable
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

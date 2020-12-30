@@ -99,6 +99,9 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The distance that the car can travel on the remaining resources.
+     */
     @Generated
     @Selector("distanceRemaining")
     public native NSMeasurement<NSUnitLength> distanceRemaining();
@@ -116,6 +119,11 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     @Selector("init")
     public native INGetCarPowerLevelStatusIntentResponse init();
 
+    /**
+     * The app extension has the option of capturing its private state as an NSUserActivity and returning it as the 'currentActivity'.
+     * If the the app is launched, an NSUserActivity will be passed in with the private state.  The NSUserActivity may also be used to query the app's UI extension (if provided) for a view controller representing the current intent handling state.
+     * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This intent object will also be available in the NSUserActivity.interaction property.
+     */
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INGetCarPowerLevelStatusIntentResponse initWithCodeUserActivity(@NInt long code,
@@ -164,6 +172,9 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     @Selector("setChargePercentRemaining:")
     public native void setChargePercentRemaining(NSNumber value);
 
+    /**
+     * The distance that the car can travel on the remaining resources.
+     */
     @Generated
     @Selector("setDistanceRemaining:")
     public native void setDistanceRemaining(NSMeasurement<NSUnitLength> value);
@@ -211,106 +222,184 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     @Selector("setMinutesToFull:")
     public native void setMinutesToFull(NSNumber value);
 
+    /**
+     * The current connector being used to deliver charge to the vehicle’s battery. If isCharging is set, this property should contain the active connector that is currently being used to charge the vehicle.
+     */
     @Generated
     @Selector("activeConnector")
     public native String activeConnector();
 
+    /**
+     * An identifier for the vehicles. Use this same value as the carIdentifier property of INCar. Do not use the VIN (or the equivalent code) as the identifier.
+     */
     @Generated
     @Selector("carIdentifier")
     public native String carIdentifier();
 
+    /**
+     * A dictionary mapping NSStrings to serializable objects (NSString, NSNumber, NSArray, NSDictionary, or NSNull) that contains OEM provided parameters for the charging model that is used to calculate the duration of charging at a station. The keys of this dictionary describe the parameters that fit into the Charging model of the electric vehicle. The values of this dictionary represent the parameter values. model_id is a mandatory key in this dictionary.
+     */
     @Generated
     @Selector("chargingFormulaArguments")
     public native NSDictionary<String, ?> chargingFormulaArguments();
 
+    /**
+     * A dictionary mapping NSStrings to serializable objects (NSString, NSNumber, NSArray, NSDictionary, or NSNull) that contains the OEM provided parameters for the consumption model used to calculate the vehicle’s energy consumption as the user drives. The keys of this dictionary describe the parameters that fit into the consumption model of the electric vehicle. The values of this dictionary represent the parameter values. model_id is a mandatory key in this dictionary.
+     */
     @Generated
     @Selector("consumptionFormulaArguments")
     public native NSDictionary<String, ?> consumptionFormulaArguments();
 
+    /**
+     * The current capacity of the battery. currentBatteryCapacity should be set such that maximumBatteryCapacity >= currentBatteryCapacity >= minimumBatteryCapacity.
+     */
     @Generated
     @Selector("currentBatteryCapacity")
     public native NSMeasurement<NSUnitEnergy> currentBatteryCapacity();
 
+    /**
+     * A time stamp for an instance of the state of charge. This time stamp should ideally indicate when the actual state of charge was captured from the vehicle.
+     */
     @Generated
     @Selector("dateOfLastStateUpdate")
     public native NSDateComponents dateOfLastStateUpdate();
 
+    /**
+     * The maximum distance an electric vehicle can travel with the remaining charge.
+     */
     @Generated
     @Selector("distanceRemainingElectric")
     public native NSMeasurement<NSUnitLength> distanceRemainingElectric();
 
+    /**
+     * The maximum distance a vehicle can travel with the remaining fuel.
+     */
     @Generated
     @Selector("distanceRemainingFuel")
     public native NSMeasurement<NSUnitLength> distanceRemainingFuel();
 
+    /**
+     * The maximum rated capacity of the vehicle’s battery. maximumBatteryCapacity should be set such that maximumBatteryCapacity >= currentBatteryCapacity >= minimumBatteryCapacity.
+     */
     @Generated
     @Selector("maximumBatteryCapacity")
     public native NSMeasurement<NSUnitEnergy> maximumBatteryCapacity();
 
+    /**
+     * The maximum distance a vehicle can travel with full resources. As the vehicle drives, this value can change over time as a result of driving characteristics.
+     */
     @Generated
     @Selector("maximumDistance")
     public native NSMeasurement<NSUnitLength> maximumDistance();
 
+    /**
+     * The maximum distance an electric vehicle can travel on a full charge. This value can change overtime (and over several instances of the state of charge) as the vehicle drives.
+     */
     @Generated
     @Selector("maximumDistanceElectric")
     public native NSMeasurement<NSUnitLength> maximumDistanceElectric();
 
+    /**
+     * The maximum distance a vehicle can travel with full resources. As the vehicle drives, this value can change over time as a result of driving characteristics.
+     */
     @Generated
     @Selector("maximumDistanceFuel")
     public native NSMeasurement<NSUnitLength> maximumDistanceFuel();
 
+    /**
+     * Minimum battery capacity. Used to display to the user as the minimum (not to be confused with the absolute 0 Wh). This represents the value that is displayed to the driver as 0% battery. minimumBatteryCapacity should be set such that maximumBatteryCapacity >= currentBatteryCapacity >= minimumBatteryCapacity.
+     */
     @Generated
     @Selector("minimumBatteryCapacity")
     public native NSMeasurement<NSUnitEnergy> minimumBatteryCapacity();
 
+    /**
+     * The current connector being used to deliver charge to the vehicle’s battery. If isCharging is set, this property should contain the active connector that is currently being used to charge the vehicle.
+     */
     @Generated
     @Selector("setActiveConnector:")
     public native void setActiveConnector(String value);
 
+    /**
+     * An identifier for the vehicles. Use this same value as the carIdentifier property of INCar. Do not use the VIN (or the equivalent code) as the identifier.
+     */
     @Generated
     @Selector("setCarIdentifier:")
     public native void setCarIdentifier(String value);
 
+    /**
+     * A dictionary mapping NSStrings to serializable objects (NSString, NSNumber, NSArray, NSDictionary, or NSNull) that contains OEM provided parameters for the charging model that is used to calculate the duration of charging at a station. The keys of this dictionary describe the parameters that fit into the Charging model of the electric vehicle. The values of this dictionary represent the parameter values. model_id is a mandatory key in this dictionary.
+     */
     @Generated
     @Selector("setChargingFormulaArguments:")
     public native void setChargingFormulaArguments(NSDictionary<String, ?> value);
 
+    /**
+     * A dictionary mapping NSStrings to serializable objects (NSString, NSNumber, NSArray, NSDictionary, or NSNull) that contains the OEM provided parameters for the consumption model used to calculate the vehicle’s energy consumption as the user drives. The keys of this dictionary describe the parameters that fit into the consumption model of the electric vehicle. The values of this dictionary represent the parameter values. model_id is a mandatory key in this dictionary.
+     */
     @Generated
     @Selector("setConsumptionFormulaArguments:")
     public native void setConsumptionFormulaArguments(NSDictionary<String, ?> value);
 
+    /**
+     * The current capacity of the battery. currentBatteryCapacity should be set such that maximumBatteryCapacity >= currentBatteryCapacity >= minimumBatteryCapacity.
+     */
     @Generated
     @Selector("setCurrentBatteryCapacity:")
     public native void setCurrentBatteryCapacity(NSMeasurement<NSUnitEnergy> value);
 
+    /**
+     * A time stamp for an instance of the state of charge. This time stamp should ideally indicate when the actual state of charge was captured from the vehicle.
+     */
     @Generated
     @Selector("setDateOfLastStateUpdate:")
     public native void setDateOfLastStateUpdate(NSDateComponents value);
 
+    /**
+     * The maximum distance an electric vehicle can travel with the remaining charge.
+     */
     @Generated
     @Selector("setDistanceRemainingElectric:")
     public native void setDistanceRemainingElectric(NSMeasurement<NSUnitLength> value);
 
+    /**
+     * The maximum distance a vehicle can travel with the remaining fuel.
+     */
     @Generated
     @Selector("setDistanceRemainingFuel:")
     public native void setDistanceRemainingFuel(NSMeasurement<NSUnitLength> value);
 
+    /**
+     * The maximum rated capacity of the vehicle’s battery. maximumBatteryCapacity should be set such that maximumBatteryCapacity >= currentBatteryCapacity >= minimumBatteryCapacity.
+     */
     @Generated
     @Selector("setMaximumBatteryCapacity:")
     public native void setMaximumBatteryCapacity(NSMeasurement<NSUnitEnergy> value);
 
+    /**
+     * The maximum distance a vehicle can travel with full resources. As the vehicle drives, this value can change over time as a result of driving characteristics.
+     */
     @Generated
     @Selector("setMaximumDistance:")
     public native void setMaximumDistance(NSMeasurement<NSUnitLength> value);
 
+    /**
+     * The maximum distance an electric vehicle can travel on a full charge. This value can change overtime (and over several instances of the state of charge) as the vehicle drives.
+     */
     @Generated
     @Selector("setMaximumDistanceElectric:")
     public native void setMaximumDistanceElectric(NSMeasurement<NSUnitLength> value);
 
+    /**
+     * The maximum distance a vehicle can travel with full resources. As the vehicle drives, this value can change over time as a result of driving characteristics.
+     */
     @Generated
     @Selector("setMaximumDistanceFuel:")
     public native void setMaximumDistanceFuel(NSMeasurement<NSUnitLength> value);
 
+    /**
+     * Minimum battery capacity. Used to display to the user as the minimum (not to be confused with the absolute 0 Wh). This represents the value that is displayed to the driver as 0% battery. minimumBatteryCapacity should be set such that maximumBatteryCapacity >= currentBatteryCapacity >= minimumBatteryCapacity.
+     */
     @Generated
     @Selector("setMinimumBatteryCapacity:")
     public native void setMinimumBatteryCapacity(NSMeasurement<NSUnitEnergy> value);

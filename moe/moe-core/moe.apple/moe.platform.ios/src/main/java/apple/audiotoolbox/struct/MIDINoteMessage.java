@@ -66,10 +66,16 @@ public final class MIDINoteMessage extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setVelocity(byte value);
 
+    /**
+     * was "reserved". 0 is the correct value when you don't know.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native byte releaseVelocity();
 
+    /**
+     * was "reserved". 0 is the correct value when you don't know.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setReleaseVelocity(byte value);

@@ -18,6 +18,9 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Color rendering intents.
+ */
 @Generated
 public final class CGColorRenderingIntent {
     @Generated public static final int Default = 0x00000000;

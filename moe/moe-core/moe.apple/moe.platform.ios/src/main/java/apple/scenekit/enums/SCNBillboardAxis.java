@@ -19,6 +19,9 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * MARK: -
+ */
 @Generated
 public final class SCNBillboardAxis {
     @Generated @NUInt public static final long X = 0x0000000000000001L;

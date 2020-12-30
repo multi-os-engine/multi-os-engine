@@ -41,6 +41,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEOnDemandRuleDisconnect
+ * @discussion The NEOnDemandRuleDisconnect class declares the programmatic interface for an object that defines an On Demand rule with the "Disconnect" action.
+ * 
+ * When rules of this class match, the VPN connection is not started, and the VPN connection is disconnected if it is not currently disconnected.
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)

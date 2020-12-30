@@ -161,26 +161,50 @@ public class UIAccessibilityCustomAction extends NSObject {
     public native UIAccessibilityCustomAction initWithNameTargetSelector(String name,
             @Mapped(ObjCObjectMapper.class) Object target, SEL selector);
 
+    /**
+     * A localized name that describes the action.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * The method that will be called on the target to perform the action.
+     * It must conform to one of the following signatures:
+     * - (BOOL)myPerformActionMethod;
+     * - (BOOL)myPerformActionMethod:(UIAccessibilityCustomAction *)action;
+     */
     @Generated
     @Selector("selector")
     public native SEL selector();
 
+    /**
+     * A localized name that describes the action.
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * The method that will be called on the target to perform the action.
+     * It must conform to one of the following signatures:
+     * - (BOOL)myPerformActionMethod;
+     * - (BOOL)myPerformActionMethod:(UIAccessibilityCustomAction *)action;
+     */
     @Generated
     @Selector("setSelector:")
     public native void setSelector(SEL value);
 
+    /**
+     * The object that will perform the action.
+     */
     @Generated
     @Selector("setTarget:")
     public native void setTarget_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * The object that will perform the action.
+     */
     @Generated
     public void setTarget(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = target();
@@ -193,11 +217,18 @@ public class UIAccessibilityCustomAction extends NSObject {
         }
     }
 
+    /**
+     * The object that will perform the action.
+     */
     @Generated
     @Selector("target")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object target();
 
+    /**
+     * Underlying attributed version of the "name" property. Setting this property will change the
+     * value of the "name" property and vice-versa.
+     */
     @Generated
     @Selector("attributedName")
     public native NSAttributedString attributedName();
@@ -207,10 +238,17 @@ public class UIAccessibilityCustomAction extends NSObject {
     public native UIAccessibilityCustomAction initWithAttributedNameTargetSelector(NSAttributedString attributedName,
             @Mapped(ObjCObjectMapper.class) Object target, SEL selector);
 
+    /**
+     * Underlying attributed version of the "name" property. Setting this property will change the
+     * value of the "name" property and vice-versa.
+     */
     @Generated
     @Selector("setAttributedName:")
     public native void setAttributedName(NSAttributedString value);
 
+    /**
+     * If the actionHandler is set, it will be preferred over the target/selector.
+     */
     @Generated
     @Selector("actionHandler")
     @ObjCBlock(name = "call_actionHandler_ret")
@@ -247,6 +285,9 @@ public class UIAccessibilityCustomAction extends NSObject {
         boolean call_initWithNameActionHandler(UIAccessibilityCustomAction customAction);
     }
 
+    /**
+     * If the actionHandler is set, it will be preferred over the target/selector.
+     */
     @Generated
     @Selector("setActionHandler:")
     public native void setActionHandler(@ObjCBlock(name = "call_setActionHandler") Block_setActionHandler value);
@@ -258,6 +299,9 @@ public class UIAccessibilityCustomAction extends NSObject {
         boolean call_setActionHandler(UIAccessibilityCustomAction customAction);
     }
 
+    /**
+     * An image representing the action to be shown with some assistive technologies such as Switch Control.
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -298,6 +342,9 @@ public class UIAccessibilityCustomAction extends NSObject {
     public native UIAccessibilityCustomAction initWithNameImageTargetSelector(String name, UIImage image,
             @Mapped(ObjCObjectMapper.class) Object target, SEL selector);
 
+    /**
+     * An image representing the action to be shown with some assistive technologies such as Switch Control.
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);

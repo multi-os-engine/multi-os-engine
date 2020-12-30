@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A response to an ILMessageFilterQueryRequest.
+ */
 @Generated
 @Library("IdentityLookup")
 @Runtime(ObjCRuntime.class)
@@ -44,6 +47,9 @@ public class ILMessageFilterQueryResponse extends NSObject implements NSSecureCo
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Action to take for the received message.
+     */
     @Generated
     @Selector("action")
     @NInt
@@ -141,6 +147,9 @@ public class ILMessageFilterQueryResponse extends NSObject implements NSSecureCo
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Action to take for the received message.
+     */
     @Generated
     @Selector("setAction:")
     public native void setAction(@NInt long value);

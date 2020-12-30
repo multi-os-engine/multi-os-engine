@@ -54,6 +54,9 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @abstract Parameters required by the specific Authorization Server which should be used by the selected Authorization Services extension for authorization.
+     */
     @Generated
     @Selector("authorizationOptions")
     public native NSArray<? extends NSURLQueryItem> authorizationOptions();
@@ -136,6 +139,9 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract Parameters required by the specific Authorization Server which should be used by the selected Authorization Services extension for authorization.
+     */
     @Generated
     @Selector("setAuthorizationOptions:")
     public native void setAuthorizationOptions(NSArray<? extends NSURLQueryItem> value);

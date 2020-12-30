@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Pointer retains the system shape while over the given view. Visual changes applied to the view are dictated by the effect's properties.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -121,15 +124,24 @@ public class UIPointerHoverEffect extends UIPointerEffect {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Defaults to UIPointerEffectTintModeOverlay
+     */
     @Generated
     @Selector("preferredTintMode")
     @NInt
     public native long preferredTintMode();
 
+    /**
+     * Defaults to YES
+     */
     @Generated
     @Selector("prefersScaledContent")
     public native boolean prefersScaledContent();
 
+    /**
+     * Defaults to NO
+     */
     @Generated
     @Selector("prefersShadow")
     public native boolean prefersShadow();
@@ -142,14 +154,23 @@ public class UIPointerHoverEffect extends UIPointerEffect {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Defaults to UIPointerEffectTintModeOverlay
+     */
     @Generated
     @Selector("setPreferredTintMode:")
     public native void setPreferredTintMode(@NInt long value);
 
+    /**
+     * Defaults to YES
+     */
     @Generated
     @Selector("setPrefersScaledContent:")
     public native void setPrefersScaledContent(boolean value);
 
+    /**
+     * Defaults to NO
+     */
     @Generated
     @Selector("setPrefersShadow:")
     public native void setPrefersShadow(boolean value);

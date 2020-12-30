@@ -346,6 +346,9 @@ public class UIInputView extends UIView {
     @NInt
     public static native long version_static();
 
+    /**
+     * defaults to NO
+     */
     @Generated
     @Selector("allowsSelfSizing")
     public native boolean allowsSelfSizing();
@@ -418,6 +421,9 @@ public class UIInputView extends UIView {
     @NInt
     public native long inputViewStyle();
 
+    /**
+     * defaults to NO
+     */
     @Generated
     @Selector("setAllowsSelfSizing:")
     public native void setAllowsSelfSizing(boolean value);

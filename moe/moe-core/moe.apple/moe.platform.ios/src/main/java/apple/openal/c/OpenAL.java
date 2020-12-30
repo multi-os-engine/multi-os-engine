@@ -45,6 +45,9 @@ public final class OpenAL {
     private OpenAL() {
     }
 
+    /**
+     * Renderer State management
+     */
     @Generated
     @CFunction
     public static native void alEnable(int capability);
@@ -57,6 +60,9 @@ public final class OpenAL {
     @CFunction
     public static native byte alIsEnabled(int capability);
 
+    /**
+     * State retrieval
+     */
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
@@ -94,10 +100,19 @@ public final class OpenAL {
     @CFunction
     public static native double alGetDouble(int param);
 
+    /**
+     * Error support.
+     * Obtain the most recent error generated in the AL state machine.
+     */
     @Generated
     @CFunction
     public static native int alGetError();
 
+    /**
+     * Extension support.
+     * Query for the presence of an extension, and obtain any appropriate
+     * function pointers and enum values.
+     */
     @Generated
     @CFunction
     public static native byte alIsExtensionPresent(
@@ -113,6 +128,9 @@ public final class OpenAL {
     public static native int alGetEnumValue(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String ename);
 
+    /**
+     * Set Listener parameters
+     */
     @Generated
     @CFunction
     public static native void alListenerf(int param, float value);
@@ -137,6 +155,9 @@ public final class OpenAL {
     @CFunction
     public static native void alListeneriv(int param, ConstIntPtr values);
 
+    /**
+     * Get Listener parameters
+     */
     @Generated
     @CFunction
     public static native void alGetListenerf(int param, FloatPtr value);
@@ -161,18 +182,30 @@ public final class OpenAL {
     @CFunction
     public static native void alGetListeneriv(int param, IntPtr values);
 
+    /**
+     * Create Source objects
+     */
     @Generated
     @CFunction
     public static native void alGenSources(int n, IntPtr sources);
 
+    /**
+     * Delete Source objects
+     */
     @Generated
     @CFunction
     public static native void alDeleteSources(int n, ConstIntPtr sources);
 
+    /**
+     * Verify a handle is a valid Source
+     */
     @Generated
     @CFunction
     public static native byte alIsSource(int sid);
 
+    /**
+     * Set Source parameters
+     */
     @Generated
     @CFunction
     public static native void alSourcef(int sid, int param, float value);
@@ -197,6 +230,9 @@ public final class OpenAL {
     @CFunction
     public static native void alSourceiv(int sid, int param, ConstIntPtr values);
 
+    /**
+     * Get Source parameters
+     */
     @Generated
     @CFunction
     public static native void alGetSourcef(int sid, int param, FloatPtr value);
@@ -221,38 +257,65 @@ public final class OpenAL {
     @CFunction
     public static native void alGetSourceiv(int sid, int param, IntPtr values);
 
+    /**
+     * Play, replay, or resume (if paused) a list of Sources
+     */
     @Generated
     @CFunction
     public static native void alSourcePlayv(int ns, ConstIntPtr sids);
 
+    /**
+     * Stop a list of Sources
+     */
     @Generated
     @CFunction
     public static native void alSourceStopv(int ns, ConstIntPtr sids);
 
+    /**
+     * Rewind a list of Sources
+     */
     @Generated
     @CFunction
     public static native void alSourceRewindv(int ns, ConstIntPtr sids);
 
+    /**
+     * Pause a list of Sources
+     */
     @Generated
     @CFunction
     public static native void alSourcePausev(int ns, ConstIntPtr sids);
 
+    /**
+     * Play, replay, or resume a Source
+     */
     @Generated
     @CFunction
     public static native void alSourcePlay(int sid);
 
+    /**
+     * Stop a Source
+     */
     @Generated
     @CFunction
     public static native void alSourceStop(int sid);
 
+    /**
+     * Rewind a Source (set playback postiton to beginning)
+     */
     @Generated
     @CFunction
     public static native void alSourceRewind(int sid);
 
+    /**
+     * Pause a Source
+     */
     @Generated
     @CFunction
     public static native void alSourcePause(int sid);
 
+    /**
+     * Source Queuing
+     */
     @Generated
     @CFunction
     public static native void alSourceQueueBuffers(int sid, int numEntries, ConstIntPtr bids);
@@ -261,22 +324,37 @@ public final class OpenAL {
     @CFunction
     public static native void alSourceUnqueueBuffers(int sid, int numEntries, IntPtr bids);
 
+    /**
+     * Create Buffer objects
+     */
     @Generated
     @CFunction
     public static native void alGenBuffers(int n, IntPtr buffers);
 
+    /**
+     * Delete Buffer objects
+     */
     @Generated
     @CFunction
     public static native void alDeleteBuffers(int n, ConstIntPtr buffers);
 
+    /**
+     * Verify a handle is a valid Buffer
+     */
     @Generated
     @CFunction
     public static native byte alIsBuffer(int bid);
 
+    /**
+     * Specify the data to be copied into a buffer
+     */
     @Generated
     @CFunction
     public static native void alBufferData(int bid, int format, ConstVoidPtr data, int size, int freq);
 
+    /**
+     * Set Buffer parameters
+     */
     @Generated
     @CFunction
     public static native void alBufferf(int bid, int param, float value);
@@ -301,6 +379,9 @@ public final class OpenAL {
     @CFunction
     public static native void alBufferiv(int bid, int param, ConstIntPtr values);
 
+    /**
+     * Get Buffer parameters
+     */
     @Generated
     @CFunction
     public static native void alGetBufferf(int bid, int param, FloatPtr value);
@@ -325,6 +406,9 @@ public final class OpenAL {
     @CFunction
     public static native void alGetBufferiv(int bid, int param, IntPtr values);
 
+    /**
+     * Global Parameters
+     */
     @Generated
     @CFunction
     public static native void alDopplerFactor(float value);
@@ -341,6 +425,9 @@ public final class OpenAL {
     @CFunction
     public static native void alDistanceModel(int distanceModel);
 
+    /**
+     * Context Management
+     */
     @Generated
     @CFunction
     public static native VoidPtr alcCreateContext(VoidPtr device, ConstIntPtr attrlist);
@@ -369,6 +456,9 @@ public final class OpenAL {
     @CFunction
     public static native VoidPtr alcGetContextsDevice(VoidPtr context);
 
+    /**
+     * Device Management
+     */
     @Generated
     @CFunction
     public static native VoidPtr alcOpenDevice(
@@ -378,10 +468,19 @@ public final class OpenAL {
     @CFunction
     public static native byte alcCloseDevice(VoidPtr device);
 
+    /**
+     * Error support.
+     * Obtain the most recent Context error
+     */
     @Generated
     @CFunction
     public static native int alcGetError(VoidPtr device);
 
+    /**
+     * Extension support.
+     * Query for the presence of an extension, and obtain any appropriate
+     * function pointers and enum values.
+     */
     @Generated
     @CFunction
     public static native byte alcIsExtensionPresent(VoidPtr device,
@@ -397,6 +496,9 @@ public final class OpenAL {
     public static native int alcGetEnumValue(VoidPtr device,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String enumname);
 
+    /**
+     * Query functions
+     */
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
@@ -406,6 +508,9 @@ public final class OpenAL {
     @CFunction
     public static native void alcGetIntegerv(VoidPtr device, int param, int size, IntPtr data);
 
+    /**
+     * Capture functions
+     */
     @Generated
     @CFunction
     public static native VoidPtr alcCaptureOpenDevice(

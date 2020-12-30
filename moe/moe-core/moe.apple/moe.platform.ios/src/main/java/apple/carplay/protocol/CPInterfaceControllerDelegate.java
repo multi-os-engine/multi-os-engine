@@ -9,6 +9,10 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * CPInterfaceControllerDelegate allows your app to observe template visibility lifecycles for
+ * the templates presented by your app.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)

@@ -52,10 +52,16 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * append items to Root
+     */
     @Generated
     @Selector("appendItems:")
     public native void appendItems(NSArray<_ItemIdentifierType> items);
 
+    /**
+     * append items into parent (creating a new Parent+Child relationship if not present; appends to existing children if present)
+     */
     @Generated
     @Selector("appendItems:intoParentItem:")
     public native void appendItemsIntoParentItem(NSArray<_ItemIdentifierType> items,
@@ -83,6 +89,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * will log if item is not found
+     */
     @Generated
     @Selector("collapseItems:")
     public native void collapseItems(NSArray<_ItemIdentifierType> items);
@@ -105,6 +114,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Selector("deleteAllItems")
     public native void deleteAllItems();
 
+    /**
+     * will also delete children
+     */
     @Generated
     @Selector("deleteItems:")
     public native void deleteItems(NSArray<_ItemIdentifierType> items);
@@ -113,6 +125,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * will log if item is not found
+     */
     @Generated
     @Selector("expandItems:")
     public native void expandItems(NSArray<_ItemIdentifierType> items);
@@ -131,15 +146,94 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @NInt
     public native long indexOfItem(@Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
 
+    /**
+     * creates an empty snapshot
+     */
     @Generated
     @Selector("init")
     public native NSDiffableDataSourceSectionSnapshot<?> init();
 
+    /**
+     * Insert After: respect any destination item's children and inserts the new items after them
+     *               at the same level as the destination item.
+     * 
+     * 
+     *                       +---------+
+     *                       |    0    |
+     *   +---------+         +-+-------+-+
+     *   |    0    |           |    1    |
+     *   +-+-------+-+         +---------+
+     *     |    1    |         |    2    |
+     *     +---------+       +-+-------+-+
+     *     |    2    |       |   INS   |
+     *   +-+-------+-+       +---------+
+     *   |    3    |         |    3    |
+     *   +---------+         +---------+
+     * 
+     *  +--------------------------------+
+     *  | insertAfter(INS, after:0)      |
+     *  +--------------------------------+
+     * 
+     *                     +---------+
+     *                     |    0    |
+     *   +---------+       +-+-------+-+
+     *   |    0    |         |    1    |
+     *   +-+-------+-+       +---------+
+     *     |    1    |       |    2    |
+     *     +---------+       +-+-------+-+
+     *     |    2    |         |    3    |
+     *     +-+-------+-+     +-+-------+-+
+     *       |    3    |     |   INS   |
+     *   +---+-----+---+   +-+-------+-+
+     *   |    4    |       |    4    |
+     *   +---------+       +---------+
+     * 
+     *  +--------------------------------+
+     *  | insertAfter(INS, after:2)      |
+     *  +--------------------------------+
+     */
     @Generated
     @Selector("insertItems:afterItem:")
     public native void insertItemsAfterItem(NSArray<_ItemIdentifierType> items,
             @Mapped(ObjCObjectMapper.class) _ItemIdentifierType afterIdentifier);
 
+    /**
+     * Insert Before will always match the level of the destination item.
+     * 
+     *   Examples:
+     * 
+     *                       +---------+
+     *                       |    0    |
+     *   +---------+         +-+-------+-+
+     *   |    0    |           |   INS   |
+     *   +-+-------+-+         +---------+
+     *     |    1    |         |    1    |
+     *     +---------+         +---------+
+     *     |    2    |         |    2    |
+     *   +-+-------+-+       +-+-------+-+
+     *   |    3    |         |    3    |
+     *   +---------+         +---------+
+     * 
+     *  +--------------------------------+
+     *  |        insertBefore(1)         |
+     *  +--------------------------------+
+     * 
+     *                       +---------+
+     *                       |   INS   |
+     *   +---------+         +---------+
+     *   |    0    |         |    0    |
+     *   +-+-------+-+       +-+-------+-+
+     *     |    1    |         |    1    |
+     *     +---------+         +---------+
+     *     |    2    |         |    2    |
+     *   +-+-------+-+       +-+-------+-+
+     *   |    3    |         |    3    |
+     *   +---------+         +---------+
+     * 
+     *  +--------------------------------+
+     *  |        insertBefore(0)         |
+     *  +--------------------------------+
+     */
     @Generated
     @Selector("insertItems:beforeItem:")
     public native void insertItemsBeforeItem(NSArray<_ItemIdentifierType> items,
@@ -152,6 +246,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
             NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshot,
             @Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
 
+    /**
+     * insert a subtree -- represented by a snapshot -- before/after a destination item
+     */
     @Generated
     @Selector("insertSnapshot:beforeItem:")
     public native void insertSnapshotBeforeItem(NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshot,
@@ -170,6 +267,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * these methods are all O(1)
+     */
     @Generated
     @Selector("isExpanded:")
     public native boolean isExpanded(@Mapped(ObjCObjectMapper.class) _ItemIdentifierType item);
@@ -190,6 +290,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * NSNotFound if not present
+     */
     @Generated
     @Selector("levelOfItem:")
     @NInt
@@ -201,6 +304,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * nil == root node
+     */
     @Generated
     @Selector("parentOfChildItem:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -228,6 +334,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * snapshot will not include parentItem
+     */
     @Generated
     @Selector("snapshotOfParentItem:")
     public native NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshotOfParentItem(
@@ -251,6 +360,13 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Selector("visibleItems")
     public native NSArray<_ItemIdentifierType> visibleItems();
 
+    /**
+     * debugging; displays hierarchy
+     *    legend:
+     *       * == visible
+     *       + == expanded
+     *       - == collapsed
+     */
     @Generated
     @Selector("visualDescription")
     public native String visualDescription();

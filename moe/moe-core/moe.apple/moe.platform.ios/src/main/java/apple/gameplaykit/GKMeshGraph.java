@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A collection of GKGraphNodes that are governed by a mesh formed by the space between a set of GKPolygonObstacles
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -156,18 +159,33 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
     @NInt
     public static native long version_static();
 
+    /**
+     * Adds obstacles to this mesh graph.  Only reflected after the next triangulate call.
+     */
     @Generated
     @Selector("addObstacles:")
     public native void addObstacles(NSArray<? extends GKPolygonObstacle> obstacles);
 
+    /**
+     * The distance by which all obstacles are extruded.
+     * This is most commonly the spatial bounding radius of a potential traveler on this path
+     */
     @Generated
     @Selector("bufferRadius")
     public native float bufferRadius();
 
+    /**
+     * Returns the class of the specified generic index
+     */
     @Generated
     @Selector("classForGenericArgumentAtIndex:")
     public native Class classForGenericArgumentAtIndex(@NUInt long index);
 
+    /**
+     * Connects the node to this graph by inserting it into an existing triangle and making the appropriate connections
+     * Node must be in the space defined by the min and max coordinates of this graph.
+     * @param node the node to connect
+     */
     @Generated
     @Selector("connectNodeUsingObstacles:")
     public native void connectNodeUsingObstacles(GKGraphNode2D node);
@@ -184,27 +202,54 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
     @Selector("initWithNodes:")
     public native GKMeshGraph<?> initWithNodes(NSArray<? extends GKGraphNode> nodes);
 
+    /**
+     * Array of the extruded obstacles currently represented by this graph
+     */
     @Generated
     @Selector("obstacles")
     public native NSArray<? extends GKPolygonObstacle> obstacles();
 
+    /**
+     * Removes obstacles from this graph.  Only reflected after the next triangulate call.
+     */
     @Generated
     @Selector("removeObstacles:")
     public native void removeObstacles(NSArray<? extends GKPolygonObstacle> obstacles);
 
+    /**
+     * Specifies how graph nodes are generated when you triangulate this graph.
+     * You can combine triangulation modes using the | (OR) operator
+     * 
+     * @see GKMeshGraphTriangulationMode
+     */
     @Generated
     @Selector("setTriangulationMode:")
     public native void setTriangulationMode(@NUInt long value);
 
+    /**
+     * The number of triangles currently in this mesh graph
+     */
     @Generated
     @Selector("triangleCount")
     @NUInt
     public native long triangleCount();
 
+    /**
+     * Generates a new triangle mesh for the given obstacles.
+     * This should be called after some number of calls to addObstacle
+     * The negative space between all input obstacles are triangulated to create a mesh
+     * This mesh is turned into a set of connected graph nodes based on
+     */
     @Generated
     @Selector("triangulate")
     public native void triangulate();
 
+    /**
+     * Specifies how graph nodes are generated when you triangulate this graph.
+     * You can combine triangulation modes using the | (OR) operator
+     * 
+     * @see GKMeshGraphTriangulationMode
+     */
     @Generated
     @Selector("triangulationMode")
     @NUInt

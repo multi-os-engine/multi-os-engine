@@ -44,6 +44,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract An immutable value object representing a container.
+ * 
+ * @discussion CNContainer is thread safe.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
@@ -134,6 +139,9 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @discussion If the identifier is for a unified contact then the fetch will return an empty array. To fetch the containers of a unified contact, first fetch the linked contacts then fetch the container of each linked contact.
+     */
     @Generated
     @Selector("predicateForContainerOfContactWithIdentifier:")
     public static native NSPredicate predicateForContainerOfContactWithIdentifier(String contactIdentifier);
@@ -181,6 +189,9 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The identifier is unique among containers on the device. It can be saved and used for fetching containers next application launch.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();

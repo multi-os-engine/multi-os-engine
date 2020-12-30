@@ -43,6 +43,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVAudioChannelLayout
+ * @abstract A description of the roles of a set of audio channels.
+ * @discussion
+ * 	This object is a thin wrapper for the AudioChannelLayout structure, described
+ * 	in <CoreAudio/CoreAudioTypes.h>.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -127,10 +134,18 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @method layoutWithLayout:
+     * @abstract Create from an AudioChannelLayout
+     */
     @Generated
     @Selector("layoutWithLayout:")
     public static native AVAudioChannelLayout layoutWithLayout(AudioChannelLayout layout);
 
+    /**
+     * @method layoutWithLayoutTag:
+     * @abstract Create from a layout tag.
+     */
     @Generated
     @Selector("layoutWithLayoutTag:")
     public static native AVAudioChannelLayout layoutWithLayoutTag(int layoutTag);
@@ -166,6 +181,10 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property channelCount
+     * @abstract The number of channels of audio data.
+     */
     @Generated
     @Selector("channelCount")
     public native int channelCount();
@@ -182,22 +201,56 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native AVAudioChannelLayout initWithCoder(NSCoder coder);
 
+    /**
+     * @method initWithLayout:
+     * @abstract Initialize from an AudioChannelLayout.
+     * @param layout
+     * 	The AudioChannelLayout.
+     * @discussion
+     * 	If the provided layout's tag is kAudioChannelLayoutTag_UseChannelDescriptions, this
+     * 	initializer attempts to convert it to a more specific tag.
+     */
     @Generated
     @Selector("initWithLayout:")
     public native AVAudioChannelLayout initWithLayout(AudioChannelLayout layout);
 
+    /**
+     * @method initWithLayoutTag:
+     * @abstract Initialize from a layout tag.
+     * @param layoutTag
+     * 	The tag.
+     * @discussion
+     * 	Returns nil if the tag is either kAudioChannelLayoutTag_UseChannelDescriptions or
+     * 	kAudioChannelLayoutTag_UseChannelBitmap.
+     */
     @Generated
     @Selector("initWithLayoutTag:")
     public native AVAudioChannelLayout initWithLayoutTag(int layoutTag);
 
+    /**
+     * @method isEqual:
+     * @abstract Determine whether another AVAudioChannelLayout is exactly equal to this layout.
+     * @param object
+     * 	The AVAudioChannelLayout to compare against.
+     * @discussion
+     * 	The underlying AudioChannelLayoutTag and AudioChannelLayout are compared for equality.
+     */
     @Generated
     @Selector("isEqual:")
     public native boolean isEqual(@Mapped(ObjCObjectMapper.class) Object object);
 
+    /**
+     * @property layout
+     * @abstract The underlying AudioChannelLayout. 
+     */
     @Generated
     @Selector("layout")
     public native AudioChannelLayout layout();
 
+    /**
+     * @property layoutTag
+     * @abstract The layout's tag. 
+     */
     @Generated
     @Selector("layoutTag")
     public native int layoutTag();

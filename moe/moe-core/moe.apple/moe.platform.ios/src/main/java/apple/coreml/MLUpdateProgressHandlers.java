@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Allows applications to register for progress and completion handlers.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)

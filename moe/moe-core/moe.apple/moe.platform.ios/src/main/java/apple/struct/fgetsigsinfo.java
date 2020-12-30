@@ -34,26 +34,44 @@ public final class fgetsigsinfo extends StructObject {
         setFg_sig_is_platform(fg_sig_is_platform);
     }
 
+    /**
+     * IN: Offset in the file to look for a signature, -1 for any signature
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native long fg_file_start();
 
+    /**
+     * IN: Offset in the file to look for a signature, -1 for any signature
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setFg_file_start(long value);
 
+    /**
+     * IN: Key indicating the info requested
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int fg_info_request();
 
+    /**
+     * IN: Key indicating the info requested
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setFg_info_request(int value);
 
+    /**
+     * OUT: 1 if the signature is a plat form binary, 0 if not
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int fg_sig_is_platform();
 
+    /**
+     * OUT: 1 if the signature is a plat form binary, 0 if not
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setFg_sig_is_platform(int value);

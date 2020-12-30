@@ -83,6 +83,9 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * Provides a "diff" between 2 PHFetchResult objects.
+     */
     @Generated
     @Selector("changeDetailsFromFetchResult:toFetchResult:changedObjects:")
     public static native <_ObjectType> PHFetchResultChangeDetails<?> changeDetailsFromFetchResultToFetchResultChangedObjects(
@@ -158,6 +161,10 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The indexes of the updated items, relative to the 'after' state of the fetch result
+     * returns nil if hasIncrementalChanges is NO
+     */
     @Generated
     @Selector("changedIndexes")
     public native NSIndexSet changedIndexes();
@@ -166,23 +173,40 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     @Selector("changedObjects")
     public native NSArray<? extends PHObject> changedObjects();
 
+    /**
+     * Enumerates the indexes of the moved items, relative to the 'before' state of the fetch result after applying the removedIndexes and insertedIndexes
+     */
     @Generated
     @Selector("enumerateMovesWithBlock:")
     public native void enumerateMovesWithBlock(
             @ObjCBlock(name = "call_enumerateMovesWithBlock") Block_enumerateMovesWithBlock handler);
 
+    /**
+     * fetch result with the state of the fetched objects after this change
+     */
     @Generated
     @Selector("fetchResultAfterChanges")
     public native PHFetchResult<? extends PHObject> fetchResultAfterChanges();
 
+    /**
+     * fetch result with the state of the fetched objects before this change (returns the fetch result passed in to changeDetailsForFetchResult:)
+     */
     @Generated
     @Selector("fetchResultBeforeChanges")
     public native PHFetchResult<? extends PHObject> fetchResultBeforeChanges();
 
+    /**
+     * YES if the changes to this fetch result are described by the removed/inserted/changed details.
+     * NO indicates that the scope of changes were too large and UI clients should do a full reload, incremental changes could not be provided
+     */
     @Generated
     @Selector("hasIncrementalChanges")
     public native boolean hasIncrementalChanges();
 
+    /**
+     * YES if there are moved items
+     * returns NO if hasIncrementalChanges is NO
+     */
     @Generated
     @Selector("hasMoves")
     public native boolean hasMoves();
@@ -191,6 +215,10 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     @Selector("init")
     public native PHFetchResultChangeDetails<?> init();
 
+    /**
+     * The indexes of the inserted items, relative to the 'before' state of the fetch result after applying the removedIndexes
+     * returns nil if hasIncrementalChanges is NO
+     */
     @Generated
     @Selector("insertedIndexes")
     public native NSIndexSet insertedIndexes();
@@ -199,6 +227,10 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     @Selector("insertedObjects")
     public native NSArray<? extends PHObject> insertedObjects();
 
+    /**
+     * The indexes of the removed items, relative to the 'before' state of the fetch result
+     * returns nil if hasIncrementalChanges is NO
+     */
     @Generated
     @Selector("removedIndexes")
     public native NSIndexSet removedIndexes();

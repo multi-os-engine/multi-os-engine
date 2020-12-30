@@ -19,6 +19,18 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum AVCaptureDevicePosition
+ * @abstract
+ *    Constants indicating the physical position of an AVCaptureDevice's hardware on the system.
+ * 
+ * @constant AVCaptureDevicePositionUnspecified
+ *    Indicates that the device's position relative to the system hardware is unspecified.
+ * @constant AVCaptureDevicePositionBack
+ *    Indicates that the device is physically located on the back of the system hardware.
+ * @constant AVCaptureDevicePositionFront
+ *    Indicates that the device is physically located on the front of the system hardware.
+ */
 @Generated
 public final class AVCaptureDevicePosition {
     @Generated @NInt public static final long Unspecified = 0x0000000000000000L;

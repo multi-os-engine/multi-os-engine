@@ -3,6 +3,13 @@ package apple.authenticationservices.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum ASAuthorizationAppleIDProviderCredentialState
+ * @abstract Authorization state of an Apple ID credential.
+ * @constant ASAuthorizationAppleIDProviderCredentialAuthorized The Opaque user ID is in good state.
+ * @constant ASAuthorizationAppleIDProviderCredentialRevoked The Opaque user ID was revoked by the user.
+ * @constant ASAuthorizationAppleIDProviderCredentialNotFound The Opaque user ID was not found.
+ */
 @Generated
 public final class ASAuthorizationAppleIDProviderCredentialState {
     @Generated

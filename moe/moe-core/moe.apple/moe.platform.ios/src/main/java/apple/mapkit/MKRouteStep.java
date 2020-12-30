@@ -150,6 +150,9 @@ public class MKRouteStep extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * step distance in meters
+     */
     @Generated
     @Selector("distance")
     public native double distance();
@@ -158,18 +161,30 @@ public class MKRouteStep extends NSObject {
     @Selector("init")
     public native MKRouteStep init();
 
+    /**
+     * localized written instructions
+     */
     @Generated
     @Selector("instructions")
     public native String instructions();
 
+    /**
+     * additional localized legal or warning notice related to this step (e.g. "Do not cross tracks when lights flash")
+     */
     @Generated
     @Selector("notice")
     public native String notice();
 
+    /**
+     * detailed step geometry
+     */
     @Generated
     @Selector("polyline")
     public native MKPolyline polyline();
 
+    /**
+     * step transport type (may differ from overall route transport type)
+     */
     @Generated
     @Selector("transportType")
     @NUInt

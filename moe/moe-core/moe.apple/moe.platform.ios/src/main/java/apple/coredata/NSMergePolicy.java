@@ -177,6 +177,11 @@ public class NSMergePolicy extends NSObject {
     @Selector("init")
     public native NSMergePolicy init();
 
+    /**
+     * In a subclass implementation of initWithMergeType:, you should invoke super with the NSMergePolicyType that is closest to the behavior you want.
+     * This will make it easier to use the superclass's implementation of -resolveConflicts:error:, and then customize the results.  You are strongly encouraged to do so.
+     * Due to the complexity of merging to-many relationships, this class is designed with the expectation that you call super as the base implemenation.
+     */
     @Generated
     @Selector("initWithMergeType:")
     public native NSMergePolicy initWithMergeType(@NUInt long ty);
@@ -186,16 +191,31 @@ public class NSMergePolicy extends NSObject {
     @NUInt
     public native long mergeType();
 
+    /**
+     * In a subclass, you are strongly encouraged to override initWithMergeType: and customize the results from calling super instead of performing your own actions from scratch.
+     * Correctly merging to-many relationships is very challenging and any mistakes will cause permanent data corruption in the form of dangling foreign keys.
+     * Calls -resolveOptimisticLockingVersionConflicts:error: and then -resolveConstraintConflicts:error:
+     */
     @Generated
     @Selector("resolveConflicts:error:")
     public native boolean resolveConflictsError(NSArray<?> list,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Resolve uniqueness constraint violations for the list of failures.
+     * Will be called after -resolveOptimisticLockingVersionConflicts:error:
+     */
     @Generated
     @Selector("resolveConstraintConflicts:error:")
     public native boolean resolveConstraintConflictsError(NSArray<? extends NSConstraintConflict> list,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Resolve optimistic locking failures for the list of failures. In a subclass, you are strongly encouraged to override initWithMergeType: and customize
+     *  the results from calling super instead of performing your own actions from scratch. Correctly merging to-many relationships is very challenging and
+     *  any mistakes will cause permanent data corruption in the form of dangling foreign keys.
+     * Will be called before -resolveConstraintConflicts:error:
+     */
     @Generated
     @Selector("resolveOptimisticLockingVersionConflicts:error:")
     public native boolean resolveOptimisticLockingVersionConflictsError(NSArray<? extends NSMergeConflict> list,

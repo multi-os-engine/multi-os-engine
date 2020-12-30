@@ -19,8 +19,15 @@ package apple.corefoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Create a string representation of the given number or value
+ * using the current state of the number formatter.
+ */
 @Generated
 public final class CFNumberFormatterOptionFlags {
+    /**
+     * only parse integers
+     */
     @Generated @NUInt public static final long kCFNumberFormatterParseIntegersOnly = 0x0000000000000001L;
 
     @Generated

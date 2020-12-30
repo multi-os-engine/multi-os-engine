@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MCAdvertiserAssistantDelegate")
 public interface MCAdvertiserAssistantDelegate {
+    /**
+     * An invitation was dismissed from screen.
+     */
     @Generated
     @IsOptional
     @Selector("advertiserAssistantDidDismissInvitation:")
@@ -37,6 +40,9 @@ public interface MCAdvertiserAssistantDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * An invitation will be presented to the user.
+     */
     @Generated
     @IsOptional
     @Selector("advertiserAssistantWillPresentInvitation:")

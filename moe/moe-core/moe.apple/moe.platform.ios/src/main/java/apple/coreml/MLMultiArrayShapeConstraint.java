@@ -90,6 +90,10 @@ public class MLMultiArrayShapeConstraint extends NSObject implements NSSecureCod
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * If type == MLMultiArrayShapeConstraintTypeEnumerated then
+     * only shapes in this set are allowed
+     */
     @Generated
     @Selector("enumeratedShapes")
     public native NSArray<? extends NSArray<? extends NSNumber>> enumeratedShapes();
@@ -146,6 +150,9 @@ public class MLMultiArrayShapeConstraint extends NSObject implements NSSecureCod
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Size of each dimension i must fall within sizeRangeForDimension[i].rangeValue
+     */
     @Generated
     @Selector("sizeRangeForDimension")
     public native NSArray<? extends NSValue> sizeRangeForDimension();

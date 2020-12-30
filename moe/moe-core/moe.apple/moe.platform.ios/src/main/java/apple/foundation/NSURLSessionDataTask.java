@@ -36,6 +36,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An NSURLSessionDataTask does not provide any additional
+ * functionality over an NSURLSessionTask and its presence is merely
+ * to provide lexical differentiation from download and upload tasks.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)

@@ -150,6 +150,9 @@ public class MPMediaPlaylistCreationMetadata extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Defaults to the requesting app's display name.
+     */
     @Generated
     @Selector("authorDisplayName")
     public native String authorDisplayName();
@@ -166,10 +169,16 @@ public class MPMediaPlaylistCreationMetadata extends NSObject {
     @Selector("initWithName:")
     public native MPMediaPlaylistCreationMetadata initWithName(String name);
 
+    /**
+     * The display name of the playlist.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * Defaults to the requesting app's display name.
+     */
     @Generated
     @Selector("setAuthorDisplayName:")
     public native void setAuthorDisplayName(String value);

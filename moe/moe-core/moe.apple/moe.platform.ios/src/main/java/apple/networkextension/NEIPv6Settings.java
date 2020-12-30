@@ -44,6 +44,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEIPv6Settings
+ * @discussion The NEIPv6Settings class declares the programmatic interface for an object that contains IPv6 settings.
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -159,6 +165,10 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
     @NInt
     public static native long version_static();
 
+    /**
+     * @property addresses
+     * @discussion An array of IPv6 addresses represented strings. These addresses will be set on the virtual interface used by the VPN tunnel.
+     */
     @Generated
     @Selector("addresses")
     public native NSArray<String> addresses();
@@ -173,10 +183,18 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * @property excludedRoutes
+     * @discussion An array of NEIPv6Route objects. Traffic matching these routes will be routed through the current primary physical interface of the device.
+     */
     @Generated
     @Selector("excludedRoutes")
     public native NSArray<? extends NEIPv6Route> excludedRoutes();
 
+    /**
+     * @property includedRoutes
+     * @discussion An array of NEIPv6Route objects. Traffic matching these routes will be routed through the virtual interface used by the VPN tunnel.
+     */
     @Generated
     @Selector("includedRoutes")
     public native NSArray<? extends NEIPv6Route> includedRoutes();
@@ -185,6 +203,13 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("init")
     public native NEIPv6Settings init();
 
+    /**
+     * @method initWithAddresses:networkPrefixLengths:
+     * @discussion Initialize a newly-allocated NEIPv6Settings object.
+     * @param addresses An array of IPv6 addresses represented as dotted decimal strings.
+     * @param networkPrefixLengths An array of NSNumber objects each containing the length in bits of the network prefix of the corresponding address in the addresses parameter.
+     * @return The initialized object.
+     */
     @Generated
     @Selector("initWithAddresses:networkPrefixLengths:")
     public native NEIPv6Settings initWithAddressesNetworkPrefixLengths(NSArray<String> addresses,
@@ -194,14 +219,26 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("initWithCoder:")
     public native NEIPv6Settings initWithCoder(NSCoder coder);
 
+    /**
+     * @property networkPrefixLengths
+     * @discussion An array of NSNumber objects each representing the length in bits of the network prefix of the corresponding address in the addresses property.
+     */
     @Generated
     @Selector("networkPrefixLengths")
     public native NSArray<? extends NSNumber> networkPrefixLengths();
 
+    /**
+     * @property excludedRoutes
+     * @discussion An array of NEIPv6Route objects. Traffic matching these routes will be routed through the current primary physical interface of the device.
+     */
     @Generated
     @Selector("setExcludedRoutes:")
     public native void setExcludedRoutes(NSArray<? extends NEIPv6Route> value);
 
+    /**
+     * @property includedRoutes
+     * @discussion An array of NEIPv6Route objects. Traffic matching these routes will be routed through the virtual interface used by the VPN tunnel.
+     */
     @Generated
     @Selector("setIncludedRoutes:")
     public native void setIncludedRoutes(NSArray<? extends NEIPv6Route> value);

@@ -90,6 +90,12 @@ public class MPSNNReshapeGradientNode extends MPSNNGradientFilterNode {
     @Selector("init")
     public native MPSNNReshapeGradientNode init();
 
+    /**
+     * @abstract   A node to represent the gradient of a reshape node.
+     * @param sourceGradient   The input gradient from the 'downstream' gradient filter.
+     * @param sourceImage      The input image from the forward reshape node.
+     * @return  A MPSCNNConvolutionGradientNode
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:")
     public native MPSNNReshapeGradientNode initWithSourceGradientSourceImageGradientState(MPSNNImageNode sourceGradient,
@@ -122,6 +128,12 @@ public class MPSNNReshapeGradientNode extends MPSNNGradientFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract   A node to represent the gradient of a reshape node.
+     * @param sourceGradient   The input gradient from the 'downstream' gradient filter.
+     * @param sourceImage      The input image from the forward reshape node.
+     * @return  A MPSNNReshapeGradientNode
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:")
     public static native MPSNNReshapeGradientNode nodeWithSourceGradientSourceImageGradientState(

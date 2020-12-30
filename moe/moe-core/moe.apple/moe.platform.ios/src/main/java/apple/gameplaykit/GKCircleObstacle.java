@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An obstacle with an impassible radius
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -162,10 +165,16 @@ public class GKCircleObstacle extends GKObstacle {
     @Selector("initWithRadius:")
     public native GKCircleObstacle initWithRadius(float radius);
 
+    /**
+     * Radius of the impassible circle
+     */
     @Generated
     @Selector("radius")
     public native float radius();
 
+    /**
+     * Radius of the impassible circle
+     */
     @Generated
     @Selector("setRadius:")
     public native void setRadius(float value);

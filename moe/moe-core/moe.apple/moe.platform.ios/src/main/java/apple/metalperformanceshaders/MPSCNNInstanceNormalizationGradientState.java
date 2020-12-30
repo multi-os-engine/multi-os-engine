@@ -28,6 +28,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSCNNInstanceNormalizationGradientState
+ * @dependency This depends on Metal.framework
+ * @discussion A state to hold information necessary to execute a gradient
+ *             pass for MPSCNNInstanceNormalization.  Gradient states should
+ *             be created by using the forward kernel's methods.  This will
+ *             ensure that the state captures all information necessary to
+ *             execute the corresponding gradient pass.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -60,6 +69,9 @@ public class MPSCNNInstanceNormalizationGradientState extends MPSNNGradientState
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @abstract   Return an MTLBuffer object with the state's current beta values..
+     */
     @Generated
     @Selector("beta")
     @MappedReturn(ObjCObjectMapper.class)
@@ -91,16 +103,25 @@ public class MPSCNNInstanceNormalizationGradientState extends MPSNNGradientState
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract   Return an MTLBuffer object with the state's current gamma values.
+     */
     @Generated
     @Selector("gamma")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLBuffer gamma();
 
+    /**
+     * @property   The MTLBuffer containing the gradient values for beta.
+     */
     @Generated
     @Selector("gradientForBeta")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLBuffer gradientForBeta();
 
+    /**
+     * @property   The MTLBuffer containing the gradient values for gamma.
+     */
     @Generated
     @Selector("gradientForGamma")
     @MappedReturn(ObjCObjectMapper.class)
@@ -148,6 +169,9 @@ public class MPSCNNInstanceNormalizationGradientState extends MPSNNGradientState
     @Selector("instanceMethodSignatureForSelector:")
     public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
+    /**
+     * @abstract The MPSCNNInstanceNormalization object that created this state object.
+     */
     @Generated
     @Selector("instanceNormalization")
     public native MPSCNNInstanceNormalization instanceNormalization();

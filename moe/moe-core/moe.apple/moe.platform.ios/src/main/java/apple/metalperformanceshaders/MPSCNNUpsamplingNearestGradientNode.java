@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Node representing a MPSCNNUpsamplingNearest kernel
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -90,6 +93,16 @@ public class MPSCNNUpsamplingNearestGradientNode extends MPSNNGradientFilterNode
     @Selector("init")
     public native MPSCNNUpsamplingNearestGradientNode init();
 
+    /**
+     * @abstract   A node to represent the gradient calculation for nearest upsampling training.
+     * @discussion [forwardFilter gradientFilterWithSources:] is a more convient way to do this.
+     * @param sourceGradient   The input gradient from the 'downstream' gradient filter.
+     * @param sourceImage      The input image from the forward filter node
+     * @param gradientState    The gradient state from the forward filter
+     * @param scaleFactorX     The X scale factor from the forward pass
+     * @param scaleFactorY     The Y scale factor from the forward pass
+     * @return  A MPSCNNUpsamplingNearestGradientNode
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:scaleFactorX:scaleFactorY:")
     public native MPSCNNUpsamplingNearestGradientNode initWithSourceGradientSourceImageGradientStateScaleFactorXScaleFactorY(
@@ -123,6 +136,16 @@ public class MPSCNNUpsamplingNearestGradientNode extends MPSNNGradientFilterNode
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract   A node to represent the gradient calculation for nearest upsampling training.
+     * @discussion [forwardFilter gradientFilterWithSources:] is a more convient way to do this.
+     * @param sourceGradient   The input gradient from the 'downstream' gradient filter.
+     * @param sourceImage      The input image from the forward filter node
+     * @param gradientState    The gradient state from the forward filter
+     * @param scaleFactorX     The X scale factor from the forward pass
+     * @param scaleFactorY     The Y scale factor from the forward pass
+     * @return  A MPSCNNUpsamplingNearestGradientNode
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:scaleFactorX:scaleFactorY:")
     public static native MPSCNNUpsamplingNearestGradientNode nodeWithSourceGradientSourceImageGradientStateScaleFactorXScaleFactorY(

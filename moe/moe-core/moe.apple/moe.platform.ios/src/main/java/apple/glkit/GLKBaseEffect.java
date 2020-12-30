@@ -153,15 +153,24 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     @NInt
     public static native long version_static();
 
+    /**
+     * GL_FALSE
+     */
     @Generated
     @Selector("colorMaterialEnabled")
     public native byte colorMaterialEnabled();
 
+    /**
+     * { 1.0, 1.0, 1.0, 1.0 }
+     */
     @Generated
     @Selector("constantColor")
     @ByValue
     public native GLKVector4 constantColor();
 
+    /**
+     * Disabled
+     */
     @Generated
     @Selector("fog")
     public native GLKEffectPropertyFog fog();
@@ -170,35 +179,59 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     @Selector("init")
     public native GLKBaseEffect init();
 
+    /**
+     * @"GLKBaseEffect"
+     */
     @Generated
     @Selector("label")
     public native String label();
 
+    /**
+     * Disabled
+     */
     @Generated
     @Selector("light0")
     public native GLKEffectPropertyLight light0();
 
+    /**
+     * Disabled
+     */
     @Generated
     @Selector("light1")
     public native GLKEffectPropertyLight light1();
 
+    /**
+     * Disabled
+     */
     @Generated
     @Selector("light2")
     public native GLKEffectPropertyLight light2();
 
+    /**
+     * { 0.2, 0.2, 0.2, 1.0 }
+     */
     @Generated
     @Selector("lightModelAmbientColor")
     @ByValue
     public native GLKVector4 lightModelAmbientColor();
 
+    /**
+     * GL_FALSE
+     */
     @Generated
     @Selector("lightModelTwoSided")
     public native byte lightModelTwoSided();
 
+    /**
+     * GLKLightingTypePerVertex
+     */
     @Generated
     @Selector("lightingType")
     public native int lightingType();
 
+    /**
+     * Default material state
+     */
     @Generated
     @Selector("material")
     public native GLKEffectPropertyMaterial material();
@@ -207,54 +240,93 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     @Selector("prepareToDraw")
     public native void prepareToDraw();
 
+    /**
+     * GL_FALSE
+     */
     @Generated
     @Selector("setColorMaterialEnabled:")
     public native void setColorMaterialEnabled(byte value);
 
+    /**
+     * { 1.0, 1.0, 1.0, 1.0 }
+     */
     @Generated
     @Selector("setConstantColor:")
     public native void setConstantColor(@ByValue GLKVector4 value);
 
+    /**
+     * @"GLKBaseEffect"
+     */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
+    /**
+     * { 0.2, 0.2, 0.2, 1.0 }
+     */
     @Generated
     @Selector("setLightModelAmbientColor:")
     public native void setLightModelAmbientColor(@ByValue GLKVector4 value);
 
+    /**
+     * GL_FALSE
+     */
     @Generated
     @Selector("setLightModelTwoSided:")
     public native void setLightModelTwoSided(byte value);
 
+    /**
+     * GLKLightingTypePerVertex
+     */
     @Generated
     @Selector("setLightingType:")
     public native void setLightingType(int value);
 
+    /**
+     * texture2d0, texture2d1
+     */
     @Generated
     @Selector("setTextureOrder:")
     public native void setTextureOrder(NSArray<? extends GLKEffectPropertyTexture> value);
 
+    /**
+     * GL_TRUE
+     */
     @Generated
     @Selector("setUseConstantColor:")
     public native void setUseConstantColor(byte value);
 
+    /**
+     * Disabled
+     */
     @Generated
     @Selector("texture2d0")
     public native GLKEffectPropertyTexture texture2d0();
 
+    /**
+     * Disabled
+     */
     @Generated
     @Selector("texture2d1")
     public native GLKEffectPropertyTexture texture2d1();
 
+    /**
+     * texture2d0, texture2d1
+     */
     @Generated
     @Selector("textureOrder")
     public native NSArray<? extends GLKEffectPropertyTexture> textureOrder();
 
+    /**
+     * Identity Matrices
+     */
     @Generated
     @Selector("transform")
     public native GLKEffectPropertyTransform transform();
 
+    /**
+     * GL_TRUE
+     */
     @Generated
     @Selector("useConstantColor")
     public native byte useConstantColor();

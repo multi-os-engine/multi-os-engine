@@ -32,14 +32,24 @@ public interface MPMediaPlayback {
     @Selector("beginSeekingBackward")
     void beginSeekingBackward();
 
+    /**
+     * The seeking rate will increase the longer scanning is active.
+     */
     @Generated
     @Selector("beginSeekingForward")
     void beginSeekingForward();
 
+    /**
+     * The current playback rate of the now playing item. Default is 1.0 (normal speed).
+     * Pausing will set the rate to 0.0. Setting the rate to non-zero implies playing.
+     */
     @Generated
     @Selector("currentPlaybackRate")
     float currentPlaybackRate();
 
+    /**
+     * The current playback time of the now playing item in seconds.
+     */
     @Generated
     @Selector("currentPlaybackTime")
     double currentPlaybackTime();
@@ -48,30 +58,53 @@ public interface MPMediaPlayback {
     @Selector("endSeeking")
     void endSeeking();
 
+    /**
+     * Returns YES if prepared for playback.
+     */
     @Generated
     @Selector("isPreparedToPlay")
     boolean isPreparedToPlay();
 
+    /**
+     * Pauses playback if playing.
+     */
     @Generated
     @Selector("pause")
     void pause();
 
+    /**
+     * Plays items from the current queue, resuming paused playback if possible.
+     */
     @Generated
     @Selector("play")
     void play();
 
+    /**
+     * Prepares the current queue for playback, interrupting any active (non-mixible) audio sessions.
+     * Automatically invoked when -play is called if the player is not already prepared.
+     */
     @Generated
     @Selector("prepareToPlay")
     void prepareToPlay();
 
+    /**
+     * The current playback rate of the now playing item. Default is 1.0 (normal speed).
+     * Pausing will set the rate to 0.0. Setting the rate to non-zero implies playing.
+     */
     @Generated
     @Selector("setCurrentPlaybackRate:")
     void setCurrentPlaybackRate(float value);
 
+    /**
+     * The current playback time of the now playing item in seconds.
+     */
     @Generated
     @Selector("setCurrentPlaybackTime:")
     void setCurrentPlaybackTime(double value);
 
+    /**
+     * Ends playback. Calling -play again will start from the beginnning of the queue.
+     */
     @Generated
     @Selector("stop")
     void stop();

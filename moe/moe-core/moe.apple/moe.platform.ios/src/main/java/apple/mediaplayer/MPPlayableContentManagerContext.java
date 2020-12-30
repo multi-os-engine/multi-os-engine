@@ -39,6 +39,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPPlayableContentManagerContext represents the current state of
+ * the playable content endpoint. A context is retrievable from an instance
+ * of MPPlayableContentManager.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -155,19 +160,32 @@ public class MPPlayableContentManagerContext extends NSObject {
     @Selector("contentLimitsEnabled")
     public native boolean contentLimitsEnabled();
 
+    /**
+     * Represents whether content limits are being enforced by the content server or not.
+     */
     @Generated
     @Selector("contentLimitsEnforced")
     public native boolean contentLimitsEnforced();
 
+    /**
+     * Represents whether the content server is available or not.
+     */
     @Generated
     @Selector("endpointAvailable")
     public native boolean endpointAvailable();
 
+    /**
+     * The number of items the content server will display when content limiting is enforced.
+     * Returns NSIntegerMax if the content server will never limit the number of items.
+     */
     @Generated
     @Selector("enforcedContentItemsCount")
     @NInt
     public native long enforcedContentItemsCount();
 
+    /**
+     * The depth of the navigation hierarchy the content server will allow. Exceeding this limit will result in a crash.
+     */
     @Generated
     @Selector("enforcedContentTreeDepth")
     @NInt

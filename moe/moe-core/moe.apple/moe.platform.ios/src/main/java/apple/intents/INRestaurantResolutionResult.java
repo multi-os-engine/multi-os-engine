@@ -89,6 +89,9 @@ public class INRestaurantResolutionResult extends INIntentResolutionResult {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * This resolution result is to confirm if this is the restaurant with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithRestaurantToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -102,6 +105,9 @@ public class INRestaurantResolutionResult extends INIntentResolutionResult {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * This resolution result is to disambiguate between the provided restaurants.
+     */
     @Generated
     @Selector("disambiguationWithRestaurantsToDisambiguate:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -162,6 +168,10 @@ public class INRestaurantResolutionResult extends INIntentResolutionResult {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to proceed, with a given restaurant. The resolvedRestaurant can be different than the original restaurant. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedRestaurant:")
     @MappedReturn(ObjCObjectMapper.class)

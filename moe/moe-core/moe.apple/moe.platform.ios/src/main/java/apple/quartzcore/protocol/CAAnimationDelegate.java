@@ -25,11 +25,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Delegate methods for CAAnimation.
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CAAnimationDelegate")
 public interface CAAnimationDelegate {
+    /**
+     * Called when the animation begins its active duration.
+     */
     @Generated
     @IsOptional
     @Selector("animationDidStart:")
@@ -37,6 +43,12 @@ public interface CAAnimationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the animation either completes its active duration or
+     * is removed from the object it is attached to (i.e. the layer). 'flag'
+     * is true if the animation reached the end of its active duration
+     * without being removed.
+     */
     @Generated
     @IsOptional
     @Selector("animationDidStop:finished:")

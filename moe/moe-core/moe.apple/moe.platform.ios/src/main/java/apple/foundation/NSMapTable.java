@@ -168,10 +168,16 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject
     @NInt
     public static native long version_static();
 
+    /**
+     * entries are not necessarily purged right away when the weak key is reclaimed
+     */
     @Generated
     @Selector("weakToStrongObjectsMapTable")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> weakToStrongObjectsMapTable();
 
+    /**
+     * entries are not necessarily purged right away when the weak key or object is reclaimed
+     */
     @Generated
     @Selector("weakToWeakObjectsMapTable")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> weakToWeakObjectsMapTable();
@@ -193,6 +199,9 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject
     public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
             @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
+    /**
+     * create a dictionary of contents
+     */
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<_KeyType, _ObjectType> dictionaryRepresentation();
@@ -223,6 +232,9 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject
     @Selector("keyEnumerator")
     public native NSEnumerator<_KeyType> keyEnumerator();
 
+    /**
+     * return an NSPointerFunctions object reflecting the functions in use.  This is a new autoreleased object that can be subsequently modified and/or used directly in the creation of other pointer "collections".
+     */
     @Generated
     @Selector("keyPointerFunctions")
     public native NSPointerFunctions keyPointerFunctions();
@@ -244,6 +256,9 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject
     @Selector("removeObjectForKey:")
     public native void removeObjectForKey(@Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
+    /**
+     * add/replace value (CFDictionarySetValue, NSMapInsert)
+     */
     @Generated
     @Selector("setObject:forKey:")
     public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,

@@ -44,6 +44,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CKQuerySubscription
+ * 
+ * @abstract A subscription that fires whenever a change matching the predicate occurs.
+ * 
+ * @discussion @c CKQuerySubscriptions are not supported in a @c sharedCloudDatabase
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -187,19 +194,36 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
     public native CKQuerySubscription initWithRecordTypePredicateSubscriptionIDOptions(String recordType,
             NSPredicate predicate, String subscriptionID, @NUInt long querySubscriptionOptions);
 
+    /**
+     * A predicate that determines when the subscription fires.
+     */
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
+    /**
+     * @abstract Options flags describing the firing behavior subscription.
+     * 
+     * @discussion One of
+     * @c CKQuerySubscriptionOptionsFiresOnRecordCreation,
+     * @c CKQuerySubscriptionOptionsFiresOnRecordUpdate, or
+     * @c CKQuerySubscriptionOptionsFiresOnRecordDeletion must be specified or an @c NSInvalidArgumentException will be thrown.
+     */
     @Generated
     @Selector("querySubscriptionOptions")
     @NUInt
     public native long querySubscriptionOptions();
 
+    /**
+     * The record type that this subscription watches
+     */
     @Generated
     @Selector("recordType")
     public native String recordType();
 
+    /**
+     * Optional property.  If set, a query subscription is scoped to only record changes in the indicated zone.
+     */
     @Generated
     @Selector("setZoneID:")
     public native void setZoneID(CKRecordZoneID value);
@@ -210,6 +234,9 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
         return supportsSecureCoding();
     }
 
+    /**
+     * Optional property.  If set, a query subscription is scoped to only record changes in the indicated zone.
+     */
     @Generated
     @Selector("zoneID")
     public native CKRecordZoneID zoneID();

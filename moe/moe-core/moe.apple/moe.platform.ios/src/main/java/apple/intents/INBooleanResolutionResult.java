@@ -90,6 +90,9 @@ public class INBooleanResolutionResult extends INIntentResolutionResult {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the boolean value with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -157,6 +160,9 @@ public class INBooleanResolutionResult extends INIntentResolutionResult {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed with a given value. The resolvedValue need not be identical to the input value. If the app extension wants to continue with a 'nil' value, it must use +notRequired.
+     */
     @Generated
     @Selector("successWithResolvedValue:")
     @MappedReturn(ObjCObjectMapper.class)

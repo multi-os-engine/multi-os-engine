@@ -28,6 +28,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CIBlendKernel is a special type of color kernel that blends two images.
+ * 
+ * Blend kernel functions are declared akin to this example:
+ *   kernel vec4 myBlendKernel (__sample fore, __sample back)
+ * 
+ * A blend kernel function must have exactly two arguments of type __sample.
+ * The first argument represents the value of the source pixel and the second
+ * represents that of the old destination. The vec4 returned by the kernel will
+ * be the new destination color.
+ * The kernel should not call sample(), samplerCoord(), or samplerTransform().
+ * The function must return a vec4 pixel color.
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -56,6 +69,16 @@ public class CIBlendKernel extends CIColorKernel {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Apply the receiver CIBlendKernel to produce a new CIImage object
+     * by blending a foreground and background images.
+     * 
+     * The 'extent' of the result image will be determined by the reciver and
+     * the extent of the forground and background images.  For most of the
+     * builtin blend kernels (as well as custom blend kernels) the result image
+     * extent will be the union of the forground and background image
+     * extents.
+     */
     @Generated
     @Selector("applyWithForeground:background:")
     public native CIImage applyWithForegroundBackground(CIImage foreground, CIImage background);
@@ -82,6 +105,10 @@ public class CIBlendKernel extends CIColorKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Porter Duff
+     * http://dl.acm.org/citation.cfm?id=808606
+     */
     @Generated
     @Selector("clear")
     public static native CIBlendKernel clear();
@@ -98,6 +125,9 @@ public class CIBlendKernel extends CIColorKernel {
     @Selector("colorDodge")
     public static native CIBlendKernel colorDodge();
 
+    /**
+     * Component-wise operators
+     */
     @Generated
     @Selector("componentAdd")
     public static native CIBlendKernel componentAdd();
@@ -179,6 +209,9 @@ public class CIBlendKernel extends CIColorKernel {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Standard nonseparable blend modes
+     */
     @Generated
     @Selector("hue")
     public static native CIBlendKernel hue();
@@ -214,6 +247,9 @@ public class CIBlendKernel extends CIColorKernel {
     public static native CIBlendKernel kernelWithFunctionNameFromMetalLibraryDataOutputPixelFormatError(String name,
             NSData data, int format, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * The string argument should contain a program with one custom blend kernel.
+     */
     @Generated
     @Selector("kernelWithString:")
     public static native CIBlendKernel kernelWithString(String string);
@@ -250,6 +286,9 @@ public class CIBlendKernel extends CIColorKernel {
     @Selector("luminosity")
     public static native CIBlendKernel luminosity();
 
+    /**
+     * Standard separable blend modes
+     */
     @Generated
     @Selector("multiply")
     public static native CIBlendKernel multiply();
@@ -312,6 +351,9 @@ public class CIBlendKernel extends CIColorKernel {
     @Selector("sourceOver")
     public static native CIBlendKernel sourceOver();
 
+    /**
+     * Additional blend modes
+     */
     @Generated
     @Selector("subtract")
     public static native CIBlendKernel subtract();
@@ -329,6 +371,16 @@ public class CIBlendKernel extends CIColorKernel {
     @Selector("vividLight")
     public static native CIBlendKernel vividLight();
 
+    /**
+     * Apply the receiver CIBlendKernel to produce a new CIImage object
+     * by blending a foreground and background images in the specifid colorspace.
+     * 
+     * The 'extent' of the result image will be determined by the reciver and
+     * the extent of the forground and background images.  For most of the
+     * builtin blend kernels (as well as custom blend kernels) the result image
+     * extent will be the union of the forground and background image
+     * extents.
+     */
     @Generated
     @Selector("applyWithForeground:background:colorSpace:")
     public native CIImage applyWithForegroundBackgroundColorSpace(CIImage foreground, CIImage background,

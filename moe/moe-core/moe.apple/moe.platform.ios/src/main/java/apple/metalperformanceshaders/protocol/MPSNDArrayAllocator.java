@@ -20,6 +20,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MPSNDArrayAllocator")
 public interface MPSNDArrayAllocator extends NSSecureCoding, NSCopying {
+    /**
+     * @abstract   Create a new MPSNDArray
+     * @discussion See class description for sample implementation
+     * @param          cmdBuf      The MTLCommandBuffer on which the array will be initialized.
+     *                             cmdBuf.device encodes the MTLDevice.
+     * @param          descriptor  A MPSNDArrayDescriptor containing the array parameters to use.
+     *                             This format is the result of your MPSPadding policy.
+     * @param          kernel      The kernel that will overwrite the array returned by the filter.
+     *                             Note that the MPS implementations of this protocol don't need
+     *                             this field. It is provided for your convenience.
+     * 
+     * @return         A valid MPSNDArray or MPSTemporaryNDArray. It will be automatically released when the command buffer completes.
+     */
     @Generated
     @Selector("arrayForCommandBuffer:arrayDescriptor:kernel:")
     MPSNDArray arrayForCommandBufferArrayDescriptorKernel(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,

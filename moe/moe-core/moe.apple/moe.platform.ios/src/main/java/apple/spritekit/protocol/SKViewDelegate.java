@@ -30,6 +30,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKViewDelegate")
 public interface SKViewDelegate {
+    /**
+     * Allows the client to dynamically control the render rate.
+     * 
+     * return YES to initiate an update and render for the target time.
+     * return NO to skip update and render for this target time.
+     */
     @Generated
     @IsOptional
     @Selector("view:shouldRenderAtTime:")

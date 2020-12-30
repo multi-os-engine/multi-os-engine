@@ -101,6 +101,9 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Image to be displayed alongside the element's title.
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -166,6 +169,9 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
         return supportsSecureCoding();
     }
 
+    /**
+     * The element's title.
+     */
     @Generated
     @Selector("title")
     public native String title();

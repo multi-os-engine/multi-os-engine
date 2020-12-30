@@ -19,6 +19,14 @@ package apple.coretext.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum       CTFontOptions
+ * @abstract   Options for descriptor match and font creation.
+ * @constant   kCTFontOptionsPreventAutoActivation
+ *             Prevents automatic font activation from taking place.
+ * @constant   kCTFontOptionsPreferSystemFont
+ *             Font matching will prefer to match Apple system fonts.
+ */
 @Generated
 public final class CTFontOptions {
     @Generated @NUInt public static final long Default = 0x0000000000000000L;

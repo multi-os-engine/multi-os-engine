@@ -26,38 +26,70 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @protocol MTLCommandQueue
+ * @brief A serial queue of command buffers to be executed by the device.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLCommandQueue")
 public interface MTLCommandQueue {
+    /**
+     * @method commandBuffer
+     * @abstract Returns a new autoreleased command buffer used to encode work into this queue that 
+     * maintains strong references to resources used within the command buffer.
+     */
     @Generated
     @Selector("commandBuffer")
     @MappedReturn(ObjCObjectMapper.class)
     MTLCommandBuffer commandBuffer();
 
+    /**
+     * @method commandBufferWithUnretainedReferences
+     * @abstract Returns a new autoreleased command buffer used to encode work into this queue that 
+     * does not maintain strong references to resources used within the command buffer.
+     */
     @Generated
     @Selector("commandBufferWithUnretainedReferences")
     @MappedReturn(ObjCObjectMapper.class)
     MTLCommandBuffer commandBufferWithUnretainedReferences();
 
+    /**
+     * @brief The device this queue will submit to
+     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     MTLDevice device();
 
+    /**
+     * @method insertDebugCaptureBoundary
+     * @abstract Inform Xcode about when debug capture should start and stop.
+     */
     @Generated
     @Selector("insertDebugCaptureBoundary")
     void insertDebugCaptureBoundary();
 
+    /**
+     * @brief A string to help identify this object
+     */
     @Generated
     @Selector("label")
     String label();
 
+    /**
+     * @brief A string to help identify this object
+     */
     @Generated
     @Selector("setLabel:")
     void setLabel(String value);
 
+    /**
+     * @method commandBufferWithDescriptor
+     * @param descriptor The requested properties of the command buffer.
+     * @abstract Returns a new autoreleased command buffer used to encode work into this queue.
+     */
     @Generated
     @Selector("commandBufferWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)

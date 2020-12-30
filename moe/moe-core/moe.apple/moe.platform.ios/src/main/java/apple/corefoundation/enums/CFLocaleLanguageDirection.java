@@ -19,6 +19,9 @@ package apple.corefoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Map a locale identifier to a Windows LCID.
+ */
 @Generated
 public final class CFLocaleLanguageDirection {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;

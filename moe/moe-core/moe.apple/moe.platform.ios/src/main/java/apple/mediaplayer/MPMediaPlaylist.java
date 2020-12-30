@@ -43,6 +43,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An MPMediaPlaylist is a collection of related MPMediaItems in an MPMediaLibrary.
+ * Playlists have a unique identifier which persists across application launches.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)

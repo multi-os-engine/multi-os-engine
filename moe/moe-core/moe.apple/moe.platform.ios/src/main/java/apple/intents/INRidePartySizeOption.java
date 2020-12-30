@@ -178,20 +178,32 @@ public class INRidePartySizeOption extends NSObject implements NSCopying, NSSecu
     @Selector("initWithCoder:")
     public native INRidePartySizeOption initWithCoder(NSCoder coder);
 
+    /**
+     * A single party size in a set of party size selections. Each size may have a different price range.
+     */
     @Generated
     @Selector("initWithPartySizeRange:sizeDescription:priceRange:")
     public native INRidePartySizeOption initWithPartySizeRangeSizeDescriptionPriceRange(@ByValue NSRange partySizeRange,
             String sizeDescription, INPriceRange priceRange);
 
+    /**
+     * The number of people allowed, e.g. NSMakeRange(1, 0) for one person, or NSMakeRange(1, 2) for 1 to 3 people.
+     */
     @Generated
     @Selector("partySizeRange")
     @ByValue
     public native NSRange partySizeRange();
 
+    /**
+     * the price range for this party size, which may be different from the indicative price range for the ride. If nil, the price range for the associated ride is valid instead.
+     */
     @Generated
     @Selector("priceRange")
     public native INPriceRange priceRange();
 
+    /**
+     * e.g. "1 passenger" or "1-3 passengers".
+     */
     @Generated
     @Selector("sizeDescription")
     public native String sizeDescription();

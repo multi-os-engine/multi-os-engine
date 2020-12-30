@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The result returned when executing an NSBatchInsertRequest
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -125,6 +128,9 @@ public class NSBatchInsertResult extends NSPersistentStoreResult {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Return the result. See NSBatchInsertRequestResultType for options
+     */
     @Generated
     @Selector("result")
     @MappedReturn(ObjCObjectMapper.class)

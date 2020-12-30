@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract A shortcut is an action that can be suggested by the system or added to Siri.
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -109,10 +112,18 @@ public class INShortcut extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native INShortcut initWithCoder(NSCoder coder);
 
+    /**
+     * @abstract Creates a shortcut with the given intent.
+     * @param intent Unless user configurable, must have a title and have valid shortcut types.
+     * @return Will return @c nil (and log an error) if the intent isn't valid.
+     */
     @Generated
     @Selector("initWithIntent:")
     public native INShortcut initWithIntent(INIntent intent);
 
+    /**
+     * @abstract Creates a shortcut with the given user activity.
+     */
     @Generated
     @Selector("initWithUserActivity:")
     public native INShortcut initWithUserActivity(NSUserActivity userActivity);
@@ -130,6 +141,10 @@ public class INShortcut extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * @abstract The intent that will be performed when this shortcut is invoked.
+     * @discussion Is @c nil if the shortcut was created with a @c NSUserActivity.
+     */
     @Generated
     @Selector("intent")
     public native INIntent intent();
@@ -174,6 +189,10 @@ public class INShortcut extends NSObject implements NSSecureCoding, NSCopying {
         return supportsSecureCoding();
     }
 
+    /**
+     * @abstract The user activity that will be performed when this shortcut is invoked.
+     * @discussion Is @c nil if the shortcut was created with an @c INIntent.
+     */
     @Generated
     @Selector("userActivity")
     public native NSUserActivity userActivity();

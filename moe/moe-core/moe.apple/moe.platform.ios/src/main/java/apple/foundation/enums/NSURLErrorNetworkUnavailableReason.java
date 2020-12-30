@@ -3,6 +3,11 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum Codes associated with NSURLErrorNetworkUnavailableReasonKey
+ * @abstract Constants used by NSError to indicate that a URLSessionTask failed because of unsatisfiable network constraints.
+ * @discussion For example if the URLSessionConfiguration property allowsExpensiveNetworkAccess was set to NO and the only interfaces available were marked as expensive then the task would fail with a NSURLErrorNotConnectedToInternet error and the userInfo dictionary would contain the value NSURLErrorNetworkUnavailableReasonExpensive for the key NSURLErrorNetworkUnavailableReason.
+ */
 @Generated
 public final class NSURLErrorNetworkUnavailableReason {
     @Generated

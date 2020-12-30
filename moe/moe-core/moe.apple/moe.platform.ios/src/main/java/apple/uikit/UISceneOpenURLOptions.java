@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This object is vended to your application's UISceneDelegate when it is asked to open a URL
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -51,6 +54,9 @@ public class UISceneOpenURLOptions extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * A property-list typed object corresponding to what the originating application passed in UIDocumentInteractionController's annotation property
+     */
     @Generated
     @Selector("annotation")
     @MappedReturn(ObjCObjectMapper.class)
@@ -122,6 +128,9 @@ public class UISceneOpenURLOptions extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Copy the file before use if this value is NO
+     */
     @Generated
     @Selector("openInPlace")
     public native boolean openInPlace();
@@ -138,6 +147,10 @@ public class UISceneOpenURLOptions extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * A NSString containing the bundle ID of the originating application.
+     * non-nil if the originating application and this application share the same team identifier.
+     */
     @Generated
     @Selector("sourceApplication")
     public native String sourceApplication();

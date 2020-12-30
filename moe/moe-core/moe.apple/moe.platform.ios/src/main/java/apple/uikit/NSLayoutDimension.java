@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This layout anchor subclass is used for sizes (width & height).
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -151,15 +154,24 @@ public class NSLayoutDimension extends NSLayoutAnchor<NSLayoutDimension> {
     @NInt
     public static native long version_static();
 
+    /**
+     * These methods return an inactive constraint of the form thisAnchor = otherAnchor * multiplier.
+     */
     @Generated
     @Selector("constraintEqualToAnchor:multiplier:")
     public native NSLayoutConstraint constraintEqualToAnchorMultiplier(NSLayoutDimension anchor, @NFloat double m);
 
+    /**
+     * These methods return an inactive constraint of the form thisAnchor = otherAnchor * multiplier + constant.
+     */
     @Generated
     @Selector("constraintEqualToAnchor:multiplier:constant:")
     public native NSLayoutConstraint constraintEqualToAnchorMultiplierConstant(NSLayoutDimension anchor,
             @NFloat double m, @NFloat double c);
 
+    /**
+     * These methods return an inactive constraint of the form thisVariable = constant.
+     */
     @Generated
     @Selector("constraintEqualToConstant:")
     public native NSLayoutConstraint constraintEqualToConstant(@NFloat double c);

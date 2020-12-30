@@ -47,6 +47,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class			AVAssetDownloadURLSession
+ * @abstract		A subclass of NSURLSession to support AVAssetDownloadTask.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -149,6 +153,16 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     @Selector("sessionWithConfiguration:")
     public static native NSURLSession sessionWithConfiguration(NSURLSessionConfiguration configuration);
 
+    /**
+     * @method		sessionWithConfiguration:assetDownloadDelegate:delegateQueue:
+     * @abstract		Creates and initializes an AVAssetDownloadURLSession for use with AVAssetDownloadTasks.
+     * @param			configuration
+     * 			The configuration for this URLSession. Must be a background configuration.
+     * @param			assetDownloadDelegate
+     * 			The delegate object to handle asset download progress updates and other session related events.
+     * @param			delegateQueue
+     * 			The queue to receive delegate callbacks on. If nil, a serial queue will be provided.
+     */
     @Generated
     @Selector("sessionWithConfiguration:assetDownloadDelegate:delegateQueue:")
     public static native AVAssetDownloadURLSession sessionWithConfigurationAssetDownloadDelegateDelegateQueue(
@@ -178,11 +192,35 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     @NInt
     public static native long version_static();
 
+    /**
+     * @method		assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options:
+     * @abstract		Creates and initializes an AVAssetDownloadTask to be used with this AVAssetDownloadURLSession.
+     * @discussion	This method may return nil if the URLSession has been invalidated.
+     * @param			URLAsset
+     * 			The AVURLAsset to download locally.
+     * @param			assetTitle
+     * 			A human readable title for this asset, expected to be as suitable as possible for the user's preferred languages. Will show up in the usage pane of the settings app.
+     * @param			assetArtworkData
+     * 			NSData representing artwork data for this asset. Optional. Will show up in the usage pane of the settings app. Must work with +[UIImage imageWithData:].
+     * @param			options
+     * 			See AVAssetDownloadTask*Key above. Configures non-default behavior for the download task. Using this parameter is required for downloading non-default media selections for HLS assets.
+     */
     @Generated
     @Selector("assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options:")
     public native AVAssetDownloadTask assetDownloadTaskWithURLAssetAssetTitleAssetArtworkDataOptions(
             AVURLAsset URLAsset, String title, NSData artworkData, NSDictionary<String, ?> options);
 
+    /**
+     * @method		assetDownloadTaskWithURLAsset:destinationURL:options:
+     * @abstract		Creates and initializes an AVAssetDownloadTask to be used with this AVAssetDownloadURLSession.
+     * @discussion	This method may return nil if the URLSession has been invalidated.
+     * @param			URLAsset
+     * 			The AVURLAsset to download locally.
+     * @param			destinationURL
+     * 			The local URL to download the asset to. This must be a file URL.
+     * @param			options
+     * 			See AVAssetDownloadTask*Key above. Configures non-default behavior for the download task. Using this parameter is required for downloading non-default media selections for HLS assets.
+     */
     @Generated
     @Selector("assetDownloadTaskWithURLAsset:destinationURL:options:")
     public native AVAssetDownloadTask assetDownloadTaskWithURLAssetDestinationURLOptions(AVURLAsset URLAsset,
@@ -192,6 +230,21 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     @Selector("init")
     public native AVAssetDownloadURLSession init();
 
+    /**
+     * @method		aggregateAssetDownloadTaskWithURLAsset:mediaSelections:assetTitle:assetArtworkData:options:
+     * @abstract		Creates and initializes an AVAggregateAssetDownloadTask to download multiple AVMediaSelections on an AVURLAsset.
+     * @discussion	This method may return nil if the URLSession has been invalidated. The value of AVAssetDownloadTaskMediaSelectionKey will be ignored.
+     * @param			URLAsset
+     * 			The AVURLAsset to download locally.
+     * @param			mediaSelections
+     * 			A list of AVMediaSelections. Each AVMediaSelection will correspond to a childAssetDownloadTask. Use -[AVAsset allMediaSelections] to download all AVMediaSelections on this AVAsset.
+     * @param			assetTitle
+     * 			A human readable title for this asset, expected to be as suitable as possible for the user's preferred languages. Will show up in the usage pane of the settings app.
+     * @param			assetArtworkData
+     * 			Artwork data for this asset. Optional. Will show up in the usage pane of the settings app.
+     * @param			options
+     * 			See AVAssetDownloadTask*Key above. Configures non-default behavior for the download task.
+     */
     @Generated
     @Selector("aggregateAssetDownloadTaskWithURLAsset:mediaSelections:assetTitle:assetArtworkData:options:")
     public native AVAggregateAssetDownloadTask aggregateAssetDownloadTaskWithURLAssetMediaSelectionsAssetTitleAssetArtworkDataOptions(

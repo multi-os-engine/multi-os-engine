@@ -81,10 +81,16 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    /**
+     * The dashboardController object for this scene.
+     */
     @Generated
     @Selector("dashboardController")
     public native CPDashboardController dashboardController();
 
+    /**
+     * The UIWindow created for this CPTemplateApplicationDashboardScene
+     */
     @Generated
     @Selector("dashboardWindow")
     public native UIWindow dashboardWindow();
@@ -93,6 +99,9 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * The delegate for a CPTemplateApplicationDashboardScene must conform to the CPTemplateApplicationDashboardSceneDelegate protocol.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -151,6 +160,9 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The delegate for a CPTemplateApplicationDashboardScene must conform to the CPTemplateApplicationDashboardSceneDelegate protocol.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate(@Mapped(ObjCObjectMapper.class) Object value);

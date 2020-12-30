@@ -21,6 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIKeyModifierFlags {
+    /**
+     * This bit indicates CapsLock
+     */
     @Generated @NInt public static final long AlphaShift = 0x0000000000010000L;
     @Generated @NInt public static final long Shift = 0x0000000000020000L;
     @Generated @NInt public static final long Control = 0x0000000000040000L;

@@ -164,10 +164,16 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntentResponse ex
     @NInt
     public native long code();
 
+    /**
+     * default booking time for an available bookings request
+     */
     @Generated
     @Selector("defaultBookingDate")
     public native NSDate defaultBookingDate();
 
+    /**
+     * default party size for an available bookings request
+     */
     @Generated
     @Selector("defaultPartySize")
     @NUInt

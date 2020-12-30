@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Mutable Set	***************
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -196,6 +199,9 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
     @Selector("addObjectsFromArray:")
     public native void addObjectsFromArray(NSArray<_ObjectType> array);
 
+    /**
+     * evaluate a predicate against a set of objects and filter the mutable set directly
+     */
     @Generated
     @Selector("filterUsingPredicate:")
     public native void filterUsingPredicate(NSPredicate predicate);

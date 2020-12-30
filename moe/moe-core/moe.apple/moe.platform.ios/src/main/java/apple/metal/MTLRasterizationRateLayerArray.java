@@ -23,6 +23,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface MTLRasterizationRateLayerArray
+ * @abstract Mutable array of MTLRasterizationRateLayerDescriptor
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -117,6 +121,11 @@ public class MTLRasterizationRateLayerArray extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method objectAtIndexedSubscript:
+     * @return The MTLRasterizationRateLayerDescriptor instance for the given layerIndex, or nil if no instance hasn't been set for this index.
+     * @discussion Use setObject:atIndexedSubscript: to set the layer
+     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MTLRasterizationRateLayerDescriptor objectAtIndexedSubscript(@NUInt long layerIndex);
@@ -129,6 +138,11 @@ public class MTLRasterizationRateLayerArray extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @method setObject:atIndexedSubscript:
+     * @abstract Sets the MTLRasterizationRateLayerDescriptor instance for the given layerIndex.
+     * @discussion The previous instance at this index will be overwritten.
+     */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(MTLRasterizationRateLayerDescriptor layer, @NUInt long layerIndex);

@@ -19,6 +19,11 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum          HKCategoryValueCervicalMucusQuality
+ * @abstract      Set of values that may be used for HKCategorySamples with the HKCategoryValueCervicalMucusQuality type.
+ * @discussion    These cervical mucus quality values are ordered from least-fertile (Dry) to most-fertile (EggWhite).
+ */
 @Generated
 public final class HKCategoryValueCervicalMucusQuality {
     @Generated @NInt public static final long Dry = 0x0000000000000001L;

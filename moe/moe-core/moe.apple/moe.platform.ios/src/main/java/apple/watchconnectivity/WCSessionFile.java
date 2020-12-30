@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Contains file information, such as the file's location and optional user info
+ */
 @Generated
 @Library("WatchConnectivity")
 @Runtime(ObjCRuntime.class)

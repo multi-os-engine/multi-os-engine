@@ -153,6 +153,10 @@ public class UIColorPickerViewController extends UIViewController {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Sets the selected color on the color picker and is updated when the user changes the selection.
+     * Does support KVO.
+     */
     @Generated
     @Selector("selectedColor")
     public native UIColor selectedColor();
@@ -173,10 +177,19 @@ public class UIColorPickerViewController extends UIViewController {
         }
     }
 
+    /**
+     * Sets the selected color on the color picker and is updated when the user changes the selection.
+     * Does support KVO.
+     */
     @Generated
     @Selector("setSelectedColor:")
     public native void setSelectedColor(UIColor value);
 
+    /**
+     * Controls whether the color picker shows an alpha slider or not.
+     * 
+     * If set to `NO` users are only able to pick fully opaque colors.
+     */
     @Generated
     @Selector("setSupportsAlpha:")
     public native void setSupportsAlpha(boolean value);
@@ -189,6 +202,11 @@ public class UIColorPickerViewController extends UIViewController {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Controls whether the color picker shows an alpha slider or not.
+     * 
+     * If set to `NO` users are only able to pick fully opaque colors.
+     */
     @Generated
     @Selector("supportsAlpha")
     public native boolean supportsAlpha();

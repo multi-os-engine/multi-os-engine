@@ -9,6 +9,12 @@ public final class ICReturnPTPDeviceErrorCode {
     private ICReturnPTPDeviceErrorCode() {
     }
 
+    /**
+     * PTP Command failed to send
+     */
     @Generated @NInt public static final long FailedToSendCommand = 0xFFFFFFFFFFFFACFEL;
+    /**
+     * PTP Command not authorized
+     */
     @Generated @NInt public static final long NotAuthorizedToSendCommand = 0xFFFFFFFFFFFFACFFL;
 }

@@ -33,6 +33,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSImageFindKeypoints
+ * @discussion The MPSImageFindKeypoints kernel is used to find a list of keypoints whose values are >= minimumPixelThresholdValue
+ *             in MPSImageKeypointRangeInfo. The keypoints are generated for a specified region in the image.
+ *             The pixel format of the source image must be MTLPixelFormatR8Unorm.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -91,6 +97,25 @@ public class MPSImageFindKeypoints extends MPSKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract Encode the filter to a command buffer using a MTLComputeCommandEncoder.
+     * @discussion The filter will not begin to execute until after the command
+     * buffer has been enqueued and committed.
+     * 
+     * @param  commandBuffer               A valid MTLCommandBuffer.
+     * @param  source                      A valid MTLTexture containing the source image for the filter.
+     * @param  regions                     An array of rectangles that describe regions in the image.
+     *                                     The list of keypoints is generated for each individual rectangle specifed.
+     * @param  keypointCountBuffer         The list of keypoints for each specified region
+     * @param  keypointCountBufferOffset   Byte offset into keypointCountBufferOffset buffer at which to write the keypoint results.
+     *                                     Must be a multiple of 32 bytes.
+     * @param  keypointDataBuffer          A valid MTLBuffer to receive the keypoint data results for each rectangle.
+     *                                     The keypoint data for keypoints in each rectangle are stored consecutively.
+     *                                     The keypoint data for each rectangle starts at the following offset:
+     *                                         MPSImageKeypointRangeInfo.maximumKeyPoints * rectangle index
+     * @param  keypointDataBufferOffset    Byte offset into keypointData buffer at which to write the keypoint results.
+     *                                     Must be a multiple of 32 bytes.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:regions:numberOfRegions:keypointCountBuffer:keypointCountBufferOffset:keypointDataBuffer:keypointDataBufferOffset:")
     public native void encodeToCommandBufferSourceTextureRegionsNumberOfRegionsKeypointCountBufferKeypointCountBufferOffsetKeypointDataBufferKeypointDataBufferOffset(
@@ -114,6 +139,17 @@ public class MPSImageFindKeypoints extends MPSKernel {
     @Selector("initWithCoder:")
     public native MPSImageFindKeypoints initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion While the standard NSSecureCoding/NSCoding method
+     *             -initWithCoder: should work, since the file can't
+     *             know which device your data is allocated on, we
+     *             have to guess and may guess incorrectly.  To avoid
+     *             that problem, use initWithCoder:device instead.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
+     * @param      device      The MTLDevice on which to make the MPSKernel
+     * @return     A new MPSKernel object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSImageFindKeypoints initWithCoderDevice(NSCoder aDecoder,
@@ -123,6 +159,12 @@ public class MPSImageFindKeypoints extends MPSKernel {
     @Selector("initWithDevice:")
     public native MPSImageFindKeypoints initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Specifies information to find keypoints in an image.
+     * @param    device    The device the filter will run on
+     * @param    info      Pointer to the MPSImageKeypointRangeInfo struct
+     * @return   A valid MPSImageFindKeypoints object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:info:")
     public native MPSImageFindKeypoints initWithDeviceInfo(@Mapped(ObjCObjectMapper.class) MTLDevice device,
@@ -149,6 +191,11 @@ public class MPSImageFindKeypoints extends MPSKernel {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property   keypointRangeInfo
+     * @abstract   Return a structure describing the keypoint range info
+     * @discussion Returns a MPSImageKeypointRangeInfo structure
+     */
     @Generated
     @Selector("keypointRangeInfo")
     @ByValue

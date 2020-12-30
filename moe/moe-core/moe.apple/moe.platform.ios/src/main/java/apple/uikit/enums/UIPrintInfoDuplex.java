@@ -22,7 +22,13 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class UIPrintInfoDuplex {
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * flip back page along long edge (same orientation in portrait, flipped for landscape)
+     */
     @Generated @NInt public static final long LongEdge = 0x0000000000000001L;
+    /**
+     * flip back page along short edge (flipped orientation for portrait, same in landscape)
+     */
     @Generated @NInt public static final long ShortEdge = 0x0000000000000002L;
 
     @Generated

@@ -166,6 +166,9 @@ public class INSearchForMediaMediaItemResolutionResult extends INMediaItemResolu
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedMediaItem(INMediaItem resolvedMediaItem);
 
+    /**
+     * Convenience method to return multiple success resolution results for an array of INMediaItems
+     */
     @Generated
     @Selector("successesWithResolvedMediaItems:")
     public static native NSArray<? extends INSearchForMediaMediaItemResolutionResult> successesWithResolvedMediaItems(

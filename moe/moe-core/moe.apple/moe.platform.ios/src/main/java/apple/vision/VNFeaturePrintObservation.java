@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -80,11 +82,18 @@ public class VNFeaturePrintObservation extends VNObservation {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @brief Computes the distance between two observations.
+     * @discussion The larger the distance the more dissimlar the feature prints are. In case of an error this method returns false with an error describing the error condition, for instance comparing two non-comparable feature prints.
+     */
     @Generated
     @Selector("computeDistance:toFeaturePrintObservation:error:")
     public native boolean computeDistanceToFeaturePrintObservationError(FloatPtr outDistance,
             VNFeaturePrintObservation featurePrint, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * @brief The feature print data.
+     */
     @Generated
     @Selector("data")
     public native NSData data();
@@ -97,11 +106,17 @@ public class VNFeaturePrintObservation extends VNObservation {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @brief The total number of elements in the data.
+     */
     @Generated
     @Selector("elementCount")
     @NUInt
     public native long elementCount();
 
+    /**
+     * @brief The type of each element in the data.
+     */
     @Generated
     @Selector("elementType")
     @NUInt

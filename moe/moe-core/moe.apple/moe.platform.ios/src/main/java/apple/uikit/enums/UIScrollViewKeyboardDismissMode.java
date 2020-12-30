@@ -22,7 +22,13 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class UIScrollViewKeyboardDismissMode {
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * dismisses the keyboard when a drag begins
+     */
     @Generated @NInt public static final long OnDrag = 0x0000000000000001L;
+    /**
+     * the keyboard follows the dragging touch off screen, and may be pulled upward again to cancel the dismiss
+     */
     @Generated @NInt public static final long Interactive = 0x0000000000000002L;
 
     @Generated

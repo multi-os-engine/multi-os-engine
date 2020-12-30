@@ -46,6 +46,35 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MDLTexture
+ * @summary a description of texels provided by a texture object.
+ * 
+ * @discussion A texture optionally generates or loads texels
+ *             through an access to the data property, or one of the other 
+ *             properties, otherwise the texture object is a lightweight descriptor 
+ *             only.
+ * 
+ * @property data 
+ *           Texel data that will exist when referenced; it may or may not exist 
+ *           before
+ * @property dimensions
+ *           texel width and height of the texture
+ * @property rowStride
+ *           The number of bytes from the first texel in a row to the first texel 
+ *           in the next row. A rowStride of zero indicates that interleaved x,y 
+ *           addressing of texels is not possible. This might be the case if the
+ *           texture was compressed in some manner, for example.
+ * @property channelCount
+ *           The number of channels incoded in a single texel. For example, an RGB 
+ *           texture has 3 channels. All channels must have the same encoding.
+ * @property channelEncoding
+ *           The encoding of a channel in a single texel.
+ * @property isCube
+ *           The texture encodes a cube map. If YES, then the layout of the cube 
+ *           map is deduced as a vertical strip if dimension.y is six times 
+ *           dimension.x. Other layouts are possible in the future.
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -152,6 +181,22 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Creates a cube texture map image using 6 faces of the same dimensions, 
+     * ordered +X,-X,+Y,-Y,+Z,-Z If the data is read back the image will be compacted 
+     * into a single vertical stack where dimensions.y = 6 * dimensions.x
+     * isCube will return YES
+     * 
+     * @param names a collection of mosaiced images in a cross formation or column or row.
+     * - If 6 individual images are given they are assumed to be in order and will be 
+     *   loaded as is.
+     * - if 3 images of double height or width are given they will be treated as 
+     *   pairs of + and - in each axis, the order is must be x, then y, then z.
+     * - if 2 images of triple height or width are given they will be treates as a 
+     *   positive set and a negative set in the order +x, +y, +z, then -x, -y, -z.
+     * - if a single image is given it will be used without conversion if in column 
+     *   orientation and demosaiced in all other instances.
+     */
     @Generated
     @Selector("textureCubeWithImagesNamed:")
     public static native MDLTexture textureCubeWithImagesNamed(NSArray<String> names);
@@ -160,6 +205,10 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Selector("textureCubeWithImagesNamed:bundle:")
     public static native MDLTexture textureCubeWithImagesNamedBundle(NSArray<String> names, NSBundle bundleOrNil);
 
+    /**
+     * Creates a texture from a source in the main bundle named in a manner matching
+     *  name.
+     */
     @Generated
     @Selector("textureNamed:")
     public static native MDLTexture textureNamed(String name);
@@ -183,6 +232,13 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @NInt
     public native long channelEncoding();
 
+    /**
+     * hasAlphaValues
+     * @summary
+     * Can be overridden. If not overridden, hasAlpha will be NO if the texture does not
+     * have an alpha channel. It wil be YES if the texture has an alpha channel and
+     * there is at least one non-opaque texel in it.
+     */
     @Generated
     @Selector("hasAlphaValues")
     public native boolean hasAlphaValues();
@@ -213,6 +269,13 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @NInt
     public native long rowStride();
 
+    /**
+     * hasAlphaValues
+     * @summary
+     * Can be overridden. If not overridden, hasAlpha will be NO if the texture does not
+     * have an alpha channel. It wil be YES if the texture has an alpha channel and
+     * there is at least one non-opaque texel in it.
+     */
     @Generated
     @Selector("setHasAlphaValues:")
     public native void setHasAlphaValues(boolean value);
@@ -241,10 +304,16 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Selector("texelDataWithTopLeftOriginAtMipLevel:create:")
     public native NSData texelDataWithTopLeftOriginAtMipLevelCreate(@NInt long level, boolean create);
 
+    /**
+     * write a texture to URL, deducing type from path extension
+     */
     @Generated
     @Selector("writeToURL:")
     public native boolean writeToURL(NSURL URL);
 
+    /**
+     * write a texture to URL, using a specific UT type
+     */
     @Generated
     @Selector("writeToURL:type:")
     public native boolean writeToURLType(NSURL nsurl, CFStringRef type);
@@ -253,10 +322,16 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Selector("imageFromTextureAtLevel:")
     public native CGImageRef imageFromTextureAtLevel(@NUInt long level);
 
+    /**
+     * write a particular level of a mipped texture to URL, deducing type from path extension
+     */
     @Generated
     @Selector("writeToURL:level:")
     public native boolean writeToURLLevel(NSURL URL, @NUInt long level);
 
+    /**
+     * write a particular level of a mipped texture to URL, using a specific UT type
+     */
     @Generated
     @Selector("writeToURL:type:level:")
     public native boolean writeToURLTypeLevel(NSURL nsurl, CFStringRef type, @NUInt long level);

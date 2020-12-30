@@ -29,6 +29,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKElectrocardiogramQuery
+ * @abstract      An HKElectrocardiogramQuery is used to access voltage data associated with an HKElectrocardiogram.
+ * @discussion    Once instantiated, call HKHealthStore executeQuery to begin enumerating the HKElectrocardiogram voltage data.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -96,6 +101,14 @@ public class HKElectrocardiogramQuery extends HKQuery {
     @Selector("init")
     public native HKElectrocardiogramQuery init();
 
+    /**
+     * @method        initWithElectrocardiogram:dataHandler:
+     * @abstract      Returns a query that will enumerate over voltages recorded across leads in
+     *                an electrocardiogram.
+     * 
+     *  @param         electrocardiogram    The sample for which the lead data will be returned.
+     *  @param         dataHandler          The block to invoke with results from the query. It will be called once for each voltage measurement. Call [query stop] to stop enumeration, if desired.
+     */
     @Generated
     @Selector("initWithElectrocardiogram:dataHandler:")
     public native HKElectrocardiogramQuery initWithElectrocardiogramDataHandler(HKElectrocardiogram electrocardiogram,

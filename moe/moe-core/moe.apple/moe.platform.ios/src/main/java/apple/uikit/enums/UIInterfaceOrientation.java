@@ -19,6 +19,10 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Note that UIInterfaceOrientationLandscapeLeft is equal to UIDeviceOrientationLandscapeRight (and vice versa).
+ * This is because rotating the device to the left requires rotating the content to the right.
+ */
 @Generated
 public final class UIInterfaceOrientation {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;

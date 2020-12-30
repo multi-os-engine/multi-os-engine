@@ -175,22 +175,42 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     public static native UIViewController viewControllerWithRestorationIdentifierPathCoder(
             NSArray<String> identifierComponents, NSCoder coder);
 
+    /**
+     * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
+     * If not set, a new ABAddressBook will be created the first time the property is accessed.
+     */
     @Generated
     @Selector("addressBook")
     public native ConstVoidPtr addressBook();
 
+    /**
+     * Specifies whether buttons appear to let the user perform actions such as sharing the contact,
+     * initiating a FaceTime call, or sending a text message.
+     */
     @Generated
     @Selector("allowsActions")
     public native boolean allowsActions();
 
+    /**
+     * Indicates whether an edit/save button should be shown.
+     */
     @Generated
     @Selector("allowsEditing")
     public native boolean allowsEditing();
 
+    /**
+     * If displayedPerson has been added to an ABAddressBook, then the addressBook
+     * property will be updated to use the displayedPerson's ABAddressBook.
+     */
     @Generated
     @Selector("displayedPerson")
     public native ConstVoidPtr displayedPerson();
 
+    /**
+     * An array of NSNumber instances representing the properties (ABPropertyID) that should
+     * be visible when viewing the person. Note that all the properties are visible when
+     * editing a person.
+     */
     @Generated
     @Selector("displayedProperties")
     public native NSArray<? extends NSNumber> displayedProperties();
@@ -207,40 +227,73 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     @Selector("initWithNibName:bundle:")
     public native ABPersonViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     */
     @Generated
     @Selector("personViewDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native ABPersonViewControllerDelegate personViewDelegate();
 
+    /**
+     * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
+     * If not set, a new ABAddressBook will be created the first time the property is accessed.
+     */
     @Generated
     @Selector("setAddressBook:")
     public native void setAddressBook(ConstVoidPtr value);
 
+    /**
+     * Specifies whether buttons appear to let the user perform actions such as sharing the contact,
+     * initiating a FaceTime call, or sending a text message.
+     */
     @Generated
     @Selector("setAllowsActions:")
     public native void setAllowsActions(boolean value);
 
+    /**
+     * Indicates whether an edit/save button should be shown.
+     */
     @Generated
     @Selector("setAllowsEditing:")
     public native void setAllowsEditing(boolean value);
 
+    /**
+     * If displayedPerson has been added to an ABAddressBook, then the addressBook
+     * property will be updated to use the displayedPerson's ABAddressBook.
+     */
     @Generated
     @Selector("setDisplayedPerson:")
     public native void setDisplayedPerson(ConstVoidPtr value);
 
+    /**
+     * An array of NSNumber instances representing the properties (ABPropertyID) that should
+     * be visible when viewing the person. Note that all the properties are visible when
+     * editing a person.
+     */
     @Generated
     @Selector("setDisplayedProperties:")
     public native void setDisplayedProperties(NSArray<? extends NSNumber> value);
 
+    /**
+     * Indicates whether to highlight a certain value for the displayedPerson,
+     * if a single value property is specified, identifier will be ignored.
+     */
     @Generated
     @Selector("setHighlightedItemForProperty:withIdentifier:")
     public native void setHighlightedItemForPropertyWithIdentifier(int property, int identifier);
 
+    /**
+     * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     */
     @Generated
     @Selector("setPersonViewDelegate:")
     public native void setPersonViewDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) ABPersonViewControllerDelegate value);
 
+    /**
+     * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     */
     @Generated
     public void setPersonViewDelegate(@Mapped(ObjCObjectMapper.class) ABPersonViewControllerDelegate value) {
         Object __old = personViewDelegate();
@@ -253,10 +306,16 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
         }
     }
 
+    /**
+     * Indicates whether to show data from people linked to the displayedPerson, defaults to NO
+     */
     @Generated
     @Selector("setShouldShowLinkedPeople:")
     public native void setShouldShowLinkedPeople(boolean value);
 
+    /**
+     * Indicates whether to show data from people linked to the displayedPerson, defaults to NO
+     */
     @Generated
     @Selector("shouldShowLinkedPeople")
     public native boolean shouldShowLinkedPeople();

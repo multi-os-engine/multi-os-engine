@@ -82,6 +82,9 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * The interaction's delegate.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -130,6 +133,11 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @abstract Returns the interaction's location within the given view.
+     * 
+     * @param view The view in which to locate the interaction.
+     */
     @Generated
     @Selector("locationInView:")
     @ByValue
@@ -170,15 +178,28 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
     @Selector("willMoveToView:")
     public native void willMoveToView(UIView view);
 
+    /**
+     * @abstract Dismisses the currently presented menu (if there is one).
+     */
     @Generated
     @Selector("dismissMenu")
     public native void dismissMenu();
 
+    /**
+     * Appearance of the menu this interaction has presented or is about to present. Since it may be
+     * dependent on the user's input method, the appearance is only known while the interaction is active.
+     */
     @Generated
     @Selector("menuAppearance")
     @NInt
     public native long menuAppearance();
 
+    /**
+     * @abstract Call to update the currently visible menu. This method does nothing if called before a menu is presented.
+     * 
+     * @param block  Called with the a mutable copy of the currently visible menu. Modify and return this menu (or an entirely
+     *               new one) to change the currently visible menu items.
+     */
     @Generated
     @Selector("updateVisibleMenuWithBlock:")
     public native void updateVisibleMenuWithBlock(

@@ -27,6 +27,9 @@ import org.moe.natj.general.ann.Runtime;
 @Library("GameplayKit")
 @Runtime(CRuntime.class)
 public final class GameplayKit {
+    /**
+     * Maximum / minimum values for GKGameModel scoreForPlayer. Values must be within these ranges.
+     */
     @Generated @NInt public static final long GKGameModelMaxScore = 0x0000000001000000L;
     @Generated @NInt public static final long GKGameModelMinScore = 0xFFFFFFFFFF000000L;
 

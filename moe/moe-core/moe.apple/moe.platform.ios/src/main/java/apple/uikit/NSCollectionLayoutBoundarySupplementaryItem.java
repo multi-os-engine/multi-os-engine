@@ -64,6 +64,36 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Specify the alignment of the supplementary relative the containing geometry's coordinate space to
+     * position the boundary supplementary item.
+     * 
+     *                                            +------------------------------------------+
+     *   +----------------------+                 |Boundary Supplementary Item               |
+     *   |                      |<----------------|* alignment: [.top, .leading]             |
+     *   +----------------------+                 |* absoluteOffset: CGPoint(x:0.0, y:-10.0) |
+     *                                            +------------------------------------------+
+     *   +----------------------------------+
+     *   |                                  |
+     *   |                                  |
+     *   |                                  |
+     *   |                                  |
+     *   |                                  |
+     *   |                                  |
+     *   |                                  |
+     *   |                                  |
+     *   |                                  |      +--------------------------------+
+     *   |                                  |<-----|        Section Geometry        |
+     *   |                                  |      +--------------------------------+
+     *   |                                  |
+     *   |                                  |
+     *   |                                  |
+     *   |                                  |
+     *   |                                  |
+     *   |                                  |
+     *   |                                  |
+     *   +----------------------------------+
+     */
     @Generated
     @Selector("boundarySupplementaryItemWithLayoutSize:elementKind:alignment:")
     public static native NSCollectionLayoutBoundarySupplementaryItem boundarySupplementaryItemWithLayoutSizeElementKindAlignment(
@@ -107,6 +137,10 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Default is YES. This will automatically extend the content area of the host geometry (e.g. section)
+     *   For .estimated sized supplementary items, this allows automatic adjustment of the layout. (e.g. dynamic text)
+     */
     @Generated
     @Selector("extendsBoundary")
     public native boolean extendsBoundary();
@@ -163,6 +197,10 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     @ByValue
     public native CGPoint offset();
 
+    /**
+     * Default is NO. Specify YES to keep the supplementary visible while any portion of the host geometry (e.g. section) is visible.
+     *   Occlusion disambiguation between other supplementaries will be managed automatically (e.g. section header + footer both pinned)
+     */
     @Generated
     @Selector("pinToVisibleBounds")
     public native boolean pinToVisibleBounds();
@@ -175,10 +213,18 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Default is YES. This will automatically extend the content area of the host geometry (e.g. section)
+     *   For .estimated sized supplementary items, this allows automatic adjustment of the layout. (e.g. dynamic text)
+     */
     @Generated
     @Selector("setExtendsBoundary:")
     public native void setExtendsBoundary(boolean value);
 
+    /**
+     * Default is NO. Specify YES to keep the supplementary visible while any portion of the host geometry (e.g. section) is visible.
+     *   Occlusion disambiguation between other supplementaries will be managed automatically (e.g. section header + footer both pinned)
+     */
     @Generated
     @Selector("setPinToVisibleBounds:")
     public native void setPinToVisibleBounds(boolean value);

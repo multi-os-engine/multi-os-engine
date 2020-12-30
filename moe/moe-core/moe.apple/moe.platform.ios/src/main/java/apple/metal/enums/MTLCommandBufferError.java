@@ -19,6 +19,37 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum MTLCommandBufferError
+ * @abstract Error codes that can be found in MTLCommandBuffer.error
+ * 
+ * @constant MTLCommandBufferErrorInternal
+ * An internal error that doesn't fit into the other categories. The actual low level error code is encoded in the local description.
+ * 
+ * @constant MTLCommandBufferErrorTimeout
+ * Execution of this command buffer took too long, execution of this command was interrupted and aborted.
+ * 
+ * @constant MTLCommandBufferErrorPageFault
+ * Execution of this command buffer generated an unserviceable GPU page fault. This can caused by buffer read write attribute mismatch or out of boundary access.
+ * 
+ * @constant MTLCommandBufferErrorBlacklisted
+ * Access to this device has been revoked because this client has been responsible for too many timeouts or hangs.
+ * 
+ * @constant MTLCommandBufferErrorNotPermitted
+ * This process does not have access to use this device.
+ * 
+ * @constant MTLCommandBufferErrorOutOfMemory
+ * Insufficient memory was available to execute this command buffer.
+ * 
+ * @constant MTLCommandBufferErrorInvalidResource
+ * The command buffer referenced an invalid resource.  This is most commonly caused when the caller deletes a resource before executing a command buffer that refers to it.
+ * 
+ * @constant MTLCommandBufferErrorMemoryless
+ * One or more internal resources limits reached that prevent using memoryless render pass attachments. See error string for more detail.
+ * 
+ * @constant MTLCommandBufferErrorDeviceRemoved
+ * The device was physically removed before the command could finish execution
+ */
 @Generated
 public final class MTLCommandBufferError {
     @Generated @NUInt public static final long None = 0x0000000000000000L;

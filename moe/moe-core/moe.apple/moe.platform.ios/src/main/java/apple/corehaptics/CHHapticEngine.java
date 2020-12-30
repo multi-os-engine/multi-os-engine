@@ -34,6 +34,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CHHapticEngine
+ * @abstract
+ * 	Represents the connection with the haptic server.
+ */
 @Generated
 @Library("CoreHaptics")
 @Runtime(ObjCRuntime.class)
@@ -76,6 +81,13 @@ public class CHHapticEngine extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * @method capabilitiesForHardware
+     * @abstract
+     * 	Get the protocol that describes haptic and audio capabilities on this device.
+     * @discussion
+     * 	Detailed description on the capability protocol is in CHHapticDeviceCapability.h.
+     */
     @Generated
     @Selector("capabilitiesForHardware")
     @MappedReturn(ObjCObjectMapper.class)
@@ -89,18 +101,37 @@ public class CHHapticEngine extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @method createAdvancedPlayerWithPattern:error
+     * @abstract
+     * 	Factory method for creating a CHHapticAdvancedPatternPlayer from a CHHapticPattern.
+     * @param pattern
+     * 	The pattern to be played.
+     */
     @Generated
     @Selector("createAdvancedPlayerWithPattern:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native CHHapticAdvancedPatternPlayer createAdvancedPlayerWithPatternError(CHHapticPattern pattern,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * @method createPlayerWithPattern:error
+     * @abstract
+     * 	Factory method for creating a CHHapticPatternPlayer from a CHHapticPattern.
+     * @param pattern
+     * 	The pattern to be played.
+     */
     @Generated
     @Selector("createPlayerWithPattern:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native CHHapticPatternPlayer createPlayerWithPatternError(CHHapticPattern pattern,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * @property currentTime
+     * The absolute time from which all current and future event times may be calculated.
+     * The units are seconds.
+     */
     @Generated
     @Selector("currentTime")
     public native double currentTime();
@@ -122,10 +153,34 @@ public class CHHapticEngine extends NSObject {
     @Selector("init")
     public native CHHapticEngine init();
 
+    /**
+     * @method initAndReturnError:
+     * @abstract
+     * 	Create an instance of the CHHapticEngine.
+     * @discussion
+     * 	More than one instance may exist within a process.  Each will function independently of the others.
+     * 		CHHapticEngines created using this method will be associated with the device's internal haptics hardware system,
+     * 		if one exists.  For systems without internal haptics, this method will fail with the error `CHHapticErrorCodeNotSupported`.
+     * 		To access engine instances associated with external game controllers, see the GameController framework documentation
+     * 		for the `hapticEngines` property on the GCController class.
+     */
     @Generated
     @Selector("initAndReturnError:")
     public native CHHapticEngine initAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * @method initWithAudioSession:error
+     * @abstract
+     * 	Create an instance of an CHHapticEngine and associate it with an audio session.  If 'audioSession' is nil,
+     * 		the engine will create its own.
+     * @discussion
+     * 	More than one instance may exist within a process.  Each will function independently of the others, but all
+     * 		CHHapticEngines which share an audio session will have identical audio behavior with regard to interruptions, etc.
+     * 		CHHapticEngines created using this method will be associated with the device's internal haptics hardware system,
+     * 		if one exists.  For systems without internal haptics, this method will fail with the error `CHHapticErrorCodeNotSupported`.
+     * 		To access engine instances associated with external game controllers, see the GameController framework documentation
+     * 		for the `hapticEngines` property on the GCController class.
+     */
     @Generated
     @Selector("initWithAudioSession:error:")
     public native CHHapticEngine initWithAudioSessionError(AVAudioSession audioSession,
@@ -144,14 +199,40 @@ public class CHHapticEngine extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * @property autoShutdownEnabled
+     * @abstract
+     * 	When auto shutdown is enabled, the haptic engine can start and stop the hardware dynamically,
+     * 	to conserve power.
+     * @discussion
+     * 	To conserve power, it is advised that the client stop the haptic engine when not in use.
+     * 	But when auto shutdown is enabled, the haptic engine will stop the hardware if it was running
+     * 	idle for a certain duration, and restart it later when required.
+     * 	Note that, because this operation is dynamic, it may affect the start times of the pattern players
+     * 	(e.g. `CHHapticPatternplayer`), if the engine has to resume from its shutdown state.
+     * 
+     * 	This feature is disabled by default, but the client can enable it if needed.
+     */
     @Generated
     @Selector("isAutoShutdownEnabled")
     public native boolean isAutoShutdownEnabled();
 
+    /**
+     * @property isMutedForAudio
+     * 	When set to YES, the CHHapticEngine mutes audio playback from its players.
+     * @discussion
+     * 	Default is NO.
+     */
     @Generated
     @Selector("isMutedForAudio")
     public native boolean isMutedForAudio();
 
+    /**
+     * @property isMutedForHaptics
+     * 	When set to YES, the CHHapticEngine mutes haptic playback from its players.
+     * @discussion
+     * 	Default is NO.
+     */
     @Generated
     @Selector("isMutedForHaptics")
     public native boolean isMutedForHaptics();
@@ -170,6 +251,18 @@ public class CHHapticEngine extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method notifyWhenPlayersFinished:
+     * @abstract
+     * 	Tell the engine to asynchronously call the passed-in handler when all active pattern players associated
+     * 	with this engine have stopped.
+     * @param finishedHandler
+     * 	The block that will be called asynchronously.  The return value of this block determines the action the
+     * 	engine will take when the block finishes (see `CHHapticEngineFinishedHandler`).
+     * @discussion
+     * 	If additional players are started after this call is made, they will delay the callback.
+     * 	If no players are active or the engine is stopped, the callback will happen immediately.
+     */
     @Generated
     @Selector("notifyWhenPlayersFinished:")
     public native void notifyWhenPlayersFinished(
@@ -183,26 +276,78 @@ public class CHHapticEngine extends NSObject {
         long call_notifyWhenPlayersFinished(NSError error);
     }
 
+    /**
+     * @method playPatternFromData:error
+     * 	@abstract
+     * 		Simple one-shot call to play a pattern specified by NSData.
+     * @param data
+     * 		The NSData containing a haptic/audio pattern dictionary.
+     * 	@param outError
+     * 		If the operation fails, this will be set to a valid NSError describing the error.
+     * 	@discussion
+     * 		The engine should be started prior to calling this method if low latency is desired. If this is not done,
+     * 		this method will start it, which can cause a significant delay.
+     */
     @Generated
     @Selector("playPatternFromData:error:")
     public native boolean playPatternFromDataError(NSData data,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * @method playPatternFromURL:error
+     * @abstract
+     * 	Simple one-shot call to play a pattern specified by a URL.
+     * 	@param fileURL
+     * 		The URL of the file containing a haptic/audio pattern dictionary.
+     * 	@param outError
+     * 		If the operation fails, this will be set to a valid NSError describing the error.
+     * 	@discussion
+     * 		The engine should be started prior to calling this method if low latency is desired. If this is not done,
+     * 		this method will start it, which can cause a significant delay.
+     */
     @Generated
     @Selector("playPatternFromURL:error:")
     public native boolean playPatternFromURLError(NSURL fileURL,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * @property playsHapticsOnly
+     * 	If set to YES, the CHHapticEngine will ignore all events of type CHHapticEventTypeAudio and play only haptic events.
+     * @discussion
+     * 	This behavior change will only take effect after the engine is stopped and restarted.
+     * 	The default is NO.
+     */
     @Generated
     @Selector("playsHapticsOnly")
     public native boolean playsHapticsOnly();
 
+    /**
+     * @method registerAudioResource:options:error
+     * @abstract
+     * 	Register an external audio file for use as a custom waveform.
+     * @param resourceURL
+     * 		A URL referencing the location of the audio file to be registered.
+     * 	@param options
+     * 		A dictionary containing key/value pairs describing how this resource should be played.
+     * 	@param outError
+     * 		If register operation fails, this will be set to a valid NSError describing the error.
+     */
     @Generated
     @Selector("registerAudioResource:options:error:")
     @NUInt
     public native long registerAudioResourceOptionsError(NSURL resourceURL, NSDictionary<?, ?> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * @property resetHandler
+     * @abstract
+     * 	This block will called asynchronously if the haptic engine has to reset itself after a server failure.
+     * @discussion
+     * 		In response to this handler being called, the client must release all haptic pattern players
+     * 		and recreate them.  All CHHapticPattern objects and CHHapticEngine properties will have been preserved.
+     * 		In general, callbacks arrive on a non-main thread and it is the client's responsibility to handle
+     * 	it in a thread-safe manner.
+     */
     @Generated
     @Selector("resetHandler")
     @ObjCBlock(name = "call_resetHandler_ret")
@@ -223,22 +368,65 @@ public class CHHapticEngine extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property autoShutdownEnabled
+     * @abstract
+     * 	When auto shutdown is enabled, the haptic engine can start and stop the hardware dynamically,
+     * 	to conserve power.
+     * @discussion
+     * 	To conserve power, it is advised that the client stop the haptic engine when not in use.
+     * 	But when auto shutdown is enabled, the haptic engine will stop the hardware if it was running
+     * 	idle for a certain duration, and restart it later when required.
+     * 	Note that, because this operation is dynamic, it may affect the start times of the pattern players
+     * 	(e.g. `CHHapticPatternplayer`), if the engine has to resume from its shutdown state.
+     * 
+     * 	This feature is disabled by default, but the client can enable it if needed.
+     */
     @Generated
     @Selector("setAutoShutdownEnabled:")
     public native void setAutoShutdownEnabled(boolean value);
 
+    /**
+     * @property isMutedForAudio
+     * 	When set to YES, the CHHapticEngine mutes audio playback from its players.
+     * @discussion
+     * 	Default is NO.
+     */
     @Generated
     @Selector("setIsMutedForAudio:")
     public native void setIsMutedForAudio(boolean value);
 
+    /**
+     * @property isMutedForHaptics
+     * 	When set to YES, the CHHapticEngine mutes haptic playback from its players.
+     * @discussion
+     * 	Default is NO.
+     */
     @Generated
     @Selector("setIsMutedForHaptics:")
     public native void setIsMutedForHaptics(boolean value);
 
+    /**
+     * @property playsHapticsOnly
+     * 	If set to YES, the CHHapticEngine will ignore all events of type CHHapticEventTypeAudio and play only haptic events.
+     * @discussion
+     * 	This behavior change will only take effect after the engine is stopped and restarted.
+     * 	The default is NO.
+     */
     @Generated
     @Selector("setPlaysHapticsOnly:")
     public native void setPlaysHapticsOnly(boolean value);
 
+    /**
+     * @property resetHandler
+     * @abstract
+     * 	This block will called asynchronously if the haptic engine has to reset itself after a server failure.
+     * @discussion
+     * 		In response to this handler being called, the client must release all haptic pattern players
+     * 		and recreate them.  All CHHapticPattern objects and CHHapticEngine properties will have been preserved.
+     * 		In general, callbacks arrive on a non-main thread and it is the client's responsibility to handle
+     * 	it in a thread-safe manner.
+     */
     @Generated
     @Selector("setResetHandler:")
     public native void setResetHandler(@ObjCBlock(name = "call_setResetHandler") Block_setResetHandler value);
@@ -250,6 +438,16 @@ public class CHHapticEngine extends NSObject {
         void call_setResetHandler();
     }
 
+    /**
+     * @property stoppedHandler
+     * @abstract
+     * 	The engine will call this block when it has stopped due to external causes (such as
+     * 	an audio session interruption or the app going into the background).  It will NOT be called
+     * 		if the client calls stopWithCompletionHandler:.
+     * @discussion
+     * 	In general, callbacks arrive on a non-main thread and it is the client's responsibility to handle
+     * 	it in a thread-safe manner.
+     */
     @Generated
     @Selector("setStoppedHandler:")
     public native void setStoppedHandler(@ObjCBlock(name = "call_setStoppedHandler") Block_setStoppedHandler value);
@@ -265,10 +463,24 @@ public class CHHapticEngine extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @method startAndReturnError:
+     * @abstract
+     * 	Start the engine and block until the engine has started.
+     * 	@discussion
+     * 		This method will return NO upon failure, and outError will be set to a valid NSError describing the error.
+     */
     @Generated
     @Selector("startAndReturnError:")
     public native boolean startAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * @method startWithCompletionHandler:
+     * @abstract
+     * 	Asynchronously start the engine. The handler will be called when the operation completes.
+     * 	@discussion
+     * 		The handler is guaranteed to be called on either success or failure.
+     */
     @Generated
     @Selector("startWithCompletionHandler:")
     public native void startWithCompletionHandler(
@@ -281,6 +493,13 @@ public class CHHapticEngine extends NSObject {
         void call_startWithCompletionHandler(NSError error);
     }
 
+    /**
+     * @method stopWithCompletionHandler:
+     * @abstract
+     * 	Asynchronously stop the engine.  The handler will be called when the operation completes.
+     * @discussion
+     * 	The handler is guaranteed to be called on either success or failure.
+     */
     @Generated
     @Selector("stopWithCompletionHandler:")
     public native void stopWithCompletionHandler(
@@ -293,6 +512,16 @@ public class CHHapticEngine extends NSObject {
         void call_stopWithCompletionHandler(NSError error);
     }
 
+    /**
+     * @property stoppedHandler
+     * @abstract
+     * 	The engine will call this block when it has stopped due to external causes (such as
+     * 	an audio session interruption or the app going into the background).  It will NOT be called
+     * 		if the client calls stopWithCompletionHandler:.
+     * @discussion
+     * 	In general, callbacks arrive on a non-main thread and it is the client's responsibility to handle
+     * 	it in a thread-safe manner.
+     */
     @Generated
     @Selector("stoppedHandler")
     @ObjCBlock(name = "call_stoppedHandler_ret")
@@ -309,6 +538,15 @@ public class CHHapticEngine extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * @method unregisterAudioResource:error
+     * @abstract
+     * 	Unregister and remove a previously-registered audio resource.
+     * @param resourceID
+     * 	The resource ID that was returned when the resource was registered.
+     * @param outError
+     * 	If the unregister operation fails, this will be set to a valid NSError describing the error.
+     */
     @Generated
     @Selector("unregisterAudioResource:error:")
     public native boolean unregisterAudioResourceError(@NUInt long resourceID,

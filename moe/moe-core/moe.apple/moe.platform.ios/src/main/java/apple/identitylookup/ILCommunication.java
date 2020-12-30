@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An incident of communication via some medium.
+ */
 @Generated
 @Library("IdentityLookup")
 @Runtime(ObjCRuntime.class)
@@ -145,6 +148,9 @@ public class ILCommunication extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The phone number or e-mail address of the sender.  The value will be nil if the sender is unknown.
+     */
     @Generated
     @Selector("sender")
     public native String sender();

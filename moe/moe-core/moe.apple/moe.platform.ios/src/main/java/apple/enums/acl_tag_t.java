@@ -18,6 +18,9 @@ package apple.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * 23.2.5 ACL entry tag type bits - nonstandard
+ */
 @Generated
 public final class acl_tag_t {
     @Generated public static final int ACL_UNDEFINED_TAG = 0x00000000;

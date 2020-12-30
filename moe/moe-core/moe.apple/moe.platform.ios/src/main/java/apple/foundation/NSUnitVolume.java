@@ -223,6 +223,9 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("liters")
     public static native NSUnitVolume liters();
 
+    /**
+     * Base unit - liters
+     */
     @Generated
     @Selector("megaliters")
     public static native NSUnitVolume megaliters();

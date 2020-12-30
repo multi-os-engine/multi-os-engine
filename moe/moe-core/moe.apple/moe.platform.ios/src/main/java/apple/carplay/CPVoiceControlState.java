@@ -27,6 +27,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @c CPVoiceControlState encapsulates the title variants and image(s) for a single voice control
+ * state, like listening, loading, or recognized.
+ * 
+ * Your app may initialize the voice control template with one or more states, and
+ * you may call @c activateVoiceControlState: to switch between states you've defined.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -110,6 +117,19 @@ public class CPVoiceControlState extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPVoiceControlState initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize a voice control state with a title and image.
+     * 
+     * @param identifier A custom identifier you can use to identify this voice control state. You'll also
+     * switch to this state by specifying this identifier.
+     * @param titleVariants An array of title variants. The Voice Control template will select the longest
+     * variant that fits your specified content.
+     * @param image An image to be animated while this template is visible. The system
+     * enforces a minimum cycle duration of 0.3 seconds and a maximum cycle duration of 5 seconds.
+     * Voice Control state images may be a maximum of 150 by 150 points.
+     * @param repeats For an animated image, YES if the animation should repeat indefinitely, NO
+     * to run the animation only once.
+     */
     @Generated
     @Selector("initWithIdentifier:titleVariants:image:repeats:")
     public native CPVoiceControlState initWithIdentifierTitleVariantsImageRepeats(String identifier,

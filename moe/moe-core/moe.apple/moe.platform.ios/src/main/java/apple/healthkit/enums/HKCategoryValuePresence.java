@@ -3,6 +3,10 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum          HKCategoryValuePresence
+ * @abstract      Set of values to indicate whether a data type is present or not.
+ */
 @Generated
 public final class HKCategoryValuePresence {
     @Generated

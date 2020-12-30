@@ -8,11 +8,17 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * A data source for an ARSession
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ARSessionProviding")
 public interface ARSessionProviding {
+    /**
+     * To ensure session changes are detected, Swift classes should mark this property as `@objc` and `dynamic`
+     */
     @Generated
     @Selector("session")
     ARSession session();

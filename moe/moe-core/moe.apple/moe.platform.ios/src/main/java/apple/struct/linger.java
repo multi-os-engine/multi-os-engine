@@ -49,18 +49,30 @@ public final class linger extends StructObject {
         setL_linger(l_linger);
     }
 
+    /**
+     * option on/off
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int l_onoff();
 
+    /**
+     * option on/off
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setL_onoff(int value);
 
+    /**
+     * linger time
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int l_linger();
 
+    /**
+     * linger time
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setL_linger(int value);

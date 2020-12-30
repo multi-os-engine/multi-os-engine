@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFURLBookmarkResolutionOptions {
+    /**
+     * don't perform any user interaction during bookmark resolution
+     */
     @Generated @NUInt public static final long CFURLBookmarkResolutionWithoutUIMask = 0x0000000000000100L;
+    /**
+     * don't mount a volume during bookmark resolution
+     */
     @Generated @NUInt public static final long CFURLBookmarkResolutionWithoutMountingMask = 0x0000000000000200L;
     @Generated @NUInt public static final long CFBookmarkResolutionWithoutUIMask = 0x0000000000000100L;
     @Generated @NUInt public static final long CFBookmarkResolutionWithoutMountingMask = 0x0000000000000200L;

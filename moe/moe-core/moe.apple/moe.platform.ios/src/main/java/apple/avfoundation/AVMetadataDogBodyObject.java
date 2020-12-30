@@ -24,6 +24,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVMetadataDogBodyObject
+ * @abstract
+ *    AVMetadataDogBodyObject is a concrete subclass of AVMetadataBodyObject defining a detected dog body.
+ * 
+ * @discussion
+ *    AVMetadataDogBodyObject represents a single detected dog body in a picture. It is an immutable object describing the various features found in the body.
+ * 
+ *    On supported platforms, AVCaptureMetadataOutput outputs arrays of detected dog body objects. See AVCaptureOutput.h.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)

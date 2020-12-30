@@ -169,6 +169,9 @@ public class UISpringTimingParameters extends NSObject implements UITimingCurveP
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Initializes with the default system spring parameters
+     */
     @Generated
     @Selector("init")
     public native UISpringTimingParameters init();
@@ -177,15 +180,37 @@ public class UISpringTimingParameters extends NSObject implements UITimingCurveP
     @Selector("initWithCoder:")
     public native UISpringTimingParameters initWithCoder(NSCoder coder);
 
+    /**
+     * Equivalent to initWithDampingRatio:initialVelocity: where the velocity is the zero-vector.
+     */
     @Generated
     @Selector("initWithDampingRatio:")
     public native UISpringTimingParameters initWithDampingRatio(@NFloat double ratio);
 
+    /**
+     * Performs `animations` using a timing curve described by the motion of a
+     * spring. When `dampingRatio` is 1, the animation will smoothly decelerate to
+     * its final model values without oscillating. Damping ratios less than 1 will
+     * oscillate more and more before coming to a complete stop. You can use the
+     * initial spring velocity to specify how fast the object at the end of the
+     * simulated spring was moving before it was attached. It's a unit coordinate
+     * system, where 1 is defined as travelling the total animation distance in a
+     * second. So if you're changing an object's position by 200pt in this
+     * animation, and you want the animation to behave as if the object was moving
+     * at 100pt/s before the animation started, you'd pass 0.5. You'll typically
+     * want to pass 0 for the velocity. Velocity is specified as a vector for the
+     * convenience of animating position changes. For 1-dimensional properties
+     * the x-coordinate of the velocity vector is used.
+     */
     @Generated
     @Selector("initWithDampingRatio:initialVelocity:")
     public native UISpringTimingParameters initWithDampingRatioInitialVelocity(@NFloat double ratio,
             @ByValue CGVector velocity);
 
+    /**
+     * Similiar to initWithDampingRatio:initialVelocity: except this allows you to specify the spring constants for the underlying
+     * CASpringAnimation directly. The duration is computed assuming a small settling oscillation.
+     */
     @Generated
     @Selector("initWithMass:stiffness:damping:initialVelocity:")
     public native UISpringTimingParameters initWithMassStiffnessDampingInitialVelocity(@NFloat double mass,

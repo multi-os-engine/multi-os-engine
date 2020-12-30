@@ -14,6 +14,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("HMNetworkConfigurationProfileDelegate")
 public interface HMNetworkConfigurationProfileDelegate {
+    /**
+     * @brief Informs the delegate that the network access mode has updated.
+     * 
+     * @param profile Sender of the message.
+     */
     @Generated
     @IsOptional
     @Selector("profileDidUpdateNetworkAccessMode:")

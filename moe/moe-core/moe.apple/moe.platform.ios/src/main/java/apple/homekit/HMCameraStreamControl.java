@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract This class can be used to control the stream from a camera.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -151,10 +154,16 @@ public class HMCameraStreamControl extends HMCameraControl {
     @NInt
     public static native long version_static();
 
+    /**
+     * @brief Represents the current camera stream.
+     */
     @Generated
     @Selector("cameraStream")
     public native HMCameraStream cameraStream();
 
+    /**
+     * @brief Delegate that receives updates on the camera stream changes.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -164,10 +173,16 @@ public class HMCameraStreamControl extends HMCameraControl {
     @Selector("init")
     public native HMCameraStreamControl init();
 
+    /**
+     * @brief Delegate that receives updates on the camera stream changes.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMCameraStreamControlDelegate value);
 
+    /**
+     * @brief Delegate that receives updates on the camera stream changes.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) HMCameraStreamControlDelegate value) {
         Object __old = delegate();
@@ -180,14 +195,24 @@ public class HMCameraStreamControl extends HMCameraControl {
         }
     }
 
+    /**
+     * @brief Starts the camera stream. 'currentCameraStream' will be updated upon
+     *        successfully starting the stream.
+     */
     @Generated
     @Selector("startStream")
     public native void startStream();
 
+    /**
+     * @brief Stops the camera stream.
+     */
     @Generated
     @Selector("stopStream")
     public native void stopStream();
 
+    /**
+     * @brief Represents the current streaming state.
+     */
     @Generated
     @Selector("streamState")
     @NUInt

@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Provides context for the update process when the progress or completion handlers are invoked.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -82,6 +85,9 @@ public class MLUpdateContext extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Indicates the event the progress handler invocation corresponds to. This will be one of the events app registered via MLUpdateProgressHandlers.interestedEvents.
+     */
     @Generated
     @Selector("event")
     @NInt
@@ -117,10 +123,16 @@ public class MLUpdateContext extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Metrics computed on the training input during the update process.
+     */
     @Generated
     @Selector("metrics")
     public native NSDictionary<? extends MLMetricKey, ?> metrics();
 
+    /**
+     * Reference to the updated model that can be used for additional validation or evaluation.
+     */
     @Generated
     @Selector("model")
     public native MLModel model();
@@ -131,6 +143,9 @@ public class MLUpdateContext extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * A snapshot of parameters (including their values) used during the update process.
+     */
     @Generated
     @Selector("parameters")
     public native NSDictionary<? extends MLParameterKey, ?> parameters();
@@ -151,6 +166,9 @@ public class MLUpdateContext extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Reference to the update task that invokved the progress or completion handlers.
+     */
     @Generated
     @Selector("task")
     public native MLUpdateTask task();

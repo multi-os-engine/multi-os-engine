@@ -39,6 +39,9 @@ public interface UIViewControllerPreviewingDelegate {
             @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewingContext,
             UIViewController viewControllerToCommit);
 
+    /**
+     * If you return nil, a preview presentation will not be performed
+     */
     @Generated
     @Selector("previewingContext:viewControllerForLocation:")
     UIViewController previewingContextViewControllerForLocation(

@@ -44,6 +44,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CKShare
+ * 
+ * @discussion Like CKRecords, CKShares can store arbitrary key-value pairs.  They are modified and fetched in the same manner.
+ * A share, its root record, and its root record's children records will only appear in a participant's CKFetchRecordChangesOperation's results after the share has been accepted by that participant.
+ * Clients have access to the share (and optionally the root record) before accepting a share, via the CKShareMetadata object.  Note that in order to access a root record before accepting a share, you must run a CKFetchShareMetadataOperation requesting the root record.
+ * A CKShare will appear in a CKFetchRecordChangesOperation's results set whenever the participant list is updated.  For that reason, you shouldn't place heavy key-value pairs in it.
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -159,10 +167,21 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract A URL that can be used to invite participants to this share.
+     * 
+     * @discussion Only available after share record has been saved to the server.  This url is stable, and is tied to the rootRecord.  That is, if you share a rootRecord, delete the share, and re-share the same rootRecord via a newly created share, that newly created share's url will be identical to the prior share's url
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
+    /**
+     * @discussion If a participant with a matching userIdentity already exists, then that existing participant's properties will be updated; no new participant will be added.
+     * In order to modify the list of participants, a share must have publicPermission set to @c CKShareParticipantPermissionNone.  That is, you cannot mix-and-match private users and public users in the same share.
+     * Only certain participant types may be added via this API
+     * @see CKShareParticipantRole
+     */
     @Generated
     @Selector("addParticipant:")
     public native void addParticipant(CKShareParticipant participant);
@@ -191,6 +210,9 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
     @Selector("initWithRecordType:zoneID:")
     public native CKShare initWithRecordTypeZoneID(String recordType, CKRecordZoneID zoneID);
 
+    /**
+     * When saving a newly created CKShare, you must save the share and its rootRecord in the same CKModifyRecordsOperation batch.
+     */
     @Generated
     @Selector("initWithRootRecord:")
     public native CKShare initWithRootRecord(CKRecord rootRecord);
@@ -199,14 +221,30 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
     @Selector("initWithRootRecord:shareID:")
     public native CKShare initWithRootRecordShareID(CKRecord rootRecord, CKRecordID shareID);
 
+    /**
+     * Convenience methods for fetching special users from the participant array
+     */
     @Generated
     @Selector("owner")
     public native CKShareParticipant owner();
 
+    /**
+     * @abstract All participants on the share that the current user has permissions to see.
+     * 
+     * @discussion At the minimum that will include the owner and the current user.
+     */
     @Generated
     @Selector("participants")
     public native NSArray<? extends CKShareParticipant> participants();
 
+    /**
+     * @abstract Defines what permission a user has when not explicitly added to the share.
+     * 
+     * @discussion Shares with @c publicPermission more permissive than @c CKShareParticipantPermissionNone can be joined by any user with access to the share's shareURL.
+     * By default, public permission is @c CKShareParticipantPermissionNone.
+     * Changing the public permission to @c CKShareParticipantPermissionReadOnly or @c CKShareParticipantPermissionReadWrite will result in all pending participants being removed.  Already-accepted participants will remain on the share.
+     * Changing the public permission to @c CKShareParticipantPermissionNone will result in all participants being removed from the share.  You may subsequently choose to call @c addParticipant: before saving the share, those participants will be added to the share.
+     */
     @Generated
     @Selector("publicPermission")
     @NInt
@@ -216,6 +254,14 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
     @Selector("removeParticipant:")
     public native void removeParticipant(CKShareParticipant participant);
 
+    /**
+     * @abstract Defines what permission a user has when not explicitly added to the share.
+     * 
+     * @discussion Shares with @c publicPermission more permissive than @c CKShareParticipantPermissionNone can be joined by any user with access to the share's shareURL.
+     * By default, public permission is @c CKShareParticipantPermissionNone.
+     * Changing the public permission to @c CKShareParticipantPermissionReadOnly or @c CKShareParticipantPermissionReadWrite will result in all pending participants being removed.  Already-accepted participants will remain on the share.
+     * Changing the public permission to @c CKShareParticipantPermissionNone will result in all participants being removed from the share.  You may subsequently choose to call @c addParticipant: before saving the share, those participants will be added to the share.
+     */
     @Generated
     @Selector("setPublicPermission:")
     public native void setPublicPermission(@NInt long value);

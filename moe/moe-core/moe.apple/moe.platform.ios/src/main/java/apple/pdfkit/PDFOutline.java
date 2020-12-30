@@ -41,6 +41,12 @@ public class PDFOutline extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Action performed when a user clicks on the PDFOutline. Equivalent to calling -[destination] above when the outline
+     * has a destination (-[action] will return a PDFActionGoTo object). Some outlines do not have destinations however and
+     * you must therefore call this method. The root outline item will never return either an action or a destination.
+     * Calling -[setAction] on the root item has no effect.
+     */
     @Generated
     @Selector("action")
     public native PDFAction action();
@@ -69,6 +75,9 @@ public class PDFOutline extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * PDFOutline child at index. Will throw exception if index is out of range.
+     */
     @Generated
     @Selector("childAtIndex:")
     public native PDFOutline childAtIndex(@NUInt long index);
@@ -89,10 +98,18 @@ public class PDFOutline extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Set: Has no effect on the root PDFOutline item. If the item previously had an action associated with it, the action is
+     * released (PDFOutline items cannot have both an action and a destination, they are mutually exclusive).
+     * The preferred way though is to call -[setAction] below.
+     */
     @Generated
     @Selector("destination")
     public native PDFDestination destination();
 
+    /**
+     * The PDFDocument the outline is associated with.
+     */
     @Generated
     @Selector("document")
     public native PDFDocument document();
@@ -102,15 +119,31 @@ public class PDFOutline extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Returns the index of the outline item - that is, relative to its siblings (and from the perspective of the parent).
+     * The root outline item (or any item with no parent) is always index 0.
+     */
     @Generated
     @Selector("index")
     @NUInt
     public native long index();
 
+    /**
+     * Returns a PDFOutline object. If this object is to be the outline root, you will need to add additional PDFOutline
+     * objects to form the outline hierarchy you desire. You will then need to add it to a PDFDocument by passing it to
+     * -[PDFDocument setOutlineRoot:]. If this is to be a child (non-root) outline you will need to set a label for it and
+     * either a destination or action for it. Also, you will need to add it as a child of another PDFOutline object.
+     */
     @Generated
     @Selector("init")
     public native PDFOutline init();
 
+    /**
+     * To build up a PDFOutline hierarchy, you call this method to add children outline items. For the simplest of outlines
+     * you would, at the very least, have to add items to the outline root item.
+     * NOTE: Be careful when calling this for a PDFOutline item which already has a parent (for example when moving items
+     * around within an outline hierarchy) - you should retain the item and call -[removeFromParent] first.
+     */
     @Generated
     @Selector("insertChild:atIndex:")
     public native void insertChildAtIndex(PDFOutline child, @NUInt long index);
@@ -128,6 +161,11 @@ public class PDFOutline extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Indicates whether PDFOutline item is initially disclosed or not. If the outline item has no children, -[isOpen] is
+     * always NO and calling -[setIsOpen] has no effect. The root item always returns YES for -[isOpen] and calling
+     * -[setIsOpen] also has no effect.
+     */
     @Generated
     @Selector("isOpen")
     public native boolean isOpen();
@@ -140,6 +178,9 @@ public class PDFOutline extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The label for the outline. The root PDFOutline has no label and is only a container for children PDFOutlines.
+     */
     @Generated
     @Selector("label")
     public native String label();
@@ -150,15 +191,24 @@ public class PDFOutline extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Number of PDFOutline children this PDFOutline has.
+     */
     @Generated
     @Selector("numberOfChildren")
     @NUInt
     public native long numberOfChildren();
 
+    /**
+     * Returns the parent outline (the root outline will return nil).
+     */
     @Generated
     @Selector("parent")
     public native PDFOutline parent();
 
+    /**
+     * Removes self from parent (for root outline, does nothing since the root has no parent).
+     */
     @Generated
     @Selector("removeFromParent")
     public native void removeFromParent();
@@ -171,18 +221,37 @@ public class PDFOutline extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Action performed when a user clicks on the PDFOutline. Equivalent to calling -[destination] above when the outline
+     * has a destination (-[action] will return a PDFActionGoTo object). Some outlines do not have destinations however and
+     * you must therefore call this method. The root outline item will never return either an action or a destination.
+     * Calling -[setAction] on the root item has no effect.
+     */
     @Generated
     @Selector("setAction:")
     public native void setAction(PDFAction value);
 
+    /**
+     * Set: Has no effect on the root PDFOutline item. If the item previously had an action associated with it, the action is
+     * released (PDFOutline items cannot have both an action and a destination, they are mutually exclusive).
+     * The preferred way though is to call -[setAction] below.
+     */
     @Generated
     @Selector("setDestination:")
     public native void setDestination(PDFDestination value);
 
+    /**
+     * Indicates whether PDFOutline item is initially disclosed or not. If the outline item has no children, -[isOpen] is
+     * always NO and calling -[setIsOpen] has no effect. The root item always returns YES for -[isOpen] and calling
+     * -[setIsOpen] also has no effect.
+     */
     @Generated
     @Selector("setIsOpen:")
     public native void setIsOpen(boolean value);
 
+    /**
+     * The label for the outline. The root PDFOutline has no label and is only a container for children PDFOutlines.
+     */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);

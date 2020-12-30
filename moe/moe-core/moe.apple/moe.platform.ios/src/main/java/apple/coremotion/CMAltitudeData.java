@@ -42,6 +42,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMAltitudeData
+ * 
+ * Discussion:
+ *     Contains a single altimeter measurement.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -165,10 +171,22 @@ public class CMAltitudeData extends CMLogItem {
     @Selector("initWithCoder:")
     public native CMAltitudeData initWithCoder(NSCoder coder);
 
+    /**
+     * pressure
+     * 
+     * Discussion:
+     *   The pressure in kPa.
+     */
     @Generated
     @Selector("pressure")
     public native NSNumber pressure();
 
+    /**
+     * relativeAltitude
+     * 
+     * Discussion:
+     *   The relative altitude in meters to the starting altitude.
+     */
     @Generated
     @Selector("relativeAltitude")
     public native NSNumber relativeAltitude();

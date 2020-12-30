@@ -21,10 +21,25 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CXCallEndedReason {
+    /**
+     * An error occurred while trying to service the call
+     */
     @Generated @NInt public static final long Failed = 0x0000000000000001L;
+    /**
+     * The remote party explicitly ended the call
+     */
     @Generated @NInt public static final long RemoteEnded = 0x0000000000000002L;
+    /**
+     * The call never started connecting and was never explicitly ended (e.g. outgoing/incoming call timeout)
+     */
     @Generated @NInt public static final long Unanswered = 0x0000000000000003L;
+    /**
+     * The call was answered on another device
+     */
     @Generated @NInt public static final long AnsweredElsewhere = 0x0000000000000004L;
+    /**
+     * The call was declined on another device
+     */
     @Generated @NInt public static final long DeclinedElsewhere = 0x0000000000000005L;
 
     @Generated

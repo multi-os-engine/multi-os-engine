@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NLModelConfiguration is a class representing the metadata about a model, including specifying whether it is a sequence or classifier model, what language it is intended to support, and what revision of the model training was used to produce the model.
+ */
 @Generated
 @Library("NaturalLanguage")
 @Runtime(ObjCRuntime.class)
@@ -135,6 +138,9 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Most models will be trained to support tagging for a specific language, specified using a standard language abbreviation.
+     */
     @Generated
     @Selector("language")
     public native String language();
@@ -153,6 +159,9 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Each update to model training is specified by a particular revision number, and each model is labeled with the revision of the model training that was used to produce it. Each system version has a current revision for each model type, corresponding to the most recent revision of model training available, and a larger set of supported revisions for backward compatibility. A given revision will be supported for a number of system versions, but not indefinitely, and the set of supported revisions can be used to determine whether a given revision is still supported. Attempting to use a model from a revision that is no longer supported will fail with a suitable error.
+     */
     @Generated
     @Selector("revision")
     @NUInt

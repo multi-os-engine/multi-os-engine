@@ -3,6 +3,9 @@ package apple.pdfkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Style used for line end caps.
+ */
 @Generated
 public final class PDFLineStyle {
     @Generated

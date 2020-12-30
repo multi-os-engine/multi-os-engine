@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface TKTokenKeychainItem
+ * @brief Base interface for propagation token's items into the keychain.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -75,6 +79,9 @@ public class TKTokenKeychainItem extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @discussion Contains access constraints for this object keyed by TKTOpenOperation wrapped in NSNumber.
+     */
     @Generated
     @Selector("constraints")
     public native NSDictionary<? extends NSNumber, ?> constraints();
@@ -96,6 +103,9 @@ public class TKTokenKeychainItem extends NSObject {
     @Selector("init")
     public native TKTokenKeychainItem init();
 
+    /**
+     * @brief Initializes item with objectID.
+     */
     @Generated
     @Selector("initWithObjectID:")
     public native TKTokenKeychainItem initWithObjectID(@Mapped(ObjCObjectMapper.class) Object objectID);
@@ -121,6 +131,9 @@ public class TKTokenKeychainItem extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @discussion Contains the user-visible label for this item.  This property is an equivalent of kSecAttrLabel in SecItem.h
+     */
     @Generated
     @Selector("label")
     public native String label();
@@ -131,6 +144,9 @@ public class TKTokenKeychainItem extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief object ID for item identification
+     */
     @Generated
     @Selector("objectID")
     @MappedReturn(ObjCObjectMapper.class)
@@ -144,10 +160,16 @@ public class TKTokenKeychainItem extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @discussion Contains access constraints for this object keyed by TKTOpenOperation wrapped in NSNumber.
+     */
     @Generated
     @Selector("setConstraints:")
     public native void setConstraints(NSDictionary<? extends NSNumber, ?> value);
 
+    /**
+     * @discussion Contains the user-visible label for this item.  This property is an equivalent of kSecAttrLabel in SecItem.h
+     */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);

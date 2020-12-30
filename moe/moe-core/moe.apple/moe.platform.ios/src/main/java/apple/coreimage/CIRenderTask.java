@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An Xcode quicklook of this object will show a graph visualization of the render
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)

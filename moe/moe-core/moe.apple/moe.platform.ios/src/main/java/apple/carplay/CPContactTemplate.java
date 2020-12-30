@@ -80,6 +80,10 @@ public class CPContactTemplate extends CPTemplate implements CPBarButtonProvidin
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The contact currently displayed by this template. Assigning a new contact
+     * will update the template.
+     */
     @Generated
     @Selector("contact")
     public native CPContact contact();
@@ -105,6 +109,9 @@ public class CPContactTemplate extends CPTemplate implements CPBarButtonProvidin
     @Selector("initWithCoder:")
     public native CPContactTemplate initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize a @c CPContactTemplate by providing a @c CPContact.
+     */
     @Generated
     @Selector("initWithContact:")
     public native CPContactTemplate initWithContact(CPContact contact);
@@ -152,6 +159,10 @@ public class CPContactTemplate extends CPTemplate implements CPBarButtonProvidin
     @Selector("setBackButton:")
     public native void setBackButton(CPBarButton value);
 
+    /**
+     * The contact currently displayed by this template. Assigning a new contact
+     * will update the template.
+     */
     @Generated
     @Selector("setContact:")
     public native void setContact(CPContact value);

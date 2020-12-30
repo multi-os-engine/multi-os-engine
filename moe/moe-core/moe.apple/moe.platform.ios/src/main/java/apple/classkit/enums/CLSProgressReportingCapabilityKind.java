@@ -3,6 +3,14 @@ package apple.classkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum       CLSProgressReportingCapabilityKind
+ * @constant   CLSProgressReportingCapabilityKindDuration     Reports time spent. By default all CLSContexts have this capability. See CLSActivity for more information.
+ * @constant   CLSProgressReportingCapabilityKindPercent      Reports progress percentage. See CLSActivity for more information.
+ * @constant   CLSProgressReportingCapabilityKindBinary       Reports a binary value like true/false, pass/fail, yes/no or correct/incorrect. See CLSBinaryItem for more information.
+ * @constant   CLSProgressReportingCapabilityKindQuantity     Reports a discrete value. See CLSQuantityItem for more information.
+ * @constant   CLSProgressReportingCapabilityKindScore        Reports a score. See CLSScoreItem for more information.
+ */
 @Generated
 public final class CLSProgressReportingCapabilityKind {
     @Generated

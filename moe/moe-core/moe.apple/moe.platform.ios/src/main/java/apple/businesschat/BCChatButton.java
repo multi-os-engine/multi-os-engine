@@ -253,6 +253,13 @@ public class BCChatButton extends UIControl {
     @Selector("initWithFrame:")
     public native BCChatButton initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Creates and returns a BCChatButton configured for a given style.
+     * 
+     * @param style The visual style of the button.
+     * 
+     * @return BCChatButton instance.
+     */
     @Generated
     @Selector("initWithStyle:")
     public native BCChatButton initWithStyle(@NInt long style);

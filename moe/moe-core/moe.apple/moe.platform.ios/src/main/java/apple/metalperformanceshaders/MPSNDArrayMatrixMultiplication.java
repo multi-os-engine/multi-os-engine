@@ -26,6 +26,26 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNDArrayMatrixMultiplication
+ * 
+ * @dependency This depends on Metal.framework.
+ * 
+ * @abstract   A matrix multiplication kernel operating on MPSNDArray objects.
+ * 
+ * @discussion A MPSNDArrayMatrixMultiplication object computes, for each 2-D matrix within
+ *             a 4-D MPSNDArray object:
+ * 
+ *                 D = alpha * A * B + beta * C
+ * 
+ *             A, B, C, and D are matrices which are represented by objects stored
+ *             in the two most major dimensions of the MPSNDArray. alpha and beta
+ *             are scalar values (of the same data type as values of D and C) which
+ *             are applied as shown above.
+ * 
+ *             If an input's 3rd or 4th dimension is 1 its data will be broadcast as
+ *             appropriate to the remaining input's 3rd or 4th dimension respectively.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -54,6 +74,14 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @property   alpha
+     * 
+     * @discussion The scale factor to apply to the product.  Specified in double
+     *             precision.  Will be converted to the appropriate precision in the
+     *             implementation subject to rounding and/or clamping as necessary.
+     *             Defaults to 1.0 at initialization time.
+     */
     @Generated
     @Selector("alpha")
     public native double alpha();
@@ -62,6 +90,14 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property   beta
+     * 
+     * @discussion The scale factor to apply to the addend if available.  Specified in double
+     *             precision.  Will be converted to the appropriate precision in the
+     *             implementation subject to rounding and/or clamping as necessary.
+     *             Defaults to 1.0 at initialization time.
+     */
     @Generated
     @Selector("beta")
     public native double beta();
@@ -154,10 +190,26 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   alpha
+     * 
+     * @discussion The scale factor to apply to the product.  Specified in double
+     *             precision.  Will be converted to the appropriate precision in the
+     *             implementation subject to rounding and/or clamping as necessary.
+     *             Defaults to 1.0 at initialization time.
+     */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(double value);
 
+    /**
+     * @property   beta
+     * 
+     * @discussion The scale factor to apply to the addend if available.  Specified in double
+     *             precision.  Will be converted to the appropriate precision in the
+     *             implementation subject to rounding and/or clamping as necessary.
+     *             Defaults to 1.0 at initialization time.
+     */
     @Generated
     @Selector("setBeta:")
     public native void setBeta(double value);

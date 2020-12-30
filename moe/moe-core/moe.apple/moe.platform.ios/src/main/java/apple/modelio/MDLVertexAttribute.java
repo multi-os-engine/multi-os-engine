@@ -40,6 +40,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MDLVertexAttribute
+ * @abstract Structure with properties of a vertex attribute
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +155,11 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property bufferIndex
+     * @abstract index of the buffer in mesh's vertexBuffer array in which this 
+     *           attribute resides
+     */
     @Generated
     @Selector("bufferIndex")
     @NUInt
@@ -162,6 +171,13 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * @property format
+     * @abstract Format (including number of components) of the attribute
+     * @discussion If the value is MDLVertexFormatInvalid.   Other values of this 
+     *             object will be ignored when setting the MDLVertexDescriptor object 
+     *             in a Mesh. The initial value is MDLVertexFormatInvalid.
+     */
     @Generated
     @Selector("format")
     @NUInt
@@ -171,40 +187,84 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
     @Selector("init")
     public native MDLVertexAttribute init();
 
+    /**
+     * @method initWithName:format:offset:bufferIndex
+     * @abstract Initialize attribute object with all properties
+     */
     @Generated
     @Selector("initWithName:format:offset:bufferIndex:")
     public native MDLVertexAttribute initWithNameFormatOffsetBufferIndex(String name, @NUInt long format,
             @NUInt long offset, @NUInt long bufferIndex);
 
+    /**
+     * @property name
+     * @abstract Identifying name of the attribute derived from model file, or one of 
+     *           the predefined MDLVertexAttribute strings
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * @property offset
+     * @abstract offset in bytes of the attrbute in each element of the vertex buffer
+     */
     @Generated
     @Selector("offset")
     @NUInt
     public native long offset();
 
+    /**
+     * @property bufferIndex
+     * @abstract index of the buffer in mesh's vertexBuffer array in which this 
+     *           attribute resides
+     */
     @Generated
     @Selector("setBufferIndex:")
     public native void setBufferIndex(@NUInt long value);
 
+    /**
+     * @property format
+     * @abstract Format (including number of components) of the attribute
+     * @discussion If the value is MDLVertexFormatInvalid.   Other values of this 
+     *             object will be ignored when setting the MDLVertexDescriptor object 
+     *             in a Mesh. The initial value is MDLVertexFormatInvalid.
+     */
     @Generated
     @Selector("setFormat:")
     public native void setFormat(@NUInt long value);
 
+    /**
+     * @property name
+     * @abstract Identifying name of the attribute derived from model file, or one of 
+     *           the predefined MDLVertexAttribute strings
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * @property offset
+     * @abstract offset in bytes of the attrbute in each element of the vertex buffer
+     */
     @Generated
     @Selector("setOffset:")
     public native void setOffset(@NUInt long value);
 
+    /**
+     * @property time
+     * @abstract the time the attribute is intended for.
+     * @discussion morph targets would store their times here
+     */
     @Generated
     @Selector("setTime:")
     public native void setTime(double value);
 
+    /**
+     * @property time
+     * @abstract the time the attribute is intended for.
+     * @discussion morph targets would store their times here
+     */
     @Generated
     @Selector("time")
     public native double time();

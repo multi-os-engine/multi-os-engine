@@ -28,6 +28,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXAverage
+ * @abstract      A class representing metric data that is averaged.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -60,6 +64,10 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property      averageMeasurement
+     * @abstract      An NSMeasurement that contains the average measurement.
+     */
     @Generated
     @Selector("averageMeasurement")
     public native NSMeasurement<NSUnit> averageMeasurement();
@@ -142,6 +150,11 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property      sampleCount
+     * @abstract      An NSInteger representation of the number of samples in the distribution used to formulate the average.
+     * @discussion    This value is negative if an unknown number of samples was used to compute the average.
+     */
     @Generated
     @Selector("sampleCount")
     @NInt
@@ -151,6 +164,11 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @property      standardDeviation
+     * @abstract      An double representation of the standard deviation of the distribution.
+     * @discussion    This value is negative an unknown number of samples was used to compute the standard deviation.
+     */
     @Generated
     @Selector("standardDeviation")
     public native double standardDeviation();

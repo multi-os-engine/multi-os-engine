@@ -43,6 +43,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEFilterControlVerdict
+ * @discussion The NEFilterControlVerdict declares the programmatic interface of an object that is the verdict for a
+ * new flow of network data by the control provider.
+ * 
+ * NEFilterControlVerdict is part of NetworkExtension.framework
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -79,6 +86,13 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
     @Selector("allowVerdict")
     public static native NEFilterNewFlowVerdict allowVerdict();
 
+    /**
+     * @method allowVerdictWithUpdateRules:
+     * @discussion This class method returns a verdict indicating that the flow should be allowed to go through, and also
+     * tell the data provider whether to update its rules or not.
+     * @param updateRules YES if the control provider has updated the rules and wants to communicate that to the data provider
+     * @return The NEFilterControlVerdict object.
+     */
     @Generated
     @Selector("allowVerdictWithUpdateRules:")
     public static native NEFilterControlVerdict allowVerdictWithUpdateRules(boolean updateRules);
@@ -117,6 +131,13 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
     @Selector("dropVerdict")
     public static native NEFilterNewFlowVerdict dropVerdict();
 
+    /**
+     * @method dropVerdictWithUpdateRules:
+     * @discussion This class method returns a verdict indicating that the flow should be dropped, and also tell the data
+     * provider whether to update its rules or not.
+     * @param updateRules YES if the control provider has updated the rules and wants to communicate that to the data provider
+     * @return The NEFilterControlVerdict object.
+     */
     @Generated
     @Selector("dropVerdictWithUpdateRules:")
     public static native NEFilterControlVerdict dropVerdictWithUpdateRules(boolean updateRules);
@@ -187,6 +208,12 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * @method updateRules
+     * @discussion This class method returns a verdict indicating that the flow should be handled by the data provider,
+     * and the rules needed by the data provider have been set.
+     * @return The NEFilterControlVerdict object.
+     */
     @Generated
     @Selector("updateRules")
     public static native NEFilterControlVerdict updateRules();

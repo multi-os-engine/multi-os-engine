@@ -21,6 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSCalendarOptions {
+    /**
+     * option for arithmetic operations that do calendar addition
+     */
     @Generated @NUInt public static final long WrapComponents = 0x0000000000000001L;
     @Generated @NUInt public static final long MatchStrictly = 0x0000000000000002L;
     @Generated @NUInt public static final long SearchBackwards = 0x0000000000000004L;

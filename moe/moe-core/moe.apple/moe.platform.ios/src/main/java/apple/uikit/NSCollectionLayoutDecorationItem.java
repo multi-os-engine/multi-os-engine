@@ -56,6 +56,33 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Useful for setting a background decoration view behind a section's content area.
+     * 
+     * contentInset can also be applied as-needed.
+     * Register the elementKind with the layout instance to associate with your custom view class/nib
+     * 
+     *   +----------------------------------+
+     *   |                                  |
+     *   |  +----------------------------+  |      +--------------------------------+
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |      |Background Decoration Item      |
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~<--+------|* contentInsets applied         |
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |      +--------------------------------+
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |      +--------------------------------+
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |<-----|        Section Geometry        |
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |      +--------------------------------+
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |
+     *   |  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |
+     *   |  +----------------------------+  |
+     *   |                                  |
+     *   +----------------------------------+
+     */
     @Generated
     @Selector("backgroundDecorationItemWithElementKind:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -155,6 +182,9 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * default is 0; all other section items will be automatically be promoted to zIndex=1
+     */
     @Generated
     @Selector("setZIndex:")
     public native void setZIndex(@NInt long value);
@@ -168,6 +198,9 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
     @NInt
     public static native long version_static();
 
+    /**
+     * default is 0; all other section items will be automatically be promoted to zIndex=1
+     */
     @Generated
     @Selector("zIndex")
     @NInt

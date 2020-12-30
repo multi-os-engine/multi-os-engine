@@ -158,6 +158,9 @@ public class CSPerson extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * If the property has already been resolved, the identifier for the Contact
+     */
     @Generated
     @Selector("contactIdentifier")
     public native String contactIdentifier();
@@ -168,6 +171,9 @@ public class CSPerson extends NSObject implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * An optional display name for displaying this recipient
+     */
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -176,10 +182,16 @@ public class CSPerson extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * A CNContactPropertyKey to identify the type of of handle, e.g. CNContactPhoneNumbersKey
+     */
     @Generated
     @Selector("handleIdentifier")
     public native String handleIdentifier();
 
+    /**
+     * An array of contact handles, e.g. phone numbers
+     */
     @Generated
     @Selector("handles")
     public native NSArray<String> handles();
@@ -197,6 +209,9 @@ public class CSPerson extends NSObject implements NSSecureCoding, NSCopying {
     public native CSPerson initWithDisplayNameHandlesHandleIdentifier(String displayName, NSArray<String> handles,
             String handleIdentifier);
 
+    /**
+     * If the property has already been resolved, the identifier for the Contact
+     */
     @Generated
     @Selector("setContactIdentifier:")
     public native void setContactIdentifier(String value);

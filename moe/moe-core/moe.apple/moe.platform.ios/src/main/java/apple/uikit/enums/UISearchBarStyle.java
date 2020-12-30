@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UISearchBarStyle {
+    /**
+     * currently UISearchBarStyleProminent
+     */
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
+    /**
+     * used my Mail, Messages and Contacts
+     */
     @Generated @NUInt public static final long Prominent = 0x0000000000000001L;
+    /**
+     * used by Calendar, Notes and Music
+     */
     @Generated @NUInt public static final long Minimal = 0x0000000000000002L;
 
     @Generated

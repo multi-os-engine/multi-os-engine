@@ -131,6 +131,14 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method		propertyListForTextStyleRules:
+     * @abstract		Converts an NSArray of AVTextStyleRules into a serializable property list that can be used for persistent storage.
+     * @param			textStyleRules
+     * 				An array of AVTextStyleRules.
+     * @result		A serializable property list.
+     * @discussion	For serialization utilities, see NSPropertyList.h.
+     */
     @Generated
     @Selector("propertyListForTextStyleRules:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -152,16 +160,40 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * @method		textStyleRuleWithTextMarkupAttributes:
+     * @abstract		Creates an instance of AVTextStyleRule with the specified text markup attributes.
+     * @param			textMarkupAttributes
+     * 				An NSDictionary with keys representing text style attributes that are specifiable in text markup. Eligible keys are defined in <CoreMedia/CMTextMarkup.h>.
+     * @result		An instance of AVTextStyleRule
+     * @discussion	Equivalent to invoking +textStyleRuleWithTextMarkupAttributes:textSelector: with a value of nil for textSelector.
+     */
     @Generated
     @Selector("textStyleRuleWithTextMarkupAttributes:")
     public static native AVTextStyleRule textStyleRuleWithTextMarkupAttributes(
             NSDictionary<String, ?> textMarkupAttributes);
 
+    /**
+     * @method		textStyleRuleWithTextMarkupAttributes:textSelector:
+     * @abstract		Creates an instance of AVTextStyleRule with the specified text markup attributes and an identifier for the range or ranges of text to which the attributes should be applied.
+     * @param			textMarkupAttributes
+     * 				An NSDictionary with keys representing text style attributes that are specifiable in text markup. Eligible keys are defined in <CoreMedia/CMTextMarkup.h>.
+     * @param			textSelector
+     * 			An identifier for the range or ranges of text to which the attributes should be applied. Eligible identifiers are determined by the format and content of the legible media. A value of nil indicates that the textMarkupAttributes should be applied as default styles for all text unless overridden by content markup or other applicable text selectors.
+     * @result		An instance of AVTextStyleRule
+     */
     @Generated
     @Selector("textStyleRuleWithTextMarkupAttributes:textSelector:")
     public static native AVTextStyleRule textStyleRuleWithTextMarkupAttributesTextSelector(
             NSDictionary<String, ?> textMarkupAttributes, String textSelector);
 
+    /**
+     * @method		textStyleRulesFromPropertyList:
+     * @abstract		Converts a property list into an NSArray of AVTextStyleRules.
+     * @param			plist
+     * 				A property list, normally obtained previously via an invocation of +propertyListForTextStyleRules:.
+     * @result		An NSArray of AVTextStyleRules
+     */
     @Generated
     @Selector("textStyleRulesFromPropertyList:")
     public static native NSArray<? extends AVTextStyleRule> textStyleRulesFromPropertyList(
@@ -182,19 +214,45 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     @Selector("init")
     public native AVTextStyleRule init();
 
+    /**
+     * @method		initWithTextMarkupAttributes:
+     * @abstract		Creates an instance of AVTextStyleRule with the specified text markup attributes.
+     * @param			textMarkupAttributes
+     * 				An NSDictionary with keys representing text style attributes that are specifiable in text markup. Eligible keys are defined in <CoreMedia/CMTextMarkup.h>.
+     * @result		An instance of AVTextStyleRule
+     * @discussion	Equivalent to invoking -initWithTextMarkupAttributes:textSelector: with a value of nil for textSelector.
+     */
     @Generated
     @Selector("initWithTextMarkupAttributes:")
     public native AVTextStyleRule initWithTextMarkupAttributes(NSDictionary<String, ?> textMarkupAttributes);
 
+    /**
+     * @method		initWithTextMarkupAttributes:textSelector:
+     * @abstract		Creates an instance of AVTextStyleRule with the specified text markup attributes and an identifier for the range or ranges of text to which the attributes should be applied.
+     * @param			textMarkupAttributes
+     * 				An NSDictionary with keys representing text style attributes that are specifiable in text markup. Eligible keys are defined in <CoreMedia/CMTextMarkup.h>.
+     * @param			textSelector
+     * 			An identifier for the range or ranges of text to which the attributes should be applied. Eligible identifiers are determined by the format and content of the legible media. A value of nil indicates that the textMarkupAttributes should be applied as default styles for all text unless overridden by content markup or other applicable text selectors.
+     * @result		An instance of AVTextStyleRule
+     */
     @Generated
     @Selector("initWithTextMarkupAttributes:textSelector:")
     public native AVTextStyleRule initWithTextMarkupAttributesTextSelector(NSDictionary<String, ?> textMarkupAttributes,
             String textSelector);
 
+    /**
+     * @property		textMarkupAttributes
+     * @abstract		An NSDictionary with keys representing text style attributes that are specifiable in text markup. Eligible keys and the expected types of their corresponding values are defined in <CoreMedia/CMTextMarkup.h>.
+     */
     @Generated
     @Selector("textMarkupAttributes")
     public native NSDictionary<String, ?> textMarkupAttributes();
 
+    /**
+     * @property		textSelector
+     * @abstract		A string that identifies the range or ranges of text to which the attributes should be applied. A value of nil indicates that the textMarkupAttributes should be applied as default styles for all text unless overridden by content markup or other applicable text selectors.
+     * @dicussion		The syntax of text selectors is determined by the format of the legible media. Eligible selectors may be determined by the content of the legible media (e.g. CSS selectors that are valid for a specific WebVTT document).
+     */
     @Generated
     @Selector("textSelector")
     public native String textSelector();

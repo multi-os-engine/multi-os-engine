@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A configuration for running geographical world tracking.
+ * 
+ * @discussion It allows placing geo-referenced anchors (ARGeoAnchor) in the scene by running world tracking with location and compass.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -55,6 +60,12 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Enables the estimation of a scale factor which may be used to correct the physical size of an image.
+     * @discussion If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the given physical size
+     * differs from the estimated one. The information about the estimated scale can be found as the property estimatedScaleFactor on the ARImageAnchor.
+     * @note When set to true the transform of a returned ARImageAnchor will use the estimated scale factor to correct the translation. Default value is NO.
+     */
     @Generated
     @Selector("automaticImageScaleEstimationEnabled")
     public native boolean automaticImageScaleEstimationEnabled();
@@ -73,6 +84,14 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * Determines the availability of geo tracking at the given location.
+     * 
+     * @param coordinate Location at which to check.
+     * @param completionHandler Completion handler that is called when availability has been determined. This handler is executed on an arbitrary serial queue. It takes the following parameters:
+     *        isAvailable - True if geo tracking is available at the given location, otherwise false.
+     *        error - An error that indicates why geo tracking is not available at the given location.
+     */
     @Generated
     @Selector("checkAvailabilityAtCoordinate:completionHandler:")
     public static native void checkAvailabilityAtCoordinateCompletionHandler(@ByValue CLLocationCoordinate2D coordinate,
@@ -85,6 +104,15 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
         void call_checkAvailabilityAtCoordinateCompletionHandler(boolean isAvailable, NSError error);
     }
 
+    /**
+     * Determines the availability of geo tracking at the current location.
+     * 
+     * @discussion This method will attempt to acquire a location fix on a background thread, then check availability.
+     * 
+     * @param completionHandler Completion handler that is called when availability has been determined. This handler is executed on an arbitrary serial queue. It takes the following parameters:
+     *        isAvailable - True if geo tracking is available at the current location, otherwise false.
+     *        error - An error that indicates why geo tracking is not available at the current location.
+     */
     @Generated
     @Selector("checkAvailabilityWithCompletionHandler:")
     public static native void checkAvailabilityWithCompletionHandler(
@@ -113,14 +141,28 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Images to detect in the scene.
+     * @discussion If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will be added to the session.
+     */
     @Generated
     @Selector("detectionImages")
     public native NSSet<? extends ARReferenceImage> detectionImages();
 
+    /**
+     * Objects to detect in the scene.
+     * @discussion If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor will be added to the session.
+     */
     @Generated
     @Selector("detectionObjects")
     public native NSSet<? extends ARReferenceObject> detectionObjects();
 
+    /**
+     * The mode of environment texturing to run.
+     * @discussion If set, texture information will be accumulated and updated. Adding an AREnvironmentProbeAnchor to the session
+     * will get the current environment texture available from that probe's perspective which can be used for lighting
+     * virtual objects in the scene. Defaults to AREnvironmentTexturingNone.
+     */
     @Generated
     @Selector("environmentTexturing")
     @NInt
@@ -160,6 +202,12 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Maximum number of images to track simultaneously.
+     * @discussion Setting the maximum number of tracked images will limit the number of images that can be tracked in a given frame.
+     * If more than the maximum is visible, only the images already being tracked will continue to track until tracking is lost or another image is removed.
+     * Images will continue to be detected regardless of images tracked. Default value is zero.
+     */
     @Generated
     @Selector("maximumNumberOfTrackedImages")
     @NInt
@@ -171,6 +219,11 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Type of planes to detect in the scene.
+     * @discussion If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
+     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to ARPlaneDetectionNone.
+     */
     @Generated
     @Selector("planeDetection")
     @NUInt
@@ -184,26 +237,57 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Enables the estimation of a scale factor which may be used to correct the physical size of an image.
+     * @discussion If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the given physical size
+     * differs from the estimated one. The information about the estimated scale can be found as the property estimatedScaleFactor on the ARImageAnchor.
+     * @note When set to true the transform of a returned ARImageAnchor will use the estimated scale factor to correct the translation. Default value is NO.
+     */
     @Generated
     @Selector("setAutomaticImageScaleEstimationEnabled:")
     public native void setAutomaticImageScaleEstimationEnabled(boolean value);
 
+    /**
+     * Images to detect in the scene.
+     * @discussion If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will be added to the session.
+     */
     @Generated
     @Selector("setDetectionImages:")
     public native void setDetectionImages(NSSet<? extends ARReferenceImage> value);
 
+    /**
+     * Objects to detect in the scene.
+     * @discussion If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor will be added to the session.
+     */
     @Generated
     @Selector("setDetectionObjects:")
     public native void setDetectionObjects(NSSet<? extends ARReferenceObject> value);
 
+    /**
+     * The mode of environment texturing to run.
+     * @discussion If set, texture information will be accumulated and updated. Adding an AREnvironmentProbeAnchor to the session
+     * will get the current environment texture available from that probe's perspective which can be used for lighting
+     * virtual objects in the scene. Defaults to AREnvironmentTexturingNone.
+     */
     @Generated
     @Selector("setEnvironmentTexturing:")
     public native void setEnvironmentTexturing(@NInt long value);
 
+    /**
+     * Maximum number of images to track simultaneously.
+     * @discussion Setting the maximum number of tracked images will limit the number of images that can be tracked in a given frame.
+     * If more than the maximum is visible, only the images already being tracked will continue to track until tracking is lost or another image is removed.
+     * Images will continue to be detected regardless of images tracked. Default value is zero.
+     */
     @Generated
     @Selector("setMaximumNumberOfTrackedImages:")
     public native void setMaximumNumberOfTrackedImages(@NInt long value);
 
+    /**
+     * Type of planes to detect in the scene.
+     * @discussion If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
+     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to ARPlaneDetectionNone.
+     */
     @Generated
     @Selector("setPlaneDetection:")
     public native void setPlaneDetection(@NUInt long value);
@@ -212,6 +296,9 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Determines whether environment textures will be provided with high dynamic range. Enabled by default.
+     */
     @Generated
     @Selector("setWantsHDREnvironmentTextures:")
     public native void setWantsHDREnvironmentTextures(boolean value);
@@ -233,6 +320,9 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @NInt
     public static native long version_static();
 
+    /**
+     * Determines whether environment textures will be provided with high dynamic range. Enabled by default.
+     */
     @Generated
     @Selector("wantsHDREnvironmentTextures")
     public native boolean wantsHDREnvironmentTextures();

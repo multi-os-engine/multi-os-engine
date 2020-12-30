@@ -23,6 +23,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A configuration for scanning objects.
+ * 
+ * @discussion The object scanning configuration runs world tracking, capturing additional detail in order to create reference objects.
+ * Running object scanning will consume additional power in order to provide more detailed features.
+ * The createReferenceObject method can be called on the session to capture a scan of an object in the world.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -103,6 +110,10 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Enable or disable continuous auto focus.
+     * @discussion Enabled by default.
+     */
     @Generated
     @Selector("isAutoFocusEnabled")
     public native boolean isAutoFocusEnabled();
@@ -125,6 +136,11 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Type of planes to detect in the scene.
+     * @discussion If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
+     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to ARPlaneDetectionNone.
+     */
     @Generated
     @Selector("planeDetection")
     @NUInt
@@ -138,10 +154,19 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Enable or disable continuous auto focus.
+     * @discussion Enabled by default.
+     */
     @Generated
     @Selector("setAutoFocusEnabled:")
     public native void setAutoFocusEnabled(boolean value);
 
+    /**
+     * Type of planes to detect in the scene.
+     * @discussion If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
+     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to ARPlaneDetectionNone.
+     */
     @Generated
     @Selector("setPlaneDetection:")
     public native void setPlaneDetection(@NUInt long value);

@@ -27,44 +27,74 @@ public final class auditinfo_addr extends StructObject {
         super(peer);
     }
 
+    /**
+     * Audit user ID.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int ai_auid();
 
+    /**
+     * Audit user ID.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setAi_auid(int value);
 
+    /**
+     * Audit masks.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native au_mask ai_mask();
 
+    /**
+     * Audit masks.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setAi_mask(@ByValue au_mask value);
 
+    /**
+     * Terminal ID.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @ByValue
     public native au_tid_addr ai_termid();
 
+    /**
+     * Terminal ID.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setAi_termid(@ByValue au_tid_addr value);
 
+    /**
+     * Audit session ID.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int ai_asid();
 
+    /**
+     * Audit session ID.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setAi_asid(int value);
 
+    /**
+     * Audit session flags.
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native long ai_flags();
 
+    /**
+     * Audit session flags.
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setAi_flags(long value);

@@ -182,6 +182,12 @@ public class CMLogItem extends NSObject implements NSSecureCoding, NSCopying {
         return supportsSecureCoding();
     }
 
+    /**
+     * timestamp
+     * 
+     * Discussion:
+     *   Time at which the item is valid.
+     */
     @Generated
     @Selector("timestamp")
     public native double timestamp();

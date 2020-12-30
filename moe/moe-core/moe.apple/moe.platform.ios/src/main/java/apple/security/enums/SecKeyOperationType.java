@@ -19,6 +19,25 @@ package apple.security.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum SecKeyOperationType
+ * @abstract Defines types of cryptographic operations available with SecKey instance.
+ * 
+ * @constant kSecKeyOperationTypeSign
+ * Represents SecKeyCreateSignature()
+ * 
+ * @constant kSecKeyOperationTypeVerify
+ * Represents SecKeyVerifySignature()
+ * 
+ * @constant kSecKeyOperationTypeEncrypt
+ * Represents SecKeyCreateEncryptedData()
+ * 
+ * @constant kSecKeyOperationTypeDecrypt
+ * Represents SecKeyCreateDecryptedData()
+ * 
+ * @constant kSecKeyOperationTypeKeyExchange
+ * Represents SecKeyCopyKeyExchangeResult()
+ */
 @Generated
 public final class SecKeyOperationType {
     @Generated @NInt public static final long Sign = 0x0000000000000000L;

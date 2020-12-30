@@ -59,6 +59,9 @@ public class INCarHeadUnit extends NSObject implements NSCopying, NSSecureCoding
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * The bluetooth identifier for the head unit.
+     */
     @Generated
     @Selector("bluetoothIdentifier")
     public native String bluetoothIdentifier();
@@ -104,6 +107,9 @@ public class INCarHeadUnit extends NSObject implements NSCopying, NSSecureCoding
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The iAP2 identifier for the head unit.
+     */
     @Generated
     @Selector("iAP2Identifier")
     public native String iAP2Identifier();
@@ -112,6 +118,9 @@ public class INCarHeadUnit extends NSObject implements NSCopying, NSSecureCoding
     @Selector("init")
     public native INCarHeadUnit init();
 
+    /**
+     * Instantiates an INHeadUnit object with the provided bluetooth identifier and iAP2 identifier.
+     */
     @Generated
     @Selector("initWithBluetoothIdentifier:iAP2Identifier:")
     public native INCarHeadUnit initWithBluetoothIdentifierIAP2Identifier(String bluetoothIdentifier,

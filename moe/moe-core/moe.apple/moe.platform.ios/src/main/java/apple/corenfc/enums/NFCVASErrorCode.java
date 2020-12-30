@@ -3,6 +3,11 @@ package apple.corenfc.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum NFCVASErrorCode
+ * 
+ * @discussion Response APDU status word.
+ */
 @Generated
 public final class NFCVASErrorCode {
     @Generated

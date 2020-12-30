@@ -19,6 +19,18 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum AVCaptureFlashMode
+ * @abstract
+ *    Constants indicating the mode of the flash on the receiver's device, if it has one.
+ * 
+ * @constant AVCaptureFlashModeOff
+ *    Indicates that the flash should always be off.
+ * @constant AVCaptureFlashModeOn
+ *    Indicates that the flash should always be on.
+ * @constant AVCaptureFlashModeAuto
+ *    Indicates that the flash should be used automatically depending on ambient light conditions.
+ */
 @Generated
 public final class AVCaptureFlashMode {
     @Generated @NInt public static final long Off = 0x0000000000000000L;

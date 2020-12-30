@@ -47,6 +47,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Immutable Set	***************
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -186,6 +189,9 @@ public class NSSet<_ObjectType> extends NSObject
     @NInt
     public static native long version_static();
 
+    /**
+     * NSSets are not observable, so these methods raise exceptions when invoked on NSSets. Instead of observing a set, observe the unordered to-many relationship for which the set is the collection of related objects.
+     */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
     public native void addObserverForKeyPathOptionsContext(NSObject observer, String keyPath, @NUInt long options,
@@ -243,6 +249,9 @@ public class NSSet<_ObjectType> extends NSObject
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
 
+    /**
+     * evaluate a predicate against a set of objects and return a filtered set
+     */
     @Generated
     @Selector("filteredSetUsingPredicate:")
     public native NSSet<_ObjectType> filteredSetUsingPredicate(NSPredicate predicate);
@@ -343,10 +352,16 @@ public class NSSet<_ObjectType> extends NSObject
     @Selector("setByAddingObjectsFromSet:")
     public native NSSet<_ObjectType> setByAddingObjectsFromSet(NSSet<_ObjectType> other);
 
+    /**
+     * Invoke -setValue:forKey: on each of the receiver's members.
+     */
     @Generated
     @Selector("setValue:forKey:")
     public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
+    /**
+     * returns a new array by sorting the objects of the receiver
+     */
     @Generated
     @Selector("sortedArrayUsingDescriptors:")
     public native NSArray<_ObjectType> sortedArrayUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
@@ -357,6 +372,9 @@ public class NSSet<_ObjectType> extends NSObject
         return supportsSecureCoding();
     }
 
+    /**
+     * Return a set containing the results of invoking -valueForKey: on each of the receiver's members. The returned set might not have the same number of members as the receiver. The returned set will not contain any elements corresponding to instances of -valueForKey: returning nil (in contrast with -[NSArray(NSKeyValueCoding) valueForKey:], which may put NSNulls in the arrays it returns).
+     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)

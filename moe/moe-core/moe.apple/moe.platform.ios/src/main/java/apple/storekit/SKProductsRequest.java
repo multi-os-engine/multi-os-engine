@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * request information about products for your application
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -159,6 +162,9 @@ public class SKProductsRequest extends SKRequest {
     @Selector("init")
     public native SKProductsRequest init();
 
+    /**
+     * Set of string product identifiers
+     */
     @Generated
     @Selector("initWithProductIdentifiers:")
     public native SKProductsRequest initWithProductIdentifiers(NSSet<String> productIdentifiers);

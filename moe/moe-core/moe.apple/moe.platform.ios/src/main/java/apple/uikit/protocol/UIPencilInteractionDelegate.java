@@ -14,6 +14,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPencilInteractionDelegate")
 public interface UIPencilInteractionDelegate {
+    /**
+     * Called when the user taps on the side of the pencil, if the interaction's view is in a visible view hierarchy.
+     * 
+     * The delegate may do anything in this method.  To perform the user's preferred action (as set in Settings),
+     * consult the preferredTapAction class property of UIPencilInteraction.
+     */
     @Generated
     @IsOptional
     @Selector("pencilInteractionDidTap:")

@@ -145,6 +145,15 @@ public class ADClient extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @method sharedClient
+     * 
+     * @return
+     * The shared singleton instance of ADClient.
+     * 
+     * @discussion
+     * ADClient is a singleton object.
+     */
     @Generated
     @Selector("sharedClient")
     public static native ADClient sharedClient();
@@ -158,10 +167,44 @@ public class ADClient extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @method addClientToSegments:replaceExisting:
+     * 
+     * @param segmentIdentifiers
+     * Array of NSString objects identifying which segments to add the client to.
+     * May be nil.
+     * 
+     * @param replaceExisting
+     * If YES, the client will be removed from all existing segments prior to
+     * being added to the specified segments.
+     * 
+     * @discussion
+     * Enables apps to add users to custom segments owned and defined by the calling
+     * application.  If Limit Ad Tracking is enabled on the device, this method will
+     * have no effect. For iOS 14 and later, and macOS 11 and later, this method will
+     * have no effect.
+     */
     @Generated
     @Selector("addClientToSegments:replaceExisting:")
     public native void addClientToSegmentsReplaceExisting(NSArray<String> segmentIdentifiers, boolean replaceExisting);
 
+    /**
+     * @method determineAppInstallationAttributionWithCompletionHandler:
+     * 
+     * @param completionHandler
+     * A block accepting one BOOL argument that will be called when app installation
+     * attribution status has been determined. If this installation of the app is
+     * attributed to an iAd impression, the completion handler will be called with
+     * YES. Otherwise, or if the user has enabled Limit Ad Tracking, the completion
+     * handler will be called with NO. For iOS 14 and later, the completion
+     * handler will always be called with NO.
+     * 
+     * The handler will be called on an arbitrary queue.
+     * 
+     * @discussion
+     * Provides a way for an app to determine if it was installed by the user in
+     * response to seeing an iAd for the app.
+     */
     @Generated
     @Deprecated
     @Selector("determineAppInstallationAttributionWithCompletionHandler:")
@@ -172,12 +215,40 @@ public class ADClient extends NSObject {
     @Selector("init")
     public native ADClient init();
 
+    /**
+     * @method lookupAdConversionDetails:
+     * 
+     * @param completionHandler
+     * This method is deprecated.
+     * A block will be called with iAdImpressionDate = nil
+     * 
+     * The handler will be called on an arbitrary queue.
+     * 
+     * @discussion
+     * Provides a way for an app to determine when an iAd was shown to the user
+     * which resulted in the user's purchase of the app.
+     */
     @Generated
     @Deprecated
     @Selector("lookupAdConversionDetails:")
     public native void lookupAdConversionDetails(
             @ObjCBlock(name = "call_lookupAdConversionDetails") Block_lookupAdConversionDetails completionHandler);
 
+    /**
+     * @method requestAttributionDetailsWithBlock:
+     * 
+     * @param completionHandler
+     * A block which will be called with details related to the attribution status of the app.
+     * The attributionDetails dictionary will contain purchase and impression dates
+     * as well as other specific campaign related information provided by iAd. If the attributionDetails
+     * dictionary is nil, an NSError is passed with an ADClientError enum.
+     * 
+     * The handler will be called on an arbitrary queue.
+     * 
+     * @discussion
+     * Provides a way for an app to determine when an iAd was shown to the user
+     * which resulted in the user's purchase of the app.
+     */
     @Generated
     @Selector("requestAttributionDetailsWithBlock:")
     public native void requestAttributionDetailsWithBlock(

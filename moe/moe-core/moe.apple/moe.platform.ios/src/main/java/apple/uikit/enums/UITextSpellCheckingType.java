@@ -19,6 +19,12 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * UITextSpellCheckingType
+ * 
+ * Controls the annotation of misspelled words for a text widget.
+ * Note: Some input methods do not support spell checking.
+ */
 @Generated
 public final class UITextSpellCheckingType {
     @Generated @NInt public static final long Default = 0x0000000000000000L;

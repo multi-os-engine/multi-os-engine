@@ -38,6 +38,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A view that integrates ARSession rendering into SpriteKit.
+ * 
+ * @discussion The view draws the camera background, and projects and maps anchors to nodes.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -72,6 +77,10 @@ public class ARSKView extends SKView implements ARSessionProviding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Searches the scene hierarchy for an anchor associated with the provided node.
+     * @param node A node in the view’s scene.
+     */
     @Generated
     @Selector("anchorForNode:")
     public native ARAnchor anchorForNode(SKNode node);
@@ -234,6 +243,9 @@ public class ARSKView extends SKView implements ARSessionProviding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Specifies the view’s delegate.
+     */
     @Generated
     @Selector("delegate")
     public native NSObject delegate();
@@ -247,6 +259,15 @@ public class ARSKView extends SKView implements ARSessionProviding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Searches the current frame for objects corresponding to a point in the view.
+     * 
+     * @discussion A 2D point in the view’s coordinate space can refer to any point along a line segment
+     * in the 3D coordinate space. Hit-testing is the process of finding objects in the world located along this line segment.
+     * @param point A point in the view’s coordinate system.
+     * @param types The types of results to search for.
+     * @return An array of all hit-test results sorted from nearest to farthest.
+     */
     @Generated
     @Selector("hitTest:types:")
     public native NSArray<? extends ARHitTestResult> hitTestTypes(@ByValue CGPoint point, @NUInt long types);
@@ -298,6 +319,10 @@ public class ARSKView extends SKView implements ARSessionProviding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Returns the node that has been mapped to a specific anchor.
+     * @param anchor An anchor with an existing node mapping.
+     */
     @Generated
     @Selector("nodeForAnchor:")
     public native SKNode nodeForAnchor(ARAnchor anchor);
@@ -378,10 +403,16 @@ public class ARSKView extends SKView implements ARSessionProviding {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * Specifies the view’s delegate.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(NSObject value);
 
+    /**
+     * Specifies the view’s delegate.
+     */
     @Generated
     public void setDelegate(NSObject value) {
         Object __old = delegate();
@@ -394,6 +425,9 @@ public class ARSKView extends SKView implements ARSessionProviding {
         }
     }
 
+    /**
+     * The session that the view uses to update the view.
+     */
     @Generated
     @Selector("setSession:")
     public native void setSession(ARSession value);

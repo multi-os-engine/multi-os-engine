@@ -14,6 +14,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CPNowPlayingTemplateObserver")
 public interface CPNowPlayingTemplateObserver {
+    /**
+     * The user has selected the album/artist button on the now playing template. Your application
+     * should push a new template displaying the content appearing in this container (album, playlist, or show).
+     */
     @Generated
     @IsOptional
     @Selector("nowPlayingTemplateAlbumArtistButtonTapped:")
@@ -21,6 +25,10 @@ public interface CPNowPlayingTemplateObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The user has selected the Up Next button on the now playing template. Your application
+     * should push a new template displaying the list of upcoming or queued content.
+     */
     @Generated
     @IsOptional
     @Selector("nowPlayingTemplateUpNextButtonTapped:")

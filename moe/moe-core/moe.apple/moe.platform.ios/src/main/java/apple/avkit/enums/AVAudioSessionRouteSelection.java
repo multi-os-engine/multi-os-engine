@@ -3,6 +3,14 @@ package apple.avkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @constant	AVAudioSessionRouteSelectionNone
+ * 			Indicates no route was selected.
+ * @constant	AVAudioSessionRouteSelectionLocal
+ * 			Indicates that the local device was selected.
+ * @constant	AVAudioSessionRouteSelectionExternal
+ * 			Indicates that an external device was selected.
+ */
 @Generated
 public final class AVAudioSessionRouteSelection {
     @Generated

@@ -54,6 +54,17 @@ public class DCAppAttestService extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Attest the key by keyId.  The same key may be attested more than once, provided that the key has
+     * not been used for generating assertions.
+     * 
+     * @param keyId
+     *        The key identifier to be attested
+     * @param clientDataHash
+     *        An arbitrary byte (up to 32 bytes) to be supplied by caller.  It will be used to compute a nonce to be embedded into the certificate that certifies the key.
+     * @param completionHandler
+     *        The completion callback, returning the attestationObject upon success, or an error
+     */
     @Generated
     @Selector("attestKey:clientDataHash:completionHandler:")
     public native void attestKeyClientDataHashCompletionHandler(String keyId, NSData clientDataHash,
@@ -96,6 +107,17 @@ public class DCAppAttestService extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Attest the key by keyId.  The same key may be attested more than once, provided that the key has
+     * not been used for generating assertions.
+     * 
+     * @param keyId
+     *        The key identifier to the key to generate assertions with
+     * @param clientDataHash
+     *        An arbitrary byte (up to 32 bytes) to be supplied by caller.  It will be used to compute a nonce to be embedded into the certificate that certifies the key.
+     * @param completionHandler
+     *        The completion callback, returning the assertionObject upon success, or an error
+     */
     @Generated
     @Selector("generateAssertion:clientDataHash:completionHandler:")
     public native void generateAssertionClientDataHashCompletionHandler(String keyId, NSData clientDataHash,
@@ -108,6 +130,13 @@ public class DCAppAttestService extends NSObject {
         void call_generateAssertionClientDataHashCompletionHandler(NSData assertionObject, NSError error);
     }
 
+    /**
+     * Generate a new unattested key.  This call generates a new
+     * key every time.  the key identifier keyId is returned.
+     * 
+     * @param completionHandler
+     *        The key identifier (KeyId) for the newly generated unattested key upon success, or an error
+     */
     @Generated
     @Selector("generateKeyWithCompletionHandler:")
     public native void generateKeyWithCompletionHandler(
@@ -146,6 +175,9 @@ public class DCAppAttestService extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Check if this API is supported on the current device for this application instance
+     */
     @Generated
     @Selector("isSupported")
     public native boolean isSupported();
@@ -172,6 +204,9 @@ public class DCAppAttestService extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The shared service instance
+     */
     @Generated
     @Selector("sharedService")
     public static native DCAppAttestService sharedService();

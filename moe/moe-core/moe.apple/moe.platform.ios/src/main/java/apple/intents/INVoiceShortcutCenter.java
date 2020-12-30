@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract Lets you access shortcuts that have been added to Siri
+ * @seealso INVoiceShortcut
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -84,6 +88,10 @@ public class INVoiceShortcutCenter extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract Get all of the shortcuts associated with this app that have been added to Siri.
+     * These could have either been added with `INUIAddVoiceShortcutViewController`, or separately by the user in the Shortcuts app.
+     */
     @Generated
     @Selector("getAllVoiceShortcutsWithCompletion:")
     public native void getAllVoiceShortcutsWithCompletion(
@@ -96,6 +104,9 @@ public class INVoiceShortcutCenter extends NSObject {
         void call_getAllVoiceShortcutsWithCompletion(NSArray<? extends INVoiceShortcut> voiceShortcuts, NSError error);
     }
 
+    /**
+     * @abstract Get a single shortcut (associated with this app) that has been added to Siri, by its identifier.
+     */
     @Generated
     @Selector("getVoiceShortcutWithIdentifier:completion:")
     public native void getVoiceShortcutWithIdentifierCompletion(NSUUID identifier,
@@ -152,6 +163,10 @@ public class INVoiceShortcutCenter extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract Set some shortcuts that should be suggested to the user to add to Siri.
+     * @discussion These suggestions are shown to the user in the Shortcuts app.
+     */
     @Generated
     @Selector("setShortcutSuggestions:")
     public native void setShortcutSuggestions(NSArray<? extends INShortcut> suggestions);

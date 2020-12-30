@@ -124,6 +124,9 @@ public class INMediaUserContext extends INUserContext {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Approximate number of relevant items available in the user's library (playlists, songs, podcasts, albums, etc.) - used as a signal of user affinity for the app
+     */
     @Generated
     @Selector("numberOfLibraryItems")
     public native NSNumber numberOfLibraryItems();
@@ -136,10 +139,16 @@ public class INMediaUserContext extends INUserContext {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Approximate number of relevant items available in the user's library (playlists, songs, podcasts, albums, etc.) - used as a signal of user affinity for the app
+     */
     @Generated
     @Selector("setNumberOfLibraryItems:")
     public native void setNumberOfLibraryItems(NSNumber value);
 
+    /**
+     * Used as a signal of user affinity for the app
+     */
     @Generated
     @Selector("setSubscriptionStatus:")
     public native void setSubscriptionStatus(@NInt long value);
@@ -148,6 +157,9 @@ public class INMediaUserContext extends INUserContext {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Used as a signal of user affinity for the app
+     */
     @Generated
     @Selector("subscriptionStatus")
     @NInt

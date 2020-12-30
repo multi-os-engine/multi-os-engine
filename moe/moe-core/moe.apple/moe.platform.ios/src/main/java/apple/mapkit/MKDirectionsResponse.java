@@ -162,6 +162,9 @@ public class MKDirectionsResponse extends NSObject {
     @Selector("routes")
     public native NSArray<? extends MKRoute> routes();
 
+    /**
+     * Source and destination may be filled with additional details compared to the request object.
+     */
     @Generated
     @Selector("source")
     public native MKMapItem source();

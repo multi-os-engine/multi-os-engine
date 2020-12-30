@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXDiagnostic
+ * @abstract      An abstract class that describes a diagnostic report vended by MetricKit.
+ * @discussion    All supported diagnostics are subclasses of MXDiagnostic.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -42,6 +47,11 @@ public class MXDiagnostic extends NSObject implements NSSecureCoding {
         super(peer);
     }
 
+    /**
+     * @method        JSONRepresentation
+     * @abstract      Convenience method to return a JSON representation of this diagnostic.
+     * @result        An NSData object containing the JSON representation
+     */
     @Generated
     @Selector("JSONRepresentation")
     public native NSData JSONRepresentation();
@@ -60,6 +70,10 @@ public class MXDiagnostic extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @property      applicationVersion
+     * @abstract      An NSString representation of the application version from which this diagnostic was generated.
+     */
     @Generated
     @Selector("applicationVersion")
     public native String applicationVersion();
@@ -94,6 +108,11 @@ public class MXDiagnostic extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @method        dictionaryRepresentation
+     * @abstract      Convenience method to return a NSDictionary representation of this diagnostic.
+     * @result        An NSDictionary object containing the dictionary representation
+     */
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<?, ?> dictionaryRepresentation();

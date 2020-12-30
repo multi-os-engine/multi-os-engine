@@ -154,6 +154,11 @@ public class MPChangePlaybackRateCommandEvent extends MPRemoteCommandEvent {
     @Selector("init")
     public native MPChangePlaybackRateCommandEvent init();
 
+    /**
+     * The chosen playback rate for this command event. This value will be equal
+     * to one of the values specified in the supportedPlaybackRates array for the
+     * MPChangePlaybackRateCommand object.
+     */
     @Generated
     @Selector("playbackRate")
     public native float playbackRate();

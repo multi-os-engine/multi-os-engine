@@ -33,6 +33,9 @@ public final class NSLayoutFormatOptions {
     @Generated @NUInt public static final long AlignAllBaseline = 0x0000000000000800L;
     @Generated @NUInt public static final long AlignAllFirstBaseline = 0x0000000000001000L;
     @Generated @NUInt public static final long AlignmentMask = 0x000000000000FFFFL;
+    /**
+     * default
+     */
     @Generated @NUInt public static final long DirectionLeadingToTrailing = 0x0000000000000000L;
     @Generated @NUInt public static final long DirectionLeftToRight = 0x0000000000010000L;
     @Generated @NUInt public static final long DirectionRightToLeft = 0x0000000000020000L;
@@ -42,7 +45,26 @@ public final class NSLayoutFormatOptions {
     private NSLayoutFormatOptions() {
     }
 
+    /**
+     * default
+     */
     @Generated @NUInt public static final long SpacingEdgeToEdge = 0x0000000000000000L;
+    /**
+     * Valid only for vertical layouts. Between views with text content the value
+     * will be used to determine the distance from the last baseline of the view above
+     * to the first baseline of the view below. For views without text content the top
+     * or bottom edge will be used in lieu of the baseline position.
+     * The default spacing "]-[" will be determined from the line heights of the fonts
+     * involved in views with text content, when present.
+     */
     @Generated @NUInt public static final long SpacingBaselineToBaseline = 0x0000000000080000L;
+    /**
+     * Valid only for vertical layouts. Between views with text content the value
+     * will be used to determine the distance from the last baseline of the view above
+     * to the first baseline of the view below. For views without text content the top
+     * or bottom edge will be used in lieu of the baseline position.
+     * The default spacing "]-[" will be determined from the line heights of the fonts
+     * involved in views with text content, when present.
+     */
     @Generated @NUInt public static final long SpacingMask = 0x0000000000080000L;
 }

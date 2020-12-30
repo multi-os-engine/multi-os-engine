@@ -3,6 +3,14 @@ package apple.cloudkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @abstract The participant type determines whether a participant can modify the list of participants on a share.
+ * 
+ * @discussion
+ * - Owners can add private users
+ * - Private users can access the share
+ * - Public users are "self-added" when the participant accesses the shareURL.  Owners cannot add public users.
+ */
 @Generated
 public final class CKShareParticipantRole {
     @Generated

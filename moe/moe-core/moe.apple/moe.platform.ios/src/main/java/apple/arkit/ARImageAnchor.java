@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An anchor representing an image in the world.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -85,6 +88,12 @@ public class ARImageAnchor extends ARAnchor implements ARTrackable {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The factor between estimated physical size and provided size.
+     * 
+     * @discussion This value will be estimated if automaticImageScaleEstimationEnabled is set to true on the ARWorldTrackingConfiguration. It is used to
+     * correct the transform's translation. Default value is 1.0.
+     */
     @Generated
     @Selector("estimatedScaleFactor")
     @NFloat
@@ -138,6 +147,9 @@ public class ARImageAnchor extends ARAnchor implements ARTrackable {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Reference to the detected image.
+     */
     @Generated
     @Selector("referenceImage")
     public native ARReferenceImage referenceImage();

@@ -181,6 +181,11 @@ public class CKReference extends NSObject implements NSSecureCoding, NSCopying, 
     @Selector("initWithRecord:action:")
     public native CKReference initWithRecordAction(CKRecord record, @NUInt long action);
 
+    /**
+     * @discussion It is acceptable to relate two records that have not yet been uploaded to the server, but those records must be uploaded to the server in the same operation.
+     * 
+     * If a record references a record that does not exist on the server and is not in the current save operation it will result in an error.
+     */
     @Generated
     @Selector("initWithRecordID:action:")
     public native CKReference initWithRecordIDAction(CKRecordID recordID, @NUInt long action);

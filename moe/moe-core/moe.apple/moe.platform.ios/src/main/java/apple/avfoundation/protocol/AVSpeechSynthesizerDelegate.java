@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @protocol AVSpeechSynthesizerDelegate
+ * @abstract
+ * Defines an interface for delegates of AVSpeechSynthesizer to receive notifications of important speech utterance events.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)

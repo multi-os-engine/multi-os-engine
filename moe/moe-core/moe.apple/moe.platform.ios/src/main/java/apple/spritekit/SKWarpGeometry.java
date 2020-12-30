@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Base class for future expansion
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)

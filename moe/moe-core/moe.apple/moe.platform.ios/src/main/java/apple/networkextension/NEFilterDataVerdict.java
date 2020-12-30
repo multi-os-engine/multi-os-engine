@@ -43,6 +43,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEFilterDataVerdict
+ * @discussion The NEFilterDataVerdict class declares the programmatic interface of an object that is the verdict for a flow of network data after some of the data has been seen by the filter.
+ * 
+ * NEFilterDataVerdict is part of NetworkExtension.framework
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -71,6 +77,11 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @method allowVerdict
+     * @discussion This class method returns a verdict indicating that the flow should be allowed.
+     * @return The NEFilterDataVerdict object.
+     */
     @Generated
     @Selector("allowVerdict")
     public static native NEFilterDataVerdict allowVerdict();
@@ -97,6 +108,13 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @method dataVerdictWithPassBytes:peekBytes:
+     * @discussion This class method returns a data verdict indicating that the filter is passing a given number of bytes through the filter and needs to see a given number of bytes after the bytes that are passed.
+     * @param passBytes The number of bytes to pass through the filter.
+     * @param peekBytes The number of bytes after the end of the bytes passed that the filter wants to see in the next call to -[NEFilterDataProvider handleOutboundDataFromFlow:readBytesStartOffset:readBytes:] or -[NEFilterDataProvider handleInboundDataFromFlow:readBytesStartOffset:readBytes:].
+     * @return The data flow verdict.
+     */
     @Generated
     @Selector("dataVerdictWithPassBytes:peekBytes:")
     public static native NEFilterDataVerdict dataVerdictWithPassBytesPeekBytes(@NUInt long passBytes,
@@ -110,6 +128,11 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @method dropVerdict
+     * @discussion This class method returns a verdict indicating that the flow should be dropped.
+     * @return The NEFilterDataVerdict object.
+     */
     @Generated
     @Selector("dropVerdict")
     public static native NEFilterDataVerdict dropVerdict();
@@ -140,6 +163,11 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @method needRulesVerdict
+     * @discussion This class method returns a verdict indicating that control provider needs to be asked how to handle the data flow. The control provider can either drop or allow the flow, or update the rules and ask the data provider to decide on the data flow again.
+     * @return The NEFilterDataVerdict object.
+     */
     @Generated
     @Selector("needRulesVerdict")
     public static native NEFilterDataVerdict needRulesVerdict();
@@ -150,6 +178,13 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:
+     * @discussion This class method returns a verdict indicating that a "content blocked" page should be displayed to the user. The block page should contain a link to the given URL.
+     * @param remediationURLMapKey Remediation map key used by data plugin to get remediation url. Passing nil will result into data provider being notified with the callback handleRemediationForFlow:
+     * @param remediationButtonTextMapKey Remediation button map key used by the data plugin to get the remediation button text. Passing nil will set the button text to "Request Access"
+     * @return The NEFilterDataVerdict object.
+     */
     @Generated
     @Selector("remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:")
     public static native NEFilterDataVerdict remediateVerdictWithRemediationURLMapKeyRemediationButtonTextMapKey(

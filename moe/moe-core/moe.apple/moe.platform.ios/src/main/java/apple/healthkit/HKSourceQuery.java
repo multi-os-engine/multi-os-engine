@@ -45,6 +45,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKSourceQuery
+ * @abstract      A query that returns a set of sources that have saved objects matching certain criteria.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -260,6 +264,15 @@ public class HKSourceQuery extends HKQuery {
     @Selector("init")
     public native HKSourceQuery init();
 
+    /**
+     * @method        initWithSampleType:samplePredicate:completionHandler:
+     * @abstract      Returns a query that will retrieve HKSources that have saved samples of the given type matching the 
+     *                given predicate.
+     * 
+     * @param         sampleType          The type of sample.
+     * @param         objectPredicate     The predicate which samples must match.
+     * @param         completionHandler   The block to be called when the query has finished executing.
+     */
     @Generated
     @Selector("initWithSampleType:samplePredicate:completionHandler:")
     public native HKSourceQuery initWithSampleTypeSamplePredicateCompletionHandler(HKSampleType sampleType,

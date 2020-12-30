@@ -19,6 +19,22 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum AVAssetReaderStatus
+ * @abstract
+ * These constants are returned by the AVAssetReader status property to indicate whether it can successfully read samples from its asset.
+ * 
+ * @constant	 AVAssetReaderStatusUnknown
+ * Indicates that the status of the asset reader is not currently known.
+ * @constant	 AVAssetReaderStatusReading
+ * Indicates that the asset reader is successfully reading samples from its asset.
+ * @constant	 AVAssetReaderStatusCompleted
+ * Indicates that the asset reader has successfully read all of the samples in its time range.
+ * @constant	 AVAssetReaderStatusFailed
+ * Indicates that the asset reader can no longer read samples from its asset because of an error. The error is described by the value of the asset reader's error property.
+ * @constant	 AVAssetReaderStatusCancelled
+ * Indicates that the asset reader can no longer read samples because reading was canceled with the cancelReading method.
+ */
 @Generated
 public final class AVAssetReaderStatus {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;

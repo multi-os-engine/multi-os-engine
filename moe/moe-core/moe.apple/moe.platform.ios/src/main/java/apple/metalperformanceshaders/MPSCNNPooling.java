@@ -42,6 +42,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSCNNPooling
+ * @dependency This depends on Metal.framework
+ * @discussion Pooling is a form of non-linear sub-sampling. Pooling partitions the input image into a set of
+ *             rectangles (overlapping or non-overlapping) and, for each such sub-region, outputs a value.
+ *             The pooling operation is used in computer vision to reduce the dimensionality of intermediate representations.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -161,11 +168,27 @@ public class MPSCNNPooling extends MPSCNNKernel {
     @Selector("initWithDevice:")
     public native MPSCNNPooling initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract  Initialize a pooling filter
+     * @param      device              The device the filter will run on
+     * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
+     * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.
+     * @return     A valid MPSCNNPooling object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
     public native MPSCNNPooling initWithDeviceKernelWidthKernelHeight(@Mapped(ObjCObjectMapper.class) MTLDevice device,
             @NUInt long kernelWidth, @NUInt long kernelHeight);
 
+    /**
+     * @abstract  Initialize a pooling filter
+     * @param      device              The device the filter will run on
+     * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
+     * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.
+     * @param      strideInPixelsX     The output stride (downsampling factor) in the x dimension.
+     * @param      strideInPixelsY     The output stride (downsampling factor) in the y dimension.
+     * @return     A valid MPSCNNPooling object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")
     public native MPSCNNPooling initWithDeviceKernelWidthKernelHeightStrideInPixelsXStrideInPixelsY(
@@ -176,6 +199,13 @@ public class MPSCNNPooling extends MPSCNNKernel {
     @Selector("initWithCoder:")
     public native MPSCNNPooling initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion See @ref MPSKernel#initWithCoder.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
+     * @param      device      The MTLDevice on which to make the MPSCNNPooling
+     * @return     A new MPSCNNPooling object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSCNNPooling initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);

@@ -154,6 +154,10 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @NInt
     public static native long version_static();
 
+    /**
+     * The angular velocity, expressed in radians per second, that you want to add to the specified dynamic item
+     * If called before being associated to an animator, the behavior will accumulate values until being associated to an animator
+     */
     @Generated
     @Selector("addAngularVelocity:forItem:")
     public native void addAngularVelocityForItem(@NFloat double velocity,
@@ -163,15 +167,25 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Selector("addItem:")
     public native void addItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    /**
+     * The linear velocity, expressed in points per second, that you want to add to the specified dynamic item
+     * If called before being associated to an animator, the behavior will accumulate values until being associated to an animator
+     */
     @Generated
     @Selector("addLinearVelocity:forItem:")
     public native void addLinearVelocityForItem(@ByValue CGPoint velocity,
             @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    /**
+     * force an item to never rotate
+     */
     @Generated
     @Selector("allowsRotation")
     public native boolean allowsRotation();
 
+    /**
+     * 0: no angular velocity damping
+     */
     @Generated
     @Selector("angularResistance")
     @NFloat
@@ -182,21 +196,35 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @NFloat
     public native double angularVelocityForItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    /**
+     * Specifies the charge associated with the item behavior. Charge determines the degree to which a dynamic item is affected by
+     * electric and magnetic fields. Note that this is a unitless quantity, it is up to the developer to
+     * set charge and field strength appropriately. Defaults to 0.0
+     */
     @Generated
     @Selector("charge")
     @NFloat
     public native double charge();
 
+    /**
+     * 1 by default
+     */
     @Generated
     @Selector("density")
     @NFloat
     public native double density();
 
+    /**
+     * Usually between 0 (inelastic) and 1 (collide elastically)
+     */
     @Generated
     @Selector("elasticity")
     @NFloat
     public native double elasticity();
 
+    /**
+     * 0 being no friction between objects slide along each other
+     */
     @Generated
     @Selector("friction")
     @NFloat
@@ -210,10 +238,20 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Selector("initWithItems:")
     public native UIDynamicItemBehavior initWithItems(NSArray<?> items);
 
+    /**
+     * If an item is anchored, it can participate in collisions, but will not exhibit
+     * any dynamic response. i.e. The item will behave more like a collision boundary.
+     * The default is NO
+     */
     @Generated
     @Selector("isAnchored")
     public native boolean isAnchored();
 
+    /**
+     * If an item is anchored, it can participate in collisions, but will not exhibit
+     * any dynamic response. i.e. The item will behave more like a collision boundary.
+     * The default is NO
+     */
     @Generated
     @Selector("setAnchored:")
     public native void setAnchored(boolean value);
@@ -231,35 +269,61 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Selector("removeItem:")
     public native void removeItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    /**
+     * 0: no velocity damping
+     */
     @Generated
     @Selector("resistance")
     @NFloat
     public native double resistance();
 
+    /**
+     * force an item to never rotate
+     */
     @Generated
     @Selector("setAllowsRotation:")
     public native void setAllowsRotation(boolean value);
 
+    /**
+     * 0: no angular velocity damping
+     */
     @Generated
     @Selector("setAngularResistance:")
     public native void setAngularResistance(@NFloat double value);
 
+    /**
+     * Specifies the charge associated with the item behavior. Charge determines the degree to which a dynamic item is affected by
+     * electric and magnetic fields. Note that this is a unitless quantity, it is up to the developer to
+     * set charge and field strength appropriately. Defaults to 0.0
+     */
     @Generated
     @Selector("setCharge:")
     public native void setCharge(@NFloat double value);
 
+    /**
+     * 1 by default
+     */
     @Generated
     @Selector("setDensity:")
     public native void setDensity(@NFloat double value);
 
+    /**
+     * Usually between 0 (inelastic) and 1 (collide elastically)
+     */
     @Generated
     @Selector("setElasticity:")
     public native void setElasticity(@NFloat double value);
 
+    /**
+     * 0 being no friction between objects slide along each other
+     */
     @Generated
     @Selector("setFriction:")
     public native void setFriction(@NFloat double value);
 
+    /**
+     * 0: no velocity damping
+     */
     @Generated
     @Selector("setResistance:")
     public native void setResistance(@NFloat double value);

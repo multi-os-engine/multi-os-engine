@@ -9,7 +9,16 @@ public final class UIPageControlInteractionState {
     private UIPageControlInteractionState() {
     }
 
+    /**
+     * The default interaction state, where no interaction has occured.
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * The interaction state for which the page was changed via a single, discrete interaction.
+     */
     @Generated @NInt public static final long Discrete = 0x0000000000000001L;
+    /**
+     * The interaction state for which the page was changed via a continuous interaction.
+     */
     @Generated @NInt public static final long Continuous = 0x0000000000000002L;
 }

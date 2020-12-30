@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Class representing a timer bound to the display vsync. *
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -98,6 +101,11 @@ public class CADisplayLink extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Create a new display link object for the main display. It will
+     * invoke the method called 'sel' on 'target', the method has the
+     * signature '(void)selector:(CADisplayLink *)sender'.
+     */
     @Generated
     @Selector("displayLinkWithTarget:selector:")
     public static native CADisplayLink displayLinkWithTargetSelector(@Mapped(ObjCObjectMapper.class) Object target,
@@ -156,6 +164,12 @@ public class CADisplayLink extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Adds the receiver to the given run-loop and mode. Unless paused, it
+     * will fire every vsync until removed. Each object may only be added
+     * to a single run-loop, but it may be added in multiple modes at once.
+     * While added to a run-loop it will implicitly be retained.
+     */
     @Generated
     @Selector("addToRunLoop:forMode:")
     public native void addToRunLoopForMode(NSRunLoop runloop, String mode);
@@ -164,6 +178,14 @@ public class CADisplayLink extends NSObject {
     @Selector("duration")
     public native double duration();
 
+    /**
+     * Defines how many display frames must pass between each time the
+     * display link fires. Default value is one, which means the display
+     * link will fire for every display frame. Setting the interval to two
+     * will cause the display link to fire every other display frame, and
+     * so on. The behavior when using values less than one is undefined.
+     * DEPRECATED - use preferredFramesPerSecond.
+     */
     @Generated
     @Selector("frameInterval")
     @NInt
@@ -173,39 +195,85 @@ public class CADisplayLink extends NSObject {
     @Selector("init")
     public native CADisplayLink init();
 
+    /**
+     * Removes the object from all runloop modes (releasing the receiver if
+     * it has been implicitly retained) and releases the 'target' object.
+     */
     @Generated
     @Selector("invalidate")
     public native void invalidate();
 
+    /**
+     * When true the object is prevented from firing. Initial state is
+     * false.
+     */
     @Generated
     @Selector("isPaused")
     public native boolean isPaused();
 
+    /**
+     * When true the object is prevented from firing. Initial state is
+     * false.
+     */
     @Generated
     @Selector("setPaused:")
     public native void setPaused(boolean value);
 
+    /**
+     * Defines the desired callback rate in frames-per-second for this display
+     * link. If set to zero, the default value, the display link will fire at the
+     * native cadence of the display hardware. The display link will make a
+     * best-effort attempt at issuing callbacks at the requested rate.
+     */
     @Generated
     @Selector("preferredFramesPerSecond")
     @NInt
     public native long preferredFramesPerSecond();
 
+    /**
+     * Removes the receiver from the given mode of the runloop. This will
+     * implicitly release it when removed from the last mode it has been
+     * registered for.
+     */
     @Generated
     @Selector("removeFromRunLoop:forMode:")
     public native void removeFromRunLoopForMode(NSRunLoop runloop, String mode);
 
+    /**
+     * Defines how many display frames must pass between each time the
+     * display link fires. Default value is one, which means the display
+     * link will fire for every display frame. Setting the interval to two
+     * will cause the display link to fire every other display frame, and
+     * so on. The behavior when using values less than one is undefined.
+     * DEPRECATED - use preferredFramesPerSecond.
+     */
     @Generated
     @Selector("setFrameInterval:")
     public native void setFrameInterval(@NInt long value);
 
+    /**
+     * Defines the desired callback rate in frames-per-second for this display
+     * link. If set to zero, the default value, the display link will fire at the
+     * native cadence of the display hardware. The display link will make a
+     * best-effort attempt at issuing callbacks at the requested rate.
+     */
     @Generated
     @Selector("setPreferredFramesPerSecond:")
     public native void setPreferredFramesPerSecond(@NInt long value);
 
+    /**
+     * The next timestamp that the client should target their render for.
+     */
     @Generated
     @Selector("targetTimestamp")
     public native double targetTimestamp();
 
+    /**
+     * The current time, and duration of the display frame associated with
+     * the most recent target invocation. Time is represented using the
+     * normal Core Animation conventions, i.e. Mach host time converted to
+     * seconds.
+     */
     @Generated
     @Selector("timestamp")
     public native double timestamp();

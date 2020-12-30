@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An anchor representing a body in the world.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -85,6 +88,13 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The factor between estimated physical size and default size of the skeleton.
+     * @see -[ARSkeletonDefinition neutralBodySkeleton3D]
+     * 
+     * @discussion This value will be estimated if automaticSkeletonScaleEstimationEnabled is set to true on the ARBodyTrackingConfiguration.
+     * It is used to correct the transform's translation. Default value is 1.0.
+     */
     @Generated
     @Selector("estimatedScaleFactor")
     @NFloat
@@ -150,6 +160,10 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The tracked skeleton in 3D.
+     * @note The default height of this skeleton, measured from lowest to highest joint in standing position, is defined to be 1.71 meters.
+     */
     @Generated
     @Selector("skeleton")
     public native ARSkeleton3D skeleton();

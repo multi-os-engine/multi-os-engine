@@ -17,10 +17,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIContentConfiguration")
 public interface UIContentConfiguration extends NSCopying {
+    /**
+     * Initializes and returns a new instance of the content view using this configuration.
+     */
     @Generated
     @Selector("makeContentView")
     UIView makeContentView();
 
+    /**
+     * Returns a copy of the configuration updated for the specified state, by applying the configuration's default values for that state to any properties that have not been customized.
+     */
     @Generated
     @Selector("updatedConfigurationForState:")
     @MappedReturn(ObjCObjectMapper.class)

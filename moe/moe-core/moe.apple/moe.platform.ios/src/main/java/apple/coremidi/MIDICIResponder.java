@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class     MIDICIResponder
+ * @brief     Responds to MIDI-CI inquiries from an initiator on behalf of a MIDIClient and handles profile and property change
+ *            operations for the Responder role.
+ */
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)
@@ -128,6 +133,9 @@ public class MIDICIResponder extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Spontaneously enable or disable a profile and notify all connected Initiators
+     */
     @Generated
     @Selector("notifyProfile:onChannel:isEnabled:")
     public native boolean notifyProfileOnChannelIsEnabled(MIDICIProfile aProfile, byte channel, boolean enabledState);
@@ -145,6 +153,9 @@ public class MIDICIResponder extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Send profile-specific data for a profile to all connected Initiators
+     */
     @Generated
     @Selector("sendProfile:onChannel:profileData:")
     public native boolean sendProfileOnChannelProfileData(MIDICIProfile aProfile, byte channel,
@@ -154,10 +165,16 @@ public class MIDICIResponder extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Begin receiving Initiator requests
+     */
     @Generated
     @Selector("start")
     public native boolean start();
 
+    /**
+     * Stop receiving Initiator requests and disconnect all connected Initiators
+     */
     @Generated
     @Selector("stop")
     public native void stop();

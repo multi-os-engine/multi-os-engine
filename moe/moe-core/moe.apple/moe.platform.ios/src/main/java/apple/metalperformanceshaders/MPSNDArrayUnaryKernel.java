@@ -90,32 +90,74 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property  dilationRate
+     * @abstract  The stride in each dimension from one PSF tap to an adjacent
+     *            PSF tap. Default: 1
+     */
     @Generated
     @Selector("dilationRates")
     @ByValue
     public native MPSNDArraySizes dilationRates();
 
+    /**
+     * @property  edgeMode
+     * @abstract  The edge mode used for a source NDArray
+     *            Default: MPSImageEdgeModeZero
+     */
     @Generated
     @Selector("edgeMode")
     @NUInt
     public native long edgeMode();
 
+    /**
+     *  Inference encode calls
+     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * @param      cmdBuf          The command buffer into which to encode the kernel
+     * @param      sourceArray     The source for the filter in an NSArray.
+     * @result     A newly allocated MPSNDArray that will contain the result of the calculation
+     *             when the command buffer completes successfully.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:")
     public native MPSNDArray encodeToCommandBufferSourceArray(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
             MPSNDArray sourceArray);
 
+    /**
+     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * @param      cmdBuf          The command buffer into which to encode the kernel
+     * @param      sourceArray     The source for the filter in an NSArray.
+     * @param      destination     The NDArray to receive the result
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:destinationArray:")
     public native void encodeToCommandBufferSourceArrayDestinationArray(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MPSNDArray sourceArray, MPSNDArray destination);
 
+    /**
+     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * @param      cmdBuf          The command buffer into which to encode the kernel
+     * @param      sourceArray     The source for the filter in an NSArray.
+     * @param      outGradientState The output gradient state to record the operation for later use by gradient
+     * @param      destination     A destination array to contain the result of the calculation
+     *             when the command buffer completes successfully.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:resultState:destinationArray:")
     public native void encodeToCommandBufferSourceArrayResultStateDestinationArray(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MPSNDArray sourceArray, MPSState outGradientState,
             MPSNDArray destination);
 
+    /**
+     *  Forward training encode calls
+     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * @param      cmdBuf          The command buffer into which to encode the kernel
+     * @param      sourceArray     The source for the filter in an NSArray.
+     * @param      outGradientState If non-nil, the address output gradient state is written to this address
+     * @param      outputStateIsTemporary  If YES, the state if any will be allocated to contain temporary textures and buffers as needed
+     * @result     A newly allocated MPSNDArray that will contain the result of the calculation
+     *             when the command buffer completes successfully.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:resultState:outputStateIsTemporary:")
     public native MPSNDArray encodeToCommandBufferSourceArrayResultStateOutputStateIsTemporary(
@@ -135,6 +177,9 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
     @Selector("initWithCoder:")
     public native MPSNDArrayUnaryKernel initWithCoder(NSCoder aDecoder);
 
+    /**
+     * NSSecureCoding support
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNDArrayUnaryKernel initWithCoderDevice(NSCoder coder,
@@ -166,6 +211,11 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * @property  kernelSizes
+     * @abstract  The diameters of the point spread function in each dimension for a source NDArray
+     *            Default: 1
+     */
     @Generated
     @Selector("kernelSizes")
     @ByValue
@@ -181,6 +231,15 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property  offsets
+     * @abstract  The coordinate of the position read from this source array which is
+     *            used to calculate the result value at [0,0,0,....]
+     *            If the position read is actually a contiguous region (e.g. the area covered by
+     *            a convolution kernel) then this is the center of that region, rounded down, for
+     *            each dimension.
+     *            Default: 0,0,0...
+     */
     @Generated
     @Selector("offsets")
     @ByValue
@@ -198,6 +257,13 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @property  kernelStrides
+     * @abstract  If the filter is a "backwards" filter such as a gradient filter
+     *            or convolution transpose, then this is the upsampling ratio and
+     *            zeros are inserted in the result.
+     *            Default: 1
+     */
     @Generated
     @Selector("strides")
     @ByValue

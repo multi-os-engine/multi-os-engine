@@ -50,6 +50,10 @@ public class UICollectionViewListCell extends UICollectionViewCell {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * All the accessories that should be decorating the cell. The order and whether an accessory is
+     * rendered on the leading or trailing side of the cell is defined by the system.
+     */
     @Generated
     @Selector("accessories")
     public native NSArray<? extends UICellAccessory> accessories();
@@ -228,6 +232,9 @@ public class UICollectionViewListCell extends UICollectionViewCell {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Returns a default list content configuration for the cell's style.
+     */
     @Generated
     @Selector("defaultContentConfiguration")
     public native UIListContentConfiguration defaultContentConfiguration();
@@ -241,16 +248,26 @@ public class UICollectionViewListCell extends UICollectionViewCell {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Defines the level of indentation for this cell. This is set automatically when using a hierarchical data source.
+     */
     @Generated
     @Selector("indentationLevel")
     @NInt
     public native long indentationLevel();
 
+    /**
+     * The width of an indentation level. The overall indentation will be indentationWidth * indentationLevel.
+     */
     @Generated
     @Selector("indentationWidth")
     @NFloat
     public native double indentationWidth();
 
+    /**
+     * Defines whether accessories on the leading side are indented as well. If NO, only the content view will be indented.
+     * Defaults to YES.
+     */
     @Generated
     @Selector("indentsAccessories")
     public native boolean indentsAccessories();
@@ -332,10 +349,21 @@ public class UICollectionViewListCell extends UICollectionViewCell {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * When used in a section that supports separators, this guide can be used to adjust the preferred
+     * insets of the separators. To align the separators to your content, add constraints to the leading
+     * or trailing anchors of this layout guide. When a system-provided content configuration is applied
+     * to the cell, the separator will be automatically aligned to the primary text in the content view.
+     * @see UICollectionLayoutListConfiguration
+     */
     @Generated
     @Selector("separatorLayoutGuide")
     public native UILayoutGuide separatorLayoutGuide();
 
+    /**
+     * All the accessories that should be decorating the cell. The order and whether an accessory is
+     * rendered on the leading or trailing side of the cell is defined by the system.
+     */
     @Generated
     @Selector("setAccessories:")
     public native void setAccessories(NSArray<? extends UICellAccessory> value);
@@ -388,14 +416,24 @@ public class UICollectionViewListCell extends UICollectionViewCell {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * Defines the level of indentation for this cell. This is set automatically when using a hierarchical data source.
+     */
     @Generated
     @Selector("setIndentationLevel:")
     public native void setIndentationLevel(@NInt long value);
 
+    /**
+     * The width of an indentation level. The overall indentation will be indentationWidth * indentationLevel.
+     */
     @Generated
     @Selector("setIndentationWidth:")
     public native void setIndentationWidth(@NFloat double value);
 
+    /**
+     * Defines whether accessories on the leading side are indented as well. If NO, only the content view will be indented.
+     * Defaults to YES.
+     */
     @Generated
     @Selector("setIndentsAccessories:")
     public native void setIndentsAccessories(boolean value);

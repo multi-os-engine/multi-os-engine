@@ -42,42 +42,72 @@ public final class flock extends StructObject {
         super(peer);
     }
 
+    /**
+     * starting offset
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native long l_start();
 
+    /**
+     * starting offset
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setL_start(long value);
 
+    /**
+     * len = 0 means until end of file
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native long l_len();
 
+    /**
+     * len = 0 means until end of file
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setL_len(long value);
 
+    /**
+     * lock owner
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int l_pid();
 
+    /**
+     * lock owner
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setL_pid(int value);
 
+    /**
+     * lock type: read/write, etc.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native short l_type();
 
+    /**
+     * lock type: read/write, etc.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setL_type(short value);
 
+    /**
+     * type of l_start
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native short l_whence();
 
+    /**
+     * type of l_start
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setL_whence(short value);

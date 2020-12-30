@@ -88,6 +88,16 @@ public class CPButton extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * An optional image, displayed only in templates that support custom images, like the Contact template.
+     * 
+     * @discussion When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
+     * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
+     * both styles.
+     * 
+     * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -96,6 +106,22 @@ public class CPButton extends NSObject {
     @Selector("init")
     public native CPButton init();
 
+    /**
+     * Initialize a button for the Contact, POI, or Information templates with a custom image and a handler, called when
+     * the user taps this button.
+     * 
+     * @param image An image to be displayed in this button. The maximum image size is given by @c CPButtonMaximumImageSize.
+     * @param handler A block that will be called when the user taps this button.
+     * 
+     * @note This class is only available in templates that support buttons with custom images, like the Contact template.
+     * 
+     * @discussion When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
+     * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
+     * both styles.
+     * 
+     * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
+     */
     @Generated
     @Selector("initWithImage:handler:")
     public native CPButton initWithImageHandler(UIImage image,
@@ -121,6 +147,11 @@ public class CPButton extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * A Boolean value indicating whether the button is enabled.
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
@@ -147,10 +178,18 @@ public class CPButton extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * A Boolean value indicating whether the button is enabled.
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * A custom title to display for this button, displayed only in templates that allow for custom titles.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
@@ -163,6 +202,9 @@ public class CPButton extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * A custom title to display for this button, displayed only in templates that allow for custom titles.
+     */
     @Generated
     @Selector("title")
     public native String title();

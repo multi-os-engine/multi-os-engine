@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An NSItemProvider is a high level abstraction for an item supporting multiple representations.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -160,6 +163,9 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Returns YES if the item provider has at least one item that conforms to the supplied type identifier.
+     */
     @Generated
     @Selector("hasItemConformingToTypeIdentifier:")
     public native boolean hasItemConformingToTypeIdentifier(String typeIdentifier);
@@ -168,26 +174,42 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @Selector("init")
     public native NSItemProvider init();
 
+    /**
+     * Initialize an NSItemProvider with load handlers for the given file URL, and the file content. A type identifier is inferred from the file extension.
+     */
     @Generated
     @Selector("initWithContentsOfURL:")
     public native NSItemProvider initWithContentsOfURL(NSURL fileURL);
 
+    /**
+     * Initialize an NSItemProvider with an object assigned to a single UTI. `item` is retained.
+     */
     @Generated
     @Selector("initWithItem:typeIdentifier:")
     public native NSItemProvider initWithItemTypeIdentifier(@Mapped(ObjCObjectMapper.class) NSSecureCoding item,
             String typeIdentifier);
 
+    /**
+     * Loads the best matching item for a type identifier. The returned object depends on the class specified for the completion handler's `item` parameter.
+     * See the table above for coercion rules.
+     */
     @Generated
     @Selector("loadItemForTypeIdentifier:options:completionHandler:")
     public native void loadItemForTypeIdentifierOptionsCompletionHandler(String typeIdentifier,
             NSDictionary<?, ?> options,
             @ObjCBlock(name = "call_loadItemForTypeIdentifierOptionsCompletionHandler") Block_loadItemForTypeIdentifierOptionsCompletionHandler completionHandler);
 
+    /**
+     * Loads the preview image for this item by either calling the supplied preview block or falling back to a QuickLook-based handler. This method, like loadItemForTypeIdentifier:options:completionHandler:, supports implicit type coercion for the item parameter of the completion block. Allowed value classes are: NSData, NSURL, UIImage/NSImage.
+     */
     @Generated
     @Selector("loadPreviewImageWithOptions:completionHandler:")
     public native void loadPreviewImageWithOptionsCompletionHandler(NSDictionary<?, ?> options,
             @ObjCBlock(name = "call_loadPreviewImageWithOptionsCompletionHandler") Block_loadPreviewImageWithOptionsCompletionHandler completionHandler);
 
+    /**
+     * Returns the list of registered type identifiers, in the order they were registered.
+     */
     @Generated
     @Selector("registeredTypeIdentifiers")
     public native NSArray<String> registeredTypeIdentifiers();
@@ -217,10 +239,16 @@ public class NSItemProvider extends NSObject implements NSCopying {
     public native boolean hasRepresentationConformingToTypeIdentifierFileOptions(String typeIdentifier,
             @NInt long fileOptions);
 
+    /**
+     * Instantiate an NSItemProvider by querying an object for its eligible type identifiers via the NSItemProviderWriting protocol.
+     */
     @Generated
     @Selector("initWithObject:")
     public native NSItemProvider initWithObject(@Mapped(ObjCObjectMapper.class) NSItemProviderWriting object);
 
+    /**
+     * Copies the provided data into an NSData object.
+     */
     @Generated
     @Selector("loadDataRepresentationForTypeIdentifier:completionHandler:")
     public native NSProgress loadDataRepresentationForTypeIdentifierCompletionHandler(String typeIdentifier,
@@ -233,6 +261,9 @@ public class NSItemProvider extends NSObject implements NSCopying {
         void call_loadDataRepresentationForTypeIdentifierCompletionHandler(NSData data, NSError error);
     }
 
+    /**
+     * Writes a copy of the data to a temporary file. This file will be deleted when the completion handler returns. Your program should copy or move the file within the completion handler.
+     */
     @Generated
     @Selector("loadFileRepresentationForTypeIdentifier:completionHandler:")
     public native NSProgress loadFileRepresentationForTypeIdentifierCompletionHandler(String typeIdentifier,
@@ -245,6 +276,10 @@ public class NSItemProvider extends NSObject implements NSCopying {
         void call_loadFileRepresentationForTypeIdentifierCompletionHandler(NSURL url, NSError error);
     }
 
+    /**
+     * Open the original file in place, if possible.
+     * If a file is not available for opening in place, a copy of the file is written to a temporary location, and `isInPlace` is set to NO. Your program may then copy or move the file, or the system will delete this file at some point in the future.
+     */
     @Generated
     @Selector("loadInPlaceFileRepresentationForTypeIdentifier:completionHandler:")
     public native NSProgress loadInPlaceFileRepresentationForTypeIdentifierCompletionHandler(String typeIdentifier,
@@ -258,6 +293,9 @@ public class NSItemProvider extends NSObject implements NSCopying {
                 NSError error);
     }
 
+    /**
+     * Instantiate an object using the NSItemProviderReading protocol.
+     */
     @Generated
     @Selector("loadObjectOfClass:completionHandler:")
     public native NSProgress loadObjectOfClassCompletionHandler(
@@ -271,6 +309,9 @@ public class NSItemProvider extends NSObject implements NSCopying {
         void call_loadObjectOfClassCompletionHandler(@Mapped(ObjCObjectMapper.class) Object object, NSError error);
     }
 
+    /**
+     * Estimated presentation size, in points. CGSizeZero value indicates this information is not available.
+     */
     @Generated
     @Selector("preferredPresentationSize")
     @ByValue
@@ -281,6 +322,9 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @NInt
     public native long preferredPresentationStyle();
 
+    /**
+     * Add representations from an object using the NSItemProviderWriting protocol. Duplicate representations are ignored.
+     */
     @Generated
     @Selector("registerObject:visibility:")
     public native void registerObjectVisibility(@Mapped(ObjCObjectMapper.class) NSItemProviderWriting object,
@@ -290,6 +334,9 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @Selector("registeredTypeIdentifiersWithFileOptions:")
     public native NSArray<String> registeredTypeIdentifiersWithFileOptions(@NInt long fileOptions);
 
+    /**
+     * Estimated presentation size, in points. CGSizeZero value indicates this information is not available.
+     */
     @Generated
     @Selector("setPreferredPresentationSize:")
     public native void setPreferredPresentationSize(@ByValue CGSize value);
@@ -314,6 +361,9 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @Selector("teamData")
     public native NSData teamData();
 
+    /**
+     * Sets a custom preview image handler block for this item provider. The returned item should preferably be NSData or a file NSURL.
+     */
     @Generated
     @Selector("previewImageHandler")
     @ObjCBlock(name = "call_previewImageHandler_ret")
@@ -335,6 +385,9 @@ public class NSItemProvider extends NSObject implements NSCopying {
                 Class expectedValueClass, NSDictionary<?, ?> options);
     }
 
+    /**
+     * Registers a data-backed representation.
+     */
     @Generated
     @Selector("registerDataRepresentationForTypeIdentifier:visibility:loadHandler:")
     public native void registerDataRepresentationForTypeIdentifierVisibilityLoadHandler(String typeIdentifier,
@@ -356,6 +409,11 @@ public class NSItemProvider extends NSObject implements NSCopying {
                 @ObjCBlock(name = "call_Block_registerDataRepresentationForTypeIdentifierVisibilityLoadHandler") Block_Block_registerDataRepresentationForTypeIdentifierVisibilityLoadHandler completionHandler);
     }
 
+    /**
+     * Registers a file-backed representation.
+     * Set `coordinated` to YES if the returned file must be accessed using NSFileCoordinator.
+     * If `NSItemProviderFileOptionOpenInPlace` is not provided, the file provided will be copied before the load handler returns.
+     */
     @Generated
     @Selector("registerFileRepresentationForTypeIdentifier:fileOptions:visibility:loadHandler:")
     public native void registerFileRepresentationForTypeIdentifierFileOptionsVisibilityLoadHandler(
@@ -378,6 +436,9 @@ public class NSItemProvider extends NSObject implements NSCopying {
                 @ObjCBlock(name = "call_Block_registerFileRepresentationForTypeIdentifierFileOptionsVisibilityLoadHandler") Block_Block_registerFileRepresentationForTypeIdentifierFileOptionsVisibilityLoadHandler completionHandler);
     }
 
+    /**
+     * Registers a load handler that returns an object, assigned to a single UTI.
+     */
     @Generated
     @Selector("registerItemForTypeIdentifier:loadHandler:")
     public native void registerItemForTypeIdentifierLoadHandler(String typeIdentifier,
@@ -400,6 +461,9 @@ public class NSItemProvider extends NSObject implements NSCopying {
                 Class expectedValueClass, NSDictionary<?, ?> options);
     }
 
+    /**
+     * Add representations from a class, but defer loading the object until needed.
+     */
     @Generated
     @Selector("registerObjectOfClass:visibility:loadHandler:")
     public native void registerObjectOfClassVisibilityLoadHandler(
@@ -422,6 +486,9 @@ public class NSItemProvider extends NSObject implements NSCopying {
                 @ObjCBlock(name = "call_Block_registerObjectOfClassVisibilityLoadHandler") Block_Block_registerObjectOfClassVisibilityLoadHandler completionHandler);
     }
 
+    /**
+     * Sets a custom preview image handler block for this item provider. The returned item should preferably be NSData or a file NSURL.
+     */
     @Generated
     @Selector("setPreviewImageHandler:")
     public native void setPreviewImageHandler(

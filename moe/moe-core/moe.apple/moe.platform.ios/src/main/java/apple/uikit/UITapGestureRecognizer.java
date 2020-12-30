@@ -40,6 +40,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Touch Location Behaviors:
+ *     locationInView:         location of the tap, from the first tap in the sequence if numberOfTapsRequired > 1. this is the centroid if numberOfTouchesRequired > 1
+ *     locationOfTouch:inView: location of a particular touch, from the first tap in the sequence if numberOfTapsRequired > 1
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -160,20 +165,32 @@ public class UITapGestureRecognizer extends UIGestureRecognizer {
     public native UITapGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
             SEL action);
 
+    /**
+     * Default is 1. The number of taps required to match
+     */
     @Generated
     @Selector("numberOfTapsRequired")
     @NUInt
     public native long numberOfTapsRequired();
 
+    /**
+     * Default is 1. The number of fingers required to match
+     */
     @Generated
     @Selector("numberOfTouchesRequired")
     @NUInt
     public native long numberOfTouchesRequired();
 
+    /**
+     * Default is 1. The number of taps required to match
+     */
     @Generated
     @Selector("setNumberOfTapsRequired:")
     public native void setNumberOfTapsRequired(@NUInt long value);
 
+    /**
+     * Default is 1. The number of fingers required to match
+     */
     @Generated
     @Selector("setNumberOfTouchesRequired:")
     public native void setNumberOfTouchesRequired(@NUInt long value);
@@ -182,11 +199,17 @@ public class UITapGestureRecognizer extends UIGestureRecognizer {
     @Selector("initWithCoder:")
     public native UITapGestureRecognizer initWithCoder(NSCoder coder);
 
+    /**
+     * Default is UIEventButtonMaskPrimary and cannot be 0. This property is only evaluated on indirect input devices and is the mask of pressed buttons to required to match.
+     */
     @Generated
     @Selector("buttonMaskRequired")
     @NInt
     public native long buttonMaskRequired();
 
+    /**
+     * Default is UIEventButtonMaskPrimary and cannot be 0. This property is only evaluated on indirect input devices and is the mask of pressed buttons to required to match.
+     */
     @Generated
     @Selector("setButtonMaskRequired:")
     public native void setButtonMaskRequired(@NInt long value);

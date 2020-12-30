@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIUserNotificationActivationMode {
+    /**
+     * activates the application in the foreground
+     */
     @Generated @NUInt public static final long Foreground = 0x0000000000000000L;
+    /**
+     * activates the application in the background, unless it's already in the foreground
+     */
     @Generated @NUInt public static final long Background = 0x0000000000000001L;
 
     @Generated

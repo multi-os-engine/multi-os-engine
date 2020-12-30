@@ -27,6 +27,23 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNReduceUnary
+ * @discussion The MPSNNReduce performs a reduction operation
+ *             The reduction operations supported are:
+ *                  - Reduce row min
+ *                  - Reduce column min
+ *                  - Reduce feature channels min
+ *                  - Reduce row max
+ *                  - Reduce column max
+ *                  - Reduce feature channels max
+ *                  - Reduce row mean
+ *                  - Reduce column mean
+ *                  - Reduce feature channels mean
+ *                  - Reduce row sum
+ *                  - Reduce column sum
+ *                  - Reduce feature channels sum
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -77,6 +94,14 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property   clipRectSource
+     * @abstract   The source rectangle to use when reading data.
+     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     *             completely within the source image, the intersection of the image bounds and clipRectSource will
+     *             be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     */
     @Generated
     @Selector("clipRectSource")
     @ByValue
@@ -146,6 +171,14 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   clipRectSource
+     * @abstract   The source rectangle to use when reading data.
+     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     *             completely within the source image, the intersection of the image bounds and clipRectSource will
+     *             be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     */
     @Generated
     @Selector("setClipRectSource:")
     public native void setClipRectSource(@ByValue MTLRegion value);

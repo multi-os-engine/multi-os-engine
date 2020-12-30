@@ -3,6 +3,12 @@ package apple.messages.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum       MSMessagesAppPresentationContext
+ * @abstract   Describes the context for which the extension was launched
+ * @constant   MSMessagesAppPresentationContextMessages   The extension was launched for presentation in Messages
+ * @constant   MSMessagesAppPresentationContextMedia      The extension was launched for presentation over media content, such as a photo or camera feed
+ */
 @Generated
 public final class MSMessagesAppPresentationContext {
     @Generated

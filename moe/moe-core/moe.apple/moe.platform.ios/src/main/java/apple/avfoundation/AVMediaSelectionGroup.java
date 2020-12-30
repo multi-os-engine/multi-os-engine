@@ -126,21 +126,59 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @method		mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:
+     * @abstract		Filters an array of AVMediaSelectionOptions according to whether their locales match any language identifier in the specified array of preferred languages. The returned array is sorted according to the order of preference of the language each matches.
+     * @param			mediaSelectionOptions
+     * 			An array of AVMediaSelectionOptions to be filtered and sorted.
+     * @param			preferredLanguages
+     * 			An array of language identifiers in order of preference, each of which is an IETF BCP 47 (RFC 4646) language identifier. Use +[NSLocale preferredLanguages] to obtain the user's list of preferred languages.
+     * @result		An instance of NSArray containing media selection options of the specified NSArray that match a preferred language, sorted according to the order of preference of the language each matches.
+     */
     @Generated
     @Selector("mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayFilteredAndSortedAccordingToPreferredLanguages(
             NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> preferredLanguages);
 
+    /**
+     * @method		mediaSelectionOptionsFromArray:withLocale:
+     * @abstract		Filters an array of AVMediaSelectionOptions according to locale.
+     * @param		mediaSelectionOptions
+     * 		An array of AVMediaSelectionOption to be filtered by locale.
+     * @param		locale
+     * 				The NSLocale that must be matched for a media selection option to be copied to the output array.
+     * @result		An instance of NSArray containing the media selection options of the specified NSArray that match the specified locale.
+     */
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withLocale:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithLocale(
             NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSLocale locale);
 
+    /**
+     * @method		mediaSelectionOptionsFromArray:withMediaCharacteristics:
+     * @abstract		Filters an array of AVMediaSelectionOptions according to one or more media characteristics.
+     * @param		mediaSelectionOptions
+     * 				An array of AVMediaSelectionOptions to be filtered by media characteristic.
+     * @param		mediaCharacteristics
+     * 				The media characteristics that must be matched for a media selection option to be copied to the output array.
+     * @result		An instance of NSArray containing the media selection options of the specified NSArray that match the specified
+     * 		media characteristics.
+     */
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withMediaCharacteristics:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithMediaCharacteristics(
             NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> mediaCharacteristics);
 
+    /**
+     * @method		mediaSelectionOptionsFromArray:withoutMediaCharacteristics:
+     * @abstract		Filters an array of AVMediaSelectionOptions according to whether they lack one or more media characteristics.
+     * @param		mediaSelectionOptions
+     * 				An array of AVMediaSelectionOptions to be filtered by media characteristic.
+     * @param		mediaCharacteristics
+     * 				The media characteristics that must not be present for a media selection option to be copied to the output array.
+     * @result		An instance of NSArray containing the media selection options of the specified NSArray that lack the specified
+     * 		media characteristics.
+     */
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withoutMediaCharacteristics:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithoutMediaCharacteristics(
@@ -152,6 +190,13 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method		playableMediaSelectionOptionsFromArray:
+     * @abstract		Filters an array of AVMediaSelectionOptions according to whether they are playable.
+     * @param		mediaSelectionOptions
+     * 				An array of AVMediaSelectionOption to be filtered according to whether they are playable.
+     * @result		An instance of NSArray containing the media selection options of the specified NSArray that are playable.
+     */
     @Generated
     @Selector("playableMediaSelectionOptionsFromArray:")
     public static native NSArray<? extends AVMediaSelectionOption> playableMediaSelectionOptionsFromArray(
@@ -178,6 +223,13 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property		allowsEmptySelection
+     * @abstract		Indicates whether it's possible to present none of the options in the group when an associated AVPlayerItem is played.
+     * @discussion
+     * If allowsEmptySelection is YES, all of the available media options in the group can be deselected by passing nil
+     * as the specified AVMediaSelectionOption to -[AVPlayerItem selectMediaOption:inMediaSelectionGroup:].
+     */
     @Generated
     @Selector("allowsEmptySelection")
     public native boolean allowsEmptySelection();
@@ -188,6 +240,12 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * @property		defaultOption
+     * @abstract		Indicates the default option in the group, i.e. the option that's intended for use in the absence of a specific end-user selection or preference.
+     * @discussion
+     * Can be nil, indicating that without a specific end-user selection or preference, no option in the group is intended to be selected.
+     */
     @Generated
     @Selector("defaultOption")
     public native AVMediaSelectionOption defaultOption();
@@ -196,15 +254,32 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     @Selector("init")
     public native AVMediaSelectionGroup init();
 
+    /**
+     * Will create a language option group from the AVMediaSelectionGroup
+     * Any AVMediaSelectionOptions in the AVMediaSelectionGroup not representing
+     * Audible or Legible selection options will be ignored.
+     */
     @Generated
     @Selector("makeNowPlayingInfoLanguageOptionGroup")
     public native MPNowPlayingInfoLanguageOptionGroup makeNowPlayingInfoLanguageOptionGroup();
 
+    /**
+     * @method		mediaSelectionOptionWithPropertyList:
+     * @abstract		Returns the instance of AVMediaSelectionOption with properties that match the specified property list.
+     * @param		plist
+     * 				A property list previously obtained from an option in the group via -[AVMediaSelectionOption propertyList].
+     * @result		If the specified properties match those of an option in the group, an instance of AVMediaSelectionOption. Otherwise nil.
+     */
     @Generated
     @Selector("mediaSelectionOptionWithPropertyList:")
     public native AVMediaSelectionOption mediaSelectionOptionWithPropertyList(
             @Mapped(ObjCObjectMapper.class) Object plist);
 
+    /**
+     * @property		options
+     * @abstract		A collection of mutually exclusive media selection options.
+     * @discussion	An NSArray of AVMediaSelectionOption*.
+     */
     @Generated
     @Selector("options")
     public native NSArray<? extends AVMediaSelectionOption> options();

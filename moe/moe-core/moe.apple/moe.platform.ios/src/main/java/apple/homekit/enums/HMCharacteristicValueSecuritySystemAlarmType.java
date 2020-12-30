@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueSecuritySystemAlarmType
+ * 
+ * @constant  HMCharacteristicValueSecuritySystemAlarmTypeNoAlarm     No alarm.
+ * @constant  HMCharacteristicValueSecuritySystemAlarmTypeUnknown     Unknown alarm type.
+ */
 @Generated
 public final class HMCharacteristicValueSecuritySystemAlarmType {
     @Generated @NInt public static final long NoAlarm = 0x0000000000000000L;

@@ -44,6 +44,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A WKWebsiteDataStore represents various types of data that a website might
+ * make use of. This includes cookies, disk and memory caches, and persistent data such as WebSQL,
+ * IndexedDB databases, and local storage.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -62,6 +67,9 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * @abstract Returns a set of all available website data types.
+     */
     @Generated
     @Selector("allWebsiteDataTypes")
     public static native NSSet<String> allWebsiteDataTypes();
@@ -102,6 +110,9 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * @abstract Returns the default data store.
+     */
     @Generated
     @Selector("defaultDataStore")
     public static native WKWebsiteDataStore defaultDataStore();
@@ -142,6 +153,11 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract Returns a new non-persistent data store.
+     * @discussion If a WKWebView is associated with a non-persistent data store, no data will
+     * be written to the file system. This is useful for implementing "private browsing" in a web view.
+     */
     @Generated
     @Selector("nonPersistentDataStore")
     public static native WKWebsiteDataStore nonPersistentDataStore();
@@ -171,6 +187,11 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * @abstract Fetches data records containing the given website data types.
+     * @param dataTypes The website data types to fetch records for.
+     * @param completionHandler A block to invoke when the data records have been fetched.
+     */
     @Generated
     @Selector("fetchDataRecordsOfTypes:completionHandler:")
     public native void fetchDataRecordsOfTypesCompletionHandler(NSSet<String> dataTypes,
@@ -184,16 +205,31 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native WKWebsiteDataStore initWithCoder(NSCoder coder);
 
+    /**
+     * @abstract Whether the data store is persistent or not.
+     */
     @Generated
     @Selector("isPersistent")
     public native boolean isPersistent();
 
+    /**
+     * @abstract Removes website data of the given types for the given data records.
+     * @param dataTypes The website data types that should be removed.
+     * @param dataRecords The website data records to delete website data for.
+     * @param completionHandler A block to invoke when the website data for the records has been removed.
+     */
     @Generated
     @Selector("removeDataOfTypes:forDataRecords:completionHandler:")
     public native void removeDataOfTypesForDataRecordsCompletionHandler(NSSet<String> dataTypes,
             NSArray<? extends WKWebsiteDataRecord> dataRecords,
             @ObjCBlock(name = "call_removeDataOfTypesForDataRecordsCompletionHandler") Block_removeDataOfTypesForDataRecordsCompletionHandler completionHandler);
 
+    /**
+     * @abstract Removes all website data of the given types that has been modified since the given date.
+     * @param dataTypes The website data types that should be removed.
+     * @param date A date. All website data modified after this date will be removed.
+     * @param completionHandler A block to invoke when the website data has been removed.
+     */
     @Generated
     @Selector("removeDataOfTypes:modifiedSince:completionHandler:")
     public native void removeDataOfTypesModifiedSinceCompletionHandler(NSSet<String> dataTypes, NSDate date,
@@ -220,6 +256,9 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
         void call_removeDataOfTypesModifiedSinceCompletionHandler();
     }
 
+    /**
+     * @abstract Returns the cookie store representing HTTP cookies in this website data store.
+     */
     @Generated
     @Selector("httpCookieStore")
     public native WKHTTPCookieStore httpCookieStore();

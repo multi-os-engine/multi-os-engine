@@ -66,10 +66,16 @@ public final class MixerDistanceParams extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setMMaxDistance(float value);
 
+    /**
+     * in decibels
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native float mMaxAttenuation();
 
+    /**
+     * in decibels
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setMMaxAttenuation(float value);

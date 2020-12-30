@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFURLBookmarkCreationOptions {
+    /**
+     * creates bookmark data with "less" information, which may be smaller but still be able to resolve in certain ways
+     */
     @Generated @NUInt public static final long MinimalBookmarkMask = 0x0000000000000200L;
+    /**
+     * include the properties required by CFURLWriteBookmarkDataToFile() in the bookmark data created
+     */
     @Generated @NUInt public static final long SuitableForBookmarkFile = 0x0000000000000400L;
+    /**
+     * deprecated
+     */
     @Generated @NUInt public static final long PreferFileIDResolutionMask = 0x0000000000000100L;
 
     @Generated

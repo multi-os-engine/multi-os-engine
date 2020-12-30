@@ -27,6 +27,22 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSMatrixSoftMax
+ * 
+ * @dependency This depends on Metal.framework.
+ * 
+ * @abstract   A softmax kernel that operates on matrices.
+ * 
+ * @discussion A MPSMatrixSoftMax object computes:
+ * 
+ *                 B_ij = Exp { A_ij } / ( Sum_k Exp { A_ik } )
+ * 
+ *             A and B are matrices which are represented by MPSMatrix
+ *             objects. This filter computes the same result for MPSMatrices as
+ *             MPSCNNSoftMax filter does for MPSImages by interpreting the columns
+ *             of the matrix as feature channels, that is the sum runs over column indices.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -77,6 +93,15 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @abstract   Make a copy of this kernel for a new device - @see MPSKernel
+     * @param      zone        The NSZone in which to allocate the object
+     * @param      device      The device for the new MPSKernel. If nil, then use
+     *                         self.device.
+     * @result     a pointer to a copy of this MPSKernel. This will fail, returning
+     *             nil if the device is not supported. Devices must be
+     *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     */
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
@@ -91,6 +116,29 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract   Encode a MPSMatrixSoftMax object to a command buffer.
+     * 
+     * @param      commandBuffer   A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
+     * @param      inputMatrix     A valid MPSMatrix object which specifies the input matrix.
+     * 
+     * @param      resultMatrix    A valid MPSMatrix object which specifies the matrix which will
+     *                             be overwritten by the result.
+     * 
+     * @discussion Certain constraints apply to the sizes of the matrices depending on the sizes requested at
+     *             initialization time as well as the origins at the time this routine is called:
+     * 
+     *             The result matrix must be large enough to hold a two dimensional array of 'sourceRows' rows and
+     *             'sourceColumns' columns beginning at resultMatrixOrigin.
+     * 
+     *             Each matrix within the range specified by batchStart and batchSize, which also specifies
+     *             a valid set of matrices within inputMatrix and resultMatrix, will
+     *             be processed.
+     * 
+     *             The datatypes of the matrices inputMatrix and resultMatrix must match and be either
+     *             MPSDataTypeFloat32 or MPSDataTypeFloat16.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:inputMatrix:resultMatrix:")
     public native void encodeToCommandBufferInputMatrixResultMatrix(
@@ -110,10 +158,24 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     @Selector("initWithCoder:")
     public native MPSMatrixSoftMax initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion See @ref MPSKernel#initWithCoder.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSMatrixSoftMax
+     * @param      device      The MTLDevice on which to make the MPSMatrixSoftMax
+     * @return     A new MPSMatrixSoftMax object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSMatrixSoftMax initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Initialize an MPSMatrixSoftMax object on a device for a given size.
+     * 
+     * @param      device          The device on which the kernel will execute.
+     * 
+     * @return     A valid MPSMatrixSoftMax object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSMatrixSoftMax initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
@@ -153,10 +215,44 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   sourceColumns
+     * 
+     * @discussion The number of columns to consider from the source in the operation.
+     *             This property is modifiable and defaults to NSUIntegerMax and the number is
+     *             adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
+     *             fit into the source matrix available starting from sourceMatrixOrigin.y,
+     *             indicating that by default the whole source matrix is used.
+     *             If a different size is desired then this should be modified prior to
+     *             encoding the kernel. It is the user's responsibility to ensure that the
+     *             resultMatrix parameter in encodeToCommandBuffer is large enough
+     *             to accommodate the results of this operation, otherwise the results of
+     *             the encode call are undefined.
+     *             NOTE: sourceMatrixOrigin and resultMatrixOrigin from MPSMatrixUnaryKernel
+     *             can be used to control the starting points in the source and destination
+     *             at kernel encode time (see encodeToCommandBuffer).
+     */
     @Generated
     @Selector("setSourceColumns:")
     public native void setSourceColumns(@NUInt long value);
 
+    /**
+     * @property   sourceRows
+     * 
+     * @discussion The number of rows to consider from the source in the operation.
+     *             This property is modifiable and defaults to NSUIntegerMax and the number is
+     *             adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
+     *             fit into the source matrix available starting from sourceMatrixOrigin.x,
+     *             indicating that by default the whole source matrix is used.
+     *             If a different size is desired then this should be modified prior to
+     *             encoding the kernel. It is the user's responsibility to ensure that the
+     *             resultMatrix parameter in encodeToCommandBuffer is large enough
+     *             to accommodate the results of this operation, otherwise the results of
+     *             the encode call are undefined.
+     *             NOTE: sourceMatrixOrigin and resultMatrixOrigin from MPSMatrixUnaryKernel
+     *             can be used to control the starting points in the source and destination
+     *             at kernel encode time (see encodeToCommandBuffer).
+     */
     @Generated
     @Selector("setSourceRows:")
     public native void setSourceRows(@NUInt long value);
@@ -165,11 +261,45 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @property   sourceColumns
+     * 
+     * @discussion The number of columns to consider from the source in the operation.
+     *             This property is modifiable and defaults to NSUIntegerMax and the number is
+     *             adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
+     *             fit into the source matrix available starting from sourceMatrixOrigin.y,
+     *             indicating that by default the whole source matrix is used.
+     *             If a different size is desired then this should be modified prior to
+     *             encoding the kernel. It is the user's responsibility to ensure that the
+     *             resultMatrix parameter in encodeToCommandBuffer is large enough
+     *             to accommodate the results of this operation, otherwise the results of
+     *             the encode call are undefined.
+     *             NOTE: sourceMatrixOrigin and resultMatrixOrigin from MPSMatrixUnaryKernel
+     *             can be used to control the starting points in the source and destination
+     *             at kernel encode time (see encodeToCommandBuffer).
+     */
     @Generated
     @Selector("sourceColumns")
     @NUInt
     public native long sourceColumns();
 
+    /**
+     * @property   sourceRows
+     * 
+     * @discussion The number of rows to consider from the source in the operation.
+     *             This property is modifiable and defaults to NSUIntegerMax and the number is
+     *             adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
+     *             fit into the source matrix available starting from sourceMatrixOrigin.x,
+     *             indicating that by default the whole source matrix is used.
+     *             If a different size is desired then this should be modified prior to
+     *             encoding the kernel. It is the user's responsibility to ensure that the
+     *             resultMatrix parameter in encodeToCommandBuffer is large enough
+     *             to accommodate the results of this operation, otherwise the results of
+     *             the encode call are undefined.
+     *             NOTE: sourceMatrixOrigin and resultMatrixOrigin from MPSMatrixUnaryKernel
+     *             can be used to control the starting points in the source and destination
+     *             at kernel encode time (see encodeToCommandBuffer).
+     */
     @Generated
     @Selector("sourceRows")
     @NUInt

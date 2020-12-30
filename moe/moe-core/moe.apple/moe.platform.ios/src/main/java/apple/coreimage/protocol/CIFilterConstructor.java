@@ -24,6 +24,9 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Used by +[CIFilter registerFilterName:constructor:classAttributes:]
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)

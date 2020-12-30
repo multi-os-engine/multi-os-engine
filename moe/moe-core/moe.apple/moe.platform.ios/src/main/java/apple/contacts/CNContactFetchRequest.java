@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract Specifies the search criteria to fetch contacts.
+ * 
+ * @discussion Used with [CNContactStore enumerateContactsWithFetchRequest:error:usingBlock:]. Can combine any of these options to create a contact fetch request.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
@@ -170,42 +175,95 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
     @Selector("initWithCoder:")
     public native CNContactFetchRequest initWithCoder(NSCoder coder);
 
+    /**
+     * @param      keysToFetch
+     *             The properties to fetch for the returned contacts.
+     * 
+     * @discussion Only fetch the properties that will be used.
+     */
     @Generated
     @Selector("initWithKeysToFetch:")
     public native CNContactFetchRequest initWithKeysToFetch(NSArray<?> keysToFetch);
 
+    /**
+     * @abstract The properties to fetch in the returned contacts.
+     * 
+     * @discussion Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.
+     */
     @Generated
     @Selector("keysToFetch")
     public native NSArray<?> keysToFetch();
 
+    /**
+     * @abstract To return mutable contacts.
+     * 
+     * @discussion If YES returns CNMutableContact objects, otherwise returns CNContact objects. Default is NO.
+     */
     @Generated
     @Selector("mutableObjects")
     public native boolean mutableObjects();
 
+    /**
+     * @abstract The predicate to match contacts against.
+     * 
+     * @discussion Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Set to nil to match all contacts.
+     */
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
+    /**
+     * @abstract The properties to fetch in the returned contacts.
+     * 
+     * @discussion Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.
+     */
     @Generated
     @Selector("setKeysToFetch:")
     public native void setKeysToFetch(NSArray<?> value);
 
+    /**
+     * @abstract To return mutable contacts.
+     * 
+     * @discussion If YES returns CNMutableContact objects, otherwise returns CNContact objects. Default is NO.
+     */
     @Generated
     @Selector("setMutableObjects:")
     public native void setMutableObjects(boolean value);
 
+    /**
+     * @abstract The predicate to match contacts against.
+     * 
+     * @discussion Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Set to nil to match all contacts.
+     */
     @Generated
     @Selector("setPredicate:")
     public native void setPredicate(NSPredicate value);
 
+    /**
+     * @abstract To return contacts in a specific sort order.
+     * 
+     * @discussion Default is CNContactSortOrderNone.
+     */
     @Generated
     @Selector("setSortOrder:")
     public native void setSortOrder(@NInt long value);
 
+    /**
+     * @abstract To return linked contacts as unified contacts.
+     * 
+     * @discussion If YES returns unified contacts, otherwise returns individual contacts. Default is YES.
+     * 
+     * @note A unified contact is the aggregation of properties from a set of linked individual contacts. If an individual contact is not linked then the unified contact is simply that individual contact.
+     */
     @Generated
     @Selector("setUnifyResults:")
     public native void setUnifyResults(boolean value);
 
+    /**
+     * @abstract To return contacts in a specific sort order.
+     * 
+     * @discussion Default is CNContactSortOrderNone.
+     */
     @Generated
     @Selector("sortOrder")
     @NInt
@@ -217,6 +275,13 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
         return supportsSecureCoding();
     }
 
+    /**
+     * @abstract To return linked contacts as unified contacts.
+     * 
+     * @discussion If YES returns unified contacts, otherwise returns individual contacts. Default is YES.
+     * 
+     * @note A unified contact is the aggregation of properties from a set of linked individual contacts. If an individual contact is not linked then the unified contact is simply that individual contact.
+     */
     @Generated
     @Selector("unifyResults")
     public native boolean unifyResults();

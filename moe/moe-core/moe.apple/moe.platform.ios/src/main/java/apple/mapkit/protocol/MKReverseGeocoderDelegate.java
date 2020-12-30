@@ -31,6 +31,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MKReverseGeocoderDelegate")
 public interface MKReverseGeocoderDelegate {
+    /**
+     * There are at least two types of errors:
+     *   - Errors sent up from the underlying connection (temporary condition)
+     *   - Result not found errors (permanent condition).  The result not found errors
+     *     will have the domain MKErrorDomain and the code MKErrorPlacemarkNotFound
+     */
     @Generated
     @Deprecated
     @Selector("reverseGeocoder:didFailWithError:")

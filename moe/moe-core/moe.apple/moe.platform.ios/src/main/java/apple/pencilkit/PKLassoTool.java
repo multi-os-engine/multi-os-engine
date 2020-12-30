@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A lasso tool for selection parts of a drawing.
+ */
 @Generated
 @Library("PencilKit")
 @Runtime(ObjCRuntime.class)

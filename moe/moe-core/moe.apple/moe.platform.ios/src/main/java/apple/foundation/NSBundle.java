@@ -38,6 +38,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Because NSBundle caches allocated instances, subclasses should be prepared
+ * to receive an already initialized object back from [super initWithPath:] 
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -52,6 +56,9 @@ public class NSBundle extends NSObject {
         super(peer);
     }
 
+    /**
+     * Methods for locating bundle resources.  Instance methods locate resources in the bundle indicated by the receiver; class methods take an argument pointing to a bundle on disk.  In the class methods, bundleURL is a URL pointing to the location of a bundle on disk, and may not be nil; bundlePath is the path equivalent of bundleURL, an absolute path pointing to the location of a bundle on disk.  By contrast, subpath is a relative path to a subdirectory inside the relevant global or localized resource directory, and should be nil if the resource file in question is not in a subdirectory.  Where appropriate, localizationName is the name of a .lproj directory in the bundle, minus the .lproj extension; passing nil for localizationName retrieves only global resources, whereas using a method without this argument retrieves both global and localized resources (using the standard localization search algorithm).
+     */
     @Generated
     @Selector("URLForResource:withExtension:subdirectory:inBundleWithURL:")
     public static native NSURL URLForResourceWithExtensionSubdirectoryInBundleWithURL(String name, String ext,
@@ -156,6 +163,9 @@ public class NSBundle extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Methods for creating or retrieving bundle instances.
+     */
     @Generated
     @Selector("mainBundle")
     public static native NSBundle mainBundle();
@@ -242,6 +252,9 @@ public class NSBundle extends NSObject {
     @Selector("builtInPlugInsURL")
     public native NSURL builtInPlugInsURL();
 
+    /**
+     * Methods for obtaining various information about a bundle.
+     */
     @Generated
     @Selector("bundleIdentifier")
     public native String bundleIdentifier();
@@ -250,6 +263,9 @@ public class NSBundle extends NSObject {
     @Selector("bundlePath")
     public native String bundlePath();
 
+    /**
+     * Methods for locating various components of a bundle.
+     */
     @Generated
     @Selector("bundleURL")
     public native NSURL bundleURL();
@@ -294,6 +310,9 @@ public class NSBundle extends NSObject {
     @Selector("isLoaded")
     public native boolean isLoaded();
 
+    /**
+     * Methods for loading and unloading bundles.
+     */
     @Generated
     @Selector("load")
     public native boolean load_objc();
@@ -307,6 +326,9 @@ public class NSBundle extends NSObject {
     public native NSArray<?> loadNibNamedOwnerOptions(String name, @Mapped(ObjCObjectMapper.class) Object owner,
             NSDictionary<String, ?> options);
 
+    /**
+     * list of language names this bundle appears to be localized to
+     */
     @Generated
     @Selector("localizations")
     public native NSArray<String> localizations();
@@ -315,6 +337,9 @@ public class NSBundle extends NSObject {
     @Selector("localizedInfoDictionary")
     public native NSDictionary<String, ?> localizedInfoDictionary();
 
+    /**
+     * Method for retrieving localized strings.
+     */
     @Generated
     @Selector("localizedStringForKey:value:table:")
     public native String localizedStringForKeyValueTable(String key, String value, String tableName);
@@ -350,6 +375,9 @@ public class NSBundle extends NSObject {
     public native NSArray<String> pathsForResourcesOfTypeInDirectoryForLocalization(String ext, String subpath,
             String localizationName);
 
+    /**
+     * a subset of this bundle's localizations, re-ordered into the preferred order for this process's current execution environment; the main bundle's preferred localizations indicate the language (of text) the user is most likely seeing in the UI
+     */
     @Generated
     @Selector("preferredLocalizations")
     public native NSArray<String> preferredLocalizations();
@@ -382,6 +410,13 @@ public class NSBundle extends NSObject {
     @Selector("resourceURL")
     public native NSURL resourceURL();
 
+    /**
+     * Set a preservation priority for tags that are included in this bundle for the On Demand Resources system. Preservation priorities may be between 0.0 and 1.0, with higher values being the last choice for purging by the system. The exact meaning of this value is up to your application as it only has meaning within the set of tags your application uses.
+     * 
+     * The default value is 0.0.
+     * 
+     * This method will throw an exception if the receiver bundle has no on demand resource tag information.
+     */
     @Generated
     @Selector("setPreservationPriority:forTags:")
     public native void setPreservationPriorityForTags(double priority, NSSet<String> tags);

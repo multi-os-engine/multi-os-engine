@@ -18,8 +18,14 @@ package apple.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * nonstandard ACL / entry flags
+ */
 @Generated
 public final class acl_flag_t {
+    /**
+     * tentative
+     */
     @Generated public static final int ACL_FLAG_DEFER_INHERIT = 0x00000001;
     @Generated public static final int ACL_FLAG_NO_INHERIT = 0x00020000;
     @Generated public static final int ACL_ENTRY_INHERITED = 0x00000010;

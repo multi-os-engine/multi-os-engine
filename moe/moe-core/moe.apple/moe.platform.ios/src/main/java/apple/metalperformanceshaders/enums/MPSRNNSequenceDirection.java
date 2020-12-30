@@ -9,6 +9,12 @@ public final class MPSRNNSequenceDirection {
     private MPSRNNSequenceDirection() {
     }
 
+    /**
+     * The input sequence is processed from index zero to array length minus one
+     */
     @Generated @NUInt public static final long Forward = 0x0000000000000000L;
+    /**
+     * The input sequence is processed from index array length minus one to zero
+     */
     @Generated @NUInt public static final long Backward = 0x0000000000000001L;
 }

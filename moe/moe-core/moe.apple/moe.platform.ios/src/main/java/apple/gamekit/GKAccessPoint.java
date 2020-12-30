@@ -112,10 +112,16 @@ public class GKAccessPoint extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * set this true to enable access point in your app.  Setting this will cause the access point to appear after the notification banner is presented.  If it already was presented it will appear immediately
+     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
+    /**
+     * observable property that indicates when the access point is visible.
+     */
     @Generated
     @Selector("isPresentingGameCenter")
     public native boolean isPresentingGameCenter();
@@ -132,6 +138,9 @@ public class GKAccessPoint extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * These properties control the placement of the widget
+     */
     @Generated
     @Selector("location")
     @NInt
@@ -155,10 +164,16 @@ public class GKAccessPoint extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * set this true to enable access point in your app.  Setting this will cause the access point to appear after the notification banner is presented.  If it already was presented it will appear immediately
+     */
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
 
+    /**
+     * These properties control the placement of the widget
+     */
     @Generated
     @Selector("setLocation:")
     public native void setLocation(@NInt long value);
@@ -179,6 +194,9 @@ public class GKAccessPoint extends NSObject {
         }
     }
 
+    /**
+     * Set this property to true if you wish to show the highlights for most recent acheivement, current rank on default leaderboard, etc
+     */
     @Generated
     @Selector("setShowHighlights:")
     public native void setShowHighlights(boolean value);
@@ -191,6 +209,9 @@ public class GKAccessPoint extends NSObject {
     @Selector("shared")
     public static native GKAccessPoint shared();
 
+    /**
+     * Set this property to true if you wish to show the highlights for most recent acheivement, current rank on default leaderboard, etc
+     */
     @Generated
     @Selector("showHighlights")
     public native boolean showHighlights();
@@ -199,6 +220,9 @@ public class GKAccessPoint extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * this lets the developer trigger the access point as if the user had touched it.  This is useful for games that use controllers or the remote on AppleTV.  the argument lets you specify a specific state (default, profile, acheivements, leaderboards) for GameCenterViewController
+     */
     @Generated
     @Selector("triggerAccessPointWithHandler:")
     public native void triggerAccessPointWithHandler(

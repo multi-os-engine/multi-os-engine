@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The data model value representing a stroke in a `PKDrawing`.
+ */
 @Generated
 @Library("PencilKit")
 @Runtime(ObjCRuntime.class)
@@ -106,6 +109,9 @@ public class PKStroke extends NSObject implements NSCopying {
     public native PKStroke initWithInkStrokePathTransformMask(PKInk ink, PKStrokePath strokePath,
             @ByValue CGAffineTransform transform, UIBezierPath mask);
 
+    /**
+     * The ink used to render this stroke.
+     */
     @Generated
     @Selector("ink")
     public native PKInk ink();
@@ -135,6 +141,10 @@ public class PKStroke extends NSObject implements NSCopying {
     @Selector("mask")
     public native UIBezierPath mask();
 
+    /**
+     * These are the parametric parameter ranges of points in `strokePath`
+     * that intersect the stroke's mask.
+     */
     @Generated
     @Selector("maskedPathRanges")
     public native NSArray<? extends PKFloatRange> maskedPathRanges();
@@ -145,10 +155,18 @@ public class PKStroke extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The B-spline path that describes this stroke.
+     */
     @Generated
     @Selector("path")
     public native PKStrokePath path();
 
+    /**
+     * The bounds of the rendered stroke.
+     * This includes the width & ink of the stroke after the transform
+     * is applied.
+     */
     @Generated
     @Selector("renderBounds")
     @ByValue
@@ -170,6 +188,9 @@ public class PKStroke extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * The affine transform of the stroke when rendered.
+     */
     @Generated
     @Selector("transform")
     @ByValue

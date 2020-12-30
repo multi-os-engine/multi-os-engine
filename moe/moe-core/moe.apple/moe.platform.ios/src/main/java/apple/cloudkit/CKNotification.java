@@ -157,30 +157,51 @@ public class CKNotification extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * A key for a localized string to be used as the alert action in a modal style notification.
+     */
     @Generated
     @Selector("alertActionLocalizationKey")
     public native String alertActionLocalizationKey();
 
+    /**
+     * Optional alert string to display in a push notification.
+     */
     @Generated
     @Selector("alertBody")
     public native String alertBody();
 
+    /**
+     * The name of an image in your app bundle to be used as the launch image when launching in response to the notification.
+     */
     @Generated
     @Selector("alertLaunchImage")
     public native String alertLaunchImage();
 
+    /**
+     * A list of field names to take from the matching record that is used as substitution variables in a formatted alert string.
+     */
     @Generated
     @Selector("alertLocalizationArgs")
     public native NSArray<String> alertLocalizationArgs();
 
+    /**
+     * Instead of a raw alert string, you may optionally specify a key for a localized string in your app's Localizable.strings file.
+     */
     @Generated
     @Selector("alertLocalizationKey")
     public native String alertLocalizationKey();
 
+    /**
+     * The number to display as the badge of the application icon
+     */
     @Generated
     @Selector("badge")
     public native NSNumber badge();
 
+    /**
+     * The category for user-initiated actions in the notification
+     */
     @Generated
     @Selector("category")
     public native String category();
@@ -193,6 +214,12 @@ public class CKNotification extends NSObject {
     @Selector("init")
     public native CKNotification init();
 
+    /**
+     * @abstract Whether or not the notification fully represents what the server wanted to send.
+     * 
+     * @discussion Push notifications have a limited size.  In some cases, CloudKit servers may not be able to send you a full @c CKNotification's worth of info in one push.  In those cases, isPruned returns YES.  The order in which we'll drop properties is defined in each @c CKNotification subclass below.
+     * The @c CKNotification can be obtained in full via a @c CKFetchNotificationChangesOperation
+     */
     @Generated
     @Selector("isPruned")
     public native boolean isPruned();
@@ -201,43 +228,74 @@ public class CKNotification extends NSObject {
     @Selector("notificationID")
     public native CKNotificationID notificationID();
 
+    /**
+     * When you instantiate a CKNotification from a remote notification dictionary, you will get back a concrete
+     * subclass defined below.  Use notificationType to avoid -isKindOfClass: checks 
+     */
     @Generated
     @Selector("notificationType")
     @NInt
     public native long notificationType();
 
+    /**
+     * The name of a sound file in your app bundle to play upon receiving the notification.
+     */
     @Generated
     @Selector("soundName")
     public native String soundName();
 
+    /**
+     * The ID of the subscription that caused this notification to fire
+     */
     @Generated
     @Selector("subscriptionID")
     public native String subscriptionID();
 
+    /**
+     * Optional subtitle of the alert to display in a push notification.
+     */
     @Generated
     @Selector("subtitle")
     public native String subtitle();
 
+    /**
+     * A list of field names to take from the matching record that is used as substitution variables in a formatted subtitle string.
+     */
     @Generated
     @Selector("subtitleLocalizationArgs")
     public native NSArray<String> subtitleLocalizationArgs();
 
+    /**
+     * Instead of a raw subtitle string, you may optionally specify a key for a localized string in your app's Localizable.strings file.
+     */
     @Generated
     @Selector("subtitleLocalizationKey")
     public native String subtitleLocalizationKey();
 
+    /**
+     * Optional title of the alert to display in a push notification.
+     */
     @Generated
     @Selector("title")
     public native String title();
 
+    /**
+     * A list of field names to take from the matching record that is used as substitution variables in a formatted title string.
+     */
     @Generated
     @Selector("titleLocalizationArgs")
     public native NSArray<String> titleLocalizationArgs();
 
+    /**
+     * Instead of a raw title string, you may optionally specify a key for a localized string in your app's Localizable.strings file.
+     */
     @Generated
     @Selector("titleLocalizationKey")
     public native String titleLocalizationKey();
 
+    /**
+     * The user recordID of the owner of the subscription for which this notification was generated
+     */
     @Generated
     @Selector("subscriptionOwnerUserRecordID")
     public native CKRecordID subscriptionOwnerUserRecordID();

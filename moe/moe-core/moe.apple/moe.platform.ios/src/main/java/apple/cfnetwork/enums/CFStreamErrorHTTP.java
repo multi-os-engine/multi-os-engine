@@ -18,10 +18,25 @@ package apple.cfnetwork.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ *  CFStreamErrorHTTP
+ * 
+ *  Discussion:
+ * Errors from the kCFStreamErrorDomainHTTP domain.
+ */
 @Generated
 public final class CFStreamErrorHTTP {
+    /**
+     * Could not parse the request/response.
+     */
     @Generated public static final int ParseFailure = 0xFFFFFFFF;
+    /**
+     * A loop was detected during redirection.
+     */
     @Generated public static final int RedirectionLoop = 0xFFFFFFFE;
+    /**
+     * Could not retreive url for request/response.
+     */
     @Generated public static final int BadURL = 0xFFFFFFFD;
 
     @Generated

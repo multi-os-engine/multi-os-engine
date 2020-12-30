@@ -33,18 +33,34 @@ public final class dylib_table_of_contents extends StructObject {
         setModule_index(module_index);
     }
 
+    /**
+     * the defined external symbol
+     * (index into the symbol table) 
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int symbol_index();
 
+    /**
+     * the defined external symbol
+     * (index into the symbol table) 
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setSymbol_index(int value);
 
+    /**
+     * index into the module table this symbol
+     * is defined in 
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int module_index();
 
+    /**
+     * index into the module table this symbol
+     * is defined in 
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setModule_index(int value);

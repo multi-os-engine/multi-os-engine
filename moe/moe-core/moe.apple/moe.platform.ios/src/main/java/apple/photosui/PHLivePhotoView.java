@@ -237,6 +237,9 @@ public class PHLivePhotoView extends UIView {
     @Selector("layerClass")
     public static native Class layerClass();
 
+    /**
+     * System badge images representing Live Photo content
+     */
     @Generated
     @Selector("livePhotoBadgeImageWithOptions:")
     public static native UIImage livePhotoBadgeImageWithOptions(@NUInt long badgeOptions);
@@ -420,18 +423,30 @@ public class PHLivePhotoView extends UIView {
     @Selector("initWithFrame:")
     public native PHLivePhotoView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Indicates whether the audio of the Live Photo is muted.
+     */
     @Generated
     @Selector("isMuted")
     public native boolean isMuted();
 
+    /**
+     * Indicates whether the audio of the Live Photo is muted.
+     */
     @Generated
     @Selector("setMuted:")
     public native void setMuted(boolean value);
 
+    /**
+     * Live photo displayed in the receiver.
+     */
     @Generated
     @Selector("livePhoto")
     public native PHLivePhoto livePhoto();
 
+    /**
+     * Gesture used to trigger playback. By default, added to the receiver. Can be moved to a different view.
+     */
     @Generated
     @Selector("playbackGestureRecognizer")
     public native UIGestureRecognizer playbackGestureRecognizer();
@@ -452,10 +467,16 @@ public class PHLivePhotoView extends UIView {
         }
     }
 
+    /**
+     * Live photo displayed in the receiver.
+     */
     @Generated
     @Selector("setLivePhoto:")
     public native void setLivePhoto(PHLivePhoto value);
 
+    /**
+     * The following methods allow the client to manually trigger playback. If the live photo is changed during playback, it will be immediately interrupted.
+     */
     @Generated
     @Selector("startPlaybackWithStyle:")
     public native void startPlaybackWithStyle(@NInt long playbackStyle);

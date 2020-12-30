@@ -44,6 +44,16 @@ public class UIAction extends UIMenuElement {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * @abstract Creates a UIAction with the given arguments.
+     * 
+     * @param title    The action's title.
+     * @param image    Image that can appear next to this action, if needed.
+     * @param identifier  The action's identifier. Pass nil to use an auto-generated identifier.
+     * @param handler  Handler block. Called when the user selects the action.
+     * 
+     * @return A new UIAction.
+     */
     @Generated
     @Selector("actionWithTitle:image:identifier:handler:")
     public static native UIAction actionWithTitleImageIdentifierHandler(String title, UIImage image, String identifier,
@@ -66,6 +76,9 @@ public class UIAction extends UIMenuElement {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * This action's style.
+     */
     @Generated
     @Selector("attributes")
     @NUInt
@@ -101,6 +114,9 @@ public class UIAction extends UIMenuElement {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Elaborated title, if any.
+     */
     @Generated
     @Selector("discoverabilityTitle")
     public native String discoverabilityTitle();
@@ -110,10 +126,16 @@ public class UIAction extends UIMenuElement {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * This action's identifier.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
 
+    /**
+     * Image that can appear next to this action.
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -161,22 +183,37 @@ public class UIAction extends UIMenuElement {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * This action's style.
+     */
     @Generated
     @Selector("setAttributes:")
     public native void setAttributes(@NUInt long value);
 
+    /**
+     * Elaborated title, if any.
+     */
     @Generated
     @Selector("setDiscoverabilityTitle:")
     public native void setDiscoverabilityTitle(String value);
 
+    /**
+     * Image that can appear next to this action.
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);
 
+    /**
+     * State that can appear next to this action.
+     */
     @Generated
     @Selector("setState:")
     public native void setState(@NInt long value);
 
+    /**
+     * Short display title.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
@@ -185,6 +222,9 @@ public class UIAction extends UIMenuElement {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * State that can appear next to this action.
+     */
     @Generated
     @Selector("state")
     @NInt
@@ -204,6 +244,9 @@ public class UIAction extends UIMenuElement {
         return supportsSecureCoding();
     }
 
+    /**
+     * Short display title.
+     */
     @Generated
     @Selector("title")
     public native String title();
@@ -213,6 +256,13 @@ public class UIAction extends UIMenuElement {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract Creates a UIAction with an empty title, nil image, and automatically generated identifier
+     * 
+     * @param handler  Handler block. Called when the user selects the action.
+     * 
+     * @return A new UIAction.
+     */
     @Generated
     @Selector("actionWithHandler:")
     public static native UIAction actionWithHandler(
@@ -225,6 +275,9 @@ public class UIAction extends UIMenuElement {
         void call_actionWithHandler(UIAction action);
     }
 
+    /**
+     * If available, the object on behalf of which the actionHandler is called.
+     */
     @Generated
     @Selector("sender")
     @MappedReturn(ObjCObjectMapper.class)

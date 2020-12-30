@@ -19,6 +19,11 @@ package apple.cloudkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum CKReferenceAction
+ * @constant CKReferenceActionNone When the referred record is deleted, this record is unchanged, and has a dangling pointer
+ * @constant CKReferenceActionDeleteSelf When the referred record is deleted then this record is also deleted
+ */
 @Generated
 public final class CKReferenceAction {
     @Generated @NUInt public static final long None = 0x0000000000000000L;

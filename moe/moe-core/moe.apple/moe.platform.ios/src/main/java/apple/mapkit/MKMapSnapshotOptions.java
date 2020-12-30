@@ -186,6 +186,9 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @ByValue
     public native MKCoordinateRegion region();
 
+    /**
+     * Defaults to the device's screen scale
+     */
     @Generated
     @Selector("scale")
     @NFloat
@@ -207,14 +210,23 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);
 
+    /**
+     * Defaults to the device's screen scale
+     */
     @Generated
     @Selector("setScale:")
     public native void setScale(@NFloat double value);
 
+    /**
+     * Affects MKMapTypeStandard
+     */
     @Generated
     @Selector("setShowsBuildings:")
     public native void setShowsBuildings(boolean value);
 
+    /**
+     * Affects MKMapTypeStandard and MKMapTypeHybrid
+     */
     @Generated
     @Selector("setShowsPointsOfInterest:")
     public native void setShowsPointsOfInterest(boolean value);
@@ -223,10 +235,16 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Selector("setSize:")
     public native void setSize(@ByValue CGSize value);
 
+    /**
+     * Affects MKMapTypeStandard
+     */
     @Generated
     @Selector("showsBuildings")
     public native boolean showsBuildings();
 
+    /**
+     * Affects MKMapTypeStandard and MKMapTypeHybrid
+     */
     @Generated
     @Selector("showsPointsOfInterest")
     public native boolean showsPointsOfInterest();

@@ -50,20 +50,32 @@ public final class CMTimeMapping extends StructObject {
         setTarget(target);
     }
 
+    /**
+     * eg, media.  source.start is kCMTimeInvalid for empty edits.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native CMTimeRange source();
 
+    /**
+     * eg, media.  source.start is kCMTimeInvalid for empty edits.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setSource(@ByValue CMTimeRange value);
 
+    /**
+     * eg, track.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native CMTimeRange target();
 
+    /**
+     * eg, track.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setTarget(@ByValue CMTimeRange value);

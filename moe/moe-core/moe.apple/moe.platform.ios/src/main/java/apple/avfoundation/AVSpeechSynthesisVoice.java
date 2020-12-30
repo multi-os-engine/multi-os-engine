@@ -43,6 +43,15 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVSpeechSynthesisVoice
+ * @abstract
+ * AVSpeechSynthesisVoice encapsulates the attributes of the voice used to synthesize speech on the system.
+ * 
+ * @discussion
+ * Retrieve a voice by specifying the language code your text should be spoken in, or by using voiceWithIdentifier
+ * for a known voice identifier.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -166,10 +175,31 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * @method        voiceWithIdentifier:
+     * @abstract      Retrieve a voice by its identifier.
+     * @param			identifier
+     * A unique identifier for a voice.
+     * @discussion
+     * Passing in an invalid identifier will return nil.
+     * Returns nil if the identifier is valid, but the voice is not available on device (i.e. not yet downloaded by the user).
+     */
     @Generated
     @Selector("voiceWithIdentifier:")
     public static native AVSpeechSynthesisVoice voiceWithIdentifier(String identifier);
 
+    /**
+     * @method        voiceWithLanguage:
+     * @abstract      Use a BCP-47 language tag to specify the desired language and region.
+     * @param			languageCode
+     * Specifies the BCP-47 language tag that represents the voice.
+     * @discussion
+     * The default is the system's region and language.
+     * Passing in nil will return the default voice.
+     * Passing in an invalid languageCode will return nil.
+     * Will return enhanced quality voice if available, default quality otherwise.
+     * Examples: en-US (U.S. English), fr-CA (French Canadian)
+     */
     @Generated
     @Selector("voiceWithLanguage:")
     public static native AVSpeechSynthesisVoice voiceWithLanguage(String languageCode);
@@ -209,6 +239,11 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * This is a dictionary of properties that can be used to create an AVAudioFile using -[AVAudioFile initForWriting:settings:commonFormat:interleaved:error:]
+     * The data provided by AVSpeechSynthesizerBufferCallback will be in this specified format when using this voice.
+     * The AVAudioCommonFormat and interleaved properties can be determined by properties within the settings dictionary.
+     */
     @Generated
     @Selector("audioFileSettings")
     public native NSDictionary<String, ?> audioFileSettings();

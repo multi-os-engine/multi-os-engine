@@ -3,6 +3,12 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum AVAudioSessionActivationOptions
+ * @brief   For use with activateWithOptions:completionHandler:
+ * 
+ * Reserved for future use. Added in watchOS 5.0.
+ */
 @Generated
 public final class AVAudioSessionActivationOptions {
     @Generated

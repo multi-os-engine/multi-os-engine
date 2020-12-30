@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A request for a speech recognition from an audio source
+ */
 @Generated
 @Library("Speech")
 @Runtime(ObjCRuntime.class)
@@ -150,6 +153,9 @@ public class SFSpeechRecognitionRequest extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Phrases which should be recognized even if they are not in the system vocabulary
+     */
     @Generated
     @Selector("contextualStrings")
     public native NSArray<String> contextualStrings();
@@ -158,18 +164,31 @@ public class SFSpeechRecognitionRequest extends NSObject {
     @Selector("init")
     public native SFSpeechRecognitionRequest init();
 
+    /**
+     * String which can be used to identify the receiver by the developer
+     */
     @Generated
     @Selector("interactionIdentifier")
     public native String interactionIdentifier();
 
+    /**
+     * Phrases which should be recognized even if they are not in the system vocabulary
+     */
     @Generated
     @Selector("setContextualStrings:")
     public native void setContextualStrings(NSArray<String> value);
 
+    /**
+     * String which can be used to identify the receiver by the developer
+     */
     @Generated
     @Selector("setInteractionIdentifier:")
     public native void setInteractionIdentifier(String value);
 
+    /**
+     * If true, partial (non-final) results for each utterance will be reported.
+     * Default is true
+     */
     @Generated
     @Selector("setShouldReportPartialResults:")
     public native void setShouldReportPartialResults(boolean value);
@@ -178,6 +197,10 @@ public class SFSpeechRecognitionRequest extends NSObject {
     @Selector("setTaskHint:")
     public native void setTaskHint(@NInt long value);
 
+    /**
+     * If true, partial (non-final) results for each utterance will be reported.
+     * Default is true
+     */
     @Generated
     @Selector("shouldReportPartialResults")
     public native boolean shouldReportPartialResults();
@@ -187,10 +210,22 @@ public class SFSpeechRecognitionRequest extends NSObject {
     @NInt
     public native long taskHint();
 
+    /**
+     * If true, speech recognition will not send any audio over the Internet
+     * This will reduce accuracy but enables certain applications where it is
+     * inappropriate to transmit user speech to a remote service.
+     * Default is false
+     */
     @Generated
     @Selector("requiresOnDeviceRecognition")
     public native boolean requiresOnDeviceRecognition();
 
+    /**
+     * If true, speech recognition will not send any audio over the Internet
+     * This will reduce accuracy but enables certain applications where it is
+     * inappropriate to transmit user speech to a remote service.
+     * Default is false
+     */
     @Generated
     @Selector("setRequiresOnDeviceRecognition:")
     public native void setRequiresOnDeviceRecognition(boolean value);

@@ -23,6 +23,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class			AVFragmentedMovieMinder
+ * @abstract		A class that periodically checks whether additional movie fragments have been appended to fragmented movie files.
+ * @discussion		AVFragmentedMovieMinder is identical to AVFragmentedAssetMinder except that it's capable of minding only assets of class AVFragmentedMovie.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -41,6 +46,12 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * @method			addFragmentedMovie:
+     * @abstract		Adds a fragmented movie to the array of movies being minded.
+     * @param			movie
+     * 				The fragmented movie to add to the minder.
+     */
     @Generated
     @Selector("addFragmentedMovie:")
     public native void addFragmentedMovie(AVFragmentedMovie movie);
@@ -90,6 +101,15 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
     public static native AVFragmentedMovieMinder fragmentedAssetMinderWithAssetMindingInterval(AVAsset asset,
             double mindingInterval);
 
+    /**
+     * @method			fragmentedMovieMinderWithMovie:mindingInterval:
+     * @abstract       Creates an AVFragmentedMovieMinder, adds the specified movie to it, and sets the mindingInterval to the specified value.
+     * @param			movie
+     * 				An instance of AVFragmentedMovie to add to the AVFragmentedMovieMinder
+     * @param			mindingInterval
+     * 				The initial minding interval of the AVFragmentedMovieMinder.
+     * @result			A new instance of AVFragmentedMovieMinder.
+     */
     @Generated
     @Selector("fragmentedMovieMinderWithMovie:mindingInterval:")
     public static native AVFragmentedMovieMinder fragmentedMovieMinderWithMovieMindingInterval(AVFragmentedMovie movie,
@@ -108,6 +128,15 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
     @Selector("initWithAsset:mindingInterval:")
     public native AVFragmentedMovieMinder initWithAssetMindingInterval(AVAsset asset, double mindingInterval);
 
+    /**
+     * @method			initWithMovie:mindingInterval:
+     * @abstract       Creates an AVFragmentedMovieMinder, adds the specified movie to it, and sets the mindingInterval to the specified value.
+     * @param			movie
+     * 				An instance of AVFragmentedMovie to add to the AVFragmentedMovieMinder
+     * @param			mindingInterval
+     * 				The initial minding interval of the AVFragmentedMovieMinder.
+     * @result			A new instance of AVFragmentedMovieMinder.
+     */
     @Generated
     @Selector("initWithMovie:mindingInterval:")
     public native AVFragmentedMovieMinder initWithMovieMindingInterval(AVFragmentedMovie movie, double mindingInterval);
@@ -133,10 +162,18 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property       mindingInterval
+     * @abstract       An NSTimeInterval indicating how often a check for additional movie fragments should be performed. The default interval is 10.0.
+     */
     @Generated
     @Selector("mindingInterval")
     public native double mindingInterval();
 
+    /**
+     * @property       movies
+     * @abstract       An NSArray of the AVFragmentedMovie objects being minded.
+     */
     @Generated
     @Selector("movies")
     public native NSArray<? extends AVFragmentedMovie> movies();
@@ -147,6 +184,12 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method			removeFragmentedMovie:
+     * @abstract		Removes a fragmented movie from the array of movies being minded.
+     * @param			movie
+     * 				The fragmented movie to remove from the minder.
+     */
     @Generated
     @Selector("removeFragmentedMovie:")
     public native void removeFragmentedMovie(AVFragmentedMovie movie);
@@ -159,6 +202,10 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property       mindingInterval
+     * @abstract       An NSTimeInterval indicating how often a check for additional movie fragments should be performed. The default interval is 10.0.
+     */
     @Generated
     @Selector("setMindingInterval:")
     public native void setMindingInterval(double value);

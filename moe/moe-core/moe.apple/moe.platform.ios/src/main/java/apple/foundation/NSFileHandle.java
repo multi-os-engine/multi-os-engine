@@ -248,6 +248,10 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("readDataOfLength:")
     public native NSData readDataOfLength(@NUInt long length);
 
+    /**
+     * The API below may throw exceptions and will be deprecated in a future version of the OS.
+     * Use their replacements instead. 
+     */
     @Generated
     @Selector("readDataToEndOfFile")
     public native NSData readDataToEndOfFile();

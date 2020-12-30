@@ -65,11 +65,17 @@ public final class AudioOutputUnitMIDICallbacks extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setUserData(VoidPtr value);
 
+    /**
+     * see MusicDeviceMIDIEvent, MusicDeviceSysEx
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_MIDIEventProc")
     public native Function_MIDIEventProc MIDIEventProc();
 
+    /**
+     * see MusicDeviceMIDIEvent, MusicDeviceSysEx
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMIDIEventProc(@FunctionPtr(name = "call_MIDIEventProc") Function_MIDIEventProc value);

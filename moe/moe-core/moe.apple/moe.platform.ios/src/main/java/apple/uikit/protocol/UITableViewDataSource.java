@@ -29,11 +29,18 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * _______________________________________________________________________________________________________________
+ *  this protocol represents the data model object. as such, it supplies no information about appearance (including the cells)
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITableViewDataSource")
 public interface UITableViewDataSource {
+    /**
+     * Default is 1 if not implemented
+     */
     @Generated
     @IsOptional
     @Selector("numberOfSectionsInTableView:")
@@ -42,6 +49,9 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * return list of section titles to display in section index view (e.g. "ABCD...Z#")
+     */
     @Generated
     @IsOptional
     @Selector("sectionIndexTitlesForTableView:")
@@ -49,6 +59,9 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Individual rows can opt out of having the -editing property set for them. If not implemented, all rows are assumed to be editable.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:canEditRowAtIndexPath:")
@@ -56,6 +69,9 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Allows the reorder accessory view to optionally be shown for a particular row. By default, the reorder control will be shown only if the datasource implements -tableView:moveRowAtIndexPath:toIndexPath:
+     */
     @Generated
     @IsOptional
     @Selector("tableView:canMoveRowAtIndexPath:")
@@ -63,10 +79,18 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+     * Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+     */
     @Generated
     @Selector("tableView:cellForRowAtIndexPath:")
     UITableViewCell tableViewCellForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
 
+    /**
+     * After a row has the minus or plus button invoked (based on the UITableViewCellEditingStyle for the cell), the dataSource must commit the change
+     * Not called for edit actions using UITableViewRowAction - the action's handler will be invoked instead
+     */
     @Generated
     @IsOptional
     @Selector("tableView:commitEditingStyle:forRowAtIndexPath:")
@@ -75,6 +99,9 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Data manipulation - reorder / moving support
+     */
     @Generated
     @IsOptional
     @Selector("tableView:moveRowAtIndexPath:toIndexPath:")
@@ -88,6 +115,9 @@ public interface UITableViewDataSource {
     @NInt
     long tableViewNumberOfRowsInSection(UITableView tableView, @NInt long section);
 
+    /**
+     * tell table which section corresponds to section title/index (e.g. "B",1))
+     */
     @Generated
     @IsOptional
     @Selector("tableView:sectionForSectionIndexTitle:atIndex:")
@@ -103,6 +133,9 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * fixed font style. use custom view (UILabel) if you want something different
+     */
     @Generated
     @IsOptional
     @Selector("tableView:titleForHeaderInSection:")

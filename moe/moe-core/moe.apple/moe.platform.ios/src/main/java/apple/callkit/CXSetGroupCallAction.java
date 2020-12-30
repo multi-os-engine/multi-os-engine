@@ -157,6 +157,12 @@ public class CXSetGroupCallAction extends CXCallAction {
     @NInt
     public static native long version_static();
 
+    /**
+     * The UUID of another call to group with.
+     * 
+     * - If the call for this action's UUID is already in a group, it should leave that group if necessary.
+     * - If nil, leave any group the call is currently in.
+     */
     @Generated
     @Selector("callUUIDToGroupWith")
     public native NSUUID callUUIDToGroupWith();
@@ -177,6 +183,12 @@ public class CXSetGroupCallAction extends CXCallAction {
     @Selector("initWithCoder:")
     public native CXSetGroupCallAction initWithCoder(NSCoder aDecoder);
 
+    /**
+     * The UUID of another call to group with.
+     * 
+     * - If the call for this action's UUID is already in a group, it should leave that group if necessary.
+     * - If nil, leave any group the call is currently in.
+     */
     @Generated
     @Selector("setCallUUIDToGroupWith:")
     public native void setCallUUIDToGroupWith(NSUUID value);

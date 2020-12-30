@@ -74,6 +74,9 @@ public class CPSessionConfiguration extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The current content style suggested by the connected CarPlay system.
+     */
     @Generated
     @Selector("contentStyle")
     @NUInt
@@ -127,6 +130,9 @@ public class CPSessionConfiguration extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * A bitmask of what type of user interfaces are limited
+     */
     @Generated
     @Selector("limitedUserInterfaces")
     @NUInt

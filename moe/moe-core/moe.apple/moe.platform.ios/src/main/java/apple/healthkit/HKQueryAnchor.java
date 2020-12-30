@@ -43,6 +43,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKQueryAnchor
+ * @discussion    This object encapsulates the state of an HKAnchoredObjectQuery
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -71,6 +75,11 @@ public class HKQueryAnchor extends NSObject implements NSSecureCoding, NSCopying
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @method        anchorFromValue:
+     * @discussion    Creates an HKQueryAnchor with an integer anchor which was previously obtained from an
+     *                HKAnchoredObjectQuery prior to iOS 9.0.
+     */
     @Generated
     @Selector("anchorFromValue:")
     public static native HKQueryAnchor anchorFromValue(@NUInt long value);

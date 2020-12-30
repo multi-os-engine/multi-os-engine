@@ -136,10 +136,18 @@ public class NEDNSOverHTTPSSettings extends NEDNSSettings {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property serverURL
+     * @discussion The URL to which to make DNS-over-HTTPS requests. The format should be an HTTPS URL with the path indicating the location of the DNS-over-HTTPS server, such as: "https://dnsserver.example.net/dns-query".
+     */
     @Generated
     @Selector("serverURL")
     public native NSURL serverURL();
 
+    /**
+     * @property serverURL
+     * @discussion The URL to which to make DNS-over-HTTPS requests. The format should be an HTTPS URL with the path indicating the location of the DNS-over-HTTPS server, such as: "https://dnsserver.example.net/dns-query".
+     */
     @Generated
     @Selector("setServerURL:")
     public native void setServerURL(NSURL value);

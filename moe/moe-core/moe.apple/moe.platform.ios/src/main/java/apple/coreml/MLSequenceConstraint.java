@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Constraint describing expected MLSequence properties
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -78,6 +81,9 @@ public class MLSequenceConstraint extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Restriction on the length of the sequence
+     */
     @Generated
     @Selector("countRange")
     @ByValue
@@ -161,6 +167,9 @@ public class MLSequenceConstraint extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * Description all sequence elements / values must match
+     */
     @Generated
     @Selector("valueDescription")
     public native MLFeatureDescription valueDescription();

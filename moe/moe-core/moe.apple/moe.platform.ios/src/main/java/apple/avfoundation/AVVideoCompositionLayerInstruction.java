@@ -176,16 +176,61 @@ public class AVVideoCompositionLayerInstruction extends NSObject
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * @method		getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:
+     * @abstract		Obtains the crop rectangle ramp that includes the specified time.
+     * @param			time
+     *   If a ramp with a timeRange that contains the specified time has been set, information about the effective ramp for that time is supplied.
+     *   Otherwise, information about the first ramp that starts after the specified time is supplied.
+     * @param			startCropRectangle
+     *   A pointer to a CGRect to receive the starting crop rectangle value for the crop rectangle ramp. May be NULL.
+     * @param			endCropRecrangle
+     *   A pointer to a CGRect to receive the ending crop rectangle value for the crop rectangle ramp. May be NULL.
+     * @param			timeRange
+     *   A pointer to a CMTimeRange to receive the timeRange of the crop rectangle ramp. May be NULL.
+     * @result
+     *   An indication of success. NO will be returned if the specified time is beyond the duration of the last crop rectangle ramp that has been set.
+     */
     @Generated
     @Selector("getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:")
     public native boolean getCropRectangleRampForTimeStartCropRectangleEndCropRectangleTimeRange(@ByValue CMTime time,
             CGRect startCropRectangle, CGRect endCropRectangle, CMTimeRange timeRange);
 
+    /**
+     * @method		getOpacityRampForTime:startOpacity:endOpacity:timeRange:
+     * @abstract		Obtains the opacity ramp that includes the specified time.
+     * @param			time
+     *   If a ramp with a timeRange that contains the specified time has been set, information about the effective ramp for that time is supplied.
+     *   Otherwise, information about the first ramp that starts after the specified time is supplied.
+     * @param			startOpacity
+     *   A pointer to a float to receive the starting opacity value for the opacity ramp. May be NULL.
+     * @param			endOpacity
+     *   A pointer to a float to receive the ending opacity value for the opacity ramp. May be NULL.
+     * @param			timeRange
+     *   A pointer to a CMTimeRange to receive the timeRange of the opacity ramp. May be NULL.
+     * @result
+     *   An indication of success. NO will be returned if the specified time is beyond the duration of the last opacity ramp that has been set.
+     */
     @Generated
     @Selector("getOpacityRampForTime:startOpacity:endOpacity:timeRange:")
     public native boolean getOpacityRampForTimeStartOpacityEndOpacityTimeRange(@ByValue CMTime time,
             FloatPtr startOpacity, FloatPtr endOpacity, CMTimeRange timeRange);
 
+    /**
+     * @method		getTransformRampForTime:startTransform:endTransform:timeRange:
+     * @abstract		Obtains the transform ramp that includes the specified time.
+     * @param			time
+     *   If a ramp with a timeRange that contains the specified time has been set, information about the effective ramp for that time is supplied.
+     *   Otherwise, information about the first ramp that starts after the specified time is supplied.
+     * @param			startTransform
+     *   A pointer to a float to receive the starting transform value for the transform ramp. May be NULL.
+     * @param			endTransform
+     *   A pointer to a float to receive the ending transform value for the transform ramp. May be NULL.
+     * @param			timeRange
+     *   A pointer to a CMTimeRange to receive the timeRange of the transform ramp. May be NULL.
+     * @result
+     *   An indication of success. NO will be returned if the specified time is beyond the duration of the last transform ramp that has been set.
+     */
     @Generated
     @Selector("getTransformRampForTime:startTransform:endTransform:timeRange:")
     public native boolean getTransformRampForTimeStartTransformEndTransformTimeRange(@ByValue CMTime time,
@@ -211,6 +256,9 @@ public class AVVideoCompositionLayerInstruction extends NSObject
         return supportsSecureCoding();
     }
 
+    /**
+     * Indicates the trackID of the source track to which the compositor will apply the instruction.
+     */
     @Generated
     @Selector("trackID")
     public native int trackID();

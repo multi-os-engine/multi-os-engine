@@ -32,6 +32,16 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UISearchTextField is the subclass of UITextField used in UISearchBar, and can also be used elsewhere (e.g. as the titleView of a UINavigationItem).
+ * 
+ * In addition to its text, a UISearchField can contain tokens. Tokens are discrete representations of non-textual content. Your app might use tokens to represent filters that are being applied in conjunction with the search field’s text. Tokens are always created by the application, and always occur contiguously before the search field’s text.
+ * 
+ * @note
+ * Because the system drives selection and keyboard behaviors through the UITextInput protocol, and UISearchTextField supports selecting tokens, UISearchTextField assigns UITextPositions to tokens as well as text. If the current selection includes any tokens, their positions are part of the range returned by `UISearchTextField.selectedTextRange`. Use the `textualRange` property to obtain the range of the text field that excludes any tokens.
+ * 
+ * Tokens can be programatically selected by including their position in a range assigned to the `selectedTextRange` property. UISearchTextField does not support placing an insertion point before a token; attempting to do so will select the token instead.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -66,10 +76,20 @@ public class UISearchTextField extends UITextField {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Whether the user can copy tokens to the pasteboard or drag them out of the text field.
+     * 
+     * To support copying tokens, this property must be true and the delegate must provide an item provider for the tokens to be copied. UISearchTextField always enables the Copy command if any plain text is selected, even if the selection also includes tokens and this property is false. Defaults to true.
+     */
     @Generated
     @Selector("allowsCopyingTokens")
     public native boolean allowsCopyingTokens();
 
+    /**
+     * Whether the user can remove tokens through standard actions such as Delete and Cut.
+     * 
+     * The application can always remove tokens programmatically. If this property is true, the application must be prepared not only for tokens to be removed, but also to be re-added through Undo. Defaults to true.
+     */
     @Generated
     @Selector("allowsDeletingTokens")
     public native boolean allowsDeletingTokens();
@@ -310,6 +330,9 @@ public class UISearchTextField extends UITextField {
     public static native void performWithoutAnimation(
             @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
+    /**
+     * Returns the position of the provided token. To select a token, assign a UITextRange containing its position to the selectedTextRange property.
+     */
     @Generated
     @Selector("positionOfTokenAtIndex:")
     public native UITextPosition positionOfTokenAtIndex(@NInt long tokenIndex);
@@ -318,6 +341,14 @@ public class UISearchTextField extends UITextField {
     @Selector("removeTokenAtIndex:")
     public native void removeTokenAtIndex(@NInt long tokenIndex);
 
+    /**
+     * Removes any text contained in the specified range, inserts the provided token at the specified index, and selects the newly-inserted token. Does not replace any tokens within the provided range. If the range intersects the marked text range, the marked text is committed.
+     * 
+     * This method is essentially a convenience wrapper around the more fundamental `text`, `tokens`, and `selectedTextRange` properties, providing the selection behavior the user will expect.
+     * 
+     * @note
+     * Because this method does not remove any tokens in the provided range, the caller can pass the field’s selectedTextRange to convert the selected portion of the text into a token without first having to trim the range.
+     */
     @Generated
     @Selector("replaceTextualPortionOfRange:withToken:atIndex:")
     public native void replaceTextualPortionOfRangeWithTokenAtIndex(UITextRange textRange, UISearchToken token,
@@ -335,10 +366,20 @@ public class UISearchTextField extends UITextField {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Whether the user can copy tokens to the pasteboard or drag them out of the text field.
+     * 
+     * To support copying tokens, this property must be true and the delegate must provide an item provider for the tokens to be copied. UISearchTextField always enables the Copy command if any plain text is selected, even if the selection also includes tokens and this property is false. Defaults to true.
+     */
     @Generated
     @Selector("setAllowsCopyingTokens:")
     public native void setAllowsCopyingTokens(boolean value);
 
+    /**
+     * Whether the user can remove tokens through standard actions such as Delete and Cut.
+     * 
+     * The application can always remove tokens programmatically. If this property is true, the application must be prepared not only for tokens to be removed, but also to be re-added through Undo. Defaults to true.
+     */
     @Generated
     @Selector("setAllowsDeletingTokens:")
     public native void setAllowsDeletingTokens(boolean value);
@@ -391,10 +432,16 @@ public class UISearchTextField extends UITextField {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * Set this to nil for tokens to use their default color.
+     */
     @Generated
     @Selector("setTokenBackgroundColor:")
     public native void setTokenBackgroundColor(UIColor value);
 
+    /**
+     * Simple access to the collection of tokens.
+     */
     @Generated
     @Selector("setTokens:")
     public native void setTokens(NSArray<? extends UISearchToken> value);
@@ -407,18 +454,34 @@ public class UISearchTextField extends UITextField {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * The range that corresponds to the field’s text, exclusive of any tokens.
+     * 
+     * @see -[<UITextInput> positionWithinRange:atCharacterOffset:]
+     */
     @Generated
     @Selector("textualRange")
     public native UITextRange textualRange();
 
+    /**
+     * Set this to nil for tokens to use their default color.
+     */
     @Generated
     @Selector("tokenBackgroundColor")
     public native UIColor tokenBackgroundColor();
 
+    /**
+     * Simple access to the collection of tokens.
+     */
     @Generated
     @Selector("tokens")
     public native NSArray<? extends UISearchToken> tokens();
 
+    /**
+     * Returns the tokens which are contained within the provided range.
+     * 
+     * You can use this method to determine which tokens are included in the user’s current selection. The range may span more than one token or a mixture of tokens and text.
+     */
     @Generated
     @Selector("tokensInRange:")
     public native NSArray<? extends UISearchToken> tokensInRange(UITextRange textRange);

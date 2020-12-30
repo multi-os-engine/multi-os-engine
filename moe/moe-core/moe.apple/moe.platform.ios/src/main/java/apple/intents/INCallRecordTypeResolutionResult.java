@@ -179,11 +179,18 @@ public class INCallRecordTypeResolutionResult extends INIntentResolutionResult {
     @Selector("init")
     public native INCallRecordTypeResolutionResult init();
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithCallRecordTypeToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object confirmationRequiredWithCallRecordTypeToConfirm(@NInt long callRecordTypeToConfirm);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INCallRecordType. The resolvedValue can be different than the original INCallRecordType. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedCallRecordType:")
     @MappedReturn(ObjCObjectMapper.class)

@@ -413,14 +413,24 @@ public class CAInterAppAudioSwitcherView extends UIView {
     @Selector("initWithFrame:")
     public native CAInterAppAudioSwitcherView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Defaults to NO
+     */
     @Generated
     @Selector("isShowingAppNames")
     public native boolean isShowingAppNames();
 
+    /**
+     * Defaults to NO
+     */
     @Generated
     @Selector("setShowingAppNames:")
     public native void setShowingAppNames(boolean value);
 
+    /**
+     * Node apps should pass their output audio unit
+     * Host apps should pass null
+     */
     @Generated
     @Selector("setOutputAudioUnit:")
     public native void setOutputAudioUnit(AudioComponentInstance au);

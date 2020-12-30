@@ -19,12 +19,33 @@ package apple.cfnetwork.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ *  CFNetServiceBrowser flags
+ * 
+ *  Discussion:
+ * Result bit flags passed to CFNetServiceBrowserClientCallBack.
+ */
 @Generated
 public final class CFNetServiceBrowserFlags {
+    /**
+     * Client will get another callback briefly and shouldn't do costly screen updates (or such).
+     */
     @Generated @NUInt public static final long MoreComing = 0x0000000000000001L;
+    /**
+     * If off, the result is a service.
+     */
     @Generated @NUInt public static final long IsDomain = 0x0000000000000002L;
+    /**
+     * The result domain is the default domain for the given domain browse type (registration or browse).
+     */
     @Generated @NUInt public static final long IsDefault = 0x0000000000000004L;
+    /**
+     * Same as the previous but incorrectly named. Kept for compatibility.
+     */
     @Generated @NUInt public static final long IsRegistrationDomain = 0x0000000000000004L;
+    /**
+     * The result item should be removed and not added.
+     */
     @Generated @NUInt public static final long Remove = 0x0000000000000008L;
 
     @Generated

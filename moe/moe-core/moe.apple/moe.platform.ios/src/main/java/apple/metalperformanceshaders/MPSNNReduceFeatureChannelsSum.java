@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNReduceFeatureChannelsSum
+ * @discussion The MPSNNReduceFeatureChannelsSum performs a reduction operation returning the sum for each column of an image
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -96,11 +100,23 @@ public class MPSNNReduceFeatureChannelsSum extends MPSNNReduceUnary {
     @Selector("initWithCoder:")
     public native MPSNNReduceFeatureChannelsSum initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion See @ref MPSKernel#initWithCoder.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
+     * @param      device      The MTLDevice on which to make the MPSCNNPooling
+     * @return     A new MPSNNReduceFeatureChannelsSum object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNNReduceFeatureChannelsSum initWithCoderDevice(NSCoder aDecoder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Specifies information to apply the reduction operation on an image.
+     * @param    device            The device the filter will run on
+     * @return     A valid MPSNNReduceFeatureChannelsSum object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSNNReduceFeatureChannelsSum initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
@@ -144,6 +160,12 @@ public class MPSNNReduceFeatureChannelsSum extends MPSNNReduceUnary {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @property   weight
+     * @abstract   The scale factor to apply to each feature channel value
+     * @discussion Each feature channel is multiplied by the weight value to compute a weighted sum or mean across feature channels
+     *             The default value is 1.0.
+     */
     @Generated
     @Selector("setWeight:")
     public native void setWeight(float value);
@@ -167,6 +189,12 @@ public class MPSNNReduceFeatureChannelsSum extends MPSNNReduceUnary {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property   weight
+     * @abstract   The scale factor to apply to each feature channel value
+     * @discussion Each feature channel is multiplied by the weight value to compute a weighted sum or mean across feature channels
+     *             The default value is 1.0.
+     */
     @Generated
     @Selector("weight")
     public native float weight();

@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief Analyzes an audio file and provides analysis results to the client
+ */
 @Generated
 @Library("SoundAnalysis")
 @Runtime(ObjCRuntime.class)
@@ -48,6 +51,14 @@ public class SNAudioFileAnalyzer extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * @brief Adds a new analysis request to the analyzer
+     * @param request An audio analysis request to be performed on the audio stream
+     * @param observer The object that will receive the analysis results for the supplied request. The observer is weakly retained by the analyzer.
+     * @param error On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
+     * @return YES if the request was successfully added, and NO otherwise.
+     * @discussion If addRequest is called while the file is being processed, an error will be returned.
+     */
     @Generated
     @Selector("addRequest:withObserver:error:")
     public native boolean addRequestWithObserverError(@Mapped(ObjCObjectMapper.class) SNRequest request,
@@ -64,10 +75,18 @@ public class SNAudioFileAnalyzer extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @brief Analyzes the audio file synchronously
+     * @discussion This function executes synchronously. Any errors produced during analysis will flow downstream to the request observers. This method may block for a long period of time, so be careful to ensure this call does not block UI or other important tasks.
+     */
     @Generated
     @Selector("analyze")
     public native void analyze();
 
+    /**
+     * @brief Analyzes the audio file asynchronously
+     * @discussion This function executes asynchronously, calling the completion after the entire file has completed analysis. Any errors produced during analysis will flow downstream to the request observers. If the cancelAnalysis method is called, the completionHandler will still be called, but with didReachEndOfFile set to NO.
+     */
     @Generated
     @Selector("analyzeWithCompletionHandler:")
     public native void analyzeWithCompletionHandler(
@@ -84,6 +103,10 @@ public class SNAudioFileAnalyzer extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @brief Cancels any in-progress analysis of the audio file
+     * @discussion This function executes asynchronously, and will trigger the completion handler provided in the analyzeWithCompletionHandler method after the cancellation is complete.
+     */
     @Generated
     @Selector("cancelAnalysis")
     public native void cancelAnalysis();
@@ -123,6 +146,11 @@ public class SNAudioFileAnalyzer extends NSObject {
     @Selector("init")
     public native SNAudioFileAnalyzer init();
 
+    /**
+     * @brief Creates a new analyzer
+     * @param url The url for the audio file to be analyzed
+     * @param error On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
+     */
     @Generated
     @Selector("initWithURL:error:")
     public native SNAudioFileAnalyzer initWithURLError(NSURL url,
@@ -155,10 +183,18 @@ public class SNAudioFileAnalyzer extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief Removes all requests from the analyzer
+     */
     @Generated
     @Selector("removeAllRequests")
     public native void removeAllRequests();
 
+    /**
+     * @brief Removes an existing analysis request from the analyzer
+     * @param request An audio analysis request to be removed
+     * @discussion Requests can be removed while analysis is in progress. Once the removeRequest method returns, the previously registered observer will not receive any more callbacks.
+     */
     @Generated
     @Selector("removeRequest:")
     public native void removeRequest(@Mapped(ObjCObjectMapper.class) SNRequest request);

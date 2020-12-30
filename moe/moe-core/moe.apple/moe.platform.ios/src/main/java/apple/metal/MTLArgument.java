@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MTLArgument
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -160,16 +163,25 @@ public class MTLArgument extends NSObject {
     @NUInt
     public native long arrayLength();
 
+    /**
+     * min alignment of starting offset in the buffer
+     */
     @Generated
     @Selector("bufferAlignment")
     @NUInt
     public native long bufferAlignment();
 
+    /**
+     * sizeof(T) for T *argName
+     */
     @Generated
     @Selector("bufferDataSize")
     @NUInt
     public native long bufferDataSize();
 
+    /**
+     * MTLDataTypeFloat, MTLDataTypeFloat4, MTLDataTypeStruct, ...
+     */
     @Generated
     @Selector("bufferDataType")
     @NUInt
@@ -192,6 +204,9 @@ public class MTLArgument extends NSObject {
     @Selector("isActive")
     public native boolean isActive();
 
+    /**
+     * true for depth textures
+     */
     @Generated
     @Selector("isDepthTexture")
     public native boolean isDepthTexture();
@@ -200,21 +215,33 @@ public class MTLArgument extends NSObject {
     @Selector("name")
     public native String name();
 
+    /**
+     * half, float, int, or uint.
+     */
     @Generated
     @Selector("textureDataType")
     @NUInt
     public native long textureDataType();
 
+    /**
+     * texture1D, texture2D...
+     */
     @Generated
     @Selector("textureType")
     @NUInt
     public native long textureType();
 
+    /**
+     * for threadgroup memory arguments
+     */
     @Generated
     @Selector("threadgroupMemoryAlignment")
     @NUInt
     public native long threadgroupMemoryAlignment();
 
+    /**
+     * sizeof(T) for T *argName
+     */
     @Generated
     @Selector("threadgroupMemoryDataSize")
     @NUInt

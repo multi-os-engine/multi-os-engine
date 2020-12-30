@@ -97,6 +97,14 @@ public class CPInformationRatingItem extends CPInformationItem {
     @Selector("initWithCoder:")
     public native CPInformationRatingItem initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes a new  item to be used with @c CPInformationTemplate.
+     * 
+     * @param rating A number incremented by 0.5 intervals between 0 and maximumRating that will be styled by the template as the rating of the item.
+     * @param maximumRating A whole number between 1 - 5 that will be styled by the template as the maximum rating of the item.
+     * @param title An optional string that will be styled by the template as the title text of the item.
+     * @param detail An optional string that will be styled by the template as the detail text of the item.
+     */
     @Generated
     @Selector("initWithRating:maximumRating:title:detail:")
     public native CPInformationRatingItem initWithRatingMaximumRatingTitleDetail(NSNumber rating,

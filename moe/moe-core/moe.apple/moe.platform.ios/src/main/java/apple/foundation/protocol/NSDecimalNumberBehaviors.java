@@ -31,6 +31,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSDecimalNumberBehaviors")
 public interface NSDecimalNumberBehaviors {
+    /**
+     * The scale could return NO_SCALE for no defined scale.
+     */
     @Generated
     @Selector("exceptionDuringOperation:error:leftOperand:rightOperand:")
     NSDecimalNumber exceptionDuringOperationErrorLeftOperandRightOperand(SEL operation, @NUInt long error,

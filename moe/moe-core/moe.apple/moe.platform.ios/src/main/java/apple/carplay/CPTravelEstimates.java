@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @c CPTravelEstimates describes the time and distance remaining for the active navigation session.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -86,6 +89,9 @@ public class CPTravelEstimates extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Distance remaining.
+     */
     @Generated
     @Selector("distanceRemaining")
     public native NSMeasurement<NSUnitLength> distanceRemaining();
@@ -107,6 +113,15 @@ public class CPTravelEstimates extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPTravelEstimates initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize a @c CPTravelEstimates with distance and time remaining.
+     * 
+     * @note A distance value less than 0 or a time remaining value less than 0 will render
+     * as "--" in the ETA and trip preview cards, indicating that distance or time remaining are
+     * unavailable, due to route calculations/rerouting or internet connectivity problems.
+     * Values less than 0 are distinguished from distance or time values equal to 0; your app may
+     * display 0 as the user is imminently arriving at their destination.
+     */
     @Generated
     @Selector("initWithDistanceRemaining:timeRemaining:")
     public native CPTravelEstimates initWithDistanceRemainingTimeRemaining(NSMeasurement<NSUnitLength> distance,
@@ -165,6 +180,9 @@ public class CPTravelEstimates extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * Time remaining.
+     */
     @Generated
     @Selector("timeRemaining")
     public native double timeRemaining();

@@ -42,42 +42,72 @@ public final class SFNTLookupBinarySearchHeader extends StructObject {
         super(peer);
     }
 
+    /**
+     * size of a unit in bytes
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native char unitSize();
 
+    /**
+     * size of a unit in bytes
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setUnitSize(char value);
 
+    /**
+     * number of units in table
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char nUnits();
 
+    /**
+     * number of units in table
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setNUnits(char value);
 
+    /**
+     * (largest power of two <= nUnits) * unitSize
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native char searchRange();
 
+    /**
+     * (largest power of two <= nUnits) * unitSize
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setSearchRange(char value);
 
+    /**
+     * log2 (largest power of two <= nUnits)
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native char entrySelector();
 
+    /**
+     * log2 (largest power of two <= nUnits)
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setEntrySelector(char value);
 
+    /**
+     * (nUnits - largest power of two <= nUnits) * unitSize
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native char rangeShift();
 
+    /**
+     * (nUnits - largest power of two <= nUnits) * unitSize
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setRangeShift(char value);

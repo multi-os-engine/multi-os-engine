@@ -174,23 +174,47 @@ public class CATextLayer extends CALayer {
     @NInt
     public static native long version_static();
 
+    /**
+     * Describes how individual lines of text are aligned within the layer
+     * bounds. The possible options are `natural', `left', `right',
+     * `center' and `justified'. Defaults to `natural'.
+     */
     @Generated
     @Selector("alignmentMode")
     public native String alignmentMode();
 
+    /**
+     * Sets allowsFontSubpixelQuantization parameter of CGContextRef
+     * passed to the -drawInContext: method. Defaults to NO.
+     */
     @Generated
     @Selector("allowsFontSubpixelQuantization")
     public native boolean allowsFontSubpixelQuantization();
 
+    /**
+     * The font to use, currently may be either a CTFontRef (toll-free
+     * bridged from UIFont), a CGFontRef, or a string naming the font.
+     * Defaults to the Helvetica font. Only used when the `string' property
+     * is not an NSAttributedString.
+     */
     @Generated
     @Selector("font")
     public native ConstVoidPtr font();
 
+    /**
+     * The font size. Defaults to 36. Only used when the `string' property
+     * is not an NSAttributedString. Animatable (Mac OS X 10.6 and later.)
+     */
     @Generated
     @Selector("fontSize")
     @NFloat
     public native double fontSize();
 
+    /**
+     * The color object used to draw the text. Defaults to opaque white.
+     * Only used when the `string' property is not an NSAttributedString.
+     * Animatable (Mac OS X 10.6 and later.)
+     */
     @Generated
     @Selector("foregroundColor")
     public native CGColorRef foregroundColor();
@@ -207,47 +231,97 @@ public class CATextLayer extends CALayer {
     @Selector("initWithLayer:")
     public native CATextLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
+    /**
+     * When true the string is wrapped to fit within the layer bounds.
+     * Defaults to NO.
+     */
     @Generated
     @Selector("isWrapped")
     public native boolean isWrapped();
 
+    /**
+     * When true the string is wrapped to fit within the layer bounds.
+     * Defaults to NO.
+     */
     @Generated
     @Selector("setWrapped:")
     public native void setWrapped(boolean value);
 
+    /**
+     * Describes how individual lines of text are aligned within the layer
+     * bounds. The possible options are `natural', `left', `right',
+     * `center' and `justified'. Defaults to `natural'.
+     */
     @Generated
     @Selector("setAlignmentMode:")
     public native void setAlignmentMode(String value);
 
+    /**
+     * Sets allowsFontSubpixelQuantization parameter of CGContextRef
+     * passed to the -drawInContext: method. Defaults to NO.
+     */
     @Generated
     @Selector("setAllowsFontSubpixelQuantization:")
     public native void setAllowsFontSubpixelQuantization(boolean value);
 
+    /**
+     * The font to use, currently may be either a CTFontRef (toll-free
+     * bridged from UIFont), a CGFontRef, or a string naming the font.
+     * Defaults to the Helvetica font. Only used when the `string' property
+     * is not an NSAttributedString.
+     */
     @Generated
     @Selector("setFont:")
     public native void setFont(ConstVoidPtr value);
 
+    /**
+     * The font size. Defaults to 36. Only used when the `string' property
+     * is not an NSAttributedString. Animatable (Mac OS X 10.6 and later.)
+     */
     @Generated
     @Selector("setFontSize:")
     public native void setFontSize(@NFloat double value);
 
+    /**
+     * The color object used to draw the text. Defaults to opaque white.
+     * Only used when the `string' property is not an NSAttributedString.
+     * Animatable (Mac OS X 10.6 and later.)
+     */
     @Generated
     @Selector("setForegroundColor:")
     public native void setForegroundColor(CGColorRef value);
 
+    /**
+     * The text to be rendered, should be either an NSString or an
+     * NSAttributedString. Defaults to nil.
+     */
     @Generated
     @Selector("setString:")
     public native void setString(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * Describes how the string is truncated to fit within the layer
+     * bounds. The possible options are `none', `start', `middle' and
+     * `end'. Defaults to `none'.
+     */
     @Generated
     @Selector("setTruncationMode:")
     public native void setTruncationMode(String value);
 
+    /**
+     * The text to be rendered, should be either an NSString or an
+     * NSAttributedString. Defaults to nil.
+     */
     @Generated
     @Selector("string")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object string();
 
+    /**
+     * Describes how the string is truncated to fit within the layer
+     * bounds. The possible options are `none', `start', `middle' and
+     * `end'. Defaults to `none'.
+     */
     @Generated
     @Selector("truncationMode")
     public native String truncationMode();

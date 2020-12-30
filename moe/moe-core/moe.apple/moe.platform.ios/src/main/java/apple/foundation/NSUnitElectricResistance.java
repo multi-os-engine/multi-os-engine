@@ -131,6 +131,9 @@ public class NSUnitElectricResistance extends NSDimension implements NSSecureCod
     @Selector("kiloohms")
     public static native NSUnitElectricResistance kiloohms();
 
+    /**
+     * Base unit - ohms
+     */
     @Generated
     @Selector("megaohms")
     public static native NSUnitElectricResistance megaohms();

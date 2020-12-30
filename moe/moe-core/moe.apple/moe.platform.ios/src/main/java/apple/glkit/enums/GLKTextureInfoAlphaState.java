@@ -18,6 +18,9 @@ package apple.glkit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Alpha state of loaded texture
+ */
 @Generated
 public final class GLKTextureInfoAlphaState {
     @Generated public static final int None = 0x00000000;

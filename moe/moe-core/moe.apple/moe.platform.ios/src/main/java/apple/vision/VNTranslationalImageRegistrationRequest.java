@@ -32,6 +32,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief An image registration request that will calculate a translational transformation for morphing a "floating" image onto an unchanging "reference" image.
+ * 
+ * @discussion The request is created with the targeted image acting as the floating image. Processing the request will calculate the affine transformations that morph the floating image onto the reference image.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)

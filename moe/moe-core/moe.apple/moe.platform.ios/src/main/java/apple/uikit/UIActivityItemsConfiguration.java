@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A configuration that allows a responder to export data through a variety of interactions.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -70,11 +73,17 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Selector("activityItemsConfigurationSupportsInteraction:")
     public native boolean activityItemsConfigurationSupportsInteraction(String interaction);
 
+    /**
+     * Provide promised items
+     */
     @Generated
     @Selector("activityItemsConfigurationWithItemProviders:")
     public static native UIActivityItemsConfiguration activityItemsConfigurationWithItemProviders(
             NSArray<? extends NSItemProvider> itemProviders);
 
+    /**
+     * Provide data up front
+     */
     @Generated
     @Selector("activityItemsConfigurationWithObjects:")
     public static native UIActivityItemsConfiguration activityItemsConfigurationWithObjects(NSArray<?> objects);
@@ -145,10 +154,16 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Selector("init")
     public native UIActivityItemsConfiguration init();
 
+    /**
+     * Provide promised items
+     */
     @Generated
     @Selector("initWithItemProviders:")
     public native UIActivityItemsConfiguration initWithItemProviders(NSArray<? extends NSItemProvider> itemProviders);
 
+    /**
+     * Provide data up front
+     */
     @Generated
     @Selector("initWithObjects:")
     public native UIActivityItemsConfiguration initWithObjects(NSArray<?> objects);
@@ -178,6 +193,9 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * A local object retained for the convenience of the app developer
+     */
     @Generated
     @Selector("localObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -247,6 +265,9 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
         NSArray<? extends UIActivity> call_setApplicationActivitiesProvider();
     }
 
+    /**
+     * A local object retained for the convenience of the app developer
+     */
     @Generated
     @Selector("setLocalObject:")
     public native void setLocalObject(@Mapped(ObjCObjectMapper.class) Object value);
@@ -288,6 +309,9 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
         NSItemProvider call_setPreviewProvider(@NInt long arg0, String arg1, @ByValue CGSize arg2);
     }
 
+    /**
+     * Defaults to all known interactions
+     */
     @Generated
     @Selector("setSupportedInteractions:")
     public native void setSupportedInteractions(NSArray<String> value);
@@ -300,6 +324,9 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Defaults to all known interactions
+     */
     @Generated
     @Selector("supportedInteractions")
     public native NSArray<String> supportedInteractions();

@@ -59,6 +59,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CSLocalizedString can be used in place of NSString to support localization
+ */
 @Generated
 @Library("CoreSpotlight")
 @Runtime(ObjCRuntime.class)
@@ -374,6 +377,9 @@ public class CSLocalizedString extends NSString {
     public native CSLocalizedString initWithFormatLocaleArguments(String format,
             @Mapped(ObjCObjectMapper.class) Object locale, BytePtr argList);
 
+    /**
+     * Takes a dictionary of preferred codes to the localized string for that language
+     */
     @Generated
     @Selector("initWithLocalizedStrings:")
     public native CSLocalizedString initWithLocalizedStrings(NSDictionary<?, ?> localizedStrings);
@@ -386,6 +392,9 @@ public class CSLocalizedString extends NSString {
     @Selector("initWithUTF8String:")
     public native CSLocalizedString initWithUTF8String(ConstBytePtr nullTerminatedCString);
 
+    /**
+     * Returns the localized string for the current language
+     */
     @Generated
     @Selector("localizedString")
     public native String localizedString();

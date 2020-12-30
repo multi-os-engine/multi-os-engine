@@ -33,6 +33,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MCNearbyServiceBrowserDelegate")
 public interface MCNearbyServiceBrowserDelegate {
+    /**
+     * Browsing did not start due to an error.
+     */
     @Generated
     @IsOptional
     @Selector("browser:didNotStartBrowsingForPeers:")
@@ -40,11 +43,17 @@ public interface MCNearbyServiceBrowserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Found a nearby advertising peer.
+     */
     @Generated
     @Selector("browser:foundPeer:withDiscoveryInfo:")
     void browserFoundPeerWithDiscoveryInfo(MCNearbyServiceBrowser browser, MCPeerID peerID,
             NSDictionary<String, String> info);
 
+    /**
+     * A nearby peer has stopped advertising.
+     */
     @Generated
     @Selector("browser:lostPeer:")
     void browserLostPeer(MCNearbyServiceBrowser browser, MCPeerID peerID);

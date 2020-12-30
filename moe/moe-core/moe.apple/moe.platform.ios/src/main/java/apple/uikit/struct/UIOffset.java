@@ -50,20 +50,32 @@ public final class UIOffset extends StructObject {
         setVertical(vertical);
     }
 
+    /**
+     * specify amount to offset a position, positive for right or down, negative for left or up
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @NFloat
     public native double horizontal();
 
+    /**
+     * specify amount to offset a position, positive for right or down, negative for left or up
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setHorizontal(@NFloat double value);
 
+    /**
+     * specify amount to offset a position, positive for right or down, negative for left or up
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @NFloat
     public native double vertical();
 
+    /**
+     * specify amount to offset a position, positive for right or down, negative for left or up
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setVertical(@NFloat double value);

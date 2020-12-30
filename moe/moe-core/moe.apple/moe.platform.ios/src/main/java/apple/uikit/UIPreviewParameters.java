@@ -57,6 +57,10 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * The background color that the preview draws behind the specified view.
+     * Set this to `nil` to reset to the default value.
+     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -98,10 +102,16 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The default parameters. Use these for most previews.
+     */
     @Generated
     @Selector("init")
     public native UIPreviewParameters init();
 
+    /**
+     * CGRect
+     */
     @Generated
     @Selector("initWithTextLineRects:")
     public native UIPreviewParameters initWithTextLineRects(NSArray<? extends NSValue> textLineRects);
@@ -141,6 +151,10 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The background color that the preview draws behind the specified view.
+     * Set this to `nil` to reset to the default value.
+     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
@@ -149,6 +163,11 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The part of the view that should be shown in the preview.
+     * If `nil`, the whole view will be shown.
+     * Specify a path in the coordinate space of the view.
+     */
     @Generated
     @Selector("setVisiblePath:")
     public native void setVisiblePath(UIBezierPath value);
@@ -162,14 +181,25 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * The part of the view that should be shown in the preview.
+     * If `nil`, the whole view will be shown.
+     * Specify a path in the coordinate space of the view.
+     */
     @Generated
     @Selector("visiblePath")
     public native UIBezierPath visiblePath();
 
+    /**
+     * Bezier path to be used to draw the preview's shadow. If nil, the visiblePath is used.
+     */
     @Generated
     @Selector("setShadowPath:")
     public native void setShadowPath(UIBezierPath value);
 
+    /**
+     * Bezier path to be used to draw the preview's shadow. If nil, the visiblePath is used.
+     */
     @Generated
     @Selector("shadowPath")
     public native UIBezierPath shadowPath();

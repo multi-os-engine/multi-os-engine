@@ -50,20 +50,32 @@ public final class ip_mreq extends StructObject {
         setImr_interface(imr_interface);
     }
 
+    /**
+     * IP multicast address of group
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native in_addr imr_multiaddr();
 
+    /**
+     * IP multicast address of group
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setImr_multiaddr(@ByValue in_addr value);
 
+    /**
+     * local IP address of interface
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native in_addr imr_interface();
 
+    /**
+     * local IP address of interface
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setImr_interface(@ByValue in_addr value);

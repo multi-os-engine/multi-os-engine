@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A SceneKit geometry representing a plane.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -141,6 +144,12 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Creates a new plane geometry using a Metal device.
+     * 
+     * @param device A Metal device.
+     * @return A new plane geometry.
+     */
     @Generated
     @Selector("planeGeometryWithDevice:")
     public static native ARSCNPlaneGeometry planeGeometryWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
@@ -171,6 +180,11 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
         return supportsSecureCoding();
     }
 
+    /**
+     * Updates the geometry with the vertices of a plane geometry.
+     * 
+     * @param planeGeometry A plane geometry.
+     */
     @Generated
     @Selector("updateFromPlaneGeometry:")
     public native void updateFromPlaneGeometry(ARPlaneGeometry planeGeometry);

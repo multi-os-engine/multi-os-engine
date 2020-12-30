@@ -42,10 +42,16 @@ public final class vDSP_int24 extends StructObject {
         super(peer);
     }
 
+    /**
+     * Signed 24-bit integer.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true, count = 3)
     public native byte bytes(int field_idx);
 
+    /**
+     * Signed 24-bit integer.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false, count = 3)
     public native void setBytes(byte value, int field_idx);

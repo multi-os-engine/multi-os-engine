@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract Lets you provide relevant shortcut to Siri, for display on the Siri Watch Face.
+ * @discussion Including relevance information allows Siri to make suggestions for shortcuts that the user might be interested in but has not previously performed.
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -108,6 +112,9 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     @Selector("initWithCoder:")
     public native INRelevantShortcut initWithCoder(NSCoder coder);
 
+    /**
+     * @abstract Creates a relevant shortcut for the given shortcut.
+     */
     @Generated
     @Selector("initWithShortcut:")
     public native INRelevantShortcut initWithShortcut(INShortcut shortcut);
@@ -139,6 +146,11 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract A collection of relevance information that is attached to the relevant shortcuts.
+     * @discussion Providing additional relevance information allows Siri to suggest a shortcut that the user is interested in but has not previously performed.
+     * @seealso INRelevanceProvider
+     */
     @Generated
     @Selector("relevanceProviders")
     public native NSArray<? extends INRelevanceProvider> relevanceProviders();
@@ -151,10 +163,20 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract A collection of relevance information that is attached to the relevant shortcuts.
+     * @discussion Providing additional relevance information allows Siri to suggest a shortcut that the user is interested in but has not previously performed.
+     * @seealso INRelevanceProvider
+     */
     @Generated
     @Selector("setRelevanceProviders:")
     public native void setRelevanceProviders(NSArray<? extends INRelevanceProvider> value);
 
+    /**
+     * @abstract The role of the relevant shortcut.
+     * @discussion Provides a hint to Siri about the expected user experience. The default is @c INRelevantShortcutRoleAction.
+     * @seealso INRelevantShortcutRole
+     */
     @Generated
     @Selector("setShortcutRole:")
     public native void setShortcutRole(@NInt long value);
@@ -163,14 +185,28 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @abstract Customizes the display of the relevant shortcut on the Siri watch face.
+     * @discussion By default, the UI for the relevant shortcut can be derivied from the information provided in the @c INShortcut. In certain situations, it may be desirable to override this behavior and provide a custom template.
+     * @seealso INDefaultCardTemplate
+     */
     @Generated
     @Selector("setWatchTemplate:")
     public native void setWatchTemplate(INDefaultCardTemplate value);
 
+    /**
+     * @abstract The shortcut that will be performed when this relevant shortcut is invoked.
+     * @seealso INShortcut
+     */
     @Generated
     @Selector("shortcut")
     public native INShortcut shortcut();
 
+    /**
+     * @abstract The role of the relevant shortcut.
+     * @discussion Provides a hint to Siri about the expected user experience. The default is @c INRelevantShortcutRoleAction.
+     * @seealso INRelevantShortcutRole
+     */
     @Generated
     @Selector("shortcutRole")
     @NInt
@@ -195,6 +231,11 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract Customizes the display of the relevant shortcut on the Siri watch face.
+     * @discussion By default, the UI for the relevant shortcut can be derivied from the information provided in the @c INShortcut. In certain situations, it may be desirable to override this behavior and provide a custom template.
+     * @seealso INDefaultCardTemplate
+     */
     @Generated
     @Selector("watchTemplate")
     public native INDefaultCardTemplate watchTemplate();

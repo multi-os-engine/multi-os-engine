@@ -19,6 +19,11 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * There are 3 widths: long, medium, and short.
+ * For example, for English, when formatting "3 pounds"
+ * Long is "3 pounds"; medium is "3 lb"; short is "3#";
+ */
 @Generated
 public final class NSFormattingUnitStyle {
     @Generated @NInt public static final long Short = 0x0000000000000001L;

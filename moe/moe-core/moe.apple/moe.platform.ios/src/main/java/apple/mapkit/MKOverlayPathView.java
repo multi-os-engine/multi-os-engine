@@ -54,6 +54,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Prefer MKOverlayPathRenderer
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -404,11 +407,18 @@ public class MKOverlayPathView extends MKOverlayView {
     @Selector("applyFillPropertiesToContext:atZoomScale:")
     public native void applyFillPropertiesToContextAtZoomScale(CGContextRef context, @NFloat double zoomScale);
 
+    /**
+     * subclassers may override these
+     */
     @Generated
     @Deprecated
     @Selector("applyStrokePropertiesToContext:atZoomScale:")
     public native void applyStrokePropertiesToContextAtZoomScale(CGContextRef context, @NFloat double zoomScale);
 
+    /**
+     * subclassers should override this to create a path and then set it on
+     * themselves with self.path = newPath;
+     */
     @Generated
     @Deprecated
     @Selector("createPath")
@@ -446,39 +456,60 @@ public class MKOverlayPathView extends MKOverlayView {
     @Selector("invalidatePath")
     public native void invalidatePath();
 
+    /**
+     * defaults to kCGLineCapRound
+     */
     @Generated
     @Deprecated
     @Selector("lineCap")
     public native int lineCap();
 
+    /**
+     * an array of NSNumbers, defaults to nil
+     */
     @Generated
     @Deprecated
     @Selector("lineDashPattern")
     public native NSArray<?> lineDashPattern();
 
+    /**
+     * defaults to 0
+     */
     @Generated
     @Deprecated
     @Selector("lineDashPhase")
     @NFloat
     public native double lineDashPhase();
 
+    /**
+     * defaults to kCGLineJoinRound
+     */
     @Generated
     @Deprecated
     @Selector("lineJoin")
     public native int lineJoin();
 
+    /**
+     * defaults to 0, which is MKRoadWidthAtZoomScale(currentZoomScale)
+     */
     @Generated
     @Deprecated
     @Selector("lineWidth")
     @NFloat
     public native double lineWidth();
 
+    /**
+     * defaults to 10
+     */
     @Generated
     @Deprecated
     @Selector("miterLimit")
     @NFloat
     public native double miterLimit();
 
+    /**
+     * path will be retained
+     */
     @Generated
     @Deprecated
     @Selector("path")
@@ -489,36 +520,57 @@ public class MKOverlayPathView extends MKOverlayView {
     @Selector("setFillColor:")
     public native void setFillColor(UIColor value);
 
+    /**
+     * defaults to kCGLineCapRound
+     */
     @Generated
     @Deprecated
     @Selector("setLineCap:")
     public native void setLineCap(int value);
 
+    /**
+     * an array of NSNumbers, defaults to nil
+     */
     @Generated
     @Deprecated
     @Selector("setLineDashPattern:")
     public native void setLineDashPattern(NSArray<?> value);
 
+    /**
+     * defaults to 0
+     */
     @Generated
     @Deprecated
     @Selector("setLineDashPhase:")
     public native void setLineDashPhase(@NFloat double value);
 
+    /**
+     * defaults to kCGLineJoinRound
+     */
     @Generated
     @Deprecated
     @Selector("setLineJoin:")
     public native void setLineJoin(int value);
 
+    /**
+     * defaults to 0, which is MKRoadWidthAtZoomScale(currentZoomScale)
+     */
     @Generated
     @Deprecated
     @Selector("setLineWidth:")
     public native void setLineWidth(@NFloat double value);
 
+    /**
+     * defaults to 10
+     */
     @Generated
     @Deprecated
     @Selector("setMiterLimit:")
     public native void setMiterLimit(@NFloat double value);
 
+    /**
+     * path will be retained
+     */
     @Generated
     @Deprecated
     @Selector("setPath:")

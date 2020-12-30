@@ -53,10 +53,16 @@ public class MPSStateResourceList extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @abstract append a buffer to the resource list
+     */
     @Generated
     @Selector("appendBuffer:")
     public native void appendBuffer(@NUInt long size);
 
+    /**
+     * @abstract append a texture to the resource list
+     */
     @Generated
     @Selector("appendTexture:")
     public native void appendTexture(MTLTextureDescriptor descriptor);
@@ -96,6 +102,9 @@ public class MPSStateResourceList extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @abstract Init an empty list
+     */
     @Generated
     @Selector("init")
     public native MPSStateResourceList init();
@@ -135,15 +144,24 @@ public class MPSStateResourceList extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract Init an empty autoreleased resource list
+     */
     @Generated
     @Selector("resourceList")
     public static native MPSStateResourceList resourceList();
 
+    /**
+     * @abstract Init a resource list with a 0 terminated list of Buffer Sizes
+     */
     @Generated
     @Variadic()
     @Selector("resourceListWithBufferSizes:")
     public static native MPSStateResourceList resourceListWithBufferSizes(@NUInt long firstSize, Object... varargs);
 
+    /**
+     * @abstract Init a resource list with a nil terminated list of MTLTextureDescriptors
+     */
     @Generated
     @Variadic()
     @Selector("resourceListWithTextureDescriptors:")

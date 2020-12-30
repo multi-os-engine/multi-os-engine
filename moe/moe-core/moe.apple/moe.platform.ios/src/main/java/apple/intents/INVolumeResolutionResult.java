@@ -81,6 +81,9 @@ public class INVolumeResolutionResult extends INIntentResolutionResult {
     public static native Object confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the volume with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithVolumeToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -94,6 +97,9 @@ public class INVolumeResolutionResult extends INIntentResolutionResult {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * This resolution result is to ask Siri to disambiguate between the provided volume.
+     */
     @Generated
     @Selector("disambiguationWithVolumeToDisambiguate:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -158,6 +164,10 @@ public class INVolumeResolutionResult extends INIntentResolutionResult {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given volume. The resolvedVolume can be different than the original volume. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedVolume:")
     @MappedReturn(ObjCObjectMapper.class)

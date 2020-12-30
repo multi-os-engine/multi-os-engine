@@ -243,6 +243,12 @@ public class UIListContentView extends UIView implements UIContentView {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * This guide reflects the positioning of the image rendered by this content view, if specified by the configuration.
+     * 
+     * Returns nil if there is no image. If a new configuration is applied that does contain an image, then this layout
+     * guide is removed from the view, and any constraints associated with it will be deactivated.
+     */
     @Generated
     @Selector("imageLayoutGuide")
     public native UILayoutGuide imageLayoutGuide();
@@ -328,6 +334,12 @@ public class UIListContentView extends UIView implements UIContentView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * This guide reflects the positioning of the secondary text rendered by this content view, if specified by the configuration.
+     * 
+     * Returns nil if there is no secondary text. If a new configuration is applied that does not contain secondary text, then this layout
+     * guide is removed from the view, and any constraints associated with it will be deactivated.
+     */
     @Generated
     @Selector("secondaryTextLayoutGuide")
     public native UILayoutGuide secondaryTextLayoutGuide();
@@ -381,10 +393,6 @@ public class UIListContentView extends UIView implements UIContentView {
     public static native void setAnimationsEnabled(boolean enabled);
 
     @Generated
-    @Selector("setConfiguration:")
-    public native void setConfiguration(UIListContentConfiguration value);
-
-    @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
@@ -392,6 +400,12 @@ public class UIListContentView extends UIView implements UIContentView {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * This guide reflects the positioning of the primary text rendered by this content view, if specified by the configuration.
+     * 
+     * Returns nil if there is no primary text. If a new configuration is applied that does not contain primary text, then this layout
+     * guide is removed from the view, and any constraints associated with it will be deactivated.
+     */
     @Generated
     @Selector("textLayoutGuide")
     public native UILayoutGuide textLayoutGuide();

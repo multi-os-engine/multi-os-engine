@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A two-state control whose appearance follows the selection state of the cell (empty circle when deselected,
+ * filled circle with checkmark when selected).
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -57,6 +61,9 @@ public class UICellAccessoryMultiselect extends UICellAccessory {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * The background color to apply to the accessory. Default value is nil, which uses the system default.
+     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -135,6 +142,9 @@ public class UICellAccessoryMultiselect extends UICellAccessory {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The background color to apply to the accessory. Default value is nil, which uses the system default.
+     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);

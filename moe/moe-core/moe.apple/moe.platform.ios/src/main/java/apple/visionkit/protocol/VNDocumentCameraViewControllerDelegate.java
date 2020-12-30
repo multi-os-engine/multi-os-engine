@@ -16,6 +16,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("VNDocumentCameraViewControllerDelegate")
 public interface VNDocumentCameraViewControllerDelegate {
+    /**
+     * The delegate will receive this call when the user is unable to scan, with the following error.
+     */
     @Generated
     @IsOptional
     @Selector("documentCameraViewController:didFailWithError:")
@@ -24,6 +27,10 @@ public interface VNDocumentCameraViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The client is responsible for dismissing the document camera in these callbacks.
+     * The delegate will receive one of the following calls, depending whether the user saves or cancels, or if the session fails.
+     */
     @Generated
     @IsOptional
     @Selector("documentCameraViewController:didFinishWithScan:")
@@ -32,6 +39,9 @@ public interface VNDocumentCameraViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The delegate will receive this call when the user cancels.
+     */
     @Generated
     @IsOptional
     @Selector("documentCameraViewControllerDidCancel:")

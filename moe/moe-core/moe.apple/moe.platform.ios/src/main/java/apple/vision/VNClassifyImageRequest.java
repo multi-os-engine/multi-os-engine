@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief A request for classifying an image.
+ * 
+ * @discussion This request will produce a collection of VNClassificationObservation objects which describe an image.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -131,6 +136,15 @@ public class VNClassifyImageRequest extends VNImageBasedRequest {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @brief Obtain the collection of classifications currently recognized by the Vision framework.
+     * 
+     * @param	requestRevision		The revision of the request for which classifications should be reported.
+     * 
+     * @param	error				The address of the variable that will be populated with the error when the call fails.
+     * 
+     * @return the collection of classifications for the revision, or nil if an error was encountered.
+     */
     @Generated
     @Selector("knownClassificationsForRevision:error:")
     public static native NSArray<? extends VNClassificationObservation> knownClassificationsForRevisionError(

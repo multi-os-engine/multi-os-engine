@@ -26,6 +26,22 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNLocalCorrelation
+ * @discussion The MPSNNLocalCorrelation filter computes the correlation between two images locally with a
+ *             varying offset on x-y plane between the two source images (controlled by the window and
+ *             stride properties) and the end result is summed over the feature channels. The results are
+ *             stored in the different feature channels of the destination image, ordered such that the offset
+ *             in the x direction is the faster running index.
+ * 
+ *             Given two images A and B, the output image has (2*windowInX + 1)*(2*windowInY + 1)
+ *             feature channels, with each feature channel computed as:
+ *                                 O(x, y, f(m, n)) = sum_z{A(x, y, z) * B(x + M[m], y + N[n], z)}
+ *             where m runs from {0, 1, ... , (2*windowInX)}, n runs from {0, 1, ... , (2*windowInY)},
+ *             f(m, n) = n * (2*windowInY + 1) + m,
+ *             M = {-windowInX*strideInX, (-windowInX + 1)*strideInX,  ... 0 ... , (windowInX - 1)*strideInX, windowInX*strideInX},
+ *             N = {-windowInY*strideInY, (-windowInY + 1)*strideInY,  ... 0 ... , (windowInY - 1)*strideInY, windowInX*strideInY}
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -97,15 +113,38 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
     @Selector("initWithCoder:")
     public native MPSNNLocalCorrelation initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion See @ref MPSKernel#initWithCoder.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
+     * @param      device      The MTLDevice on which to make the MPSCNNPooling
+     * @return     A new MPSCNNPooling object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNNLocalCorrelation initWithCoderDevice(NSCoder aDecoder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract  Initialize the MPSNNLocalCorrelation filter with default property values.
+     * @param     device            The device the filter will run on
+     * @return    A valid MPSNNReduceLocalCorrelation object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSNNLocalCorrelation initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Specifies information to apply the local correlation operation on an image.
+     * @param    device                The device the filter will run on
+     * @param    windowInX             Specifies a symmetric window around 0 for offsetting
+     *                                 the secondary source in the x dimension.
+     * @param    windowInY             Specifies a symmetric window around 0 for offsetting
+     *                                 the secondary source in the y dimension.
+     * @param    strideInX             Specifies the stride for the offset in the x dimension.
+     * @param    strideInY             Specifies the stride for the offset in the y dimension.
+     * @return   A valid MPSNNReduceLocalCorrelation object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:windowInX:windowInY:strideInX:strideInY:")
     public native MPSNNLocalCorrelation initWithDeviceWindowInXWindowInYStrideInXStrideInY(
@@ -147,10 +186,18 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract   Specifies the stride for the offset in the x dimension.
+     * @discussion strideInX must be > 0. The default value for strideInX is 1.
+     */
     @Generated
     @Selector("setStrideInX:")
     public native void setStrideInX(@NUInt long value);
 
+    /**
+     * @abstract   Specifies the stride for the offset in the y dimension.
+     * @discussion strideInY must be > 0. The default value for strideInY is 1.
+     */
     @Generated
     @Selector("setStrideInY:")
     public native void setStrideInY(@NUInt long value);
@@ -159,19 +206,35 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @abstract   Specifies a symmetric window around 0 for offsetting the secondary source in the x dimension.
+     * @discussion The default value for windowInX is 0.
+     */
     @Generated
     @Selector("setWindowInX:")
     public native void setWindowInX(@NUInt long value);
 
+    /**
+     * @abstract   Specifies a symmetric window around 0 for offsetting the secondary source in the y dimension.
+     * @discussion The default value for windowInY is 0.
+     */
     @Generated
     @Selector("setWindowInY:")
     public native void setWindowInY(@NUInt long value);
 
+    /**
+     * @abstract   Specifies the stride for the offset in the x dimension.
+     * @discussion strideInX must be > 0. The default value for strideInX is 1.
+     */
     @Generated
     @Selector("strideInX")
     @NUInt
     public native long strideInX();
 
+    /**
+     * @abstract   Specifies the stride for the offset in the y dimension.
+     * @discussion strideInY must be > 0. The default value for strideInY is 1.
+     */
     @Generated
     @Selector("strideInY")
     @NUInt
@@ -196,11 +259,19 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract   Specifies a symmetric window around 0 for offsetting the secondary source in the x dimension.
+     * @discussion The default value for windowInX is 0.
+     */
     @Generated
     @Selector("windowInX")
     @NUInt
     public native long windowInX();
 
+    /**
+     * @abstract   Specifies a symmetric window around 0 for offsetting the secondary source in the y dimension.
+     * @discussion The default value for windowInY is 0.
+     */
     @Generated
     @Selector("windowInY")
     @NUInt

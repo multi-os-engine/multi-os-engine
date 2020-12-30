@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A list configuration can be used to layout a section inside a UICollectionViewCompositionalLayout as a list.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -54,6 +57,9 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * The overall appearance of the section.
+     */
     @Generated
     @Selector("appearance")
     @NInt
@@ -63,6 +69,10 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * The background color of the section.
+     * Defaults to nil, indicating the system background color for the specified appearance is used.
+     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -99,6 +109,9 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Definies whether the section has a footer. Defaults to UICollectionLayoutListFooterModeNone.
+     */
     @Generated
     @Selector("footerMode")
     @NInt
@@ -109,6 +122,9 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Definies whether the section has a header. Defaults to UICollectionLayoutListHeaderModeNone.
+     */
     @Generated
     @Selector("headerMode")
     @NInt
@@ -143,6 +159,10 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Called when list is about to show leading swipe actions for a particular index path.
+     * Return either a UISwipeActionsConfiguration object or nil if this index path does not show swipe actions.
+     */
     @Generated
     @Selector("leadingSwipeActionsConfigurationProvider")
     @ObjCBlock(name = "call_leadingSwipeActionsConfigurationProvider_ret")
@@ -169,18 +189,32 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The background color of the section.
+     * Defaults to nil, indicating the system background color for the specified appearance is used.
+     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
 
+    /**
+     * Definies whether the section has a footer. Defaults to UICollectionLayoutListFooterModeNone.
+     */
     @Generated
     @Selector("setFooterMode:")
     public native void setFooterMode(@NInt long value);
 
+    /**
+     * Definies whether the section has a header. Defaults to UICollectionLayoutListHeaderModeNone.
+     */
     @Generated
     @Selector("setHeaderMode:")
     public native void setHeaderMode(@NInt long value);
 
+    /**
+     * Called when list is about to show leading swipe actions for a particular index path.
+     * Return either a UISwipeActionsConfiguration object or nil if this index path does not show swipe actions.
+     */
     @Generated
     @Selector("setLeadingSwipeActionsConfigurationProvider:")
     public native void setLeadingSwipeActionsConfigurationProvider(
@@ -193,10 +227,17 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
         UISwipeActionsConfiguration call_setLeadingSwipeActionsConfigurationProvider(NSIndexPath indexPath);
     }
 
+    /**
+     * Whether this section shows separators or not.
+     */
     @Generated
     @Selector("setShowsSeparators:")
     public native void setShowsSeparators(boolean value);
 
+    /**
+     * Called when list is about to show trailing swipe actions for a particular index path.
+     * Return either a UISwipeActionsConfiguration object or nil if this index path does not show swipe actions.
+     */
     @Generated
     @Selector("setTrailingSwipeActionsConfigurationProvider:")
     public native void setTrailingSwipeActionsConfigurationProvider(
@@ -213,6 +254,9 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Whether this section shows separators or not.
+     */
     @Generated
     @Selector("showsSeparators")
     public native boolean showsSeparators();
@@ -221,6 +265,10 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Called when list is about to show trailing swipe actions for a particular index path.
+     * Return either a UISwipeActionsConfiguration object or nil if this index path does not show swipe actions.
+     */
     @Generated
     @Selector("trailingSwipeActionsConfigurationProvider")
     @ObjCBlock(name = "call_trailingSwipeActionsConfigurationProvider_ret")

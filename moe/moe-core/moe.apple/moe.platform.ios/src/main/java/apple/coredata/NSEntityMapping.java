@@ -153,18 +153,30 @@ public class NSEntityMapping extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns/sets the array of attribute mappings for the entity mapping.  The order of mappings in this collection dictates the order in which the mappings will be processed during a migration.
+     */
     @Generated
     @Selector("attributeMappings")
     public native NSArray<? extends NSPropertyMapping> attributeMappings();
 
+    /**
+     * Returns/sets the destination entity name for the mapping.  (Mappings are not directly bound to NSEntityDescriptions;  developers can use the destinationEntityForEntityMapping: API on the NSMigrationManager to retrieve the entity description for this name.)
+     */
     @Generated
     @Selector("destinationEntityName")
     public native String destinationEntityName();
 
+    /**
+     * Returns/sets the version hash for the destination entity for the mapping.  VersionHashes are calculated by the Core Data framework (see NSEntityDescrition's versionHash method). The destinationEntityVersionHash must equal the version hash of the destination entity represented by the mapping.
+     */
     @Generated
     @Selector("destinationEntityVersionHash")
     public native NSData destinationEntityVersionHash();
 
+    /**
+     * Returns/sets the class name of the migration policy for the class.  If not specified, the default migration class name is NSEntityMigrationPolicy, though developers can specify a subclass for specific behavior.
+     */
     @Generated
     @Selector("entityMigrationPolicyClassName")
     public native String entityMigrationPolicyClassName();
@@ -173,75 +185,129 @@ public class NSEntityMapping extends NSObject {
     @Selector("init")
     public native NSEntityMapping init();
 
+    /**
+     * Returns/sets the mapping type.  (If a custom entity mapping type is utilized, the developer must specify a migrationPolicyClassName as well.)
+     */
     @Generated
     @Selector("mappingType")
     @NUInt
     public native long mappingType();
 
+    /**
+     * Returns/sets the name of the mapping. The name is used only as a means of distinguishing mappings in a model.  If not specified, defaults to the string composed by the source entity name followed by the destination entity name (ex. SourceName->DestinationName)
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * Returns/sets the array of relationship mappings for the entity mapping.  The order of mappings in this collection dictates the order in which the mappings will be processed during a migration.
+     */
     @Generated
     @Selector("relationshipMappings")
     public native NSArray<? extends NSPropertyMapping> relationshipMappings();
 
+    /**
+     * Returns/sets the array of attribute mappings for the entity mapping.  The order of mappings in this collection dictates the order in which the mappings will be processed during a migration.
+     */
     @Generated
     @Selector("setAttributeMappings:")
     public native void setAttributeMappings(NSArray<? extends NSPropertyMapping> value);
 
+    /**
+     * Returns/sets the destination entity name for the mapping.  (Mappings are not directly bound to NSEntityDescriptions;  developers can use the destinationEntityForEntityMapping: API on the NSMigrationManager to retrieve the entity description for this name.)
+     */
     @Generated
     @Selector("setDestinationEntityName:")
     public native void setDestinationEntityName(String value);
 
+    /**
+     * Returns/sets the version hash for the destination entity for the mapping.  VersionHashes are calculated by the Core Data framework (see NSEntityDescrition's versionHash method). The destinationEntityVersionHash must equal the version hash of the destination entity represented by the mapping.
+     */
     @Generated
     @Selector("setDestinationEntityVersionHash:")
     public native void setDestinationEntityVersionHash(NSData value);
 
+    /**
+     * Returns/sets the class name of the migration policy for the class.  If not specified, the default migration class name is NSEntityMigrationPolicy, though developers can specify a subclass for specific behavior.
+     */
     @Generated
     @Selector("setEntityMigrationPolicyClassName:")
     public native void setEntityMigrationPolicyClassName(String value);
 
+    /**
+     * Returns/sets the mapping type.  (If a custom entity mapping type is utilized, the developer must specify a migrationPolicyClassName as well.)
+     */
     @Generated
     @Selector("setMappingType:")
     public native void setMappingType(@NUInt long value);
 
+    /**
+     * Returns/sets the name of the mapping. The name is used only as a means of distinguishing mappings in a model.  If not specified, defaults to the string composed by the source entity name followed by the destination entity name (ex. SourceName->DestinationName)
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * Returns/sets the array of relationship mappings for the entity mapping.  The order of mappings in this collection dictates the order in which the mappings will be processed during a migration.
+     */
     @Generated
     @Selector("setRelationshipMappings:")
     public native void setRelationshipMappings(NSArray<? extends NSPropertyMapping> value);
 
+    /**
+     * Returns/sets the source entity name for the mapping.  (Mappings are not directly bound to NSEntityDescriptions;  developers can use the sourceEntityForEntityMapping: API on the NSMigrationManager to retrieve the entity description for this name.)
+     */
     @Generated
     @Selector("setSourceEntityName:")
     public native void setSourceEntityName(String value);
 
+    /**
+     * Returns/sets the version hash for the source entity for the mapping.  VersionHashes are calculated by the Core Data framework (see NSEntityDescrition's versionHash method). The sourceEntityVersionHash must equal the version hash of the source entity represented by the mapping.
+     */
     @Generated
     @Selector("setSourceEntityVersionHash:")
     public native void setSourceEntityVersionHash(NSData value);
 
+    /**
+     * Returns/sets the source expression for the mapping.  The source expression is used to obtain the collection of managed object instances to process through the mapping.  The expression can be a fetch request expression, or any other expression which evaluates to a collection.
+     */
     @Generated
     @Selector("setSourceExpression:")
     public native void setSourceExpression(NSExpression value);
 
+    /**
+     * Returns/sets the user info dictionary for the mapping
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
+    /**
+     * Returns/sets the source entity name for the mapping.  (Mappings are not directly bound to NSEntityDescriptions;  developers can use the sourceEntityForEntityMapping: API on the NSMigrationManager to retrieve the entity description for this name.)
+     */
     @Generated
     @Selector("sourceEntityName")
     public native String sourceEntityName();
 
+    /**
+     * Returns/sets the version hash for the source entity for the mapping.  VersionHashes are calculated by the Core Data framework (see NSEntityDescrition's versionHash method). The sourceEntityVersionHash must equal the version hash of the source entity represented by the mapping.
+     */
     @Generated
     @Selector("sourceEntityVersionHash")
     public native NSData sourceEntityVersionHash();
 
+    /**
+     * Returns/sets the source expression for the mapping.  The source expression is used to obtain the collection of managed object instances to process through the mapping.  The expression can be a fetch request expression, or any other expression which evaluates to a collection.
+     */
     @Generated
     @Selector("sourceExpression")
     public native NSExpression sourceExpression();
 
+    /**
+     * Returns/sets the user info dictionary for the mapping
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

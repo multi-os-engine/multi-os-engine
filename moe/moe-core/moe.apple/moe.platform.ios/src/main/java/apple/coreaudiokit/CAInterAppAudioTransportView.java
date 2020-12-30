@@ -434,6 +434,9 @@ public class CAInterAppAudioTransportView extends UIView {
     @Selector("isRecording")
     public native boolean isRecording();
 
+    /**
+     * Appearance properties
+     */
     @Generated
     @Selector("labelColor")
     public native UIColor labelColor();
@@ -458,6 +461,9 @@ public class CAInterAppAudioTransportView extends UIView {
     @Selector("setCurrentTimeLabelFont:")
     public native void setCurrentTimeLabelFont(UIFont value);
 
+    /**
+     * Appearance properties
+     */
     @Generated
     @Selector("setLabelColor:")
     public native void setLabelColor(UIColor value);

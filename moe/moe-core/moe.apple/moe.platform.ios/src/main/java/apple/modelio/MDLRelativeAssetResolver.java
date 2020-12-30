@@ -25,6 +25,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MDLRelativeAssetResolver
+ * 
+ * @abstract The relative asset resolver searches for referenced files
+ * by checking the location of the asset for sibling files
+ * satisfying the requested name.
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)

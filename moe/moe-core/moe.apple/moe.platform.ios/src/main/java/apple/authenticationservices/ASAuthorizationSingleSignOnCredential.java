@@ -46,6 +46,9 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * @abstract An access token used to access other systems with the authorized scopes.
+     */
     @Generated
     @Selector("accessToken")
     public native NSData accessToken();
@@ -60,10 +63,17 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @abstract The complete AuthenticationServices extension response with the additional outputs used by the specific technology used by the Authorization Server instance and AuthenticationServices Extension.
+     * @note for some operations all properties can be null and the response will indicate just successful result of the operation.
+     */
     @Generated
     @Selector("authenticatedResponse")
     public native NSHTTPURLResponse authenticatedResponse();
 
+    /**
+     * @abstract This value will contain a list of scopes for which the user provided authorization.  These may contain a subset of the requested scopes on @see ASAuthorizationOpenIDRequest.  The application should query this value to identify which scopes were returned as it maybe different from ones requested.
+     */
     @Generated
     @Selector("authorizedScopes")
     public native NSArray<String> authorizedScopes();
@@ -113,6 +123,9 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @abstract A JSON Web Token (JWT) used to communicate information about the identity of the user in a secure way to the app.
+     */
     @Generated
     @Selector("identityToken")
     public native NSData identityToken();
@@ -164,6 +177,9 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @abstract A state returned from the AuthenticationServices extension.
+     */
     @Generated
     @Selector("state")
     public native String state();

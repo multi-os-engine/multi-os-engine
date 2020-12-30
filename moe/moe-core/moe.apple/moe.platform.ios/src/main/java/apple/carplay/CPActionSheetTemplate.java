@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @c CPActionSheetTemplate represents an action sheet that must be dismissed with a button press
+ * before the user may return to using the app.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -100,6 +104,13 @@ public class CPActionSheetTemplate extends CPTemplate {
     @Selector("initWithCoder:")
     public native CPActionSheetTemplate initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize a @c CPActionSheetTemplate with a title and/or message, and at least one action.
+     * 
+     * @param title The title of the action sheet.
+     * @param message Descriptive message that provides more detail about the reason for the action sheet.
+     * @param actions The actions for the action sheet.
+     */
     @Generated
     @Selector("initWithTitle:message:actions:")
     public native CPActionSheetTemplate initWithTitleMessageActions(String title, String message,

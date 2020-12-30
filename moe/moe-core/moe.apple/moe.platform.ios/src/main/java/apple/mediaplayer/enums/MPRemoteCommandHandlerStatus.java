@@ -21,14 +21,35 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MPRemoteCommandHandlerStatus {
+    /**
+     * There was no error executing the requested command.
+     */
     @Generated @NInt public static final long Success = 0x0000000000000000L;
+    /**
+     * The command could not be executed because the requested content does not
+     * exist in the current application state.
+     */
     @Generated @NInt public static final long NoSuchContent = 0x0000000000000064L;
+    /**
+     * The command could not be executed because there is no now playing item
+     * available that is required for this command. As an example, an
+     * application would return this error code if an "enable language option"
+     * command is received, but nothing is currently playing.
+     */
     @Generated @NInt public static final long NoActionableNowPlayingItem = 0x000000000000006EL;
+    /**
+     * The command could not be executed for another reason.
+     */
     @Generated @NInt public static final long CommandFailed = 0x00000000000000C8L;
 
     @Generated
     private MPRemoteCommandHandlerStatus() {
     }
 
+    /**
+     * The command could not be executed because a device required
+     * is not available. For instance, if headphones are required, or if a watch
+     * app realizes that it needs the companion to fulfull a request.
+     */
     @Generated @NInt public static final long DeviceNotFound = 0x0000000000000078L;
 }

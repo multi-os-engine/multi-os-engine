@@ -394,19 +394,31 @@ public class UIPageControl extends UIControl {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * default is 0. Value is pinned to 0..numberOfPages-1
+     */
     @Generated
     @Selector("currentPage")
     @NInt
     public native long currentPage();
 
+    /**
+     * The tint color for the currently-selected indicators. Default is nil.
+     */
     @Generated
     @Selector("currentPageIndicatorTintColor")
     public native UIColor currentPageIndicatorTintColor();
 
+    /**
+     * if set, tapping to a new page won't update the currently displayed page until -updateCurrentPageDisplay is called. default is NO
+     */
     @Generated
     @Selector("defersCurrentPageDisplay")
     public native boolean defersCurrentPageDisplay();
 
+    /**
+     * hides the indicator if there is only one page, default is NO
+     */
     @Generated
     @Selector("hidesForSinglePage")
     public native boolean hidesForSinglePage();
@@ -423,44 +435,74 @@ public class UIPageControl extends UIControl {
     @Selector("initWithFrame:")
     public native UIPageControl initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * default is 0
+     */
     @Generated
     @Selector("numberOfPages")
     @NInt
     public native long numberOfPages();
 
+    /**
+     * The tint color for non-selected indicators. Default is nil.
+     */
     @Generated
     @Selector("pageIndicatorTintColor")
     public native UIColor pageIndicatorTintColor();
 
+    /**
+     * default is 0. Value is pinned to 0..numberOfPages-1
+     */
     @Generated
     @Selector("setCurrentPage:")
     public native void setCurrentPage(@NInt long value);
 
+    /**
+     * The tint color for the currently-selected indicators. Default is nil.
+     */
     @Generated
     @Selector("setCurrentPageIndicatorTintColor:")
     public native void setCurrentPageIndicatorTintColor(UIColor value);
 
+    /**
+     * if set, tapping to a new page won't update the currently displayed page until -updateCurrentPageDisplay is called. default is NO
+     */
     @Generated
     @Selector("setDefersCurrentPageDisplay:")
     public native void setDefersCurrentPageDisplay(boolean value);
 
+    /**
+     * hides the indicator if there is only one page, default is NO
+     */
     @Generated
     @Selector("setHidesForSinglePage:")
     public native void setHidesForSinglePage(boolean value);
 
+    /**
+     * default is 0
+     */
     @Generated
     @Selector("setNumberOfPages:")
     public native void setNumberOfPages(@NInt long value);
 
+    /**
+     * The tint color for non-selected indicators. Default is nil.
+     */
     @Generated
     @Selector("setPageIndicatorTintColor:")
     public native void setPageIndicatorTintColor(UIColor value);
 
+    /**
+     * Returns the minimum size required to display indicators for the given page count. Can be used to size the control if the page count could change.
+     */
     @Generated
     @Selector("sizeForNumberOfPages:")
     @ByValue
     public native CGSize sizeForNumberOfPages(@NInt long pageCount);
 
+    /**
+     * update page display to match the currentPage. ignored if defersCurrentPageDisplay is NO. setting the page value directly will update immediately
+     */
     @Generated
     @Selector("updateCurrentPageDisplay")
     public native void updateCurrentPageDisplay();
@@ -471,15 +513,25 @@ public class UIPageControl extends UIControl {
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    /**
+     * Returns YES if the continuous interaction is enabled, NO otherwise. Default is YES.
+     */
     @Generated
     @Selector("allowsContinuousInteraction")
     public native boolean allowsContinuousInteraction();
 
+    /**
+     * The preferred background style. Default is UIPageControlBackgroundStyleAutomatic on iOS, and UIPageControlBackgroundStyleProminent on tvOS.
+     */
     @Generated
     @Selector("backgroundStyle")
     @NInt
     public native long backgroundStyle();
 
+    /**
+     * @abstract Returns the override indicator image for the specific page, nil if no override image was set.
+     * @param page Must be in the range of 0..numberOfPages
+     */
     @Generated
     @Selector("indicatorImageForPage:")
     public native UIImage indicatorImageForPage(@NInt long page);
@@ -488,27 +540,47 @@ public class UIPageControl extends UIControl {
     @Selector("initWithFrame:primaryAction:")
     public native UIPageControl initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 
+    /**
+     * The current interaction state for when the current page changes. Default is UIPageControlInteractionStateNone
+     */
     @Generated
     @Selector("interactionState")
     @NInt
     public native long interactionState();
 
+    /**
+     * The preferred image for indicators. Symbol images are recommended. Default is nil.
+     */
     @Generated
     @Selector("preferredIndicatorImage")
     public native UIImage preferredIndicatorImage();
 
+    /**
+     * Returns YES if the continuous interaction is enabled, NO otherwise. Default is YES.
+     */
     @Generated
     @Selector("setAllowsContinuousInteraction:")
     public native void setAllowsContinuousInteraction(boolean value);
 
+    /**
+     * The preferred background style. Default is UIPageControlBackgroundStyleAutomatic on iOS, and UIPageControlBackgroundStyleProminent on tvOS.
+     */
     @Generated
     @Selector("setBackgroundStyle:")
     public native void setBackgroundStyle(@NInt long value);
 
+    /**
+     * @abstract Override the indicator image for a specific page. Symbol images are recommended.
+     * @param image    The image for the indicator. Resets to the default if image is nil.
+     * @param page      Must be in the range of 0..numberOfPages
+     */
     @Generated
     @Selector("setIndicatorImage:forPage:")
     public native void setIndicatorImageForPage(UIImage image, @NInt long page);
 
+    /**
+     * The preferred image for indicators. Symbol images are recommended. Default is nil.
+     */
     @Generated
     @Selector("setPreferredIndicatorImage:")
     public native void setPreferredIndicatorImage(UIImage value);

@@ -155,11 +155,17 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * delta to be applied to the collection view's current contentOffset - default is CGPointZero
+     */
     @Generated
     @Selector("contentOffsetAdjustment")
     @ByValue
     public native CGPoint contentOffsetAdjustment();
 
+    /**
+     * delta to be applied to the current content size - default is CGSizeZero
+     */
     @Generated
     @Selector("contentSizeAdjustment")
     @ByValue
@@ -174,6 +180,9 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     @ByValue
     public native CGPoint interactiveMovementTarget();
 
+    /**
+     * if YES, the layout should requery section and item counts from the collection view - set to YES when the collection view is sent -reloadData and when items are inserted or deleted
+     */
     @Generated
     @Selector("invalidateDataSourceCounts")
     public native boolean invalidateDataSourceCounts();
@@ -183,6 +192,9 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     public native void invalidateDecorationElementsOfKindAtIndexPaths(String elementKind,
             NSArray<? extends NSIndexPath> indexPaths);
 
+    /**
+     * set to YES when invalidation occurs because the collection view is sent -reloadData
+     */
     @Generated
     @Selector("invalidateEverything")
     public native boolean invalidateEverything();
@@ -196,6 +208,9 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     public native void invalidateSupplementaryElementsOfKindAtIndexPaths(String elementKind,
             NSArray<? extends NSIndexPath> indexPaths);
 
+    /**
+     * keys are element kind strings - values are NSArrays of NSIndexPaths
+     */
     @Generated
     @Selector("invalidatedDecorationIndexPaths")
     public native NSDictionary<String, ? extends NSArray<? extends NSIndexPath>> invalidatedDecorationIndexPaths();
@@ -204,22 +219,37 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     @Selector("invalidatedItemIndexPaths")
     public native NSArray<? extends NSIndexPath> invalidatedItemIndexPaths();
 
+    /**
+     * keys are element kind strings - values are NSArrays of NSIndexPaths
+     */
     @Generated
     @Selector("invalidatedSupplementaryIndexPaths")
     public native NSDictionary<String, ? extends NSArray<? extends NSIndexPath>> invalidatedSupplementaryIndexPaths();
 
+    /**
+     * index paths of moving items prior to the invalidation
+     */
     @Generated
     @Selector("previousIndexPathsForInteractivelyMovingItems")
     public native NSArray<? extends NSIndexPath> previousIndexPathsForInteractivelyMovingItems();
 
+    /**
+     * delta to be applied to the collection view's current contentOffset - default is CGPointZero
+     */
     @Generated
     @Selector("setContentOffsetAdjustment:")
     public native void setContentOffsetAdjustment(@ByValue CGPoint value);
 
+    /**
+     * delta to be applied to the current content size - default is CGSizeZero
+     */
     @Generated
     @Selector("setContentSizeAdjustment:")
     public native void setContentSizeAdjustment(@ByValue CGSize value);
 
+    /**
+     * index paths of moved items following the invalidation
+     */
     @Generated
     @Selector("targetIndexPathsForInteractivelyMovingItems")
     public native NSArray<? extends NSIndexPath> targetIndexPathsForInteractivelyMovingItems();

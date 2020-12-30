@@ -150,18 +150,30 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     @NInt
     public static native long version_static();
 
+    /**
+     * shape of specular highlight
+     */
     @Generated
     @Selector("anisotropic")
     public native MDLMaterialProperty anisotropic();
 
+    /**
+     * shape of specular highlight
+     */
     @Generated
     @Selector("anisotropicRotation")
     public native MDLMaterialProperty anisotropicRotation();
 
+    /**
+     * like clear acrylic on a car
+     */
     @Generated
     @Selector("clearcoat")
     public native MDLMaterialProperty clearcoat();
 
+    /**
+     * 0 = satin, 1 = glossy
+     */
     @Generated
     @Selector("clearcoatGloss")
     public native MDLMaterialProperty clearcoatGloss();
@@ -170,34 +182,58 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     @Selector("init")
     public native MDLPhysicallyPlausibleScatteringFunction init();
 
+    /**
+     * 0 = dielectric, 1 = metallic
+     */
     @Generated
     @Selector("metallic")
     public native MDLMaterialProperty metallic();
 
+    /**
+     * diffuse and specular response
+     */
     @Generated
     @Selector("roughness")
     public native MDLMaterialProperty roughness();
 
+    /**
+     * like velvet
+     */
     @Generated
     @Selector("sheen")
     public native MDLMaterialProperty sheen();
 
+    /**
+     * bias towards surface color
+     */
     @Generated
     @Selector("sheenTint")
     public native MDLMaterialProperty sheenTint();
 
+    /**
+     * specular value
+     */
     @Generated
     @Selector("specularAmount")
     public native MDLMaterialProperty specularAmount();
 
+    /**
+     * bias towards surface color
+     */
     @Generated
     @Selector("specularTint")
     public native MDLMaterialProperty specularTint();
 
+    /**
+     * diffuse shape
+     */
     @Generated
     @Selector("subsurface")
     public native MDLMaterialProperty subsurface();
 
+    /**
+     * currently 1
+     */
     @Generated
     @Selector("version")
     @NInt

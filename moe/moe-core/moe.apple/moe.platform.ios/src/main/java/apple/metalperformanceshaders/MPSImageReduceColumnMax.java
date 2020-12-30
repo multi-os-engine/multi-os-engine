@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSImageReduceColumnMax
+ * @discussion The MPSImageReduceColumnMax performs a reduction operation returning the maximum value for each column of an image
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -101,6 +105,11 @@ public class MPSImageReduceColumnMax extends MPSImageReduceUnary {
     public native MPSImageReduceColumnMax initWithCoderDevice(NSCoder aDecoder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Specifies information to apply the reduction operation on an image.
+     * @param    device            The device the filter will run on
+     * @return     A valid MPSImageReduce object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSImageReduceColumnMax initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);

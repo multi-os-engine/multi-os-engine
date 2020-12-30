@@ -167,10 +167,19 @@ public class ABNewPersonViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
+     * If not set, a new ABAddressBook will be created the first time the property is accessed.
+     */
     @Generated
     @Selector("addressBook")
     public native ConstVoidPtr addressBook();
 
+    /**
+     * Specify a displayedPerson to prefill some fields in the card. This is optional.
+     * If displayedPerson has been added to an ABAddressBook, then the addressBook
+     * property will be updated to use the displayedPerson's ABAddressBook.
+     */
     @Generated
     @Selector("displayedPerson")
     public native ConstVoidPtr displayedPerson();
@@ -192,23 +201,41 @@ public class ABNewPersonViewController extends UIViewController {
     @MappedReturn(ObjCObjectMapper.class)
     public native ABNewPersonViewControllerDelegate newPersonViewDelegate();
 
+    /**
+     * Specify a parentGroup the person should be added to when saved. This is optional.
+     */
     @Generated
     @Selector("parentGroup")
     public native ConstVoidPtr parentGroup();
 
+    /**
+     * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
+     * If not set, a new ABAddressBook will be created the first time the property is accessed.
+     */
     @Generated
     @Selector("setAddressBook:")
     public native void setAddressBook(ConstVoidPtr value);
 
+    /**
+     * Specify a displayedPerson to prefill some fields in the card. This is optional.
+     * If displayedPerson has been added to an ABAddressBook, then the addressBook
+     * property will be updated to use the displayedPerson's ABAddressBook.
+     */
     @Generated
     @Selector("setDisplayedPerson:")
     public native void setDisplayedPerson(ConstVoidPtr value);
 
+    /**
+     * ABNewPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     */
     @Generated
     @Selector("setNewPersonViewDelegate:")
     public native void setNewPersonViewDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) ABNewPersonViewControllerDelegate value);
 
+    /**
+     * ABNewPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     */
     @Generated
     public void setNewPersonViewDelegate(@Mapped(ObjCObjectMapper.class) ABNewPersonViewControllerDelegate value) {
         Object __old = newPersonViewDelegate();
@@ -221,6 +248,9 @@ public class ABNewPersonViewController extends UIViewController {
         }
     }
 
+    /**
+     * Specify a parentGroup the person should be added to when saved. This is optional.
+     */
     @Generated
     @Selector("setParentGroup:")
     public native void setParentGroup(ConstVoidPtr value);

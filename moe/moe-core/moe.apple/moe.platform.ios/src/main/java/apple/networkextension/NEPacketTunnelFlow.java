@@ -42,6 +42,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEPacketTunnelFlow
+ * @discussion The NEPacketTunnelFlow class declares the programmatic interface of an object that is used by NEPacketTunnelProvider implementations to tunnel IP packets.
+ * 
+ * NEPacketTunnelFlow is part of NetworkExtension.framework
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -157,20 +165,41 @@ public class NEPacketTunnelFlow extends NSObject {
     @Selector("init")
     public native NEPacketTunnelFlow init();
 
+    /**
+     * @method readPacketObjectsWithCompletionHandler:
+     * @discussion Read available IP packets from the flow.
+     * @param completionHandler A block that will be executed to handle the packets. This block takes an array of NEPacket objects. If after handling the packets the caller wants to read more packets then the caller must call this method again.
+     */
     @Generated
     @Selector("readPacketObjectsWithCompletionHandler:")
     public native void readPacketObjectsWithCompletionHandler(
             @ObjCBlock(name = "call_readPacketObjectsWithCompletionHandler") Block_readPacketObjectsWithCompletionHandler completionHandler);
 
+    /**
+     * @method readPacketsWithCompletionHandler:
+     * @discussion Read available IP packets from the flow.
+     * @param completionHandler A block that will be executed to handle the packets. This block takes an array of NSData objects and an array of NSNumber objects. The NSData and NSNumber in corresponding indicies in the array represent one packet. If after handling the packets the caller wants to read more packets then the caller must call this method again.
+     */
     @Generated
     @Selector("readPacketsWithCompletionHandler:")
     public native void readPacketsWithCompletionHandler(
             @ObjCBlock(name = "call_readPacketsWithCompletionHandler") Block_readPacketsWithCompletionHandler completionHandler);
 
+    /**
+     * @method writePacketObjects:
+     * @discussion Write multiple IP packets to the flow.
+     * @param packets An array of NEPacket objects, each containing packet data and protocol family to be written.
+     */
     @Generated
     @Selector("writePacketObjects:")
     public native boolean writePacketObjects(NSArray<? extends NEPacket> packets);
 
+    /**
+     * @method writePackets:completionHandler:
+     * @discussion Write multiple IP packets to the flow.
+     * @param packets An array of NSData objects, each containing packet data to be written.
+     * @param protocols An array of NSNumber objects. Each number contains the protocol of the packet in the corresponding index in the packets array.
+     */
     @Generated
     @Selector("writePackets:withProtocols:")
     public native boolean writePacketsWithProtocols(NSArray<? extends NSData> packets,

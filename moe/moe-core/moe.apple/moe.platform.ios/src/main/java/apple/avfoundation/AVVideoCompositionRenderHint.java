@@ -83,6 +83,9 @@ public class AVVideoCompositionRenderHint extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The end time of the upcoming composition requests.
+     */
     @Generated
     @Selector("endCompositionTime")
     @ByValue
@@ -136,6 +139,9 @@ public class AVVideoCompositionRenderHint extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The start time of the upcoming composition requests.
+     */
     @Generated
     @Selector("startCompositionTime")
     @ByValue

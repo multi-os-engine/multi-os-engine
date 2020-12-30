@@ -74,10 +74,16 @@ public final class CAFPacketTableHeader extends StructObject {
     @StructureField(order = 3, isGetter = false)
     public native void setMRemainderFrames(int value);
 
+    /**
+     * this is a variable length array of mNumberPackets elements
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native byte mPacketDescriptions();
 
+    /**
+     * this is a variable length array of mNumberPackets elements
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setMPacketDescriptions(byte value);

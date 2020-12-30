@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A request to classify a communication.
+ */
 @Generated
 @Library("IdentityLookup")
 @Runtime(ObjCRuntime.class)

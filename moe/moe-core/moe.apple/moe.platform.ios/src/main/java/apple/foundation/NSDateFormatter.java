@@ -98,6 +98,9 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Attributes of an NSDateFormatter
+     */
     @Generated
     @Selector("defaultFormatterBehavior")
     @NUInt
@@ -152,6 +155,9 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Attributes of an NSDateFormatter
+     */
     @Generated
     @Selector("setDefaultFormatterBehavior:")
     public static native void setDefaultFormatterBehavior(@NUInt long value);
@@ -211,6 +217,9 @@ public class NSDateFormatter extends NSFormatter {
     @NUInt
     public native long formatterBehavior();
 
+    /**
+     * default is NSFormattingContextUnknown
+     */
     @Generated
     @Selector("formattingContext")
     @NInt
@@ -220,6 +229,9 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("generatesCalendarDates")
     public native boolean generatesCalendarDates();
 
+    /**
+     * Report the used range of the string and an NSError, in addition to the usual stuff from NSFormatter
+     */
     @Generated
     @Selector("getObjectValue:forString:range:error:")
     public native boolean getObjectValueForStringRangeError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj,
@@ -293,6 +305,9 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("setFormatterBehavior:")
     public native void setFormatterBehavior(@NUInt long value);
 
+    /**
+     * default is NSFormattingContextUnknown
+     */
     @Generated
     @Selector("setFormattingContext:")
     public native void setFormattingContext(@NInt long value);
@@ -309,6 +324,15 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("setLocale:")
     public native void setLocale(NSLocale value);
 
+    /**
+     * A convenient way to generate an appropriate localized date format, and set it, in a single operation.
+     * 
+     * Equivalent to, though not necessarily implemented as:
+     * formatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:dateFormatTemplate options:0 locale:formatter.locale];
+     * 
+     * Note that the template string is used only to specify which date format components should be included. Ordering and other text will not be preserved.
+     * The parameter is also not stored, or updated when the locale or other options change, just as with the ‘dateFormat’ property.
+     */
     @Generated
     @Selector("setLocalizedDateFormatFromTemplate:")
     public native void setLocalizedDateFormatFromTemplate(String dateFormatTemplate);
@@ -433,6 +457,10 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("standaloneWeekdaySymbols")
     public native NSArray<String> standaloneWeekdaySymbols();
 
+    /**
+     * Even though NSDateFormatter responds to the usual NSFormatter methods,
+     *   here are some convenience methods which are a little more obvious.
+     */
     @Generated
     @Selector("stringFromDate:")
     public native String stringFromDate(NSDate date);

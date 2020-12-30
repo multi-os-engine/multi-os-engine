@@ -107,6 +107,9 @@ public class UIReferenceLibraryViewController extends UIViewController {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Returns YES if any installed dictionary has a definition for the provided term.
+     */
     @Generated
     @Selector("dictionaryHasDefinitionForTerm:")
     public static native boolean dictionaryHasDefinitionForTerm(String term);
@@ -172,6 +175,9 @@ public class UIReferenceLibraryViewController extends UIViewController {
     @Selector("init")
     public native UIReferenceLibraryViewController init();
 
+    /**
+     * Declared solely for the sake of potential subclassers.
+     */
     @Generated
     @Selector("initWithCoder:")
     public native UIReferenceLibraryViewController initWithCoder(NSCoder coder);
@@ -180,6 +186,9 @@ public class UIReferenceLibraryViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native UIReferenceLibraryViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * Initializes an instance of a UIReferenceLibraryViewController with the term provided.
+     */
     @Generated
     @Selector("initWithTerm:")
     public native UIReferenceLibraryViewController initWithTerm(String term);

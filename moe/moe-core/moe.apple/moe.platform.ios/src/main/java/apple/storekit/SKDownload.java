@@ -152,6 +152,9 @@ public class SKDownload extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Identifier for this content
+     */
     @Generated
     @Selector("contentIdentifier")
     public native String contentIdentifier();
@@ -160,10 +163,16 @@ public class SKDownload extends NSObject {
     @Selector("contentLength")
     public native long contentLength();
 
+    /**
+     * Location of the content data, if state is SKDownloadStateFinished
+     */
     @Generated
     @Selector("contentURL")
     public native NSURL contentURL();
 
+    /**
+     * Content version
+     */
     @Generated
     @Selector("contentVersion")
     public native String contentVersion();
@@ -173,6 +182,9 @@ public class SKDownload extends NSObject {
     @NInt
     public native long downloadState();
 
+    /**
+     * Failure error, if state is SKDownloadStateFailed
+     */
     @Generated
     @Selector("error")
     public native NSError error();
@@ -181,22 +193,37 @@ public class SKDownload extends NSObject {
     @Selector("init")
     public native SKDownload init();
 
+    /**
+     * Overall progress for the download [0..1]
+     */
     @Generated
     @Selector("progress")
     public native float progress();
 
+    /**
+     * Estimated time remaining to complete the download, in seconds.  Value is SKDownloadTimeRemainingUnknown if estimate is unknownxx.
+     */
     @Generated
     @Selector("timeRemaining")
     public native double timeRemaining();
 
+    /**
+     * Transaction for this download
+     */
     @Generated
     @Selector("transaction")
     public native SKPaymentTransaction transaction();
 
+    /**
+     * Total size of the content, in bytes
+     */
     @Generated
     @Selector("expectedContentLength")
     public native long expectedContentLength();
 
+    /**
+     * State of the download
+     */
     @Generated
     @Selector("state")
     @NInt

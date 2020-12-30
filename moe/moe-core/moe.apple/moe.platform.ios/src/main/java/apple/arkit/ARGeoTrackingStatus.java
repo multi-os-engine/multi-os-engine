@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Collection of fields to give information on geo tracking status.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -45,6 +48,9 @@ public class ARGeoTrackingStatus extends NSObject implements NSCopying, NSSecure
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * The accuracy of geo tracking.
+     */
     @Generated
     @Selector("accuracy")
     @NInt
@@ -152,11 +158,17 @@ public class ARGeoTrackingStatus extends NSObject implements NSCopying, NSSecure
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The state of geo tracking.
+     */
     @Generated
     @Selector("state")
     @NInt
     public native long state();
 
+    /**
+     * Reason for geo tracking state.
+     */
     @Generated
     @Selector("stateReason")
     @NInt

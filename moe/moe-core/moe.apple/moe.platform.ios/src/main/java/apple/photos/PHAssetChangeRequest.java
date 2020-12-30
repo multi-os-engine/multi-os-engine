@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * PHAssetChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or -[PHPhotoLibrary performChangesAndWait:] block.
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -86,6 +89,9 @@ public class PHAssetChangeRequest extends PHChangeRequest {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * if the asset does not allow the type of change requested, these methods will raise an exception, call canPerformEditOperation: on the asset to determine if the type of edit operation is allowed.
+     */
     @Generated
     @Selector("changeRequestForAsset:")
     public static native PHAssetChangeRequest changeRequestForAsset(PHAsset asset);
@@ -98,6 +104,9 @@ public class PHAssetChangeRequest extends PHChangeRequest {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Basic asset creation. For finer-grained control, see PHAssetCreationRequest.
+     */
     @Generated
     @Selector("creationRequestForAssetFromImage:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -198,10 +207,16 @@ public class PHAssetChangeRequest extends PHChangeRequest {
     @Selector("setFavorite:")
     public native void setFavorite(boolean value);
 
+    /**
+     * a hidden asset will be excluded from moment collections, but may still be included in other smart or regular album collections
+     */
     @Generated
     @Selector("isHidden")
     public native boolean isHidden();
 
+    /**
+     * a hidden asset will be excluded from moment collections, but may still be included in other smart or regular album collections
+     */
     @Generated
     @Selector("setHidden:")
     public native void setHidden(boolean value);
@@ -210,10 +225,18 @@ public class PHAssetChangeRequest extends PHChangeRequest {
     @Selector("location")
     public native CLLocation location();
 
+    /**
+     * This can be used to fetch the newly created asset after the change block has completed by using -localIdentifier
+     * It can also be added directly to collections within the current change block
+     */
     @Generated
     @Selector("placeholderForCreatedAsset")
     public native PHObjectPlaceholder placeholderForCreatedAsset();
 
+    /**
+     * Reverting requires that all original resources are downloaded to the device first and this must be performed manually by the client if the original resources aren't already local.
+     * Use PHAssetResourceManager to ensure that original asset content is downloaded to the current device before making this request.
+     */
     @Generated
     @Selector("revertAssetContentToOriginal")
     public native void revertAssetContentToOriginal();

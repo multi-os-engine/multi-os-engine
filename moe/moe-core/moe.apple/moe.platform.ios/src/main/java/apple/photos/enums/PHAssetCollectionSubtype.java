@@ -21,36 +21,109 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHAssetCollectionSubtype {
+    /**
+     * PHAssetCollectionTypeAlbum regular subtypes
+     */
     @Generated @NInt public static final long AlbumRegular = 0x0000000000000002L;
+    /**
+     * PHAssetCollectionTypeAlbum regular subtypes
+     */
     @Generated @NInt public static final long AlbumSyncedEvent = 0x0000000000000003L;
+    /**
+     * PHAssetCollectionTypeAlbum regular subtypes
+     */
     @Generated @NInt public static final long AlbumSyncedFaces = 0x0000000000000004L;
+    /**
+     * PHAssetCollectionTypeAlbum regular subtypes
+     */
     @Generated @NInt public static final long AlbumSyncedAlbum = 0x0000000000000005L;
+    /**
+     * PHAssetCollectionTypeAlbum regular subtypes
+     */
     @Generated @NInt public static final long AlbumImported = 0x0000000000000006L;
+    /**
+     * PHAssetCollectionTypeAlbum shared subtypes
+     */
     @Generated @NInt public static final long AlbumMyPhotoStream = 0x0000000000000064L;
+    /**
+     * PHAssetCollectionTypeAlbum shared subtypes
+     */
     @Generated @NInt public static final long AlbumCloudShared = 0x0000000000000065L;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumGeneric = 0x00000000000000C8L;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumPanoramas = 0x00000000000000C9L;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumVideos = 0x00000000000000CAL;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumFavorites = 0x00000000000000CBL;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumTimelapses = 0x00000000000000CCL;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumAllHidden = 0x00000000000000CDL;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumRecentlyAdded = 0x00000000000000CEL;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumBursts = 0x00000000000000CFL;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumSlomoVideos = 0x00000000000000D0L;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumUserLibrary = 0x00000000000000D1L;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumSelfPortraits = 0x00000000000000D2L;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumScreenshots = 0x00000000000000D3L;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumDepthEffect = 0x00000000000000D4L;
-    @Generated @NInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ?
-            0x7FFFFFFFFFFFFFFFL :
-            0x000000007FFFFFFFL;
+    /**
+     * Used for fetching, if you don't care about the exact subtype
+     */
+    @Generated @NInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ? 0x7FFFFFFFFFFFFFFFL : 0x000000007FFFFFFFL;
 
     @Generated
     private PHAssetCollectionSubtype() {
     }
 
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumLivePhotos = 0x00000000000000D5L;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumAnimated = 0x00000000000000D6L;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumLongExposures = 0x00000000000000D7L;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
     @Generated @NInt public static final long SmartAlbumUnableToUpload = 0x00000000000000D8L;
 }

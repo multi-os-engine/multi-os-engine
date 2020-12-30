@@ -44,46 +44,76 @@ public final class sa_endpoints extends StructObject {
         super(peer);
     }
 
+    /**
+     * optional source interface
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int sae_srcif();
 
+    /**
+     * optional source interface
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setSae_srcif(int value);
 
+    /**
+     * optional source address
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native sockaddr sae_srcaddr();
 
+    /**
+     * optional source address
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSae_srcaddr(
             @UncertainArgument("Options: reference, array Fallback: reference") sockaddr value);
 
+    /**
+     * size of source address
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int sae_srcaddrlen();
 
+    /**
+     * size of source address
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setSae_srcaddrlen(int value);
 
+    /**
+     * destination address
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native sockaddr sae_dstaddr();
 
+    /**
+     * destination address
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setSae_dstaddr(
             @UncertainArgument("Options: reference, array Fallback: reference") sockaddr value);
 
+    /**
+     * size of destination address
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native int sae_dstaddrlen();
 
+    /**
+     * size of destination address
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setSae_dstaddrlen(int value);

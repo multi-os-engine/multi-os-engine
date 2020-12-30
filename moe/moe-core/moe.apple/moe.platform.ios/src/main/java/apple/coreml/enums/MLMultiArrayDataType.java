@@ -3,6 +3,9 @@ package apple.coreml.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Allowed data types for multidimensional arrays
+ */
 @Generated
 public final class MLMultiArrayDataType {
     @Generated

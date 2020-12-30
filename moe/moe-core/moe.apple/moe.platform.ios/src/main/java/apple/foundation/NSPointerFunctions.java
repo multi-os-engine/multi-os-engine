@@ -169,6 +169,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Selector("init")
     public native NSPointerFunctions init();
 
+    /**
+     * construction
+     */
     @Generated
     @Selector("initWithOptions:")
     public native NSPointerFunctions initWithOptions(@NUInt long options);
@@ -182,10 +185,16 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Selector("setSizeFunction:")
     public native void setSizeFunction(@FunctionPtr(name = "call_setSizeFunction") Function_setSizeFunction value);
 
+    /**
+     * pointers should (not) be assigned using the GC strong write barrier
+     */
     @Generated
     @Selector("setUsesStrongWriteBarrier:")
     public native void setUsesStrongWriteBarrier(boolean value);
 
+    /**
+     * pointers should (not) use GC weak read and write barriers
+     */
     @Generated
     @Selector("setUsesWeakReadAndWriteBarriers:")
     public native void setUsesWeakReadAndWriteBarriers(boolean value);
@@ -195,10 +204,16 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @FunctionPtr(name = "call_sizeFunction_ret")
     public native Function_sizeFunction_ret sizeFunction();
 
+    /**
+     * pointers should (not) be assigned using the GC strong write barrier
+     */
     @Generated
     @Selector("usesStrongWriteBarrier")
     public native boolean usesStrongWriteBarrier();
 
+    /**
+     * pointers should (not) use GC weak read and write barriers
+     */
     @Generated
     @Selector("usesWeakReadAndWriteBarriers")
     public native boolean usesWeakReadAndWriteBarriers();
@@ -257,6 +272,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
                 boolean arg2);
     }
 
+    /**
+     * pointer personality functions
+     */
     @Generated
     @Selector("hashFunction")
     @FunctionPtr(name = "call_hashFunction_ret")
@@ -300,6 +318,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
                 @FunctionPtr(name = "call_Function_isEqualFunction_ret") Function_Function_isEqualFunction_ret arg2);
     }
 
+    /**
+     * custom memory configuration
+     */
     @Generated
     @Selector("relinquishFunction")
     @FunctionPtr(name = "call_relinquishFunction_ret")
@@ -343,6 +364,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
                 boolean arg2);
     }
 
+    /**
+     * pointer personality functions
+     */
     @Generated
     @Selector("setHashFunction:")
     public native void setHashFunction(@FunctionPtr(name = "call_setHashFunction") Function_setHashFunction value);
@@ -385,6 +409,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
                 @FunctionPtr(name = "call_Function_setIsEqualFunction") Function_Function_setIsEqualFunction arg2);
     }
 
+    /**
+     * custom memory configuration
+     */
     @Generated
     @Selector("setRelinquishFunction:")
     public native void setRelinquishFunction(

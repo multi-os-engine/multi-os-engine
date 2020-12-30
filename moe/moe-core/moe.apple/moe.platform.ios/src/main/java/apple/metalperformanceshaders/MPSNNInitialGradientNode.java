@@ -23,6 +23,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MPSNNInitialGradientNode
+ * @abstract      A node for a MPSNNInitialGradient kernel
+ * @discussion    This node can be used to generate a starting point for an arbitrary gradient computation.
+ *                Simply add this node after the node for which you want to compute gradients and then
+ *                call the function @ref trainingGraphWithSourceGradient: of this node to automatically
+ *                generate the nodes needed for gradient computations or add the desired nodes manually.
+ *                This is generally used with MPSNNLossGradientNode and MPSNNForwardLossNode
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -90,6 +99,11 @@ public class MPSNNInitialGradientNode extends MPSNNFilterNode {
     @Selector("init")
     public native MPSNNInitialGradientNode init();
 
+    /**
+     * @abstract   Init a node representing a MPSNNInitialGradient MPSNNPad kernel
+     * @param      source                  The MPSNNImageNode representing the source MPSImage for the filter
+     * @return     A new MPSNNFilter node for a MPSNNInitialGradient kernel.
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSNNInitialGradientNode initWithSource(MPSNNImageNode source);
@@ -121,6 +135,11 @@ public class MPSNNInitialGradientNode extends MPSNNFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract   Init a node representing a MPSNNInitialGradient MPSNNPad kernel
+     * @param      source                  The MPSNNImageNode representing the source MPSImage for the filter
+     * @return     A new MPSNNFilter node for a MPSNNInitialGradient kernel.
+     */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSNNInitialGradientNode nodeWithSource(MPSNNImageNode source);

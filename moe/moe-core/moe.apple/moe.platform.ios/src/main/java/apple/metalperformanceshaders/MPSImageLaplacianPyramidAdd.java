@@ -27,6 +27,23 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSImageLaplacianPyramidAdd
+ * @discussion The MPSImageLaplacianPyramidAdd class is responsible for reconstruction of Gaussian pyramid
+ *             from the Laplacian pyramid supplied in the source texture. Mathematically it is the inverse
+ *             of the process specified in the discussion section for MPSImageLaplacianPyramid.
+ * 
+ *             It is an iterative process, starting from the top mip-level and on each iteration feeding off both
+ *             the LaplacianMipLevel[l] data coming directly from the source and GaussianMipLevel[l + 1]
+ *             just written to the destination on the previous iteration :
+ * 
+ *                 GaussianMipLevel[l] := LaplacianRangeScale^-1(LaplacianMipLevelStored[l], laplacianBias, laplacianScale) + Interpolate(GaussianMipLevel[l + 1])
+ * 
+ *             As initial state for the first iteration only, the data for GaussianMipLevel[l + 1] in the formula above
+ *             is provided in the LaplacianMipLevel[#top] level. This corresponds to the special handling of the top mip-level of Gaussian pyramid
+ *             discussed for MPSImageLaplacianPyramidSubtract. Just like for MPSImageLaplacianPyramidSubtract, if the destination texture needs
+ *             to contain all mip-level of the Gaussian pyramid including the top level, it can be just from the source texture.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)

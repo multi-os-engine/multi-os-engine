@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An overlay configuration that can be used to show any app from the App Store.
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -56,6 +59,9 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * The identifier of the app that will be shown.
+     */
     @Generated
     @Selector("appIdentifier")
     public native String appIdentifier();
@@ -64,6 +70,9 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * A token representing an App Analytics campaign.
+     */
     @Generated
     @Selector("campaignToken")
     public native String campaignToken();
@@ -103,6 +112,11 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @Selector("init")
     public native SKOverlayAppConfiguration init();
 
+    /**
+     * Creates a new app overlay configuration that will show an app from the App Store.
+     * @param appIdentifier the app identifier of the app to show.
+     * @param position the desired position of the overlay.
+     */
     @Generated
     @Selector("initWithAppIdentifier:position:")
     public native SKOverlayAppConfiguration initWithAppIdentifierPosition(String appIdentifier, @NInt long position);
@@ -134,11 +148,17 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The position an overlay will show at on screen.
+     */
     @Generated
     @Selector("position")
     @NInt
     public native long position();
 
+    /**
+     * The provider token for the developer that created the app being presented.
+     */
     @Generated
     @Selector("providerToken")
     public native String providerToken();
@@ -155,22 +175,37 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @Selector("setAdditionalValue:forKey:")
     public native void setAdditionalValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
+    /**
+     * The identifier of the app that will be shown.
+     */
     @Generated
     @Selector("setAppIdentifier:")
     public native void setAppIdentifier(String value);
 
+    /**
+     * A token representing an App Analytics campaign.
+     */
     @Generated
     @Selector("setCampaignToken:")
     public native void setCampaignToken(String value);
 
+    /**
+     * The position an overlay will show at on screen.
+     */
     @Generated
     @Selector("setPosition:")
     public native void setPosition(@NInt long value);
 
+    /**
+     * The provider token for the developer that created the app being presented.
+     */
     @Generated
     @Selector("setProviderToken:")
     public native void setProviderToken(String value);
 
+    /**
+     * Allows the user to interactively dismiss an overlay.
+     */
     @Generated
     @Selector("setUserDismissible:")
     public native void setUserDismissible(boolean value);
@@ -183,6 +218,9 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Allows the user to interactively dismiss an overlay.
+     */
     @Generated
     @Selector("userDismissible")
     public native boolean userDismissible();

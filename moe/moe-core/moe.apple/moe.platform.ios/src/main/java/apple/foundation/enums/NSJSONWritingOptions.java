@@ -26,7 +26,16 @@ public final class NSJSONWritingOptions {
     }
 
     @Generated @NUInt public static final long PrettyPrinted = 0x0000000000000001L;
+    /**
+     * Sorts dictionary keys for output using [NSLocale systemLocale]. Keys are compared using NSNumericSearch. The specific sorting method used is subject to change.
+     */
     @Generated @NUInt public static final long SortedKeys = 0x0000000000000002L;
+    /**
+     * Sorts dictionary keys for output using [NSLocale systemLocale]. Keys are compared using NSNumericSearch. The specific sorting method used is subject to change.
+     */
     @Generated @NUInt public static final long FragmentsAllowed = 0x0000000000000004L;
+    /**
+     * Sorts dictionary keys for output using [NSLocale systemLocale]. Keys are compared using NSNumericSearch. The specific sorting method used is subject to change.
+     */
     @Generated @NUInt public static final long WithoutEscapingSlashes = 0x0000000000000008L;
 }

@@ -105,6 +105,9 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Instantiation
+     */
     @Generated
     @Selector("fontDescriptorWithFontAttributes:")
     public static native UIFontDescriptor fontDescriptorWithFontAttributes(NSDictionary<String, ?> attributes);
@@ -150,10 +153,16 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Returns a font descriptor containing the text style and containing the user's selected content size category.
+     */
     @Generated
     @Selector("preferredFontDescriptorWithTextStyle:")
     public static native UIFontDescriptor preferredFontDescriptorWithTextStyle(String style);
 
+    /**
+     * Returns a font descriptor containing the text style and containing the content size category defined in the trait collection.
+     */
     @Generated
     @Selector("preferredFontDescriptorWithTextStyle:compatibleWithTraitCollection:")
     public static native UIFontDescriptor preferredFontDescriptorWithTextStyleCompatibleWithTraitCollection(
@@ -198,6 +207,9 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Selector("fontAttributes")
     public native NSDictionary<String, ?> fontAttributes();
 
+    /**
+     * the new attributes take precedence over the existing ones in the receiver
+     */
     @Generated
     @Selector("fontDescriptorByAddingAttributes:")
     public native UIFontDescriptor fontDescriptorByAddingAttributes(NSDictionary<String, ?> attributes);
@@ -218,6 +230,9 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Selector("fontDescriptorWithSize:")
     public native UIFontDescriptor fontDescriptorWithSize(@NFloat double newPointSize);
 
+    /**
+     * Returns a new font descriptor reference in the same family with the given symbolic traits, or nil if none found in the system.
+     */
     @Generated
     @Selector("fontDescriptorWithSymbolicTraits:")
     public native UIFontDescriptor fontDescriptorWithSymbolicTraits(int symbolicTraits);
@@ -234,6 +249,10 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Selector("initWithFontAttributes:")
     public native UIFontDescriptor initWithFontAttributes(NSDictionary<String, ?> attributes);
 
+    /**
+     * Instance conversion
+     * Returns "normalized" font descriptors matching the receiver. mandatoryKeys is an NSSet instance containing keys that are required to be identical in order to be matched. mandatoryKeys can be nil.
+     */
     @Generated
     @Selector("matchingFontDescriptorsWithMandatoryKeys:")
     public native NSArray<? extends UIFontDescriptor> matchingFontDescriptorsWithMandatoryKeys(
@@ -254,6 +273,9 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @NFloat
     public native double pointSize();
 
+    /**
+     * Core attribute access
+     */
     @Generated
     @Selector("postscriptName")
     public native String postscriptName();
@@ -268,6 +290,9 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Selector("symbolicTraits")
     public native int symbolicTraits();
 
+    /**
+     * Returns a new font descriptor reference with the given design, or nil if no match is found in the system.
+     */
     @Generated
     @Selector("fontDescriptorWithDesign:")
     public native UIFontDescriptor fontDescriptorWithDesign(String design);

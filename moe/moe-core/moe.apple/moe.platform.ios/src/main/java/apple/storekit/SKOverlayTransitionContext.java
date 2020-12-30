@@ -44,6 +44,9 @@ public class SKOverlayTransitionContext extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Adds an animation that will be synchronized with an overlay's presentation/dismissal.
+     */
     @Generated
     @Selector("addAnimationBlock:")
     public native void addAnimationBlock(@ObjCBlock(name = "call_addAnimationBlock") Block_addAnimationBlock block);

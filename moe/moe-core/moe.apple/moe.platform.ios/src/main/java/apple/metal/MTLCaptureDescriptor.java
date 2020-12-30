@@ -67,6 +67,17 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * @brief The object that is captured.
+     * 
+     * Must be one of the following:
+     * 
+     * MTLDevice captures all command queues of the device.
+     * 
+     * MTLCommandQueue captures a single command queue.
+     * 
+     * MTLCaptureScope captures between the next begin and end of the scope.
+     */
     @Generated
     @Selector("captureObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -94,6 +105,9 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The destination you want the GPU trace to be captured to.
+     */
     @Generated
     @Selector("destination")
     @NInt
@@ -135,6 +149,10 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * URL the GPU Trace document will be captured to.
+     * Must be specified when destiation is MTLCaptureDestinationGPUTraceDocument.
+     */
     @Generated
     @Selector("outputURL")
     public native NSURL outputURL();
@@ -147,14 +165,32 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @brief The object that is captured.
+     * 
+     * Must be one of the following:
+     * 
+     * MTLDevice captures all command queues of the device.
+     * 
+     * MTLCommandQueue captures a single command queue.
+     * 
+     * MTLCaptureScope captures between the next begin and end of the scope.
+     */
     @Generated
     @Selector("setCaptureObject:")
     public native void setCaptureObject(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * The destination you want the GPU trace to be captured to.
+     */
     @Generated
     @Selector("setDestination:")
     public native void setDestination(@NInt long value);
 
+    /**
+     * URL the GPU Trace document will be captured to.
+     * Must be specified when destiation is MTLCaptureDestinationGPUTraceDocument.
+     */
     @Generated
     @Selector("setOutputURL:")
     public native void setOutputURL(NSURL value);

@@ -77,6 +77,9 @@ public class ARPointCloud extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The number of points in the point cloud.
+     */
     @Generated
     @Selector("count")
     @NUInt
@@ -95,6 +98,9 @@ public class ARPointCloud extends NSObject implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The 3D point identifiers comprising the point cloud.
+     */
     @Generated
     @Selector("identifiers")
     public native ConstLongPtr identifiers();

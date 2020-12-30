@@ -159,6 +159,12 @@ public class UNNotificationResponse extends NSObject implements NSCopying, NSSec
     @NInt
     public static native long version_static();
 
+    /**
+     * The action identifier that the user chose:
+     * * UNNotificationDismissActionIdentifier if the user dismissed the notification
+     * * UNNotificationDefaultActionIdentifier if the user opened the application from the notification
+     * * the identifier for a registered UNNotificationAction for other actions
+     */
     @Generated
     @Selector("actionIdentifier")
     public native String actionIdentifier();
@@ -181,6 +187,9 @@ public class UNNotificationResponse extends NSObject implements NSCopying, NSSec
     @Selector("initWithCoder:")
     public native UNNotificationResponse initWithCoder(NSCoder coder);
 
+    /**
+     * The notification to which the user responded.
+     */
     @Generated
     @Selector("notification")
     public native UNNotification notification();
@@ -191,6 +200,9 @@ public class UNNotificationResponse extends NSObject implements NSCopying, NSSec
         return supportsSecureCoding();
     }
 
+    /**
+     * default nil
+     */
     @Generated
     @Selector("targetScene")
     public native UIScene targetScene();

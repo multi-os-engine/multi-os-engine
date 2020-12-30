@@ -135,6 +135,9 @@ public class NSUnitElectricCurrent extends NSDimension implements NSSecureCoding
     @Selector("kiloamperes")
     public static native NSUnitElectricCurrent kiloamperes();
 
+    /**
+     * Base unit - amperes
+     */
     @Generated
     @Selector("megaamperes")
     public static native NSUnitElectricCurrent megaamperes();

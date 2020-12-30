@@ -162,20 +162,32 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
     public native UIPanGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
             SEL action);
 
+    /**
+     * default is UINT_MAX. the maximum number of touches that can be down
+     */
     @Generated
     @Selector("maximumNumberOfTouches")
     @NUInt
     public native long maximumNumberOfTouches();
 
+    /**
+     * default is 1. the minimum number of touches required to match
+     */
     @Generated
     @Selector("minimumNumberOfTouches")
     @NUInt
     public native long minimumNumberOfTouches();
 
+    /**
+     * default is UINT_MAX. the maximum number of touches that can be down
+     */
     @Generated
     @Selector("setMaximumNumberOfTouches:")
     public native void setMaximumNumberOfTouches(@NUInt long value);
 
+    /**
+     * default is 1. the minimum number of touches required to match
+     */
     @Generated
     @Selector("setMinimumNumberOfTouches:")
     public native void setMinimumNumberOfTouches(@NUInt long value);
@@ -184,11 +196,17 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
     @Selector("setTranslation:inView:")
     public native void setTranslationInView(@ByValue CGPoint translation, UIView view);
 
+    /**
+     * translation in the coordinate system of the specified view
+     */
     @Generated
     @Selector("translationInView:")
     @ByValue
     public native CGPoint translationInView(UIView view);
 
+    /**
+     * velocity of the pan in points/second in the coordinate system of the specified view
+     */
     @Generated
     @Selector("velocityInView:")
     @ByValue

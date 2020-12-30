@@ -19,10 +19,16 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Flags(s) that can be passed to the factory to indicate that a operator operating on strings should do so in a case insensitive fashion.
+ */
 @Generated
 public final class NSComparisonPredicateOptions {
     @Generated @NUInt public static final long CaseInsensitivePredicateOption = 0x0000000000000001L;
     @Generated @NUInt public static final long DiacriticInsensitivePredicateOption = 0x0000000000000002L;
+    /**
+     * Indicate that the strings to be compared have been preprocessed; this supersedes other options and is intended as a performance optimization option
+     */
     @Generated @NUInt public static final long NormalizedPredicateOption = 0x0000000000000004L;
 
     @Generated

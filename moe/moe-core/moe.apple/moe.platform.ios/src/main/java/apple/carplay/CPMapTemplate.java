@@ -57,6 +57,9 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Automatically shows and hides the navigation bar. Defaults to YES.
+     */
     @Generated
     @Selector("automaticallyHidesNavigationBar")
     public native boolean automaticallyHidesNavigationBar();
@@ -87,6 +90,9 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The currently-visible navigation alert, if any.
+     */
     @Generated
     @Selector("currentNavigationAlert")
     public native CPNavigationAlert currentNavigationAlert();
@@ -99,6 +105,14 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Dismiss the currently-visible navigation alert on this map template.
+     * 
+     * @param animated Whether the dismissal should be animated (YES) or not (NO).
+     * @param completion A block invoked after the alert has been dismissed. The BOOL argument
+     * in the completion block indicates whether any visible alert was dismissed (YES) or
+     * if no action was taken because there was no alert to dismiss (NO).
+     */
     @Generated
     @Selector("dismissNavigationAlertAnimated:completion:")
     public native void dismissNavigationAlertAnimatedCompletion(boolean animated,
@@ -111,10 +125,20 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
         void call_dismissNavigationAlertAnimatedCompletion(boolean dismissed);
     }
 
+    /**
+     * Dismisses the panning interface on the map interface if it is visible.
+     * @note When dismissing the panning interface, mapButtons previously hidden by the system will no longer be hidden.
+     */
     @Generated
     @Selector("dismissPanningInterfaceAnimated:")
     public native void dismissPanningInterfaceAnimated(boolean animated);
 
+    /**
+     * Background color to use when displaying guidance. The system will automatically determine if the provided
+     * color meets contrast requirements. If the provided color does not meet contrast requirements, the system
+     * default will be used. Font color will automatically be adjusted by the system to correspond with this color.
+     * Alpha values will be ignored.
+     */
     @Generated
     @Selector("guidanceBackgroundColor")
     public native UIColor guidanceBackgroundColor();
@@ -124,10 +148,16 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Stop displaying any currently shown trip previews.
+     */
     @Generated
     @Selector("hideTripPreviews")
     public native void hideTripPreviews();
 
+    /**
+     * Hides the map buttons when hiding the navigation bar. Defaults to YES.
+     */
     @Generated
     @Selector("hidesButtonsWithNavigationBar")
     public native boolean hidesButtonsWithNavigationBar();
@@ -153,6 +183,9 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Returns YES when the panning interface is visible.
+     */
     @Generated
     @Selector("isPanningInterfaceVisible")
     public native boolean isPanningInterfaceVisible();
@@ -169,6 +202,11 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("leadingNavigationBarButtons")
     public native NSArray<? extends CPBarButton> leadingNavigationBarButtons();
 
+    /**
+     * An array of bar buttons to be displayed on the trailing bottom corner of the map template.
+     * @note The map template may display a maximum of 4 buttons. Setting more than 4 buttons to this
+     * property will only display the first 4 buttons.
+     */
     @Generated
     @Selector("mapButtons")
     public native NSArray<? extends CPMapButton> mapButtons();
@@ -184,6 +222,16 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Display a navigation alert on this map template. Your @c CPMapTemplateDelegate will be notified
+     * of navigation alert lifecycle events.
+     * 
+     * @param navigationAlert The navigation alert to display.
+     * @param animated YES to animate the presentation of this alert, or NO to display it immediately.
+     * 
+     * @warning If a navigation alert is already visible, this method has no effect.
+     * You must dismiss the currently-visible navigation alert before presenting a new alert.
+     */
     @Generated
     @Selector("presentNavigationAlert:animated:")
     public native void presentNavigationAlertAnimated(CPNavigationAlert navigationAlert, boolean animated);
@@ -196,6 +244,9 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Automatically shows and hides the navigation bar. Defaults to YES.
+     */
     @Generated
     @Selector("setAutomaticallyHidesNavigationBar:")
     public native void setAutomaticallyHidesNavigationBar(boolean value);
@@ -204,10 +255,19 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("setBackButton:")
     public native void setBackButton(CPBarButton value);
 
+    /**
+     * Background color to use when displaying guidance. The system will automatically determine if the provided
+     * color meets contrast requirements. If the provided color does not meet contrast requirements, the system
+     * default will be used. Font color will automatically be adjusted by the system to correspond with this color.
+     * Alpha values will be ignored.
+     */
     @Generated
     @Selector("setGuidanceBackgroundColor:")
     public native void setGuidanceBackgroundColor(UIColor value);
 
+    /**
+     * Hides the map buttons when hiding the navigation bar. Defaults to YES.
+     */
     @Generated
     @Selector("setHidesButtonsWithNavigationBar:")
     public native void setHidesButtonsWithNavigationBar(boolean value);
@@ -216,6 +276,11 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("setLeadingNavigationBarButtons:")
     public native void setLeadingNavigationBarButtons(NSArray<? extends CPBarButton> value);
 
+    /**
+     * An array of bar buttons to be displayed on the trailing bottom corner of the map template.
+     * @note The map template may display a maximum of 4 buttons. Setting more than 4 buttons to this
+     * property will only display the first 4 buttons.
+     */
     @Generated
     @Selector("setMapButtons:")
     public native void setMapButtons(NSArray<? extends CPMapButton> value);
@@ -240,6 +305,9 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("setTrailingNavigationBarButtons:")
     public native void setTrailingNavigationBarButtons(NSArray<? extends CPBarButton> value);
 
+    /**
+     * The style used to display trip estimates during active navigation. If not set, will update automatically with changes to UIUserInterfaceStyle.
+     */
     @Generated
     @Selector("setTripEstimateStyle:")
     public native void setTripEstimateStyle(@NUInt long value);
@@ -248,20 +316,42 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Shows the panning interface on the map interface if not already visible.
+     * 
+     * When showing the panning interface, a maximum of two mapButtons will be visible.
+     * If more than two mapButtons are visible when the template transitions to panning mode,
+     * the system will hide one or more map buttons beginning from the end of the mapButtons array.
+     * 
+     * @note The system will not provide a button to dismiss the UI. You are required to provide
+     * a button in the map template navigation bar that will dismiss the panning interface.
+     */
     @Generated
     @Selector("showPanningInterfaceAnimated:")
     public native void showPanningInterfaceAnimated(boolean animated);
 
+    /**
+     * Display the route choices for a single trip. Trip previews can appear over an active navigation session.
+     */
     @Generated
     @Selector("showRouteChoicesPreviewForTrip:textConfiguration:")
     public native void showRouteChoicesPreviewForTripTextConfiguration(CPTrip tripPreview,
             CPTripPreviewTextConfiguration textConfiguration);
 
+    /**
+     * Display a preview for a trip. Used to provide an overview for the upcoming trip or can show multiple trip options,
+     * such as for search results. Trip previews can appear over an active navigation session. Number of trips will be
+     * limited to 12.
+     */
     @Generated
     @Selector("showTripPreviews:textConfiguration:")
     public native void showTripPreviewsTextConfiguration(NSArray<? extends CPTrip> tripPreviews,
             CPTripPreviewTextConfiguration textConfiguration);
 
+    /**
+     * * Begins guidance for a trip.
+     * @return CPNavigationSession maintain a reference to the navigation session to perform guidance updates
+     */
     @Generated
     @Selector("startNavigationSessionForTrip:")
     public native CPNavigationSession startNavigationSessionForTrip(CPTrip trip);
@@ -284,15 +374,24 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("trailingNavigationBarButtons")
     public native NSArray<? extends CPBarButton> trailingNavigationBarButtons();
 
+    /**
+     * The style used to display trip estimates during active navigation. If not set, will update automatically with changes to UIUserInterfaceStyle.
+     */
     @Generated
     @Selector("tripEstimateStyle")
     @NUInt
     public native long tripEstimateStyle();
 
+    /**
+     * Updates the arrival time, time remaining and distance remaining estimates for a trip preview or actively navigating trip with the default color for time remaining.
+     */
     @Generated
     @Selector("updateTravelEstimates:forTrip:")
     public native void updateTravelEstimatesForTrip(CPTravelEstimates estimates, CPTrip trip);
 
+    /**
+     * Updates the arrival time, time remaining and distance remaining estimates for a trip preview or actively navigating trip with a specified color for time remaining.
+     */
     @Generated
     @Selector("updateTravelEstimates:forTrip:withTimeRemainingColor:")
     public native void updateTravelEstimatesForTripWithTimeRemainingColor(CPTravelEstimates estimates, CPTrip trip,
@@ -303,6 +402,11 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Display a preview for a trip. Used to provide an overview for the upcoming trip or can show multiple trip options,
+     * such as for search results. Trip previews can appear over an active navigation session. Number of trips will be
+     * limited to 12. Optionally provide a CPTrip object from the list of trips to be selected when initially presented.
+     */
     @Generated
     @Selector("showTripPreviews:selectedTrip:textConfiguration:")
     public native void showTripPreviewsSelectedTripTextConfiguration(NSArray<? extends CPTrip> tripPreviews,

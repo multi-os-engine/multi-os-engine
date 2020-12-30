@@ -50,26 +50,44 @@ public final class AURecordedParameterEvent extends StructObject {
         setValue(value);
     }
 
+    /**
+     * < The host time at which the event occurred.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native long hostTime();
 
+    /**
+     * < The host time at which the event occurred.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setHostTime(long value);
 
+    /**
+     * < The address of the parameter whose value changed.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native long address();
 
+    /**
+     * < The address of the parameter whose value changed.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setAddress(long value);
 
+    /**
+     * < The value of the parameter at that time.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native float value();
 
+    /**
+     * < The value of the parameter at that time.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setValue(float value);

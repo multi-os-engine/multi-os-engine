@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UIDocumentBrowserAction instances are custom, contextual actions that are presented to the user by a UIDocumentBrowserViewController.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -161,10 +164,16 @@ public class UIDocumentBrowserAction extends NSObject {
     @Selector("setImage:")
     public native void setImage(UIImage value);
 
+    /**
+     * Allows clients to restrict the action to only a specific set of content types. Default: [kUTTypeItem]
+     */
     @Generated
     @Selector("setSupportedContentTypes:")
     public native void setSupportedContentTypes(NSArray<String> value);
 
+    /**
+     * If NO, the action is only available, if there is only one item selected. Default: YES.
+     */
     @Generated
     @Selector("setSupportsMultipleItems:")
     public native void setSupportsMultipleItems(boolean value);
@@ -177,10 +186,16 @@ public class UIDocumentBrowserAction extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Allows clients to restrict the action to only a specific set of content types. Default: [kUTTypeItem]
+     */
     @Generated
     @Selector("supportedContentTypes")
     public native NSArray<String> supportedContentTypes();
 
+    /**
+     * If NO, the action is only available, if there is only one item selected. Default: YES.
+     */
     @Generated
     @Selector("supportsMultipleItems")
     public native boolean supportsMultipleItems();

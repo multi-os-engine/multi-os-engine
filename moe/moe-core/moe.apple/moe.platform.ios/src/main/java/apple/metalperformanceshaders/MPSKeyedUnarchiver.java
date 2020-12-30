@@ -31,6 +31,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MPSKeyedUnarchiver
+ * @abstract A NSKeyedArchiver that supports the MPSDeviceProvider protocol for MPSKernel decoding
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -223,6 +227,9 @@ public class MPSKeyedUnarchiver extends NSKeyedUnarchiver implements MPSDevicePr
     public static native Object unarchivedObjectOfClassFromDataError(Class cls, NSData data,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Common NSKeyedUnarchiver methods
+     */
     @Generated
     @Selector("unarchivedObjectOfClasses:fromData:device:error:")
     @MappedReturn(ObjCObjectMapper.class)

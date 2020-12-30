@@ -19,14 +19,38 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * NSRegularExpression is a class used to represent and apply regular expressions.  An instance of this class is an immutable representation of a compiled regular expression pattern and various option flags.
+ */
 @Generated
 public final class NSRegularExpressionOptions {
+    /**
+     * Match letters in the pattern independent of case.
+     */
     @Generated @NUInt public static final long CaseInsensitive = 0x0000000000000001L;
+    /**
+     * Ignore whitespace and #-prefixed comments in the pattern.
+     */
     @Generated @NUInt public static final long AllowCommentsAndWhitespace = 0x0000000000000002L;
+    /**
+     * Treat the entire pattern as a literal string.
+     */
     @Generated @NUInt public static final long IgnoreMetacharacters = 0x0000000000000004L;
+    /**
+     * Allow . to match any character, including line separators.
+     */
     @Generated @NUInt public static final long DotMatchesLineSeparators = 0x0000000000000008L;
+    /**
+     * Allow ^ and $ to match the start and end of lines.
+     */
     @Generated @NUInt public static final long AnchorsMatchLines = 0x0000000000000010L;
+    /**
+     * Treat only \n as a line separator (otherwise, all standard line separators are used).
+     */
     @Generated @NUInt public static final long UseUnixLineSeparators = 0x0000000000000020L;
+    /**
+     * Use Unicode TR#29 to specify word boundaries (otherwise, traditional regular expression word boundaries are used).
+     */
     @Generated @NUInt public static final long UseUnicodeWordBoundaries = 0x0000000000000040L;
 
     @Generated

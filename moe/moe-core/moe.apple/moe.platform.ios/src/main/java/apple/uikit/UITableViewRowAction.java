@@ -158,6 +158,9 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * default background color is dependent on style
+     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -176,6 +179,9 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
     @Selector("init")
     public native UITableViewRowAction init();
 
+    /**
+     * default background color is dependent on style
+     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);

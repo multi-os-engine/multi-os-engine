@@ -42,18 +42,30 @@ public final class sockaddr_storage extends StructObject {
         super(peer);
     }
 
+    /**
+     * address length
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native byte ss_len();
 
+    /**
+     * address length
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setSs_len(byte value);
 
+    /**
+     * [XSI] address family
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native byte ss_family();
 
+    /**
+     * [XSI] address family
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSs_family(byte value);
@@ -66,10 +78,16 @@ public final class sockaddr_storage extends StructObject {
     @StructureField(order = 2, isGetter = false, count = 6)
     public native void set__ss_pad1(byte value, int field_idx);
 
+    /**
+     * force structure storage alignment
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native long __ss_align();
 
+    /**
+     * force structure storage alignment
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void set__ss_align(long value);

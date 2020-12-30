@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract  A node for a MPSNNReshape kernel
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -90,6 +93,14 @@ public class MPSNNReshapeNode extends MPSNNFilterNode {
     @Selector("init")
     public native MPSNNReshapeNode init();
 
+    /**
+     * @abstract   Init a node representing a MPSNNReshape kernel
+     * @param      source                  The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      resultWidth             The width of the reshaped image.
+     * @param      resultHeight            The height of the reshaped image.
+     * @param      resultFeatureChannels   The number of feature channels in the reshaped image.
+     * @return     A new MPSNNFilter node for a MPSNNReshape kernel.
+     */
     @Generated
     @Selector("initWithSource:resultWidth:resultHeight:resultFeatureChannels:")
     public native MPSNNReshapeNode initWithSourceResultWidthResultHeightResultFeatureChannels(MPSNNImageNode source,
@@ -122,6 +133,14 @@ public class MPSNNReshapeNode extends MPSNNFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract   Init a node representing a autoreleased MPSNNReshape kernel
+     * @param      source                  The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      resultWidth             The width of the reshaped image.
+     * @param      resultHeight            The height of the reshaped image.
+     * @param      resultFeatureChannels   The number of feature channels in the reshaped image.
+     * @return     A new MPSNNFilter node for a MPSNNReshape kernel.
+     */
     @Generated
     @Selector("nodeWithSource:resultWidth:resultHeight:resultFeatureChannels:")
     public static native MPSNNReshapeNode nodeWithSourceResultWidthResultHeightResultFeatureChannels(

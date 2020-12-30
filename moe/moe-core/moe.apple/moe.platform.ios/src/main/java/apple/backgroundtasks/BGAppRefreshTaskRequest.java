@@ -23,6 +23,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract A request to briefly launch your app to keep its contents up to date.
+ * @discussion Schedule a refresh task request to ask that the system launch your app briefly so that you can download data and keep your app's contents up-to-date. The system will fulfill this request intelligently based on system conditions and app usage.
+ */
 @Generated
 @Library("BackgroundTasks")
 @Runtime(ObjCRuntime.class)

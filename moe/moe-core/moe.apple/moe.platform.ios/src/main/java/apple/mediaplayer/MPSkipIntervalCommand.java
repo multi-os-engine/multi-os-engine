@@ -155,10 +155,16 @@ public class MPSkipIntervalCommand extends MPRemoteCommand {
     @Selector("init")
     public native MPSkipIntervalCommand init();
 
+    /**
+     * An array of NSNumbers (NSTimeIntervals) that contain preferred skip intervals.
+     */
     @Generated
     @Selector("preferredIntervals")
     public native NSArray<? extends NSNumber> preferredIntervals();
 
+    /**
+     * An array of NSNumbers (NSTimeIntervals) that contain preferred skip intervals.
+     */
     @Generated
     @Selector("setPreferredIntervals:")
     public native void setPreferredIntervals(NSArray<? extends NSNumber> value);

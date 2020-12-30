@@ -21,12 +21,30 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSDateComponentsFormatterZeroFormattingBehavior {
+    /**
+     * drop none, pad none
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * Positional units: drop leading zeros, pad other zeros. All others: drop all zeros.
+     */
     @Generated @NUInt public static final long Default = 0x0000000000000001L;
+    /**
+     * Off: "0h 10m", On: "10m"
+     */
     @Generated @NUInt public static final long DropLeading = 0x0000000000000002L;
+    /**
+     * Off: "1h 0m 10s", On: "1h 10s"
+     */
     @Generated @NUInt public static final long DropMiddle = 0x0000000000000004L;
+    /**
+     * Off: "1h 0m", On: "1h"
+     */
     @Generated @NUInt public static final long DropTrailing = 0x0000000000000008L;
     @Generated @NUInt public static final long DropAll = 0x000000000000000EL;
+    /**
+     * Off: "1:0:10", On: "01:00:10"
+     */
     @Generated @NUInt public static final long Pad = 0x0000000000010000L;
 
     @Generated

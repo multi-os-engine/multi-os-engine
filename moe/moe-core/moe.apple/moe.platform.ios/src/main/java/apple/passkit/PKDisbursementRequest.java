@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * PKDisbursementRequest defines an application's request to disburse an amount
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -52,6 +55,9 @@ public class PKDisbursementRequest extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * An amount is always required. If the disbursement amount is pending, the amount should be zero
+     */
     @Generated
     @Selector("amount")
     public native NSDecimalNumber amount();
@@ -78,10 +84,16 @@ public class PKDisbursementRequest extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The merchant's ISO country code.
+     */
     @Generated
     @Selector("countryCode")
     public native String countryCode();
 
+    /**
+     * Currency code for this disbursement. The currency code is required unless the requestType is future
+     */
     @Generated
     @Selector("currencyCode")
     public native String currencyCode();
@@ -130,6 +142,9 @@ public class PKDisbursementRequest extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Specifies if the disbursement is a one time request or a future request
+     */
     @Generated
     @Selector("requestSchedule")
     @NInt
@@ -143,22 +158,37 @@ public class PKDisbursementRequest extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * An amount is always required. If the disbursement amount is pending, the amount should be zero
+     */
     @Generated
     @Selector("setAmount:")
     public native void setAmount(NSDecimalNumber value);
 
+    /**
+     * The merchant's ISO country code.
+     */
     @Generated
     @Selector("setCountryCode:")
     public native void setCountryCode(String value);
 
+    /**
+     * Currency code for this disbursement. The currency code is required unless the requestType is future
+     */
     @Generated
     @Selector("setCurrencyCode:")
     public native void setCurrencyCode(String value);
 
+    /**
+     * Specifies if the disbursement is a one time request or a future request
+     */
     @Generated
     @Selector("setRequestSchedule:")
     public native void setRequestSchedule(@NInt long value);
 
+    /**
+     * The summary items are optional. The final amount summary item will be prepopulated by the amount specified above.
+     */
     @Generated
     @Selector("setSummaryItems:")
     public native void setSummaryItems(NSArray<? extends PKPaymentSummaryItem> value);
@@ -167,6 +197,9 @@ public class PKDisbursementRequest extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The summary items are optional. The final amount summary item will be prepopulated by the amount specified above.
+     */
     @Generated
     @Selector("summaryItems")
     public native NSArray<? extends PKPaymentSummaryItem> summaryItems();

@@ -260,15 +260,40 @@ public class HKActivitySummaryQuery extends HKQuery {
     @Selector("init")
     public native HKActivitySummaryQuery init();
 
+    /**
+     *  @method        initWithPredicate:resultsHandler:
+     *  @abstract      Returns a query that will retrieve HKActivitySummaries matching the given predicate.
+     *  @discussion    If no updateHandler is set on the query, the query will automatically stop after calling resultsHandler.
+     *                 Otherwise, the query continues to run and calls the updateHandler as HKActivitySummaries matching the
+     *                 predicate are updated.
+     *  
+     *  @param         predicate  The predicate which HKActivitySummaries should match.
+     *  @param         handler    The block to invoke with results when the query has finished.
+     *  
+     */
     @Generated
     @Selector("initWithPredicate:resultsHandler:")
     public native HKActivitySummaryQuery initWithPredicateResultsHandler(NSPredicate predicate,
             @ObjCBlock(name = "call_initWithPredicateResultsHandler") Block_initWithPredicateResultsHandler handler);
 
+    /**
+     *  @property      updateHandler
+     *  @abstract      An optional handler to be called when activity summaries matching the given predicate are updated.
+     *  @discussion    This property may not be modified once the query has been executed. If this property is nonnull, then
+     *                 the query must be manually stopped.
+     *  
+     */
     @Generated
     @Selector("setUpdateHandler:")
     public native void setUpdateHandler(@ObjCBlock(name = "call_setUpdateHandler") Block_setUpdateHandler value);
 
+    /**
+     *  @property      updateHandler
+     *  @abstract      An optional handler to be called when activity summaries matching the given predicate are updated.
+     *  @discussion    This property may not be modified once the query has been executed. If this property is nonnull, then
+     *                 the query must be manually stopped.
+     *  
+     */
     @Generated
     @Selector("updateHandler")
     @ObjCBlock(name = "call_updateHandler_ret")

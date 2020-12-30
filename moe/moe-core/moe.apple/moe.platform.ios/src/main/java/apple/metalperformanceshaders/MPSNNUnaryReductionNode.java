@@ -25,6 +25,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract  A node for a unary MPSNNReduce node.
+ * @discussion This is an abstract base class that does not correspond with any
+ *             particular MPSCNNKernel. Please make one of the MPSNNReduction
+ *             subclasses instead.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -75,6 +81,9 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @abstract   The clip rectangle to apply to the source image.
+     */
     @Generated
     @Selector("clipRectSource")
     @ByValue
@@ -97,6 +106,11 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
     @Selector("init")
     public native MPSNNUnaryReductionNode init();
 
+    /**
+     * @abstract   Init a node representing an MPS reduction kernel.
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @return     A new MPSNNFilter node for an MPS reduction kernel.
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSNNUnaryReductionNode initWithSource(MPSNNImageNode sourceNode);
@@ -128,6 +142,11 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract   Create an autoreleased node representing an MPS reduction kernel.
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @return     A new MPSNNFilter node for an MPS reduction kernel.
+     */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSNNUnaryReductionNode nodeWithSource(MPSNNImageNode sourceNode);
@@ -140,6 +159,9 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract   The clip rectangle to apply to the source image.
+     */
     @Generated
     @Selector("setClipRectSource:")
     public native void setClipRectSource(@ByValue MTLRegion value);

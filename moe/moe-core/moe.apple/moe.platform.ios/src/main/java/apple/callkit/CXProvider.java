@@ -155,6 +155,9 @@ public class CXProvider extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The receiver's current configuration.
+     */
     @Generated
     @Selector("configuration")
     public native CXProviderConfiguration configuration();
@@ -163,48 +166,86 @@ public class CXProvider extends NSObject {
     @Selector("init")
     public native CXProvider init();
 
+    /**
+     * Initialize a new provider instance with the supplied configuration
+     */
     @Generated
     @Selector("initWithConfiguration:")
     public native CXProvider initWithConfiguration(CXProviderConfiguration configuration);
 
+    /**
+     * Invalidate the receiver. All existing calls will be marked as ended in failure. The provider must be invalidated before it is deallocated.
+     */
     @Generated
     @Selector("invalidate")
     public native void invalidate();
 
+    /**
+     * Returns subset of call actions contained in any transaction in -pendingTransactions of the specified class and with the specified call UUID.
+     */
     @Generated
     @Selector("pendingCallActionsOfClass:withCallUUID:")
     public native NSArray<? extends CXCallAction> pendingCallActionsOfClassWithCallUUID(Class callActionClass,
             NSUUID callUUID);
 
+    /**
+     * List of all transactions that are incomplete.
+     */
     @Generated
     @Selector("pendingTransactions")
     public native NSArray<? extends CXTransaction> pendingTransactions();
 
+    /**
+     * Report that a call ended. A nil value for `dateEnded` results in the ended date being set to now.
+     */
     @Generated
     @Selector("reportCallWithUUID:endedAtDate:reason:")
     public native void reportCallWithUUIDEndedAtDateReason(NSUUID UUID, NSDate dateEnded, @NInt long endedReason);
 
+    /**
+     * Report an update to call information.
+     */
     @Generated
     @Selector("reportCallWithUUID:updated:")
     public native void reportCallWithUUIDUpdated(NSUUID UUID, CXCallUpdate update);
 
+    /**
+     * Report a new incoming call to the system.
+     * 
+     * If completion is invoked with a non-nil `error`, the incoming call has been disallowed by the system and will not be displayed, so the provider should not proceed with the call.
+     * 
+     * Completion block will be called on delegate queue, if specified, otherwise on a private serial queue.
+     */
     @Generated
     @Selector("reportNewIncomingCallWithUUID:update:completion:")
     public native void reportNewIncomingCallWithUUIDUpdateCompletion(NSUUID UUID, CXCallUpdate update,
             @ObjCBlock(name = "call_reportNewIncomingCallWithUUIDUpdateCompletion") Block_reportNewIncomingCallWithUUIDUpdateCompletion completion);
 
+    /**
+     * Report that an outgoing call connected. A nil value for `dateConnected` results in the connected date being set to now.
+     */
     @Generated
     @Selector("reportOutgoingCallWithUUID:connectedAtDate:")
     public native void reportOutgoingCallWithUUIDConnectedAtDate(NSUUID UUID, NSDate dateConnected);
 
+    /**
+     * Report that an outgoing call started connecting. A nil value for `dateStartedConnecting` results in the started connecting date being set to now.
+     */
     @Generated
     @Selector("reportOutgoingCallWithUUID:startedConnectingAtDate:")
     public native void reportOutgoingCallWithUUIDStartedConnectingAtDate(NSUUID UUID, NSDate dateStartedConnecting);
 
+    /**
+     * The receiver's current configuration.
+     */
     @Generated
     @Selector("setConfiguration:")
     public native void setConfiguration(CXProviderConfiguration value);
 
+    /**
+     * Set delegate and optional queue for delegate callbacks to be performed on.
+     * A nil queue implies that delegate callbacks should happen on the main queue. The delegate is stored weakly
+     */
     @Generated
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(@Mapped(ObjCObjectMapper.class) CXProviderDelegate delegate, NSObject queue);

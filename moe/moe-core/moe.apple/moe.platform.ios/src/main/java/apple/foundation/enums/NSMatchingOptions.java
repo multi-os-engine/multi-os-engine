@@ -21,10 +21,25 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSMatchingOptions {
+    /**
+     * Call the block periodically during long-running match operations.
+     */
     @Generated @NUInt public static final long ReportProgress = 0x0000000000000001L;
+    /**
+     * Call the block once after the completion of any matching.
+     */
     @Generated @NUInt public static final long ReportCompletion = 0x0000000000000002L;
+    /**
+     * Limit matches to those at the start of the search range.
+     */
     @Generated @NUInt public static final long Anchored = 0x0000000000000004L;
+    /**
+     * Allow matching to look beyond the bounds of the search range.
+     */
     @Generated @NUInt public static final long WithTransparentBounds = 0x0000000000000008L;
+    /**
+     * Prevent ^ and $ from automatically matching the beginning and end of the search range.
+     */
     @Generated @NUInt public static final long WithoutAnchoringBounds = 0x0000000000000010L;
 
     @Generated

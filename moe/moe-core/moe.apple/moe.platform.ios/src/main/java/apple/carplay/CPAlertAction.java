@@ -27,6 +27,15 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @c CPAlertAction represents a single action that appears inside of a @c CPActionSheetTemplate or @c CPAlertTemplate.
+ * 
+ * The style of the parent template and the style of the @c CPAlertAction will together
+ * determine the action's appearance.
+ * 
+ * The action has a customizable title, style, and a block callback
+ * that is invoked when the user taps this button.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -114,6 +123,10 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPAlertAction initWithCoder(NSCoder coder);
 
+    /**
+     * Create an alert action with a title, display style, and a callback handler that is invoked
+     * when the user taps this action.
+     */
     @Generated
     @Selector("initWithTitle:style:handler:")
     public native CPAlertAction initWithTitleStyleHandler(String title, @NUInt long style,

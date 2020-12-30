@@ -28,11 +28,33 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @protocol AVCaptureMetadataOutputObjectsDelegate
+ * @abstract
+ *    Defines an interface for delegates of AVCaptureMetadataOutput to receive emitted objects.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVCaptureMetadataOutputObjectsDelegate")
 public interface AVCaptureMetadataOutputObjectsDelegate {
+    /**
+     * @method captureOutput:didOutputMetadataObjects:fromConnection:
+     * @abstract
+     *    Called whenever an AVCaptureMetadataOutput instance emits new objects through a connection.
+     * 
+     * @param output
+     *    The AVCaptureMetadataOutput instance that emitted the objects.
+     * @param metadataObjects
+     *    An array of AVMetadataObject subclasses (see AVMetadataObject.h).
+     * @param connection
+     *    The AVCaptureConnection through which the objects were emitted.
+     * 
+     * @discussion
+     *    Delegates receive this message whenever the output captures and emits new objects, as specified by its metadataObjectTypes property. Delegates can use the provided objects in conjunction with other APIs for further processing. This method will be called on the dispatch queue specified by the output's metadataObjectsCallbackQueue property. This method may be called frequently, so it must be efficient to prevent capture performance problems, including dropped metadata objects.
+     * 
+     *    Clients that need to reference metadata objects outside of the scope of this method must retain them and then release them when they are finished with them.
+     */
     @Generated
     @IsOptional
     @Selector("captureOutput:didOutputMetadataObjects:fromConnection:")

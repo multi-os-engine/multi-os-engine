@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class			AVPlayerItemErrorLogEvent
+ * @abstract		An AVPlayerItemErrorLogEvent represents a single log entry.
+ * @discussion	An AVPlayerItemErrorLogEvent provides named properties for accessing the data
+ * 			fields of each log event. None of the properties of this class are observable.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -152,6 +158,12 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property		URI
+     * @abstract		The URI of the playback item. Can be nil.
+     * @discussion	If nil is returned the URI is unknown. Corresponds to "uri".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("URI")
     public native String URI();
@@ -162,18 +174,42 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * @property		date
+     * @abstract		The date and time when the error occured. Can be nil.
+     * @discussion	If nil is returned the date is unknown. Corresponds to "date".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("date")
     public native NSDate date();
 
+    /**
+     * @property		errorComment
+     * @abstract		A description of the error encountered. Can be nil.
+     * @discussion	If nil is returned further information is not available. Corresponds to "comment".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("errorComment")
     public native String errorComment();
 
+    /**
+     * @property		errorDomain
+     * @abstract		The domain of the error.
+     * @discussion	Corresponds to "domain".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("errorDomain")
     public native String errorDomain();
 
+    /**
+     * @property		errorStatusCode
+     * @abstract		A unique error code identifier.
+     * @discussion	Corresponds to "status".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("errorStatusCode")
     @NInt
@@ -183,10 +219,22 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     @Selector("init")
     public native AVPlayerItemErrorLogEvent init();
 
+    /**
+     * @property		playbackSessionID
+     * @abstract		A GUID that identifies the playback session. This value is used in HTTP requests. Can be nil.
+     * @discussion	If nil is returned the GUID is unknown. Corresponds to "cs-guid".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("playbackSessionID")
     public native String playbackSessionID();
 
+    /**
+     * @property		serverAddress
+     * @abstract		The IP address of the server that was the source of the error. Can be nil.
+     * @discussion	If nil is returned the address is unknown. Can be either an IPv4 or IPv6 address. Corresponds to "s-ip".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();

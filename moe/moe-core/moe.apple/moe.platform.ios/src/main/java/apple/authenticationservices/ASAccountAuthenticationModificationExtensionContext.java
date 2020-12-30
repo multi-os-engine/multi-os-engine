@@ -69,6 +69,9 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * @abstract Used to either ask for user interaction in a request or to fail a request.
+     */
     @Generated
     @Selector("cancelRequestWithError:")
     public native void cancelRequestWithError(NSError error);
@@ -81,11 +84,24 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @abstract Confirms successful completion of a strong password upgrade.
+     * @param updatedCredential contains the account username and new password.
+     * @param userInfo For upgrades invoked within the extension's containing app, any
+     * information the extension wants to pass back to the app.
+     */
     @Generated
     @Selector("completeChangePasswordRequestWithUpdatedCredential:userInfo:")
     public native void completeChangePasswordRequestWithUpdatedCredentialUserInfo(
             ASPasswordCredential updatedCredential, NSDictionary<?, ?> userInfo);
 
+    /**
+     * @abstract Confirms successful completion of a Sign in with Apple upgrade.
+     * @param userInfo For upgrades invoked within the extension's containing app, any
+     * information the extension wants to pass back to the app.
+     * @discussion Once a Sign in with Apple upgrade is completed, the system will delete
+     * the password-based credential from the Keychain, if it is saved there.
+     */
     @Generated
     @Selector("completeUpgradeToSignInWithAppleWithUserInfo:")
     public native void completeUpgradeToSignInWithAppleWithUserInfo(NSDictionary<?, ?> userInfo);
@@ -98,6 +114,14 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract Retrieves a Sign in with Apple credential from the system.
+     * @param state Can be specified to enhance security. State is returned in the ASAuthorizationAppleIDCredential.
+     * @param nonce Can be specified to enhance security. The returned identityToken on the ASAuthorizationAppleIDCredential can be exchanged with the server for the nonce.
+     * @discussion Calling this method will cause the system Sign in with Apple upgrade sheet
+     * to appear. If extension UI is showing when this method is called, the extension UI will be
+     * dismissed before the sheet is presented.
+     */
     @Generated
     @Selector("getSignInWithAppleUpgradeAuthorizationWithState:nonce:completionHandler:")
     public native void getSignInWithAppleUpgradeAuthorizationWithStateNonceCompletionHandler(String state, String nonce,

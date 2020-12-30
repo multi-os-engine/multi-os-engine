@@ -151,6 +151,9 @@ public class UIPress extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * For analog buttons, returns a value between 0 and 1.  Digital buttons return 0 or 1.
+     */
     @Generated
     @Selector("force")
     @NFloat
@@ -186,6 +189,10 @@ public class UIPress extends NSObject {
     @Selector("window")
     public native UIWindow window();
 
+    /**
+     * For presses that originate from a hardware keyboard, contains a UIKey object describing the key being acted upon.
+     * This property is nil if the press did not originate from a hardware keyboard.
+     */
     @Generated
     @Selector("key")
     public native UIKey key();

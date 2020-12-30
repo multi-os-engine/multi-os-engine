@@ -123,14 +123,24 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract Nonce to be passed to the identity provider.  This value can be verified with the identity token provided as a part of successful ASAuthorization response.
+     * @note The nonce size may depend on the actual technology used and an error might be returned by the request execution.
+     */
     @Generated
     @Selector("nonce")
     public native String nonce();
 
+    /**
+     * @abstract Operation to be executed by the request. The ASAuthorizationOperationImplicit operation interpretation depends on the credential provider implementation.
+     */
     @Generated
     @Selector("requestedOperation")
     public native String requestedOperation();
 
+    /**
+     * @abstract The contact information to be requested from the user.  Only scopes for which this app was authorized for will be returned.
+     */
     @Generated
     @Selector("requestedScopes")
     public native NSArray<String> requestedScopes();
@@ -143,18 +153,32 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract Nonce to be passed to the identity provider.  This value can be verified with the identity token provided as a part of successful ASAuthorization response.
+     * @note The nonce size may depend on the actual technology used and an error might be returned by the request execution.
+     */
     @Generated
     @Selector("setNonce:")
     public native void setNonce(String value);
 
+    /**
+     * @abstract Operation to be executed by the request. The ASAuthorizationOperationImplicit operation interpretation depends on the credential provider implementation.
+     */
     @Generated
     @Selector("setRequestedOperation:")
     public native void setRequestedOperation(String value);
 
+    /**
+     * @abstract The contact information to be requested from the user.  Only scopes for which this app was authorized for will be returned.
+     */
     @Generated
     @Selector("setRequestedScopes:")
     public native void setRequestedScopes(NSArray<String> value);
 
+    /**
+     * @abstract State to be passed to the identity provider.  This value will be returned as a part of successful ASAuthorization response.
+     * @note The state size may depend on the actual technology used and an error might be returned by the request execution. 
+     */
     @Generated
     @Selector("setState:")
     public native void setState(String value);
@@ -163,6 +187,10 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @abstract State to be passed to the identity provider.  This value will be returned as a part of successful ASAuthorization response.
+     * @note The state size may depend on the actual technology used and an error might be returned by the request execution. 
+     */
     @Generated
     @Selector("state")
     public native String state();

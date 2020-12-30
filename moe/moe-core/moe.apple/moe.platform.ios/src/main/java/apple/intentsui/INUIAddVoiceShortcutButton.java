@@ -231,6 +231,10 @@ public class INUIAddVoiceShortcutButton extends UIButton {
     @Selector("commitAnimations")
     public static native void commitAnimations();
 
+    /**
+     * @abstract A custom corner radius for the @c INUIAddVoiceShortcutButton.
+     * @discussion If the provided corner radius is greater than half of the button’s height, it will be capped at half of the button’s height.
+     */
     @Generated
     @Selector("cornerRadius")
     @NFloat
@@ -383,6 +387,10 @@ public class INUIAddVoiceShortcutButton extends UIButton {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * @abstract A custom corner radius for the @c INUIAddVoiceShortcutButton.
+     * @discussion If the provided corner radius is greater than half of the button’s height, it will be capped at half of the button’s height.
+     */
     @Generated
     @Selector("setCornerRadius:")
     public native void setCornerRadius(@NFloat double value);

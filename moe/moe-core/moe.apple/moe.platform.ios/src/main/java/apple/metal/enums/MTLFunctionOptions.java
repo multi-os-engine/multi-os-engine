@@ -9,6 +9,13 @@ public final class MTLFunctionOptions {
     private MTLFunctionOptions() {
     }
 
+    /**
+     * @brief Default usage
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * @brief Compiles the found function. This enables dynamic linking of this `MTLFunction`.
+     * Only supported for `visible` functions.
+     */
     @Generated @NUInt public static final long CompileToBinary = 0x0000000000000001L;
 }

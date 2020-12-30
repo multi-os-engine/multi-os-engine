@@ -14,6 +14,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIColorPickerViewControllerDelegate")
 public interface UIColorPickerViewControllerDelegate {
+    /**
+     * In presentations (except popovers) the color picker shows a close button. If the close button is tapped,
+     * the view controller is dismissed and `colorPickerViewControllerDidFinish:` is called. Can be used to
+     * animate alongside the dismissal.
+     */
     @Generated
     @IsOptional
     @Selector("colorPickerViewControllerDidFinish:")
@@ -21,6 +26,9 @@ public interface UIColorPickerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the `selectedColor` changes.
+     */
     @Generated
     @IsOptional
     @Selector("colorPickerViewControllerDidSelectColor:")

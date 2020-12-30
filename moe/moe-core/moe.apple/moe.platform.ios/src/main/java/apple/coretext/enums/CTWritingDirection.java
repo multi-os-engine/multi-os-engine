@@ -18,6 +18,20 @@ package apple.coretext.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum       CTWritingDirection
+ * @abstract   These constants specify the writing direction
+ * 
+ * @constant   kCTWritingDirectionNatural
+ *             The writing direction is algorithmically determined
+ *             using the Unicode Bidirectional Algorithm rules P2 and P3.
+ * 
+ * @constant   kCTWritingDirectionLeftToRight
+ *             The writing direction is left to right.
+ * 
+ * @constant   kCTWritingDirectionRightToLeft
+ *             The writing direction is right to left.
+ */
 @Generated
 public final class CTWritingDirection {
     @Generated public static final byte Natural = -1;

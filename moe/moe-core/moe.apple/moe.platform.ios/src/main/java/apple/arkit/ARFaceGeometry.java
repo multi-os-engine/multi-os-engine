@@ -30,6 +30,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An object representing the geometry of a face.
+ * @discussion The face geometry will have a constant number of triangles
+ * and vertices, updating only the vertex positions from frame to frame.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -103,6 +108,13 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("init")
     public native ARFaceGeometry init();
 
+    /**
+     * Creates and returns a face geometry by applying a set of given blend shape coefficients.
+     * 
+     * @discussion An empty dictionary can be provided to create a neutral face geometry.
+     * @param blendShapes A dictionary of blend shape coefficients.
+     * @return Face geometry after applying the blend shapes.
+     */
     @Generated
     @Selector("initWithBlendShapes:")
     public native ARFaceGeometry initWithBlendShapes(NSDictionary<String, ? extends NSNumber> blendShapes);
@@ -150,16 +162,25 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * The number of texture coordinates of the face geometry.
+     */
     @Generated
     @Selector("textureCoordinateCount")
     @NUInt
     public native long textureCoordinateCount();
 
+    /**
+     * The number of triangles of the face geometry.
+     */
     @Generated
     @Selector("triangleCount")
     @NUInt
     public native long triangleCount();
 
+    /**
+     * The triangle indices of the geometry.
+     */
     @Generated
     @Selector("triangleIndices")
     public native ConstShortPtr triangleIndices();
@@ -169,6 +190,9 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
     @NInt
     public static native long version_static();
 
+    /**
+     * The number of mesh vertices of the geometry.
+     */
     @Generated
     @Selector("vertexCount")
     @NUInt

@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A now playing button that can be used to allow the user to add the current
+ * playing item to a collection, like their library.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)

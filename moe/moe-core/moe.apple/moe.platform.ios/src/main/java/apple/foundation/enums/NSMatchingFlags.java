@@ -21,10 +21,25 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSMatchingFlags {
+    /**
+     * Set when the block is called to report progress during a long-running match operation.
+     */
     @Generated @NUInt public static final long Progress = 0x0000000000000001L;
+    /**
+     * Set when the block is called after completion of any matching.
+     */
     @Generated @NUInt public static final long Completed = 0x0000000000000002L;
+    /**
+     * Set when the current match operation reached the end of the search range.
+     */
     @Generated @NUInt public static final long HitEnd = 0x0000000000000004L;
+    /**
+     * Set when the current match depended on the location of the end of the search range.
+     */
     @Generated @NUInt public static final long RequiredEnd = 0x0000000000000008L;
+    /**
+     * Set when matching failed due to an internal error.
+     */
     @Generated @NUInt public static final long InternalError = 0x0000000000000010L;
 
     @Generated

@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract This class allows your application to produce a higher fidelity, PDF screenshot to the user. Set the delegate so that when a screenshot is taken, screenshots can show the full document content from the application.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -78,6 +81,9 @@ public class UIScreenshotService extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * @abstract Assign a delegate in order to send PDF data to accompany the screenshot taken by the user
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -131,10 +137,16 @@ public class UIScreenshotService extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract Assign a delegate in order to send PDF data to accompany the screenshot taken by the user
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIScreenshotServiceDelegate value);
 
+    /**
+     * @abstract Assign a delegate in order to send PDF data to accompany the screenshot taken by the user
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIScreenshotServiceDelegate value) {
         Object __old = delegate();
@@ -160,6 +172,9 @@ public class UIScreenshotService extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract The window scene associated with the screenshot service
+     */
     @Generated
     @Selector("windowScene")
     public native UIWindowScene windowScene();

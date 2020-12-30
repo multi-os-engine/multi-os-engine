@@ -19,6 +19,10 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @brief This enumeration describes the possible error constants that can be
+ *        returned from the the HomeKit APIs.
+ */
 @Generated
 public final class HMErrorCode {
     @Generated @NInt public static final long AlreadyExists = 0x0000000000000001L;

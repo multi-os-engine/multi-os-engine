@@ -49,18 +49,30 @@ public final class CVPlanarComponentInfo extends StructObject {
         setRowBytes(rowBytes);
     }
 
+    /**
+     * offset from main base address to base address of this plane, big-endian
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int offset();
 
+    /**
+     * offset from main base address to base address of this plane, big-endian
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setOffset(int value);
 
+    /**
+     * bytes per row of this plane, big-endian
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int rowBytes();
 
+    /**
+     * bytes per row of this plane, big-endian
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setRowBytes(int value);

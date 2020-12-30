@@ -153,6 +153,12 @@ public class HKStatisticsCollection extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @method        enumerateStatisticsFromDate:toDate:withBlock:
+     * @abstract      Enumerates all statistics objects from startDate to endDate.
+     * @discussion    Statistics objects will be enumerated in chronological order. If there are no samples for an interval
+     *                between the start and end date, then the HKStatistics object for that interval will have nil quantities.
+     */
     @Generated
     @Selector("enumerateStatisticsFromDate:toDate:withBlock:")
     public native void enumerateStatisticsFromDateToDateWithBlock(NSDate startDate, NSDate endDate,
@@ -162,14 +168,30 @@ public class HKStatisticsCollection extends NSObject {
     @Selector("init")
     public native HKStatisticsCollection init();
 
+    /**
+     * @method        sources
+     * @abstract      Returns all HKSources found in the contained HKStatistics objects.
+     * @discussion    Sources will be empty unless HKStatisticsOptionSeparateBySource is specified in the
+     *                HKStatisticsCollectionQuery options.
+     */
     @Generated
     @Selector("sources")
     public native NSSet<? extends HKSource> sources();
 
+    /**
+     * @method        statistics
+     * @abstract      Returns a copy of the populated statistics objects.
+     * @discussion    The statistics objects are ordered chronologically.
+     */
     @Generated
     @Selector("statistics")
     public native NSArray<? extends HKStatistics> statistics();
 
+    /**
+     * @method        statisticsForDate:
+     * @abstract      Returns the statistics object that this date is inside of
+     * @discussion    If there are no samples for the given date, an HKStatistics instance with nil quantities will be returned.
+     */
     @Generated
     @Selector("statisticsForDate:")
     public native HKStatistics statisticsForDate(NSDate date);

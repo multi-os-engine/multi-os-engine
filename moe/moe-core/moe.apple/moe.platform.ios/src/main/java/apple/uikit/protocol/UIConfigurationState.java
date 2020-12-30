@@ -18,11 +18,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIConfigurationState")
 public interface UIConfigurationState extends NSCopying, NSSecureCoding {
+    /**
+     * Returns the custom state for the specified key.
+     */
     @Generated
     @Selector("customStateForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     Object customStateForKey(String key);
 
+    /**
+     * Returns a new instance with the specified trait collection.
+     */
     @Generated
     @Selector("initWithTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -33,6 +39,9 @@ public interface UIConfigurationState extends NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     Object objectForKeyedSubscript(String key);
 
+    /**
+     * Sets the custom state for the specified key.
+     */
     @Generated
     @Selector("setCustomState:forKey:")
     void setCustomStateForKey(@Mapped(ObjCObjectMapper.class) Object customState, String key);

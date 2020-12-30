@@ -25,6 +25,24 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract         MPSCNNDepthWiseConvolutionDescriptor can be used to create MPSCNNConvolution object that does depthwise convolution
+ * @discussion
+ *                   Depthwise convolution applies different filter to each input feature channel i.e. no cross channel mixing.
+ *                   Number of outputFeatureChannels can be greater than number of inputFeatureChannels, in which case convolution
+ *                   expects channelMultipler = outputFeactureChannels/inputFeatureChannels number of filters for each input channel.
+ *                   This means channelMultipler filters are applied to each input feature channel producing channelMultipler output feature channels.
+ *                   All channelMultipler output feature channels produced by single input feature channel are stored togather in output image i.e.
+ *                             output[x,y,k*channelMultiplier + q] = input[x,y,k] * filter[k,q]
+ *                   where * here denotes convolution.
+ *                   group must be 1.
+ *                   Weights array returned by MPSCNNConvolutionDataProvier is interpreted as
+ *                             Weights [inputFeatureChannels] [channelMultiplier] [kH] [kW]
+ *                           = Weights [ inputFeatureChannels * channelMultiplier ] [kH] [kW]
+ *                           = Weights [ outputFeatureChannels ] [kH] [kW]
+ * 
+ *                   Currently only channel multipler of 1 is supported i.e. inputFeatureChannels == outputFeatureChannels
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -67,6 +85,11 @@ public class MPSCNNDepthWiseConvolutionDescriptor extends MPSCNNConvolutionDescr
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * @property      channelMultiplier
+     * @discussion    Ratio of outputFeactureChannel to inputFeatureChannels for depthwise convolution i.e. how many output feature channels are
+     *                produced by each input channel.
+     */
     @Generated
     @Selector("channelMultiplier")
     @NUInt

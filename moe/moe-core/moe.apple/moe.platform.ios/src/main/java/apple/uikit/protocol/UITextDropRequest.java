@@ -16,19 +16,33 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextDropRequest")
 public interface UITextDropRequest {
+    /**
+     * The text position that the drag is over.
+     */
     @Generated
     @Selector("dropPosition")
     UITextPosition dropPosition();
 
+    /**
+     * The current drop session. Use this to get the location of the
+     * session in the view, for example.
+     */
     @Generated
     @Selector("dropSession")
     @MappedReturn(ObjCObjectMapper.class)
     UIDropSession dropSession();
 
+    /**
+     * Returns whether the drop is a local drop
+     * (that is, the drag and drop are in the same text control).
+     */
     @Generated
     @Selector("isSameView")
     boolean isSameView();
 
+    /**
+     * The suggested proposal by the text control.
+     */
     @Generated
     @Selector("suggestedProposal")
     UITextDropProposal suggestedProposal();

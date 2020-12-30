@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class		MIDICIDeviceInfo
+ * @brief  	An NSObject containing basic information about a MIDI-CI-capable node.
+ */
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)
@@ -89,6 +93,9 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * 2 bytes
+     */
     @Generated
     @Selector("family")
     public native NSData family();
@@ -132,14 +139,23 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * 3 bytes
+     */
     @Generated
     @Selector("manufacturerID")
     public native NSData manufacturerID();
 
+    /**
+     * The MIDI destination used by device's MIDI entity for capability inquiries.
+     */
     @Generated
     @Selector("midiDestination")
     public native int midiDestination();
 
+    /**
+     * 2 bytes
+     */
     @Generated
     @Selector("modelNumber")
     public native NSData modelNumber();
@@ -158,6 +174,9 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * 4 bytes
+     */
     @Generated
     @Selector("revisionLevel")
     public native NSData revisionLevel();

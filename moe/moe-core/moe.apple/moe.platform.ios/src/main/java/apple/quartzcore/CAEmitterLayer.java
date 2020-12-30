@@ -175,10 +175,19 @@ public class CAEmitterLayer extends CALayer {
     @NInt
     public static native long version_static();
 
+    /**
+     * The birth rate of each cell is multiplied by this number to give the
+     * actual number of particles created every second. Default value is one.
+     * Animatable.
+     */
     @Generated
     @Selector("birthRate")
     public native float birthRate();
 
+    /**
+     * The array of emitter cells attached to the layer. Each object must
+     * have the CAEmitterCell class.
+     */
     @Generated
     @Selector("emitterCells")
     public native NSArray<? extends CAEmitterCell> emitterCells();
@@ -188,19 +197,37 @@ public class CAEmitterLayer extends CALayer {
     @NFloat
     public native double emitterDepth();
 
+    /**
+     * A string defining how particles are created relative to the emission
+     * shape. Current options are `points', `outline', `surface' and
+     * `volume' (the default).
+     */
     @Generated
     @Selector("emitterMode")
     public native String emitterMode();
 
+    /**
+     * The center of the emission shape. Defaults to (0, 0, 0). Animatable.
+     */
     @Generated
     @Selector("emitterPosition")
     @ByValue
     public native CGPoint emitterPosition();
 
+    /**
+     * A string defining the type of emission shape used. Current options are:
+     * `point' (the default), `line', `rectangle', `circle', `cuboid' and
+     * `sphere'.
+     */
     @Generated
     @Selector("emitterShape")
     public native String emitterShape();
 
+    /**
+     * The size of the emission shape. Defaults to (0, 0, 0). Animatable.
+     * Depending on the `emitterShape' property some of the values may be
+     * ignored.
+     */
     @Generated
     @Selector("emitterSize")
     @ByValue
@@ -223,30 +250,66 @@ public class CAEmitterLayer extends CALayer {
     @Selector("initWithLayer:")
     public native CAEmitterLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
+    /**
+     * The cell lifetime range is multiplied by this value when particles are
+     * created. Defaults to one. Animatable.
+     */
     @Generated
     @Selector("lifetime")
     public native float lifetime();
 
+    /**
+     * When true the particles are rendered as if they directly inhabit the
+     * three dimensional coordinate space of the layer's superlayer, rather
+     * than being flattened into the layer's plane first. Defaults to NO.
+     * If true, the effect of the `filters', `backgroundFilters' and shadow-
+     * related properties of the layer is undefined.
+     */
     @Generated
     @Selector("preservesDepth")
     public native boolean preservesDepth();
 
+    /**
+     * A string defining how particles are composited into the layer's
+     * image. Current options are `unordered' (the default), `oldestFirst',
+     * `oldestLast', `backToFront' (i.e. sorted into Z order) and
+     * `additive'. The first four use source-over compositing, the last
+     * uses additive compositing.
+     */
     @Generated
     @Selector("renderMode")
     public native String renderMode();
 
+    /**
+     * Multiplies the cell-defined particle scale. Defaults to one. Animatable.
+     */
     @Generated
     @Selector("scale")
     public native float scale();
 
+    /**
+     * The seed used to initialize the random number generator. Defaults to
+     * zero. Each layer has its own RNG state. For properties with a mean M
+     * and a range R, random values of the properties are uniformly
+     * distributed in the interval [M - R/2, M + R/2].
+     */
     @Generated
     @Selector("seed")
     public native int seed();
 
+    /**
+     * The birth rate of each cell is multiplied by this number to give the
+     * actual number of particles created every second. Default value is one.
+     * Animatable.
+     */
     @Generated
     @Selector("setBirthRate:")
     public native void setBirthRate(float value);
 
+    /**
+     * The array of emitter cells attached to the layer. Each object must
+     * have the CAEmitterCell class.
+     */
     @Generated
     @Selector("setEmitterCells:")
     public native void setEmitterCells(NSArray<? extends CAEmitterCell> value);
@@ -255,18 +318,36 @@ public class CAEmitterLayer extends CALayer {
     @Selector("setEmitterDepth:")
     public native void setEmitterDepth(@NFloat double value);
 
+    /**
+     * A string defining how particles are created relative to the emission
+     * shape. Current options are `points', `outline', `surface' and
+     * `volume' (the default).
+     */
     @Generated
     @Selector("setEmitterMode:")
     public native void setEmitterMode(String value);
 
+    /**
+     * The center of the emission shape. Defaults to (0, 0, 0). Animatable.
+     */
     @Generated
     @Selector("setEmitterPosition:")
     public native void setEmitterPosition(@ByValue CGPoint value);
 
+    /**
+     * A string defining the type of emission shape used. Current options are:
+     * `point' (the default), `line', `rectangle', `circle', `cuboid' and
+     * `sphere'.
+     */
     @Generated
     @Selector("setEmitterShape:")
     public native void setEmitterShape(String value);
 
+    /**
+     * The size of the emission shape. Defaults to (0, 0, 0). Animatable.
+     * Depending on the `emitterShape' property some of the values may be
+     * ignored.
+     */
     @Generated
     @Selector("setEmitterSize:")
     public native void setEmitterSize(@ByValue CGSize value);
@@ -275,38 +356,79 @@ public class CAEmitterLayer extends CALayer {
     @Selector("setEmitterZPosition:")
     public native void setEmitterZPosition(@NFloat double value);
 
+    /**
+     * The cell lifetime range is multiplied by this value when particles are
+     * created. Defaults to one. Animatable.
+     */
     @Generated
     @Selector("setLifetime:")
     public native void setLifetime(float value);
 
+    /**
+     * When true the particles are rendered as if they directly inhabit the
+     * three dimensional coordinate space of the layer's superlayer, rather
+     * than being flattened into the layer's plane first. Defaults to NO.
+     * If true, the effect of the `filters', `backgroundFilters' and shadow-
+     * related properties of the layer is undefined.
+     */
     @Generated
     @Selector("setPreservesDepth:")
     public native void setPreservesDepth(boolean value);
 
+    /**
+     * A string defining how particles are composited into the layer's
+     * image. Current options are `unordered' (the default), `oldestFirst',
+     * `oldestLast', `backToFront' (i.e. sorted into Z order) and
+     * `additive'. The first four use source-over compositing, the last
+     * uses additive compositing.
+     */
     @Generated
     @Selector("setRenderMode:")
     public native void setRenderMode(String value);
 
+    /**
+     * Multiplies the cell-defined particle scale. Defaults to one. Animatable.
+     */
     @Generated
     @Selector("setScale:")
     public native void setScale(float value);
 
+    /**
+     * The seed used to initialize the random number generator. Defaults to
+     * zero. Each layer has its own RNG state. For properties with a mean M
+     * and a range R, random values of the properties are uniformly
+     * distributed in the interval [M - R/2, M + R/2].
+     */
     @Generated
     @Selector("setSeed:")
     public native void setSeed(int value);
 
+    /**
+     * Multiplies the cell-defined particle spin. Defaults to one. Animatable.
+     */
     @Generated
     @Selector("setSpin:")
     public native void setSpin(float value);
 
+    /**
+     * Multiplies the cell-defined particle velocity. Defaults to one.
+     * Animatable.
+     */
     @Generated
     @Selector("setVelocity:")
     public native void setVelocity(float value);
 
+    /**
+     * Multiplies the cell-defined particle spin. Defaults to one. Animatable.
+     */
     @Generated
     @Selector("spin")
     public native float spin();
 
+    /**
+     * Multiplies the cell-defined particle velocity. Defaults to one.
+     * Animatable.
+     */
     @Generated
     @Selector("velocity")
     public native float velocity();

@@ -78,6 +78,9 @@ public class HMNetworkConfigurationProfile extends HMAccessoryProfile {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * @abstract   The delegate of the receiver.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -109,6 +112,9 @@ public class HMNetworkConfigurationProfile extends HMAccessoryProfile {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * @abstract   Indicates if the associated accessory's access to the network is restricted.
+     */
     @Generated
     @Selector("isNetworkAccessRestricted")
     public native boolean isNetworkAccessRestricted();
@@ -135,10 +141,16 @@ public class HMNetworkConfigurationProfile extends HMAccessoryProfile {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract   The delegate of the receiver.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMNetworkConfigurationProfileDelegate value);
 
+    /**
+     * @abstract   The delegate of the receiver.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) HMNetworkConfigurationProfileDelegate value) {
         Object __old = delegate();

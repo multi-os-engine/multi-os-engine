@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Node representing a @ref MPSNNGramMatrixCalculationGradient kernel
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -51,6 +54,10 @@ public class MPSNNGramMatrixCalculationGradientNode extends MPSNNGradientFilterN
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @property   alpha
+     * @abstract   Scaling factor for the output. Default: 1.0f.
+     */
     @Generated
     @Selector("alpha")
     public native float alpha();

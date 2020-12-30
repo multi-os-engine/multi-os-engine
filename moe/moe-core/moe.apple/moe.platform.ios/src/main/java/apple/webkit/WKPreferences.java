@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A WKPreferences object encapsulates the preference settings for a web
+ * view. The preferences object associated with a web view is specified by
+ * its web view configuration.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -166,6 +171,11 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native WKPreferences initWithCoder(NSCoder coder);
 
+    /**
+     * @abstract A Boolean value indicating whether JavaScript can open
+     * windows without user interaction.
+     * @discussion The default value is NO in iOS and YES in OS X.
+     */
     @Generated
     @Selector("javaScriptCanOpenWindowsAutomatically")
     public native boolean javaScriptCanOpenWindowsAutomatically();
@@ -174,11 +184,20 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     @Selector("javaScriptEnabled")
     public native boolean javaScriptEnabled();
 
+    /**
+     * @abstract The minimum font size in points.
+     * @discussion The default value is 0.
+     */
     @Generated
     @Selector("minimumFontSize")
     @NFloat
     public native double minimumFontSize();
 
+    /**
+     * @abstract A Boolean value indicating whether JavaScript can open
+     * windows without user interaction.
+     * @discussion The default value is NO in iOS and YES in OS X.
+     */
     @Generated
     @Selector("setJavaScriptCanOpenWindowsAutomatically:")
     public native void setJavaScriptCanOpenWindowsAutomatically(boolean value);
@@ -187,14 +206,28 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     @Selector("setJavaScriptEnabled:")
     public native void setJavaScriptEnabled(boolean value);
 
+    /**
+     * @abstract The minimum font size in points.
+     * @discussion The default value is 0.
+     */
     @Generated
     @Selector("setMinimumFontSize:")
     public native void setMinimumFontSize(@NFloat double value);
 
+    /**
+     * @abstract A Boolean value indicating whether warnings should be
+     * shown for suspected fraudulent content such as phishing or malware.
+     * @discussion The default value is YES.
+     */
     @Generated
     @Selector("isFraudulentWebsiteWarningEnabled")
     public native boolean isFraudulentWebsiteWarningEnabled();
 
+    /**
+     * @abstract A Boolean value indicating whether warnings should be
+     * shown for suspected fraudulent content such as phishing or malware.
+     * @discussion The default value is YES.
+     */
     @Generated
     @Selector("setFraudulentWebsiteWarningEnabled:")
     public native void setFraudulentWebsiteWarningEnabled(boolean value);

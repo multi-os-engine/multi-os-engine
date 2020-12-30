@@ -37,6 +37,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class NSHTTPCookieStorage 
+ * @discussion NSHTTPCookieStorage implements a singleton object (shared
+ * instance) which manages the shared cookie store.  It has methods
+ * to allow clients to set and remove cookies, and get the current
+ * set of cookies.  It also has convenience methods to parse and
+ * generate cookie-related HTTP header fields.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -139,10 +147,28 @@ public class NSHTTPCookieStorage extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @method sharedCookieStorageForGroupContainerIdentifier:
+     * @abstract Get the cookie storage for the container associated with the specified application group identifier
+     * @param identifier The application group identifier
+     * @result A cookie storage with a persistent store in the application group container
+     * @discussion By default, applications and associated app extensions have different data containers, which means
+     * that the sharedHTTPCookieStorage singleton will refer to different persistent cookie stores in an application and
+     * any app extensions that it contains. This method allows clients to create a persistent cookie storage that can be
+     * shared among all applications and extensions with access to the same application group. Subsequent calls to this
+     * method with the same identifier will return the same cookie storage instance.
+     */
     @Generated
     @Selector("sharedCookieStorageForGroupContainerIdentifier:")
     public static native NSHTTPCookieStorage sharedCookieStorageForGroupContainerIdentifier(String identifier);
 
+    /**
+     * @property sharedHTTPCookieStorage
+     * @abstract Get the shared cookie storage in the default location.
+     * @result The shared cookie storage
+     * @discussion Starting in OS X 10.11, each app has its own sharedHTTPCookieStorage singleton, 
+     * which will not be shared with other applications.
+     */
     @Generated
     @Selector("sharedHTTPCookieStorage")
     public static native NSHTTPCookieStorage sharedHTTPCookieStorage();
@@ -156,19 +182,41 @@ public class NSHTTPCookieStorage extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract The cookie accept policy preference of the
+     * receiver.
+     */
     @Generated
     @Selector("cookieAcceptPolicy")
     @NUInt
     public native long cookieAcceptPolicy();
 
+    /**
+     * @abstract Get all the cookies
+     * @result An NSArray of NSHTTPCookies
+     */
     @Generated
     @Selector("cookies")
     public native NSArray<? extends NSHTTPCookie> cookies();
 
+    /**
+     * @method cookiesForURL:
+     * @abstract Returns an array of cookies to send to the given URL.
+     * @param URL The URL for which to get cookies.
+     * @result an NSArray of NSHTTPCookie objects.
+     * @discussion The cookie manager examines the cookies it stores and
+     * includes those which should be sent to the given URL. You can use
+     * <tt>+[NSCookie requestHeaderFieldsWithCookies:]</tt> to turn this array
+     * into a set of header fields to add to a request.
+     */
     @Generated
     @Selector("cookiesForURL:")
     public native NSArray<? extends NSHTTPCookie> cookiesForURL(NSURL URL);
 
+    /**
+     * @method deleteCookie:
+     * @abstract Delete the specified cookie
+     */
     @Generated
     @Selector("deleteCookie:")
     public native void deleteCookie(NSHTTPCookie cookie);
@@ -182,23 +230,60 @@ public class NSHTTPCookieStorage extends NSObject {
     @Selector("init")
     public native NSHTTPCookieStorage init();
 
+    /**
+     * @method removeCookiesSince:
+     * @abstract Delete all cookies from the cookie storage since the provided date.
+     */
     @Generated
     @Selector("removeCookiesSinceDate:")
     public native void removeCookiesSinceDate(NSDate date);
 
+    /**
+     * @method setCookie:
+     * @abstract Set a cookie
+     * @discussion The cookie will override an existing cookie with the
+     * same name, domain and path, if any.
+     */
     @Generated
     @Selector("setCookie:")
     public native void setCookie(NSHTTPCookie cookie);
 
+    /**
+     * @abstract The cookie accept policy preference of the
+     * receiver.
+     */
     @Generated
     @Selector("setCookieAcceptPolicy:")
     public native void setCookieAcceptPolicy(@NUInt long value);
 
+    /**
+     * @method setCookies:forURL:mainDocumentURL:
+     * @abstract Adds an array cookies to the cookie store, following the
+     * cookie accept policy.
+     * @param cookies The cookies to set.
+     * @param URL The URL from which the cookies were sent.
+     * @param mainDocumentURL The main document URL to be used as a base for the "same
+     * domain as main document" policy.
+     * @discussion For mainDocumentURL, the caller should pass the URL for
+     * an appropriate main document, if known. For example, when loading
+     * a web page, the URL of the main html document for the top-level
+     * frame should be passed. To save cookies based on a set of response
+     * headers, you can use <tt>+[NSCookie
+     * cookiesWithResponseHeaderFields:forURL:]</tt> on a header field
+     * dictionary and then use this method to store the resulting cookies
+     * in accordance with policy settings.
+     */
     @Generated
     @Selector("setCookies:forURL:mainDocumentURL:")
     public native void setCookiesForURLMainDocumentURL(NSArray<? extends NSHTTPCookie> cookies, NSURL URL,
             NSURL mainDocumentURL);
 
+    /**
+     * @method sortedCookiesUsingDescriptors:
+     * @abstract Returns an array of all cookies in the store, sorted according to the key value and sorting direction of the NSSortDescriptors specified in the parameter.
+     * @param sortOrder an array of NSSortDescriptors which represent the preferred sort order of the resulting array.
+     * @discussion proper sorting of cookies may require extensive string conversion, which can be avoided by allowing the system to perform the sorting.  This API is to be preferred over the more generic -[NSHTTPCookieStorage cookies] API, if sorting is going to be performed.
+     */
     @Generated
     @Selector("sortedCookiesUsingDescriptors:")
     public native NSArray<? extends NSHTTPCookie> sortedCookiesUsingDescriptors(

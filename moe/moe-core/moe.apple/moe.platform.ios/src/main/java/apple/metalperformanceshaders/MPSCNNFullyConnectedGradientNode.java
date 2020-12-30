@@ -91,6 +91,18 @@ public class MPSCNNFullyConnectedGradientNode extends MPSCNNConvolutionGradientN
     @Selector("init")
     public native MPSCNNFullyConnectedGradientNode init();
 
+    /**
+     * @abstract   A node to represent the gradient calculation for fully connectd training.
+     * @param sourceGradient   The input gradient from the 'downstream' gradient filter. Often
+     *                         that is a neuron gradient filter node.
+     * @param sourceImage      The input image from the forward fully connected node
+     * @param gradientState    The gradient state from the forward fully connected
+     * @param weights          The data source from the forward fully connected. It may not contain
+     *                         an integrated neuron. Similary, any normalization should be
+     *                         broken out into a separate node. Pass nil to use the weights
+     *                         from the forward convolution pass.
+     * @return  A MPSCNNFullyConnectedGradientNode
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:convolutionGradientState:weights:")
     public native MPSCNNFullyConnectedGradientNode initWithSourceGradientSourceImageConvolutionGradientStateWeights(
@@ -124,6 +136,18 @@ public class MPSCNNFullyConnectedGradientNode extends MPSCNNConvolutionGradientN
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract   A node to represent the gradient calculation for fully connected training.
+     * @param sourceGradient   The input gradient from the 'downstream' gradient filter. Often
+     *                         that is a neuron gradient filter node.
+     * @param sourceImage      The input image from the forward fully connected node
+     * @param gradientState    The gradient state from the forward fully connected
+     * @param weights          The data source from the forward fully connected. It may not contain
+     *                         an integrated neuron. Similary, any normalization should be
+     *                         broken out into a separate node. Pass nil to use the weights
+     *                         from the forward fully connected pass.
+     * @return  A MPSCNNFullyConnectedGradientNode
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:convolutionGradientState:weights:")
     public static native MPSCNNFullyConnectedGradientNode nodeWithSourceGradientSourceImageConvolutionGradientStateWeights(

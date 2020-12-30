@@ -23,6 +23,9 @@ import org.moe.natj.general.ann.NInt;
 public final class UIBarMetrics {
     @Generated @NInt public static final long Default = 0x0000000000000000L;
     @Generated @NInt public static final long Compact = 0x0000000000000001L;
+    /**
+     * Applicable only in bars with the prompt property, such as UINavigationBar and UISearchBar
+     */
     @Generated @NInt public static final long DefaultPrompt = 0x0000000000000065L;
     @Generated @NInt public static final long CompactPrompt = 0x0000000000000066L;
     @Generated @NInt public static final long LandscapePhone = 0x0000000000000001L;

@@ -29,29 +29,50 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * UIAccessibilityReadingContent
+ * 
+ * Implemented on an element that represents content meant to be read, like a book or periodical. 
+ * Use in conjuction with UIAccessibilityTraitCausesPageTurn to provide a continuous reading experience with VoiceOver.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIAccessibilityReadingContent")
 public interface UIAccessibilityReadingContent {
+    /**
+     * Returns the content associated with a line number as a string.
+     */
     @Generated
     @Selector("accessibilityContentForLineNumber:")
     String accessibilityContentForLineNumber(@NInt long lineNumber);
 
+    /**
+     * Returns the on-screen rectangle for a line number.
+     */
     @Generated
     @Selector("accessibilityFrameForLineNumber:")
     @ByValue
     CGRect accessibilityFrameForLineNumber(@NInt long lineNumber);
 
+    /**
+     * Returns the line number given a point in the view's coordinate space.
+     */
     @Generated
     @Selector("accessibilityLineNumberForPoint:")
     @NInt
     long accessibilityLineNumberForPoint(@ByValue CGPoint point);
 
+    /**
+     * Returns a string representing the text displayed on the current page.
+     */
     @Generated
     @Selector("accessibilityPageContent")
     String accessibilityPageContent();
 
+    /**
+     * If an object adopting this protocol responds to these methods, the system will try sending them before sending the non-attributed versions.
+     */
     @Generated
     @IsOptional
     @Selector("accessibilityAttributedContentForLineNumber:")

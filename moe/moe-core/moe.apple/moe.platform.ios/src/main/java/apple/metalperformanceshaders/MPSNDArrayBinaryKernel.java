@@ -90,24 +90,60 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     *  Inference encode calls
+     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * @param      cmdBuf                 The command buffer into which to encode the kernel
+     * @param      primarySourceArray     The primary source for the filter in an NSArray.
+     * @param      secondarySourceArray   The secondary source for the filter in an NSArray.
+     * @result     A newly allocated MPSNDArray that will contain the result of the calculation
+     *             when the command buffer completes successfully.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:primarySourceArray:secondarySourceArray:")
     public native MPSNDArray encodeToCommandBufferPrimarySourceArraySecondarySourceArray(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MPSNDArray primarySourceArray,
             MPSNDArray secondarySourceArray);
 
+    /**
+     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * @param      cmdBuf          The command buffer into which to encode the kernel
+     * @param      primarySourceArray     The primary source for the filter in an NSArray.
+     * @param      secondarySourceArray   The secondary source for the filter in an NSArray.
+     * @param      destination     The NDArray to receive the result
+     */
     @Generated
     @Selector("encodeToCommandBuffer:primarySourceArray:secondarySourceArray:destinationArray:")
     public native void encodeToCommandBufferPrimarySourceArraySecondarySourceArrayDestinationArray(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MPSNDArray primarySourceArray,
             MPSNDArray secondarySourceArray, MPSNDArray destination);
 
+    /**
+     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * @param      cmdBuf          The command buffer into which to encode the kernel
+     * @param      primarySourceArray     The primary source for the filter in an NSArray.
+     * @param      secondarySourceArray   The secondary source for the filter in an NSArray.
+     * @param      outGradientState The output gradient state to record the operation for later use by gradient
+     * @param      destination     A destination array to contain the result of the calculation
+     *             when the command buffer completes successfully.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:primarySourceArray:secondarySourceArray:resultState:destinationArray:")
     public native void encodeToCommandBufferPrimarySourceArraySecondarySourceArrayResultStateDestinationArray(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MPSNDArray primarySourceArray,
             MPSNDArray secondarySourceArray, MPSState outGradientState, MPSNDArray destination);
 
+    /**
+     *  Forward training encode calls
+     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * @param      cmdBuf          The command buffer into which to encode the kernel
+     * @param      primarySourceArray     The primary source for the filter in an NSArray.
+     * @param      secondarySourceArray   The secondary source for the filter in an NSArray.
+     * @param      outGradientState If non-nil, the address output gradient state is written to this address
+     * @param      outputStateIsTemporary  If YES, the state if any will be allocated to contain temporary textures and buffers as needed
+     * @result     A newly allocated MPSNDArray that will contain the result of the calculation
+     *             when the command buffer completes successfully.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:primarySourceArray:secondarySourceArray:resultState:outputStateIsTemporary:")
     public native MPSNDArray encodeToCommandBufferPrimarySourceArraySecondarySourceArrayResultStateOutputStateIsTemporary(
@@ -128,6 +164,9 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     @Selector("initWithCoder:")
     public native MPSNDArrayBinaryKernel initWithCoder(NSCoder aDecoder);
 
+    /**
+     * NSSecureCoding support
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNDArrayBinaryKernel initWithCoderDevice(NSCoder coder,
@@ -169,26 +208,57 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property  primaryDilationRate
+     * @abstract  The stride in each dimension from one PSF tap to an adjacent
+     *            PSF tap. Default: 1
+     */
     @Generated
     @Selector("primaryDilationRates")
     @ByValue
     public native MPSNDArraySizes primaryDilationRates();
 
+    /**
+     * @property  primaryEdgeMode
+     * @abstract  The edge mode used for a source NDArray
+     *            Default: MPSImageEdgeModeZero
+     */
     @Generated
     @Selector("primaryEdgeMode")
     @NUInt
     public native long primaryEdgeMode();
 
+    /**
+     * @property  primaryKernelSizes
+     * @abstract  The diameters of the point spread function in each dimension for a source NDArray
+     *            Default: 1
+     */
     @Generated
     @Selector("primaryKernelSizes")
     @ByValue
     public native MPSNDArraySizes primaryKernelSizes();
 
+    /**
+     * @property  primaryOffsets
+     * @abstract  The coordinate of the position read from this source array which is
+     *            used to calculate the result value at [0,0,0,....]
+     *            If the position read is actually a contiguous region (e.g. the area covered by
+     *            a convolution kernel) then this is the center of that region, rounded down, for
+     *            each dimension.
+     *            Default: 0,0,0...
+     */
     @Generated
     @Selector("primaryOffsets")
     @ByValue
     public native MPSNDArrayOffsets primaryOffsets();
 
+    /**
+     * @property  primaryStrides
+     * @abstract  If the filter is a "backwards" filter such as a gradient filter
+     *            or convolution transpose, then this is the upsampling ratio and
+     *            zeros are inserted in the result.
+     *            Default: 1
+     */
     @Generated
     @Selector("primaryStrides")
     @ByValue
@@ -202,26 +272,57 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property  secondaryDilationRate
+     * @abstract  The stride in each dimension from one PSF tap to an adjacent
+     *            PSF tap. Default: 1
+     */
     @Generated
     @Selector("secondaryDilationRates")
     @ByValue
     public native MPSNDArraySizes secondaryDilationRates();
 
+    /**
+     * @property  secondaryEdgeMode
+     * @abstract  The edge mode used for a source NDArray
+     *            Default: MPSImageEdgeModeZero
+     */
     @Generated
     @Selector("secondaryEdgeMode")
     @NUInt
     public native long secondaryEdgeMode();
 
+    /**
+     * @property  secondaryKernelSizes
+     * @abstract  The diameters of the point spread function in each dimension for a source NDArray
+     *            Default: 1
+     */
     @Generated
     @Selector("secondaryKernelSizes")
     @ByValue
     public native MPSNDArraySizes secondaryKernelSizes();
 
+    /**
+     * @property  secondaryOffsets
+     * @abstract  The coordinate of the position read from this source array which is
+     *            used to calculate the result value at [0,0,0,....]
+     *            If the position read is actually a contiguous region (e.g. the area covered by
+     *            a convolution kernel) then this is the center of that region, rounded down, for
+     *            each dimension.
+     *            Default: 0,0,0...
+     */
     @Generated
     @Selector("secondaryOffsets")
     @ByValue
     public native MPSNDArrayOffsets secondaryOffsets();
 
+    /**
+     * @property  secondaryStrides
+     * @abstract  If the filter is a "backwards" filter such as a gradient filter
+     *            or convolution transpose, then this is the upsampling ratio and
+     *            zeros are inserted in the result.
+     *            Default: 1
+     */
     @Generated
     @Selector("secondaryStrides")
     @ByValue

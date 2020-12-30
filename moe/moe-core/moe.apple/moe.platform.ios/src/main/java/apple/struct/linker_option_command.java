@@ -34,10 +34,16 @@ public final class linker_option_command extends StructObject {
         setCount(count);
     }
 
+    /**
+     * LC_LINKER_OPTION only used in MH_OBJECT filetypes
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int cmd();
 
+    /**
+     * LC_LINKER_OPTION only used in MH_OBJECT filetypes
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setCmd(int value);
@@ -50,10 +56,16 @@ public final class linker_option_command extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setCmdsize(int value);
 
+    /**
+     * number of strings
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int count();
 
+    /**
+     * number of strings
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setCount(int value);

@@ -3,6 +3,13 @@ package apple.coremotion.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * CMDeviceMotionSensorLocation
+ * 
+ * Discussion:
+ *   CMDeviceMotionSensorLocation indicates the location of
+ *   the sensors used to compute the device motion data.
+ */
 @Generated
 public final class CMDeviceMotionSensorLocation {
     @Generated

@@ -32,6 +32,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class VNRecognizedText
+ * @brief VNRecognizedText A block of recognized text. There can be multiple VNRecognizedText objects returned in a VNRecognizedTextObservation - one for each candidate.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -64,6 +68,10 @@ public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCod
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @brief Calculate the bounding box around the characters in the range of the string.
+     * @discussion The bounding boxes are not guaranteed to be an exact fit around the characters and are purely meant for UI purposes and not for image processing.
+     */
     @Generated
     @Selector("boundingBoxForRange:error:")
     public native VNRectangleObservation boundingBoxForRangeError(@ByValue NSRange range,
@@ -87,6 +95,9 @@ public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCod
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @brief The level of confidence normalized to [0.0, 1.0] where 1.0 is most confident
+     */
     @Generated
     @Selector("confidence")
     public native float confidence();
@@ -161,6 +172,10 @@ public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCod
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @brief        Field that contains recognized text.
+     * @discussion   This is the top candidate of the recognized text.
+     */
     @Generated
     @Selector("string")
     public native String string();

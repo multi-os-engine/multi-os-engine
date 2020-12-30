@@ -158,6 +158,9 @@ public class UITextRange extends NSObject {
     @Selector("init")
     public native UITextRange init();
 
+    /**
+     * Whether the range is zero-length.
+     */
     @Generated
     @Selector("isEmpty")
     public native boolean isEmpty();

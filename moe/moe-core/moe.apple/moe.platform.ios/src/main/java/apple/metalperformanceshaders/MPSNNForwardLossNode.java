@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Node representing a @ref MPSNNForwardLoss kernel
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -94,6 +97,9 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @Selector("gradientFilterWithSource:")
     public native MPSNNLossGradientNode gradientFilterWithSource(MPSNNImageNode sourceGradient);
 
+    /**
+     * ! @abstract Returns the gradient filter for predictions, if you want also gradients for labels then use -gradientFiltersWithSource(s):
+     */
     @Generated
     @Selector("gradientFilterWithSources:")
     public native MPSNNLossGradientNode gradientFilterWithSources(NSArray<? extends MPSNNImageNode> sourceGradient);
@@ -126,6 +132,12 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     public native MPSNNForwardLossNode initWithSourceLabelsWeightsLossDescriptor(MPSNNImageNode source,
             MPSNNImageNode labels, MPSNNImageNode weights, MPSCNNLossDescriptor descriptor);
 
+    /**
+     * @abstract   Init a forward loss node from multiple images
+     * @param      sourceNodes             The MPSNNImageNode representing the source MPSImages for the filter
+     *                                     Node0: logits, Node1: labels, Node2: weights
+     * @return     A new MPSNNFilter node.
+     */
     @Generated
     @Selector("initWithSources:lossDescriptor:")
     public native MPSNNForwardLossNode initWithSourcesLossDescriptor(NSArray<? extends MPSNNImageNode> sourceNodes,
@@ -176,6 +188,12 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     public static native MPSNNForwardLossNode nodeWithSourceLabelsWeightsLossDescriptor(MPSNNImageNode source,
             MPSNNImageNode labels, MPSNNImageNode weights, MPSCNNLossDescriptor descriptor);
 
+    /**
+     * @abstract   Init a forward loss node from multiple images
+     * @param      sourceNodes             The MPSNNImageNode representing the source MPSImages for the filter
+     *                                     Node0: logits, Node1: labels, Node2: weights
+     * @return     A new MPSNNFilter node.
+     */
     @Generated
     @Selector("nodeWithSources:lossDescriptor:")
     public static native MPSNNForwardLossNode nodeWithSourcesLossDescriptor(
@@ -186,6 +204,11 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @NUInt
     public native long numberOfClasses();
 
+    /**
+     * @property   propertyCallBack
+     * @abstract   Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
+     *             Default value: nil.
+     */
     @Generated
     @Selector("propertyCallBack")
     @MappedReturn(ObjCObjectMapper.class)
@@ -203,6 +226,11 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   propertyCallBack
+     * @abstract   Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
+     *             Default value: nil.
+     */
     @Generated
     @Selector("setPropertyCallBack:")
     public native void setPropertyCallBack(@Mapped(ObjCObjectMapper.class) MPSNNLossCallback value);

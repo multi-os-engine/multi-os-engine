@@ -43,6 +43,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UILayoutGuides will not show up in the view hierarchy, but may be used as items in
+ * an NSLayoutConstraint and represent a rectangle in the layout engine.
+ * 
+ * Create a UILayoutGuide with -init, and add to a view with -[UIView addLayoutGuide:]
+ * before using it in a constraint.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -166,6 +173,10 @@ public class UILayoutGuide extends NSObject implements NSCoding {
     @Selector("centerYAnchor")
     public native NSLayoutYAxisAnchor centerYAnchor();
 
+    /**
+     * This returns a list of all the constraints that are affecting the current location of the receiver.  The constraints do not necessarily involve the receiver, they may affect the frame indirectly.
+     * Pass UILayoutConstraintAxisHorizontal for the constraints affecting [self center].x and CGRectGetWidth([self bounds]), and UILayoutConstraintAxisVertical for the constraints affecting[self center].y and CGRectGetHeight([self bounds]).
+     */
     @Generated
     @Selector("constraintsAffectingLayoutForAxis:")
     public native NSArray<? extends NSLayoutConstraint> constraintsAffectingLayoutForAxis(@NInt long axis);
@@ -174,6 +185,11 @@ public class UILayoutGuide extends NSObject implements NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * If there aren't enough constraints in the system to uniquely determine layout, we say the layout is ambiguous.  For example, if the only constraint in the system was x = y + 100, then there are lots of different possible values for x and y.  This situation is not automatically detected by UIKit, due to performance considerations and details of the algorithm used for layout.
+     * The symptom of ambiguity is that views sometimes jump from place to place, or possibly are just in the wrong place.
+     * -hasAmbiguousLayout runs a check for whether there is another center and bounds the receiver could have that could also satisfy the constraints.
+     */
     @Generated
     @Selector("hasAmbiguousLayout")
     public native boolean hasAmbiguousLayout();
@@ -182,6 +198,10 @@ public class UILayoutGuide extends NSObject implements NSCoding {
     @Selector("heightAnchor")
     public native NSLayoutDimension heightAnchor();
 
+    /**
+     * For ease of debugging.
+     * 'UI' prefix is reserved for UIKit-created layout guides.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -194,11 +214,18 @@ public class UILayoutGuide extends NSObject implements NSCoding {
     @Selector("initWithCoder:")
     public native UILayoutGuide initWithCoder(NSCoder coder);
 
+    /**
+     * The frame of the UILayoutGuide in its owningView's coordinate system.
+     * Valid by the time the owningView receives -layoutSubviews.
+     */
     @Generated
     @Selector("layoutFrame")
     @ByValue
     public native CGRect layoutFrame();
 
+    /**
+     * Constraint creation conveniences. See NSLayoutAnchor.h for details.
+     */
     @Generated
     @Selector("leadingAnchor")
     public native NSLayoutXAxisAnchor leadingAnchor();
@@ -207,6 +234,12 @@ public class UILayoutGuide extends NSObject implements NSCoding {
     @Selector("leftAnchor")
     public native NSLayoutXAxisAnchor leftAnchor();
 
+    /**
+     * The guide must be added to a view with -[UIView addLayoutGuide:] before being used in a constraint.
+     * Do not use this property directly to change the owningView of a layout guide. Instead, use 
+     * -[UIView addLayoutGuide:] and -[UIView removeLayoutGuide:], which will use this property to 
+     * change the owningView.
+     */
     @Generated
     @Selector("owningView")
     public native UIView owningView();
@@ -215,14 +248,30 @@ public class UILayoutGuide extends NSObject implements NSCoding {
     @Selector("rightAnchor")
     public native NSLayoutXAxisAnchor rightAnchor();
 
+    /**
+     * For ease of debugging.
+     * 'UI' prefix is reserved for UIKit-created layout guides.
+     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
 
+    /**
+     * The guide must be added to a view with -[UIView addLayoutGuide:] before being used in a constraint.
+     * Do not use this property directly to change the owningView of a layout guide. Instead, use 
+     * -[UIView addLayoutGuide:] and -[UIView removeLayoutGuide:], which will use this property to 
+     * change the owningView.
+     */
     @Generated
     @Selector("setOwningView:")
     public native void setOwningView_unsafe(UIView value);
 
+    /**
+     * The guide must be added to a view with -[UIView addLayoutGuide:] before being used in a constraint.
+     * Do not use this property directly to change the owningView of a layout guide. Instead, use 
+     * -[UIView addLayoutGuide:] and -[UIView removeLayoutGuide:], which will use this property to 
+     * change the owningView.
+     */
     @Generated
     public void setOwningView(UIView value) {
         Object __old = owningView();

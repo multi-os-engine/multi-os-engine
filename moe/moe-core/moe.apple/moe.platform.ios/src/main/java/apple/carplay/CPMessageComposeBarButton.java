@@ -90,6 +90,12 @@ public class CPMessageComposeBarButton extends CPBarButton {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Convenience initializer that creates a message compose button with a system-provided image.
+     * 
+     * @note This button type does not use a handler. Instead, tapping this button will activate Siri
+     *  and launch into a compose message flow.
+     */
     @Generated
     @Selector("init")
     public native CPMessageComposeBarButton init();
@@ -98,6 +104,12 @@ public class CPMessageComposeBarButton extends CPBarButton {
     @Selector("initWithCoder:")
     public native CPMessageComposeBarButton initWithCoder(NSCoder coder);
 
+    /**
+     * Convenience initializer that creates a message compose button with a custom image.
+     * 
+     * @note This button type does not use a handler. Instead, tapping this button will activate Siri
+     * and launch into a compose message flow.
+     */
     @Generated
     @Selector("initWithImage:")
     public native CPMessageComposeBarButton initWithImage(UIImage image);

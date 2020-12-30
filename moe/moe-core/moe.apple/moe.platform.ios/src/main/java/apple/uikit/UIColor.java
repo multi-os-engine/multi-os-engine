@@ -90,14 +90,23 @@ public class UIColor extends NSObject
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * 0.0 white
+     */
     @Generated
     @Selector("blackColor")
     public static native UIColor blackColor();
 
+    /**
+     * 0.0, 0.0, 1.0 RGB
+     */
     @Generated
     @Selector("blueColor")
     public static native UIColor blueColor();
 
+    /**
+     * 0.6, 0.4, 0.2 RGB
+     */
     @Generated
     @Selector("brownColor")
     public static native UIColor brownColor();
@@ -120,6 +129,9 @@ public class UIColor extends NSObject
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * 0.0 white, 0.0 alpha
+     */
     @Generated
     @Selector("clearColor")
     public static native UIColor clearColor();
@@ -151,18 +163,30 @@ public class UIColor extends NSObject
     public static native UIColor colorWithRedGreenBlueAlpha(@NFloat double red, @NFloat double green,
             @NFloat double blue, @NFloat double alpha);
 
+    /**
+     * Convenience methods for creating colors
+     */
     @Generated
     @Selector("colorWithWhite:alpha:")
     public static native UIColor colorWithWhiteAlpha(@NFloat double white, @NFloat double alpha);
 
+    /**
+     * 0.0, 1.0, 1.0 RGB
+     */
     @Generated
     @Selector("cyanColor")
     public static native UIColor cyanColor();
 
+    /**
+     * 0.333 white
+     */
     @Generated
     @Selector("darkGrayColor")
     public static native UIColor darkGrayColor();
 
+    /**
+     * for a light background
+     */
     @Generated
     @Selector("darkTextColor")
     public static native UIColor darkTextColor();
@@ -175,14 +199,23 @@ public class UIColor extends NSObject
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * 0.5 white
+     */
     @Generated
     @Selector("grayColor")
     public static native UIColor grayColor();
 
+    /**
+     * 0.0, 1.0, 0.0 RGB
+     */
     @Generated
     @Selector("greenColor")
     public static native UIColor greenColor();
 
+    /**
+     * groupTableViewBackgroundColor is now the same as systemGroupedBackgroundColor.
+     */
     @Generated
     @Selector("groupTableViewBackgroundColor")
     public static native UIColor groupTableViewBackgroundColor();
@@ -213,14 +246,23 @@ public class UIColor extends NSObject
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * 0.667 white
+     */
     @Generated
     @Selector("lightGrayColor")
     public static native UIColor lightGrayColor();
 
+    /**
+     * for a dark background
+     */
     @Generated
     @Selector("lightTextColor")
     public static native UIColor lightTextColor();
 
+    /**
+     * 1.0, 0.0, 1.0 RGB
+     */
     @Generated
     @Selector("magentaColor")
     public static native UIColor magentaColor();
@@ -231,14 +273,23 @@ public class UIColor extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * 1.0, 0.5, 0.0 RGB
+     */
     @Generated
     @Selector("orangeColor")
     public static native UIColor orangeColor();
 
+    /**
+     * 0.5, 0.0, 0.5 RGB
+     */
     @Generated
     @Selector("purpleColor")
     public static native UIColor purpleColor();
 
+    /**
+     * 1.0, 0.0, 0.0 RGB
+     */
     @Generated
     @Selector("redColor")
     public static native UIColor redColor();
@@ -283,10 +334,16 @@ public class UIColor extends NSObject
     @Selector("viewFlipsideBackgroundColor")
     public static native UIColor viewFlipsideBackgroundColor();
 
+    /**
+     * 1.0 white
+     */
     @Generated
     @Selector("whiteColor")
     public static native UIColor whiteColor();
 
+    /**
+     * 1.0, 1.0, 0.0 RGB
+     */
     @Generated
     @Selector("yellowColor")
     public static native UIColor yellowColor();
@@ -299,6 +356,9 @@ public class UIColor extends NSObject
     @Selector("CIColor")
     public native CIColor CIColor();
 
+    /**
+     * Returns a color in the same color space as the receiver with the specified alpha component.
+     */
     @Generated
     @Selector("colorWithAlphaComponent:")
     public native UIColor colorWithAlphaComponent(@NFloat double alpha);
@@ -322,6 +382,10 @@ public class UIColor extends NSObject
     @Selector("getRed:green:blue:alpha:")
     public native boolean getRedGreenBlueAlpha(NFloatPtr red, NFloatPtr green, NFloatPtr blue, NFloatPtr alpha);
 
+    /**
+     * Convenience methods for getting components.
+     * If the receiver is of a compatible color space, any non-NULL parameters are populated and 'YES' is returned. Otherwise, the parameters are left unchanged and 'NO' is returned.
+     */
     @Generated
     @Selector("getWhite:alpha:")
     public native boolean getWhiteAlpha(NFloatPtr white, NFloatPtr alpha);
@@ -361,14 +425,23 @@ public class UIColor extends NSObject
     public native UIColor initWithRedGreenBlueAlpha(@NFloat double red, @NFloat double green, @NFloat double blue,
             @NFloat double alpha);
 
+    /**
+     * Initializers for creating colors
+     */
     @Generated
     @Selector("initWithWhite:alpha:")
     public native UIColor initWithWhiteAlpha(@NFloat double white, @NFloat double alpha);
 
+    /**
+     * Set the color: Sets the fill and stroke colors in the current drawing context. Should be implemented by subclassers.
+     */
     @Generated
     @Selector("set")
     public native void set();
 
+    /**
+     * Set the fill or stroke colors individually. These should be implemented by subclassers.
+     */
     @Generated
     @Selector("setFill")
     public native void setFill();
@@ -383,6 +456,9 @@ public class UIColor extends NSObject
         return supportsSecureCoding();
     }
 
+    /**
+     * load from main bundle
+     */
     @Generated
     @Selector("colorNamed:")
     public static native UIColor colorNamed(String name);
@@ -456,6 +532,13 @@ public class UIColor extends NSObject
     @Selector("writableTypeIdentifiersForItemProvider")
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
 
+    /**
+     * Create a dynamic color with a provider.
+     * When methods are called on this color that need color component values,
+     * the provider is called with UITraitCollection.currentTraitCollection.
+     * The provider should use that trait collection to decide a more fundamental UIColor to return.
+     * As much as possible, use the given trait collection to make that decision, not other state.
+     */
     @Generated
     @Selector("colorWithDynamicProvider:")
     public static native UIColor colorWithDynamicProvider(
@@ -480,10 +563,16 @@ public class UIColor extends NSObject
         UIColor call_initWithDynamicProvider(UITraitCollection traitCollection);
     }
 
+    /**
+     * Foreground colors for static text and related elements.
+     */
     @Generated
     @Selector("labelColor")
     public static native UIColor labelColor();
 
+    /**
+     * Foreground color for standard system links.
+     */
     @Generated
     @Selector("linkColor")
     public static native UIColor linkColor();
@@ -492,6 +581,9 @@ public class UIColor extends NSObject
     @Selector("opaqueSeparatorColor")
     public static native UIColor opaqueSeparatorColor();
 
+    /**
+     * Foreground color for placeholder text in controls or text fields or text views.
+     */
     @Generated
     @Selector("placeholderTextColor")
     public static native UIColor placeholderTextColor();
@@ -500,10 +592,17 @@ public class UIColor extends NSObject
     @Selector("quaternaryLabelColor")
     public static native UIColor quaternaryLabelColor();
 
+    /**
+     * quaternarySystemFillColor is appropriate for filling large areas containing complex content.
+     * Example: Expanded table cells.
+     */
     @Generated
     @Selector("quaternarySystemFillColor")
     public static native UIColor quaternarySystemFillColor();
 
+    /**
+     * Resolve any color to its most fundamental form (a non-dynamic color) for a specific trait collection.
+     */
     @Generated
     @Selector("resolvedColorWithTraitCollection:")
     public native UIColor resolvedColorWithTraitCollection(UITraitCollection traitCollection);
@@ -516,6 +615,10 @@ public class UIColor extends NSObject
     @Selector("secondarySystemBackgroundColor")
     public static native UIColor secondarySystemBackgroundColor();
 
+    /**
+     * secondarySystemFillColor is appropriate for filling medium-size shapes.
+     * Example: The background of a switch.
+     */
     @Generated
     @Selector("secondarySystemFillColor")
     public static native UIColor secondarySystemFillColor();
@@ -524,10 +627,31 @@ public class UIColor extends NSObject
     @Selector("secondarySystemGroupedBackgroundColor")
     public static native UIColor secondarySystemGroupedBackgroundColor();
 
+    /**
+     * Foreground colors for separators (thin border or divider lines).
+     * `separatorColor` may be partially transparent, so it can go on top of any content.
+     * `opaqueSeparatorColor` is intended to look similar, but is guaranteed to be opaque, so it will
+     * completely cover anything behind it. Depending on the situation, you may need one or the other.
+     */
     @Generated
     @Selector("separatorColor")
     public static native UIColor separatorColor();
 
+    /**
+     * We provide two design systems (also known as "stacks") for structuring an iOS app's backgrounds.
+     * 
+     * Each stack has three "levels" of background colors. The first color is intended to be the
+     * main background, farthest back. Secondary and tertiary colors are layered on top
+     * of the main background, when appropriate.
+     * 
+     * Inside of a discrete piece of UI, choose a stack, then use colors from that stack.
+     * We do not recommend mixing and matching background colors between stacks.
+     * The foreground colors above are designed to work in both stacks.
+     * 
+     * 1. systemBackground
+     *    Use this stack for views with standard table views, and designs which have a white
+     *    primary background in light mode.
+     */
     @Generated
     @Selector("systemBackgroundColor")
     public static native UIColor systemBackgroundColor();
@@ -536,10 +660,26 @@ public class UIColor extends NSObject
     @Selector("systemBlueColor")
     public static native UIColor systemBlueColor();
 
+    /**
+     * Fill colors for UI elements.
+     * These are meant to be used over the background colors, since their alpha component is less than 1.
+     * 
+     * systemFillColor is appropriate for filling thin and small shapes.
+     * Example: The track of a slider.
+     */
     @Generated
     @Selector("systemFillColor")
     public static native UIColor systemFillColor();
 
+    /**
+     * The numbered variations, systemGray2 through systemGray6, are grays which increasingly
+     * trend away from systemGray and in the direction of systemBackgroundColor.
+     * 
+     * In UIUserInterfaceStyleLight: systemGray1 is slightly lighter than systemGray.
+     *                               systemGray2 is lighter than that, and so on.
+     * In UIUserInterfaceStyleDark:  systemGray1 is slightly darker than systemGray.
+     *                               systemGray2 is darker than that, and so on.
+     */
     @Generated
     @Selector("systemGray2Color")
     public static native UIColor systemGray2Color();
@@ -560,6 +700,9 @@ public class UIColor extends NSObject
     @Selector("systemGray6Color")
     public static native UIColor systemGray6Color();
 
+    /**
+     * Shades of gray. systemGray is the base gray color.
+     */
     @Generated
     @Selector("systemGrayColor")
     public static native UIColor systemGrayColor();
@@ -568,6 +711,12 @@ public class UIColor extends NSObject
     @Selector("systemGreenColor")
     public static native UIColor systemGreenColor();
 
+    /**
+     * 2. systemGroupedBackground
+     * Use this stack for views with grouped content, such as grouped tables and
+     * platter-based designs. These are like grouped table views, but you may use these
+     * colors in places where a table view wouldn't make sense.
+     */
     @Generated
     @Selector("systemGroupedBackgroundColor")
     public static native UIColor systemGroupedBackgroundColor();
@@ -588,6 +737,11 @@ public class UIColor extends NSObject
     @Selector("systemPurpleColor")
     public static native UIColor systemPurpleColor();
 
+    /**
+     * Some colors that are used by system elements and applications.
+     * These return named colors whose values may vary between different contexts and releases.
+     * Do not make assumptions about the color spaces or actual colors used.
+     */
     @Generated
     @Selector("systemRedColor")
     public static native UIColor systemRedColor();
@@ -608,6 +762,10 @@ public class UIColor extends NSObject
     @Selector("tertiarySystemBackgroundColor")
     public static native UIColor tertiarySystemBackgroundColor();
 
+    /**
+     * tertiarySystemFillColor is appropriate for filling large shapes.
+     * Examples: Input fields, search bars, buttons.
+     */
     @Generated
     @Selector("tertiarySystemFillColor")
     public static native UIColor tertiarySystemFillColor();
@@ -616,6 +774,9 @@ public class UIColor extends NSObject
     @Selector("tertiarySystemGroupedBackgroundColor")
     public static native UIColor tertiarySystemGroupedBackgroundColor();
 
+    /**
+     * Provides an accessible name for the UIColor for use in accessibility attribute APIs, such as when using accessibilityLabel.
+     */
     @Generated
     @Selector("accessibilityName")
     public native String accessibilityName();

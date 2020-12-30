@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * PHAssetCreationRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or -[PHPhotoLibrary performChangesAndWait:] block.
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -177,6 +180,10 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Whether we support a given combination of PHAssetResourceTypes.
+     * Note: Adding resources to a creation request always succeeds; validation of the request is performed later, and any errors are reported after the performChanges block.
+     */
     @Generated
     @Selector("supportsAssetResourceTypes:")
     public static native boolean supportsAssetResourceTypes(NSArray<? extends NSNumber> types);

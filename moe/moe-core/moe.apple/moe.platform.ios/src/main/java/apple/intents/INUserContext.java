@@ -58,6 +58,9 @@ public class INUserContext extends NSObject implements NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Each call replaces previous context object of the same underlying type. Use this only in your iOS/watchOS app. Do not try to set the user context as current from your Intents extension or Intents UI extension.
+     */
     @Generated
     @Selector("becomeCurrent")
     public native void becomeCurrent();

@@ -49,6 +49,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Immutable Ordered Set   ***************
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -207,11 +210,22 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @NInt
     public static native long version_static();
 
+    /**
+     * NSOrderedSets are not observable, so these methods raise exceptions when invoked on NSOrderedSets. Instead of observing an ordered set, observe the ordered to-many relationship for which the ordered set is the collection of related objects.
+     */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
     public native void addObserverForKeyPathOptionsContext(NSObject observer, String keyPath, @NUInt long options,
             VoidPtr context);
 
+    /**
+     * These two methods return a facade object for the receiving ordered set,
+     * which acts like an immutable array or set (respectively).  Note that
+     * while you cannot mutate the ordered set through these facades, mutations
+     * to the original ordered set will "show through" the facade and it will
+     * appear to change spontaneously, since a copy of the ordered set is not
+     * being made.
+     */
     @Generated
     @Selector("array")
     public native NSArray<_ObjectType> array();
@@ -268,6 +282,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
 
+    /**
+     * evaluate a predicate against an ordered set of objects and return a filtered ordered set
+     */
     @Generated
     @Selector("filteredOrderedSetUsingPredicate:")
     public native NSOrderedSet<_ObjectType> filteredOrderedSetUsingPredicate(NSPredicate p);
@@ -287,6 +304,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @NUInt
     public native long indexOfObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
+    /**
+     * binary search
+     */
     @Generated
     @Selector("indexOfObject:inSortedRange:options:usingComparator:")
     @NUInt
@@ -453,6 +473,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @Selector("set")
     public native NSSet<_ObjectType> set();
 
+    /**
+     * Invoke -setValue:forKey: on each of the receiver's members.
+     */
     @Generated
     @Selector("setValue:forKey:")
     public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
@@ -462,6 +485,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     public native NSArray<_ObjectType> sortedArrayUsingComparator(
             @ObjCBlock(name = "call_sortedArrayUsingComparator") Block_sortedArrayUsingComparator cmptr);
 
+    /**
+     * returns a new array by sorting the objects of the receiver
+     */
     @Generated
     @Selector("sortedArrayUsingDescriptors:")
     public native NSArray<_ObjectType> sortedArrayUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
@@ -477,6 +503,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
         return supportsSecureCoding();
     }
 
+    /**
+     * Return an ordered set containing the results of invoking -valueForKey: on each of the receiver's members. The returned ordered set might not have the same number of members as the receiver. The returned ordered set will not contain any elements corresponding to instances of -valueForKey: returning nil, nor will it contain duplicates.
+     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -580,6 +609,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
                 @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
+    /**
+     * Uses isEqual: to determine the difference between the parameter and the receiver
+     */
     @Generated
     @Selector("differenceFromOrderedSet:")
     public native NSOrderedCollectionDifference<_ObjectType> differenceFromOrderedSet(NSOrderedSet<_ObjectType> other);

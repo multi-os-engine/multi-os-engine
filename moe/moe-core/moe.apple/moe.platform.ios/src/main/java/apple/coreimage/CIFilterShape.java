@@ -145,6 +145,9 @@ public class CIFilterShape extends NSObject implements NSCopying {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Create a shape representing the smallest integral rect containing 'r'.
+     */
     @Generated
     @Selector("shapeWithRect:")
     public static native CIFilterShape shapeWithRect(@ByValue CGRect r);
@@ -164,6 +167,9 @@ public class CIFilterShape extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Returns an integral rect that bounds the shape.
+     */
     @Generated
     @Selector("extent")
     @ByValue
@@ -173,30 +179,58 @@ public class CIFilterShape extends NSObject implements NSCopying {
     @Selector("init")
     public native CIFilterShape init();
 
+    /**
+     * Initializer.
+     */
     @Generated
     @Selector("initWithRect:")
     public native CIFilterShape initWithRect(@ByValue CGRect r);
 
+    /**
+     * Create a shape representing the shape inset by 'delta'.
+     */
     @Generated
     @Selector("insetByX:Y:")
     public native CIFilterShape insetByXY(int dx, int dy);
 
+    /**
+     * Create a shape representing the intersection of the shape and 's2'.
+     */
     @Generated
     @Selector("intersectWith:")
     public native CIFilterShape intersectWith(CIFilterShape s2);
 
+    /**
+     * Create a shape representing the intersection of the shape and the smallest
+     * integral rect containing 'r'.
+     */
     @Generated
     @Selector("intersectWithRect:")
     public native CIFilterShape intersectWithRect(@ByValue CGRect r);
 
+    /**
+     * Create a shape from the result of transforming the shape by 'm'. If
+     * 'flag' is false the new shape will contain all pixels in the
+     * transformed shape (and possibly some outside the transformed shape).
+     * If 'flag' is true the new shape will contain a subset of the pixels
+     * in the transformed shape (but none of those outside the transformed
+     * shape).
+     */
     @Generated
     @Selector("transformBy:interior:")
     public native CIFilterShape transformByInterior(@ByValue CGAffineTransform m, boolean flag);
 
+    /**
+     * Create a shape representing the union of the shape and 's2'.
+     */
     @Generated
     @Selector("unionWith:")
     public native CIFilterShape unionWith(CIFilterShape s2);
 
+    /**
+     * Create a shape representing the union of the shape and the smallest
+     * integral rect containing 'r'.
+     */
     @Generated
     @Selector("unionWithRect:")
     public native CIFilterShape unionWithRect(@ByValue CGRect r);

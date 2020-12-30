@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXNetworkTransferMetric
+ * @abstract      An MXMetric subclass that encapsulates network transfer metrics
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -77,18 +81,40 @@ public class MXNetworkTransferMetric extends MXMetric {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property      cumulativeCellularDownload
+     * @abstract      Cumulative amount of data downloaded over cellular networks.
+     * @discussion    This data is radio access technology agnostic.
+     * @discussion    Dimensioned as NSUnitInformationStorage.
+     */
     @Generated
     @Selector("cumulativeCellularDownload")
     public native NSMeasurement<NSUnitInformationStorage> cumulativeCellularDownload();
 
+    /**
+     * @property      cumulativeCellularUpload
+     * @abstract      Cumulative amount of data uploaded over cellular networks.
+     * @discussion    This data is radio access technology agnostic.
+     * @discussion    Dimensioned as NSUnitInformationStorage.
+     */
     @Generated
     @Selector("cumulativeCellularUpload")
     public native NSMeasurement<NSUnitInformationStorage> cumulativeCellularUpload();
 
+    /**
+     * @property      cumulativeWifiDownload
+     * @abstract      Cumulative amount of data downloaded over WiFi.
+     * @discussion    Dimensioned as NSUnitInformationStorage.
+     */
     @Generated
     @Selector("cumulativeWifiDownload")
     public native NSMeasurement<NSUnitInformationStorage> cumulativeWifiDownload();
 
+    /**
+     * @property      cumulativeWifiUpload
+     * @abstract      Cumulative amount of data uploaded over WiFi.
+     * @discussion    Dimensioned as NSUnitInformationStorage.
+     */
     @Generated
     @Selector("cumulativeWifiUpload")
     public native NSMeasurement<NSUnitInformationStorage> cumulativeWifiUpload();

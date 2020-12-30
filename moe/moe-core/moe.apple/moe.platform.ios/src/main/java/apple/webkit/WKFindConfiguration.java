@@ -56,6 +56,11 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @abstract The direction to search from the current selection
+     * @discussion The search will respect the writing direction of the document.
+     * The initial value is NO.
+     */
     @Generated
     @Selector("backwards")
     public native boolean backwards();
@@ -70,6 +75,10 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * @abstract Whether or not the search should be case sensitive
+     * @discussion The initial value is NO.
+     */
     @Generated
     @Selector("caseSensitive")
     public native boolean caseSensitive();
@@ -140,10 +149,19 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract The direction to search from the current selection
+     * @discussion The search will respect the writing direction of the document.
+     * The initial value is NO.
+     */
     @Generated
     @Selector("setBackwards:")
     public native void setBackwards(boolean value);
 
+    /**
+     * @abstract Whether or not the search should be case sensitive
+     * @discussion The initial value is NO.
+     */
     @Generated
     @Selector("setCaseSensitive:")
     public native void setCaseSensitive(boolean value);
@@ -152,6 +170,10 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @abstract Whether the search should start at the beginning of the document once it reaches the end
+     * @discussion The initial value is YES.
+     */
     @Generated
     @Selector("setWraps:")
     public native void setWraps(boolean value);
@@ -165,6 +187,10 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract Whether the search should start at the beginning of the document once it reaches the end
+     * @discussion The initial value is YES.
+     */
     @Generated
     @Selector("wraps")
     public native boolean wraps();

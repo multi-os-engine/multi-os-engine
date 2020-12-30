@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief Descriptor for an instance acceleration structure
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -95,21 +98,35 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     @Selector("init")
     public native MTLInstanceAccelerationStructureDescriptor init();
 
+    /**
+     * @brief Number of instance descriptors
+     */
     @Generated
     @Selector("instanceCount")
     @NUInt
     public native long instanceCount();
 
+    /**
+     * @brief Buffer containing MTLAccelerationStructureInstanceDescriptors
+     */
     @Generated
     @Selector("instanceDescriptorBuffer")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLBuffer instanceDescriptorBuffer();
 
+    /**
+     * @brief Offset into the instance descriptor buffer. Must be a multiple of 64 bytes and must be
+     * aligned to the platform's buffer offset alignment.
+     */
     @Generated
     @Selector("instanceDescriptorBufferOffset")
     @NUInt
     public native long instanceDescriptorBufferOffset();
 
+    /**
+     * @brief Stride, in bytes, between instance descriptors in the instance descriptor buffer. Must
+     * be at least 64 bytes and must be a multiple of 4 bytes. Defaults to 64 bytes.
+     */
     @Generated
     @Selector("instanceDescriptorStride")
     @NUInt
@@ -124,6 +141,9 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     @Selector("instanceMethodSignatureForSelector:")
     public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
+    /**
+     * @brief Acceleration structures to be instanced
+     */
     @Generated
     @Selector("instancedAccelerationStructures")
     public native NSArray<?> instancedAccelerationStructures();
@@ -154,22 +174,39 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @brief Number of instance descriptors
+     */
     @Generated
     @Selector("setInstanceCount:")
     public native void setInstanceCount(@NUInt long value);
 
+    /**
+     * @brief Buffer containing MTLAccelerationStructureInstanceDescriptors
+     */
     @Generated
     @Selector("setInstanceDescriptorBuffer:")
     public native void setInstanceDescriptorBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
+    /**
+     * @brief Offset into the instance descriptor buffer. Must be a multiple of 64 bytes and must be
+     * aligned to the platform's buffer offset alignment.
+     */
     @Generated
     @Selector("setInstanceDescriptorBufferOffset:")
     public native void setInstanceDescriptorBufferOffset(@NUInt long value);
 
+    /**
+     * @brief Stride, in bytes, between instance descriptors in the instance descriptor buffer. Must
+     * be at least 64 bytes and must be a multiple of 4 bytes. Defaults to 64 bytes.
+     */
     @Generated
     @Selector("setInstanceDescriptorStride:")
     public native void setInstanceDescriptorStride(@NUInt long value);
 
+    /**
+     * @brief Acceleration structures to be instanced
+     */
     @Generated
     @Selector("setInstancedAccelerationStructures:")
     public native void setInstancedAccelerationStructures(NSArray<?> value);

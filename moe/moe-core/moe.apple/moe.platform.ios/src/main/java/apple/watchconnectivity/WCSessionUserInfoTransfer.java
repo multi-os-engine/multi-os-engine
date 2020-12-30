@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Used to track a user info dictionary being transferred.
+ */
 @Generated
 @Library("WatchConnectivity")
 @Runtime(ObjCRuntime.class)

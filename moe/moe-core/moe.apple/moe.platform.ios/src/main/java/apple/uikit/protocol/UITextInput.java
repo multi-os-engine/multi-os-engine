@@ -47,11 +47,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextInput")
 public interface UITextInput extends UIKeyInput {
+    /**
+     * Writing direction
+     */
     @Generated
     @Selector("baseWritingDirectionForPosition:inDirection:")
     @NInt
     long baseWritingDirectionForPositionInDirection(UITextPosition position, @NInt long direction);
 
+    /**
+     * The following three optional methods are for clients that wish to display a floating cursor to
+     * guide user manipulation of the selected text range via the system-provided keyboard. If a client
+     * does not implement these methods, user feedback will be limited to the outcome after setting the
+     * selected text range using positions resulting from hit testing.
+     */
     @Generated
     @IsOptional
     @Selector("beginFloatingCursorAtPoint:")
@@ -59,6 +68,9 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The end and beginning of the the text document.
+     */
     @Generated
     @Selector("beginningOfDocument")
     UITextPosition beginningOfDocument();
@@ -84,6 +96,9 @@ public interface UITextInput extends UIKeyInput {
     @Selector("characterRangeByExtendingPosition:inDirection:")
     UITextRange characterRangeByExtendingPositionInDirection(UITextPosition position, @NInt long direction);
 
+    /**
+     * Hit testing.
+     */
     @Generated
     @Selector("closestPositionToPoint:")
     UITextPosition closestPositionToPoint(@ByValue CGPoint point);
@@ -92,6 +107,9 @@ public interface UITextInput extends UIKeyInput {
     @Selector("closestPositionToPoint:withinRange:")
     UITextPosition closestPositionToPointWithinRange(@ByValue CGPoint point, UITextRange range);
 
+    /**
+     * Simple evaluation of positions
+     */
     @Generated
     @Selector("comparePosition:toPosition:")
     @NInt
@@ -104,6 +122,9 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * These are optional methods for clients that wish to know when there are pending dictation results.
+     */
     @Generated
     @IsOptional
     @Selector("dictationRecordingDidEnd")
@@ -122,6 +143,9 @@ public interface UITextInput extends UIKeyInput {
     @Selector("endOfDocument")
     UITextPosition endOfDocument();
 
+    /**
+     * Geometry used to provide, for example, a correction rect.
+     */
     @Generated
     @Selector("firstRectForRange:")
     @ByValue
@@ -135,11 +159,20 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * A system-provied input delegate is assigned when the system is interested in input changes.
+     */
     @Generated
     @Selector("inputDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     UITextInputDelegate inputDelegate();
 
+    /**
+     * This is an optional method for clients that wish to support dictation phrase alternatives. If
+     * they do not implement this method, dictation will just insert the most likely interpretation
+     * of what was spoken via -insertText:.
+     * dictationResult is an array of UIDictationPhrases.
+     */
     @Generated
     @IsOptional
     @Selector("insertDictationResult:")
@@ -147,6 +180,12 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The following three optional methods are for clients that wish to support a placeholder for
+     * pending dictation results. -insertDictationPlaceholder must return a reference to the
+     * placeholder. This reference will be used to identify the placeholder by the other methods
+     * (there may be more than one placeholder).
+     */
     @Generated
     @IsOptional
     @Selector("insertDictationResultPlaceholder")
@@ -155,10 +194,16 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Nil if no marked text.
+     */
     @Generated
     @Selector("markedTextRange")
     UITextRange markedTextRange();
 
+    /**
+     * Describes how the marked text should be drawn.
+     */
     @Generated
     @Selector("markedTextStyle")
     NSDictionary<String, ?> markedTextStyle();
@@ -177,6 +222,9 @@ public interface UITextInput extends UIKeyInput {
     @Selector("positionFromPosition:offset:")
     UITextPosition positionFromPositionOffset(UITextPosition position, @NInt long offset);
 
+    /**
+     * To be implemented if there is not a one-to-one correspondence between text positions within range and character offsets into the associated string.
+     */
     @Generated
     @IsOptional
     @Selector("positionWithinRange:atCharacterOffset:")
@@ -184,10 +232,16 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Layout questions.
+     */
     @Generated
     @Selector("positionWithinRange:farthestInDirection:")
     UITextPosition positionWithinRangeFarthestInDirection(UITextRange range, @NInt long direction);
 
+    /**
+     * willInsertResult will be NO if the recognition failed.
+     */
     @Generated
     @IsOptional
     @Selector("removeDictationResultPlaceholder:willInsertResult:")
@@ -200,10 +254,19 @@ public interface UITextInput extends UIKeyInput {
     @Selector("replaceRange:withText:")
     void replaceRangeWithText(UITextRange range, String text);
 
+    /**
+     * Text may have a selection, either zero-length (a caret) or ranged.  Editing operations are
+     * always performed on the text from this selection.  nil corresponds to no selection.
+     */
     @Generated
     @Selector("selectedTextRange")
     UITextRange selectedTextRange();
 
+    /**
+     * Selection affinity determines whether, for example, the insertion point appears after the last
+     * character on a line or before the first character on the following line in cases where text
+     * wraps across line boundaries.
+     */
     @Generated
     @IsOptional
     @Selector("selectionAffinity")
@@ -212,6 +275,9 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Returns an array of UITextSelectionRects
+     */
     @Generated
     @Selector("selectionRectsForRange:")
     NSArray<? extends UITextSelectionRect> selectionRectsForRange(UITextRange range);
@@ -220,22 +286,40 @@ public interface UITextInput extends UIKeyInput {
     @Selector("setBaseWritingDirection:forRange:")
     void setBaseWritingDirectionForRange(@NInt long writingDirection, UITextRange range);
 
+    /**
+     * A system-provied input delegate is assigned when the system is interested in input changes.
+     */
     @Generated
     @Selector("setInputDelegate:")
     void setInputDelegate(@Mapped(ObjCObjectMapper.class) UITextInputDelegate value);
 
+    /**
+     * selectedRange is a range within the markedText
+     */
     @Generated
     @Selector("setMarkedText:selectedRange:")
     void setMarkedTextSelectedRange(String markedText, @ByValue NSRange selectedRange);
 
+    /**
+     * Describes how the marked text should be drawn.
+     */
     @Generated
     @Selector("setMarkedTextStyle:")
     void setMarkedTextStyle(NSDictionary<String, ?> value);
 
+    /**
+     * Text may have a selection, either zero-length (a caret) or ranged.  Editing operations are
+     * always performed on the text from this selection.  nil corresponds to no selection.
+     */
     @Generated
     @Selector("setSelectedTextRange:")
     void setSelectedTextRange(UITextRange value);
 
+    /**
+     * Selection affinity determines whether, for example, the insertion point appears after the last
+     * character on a line or before the first character on the following line in cases where text
+     * wraps across line boundaries.
+     */
     @Generated
     @IsOptional
     @Selector("setSelectionAffinity:")
@@ -243,6 +327,9 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * return NO to not change text
+     */
     @Generated
     @IsOptional
     @Selector("shouldChangeTextInRange:replacementText:")
@@ -250,10 +337,17 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Methods for manipulating text.
+     */
     @Generated
     @Selector("textInRange:")
     String textInRange(UITextRange range);
 
+    /**
+     * An affiliated view that provides a coordinate system for all geometric values in this protocol.
+     * If unimplmeented, the first view in the responder chain will be selected.
+     */
     @Generated
     @IsOptional
     @Selector("textInputView")
@@ -261,10 +355,17 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Methods for creating ranges and positions.
+     */
     @Generated
     @Selector("textRangeFromPosition:toPosition:")
     UITextRange textRangeFromPositionToPosition(UITextPosition fromPosition, UITextPosition toPosition);
 
+    /**
+     * Text styling information can affect, for example, the appearance of a correction rect.
+     * Returns a dictionary containing NSAttributedString keys.
+     */
     @Generated
     @IsOptional
     @Selector("textStylingAtPosition:inDirection:")
@@ -272,6 +373,9 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * A tokenizer must be provided to inform the text input system about text units of varying granularity.
+     */
     @Generated
     @Selector("tokenizer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -288,6 +392,10 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This is an optional method for clients that wish to support text phrase alternatives. If they do not implement this method,
+     * the text will be inserted by -insertText: without the phase alternatives.
+     */
     @Generated
     @IsOptional
     @Selector("insertText:alternatives:style:")
@@ -295,6 +403,11 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Insert a placeholder
+     * If `size.height` is <= 0, then the placeholder is inline and line height.
+     * If `size.height` is > 0, then the placeholder is treated as a paragraph of height `size.height`.
+     */
     @Generated
     @IsOptional
     @Selector("insertTextPlaceholderWithSize:")
@@ -302,6 +415,9 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Remove the placeholder.
+     */
     @Generated
     @IsOptional
     @Selector("removeTextPlaceholder:")
@@ -309,6 +425,9 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * set attributedString as markedText, selectedRange is a range within the markedText
+     */
     @Generated
     @IsOptional
     @Selector("setAttributedMarkedText:selectedRange:")

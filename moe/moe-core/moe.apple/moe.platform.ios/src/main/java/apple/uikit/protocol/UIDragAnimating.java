@@ -14,6 +14,13 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDragAnimating")
 public interface UIDragAnimating {
+    /**
+     * Instances of UIDragAnimating provide you a way to animate your own changes
+     * alongside the drag and drop system's animations.
+     * 
+     * Animatable view properties that are set by the animation block will be
+     * animated to their new values.
+     */
     @Generated
     @Selector("addAnimations:")
     void addAnimations(@ObjCBlock(name = "call_addAnimations") Block_addAnimations animations);

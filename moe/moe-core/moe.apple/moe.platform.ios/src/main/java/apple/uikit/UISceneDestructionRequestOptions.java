@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This object is created by your application and passed with a UISceneSession destruction request
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)

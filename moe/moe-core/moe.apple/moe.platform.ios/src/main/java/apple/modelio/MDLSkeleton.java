@@ -120,6 +120,9 @@ public class MDLSkeleton extends MDLObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * world space bind transforms
+     */
     @Generated
     @Selector("jointBindTransforms")
     public native MDLMatrix4x4Array jointBindTransforms();
@@ -168,6 +171,9 @@ public class MDLSkeleton extends MDLObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * local space default transforms, used for joints not animated in a MDLPackedJointAnimation
+     */
     @Generated
     @Selector("jointRestTransforms")
     public native MDLMatrix4x4Array jointRestTransforms();

@@ -24,6 +24,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Mouse profile that represent a physical mouse object with two axis cursor, two axis scroll,
+ * left button, optional right and middle buttons and optional set of auxiliary buttons.
+ * 
+ * It only provides information about raw mouse movement deltas. For the valid cursor position
+ * at given point in time, use UIHoverGestureRecognizer and NSEvent.mouseLocation.
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -116,6 +123,9 @@ public class GCMouseInput extends GCPhysicalInputProfile {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Mouse buttons that can be used only as digital inputs
+     */
     @Generated
     @Selector("leftButton")
     public native GCControllerButtonInput leftButton();
@@ -154,6 +164,9 @@ public class GCMouseInput extends GCPhysicalInputProfile {
     @Selector("rightButton")
     public native GCControllerButtonInput rightButton();
 
+    /**
+     * Scroll is a dpad with undefined range.
+     */
     @Generated
     @Selector("scroll")
     public native GCDeviceCursor scroll();

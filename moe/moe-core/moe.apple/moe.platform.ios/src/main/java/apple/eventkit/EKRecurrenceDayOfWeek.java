@@ -43,6 +43,27 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      EKRecurrenceDayOfWeek
+ * @abstract   Class which represents a day of the week this recurrence will occur.
+ * @discussion EKRecurrenceDayOfWeek specifies either a simple day of the week, or the nth instance
+ *             of a particular day of the week, such as the third Tuesday of every month. The week
+ *             number is only valid when used with monthly or yearly recurrences, since it would
+ *             be otherwise meaningless.
+ * 
+ *             Valid values for dayOfTheWeek are integers 1-7, which correspond to days of the week
+ *             with Sunday = 1. Valid values for weekNumber portion are (+/-)1-53, where a negative
+ *             value indicates a value from the end of the range. For example, in a yearly event -1
+ *             means last week of the year. -1 in a Monthly recurrence indicates the last week of
+ *             the month. 
+ * 
+ *             The value 0 also indicates the weekNumber is irrelevant (every Sunday, etc.).
+ * 
+ *             Day-of-week weekNumber values that are out of bounds for the recurrence type will
+ *             result in an exception when trying to initialize the recurrence. In particular,
+ *             weekNumber must be zero when passing EKRecurrenceDayOfWeek objects to initialize a weekly 
+ *             recurrence.
+ */
 @Generated
 @Library("EventKit")
 @Runtime(ObjCRuntime.class)
@@ -93,10 +114,18 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @method     dayOfWeek:
+     * @abstract   Creates an autoreleased object with a day of the week and week number of zero.
+     */
     @Generated
     @Selector("dayOfWeek:")
     public static native EKRecurrenceDayOfWeek dayOfWeek(@NInt long dayOfTheWeek);
 
+    /**
+     * @method     dayOfWeek:weekNumber:
+     * @abstract   Creates an autoreleased object with a specific day of week and week number.
+     */
     @Generated
     @Selector("dayOfWeek:weekNumber:")
     public static native EKRecurrenceDayOfWeek dayOfWeekWeekNumber(@NInt long dayOfTheWeek, @NInt long weekNumber);
@@ -168,6 +197,10 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * @property   dayOfTheWeek
+     * @abstract   The day of the week.
+     */
     @Generated
     @Selector("dayOfTheWeek")
     @NInt
@@ -177,10 +210,18 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
     @Selector("init")
     public native EKRecurrenceDayOfWeek init();
 
+    /**
+     * @method     initWithDayOfTheWeek:weekNumber:
+     * @abstract   Creates an day-of-week object with a specific day of week and week number.
+     */
     @Generated
     @Selector("initWithDayOfTheWeek:weekNumber:")
     public native EKRecurrenceDayOfWeek initWithDayOfTheWeekWeekNumber(@NInt long dayOfTheWeek, @NInt long weekNumber);
 
+    /**
+     * @property   weekNumber
+     * @abstract   The week number.
+     */
     @Generated
     @Selector("weekNumber")
     @NInt

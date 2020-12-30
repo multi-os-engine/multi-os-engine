@@ -3,6 +3,9 @@ package apple.businesschat.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * BCChatButtonStyle is used to define the visual style of the button.
+ */
 @Generated
 public final class BCChatButtonStyle {
     @Generated

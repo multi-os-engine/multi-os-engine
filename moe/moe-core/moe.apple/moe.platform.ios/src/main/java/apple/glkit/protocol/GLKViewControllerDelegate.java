@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GLKViewControllerDelegate")
 public interface GLKViewControllerDelegate {
+    /**
+     * Delegate method that gets called when the pause state changes. 
+     */
     @Generated
     @IsOptional
     @Selector("glkViewController:willPause:")
@@ -37,6 +40,11 @@ public interface GLKViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Required method for implementing GLKViewControllerDelegate. This update method variant should be used
+     * when not subclassing GLKViewController. This method will not be called if the GLKViewController object
+     * has been subclassed and implements -(void)update.
+     */
     @Generated
     @Selector("glkViewControllerUpdate:")
     void glkViewControllerUpdate(GLKViewController controller);

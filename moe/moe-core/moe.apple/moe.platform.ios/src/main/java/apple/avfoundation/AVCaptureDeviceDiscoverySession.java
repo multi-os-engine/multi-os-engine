@@ -39,6 +39,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVCaptureDeviceDiscoverySession
+ * @abstract
+ *    The AVCaptureDeviceDiscoverySession allows clients to search for devices by certain criteria.
+ * 
+ * @discussion
+ *    This class allows clients to discover devices by providing certain search criteria. The objective of this class is to help find devices by device type and optionally by media type or position and allow you to key-value observe changes to the returned devices list.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -97,6 +105,23 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @method discoverySessionWithDeviceTypes:
+     * @abstract
+     *    Returns an AVCaptureDeviceDiscoverySession instance for the given device types, media type, and position.
+     * 
+     * @param deviceTypes
+     *    An array specifying the device types to include in the list of discovered devices.
+     * @param mediaType
+     *    The media type, such as AVMediaTypeVideo, AVMediaTypeAudio, or AVMediaTypeMuxed, to include in the list of discovered devices. Pass nil to search for devices with any media type.
+     * @param position
+     *    The position to include in the list of discovered devices. Pass AVCaptureDevicePositionUnspecified to search for devices with any position.
+     * @result
+     *    The AVCaptureDeviceDiscoverySession from which the list of devices can be obtained.
+     * 
+     * @discussion
+     *    The list of device types is mandatory. This is used to make sure that clients only get access to devices of types they expect. This prevents new device types from automatically being included in the list of devices.
+     */
     @Generated
     @Selector("discoverySessionWithDeviceTypes:mediaType:position:")
     public static native AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypesMediaTypePosition(
@@ -155,6 +180,14 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property devices
+     * @abstract
+     *    The list of devices that comply to the search criteria specified on the discovery session.
+     * 
+     * @discussion
+     *    The returned array contains only devices that are available at the time the method is called. Applications can key-value observe this property to be notified when the list of available devices has changed. For apps linked against iOS 10, the devices returned are unsorted. For apps linked against iOS 11 or later, the devices are sorted by AVCaptureDeviceType, matching the order specified in the deviceTypes parameter of +[AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:mediaType:position:]. If a position of AVCaptureDevicePositionUnspecified is specified, the results are further ordered by position in the AVCaptureDevicePosition enum. Starting in Mac Catalyst 14.0, clients can key value observe the value of this property to be notified when the devices change.
+     */
     @Generated
     @Selector("devices")
     public native NSArray<? extends AVCaptureDevice> devices();
@@ -163,6 +196,14 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
     @Selector("init")
     public native AVCaptureDeviceDiscoverySession init();
 
+    /**
+     * @property supportedMultiCamDeviceSets
+     * @abstract
+     *    An array of sets of AVCaptureDevices that are allowed to be used simultaneously in an AVCaptureMultiCamSession.
+     * 
+     * @discussion
+     *    When using an AVCaptureMultiCamSession, multiple cameras may be used as device inputs to the session, so long as they are included in one of the supportedMultiCamDeviceSets. Starting in Mac Catalyst 14.0, clients can key value observe the value of this property to be notified when the device sets change.
+     */
     @Generated
     @Selector("supportedMultiCamDeviceSets")
     public native NSArray<? extends NSSet<? extends AVCaptureDevice>> supportedMultiCamDeviceSets();

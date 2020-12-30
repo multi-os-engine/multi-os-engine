@@ -67,6 +67,9 @@ public class UIMenu extends UIMenuElement {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * The menu's sub-elements and sub-menus. On iOS 14.0, elements of your own menus are mutable, -copying a menu will produce mutable elements, and UIKit will take immutable copies of menus it receives. Prior to iOS 14.0, menus are always fully immutable.
+     */
     @Generated
     @Selector("children")
     public native NSArray<? extends UIMenuElement> children();
@@ -92,6 +95,9 @@ public class UIMenu extends UIMenuElement {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Unique identifier.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -125,14 +131,40 @@ public class UIMenu extends UIMenuElement {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @abstract Copies this menu and replaces its children.
+     * 
+     * @param newChildren  The replacement children.
+     * 
+     * @return A copy of this menu with updated children.
+     */
     @Generated
     @Selector("menuByReplacingChildren:")
     public native UIMenu menuByReplacingChildren(NSArray<? extends UIMenuElement> newChildren);
 
+    /**
+     * @abstract Creates a UIMenu with the given arguments.
+     * 
+     * @param title       The menu's title.
+     * @param children    The menu's action-based sub-elements and sub-menus.
+     * 
+     * @return A new UIMenu.
+     */
     @Generated
     @Selector("menuWithTitle:children:")
     public static native UIMenu menuWithTitleChildren(String title, NSArray<? extends UIMenuElement> children);
 
+    /**
+     * @abstract Creates a UIMenu with the given arguments.
+     * 
+     * @param title       The menu's title.
+     * @param image       Image to be displayed alongside the menu's title.
+     * @param identifier  The menu's unique identifier. Pass nil to use an auto-generated identifier.
+     * @param options     The menu's options.
+     * @param children    The menu's action-based sub-elements and sub-menus.
+     * 
+     * @return A new UIMenu.
+     */
     @Generated
     @Selector("menuWithTitle:image:identifier:options:children:")
     public static native UIMenu menuWithTitleImageIdentifierOptionsChildren(String title, UIImage image,
@@ -144,6 +176,9 @@ public class UIMenu extends UIMenuElement {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Options.
+     */
     @Generated
     @Selector("options")
     @NUInt
@@ -180,6 +215,13 @@ public class UIMenu extends UIMenuElement {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract Creates a UIMenu with an empty title, nil image, automatically generated identifier, and default options.
+     * 
+     * @param children    The menu's action-based sub-elements and sub-menus.
+     * 
+     * @return A new UIMenu.
+     */
     @Generated
     @Selector("menuWithChildren:")
     public static native UIMenu menuWithChildren(NSArray<? extends UIMenuElement> children);

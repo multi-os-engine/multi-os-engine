@@ -39,6 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief Object representing an unconfigured MFi Wireless Accessory Configuration (WAC) accessory.
+ * 
+ * @discussion This class models an unconfigured MFi Wireless Accessory Configuration accessory
+ *             discovered via a EAWiFiUnconfiguredAccessoryBrowser search.
+ */
 @Generated
 @Library("ExternalAccessory")
 @Runtime(ObjCRuntime.class)
@@ -154,27 +160,57 @@ public class EAWiFiUnconfiguredAccessory extends NSObject {
     @Selector("init")
     public native EAWiFiUnconfiguredAccessory init();
 
+    /**
+     * @property macAddress
+     * 
+     * @discussion The primary MAC address of the accessory.
+     */
     @Generated
     @Selector("macAddress")
     public native String macAddress();
 
+    /**
+     * @property manufacturer
+     * 
+     * @discussion The name of the accessory's manufacturer.
+     */
     @Generated
     @Selector("manufacturer")
     public native String manufacturer();
 
+    /**
+     * @property model
+     * 
+     * @discussion The model name of accessory.
+     */
     @Generated
     @Selector("model")
     public native String model();
 
+    /**
+     * @property name
+     * 
+     * @discussion The name of the accessory.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * @property properties
+     * 
+     * @discussion The properties the accessory supports.
+     */
     @Generated
     @Selector("properties")
     @NUInt
     public native long properties();
 
+    /**
+     * @property ssid
+     * 
+     * @discussion The Wi-Fi SSID of the accessory.
+     */
     @Generated
     @Selector("ssid")
     public native String ssid();

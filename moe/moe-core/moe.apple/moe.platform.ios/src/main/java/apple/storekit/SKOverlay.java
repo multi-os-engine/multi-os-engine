@@ -75,6 +75,9 @@ public class SKOverlay extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The overlay configuration.
+     */
     @Generated
     @Selector("configuration")
     public native SKOverlayConfiguration configuration();
@@ -83,6 +86,9 @@ public class SKOverlay extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * A delegate for overlay events.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -92,6 +98,9 @@ public class SKOverlay extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Dismisses an overlay being presented in a `UIWindowScene`.
+     */
     @Generated
     @Selector("dismissOverlayInScene:")
     public static native void dismissOverlayInScene(UIWindowScene scene);
@@ -105,6 +114,10 @@ public class SKOverlay extends NSObject {
     @Selector("init")
     public native SKOverlay init();
 
+    /**
+     * Creates an overlay with the provided configuration.
+     * @param configuration the configuration for the overlay.
+     */
     @Generated
     @Selector("initWithConfiguration:")
     public native SKOverlay initWithConfiguration(SKOverlayConfiguration configuration);
@@ -136,6 +149,9 @@ public class SKOverlay extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Attempts to present an app overlay in a `UIWindowScene`.
+     */
     @Generated
     @Selector("presentInScene:")
     public native void presentInScene(UIWindowScene scene);
@@ -148,10 +164,16 @@ public class SKOverlay extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * A delegate for overlay events.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKOverlayDelegate value);
 
+    /**
+     * A delegate for overlay events.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) SKOverlayDelegate value) {
         Object __old = delegate();

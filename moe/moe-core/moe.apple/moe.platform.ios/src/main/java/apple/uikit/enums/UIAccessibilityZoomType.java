@@ -19,8 +19,15 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Use to inform system Zoom that focus has changed to a new location. 
+ * The frame should be in the coordinate space of the view.
+ */
 @Generated
 public final class UIAccessibilityZoomType {
+    /**
+     * Used when the text insertion point has moved
+     */
     @Generated @NInt public static final long UIAccessibilityZoomTypeInsertionPoint = 0x0000000000000000L;
 
     @Generated

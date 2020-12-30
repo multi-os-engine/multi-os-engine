@@ -9,6 +9,12 @@ public final class NSPersistentCloudKitContainerEventResultType {
     private NSPersistentCloudKitContainerEventResultType() {
     }
 
+    /**
+     * the result is an NSArray<NSPersistentCloudKitContainerEvent *>
+     */
     @Generated @NInt public static final long Events = 0x0000000000000000L;
+    /**
+     * the result is an NSArray<NSNumber *> indicating the count of events matching the request
+     */
     @Generated @NInt public static final long CountEvents = 0x0000000000000001L;
 }

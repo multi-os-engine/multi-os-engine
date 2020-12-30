@@ -29,6 +29,15 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSCNNDropout
+ * @dependency This depends on Metal.framework
+ * @discussion Dropout is a regularization technique used to prevent neural networks from
+ *             overfitting during training. With probability keepProbability, this filter
+ *             outputs the input element scaled by 1 / keepProbability. Otherwise, it
+ *             outputs 0. Each input element is kept or dropped independently. The scaling
+ *             is performed to keep the energy of the output unchanged.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -100,6 +109,9 @@ public class MPSCNNDropout extends MPSCNNKernel {
     @Selector("initWithCoder:")
     public native MPSCNNDropout initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract <NSSecureCoding> support
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSCNNDropout initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
@@ -108,6 +120,19 @@ public class MPSCNNDropout extends MPSCNNKernel {
     @Selector("initWithDevice:")
     public native MPSCNNDropout initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Standard init with default properties per filter type.
+     * @param      device              The device that the filter will be used on.
+     * @param      keepProbability     The probability that each element in the input is kept.
+     *                                 The valid range is (0.0f, 1.0f).
+     * @param      seed                The seed used to generate random numbers.
+     * @param      maskStrideInPixels  The mask stride in the x, y, and z dimensions, which
+     *                                 allows for the broadcasting of mask data. The only valid
+     *                                 values are 0 and 1 for each dimension. For no
+     *                                 broadcasting, set the values for each dimension to 1.
+     *                                 For broadcasting, set desired values to 0.
+     * @result     A valid MPSCNNDropout object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:keepProbability:seed:maskStrideInPixels:")
     public native MPSCNNDropout initWithDeviceKeepProbabilitySeedMaskStrideInPixels(
@@ -131,6 +156,11 @@ public class MPSCNNDropout extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * @property   keepProbability
+     * @abstract   The probability that each element in the input is kept.
+     *             The valid range is (0.0f, 1.0f).
+     */
     @Generated
     @Selector("keepProbability")
     public native float keepProbability();
@@ -139,6 +169,14 @@ public class MPSCNNDropout extends MPSCNNKernel {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property   maskStrideInPixels
+     * @abstract   The mask stride in the x, y, and x dimensions, which
+     *             allows for the broadcasting the mask data.
+     * @discussion The only valid values are 0 and 1 for each dimension.
+     *             For no broadcasting, set the values for each dimension
+     *             to 1. For broadcasting, set desired values to 0.
+     */
     @Generated
     @Selector("maskStrideInPixels")
     @ByValue
@@ -163,6 +201,10 @@ public class MPSCNNDropout extends MPSCNNKernel {
     public native MPSCNNDropoutGradientState resultStateForSourceImageSourceStatesDestinationImage(MPSImage sourceImage,
             NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
 
+    /**
+     * @property   seed
+     * @abstract   The seed used to generate random numbers.
+     */
     @Generated
     @Selector("seed")
     @NUInt

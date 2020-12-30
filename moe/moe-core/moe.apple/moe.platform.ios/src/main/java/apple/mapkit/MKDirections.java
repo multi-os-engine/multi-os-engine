@@ -152,6 +152,10 @@ public class MKDirections extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Any calls to -calculateDirectionsWithCompletionHandler: or calculateETAWithCompletionHandler
+     * while -[MKDirections isCalculating] will fail. completionHandler will be called on the main queue
+     */
     @Generated
     @Selector("calculateDirectionsWithCompletionHandler:")
     public native void calculateDirectionsWithCompletionHandler(
@@ -170,6 +174,10 @@ public class MKDirections extends NSObject {
     @Selector("init")
     public native MKDirections init();
 
+    /**
+     * The request will be copied during initialization, so any changes made to the request
+     * after this method returns do not affect the request used in -calculateDirectionsWithCompletionHandler:
+     */
     @Generated
     @Selector("initWithRequest:")
     public native MKDirections initWithRequest(MKDirectionsRequest request);

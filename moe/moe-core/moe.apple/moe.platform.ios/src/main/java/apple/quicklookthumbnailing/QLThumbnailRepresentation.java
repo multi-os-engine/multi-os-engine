@@ -39,10 +39,16 @@ public class QLThumbnailRepresentation extends NSObject {
         super(peer);
     }
 
+    /**
+     * Returns the CGImage representation of the thumbnail.
+     */
     @Generated
     @Selector("CGImage")
     public native CGImageRef CGImage();
 
+    /**
+     * Returns the UIImage representation of the thumbnail. You need to explicitly link against UIKit to use this property.
+     */
     @Generated
     @Selector("UIImage")
     public native UIImage UIImage();

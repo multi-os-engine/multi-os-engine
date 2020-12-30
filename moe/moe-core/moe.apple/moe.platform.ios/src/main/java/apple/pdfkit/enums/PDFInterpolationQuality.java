@@ -3,6 +3,9 @@ package apple.pdfkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Interpolation quality.
+ */
 @Generated
 public final class PDFInterpolationQuality {
     @Generated

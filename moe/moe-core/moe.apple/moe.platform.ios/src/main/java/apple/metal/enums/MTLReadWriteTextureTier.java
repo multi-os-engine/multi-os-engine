@@ -3,6 +3,10 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum MTLReadWriteTextureTier
+ * @abstract MTLReadWriteTextureTier determines support level for read-write texture formats.
+ */
 @Generated
 public final class MTLReadWriteTextureTier {
     @Generated

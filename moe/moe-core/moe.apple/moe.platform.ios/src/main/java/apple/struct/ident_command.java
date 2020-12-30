@@ -33,18 +33,30 @@ public final class ident_command extends StructObject {
         setCmdsize(cmdsize);
     }
 
+    /**
+     * LC_IDENT
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int cmd();
 
+    /**
+     * LC_IDENT
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setCmd(int value);
 
+    /**
+     * strings that follow this command
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int cmdsize();
 
+    /**
+     * strings that follow this command
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setCmdsize(int value);

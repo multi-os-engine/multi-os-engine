@@ -43,6 +43,17 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSPointerArray.h
+ * 
+ * A PointerArray acts like a traditional array that slides elements on insertion or deletion.
+ * Unlike traditional arrays, it holds NULLs, which can be inserted or extracted (and contribute to count).
+ * Also unlike traditional arrays, the 'count' of the array may be set directly.
+ * Using NSPointerFunctionsWeakMemory object references will turn to NULL on last release.
+ * 
+ * The copying and archiving protocols are applicable only when NSPointerArray is configured for Object uses.
+ * The fast enumeration protocol (supporting the for..in statement) will yield NULLs if present.  It is defined for all types of pointers although the language syntax doesn't directly support this.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -170,6 +181,9 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Selector("weakObjectsPointerArray")
     public static native NSPointerArray weakObjectsPointerArray();
 
+    /**
+     * add pointer at index 'count'
+     */
     @Generated
     @Selector("addPointer:")
     public native void addPointer(VoidPtr pointer);
@@ -178,6 +192,9 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Selector("allObjects")
     public native NSArray<?> allObjects();
 
+    /**
+     * eliminate NULLs
+     */
     @Generated
     @Selector("compact")
     public native void compact();
@@ -188,6 +205,10 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Getter: the number of elements in the array, including NULLs
+     * Setter: sets desired number of elements, adding NULLs or removing items as necessary.
+     */
     @Generated
     @Selector("count")
     @NUInt
@@ -211,6 +232,9 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Selector("initWithCoder:")
     public native NSPointerArray initWithCoder(NSCoder coder);
 
+    /**
+     * construction
+     */
     @Generated
     @Selector("initWithOptions:")
     public native NSPointerArray initWithOptions(@NUInt long options);
@@ -219,6 +243,9 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Selector("initWithPointerFunctions:")
     public native NSPointerArray initWithPointerFunctions(NSPointerFunctions functions);
 
+    /**
+     * everything at & above index, including holes, slide higher
+     */
     @Generated
     @Selector("insertPointer:atIndex:")
     public native void insertPointerAtIndex(VoidPtr item, @NUInt long index);
@@ -227,18 +254,31 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Selector("pointerAtIndex:")
     public native VoidPtr pointerAtIndex(@NUInt long index);
 
+    /**
+     * return an NSPointerFunctions object reflecting the functions in use.  This is a new autoreleased object that can be subsequently modified and/or used directly in the creation of other pointer "collections".
+     */
     @Generated
     @Selector("pointerFunctions")
     public native NSPointerFunctions pointerFunctions();
 
+    /**
+     * everything above index, including holes, slide lower
+     */
     @Generated
     @Selector("removePointerAtIndex:")
     public native void removePointerAtIndex(@NUInt long index);
 
+    /**
+     * O(1); NULL item is okay; index must be < count
+     */
     @Generated
     @Selector("replacePointerAtIndex:withPointer:")
     public native void replacePointerAtIndexWithPointer(@NUInt long index, VoidPtr item);
 
+    /**
+     * Getter: the number of elements in the array, including NULLs
+     * Setter: sets desired number of elements, adding NULLs or removing items as necessary.
+     */
     @Generated
     @Selector("setCount:")
     public native void setCount(@NUInt long value);

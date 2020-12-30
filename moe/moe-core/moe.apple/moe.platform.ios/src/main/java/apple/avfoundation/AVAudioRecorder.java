@@ -156,31 +156,52 @@ public class AVAudioRecorder extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * returns average power in decibels for a given channel
+     */
     @Generated
     @Selector("averagePowerForChannel:")
     public native float averagePowerForChannel(@NUInt long channelNumber);
 
+    /**
+     * Array of AVAudioSessionChannelDescription objects
+     */
     @Generated
     @Selector("channelAssignments")
     public native NSArray<? extends AVAudioSessionChannelDescription> channelAssignments();
 
+    /**
+     * get the current time of the recording - only valid while recording
+     */
     @Generated
     @Selector("currentTime")
     public native double currentTime();
 
+    /**
+     * the delegate will be sent messages from the AVAudioRecorderDelegate protocol
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVAudioRecorderDelegate delegate();
 
+    /**
+     * delete the recorded file. recorder must be stopped. returns NO on failure.
+     */
     @Generated
     @Selector("deleteRecording")
     public native boolean deleteRecording();
 
+    /**
+     * get the device current time - always valid
+     */
     @Generated
     @Selector("deviceCurrentTime")
     public native double deviceCurrentTime();
 
+    /**
+     * this object is fully valid only when prepareToRecord has been called
+     */
     @Generated
     @Selector("format")
     public native AVAudioFormat format();
@@ -189,64 +210,109 @@ public class AVAudioRecorder extends NSObject {
     @Selector("init")
     public native AVAudioRecorder init();
 
+    /**
+     * The file type to create can be set through the corresponding settings key. If not set, it will be inferred from the file extension. Will overwrite a file at the specified url if a file exists.
+     */
     @Generated
     @Selector("initWithURL:format:error:")
     public native AVAudioRecorder initWithURLFormatError(NSURL url, AVAudioFormat format,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * The file type to create can be set through the corresponding settings key. If not set, it will be inferred from the file extension. Will overwrite a file at the specified url if a file exists.
+     */
     @Generated
     @Selector("initWithURL:settings:error:")
     public native AVAudioRecorder initWithURLSettingsError(NSURL url, NSDictionary<String, ?> settings,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * turns level metering on or off. default is off.
+     */
     @Generated
     @Selector("isMeteringEnabled")
     public native boolean isMeteringEnabled();
 
+    /**
+     * turns level metering on or off. default is off.
+     */
     @Generated
     @Selector("setMeteringEnabled:")
     public native void setMeteringEnabled(boolean value);
 
+    /**
+     * is it recording or not?
+     */
     @Generated
     @Selector("isRecording")
     public native boolean isRecording();
 
+    /**
+     * pause recording
+     */
     @Generated
     @Selector("pause")
     public native void pause();
 
+    /**
+     * returns peak power in decibels for a given channel
+     */
     @Generated
     @Selector("peakPowerForChannel:")
     public native float peakPowerForChannel(@NUInt long channelNumber);
 
+    /**
+     * creates the file and gets ready to record. happens automatically on record.
+     */
     @Generated
     @Selector("prepareToRecord")
     public native boolean prepareToRecord();
 
+    /**
+     * start or resume recording to file.
+     */
     @Generated
     @Selector("record")
     public native boolean record();
 
+    /**
+     * start recording at specified time in the future. time is an absolute time based on and greater than deviceCurrentTime.
+     */
     @Generated
     @Selector("recordAtTime:")
     public native boolean recordAtTime(double time);
 
+    /**
+     * record a file of a specified duration starting at specified time. time is an absolute time based on and greater than deviceCurrentTime.
+     */
     @Generated
     @Selector("recordAtTime:forDuration:")
     public native boolean recordAtTimeForDuration(double time, double duration);
 
+    /**
+     * record a file of a specified duration. the recorder will stop when it has recorded this length of audio
+     */
     @Generated
     @Selector("recordForDuration:")
     public native boolean recordForDuration(double duration);
 
+    /**
+     * Array of AVAudioSessionChannelDescription objects
+     */
     @Generated
     @Selector("setChannelAssignments:")
     public native void setChannelAssignments(NSArray<? extends AVAudioSessionChannelDescription> value);
 
+    /**
+     * the delegate will be sent messages from the AVAudioRecorderDelegate protocol
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVAudioRecorderDelegate value);
 
+    /**
+     * the delegate will be sent messages from the AVAudioRecorderDelegate protocol
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) AVAudioRecorderDelegate value) {
         Object __old = delegate();
@@ -259,18 +325,30 @@ public class AVAudioRecorder extends NSObject {
         }
     }
 
+    /**
+     * these settings are fully valid only when prepareToRecord has been called
+     */
     @Generated
     @Selector("settings")
     public native NSDictionary<String, ?> settings();
 
+    /**
+     * stops recording. closes the file.
+     */
     @Generated
     @Selector("stop")
     public native void stop();
 
+    /**
+     * call to refresh meter values
+     */
     @Generated
     @Selector("updateMeters")
     public native void updateMeters();
 
+    /**
+     * URL of the recorded file
+     */
     @Generated
     @Selector("url")
     public native NSURL url();

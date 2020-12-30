@@ -19,6 +19,19 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum          HKFitzpatrickSkinType
+ * @abstract      This enumerated type is used to represent the skin type of an individual based on the Fitzpatrick scale.
+ * @discussion    The Fitzpatrick scale is a numerical classification for skin color based on the skin's response to sun
+ *                exposure in terms of the degree of burning and tanning.
+ * 
+ * @constant      HKFitzpatrickSkinTypeI      Pale white skin that always burns easily in the sun and never tans.
+ * @constant      HKFitzpatrickSkinTypeII     White skin that burns easily and tans minimally.
+ * @constant      HKFitzpatrickSkinTypeIII    White to light brown skin that burns moderately and tans uniformly.
+ * @constant      HKFitzpatrickSkinTypeIV     Beige-olive, lightly tanned skin that burns minimally and tans moderately.
+ * @constant      HKFitzpatrickSkinTypeV      Brown skin that rarely burns and tans profusely.
+ * @constant      HKFitzpatrickSkinTypeVI     Dark brown to black skin that never burns and tans profusely.
+ */
 @Generated
 public final class HKFitzpatrickSkinType {
     @Generated @NInt public static final long NotSet = 0x0000000000000000L;

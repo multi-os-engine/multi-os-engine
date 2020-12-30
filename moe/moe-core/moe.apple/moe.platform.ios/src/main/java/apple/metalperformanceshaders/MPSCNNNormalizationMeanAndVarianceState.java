@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class  MPSCNNNormalizationMeanAndVarianceState
+ * @description A state which contains mean and variance terms used to apply a
+ *              normalization in a MPSCNNBatchNormalization operation.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -110,6 +115,14 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
     public native MPSCNNNormalizationMeanAndVarianceState initWithDeviceTextureDescriptor(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, MTLTextureDescriptor descriptor);
 
+    /**
+     * @abstract   Initialize a MPSCNNNormalizationMeanAndVarianceState object using values
+     *             contained in MTLBuffers.
+     * 
+     * @param      mean        The MTLBuffer containing mean terms.
+     * 
+     * @param      variance    The MTLBuffer containing variance terms.
+     */
     @Generated
     @Selector("initWithMean:variance:")
     public native MPSCNNNormalizationMeanAndVarianceState initWithMeanVariance(
@@ -145,6 +158,10 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property   mean
+     * @abstract   A MTLBuffer containing the mean terms.
+     */
     @Generated
     @Selector("mean")
     @MappedReturn(ObjCObjectMapper.class)
@@ -184,6 +201,17 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
     public static native Object temporaryStateWithCommandBufferBufferSize(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
+    /**
+     * @abstract   Create a temporary MPSCNNNormalizationMeanAndVarianceState suitable
+     *             for a normalization operation on images containing no more than
+     *             the specified number of feature channels.
+     * 
+     * @param      commandBuffer           The command buffer on which the temporary state will
+     *                                     be used.
+     * 
+     * @param      numberOfFeatureChannels The number of feature channels used to size the
+     *                                     state.
+     */
     @Generated
     @Selector("temporaryStateWithCommandBuffer:numberOfFeatureChannels:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -202,6 +230,10 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
     public static native Object temporaryStateWithCommandBufferTextureDescriptor(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
 
+    /**
+     * @property   variance
+     * @abstract   A MTLBuffer containing the variance terms.
+     */
     @Generated
     @Selector("variance")
     @MappedReturn(ObjCObjectMapper.class)

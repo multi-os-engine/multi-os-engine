@@ -77,6 +77,9 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Reset this appearance to that of a given style.
+     */
     @Generated
     @Selector("configureWithDefaultForStyle:")
     public native void configureWithDefaultForStyle(@NInt long style);
@@ -101,6 +104,9 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The appearance when the bar button item is in the disabled control state. If unspecified, then synthesized from the normal state.
+     */
     @Generated
     @Selector("disabled")
     public native UIBarButtonItemStateAppearance disabled();
@@ -109,6 +115,9 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The appearance when the bar button item is in the focused control state. If unspecified, then synthesized from the highlighted state.
+     */
     @Generated
     @Selector("focused")
     public native UIBarButtonItemStateAppearance focused();
@@ -118,10 +127,16 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The appearance when the bar button item is in the highlighted control state. If unspecified, then synthesized from the normal state.
+     */
     @Generated
     @Selector("highlighted")
     public native UIBarButtonItemStateAppearance highlighted();
 
+    /**
+     * Construct an appearance for the UIBarButtonItemStylePlain style.
+     */
     @Generated
     @Selector("init")
     public native UIBarButtonItemAppearance init();
@@ -130,6 +145,9 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     @Selector("initWithCoder:")
     public native UIBarButtonItemAppearance initWithCoder(NSCoder coder);
 
+    /**
+     * Construct an appearance with default values for the given style.
+     */
     @Generated
     @Selector("initWithStyle:")
     public native UIBarButtonItemAppearance initWithStyle(@NInt long style);
@@ -161,6 +179,9 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The appearance when the bar button item is in the normal control state.
+     */
     @Generated
     @Selector("normal")
     public native UIBarButtonItemStateAppearance normal();

@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A class to specify list of supported model update parameters.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -57,14 +60,23 @@ public class MLParameterKey extends MLKey {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Double parameter used to control the beta1 of Adam optimizer. Adjustable at load-time
+     */
     @Generated
     @Selector("beta1")
     public static native MLParameterKey beta1();
 
+    /**
+     * Double parameter used to control the beta2 of Adam optimizer. Adjustable at load-time
+     */
     @Generated
     @Selector("beta2")
     public static native MLParameterKey beta2();
 
+    /**
+     * MLMultiArray parameter returned when client requests for biases of a particular layer using a scoped parameter.
+     */
     @Generated
     @Selector("biases")
     public static native MLParameterKey biases();
@@ -95,10 +107,16 @@ public class MLParameterKey extends MLKey {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Int64 parameter used to specify the number of epochs used by optimizer. Adjustable at load-time
+     */
     @Generated
     @Selector("epochs")
     public static native MLParameterKey epochs();
 
+    /**
+     * Double parameter used to control the epsilon of Adam optimizer. Adjustable at load-time
+     */
     @Generated
     @Selector("eps")
     public static native MLParameterKey eps();
@@ -137,22 +155,37 @@ public class MLParameterKey extends MLKey {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Double parameter used to control the learning rate of an optimizer. Adjustable in progress
+     */
     @Generated
     @Selector("learningRate")
     public static native MLParameterKey learningRate();
 
+    /**
+     * String parameter used to specify the name of a linked model
+     */
     @Generated
     @Selector("linkedModelFileName")
     public static native MLParameterKey linkedModelFileName();
 
+    /**
+     * String parameteru sed to specify the search path for a linked model
+     */
     @Generated
     @Selector("linkedModelSearchPath")
     public static native MLParameterKey linkedModelSearchPath();
 
+    /**
+     * Int64 parameter used to specify the size of a miniBatch used by optimizer. Adjustable at load-time
+     */
     @Generated
     @Selector("miniBatchSize")
     public static native MLParameterKey miniBatchSize();
 
+    /**
+     * Double parameter used to control the momentum of gradient based optimizers. Adjustable at load-time
+     */
     @Generated
     @Selector("momentum")
     public static native MLParameterKey momentum();
@@ -163,6 +196,9 @@ public class MLParameterKey extends MLKey {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Int64 parameter used to specify the number of neighbors to use for class affinity (applicable to kNN). Not adjustable in progress
+     */
     @Generated
     @Selector("numberOfNeighbors")
     public static native MLParameterKey numberOfNeighbors();
@@ -175,10 +211,16 @@ public class MLParameterKey extends MLKey {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Returns a new MLParameterKey instance after adding additional scoping
+     */
     @Generated
     @Selector("scopedTo:")
     public native MLParameterKey scopedTo(String scope);
 
+    /**
+     * Int64 parameter used to specify the seed to be used if shuffling data between epochs. Adjustable at load-time
+     */
     @Generated
     @Selector("seed")
     public static native MLParameterKey seed();
@@ -187,6 +229,9 @@ public class MLParameterKey extends MLKey {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Bool parameter used to specify whether to shuffle the data between epochs. Adjustable at load-time
+     */
     @Generated
     @Selector("shuffle")
     public static native MLParameterKey shuffle();
@@ -210,6 +255,9 @@ public class MLParameterKey extends MLKey {
     @NInt
     public static native long version_static();
 
+    /**
+     * MLMultiArray parameter returned when client requests for weights of a particular layer using a scoped parameter.
+     */
     @Generated
     @Selector("weights")
     public static native MLParameterKey weights();

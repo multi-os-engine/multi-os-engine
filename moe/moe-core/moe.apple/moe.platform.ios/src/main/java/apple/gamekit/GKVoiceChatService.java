@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GKVoiceChatService provides voice chat capabilities depending on your networking situation.
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -163,6 +166,9 @@ public class GKVoiceChatService extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * callID is returned by didReceiveInvitationFromParticipantID call. An error may occur if there can be no viable connection made to the remote participant.
+     */
     @Generated
     @Selector("acceptCallID:error:")
     public native boolean acceptCallIDError(@NInt long callID, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
@@ -173,6 +179,9 @@ public class GKVoiceChatService extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native GKVoiceChatClient client();
 
+    /**
+     * callID is returned by didReceiveInvitationFromParticipantID call.
+     */
     @Generated
     @Selector("denyCallID:")
     public native void denyCallID(@NInt long callID);
@@ -181,46 +190,79 @@ public class GKVoiceChatService extends NSObject {
     @Selector("init")
     public native GKVoiceChatService init();
 
+    /**
+     * changes frequently as the near-end participant speaks
+     */
     @Generated
     @Selector("inputMeterLevel")
     public native float inputMeterLevel();
 
+    /**
+     * default NO
+     */
     @Generated
     @Selector("isInputMeteringEnabled")
     public native boolean isInputMeteringEnabled();
 
+    /**
+     * default NO
+     */
     @Generated
     @Selector("setInputMeteringEnabled:")
     public native void setInputMeteringEnabled(boolean value);
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("isMicrophoneMuted")
     public native boolean isMicrophoneMuted();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setMicrophoneMuted:")
     public native void setMicrophoneMuted(boolean value);
 
+    /**
+     * default NO
+     */
     @Generated
     @Selector("isOutputMeteringEnabled")
     public native boolean isOutputMeteringEnabled();
 
+    /**
+     * default NO
+     */
     @Generated
     @Selector("setOutputMeteringEnabled:")
     public native void setOutputMeteringEnabled(boolean value);
 
+    /**
+     * changes frequently as the far-end participant speaks
+     */
     @Generated
     @Selector("outputMeterLevel")
     public native float outputMeterLevel();
 
+    /**
+     * will be called by the client otherwise.
+     */
     @Generated
     @Selector("receivedData:fromParticipantID:")
     public native void receivedDataFromParticipantID(NSData arbitraryData, String participantID);
 
+    /**
+     * will only be called by the client if the client has a pre-established peer-to-peer UDP connection.  Used to receive audio.
+     */
     @Generated
     @Selector("receivedRealTimeData:fromParticipantID:")
     public native void receivedRealTimeDataFromParticipantID(NSData audio, String participantID);
 
+    /**
+     * default 1.0 (max is 1.0, min is 0.0)
+     */
     @Generated
     @Selector("remoteParticipantVolume")
     public native float remoteParticipantVolume();
@@ -243,10 +285,16 @@ public class GKVoiceChatService extends NSObject {
         }
     }
 
+    /**
+     * default 1.0 (max is 1.0, min is 0.0)
+     */
     @Generated
     @Selector("setRemoteParticipantVolume:")
     public native void setRemoteParticipantVolume(float value);
 
+    /**
+     * May fail if you already in a chat, or if there is no peer-to-peer channel that can be made to the participant.
+     */
     @Generated
     @Selector("startVoiceChatWithParticipantID:error:")
     public native boolean startVoiceChatWithParticipantIDError(String participantID,

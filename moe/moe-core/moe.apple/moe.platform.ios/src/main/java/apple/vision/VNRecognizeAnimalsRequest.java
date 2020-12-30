@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief A request that will recognize various animals in an image. The list of animals supported by the recognition algorithm can be queried by +(NSArray *)knownAnimalIdentifiersForRevision
+ * 
+ * @details This request will generate VNRecognizedObjectObservation objects with a defined boundingBox, label and confidence level.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -131,6 +136,11 @@ public class VNRecognizeAnimalsRequest extends VNImageBasedRequest {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @brief This class method returns a list of all animals supported by the recognition algorithm
+     * 
+     * @details This request will generate a collection of names for supported animals by current recognition algorithm.
+     */
     @Generated
     @Selector("knownAnimalIdentifiersForRevision:error:")
     public static native NSArray<String> knownAnimalIdentifiersForRevisionError(@NUInt long requestRevision,

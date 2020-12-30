@@ -19,6 +19,10 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * -----------------------------------------------------------------------------
+ * Thumbnails
+ */
 @Generated
 public final class MPMovieTimeOption {
     @Generated @NInt public static final long NearestKeyFrame = 0x0000000000000000L;

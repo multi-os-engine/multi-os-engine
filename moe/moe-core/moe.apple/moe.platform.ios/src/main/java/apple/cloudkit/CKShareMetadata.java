@@ -199,6 +199,9 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
     @NInt
     public native long participantType();
 
+    /**
+     * This is only present if the share metadata was returned from a CKFetchShareMetadataOperation with shouldFetchRootRecord set to YES
+     */
     @Generated
     @Selector("rootRecord")
     public native CKRecord rootRecord();
@@ -217,6 +220,9 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
         return supportsSecureCoding();
     }
 
+    /**
+     * These properties reflect the participant properties of the user invoking CKFetchShareMetadataOperation
+     */
     @Generated
     @Selector("participantRole")
     @NInt

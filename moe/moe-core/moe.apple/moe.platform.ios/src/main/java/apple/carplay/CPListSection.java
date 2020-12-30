@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @c CPListSection models a single section of items appearing in a @c CPListTemplate.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -94,6 +97,9 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Optional string to use for a header in this section.
+     */
     @Generated
     @Selector("header")
     public native String header();
@@ -106,10 +112,16 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPListSection initWithCoder(NSCoder coder);
 
+    /**
+     * Create a section by specifying a list of items.
+     */
     @Generated
     @Selector("initWithItems:")
     public native CPListSection initWithItems(NSArray<?> items);
 
+    /**
+     * Create a section with a list of items and an optional header and identifier.
+     */
     @Generated
     @Selector("initWithItems:header:sectionIndexTitle:")
     public native CPListSection initWithItemsHeaderSectionIndexTitle(NSArray<?> items, String header,
@@ -132,6 +144,9 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Items appearing in this section.
+     */
     @Generated
     @Selector("items")
     public native NSArray<?> items();
@@ -154,6 +169,11 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * An optional section index title to use in a table displaying this section.
+     * The system will enforce a maximum length of 1 for each section index title - in other words,
+     * you must choose single-character section index titles.
+     */
     @Generated
     @Selector("sectionIndexTitle")
     public native String sectionIndexTitle();
@@ -181,11 +201,18 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Search for an item in this section, returning its index
+     * or @c NSNotFound if not found.
+     */
     @Generated
     @Selector("indexOfItem:")
     @NUInt
     public native long indexOfItem(@Mapped(ObjCObjectMapper.class) CPListTemplateItem item);
 
+    /**
+     * Convenience access to the item in this section at the specified index.
+     */
     @Generated
     @Selector("itemAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)

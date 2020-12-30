@@ -52,6 +52,20 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class ADBannerView
+ * 
+ * @discussion
+ * Provides a view for displaying iAds in an application. iAds are automatically
+ * loaded, presented, and refreshed. When a banner view is tapped, the iAd will
+ * begin its action. In most cases, the action displays a fullscreen interactive
+ * iAd.
+ * 
+ * Note: ADBannerViews must be added to a view hierarchy managed by a
+ * UIViewController. If view controller containment is being used, the controller
+ * managing the banner view must be correctly configured to ensure banner action
+ * presentation works correctly.
+ */
 @Generated
 @Library("iAd")
 @Runtime(ObjCRuntime.class)
@@ -356,11 +370,23 @@ public class ADBannerView extends UIView {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property adType
+     * 
+     * @return
+     * The banner view's ad type.
+     */
     @Generated
     @Selector("adType")
     @NInt
     public native long adType();
 
+    /**
+     * @property advertisingSection
+     * 
+     * @discussion
+     * Reserved for future use.
+     */
     @Generated
     @Selector("advertisingSection")
     public native String advertisingSection();
@@ -412,6 +438,13 @@ public class ADBannerView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * @method cancelBannerViewAction
+     * 
+     * @discussion
+     * Cancels the current in-progress banner view action. This should only be used
+     * in cases where the user's attention is required immediately.
+     */
     @Generated
     @Selector("cancelBannerViewAction")
     public native void cancelBannerViewAction();
@@ -421,6 +454,17 @@ public class ADBannerView extends UIView {
     @Selector("currentContentSizeIdentifier")
     public native String currentContentSizeIdentifier();
 
+    /**
+     * @property delegate
+     * 
+     * @discussion
+     * The banner view delegate is notified when events related to the banner view
+     * and current ad occur, such as when a new ad is loaded, when errors occur
+     * while fetching ads, or when banner actions begin and end.
+     * 
+     * On iOS 5 and later, this property is a weak reference and cannot be used with
+     * objects that modify the behavior of release or retain.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -430,6 +474,13 @@ public class ADBannerView extends UIView {
     @Selector("init")
     public native ADBannerView init();
 
+    /**
+     * @method initWithAdType:
+     * 
+     * @discussion
+     * Initialize the view with a specific ad type. The ad type cannot be changed
+     * after initialization.
+     */
     @Generated
     @Selector("initWithAdType:")
     public native ADBannerView initWithAdType(@NInt long type);
@@ -442,10 +493,22 @@ public class ADBannerView extends UIView {
     @Selector("initWithFrame:")
     public native ADBannerView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * @property bannerLoaded
+     * 
+     * @return
+     * YES if an ad is currently loaded, NO otherwise.
+     */
     @Generated
     @Selector("isBannerLoaded")
     public native boolean isBannerLoaded();
 
+    /**
+     * @property bannerViewActionInProgress
+     * 
+     * @return
+     * YES if the user is currently engaged with a fullscreen interactive ad.
+     */
     @Generated
     @Selector("isBannerViewActionInProgress")
     public native boolean isBannerViewActionInProgress();
@@ -455,6 +518,12 @@ public class ADBannerView extends UIView {
     @Selector("requiredContentSizeIdentifiers")
     public native NSSet<?> requiredContentSizeIdentifiers();
 
+    /**
+     * @property advertisingSection
+     * 
+     * @discussion
+     * Reserved for future use.
+     */
     @Generated
     @Selector("setAdvertisingSection:")
     public native void setAdvertisingSection(String value);
@@ -464,10 +533,32 @@ public class ADBannerView extends UIView {
     @Selector("setCurrentContentSizeIdentifier:")
     public native void setCurrentContentSizeIdentifier(String value);
 
+    /**
+     * @property delegate
+     * 
+     * @discussion
+     * The banner view delegate is notified when events related to the banner view
+     * and current ad occur, such as when a new ad is loaded, when errors occur
+     * while fetching ads, or when banner actions begin and end.
+     * 
+     * On iOS 5 and later, this property is a weak reference and cannot be used with
+     * objects that modify the behavior of release or retain.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ADBannerViewDelegate value);
 
+    /**
+     * @property delegate
+     * 
+     * @discussion
+     * The banner view delegate is notified when events related to the banner view
+     * and current ad occur, such as when a new ad is loaded, when errors occur
+     * while fetching ads, or when banner actions begin and end.
+     * 
+     * On iOS 5 and later, this property is a weak reference and cannot be used with
+     * objects that modify the behavior of release or retain.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) ADBannerViewDelegate value) {
         Object __old = delegate();

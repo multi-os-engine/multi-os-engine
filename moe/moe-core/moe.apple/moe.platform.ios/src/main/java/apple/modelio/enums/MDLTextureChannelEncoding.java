@@ -19,6 +19,9 @@ package apple.modelio.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * The enoding of texel channel elements
+ */
 @Generated
 public final class MDLTextureChannelEncoding {
     @Generated @NInt public static final long UInt8 = 0x0000000000000001L;

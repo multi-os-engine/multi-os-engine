@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief Triggers based on events.
+ * 
+ * @discussion This class represents a trigger that is based on events.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -133,31 +138,89 @@ public class HMEventTrigger extends HMTrigger {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief Creates a predicate that will evaluate whether the event occurred at or after the time specified.
+     * 
+     * @param dateComponents Date components representing the time to compare against when the event occurs.
+     * 
+     * @return Predicate object representing a condition to evaluate before executing the action set.
+     */
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringAfterDateWithComponents:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringAfterDateWithComponents(
             NSDateComponents dateComponents);
 
+    /**
+     * @brief Creates a predicate that will evaluate whether the event occurred after a significant event.
+     * 
+     * @param significantEvent The significant event to compare against.
+     *                         The valid values are: HMSignificantEventSunrise and HMSignificantEventSunset.
+     * 
+     * @param offset An offset from the time of the signficant event. To specify an offset after the significant event, the
+     *               properties of the NSDateComponents must be positive value. e.g. To specify 30 mins after sunset, the
+     *               'minute' property must be set to 30.
+     * 
+     * @return Predicate object representing a condition to evaluate before executing the action set.
+     */
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringAfterSignificantEvent:applyingOffset:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringAfterSignificantEventApplyingOffset(
             String significantEvent, NSDateComponents offset);
 
+    /**
+     * @brief Creates a predicate that will evaluate whether the event occurred before the time specified.
+     * 
+     * @param dateComponents Date components representing the time to compare against when the event occurs.
+     * 
+     * @return Predicate object representing a condition to evaluate before executing the action set.
+     */
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringBeforeDateWithComponents:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringBeforeDateWithComponents(
             NSDateComponents dateComponents);
 
+    /**
+     * @brief Creates a predicate that will evaluate whether the event occurred before a significant event.
+     * 
+     * @param significantEvent The significant event to compare against.
+     *                         The valid values are: HMSignificantEventSunrise and HMSignificantEventSunset.
+     * 
+     * @param offset An offset from the time of the signficant event. To specify an offset before the significant event, the
+     *               properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
+     *               'minute' property must be set to -30.
+     * 
+     * @return Predicate object representing a condition to evaluate before executing the action set.
+     */
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringBeforeSignificantEvent:applyingOffset:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringBeforeSignificantEventApplyingOffset(
             String significantEvent, NSDateComponents offset);
 
+    /**
+     * @brief Creates a predicate that will evaluate whether the event occurred at the time specified.
+     * 
+     * @param dateComponents Date components representing the time to compare against when the event occurs.
+     * 
+     * @return Predicate object representing a condition to evaluate before executing the action set.
+     */
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringOnDateWithComponents:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringOnDateWithComponents(
             NSDateComponents dateComponents);
 
+    /**
+     * @brief Creates a predicate that will evaluate whether a characteristic value is related to the specified value.
+     * 
+     * @param characteristic The characteristic that is evaluated as part of the predicate.
+     * 
+     * @param operatorType The relation between the characteristic and the target value.
+     *                     This can be either Less Than, Greater Than, Less Than or Equal, Greater Than or Equal, Equal, or Not Equal.
+     *                     Anything else will cause an exception to be thrown.
+     * 
+     * @param value The value of the characteristic to compare when evaluating the predicate.
+     * 
+     * @return Predicate object representing a condition to evaluate before executing the action set.
+     */
     @Generated
     @Selector("predicateForEvaluatingTriggerWithCharacteristic:relatedBy:toValue:")
     public static native NSPredicate predicateForEvaluatingTriggerWithCharacteristicRelatedByToValue(
@@ -184,11 +247,23 @@ public class HMEventTrigger extends HMTrigger {
     @NInt
     public static native long version_static();
 
+    /**
+     * @brief Adds a new event to the event trigger.
+     * 
+     * @param event Event to add to the event trigger.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("addEvent:completionHandler:")
     public native void addEventCompletionHandler(HMEvent event,
             @ObjCBlock(name = "call_addEventCompletionHandler") Block_addEventCompletionHandler completion);
 
+    /**
+     * @brief The events associated with the trigger.
+     */
     @Generated
     @Selector("events")
     public native NSArray<? extends HMEvent> events();
@@ -197,20 +272,54 @@ public class HMEventTrigger extends HMTrigger {
     @Selector("init")
     public native HMEventTrigger init();
 
+    /**
+     * @brief Initializes a new event trigger object.
+     * 
+     * @param name Name of the event trigger.
+     * 
+     * @param events Array of events that can trigger the evaluation of the trigger. Note: The trigger will
+     *               be evaluated if any one of the events is true.
+     * 
+     * @param predicate The predicate to evaluate before executing any of the actions sets associated to this
+     *                  event.
+     * 
+     * @return Instance object representing the event trigger.
+     */
     @Generated
     @Selector("initWithName:events:predicate:")
     public native HMEventTrigger initWithNameEventsPredicate(String name, NSArray<? extends HMEvent> events,
             NSPredicate predicate);
 
+    /**
+     * @brief The predicate to evaluate before executing the action sets associated with the trigger.
+     */
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
+    /**
+     * @brief Removes the specified event from the event trigger.
+     * 
+     * @param event Event to remove from the event trigger.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("removeEvent:completionHandler:")
     public native void removeEventCompletionHandler(HMEvent event,
             @ObjCBlock(name = "call_removeEventCompletionHandler") Block_removeEventCompletionHandler completion);
 
+    /**
+     * @brief This method replaces the predicate used to evaluate execution of the action sets associated with the trigger.
+     * 
+     * @param predicate The new predicate for the event trigger.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request,
+     *                   error will be nil on success.
+     */
     @Generated
     @Selector("updatePredicate:completionHandler:")
     public native void updatePredicateCompletionHandler(NSPredicate predicate,
@@ -237,53 +346,133 @@ public class HMEventTrigger extends HMTrigger {
         void call_updatePredicateCompletionHandler(NSError error);
     }
 
+    /**
+     * @brief The events that correspond to executing the restore of the scene before the trigger was executed.
+     *        E.g. Execute the scene for 10 mins and restore original state is achieved by specifying a corresponding
+     *        HMDurationEvent in the list of endEvents.
+     */
     @Generated
     @Selector("endEvents")
     public native NSArray<? extends HMEvent> endEvents();
 
+    /**
+     * @brief Specifies whether this trigger is executed only once after which the trigger is disabled.
+     */
     @Generated
     @Selector("executeOnce")
     public native boolean executeOnce();
 
+    /**
+     * @brief Initializes a new event trigger object.
+     * 
+     * @param name Name of the event trigger.
+     * 
+     * @param events Array of events that can trigger the evaluation of the trigger. Note: The trigger will
+     *               be evaluated if any one of the events is true.
+     * 
+     * @param endEvents Array of end events that can trigger the restoration to the state before the scene was run.
+     * 
+     * @param recurrences Specifies the days of the week when the trigger is to be evaluated. Only the 'weekday' property
+     *                    is honored in NSDateComponents.
+     * 
+     * @param predicate The predicate to evaluate before executing any of the actions sets associated to this
+     *                  event.
+     * 
+     * @return Instance object representing the event trigger.
+     */
     @Generated
     @Selector("initWithName:events:endEvents:recurrences:predicate:")
     public native HMEventTrigger initWithNameEventsEndEventsRecurrencesPredicate(String name,
             NSArray<? extends HMEvent> events, NSArray<? extends HMEvent> endEvents,
             NSArray<? extends NSDateComponents> recurrences, NSPredicate predicate);
 
+    /**
+     * @brief Creates a predicate that will evaluate whether the event occurred after a significant event.
+     * 
+     * @param significantEvent The significant event to compare against.
+     * 
+     * @return Predicate object representing a condition to evaluate before executing the action set.
+     */
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringAfterSignificantEvent:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringAfterSignificantEvent(
             HMSignificantTimeEvent significantEvent);
 
+    /**
+     * @brief Creates a predicate that will evaluate whether the event occurred before a significant event.
+     * 
+     * @param significantEvent The significant event to compare against.
+     * 
+     * @return Predicate object representing a condition to evaluate before executing the action set.
+     */
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringBeforeSignificantEvent:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringBeforeSignificantEvent(
             HMSignificantTimeEvent significantEvent);
 
+    /**
+     * @brief Creates a predicate that will evaluate whether the event occurred between two times.
+     * 
+     * @param firstDateComponents The first date component.
+     * 
+     * @param secondDateWithComponents The second date component.
+     * 
+     * @return Predicate object representing a condition to evaluate before executing the action set.
+     */
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringBetweenDateWithComponents:secondDateWithComponents:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringBetweenDateWithComponentsSecondDateWithComponents(
             NSDateComponents firstDateComponents, NSDateComponents secondDateWithComponents);
 
+    /**
+     * @brief Creates a predicate that will evaluate whether the event occurred between two significant events.
+     * 
+     * @param firstSignificantEvent The first significant event.
+     * 
+     * @param secondSignificantEvent The second significant event.
+     * 
+     * @return Predicate object representing a condition to evaluate before executing the action set.
+     */
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringBetweenSignificantEvent:secondSignificantEvent:")
     public static native NSPredicate predicateForEvaluatingTriggerOccurringBetweenSignificantEventSecondSignificantEvent(
             HMSignificantTimeEvent firstSignificantEvent, HMSignificantTimeEvent secondSignificantEvent);
 
+    /**
+     * @brief Creates a predicate that will evaluate based on the presence event.
+     * 
+     * @param presenceEvent The presenceEvent that is evaluated as part of the predicate.
+     * 
+     * @return Predicate object representing a condition to evaluate before executing the action set.
+     */
     @Generated
     @Selector("predicateForEvaluatingTriggerWithPresence:")
     public static native NSPredicate predicateForEvaluatingTriggerWithPresence(HMPresenceEvent presenceEvent);
 
+    /**
+     * @brief recurrences Specifies the recurrences for when the trigger is evaluated. This only supports days of the week.
+     */
     @Generated
     @Selector("recurrences")
     public native NSArray<? extends NSDateComponents> recurrences();
 
+    /**
+     * @brief Specifies the current activation state of the trigger.
+     */
     @Generated
     @Selector("triggerActivationState")
     @NUInt
     public native long triggerActivationState();
 
+    /**
+     * @brief Updates the set of events in the event trigger.
+     * 
+     * @param endEvents Events to update in the event trigger
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateEndEvents:completionHandler:")
     public native void updateEndEventsCompletionHandler(NSArray<? extends HMEvent> endEvents,
@@ -296,6 +485,15 @@ public class HMEventTrigger extends HMTrigger {
         void call_updateEndEventsCompletionHandler(NSError error);
     }
 
+    /**
+     * @brief Updates the set of events in the event trigger.
+     * 
+     * @param events Events to update in the event trigger
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateEvents:completionHandler:")
     public native void updateEventsCompletionHandler(NSArray<? extends HMEvent> events,
@@ -308,6 +506,15 @@ public class HMEventTrigger extends HMTrigger {
         void call_updateEventsCompletionHandler(NSError error);
     }
 
+    /**
+     * @brief This method is used to update whether the event trigger repeats or not.
+     * 
+     * @param executeOnce Specifies whether the event trigger is repeated or not.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateExecuteOnce:completionHandler:")
     public native void updateExecuteOnceCompletionHandler(boolean executeOnce,
@@ -320,6 +527,15 @@ public class HMEventTrigger extends HMTrigger {
         void call_updateExecuteOnceCompletionHandler(NSError error);
     }
 
+    /**
+     * @brief This method replaces the recurrences which secifies the days of the week when the trigger is to be evaluated.
+     * 
+     * @param recurrences The new recurrences for the event trigger.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request,
+     *                   error will be nil on success.
+     */
     @Generated
     @Selector("updateRecurrences:completionHandler:")
     public native void updateRecurrencesCompletionHandler(NSArray<? extends NSDateComponents> recurrences,

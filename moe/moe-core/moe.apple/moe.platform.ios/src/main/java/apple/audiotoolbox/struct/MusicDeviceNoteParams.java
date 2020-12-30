@@ -44,8 +44,7 @@ public final class MusicDeviceNoteParams extends StructObject {
     }
 
     @Generated
-    public MusicDeviceNoteParams(int argCount, float mPitch, float mVelocity,
-            @ByValue NoteParamsControlValue mControls) {
+    public MusicDeviceNoteParams(int argCount, float mPitch, float mVelocity, @ByValue NoteParamsControlValue mControls) {
         super(MusicDeviceNoteParams.class);
         setArgCount(argCount);
         setMPitch(mPitch);
@@ -77,11 +76,17 @@ public final class MusicDeviceNoteParams extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setMVelocity(float value);
 
+    /**
+     * arbitrary length
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @ByValue
     public native NoteParamsControlValue mControls();
 
+    /**
+     * arbitrary length
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setMControls(@ByValue NoteParamsControlValue value);

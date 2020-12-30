@@ -27,6 +27,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Object representing the mapping of a physical 3D space.
+ * @discussion ARWorldMap supports archiving and unarchiving across devices
+ * and versions with NSDecodingFailurePolicySetErrorAndReturn, providing an error
+ * if the map format is not supported.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -55,6 +61,9 @@ public class ARWorldMap extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * A list of anchors in the map.
+     */
     @Generated
     @Selector("anchors")
     public native NSArray<? extends ARAnchor> anchors();
@@ -139,6 +148,9 @@ public class ARWorldMap extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The feature points in the map.
+     */
     @Generated
     @Selector("rawFeaturePoints")
     public native ARPointCloud rawFeaturePoints();
@@ -151,6 +163,9 @@ public class ARWorldMap extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * A list of anchors in the map.
+     */
     @Generated
     @Selector("setAnchors:")
     public native void setAnchors(NSArray<? extends ARAnchor> value);

@@ -73,6 +73,11 @@ public class SCNBillboardConstraint extends SCNConstraint {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @method billboardConstraint:
+     * @abstract Creates and returns a SCNBillboardConstraint constraint.
+     * @discussion A billboard constraint forces the receiver to look into the direction of the current point of view.
+     */
     @Generated
     @Selector("billboardConstraint")
     public static native SCNBillboardConstraint billboardConstraint();
@@ -160,6 +165,10 @@ public class SCNBillboardConstraint extends SCNConstraint {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property freeAxes
+     * @abstract Specifies the axes on which the billboarding orientation operates. Defaults to SCNBillboardAxisAll.
+     */
     @Generated
     @Selector("freeAxes")
     @NUInt
@@ -173,6 +182,10 @@ public class SCNBillboardConstraint extends SCNConstraint {
     @Selector("initWithCoder:")
     public native SCNBillboardConstraint initWithCoder(NSCoder coder);
 
+    /**
+     * @property freeAxes
+     * @abstract Specifies the axes on which the billboarding orientation operates. Defaults to SCNBillboardAxisAll.
+     */
     @Generated
     @Selector("setFreeAxes:")
     public native void setFreeAxes(@NUInt long value);

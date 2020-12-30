@@ -27,11 +27,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * The user activity delegate is responsible for updating the state of an activity and is also notified when an activity has been continued on another device.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSUserActivityDelegate")
 public interface NSUserActivityDelegate {
+    /**
+     * If supportsContinuationStreams is set to YES the continuing side can request streams back to this user activity. This delegate callback will be received with the incoming streams from the other side. The streams will be in an unopened state. The streams should be opened immediately to start receiving requests from the continuing side.
+     */
     @Generated
     @IsOptional
     @Selector("userActivity:didReceiveInputStream:outputStream:")
@@ -40,6 +46,9 @@ public interface NSUserActivityDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The user activity was continued on another device.
+     */
     @Generated
     @IsOptional
     @Selector("userActivityWasContinued:")
@@ -47,6 +56,9 @@ public interface NSUserActivityDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The user activity will be saved (to be continued or persisted). The receiver should update the activity with current activity state.
+     */
     @Generated
     @IsOptional
     @Selector("userActivityWillSave:")

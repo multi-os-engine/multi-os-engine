@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Optionally implement the following methods in a UIPickerView delegate
+ * in order to provide accessibility information per component. 
+ * See UIAccessibility.h for more information about hints and labels.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -55,6 +60,9 @@ public interface UIPickerViewAccessibilityDelegate extends UIPickerViewDelegate 
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If an object adopting this protocol responds to these methods, the system will try sending them before sending their non-attributed versions.
+     */
     @Generated
     @IsOptional
     @Selector("pickerView:accessibilityAttributedLabelForComponent:")

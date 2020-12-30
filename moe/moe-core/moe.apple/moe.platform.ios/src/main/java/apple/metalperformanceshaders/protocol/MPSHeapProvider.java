@@ -18,11 +18,26 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MPSHeapProvider")
 public interface MPSHeapProvider {
+    /**
+     * @abstract   Return a heap of the size indicated
+     * @discussion The heap may be larger than requested.
+     *             id <MTLDevice> implements this method.
+     * @param      descriptor    A descriptor for the new heap
+     * @return     A new heap of size at least descriptor.size.  If nil is returned, MPS
+     *             will use the MPS internal heap cache instead to satisfy the allocation.
+     */
     @Generated
     @Selector("newHeapWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLHeap newHeapWithDescriptor(MTLHeapDescriptor descriptor);
 
+    /**
+     * @abstract   Retire a heap
+     * @discussion When MPS is done with the heap, this is called to return the heap to the heap provider
+     *             MPS will release the heap after this is called.
+     * @param      heap                The heap to be retired
+     * @param      seconds          A hint for how long to cache the heap before retiring it.  See MPSSetHeapCacheDuration().
+     */
     @Generated
     @IsOptional
     @Selector("retireHeap:cacheDelay:")

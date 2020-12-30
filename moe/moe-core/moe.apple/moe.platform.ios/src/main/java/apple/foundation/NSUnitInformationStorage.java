@@ -22,6 +22,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A dimension for representing amounts of digital information.
+ * Base Unit: Byte
+ * 
+ * The values of the below follow IEC 80000-13 definitions and conventions.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -59,10 +65,16 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object baseUnit();
 
+    /**
+     * One byte is 8 bits; one nibble is 4 bits.
+     */
     @Generated
     @Selector("bits")
     public static native NSUnitInformationStorage bits();
 
+    /**
+     * Bytes are defined by IEC 80000-13: one byte is 8 bits.
+     */
     @Generated
     @Selector("bytes")
     public static native NSUnitInformationStorage bytes();
@@ -280,6 +292,10 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
     @Selector("yobibits")
     public static native NSUnitInformationStorage yobibits();
 
+    /**
+     * IEC-prefixed units (i.e. base 2):
+     * 1 kibibyte = 1024¹ bytes; 1 mebibyte = 1024² bytes; etc.
+     */
     @Generated
     @Selector("yobibytes")
     public static native NSUnitInformationStorage yobibytes();
@@ -288,6 +304,10 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
     @Selector("yottabits")
     public static native NSUnitInformationStorage yottabits();
 
+    /**
+     * SI-prefixed units (i.e. base 10):
+     * 1 kilobyte = 1000¹ bytes; 1 megabyte = 1000² bytes; etc.
+     */
     @Generated
     @Selector("yottabytes")
     public static native NSUnitInformationStorage yottabytes();

@@ -19,6 +19,9 @@ package apple.coredata.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Definition of the possible result types a fetch request can return.
+ */
 @Generated
 public final class NSFetchRequestResultType {
     @Generated @NUInt public static final long ManagedObjectResultType = 0x0000000000000000L;

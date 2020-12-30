@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This object is vended to your application by UIKit when a UIScene connects to a session
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -40,6 +43,9 @@ public class UISceneConnectionOptions extends NSObject {
         super(peer);
     }
 
+    /**
+     * A set of UIOpenURLContexts to handle on connection
+     */
     @Generated
     @Selector("URLContexts")
     public native NSSet<? extends UIOpenURLContext> URLContexts();
@@ -80,6 +86,9 @@ public class UISceneConnectionOptions extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * A CloudKit share metadata item to handle on connection
+     */
     @Generated
     @Selector("cloudKitShareMetadata")
     public native CKShareMetadata cloudKitShareMetadata();
@@ -92,6 +101,10 @@ public class UISceneConnectionOptions extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The type of a handoff user activity if one is pending on connect.
+     * The delegate callbacks will be invoked for this activity when it is available.
+     */
     @Generated
     @Selector("handoffUserActivityType")
     public native String handoffUserActivityType();
@@ -132,6 +145,9 @@ public class UISceneConnectionOptions extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * A notification response to handle on connection
+     */
     @Generated
     @Selector("notificationResponse")
     public native UNNotificationResponse notificationResponse();
@@ -148,10 +164,17 @@ public class UISceneConnectionOptions extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * A shortcut item to handle on connection
+     */
     @Generated
     @Selector("shortcutItem")
     public native UIApplicationShortcutItem shortcutItem();
 
+    /**
+     * A NSString containing the bundle ID of the originating application.
+     * non-nil if the originating application and this application share the same team identifier.
+     */
     @Generated
     @Selector("sourceApplication")
     public native String sourceApplication();
@@ -160,6 +183,12 @@ public class UISceneConnectionOptions extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * A set of available user activities to handle on connection.
+     * For handoff, the user activity is not immediately available and will not be in this set,
+     * a handoff user activity will instead be indicated via the handoffUserActivityType property
+     * above, and the application will receive a callback on their UISceneDelegate when the activity is fully loaded.
+     */
     @Generated
     @Selector("userActivities")
     public native NSSet<? extends NSUserActivity> userActivities();

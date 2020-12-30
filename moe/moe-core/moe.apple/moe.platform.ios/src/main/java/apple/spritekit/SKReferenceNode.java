@@ -162,10 +162,16 @@ public class SKReferenceNode extends SKNode {
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
             NSArray<? extends SKNode> sprites, float accuracy);
 
+    /**
+     * Create a reference node with a url
+     */
     @Generated
     @Selector("referenceNodeWithFileNamed:")
     public static native SKReferenceNode referenceNodeWithFileNamed(String fileName);
 
+    /**
+     * Create a reference node with a url
+     */
     @Generated
     @Selector("referenceNodeWithURL:")
     public static native SKReferenceNode referenceNodeWithURL(NSURL referenceURL);
@@ -191,6 +197,9 @@ public class SKReferenceNode extends SKNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * called each time the url is loaded, after it has been added as a child
+     */
     @Generated
     @Selector("didLoadReferenceNode:")
     public native void didLoadReferenceNode(SKNode node);
@@ -199,18 +208,33 @@ public class SKReferenceNode extends SKNode {
     @Selector("init")
     public native SKReferenceNode init();
 
+    /**
+     * Support coding and decoding via NSKeyedArchiver.
+     */
     @Generated
     @Selector("initWithCoder:")
     public native SKReferenceNode initWithCoder(NSCoder aDecoder);
 
+    /**
+     * Create a reference node with a url
+     */
     @Generated
     @Selector("initWithFileNamed:")
     public native SKReferenceNode initWithFileNamed(String fileName);
 
+    /**
+     * Create a reference node with a url
+     */
     @Generated
     @Selector("initWithURL:")
     public native SKReferenceNode initWithURL(NSURL url);
 
+    /**
+     * Force the reference to be reloaded. The resolved node will added
+     * as a child of this node. If the resolved node has not yet been loaded,
+     * it will be automatically loaded when the resolved node is queryed or
+     * the refenece node is rendered. 
+     */
     @Generated
     @Selector("resolveReferenceNode")
     public native void resolveReferenceNode();

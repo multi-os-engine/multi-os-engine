@@ -15,11 +15,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDragSession")
 public interface UIDragSession extends UIDragDropSession {
+    /**
+     * Use `localContext` to attach additional information to this drag session,
+     * visible only inside the app that started the drag.
+     */
     @Generated
     @Selector("localContext")
     @MappedReturn(ObjCObjectMapper.class)
     Object localContext();
 
+    /**
+     * Use `localContext` to attach additional information to this drag session,
+     * visible only inside the app that started the drag.
+     */
     @Generated
     @Selector("setLocalContext:")
     void setLocalContext(@Mapped(ObjCObjectMapper.class) Object value);

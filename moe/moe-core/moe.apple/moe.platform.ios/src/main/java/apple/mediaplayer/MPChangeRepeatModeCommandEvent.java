@@ -154,10 +154,16 @@ public class MPChangeRepeatModeCommandEvent extends MPRemoteCommandEvent {
     @Selector("init")
     public native MPChangeRepeatModeCommandEvent init();
 
+    /**
+     * Whether or not the selection should be preserved between playback sessions
+     */
     @Generated
     @Selector("preservesRepeatMode")
     public native boolean preservesRepeatMode();
 
+    /**
+     * The desired repeat type to use when fulfilling the request.
+     */
     @Generated
     @Selector("repeatType")
     @NInt

@@ -51,43 +51,73 @@ public final class sfntDirectory extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setFormat(int value);
 
+    /**
+     * number of tables
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char numOffsets();
 
+    /**
+     * number of tables
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setNumOffsets(char value);
 
+    /**
+     * (max2 <= numOffsets)*16
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native char searchRange();
 
+    /**
+     * (max2 <= numOffsets)*16
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setSearchRange(char value);
 
+    /**
+     * log2(max2 <= numOffsets)
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native char entrySelector();
 
+    /**
+     * log2(max2 <= numOffsets)
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setEntrySelector(char value);
 
+    /**
+     * numOffsets*16-searchRange
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native char rangeShift();
 
+    /**
+     * numOffsets*16-searchRange
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setRangeShift(char value);
 
+    /**
+     * table[numOffsets]
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     @ByValue
     public native sfntDirectoryEntry table();
 
+    /**
+     * table[numOffsets]
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setTable(@ByValue sfntDirectoryEntry value);

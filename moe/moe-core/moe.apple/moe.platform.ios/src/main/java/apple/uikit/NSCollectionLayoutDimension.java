@@ -39,6 +39,9 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
         super(peer);
     }
 
+    /**
+     * dimension with an absolute point value
+     */
     @Generated
     @Selector("absoluteDimension:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -99,16 +102,25 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
     @NFloat
     public native double dimension();
 
+    /**
+     * dimension is estimated with a point value. Actual size will be determined when the content is rendered.
+     */
     @Generated
     @Selector("estimatedDimension:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object estimatedDimension(@NFloat double estimatedDimension);
 
+    /**
+     * dimension is computed as a fraction of the height of the containing group
+     */
     @Generated
     @Selector("fractionalHeightDimension:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object fractionalHeightDimension(@NFloat double fractionalHeight);
 
+    /**
+     * dimension is computed as a fraction of the width of the containing group
+     */
     @Generated
     @Selector("fractionalWidthDimension:")
     @MappedReturn(ObjCObjectMapper.class)

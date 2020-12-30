@@ -26,6 +26,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNDStridedSliceGradient
+ * 
+ * @dependency This depends on Metal.framework.
+ * 
+ * @abstract   Perform the gradient operation corresponding to a strided slice.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)

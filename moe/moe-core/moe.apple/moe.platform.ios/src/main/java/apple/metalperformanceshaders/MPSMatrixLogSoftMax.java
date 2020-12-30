@@ -25,6 +25,22 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSMatrixLogSoftMax
+ * 
+ * @dependency This depends on Metal.framework.
+ * 
+ * @abstract   A logarithmic softmax kernel that operates on matrices.
+ * 
+ * @discussion A MPSMatrixLogSoftMax object computes:
+ * 
+ *                 B_ij = ln { Exp { A_ij } / ( Sum_k Exp { A_ik } ) } = A_ij - ln { Sum_k Exp { A_ik } }
+ * 
+ *             A and B are matrices which are represented by MPSMatrix
+ *             objects. This filter computes the same result for MPSMatrices as
+ *             MPSCNNLogSoftMax filter does for MPSImages by interpreting the columns
+ *             of the matrix as feature channels, that is the sum runs over column indices.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)

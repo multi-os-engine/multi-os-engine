@@ -19,6 +19,9 @@ package apple.corefoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Values returned from comparison functions
+ */
 @Generated
 public final class CFComparisonResult {
     @Generated @NInt public static final long LessThan = 0xFFFFFFFFFFFFFFFFL;

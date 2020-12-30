@@ -3,6 +3,24 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @abstract The error states for a Metal command encoder after command buffer execution.
+ * 
+ * @constant MTLCommandEncoderErrorStateUnknown
+ * The state of the commands associated with the encoder is unknown (the error information was likely not requested).
+ * 
+ * @constant MTLCommandEncoderErrorStateCompleted
+ * The commands associated with the encoder were completed.
+ * 
+ * @constant MTLCommandEncoderErrorStateAffected
+ * The commands associated with the encoder were affected by an error, which may or may not have been caused by the commands themselves, and failed to execute in full.
+ * 
+ * @constant MTLCommandEncoderErrorStatePending
+ * The commands associated with the encoder never started execution.
+ * 
+ * @constant MTLCommandEncoderErrorStateFaulted
+ * The commands associated with the encoder caused an error.
+ */
 @Generated
 public final class MTLCommandEncoderErrorState {
     @Generated

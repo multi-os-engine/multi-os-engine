@@ -40,6 +40,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVAssetWriterInputPassDescription
+ * @abstract
+ * Defines an interface for querying information about the requirements of the current pass, such as the time ranges of media data to append.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -155,6 +160,14 @@ public class AVAssetWriterInputPassDescription extends NSObject {
     @Selector("init")
     public native AVAssetWriterInputPassDescription init();
 
+    /**
+     * @property sourceTimeRanges
+     * @abstract
+     * An NSArray of NSValue objects wrapping CMTimeRange structures, each representing one source time range.
+     * 
+     * @discussion
+     * The value of this property is suitable for using as a parameter for -[AVAssetReaderOutput resetForReadingTimeRanges:].
+     */
     @Generated
     @Selector("sourceTimeRanges")
     public native NSArray<? extends NSValue> sourceTimeRanges();

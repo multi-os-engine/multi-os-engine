@@ -67,10 +67,16 @@ public final class BNNSActivation extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setBeta(float value);
 
+    /**
+     * The following fields are available in macOS 10.13, iOS 11, tvOS 11, watchOS 4
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int iscale();
 
+    /**
+     * The following fields are available in macOS 10.13, iOS 11, tvOS 11, watchOS 4
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setIscale(int value);

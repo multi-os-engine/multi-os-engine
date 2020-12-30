@@ -100,6 +100,9 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Expression that returns a collection containing the results of other expressions
+     */
     @Generated
     @Selector("expressionForAggregate:")
     public static native NSExpression expressionForAggregate(NSArray<? extends NSExpression> subexpressions);
@@ -108,55 +111,91 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("expressionForAnyKey")
     public static native NSExpression expressionForAnyKey();
 
+    /**
+     * Expression that invokes the block with the parameters; note that block expressions are not encodable or representable as parseable strings.
+     */
     @Generated
     @Selector("expressionForBlock:arguments:")
     public static native NSExpression expressionForBlockArguments(
             @ObjCBlock(name = "call_expressionForBlockArguments") Block_expressionForBlockArguments block,
             NSArray<? extends NSExpression> arguments);
 
+    /**
+     * Expression that will return the result of trueExpression or falseExpression depending on the value of predicate
+     */
     @Generated
     @Selector("expressionForConditional:trueExpression:falseExpression:")
     public static native NSExpression expressionForConditionalTrueExpressionFalseExpression(NSPredicate predicate,
             NSExpression trueExpression, NSExpression falseExpression);
 
+    /**
+     * Expression that returns a constant value
+     */
     @Generated
     @Selector("expressionForConstantValue:")
     public static native NSExpression expressionForConstantValue(@Mapped(ObjCObjectMapper.class) Object obj);
 
+    /**
+     * Expression that returns the object being evaluated
+     */
     @Generated
     @Selector("expressionForEvaluatedObject")
     public static native NSExpression expressionForEvaluatedObject();
 
+    /**
+     * Expression that invokes one of the predefined functions. Will throw immediately if the selector is bad; will throw at runtime if the parameters are incorrect.
+     */
     @Generated
     @Selector("expressionForFunction:arguments:")
     public static native NSExpression expressionForFunctionArguments(String name, NSArray<?> parameters);
 
+    /**
+     * Expression that invokes the selector on target with parameters. Will throw at runtime if target does not implement selector or if parameters are wrong.
+     */
     @Generated
     @Selector("expressionForFunction:selectorName:arguments:")
     public static native NSExpression expressionForFunctionSelectorNameArguments(NSExpression target, String name,
             NSArray<?> parameters);
 
+    /**
+     * return an expression that will return the intersection of the collections expressed by left and right
+     */
     @Generated
     @Selector("expressionForIntersectSet:with:")
     public static native NSExpression expressionForIntersectSetWith(NSExpression left, NSExpression right);
 
+    /**
+     * Expression that invokes valueForKeyPath with keyPath
+     */
     @Generated
     @Selector("expressionForKeyPath:")
     public static native NSExpression expressionForKeyPath(String keyPath);
 
+    /**
+     * return an expression that will return the disjunction of the collections expressed by left and right
+     */
     @Generated
     @Selector("expressionForMinusSet:with:")
     public static native NSExpression expressionForMinusSetWith(NSExpression left, NSExpression right);
 
+    /**
+     * Expression that filters a collection by storing elements in the collection in the variable variable and keeping the elements for which qualifer returns true; variable is used as a local variable, and will shadow any instances of variable in the bindings dictionary, the variable is removed or the old value replaced once evaluation completes
+     */
     @Generated
     @Selector("expressionForSubquery:usingIteratorVariable:predicate:")
     public static native NSExpression expressionForSubqueryUsingIteratorVariablePredicate(NSExpression expression,
             String variable, NSPredicate predicate);
 
+    /**
+     * return an expression that will return the union of the collections expressed by left and right
+     */
     @Generated
     @Selector("expressionForUnionSet:with:")
     public static native NSExpression expressionForUnionSetWith(NSExpression left, NSExpression right);
 
+    /**
+     * Expression that pulls a value from the variable bindings dictionary
+     */
     @Generated
     @Selector("expressionForVariable:")
     public static native NSExpression expressionForVariable(String string);
@@ -231,10 +270,16 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @NInt
     public static native long version_static();
 
+    /**
+     * Force an expression which was securely decoded to allow evaluation
+     */
     @Generated
     @Selector("allowEvaluation")
     public native void allowEvaluation();
 
+    /**
+     * array of expressions which will be passed as parameters during invocation of the selector on the operand of a function expression
+     */
     @Generated
     @Selector("arguments")
     public native NSArray<? extends NSExpression> arguments();
@@ -264,17 +309,26 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @ObjCBlock(name = "call_expressionBlock_ret")
     public native Block_expressionBlock_ret expressionBlock();
 
+    /**
+     * accessors for individual parameters - raise if not applicable
+     */
     @Generated
     @Selector("expressionType")
     @NUInt
     public native long expressionType();
 
+    /**
+     * evaluate the expression using the object and bindings- note that context is mutable here and can be used by expressions to store temporary state for one predicate evaluation
+     */
     @Generated
     @Selector("expressionValueWithObject:context:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object expressionValueWithObjectContext(@Mapped(ObjCObjectMapper.class) Object object,
             NSMutableDictionary<?, ?> context);
 
+    /**
+     * expression which will be evaluated if a conditional expression's predicate evaluates to false
+     */
     @Generated
     @Selector("falseExpression")
     public native NSExpression falseExpression();
@@ -299,10 +353,16 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("keyPath")
     public native String keyPath();
 
+    /**
+     * expression which represents the left side of a set expression
+     */
     @Generated
     @Selector("leftExpression")
     public native NSExpression leftExpression();
 
+    /**
+     * the object on which the selector will be invoked (the result of evaluating a key path or one of the defined functions)
+     */
     @Generated
     @Selector("operand")
     public native NSExpression operand();
@@ -311,6 +371,9 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("predicate")
     public native NSPredicate predicate();
 
+    /**
+     * expression which represents the right side of a set expression
+     */
     @Generated
     @Selector("rightExpression")
     public native NSExpression rightExpression();
@@ -321,6 +384,9 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
         return supportsSecureCoding();
     }
 
+    /**
+     * expression which will be evaluated if a conditional expression's predicate evaluates to true
+     */
     @Generated
     @Selector("trueExpression")
     public native NSExpression trueExpression();

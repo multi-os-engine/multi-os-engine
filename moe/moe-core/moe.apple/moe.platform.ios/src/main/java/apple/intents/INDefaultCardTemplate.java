@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract A template for customizing the display of relevant shortcuts.
+ * @seealso INRelevantShortcut
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -100,6 +104,9 @@ public class INDefaultCardTemplate extends NSObject implements NSCopying, NSSecu
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @abstract The image used when displaying the relevant shortcut.
+     */
     @Generated
     @Selector("image")
     public native INImage image();
@@ -112,6 +119,9 @@ public class INDefaultCardTemplate extends NSObject implements NSCopying, NSSecu
     @Selector("initWithCoder:")
     public native INDefaultCardTemplate initWithCoder(NSCoder coder);
 
+    /**
+     * @abstract Initializes a default card template with the provided title.
+     */
     @Generated
     @Selector("initWithTitle:")
     public native INDefaultCardTemplate initWithTitle(String title);
@@ -151,14 +161,23 @@ public class INDefaultCardTemplate extends NSObject implements NSCopying, NSSecu
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract The image used when displaying the relevant shortcut.
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(INImage value);
 
+    /**
+     * @abstract The subtitle used when displaying the relevant shortcut.
+     */
     @Generated
     @Selector("setSubtitle:")
     public native void setSubtitle(String value);
 
+    /**
+     * @abstract The title used when displaying the relevant shortcut.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
@@ -167,6 +186,9 @@ public class INDefaultCardTemplate extends NSObject implements NSCopying, NSSecu
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @abstract The subtitle used when displaying the relevant shortcut.
+     */
     @Generated
     @Selector("subtitle")
     public native String subtitle();
@@ -185,6 +207,9 @@ public class INDefaultCardTemplate extends NSObject implements NSCopying, NSSecu
         return supportsSecureCoding();
     }
 
+    /**
+     * @abstract The title used when displaying the relevant shortcut.
+     */
     @Generated
     @Selector("title")
     public native String title();

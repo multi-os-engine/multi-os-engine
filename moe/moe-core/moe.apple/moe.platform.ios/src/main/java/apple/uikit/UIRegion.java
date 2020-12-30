@@ -109,6 +109,9 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * A shared infinite region
+     */
     @Generated
     @Selector("infiniteRegion")
     public static native UIRegion infiniteRegion();
@@ -161,6 +164,9 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Test for containment
+     */
     @Generated
     @Selector("containsPoint:")
     public native boolean containsPoint(@ByValue CGPoint point);
@@ -183,29 +189,49 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     @Selector("initWithCoder:")
     public native UIRegion initWithCoder(NSCoder coder);
 
+    /**
+     * Create a circular region with radius
+     */
     @Generated
     @Selector("initWithRadius:")
     public native UIRegion initWithRadius(@NFloat double radius);
 
+    /**
+     * Create a rectangular region of size.
+     */
     @Generated
     @Selector("initWithSize:")
     public native UIRegion initWithSize(@ByValue CGSize size);
 
+    /**
+     * Create a new region that is the inverse of the current region.
+     * The inverse of the infiniteRegion is an empty region.
+     * Subclasses of UIRegion need to provide an implementation of inverseRegion.
+     */
     @Generated
     @Selector("inverseRegion")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object inverseRegion();
 
+    /**
+     * Create a new region that is the original region minus the supplied region
+     */
     @Generated
     @Selector("regionByDifferenceFromRegion:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object regionByDifferenceFromRegion(UIRegion region);
 
+    /**
+     * Create a new region that is the region covered by the original region and the supplied region
+     */
     @Generated
     @Selector("regionByIntersectionWithRegion:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object regionByIntersectionWithRegion(UIRegion region);
 
+    /**
+     * Create a new region that is the original region plus the supplied region
+     */
     @Generated
     @Selector("regionByUnionWithRegion:")
     @MappedReturn(ObjCObjectMapper.class)

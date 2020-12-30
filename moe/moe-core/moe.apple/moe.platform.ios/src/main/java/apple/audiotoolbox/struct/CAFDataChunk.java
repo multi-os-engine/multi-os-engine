@@ -57,10 +57,16 @@ public final class CAFDataChunk extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setMEditCount(int value);
 
+    /**
+     * this is a variable length data field based off the size of the data chunk
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native byte mData();
 
+    /**
+     * this is a variable length data field based off the size of the data chunk
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMData(byte value);

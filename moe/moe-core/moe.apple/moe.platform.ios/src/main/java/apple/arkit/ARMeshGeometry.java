@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A three-dimensional shape that represents the geometry of a mesh.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -76,6 +79,9 @@ public class ARMeshGeometry extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Classification for each face in the mesh.
+     */
     @Generated
     @Selector("classification")
     public native ARGeometrySource classification();
@@ -92,6 +98,9 @@ public class ARMeshGeometry extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * A list of all faces in the mesh.
+     */
     @Generated
     @Selector("faces")
     public native ARGeometryElement faces();
@@ -136,6 +145,9 @@ public class ARMeshGeometry extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The normals of the mesh.
+     */
     @Generated
     @Selector("normals")
     public native ARGeometrySource normals();
@@ -171,6 +183,9 @@ public class ARMeshGeometry extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * The vertices of the mesh.
+     */
     @Generated
     @Selector("vertices")
     public native ARGeometrySource vertices();

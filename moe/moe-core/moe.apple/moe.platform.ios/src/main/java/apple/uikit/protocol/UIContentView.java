@@ -15,11 +15,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIContentView")
 public interface UIContentView {
+    /**
+     * Returns the current configuration of the view. Setting this property applies the new configuration to the view.
+     */
     @Generated
     @Selector("configuration")
     @MappedReturn(ObjCObjectMapper.class)
     UIContentConfiguration configuration();
 
+    /**
+     * Returns the current configuration of the view. Setting this property applies the new configuration to the view.
+     */
     @Generated
     @Selector("setConfiguration:")
     void setConfiguration(@Mapped(ObjCObjectMapper.class) UIContentConfiguration value);

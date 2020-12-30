@@ -141,11 +141,17 @@ public class FPUIActionExtensionViewController extends UIViewController {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * To be overridden by the subclass
+     */
     @Generated
     @Selector("prepareForActionWithIdentifier:itemIdentifiers:")
     public native void prepareForActionWithIdentifierItemIdentifiers(String actionIdentifier,
             NSArray<String> itemIdentifiers);
 
+    /**
+     * To be overridden by the subclass
+     */
     @Generated
     @Selector("prepareForError:")
     public native void prepareForError(NSError error);

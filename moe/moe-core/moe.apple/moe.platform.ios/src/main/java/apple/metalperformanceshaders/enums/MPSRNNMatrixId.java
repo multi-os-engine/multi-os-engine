@@ -38,5 +38,8 @@ public final class MPSRNNMatrixId {
     @Generated @NUInt public static final long GRUOutputGateRecurrentWeights = 0x000000000000001AL;
     @Generated @NUInt public static final long GRUOutputGateInputGateWeights = 0x000000000000001BL;
     @Generated @NUInt public static final long GRUOutputGateBiasTerms = 0x000000000000001CL;
+    /**
+     * Do not use - auxiliary enum value that gives number of ids.
+     */
     @Generated @NUInt public static final long _count = 0x000000000000001DL;
 }

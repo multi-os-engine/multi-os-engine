@@ -39,6 +39,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An R-tree is a data structure that partitions axis aligned bounding rectangles into groups spatially.
+ * When a group goes to large, it is split according to its split strategy into two new groups.
+ * Fast queries can be made on these partition bounding rectangles.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -145,6 +150,11 @@ public class GKRTree<_ElementType> extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Creates an RTree with a given maximum number of children per node.  Nodes that grow beyond this number of children will be split.
+     * 
+     * @param maxNumberOfChildren the maximum number of children per node before splitting
+     */
     @Generated
     @Selector("treeWithMaxNumberOfChildren:")
     public static native <_ElementType> GKRTree<?> treeWithMaxNumberOfChildren(@NUInt long maxNumberOfChildren);
@@ -162,11 +172,19 @@ public class GKRTree<_ElementType> extends NSObject {
     @Selector("initWithMaxNumberOfChildren:")
     public native GKRTree<?> initWithMaxNumberOfChildren(@NUInt long maxNumberOfChildren);
 
+    /**
+     * Amount of array items to reserve before a query.
+     * This improves query performance at the cost of memory
+     */
     @Generated
     @Selector("queryReserve")
     @NUInt
     public native long queryReserve();
 
+    /**
+     * Amount of array items to reserve before a query.
+     * This improves query performance at the cost of memory
+     */
     @Generated
     @Selector("setQueryReserve:")
     public native void setQueryReserve(@NUInt long value);

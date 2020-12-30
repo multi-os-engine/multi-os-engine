@@ -68,6 +68,11 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * @abstract Cancels the request.
+     * @param error error's domain should be ASExtensionErrorDomain and the code should be a value of type ASExtensionErrorCode.
+     * @discussion The extension should call this method when the user cancels the action or a failure occurs.
+     */
     @Generated
     @Selector("cancelRequestWithError:")
     public native void cancelRequestWithError(NSError error);
@@ -80,10 +85,22 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @abstract Complete the request to configure the extension.
+     * @discussion Calling this method will eventually dismiss the associated view controller.
+     */
     @Generated
     @Selector("completeExtensionConfigurationRequest")
     public native void completeExtensionConfigurationRequest();
 
+    /**
+     * @abstract Complete the request by providing the user selected credential.
+     * @param credential the credential that the user has selected.
+     * @param completionHandler optionally contains any work which the extension may need to perform after the request has been completed,
+     * as a background-priority task. The `expired` parameter will be YES if the system decides to prematurely terminate a previous
+     * non-expiration invocation of the completionHandler.
+     * @discussion Calling this method will eventually dismiss the associated view controller.
+     */
     @Generated
     @Selector("completeRequestWithSelectedCredential:completionHandler:")
     public native void completeRequestWithSelectedCredentialCompletionHandler(ASPasswordCredential credential,

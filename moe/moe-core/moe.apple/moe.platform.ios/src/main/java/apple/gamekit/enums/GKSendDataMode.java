@@ -18,9 +18,15 @@ package apple.gamekit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Delivery options for GKSession's -(BOOL)sendData... methods.
+ */
 @Generated
 public final class GKSendDataMode {
     @Generated public static final int Reliable = 0x00000000;
+    /**
+     * a.s.a.p. but requires fragmentation and reassembly for large messages, may stall if network congestion occurs
+     */
     @Generated public static final int Unreliable = 0x00000001;
 
     @Generated

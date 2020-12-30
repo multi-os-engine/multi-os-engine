@@ -156,10 +156,16 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     @NInt
     public static native long version_static();
 
+    /**
+     * Set popover background color. Set to nil to use default background color. Default is nil.
+     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
+    /**
+     * The content view controller is the `UIViewController` instance in charge of the content view of the displayed popover. This property can be changed while the popover is displayed to allow different view controllers in the same popover session.
+     */
     @Generated
     @Selector("contentViewController")
     public native UIViewController contentViewController();
@@ -169,6 +175,9 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPopoverControllerDelegate delegate();
 
+    /**
+     * Called to dismiss the popover programmatically. The delegate methods for "should" and "did" dismiss are not called when the popover is dismissed in this way.
+     */
     @Generated
     @Selector("dismissPopoverAnimated:")
     public native void dismissPopoverAnimated(boolean animated);
@@ -177,51 +186,84 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     @Selector("init")
     public native UIPopoverController init();
 
+    /**
+     * The view controller provided becomes the content view controller for the UIPopoverController. This is the designated initializer for UIPopoverController.
+     */
     @Generated
     @Selector("initWithContentViewController:")
     public native UIPopoverController initWithContentViewController(UIViewController viewController);
 
+    /**
+     * Returns whether the popover is visible (presented) or not.
+     */
     @Generated
     @Selector("isPopoverVisible")
     public native boolean isPopoverVisible();
 
+    /**
+     * By default, a popover disallows interaction with any view outside of the popover while the popover is presented. This property allows the specification of an array of UIView instances which the user is allowed to interact with while the popover is up.
+     */
     @Generated
     @Selector("passthroughViews")
     public native NSArray<? extends UIView> passthroughViews();
 
+    /**
+     * Returns the direction the arrow is pointing on a presented popover. Before presentation, this returns UIPopoverArrowDirectionUnknown.
+     */
     @Generated
     @Selector("popoverArrowDirection")
     @NUInt
     public native long popoverArrowDirection();
 
+    /**
+     * Clients may customize the popover background chrome by providing a class which subclasses `UIPopoverBackgroundView` and which implements the required instance and class methods on that class.
+     */
     @Generated
     @Selector("popoverBackgroundViewClass")
     public native Class popoverBackgroundViewClass();
 
+    /**
+     * This property allows direction manipulation of the content size of the popover. Changing the property directly is equivalent to animated=YES. The content size is limited to a minimum width of 320 and a maximum width of 600.
+     */
     @Generated
     @Selector("popoverContentSize")
     @ByValue
     public native CGSize popoverContentSize();
 
+    /**
+     * Clients may wish to change the available area for popover display. The default implementation of this method always returns insets which define 10 points from the edges of the display, and presentation of popovers always accounts for the status bar. The rectangle being inset is always expressed in terms of the current device orientation; (0, 0) is always in the upper-left of the device. This may require insets to change on device rotation.
+     */
     @Generated
     @Selector("popoverLayoutMargins")
     @ByValue
     public native UIEdgeInsets popoverLayoutMargins();
 
+    /**
+     * Like the above, but is a convenience for presentation from a `UIBarButtonItem` instance. arrowDirection limited to UIPopoverArrowDirectionUp/Down
+     */
     @Generated
     @Selector("presentPopoverFromBarButtonItem:permittedArrowDirections:animated:")
     public native void presentPopoverFromBarButtonItemPermittedArrowDirectionsAnimated(UIBarButtonItem item,
             @NUInt long arrowDirections, boolean animated);
 
+    /**
+     * -presentPopoverFromRect:inView:permittedArrowDirections:animated: allows you to present a popover from a rect in a particular view. `arrowDirections` is a bitfield which specifies what arrow directions are allowed when laying out the popover; for most uses, `UIPopoverArrowDirectionAny` is sufficient.
+     */
     @Generated
     @Selector("presentPopoverFromRect:inView:permittedArrowDirections:animated:")
     public native void presentPopoverFromRectInViewPermittedArrowDirectionsAnimated(@ByValue CGRect rect, UIView view,
             @NUInt long arrowDirections, boolean animated);
 
+    /**
+     * Set popover background color. Set to nil to use default background color. Default is nil.
+     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
 
+    /**
+     * The content view controller is the `UIViewController` instance in charge of the content view of the displayed popover. This property can be changed while the popover is displayed to allow different view controllers in the same popover session.
+     */
     @Generated
     @Selector("setContentViewController:")
     public native void setContentViewController(UIViewController value);
@@ -246,14 +288,23 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
         }
     }
 
+    /**
+     * By default, a popover disallows interaction with any view outside of the popover while the popover is presented. This property allows the specification of an array of UIView instances which the user is allowed to interact with while the popover is up.
+     */
     @Generated
     @Selector("setPassthroughViews:")
     public native void setPassthroughViews(NSArray<? extends UIView> value);
 
+    /**
+     * Clients may customize the popover background chrome by providing a class which subclasses `UIPopoverBackgroundView` and which implements the required instance and class methods on that class.
+     */
     @Generated
     @Selector("setPopoverBackgroundViewClass:")
     public native void setPopoverBackgroundViewClass(Class value);
 
+    /**
+     * This property allows direction manipulation of the content size of the popover. Changing the property directly is equivalent to animated=YES. The content size is limited to a minimum width of 320 and a maximum width of 600.
+     */
     @Generated
     @Selector("setPopoverContentSize:")
     public native void setPopoverContentSize(@ByValue CGSize value);
@@ -262,6 +313,9 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     @Selector("setPopoverContentSize:animated:")
     public native void setPopoverContentSizeAnimated(@ByValue CGSize size, boolean animated);
 
+    /**
+     * Clients may wish to change the available area for popover display. The default implementation of this method always returns insets which define 10 points from the edges of the display, and presentation of popovers always accounts for the status bar. The rectangle being inset is always expressed in terms of the current device orientation; (0, 0) is always in the upper-left of the device. This may require insets to change on device rotation.
+     */
     @Generated
     @Selector("setPopoverLayoutMargins:")
     public native void setPopoverLayoutMargins(@ByValue UIEdgeInsets value);

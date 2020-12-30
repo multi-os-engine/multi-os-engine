@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A model representing the camera and its parameters.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -95,6 +98,9 @@ public class ARCamera extends NSObject implements NSCopying {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The camera image resolution in pixels.
+     */
     @Generated
     @Selector("imageResolution")
     @ByValue
@@ -147,11 +153,17 @@ public class ARCamera extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * The tracking state of the camera.
+     */
     @Generated
     @Selector("trackingState")
     @NInt
     public native long trackingState();
 
+    /**
+     * The reason for the camera’s current tracking state.
+     */
     @Generated
     @Selector("trackingStateReason")
     @NInt
@@ -162,10 +174,16 @@ public class ARCamera extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * The camera exposure duration in seconds.
+     */
     @Generated
     @Selector("exposureDuration")
     public native double exposureDuration();
 
+    /**
+     * The camera exposure offset in EV (exposure value) units.
+     */
     @Generated
     @Selector("exposureOffset")
     public native float exposureOffset();

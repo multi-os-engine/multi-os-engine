@@ -23,9 +23,7 @@ import org.moe.natj.general.ann.NUInt;
 public final class PKPassType {
     @Generated @NUInt public static final long Barcode = 0x0000000000000000L;
     @Generated @NUInt public static final long Payment = 0x0000000000000001L;
-    @Generated @NUInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ?
-            0xFFFFFFFFFFFFFFFFL :
-            0x00000000FFFFFFFFL;
+    @Generated @NUInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ? 0xFFFFFFFFFFFFFFFFL : 0x00000000FFFFFFFFL;
 
     @Generated
     private PKPassType() {

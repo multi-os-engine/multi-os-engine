@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class VNDetectedPoint
+ * @brief VNDetectedPoint is a VNPoint with a confidence value.
+ * @discussion It should be noted that VNDetectedPoint is not intended as an overall replacement of CGPoint, NSPoint or vec2, but is used by observations that detect points of interest.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -77,6 +82,9 @@ public class VNDetectedPoint extends VNPoint {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @brief The confidence in the accuracy of the location, in the range of [0.0, 1.0].
+     */
     @Generated
     @Selector("confidence")
     public native float confidence();

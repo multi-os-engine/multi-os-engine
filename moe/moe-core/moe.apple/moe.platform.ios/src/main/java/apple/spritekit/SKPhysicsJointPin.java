@@ -178,6 +178,9 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
     @NFloat
     public native double lowerAngleLimit();
 
+    /**
+     * in radians/sec
+     */
     @Generated
     @Selector("rotationSpeed")
     @NFloat
@@ -191,6 +194,9 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
     @Selector("setLowerAngleLimit:")
     public native void setLowerAngleLimit(@NFloat double value);
 
+    /**
+     * in radians/sec
+     */
     @Generated
     @Selector("setRotationSpeed:")
     public native void setRotationSpeed(@NFloat double value);

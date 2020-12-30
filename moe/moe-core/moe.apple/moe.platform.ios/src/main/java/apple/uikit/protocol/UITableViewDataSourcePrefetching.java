@@ -27,11 +27,18 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * _______________________________________________________________________________________________________________
+ * this protocol can provide information about cells before they are displayed on screen.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITableViewDataSourcePrefetching")
 public interface UITableViewDataSourcePrefetching {
+    /**
+     * indexPaths that previously were considered as candidates for pre-fetching, but were not actually used; may be a subset of the previous call to -tableView:prefetchRowsAtIndexPaths:
+     */
     @Generated
     @IsOptional
     @Selector("tableView:cancelPrefetchingForRowsAtIndexPaths:")
@@ -40,6 +47,9 @@ public interface UITableViewDataSourcePrefetching {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * indexPaths are ordered ascending by geometric distance from the table view
+     */
     @Generated
     @Selector("tableView:prefetchRowsAtIndexPaths:")
     void tableViewPrefetchRowsAtIndexPaths(UITableView tableView, NSArray<? extends NSIndexPath> indexPaths);

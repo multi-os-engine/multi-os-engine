@@ -40,6 +40,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MDLVertexBufferLayout
+ * @abstract Describes a vertex buffer's layout
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -165,10 +169,28 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
     @Selector("initWithStride:")
     public native MDLVertexBufferLayout initWithStride(@NUInt long stride);
 
+    /**
+     * @property stride
+     * @abstract stride in bytes of each vertex element in the buffer. 
+     * @discussion - If you store multiple attributes interleaved in the vertex
+     *               buffer, the stride will be the sum of sizes of each attribute (and any padding).
+     *             - If you store multiple attributes non-interleaved (back to back),
+     *               the stride will be the size of an attribute (and all attributes are
+     *               required to have the same size).
+     */
     @Generated
     @Selector("setStride:")
     public native void setStride(@NUInt long value);
 
+    /**
+     * @property stride
+     * @abstract stride in bytes of each vertex element in the buffer. 
+     * @discussion - If you store multiple attributes interleaved in the vertex
+     *               buffer, the stride will be the sum of sizes of each attribute (and any padding).
+     *             - If you store multiple attributes non-interleaved (back to back),
+     *               the stride will be the size of an attribute (and all attributes are
+     *               required to have the same size).
+     */
     @Generated
     @Selector("stride")
     @NUInt

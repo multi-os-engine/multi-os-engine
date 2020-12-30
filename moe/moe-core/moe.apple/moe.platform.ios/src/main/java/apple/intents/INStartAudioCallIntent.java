@@ -156,6 +156,9 @@ public class INStartAudioCallIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * Recipients of the audio call.
+     */
     @Generated
     @Selector("contacts")
     public native NSArray<? extends INPerson> contacts();

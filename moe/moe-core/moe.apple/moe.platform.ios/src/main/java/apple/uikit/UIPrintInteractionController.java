@@ -130,6 +130,9 @@ public class UIPrintInteractionController extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * return YES if system supports printing. use this to hide HI for unsupported devices.
+     */
     @Generated
     @Selector("isPrintingAvailable")
     public static native boolean isPrintingAvailable();
@@ -148,6 +151,9 @@ public class UIPrintInteractionController extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * return set of all document UTI types we can print
+     */
     @Generated
     @Selector("printableUTIs")
     public static native NSSet<String> printableUTIs();
@@ -177,6 +183,9 @@ public class UIPrintInteractionController extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * not retained. default is nil
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -190,56 +199,94 @@ public class UIPrintInteractionController extends NSObject {
     @Selector("init")
     public native UIPrintInteractionController init();
 
+    /**
+     * iPhone
+     */
     @Generated
     @Selector("presentAnimated:completionHandler:")
     public native boolean presentAnimatedCompletionHandler(boolean animated,
             @ObjCBlock(name = "call_presentAnimatedCompletionHandler") Block_presentAnimatedCompletionHandler completion);
 
+    /**
+     * iPad
+     */
     @Generated
     @Selector("presentFromBarButtonItem:animated:completionHandler:")
     public native boolean presentFromBarButtonItemAnimatedCompletionHandler(UIBarButtonItem item, boolean animated,
             @ObjCBlock(name = "call_presentFromBarButtonItemAnimatedCompletionHandler") Block_presentFromBarButtonItemAnimatedCompletionHandler completion);
 
+    /**
+     * iPad
+     */
     @Generated
     @Selector("presentFromRect:inView:animated:completionHandler:")
     public native boolean presentFromRectInViewAnimatedCompletionHandler(@ByValue CGRect rect, UIView view,
             boolean animated,
             @ObjCBlock(name = "call_presentFromRectInViewAnimatedCompletionHandler") Block_presentFromRectInViewAnimatedCompletionHandler completion);
 
+    /**
+     * uses a single formatter to fill the pages
+     */
     @Generated
     @Selector("printFormatter")
     public native UIPrintFormatter printFormatter();
 
+    /**
+     * changes to printInfo ignored while printing. default is nil
+     */
     @Generated
     @Selector("printInfo")
     public native UIPrintInfo printInfo();
 
+    /**
+     * calls class to render each page
+     */
     @Generated
     @Selector("printPageRenderer")
     public native UIPrintPageRenderer printPageRenderer();
 
+    /**
+     * set after printer selection
+     */
     @Generated
     @Selector("printPaper")
     public native UIPrintPaper printPaper();
 
+    /**
+     * @discussion	Use to print without showing the standard print panel. Use with a
+     * 	UIPrinter found using the UIPrinterPickerController.
+     *              The value for the duplex property on printInfo will be ignored.
+     */
     @Generated
     @Selector("printToPrinter:completionHandler:")
     public native boolean printToPrinterCompletionHandler(UIPrinter printer,
             @ObjCBlock(name = "call_printToPrinterCompletionHandler") Block_printToPrinterCompletionHandler completion);
 
+    /**
+     * single NSData, NSURL, UIImage
+     */
     @Generated
     @Selector("printingItem")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object printingItem();
 
+    /**
+     * array of NSData, NSURL, UIImage. does not support page range
+     */
     @Generated
     @Selector("printingItems")
     public native NSArray<?> printingItems();
 
+    /**
+     * not retained. default is nil
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIPrintInteractionControllerDelegate value);
 
+    /**
+     * not retained. default is nil
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIPrintInteractionControllerDelegate value) {
         Object __old = delegate();
@@ -252,26 +299,44 @@ public class UIPrintInteractionController extends NSObject {
         }
     }
 
+    /**
+     * uses a single formatter to fill the pages
+     */
     @Generated
     @Selector("setPrintFormatter:")
     public native void setPrintFormatter(UIPrintFormatter value);
 
+    /**
+     * changes to printInfo ignored while printing. default is nil
+     */
     @Generated
     @Selector("setPrintInfo:")
     public native void setPrintInfo(UIPrintInfo value);
 
+    /**
+     * calls class to render each page
+     */
     @Generated
     @Selector("setPrintPageRenderer:")
     public native void setPrintPageRenderer(UIPrintPageRenderer value);
 
+    /**
+     * single NSData, NSURL, UIImage
+     */
     @Generated
     @Selector("setPrintingItem:")
     public native void setPrintingItem(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * array of NSData, NSURL, UIImage. does not support page range
+     */
     @Generated
     @Selector("setPrintingItems:")
     public native void setPrintingItems(NSArray<?> value);
 
+    /**
+     * default is YES.
+     */
     @Generated
     @Selector("setShowsNumberOfCopies:")
     public native void setShowsNumberOfCopies(boolean value);
@@ -280,10 +345,16 @@ public class UIPrintInteractionController extends NSObject {
     @Selector("setShowsPageRange:")
     public native void setShowsPageRange(boolean value);
 
+    /**
+     * default is NO.  Paper selection for loaded papers is always shown for UIPrintInfoOutputPhoto and UIPrintInfoOutputPhotoGrayscale
+     */
     @Generated
     @Selector("setShowsPaperSelectionForLoadedPapers:")
     public native void setShowsPaperSelectionForLoadedPapers(boolean value);
 
+    /**
+     * default is YES.
+     */
     @Generated
     @Selector("showsNumberOfCopies")
     public native boolean showsNumberOfCopies();
@@ -292,6 +363,9 @@ public class UIPrintInteractionController extends NSObject {
     @Selector("showsPageRange")
     public native boolean showsPageRange();
 
+    /**
+     * default is NO.  Paper selection for loaded papers is always shown for UIPrintInfoOutputPhoto and UIPrintInfoOutputPhotoGrayscale
+     */
     @Generated
     @Selector("showsPaperSelectionForLoadedPapers")
     public native boolean showsPaperSelectionForLoadedPapers();

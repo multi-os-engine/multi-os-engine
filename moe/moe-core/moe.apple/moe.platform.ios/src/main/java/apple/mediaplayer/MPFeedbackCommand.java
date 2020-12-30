@@ -154,26 +154,52 @@ public class MPFeedbackCommand extends MPRemoteCommand {
     @Selector("init")
     public native MPFeedbackCommand init();
 
+    /**
+     * Whether the feedback command is in an "active" state. An example of when a
+     * feedback command would be active is if the user already "liked" a particular
+     * content item.
+     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
+    /**
+     * Whether the feedback command is in an "active" state. An example of when a
+     * feedback command would be active is if the user already "liked" a particular
+     * content item.
+     */
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
 
+    /**
+     * An optional shorter version of the localized title for this feedback
+     * command. MediaPlayer uses this property to display this command's title on
+     * remote control interfaces with little screen space.
+     */
     @Generated
     @Selector("localizedShortTitle")
     public native String localizedShortTitle();
 
+    /**
+     * A localized string briefly describing the context of the command.
+     */
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();
 
+    /**
+     * An optional shorter version of the localized title for this feedback
+     * command. MediaPlayer uses this property to display this command's title on
+     * remote control interfaces with little screen space.
+     */
     @Generated
     @Selector("setLocalizedShortTitle:")
     public native void setLocalizedShortTitle(String value);
 
+    /**
+     * A localized string briefly describing the context of the command.
+     */
     @Generated
     @Selector("setLocalizedTitle:")
     public native void setLocalizedTitle(String value);

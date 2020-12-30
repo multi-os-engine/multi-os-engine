@@ -19,10 +19,22 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Particle Birth Location
+ */
 @Generated
 public final class SCNParticleBirthLocation {
+    /**
+     * particles are emitted on the surface of the emitter shape.
+     */
     @Generated @NInt public static final long Surface = 0x0000000000000000L;
+    /**
+     * particles are emitted inside the volume of the emitter shape.
+     */
     @Generated @NInt public static final long Volume = 0x0000000000000001L;
+    /**
+     * particles are emitted on the vertices of the emitter shape.
+     */
     @Generated @NInt public static final long Vertex = 0x0000000000000002L;
 
     @Generated

@@ -406,6 +406,9 @@ public class UISwitch extends UIControl implements NSCoding {
     @Selector("initWithCoder:")
     public native UISwitch initWithCoder(NSCoder coder);
 
+    /**
+     * This class enforces a size appropriate for the control, and so the frame size is ignored.
+     */
     @Generated
     @Selector("initWithFrame:")
     public native UISwitch initWithFrame(@ByValue CGRect frame);
@@ -434,6 +437,9 @@ public class UISwitch extends UIControl implements NSCoding {
     @Selector("setOffImage:")
     public native void setOffImage(UIImage value);
 
+    /**
+     * does not send action
+     */
     @Generated
     @Selector("setOn:animated:")
     public native void setOnAnimated(boolean on, boolean animated);
@@ -464,24 +470,41 @@ public class UISwitch extends UIControl implements NSCoding {
     @Selector("initWithFrame:primaryAction:")
     public native UISwitch initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 
+    /**
+     * Request a style for the switch. If the style changed, then the switch may resize.
+     */
     @Generated
     @Selector("preferredStyle")
     @NInt
     public native long preferredStyle();
 
+    /**
+     * Request a style for the switch. If the style changed, then the switch may resize.
+     */
     @Generated
     @Selector("setPreferredStyle:")
     public native void setPreferredStyle(@NInt long value);
 
+    /**
+     * The title displayed alongside the switch, positioned appropriately for the @c UIUserInterfaceIdiom.
+     * @note This property is only supported for Catalyst in the Mac idiom.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
+    /**
+     * The switch's display style. This property always returns a concrete, resolved style (never UISwitchStyleAutomatic).
+     */
     @Generated
     @Selector("style")
     @NInt
     public native long style();
 
+    /**
+     * The title displayed alongside the switch, positioned appropriately for the @c UIUserInterfaceIdiom.
+     * @note This property is only supported for Catalyst in the Mac idiom.
+     */
     @Generated
     @Selector("title")
     public native String title();

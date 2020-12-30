@@ -156,11 +156,17 @@ public class ALAsset extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns a CGImage with an aspect ratio thumbnail of the asset.  The size of the thumbnail is the appropriate size for the platform.  The thumbnail will be in the correct orientation.
+     */
     @Generated
     @Deprecated
     @Selector("aspectRatioThumbnail")
     public native CGImageRef aspectRatioThumbnail();
 
+    /**
+     * Returns an ALAssetRepresentation object for the default representation of the ALAsset
+     */
     @Generated
     @Deprecated
     @Selector("defaultRepresentation")
@@ -170,44 +176,77 @@ public class ALAsset extends NSObject {
     @Selector("init")
     public native ALAsset init();
 
+    /**
+     * Returns YES if the application is able to edit the asset.  Returns NO if the application is not able to edit the asset.
+     * Applications are only allowed to edit assets that they originally wrote.
+     */
     @Generated
     @Deprecated
     @Selector("isEditable")
     public native boolean isEditable();
 
+    /**
+     * Returns the original asset if the caller was saved as a modified version of an asset.
+     * Returns nil if the caller was not saved as a modified version of an asset.
+     */
     @Generated
     @Deprecated
     @Selector("originalAsset")
     public native ALAsset originalAsset();
 
+    /**
+     * Returns an ALAssetRepresentation object for the given representation UTI. If the ALAsset does not
+     * support the representation, nil is returned.
+     */
     @Generated
     @Deprecated
     @Selector("representationForUTI:")
     public native ALAssetRepresentation representationForUTI(String representationUTI);
 
+    /**
+     * Replaces the image data in the calling asset with the supplied image data.
+     * The caller should check the editable property of the asset to see if it is possible to replace the image data.
+     * If the application is able to edit the asset, the completion block will return the same assetURL as the calling asset, since a new asset is not being created.
+     * If the application is not able to edit the asset, the completion block will return a nil assetURL and an ALAssetsLibraryWriteFailedError.
+     */
     @Generated
     @Deprecated
     @Selector("setImageData:metadata:completionBlock:")
     public native void setImageDataMetadataCompletionBlock(NSData imageData, NSDictionary<?, ?> metadata,
             @ObjCBlock(name = "call_setImageDataMetadataCompletionBlock") Block_setImageDataMetadataCompletionBlock completionBlock);
 
+    /**
+     * Replaces the video data in the calling asset with the video at the specified path.
+     * The caller should check the editable property of the asset to see if it is possible to replace the video data.
+     * If the application is able to edit the asset, the completion block will return the same assetURL as the calling asset, since a new asset is not being created.
+     * If the application is not able to edit the asset (see the editable property on ALAsset), the completion block will return a nil assetURL and an ALAssetsLibraryWriteFailedError.
+     */
     @Generated
     @Deprecated
     @Selector("setVideoAtPath:completionBlock:")
     public native void setVideoAtPathCompletionBlock(NSURL videoPathURL,
             @ObjCBlock(name = "call_setVideoAtPathCompletionBlock") Block_setVideoAtPathCompletionBlock completionBlock);
 
+    /**
+     * Returns a CGImage with a square thumbnail of the asset.  The size of the thumbnail is the appropriate size for the platform.  The thumbnail will be in the correct orientation.
+     */
     @Generated
     @Deprecated
     @Selector("thumbnail")
     public native CGImageRef thumbnail();
 
+    /**
+     * Returns the value for a given property (as defined above). Calling it with an invalid property returns a ALErrorInvalidProperty error.
+     */
     @Generated
     @Deprecated
     @Selector("valueForProperty:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object valueForProperty(String property);
 
+    /**
+     * Saves image data to the saved photos album as a new ALAsset that is considered a modified version of the calling ALAsset.
+     */
     @Generated
     @Deprecated
     @Selector("writeModifiedImageDataToSavedPhotosAlbum:metadata:completionBlock:")
@@ -215,6 +254,9 @@ public class ALAsset extends NSObject {
             NSDictionary<?, ?> metadata,
             @ObjCBlock(name = "call_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock") Block_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
 
+    /**
+     * Saves the video at the specified path to the saved photos album as a new ALAsset that is considered a modified version of the calling ALAsset.
+     */
     @Generated
     @Deprecated
     @Selector("writeModifiedVideoAtPathToSavedPhotosAlbum:completionBlock:")

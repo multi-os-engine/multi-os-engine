@@ -33,15 +33,28 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * ----------------------------- WCSessionDelegate -----------------------------
+ * The session calls the delegate methods when content is received and session
+ * state changes. All delegate methods will be called on the same queue. The
+ * delegate queue is a non-main serial queue. It is the client's responsibility
+ * to dispatch to another queue if neccessary.
+ */
 @Generated
 @Library("WatchConnectivity")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("WCSessionDelegate")
 public interface WCSessionDelegate {
+    /**
+     * Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details.
+     */
     @Generated
     @Selector("session:activationDidCompleteWithState:error:")
     void sessionActivationDidCompleteWithStateError(WCSession session, @NInt long activationState, NSError error);
 
+    /**
+     * Called on the sending side after the file transfer has successfully completed or failed with an error. Will be called on next launch if the sender was not running when the transfer finished.
+     */
     @Generated
     @IsOptional
     @Selector("session:didFinishFileTransfer:error:")
@@ -50,6 +63,9 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called on the sending side after the user info transfer has successfully completed or failed with an error. Will be called on next launch if the sender was not running when the user info finished.
+     */
     @Generated
     @IsOptional
     @Selector("session:didFinishUserInfoTransfer:error:")
@@ -58,6 +74,9 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called on the delegate of the receiver. Will be called on startup if an applicationContext is available.
+     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveApplicationContext:")
@@ -65,6 +84,9 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called on the delegate of the receiver. Will be called on startup if the file finished transferring when the receiver was not running. The incoming file will be located in the Documents/Inbox/ folder when being delivered. The receiver must take ownership of the file by moving it to another location. The system will remove any content that has not been moved when this delegate method returns.
+     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveFile:")
@@ -72,6 +94,9 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called on the delegate of the receiver. Will be called on startup if the incoming message caused the receiver to launch.
+     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessage:")
@@ -79,6 +104,9 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called on the delegate of the receiver when the sender sends a message that expects a reply. Will be called on startup if the incoming message caused the receiver to launch.
+     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessage:replyHandler:")
@@ -87,6 +115,9 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called on the delegate of the receiver. Will be called on startup if the incoming message data caused the receiver to launch.
+     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessageData:")
@@ -94,6 +125,9 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called on the delegate of the receiver when the sender sends message data that expects a reply. Will be called on startup if the incoming message data caused the receiver to launch.
+     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessageData:replyHandler:")
@@ -102,6 +136,9 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called on the delegate of the receiver. Will be called on startup if the user info finished transferring when the receiver was not running.
+     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveUserInfo:")
@@ -109,14 +146,23 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the session can no longer be used to modify or add any new transfers and, all interactive messages will be cancelled, but delegate callbacks for background transfers can still occur. This will happen when the selected watch is being changed.
+     */
     @Generated
     @Selector("sessionDidBecomeInactive:")
     void sessionDidBecomeInactive(WCSession session);
 
+    /**
+     * Called when all delegate callbacks for the previously selected watch has occurred. The session can be re-activated for the now selected watch using activateSession.
+     */
     @Generated
     @Selector("sessionDidDeactivate:")
     void sessionDidDeactivate(WCSession session);
 
+    /**
+     * Called when the reachable state of the counterpart app changes. The receiver should check the reachable property on receiving this delegate callback.
+     */
     @Generated
     @IsOptional
     @Selector("sessionReachabilityDidChange:")
@@ -124,6 +170,9 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when any of the Watch state properties change.
+     */
     @Generated
     @IsOptional
     @Selector("sessionWatchStateDidChange:")

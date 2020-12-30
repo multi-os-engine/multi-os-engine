@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A trait collection encapsulates the system traits of an interface's environment.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -180,6 +183,10 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     public static native UITraitCollection traitCollectionWithPreferredContentSizeCategory(
             String preferredContentSizeCategory);
 
+    /**
+     * Returns a trait collection by merging the traits in `traitCollections`. The last trait along any given
+     * axis (e.g. interface usage) will supersede any others. 
+     */
     @Generated
     @Selector("traitCollectionWithTraitsFromCollections:")
     public static native UITraitCollection traitCollectionWithTraitsFromCollections(
@@ -208,11 +215,17 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * unspecified: UIDisplayGamutUnspecified
+     */
     @Generated
     @Selector("displayGamut")
     @NInt
     public native long displayGamut();
 
+    /**
+     * unspecified: 0.0
+     */
     @Generated
     @Selector("displayScale")
     @NFloat
@@ -222,11 +235,17 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * unspecified: UIForceTouchCapabilityUnknown
+     */
     @Generated
     @Selector("forceTouchCapability")
     @NInt
     public native long forceTouchCapability();
 
+    /**
+     * unspecified: UIUserInterfaceSizeClassUnspecified
+     */
     @Generated
     @Selector("horizontalSizeClass")
     @NInt
@@ -240,11 +259,17 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("initWithCoder:")
     public native UITraitCollection initWithCoder(NSCoder coder);
 
+    /**
+     * unspecified: UITraitEnvironmentLayoutDirectionUnspecified
+     */
     @Generated
     @Selector("layoutDirection")
     @NInt
     public native long layoutDirection();
 
+    /**
+     * unspecified: UIContentSizeCategoryUnspecified
+     */
     @Generated
     @Selector("preferredContentSizeCategory")
     public native String preferredContentSizeCategory();
@@ -255,38 +280,73 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
         return supportsSecureCoding();
     }
 
+    /**
+     * unspecified: UIUserInterfaceIdiomUnspecified
+     */
     @Generated
     @Selector("userInterfaceIdiom")
     @NInt
     public native long userInterfaceIdiom();
 
+    /**
+     * unspecified: UIUserInterfaceSizeClassUnspecified
+     */
     @Generated
     @Selector("verticalSizeClass")
     @NInt
     public native long verticalSizeClass();
 
+    /**
+     * unspecified: UIAccessibilityContrastUnspecified
+     */
     @Generated
     @Selector("accessibilityContrast")
     @NInt
     public native long accessibilityContrast();
 
+    /**
+     * The current trait collection, used when resolving the appearance of dynamic UIColors and similar objects.
+     * This is a thread-local property, so it may be changed on non-main threads without affecting the main thread.
+     */
     @Generated
     @Selector("currentTraitCollection")
     public static native UITraitCollection currentTraitCollection();
 
+    /**
+     * Return whether this trait collection, compared to a different trait collection, could show a different appearance
+     * for dynamic colors that are provided by UIKit or are in an asset catalog.
+     * If you need to be aware of when dynamic colors might change, override `traitCollectionDidChange` in your view or view controller,
+     * and use this method to compare `self.traitCollection` with `previousTraitCollection`.
+     * 
+     * Currently, a change in any of these traits could affect dynamic colors:
+     *    userInterfaceIdiom, userInterfaceStyle, displayGamut, accessibilityContrast, userInterfaceLevel
+     * and more could be added in the future.
+     */
     @Generated
     @Selector("hasDifferentColorAppearanceComparedToTraitCollection:")
     public native boolean hasDifferentColorAppearanceComparedToTraitCollection(UITraitCollection traitCollection);
 
+    /**
+     * Returns an image configuration compatible with this trait collection.
+     */
     @Generated
     @Selector("imageConfiguration")
     public native UIImageConfiguration imageConfiguration();
 
+    /**
+     * unspecified: UILegibilityWeightUnspecified
+     */
     @Generated
     @Selector("legibilityWeight")
     @NInt
     public native long legibilityWeight();
 
+    /**
+     * Sets `UITraitCollection.currentTraitCollection` to this trait collection, performs the given actions,
+     * then restores `UITraitCollection.currentTraitCollection` to its original value.
+     * Just like `currentTraitCollection`, this only affects the current thread, and may be used on non-main threads
+     * without affecting the main thread.
+     */
     @Generated
     @Selector("performAsCurrentTraitCollection:")
     public native void performAsCurrentTraitCollection(
@@ -299,6 +359,10 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
         void call_performAsCurrentTraitCollection();
     }
 
+    /**
+     * The current trait collection, used when resolving the appearance of dynamic UIColors and similar objects.
+     * This is a thread-local property, so it may be changed on non-main threads without affecting the main thread.
+     */
     @Generated
     @Selector("setCurrentTraitCollection:")
     public static native void setCurrentTraitCollection(UITraitCollection value);
@@ -319,21 +383,35 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("traitCollectionWithUserInterfaceStyle:")
     public static native UITraitCollection traitCollectionWithUserInterfaceStyle(@NInt long userInterfaceStyle);
 
+    /**
+     * unspecified: UIUserInterfaceLevelUnspecified
+     */
     @Generated
     @Selector("userInterfaceLevel")
     @NInt
     public native long userInterfaceLevel();
 
+    /**
+     * unspecified: UIUserInterfaceStyleUnspecified
+     */
     @Generated
     @Selector("userInterfaceStyle")
     @NInt
     public native long userInterfaceStyle();
 
+    /**
+     * unspecified: UIUserInterfaceActiveAppearanceUnspecified
+     */
     @Generated
     @Selector("activeAppearance")
     @NInt
     public native long activeAppearance();
 
+    /**
+     * This trait indicates whether the UI should have an 'active' appearance.
+     * On macOS, this varies based on window activation state.
+     * On other platforms, this is always .active.
+     */
     @Generated
     @Selector("traitCollectionWithActiveAppearance:")
     public static native UITraitCollection traitCollectionWithActiveAppearance(

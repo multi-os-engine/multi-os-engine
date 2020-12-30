@@ -25,11 +25,22 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * MDLTransformComponent
+ * @summary a container for a time sampled local transformation
+ * 
+ * @discussion Accessors to get the local transform and the global transform
+ * for a particular MDLObject are provided.
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLTransformComponent")
 public interface MDLTransformComponent extends MDLComponent {
+    /**
+     * An array of sample times for which a key has been stored
+     * If no animation data is present, the array will contain a single value of zero 
+     */
     @Generated
     @Selector("keyTimes")
     NSArray<? extends NSNumber> keyTimes();
@@ -38,14 +49,23 @@ public interface MDLTransformComponent extends MDLComponent {
     @Selector("maximumTime")
     double maximumTime();
 
+    /**
+     * If no animation data is present, minimumTime and maximumTime will be zero
+     */
     @Generated
     @Selector("minimumTime")
     double minimumTime();
 
+    /**
+     * if YES, this transform is intended to be in global space, not parent space
+     */
     @Generated
     @Selector("resetsTransform")
     boolean resetsTransform();
 
+    /**
+     * if YES, this transform is intended to be in global space, not parent space
+     */
     @Generated
     @Selector("setResetsTransform:")
     void setResetsTransform(boolean value);

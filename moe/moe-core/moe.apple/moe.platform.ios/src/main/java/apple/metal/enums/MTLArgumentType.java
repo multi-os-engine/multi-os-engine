@@ -19,6 +19,22 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum MTLArgumentType
+ * @abstract The type for an input to a MTLRenderPipelineState or a MTLComputePipelineState
+ * 
+ * @constant MTLArgumentTypeBuffer
+ * This input is a MTLBuffer
+ * 
+ * @constant MTLArgumentTypeThreadgroupMemory
+ * This input is a pointer to the threadgroup memory.
+ * 
+ * @constant MTLArgumentTypeTexture
+ * This input is a MTLTexture.
+ * 
+ * @constant MTLArgumentTypeSampler
+ * This input is a sampler.
+ */
 @Generated
 public final class MTLArgumentType {
     @Generated @NUInt public static final long Buffer = 0x0000000000000000L;

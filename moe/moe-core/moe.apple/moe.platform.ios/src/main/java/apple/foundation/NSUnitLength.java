@@ -171,6 +171,9 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @Selector("lightyears")
     public static native NSUnitLength lightyears();
 
+    /**
+     * Base unit - meters
+     */
     @Generated
     @Selector("megameters")
     public static native NSUnitLength megameters();

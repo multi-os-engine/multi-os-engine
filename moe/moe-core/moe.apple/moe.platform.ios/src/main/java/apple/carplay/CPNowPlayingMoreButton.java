@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A now playing button that shows a callout-style action. For example,
+ * your app could present a @c CPActionSheetTemplate to show more actions
+ * when the user taps this button.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)

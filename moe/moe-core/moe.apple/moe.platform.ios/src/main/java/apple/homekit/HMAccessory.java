@@ -43,6 +43,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract Represent an accessory in the home.
+ * 
+ * @discussion This class represents an accessory in the home. There is a one to
+ *             one relationship between a physical accessory and an object of this
+ *             class. An accessory is composed of one or more services.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -154,29 +161,61 @@ public class HMAccessory extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @brief Returns array of camera profiles implemented by the accessory.
+     * 
+     * @discussion An accessory can contain one or more cameras. Each camera is represented as a
+     *             an HMCameraProfile object. If the accessory does not contain a camera, this property
+     *             will be nil.
+     */
     @Generated
     @Selector("cameraProfiles")
     public native NSArray<? extends HMCameraProfile> cameraProfiles();
 
+    /**
+     * @brief Category information for the accessory.
+     */
     @Generated
     @Selector("category")
     public native HMAccessoryCategory category();
 
+    /**
+     * @brief Delegate object that receives updates on the state of the accessory.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native HMAccessoryDelegate delegate();
 
+    /**
+     * @brief A unique identifier for the accessory.
+     * 
+     * @discussion Use uniqueIdentifier to obtain the identifier for this object.
+     */
     @Generated
     @Deprecated
     @Selector("identifier")
     public native NSUUID identifier();
 
+    /**
+     * @brief If this accessory is a bridge, this property is an array of NSUUID objects that,
+     *        each of which represents the 'uniqueIdentifier' of the accessory vended by the bridge.
+     * 
+     * @discussion Use uniqueIdentifiersForBridgedAccessories to obtain the identifiers for the
+     *             bridged accessories.
+     */
     @Generated
     @Deprecated
     @Selector("identifiersForBridgedAccessories")
     public native NSArray<? extends NSUUID> identifiersForBridgedAccessories();
 
+    /**
+     * @brief This method is used to have an accessory identify itself.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("identifyWithCompletionHandler:")
     public native void identifyWithCompletionHandler(
@@ -186,34 +225,64 @@ public class HMAccessory extends NSObject {
     @Selector("init")
     public native HMAccessory init();
 
+    /**
+     * @brief TRUE if the accessory is blocked, FALSE otherwise.
+     */
     @Generated
     @Selector("isBlocked")
     public native boolean isBlocked();
 
+    /**
+     * @brief This property indicates whether this accessory is behind a bridge. If it is TRUE,
+     *        the accessory cannot be removed from the home directly. Only the bridge that owns
+     *        this accessory can be removed and removing the bridge will remove this accessory
+     *        from the home.
+     */
     @Generated
     @Selector("isBridged")
     public native boolean isBridged();
 
+    /**
+     * @brief TRUE if the accessory is currently reachable, FALSE otherwise.
+     */
     @Generated
     @Selector("isReachable")
     public native boolean isReachable();
 
+    /**
+     * @brief The name of the accessory.
+     * 
+     * @discussion Returns the accessory's name that is associated with HomeKit. The initial value is the name
+     *             provided by the accessory information service of the accessory.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * @brief Room containing the accessory.
+     */
     @Generated
     @Selector("room")
     public native HMRoom room();
 
+    /**
+     * @brief Array of HMService objects that represent all the services provided by the accessory.
+     */
     @Generated
     @Selector("services")
     public native NSArray<? extends HMService> services();
 
+    /**
+     * @brief Delegate object that receives updates on the state of the accessory.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMAccessoryDelegate value);
 
+    /**
+     * @brief Delegate object that receives updates on the state of the accessory.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) HMAccessoryDelegate value) {
         Object __old = delegate();
@@ -226,14 +295,40 @@ public class HMAccessory extends NSObject {
         }
     }
 
+    /**
+     * @brief A unique identifier for the accessory.
+     */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
+    /**
+     * @brief If this accessory is a bridge, this property is an array of NSUUID objects that,
+     *        each of which represents the 'uniqueIdentifier' of the accessory vended by the bridge.
+     * 
+     * @discussion An accessory can be standalone, a bridge, or hosted behind a bridge.
+     *                  - A standalone accessory would have its 'bridged' property set to FALSE and
+     *                    its 'uniqueIdentifiersForBridgedAccessories' property set to nil.
+     *                  - An accessory that is a bridge would have its 'bridged' property set to FALSE,
+     *                    but have a non-empty 'uniqueIdentifiersForBridgedAccessories' property.
+     *                  - An accessory behind a bridge would have its 'bridged' property set to TRUE and
+     *                    its 'uniqueIdentifiersForBridgedAccessories' property set to nil.
+     */
     @Generated
     @Selector("uniqueIdentifiersForBridgedAccessories")
     public native NSArray<? extends NSUUID> uniqueIdentifiersForBridgedAccessories();
 
+    /**
+     * @brief This method is used to change the name of the accessory.
+     * 
+     * @param name New name for the accessory.
+     * 
+     * @discussion The new name is stored in HomeKit and not on the accessory.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,
@@ -253,22 +348,37 @@ public class HMAccessory extends NSObject {
         void call_updateNameCompletionHandler(NSError error);
     }
 
+    /**
+     * @abstract   Accessory's firmware version.
+     */
     @Generated
     @Selector("firmwareVersion")
     public native String firmwareVersion();
 
+    /**
+     * @abstract   Manufacturer of the accessory.
+     */
     @Generated
     @Selector("manufacturer")
     public native String manufacturer();
 
+    /**
+     * @abstract   Model of the accessory.
+     */
     @Generated
     @Selector("model")
     public native String model();
 
+    /**
+     * @abstract   Accessory profiles of the receiver.
+     */
     @Generated
     @Selector("profiles")
     public native NSArray<? extends HMAccessoryProfile> profiles();
 
+    /**
+     * @abstract   Indicates if the accessory supports the identify action.
+     */
     @Generated
     @Selector("supportsIdentify")
     public native boolean supportsIdentify();

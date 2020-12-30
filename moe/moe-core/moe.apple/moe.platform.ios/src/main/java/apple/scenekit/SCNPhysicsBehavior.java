@@ -42,6 +42,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNPhysicsBehavior
+ * @abstract SCNPhysicsBehavior is an abstract class that represents a behavior in the physics world.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)

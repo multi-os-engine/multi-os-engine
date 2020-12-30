@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A concrete convenience class conforming to MLBatchProvider.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -110,11 +113,19 @@ public class MLArrayBatchProvider extends NSObject implements MLBatchProvider {
     @Selector("init")
     public native MLArrayBatchProvider init();
 
+    /**
+     * Initialize with a dictionary which maps feature names to an array of values [String : [Any]]
+     * Error is returned if all arrays do not have equal length or if array values
+     * for a specific feature name do not have the same type or not expressible as MLFeatureValue
+     */
     @Generated
     @Selector("initWithDictionary:error:")
     public native MLArrayBatchProvider initWithDictionaryError(NSDictionary<String, ? extends NSArray<?>> dictionary,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Initalize with an array of feature providers
+     */
     @Generated
     @Selector("initWithFeatureProviderArray:")
     public native MLArrayBatchProvider initWithFeatureProviderArray(NSArray<?> array);

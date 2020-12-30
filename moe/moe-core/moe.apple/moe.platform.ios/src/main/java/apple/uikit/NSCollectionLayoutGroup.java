@@ -81,6 +81,12 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Specifies a custom group with client-specified frames.
+     *   During layout, the itemProvider will be called with the group's current geometry provided via the NSCollectionLayoutEnvironment supplied.
+     *   The coordinate space for returned frames should be {0,0} relative to this group's geometry.
+     *   Custom groups can be nested arbitrarily inside other groups.
+     */
     @Generated
     @Selector("customGroupWithLayoutSize:itemProvider:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -108,12 +114,30 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Specifies a group that will have N items equally sized along the horizontal axis. use interItemSpacing to insert space between items
+     * 
+     *   +------+--+------+--+------+
+     *   |~~~~~~|  |~~~~~~|  |~~~~~~|
+     *   |~~~~~~|  |~~~~~~|  |~~~~~~|
+     *   |~~~~~~|  |~~~~~~|  |~~~~~~|
+     *   +------+--+------+--+------+
+     *            ^        ^
+     *            |        |
+     *    +-----------------------+
+     *    |  Inter Item Spacing   |
+     *    +-----------------------+
+     */
     @Generated
     @Selector("horizontalGroupWithLayoutSize:subitem:count:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object horizontalGroupWithLayoutSizeSubitemCount(NSCollectionLayoutSize layoutSize,
             NSCollectionLayoutItem subitem, @NInt long count);
 
+    /**
+     * Specifies a group that will repeat items until available horizontal space is exhausted.
+     *   note: any remaining space after laying out items can be apportioned among flexible interItemSpacing defintions
+     */
     @Generated
     @Selector("horizontalGroupWithLayoutSize:subitems:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -137,6 +161,9 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Supplies additional spacing between items along the layout axis of the group
+     */
     @Generated
     @Selector("interItemSpacing")
     public native NSCollectionLayoutSpacing interItemSpacing();
@@ -172,10 +199,16 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Supplies additional spacing between items along the layout axis of the group
+     */
     @Generated
     @Selector("setInterItemSpacing:")
     public native void setInterItemSpacing(NSCollectionLayoutSpacing value);
 
+    /**
+     * Supplementary items are "anchored" to the group's geometry.
+     */
     @Generated
     @Selector("setSupplementaryItems:")
     public native void setSupplementaryItems(NSArray<? extends NSCollectionLayoutSupplementaryItem> value);
@@ -192,6 +225,9 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Supplementary items are "anchored" to the group's geometry.
+     */
     @Generated
     @Selector("supplementaryItems")
     public native NSArray<? extends NSCollectionLayoutSupplementaryItem> supplementaryItems();
@@ -201,18 +237,45 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     @NInt
     public static native long version_static();
 
+    /**
+     * Specifies a group that will have N items equally sized along the vertical axis. use interItemSpacing to insert space between items
+     *   +------+
+     *   |~~~~~~|
+     *   |~~~~~~|
+     *   |~~~~~~|
+     *   +------+
+     *   |      |<--+
+     *   +------+   |
+     *   |~~~~~~|   |    +-----------------------+
+     *   |~~~~~~|   +----|  Inter Item Spacing   |
+     *   |~~~~~~|   |    +-----------------------+
+     *   +------+   |
+     *   |      |<--+
+     *   +------+
+     *   |~~~~~~|
+     *   |~~~~~~|
+     *   |~~~~~~|
+     *   +------+
+     */
     @Generated
     @Selector("verticalGroupWithLayoutSize:subitem:count:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object verticalGroupWithLayoutSizeSubitemCount(NSCollectionLayoutSize layoutSize,
             NSCollectionLayoutItem subitem, @NInt long count);
 
+    /**
+     * Specifies a group that will repeat items until available vertical space is exhausted.
+     *   note: any remaining space after laying out items can be apportioned among flexible interItemSpacing defintions
+     */
     @Generated
     @Selector("verticalGroupWithLayoutSize:subitems:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object verticalGroupWithLayoutSizeSubitems(NSCollectionLayoutSize layoutSize,
             NSArray<? extends NSCollectionLayoutItem> subitems);
 
+    /**
+     * for visual debugging; will print an ASCII art rendering to console
+     */
     @Generated
     @Selector("visualDescription")
     public native String visualDescription();

@@ -42,6 +42,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Concrete implementation of <MDLTransformComponent>.
+ * For more complex transform components create a class that conforms to 
+ * <MDLTransformComponent>.
+ * 
+ * @discussion Setting any of scale, translation, or rotation individually will 
+ * set the matrix property, and clear any timing information.
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -159,6 +167,10 @@ public class MDLTransform extends NSObject implements NSCopying, MDLTransformCom
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * @method init
+     * @discussion Initialize an MDLTransform's matrices with identity
+     */
     @Generated
     @Selector("init")
     public native MDLTransform init();
@@ -193,6 +205,9 @@ public class MDLTransform extends NSObject implements NSCopying, MDLTransformCom
     @Selector("resetsTransform")
     public native boolean resetsTransform();
 
+    /**
+     * Set all transform components to identity
+     */
     @Generated
     @Selector("setIdentity")
     public native void setIdentity();

@@ -43,10 +43,26 @@ public class CPVoiceControlTemplate extends CPTemplate {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Switch the voice control template to the state corresponding with a particular identifier.
+     * 
+     * @param identifier An identifier corresponding to one of the voice control states used to initialize this template.
+     * 
+     * @note The Voice Control template applies a rate-limit for voice control states; the template will
+     * ignore voice control state changes that occur too rapidly or frequently in a short period of time.
+     * 
+     * @warning You must first present this voice control template through your @c CPInterfaceController before
+     * activating a voice control state, otherwise this method will have no effect.
+     * When the Voice Control template is first presented, the first state you specify in
+     * @c initWithVoiceControlStates: will be visible.
+     */
     @Generated
     @Selector("activateVoiceControlStateWithIdentifier:")
     public native void activateVoiceControlStateWithIdentifier(String identifier);
 
+    /**
+     * The currently-active voice control state identifier.
+     */
     @Generated
     @Selector("activeStateIdentifier")
     public native String activeStateIdentifier();
@@ -104,6 +120,15 @@ public class CPVoiceControlTemplate extends CPTemplate {
     @Selector("initWithCoder:")
     public native CPVoiceControlTemplate initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize a voice control template with a list of voice control states.
+     * 
+     * @param voiceControlStates An array of voice control states for this template. Your app can switch between these states after the template is presented.
+     * 
+     * @note By default, the Voice Control template will begin on the first state specified.
+     * 
+     * @warning You may specify a maximum of 5 voice control states. If you specify more than 5, only the first 5 will be available.
+     */
     @Generated
     @Selector("initWithVoiceControlStates:")
     public native CPVoiceControlTemplate initWithVoiceControlStates(

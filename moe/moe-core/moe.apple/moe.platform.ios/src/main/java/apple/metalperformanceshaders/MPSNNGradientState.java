@@ -27,6 +27,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class  A state created to record a MPSCNNKernel properties
+ * at the time an -encode call was made. The contents are opaque.
+ * 
+ * Gradient states must be created with [MPSCNNKernel resultStateForSourceImage:sourceStates:destinationImage:]
+ * or analogous interfaces.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)

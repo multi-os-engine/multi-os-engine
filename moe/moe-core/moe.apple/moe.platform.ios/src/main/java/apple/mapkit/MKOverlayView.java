@@ -55,6 +55,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Prefer MKOverlayRenderer
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -400,6 +403,14 @@ public class MKOverlayView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * Return YES if the view is currently ready to draw in the specified rect.
+     * Return NO if the view will not draw in the specified rect or if the
+     * data necessary to draw in the specified rect is not available.  In the
+     * case where the view may want to draw in the specified rect but the data is
+     * not available, use setNeedsDisplayInMapRect:zoomLevel: to signal when the
+     * data does become available.
+     */
     @Generated
     @Deprecated
     @Selector("canDrawMapRect:zoomScale:")
@@ -446,6 +457,9 @@ public class MKOverlayView extends UIView {
     @MappedReturn(ObjCObjectMapper.class)
     public native MKOverlay overlay();
 
+    /**
+     * Convert screen points relative to this view to absolute MKMapPoints
+     */
     @Generated
     @Deprecated
     @Selector("pointForMapPoint:")

@@ -101,6 +101,9 @@ public class NSUnitConcentrationMass extends NSDimension implements NSSecureCodi
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Base unit - gramsPerLiter
+     */
     @Generated
     @Selector("gramsPerLiter")
     public static native NSUnitConcentrationMass gramsPerLiter();

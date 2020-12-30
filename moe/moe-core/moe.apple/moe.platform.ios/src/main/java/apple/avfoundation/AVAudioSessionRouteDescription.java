@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A description of the input and output ports which comprise a route.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -154,10 +157,16 @@ public class AVAudioSessionRouteDescription extends NSObject {
     @Selector("init")
     public native AVAudioSessionRouteDescription init();
 
+    /**
+     * Flattened list of all input port descriptions associated with all the streams as part of the route.
+     */
     @Generated
     @Selector("inputs")
     public native NSArray<? extends AVAudioSessionPortDescription> inputs();
 
+    /**
+     * Flattened list of all output port descriptions associated with all the streams as part of the route.
+     */
     @Generated
     @Selector("outputs")
     public native NSArray<? extends AVAudioSessionPortDescription> outputs();

@@ -30,19 +30,31 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKWarpable")
 public interface SKWarpable {
+    /**
+     * maximum number of subdivision iterations used to generate the final vertices
+     */
     @Generated
     @Selector("setSubdivisionLevels:")
     void setSubdivisionLevels(@NInt long value);
 
+    /**
+     * Warp geometry used to define the distortion
+     */
     @Generated
     @Selector("setWarpGeometry:")
     void setWarpGeometry(SKWarpGeometry value);
 
+    /**
+     * maximum number of subdivision iterations used to generate the final vertices
+     */
     @Generated
     @Selector("subdivisionLevels")
     @NInt
     long subdivisionLevels();
 
+    /**
+     * Warp geometry used to define the distortion
+     */
     @Generated
     @Selector("warpGeometry")
     SKWarpGeometry warpGeometry();

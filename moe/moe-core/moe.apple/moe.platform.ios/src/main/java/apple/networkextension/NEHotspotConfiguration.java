@@ -28,6 +28,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEHotspotConfiguration
+ * @discussion
+ *   The NEHotspotConfiguration class represents set of properties that are required
+ *   to configure a Wi-Fi Network.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -42,6 +48,10 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
         super(peer);
     }
 
+    /**
+     * @property SSID
+     * @discussion SSID of the Wi-Fi Network.
+     */
     @Generated
     @Selector("SSID")
     public native String SSID();
@@ -113,19 +123,59 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     @Selector("initWithCoder:")
     public native NEHotspotConfiguration initWithCoder(NSCoder coder);
 
+    /**
+     * @method initWithHS20Settings:eapSettings
+     * @discussion
+     *   A designated initializer to instantiate a new NEHotspotConfiguration object.
+     *   This initializer is used configure HS2.0 Wi-Fi Networks.
+     * 
+     * @param hs20Settings Hotspot 2.0 configuration
+     * @param eapSettings EAP configuration
+     */
     @Generated
     @Selector("initWithHS20Settings:eapSettings:")
     public native NEHotspotConfiguration initWithHS20SettingsEapSettings(NEHotspotHS20Settings hs20Settings,
             NEHotspotEAPSettings eapSettings);
 
+    /**
+     * @method initWithSSID:
+     * @discussion
+     *   A designated initializer to instantiate a new NEHotspotConfiguration object.
+     *   This initializer is used to configure open Wi-Fi Networks.
+     * 
+     * @param SSID The SSID of the Open Wi-Fi Network.
+     *   Length of SSID must be between 1 and 32 characters.
+     */
     @Generated
     @Selector("initWithSSID:")
     public native NEHotspotConfiguration initWithSSID(String SSID);
 
+    /**
+     * @method initWithSSID:eapSettings
+     * @discussion
+     *   A designated initializer to instantiate a new NEHotspotConfiguration object.
+     *   This initializer is used configure WPA/WPA2 Enterprise Wi-Fi Networks.
+     * 
+     * @param SSID The SSID of WPA/WPA2 Enterprise Wi-Fi Network
+     * @param eapSettings EAP configuration
+     */
     @Generated
     @Selector("initWithSSID:eapSettings:")
     public native NEHotspotConfiguration initWithSSIDEapSettings(String SSID, NEHotspotEAPSettings eapSettings);
 
+    /**
+     * @method initWithSSID:passphrase:isWEP
+     * @discussion
+     *   A designated initializer to instantiate a new NEHotspotConfiguration object.
+     *   This initializer is used configure either WEP or WPA/WPA2 Personal Wi-Fi Networks.
+     * 
+     * @param SSID The SSID of the WEP or WPA/WPA2 Personal Wi-Fi Network
+     * @param passphrase The passphrase credential.
+     *   For WPA/WPA2 Personal networks: between 8 and 63 characters.
+     *   For Static WEP(64bit)  : 10 Hex Digits
+     *   For Static WEP(128bit) : 26 Hex Digits
+     * @param isWEP YES specifies WEP Wi-Fi Network else WPA/WPA2 Personal Wi-Fi Network
+     */
     @Generated
     @Selector("initWithSSID:passphrase:isWEP:")
     public native NEHotspotConfiguration initWithSSIDPassphraseIsWEP(String SSID, String passphrase, boolean isWEP);
@@ -147,6 +197,10 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * @property joinOnce
+     * @discussion if set to YES the configuration will not be persisted. Default is NO.
+     */
     @Generated
     @Selector("joinOnce")
     public native boolean joinOnce();
@@ -155,6 +209,13 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property lifeTimeInDays
+     * @discussion The lifetime of the configuration in days. The configuration is stored for the
+     *   number of days specified by this property. The minimum value is 1 day and maximum value is 365 days.
+     *   A configuration does not get deleted automatically if this property is not set or set to an invalid value.
+     *   This property does not apply to Enterprise and HS2.0 networks.
+     */
     @Generated
     @Selector("lifeTimeInDays")
     public native NSNumber lifeTimeInDays();
@@ -173,10 +234,21 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property joinOnce
+     * @discussion if set to YES the configuration will not be persisted. Default is NO.
+     */
     @Generated
     @Selector("setJoinOnce:")
     public native void setJoinOnce(boolean value);
 
+    /**
+     * @property lifeTimeInDays
+     * @discussion The lifetime of the configuration in days. The configuration is stored for the
+     *   number of days specified by this property. The minimum value is 1 day and maximum value is 365 days.
+     *   A configuration does not get deleted automatically if this property is not set or set to an invalid value.
+     *   This property does not apply to Enterprise and HS2.0 networks.
+     */
     @Generated
     @Selector("setLifeTimeInDays:")
     public native void setLifeTimeInDays(NSNumber value);
@@ -204,23 +276,58 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     @NInt
     public static native long version_static();
 
+    /**
+     * @property SSIDPrefix
+     * @discussion Prefix string of SSID of the Wi-Fi Network.
+     */
     @Generated
     @Selector("SSIDPrefix")
     public native String SSIDPrefix();
 
+    /**
+     * @property hidden
+     * @discussion if set to YES the system will perform active scan of the SSID. Default is NO.
+     */
     @Generated
     @Selector("hidden")
     public native boolean hidden();
 
+    /**
+     * @method initWithSSIDPrefix:
+     * @discussion
+     *   A designated initializer to instantiate a new NEHotspotConfiguration object.
+     *   This initializer is used to configure open Wi-Fi Networks.
+     * 
+     * @param SSIDPrefix The prefix string of SSID of the Open Wi-Fi Network.
+     *   Length of SSIDPrefix must be between 3 and 32 characters.
+     */
     @Generated
     @Selector("initWithSSIDPrefix:")
     public native NEHotspotConfiguration initWithSSIDPrefix(String SSIDPrefix);
 
+    /**
+     * @method initWithSSIDPrefix:passphrase:isWEP
+     * @discussion
+     *   A designated initializer to instantiate a new NEHotspotConfiguration object.
+     *   This initializer is used configure either WEP or WPA/WPA2 Personal Wi-Fi Networks.
+     * 
+     * @param SSIDPrefix The prefix string of SSID of the WEP or WPA/WPA2 Personal Wi-Fi Network.
+     * 	Length of SSIDPrefix must be between 3 and 32 characters.
+     * @param passphrase The passphrase credential.
+     *   For WPA/WPA2 Personal networks: between 8 and 63 characters.
+     *   For Static WEP(64bit)  : 10 Hex Digits
+     *   For Static WEP(128bit) : 26 Hex Digits
+     * @param isWEP YES specifies WEP Wi-Fi Network else WPA/WPA2 Personal Wi-Fi Network
+     */
     @Generated
     @Selector("initWithSSIDPrefix:passphrase:isWEP:")
     public native NEHotspotConfiguration initWithSSIDPrefixPassphraseIsWEP(String SSIDPrefix, String passphrase,
             boolean isWEP);
 
+    /**
+     * @property hidden
+     * @discussion if set to YES the system will perform active scan of the SSID. Default is NO.
+     */
     @Generated
     @Selector("setHidden:")
     public native void setHidden(boolean value);

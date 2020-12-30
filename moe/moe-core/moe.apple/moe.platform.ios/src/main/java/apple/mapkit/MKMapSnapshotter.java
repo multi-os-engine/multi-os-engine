@@ -168,6 +168,9 @@ public class MKMapSnapshotter extends NSObject {
     @Selector("isLoading")
     public native boolean isLoading();
 
+    /**
+     * defaults to the main queue
+     */
     @Generated
     @Selector("startWithCompletionHandler:")
     public native void startWithCompletionHandler(

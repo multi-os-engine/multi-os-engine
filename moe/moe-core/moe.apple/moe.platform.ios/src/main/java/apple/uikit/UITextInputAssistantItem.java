@@ -150,6 +150,9 @@ public class UITextInputAssistantItem extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Default is YES, controls if the user is allowed to hide the shortcuts bar. Does not influence the built in auto-hiding logic.
+     */
     @Generated
     @Selector("allowsHidingShortcuts")
     public native boolean allowsHidingShortcuts();
@@ -158,22 +161,37 @@ public class UITextInputAssistantItem extends NSObject {
     @Selector("init")
     public native UITextInputAssistantItem init();
 
+    /**
+     * Contains UIBarButtonItemGroups that should be displayed in the leading position on the keyboard's assistant bar.
+     */
     @Generated
     @Selector("leadingBarButtonGroups")
     public native NSArray<? extends UIBarButtonItemGroup> leadingBarButtonGroups();
 
+    /**
+     * Default is YES, controls if the user is allowed to hide the shortcuts bar. Does not influence the built in auto-hiding logic.
+     */
     @Generated
     @Selector("setAllowsHidingShortcuts:")
     public native void setAllowsHidingShortcuts(boolean value);
 
+    /**
+     * Contains UIBarButtonItemGroups that should be displayed in the leading position on the keyboard's assistant bar.
+     */
     @Generated
     @Selector("setLeadingBarButtonGroups:")
     public native void setLeadingBarButtonGroups(NSArray<? extends UIBarButtonItemGroup> value);
 
+    /**
+     * Contains UIBarButtonItemGroups that should be displayed in the trailing position on the keyboard's assistant bar.
+     */
     @Generated
     @Selector("setTrailingBarButtonGroups:")
     public native void setTrailingBarButtonGroups(NSArray<? extends UIBarButtonItemGroup> value);
 
+    /**
+     * Contains UIBarButtonItemGroups that should be displayed in the trailing position on the keyboard's assistant bar.
+     */
     @Generated
     @Selector("trailingBarButtonGroups")
     public native NSArray<? extends UIBarButtonItemGroup> trailingBarButtonGroups();

@@ -35,6 +35,9 @@ public interface NSCoding {
     @Selector("encodeWithCoder:")
     void encodeWithCoder(NSCoder coder);
 
+    /**
+     * NS_DESIGNATED_INITIALIZER
+     */
     @Generated
     @Selector("initWithCoder:")
     @MappedReturn(ObjCObjectMapper.class)

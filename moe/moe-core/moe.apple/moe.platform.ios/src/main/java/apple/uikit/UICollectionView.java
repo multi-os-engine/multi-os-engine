@@ -356,10 +356,16 @@ public class UICollectionView extends UIScrollView
     @NInt
     public static native long version_static();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("allowsMultipleSelection")
     public native boolean allowsMultipleSelection();
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("allowsSelection")
     public native boolean allowsSelection();
@@ -411,10 +417,16 @@ public class UICollectionView extends UIScrollView
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * will be automatically resized to track the size of the collection view and placed behind all cells and supplementary views.
+     */
     @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
 
+    /**
+     * returns NO if reordering was prevented from beginning - otherwise YES
+     */
     @Generated
     @Selector("beginInteractiveMovementForItemAtIndexPath:")
     public native boolean beginInteractiveMovementForItemAtIndexPath(NSIndexPath indexPath);
@@ -483,6 +495,9 @@ public class UICollectionView extends UIScrollView
     @Selector("indexPathForItemAtPoint:")
     public native NSIndexPath indexPathForItemAtPoint(@ByValue CGPoint point);
 
+    /**
+     * returns nil or an array of selected index paths
+     */
     @Generated
     @Selector("indexPathsForSelectedItems")
     public native NSArray<? extends NSIndexPath> indexPathsForSelectedItems();
@@ -516,6 +531,9 @@ public class UICollectionView extends UIScrollView
     @Selector("insertItemsAtIndexPaths:")
     public native void insertItemsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
 
+    /**
+     * These methods allow dynamic modification of the current set of items in the collection view
+     */
     @Generated
     @Selector("insertSections:")
     public native void insertSections(NSIndexSet sections);
@@ -550,11 +568,17 @@ public class UICollectionView extends UIScrollView
     @NInt
     public native long numberOfItemsInSection(@NInt long section);
 
+    /**
+     * Information about the current state of the collection view.
+     */
     @Generated
     @Selector("numberOfSections")
     @NInt
     public native long numberOfSections();
 
+    /**
+     * allows multiple insert/delete/reload/move calls to be animated simultaneously. Nestable.
+     */
     @Generated
     @Selector("performBatchUpdates:completion:")
     public native void performBatchUpdatesCompletion(
@@ -566,6 +590,11 @@ public class UICollectionView extends UIScrollView
     @MappedReturn(ObjCObjectMapper.class)
     public native UICollectionViewDataSourcePrefetching prefetchDataSource();
 
+    /**
+     * For each reuse identifier that the collection view will use, register either a class or a nib from which to instantiate a cell.
+     * If a nib is registered, it must contain exactly 1 top level object which is a UICollectionViewCell.
+     * If a class is registered, it will be instantiated via alloc/initWithFrame:
+     */
     @Generated
     @Selector("registerClass:forCellWithReuseIdentifier:")
     public native void registerClassForCellWithReuseIdentifier(Class cellClass, String identifier);
@@ -584,6 +613,9 @@ public class UICollectionView extends UIScrollView
     public native void registerNibForSupplementaryViewOfKindWithReuseIdentifier(UINib nib, String kind,
             String identifier);
 
+    /**
+     * discard the dataSource and delegate data and requery as necessary
+     */
     @Generated
     @Selector("reloadData")
     public native void reloadData();
@@ -596,10 +628,16 @@ public class UICollectionView extends UIScrollView
     @Selector("reloadSections:")
     public native void reloadSections(NSIndexSet sections);
 
+    /**
+     * defaults to NO. If YES, when focusing on a collection view the last focused index path is focused automatically. If the collection view has never been focused, then the preferred focused index path is used.
+     */
     @Generated
     @Selector("remembersLastFocusedIndexPath")
     public native boolean remembersLastFocusedIndexPath();
 
+    /**
+     * Interacting with the collection view.
+     */
     @Generated
     @Selector("scrollToItemAtIndexPath:atScrollPosition:animated:")
     public native void scrollToItemAtIndexPathAtScrollPositionAnimated(NSIndexPath indexPath,
@@ -610,14 +648,23 @@ public class UICollectionView extends UIScrollView
     public native void selectItemAtIndexPathAnimatedScrollPosition(NSIndexPath indexPath, boolean animated,
             @NUInt long scrollPosition);
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setAllowsMultipleSelection:")
     public native void setAllowsMultipleSelection(boolean value);
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("setAllowsSelection:")
     public native void setAllowsSelection(boolean value);
 
+    /**
+     * will be automatically resized to track the size of the collection view and placed behind all cells and supplementary views.
+     */
     @Generated
     @Selector("setBackgroundView:")
     public native void setBackgroundView(UIView value);
@@ -626,6 +673,9 @@ public class UICollectionView extends UIScrollView
     @Selector("setCollectionViewLayout:")
     public native void setCollectionViewLayout(UICollectionViewLayout value);
 
+    /**
+     * transition from one layout to another
+     */
     @Generated
     @Selector("setCollectionViewLayout:animated:")
     public native void setCollectionViewLayoutAnimated(UICollectionViewLayout layout, boolean animated);
@@ -684,6 +734,9 @@ public class UICollectionView extends UIScrollView
         }
     }
 
+    /**
+     * defaults to NO. If YES, when focusing on a collection view the last focused index path is focused automatically. If the collection view has never been focused, then the preferred focused index path is used.
+     */
     @Generated
     @Selector("setRemembersLastFocusedIndexPath:")
     public native void setRemembersLastFocusedIndexPath(boolean value);
@@ -753,6 +806,11 @@ public class UICollectionView extends UIScrollView
     @MappedReturn(ObjCObjectMapper.class)
     public native UICollectionViewDragDelegate dragDelegate();
 
+    /**
+     * To enable intra-app drags on iPhone, set this to YES.
+     * You can also force drags to be disabled for this collection view by setting this to NO.
+     * By default, For iPad this will return YES and iPhone will return NO.
+     */
     @Generated
     @Selector("dragInteractionEnabled")
     public native boolean dragInteractionEnabled();
@@ -762,14 +820,23 @@ public class UICollectionView extends UIScrollView
     @MappedReturn(ObjCObjectMapper.class)
     public native UICollectionViewDropDelegate dropDelegate();
 
+    /**
+     * YES if a drag session is currently active. A drag session begins after items are "lifted" from the collection view.
+     */
     @Generated
     @Selector("hasActiveDrag")
     public native boolean hasActiveDrag();
 
+    /**
+     * YES if collection view is currently tracking a drop session.
+     */
     @Generated
     @Selector("hasActiveDrop")
     public native boolean hasActiveDrop();
 
+    /**
+     * Returns YES if the collection view is reordering or has drop placeholders.
+     */
     @Generated
     @Selector("hasUncommittedUpdates")
     public native boolean hasUncommittedUpdates();
@@ -792,6 +859,10 @@ public class UICollectionView extends UIScrollView
     @NInt
     public native long presentationSectionIndexForDataSourceSectionIndex(@NInt long dataSourceSectionIndex);
 
+    /**
+     * Reordering cadence affects how easily reordering occurs while dragging around a reorder-capable drop destination.
+     * Default is UICollectionViewReorderingCadenceImmediate.
+     */
     @Generated
     @Selector("reorderingCadence")
     @NInt
@@ -813,6 +884,11 @@ public class UICollectionView extends UIScrollView
         }
     }
 
+    /**
+     * To enable intra-app drags on iPhone, set this to YES.
+     * You can also force drags to be disabled for this collection view by setting this to NO.
+     * By default, For iPad this will return YES and iPhone will return NO.
+     */
     @Generated
     @Selector("setDragInteractionEnabled:")
     public native void setDragInteractionEnabled(boolean value);
@@ -833,6 +909,10 @@ public class UICollectionView extends UIScrollView
         }
     }
 
+    /**
+     * Reordering cadence affects how easily reordering occurs while dragging around a reorder-capable drop destination.
+     * Default is UICollectionViewReorderingCadenceImmediate.
+     */
     @Generated
     @Selector("setReorderingCadence:")
     public native void setReorderingCadence(@NInt long value);
@@ -847,10 +927,18 @@ public class UICollectionView extends UIScrollView
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    /**
+     * Controls whether multiple item selection can occur when the receiver is editing.
+     * Defaults to NO.
+     */
     @Generated
     @Selector("allowsMultipleSelectionDuringEditing")
     public native boolean allowsMultipleSelectionDuringEditing();
 
+    /**
+     * Controls whether an item can be selected when the receiver is editing.
+     * Defaults to NO.
+     */
     @Generated
     @Selector("allowsSelectionDuringEditing")
     public native boolean allowsSelectionDuringEditing();
@@ -866,26 +954,46 @@ public class UICollectionView extends UIScrollView
     public native UICollectionReusableView dequeueConfiguredReusableSupplementaryViewWithRegistrationForIndexPath(
             UICollectionViewSupplementaryRegistration registration, NSIndexPath indexPath);
 
+    /**
+     * Controls the editing state for the receiver.
+     */
     @Generated
     @Selector("isEditing")
     public native boolean isEditing();
 
+    /**
+     * When enabled, the collection view ensures that selection is automatically triggered when focus moves to a cell.
+     */
     @Generated
     @Selector("selectionFollowsFocus")
     public native boolean selectionFollowsFocus();
 
+    /**
+     * Controls whether multiple item selection can occur when the receiver is editing.
+     * Defaults to NO.
+     */
     @Generated
     @Selector("setAllowsMultipleSelectionDuringEditing:")
     public native void setAllowsMultipleSelectionDuringEditing(boolean value);
 
+    /**
+     * Controls whether an item can be selected when the receiver is editing.
+     * Defaults to NO.
+     */
     @Generated
     @Selector("setAllowsSelectionDuringEditing:")
     public native void setAllowsSelectionDuringEditing(boolean value);
 
+    /**
+     * Controls the editing state for the receiver.
+     */
     @Generated
     @Selector("setEditing:")
     public native void setEditing(boolean value);
 
+    /**
+     * When enabled, the collection view ensures that selection is automatically triggered when focus moves to a cell.
+     */
     @Generated
     @Selector("setSelectionFollowsFocus:")
     public native void setSelectionFollowsFocus(boolean value);

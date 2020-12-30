@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A response to an HTTPS network request.
+ */
 @Generated
 @Library("IdentityLookup")
 @Runtime(ObjCRuntime.class)
@@ -78,6 +81,9 @@ public class ILNetworkResponse extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Data returned in the HTTPS response.
+     */
     @Generated
     @Selector("data")
     public native NSData data();
@@ -160,6 +166,9 @@ public class ILNetworkResponse extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * Represents the URL response itself. See documentation for NSHTTPURLResponse.
+     */
     @Generated
     @Selector("urlResponse")
     public native NSHTTPURLResponse urlResponse();

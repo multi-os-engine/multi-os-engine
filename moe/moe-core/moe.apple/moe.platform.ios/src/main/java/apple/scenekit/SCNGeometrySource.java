@@ -48,6 +48,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNGeometrySource
+ * @abstract A geometry source contains geometry data for a specific semantic. The data format is described by properties.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -106,28 +110,91 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @method geometrySourceWithBuffer:semantic:vectorCount:floatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:
+     * @abstract Creates and returns a geometry source from the given data and parameters.
+     * @param buffer A Metal buffer.
+     * @param vertexFormat The vertex format.
+     * @param semantic The semantic of the geometry source.
+     * @param vertexCount The number of vertex.
+     * @param offset The offset from the beginning of the data. In bytes.
+     * @param stride The number of bytes from a vector to the next one in the data.
+     * @discussion Attempting to modify the Metal buffer outside the SCNSceneRenderer delegate callbacks is undefined.
+     * The typical usage it to modify the MTLBuffer within the willRenderScene callback, using a compute kernel or a vertex function in the user own command buffer. So something like:
+     * 
+     * - (void)renderer:(id <SCNSceneRenderer>)aRenderer willRenderScene:(SCNScene *)scene atTime:(NSTimeInterval)time
+     * {
+     *     // ask for a new command buffer
+     *     id <MTLCommandBuffer> myCommandBuffer = [aRenderer.commandQueue commandBuffer];
+     * 
+     *     // get a compute command encoder
+     *     id <MTLComputeCommandEncoder> myComputeCommandEncoder = [myCommandBuffer computeCommandEncoder];
+     * 
+     *     // configure the compute command encoder's pipeline state, buffer inputs etc...
+     *     //...
+     * 
+     *     // dispatch the
+     *     [myComputeCommandEncoder dispatchThreadgroups:numberOfWorkingGroups threadsPerThreadgroup:numberOfThreads];
+     *     [myComputeCommandEncoder endEncoding];
+     * 
+     *     [myCommandBuffer commit];
+     * }
+     */
     @Generated
     @Selector("geometrySourceWithBuffer:vertexFormat:semantic:vertexCount:dataOffset:dataStride:")
     public static native SCNGeometrySource geometrySourceWithBufferVertexFormatSemanticVertexCountDataOffsetDataStride(
             @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long vertexFormat, String semantic,
             @NInt long vertexCount, @NInt long offset, @NInt long stride);
 
+    /**
+     * @method geometrySourceWithData:semantic:vectorCount:floatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:
+     * @abstract Creates and returns a geometry source from the given data and parameters.
+     * @param data The geometry data.
+     * @param semantic The semantic of the geometry source.
+     * @param vectorCount The number of geometry source vectors.
+     * @param floatComponents A flag that indicates if vector components are floating point values.
+     * @param componentsPerVector The number of scalar components in a vector.
+     * @param bytesPerComponent The number of bytes that represent a vector component.
+     * @param offset The offset from the beginning of the data. In bytes.
+     * @param stride The number of bytes from a vector to the next one in the data.
+     */
     @Generated
     @Selector("geometrySourceWithData:semantic:vectorCount:floatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:")
     public static native SCNGeometrySource geometrySourceWithDataSemanticVectorCountFloatComponentsComponentsPerVectorBytesPerComponentDataOffsetDataStride(
             NSData data, String semantic, @NInt long vectorCount, boolean floatComponents,
             @NInt long componentsPerVector, @NInt long bytesPerComponent, @NInt long offset, @NInt long stride);
 
+    /**
+     * @method geometrySourceWithNormals:count:
+     * @abstract Creates and returns a geometry source from normals stored in a buffer of SCNVector3 values.
+     * @param normals The buffer of normals.
+     * @param count The number of normals.
+     * @discussion Input normals are copied to an optimized data format. The actual format is described by the properties of the resulting instance.
+     */
     @Generated
     @Selector("geometrySourceWithNormals:count:")
     public static native SCNGeometrySource geometrySourceWithNormalsCount(
             @ReferenceInfo(type = SCNVector3.class) ConstPtr<SCNVector3> normals, @NInt long count);
 
+    /**
+     * @method geometrySourceWithTextureCoordinates:count:
+     * @abstract Creates and returns a geometry source from texture coordinates stored in a buffer of CGPoint values.
+     * @param texcoord The buffer of texture coordinates.
+     * @param count The number of texture coordinate points.
+     * @discussion Input texture coordinates are copied to an optimized data format. The actual format is described by the properties of the resulting instance.
+     */
     @Generated
     @Selector("geometrySourceWithTextureCoordinates:count:")
     public static native SCNGeometrySource geometrySourceWithTextureCoordinatesCount(
             @ReferenceInfo(type = CGPoint.class) ConstPtr<CGPoint> texcoord, @NInt long count);
 
+    /**
+     * @method geometrySourceWithVertices:count:
+     * @abstract Creates and returns a geometry source from vertices stored in a buffer of SCNVector3 values.
+     * @param vertices The buffer of vertices.
+     * @param count The number of vertices.
+     * @discussion Input vertices are copied to an optimized data format. The actual format is described by the properties of the resulting instance.
+     */
     @Generated
     @Selector("geometrySourceWithVertices:count:")
     public static native SCNGeometrySource geometrySourceWithVerticesCount(
@@ -190,25 +257,45 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property bytesPerComponent
+     * @abstract The size of a vector component in bytes.
+     */
     @Generated
     @Selector("bytesPerComponent")
     @NInt
     public native long bytesPerComponent();
 
+    /**
+     * @property componentsPerVector
+     * @abstract The number of scalar components in each vector.
+     */
     @Generated
     @Selector("componentsPerVector")
     @NInt
     public native long componentsPerVector();
 
+    /**
+     * @property data
+     * @abstract The data for the geometry source
+     */
     @Generated
     @Selector("data")
     public native NSData data();
 
+    /**
+     * @property dataOffset
+     * @abstract The offset from the beginning of the data. In bytes.
+     */
     @Generated
     @Selector("dataOffset")
     @NInt
     public native long dataOffset();
 
+    /**
+     * @property dataStride
+     * @abstract The number of bytes from a vector to the next one in the data.
+     */
     @Generated
     @Selector("dataStride")
     @NInt
@@ -218,6 +305,10 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * @property floatComponents
+     * @abstract A flag that indicates if vector components are floating point values.
+     */
     @Generated
     @Selector("floatComponents")
     public native boolean floatComponents();
@@ -230,6 +321,10 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native SCNGeometrySource initWithCoder(NSCoder coder);
 
+    /**
+     * @property semantic
+     * @abstract The semantic of the geometry source
+     */
     @Generated
     @Selector("semantic")
     public native String semantic();
@@ -240,6 +335,10 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * @property vectorCount
+     * @abstract The number of vectors in the data.
+     */
     @Generated
     @Selector("vectorCount")
     @NInt

@@ -193,6 +193,9 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
             @ReferenceInfo(type = NSString.class) Ptr<NSString> newString,
             @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
 
+    /**
+     * Compatibility method.  If a subclass overrides this and does not override the new method below, this will be called as before (the new method just calls this one by default).  The selection range will always be set to the end of the text with this method if replacement occurs.
+     */
     @Generated
     @Selector("isPartialStringValid:proposedSelectedRange:originalString:originalSelectedRange:errorDescription:")
     public native boolean isPartialStringValidProposedSelectedRangeOriginalStringOriginalSelectedRangeErrorDescription(

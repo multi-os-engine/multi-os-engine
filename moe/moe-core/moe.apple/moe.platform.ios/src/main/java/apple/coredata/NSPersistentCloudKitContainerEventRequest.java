@@ -92,11 +92,18 @@ public class NSPersistentCloudKitContainerEventRequest extends NSPersistentStore
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object fetchEventsAfterEvent(NSPersistentCloudKitContainerEvent event);
 
+    /**
+     * Supports fetching instances of NSPersistentCloudKitContainerEvent matching a fetch request.
+     */
     @Generated
     @Selector("fetchEventsMatchingFetchRequest:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object fetchEventsMatchingFetchRequest(NSFetchRequest<?> fetchRequest);
 
+    /**
+     * Returns an instance of NSFetchRequest configured with the correct entity for fetching instances
+     * of NSPersistentCloudKitContainerEvent.
+     */
     @Generated
     @Selector("fetchRequestForEvents")
     public static native NSFetchRequest<?> fetchRequestForEvents();

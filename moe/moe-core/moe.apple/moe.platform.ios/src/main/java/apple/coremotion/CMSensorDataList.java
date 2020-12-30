@@ -43,6 +43,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMSensorDataList
+ * 
+ * Discussion:
+ *   Allows retrospective access to sensor data via enumeration.
+ *   If created with accelerometerDataFromDate:toDate:
+ *   each enumeration will yield an object of type CMRecordedAccelerometerData.
+ *   Due to the large number of samples that can be processed, the
+ *   enumeration should not be run on the main/UI thread.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)

@@ -3,6 +3,9 @@ package apple.gamekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Available photo sizes.  Actual pixel dimensions will vary on different devices.
+ */
 @Generated
 public final class GKPhotoSize {
     @Generated

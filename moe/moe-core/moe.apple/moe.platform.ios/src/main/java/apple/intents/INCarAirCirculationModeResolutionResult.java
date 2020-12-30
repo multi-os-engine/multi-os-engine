@@ -179,12 +179,19 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
     @Selector("init")
     public native INCarAirCirculationModeResolutionResult init();
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithCarAirCirculationModeToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object confirmationRequiredWithCarAirCirculationModeToConfirm(
             @NInt long carAirCirculationModeToConfirm);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INCarAirCirculationMode. The resolvedValue can be different than the original INCarAirCirculationMode. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedCarAirCirculationMode:")
     @MappedReturn(ObjCObjectMapper.class)

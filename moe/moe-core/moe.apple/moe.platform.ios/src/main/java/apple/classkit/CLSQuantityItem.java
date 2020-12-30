@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract      CLSQuantityItem represents user generated quantity information.
+ */
 @Generated
 @Library("ClassKit")
 @Runtime(ObjCRuntime.class)
@@ -96,6 +99,11 @@ public class CLSQuantityItem extends CLSActivityItem {
     @Selector("initWithCoder:")
     public native CLSQuantityItem initWithCoder(NSCoder coder);
 
+    /**
+     * @abstract      Create a quantity item with an identifier and title.
+     * @param         identifier      An identifier that is unique within activity.
+     * @param         title           Title of the quantity. Ex @em Hints
+     */
     @Generated
     @Selector("initWithIdentifier:title:")
     public native CLSQuantityItem initWithIdentifierTitle(String identifier, String title);
@@ -127,6 +135,9 @@ public class CLSQuantityItem extends CLSActivityItem {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract      Quantity awarded.
+     */
     @Generated
     @Selector("quantity")
     public native double quantity();
@@ -139,6 +150,9 @@ public class CLSQuantityItem extends CLSActivityItem {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract      Quantity awarded.
+     */
     @Generated
     @Selector("setQuantity:")
     public native void setQuantity(double value);

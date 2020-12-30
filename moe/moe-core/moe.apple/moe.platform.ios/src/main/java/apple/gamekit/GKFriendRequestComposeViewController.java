@@ -136,6 +136,9 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Get the maximum number of recipients permitted
+     */
     @Generated
     @Selector("maxNumberOfRecipients")
     @NUInt
@@ -172,6 +175,11 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     @NInt
     public static native long version_static();
 
+    /**
+     * Add recipients to the request.
+     * If you don't specify at least one recipient before presenting the view, the recipients field will be made firstResponder, to encourage the user to add some.
+     * If you add more than maxNumberOfRecipients recipients, these methods will throw an exception.
+     */
     @Generated
     @Selector("addRecipientPlayers:")
     public native void addRecipientPlayers(NSArray<? extends GKPlayer> players);
@@ -230,6 +238,9 @@ public class GKFriendRequestComposeViewController extends UINavigationController
         }
     }
 
+    /**
+     * Specify the message sent to the invitee. A default message will be used if you don't specify one.
+     */
     @Generated
     @Selector("setMessage:")
     public native void setMessage(String message);

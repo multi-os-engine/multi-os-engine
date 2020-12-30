@@ -38,6 +38,9 @@ public final class CloudKit {
     private CloudKit() {
     }
 
+    /**
+     * Stand-in for the current user's ID; most often used in RecordZoneID->ownerName
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -48,6 +51,11 @@ public final class CloudKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKOwnerDefaultName();
 
+    /**
+     * @abstract This local notification is posted when there has been any change to the logged in iCloud account.
+     * 
+     * @discussion On receipt, an updated account status should be obtained by calling @c accountStatusWithCompletionHandler:
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -58,11 +66,19 @@ public final class CloudKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKErrorDomain();
 
+    /**
+     * @abstract When a CKErrorPartialFailure happens this key will be set in the error's userInfo dictionary.
+     * 
+     * @discussion The value of this key will be a dictionary, and the values will be errors for individual items with the keys being the item IDs that failed.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKPartialErrorsByItemIDKey();
 
+    /**
+     * If the server rejects a record save because it has been modified since the last time it was read, a @c CKErrorServerRecordChanged error will be returned and it will contain versions of the record in its userInfo dictionary. Apply your custom conflict resolution logic to the server record under @c CKServerRecordKey and attempt a save of that record.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -78,16 +94,25 @@ public final class CloudKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKRecordChangedErrorClientRecordKey();
 
+    /**
+     * On some errors, the userInfo dictionary may contain a NSNumber instance that specifies the period of time in seconds after which the client may retry the request. For example, this key will be on @c CKErrorServiceUnavailable, @c CKErrorRequestRateLimited, and other errors for which the recommended resolution is to retry after a delay.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKErrorRetryAfterKey();
 
+    /**
+     * Use this constant for the recordType parameter when fetching User Records.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKRecordTypeUserRecord();
 
+    /**
+     * Use these keys in queries to match on the record's parent or share reference
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -108,21 +133,34 @@ public final class CloudKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKRecordTypeShare();
 
+    /**
+     * Value is a string.  Example for a recipe sharing app: "Pot Roast"
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKShareTitleKey();
 
+    /**
+     * Value is a data blob suitable to pass into @code -[NSImage imageWithData:] or -[UIImage imageWithData:] @endcode
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKShareThumbnailImageDataKey();
 
+    /**
+     * Value is a string representing a UTI.  Example for a recipe sharing app: "com.mycompany.recipe"
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKShareTypeKey();
 
+    /**
+     * @discussion Query operations have a dynamically defined maximum number of results.  If the results of a query exceed this max, your completion block will invoked with a cursor.
+     * Issue a new query with that cursor to fetch the next batch of results.
+     */
     @Generated
     @CVariable()
     @NUInt

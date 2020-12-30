@@ -165,6 +165,9 @@ public class INTextNoteContent extends INNoteContent implements NSSecureCoding, 
         return supportsSecureCoding();
     }
 
+    /**
+     * The text that comprises the note content
+     */
     @Generated
     @Selector("text")
     public native String text();

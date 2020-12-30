@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSCoreDataSpotlightDelegate implements the CSSearchableIndexDelegate API, but can't
+ * publicly declare it due to linkage requirements.
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -54,6 +58,9 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Create the searchable attributes for the managed object. Override to return nil if you do not want the object included in the index.
+     */
     @Generated
     @Selector("attributeSetForObject:")
     public native CSSearchableItemAttributeSet attributeSetForObject(NSManagedObject object);
@@ -88,6 +95,9 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * CoreSpotlight domain identifer; default is the store's identifier
+     */
     @Generated
     @Selector("domainIdentifier")
     public native String domainIdentifier();
@@ -97,6 +107,9 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * CoreSpotlight index name; default nil
+     */
     @Generated
     @Selector("indexName")
     public native String indexName();
@@ -105,6 +118,11 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @Selector("init")
     public native NSCoreDataCoreSpotlightDelegate init();
 
+    /**
+     * NSCoreDataSpotlightDelegate requires that
+     *  - the store type is NSSQLiteStoreType.
+     *  - the store has persistent history tracking enabled.
+     */
     @Generated
     @Selector("initForStoreWithDescription:model:")
     public native NSCoreDataCoreSpotlightDelegate initForStoreWithDescriptionModel(
@@ -145,6 +163,9 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * CSSearchableIndexDelegate conformance
+     */
     @Generated
     @Selector("searchableIndex:reindexAllSearchableItemsWithAcknowledgementHandler:")
     public native void searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler(

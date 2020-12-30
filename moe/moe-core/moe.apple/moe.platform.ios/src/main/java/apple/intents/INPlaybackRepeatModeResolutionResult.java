@@ -79,6 +79,9 @@ public class INPlaybackRepeatModeResolutionResult extends INIntentResolutionResu
     public static native Object confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithPlaybackRepeatModeToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -151,6 +154,10 @@ public class INPlaybackRepeatModeResolutionResult extends INIntentResolutionResu
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INPlaybackRepeatMode. The resolvedValue can be different than the original INPlaybackRepeatMode. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedPlaybackRepeatMode:")
     @MappedReturn(ObjCObjectMapper.class)

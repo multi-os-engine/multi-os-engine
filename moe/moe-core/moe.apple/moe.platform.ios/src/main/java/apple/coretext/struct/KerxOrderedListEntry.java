@@ -50,19 +50,31 @@ public final class KerxOrderedListEntry extends StructObject {
         setValue(value);
     }
 
+    /**
+     * the kerning pair
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native KerxKerningPair pair();
 
+    /**
+     * the kerning pair
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setPair(@ByValue KerxKerningPair value);
 
+    /**
+     * the kerning value for the above pair
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native short value();
 
+    /**
+     * the kerning value for the above pair
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setValue(short value);

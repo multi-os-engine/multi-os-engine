@@ -19,6 +19,12 @@ package apple.corelocation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * CLProximity
+ * 
+ * Discussion:
+ *    Represents the current proximity of an entity.
+ */
 @Generated
 public final class CLProximity {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;

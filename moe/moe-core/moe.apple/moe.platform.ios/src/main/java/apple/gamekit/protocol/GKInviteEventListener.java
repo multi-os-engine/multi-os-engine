@@ -27,11 +27,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * GKInviteEventListener uses the GKLocalPlayerListener mechanism on GKLocalPlayer to listen to the two kinds of invite events that a game must respond to
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKInviteEventListener")
 public interface GKInviteEventListener {
+    /**
+     * player:didAcceptInvite: gets called when another player accepts the invite from the local player
+     */
     @Generated
     @IsOptional
     @Selector("player:didAcceptInvite:")
@@ -39,6 +45,9 @@ public interface GKInviteEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This method is obsolete. It will never be invoked and its implementation does nothing**
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -47,6 +56,9 @@ public interface GKInviteEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * didRequestMatchWithRecipients: gets called when the player chooses to play with another player from Game Center and it launches the game to start matchmaking
+     */
     @Generated
     @IsOptional
     @Selector("player:didRequestMatchWithRecipients:")

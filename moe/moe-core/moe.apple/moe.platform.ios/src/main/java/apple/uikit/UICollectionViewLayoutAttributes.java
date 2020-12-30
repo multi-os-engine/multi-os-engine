@@ -220,10 +220,16 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("init")
     public native UICollectionViewLayoutAttributes init();
 
+    /**
+     * As an optimization, UICollectionView might not create a view for items whose hidden attribute is YES
+     */
     @Generated
     @Selector("isHidden")
     public native boolean isHidden();
 
+    /**
+     * As an optimization, UICollectionView might not create a view for items whose hidden attribute is YES
+     */
     @Generated
     @Selector("setHidden:")
     public native void setHidden(boolean value);
@@ -233,6 +239,9 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @NUInt
     public native long representedElementCategory();
 
+    /**
+     * nil when representedElementCategory is UICollectionElementCategoryCell
+     */
     @Generated
     @Selector("representedElementKind")
     public native String representedElementKind();
@@ -269,6 +278,9 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("setTransform:")
     public native void setTransform(@ByValue CGAffineTransform value);
 
+    /**
+     * default is 0
+     */
     @Generated
     @Selector("setZIndex:")
     public native void setZIndex(@NInt long value);
@@ -288,6 +300,9 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @ByValue
     public native CATransform3D transform3D();
 
+    /**
+     * default is 0
+     */
     @Generated
     @Selector("zIndex")
     @NInt

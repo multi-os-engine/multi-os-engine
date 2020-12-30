@@ -166,6 +166,9 @@ public class PHAssetResourceManager extends NSObject {
     @Selector("init")
     public native PHAssetResourceManager init();
 
+    /**
+     * Handlers are called on an arbitrary serial queue. The lifetime of the data is not guaranteed beyond that of the handler.
+     */
     @Generated
     @Selector("requestDataForAssetResource:options:dataReceivedHandler:completionHandler:")
     public native int requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler(PHAssetResource resource,
@@ -173,6 +176,9 @@ public class PHAssetResourceManager extends NSObject {
             @ObjCBlock(name = "call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2") Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2 handler,
             @ObjCBlock(name = "call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3") Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3 completionHandler);
 
+    /**
+     * Handlers are called on an arbitrary serial queue.
+     */
     @Generated
     @Selector("writeDataForAssetResource:toFile:options:completionHandler:")
     public native void writeDataForAssetResourceToFileOptionsCompletionHandler(PHAssetResource resource, NSURL fileURL,

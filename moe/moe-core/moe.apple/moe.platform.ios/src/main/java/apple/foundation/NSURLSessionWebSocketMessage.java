@@ -20,6 +20,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The client can create a WebSocket message object that will be passed to the send calls
+ * and will be delivered from the receive calls. The message can be initialized with data or string.
+ * If initialized with data, the string property will be nil and vice versa.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -91,10 +96,16 @@ public class NSURLSessionWebSocketMessage extends NSObject {
     @Selector("init")
     public native NSURLSessionWebSocketMessage init();
 
+    /**
+     * Create a message with data type
+     */
     @Generated
     @Selector("initWithData:")
     public native NSURLSessionWebSocketMessage initWithData(NSData data);
 
+    /**
+     * Create a message with string type
+     */
     @Generated
     @Selector("initWithString:")
     public native NSURLSessionWebSocketMessage initWithString(String string);

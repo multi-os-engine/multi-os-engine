@@ -19,6 +19,9 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * NSWritingDirectionFormatType values used by NSWritingDirectionAttributeName. It is or'ed with either NSWritingDirectionLeftToRight or NSWritingDirectionRightToLeft. Can specify the formatting controls defined by Unicode Bidirectional Algorithm.
+ */
 @Generated
 public final class NSWritingDirectionFormatType {
     @Generated @NInt public static final long Embedding = 0x0000000000000000L;

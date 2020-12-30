@@ -354,10 +354,16 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @NInt
     public static native long version_static();
 
+    /**
+     * iPhone Safari defaults to NO. iPad Safari defaults to YES
+     */
     @Generated
     @Selector("allowsInlineMediaPlayback")
     public native boolean allowsInlineMediaPlayback();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("allowsLinkPreview")
     public native boolean allowsLinkPreview();
@@ -469,6 +475,9 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("isLoading")
     public native boolean isLoading();
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("keyboardDisplayRequiresUserAction")
     public native boolean keyboardDisplayRequiresUserAction();
@@ -486,10 +495,16 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("loadRequest:")
     public native void loadRequest(NSURLRequest request);
 
+    /**
+     * iPhone and iPad Safari both default to YES
+     */
     @Generated
     @Selector("mediaPlaybackAllowsAirPlay")
     public native boolean mediaPlaybackAllowsAirPlay();
 
+    /**
+     * iPhone and iPad Safari both default to YES
+     */
     @Generated
     @Selector("mediaPlaybackRequiresUserAction")
     public native boolean mediaPlaybackRequiresUserAction();
@@ -592,10 +607,16 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     public native void scrollViewWillEndDraggingWithVelocityTargetContentOffset(UIScrollView scrollView,
             @ByValue CGPoint velocity, CGPoint targetContentOffset);
 
+    /**
+     * iPhone Safari defaults to NO. iPad Safari defaults to YES
+     */
     @Generated
     @Selector("setAllowsInlineMediaPlayback:")
     public native void setAllowsInlineMediaPlayback(boolean value);
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setAllowsLinkPreview:")
     public native void setAllowsLinkPreview(boolean value);
@@ -633,14 +654,23 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("setGapBetweenPages:")
     public native void setGapBetweenPages(@NFloat double value);
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("setKeyboardDisplayRequiresUserAction:")
     public native void setKeyboardDisplayRequiresUserAction(boolean value);
 
+    /**
+     * iPhone and iPad Safari both default to YES
+     */
     @Generated
     @Selector("setMediaPlaybackAllowsAirPlay:")
     public native void setMediaPlaybackAllowsAirPlay(boolean value);
 
+    /**
+     * iPhone and iPad Safari both default to YES
+     */
     @Generated
     @Selector("setMediaPlaybackRequiresUserAction:")
     public native void setMediaPlaybackRequiresUserAction(boolean value);
@@ -661,6 +691,9 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("setScalesPageToFit:")
     public native void setScalesPageToFit(boolean value);
 
+    /**
+     * iPhone and iPad Safari both default to NO
+     */
     @Generated
     @Selector("setSuppressesIncrementalRendering:")
     public native void setSuppressesIncrementalRendering(boolean value);
@@ -673,6 +706,9 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("stringByEvaluatingJavaScriptFromString:")
     public native String stringByEvaluatingJavaScriptFromString(String script);
 
+    /**
+     * iPhone and iPad Safari both default to NO
+     */
     @Generated
     @Selector("suppressesIncrementalRendering")
     public native boolean suppressesIncrementalRendering();

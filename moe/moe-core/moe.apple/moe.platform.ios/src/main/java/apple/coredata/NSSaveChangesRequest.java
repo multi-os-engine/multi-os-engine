@@ -150,6 +150,9 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
     @NInt
     public static native long version_static();
 
+    /**
+     * Objects that were deleted from the calling context.
+     */
     @Generated
     @Selector("deletedObjects")
     public native NSSet<? extends NSManagedObject> deletedObjects();
@@ -158,20 +161,32 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
     @Selector("init")
     public native NSSaveChangesRequest init();
 
+    /**
+     * Default initializer.
+     */
     @Generated
     @Selector("initWithInsertedObjects:updatedObjects:deletedObjects:lockedObjects:")
     public native NSSaveChangesRequest initWithInsertedObjectsUpdatedObjectsDeletedObjectsLockedObjects(
             NSSet<? extends NSManagedObject> insertedObjects, NSSet<? extends NSManagedObject> updatedObjects,
             NSSet<? extends NSManagedObject> deletedObjects, NSSet<? extends NSManagedObject> lockedObjects);
 
+    /**
+     * Objects that were inserted into the calling context.
+     */
     @Generated
     @Selector("insertedObjects")
     public native NSSet<? extends NSManagedObject> insertedObjects();
 
+    /**
+     * Objects that were flagged for optimistic locking on the calling context via detectConflictsForObject:.
+     */
     @Generated
     @Selector("lockedObjects")
     public native NSSet<? extends NSManagedObject> lockedObjects();
 
+    /**
+     * Objects that were modified in the calling context.
+     */
     @Generated
     @Selector("updatedObjects")
     public native NSSet<? extends NSManagedObject> updatedObjects();

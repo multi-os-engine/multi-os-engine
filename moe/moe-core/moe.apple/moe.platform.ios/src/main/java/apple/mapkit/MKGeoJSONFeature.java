@@ -92,6 +92,9 @@ public class MKGeoJSONFeature extends NSObject implements MKGeoJSONObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * If set, will be either a string or a number, depending on the original source data
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -127,6 +130,9 @@ public class MKGeoJSONFeature extends NSObject implements MKGeoJSONObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Serialized JSON
+     */
     @Generated
     @Selector("properties")
     public native NSData properties();

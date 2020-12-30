@@ -51,34 +51,58 @@ public final class NumVersion extends StructObject {
         setMajorRev(majorRev);
     }
 
+    /**
+     * revision level of non-released version
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native byte nonRelRev();
 
+    /**
+     * revision level of non-released version
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setNonRelRev(byte value);
 
+    /**
+     * stage code: dev, alpha, beta, final
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native byte stage();
 
+    /**
+     * stage code: dev, alpha, beta, final
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setStage(byte value);
 
+    /**
+     * 2nd & 3rd part of version number share a byte
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native byte minorAndBugRev();
 
+    /**
+     * 2nd & 3rd part of version number share a byte
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setMinorAndBugRev(byte value);
 
+    /**
+     * 1st part of version number in BCD
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native byte majorRev();
 
+    /**
+     * 1st part of version number in BCD
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setMajorRev(byte value);

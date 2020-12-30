@@ -68,6 +68,9 @@ public class CPTemplateApplicationScene extends UIScene {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * The CPWindow created for this CPTemplateApplicationScene
+     */
     @Generated
     @Selector("carWindow")
     public native CPWindow carWindow();
@@ -88,6 +91,9 @@ public class CPTemplateApplicationScene extends UIScene {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * The delegate for a CPTemplateApplicationScene must conform to the CPTemplateApplicationSceneDelegate protocol.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -124,6 +130,9 @@ public class CPTemplateApplicationScene extends UIScene {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * The interfaceController object for this scene.
+     */
     @Generated
     @Selector("interfaceController")
     public native CPInterfaceController interfaceController();
@@ -150,6 +159,9 @@ public class CPTemplateApplicationScene extends UIScene {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The delegate for a CPTemplateApplicationScene must conform to the CPTemplateApplicationSceneDelegate protocol.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate(@Mapped(ObjCObjectMapper.class) Object value);

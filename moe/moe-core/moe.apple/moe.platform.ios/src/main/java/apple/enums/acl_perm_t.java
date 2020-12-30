@@ -18,6 +18,9 @@ package apple.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * 23.2.2 Individual object access permissions - nonstandard
+ */
 @Generated
 public final class acl_perm_t {
     @Generated public static final int ACL_READ_DATA = 0x00000002;

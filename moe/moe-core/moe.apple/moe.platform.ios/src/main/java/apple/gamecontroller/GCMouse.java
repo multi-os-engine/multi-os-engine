@@ -24,6 +24,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Mice are available to an application that links to GameController.framework. There are 2 ways to access mice
+ * paired to the system. Adopt both to ensure the best user experience:
+ * 
+ * 1: Querying for the current array of mice using [GCMouse mice]
+ * 2: Registering for Connection/Disconnection notifications from NSNotificationCenter.
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -74,6 +81,11 @@ public class GCMouse extends NSObject implements GCDevice {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The most recently used mouse device. If a user actuates a mouse input, that mouse will become the current one.
+     * @see GCMouseDidBecomeCurrentNotification
+     * @see GCMouseDidStopBeingCurrentNotification
+     */
     @Generated
     @Selector("current")
     public static native GCMouse current();
@@ -120,10 +132,20 @@ public class GCMouse extends NSObject implements GCDevice {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Get a list of mice currently attached to the system
+     * 
+     * @see GCMouseDidConnectNotification
+     * @see GCMouseDidDisconnectNotification
+     */
     @Generated
     @Selector("mice")
     public static native NSArray<? extends GCMouse> mice();
 
+    /**
+     * Unlike GCController GCMouse supports only one input profile
+     * Profile contains mouse buttons, scroll wheel and  pointer delta.
+     */
     @Generated
     @Selector("mouseInput")
     public native GCMouseInput mouseInput();

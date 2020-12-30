@@ -30,6 +30,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An SKTransformNode can be applied a 3D rotation that will affect
+ * the visual aspect of its children.
+ * The physics and constraints of the children will behave as if none
+ * of them were transformed.
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)

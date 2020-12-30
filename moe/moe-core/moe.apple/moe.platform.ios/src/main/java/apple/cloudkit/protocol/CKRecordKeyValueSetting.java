@@ -11,6 +11,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Formalizes a protocol for getting and setting keys on a CKRecord.  Not intended to be used directly by client code
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)

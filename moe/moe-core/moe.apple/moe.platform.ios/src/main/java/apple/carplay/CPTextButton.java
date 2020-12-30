@@ -91,6 +91,13 @@ public class CPTextButton extends NSObject {
     @Selector("init")
     public native CPTextButton init();
 
+    /**
+     * Create a button with text and a style that, when tapped, calls your custom handler.
+     * 
+     * @param title A title that will appear in the button.
+     * @param textStyle A style that will be applied by the system for this button.
+     * @param handler A block that will be called when the user taps this button.
+     */
     @Generated
     @Selector("initWithTitle:textStyle:handler:")
     public native CPTextButton initWithTitleTextStyleHandler(String title, @NInt long textStyle,
@@ -138,10 +145,19 @@ public class CPTextButton extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * A @c CPButtonTextStyle value indicating the style for this button, when displayed in a template
+     * that supports button styling, like the Information template.
+     * 
+     * @discussion This value defaults to @c CPTextButtonStyleNormal.
+     */
     @Generated
     @Selector("setTextStyle:")
     public native void setTextStyle(@NInt long value);
 
+    /**
+     * A custom title to display for this button, displayed only in templates that allow for custom titles.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
@@ -154,11 +170,20 @@ public class CPTextButton extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * A @c CPButtonTextStyle value indicating the style for this button, when displayed in a template
+     * that supports button styling, like the Information template.
+     * 
+     * @discussion This value defaults to @c CPTextButtonStyleNormal.
+     */
     @Generated
     @Selector("textStyle")
     @NInt
     public native long textStyle();
 
+    /**
+     * A custom title to display for this button, displayed only in templates that allow for custom titles.
+     */
     @Generated
     @Selector("title")
     public native String title();

@@ -3,6 +3,9 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @brief Describes how a resource will be used by a shader through an argument buffer
+ */
 @Generated
 public final class MTLResourceUsage {
     @Generated

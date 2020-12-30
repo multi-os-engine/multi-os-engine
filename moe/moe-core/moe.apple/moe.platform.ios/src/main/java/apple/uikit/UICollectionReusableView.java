@@ -393,6 +393,12 @@ public class UICollectionReusableView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * Classes that want to support custom layout attributes specific to a given UICollectionViewLayout subclass can apply them here.
+     * This allows the view to work in conjunction with a layout class that returns a custom subclass of UICollectionViewLayoutAttributes from -layoutAttributesForItem: or the corresponding layoutAttributesForHeader/Footer methods.
+     * -applyLayoutAttributes: is then called after the view is added to the collection view and just before the view is returned from the reuse queue.
+     * Note that -applyLayoutAttributes: is only called when attributes change, as defined by -isEqual:.
+     */
     @Generated
     @Selector("applyLayoutAttributes:")
     public native void applyLayoutAttributes(UICollectionViewLayoutAttributes layoutAttributes);
@@ -419,6 +425,11 @@ public class UICollectionReusableView extends UIView {
     public native UICollectionViewLayoutAttributes preferredLayoutAttributesFittingAttributes(
             UICollectionViewLayoutAttributes layoutAttributes);
 
+    /**
+     * Override point.
+     * Called by the collection view before the instance is returned from the reuse queue.
+     * Subclassers must call super.
+     */
     @Generated
     @Selector("prepareForReuse")
     public native void prepareForReuse();
@@ -427,6 +438,9 @@ public class UICollectionReusableView extends UIView {
     @Selector("reuseIdentifier")
     public native String reuseIdentifier();
 
+    /**
+     * Override these methods to provide custom UI for specific layouts.
+     */
     @Generated
     @Selector("willTransitionFromLayout:toLayout:")
     public native void willTransitionFromLayoutToLayout(UICollectionViewLayout oldLayout,

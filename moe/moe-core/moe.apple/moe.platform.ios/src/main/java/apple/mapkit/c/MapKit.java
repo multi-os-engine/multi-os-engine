@@ -67,6 +67,9 @@ public final class MapKit {
     public static native MKCoordinateRegion MKCoordinateRegionMakeWithDistance(
             @ByValue CLLocationCoordinate2D centerCoordinate, double latitudinalMeters, double longitudinalMeters);
 
+    /**
+     * Conversion between unprojected and projected coordinates
+     */
     @Generated
     @CFunction
     @ByValue
@@ -77,6 +80,9 @@ public final class MapKit {
     @ByValue
     public static native CLLocationCoordinate2D MKCoordinateForMapPoint(@ByValue MKMapPoint mapPoint);
 
+    /**
+     * Conversion between distances and projected coordinates
+     */
     @Generated
     @CFunction
     public static native double MKMetersPerMapPointAtLatitude(double latitude);
@@ -89,6 +95,10 @@ public final class MapKit {
     @CFunction
     public static native double MKMetersBetweenMapPoints(@ByValue MKMapPoint a, @ByValue MKMapPoint b);
 
+    /**
+     * Geometric operations on MKMapPoint/Size/Rect.  See CGGeometry.h for
+     * information on the CGFloat versions of these functions.
+     */
     @Generated
     @Inline
     @CFunction
@@ -238,11 +248,22 @@ public final class MapKit {
     @CFunction
     public static native boolean MKMapRectSpans180thMeridian(@ByValue MKMapRect rect);
 
+    /**
+     * For map rects that span the 180th meridian, this returns the portion of the rect
+     * that lies outside of the world rect wrapped around to the other side of the
+     * world.  The portion of the rect that lies inside the world rect can be
+     * determined with MKMapRectIntersection(rect, MKMapRectWorld).
+     */
     @Generated
     @CFunction
     @ByValue
     public static native MKMapRect MKMapRectRemainder(@ByValue MKMapRect rect);
 
+    /**
+     * Road widths are typically not drawn to scale on the map.  This function
+     * returns the approximate width in points of roads at the specified zoomScale.
+     * The result of this function is suitable for use with CGContextSetLineWidth.
+     */
     @Generated
     @CFunction
     @NFloat
@@ -253,6 +274,9 @@ public final class MapKit {
     @ByValue
     public static native MKMapSize MKMapSizeWorld();
 
+    /**
+     * The rect that contains every map point in the world.
+     */
     @Generated
     @CVariable()
     @ByValue
@@ -263,21 +287,33 @@ public final class MapKit {
     @ByValue
     public static native MKMapRect MKMapRectNull();
 
+    /**
+     * Key to a directions mode
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKLaunchOptionsDirectionsModeKey();
 
+    /**
+     * Key to an NSNumber corresponding to a MKMapType
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKLaunchOptionsMapTypeKey();
 
+    /**
+     * Key to a boolean NSNumber
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKLaunchOptionsShowsTrafficKey();
 
+    /**
+     * Will pick the best directions mode, given the user's preferences
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -298,21 +334,33 @@ public final class MapKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKLaunchOptionsDirectionsModeTransit();
 
+    /**
+     * Key to an NSValue-encoded CLLocationCoordinate2D
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKLaunchOptionsMapCenterKey();
 
+    /**
+     * Key to an NSValue-encoded MKCoordinateSpan
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKLaunchOptionsMapSpanKey();
 
+    /**
+     * Key to MKMapCamera object
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKLaunchOptionsCameraKey();
 
+    /**
+     * Post this notification to re-query callout information.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -328,9 +376,9 @@ public final class MapKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKMapItemTypeIdentifier();
 
-    @Generated public static final float MKFeatureDisplayPriorityRequired = (float)1000.0;
-    @Generated public static final float MKFeatureDisplayPriorityDefaultHigh = (float)750.0;
-    @Generated public static final float MKFeatureDisplayPriorityDefaultLow = (float)250.0;
+    @Generated public static final float MKFeatureDisplayPriorityRequired = (float) 1000.0;
+    @Generated public static final float MKFeatureDisplayPriorityDefaultHigh = (float) 750.0;
+    @Generated public static final float MKFeatureDisplayPriorityDefaultLow = (float) 250.0;
 
     @Generated
     @CVariable()
@@ -546,10 +594,10 @@ public final class MapKit {
     @CVariable()
     public static native double MKMapCameraZoomDefault();
 
-    @Generated public static final float MKAnnotationViewZPriorityMax = (float)1000.0;
-    @Generated public static final float MKAnnotationViewZPriorityDefaultSelected = (float)1000.0;
-    @Generated public static final float MKAnnotationViewZPriorityDefaultUnselected = (float)500.0;
-    @Generated public static final float MKAnnotationViewZPriorityMin = (float)0.0;
+    @Generated public static final float MKAnnotationViewZPriorityMax = (float) 1000.0;
+    @Generated public static final float MKAnnotationViewZPriorityDefaultSelected = (float) 1000.0;
+    @Generated public static final float MKAnnotationViewZPriorityDefaultUnselected = (float) 500.0;
+    @Generated public static final float MKAnnotationViewZPriorityMin = (float) 0.0;
 
     @Generated
     @CVariable()

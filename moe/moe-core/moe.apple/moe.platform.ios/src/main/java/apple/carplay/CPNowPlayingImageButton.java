@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A now playing button that shows a custom image provided by your app
+ * for any other custom actions on the now playing screen.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -90,6 +94,11 @@ public class CPNowPlayingImageButton extends CPNowPlayingButton {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The custom image, if any, displayed on the button.
+     * 
+     * @discussion Animated images are not supported. If an animated image is assigned, only the first image will be used.
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -107,6 +116,12 @@ public class CPNowPlayingImageButton extends CPNowPlayingButton {
     public native CPNowPlayingImageButton initWithHandler(
             @ObjCBlock(name = "call_initWithHandler") CPNowPlayingButton.Block_initWithHandler handler);
 
+    /**
+     * Initialize a button with a custom image.
+     * 
+     * @param image A custom image for this button. The maximum image size is CPNowPlayingButtonMaximumImageSize; larger images will be scaled down.
+     * @param handler A block to execute when the user selects the button. The block has no return value and takes the selected button as its only parameter.
+     */
     @Generated
     @Selector("initWithImage:handler:")
     public native CPNowPlayingImageButton initWithImageHandler(UIImage image,

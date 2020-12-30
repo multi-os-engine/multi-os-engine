@@ -21,10 +21,25 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class PKAutomaticPassPresentationSuppressionResult {
+    /**
+     * Suppression is not supported for this device
+     */
     @Generated @NUInt public static final long NotSupported = 0x0000000000000000L;
+    /**
+     * Passes are already being presented and cannot be suppressed
+     */
     @Generated @NUInt public static final long AlreadyPresenting = 0x0000000000000001L;
+    /**
+     * Suppression was denied due to lack of entitlement
+     */
     @Generated @NUInt public static final long Denied = 0x0000000000000002L;
+    /**
+     * Suppression was cancelled before the response handler was fired
+     */
     @Generated @NUInt public static final long Cancelled = 0x0000000000000003L;
+    /**
+     * Suppression of automatic pass presentation was successful
+     */
     @Generated @NUInt public static final long Success = 0x0000000000000004L;
 
     @Generated

@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Provides information about the current state of hinting for the focused item.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -113,6 +116,9 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * A 3D transform that contains the combined transformations of perspective, rotation and translation.
+     */
     @Generated
     @Selector("interactionTransform")
     @ByValue
@@ -126,6 +132,9 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Value between {-1.0, -1.0} and {1.0, 1.0} representing how close focus is to moving in a particular direction.
+     */
     @Generated
     @Selector("movementDirection")
     @ByValue
@@ -137,6 +146,9 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * A 3D transform representing the perspective matrix that should be applied to match the system interaction hinting. Assumes a 0..1 near/far plane.
+     */
     @Generated
     @Selector("perspectiveTransform")
     @ByValue
@@ -150,6 +162,9 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * A vector representing the X and Y axis rotation expressed in radians that should be applied to match the system interaction hinting.
+     */
     @Generated
     @Selector("rotation")
     @ByValue
@@ -163,6 +178,9 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * A vector representing the X and Y axis translation expressed in points that should be applied to match the system interaction hinting.
+     */
     @Generated
     @Selector("translation")
     @ByValue

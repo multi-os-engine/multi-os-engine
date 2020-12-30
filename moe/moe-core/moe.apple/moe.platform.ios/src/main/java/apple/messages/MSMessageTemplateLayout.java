@@ -41,6 +41,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MSMessageTemplateLayout
+ * @abstract   The MSMessageTemplateLayout encapsulates properties used in the construction of UI
+ * representing a message using the default message layout template.
+ */
 @Generated
 @Library("Messages")
 @Runtime(ObjCRuntime.class)
@@ -152,18 +157,36 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property   caption
+     * @abstract   Text to be used as a caption related to the message content.
+     */
     @Generated
     @Selector("caption")
     public native String caption();
 
+    /**
+     * @property   image
+     * @abstract   A UIImage object used to construct the message representation in the conversation transcript.
+     * @discussion When this property and the mediaURL property are both set, the mediaURL
+     * property will be ignored.
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
 
+    /**
+     * @property   imageSubtitle
+     * @abstract   Subtitle text associated with the image or media .
+     */
     @Generated
     @Selector("imageSubtitle")
     public native String imageSubtitle();
 
+    /**
+     * @property   imageTitle
+     * @abstract   Title text associated with the image or media .
+     */
     @Generated
     @Selector("imageTitle")
     public native String imageTitle();
@@ -172,50 +195,106 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     @Selector("init")
     public native MSMessageTemplateLayout init();
 
+    /**
+     * @property   mediaFileURL
+     * @abstract   The URL to a media file used to construct the message representation in the conversation transcript.
+     * @discussion This must be a file URL, the data contained in the file must conform to
+     * kUTTypeImage or kUTTypeMovie. When image property and
+     * this property are both set, then this property will be ignored.
+     */
     @Generated
     @Selector("mediaFileURL")
     public native NSURL mediaFileURL();
 
+    /**
+     * @property   caption
+     * @abstract   Text to be used as a caption related to the message content.
+     */
     @Generated
     @Selector("setCaption:")
     public native void setCaption(String value);
 
+    /**
+     * @property   image
+     * @abstract   A UIImage object used to construct the message representation in the conversation transcript.
+     * @discussion When this property and the mediaURL property are both set, the mediaURL
+     * property will be ignored.
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);
 
+    /**
+     * @property   imageSubtitle
+     * @abstract   Subtitle text associated with the image or media .
+     */
     @Generated
     @Selector("setImageSubtitle:")
     public native void setImageSubtitle(String value);
 
+    /**
+     * @property   imageTitle
+     * @abstract   Title text associated with the image or media .
+     */
     @Generated
     @Selector("setImageTitle:")
     public native void setImageTitle(String value);
 
+    /**
+     * @property   mediaFileURL
+     * @abstract   The URL to a media file used to construct the message representation in the conversation transcript.
+     * @discussion This must be a file URL, the data contained in the file must conform to
+     * kUTTypeImage or kUTTypeMovie. When image property and
+     * this property are both set, then this property will be ignored.
+     */
     @Generated
     @Selector("setMediaFileURL:")
     public native void setMediaFileURL(NSURL value);
 
+    /**
+     * @property   subcaption
+     * @abstract   Text to be used as a subcaption related to the message content.
+     */
     @Generated
     @Selector("setSubcaption:")
     public native void setSubcaption(String value);
 
+    /**
+     * @property   trailingCaption
+     * @abstract   Text to be drawn right aligned on the same line as the caption text.
+     */
     @Generated
     @Selector("setTrailingCaption:")
     public native void setTrailingCaption(String value);
 
+    /**
+     * @property   trailingSubcaption
+     * @abstract   Text to be drawn right aligned on the same line as the subcaption text.
+     */
     @Generated
     @Selector("setTrailingSubcaption:")
     public native void setTrailingSubcaption(String value);
 
+    /**
+     * @property   subcaption
+     * @abstract   Text to be used as a subcaption related to the message content.
+     */
     @Generated
     @Selector("subcaption")
     public native String subcaption();
 
+    /**
+     * @property   trailingCaption
+     * @abstract   Text to be drawn right aligned on the same line as the caption text.
+     */
     @Generated
     @Selector("trailingCaption")
     public native String trailingCaption();
 
+    /**
+     * @property   trailingSubcaption
+     * @abstract   Text to be drawn right aligned on the same line as the subcaption text.
+     */
     @Generated
     @Selector("trailingSubcaption")
     public native String trailingSubcaption();

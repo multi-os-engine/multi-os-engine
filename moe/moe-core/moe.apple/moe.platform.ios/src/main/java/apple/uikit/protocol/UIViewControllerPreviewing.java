@@ -39,14 +39,25 @@ public interface UIViewControllerPreviewing {
     @MappedReturn(ObjCObjectMapper.class)
     UIViewControllerPreviewingDelegate delegate();
 
+    /**
+     * This gesture can be used to cause the previewing presentation to wait until one of your gestures fails or to allow simultaneous recognition during the initial phase of the preview presentation.
+     */
     @Generated
     @Selector("previewingGestureRecognizerForFailureRelationship")
     UIGestureRecognizer previewingGestureRecognizerForFailureRelationship();
 
+    /**
+     * This rect will be set to the bounds of sourceView before each call to
+     * -previewingContext:viewControllerForLocation:
+     */
     @Generated
     @Selector("setSourceRect:")
     void setSourceRect(@ByValue CGRect value);
 
+    /**
+     * This rect will be set to the bounds of sourceView before each call to
+     * -previewingContext:viewControllerForLocation:
+     */
     @Generated
     @Selector("sourceRect")
     @ByValue

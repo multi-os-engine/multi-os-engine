@@ -173,6 +173,9 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
     @Selector("squareKilometers")
     public static native NSUnitArea squareKilometers();
 
+    /**
+     * Base unit - squareMeters
+     */
     @Generated
     @Selector("squareMegameters")
     public static native NSUnitArea squareMegameters();

@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A button for placement in a navigation bar.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -100,6 +103,14 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The image displayed on the button.
+     * 
+     * @discussion Animated images are not supported. If an animated image is assigned, only the first image will be used.
+     * 
+     * @note If both an image and title are specified, the title will take precedence.
+     * To use an image, ensure that the button's title is nil.
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -137,6 +148,11 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * A Boolean value indicating whether the button is enabled.
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
@@ -163,14 +179,33 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * A Boolean value indicating whether the button is enabled.
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * The image displayed on the button.
+     * 
+     * @discussion Animated images are not supported. If an animated image is assigned, only the first image will be used.
+     * 
+     * @note If both an image and title are specified, the title will take precedence.
+     * To use an image, ensure that the button's title is nil.
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);
 
+    /**
+     * The title displayed on the button.
+     * 
+     * @note If both an image and title are specified, the title will take precedence.
+     * To use an image, ensure that the button's title is nil.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
@@ -193,6 +228,12 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * The title displayed on the button.
+     * 
+     * @note If both an image and title are specified, the title will take precedence.
+     * To use an image, ensure that the button's title is nil.
+     */
     @Generated
     @Selector("title")
     public native String title();
@@ -202,11 +243,19 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * The style used to display this button.
+     * 
+     * Defaults to @c CPBarButtonStyleNone.
+     */
     @Generated
     @Selector("buttonStyle")
     @NInt
     public native long buttonStyle();
 
+    /**
+     * Convenience initializer that creates a bar button that renders with an image.
+     */
     @Generated
     @Selector("initWithImage:handler:")
     public native CPBarButton initWithImageHandler(UIImage image,
@@ -219,6 +268,9 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
         void call_initWithImageHandler(CPBarButton arg0);
     }
 
+    /**
+     * Convenience initializer that creates a bar button that displays a text label.
+     */
     @Generated
     @Selector("initWithTitle:handler:")
     public native CPBarButton initWithTitleHandler(String title,
@@ -231,6 +283,11 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
         void call_initWithTitleHandler(CPBarButton arg0);
     }
 
+    /**
+     * The style used to display this button.
+     * 
+     * Defaults to @c CPBarButtonStyleNone.
+     */
     @Generated
     @Selector("setButtonStyle:")
     public native void setButtonStyle(@NInt long value);

@@ -41,6 +41,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Begins:  when numberOfTouchesRequired have tapped numberOfTapsRequired times and been held for minumPressDuration
+ * Changes: when a finger moves
+ * Ends:    when a finger is lifted
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -152,6 +157,9 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
     @NInt
     public static native long version_static();
 
+    /**
+     * Default is 10. Maximum movement in pixels allowed before the gesture fails. Once recognized (after minimumPressDuration) there is no limit on finger movement for the remainder of the touch tracking
+     */
     @Generated
     @Selector("allowableMovement")
     @NFloat
@@ -166,32 +174,53 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
     public native UILongPressGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
             SEL action);
 
+    /**
+     * Default is 0.5. Time in seconds the fingers must be held down for the gesture to be recognized
+     */
     @Generated
     @Selector("minimumPressDuration")
     public native double minimumPressDuration();
 
+    /**
+     * Default is 0. The number of full taps required before the press for gesture to be recognized
+     */
     @Generated
     @Selector("numberOfTapsRequired")
     @NUInt
     public native long numberOfTapsRequired();
 
+    /**
+     * Default is 1. Number of fingers that must be held down for the gesture to be recognized
+     */
     @Generated
     @Selector("numberOfTouchesRequired")
     @NUInt
     public native long numberOfTouchesRequired();
 
+    /**
+     * Default is 10. Maximum movement in pixels allowed before the gesture fails. Once recognized (after minimumPressDuration) there is no limit on finger movement for the remainder of the touch tracking
+     */
     @Generated
     @Selector("setAllowableMovement:")
     public native void setAllowableMovement(@NFloat double value);
 
+    /**
+     * Default is 0.5. Time in seconds the fingers must be held down for the gesture to be recognized
+     */
     @Generated
     @Selector("setMinimumPressDuration:")
     public native void setMinimumPressDuration(double value);
 
+    /**
+     * Default is 0. The number of full taps required before the press for gesture to be recognized
+     */
     @Generated
     @Selector("setNumberOfTapsRequired:")
     public native void setNumberOfTapsRequired(@NUInt long value);
 
+    /**
+     * Default is 1. Number of fingers that must be held down for the gesture to be recognized
+     */
     @Generated
     @Selector("setNumberOfTouchesRequired:")
     public native void setNumberOfTouchesRequired(@NUInt long value);

@@ -18,6 +18,17 @@ package apple.audiotoolbox.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum			AUParameterEventType
+ * @discussion		The type of a parameter event (see AudioUnitScheduleParameter)
+ * 
+ * @constant		kParameterEvent_Immediate
+ * 				The parameter event describes an immediate change to the parameter value to 
+ * 				the new value
+ * @constant		kParameterEvent_Ramped
+ * 				The parameter event describes a change to the parameter value that should
+ * 				be applied over the specified period of time
+ */
 @Generated
 public final class AUParameterEventType {
     @Generated public static final int Immediate = 0x00000001;

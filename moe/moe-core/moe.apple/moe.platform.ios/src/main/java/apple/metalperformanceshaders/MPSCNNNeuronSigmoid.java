@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MPSCNNNeuronSigmoid
+ * @dependency This depends on Metal.framework
+ * @discussion Specifies the sigmoid neuron filter.  For each pixel, applies the following function: f(x) = 1 / (1 + e^-x)
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -157,6 +162,11 @@ public class MPSCNNNeuronSigmoid extends MPSCNNNeuron {
     @Selector("init")
     public native MPSCNNNeuronSigmoid init();
 
+    /**
+     * @abstract  Initialize a neuron filter
+     * @param      device          The device the filter will run on
+     * @return     A valid MPSCNNNeuronSigmoid object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSCNNNeuronSigmoid initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);

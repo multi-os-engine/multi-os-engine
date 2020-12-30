@@ -3,6 +3,9 @@ package apple.naturallanguage.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * The tokenizer also conveys some basic information about the content of the token via NLTokenizerAttributes.
+ */
 @Generated
 public final class NLTokenizerAttributes {
     @Generated

@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Constraint describing expected MLMultiArray properties
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -77,6 +80,9 @@ public class MLMultiArrayConstraint extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Required dataType
+     */
     @Generated
     @Selector("dataType")
     @NInt
@@ -138,6 +144,9 @@ public class MLMultiArrayConstraint extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Required or default shape of multiarray
+     */
     @Generated
     @Selector("shape")
     public native NSArray<? extends NSNumber> shape();
@@ -159,6 +168,9 @@ public class MLMultiArrayConstraint extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native MLMultiArrayConstraint initWithCoder(NSCoder coder);
 
+    /**
+     * Detailed shape constraint
+     */
     @Generated
     @Selector("shapeConstraint")
     public native MLMultiArrayShapeConstraint shapeConstraint();

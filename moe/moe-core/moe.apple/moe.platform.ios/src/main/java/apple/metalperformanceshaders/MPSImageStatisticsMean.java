@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSImageStatisticsMean
+ * @discussion The MPSImageStatisticsMean computes the mean for a given region of an image.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -77,6 +81,17 @@ public class MPSImageStatisticsMean extends MPSUnaryImageKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property   clipRectSource
+     * @abstract   The source rectangle to use when reading data.
+     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     *             completely within the source image, the intersection of the image bounds and clipRectSource will
+     *             be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * 
+     *             The clipRect specified in MPSUnaryImageKernel is used to control the origin in the destination texture
+     *             where the mean value is written.
+     */
     @Generated
     @Selector("clipRectSource")
     @ByValue
@@ -103,11 +118,27 @@ public class MPSImageStatisticsMean extends MPSUnaryImageKernel {
     @Selector("initWithCoder:")
     public native MPSImageStatisticsMean initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion While the standard NSSecureCoding/NSCoding method
+     *             -initWithCoder: should work, since the file can't
+     *             know which device your data is allocated on, we
+     *             have to guess and may guess incorrectly.  To avoid
+     *             that problem, use initWithCoder:device instead.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
+     * @param      device      The MTLDevice on which to make the MPSKernel
+     * @return     A new MPSKernel object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSImageStatisticsMean initWithCoderDevice(NSCoder aDecoder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Specifies information to apply the statistics mean operation on an image.
+     * @param    device            The device the filter will run on
+     * @return     A valid MPSImageStatisticsMean object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSImageStatisticsMean initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
@@ -147,6 +178,17 @@ public class MPSImageStatisticsMean extends MPSUnaryImageKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   clipRectSource
+     * @abstract   The source rectangle to use when reading data.
+     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     *             completely within the source image, the intersection of the image bounds and clipRectSource will
+     *             be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * 
+     *             The clipRect specified in MPSUnaryImageKernel is used to control the origin in the destination texture
+     *             where the mean value is written.
+     */
     @Generated
     @Selector("setClipRectSource:")
     public native void setClipRectSource(@ByValue MTLRegion value);

@@ -34,26 +34,44 @@ public final class data_in_code_entry extends StructObject {
         setKind(kind);
     }
 
+    /**
+     * from mach_header to start of data range
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int offset();
 
+    /**
+     * from mach_header to start of data range
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setOffset(int value);
 
+    /**
+     * number of bytes in data range
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char length();
 
+    /**
+     * number of bytes in data range
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setLength(char value);
 
+    /**
+     * a DICE_KIND_* value
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native char kind();
 
+    /**
+     * a DICE_KIND_* value
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setKind(char value);

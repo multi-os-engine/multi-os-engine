@@ -83,6 +83,11 @@ public class PKIssuerProvisioningExtensionHandler extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Certificates is an array of NSData, each a DER encoded X.509 certificate, with the leaf first and root last.
+     * The continuation handler must be called within 20 seconds or an error will be displayed.
+     * Subsequent to timeout, the continuation handler is invalid and invocations will be ignored.
+     */
     @Generated
     @Selector("generateAddPaymentPassRequestForPassEntryWithIdentifier:configuration:certificateChain:nonce:nonceSignature:completionHandler:")
     public native void generateAddPaymentPassRequestForPassEntryWithIdentifierConfigurationCertificateChainNonceNonceSignatureCompletionHandler(

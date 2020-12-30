@@ -181,6 +181,11 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("timeZoneDataVersion")
     public static native String timeZoneDataVersion();
 
+    /**
+     * Time zones created with this never have daylight savings and the
+     * offset is constant no matter the date; the name and abbreviation
+     * do NOT follow the POSIX convention (of minutes-west).
+     */
     @Generated
     @Selector("timeZoneForSecondsFromGMT:")
     public static native NSTimeZone timeZoneForSecondsFromGMT(@NInt long seconds);
@@ -189,6 +194,10 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("timeZoneWithAbbreviation:")
     public static native NSTimeZone timeZoneWithAbbreviation(String abbreviation);
 
+    /**
+     * Primary creation method is +timeZoneWithName:; the
+     * data-taking variants should rarely be used directly
+     */
     @Generated
     @Selector("timeZoneWithName:")
     public static native NSTimeZone timeZoneWithName(String tzName);
@@ -220,6 +229,9 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("data")
     public native NSData data();
 
+    /**
+     * for current instant
+     */
     @Generated
     @Selector("daylightSavingTimeOffset")
     public native double daylightSavingTimeOffset();
@@ -272,6 +284,9 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("name")
     public native String name();
 
+    /**
+     * after current instant
+     */
     @Generated
     @Selector("nextDaylightSavingTimeTransition")
     public native NSDate nextDaylightSavingTimeTransition();

@@ -26,6 +26,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMRecordedRotationRateData
+ * 
+ * Discussion:
+ *   CMRecordedRotationRateData contains data for each rotation rate sample.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -136,6 +142,12 @@ public class CMRecordedRotationRateData extends CMRotationRateData {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * startDate
+     * 
+     * Discussion:
+     *   Time at which the rotation rate was observed.
+     */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

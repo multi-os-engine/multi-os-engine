@@ -18,6 +18,35 @@ package apple.coretext.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum       CTLineBreakMode
+ * @abstract   These constants specify what happens when a line is too long for
+ *             its frame.
+ * 
+ * @constant   kCTLineBreakByWordWrapping
+ *             Wrapping occurs at word boundaries, unless the word itself doesn't
+ *             fit on a single line.
+ * 
+ * @constant   kCTLineBreakByCharWrapping
+ *             Wrapping occurs before the first character that doesn't fit.
+ * 
+ * @constant   kCTLineBreakByClipping
+ *             Lines are simply not drawn past the edge of the frame.
+ * 
+ * @constant   kCTLineBreakByTruncatingHead
+ *             Each line is displayed so that the end fits in the frame and the
+ *             missing text is indicated by some kind of ellipsis glyph.
+ * 
+ * @constant   kCTLineBreakByTruncatingTail
+ *             Each line is displayed so that the beginning fits in the
+ *             container and the missing text is indicated by some kind of
+ *             ellipsis glyph.
+ * 
+ * @constant   kCTLineBreakByTruncatingMiddle
+ *             Each line is displayed so that the beginning and end fit in the
+ *             container and the missing text is indicated by some kind of
+ *             ellipsis glyph in the middle.
+ */
 @Generated
 public final class CTLineBreakMode {
     @Generated public static final byte WordWrapping = 0;

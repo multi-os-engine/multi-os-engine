@@ -44,6 +44,9 @@ public class CPNowPlayingTemplate extends CPTemplate {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Add an observer. Observers are notified about now playing template events.
+     */
     @Generated
     @Selector("addObserver:")
     public native void addObserver(@Mapped(ObjCObjectMapper.class) CPNowPlayingTemplateObserver observer);
@@ -114,6 +117,13 @@ public class CPNowPlayingTemplate extends CPTemplate {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * A Boolean value indicating whether the string that displays the album and artist above the playback controls should be a tappable button
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button.
+     * 
+     * Defaults to NO.
+     */
     @Generated
     @Selector("isAlbumArtistButtonEnabled")
     public native boolean isAlbumArtistButtonEnabled();
@@ -122,6 +132,13 @@ public class CPNowPlayingTemplate extends CPTemplate {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * A Boolean value indicating whether the "Up Next" button on the upper right of a Now Playing view is enabled.
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button.
+     * 
+     * Defaults to NO.
+     */
     @Generated
     @Selector("isUpNextButtonEnabled")
     public native boolean isUpNextButtonEnabled();
@@ -136,10 +153,20 @@ public class CPNowPlayingTemplate extends CPTemplate {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Playback control buttons on the Now Playing screen, like repeat, shuffle, and more.
+     * 
+     * Your application may specify a maximum of 5 now playing buttons.
+     * 
+     * @discussion Buttons are filled in array order, from the leading side to the trailing side of the screen.
+     */
     @Generated
     @Selector("nowPlayingButtons")
     public native NSArray<? extends CPNowPlayingButton> nowPlayingButtons();
 
+    /**
+     * Remove an observer.
+     */
     @Generated
     @Selector("removeObserver:")
     public native void removeObserver(@Mapped(ObjCObjectMapper.class) CPNowPlayingTemplateObserver observer);
@@ -152,18 +179,35 @@ public class CPNowPlayingTemplate extends CPTemplate {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * A Boolean value indicating whether the string that displays the album and artist above the playback controls should be a tappable button
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button.
+     * 
+     * Defaults to NO.
+     */
     @Generated
     @Selector("setAlbumArtistButtonEnabled:")
     public native void setAlbumArtistButtonEnabled(boolean value);
 
-    @Generated
-    @Selector("setSharedTemplate:")
-    public static native void setSharedTemplate(CPNowPlayingTemplate value);
-
+    /**
+     * A Boolean value indicating whether the "Up Next" button on the upper right of a Now Playing view is enabled.
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button.
+     * 
+     * Defaults to NO.
+     */
     @Generated
     @Selector("setUpNextButtonEnabled:")
     public native void setUpNextButtonEnabled(boolean value);
 
+    /**
+     * If your template elects to display the "Up Next" button, you may optionally specify a string
+     * indicating the title for the up next button. If no title is specified, a default system title
+     * will be used.
+     * 
+     * @see -[CPNowPlayingTemplate upNextButtonEnabled].
+     */
     @Generated
     @Selector("setUpNextTitle:")
     public native void setUpNextTitle(String value);
@@ -172,6 +216,16 @@ public class CPNowPlayingTemplate extends CPTemplate {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Access the shared now playing template for your app. Instead of creating your own
+     * now playing template, you should configure the properties of this shared instance.
+     * 
+     * You should present this shared instance when your app needs to present now playing,
+     * for example in response to the user selecting a playable item.
+     * 
+     * When the system needs to present now playing on behalf of your app, it will present
+     * this shared instance.
+     */
     @Generated
     @Selector("sharedTemplate")
     public static native CPNowPlayingTemplate sharedTemplate();
@@ -190,10 +244,20 @@ public class CPNowPlayingTemplate extends CPTemplate {
         return supportsSecureCoding();
     }
 
+    /**
+     * If your template elects to display the "Up Next" button, you may optionally specify a string
+     * indicating the title for the up next button. If no title is specified, a default system title
+     * will be used.
+     * 
+     * @see -[CPNowPlayingTemplate upNextButtonEnabled].
+     */
     @Generated
     @Selector("upNextTitle")
     public native String upNextTitle();
 
+    /**
+     * Update the buttons displayed in this Now Playing template.
+     */
     @Generated
     @Selector("updateNowPlayingButtons:")
     public native void updateNowPlayingButtons(NSArray<? extends CPNowPlayingButton> nowPlayingButtons);

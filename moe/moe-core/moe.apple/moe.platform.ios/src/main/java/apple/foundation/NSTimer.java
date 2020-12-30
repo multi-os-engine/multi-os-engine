@@ -140,6 +140,12 @@ public class NSTimer extends NSObject {
     public static native NSTimer scheduledTimerWithTimeIntervalInvocationRepeats(double ti, NSInvocation invocation,
             boolean yesOrNo);
 
+    /**
+     * Creates and returns a new NSTimer object initialized with the specified block object and schedules it on the current run loop in the default mode.
+     * - parameter:  ti    The number of seconds between firings of the timer. If seconds is less than or equal to 0.0, this method chooses the nonnegative value of 0.1 milliseconds instead
+     * - parameter:  repeats  If YES, the timer will repeatedly reschedule itself until invalidated. If NO, the timer will be invalidated after it fires.
+     * - parameter:  block  The execution body of the timer; the timer itself is passed as the parameter to this block when executed to aid in avoiding cyclical references
+     */
     @Generated
     @Selector("scheduledTimerWithTimeInterval:repeats:block:")
     public static native NSTimer scheduledTimerWithTimeIntervalRepeatsBlock(double interval, boolean repeats,
@@ -164,6 +170,12 @@ public class NSTimer extends NSObject {
     public static native NSTimer timerWithTimeIntervalInvocationRepeats(double ti, NSInvocation invocation,
             boolean yesOrNo);
 
+    /**
+     * Creates and returns a new NSTimer object initialized with the specified block object. This timer needs to be scheduled on a run loop (via -[NSRunLoop addTimer:]) before it will fire.
+     * - parameter:  timeInterval  The number of seconds between firings of the timer. If seconds is less than or equal to 0.0, this method chooses the nonnegative value of 0.1 milliseconds instead
+     * - parameter:  repeats  If YES, the timer will repeatedly reschedule itself until invalidated. If NO, the timer will be invalidated after it fires.
+     * - parameter:  block  The execution body of the timer; the timer itself is passed as the parameter to this block when executed to aid in avoiding cyclical references
+     */
     @Generated
     @Selector("timerWithTimeInterval:repeats:block:")
     public static native NSTimer timerWithTimeIntervalRepeatsBlock(double interval, boolean repeats,
@@ -192,6 +204,13 @@ public class NSTimer extends NSObject {
     @Selector("init")
     public native NSTimer init();
 
+    /**
+     * Initializes a new NSTimer object using the block as the main body of execution for the timer. This timer needs to be scheduled on a run loop (via -[NSRunLoop addTimer:]) before it will fire.
+     * - parameter:  fireDate   The time at which the timer should first fire.
+     * - parameter:  interval  The number of seconds between firings of the timer. If seconds is less than or equal to 0.0, this method chooses the nonnegative value of 0.1 milliseconds instead
+     * - parameter:  repeats  If YES, the timer will repeatedly reschedule itself until invalidated. If NO, the timer will be invalidated after it fires.
+     * - parameter:  block  The execution body of the timer; the timer itself is passed as the parameter to this block when executed to aid in avoiding cyclical references
+     */
     @Generated
     @Selector("initWithFireDate:interval:repeats:block:")
     public native NSTimer initWithFireDateIntervalRepeatsBlock(NSDate date, double interval, boolean repeats,
@@ -214,6 +233,10 @@ public class NSTimer extends NSObject {
     @Selector("setFireDate:")
     public native void setFireDate(NSDate value);
 
+    /**
+     * Setting a tolerance for a timer allows it to fire later than the scheduled fire date, improving the ability of the system to optimize for increased power savings and responsiveness. The timer may fire at any time between its scheduled fire date and the scheduled fire date plus the tolerance. The timer will not fire before the scheduled fire date. For repeating timers, the next fire date is calculated from the original fire date regardless of tolerance applied at individual fire times, to avoid drift. The default value is zero, which means no additional tolerance is applied. The system reserves the right to apply a small amount of tolerance to certain timers regardless of the value of this property.
+     * As the user of the timer, you will have the best idea of what an appropriate tolerance for a timer may be. A general rule of thumb, though, is to set the tolerance to at least 10% of the interval, for a repeating timer. Even a small amount of tolerance will have a significant positive impact on the power usage of your application. The system may put a maximum value of the tolerance.
+     */
     @Generated
     @Selector("setTolerance:")
     public native void setTolerance(double value);
@@ -222,6 +245,10 @@ public class NSTimer extends NSObject {
     @Selector("timeInterval")
     public native double timeInterval();
 
+    /**
+     * Setting a tolerance for a timer allows it to fire later than the scheduled fire date, improving the ability of the system to optimize for increased power savings and responsiveness. The timer may fire at any time between its scheduled fire date and the scheduled fire date plus the tolerance. The timer will not fire before the scheduled fire date. For repeating timers, the next fire date is calculated from the original fire date regardless of tolerance applied at individual fire times, to avoid drift. The default value is zero, which means no additional tolerance is applied. The system reserves the right to apply a small amount of tolerance to certain timers regardless of the value of this property.
+     * As the user of the timer, you will have the best idea of what an appropriate tolerance for a timer may be. A general rule of thumb, though, is to set the tolerance to at least 10% of the interval, for a repeating timer. Even a small amount of tolerance will have a significant positive impact on the power usage of your application. The system may put a maximum value of the tolerance.
+     */
     @Generated
     @Selector("tolerance")
     public native double tolerance();

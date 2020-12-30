@@ -25,6 +25,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A game controller profile representing physical buttons, thumbsticks, dpads, etc... on a controller.
+ * 
+ * All controller profiles provide a base level of information about the controller they belong to.
+ * 
+ * A profile maps the hardware notion of a controller into a logical controller. One that a developer can design for
+ * and depend on, no matter the underlying hardware.
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -55,6 +63,9 @@ public class GCPhysicalInputProfile extends NSObject {
     @Selector("allDpads")
     public native NSSet<? extends GCControllerDirectionPad> allDpads();
 
+    /**
+     * The following properties allow for dynamic querying of the input elements available on a profile.
+     */
     @Generated
     @Selector("allElements")
     public native NSSet<? extends GCControllerElement> allElements();
@@ -91,6 +102,15 @@ public class GCPhysicalInputProfile extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * Polls the state vector of the physical input input and saves it to a new and writable instance of GCPhysicalInputProfile.
+     * 
+     * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
+     * a snapshot will not change based on user input once it is taken.
+     * 
+     * @see snapshot
+     * @return A new physical input profile with the duplicated state vector of the current physical input
+     */
     @Generated
     @Selector("capture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -112,6 +132,9 @@ public class GCPhysicalInputProfile extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * A profile keeps a reference to the device that this profile is mapping input from
+     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -121,6 +144,13 @@ public class GCPhysicalInputProfile extends NSObject {
     @Selector("dpads")
     public native NSDictionary<String, ? extends GCControllerDirectionPad> dpads();
 
+    /**
+     * The following properties allow for runtime lookup of any input element on a profile, when provided with a valid alias.
+     * 
+     * @example extendedGamepad.elements["Button A"] == extendedGamepad.buttonA // YES
+     * @example extendedGamepad.dpads["Left Thumbstick"] == extendedGamepad.leftThumbstick // YES
+     * @example extendedGamepad.dpads["Button B"] // returns nil, "Button B" is not a GCControllerDirectionPad
+     */
     @Generated
     @Selector("elements")
     public native NSDictionary<String, ? extends GCControllerElement> elements();
@@ -155,6 +185,9 @@ public class GCPhysicalInputProfile extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The last time elements of this profile were updated.
+     */
     @Generated
     @Selector("lastEventTimestamp")
     public native double lastEventTimestamp();
@@ -165,6 +198,13 @@ public class GCPhysicalInputProfile extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Profile elements can be accessed using keyed subscript notation, with a valid alias of its inputs.
+     * 
+     * @example extendedGamepad["Button A"] == extendedGamepad.buttonA // YES
+     * @example microGamepad["Button X"] == microGamepad.buttonX // YES
+     * @note Equivalent to -elements
+     */
     @Generated
     @Selector("objectForKeyedSubscript:")
     public native GCControllerElement objectForKeyedSubscript(String key);
@@ -177,6 +217,12 @@ public class GCPhysicalInputProfile extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Sets the state vector of the physical input profile to a copy of the passed in physical input profile's state vector.
+     * 
+     * @note If the controller's snapshot flag is set to NO, this method has no effect.
+     * @see GCController.snapshot
+     */
     @Generated
     @Selector("setStateFromPhysicalInput:")
     public native void setStateFromPhysicalInput(GCPhysicalInputProfile physicalInput);

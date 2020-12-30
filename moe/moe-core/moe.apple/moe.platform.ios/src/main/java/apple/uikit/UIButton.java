@@ -357,10 +357,16 @@ public class UIButton extends UIControl
     @NInt
     public static native long version_static();
 
+    /**
+     * default is YES. if YES, image is drawn lighter when disabled
+     */
     @Generated
     @Selector("adjustsImageWhenDisabled")
     public native boolean adjustsImageWhenDisabled();
 
+    /**
+     * default is YES. if YES, image is drawn darker when highlighted(pressed)
+     */
     @Generated
     @Selector("adjustsImageWhenHighlighted")
     public native boolean adjustsImageWhenHighlighted();
@@ -420,6 +426,11 @@ public class UIButton extends UIControl
     @Selector("backgroundImageForState:")
     public native UIImage backgroundImageForState(@NUInt long state);
 
+    /**
+     * these return the rectangle for the background (assumes bounds), the content (image + title) and for the image and title separately. the content rect is calculated based
+     * on the title and image size and padding and then adjusted based on the control content alignment. there are no draw methods since the contents
+     * are rendered in separate subviews (UIImageView, UILabel)
+     */
     @Generated
     @Selector("backgroundRectForBounds:")
     @ByValue
@@ -430,6 +441,9 @@ public class UIButton extends UIControl
     @NInt
     public native long buttonType();
 
+    /**
+     * default is UIEdgeInsetsZero. On tvOS 10 or later, default is nonzero except for custom buttons.
+     */
     @Generated
     @Selector("contentEdgeInsets")
     @ByValue
@@ -440,26 +454,44 @@ public class UIButton extends UIControl
     @ByValue
     public native CGRect contentRectForBounds(@ByValue CGRect bounds);
 
+    /**
+     * normal/highlighted/selected/disabled. can return nil
+     */
     @Generated
     @Selector("currentAttributedTitle")
     public native NSAttributedString currentAttributedTitle();
 
+    /**
+     * normal/highlighted/selected/disabled. can return nil
+     */
     @Generated
     @Selector("currentBackgroundImage")
     public native UIImage currentBackgroundImage();
 
+    /**
+     * normal/highlighted/selected/disabled. can return nil
+     */
     @Generated
     @Selector("currentImage")
     public native UIImage currentImage();
 
+    /**
+     * normal/highlighted/selected/disabled. can return nil
+     */
     @Generated
     @Selector("currentTitle")
     public native String currentTitle();
 
+    /**
+     * normal/highlighted/selected/disabled. always returns non-nil. default is white(1,1)
+     */
     @Generated
     @Selector("currentTitleColor")
     public native UIColor currentTitleColor();
 
+    /**
+     * normal/highlighted/selected/disabled.
+     */
     @Generated
     @Selector("currentTitleShadowColor")
     public native UIColor currentTitleShadowColor();
@@ -473,6 +505,9 @@ public class UIButton extends UIControl
     @Selector("font")
     public native UIFont font();
 
+    /**
+     * default is UIEdgeInsetsZero
+     */
     @Generated
     @Selector("imageEdgeInsets")
     @ByValue
@@ -509,26 +544,44 @@ public class UIButton extends UIControl
     @NInt
     public native long lineBreakMode();
 
+    /**
+     * default is NO. if YES, shadow reverses to shift between engrave and emboss appearance
+     */
     @Generated
     @Selector("reversesTitleShadowWhenHighlighted")
     public native boolean reversesTitleShadowWhenHighlighted();
 
+    /**
+     * default is YES. if YES, image is drawn lighter when disabled
+     */
     @Generated
     @Selector("setAdjustsImageWhenDisabled:")
     public native void setAdjustsImageWhenDisabled(boolean value);
 
+    /**
+     * default is YES. if YES, image is drawn darker when highlighted(pressed)
+     */
     @Generated
     @Selector("setAdjustsImageWhenHighlighted:")
     public native void setAdjustsImageWhenHighlighted(boolean value);
 
+    /**
+     * default is nil. title is assumed to be single line
+     */
     @Generated
     @Selector("setAttributedTitle:forState:")
     public native void setAttributedTitleForState(NSAttributedString title, @NUInt long state);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setBackgroundImage:forState:")
     public native void setBackgroundImageForState(UIImage image, @NUInt long state);
 
+    /**
+     * default is UIEdgeInsetsZero. On tvOS 10 or later, default is nonzero except for custom buttons.
+     */
     @Generated
     @Selector("setContentEdgeInsets:")
     public native void setContentEdgeInsets(@ByValue UIEdgeInsets value);
@@ -538,10 +591,16 @@ public class UIButton extends UIControl
     @Selector("setFont:")
     public native void setFont(UIFont value);
 
+    /**
+     * default is nil. should be same size if different for different states
+     */
     @Generated
     @Selector("setImage:forState:")
     public native void setImageForState(UIImage image, @NUInt long state);
 
+    /**
+     * default is UIEdgeInsetsZero
+     */
     @Generated
     @Selector("setImageEdgeInsets:")
     public native void setImageEdgeInsets(@ByValue UIEdgeInsets value);
@@ -551,30 +610,51 @@ public class UIButton extends UIControl
     @Selector("setLineBreakMode:")
     public native void setLineBreakMode(@NInt long value);
 
+    /**
+     * default is NO. if YES, shadow reverses to shift between engrave and emboss appearance
+     */
     @Generated
     @Selector("setReversesTitleShadowWhenHighlighted:")
     public native void setReversesTitleShadowWhenHighlighted(boolean value);
 
+    /**
+     * default is NO. if YES, show a simple feedback (currently a glow) while highlighted
+     */
     @Generated
     @Selector("setShowsTouchWhenHighlighted:")
     public native void setShowsTouchWhenHighlighted(boolean value);
 
+    /**
+     * The tintColor is inherited through the superview hierarchy. See UIView for more information.
+     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
+    /**
+     * default is nil. title is assumed to be single line
+     */
     @Generated
     @Selector("setTitle:forState:")
     public native void setTitleForState(String title, @NUInt long state);
 
+    /**
+     * default is nil. use opaque white
+     */
     @Generated
     @Selector("setTitleColor:forState:")
     public native void setTitleColorForState(UIColor color, @NUInt long state);
 
+    /**
+     * default is UIEdgeInsetsZero
+     */
     @Generated
     @Selector("setTitleEdgeInsets:")
     public native void setTitleEdgeInsets(@ByValue UIEdgeInsets value);
 
+    /**
+     * default is nil. use 50% black
+     */
     @Generated
     @Selector("setTitleShadowColor:forState:")
     public native void setTitleShadowColorForState(UIColor color, @NUInt long state);
@@ -584,10 +664,16 @@ public class UIButton extends UIControl
     @Selector("setTitleShadowOffset:")
     public native void setTitleShadowOffset(@ByValue CGSize value);
 
+    /**
+     * default is NO. if YES, show a simple feedback (currently a glow) while highlighted
+     */
     @Generated
     @Selector("showsTouchWhenHighlighted")
     public native boolean showsTouchWhenHighlighted();
 
+    /**
+     * The tintColor is inherited through the superview hierarchy. See UIView for more information.
+     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
@@ -596,15 +682,24 @@ public class UIButton extends UIControl
     @Selector("titleColorForState:")
     public native UIColor titleColorForState(@NUInt long state);
 
+    /**
+     * default is UIEdgeInsetsZero
+     */
     @Generated
     @Selector("titleEdgeInsets")
     @ByValue
     public native UIEdgeInsets titleEdgeInsets();
 
+    /**
+     * these getters only take a single state value
+     */
     @Generated
     @Selector("titleForState:")
     public native String titleForState(@NUInt long state);
 
+    /**
+     * return title and image views. will always create them if necessary. always returns nil for system buttons
+     */
     @Generated
     @Selector("titleLabel")
     public native UILabel titleLabel();
@@ -640,6 +735,9 @@ public class UIButton extends UIControl
     @Selector("setSpringLoaded:")
     public native void setSpringLoaded(boolean value);
 
+    /**
+     * normal/highlighted/selected/disabled. can return nil
+     */
     @Generated
     @Selector("currentPreferredSymbolConfiguration")
     public native UIImageSymbolConfiguration currentPreferredSymbolConfiguration();
@@ -665,10 +763,18 @@ public class UIButton extends UIControl
     public static native Object systemButtonWithImageTargetAction(UIImage image,
             @Mapped(ObjCObjectMapper.class) Object target, SEL action);
 
+    /**
+     * Enables this button's built-in pointer interaction.
+     */
     @Generated
     @Selector("isPointerInteractionEnabled")
     public native boolean isPointerInteractionEnabled();
 
+    /**
+     * @abstract Called when the system pointer hovers over this button if its pointer interaction is enabled. The
+     *           system calls this block with a proposed UIPointerEffect and UIPointerShape. You may use them to construct
+     *           a customized version of the system provided style or return an entirely custom one.
+     */
     @Generated
     @Selector("pointerStyleProvider")
     @ObjCBlock(name = "call_pointerStyleProvider_ret")
@@ -682,10 +788,18 @@ public class UIButton extends UIControl
                 UIPointerShape proposedShape);
     }
 
+    /**
+     * Enables this button's built-in pointer interaction.
+     */
     @Generated
     @Selector("setPointerInteractionEnabled:")
     public native void setPointerInteractionEnabled(boolean value);
 
+    /**
+     * @abstract Called when the system pointer hovers over this button if its pointer interaction is enabled. The
+     *           system calls this block with a proposed UIPointerEffect and UIPointerShape. You may use them to construct
+     *           a customized version of the system provided style or return an entirely custom one.
+     */
     @Generated
     @Selector("setPointerStyleProvider:")
     public native void setPointerStyleProvider(
@@ -699,31 +813,52 @@ public class UIButton extends UIControl
                 UIPointerShape proposedShape);
     }
 
+    /**
+     * Creates a button of the given type, registers primaryAction for the UIControlEventPrimaryActionTriggered control event, and if appropriate uses primaryAction's title & image as the button's title & image.
+     */
     @Generated
     @Selector("buttonWithType:primaryAction:")
     public static native UIButton buttonWithTypePrimaryAction(@NInt long buttonType, UIAction primaryAction);
 
+    /**
+     * Initializes a custom button, registers primaryAction for the UIControlEventPrimaryActionTriggered control event, and uses primaryAction's title & image as the button's title & image.
+     */
     @Generated
     @Selector("initWithFrame:primaryAction:")
     public native UIButton initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 
+    /**
+     * An optional menu for the button to display. The button will automatically enable or disable its contextMenuInteraction when a non-nil or nil menu is set. Defaults to nil.
+     */
     @Generated
     @Selector("menu")
     public native UIMenu menu();
 
+    /**
+     * default is UIButtonRoleNormal.
+     */
     @Generated
     @Selector("role")
     @NInt
     public native long role();
 
+    /**
+     * An optional menu for the button to display. The button will automatically enable or disable its contextMenuInteraction when a non-nil or nil menu is set. Defaults to nil.
+     */
     @Generated
     @Selector("setMenu:")
     public native void setMenu(UIMenu value);
 
+    /**
+     * default is UIButtonRoleNormal.
+     */
     @Generated
     @Selector("setRole:")
     public native void setRole(@NInt long value);
 
+    /**
+     * Creates a system button, registers primaryAction for the UIControlEventPrimaryActionTriggered control event, and uses primaryAction's title & image as the button's title & image.
+     */
     @Generated
     @Selector("systemButtonWithPrimaryAction:")
     @MappedReturn(ObjCObjectMapper.class)

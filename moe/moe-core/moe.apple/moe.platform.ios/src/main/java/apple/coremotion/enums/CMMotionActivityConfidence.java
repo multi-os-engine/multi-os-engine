@@ -19,6 +19,12 @@ package apple.coremotion.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * CMMotionActivityConfidence
+ * 
+ * Discussion:
+ *   Enumerates the level of accuracy of the activity estimate.
+ */
 @Generated
 public final class CMMotionActivityConfidence {
     @Generated @NInt public static final long Low = 0x0000000000000000L;

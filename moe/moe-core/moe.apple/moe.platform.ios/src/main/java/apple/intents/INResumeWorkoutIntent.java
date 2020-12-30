@@ -164,6 +164,9 @@ public class INResumeWorkoutIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INResumeWorkoutIntent initWithCoder(NSCoder coder);
 
+    /**
+     * Designated initializer. The `workoutName` can use `INWorkoutNameIdentifier` as its `identifier` parameter.
+     */
     @Generated
     @Selector("initWithWorkoutName:")
     public native INResumeWorkoutIntent initWithWorkoutName(INSpeakableString workoutName);

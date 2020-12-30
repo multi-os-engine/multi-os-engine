@@ -3,6 +3,9 @@ package apple.corenfc.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @discussion Encryption Identifier parameter in response of Request Service V2
+ */
 @Generated
 public final class NFCFeliCaEncryptionId {
     @Generated

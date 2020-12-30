@@ -26,42 +26,72 @@ public final class routines_command_64 extends StructObject {
         super(peer);
     }
 
+    /**
+     * LC_ROUTINES_64
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int cmd();
 
+    /**
+     * LC_ROUTINES_64
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setCmd(int value);
 
+    /**
+     * total size of this command
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int cmdsize();
 
+    /**
+     * total size of this command
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setCmdsize(int value);
 
+    /**
+     * address of initialization routine
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native long init_address();
 
+    /**
+     * address of initialization routine
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setInit_address(long value);
 
+    /**
+     * index into the module table that
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native long init_module();
 
+    /**
+     * index into the module table that
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setInit_module(long value);
 
+    /**
+     * the init routine is defined in
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native long reserved1();
 
+    /**
+     * the init routine is defined in
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setReserved1(long value);

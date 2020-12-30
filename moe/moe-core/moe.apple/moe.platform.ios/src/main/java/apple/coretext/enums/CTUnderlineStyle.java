@@ -18,6 +18,14 @@ package apple.coretext.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum       CTUnderlineStyle
+ * @abstract   Underline style specifiers.
+ * 
+ * @discussion These underline type specifiers can be applied to the value set
+ *             with the kCTUnderlineStyleAttributeName attribute to tell
+ *             CoreText that you want a different underline style.
+ */
 @Generated
 public final class CTUnderlineStyle {
     @Generated public static final int None = 0x00000000;

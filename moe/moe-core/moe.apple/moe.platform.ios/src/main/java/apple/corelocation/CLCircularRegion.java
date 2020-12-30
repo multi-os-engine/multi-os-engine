@@ -43,6 +43,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CLCircularRegion
+ * 
+ * Discussion:
+ *   A circular geographic area.
+ */
 @Generated
 @Library("CoreLocation")
 @Runtime(ObjCRuntime.class)
@@ -158,11 +164,23 @@ public class CLCircularRegion extends CLRegion {
     @NInt
     public static native long version_static();
 
+    /**
+     * center
+     * 
+     * Discussion:
+     *   Returns the coordinate of the center of the region.
+     */
     @Generated
     @Selector("center")
     @ByValue
     public native CLLocationCoordinate2D center();
 
+    /**
+     * containsCoordinate:
+     * 
+     * Discussion:
+     *   Returns YES if the coordinate lies inside the region, and NO otherwise.
+     */
     @Generated
     @Selector("containsCoordinate:")
     public native boolean containsCoordinate(@ByValue CLLocationCoordinate2D coordinate);
@@ -177,6 +195,14 @@ public class CLCircularRegion extends CLRegion {
     public native CLCircularRegion initCircularRegionWithCenterRadiusIdentifier(@ByValue CLLocationCoordinate2D center,
             double radius, String identifier);
 
+    /**
+     * initWithCenter:radius:identifier:
+     * 
+     * Discussion:
+     *   Initialize a region.  center gives the coordinates of center of the region, while radius gives
+     *   the distance in meters between the center and the region's boundary. identifier is a description
+     *   for the region that could be displayed to the user, and ideally should be chosen by the user.
+     */
     @Generated
     @Selector("initWithCenter:radius:identifier:")
     public native CLCircularRegion initWithCenterRadiusIdentifier(@ByValue CLLocationCoordinate2D center, double radius,
@@ -186,6 +212,12 @@ public class CLCircularRegion extends CLRegion {
     @Selector("initWithCoder:")
     public native CLCircularRegion initWithCoder(NSCoder coder);
 
+    /**
+     * radius
+     * 
+     * Discussion:
+     *   Returns the radius of the region.
+     */
     @Generated
     @Selector("radius")
     public native double radius();

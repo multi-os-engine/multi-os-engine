@@ -53,6 +53,9 @@ public class ASAuthorizationController extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @abstract Authorization requests that are being serviced by this controller
+     */
     @Generated
     @Selector("authorizationRequests")
     public native NSArray<? extends ASAuthorizationRequest> authorizationRequests();
@@ -83,6 +86,10 @@ public class ASAuthorizationController extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * @abstract This delegate will be invoked upon completion of the authorization indicating success or failure.
+     * Delegate is required to receive the results of authorization.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -101,6 +108,11 @@ public class ASAuthorizationController extends NSObject {
     @Selector("init")
     public native ASAuthorizationController init();
 
+    /**
+     * @abstract Initialize the controller with authorization requests.
+     * 
+     * @param authorizationRequests At least one request should be provided. Requests of same type maybe honored in first in first out order
+     */
     @Generated
     @Selector("initWithAuthorizationRequests:")
     public native ASAuthorizationController initWithAuthorizationRequests(
@@ -133,10 +145,19 @@ public class ASAuthorizationController extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract Initiate the authorization flows.  Upon completion, the delegate will be called with either success or failure.
+     * Certain authorization flows may require a presentation context, the presentationContextProvider will be called to provider it.
+     * 
+     * The instance will remain retained until the user completes the flow and the delegate callback is made.
+     */
     @Generated
     @Selector("performRequests")
     public native void performRequests();
 
+    /**
+     * @abstract This delegate will be invoked upon needing a presentation context to display authorization UI.
+     */
     @Generated
     @Selector("presentationContextProvider")
     @MappedReturn(ObjCObjectMapper.class)
@@ -150,10 +171,18 @@ public class ASAuthorizationController extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract This delegate will be invoked upon completion of the authorization indicating success or failure.
+     * Delegate is required to receive the results of authorization.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ASAuthorizationControllerDelegate value);
 
+    /**
+     * @abstract This delegate will be invoked upon completion of the authorization indicating success or failure.
+     * Delegate is required to receive the results of authorization.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) ASAuthorizationControllerDelegate value) {
         Object __old = delegate();
@@ -166,11 +195,17 @@ public class ASAuthorizationController extends NSObject {
         }
     }
 
+    /**
+     * @abstract This delegate will be invoked upon needing a presentation context to display authorization UI.
+     */
     @Generated
     @Selector("setPresentationContextProvider:")
     public native void setPresentationContextProvider_unsafe(
             @Mapped(ObjCObjectMapper.class) ASAuthorizationControllerPresentationContextProviding value);
 
+    /**
+     * @abstract This delegate will be invoked upon needing a presentation context to display authorization UI.
+     */
     @Generated
     public void setPresentationContextProvider(
             @Mapped(ObjCObjectMapper.class) ASAuthorizationControllerPresentationContextProviding value) {

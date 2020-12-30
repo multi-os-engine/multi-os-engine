@@ -24,6 +24,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVMetadataCatBodyObject
+ * @abstract
+ *    AVMetadataCatBodyObject is a concrete subclass of AVMetadataBodyObject defining a detected cat body.
+ * 
+ * @discussion
+ *    AVMetadataCatBodyObject represents a single detected cat body in a picture. It is an immutable object describing the various features found in the body.
+ * 
+ *    On supported platforms, AVCaptureMetadataOutput outputs arrays of detected cat body objects. See AVCaptureOutput.h.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)

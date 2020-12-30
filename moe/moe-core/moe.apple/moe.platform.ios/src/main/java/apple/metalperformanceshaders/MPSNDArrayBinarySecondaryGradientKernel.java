@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNDArrayDivisionSecondaryGradient
+ * 
+ * @dependency This depends on Metal.framework.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -85,6 +90,10 @@ public class MPSNDArrayBinarySecondaryGradientKernel extends MPSNDArrayMultiaryG
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Gradient encode methods
+     * Inference encode calls.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:primarySourceArray:secondarySourceArray:sourceGradient:gradientState:")
     public native MPSNDArray encodeToCommandBufferPrimarySourceArraySecondarySourceArraySourceGradientGradientState(
@@ -110,6 +119,9 @@ public class MPSNDArrayBinarySecondaryGradientKernel extends MPSNDArrayMultiaryG
     @Selector("initWithCoder:")
     public native MPSNDArrayBinarySecondaryGradientKernel initWithCoder(NSCoder aDecoder);
 
+    /**
+     * NSSecureCoding support
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNDArrayBinarySecondaryGradientKernel initWithCoderDevice(NSCoder coder,

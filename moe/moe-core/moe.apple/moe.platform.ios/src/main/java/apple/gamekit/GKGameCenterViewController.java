@@ -246,20 +246,32 @@ public class GKGameCenterViewController extends UINavigationController {
     @NInt
     public native long viewState();
 
+    /**
+     * Use this to display the details associated with the specified achievementID
+     */
     @Generated
     @Selector("initWithAchievementID:")
     public native GKGameCenterViewController initWithAchievementID(String achievementID);
 
+    /**
+     * Use this to display the scores for the specified leaderboard and player scope. Both classic and recurring leaderboards can use this method to initialize the view with their scores.
+     */
     @Generated
     @Selector("initWithLeaderboard:playerScope:")
     public native GKGameCenterViewController initWithLeaderboardPlayerScope(GKLeaderboard leaderboard,
             @NInt long playerScope);
 
+    /**
+     * Use this to display the scores for the specified leaderboardID, player scope and time scope. The time scope is only applicable to classic leaderboards. Recurring leaderboards will always be displayed initially with the results (scores) associated with the current instance of the leaderboard.
+     */
     @Generated
     @Selector("initWithLeaderboardID:playerScope:timeScope:")
     public native GKGameCenterViewController initWithLeaderboardIDPlayerScopeTimeScope(String leaderboardID,
             @NInt long playerScope, @NInt long timeScope);
 
+    /**
+     * Use this to display content associated with the specified state. For example setting the state to GKGameCenterViewControllerStateLeaderboards will display a list of leaderboard sets or leaderboards (if no sets). Setting state to GKGameCenterViewControllerStateAchievements will display a list of achievements.
+     */
     @Generated
     @Selector("initWithState:")
     public native GKGameCenterViewController initWithState(@NInt long state);

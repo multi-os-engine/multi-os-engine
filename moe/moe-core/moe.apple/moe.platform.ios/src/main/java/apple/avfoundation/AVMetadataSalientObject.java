@@ -24,6 +24,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVMetadataSalientObject
+ * @abstract
+ *    AVMetadataSalientObject is a concrete subclass of AVMetadataObject defining the features of a salient object.
+ * 
+ * @discussion
+ *    AVMetadataSalientObject represents a single detected salient area in a picture. It is an immutable object describing the salient object.
+ * 
+ *    On supported platforms, AVCaptureMetadataOutput outputs arrays of detected salient objects. See AVCaptureOutput.h.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -124,6 +134,14 @@ public class AVMetadataSalientObject extends AVMetadataObject implements NSCopyi
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property objectID
+     * @abstract
+     *    A unique number associated with the receiver.
+     * 
+     * @discussion
+     *    The value of this property is an NSInteger indicating the unique identifier of this object in the picture. When a new object enters the picture, it is assigned a new unique identifier. objectIDs are not re-used as object leave the picture and new ones enter. Objects that leave the picture then re-enter are assigned a new objectID.
+     */
     @Generated
     @Selector("objectID")
     @NInt

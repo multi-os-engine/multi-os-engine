@@ -3,6 +3,9 @@ package apple.pdfkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Style in which PDFBorder is displayed.
+ */
 @Generated
 public final class PDFBorderStyle {
     @Generated

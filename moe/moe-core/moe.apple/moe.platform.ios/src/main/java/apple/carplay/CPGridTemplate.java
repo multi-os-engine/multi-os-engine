@@ -88,6 +88,9 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Array of grid buttons displayed on the template
+     */
     @Generated
     @Selector("gridButtons")
     public native NSArray<? extends CPGridButton> gridButtons();
@@ -105,6 +108,11 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("initWithCoder:")
     public native CPGridTemplate initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize a grid template with an array of @c CPGridButton and a title.
+     * @note A grid template will only display the first 8 buttons in the provided gridButtons array.
+     * A grid template presenting more than 4 buttons will balance the buttons between 2 rows.
+     */
     @Generated
     @Selector("initWithTitle:gridButtons:")
     public native CPGridTemplate initWithTitleGridButtons(String title, NSArray<? extends CPGridButton> gridButtons);
@@ -178,6 +186,9 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
         return supportsSecureCoding();
     }
 
+    /**
+     * Title shown in template's navigation bar
+     */
     @Generated
     @Selector("title")
     public native String title();

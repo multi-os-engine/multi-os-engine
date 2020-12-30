@@ -38,10 +38,16 @@ public final class Intents {
     private Intents() {
     }
 
+    /**
+     * ! Project version number for Intents.
+     */
     @Generated
     @CVariable()
     public static native double IntentsVersionNumber();
 
+    /**
+     * ! Project version string for Intents.
+     */
     @Generated
     @CVariable()
     public static native ConstBytePtr IntentsVersionString();
@@ -51,126 +57,201 @@ public final class Intents {
     @MappedReturn(ObjCStringMapper.class)
     public static native String INIntentErrorDomain();
 
+    /**
+     * Identifier for INStartAudioCallIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INStartAudioCallIntentIdentifier();
 
+    /**
+     * Identifier for INStartVideoCallIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INStartVideoCallIntentIdentifier();
 
+    /**
+     * Identifier for INSearchCallHistoryIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INSearchCallHistoryIntentIdentifier();
 
+    /**
+     * Identifier for INSetAudioSourceInCarIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INSetAudioSourceInCarIntentIdentifier();
 
+    /**
+     * Identifier for INSetClimateSettingsInCarIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INSetClimateSettingsInCarIntentIdentifier();
 
+    /**
+     * Identifier for INSetDefrosterSettingsInCarIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INSetDefrosterSettingsInCarIntentIdentifier();
 
+    /**
+     * Identifier for INSetSeatSettingsInCarIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INSetSeatSettingsInCarIntentIdentifier();
 
+    /**
+     * Identifier for INSetProfileInCarIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INSetProfileInCarIntentIdentifier();
 
+    /**
+     * Identifier for INSaveProfileInCarIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INSaveProfileInCarIntentIdentifier();
 
+    /**
+     * Identifier for INStartWorkoutIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INStartWorkoutIntentIdentifier();
 
+    /**
+     * Identifier for INPauseWorkoutIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPauseWorkoutIntentIdentifier();
 
+    /**
+     * Identifier for INEndWorkoutIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INEndWorkoutIntentIdentifier();
 
+    /**
+     * Identifier for INCancelWorkoutIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INCancelWorkoutIntentIdentifier();
 
+    /**
+     * Identifier for INResumeWorkoutIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INResumeWorkoutIntentIdentifier();
 
+    /**
+     * Identifier for INSetRadioStationIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INSetRadioStationIntentIdentifier();
 
+    /**
+     * Identifier for INSendMessageIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INSendMessageIntentIdentifier();
 
+    /**
+     * Identifier for INSearchForMessagesIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INSearchForMessagesIntentIdentifier();
 
+    /**
+     * Identifier for INSetMessageAttributeIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INSetMessageAttributeIntentIdentifier();
 
+    /**
+     * Identifier for INSendPaymentIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INSendPaymentIntentIdentifier();
 
+    /**
+     * Identifier for INRequestPaymentIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INRequestPaymentIntentIdentifier();
 
+    /**
+     * Identifier for INSearchForPhotosIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INSearchForPhotosIntentIdentifier();
 
+    /**
+     * Identifier for INStartPhotoPlaybackIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INStartPhotoPlaybackIntentIdentifier();
 
+    /**
+     * Identifier for INListRideOptionsIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INListRideOptionsIntentIdentifier();
 
+    /**
+     * Identifier for INRequestRideIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INRequestRideIntentIdentifier();
 
+    /**
+     * Identifier for INGetRideStatusIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -391,6 +472,9 @@ public final class Intents {
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierSwim();
 
+    /**
+     * Identifier for INStartCallIntent class.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

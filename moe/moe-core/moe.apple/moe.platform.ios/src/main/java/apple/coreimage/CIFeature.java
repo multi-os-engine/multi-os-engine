@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Generic feature found by a CIDetector.
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -152,6 +155,9 @@ public class CIFeature extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The bounds of the feature in the image it was detected in.
+     */
     @Generated
     @Selector("bounds")
     @ByValue
@@ -161,6 +167,9 @@ public class CIFeature extends NSObject {
     @Selector("init")
     public native CIFeature init();
 
+    /**
+     * The type of the feature.
+     */
     @Generated
     @Selector("type")
     public native String type();

@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract      CLSBinaryItem represents user generated information that is true or false, pass or fail, yes or no.
+ */
 @Generated
 @Library("ClassKit")
 @Runtime(ObjCRuntime.class)
@@ -96,6 +99,12 @@ public class CLSBinaryItem extends CLSActivityItem {
     @Selector("initWithCoder:")
     public native CLSBinaryItem initWithCoder(NSCoder coder);
 
+    /**
+     * @abstract      Create an item that represents a binary value
+     * @param         title           Title of the CLSBinaryItem.
+     * @param         identifier      An identifier that is unique within its owning activity.
+     * @param         valueType       The type of binary value. Ex. pass or fail.
+     */
     @Generated
     @Selector("initWithIdentifier:title:type:")
     public native CLSBinaryItem initWithIdentifierTitleType(String identifier, String title, @NInt long valueType);
@@ -135,6 +144,9 @@ public class CLSBinaryItem extends CLSActivityItem {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract      True or false value.
+     */
     @Generated
     @Selector("setValue:")
     public native void setValue(boolean value);
@@ -157,10 +169,17 @@ public class CLSBinaryItem extends CLSActivityItem {
         return supportsSecureCoding();
     }
 
+    /**
+     * @abstract      True or false value.
+     */
     @Generated
     @Selector("value")
     public native boolean value();
 
+    /**
+     * @abstract      Value type of this CLSBinaryItem.
+     * @discussion    The type that best describes this CLSBinaryItem value.
+     */
     @Generated
     @Selector("valueType")
     @NInt

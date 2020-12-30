@@ -64,6 +64,9 @@ public interface UINavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the navigation controller shows a new top view controller via a push, pop or setting of the view controller stack.
+     */
     @Generated
     @IsOptional
     @Selector("navigationController:willShowViewController:animated:")

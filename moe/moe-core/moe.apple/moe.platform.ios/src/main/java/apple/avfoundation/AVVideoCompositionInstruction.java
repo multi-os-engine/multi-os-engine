@@ -164,6 +164,11 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
     @NInt
     public static native long version_static();
 
+    /**
+     * Indicates the background color of the composition. Solid BGRA colors only are supported; patterns and other color refs that are not supported will be ignored.
+     * If the background color is not specified the video compositor will use a default backgroundColor of opaque black.
+     * If the rendered pixel buffer does not have alpha, the alpha value of the backgroundColor will be ignored. 
+     */
     @Generated
     @Selector("backgroundColor")
     public native CGColorRef backgroundColor();
@@ -194,6 +199,12 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
     @Selector("initWithCoder:")
     public native AVVideoCompositionInstruction initWithCoder(NSCoder coder);
 
+    /**
+     * Provides an array of instances of AVVideoCompositionLayerInstruction that specify how video frames from source tracks should be layered and composed.
+     * Tracks are layered in the composition according to the top-to-bottom order of the layerInstructions array; the track with trackID of the first instruction
+     * in the array will be layered on top, with the track with the trackID of the second instruction immediately underneath, etc.
+     * If this key is nil, the output will be a fill of the background color. 
+     */
     @Generated
     @Selector("layerInstructions")
     public native NSArray<? extends AVVideoCompositionLayerInstruction> layerInstructions();

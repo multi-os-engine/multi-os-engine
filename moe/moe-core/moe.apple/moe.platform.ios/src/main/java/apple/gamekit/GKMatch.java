@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GKMatch represents an active networking sessions between players. It handles network communications and can report player connection status. All matches are created by a GKMatchmaker.
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -156,22 +159,34 @@ public class GKMatch extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * This method is obsolete. It will never be invoked and its implementation does nothing**
+     */
     @Generated
     @Deprecated
     @Selector("chooseBestHostPlayerWithCompletionHandler:")
     public native void chooseBestHostPlayerWithCompletionHandler(
             @ObjCBlock(name = "call_chooseBestHostPlayerWithCompletionHandler") Block_chooseBestHostPlayerWithCompletionHandler completionHandler);
 
+    /**
+     * Choose the best host from among the connected players using gathered estimates for bandwidth and packet loss. This is intended for applications that wish to implement a client-server model on top of the match. The returned player ID will be nil if the best host cannot currently be determined (e.g. players are still connecting).
+     */
     @Generated
     @Selector("chooseBestHostingPlayerWithCompletionHandler:")
     public native void chooseBestHostingPlayerWithCompletionHandler(
             @ObjCBlock(name = "call_chooseBestHostingPlayerWithCompletionHandler") Block_chooseBestHostingPlayerWithCompletionHandler completionHandler);
 
+    /**
+     * all the GKPlayers in the match
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native GKMatchDelegate delegate();
 
+    /**
+     * Disconnect the match. This will show all other players in the match that the local player has disconnected. This should be called before releasing the match instance.
+     */
     @Generated
     @Selector("disconnect")
     public native void disconnect();
@@ -185,6 +200,9 @@ public class GKMatch extends NSObject {
     @Selector("init")
     public native GKMatch init();
 
+    /**
+     * NSStrings of player identifiers in the match
+     */
     @Generated
     @Deprecated
     @Selector("playerIDs")
@@ -194,31 +212,52 @@ public class GKMatch extends NSObject {
     @Selector("players")
     public native NSArray<? extends GKPlayer> players();
 
+    /**
+     * Auto-matching to recreate a previous peer-to-peer match that became disconnected. A new match with the same set of players will be returned by the completion handler. All players should perform this when the match has ended for auto-matching to succeed. Error will be nil on success.
+     * Possible reasons for error:
+     * 1. Communications failure
+     * 2. Timeout
+     */
     @Generated
     @Selector("rematchWithCompletionHandler:")
     public native void rematchWithCompletionHandler(
             @ObjCBlock(name = "call_rematchWithCompletionHandler") Block_rematchWithCompletionHandler completionHandler);
 
+    /**
+     * Asynchronously send data to one or more GKPlayers. Returns YES if delivery started, NO if unable to start sending and error will be set.
+     */
     @Generated
     @Selector("sendData:toPlayers:dataMode:error:")
     public native boolean sendDataToPlayersDataModeError(NSData data, NSArray<? extends GKPlayer> players,
             @NInt long mode, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * This method is obsolete. It will never be invoked and its implementation does nothing**
+     */
     @Generated
     @Deprecated
     @Selector("sendData:toPlayers:withDataMode:error:")
     public native boolean sendDataToPlayersWithDataModeError(NSData data, NSArray<String> playerIDs, @NInt long mode,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Asynchronously broadcasts data to all players. Returns YES if delivery started, NO if unable to start sending and error will be set.
+     */
     @Generated
     @Selector("sendDataToAllPlayers:withDataMode:error:")
     public native boolean sendDataToAllPlayersWithDataModeError(NSData data, @NInt long mode,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * all the GKPlayers in the match
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKMatchDelegate value);
 
+    /**
+     * all the GKPlayers in the match
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) GKMatchDelegate value) {
         Object __old = delegate();
@@ -231,6 +270,10 @@ public class GKMatch extends NSObject {
         }
     }
 
+    /**
+     * Join a named voice chat channel
+     * Will return nil if parental controls are turned on
+     */
     @Generated
     @Selector("voiceChatWithName:")
     public native GKVoiceChat voiceChatWithName(String name);

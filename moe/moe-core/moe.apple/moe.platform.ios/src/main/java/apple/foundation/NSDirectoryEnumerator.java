@@ -151,6 +151,9 @@ public class NSDirectoryEnumerator<_ObjectType> extends NSEnumerator<_ObjectType
     @Selector("directoryAttributes")
     public native NSDictionary<String, ?> directoryAttributes();
 
+    /**
+     * For NSDirectoryEnumerators created with -enumeratorAtPath:, the -fileAttributes and -directoryAttributes methods return an NSDictionary containing the keys listed below. For NSDirectoryEnumerators created with -enumeratorAtURL:includingPropertiesForKeys:options:errorHandler:, these two methods return nil.
+     */
     @Generated
     @Selector("fileAttributes")
     public native NSDictionary<String, ?> fileAttributes();
@@ -159,11 +162,17 @@ public class NSDirectoryEnumerator<_ObjectType> extends NSEnumerator<_ObjectType
     @Selector("init")
     public native NSDirectoryEnumerator<?> init();
 
+    /**
+     * This method returns the number of levels deep the current object is in the directory hierarchy being enumerated. The directory passed to -enumeratorAtURL:includingPropertiesForKeys:options:errorHandler: is considered to be level 0.
+     */
     @Generated
     @Selector("level")
     @NUInt
     public native long level();
 
+    /**
+     * This method is spelled correctly.
+     */
     @Generated
     @Selector("skipDescendants")
     public native void skipDescendants();
@@ -172,6 +181,9 @@ public class NSDirectoryEnumerator<_ObjectType> extends NSEnumerator<_ObjectType
     @Selector("skipDescendents")
     public native void skipDescendents();
 
+    /**
+     * For NSDirectoryEnumerators created with -enumeratorAtURL:includingPropertiesForKeys:options:errorHandler: and the NSDirectoryEnumerationIncludesDirectoriesPostOrder option, this property is YES when the current object is a directory that is being enumerated after all of its contents have been enumerated.
+     */
     @Generated
     @Selector("isEnumeratingDirectoryPostOrder")
     public native boolean isEnumeratingDirectoryPostOrder();

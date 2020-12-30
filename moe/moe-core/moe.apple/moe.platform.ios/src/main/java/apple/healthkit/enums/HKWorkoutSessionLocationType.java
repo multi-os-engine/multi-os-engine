@@ -19,6 +19,11 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum          HKWorkoutSessionLocationType
+ * @abstract      This enumerated type is used to represent the location type of a workout session.
+ * @discussion    This value represents whether a workout is performed indoors or outdoors.
+ */
 @Generated
 public final class HKWorkoutSessionLocationType {
     @Generated @NInt public static final long Unknown = 0x0000000000000001L;

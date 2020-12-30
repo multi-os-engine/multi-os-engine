@@ -47,6 +47,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GKAchievement represents a game achievement that the player has started or completely achieved.
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -131,6 +134,9 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Asynchronously load all achievements for the local player
+     */
     @Generated
     @Selector("loadAchievementsWithCompletionHandler:")
     public static native void loadAchievementsWithCompletionHandler(
@@ -142,17 +148,33 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Report an array of achievements to the server. Percent complete is required. Points, completed state are set based on percentComplete. isHidden is set to NO anytime this method is invoked. Date is optional. Error will be nil on success.
+     * Possible reasons for error:
+     * 1. Local player not authenticated
+     * 2. Communications failure
+     * 3. Reported Achievement does not exist
+     */
     @Generated
     @Selector("reportAchievements:withCompletionHandler:")
     public static native void reportAchievementsWithCompletionHandler(NSArray<? extends GKAchievement> achievements,
             @ObjCBlock(name = "call_reportAchievementsWithCompletionHandler") Block_reportAchievementsWithCompletionHandler completionHandler);
 
+    /**
+     * Use this alternative to reportAchievements:withCompletionHandler: to allow only certain specific challenges to be completed. Pass nil to avoid completing any challenges.
+     */
     @Generated
     @Selector("reportAchievements:withEligibleChallenges:withCompletionHandler:")
     public static native void reportAchievementsWithEligibleChallengesWithCompletionHandler(
             NSArray<? extends GKAchievement> achievements, NSArray<? extends GKChallenge> challenges,
             @ObjCBlock(name = "call_reportAchievementsWithEligibleChallengesWithCompletionHandler") Block_reportAchievementsWithEligibleChallengesWithCompletionHandler completionHandler);
 
+    /**
+     *  Reset the achievements progress for the local player. All the entries for the local player are removed from the server. Error will be nil on success.
+     * Possible reasons for error:
+     *  1. Local player not authenticated
+     *  2. Communications failure
+     */
     @Generated
     @Selector("resetAchievementsWithCompletionHandler:")
     public static native void resetAchievementsWithCompletionHandler(
@@ -189,6 +211,9 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
             NSArray<? extends GKPlayer> players,
             @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletionHandler") Block_challengeComposeControllerWithMessagePlayersCompletionHandler completionHandler);
 
+    /**
+     * rb= GameKit.unavailableForTVOS
+     */
     @Generated
     @Deprecated
     @Selector("challengeComposeControllerWithPlayers:message:completionHandler:")
@@ -200,6 +225,9 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Achievement identifier
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -212,19 +240,31 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Selector("initWithCoder:")
     public native GKAchievement initWithCoder(NSCoder coder);
 
+    /**
+     * Designated initializer
+     */
     @Generated
     @Selector("initWithIdentifier:")
     public native GKAchievement initWithIdentifier(String identifier);
 
+    /**
+     * This method is obsolete. Calling this initialiser does nothing and will return nil **
+     */
     @Generated
     @Deprecated
     @Selector("initWithIdentifier:forPlayer:")
     public native GKAchievement initWithIdentifierForPlayer(String identifier, String playerID);
 
+    /**
+     * Initialize the achievement for a specific player. Use to submit participant achievements when ending a turn-based match.
+     */
     @Generated
     @Selector("initWithIdentifier:player:")
     public native GKAchievement initWithIdentifierPlayer(String identifier, GKPlayer player);
 
+    /**
+     * Set to NO until percentComplete = 100.
+     */
     @Generated
     @Selector("isCompleted")
     public native boolean isCompleted();
@@ -234,23 +274,38 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Selector("isHidden")
     public native boolean isHidden();
 
+    /**
+     * This method is obsolete. It will never be invoked and its implementation does nothing**
+     */
     @Generated
     @Deprecated
     @Selector("issueChallengeToPlayers:message:")
     public native void issueChallengeToPlayersMessage(NSArray<String> playerIDs, String message);
 
+    /**
+     * Date the achievement was last reported. Read-only. Created at initialization
+     */
     @Generated
     @Selector("lastReportedDate")
     public native NSDate lastReportedDate();
 
+    /**
+     * Required, Percentage of achievement complete.
+     */
     @Generated
     @Selector("percentComplete")
     public native double percentComplete();
 
+    /**
+     * The identifier of the player that earned the achievement.
+     */
     @Generated
     @Selector("player")
     public native GKPlayer player();
 
+    /**
+     * This property is obsolete. **
+     */
     @Generated
     @Deprecated
     @Selector("playerID")
@@ -262,29 +317,47 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     public native void reportAchievementWithCompletionHandler(
             @ObjCBlock(name = "call_reportAchievementWithCompletionHandler") Block_reportAchievementWithCompletionHandler completionHandler);
 
+    /**
+     * This method is obsolete. It will never be invoked and its implementation does nothing**
+     */
     @Generated
     @Deprecated
     @Selector("selectChallengeablePlayerIDs:withCompletionHandler:")
     public native void selectChallengeablePlayerIDsWithCompletionHandler(NSArray<String> playerIDs,
             @ObjCBlock(name = "call_selectChallengeablePlayerIDsWithCompletionHandler") Block_selectChallengeablePlayerIDsWithCompletionHandler completionHandler);
 
+    /**
+     * Given a list of players, return a subset of that list containing only players that are eligible to receive a challenge for the achievement.
+     */
     @Generated
     @Selector("selectChallengeablePlayers:withCompletionHandler:")
     public native void selectChallengeablePlayersWithCompletionHandler(NSArray<? extends GKPlayer> players,
             @ObjCBlock(name = "call_selectChallengeablePlayersWithCompletionHandler") Block_selectChallengeablePlayersWithCompletionHandler completionHandler);
 
+    /**
+     * Achievement identifier
+     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
 
+    /**
+     * Required, Percentage of achievement complete.
+     */
     @Generated
     @Selector("setPercentComplete:")
     public native void setPercentComplete(double value);
 
+    /**
+     * A banner will be momentarily displayed after reporting a completed achievement
+     */
     @Generated
     @Selector("setShowsCompletionBanner:")
     public native void setShowsCompletionBanner(boolean value);
 
+    /**
+     * A banner will be momentarily displayed after reporting a completed achievement
+     */
     @Generated
     @Selector("showsCompletionBanner")
     public native boolean showsCompletionBanner();

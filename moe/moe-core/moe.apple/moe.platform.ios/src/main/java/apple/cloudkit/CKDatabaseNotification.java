@@ -40,6 +40,29 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CKDatabaseNotification
+ * 
+ * @discussion @c notificationType == @c CKNotificationTypeDatabase
+ * When properties must be dropped (see @c isPruned), here's the order of importance.  The most important properties are first, they'll be the last ones to be dropped.
+ * - notificationID
+ * - badge
+ * - alertLocalizationKey
+ * - alertLocalizationArgs
+ * - alertBody
+ * - alertActionLocalizationKey
+ * - alertLaunchImage
+ * - soundName
+ * - content-available
+ * - containerIdentifier
+ * - subscriptionOwnerUserRecordID
+ * - titleLocalizationKey
+ * - titleLocalizationArgs
+ * - title
+ * - subtitleLocalizationKey
+ * - subtitleLocalizationArgs
+ * - subtitle
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)

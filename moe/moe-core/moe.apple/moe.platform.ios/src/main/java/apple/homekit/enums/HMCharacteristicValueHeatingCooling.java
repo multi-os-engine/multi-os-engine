@@ -19,6 +19,14 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueHeatingCooling
+ * 
+ * @constant  HMCharacteristicValueHeatingCoolingOff   Off.
+ * @constant  HMCharacteristicValueHeatingCoolingHeat  If the current temperature is below the target temperature then turn on heating.
+ * @constant  HMCharacteristicValueHeatingCoolingCool  If the current temperature is above the target temperature then turn on cooling.
+ * @constant  HMCharacteristicValueHeatingCoolingAuto  Turn on heating or cooling to maintain temperature within the heating and cooling threshold of the target temperature.
+ */
 @Generated
 public final class HMCharacteristicValueHeatingCooling {
     @Generated @NInt public static final long Off = 0x0000000000000000L;

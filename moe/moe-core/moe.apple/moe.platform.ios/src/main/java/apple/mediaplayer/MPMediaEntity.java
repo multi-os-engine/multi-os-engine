@@ -44,6 +44,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An MPMediaEntity represents an abstract member of an MPMediaLibrary.
+ * Concrete subclasses are MPMediaItem and MPMediaItemCollection.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -76,6 +80,9 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Returns YES for properties which can be used to construct MPMediaPropertyPredicates.
+     */
     @Generated
     @Selector("canFilterByProperty:")
     public static native boolean canFilterByProperty(String property);
@@ -167,6 +174,10 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Executes a provided block with the fetched values for the given item properties, or nil if no value is available for a property.
+     * In some cases, enumerating the values for multiple properties can be more efficient than fetching each individual property with -valueForProperty:.
+     */
     @Generated
     @Selector("enumerateValuesForProperties:usingBlock:")
     public native void enumerateValuesForPropertiesUsingBlock(NSSet<String> properties,
@@ -180,6 +191,9 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native MPMediaEntity initWithCoder(NSCoder coder);
 
+    /**
+     * Read-only support for Objective-C subscripting syntax with MPMediaEntity property constants.
+     */
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -195,6 +209,10 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * Returns the value for the given entity property.
+     * MPMediaItem and MPMediaPlaylist have their own properties
+     */
     @Generated
     @Selector("valueForProperty:")
     @MappedReturn(ObjCObjectMapper.class)

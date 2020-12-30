@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents a MessageFilter extension request's context.
+ */
 @Generated
 @Library("IdentityLookup")
 @Runtime(ObjCRuntime.class)
@@ -80,6 +83,15 @@ public class ILMessageFilterExtensionContext extends NSExtensionContext {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Defer the current query request to the app extension's associated network service and receive a network response asynchronously.
+     * 
+     * This causes the system to perform an HTTPS network request to a URL specified in the app extension's Info.plist, and the response
+     * to that HTTPS request (or an error) is returned asynchronously. See documentation for details regarding how this HTTPS request
+     * is formatted, restrictions on the URL, etc.
+     * 
+     * @param completion Completion block containing either the network response to the HTTPS request or an error.
+     */
     @Generated
     @Selector("deferQueryRequestToNetworkWithCompletion:")
     public native void deferQueryRequestToNetworkWithCompletion(

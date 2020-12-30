@@ -121,6 +121,10 @@ public class UIDragItem extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Use `localObject` to attach additional information to
+     * this drag item, visible only inside the app that started the drag.
+     */
     @Generated
     @Selector("localObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -132,6 +136,20 @@ public class UIDragItem extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Use `previewProvider` to change the preview for an item.
+     * 
+     * Each item is usually given a preview when the drag begins,
+     * either by the UIDragInteractionDelegate's `-dragInteraction:previewForLiftingItem:session:`
+     * method, or by creating a preview from the dragging view.
+     * 
+     * During the drag, applications may attempt to change the item's preview,
+     * by setting `previewProvider` to a block that returns a preview.
+     * It will be called when and if the system requests it.
+     * 
+     * To use the default preview, set `previewProvider` to nil.
+     * To hide the preview, set `previewProvider` to a block that returns nil.
+     */
     @Generated
     @Selector("previewProvider")
     @ObjCBlock(name = "call_previewProvider_ret")
@@ -152,10 +170,28 @@ public class UIDragItem extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Use `localObject` to attach additional information to
+     * this drag item, visible only inside the app that started the drag.
+     */
     @Generated
     @Selector("setLocalObject:")
     public native void setLocalObject(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * Use `previewProvider` to change the preview for an item.
+     * 
+     * Each item is usually given a preview when the drag begins,
+     * either by the UIDragInteractionDelegate's `-dragInteraction:previewForLiftingItem:session:`
+     * method, or by creating a preview from the dragging view.
+     * 
+     * During the drag, applications may attempt to change the item's preview,
+     * by setting `previewProvider` to a block that returns a preview.
+     * It will be called when and if the system requests it.
+     * 
+     * To use the default preview, set `previewProvider` to nil.
+     * To hide the preview, set `previewProvider` to a block that returns nil.
+     */
     @Generated
     @Selector("setPreviewProvider:")
     public native void setPreviewProvider(@ObjCBlock(name = "call_setPreviewProvider") Block_setPreviewProvider value);

@@ -163,6 +163,10 @@ public class UIGravityBehavior extends UIDynamicBehavior {
     @NFloat
     public native double angle();
 
+    /**
+     * The default value for the gravity vector is (0.0, 1.0)
+     * The acceleration for a dynamic item subject to a (0.0, 1.0) gravity vector is downwards at 1000 points per second².
+     */
     @Generated
     @Selector("gravityDirection")
     @ByValue
@@ -197,6 +201,10 @@ public class UIGravityBehavior extends UIDynamicBehavior {
     @Selector("setAngle:magnitude:")
     public native void setAngleMagnitude(@NFloat double angle, @NFloat double magnitude);
 
+    /**
+     * The default value for the gravity vector is (0.0, 1.0)
+     * The acceleration for a dynamic item subject to a (0.0, 1.0) gravity vector is downwards at 1000 points per second².
+     */
     @Generated
     @Selector("setGravityDirection:")
     public native void setGravityDirection(@ByValue CGVector value);

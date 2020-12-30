@@ -50,6 +50,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract A mutable value object representing a contact.
+ * 
+ * @discussion CNMutableContact is not thread safe. If this is a mutable copy of CNContact then it will throw CNContactPropertyNotFetchedExceptionName when accessing a property that was not fetched for the CNContact.
+ * 
+ * @note To remove properties when saving a mutable contact, set string properties and array properties to empty values. Set other properties to nil.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
@@ -196,6 +203,11 @@ public class CNMutableContact extends CNContact {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract The Gregorian birthday.
+     * 
+     * @description Only uses day, month and year components. Needs to have at least a day and a month.
+     */
     @Generated
     @Selector("birthday")
     public native NSDateComponents birthday();
@@ -209,6 +221,11 @@ public class CNMutableContact extends CNContact {
     @NInt
     public native long contactType();
 
+    /**
+     * @abstract Other Gregorian dates (anniversaries, etc).
+     * 
+     * @description Only uses day, month and year components. Needs to have at least a day and a month.
+     */
     @Generated
     @Selector("dates")
     public native NSArray<? extends CNLabeledValue<NSDateComponents>> dates();
@@ -265,6 +282,11 @@ public class CNMutableContact extends CNContact {
     @Selector("nickname")
     public native String nickname();
 
+    /**
+     * @abstract The alternate birthday (Lunisolar).
+     * 
+     * @description Only uses day, month, year and calendar components. Needs to have at least a day and a month. Calendar must be Chinese, Hebrew or Islamic.
+     */
     @Generated
     @Selector("nonGregorianBirthday")
     public native NSDateComponents nonGregorianBirthday();
@@ -305,6 +327,11 @@ public class CNMutableContact extends CNContact {
     @Selector("previousFamilyName")
     public native String previousFamilyName();
 
+    /**
+     * @abstract The Gregorian birthday.
+     * 
+     * @description Only uses day, month and year components. Needs to have at least a day and a month.
+     */
     @Generated
     @Selector("setBirthday:")
     public native void setBirthday(NSDateComponents value);
@@ -317,6 +344,11 @@ public class CNMutableContact extends CNContact {
     @Selector("setContactType:")
     public native void setContactType(@NInt long value);
 
+    /**
+     * @abstract Other Gregorian dates (anniversaries, etc).
+     * 
+     * @description Only uses day, month and year components. Needs to have at least a day and a month.
+     */
     @Generated
     @Selector("setDates:")
     public native void setDates(NSArray<? extends CNLabeledValue<NSDateComponents>> value);
@@ -365,6 +397,11 @@ public class CNMutableContact extends CNContact {
     @Selector("setNickname:")
     public native void setNickname(String value);
 
+    /**
+     * @abstract The alternate birthday (Lunisolar).
+     * 
+     * @description Only uses day, month, year and calendar components. Needs to have at least a day and a month. Calendar must be Chinese, Hebrew or Islamic.
+     */
     @Generated
     @Selector("setNonGregorianBirthday:")
     public native void setNonGregorianBirthday(NSDateComponents value);

@@ -39,6 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Command for changing the current shuffle mode to use during playback. To
+ * update the system's current representation of your app's shuffle mode, set
+ * the currentShuffleType property on this command to the proper shuffle type
+ * value.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -150,6 +156,9 @@ public class MPChangeShuffleModeCommand extends MPRemoteCommand {
     @NInt
     public static native long version_static();
 
+    /**
+     * The app's current shuffle type.
+     */
     @Generated
     @Selector("currentShuffleType")
     @NInt
@@ -159,6 +168,9 @@ public class MPChangeShuffleModeCommand extends MPRemoteCommand {
     @Selector("init")
     public native MPChangeShuffleModeCommand init();
 
+    /**
+     * The app's current shuffle type.
+     */
     @Generated
     @Selector("setCurrentShuffleType:")
     public native void setCurrentShuffleType(@NInt long value);

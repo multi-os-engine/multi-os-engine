@@ -171,6 +171,10 @@ public class NSISO8601DateFormatter extends NSFormatter implements NSSecureCodin
     @NUInt
     public native long formatOptions();
 
+    /**
+     * This init method creates a formatter object set to the GMT time zone and preconfigured with the RFC 3339 standard format ("yyyy-MM-dd'T'HH:mm:ssXXXXX") using the following options:
+     * NSISO8601DateFormatWithInternetDateTime | NSISO8601DateFormatWithDashSeparatorInDate | NSISO8601DateFormatWithColonSeparatorInTime | NSISO8601DateFormatWithColonSeparatorInTimeZone
+     */
     @Generated
     @Selector("init")
     public native NSISO8601DateFormatter init();
@@ -183,6 +187,9 @@ public class NSISO8601DateFormatter extends NSFormatter implements NSSecureCodin
     @Selector("setFormatOptions:")
     public native void setFormatOptions(@NUInt long value);
 
+    /**
+     * The default time zone is GMT.
+     */
     @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone value);
@@ -197,6 +204,9 @@ public class NSISO8601DateFormatter extends NSFormatter implements NSSecureCodin
         return supportsSecureCoding();
     }
 
+    /**
+     * The default time zone is GMT.
+     */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();

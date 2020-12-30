@@ -3,6 +3,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueTargetLockMechanismState
+ * 
+ * @constant  HMCharacteristicValueTargetLockMechanismStateUnsecured  Unsecured.
+ * @constant  HMCharacteristicValueTargetLockMechanismStateSecured    Secured.
+ */
 @Generated
 public final class HMCharacteristicValueTargetLockMechanismState {
     @Generated

@@ -50,26 +50,44 @@ public final class CAFFileHeader extends StructObject {
         setMFileFlags(mFileFlags);
     }
 
+    /**
+     * 'caff'
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int mFileType();
 
+    /**
+     * 'caff'
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setMFileType(int value);
 
+    /**
+     * initial revision set to 1
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char mFileVersion();
 
+    /**
+     * initial revision set to 1
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMFileVersion(char value);
 
+    /**
+     * initial revision set to 0
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native char mFileFlags();
 
+    /**
+     * initial revision set to 0
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setMFileFlags(char value);

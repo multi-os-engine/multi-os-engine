@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNReduceRowMin
+ * @discussion The MPSNNReduceRowMin performs a reduction operation returning the mininmum value for each row of an image
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -96,11 +100,23 @@ public class MPSNNReduceRowMin extends MPSNNReduceUnary {
     @Selector("initWithCoder:")
     public native MPSNNReduceRowMin initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion See @ref MPSKernel#initWithCoder.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
+     * @param      device      The MTLDevice on which to make the MPSCNNPooling
+     * @return     A new MPSNNReduceRowMin object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNNReduceRowMin initWithCoderDevice(NSCoder aDecoder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Specifies information to apply the reduction operation on an image.
+     * @param    device            The device the filter will run on
+     * @return     A valid MPSNNReduceRowMin object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSNNReduceRowMin initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);

@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNPhysicsConeTwistJoint
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -60,10 +63,16 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * the first body attached to the slider joint
+     */
     @Generated
     @Selector("bodyA")
     public native SCNPhysicsBody bodyA();
 
+    /**
+     * the second body attached to the slider joint
+     */
     @Generated
     @Selector("bodyB")
     public native SCNPhysicsBody bodyB();
@@ -134,10 +143,18 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Initializes and returns a physics cone-twist joint.
+     * The joint attaches "body" to the 3d location specified by "frame" and relative to the node that owns the body.
+     */
     @Generated
     @Selector("jointWithBody:frame:")
     public static native SCNPhysicsConeTwistJoint jointWithBodyFrame(SCNPhysicsBody body, @ByValue SCNMatrix4 frame);
 
+    /**
+     * Initializes and returns a physics cone-twist joint.
+     * The joint attaches bodyA and bodyB on frameA and frameB respectively.
+     */
     @Generated
     @Selector("jointWithBodyA:frameA:bodyB:frameB:")
     public static native SCNPhysicsConeTwistJoint jointWithBodyAFrameABodyBFrameB(SCNPhysicsBody bodyA,
@@ -147,6 +164,9 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The maximum angular limits in radians in each cone tangent directions
+     */
     @Generated
     @Selector("maximumAngularLimit1")
     @NFloat
@@ -157,6 +177,9 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
     @NFloat
     public native double maximumAngularLimit2();
 
+    /**
+     * Maximum twist angle alon the cone axis
+     */
     @Generated
     @Selector("maximumTwistAngle")
     @NFloat
@@ -184,6 +207,9 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
     @Selector("setFrameB:")
     public native void setFrameB(@ByValue SCNMatrix4 value);
 
+    /**
+     * The maximum angular limits in radians in each cone tangent directions
+     */
     @Generated
     @Selector("setMaximumAngularLimit1:")
     public native void setMaximumAngularLimit1(@NFloat double value);
@@ -192,6 +218,9 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
     @Selector("setMaximumAngularLimit2:")
     public native void setMaximumAngularLimit2(@NFloat double value);
 
+    /**
+     * Maximum twist angle alon the cone axis
+     */
     @Generated
     @Selector("setMaximumTwistAngle:")
     public native void setMaximumTwistAngle(@NFloat double value);

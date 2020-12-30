@@ -33,6 +33,16 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKPushRegistryDelegate")
 public interface PKPushRegistryDelegate {
+    /**
+     * @method        pushRegistry:didInvalidatePushTokenForType:
+     * @abstract      This method is invoked if a previously provided push token is no longer valid for use. No action is
+     *                necessary to rerequest registration. This feedback can be used to update an app's server to no longer
+     *                send push notifications of the specified type to this device.
+     * @param         registry
+     *                The PKPushRegistry instance responsible for the delegate callback.
+     * @param         type
+     *                This is a PKPushType constant which is present in [registry desiredPushTypes].
+     */
     @Generated
     @IsOptional
     @Selector("pushRegistry:didInvalidatePushTokenForType:")
@@ -40,6 +50,16 @@ public interface PKPushRegistryDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @method        pushRegistry:didReceiveIncomingPushWithPayload:forType:
+     * @abstract      This method is invoked when a push notification has been received for the specified PKPushType.
+     * @param         registry
+     *                The PKPushRegistry instance responsible for the delegate callback.
+     * @param         payload
+     *                The push payload sent by a developer via APNS server API.
+     * @param         type
+     *                This is a PKPushType constant which is present in [registry desiredPushTypes].
+     */
     @IsOptional
     @Generated
     @Selector("pushRegistry:didReceiveIncomingPushWithPayload:forType:")
@@ -48,11 +68,34 @@ public interface PKPushRegistryDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @method        pushRegistry:didUpdatePushCredentials:forType:
+     * @abstract      This method is invoked when new credentials (including push token) have been received for the specified
+     *                PKPushType.
+     * @param         registry
+     *                The PKPushRegistry instance responsible for the delegate callback.
+     * @param         pushCredentials
+     *                The push credentials that can be used to send pushes to the device for the specified PKPushType.
+     * @param         type
+     *                This is a PKPushType constant which is present in [registry desiredPushTypes].
+     */
     @Generated
     @Selector("pushRegistry:didUpdatePushCredentials:forType:")
     void pushRegistryDidUpdatePushCredentialsForType(PKPushRegistry registry, PKPushCredentials pushCredentials,
             String type);
 
+    /**
+     * @method        pushRegistry:didReceiveIncomingPushWithPayload:forType:withCompletionHandler:
+     * @abstract      This method is invoked when a push notification has been received for the specified PKPushType.
+     * @param         registry
+     *                The PKPushRegistry instance responsible for the delegate callback.
+     * @param         payload
+     *                The push payload sent by a developer via APNS server API.
+     * @param         type
+     *                This is a PKPushType constant which is present in [registry desiredPushTypes].
+     * @param         completion
+     *                This completion handler should be called to signify the completion of payload processing.
+     */
     @Generated
     @IsOptional
     @Selector("pushRegistry:didReceiveIncomingPushWithPayload:forType:withCompletionHandler:")

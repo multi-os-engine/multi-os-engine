@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract An immutable value object representing a phone number.
+ * 
+ * @discussion CNPhoneNumber is thread safe.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
@@ -133,6 +138,9 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * These will return nil if the stringValue is nil.
+     */
     @Generated
     @Selector("phoneNumberWithStringValue:")
     public static native CNPhoneNumber phoneNumberWithStringValue(String stringValue);

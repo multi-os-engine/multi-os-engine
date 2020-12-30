@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Object representing a physical location and orientation in 3D space.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -97,6 +100,9 @@ public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCodin
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Unique identifier of the anchor.
+     */
     @Generated
     @Selector("identifier")
     public native NSUUID identifier();
@@ -165,10 +171,18 @@ public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCodin
     @Selector("initWithCoder:")
     public native ARAnchor initWithCoder(NSCoder coder);
 
+    /**
+     * An optional name used to associate with the anchor.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * Identifier of the session that owns the anchor.
+     * 
+     * @discussion The session identifier will be assigned to anchor when added to the session.
+     */
     @Generated
     @Selector("sessionIdentifier")
     public native NSUUID sessionIdentifier();

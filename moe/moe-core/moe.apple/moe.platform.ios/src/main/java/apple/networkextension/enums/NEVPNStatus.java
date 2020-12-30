@@ -19,13 +19,35 @@ package apple.networkextension.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @typedef NEVPNStatus
+ * @abstract VPN status codes
+ */
 @Generated
 public final class NEVPNStatus {
+    /**
+     * @const NEVPNStatusInvalid The VPN is not configured.
+     */
     @Generated @NInt public static final long Invalid = 0x0000000000000000L;
+    /**
+     * @const NEVPNStatusDisconnected The VPN is disconnected.
+     */
     @Generated @NInt public static final long Disconnected = 0x0000000000000001L;
+    /**
+     * @const NEVPNStatusConnecting The VPN is connecting.
+     */
     @Generated @NInt public static final long Connecting = 0x0000000000000002L;
+    /**
+     * @const NEVPNStatusConnected The VPN is connected.
+     */
     @Generated @NInt public static final long Connected = 0x0000000000000003L;
+    /**
+     * @const NEVPNStatusReasserting The VPN is reconnecting following loss of underlying network connectivity.
+     */
     @Generated @NInt public static final long Reasserting = 0x0000000000000004L;
+    /**
+     * @const NEVPNStatusDisconnecting The VPN is disconnecting.
+     */
     @Generated @NInt public static final long Disconnecting = 0x0000000000000005L;
 
     @Generated

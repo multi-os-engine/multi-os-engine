@@ -24,6 +24,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief Base class for all geometry descriptors. Do not use this class directly. Use one of the derived
+ * classes instead.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -52,6 +56,10 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @brief Whether intersection functions may be invoked more than once per ray/primitive
+     * intersection. Defaults to YES.
+     */
     @Generated
     @Selector("allowDuplicateIntersectionFunctionInvocation")
     public native boolean allowDuplicateIntersectionFunctionInvocation();
@@ -133,6 +141,9 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief Whether the geometry is opaque
+     */
     @Generated
     @Selector("opaque")
     public native boolean opaque();
@@ -145,6 +156,10 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @brief Whether intersection functions may be invoked more than once per ray/primitive
+     * intersection. Defaults to YES.
+     */
     @Generated
     @Selector("setAllowDuplicateIntersectionFunctionInvocation:")
     public native void setAllowDuplicateIntersectionFunctionInvocation(boolean value);
@@ -153,6 +168,9 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     @Selector("setIntersectionFunctionTableOffset:")
     public native void setIntersectionFunctionTableOffset(@NUInt long value);
 
+    /**
+     * @brief Whether the geometry is opaque
+     */
     @Generated
     @Selector("setOpaque:")
     public native void setOpaque(boolean value);

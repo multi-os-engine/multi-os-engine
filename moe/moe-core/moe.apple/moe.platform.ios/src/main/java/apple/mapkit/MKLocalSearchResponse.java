@@ -161,6 +161,9 @@ public class MKLocalSearchResponse extends NSObject {
     @Selector("init")
     public native MKLocalSearchResponse init();
 
+    /**
+     * An array of MKMapItems sorted by relevance in descending order
+     */
     @Generated
     @Selector("mapItems")
     public native NSArray<? extends MKMapItem> mapItems();

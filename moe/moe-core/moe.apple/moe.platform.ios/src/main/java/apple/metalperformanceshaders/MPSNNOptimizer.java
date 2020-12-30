@@ -25,6 +25,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNOptimizer
+ * @discussion The MPSNNOptimizer base class, use one of the child classes, not to be directly used. Optimizers are generally used to update trainable neural network parameters.
+ *             Users are usually expected to call these MPSKernels from the update methods on their Convolution or BatchNormalization data sources.
+ * 
+ *             Before the gradient is used to update the original value, some preprocessing occurs on each gradient where it is scaled or clipped
+ *             If regularization is chosen the appropriate regularization loss gradient is added to the value gradient.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -53,6 +61,11 @@ public class MPSNNOptimizer extends MPSKernel {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @property   applyGradientClipping
+     * @abstract   A bool which decides if gradient will be clipped
+     * @discussion The default value is NO
+     */
     @Generated
     @Selector("applyGradientClipping")
     public native boolean applyGradientClipping();
@@ -87,14 +100,27 @@ public class MPSNNOptimizer extends MPSKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property   gradientClipMax
+     * @abstract   The maximum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
+     */
     @Generated
     @Selector("gradientClipMax")
     public native float gradientClipMax();
 
+    /**
+     * @property   gradientClipMin
+     * @abstract   The minimum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
+     */
     @Generated
     @Selector("gradientClipMin")
     public native float gradientClipMin();
 
+    /**
+     * @property   gradientRescale
+     * @abstract   The gradientRescale at which we apply to incoming gradient values
+     * @discussion The default value is 1.0
+     */
     @Generated
     @Selector("gradientRescale")
     public native float gradientRescale();
@@ -141,6 +167,11 @@ public class MPSNNOptimizer extends MPSKernel {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property   learningRate
+     * @abstract   The learningRate at which we update values
+     * @discussion The default value is 1e-3
+     */
     @Generated
     @Selector("learningRate")
     public native float learningRate();
@@ -151,10 +182,20 @@ public class MPSNNOptimizer extends MPSKernel {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property   regularizationScale
+     * @abstract   The regularizationScale at which we apply L1 or L2 regularization, it gets ignored if regularization is None
+     * @discussion The default value is 0.0
+     */
     @Generated
     @Selector("regularizationScale")
     public native float regularizationScale();
 
+    /**
+     * @property   regularizationType
+     * @abstract   The regularizationType which we apply.
+     * @discussion The default value is MPSRegularizationTypeNone
+     */
     @Generated
     @Selector("regularizationType")
     @NUInt
@@ -168,6 +209,11 @@ public class MPSNNOptimizer extends MPSKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   applyGradientClipping
+     * @abstract   A bool which decides if gradient will be clipped
+     * @discussion The default value is NO
+     */
     @Generated
     @Selector("setApplyGradientClipping:")
     public native void setApplyGradientClipping(boolean value);

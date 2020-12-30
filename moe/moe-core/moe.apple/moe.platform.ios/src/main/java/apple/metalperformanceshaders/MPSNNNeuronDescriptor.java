@@ -28,6 +28,68 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNNeuronDescriptor
+ * @dependency This depends on Metal.framework
+ * @discussion The MPSNNNeuronDescriptor specifies a neuron descriptor.
+ *             Supported neuron types:
+ * 
+ *             Neuron type "none": f(x) = x
+ *             Parameters: none
+ * 
+ *             ReLU neuron filter: f(x) = x >= 0 ? x : a * x
+ *             This is called Leaky ReLU in literature. Some literature defines
+ *             classical ReLU as max(0, x). If you want this behavior, simply pass a = 0.
+ *             Parameters: a
+ *             For default behavior, set the value of a to 0.0f.
+ * 
+ *             Linear neuron filter: f(x) = a * x + b
+ *             Parameters: a, b
+ *             For default behavior, set the value of a to 1.0f and the value of b to 0.0f.
+ * 
+ *             Sigmoid neuron filter: f(x) = 1 / (1 + e^-x)
+ *             Parameters: none
+ * 
+ *             Hard Sigmoid filter: f(x) = clamp((x * a) + b, 0, 1)
+ *             Parameters: a, b
+ *             For default behavior, set the value of a to 0.2f and the value of b to 0.5f.
+ * 
+ *             Hyperbolic tangent (TanH) neuron filter: f(x) = a * tanh(b * x)
+ *             Parameters: a, b
+ *             For default behavior, set the value of a to 1.0f and the value of b to 1.0f.
+ * 
+ *             Absolute neuron filter: f(x) = fabs(x)
+ *             Parameters: none
+ * 
+ *             Parametric Soft Plus neuron filter: f(x) = a * log(1 + e^(b * x))
+ *             Parameters: a, b
+ *             For default behavior, set the value of a to 1.0f and the value of b to 1.0f.
+ * 
+ *             Parametric Soft Sign neuron filter: f(x) = x / (1 + abs(x))
+ *             Parameters: none
+ * 
+ *             Parametric ELU neuron filter: f(x) = x >= 0 ? x : a * (exp(x) - 1)
+ *             Parameters: a
+ *             For default behavior, set the value of a to 1.0f.
+ * 
+ *             Parametric ReLU (PReLU) neuron filter: Same as ReLU, except parameter
+ *             aArray is per channel.
+ *             For each pixel, applies the following function: f(x_i) = x_i, if x_i >= 0
+ *                                                                    = a_i * x_i if x_i < 0
+ *             i in [0...channels-1]
+ *             i.e. parameters a_i are learned and applied to each channel separately. Compare
+ *             this to ReLu where parameter a is shared across all channels.
+ *             See https://arxiv.org/pdf/1502.01852.pdf for details.
+ *             Parameters: aArray - Array of floats containing per channel value of PReLu parameter
+ *                         count - Number of float values in array aArray.
+ * 
+ *             ReLUN neuron filter: f(x) = min((x >= 0 ? x : a * x), b)
+ *             Parameters: a, b
+ *             As an example, the TensorFlow Relu6 activation layer can be implemented
+ *             by setting the parameter b to 6.0f:
+ *             https://www.tensorflow.org/api_docs/cc/class/tensorflow/ops/relu6.
+ *             For default behavior, set the value of a to 1.0f and the value of b to 6.0f.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -90,23 +152,63 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @abstract  Make a descriptor for a MPSCNNNeuron object.
+     * @param     neuronType           The type of a neuron filter.
+     * @return    A valid MPSNNNeuronDescriptor object or nil, if failure.
+     */
     @Generated
     @Selector("cnnNeuronDescriptorWithType:")
     public static native MPSNNNeuronDescriptor cnnNeuronDescriptorWithType(int neuronType);
 
+    /**
+     * @abstract  Make a descriptor for a MPSCNNNeuron object.
+     * @param     neuronType           The type of a neuron filter.
+     * @param     a                    Parameter "a".
+     * @return    A valid MPSNNNeuronDescriptor object or nil, if failure.
+     */
     @Generated
     @Selector("cnnNeuronDescriptorWithType:a:")
     public static native MPSNNNeuronDescriptor cnnNeuronDescriptorWithTypeA(int neuronType, float a);
 
+    /**
+     * @abstract  Initialize the neuron descriptor.
+     * @param     neuronType           The type of a neuron filter.
+     * @param     a                    Parameter "a".
+     * @param     b                    Parameter "b".
+     * @return    A valid MPSNNNeuronDescriptor object or nil, if failure.
+     */
     @Generated
     @Selector("cnnNeuronDescriptorWithType:a:b:")
     public static native MPSNNNeuronDescriptor cnnNeuronDescriptorWithTypeAB(int neuronType, float a, float b);
 
+    /**
+     * @abstract  Make a descriptor for a MPSCNNNeuron object.
+     * @param     neuronType           The type of a neuron filter.
+     * @param     a                    Parameter "a".
+     * @param     b                    Parameter "b".
+     * @param     c                    Parameter "c".
+     * @return    A valid MPSNNNeuronDescriptor object or nil, if failure.
+     */
     @Generated
     @Selector("cnnNeuronDescriptorWithType:a:b:c:")
     public static native MPSNNNeuronDescriptor cnnNeuronDescriptorWithTypeABC(int neuronType, float a, float b,
             float c);
 
+    /**
+     * @abstract   Make a descriptor for a neuron of type MPSCNNNeuronTypePReLU.
+     * @discussion The PReLU neuron is the same as a ReLU neuron, except parameter "a" is per feature channel.
+     * @param      data                A NSData containing a float array with the per feature channel value
+     *                                 of PReLu parameter. The number of float values in this array usually
+     *                                 corresponds to number of output channels in a convolution layer.
+     *                                 The descriptor retains the NSData object.
+     * @param      noCopy              An optimization flag that tells us whether the NSData allocation is
+     *                                 suitable for use directly with no copying of the data into internal
+     *                                 storage. This allocation has to match the same restrictions as listed
+     *                                 for the newBufferWithBytesNoCopy:length:options:deallocator: method of
+     *                                 MTLBuffer.
+     * @return     A valid MPSNNNeuronDescriptor object for a neuron of type MPSCNNNeuronTypePReLU or nil, if failure
+     */
     @Generated
     @Selector("cnnNeuronPReLUDescriptorWithData:noCopy:")
     public static native MPSNNNeuronDescriptor cnnNeuronPReLUDescriptorWithDataNoCopy(NSData data, boolean noCopy);
@@ -117,6 +219,9 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Note: data is retained, not copied
+     */
     @Generated
     @Selector("data")
     public native NSData data();
@@ -197,6 +302,9 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
     @Selector("setC:")
     public native void setC(float value);
 
+    /**
+     * Note: data is retained, not copied
+     */
     @Generated
     @Selector("setData:")
     public native void setData(NSData value);

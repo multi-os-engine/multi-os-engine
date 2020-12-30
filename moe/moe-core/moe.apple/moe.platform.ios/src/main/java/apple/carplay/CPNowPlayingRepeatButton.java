@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A now playing button that shows the current repeat state, like "once"
+ * or "all".
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)

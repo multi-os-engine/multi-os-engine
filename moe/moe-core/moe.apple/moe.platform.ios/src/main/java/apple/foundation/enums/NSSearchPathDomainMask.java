@@ -21,10 +21,25 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSSearchPathDomainMask {
+    /**
+     * user's home directory --- place to install user's personal items (~)
+     */
     @Generated @NUInt public static final long UserDomainMask = 0x0000000000000001L;
+    /**
+     * local to the current machine --- place to install items available to everyone on this machine (/Library)
+     */
     @Generated @NUInt public static final long LocalDomainMask = 0x0000000000000002L;
+    /**
+     * publically available location in the local area network --- place to install items available on the network (/Network)
+     */
     @Generated @NUInt public static final long NetworkDomainMask = 0x0000000000000004L;
+    /**
+     * provided by Apple, unmodifiable (/System)
+     */
     @Generated @NUInt public static final long SystemDomainMask = 0x0000000000000008L;
+    /**
+     * all domains: all of the above and future items
+     */
     @Generated @NUInt public static final long AllDomainsMask = 0x000000000000FFFFL;
 
     @Generated

@@ -167,11 +167,17 @@ public class NSTextAttachment extends NSObject
     public native CGRect attachmentBoundsForTextContainerProposedLineFragmentGlyphPositionCharacterIndex(
             NSTextContainer textContainer, @ByValue CGRect lineFrag, @ByValue CGPoint position, @NUInt long charIndex);
 
+    /**
+     * Defines the layout bounds of the receiver's graphical representation in the text coordinate system.  The origin is at the glyph location on the text baseline.  The default value is CGRectZero.
+     */
     @Generated
     @Selector("bounds")
     @ByValue
     public native CGRect bounds();
 
+    /**
+     * These two properties define the contents for the text attachment.  Modifying these properties have a side effect of invalidating -image and -fileWrapper properties. -fileType is an UTI describing the format for -contents.
+     */
     @Generated
     @Selector("contents")
     public native NSData contents();
@@ -184,10 +190,16 @@ public class NSTextAttachment extends NSObject
     @Selector("fileType")
     public native String fileType();
 
+    /**
+     * Optionally, NSTextAttachment can be associated with a file wrapper. Modifying this property has a side effect of invalidating -image, -contents, and fileType properties.
+     */
     @Generated
     @Selector("fileWrapper")
     public native NSFileWrapper fileWrapper();
 
+    /**
+     * Image representing the text attachment contents. Modifying this property invalidates -contents, -fileType, and -FileWrapper properties.
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -205,14 +217,23 @@ public class NSTextAttachment extends NSObject
     @Selector("initWithCoder:")
     public native NSTextAttachment initWithCoder(NSCoder coder);
 
+    /**
+     * Designated initializer.  Both arguments can be nil.  When contentData==nil || uti==nil, the receiver is consider to be an attachment without document contents.  In this case, the NSAttributedString methods writing external file format tries to save the return value of -[NSTextAttachment image] instead.
+     */
     @Generated
     @Selector("initWithData:ofType:")
     public native NSTextAttachment initWithDataOfType(NSData contentData, String uti);
 
+    /**
+     * Defines the layout bounds of the receiver's graphical representation in the text coordinate system.  The origin is at the glyph location on the text baseline.  The default value is CGRectZero.
+     */
     @Generated
     @Selector("setBounds:")
     public native void setBounds(@ByValue CGRect value);
 
+    /**
+     * These two properties define the contents for the text attachment.  Modifying these properties have a side effect of invalidating -image and -fileWrapper properties. -fileType is an UTI describing the format for -contents.
+     */
     @Generated
     @Selector("setContents:")
     public native void setContents(NSData value);
@@ -221,10 +242,16 @@ public class NSTextAttachment extends NSObject
     @Selector("setFileType:")
     public native void setFileType(String value);
 
+    /**
+     * Optionally, NSTextAttachment can be associated with a file wrapper. Modifying this property has a side effect of invalidating -image, -contents, and fileType properties.
+     */
     @Generated
     @Selector("setFileWrapper:")
     public native void setFileWrapper(NSFileWrapper value);
 
+    /**
+     * Image representing the text attachment contents. Modifying this property invalidates -contents, -fileType, and -FileWrapper properties.
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);

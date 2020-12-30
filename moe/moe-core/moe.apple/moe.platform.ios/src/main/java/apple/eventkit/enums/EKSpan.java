@@ -19,6 +19,15 @@ package apple.eventkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum           EKSpan
+ * @abstract       Values for controlling what occurrences to affect in a recurring event.
+ * @discussion     This enumerated type is used to indicate the scope of a change being made to a repeating event. EKSpanThisEvent 
+ *                 indicates the changes should apply only to this event, EKSpanFutureEvents indicates the changes should apply to 
+ *                 this event and all future events in the pattern.
+ * @constant       EKSpanThisEvent        Affect this event only.
+ * @constant       EKSpanFutureEvents     Affect this event and all after it.
+ */
 @Generated
 public final class EKSpan {
     @Generated @NInt public static final long ThisEvent = 0x0000000000000000L;

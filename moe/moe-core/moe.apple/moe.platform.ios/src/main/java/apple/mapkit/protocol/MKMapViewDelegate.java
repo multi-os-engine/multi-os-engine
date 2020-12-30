@@ -42,6 +42,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MKMapViewDelegate")
 public interface MKMapViewDelegate {
+    /**
+     * mapView:annotationView:calloutAccessoryControlTapped: is called when the user taps on left & right callout accessory UIControls.
+     */
     @Generated
     @IsOptional
     @Selector("mapView:annotationView:calloutAccessoryControlTapped:")
@@ -58,6 +61,11 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * mapView:didAddAnnotationViews: is called after the annotation views have been added and positioned in the map.
+     * The delegate can implement this method to animate the adding of the annotations views.
+     * Use the current positions of the annotation views as the destinations of the animation.
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didAddAnnotationViews:")
@@ -72,6 +80,10 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called after the provided overlay views have been added and positioned in the map.
+     * Prefer -mapView:didAddOverlayRenderers:
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didAddOverlayViews:")
@@ -136,6 +148,11 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * mapView:viewForAnnotation: provides the view for each annotation.
+     * This method may be called for all or some of the added annotations.
+     * For MapKit provided annotations (eg. MKUserLocation) return nil to use the MapKit provided annotation view.
+     */
     @Generated
     @IsOptional
     @Selector("mapView:viewForAnnotation:")
@@ -144,6 +161,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Prefer -mapView:rendererForOverlay:
+     */
     @Generated
     @IsOptional
     @Selector("mapView:viewForOverlay:")
@@ -200,6 +220,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Return nil for default MKClusterAnnotation, it is illegal to return a cluster annotation not containing the identical array of member annotations given.
+     */
     @Generated
     @IsOptional
     @Selector("mapView:clusterAnnotationForMemberAnnotations:")

@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Every controller element knows which collection it belongs to and whether its input value is analog or digital.
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -150,6 +153,10 @@ public class GCControllerElement extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Each element can be part of a wider collection of inputs that map to a single logical element. A directional pad (dpad)
+     * is a logical collection of two axis inputs and thus each axis belongs to the same collection element - the dpad.
+     */
     @Generated
     @Selector("collection")
     public native GCControllerElement collection();
@@ -158,55 +165,127 @@ public class GCControllerElement extends NSObject {
     @Selector("init")
     public native GCControllerElement init();
 
+    /**
+     * Check if the element can support more than just digital values, such as decimal ranges between 0 and 1.
+     * Defaults to YES for most elements.
+     */
     @Generated
     @Selector("isAnalog")
     public native boolean isAnalog();
 
+    /**
+     * A set of aliases that can be used to access this element with keyed subscript notation.
+     */
     @Generated
     @Selector("aliases")
     public native NSSet<String> aliases();
 
+    /**
+     * Check if the element is bound to a system gesture.
+     * Defaults to NO for most elements.
+     * 
+     * @see preferredSystemGestureState
+     * @see GCSystemGestureState
+     */
     @Generated
     @Selector("isBoundToSystemGesture")
     public native boolean isBoundToSystemGesture();
 
+    /**
+     * The element's localized name, taking input remapping into account.
+     * 
+     * @note In almost all instances, you should use this over unmappedLocalizedName in your UI.
+     */
     @Generated
     @Selector("localizedName")
     public native String localizedName();
 
+    /**
+     * The preferred system gesture state for this element.
+     * Defaults to GCSystemGestureStateEnabled for most elements
+     * 
+     * @note This is merely the preferred system gesture state - it is not guaranteed to be respected by the system.
+     * @note It is highly recommended to leave this set to the default value, however there may be situations (for example, game
+     * streaming apps) where it is preferrable to disable system gestures.
+     * @see boundToSystemGesture
+     */
     @Generated
     @Selector("preferredSystemGestureState")
     @NInt
     public native long preferredSystemGestureState();
 
+    /**
+     * The element's localized name, taking input remapping into account.
+     * 
+     * @note In almost all instances, you should use this over unmappedLocalizedName in your UI.
+     */
     @Generated
     @Selector("setLocalizedName:")
     public native void setLocalizedName(String value);
 
+    /**
+     * The preferred system gesture state for this element.
+     * Defaults to GCSystemGestureStateEnabled for most elements
+     * 
+     * @note This is merely the preferred system gesture state - it is not guaranteed to be respected by the system.
+     * @note It is highly recommended to leave this set to the default value, however there may be situations (for example, game
+     * streaming apps) where it is preferrable to disable system gestures.
+     * @see boundToSystemGesture
+     */
     @Generated
     @Selector("setPreferredSystemGestureState:")
     public native void setPreferredSystemGestureState(@NInt long value);
 
+    /**
+     * The element's SF Symbols name, taking input remapping into account.
+     * 
+     * @note In almost all instances, you should use this over unmappedSfSymbolsName in your UI.
+     */
     @Generated
     @Selector("setSfSymbolsName:")
     public native void setSfSymbolsName(String value);
 
+    /**
+     * The element's localized name, not taking any input remapping into account.
+     * 
+     * @note Use this in your games own remapping UI, or when you need to prompt a user that a given button has no mapping (localizedName is nil).
+     */
     @Generated
     @Selector("setUnmappedLocalizedName:")
     public native void setUnmappedLocalizedName(String value);
 
+    /**
+     * The element's SF Symbols name, not taking any input remapping into account.
+     * 
+     * @note Use this in your games own remapping UI, or when you need to prompt a user that a given button has no mapping (sfSymbolsName is nil).
+     */
     @Generated
     @Selector("setUnmappedSfSymbolsName:")
     public native void setUnmappedSfSymbolsName(String value);
 
+    /**
+     * The element's SF Symbols name, taking input remapping into account.
+     * 
+     * @note In almost all instances, you should use this over unmappedSfSymbolsName in your UI.
+     */
     @Generated
     @Selector("sfSymbolsName")
     public native String sfSymbolsName();
 
+    /**
+     * The element's localized name, not taking any input remapping into account.
+     * 
+     * @note Use this in your games own remapping UI, or when you need to prompt a user that a given button has no mapping (localizedName is nil).
+     */
     @Generated
     @Selector("unmappedLocalizedName")
     public native String unmappedLocalizedName();
 
+    /**
+     * The element's SF Symbols name, not taking any input remapping into account.
+     * 
+     * @note Use this in your games own remapping UI, or when you need to prompt a user that a given button has no mapping (sfSymbolsName is nil).
+     */
     @Generated
     @Selector("unmappedSfSymbolsName")
     public native String unmappedSfSymbolsName();

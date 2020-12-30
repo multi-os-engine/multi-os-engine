@@ -18,6 +18,9 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * The types of path elements returned by `CGPathApply'.
+ */
 @Generated
 public final class CGPathElementType {
     @Generated public static final int MoveToPoint = 0x00000000;

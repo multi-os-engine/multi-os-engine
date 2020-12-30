@@ -161,6 +161,11 @@ public class UIPresentationController extends NSObject
     @NInt
     public static native long version_static();
 
+    /**
+     * By default this implementation defers to the delegate, if one exists, or returns the current presentation style. UIFormSheetPresentationController, and
+     * UIPopoverPresentationController override this implementation to return UIModalPresentationStyleFullscreen if the delegate does not provide an
+     * implementation for adaptivePresentationStyleForPresentationController:
+     */
     @Generated
     @Selector("adaptivePresentationStyle")
     @NInt
@@ -171,6 +176,10 @@ public class UIPresentationController extends NSObject
     @NInt
     public native long adaptivePresentationStyleForTraitCollection(UITraitCollection traitCollection);
 
+    /**
+     * The view in which a presentation occurs. It is an ancestor of both the presenting and presented view controller's views.
+     * This view is being passed to the animation controller.
+     */
     @Generated
     @Selector("containerView")
     public native UIView containerView();
@@ -201,6 +210,10 @@ public class UIPresentationController extends NSObject
     @Selector("dismissalTransitionWillBegin")
     public native void dismissalTransitionWillBegin();
 
+    /**
+     * Position of the presented view in the container view by the end of the presentation transition.
+     * (Default: container view bounds)
+     */
     @Generated
     @Selector("frameOfPresentedViewInContainerView")
     @ByValue
@@ -215,6 +228,9 @@ public class UIPresentationController extends NSObject
     public native UIPresentationController initWithPresentedViewControllerPresentingViewController(
             UIViewController presentedViewController, UIViewController presentingViewController);
 
+    /**
+     * Modifies the trait collection for the presentation controller.
+     */
     @Generated
     @Selector("overrideTraitCollection")
     public native UITraitCollection overrideTraitCollection();
@@ -251,6 +267,11 @@ public class UIPresentationController extends NSObject
     @Selector("presentationTransitionWillBegin")
     public native void presentationTransitionWillBegin();
 
+    /**
+     * A view that's going to be animated during the presentation. Must be an ancestor of a presented view controller's view
+     * or a presented view controller's view itself.
+     * (Default: presented view controller's view)
+     */
     @Generated
     @Selector("presentedView")
     public native UIView presentedView();
@@ -283,14 +304,27 @@ public class UIPresentationController extends NSObject
     @Selector("setNeedsFocusUpdate")
     public native void setNeedsFocusUpdate();
 
+    /**
+     * Modifies the trait collection for the presentation controller.
+     */
     @Generated
     @Selector("setOverrideTraitCollection:")
     public native void setOverrideTraitCollection(UITraitCollection value);
 
+    /**
+     * By default each new presentation is full screen.
+     * This behavior can be overridden with the following method to force a current context presentation.
+     * (Default: YES)
+     */
     @Generated
     @Selector("shouldPresentInFullscreen")
     public native boolean shouldPresentInFullscreen();
 
+    /**
+     * Indicate whether the view controller's view we are transitioning from will be removed from the window in the end of the
+     * presentation transition
+     * (Default: NO)
+     */
     @Generated
     @Selector("shouldRemovePresentersView")
     public native boolean shouldRemovePresentersView();

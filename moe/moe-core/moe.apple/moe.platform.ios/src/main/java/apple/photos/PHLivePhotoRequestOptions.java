@@ -182,10 +182,16 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
     @Selector("setProgressHandler:")
     public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
 
+    /**
+     * version
+     */
     @Generated
     @Selector("setVersion:")
     public native void setVersion(@NInt long value);
 
+    /**
+     * version
+     */
     @Generated
     @Selector("version")
     @NInt

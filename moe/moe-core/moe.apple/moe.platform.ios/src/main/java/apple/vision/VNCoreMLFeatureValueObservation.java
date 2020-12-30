@@ -26,6 +26,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class VNCoreMLFeatureValueObservation
+ * @superclass VNObservation
+ * @brief VNCoreMLFeatureValueObservation returns the prediction of a model as an MLFeatureValue.
+ * @discussion This is the returned observations for models that are not classifiers and that do not return an image as a prediction. The confidence for these observations is always 1.0.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -84,6 +90,9 @@ public class VNCoreMLFeatureValueObservation extends VNObservation {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @brief The result VNCoreMLRequest where the model produces an MLFeatureValue that is neither a classification or image. Refer to the Core ML documentation and the model itself for the handling of the content of the featureValue.
+     */
     @Generated
     @Selector("featureValue")
     public native MLFeatureValue featureValue();
@@ -159,6 +168,9 @@ public class VNCoreMLFeatureValueObservation extends VNObservation {
     @NInt
     public static native long version_static();
 
+    /**
+     * @brief The name used in the model description of the CoreML model that produced this observation allowing to correlate the observation back to the output of the model.
+     */
     @Generated
     @Selector("featureName")
     public native String featureName();

@@ -397,18 +397,30 @@ public class UIDatePicker extends UIControl implements NSCoding {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * default is [NSCalendar currentCalendar]. setting nil returns to default
+     */
     @Generated
     @Selector("calendar")
     public native NSCalendar calendar();
 
+    /**
+     * for UIDatePickerModeCountDownTimer, ignored otherwise. default is 0.0. limit is 23:59 (86,399 seconds). value being set is div 60 (drops remaining seconds).
+     */
     @Generated
     @Selector("countDownDuration")
     public native double countDownDuration();
 
+    /**
+     * default is current date when picker created. Ignored in countdown timer mode. for that mode, picker starts at 0:00
+     */
     @Generated
     @Selector("date")
     public native NSDate date();
 
+    /**
+     * default is UIDatePickerModeDateAndTime
+     */
     @Generated
     @Selector("datePickerMode")
     @NInt
@@ -430,63 +442,108 @@ public class UIDatePicker extends UIControl implements NSCoding {
     @Selector("initWithFrame:")
     public native UIDatePicker initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * default is [NSLocale currentLocale]. setting nil returns to default
+     */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("maximumDate")
     public native NSDate maximumDate();
 
+    /**
+     * specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer mode
+     */
     @Generated
     @Selector("minimumDate")
     public native NSDate minimumDate();
 
+    /**
+     * display minutes wheel with interval. interval must be evenly divided into 60. default is 1. min is 1, max is 30
+     */
     @Generated
     @Selector("minuteInterval")
     @NInt
     public native long minuteInterval();
 
+    /**
+     * default is [NSCalendar currentCalendar]. setting nil returns to default
+     */
     @Generated
     @Selector("setCalendar:")
     public native void setCalendar(NSCalendar value);
 
+    /**
+     * for UIDatePickerModeCountDownTimer, ignored otherwise. default is 0.0. limit is 23:59 (86,399 seconds). value being set is div 60 (drops remaining seconds).
+     */
     @Generated
     @Selector("setCountDownDuration:")
     public native void setCountDownDuration(double value);
 
+    /**
+     * default is current date when picker created. Ignored in countdown timer mode. for that mode, picker starts at 0:00
+     */
     @Generated
     @Selector("setDate:")
     public native void setDate(NSDate value);
 
+    /**
+     * if animated is YES, animate the wheels of time to display the new date
+     */
     @Generated
     @Selector("setDate:animated:")
     public native void setDateAnimated(NSDate date, boolean animated);
 
+    /**
+     * default is UIDatePickerModeDateAndTime
+     */
     @Generated
     @Selector("setDatePickerMode:")
     public native void setDatePickerMode(@NInt long value);
 
+    /**
+     * default is [NSLocale currentLocale]. setting nil returns to default
+     */
     @Generated
     @Selector("setLocale:")
     public native void setLocale(NSLocale value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setMaximumDate:")
     public native void setMaximumDate(NSDate value);
 
+    /**
+     * specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer mode
+     */
     @Generated
     @Selector("setMinimumDate:")
     public native void setMinimumDate(NSDate value);
 
+    /**
+     * display minutes wheel with interval. interval must be evenly divided into 60. default is 1. min is 1, max is 30
+     */
     @Generated
     @Selector("setMinuteInterval:")
     public native void setMinuteInterval(@NInt long value);
 
+    /**
+     * default is nil. use current time zone or time zone from calendar
+     */
     @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone value);
 
+    /**
+     * default is nil. use current time zone or time zone from calendar
+     */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
@@ -497,16 +554,25 @@ public class UIDatePicker extends UIControl implements NSCoding {
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    /**
+     * The style that the date picker is using for its layout. This property always returns a concrete style (never automatic).
+     */
     @Generated
     @Selector("datePickerStyle")
     @NInt
     public native long datePickerStyle();
 
+    /**
+     * Request a style for the date picker. If the style changed, then the date picker may need to be resized and will generate a layout pass to display correctly.
+     */
     @Generated
     @Selector("preferredDatePickerStyle")
     @NInt
     public native long preferredDatePickerStyle();
 
+    /**
+     * Request a style for the date picker. If the style changed, then the date picker may need to be resized and will generate a layout pass to display correctly.
+     */
     @Generated
     @Selector("setPreferredDatePickerStyle:")
     public native void setPreferredDatePickerStyle(@NInt long value);

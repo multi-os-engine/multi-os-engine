@@ -370,6 +370,9 @@ public class UITextView extends UIScrollView
     @Selector("adjustsFontForContentSizeCategory")
     public native boolean adjustsFontForContentSizeCategory();
 
+    /**
+     * defaults to NO
+     */
     @Generated
     @Selector("allowsEditingTextAttributes")
     public native boolean allowsEditingTextAttributes();
@@ -471,6 +474,9 @@ public class UITextView extends UIScrollView
     public native UITextRange characterRangeByExtendingPositionInDirection(UITextPosition position,
             @NInt long direction);
 
+    /**
+     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field. changing the selection will automatically set this to NO.
+     */
     @Generated
     @Selector("clearsOnInsertion")
     public native boolean clearsOnInsertion();
@@ -557,6 +563,9 @@ public class UITextView extends UIScrollView
     @Selector("initWithFrame:")
     public native UITextView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Create a new text view with the specified text container (can be nil) - this is the new designated initializer for this class
+     */
     @Generated
     @Selector("initWithFrame:textContainer:")
     public native UITextView initWithFrameTextContainer(@ByValue CGRect frame, NSTextContainer textContainer);
@@ -570,6 +579,10 @@ public class UITextView extends UIScrollView
     @MappedReturn(ObjCObjectMapper.class)
     public native UITextInputDelegate inputDelegate();
 
+    /**
+     * Presented when object becomes first responder.  If set to nil, reverts to following responder chain.  If
+     * set while first responder, will not take effect until reloadInputViews is called.
+     */
     @Generated
     @Selector("inputView")
     public native UIView inputView();
@@ -607,10 +620,16 @@ public class UITextView extends UIScrollView
     @Selector("setSecureTextEntry:")
     public native void setSecureTextEntry(boolean value);
 
+    /**
+     * toggle selectability, which controls the ability of the user to select content and interact with URLs & attachments. On tvOS this also makes the text view focusable.
+     */
     @Generated
     @Selector("isSelectable")
     public native boolean isSelectable();
 
+    /**
+     * toggle selectability, which controls the ability of the user to select content and interact with URLs & attachments. On tvOS this also makes the text view focusable.
+     */
     @Generated
     @Selector("setSelectable:")
     public native void setSelectable(boolean value);
@@ -627,10 +646,16 @@ public class UITextView extends UIScrollView
     @NInt
     public native long keyboardType();
 
+    /**
+     * Convenience accessors (access through the text container)
+     */
     @Generated
     @Selector("layoutManager")
     public native NSLayoutManager layoutManager();
 
+    /**
+     * Style for links
+     */
     @Generated
     @Selector("linkTextAttributes")
     public native NSDictionary<String, ?> linkTextAttributes();
@@ -709,6 +734,9 @@ public class UITextView extends UIScrollView
     @Selector("setAdjustsFontForContentSizeCategory:")
     public native void setAdjustsFontForContentSizeCategory(boolean value);
 
+    /**
+     * defaults to NO
+     */
     @Generated
     @Selector("setAllowsEditingTextAttributes:")
     public native void setAllowsEditingTextAttributes(boolean value);
@@ -731,6 +759,9 @@ public class UITextView extends UIScrollView
     @Selector("setBaseWritingDirection:forRange:")
     public native void setBaseWritingDirectionForRange(@NInt long writingDirection, UITextRange range);
 
+    /**
+     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field. changing the selection will automatically set this to NO.
+     */
     @Generated
     @Selector("setClearsOnInsertion:")
     public native void setClearsOnInsertion(boolean value);
@@ -784,6 +815,10 @@ public class UITextView extends UIScrollView
         }
     }
 
+    /**
+     * Presented when object becomes first responder.  If set to nil, reverts to following responder chain.  If
+     * set while first responder, will not take effect until reloadInputViews is called.
+     */
     @Generated
     @Selector("setInputView:")
     public native void setInputView(UIView value);
@@ -798,6 +833,9 @@ public class UITextView extends UIScrollView
     @Selector("setKeyboardType:")
     public native void setKeyboardType(@NInt long value);
 
+    /**
+     * Style for links
+     */
     @Generated
     @Selector("setLinkTextAttributes:")
     public native void setLinkTextAttributes(NSDictionary<String, ?> value);
@@ -837,6 +875,9 @@ public class UITextView extends UIScrollView
     @Selector("setText:")
     public native void setText(String value);
 
+    /**
+     * default is NSLeftTextAlignment
+     */
     @Generated
     @Selector("setTextAlignment:")
     public native void setTextAlignment(@NInt long value);
@@ -845,6 +886,9 @@ public class UITextView extends UIScrollView
     @Selector("setTextColor:")
     public native void setTextColor(UIColor value);
 
+    /**
+     * Inset the text container's layout area within the text view's content area
+     */
     @Generated
     @Selector("setTextContainerInset:")
     public native void setTextContainerInset(@ByValue UIEdgeInsets value);
@@ -854,6 +898,9 @@ public class UITextView extends UIScrollView
     @Selector("setTextContentType:")
     public native void setTextContentType(String value);
 
+    /**
+     * automatically resets when the selection changes
+     */
     @Generated
     @Selector("setTypingAttributes:")
     public native void setTypingAttributes(NSDictionary<String, ?> value);
@@ -873,6 +920,9 @@ public class UITextView extends UIScrollView
     @Selector("text")
     public native String text();
 
+    /**
+     * default is NSLeftTextAlignment
+     */
     @Generated
     @Selector("textAlignment")
     @NInt
@@ -882,10 +932,16 @@ public class UITextView extends UIScrollView
     @Selector("textColor")
     public native UIColor textColor();
 
+    /**
+     * Get the text container for the text view
+     */
     @Generated
     @Selector("textContainer")
     public native NSTextContainer textContainer();
 
+    /**
+     * Inset the text container's layout area within the text view's content area
+     */
     @Generated
     @Selector("textContainerInset")
     @ByValue
@@ -924,6 +980,9 @@ public class UITextView extends UIScrollView
     @MappedReturn(ObjCObjectMapper.class)
     public native UITextInputTokenizer tokenizer();
 
+    /**
+     * automatically resets when the selection changes
+     */
     @Generated
     @Selector("typingAttributes")
     public native NSDictionary<String, ?> typingAttributes();
@@ -1113,10 +1172,16 @@ public class UITextView extends UIScrollView
     @Selector("setPasswordRules:")
     public native void setPasswordRules(UITextInputPasswordRules value);
 
+    /**
+     * When turned on, this changes the rendering scale of the text to match the standard text scaling and preserves the original font point sizes when the contents of the text view are copied to the pasteboard.  Apps that show a lot of text content, such as a text viewer or editor, should turn this on and use the standard text scaling.
+     */
     @Generated
     @Selector("setUsesStandardTextScaling:")
     public native void setUsesStandardTextScaling(boolean value);
 
+    /**
+     * When turned on, this changes the rendering scale of the text to match the standard text scaling and preserves the original font point sizes when the contents of the text view are copied to the pasteboard.  Apps that show a lot of text content, such as a text viewer or editor, should turn this on and use the standard text scaling.
+     */
     @Generated
     @Selector("usesStandardTextScaling")
     public native boolean usesStandardTextScaling();

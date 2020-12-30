@@ -37,6 +37,9 @@ public final class Contacts {
     private Contacts() {
     }
 
+    /**
+     * Generic labels
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -52,21 +55,33 @@ public final class Contacts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNLabelOther();
 
+    /**
+     * Additional email labels
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNLabelEmailiCloud();
 
+    /**
+     * URL address labels
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNLabelURLAddressHomePage();
 
+    /**
+     * Date labels
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNLabelDateAnniversary();
 
+    /**
+     * Phone number labels
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -102,6 +117,9 @@ public final class Contacts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNLabelPhoneNumberPager();
 
+    /**
+     * Properties that are always fetched. Can be used with key value coding and observing.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -177,6 +195,9 @@ public final class Contacts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNLabelContactRelationPartner();
 
+    /**
+     * Contact relation labels
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -187,6 +208,9 @@ public final class Contacts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNLabelContactRelationManager();
 
+    /**
+     * Properties that are always fetched. Can be used with key value coding and observing.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -207,6 +231,9 @@ public final class Contacts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNSocialProfileServiceKey();
 
+    /**
+     * Social profile services.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -252,6 +279,9 @@ public final class Contacts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNSocialProfileServiceGameCenter();
 
+    /**
+     * Properties that are always fetched. Can be used with key value coding and observing.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -262,6 +292,9 @@ public final class Contacts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNInstantMessageAddressServiceKey();
 
+    /**
+     * Instant message services.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -317,11 +350,17 @@ public final class Contacts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNContactPropertyNotFetchedExceptionName();
 
+    /**
+     * Properties that are always fetched. Can be used with key value coding and observing.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNContactIdentifierKey();
 
+    /**
+     * Optional properties that can be fetched. Can be used with key value coding and observing.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -467,11 +506,17 @@ public final class Contacts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNContactInstantMessageAddressesKey();
 
+    /**
+     * @abstract Notification posted when changes occur in another CNContactStore.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNContactStoreDidChangeNotification();
 
+    /**
+     * Properties that are always fetched. Can be used with key value coding and observing.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -482,6 +527,9 @@ public final class Contacts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNGroupNameKey();
 
+    /**
+     * Properties that are always fetched. Can be used with key value coding and observing.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -497,16 +545,25 @@ public final class Contacts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNContainerTypeKey();
 
+    /**
+     * Attribute key whose value is a CNContact name component property key.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNContactPropertyAttribute();
 
+    /**
+     * Attribute key whose value is a CNPostalAddress property key.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNPostalAddressPropertyAttribute();
 
+    /**
+     * Attribute key whose value is a localized version of the CNPostalAddress property key.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -517,21 +574,33 @@ public final class Contacts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNErrorDomain();
 
+    /**
+     * When available an array of one or more CNContact, CNGroup, CNContainer, CNSaveRequest, or CNFetchRequest objects for which the error code applies.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNErrorUserInfoAffectedRecordsKey();
 
+    /**
+     * When available an array of one or more NSString objects for which the error code applies.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNErrorUserInfoAffectedRecordIdentifiersKey();
 
+    /**
+     * An array of NSErrors for CNErrorCodeValidationMultipleErrors.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNErrorUserInfoValidationErrorsKey();
 
+    /**
+     * An array of key paths associated with a given error. For validation errors this will contain key paths to specific object properties.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1512,6 +1581,9 @@ public final class Contacts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNLabelContactRelationStepsister();
 
+    /**
+     * Additional international labels consisting of conjunctions of English terms:
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

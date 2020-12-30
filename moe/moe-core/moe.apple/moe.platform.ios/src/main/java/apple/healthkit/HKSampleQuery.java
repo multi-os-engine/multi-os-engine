@@ -46,6 +46,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKSampleQuery
+ * @abstract      A concrete subclass of HKQuery that provides an interface to retrieve HKSample objects.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -261,17 +265,35 @@ public class HKSampleQuery extends HKQuery {
     @Selector("init")
     public native HKSampleQuery init();
 
+    /**
+     * @method        initWithSampleType:predicate:limit:sortDescriptors:resultsHandler:
+     * @abstract      Returns a query that will retrieve HKSamples matching the given predicate.
+     * 
+     * @param         sampleType      The type of sample to retrieve.
+     * @param         predicate       The predicate which samples should match.
+     * @param         limit           The maximum number of samples to return.  Pass HKObjectQueryNoLimit for no limit.
+     * @param         sortDescriptors The sort descriptors to use to order the resulting samples.
+     * @param         resultsHandler  The block to invoke with results when the query has finished executing.
+     */
     @Generated
     @Selector("initWithSampleType:predicate:limit:sortDescriptors:resultsHandler:")
     public native HKSampleQuery initWithSampleTypePredicateLimitSortDescriptorsResultsHandler(HKSampleType sampleType,
             NSPredicate predicate, @NUInt long limit, NSArray<? extends NSSortDescriptor> sortDescriptors,
             @ObjCBlock(name = "call_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler") Block_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler resultsHandler);
 
+    /**
+     * @property      limit
+     * @abstract      The maximum number of results the receiver will return upon completion.
+     */
     @Generated
     @Selector("limit")
     @NUInt
     public native long limit();
 
+    /**
+     * @property      sortDescriptors
+     * @abstract      An array of NSSortDescriptors.
+     */
     @Generated
     @Selector("sortDescriptors")
     public native NSArray<? extends NSSortDescriptor> sortDescriptors();

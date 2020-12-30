@@ -22,12 +22,33 @@ import org.moe.natj.general.ann.NUInt;
 @Generated
 public final class UIViewKeyframeAnimationOptions {
     @Generated @NUInt public static final long LayoutSubviews = 0x0000000000000001L;
+    /**
+     * turn on user interaction while animating
+     */
     @Generated @NUInt public static final long AllowUserInteraction = 0x0000000000000002L;
+    /**
+     * start all views from current value, not initial value
+     */
     @Generated @NUInt public static final long BeginFromCurrentState = 0x0000000000000004L;
+    /**
+     * repeat animation indefinitely
+     */
     @Generated @NUInt public static final long Repeat = 0x0000000000000008L;
+    /**
+     * if repeat, run animation back and forth
+     */
     @Generated @NUInt public static final long Autoreverse = 0x0000000000000010L;
+    /**
+     * ignore nested duration
+     */
     @Generated @NUInt public static final long OverrideInheritedDuration = 0x0000000000000020L;
+    /**
+     * do not inherit any options or animation type
+     */
     @Generated @NUInt public static final long OverrideInheritedOptions = 0x0000000000000200L;
+    /**
+     * default
+     */
     @Generated @NUInt public static final long CalculationModeLinear = 0x0000000000000000L;
     @Generated @NUInt public static final long CalculationModeDiscrete = 0x0000000000000400L;
     @Generated @NUInt public static final long CalculationModePaced = 0x0000000000000800L;

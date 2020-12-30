@@ -3,6 +3,9 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @brief Describes the types of resources that the a barrier operates on
+ */
 @Generated
 public final class MTLBarrierScope {
     @Generated

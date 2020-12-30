@@ -135,6 +135,9 @@ public class UITargetedDragPreview extends UITargetedPreview {
     @Selector("previewForURL:target:")
     public static native UITargetedDragPreview previewForURLTarget(NSURL url, UIDragPreviewTarget target);
 
+    /**
+     * If the title is nil or empty, this is the same as `previewForURL:target:`.
+     */
     @Generated
     @Selector("previewForURL:title:target:")
     public static native UITargetedDragPreview previewForURLTitleTarget(NSURL url, String title,
@@ -148,6 +151,14 @@ public class UITargetedDragPreview extends UITargetedPreview {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Returns a preview with the same view and parameters, but a new target.
+     * 
+     * You might call this in a UIDropInteractionDelegate in
+     * -dropInteraction:previewForDroppingItem:withDefault:, or in
+     * a UIDropInteractionDelegate in -dropInteraction:previewForCancellingItem:withDefault:,
+     * to direct the default UITargetedDragPreview to a different target.
+     */
     @Generated
     @Selector("retargetedPreviewWithTarget:")
     public native UITargetedDragPreview retargetedPreviewWithTarget(UIDragPreviewTarget newTarget);

@@ -131,6 +131,9 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * comparisonType is MPMediaPredicateComparisonEqualTo
+     */
     @Generated
     @Selector("predicateWithValue:forProperty:")
     public static native MPMediaPropertyPredicate predicateWithValueForProperty(

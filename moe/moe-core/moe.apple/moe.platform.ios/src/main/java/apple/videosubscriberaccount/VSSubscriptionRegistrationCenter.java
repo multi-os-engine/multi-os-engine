@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * VSSubscriptionRegistrationCenter stores subscription information.
+ */
 @Generated
 @Library("VideoSubscriberAccount")
 @Runtime(ObjCRuntime.class)
@@ -77,6 +80,10 @@ public class VSSubscriptionRegistrationCenter extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Use the default subscription registration center to tell the system about
+     * the customer's ability to access content within your app.
+     */
     @Generated
     @Selector("defaultSubscriptionRegistrationCenter")
     public static native VSSubscriptionRegistrationCenter defaultSubscriptionRegistrationCenter();
@@ -129,6 +136,22 @@ public class VSSubscriptionRegistrationCenter extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Provide a subscription when the subscriber first authenticates, and when the
+     * subscription changes.
+     * 
+     * When the subscriber signs out or otherwise loses access to subscription
+     * content, invoke this method with nil.
+     * 
+     * You might also want to call this method opportunistically, if you happen to
+     * have just confirmed the validity of the subscription, or in response to app
+     * lifecycle events, e.g. when your app becomes active.  The system may use
+     * this activity as a hint that the user is actively using the subscription.
+     * 
+     * It is an error to provide a current subscription with an unknown access
+     * level; you should not provide a subscription if the user only has access to
+     * content that is offered for free without any account requirements.
+     */
     @Generated
     @Selector("setCurrentSubscription:")
     public native void setCurrentSubscription(VSSubscription currentSubscription);

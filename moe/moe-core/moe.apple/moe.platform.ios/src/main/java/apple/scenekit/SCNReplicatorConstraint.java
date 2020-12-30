@@ -28,6 +28,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNReplicatorConstraint
+ * @abstract A SCNReplicatorConstraint replicates the position/orientation/scale of a target node
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -126,28 +130,52 @@ public class SCNReplicatorConstraint extends SCNConstraint {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property orientationOffset
+     * @abstract Defines an addition orientation offset. Defaults to no offset. Animatable.
+     */
     @Generated
     @Selector("orientationOffset")
     @ByValue
     public native SCNVector4 orientationOffset();
 
+    /**
+     * @property positionOffset
+     * @abstract Defines an addition orientation offset. Defaults to no offset. Animatable.
+     */
     @Generated
     @Selector("positionOffset")
     @ByValue
     public native SCNVector3 positionOffset();
 
+    /**
+     * @property replicatesOrientation
+     * @abstract Defines whether or not the constraint should replicate the target orientation. Defaults to YES.
+     */
     @Generated
     @Selector("replicatesOrientation")
     public native boolean replicatesOrientation();
 
+    /**
+     * @property replicatesPosition
+     * @abstract Defines whether or not the constraint should replicate the target position. Defaults to YES.
+     */
     @Generated
     @Selector("replicatesPosition")
     public native boolean replicatesPosition();
 
+    /**
+     * @property replicatesScale
+     * @abstract Defines whether or not the constraint should replicate the target scale. Defaults to YES.
+     */
     @Generated
     @Selector("replicatesScale")
     public native boolean replicatesScale();
 
+    /**
+     * @method replicatorWithTargetNode
+     * @abstract Creates and returns a SCNReplicatorConstraint constraint.
+     */
     @Generated
     @Selector("replicatorConstraintWithTarget:")
     public static native SCNReplicatorConstraint replicatorConstraintWithTarget(SCNNode target);
@@ -160,35 +188,67 @@ public class SCNReplicatorConstraint extends SCNConstraint {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property scaleOffset
+     * @abstract Defines an addition scale offset. Defaults to no offset. Animatable.
+     */
     @Generated
     @Selector("scaleOffset")
     @ByValue
     public native SCNVector3 scaleOffset();
 
+    /**
+     * @property orientationOffset
+     * @abstract Defines an addition orientation offset. Defaults to no offset. Animatable.
+     */
     @Generated
     @Selector("setOrientationOffset:")
     public native void setOrientationOffset(@ByValue SCNVector4 value);
 
+    /**
+     * @property positionOffset
+     * @abstract Defines an addition orientation offset. Defaults to no offset. Animatable.
+     */
     @Generated
     @Selector("setPositionOffset:")
     public native void setPositionOffset(@ByValue SCNVector3 value);
 
+    /**
+     * @property replicatesOrientation
+     * @abstract Defines whether or not the constraint should replicate the target orientation. Defaults to YES.
+     */
     @Generated
     @Selector("setReplicatesOrientation:")
     public native void setReplicatesOrientation(boolean value);
 
+    /**
+     * @property replicatesPosition
+     * @abstract Defines whether or not the constraint should replicate the target position. Defaults to YES.
+     */
     @Generated
     @Selector("setReplicatesPosition:")
     public native void setReplicatesPosition(boolean value);
 
+    /**
+     * @property replicatesScale
+     * @abstract Defines whether or not the constraint should replicate the target scale. Defaults to YES.
+     */
     @Generated
     @Selector("setReplicatesScale:")
     public native void setReplicatesScale(boolean value);
 
+    /**
+     * @property scaleOffset
+     * @abstract Defines an addition scale offset. Defaults to no offset. Animatable.
+     */
     @Generated
     @Selector("setScaleOffset:")
     public native void setScaleOffset(@ByValue SCNVector3 value);
 
+    /**
+     * @property target
+     * @abstract Defines the target node to replicate
+     */
     @Generated
     @Selector("setTarget:")
     public native void setTarget(SCNNode value);
@@ -211,6 +271,10 @@ public class SCNReplicatorConstraint extends SCNConstraint {
         return supportsSecureCoding();
     }
 
+    /**
+     * @property target
+     * @abstract Defines the target node to replicate
+     */
     @Generated
     @Selector("target")
     public native SCNNode target();

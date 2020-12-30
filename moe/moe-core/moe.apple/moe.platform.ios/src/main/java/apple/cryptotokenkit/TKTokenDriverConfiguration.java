@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Holds configuration of one class of tokens
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -42,6 +45,9 @@ public class TKTokenDriverConfiguration extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Creates new configuration object for token with specified instanceID and adds it into tokenConfigurations dictionary. If configuration with specified instanceID already exists, it is replaced with new empty configuration.
+     */
     @Generated
     @Selector("addTokenConfigurationForTokenInstanceID:")
     public native TKTokenConfiguration addTokenConfigurationForTokenInstanceID(String instanceID);
@@ -78,6 +84,9 @@ public class TKTokenDriverConfiguration extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * ClassID of the token configuration. ClassID is taken from @p com.apple.ctk.class-id token extension attribute.
+     */
     @Generated
     @Selector("classID")
     public native String classID();
@@ -90,6 +99,11 @@ public class TKTokenDriverConfiguration extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Contains dictionary of token class configurations keyed by TKTokenDriverClassID of token driver.
+     * 
+     * Hosting application of token extension will contain the list of configurations for hosted token extensions. All other callers will get an empty array. This means that only token's hosting application can actually modify token's configuration. Typically, hosting application will contain only one token extension, therefore this dictionary will have one element.
+     */
     @Generated
     @Selector("driverConfigurations")
     public static native NSDictionary<String, ? extends TKTokenDriverConfiguration> driverConfigurations();
@@ -130,6 +144,9 @@ public class TKTokenDriverConfiguration extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Removes configuration with specified tokenID. Does nothing if no such token configuration exists.
+     */
     @Generated
     @Selector("removeTokenConfigurationForTokenInstanceID:")
     public native void removeTokenConfigurationForTokenInstanceID(String instanceID);
@@ -150,6 +167,9 @@ public class TKTokenDriverConfiguration extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Dictionary of all currently configured tokens for this token class, keyed by instanceID.
+     */
     @Generated
     @Selector("tokenConfigurations")
     public native NSDictionary<String, ? extends TKTokenConfiguration> tokenConfigurations();

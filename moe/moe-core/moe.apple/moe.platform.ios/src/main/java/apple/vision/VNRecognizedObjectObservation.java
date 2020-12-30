@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class VNRecognizedObjectObservation
+ * @superclass VNDetectedObjectObservation
+ * @brief VNRecognizedObjectObservation is a VNDetectedObjectObservation with an array of classifications that classify the recognized object. The confidence of the classifications sum up to 1.0. It is common practice to multiply the classification confidence with the confidence of this observation.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)

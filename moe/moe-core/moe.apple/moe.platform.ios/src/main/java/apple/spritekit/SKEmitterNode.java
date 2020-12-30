@@ -52,6 +52,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An emitter of particle sprites.
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -189,24 +192,41 @@ public class SKEmitterNode extends SKNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * The particle simulation is stepped automatically each frame when present in the scene. This allows the user to manually advance the simulation by a fixed amount of time. Useful for pre-populating particles before adding them to the scene.
+     */
     @Generated
     @Selector("advanceSimulationTime:")
     public native void advanceSimulationTime(double sec);
 
+    /**
+     * Optional dictionary of SKAttributeValues
+     * Attributes can be used with custom SKShaders.
+     */
     @Generated
     @Selector("attributeValues")
     public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
 
+    /**
+     * The angle at which to emit each new particle, in radians. Defaults to 0.0.
+     */
     @Generated
     @Selector("emissionAngle")
     @NFloat
     public native double emissionAngle();
 
+    /**
+     * The random variance about the angle at which to emit each new particle, in radians. Defaults to 0.0.
+     */
     @Generated
     @Selector("emissionAngleRange")
     @NFloat
     public native double emissionAngleRange();
 
+    /**
+     * Defines what logical 'categories' of fields this particles emitted respond to. Defaults to all bits set (all categories).
+     * Can be forced off via affectedByGravity.
+     */
     @Generated
     @Selector("fieldBitMask")
     public native int fieldBitMask();
@@ -219,20 +239,32 @@ public class SKEmitterNode extends SKNode {
     @Selector("initWithCoder:")
     public native SKEmitterNode initWithCoder(NSCoder aDecoder);
 
+    /**
+     * The number of particles that will be emitted. If set to 0, there is no limit. Defaults to 0.
+     */
     @Generated
     @Selector("numParticlesToEmit")
     @NUInt
     public native long numParticlesToEmit();
 
+    /**
+     * Specifies an action executed by new particles.
+     */
     @Generated
     @Selector("particleAction")
     public native SKAction particleAction();
 
+    /**
+     * The starting alpha for each particle. Defaults to 1.0.
+     */
     @Generated
     @Selector("particleAlpha")
     @NFloat
     public native double particleAlpha();
 
+    /**
+     * The random variance about the starting alpha for each particle. Defaults to 1.0.
+     */
     @Generated
     @Selector("particleAlphaRange")
     @NFloat
@@ -242,21 +274,33 @@ public class SKEmitterNode extends SKNode {
     @Selector("particleAlphaSequence")
     public native SKKeyframeSequence particleAlphaSequence();
 
+    /**
+     * The rate at which to modify the alpha for each particle. Defaults to 1.0.
+     */
     @Generated
     @Selector("particleAlphaSpeed")
     @NFloat
     public native double particleAlphaSpeed();
 
+    /**
+     * The rate at which new particles are generated, in particles per second. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleBirthRate")
     @NFloat
     public native double particleBirthRate();
 
+    /**
+     * The blend mode for each particle. Defaults to SKBlendModeAlpha.
+     */
     @Generated
     @Selector("particleBlendMode")
     @NInt
     public native long particleBlendMode();
 
+    /**
+     * The starting color for each particle. Defaults to clear.
+     */
     @Generated
     @Selector("particleColor")
     public native UIColor particleColor();
@@ -271,11 +315,17 @@ public class SKEmitterNode extends SKNode {
     @NFloat
     public native double particleColorAlphaSpeed();
 
+    /**
+     * The starting color blend for each particle. Behaves the same as SKSpriteNode. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleColorBlendFactor")
     @NFloat
     public native double particleColorBlendFactor();
 
+    /**
+     * The random variance about the starting color blend for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleColorBlendFactorRange")
     @NFloat
@@ -285,6 +335,9 @@ public class SKEmitterNode extends SKNode {
     @Selector("particleColorBlendFactorSequence")
     public native SKKeyframeSequence particleColorBlendFactorSequence();
 
+    /**
+     * The rate at which to modify the color blend for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleColorBlendFactorSpeed")
     @NFloat
@@ -310,11 +363,17 @@ public class SKEmitterNode extends SKNode {
     @NFloat
     public native double particleColorGreenSpeed();
 
+    /**
+     * The random variance about each color component for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleColorRedRange")
     @NFloat
     public native double particleColorRedRange();
 
+    /**
+     * The rate at which to modify each color component for each particle (per second).
+     */
     @Generated
     @Selector("particleColorRedSpeed")
     @NFloat
@@ -324,51 +383,81 @@ public class SKEmitterNode extends SKNode {
     @Selector("particleColorSequence")
     public native SKKeyframeSequence particleColorSequence();
 
+    /**
+     * The lifetime of each particle, in seconds. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleLifetime")
     @NFloat
     public native double particleLifetime();
 
+    /**
+     * The random variance about the lifetime of each particle, in seconds. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleLifetimeRange")
     @NFloat
     public native double particleLifetimeRange();
 
+    /**
+     * The starting position for each particle in the emitter's coordinate space. Defaults to (0.0, 0,0).
+     */
     @Generated
     @Selector("particlePosition")
     @ByValue
     public native CGPoint particlePosition();
 
+    /**
+     * The random variance about the starting position for each particle in the emitter's coordinate space. Defaults to (0.0, 0,0).
+     */
     @Generated
     @Selector("particlePositionRange")
     @ByValue
     public native CGVector particlePositionRange();
 
+    /**
+     * The order in which particles will be rendered. Defaults to SKParticleRenderOrderOldestLast.
+     */
     @Generated
     @Selector("particleRenderOrder")
     @NUInt
     public native long particleRenderOrder();
 
+    /**
+     * The starting z-rotation for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleRotation")
     @NFloat
     public native double particleRotation();
 
+    /**
+     * The random variance about the starting z-rotation for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleRotationRange")
     @NFloat
     public native double particleRotationRange();
 
+    /**
+     * The rate at which to modify the z-rotation for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleRotationSpeed")
     @NFloat
     public native double particleRotationSpeed();
 
+    /**
+     * The starting scale for each particle. Defaults to 1.0.
+     */
     @Generated
     @Selector("particleScale")
     @NFloat
     public native double particleScale();
 
+    /**
+     * The random variance about the starting scale for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleScaleRange")
     @NFloat
@@ -378,79 +467,132 @@ public class SKEmitterNode extends SKNode {
     @Selector("particleScaleSequence")
     public native SKKeyframeSequence particleScaleSequence();
 
+    /**
+     * The rate at which to modify the scale for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleScaleSpeed")
     @NFloat
     public native double particleScaleSpeed();
 
+    /**
+     * The starting size for each particle. If set to CGSizeZero (the default) the particles will start at the size of the texture assigned to particleTexture. Note that particleScale and particleScaleRange will also have an effect on the effective size of each new particle.
+     */
     @Generated
     @Selector("particleSize")
     @ByValue
     public native CGSize particleSize();
 
+    /**
+     * The starting speed for each particle along its emission vector. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleSpeed")
     @NFloat
     public native double particleSpeed();
 
+    /**
+     * The random variance about the starting speed for each particle along its emission vector. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleSpeedRange")
     @NFloat
     public native double particleSpeedRange();
 
+    /**
+     * The texture to be used for the particles.
+     */
     @Generated
     @Selector("particleTexture")
     public native SKTexture particleTexture();
 
+    /**
+     * The starting z-position for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("particleZPosition")
     @NFloat
     public native double particleZPosition();
 
+    /**
+     * The random variance about the starting z-position for each particle. Defaults to 0.0.
+     */
     @Generated
     @Deprecated
     @Selector("particleZPositionRange")
     @NFloat
     public native double particleZPositionRange();
 
+    /**
+     * The rate at which to modify the z-position for each particle. Defaults to 0.0.
+     */
     @Generated
     @Deprecated
     @Selector("particleZPositionSpeed")
     @NFloat
     public native double particleZPositionSpeed();
 
+    /**
+     * Removes all particles and restarts the emitter
+     */
     @Generated
     @Selector("resetSimulation")
     public native void resetSimulation();
 
+    /**
+     * Optional dictionary of SKAttributeValues
+     * Attributes can be used with custom SKShaders.
+     */
     @Generated
     @Selector("setAttributeValues:")
     public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
 
+    /**
+     * The angle at which to emit each new particle, in radians. Defaults to 0.0.
+     */
     @Generated
     @Selector("setEmissionAngle:")
     public native void setEmissionAngle(@NFloat double value);
 
+    /**
+     * The random variance about the angle at which to emit each new particle, in radians. Defaults to 0.0.
+     */
     @Generated
     @Selector("setEmissionAngleRange:")
     public native void setEmissionAngleRange(@NFloat double value);
 
+    /**
+     * Defines what logical 'categories' of fields this particles emitted respond to. Defaults to all bits set (all categories).
+     * Can be forced off via affectedByGravity.
+     */
     @Generated
     @Selector("setFieldBitMask:")
     public native void setFieldBitMask(int value);
 
+    /**
+     * The number of particles that will be emitted. If set to 0, there is no limit. Defaults to 0.
+     */
     @Generated
     @Selector("setNumParticlesToEmit:")
     public native void setNumParticlesToEmit(@NUInt long value);
 
+    /**
+     * Specifies an action executed by new particles.
+     */
     @Generated
     @Selector("setParticleAction:")
     public native void setParticleAction(SKAction value);
 
+    /**
+     * The starting alpha for each particle. Defaults to 1.0.
+     */
     @Generated
     @Selector("setParticleAlpha:")
     public native void setParticleAlpha(@NFloat double value);
 
+    /**
+     * The random variance about the starting alpha for each particle. Defaults to 1.0.
+     */
     @Generated
     @Selector("setParticleAlphaRange:")
     public native void setParticleAlphaRange(@NFloat double value);
@@ -459,18 +601,30 @@ public class SKEmitterNode extends SKNode {
     @Selector("setParticleAlphaSequence:")
     public native void setParticleAlphaSequence(SKKeyframeSequence value);
 
+    /**
+     * The rate at which to modify the alpha for each particle. Defaults to 1.0.
+     */
     @Generated
     @Selector("setParticleAlphaSpeed:")
     public native void setParticleAlphaSpeed(@NFloat double value);
 
+    /**
+     * The rate at which new particles are generated, in particles per second. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleBirthRate:")
     public native void setParticleBirthRate(@NFloat double value);
 
+    /**
+     * The blend mode for each particle. Defaults to SKBlendModeAlpha.
+     */
     @Generated
     @Selector("setParticleBlendMode:")
     public native void setParticleBlendMode(@NInt long value);
 
+    /**
+     * The starting color for each particle. Defaults to clear.
+     */
     @Generated
     @Selector("setParticleColor:")
     public native void setParticleColor(UIColor value);
@@ -483,10 +637,16 @@ public class SKEmitterNode extends SKNode {
     @Selector("setParticleColorAlphaSpeed:")
     public native void setParticleColorAlphaSpeed(@NFloat double value);
 
+    /**
+     * The starting color blend for each particle. Behaves the same as SKSpriteNode. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleColorBlendFactor:")
     public native void setParticleColorBlendFactor(@NFloat double value);
 
+    /**
+     * The random variance about the starting color blend for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleColorBlendFactorRange:")
     public native void setParticleColorBlendFactorRange(@NFloat double value);
@@ -495,6 +655,9 @@ public class SKEmitterNode extends SKNode {
     @Selector("setParticleColorBlendFactorSequence:")
     public native void setParticleColorBlendFactorSequence(SKKeyframeSequence value);
 
+    /**
+     * The rate at which to modify the color blend for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleColorBlendFactorSpeed:")
     public native void setParticleColorBlendFactorSpeed(@NFloat double value);
@@ -515,10 +678,16 @@ public class SKEmitterNode extends SKNode {
     @Selector("setParticleColorGreenSpeed:")
     public native void setParticleColorGreenSpeed(@NFloat double value);
 
+    /**
+     * The random variance about each color component for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleColorRedRange:")
     public native void setParticleColorRedRange(@NFloat double value);
 
+    /**
+     * The rate at which to modify each color component for each particle (per second).
+     */
     @Generated
     @Selector("setParticleColorRedSpeed:")
     public native void setParticleColorRedSpeed(@NFloat double value);
@@ -527,42 +696,72 @@ public class SKEmitterNode extends SKNode {
     @Selector("setParticleColorSequence:")
     public native void setParticleColorSequence(SKKeyframeSequence value);
 
+    /**
+     * The lifetime of each particle, in seconds. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleLifetime:")
     public native void setParticleLifetime(@NFloat double value);
 
+    /**
+     * The random variance about the lifetime of each particle, in seconds. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleLifetimeRange:")
     public native void setParticleLifetimeRange(@NFloat double value);
 
+    /**
+     * The starting position for each particle in the emitter's coordinate space. Defaults to (0.0, 0,0).
+     */
     @Generated
     @Selector("setParticlePosition:")
     public native void setParticlePosition(@ByValue CGPoint value);
 
+    /**
+     * The random variance about the starting position for each particle in the emitter's coordinate space. Defaults to (0.0, 0,0).
+     */
     @Generated
     @Selector("setParticlePositionRange:")
     public native void setParticlePositionRange(@ByValue CGVector value);
 
+    /**
+     * The order in which particles will be rendered. Defaults to SKParticleRenderOrderOldestLast.
+     */
     @Generated
     @Selector("setParticleRenderOrder:")
     public native void setParticleRenderOrder(@NUInt long value);
 
+    /**
+     * The starting z-rotation for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleRotation:")
     public native void setParticleRotation(@NFloat double value);
 
+    /**
+     * The random variance about the starting z-rotation for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleRotationRange:")
     public native void setParticleRotationRange(@NFloat double value);
 
+    /**
+     * The rate at which to modify the z-rotation for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleRotationSpeed:")
     public native void setParticleRotationSpeed(@NFloat double value);
 
+    /**
+     * The starting scale for each particle. Defaults to 1.0.
+     */
     @Generated
     @Selector("setParticleScale:")
     public native void setParticleScale(@NFloat double value);
 
+    /**
+     * The random variance about the starting scale for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleScaleRange:")
     public native void setParticleScaleRange(@NFloat double value);
@@ -571,35 +770,59 @@ public class SKEmitterNode extends SKNode {
     @Selector("setParticleScaleSequence:")
     public native void setParticleScaleSequence(SKKeyframeSequence value);
 
+    /**
+     * The rate at which to modify the scale for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleScaleSpeed:")
     public native void setParticleScaleSpeed(@NFloat double value);
 
+    /**
+     * The starting size for each particle. If set to CGSizeZero (the default) the particles will start at the size of the texture assigned to particleTexture. Note that particleScale and particleScaleRange will also have an effect on the effective size of each new particle.
+     */
     @Generated
     @Selector("setParticleSize:")
     public native void setParticleSize(@ByValue CGSize value);
 
+    /**
+     * The starting speed for each particle along its emission vector. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleSpeed:")
     public native void setParticleSpeed(@NFloat double value);
 
+    /**
+     * The random variance about the starting speed for each particle along its emission vector. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleSpeedRange:")
     public native void setParticleSpeedRange(@NFloat double value);
 
+    /**
+     * The texture to be used for the particles.
+     */
     @Generated
     @Selector("setParticleTexture:")
     public native void setParticleTexture(SKTexture value);
 
+    /**
+     * The starting z-position for each particle. Defaults to 0.0.
+     */
     @Generated
     @Selector("setParticleZPosition:")
     public native void setParticleZPosition(@NFloat double value);
 
+    /**
+     * The random variance about the starting z-position for each particle. Defaults to 0.0.
+     */
     @Generated
     @Deprecated
     @Selector("setParticleZPositionRange:")
     public native void setParticleZPositionRange(@NFloat double value);
 
+    /**
+     * The rate at which to modify the z-position for each particle. Defaults to 0.0.
+     */
     @Generated
     @Deprecated
     @Selector("setParticleZPositionSpeed:")
@@ -609,10 +832,16 @@ public class SKEmitterNode extends SKNode {
     @Selector("setShader:")
     public native void setShader(SKShader value);
 
+    /**
+     * Normally the particles are rendered as if they were a child of the SKEmitterNode, they can also be rendered as if they were a child of any other node in the scene by setting the targetNode property. Defaults to nil (standard behavior).
+     */
     @Generated
     @Selector("setTargetNode:")
     public native void setTargetNode_unsafe(SKNode value);
 
+    /**
+     * Normally the particles are rendered as if they were a child of the SKEmitterNode, they can also be rendered as if they were a child of any other node in the scene by setting the targetNode property. Defaults to nil (standard behavior).
+     */
     @Generated
     public void setTargetNode(SKNode value) {
         Object __old = targetNode();
@@ -629,6 +858,9 @@ public class SKEmitterNode extends SKNode {
     @Selector("setValue:forAttributeNamed:")
     public native void setValueForAttributeNamed(SKAttributeValue value, String key);
 
+    /**
+     * The acceleration to apply to each particles velocity. Useful for simulating effects such as wind or gravity. Defaults to 0.0.
+     */
     @Generated
     @Selector("setXAcceleration:")
     public native void setXAcceleration(@NFloat double value);
@@ -641,6 +873,9 @@ public class SKEmitterNode extends SKNode {
     @Selector("shader")
     public native SKShader shader();
 
+    /**
+     * Normally the particles are rendered as if they were a child of the SKEmitterNode, they can also be rendered as if they were a child of any other node in the scene by setting the targetNode property. Defaults to nil (standard behavior).
+     */
     @Generated
     @Selector("targetNode")
     public native SKNode targetNode();
@@ -649,6 +884,9 @@ public class SKEmitterNode extends SKNode {
     @Selector("valueForAttributeNamed:")
     public native SKAttributeValue valueForAttributeNamed(String key);
 
+    /**
+     * The acceleration to apply to each particles velocity. Useful for simulating effects such as wind or gravity. Defaults to 0.0.
+     */
     @Generated
     @Selector("xAcceleration")
     @NFloat

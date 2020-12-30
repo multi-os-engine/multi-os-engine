@@ -46,6 +46,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CLBeacon
+ * 
+ * Discussion:
+ *   A single beacon within a CLBeaconRegion.
+ */
 @Generated
 @Library("CoreLocation")
 @Runtime(ObjCRuntime.class)
@@ -161,6 +167,14 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * accuracy
+     * 
+     * Discussion:
+     *   Represents an one sigma horizontal accuracy in meters where the measuring device's location is
+     *   referenced at the beaconing device. This value is heavily subject to variations in an RF environment.
+     *   A negative accuracy value indicates the proximity is unknown.
+     */
     @Generated
     @Selector("accuracy")
     public native double accuracy();
@@ -183,14 +197,32 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native CLBeacon initWithCoder(NSCoder coder);
 
+    /**
+     * major
+     * 
+     * Discussion:
+     *   Most significant value associated with the beacon.
+     */
     @Generated
     @Selector("major")
     public native NSNumber major();
 
+    /**
+     * minor
+     * 
+     * Discussion:
+     *   Least significant value associated with the beacon.
+     */
     @Generated
     @Selector("minor")
     public native NSNumber minor();
 
+    /**
+     * proximity
+     * 
+     * Discussion:
+     *   Proximity of the beacon from the device.
+     */
     @Generated
     @Selector("proximity")
     @NInt
@@ -200,6 +232,13 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("proximityUUID")
     public native NSUUID proximityUUID();
 
+    /**
+     * rssi
+     * 
+     * Discussion:
+     *   Received signal strength in decibels of the specified beacon.
+     *   This value is an average of the RSSI samples collected since this beacon was last reported.
+     */
     @Generated
     @Selector("rssi")
     @NInt
@@ -211,10 +250,22 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * UUID
+     * 
+     * Discussion:
+     *   UUID associated with the beacon.
+     */
     @Generated
     @Selector("UUID")
     public native NSUUID UUID();
 
+    /**
+     * timestamp
+     * 
+     * Discussion:
+     *   The time when this beacon was observed.
+     */
     @Generated
     @Selector("timestamp")
     public native NSDate timestamp();

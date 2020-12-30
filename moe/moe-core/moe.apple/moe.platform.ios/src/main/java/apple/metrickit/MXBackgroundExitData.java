@@ -26,6 +26,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXBackgroundExitData
+ * @abstract      A class that encapsulates cumulative application exit metrics when the application is off screen.
+ * @discussion    Background exits are terminations that, when unexpected, can impact performance metrics, such as launch time.
+ * @discussion    Not all background exits are unexpected. See the documentation for each exit reason for more information.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -76,51 +82,96 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property      cumulativeAbnormalExitCount
+     * @abstract      Cumulative number of times the application exited abnormally.
+     * @discussion    The most common causes of crashes with this exception type are uncaught Objective-C/C++ exceptions and calls to abort().
+     */
     @Generated
     @Selector("cumulativeAbnormalExitCount")
     @NUInt
     public native long cumulativeAbnormalExitCount();
 
+    /**
+     * @property      cumulativeAppWatchdogExitCount
+     * @abstract      Cumulative number of times the application was terminated because a watchdog timeout occured.
+     * @discussion    These can occur when the application took too long to launch, terminate, or respond to system events.
+     */
     @Generated
     @Selector("cumulativeAppWatchdogExitCount")
     @NUInt
     public native long cumulativeAppWatchdogExitCount();
 
+    /**
+     * @property      cumulativeBackgroundTaskAssertionTimeoutExitCount
+     * @abstract      Cumulative number of times the application was terminated for exceeding the alotted time limit associated with a background tasks.
+     * @discussion    If your application begins a background task, you must call endBackgroundTask() to signal completion of the task to prevent your application from being terminated. You can do this in the expiration handler of the task, but it must be done immediately.
+     */
     @Generated
     @Selector("cumulativeBackgroundTaskAssertionTimeoutExitCount")
     @NUInt
     public native long cumulativeBackgroundTaskAssertionTimeoutExitCount();
 
+    /**
+     * @property      cumulativeBadAccessExitCount
+     * @abstract      Cumulative number of times the application was terminated for attempting to access invalid memory, or attempting to access memory in a manner not allowed by the memory's protection level (e.g. writing to read-only memory).
+     */
     @Generated
     @Selector("cumulativeBadAccessExitCount")
     @NUInt
     public native long cumulativeBadAccessExitCount();
 
+    /**
+     * @property      cumulativeCPUResourceLimitExitCount
+     * @abstract      Cumulative number of times the application was terminated for exceeding a CPU consumption limit.
+     */
     @Generated
     @Selector("cumulativeCPUResourceLimitExitCount")
     @NUInt
     public native long cumulativeCPUResourceLimitExitCount();
 
+    /**
+     * @property      cumulativeIllegalInstructionExitCount
+     * @abstract      Cumulative number of times the application terminated for attempting to execute an illegal or undefined instruction.
+     * @discussion    The process may have attempted to jump to an invalid address via a misconfigured function pointer.
+     */
     @Generated
     @Selector("cumulativeIllegalInstructionExitCount")
     @NUInt
     public native long cumulativeIllegalInstructionExitCount();
 
+    /**
+     * @property      cumulativeMemoryPressureExitCount
+     * @abstract      Cumulative number of times the application exited due to memory pressure on the system.
+     */
     @Generated
     @Selector("cumulativeMemoryPressureExitCount")
     @NUInt
     public native long cumulativeMemoryPressureExitCount();
 
+    /**
+     * @property      cumulativeMemoryResourceLimitExitCount
+     * @abstract      Cumulative number of times the application was terminated for exceeding a memory consumption limit.
+     */
     @Generated
     @Selector("cumulativeMemoryResourceLimitExitCount")
     @NUInt
     public native long cumulativeMemoryResourceLimitExitCount();
 
+    /**
+     * @property      cumulativeNormalAppExitCount
+     * @abstract      Cumulative number of times the application exited normally, or was gracefully terminated by the system.
+     */
     @Generated
     @Selector("cumulativeNormalAppExitCount")
     @NUInt
     public native long cumulativeNormalAppExitCount();
 
+    /**
+     * @property      cumulativeSuspendedWithLockedFileExitCount
+     * @abstract      Cumulative number of times the application was terminated because it became suspended while holding onto file locks or sqlite database locks.
+     * @discussion    If your application is performing operations on a locked file or sqlite database at suspension time, it must request additional background execution time to complete those operations and relinquish the lock before suspending.
+     */
     @Generated
     @Selector("cumulativeSuspendedWithLockedFileExitCount")
     @NUInt

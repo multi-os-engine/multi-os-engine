@@ -18,6 +18,11 @@ package apple.audiotoolbox.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum 		Spatialization Algorithms
+ * @discussion	Use kSpatializationAlgorithm_UseOutputType with appropriate kAudioUnitProperty_SpatialMixerOutputType
+ * 			for highest-quality spatial rendering across different hardware.
+ */
 @Generated
 public final class AUSpatializationAlgorithm {
     @Generated public static final int EqualPowerPanning = 0x00000000;

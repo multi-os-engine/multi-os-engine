@@ -58,10 +58,16 @@ public final class MIDICIDeviceIdentification extends StructObject {
     @StructureField(order = 3, isGetter = false, count = 4)
     public native void setRevisionLevel(byte value, int field_idx);
 
+    /**
+     * always zero
+     */
     @Generated
     @StructureField(order = 4, isGetter = true, count = 5)
     public native byte reserved(int field_idx);
 
+    /**
+     * always zero
+     */
     @Generated
     @StructureField(order = 4, isGetter = false, count = 5)
     public native void setReserved(byte value, int field_idx);

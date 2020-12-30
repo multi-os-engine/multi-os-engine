@@ -19,6 +19,9 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum MTLArgumentAccess
+ */
 @Generated
 public final class MTLArgumentAccess {
     @Generated @NUInt public static final long ReadOnly = 0x0000000000000000L;

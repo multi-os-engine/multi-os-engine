@@ -19,6 +19,10 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum          HKCategoryValueMenstrualFlow
+ * @abstract      Set of values to indicate the type of menstrual flow.
+ */
 @Generated
 public final class HKCategoryValueMenstrualFlow {
     @Generated @NInt public static final long Unspecified = 0x0000000000000001L;

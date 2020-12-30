@@ -154,6 +154,9 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * delivery mode. Defaults to PHImageRequestOptionsDeliveryModeOpportunistic
+     */
     @Generated
     @Selector("deliveryMode")
     @NInt
@@ -163,57 +166,96 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     @Selector("init")
     public native PHImageRequestOptions init();
 
+    /**
+     * if necessary will download the image from iCloud (client can monitor or cancel using progressHandler). Defaults to NO (see start/stopCachingImagesForAssets)
+     */
     @Generated
     @Selector("isNetworkAccessAllowed")
     public native boolean isNetworkAccessAllowed();
 
+    /**
+     * if necessary will download the image from iCloud (client can monitor or cancel using progressHandler). Defaults to NO (see start/stopCachingImagesForAssets)
+     */
     @Generated
     @Selector("setNetworkAccessAllowed:")
     public native void setNetworkAccessAllowed(boolean value);
 
+    /**
+     * return only a single result, blocking until available (or failure). Defaults to NO
+     */
     @Generated
     @Selector("isSynchronous")
     public native boolean isSynchronous();
 
+    /**
+     * return only a single result, blocking until available (or failure). Defaults to NO
+     */
     @Generated
     @Selector("setSynchronous:")
     public native void setSynchronous(boolean value);
 
+    /**
+     * specify crop rectangle in unit coordinates of the original image, such as a face. Defaults to CGRectZero (not applicable)
+     */
     @Generated
     @Selector("normalizedCropRect")
     @ByValue
     public native CGRect normalizedCropRect();
 
+    /**
+     * provide caller a way to be told how much progress has been made prior to delivering the data when it comes from iCloud. Defaults to nil, shall be set by caller
+     */
     @Generated
     @Selector("progressHandler")
     @ObjCBlock(name = "call_progressHandler_ret")
     public native Block_progressHandler_ret progressHandler();
 
+    /**
+     * resize mode. Does not apply when size is PHImageManagerMaximumSize. Defaults to PHImageRequestOptionsResizeModeFast
+     */
     @Generated
     @Selector("resizeMode")
     @NInt
     public native long resizeMode();
 
+    /**
+     * delivery mode. Defaults to PHImageRequestOptionsDeliveryModeOpportunistic
+     */
     @Generated
     @Selector("setDeliveryMode:")
     public native void setDeliveryMode(@NInt long value);
 
+    /**
+     * specify crop rectangle in unit coordinates of the original image, such as a face. Defaults to CGRectZero (not applicable)
+     */
     @Generated
     @Selector("setNormalizedCropRect:")
     public native void setNormalizedCropRect(@ByValue CGRect value);
 
+    /**
+     * provide caller a way to be told how much progress has been made prior to delivering the data when it comes from iCloud. Defaults to nil, shall be set by caller
+     */
     @Generated
     @Selector("setProgressHandler:")
     public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
 
+    /**
+     * resize mode. Does not apply when size is PHImageManagerMaximumSize. Defaults to PHImageRequestOptionsResizeModeFast
+     */
     @Generated
     @Selector("setResizeMode:")
     public native void setResizeMode(@NInt long value);
 
+    /**
+     * version
+     */
     @Generated
     @Selector("setVersion:")
     public native void setVersion(@NInt long value);
 
+    /**
+     * version
+     */
     @Generated
     @Selector("version")
     @NInt

@@ -56,6 +56,9 @@ public class UIContextualAction extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * a default background color is set from the action style
+     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -134,6 +137,9 @@ public class UIContextualAction extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * a default background color is set from the action style
+     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);

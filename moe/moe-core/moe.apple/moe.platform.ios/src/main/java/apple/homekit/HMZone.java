@@ -42,6 +42,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief Used to describe a collection of HMRoom objects
+ * 
+ * @discussion This class is used to group a collection of rooms.
+ *             This allows for association of a set of rooms into a group.
+ *             Eg. "Living Room" and "Kitchen" rooms can be grouped together
+ *             in the "Downstairs" zone.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +161,18 @@ public class HMZone extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @brief Adds a room to a zone.
+     * 
+     * @discussion Both the room and the zone should be part of the home.  A room can be added to multiple
+     *             zones, e.g., a room "Kitchen" can be added to "Downstairs" as well as "Outdoor" zones.
+     * 
+     * @param room Room to add to this zone.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("addRoom:completionHandler:")
     public native void addRoomCompletionHandler(HMRoom room,
@@ -162,23 +182,50 @@ public class HMZone extends NSObject {
     @Selector("init")
     public native HMZone init();
 
+    /**
+     * @brief Name of the zone.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * @brief Removes a room from the zone.
+     * 
+     * @param room Room to remove from this zone.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("removeRoom:completionHandler:")
     public native void removeRoomCompletionHandler(HMRoom room,
             @ObjCBlock(name = "call_removeRoomCompletionHandler") Block_removeRoomCompletionHandler completion);
 
+    /**
+     * @brief Array of HMRoom objects that correspond to the rooms contained in this zone.
+     */
     @Generated
     @Selector("rooms")
     public native NSArray<? extends HMRoom> rooms();
 
+    /**
+     * @brief A unique identifier for the zone.
+     */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
+    /**
+     * @brief This method is used to change the name of the zone.
+     * 
+     * @param name New name for the zone.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,

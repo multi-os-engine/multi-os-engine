@@ -44,8 +44,7 @@ public final class AudioBalanceFade extends StructObject {
     }
 
     @Generated
-    public AudioBalanceFade(float mLeftRightBalance, float mBackFrontFade, int mType,
-            AudioChannelLayout mChannelLayout) {
+    public AudioBalanceFade(float mLeftRightBalance, float mBackFrontFade, int mType, AudioChannelLayout mChannelLayout) {
         super(AudioBalanceFade.class);
         setMLeftRightBalance(mLeftRightBalance);
         setMBackFrontFade(mBackFrontFade);
@@ -53,26 +52,44 @@ public final class AudioBalanceFade extends StructObject {
         setMChannelLayout(mChannelLayout);
     }
 
+    /**
+     * -1 is full left, 0 is center, +1 is full right
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native float mLeftRightBalance();
 
+    /**
+     * -1 is full left, 0 is center, +1 is full right
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setMLeftRightBalance(float value);
 
+    /**
+     * -1 is full rear, 0 is center, +1 is full front
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native float mBackFrontFade();
 
+    /**
+     * -1 is full rear, 0 is center, +1 is full front
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMBackFrontFade(float value);
 
+    /**
+     * max unity gain, or equal power.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int mType();
 
+    /**
+     * max unity gain, or equal power.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setMType(int value);

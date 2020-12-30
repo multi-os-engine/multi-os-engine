@@ -13,6 +13,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MPSystemMusicPlayerController")
 public interface MPSystemMusicPlayerController {
+    /**
+     * Switches to Music to play the content provided by the queue descriptor.
+     */
     @Generated
     @Selector("openToPlayQueueDescriptor:")
     void openToPlayQueueDescriptor(MPMusicPlayerQueueDescriptor queueDescriptor);

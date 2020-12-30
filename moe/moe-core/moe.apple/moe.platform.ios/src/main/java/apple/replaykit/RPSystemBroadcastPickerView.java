@@ -35,6 +35,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class RPSystemBroadcastPickerView
+ * @abstract View that presents the user with a button for starting iOS system broadcast using preferred broadcast service.
+ */
 @Generated
 @Library("ReplayKit")
 @Runtime(ObjCRuntime.class)
@@ -305,6 +309,9 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
     public static native void performWithoutAnimation(
             @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
+    /**
+     * @abstract Bundle identifier of extension that should be used for broadcast. Default is nil which means that all extensions will be presented
+     */
     @Generated
     @Selector("preferredExtension")
     public native String preferredExtension();
@@ -369,10 +376,16 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * @abstract Bundle identifier of extension that should be used for broadcast. Default is nil which means that all extensions will be presented
+     */
     @Generated
     @Selector("setPreferredExtension:")
     public native void setPreferredExtension(String value);
 
+    /**
+     * @abstract Indicates whether the Microphone button is visible in broadcast picker view. Default is YES.
+     */
     @Generated
     @Selector("setShowsMicrophoneButton:")
     public native void setShowsMicrophoneButton(boolean value);
@@ -381,6 +394,9 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @abstract Indicates whether the Microphone button is visible in broadcast picker view. Default is YES.
+     */
     @Generated
     @Selector("showsMicrophoneButton")
     public native boolean showsMicrophoneButton();

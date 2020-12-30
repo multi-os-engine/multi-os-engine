@@ -19,6 +19,10 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum          HKCategoryValue
+ * @abstract      This category value is to be used for types which don't have a specific value defined.
+ */
 @Generated
 public final class HKCategoryValue {
     @Generated @NInt public static final long HKCategoryValueNotApplicable = 0x0000000000000000L;

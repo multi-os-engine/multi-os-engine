@@ -32,6 +32,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UICollectionViewDataSourcePrefetching")
 public interface UICollectionViewDataSourcePrefetching {
+    /**
+     * indexPaths that previously were considered as candidates for pre-fetching, but were not actually used; may be a subset of the previous call to -collectionView:prefetchItemsAtIndexPaths:
+     */
     @Generated
     @IsOptional
     @Selector("collectionView:cancelPrefetchingForItemsAtIndexPaths:")
@@ -40,6 +43,9 @@ public interface UICollectionViewDataSourcePrefetching {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * indexPaths are ordered ascending by geometric distance from the collection view
+     */
     @Generated
     @Selector("collectionView:prefetchItemsAtIndexPaths:")
     void collectionViewPrefetchItemsAtIndexPaths(UICollectionView collectionView,

@@ -13,6 +13,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("VNRequestRevisionProviding")
 public interface VNRequestRevisionProviding {
+    /**
+     * @brief	The revision of the VNRequest subclass that was used to generate the object that implements this protocol.
+     */
     @Generated
     @Selector("requestRevision")
     @NUInt

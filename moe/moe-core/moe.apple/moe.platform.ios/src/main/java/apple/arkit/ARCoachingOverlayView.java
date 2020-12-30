@@ -35,6 +35,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A view that guides users through session initialization
+ * 
+ * @discussion The view will use context aware messaging and animations to instruct the user on gathering required info for the AR session.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -53,6 +58,14 @@ public class ARCoachingOverlayView extends UIView {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Whether or not the view should activate/deactivate automatically, depending on the current state of the session
+     * Defaults to `YES`
+     * 
+     * @discussion When set to automatically activate, the view will transition to active when the session loses normal tracking for a set amount
+     * of time.
+     * When tracking resumes and other requirements (based on `goal`) are met, the view will deactivate.
+     */
     @Generated
     @Selector("activatesAutomatically")
     public native boolean activatesAutomatically();
@@ -231,6 +244,9 @@ public class ARCoachingOverlayView extends UIView {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Specifies the delegate used for callbacks
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -240,6 +256,10 @@ public class ARCoachingOverlayView extends UIView {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The coaching type used to resolve what messaging to display to the user while activated
+     * Defaults to `ARCoachingGoalTracking`
+     */
     @Generated
     @Selector("goal")
     @NInt
@@ -279,6 +299,11 @@ public class ARCoachingOverlayView extends UIView {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Whether or not the view is currently active.
+     * 
+     * @see -[ARCoachingOverlayView setActive:animated:]
+     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
@@ -331,18 +356,47 @@ public class ARCoachingOverlayView extends UIView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The session that the view uses to update coaching
+     */
     @Generated
     @Selector("session")
     public native ARSession session();
 
+    /**
+     * A provider of a session to use
+     * 
+     * @discussion This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime will also
+     * set the `session` property.
+     */
     @Generated
     @Selector("sessionProvider")
     public native NSObject sessionProvider();
 
+    /**
+     * Whether or not the view should activate/deactivate automatically, depending on the current state of the session
+     * Defaults to `YES`
+     * 
+     * @discussion When set to automatically activate, the view will transition to active when the session loses normal tracking for a set amount
+     * of time.
+     * When tracking resumes and other requirements (based on `goal`) are met, the view will deactivate.
+     */
     @Generated
     @Selector("setActivatesAutomatically:")
     public native void setActivatesAutomatically(boolean value);
 
+    /**
+     * Transition the view to either an activated or deactivated state
+     * 
+     * @discussion On activation the view will check the current session, and if relocalization is needed it will present a modified UI with
+     * relocalization coaching and a reset button.
+     * 
+     * On deactivation the view will become hidden
+     * @param active Whether the view should activate, or deactivate
+     * @param animated Whether the view animated to activated/deactivated states, or transitions instantly
+     * 
+     * @see -[ARCoachingOverlayViewDelegate coachingOverlayViewDidTriggerReset:]
+     */
     @Generated
     @Selector("setActive:animated:")
     public native void setActiveAnimated(boolean active, boolean animated);
@@ -395,10 +449,16 @@ public class ARCoachingOverlayView extends UIView {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * Specifies the delegate used for callbacks
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ARCoachingOverlayViewDelegate value);
 
+    /**
+     * Specifies the delegate used for callbacks
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) ARCoachingOverlayViewDelegate value) {
         Object __old = delegate();
@@ -411,18 +471,37 @@ public class ARCoachingOverlayView extends UIView {
         }
     }
 
+    /**
+     * The coaching type used to resolve what messaging to display to the user while activated
+     * Defaults to `ARCoachingGoalTracking`
+     */
     @Generated
     @Selector("setGoal:")
     public native void setGoal(@NInt long value);
 
+    /**
+     * The session that the view uses to update coaching
+     */
     @Generated
     @Selector("setSession:")
     public native void setSession(ARSession value);
 
+    /**
+     * A provider of a session to use
+     * 
+     * @discussion This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime will also
+     * set the `session` property.
+     */
     @Generated
     @Selector("setSessionProvider:")
     public native void setSessionProvider_unsafe(NSObject value);
 
+    /**
+     * A provider of a session to use
+     * 
+     * @discussion This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime will also
+     * set the `session` property.
+     */
     @Generated
     public void setSessionProvider(NSObject value) {
         Object __old = sessionProvider();

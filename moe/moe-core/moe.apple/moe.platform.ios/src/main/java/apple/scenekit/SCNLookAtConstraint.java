@@ -43,6 +43,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNLookAtConstraint
+ * @abstract A SCNLookAtConstraint applies on a node's orientation so that it always look at another node.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -127,6 +131,11 @@ public class SCNLookAtConstraint extends SCNConstraint {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @method lookAtConstraintWithTarget:
+     * @abstract Creates and returns a SCNLookAtConstraint object with the specified target.
+     * @param target The target node to look at.
+     */
     @Generated
     @Selector("lookAtConstraintWithTarget:")
     public static native SCNLookAtConstraint lookAtConstraintWithTarget(SCNNode target);
@@ -162,6 +171,11 @@ public class SCNLookAtConstraint extends SCNConstraint {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property gimbalLockEnabled
+     * @abstract Specifies whether the receiver enables the gimbal lock. Defaults to NO.
+     * @discussion Enabling the gimbal lock prevents the receiver from rotating the constrained node around to roll axis.
+     */
     @Generated
     @Selector("gimbalLockEnabled")
     public native boolean gimbalLockEnabled();
@@ -174,6 +188,11 @@ public class SCNLookAtConstraint extends SCNConstraint {
     @Selector("initWithCoder:")
     public native SCNLookAtConstraint initWithCoder(NSCoder coder);
 
+    /**
+     * @property gimbalLockEnabled
+     * @abstract Specifies whether the receiver enables the gimbal lock. Defaults to NO.
+     * @discussion Enabling the gimbal lock prevents the receiver from rotating the constrained node around to roll axis.
+     */
     @Generated
     @Selector("setGimbalLockEnabled:")
     public native void setGimbalLockEnabled(boolean value);
@@ -192,28 +211,52 @@ public class SCNLookAtConstraint extends SCNConstraint {
     @Selector("target")
     public native SCNNode target();
 
+    /**
+     * @property targetOffset
+     * @abstract Front direction in the constraint owner local space. Defaults to -[SCNNode localFront]. Animatable
+     */
     @Generated
     @Selector("localFront")
     @ByValue
     public native SCNVector3 localFront();
 
+    /**
+     * @property targetOffset
+     * @abstract Front direction in the constraint owner local space. Defaults to -[SCNNode localFront]. Animatable
+     */
     @Generated
     @Selector("setLocalFront:")
     public native void setLocalFront(@ByValue SCNVector3 value);
 
+    /**
+     * @property targetOffset
+     * @abstract Offset look at position in target space. Defaults to zero. Animatable
+     */
     @Generated
     @Selector("setTargetOffset:")
     public native void setTargetOffset(@ByValue SCNVector3 value);
 
+    /**
+     * @property worldUp
+     * @abstract Up reference direction in world space. Defaults to -[SCNNode localUp]. Animatable
+     */
     @Generated
     @Selector("setWorldUp:")
     public native void setWorldUp(@ByValue SCNVector3 value);
 
+    /**
+     * @property targetOffset
+     * @abstract Offset look at position in target space. Defaults to zero. Animatable
+     */
     @Generated
     @Selector("targetOffset")
     @ByValue
     public native SCNVector3 targetOffset();
 
+    /**
+     * @property worldUp
+     * @abstract Up reference direction in world space. Defaults to -[SCNNode localUp]. Animatable
+     */
     @Generated
     @Selector("worldUp")
     @ByValue

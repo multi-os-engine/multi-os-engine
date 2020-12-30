@@ -27,6 +27,19 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSMatrixBatchNormalizationGradient
+ * 
+ * @dependency This depends on Metal.framework.
+ * 
+ * @abstract   A kernel to compute the gradient of the batch normalization operation.
+ * 
+ * @discussion A MPSMatrixBatchNormalizationGradient object computes the results of backpropagating
+ *             the gradients of a loss function with respect to the outputs of an
+ *             MPSMatrixBatchNormalization object.  The corresponding properties and data used by
+ *             the MPSMatrixBatchNormalizationGradient object should correspond to those used by
+ *             the forward MPSMatrixBatchNormalization object for which the gradient is being computed.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -77,6 +90,15 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @abstract   Make a copy of this kernel for a new device - @see MPSKernel
+     * @param      zone        The NSZone in which to allocate the object
+     * @param      device      The device for the new MPSKernel. If nil, then use
+     *                         self.device.
+     * @result     A pointer to a copy of this MPSKernel. This will fail, returning
+     *             nil if the device is not supported. Devices must be
+     *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     */
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
@@ -91,6 +113,41 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract   Encode a MPSMatrixBatchNormalizationGradient object to a command buffer and compute
+     *             its gradient with respect to its input data.
+     * 
+     * @param      commandBuffer                   The commandBuffer on which to encode the operation.
+     * 
+     * @param      gradientMatrix                  A matrix whose values represent the gradient of a
+     *                                             loss function with respect to the results of a forward
+     *                                             MPSMatrixBatchNormalization operation.
+     * 
+     * @param      inputMatrix                     A matrix containing the inputs to a forward MPSMatrixBatchNormalization
+     *                                             operation for which the gradient values are to be computed.
+     * 
+     * @param      meanVector                      A vector containing the batch mean values.  Should contain either the specified
+     *                                             values used to compute the forward result, or the computed values resulting from
+     *                                             the forward kernel execution.
+     * 
+     * @param      varianceVector                  A vector containing the batch variance values.  Should contain either the specified
+     *                                             values used to compute the forward result, or the computed values resulting from
+     *                                             the forward kernel execution.
+     * 
+     * @param      gammaVector                     A vector containing the gamma terms.  Should be the same values as used
+     *                                             when computing the forward result.
+     * 
+     * @param      betaVector                      A vector containing the beta terms.  Should be the same values as used when
+     *                                             computing the forward result.
+     * 
+     * @param      resultGradientForDataMatrix     The matrix containing the resulting gradient values.
+     * 
+     * @param      resultGradientForGammaVector    If non-NULL the vector containing gradients for the gamma
+     *                                             terms.
+     * 
+     * @param      resultGradientForBetaVector     If non-NULL the vector containing gradients for the beta
+     *                                             terms.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:gradientMatrix:inputMatrix:meanVector:varianceVector:gammaVector:betaVector:resultGradientForDataMatrix:resultGradientForGammaVector:resultGradientForBetaVector:")
     public native void encodeToCommandBufferGradientMatrixInputMatrixMeanVectorVarianceVectorGammaVectorBetaVectorResultGradientForDataMatrixResultGradientForGammaVectorResultGradientForBetaVector(
@@ -99,6 +156,11 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
             MPSVector betaVector, MPSMatrix resultGradientForDataMatrix, MPSVector resultGradientForGammaVector,
             MPSVector resultGradientForBetaVector);
 
+    /**
+     * @property   epsilon
+     * 
+     * @discussion A small term added to the variance when normalizing the input.
+     */
     @Generated
     @Selector("epsilon")
     public native float epsilon();
@@ -116,6 +178,13 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     @Selector("initWithCoder:")
     public native MPSMatrixBatchNormalizationGradient initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion See @ref MPSKernel#initWithCoder.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSMatrixBatchNormalizationGradient
+     * @param      device      The MTLDevice on which to make the MPSMatrixBatchNormalizationGradient object.
+     * @return     A new MPSMatrixBatchNormalizationGradient object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSMatrixBatchNormalizationGradient initWithCoderDevice(NSCoder aDecoder,
@@ -146,18 +215,30 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     */
     @Generated
     @Selector("neuronParameterA")
     public native float neuronParameterA();
 
+    /**
+     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     */
     @Generated
     @Selector("neuronParameterB")
     public native float neuronParameterB();
 
+    /**
+     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     */
     @Generated
     @Selector("neuronParameterC")
     public native float neuronParameterC();
 
+    /**
+     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     */
     @Generated
     @Selector("neuronType")
     public native int neuronType();
@@ -176,19 +257,50 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   epsilon
+     * 
+     * @discussion A small term added to the variance when normalizing the input.
+     */
     @Generated
     @Selector("setEpsilon:")
     public native void setEpsilon(float value);
 
+    /**
+     * @abstract   Specifies a neuron activation function to be used.
+     * 
+     * @discussion This method can be used to add a neuron activation funtion of given type with
+     *             associated scalar parameters A, B, and C that are shared across all output values.
+     *             Note that this method can only be used to specify neurons which are specified by three (or fewer)
+     *             parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
+     *             this method for neuron activation functions like MPSCNNNeuronTypePReLU,
+     *             which require per-channel parameter values. An MPSMatrixBatchNormalizationGradient kernel is initialized
+     *             with a default neuron function of MPSCNNNeuronTypeNone.
+     * 
+     * @param      neuronType      Type of neuron activation function. For full list see MPSCNNNeuronType.h
+     * @param      parameterA      parameterA of neuron activation that is shared across all output values.
+     * @param      parameterB      parameterB of neuron activation that is shared across all output values.
+     * @param      parameterC      parameterC of neuron activation that is shared across all output values.
+     */
     @Generated
     @Selector("setNeuronType:parameterA:parameterB:parameterC:")
     public native void setNeuronTypeParameterAParameterBParameterC(int neuronType, float parameterA, float parameterB,
             float parameterC);
 
+    /**
+     * @property   sourceInputFeatureChannels
+     * 
+     * @discussion The number of feature channels in the input vectors.
+     */
     @Generated
     @Selector("setSourceInputFeatureChannels:")
     public native void setSourceInputFeatureChannels(@NUInt long value);
 
+    /**
+     * @property   sourceNumberOfFeatureVectors
+     * 
+     * @discussion The number of input vectors which make up the input array.
+     */
     @Generated
     @Selector("setSourceNumberOfFeatureVectors:")
     public native void setSourceNumberOfFeatureVectors(@NUInt long value);
@@ -197,11 +309,21 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @property   sourceInputFeatureChannels
+     * 
+     * @discussion The number of feature channels in the input vectors.
+     */
     @Generated
     @Selector("sourceInputFeatureChannels")
     @NUInt
     public native long sourceInputFeatureChannels();
 
+    /**
+     * @property   sourceNumberOfFeatureVectors
+     * 
+     * @discussion The number of input vectors which make up the input array.
+     */
     @Generated
     @Selector("sourceNumberOfFeatureVectors")
     @NUInt

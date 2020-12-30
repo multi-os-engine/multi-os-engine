@@ -24,6 +24,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MLModelCollectionEntry
+ * Information about a model in a model collection.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)

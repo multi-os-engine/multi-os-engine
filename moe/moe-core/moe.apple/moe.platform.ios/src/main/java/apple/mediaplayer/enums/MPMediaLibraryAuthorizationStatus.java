@@ -19,6 +19,9 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * -----------------------------------------------------------------------------
+ */
 @Generated
 public final class MPMediaLibraryAuthorizationStatus {
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;

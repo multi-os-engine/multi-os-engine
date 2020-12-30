@@ -23,6 +23,9 @@ import org.moe.natj.general.ann.NUInt;
 public final class MKDirectionsTransportType {
     @Generated @NUInt public static final long Automobile = 0x0000000000000001L;
     @Generated @NUInt public static final long Walking = 0x0000000000000002L;
+    /**
+     * Only supported for ETA calculations
+     */
     @Generated @NUInt public static final long Transit = 0x0000000000000004L;
     @Generated @NUInt public static final long Any = 0x000000000FFFFFFFL;
 

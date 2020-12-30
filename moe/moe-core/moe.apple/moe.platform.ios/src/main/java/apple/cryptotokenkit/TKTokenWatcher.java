@@ -42,6 +42,12 @@ public class TKTokenWatcher extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Add removal watcher for specific tokenID
+     * @disscussion after removalHandler for a specific tokenID is called the reference to this handler is removed. For one tokenID just one handler can be added, so next call to addRemovalHandler will replace previous handler
+     * @param removalHandler called when a token is removed
+     * @param tokenID specified tokenID, if tokenID does not exist removal handler is called imediately
+     */
     @Generated
     @Selector("addRemovalHandler:forTokenID:")
     public native void addRemovalHandlerForTokenID(
@@ -100,10 +106,18 @@ public class TKTokenWatcher extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Init watcher
+     */
     @Generated
     @Selector("init")
     public native TKTokenWatcher init();
 
+    /**
+     * Init watcher with insertion handler
+     * @disscussion init watcher with insertion handler which is called when a new token arrives
+     * @param insertionHandler called when a new token is inserted
+     */
     @Generated
     @Selector("initWithInsertionHandler:")
     public native TKTokenWatcher initWithInsertionHandler(
@@ -151,6 +165,11 @@ public class TKTokenWatcher extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Set insertion handler
+     * @disscussion when an insertion handler is set the TokenWatcher will call this handler when new token appears in the system. TokenWatcher will call the handler also for tokens which was registered in the system before the handler was set.
+     * @param insertionHandler called when a new token is inserted
+     */
     @Generated
     @Selector("setInsertionHandler:")
     public native void setInsertionHandler(
@@ -171,6 +190,9 @@ public class TKTokenWatcher extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Array of currently known TokenIDs in the system.  Tokens are identified by instance's names. It is possible to use KVO to be notified about token arrivals and removals.
+     */
     @Generated
     @Selector("tokenIDs")
     public native NSArray<String> tokenIDs();

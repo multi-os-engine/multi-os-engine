@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents handle to a user interaction involving the SmartCard reader.
+ * @discussion It is a proxy object obtained as a result of invoking the userInteractionFor*** family of methods in TKSmartCardSlot and TKSmartCard.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -58,6 +62,10 @@ public class TKSmartCardUserInteraction extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Attempts to cancel a running interaction. Note that for some interactions, this functionality might not be available.
+     * @return Returns NO if the operation is not running, or cancelling is not supported.
+     */
     @Generated
     @Selector("cancel")
     public native boolean cancel();
@@ -84,6 +92,9 @@ public class TKSmartCardUserInteraction extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Delegate for state observing of the interaction.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -102,6 +113,10 @@ public class TKSmartCardUserInteraction extends NSObject {
     @Selector("init")
     public native TKSmartCardUserInteraction init();
 
+    /**
+     * Initial interaction timeout. If set to 0, the reader-defined default timeout is used.
+     * @note Default value: 0
+     */
     @Generated
     @Selector("initialTimeout")
     public native double initialTimeout();
@@ -119,6 +134,10 @@ public class TKSmartCardUserInteraction extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Timeout after the first key stroke. If set to 0, the reader-defined default timeout is used.
+     * @note Default value: 0
+     */
     @Generated
     @Selector("interactionTimeout")
     public native double interactionTimeout();
@@ -145,6 +164,9 @@ public class TKSmartCardUserInteraction extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Runs the interaction.
+     */
     @Generated
     @Selector("runWithReply:")
     public native void runWithReply(@ObjCBlock(name = "call_runWithReply") Block_runWithReply reply);
@@ -156,10 +178,16 @@ public class TKSmartCardUserInteraction extends NSObject {
         void call_runWithReply(boolean success, NSError error);
     }
 
+    /**
+     * Delegate for state observing of the interaction.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) TKSmartCardUserInteractionDelegate value);
 
+    /**
+     * Delegate for state observing of the interaction.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) TKSmartCardUserInteractionDelegate value) {
         Object __old = delegate();
@@ -172,10 +200,18 @@ public class TKSmartCardUserInteraction extends NSObject {
         }
     }
 
+    /**
+     * Initial interaction timeout. If set to 0, the reader-defined default timeout is used.
+     * @note Default value: 0
+     */
     @Generated
     @Selector("setInitialTimeout:")
     public native void setInitialTimeout(double value);
 
+    /**
+     * Timeout after the first key stroke. If set to 0, the reader-defined default timeout is used.
+     * @note Default value: 0
+     */
     @Generated
     @Selector("setInteractionTimeout:")
     public native void setInteractionTimeout(double value);

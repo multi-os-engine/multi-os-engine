@@ -170,11 +170,19 @@ public class UICloudSharingController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns an activity item source for use with UIActivityViewController.
+     * If the activity is selected, delegate methods will be called for the original instance of
+     * the sharing controller.
+     */
     @Generated
     @Selector("activityItemSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIActivityItemSource activityItemSource();
 
+    /**
+     * Restrict the sharing invitation UI to specific types of share permissions. If set, only the specified combinations of permissions are selectable.
+     */
     @Generated
     @Selector("availablePermissions")
     @NUInt
@@ -197,10 +205,16 @@ public class UICloudSharingController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native UICloudSharingController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * Use this initializer when you already have an active CKShare that was set up previously.
+     */
     @Generated
     @Selector("initWithShare:container:")
     public native UICloudSharingController initWithShareContainer(CKShare share, CKContainer container);
 
+    /**
+     * Restrict the sharing invitation UI to specific types of share permissions. If set, only the specified combinations of permissions are selectable.
+     */
     @Generated
     @Selector("setAvailablePermissions:")
     public native void setAvailablePermissions(@NUInt long value);
@@ -225,6 +239,12 @@ public class UICloudSharingController extends UIViewController {
     @Selector("share")
     public native CKShare share();
 
+    /**
+     * Use this initializer when you want to share a set of CKRecords but haven't yet saved a CKShare.
+     * The preparation handler is called when it is time to save the share to the server.
+     * After ensuring the share and record have been saved to the server, invoke the preparationCompletionHandler
+     * with either the resulting CKShare, or an NSError if saving failed.
+     */
     @Generated
     @Selector("initWithPreparationHandler:")
     public native UICloudSharingController initWithPreparationHandler(

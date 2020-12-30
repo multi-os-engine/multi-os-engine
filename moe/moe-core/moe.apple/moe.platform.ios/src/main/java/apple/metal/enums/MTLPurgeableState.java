@@ -19,6 +19,22 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum MTLPurgeableOption
+ * @abstract Options for setPurgeable call.
+ * 
+ * @constant MTLPurgeableStateNonVolatile
+ * The contents of this resource may not be discarded.
+ * 
+ * @constant MTLPurgeableStateVolatile
+ * The contents of this resource may be discarded.
+ * 
+ * @constant MTLPurgeableStateEmpty
+ * The contents of this are discarded.
+ * 
+ * @constant MTLPurgeableStateKeepCurrent
+ * The purgeabelity state is not changed.
+ */
 @Generated
 public final class MTLPurgeableState {
     @Generated @NUInt public static final long KeepCurrent = 0x0000000000000001L;

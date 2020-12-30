@@ -44,6 +44,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class	AUParameter
+ * @brief	A node representing a single parameter.
+ */
 @Generated
 @Library("AudioToolbox")
 @Runtime(ObjCRuntime.class)
@@ -159,10 +163,19 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * The parameter's address.
+     */
     @Generated
     @Selector("address")
     public native long address();
 
+    /**
+     * @brief		Parameters whose values may change as a side effect of this parameter's value
+     * 			changing.
+     * @discussion
+     * 	Each array value is an NSNumber representing AUParameterAddress.
+     */
     @Generated
     @Selector("dependentParameters")
     public native NSArray<? extends NSNumber> dependentParameters();
@@ -171,6 +184,9 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Various details of the parameter.
+     */
     @Generated
     @Selector("flags")
     public native int flags();
@@ -183,31 +199,71 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native AUParameter initWithCoder(NSCoder coder);
 
+    /**
+     * The parameter's maximum value.
+     */
     @Generated
     @Selector("maxValue")
     public native float maxValue();
 
+    /**
+     * The parameter's minimum value.
+     */
     @Generated
     @Selector("minValue")
     public native float minValue();
 
+    /**
+     * The parameter's current value.
+     */
     @Generated
     @Selector("setValue:")
     public native void setValue(float value);
 
+    /**
+     * @brief	Set the parameter's value, avoiding redundant notifications to the originator.
+     * @discussion
+     * 		Bridged to the v2 function AudioUnitSetParameter.
+     */
     @Generated
     @Selector("setValue:originator:")
     public native void setValueOriginator(float value, VoidPtr originator);
 
+    /**
+     * @brief	Convenience for setValue:originator:atHostTime:eventType:
+     * @discussion
+     * 		Bridged to the v2 function AudioUnitSetParameter.
+     */
     @Generated
     @Selector("setValue:originator:atHostTime:")
     public native void setValueOriginatorAtHostTime(float value, VoidPtr originator, long hostTime);
 
+    /**
+     * @brief	Set the parameter's value, preserving the host time of the gesture that initiated the
+     * 		change, and associating an event type such as touch/release.
+     * @discussion
+     * 	In general, this method should only be called from a user interface. It initiates a change
+     * 	to a parameter in a way that captures the gesture such that it can be recorded later --
+     * 	any AUParameterAutomationObservers will receive the host time and event type associated
+     * 	with the parameter change.
+     * 
+     * 	From an audio playback engine, a host should schedule automated parameter changes through
+     * 	AUAudioUnit's scheduleParameterBlock.
+     * 
+     * 	Bridged to the v2 function AudioUnitSetParameter.
+     */
     @Generated
     @Selector("setValue:originator:atHostTime:eventType:")
     public native void setValueOriginatorAtHostTimeEventType(float value, VoidPtr originator, long hostTime,
             int eventType);
 
+    /**
+     * @brief Get a textual representation of a value for the parameter. Use value==nil to use the
+     * 	   current value. Bridged to the v2 property kAudioUnitProperty_ParameterStringFromValue.
+     * @discussion
+     * 	This is currently only supported for parameters whose flags include
+     * 	kAudioUnitParameterFlag_ValuesHaveStrings.
+     */
     @Generated
     @Selector("stringFromValue:")
     public native String stringFromValue(ConstFloatPtr value);
@@ -218,22 +274,41 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * The parameter's unit of measurement.
+     */
     @Generated
     @Selector("unit")
     public native int unit();
 
+    /**
+     * A localized name for the parameter's unit. Supplied by the AU if kAudioUnitParameterUnit_CustomUnit; else by the framework.
+     */
     @Generated
     @Selector("unitName")
     public native String unitName();
 
+    /**
+     * The parameter's current value.
+     */
     @Generated
     @Selector("value")
     public native float value();
 
+    /**
+     * @brief Convert a textual representation of a value to a numeric one.
+     * @discussion
+     * 	This is currently only supported for parameters whose flags include
+     * 	kAudioUnitParameterFlag_ValuesHaveStrings.
+     */
     @Generated
     @Selector("valueFromString:")
     public native float valueFromString(String string);
 
+    /**
+     * For parameters with kAudioUnitParameterUnit_Indexed, localized strings corresponding
+     * to the values.
+     */
     @Generated
     @Selector("valueStrings")
     public native NSArray<String> valueStrings();

@@ -61,6 +61,9 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     */
     @Generated
     @Selector("actionWithIdentifier:title:options:")
     public static native UNNotificationAction actionWithIdentifierTitleOptions(String identifier, String title,
@@ -173,6 +176,9 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The unique identifier for this action.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -185,6 +191,9 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
     @Selector("initWithCoder:")
     public native UNNotificationAction initWithCoder(NSCoder coder);
 
+    /**
+     * The options configured for this action.
+     */
     @Generated
     @Selector("options")
     @NUInt
@@ -196,6 +205,9 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
         return supportsSecureCoding();
     }
 
+    /**
+     * The title to display for this action.
+     */
     @Generated
     @Selector("title")
     public native String title();

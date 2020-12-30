@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AUTO-GENERATED FROM CodeGenArray.h
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)

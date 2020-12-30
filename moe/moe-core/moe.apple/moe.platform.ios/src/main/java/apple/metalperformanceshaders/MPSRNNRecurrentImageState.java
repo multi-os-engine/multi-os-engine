@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSRNNRecurrentImageState
+ * @dependency This depends on Metal.framework
+ * @discussion This class holds all the data that is passed from one sequence iteration of the image-based RNN layer (stack) to the next.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -85,10 +90,20 @@ public class MPSRNNRecurrentImageState extends MPSState {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract   Access the stored memory cell image data (if present).
+     * @param      layerIndex      Index of the layer whose to get - belongs to { 0, 1,...,@see numberOfLayers - 1 }
+     * @return     For valid layerIndex the memory cell image data, otherwise nil.
+     */
     @Generated
     @Selector("getMemoryCellImageForLayerIndex:")
     public native MPSImage getMemoryCellImageForLayerIndex(@NUInt long layerIndex);
 
+    /**
+     * @abstract   Access the stored recurrent image data.
+     * @param      layerIndex      Index of the layer whose to get - belongs to { 0, 1,...,@see numberOfLayers - 1 }
+     * @return     For valid layerIndex the recurrent output image data, otherwise nil.
+     */
     @Generated
     @Selector("getRecurrentOutputImageForLayerIndex:")
     public native MPSImage getRecurrentOutputImageForLayerIndex(@NUInt long layerIndex);

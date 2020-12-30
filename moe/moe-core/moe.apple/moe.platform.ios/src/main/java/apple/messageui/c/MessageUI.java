@@ -37,26 +37,52 @@ public final class MessageUI {
     private MessageUI() {
     }
 
+    /**
+     * @const      MFMailComposeErrorDomain
+     * @abstract   Error domain for NSError values stemming from the MFMailCompose API.
+     * @discussion This error domain is used as the domain for all NSError instances stemmming from the
+     *             MFMailCompose API.  Valid error code values are declared in the <tt>MFMailComposeErrorCode</tt>
+     *             space.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MFMailComposeErrorDomain();
 
+    /**
+     * @constant  MFMessageComposeViewControllerAttachmentURL   The url for the given attachment.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MFMessageComposeViewControllerAttachmentURL();
 
+    /**
+     * @constant  MFMessageComposeViewControllerAttachmentAlternateFilename   The alternate filename for the given attachment.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MFMessageComposeViewControllerAttachmentAlternateFilename();
 
+    /**
+     * @const      MFMessageComposeViewControllerTextMessageAvailabilityDidChangeNotification
+     * @abstract   Notification posted when the value of <tt>+[MFMessageComposeViewController canSendText]</tt> has changed.
+     * @discussion This notification is posted when the value of <tt>+[MFMessageComposeViewController canSendText]</tt>
+     *             has changed. Clients should invalidate any caches and update UI as appropriate.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MFMessageComposeViewControllerTextMessageAvailabilityDidChangeNotification();
 
+    /**
+     * @const      MFMessageComposeViewControllerTextMessageAvailabilityKey
+     * @abstract   UserInfo key for MFMessageComposeViewControllerTextMessageAvailabilityDidChangeNotification
+     *             containing the value of <tt>+[MFMessageComposeViewController canSendText]</tt>
+     * @discussion The value of this key is an NSNumber containing a BOOL value. This value matches
+     *             the result of <tt>+[MFMessageComposeViewController canSendText]</tt>.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

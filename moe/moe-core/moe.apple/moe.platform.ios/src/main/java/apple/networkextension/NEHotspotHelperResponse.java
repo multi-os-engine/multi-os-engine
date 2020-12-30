@@ -39,6 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEHotspotHelperResponse
+ * @discussion
+ *   The HotspotHelper creates an NEHotspotHelperResponse object to provide
+ *   the results of running the corresponding NEHotspotHelperCommand.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -150,6 +156,13 @@ public class NEHotspotHelperResponse extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @method deliver
+     * @abstract
+     *   Delivers the response to the command.
+     * @discussion
+     *   Deliver the NEHotspotHelperResponse to the HotspotHelper infrastructure.
+     */
     @Generated
     @Selector("deliver")
     public native void deliver();
@@ -158,10 +171,31 @@ public class NEHotspotHelperResponse extends NSObject {
     @Selector("init")
     public native NEHotspotHelperResponse init();
 
+    /**
+     * @method setNetwork
+     * @abstract
+     *   Set the network that conveys the confidence level.
+     * @discussion
+     *   Provide the annotated NEHotspotNetwork object in the response to the
+     *   kNEHotspotHelperCommandTypeEvaluate command. The helper sets the
+     *   confidence in the network object to indicate its ability to handle
+     *   the current network.
+     */
     @Generated
     @Selector("setNetwork:")
     public native void setNetwork(NEHotspotNetwork network);
 
+    /**
+     * @method setNetworkList
+     * @abstract
+     *   Set the list of handled networks.
+     * @discussion
+     *   Provide an NSArray of annotated NEHotspotNetwork objects in response
+     *   to the kNEHotspotHelperCommandTypeFilterScanList command.
+     *   The helper provides the list of network objects that it is capable of
+     *   handling with at least low confidence. Networks that it has no
+     *   confidence in handling should not be specified.
+     */
     @Generated
     @Selector("setNetworkList:")
     public native void setNetworkList(NSArray<? extends NEHotspotNetwork> networkList);

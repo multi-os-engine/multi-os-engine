@@ -3,6 +3,9 @@ package apple.pdfkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * PDF areas of interest (bitfield, multiple bits below may be set).
+ */
 @Generated
 public final class PDFAreaOfInterest {
     @Generated

@@ -398,14 +398,26 @@ public class UIRefreshControl extends UIControl {
     @Selector("attributedTitle")
     public native NSAttributedString attributedTitle();
 
+    /**
+     * May be used to indicate to the refreshControl that an external event has initiated the refresh action
+     */
     @Generated
     @Selector("beginRefreshing")
     public native void beginRefreshing();
 
+    /**
+     * Must be explicitly called when the refreshing has completed
+     */
     @Generated
     @Selector("endRefreshing")
     public native void endRefreshing();
 
+    /**
+     * The designated initializer
+     * This initializes a UIRefreshControl with a default height and width.
+     * Once assigned to a UITableViewController, the frame of the control is managed automatically.
+     * When a user has pulled-to-refresh, the UIRefreshControl fires its UIControlEventValueChanged event.
+     */
     @Generated
     @Selector("init")
     public native UIRefreshControl init();

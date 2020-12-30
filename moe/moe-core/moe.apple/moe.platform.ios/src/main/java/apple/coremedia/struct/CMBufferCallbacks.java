@@ -59,74 +59,174 @@ public final class CMBufferCallbacks extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(int value);
 
+    /**
+     * @field version
+     * Must be 0 or 1. 
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr refcon();
 
+    /**
+     * @field version
+     * Must be 0 or 1. 
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setRefcon(VoidPtr value);
 
+    /**
+     * @field refcon
+     * Client refcon to be passed to all callbacks (can be NULL,
+     * if the callbacks don't require it). 
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_getDecodeTimeStamp")
     public native Function_getDecodeTimeStamp getDecodeTimeStamp();
 
+    /**
+     * @field refcon
+     * Client refcon to be passed to all callbacks (can be NULL,
+     * if the callbacks don't require it). 
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setGetDecodeTimeStamp(
             @FunctionPtr(name = "call_getDecodeTimeStamp") Function_getDecodeTimeStamp value);
 
+    /**
+     * @field getDecodeTimeStamp
+     * This callback is called from CMBufferQueueGetFirstDecodeTimeStamp (once),
+     * and from CMBufferQueueGetMinDecodeTimeStamp (multiple times).  It should
+     * return the decode timestamp of the buffer.  If there are multiple samples
+     * in the buffer, this callback should return the minimum decode timestamp
+     * in the buffer. Can be NULL (CMBufferQueueGetFirstDecodeTimeStamp and
+     * CMBufferQueueGetMinDecodeTimeStamp will return kCMTimeInvalid). 
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_getPresentationTimeStamp")
     public native Function_getPresentationTimeStamp getPresentationTimeStamp();
 
+    /**
+     * @field getDecodeTimeStamp
+     * This callback is called from CMBufferQueueGetFirstDecodeTimeStamp (once),
+     * and from CMBufferQueueGetMinDecodeTimeStamp (multiple times).  It should
+     * return the decode timestamp of the buffer.  If there are multiple samples
+     * in the buffer, this callback should return the minimum decode timestamp
+     * in the buffer. Can be NULL (CMBufferQueueGetFirstDecodeTimeStamp and
+     * CMBufferQueueGetMinDecodeTimeStamp will return kCMTimeInvalid). 
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setGetPresentationTimeStamp(
             @FunctionPtr(name = "call_getPresentationTimeStamp") Function_getPresentationTimeStamp value);
 
+    /**
+     * @field getPresentationTimeStamp
+     * This callback is called from CMBufferQueueGetFirstPresentationTimeStamp
+     * (once) and from CMBufferQueueGetMinPresentationTimeStamp (multiple times).
+     * It should return the presentation timestamp of the buffer.  If there are
+     * multiple samples in the buffer, this callback should return the minimum
+     * presentation timestamp in the buffer. Can be NULL
+     * (CMBufferQueueGetFirstPresentationTimeStamp and
+     * CMBufferQueueGetMinPresentationTimeStamp will return kCMTimeInvalid). 
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_getDuration")
     public native Function_getDuration getDuration();
 
+    /**
+     * @field getPresentationTimeStamp
+     * This callback is called from CMBufferQueueGetFirstPresentationTimeStamp
+     * (once) and from CMBufferQueueGetMinPresentationTimeStamp (multiple times).
+     * It should return the presentation timestamp of the buffer.  If there are
+     * multiple samples in the buffer, this callback should return the minimum
+     * presentation timestamp in the buffer. Can be NULL
+     * (CMBufferQueueGetFirstPresentationTimeStamp and
+     * CMBufferQueueGetMinPresentationTimeStamp will return kCMTimeInvalid). 
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setGetDuration(@FunctionPtr(name = "call_getDuration") Function_getDuration value);
 
+    /**
+     * @field getDuration
+     * This callback is called (once) during enqueue and dequeue operations to
+     * update the total duration of the queue.  Must not be NULL. 
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     @FunctionPtr(name = "call_isDataReady")
     public native Function_isDataReady isDataReady();
 
+    /**
+     * @field getDuration
+     * This callback is called (once) during enqueue and dequeue operations to
+     * update the total duration of the queue.  Must not be NULL. 
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setIsDataReady(@FunctionPtr(name = "call_isDataReady") Function_isDataReady value);
 
+    /**
+     * @field isDataReady
+     * This callback is called from CMBufferQueueDequeueIfDataReadyAndRetain, to
+     * ask if the buffer that is about to be dequeued is ready.  Can be NULL
+     * (data will be assumed to be ready). 
+     */
     @Generated
     @StructureField(order = 6, isGetter = true)
     @FunctionPtr(name = "call_compare")
     public native Function_compare compare();
 
+    /**
+     * @field isDataReady
+     * This callback is called from CMBufferQueueDequeueIfDataReadyAndRetain, to
+     * ask if the buffer that is about to be dequeued is ready.  Can be NULL
+     * (data will be assumed to be ready). 
+     */
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setCompare(@FunctionPtr(name = "call_compare") Function_compare value);
 
+    /**
+     * @field compare
+     * This callback is called (multiple times) from CMBufferQueueEnqueue, to
+     * perform an insertion sort. Can be NULL (queue will be FIFO). 
+     */
     @Generated
     @StructureField(order = 7, isGetter = true)
     public native CFStringRef dataBecameReadyNotification();
 
+    /**
+     * @field compare
+     * This callback is called (multiple times) from CMBufferQueueEnqueue, to
+     * perform an insertion sort. Can be NULL (queue will be FIFO). 
+     */
     @Generated
     @StructureField(order = 7, isGetter = false)
     public native void setDataBecameReadyNotification(CFStringRef value);
 
+    /**
+     * @field dataBecameReadyNotification
+     * If triggers of type kCMBufferQueueTrigger_WhenDataBecomesReady are installed,
+     * the queue will listen for this notification on the head buffer. 
+     * Can be NULL (then the queue won't listen for it). 
+     */
     @Generated
     @StructureField(order = 8, isGetter = true)
     @FunctionPtr(name = "call_getSize")
     public native Function_getSize getSize();
 
+    /**
+     * @field dataBecameReadyNotification
+     * If triggers of type kCMBufferQueueTrigger_WhenDataBecomesReady are installed,
+     * the queue will listen for this notification on the head buffer. 
+     * Can be NULL (then the queue won't listen for it). 
+     */
     @Generated
     @StructureField(order = 8, isGetter = false)
     public native void setGetSize(@FunctionPtr(name = "call_getSize") Function_getSize value);

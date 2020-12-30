@@ -34,6 +34,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPopoverControllerDelegate")
 public interface UIPopoverControllerDelegate {
+    /**
+     * -popoverController:willRepositionPopoverToRect:inView: is called on your delegate when the popover may require a different view or rectangle
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -43,6 +46,9 @@ public interface UIPopoverControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called on the delegate when the user has taken action to dismiss the popover. This is not called when -dismissPopoverAnimated: is called directly.
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -51,6 +57,9 @@ public interface UIPopoverControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called on the delegate when the popover controller will dismiss the popover. Return NO to prevent the dismissal of the view.
+     */
     @Generated
     @IsOptional
     @Deprecated

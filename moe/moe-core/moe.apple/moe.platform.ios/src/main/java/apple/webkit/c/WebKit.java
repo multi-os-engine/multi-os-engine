@@ -37,6 +37,9 @@ public final class WebKit {
     private WebKit() {
     }
 
+    /**
+     * @constant WKErrorDomain Indicates a WebKit error.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -62,56 +65,92 @@ public final class WebKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKPreviewActionItemIdentifierShare();
 
+    /**
+     * @constant WKWebsiteDataTypeDiskCache On-disk caches.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKWebsiteDataTypeDiskCache();
 
+    /**
+     * @constant WKWebsiteDataTypeMemoryCache In-memory caches.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKWebsiteDataTypeMemoryCache();
 
+    /**
+     * @constant WKWebsiteDataTypeOfflineWebApplicationCache HTML offline web application caches.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKWebsiteDataTypeOfflineWebApplicationCache();
 
+    /**
+     * @constant WKWebsiteDataTypeCookies Cookies.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKWebsiteDataTypeCookies();
 
+    /**
+     * @constant WKWebsiteDataTypeSessionStorage HTML session storage.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKWebsiteDataTypeSessionStorage();
 
+    /**
+     * @constant WKWebsiteDataTypeLocalStorage HTML local storage.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKWebsiteDataTypeLocalStorage();
 
+    /**
+     * @constant WKWebsiteDataTypeWebSQLDatabases WebSQL databases.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKWebsiteDataTypeWebSQLDatabases();
 
+    /**
+     * @constant WKWebsiteDataTypeIndexedDBDatabases IndexedDB databases.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKWebsiteDataTypeIndexedDBDatabases();
 
+    /**
+     * @abstract Indicates which local files WebKit can access when loading content.
+     * @discussion If NSReadAccessURLDocumentOption references a single file, only that file may be
+     * loaded by WebKit. If NSReadAccessURLDocumentOption references a directory, files inside that
+     * directory may be loaded by WebKit.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSReadAccessURLDocumentOption();
 
+    /**
+     * @constant WKWebsiteDataTypeFetchCache On-disk Fetch caches.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKWebsiteDataTypeFetchCache();
 
+    /**
+     * @constant WKWebsiteDataTypeServiceWorkerRegistrations Service worker registrations.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GKMatchRequest represents the parameters needed to create the match.
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -124,6 +127,9 @@ public class GKMatchRequest extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * To determine the maximum allowed players for each type of match supported.
+     */
     @Generated
     @Selector("maxPlayersAllowedForMatchOfType:")
     @NUInt
@@ -156,6 +162,9 @@ public class GKMatchRequest extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Default number of players to use during matchmaking.  If not set we default to maxPlayers
+     */
     @Generated
     @Selector("defaultNumberOfPlayers")
     @NUInt
@@ -165,6 +174,10 @@ public class GKMatchRequest extends NSObject {
     @Selector("init")
     public native GKMatchRequest init();
 
+    /**
+     * Message sent to invited players, may be modified if using GKMatchmakerViewController
+     * Will return nil if the player is underage or restricted.
+     */
     @Generated
     @Selector("inviteMessage")
     public native String inviteMessage();
@@ -175,43 +188,71 @@ public class GKMatchRequest extends NSObject {
     @ObjCBlock(name = "call_inviteeResponseHandler_ret")
     public native Block_inviteeResponseHandler_ret inviteeResponseHandler();
 
+    /**
+     * Maximum number of players for the match
+     */
     @Generated
     @Selector("maxPlayers")
     @NUInt
     public native long maxPlayers();
 
+    /**
+     * Minimum number of players for the match
+     */
     @Generated
     @Selector("minPlayers")
     @NUInt
     public native long minPlayers();
 
+    /**
+     * optional mask that specifies the role that the local player would like to play in the game.  If this value is 0 (the default), this property is ignored. If the value is nonzero, then automatching uses the value as a mask that restricts the role the player can play in the group. Automatching with player attributes matches new players into the game so that the bitwise OR of the masks of all the players in the resulting match equals 0xFFFFFFFF.
+     */
     @Generated
     @Selector("playerAttributes")
     public native int playerAttributes();
 
+    /**
+     * The player group identifier. Matchmaking will only take place between players in the same group.
+     */
     @Generated
     @Selector("playerGroup")
     @NUInt
     public native long playerGroup();
 
+    /**
+     * Array of player IDs to invite, or nil if none
+     */
     @Generated
     @Deprecated
     @Selector("playersToInvite")
     public native NSArray<String> playersToInvite();
 
+    /**
+     * An recipientResponseHandler can be set in order to receive responses from programmatically invited players.
+     */
     @Generated
     @Selector("recipientResponseHandler")
     @ObjCBlock(name = "call_recipientResponseHandler_ret")
     public native Block_recipientResponseHandler_ret recipientResponseHandler();
 
+    /**
+     * Array of GKPlayers to invite, or nil if none. This array can also include local guest players.
+     */
     @Generated
     @Selector("recipients")
     public native NSArray<? extends GKPlayer> recipients();
 
+    /**
+     * Default number of players to use during matchmaking.  If not set we default to maxPlayers
+     */
     @Generated
     @Selector("setDefaultNumberOfPlayers:")
     public native void setDefaultNumberOfPlayers(@NUInt long value);
 
+    /**
+     * Message sent to invited players, may be modified if using GKMatchmakerViewController
+     * Will return nil if the player is underage or restricted.
+     */
     @Generated
     @Selector("setInviteMessage:")
     public native void setInviteMessage(String value);
@@ -222,32 +263,53 @@ public class GKMatchRequest extends NSObject {
     public native void setInviteeResponseHandler(
             @ObjCBlock(name = "call_setInviteeResponseHandler") Block_setInviteeResponseHandler value);
 
+    /**
+     * Maximum number of players for the match
+     */
     @Generated
     @Selector("setMaxPlayers:")
     public native void setMaxPlayers(@NUInt long value);
 
+    /**
+     * Minimum number of players for the match
+     */
     @Generated
     @Selector("setMinPlayers:")
     public native void setMinPlayers(@NUInt long value);
 
+    /**
+     * optional mask that specifies the role that the local player would like to play in the game.  If this value is 0 (the default), this property is ignored. If the value is nonzero, then automatching uses the value as a mask that restricts the role the player can play in the group. Automatching with player attributes matches new players into the game so that the bitwise OR of the masks of all the players in the resulting match equals 0xFFFFFFFF.
+     */
     @Generated
     @Selector("setPlayerAttributes:")
     public native void setPlayerAttributes(int value);
 
+    /**
+     * The player group identifier. Matchmaking will only take place between players in the same group.
+     */
     @Generated
     @Selector("setPlayerGroup:")
     public native void setPlayerGroup(@NUInt long value);
 
+    /**
+     * Array of player IDs to invite, or nil if none
+     */
     @Generated
     @Deprecated
     @Selector("setPlayersToInvite:")
     public native void setPlayersToInvite(NSArray<String> value);
 
+    /**
+     * An recipientResponseHandler can be set in order to receive responses from programmatically invited players.
+     */
     @Generated
     @Selector("setRecipientResponseHandler:")
     public native void setRecipientResponseHandler(
             @ObjCBlock(name = "call_setRecipientResponseHandler") Block_setRecipientResponseHandler value);
 
+    /**
+     * Array of GKPlayers to invite, or nil if none. This array can also include local guest players.
+     */
     @Generated
     @Selector("setRecipients:")
     public native void setRecipients(NSArray<? extends GKPlayer> value);
@@ -280,10 +342,20 @@ public class GKMatchRequest extends NSObject {
         void call_setRecipientResponseHandler(GKPlayer arg0, @NInt long arg1);
     }
 
+    /**
+     * Whether or not a match will be created only using auto-match.  If YES, then a player will not be able to
+     * invite anyone (including contacts, friends, and nearby players) to the match, but rely on auto-matching to
+     * find players for the match.  Default is NO.
+     */
     @Generated
     @Selector("restrictToAutomatch")
     public native boolean restrictToAutomatch();
 
+    /**
+     * Whether or not a match will be created only using auto-match.  If YES, then a player will not be able to
+     * invite anyone (including contacts, friends, and nearby players) to the match, but rely on auto-matching to
+     * find players for the match.  Default is NO.
+     */
     @Generated
     @Selector("setRestrictToAutomatch:")
     public native void setRestrictToAutomatch(boolean value);

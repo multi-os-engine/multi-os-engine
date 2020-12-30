@@ -3,6 +3,12 @@ package apple.corenfc.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum NFCVASMode
+ * 
+ * @constant NFCVASModeURLOnly     Reserved.
+ * @constant NFCVASModeNormal      Full VAS protocol.
+ */
 @Generated
 public final class NFCVASMode {
     @Generated

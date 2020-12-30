@@ -3,6 +3,12 @@ package apple.coreml.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Events on which update task is capable of invoking progress handler.
+ * 
+ * @note MLUpdateProgressEventMiniBatchEnd may induce performance problems
+ *       during pipeline execution.
+ */
 @Generated
 public final class MLUpdateProgressEvent {
     @Generated

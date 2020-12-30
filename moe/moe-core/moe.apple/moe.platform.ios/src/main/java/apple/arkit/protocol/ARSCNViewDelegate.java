@@ -19,6 +19,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ARSCNViewDelegate")
 public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionObserver {
+    /**
+     * Called when a new node has been mapped to the given anchor.
+     * 
+     * @param renderer The renderer that will render the scene.
+     * @param node The node that maps to the anchor.
+     * @param anchor The added anchor.
+     */
     @Generated
     @IsOptional
     @Selector("renderer:didAddNode:forAnchor:")
@@ -27,6 +34,13 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a mapped node has been removed from the scene graph for the given anchor.
+     * 
+     * @param renderer The renderer that will render the scene.
+     * @param node The node that was removed.
+     * @param anchor The anchor that was removed.
+     */
     @Generated
     @IsOptional
     @Selector("renderer:didRemoveNode:forAnchor:")
@@ -35,6 +49,13 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a node has been updated with data from the given anchor.
+     * 
+     * @param renderer The renderer that will render the scene.
+     * @param node The node that was updated.
+     * @param anchor The anchor that was updated.
+     */
     @Generated
     @IsOptional
     @Selector("renderer:didUpdateNode:forAnchor:")
@@ -43,6 +64,16 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Implement this to provide a custom node for the given anchor.
+     * 
+     * @discussion This node will automatically be added to the scene graph.
+     * If this method is not implemented, a node will be automatically created.
+     * If nil is returned the anchor will be ignored.
+     * @param renderer The renderer that will render the scene.
+     * @param anchor The added anchor.
+     * @return Node that will be mapped to the anchor or nil.
+     */
     @Generated
     @IsOptional
     @Selector("renderer:nodeForAnchor:")
@@ -50,6 +81,13 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a node will be updated with data from the given anchor.
+     * 
+     * @param renderer The renderer that will render the scene.
+     * @param node The node that will be updated.
+     * @param anchor The anchor that was updated.
+     */
     @Generated
     @IsOptional
     @Selector("renderer:willUpdateNode:forAnchor:")

@@ -21,11 +21,29 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSLineBreakMode {
+    /**
+     * Wrap at word boundaries, default
+     */
     @Generated @NInt public static final long WordWrapping = 0x0000000000000000L;
+    /**
+     * Wrap at character boundaries
+     */
     @Generated @NInt public static final long CharWrapping = 0x0000000000000001L;
+    /**
+     * Simply clip
+     */
     @Generated @NInt public static final long Clipping = 0x0000000000000002L;
+    /**
+     * Truncate at head of line: "...wxyz"
+     */
     @Generated @NInt public static final long TruncatingHead = 0x0000000000000003L;
+    /**
+     * Truncate at tail of line: "abcd..."
+     */
     @Generated @NInt public static final long TruncatingTail = 0x0000000000000004L;
+    /**
+     * Truncate middle of line:  "ab...yz"
+     */
     @Generated @NInt public static final long TruncatingMiddle = 0x0000000000000005L;
 
     @Generated

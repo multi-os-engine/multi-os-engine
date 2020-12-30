@@ -32,6 +32,31 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief VNGenerateOpticalFlowRequest will determine directional change vectors for each pixel in the targeted image to transform it into the image processed
+ *        by the request handler, reporting this result with a single VNPixelBufferObservation.
+ * 
+ * @discussion	Because this request works at the pixel level, both images must have the same dimensions in order for the request to be successfully performed.
+ * 			Setting a region of interest will isolate where the change determination is performed; however, the resultant observation will still be reported
+ * 			with a full resolution VNPixelBufferObservation.
+ * 
+ *                Optical flow requests are very resource intensive, so it is recommended that only one request at a time be created and that the handler
+ *                where the request was issued be released immediately after generating optical flows.
+ * 
+ * 			Example usage:
+ * 
+ * 				- (nullable VNPixelBufferObservation*) opticalFlowFromImage:(CVPixelBufferRef)fromImage toImage:(CVPixelBuffer)toImage error:(NSError**)error
+ * 				{
+ * 					VNImageRequestHandler* imageRequestHandler = [[VNImageRequestHandler alloc] initWithCVPixelBuffer:fromImage options:@{}];
+ * 					VNGenerateOpticalFlowRequest* request = [[VNGenerateOpticalFlowRequest alloc] initWithTargetedCVPixelBuffer:toImage options:@{}];
+ * 					if (![imageRequestHandler performRequests:@[ request ] error:error])
+ * 					{
+ * 						return nil;
+ * 					}
+ * 
+ * 					return [[request results] firstObject];
+ * 				}
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -82,6 +107,10 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @brief The level of accuracy used to compute the optical flow. Default is VNGenerateOpticalFlowRequestComputationAccuracyMedium.
+     * @discussion The computational time typically trends with the accuracy level.  This parameter allows for selective tuning by the client application.
+     */
     @Generated
     @Selector("computationAccuracy")
     @NUInt
@@ -278,6 +307,10 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief Pixel format type of the output buffer. Valid values are kCVPixelFormatType_TwoComponent32Float and kCVPixelFormatType_TwoComponent16Half.
+     *        Default is kCVPixelFormatType_TwoComponent32Float.
+     */
     @Generated
     @Selector("outputPixelFormat")
     public native int outputPixelFormat();
@@ -290,10 +323,18 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @brief The level of accuracy used to compute the optical flow. Default is VNGenerateOpticalFlowRequestComputationAccuracyMedium.
+     * @discussion The computational time typically trends with the accuracy level.  This parameter allows for selective tuning by the client application.
+     */
     @Generated
     @Selector("setComputationAccuracy:")
     public native void setComputationAccuracy(@NUInt long value);
 
+    /**
+     * @brief Pixel format type of the output buffer. Valid values are kCVPixelFormatType_TwoComponent32Float and kCVPixelFormatType_TwoComponent16Half.
+     *        Default is kCVPixelFormatType_TwoComponent32Float.
+     */
     @Generated
     @Selector("setOutputPixelFormat:")
     public native void setOutputPixelFormat(int value);

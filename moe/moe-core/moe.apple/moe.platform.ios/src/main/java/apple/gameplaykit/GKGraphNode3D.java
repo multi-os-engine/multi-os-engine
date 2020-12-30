@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GKGraphNode coupled with a 3D position
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)

@@ -18,35 +18,67 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextPasteItem")
 public interface UITextPasteItem {
+    /**
+     * These will be the default attributes that will
+     * be applied to plain strings when they are provided.
+     * You can use these to make your own attributed string if you want.
+     */
     @Generated
     @Selector("defaultAttributes")
     NSDictionary<String, ?> defaultAttributes();
 
+    /**
+     * This is the NSItemProvider for the item being pasted or dropped.
+     * You should set a result for this item using one of the methods below.
+     */
     @Generated
     @Selector("itemProvider")
     NSItemProvider itemProvider();
 
+    /**
+     * This is nil for normal pastes, but might be filled with the
+     * UIDragItem's localObject for pastes from drops.
+     */
     @Generated
     @Selector("localObject")
     @MappedReturn(ObjCObjectMapper.class)
     Object localObject();
 
+    /**
+     * provide an attachment result from this NSItemProvider's data
+     */
     @Generated
     @Selector("setAttachmentResult:")
     void setAttachmentResult(NSTextAttachment textAttachment);
 
+    /**
+     * provide an attributed representation result from this NSItemProvider's data
+     */
     @Generated
     @Selector("setAttributedStringResult:")
     void setAttributedStringResult(NSAttributedString string);
 
+    /**
+     * Use this to indicate that want the default transformation to happen.
+     * If the item data for the item provider is not supported, this action
+     * will be the same as `setNoResult`.
+     * You can use this as a fallback for any items you are not handling yourself.
+     */
     @Generated
     @Selector("setDefaultResult")
     void setDefaultResult();
 
+    /**
+     * Use this to indicate that you don't want the data of this NSItemProvider
+     * included in the resulting string.
+     */
     @Generated
     @Selector("setNoResult")
     void setNoResult();
 
+    /**
+     * provide a plain string representation result from this NSItemProvider's data
+     */
     @Generated
     @Selector("setStringResult:")
     void setStringResult(String string);

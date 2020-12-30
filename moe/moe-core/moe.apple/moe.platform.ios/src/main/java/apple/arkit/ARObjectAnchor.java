@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An anchor representing an object in the world.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -127,6 +130,9 @@ public class ARObjectAnchor extends ARAnchor {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Reference to the detected object.
+     */
     @Generated
     @Selector("referenceObject")
     public native ARReferenceObject referenceObject();

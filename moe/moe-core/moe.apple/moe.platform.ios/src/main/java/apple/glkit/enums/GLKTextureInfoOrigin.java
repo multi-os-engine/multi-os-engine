@@ -18,6 +18,9 @@ package apple.glkit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Image origin of loaded texture
+ */
 @Generated
 public final class GLKTextureInfoOrigin {
     @Generated public static final int Unknown = 0x00000000;

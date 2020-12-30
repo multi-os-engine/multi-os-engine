@@ -23,6 +23,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A configuration for running positional tracking.
+ * 
+ * @discussion Positional tracking provides 6 degrees of freedom tracking of the device by running the camera at lowest possible resolution and frame rate.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -90,6 +95,13 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
     @Selector("init")
     public native ARPositionalTrackingConfiguration init();
 
+    /**
+     * The initial map of the physical space that world tracking will localize to and track.
+     * @discussion If set, the session will attempt to localize to the provided map with
+     * a limited tracking state until localization is successful or run is called again
+     * with a different (or no) initial map specified. Once localized, the map will be extended
+     * and can again be saved using the `getCurrentWorldMap` method on the session.
+     */
     @Generated
     @Selector("initialWorldMap")
     public native ARWorldMap initialWorldMap();
@@ -125,6 +137,11 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Type of planes to detect in the scene.
+     * @discussion If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
+     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to ARPlaneDetectionNone.
+     */
     @Generated
     @Selector("planeDetection")
     @NUInt
@@ -138,10 +155,22 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The initial map of the physical space that world tracking will localize to and track.
+     * @discussion If set, the session will attempt to localize to the provided map with
+     * a limited tracking state until localization is successful or run is called again
+     * with a different (or no) initial map specified. Once localized, the map will be extended
+     * and can again be saved using the `getCurrentWorldMap` method on the session.
+     */
     @Generated
     @Selector("setInitialWorldMap:")
     public native void setInitialWorldMap(ARWorldMap value);
 
+    /**
+     * Type of planes to detect in the scene.
+     * @discussion If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
+     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to ARPlaneDetectionNone.
+     */
     @Generated
     @Selector("setPlaneDetection:")
     public native void setPlaneDetection(@NUInt long value);

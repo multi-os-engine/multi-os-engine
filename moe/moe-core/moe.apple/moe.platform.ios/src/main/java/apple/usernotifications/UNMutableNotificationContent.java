@@ -158,18 +158,30 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     @NInt
     public static native long version_static();
 
+    /**
+     * Optional array of attachments.
+     */
     @Generated
     @Selector("attachments")
     public native NSArray<? extends UNNotificationAttachment> attachments();
 
+    /**
+     * The application badge number. nil means no change. 0 to hide.
+     */
     @Generated
     @Selector("badge")
     public native NSNumber badge();
 
+    /**
+     * The body of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     */
     @Generated
     @Selector("body")
     public native String body();
 
+    /**
+     * The identifier for a registered UNNotificationCategory that will be used to determine the appropriate actions to display for the notification.
+     */
     @Generated
     @Selector("categoryIdentifier")
     public native String categoryIdentifier();
@@ -182,54 +194,93 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     @Selector("initWithCoder:")
     public native UNMutableNotificationContent initWithCoder(NSCoder coder);
 
+    /**
+     * The launch image that will be used when the app is opened from the notification.
+     */
     @Generated
     @Selector("launchImageName")
     public native String launchImageName();
 
+    /**
+     * Optional array of attachments.
+     */
     @Generated
     @Selector("setAttachments:")
     public native void setAttachments(NSArray<? extends UNNotificationAttachment> value);
 
+    /**
+     * The application badge number. nil means no change. 0 to hide.
+     */
     @Generated
     @Selector("setBadge:")
     public native void setBadge(NSNumber value);
 
+    /**
+     * The body of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     */
     @Generated
     @Selector("setBody:")
     public native void setBody(String value);
 
+    /**
+     * The identifier for a registered UNNotificationCategory that will be used to determine the appropriate actions to display for the notification.
+     */
     @Generated
     @Selector("setCategoryIdentifier:")
     public native void setCategoryIdentifier(String value);
 
+    /**
+     * The launch image that will be used when the app is opened from the notification.
+     */
     @Generated
     @Selector("setLaunchImageName:")
     public native void setLaunchImageName(String value);
 
+    /**
+     * The sound that will be played for the notification.
+     */
     @Generated
     @Selector("setSound:")
     public native void setSound(UNNotificationSound value);
 
+    /**
+     * The subtitle of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     */
     @Generated
     @Selector("setSubtitle:")
     public native void setSubtitle(String value);
 
+    /**
+     * The unique identifier for the thread or conversation related to this notification request. It will be used to visually group notifications together.
+     */
     @Generated
     @Selector("setThreadIdentifier:")
     public native void setThreadIdentifier(String value);
 
+    /**
+     * The title of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
+    /**
+     * Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be set as the userInfo for remote notifications.
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
+    /**
+     * The sound that will be played for the notification.
+     */
     @Generated
     @Selector("sound")
     public native UNNotificationSound sound();
 
+    /**
+     * The subtitle of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     */
     @Generated
     @Selector("subtitle")
     public native String subtitle();
@@ -240,39 +291,72 @@ public class UNMutableNotificationContent extends UNNotificationContent {
         return supportsSecureCoding();
     }
 
+    /**
+     * The unique identifier for the thread or conversation related to this notification request. It will be used to visually group notifications together.
+     */
     @Generated
     @Selector("threadIdentifier")
     public native String threadIdentifier();
 
+    /**
+     * The title of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     */
     @Generated
     @Selector("title")
     public native String title();
 
+    /**
+     * Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be set as the userInfo for remote notifications.
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
+    /**
+     * The argument to be inserted in the summary for this notification.
+     */
     @Generated
     @Selector("setSummaryArgument:")
     public native void setSummaryArgument(String value);
 
+    /**
+     * A number that indicates how many items in the summary are represented in the summary.
+     * For example if a podcast app sends one notification for 3 new episodes in a show,
+     * the argument should be the name of the show and the count should be 3.
+     * Default is 1 and cannot be 0.
+     */
     @Generated
     @Selector("setSummaryArgumentCount:")
     public native void setSummaryArgumentCount(@NUInt long value);
 
+    /**
+     * default nil
+     */
     @Generated
     @Selector("setTargetContentIdentifier:")
     public native void setTargetContentIdentifier(String value);
 
+    /**
+     * The argument to be inserted in the summary for this notification.
+     */
     @Generated
     @Selector("summaryArgument")
     public native String summaryArgument();
 
+    /**
+     * A number that indicates how many items in the summary are represented in the summary.
+     * For example if a podcast app sends one notification for 3 new episodes in a show,
+     * the argument should be the name of the show and the count should be 3.
+     * Default is 1 and cannot be 0.
+     */
     @Generated
     @Selector("summaryArgumentCount")
     @NUInt
     public native long summaryArgumentCount();
 
+    /**
+     * default nil
+     */
     @Generated
     @Selector("targetContentIdentifier")
     public native String targetContentIdentifier();

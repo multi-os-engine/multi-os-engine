@@ -24,6 +24,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UIHoverGestureRecognizer
+ * On macOS or iPadOS, this gesture recognizer will begin recognition when the cursor
+ * (while no mouse buttons are pressed) enters its view, changes during movement
+ * within the view and ends when the cursor leaves said view.
+ * Note: While buttons are pressed any currently active hover gesture recognizers
+ * are effectively paused (letting other gesture recognizers work) until all
+ * mouse buttons have been released.
+ * 
+ * On iOS, this gesture recognizer doesn't recognize anything and is effectively
+ * a noop.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)

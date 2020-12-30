@@ -79,29 +79,47 @@ public final class CFStringInlineBuffer extends StructObject {
     @StructureField(order = 3, isGetter = false)
     public native void setDirectCStringBuffer(ConstBytePtr value);
 
+    /**
+     * Range in string to buffer
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     @ByValue
     public native CFRange rangeToBuffer();
 
+    /**
+     * Range in string to buffer
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setRangeToBuffer(@ByValue CFRange value);
 
+    /**
+     * Start of range currently buffered (relative to rangeToBuffer.location)
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     @NInt
     public native long bufferedRangeStart();
 
+    /**
+     * Start of range currently buffered (relative to rangeToBuffer.location)
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setBufferedRangeStart(@NInt long value);
 
+    /**
+     * bufferedRangeStart + number of chars actually buffered
+     */
     @Generated
     @StructureField(order = 6, isGetter = true)
     @NInt
     public native long bufferedRangeEnd();
 
+    /**
+     * bufferedRangeStart + number of chars actually buffered
+     */
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setBufferedRangeEnd(@NInt long value);

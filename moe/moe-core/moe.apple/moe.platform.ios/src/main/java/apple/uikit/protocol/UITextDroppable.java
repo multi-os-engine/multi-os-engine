@@ -11,11 +11,17 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Defines a text droppable control.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextDroppable")
 public interface UITextDroppable extends UITextInput, UITextPasteConfigurationSupporting {
+    /**
+     * Returns whether this control currently has at least one active drag session.
+     */
     @Generated
     @Selector("isTextDropActive")
     boolean isTextDropActive();
@@ -29,6 +35,11 @@ public interface UITextDroppable extends UITextInput, UITextPasteConfigurationSu
     @MappedReturn(ObjCObjectMapper.class)
     UITextDropDelegate textDropDelegate();
 
+    /**
+     * The text drop interaction that UIKit installs on the text control.
+     * Use this to explicitly disable drop interactions on system text controls,
+     * if desired.
+     */
     @Generated
     @Selector("textDropInteraction")
     UIDropInteraction textDropInteraction();

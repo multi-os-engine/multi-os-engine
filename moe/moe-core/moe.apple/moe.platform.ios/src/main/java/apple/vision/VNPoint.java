@@ -29,6 +29,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class VNPoint
+ * @brief VNPoint represents a single, immutable, two-dimensional point in an image.
+ * @discussion It should be noted that VNPoint is not intended as an overall replacement of CGPoint, NSPoint or vec2, but is used by observations that need to present points which may contain additional metadata.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -93,10 +98,18 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @brief Returns the Euclidean distance between two VNPoint objects.
+     */
     @Generated
     @Selector("distanceBetweenPoint:point:")
     public static native double distanceBetweenPointPoint(VNPoint point1, VNPoint point2);
 
+    /**
+     * @brief Returns the Euclidean distance to another point.
+     * @param point The destination point.
+     * @return the Euclidean distance between the target and specified points.
+     */
     @Generated
     @Selector("distanceToPoint:")
     public native double distanceToPoint(VNPoint point);
@@ -118,10 +131,16 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native VNPoint initWithCoder(NSCoder coder);
 
+    /**
+     * @brief Initializes a VNPoint object from a CGPoint.
+     */
     @Generated
     @Selector("initWithLocation:")
     public native VNPoint initWithLocation(@ByValue CGPoint location);
 
+    /**
+     * @brief Initializes a VNPoint object from X and Y coordinates.
+     */
     @Generated
     @Selector("initWithX:y:")
     public native VNPoint initWithXY(double x, double y);
@@ -147,6 +166,9 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @brief Returns the X and Y coordinates of the point, as CGPoint type, with respect to the origin of the coordinate system the point is defined in.
+     */
     @Generated
     @Selector("location")
     @ByValue
@@ -158,6 +180,13 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief Returns a new VNPoint object that is shifted by X and Y offsets of the vector.
+     * 
+     * @param vector	The vector offset to be applied to a source point.
+     * @param point	The source point.
+     * @return the translated point.
+     */
     @Generated
     @Selector("pointByApplyingVector:toPoint:")
     public static native VNPoint pointByApplyingVectorToPoint(VNVector vector, VNPoint point);
@@ -193,14 +222,23 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * @brief Returns the X coordinate of the point with respect to the origin of the coordinate system the point is defined in.
+     */
     @Generated
     @Selector("x")
     public native double x();
 
+    /**
+     * @brief Returns the Y coordinate of the point with respect to the origin of the coordinate system the point is defined in.
+     */
     @Generated
     @Selector("y")
     public native double y();
 
+    /**
+     * @brief Returns a VNPoint object that represents the location of (0.0, 0.0).
+     */
     @Generated
     @Selector("zeroPoint")
     public static native VNPoint zeroPoint();

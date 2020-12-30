@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXAnimationMetric
+ * @abstract      An MXMetric subclass that encapsulates app animation metrics.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -133,6 +137,13 @@ public class MXAnimationMetric extends MXMetric {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property      scrollHitchTimeRatio
+     * @abstract      Ratio of time the application spent hitching while scrolling.
+     * @discussion    Scroll hitches are user perceptible animation issues that occur during scrolling.
+     * @discussion    This metric only applies to UIScrollViews.
+     * @discussion    Dimensionless.
+     */
     @Generated
     @Selector("scrollHitchTimeRatio")
     public native NSMeasurement<NSUnit> scrollHitchTimeRatio();

@@ -19,6 +19,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPointerInteractionDelegate")
 public interface UIPointerInteractionDelegate {
+    /**
+     * @abstract Called as the pointer moves within the interaction's view.
+     * 
+     * @param interaction    This UIPointerInteraction.
+     * @param request        Request object describing the pointer's location in the interaction's view.
+     * @param defaultRegion  Region representing the entire surface of the interaction's view.
+     * 
+     * @return A UIPointerRegion in which to apply a pointer style. Return nil to indicate that this interaction should not customize the pointer for the current location.
+     */
     @Generated
     @IsOptional
     @Selector("pointerInteraction:regionForRequest:defaultRegion:")
@@ -27,6 +36,14 @@ public interface UIPointerInteractionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @abstract Called after the interaction receives a new UIPointerRegion from pointerInteraction:regionForRequest:defaultRegion:.
+     * 
+     * @param interaction  This UIPointerInteraction.
+     * @param region       The UIPointerRegion for which a style is being requested.
+     * 
+     * @return A UIPointerStyle describing the desired hover effect or pointer appearance for the given UIPointerRegion.
+     */
     @Generated
     @IsOptional
     @Selector("pointerInteraction:styleForRegion:")
@@ -34,6 +51,13 @@ public interface UIPointerInteractionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @abstract Called when the pointer enters a given region.
+     * 
+     * @param interaction  This UIPointerInteraction.
+     * @param region       The UIPointerRegion the pointer is about to enter.
+     * @param animator     Region entrance animator. Add animations to run them alongside the pointer's entrance animation.
+     */
     @Generated
     @IsOptional
     @Selector("pointerInteraction:willEnterRegion:animator:")
@@ -42,6 +66,13 @@ public interface UIPointerInteractionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @abstract Called when the pointer exists a given region.
+     * 
+     * @param interaction  This UIPointerInteraction.
+     * @param region       The UIPointerRegion the pointer is about to exit.
+     * @param animator     Region exit animator. Add animations to run them alongside the pointer's exit animation.
+     */
     @Generated
     @IsOptional
     @Selector("pointerInteraction:willExitRegion:animator:")

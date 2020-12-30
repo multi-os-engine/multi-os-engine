@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An accessory using a custom view.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -101,6 +104,10 @@ public class UICellAccessoryCustomView extends UICellAccessory {
     @Selector("initWithCoder:")
     public native UICellAccessoryCustomView initWithCoder(NSCoder coder);
 
+    /**
+     * Creates a new custom view accessory using the provided view and specified placement. The custom view must have translatesAutoresizingMaskIntoConstraints
+     * enabled, but may use auto layout constraints internally for layout of subviews and/or to indicate its preferred size.
+     */
     @Generated
     @Selector("initWithCustomView:placement:")
     public native UICellAccessoryCustomView initWithCustomViewPlacement(UIView customView, @NInt long placement);
@@ -126,6 +133,9 @@ public class UICellAccessoryCustomView extends UICellAccessory {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Whether the current frame size of the view is preserved (YES), or whether it is sized during layout of accessories (NO). Default is NO.
+     */
     @Generated
     @Selector("maintainsFixedSize")
     public native boolean maintainsFixedSize();
@@ -141,6 +151,10 @@ public class UICellAccessoryCustomView extends UICellAccessory {
     @NInt
     public native long placement();
 
+    /**
+     * Allows customizing the relative position of the accessory amongst any other accessories displayed on the same edge.
+     * The default is to insert the acccessory at a position closest to the inside of the cell.
+     */
     @Generated
     @Selector("position")
     @ObjCBlock(name = "call_position_ret")
@@ -162,10 +176,17 @@ public class UICellAccessoryCustomView extends UICellAccessory {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Whether the current frame size of the view is preserved (YES), or whether it is sized during layout of accessories (NO). Default is NO.
+     */
     @Generated
     @Selector("setMaintainsFixedSize:")
     public native void setMaintainsFixedSize(boolean value);
 
+    /**
+     * Allows customizing the relative position of the accessory amongst any other accessories displayed on the same edge.
+     * The default is to insert the acccessory at a position closest to the inside of the cell.
+     */
     @Generated
     @Selector("setPosition:")
     public native void setPosition(@ObjCBlock(name = "call_setPosition") Block_setPosition value);

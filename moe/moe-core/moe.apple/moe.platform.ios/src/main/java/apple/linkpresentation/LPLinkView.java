@@ -285,6 +285,12 @@ public class LPLinkView extends UIView {
     @Selector("layerClass")
     public static native Class layerClass();
 
+    /**
+     * The LPLinkMetadata object with which to generate a rich presentation.
+     * 
+     * The metadata can either be generated automatically from a URL by LPMetadataProvider,
+     * or manually constructed with the desired data.
+     */
     @Generated
     @Selector("metadata")
     public native LPLinkMetadata metadata();
@@ -373,6 +379,12 @@ public class LPLinkView extends UIView {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * The LPLinkMetadata object with which to generate a rich presentation.
+     * 
+     * The metadata can either be generated automatically from a URL by LPMetadataProvider,
+     * or manually constructed with the desired data.
+     */
     @Generated
     @Selector("setMetadata:")
     public native void setMetadata(LPLinkMetadata value);

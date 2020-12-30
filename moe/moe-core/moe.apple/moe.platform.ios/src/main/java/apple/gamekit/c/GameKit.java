@@ -47,11 +47,17 @@ public final class GameKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String GKGameSessionErrorDomain();
 
+    /**
+     * Notification will be posted whenever the player details changes. The object of the notification will be the player.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GKPlayerDidChangeNotificationName();
 
+    /**
+     * use a default timeout of one week
+     */
     @Generated
     @CVariable()
     public static native double GKTurnTimeoutDefault();
@@ -60,6 +66,9 @@ public final class GameKit {
     @CVariable()
     public static native double GKTurnTimeoutNone();
 
+    /**
+     * use a default timeout of one day
+     */
     @Generated
     @CVariable()
     public static native double GKExchangeTimeoutDefault();
@@ -68,11 +77,17 @@ public final class GameKit {
     @CVariable()
     public static native double GKExchangeTimeoutNone();
 
+    /**
+     * Notification will be posted whenever authentication status changes.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GKPlayerAuthenticationDidChangeNotificationName();
 
+    /**
+     * domain
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -83,6 +98,9 @@ public final class GameKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String GKVoiceChatServiceErrorDomain();
 
+    /**
+     * Deprecated methods that previously returned player IDs will return GKPlayerIDNoLongerAvailable instead.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

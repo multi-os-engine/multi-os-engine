@@ -27,7 +27,13 @@ public final class MTLResourceOptions {
     @Generated @NUInt public static final long StorageModePrivate = 0x0000000000000020L;
     @Generated @NUInt public static final long StorageModeMemoryless = 0x0000000000000030L;
     @Generated @NUInt public static final long HazardTrackingModeUntracked = 0x0000000000000100L;
+    /**
+     * Deprecated spellings
+     */
     @Generated @NUInt public static final long OptionCPUCacheModeDefault = 0x0000000000000000L;
+    /**
+     * Deprecated spellings
+     */
     @Generated @NUInt public static final long OptionCPUCacheModeWriteCombined = 0x0000000000000001L;
 
     @Generated

@@ -3,6 +3,9 @@ package apple.coreml.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * All possible states an MLTask can be in.
+ */
 @Generated
 public final class MLTaskState {
     @Generated

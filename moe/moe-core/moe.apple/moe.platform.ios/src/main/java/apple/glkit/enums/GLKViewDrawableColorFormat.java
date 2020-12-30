@@ -18,6 +18,9 @@ package apple.glkit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Enums for color buffer formats.
+ */
 @Generated
 public final class GLKViewDrawableColorFormat {
     @Generated public static final int RGBA8888 = 0x00000000;

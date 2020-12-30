@@ -41,6 +41,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * -----------------------------------------------------------------------------
+ * An MPMovieAccessLogEvent repesents a single access log entry.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -152,6 +156,9 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * The URI of the playback item.
+     */
     @Generated
     @Selector("URI")
     public native String URI();
@@ -162,10 +169,16 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * The accumulated duration of the media played, in seconds.
+     */
     @Generated
     @Selector("durationWatched")
     public native double durationWatched();
 
+    /**
+     * The throughput required to play the stream, as advertised by the server, in bits per second.
+     */
     @Generated
     @Selector("indicatedBitrate")
     public native double indicatedBitrate();
@@ -174,50 +187,83 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     @Selector("init")
     public native MPMovieAccessLogEvent init();
 
+    /**
+     * The accumulated number of bytes transferred. The value is negative if unknown.
+     */
     @Generated
     @Selector("numberOfBytesTransferred")
     public native long numberOfBytesTransferred();
 
+    /**
+     * The total number of dropped video frames.
+     */
     @Generated
     @Selector("numberOfDroppedVideoFrames")
     @NInt
     public native long numberOfDroppedVideoFrames();
 
+    /**
+     * A count of media segments downloaded from the server to this client.
+     */
     @Generated
     @Selector("numberOfSegmentsDownloaded")
     @NUInt
     public native long numberOfSegmentsDownloaded();
 
+    /**
+     * A count of changes to the serverAddress property over the last uninterrupted period of playback.
+     */
     @Generated
     @Selector("numberOfServerAddressChanges")
     @NUInt
     public native long numberOfServerAddressChanges();
 
+    /**
+     * The total number of playback stalls encountered. The value is negative if unknown.
+     */
     @Generated
     @Selector("numberOfStalls")
     @NInt
     public native long numberOfStalls();
 
+    /**
+     * The empirical throughput across all media downloaded, in bits per second.
+     */
     @Generated
     @Selector("observedBitrate")
     public native double observedBitrate();
 
+    /**
+     * A GUID that identifies the playback session. This value is used in HTTP requests.
+     */
     @Generated
     @Selector("playbackSessionID")
     public native String playbackSessionID();
 
+    /**
+     * The date/time at which playback began for this event.
+     */
     @Generated
     @Selector("playbackStartDate")
     public native NSDate playbackStartDate();
 
+    /**
+     * An offset into the playlist where the last uninterrupted period of playback began, in seconds. The value is negative if unknown.
+     */
     @Generated
     @Selector("playbackStartOffset")
     public native double playbackStartOffset();
 
+    /**
+     * The accumulated duration of the media downloaded, in seconds. The value is negative if unknown.
+     */
     @Generated
     @Selector("segmentsDownloadedDuration")
     public native double segmentsDownloadedDuration();
 
+    /**
+     * The IP address of the server that was the source of the last delivered media segment. Can be either an IPv4 or IPv6 address.
+     */
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();

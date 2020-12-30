@@ -203,10 +203,23 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     @Selector("setLeapMonth:")
     public native void setLeapMonth(boolean value);
 
+    /**
+     * Reports whether or not the combination of properties which have been set in the receiver is a date which exists in the calendar.
+     * This method is not appropriate for use on NSDateComponents objects which are specifying relative quantities of calendar components.
+     * Except for some trivial cases (e.g., 'seconds' should be 0 - 59 in any calendar), this method is not necessarily cheap.
+     * If the time zone property is set in the NSDateComponents object, it is used.
+     * The calendar property must be set, or NO is returned.
+     */
     @Generated
     @Selector("isValidDate")
     public native boolean isValidDate();
 
+    /**
+     * Reports whether or not the combination of properties which have been set in the receiver is a date which exists in the calendar.
+     * This method is not appropriate for use on NSDateComponents objects which are specifying relative quantities of calendar components.
+     * Except for some trivial cases (e.g., 'seconds' should be 0 - 59 in any calendar), this method is not necessarily cheap.
+     * If the time zone property is set in the NSDateComponents object, it is used.
+     */
     @Generated
     @Selector("isValidDateInCalendar:")
     public native boolean isValidDateInCalendar(NSCalendar calendar);
@@ -276,6 +289,10 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone value);
 
+    /**
+     * This API allows one to set a specific component of NSDateComponents, by enum constant value rather than property name.
+     * The calendar and timeZone and isLeapMonth properties cannot be set by this method.
+     */
     @Generated
     @Selector("setValue:forComponent:")
     public native void setValueForComponent(@NInt long value, @NUInt long unit);
@@ -319,6 +336,10 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     @Selector("timeZone")
     public native NSTimeZone timeZone();
 
+    /**
+     * This API allows one to get the value of a specific component of NSDateComponents, by enum constant value rather than property name.
+     * The calendar and timeZone and isLeapMonth property values cannot be gotten by this method.
+     */
     @Generated
     @Selector("valueForComponent:")
     @NInt

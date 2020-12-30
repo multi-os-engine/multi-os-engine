@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXAppResponsivenessMetric
+ * @abstract      An MXMetric subclass that encapsulates app responsiveness metrics.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -89,6 +93,14 @@ public class MXAppResponsivenessMetric extends MXMetric {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @property      histogrammedApplicationHangTime
+     * @abstract      Histogrammed app hang time data.
+     * @discussion    Applications are considered to be "hanging" when they are unable to handle user input responsively.
+     * @discussion    The durations for periods of hangs will be reported in the histogram returned here.
+     * @discussion    Application hang times that exceeds 9 seconds of wall clock time are reported in the final bucket of the histogram.
+     * @discussion    Dimensioned as NSUnitDuration.
+     */
     @Generated
     @Selector("histogrammedApplicationHangTime")
     public native MXHistogram<NSUnitDuration> histogrammedApplicationHangTime();

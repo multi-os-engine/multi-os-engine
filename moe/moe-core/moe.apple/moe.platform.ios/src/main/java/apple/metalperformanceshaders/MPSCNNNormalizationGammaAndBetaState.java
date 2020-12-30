@@ -28,6 +28,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class  MPSCNNNormalizationGammaAndBetaState
+ * @description A state which contains gamma and beta terms used to apply a scale
+ *              and bias in either an MPSCNNInstanceNormalization or MPSCNNBatchNormalization
+ *              operation.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -60,6 +66,10 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property   beta
+     * @abstract   A MTLBuffer containing the beta terms.
+     */
     @Generated
     @Selector("beta")
     @MappedReturn(ObjCObjectMapper.class)
@@ -91,6 +101,10 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property   gamma
+     * @abstract   A MTLBuffer containing the gamma terms.
+     */
     @Generated
     @Selector("gamma")
     @MappedReturn(ObjCObjectMapper.class)
@@ -120,6 +134,14 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     public native MPSCNNNormalizationGammaAndBetaState initWithDeviceTextureDescriptor(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, MTLTextureDescriptor descriptor);
 
+    /**
+     * @abstract   Initialize a MPSCNNNormalizationGammaAndBetaState object using values
+     *             contained in MTLBuffers.
+     * 
+     * @param      gamma       The MTLBuffer containing gamma terms.
+     * 
+     * @param      beta        The MTLBuffer containing beta terms.
+     */
     @Generated
     @Selector("initWithGamma:beta:")
     public native MPSCNNNormalizationGammaAndBetaState initWithGammaBeta(
@@ -189,6 +211,17 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     public static native Object temporaryStateWithCommandBufferBufferSize(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
+    /**
+     * @abstract   Create a temporary MPSCNNNormalizationGammaAndBetaState suitable
+     *             for a normalization operation on images containing no more than
+     *             the specified number of feature channels.
+     * 
+     * @param      commandBuffer           The command buffer on which the temporary state will
+     *                                     be used.
+     * 
+     * @param      numberOfFeatureChannels The number of feature channels used to size the
+     *                                     state.
+     */
     @Generated
     @Selector("temporaryStateWithCommandBuffer:numberOfFeatureChannels:")
     @MappedReturn(ObjCObjectMapper.class)

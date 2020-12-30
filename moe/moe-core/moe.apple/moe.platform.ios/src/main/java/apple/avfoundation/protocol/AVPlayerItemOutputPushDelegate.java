@@ -25,11 +25,21 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @protocol		AVPlayerItemOutputPushDelegate
+ * @abstract		Defines common delegate methods for objects participating in AVPlayerItemOutput push sample output acquisition.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVPlayerItemOutputPushDelegate")
 public interface AVPlayerItemOutputPushDelegate {
+    /**
+     * @method			outputSequenceWasFlushed:
+     * @abstract		A method invoked when the output is commencing a new sequence of media data.
+     * @discussion
+     * 	This method is invoked after any seeking and change in playback direction. If you are maintaining any queued future media data, received previously, you may want to discard these after receiving this message.
+     */
     @Generated
     @IsOptional
     @Selector("outputSequenceWasFlushed:")

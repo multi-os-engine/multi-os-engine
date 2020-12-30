@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueSmokeDetectionStatus
+ * 
+ * @constant  HMCharacteristicValueSmokeDetectionStatusNone      Smoke is not detected.
+ * @constant  HMCharacteristicValueSmokeDetectionStatusDetected  Smoke is detected.
+ */
 @Generated
 public final class HMCharacteristicValueSmokeDetectionStatus {
     @Generated @NInt public static final long None = 0x0000000000000000L;

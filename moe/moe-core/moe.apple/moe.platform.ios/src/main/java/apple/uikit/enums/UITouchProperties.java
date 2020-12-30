@@ -24,6 +24,9 @@ public final class UITouchProperties {
     @Generated @NInt public static final long Force = 0x0000000000000001L;
     @Generated @NInt public static final long Azimuth = 0x0000000000000002L;
     @Generated @NInt public static final long Altitude = 0x0000000000000004L;
+    /**
+     * For predicted Touches
+     */
     @Generated @NInt public static final long Location = 0x0000000000000008L;
 
     @Generated

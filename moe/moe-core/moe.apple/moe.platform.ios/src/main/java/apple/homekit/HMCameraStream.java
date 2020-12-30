@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract Represents a camera stream.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -152,6 +155,9 @@ public class HMCameraStream extends HMCameraSource {
     @NInt
     public static native long version_static();
 
+    /**
+     * @brief Represents the audio setting for the current stream.
+     */
     @Generated
     @Selector("audioStreamSetting")
     @NUInt
@@ -161,10 +167,24 @@ public class HMCameraStream extends HMCameraSource {
     @Selector("init")
     public native HMCameraStream init();
 
+    /**
+     * @brief Sets the audio stream setting.
+     * 
+     * @param audioStreamSetting New audio stream setting.
+     */
     @Generated
     @Selector("setAudioStreamSetting:")
     public native void setAudioStreamSetting(@NUInt long audioStreamSetting);
 
+    /**
+     * @brief Updates the settings of the audio stream.
+     * 
+     * @param audioStreamSetting New audio stream setting.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateAudioStreamSetting:completionHandler:")
     public native void updateAudioStreamSettingCompletionHandler(@NUInt long audioStreamSetting,

@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXDiskWriteExceptionDiagnostic
+ * @abstract      An MXDiagnostic subclass that encapsulates disk write exception reports.
+ * @discussion    Disk write exceptions occur when your application writes data excessively to disk.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -59,6 +64,10 @@ public class MXDiskWriteExceptionDiagnostic extends MXDiagnostic {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property      callStackTree
+     * @abstract      The application call stack tree associated with the excessive disk writes.
+     */
     @Generated
     @Selector("callStackTree")
     public native MXCallStackTree callStackTree();
@@ -155,6 +164,11 @@ public class MXDiskWriteExceptionDiagnostic extends MXDiagnostic {
         return supportsSecureCoding();
     }
 
+    /**
+     * @property      totalWritesCaused
+     * @abstract      Total disk writes caused in the scope of this disk write exception.
+     * @discussion    Dimensioned as NSUnitInformationStorage.
+     */
     @Generated
     @Selector("totalWritesCaused")
     public native NSMeasurement<NSUnitInformationStorage> totalWritesCaused();

@@ -80,6 +80,12 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @abstract   Create a copy with
+     * @param      zone    The NSZone in which to allocate the MPSNDArrayMultiaryKernel object
+     * @param      device  The device on which the new kernel will run. Pass nil for same device.
+     * @return     A valid MPSNDArrayMultiaryKernel, or nil if allocation failure.
+     */
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
@@ -94,26 +100,54 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract   Method to allocate the result image for -encodeToCommandBuffer:sourceImage:
+     * @discussion Default: MPSTemporaryImage.defaultAllocator
+     */
     @Generated
     @Selector("destinationArrayAllocator")
     @MappedReturn(ObjCObjectMapper.class)
     public native MPSNDArrayAllocator destinationArrayAllocator();
 
+    /**
+     * @abstract   Return a descriptor suitable for allocating a NSArray to receive the result
+     * @discussion The object properties (kernelSize, offsets, edgeMode, etc.) should be properly
+     *             configured as if the -encode call was about to be made, before this method is
+     *             called. Those properties may affect the results.
+     * @param      sources     The list of sources passed into the -encode call
+     * @param      state       The source state object, if any passed to the -encode call
+     * @return     a valid MPSNDArrayDescriptor that may be used to create a MPSNDArray to used to
+     *             hold the results of this kernel.
+     */
     @Generated
     @Selector("destinationArrayDescriptorForSourceArrays:sourceState:")
     public native MPSNDArrayDescriptor destinationArrayDescriptorForSourceArraysSourceState(
             NSArray<? extends MPSNDArray> sources, MPSState state);
 
+    /**
+     * @abstract   Get the kernel dilation rate for each dimension
+     * @param      sourceIndex The index of the source image for which this applies
+     * @return     The kernel dilation rate for each dimension.
+     */
     @Generated
     @Selector("dilationRatesForSourceIndex:")
     @ByValue
     public native MPSNDArraySizes dilationRatesForSourceIndex(@NUInt long sourceIndex);
 
+    /**
+     * @abstract   The edge mode used for each source NDArray
+     * @param      sourceIndex   The index of the source image
+     * @return     The MPSImageEdgeMode for that image
+     */
     @Generated
     @Selector("edgeModeAtSourceIndex:")
     @NUInt
     public native long edgeModeAtSourceIndex(@NUInt long sourceIndex);
 
+    /**
+     * @abstract   Initialize a MPSNDArrayMultiaryKernel from a NSCoder
+     * @param      coder   The NSCoder that contains the serialized object
+     */
     @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
@@ -131,6 +165,12 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
     @Selector("initWithCoder:")
     public native MPSNDArrayMultiaryBase initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract   Initialize a MPSNDArrayMultiaryKernel from a NSCoder
+     * @param      coder   The NSCoder that contains the serialized object
+     * @param      device  The device on which the kernel will run
+     * @return     A valid MPSNDArrayMultiaryKernel, or nil if allocation failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNDArrayMultiaryBase initWithCoderDevice(NSCoder coder,
@@ -140,6 +180,12 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
     @Selector("initWithDevice:")
     public native MPSNDArrayMultiaryBase initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Initialize a MPSNDArrayMultiaryKernel
+     * @param      device  The device on which the kernel will run
+     * @param      count   The maximum number of NDArrays read by the kernel
+     * @return     A valid MPSNDArrayMultiaryKernel, or nil if allocation failure.
+     */
     @Generated
     @Selector("initWithDevice:sourceCount:")
     public native MPSNDArrayMultiaryBase initWithDeviceSourceCount(@Mapped(ObjCObjectMapper.class) MTLDevice device,
@@ -162,6 +208,11 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * @abstract   Get the diameters of the point spread function (PSF) in each dimension
+     * @param      sourceIndex     The MPSNDArrayMultiaryKernel source NDArray to which the kernel will be applied
+     * @return     A list of kernel diameters in each dimension
+     */
     @Generated
     @Selector("kernelSizesForSourceIndex:")
     @ByValue
@@ -177,6 +228,15 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract   Read offsets to use when addressing a source NDArray
+     * @discussion The coordinate of the position read from this source array which is
+     *             used to calculate the result value at [0,0,0,....]
+     *             If the position read is actually a contiguous region (e.g. the area covered by
+     *             a convolution kernel) then this is the center of that region, rounded down, for
+     *             each dimension.
+     * @param      sourceIndex   The index of the source MPSNDArray to which the list of offsets is applied
+     */
     @Generated
     @Selector("offsetsAtSourceIndex:")
     @ByValue
@@ -196,6 +256,10 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
             NSArray<? extends MPSNDArray> sourceArrays, NSArray<? extends MPSState> sourceStates,
             MPSNDArray destinationArray);
 
+    /**
+     * @abstract   Method to allocate the result image for -encodeToCommandBuffer:sourceImage:
+     * @discussion Default: MPSTemporaryImage.defaultAllocator
+     */
     @Generated
     @Selector("setDestinationArrayAllocator:")
     public native void setDestinationArrayAllocator(@Mapped(ObjCObjectMapper.class) MPSNDArrayAllocator value);
@@ -204,6 +268,15 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @abstract   Return the downsampling ratio for the kernel in each dimension
+     * @discussion If the filter is a "backwards" filter such as a gradient filter
+     *             or convolution transpose, then this is the upsampling ratio and
+     *             zeros are inserted in the result.
+     * @param      sourceIndex The index of the source for which the strides apply
+     * @return     The strides from one destination sample to the next in each
+     *             dimension of the corresponding source NDArray
+     */
     @Generated
     @Selector("stridesForSourceIndex:")
     @ByValue

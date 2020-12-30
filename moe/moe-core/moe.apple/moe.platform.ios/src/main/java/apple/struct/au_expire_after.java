@@ -36,28 +36,46 @@ public final class au_expire_after extends StructObject {
         setOp_type(op_type);
     }
 
+    /**
+     * Age after which trail files should be expired
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @NInt
     public native long age();
 
+    /**
+     * Age after which trail files should be expired
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setAge(@NInt long value);
 
+    /**
+     * Aggregate trail size when files should be expired
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @NUInt
     public native long size();
 
+    /**
+     * Aggregate trail size when files should be expired
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSize(@NUInt long value);
 
+    /**
+     * Operator used with the above values to determine when files should be expired
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native byte op_type();
 
+    /**
+     * Operator used with the above values to determine when files should be expired
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setOp_type(byte value);

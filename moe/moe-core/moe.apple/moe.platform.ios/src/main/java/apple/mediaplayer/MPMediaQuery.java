@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPMediaQuery represents a collection of items or playlists determined by a chain of MPMediaPredicate objects.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -61,6 +64,10 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Base queries which can be used directly or as the basis for custom queries.
+     * The groupingType for these queries is preset to the appropriate type for the query.
+     */
     @Generated
     @Selector("albumsQuery")
     public static native MPMediaQuery albumsQuery();
@@ -202,6 +209,9 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("collectionSections")
     public native NSArray<? extends MPMediaQuerySection> collectionSections();
 
+    /**
+     * Returns an array of MPMediaItemCollections matching the query filter predicates. The collections are grouped by the groupingType.
+     */
     @Generated
     @Selector("collections")
     public native NSArray<? extends MPMediaItemCollection> collections();
@@ -220,6 +230,9 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("filterPredicates")
     public native NSSet<? extends MPMediaPredicate> filterPredicates();
 
+    /**
+     * The property used to group collections, defaults to MPMediaGroupingTitle.
+     */
     @Generated
     @Selector("groupingType")
     @NInt
@@ -237,10 +250,18 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("initWithFilterPredicates:")
     public native MPMediaQuery initWithFilterPredicates(NSSet<? extends MPMediaPredicate> filterPredicates);
 
+    /**
+     * Returns an array of MPMediaQuerySection instances representing the section grouping of the query's items or collections.
+     * May be nil in cases where no section grouping of the items or collections is appropriate.
+     */
     @Generated
     @Selector("itemSections")
     public native NSArray<? extends MPMediaQuerySection> itemSections();
 
+    /**
+     * Returns an array of MPMediaItems matching the query filter predicates.
+     * If no items match this method returns an empty array, otherwise returns nil if an error prevents the items from being fetched.
+     */
     @Generated
     @Selector("items")
     public native NSArray<? extends MPMediaItem> items();
@@ -253,6 +274,9 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("setFilterPredicates:")
     public native void setFilterPredicates(NSSet<? extends MPMediaPredicate> value);
 
+    /**
+     * The property used to group collections, defaults to MPMediaGroupingTitle.
+     */
     @Generated
     @Selector("setGroupingType:")
     public native void setGroupingType(@NInt long value);

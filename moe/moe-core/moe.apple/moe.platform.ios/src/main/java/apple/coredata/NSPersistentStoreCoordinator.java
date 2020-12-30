@@ -137,6 +137,9 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLError(String storeType, NSURL url,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Allows to access the metadata stored in a persistent store without warming up a CoreData stack; the guaranteed keys in this dictionary are NSStoreTypeKey and NSStoreUUIDKey. If storeType is nil, Core Data will guess which store class should be used to get/set the store file's metadata.
+     */
     @Generated
     @Selector("metadataForPersistentStoreOfType:URL:options:error:")
     public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLOptionsError(String storeType,
@@ -148,14 +151,23 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Registers the specified NSPersistentStore subclass for the specified store type string.  This method must be invoked before a custom subclass of NSPersistentStore can be loaded into a persistent store coordinator.  Passing nil for the store class argument will unregister the specified store type.
+     */
     @Generated
     @Selector("registerStoreClass:forStoreType:")
     public static native void registerStoreClassForStoreType(Class storeClass, String storeType);
 
+    /**
+     * Returns a dictionary of the registered store types:  the keys are the store type strings and the values are the NSPersistentStore subclasses wrapped in NSValues.
+     */
     @Generated
     @Selector("registeredStoreTypes")
     public static native NSDictionary<String, ? extends NSValue> registeredStoreTypes();
 
+    /**
+     * Delete all ubiquitous content for all peers for the persistent store at the given URL and also delete the local store file. storeOptions should contain the options normally passed to addPersistentStoreWithType:URL:options:error. Errors may be returned as a result of file I/O, iCloud network or iCloud account issues.
+     */
     @Generated
     @Selector("removeUbiquitousContentAndPersistentStoreAtURL:options:error:")
     public static native boolean removeUbiquitousContentAndPersistentStoreAtURLOptionsError(NSURL storeURL,
@@ -203,17 +215,29 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     public native void addPersistentStoreWithDescriptionCompletionHandler(NSPersistentStoreDescription storeDescription,
             @ObjCBlock(name = "call_addPersistentStoreWithDescriptionCompletionHandler") Block_addPersistentStoreWithDescriptionCompletionHandler block);
 
+    /**
+     * Adds the store at the specified URL (of the specified type) to the coordinator with the model configuration and options.  The configuration can be nil -- then it's the complete model; storeURL is usually the file location of the database
+     */
     @Generated
     @Selector("addPersistentStoreWithType:configuration:URL:options:error:")
     public native NSPersistentStore addPersistentStoreWithTypeConfigurationURLOptionsError(String storeType,
             String configuration, NSURL storeURL, NSDictionary<?, ?> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * delete or truncate the target persistent store in accordance with the store class's requirements.  It is important to pass similar options as addPersistentStoreWithType: ... SQLite stores will honor file locks, journal files, journaling modes, and other intricacies.  It is not possible to unlink a database file safely out from underneath another thread or process, so this API performs a truncation.  Other stores will default to using NSFileManager.
+     */
     @Generated
     @Selector("destroyPersistentStoreAtURL:withType:options:error:")
     public native boolean destroyPersistentStoreAtURLWithTypeOptionsError(NSURL url, String storeType,
             NSDictionary<?, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Sends a request to all of the stores associated with this coordinator.
+     * Returns an array if successful,  nil if not.
+     * The contents of the array will vary depending on the request type: NSFetchRequest results will be an array of managed objects, managed object IDs, or NSDictionaries;
+     * NSSaveChangesRequests will an empty array. User defined requests will return arrays of arrays, where the nested array is the result returned form a single store.
+     */
     @Generated
     @Selector("executeRequest:withContext:error:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -233,6 +257,9 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Selector("lock")
     public native void lock();
 
+    /**
+     * Given a URI representation of an object ID, returns an object ID if a matching store is available or nil if a matching store cannot be found (the URI representation contains a UUID of the store the ID is coming from, and the coordinator can match it against the stores added to it)
+     */
     @Generated
     @Selector("managedObjectIDForURIRepresentation:")
     public native NSManagedObjectID managedObjectIDForURIRepresentation(NSURL url);
@@ -241,23 +268,38 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Selector("managedObjectModel")
     public native NSManagedObjectModel managedObjectModel();
 
+    /**
+     * Returns the metadata currently stored or to-be-stored in the persistent store
+     */
     @Generated
     @Selector("metadataForPersistentStore:")
     public native NSDictionary<String, ?> metadataForPersistentStore(NSPersistentStore store);
 
+    /**
+     * Used for save as - performance may vary depending on the type of old and new store; the old store is usually removed from the coordinator by the migration operation, and therefore is no longer a useful reference after invoking this method
+     */
     @Generated
     @Selector("migratePersistentStore:toURL:options:withType:error:")
     public native NSPersistentStore migratePersistentStoreToURLOptionsWithTypeError(NSPersistentStore store, NSURL URL,
             NSDictionary<?, ?> options, String storeType, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * custom name for a coordinator.  Coordinators will set the label on their queue
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * asynchronously performs the block on the coordinator's queue.  Encapsulates an autorelease pool.
+     */
     @Generated
     @Selector("performBlock:")
     public native void performBlock(@ObjCBlock(name = "call_performBlock") Block_performBlock block);
 
+    /**
+     * synchronously performs the block on the coordinator's queue.  May safely be called reentrantly. Encapsulates an autorelease pool.
+     */
     @Generated
     @Selector("performBlockAndWait:")
     public native void performBlockAndWait(
@@ -276,6 +318,9 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     public native boolean removePersistentStoreError(NSPersistentStore store,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * copy or overwrite the target persistent store in accordance with the store class's requirements.  It is important to pass similar options as addPersistentStoreWithType: ... SQLite stores will honor file locks, journal files, journaling modes, and other intricacies.  Other stores will default to using NSFileManager.
+     */
     @Generated
     @Selector("replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:")
     public native boolean replacePersistentStoreAtURLDestinationOptionsWithPersistentStoreFromURLSourceOptionsStoreTypeError(
@@ -283,14 +328,23 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
             NSDictionary<?, ?> sourceOptions, String storeType,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Sets the metadata stored in the persistent store during the next save operation executed on it; the store type and UUID (NSStoreTypeKey and NSStoreUUIDKey) are always added automatically (but NSStoreUUIDKey is only added if it is not set manually as part of the dictionary argument)
+     */
     @Generated
     @Selector("setMetadata:forPersistentStore:")
     public native void setMetadataForPersistentStore(NSDictionary<String, ?> metadata, NSPersistentStore store);
 
+    /**
+     * custom name for a coordinator.  Coordinators will set the label on their queue
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * Sets the URL for the specified store in the coordinator.  For atomic stores, this will alter the location to which the next save operation will persist the file;  for non-atomic stores, invoking this method will release the existing connection and create a new one at the specified URL.  (For non-atomic stores, a store must pre-exist at the destination URL; a new store will not be created.)
+     */
     @Generated
     @Selector("setURL:forPersistentStore:")
     public native boolean setURLForPersistentStore(NSURL url, NSPersistentStore store);
@@ -326,6 +380,9 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
         void call_performBlockAndWait();
     }
 
+    /**
+     * Constructs a combined NSPersistentHistoryToken given an array of persistent stores. If stores is nil or an empty array, the NSPersistentHistoryToken will be constructed with all of the persistent stores in the coordinator.
+     */
     @Generated
     @Selector("currentPersistentHistoryTokenFromStores:")
     public native NSPersistentHistoryToken currentPersistentHistoryTokenFromStores(NSArray<?> stores);

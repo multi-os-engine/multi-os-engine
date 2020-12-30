@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract virtual base class for basic arithmetic nodes
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -90,10 +93,19 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     @Selector("init")
     public native MPSNNBinaryArithmeticNode init();
 
+    /**
+     * @abstract init an arithemtic node with two sources
+     * @param  left    the left operand
+     * @param  right   the right operand
+     */
     @Generated
     @Selector("initWithLeftSource:rightSource:")
     public native MPSNNBinaryArithmeticNode initWithLeftSourceRightSource(MPSNNImageNode left, MPSNNImageNode right);
 
+    /**
+     * @abstract init an arithemtic node with an array of sources
+     * @param  sourceNodes     A valid NSArray containing two sources
+     */
     @Generated
     @Selector("initWithSources:")
     public native MPSNNBinaryArithmeticNode initWithSources(NSArray<? extends MPSNNImageNode> sourceNodes);
@@ -125,11 +137,20 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract create an autoreleased arithemtic node with two sources
+     * @param  left    the left operand
+     * @param  right   the right operand
+     */
     @Generated
     @Selector("nodeWithLeftSource:rightSource:")
     public static native MPSNNBinaryArithmeticNode nodeWithLeftSourceRightSource(MPSNNImageNode left,
             MPSNNImageNode right);
 
+    /**
+     * @abstract create an autoreleased arithemtic node with an array of sources
+     * @param  sourceNodes     A valid NSArray containing two sources
+     */
     @Generated
     @Selector("nodeWithSources:")
     public static native MPSNNBinaryArithmeticNode nodeWithSources(NSArray<? extends MPSNNImageNode> sourceNodes);
@@ -163,6 +184,11 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     @Selector("gradientClass")
     public native Class gradientClass();
 
+    /**
+     * @abstract create new arithmetic gradient nodes
+     * @discussion Create two new arithmetic gradient nodes - one that computes the gradient for the primary
+     * source image and one that computes the gradient for the secondary sourcefrom the inference pass.
+     */
     @Generated
     @Selector("gradientFiltersWithSources:")
     public native NSArray<? extends MPSNNGradientFilterNode> gradientFiltersWithSources(

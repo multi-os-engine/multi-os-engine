@@ -39,6 +39,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents a single state in a state machine.
+ * By default, states allow transitions freely to and from the states in the machine.
+ * 
+ * If a more restricted set of valid transitions are needed in the state machine, you may override isValidNextState: where applicable.
+ * 
+ * @see GKStateMachine
+ * @see isValidNextState:
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -141,6 +150,11 @@ public class GKState extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Creates a new state to be used in a state machine.
+     * 
+     * @see GKStateMachine
+     */
     @Generated
     @Selector("state")
     public static native GKState state();
@@ -154,6 +168,12 @@ public class GKState extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Called by GKStateMachine when this state is entered.
+     * 
+     * @param previousState the state that was exited to enter this state.  This is nil if this is the state machine's first entered state.
+     * @see stateMachineWithStates:initialStateClass:
+     */
     @Generated
     @Selector("didEnterWithPreviousState:")
     public native void didEnterWithPreviousState(GKState previousState);
@@ -162,18 +182,44 @@ public class GKState extends NSObject {
     @Selector("init")
     public native GKState init();
 
+    /**
+     * Returns YES if the given class is a valid next state to enter.
+     * 
+     * By default GKState will return YES for any class that is subclass of GKState.
+     * Override this in a subclass to enforce limited edge traversals in the state machine.
+     * 
+     * @see GKStateMachine.canEnterState:
+     * @see GKStateMachine.enterState:
+     * 
+     * @param stateClass the class to be checked
+     * @return YES if the class is kind of GKState and the state transition is valid, else NO.
+     */
     @Generated
     @Selector("isValidNextState:")
     public native boolean isValidNextState(Class stateClass);
 
+    /**
+     * The state machine that this state is associated with.
+     * This is nil if this state hasn't been added to a state machine yet.
+     */
     @Generated
     @Selector("stateMachine")
     public native GKStateMachine stateMachine();
 
+    /**
+     * Called by GKStateMachine when it is updated
+     * 
+     * @param seconds the time in seconds since the last update
+     */
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double seconds);
 
+    /**
+     * Called by GKStateMachine when this state is exited
+     * 
+     * @param nextState the state that is being entered next
+     */
     @Generated
     @Selector("willExitWithNextState:")
     public native void willExitWithNextState(GKState nextState);

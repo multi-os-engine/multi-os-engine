@@ -35,6 +35,17 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSNetServiceDelegate")
 public interface NSNetServiceDelegate {
+    /**
+     * Sent to a published NSNetService instance's delegate when a new connection is
+     * * received. Before you can communicate with the connecting client, you must -open
+     * * and schedule the streams. To reject a connection, just -open both streams and
+     * * then immediately -close them.
+     * 
+     * * To enable TLS on the stream, set the various TLS settings using
+     * * kCFStreamPropertySSLSettings before calling -open. You must also specify
+     * * kCFBooleanTrue for kCFStreamSSLIsServer in the settings dictionary along with
+     * * a valid SecIdentityRef as the first entry of kCFStreamSSLCertificates.
+     */
     @Generated
     @IsOptional
     @Selector("netService:didAcceptConnectionWithInputStream:outputStream:")
@@ -43,6 +54,9 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent to the NSNetService instance's delegate when an error in publishing the instance occurs. The error dictionary will contain two key/value pairs representing the error domain and code (see the NSNetServicesError enumeration above for error code constants). It is possible for an error to occur after a successful publication.
+     */
     @Generated
     @IsOptional
     @Selector("netService:didNotPublish:")
@@ -50,6 +64,9 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent to the NSNetService instance's delegate when an error in resolving the instance occurs. The error dictionary will contain two key/value pairs representing the error domain and code (see the NSNetServicesError enumeration above for error code constants).
+     */
     @Generated
     @IsOptional
     @Selector("netService:didNotResolve:")
@@ -57,6 +74,9 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent to the NSNetService instance's delegate when the instance is being monitored and the instance's TXT record has been updated. The new record is contained in the data parameter.
+     */
     @Generated
     @IsOptional
     @Selector("netService:didUpdateTXTRecordData:")
@@ -64,6 +84,9 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent to the NSNetService instance's delegate when the publication of the instance is complete and successful.
+     */
     @Generated
     @IsOptional
     @Selector("netServiceDidPublish:")
@@ -71,6 +94,9 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent to the NSNetService instance's delegate when one or more addresses have been resolved for an NSNetService instance. Some NSNetService methods will return different results before and after a successful resolution. An NSNetService instance may get resolved more than once; truly robust clients may wish to resolve again after an error, or to resolve more than once.
+     */
     @Generated
     @IsOptional
     @Selector("netServiceDidResolveAddress:")
@@ -78,6 +104,9 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent to the NSNetService instance's delegate when the instance's previously running publication or resolution request has stopped.
+     */
     @Generated
     @IsOptional
     @Selector("netServiceDidStop:")
@@ -85,6 +114,9 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent to the NSNetService instance's delegate prior to advertising the service on the network. If for some reason the service cannot be published, the delegate will not receive this message, and an error will be delivered to the delegate via the delegate's -netService:didNotPublish: method.
+     */
     @Generated
     @IsOptional
     @Selector("netServiceWillPublish:")
@@ -92,6 +124,9 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent to the NSNetService instance's delegate prior to resolving a service on the network. If for some reason the resolution cannot occur, the delegate will not receive this message, and an error will be delivered to the delegate via the delegate's -netService:didNotResolve: method.
+     */
     @Generated
     @IsOptional
     @Selector("netServiceWillResolve:")

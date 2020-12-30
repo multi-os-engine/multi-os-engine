@@ -36,6 +36,16 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INUIHostedViewControlling")
 public interface INUIHostedViewControlling {
+    /**
+     * @abstract Perform configuration of UI based on the provided INInteraction object.
+     * @discussion When configuration is complete for the given interaction, the hosted view controller should call the completion block with its view's desired size. This size will be constrained between hostedViewMinimumAllowedSize and hostedViewMaximumAllowedSize of the extension context.
+     * 
+     * @param  interaction The input interaction
+     * @param  context The hosting context for this interaction. The hosted view will be displayed alongside this context -- for instance, a Siri result snippet, or a place card within Maps.
+     * @param  completion The response handling block takes one parameter corresponding the optional desiredSize property of the INUIHostedViewControlling protocol
+     * 
+     * @see  INInteraction
+     */
     @IsOptional
     @Generated
     @Selector("configureWithInteraction:context:completion:")
@@ -51,6 +61,19 @@ public interface INUIHostedViewControlling {
         void call_configureWithInteractionContextCompletion(@ByValue CGSize desiredSize);
     }
 
+    /**
+     * @abstract Perform configuration of UI based on the provided INInteraction and INParameter objects.
+     * @discussion When configuration is complete for the given parameters and interaction, the hosted view controller should call the completion block with whether it was successful, the parameters it configured itself with, and its view's desired size. The size of the view will ultimately be constrained between hostedViewMinimumAllowedSize and hostedViewMaximumAllowedSize of the extension context.
+     * 
+     * @param  parameters The parameters of the interaction for which to configure the view
+     * @param  interaction The input interaction
+     * @param  interactiveBehavior The behavior that will be driven by user interaction of this view
+     * @param  context The hosting context for this interaction. The hosted view will be displayed within/alongside this context -- for instance, a Siri result snippet, or a place card within Maps.
+     * @param  completion The response handling block takes the following: A) a success boolean, which tells the hosted view context if this view was successfully configured, B) the set of parameters that this view was successfully configured for, and C) a desiredSize for this view to be sized at within the hosted view context.
+     * 
+     * @see  INParameter
+     * @see  INInteraction
+     */
     @Generated
     @IsOptional
     @Selector("configureViewForParameters:ofInteraction:interactiveBehavior:context:completion:")

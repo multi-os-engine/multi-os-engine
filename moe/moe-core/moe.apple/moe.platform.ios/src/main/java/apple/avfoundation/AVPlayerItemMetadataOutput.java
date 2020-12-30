@@ -40,6 +40,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class			AVPlayerItemMetadataOutput
+ * @abstract		A subclass of AVPlayerItemOutput that vends collections of metadata items carried in metadata tracks.
+ * 
+ * @discussion
+ * 	Setting the value of suppressesPlayerRendering on an instance of AVPlayerItemMetadataOutput has no effect.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -151,15 +158,33 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property		advanceIntervalForDelegateInvocation
+     * @abstract		Permits advance invocation of the associated delegate, if any.
+     * @discussion
+     * 	If it is possible, an AVPlayerItemMetadataOutput will message its delegate advanceIntervalForDelegateInvocation seconds earlier than otherwise. If the value you provide is large, effectively requesting provision of samples earlier than the AVPlayerItemMetadataOutput is prepared to act on them, the delegate will be invoked as soon as possible.
+     */
     @Generated
     @Selector("advanceIntervalForDelegateInvocation")
     public native double advanceIntervalForDelegateInvocation();
 
+    /**
+     * @property		delegate
+     * @abstract		The receiver's delegate.
+     * @discussion
+     * 	The delegate is held using a zeroing-weak reference, so this property will have a value of nil after a delegate that was previously set has been deallocated.  This property is not key-value observable.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVPlayerItemMetadataOutputPushDelegate delegate();
 
+    /**
+     * @property		delegateQueue
+     * @abstract		The dispatch queue on which messages are sent to the delegate.
+     * @discussion
+     * 	This property is not key-value observable.
+     */
     @Generated
     @Selector("delegateQueue")
     public native NSObject delegateQueue();
@@ -168,14 +193,36 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
     @Selector("init")
     public native AVPlayerItemMetadataOutput init();
 
+    /**
+     * @method			initWithIdentifiers:
+     * @abstract		Creates an instance of AVPlayerItemMetadataOutput.
+     * @param			identifiers
+     * 				A array of metadata identifiers indicating the metadata items that the output should provide.
+     * @discussion
+     * 	See AVMetadataIdentifiers.h for publicly defined metadata identifiers. Pass nil to receive all of the timed metadata from all enabled AVPlayerItemTracks that carry timed metadata.
+     */
     @Generated
     @Selector("initWithIdentifiers:")
     public native AVPlayerItemMetadataOutput initWithIdentifiers(NSArray<String> identifiers);
 
+    /**
+     * @property		advanceIntervalForDelegateInvocation
+     * @abstract		Permits advance invocation of the associated delegate, if any.
+     * @discussion
+     * 	If it is possible, an AVPlayerItemMetadataOutput will message its delegate advanceIntervalForDelegateInvocation seconds earlier than otherwise. If the value you provide is large, effectively requesting provision of samples earlier than the AVPlayerItemMetadataOutput is prepared to act on them, the delegate will be invoked as soon as possible.
+     */
     @Generated
     @Selector("setAdvanceIntervalForDelegateInvocation:")
     public native void setAdvanceIntervalForDelegateInvocation(double value);
 
+    /**
+     * @method			setDelegate:queue:
+     * @abstract		Sets the receiver's delegate and a dispatch queue on which the delegate will be called.
+     * @param			delegate
+     * 				An object conforming to AVPlayerItemMetadataOutputPushDelegate protocol.
+     * @param			delegateQueue
+     * 				A dispatch queue on which all delegate methods will be called.
+     */
     @Generated
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(@Mapped(ObjCObjectMapper.class) AVPlayerItemMetadataOutputPushDelegate delegate,

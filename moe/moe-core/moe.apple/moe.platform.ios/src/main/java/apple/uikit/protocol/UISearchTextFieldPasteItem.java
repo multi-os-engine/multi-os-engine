@@ -8,11 +8,19 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * A protocol that refines UITextPasteItem to support pasting of tokens.
+ * 
+ * Paste items vended by UISearchTextField conform to this protocol.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UISearchTextFieldPasteItem")
 public interface UISearchTextFieldPasteItem extends UITextPasteItem {
+    /**
+     * Transforms this paste item into a token at the end of the search text field’s token array.
+     */
     @Generated
     @Selector("setSearchTokenResult:")
     void setSearchTokenResult(UISearchToken token);

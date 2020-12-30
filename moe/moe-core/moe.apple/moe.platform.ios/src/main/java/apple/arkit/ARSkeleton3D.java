@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An object representing a skeleton in 3D.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -107,10 +110,16 @@ public class ARSkeleton3D extends ARSkeleton {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * The local space joint data for each joint.
+     */
     @Generated
     @Selector("jointLocalTransforms")
     public native VoidPtr jointLocalTransforms();
 
+    /**
+     * The model space transforms for each joint.
+     */
     @Generated
     @Selector("jointModelTransforms")
     public native VoidPtr jointModelTransforms();

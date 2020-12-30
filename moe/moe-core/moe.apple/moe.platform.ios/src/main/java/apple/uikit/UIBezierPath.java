@@ -111,6 +111,9 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     public static native UIBezierPath bezierPathWithRoundedRectByRoundingCornersCornerRadii(@ByValue CGRect rect,
             @NUInt long corners, @ByValue CGSize cornerRadii);
 
+    /**
+     * rounds all corners with the same horizontal and vertical radius
+     */
     @Generated
     @Selector("bezierPathWithRoundedRect:cornerRadius:")
     public static native UIBezierPath bezierPathWithRoundedRectCornerRadius(@ByValue CGRect rect,
@@ -221,14 +224,23 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("addQuadCurveToPoint:controlPoint:")
     public native void addQuadCurveToPointControlPoint(@ByValue CGPoint endPoint, @ByValue CGPoint controlPoint);
 
+    /**
+     * Appending paths
+     */
     @Generated
     @Selector("appendPath:")
     public native void appendPath(UIBezierPath bezierPath);
 
+    /**
+     * Transforming paths
+     */
     @Generated
     @Selector("applyTransform:")
     public native void applyTransform(@ByValue CGAffineTransform transform);
 
+    /**
+     * Modified paths
+     */
     @Generated
     @Selector("bezierPathByReversingPath")
     public native UIBezierPath bezierPathByReversingPath();
@@ -261,10 +273,16 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Path operations on the current graphics context
+     */
     @Generated
     @Selector("fill")
     public native void fill();
 
+    /**
+     * These methods do not affect the blend mode or alpha of the current graphics context
+     */
     @Generated
     @Selector("fillWithBlendMode:alpha:")
     public native void fillWithBlendModeAlpha(int blendMode, @NFloat double alpha);
@@ -286,6 +304,9 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("initWithCoder:")
     public native UIBezierPath initWithCoder(NSCoder coder);
 
+    /**
+     * Path info
+     */
     @Generated
     @Selector("isEmpty")
     public native boolean isEmpty();
@@ -298,16 +319,25 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("lineJoinStyle")
     public native int lineJoinStyle();
 
+    /**
+     * Drawing properties
+     */
     @Generated
     @Selector("lineWidth")
     @NFloat
     public native double lineWidth();
 
+    /**
+     * Used when lineJoinStyle is kCGLineJoinMiter
+     */
     @Generated
     @Selector("miterLimit")
     @NFloat
     public native double miterLimit();
 
+    /**
+     * Path construction
+     */
     @Generated
     @Selector("moveToPoint:")
     public native void moveToPoint(@ByValue CGPoint point);
@@ -316,6 +346,10 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("removeAllPoints")
     public native void removeAllPoints();
 
+    /**
+     * Returns an immutable CGPathRef which is only valid until the UIBezierPath is further mutated.
+     * Setting the path will create an immutable copy of the provided CGPathRef, so any further mutations on a provided CGMutablePathRef will be ignored.
+     */
     @Generated
     @Selector("setCGPath:")
     public native void setCGPath(CGPathRef value);
@@ -336,14 +370,23 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("setLineJoinStyle:")
     public native void setLineJoinStyle(int value);
 
+    /**
+     * Drawing properties
+     */
     @Generated
     @Selector("setLineWidth:")
     public native void setLineWidth(@NFloat double value);
 
+    /**
+     * Used when lineJoinStyle is kCGLineJoinMiter
+     */
     @Generated
     @Selector("setMiterLimit:")
     public native void setMiterLimit(@NFloat double value);
 
+    /**
+     * Default is NO. When YES, the even-odd fill rule is used for drawing, clipping, and hit testing.
+     */
     @Generated
     @Selector("setUsesEvenOddFillRule:")
     public native void setUsesEvenOddFillRule(boolean value);
@@ -356,6 +399,9 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("strokeWithBlendMode:alpha:")
     public native void strokeWithBlendModeAlpha(int blendMode, @NFloat double alpha);
 
+    /**
+     * Default is NO. When YES, the even-odd fill rule is used for drawing, clipping, and hit testing.
+     */
     @Generated
     @Selector("usesEvenOddFillRule")
     public native boolean usesEvenOddFillRule();

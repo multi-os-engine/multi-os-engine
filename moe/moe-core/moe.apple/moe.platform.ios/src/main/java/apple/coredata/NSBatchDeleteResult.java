@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The result returned when executing an NSBatchDeleteRequest
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +157,9 @@ public class NSBatchDeleteResult extends NSPersistentStoreResult {
     @Selector("init")
     public native NSBatchDeleteResult init();
 
+    /**
+     * Return the result. See NSBatchDeleteRequestResultType for options
+     */
     @Generated
     @Selector("result")
     @MappedReturn(ObjCObjectMapper.class)

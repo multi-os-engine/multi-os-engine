@@ -58,10 +58,16 @@ public final class KerxControlPointEntry extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setNewState(char value);
 
+    /**
+     * flags per above enum
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char flags();
 
+    /**
+     * flags per above enum
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setFlags(char value);

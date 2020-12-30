@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueAirParticulateSize
+ * 
+ * @constant  HMCharacteristicValueAirParticulateSize2_5          Air particulate size of 2.5 micrometers.
+ * @constant  HMCharacteristicValueAirParticulateSize10           Air particulate size of 10 micrometers.
+ */
 @Generated
 public final class HMCharacteristicValueAirParticulateSize {
     @Generated @NInt public static final long Size2_5 = 0x0000000000000000L;

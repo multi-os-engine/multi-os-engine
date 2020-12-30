@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIScrollViewIndicatorStyle {
+    /**
+     * Automatically switches appearance based on the user interface style
+     */
     @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * Dark indicator, for use on light backgrounds
+     */
     @Generated @NInt public static final long Black = 0x0000000000000001L;
+    /**
+     * Light indicator, for use on dark backgrounds
+     */
     @Generated @NInt public static final long White = 0x0000000000000002L;
 
     @Generated

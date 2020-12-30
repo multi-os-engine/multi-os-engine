@@ -160,31 +160,53 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
     @Selector("init")
     public native UIGraphicsImageRendererFormat init();
 
+    /**
+     * indicates the bitmap context will draw fully opaque. The preferredFormat sets this to NO.
+     */
     @Generated
     @Selector("opaque")
     public native boolean opaque();
 
+    /**
+     * indicates the bitmap context should draw into a context capable of rendering extended color images. The preferredFormat sets this according to the main screen's current configuration.
+     */
     @Generated
     @Selector("prefersExtendedRange")
     public native boolean prefersExtendedRange();
 
+    /**
+     * display scale of the context. The preferredFormat uses the scale most appropriate for the main screen's current configuration.
+     */
     @Generated
     @Selector("scale")
     @NFloat
     public native double scale();
 
+    /**
+     * indicates the bitmap context will draw fully opaque. The preferredFormat sets this to NO.
+     */
     @Generated
     @Selector("setOpaque:")
     public native void setOpaque(boolean value);
 
+    /**
+     * indicates the bitmap context should draw into a context capable of rendering extended color images. The preferredFormat sets this according to the main screen's current configuration.
+     */
     @Generated
     @Selector("setPrefersExtendedRange:")
     public native void setPrefersExtendedRange(boolean value);
 
+    /**
+     * display scale of the context. The preferredFormat uses the scale most appropriate for the main screen's current configuration.
+     */
     @Generated
     @Selector("setScale:")
     public native void setScale(@NFloat double value);
 
+    /**
+     * Returns a format optimized for the specified trait collection, taking into account properties such as displayScale and displayGamut.
+     * Traits that are not specified will be ignored, with their corresponding format properties defaulting to the values in preferredFormat.
+     */
     @Generated
     @Selector("formatForTraitCollection:")
     public static native UIGraphicsImageRendererFormat formatForTraitCollection(UITraitCollection traitCollection);

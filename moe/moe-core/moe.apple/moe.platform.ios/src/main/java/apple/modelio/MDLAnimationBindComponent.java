@@ -121,6 +121,9 @@ public class MDLAnimationBindComponent extends NSObject implements NSCopying, MD
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLJointAnimation jointAnimation();
 
+    /**
+     * optional. If set, jointIndices vertex buffers index into this list of joints.
+     */
     @Generated
     @Selector("jointPaths")
     public native NSArray<String> jointPaths();
@@ -147,6 +150,9 @@ public class MDLAnimationBindComponent extends NSObject implements NSCopying, MD
     @Selector("setJointAnimation:")
     public native void setJointAnimation(@Mapped(ObjCObjectMapper.class) MDLJointAnimation value);
 
+    /**
+     * optional. If set, jointIndices vertex buffers index into this list of joints.
+     */
     @Generated
     @Selector("setJointPaths:")
     public native void setJointPaths(NSArray<String> value);

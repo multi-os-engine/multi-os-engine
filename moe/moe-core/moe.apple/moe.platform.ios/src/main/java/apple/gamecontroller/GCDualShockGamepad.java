@@ -23,6 +23,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The GCDualShockGamepad profile represents any supported DualShock 4 controller. 
+ * 
+ * @see GCExtendedGamepad
+ * @see GCMotion
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -133,6 +139,9 @@ public class GCDualShockGamepad extends GCExtendedGamepad {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * DualShock controllers have a touchpad with a button and two-finger tracking.
+     */
     @Generated
     @Selector("touchpadButton")
     public native GCControllerButtonInput touchpadButton();

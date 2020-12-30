@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract An abstract class that represents a request for the app to be launched in the background to perform work.
+ * @discussion Do not instantiate instances of this class directly. Instead, use one of its concrete subclasses.
+ */
 @Generated
 @Library("BackgroundTasks")
 @Runtime(ObjCRuntime.class)
@@ -89,6 +93,10 @@ public class BGTaskRequest extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract The earliest date at which the task may run.
+     * @discussion Setting this property does not guarantee that the task will begin at the specified date, but only that it will not begin sooner. If not specified, no start delay is used.
+     */
     @Generated
     @Selector("earliestBeginDate")
     public native NSDate earliestBeginDate();
@@ -98,6 +106,9 @@ public class BGTaskRequest extends NSObject implements NSCopying {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @abstract The identifier associated with this request.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -141,6 +152,10 @@ public class BGTaskRequest extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract The earliest date at which the task may run.
+     * @discussion Setting this property does not guarantee that the task will begin at the specified date, but only that it will not begin sooner. If not specified, no start delay is used.
+     */
     @Generated
     @Selector("setEarliestBeginDate:")
     public native void setEarliestBeginDate(NSDate value);

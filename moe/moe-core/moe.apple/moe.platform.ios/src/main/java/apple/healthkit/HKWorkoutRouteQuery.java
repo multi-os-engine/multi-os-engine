@@ -30,6 +30,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKWorkoutRouteQuery
+ * @abstract      An HKWorkoutRouteQuery is used to access data associated with an HKWorkoutRoute.
+ * @discussion    Once instantiated, call HKHealthStore executeQuery to begin enumerating the route data. Call
+ *                HKHealthStore stopQuery to discontinue further route data reporting.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -97,6 +103,18 @@ public class HKWorkoutRouteQuery extends HKQuery {
     @Selector("init")
     public native HKWorkoutRouteQuery init();
 
+    /**
+     * @method        initWithRoute:handler:
+     * @abstract      Returns a query that will retrieve CLLocation objects for the specified
+     * workoutRoute.
+     * 
+     * @param workoutRoute    The HKWorkoutRoute for which the location data will be returned.
+     * @param dataHandler     The block to invoke with results from the query. It is called repeatedly with an array of
+     *                        CLLocation objects until all data is returned and the done parameter is YES or if HKHealthStore
+     *                        stopQuery: is called. The stopQuery call can be made within the dataHandler block. The number of
+     *                        objects returned in routeData per dataHandler call is unspecified. Once done is YES, or
+     *                        stopQuery called, the query is complete and no more calls to the handler will be made.
+     */
     @Generated
     @Selector("initWithRoute:dataHandler:")
     public native HKWorkoutRouteQuery initWithRouteDataHandler(HKWorkoutRoute workoutRoute,

@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class			AVAssetDownloadTask
+ * @abstract		A NSURLSessionTask that accepts remote AVURLAssets to download locally.
+ * @discussion	Should be created with -[AVAssetDownloadURLSession assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options:]. To utilize local data for playback for downloads that are in-progress, re-use the URLAsset supplied in initialization. An AVAssetDownloadTask may be instantiated with a destinationURL pointing to an existing asset on disk, for the purpose of completing or augmenting a downloaded asset.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -154,10 +159,19 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property		URLAsset
+     * @abstract		The asset supplied to the download task upon initialization.
+     */
     @Generated
     @Selector("URLAsset")
     public native AVURLAsset URLAsset();
 
+    /**
+     * @property		destinationURL
+     * @abstract		The file URL supplied to the download task upon initialization.
+     * @discussion	This URL may have been appended with the appropriate extension for the asset.
+     */
     @Generated
     @Selector("destinationURL")
     public native NSURL destinationURL();
@@ -166,10 +180,19 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
     @Selector("init")
     public native AVAssetDownloadTask init();
 
+    /**
+     * @property		loadedTimeRanges
+     * @abstract		This property provides a collection of time ranges for which the download task has media data already downloaded and playable. The ranges provided might be discontinuous.
+     * @discussion	Returns an NSArray of NSValues containing CMTimeRanges.
+     */
     @Generated
     @Selector("loadedTimeRanges")
     public native NSArray<? extends NSValue> loadedTimeRanges();
 
+    /**
+     * @property		options
+     * @abstract		The options supplied to the download task upon initialization.
+     */
     @Generated
     @Selector("options")
     public native NSDictionary<String, ?> options();

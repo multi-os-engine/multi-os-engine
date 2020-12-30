@@ -25,6 +25,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNReduceFeatureChannelsArgumentMax
+ * @discussion The MPSNNReduceFeatureChannelsArgumentMax performs returns the argument index that is the
+ *             location of the maximum value for feature channels of an image
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -96,11 +101,23 @@ public class MPSNNReduceFeatureChannelsArgumentMax extends MPSNNReduceUnary {
     @Selector("initWithCoder:")
     public native MPSNNReduceFeatureChannelsArgumentMax initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion See @ref MPSKernel#initWithCoder.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
+     * @param      device      The MTLDevice on which to make the MPSCNNPooling
+     * @return     A new MPSNNReduceFeatureChannelsArgumentMax object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNNReduceFeatureChannelsArgumentMax initWithCoderDevice(NSCoder aDecoder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Specifies information to apply the reduction operation on an image.
+     * @param    device            The device the filter will run on
+     * @return     A valid MPSNNReduceFeatureChannelsArgumentMax object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSNNReduceFeatureChannelsArgumentMax initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);

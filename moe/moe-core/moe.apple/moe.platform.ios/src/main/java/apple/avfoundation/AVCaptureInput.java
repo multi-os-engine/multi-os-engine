@@ -39,6 +39,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVCaptureInput
+ * @abstract
+ *    AVCaptureInput is an abstract class that provides an interface for connecting capture input sources to an AVCaptureSession.
+ * 
+ * @discussion
+ *    Concrete instances of AVCaptureInput representing input sources such as cameras can be added to instances of AVCaptureSession using the -[AVCaptureSession addInput:] method. An AVCaptureInput vends one or more streams of media data. For example, input devices can provide both audio and video data. Each media stream provided by an input is represented by an AVCaptureInputPort object. Within a capture session, connections are made between AVCaptureInput instances and AVCaptureOutput instances via AVCaptureConnection objects that define the mapping between a set of AVCaptureInputPort objects and a single AVCaptureOutput.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +162,14 @@ public class AVCaptureInput extends NSObject {
     @Selector("init")
     public native AVCaptureInput init();
 
+    /**
+     * @property ports
+     * @abstract
+     *    The ports owned by the receiver.
+     * 
+     * @discussion
+     *    The value of this property is an array of AVCaptureInputPort objects, each exposing an interface to a single stream of media data provided by an input.
+     */
     @Generated
     @Selector("ports")
     public native NSArray<? extends AVCaptureInputPort> ports();

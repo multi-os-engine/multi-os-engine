@@ -148,6 +148,9 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * limits are imprecise/not strict
+     */
     @Generated
     @Selector("countLimit")
     @NUInt
@@ -183,6 +186,9 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     @Selector("removeObjectForKey:")
     public native void removeObjectForKey(@Mapped(ObjCObjectMapper.class) _KeyType key);
 
+    /**
+     * limits are imprecise/not strict
+     */
     @Generated
     @Selector("setCountLimit:")
     public native void setCountLimit(@NUInt long value);
@@ -211,6 +217,9 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * 0 cost
+     */
     @Generated
     @Selector("setObject:forKey:")
     public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) _ObjectType obj,
@@ -221,10 +230,16 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     public native void setObjectForKeyCost(@Mapped(ObjCObjectMapper.class) _ObjectType obj,
             @Mapped(ObjCObjectMapper.class) _KeyType key, @NUInt long g);
 
+    /**
+     * limits are imprecise/not strict
+     */
     @Generated
     @Selector("setTotalCostLimit:")
     public native void setTotalCostLimit(@NUInt long value);
 
+    /**
+     * limits are imprecise/not strict
+     */
     @Generated
     @Selector("totalCostLimit")
     @NUInt

@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSCNNConvolutionTransposeGradient
+ * @dependency This depends on Metal.framework
+ * @discussion The MPSCNNConvolutionTransposeGradient implementents backward propagation of gradient for MPSCNNConvolutionTranspose forward filter
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -78,6 +83,10 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property   dataSource
+     * @abstract   dataSource with which gradient object was created
+     */
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -91,11 +100,20 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property   gradientOption
+     * @abstract   Option to control which gradient to compute. Default is MPSCNNConvolutionGradientOptionAll
+     *             which means both gradient with respect to data and gradient with respect to weight and bias are computed.
+     */
     @Generated
     @Selector("gradientOption")
     @NUInt
     public native long gradientOption();
 
+    /**
+     * @property   groups
+     * @abstract   Number of groups input and output channels are divided into.
+     */
     @Generated
     @Selector("groups")
     @NUInt
@@ -114,6 +132,17 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
     @Selector("initWithCoder:")
     public native MPSCNNConvolutionTransposeGradient initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion While the standard NSSecureCoding/NSCoding method
+     *             -initWithCoder: should work, since the file can't
+     *             know which device your data is allocated on, we
+     *             have to guess and may guess incorrectly.  To avoid
+     *             that problem, use initWithCoder:device instead.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
+     * @param      device      The MTLDevice on which to make the MPSKernel
+     * @return     A new MPSKernel object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSCNNConvolutionTransposeGradient initWithCoderDevice(NSCoder aDecoder,
@@ -123,6 +152,14 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
     @Selector("initWithDevice:")
     public native MPSCNNConvolutionTransposeGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Initializes a convolution transpose gradient (with respect to weights and bias) object.
+     * @param      device                          The MTLDevice on which this MPSCNNConvolutionGradient filter will be used
+     * @param      weights                         A pointer to a object that conforms to the MPSCNNConvolutionDataSource
+     *                                             protocol. Note that same data source as provided to forward convolution should be used.
+     * 
+     * @return     A valid MPSCNNConvolutionTransposeGradient object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:weights:")
     public native MPSCNNConvolutionTransposeGradient initWithDeviceWeights(
@@ -156,10 +193,22 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract   CPU side reload. Reload the updated weights and biases from data provider into internal weights and bias buffers. Weights and biases
+     * gradients needed for update are obtained from MPSCNNConvolutionGradientState object. Data provider passed in init call is used for this purpose.
+     */
     @Generated
     @Selector("reloadWeightsAndBiasesFromDataSource")
     public native void reloadWeightsAndBiasesFromDataSource();
 
+    /**
+     * @abstract   GPU side reload. Reload the updated weights and biases from update buffer produced by application enqueued metal kernel into internal weights
+     *             and biases buffer. Weights and biases gradients needed for update are obtained from MPSCNNConvolutionGradientState object's gradientForWeights and gradientForBiases metal buffer.
+     * 
+     * @param      commandBuffer      Metal command buffer on which application update kernel was enqueued consuming MPSCNNConvolutionGradientState's gradientForWeights and gradientForBiases buffer
+     *                                and producing updateBuffer metal buffer.
+     * @param      state              MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffers which have updated weights produced by application's update kernel.
+     */
     @Generated
     @Selector("reloadWeightsAndBiasesWithCommandBuffer:state:")
     public native void reloadWeightsAndBiasesWithCommandBufferState(
@@ -174,6 +223,11 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   gradientOption
+     * @abstract   Option to control which gradient to compute. Default is MPSCNNConvolutionGradientOptionAll
+     *             which means both gradient with respect to data and gradient with respect to weight and bias are computed.
+     */
     @Generated
     @Selector("setGradientOption:")
     public native void setGradientOption(@NUInt long value);
@@ -182,11 +236,22 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @property   sourceGradientFeatureChannels
+     * @abstract   The number of feature channels per pixel in the gradient image (primarySource) of encode call. This is same is outputFeatureChannels
+     *             or the feature channels of destination image in forward convolution i.e. dataSource.descriptor.outputFeatureChannels
+     */
     @Generated
     @Selector("sourceGradientFeatureChannels")
     @NUInt
     public native long sourceGradientFeatureChannels();
 
+    /**
+     * @property   sourceImageFeatureChannels
+     * @abstract   The number of feature channels per pixel in the input image to forward convolution which is used here as secondarySource.
+     *             This is same as dataSource.descriptor.inputFeatureChannels. This is also the number of feature channels in destinatin image
+     *             here i.e. gradient with respect to data.
+     */
     @Generated
     @Selector("sourceImageFeatureChannels")
     @NUInt

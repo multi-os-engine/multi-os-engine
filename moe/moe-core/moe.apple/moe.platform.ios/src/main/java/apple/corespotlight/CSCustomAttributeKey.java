@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CSCustomAttributeKey allows you to specify a custom attribute as well as various other properties of that attribute.
+ */
 @Generated
 @Library("CoreSpotlight")
 @Runtime(ObjCRuntime.class)
@@ -176,6 +179,11 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
     @Selector("initWithCoder:")
     public native CSCustomAttributeKey initWithCoder(NSCoder coder);
 
+    /**
+     * Key names should be ASCII only, with no punctuation other than '_'.
+     * It is recommended keys be of the form "com_mycompany_myapp_keyname"
+     * Keys starting with 'kMD' are reserved.
+     */
     @Generated
     @Selector("initWithKeyName:")
     public native CSCustomAttributeKey initWithKeyName(String keyName);
@@ -185,18 +193,30 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
     public native CSCustomAttributeKey initWithKeyNameSearchableSearchableByDefaultUniqueMultiValued(String keyName,
             boolean searchable, boolean searchableByDefault, boolean unique, boolean multiValued);
 
+    /**
+     * Is this attribute expecting multiple values to be associated with it, i.e. are values arrays?  By default, NO
+     */
     @Generated
     @Selector("isMultiValued")
     public native boolean isMultiValued();
 
+    /**
+     * Can this attribute be searched on? By default, YES
+     */
     @Generated
     @Selector("isSearchable")
     public native boolean isSearchable();
 
+    /**
+     * Is this property searchable by default? By default, NO
+     */
     @Generated
     @Selector("isSearchableByDefault")
     public native boolean isSearchableByDefault();
 
+    /**
+     * Should values be uniqued to save storage? By default, NO. Set this to YES when there is a small set of known values, or values are likely to be frequently repeating for other reasons.
+     */
     @Generated
     @Selector("isUnique")
     public native boolean isUnique();

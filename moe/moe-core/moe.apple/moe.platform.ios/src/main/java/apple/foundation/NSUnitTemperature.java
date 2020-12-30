@@ -131,6 +131,9 @@ public class NSUnitTemperature extends NSDimension implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Base unit - kelvin
+     */
     @Generated
     @Selector("kelvin")
     public static native NSUnitTemperature kelvin();

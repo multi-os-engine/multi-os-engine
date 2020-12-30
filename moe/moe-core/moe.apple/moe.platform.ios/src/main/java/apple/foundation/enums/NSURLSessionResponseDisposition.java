@@ -21,9 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSURLSessionResponseDisposition {
+    /**
+     * Cancel the load, this is the same as -[task cancel]
+     */
     @Generated @NInt public static final long Cancel = 0x0000000000000000L;
+    /**
+     * Allow the load to continue
+     */
     @Generated @NInt public static final long Allow = 0x0000000000000001L;
+    /**
+     * Turn this request into a download
+     */
     @Generated @NInt public static final long BecomeDownload = 0x0000000000000002L;
+    /**
+     * Turn this task into a stream task
+     */
     @Generated @NInt public static final long BecomeStream = 0x0000000000000003L;
 
     @Generated

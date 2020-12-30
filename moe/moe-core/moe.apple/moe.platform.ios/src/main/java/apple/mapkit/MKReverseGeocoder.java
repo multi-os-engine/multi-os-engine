@@ -42,6 +42,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MKReverseGeocoder is now deprecated.
+ * Use CLGeocoder in CoreLocation instead.
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -207,6 +211,9 @@ public class MKReverseGeocoder extends NSObject {
         }
     }
 
+    /**
+     * A MKReverseGeocoder object should only be started once.
+     */
     @Generated
     @Deprecated
     @Selector("start")

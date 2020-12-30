@@ -37,6 +37,10 @@ public final class AVKit {
     private AVKit() {
     }
 
+    /**
+     * @constant	AVKitErrorDomain
+     * @abstract	Domain for errors from AVKit APIs.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

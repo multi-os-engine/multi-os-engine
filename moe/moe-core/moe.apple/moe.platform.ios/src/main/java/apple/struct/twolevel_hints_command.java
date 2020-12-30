@@ -35,34 +35,58 @@ public final class twolevel_hints_command extends StructObject {
         setNhints(nhints);
     }
 
+    /**
+     * LC_TWOLEVEL_HINTS
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int cmd();
 
+    /**
+     * LC_TWOLEVEL_HINTS
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setCmd(int value);
 
+    /**
+     * sizeof(struct twolevel_hints_command)
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int cmdsize();
 
+    /**
+     * sizeof(struct twolevel_hints_command)
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setCmdsize(int value);
 
+    /**
+     * offset to the hint table
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int offset();
 
+    /**
+     * offset to the hint table
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setOffset(int value);
 
+    /**
+     * number of hints in the hint table
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int nhints();
 
+    /**
+     * number of hints in the hint table
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setNhints(int value);

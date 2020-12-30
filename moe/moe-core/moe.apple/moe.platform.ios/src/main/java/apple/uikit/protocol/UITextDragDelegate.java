@@ -20,6 +20,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextDragDelegate")
 public interface UITextDragDelegate {
+    /**
+     * Provide a preview for lifting the item out of the text control.
+     * If you return nil, the drag interaction will provide a default preview.
+     * 
+     * Note: This will not be called for items obtained from a UITextDragRequest’s suggestedItems
+     * (via textDraggableView:itemsForDrag:).
+     * The text control will use its own previews for those items.
+     */
     @Generated
     @IsOptional
     @Selector("textDraggableView:dragPreviewForLiftingItem:session:")
@@ -28,6 +36,10 @@ public interface UITextDragDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a drag out of this text control has ended.
+     * The operation tells you what happened on the drop side.
+     */
     @Generated
     @IsOptional
     @Selector("textDraggableView:dragSessionDidEnd:withOperation:")
@@ -36,6 +48,11 @@ public interface UITextDragDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the user actually begins dragging.
+     * At that point, the text has lifted out of the text control.
+     * `textDraggableView:dragSessionDidEnd:withOperation:` will be called when the drag ends.
+     */
     @Generated
     @IsOptional
     @Selector("textDraggableView:dragSessionWillBegin:")
@@ -44,6 +61,17 @@ public interface UITextDragDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Implement this to provide custom drag items when dragging out of a text control.
+     * If you return an empty array here, no drag will occur.
+     * The drag request provides the text range from which the user is dragging, and
+     * a set of default drag items which would be used if this delegate method were
+     * not implemented. You can modify and/or augment these at will.
+     * 
+     * Note: this method might be called more than once. For instance, if the control
+     * is asked to provide more items to add to an existing session.
+     * You can detect this by checking the `existingItems` in the drag request.
+     */
     @Generated
     @IsOptional
     @Selector("textDraggableView:itemsForDrag:")
@@ -52,6 +80,11 @@ public interface UITextDragDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the lift animation is about to start.
+     * Use the animator to animate your own changes alongside the system animation,
+     * or to be called when the lift animation completes.
+     */
     @Generated
     @IsOptional
     @Selector("textDraggableView:willAnimateLiftWithAnimator:session:")

@@ -18,6 +18,31 @@ package apple.audiotoolbox.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum       AudioComponentInstantiationOptions
+ * @brief      Options controlling component instantiation.
+ * @discussion
+ *     Most component instances are loaded into the calling process.
+ * 
+ *     A version 3 audio unit, however, can be loaded into a separate extension service process,
+ *     and this is the default behavior for these components. To be able to load one in-process
+ *     requires that the developer package the audio unit in a bundle separate from the application
+ *     extension, since an extension's main binary cannot be dynamically loaded into another
+ *     process.
+ * 
+ *     A macOS host may request in-process loading of such audio units using
+ *     kAudioComponentInstantiation_LoadInProcess.
+ * 
+ *     kAudioComponentFlag_IsV3AudioUnit specifies whether an audio unit is implemented using API
+ *     version 3.
+ * 
+ *     These options are just requests to the implementation. It may fail and fall back to the
+ *     default.
+ * @constant kAudioComponentInstantiation_LoadOutOfProcess
+ *     Attempt to load the component into a separate extension process.
+ * @constant kAudioComponentInstantiation_LoadInProcess
+ *     Attempt to load the component into the current process. Only available on macOS.
+ */
 @Generated
 public final class AudioComponentInstantiationOptions {
     @Generated public static final int kAudioComponentInstantiation_LoadOutOfProcess = 0x00000001;

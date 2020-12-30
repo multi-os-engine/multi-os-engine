@@ -42,6 +42,9 @@ public final class ExternalAccessory {
     @MappedReturn(ObjCStringMapper.class)
     public static native String EABluetoothAccessoryPickerErrorDomain();
 
+    /**
+     * EAAccessoryManager Notifications
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -52,11 +55,17 @@ public final class ExternalAccessory {
     @MappedReturn(ObjCStringMapper.class)
     public static native String EAAccessoryDidDisconnectNotification();
 
+    /**
+     * EAAccessory
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String EAAccessoryKey();
 
+    /**
+     * EAAccessory
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

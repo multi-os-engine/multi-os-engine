@@ -168,6 +168,9 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
         }
     }
 
+    /**
+     * Informs the paragraph and character formatting UI when text in a selection has changed attributes. `isMultiple:` means that the attributes spans multiple text runs.
+     */
     @Generated
     @Selector("setSelectedAttributes:isMultiple:")
     public native void setSelectedAttributesIsMultiple(NSDictionary<String, ?> attributes, boolean flag);
@@ -184,6 +187,9 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
     @Selector("textFormattingCoordinatorForWindowScene:")
     public static native UITextFormattingCoordinator textFormattingCoordinatorForWindowScene(UIWindowScene windowScene);
 
+    /**
+     * On macOS only, will toggle standard system Font Panel visibility.
+     */
     @Generated
     @Selector("toggleFontPanel:")
     public static native void toggleFontPanel(@Mapped(ObjCObjectMapper.class) Object sender);

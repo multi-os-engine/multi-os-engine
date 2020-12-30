@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIViewAnimationCurve {
+    /**
+     * slow at beginning and end
+     */
     @Generated @NInt public static final long EaseInOut = 0x0000000000000000L;
+    /**
+     * slow at beginning
+     */
     @Generated @NInt public static final long EaseIn = 0x0000000000000001L;
+    /**
+     * slow at end
+     */
     @Generated @NInt public static final long EaseOut = 0x0000000000000002L;
     @Generated @NInt public static final long Linear = 0x0000000000000003L;
 

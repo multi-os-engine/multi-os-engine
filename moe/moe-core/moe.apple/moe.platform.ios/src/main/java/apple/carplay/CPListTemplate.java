@@ -87,6 +87,9 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * The list template's delegate is informed of list selection events.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -109,6 +112,9 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("initWithCoder:")
     public native CPListTemplate initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize a list template with one or more sections of items and an optional title.
+     */
     @Generated
     @Selector("initWithTitle:sections:")
     public native CPListTemplate initWithTitleSections(String title, NSArray<? extends CPListSection> sections);
@@ -152,6 +158,9 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The sections displayed in this list.
+     */
     @Generated
     @Selector("sections")
     public native NSArray<? extends CPListSection> sections();
@@ -160,10 +169,16 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("setBackButton:")
     public native void setBackButton(CPBarButton value);
 
+    /**
+     * The list template's delegate is informed of list selection events.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CPListTemplateDelegate value);
 
+    /**
+     * The list template's delegate is informed of list selection events.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) CPListTemplateDelegate value) {
         Object __old = delegate();
@@ -202,6 +217,9 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
         return supportsSecureCoding();
     }
 
+    /**
+     * Title shown in the navigation bar while this template is visible.
+     */
     @Generated
     @Selector("title")
     public native String title();
@@ -210,6 +228,10 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("trailingNavigationBarButtons")
     public native NSArray<? extends CPBarButton> trailingNavigationBarButtons();
 
+    /**
+     * Update the list of sections displayed in this list template, reloading
+     * the table view displaying this list.
+     */
     @Generated
     @Selector("updateSections:")
     public native void updateSections(NSArray<? extends CPListSection> sections);
@@ -219,42 +241,112 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     @NInt
     public static native long version_static();
 
+    /**
+     * An optional array of strings, ordered from most to least preferred.
+     * The variant strings should be provided as localized, displayable content.
+     * The system will select the first variant that fits the available space.
+     * 
+     * If the list template does not contain any items (itemCount == 0), then
+     * the template will display an empty view with a title and subtitle to indicate
+     * that the template has no list items.
+     * 
+     * If the list template is updated to contain items, the empty view will be automatically
+     * removed.
+     */
     @Generated
     @Selector("emptyViewSubtitleVariants")
     public native NSArray<String> emptyViewSubtitleVariants();
 
+    /**
+     * An optional array of strings, ordered from most to least preferred.
+     * The variant strings should be provided as localized, displayable content.
+     * The system will select the first variant that fits the available space.
+     * 
+     * If the list template does not contain any items (itemCount == 0), then
+     * the template will display an empty view with a title and subtitle to indicate
+     * that the template has no list items.
+     * 
+     * If the list template is updated to contain items, the empty view will be automatically
+     * removed.
+     */
     @Generated
     @Selector("emptyViewTitleVariants")
     public native NSArray<String> emptyViewTitleVariants();
 
+    /**
+     * Return an @c NSIndexPath for the specified item, if it exists in any section
+     * in this list template, or nil if not found.
+     */
     @Generated
     @Selector("indexPathForItem:")
     public native NSIndexPath indexPathForItem(@Mapped(ObjCObjectMapper.class) CPListTemplateItem item);
 
+    /**
+     * The number of items currently displayed in this list template, across all sections.
+     */
     @Generated
     @Selector("itemCount")
     @NUInt
     public native long itemCount();
 
+    /**
+     * The maximum number of items, across all sections, that may appear in a @c CPListTemplate.
+     * 
+     * @note Your list template will display the first @c maximumItemCount items, across all sections.
+     * Any items or sections beyond that limit will be trimmed.
+     */
     @Generated
     @Selector("maximumItemCount")
     @NUInt
     public static native long maximumItemCount();
 
+    /**
+     * The maximum number of sections that may appear in a @c CPListTemplate.
+     * 
+     * @note Your list template will display the first @c maximumSectionCount sections.
+     * Any sections beyond that limit will be trimmed.
+     */
     @Generated
     @Selector("maximumSectionCount")
     @NUInt
     public static native long maximumSectionCount();
 
+    /**
+     * The number of sections currently displayed in this list template.
+     */
     @Generated
     @Selector("sectionCount")
     @NUInt
     public native long sectionCount();
 
+    /**
+     * An optional array of strings, ordered from most to least preferred.
+     * The variant strings should be provided as localized, displayable content.
+     * The system will select the first variant that fits the available space.
+     * 
+     * If the list template does not contain any items (itemCount == 0), then
+     * the template will display an empty view with a title and subtitle to indicate
+     * that the template has no list items.
+     * 
+     * If the list template is updated to contain items, the empty view will be automatically
+     * removed.
+     */
     @Generated
     @Selector("setEmptyViewSubtitleVariants:")
     public native void setEmptyViewSubtitleVariants(NSArray<String> value);
 
+    /**
+     * An optional array of strings, ordered from most to least preferred.
+     * The variant strings should be provided as localized, displayable content.
+     * The system will select the first variant that fits the available space.
+     * 
+     * If the list template does not contain any items (itemCount == 0), then
+     * the template will display an empty view with a title and subtitle to indicate
+     * that the template has no list items.
+     * 
+     * If the list template is updated to contain items, the empty view will be automatically
+     * removed.
+     */
     @Generated
     @Selector("setEmptyViewTitleVariants:")
     public native void setEmptyViewTitleVariants(NSArray<String> value);

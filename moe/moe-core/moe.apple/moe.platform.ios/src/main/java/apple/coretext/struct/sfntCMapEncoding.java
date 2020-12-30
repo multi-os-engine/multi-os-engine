@@ -50,18 +50,30 @@ public final class sfntCMapEncoding extends StructObject {
         setOffset(offset);
     }
 
+    /**
+     * base-0
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native char platformID();
 
+    /**
+     * base-0
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setPlatformID(char value);
 
+    /**
+     * base-0
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char scriptID();
 
+    /**
+     * base-0
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setScriptID(char value);

@@ -160,10 +160,19 @@ public class INVocabulary extends NSObject {
     @Selector("init")
     public native INVocabulary init();
 
+    /**
+     * Removes all vocabulary strings for every INVocabularyStringType the calling app has previously registered.
+     */
     @Generated
     @Selector("removeAllVocabularyStrings")
     public native void removeAllVocabularyStrings();
 
+    /**
+     * Replaces all vocabulary strings already set for the given type.
+     * Strings should be sorted by their expected importance to the user, in descending order.
+     * There is no guarantee that every provided string will be used, but preference is given to strings at the beginning of the set.
+     * Any strings larger than 1024 bytes when encoded as UTF-16 (roughly 500 characters) will be discarded.
+     */
     @Generated
     @Selector("setVocabularyStrings:ofType:")
     public native void setVocabularyStringsOfType(NSOrderedSet<String> vocabulary, @NInt long type);

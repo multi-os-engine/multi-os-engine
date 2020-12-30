@@ -29,11 +29,29 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @protocol		AVPlayerItemLegibleOutputPushDelegate
+ * @abstract		Extends AVPlayerItemOutputPushDelegate to provide additional methods specific to attributed string output.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVPlayerItemLegibleOutputPushDelegate")
 public interface AVPlayerItemLegibleOutputPushDelegate extends AVPlayerItemOutputPushDelegate {
+    /**
+     * @method			legibleOutput:didOutputAttributedStrings:nativeSampleBuffers:forItemTime:
+     * @abstract		A delegate callback that delivers new textual samples.
+     * @param			output
+     * 				The AVPlayerItemLegibleOutput source.
+     * @param			strings
+     * 				An NSArray of NSAttributedString, each containing both the run of text and descriptive markup.
+     * @param			nativeSamples
+     * 				An NSArray of CMSampleBuffer objects, for media subtypes included in the array passed in to -initWithMediaSubtypesForNativeRepresentation:
+     * @param			itemTime
+     * 				The item time at which the strings should be presented.
+     * @discussion
+     * 	For each media subtype in the array passed in to -initWithMediaSubtypesForNativeRepresentation:, the delegate will receive sample buffers carrying data in its native format via the nativeSamples parameter, if there is media data of that subtype in the media resource.  For all other media subtypes present in the media resource, the delegate will receive attributed strings in a common format via the strings parameter.  See <CoreMedia/CMTextMarkup.h> for the string attributes that are used in the attributed strings.
+     */
     @Generated
     @IsOptional
     @Selector("legibleOutput:didOutputAttributedStrings:nativeSampleBuffers:forItemTime:")

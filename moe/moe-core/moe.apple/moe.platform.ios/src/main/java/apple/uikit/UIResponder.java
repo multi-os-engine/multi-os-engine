@@ -100,6 +100,9 @@ public class UIResponder extends NSObject
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * This call is to remove stored app identifier state that is no longer needed.
+     */
     @Generated
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
@@ -169,6 +172,9 @@ public class UIResponder extends NSObject
     @Selector("becomeFirstResponder")
     public native boolean becomeFirstResponder();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("canBecomeFirstResponder")
     public native boolean canBecomeFirstResponder();
@@ -177,6 +183,9 @@ public class UIResponder extends NSObject
     @Selector("canPerformAction:withSender:")
     public native boolean canPerformActionWithSender(SEL action, @Mapped(ObjCObjectMapper.class) Object sender);
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("canResignFirstResponder")
     public native boolean canResignFirstResponder();
@@ -218,14 +227,27 @@ public class UIResponder extends NSObject
     @Selector("inputAccessoryViewController")
     public native UIInputViewController inputAccessoryViewController();
 
+    /**
+     * This method is for clients that wish to put buttons on the Shortcuts Bar, shown on top of the keyboard.
+     * You may modify the returned inputAssistantItem to add to or replace the existing items on the bar.
+     * Modifications made to the returned UITextInputAssistantItem are reflected automatically.
+     * This method should not be overridden. Goes up the responder chain.
+     */
     @Generated
     @Selector("inputAssistantItem")
     public native UITextInputAssistantItem inputAssistantItem();
 
+    /**
+     * Called and presented when object becomes first responder.  Goes up the responder chain.
+     */
     @Generated
     @Selector("inputView")
     public native UIView inputView();
 
+    /**
+     * For viewController equivalents of -inputView and -inputAccessoryView
+     * Called and presented when object becomes first responder.  Goes up the responder chain.
+     */
     @Generated
     @Selector("inputViewController")
     public native UIInputViewController inputViewController();
@@ -234,6 +256,9 @@ public class UIResponder extends NSObject
     @Selector("isFirstResponder")
     public native boolean isFirstResponder();
 
+    /**
+     * returns an array of UIKeyCommand objects<
+     */
     @Generated
     @Selector("keyCommands")
     public native NSArray<? extends UIKeyCommand> keyCommands();
@@ -269,6 +294,15 @@ public class UIResponder extends NSObject
     @Selector("paste:")
     public native void paste(@Mapped(ObjCObjectMapper.class) Object sender);
 
+    /**
+     * Generally, all responders which do custom press handling should override all four of these methods.
+     * Your responder will receive either pressesEnded:withEvent or pressesCancelled:withEvent: for each
+     * press it is handling (those presses it received in pressesBegan:withEvent:).
+     * pressesChanged:withEvent: will be invoked for presses that provide an analog value
+     * (like thumbsticks or analog push buttons)
+     * *** You must handle cancelled presses to ensure correct behavior in your application.  Failure to
+     * do so is very likely to lead to incorrect behavior or crashes.
+     */
     @Generated
     @Selector("pressesBegan:withEvent:")
     public native void pressesBeganWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
@@ -285,6 +319,9 @@ public class UIResponder extends NSObject
     @Selector("pressesEnded:withEvent:")
     public native void pressesEndedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
 
+    /**
+     * If called while object is first responder, reloads inputView, inputAccessoryView, and textInputMode.  Otherwise ignored.
+     */
     @Generated
     @Selector("reloadInputViews")
     public native void reloadInputViews();
@@ -315,15 +352,28 @@ public class UIResponder extends NSObject
     @Selector("setUserActivity:")
     public native void setUserActivity(NSUserActivity value);
 
+    /**
+     * Allows an action to be forwarded to another target. By default checks -canPerformAction:withSender: to either return self, or go up the responder chain.
+     */
     @Generated
     @Selector("targetForAction:withSender:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object targetForActionWithSender(SEL action, @Mapped(ObjCObjectMapper.class) Object sender);
 
+    /**
+     * When the first responder changes and an identifier is queried, the system will establish a context to
+     * track the textInputMode automatically. The system will save and restore the state of that context to
+     * the user defaults via the app identifier. Use of -textInputMode above will supersede use of -textInputContextIdentifier.
+     */
     @Generated
     @Selector("textInputContextIdentifier")
     public native String textInputContextIdentifier();
 
+    /**
+     * When queried, returns the current UITextInputMode, from which the keyboard language can be determined.
+     * When overridden it should return a previously-queried UITextInputMode object, which will attempt to be
+     * set inside that app, but not persistently affect the user's system-wide keyboard settings.
+     */
     @Generated
     @Selector("textInputMode")
     public native UITextInputMode textInputMode();
@@ -343,6 +393,13 @@ public class UIResponder extends NSObject
     @Selector("toggleUnderline:")
     public native void toggleUnderline(@Mapped(ObjCObjectMapper.class) Object sender);
 
+    /**
+     * Generally, all responders which do custom touch handling should override all four of these methods.
+     * Your responder will receive either touchesEnded:withEvent: or touchesCancelled:withEvent: for each
+     * touch it is handling (those touches it received in touchesBegan:withEvent:).
+     * *** You must handle cancelled touches to ensure correct behavior in your application.  Failure to
+     * do so is very likely to lead to incorrect behavior or crashes.
+     */
     @Generated
     @Selector("touchesBegan:withEvent:")
     public native void touchesBeganWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
@@ -398,10 +455,16 @@ public class UIResponder extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native UIActivityItemsConfigurationReading activityItemsConfiguration();
 
+    /**
+     * Overrides for menu building and validation
+     */
     @Generated
     @Selector("buildMenuWithBuilder:")
     public native void buildMenuWithBuilder(@Mapped(ObjCObjectMapper.class) UIMenuBuilder builder);
 
+    /**
+     * Productivity editing interaction support for undo/redo/cut/copy/paste gestures
+     */
     @Generated
     @Selector("editingInteractionConfiguration")
     @NInt

@@ -19,18 +19,43 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum SCNBlendMode
+ * @abstract  Blend modes that SCNMaterial uses to compose with the framebuffer to produce blended colors.
+ */
 @Generated
 public final class SCNBlendMode {
+    /**
+     * Blends the source and destination colors by adding the source multiplied by source alpha and the destination multiplied by one minus source alpha.
+     */
     @Generated @NInt public static final long Alpha = 0x0000000000000000L;
+    /**
+     * Blends the source and destination colors by adding them up.
+     */
     @Generated @NInt public static final long Add = 0x0000000000000001L;
+    /**
+     * Blends the source and destination colors by subtracting the source from the destination.
+     */
     @Generated @NInt public static final long Subtract = 0x0000000000000002L;
+    /**
+     * Blends the source and destination colors by multiplying them.
+     */
     @Generated @NInt public static final long Multiply = 0x0000000000000003L;
+    /**
+     * Blends the source and destination colors by multiplying one minus the source with the destination and adding the source.
+     */
     @Generated @NInt public static final long Screen = 0x0000000000000004L;
+    /**
+     * Replaces the destination with the source (ignores alpha).
+     */
     @Generated @NInt public static final long Replace = 0x0000000000000005L;
 
     @Generated
     private SCNBlendMode() {
     }
 
+    /**
+     * Max the destination with the source (ignores alpha).
+     */
     @Generated @NInt public static final long Max = 0x0000000000000006L;
 }

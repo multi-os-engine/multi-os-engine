@@ -76,11 +76,17 @@ public final class AuthenticationServices {
     @MappedReturn(ObjCStringMapper.class)
     public static native String ASAuthorizationErrorDomain();
 
+    /**
+     * @abstract A key that specifies an error string to be shown to the user when an extension request fails.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ASExtensionLocalizedFailureReasonErrorKey();
 
+    /**
+     * @abstract Operation which is invoked when the extension configuration is removed from the system.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

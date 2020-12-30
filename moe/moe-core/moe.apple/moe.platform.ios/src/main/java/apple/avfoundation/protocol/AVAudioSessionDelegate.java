@@ -25,11 +25,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * The AVAudioSessionDelegate protocol is deprecated. Instead you should register for notifications.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVAudioSessionDelegate")
 public interface AVAudioSessionDelegate {
+    /**
+     * something has caused your audio session to be interrupted
+     */
     @Generated
     @IsOptional
     @Selector("beginInterruption")
@@ -37,6 +43,9 @@ public interface AVAudioSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * endInterruptionWithFlags: will be called instead if implemented.
+     */
     @Generated
     @IsOptional
     @Selector("endInterruption")
@@ -44,6 +53,9 @@ public interface AVAudioSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Currently the only flag is AVAudioSessionInterruptionFlags_ShouldResume.
+     */
     @Generated
     @IsOptional
     @Selector("endInterruptionWithFlags:")
@@ -51,6 +63,9 @@ public interface AVAudioSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * notification for input become available or unavailable
+     */
     @Generated
     @IsOptional
     @Selector("inputIsAvailableChanged:")

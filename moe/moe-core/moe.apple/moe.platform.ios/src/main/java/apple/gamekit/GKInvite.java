@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GKInvite represents an accepted game invite, it is used to create a GKMatchmakerViewController
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +157,9 @@ public class GKInvite extends NSObject {
     @Selector("init")
     public native GKInvite init();
 
+    /**
+     * This property is obsolete. **
+     */
     @Generated
     @Deprecated
     @Selector("inviter")
@@ -163,10 +169,16 @@ public class GKInvite extends NSObject {
     @Selector("isHosted")
     public native boolean isHosted();
 
+    /**
+     * player attributes from inviter's match request
+     */
     @Generated
     @Selector("playerAttributes")
     public native int playerAttributes();
 
+    /**
+     * player group from inviter's match request
+     */
     @Generated
     @Selector("playerGroup")
     @NUInt

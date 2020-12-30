@@ -99,6 +99,10 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Deletes the cached section information with the given name.
+     * If name is nil, then all caches are deleted.
+     */
     @Generated
     @Selector("deleteCacheWithName:")
     public static native <_ResultType> void deleteCacheWithName(String name);
@@ -160,23 +164,39 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Name of the persistent cached section information. Use nil to disable persistent caching, or +deleteCacheWithName to clear a cache.
+     */
     @Generated
     @Selector("cacheName")
     public native String cacheName();
 
+    /**
+     * Delegate that is notified when the result set changes.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSFetchedResultsControllerDelegate delegate();
 
+    /**
+     * NSFetchRequest instance used to do the fetching. You must not change it, its predicate, or its sort descriptor after initialization without disabling caching or calling +deleteCacheWithName.  The sort descriptor used in the request groups objects into sections.
+     */
     @Generated
     @Selector("fetchRequest")
     public native NSFetchRequest<?> fetchRequest();
 
+    /**
+     * Returns the results of the fetch.
+     * Returns nil if the performFetch: hasn't been called.
+     */
     @Generated
     @Selector("fetchedObjects")
     public native NSArray<?> fetchedObjects();
 
+    /**
+     * Returns the indexPath of a given object.
+     */
     @Generated
     @Selector("indexPathForObject:")
     public native NSIndexPath indexPathForObject(@Mapped(ObjCObjectMapper.class) NSFetchRequestResult object);
@@ -185,49 +205,96 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     @Selector("init")
     public native NSFetchedResultsController<?> init();
 
+    /**
+     * Initializes an instance of NSFetchedResultsController
+     * fetchRequest - the fetch request used to get the objects. It's expected that the sort descriptor used in the request groups the objects into sections.
+     * context - the context that will hold the fetched objects
+     * sectionNameKeyPath - keypath on resulting objects that returns the section name. This will be used to pre-compute the section information.
+     * cacheName - Section info is cached persistently to a private file under this name. Cached sections are checked to see if the time stamp matches the store, but not if you have illegally mutated the readonly fetch request, predicate, or sort descriptor.
+     */
     @Generated
     @Selector("initWithFetchRequest:managedObjectContext:sectionNameKeyPath:cacheName:")
     public native NSFetchedResultsController<?> initWithFetchRequestManagedObjectContextSectionNameKeyPathCacheName(
             NSFetchRequest<?> fetchRequest, NSManagedObjectContext context, String sectionNameKeyPath, String name);
 
+    /**
+     * Managed Object Context used to fetch objects. The controller registers to listen to change notifications on this context and properly update its result set and section information.
+     */
     @Generated
     @Selector("managedObjectContext")
     public native NSManagedObjectContext managedObjectContext();
 
+    /**
+     * Returns the fetched object at a given indexPath.
+     */
     @Generated
     @Selector("objectAtIndexPath:")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSFetchRequestResult objectAtIndexPath(NSIndexPath indexPath);
 
+    /**
+     * Executes the fetch request on the store to get objects.
+     * Returns YES if successful or NO (and an error) if a problem occurred. 
+     * An error is returned if the fetch request specified doesn't include a sort descriptor that uses sectionNameKeyPath.
+     * After executing this method, the fetched objects can be accessed with the property 'fetchedObjects'
+     */
     @Generated
     @Selector("performFetch:")
     public native boolean performFetch(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Returns the section number for a given section title and index in the section index.
+     */
     @Generated
     @Selector("sectionForSectionIndexTitle:atIndex:")
     @NInt
     public native long sectionForSectionIndexTitleAtIndex(String title, @NInt long sectionIndex);
 
+    /**
+     * Returns the corresponding section index entry for a given section name.
+     * Default implementation returns the capitalized first letter of the section name.
+     * Developers that need different behavior can implement the delegate method -(NSString*)controller:(NSFetchedResultsController *)controller sectionIndexTitleForSectionName
+     * Only needed if a section index is used.
+     */
     @Generated
     @Selector("sectionIndexTitleForSectionName:")
     public native String sectionIndexTitleForSectionName(String sectionName);
 
+    /**
+     * Returns the array of section index titles.
+     * Default implementation returns the array created by calling sectionIndexTitleForSectionName: on all the known sections.
+     * Developers should override this method if they wish to return a different array for the section index.
+     * Only needed if a section index is used.
+     */
     @Generated
     @Selector("sectionIndexTitles")
     public native NSArray<String> sectionIndexTitles();
 
+    /**
+     * The keyPath on the fetched objects used to determine the section they belong to.
+     */
     @Generated
     @Selector("sectionNameKeyPath")
     public native String sectionNameKeyPath();
 
+    /**
+     * Returns an array of objects that implement the NSFetchedResultsSectionInfo protocol.
+     * This provide a convenience interface for determining the number of sections, the names and titles of the sections, and access to the model objects that belong to each section.
+     */
     @Generated
     @Selector("sections")
     public native NSArray<?> sections();
 
+    /**
+     * Delegate that is notified when the result set changes.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSFetchedResultsControllerDelegate value);
 
+    /**
+     * Delegate that is notified when the result set changes.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSFetchedResultsControllerDelegate value) {
         Object __old = delegate();

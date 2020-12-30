@@ -123,6 +123,9 @@ public class INIntentResolutionResult extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * This result is to tell Siri that the user must provide a non-nil value for this parameter in order to continue
+     */
     @Generated
     @Selector("needsValue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -134,6 +137,9 @@ public class INIntentResolutionResult extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * This result is to tell Siri to continue regardless of whether the user has provided a value for this parameter or not
+     */
     @Generated
     @Selector("notRequired")
     @MappedReturn(ObjCObjectMapper.class)
@@ -155,6 +161,9 @@ public class INIntentResolutionResult extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * This result is for informing Siri that this value is unsupported
+     */
     @Generated
     @Selector("unsupported")
     @MappedReturn(ObjCObjectMapper.class)

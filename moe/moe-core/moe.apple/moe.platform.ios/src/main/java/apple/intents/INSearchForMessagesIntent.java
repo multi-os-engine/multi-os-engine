@@ -156,11 +156,17 @@ public class INSearchForMessagesIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * Attributes of the message to be found.
+     */
     @Generated
     @Selector("attributes")
     @NUInt
     public native long attributes();
 
+    /**
+     * Time range in which to search for the message.
+     */
     @Generated
     @Selector("dateTimeRange")
     public native INDateComponentsRange dateTimeRange();
@@ -174,10 +180,16 @@ public class INSearchForMessagesIntent extends INIntent {
     @NInt
     public native long groupNamesOperator();
 
+    /**
+     * If available, the identifier of a particular message to be found.
+     */
     @Generated
     @Selector("identifiers")
     public native NSArray<String> identifiers();
 
+    /**
+     * Describes how to combine the contents of the identifier array.
+     */
     @Generated
     @Selector("identifiersOperator")
     @NInt
@@ -202,15 +214,24 @@ public class INSearchForMessagesIntent extends INIntent {
     @Selector("notificationIdentifiers")
     public native NSArray<String> notificationIdentifiers();
 
+    /**
+     * Describes how to combine the contents of the notificationIdentifier array.
+     */
     @Generated
     @Selector("notificationIdentifiersOperator")
     @NInt
     public native long notificationIdentifiersOperator();
 
+    /**
+     * Contact that received the messages to be found.
+     */
     @Generated
     @Selector("recipients")
     public native NSArray<? extends INPerson> recipients();
 
+    /**
+     * Describes how to combine the contents of the recipient array.
+     */
     @Generated
     @Selector("recipientsOperator")
     @NInt
@@ -220,15 +241,24 @@ public class INSearchForMessagesIntent extends INIntent {
     @Selector("searchTerms")
     public native NSArray<String> searchTerms();
 
+    /**
+     * Describes how to combine the contents of the searchTerm array.
+     */
     @Generated
     @Selector("searchTermsOperator")
     @NInt
     public native long searchTermsOperator();
 
+    /**
+     * Sender of the messages to be found.
+     */
     @Generated
     @Selector("senders")
     public native NSArray<? extends INPerson> senders();
 
+    /**
+     * Describes how to combine the contents of the sender array.
+     */
     @Generated
     @Selector("sendersOperator")
     @NInt
@@ -251,6 +281,9 @@ public class INSearchForMessagesIntent extends INIntent {
     @Selector("speakableGroupNames")
     public native NSArray<? extends INSpeakableString> speakableGroupNames();
 
+    /**
+     * Describes how to combine the contents of the speakableGroupName array.
+     */
     @Generated
     @Selector("speakableGroupNamesOperator")
     @NInt
@@ -260,6 +293,9 @@ public class INSearchForMessagesIntent extends INIntent {
     @Selector("conversationIdentifiers")
     public native NSArray<String> conversationIdentifiers();
 
+    /**
+     * Describes how to combine the contents of the conversationIdentifier array.
+     */
     @Generated
     @Selector("conversationIdentifiersOperator")
     @NInt

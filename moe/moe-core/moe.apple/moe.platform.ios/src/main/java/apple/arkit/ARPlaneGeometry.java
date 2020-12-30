@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Object representing the geometry of a plane.
+ * @discussion The plane geometry will have a growing number of triangles
+ * and vertices updated from frame to frame.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -59,6 +64,9 @@ public class ARPlaneGeometry extends NSObject implements NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * The number of boundary vertices of the geometry.
+     */
     @Generated
     @Selector("boundaryVertexCount")
     @NUInt
@@ -160,16 +168,25 @@ public class ARPlaneGeometry extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * The number of texture coordinates of the geometry.
+     */
     @Generated
     @Selector("textureCoordinateCount")
     @NUInt
     public native long textureCoordinateCount();
 
+    /**
+     * The number of triangles of the geometry.
+     */
     @Generated
     @Selector("triangleCount")
     @NUInt
     public native long triangleCount();
 
+    /**
+     * The triangle indices of the geometry.
+     */
     @Generated
     @Selector("triangleIndices")
     public native ConstShortPtr triangleIndices();
@@ -179,6 +196,9 @@ public class ARPlaneGeometry extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * The number of mesh vertices of the geometry.
+     */
     @Generated
     @Selector("vertexCount")
     @NUInt

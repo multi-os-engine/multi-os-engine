@@ -100,6 +100,9 @@ public class INImageNoteContent extends INNoteContent implements NSSecureCoding,
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The image that comprises the note content
+     */
     @Generated
     @Selector("image")
     public native INImage image();

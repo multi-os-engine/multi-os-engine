@@ -39,6 +39,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class	AVAudioSessionChannelDescription
+ * @brief	Information about a port's audio channels.
+ * 
+ * AudioQueue, AURemoteIO and AUVoiceIO instances can be assigned to communicate with specific
+ * hardware channels by setting an array of <port UID, channel index> pairs.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -150,14 +157,23 @@ public class AVAudioSessionChannelDescription extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Description of the physical location of this channel.
+     */
     @Generated
     @Selector("channelLabel")
     public native int channelLabel();
 
+    /**
+     * A human-readable name for the channel.
+     */
     @Generated
     @Selector("channelName")
     public native String channelName();
 
+    /**
+     * The index of this channel in its owning port's array of channels.
+     */
     @Generated
     @Selector("channelNumber")
     @NUInt
@@ -167,6 +183,9 @@ public class AVAudioSessionChannelDescription extends NSObject {
     @Selector("init")
     public native AVAudioSessionChannelDescription init();
 
+    /**
+     * The UID (unique identifier) of the port owning the channel.
+     */
     @Generated
     @Selector("owningPortUID")
     public native String owningPortUID();

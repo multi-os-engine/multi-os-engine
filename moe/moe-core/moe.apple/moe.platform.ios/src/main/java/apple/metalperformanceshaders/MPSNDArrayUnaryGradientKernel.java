@@ -85,6 +85,10 @@ public class MPSNDArrayUnaryGradientKernel extends MPSNDArrayMultiaryGradientKer
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Gradient encode methods
+     * Inference encode calls.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:sourceGradient:gradientState:")
     public native MPSNDArray encodeToCommandBufferSourceArraySourceGradientGradientState(
@@ -110,11 +114,22 @@ public class MPSNDArrayUnaryGradientKernel extends MPSNDArrayMultiaryGradientKer
     @Selector("initWithCoder:")
     public native MPSNDArrayUnaryGradientKernel initWithCoder(NSCoder aDecoder);
 
+    /**
+     * NSSecureCoding support
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNDArrayUnaryGradientKernel initWithCoderDevice(NSCoder coder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * RFC:  While this design is nice as it allows the same set of source arrays to
+     *       be used for forward and gradient passees, it causes a problem for the
+     *       getters and setters of properties like offset, kernel size, etc.
+     *       There is currently no way to manually set this information for the gradient.
+     *       This may not be viewed as a problem as this information is automatically
+     *       set by the gradient state.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSNDArrayUnaryGradientKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);

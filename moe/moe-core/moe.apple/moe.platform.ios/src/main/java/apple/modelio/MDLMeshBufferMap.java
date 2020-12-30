@@ -40,6 +40,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MDLMeshBufferMap
+ * @abstract Represents a reference to memory of a mapped MeshBuffer
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +155,10 @@ public class MDLMeshBufferMap extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property bytes
+     * @abstract Mutable pointer to data in a MDLMeshBuffer object.
+     */
     @Generated
     @Selector("bytes")
     public native VoidPtr bytes();
@@ -159,6 +167,11 @@ public class MDLMeshBufferMap extends NSObject {
     @Selector("init")
     public native MDLMeshBufferMap init();
 
+    /**
+     * @method initWithBytes:deallocator:
+     * @abstract Called by implementor of MDLMeshBuffer protocol to create the map
+     *           and arrange for unmapping on deallocation.
+     */
     @Generated
     @Selector("initWithBytes:deallocator:")
     public native MDLMeshBufferMap initWithBytesDeallocator(VoidPtr bytes,

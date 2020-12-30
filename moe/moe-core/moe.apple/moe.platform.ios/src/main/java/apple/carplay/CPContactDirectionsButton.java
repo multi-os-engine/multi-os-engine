@@ -92,6 +92,11 @@ public class CPContactDirectionsButton extends CPButton {
     @Selector("init")
     public native CPContactDirectionsButton init();
 
+    /**
+     * Create a contact button with a system-provided navigation directions image that, when tapped, calls your custom handler.
+     * 
+     * @param handler A block that will be called when the user taps this button.
+     */
     @Generated
     @Selector("initWithHandler:")
     public native CPContactDirectionsButton initWithHandler(

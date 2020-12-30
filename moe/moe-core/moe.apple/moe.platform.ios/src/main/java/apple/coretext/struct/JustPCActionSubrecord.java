@@ -51,10 +51,16 @@ public final class JustPCActionSubrecord extends StructObject {
         setData(data);
     }
 
+    /**
+     * justification class value associated with this rec
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native char theClass();
 
+    /**
+     * justification class value associated with this rec
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setTheClass(char value);
@@ -75,10 +81,16 @@ public final class JustPCActionSubrecord extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setLength(int value);
 
+    /**
+     * not really a UInt32; cast as ptr to appropriate action
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int data();
 
+    /**
+     * not really a UInt32; cast as ptr to appropriate action
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setData(int value);

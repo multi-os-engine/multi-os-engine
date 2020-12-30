@@ -18,12 +18,30 @@ package apple.security.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * State of an SSLSession
+ */
 @Generated
 public final class SSLSessionState {
+    /**
+     * no I/O performed yet
+     */
     @Generated public static final int Idle = 0x00000000;
+    /**
+     * SSL handshake in progress
+     */
     @Generated public static final int Handshake = 0x00000001;
+    /**
+     * Handshake complete, ready for normal I/O
+     */
     @Generated public static final int Connected = 0x00000002;
+    /**
+     * connection closed normally
+     */
     @Generated public static final int Closed = 0x00000003;
+    /**
+     * connection aborted
+     */
     @Generated public static final int Aborted = 0x00000004;
 
     @Generated

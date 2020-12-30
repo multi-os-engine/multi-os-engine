@@ -284,11 +284,17 @@ public final class ARKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String ARBlendShapeLocationNoseSneerRight();
 
+    /**
+     * Show the world origin in the scene.
+     */
     @Generated
     @CVariable()
     @NUInt
     public static native long ARSCNDebugOptionShowWorldOrigin();
 
+    /**
+     * Show detected 3D feature points in the world.
+     */
     @Generated
     @CVariable()
     @NUInt
@@ -344,6 +350,14 @@ public final class ARKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String ARSkeletonJointNameRightShoulder();
 
+    /**
+     * Returns the landmark joint name that corresponds to a key point defined in Vision framework.
+     * @see VNRecognizedPointKey, VNDetectHumanBodyPoseRequest
+     * @discussion If an invalid key point is passed the returned point will be nil.
+     * 
+     * @param recognizedPointKey Recognized key point.
+     * @return Joint name that could be mapped to a ARSkeleton2D. Nil if no mapping exists.
+     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)

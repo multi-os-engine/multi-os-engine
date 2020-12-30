@@ -41,6 +41,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPPlayableContentManager is a class that manages the interactions between a
+ * media application and an external media player interface. The application
+ * provides the content manager with a data source, which allows the media player
+ * to browse the media content offered by the application, as well as a delegate,
+ * which allows the media player to relay non-media remote playback commands to the application.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -143,6 +150,9 @@ public class MPPlayableContentManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Returns the application's instance of the content manager.
+     */
     @Generated
     @Selector("sharedContentManager")
     @MappedReturn(ObjCObjectMapper.class)
@@ -157,6 +167,9 @@ public class MPPlayableContentManager extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Used to begin a synchronized update to multiple MPContentItems at once.
+     */
     @Generated
     @Selector("beginUpdates")
     public native void beginUpdates();
@@ -175,6 +188,9 @@ public class MPPlayableContentManager extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native MPPlayableContentDelegate delegate();
 
+    /**
+     * Ends a synchronized update.
+     */
     @Generated
     @Selector("endUpdates")
     public native void endUpdates();
@@ -183,10 +199,17 @@ public class MPPlayableContentManager extends NSObject {
     @Selector("init")
     public native MPPlayableContentManager init();
 
+    /**
+     * Tells the content manager which MPContentItems are currently playing based on their identifiers.
+     */
     @Generated
     @Selector("nowPlayingIdentifiers")
     public native NSArray<String> nowPlayingIdentifiers();
 
+    /**
+     * Tells the content manager that the data source has changed and that we need to
+     * reload data from the data source.
+     */
     @Generated
     @Selector("reloadData")
     public native void reloadData();
@@ -223,6 +246,9 @@ public class MPPlayableContentManager extends NSObject {
         }
     }
 
+    /**
+     * Tells the content manager which MPContentItems are currently playing based on their identifiers.
+     */
     @Generated
     @Selector("setNowPlayingIdentifiers:")
     public native void setNowPlayingIdentifiers(NSArray<String> value);

@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Pointer slides under the given view and morphs into the view's shape
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)

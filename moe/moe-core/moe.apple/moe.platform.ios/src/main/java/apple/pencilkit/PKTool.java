@@ -24,6 +24,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An interaction behavior for a PKCanvasView.
+ * Should not be subclassed outside of the PencilKit framework.
+ */
 @Generated
 @Library("PencilKit")
 @Runtime(ObjCRuntime.class)

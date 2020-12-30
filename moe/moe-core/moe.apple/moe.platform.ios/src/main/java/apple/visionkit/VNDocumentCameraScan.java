@@ -87,6 +87,9 @@ public class VNDocumentCameraScan extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The image of the page at a specified index.
+     */
     @Generated
     @Selector("imageOfPageAtIndex:")
     public native UIImage imageOfPageAtIndex(@NUInt long index);
@@ -122,6 +125,9 @@ public class VNDocumentCameraScan extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The number of pages in the scanned document.
+     */
     @Generated
     @Selector("pageCount")
     @NUInt
@@ -143,6 +149,9 @@ public class VNDocumentCameraScan extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * The title of the scanned document.
+     */
     @Generated
     @Selector("title")
     public native String title();

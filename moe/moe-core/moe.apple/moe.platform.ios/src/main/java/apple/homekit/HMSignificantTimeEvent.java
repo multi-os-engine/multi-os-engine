@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief This class is used to represent a significant time event.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -99,6 +102,17 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
     @Selector("init")
     public native HMSignificantTimeEvent init();
 
+    /**
+     * @brief Creates a significant time event.
+     * 
+     * @param significantEvent The significant event for the trigger.
+     * 
+     * @param offset An offset from the time of the signficant event. To specify an offset before the significant event, the
+     *               properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
+     *               'minute' property must be set to -30.
+     * 
+     * @return Instance object representing the significant event.
+     */
     @Generated
     @Selector("initWithSignificantEvent:offset:")
     public native HMSignificantTimeEvent initWithSignificantEventOffset(String significantEvent,
@@ -141,6 +155,11 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief offset An offset from the time of the signficant event. To specify an offset before the significant event, the
+     *               properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
+     *               'minute' property must be set to -30.
+     */
     @Generated
     @Selector("offset")
     public native NSDateComponents offset();
@@ -157,6 +176,9 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @brief significantEvent The significant event for the trigger.
+     */
     @Generated
     @Selector("significantEvent")
     public native String significantEvent();

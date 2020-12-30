@@ -106,6 +106,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     @NUInt
     public static native long hash_static();
 
+    /**
+     * conveniences
+     */
     @Generated
     @Selector("hashTableWithOptions:")
     public static native <_ObjectType> NSHashTable<_ObjectType> hashTableWithOptions(@NUInt long options);
@@ -158,6 +161,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     @NInt
     public static native long version_static();
 
+    /**
+     * entries are not necessarily purged right away when the weak object is reclaimed
+     */
     @Generated
     @Selector("weakObjectsHashTable")
     public static native <_ObjectType> NSHashTable<_ObjectType> weakObjectsHashTable();
@@ -166,6 +172,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     @Selector("addObject:")
     public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
+    /**
+     * convenience
+     */
     @Generated
     @Selector("allObjects")
     public native NSArray<_ObjectType> allObjects();
@@ -246,6 +255,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
+    /**
+     * return an NSPointerFunctions object reflecting the functions in use.  This is a new autoreleased object that can be subsequently modified and/or used directly in the creation of other pointer "collections".
+     */
     @Generated
     @Selector("pointerFunctions")
     public native NSPointerFunctions pointerFunctions();
@@ -258,6 +270,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     @Selector("removeObject:")
     public native void removeObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
+    /**
+     * create a set of the contents
+     */
     @Generated
     @Selector("setRepresentation")
     public native NSSet<_ObjectType> setRepresentation();

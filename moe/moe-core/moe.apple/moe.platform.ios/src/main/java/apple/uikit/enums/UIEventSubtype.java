@@ -21,17 +21,53 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIEventSubtype {
+    /**
+     * available in iPhone OS 3.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * for UIEventTypeMotion, available in iPhone OS 3.0
+     */
     @Generated @NInt public static final long MotionShake = 0x0000000000000001L;
+    /**
+     * for UIEventTypeRemoteControl, available in iOS 4.0
+     */
     @Generated @NInt public static final long RemoteControlPlay = 0x0000000000000064L;
+    /**
+     * for UIEventTypeRemoteControl, available in iOS 4.0
+     */
     @Generated @NInt public static final long RemoteControlPause = 0x0000000000000065L;
+    /**
+     * for UIEventTypeRemoteControl, available in iOS 4.0
+     */
     @Generated @NInt public static final long RemoteControlStop = 0x0000000000000066L;
+    /**
+     * for UIEventTypeRemoteControl, available in iOS 4.0
+     */
     @Generated @NInt public static final long RemoteControlTogglePlayPause = 0x0000000000000067L;
+    /**
+     * for UIEventTypeRemoteControl, available in iOS 4.0
+     */
     @Generated @NInt public static final long RemoteControlNextTrack = 0x0000000000000068L;
+    /**
+     * for UIEventTypeRemoteControl, available in iOS 4.0
+     */
     @Generated @NInt public static final long RemoteControlPreviousTrack = 0x0000000000000069L;
+    /**
+     * for UIEventTypeRemoteControl, available in iOS 4.0
+     */
     @Generated @NInt public static final long RemoteControlBeginSeekingBackward = 0x000000000000006AL;
+    /**
+     * for UIEventTypeRemoteControl, available in iOS 4.0
+     */
     @Generated @NInt public static final long RemoteControlEndSeekingBackward = 0x000000000000006BL;
+    /**
+     * for UIEventTypeRemoteControl, available in iOS 4.0
+     */
     @Generated @NInt public static final long RemoteControlBeginSeekingForward = 0x000000000000006CL;
+    /**
+     * for UIEventTypeRemoteControl, available in iOS 4.0
+     */
     @Generated @NInt public static final long RemoteControlEndSeekingForward = 0x000000000000006DL;
 
     @Generated

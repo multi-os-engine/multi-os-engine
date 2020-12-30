@@ -90,6 +90,10 @@ public class MLImageSizeConstraint extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * If type == MLImageSizeConstraintTypeEnumerated
+     * then the only image sizes present in this set are allowed.
+     */
     @Generated
     @Selector("enumeratedImageSizes")
     public native NSArray<? extends MLImageSize> enumeratedImageSizes();
@@ -139,6 +143,9 @@ public class MLImageSizeConstraint extends NSObject implements NSSecureCoding {
     @ByValue
     public native NSRange pixelsHighRange();
 
+    /**
+     * Image size must fall within this range
+     */
     @Generated
     @Selector("pixelsWideRange")
     @ByValue

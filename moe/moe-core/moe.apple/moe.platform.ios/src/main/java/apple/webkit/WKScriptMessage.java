@@ -39,6 +39,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A WKScriptMessage object contains information about a message sent from
+ * a webpage.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -150,11 +154,19 @@ public class WKScriptMessage extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract The body of the message.
+     * @discussion Allowed types are NSNumber, NSString, NSDate, NSArray,
+     * NSDictionary, and NSNull.
+     */
     @Generated
     @Selector("body")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object body();
 
+    /**
+     * @abstract The frame sending the message.
+     */
     @Generated
     @Selector("frameInfo")
     public native WKFrameInfo frameInfo();
@@ -163,14 +175,23 @@ public class WKScriptMessage extends NSObject {
     @Selector("init")
     public native WKScriptMessage init();
 
+    /**
+     * @abstract The name of the message handler to which the message is sent.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * @abstract The web view sending the message.
+     */
     @Generated
     @Selector("webView")
     public native WKWebView webView();
 
+    /**
+     * @abstract The content world from which the message was sent.
+     */
     @Generated
     @Selector("world")
     public native WKContentWorld world();

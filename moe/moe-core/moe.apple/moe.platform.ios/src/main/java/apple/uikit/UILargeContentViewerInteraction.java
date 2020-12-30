@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UILargeContentViewerInteraction enables a gesture to present and dismiss the large content viewer on a device with relevant settings.
+ * Use methods in <UIKit/UIInteraction.h> to add the interaction to an appropriate view, such as a custom tab bar.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -92,6 +96,9 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
     @Selector("didMoveToView:")
     public native void didMoveToView(UIView view);
 
+    /**
+     * Returns a gesture recognizer that can be used to set up simultaneous recognition or failure relationships with other gesture recognizers.
+     */
     @Generated
     @Selector("gestureRecognizerForExclusionRelationship")
     public native UIGestureRecognizer gestureRecognizerForExclusionRelationship();
@@ -123,6 +130,13 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Returns whether the large content viewer is enabled on the device.
+     * It is not necessary to check this value before adding a UILargeContentViewerInteraction to a view,
+     * but it may be helpful if you need to adjust the behavior of coexisting gesture handlers.
+     * For example, a button with a long press handler might increase its long press duration,
+     * so that a user can read text in the large content viewer first.
+     */
     @Generated
     @Selector("isEnabled")
     public static native boolean isEnabled();

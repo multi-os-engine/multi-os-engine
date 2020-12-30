@@ -3,6 +3,11 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * UITextSmartDashesType
+ * 
+ * Controls the automatic conversion of hyphens into en/em-dashes for a text widget.
+ */
 @Generated
 public final class UITextSmartDashesType {
     @Generated

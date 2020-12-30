@@ -105,6 +105,9 @@ public class NSUnitAngle extends NSDimension implements NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Base unit - degrees
+     */
     @Generated
     @Selector("degrees")
     public static native NSUnitAngle degrees();

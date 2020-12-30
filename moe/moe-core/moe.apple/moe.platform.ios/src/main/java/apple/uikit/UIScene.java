@@ -43,10 +43,16 @@ public class UIScene extends UIResponder {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * use the activation conditions to influence which scene is activated for banner taps, URLs, etc.
+     */
     @Generated
     @Selector("activationConditions")
     public native UISceneActivationConditions activationConditions();
 
+    /**
+     * the activation state of this scene
+     */
     @Generated
     @Selector("activationState")
     @NInt
@@ -92,6 +98,10 @@ public class UIScene extends UIResponder {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * UIScene is strongly retained by UIKit like UIApplication, however, unlike UIApplication, the delegate may not need to live for the whole lifetime of the process.
+     * A strong ref here relieves clients of the responsibility of managing the delegate lifetime directly.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -110,6 +120,9 @@ public class UIScene extends UIResponder {
     @Selector("init")
     public native UIScene init();
 
+    /**
+     * An initializer for subclasses, will be called by UIKit and not intended to be called by applications.
+     */
     @Generated
     @Selector("initWithSession:connectionOptions:")
     public native UIScene initWithSessionConnectionOptions(UISceneSession session,
@@ -142,6 +155,12 @@ public class UIScene extends UIResponder {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Options are specified in the UIApplication.h section for openURL options.
+     * An empty options dictionary will result in the same behavior as the older openURL call,
+     * aside from the fact that this is asynchronous and calls the completion handler rather than returning a result.
+     * The completion handler is called on the main queue.
+     */
     @Generated
     @Selector("openURL:options:completionHandler:")
     public native void openURLOptionsCompletionHandler(NSURL url, UISceneOpenExternalURLOptions options,
@@ -162,18 +181,32 @@ public class UIScene extends UIResponder {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The existing representation which references this UIScene instance
+     */
     @Generated
     @Selector("session")
     public native UISceneSession session();
 
+    /**
+     * use the activation conditions to influence which scene is activated for banner taps, URLs, etc.
+     */
     @Generated
     @Selector("setActivationConditions:")
     public native void setActivationConditions(UISceneActivationConditions value);
 
+    /**
+     * UIScene is strongly retained by UIKit like UIApplication, however, unlike UIApplication, the delegate may not need to live for the whole lifetime of the process.
+     * A strong ref here relieves clients of the responsibility of managing the delegate lifetime directly.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * A title for the scene to allow the system to differentiate multiple scenes for the user.
+     * If set to nil or an empty string, the system will not display a title.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
@@ -186,6 +219,10 @@ public class UIScene extends UIResponder {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * A title for the scene to allow the system to differentiate multiple scenes for the user.
+     * If set to nil or an empty string, the system will not display a title.
+     */
     @Generated
     @Selector("title")
     public native String title();

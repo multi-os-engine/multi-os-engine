@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueSlatType
+ * 
+ * @constant  HMCharacteristicValueSlatTypeHorizontal          Slat type is horizontal.
+ * @constant  HMCharacteristicValueSlatTypeVertical            Slat type is vertical.
+ */
 @Generated
 public final class HMCharacteristicValueSlatType {
     @Generated @NInt public static final long Horizontal = 0x0000000000000000L;

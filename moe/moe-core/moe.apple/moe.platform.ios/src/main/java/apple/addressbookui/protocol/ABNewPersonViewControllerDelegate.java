@@ -30,6 +30,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ABNewPersonViewControllerDelegate")
 public interface ABNewPersonViewControllerDelegate {
+    /**
+     * Called when the user selects Save or Cancel. If the new person was saved, person will be
+     * a valid person that was saved into the Address Book. Otherwise, person will be NULL.
+     * It is up to the delegate to dismiss the view controller.
+     */
     @Generated
     @Selector("newPersonViewController:didCompleteWithNewPerson:")
     void newPersonViewControllerDidCompleteWithNewPerson(ABNewPersonViewController newPersonView, ConstVoidPtr person);

@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class VNVector
+ * @brief VNVector is a two-dimensional vector represented its X and Y axis projections. Once created, VNVector objects are immutable.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -91,6 +95,9 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @brief Caclulates a dot product (aka 'scalar product' or 'inner product') of two vectors v1 and v2 and returns dot product value.
+     */
     @Generated
     @Selector("dotProductOfVector:vector:")
     public static native double dotProductOfVectorVector(VNVector v1, VNVector v2);
@@ -112,14 +119,24 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native VNVector initWithCoder(NSCoder coder);
 
+    /**
+     * @brief Initializes a vector in polar coordinate space, using R and Theta (radians), where R is the length of the vector and
+     *        Theta is the ange that the vector forms with the positive direction of X axis.
+     */
     @Generated
     @Selector("initWithR:theta:")
     public native VNVector initWithRTheta(double r, double theta);
 
+    /**
+     * @brief Initializes a vector in Cartesian Coordinate space, using two VNPoints - the head and the tail of the vector.
+     */
     @Generated
     @Selector("initWithVectorHead:tail:")
     public native VNVector initWithVectorHeadTail(VNPoint head, VNPoint tail);
 
+    /**
+     * @brief Initializes a vector in Cartesian Coordinate space, using its X and Y axis projections.
+     */
     @Generated
     @Selector("initWithXComponent:yComponent:")
     public native VNVector initWithXComponentYComponent(double x, double y);
@@ -145,6 +162,9 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @brief Returns a length, or absolute value, of the vector.
+     */
     @Generated
     @Selector("length")
     public native double length();
@@ -155,6 +175,9 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief Radius, or absolute value, or length of the vector.
+     */
     @Generated
     @Selector("r")
     public native double r();
@@ -171,6 +194,9 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @brief Returns a length ^ 2 of a vector.
+     */
     @Generated
     @Selector("squaredLength")
     public native double squaredLength();
@@ -189,22 +215,37 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * @brief Angle between the vector direction and positive direction of X axis.
+     */
     @Generated
     @Selector("theta")
     public native double theta();
 
+    /**
+     * @brief Returns a vector that is normalized by preserving direction, such as |v|, or vector length = 1.0.
+     */
     @Generated
     @Selector("unitVectorForVector:")
     public static native VNVector unitVectorForVector(VNVector vector);
 
+    /**
+     * @brief Adds two vectors v1 and v2 and returns a resulting vector v, such as v = v1 + v2.
+     */
     @Generated
     @Selector("vectorByAddingVector:toVector:")
     public static native VNVector vectorByAddingVectorToVector(VNVector v1, VNVector v2);
 
+    /**
+     * @brief Returns a vector that whose X and Y projections multiplied by a scalar value.
+     */
     @Generated
     @Selector("vectorByMultiplyingVector:byScalar:")
     public static native VNVector vectorByMultiplyingVectorByScalar(VNVector vector, double scalar);
 
+    /**
+     * @brief Substructs vector v1 from v2 and returns a resulting vector v, such as v = v2 - v1.
+     */
     @Generated
     @Selector("vectorBySubtractingVector:fromVector:")
     public static native VNVector vectorBySubtractingVectorFromVector(VNVector v1, VNVector v2);
@@ -214,14 +255,23 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * @brief Signed projection on X-axis, or X component of the vector. Sign determines direction the vector is facing in X direction.
+     */
     @Generated
     @Selector("x")
     public native double x();
 
+    /**
+     * @brief Signed projection on Y-axis, or Y component of the vector. Sign determines direction the vector is facing in Y direction.
+     */
     @Generated
     @Selector("y")
     public native double y();
 
+    /**
+     * @brief Returns a VNVector object with zero length. The theta for zeroVector is not defined (NaN).
+     */
     @Generated
     @Selector("zeroVector")
     public static native VNVector zeroVector();

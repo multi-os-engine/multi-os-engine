@@ -159,14 +159,23 @@ public class CXTransaction extends NSObject implements NSCopying, NSSecureCoding
     @NInt
     public static native long version_static();
 
+    /**
+     * Unique ID
+     */
     @Generated
     @Selector("UUID")
     public native NSUUID UUID();
 
+    /**
+     * The list of actions contained by the receiver
+     */
     @Generated
     @Selector("actions")
     public native NSArray<? extends CXAction> actions();
 
+    /**
+     * Add the provided action to the receiver's list of actions
+     */
     @Generated
     @Selector("addAction:")
     public native void addAction(CXAction action);
@@ -197,6 +206,9 @@ public class CXTransaction extends NSObject implements NSCopying, NSSecureCoding
     @Selector("initWithCoder:")
     public native CXTransaction initWithCoder(NSCoder coder);
 
+    /**
+     * Whether all actions have been completed
+     */
     @Generated
     @Selector("isComplete")
     public native boolean isComplete();

@@ -19,6 +19,12 @@ package apple.avkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @constant	AVKitErrorUnknown
+ * 			Unknown error.
+ * @constant	AVKitErrorPictureInPictureStartFailed
+ * 			Failed to start Picture in Picture.
+ */
 @Generated
 public final class AVKitError {
     @Generated @NInt public static final long Unknown = 0xFFFFFFFFFFFFFC18L;

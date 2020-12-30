@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Class representing a saved game for the local player, or a version of a saved game when in conflict
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -169,6 +172,9 @@ public class GKSavedGame extends NSObject implements NSCopying {
     @Selector("init")
     public native GKSavedGame init();
 
+    /**
+     * Asynchronously load the data for this saved game. The completion handler is called with loaded data or an error.
+     */
     @Generated
     @Selector("loadDataWithCompletionHandler:")
     public native void loadDataWithCompletionHandler(

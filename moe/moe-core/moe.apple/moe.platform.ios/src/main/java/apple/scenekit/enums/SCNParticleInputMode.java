@@ -19,10 +19,22 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Particle Variation Mode
+ */
 @Generated
 public final class SCNParticleInputMode {
+    /**
+     * The input time for the controller animation is the current life duration of the particle
+     */
     @Generated @NInt public static final long Life = 0x0000000000000000L;
+    /**
+     * The input time for the controller animation is the distance from the variation origin node.
+     */
     @Generated @NInt public static final long Distance = 0x0000000000000001L;
+    /**
+     * The input time for the controller animation is the current value of another specified property.
+     */
     @Generated @NInt public static final long OtherProperty = 0x0000000000000002L;
 
     @Generated

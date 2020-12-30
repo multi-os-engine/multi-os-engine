@@ -3,6 +3,9 @@ package apple.pdfkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Icon that appears indicating text annotation pop-up.
+ */
 @Generated
 public final class PDFTextAnnotationIconType {
     @Generated

@@ -34,16 +34,28 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Delegate methods for MCSession.
+ */
 @Generated
 @Library("MultipeerConnectivity")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MCSessionDelegate")
 public interface MCSessionDelegate {
+    /**
+     * Finished receiving a resource from remote peer and saved the content
+     * in a temporary location - the app is responsible for moving the file
+     * to a permanent location within its sandbox.
+     */
     @Generated
     @Selector("session:didFinishReceivingResourceWithName:fromPeer:atURL:withError:")
     void sessionDidFinishReceivingResourceWithNameFromPeerAtURLWithError(MCSession session, String resourceName,
             MCPeerID peerID, NSURL localURL, NSError error);
 
+    /**
+     * Made first contact with peer and have identity information about the
+     * remote peer (certificate may be nil).
+     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveCertificate:fromPeer:certificateHandler:")
@@ -53,20 +65,32 @@ public interface MCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Received data from remote peer.
+     */
     @Generated
     @Selector("session:didReceiveData:fromPeer:")
     void sessionDidReceiveDataFromPeer(MCSession session, NSData data, MCPeerID peerID);
 
+    /**
+     * Received a byte stream from remote peer.
+     */
     @Generated
     @Selector("session:didReceiveStream:withName:fromPeer:")
     void sessionDidReceiveStreamWithNameFromPeer(MCSession session, NSInputStream stream, String streamName,
             MCPeerID peerID);
 
+    /**
+     * Start receiving a resource from remote peer.
+     */
     @Generated
     @Selector("session:didStartReceivingResourceWithName:fromPeer:withProgress:")
     void sessionDidStartReceivingResourceWithNameFromPeerWithProgress(MCSession session, String resourceName,
             MCPeerID peerID, NSProgress progress);
 
+    /**
+     * Remote peer changed state.
+     */
     @Generated
     @Selector("session:peer:didChangeState:")
     void sessionPeerDidChangeState(MCSession session, MCPeerID peerID, @NInt long state);

@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MLDictionaryConstraint
+ * 
+ * Constraint describing expected NSDictionary properties
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -114,6 +119,9 @@ public class MLDictionaryConstraint extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Required key type, described as MLFeatureType
+     */
     @Generated
     @Selector("keyType")
     @NInt

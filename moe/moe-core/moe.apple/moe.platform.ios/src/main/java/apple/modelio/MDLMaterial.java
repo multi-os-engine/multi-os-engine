@@ -161,6 +161,11 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @NInt
     public static native long version_static();
 
+    /**
+     * If a property is not found by propertyForKey and baseMaterial is not nil,
+     * propertyForKey will invoke propertyForKey on baseMaterial.
+     * All other selectors disregard baseMaterial.
+     */
     @Generated
     @Selector("baseMaterial")
     public native MDLMaterial baseMaterial();
@@ -184,6 +189,9 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("initWithName:scatteringFunction:")
     public native MDLMaterial initWithNameScatteringFunction(String name, MDLScatteringFunction scatteringFunction);
 
+    /**
+     * Default is MDLMaterialFaceFront
+     */
     @Generated
     @Selector("materialFace")
     @NUInt
@@ -201,6 +209,9 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("objectForKeyedSubscript:")
     public native MDLMaterialProperty objectForKeyedSubscript(String name);
 
+    /**
+     * Returns the complete list of properties that match the semantic (e.g. Kd & Kd_map)
+     */
     @Generated
     @Selector("propertiesWithSemantic:")
     public native NSArray<? extends MDLMaterialProperty> propertiesWithSemantic(@NUInt long semantic);
@@ -209,6 +220,10 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("propertyNamed:")
     public native MDLMaterialProperty propertyNamed(String name);
 
+    /**
+     * Returns the first occurence of the property that matches the semantic.
+     * Not recommended to use when there are multiple properties with same semantic.
+     */
     @Generated
     @Selector("propertyWithSemantic:")
     public native MDLMaterialProperty propertyWithSemantic(@NUInt long semantic);
@@ -225,10 +240,18 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("scatteringFunction")
     public native MDLScatteringFunction scatteringFunction();
 
+    /**
+     * If a property is not found by propertyForKey and baseMaterial is not nil,
+     * propertyForKey will invoke propertyForKey on baseMaterial.
+     * All other selectors disregard baseMaterial.
+     */
     @Generated
     @Selector("setBaseMaterial:")
     public native void setBaseMaterial(MDLMaterial value);
 
+    /**
+     * Default is MDLMaterialFaceFront
+     */
     @Generated
     @Selector("setMaterialFace:")
     public native void setMaterialFace(@NUInt long value);
@@ -241,10 +264,24 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("setProperty:")
     public native void setProperty(MDLMaterialProperty property);
 
+    /**
+     * Iterates all material properties. If they are string values or NSURL values, and
+     * can be resolved as textures, then the string and NSURL values will be replaced by
+     * MDLTextureSampler values. The transforms on the samplers will be identity, the
+     * wrap modes will be clamp, and the filter modes will be linear.
+     * @param resolver If non-nil, the resolver can be invoked to convert stringValues
+     *                 to NSURLs for loading.
+     */
     @Generated
     @Selector("loadTexturesUsingResolver:")
     public native void loadTexturesUsingResolver(@Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 
+    /**
+     * Iterates all material properties. If they are string values, they are resolved into
+     * valid paths as NSURL values.
+     * @param resolver If non-nil, the resolver can be invoked to convert stringValues
+     *                 to NSURLs for loading.
+     */
     @Generated
     @Selector("resolveTexturesWithResolver:")
     public native void resolveTexturesWithResolver(@Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);

@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This object is created by your application and passed into a UIScene's openURL method.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -125,6 +128,9 @@ public class UISceneOpenExternalURLOptions extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * URLs must be universal links and have an app configured to open them.
+     */
     @Generated
     @Selector("setUniversalLinksOnly:")
     public native void setUniversalLinksOnly(boolean value);
@@ -137,6 +143,9 @@ public class UISceneOpenExternalURLOptions extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * URLs must be universal links and have an app configured to open them.
+     */
     @Generated
     @Selector("universalLinksOnly")
     public native boolean universalLinksOnly();

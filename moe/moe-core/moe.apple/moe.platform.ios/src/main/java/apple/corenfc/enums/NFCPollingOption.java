@@ -3,6 +3,13 @@ package apple.corenfc.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum NFCPollingOption
+ * 
+ * @constant NFCPollingISO14443     Support both Type A & B modulation.  NFCTagTypeISO7816Compatible and NFCTagTypeMiFare tags will be discovered.
+ * @constant NFCPollingISO15693     NFCTagTypeISO15693 tag will be discovered.
+ * @constant NFCPollingISO18092     NFCTagTypeFeliCa tag will be discovered.
+ */
 @Generated
 public final class NFCPollingOption {
     @Generated

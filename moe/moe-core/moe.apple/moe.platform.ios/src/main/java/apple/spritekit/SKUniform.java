@@ -156,10 +156,21 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Create a shader uniform with a given name.
+     * 
+     * @param name the name of the shader uniform.
+     */
     @Generated
     @Selector("uniformWithName:")
     public static native SKUniform uniformWithName(String name);
 
+    /**
+     * Create a shader uniform with a given name, and a float value
+     * 
+     * @param name the name of the shader uniform.
+     * @param value the floating point value associated with this uniform.
+     */
     @Generated
     @Selector("uniformWithName:float:")
     public static native SKUniform uniformWithNameFloat(String name, float value);
@@ -188,6 +199,12 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("uniformWithName:floatVector4:")
     public static native SKUniform uniformWithNameFloatVector4(String name, @ByValue GLKVector4 value);
 
+    /**
+     * Create a shader uniform with a given name, and texture data
+     * 
+     * @param name the name of the shader uniform.
+     * @param texture the texture data associated with this uniform.
+     */
     @Generated
     @Selector("uniformWithName:texture:")
     public static native SKUniform uniformWithNameTexture(String name, SKTexture texture);
@@ -222,6 +239,9 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @ByValue
     public native GLKMatrix4 floatMatrix4Value();
 
+    /**
+     * Access to the value associated with the uniform
+     */
     @Generated
     @Selector("floatValue")
     public native float floatValue();
@@ -285,6 +305,9 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithName:texture:")
     public native SKUniform initWithNameTexture(String name, SKTexture texture);
 
+    /**
+     * The name by which this uniform will be referenced in a shader
+     */
     @Generated
     @Selector("name")
     public native String name();
@@ -301,6 +324,9 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("setFloatMatrix4Value:")
     public native void setFloatMatrix4Value(@ByValue GLKMatrix4 value);
 
+    /**
+     * Access to the value associated with the uniform
+     */
     @Generated
     @Selector("setFloatValue:")
     public native void setFloatValue(float value);
@@ -317,14 +343,23 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("setFloatVector4Value:")
     public native void setFloatVector4Value(@ByValue GLKVector4 value);
 
+    /**
+     * Access to the texture data associated with the current uniform
+     */
     @Generated
     @Selector("setTextureValue:")
     public native void setTextureValue(SKTexture value);
 
+    /**
+     * Access to the texture data associated with the current uniform
+     */
     @Generated
     @Selector("textureValue")
     public native SKTexture textureValue();
 
+    /**
+     * Once created, a uniform is locked to a specific type, you may only access the property of this type
+     */
     @Generated
     @Selector("uniformType")
     @NInt

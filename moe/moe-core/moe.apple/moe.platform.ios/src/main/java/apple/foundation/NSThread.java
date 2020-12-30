@@ -139,6 +139,9 @@ public class NSThread extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * reports whether current thread is main
+     */
     @Generated
     @Selector("isMainThread")
     public static native boolean isMainThread_static();
@@ -235,6 +238,9 @@ public class NSThread extends NSObject {
     @Selector("isMainThread")
     public native boolean isMainThread();
 
+    /**
+     * thread body method
+     */
     @Generated
     @Selector("main")
     public native void main();
@@ -243,6 +249,9 @@ public class NSThread extends NSObject {
     @Selector("name")
     public native String name();
 
+    /**
+     * read-only after the thread is started
+     */
     @Generated
     @Selector("qualityOfService")
     @NInt
@@ -252,6 +261,9 @@ public class NSThread extends NSObject {
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * read-only after the thread is started
+     */
     @Generated
     @Selector("setQualityOfService:")
     public native void setQualityOfService(@NInt long value);
@@ -260,6 +272,9 @@ public class NSThread extends NSObject {
     @Selector("setStackSize:")
     public native void setStackSize(@NUInt long value);
 
+    /**
+     * To be deprecated; use qualityOfService below
+     */
     @Generated
     @Selector("setThreadPriority:")
     public native void setThreadPriority(double value);
@@ -277,6 +292,9 @@ public class NSThread extends NSObject {
     @Selector("threadDictionary")
     public native NSMutableDictionary<?, ?> threadDictionary();
 
+    /**
+     * To be deprecated; use qualityOfService below
+     */
     @Generated
     @Selector("threadPriority")
     public native double threadPriority();

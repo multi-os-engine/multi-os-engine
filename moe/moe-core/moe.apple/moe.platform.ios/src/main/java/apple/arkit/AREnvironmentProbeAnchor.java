@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An object representing an environment probe in the world.
+ * @discussion Environment probes are used to light virtual geometry by producing environment
+ * textures from the probe's location in the world.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -84,6 +89,10 @@ public class AREnvironmentProbeAnchor extends ARAnchor {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The environment texture of the probe.
+     * @discussion The texture is provided as a cube using MTLTextureTypeCube.
+     */
     @Generated
     @Selector("environmentTexture")
     @MappedReturn(ObjCObjectMapper.class)

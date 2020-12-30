@@ -168,6 +168,10 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Returns the identifier of the receiver.
+     * Could be used to keep track of the entire transaction for resolve, confirm and handleIntent
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -186,6 +190,9 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * A human-understandable string representation of the intent's user-facing behavior
+     */
     @Generated
     @Selector("intentDescription")
     public native String intentDescription();
@@ -194,26 +201,44 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("imageForParameterNamed:")
     public native INImage imageForParameterNamed(String parameterName);
 
+    /**
+     * The image most relevant for display to the receiver, accounting for both parameter-associated images and other images defined in the receiver.
+     */
     @Generated
     @Selector("keyImage")
     public native INImage keyImage();
 
+    /**
+     * Set an image associated with a parameter on the receiver. This image will be used in display of the receiver throughout the system.
+     */
     @Generated
     @Selector("setImage:forParameterNamed:")
     public native void setImageForParameterNamed(INImage image, String parameterName);
 
+    /**
+     * A human-understandable string that can be shown to the user as an suggestion of the phrase they might want to use when adding intent as a shortcut to Siri.
+     */
     @Generated
     @Selector("setSuggestedInvocationPhrase:")
     public native void setSuggestedInvocationPhrase(String value);
 
+    /**
+     * A human-understandable string that can be shown to the user as an suggestion of the phrase they might want to use when adding intent as a shortcut to Siri.
+     */
     @Generated
     @Selector("suggestedInvocationPhrase")
     public native String suggestedInvocationPhrase();
 
+    /**
+     * Defines additional contexts in which this intent is relevant to be suggested to the user. Applies to intents donated using INInteraction or set as suggested using INVoiceShortcutCenter.
+     */
     @Generated
     @Selector("setShortcutAvailability:")
     public native void setShortcutAvailability(@NUInt long value);
 
+    /**
+     * Defines additional contexts in which this intent is relevant to be suggested to the user. Applies to intents donated using INInteraction or set as suggested using INVoiceShortcutCenter.
+     */
     @Generated
     @Selector("shortcutAvailability")
     @NUInt

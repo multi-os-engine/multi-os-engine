@@ -154,6 +154,9 @@ public class SK3DNode extends SKNode {
     @Selector("nodeWithFileNamed:")
     public static native SK3DNode nodeWithFileNamed(String filename);
 
+    /**
+     * Create a 3D Node with the viewport size the 3D content will be rendered with.
+     */
     @Generated
     @Selector("nodeWithViewportSize:")
     public static native SK3DNode nodeWithViewportSize(@ByValue CGSize viewportSize);
@@ -193,10 +196,21 @@ public class SK3DNode extends SKNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property autoenablesDefaultLighting
+     * @abstract Specifies whether the receiver should automatically light up scenes that have no light source. The default is NO.
+     * @discussion When enabled, a diffuse light is automatically added and placed while rendering scenes that have no light or only ambient lights.
+     */
     @Generated
     @Selector("autoenablesDefaultLighting")
     public native boolean autoenablesDefaultLighting();
 
+    /**
+     * @method hitTest:options:
+     * @abstract Returns an array of SCNHitTestResult for each node that contains a specified point.
+     * @param point A point in the coordinate system of the receiver.
+     * @param options Optional parameters (see the "Hit test options" group for the available options).
+     */
     @Generated
     @Selector("hitTest:options:")
     public native NSArray<? extends SCNHitTestResult> hitTestOptions(@ByValue CGPoint point,
@@ -206,62 +220,122 @@ public class SK3DNode extends SKNode {
     @Selector("init")
     public native SK3DNode init();
 
+    /**
+     * Support coding and decoding via NSKeyedArchiver.
+     */
     @Generated
     @Selector("initWithCoder:")
     public native SK3DNode initWithCoder(NSCoder aDecoder);
 
+    /**
+     * Designated initializer.
+     * Initialize a 3D Node with the viewport size the 3D content will be rendered with.
+     */
     @Generated
     @Selector("initWithViewportSize:")
     public native SK3DNode initWithViewportSize(@ByValue CGSize viewportSize);
 
+    /**
+     * @property playing
+     * @abstract Returns YES if the scene is playing, NO otherwise.
+     */
     @Generated
     @Selector("isPlaying")
     public native boolean isPlaying();
 
+    /**
+     * @property playing
+     * @abstract Returns YES if the scene is playing, NO otherwise.
+     */
     @Generated
     @Selector("setPlaying:")
     public native void setPlaying(boolean value);
 
+    /**
+     * @property loops
+     * @abstract Indicates whether the receiver restarts playback when it reaches the end of its content. Default: YES.
+     * @discussion YES when the receiver restarts playback when it finishes, NO otherwise.
+     */
     @Generated
     @Selector("loops")
     public native boolean loops();
 
+    /**
+     * @property pointOfView
+     * @abstract Specifies the point of view used to render the scene.
+     * @discussion A point of view must have either a camera or a spot light attached.
+     */
     @Generated
     @Selector("pointOfView")
     public native SCNNode pointOfView();
 
+    /**
+     * @property sceneTime
+     * @abstract Specifies the current time to display the scene.
+     */
     @Generated
     @Selector("sceneTime")
     public native double sceneTime();
 
+    /**
+     * A SceneKit scene
+     */
     @Generated
     @Selector("scnScene")
     public native SCNScene scnScene();
 
+    /**
+     * @property autoenablesDefaultLighting
+     * @abstract Specifies whether the receiver should automatically light up scenes that have no light source. The default is NO.
+     * @discussion When enabled, a diffuse light is automatically added and placed while rendering scenes that have no light or only ambient lights.
+     */
     @Generated
     @Selector("setAutoenablesDefaultLighting:")
     public native void setAutoenablesDefaultLighting(boolean value);
 
+    /**
+     * @property loops
+     * @abstract Indicates whether the receiver restarts playback when it reaches the end of its content. Default: YES.
+     * @discussion YES when the receiver restarts playback when it finishes, NO otherwise.
+     */
     @Generated
     @Selector("setLoops:")
     public native void setLoops(boolean value);
 
+    /**
+     * @property pointOfView
+     * @abstract Specifies the point of view used to render the scene.
+     * @discussion A point of view must have either a camera or a spot light attached.
+     */
     @Generated
     @Selector("setPointOfView:")
     public native void setPointOfView(SCNNode value);
 
+    /**
+     * @property sceneTime
+     * @abstract Specifies the current time to display the scene.
+     */
     @Generated
     @Selector("setSceneTime:")
     public native void setSceneTime(double value);
 
+    /**
+     * A SceneKit scene
+     */
     @Generated
     @Selector("setScnScene:")
     public native void setScnScene(SCNScene value);
 
+    /**
+     * The viewport size that the 3D content will be rendered with
+     */
     @Generated
     @Selector("setViewportSize:")
     public native void setViewportSize(@ByValue CGSize value);
 
+    /**
+     * The viewport size that the 3D content will be rendered with
+     */
     @Generated
     @Selector("viewportSize")
     @ByValue

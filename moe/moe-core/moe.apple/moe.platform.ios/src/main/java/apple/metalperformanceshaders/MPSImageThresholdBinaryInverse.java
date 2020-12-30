@@ -43,6 +43,15 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSImageThresholdBinaryInverse
+ * @discussion The MPSImageThresholdBinaryInverse filter applies a fixed-level threshold to each pixel in the image.
+ *             The threshold functions convert a single channel image to a binary image.
+ *             If the input image is not a single channel image, convert the inputimage to a single channel
+ *             luminance image using the linearGrayColorTransform and then apply the threshold.
+ *             The ThresholdBinaryInverse function is:
+ *                 destinationPixelValue = sourcePixelValue > thresholdValue ? 0 : maximumValue
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -162,20 +171,40 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
     @Selector("initWithDevice:")
     public native MPSImageThresholdBinaryInverse initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   initialize a MPSImageThresholdBinaryInverse filter
+     * @param      device          The device the filter will run on
+     * @param      thresholdValue  The threshold value to use
+     * @param      maximumValue    The maximum value to use
+     * @param      transform       This matrix is an array of 3 floats.
+     *                             The default if no transform is specifed is BT.601/JPEG: {0.299f, 0.587f, 0.114f};
+     */
     @Generated
     @Selector("initWithDevice:thresholdValue:maximumValue:linearGrayColorTransform:")
     public native MPSImageThresholdBinaryInverse initWithDeviceThresholdValueMaximumValueLinearGrayColorTransform(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, float thresholdValue, float maximumValue,
             ConstFloatPtr transform);
 
+    /**
+     * @property maximumValue
+     * @discussion The maximum value used to init the threshold filter
+     */
     @Generated
     @Selector("maximumValue")
     public native float maximumValue();
 
+    /**
+     * @property thresholdValue
+     * @discussion The threshold value used to init the threshold filter
+     */
     @Generated
     @Selector("thresholdValue")
     public native float thresholdValue();
 
+    /**
+     * @property transform
+     * @discussion The color transform used to init the threshold filter
+     */
     @Generated
     @Selector("transform")
     public native ConstFloatPtr transform();
@@ -184,6 +213,17 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
     @Selector("initWithCoder:")
     public native MPSImageThresholdBinaryInverse initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion While the standard NSSecureCoding/NSCoding method
+     *             -initWithCoder: should work, since the file can't
+     *             know which device your data is allocated on, we
+     *             have to guess and may guess incorrectly.  To avoid
+     *             that problem, use initWithCoder:device instead.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
+     * @param      device      The MTLDevice on which to make the MPSKernel
+     * @return     A new MPSKernel object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSImageThresholdBinaryInverse initWithCoderDevice(NSCoder aDecoder,

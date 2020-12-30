@@ -40,6 +40,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The GKPeerPickerController class manages the system-supplied user interface for choosing peers to connect with for multiplayer games. The class manages the actual user interactions with the views and reports the results of those interactions to your delegate object.
+ * 
+ * Because the GKPeerPickerController class handles all of the user interactions, all you have to do is tell it which GKSession selected peers should be connected to, tell it to start, and then wait to receive a delegate callback when the picker finished connecting peers or cancels.
+ * 
+ * You must provide a delegate that conforms to the GKPeerPickerControllerDelegate protocol in order to use this class. After the user interface starts, this class notifies your delegate of the user’s actions.
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -151,17 +158,28 @@ public class GKPeerPickerController extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * An integer bit mask that determines what connection types are supported by the application, and displays system-supplied UI as appropriate.
+     * 
+     * This mask can be specified by combining, using the C bitwise OR operator, any of the options described in GKPickerConnectionType. If not set, the default supported type is GKPickerConnectionTypeNearby.  If multiple connection types are supported, system-supplied UI will be presented to allow the user to select a connection type. The delegate receives a -peerPickerController:didSelectConnectionType: callback when the user selects a connection type.  If desired, this property should be set prior to calling -show, and should not be set while the picker is visible.
+     */
     @Generated
     @Selector("connectionTypesMask")
     @NUInt
     public native long connectionTypesMask();
 
+    /**
+     * The delegate receives notifications when the user interacts with the picker interface. If this property is nil, the picker is dismissed immediately if you try to show it.
+     */
     @Deprecated
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native GKPeerPickerControllerDelegate delegate();
 
+    /**
+     * Dismiss the picker.
+     */
     @Generated
     @Selector("dismiss")
     public native void dismiss();
@@ -174,15 +192,26 @@ public class GKPeerPickerController extends NSObject {
     @Selector("isVisible")
     public native boolean isVisible();
 
+    /**
+     * An integer bit mask that determines what connection types are supported by the application, and displays system-supplied UI as appropriate.
+     * 
+     * This mask can be specified by combining, using the C bitwise OR operator, any of the options described in GKPickerConnectionType. If not set, the default supported type is GKPickerConnectionTypeNearby.  If multiple connection types are supported, system-supplied UI will be presented to allow the user to select a connection type. The delegate receives a -peerPickerController:didSelectConnectionType: callback when the user selects a connection type.  If desired, this property should be set prior to calling -show, and should not be set while the picker is visible.
+     */
     @Generated
     @Selector("setConnectionTypesMask:")
     public native void setConnectionTypesMask(@NUInt long value);
 
+    /**
+     * The delegate receives notifications when the user interacts with the picker interface. If this property is nil, the picker is dismissed immediately if you try to show it.
+     */
     @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKPeerPickerControllerDelegate value);
 
+    /**
+     * The delegate receives notifications when the user interacts with the picker interface. If this property is nil, the picker is dismissed immediately if you try to show it.
+     */
     @Deprecated
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) GKPeerPickerControllerDelegate value) {
@@ -196,6 +225,9 @@ public class GKPeerPickerController extends NSObject {
         }
     }
 
+    /**
+     * Show the picker.
+     */
     @Generated
     @Selector("show")
     public native void show();

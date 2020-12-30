@@ -88,16 +88,31 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The proposed text drop action. The default value is UITextDropInsert.
+     */
     @Generated
     @Selector("dropAction")
     @NUInt
     public native long dropAction();
 
+    /**
+     * Defines who will be responsible for performing the drop.
+     * The performer must:
+     * - load the data from the item providers
+     * - insert it into the text droppable view
+     * - provide a preview for the drop
+     * 
+     * The default is `UITextDropPerformerView`.
+     */
     @Generated
     @Selector("dropPerformer")
     @NUInt
     public native long dropPerformer();
 
+    /**
+     * The progress mode to be used. The default value is UITextDropProgressModeSystem.
+     */
     @Generated
     @Selector("dropProgressMode")
     @NUInt
@@ -151,18 +166,40 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The proposed text drop action. The default value is UITextDropInsert.
+     */
     @Generated
     @Selector("setDropAction:")
     public native void setDropAction(@NUInt long value);
 
+    /**
+     * Defines who will be responsible for performing the drop.
+     * The performer must:
+     * - load the data from the item providers
+     * - insert it into the text droppable view
+     * - provide a preview for the drop
+     * 
+     * The default is `UITextDropPerformerView`.
+     */
     @Generated
     @Selector("setDropPerformer:")
     public native void setDropPerformer(@NUInt long value);
 
+    /**
+     * The progress mode to be used. The default value is UITextDropProgressModeSystem.
+     */
     @Generated
     @Selector("setDropProgressMode:")
     public native void setDropProgressMode(@NUInt long value);
 
+    /**
+     * Specifies whether the drop is allowed to use "fast" inline operations
+     * for drags between the same view. This will not use the data in the
+     * items, but instead moves or copies text from the original positions
+     * to the dropped position.
+     * Defaults to YES.
+     */
     @Generated
     @Selector("setUseFastSameViewOperations:")
     public native void setUseFastSameViewOperations(boolean value);
@@ -175,6 +212,13 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Specifies whether the drop is allowed to use "fast" inline operations
+     * for drags between the same view. This will not use the data in the
+     * items, but instead moves or copies text from the original positions
+     * to the dropped position.
+     * Defaults to YES.
+     */
     @Generated
     @Selector("useFastSameViewOperations")
     public native boolean useFastSameViewOperations();

@@ -14,6 +14,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CPTabBarTemplateDelegate")
 public interface CPTabBarTemplateDelegate {
+    /**
+     * The user has selected one of the tabs in the tab bar template, bringing the selected template to the foreground.
+     */
     @Generated
     @Selector("tabBarTemplate:didSelectTemplate:")
     void tabBarTemplateDidSelectTemplate(CPTabBarTemplate tabBarTemplate, CPTemplate selectedTemplate);

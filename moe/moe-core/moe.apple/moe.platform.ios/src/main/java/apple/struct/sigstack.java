@@ -50,18 +50,30 @@ public final class sigstack extends StructObject {
         setSs_onstack(ss_onstack);
     }
 
+    /**
+     * signal stack pointer
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native BytePtr ss_sp();
 
+    /**
+     * signal stack pointer
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setSs_sp(BytePtr value);
 
+    /**
+     * current status
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int ss_onstack();
 
+    /**
+     * current status
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSs_onstack(int value);

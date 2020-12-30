@@ -53,6 +53,13 @@ public class UIDropInteraction extends NSObject implements UIInteraction {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Whether to allow this interaction to handle more than one drop session
+     * at the same time. A well-behaved delegate can handle this correctly,
+     * but many will find it challenging, so the default value is false.
+     * If false, then after one session has entered the view, other sessions will
+     * be ignored until the first session exits and the other session enters again.
+     */
     @Generated
     @Selector("allowsSimultaneousDropSessions")
     public native boolean allowsSimultaneousDropSessions();
@@ -145,6 +152,13 @@ public class UIDropInteraction extends NSObject implements UIInteraction {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Whether to allow this interaction to handle more than one drop session
+     * at the same time. A well-behaved delegate can handle this correctly,
+     * but many will find it challenging, so the default value is false.
+     * If false, then after one session has entered the view, other sessions will
+     * be ignored until the first session exits and the other session enters again.
+     */
     @Generated
     @Selector("setAllowsSimultaneousDropSessions:")
     public native void setAllowsSimultaneousDropSessions(boolean value);

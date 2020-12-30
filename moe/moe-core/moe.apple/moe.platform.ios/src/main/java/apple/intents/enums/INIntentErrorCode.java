@@ -21,41 +21,137 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class INIntentErrorCode {
+    /**
+     * Interactions
+     */
     @Generated @NInt public static final long InteractionOperationNotSupported = 0x000000000000076CL;
+    /**
+     * Interactions
+     */
     @Generated @NInt public static final long DonatingInteraction = 0x000000000000076DL;
+    /**
+     * Interactions
+     */
     @Generated @NInt public static final long DeletingAllInteractions = 0x000000000000076EL;
+    /**
+     * Interactions
+     */
     @Generated @NInt public static final long DeletingInteractionWithIdentifiers = 0x000000000000076FL;
+    /**
+     * Interactions
+     */
     @Generated @NInt public static final long DeletingInteractionWithGroupIdentifier = 0x0000000000000770L;
+    /**
+     * Extension discovery / info plist validation
+     */
     @Generated @NInt public static final long IntentSupportedByMultipleExtension = 0x00000000000007D1L;
+    /**
+     * Extension discovery / info plist validation
+     */
     @Generated @NInt public static final long RestrictedIntentsNotSupportedByExtension = 0x00000000000007D2L;
+    /**
+     * Extension discovery / info plist validation
+     */
     @Generated @NInt public static final long NoHandlerProvidedForIntent = 0x00000000000007D3L;
+    /**
+     * Extension discovery / info plist validation
+     */
     @Generated @NInt public static final long InvalidIntentName = 0x00000000000007D4L;
+    /**
+     * Requests
+     */
     @Generated @NInt public static final long RequestTimedOut = 0x0000000000000BB9L;
+    /**
+     * User Vocabulary Sync
+     */
     @Generated @NInt public static final long InvalidUserVocabularyFileLocation = 0x0000000000000FA0L;
 
     @Generated
     private INIntentErrorCode() {
     }
 
+    /**
+     * Extension connection
+     */
     @Generated @NInt public static final long ExtensionLaunchingTimeout = 0x0000000000001388L;
+    /**
+     * Extension connection
+     */
     @Generated @NInt public static final long ExtensionBringUpFailed = 0x0000000000001389L;
+    /**
+     * Extension discovery / info plist validation
+     */
     @Generated @NInt public static final long NoAppAvailable = 0x00000000000007D5L;
+    /**
+     * Requests
+     */
     @Generated @NInt public static final long MissingInformation = 0x0000000000000BBAL;
+    /**
+     * Image loading, storage, and retrieval
+     */
     @Generated @NInt public static final long ImageGeneric = 0x0000000000001770L;
+    /**
+     * Image loading, storage, and retrieval
+     */
     @Generated @NInt public static final long ImageNoServiceAvailable = 0x0000000000001771L;
+    /**
+     * Image loading, storage, and retrieval
+     */
     @Generated @NInt public static final long ImageStorageFailed = 0x0000000000001772L;
+    /**
+     * Image loading, storage, and retrieval
+     */
     @Generated @NInt public static final long ImageLoadingFailed = 0x0000000000001773L;
+    /**
+     * Image loading, storage, and retrieval
+     */
     @Generated @NInt public static final long ImageRetrievalFailed = 0x0000000000001774L;
+    /**
+     * Image loading, storage, and retrieval
+     */
     @Generated @NInt public static final long ImageProxyLoop = 0x0000000000001775L;
+    /**
+     * Image loading, storage, and retrieval
+     */
     @Generated @NInt public static final long ImageProxyInvalid = 0x0000000000001776L;
+    /**
+     * Image loading, storage, and retrieval
+     */
     @Generated @NInt public static final long ImageProxyTimeout = 0x0000000000001777L;
+    /**
+     * Image loading, storage, and retrieval
+     */
     @Generated @NInt public static final long ImageServiceFailure = 0x0000000000001778L;
+    /**
+     * Image loading, storage, and retrieval
+     */
     @Generated @NInt public static final long ImageScalingFailed = 0x0000000000001779L;
+    /**
+     * Image loading, storage, and retrieval
+     */
     @Generated @NInt public static final long PermissionDenied = 0x000000000000177AL;
+    /**
+     * Voice Shortcuts
+     */
     @Generated @NInt public static final long VoiceShortcutCreationFailed = 0x0000000000001B58L;
+    /**
+     * Voice Shortcuts
+     */
     @Generated @NInt public static final long VoiceShortcutGetFailed = 0x0000000000001B59L;
+    /**
+     * Voice Shortcuts
+     */
     @Generated @NInt public static final long VoiceShortcutDeleteFailed = 0x0000000000001B5AL;
+    /**
+     * Encoding
+     */
     @Generated @NInt public static final long EncodingGeneric = 0x0000000000001F40L;
+    /**
+     * Encoding
+     */
     @Generated @NInt public static final long EncodingFailed = 0x0000000000001F41L;
+    /**
+     * Decoding
+     */
     @Generated @NInt public static final long DecodingGeneric = 0x0000000000002328L;
 }

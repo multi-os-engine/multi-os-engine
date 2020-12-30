@@ -39,6 +39,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Used to request that Core Data do a batch deletion of objects without faulting in
+ * objects to be deleted.
+ * May not be supported by all store types.
+ * WARNING:
+ * It is up to the developer creating the request to ensure that changes made by the request to
+ * the underlying store do not violate any validation rules specified in the model beyond basic
+ * delete rules (for example, minimum relationship counts).
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -166,11 +175,17 @@ public class NSBatchDeleteRequest extends NSPersistentStoreRequest {
     @Selector("initWithObjectIDs:")
     public native NSBatchDeleteRequest initWithObjectIDs(NSArray<? extends NSManagedObjectID> objects);
 
+    /**
+     * The type of result that should be returned from this request. Defaults to NSBatchDeleteResultTypeStatusOnly
+     */
     @Generated
     @Selector("resultType")
     @NUInt
     public native long resultType();
 
+    /**
+     * The type of result that should be returned from this request. Defaults to NSBatchDeleteResultTypeStatusOnly
+     */
     @Generated
     @Selector("setResultType:")
     public native void setResultType(@NUInt long value);

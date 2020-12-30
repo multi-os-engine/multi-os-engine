@@ -27,6 +27,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMHeadphoneMotionManager
+ * 
+ * Discussion:
+ *   The CMHeadphoneMotionManager object is your entry point to the headphone motion service.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -55,6 +61,12 @@ public class CMHeadphoneMotionManager extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * authorizationStatus
+     * 
+     * Discussion:
+     *   Returns the current authorization status for headphone motion.
+     */
     @Generated
     @Selector("authorizationStatus")
     @NInt
@@ -86,6 +98,12 @@ public class CMHeadphoneMotionManager extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * delegate
+     * 
+     * Discussion:
+     *   The delegate object to receive motion manager events.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -95,6 +113,12 @@ public class CMHeadphoneMotionManager extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * deviceMotion
+     * 
+     * Discussion:
+     *   Returns the latest sample of device motion data, or nil if none is available.
+     */
     @Generated
     @Selector("deviceMotion")
     public native CMDeviceMotion deviceMotion();
@@ -121,10 +145,23 @@ public class CMHeadphoneMotionManager extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * deviceMotionActive
+     * 
+     * Discussion:
+     *   Determines whether the CMHeadphoneMotionManager is currently providing device
+     *   motion updates.
+     */
     @Generated
     @Selector("isDeviceMotionActive")
     public native boolean isDeviceMotionActive();
 
+    /**
+     * deviceMotionAvailable
+     * 
+     * Discussion:
+     *   Determines whether device motion is available.
+     */
     @Generated
     @Selector("isDeviceMotionAvailable")
     public native boolean isDeviceMotionAvailable();
@@ -151,10 +188,22 @@ public class CMHeadphoneMotionManager extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * delegate
+     * 
+     * Discussion:
+     *   The delegate object to receive motion manager events.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CMHeadphoneMotionManagerDelegate value);
 
+    /**
+     * delegate
+     * 
+     * Discussion:
+     *   The delegate object to receive motion manager events.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) CMHeadphoneMotionManagerDelegate value) {
         Object __old = delegate();
@@ -171,10 +220,23 @@ public class CMHeadphoneMotionManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * startDeviceMotionUpdates
+     * 
+     * Discussion:
+     *   Starts device motion updates with no handler. To receive the latest device motion data
+     *   when desired, examine the deviceMotion property.
+     */
     @Generated
     @Selector("startDeviceMotionUpdates")
     public native void startDeviceMotionUpdates();
 
+    /**
+     * startDeviceMotionUpdatesToQueue:withHandler:
+     * 
+     * Discussion:
+     *   Starts device motion updates, providing data to the given handler through the given queue.
+     */
     @Generated
     @Selector("startDeviceMotionUpdatesToQueue:withHandler:")
     public native void startDeviceMotionUpdatesToQueueWithHandler(NSOperationQueue queue,
@@ -187,6 +249,12 @@ public class CMHeadphoneMotionManager extends NSObject {
         void call_startDeviceMotionUpdatesToQueueWithHandler(CMDeviceMotion motion, NSError error);
     }
 
+    /**
+     * stopDeviceMotionUpdates
+     * 
+     * Discussion:
+     *   Stops device motion updates.
+     */
     @Generated
     @Selector("stopDeviceMotionUpdates")
     public native void stopDeviceMotionUpdates();

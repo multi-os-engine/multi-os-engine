@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Node representing a @ref MPSNNGramMatrixCalculation kernel
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -52,6 +55,10 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @property   alpha
+     * @abstract   Scaling factor for the output. Default: 1.0f.
+     */
     @Generated
     @Selector("alpha")
     public native float alpha();
@@ -95,10 +102,21 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
     @Selector("init")
     public native MPSNNGramMatrixCalculationNode init();
 
+    /**
+     * @abstract   Init a node representing a MPSNNGramMatrixCalculationNode kernel.
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter.
+     * @return     A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSNNGramMatrixCalculationNode initWithSource(MPSNNImageNode sourceNode);
 
+    /**
+     * @abstract   Init a node representing a MPSNNGramMatrixCalculationNode kernel.
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter.
+     * @param      alpha                   Scaling factor for the output.
+     * @return     A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
+     */
     @Generated
     @Selector("initWithSource:alpha:")
     public native MPSNNGramMatrixCalculationNode initWithSourceAlpha(MPSNNImageNode sourceNode, float alpha);
@@ -130,14 +148,30 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract   Init a node representing a autoreleased MPSNNGramMatrixCalculationNode kernel.
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter.
+     * @return     A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
+     */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSNNGramMatrixCalculationNode nodeWithSource(MPSNNImageNode sourceNode);
 
+    /**
+     * @abstract   Init a node representing a autoreleased MPSNNGramMatrixCalculationNode kernel.
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter.
+     * @param      alpha                   Scaling factor for the output.
+     * @return     A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
+     */
     @Generated
     @Selector("nodeWithSource:alpha:")
     public static native MPSNNGramMatrixCalculationNode nodeWithSourceAlpha(MPSNNImageNode sourceNode, float alpha);
 
+    /**
+     * @property   propertyCallBack
+     * @abstract   Optional callback option - setting this allows the alpha value to be changed dynamically at encode time.
+     *             Default value: nil.
+     */
     @Generated
     @Selector("propertyCallBack")
     @MappedReturn(ObjCObjectMapper.class)
@@ -151,6 +185,11 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   propertyCallBack
+     * @abstract   Optional callback option - setting this allows the alpha value to be changed dynamically at encode time.
+     *             Default value: nil.
+     */
     @Generated
     @Selector("setPropertyCallBack:")
     public native void setPropertyCallBack(@Mapped(ObjCObjectMapper.class) MPSNNGramMatrixCallback value);

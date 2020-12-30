@@ -3,6 +3,9 @@ package apple.carplay.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Specifies the type of a @c CPBarButton.
+ */
 @Generated
 public final class CPBarButtonType {
     @Generated

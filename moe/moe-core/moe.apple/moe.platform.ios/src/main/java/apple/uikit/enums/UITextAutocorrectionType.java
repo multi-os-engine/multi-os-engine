@@ -19,6 +19,14 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * UITextAutocorrectionType
+ * 
+ * Controls keyboard autocorrection behavior for a text widget.
+ * Note: Some input methods do not support inline autocorrection, and
+ * instead use a conversion and/or candidate selection methodology. In such
+ * cases, these values are ignored by the keyboard/input method implementation.
+ */
 @Generated
 public final class UITextAutocorrectionType {
     @Generated @NInt public static final long Default = 0x0000000000000000L;

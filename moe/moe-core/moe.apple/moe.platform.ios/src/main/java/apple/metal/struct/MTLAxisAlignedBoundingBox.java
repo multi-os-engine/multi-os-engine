@@ -34,20 +34,32 @@ public final class MTLAxisAlignedBoundingBox extends StructObject {
         setMax(max);
     }
 
+    /**
+     * @brief Minimum point
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native MTLPackedFloat3 min();
 
+    /**
+     * @brief Minimum point
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setMin(@ByValue MTLPackedFloat3 value);
 
+    /**
+     * @brief Maximum point
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native MTLPackedFloat3 max();
 
+    /**
+     * @brief Maximum point
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMax(@ByValue MTLPackedFloat3 value);

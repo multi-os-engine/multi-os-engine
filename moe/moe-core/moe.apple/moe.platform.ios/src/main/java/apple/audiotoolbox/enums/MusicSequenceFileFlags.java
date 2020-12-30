@@ -18,6 +18,15 @@ package apple.audiotoolbox.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum MusicSequenceFileFlags
+ * @abstract	controls the behaviour of the create file calls
+ * @constant	kMusicSequenceFileFlags_Default
+ * 					Does not overwrite existing files.  Attempts to save over an existing file
+ * 					will return kAudio_FilePermissionError
+ * @constant	kMusicSequenceFileFlags_EraseFile
+ * 				Erase an existing file when creating a new file
+ */
 @Generated
 public final class MusicSequenceFileFlags {
     @Generated public static final int Default = 0x00000000;

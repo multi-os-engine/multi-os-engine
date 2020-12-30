@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A picker that manages the system interfaces for choosing assets from the user's photos library and delivers the results of those interactions to a delegate.
+ * @discussion \c PHPickerViewController is intended to be used as-is and does not support subclassing. The view hierarchy for the picker is private and must not be modified. A picker can only be presented once and should not be used for multiple sessions.
+ */
 @Generated
 @Library("PhotosUI")
 @Runtime(ObjCRuntime.class)
@@ -85,6 +89,9 @@ public class PHPickerViewController extends UIViewController {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    /**
+     * The configuration passed in during initialization.
+     */
     @Generated
     @Selector("configuration")
     public native PHPickerConfiguration configuration();
@@ -93,6 +100,9 @@ public class PHPickerViewController extends UIViewController {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * The delegate to be notified.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -115,6 +125,9 @@ public class PHPickerViewController extends UIViewController {
     @Selector("initWithCoder:")
     public native PHPickerViewController initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes new picker with the \c configuration the picker should use.
+     */
     @Generated
     @Selector("initWithConfiguration:")
     public native PHPickerViewController initWithConfiguration(PHPickerConfiguration configuration);
@@ -162,10 +175,16 @@ public class PHPickerViewController extends UIViewController {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The delegate to be notified.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PHPickerViewControllerDelegate value);
 
+    /**
+     * The delegate to be notified.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) PHPickerViewControllerDelegate value) {
         Object __old = delegate();

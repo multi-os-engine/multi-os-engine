@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An individual token in a UISearchTextField.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -117,6 +120,14 @@ public class UISearchToken extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The object which this token represents.
+     * 
+     * The application can assign any object it wants to this property. UISearchTextField does not attempt to interpret this object.
+     * 
+     * @note
+     * Because UISearchToken strongly references its representedObject, consider assigning a lightweight representation (such as NSManagedObjectID) instead of a complete model object to this property. The lifetime of a UISearchToken may be considerably longer than expected, especially if the token has been copied to a pasteboard.
+     */
     @Generated
     @Selector("representedObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -130,6 +141,14 @@ public class UISearchToken extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The object which this token represents.
+     * 
+     * The application can assign any object it wants to this property. UISearchTextField does not attempt to interpret this object.
+     * 
+     * @note
+     * Because UISearchToken strongly references its representedObject, consider assigning a lightweight representation (such as NSManagedObjectID) instead of a complete model object to this property. The lifetime of a UISearchToken may be considerably longer than expected, especially if the token has been copied to a pasteboard.
+     */
     @Generated
     @Selector("setRepresentedObject:")
     public native void setRepresentedObject(@Mapped(ObjCObjectMapper.class) Object value);

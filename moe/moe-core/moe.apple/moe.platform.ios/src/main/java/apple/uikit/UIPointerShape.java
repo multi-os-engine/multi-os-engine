@@ -59,6 +59,12 @@ public class UIPointerShape extends NSObject implements NSCopying {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @abstract Morphs the pointer to a beam with the given length and axis.
+     * 
+     * @param length  The beam's length. Limited to the region's width or height, depending on the beam's axis.
+     * @param axis    The axis along which to draw the beam. Axis must be either UIAxisVertical or UIAxisHorizontal.
+     */
     @Generated
     @Selector("beamWithPreferredLength:axis:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -144,14 +150,32 @@ public class UIPointerShape extends NSObject implements NSCopying {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @abstract Morphs the pointer to the given path.
+     */
     @Generated
     @Selector("shapeWithPath:")
     public static native UIPointerShape shapeWithPath(UIBezierPath path);
 
+    /**
+     * @abstract Morphs the pointer to a rounded rectangle with the provided rect and the standard system corner radius.
+     * 
+     * @param rect  CGRect describing the pointer's frame. If used alongside a content effect, this rect must be in the effect's
+     *              preview's container view's coordinate space. Otherwise, it is centered about the pointer's current location
+     *              and the rect's origin is interpreted as an offset.
+     */
     @Generated
     @Selector("shapeWithRoundedRect:")
     public static native UIPointerShape shapeWithRoundedRect(@ByValue CGRect rect);
 
+    /**
+     * @abstract Morphs the pointer to a rounded rectangle with the provided rect and cornerRadius.
+     * 
+     * @param rect          CGRect describing the pointer's frame. If used alongside a content effect, this rect must be in
+     *                      the effect's preview's container view's coordinate space. Otherwise, it is centered about the
+     *                      pointer's current location and the rect's origin is interpreted as an offset.
+     * @param cornerRadius  Corner radius to apply to the pointer.
+     */
     @Generated
     @Selector("shapeWithRoundedRect:cornerRadius:")
     public static native UIPointerShape shapeWithRoundedRectCornerRadius(@ByValue CGRect rect,

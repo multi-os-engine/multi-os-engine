@@ -25,6 +25,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNCompare
+ * @dependency This depends on Metal.framework.
+ * @discussion Specifies the elementwise comparison operator.
+ *             For each pixel in the primary source image (x) and each pixel in a secondary source image (y),
+ *             it applies the following function: result = (abs(x-y)) <= threshold
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -75,6 +82,10 @@ public class MPSNNCompare extends MPSCNNArithmetic {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property   comparisonType
+     * @abstract   The comparison type to use
+     */
     @Generated
     @Selector("comparisonType")
     @NUInt
@@ -105,6 +116,11 @@ public class MPSNNCompare extends MPSCNNArithmetic {
     @Selector("initWithCoder:device:")
     public native MPSNNCompare initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract  Initialize the comparison operator
+     * @param     device           The device the filter will run on.
+     * @return    A valid MPSNNCompare object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSNNCompare initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
@@ -144,10 +160,21 @@ public class MPSNNCompare extends MPSCNNArithmetic {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   comparisonType
+     * @abstract   The comparison type to use
+     */
     @Generated
     @Selector("setComparisonType:")
     public native void setComparisonType(@NUInt long value);
 
+    /**
+     * @property   threshold
+     * @abstract   The threshold to use when comparing for equality.  Two values will
+     *             be considered to be equal if the absolute value of their difference
+     *             is less than, or equal, to the specified threshold:
+     *                 result = |b - a| <= threshold
+     */
     @Generated
     @Selector("setThreshold:")
     public native void setThreshold(float value);
@@ -170,6 +197,13 @@ public class MPSNNCompare extends MPSCNNArithmetic {
         return supportsSecureCoding();
     }
 
+    /**
+     * @property   threshold
+     * @abstract   The threshold to use when comparing for equality.  Two values will
+     *             be considered to be equal if the absolute value of their difference
+     *             is less than, or equal, to the specified threshold:
+     *                 result = |b - a| <= threshold
+     */
     @Generated
     @Selector("threshold")
     public native float threshold();

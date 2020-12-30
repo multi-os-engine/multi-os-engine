@@ -55,45 +55,75 @@ public final class ucontext_t extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setUc_onstack(int value);
 
+    /**
+     * signal mask used by this context
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int uc_sigmask();
 
+    /**
+     * signal mask used by this context
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setUc_sigmask(int value);
 
+    /**
+     * stack used by this context
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @ByValue
     public native stack_t uc_stack();
 
+    /**
+     * stack used by this context
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setUc_stack(@ByValue stack_t value);
 
+    /**
+     * pointer to resuming context
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native ucontext_t uc_link();
 
+    /**
+     * pointer to resuming context
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setUc_link(@UncertainArgument("Options: reference, array Fallback: reference") ucontext_t value);
 
+    /**
+     * size of the machine context passed in
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     @NUInt
     public native long uc_mcsize();
 
+    /**
+     * size of the machine context passed in
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setUc_mcsize(@NUInt long value);
 
+    /**
+     * pointer to machine specific context
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     public native VoidPtr uc_mcontext();
 
+    /**
+     * pointer to machine specific context
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setUc_mcontext(VoidPtr value);

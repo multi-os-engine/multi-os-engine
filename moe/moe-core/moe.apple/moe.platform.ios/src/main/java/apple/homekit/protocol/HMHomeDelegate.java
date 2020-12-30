@@ -35,11 +35,22 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @brief This delegate receives update on the various accessories, action sets, groups and triggers
+ *        managed in the home.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("HMHomeDelegate")
 public interface HMHomeDelegate {
+    /**
+     * @brief Informs the delegate of addition of an accessory to the home.
+     * 
+     * @param home Sender of the message.
+     * 
+     * @param accessory Accessory that was added to the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didAddAccessory:")
@@ -47,6 +58,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that an action set was added to the home.
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param actionSet Action set that was added to the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didAddActionSet:")
@@ -54,6 +72,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate of addition of a room to the home.
+     * 
+     * @param home Sender of the message.
+     * 
+     * @param room Room that was added to the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didAddRoom:")
@@ -61,6 +86,15 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that the room was added to a zone.
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param room Room that was added to the zone.
+     * 
+     * @param zone Zone that was modified.
+     */
     @Generated
     @IsOptional
     @Selector("home:didAddRoom:toZone:")
@@ -68,6 +102,15 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that a service was added to a service group.
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param service Service that was added to the service group.
+     * 
+     * @param group Service group that was modified.
+     */
     @Generated
     @IsOptional
     @Selector("home:didAddService:toServiceGroup:")
@@ -75,6 +118,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that a service group was added to the home.
+     * 
+     * @param home Sender of the message.
+     * 
+     * @param group Service group that was added to the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didAddServiceGroup:")
@@ -82,6 +132,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate of the addition of a trigger to the home.
+     * 
+     * @param home Sender of the message.
+     * 
+     * @param trigger Trigger that was added to the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didAddTrigger:")
@@ -89,6 +146,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that a user was added to the home.
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param user User who was granted access to the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didAddUser:")
@@ -96,6 +160,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate of addition of a zone to the home.
+     * 
+     * @param home Sender of the message.
+     * 
+     * @param zone Zone that was added to the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didAddZone:")
@@ -103,6 +174,16 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that a configured accessory encountered an error. The
+     *        delegate should check the blocked state of the accessory
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param error Error encountered by accessory.
+     * 
+     * @param accessory Accessory that encountered the error
+     */
     @Generated
     @IsOptional
     @Selector("home:didEncounterError:forAccessory:")
@@ -110,6 +191,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate of removal of an accessory from the home.
+     * 
+     * @param home Sender of the message.
+     * 
+     * @param accessory Accessory that was removed from the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didRemoveAccessory:")
@@ -117,6 +205,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that an action set was removed from the home.
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param actionSet Action set that was removed from the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didRemoveActionSet:")
@@ -124,6 +219,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate of removal of a room from the home.
+     * 
+     * @param home Sender of the message.
+     * 
+     * @param room Room that was removed from the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didRemoveRoom:")
@@ -131,6 +233,15 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that the room was removed from a zone.
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param room Room that was removed from the zone.
+     * 
+     * @param zone Zone that was modified.
+     */
     @Generated
     @IsOptional
     @Selector("home:didRemoveRoom:fromZone:")
@@ -138,6 +249,15 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that a service was removed from a service group.
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param service Service that was removed from the service group.
+     * 
+     * @param group Service group that was modified.
+     */
     @Generated
     @IsOptional
     @Selector("home:didRemoveService:fromServiceGroup:")
@@ -145,6 +265,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that a service group was removed from the home.
+     * 
+     * @param home Sender of the message.
+     * 
+     * @param group Service group that was removed from the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didRemoveServiceGroup:")
@@ -152,6 +279,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate of removal of a trigger from the home.
+     * 
+     * @param home Sender of the message.
+     * 
+     * @param trigger Trigger that was removed from the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didRemoveTrigger:")
@@ -159,6 +293,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that a user was removed from the home.
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param user User whose access was revoked from the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didRemoveUser:")
@@ -166,6 +307,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate of removal of a zone from the home.
+     * 
+     * @param home Sender of the message.
+     * 
+     * @param zone Zone that was removed from the home.
+     */
     @Generated
     @IsOptional
     @Selector("home:didRemoveZone:")
@@ -173,6 +321,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that an accessory has been unblocked
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param accessory Accessory that was unblocked
+     */
     @Generated
     @IsOptional
     @Selector("home:didUnblockAccessory:")
@@ -180,6 +335,14 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that the actions of an action set was modified.
+     * This indicates that an action was added/removed or modified (value replaced)
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param actionSet Action set that was modified.
+     */
     @Generated
     @IsOptional
     @Selector("home:didUpdateActionsForActionSet:")
@@ -187,6 +350,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that the name of an action set was modified.
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param actionSet Action set that was modified.
+     */
     @Generated
     @IsOptional
     @Selector("home:didUpdateNameForActionSet:")
@@ -194,6 +364,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that the name of a room was modified
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param room Room that was modified.
+     */
     @Generated
     @IsOptional
     @Selector("home:didUpdateNameForRoom:")
@@ -201,6 +378,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that the name of a service group was modified.
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param group The service group that was modfied.
+     */
     @Generated
     @IsOptional
     @Selector("home:didUpdateNameForServiceGroup:")
@@ -208,6 +392,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that the name of the trigger was modified.
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param trigger Trigger that was modified.
+     */
     @Generated
     @IsOptional
     @Selector("home:didUpdateNameForTrigger:")
@@ -215,6 +406,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate that the name of a zone was modified.
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param zone Zone that was modified.
+     */
     @Generated
     @IsOptional
     @Selector("home:didUpdateNameForZone:")
@@ -222,6 +420,15 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate when a new room is assigned to an accessory
+     * 
+     * @param home Sender of the message.
+     * 
+     * @param room New room for the accessory.
+     * 
+     * @param accessory Accessory that was assigned a new room.
+     */
     @Generated
     @IsOptional
     @Selector("home:didUpdateRoom:forAccessory:")
@@ -229,6 +436,15 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate whenever a trigger is updated. For example, this method may be
+     *        invoked when a trigger is activated, when a trigger fires, or when the action sets
+     *        associated with a trigger are modified.
+     * 
+     * @param home Sender of this message.
+     * 
+     * @param trigger The trigger that was updated.
+     */
     @Generated
     @IsOptional
     @Selector("home:didUpdateTrigger:")
@@ -236,6 +452,11 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate of a change in the name of a home.
+     * 
+     * @param home Sender of this message.
+     */
     @Generated
     @IsOptional
     @Selector("homeDidUpdateName:")
@@ -243,6 +464,13 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate when state of the home hub changes.
+     * 
+     * @param home Sender of the message.
+     * 
+     * @param homeHubState The new home hub state.
+     */
     @Generated
     @IsOptional
     @Selector("home:didUpdateHomeHubState:")
@@ -250,6 +478,11 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate when the access control for current user has been updated.
+     * 
+     * @param home Sender of the message.
+     */
     @Generated
     @IsOptional
     @Selector("homeDidUpdateAccessControlForCurrentUser:")
@@ -257,6 +490,14 @@ public interface HMHomeDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @brief Informs the delegate when the supported features of this home changes.
+     * 
+     * The supported features covered by this are currently:
+     *   - supportsAddingNetworkRouter
+     * 
+     * @param home Sender of the message.
+     */
     @Generated
     @IsOptional
     @Selector("homeDidUpdateSupportedFeatures:")

@@ -39,6 +39,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class		AVAssetCache
+ * 
+ * @abstract
+ * 	AVAssetCache is a class vended by an AVAsset used for the inspection of locally available media data.
+ * 
+ * @discussion
+ * 	AVAssetCaches are vended by AVURLAsset's assetCache property.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -154,10 +163,22 @@ public class AVAssetCache extends NSObject {
     @Selector("init")
     public native AVAssetCache init();
 
+    /**
+     * @property	playableOffline
+     * @abstract
+     * 	Returns YES if a complete rendition of an AVAsset is available to be played without a network connection.
+     * @discussion
+     * 	An answer of YES does not indicate that any given media selection is available for offline playback. To determine if a specific media selection is available offline, see mediaSelectionOptionsInMediaSelectionGroup:.
+     */
     @Generated
     @Selector("isPlayableOffline")
     public native boolean isPlayableOffline();
 
+    /**
+     * @method		mediaSelectionOptionsInMediaSelectionGroup:
+     * @abstract
+     * 	Returns an array of AVMediaSelectionOptions in an AVMediaSelectionGroup that are available for offline operations, e.g. playback.
+     */
     @Generated
     @Selector("mediaSelectionOptionsInMediaSelectionGroup:")
     public native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsInMediaSelectionGroup(

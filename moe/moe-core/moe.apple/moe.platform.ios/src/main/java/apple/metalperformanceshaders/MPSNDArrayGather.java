@@ -26,6 +26,20 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNDArrayGather
+ * 
+ * @dependency This depends on Metal.framework.
+ * 
+ * @abstract   Applies a gather operation along a given axis.  The encoded primary source array
+ *             contains the data and the secondary array is a 1-D MPSNDArray containing the
+ *             indices.
+ * 
+ *                 For each dimension other than axis
+ *                     result[i] = source[i]; 0 <= i < array slice length along dimension
+ *                 Along the specified axis
+ *                     result[i] = source[indices[i]]; 0 <= i < number of indices
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -58,6 +72,11 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property  axis
+     * @abstract  The axis along which to apply the gather operation.
+     *             Defaults to zero.
+     */
     @Generated
     @Selector("axis")
     @NUInt
@@ -150,6 +169,11 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property  axis
+     * @abstract  The axis along which to apply the gather operation.
+     *             Defaults to zero.
+     */
     @Generated
     @Selector("setAxis:")
     public native void setAxis(@NUInt long value);

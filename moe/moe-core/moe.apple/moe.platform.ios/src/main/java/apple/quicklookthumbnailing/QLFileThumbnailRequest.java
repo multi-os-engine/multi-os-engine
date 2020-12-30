@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract This class contains information about the thumbnail that should be provided.
+ */
 @Generated
 @Library("QuickLookThumbnailing")
 @Runtime(ObjCRuntime.class)
@@ -85,6 +88,9 @@ public class QLFileThumbnailRequest extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The url of the file for which a thumbnail is being requested.
+     */
     @Generated
     @Selector("fileURL")
     public native NSURL fileURL();
@@ -119,11 +125,17 @@ public class QLFileThumbnailRequest extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The maximum size of the generated thumbnail that will be accepted. This is also the preferred size, ideally either the width or the height will match the maximumSize's width or height respectively.
+     */
     @Generated
     @Selector("maximumSize")
     @ByValue
     public native CGSize maximumSize();
 
+    /**
+     * The minimum size of the generated thumbnail that will be accepted.
+     */
     @Generated
     @Selector("minimumSize")
     @ByValue
@@ -143,6 +155,9 @@ public class QLFileThumbnailRequest extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The scale of the requested thumbnail.
+     */
     @Generated
     @Selector("scale")
     @NFloat

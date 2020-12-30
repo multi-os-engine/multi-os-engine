@@ -197,10 +197,16 @@ public class SKKeyframeSequence extends NSObject implements NSSecureCoding, NSCo
     @Selector("initWithCoder:")
     public native SKKeyframeSequence initWithCoder(NSCoder aDecoder);
 
+    /**
+     * Designated initializer
+     */
     @Generated
     @Selector("initWithKeyframeValues:times:")
     public native SKKeyframeSequence initWithKeyframeValuesTimes(NSArray<?> values, NSArray<? extends NSNumber> times);
 
+    /**
+     * defaults to SKInterpolationModeLinear
+     */
     @Generated
     @Selector("interpolationMode")
     @NInt
@@ -214,6 +220,9 @@ public class SKKeyframeSequence extends NSObject implements NSSecureCoding, NSCo
     @Selector("removeLastKeyframe")
     public native void removeLastKeyframe();
 
+    /**
+     * defaults to SKRepeatModeClamp
+     */
     @Generated
     @Selector("repeatMode")
     @NInt
@@ -224,6 +233,9 @@ public class SKKeyframeSequence extends NSObject implements NSSecureCoding, NSCo
     @MappedReturn(ObjCObjectMapper.class)
     public native Object sampleAtTime(@NFloat double time);
 
+    /**
+     * defaults to SKInterpolationModeLinear
+     */
     @Generated
     @Selector("setInterpolationMode:")
     public native void setInterpolationMode(@NInt long value);
@@ -241,6 +253,9 @@ public class SKKeyframeSequence extends NSObject implements NSSecureCoding, NSCo
     public native void setKeyframeValueTimeForIndex(@Mapped(ObjCObjectMapper.class) Object value, @NFloat double time,
             @NUInt long index);
 
+    /**
+     * defaults to SKRepeatModeClamp
+     */
     @Generated
     @Selector("setRepeatMode:")
     public native void setRepeatMode(@NInt long value);

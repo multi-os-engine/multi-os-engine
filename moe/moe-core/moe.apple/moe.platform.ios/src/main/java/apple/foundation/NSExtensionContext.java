@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Class representing the extension request's context
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -154,10 +157,16 @@ public class NSExtensionContext extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Signals the host to cancel the app extension request, with the supplied error, which should be non-nil. The userInfo of the NSError will contain a key NSExtensionItemsAndErrorsKey which will have as its value a dictionary of NSExtensionItems and associated NSError instances.
+     */
     @Generated
     @Selector("cancelRequestWithError:")
     public native void cancelRequestWithError(NSError error);
 
+    /**
+     * Signals the host to complete the app extension request with the supplied result items. The completion handler optionally contains any work which the extension may need to perform after the request has been completed, as a background-priority task. The `expired` parameter will be YES if the system decides to prematurely terminate a previous non-expiration invocation of the completionHandler. Note: calling this method will eventually dismiss the associated view controller.
+     */
     @Generated
     @Selector("completeRequestReturningItems:completionHandler:")
     public native void completeRequestReturningItemsCompletionHandler(NSArray<?> items,
@@ -182,10 +191,17 @@ public class NSExtensionContext extends NSObject {
     @Selector("init")
     public native NSExtensionContext init();
 
+    /**
+     * The list of input NSExtensionItems associated with the context. If the context has no input items, this array will be empty.
+     */
     @Generated
     @Selector("inputItems")
     public native NSArray<?> inputItems();
 
+    /**
+     * @abstract Load information about the broadcasting app.
+     * @param handler block which will be supplied a bundleID, displayName and an optional appIcon.
+     */
     @Generated
     @Selector("loadBroadcastingApplicationInfoWithCompletion:")
     public native void loadBroadcastingApplicationInfoWithCompletion(
@@ -195,15 +211,26 @@ public class NSExtensionContext extends NSObject {
     @Selector("mediaPlayingPaused")
     public native void mediaPlayingPaused();
 
+    /**
+     * Call these methods when the playback state changes in the content
+     * extension to update the state of the media control button.
+     */
     @Generated
     @Selector("mediaPlayingStarted")
     public native void mediaPlayingStarted();
 
+    /**
+     * Asks the host to open an URL on the extension's behalf
+     */
     @Generated
     @Selector("openURL:completionHandler:")
     public native void openURLCompletionHandler(NSURL URL,
             @ObjCBlock(name = "call_openURLCompletionHandler") Block_openURLCompletionHandler completionHandler);
 
+    /**
+     * Widgets can change the largest display mode they make available from the default 'NCWidgetDisplayModeCompact' by messaging the extension context.
+     * Modifying this property more than once during the lifetime of the widget (perhaps due to changes in the amount of available content) is supported.
+     */
     @Generated
     @Selector("setWidgetLargestAvailableDisplayMode:")
     public native void setWidgetLargestAvailableDisplayMode(@NInt long value);
@@ -213,6 +240,10 @@ public class NSExtensionContext extends NSObject {
     @NInt
     public native long widgetActiveDisplayMode();
 
+    /**
+     * Widgets can change the largest display mode they make available from the default 'NCWidgetDisplayModeCompact' by messaging the extension context.
+     * Modifying this property more than once during the lifetime of the widget (perhaps due to changes in the amount of available content) is supported.
+     */
     @Generated
     @Selector("widgetLargestAvailableDisplayMode")
     @NInt
@@ -265,6 +296,9 @@ public class NSExtensionContext extends NSObject {
     @Selector("notificationActions")
     public native NSArray<? extends UNNotificationAction> notificationActions();
 
+    /**
+     * Opens the corresponding applicaton and delivers it the default notification action response
+     */
     @Generated
     @Selector("performNotificationDefaultAction")
     public native void performNotificationDefaultAction();

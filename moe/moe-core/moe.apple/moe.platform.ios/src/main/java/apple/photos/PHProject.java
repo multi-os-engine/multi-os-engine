@@ -122,6 +122,10 @@ public class PHProject extends PHAssetCollection {
     public static native PHFetchResult<? extends PHCollection> fetchTopLevelUserCollectionsWithOptions(
             PHFetchOptions options);
 
+    /**
+     * Property to determine if a project preview was previously set.
+     * Use -[PHProjectChangeRequest setProjectPreviewImage:] to set a project preview.
+     */
     @Generated
     @Selector("hasProjectPreview")
     public native boolean hasProjectPreview();

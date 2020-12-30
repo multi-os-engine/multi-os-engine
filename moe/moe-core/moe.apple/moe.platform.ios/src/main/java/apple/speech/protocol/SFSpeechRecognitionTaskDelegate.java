@@ -27,11 +27,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Recognition result receiver, to be used for complex or multi-utterance speech recognition requests
+ */
 @Generated
 @Library("Speech")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SFSpeechRecognitionTaskDelegate")
 public interface SFSpeechRecognitionTaskDelegate {
+    /**
+     * Called when the task first detects speech in the source audio
+     */
     @Generated
     @IsOptional
     @Selector("speechRecognitionDidDetectSpeech:")
@@ -39,6 +45,9 @@ public interface SFSpeechRecognitionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called only for final recognitions of utterances. No more about the utterance will be reported
+     */
     @Generated
     @IsOptional
     @Selector("speechRecognitionTask:didFinishRecognition:")
@@ -47,6 +56,10 @@ public interface SFSpeechRecognitionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when recognition of all requested utterances is finished.
+     * If successfully is false, the error property of the task will contain error information
+     */
     @Generated
     @IsOptional
     @Selector("speechRecognitionTask:didFinishSuccessfully:")
@@ -54,6 +67,9 @@ public interface SFSpeechRecognitionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called for all recognitions, including non-final hypothesis
+     */
     @Generated
     @IsOptional
     @Selector("speechRecognitionTask:didHypothesizeTranscription:")
@@ -62,6 +78,9 @@ public interface SFSpeechRecognitionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the task is no longer accepting new audio but may be finishing final processing
+     */
     @Generated
     @IsOptional
     @Selector("speechRecognitionTaskFinishedReadingAudio:")
@@ -69,6 +88,9 @@ public interface SFSpeechRecognitionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the task has been cancelled, either by client app, the user, or the system
+     */
     @Generated
     @IsOptional
     @Selector("speechRecognitionTaskWasCancelled:")

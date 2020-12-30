@@ -3,6 +3,13 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum MTLHazardTrackingMode
+ * @abstract Describes how hazard tracking is performed.
+ * @constant MTLHazardTrackingModeDefault The default hazard tracking mode for the context. Refer to the usage of the field for semantics.
+ * @constant MTLHazardTrackingModeUntracked Do not perform hazard tracking.
+ * @constant MTLHazardTrackingModeTracked Do perform hazard tracking.
+ */
 @Generated
 public final class MTLHazardTrackingMode {
     @Generated

@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CIDataMatrixCodeDescriptor
+ * @abstract
+ *    CIDataMatrixCodeDescriptor is a concrete subclass of CIBarcodeDescriptor that defines an abstract representation of a Data Matrix code symbol.
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -76,6 +81,14 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property columnCount
+     * @abstract
+     *    The number of module columns.
+     * 
+     * @discussion
+     *    Refer to ISO/IEC 16022:2006(E) for valid module row and column count combinations.
+     */
     @Generated
     @Selector("columnCount")
     @NInt
@@ -89,16 +102,37 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Construct an autoreleased descriptor that can be used as input to CIBarcodeGenerator
+     */
     @Generated
     @Selector("descriptorWithPayload:rowCount:columnCount:eccVersion:")
     public static native CIDataMatrixCodeDescriptor descriptorWithPayloadRowCountColumnCountEccVersion(
             NSData errorCorrectedPayload, @NInt long rowCount, @NInt long columnCount, @NInt long eccVersion);
 
+    /**
+     * @property eccVersion
+     * @abstract
+     *    The Data Matrix code ECC version.
+     * 
+     * @discussion
+     *    Valid values are 000, 050, 080, 100, 140, and 200. Any symbol with an even number of rows and columns will be ECC 200.
+     */
     @Generated
     @Selector("eccVersion")
     @NInt
     public native long eccVersion();
 
+    /**
+     * @property errorCorrectedPayload
+     * @abstract
+     * The error corrected payload that comprise the Data Matrix code symbol.
+     * 
+     * @discussion
+     * DataMatrix symbols are specified bn ISO/IEC 16022:2006(E). ECC 200-type symbols will always have an even number of rows and columns.
+     * 
+     * For ECC 200-type symbols, the phases of encoding data into a symbol are described in section 5.1 -- Encode procedure overview. The error corrected payload comprises the de-interleaved bits of the message described at the end of Step 1: Data encodation.
+     */
     @Generated
     @Selector("errorCorrectedPayload")
     public native NSData errorCorrectedPayload();
@@ -116,6 +150,9 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("initWithCoder:")
     public native CIDataMatrixCodeDescriptor initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes a descriptor that can be used as input to CIBarcodeGenerator
+     */
     @Generated
     @Selector("initWithPayload:rowCount:columnCount:eccVersion:")
     public native CIDataMatrixCodeDescriptor initWithPayloadRowCountColumnCountEccVersion(NSData errorCorrectedPayload,
@@ -156,6 +193,14 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property rowCount
+     * @abstract
+     *    The number of module rows.
+     * 
+     * @discussion
+     *    Refer to ISO/IEC 16022:2006(E) for valid module row and column count combinations.
+     */
     @Generated
     @Selector("rowCount")
     @NInt

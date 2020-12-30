@@ -14,11 +14,18 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKDisbursementAuthorizationControllerDelegate")
 public interface PKDisbursementAuthorizationControllerDelegate {
+    /**
+     * Sent to the delegate when disbursement controller has authorized the disbursement request.
+     */
     @Generated
     @Selector("disbursementAuthorizationController:didAuthorizeWithDisbursementVoucher:")
     void disbursementAuthorizationControllerDidAuthorizeWithDisbursementVoucher(
             PKDisbursementAuthorizationController controller, PKDisbursementVoucher disbursementVoucher);
 
+    /**
+     * Sent to the delegate when disbursement controller is finished. This may occur when
+     * the user cancels the request or after the disbursement has been authorized.
+     */
     @Generated
     @Selector("disbursementAuthorizationControllerDidFinish:")
     void disbursementAuthorizationControllerDidFinish(PKDisbursementAuthorizationController controller);

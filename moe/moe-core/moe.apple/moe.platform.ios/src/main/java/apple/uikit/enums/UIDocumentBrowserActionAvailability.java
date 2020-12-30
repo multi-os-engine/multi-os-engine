@@ -9,6 +9,12 @@ public final class UIDocumentBrowserActionAvailability {
     private UIDocumentBrowserActionAvailability() {
     }
 
+    /**
+     * The action can be shown in the menu
+     */
     @Generated @NInt public static final long Menu = 0x0000000000000001L;
+    /**
+     * The action can be shown in navigation bar
+     */
     @Generated @NInt public static final long NavigationBar = 0x0000000000000002L;
 }

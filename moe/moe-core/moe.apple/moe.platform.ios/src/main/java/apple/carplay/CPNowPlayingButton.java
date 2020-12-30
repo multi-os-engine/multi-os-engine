@@ -102,6 +102,13 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPNowPlayingButton initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize a now playing button with a handler. The handler will be called when the user
+     * selects this button.
+     * 
+     * @note Your app should use this method in one of the six concrete subclasses of @c CPNowPlayingButton.
+     * Do not initialize this class directly.
+     */
     @Generated
     @Selector("initWithHandler:")
     public native CPNowPlayingButton initWithHandler(
@@ -127,10 +134,22 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * A Boolean value indicating whether the button is enabled.
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * A Boolean value indicating whether the button is selected. When selected, the button draws with a selected appearance to
+     * indicate its selected state.
+     * 
+     * @discussion Only custom image buttons may display a custom selected state. Other system-provided buttons, like repeat
+     * and shuffle, change their selected states depending on what your app reports for current repeat and shuffle states.
+     */
     @Generated
     @Selector("isSelected")
     public native boolean isSelected();
@@ -157,10 +176,22 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * A Boolean value indicating whether the button is enabled.
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * A Boolean value indicating whether the button is selected. When selected, the button draws with a selected appearance to
+     * indicate its selected state.
+     * 
+     * @discussion Only custom image buttons may display a custom selected state. Other system-provided buttons, like repeat
+     * and shuffle, change their selected states depending on what your app reports for current repeat and shuffle states.
+     */
     @Generated
     @Selector("setSelected:")
     public native void setSelected(boolean value);

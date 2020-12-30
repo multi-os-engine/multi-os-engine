@@ -39,6 +39,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class NSCachedURLResponse
+ * NSCachedURLResponse is a class whose objects functions as a wrapper for
+ * objects that are stored in the framework's caching system. 
+ * It is used to maintain characteristics and attributes of a cached 
+ * object. 
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -160,6 +167,10 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * @abstract Returns the data of the receiver. 
+     * @result The data of the receiver. 
+     */
     @Generated
     @Selector("data")
     public native NSData data();
@@ -176,19 +187,51 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
     @Selector("initWithCoder:")
     public native NSCachedURLResponse initWithCoder(NSCoder coder);
 
+    /**
+     * @method initWithResponse:data
+     * @abstract Initializes an NSCachedURLResponse with the given
+     * response and data.
+     * @discussion A default NSURLCacheStoragePolicy is used for
+     * NSCachedURLResponse objects initialized with this method:
+     * NSURLCacheStorageAllowed.
+     * @param response a NSURLResponse object.
+     * @param data an NSData object representing the URL content
+     * corresponding to the given response.
+     * @result an initialized NSCachedURLResponse.
+     */
     @Generated
     @Selector("initWithResponse:data:")
     public native NSCachedURLResponse initWithResponseData(NSURLResponse response, NSData data);
 
+    /**
+     * @method initWithResponse:data:userInfo:storagePolicy:
+     * @abstract Initializes an NSCachedURLResponse with the given
+     * response, data, user-info dictionary, and storage policy.
+     * @param response a NSURLResponse object.
+     * @param data an NSData object representing the URL content
+     * corresponding to the given response.
+     * @param userInfo a dictionary user-specified information to be
+     * stored with the NSCachedURLResponse.
+     * @param storagePolicy an NSURLCacheStoragePolicy constant.
+     * @result an initialized NSCachedURLResponse.
+     */
     @Generated
     @Selector("initWithResponse:data:userInfo:storagePolicy:")
     public native NSCachedURLResponse initWithResponseDataUserInfoStoragePolicy(NSURLResponse response, NSData data,
             NSDictionary<?, ?> userInfo, @NUInt long storagePolicy);
 
+    /**
+     * @abstract Returns the response wrapped by this instance. 
+     * @result The response wrapped by this instance. 
+     */
     @Generated
     @Selector("response")
     public native NSURLResponse response();
 
+    /**
+     * @abstract Returns the NSURLCacheStoragePolicy constant of the receiver. 
+     * @result The NSURLCacheStoragePolicy constant of the receiver. 
+     */
     @Generated
     @Selector("storagePolicy")
     @NUInt
@@ -200,6 +243,10 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
         return supportsSecureCoding();
     }
 
+    /**
+     * @abstract Returns the userInfo dictionary of the receiver. 
+     * @result The userInfo dictionary of the receiver. 
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

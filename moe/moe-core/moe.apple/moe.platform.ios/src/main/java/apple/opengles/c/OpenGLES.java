@@ -54,6 +54,8 @@ public final class OpenGLES {
     private OpenGLES() {
     }
 
+    /**
+     */
     @Generated
     @CFunction
     public static native void glAlphaFunc(int func, float ref);
@@ -210,6 +212,11 @@ public final class OpenGLES {
     @CFunction
     public static native void glTranslatef(float x, float y, float z);
 
+    /**
+     * -------------------------------------------------------------------------
+     *  Entrypoint definitions
+     * -----------------------------------------------------------------------
+     */
     @Generated
     @CFunction
     public static native void glActiveTexture(int texture);
@@ -633,6 +640,10 @@ public final class OpenGLES {
     @CFunction
     public static native void glViewport(int x, int y, int width, int height);
 
+    /**
+     * OES extension functions
+     * OES_matrix_palette
+     */
     @Generated
     @CFunction
     public static native void glCurrentPaletteMatrixOES(int matrixpaletteindex);
@@ -649,10 +660,16 @@ public final class OpenGLES {
     @CFunction
     public static native void glWeightPointerOES(int size, int type, int stride, ConstVoidPtr pointer);
 
+    /**
+     * OES_point_size_array
+     */
     @Generated
     @CFunction
     public static native void glPointSizePointerOES(int type, int stride, ConstVoidPtr pointer);
 
+    /**
+     * OES_draw_texture
+     */
     @Generated
     @CFunction
     public static native void glDrawTexsOES(short x, short y, short z, short width, short height);
@@ -1382,6 +1399,9 @@ public final class OpenGLES {
     public static native void glProgramUniformMatrix4fvEXT(int program, int location, int count, byte transpose,
             ConstFloatPtr value);
 
+    /**
+     * OpenGL ES 3.0
+     */
     @Generated
     @CFunction
     public static native void glReadBuffer(int mode);
@@ -1884,10 +1904,27 @@ public final class OpenGLES {
     public static native void glProgramUniformMatrix4x3fvEXT(int program, int location, int count, byte transpose,
             ConstFloatPtr value);
 
+    /**
+     * EAGL Functions
+     */
     @Generated
     @CFunction
     public static native void EAGLGetVersion(IntPtr major, IntPtr minor);
 
+    /**
+     * Keys for EAGLDrawable drawableProperties dictionary
+     * kEAGLDrawablePropertyRetainedBacking:
+     * Type: NSNumber (boolean)
+     * Legal Values: True/False
+     * Default Value: False
+     * Description: True if EAGLDrawable contents are retained after a
+     * call to presentRenderbuffer.  False, if they are not
+     * kEAGLDrawablePropertyColorFormat:
+     * Type: NSString
+     * Legal Values: kEAGLColorFormat*
+     * Default Value: kEAGLColorFormatRGBA8
+     * Description: Format of pixels in renderbuffer
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1898,6 +1935,9 @@ public final class OpenGLES {
     @MappedReturn(ObjCStringMapper.class)
     public static native String kEAGLDrawablePropertyColorFormat();
 
+    /**
+     * Values for kEAGLDrawablePropertyColorFormat key
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

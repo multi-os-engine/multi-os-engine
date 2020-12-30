@@ -39,6 +39,9 @@ public interface UIDocumentPickerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called if the user dismisses the document picker without selecting a document (using the Cancel button)
+     */
     @Generated
     @IsOptional
     @Selector("documentPickerWasCancelled:")

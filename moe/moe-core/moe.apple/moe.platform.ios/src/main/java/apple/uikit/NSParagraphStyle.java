@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSParagraphStyle
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -99,10 +102,16 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * This class property returns a shared and cached NSParagraphStyle instance with the default style settings, with same value as the result of [[NSParagraphStyle alloc] init].
+     */
     @Generated
     @Selector("defaultParagraphStyle")
     public static native NSParagraphStyle defaultParagraphStyle();
 
+    /**
+     * languageName is in ISO lang region format
+     */
     @Generated
     @Selector("defaultWritingDirectionForLanguage:")
     @NInt
@@ -174,6 +183,9 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @NInt
     public native long alignment();
 
+    /**
+     * Tightens inter-character spacing in attempt to fit lines wider than the available space if the line break mode is one of the truncation modes before starting to truncate. NO by default. The maximum amount of tightening performed is determined by the system based on contexts such as font, line width, etc.
+     */
     @Generated
     @Selector("allowsDefaultTighteningForTruncation")
     public native boolean allowsDefaultTighteningForTruncation();
@@ -189,6 +201,9 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * The default tab interval used for locations beyond the last element in tabStops
+     */
     @Generated
     @Selector("defaultTabInterval")
     @NFloat
@@ -198,16 +213,25 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Distance from margin to edge appropriate for text direction
+     */
     @Generated
     @Selector("firstLineHeadIndent")
     @NFloat
     public native double firstLineHeadIndent();
 
+    /**
+     * Distance from margin to front edge of paragraph
+     */
     @Generated
     @Selector("headIndent")
     @NFloat
     public native double headIndent();
 
+    /**
+     * Specifies the threshold for hyphenation.  Valid values lie between 0.0 and 1.0 inclusive.  Hyphenation will be attempted when the ratio of the text width as broken without hyphenation to the width of the line fragment is less than the hyphenation factor.  When this takes on its default value of 0.0, the layout manager's hyphenation factor is used instead.  When both are 0.0, hyphenation is disabled.
+     */
     @Generated
     @Selector("hyphenationFactor")
     public native float hyphenationFactor();
@@ -225,21 +249,33 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @NInt
     public native long lineBreakMode();
 
+    /**
+     * Natural line height is multiplied by this factor (if positive) before being constrained by minimum and maximum line height.
+     */
     @Generated
     @Selector("lineHeightMultiple")
     @NFloat
     public native double lineHeightMultiple();
 
+    /**
+     * "Leading": distance between the bottom of one line fragment and top of next (applied between lines in the same container). This value is included in the line fragment heights in layout manager.
+     */
     @Generated
     @Selector("lineSpacing")
     @NFloat
     public native double lineSpacing();
 
+    /**
+     * 0 implies no maximum.
+     */
     @Generated
     @Selector("maximumLineHeight")
     @NFloat
     public native double maximumLineHeight();
 
+    /**
+     * Line height is the distance from bottom of descenders to top of ascenders; basically the line fragment height. Does not include lineSpacing (which is added after this computation).
+     */
     @Generated
     @Selector("minimumLineHeight")
     @NFloat
@@ -251,11 +287,17 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
+    /**
+     * Distance between the bottom of this paragraph and top of next (or the beginning of its paragraphSpacingBefore, if any).
+     */
     @Generated
     @Selector("paragraphSpacing")
     @NFloat
     public native double paragraphSpacing();
 
+    /**
+     * Distance between the bottom of the previous paragraph (or the end of its paragraphSpacing, if any) and the top of this paragraph.
+     */
     @Generated
     @Selector("paragraphSpacingBefore")
     @NFloat
@@ -267,15 +309,24 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
         return supportsSecureCoding();
     }
 
+    /**
+     * An array of NSTextTabs. Contents should be ordered by location. The default value is an array of 12 left-aligned tabs at 28pt interval
+     */
     @Generated
     @Selector("tabStops")
     public native NSArray<? extends NSTextTab> tabStops();
 
+    /**
+     * Distance from margin to back edge of paragraph; if negative or 0, from other margin
+     */
     @Generated
     @Selector("tailIndent")
     @NFloat
     public native double tailIndent();
 
+    /**
+     * Specifies the line break strategies that may be used for laying out the paragraph.  The default value is NSLineBreakStrategyNone.
+     */
     @Generated
     @Selector("lineBreakStrategy")
     @NUInt

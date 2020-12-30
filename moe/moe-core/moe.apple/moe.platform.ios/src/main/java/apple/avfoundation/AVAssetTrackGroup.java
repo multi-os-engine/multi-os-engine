@@ -41,6 +41,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVAssetTrackGroup
+ * @abstract
+ * A class whose instances describe a group of tracks in an asset.
+ * 
+ * @discussion
+ * Instances of AVAssetTrackGroup describe a single group of related tracks in an asset. For example, a track group can
+ * describe a set of alternate tracks, which are tracks containing variations of the same content, such as content
+ * translated into different languages, out of which only one track should be played at a time.
+ * 
+ * Clients can inspect the track groups contained in an AVAsset by loading and obtaining the value of its trackGroups property.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -162,6 +174,15 @@ public class AVAssetTrackGroup extends NSObject implements NSCopying {
     @Selector("init")
     public native AVAssetTrackGroup init();
 
+    /**
+     * @property trackIDs
+     * @abstract
+     * The IDs of all of the tracks in the group.
+     * 
+     * @discussion
+     * The value of this property is an NSArray of NSNumbers interpreted as CMPersistentTrackIDs, one for each track in the
+     * group.
+     */
     @Generated
     @Selector("trackIDs")
     public native NSArray<? extends NSNumber> trackIDs();

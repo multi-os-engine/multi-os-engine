@@ -91,6 +91,9 @@ public class MKCircle extends MKShape implements MKOverlay {
     public static native MKCircle circleWithCenterCoordinateRadius(@ByValue CLLocationCoordinate2D coord,
             double radius);
 
+    /**
+     * radius will be determined from MAX(width, height)
+     */
     @Generated
     @Selector("circleWithMapRect:")
     public static native MKCircle circleWithMapRect(@ByValue MKMapRect mapRect);

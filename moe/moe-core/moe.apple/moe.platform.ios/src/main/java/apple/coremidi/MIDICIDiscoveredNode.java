@@ -23,12 +23,20 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSCoder;
+import apple.foundation.protocol.NSSecureCoding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 
+/**
+ * @class    MIDICIDiscoveredNode
+ * @brief     An object created during MIDI-CI discovery representing a MIDI destination with an
+ *             associated MIDI source that responds to capability inquiries.
+ */
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MIDICIDiscoveredNode extends NSObject {
+public class MIDICIDiscoveredNode extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -158,4 +166,22 @@ public class MIDICIDiscoveredNode extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MIDICIDiscoveredNode initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

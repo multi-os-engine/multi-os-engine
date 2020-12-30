@@ -43,6 +43,15 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An entity is the general purpose object in an entity-component system.
+ * Entites have many components but components are associated with only a single entity.
+ * 
+ * Note: GKEntity supports NSCopying and NSSecureCoding, but your custom GKComponent's must also support NSCopying and NSSecureCoding
+ * 
+ * @see GKComponent
+ * @see GKComponentSystem
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -101,6 +110,9 @@ public class GKEntity extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Creates a new entity ready to have components added to it.
+     */
     @Generated
     @Selector("entity")
     public static native GKEntity entity();
@@ -158,6 +170,11 @@ public class GKEntity extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Adds a component to this entity.  If a component of the same class already exists it is overwritten with the new component.
+     * @param component the component to be added
+     * @see GKComponent
+     */
     @Generated
     @Selector("addComponent:")
     public native void addComponent(GKComponent component);
@@ -166,6 +183,10 @@ public class GKEntity extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("componentForClass:")
     public native GKComponent componentForClass(Class componentClass);
 
+    /**
+     * Access the current set of components as an array.
+     * Note: this is not the internal array of components, but rather a newly created array of the current component mapping.
+     */
     @Generated
     @Selector("components")
     public native NSArray<? extends GKComponent> components();
@@ -180,6 +201,9 @@ public class GKEntity extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Creates a new entity ready to have components added to it.
+     */
     @Generated
     @Selector("init")
     public native GKEntity init();
@@ -192,6 +216,18 @@ public class GKEntity extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("removeComponentForClass:")
     public native void removeComponentForClass(Class componentClass);
 
+    /**
+     * General update loop for this entity, which also updates all components in this entity that are not currently
+     * in a dedicated component system.
+     * 
+     * Per-entity component updates is a simpler and less flexible option to using per-component updates,
+     * however both can not be allowed to occur at the same time for a component. Thus components that are
+     * added to dedicated component systems will not be updated here as they have opted for the more powerful
+     * feature of per-component systems. Update those components via their system instead.
+     * 
+     * @see GKComponentSystem
+     * @param seconds elapsed time, in seconds, since last frame
+     */
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double seconds);

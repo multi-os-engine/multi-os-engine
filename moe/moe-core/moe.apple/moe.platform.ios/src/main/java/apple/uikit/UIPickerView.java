@@ -397,11 +397,17 @@ public class UIPickerView extends UIView implements NSCoding {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPickerViewDataSource dataSource();
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -423,6 +429,9 @@ public class UIPickerView extends UIView implements NSCoding {
     @Selector("initWithFrame:")
     public native UIPickerView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * info that was fetched and cached from the data source and delegate
+     */
     @Generated
     @Selector("numberOfComponents")
     @NInt
@@ -433,6 +442,9 @@ public class UIPickerView extends UIView implements NSCoding {
     @NInt
     public native long numberOfRowsInComponent(@NInt long component);
 
+    /**
+     * Reloading whole view or single component
+     */
     @Generated
     @Selector("reloadAllComponents")
     public native void reloadAllComponents();
@@ -446,19 +458,31 @@ public class UIPickerView extends UIView implements NSCoding {
     @ByValue
     public native CGSize rowSizeForComponent(@NInt long component);
 
+    /**
+     * scrolls the specified row to center.
+     */
     @Generated
     @Selector("selectRow:inComponent:animated:")
     public native void selectRowInComponentAnimated(@NInt long row, @NInt long component, boolean animated);
 
+    /**
+     * returns selected row. -1 if nothing selected
+     */
     @Generated
     @Selector("selectedRowInComponent:")
     @NInt
     public native long selectedRowInComponent(@NInt long component);
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) UIPickerViewDataSource value);
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     public void setDataSource(@Mapped(ObjCObjectMapper.class) UIPickerViewDataSource value) {
         Object __old = dataSource();
@@ -471,10 +495,16 @@ public class UIPickerView extends UIView implements NSCoding {
         }
     }
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIPickerViewDelegate value);
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIPickerViewDelegate value) {
         Object __old = delegate();
@@ -495,6 +525,11 @@ public class UIPickerView extends UIView implements NSCoding {
     @Selector("showsSelectionIndicator")
     public native boolean showsSelectionIndicator();
 
+    /**
+     * returns the view provided by the delegate via pickerView:viewForRow:forComponent:reusingView:
+     * or nil if the row/component is not visible or the delegate does not implement
+     * pickerView:viewForRow:forComponent:reusingView:
+     */
     @Generated
     @Selector("viewForRow:forComponent:")
     public native UIView viewForRowForComponent(@NInt long row, @NInt long component);

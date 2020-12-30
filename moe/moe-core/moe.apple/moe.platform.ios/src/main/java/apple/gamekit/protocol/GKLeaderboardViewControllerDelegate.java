@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKLeaderboardViewControllerDelegate")
 public interface GKLeaderboardViewControllerDelegate {
+    /**
+     * The leaderboard view has finished
+     */
     @Generated
     @Selector("leaderboardViewControllerDidFinish:")
     void leaderboardViewControllerDidFinish(GKLeaderboardViewController viewController);

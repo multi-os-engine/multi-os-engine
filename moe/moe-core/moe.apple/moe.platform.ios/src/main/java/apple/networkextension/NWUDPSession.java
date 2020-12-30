@@ -42,6 +42,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NWUDPSession
+ * @discussion Open UDP datagram sessions to an endpoint, and send and receive datagrams.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -153,18 +157,36 @@ public class NWUDPSession extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @method cancel
+     * @discussion Move into the NWUDPSessionStateCancelled state. The connection will be terminated,
+     * 	and all handlers will be cancelled.
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
+    /**
+     * @property currentPath
+     * @discussion The current evaluated path for the resolvedEndpoint. Use KVO to watch for changes.
+     */
     @Generated
     @Selector("currentPath")
     public native NWPath currentPath();
 
+    /**
+     * @property endpoint
+     * @discussion The provided endpoint.
+     */
     @Generated
     @Selector("endpoint")
     public native NWEndpoint endpoint();
 
+    /**
+     * @property hasBetterPath
+     * @discussion YES if there is another path available that is preferred over the currentPath.
+     * 	To take advantage of this path, create a new UDPSession. Use KVO to watch for changes.
+     */
     @Generated
     @Selector("hasBetterPath")
     public native boolean hasBetterPath();
@@ -173,43 +195,110 @@ public class NWUDPSession extends NSObject {
     @Selector("init")
     public native NWUDPSession init();
 
+    /**
+     * @method initWithUpgradeForSession:
+     * @discussion This convenience initializer can be used to create a new session based on the
+     * 	original session's endpoint and parameters.
+     * 
+     * 	The application should create an NWUDPSession and watch the "hasBetterPath" property.
+     * 	When this property is YES, it should call initWithUpgradeForSession: to create a new
+     * 	session, with the goal to start transferring data on the new better path as soon as
+     * 	possible to reduce power and potentially monetary cost. When the new "upgrade" session
+     * 	becomes ready and when the application wraps up the previous application session on
+     * 	the original session, the application can start using the new "upgrade" session and
+     * 	tear down the original one.
+     * 
+     * @param session The original session from which the application will upgrade
+     * @return An initialized NWUDPSession object.
+     */
     @Generated
     @Selector("initWithUpgradeForSession:")
     public native NWUDPSession initWithUpgradeForSession(NWUDPSession session);
 
+    /**
+     * @property viable
+     * @discussion YES if the connection can read and write data, NO otherwise.
+     * 	Use KVO to watch this property.
+     */
     @Generated
     @Selector("isViable")
     public native boolean isViable();
 
+    /**
+     * @property maximumDatagramLength
+     * @discussion The maximum size of a datagram to be written currently. If a datagram is written
+     * 	with a longer length, the datagram may be fragmented or encounter an error. Note that this
+     * 	value is not guaranteed to be the maximum datagram length for end-to-end communication
+     * 	across the network. Use KVO to watch for changes.
+     */
     @Generated
     @Selector("maximumDatagramLength")
     @NUInt
     public native long maximumDatagramLength();
 
+    /**
+     * @property resolvedEndpoint
+     * @discussion The currently targeted remote endpoint. Use KVO to watch for changes.
+     */
     @Generated
     @Selector("resolvedEndpoint")
     public native NWEndpoint resolvedEndpoint();
 
+    /**
+     * @method setReadHandler:maxDatagrams
+     * @discussion Set a read handler for datagrams. Reads will be scheduled by the system, so this
+     * 	method only needs to be called once for a session.
+     * @param handler A handler called when datagrams have been read, or when an error has occurred.
+     * @param maxDatagrams The maximum number of datagrams to send to the handler.
+     */
     @Generated
     @Selector("setReadHandler:maxDatagrams:")
     public native void setReadHandlerMaxDatagrams(
             @ObjCBlock(name = "call_setReadHandlerMaxDatagrams") Block_setReadHandlerMaxDatagrams handler,
             @NUInt long maxDatagrams);
 
+    /**
+     * @property state
+     * @discussion The current state of the UDP session. If the state is NWUDPSessionStateReady,
+     * 	then the connection is eligible for reading and writing. The state will be
+     * 	NWUDPSessionStateFailed if the endpoint could not be resolved, or all endpoints have been
+     * 	rejected. Use KVO to watch for changes.
+     */
     @Generated
     @Selector("state")
     @NInt
     public native long state();
 
+    /**
+     * @method tryNextResolvedEndpoint
+     * @discussion Mark the current value of resolvedEndpoint as unusable, and try to switch to the
+     * 	next available endpoint. This should be used when the caller has attempted to communicate
+     * 	with the current resolvedEndpoint, and the caller has determined that it is unusable. If
+     * 	there are no other resolved endpoints, the session will move to the failed state.
+     */
     @Generated
     @Selector("tryNextResolvedEndpoint")
     public native void tryNextResolvedEndpoint();
 
+    /**
+     * @method writeDatagram:completionHandler
+     * @discussion Write a single datagram. Callers should wait until the completionHandler is executed
+     * 	before issuing another write.
+     * @param datagram An NSData containing the datagram to write.
+     * @param completionHandler A handler called when the write request has either succeeded or failed.
+     */
     @Generated
     @Selector("writeDatagram:completionHandler:")
     public native void writeDatagramCompletionHandler(NSData datagram,
             @ObjCBlock(name = "call_writeDatagramCompletionHandler") Block_writeDatagramCompletionHandler completionHandler);
 
+    /**
+     * @method writeMultipleDatagrams:completionHandler
+     * @discussion Write multiple datagrams. Callers should wait until the completionHandler is executed
+     * 	before issuing another write.
+     * @param datagramArray An NSArray of NSData objects, containing the ordered list datagrams to write.
+     * @param completionHandler A handler called when the write request has either succeeded or failed.
+     */
     @Generated
     @Selector("writeMultipleDatagrams:completionHandler:")
     public native void writeMultipleDatagramsCompletionHandler(NSArray<? extends NSData> datagramArray,

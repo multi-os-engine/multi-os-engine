@@ -19,6 +19,10 @@ package apple.coremidi.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * __________________________________________________________________________________________________
+ * These are the values of connectionPolicy
+ */
 @Generated
 public final class MIDINetworkConnectionPolicy {
     @Generated @NUInt public static final long NoOne = 0x0000000000000000L;

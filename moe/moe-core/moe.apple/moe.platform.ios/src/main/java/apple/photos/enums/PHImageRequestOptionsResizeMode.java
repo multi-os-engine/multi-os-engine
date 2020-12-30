@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHImageRequestOptionsResizeMode {
+    /**
+     * no resize
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * use targetSize as a hint for optimal decoding when the source image is a compressed format (i.e. subsampling), the delivered image may be larger than targetSize
+     */
     @Generated @NInt public static final long Fast = 0x0000000000000001L;
+    /**
+     * same as above but also guarantees the delivered image is exactly targetSize (must be set when a normalizedCropRect is specified)
+     */
     @Generated @NInt public static final long Exact = 0x0000000000000002L;
 
     @Generated

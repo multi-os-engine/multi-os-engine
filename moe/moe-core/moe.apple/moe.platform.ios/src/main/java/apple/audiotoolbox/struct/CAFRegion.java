@@ -76,11 +76,17 @@ public final class CAFRegion extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setMNumberMarkers(int value);
 
+    /**
+     * this is a variable length array of mNumberMarkers elements
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @ByValue
     public native CAFMarker mMarkers();
 
+    /**
+     * this is a variable length array of mNumberMarkers elements
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setMMarkers(@ByValue CAFMarker value);

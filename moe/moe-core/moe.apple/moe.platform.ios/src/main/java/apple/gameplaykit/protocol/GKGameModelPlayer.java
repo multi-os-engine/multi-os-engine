@@ -24,11 +24,17 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * A protocol used to represent an individual player within a game model.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKGameModelPlayer")
 public interface GKGameModelPlayer {
+    /**
+     * Identifier used by GKMinmaxStrategist differentiate players from one another.
+     */
     @Generated
     @Selector("playerId")
     @NInt

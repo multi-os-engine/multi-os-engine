@@ -2,6 +2,10 @@ package apple.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Identify the byte order
+ * of the current host.
+ */
 @Generated
 public final class NXByteOrder {
     @Generated

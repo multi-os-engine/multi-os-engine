@@ -46,8 +46,7 @@ public final class AudioFormatInfo extends StructObject {
     }
 
     @Generated
-    public AudioFormatInfo(@ByValue AudioStreamBasicDescription mASBD, ConstVoidPtr mMagicCookie,
-            int mMagicCookieSize) {
+    public AudioFormatInfo(@ByValue AudioStreamBasicDescription mASBD, ConstVoidPtr mMagicCookie, int mMagicCookieSize) {
         super(AudioFormatInfo.class);
         setMASBD(mASBD);
         setMMagicCookie(mMagicCookie);

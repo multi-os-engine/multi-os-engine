@@ -8,10 +8,25 @@ public final class MPSImageType {
     private MPSImageType() {
     }
 
+    /**
+     * texture2d                Standard Metal type
+     */
     @Generated public static final int MPSImageType2d = 0x00000000;
+    /**
+     * texture2d_array          Standard Metal type
+     */
     @Generated public static final int MPSImageType2d_array = 0x00000001;
+    /**
+     * texture2d[]              MPSTextureArray<texture2d>
+     */
     @Generated public static final int MPSImageTypeArray2d = 0x00000002;
+    /**
+     * texture2d_array[]        MPSTextureArray<texture2d_array>
+     */
     @Generated public static final int MPSImageTypeArray2d_array = 0x00000003;
+    /**
+     * type & MPSImageType_ArrayMask == true means its array (not 2d texture)
+     */
     @Generated public static final int MPSImageType_ArrayMask = 0x00000001;
     @Generated public static final int MPSImageType_BatchMask = 0x00000002;
     @Generated public static final int MPSImageType_typeMask = 0x00000003;

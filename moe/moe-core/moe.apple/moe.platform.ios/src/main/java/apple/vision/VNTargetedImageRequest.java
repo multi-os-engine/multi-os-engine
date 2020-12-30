@@ -33,6 +33,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief A request that requires an initial image as a starting point for its work.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -105,11 +108,24 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     public native VNTargetedImageRequest initWithCompletionHandler(
             @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
+    /**
+     * @brief Create a new request with a targeted CGImage.
+     * 
+     * @param	cgImage				The CGImageRef of the targeted image.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     */
     @Generated
     @Selector("initWithTargetedCGImage:options:")
     public native VNTargetedImageRequest initWithTargetedCGImageOptions(CGImageRef cgImage,
             NSDictionary<String, ?> options);
 
+    /**
+     * @brief Create a new request with a targeted CGImage.
+     * 
+     * @param	cgImage				The CGImageRef of the targeted image.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     * @param	completionHandler	The block that is invoked when the request has been performed.
+     */
     @Generated
     @Selector("initWithTargetedCGImage:options:completionHandler:")
     public native VNTargetedImageRequest initWithTargetedCGImageOptionsCompletionHandler(CGImageRef cgImage,
@@ -123,11 +139,26 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
         void call_initWithTargetedCGImageOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
+    /**
+     * @brief Create a new request with a targeted CGImage.
+     * 
+     * @param	cgImage				The CGImageRef of the targeted image.
+     * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     */
     @Generated
     @Selector("initWithTargetedCGImage:orientation:options:")
     public native VNTargetedImageRequest initWithTargetedCGImageOrientationOptions(CGImageRef cgImage, int orientation,
             NSDictionary<String, ?> options);
 
+    /**
+     * @brief Create a new request with a targeted CGImage.
+     * 
+     * @param	cgImage				The CGImageRef of the targeted image.
+     * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     * @param	completionHandler	The block that is invoked when the request has been performed.
+     */
     @Generated
     @Selector("initWithTargetedCGImage:orientation:options:completionHandler:")
     public native VNTargetedImageRequest initWithTargetedCGImageOrientationOptionsCompletionHandler(CGImageRef cgImage,
@@ -141,11 +172,24 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
         void call_initWithTargetedCGImageOrientationOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
+    /**
+     * @brief Create a new request with a targeted CIImage.
+     * 
+     * @param	ciImage				The CIImage of the targeted image.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     */
     @Generated
     @Selector("initWithTargetedCIImage:options:")
     public native VNTargetedImageRequest initWithTargetedCIImageOptions(CIImage ciImage,
             NSDictionary<String, ?> options);
 
+    /**
+     * @brief Create a new request with a targeted CIImage.
+     * 
+     * @param	ciImage				The CIImage of the targeted image.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     * @param	completionHandler	The block that is invoked when the request has been performed.
+     */
     @Generated
     @Selector("initWithTargetedCIImage:options:completionHandler:")
     public native VNTargetedImageRequest initWithTargetedCIImageOptionsCompletionHandler(CIImage ciImage,
@@ -159,11 +203,26 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
         void call_initWithTargetedCIImageOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
+    /**
+     * @brief Create a new request with a targeted CIImage.
+     * 
+     * @param	ciImage				The CIImage of the targeted image.
+     * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     */
     @Generated
     @Selector("initWithTargetedCIImage:orientation:options:")
     public native VNTargetedImageRequest initWithTargetedCIImageOrientationOptions(CIImage ciImage, int orientation,
             NSDictionary<String, ?> options);
 
+    /**
+     * @brief Create a new request with a targeted CIImage.
+     * 
+     * @param	ciImage				The CIImage of the targeted image.
+     * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     * @param	completionHandler	The block that is invoked when the request has been performed.
+     */
     @Generated
     @Selector("initWithTargetedCIImage:orientation:options:completionHandler:")
     public native VNTargetedImageRequest initWithTargetedCIImageOrientationOptionsCompletionHandler(CIImage ciImage,
@@ -177,11 +236,24 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
         void call_initWithTargetedCIImageOrientationOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
+    /**
+     * @brief Create a new request that targets an image in a pixel buffer.
+     * 
+     * @param	pixelBuffer			The pixel buffer containing the targeted image.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     */
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:options:")
     public native VNTargetedImageRequest initWithTargetedCVPixelBufferOptions(CVBufferRef pixelBuffer,
             NSDictionary<String, ?> options);
 
+    /**
+     * @brief Create a new request that targets an image in a pixel buffer.
+     * 
+     * @param	pixelBuffer			The pixel buffer containing the targeted image.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     * @param	completionHandler	The block that is invoked when the request has been performed.
+     */
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:options:completionHandler:")
     public native VNTargetedImageRequest initWithTargetedCVPixelBufferOptionsCompletionHandler(CVBufferRef pixelBuffer,
@@ -195,11 +267,26 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
         void call_initWithTargetedCVPixelBufferOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
+    /**
+     * @brief Create a new request that targets an image in a pixel buffer.
+     * 
+     * @param	pixelBuffer			The pixel buffer containing the targeted image.
+     * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     */
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:orientation:options:")
     public native VNTargetedImageRequest initWithTargetedCVPixelBufferOrientationOptions(CVBufferRef pixelBuffer,
             int orientation, NSDictionary<String, ?> options);
 
+    /**
+     * @brief Create a new request that targets an image in a pixel buffer.
+     * 
+     * @param	pixelBuffer			The pixel buffer containing the targeted image.
+     * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     * @param	completionHandler	The block that is invoked when the request has been performed.
+     */
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:orientation:options:completionHandler:")
     public native VNTargetedImageRequest initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler(
@@ -213,11 +300,24 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
         void call_initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
+    /**
+     * @brief Create a new request with a targeted image data.
+     * 
+     * @param imageData			The data of the targeted image.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     */
     @Generated
     @Selector("initWithTargetedImageData:options:")
     public native VNTargetedImageRequest initWithTargetedImageDataOptions(NSData imageData,
             NSDictionary<String, ?> options);
 
+    /**
+     * @brief Create a new request with a targeted image data.
+     * 
+     * @param imageData			The data of the targeted image.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     * @param	completionHandler	The block that is invoked when the request has been performed.
+     */
     @Generated
     @Selector("initWithTargetedImageData:options:completionHandler:")
     public native VNTargetedImageRequest initWithTargetedImageDataOptionsCompletionHandler(NSData imageData,
@@ -231,11 +331,26 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
         void call_initWithTargetedImageDataOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
+    /**
+     * @brief Create a new request with a targeted image data.
+     * 
+     * @param imageData			The data of the targeted image.
+     * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     */
     @Generated
     @Selector("initWithTargetedImageData:orientation:options:")
     public native VNTargetedImageRequest initWithTargetedImageDataOrientationOptions(NSData imageData, int orientation,
             NSDictionary<String, ?> options);
 
+    /**
+     * @brief Create a new request with a targeted image data.
+     * 
+     * @param imageData			The data of the targeted image.
+     * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     * @param	completionHandler	The block that is invoked when the request has been performed.
+     */
     @Generated
     @Selector("initWithTargetedImageData:orientation:options:completionHandler:")
     public native VNTargetedImageRequest initWithTargetedImageDataOrientationOptionsCompletionHandler(NSData imageData,
@@ -249,11 +364,24 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
         void call_initWithTargetedImageDataOrientationOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
+    /**
+     * @brief Create a new request with a targeted image URL.
+     * 
+     * @param	imageURL			The URL of the targeted image.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     */
     @Generated
     @Selector("initWithTargetedImageURL:options:")
     public native VNTargetedImageRequest initWithTargetedImageURLOptions(NSURL imageURL,
             NSDictionary<String, ?> options);
 
+    /**
+     * @brief Create a new request with a targeted image URL.
+     * 
+     * @param	imageURL			The URL of the targeted image.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     * @param	completionHandler	The block that is invoked when the request has been performed.
+     */
     @Generated
     @Selector("initWithTargetedImageURL:options:completionHandler:")
     public native VNTargetedImageRequest initWithTargetedImageURLOptionsCompletionHandler(NSURL imageURL,
@@ -267,11 +395,26 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
         void call_initWithTargetedImageURLOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
+    /**
+     * @brief Create a new request with a targeted image URL.
+     * 
+     * @param	imageURL			The URL of the targeted image.
+     * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     */
     @Generated
     @Selector("initWithTargetedImageURL:orientation:options:")
     public native VNTargetedImageRequest initWithTargetedImageURLOrientationOptions(NSURL imageURL, int orientation,
             NSDictionary<String, ?> options);
 
+    /**
+     * @brief Create a new request with a targeted image URL.
+     * 
+     * @param	imageURL			The URL of the targeted image.
+     * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
+     * @param	options				A dictionary with options specifying auxiliary information for the image.
+     * @param	completionHandler	The block that is invoked when the request has been performed.
+     */
     @Generated
     @Selector("initWithTargetedImageURL:orientation:options:completionHandler:")
     public native VNTargetedImageRequest initWithTargetedImageURLOrientationOptionsCompletionHandler(NSURL imageURL,
@@ -347,11 +490,24 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
 
+    /**
+     * @brief Create a new request with a targeted CMSampleBuffer.
+     * 
+     * @param sampleBuffer The CMSampleBuffer containing the CVImageBuffer to be used by the request.
+     * @param options A dictionary with options specifying auxiliary information for the image.
+     */
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:options:")
     public native VNTargetedImageRequest initWithTargetedCMSampleBufferOptions(CMSampleBufferRef sampleBuffer,
             NSDictionary<String, ?> options);
 
+    /**
+     * @brief Create a new request with a targeted CMSampleBuffer.
+     * 
+     * @param sampleBuffer The CMSampleBuffer containing the CVImageBuffer to be used by the request.
+     * @param options A dictionary with options specifying auxiliary information for the image.
+     * @param completionHandler The block that is invoked after the request has been performed.
+     */
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:options:completionHandler:")
     public native VNTargetedImageRequest initWithTargetedCMSampleBufferOptionsCompletionHandler(
@@ -365,11 +521,26 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
         void call_initWithTargetedCMSampleBufferOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
+    /**
+     * @brief Create a new request with a targeted CMSampleBuffer.
+     * 
+     * @param sampleBuffer The CMSampleBuffer containing the CVImageBuffer to be used by the request.
+     * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
+     * @param options A dictionary with options specifying auxiliary information for the image.
+     */
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:orientation:options:")
     public native VNTargetedImageRequest initWithTargetedCMSampleBufferOrientationOptions(
             CMSampleBufferRef sampleBuffer, int orientation, NSDictionary<String, ?> options);
 
+    /**
+     * @brief Create a new request with a targeted CMSampleBuffer.
+     * 
+     * @param sampleBuffer The CMSampleBuffer containing the CVImageBuffer to be used by the request.
+     * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
+     * @param options A dictionary with options specifying auxiliary information for the image.
+     * @param completionHandler The block that is invoked after the request has been performed.
+     */
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:orientation:options:completionHandler:")
     public native VNTargetedImageRequest initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler(

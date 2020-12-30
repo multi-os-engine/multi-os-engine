@@ -36,20 +36,36 @@ public interface GKStrategist {
     @MappedReturn(ObjCObjectMapper.class)
     GKGameModelUpdate bestMoveForActivePlayer();
 
+    /**
+     * The game model that we wish to select updates for.
+     */
     @Generated
     @Selector("gameModel")
     @MappedReturn(ObjCObjectMapper.class)
     GKGameModel gameModel();
 
+    /**
+     * A random source to use when breaking ties between equally-strong moves when calling bestMoveForPlayer
+     * or when selecting a random move when randomMoveForPlayer is called. If set to nil, bestMoveForPlayer
+     * and randomMoveForPlayer will simply return the first best move available.
+     */
     @Generated
     @Selector("randomSource")
     @MappedReturn(ObjCObjectMapper.class)
     GKRandom randomSource();
 
+    /**
+     * The game model that we wish to select updates for.
+     */
     @Generated
     @Selector("setGameModel:")
     void setGameModel(@Mapped(ObjCObjectMapper.class) GKGameModel value);
 
+    /**
+     * A random source to use when breaking ties between equally-strong moves when calling bestMoveForPlayer
+     * or when selecting a random move when randomMoveForPlayer is called. If set to nil, bestMoveForPlayer
+     * and randomMoveForPlayer will simply return the first best move available.
+     */
     @Generated
     @Selector("setRandomSource:")
     void setRandomSource(@Mapped(ObjCObjectMapper.class) GKRandom value);

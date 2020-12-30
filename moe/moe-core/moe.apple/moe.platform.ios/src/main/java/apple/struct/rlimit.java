@@ -49,18 +49,30 @@ public final class rlimit extends StructObject {
         setRlim_max(rlim_max);
     }
 
+    /**
+     * current (soft) limit
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native long rlim_cur();
 
+    /**
+     * current (soft) limit
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setRlim_cur(long value);
 
+    /**
+     * maximum value for rlim_cur
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native long rlim_max();
 
+    /**
+     * maximum value for rlim_cur
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setRlim_max(long value);

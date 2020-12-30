@@ -11,6 +11,10 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract
+ * Describes a CPU-recorded indirect render command
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)

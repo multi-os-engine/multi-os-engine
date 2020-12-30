@@ -144,6 +144,21 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract This method provides compatibility with the old style [UIView
+     * animationWithDuration:...]  method. It is also useful for controlling
+     * how animations options are inherited.
+     * @discussion Creates a UIViewPropertyAnimator, sets the duration, options, etc. And starts the
+     * animation with the associated animation and completion blocks. The animator
+     * returned is interruptible only if it is not called from within the execution
+     * block of another animation (animator or legacy). Note that if it is called
+     * within the execution block of another animation it will inherit the duration
+     * and other characteristics of that animation UNLESS the appropriate override
+     * options have been specified. Also note that if is called within the execution
+     * block of another propertyAnimator that is interruptible, the implicit
+     * animations defined by this call will be tracked by the outer
+     * propertyAnimator.
+     */
     @Generated
     @Selector("runningPropertyAnimatorWithDuration:delay:options:animations:completion:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -192,6 +207,9 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Defaults to 0. This property is set when calling -[UIView startAnimationAfterDelay:].
+     */
     @Generated
     @Selector("delay")
     public native double delay();
@@ -219,6 +237,9 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
             @ByValue CGPoint point1, @ByValue CGPoint point2,
             @ObjCBlock(name = "call_initWithDurationControlPoint1ControlPoint2Animations") Block_initWithDurationControlPoint1ControlPoint2Animations animations);
 
+    /**
+     * All convenience initializers return an animator which is not running.
+     */
     @Generated
     @Selector("initWithDuration:curve:animations:")
     public native UIViewPropertyAnimator initWithDurationCurveAnimations(double duration, @NInt long curve,
@@ -234,18 +255,30 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     public native UIViewPropertyAnimator initWithDurationTimingParameters(double duration,
             @Mapped(ObjCObjectMapper.class) UITimingCurveProvider parameters);
 
+    /**
+     * Defaults to YES. Raises if set on an active animator.
+     */
     @Generated
     @Selector("isInterruptible")
     public native boolean isInterruptible();
 
+    /**
+     * Defaults to YES. Raises if set on an active animator.
+     */
     @Generated
     @Selector("setInterruptible:")
     public native void setInterruptible(boolean value);
 
+    /**
+     * Defaults to NO. Set if you need to manage the the hittesting of animating view hierarchies
+     */
     @Generated
     @Selector("isManualHitTestingEnabled")
     public native boolean isManualHitTestingEnabled();
 
+    /**
+     * Defaults to NO. Set if you need to manage the the hittesting of animating view hierarchies
+     */
     @Generated
     @Selector("setManualHitTestingEnabled:")
     public native void setManualHitTestingEnabled(boolean value);
@@ -262,10 +295,16 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Selector("isRunning")
     public native boolean isRunning();
 
+    /**
+     * Defaults to YES. Raises if set on an active animator.
+     */
     @Generated
     @Selector("isUserInteractionEnabled")
     public native boolean isUserInteractionEnabled();
 
+    /**
+     * Defaults to YES. Raises if set on an active animator.
+     */
     @Generated
     @Selector("setUserInteractionEnabled:")
     public native void setUserInteractionEnabled(boolean value);
@@ -335,18 +374,30 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
         void call_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_4(@NInt long finalPosition);
     }
 
+    /**
+     * Defaults to NO. Provides the ability for an animator to pause on completion instead of transitioning to the .inactive state.
+     */
     @Generated
     @Selector("pausesOnCompletion")
     public native boolean pausesOnCompletion();
 
+    /**
+     * Defaults to YES. Provides the ability for an animator to pause and scrub either linearly or using the animator’s current timing.
+     */
     @Generated
     @Selector("scrubsLinearly")
     public native boolean scrubsLinearly();
 
+    /**
+     * Defaults to NO. Provides the ability for an animator to pause on completion instead of transitioning to the .inactive state.
+     */
     @Generated
     @Selector("setPausesOnCompletion:")
     public native void setPausesOnCompletion(boolean value);
 
+    /**
+     * Defaults to YES. Provides the ability for an animator to pause and scrub either linearly or using the animator’s current timing.
+     */
     @Generated
     @Selector("setScrubsLinearly:")
     public native void setScrubsLinearly(boolean value);

@@ -77,6 +77,15 @@ public interface NSFetchedResultsControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the contents of the fetched results controller change.
+     * If this method is implemented and the controller is configured with
+     * sectionNameKeyPath = nil, no other delegate methods will be invoked.
+     * 
+     * This method is only invoked if the controller's `sectionNameKeyPath`
+     * property is nil and `controller:didChangeContentWithSnapshot:` is not
+     * implemented.
+     */
     @Generated
     @IsOptional
     @Selector("controller:didChangeContentWithDifference:")
@@ -85,6 +94,10 @@ public interface NSFetchedResultsControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the contents of the fetched results controller change.
+     * If this method is implemented, no other delegate methods will be invoked.
+     */
     @Generated
     @IsOptional
     @Selector("controller:didChangeContentWithSnapshot:")

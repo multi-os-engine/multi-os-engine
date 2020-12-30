@@ -67,6 +67,10 @@ public class FPUIActionExtensionContext extends NSExtensionContext {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * The extension should call this method when the action failed.
+     * The error's Domain should be FPUIErrorDomain and the code should be a value of type FPUIErrorCode.
+     */
     @Generated
     @Selector("cancelRequestWithError:")
     public native void cancelRequestWithError(NSError error);
@@ -79,6 +83,9 @@ public class FPUIActionExtensionContext extends NSExtensionContext {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The extension should call this method when the action did terminate successfully.
+     */
     @Generated
     @Selector("completeRequest")
     public native void completeRequest();

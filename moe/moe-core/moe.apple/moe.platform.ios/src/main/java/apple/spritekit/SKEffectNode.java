@@ -48,6 +48,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A SpriteKit node that applies frame buffer effects to the rendered results of its child nodes. This is done continuously on live content and is not a simple snapshot of the rendered result at one instant of time.
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -185,15 +188,28 @@ public class SKEffectNode extends SKNode implements SKWarpable {
     @NInt
     public static native long version_static();
 
+    /**
+     * Optional dictionary of SKAttributeValues
+     * Attributes can be used with custom SKShaders.
+     */
     @Generated
     @Selector("attributeValues")
     public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
 
+    /**
+     * Sets the blend mode to use when composing the effect with the final framebuffer.
+     * @see SKNode.SKBlendMode
+     */
     @Generated
     @Selector("blendMode")
     @NInt
     public native long blendMode();
 
+    /**
+     * A CIFilter to be used as an effect
+     * 
+     * Any CIFilter that requires only a single "inputImage" and produces an "outputImage" is allowed. The filter is applied to all children of the SKEffectNode. If the filter is nil, the children of this node is flattened before being drawn as long as the SKEffectNode is enabled.
+     */
     @Generated
     @Selector("filter")
     public native CIFilter filter();
@@ -206,14 +222,27 @@ public class SKEffectNode extends SKNode implements SKWarpable {
     @Selector("initWithCoder:")
     public native SKEffectNode initWithCoder(NSCoder aDecoder);
 
+    /**
+     * Optional dictionary of SKAttributeValues
+     * Attributes can be used with custom SKShaders.
+     */
     @Generated
     @Selector("setAttributeValues:")
     public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
 
+    /**
+     * Sets the blend mode to use when composing the effect with the final framebuffer.
+     * @see SKNode.SKBlendMode
+     */
     @Generated
     @Selector("setBlendMode:")
     public native void setBlendMode(@NInt long value);
 
+    /**
+     * A CIFilter to be used as an effect
+     * 
+     * Any CIFilter that requires only a single "inputImage" and produces an "outputImage" is allowed. The filter is applied to all children of the SKEffectNode. If the filter is nil, the children of this node is flattened before being drawn as long as the SKEffectNode is enabled.
+     */
     @Generated
     @Selector("setFilter:")
     public native void setFilter(CIFilter value);
@@ -222,14 +251,27 @@ public class SKEffectNode extends SKNode implements SKWarpable {
     @Selector("setShader:")
     public native void setShader(SKShader value);
 
+    /**
+     * Controls whether the filter's "inputCenter" (if it exists) should automatically be set to the center of the effect area. Defaults to YES.
+     */
     @Generated
     @Selector("setShouldCenterFilter:")
     public native void setShouldCenterFilter(boolean value);
 
+    /**
+     * Enable the SKEffectNode.
+     * 
+     * The SKEffectNode has no effect when appliesEffects is not enabled, this is useful for setting up an effect to use later on. Defaults to YES.
+     */
     @Generated
     @Selector("setShouldEnableEffects:")
     public native void setShouldEnableEffects(boolean value);
 
+    /**
+     * Enable the rasterization on the SKEffectNode.
+     * 
+     * The SKEffectNode's output is rasterized and cached internally. This cache is reused when rendering. When the SKEffectNode's children change, the cache is updated, but changing properties on the CIFilter does *not* cause an update (you must disable rasterization and then re-enable it for the changes to apply). This is more expensive than not rasterizing if the node's children change frequently, only enable this option if you know the children is largely static.
+     */
     @Generated
     @Selector("setShouldRasterize:")
     public native void setShouldRasterize(boolean value);
@@ -250,14 +292,27 @@ public class SKEffectNode extends SKNode implements SKWarpable {
     @Selector("shader")
     public native SKShader shader();
 
+    /**
+     * Controls whether the filter's "inputCenter" (if it exists) should automatically be set to the center of the effect area. Defaults to YES.
+     */
     @Generated
     @Selector("shouldCenterFilter")
     public native boolean shouldCenterFilter();
 
+    /**
+     * Enable the SKEffectNode.
+     * 
+     * The SKEffectNode has no effect when appliesEffects is not enabled, this is useful for setting up an effect to use later on. Defaults to YES.
+     */
     @Generated
     @Selector("shouldEnableEffects")
     public native boolean shouldEnableEffects();
 
+    /**
+     * Enable the rasterization on the SKEffectNode.
+     * 
+     * The SKEffectNode's output is rasterized and cached internally. This cache is reused when rendering. When the SKEffectNode's children change, the cache is updated, but changing properties on the CIFilter does *not* cause an update (you must disable rasterization and then re-enable it for the changes to apply). This is more expensive than not rasterizing if the node's children change frequently, only enable this option if you know the children is largely static.
+     */
     @Generated
     @Selector("shouldRasterize")
     public native boolean shouldRasterize();

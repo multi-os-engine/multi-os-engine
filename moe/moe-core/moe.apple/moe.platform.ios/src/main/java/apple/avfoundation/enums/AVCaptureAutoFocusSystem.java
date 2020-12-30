@@ -19,6 +19,18 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum AVCaptureAutoFocusSystem
+ * @abstract
+ *    Constants indicating the autofocus system.
+ * 
+ * @constant AVCaptureAutoFocusSystemNone
+ *    Indicates that autofocus is not available.
+ * @constant AVCaptureAutoFocusSystemContrastDetection
+ *    Indicates that autofocus is achieved by contrast detection. Contrast detection performs a focus scan to find the optimal position.
+ * @constant AVCaptureAutoFocusSystemPhaseDetection
+ *    Indicates that autofocus is achieved by phase detection. Phase detection has the ability to achieve focus in many cases without a focus scan. Phase detection autofocus is typically less visually intrusive than contrast detection autofocus.
+ */
 @Generated
 public final class AVCaptureAutoFocusSystem {
     @Generated @NInt public static final long None = 0x0000000000000000L;

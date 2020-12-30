@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A 3D specialization of an agent that moves on a 3-axis logical coordinate system.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -160,14 +163,24 @@ public class GKAgent3D extends GKAgent {
     @Selector("initWithCoder:")
     public native GKAgent3D initWithCoder(NSCoder coder);
 
+    /**
+     * Should this vehicle operate in a right-handed coordinate system? NO means it will be left-handed
+     */
     @Generated
     @Selector("rightHanded")
     public native boolean rightHanded();
 
+    /**
+     * Should this vehicle operate in a right-handed coordinate system? NO means it will be left-handed
+     */
     @Generated
     @Selector("setRightHanded:")
     public native void setRightHanded(boolean value);
 
+    /**
+     * Overridden from GKComponent.
+     * Updates this agent with the current behavior, generating a force to reach its goals and applying that force.
+     */
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double seconds);

@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A description of a model containing input and output feature descriptions, optionally outputted features
+ * with special meaning and metadata.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -94,6 +98,9 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     @Selector("init")
     public native MLModelDescription init();
 
+    /**
+     * Description of the inputs to the model
+     */
     @Generated
     @Selector("inputDescriptionsByName")
     public native NSDictionary<String, ? extends MLFeatureDescription> inputDescriptionsByName();
@@ -119,6 +126,9 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Optional metadata describing the model
+     */
     @Generated
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();
@@ -129,14 +139,23 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Description of the outputs from the model
+     */
     @Generated
     @Selector("outputDescriptionsByName")
     public native NSDictionary<String, ? extends MLFeatureDescription> outputDescriptionsByName();
 
+    /**
+     * Name of the primary target / predicted output feature in the output descriptions
+     */
     @Generated
     @Selector("predictedFeatureName")
     public native String predictedFeatureName();
 
+    /**
+     * Key for all predicted probabilities stored as a MLFeatureTypeDictionary in the output descriptions
+     */
     @Generated
     @Selector("predictedProbabilitiesName")
     public native String predictedProbabilitiesName();
@@ -170,10 +189,16 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native MLModelDescription initWithCoder(NSCoder coder);
 
+    /**
+     * Indicates if the model has to been configured for updation using model update API.
+     */
     @Generated
     @Selector("isUpdatable")
     public native boolean isUpdatable();
 
+    /**
+     * Allows for access of each parameter as parameter description.
+     */
     @Generated
     @Selector("parameterDescriptionsByKey")
     public native NSDictionary<? extends MLParameterKey, ? extends MLParameterDescription> parameterDescriptionsByKey();
@@ -188,10 +213,24 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * Allows for access of each training input as a feature description.
+     */
     @Generated
     @Selector("trainingInputDescriptionsByName")
     public native NSDictionary<String, ? extends MLFeatureDescription> trainingInputDescriptionsByName();
 
+    /**
+     * Array to map a class index to the corresponding label, which is either Number or String.
+     * 
+     * The property is populated from the classLabels entry specified in the model's protobuf message. When the model is a pipeline, which contains one or more sub models, the property value is calculated as follows.
+     * 
+     * 1. If the pipeline model's proto message specifies predictedFeatureName parameter, use classLabels property value of the sub model with the output feature with the name.
+     * 
+     * 2. Otherwise, if the pipeline model has only one sub model with non-nil classLabels property, use the property value.
+     * 
+     * 3. Otherwise, the property is nil.
+     */
     @Generated
     @Selector("classLabels")
     public native NSArray<?> classLabels();

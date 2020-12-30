@@ -128,6 +128,13 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * For backwards compatibility on Mach, +allocWithZone: returns
+     * an instance of the NSMachPort class when sent to the NSPort
+     * class.  Otherwise, it returns an instance of a concrete
+     * subclass which can be used for messaging between threads
+     * or processes on the local machine.
+     */
     @Generated
     @Selector("port")
     public static native NSPort port();
@@ -188,11 +195,21 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
     @Selector("removeFromRunLoop:forMode:")
     public native void removeFromRunLoopForMode(NSRunLoop runLoop, String mode);
 
+    /**
+     * DO Transport API; subclassers should implement these methods
+     * default is 0
+     */
     @Generated
     @Selector("reservedSpaceLength")
     @NUInt
     public native long reservedSpaceLength();
 
+    /**
+     * These two methods should be implemented by subclasses
+     * to setup monitoring of the port when added to a run loop,
+     * and stop monitoring if needed when removed;
+     * These methods should not be called directly!
+     */
     @Generated
     @Selector("scheduleInRunLoop:forMode:")
     public native void scheduleInRunLoopForMode(NSRunLoop runLoop, String mode);

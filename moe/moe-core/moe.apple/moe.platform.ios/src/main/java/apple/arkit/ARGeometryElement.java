@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A container for index data describing how vertices connect to define a geometry.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -59,11 +62,17 @@ public class ARGeometryElement extends NSObject implements NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * A Metal buffer containing index data that defines the geometry.
+     */
     @Generated
     @Selector("buffer")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLBuffer buffer();
 
+    /**
+     * The number of bytes that represent an index value.
+     */
     @Generated
     @Selector("bytesPerIndex")
     @NInt
@@ -87,6 +96,9 @@ public class ARGeometryElement extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The number of primitives in the buffer.
+     */
     @Generated
     @Selector("count")
     @NInt
@@ -109,6 +121,11 @@ public class ARGeometryElement extends NSObject implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The number of indices for each primitive.
+     * @see ARGeometryPrimitiveType
+     * @discussion This is based on the primitiveType. For ARGeometryPrimitiveTypeTriangle the value is 3.
+     */
     @Generated
     @Selector("indexCountPerPrimitive")
     @NInt
@@ -149,6 +166,9 @@ public class ARGeometryElement extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The type of the geometry element.
+     */
     @Generated
     @Selector("primitiveType")
     @NInt

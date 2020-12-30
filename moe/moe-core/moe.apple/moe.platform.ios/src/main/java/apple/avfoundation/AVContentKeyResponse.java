@@ -24,6 +24,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         AVContentKeyResponse
+ * @abstract      AVContentKeyResponse is used to represent the data returned from the key server when requesting a key for decrypting content.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -74,11 +78,30 @@ public class AVContentKeyResponse extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @method		contentKeyResponseWithClearKeyData:initializationVector:
+     * @abstract		Create an AVContentKeyResponse from the key and IV when using AVContentKeySystemClearKey as the key system
+     * 
+     * @param			keyData
+     * 			The key used for decrypting content.
+     * @param			initializationVector
+     * 			The initialization vector used for decrypting content, or nil if initialization vector is available in the media to be decrypted
+     * @result		A new AVContentKeyResponse holding Clear Key data.
+     * @discussion	The object created by this method is typically used with an AVContentKeyRequest created by an AVContentKeySession using keySystem AVContentKeySystemClearKey. It is passed to AVContentKeyRequest -processContentKeyResponse: in order to supply the decryptor with key data.
+     */
     @Generated
     @Selector("contentKeyResponseWithClearKeyData:initializationVector:")
     public static native AVContentKeyResponse contentKeyResponseWithClearKeyDataInitializationVector(NSData keyData,
             NSData initializationVector);
 
+    /**
+     * @method        contentKeyResponseWithFairPlayStreamingKeyResponseData:
+     * @abstract      Create an AVContentKeyResponse from the server response to a key request made when using FairPlayStreaming (FPS) as the method of key delivery.
+     * @param         keyResponseData
+     *                The response from the FairPlayStreaming key server
+     * @result        A new AVContentKeyResponse holding data from a FairPlayStreaming key server that is used to decrypt the content
+     * @discussion    The object created by this method is typically used with an AVContentKeyRequest created by an AVContentKeySession using keySystem AVContentKeySystemFairPlayStreaming. It is passed to AVContentKeyRequest -processContentKeyResponse: in order to supply the decryptor with key data
+     */
     @Generated
     @Selector("contentKeyResponseWithFairPlayStreamingKeyResponseData:")
     public static native AVContentKeyResponse contentKeyResponseWithFairPlayStreamingKeyResponseData(
@@ -149,6 +172,14 @@ public class AVContentKeyResponse extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @method        contentKeyResponseWithAuthorizationTokenData:
+     * @abstract      Create an AVContentKeyResponse from authorization token data when using AVContentKeySystemAuthorizationToken key system.
+     * @param         authorizationTokenData
+     * 			Data blob containing the authorization token.
+     * @result        A new AVContentKeyResponse holding the authorization token data.
+     * @discussion    The object created by this method is typically used with an AVContentKeyRequest created by an AVContentKeySession using keySystem AVContentKeySystemAuthorizationToken. It is passed to AVContentKeyRequest -processContentKeyResponse: in order to supply the authorization token data.
+     */
     @Generated
     @Selector("contentKeyResponseWithAuthorizationTokenData:")
     public static native AVContentKeyResponse contentKeyResponseWithAuthorizationTokenData(

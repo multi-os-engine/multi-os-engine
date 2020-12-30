@@ -48,6 +48,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A node that displays a text label with a given font.
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -193,20 +196,33 @@ public class SKLabelNode extends SKNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * Sets the blend mode to use when composing the sprite with the final framebuffer.
+     * @see SKNode.SKBlendMode
+     */
     @Generated
     @Selector("blendMode")
     @NInt
     public native long blendMode();
 
+    /**
+     * Color to be blended with the text based on the colorBlendFactor
+     */
     @Generated
     @Selector("color")
     public native UIColor color();
 
+    /**
+     * Controls the blending between the rendered text and a color. The valid interval of values is from 0.0 up to and including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum (1.0) if above.
+     */
     @Generated
     @Selector("colorBlendFactor")
     @NFloat
     public native double colorBlendFactor();
 
+    /**
+     * Base color that the text is rendered with (if supported by the font)
+     */
     @Generated
     @Selector("fontColor")
     public native UIColor fontColor();
@@ -237,18 +253,31 @@ public class SKLabelNode extends SKNode {
     @Selector("initWithFontNamed:")
     public native SKLabelNode initWithFontNamed(String fontName);
 
+    /**
+     * Sets the blend mode to use when composing the sprite with the final framebuffer.
+     * @see SKNode.SKBlendMode
+     */
     @Generated
     @Selector("setBlendMode:")
     public native void setBlendMode(@NInt long value);
 
+    /**
+     * Color to be blended with the text based on the colorBlendFactor
+     */
     @Generated
     @Selector("setColor:")
     public native void setColor(UIColor value);
 
+    /**
+     * Controls the blending between the rendered text and a color. The valid interval of values is from 0.0 up to and including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum (1.0) if above.
+     */
     @Generated
     @Selector("setColorBlendFactor:")
     public native void setColorBlendFactor(@NFloat double value);
 
+    /**
+     * Base color that the text is rendered with (if supported by the font)
+     */
     @Generated
     @Selector("setFontColor:")
     public native void setFontColor(UIColor value);
@@ -290,16 +319,28 @@ public class SKLabelNode extends SKNode {
     @Selector("labelNodeWithAttributedText:")
     public static native SKLabelNode labelNodeWithAttributedText(NSAttributedString attributedText);
 
+    /**
+     * Determines the line break mode for multiple lines.
+     * Default is NSLineBreakByTruncatingTail
+     */
     @Generated
     @Selector("lineBreakMode")
     @NInt
     public native long lineBreakMode();
 
+    /**
+     * Determines the number of lines to draw. The default value is 1 (single line). A value of 0 means no limit.
+     * If the height of the text reaches the # of lines the text will be truncated using the line break mode.
+     */
     @Generated
     @Selector("numberOfLines")
     @NInt
     public native long numberOfLines();
 
+    /**
+     * If nonzero, this is used when determining layout width for multiline labels.
+     * Default is zero.
+     */
     @Generated
     @Selector("preferredMaxLayoutWidth")
     @NFloat
@@ -309,14 +350,26 @@ public class SKLabelNode extends SKNode {
     @Selector("setAttributedText:")
     public native void setAttributedText(NSAttributedString value);
 
+    /**
+     * Determines the line break mode for multiple lines.
+     * Default is NSLineBreakByTruncatingTail
+     */
     @Generated
     @Selector("setLineBreakMode:")
     public native void setLineBreakMode(@NInt long value);
 
+    /**
+     * Determines the number of lines to draw. The default value is 1 (single line). A value of 0 means no limit.
+     * If the height of the text reaches the # of lines the text will be truncated using the line break mode.
+     */
     @Generated
     @Selector("setNumberOfLines:")
     public native void setNumberOfLines(@NInt long value);
 
+    /**
+     * If nonzero, this is used when determining layout width for multiline labels.
+     * Default is zero.
+     */
     @Generated
     @Selector("setPreferredMaxLayoutWidth:")
     public native void setPreferredMaxLayoutWidth(@NFloat double value);

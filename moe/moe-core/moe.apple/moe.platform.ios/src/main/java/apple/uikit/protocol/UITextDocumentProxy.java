@@ -45,6 +45,10 @@ public interface UITextDocumentProxy extends UIKeyInput {
     @Selector("documentContextBeforeInput")
     String documentContextBeforeInput();
 
+    /**
+     * An app can store UITextInputMode in its document context, when user switches to the document, the host will pass the inputMode as documentInputMode to the UIInputViewController,
+     * which can switch to the inputMode and set primaryLanguage if it supports it.
+     */
     @Generated
     @Selector("documentInputMode")
     UITextInputMode documentInputMode();
@@ -57,10 +61,16 @@ public interface UITextDocumentProxy extends UIKeyInput {
     @Selector("selectedText")
     String selectedText();
 
+    /**
+     * Setting marked text either replaces the existing marked text or, if none is present, inserts it in place of the current input location.
+     */
     @Generated
     @Selector("setMarkedText:selectedRange:")
     void setMarkedTextSelectedRange(String markedText, @ByValue NSRange selectedRange);
 
+    /**
+     * Unmark the currently marked text.
+     */
     @Generated
     @Selector("unmarkText")
     void unmarkText();

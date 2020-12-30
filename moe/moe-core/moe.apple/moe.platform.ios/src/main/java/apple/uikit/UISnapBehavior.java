@@ -154,6 +154,9 @@ public class UISnapBehavior extends UIDynamicBehavior {
     @NInt
     public static native long version_static();
 
+    /**
+     * damping value from 0.0 to 1.0. 1.0 is the least oscillation.
+     */
     @Generated
     @Selector("damping")
     @NFloat
@@ -163,11 +166,17 @@ public class UISnapBehavior extends UIDynamicBehavior {
     @Selector("init")
     public native UISnapBehavior init();
 
+    /**
+     * The point argument is expressed in the reference coordinate system
+     */
     @Generated
     @Selector("initWithItem:snapToPoint:")
     public native UISnapBehavior initWithItemSnapToPoint(@Mapped(ObjCObjectMapper.class) UIDynamicItem item,
             @ByValue CGPoint point);
 
+    /**
+     * damping value from 0.0 to 1.0. 1.0 is the least oscillation.
+     */
     @Generated
     @Selector("setDamping:")
     public native void setDamping(@NFloat double value);

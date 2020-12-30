@@ -306,66 +306,105 @@ public final class NaturalLanguage {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLLanguageVietnamese();
 
+    /**
+     * This tag scheme classifies tokens according to their broad general type:  word, punctuation, whitespace, etc.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLTagSchemeTokenType();
 
+    /**
+     * This tag scheme classifies tokens according to class:  part of speech for words, type of punctuation or whitespace, etc.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLTagSchemeLexicalClass();
 
+    /**
+     * This tag scheme classifies tokens as to whether they are part of named entities of various types or not.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLTagSchemeNameType();
 
+    /**
+     * This tag scheme follows NLTagSchemeNameType for names, NLTagSchemeLexicalClass for all other tokens.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLTagSchemeNameTypeOrLexicalClass();
 
+    /**
+     * This tag scheme supplies a stem form for each word token (if known).
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLTagSchemeLemma();
 
+    /**
+     * This tag scheme tags tokens according to their most likely language (if known).
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLTagSchemeLanguage();
 
+    /**
+     * This tag scheme tags tokens according to their script.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLTagSchemeScript();
 
+    /**
+     * This tag scheme classifies sentences or paragraphs according to their sentiment on a scale of -1.0 to 1.0.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLTagSchemeSentimentScore();
 
+    /**
+     * Tokens considered to be words or word-like linguistic items.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLTagWord();
 
+    /**
+     * Tokens made up of punctuation.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLTagPunctuation();
 
+    /**
+     * Tokens made up of whitespace of all sorts.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLTagWhitespace();
 
+    /**
+     * Other tokens, including non-linguistic items such as symbols.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLTagOther();
 
+    /**
+     * Tags for NLTagSchemeLexicalClass
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -486,6 +525,9 @@ public final class NaturalLanguage {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NLTagOtherWhitespace();
 
+    /**
+     * Tags for NLTagSchemeNameType
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

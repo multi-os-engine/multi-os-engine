@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Result of a raycast on a single target.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -51,6 +54,12 @@ public class ARRaycastResult extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * The anchor that the ray intersected.
+     * 
+     * @discussion In case of an existing plane target, an anchor will always be provided. In case of an estimated plane target,
+     * an anchor may be provided if the ray hit an existing plane.
+     */
     @Generated
     @Selector("anchor")
     public native ARAnchor anchor();
@@ -137,11 +146,17 @@ public class ARRaycastResult extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Type of the target where the ray terminated.
+     */
     @Generated
     @Selector("target")
     @NInt
     public native long target();
 
+    /**
+     * Alignment of the target.
+     */
     @Generated
     @Selector("targetAlignment")
     @NInt

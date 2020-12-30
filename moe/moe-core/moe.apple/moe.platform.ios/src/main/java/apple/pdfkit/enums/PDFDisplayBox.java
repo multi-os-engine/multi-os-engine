@@ -3,6 +3,9 @@ package apple.pdfkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Page boxes.
+ */
 @Generated
 public final class PDFDisplayBox {
     @Generated

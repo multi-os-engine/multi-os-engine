@@ -144,6 +144,33 @@ public class NSCollectionLayoutEdgeSpacing extends NSObject implements NSCopying
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Edge spacing specifies additional outsets around items required when performing layout.
+     *   Edges may be omitted as-needed
+     * 
+     *    +-----------------+--------+-----------------+------+-----------------+
+     *    |~~~~~~~~~~~~~~~~~|        |~~~~~~~~~~~~~~~~~|      |~~~~~~~~~~~~~~~~~|
+     *    |~~~~~~~~~~~~~~~~~|        |~~~~~~~~~~~~~~~~~|      |~~~~~~~~~~~~~~~~~|
+     *    |~~~~~~~~~~~~~~~~~|        |~~~~~~~~~~~~~~~~~|      |~~~~~~~~~~~~~~~~~|
+     *    |~~~~~~~~~~~~~~~~~|        |~~~~~~~~~~~~~~~~~|      |~~~~~~~~~~~~~~~~~|
+     *    |~~~~~~~~~~~~~~~~~|        |~~~~~~~~~~~~~~~~~|      |~~~~~~~~~~~~~~~~~|
+     *    |~~~~~~~~~~~~~~~~~|        |~~~~~~~~~~~~~~~~~|      |~~~~~~~~~~~~~~~~~|
+     *    |~~~~~~~~~~~~~~~~~|        |~~~~~~~~~~~~~~~~~|      |~~~~~~~~~~~~~~~~~|
+     *    |~~~~~~~~~~~~~~~~~|        |~~~~~~~~~~~~~~~~~|      |~~~~~~~~~~~~~~~~~|
+     *    |~~~~~~~~~~~~~~~~~|        |~~~~~~~~~~~~~~~~~|      |~~~~~~~~~~~~~~~~~|
+     *    |~~~~~~~~~~~~~~~~~|        |~~~~~~~~~~~~~~~~~|      |~~~~~~~~~~~~~~~~~|
+     *    +-----------------+        +-----------------+      +-----------------+
+     *    |                                                                     |
+     *    |        ^                         ^                          ^       |
+     *    +--------+-------------------------+--------------------------+-------+
+     *             |                         |                          |
+     *             |                         |                          |
+     *   +---------+-------------------------+--------------------------+--------------------------+
+     *   |NSCollectionLayoutEdgeSpacing(leading:nil, top: nil, bottom:.flexible(0.0), trailing:nil)|
+     *   |                                                                                         |
+     *   |*forces items to align to the top of their group's geometry                              |
+     *   +-----------------------------------------------------------------------------------------+
+     */
     @Generated
     @Selector("spacingForLeading:top:trailing:bottom:")
     public static native NSCollectionLayoutEdgeSpacing spacingForLeadingTopTrailingBottom(

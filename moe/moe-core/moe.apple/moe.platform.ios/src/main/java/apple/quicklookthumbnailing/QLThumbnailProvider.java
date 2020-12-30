@@ -119,6 +119,15 @@ public class QLThumbnailProvider extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Subclass this method to provide a QLThumbnailReply that either contains a drawing block or an image file URL.
+     * 
+     * 
+     * @param request An object which contains information about the thumbnail that should be provided. It contains the URL of the file to provide a thumbnail for.
+     * @param handler Call the completion handler with a QLThumbnailReply if you can provide a thumbnail, or with an NSError if you cannot.
+     *                If an error is passed or reply is nil, no thumbnail will be drawn.
+     *                The handler can be called asynchronously after the method has returned.
+     */
     @Generated
     @Selector("provideThumbnailForFileRequest:completionHandler:")
     public native void provideThumbnailForFileRequestCompletionHandler(QLFileThumbnailRequest request,

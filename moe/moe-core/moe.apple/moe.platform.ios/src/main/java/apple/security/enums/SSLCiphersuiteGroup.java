@@ -2,6 +2,10 @@ package apple.security.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Convenience ciphersuite groups that collate ciphersuites of comparable security
+ * properties into a single alias.
+ */
 @Generated
 public final class SSLCiphersuiteGroup {
     @Generated

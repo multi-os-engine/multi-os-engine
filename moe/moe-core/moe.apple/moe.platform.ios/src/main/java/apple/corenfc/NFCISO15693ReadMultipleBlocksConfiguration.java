@@ -25,6 +25,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class       NFCISO15693ReadMultipleBlocksConfiguration
+ * 
+ * @discussion  Configuration options for the Read Multiple Blocks command.
+ */
 @Generated
 @Library("CoreNFC")
 @Runtime(ObjCRuntime.class)
@@ -67,6 +72,9 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * @discussion  Number of blocks to read per Read Multiple Blocks command. This may be limited by the tag hardware.
+     */
     @Generated
     @Selector("chunkSize")
     @NUInt
@@ -97,11 +105,22 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
     @Selector("init")
     public native NFCISO15693ReadMultipleBlocksConfiguration init();
 
+    /**
+     * @discussion  Initialize with default zero maximum retry and zero retry interval.
+     */
     @Generated
     @Selector("initWithRange:chunkSize:")
     public native NFCISO15693ReadMultipleBlocksConfiguration initWithRangeChunkSize(@ByValue NSRange range,
             @NUInt long chunkSize);
 
+    /**
+     * @method initWithRange:chunkSize:maximumRetries:retryInterval:
+     * 
+     * @param range             Read range specify by the starting block index and the total number of blocks.
+     * @param chunkSize         Specify number of blocks parameter for the Read multiple blocks command.
+     * @param maximumRetries    Maximum number of retry attempt when tag response is not recevied.
+     * @param retryInterval     Time interval wait between each retry attempt.
+     */
     @Generated
     @Selector("initWithRange:chunkSize:maximumRetries:retryInterval:")
     public native NFCISO15693ReadMultipleBlocksConfiguration initWithRangeChunkSizeMaximumRetriesRetryInterval(
@@ -134,6 +153,9 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @discussion  Range to read in blocks.  Valid start index range is 0x00 to 0xFF.  Length shall not be 0.
+     */
     @Generated
     @Selector("range")
     @ByValue
@@ -147,10 +169,16 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @discussion  Number of blocks to read per Read Multiple Blocks command. This may be limited by the tag hardware.
+     */
     @Generated
     @Selector("setChunkSize:")
     public native void setChunkSize(@NUInt long value);
 
+    /**
+     * @discussion  Range to read in blocks.  Valid start index range is 0x00 to 0xFF.  Length shall not be 0.
+     */
     @Generated
     @Selector("setRange:")
     public native void setRange(@ByValue NSRange value);

@@ -2,6 +2,17 @@ package apple.security.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum tls_ciphersuite_group_t enumeration
+ * @abstract Convenience ciphersuite groups that collate ciphersuites of comparable security
+ *  properties into a single alias.
+ * 
+ * @constant tls_ciphersuite_group_default
+ * @constant tls_ciphersuite_group_compatibility
+ * @constant tls_ciphersuite_group_legacy
+ * @constant tls_ciphersuite_group_ats
+ * @constant tls_ciphersuite_group_ats_compatibility
+ */
 @Generated
 public final class tls_ciphersuite_group_t {
     @Generated

@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @c CPTrip represents an origin and destination with route choices.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -85,6 +88,9 @@ public class CPTrip extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @c MKMapItem representing the destination for the trip.
+     */
     @Generated
     @Selector("destination")
     public native MKMapItem destination();
@@ -106,6 +112,9 @@ public class CPTrip extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPTrip initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize a @c CPTrip with an origin item, destination item, and route choices.
+     */
     @Generated
     @Selector("initWithOrigin:destination:routeChoices:")
     public native CPTrip initWithOriginDestinationRouteChoices(MKMapItem origin, MKMapItem destination,
@@ -138,6 +147,9 @@ public class CPTrip extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @c MKMapItem representing the origin for the trip.
+     */
     @Generated
     @Selector("origin")
     public native MKMapItem origin();
@@ -150,10 +162,16 @@ public class CPTrip extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Array of @c CPRouteChoices for the trip.
+     */
     @Generated
     @Selector("routeChoices")
     public native NSArray<? extends CPRouteChoice> routeChoices();
 
+    /**
+     * Any custom user info related to this trip.
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
@@ -176,6 +194,9 @@ public class CPTrip extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * Any custom user info related to this trip.
+     */
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)

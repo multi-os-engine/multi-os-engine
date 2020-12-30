@@ -46,6 +46,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A collection of GKGoals or GKBehaviors with weights that can be applied to a GKAgent
+ * The sub-goals or sub-behaviors are summed to produce a total force to be applied to an agent
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -78,19 +82,31 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Creates a behavior with a single goal and weight
+     */
     @Generated
     @Selector("behaviorWithGoal:weight:")
     public static native GKBehavior behaviorWithGoalWeight(GKGoal goal, float weight);
 
+    /**
+     * Creates a behavior with an array of goals.  All weights are set to 1.0f
+     */
     @Generated
     @Selector("behaviorWithGoals:")
     public static native GKBehavior behaviorWithGoals(NSArray<? extends GKGoal> goals);
 
+    /**
+     * Creates a behavior with two associated arrays of goals and weights
+     */
     @Generated
     @Selector("behaviorWithGoals:andWeights:")
     public static native GKBehavior behaviorWithGoalsAndWeights(NSArray<? extends GKGoal> goals,
             NSArray<? extends NSNumber> weights);
 
+    /**
+     * Creates a behavior with a dictionary of goal/weight pairs
+     */
     @Generated
     @Selector("behaviorWithWeightedGoals:")
     public static native GKBehavior behaviorWithWeightedGoals(
@@ -187,6 +203,9 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
     public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
             @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
+    /**
+     * The number of GKGoals in this behavior
+     */
     @Generated
     @Selector("goalCount")
     @NInt
@@ -196,30 +215,56 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
     @Selector("init")
     public native GKBehavior init();
 
+    /**
+     * Supports getting goals via a [int] subscript.
+     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native GKGoal objectAtIndexedSubscript(@NUInt long idx);
 
+    /**
+     * Supports getting a weight via a [goal] subscript.
+     */
     @Generated
     @Selector("objectForKeyedSubscript:")
     public native NSNumber objectForKeyedSubscript(GKGoal goal);
 
+    /**
+     * Removes all the goals on the behavior.
+     */
     @Generated
     @Selector("removeAllGoals")
     public native void removeAllGoals();
 
+    /**
+     * Remove the indicated goal from this behavior.
+     * @param goal the goal to be removed
+     */
     @Generated
     @Selector("removeGoal:")
     public native void removeGoal(GKGoal goal);
 
+    /**
+     * Supports setting a weight via a [goal] subscript.
+     */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
     public native void setObjectForKeyedSubscript(NSNumber weight, GKGoal goal);
 
+    /**
+     * Adds a new goal or changes the weight of the existing goal in this behavior.
+     * If the goal does not exist in this behavior, it is added.
+     * @param weight the weight for this goal
+     * @param goal the goal who's weight to change
+     */
     @Generated
     @Selector("setWeight:forGoal:")
     public native void setWeightForGoal(float weight, GKGoal goal);
 
+    /**
+     * Gets the current weight for a given goal.
+     * @return the weight of the goal, or 0 if there is no such goal on this behavior
+     */
     @Generated
     @Selector("weightForGoal:")
     public native float weightForGoal(GKGoal goal);

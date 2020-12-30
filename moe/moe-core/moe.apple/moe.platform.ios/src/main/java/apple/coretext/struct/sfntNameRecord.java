@@ -42,34 +42,58 @@ public final class sfntNameRecord extends StructObject {
         super(peer);
     }
 
+    /**
+     * base-0
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native char platformID();
 
+    /**
+     * base-0
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setPlatformID(char value);
 
+    /**
+     * base-0
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char scriptID();
 
+    /**
+     * base-0
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setScriptID(char value);
 
+    /**
+     * base-0
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native char languageID();
 
+    /**
+     * base-0
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setLanguageID(char value);
 
+    /**
+     * base-0
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native char nameID();
 
+    /**
+     * base-0
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setNameID(char value);

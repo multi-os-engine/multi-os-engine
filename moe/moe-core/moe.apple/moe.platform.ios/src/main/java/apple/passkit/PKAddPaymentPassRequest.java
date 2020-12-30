@@ -159,6 +159,9 @@ public class PKAddPaymentPassRequest extends NSObject {
     @Selector("encryptedPassData")
     public native NSData encryptedPassData();
 
+    /**
+     * Scheme dependent properties:
+     */
     @Generated
     @Selector("ephemeralPublicKey")
     public native NSData ephemeralPublicKey();
@@ -175,6 +178,9 @@ public class PKAddPaymentPassRequest extends NSObject {
     @Selector("setEncryptedPassData:")
     public native void setEncryptedPassData(NSData value);
 
+    /**
+     * Scheme dependent properties:
+     */
     @Generated
     @Selector("setEphemeralPublicKey:")
     public native void setEphemeralPublicKey(NSData value);

@@ -18,11 +18,38 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @protocol NFCISO15693Tag
+ * 
+ * @discussion  A @link NFCISO15693ReaderSession @link/ or @link NFCTagReaderSession @link/ reader session returns an instance conforming
+ *              to this protocol when an ISO15693 tag is detected.  Unless it is specified all block completion handlers are dispatched on the
+ *              reader session work queue that is associated with the tag.  Your process requires to include the "com.apple.developer.nfc.readersession.formats"
+ *              entitlement to receive this tag object from the @link NFCReaderSessionDelegate @link/ delegate.
+ *              @link NFCReaderErrorSecurityViolation @link/ will be returned from the @link NFCTagReaderSessionDelegate @link/ invalidation method if the required
+ *              entitlement is missing when session is started.
+ *              Tag must be in the connected state for NFCNDEFTag protocol properties and methods to work correctly.  Each data frame send out by the reader may not
+ *              exceed 256 bytes total.
+ */
 @Generated
 @Library("CoreNFC")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NFCISO15693Tag")
 public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
+    /**
+     * @method customCommandWithRequestFlag:customCommandCode:customRequestParameters:completionHandler:
+     * 
+     * @param flags                     Request flags.
+     * @param customCommandCode         Custom command code defined by the IC manufacturer.  Valid range is 0xA0 to 0xDF inclusively.
+     * @param customRequestParameters   Custom request parameters defined by the command.
+     * @param completionHandler         Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                                  A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                                  A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                                  responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                                  The custom reponse parameters are returned on success.
+     * 
+     * @discussion                      Custom command (0xA0 to 0xDF command code) as defined in ISO15693-3 specification.  IC manufacturer code from the tag is
+     *                                  automatically inserted after the command byte before appending the custom request parameters in forming the packet.
+     */
     @Generated
     @Selector("customCommandWithRequestFlag:customCommandCode:customRequestParameters:completionHandler:")
     void customCommandWithRequestFlagCustomCommandCodeCustomRequestParametersCompletionHandler(byte flags,
@@ -37,6 +64,19 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
                 NSData customResponseParameters, NSError error);
     }
 
+    /**
+     * @method extendedLockBlockWithRequestFlags:blockNumber:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param blockNumber       2 bytes block number, valid range from 0 to 65535 inclusively.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion              Extende lock single block command (0x32 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("extendedLockBlockWithRequestFlags:blockNumber:completionHandler:")
     void extendedLockBlockWithRequestFlagsBlockNumberCompletionHandler(byte flags, @NInt long blockNumber,
@@ -49,6 +89,21 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_extendedLockBlockWithRequestFlagsBlockNumberCompletionHandler(NSError error);
     }
 
+    /**
+     * @method extendedReadMultipleBlocksWithRequestFlags:blockRange:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param blockRange        The range of blocks.  Valid start index range is 0 to 65535 inclusively.  Valid length is 1 to 65536 inclusively.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                          Successfully read data blocks will be returned from NSData object.  If Option flag in the request flags is set,
+     *                          then first byte of each returned data blocks will contain the associated block security status.
+     * 
+     * @discussion              Extended read multiple block command (0x33 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("extendedReadMultipleBlocksWithRequestFlags:blockRange:completionHandler:")
     void extendedReadMultipleBlocksWithRequestFlagsBlockRangeCompletionHandler(byte flags, @ByValue NSRange blockRange,
@@ -62,6 +117,20 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
                 NSArray<? extends NSData> dataBlocks, NSError error);
     }
 
+    /**
+     * @method extendedReadSingleBlockWithRequestFlags:blockNumber:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param blockNumber       2 bytes block number, valid range from 0 to 65535 inclusively.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                          If Option flag in the request flags is set, then first byte of the returned data block will contain the associated block security status.
+     * 
+     * @discussion              Extended read single block command (0x30 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("extendedReadSingleBlockWithRequestFlags:blockNumber:completionHandler:")
     void extendedReadSingleBlockWithRequestFlagsBlockNumberCompletionHandler(byte flags, @NInt long blockNumber,
@@ -74,6 +143,20 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_extendedReadSingleBlockWithRequestFlagsBlockNumberCompletionHandler(NSData data, NSError error);
     }
 
+    /**
+     * @method extendedWriteSingleBlockWithRequestFlags:blockNumber:dataBlock:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param blockNumber       2 bytes block number, valid range from 0 to 65535 inclusively.
+     * @param dataBlock         A single block of data.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion              Extended write single block command (0x31 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("extendedWriteSingleBlockWithRequestFlags:blockNumber:dataBlock:completionHandler:")
     void extendedWriteSingleBlockWithRequestFlagsBlockNumberDataBlockCompletionHandler(byte flags,
@@ -87,6 +170,20 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_extendedWriteSingleBlockWithRequestFlagsBlockNumberDataBlockCompletionHandler(NSError error);
     }
 
+    /**
+     * @method getMultipleBlockSecurityStatusWithRequestFlag:blockRange:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param blockRange        The range of blocks.  Valid start index range is 0 to 255 inclusively.  Valid length is 1 to 256 inclusively.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                          The 8 bits security status of the requested blocks are returned in NSArray; the array will be empty when error occurs.
+     * 
+     * @discussion              Get multiple block security status command (0x2C command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("getMultipleBlockSecurityStatusWithRequestFlag:blockRange:completionHandler:")
     void getMultipleBlockSecurityStatusWithRequestFlagBlockRangeCompletionHandler(byte flags,
@@ -101,6 +198,20 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
                 NSArray<? extends NSNumber> securityStatus, NSError error);
     }
 
+    /**
+     * @method getSystemInfoWithRequestFlag:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                          Value of -1 will be returned from dsfid, afi, blockSize, blockCount, or icReference if tag response does not contain the information.
+     *                          blockSize returns the actual block size in bytes ranged from 1 to 32.  blockCount returns the actual number of blocks
+     *                          ranged from 1 to 256 blocks.
+     * 
+     * @discussion              Use the replacement -getSystemInfoAndUIDWithRequestFlag:completionHandler:.
+     */
     @Generated
     @Selector("getSystemInfoWithRequestFlag:completionHandler:")
     void getSystemInfoWithRequestFlagCompletionHandler(byte flags,
@@ -114,19 +225,40 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
                 @NInt long blockCount, @NInt long icReference, NSError error);
     }
 
+    /**
+     * @discussion  The IC manufacturer code (bits 56 – 49) in UID according to ISO/IEC 7816-6:2004.
+     */
     @Generated
     @Selector("icManufacturerCode")
     @NUInt
     long icManufacturerCode();
 
+    /**
+     * @discussion  The IC serial number (bits 48 – 1) in UID assigned by the manufacturer.  Data is in Big Endian byte order.
+     */
     @Generated
     @Selector("icSerialNumber")
     NSData icSerialNumber();
 
+    /**
+     * @discussion The 64 bit hardware UID of the tag. Data is in Big Endian byte order.
+     */
     @Generated
     @Selector("identifier")
     NSData identifier();
 
+    /**
+     * @method lockAFIWithRequestFlag:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion              Lock AFI command (0x28 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("lockAFIWithRequestFlag:completionHandler:")
     void lockAFIWithRequestFlagCompletionHandler(byte flags,
@@ -139,6 +271,20 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_lockAFIWithRequestFlagCompletionHandler(NSError error);
     }
 
+    /**
+     * @method lockBlockWithRequestFlags:blockNumber:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param blockNumber       Block number. Blocks are numbered from 0 to 255 inclusively.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                          Successfully read data blocks will be returned from NSData object.
+     * 
+     * @discussion              Lock block command (0x22 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("lockBlockWithRequestFlags:blockNumber:completionHandler:")
     void lockBlockWithRequestFlagsBlockNumberCompletionHandler(byte flags, byte blockNumber,
@@ -151,6 +297,17 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_lockBlockWithRequestFlagsBlockNumberCompletionHandler(NSError error);
     }
 
+    /**
+     * @method lockDFSIDWithRequestFlag:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion              Use the replacement -lockDSFIDWithRequestFlag:completionHandler:.
+     */
     @Generated
     @Selector("lockDFSIDWithRequestFlag:completionHandler:")
     void lockDFSIDWithRequestFlagCompletionHandler(byte flags,
@@ -163,6 +320,18 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_lockDFSIDWithRequestFlagCompletionHandler(NSError error);
     }
 
+    /**
+     * @method readMultipleBlocksWithConfiguration:completionHandler:
+     * 
+     * @param readConfiguration Configuration For the Read Multiple Blocks command.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                          Successfully read data blocks will be returned from NSData object.  All blocks are concatenated into the NSData object.
+     * 
+     * @discussion  Performs read operation using Read Multiple Blocks command (0x23 command code) as defined in ISO15693-3 specification.
+     *              Multiple Read Multiple Blocks commands will be sent if necessary to complete the operation.
+     */
     @Generated
     @Selector("readMultipleBlocksWithConfiguration:completionHandler:")
     void readMultipleBlocksWithConfigurationCompletionHandler(
@@ -176,6 +345,22 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_readMultipleBlocksWithConfigurationCompletionHandler(NSData data, NSError error);
     }
 
+    /**
+     * @method readMultipleBlocksWithRequestFlags:blockRange:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param blockRange        The range of blocks.  Valid start index range is 0 to 255 inclusively.  Valid length is 1 to 256 inclusively.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                          Successfully read data blocks will be returned from NSArray of NSData object. If Option flag in the request flags is set,
+     *                          then first byte of each returned data block will contain the associated block security status.  Each data block element
+     *                          would have identical size.
+     * 
+     * @discussion              Read multiple blocks command (0x23 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("readMultipleBlocksWithRequestFlags:blockRange:completionHandler:")
     void readMultipleBlocksWithRequestFlagsBlockRangeCompletionHandler(byte flags, @ByValue NSRange blockRange,
@@ -189,6 +374,21 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
                 NSError error);
     }
 
+    /**
+     * @method readSingleBlockWithRequestFlags:blockNumber:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param blockNumber       Block number. Blocks are numbered from 0 to 255 inclusively.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                          Successfully read data blocks will be returned from NSData object. If Option flag in the request flags is set,
+     *                          then first byte of data block will contain the associated block security status.
+     * 
+     * @discussion              Read single block command (0x20 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("readSingleBlockWithRequestFlags:blockNumber:completionHandler:")
     void readSingleBlockWithRequestFlagsBlockNumberCompletionHandler(byte flags, byte blockNumber,
@@ -201,6 +401,18 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_readSingleBlockWithRequestFlagsBlockNumberCompletionHandler(NSData data, NSError error);
     }
 
+    /**
+     * @method resetToReadyWithRequestFlags:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion              Reset To Ready command (0x26 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("resetToReadyWithRequestFlags:completionHandler:")
     void resetToReadyWithRequestFlagsCompletionHandler(byte flags,
@@ -213,6 +425,18 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_resetToReadyWithRequestFlagsCompletionHandler(NSError error);
     }
 
+    /**
+     * @method selectWithRequestFlags:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion              Select command (0x25 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("selectWithRequestFlags:completionHandler:")
     void selectWithRequestFlagsCompletionHandler(byte flags,
@@ -225,6 +449,17 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_selectWithRequestFlagsCompletionHandler(NSError error);
     }
 
+    /**
+     * @method sendCustomCommandWithConfiguration:completionHandler:
+     * 
+     * @param commandConfiguration  Configuration for the Manufacturer Custom Command.
+     * @param completionHandler     Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                              A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                              responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion Send a manufacturer dependent custom command using command code range from 0xA0 to 0xDF.  Refer to ISO15693-3
+     *             specification for details.
+     */
     @Generated
     @Selector("sendCustomCommandWithConfiguration:completionHandler:")
     void sendCustomCommandWithConfigurationCompletionHandler(NFCISO15693CustomCommandConfiguration commandConfiguration,
@@ -237,6 +472,16 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_sendCustomCommandWithConfigurationCompletionHandler(NSData customResponseParameters, NSError error);
     }
 
+    /**
+     * @method stayQuietWithCompletionHandler:
+     * 
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion              Stay quiet command (0x02 command code) as defined in ISO15693-3 specification.
+     */
     @Generated
     @Selector("stayQuietWithCompletionHandler:")
     void stayQuietWithCompletionHandler(
@@ -249,6 +494,19 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_stayQuietWithCompletionHandler(NSError error);
     }
 
+    /**
+     * @method writeAFIWithRequestFlag:afi:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param afi               Application Family Identifier.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion              Write AFI command (0x27 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("writeAFIWithRequestFlag:afi:completionHandler:")
     void writeAFIWithRequestFlagAfiCompletionHandler(byte flags, byte afi,
@@ -261,6 +519,19 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_writeAFIWithRequestFlagAfiCompletionHandler(NSError error);
     }
 
+    /**
+     * @method writeDSFIDWithRequestFlag:dsfid:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param dsfid             Data Storage Format Identifier.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion              Write DSFID command (0x29 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("writeDSFIDWithRequestFlag:dsfid:completionHandler:")
     void writeDSFIDWithRequestFlagDsfidCompletionHandler(byte flags, byte dsfid,
@@ -273,6 +544,21 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_writeDSFIDWithRequestFlagDsfidCompletionHandler(NSError error);
     }
 
+    /**
+     * @method writeMultipleBlocksWithRequestFlags:blockRange:dataBlocks:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param blockRange        The range of blocks.  Valid start index range is 0 to 255 inclusively.  Valid length is 1 to 256 inclusively.
+     * @param dataBlocks        Blocks of data represent in NSArray of NSData.  The number of blocks shall match the length value of the blockRange parameter.
+     *                          Each block element should have identical size and should match the physical block size of the tag.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion              Write multiple blocks command (0x24 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("writeMultipleBlocksWithRequestFlags:blockRange:dataBlocks:completionHandler:")
     void writeMultipleBlocksWithRequestFlagsBlockRangeDataBlocksCompletionHandler(byte flags,
@@ -286,6 +572,20 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_writeMultipleBlocksWithRequestFlagsBlockRangeDataBlocksCompletionHandler(NSError error);
     }
 
+    /**
+     * @method writeSingleBlockWithRequestFlags:blockNumber:dataBlock:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param blockNumber       Block number. Blocks are numbered from 0 to 255 inclusively.
+     * @param dataBlock         A single block of data.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion              Write single block command (0x21 command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("writeSingleBlockWithRequestFlags:blockNumber:dataBlock:completionHandler:")
     void writeSingleBlockWithRequestFlagsBlockNumberDataBlockCompletionHandler(byte flags, byte blockNumber,
@@ -299,6 +599,20 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_writeSingleBlockWithRequestFlagsBlockNumberDataBlockCompletionHandler(NSError error);
     }
 
+    /**
+     * @method authenticateWithRequestFlags:cryptoSuiteIdentifier:message:completionHandler:
+     * 
+     * @param flags                 Request flags.
+     * @param cryptoSuiteIdentifier 8 bits Crypto Suite Indicator as defined in ISO/IEC 29167 specification.
+     * @param message               Content of the Authenticate command as dictated by the Crypto Suite Indicator.
+     * @param completionHandler     Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                              A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                              A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                              responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                              Successfully command response will be return as NSData object excluding the 8 bits response flag.
+     * 
+     * @discussion                  Authenticate command (0x35 command code) as defined in ISO15693-3 specification.  Please note that in-process reply is returned to the caller without any processing.
+     */
     @Generated
     @Selector("authenticateWithRequestFlags:cryptoSuiteIdentifier:message:completionHandler:")
     void authenticateWithRequestFlagsCryptoSuiteIdentifierMessageCompletionHandler(byte flags,
@@ -313,6 +627,19 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
                 NSData response, NSError error);
     }
 
+    /**
+     * @method challengeWithRequestFlags:message:completionHandler:
+     * 
+     * @param flags                 Request flags.
+     * @param cryptoSuiteIdentifier 8 bits Crypto Suite Indicator as defined in ISO/IEC 29167 specification.
+     * @param message               Content of the Key Update command as dictated by the Crypto Suite Indicator used in Authenticate.
+     * @param completionHandler     Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                              A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                              A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                              responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion                  Challenge command (0x39 command code) as defined in ISO15693-3 specification.
+     */
     @Generated
     @Selector("challengeWithRequestFlags:cryptoSuiteIdentifier:message:completionHandler:")
     void challengeWithRequestFlagsCryptoSuiteIdentifierMessageCompletionHandler(byte flags,
@@ -326,6 +653,13 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_challengeWithRequestFlagsCryptoSuiteIdentifierMessageCompletionHandler(NSError error);
     }
 
+    /**
+     * @method extendedFastReadMultipleBlocksWithRequestFlag:blockRange:completionHandler:
+     * @param flags             Request flags.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     * 
+     * @discussion              Fast read multiple blocks command (0x3D command code) as defined in ISO15693-3 specification.
+     */
     @Generated
     @Selector("extendedFastReadMultipleBlocksWithRequestFlag:blockRange:completionHandler:")
     void extendedFastReadMultipleBlocksWithRequestFlagBlockRangeCompletionHandler(byte flags,
@@ -340,6 +674,20 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
                 NSArray<? extends NSData> dataBlocks, NSError error);
     }
 
+    /**
+     * @method extendedGetMultipleBlockSecurityStatusWithRequestFlag:blockRange:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param blockRange        The range of blocks.  Valid start index range is 0 to 255 inclusively.  Valid length is 1 to 256 inclusively.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                          The 8 bits security status of the requested blocks are returned in NSArray; the array will be empty when error occurs.
+     * 
+     * @discussion              Get multiple block security status command (0x3C command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("extendedGetMultipleBlockSecurityStatusWithRequestFlag:blockRange:completionHandler:")
     void extendedGetMultipleBlockSecurityStatusWithRequestFlagBlockRangeCompletionHandler(byte flags,
@@ -354,6 +702,21 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
                 NSArray<? extends NSNumber> securityStatus, NSError error);
     }
 
+    /**
+     * @method extendedWriteMultipleBlocksWithRequestFlags:blockRange:dataBlocks:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param blockRange        The range of blocks.  Valid start index range is 0 to 65535 inclusively.  Valid length is 1 to 65536 inclusively.
+     * @param dataBlocks        Blocks of data represented in NSArray of NSData.  The number of blocks shall match the length value of the blockRange parameter.
+     *                          Each block element should have identical size and should match the physical block size of the tag.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion              Extended write multiple block command (0x34 command code) as defined in ISO15693-3 specification. Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("extendedWriteMultipleBlocksWithRequestFlags:blockRange:dataBlocks:completionHandler:")
     void extendedWriteMultipleBlocksWithRequestFlagsBlockRangeDataBlocksCompletionHandler(byte flags,
@@ -367,6 +730,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_extendedWriteMultipleBlocksWithRequestFlagsBlockRangeDataBlocksCompletionHandler(NSError error);
     }
 
+    /**
+     * @method fastReadMultipleBlocksWithRequestFlag:blockRange:completionHandler:
+     * @param flags             Request flags.
+     * @param blockRange        The range of blocks.  Valid start index range is 0 to 255 inclusively.  Valid length is 1 to 256 inclusively.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     * 
+     * @discussion              Fast read multiple blocks command (0x2D command code) as defined in ISO15693-3 specification.
+     */
     @Generated
     @Selector("fastReadMultipleBlocksWithRequestFlag:blockRange:completionHandler:")
     void fastReadMultipleBlocksWithRequestFlagBlockRangeCompletionHandler(byte flags, @ByValue NSRange blockRange,
@@ -380,6 +751,21 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
                 NSError error);
     }
 
+    /**
+     * @method getSystemInfoAndUIDWithRequestFlag:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                          Value of -1 will be returned from dsfid, afi, blockSize, blockCount, or icReference, and a nil UID value if tag response does not contain the information.
+     *                          blockSize returns the actual block size in bytes ranged from 1 to 32.  blockCount returns the actual number of blocks
+     *                          ranged from 1 to 256 blocks.  64bits UID value in little endian byte order from the response packet is returned.
+     * 
+     * @discussion              Get system information command (0x2B command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("getSystemInfoAndUIDWithRequestFlag:completionHandler:")
     void getSystemInfoAndUIDWithRequestFlagCompletionHandler(byte flags,
@@ -393,6 +779,20 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
                 @NInt long blockSize, @NInt long blockCount, @NInt long icReference, NSError error);
     }
 
+    /**
+     * @method keyUpdateWithRequestFlags:message:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param keyIdentifier     8 bits key identifier
+     * @param message           Content of the Key Update command as dictated by the Crypto Suite Indicator used in Authenticate.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                          Successfully command response will be return as NSData object excluding the 8 bits response flag.
+     * 
+     * @discussion              Key update command (0x36 command code) as defined in ISO15693-3 specification.  Please note that in-process reply is returned to the caller without any processing.
+     */
     @Generated
     @Selector("keyUpdateWithRequestFlags:keyIdentifier:message:completionHandler:")
     void keyUpdateWithRequestFlagsKeyIdentifierMessageCompletionHandler(byte flags, @NInt long keyIdentifier,
@@ -407,6 +807,18 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
                 NSError error);
     }
 
+    /**
+     * @method lockDSFIDWithRequestFlag:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     * 
+     * @discussion              Lock DSFID command (0x2A command code) as defined in ISO15693-3 specification.  Address flag is automatically
+     *                          enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable the Address flag.
+     */
     @Generated
     @Selector("lockDSFIDWithRequestFlag:completionHandler:")
     void lockDSFIDWithRequestFlagCompletionHandler(byte flags,
@@ -419,6 +831,18 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_lockDSFIDWithRequestFlagCompletionHandler(NSError error);
     }
 
+    /**
+     * @method readBufferWithRequestFlags:completionHandler:
+     * 
+     * @param flags             Request flags.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
+     *                          A @link NFCISO15693TagResponseErrorKey @link/ in NSError userInfo dictionary is returned when the tag
+     *                          responded to the command with an error, and the error code value is defined in ISO15693-3 specification.
+     *                          Successfully command response will be return as NSData object excluding the 8 bits response flag.
+     * 
+     * @discussion              Read buffer command (0x3A command code) as defined in ISO15693-3 specification.
+     */
     @Generated
     @Selector("readBufferWithRequestFlags:completionHandler:")
     void readBufferWithRequestFlagsCompletionHandler(byte flags,
@@ -431,6 +855,16 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         void call_readBufferWithRequestFlagsCompletionHandler(byte responseFlag, NSData data, NSError error);
     }
 
+    /**
+     * @method sendRequestWithFlag:commandCode:parameters:data:completionHandler:
+     * @param flags             Request flags.
+     * @param commandCode       8 bits command code.
+     * @param data              Data follows after the command code.
+     * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
+     * 
+     * @discussion              Send a command according to the ISO15693-3 specification.  The request data frame is concatenation of 8 bits request flag, 8 bits command code, and optional data.
+     *                          Total length of the data frame cannot exceed 256 bytes.  The 8 bits response flag and the data are returned in the completion handler.
+     */
     @Generated
     @Selector("sendRequestWithFlag:commandCode:data:completionHandler:")
     void sendRequestWithFlagCommandCodeDataCompletionHandler(@NInt long flags, @NInt long commandCode, NSData data,

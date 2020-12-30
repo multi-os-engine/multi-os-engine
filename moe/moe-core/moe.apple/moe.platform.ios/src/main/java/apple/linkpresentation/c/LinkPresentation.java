@@ -21,6 +21,9 @@ public final class LinkPresentation {
     private LinkPresentation() {
     }
 
+    /**
+     * LPErrorDomain is used to indicate a LinkPresentation error.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

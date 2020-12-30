@@ -25,6 +25,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNImageNode
+ * @abstract   A placeholder node denoting the position of a MPSImage in a graph
+ * @discussion MPS neural network graphs are made up of filter nodes connected by
+ *             image (or state) nodes. An image node is produced by one filter but
+ *             may be consumed by more than one filter.
+ * 
+ *             Most image nodes will be created by MPS and made available through
+ *             MPSNNFilterNode.resultImage. Image nodes that are not created by MPS
+ *             (i.e. "the graph inputs") must be created by you.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -83,20 +94,50 @@ public class MPSNNImageNode extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract   Tag a image node for view later
+     * @discussion Most image nodes are private to the graph. These alias memory heavily and
+     *             consequently generally have invalid state when the graph exits.  When
+     *             exportFromGraph = YES, the image is preserved and made available through
+     *             the [MPSNNGraph encode... intermediateImages:... list.
+     * 
+     *             CAUTION: exporting an image from a graph prevents MPS from
+     *                      recycling memory. It will nearly always cause the
+     *                      amount of memory used by the graph to increase by the size
+     *                      of the image. There will probably be a performance
+     *                      regression accordingly.  This feature should generally
+     *                      be used only when the node is needed as an input for
+     *                      further work and recomputing it is prohibitively costly.
+     * 
+     *             Default: NO
+     */
     @Generated
     @Selector("exportFromGraph")
     public native boolean exportFromGraph();
 
+    /**
+     * @abstract Create a autoreleased MPSNNImageNode with exportFromGraph = YES.
+     * @discussion Note: image is still temporary. See MPSNNImageNode.imageAllocator parameter.
+     */
     @Generated
     @Selector("exportedNodeWithHandle:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object exportedNodeWithHandle(NSObject handle);
 
+    /**
+     * @abstract   The preferred precision for the image
+     * @discussion Default: MPSImageFeatureChannelFormatNone, meaning MPS should pick a format
+     *                      Typically, this is 16-bit floating-point.
+     */
     @Generated
     @Selector("format")
     @NUInt
     public native long format();
 
+    /**
+     * @abstract   MPS resource identifier
+     * @discussion See MPSHandle protocol description.  Default: nil
+     */
     @Generated
     @Selector("handle")
     @MappedReturn(ObjCObjectMapper.class)
@@ -107,6 +148,11 @@ public class MPSNNImageNode extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @abstract   Configurability for image allocation
+     * @discussion Allows you to influence how the image is allocated
+     *             Default: MPSTemporaryImage.defaultAllocator
+     */
     @Generated
     @Selector("imageAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -159,18 +205,49 @@ public class MPSNNImageNode extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract   Tag a image node for view later
+     * @discussion Most image nodes are private to the graph. These alias memory heavily and
+     *             consequently generally have invalid state when the graph exits.  When
+     *             exportFromGraph = YES, the image is preserved and made available through
+     *             the [MPSNNGraph encode... intermediateImages:... list.
+     * 
+     *             CAUTION: exporting an image from a graph prevents MPS from
+     *                      recycling memory. It will nearly always cause the
+     *                      amount of memory used by the graph to increase by the size
+     *                      of the image. There will probably be a performance
+     *                      regression accordingly.  This feature should generally
+     *                      be used only when the node is needed as an input for
+     *                      further work and recomputing it is prohibitively costly.
+     * 
+     *             Default: NO
+     */
     @Generated
     @Selector("setExportFromGraph:")
     public native void setExportFromGraph(boolean value);
 
+    /**
+     * @abstract   The preferred precision for the image
+     * @discussion Default: MPSImageFeatureChannelFormatNone, meaning MPS should pick a format
+     *                      Typically, this is 16-bit floating-point.
+     */
     @Generated
     @Selector("setFormat:")
     public native void setFormat(@NUInt long value);
 
+    /**
+     * @abstract   MPS resource identifier
+     * @discussion See MPSHandle protocol description.  Default: nil
+     */
     @Generated
     @Selector("setHandle:")
     public native void setHandle(@Mapped(ObjCObjectMapper.class) MPSHandle value);
 
+    /**
+     * @abstract   Configurability for image allocation
+     * @discussion Allows you to influence how the image is allocated
+     *             Default: MPSTemporaryImage.defaultAllocator
+     */
     @Generated
     @Selector("setImageAllocator:")
     public native void setImageAllocator(@Mapped(ObjCObjectMapper.class) MPSImageAllocator value);
@@ -188,18 +265,46 @@ public class MPSNNImageNode extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract   Stop training graph automatic creation at this node.
+     * @discussion An inference graph of MPSNNFilterNodes, MPSNNStateNodes and MPSNNImageNodes can be automatically
+     *             converted to a training graph using -[MPSNNFilterNode trainingGraphWithSourceGradient:nodeHandler:].
+     *             Sometimes, an inference graph may contain extra nodes at start to do operations like resampling or range
+     *             adjustment that should not be part of the training graph. To prevent gradient operations for these extra
+     *             nodes from being included in the training graph, set <undesired node>.resultImage.stopGradient = YES.
+     *             This will prevent gradient propagation beyond this MPSNNImageNode.
+     *             Default: NO
+     */
     @Generated
     @Selector("setStopGradient:")
     public native void setStopGradient(boolean value);
 
+    /**
+     * @abstract   Set to true to cause the resource to be synchronized with the CPU
+     * @discussion It is not needed on iOS/tvOS devices, where it does nothing.
+     */
     @Generated
     @Selector("setSynchronizeResource:")
     public native void setSynchronizeResource(boolean value);
 
+    /**
+     * @abstract   Stop training graph automatic creation at this node.
+     * @discussion An inference graph of MPSNNFilterNodes, MPSNNStateNodes and MPSNNImageNodes can be automatically
+     *             converted to a training graph using -[MPSNNFilterNode trainingGraphWithSourceGradient:nodeHandler:].
+     *             Sometimes, an inference graph may contain extra nodes at start to do operations like resampling or range
+     *             adjustment that should not be part of the training graph. To prevent gradient operations for these extra
+     *             nodes from being included in the training graph, set <undesired node>.resultImage.stopGradient = YES.
+     *             This will prevent gradient propagation beyond this MPSNNImageNode.
+     *             Default: NO
+     */
     @Generated
     @Selector("stopGradient")
     public native boolean stopGradient();
 
+    /**
+     * @abstract   Set to true to cause the resource to be synchronized with the CPU
+     * @discussion It is not needed on iOS/tvOS devices, where it does nothing.
+     */
     @Generated
     @Selector("synchronizeResource")
     public native boolean synchronizeResource();

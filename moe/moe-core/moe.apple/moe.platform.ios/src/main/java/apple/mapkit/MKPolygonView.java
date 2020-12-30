@@ -51,6 +51,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Prefer MKPolygonRenderer
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)

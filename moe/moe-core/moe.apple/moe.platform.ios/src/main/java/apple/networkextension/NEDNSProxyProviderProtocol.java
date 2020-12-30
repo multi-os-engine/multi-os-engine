@@ -26,6 +26,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEDNSProxyProviderProtocol
+ * @discussion The NEDNSProxyProviderProtocol class declares the programmatic interface for an object that contains NEDNSProxyProvider-specific configuration settings.
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -124,10 +130,18 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property providerBundleIdentifier
+     * @discussion A string containing the bundle identifier of the NEDNSProxyProvider to be used by this configuration.
+     */
     @Generated
     @Selector("providerBundleIdentifier")
     public native String providerBundleIdentifier();
 
+    /**
+     * @property providerConfiguration
+     * @discussion A dictionary containing NEDNSProxyProvider vendor-specific configuration parameters. This dictionary is passed as-is to NEDNSProxyProviders when a DNS proxy is started.
+     */
     @Generated
     @Selector("providerConfiguration")
     public native NSDictionary<String, ?> providerConfiguration();
@@ -140,10 +154,18 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property providerBundleIdentifier
+     * @discussion A string containing the bundle identifier of the NEDNSProxyProvider to be used by this configuration.
+     */
     @Generated
     @Selector("setProviderBundleIdentifier:")
     public native void setProviderBundleIdentifier(String value);
 
+    /**
+     * @property providerConfiguration
+     * @discussion A dictionary containing NEDNSProxyProvider vendor-specific configuration parameters. This dictionary is passed as-is to NEDNSProxyProviders when a DNS proxy is started.
+     */
     @Generated
     @Selector("setProviderConfiguration:")
     public native void setProviderConfiguration(NSDictionary<String, ?> value);

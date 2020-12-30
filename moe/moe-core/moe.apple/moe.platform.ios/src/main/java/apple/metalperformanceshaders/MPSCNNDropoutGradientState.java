@@ -28,6 +28,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSCNNDropoutGradientState
+ * @dependency This depends on Metal.framework.
+ * @discussion The MPSCNNDropoutGradientState is used to hold the mask used by both
+ *             MPSCNNDropout forward filter and MPSCNNDropoutGradient backward filter.
+ *             The MPSCNNDropout forward filter populates the MPSCNNDropoutGradientState
+ *             object and the MPSCNNDropoutGradient backward filter consumes the state
+ *             object.
+ * 
+ *             While the mask is stored internally, the mask data is accessible by the
+ *             user for debugging purposes via an accessor method.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -139,6 +151,17 @@ public class MPSCNNDropoutGradientState extends MPSNNGradientState {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @abstract   Mask data accessor method.
+     * @return     An autoreleased NSData object, containing the mask data.
+     *             The mask data is populated in the -encode call, thus the contents
+     *             are undefined until you -encode the filter.
+     *             Use for debugging purposes only.
+     * 
+     *             In order to gaurantee that the mask data is correctly synchronized for CPU side access,
+     *             it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
+     *             method before accessing the mask data.
+     */
     @Generated
     @Selector("maskData")
     public native NSData maskData();

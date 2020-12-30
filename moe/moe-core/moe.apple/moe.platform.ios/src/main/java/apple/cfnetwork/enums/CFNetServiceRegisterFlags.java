@@ -19,8 +19,17 @@ package apple.cfnetwork.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * CFNetService flags
+ * 
+ * Discussion:
+ * Bit flags to be used for registration of a service with CFNetServiceRegisterWithOptions.
+ */
 @Generated
 public final class CFNetServiceRegisterFlags {
+    /**
+     * Indicate that registration should not auto-rename the service to prevent name conflicts.
+     */
     @Generated @NUInt public static final long kCFNetServiceFlagNoAutoRename = 0x0000000000000001L;
 
     @Generated

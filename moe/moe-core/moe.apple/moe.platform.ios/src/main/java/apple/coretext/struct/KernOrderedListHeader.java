@@ -42,42 +42,72 @@ public final class KernOrderedListHeader extends StructObject {
         super(peer);
     }
 
+    /**
+     * number of kerning pairs in table
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native char nPairs();
 
+    /**
+     * number of kerning pairs in table
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setNPairs(char value);
 
+    /**
+     * (largest power of two <= nPairs) * entry size
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char searchRange();
 
+    /**
+     * (largest power of two <= nPairs) * entry size
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSearchRange(char value);
 
+    /**
+     * log2 (largest power of two <= nPairs)
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native char entrySelector();
 
+    /**
+     * log2 (largest power of two <= nPairs)
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setEntrySelector(char value);
 
+    /**
+     * (nPairs - largest power of two <= nPairs) * entry size
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native char rangeShift();
 
+    /**
+     * (nPairs - largest power of two <= nPairs) * entry size
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setRangeShift(char value);
 
+    /**
+     * entries are first glyph, second glyph, and value
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native char table();
 
+    /**
+     * entries are first glyph, second glyph, and value
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setTable(char value);

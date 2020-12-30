@@ -39,6 +39,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MTKSubmesh
+ * @abstract A segment of a mesh and properties to render the segement.
+ * @discussion Container for data that can be rendered in a single draw call. 1:1 mapping to MDLSubmesh.  Each submesh contains an index Buffer with which the parents mesh data can be rendered.  Actual vertex data resides in the submesh's parent MTKMesh object.
+ */
 @Generated
 @Library("MetalKit")
 @Runtime(ObjCRuntime.class)
@@ -150,15 +155,30 @@ public class MTKSubmesh extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property indexBuffer
+     * @abstract IndexBuffer (including indexCount) to render the object.
+     * @discussion The MTLBuffer to use for indexBuffer parameter in a [MTLRenderCommandEncoder drawIndexedPrimitives] call.
+     */
     @Generated
     @Selector("indexBuffer")
     public native MTKMeshBuffer indexBuffer();
 
+    /**
+     * @property indexCount
+     * @abstract Number of indicies in indexBuffer.
+     * @discussion Value to use for indexCount parameter in a [MTLRenderCommandEncoder drawIndexedPrimitives] call.
+     */
     @Generated
     @Selector("indexCount")
     @NUInt
     public native long indexCount();
 
+    /**
+     * @property indexType
+     * @abstract Metal index type of data in indexBuffer.
+     * @discussion Value to use for indexType parameter in a [MTLRenderCommandEncoder drawIndexedPrimitives] call.
+     */
     @Generated
     @Selector("indexType")
     @NUInt
@@ -168,19 +188,39 @@ public class MTKSubmesh extends NSObject {
     @Selector("init")
     public native MTKSubmesh init();
 
+    /**
+     * @property mesh
+     * @abstract Parent MTKMesh object containing vertex data of this object.
+     * @discussion The buffer of this parent mesh should be set in the encoder before a drawIndexedPrimitives call is made.
+     */
     @Generated
     @Selector("mesh")
     public native MTKMesh mesh();
 
+    /**
+     * @property name
+     * @abstract Name from the original MDLSubmesh object.
+     * @discussion Although not directly used by this object, the application may use this to identify the submesh in the renderer/scene/world.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * @property primitiveType
+     * @abstract Metal primitive type with which to draw this object.
+     * @discussion Value to use for primitiveType parameter in a [MTLRenderCommandEncoder drawIndexedPrimitives] call.
+     */
     @Generated
     @Selector("primitiveType")
     @NUInt
     public native long primitiveType();
 
+    /**
+     * @property name
+     * @abstract Name from the original MDLSubmesh object.
+     * @discussion Although not directly used by this object, the application may use this to identify the submesh in the renderer/scene/world.
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);

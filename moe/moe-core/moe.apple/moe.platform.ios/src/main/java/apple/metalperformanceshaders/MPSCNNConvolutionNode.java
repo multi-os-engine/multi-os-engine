@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract   A MPSNNFilterNode representing a MPSCNNConvolution kernel
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -92,6 +95,15 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
     @Selector("init")
     public native MPSCNNConvolutionNode init();
 
+    /**
+     * @abstract   Init a node representing a MPSCNNConvolution kernel
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                                     protocol. This object is provided by you to encapsulate storage for
+     *                                     convolution weights and biases. If it is used for training, it may not
+     *                                     have a neuron embedded in the convolution descriptor.
+     * @return     A new MPSNNFilter node for a MPSCNNConvolution kernel.
+     */
     @Generated
     @Selector("initWithSource:weights:")
     public native MPSCNNConvolutionNode initWithSourceWeights(MPSNNImageNode sourceNode,
@@ -124,6 +136,15 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract   Init an autoreleased not representing a MPSCNNConvolution kernel
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                                     protocol. This object is provided by you to encapsulate storage for
+     *                                     convolution weights and biases. If it is used for training, it may not
+     *                                     have a neuron embedded in the convolution descriptor.
+     * @return     A new MPSNNFilter node for a MPSCNNConvolution kernel.
+     */
     @Generated
     @Selector("nodeWithSource:weights:")
     public static native MPSCNNConvolutionNode nodeWithSourceWeights(MPSNNImageNode sourceNode,
@@ -150,15 +171,30 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract   Set the floating-point precision used by the convolution accumulator
+     * @discussion Default:  MPSNNConvolutionAccumulatorPrecisionOptionFloat
+     */
     @Generated
     @Selector("accumulatorPrecision")
     @NUInt
     public native long accumulatorPrecision();
 
+    /**
+     * @abstract   A node to represent a MPSCNNConvolutionGradientState object
+     * @discussion  Use this if the convolution is mirrored by a convolution transpose node
+     *              later on in the graph to make sure that the size of the image returned
+     *              from the convolution transpose matches the size of the image passed in
+     *              to this node.
+     */
     @Generated
     @Selector("convolutionGradientState")
     public native MPSCNNConvolutionGradientStateNode convolutionGradientState();
 
+    /**
+     * @abstract   Set the floating-point precision used by the convolution accumulator
+     * @discussion Default:  MPSNNConvolutionAccumulatorPrecisionOptionFloat
+     */
     @Generated
     @Selector("setAccumulatorPrecision:")
     public native void setAccumulatorPrecision(@NUInt long value);

@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Perlin noise is useful for creating natural-looking textures and realistic-looking terrain.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)

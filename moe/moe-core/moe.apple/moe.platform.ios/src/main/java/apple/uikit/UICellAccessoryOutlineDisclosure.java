@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A rotating disclosure chevron for use with outlines, used to indicate and toggle the expanded/collapsed state of the item.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -44,6 +47,10 @@ public class UICellAccessoryOutlineDisclosure extends UICellAccessory {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * An optional handler to call when the outline disclosure accessory is tapped. If nil, the default behavior when using
+     * a NSDiffableDataSourceSectionSnapshot is to toggle the expand/collapse state of the item in the section snapshot.
+     */
     @Generated
     @Selector("actionHandler")
     @ObjCBlock(name = "call_actionHandler_ret")
@@ -144,6 +151,10 @@ public class UICellAccessoryOutlineDisclosure extends UICellAccessory {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * An optional handler to call when the outline disclosure accessory is tapped. If nil, the default behavior when using
+     * a NSDiffableDataSourceSectionSnapshot is to toggle the expand/collapse state of the item in the section snapshot.
+     */
     @Generated
     @Selector("setActionHandler:")
     public native void setActionHandler(@ObjCBlock(name = "call_setActionHandler") Block_setActionHandler value);
@@ -155,6 +166,9 @@ public class UICellAccessoryOutlineDisclosure extends UICellAccessory {
         void call_setActionHandler();
     }
 
+    /**
+     * The style of the outline disclosure accessory. Default is automatic.
+     */
     @Generated
     @Selector("setStyle:")
     public native void setStyle(@NInt long value);
@@ -163,6 +177,9 @@ public class UICellAccessoryOutlineDisclosure extends UICellAccessory {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The style of the outline disclosure accessory. Default is automatic.
+     */
     @Generated
     @Selector("style")
     @NInt

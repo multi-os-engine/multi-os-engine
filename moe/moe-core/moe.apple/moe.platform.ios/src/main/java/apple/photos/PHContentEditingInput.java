@@ -155,6 +155,9 @@ public class PHContentEditingInput extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Adjustments to be applied onto the provided input image or video.
+     */
     @Generated
     @Selector("adjustmentData")
     public native PHAdjustmentData adjustmentData();
@@ -163,6 +166,9 @@ public class PHContentEditingInput extends NSObject {
     @Selector("audiovisualAsset")
     public native AVAsset audiovisualAsset();
 
+    /**
+     * Input video:
+     */
     @Generated
     @Deprecated
     @Selector("avAsset")
@@ -172,10 +178,16 @@ public class PHContentEditingInput extends NSObject {
     @Selector("creationDate")
     public native NSDate creationDate();
 
+    /**
+     * Input image:
+     */
     @Generated
     @Selector("displaySizeImage")
     public native UIImage displaySizeImage();
 
+    /**
+     * EXIF value
+     */
     @Generated
     @Selector("fullSizeImageOrientation")
     public native int fullSizeImageOrientation();
@@ -188,6 +200,9 @@ public class PHContentEditingInput extends NSObject {
     @Selector("init")
     public native PHContentEditingInput init();
 
+    /**
+     * Input Live Photo:
+     */
     @Generated
     @Selector("livePhoto")
     public native PHLivePhoto livePhoto();
@@ -210,6 +225,10 @@ public class PHContentEditingInput extends NSObject {
     @Selector("uniformTypeIdentifier")
     public native String uniformTypeIdentifier();
 
+    /**
+     * Playback style describes how the content should be presented to the user.  Use this value to choose the type of view and the appropriate APIs on the content editing input to display this content.
+     * When editing a live photo with a PHAssetPlaybackStyleLoopingVideo, you should provide an updated video that includes the looping video metadata on the PHContentEditingOutput's renderedContentURL.
+     */
     @Generated
     @Selector("playbackStyle")
     @NInt

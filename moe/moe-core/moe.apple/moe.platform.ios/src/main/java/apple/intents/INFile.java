@@ -28,6 +28,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An object that describes a piece of data and its associated name and uniform type identifier.
+ * This data can either be stored in a file on disk, or in memory.
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -78,6 +82,10 @@ public class INFile extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The contents of the file.
+     * If the file was created with a URL, accessing this property will memory map the file contents.
+     */
     @Generated
     @Selector("data")
     public native NSData data();
@@ -90,6 +98,13 @@ public class INFile extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * URL to the file on disk, if any.
+     * If the file isn't stored on disk, access the contents using the `data` property.
+     * 
+     * If the file was created elsewhere on the system, make sure to surround access to file contents
+     * with `-[NSURL startAccessingSecurityScopedResource]` and `-[NSURL stopAccessingSecurityScopedResource]`.
+     */
     @Generated
     @Selector("fileURL")
     public native NSURL fileURL();
@@ -103,6 +118,9 @@ public class INFile extends NSObject implements NSSecureCoding {
     public static native INFile fileWithFileURLFilenameTypeIdentifier(NSURL fileURL, String filename,
             String typeIdentifier);
 
+    /**
+     * The human-readable name of the file, which will be displayed to the user.
+     */
     @Generated
     @Selector("filename")
     public native String filename();
@@ -151,6 +169,9 @@ public class INFile extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The human-readable name of the file, which will be displayed to the user.
+     */
     @Generated
     @Selector("setFilename:")
     public native void setFilename(String value);
@@ -163,6 +184,10 @@ public class INFile extends NSObject implements NSSecureCoding {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * The uniform type identifier of the file. (i.e. "public.json", "public.png", or any custom type)
+     * More information about uniform type identifiers can be found in <CoreServices/UTCoreTypes.h>
+     */
     @Generated
     @Selector("typeIdentifier")
     public native String typeIdentifier();

@@ -39,6 +39,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An obstacle with an impassible radius in 3D space
+ * For use with GKAgent3D.  Using this with a GKAgent2D is no different than using GKCircleObstacle.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -162,10 +166,16 @@ public class GKSphereObstacle extends GKObstacle {
     @Selector("initWithRadius:")
     public native GKSphereObstacle initWithRadius(float radius);
 
+    /**
+     * Radius of the impassible circle
+     */
     @Generated
     @Selector("radius")
     public native float radius();
 
+    /**
+     * Radius of the impassible circle
+     */
     @Generated
     @Selector("setRadius:")
     public native void setRadius(float value);

@@ -43,6 +43,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMMotionActivityManager
+ * 
+ * Discussion:
+ *    CMMotionActivityManager allows access to the activity of the device.
+ *    Activities can be retrieved in one of two ways:
+ * 
+ *    1. Via a query specifying a time range from which an array of
+ *    activities will be returned.
+ * 
+ *    2. By providing a queue and a block to startActivityUpdatesToQueue:withHandler:
+ *    which will provide live activity updates to a running application.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -119,6 +132,12 @@ public class CMMotionActivityManager extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * isActivityAvailable
+     * 
+     * Discussion:
+     *     Determines whether activity estimation is available.
+     */
     @Generated
     @Selector("isActivityAvailable")
     public static native boolean isActivityAvailable();
@@ -162,17 +181,53 @@ public class CMMotionActivityManager extends NSObject {
     @Selector("init")
     public native CMMotionActivityManager init();
 
+    /**
+     * queryActivityStartingFrom:to:toQueue:withHandler:
+     * 
+     * Discussion:
+     *      Queries for activity transitions that happened during the given time
+     *      range.  The date range must be in the past.  Data is only available
+     *      for the last seven days.  The result is returned to the handler/queue
+     *      specified.
+     * 
+     *      The first activity returned may have a startDate before start. This
+     *      activity represents what the state was at the start time.
+     */
     @Generated
     @Selector("queryActivityStartingFromDate:toDate:toQueue:withHandler:")
     public native void queryActivityStartingFromDateToDateToQueueWithHandler(NSDate start, NSDate end,
             NSOperationQueue queue,
             @ObjCBlock(name = "call_queryActivityStartingFromDateToDateToQueueWithHandler") Block_queryActivityStartingFromDateToDateToQueueWithHandler handler);
 
+    /**
+     * startActivityUpdatesToQueue:withHandler
+     * 
+     * Discussion:
+     *     Start activity updates, providing data to the given handler through
+     *     the given queue.  An update with the current activity will arrive
+     *     first.  Then when the activity state changes the handler will be
+     *     called with the new activity.
+     * 
+     *     You can only have one handler installed at a time, calling
+     *     startActivityUpdatesToQueue:withHandler: replaces the current
+     *     handler.
+     * 
+     *     Updates are not delivered while the application is suspended, the
+     *     application may use
+     *     queryActivityStartingFromDate:toDate:toQueue:withHandler: to get
+     *     activities from the time when the application was suspended.
+     */
     @Generated
     @Selector("startActivityUpdatesToQueue:withHandler:")
     public native void startActivityUpdatesToQueueWithHandler(NSOperationQueue queue,
             @ObjCBlock(name = "call_startActivityUpdatesToQueueWithHandler") Block_startActivityUpdatesToQueueWithHandler handler);
 
+    /**
+     * stopActivityUpdates
+     * 
+     * Discussion:
+     *     Stop delivering live updates.
+     */
     @Generated
     @Selector("stopActivityUpdates")
     public native void stopActivityUpdates();
@@ -192,6 +247,12 @@ public class CMMotionActivityManager extends NSObject {
         void call_startActivityUpdatesToQueueWithHandler(CMMotionActivity activity);
     }
 
+    /**
+     * authorizationStatus
+     * 
+     * Discussion:
+     *     Returns the current authorization status for activity.
+     */
     @Generated
     @Selector("authorizationStatus")
     @NInt

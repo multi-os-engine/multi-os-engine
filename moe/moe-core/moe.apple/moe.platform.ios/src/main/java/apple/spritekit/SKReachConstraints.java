@@ -171,19 +171,31 @@ public class SKReachConstraints extends NSObject implements NSSecureCoding {
     public native SKReachConstraints initWithLowerAngleLimitUpperAngleLimit(@NFloat double lowerAngleLimit,
             @NFloat double upperAngleLimit);
 
+    /**
+     * Lower angle limit in radians
+     */
     @Generated
     @Selector("lowerAngleLimit")
     @NFloat
     public native double lowerAngleLimit();
 
+    /**
+     * Lower angle limit in radians
+     */
     @Generated
     @Selector("setLowerAngleLimit:")
     public native void setLowerAngleLimit(@NFloat double value);
 
+    /**
+     * Upper angle limit in radians
+     */
     @Generated
     @Selector("setUpperAngleLimit:")
     public native void setUpperAngleLimit(@NFloat double value);
 
+    /**
+     * Upper angle limit in radians
+     */
     @Generated
     @Selector("upperAngleLimit")
     @NFloat

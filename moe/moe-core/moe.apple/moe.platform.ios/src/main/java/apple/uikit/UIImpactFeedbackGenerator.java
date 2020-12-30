@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UIImpactFeedbackGenerator is used to give user feedback when an impact between UI elements occurs
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +154,9 @@ public class UIImpactFeedbackGenerator extends UIFeedbackGenerator {
     @NInt
     public static native long version_static();
 
+    /**
+     * call when your UI element impacts something else
+     */
     @Generated
     @Selector("impactOccurred")
     public native void impactOccurred();
@@ -163,6 +169,9 @@ public class UIImpactFeedbackGenerator extends UIFeedbackGenerator {
     @Selector("initWithStyle:")
     public native UIImpactFeedbackGenerator initWithStyle(@NInt long style);
 
+    /**
+     * call when your UI element impacts something else with a specific intensity [0.0, 1.0]
+     */
     @Generated
     @Selector("impactOccurredWithIntensity:")
     public native void impactOccurredWithIntensity(@NFloat double intensity);

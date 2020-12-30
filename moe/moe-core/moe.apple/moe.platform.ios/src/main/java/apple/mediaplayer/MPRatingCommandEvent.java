@@ -154,6 +154,10 @@ public class MPRatingCommandEvent extends MPRemoteCommandEvent {
     @Selector("init")
     public native MPRatingCommandEvent init();
 
+    /**
+     * The chosen rating for this command event. This value will be within the
+     * minimumRating and maximumRating values set for the MPRatingCommand object.
+     */
     @Generated
     @Selector("rating")
     public native float rating();

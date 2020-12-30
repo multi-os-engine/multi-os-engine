@@ -22,6 +22,9 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class GKMatchSendDataMode {
     @Generated @NInt public static final long Reliable = 0x0000000000000000L;
+    /**
+     * a.s.a.p. but requires fragmentation and reassembly for large messages, may stall if network congestion occurs
+     */
     @Generated @NInt public static final long Unreliable = 0x0000000000000001L;
 
     @Generated

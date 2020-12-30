@@ -73,6 +73,9 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the spatialEventTrigger with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithSpatialEventTriggerToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -87,6 +90,9 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * This resolution result is to ask Siri to disambiguate between the provided INSpatialEventTrigger.
+     */
     @Generated
     @Selector("disambiguationWithSpatialEventTriggersToDisambiguate:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -151,6 +157,10 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INSpatialEventTrigger. The resolvedSpatialEventTrigger can be different than the original INSpatialEventTrigger. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedSpatialEventTrigger:")
     @MappedReturn(ObjCObjectMapper.class)

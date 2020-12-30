@@ -101,6 +101,9 @@ public class PHCloudIdentifier extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native PHCloudIdentifier initWithCoder(NSCoder coder);
 
+    /**
+     * For use in serialization
+     */
     @Generated
     @Selector("initWithStringValue:")
     public native PHCloudIdentifier initWithStringValue(String stringValue);
@@ -132,6 +135,9 @@ public class PHCloudIdentifier extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * If there is a failure to determine the global identifier for a local identifier, the notFoundIdentifier is provided in that array slot.
+     */
     @Generated
     @Selector("notFoundIdentifier")
     public static native PHCloudIdentifier notFoundIdentifier();

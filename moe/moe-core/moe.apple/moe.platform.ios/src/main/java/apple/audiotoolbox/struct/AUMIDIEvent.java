@@ -43,58 +43,100 @@ public final class AUMIDIEvent extends StructObject {
         super(peer);
     }
 
+    /**
+     * !< The next event in a linked list of events.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr next();
 
+    /**
+     * !< The next event in a linked list of events.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setNext(VoidPtr value);
 
+    /**
+     * !< The sample time at which the event is scheduled to occur.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native long eventSampleTime();
 
+    /**
+     * !< The sample time at which the event is scheduled to occur.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setEventSampleTime(long value);
 
+    /**
+     * !< AURenderEventMIDI or AURenderEventMIDISysEx.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native byte eventType();
 
+    /**
+     * !< AURenderEventMIDI or AURenderEventMIDISysEx.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setEventType(byte value);
 
+    /**
+     * !< Must be 0.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native byte reserved();
 
+    /**
+     * !< Must be 0.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setReserved(byte value);
 
+    /**
+     * !< The number of valid MIDI bytes in the data field.
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native char length();
 
+    /**
+     * !< The number of valid MIDI bytes in the data field.
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setLength(char value);
 
+    /**
+     * !< The virtual cable number.
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     public native byte cable();
 
+    /**
+     * !< The virtual cable number.
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setCable(byte value);
 
+    /**
+     * !< The bytes of the MIDI event. Running status will not be used.
+     */
     @Generated
     @StructureField(order = 6, isGetter = true, count = 3)
     public native byte data(int field_idx);
 
+    /**
+     * !< The bytes of the MIDI event. Running status will not be used.
+     */
     @Generated
     @StructureField(order = 6, isGetter = false, count = 3)
     public native void setData(byte value, int field_idx);

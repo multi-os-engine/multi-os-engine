@@ -39,6 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Each account has an associated account type, containing information relevant to all the accounts of that type.
+ * ACAccountType objects are obtained by using the [ACAccountStore accountTypeWithIdentifier:] method
+ * or accessing the accountType property for a particular account object. They may also be used to find
+ * all the accounts of a particular type using [ACAccountStore accountsWithAccountType:]
+ */
 @Generated
 @Library("Accounts")
 @Runtime(ObjCRuntime.class)
@@ -150,14 +156,23 @@ public class ACAccountType extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * A boolean indicating whether the user has granted access to accounts of this type for your application.
+     */
     @Generated
     @Selector("accessGranted")
     public native boolean accessGranted();
 
+    /**
+     * A human readable description of the account type.
+     */
     @Generated
     @Selector("accountTypeDescription")
     public native String accountTypeDescription();
 
+    /**
+     * A unique identifier for the account type. Well known system account type identifiers are listed above.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();

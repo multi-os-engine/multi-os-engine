@@ -36,10 +36,22 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UNNotificationContentExtension")
 public interface UNNotificationContentExtension {
+    /**
+     * This will be called to send the notification to be displayed by
+     * the extension. If the extension is being displayed and more related
+     * notifications arrive (eg. more messages for the same conversation)
+     * the same method will be called for each new notification.
+     */
     @Generated
     @Selector("didReceiveNotification:")
     void didReceiveNotification(UNNotification notification);
 
+    /**
+     * If implemented, the method will be called when the user taps on one
+     * of the notification actions. The completion handler can be called
+     * after handling the action to dismiss the notification and forward the
+     * action to the app if necessary.
+     */
     @Generated
     @IsOptional
     @Selector("didReceiveNotificationResponse:completionHandler:")
@@ -55,6 +67,9 @@ public interface UNNotificationContentExtension {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the user taps the play or pause button.
+     */
     @Generated
     @IsOptional
     @Selector("mediaPlay")
@@ -62,6 +77,11 @@ public interface UNNotificationContentExtension {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Implementing this method and returning a non-empty frame will make
+     * the notification draw a button that allows the user to play and pause
+     * media content embedded in the notification.
+     */
     @Generated
     @IsOptional
     @Selector("mediaPlayPauseButtonFrame")
@@ -77,6 +97,11 @@ public interface UNNotificationContentExtension {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Implementing this method and returning a button type other that "None" will
+     * make the notification attempt to draw a play/pause button correctly styled
+     * for that type.
+     */
     @Generated
     @IsOptional
     @Selector("mediaPlayPauseButtonType")

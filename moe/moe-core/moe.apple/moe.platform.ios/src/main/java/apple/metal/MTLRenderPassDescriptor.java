@@ -44,6 +44,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MTLRenderPassDescriptor
+ * @abstract MTLRenderPassDescriptor represents a collection of attachments to be used to create a concrete render command encoder
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -134,6 +138,10 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method renderPassDescriptor
+     * @abstract Create an autoreleased default frame buffer descriptor
+     */
     @Generated
     @Selector("renderPassDescriptor")
     public static native MTLRenderPassDescriptor renderPassDescriptor();
@@ -185,6 +193,10 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Selector("setStencilAttachment:")
     public native void setStencilAttachment(MTLRenderPassStencilAttachmentDescriptor value);
 
+    /**
+     * @property visibilityResultBuffer:
+     * @abstract Buffer into which samples passing the depth and stencil tests are counted.
+     */
     @Generated
     @Selector("setVisibilityResultBuffer:")
     public native void setVisibilityResultBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
@@ -193,16 +205,31 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Selector("stencilAttachment")
     public native MTLRenderPassStencilAttachmentDescriptor stencilAttachment();
 
+    /**
+     * @property visibilityResultBuffer:
+     * @abstract Buffer into which samples passing the depth and stencil tests are counted.
+     */
     @Generated
     @Selector("visibilityResultBuffer")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLBuffer visibilityResultBuffer();
 
+    /**
+     * @property defaultRasterSampleCount:
+     * @abstract The raster sample count for the render pass when no attachments are given.
+     */
     @Generated
     @Selector("defaultRasterSampleCount")
     @NUInt
     public native long defaultRasterSampleCount();
 
+    /**
+     * @method getSamplePositions:count:
+     * @abstract Retrieve the previously configured custom sample positions. The positions input array will only be modified when count specifies a length sufficient for the number of previously configured positions.
+     * @param positions The destination array for custom sample position data.
+     * @param count Specifies the length of the positions array, which must be large enough to hold all configured sample positions.
+     * @return The number of previously configured custom sample positions.
+     */
     @Generated
     @Selector("getSamplePositions:count:")
     @NUInt
@@ -210,88 +237,176 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
             @UncertainArgument("Options: reference, array Fallback: reference") MTLSamplePosition positions,
             @NUInt long count);
 
+    /**
+     * @property imageblockSampleLength:
+     * @abstract The per sample size in bytes of the largest explicit imageblock layout in the renderPass.
+     */
     @Generated
     @Selector("imageblockSampleLength")
     @NUInt
     public native long imageblockSampleLength();
 
+    /**
+     * @property renderTargetHeight:
+     * @abstract The height in pixels to constrain the render target to.
+     * @discussion Defaults to 0. If non-zero the value must be smaller than or equal to the minimum height of all attachments.
+     */
     @Generated
     @Selector("renderTargetHeight")
     @NUInt
     public native long renderTargetHeight();
 
+    /**
+     * @property renderTargetWidth:
+     * @abstract The width in pixels to constrain the render target to.
+     * @discussion Defaults to 0. If non-zero the value must be smaller than or equal to the minimum width of all attachments.
+     */
     @Generated
     @Selector("renderTargetWidth")
     @NUInt
     public native long renderTargetWidth();
 
+    /**
+     * @property defaultRasterSampleCount:
+     * @abstract The raster sample count for the render pass when no attachments are given.
+     */
     @Generated
     @Selector("setDefaultRasterSampleCount:")
     public native void setDefaultRasterSampleCount(@NUInt long value);
 
+    /**
+     * @property imageblockSampleLength:
+     * @abstract The per sample size in bytes of the largest explicit imageblock layout in the renderPass.
+     */
     @Generated
     @Selector("setImageblockSampleLength:")
     public native void setImageblockSampleLength(@NUInt long value);
 
+    /**
+     * @property renderTargetHeight:
+     * @abstract The height in pixels to constrain the render target to.
+     * @discussion Defaults to 0. If non-zero the value must be smaller than or equal to the minimum height of all attachments.
+     */
     @Generated
     @Selector("setRenderTargetHeight:")
     public native void setRenderTargetHeight(@NUInt long value);
 
+    /**
+     * @property renderTargetWidth:
+     * @abstract The width in pixels to constrain the render target to.
+     * @discussion Defaults to 0. If non-zero the value must be smaller than or equal to the minimum width of all attachments.
+     */
     @Generated
     @Selector("setRenderTargetWidth:")
     public native void setRenderTargetWidth(@NUInt long value);
 
+    /**
+     * @method setSamplePositions:count:
+     * @abstract Configure the custom sample positions, to be used in MSAA rendering (i.e. when sample count > 1).
+     * @param positions The source array for custom sample position data.
+     * @param count Specifies the length of the positions array, and must be a valid sample count or 0 (to disable custom sample positions).
+     */
     @Generated
     @Selector("setSamplePositions:count:")
     public native void setSamplePositionsCount(
             @UncertainArgument("Options: reference, array Fallback: reference") MTLSamplePosition positions,
             @NUInt long count);
 
+    /**
+     * @property threadgroupMemoryLength:
+     * @abstract The per tile size in bytes of the persistent threadgroup memory allocation.
+     */
     @Generated
     @Selector("setThreadgroupMemoryLength:")
     public native void setThreadgroupMemoryLength(@NUInt long value);
 
+    /**
+     * @property tileHeight:
+     * @abstract The height in pixels of the tile.
+     * @discssion Defaults to 0. Zero means Metal chooses a height that fits within the local memory.
+     */
     @Generated
     @Selector("setTileHeight:")
     public native void setTileHeight(@NUInt long value);
 
+    /**
+     * @property tileWidth:
+     * @abstract The width in pixels of the tile.
+     * @discssion Defaults to 0. Zero means Metal chooses a width that fits within the local memory.
+     */
     @Generated
     @Selector("setTileWidth:")
     public native void setTileWidth(@NUInt long value);
 
+    /**
+     * @property threadgroupMemoryLength:
+     * @abstract The per tile size in bytes of the persistent threadgroup memory allocation.
+     */
     @Generated
     @Selector("threadgroupMemoryLength")
     @NUInt
     public native long threadgroupMemoryLength();
 
+    /**
+     * @property tileHeight:
+     * @abstract The height in pixels of the tile.
+     * @discssion Defaults to 0. Zero means Metal chooses a height that fits within the local memory.
+     */
     @Generated
     @Selector("tileHeight")
     @NUInt
     public native long tileHeight();
 
+    /**
+     * @property tileWidth:
+     * @abstract The width in pixels of the tile.
+     * @discssion Defaults to 0. Zero means Metal chooses a width that fits within the local memory.
+     */
     @Generated
     @Selector("tileWidth")
     @NUInt
     public native long tileWidth();
 
+    /**
+     * @property rasterizationRateMap
+     * @abstract The variable rasterization rate map to use when rendering this pass, or nil to not use variable rasterization rate.
+     * @discussion The default value is nil. Enabling variable rasterization rate allows for decreasing the rasterization rate in unimportant regions of screen space.
+     */
     @Generated
     @Selector("rasterizationRateMap")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLRasterizationRateMap rasterizationRateMap();
 
+    /**
+     * @property renderTargetArrayLength:
+     * @abstract The number of active layers
+     */
     @Generated
     @Selector("renderTargetArrayLength")
     @NUInt
     public native long renderTargetArrayLength();
 
+    /**
+     * @property rasterizationRateMap
+     * @abstract The variable rasterization rate map to use when rendering this pass, or nil to not use variable rasterization rate.
+     * @discussion The default value is nil. Enabling variable rasterization rate allows for decreasing the rasterization rate in unimportant regions of screen space.
+     */
     @Generated
     @Selector("setRasterizationRateMap:")
     public native void setRasterizationRateMap(@Mapped(ObjCObjectMapper.class) MTLRasterizationRateMap value);
 
+    /**
+     * @property renderTargetArrayLength:
+     * @abstract The number of active layers
+     */
     @Generated
     @Selector("setRenderTargetArrayLength:")
     public native void setRenderTargetArrayLength(@NUInt long value);
 
+    /**
+     * @property sampleBufferAttachments
+     * @abstract An array of sample buffers and associated sample indices.
+     */
     @Generated
     @Selector("sampleBufferAttachments")
     public native MTLRenderPassSampleBufferAttachmentDescriptorArray sampleBufferAttachments();

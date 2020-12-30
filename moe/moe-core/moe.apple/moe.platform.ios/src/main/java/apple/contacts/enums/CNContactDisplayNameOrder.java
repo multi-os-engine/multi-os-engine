@@ -19,6 +19,9 @@ package apple.contacts.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @abstract The formatting order of the contact name components.
+ */
 @Generated
 public final class CNContactDisplayNameOrder {
     @Generated @NInt public static final long UserDefault = 0x0000000000000000L;

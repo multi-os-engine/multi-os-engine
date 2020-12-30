@@ -95,6 +95,11 @@ public class CPDashboardButton extends NSObject implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The image displayed on the button. Maximum supported size is 30x30 points.
+     * 
+     * @discussion Animated images are not supported. If an animated image is assigned, only the first image will be used.
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -107,6 +112,15 @@ public class CPDashboardButton extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPDashboardButton initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize a button with title variants, optional subtitle variants, and image.
+     * 
+     * @param titleVariants An array of title variants for this button, arranged from longest to shortest. You must provide at least one title.
+     * @param subtitleVariants An array of subtitle variants for this button, arranged from longest to shortest.
+     * @param image The image displayed on the button. It must be non-nil for the button to be displayed.
+     * @param handler A block to execute when the user selects the button. The block has no return value and takes the selected button as its only parameter.
+     * The image must be non-nil and the title must be a non-zero length string for the button to be displayed.
+     */
     @Generated
     @Selector("initWithTitleVariants:subtitleVariants:image:handler:")
     public native CPDashboardButton initWithTitleVariantsSubtitleVariantsImageHandler(NSArray<String> titleVariants,
@@ -159,6 +173,11 @@ public class CPDashboardButton extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * An array of subtitle variants for this button, arranged from most to least preferred.
+     * The system will select a title from your list of provided variants that fits the available space.
+     * The variant strings should be provided as localized, displayable content.
+     */
     @Generated
     @Selector("subtitleVariants")
     public native NSArray<String> subtitleVariants();
@@ -177,6 +196,11 @@ public class CPDashboardButton extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * An array of title variants for this button, arranged from most to least preferred.
+     * The system will select a title from your list of provided variants that fits the available space.
+     * The variant strings should be provided as localized, displayable content.
+     */
     @Generated
     @Selector("titleVariants")
     public native NSArray<String> titleVariants();

@@ -122,10 +122,16 @@ public class PKPassLibrary extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * The library is not available on iPad in 6.0.
+     */
     @Generated
     @Selector("isPassLibraryAvailable")
     public static native boolean isPassLibraryAvailable();
 
+    /**
+     * If device supports adding payment passes, this method will return YES. Otherwise, NO will be returned.
+     */
     @Generated
     @Deprecated
     @Selector("isPaymentPassActivationAvailable")
@@ -149,6 +155,10 @@ public class PKPassLibrary extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * These methods may be used to temporarily disable the automatic presentation of passes when a device encounters a contactless field.
+     * Use of these methods require an entitlement. Otherwise, requesting will always return a PKAutomaticPassPresentationSuppressionResultDenied as the result.
+     */
     @Generated
     @Selector("requestAutomaticPassPresentationSuppressionWithResponseHandler:")
     @NUInt
@@ -182,24 +192,46 @@ public class PKPassLibrary extends NSObject {
     public native void activatePaymentPassWithActivationCodeCompletion(PKPaymentPass paymentPass, String activationCode,
             @ObjCBlock(name = "call_activatePaymentPassWithActivationCodeCompletion") Block_activatePaymentPassWithActivationCodeCompletion completion);
 
+    /**
+     * These methods may be utilized to activate a payment pass that is provisioned but currently in the inactive state, by providing
+     * either a cryptographic OTP, or an activation code.
+     */
     @Generated
     @Selector("activatePaymentPass:withActivationData:completion:")
     public native void activatePaymentPassWithActivationDataCompletion(PKPaymentPass paymentPass, NSData activationData,
             @ObjCBlock(name = "call_activatePaymentPassWithActivationDataCompletion") Block_activatePaymentPassWithActivationDataCompletion completion);
 
+    /**
+     * The user will be prompted to grant permission for the calling process to add passes to the Pass Library. The user may respond
+     * by allowing the passes to be added, or requesting to review the passes. The selection will be returned in the completionHandler
+     * as a PKPassLibraryAddPassesStatus. If PKPassLibraryPassesPresentReview is returned, you must present a PKAddPassesViewController
+     * initialized with the passes so that the user may review and add the passes manually. The completion handler for this method is
+     * called on an arbitrary queue - dispatch to the main queue if you're presenting UI.
+     */
     @Generated
     @Selector("addPasses:withCompletionHandler:")
     public native void addPassesWithCompletionHandler(NSArray<? extends PKPass> passes,
             @ObjCBlock(name = "call_addPassesWithCompletionHandler") Block_addPassesWithCompletionHandler completion);
 
+    /**
+     * If the library can add Felica passes, this method will return YES. Otherwise, NO will be returned.
+     */
     @Generated
     @Selector("canAddFelicaPass")
     public native boolean canAddFelicaPass();
 
+    /**
+     * Returns YES if either the current device or an attached device both supports adding payment passes and does not already contain
+     * a payment pass with the supplied primary account identifier.
+     */
     @Generated
     @Selector("canAddPaymentPassWithPrimaryAccountIdentifier:")
     public native boolean canAddPaymentPassWithPrimaryAccountIdentifier(String primaryAccountIdentifier);
 
+    /**
+     * This returns YES even if the process is not entitled to access the pass in the library.  An app like Mail is not entitled to get
+     * pass from the library, but it should avoid presenting UI for adding an email attachment pass that is already in the library.
+     */
     @Generated
     @Selector("containsPass:")
     public native boolean containsPass(PKPass pass);
@@ -208,10 +240,16 @@ public class PKPassLibrary extends NSObject {
     @Selector("init")
     public native PKPassLibrary init();
 
+    /**
+     * If this pass library supports activating payment passes, this method will return YES. Otherwise, NO will be returned.
+     */
     @Generated
     @Selector("isPaymentPassActivationAvailable")
     public native boolean isPaymentPassActivationAvailable();
 
+    /**
+     * Opens the card setup flow (in Wallet on iPhone, Settings on iPad). Use this to direct a user to card setup directly from your app.
+     */
     @Generated
     @Selector("openPaymentSetup")
     public native void openPaymentSetup();
@@ -220,6 +258,9 @@ public class PKPassLibrary extends NSObject {
     @Selector("passWithPassTypeIdentifier:serialNumber:")
     public native PKPass passWithPassTypeIdentifierSerialNumber(String identifier, String serialNumber);
 
+    /**
+     * These return only local passes the process is entitled to access.
+     */
     @Generated
     @Selector("passes")
     public native NSArray<? extends PKPass> passes();
@@ -228,10 +269,16 @@ public class PKPassLibrary extends NSObject {
     @Selector("passesOfType:")
     public native NSArray<? extends PKPass> passesOfType(@NUInt long passType);
 
+    /**
+     * Presents the pass for use above the current application. The pass must already be in the pass library for this to have effect.
+     */
     @Generated
     @Selector("presentPaymentPass:")
     public native void presentPaymentPass(PKPaymentPass pass);
 
+    /**
+     * This returns the remote payment passes from attached devices
+     */
     @Generated
     @Selector("remotePaymentPasses")
     public native NSArray<? extends PKPaymentPass> remotePaymentPasses();
@@ -240,6 +287,10 @@ public class PKPassLibrary extends NSObject {
     @Selector("removePass:")
     public native void removePass(PKPass pass);
 
+    /**
+     * This will fail if a pass with matching identifier and serial number is not already present in the library, or if the process
+     * is not entitled to access the pass. To add a completely new pass, use PKAddPassesViewController.
+     */
     @Generated
     @Selector("replacePassWithPass:")
     public native boolean replacePassWithPass(PKPass pass);
@@ -301,6 +352,9 @@ public class PKPassLibrary extends NSObject {
     @Selector("remoteSecureElementPasses")
     public native NSArray<? extends PKSecureElementPass> remoteSecureElementPasses();
 
+    /**
+     * Sign a payload using the pass
+     */
     @Generated
     @Selector("signData:withSecureElementPass:completion:")
     public native void signDataWithSecureElementPassCompletion(NSData signData, PKSecureElementPass secureElementPass,

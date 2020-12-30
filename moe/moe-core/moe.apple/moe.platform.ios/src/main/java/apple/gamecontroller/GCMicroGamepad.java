@@ -151,14 +151,32 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     @NInt
     public static native long version_static();
 
+    /**
+     * Allows the Micro profile to monitor the orientation of the controller, if the controller is positioned in landscape orientation, D-pad input values will be transposed 90 degrees to match the new orientation.
+     * 
+     * The default value for this property is NO.
+     */
     @Generated
     @Selector("allowsRotation")
     public native boolean allowsRotation();
 
+    /**
+     * The Micro profile has two buttons that are optionally analog in the Micro profile.
+     * Button A is the primary action button, it indicates affirmative action and should be used to advance in menus
+     * or perform the primary action in gameplay.
+     */
     @Generated
     @Selector("buttonA")
     public native GCControllerButtonInput buttonA();
 
+    /**
+     * Button X is the secondary action button, it indicates an alternate affirmative action and should be used to perform
+     * a secondary action. If there is no secondary action it should be used as equivalent to buttonA.
+     * 
+     * Unlike on other profiles there is no negative button on this profile. Instead the menu button should be
+     * used to present menu content or to retreat in a menu flow.
+     * @see buttonA
+     */
     @Generated
     @Selector("buttonX")
     public native GCControllerButtonInput buttonX();
@@ -167,6 +185,9 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     @Selector("controller")
     public native GCController controller();
 
+    /**
+     * Optionally analog in the Micro profile. All the elements of this directional input are either analog or digital.
+     */
     @Generated
     @Selector("dpad")
     public native GCControllerDirectionPad dpad();
@@ -175,18 +196,51 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     @Selector("init")
     public native GCMicroGamepad init();
 
+    /**
+     * The Micro profile can use the raw position values of the touchpad on the remote as D-pad values, or it can create a virtual dpad centered around the first contact point with the surface.
+     * 
+     * If NO; a smaller sliding window is created around the initial touch point and subsequent movement is relative to that center. Movement outside the window will slide the window with it to re-center it. This is great for surfaces where there is no clear sense of a middle and drift over time is an issue.
+     * 
+     * If YES; the absolute values are used and any drift will have to managed manually either through user traning or by a developer using the dpad.
+     * 
+     * The default value for this property is NO, meaning a sliding window is used for the dpad.
+     */
     @Generated
     @Selector("reportsAbsoluteDpadValues")
     public native boolean reportsAbsoluteDpadValues();
 
+    /**
+     * Polls the state vector of the controller and saves it to a snapshot. The snapshot is stored in a device independent
+     * format that can be serialized and used at a later date. This is useful for features such as quality assurance,
+     * save game or replay functionality among many.
+     * 
+     * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
+     * a snapshot will not change based on user input once it is taken.
+     * 
+     * @see GCMicroGamepadSnapshot
+     */
     @Generated
     @Selector("saveSnapshot")
     public native GCMicroGamepadSnapshot saveSnapshot();
 
+    /**
+     * Allows the Micro profile to monitor the orientation of the controller, if the controller is positioned in landscape orientation, D-pad input values will be transposed 90 degrees to match the new orientation.
+     * 
+     * The default value for this property is NO.
+     */
     @Generated
     @Selector("setAllowsRotation:")
     public native void setAllowsRotation(boolean value);
 
+    /**
+     * The Micro profile can use the raw position values of the touchpad on the remote as D-pad values, or it can create a virtual dpad centered around the first contact point with the surface.
+     * 
+     * If NO; a smaller sliding window is created around the initial touch point and subsequent movement is relative to that center. Movement outside the window will slide the window with it to re-center it. This is great for surfaces where there is no clear sense of a middle and drift over time is an issue.
+     * 
+     * If YES; the absolute values are used and any drift will have to managed manually either through user traning or by a developer using the dpad.
+     * 
+     * The default value for this property is NO, meaning a sliding window is used for the dpad.
+     */
     @Generated
     @Selector("setReportsAbsoluteDpadValues:")
     public native void setReportsAbsoluteDpadValues(boolean value);
@@ -215,10 +269,19 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
         void call_valueChangedHandler_ret(GCMicroGamepad gamepad, GCControllerElement element);
     }
 
+    /**
+     * Button menu is the primary menu button, and should be used to enter the main menu and pause the game.
+     */
     @Generated
     @Selector("buttonMenu")
     public native GCControllerButtonInput buttonMenu();
 
+    /**
+     * Sets the state vector of the micro gamepad to a copy of the input micro gamepad's state vector.
+     * 
+     * @note If the controller's snapshot flag is set to NO, this method has no effect.
+     * @see GCController.snapshot
+     */
     @Generated
     @Selector("setStateFromMicroGamepad:")
     public native void setStateFromMicroGamepad(GCMicroGamepad microGamepad);

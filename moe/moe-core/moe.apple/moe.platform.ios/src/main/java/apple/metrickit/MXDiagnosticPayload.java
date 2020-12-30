@@ -29,6 +29,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXDiagnosticPayload
+ * @abstract      A wrapper class which contains a diagnostic payload and associated properties of that payload.
+ * @discussion    MXDiagnosticPayload encapsulates currently supported diagnostics that can be vended by MetricKit. Arrays of MXDiangostic subclasses on MXDiagnosticPayload are nullable. If an array of MXDiagnostic subclasses is nil, it indicates that the diagnostics are not available for this payload.
+ * @discussion    MXDiagnosticPayload exposes a convenience function, JSONRepresentation, to convert the contents of the payload to a human readable JSON. This should be used in conjunction with other APIs that accept NSData.
+ * @discussion    An MXDiagnosticPayload contains diagnostics that cover a 24 hour period of application usage. The properties timeStampBegin and timeStampEnd should be used to determine which time range the payload covers.
+ * @discussion    It is possible for an MXDiagnosticPayload to cover regions of time where an application was updated, and thus each MXDiagnostic subclass will contain its own application version string. This is in contrast to MXMetricPayload, where only the latest application version string is included as metadata of the payload. Each MXDiagnostic subclass application version string should be inspected prior to processing.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -43,6 +51,11 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
         super(peer);
     }
 
+    /**
+     * @method        JSONRepresentation
+     * @abstract      Convenience method to return a JSON representation of this diagnostic payload.
+     * @result        An NSData object containing the JSON representation
+     */
     @Generated
     @Selector("JSONRepresentation")
     public native NSData JSONRepresentation();
@@ -83,10 +96,18 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property      cpuExceptionDiagnostics
+     * @abstract      An array containing CPU exception diagnostics for this application.
+     */
     @Generated
     @Selector("cpuExceptionDiagnostics")
     public native NSArray<? extends MXCPUExceptionDiagnostic> cpuExceptionDiagnostics();
 
+    /**
+     * @property      crashDiagnostics
+     * @abstract      An array containing crash diagnostics for this application.
+     */
     @Generated
     @Selector("crashDiagnostics")
     public native NSArray<? extends MXCrashDiagnostic> crashDiagnostics();
@@ -99,10 +120,19 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @method        dictionaryRepresentation
+     * @abstract      Convenience method to return a NSDictionary representation of this diagnostic payload.
+     * @result        An NSDictionary object containing the dictionary representation
+     */
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<?, ?> dictionaryRepresentation();
 
+    /**
+     * @property      diskWriteExceptionDiagnostics
+     * @abstract      An array containing disk write exception diagnostics for this application.
+     */
     @Generated
     @Selector("diskWriteExceptionDiagnostics")
     public native NSArray<? extends MXDiskWriteExceptionDiagnostic> diskWriteExceptionDiagnostics();
@@ -111,6 +141,10 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * @property      hangDiagnostics
+     * @abstract      An array containing hang diagnostics for this application.
+     */
     @Generated
     @Selector("hangDiagnostics")
     public native NSArray<? extends MXHangDiagnostic> hangDiagnostics();
@@ -181,10 +215,18 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * @property      timeStampBegin
+     * @abstract      An NSDate object that indicates the start time for which the payload was generated.
+     */
     @Generated
     @Selector("timeStampBegin")
     public native NSDate timeStampBegin();
 
+    /**
+     * @property      timeStampEnd
+     * @abstract      An NSDate object that indicates the end time for which the payload was generated.
+     */
     @Generated
     @Selector("timeStampEnd")
     public native NSDate timeStampEnd();

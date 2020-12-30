@@ -25,6 +25,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSCNNSubtract
+ * @dependency This depends on Metal.framework.
+ * @discussion Specifies the subtraction operator.
+ *             For each pixel in the primary source image (x) and each pixel in a secondary source image (y),
+ *             it applies the following function: result = ((primaryScale * x) - (secondaryScale * y)) + bias.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -100,6 +107,11 @@ public class MPSCNNSubtract extends MPSCNNArithmetic {
     @Selector("initWithCoder:device:")
     public native MPSCNNSubtract initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract  Initialize the subtraction operator
+     * @param     device           The device the filter will run on.
+     * @return    A valid MPSCNNSubtract object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSCNNSubtract initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);

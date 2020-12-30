@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueTemperatureUnit
+ * 
+ * @constant  HMCharacteristicValueTemperatureUnitCelsius     Celsius.
+ * @constant  HMCharacteristicValueTemperatureUnitFahrenheit  Fahrenheit.
+ */
 @Generated
 public final class HMCharacteristicValueTemperatureUnit {
     @Generated @NInt public static final long Celsius = 0x0000000000000000L;

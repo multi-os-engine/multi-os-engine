@@ -77,6 +77,9 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Reset this appearance to that of the given layout.
+     */
     @Generated
     @Selector("configureWithDefaultForStyle:")
     public native void configureWithDefaultForStyle(@NInt long style);
@@ -101,6 +104,9 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The appearance when the tab bar item is in the disabled state
+     */
     @Generated
     @Selector("disabled")
     public native UITabBarItemStateAppearance disabled();
@@ -109,6 +115,9 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The appearance when the tab bar item is in the focused state
+     */
     @Generated
     @Selector("focused")
     public native UITabBarItemStateAppearance focused();
@@ -118,6 +127,9 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Construct an appearance with default values for the stacked layout.
+     */
     @Generated
     @Selector("init")
     public native UITabBarItemAppearance init();
@@ -126,6 +138,9 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     @Selector("initWithCoder:")
     public native UITabBarItemAppearance initWithCoder(NSCoder coder);
 
+    /**
+     * Construct an appearance with default values for the given layout.
+     */
     @Generated
     @Selector("initWithStyle:")
     public native UITabBarItemAppearance initWithStyle(@NInt long style);
@@ -157,6 +172,9 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The appearance when the tab bar item is in the normal state
+     */
     @Generated
     @Selector("normal")
     public native UITabBarItemStateAppearance normal();
@@ -169,6 +187,9 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The appearance when the tab bar item is in the selected state
+     */
     @Generated
     @Selector("selected")
     public native UITabBarItemStateAppearance selected();

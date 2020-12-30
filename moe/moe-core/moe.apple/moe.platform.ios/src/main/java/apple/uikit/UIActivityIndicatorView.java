@@ -347,6 +347,9 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * default is UIActivityIndicatorViewStyleMedium
+     */
     @Generated
     @Selector("activityIndicatorViewStyle")
     @NInt
@@ -407,6 +410,9 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * default is YES. calls -setHidden when animating gets set to NO
+     */
     @Generated
     @Selector("hidesWhenStopped")
     public native boolean hidesWhenStopped();
@@ -415,6 +421,9 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
     @Selector("init")
     public native UIActivityIndicatorView init();
 
+    /**
+     * sizes the view according to the style
+     */
     @Generated
     @Selector("initWithActivityIndicatorStyle:")
     public native UIActivityIndicatorView initWithActivityIndicatorStyle(@NInt long style);
@@ -431,6 +440,9 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
     @Selector("isAnimating")
     public native boolean isAnimating();
 
+    /**
+     * default is UIActivityIndicatorViewStyleMedium
+     */
     @Generated
     @Selector("setActivityIndicatorViewStyle:")
     public native void setActivityIndicatorViewStyle(@NInt long value);
@@ -439,6 +451,9 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
     @Selector("setColor:")
     public native void setColor(UIColor value);
 
+    /**
+     * default is YES. calls -setHidden when animating gets set to NO
+     */
     @Generated
     @Selector("setHidesWhenStopped:")
     public native void setHidesWhenStopped(boolean value);

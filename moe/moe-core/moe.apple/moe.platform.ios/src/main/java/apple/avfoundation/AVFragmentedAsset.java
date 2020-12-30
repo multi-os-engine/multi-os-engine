@@ -106,6 +106,15 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @method		fragmentedAssetWithURL:options:
+     * @abstract		Returns an instance of AVFragmentedAsset for inspection of a fragmented media resource.
+     * @param		URL
+     * 		An instance of NSURL that references a media resource.
+     * @param		options
+     * 		An instance of NSDictionary that contains keys for specifying options for the initialization of the AVFragmentedAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and AVURLAssetReferenceRestrictionsKey above.
+     * @result		An instance of AVFragmentedAsset.
+     */
     @Generated
     @Selector("fragmentedAssetWithURL:options:")
     public static native AVFragmentedAsset fragmentedAssetWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
@@ -174,18 +183,47 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * @method		trackWithTrackID:
+     * @abstract		Provides an instance of AVFragmentedAssetTrack that represents the track of the specified trackID.
+     * @param		trackID
+     * 		The trackID of the requested AVFragmentedAssetTrack.
+     * @result		An instance of AVFragmentedAssetTrack; may be nil if no track of the specified trackID is available.
+     * @discussion	Becomes callable without blocking when the key @"tracks" has been loaded
+     */
     @Generated
     @Selector("trackWithTrackID:")
     public native AVFragmentedAssetTrack trackWithTrackID(int trackID);
 
+    /**
+     * @property       tracks
+     * @abstract       The tracks in an asset.
+     * @discussion     The value of this property is an array of tracks the asset contains; the tracks are of type AVFragmentedAssetTrack.
+     */
     @Generated
     @Selector("tracks")
     public native NSArray<? extends AVFragmentedAssetTrack> tracks();
 
+    /**
+     * @method		tracksWithMediaCharacteristic:
+     * @abstract		Provides an array of AVFragmentedAssetTracks of the asset that present media with the specified characteristic.
+     * @param		mediaCharacteristic
+     * 		The media characteristic according to which the receiver filters its AVFragmentedAssetTracks. (Media characteristics are defined in AVMediaFormat.h)
+     * @result		An NSArray of AVFragmentedAssetTracks; may be empty if no tracks with the specified characteristic are available.
+     * @discussion	Becomes callable without blocking when the key @"tracks" has been loaded
+     */
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
     public native NSArray<? extends AVFragmentedAssetTrack> tracksWithMediaCharacteristic(String mediaCharacteristic);
 
+    /**
+     * @method		tracksWithMediaType:
+     * @abstract		Provides an array of AVFragmentedAssetTracks of the asset that present media of the specified media type.
+     * @param		mediaType
+     * 		The media type according to which the receiver filters its AVFragmentedAssetTracks. (Media types are defined in AVMediaFormat.h)
+     * @result		An NSArray of AVFragmentedAssetTracks; may be empty if no tracks of the specified media type are available.
+     * @discussion	Becomes callable without blocking when the key @"tracks" has been loaded
+     */
     @Generated
     @Selector("tracksWithMediaType:")
     public native NSArray<? extends AVFragmentedAssetTrack> tracksWithMediaType(String mediaType);

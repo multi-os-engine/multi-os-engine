@@ -175,6 +175,10 @@ public class CAGradientLayer extends CALayer {
     @NInt
     public static native long version_static();
 
+    /**
+     * The array of CGColorRef objects defining the color of each gradient
+     * stop. Defaults to nil. Animatable.
+     */
     @Generated
     @Selector("colors")
     public native NSArray<?> colors();
@@ -196,10 +200,22 @@ public class CAGradientLayer extends CALayer {
     @Selector("initWithLayer:")
     public native CAGradientLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
+    /**
+     * An optional array of NSNumber objects defining the location of each
+     * gradient stop as a value in the range [0,1]. The values must be
+     * monotonically increasing. If a nil array is given, the stops are
+     * assumed to spread uniformly across the [0,1] range. When rendered,
+     * the colors are mapped to the output colorspace before being
+     * interpolated. Defaults to nil. Animatable.
+     */
     @Generated
     @Selector("locations")
     public native NSArray<? extends NSNumber> locations();
 
+    /**
+     * The array of CGColorRef objects defining the color of each gradient
+     * stop. Defaults to nil. Animatable.
+     */
     @Generated
     @Selector("setColors:")
     public native void setColors(NSArray<?> value);
@@ -208,23 +224,57 @@ public class CAGradientLayer extends CALayer {
     @Selector("setEndPoint:")
     public native void setEndPoint(@ByValue CGPoint value);
 
+    /**
+     * An optional array of NSNumber objects defining the location of each
+     * gradient stop as a value in the range [0,1]. The values must be
+     * monotonically increasing. If a nil array is given, the stops are
+     * assumed to spread uniformly across the [0,1] range. When rendered,
+     * the colors are mapped to the output colorspace before being
+     * interpolated. Defaults to nil. Animatable.
+     */
     @Generated
     @Selector("setLocations:")
     public native void setLocations(NSArray<? extends NSNumber> value);
 
+    /**
+     * The start and end points of the gradient when drawn into the layer's
+     * coordinate space. The start point corresponds to the first gradient
+     * stop, the end point to the last gradient stop. Both points are
+     * defined in a unit coordinate space that is then mapped to the
+     * layer's bounds rectangle when drawn. (I.e. [0,0] is the bottom-left
+     * corner of the layer, [1,1] is the top-right corner.) The default values
+     * are [.5,0] and [.5,1] respectively. Both are animatable.
+     */
     @Generated
     @Selector("setStartPoint:")
     public native void setStartPoint(@ByValue CGPoint value);
 
+    /**
+     * The kind of gradient that will be drawn. Currently, the only allowed
+     * values are `axial' (the default value), `radial', and `conic'.
+     */
     @Generated
     @Selector("setType:")
     public native void setType(String value);
 
+    /**
+     * The start and end points of the gradient when drawn into the layer's
+     * coordinate space. The start point corresponds to the first gradient
+     * stop, the end point to the last gradient stop. Both points are
+     * defined in a unit coordinate space that is then mapped to the
+     * layer's bounds rectangle when drawn. (I.e. [0,0] is the bottom-left
+     * corner of the layer, [1,1] is the top-right corner.) The default values
+     * are [.5,0] and [.5,1] respectively. Both are animatable.
+     */
     @Generated
     @Selector("startPoint")
     @ByValue
     public native CGPoint startPoint();
 
+    /**
+     * The kind of gradient that will be drawn. Currently, the only allowed
+     * values are `axial' (the default value), `radial', and `conic'.
+     */
     @Generated
     @Selector("type")
     public native String type();

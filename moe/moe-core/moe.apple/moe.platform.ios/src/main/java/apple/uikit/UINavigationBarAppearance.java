@@ -60,18 +60,30 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * The appearance for back buttons. Defaults are drawn from buttonAppearance when appropriate.
+     */
     @Generated
     @Selector("backButtonAppearance")
     public native UIBarButtonItemAppearance backButtonAppearance();
 
+    /**
+     * The image shown on the leading edge of the back button.
+     */
     @Generated
     @Selector("backIndicatorImage")
     public native UIImage backIndicatorImage();
 
+    /**
+     * This image is used to mask content flowing underneath the backIndicatorImage during push & pop transitions
+     */
     @Generated
     @Selector("backIndicatorTransitionMaskImage")
     public native UIImage backIndicatorTransitionMaskImage();
 
+    /**
+     * The appearance for plain-style bar button items
+     */
     @Generated
     @Selector("buttonAppearance")
     public native UIBarButtonItemAppearance buttonAppearance();
@@ -102,6 +114,9 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The appearance for done-style bar button items
+     */
     @Generated
     @Selector("doneButtonAppearance")
     public native UIBarButtonItemAppearance doneButtonAppearance();
@@ -148,6 +163,9 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Large Title text attributes. If the font or color are unspecified, appropriate defaults are supplied.
+     */
     @Generated
     @Selector("largeTitleTextAttributes")
     public native NSDictionary<String, ?> largeTitleTextAttributes();
@@ -166,31 +184,52 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The appearance for back buttons. Defaults are drawn from buttonAppearance when appropriate.
+     */
     @Generated
     @Selector("setBackButtonAppearance:")
     public native void setBackButtonAppearance(UIBarButtonItemAppearance value);
 
+    /**
+     * Set the backIndicatorImage & backIndicatorTransitionMaskImage images. If either image is nil, then both images will be reset to their default.
+     */
     @Generated
     @Selector("setBackIndicatorImage:transitionMaskImage:")
     public native void setBackIndicatorImageTransitionMaskImage(UIImage backIndicatorImage,
             UIImage backIndicatorTransitionMaskImage);
 
+    /**
+     * The appearance for plain-style bar button items
+     */
     @Generated
     @Selector("setButtonAppearance:")
     public native void setButtonAppearance(UIBarButtonItemAppearance value);
 
+    /**
+     * The appearance for done-style bar button items
+     */
     @Generated
     @Selector("setDoneButtonAppearance:")
     public native void setDoneButtonAppearance(UIBarButtonItemAppearance value);
 
+    /**
+     * Large Title text attributes. If the font or color are unspecified, appropriate defaults are supplied.
+     */
     @Generated
     @Selector("setLargeTitleTextAttributes:")
     public native void setLargeTitleTextAttributes(NSDictionary<String, ?> value);
 
+    /**
+     * An additional adjustment to the inline title's position.
+     */
     @Generated
     @Selector("setTitlePositionAdjustment:")
     public native void setTitlePositionAdjustment(@ByValue UIOffset value);
 
+    /**
+     * Inline Title text attributes. If the font or color are unspecified, appropriate defaults are supplied.
+     */
     @Generated
     @Selector("setTitleTextAttributes:")
     public native void setTitleTextAttributes(NSDictionary<String, ?> value);
@@ -213,11 +252,17 @@ public class UINavigationBarAppearance extends UIBarAppearance {
         return supportsSecureCoding();
     }
 
+    /**
+     * An additional adjustment to the inline title's position.
+     */
     @Generated
     @Selector("titlePositionAdjustment")
     @ByValue
     public native UIOffset titlePositionAdjustment();
 
+    /**
+     * Inline Title text attributes. If the font or color are unspecified, appropriate defaults are supplied.
+     */
     @Generated
     @Selector("titleTextAttributes")
     public native NSDictionary<String, ?> titleTextAttributes();

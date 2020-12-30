@@ -40,6 +40,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSImageDescriptor
+ * @dependency This depends on Metal.framework
+ * @abstract   A MPSImageDescriptor object describes a attributes of MPSImage and is used to
+ *             create one (see MPSImage discussion below)
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -103,11 +109,17 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @abstract   Create a MPSImageDescriptor for a single read/write cnn image.
+     */
     @Generated
     @Selector("imageDescriptorWithChannelFormat:width:height:featureChannels:")
     public static native MPSImageDescriptor imageDescriptorWithChannelFormatWidthHeightFeatureChannels(
             @NUInt long channelFormat, @NUInt long width, @NUInt long height, @NUInt long featureChannels);
 
+    /**
+     * @abstract   Create a MPSImageDescriptor for a read/write cnn image with option to set usage and batch size (numberOfImages).
+     */
     @Generated
     @Selector("imageDescriptorWithChannelFormat:width:height:featureChannels:numberOfImages:usage:")
     public static native MPSImageDescriptor imageDescriptorWithChannelFormatWidthHeightFeatureChannelsNumberOfImagesUsage(
@@ -162,21 +174,38 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property   channelFormat
+     * @abstract   The storage format to use for each channel in the image.
+     */
     @Generated
     @Selector("channelFormat")
     @NUInt
     public native long channelFormat();
 
+    /**
+     * @property cpuCacheMode
+     * @abstract Options to specify CPU cache mode of texture resource. Default = MTLCPUCacheModeDefaultCache
+     */
     @Generated
     @Selector("cpuCacheMode")
     @NUInt
     public native long cpuCacheMode();
 
+    /**
+     * @property   featureChannels
+     * @abstract   The number of feature channels per pixel.  Default = 1.
+     */
     @Generated
     @Selector("featureChannels")
     @NUInt
     public native long featureChannels();
 
+    /**
+     * @property   height
+     * @abstract   The height of the CNN image.
+     * @discussion The formal height of the CNN image in pixels. Default = 1.
+     */
     @Generated
     @Selector("height")
     @NUInt
@@ -186,58 +215,127 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MPSImageDescriptor init();
 
+    /**
+     * @property   numberOfImages
+     * @abstract   The number of images for batch processing.   Default = 1.
+     */
     @Generated
     @Selector("numberOfImages")
     @NUInt
     public native long numberOfImages();
 
+    /**
+     * @property   pixelFormat
+     * @abstract   The MTLPixelFormat expected for the underlying texture.
+     */
     @Generated
     @Selector("pixelFormat")
     @NUInt
     public native long pixelFormat();
 
+    /**
+     * @property   channelFormat
+     * @abstract   The storage format to use for each channel in the image.
+     */
     @Generated
     @Selector("setChannelFormat:")
     public native void setChannelFormat(@NUInt long value);
 
+    /**
+     * @property cpuCacheMode
+     * @abstract Options to specify CPU cache mode of texture resource. Default = MTLCPUCacheModeDefaultCache
+     */
     @Generated
     @Selector("setCpuCacheMode:")
     public native void setCpuCacheMode(@NUInt long value);
 
+    /**
+     * @property   featureChannels
+     * @abstract   The number of feature channels per pixel.  Default = 1.
+     */
     @Generated
     @Selector("setFeatureChannels:")
     public native void setFeatureChannels(@NUInt long value);
 
+    /**
+     * @property   height
+     * @abstract   The height of the CNN image.
+     * @discussion The formal height of the CNN image in pixels. Default = 1.
+     */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NUInt long value);
 
+    /**
+     * @property   numberOfImages
+     * @abstract   The number of images for batch processing.   Default = 1.
+     */
     @Generated
     @Selector("setNumberOfImages:")
     public native void setNumberOfImages(@NUInt long value);
 
+    /**
+     * @property storageMode
+     * @abstract To specify storage mode of texture resource.
+     * @discussion Storage mode options:
+     *        @code
+     *            Default =   MTLStorageModeShared on iOS
+     *                        MTLStorageModeManaged on Mac OSX
+     *            MTLStorageModeShared not supported on Mac OSX.
+     *            See Metal headers for synchronization requirements when using StorageModeManaged
+     *        @endcode
+     */
     @Generated
     @Selector("setStorageMode:")
     public native void setStorageMode(@NUInt long value);
 
+    /**
+     * @property   usage
+     * @abstract   Description of texture usage.  Default = MTLTextureUsageShaderRead/Write
+     */
     @Generated
     @Selector("setUsage:")
     public native void setUsage(@NUInt long value);
 
+    /**
+     * @property   width
+     * @abstract   The width of the CNN image.
+     * @discussion The formal width of the CNN image in pixels.  Default = 1.
+     */
     @Generated
     @Selector("setWidth:")
     public native void setWidth(@NUInt long value);
 
+    /**
+     * @property storageMode
+     * @abstract To specify storage mode of texture resource.
+     * @discussion Storage mode options:
+     *        @code
+     *            Default =   MTLStorageModeShared on iOS
+     *                        MTLStorageModeManaged on Mac OSX
+     *            MTLStorageModeShared not supported on Mac OSX.
+     *            See Metal headers for synchronization requirements when using StorageModeManaged
+     *        @endcode
+     */
     @Generated
     @Selector("storageMode")
     @NUInt
     public native long storageMode();
 
+    /**
+     * @property   usage
+     * @abstract   Description of texture usage.  Default = MTLTextureUsageShaderRead/Write
+     */
     @Generated
     @Selector("usage")
     @NUInt
     public native long usage();
 
+    /**
+     * @property   width
+     * @abstract   The width of the CNN image.
+     * @discussion The formal width of the CNN image in pixels.  Default = 1.
+     */
     @Generated
     @Selector("width")
     @NUInt

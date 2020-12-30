@@ -91,6 +91,17 @@ public class MPSCNNPoolingGradientNode extends MPSNNGradientFilterNode {
     @Selector("init")
     public native MPSCNNPoolingGradientNode init();
 
+    /**
+     * @abstract make a pooling gradient node
+     * @discussion  It would be much easier to use [inferencePoolingNode gradientNodeForSourceGradient:] instead.
+     * @param      sourceGradient  The gradient from the downstream gradient filter.
+     * @param      sourceImage     The input image to the inference pooling filter
+     * @param      gradientState   The gradient state produced by the inference poolin filter
+     * @param      kernelWidth     The kernel width of the inference filter
+     * @param      kernelHeight    The kernel height of the inference filter
+     * @param      strideInPixelsX The X stride from the inference filter
+     * @param      strideInPixelsY The Y stride from the inference filter
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:paddingPolicy:")
     public native MPSCNNPoolingGradientNode initWithSourceGradientSourceImageGradientStateKernelWidthKernelHeightStrideInPixelsXStrideInPixelsYPaddingPolicy(
@@ -135,6 +146,17 @@ public class MPSCNNPoolingGradientNode extends MPSNNGradientFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract make a pooling gradient node
+     * @discussion  It would be much easier to use [inferencePoolingNode gradientNodeForSourceGradient:] instead.
+     * @param      sourceGradient  The gradient from the downstream gradient filter.
+     * @param      sourceImage     The input image to the inference pooling filter
+     * @param      gradientState   The gradient state produced by the inference poolin filter
+     * @param      kernelWidth     The kernel width of the inference filter
+     * @param      kernelHeight    The kernel height of the inference filter
+     * @param      strideInPixelsX The X stride from the inference filter
+     * @param      strideInPixelsY The Y stride from the inference filter
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:paddingPolicy:")
     public static native MPSCNNPoolingGradientNode nodeWithSourceGradientSourceImageGradientStateKernelWidthKernelHeightStrideInPixelsXStrideInPixelsYPaddingPolicy(

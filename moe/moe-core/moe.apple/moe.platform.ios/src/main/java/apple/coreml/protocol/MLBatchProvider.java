@@ -10,16 +10,25 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Protocol for accessing a collection of feature providers
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MLBatchProvider")
 public interface MLBatchProvider {
+    /**
+     * Total number of feature providers
+     */
     @Generated
     @Selector("count")
     @NInt
     long count();
 
+    /**
+     * Indexed access to collection
+     */
     @Generated
     @Selector("featuresAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)

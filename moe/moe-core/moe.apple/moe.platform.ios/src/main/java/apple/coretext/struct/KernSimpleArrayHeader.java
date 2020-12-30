@@ -42,42 +42,72 @@ public final class KernSimpleArrayHeader extends StructObject {
         super(peer);
     }
 
+    /**
+     * width, in bytes, of a row in the table
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native char rowWidth();
 
+    /**
+     * width, in bytes, of a row in the table
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setRowWidth(char value);
 
+    /**
+     * offset to left-hand offset table
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char leftOffsetTable();
 
+    /**
+     * offset to left-hand offset table
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setLeftOffsetTable(char value);
 
+    /**
+     * offset to right-hand offset table
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native char rightOffsetTable();
 
+    /**
+     * offset to right-hand offset table
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setRightOffsetTable(char value);
 
+    /**
+     * offset to start of kerning array
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native char theArray();
 
+    /**
+     * offset to start of kerning array
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setTheArray(char value);
 
+    /**
+     * first offset table starts here...
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native char firstTable();
 
+    /**
+     * first offset table starts here...
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setFirstTable(char value);

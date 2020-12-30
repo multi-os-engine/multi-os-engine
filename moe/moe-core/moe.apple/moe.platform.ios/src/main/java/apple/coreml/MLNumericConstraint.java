@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Allows enforcement of constraints on the values of update parameters.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -89,6 +92,9 @@ public class MLNumericConstraint extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * If not nil, list of restricted set of values the parameter can take.
+     */
     @Generated
     @Selector("enumeratedNumbers")
     public native NSSet<? extends NSNumber> enumeratedNumbers();
@@ -127,10 +133,16 @@ public class MLNumericConstraint extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Maximum value of the parameter can take.
+     */
     @Generated
     @Selector("maxNumber")
     public native NSNumber maxNumber();
 
+    /**
+     * Minimum value of the parameter can take.
+     */
     @Generated
     @Selector("minNumber")
     public native NSNumber minNumber();

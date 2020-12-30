@@ -23,6 +23,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A configuration for running image tracking.
+ * 
+ * @discussion Image tracking provides 6 degrees of freedom tracking of known images. Four images may be tracked simultaneously.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -103,6 +108,10 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Enable or disable continuous auto focus.
+     * @discussion Enabled by default.
+     */
     @Generated
     @Selector("isAutoFocusEnabled")
     public native boolean isAutoFocusEnabled();
@@ -119,6 +128,12 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Maximum number of images to track simultaneously.
+     * @discussion Setting the maximum number of tracked images will limit the number of images that can be tracked in a given frame.
+     * If more than the maximum is visible, only the images already being tracked will continue to track until tracking is lost or another image is removed.
+     * Default value is one.
+     */
     @Generated
     @Selector("maximumNumberOfTrackedImages")
     @NInt
@@ -138,14 +153,27 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Enable or disable continuous auto focus.
+     * @discussion Enabled by default.
+     */
     @Generated
     @Selector("setAutoFocusEnabled:")
     public native void setAutoFocusEnabled(boolean value);
 
+    /**
+     * Maximum number of images to track simultaneously.
+     * @discussion Setting the maximum number of tracked images will limit the number of images that can be tracked in a given frame.
+     * If more than the maximum is visible, only the images already being tracked will continue to track until tracking is lost or another image is removed.
+     * Default value is one.
+     */
     @Generated
     @Selector("setMaximumNumberOfTrackedImages:")
     public native void setMaximumNumberOfTrackedImages(@NInt long value);
 
+    /**
+     * Images to track in the scene.
+     */
     @Generated
     @Selector("setTrackingImages:")
     public native void setTrackingImages(NSSet<? extends ARReferenceImage> value);
@@ -166,6 +194,9 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
     @Selector("supportsFrameSemantics:")
     public static native boolean supportsFrameSemantics(@NUInt long frameSemantics);
 
+    /**
+     * Images to track in the scene.
+     */
     @Generated
     @Selector("trackingImages")
     public native NSSet<? extends ARReferenceImage> trackingImages();

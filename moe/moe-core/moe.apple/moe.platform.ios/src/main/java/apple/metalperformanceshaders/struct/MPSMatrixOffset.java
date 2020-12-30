@@ -33,18 +33,30 @@ public final class MPSMatrixOffset extends StructObject {
         setColumnOffset(columnOffset);
     }
 
+    /**
+     * < offset to start of source region to read in rows
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int rowOffset();
 
+    /**
+     * < offset to start of source region to read in rows
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setRowOffset(int value);
 
+    /**
+     * < offset to start of source region to read in columns
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int columnOffset();
 
+    /**
+     * < offset to start of source region to read in columns
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setColumnOffset(int value);

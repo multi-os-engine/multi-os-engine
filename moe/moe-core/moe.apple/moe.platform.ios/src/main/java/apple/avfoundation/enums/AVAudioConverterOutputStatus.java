@@ -19,11 +19,28 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum AVAudioConverterOutputStatus
+ * @abstract These values are returned from convertToBuffer:error:withInputFromBlock:
+ */
 @Generated
 public final class AVAudioConverterOutputStatus {
+    /**
+     * All of the requested data was returned.
+     */
     @Generated @NInt public static final long HaveData = 0x0000000000000000L;
+    /**
+     * Not enough input was available to satisfy the request at the current time. The output buffer
+     * contains as much as could be converted.
+     */
     @Generated @NInt public static final long InputRanDry = 0x0000000000000001L;
+    /**
+     * The end of stream has been reached. No data was returned.
+     */
     @Generated @NInt public static final long EndOfStream = 0x0000000000000002L;
+    /**
+     * An error occurred.
+     */
     @Generated @NInt public static final long Error = 0x0000000000000003L;
 
     @Generated

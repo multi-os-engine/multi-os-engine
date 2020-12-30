@@ -76,6 +76,22 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     *                      +---------------------+
+     *  +-------------+<----|Specified layout size|
+     *  |             |     +---------------------+
+     *  |  +-------+  |     +--------------------------+
+     *  |  |~~~~~~~|  |     |Final size (after         |
+     *  |  |~~~~~~~|<-+-----|contentInsets are applied)|
+     *  |  +-------+  |     +--------------------------+
+     *  |             |
+     *  +-------------+
+     * 
+     * Use contentInsets on an item to adjust the final size of the item after layout is computed.
+     *   useful for grid style layouts to apply even spacing around each the edges of each item.
+     * 
+     * Note: contentInsets are ignored for any axis with an .estimated dimension
+     */
     @Generated
     @Selector("contentInsets")
     @ByValue
@@ -95,6 +111,31 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     *                    +--------+
+     *                    |  Top   |
+     *                    +--------+
+     *                         |
+     *                         |
+     *                 +-------+--------------------------+
+     *                 |       v                          |
+     *                 |    +------+                      |
+     *  +--------+     |    |~~~~~~|        +--------+    |
+     *  |Leading |-----+->  |~~~~~~| <------|Trailing|    |
+     *  +--------+     |    |~~~~~~|        +--------+    |
+     *                 |    +------+                      |
+     *                 |        ^                         |
+     *                 +--------+-------------------------+
+     *                          |
+     *                          |
+     *                     +--------+
+     *                     | Bottom |
+     *                     +--------+
+     * 
+     * Specifies additional space required surrounding and item when laying out.
+     * Flexible spacing can be used to apportion remaining space after items are layed out to
+     *   evenly align items among available layout space.
+     */
     @Generated
     @Selector("edgeSpacing")
     public native NSCollectionLayoutEdgeSpacing edgeSpacing();
@@ -156,10 +197,51 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     *                      +---------------------+
+     *  +-------------+<----|Specified layout size|
+     *  |             |     +---------------------+
+     *  |  +-------+  |     +--------------------------+
+     *  |  |~~~~~~~|  |     |Final size (after         |
+     *  |  |~~~~~~~|<-+-----|contentInsets are applied)|
+     *  |  +-------+  |     +--------------------------+
+     *  |             |
+     *  +-------------+
+     * 
+     * Use contentInsets on an item to adjust the final size of the item after layout is computed.
+     *   useful for grid style layouts to apply even spacing around each the edges of each item.
+     * 
+     * Note: contentInsets are ignored for any axis with an .estimated dimension
+     */
     @Generated
     @Selector("setContentInsets:")
     public native void setContentInsets(@ByValue NSDirectionalEdgeInsets value);
 
+    /**
+     *                    +--------+
+     *                    |  Top   |
+     *                    +--------+
+     *                         |
+     *                         |
+     *                 +-------+--------------------------+
+     *                 |       v                          |
+     *                 |    +------+                      |
+     *  +--------+     |    |~~~~~~|        +--------+    |
+     *  |Leading |-----+->  |~~~~~~| <------|Trailing|    |
+     *  +--------+     |    |~~~~~~|        +--------+    |
+     *                 |    +------+                      |
+     *                 |        ^                         |
+     *                 +--------+-------------------------+
+     *                          |
+     *                          |
+     *                     +--------+
+     *                     | Bottom |
+     *                     +--------+
+     * 
+     * Specifies additional space required surrounding and item when laying out.
+     * Flexible spacing can be used to apportion remaining space after items are layed out to
+     *   evenly align items among available layout space.
+     */
     @Generated
     @Selector("setEdgeSpacing:")
     public native void setEdgeSpacing(NSCollectionLayoutEdgeSpacing value);

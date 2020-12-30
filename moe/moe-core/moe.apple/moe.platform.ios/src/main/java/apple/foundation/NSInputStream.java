@@ -40,6 +40,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSInputStream is an abstract class representing the base functionality of a read stream.
+ * Subclassers are required to implement these methods.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -175,11 +179,17 @@ public class NSInputStream extends NSStream {
     @NInt
     public static native long version_static();
 
+    /**
+     * reads up to length bytes into the supplied buffer, which must be at least of size len. Returns the actual number of bytes read.
+     */
     @Generated
     @Selector("getBuffer:length:")
     public native boolean getBufferLength(@ReferenceInfo(type = Byte.class, depth = 2) Ptr<BytePtr> buffer,
             NUIntPtr len);
 
+    /**
+     * returns in O(1) a pointer to the buffer in 'buffer' and by reference in 'len' how many bytes are available. This buffer is only valid until the next stream operation. Subclassers may return NO for this if it is not appropriate for the stream type. This may return NO if the buffer is not available.
+     */
     @Generated
     @Selector("hasBytesAvailable")
     public native boolean hasBytesAvailable();
@@ -188,6 +198,9 @@ public class NSInputStream extends NSStream {
     @Selector("init")
     public native NSInputStream init();
 
+    /**
+     * returns YES if the stream has bytes available or if it impossible to tell without actually doing the read.
+     */
     @Generated
     @Selector("initWithData:")
     public native NSInputStream initWithData(NSData data);

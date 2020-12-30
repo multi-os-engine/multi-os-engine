@@ -45,6 +45,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKSourceRevision
+ * @abstract      Represents a specific revision of an HKSource.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -173,10 +177,18 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     @Selector("initWithCoder:")
     public native HKSourceRevision initWithCoder(NSCoder coder);
 
+    /**
+     * @method        initWithSource:version:
+     * @abstract      Initializes a new HKSourceRevision with the given source and version.
+     */
     @Generated
     @Selector("initWithSource:version:")
     public native HKSourceRevision initWithSourceVersion(HKSource source, String version);
 
+    /**
+     * @property      source
+     * @abstract      The HKSource of the receiver.
+     */
     @Generated
     @Selector("source")
     public native HKSource source();
@@ -187,20 +199,41 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
         return supportsSecureCoding();
     }
 
+    /**
+     * @property      version
+     * @abstract      The version of the source property.
+     * @discussion    This value is taken from the CFBundleVersion of the source. May be nil for older data.
+     */
     @Generated
     @Selector("version")
     public native String version();
 
+    /**
+     * @method        initWithSource:version:productType:operatingSystemVersion:
+     * @abstract      Initializes a new HKSourceRevision with the given source, version, product type, and operating system
+     *                version.
+     */
     @Generated
     @Selector("initWithSource:version:productType:operatingSystemVersion:")
     public native HKSourceRevision initWithSourceVersionProductTypeOperatingSystemVersion(HKSource source,
             String version, String productType, @ByValue NSOperatingSystemVersion operatingSystemVersion);
 
+    /**
+     * @property      operatingSystemVersion
+     * @abstract      Represents the operating system version of the device running HealthKit when the object was created.
+     * @discussion    iOS versions after 8.0 but prior to 8.2 are saved as 8.0, and iOS version after 8.2 but prior to 9.0
+     *                are saved as 8.2.
+     */
     @Generated
     @Selector("operatingSystemVersion")
     @ByValue
     public native NSOperatingSystemVersion operatingSystemVersion();
 
+    /**
+     * @property      productType
+     * @abstract      Represents the product type of the device running HealthKit when the object was created.
+     * @discussion    This value may be nil for older data, which indicates an unknown product type.
+     */
     @Generated
     @Selector("productType")
     public native String productType();

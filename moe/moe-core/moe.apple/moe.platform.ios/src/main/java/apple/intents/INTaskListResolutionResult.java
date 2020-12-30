@@ -73,6 +73,9 @@ public class INTaskListResolutionResult extends INIntentResolutionResult {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the taskList with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithTaskListToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -86,6 +89,9 @@ public class INTaskListResolutionResult extends INIntentResolutionResult {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * This resolution result is to ask Siri to disambiguate between the provided INTaskList.
+     */
     @Generated
     @Selector("disambiguationWithTaskListsToDisambiguate:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -150,6 +156,10 @@ public class INTaskListResolutionResult extends INIntentResolutionResult {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INTaskList. The resolvedTaskList can be different than the original INTaskList. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedTaskList:")
     @MappedReturn(ObjCObjectMapper.class)

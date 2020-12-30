@@ -394,6 +394,9 @@ public class UITableViewHeaderFooterView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * This property is always nil when a non-nil `backgroundConfiguration` is set.
+     */
     @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
@@ -402,6 +405,9 @@ public class UITableViewHeaderFooterView extends UIView {
     @Selector("contentView")
     public native UIView contentView();
 
+    /**
+     * only supported for headers in grouped style
+     */
     @Generated
     @Selector("detailTextLabel")
     public native UILabel detailTextLabel();
@@ -422,6 +428,9 @@ public class UITableViewHeaderFooterView extends UIView {
     @Selector("initWithReuseIdentifier:")
     public native UITableViewHeaderFooterView initWithReuseIdentifier(String reuseIdentifier);
 
+    /**
+     * if the view is reusable (has a reuse identifier), this is called just before the view is returned from the table view method dequeueReusableHeaderFooterViewWithIdentifier:.  If you override, you MUST call super.
+     */
     @Generated
     @Selector("prepareForReuse")
     public native void prepareForReuse();
@@ -430,10 +439,16 @@ public class UITableViewHeaderFooterView extends UIView {
     @Selector("reuseIdentifier")
     public native String reuseIdentifier();
 
+    /**
+     * This property is always nil when a non-nil `backgroundConfiguration` is set.
+     */
     @Generated
     @Selector("setBackgroundView:")
     public native void setBackgroundView(UIView value);
 
+    /**
+     * These properties will always return nil when a non-nil `contentConfiguration` is set.
+     */
     @Generated
     @Selector("textLabel")
     public native UILabel textLabel();
@@ -444,51 +459,100 @@ public class UITableViewHeaderFooterView extends UIView {
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    /**
+     * When YES, the header/footer will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when the header/footer's
+     * configuration state changes, and apply the updated configuration back to the header/footer. The default value is YES.
+     */
     @Generated
     @Selector("automaticallyUpdatesBackgroundConfiguration")
     public native boolean automaticallyUpdatesBackgroundConfiguration();
 
+    /**
+     * When YES, the header/footer will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the header/footer's
+     * configuration state changes, and apply the updated configuration back to the header/footer. The default value is YES.
+     */
     @Generated
     @Selector("automaticallyUpdatesContentConfiguration")
     public native boolean automaticallyUpdatesContentConfiguration();
 
+    /**
+     * Setting a background configuration supersedes the header/footer's backgroundView. The default value is nil.
+     */
     @Generated
     @Selector("backgroundConfiguration")
     public native UIBackgroundConfiguration backgroundConfiguration();
 
+    /**
+     * Returns the current configuration state for the header/footer.
+     * To add your own custom state(s), override the getter and call super to obtain an instance with the
+     * system properties set, then set your own custom states as desired.
+     */
     @Generated
     @Selector("configurationState")
     public native UIViewConfigurationState configurationState();
 
+    /**
+     * Setting a content configuration replaces the existing contentView of the header/footer with a new content view instance from the configuration,
+     * or directly applies the configuration to the existing content view if the configuration is compatible with the existing content view type.
+     * The default value is nil. After a configuration has been set, setting this property to nil will replace the current content view with a new content view.
+     */
     @Generated
     @Selector("contentConfiguration")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIContentConfiguration contentConfiguration();
 
+    /**
+     * Returns a default list content configuration for the header/footer view's style.
+     */
     @Generated
     @Selector("defaultContentConfiguration")
     public native UIListContentConfiguration defaultContentConfiguration();
 
+    /**
+     * When YES, the header/footer will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when the header/footer's
+     * configuration state changes, and apply the updated configuration back to the header/footer. The default value is YES.
+     */
     @Generated
     @Selector("setAutomaticallyUpdatesBackgroundConfiguration:")
     public native void setAutomaticallyUpdatesBackgroundConfiguration(boolean value);
 
+    /**
+     * When YES, the header/footer will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the header/footer's
+     * configuration state changes, and apply the updated configuration back to the header/footer. The default value is YES.
+     */
     @Generated
     @Selector("setAutomaticallyUpdatesContentConfiguration:")
     public native void setAutomaticallyUpdatesContentConfiguration(boolean value);
 
+    /**
+     * Setting a background configuration supersedes the header/footer's backgroundView. The default value is nil.
+     */
     @Generated
     @Selector("setBackgroundConfiguration:")
     public native void setBackgroundConfiguration(UIBackgroundConfiguration value);
 
+    /**
+     * Setting a content configuration replaces the existing contentView of the header/footer with a new content view instance from the configuration,
+     * or directly applies the configuration to the existing content view if the configuration is compatible with the existing content view type.
+     * The default value is nil. After a configuration has been set, setting this property to nil will replace the current content view with a new content view.
+     */
     @Generated
     @Selector("setContentConfiguration:")
     public native void setContentConfiguration(@Mapped(ObjCObjectMapper.class) UIContentConfiguration value);
 
+    /**
+     * Requests the view update its configuration for its current state. This method is called automatically
+     * when the view's `configurationState` may have changed, as well as in other circumstances where an
+     * update may be required. Multiple requests may be coalesced into a single update at the appropriate time.
+     */
     @Generated
     @Selector("setNeedsUpdateConfiguration")
     public native void setNeedsUpdateConfiguration();
 
+    /**
+     * Subclasses should override this method and update the view's configuration using the state provided.
+     * This method should not be called directly, use `setNeedsUpdateConfiguration` to request an update.
+     */
     @Generated
     @Selector("updateConfigurationUsingState:")
     public native void updateConfigurationUsingState(UIViewConfigurationState state);

@@ -90,12 +90,35 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract   Encode a MPSCNNLoss filter and return a gradient.
+     * @discussion This -encode call is similar to the encodeToCommandBuffer:sourceImage:labels:destinationImage: above,
+     *             except that it creates and returns the MPSImage with the loss gradient result.
+     * 
+     * @param      commandBuffer       The MTLCommandBuffer on which to encode.
+     * @param      sourceImage         The source image from the previous filter in the graph (in the inference direction).
+     * @param      labels              The object containing the target data (labels) and optionally, weights for the labels.
+     * @return     The MPSImage containing the gradient result.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:labels:")
     public native MPSImage encodeToCommandBufferSourceImageLabels(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
             MPSCNNLossLabels labels);
 
+    /**
+     * @abstract   Encode a MPSCNNYOLOLoss filter and return a gradient in the destinationImage.
+     * @discussion This filter consumes the output of a previous layer and the MPSCNNLossLabels object containing
+     *             the target data (labels) and optionally, weights for the labels.
+     *             The destinationImage contains the computed gradient for the loss layer.
+     *             It serves as a source gradient input image to the first gradient layer (in the backward direction).
+     *             For information on the data-layout see @ref MPSCNNYOLOLossDescriptor.
+     * 
+     * @param      commandBuffer       The MTLCommandBuffer on which to encode.
+     * @param      sourceImage         The source image from the previous filter in the graph (in the inference direction).
+     * @param      labels              The object containing the target data (labels) and optionally, weights for the labels.
+     * @param      destinationImage    The MPSImage into which to write the gradient result.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:labels:destinationImage:")
     public native void encodeToCommandBufferSourceImageLabelsDestinationImage(
@@ -115,6 +138,9 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Selector("initWithCoder:")
     public native MPSCNNYOLOLoss initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract <NSSecureCoding> support
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSCNNYOLOLoss initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
@@ -123,6 +149,12 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Selector("initWithDevice:")
     public native MPSCNNYOLOLoss initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Initialize the loss filter with a loss descriptor.
+     * @param      device                   The device the filter will run on.
+     * @param      lossDescriptor           The loss descriptor.
+     * @return     A valid MPSCNNLoss object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:lossDescriptor:")
     public native MPSCNNYOLOLoss initWithDeviceLossDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
@@ -149,18 +181,34 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property   lossClasses
+     * @abstract   loss filter for prediction of bounding box predicted class of the detected object
+     */
     @Generated
     @Selector("lossClasses")
     public native MPSCNNLoss lossClasses();
 
+    /**
+     * @property   lossConfidence
+     * @abstract   loss filter for prediction of bounding box probability of presence of object
+     */
     @Generated
     @Selector("lossConfidence")
     public native MPSCNNLoss lossConfidence();
 
+    /**
+     * @property   lossWH
+     * @abstract   loss filter for prediction of bounding box size
+     */
     @Generated
     @Selector("lossWH")
     public native MPSCNNLoss lossWH();
 
+    /**
+     * @property   lossXY
+     * @abstract   loss filter for prediction of bounding box position
+     */
     @Generated
     @Selector("lossXY")
     public native MPSCNNLoss lossXY();
@@ -212,6 +260,9 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Selector("scaleWH")
     public native float scaleWH();
 
+    /**
+     * See MPSCNNYOLOLossDescriptor for information about the following properties.
+     */
     @Generated
     @Selector("scaleXY")
     public native float scaleXY();

@@ -22,7 +22,13 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class MPChangeLanguageOptionSetting {
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * No Language Option Change
+     */
     @Generated @NInt public static final long NowPlayingItemOnly = 0x0000000000000001L;
+    /**
+     * The Language Option change applies only the the now playing item
+     */
     @Generated @NInt public static final long Permanent = 0x0000000000000002L;
 
     @Generated

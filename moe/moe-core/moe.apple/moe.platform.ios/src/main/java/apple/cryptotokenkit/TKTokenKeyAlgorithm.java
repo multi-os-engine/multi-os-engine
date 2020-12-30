@@ -24,6 +24,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract TKTokenKeyAlgorithm Encapsulates cryptographic algorithm, possibly with additional associated required algorithms.
+ * @discussion An algorithm supported by a key can be usually described by one value of @c SecKeyAlgorithm enumeration.  However, some tokens (notably smartcards) require that input data for the operation are in generic format, but that generic format must be formatted according to some more specific algorithm.  An example for this would be token accepting raw data for cryptographic signature but requiring that raw data are formatted according to PKCS1 padding rules.  To express such requirement, TKTokenKeyAlgorithm defines target algorithm (@c kSecKeyAlgorithmRSASignatureRaw in our example) and a set of other algorithms which were used (continuing example above, @c kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA1 will be reported as supported).
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -104,6 +108,9 @@ public class TKTokenKeyAlgorithm extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * @brief Checks if specified algorithm is base operation algorithm.
+     */
     @Generated
     @Selector("isAlgorithm:")
     public native boolean isAlgorithm(CFStringRef algorithm);
@@ -138,6 +145,9 @@ public class TKTokenKeyAlgorithm extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * @brief Checks whether specified algorithm is either target algorithm or one of the algorithms through which the operation passed.
+     */
     @Generated
     @Selector("supportsAlgorithm:")
     public native boolean supportsAlgorithm(CFStringRef algorithm);

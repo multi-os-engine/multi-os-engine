@@ -3,6 +3,12 @@ package apple.authenticationservices.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum ASCredentialIdentityStoreErrorCode
+ * @constant ASCredentialIdentityStoreErrorCodeInternalError The operation failed due to an internal error.
+ * @constant ASCredentialIdentityStoreErrorCodeStoreDisabled The operation failed because the credential identity store is disabled.
+ * @constant ASCredentialIdentityStoreErrorCodeStoreBusy The operation failed because the credential identity store is busy. Attempt the operation again at a later time.
+ */
 @Generated
 public final class ASCredentialIdentityStoreErrorCode {
     @Generated

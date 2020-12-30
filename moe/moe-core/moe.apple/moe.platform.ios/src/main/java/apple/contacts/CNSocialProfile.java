@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract An immutable value object representing a social profile.
+ * 
+ * @discussion CNSocialProfile is thread safe.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
@@ -127,10 +132,16 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Returns a user displayable property name.
+     */
     @Generated
     @Selector("localizedStringForKey:")
     public static native String localizedStringForKey(String key);
 
+    /**
+     * Returns a user displayable service name.
+     */
     @Generated
     @Selector("localizedStringForService:")
     public static native String localizedStringForService(String service);

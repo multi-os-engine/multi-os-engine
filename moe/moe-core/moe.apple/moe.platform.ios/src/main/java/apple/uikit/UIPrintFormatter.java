@@ -166,6 +166,9 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * override point to add custom drawing
+     */
     @Generated
     @Selector("drawInRect:forPageAtIndex:")
     public native void drawInRectForPageAtIndex(@ByValue CGRect rect, @NInt long pageIndex);
@@ -174,30 +177,48 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @Selector("init")
     public native UIPrintFormatter init();
 
+    /**
+     * default is 0.0. limits content to width
+     */
     @Generated
     @Selector("maximumContentHeight")
     @NFloat
     public native double maximumContentHeight();
 
+    /**
+     * default is 0.0. limits content to height
+     */
     @Generated
     @Selector("maximumContentWidth")
     @NFloat
     public native double maximumContentWidth();
 
+    /**
+     * calculated
+     */
     @Generated
     @Selector("pageCount")
     @NInt
     public native long pageCount();
 
+    /**
+     * default is UIEdgeInsetsZero from edge of the page.  applies to content on each page (each edge applies to each page)
+     */
     @Generated
     @Selector("perPageContentInsets")
     @ByValue
     public native UIEdgeInsets perPageContentInsets();
 
+    /**
+     * default is nil. set when formatter added to a print page renderer
+     */
     @Generated
     @Selector("printPageRenderer")
     public native UIPrintPageRenderer printPageRenderer();
 
+    /**
+     * returns empty rect if index out of range
+     */
     @Generated
     @Selector("rectForPageAtIndex:")
     @ByValue
@@ -211,22 +232,37 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @Selector("setContentInsets:")
     public native void setContentInsets(@ByValue UIEdgeInsets value);
 
+    /**
+     * default is 0.0. limits content to width
+     */
     @Generated
     @Selector("setMaximumContentHeight:")
     public native void setMaximumContentHeight(@NFloat double value);
 
+    /**
+     * default is 0.0. limits content to height
+     */
     @Generated
     @Selector("setMaximumContentWidth:")
     public native void setMaximumContentWidth(@NFloat double value);
 
+    /**
+     * default is UIEdgeInsetsZero from edge of the page.  applies to content on each page (each edge applies to each page)
+     */
     @Generated
     @Selector("setPerPageContentInsets:")
     public native void setPerPageContentInsets(@ByValue UIEdgeInsets value);
 
+    /**
+     * default is NSNotFound
+     */
     @Generated
     @Selector("setStartPage:")
     public native void setStartPage(@NInt long value);
 
+    /**
+     * default is NSNotFound
+     */
     @Generated
     @Selector("startPage")
     @NInt

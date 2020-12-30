@@ -3,6 +3,10 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum MTLSparseTextureRegionAlignmentMode
+ * @abstract MTLSparseTextureRegionAlignmentMode determines type of alignment used when converting from pixel region to tile region.
+ */
 @Generated
 public final class MTLSparseTextureRegionAlignmentMode {
     @Generated

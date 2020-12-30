@@ -179,12 +179,19 @@ public class INWorkoutLocationTypeResolutionResult extends INIntentResolutionRes
     @Selector("init")
     public native INWorkoutLocationTypeResolutionResult init();
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithWorkoutLocationTypeToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object confirmationRequiredWithWorkoutLocationTypeToConfirm(
             @NInt long workoutLocationTypeToConfirm);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INWorkoutLocationType. The resolvedValue can be different than the original INWorkoutLocationType. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedWorkoutLocationType:")
     @MappedReturn(ObjCObjectMapper.class)

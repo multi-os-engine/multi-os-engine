@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A value object that encapsulates the response given by an account provider.
+ */
 @Generated
 @Library("VideoSubscriberAccount")
 @Runtime(ObjCRuntime.class)
@@ -150,10 +153,17 @@ public class VSAccountProviderResponse extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Identifies the protocol used in constructing this response.
+     */
     @Generated
     @Selector("authenticationScheme")
     public native String authenticationScheme();
 
+    /**
+     * The raw response from the provider.
+     * May be nil if the response contained security-sensitive information.
+     */
     @Generated
     @Selector("body")
     public native String body();
@@ -162,6 +172,10 @@ public class VSAccountProviderResponse extends NSObject {
     @Selector("init")
     public native VSAccountProviderResponse init();
 
+    /**
+     * The status code for this response.
+     * May be nil if there is no meaningful value for this type of response.
+     */
     @Generated
     @Selector("status")
     public native String status();

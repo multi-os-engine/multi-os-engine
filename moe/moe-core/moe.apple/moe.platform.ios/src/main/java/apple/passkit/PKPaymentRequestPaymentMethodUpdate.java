@@ -148,6 +148,10 @@ public class PKPaymentRequestPaymentMethodUpdate extends PKPaymentRequestUpdate 
     @Selector("errors")
     public native NSArray<? extends NSError> errors();
 
+    /**
+     * You may optionally supply errors here.
+     * See PKError for specific NSError keys to use.
+     */
     @Generated
     @Selector("initWithErrors:paymentSummaryItems:")
     public native PKPaymentRequestPaymentMethodUpdate initWithErrorsPaymentSummaryItems(

@@ -9,7 +9,17 @@ public final class UICellConfigurationDropState {
     private UICellConfigurationDropState() {
     }
 
+    /**
+     * The cell is not associated with a drag session.
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * A drag session is active and may perform a drop in the cell's container, but the cell itself
+     * is not the drop target.
+     */
     @Generated @NInt public static final long NotTargeted = 0x0000000000000001L;
+    /**
+     * The cell is the drop target for a drag session.
+     */
     @Generated @NInt public static final long Targeted = 0x0000000000000002L;
 }

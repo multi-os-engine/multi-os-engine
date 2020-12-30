@@ -23,6 +23,9 @@ public interface CPSessionConfigurationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This delegate is called whenever the types of limited user interfaces have changed.
+     */
     @Generated
     @IsOptional
     @Selector("sessionConfiguration:limitedUserInterfacesChanged:")

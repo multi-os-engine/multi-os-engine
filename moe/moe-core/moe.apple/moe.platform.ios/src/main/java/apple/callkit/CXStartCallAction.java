@@ -162,10 +162,16 @@ public class CXStartCallAction extends CXCallAction {
     @Selector("contactIdentifier")
     public native String contactIdentifier();
 
+    /**
+     * Normally, providers can just call -[CXAction fulfill] to indicate action fulfillment. Use this method to note a specific date that the call started if it is different from [NSDate date]. A call is considered started when its invitation has been sent to the remote callee.
+     */
     @Generated
     @Selector("fulfillWithDateStarted:")
     public native void fulfillWithDateStarted(NSDate dateStarted);
 
+    /**
+     * Handle for the party to call
+     */
     @Generated
     @Selector("handle")
     public native CXHandle handle();
@@ -198,6 +204,9 @@ public class CXStartCallAction extends CXCallAction {
     @Selector("setContactIdentifier:")
     public native void setContactIdentifier(String value);
 
+    /**
+     * Handle for the party to call
+     */
     @Generated
     @Selector("setHandle:")
     public native void setHandle(CXHandle value);

@@ -170,6 +170,9 @@ public class UNTextInputNotificationResponse extends UNNotificationResponse {
         return supportsSecureCoding();
     }
 
+    /**
+     * The text entered or chosen by the user.
+     */
     @Generated
     @Selector("userText")
     public native String userText();

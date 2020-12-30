@@ -25,11 +25,18 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @abstract The QLPreviewItem protocol declares the methods that a QLPreviewController instance uses to access the contents of a given item.
+ */
 @Generated
 @Library("QuickLook")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("QLPreviewItem")
 public interface QLPreviewItem {
+    /**
+     * @abstract The item's title this will be used as apparent item title.
+     * @discussion The title replaces the default item display name. This property is optional.
+     */
     @Generated
     @IsOptional
     @Selector("previewItemTitle")
@@ -37,6 +44,10 @@ public interface QLPreviewItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @abstract The URL of the item to preview.
+     * @discussion The URL must be a file URL.
+     */
     @Generated
     @Selector("previewItemURL")
     NSURL previewItemURL();

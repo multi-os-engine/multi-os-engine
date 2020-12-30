@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class		AVAssetSegmentReportSampleInformation
+ * @abstract	This class is vended by AVAssetSegmentTrackReport. It will provide information on a sample in a track.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -109,6 +113,10 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * @property	isSyncSample
+     * @abstract	Indicates whether the sample is a sync sample.
+     */
     @Generated
     @Selector("isSyncSample")
     public native boolean isSyncSample();
@@ -117,6 +125,10 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property	length
+     * @abstract	The length of the sample.
+     */
     @Generated
     @Selector("length")
     @NInt
@@ -128,11 +140,20 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property	offset
+     * @abstract	The offset of the sample in the segment.
+     */
     @Generated
     @Selector("offset")
     @NInt
     public native long offset();
 
+    /**
+     * @property	presentationTimeStamp
+     * @abstract	The presentation timestamp (PTS) of the sample.
+     * @discussion	This timestamp may be different from the earliestPresentationTimeStamp if the video is encoded using frame reordering.
+     */
     @Generated
     @Selector("presentationTimeStamp")
     @ByValue

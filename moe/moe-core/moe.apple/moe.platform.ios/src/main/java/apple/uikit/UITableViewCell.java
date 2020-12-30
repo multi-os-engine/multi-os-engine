@@ -351,16 +351,25 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @NInt
     public static native long version_static();
 
+    /**
+     * action to call on accessory view clicked. set by UITableView
+     */
     @Generated
     @Deprecated
     @Selector("accessoryAction")
     public native SEL accessoryAction();
 
+    /**
+     * default is UITableViewCellAccessoryNone. use to set standard type
+     */
     @Generated
     @Selector("accessoryType")
     @NInt
     public native long accessoryType();
 
+    /**
+     * if set, use custom view. ignore accessoryType. tracks if enabled can calls accessory action
+     */
     @Generated
     @Selector("accessoryView")
     public native UIView accessoryView();
@@ -412,14 +421,23 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * Always nil when a non-nil `backgroundConfiguration` is set. The 'backgroundView' will be added as a subview behind all other views.
+     */
     @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
 
+    /**
+     * Custom subviews should be added to the content view.
+     */
     @Generated
     @Selector("contentView")
     public native UIView contentView();
 
+    /**
+     * default is nil.  label will be created if necessary (and the current style supports a detail label).
+     */
     @Generated
     @Selector("detailTextLabel")
     public native UILabel detailTextLabel();
@@ -428,20 +446,32 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("didTransitionToState:")
     public native void didTransitionToState(@NUInt long state);
 
+    /**
+     * action to call on insert/delete call. set by UITableView
+     */
     @Generated
     @Deprecated
     @Selector("editAction")
     public native SEL editAction();
 
+    /**
+     * default is UITableViewCellAccessoryNone. use to set standard type
+     */
     @Generated
     @Selector("editingAccessoryType")
     @NInt
     public native long editingAccessoryType();
 
+    /**
+     * if set, use custom view. ignore editingAccessoryType. tracks if enabled can calls accessory action
+     */
     @Generated
     @Selector("editingAccessoryView")
     public native UIView editingAccessoryView();
 
+    /**
+     * default is UITableViewCellEditingStyleNone. This is set by UITableView using the delegate's value for cells who customize their appearance accordingly.
+     */
     @Generated
     @Selector("editingStyle")
     @NInt
@@ -456,6 +486,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @NInt
     public native long focusStyle();
 
+    /**
+     * default is nil (Use default font)
+     */
     @Generated
     @Deprecated
     @Selector("font")
@@ -494,25 +527,40 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("gestureRecognizerShouldBegin:")
     public native boolean gestureRecognizerShouldBegin(UIGestureRecognizer gestureRecognizer);
 
+    /**
+     * default is YES
+     */
     @Generated
     @Deprecated
     @Selector("hidesAccessoryWhenEditing")
     public native boolean hidesAccessoryWhenEditing();
 
+    /**
+     * default is nil. appears on left next to title.
+     */
     @Generated
     @Deprecated
     @Selector("image")
     public native UIImage image();
 
+    /**
+     * default is nil.  image view will be created if necessary.
+     */
     @Generated
     @Selector("imageView")
     public native UIImageView imageView();
 
+    /**
+     * adjust content indent. default is 0
+     */
     @Generated
     @Selector("indentationLevel")
     @NInt
     public native long indentationLevel();
 
+    /**
+     * width for each level. default is 10.0
+     */
     @Generated
     @Selector("indentationWidth")
     @NFloat
@@ -530,49 +578,82 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("initWithFrame:")
     public native UITableViewCell initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Frame is ignored.  The size will be specified by the table view width and row height.
+     */
     @Generated
     @Deprecated
     @Selector("initWithFrame:reuseIdentifier:")
     public native UITableViewCell initWithFrameReuseIdentifier(@ByValue CGRect frame, String reuseIdentifier);
 
+    /**
+     * Designated initializer.  If the cell can be reused, you must pass in a reuse identifier.  You should use the same reuse identifier for all cells of the same form.
+     */
     @Generated
     @Selector("initWithStyle:reuseIdentifier:")
     public native UITableViewCell initWithStyleReuseIdentifier(@NInt long style, String reuseIdentifier);
 
+    /**
+     * show appropriate edit controls (+/- & reorder). By default -setEditing: calls setEditing:animated: with NO for animated.
+     */
     @Generated
     @Selector("isEditing")
     public native boolean isEditing();
 
+    /**
+     * show appropriate edit controls (+/- & reorder). By default -setEditing: calls setEditing:animated: with NO for animated.
+     */
     @Generated
     @Selector("setEditing:")
     public native void setEditing(boolean value);
 
+    /**
+     * set highlighted state (title, image, background). default is NO. animated is NO
+     */
     @Generated
     @Selector("isHighlighted")
     public native boolean isHighlighted();
 
+    /**
+     * set highlighted state (title, image, background). default is NO. animated is NO
+     */
     @Generated
     @Selector("setHighlighted:")
     public native void setHighlighted(boolean value);
 
+    /**
+     * set selected state (title, image, background). default is NO. animated is NO
+     */
     @Generated
     @Selector("isSelected")
     public native boolean isSelected();
 
+    /**
+     * set selected state (title, image, background). default is NO. animated is NO
+     */
     @Generated
     @Selector("setSelected:")
     public native void setSelected(boolean value);
 
+    /**
+     * default is UILineBreakModeTailTruncation
+     */
     @Generated
     @Deprecated
     @Selector("lineBreakMode")
     @NInt
     public native long lineBreakMode();
 
+    /**
+     * Always nil when a non-nil `backgroundConfiguration` is set. If not nil, takes the place of the selectedBackgroundView when using multiple selection.
+     */
     @Generated
     @Selector("multipleSelectionBackgroundView")
     public native UIView multipleSelectionBackgroundView();
 
+    /**
+     * if the cell is reusable (has a reuse identifier), this is called just before the cell is returned from the table view method dequeueReusableCellWithIdentifier:.  If you override, you MUST call super.
+     */
     @Generated
     @Selector("prepareForReuse")
     public native void prepareForReuse();
@@ -581,47 +662,77 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("reuseIdentifier")
     public native String reuseIdentifier();
 
+    /**
+     * Always nil when a non-nil `backgroundConfiguration` is set. The 'selectedBackgroundView' will be added as a subview directly above the backgroundView if not nil, or behind all other views. It is added as a subview only when the cell is selected. Calling -setSelected:animated: will cause the 'selectedBackgroundView' to animate in and out with an alpha fade.
+     */
     @Generated
     @Selector("selectedBackgroundView")
     public native UIView selectedBackgroundView();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Deprecated
     @Selector("selectedImage")
     public native UIImage selectedImage();
 
+    /**
+     * default is nil (text draws white)
+     */
     @Generated
     @Deprecated
     @Selector("selectedTextColor")
     public native UIColor selectedTextColor();
 
+    /**
+     * default is UITableViewCellSelectionStyleDefault.
+     */
     @Generated
     @Selector("selectionStyle")
     @NInt
     public native long selectionStyle();
 
+    /**
+     * allows customization of the separator frame
+     */
     @Generated
     @Selector("separatorInset")
     @ByValue
     public native UIEdgeInsets separatorInset();
 
+    /**
+     * action to call on accessory view clicked. set by UITableView
+     */
     @Generated
     @Deprecated
     @Selector("setAccessoryAction:")
     public native void setAccessoryAction(SEL value);
 
+    /**
+     * default is UITableViewCellAccessoryNone. use to set standard type
+     */
     @Generated
     @Selector("setAccessoryType:")
     public native void setAccessoryType(@NInt long value);
 
+    /**
+     * if set, use custom view. ignore accessoryType. tracks if enabled can calls accessory action
+     */
     @Generated
     @Selector("setAccessoryView:")
     public native void setAccessoryView(UIView value);
 
+    /**
+     * Always nil when a non-nil `backgroundConfiguration` is set. The 'backgroundView' will be added as a subview behind all other views.
+     */
     @Generated
     @Selector("setBackgroundView:")
     public native void setBackgroundView(UIView value);
 
+    /**
+     * action to call on insert/delete call. set by UITableView
+     */
     @Generated
     @Deprecated
     @Selector("setEditAction:")
@@ -631,10 +742,16 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("setEditing:animated:")
     public native void setEditingAnimated(boolean editing, boolean animated);
 
+    /**
+     * default is UITableViewCellAccessoryNone. use to set standard type
+     */
     @Generated
     @Selector("setEditingAccessoryType:")
     public native void setEditingAccessoryType(@NInt long value);
 
+    /**
+     * if set, use custom view. ignore editingAccessoryType. tracks if enabled can calls accessory action
+     */
     @Generated
     @Selector("setEditingAccessoryView:")
     public native void setEditingAccessoryView(UIView value);
@@ -643,81 +760,135 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("setFocusStyle:")
     public native void setFocusStyle(@NInt long value);
 
+    /**
+     * default is nil (Use default font)
+     */
     @Generated
     @Deprecated
     @Selector("setFont:")
     public native void setFont(UIFont value);
 
+    /**
+     * default is YES
+     */
     @Generated
     @Deprecated
     @Selector("setHidesAccessoryWhenEditing:")
     public native void setHidesAccessoryWhenEditing(boolean value);
 
+    /**
+     * animate between regular and highlighted state
+     */
     @Generated
     @Selector("setHighlighted:animated:")
     public native void setHighlightedAnimated(boolean highlighted, boolean animated);
 
+    /**
+     * default is nil. appears on left next to title.
+     */
     @Generated
     @Deprecated
     @Selector("setImage:")
     public native void setImage(UIImage value);
 
+    /**
+     * adjust content indent. default is 0
+     */
     @Generated
     @Selector("setIndentationLevel:")
     public native void setIndentationLevel(@NInt long value);
 
+    /**
+     * width for each level. default is 10.0
+     */
     @Generated
     @Selector("setIndentationWidth:")
     public native void setIndentationWidth(@NFloat double value);
 
+    /**
+     * default is UILineBreakModeTailTruncation
+     */
     @Generated
     @Deprecated
     @Selector("setLineBreakMode:")
     public native void setLineBreakMode(@NInt long value);
 
+    /**
+     * Always nil when a non-nil `backgroundConfiguration` is set. If not nil, takes the place of the selectedBackgroundView when using multiple selection.
+     */
     @Generated
     @Selector("setMultipleSelectionBackgroundView:")
     public native void setMultipleSelectionBackgroundView(UIView value);
 
+    /**
+     * animate between regular and selected state
+     */
     @Generated
     @Selector("setSelected:animated:")
     public native void setSelectedAnimated(boolean selected, boolean animated);
 
+    /**
+     * Always nil when a non-nil `backgroundConfiguration` is set. The 'selectedBackgroundView' will be added as a subview directly above the backgroundView if not nil, or behind all other views. It is added as a subview only when the cell is selected. Calling -setSelected:animated: will cause the 'selectedBackgroundView' to animate in and out with an alpha fade.
+     */
     @Generated
     @Selector("setSelectedBackgroundView:")
     public native void setSelectedBackgroundView(UIView value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Deprecated
     @Selector("setSelectedImage:")
     public native void setSelectedImage(UIImage value);
 
+    /**
+     * default is nil (text draws white)
+     */
     @Generated
     @Deprecated
     @Selector("setSelectedTextColor:")
     public native void setSelectedTextColor(UIColor value);
 
+    /**
+     * default is UITableViewCellSelectionStyleDefault.
+     */
     @Generated
     @Selector("setSelectionStyle:")
     public native void setSelectionStyle(@NInt long value);
 
+    /**
+     * allows customization of the separator frame
+     */
     @Generated
     @Selector("setSeparatorInset:")
     public native void setSeparatorInset(@ByValue UIEdgeInsets value);
 
+    /**
+     * default is YES.  This is unrelated to the indentation level below.
+     */
     @Generated
     @Selector("setShouldIndentWhileEditing:")
     public native void setShouldIndentWhileEditing(boolean value);
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setShowsReorderControl:")
     public native void setShowsReorderControl(boolean value);
 
+    /**
+     * target for insert/delete/accessory clicks. default is nil (i.e. go up responder chain). weak reference
+     */
     @Generated
     @Deprecated
     @Selector("setTarget:")
     public native void setTarget_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * target for insert/delete/accessory clicks. default is nil (i.e. go up responder chain). weak reference
+     */
     @Generated
     @Deprecated
     public void setTarget(@Mapped(ObjCObjectMapper.class) Object value) {
@@ -731,71 +902,121 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
         }
     }
 
+    /**
+     * default is nil
+     */
     @Generated
     @Deprecated
     @Selector("setText:")
     public native void setText(String value);
 
+    /**
+     * default is UITextAlignmentLeft
+     */
     @Generated
     @Deprecated
     @Selector("setTextAlignment:")
     public native void setTextAlignment(@NInt long value);
 
+    /**
+     * default is nil (text draws black)
+     */
     @Generated
     @Deprecated
     @Selector("setTextColor:")
     public native void setTextColor(UIColor value);
 
+    /**
+     * default is YES.  This is unrelated to the indentation level below.
+     */
     @Generated
     @Selector("shouldIndentWhileEditing")
     public native boolean shouldIndentWhileEditing();
 
+    /**
+     * currently showing "Delete" button
+     */
     @Generated
     @Selector("showingDeleteConfirmation")
     public native boolean showingDeleteConfirmation();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("showsReorderControl")
     public native boolean showsReorderControl();
 
+    /**
+     * target for insert/delete/accessory clicks. default is nil (i.e. go up responder chain). weak reference
+     */
     @Generated
     @Deprecated
     @Selector("target")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object target();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Deprecated
     @Selector("text")
     public native String text();
 
+    /**
+     * default is UITextAlignmentLeft
+     */
     @Generated
     @Deprecated
     @Selector("textAlignment")
     @NInt
     public native long textAlignment();
 
+    /**
+     * default is nil (text draws black)
+     */
     @Generated
     @Deprecated
     @Selector("textColor")
     public native UIColor textColor();
 
+    /**
+     * default is nil.  label will be created if necessary.
+     */
     @Generated
     @Selector("textLabel")
     public native UILabel textLabel();
 
+    /**
+     * These methods can be used by subclasses to animate additional changes to the cell when the cell is changing state
+     * Note that when the cell is swiped, the cell will be transitioned into the UITableViewCellStateShowingDeleteConfirmationMask state,
+     * but the UITableViewCellStateShowingEditControlMask will not be set.
+     */
     @Generated
     @Selector("willTransitionToState:")
     public native void willTransitionToState(@NUInt long state);
 
+    /**
+     * Override this method to receive notifications that the cell's drag state has changed.
+     * Call super if you want to apply the default appearance.
+     */
     @Generated
     @Selector("dragStateDidChange:")
     public native void dragStateDidChange(@NInt long dragState);
 
+    /**
+     * Controls whether the cell in the table view allows user interaction once it is part of a drag (UITableViewCellDragStateDragging).
+     * Default is NO.
+     */
     @Generated
     @Selector("setUserInteractionEnabledWhileDragging:")
     public native void setUserInteractionEnabledWhileDragging(boolean value);
 
+    /**
+     * Controls whether the cell in the table view allows user interaction once it is part of a drag (UITableViewCellDragStateDragging).
+     * Default is NO.
+     */
     @Generated
     @Selector("userInteractionEnabledWhileDragging")
     public native boolean userInteractionEnabledWhileDragging();
@@ -811,51 +1032,100 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("gestureRecognizer:shouldReceiveEvent:")
     public native boolean gestureRecognizerShouldReceiveEvent(UIGestureRecognizer gestureRecognizer, UIEvent event);
 
+    /**
+     * When YES, the cell will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when the cell's
+     * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+     */
     @Generated
     @Selector("automaticallyUpdatesBackgroundConfiguration")
     public native boolean automaticallyUpdatesBackgroundConfiguration();
 
+    /**
+     * When YES, the cell will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the cell's
+     * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+     */
     @Generated
     @Selector("automaticallyUpdatesContentConfiguration")
     public native boolean automaticallyUpdatesContentConfiguration();
 
+    /**
+     * Setting a background configuration supersedes the cell's backgroundView, selectedBackgroundView, and multipleSelectionBackgroundView. The default value is nil.
+     */
     @Generated
     @Selector("backgroundConfiguration")
     public native UIBackgroundConfiguration backgroundConfiguration();
 
+    /**
+     * Returns the current configuration state for the cell.
+     * To add your own custom state(s), override the getter and call super to obtain an instance with the
+     * system properties set, then set your own custom states as desired.
+     */
     @Generated
     @Selector("configurationState")
     public native UICellConfigurationState configurationState();
 
+    /**
+     * Setting a content configuration replaces the existing contentView of the cell with a new content view instance from the configuration,
+     * or directly applies the configuration to the existing content view if the configuration is compatible with the existing content view type.
+     * The default value is nil. After a configuration has been set, setting this property to nil will replace the current content view with a new content view.
+     */
     @Generated
     @Selector("contentConfiguration")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIContentConfiguration contentConfiguration();
 
+    /**
+     * Returns a default list content configuration for the cell's style.
+     */
     @Generated
     @Selector("defaultContentConfiguration")
     public native UIListContentConfiguration defaultContentConfiguration();
 
+    /**
+     * When YES, the cell will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when the cell's
+     * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+     */
     @Generated
     @Selector("setAutomaticallyUpdatesBackgroundConfiguration:")
     public native void setAutomaticallyUpdatesBackgroundConfiguration(boolean value);
 
+    /**
+     * When YES, the cell will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the cell's
+     * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+     */
     @Generated
     @Selector("setAutomaticallyUpdatesContentConfiguration:")
     public native void setAutomaticallyUpdatesContentConfiguration(boolean value);
 
+    /**
+     * Setting a background configuration supersedes the cell's backgroundView, selectedBackgroundView, and multipleSelectionBackgroundView. The default value is nil.
+     */
     @Generated
     @Selector("setBackgroundConfiguration:")
     public native void setBackgroundConfiguration(UIBackgroundConfiguration value);
 
+    /**
+     * Setting a content configuration replaces the existing contentView of the cell with a new content view instance from the configuration,
+     * or directly applies the configuration to the existing content view if the configuration is compatible with the existing content view type.
+     * The default value is nil. After a configuration has been set, setting this property to nil will replace the current content view with a new content view.
+     */
     @Generated
     @Selector("setContentConfiguration:")
     public native void setContentConfiguration(@Mapped(ObjCObjectMapper.class) UIContentConfiguration value);
 
+    /**
+     * Requests the cell update its configuration for its current state. This method is called automatically
+     * when the cell's `configurationState` may have changed, as well as in other circumstances where an
+     * update may be required. Multiple requests may be coalesced into a single update at the appropriate time.
+     */
     @Generated
     @Selector("setNeedsUpdateConfiguration")
     public native void setNeedsUpdateConfiguration();
 
+    /**
+     * Subclasses should override this method and update the cell's configuration using the state provided.
+     * This method should not be called directly, use `setNeedsUpdateConfiguration` to request an update.
+     */
     @Generated
     @Selector("updateConfigurationUsingState:")
     public native void updateConfigurationUsingState(UICellConfigurationState state);

@@ -26,22 +26,62 @@ public final class Vision {
     private Vision() {
     }
 
+    /**
+     * @discussion	Determines whether or not the normalized rect describes the identity rect of { {0, 0}, {1, 1} }.
+     * 
+     * @param	normalizedRect			The rectangle in the normalized coordinate space of [0..1].
+     * 
+     * @return YES if the rect is the identity rect; otherwise, NO.
+     */
     @Generated
     @CFunction
     public static native boolean VNNormalizedRectIsIdentityRect(@ByValue CGRect normalizedRect);
 
+    /**
+     * @discussion	Returns a point in (possibly non-integral) image coordinates that is projected from a point in a normalized coordinate space.
+     * 
+     * @param	normalizedPoint			The point in the normalized coordinate space of [0..1].
+     * 
+     * @param	imageWidth				The pixel width of the image.
+     * 
+     * @param	imageHeight				The pixel height of the image.
+     * 
+     * @return the point in image coordinates.
+     */
     @Generated
     @CFunction
     @ByValue
     public static native CGPoint VNImagePointForNormalizedPoint(@ByValue CGPoint normalizedPoint,
             @NUInt long imageWidth, @NUInt long imageHeight);
 
+    /**
+     * @discussion	Returns a rectangle in (possibly non-integral) image coordinates that is projected from a rectangle in a normalized coordinate space.
+     * 
+     * @param	normalizedRect			The rectangle in the normalized coordinate space of [0..1].
+     * 
+     * @param	imageWidth				The pixel width of the image.
+     * 
+     * @param	imageHeight				The pixel height of the image.
+     * 
+     * @return the rectangle in pixel coordinates.
+     */
     @Generated
     @CFunction
     @ByValue
     public static native CGRect VNImageRectForNormalizedRect(@ByValue CGRect normalizedRect, @NUInt long imageWidth,
             @NUInt long imageHeight);
 
+    /**
+     * @discussion	Returns an image rectangle in normalized coordinates.
+     * 
+     * @param	imageRect				The rectangle in image coordinate space.
+     * 
+     * @param	imageWidth				The pixel width of the image.
+     * 
+     * @param	imageHeight				The pixel height of the image.
+     * 
+     * @return the normalized rectangle.
+     */
     @Generated
     @CFunction
     @ByValue
@@ -138,35 +178,69 @@ public final class Vision {
     @MappedReturn(ObjCStringMapper.class)
     public static native String VNErrorDomain();
 
+    /**
+     * @brief	The normalized identity rect of { {0, 0}, {1, 1} }.
+     */
     @Generated
     @CVariable()
     @ByValue
     public static native CGRect VNNormalizedIdentityRect();
 
+    /**
+     * @const      VNImageOptionProperties
+     * @abstract   VNImageOptionProperties is the dictionary from CGImageSourceCopyPropertiesAtIndex. This contains metadata that can be used by some algorithms like horizon detection.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VNImageOptionProperties();
 
+    /**
+     * @brief VNImageOptionCameraIntrinsics  Specifies the camera intrinsics as an NSData or CFData representing a matrix_float3x3. See kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix for details
+     * @discussion
+     *     Camera intrinsic matrix is a CFData containing a matrix_float3x3, which is column-major. It has the following contents:
+     *     fx	0	ox
+     *     0	fy	oy
+     *     0	0	1
+     *     fx and fy are the focal length in pixels. For square pixels, they will have the same value.
+     *     ox and oy are the coordinates of the principal point. The origin is the upper left of the frame.
+     * @note When using a CMSampleBuffer as an input and that sample buffer has camera intrinsics attached to it, Vision will use the camera intrinsic from there unless overwritten by passing in as an explicit option which will take precedence.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VNImageOptionCameraIntrinsics();
 
+    /**
+     * @brief VNImageOptionCIContext  Specifies the CIContext to be used in Core Image operations of request handler. If this is not specified, Vision will create its own CIContext. This option is helpful when the passed in CIImage is the result of a CIFilter chain that has been executed on a CIContext or uses outputs of a CIImage on a given CIContext as they don't have to transfer to other contexts.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VNImageOptionCIContext();
 
+    /**
+     * The version of the Vision framework
+     */
     @Generated
     @CVariable()
     public static native double VNVisionVersionNumber();
 
+    /**
+     * @brief Obtain the size, in bytes, of a given element type.
+     * 
+     * @param	elementType		The element type.
+     * 
+     * @return a byte count, or 0 if the element type is unknown.
+     */
     @Generated
     @CFunction
     @NUInt
     public static native long VNElementTypeSize(@NUInt long elementType);
 
+    /**
+     * @brief	A value that indicates that the request revision is either unknown or not applicable.
+     */
     @Generated @NUInt public static final long VNRequestRevisionUnspecified = 0x0000000000000000L;
     @Generated @NUInt public static final long VNClassifyImageRequestRevision1 = 0x0000000000000001L;
     @Generated @NUInt public static final long VNDetectBarcodesRequestRevision1 = 0x0000000000000001L;
@@ -179,6 +253,9 @@ public final class Vision {
     @Generated @NUInt public static final long VNDetectHorizonRequestRevision1 = 0x0000000000000001L;
     @Generated @NUInt public static final long VNDetectRectanglesRequestRevision1 = 0x0000000000000001L;
     @Generated @NUInt public static final long VNDetectTextRectanglesRequestRevision1 = 0x0000000000000001L;
+    /**
+     * @brief VNRecognizeTextRequestRevision1 only supports English
+     */
     @Generated @NUInt public static final long VNRecognizeTextRequestRevision1 = 0x0000000000000001L;
     @Generated @NUInt public static final long VNGenerateAttentionBasedSaliencyImageRequestRevision1 = 0x0000000000000001L;
     @Generated @NUInt public static final long VNGenerateObjectnessBasedSaliencyImageRequestRevision1 = 0x0000000000000001L;
@@ -203,6 +280,17 @@ public final class Vision {
 
     @Generated @NUInt public static final long VNRecognizeAnimalsRequestRevision1 = 0x0000000000000001L;
 
+    /**
+     * @discussion    Returns a point in normalized coordinate space that is projected from a point in a image coordinates
+     * 
+     * @param    imagePoint                  The point in image coordinate space.
+     * 
+     * @param    imageWidth                  The pixel width of the image.
+     * 
+     * @param    imageHeight                The pixel height of the image.
+     * 
+     * @return the point in normalized coordinates.
+     */
     @Generated
     @CFunction
     @ByValue
@@ -220,6 +308,9 @@ public final class Vision {
     public static native String VNVideoProcessingOptionTimeInterval();
 
     @Generated @NUInt public static final long VNDetectFaceCaptureQualityRequestRevision2 = 0x0000000000000002L;
+    /**
+     * @brief VNRecognizeTextRequestRevision2 supports English, Chinese, Portuguese, French, Italian, German and Spanish in the accurate recognition level. The fast recognition level supports English, Portuguese, French, Italian, German and Spanish. Best practice is to use supportedRecognitionLanguagesForTextRecognitionLevel to check for supported languages. As the underlying engine has changed from VNRecognizeTextRequestRevision1, results can differ but are generally more accurate. 
+     */
     @Generated @NUInt public static final long VNRecognizeTextRequestRevision2 = 0x0000000000000002L;
 
     @Generated
@@ -449,31 +540,49 @@ public final class Vision {
     @MappedReturn(ObjCStringMapper.class)
     public static native String VNHumanBodyPoseObservationJointNameRightAnkle();
 
+    /**
+     * nose, eyes, and ears
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VNHumanBodyPoseObservationJointsGroupNameFace();
 
+    /**
+     * shoulders, neck and hips
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VNHumanBodyPoseObservationJointsGroupNameTorso();
 
+    /**
+     * left shoulder, left elbow, and left wrist
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VNHumanBodyPoseObservationJointsGroupNameLeftArm();
 
+    /**
+     * right shoulder, right elbow, and right wrist
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VNHumanBodyPoseObservationJointsGroupNameRightArm();
 
+    /**
+     * left ankle, left knee, and left hip
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VNHumanBodyPoseObservationJointsGroupNameLeftLeg();
 
+    /**
+     * right ankle, right knee, and right hip
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -486,6 +595,46 @@ public final class Vision {
 
     @Generated @NUInt public static final long VNDetectHumanBodyPoseRequestRevision1 = 0x0000000000000001L;
 
+    /**
+     * Each finger has three phalanges, separated by two interphalangeal joints.
+     * 
+     * The Distal Interphalangeal (DIP) joint is the first knuckle from the top of the finger. It connects the two bones at the tip of the finger.
+     * 
+     * The Proximal Interphalangeal (PIP) joint is the first joint of the finger and is located between the first two bones of the finger
+     * 
+     * The Metacarpophalangeal (MCP) joint is where the hand bone called the metacarpal meets the finger bones called the phalanges.
+     * 
+     * The Carpometacarpal (CMC) joint forms where the ends of the metacarpal bone at the base of the thumb and the trapezium bone in the wrist meet.
+     * 
+     * 
+     *                                      Middle
+     *                                       _____
+     *                               Index  |     |  Ring
+     *                               _____  |     |  _____
+     *                              |     | |     | |     |  Little
+     *                              |     | |     | |     |  _____
+     *                              |     | |_____| |     | |     |
+     *                              |_____| |     | |_____| |     |
+     *              Thumb           |     | |     | |     | |_____|  <-- DIP
+     *              ______          |     | |     | |     | |     |
+     *             |      \         |     | |     | |     | |     |
+     *              \      \        |_____| |_____| |_____| |     |
+     *               \      \       |     | |     | |     | |_____|  <-- PIP
+     *        IP -->  \______\      |     | |     | |     | |     |
+     *                 \      \     |     | |     | |     | |     |
+     *                  \      \    |_____| |_____| |_____| |_____|  <-- MCP
+     *                   \      \  /                               \
+     *           MCP -->  \______\ |                               |
+     *                     \      \|                               |
+     *                      \      /                               |
+     *                       \    /  <-- CMC                       |
+     *                        \  /                                 |
+     *                         \/                                  |
+     *                          |                                  |
+     *                           \                                 /
+     *                            \ . . . . . . . . . . . . . . . /
+     *                                          Wrist
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

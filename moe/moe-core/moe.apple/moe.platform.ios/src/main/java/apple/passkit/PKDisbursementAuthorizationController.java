@@ -54,6 +54,9 @@ public class PKDisbursementAuthorizationController extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * This presents the Apple Pay sheet. If the sheet is presented successfully, success is YES. Otherwise, an error will be returned.
+     */
     @Generated
     @Selector("authorizeDisbursementWithCompletion:")
     public native void authorizeDisbursementWithCompletion(
@@ -92,6 +95,9 @@ public class PKDisbursementAuthorizationController extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * The controller's delegate.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -110,6 +116,9 @@ public class PKDisbursementAuthorizationController extends NSObject {
     @Selector("init")
     public native PKDisbursementAuthorizationController init();
 
+    /**
+     * Initializes and returns a newly created controller for the supplied disbursement request.
+     */
     @Generated
     @Selector("initWithDisbursementRequest:delegate:")
     public native PKDisbursementAuthorizationController initWithDisbursementRequestDelegate(
@@ -159,6 +168,9 @@ public class PKDisbursementAuthorizationController extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Determine whether this user's account supports disbursements.
+     */
     @Generated
     @Selector("supportsDisbursements")
     public static native boolean supportsDisbursements();

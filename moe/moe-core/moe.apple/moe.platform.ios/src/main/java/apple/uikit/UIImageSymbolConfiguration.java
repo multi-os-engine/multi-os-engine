@@ -76,14 +76,23 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Adjusts for Dynamic Type. Use UIFontMetrics to get automatic adjustment with a custom font.
+     */
     @Generated
     @Selector("configurationWithFont:")
     public static native UIImageSymbolConfiguration configurationWithFont(UIFont font);
 
+    /**
+     * Adjusts for Dynamic Type. Use UIFontMetrics to get automatic adjustment with a custom font.
+     */
     @Generated
     @Selector("configurationWithFont:scale:")
     public static native UIImageSymbolConfiguration configurationWithFontScale(UIFont font, @NInt long scale);
 
+    /**
+     * Fixed point size configurations
+     */
     @Generated
     @Selector("configurationWithPointSize:")
     public static native UIImageSymbolConfiguration configurationWithPointSize(@NFloat double pointSize);
@@ -98,10 +107,16 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     public static native UIImageSymbolConfiguration configurationWithPointSizeWeightScale(@NFloat double pointSize,
             @NInt long weight, @NInt long scale);
 
+    /**
+     * just change the scale on the configuration
+     */
     @Generated
     @Selector("configurationWithScale:")
     public static native UIImageSymbolConfiguration configurationWithScale(@NInt long scale);
 
+    /**
+     * Dynamic type size configurations
+     */
     @Generated
     @Selector("configurationWithTextStyle:")
     public static native UIImageSymbolConfiguration configurationWithTextStyle(String textStyle);
@@ -124,6 +139,9 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object configurationWithoutScale();
 
+    /**
+     * Removes attributes from the configuration if they are set
+     */
     @Generated
     @Selector("configurationWithoutTextStyle")
     @MappedReturn(ObjCObjectMapper.class)
@@ -168,6 +186,11 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * checks if the other configuration is equal to this one.
+     * the values have to match exactly. If you only want to check "specified"
+     * values, use `isEquivalentToConfiguration:`.
+     */
     @Generated
     @Selector("isEqualToConfiguration:")
     public native boolean isEqualToConfiguration(UIImageSymbolConfiguration otherConfiguration);
@@ -212,6 +235,9 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
         return supportsSecureCoding();
     }
 
+    /**
+     * everything is "unspecified". This is essentially the same as nil but's more explicit.
+     */
     @Generated
     @Selector("unspecifiedConfiguration")
     public static native UIImageSymbolConfiguration unspecifiedConfiguration();

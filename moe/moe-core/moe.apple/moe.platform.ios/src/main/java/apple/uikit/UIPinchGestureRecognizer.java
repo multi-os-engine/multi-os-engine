@@ -41,6 +41,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Begins:  when two touches have moved enough to be considered a pinch
+ * Changes: when a finger moves while two fingers remain down
+ * Ends:    when both fingers have lifted
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -161,15 +166,24 @@ public class UIPinchGestureRecognizer extends UIGestureRecognizer {
     public native UIPinchGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
             SEL action);
 
+    /**
+     * scale relative to the touch points in screen coordinates
+     */
     @Generated
     @Selector("scale")
     @NFloat
     public native double scale();
 
+    /**
+     * scale relative to the touch points in screen coordinates
+     */
     @Generated
     @Selector("setScale:")
     public native void setScale(@NFloat double value);
 
+    /**
+     * velocity of the pinch in scale/second
+     */
     @Generated
     @Selector("velocity")
     @NFloat

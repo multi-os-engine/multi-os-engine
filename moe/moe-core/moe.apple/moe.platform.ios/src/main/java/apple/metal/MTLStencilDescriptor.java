@@ -157,11 +157,17 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * If stencil passes, depth is tested next.  Declare what happens when the depth test fails.
+     */
     @Generated
     @Selector("depthFailureOperation")
     @NUInt
     public native long depthFailureOperation();
 
+    /**
+     * If both the stencil and depth tests pass, declare how the stencil buffer is updated.
+     */
     @Generated
     @Selector("depthStencilPassOperation")
     @NUInt
@@ -175,10 +181,16 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     @Selector("readMask")
     public native int readMask();
 
+    /**
+     * If stencil passes, depth is tested next.  Declare what happens when the depth test fails.
+     */
     @Generated
     @Selector("setDepthFailureOperation:")
     public native void setDepthFailureOperation(@NUInt long value);
 
+    /**
+     * If both the stencil and depth tests pass, declare how the stencil buffer is updated.
+     */
     @Generated
     @Selector("setDepthStencilPassOperation:")
     public native void setDepthStencilPassOperation(@NUInt long value);
@@ -191,6 +203,9 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     @Selector("setStencilCompareFunction:")
     public native void setStencilCompareFunction(@NUInt long value);
 
+    /**
+     * Stencil is tested first.  stencilFailureOperation declares how the stencil buffer is updated when the stencil test fails.
+     */
     @Generated
     @Selector("setStencilFailureOperation:")
     public native void setStencilFailureOperation(@NUInt long value);
@@ -204,6 +219,9 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     @NUInt
     public native long stencilCompareFunction();
 
+    /**
+     * Stencil is tested first.  stencilFailureOperation declares how the stencil buffer is updated when the stencil test fails.
+     */
     @Generated
     @Selector("stencilFailureOperation")
     @NUInt

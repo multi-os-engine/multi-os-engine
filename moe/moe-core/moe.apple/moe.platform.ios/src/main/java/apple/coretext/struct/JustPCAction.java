@@ -50,10 +50,16 @@ public final class JustPCAction extends StructObject {
         setActions(actions);
     }
 
+    /**
+     * long for alignment purposes
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int actionCount();
 
+    /**
+     * long for alignment purposes
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setActionCount(int value);

@@ -36,6 +36,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The data model object for storing drawing data created from PKCanvasView.
+ */
 @Generated
 @Library("PencilKit")
 @Runtime(ObjCRuntime.class)
@@ -68,6 +71,10 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * The bounds of the drawing's contents, taking into account the rendered width of all content.
+     * If these bounds are used to render an image with `imageFromRect:scale:`, no contents will be cropped.
+     */
     @Generated
     @Selector("bounds")
     @ByValue
@@ -97,6 +104,11 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Generate a data representation of the drawing.
+     * 
+     * @return A NSData object containing a representation of the drawing.
+     */
     @Generated
     @Selector("dataRepresentation")
     public native NSData dataRepresentation();
@@ -109,10 +121,22 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Returns a new drawing by appending the contents of `drawing` on top of the receiver’s contents.
+     * 
+     * @param drawing The drawing to append.
+     * @return A new copy of this drawing with `drawing` appended onto it.
+     */
     @Generated
     @Selector("drawingByAppendingDrawing:")
     public native PKDrawing drawingByAppendingDrawing(PKDrawing drawing);
 
+    /**
+     * Returns a new drawing with `transform` applied.
+     * 
+     * @param transform The transform to apply to this drawing.
+     * @return A new copy of this drawing with `transform` applied.
+     */
     @Generated
     @Selector("drawingByApplyingTransform:")
     public native PKDrawing drawingByApplyingTransform(@ByValue CGAffineTransform transform);
@@ -130,6 +154,9 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("imageFromRect:scale:")
     public native UIImage imageFromRectScale(@ByValue CGRect rect, @NFloat double scale);
 
+    /**
+     * Initializes and returns a blank drawing.
+     */
     @Generated
     @Selector("init")
     public native PKDrawing init();
@@ -138,6 +165,15 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native PKDrawing initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes and returns the drawing with the specified data.
+     * 
+     * @param data The data containing the drawing data.
+     * @param error If an error occurs, upon return the NSError object describes the error.
+     *   Set to NULL to ignore errors.
+     * @return On success, an initialized PKDrawing object. If nil, the outError parameter
+     *   contains an NSError instance describing the problem.
+     */
     @Generated
     @Selector("initWithData:error:")
     public native PKDrawing initWithDataError(NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
@@ -200,14 +236,27 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Create a new drawing by appending an array of strokes to this drawing.
+     * This is a convenience method, to quickly add strokes to a drawing.
+     * 
+     * @param strokes The strokes to append.
+     * @return A new copy of this drawing with `strokes` appended onto it.
+     */
     @Generated
     @Selector("drawingByAppendingStrokes:")
     public native PKDrawing drawingByAppendingStrokes(NSArray<? extends PKStroke> strokes);
 
+    /**
+     * Initializes a drawing with an array of strokes.
+     */
     @Generated
     @Selector("initWithStrokes:")
     public native PKDrawing initWithStrokes(NSArray<? extends PKStroke> strokes);
 
+    /**
+     * The strokes that this drawing contains.
+     */
     @Generated
     @Selector("strokes")
     public native NSArray<? extends PKStroke> strokes();

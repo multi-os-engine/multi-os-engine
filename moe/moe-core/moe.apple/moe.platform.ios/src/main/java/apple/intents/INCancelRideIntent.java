@@ -135,6 +135,9 @@ public class INCancelRideIntent extends INIntent {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Specifies the identifier of the ride to cancel.
+     */
     @Generated
     @Selector("rideIdentifier")
     public native String rideIdentifier();

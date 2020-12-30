@@ -3,6 +3,9 @@ package apple.pdfkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Cell state.
+ */
 @Generated
 public final class PDFWidgetCellState {
     @Generated

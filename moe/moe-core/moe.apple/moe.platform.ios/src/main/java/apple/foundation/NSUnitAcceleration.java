@@ -131,6 +131,9 @@ public class NSUnitAcceleration extends NSDimension implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Base unit - metersPerSecondSquared
+     */
     @Generated
     @Selector("metersPerSecondSquared")
     public static native NSUnitAcceleration metersPerSecondSquared();

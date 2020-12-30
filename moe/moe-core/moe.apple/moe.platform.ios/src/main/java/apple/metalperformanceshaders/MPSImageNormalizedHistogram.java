@@ -31,6 +31,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSImageNormalizedHistogram
+ * @discussion The MPSImageNormalizedHistogram computes the normalized histogram of an image.
+ *             The minimum and maximum pixel values for a given region of an image are first computed.
+ *             The max(computed minimum pixel value, MPSImageHistogramInfo.minPixelValue) and the
+ *             min(computed maximum pixel value, MPSImageHistogramInfo.maxPixelValue) are used to
+ *             compute the normalized histogram.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -81,6 +89,14 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property   clipRectSource
+     * @abstract   The source rectangle to use when reading data.
+     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     *             completely within the source image, the intersection of the image bounds and clipRectSource will
+     *             be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     */
     @Generated
     @Selector("clipRectSource")
     @ByValue
@@ -94,6 +110,28 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract Encode the filter to a command buffer using a MTLComputeCommandEncoder.
+     * @discussion The filter will not begin to execute until after the command
+     * buffer has been enqueued and committed.
+     * 
+     * 
+     * @param  commandBuffer           A valid MTLCommandBuffer.
+     * @param  source                  A valid MTLTexture containing the source image for the filter
+     * @param  minmaxTexture           A valid MTLTexture in which the min/max pixel values from source will be returned
+     * @param  histogram               A valid MTLBuffer to receive the histogram results.
+     * @param  histogramOffset         Byte offset into histogram buffer at which to write the histogram results. Must be a multiple of 32 bytes.
+     *                                 The histogram results / channel are stored together.  The number of channels for which
+     *                                 histogram results are stored is determined by the number of channels in the image.
+     *                                 If histogramInfo.histogramForAlpha is false and the source image is RGBA then only histogram
+     *                                 results for RGB channels are stored.
+     * 
+     *                                 The histogram results are stored in the histogram buffer as follows:
+     *                                     - histogram results for the R channel for all bins followed by
+     *                                     - histogram results for the G channel for all bins followed by
+     *                                     - histogram results for the B channel for all bins followed by
+     *                                     - histogram results for the A channel for all bins
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:minmaxTexture:histogram:histogramOffset:")
     public native void encodeToCommandBufferSourceTextureMinmaxTextureHistogramHistogramOffset(
@@ -106,6 +144,16 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @abstract   The amount of space in the output MTLBuffer the histogram will take up.
+     * @discussion This convenience function calculates the minimum amount of space
+     *             needed in the output histogram for the results.  The MTLBuffer should
+     *             be at least this length, longer if histogramOffset is non-zero.
+     * @param      sourceFormat      The MTLPixelFormat of the source image. This is
+     *                               the source parameter of -encodeToCommandBuffer:
+     *                               sourceTexture:histogram:histogramOffset
+     * @return     The number of bytes needed to store the result histograms.
+     */
     @Generated
     @Selector("histogramSizeForSourceFormat:")
     @NUInt
@@ -119,6 +167,17 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Selector("initWithCoder:")
     public native MPSImageNormalizedHistogram initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion While the standard NSSecureCoding/NSCoding method
+     *             -initWithCoder: should work, since the file can't
+     *             know which device your data is allocated on, we
+     *             have to guess and may guess incorrectly.  To avoid
+     *             that problem, use initWithCoder:device instead.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
+     * @param      device      The MTLDevice on which to make the MPSKernel
+     * @return     A new MPSKernel object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSImageNormalizedHistogram initWithCoderDevice(NSCoder aDecoder,
@@ -128,6 +187,12 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Selector("initWithDevice:")
     public native MPSImageNormalizedHistogram initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Specifies information to compute the histogram for channels of an image.
+     * @param    device            The device the filter will run on
+     * @param    histogramInfo     Pointer to the MPSImageHistogramInfo struct
+     * @return     A valid MPSImageNormalizedHistogram object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:histogramInfo:")
     public native MPSImageNormalizedHistogram initWithDeviceHistogramInfo(
@@ -168,6 +233,14 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   clipRectSource
+     * @abstract   The source rectangle to use when reading data.
+     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     *             completely within the source image, the intersection of the image bounds and clipRectSource will
+     *             be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     */
     @Generated
     @Selector("setClipRectSource:")
     public native void setClipRectSource(@ByValue MTLRegion value);
@@ -176,6 +249,12 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @property   zeroHistogram
+     * @abstract   Zero-initalize the histogram results
+     * @discussion Indicates that the memory region in which the histogram results are to be written in the
+     *             histogram buffer are to be zero-initialized or not. Default: YES.
+     */
     @Generated
     @Selector("setZeroHistogram:")
     public native void setZeroHistogram(boolean value);
@@ -199,6 +278,12 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property   zeroHistogram
+     * @abstract   Zero-initalize the histogram results
+     * @discussion Indicates that the memory region in which the histogram results are to be written in the
+     *             histogram buffer are to be zero-initialized or not. Default: YES.
+     */
     @Generated
     @Selector("zeroHistogram")
     public native boolean zeroHistogram();

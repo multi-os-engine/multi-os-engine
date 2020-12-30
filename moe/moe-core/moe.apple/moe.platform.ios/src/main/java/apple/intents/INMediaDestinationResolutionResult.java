@@ -79,6 +79,9 @@ public class INMediaDestinationResolutionResult extends INIntentResolutionResult
     public static native Object confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the mediaDestination with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithMediaDestinationToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -93,6 +96,9 @@ public class INMediaDestinationResolutionResult extends INIntentResolutionResult
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * This resolution result is to ask Siri to disambiguate between the provided INMediaDestination.
+     */
     @Generated
     @Selector("disambiguationWithMediaDestinationsToDisambiguate:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -157,6 +163,10 @@ public class INMediaDestinationResolutionResult extends INIntentResolutionResult
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INMediaDestination. The resolvedMediaDestination can be different than the original INMediaDestination. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedMediaDestination:")
     @MappedReturn(ObjCObjectMapper.class)

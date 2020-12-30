@@ -36,6 +36,9 @@ public interface UIContextMenuInteractionAnimating {
         void call_addCompletion();
     }
 
+    /**
+     * Displayed preview view controller.
+     */
     @Generated
     @Selector("previewViewController")
     UIViewController previewViewController();

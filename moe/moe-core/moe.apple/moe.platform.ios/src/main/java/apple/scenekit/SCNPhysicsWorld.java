@@ -48,6 +48,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNPhysicsWorld
+ * @abstract The SCNPhysicsWorld class describes and allows to control the physics simulation of a 3d scene.
+ * @discussion The SCNPhysicsWorld class should not be allocated directly but retrieved from the SCNScene class using the physicsWorld property.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -163,6 +168,9 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Behaviors management
+     */
     @Generated
     @Selector("addBehavior:")
     public native void addBehavior(SCNPhysicsBehavior behavior);
@@ -171,11 +179,19 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
     @Selector("allBehaviors")
     public native NSArray<? extends SCNPhysicsBehavior> allBehaviors();
 
+    /**
+     * A delegate that is called when two physic bodies come in contact with each other.
+     * On iOS 11 or lower the property is unsafe_unretained and it's the responsibility of the client to set it to nil before deallocating the delegate.
+     * Starting in iOS12, the property is weak
+     */
     @Generated
     @Selector("contactDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native SCNPhysicsContactDelegate contactDelegate();
 
+    /**
+     * The methods below perform contact tests.
+     */
     @Generated
     @Selector("contactTestBetweenBody:andBody:options:")
     public native NSArray<? extends SCNPhysicsContact> contactTestBetweenBodyAndBodyOptions(SCNPhysicsBody bodyA,
@@ -195,6 +211,9 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * A global 3D vector specifying the field force acceleration due to gravity. The unit is meter per second. Default is {0, -9.8, 0}.
+     */
     @Generated
     @Selector("gravity")
     @ByValue
@@ -208,6 +227,9 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native SCNPhysicsWorld initWithCoder(NSCoder coder);
 
+    /**
+     * Performs a ray test on the physics bodies and their physics shapes.
+     */
     @Generated
     @Selector("rayTestWithSegmentFromPoint:toPoint:options:")
     public native NSArray<? extends SCNHitTestResult> rayTestWithSegmentFromPointToPointOptions(
@@ -221,10 +243,20 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
     @Selector("removeBehavior:")
     public native void removeBehavior(SCNPhysicsBehavior behavior);
 
+    /**
+     * A delegate that is called when two physic bodies come in contact with each other.
+     * On iOS 11 or lower the property is unsafe_unretained and it's the responsibility of the client to set it to nil before deallocating the delegate.
+     * Starting in iOS12, the property is weak
+     */
     @Generated
     @Selector("setContactDelegate:")
     public native void setContactDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SCNPhysicsContactDelegate value);
 
+    /**
+     * A delegate that is called when two physic bodies come in contact with each other.
+     * On iOS 11 or lower the property is unsafe_unretained and it's the responsibility of the client to set it to nil before deallocating the delegate.
+     * Starting in iOS12, the property is weak
+     */
     @Generated
     public void setContactDelegate(@Mapped(ObjCObjectMapper.class) SCNPhysicsContactDelegate value) {
         Object __old = contactDelegate();
@@ -237,18 +269,32 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
         }
     }
 
+    /**
+     * A global 3D vector specifying the field force acceleration due to gravity. The unit is meter per second. Default is {0, -9.8, 0}.
+     */
     @Generated
     @Selector("setGravity:")
     public native void setGravity(@ByValue SCNVector3 value);
 
+    /**
+     * A speed multiplier applied to the physics simulation. Default is 1.0.
+     * The speed can be reduced to slowdown the simulation, but beware that increasing the speed factor will decrease the accuracy of the simulation.
+     */
     @Generated
     @Selector("setSpeed:")
     public native void setSpeed(@NFloat double value);
 
+    /**
+     * The time step of the physics simulation. Default is 1/60s (60 Hz).
+     */
     @Generated
     @Selector("setTimeStep:")
     public native void setTimeStep(double value);
 
+    /**
+     * A speed multiplier applied to the physics simulation. Default is 1.0.
+     * The speed can be reduced to slowdown the simulation, but beware that increasing the speed factor will decrease the accuracy of the simulation.
+     */
     @Generated
     @Selector("speed")
     @NFloat
@@ -260,10 +306,17 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * The time step of the physics simulation. Default is 1/60s (60 Hz).
+     */
     @Generated
     @Selector("timeStep")
     public native double timeStep();
 
+    /**
+     * Force the physics engine to re-evaluate collisions.
+     * This needs to be called if kinematic are moved and the contacts are wanted before the next simulation step.
+     */
     @Generated
     @Selector("updateCollisionPairs")
     public native void updateCollisionPairs();

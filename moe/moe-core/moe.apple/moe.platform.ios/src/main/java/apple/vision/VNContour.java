@@ -30,6 +30,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief The VNContour class describes a contour provided by a VNContoursObservation.
+ * 
+ * @discussion	VNContour objects are lightweight objects that act as a façade which allows access to a small slice of the usually much larger block of data owned by a VNContoursObservation that represents all of the contours detected in an image.
+ * 		While the interface does present the notion of a hierarchy of parent/child contours, the implementation purposefully does not contain any explicit internal bookkeeping for this relationship.  Instead, contours are uniquely identified via their indexPath property.
+ * 		As a side effect of this choice, repeated calls to methods that would return relational contours (e.g., -childContours or -childContourAtIndex:error:) are NOT guaranteed to return the same VNContour instances over and over again.  If this kind of parent/child object stability is an absolute requirement of the client, then they are responsible for creating the necessary data structures to represent and build that instance-stable hierarchy.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -58,6 +65,9 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @brief The aspect ratio of the contour from the original image aspect ration expressed as width/height
+     */
     @Generated
     @Selector("aspectRatio")
     public native float aspectRatio();
@@ -76,16 +86,30 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * @brief Returns a VNContour object that is a child of this VNContour at the specified index.
+     * @param childContourIndex The index into the childContours array.
+     * @param error The error returned if the child contour cannot be provided.
+     * @return The VNContour object at the spefiied index path, or nil of a failure occurs.
+     */
     @Generated
     @Selector("childContourAtIndex:error:")
     public native VNContour childContourAtIndexError(@NUInt long childContourIndex,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * @brief The total number of child contours in the target contour.
+     * @discussion The use of this property is prefered over childContours.count due to the cost of building the child objects.
+     */
     @Generated
     @Selector("childContourCount")
     @NInt
     public native long childContourCount();
 
+    /**
+     * @brief The array of the contours enclosed by the target contour.
+     * @discussion This property may come with the cost of instantiating new VNContour objects; therefore, clients are strongly encouraged to hold the results in a local variable instead of repeatedly invoking it.
+     */
     @Generated
     @Selector("childContours")
     public native NSArray<? extends VNContour> childContours();
@@ -117,6 +141,9 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @brief The path to the target VNContour as it is stored in the owning VNContoursObservation's hierarchy of contours.
+     */
     @Generated
     @Selector("indexPath")
     public native NSIndexPath indexPath();
@@ -152,15 +179,29 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief The contour represented as a CGPath in normalized coordinates.
+     * @details The path is owned by this object and therefore will be alive as long as the the observation is alive.
+     */
     @Generated
     @Selector("normalizedPath")
     public native CGPathRef normalizedPath();
 
+    /**
+     * @brief The number of points that describe the contour.
+     */
     @Generated
     @Selector("pointCount")
     @NInt
     public native long pointCount();
 
+    /**
+     * @brief Simplifies the contour's collection of points into a polygon using the Ramer Douglas Peucker Algorithm.
+     * @discussion See <https://en.wikipedia.org/wiki/Ramer–Douglas–Peucker_algorithm>
+     * @param epsilon Points that have a perpendicular distance to the line segment they are on that greather than epsilon are kept, others are eliminated.
+     * @param error The error returned if a simplified contour cannot be created.
+     * @return A new VNContour object with a simplified polygon consisting of a subset of the points that defined the original VNContour.
+     */
     @Generated
     @Selector("polygonApproximationWithEpsilon:error:")
     public native VNContour polygonApproximationWithEpsilonError(float epsilon,

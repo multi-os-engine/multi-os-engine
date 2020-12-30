@@ -68,6 +68,9 @@ public class ARVideoFormat extends NSObject implements NSCopying {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * Indicates the physical position of an AVCaptureDevice's hardware on the system.
+     */
     @Generated
     @Selector("captureDevicePosition")
     @NInt
@@ -95,6 +98,9 @@ public class ARVideoFormat extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Frame rate.
+     */
     @Generated
     @Selector("framesPerSecond")
     @NInt
@@ -105,6 +111,9 @@ public class ARVideoFormat extends NSObject implements NSCopying {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Image resolution.
+     */
     @Generated
     @Selector("imageResolution")
     @ByValue

@@ -85,6 +85,9 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Will throw if the new value is invalid (ie includes both rtree and non-rtree elements).
+     */
     @Generated
     @Selector("elements")
     public native NSArray<? extends NSFetchIndexElementDescription> elements();
@@ -146,6 +149,9 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * If the index should be a partial index, specifies the predicate selecting rows for indexing
+     */
     @Generated
     @Selector("partialIndexPredicate")
     public native NSPredicate partialIndexPredicate();
@@ -158,6 +164,9 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Will throw if the new value is invalid (ie includes both rtree and non-rtree elements).
+     */
     @Generated
     @Selector("setElements:")
     public native void setElements(NSArray<? extends NSFetchIndexElementDescription> value);
@@ -166,6 +175,9 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * If the index should be a partial index, specifies the predicate selecting rows for indexing
+     */
     @Generated
     @Selector("setPartialIndexPredicate:")
     public native void setPartialIndexPredicate(NSPredicate value);

@@ -49,46 +49,98 @@ public final class CFHostClientContext extends StructObject {
         super(peer);
     }
 
+    /**
+     * The version number of the structure type being passed in as a
+     * parameter to the CFHost client function. Valid version number is
+     * currently 0.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @NInt
     public native long version();
 
+    /**
+     * The version number of the structure type being passed in as a
+     * parameter to the CFHost client function. Valid version number is
+     * currently 0.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(@NInt long value);
 
+    /**
+     * An arbitrary pointer to client-defined data, which can be
+     * associated with the host and is passed to the callbacks.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr info();
 
+    /**
+     * An arbitrary pointer to client-defined data, which can be
+     * associated with the host and is passed to the callbacks.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setInfo(VoidPtr value);
 
+    /**
+     * The callback used to add a retain for the host on the info pointer
+     * for the life of the host, and may be used for temporary references
+     * the host needs to take. This callback returns the actual info
+     * pointer to store in the host, almost always just the pointer
+     * passed as the parameter.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_retain")
     public native Function_retain retain();
 
+    /**
+     * The callback used to add a retain for the host on the info pointer
+     * for the life of the host, and may be used for temporary references
+     * the host needs to take. This callback returns the actual info
+     * pointer to store in the host, almost always just the pointer
+     * passed as the parameter.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
 
+    /**
+     * The callback used to remove a retain previously added for the host
+     * on the info pointer.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_release")
     public native Function_release release();
 
+    /**
+     * The callback used to remove a retain previously added for the host
+     * on the info pointer.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
 
+    /**
+     * The callback used to create a descriptive string representation of
+     * the info pointer (or the data pointed to by the info pointer) for
+     * debugging purposes. This is used by the CFCopyDescription()
+     * function.
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_copyDescription")
     public native Function_copyDescription copyDescription();
 
+    /**
+     * The callback used to create a descriptive string representation of
+     * the info pointer (or the data pointed to by the info pointer) for
+     * debugging purposes. This is used by the CFCopyDescription()
+     * function.
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setCopyDescription(@FunctionPtr(name = "call_copyDescription") Function_copyDescription value);

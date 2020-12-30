@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract Contains related information for a specific contact property.
+ * 
+ * @discussion CNContactProperty is used by the CNContactPicker to return the user's selected property.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
@@ -172,6 +177,9 @@ public class CNContactProperty extends NSObject implements NSCopying, NSSecureCo
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * @abstract The identifier of the labeled value if the property is an array of labeled values, otherwise is nil.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -184,10 +192,16 @@ public class CNContactProperty extends NSObject implements NSCopying, NSSecureCo
     @Selector("initWithCoder:")
     public native CNContactProperty initWithCoder(NSCoder coder);
 
+    /**
+     * @abstract The key of the contact property, as defined in CNContact.h.
+     */
     @Generated
     @Selector("key")
     public native String key();
 
+    /**
+     * @abstract The label of the labeled value if the property is an array of labeled values, otherwise is nil.
+     */
     @Generated
     @Selector("label")
     public native String label();
@@ -198,6 +212,9 @@ public class CNContactProperty extends NSObject implements NSCopying, NSSecureCo
         return supportsSecureCoding();
     }
 
+    /**
+     * @abstract The value of the property.
+     */
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)

@@ -33,18 +33,30 @@ public final class build_tool_version extends StructObject {
         setVersion(version);
     }
 
+    /**
+     * enum for the tool
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int tool();
 
+    /**
+     * enum for the tool
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setTool(int value);
 
+    /**
+     * version number of the tool
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int version();
 
+    /**
+     * version number of the tool
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setVersion(int value);

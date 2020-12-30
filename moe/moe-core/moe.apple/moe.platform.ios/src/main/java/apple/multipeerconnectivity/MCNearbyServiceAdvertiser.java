@@ -41,6 +41,43 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MCNearbyServiceAdvertiser
+ *   @abstract
+ *      MCNearbyServiceAdvertiser advertises availability of the local peer,
+ *      and handles invitations from nearby peers.
+ * 
+ *   @discussion
+ *      To create the MCNearbyServiceAdvertiser object and start advertising
+ *      to nearby peers, a new MCPeerID should be created to
+ *      represent the local peer, and a service type needs to be specified.
+ * 
+ *      The serviceType parameter is a short text string used to describe the
+ *      app's networking protocol.  It should be in the same format as a
+ *      Bonjour service type: up to 15 characters long and valid characters
+ *      include ASCII lowercase letters, numbers, and the hyphen.  A short
+ *      name that distinguishes itself from unrelated services is recommended;
+ *      for example, a text chat app made by ABC company could use the service
+ *      type "abc-txtchat". For more detailed information about service type
+ *      restrictions, see RFC 6335, Section 5.1.
+ * 
+ *      The discoveryInfo parameter is a dictionary of string key/value pairs
+ *      that will be advertised for browsers to see. Both keys and values must
+ *      be NSString objects. The content of discoveryInfo will be advertised
+ *      within Bonjour TXT records, and keeping the dictionary small is good
+ *      for keeping network traffic low.
+ * 
+ *      MCNearbyServiceAdvertiser must be initialized with an MCPeerID object
+ *      and a valid service type. The discoveryInfo parameter is optional and
+ *      may be nil.
+ * 
+ *      A delegate that conforms to the MCNearbyServiceAdvertiserDelegate protocol
+ *      must be provided. No assumption should be made as to which queue the
+ *      callbacks are called on.
+ * 
+ *      See Bonjour APIs https://developer.apple.com/bonjour/ for more
+ *      information about service types.
+ */
 @Generated
 @Library("MultipeerConnectivity")
 @Runtime(ObjCRuntime.class)
@@ -194,6 +231,10 @@ public class MCNearbyServiceAdvertiser extends NSObject {
         }
     }
 
+    /**
+     * The methods -startAdvertisingPeer and -stopAdvertisingPeer are used to
+     * start and stop announcing presence to nearby browsing peers.
+     */
     @Generated
     @Selector("startAdvertisingPeer")
     public native void startAdvertisingPeer();

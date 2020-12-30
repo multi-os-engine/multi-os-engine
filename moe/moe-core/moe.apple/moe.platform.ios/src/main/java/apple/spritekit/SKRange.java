@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SKRange object used to define a range of allowable values 
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -134,26 +137,44 @@ public class SKRange extends NSObject implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * SKRange representing a single value
+     */
     @Generated
     @Selector("rangeWithConstantValue:")
     public static native SKRange rangeWithConstantValue(@NFloat double value);
 
+    /**
+     * SKRange with only a lower limit
+     */
     @Generated
     @Selector("rangeWithLowerLimit:")
     public static native SKRange rangeWithLowerLimit(@NFloat double lower);
 
+    /**
+     * SKRange with a lower and upper limit
+     */
     @Generated
     @Selector("rangeWithLowerLimit:upperLimit:")
     public static native SKRange rangeWithLowerLimitUpperLimit(@NFloat double lower, @NFloat double upper);
 
+    /**
+     * SKRange with no upper or lower limit
+     */
     @Generated
     @Selector("rangeWithNoLimits")
     public static native SKRange rangeWithNoLimits();
 
+    /**
+     * SKRange with only a upper limit
+     */
     @Generated
     @Selector("rangeWithUpperLimit:")
     public static native SKRange rangeWithUpperLimit(@NFloat double upper);
 
+    /**
+     * SKRange representing a variance about a value
+     */
     @Generated
     @Selector("rangeWithValue:variance:")
     public static native SKRange rangeWithValueVariance(@NFloat double value, @NFloat double variance);
@@ -197,23 +218,38 @@ public class SKRange extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native SKRange initWithCoder(NSCoder coder);
 
+    /**
+     * SKRange with a lower and upper limit. Designated initializer.
+     */
     @Generated
     @Selector("initWithLowerLimit:upperLimit:")
     public native SKRange initWithLowerLimitUpperLimit(@NFloat double lower, @NFloat double upper);
 
+    /**
+     * The lower limit, -1.0 * CGFLOAT_MAX means no limit
+     */
     @Generated
     @Selector("lowerLimit")
     @NFloat
     public native double lowerLimit();
 
+    /**
+     * The lower limit, -1.0 * CGFLOAT_MAX means no limit
+     */
     @Generated
     @Selector("setLowerLimit:")
     public native void setLowerLimit(@NFloat double value);
 
+    /**
+     * The upper limit, +1.0 * CGFLOAT_MAX means no limit
+     */
     @Generated
     @Selector("setUpperLimit:")
     public native void setUpperLimit(@NFloat double value);
 
+    /**
+     * The upper limit, +1.0 * CGFLOAT_MAX means no limit
+     */
     @Generated
     @Selector("upperLimit")
     @NFloat

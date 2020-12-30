@@ -22,6 +22,9 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class CFURLPathStyle {
     @Generated @NInt public static final long CFURLPOSIXPathStyle = 0x0000000000000000L;
+    /**
+     * The use of kCFURLHFSPathStyle is deprecated. The Carbon File Manager, which uses HFS style paths, is deprecated. HFS style paths are unreliable because they can arbitrarily refer to multiple volumes if those volumes have identical volume names. You should instead use kCFURLPOSIXPathStyle wherever possible.
+     */
     @Generated @NInt public static final long CFURLHFSPathStyle = 0x0000000000000001L;
     @Generated @NInt public static final long CFURLWindowsPathStyle = 0x0000000000000002L;
 

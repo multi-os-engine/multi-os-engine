@@ -21,16 +21,49 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSByteCountFormatterUnits {
+    /**
+     * This causes default units appropriate for the platform to be used. Specifying any units explicitly causes just those units to be used in showing the number.
+     */
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
+    /**
+     * Specifying any of the following causes the specified units to be used in showing the number.
+     */
     @Generated @NUInt public static final long Bytes = 0x0000000000000001L;
+    /**
+     * Specifying any of the following causes the specified units to be used in showing the number.
+     */
     @Generated @NUInt public static final long KB = 0x0000000000000002L;
+    /**
+     * Specifying any of the following causes the specified units to be used in showing the number.
+     */
     @Generated @NUInt public static final long MB = 0x0000000000000004L;
+    /**
+     * Specifying any of the following causes the specified units to be used in showing the number.
+     */
     @Generated @NUInt public static final long GB = 0x0000000000000008L;
+    /**
+     * Specifying any of the following causes the specified units to be used in showing the number.
+     */
     @Generated @NUInt public static final long TB = 0x0000000000000010L;
+    /**
+     * Specifying any of the following causes the specified units to be used in showing the number.
+     */
     @Generated @NUInt public static final long PB = 0x0000000000000020L;
+    /**
+     * Specifying any of the following causes the specified units to be used in showing the number.
+     */
     @Generated @NUInt public static final long EB = 0x0000000000000040L;
+    /**
+     * Specifying any of the following causes the specified units to be used in showing the number.
+     */
     @Generated @NUInt public static final long ZB = 0x0000000000000080L;
+    /**
+     * Specifying any of the following causes the specified units to be used in showing the number.
+     */
     @Generated @NUInt public static final long YBOrHigher = 0x000000000000FF00L;
+    /**
+     * Can use any unit in showing the number.
+     */
     @Generated @NUInt public static final long All = 0x000000000000FFFFL;
 
     @Generated

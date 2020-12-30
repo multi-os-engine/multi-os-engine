@@ -43,11 +43,17 @@ public final class MultipeerConnectivity {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MCErrorDomain();
 
+    /**
+     * Minimum number of peers in a session.
+     */
     @Generated
     @CVariable()
     @NUInt
     public static native long kMCSessionMinimumNumberOfPeers();
 
+    /**
+     * Maximum number of peers in a session.
+     */
     @Generated
     @CVariable()
     @NUInt

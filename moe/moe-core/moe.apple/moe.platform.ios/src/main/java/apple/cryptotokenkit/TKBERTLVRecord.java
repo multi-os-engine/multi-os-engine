@@ -24,6 +24,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * TKBERTLVRecord implements encoding using BER-TLV encoding rules.
+ * It is able to parse BER-encoded data and always produces DER-encoded data.
+ * No interpretation of tag values is made, all values are treated only as NSData irrespective of the tag.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -74,6 +79,11 @@ public class TKBERTLVRecord extends TKTLVRecord {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Encodes tag using BER-TLV tag encoding rules.
+     * @param tag Tag value to encode
+     * @return Binary block containing encoded tag value.
+     */
     @Generated
     @Selector("dataForTag:")
     public static native NSData dataForTag(long tag);
@@ -95,10 +105,22 @@ public class TKBERTLVRecord extends TKTLVRecord {
     @Selector("init")
     public native TKBERTLVRecord init();
 
+    /**
+     * Creates TKBERTLVRecord with specified tag and array of children TKTLVRecord instances as subrecords.
+     * @param tag Tag value for the new record.
+     * @param records Array of TKTLVRecord instances serving as subrecords of this record.
+     * @return Newly created TLV record.
+     */
     @Generated
     @Selector("initWithTag:records:")
     public native TKBERTLVRecord initWithTagRecords(long tag, NSArray<? extends TKTLVRecord> records);
 
+    /**
+     * Creates TLV record with specified tag and value.
+     * @param tag Tag value for the new record.
+     * @param value Value for the new record.
+     * @return Newly created TLV record.
+     */
     @Generated
     @Selector("initWithTag:value:")
     public native TKBERTLVRecord initWithTagValue(long tag, NSData value);

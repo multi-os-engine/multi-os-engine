@@ -42,6 +42,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVAudioUnitDelay
+ * @abstract an AVAudioUnitEffect that implements a delay effect
+ * @discussion
+ *     A delay unit delays the input signal by the specified time interval
+ *     and then blends it with the input signal. The amount of high frequency
+ *     roll-off can also be controlled in order to simulate the effect of
+ *     a tape delay.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -159,10 +168,26 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property delayTime
+     * Time taken by the delayed input signal to reach the output
+     * @abstract
+     * Range:      0 -> 2
+     * Default:    1
+     * Unit:       Seconds
+     */
     @Generated
     @Selector("delayTime")
     public native double delayTime();
 
+    /**
+     * @property feedback
+     * @abstract
+     * Amount of the output signal fed back into the delay line
+     * Range:      -100 -> 100
+     * Default:    50
+     * Unit:       Percent
+     */
     @Generated
     @Selector("feedback")
     public native float feedback();
@@ -176,26 +201,74 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     public native AVAudioUnitDelay initWithAudioComponentDescription(
             @ByValue AudioComponentDescription audioComponentDescription);
 
+    /**
+     * @property lowPassCutoff
+     * @abstract
+     * Cutoff frequency above which high frequency content is rolled off
+     * Range:      10 -> (samplerate/2)
+     * Default:    15000
+     * Unit:       Hertz
+     */
     @Generated
     @Selector("lowPassCutoff")
     public native float lowPassCutoff();
 
+    /**
+     * @property delayTime
+     * Time taken by the delayed input signal to reach the output
+     * @abstract
+     * Range:      0 -> 2
+     * Default:    1
+     * Unit:       Seconds
+     */
     @Generated
     @Selector("setDelayTime:")
     public native void setDelayTime(double value);
 
+    /**
+     * @property feedback
+     * @abstract
+     * Amount of the output signal fed back into the delay line
+     * Range:      -100 -> 100
+     * Default:    50
+     * Unit:       Percent
+     */
     @Generated
     @Selector("setFeedback:")
     public native void setFeedback(float value);
 
+    /**
+     * @property lowPassCutoff
+     * @abstract
+     * Cutoff frequency above which high frequency content is rolled off
+     * Range:      10 -> (samplerate/2)
+     * Default:    15000
+     * Unit:       Hertz
+     */
     @Generated
     @Selector("setLowPassCutoff:")
     public native void setLowPassCutoff(float value);
 
+    /**
+     * @property wetDryMix
+     * @abstract
+     * Blend of the wet and dry signals
+     * Range:      0 (all dry) -> 100 (all wet)
+     * Default:    100
+     * Unit:       Percent
+     */
     @Generated
     @Selector("setWetDryMix:")
     public native void setWetDryMix(float value);
 
+    /**
+     * @property wetDryMix
+     * @abstract
+     * Blend of the wet and dry signals
+     * Range:      0 (all dry) -> 100 (all wet)
+     * Default:    100
+     * Unit:       Percent
+     */
     @Generated
     @Selector("wetDryMix")
     public native float wetDryMix();

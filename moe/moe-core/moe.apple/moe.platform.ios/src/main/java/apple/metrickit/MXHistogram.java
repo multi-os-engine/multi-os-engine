@@ -28,6 +28,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXHistogram
+ * @abstract      A class representing bucketized histogram data.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -60,6 +64,10 @@ public class MXHistogram<_UnitType> extends NSObject implements NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property      bucketEnumerator
+     * @abstract      An NSEnumerator that can be used to enumerate the buckets of this histogram.
+     */
     @Generated
     @Selector("bucketEnumerator")
     public native NSEnumerator<MXHistogramBucket<NSUnit>> bucketEnumerator();
@@ -160,6 +168,11 @@ public class MXHistogram<_UnitType> extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * @property      totalBucketCount
+     * @abstract      The number of buckets contained within this histogram.
+     * @discussion    This value can never be negative.
+     */
     @Generated
     @Selector("totalBucketCount")
     @NUInt

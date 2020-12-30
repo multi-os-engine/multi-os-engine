@@ -150,14 +150,24 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
     @Selector("role")
     public native String role();
 
+    /**
+     * If already instantiated, the UIScene instance that is represented by this definition.
+     */
     @Generated
     @Selector("scene")
     public native UIScene scene();
 
+    /**
+     * The initial value of stateRestorationActivity may not be immediately available when the scene
+     * is connected, depending on the app's default protection class and the lock state of the device.
+     */
     @Generated
     @Selector("setStateRestorationActivity:")
     public native void setStateRestorationActivity(NSUserActivity value);
 
+    /**
+     * objects must be plist types
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<String, ?> value);
@@ -166,6 +176,10 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The initial value of stateRestorationActivity may not be immediately available when the scene
+     * is connected, depending on the app's default protection class and the lock state of the device.
+     */
     @Generated
     @Selector("stateRestorationActivity")
     public native NSUserActivity stateRestorationActivity();
@@ -184,6 +198,9 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * objects must be plist types
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<String, ?> userInfo();

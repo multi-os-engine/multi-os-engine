@@ -32,6 +32,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A reference object to track in the scene.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -94,6 +97,16 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Exports the object as an archive at the given URL.
+     * 
+     * @discussion The URL path should use ARReferenceObjectArchiveExtension (.arobject) for the file extension.
+     * If serialization across devices is desired, NSKeyedArchiver should be used instead.
+     * @param url The URL at which to write the exported object.
+     * @param previewImage An optional preview image to include in the archive.
+     * @param error The error to populate if the write is not successful.
+     * @return YES if the location is written successfully, otherwise NO.
+     */
     @Generated
     @Selector("exportObjectToURL:previewImage:error:")
     public native boolean exportObjectToURLPreviewImageError(NSURL url, UIImage previewImage,
@@ -108,6 +121,11 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
     @Selector("init")
     public native ARReferenceObject init();
 
+    /**
+     * Initializes a new reference object with the contents of an archive at the specified URL.
+     * @param url The URL from which to read data (.arobject archive).
+     * @param error The error to populate if the object could not be initialized.
+     */
     @Generated
     @Selector("initWithArchiveURL:error:")
     public native ARReferenceObject initWithArchiveURLError(NSURL url,
@@ -138,6 +156,9 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * An optional name used to identify the object.
+     */
     @Generated
     @Selector("name")
     public native String name();
@@ -148,15 +169,33 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The feature points of the object.
+     */
     @Generated
     @Selector("rawFeaturePoints")
     public native ARPointCloud rawFeaturePoints();
 
+    /**
+     * Returns a new reference object by aligning and merging the provided object with this reference.
+     * @discussion This can be used to combine multiple scans of the same object for detection in different conditions. The object being merged
+     * must share similar feature points for the merge to succeed.
+     * @param object The reference object to align and merge.
+     * @param error The error to populate if the merge is not successful.
+     * @return A new reference object combining features of both scans or nil if the merge was not successful.
+     */
     @Generated
     @Selector("referenceObjectByMergingObject:error:")
     public native ARReferenceObject referenceObjectByMergingObjectError(ARReferenceObject object,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Returns the set of ARReferenceObjects in the specified resource group and bundle.
+     * 
+     * @param name The name of the resource group.
+     * @param bundle The bundle containing the image file or asset catalog. Specify nil to search the app’s main bundle.
+     * @return The set of reference objects or nil on error.
+     */
     @Generated
     @Selector("referenceObjectsInGroupNamed:bundle:")
     public static native NSSet<? extends ARReferenceObject> referenceObjectsInGroupNamedBundle(String name,
@@ -170,10 +209,18 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The AR resource group name for this object.
+     * @discussion If this object was loaded via an AR resource group in the Xcode asset catalogue this property will have the name of the resource group,
+     * else be set to nil.
+     */
     @Generated
     @Selector("resourceGroupName")
     public native String resourceGroupName();
 
+    /**
+     * An optional name used to identify the object.
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);

@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKCumulativeQuantitySample
+ * @abstract      An HKQuantitySample subclass representing a quantity measurement with cumulative aggregation style.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +158,10 @@ public class HKCumulativeQuantitySample extends HKQuantitySample {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @property      sumQuantity
+     * @abstract      The sum of quantities represented by the receiver.
+     */
     @Generated
     @Selector("sumQuantity")
     public native HKQuantity sumQuantity();

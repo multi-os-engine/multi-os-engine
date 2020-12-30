@@ -121,11 +121,17 @@ public class UIKeyCommand extends UICommand {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Creates an key command that will _not_ be discoverable in the UI.
+     */
     @Generated
     @Selector("keyCommandWithInput:modifierFlags:action:")
     public static native UIKeyCommand keyCommandWithInputModifierFlagsAction(String input, @NInt long modifierFlags,
             SEL action);
 
+    /**
+     * Key Commands with a discoverabilityTitle _will_ be discoverable in the UI.
+     */
     @Generated
     @Selector("keyCommandWithInput:modifierFlags:action:discoverabilityTitle:")
     public static native UIKeyCommand keyCommandWithInputModifierFlagsActionDiscoverabilityTitle(String input,
@@ -166,6 +172,9 @@ public class UIKeyCommand extends UICommand {
     @NInt
     public static native long version_static();
 
+    /**
+     * Elaborated title, if any.
+     */
     @Generated
     @Selector("discoverabilityTitle")
     public native String discoverabilityTitle();
@@ -187,6 +196,9 @@ public class UIKeyCommand extends UICommand {
     @NInt
     public native long modifierFlags();
 
+    /**
+     * Elaborated title, if any.
+     */
     @Generated
     @Selector("setDiscoverabilityTitle:")
     public native void setDiscoverabilityTitle(String value);
@@ -197,25 +209,57 @@ public class UIKeyCommand extends UICommand {
         return supportsSecureCoding();
     }
 
+    /**
+     * Action to take on choosing this command.
+     */
     @Generated
     @Selector("action")
     public native SEL action();
 
+    /**
+     * Alternates that differ in modifier flags, if any.
+     */
     @Generated
     @Selector("alternates")
     public native NSArray<? extends UICommandAlternate> alternates();
 
+    /**
+     * Command attributes.
+     */
     @Generated
     @Selector("attributes")
     @NUInt
     public native long attributes();
 
+    /**
+     * Initializes a key command.
+     * 
+     * @param title Short display title. This should be localized.
+     * @param image Image that can appear next to this command, if needed.
+     * @param action Action to take on choosing this command.
+     * @param input Keys that must be pressed to choose this command.
+     * @param modifierFlags Bit mask of key modifier flags to choose this command.
+     * @param propertyList Property list object to distinguish commands, if needed.
+     * @return A new key command.
+     */
     @Generated
     @Selector("commandWithTitle:image:action:input:modifierFlags:propertyList:")
     public static native UIKeyCommand commandWithTitleImageActionInputModifierFlagsPropertyList(String title,
             UIImage image, SEL action, String input, @NInt long modifierFlags,
             @Mapped(ObjCObjectMapper.class) Object propertyList);
 
+    /**
+     * Initializes a key command with alternates.
+     * 
+     * @param title Short display title. This should be localized.
+     * @param image Image that can appear next to this command, if needed.
+     * @param action Action to take on choosing this command.
+     * @param input Keys that must be pressed to choose this command.
+     * @param modifierFlags Bit mask of key modifier flags to choose this command.
+     * @param propertyList Property list object to distinguish commands, if needed.
+     * @param alternates Alternates that differ in modifier flags.
+     * @return A new key command.
+     */
     @Generated
     @Selector("commandWithTitle:image:action:input:modifierFlags:propertyList:alternates:")
     public static native UIKeyCommand commandWithTitleImageActionInputModifierFlagsPropertyListAlternates(String title,
@@ -233,36 +277,60 @@ public class UIKeyCommand extends UICommand {
             SEL action, @Mapped(ObjCObjectMapper.class) Object propertyList,
             NSArray<? extends UICommandAlternate> alternates);
 
+    /**
+     * Image that can appear next to this command.
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
 
+    /**
+     * Property list object to distinguish commands, if needed.
+     */
     @Generated
     @Selector("propertyList")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object propertyList();
 
+    /**
+     * Command attributes.
+     */
     @Generated
     @Selector("setAttributes:")
     public native void setAttributes(@NUInt long value);
 
+    /**
+     * Image that can appear next to this command.
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);
 
+    /**
+     * State that can appear next to this command.
+     */
     @Generated
     @Selector("setState:")
     public native void setState(@NInt long value);
 
+    /**
+     * Short display title.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
+    /**
+     * State that can appear next to this command.
+     */
     @Generated
     @Selector("state")
     @NInt
     public native long state();
 
+    /**
+     * Short display title.
+     */
     @Generated
     @Selector("title")
     public native String title();

@@ -77,11 +77,17 @@ public class MPSMatrixCopy extends MPSKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @abstract   The number of columns to copy for each copy operation
+     */
     @Generated
     @Selector("copyColumns")
     @NUInt
     public native long copyColumns();
 
+    /**
+     * @abstract   The number of rows to copy for each copy operation
+     */
     @Generated
     @Selector("copyRows")
     @NUInt
@@ -95,10 +101,20 @@ public class MPSMatrixCopy extends MPSKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract   If YES, the destinations are in row major storage order
+     */
     @Generated
     @Selector("destinationsAreTransposed")
     public native boolean destinationsAreTransposed();
 
+    /**
+     * @abstract   Encode the copy operations to the command buffer
+     * 
+     * @param      commandBuffer       A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
+     * @param      copyDescriptor      The descriptor that defines the copy operator
+     */
     @Generated
     @Selector("encodeToCommandBuffer:copyDescriptor:")
     public native void encodeToCommandBufferCopyDescriptor(
@@ -117,6 +133,13 @@ public class MPSMatrixCopy extends MPSKernel {
     @Selector("initWithCoder:")
     public native MPSMatrixCopy initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion See @ref MPSKernel#initWithCoder.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSMatrixLookUpAndCopy
+     * @param      device      The MTLDevice on which to make the MPSMatrixLookUpAndCopy
+     * @return     A new MPSMatrixLookUpAndCopy object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSMatrixCopy initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
@@ -125,6 +148,13 @@ public class MPSMatrixCopy extends MPSKernel {
     @Selector("initWithDevice:")
     public native MPSMatrixCopy initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Initialize a copy operator
+     * @param      copyRows        The number of rows to copy for each copy operation
+     * @param      copyColumns     The number of matrix columns to copy in each copy operation
+     * @param      sourcesAreTransposed       If YES, the sources are in column major storage order
+     * @param      destinationsAreTransposed  If YES, the destinations are in column major storage order
+     */
     @Generated
     @Selector("initWithDevice:copyRows:copyColumns:sourcesAreTransposed:destinationsAreTransposed:")
     public native MPSMatrixCopy initWithDeviceCopyRowsCopyColumnsSourcesAreTransposedDestinationsAreTransposed(
@@ -170,6 +200,9 @@ public class MPSMatrixCopy extends MPSKernel {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @abstract   If YES, the sources are in row major storage order
+     */
     @Generated
     @Selector("sourcesAreTransposed")
     public native boolean sourcesAreTransposed();
@@ -193,6 +226,32 @@ public class MPSMatrixCopy extends MPSKernel {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract   Encode the copy operations to the command buffer.
+     *             This of the encode version support permuting the outputs with custom vectors of indices.
+     *             The permutations are defined on the destination indices and are the same for each copy
+     *             operation.
+     * 
+     * @param      commandBuffer           A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
+     * @param      copyDescriptor          The descriptor that defines the copy operator
+     * 
+     * @param      rowPermuteIndices       If not nil then the output row index is
+     *                                     'rowPermuteIndices[i] + rowOffset' instead of 'i + rowOffset',
+     *                                     where 'i' is the local row index of the copy operation.
+     *                                     Note: if destinationsAreTransposed is set to YES then the destination
+     *                                     transpose is performed before permutations.
+     * 
+     * @param      rowPermuteOffset        Offset in numbers to apply to the 'rowPermuteIndices' vector.
+     * 
+     * @param      columnPermuteIndices    If not nil then the output column index is
+     *                                     'columnPermuteIndices[i] + columnOffset' instead of 'i + columnOffset',
+     *                                     where 'i' is the local column index of the copy operation.
+     *                                     Note: if destinationsAreTransposed is set to YES then the destination
+     *                                     transpose is performed before permutations.
+     * 
+     * @param      columnPermuteOffset     Offset in numbers to apply to the 'columnPermuteIndices' vector.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:copyDescriptor:rowPermuteIndices:rowPermuteOffset:columnPermuteIndices:columnPermuteOffset:")
     public native void encodeToCommandBufferCopyDescriptorRowPermuteIndicesRowPermuteOffsetColumnPermuteIndicesColumnPermuteOffset(

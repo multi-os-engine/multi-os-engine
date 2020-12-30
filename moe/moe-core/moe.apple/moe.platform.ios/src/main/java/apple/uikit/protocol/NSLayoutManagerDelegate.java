@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSLayoutManagerDelegate")
 public interface NSLayoutManagerDelegate {
+    /**
+     * Invoked for resolving the glyph metrics for NSControlCharacterWhitespaceAction control character.
+     */
     @Generated
     @IsOptional
     @Selector("layoutManager:boundingBoxForControlGlyphAtIndex:forTextContainer:proposedLineFragment:glyphPosition:characterIndex:")
@@ -54,6 +57,9 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This is sent whenever a container has been filled.  This method can be useful for paginating.  The textContainer might be nil if we have completed all layout and not all of it fit into the existing containers.  The atEnd flag indicates whether all layout is complete.
+     */
     @Generated
     @IsOptional
     @Selector("layoutManager:didCompleteLayoutForTextContainer:atEnd:")
@@ -62,6 +68,9 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Returns the spacing after the line ending with glyphIndex.
+     */
     @Generated
     @IsOptional
     @Selector("layoutManager:lineSpacingAfterGlyphAtIndex:withProposedLineFragmentRect:")
@@ -71,6 +80,9 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Returns the paragraph spacing after the line ending with glyphIndex.
+     */
     @Generated
     @IsOptional
     @Selector("layoutManager:paragraphSpacingAfterGlyphAtIndex:withProposedLineFragmentRect:")
@@ -80,6 +92,9 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Returns the paragraph spacing before the line starting with glyphIndex.
+     */
     @Generated
     @IsOptional
     @Selector("layoutManager:paragraphSpacingBeforeGlyphAtIndex:withProposedLineFragmentRect:")
@@ -89,6 +104,9 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Invoked while determining the hyphenation point.  When NO, NSLayoutManager tries to find the next hyphenation opportunity before charIndex
+     */
     @Generated
     @IsOptional
     @Selector("layoutManager:shouldBreakLineByHyphenatingBeforeCharacterAtIndex:")
@@ -97,6 +115,9 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Invoked while determining the soft line break point.  When NO, NSLayoutManager tries to find the next line break opportunity before charIndex
+     */
     @Generated
     @IsOptional
     @Selector("layoutManager:shouldBreakLineByWordBeforeCharacterAtIndex:")
@@ -105,6 +126,10 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Glyph generation ***********************
+     *  This is sent whenever layoutManager is about to store the initial glyph information via -setGlyphs:properties:characterIndexes:forGlyphRange:.  This method allows customizing the initial glyph generation process.  It can invoke -setGlyphs:properties:characterIndexes:forGlyphRange: with modified glyph information.  The return value specifies the actual glyph range stored in this method.  By returning 0, it can indicate layoutManager to do the default processing. Note that querying glyph information surrounding glyphRange could lead to recursion since the data might not be available, yet.
+     */
     @Generated
     @IsOptional
     @Selector("layoutManager:shouldGenerateGlyphs:properties:characterIndexes:font:forGlyphRange:")
@@ -115,6 +140,9 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Allows NSLayoutManagerDelegate to customize the line fragment geometry before committing to the layout cache. The implementation of this method should make sure that the modified fragments are still valid inside the text container coordinate. When it returns YES, the layout manager uses the modified rects. Otherwise, it ignores the rects returned from this method.
+     */
     @Generated
     @IsOptional
     @Selector("layoutManager:shouldSetLineFragmentRect:lineFragmentUsedRect:baselineOffset:inTextContainer:forGlyphRange:")
@@ -124,6 +152,9 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Returns the control character action for the control character at charIndex.
+     */
     @Generated
     @IsOptional
     @Selector("layoutManager:shouldUseAction:forControlCharacterAtIndex:")
@@ -133,6 +164,9 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This is sent right before layoutManager invalidates the layout due to textContainer changing geometry.  The receiver of this method can react to the geometry change and perform adjustments such as recreating the exclusion path.
+     */
     @Generated
     @IsOptional
     @Selector("layoutManager:textContainer:didChangeGeometryFromSize:")
@@ -141,6 +175,10 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Layout processing ***********************
+     *  This is sent whenever layout or glyphs become invalidated in a layout manager which previously had all layout complete.
+     */
     @Generated
     @IsOptional
     @Selector("layoutManagerDidInvalidateLayout:")

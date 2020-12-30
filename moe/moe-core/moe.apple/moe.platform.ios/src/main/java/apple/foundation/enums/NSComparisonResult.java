@@ -19,6 +19,17 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * These constants are used to indicate how items in a request are ordered, from the first one given in a method invocation or function call to the last (that is, left to right in code).
+ * 
+ * Given the function:
+ *   NSComparisonResult f(int a, int b)
+ * 
+ * If:
+ *    a < b   then return NSOrderedAscending. The left operand is smaller than the right operand.
+ *    a > b   then return NSOrderedDescending. The left operand is greater than the right operand.
+ *    a == b  then return NSOrderedSame. The operands are equal.
+ */
 @Generated
 public final class NSComparisonResult {
     @Generated @NInt public static final long Ascending = 0xFFFFFFFFFFFFFFFFL;

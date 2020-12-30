@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract   The HMAccessControl class represents a generic access control.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)

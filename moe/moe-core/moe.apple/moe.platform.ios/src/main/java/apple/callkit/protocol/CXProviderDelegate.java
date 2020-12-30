@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CXProviderDelegate")
 public interface CXProviderDelegate {
+    /**
+     * Called when the provider's audio session activation state changes.
+     */
     @Generated
     @IsOptional
     @Selector("provider:didActivateAudioSession:")
@@ -54,6 +57,14 @@ public interface CXProviderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called whenever a new transaction should be executed. Return whether or not the transaction was handled:
+     * 
+     * - NO: the transaction was not handled indicating that the perform*CallAction methods should be called sequentially for each action in the transaction
+     * - YES: the transaction was handled and the perform*CallAction methods should not be called sequentially
+     * 
+     * If the method is not implemented, NO is assumed.
+     */
     @Generated
     @IsOptional
     @Selector("provider:executeTransaction:")
@@ -103,6 +114,9 @@ public interface CXProviderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If provider:executeTransaction:error: returned NO, each perform*CallAction method is called sequentially for each action in the transaction
+     */
     @Generated
     @IsOptional
     @Selector("provider:performStartCallAction:")
@@ -110,6 +124,9 @@ public interface CXProviderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when an action was not performed in time and has been inherently failed. Depending on the action, this timeout may also force the call to end. An action that has already timed out should not be fulfilled or failed by the provider delegate
+     */
     @Generated
     @IsOptional
     @Selector("provider:timedOutPerformingAction:")
@@ -117,6 +134,9 @@ public interface CXProviderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the provider has been fully created and is ready to send actions and receive updates
+     */
     @Generated
     @IsOptional
     @Selector("providerDidBegin:")
@@ -124,6 +144,9 @@ public interface CXProviderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the provider has been reset. Delegates must respond to this callback by cleaning up all internal call state (disconnecting communication channels, releasing network resources, etc.). This callback can be treated as a request to end all calls without the need to respond to any actions
+     */
     @Generated
     @Selector("providerDidReset:")
     void providerDidReset(CXProvider provider);

@@ -125,6 +125,12 @@ public class CPDashboardController extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * An array of dashboard buttons to be displayed on the dashboard widget.
+     * @note The dashboard controller may display a maximum of 2 buttons. Setting more than 2 buttons to this
+     * property will only display the first 2 buttons. The system will manage hiding and showing these buttons when
+     * navigation is active or inactive.
+     */
     @Generated
     @Selector("setShortcutButtons:")
     public native void setShortcutButtons(NSArray<? extends CPDashboardButton> value);
@@ -133,6 +139,12 @@ public class CPDashboardController extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * An array of dashboard buttons to be displayed on the dashboard widget.
+     * @note The dashboard controller may display a maximum of 2 buttons. Setting more than 2 buttons to this
+     * property will only display the first 2 buttons. The system will manage hiding and showing these buttons when
+     * navigation is active or inactive.
+     */
     @Generated
     @Selector("shortcutButtons")
     public native NSArray<? extends CPDashboardButton> shortcutButtons();

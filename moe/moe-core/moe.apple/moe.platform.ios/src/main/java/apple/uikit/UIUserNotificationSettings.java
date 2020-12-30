@@ -141,6 +141,9 @@ public class UIUserNotificationSettings extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * categories may be nil or an empty set if custom user notification actions will not be used
+     */
     @Generated
     @Selector("settingsForTypes:categories:")
     public static native UIUserNotificationSettings settingsForTypesCategories(@NUInt long types,
@@ -155,6 +158,9 @@ public class UIUserNotificationSettings extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The set of UIUserNotificationCategory objects that describe the actions to show when a user notification is presented
+     */
     @Generated
     @Selector("categories")
     public native NSSet<? extends UIUserNotificationCategory> categories();

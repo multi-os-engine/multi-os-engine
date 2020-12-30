@@ -27,6 +27,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * ----------------------------------------------------------------------------------------------------------------- ICCameraItem
+ * @class ICCameraItem
+ * @abstract ICCameraItem is an abstract class that represents an item in an ICCameraDevice object. ICCameraDevice object creates
+ * instances of two concrete subclasses of ICCameraItem: ICCameraFolder and ICCameraFile.
+ */
 @Generated
 @Library("ImageCaptureCore")
 @Runtime(ObjCRuntime.class)
@@ -41,6 +47,10 @@ public class ICCameraItem extends NSObject {
         super(peer);
     }
 
+    /**
+     * @property UTI
+     * @abstract ￼Item UTI. This is an Uniform Type Identifier string. It is one of: kUTTypeFolder, kUTTypeImage, kUTTypeMovie, kUTTypeAudio, or kUTTypeData.
+     */
     @Generated
     @Selector("UTI")
     public native String UTI();
@@ -81,6 +91,10 @@ public class ICCameraItem extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property creationDate
+     * @abstract ￼Creation date of this file. This information is usually the same as the EXIF creation date.
+     */
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -93,14 +107,26 @@ public class ICCameraItem extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property device
+     * @abstract ￼Parent device of this item.
+     */
     @Generated
     @Selector("device")
     public native ICCameraDevice device();
 
+    /**
+     * @method flushMetadataCache
+     * @abstract ￼Deletes cached metadata for the item.
+     */
     @Generated
     @Selector("flushMetadataCache")
     public native void flushMetadataCache();
 
+    /**
+     * @method flushThumbnailCache
+     * @abstract ￼Deletes cached thumbnail for the item.
+     */
     @Generated
     @Selector("flushThumbnailCache")
     public native void flushThumbnailCache();
@@ -127,14 +153,27 @@ public class ICCameraItem extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * @property inTemporaryStore
+     * @abstract ￼Indicates if this folder is in a temporary store. A temporary store may be used by the device when images are
+     *  captures on the device when it is tethered to the computer.
+     */
     @Generated
     @Selector("isInTemporaryStore")
     public native boolean isInTemporaryStore();
 
+    /**
+     * @property locked
+     * @abstract ￼Indicates the protection state of this item. It is locked if the storage card in the camera is locked.
+     */
     @Generated
     @Selector("isLocked")
     public native boolean isLocked();
 
+    /**
+     * @property raw
+     * @abstract ￼Indicates if the file is a raw image file.
+     */
     @Generated
     @Selector("isRaw")
     public native boolean isRaw();
@@ -147,22 +186,40 @@ public class ICCameraItem extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property largeThumbnailIfAvailable
+     */
     @Generated
     @Selector("largeThumbnailIfAvailable")
     public native CGImageRef largeThumbnailIfAvailable();
 
+    /**
+     * @property metadata
+     * @abstract ￼Metadata for the item. The value of this property is NULL unless a 'requestMetadata' message is sent to this object.
+     */
     @Generated
     @Selector("metadata")
     public native NSDictionary<?, ?> metadata();
 
+    /**
+     * @property metadataIfAvailable
+     */
     @Generated
     @Selector("metadataIfAvailable")
     public native NSDictionary<String, ?> metadataIfAvailable();
 
+    /**
+     * @property modificationDate
+     * @abstract ￼Modification date of this file. This information is usually the same as the EXIF modification date.
+     */
     @Generated
     @Selector("modificationDate")
     public native NSDate modificationDate();
 
+    /**
+     * @property name
+     * @abstract ￼Name of this item.
+     */
     @Generated
     @Selector("name")
     public native String name();
@@ -173,18 +230,37 @@ public class ICCameraItem extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property parentFolder
+     * @abstract ￼Parent folder of this folder. The root folder's parentFolder is nil.
+     */
     @Generated
     @Selector("parentFolder")
     public native ICCameraFolder parentFolder();
 
+    /**
+     * @property ptpObjectHandle
+     * @abstract PTP object handle value if the item is on a camera that uses PTP protocol. The value of this property is set to 0
+     *  if the camera does not use PTP protocol.
+     */
     @Generated
     @Selector("ptpObjectHandle")
     public native int ptpObjectHandle();
 
+    /**
+     * @method requestMetadata
+     * @abstract ￼Metadata for the file if one is readily available. If one is not readily available, accessing this property will send a message to the device requesting metadata for the file. The delegate of the device will be notified via method "cameraDevice:didReceiveMetadata:forItem:error:", if this method is implemented by the delegate.
+     * @note Execution of the delegate callback will occur on the main thread.
+     */
     @Generated
     @Selector("requestMetadata")
     public native void requestMetadata();
 
+    /**
+     * @method requestThumbnail
+     * @abstract This method requests thumbnail for the item. If one is not readily available, accessing this property will send a message to the device requesting a thumbnail for the file. The delegate of the device will be notified via method "cameraDevice:didReceiveThumbnail:forItem:error:", if this method is implemented by the delegate.
+     * @note Execution of the delegate callback will occur on the main thread.
+     */
     @Generated
     @Selector("requestThumbnail")
     public native void requestThumbnail();
@@ -205,14 +281,26 @@ public class ICCameraItem extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * @property thumbnail
+     * @abstract ￼Thumbnail for the item. The value of this property is NULL unless a 'requestThumbnail' message is sent to this object.
+     */
     @Generated
     @Selector("thumbnail")
     public native CGImageRef thumbnail();
 
+    /**
+     * @property thumbnailIfAvailable
+     */
     @Generated
     @Selector("thumbnailIfAvailable")
     public native CGImageRef thumbnailIfAvailable();
 
+    /**
+     * @property userData
+     * @abstract ￼A mutable dictionary to store arbitrary key-value pairs associated with a camera item object. This can be used by
+     *  view objects that bind to this object to store "house-keeping" information.
+     */
     @Generated
     @Selector("userData")
     public native NSMutableDictionary<?, ?> userData();
@@ -222,6 +310,11 @@ public class ICCameraItem extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property addedAfterContentCatalogCompleted
+     * @abstract This property is set if the file is captured on the device after the device's content is fully enumerated. This does
+     * not apply to files added as a result of adding a new store to the device.
+     */
     @Generated
     @Selector("wasAddedAfterContentCatalogCompleted")
     public native boolean wasAddedAfterContentCatalogCompleted();

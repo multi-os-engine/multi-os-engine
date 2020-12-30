@@ -169,6 +169,9 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     @NInt
     public static native long version_static();
 
+    /**
+     * Force a sort descriptor which was securely decoded to allow evaluation
+     */
     @Generated
     @Selector("allowEvaluation")
     public native void allowEvaluation();
@@ -182,6 +185,9 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     @ObjCBlock(name = "call_comparator_ret")
     public native Block_comparator_ret comparator();
 
+    /**
+     * primitive - override this method if you want to perform comparisons differently (not key based for example)
+     */
     @Generated
     @Selector("compareObject:toObject:")
     @NInt
@@ -206,6 +212,9 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     @Selector("initWithCoder:")
     public native NSSortDescriptor initWithCoder(NSCoder coder);
 
+    /**
+     * keys may be key paths
+     */
     @Generated
     @Selector("initWithKey:ascending:")
     public native NSSortDescriptor initWithKeyAscending(String key, boolean ascending);
@@ -223,6 +232,9 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     @Selector("key")
     public native String key();
 
+    /**
+     * primitive - override this method to return a sort descriptor instance with reversed sort order
+     */
     @Generated
     @Selector("reversedSortDescriptor")
     @MappedReturn(ObjCObjectMapper.class)

@@ -50,26 +50,44 @@ public final class cmsghdr extends StructObject {
         setCmsg_type(cmsg_type);
     }
 
+    /**
+     * [XSI] data byte count, including hdr
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int cmsg_len();
 
+    /**
+     * [XSI] data byte count, including hdr
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setCmsg_len(int value);
 
+    /**
+     * [XSI] originating protocol
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int cmsg_level();
 
+    /**
+     * [XSI] originating protocol
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setCmsg_level(int value);
 
+    /**
+     * [XSI] protocol-specific type
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int cmsg_type();
 
+    /**
+     * [XSI] protocol-specific type
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setCmsg_type(int value);

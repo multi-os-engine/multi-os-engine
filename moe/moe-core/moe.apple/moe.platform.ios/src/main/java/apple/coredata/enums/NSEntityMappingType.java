@@ -19,13 +19,31 @@ package apple.coredata.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * mapping types
+ */
 @Generated
 public final class NSEntityMappingType {
     @Generated @NUInt public static final long UndefinedEntityMappingType = 0x0000000000000000L;
+    /**
+     * developer handles destination instance creation
+     */
     @Generated @NUInt public static final long CustomEntityMappingType = 0x0000000000000001L;
+    /**
+     * new entity in destination
+     */
     @Generated @NUInt public static final long AddEntityMappingType = 0x0000000000000002L;
+    /**
+     * source instances aren't mapped to destination
+     */
     @Generated @NUInt public static final long RemoveEntityMappingType = 0x0000000000000003L;
+    /**
+     * migrate instances as-is
+     */
     @Generated @NUInt public static final long CopyEntityMappingType = 0x0000000000000004L;
+    /**
+     * entity exists in source and destination and is mapped
+     */
     @Generated @NUInt public static final long TransformEntityMappingType = 0x0000000000000005L;
 
     @Generated

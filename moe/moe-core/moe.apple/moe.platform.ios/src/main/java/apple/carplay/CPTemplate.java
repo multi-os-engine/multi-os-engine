@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Abstract superclass for a template object.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -137,6 +140,9 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Any custom data or an object associated with this template can be stored in this property.
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
@@ -159,6 +165,9 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * Any custom data or an object associated with this template can be stored in this property.
+     */
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)
@@ -169,35 +178,87 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab may optionally
+     * display a badge indicator.
+     * 
+     * @note This defaults to NO. Specify YES to display a badge indicator on this tab.
+     */
     @Generated
     @Selector("setShowsTabBadge:")
     public native void setShowsTabBadge(boolean value);
 
+    /**
+     * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
+     * the image specified in this template. If a tabSystemItem is also specified, tabImage will take precedence.
+     * 
+     * @note Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
+     */
     @Generated
     @Selector("setTabImage:")
     public native void setTabImage(UIImage value);
 
+    /**
+     * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
+     * the system image AND system title specified in this template.
+     * 
+     * @note Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
+     */
     @Generated
     @Selector("setTabSystemItem:")
     public native void setTabSystemItem(@NInt long value);
 
+    /**
+     * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
+     * the @c tabTitle specified in this template.
+     * 
+     * @note If no @c tabTitle is specified, the tab will inherit the template's title, if any.
+     * 
+     * @note Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
+     */
     @Generated
     @Selector("setTabTitle:")
     public native void setTabTitle(String value);
 
+    /**
+     * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab may optionally
+     * display a badge indicator.
+     * 
+     * @note This defaults to NO. Specify YES to display a badge indicator on this tab.
+     */
     @Generated
     @Selector("showsTabBadge")
     public native boolean showsTabBadge();
 
+    /**
+     * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
+     * the image specified in this template. If a tabSystemItem is also specified, tabImage will take precedence.
+     * 
+     * @note Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
+     */
     @Generated
     @Selector("tabImage")
     public native UIImage tabImage();
 
+    /**
+     * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
+     * the system image AND system title specified in this template.
+     * 
+     * @note Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
+     */
     @Generated
     @Selector("tabSystemItem")
     @NInt
     public native long tabSystemItem();
 
+    /**
+     * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
+     * the @c tabTitle specified in this template.
+     * 
+     * @note If no @c tabTitle is specified, the tab will inherit the template's title, if any.
+     * 
+     * @note Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
+     */
     @Generated
     @Selector("tabTitle")
     public native String tabTitle();

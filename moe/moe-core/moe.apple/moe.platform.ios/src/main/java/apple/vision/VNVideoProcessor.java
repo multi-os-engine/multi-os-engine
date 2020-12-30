@@ -30,6 +30,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract	A controller object that is used to perform one or more requests on a video stream.
+ * @discussion	VNVideoProcessor handles the video decoding and buffer management, feeding the buffers to the associated requests at the best desired frame rate.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -48,6 +52,16 @@ public class VNVideoProcessor extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * @brief Add a VNRequest with the specified processing options to be performed on the video.
+     * @details This method can be called either before calling -analyzeTimeRange:error: or from within one of the already associated request's completion handlers.
+     * 
+     * @param request The VNRequest to be added to the processing pipeline. If added from within a completionHandler, it will be processed on the same frame that is currently being processed.
+     * @param processingOptions The options applied to the request's processing of the video.
+     * @param error Returns an error that happened during scheduling of the requests. Check individual requests results and errors for their respective success and failures. This parameter is optional.
+     * @return Returns true if the request added to the processing pipeline.
+     * @note   The VNRequest must have completion handler set otherwise no results can be returned.
+     */
     @Generated
     @Selector("addRequest:processingOptions:error:")
     public native boolean addRequestProcessingOptionsError(VNRequest request,
@@ -69,6 +83,15 @@ public class VNVideoProcessor extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @brief Processes the video over the specified time range.
+     * @details This call is synchronous and only returns after the video is processed through its duration or an error prevented the processing.
+     * 
+     * @param timeRange  Start and duration of the timerange within video to process. If the duration is longer than the video (e.g., kCMTimeIndefinite) the processing stops at the end of the video.
+     * @param error Returns an error that happened during the starting of the processing queue (for instance if the time range is not valid for the video asset). This parameter is optional.
+     * @return Returns true if all requests were scheduled and performed. Check individual requests results and errors for their respective success and failures.
+     * @note   The intersection of the CMTimeRangeMake(start, duration) and CMTimeRangeMake(kCMTimeZero, asset.duration) will determine the timerange of the video to process
+     */
     @Generated
     @Selector("analyzeTimeRange:error:")
     public native boolean analyzeTimeRangeError(@ByValue CMTimeRange timeRange,
@@ -83,6 +106,9 @@ public class VNVideoProcessor extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @brief Cancel the processing of the video. This can return before the last request has completed.
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -122,6 +148,11 @@ public class VNVideoProcessor extends NSObject {
     @Selector("init")
     public native VNVideoProcessor init();
 
+    /**
+     * @brief Creates a VNVideoProcessor to be used for performing requests against a video asset specified by it's URL.
+     * 
+     * @param videoURL A URL pointing at a video asset on which the requests will be performed. The video format has to be supported by AVFoundation.
+     */
     @Generated
     @Selector("initWithURL:")
     public native VNVideoProcessor initWithURL(NSURL videoURL);
@@ -153,6 +184,14 @@ public class VNVideoProcessor extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief Remove a VNRequest from the video processor, which means it won't be performed anymore.
+     * @details This method can be called either before calling -analyzeTimeRange:error: or from within one of the already associated request's completion handlers.
+     * 
+     * @param request The VNRequest to be removed from the processing pipeline.
+     * @param error Returns an error that happened during processing of the request, such as if the request was not found in the processing queue. This parameter is optional.
+     * @return Returns true if the request was found and removed from the processing pipeline.
+     */
     @Generated
     @Selector("removeRequest:error:")
     public native boolean removeRequestError(VNRequest request,

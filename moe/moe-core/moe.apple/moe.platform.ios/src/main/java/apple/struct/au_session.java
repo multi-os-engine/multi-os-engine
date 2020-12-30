@@ -37,21 +37,33 @@ public final class au_session extends StructObject {
         setAs_mask(as_mask);
     }
 
+    /**
+     * Ptr to full audit info.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native auditinfo_addr as_aia_p();
 
+    /**
+     * Ptr to full audit info.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setAs_aia_p(
             @UncertainArgument("Options: reference, array Fallback: reference") auditinfo_addr value);
 
+    /**
+     * Process Audit Masks.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native au_mask as_mask();
 
+    /**
+     * Process Audit Masks.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setAs_mask(@ByValue au_mask value);

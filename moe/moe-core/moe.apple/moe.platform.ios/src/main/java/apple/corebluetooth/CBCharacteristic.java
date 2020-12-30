@@ -40,6 +40,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CBCharacteristic
+ * 
+ * @discussion
+ *     Represents a service's characteristic.
+ */
 @Generated
 @Library("CoreBluetooth")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +157,12 @@ public class CBCharacteristic extends CBAttribute {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property descriptors
+     * 
+     *  @discussion
+     *      A list of the CBDescriptors that have so far been discovered in this characteristic.
+     */
     @Generated
     @Selector("descriptors")
     public native NSArray<? extends CBDescriptor> descriptors();
@@ -159,24 +171,54 @@ public class CBCharacteristic extends CBAttribute {
     @Selector("init")
     public native CBCharacteristic init();
 
+    /**
+     * @property isBroadcasted
+     * 
+     *  @discussion
+     *      Whether the characteristic is currently broadcasted or not.
+     */
     @Generated
     @Deprecated
     @Selector("isBroadcasted")
     public native boolean isBroadcasted();
 
+    /**
+     * @property isNotifying
+     * 
+     *  @discussion
+     *      Whether the characteristic is currently notifying or not.
+     */
     @Generated
     @Selector("isNotifying")
     public native boolean isNotifying();
 
+    /**
+     * @property properties
+     * 
+     *  @discussion
+     *      The properties of the characteristic.
+     */
     @Generated
     @Selector("properties")
     @NUInt
     public native long properties();
 
+    /**
+     * @property service
+     * 
+     *  @discussion
+     *      A back-pointer to the service this characteristic belongs to.
+     */
     @Generated
     @Selector("service")
     public native CBService service();
 
+    /**
+     * @property value
+     * 
+     *  @discussion
+     *      The value of the characteristic.
+     */
     @Generated
     @Selector("value")
     public native NSData value();

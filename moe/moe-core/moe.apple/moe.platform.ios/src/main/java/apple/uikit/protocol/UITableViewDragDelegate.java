@@ -17,11 +17,19 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * _______________________________________________________________________________________________________________
+ * Drag & Drop
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITableViewDragDelegate")
 public interface UITableViewDragDelegate {
+    /**
+     * Allows customization of the preview used for the row when it is lifted or if the drag cancels.
+     * If not implemented or if nil is returned, the entire cell will be used for the preview.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:dragPreviewParametersForRowAtIndexPath:")
@@ -30,6 +38,10 @@ public interface UITableViewDragDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Controls whether move operations are allowed for the drag session.
+     * If not implemented, defaults to YES.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:dragSessionAllowsMoveOperation:")
@@ -38,6 +50,9 @@ public interface UITableViewDragDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called to signal the end of the drag session.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:dragSessionDidEnd:")
@@ -46,6 +61,10 @@ public interface UITableViewDragDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Controls whether the drag session is restricted to the source application.
+     * If not implemented, defaults to NO.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:dragSessionIsRestrictedToDraggingApplication:")
@@ -54,6 +73,10 @@ public interface UITableViewDragDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called after the lift animation has completed to signal the start of a drag session.
+     * This call will always be balanced with a corresponding call to -tableView:dragSessionDidEnd:
+     */
     @Generated
     @IsOptional
     @Selector("tableView:dragSessionWillBegin:")
@@ -62,6 +85,12 @@ public interface UITableViewDragDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called to request items to add to an existing drag session in response to the add item gesture.
+     * You can use the provided point (in the table view's coordinate space) to do additional hit testing if desired.
+     * If not implemented, or if an empty array is returned, no items will be added to the drag and the gesture
+     * will be handled normally.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:itemsForAddingToDragSession:atIndexPath:point:")
@@ -70,6 +99,11 @@ public interface UITableViewDragDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Provide items to begin a drag associated with a given index path.
+     * You can use -[session locationInView:] to do additional hit testing if desired.
+     * If an empty array is returned a drag session will not begin.
+     */
     @Generated
     @Selector("tableView:itemsForBeginningDragSession:atIndexPath:")
     NSArray<? extends UIDragItem> tableViewItemsForBeginningDragSessionAtIndexPath(UITableView tableView,

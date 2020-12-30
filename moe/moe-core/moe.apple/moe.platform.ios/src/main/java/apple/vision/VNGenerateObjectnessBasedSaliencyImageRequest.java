@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief    Generates an image that identifies which part(s) of a given image are most likely to be objects (i.e. something that a human is likely to see as an object).
+ * The resulting observation, VNSaliencyImageObservation, encodes this data as a heat map which can be used highlight regions of interest.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)

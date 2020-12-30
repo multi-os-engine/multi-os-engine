@@ -41,6 +41,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A deterministic pseudo-random source that generates random numbers based on a mersenne twister algorithm.
+ * This is a deterministic random source suitable for creating reliable gameplay mechanics.
+ * It is slightly slower than an Arc4 source, but more random, in that it has a longer period until repeating sequences.
+ * 
+ * While deterministic, this is not a cryptographic random source. It is however suitable
+ * for obfuscation of gameplay data.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -160,6 +168,9 @@ public class GKMersenneTwisterRandomSource extends GKRandomSource {
     @NInt
     public static native long version_static();
 
+    /**
+     * Initializes a linear congruential random source with bits from a high entropy system resource like SecRandomCopyBytes.
+     */
     @Generated
     @Selector("init")
     public native GKMersenneTwisterRandomSource init();
@@ -168,14 +179,25 @@ public class GKMersenneTwisterRandomSource extends GKRandomSource {
     @Selector("initWithCoder:")
     public native GKMersenneTwisterRandomSource initWithCoder(NSCoder aDecoder);
 
+    /**
+     * Initializes a linear congruential random source with bits the given 64 bit seed.
+     */
     @Generated
     @Selector("initWithSeed:")
     public native GKMersenneTwisterRandomSource initWithSeed(long seed);
 
+    /**
+     * The seed used to stir the mersenne twister random source.
+     * The seed is not encoded through archiving, but the equivalent state buffers are encoded.
+     */
     @Generated
     @Selector("seed")
     public native long seed();
 
+    /**
+     * The seed used to stir the mersenne twister random source.
+     * The seed is not encoded through archiving, but the equivalent state buffers are encoded.
+     */
     @Generated
     @Selector("setSeed:")
     public native void setSeed(long value);

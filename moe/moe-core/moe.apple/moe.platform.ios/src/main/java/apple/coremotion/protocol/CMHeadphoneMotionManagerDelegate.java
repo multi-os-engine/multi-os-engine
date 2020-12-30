@@ -9,11 +9,24 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * CMHeadphoneMotionManagerDelegate
+ * 
+ * Discussion:
+ *   Delegate for CMHeadphoneMotionManager.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CMHeadphoneMotionManagerDelegate")
 public interface CMHeadphoneMotionManagerDelegate {
+    /**
+     * headphoneMotionManagerDidConnect:
+     * 
+     * Discussion:
+     *   Invoked when a headphone is connected. Execution of the delegate callback occurs on the operation queue used to
+     *   deliver the device motion updates. The main thread is used if the queue was not specified.
+     */
     @Generated
     @IsOptional
     @Selector("headphoneMotionManagerDidConnect:")
@@ -21,6 +34,13 @@ public interface CMHeadphoneMotionManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * headphoneMotionManagerDidDisconnect:
+     * 
+     * Discussion:
+     *   Invoked when a headphone is disconnected. Execution of the delegate callback occurs on the operation queue used to
+     *   deliver the device motion updates. The main thread is used if the queue was not specified.
+     */
     @Generated
     @IsOptional
     @Selector("headphoneMotionManagerDidDisconnect:")

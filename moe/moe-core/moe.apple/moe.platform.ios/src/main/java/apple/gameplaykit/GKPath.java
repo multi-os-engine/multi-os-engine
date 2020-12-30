@@ -129,6 +129,14 @@ public class GKPath extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Creates a path from an array of graph nodes (often a result of pathfinding)
+     * Accepts GKGraphNode2D and GKGraphNode3D
+     * Cyclical is set to NO
+     * @param graphNodes an array of graph nodes to make a path from
+     * @param radius radius of the path to create
+     * @see GKGraphNode
+     */
     @Generated
     @Selector("pathWithGraphNodes:radius:")
     public static native GKPath pathWithGraphNodesRadius(NSArray<? extends GKGraphNode> graphNodes, float radius);
@@ -162,23 +170,40 @@ public class GKPath extends NSObject {
     @Selector("initWithGraphNodes:radius:")
     public native GKPath initWithGraphNodesRadius(NSArray<? extends GKGraphNode> graphNodes, float radius);
 
+    /**
+     * Does this path loop back on itself, creating a cycle?
+     */
     @Generated
     @Selector("isCyclical")
     public native boolean isCyclical();
 
+    /**
+     * Does this path loop back on itself, creating a cycle?
+     */
     @Generated
     @Selector("setCyclical:")
     public native void setCyclical(boolean value);
 
+    /**
+     * Number of points in this path
+     */
     @Generated
     @Selector("numPoints")
     @NUInt
     public native long numPoints();
 
+    /**
+     * Radius of the pathway.  Defines a spatial area that the path occupies.
+     * This can be though of as the union between rectangles between all points, and circles at each point
+     */
     @Generated
     @Selector("radius")
     public native float radius();
 
+    /**
+     * Radius of the pathway.  Defines a spatial area that the path occupies.
+     * This can be though of as the union between rectangles between all points, and circles at each point
+     */
     @Generated
     @Selector("setRadius:")
     public native void setRadius(float value);

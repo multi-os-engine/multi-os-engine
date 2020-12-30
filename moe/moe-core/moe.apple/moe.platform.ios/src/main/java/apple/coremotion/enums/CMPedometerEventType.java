@@ -19,6 +19,12 @@ package apple.coremotion.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * CMPedometerEventType
+ * 
+ * Discussion:
+ *     Events describing the transitions of pedestrian activity.
+ */
 @Generated
 public final class CMPedometerEventType {
     @Generated @NInt public static final long Pause = 0x0000000000000000L;

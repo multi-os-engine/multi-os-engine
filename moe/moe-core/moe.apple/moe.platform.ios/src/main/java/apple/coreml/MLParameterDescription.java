@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Describes a model parameter along with a default value and any applicable constaint on the values.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -80,6 +83,9 @@ public class MLParameterDescription extends NSObject implements NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Default value of the parameter
+     */
     @Generated
     @Selector("defaultValue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -123,6 +129,9 @@ public class MLParameterDescription extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Name and type of the parameter
+     */
     @Generated
     @Selector("key")
     public native MLParameterKey key();
@@ -137,6 +146,9 @@ public class MLParameterDescription extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Any applicable constraint on the parameter value
+     */
     @Generated
     @Selector("numericConstraint")
     public native MLNumericConstraint numericConstraint();

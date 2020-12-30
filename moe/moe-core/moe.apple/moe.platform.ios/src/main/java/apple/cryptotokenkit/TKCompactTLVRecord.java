@@ -24,6 +24,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * TKCompactTLVRecord implements Compact-TLV encoding according to ISO7816-4
+ * Tag is number in range <0..15> encoded as high 4 bits of initial byte, length is number in range <0..15>
+ * encoded as low 4 bits of initial byte.  Value immediatelly follows leading byte.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -91,6 +96,12 @@ public class TKCompactTLVRecord extends TKTLVRecord {
     @Selector("init")
     public native TKCompactTLVRecord init();
 
+    /**
+     * Creates TLV record with specified tag and value.
+     * @param tag Tag value for the new record.
+     * @param value Value for the new record.
+     * @return Newly created TLV record.
+     */
     @Generated
     @Selector("initWithTag:value:")
     public native TKCompactTLVRecord initWithTagValue(byte tag, NSData value);

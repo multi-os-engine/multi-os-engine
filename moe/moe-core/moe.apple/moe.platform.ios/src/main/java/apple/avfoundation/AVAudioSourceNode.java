@@ -31,6 +31,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVAudioSourceNode
+ * @abstract AVAudioSourceNode wraps a client provided block to supply audio.
+ * @discussion
+ *     With AVAudioSourceNode the client can supply audio data for rendering through an
+ *     AVAudioSourceNodeRenderBlock block.
+ *     This is similar to setting the input callback on an Audio Unit with the
+ *     kAudioUnitProperty_SetRenderCallback property.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -102,6 +111,23 @@ public class AVAudioSourceNode extends AVAudioNode implements AVAudioMixing {
     @Selector("init")
     public native AVAudioSourceNode init();
 
+    /**
+     * @method initWithFormat:renderBlock:
+     * @abstract Create a node with a render block.
+     * @param format
+     *     The format of the PCM audio data that will be supplied by the block.
+     * @param block
+     *     The block to supply audio data to the output.
+     * @discussion
+     *     The block can be called on realtime or non-realtime threads depending on the engine’s
+     *     operating mode and it is the client's responsibility to handle it in a thread-safe manner.
+     * 
+     *     The audio format for the output bus will be set from the connection format when connecting
+     *     to another node.
+     * 
+     *     AVAudioSourceNode supports different audio formats for the block and output, but only
+     *     Linear PCM conversions are supported (sample rate, bit depth, interleaving).
+     */
     @Generated
     @Selector("initWithFormat:renderBlock:")
     public native AVAudioSourceNode initWithFormatRenderBlock(AVAudioFormat format,
@@ -117,6 +143,21 @@ public class AVAudioSourceNode extends AVAudioNode implements AVAudioMixing {
                 @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData);
     }
 
+    /**
+     * @method initWithRenderBlock:
+     * @abstract Create a node with a render block.
+     * @param block
+     *     The block to supply audio data to the output.
+     * @discussion
+     *     The block can be called on realtime or non-realtime threads depending on the engine’s
+     *     operating mode and it is the client's responsibility to handle it in a thread-safe manner.
+     * 
+     *     The audio format for the output bus will be set from the connection format when connecting
+     *     to another node.
+     * 
+     *     The audio format for the block will be set to the node's output format. If node is
+     *     reconnected with a different output format, the audio format for the block will also change.
+     */
     @Generated
     @Selector("initWithRenderBlock:")
     public native AVAudioSourceNode initWithRenderBlock(

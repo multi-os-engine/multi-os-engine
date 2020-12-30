@@ -40,6 +40,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Used to report merge conflicts which include uniqueness constraint violations. Optimistic locking failures will be reported
+ * separately from uniquness conflicts and will be resolved first. Each constraint violated will result in a separate NSMergeConflict,
+ * although if an entity hierarchy has a constraint which is extended in subentities, all constraint violations for that constraint
+ * will be collapsed into a single report.
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -151,26 +157,44 @@ public class NSConstraintConflict extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The objects in violation of the constraint. May contain one (in the case of a db level conflict) or more objects.
+     */
     @Generated
     @Selector("conflictingObjects")
     public native NSArray<? extends NSManagedObject> conflictingObjects();
 
+    /**
+     * The original property values of objects in violation of the constraint.  Will contain as many objects as there are conflictingObjects. If an object was unchanged, its snapshot will instead be -[NSNull null].
+     */
     @Generated
     @Selector("conflictingSnapshots")
     public native NSArray<? extends NSDictionary<?, ?>> conflictingSnapshots();
 
+    /**
+     * The constraint which has been violated.
+     */
     @Generated
     @Selector("constraint")
     public native NSArray<String> constraint();
 
+    /**
+     * The values which the conflictingObjects had when this conflict was created. May no longer match the values of any conflicted object if something else resolved the conflict.
+     */
     @Generated
     @Selector("constraintValues")
     public native NSDictionary<String, ?> constraintValues();
 
+    /**
+     * Object whose DB row is using constraint values. May be null if this is a context-level violation.
+     */
     @Generated
     @Selector("databaseObject")
     public native NSManagedObject databaseObject();
 
+    /**
+     * DB row already using constraint values. May be null if this is a context-level violation.
+     */
     @Generated
     @Selector("databaseSnapshot")
     public native NSDictionary<String, ?> databaseSnapshot();
@@ -179,6 +203,20 @@ public class NSConstraintConflict extends NSObject {
     @Selector("init")
     public native NSConstraintConflict init();
 
+    /**
+     * There are two situations in which a constraint conflict may occur:
+     * 
+     * 1. Between multiple objects being saved in a single managed object context. In this case, the conflict
+     *      will have a nil database object/snapshot, and multiple conflicting objects/snapshots representing
+     *      the state of the objects when they were first faulted or inserted into the context.
+     * 
+     * 2. Between a single object being saved in a managed object context and the external store. In this case, the
+     *      constraint conflict will have a database object, the current row snapshot for the database object, plus a
+     *      a single conflicting object and its snapshot from when it was first faulted or inserted.
+     * 
+     *  Snapshot dictionaries include values for all attributes and to-one relationships, but not to-many relationships.
+     *   Relationship values are NSManagedObjectID references. to-many relationships must be pulled from the persistent store as needed.
+     */
     @Generated
     @Selector("initWithConstraint:databaseObject:databaseSnapshot:conflictingObjects:conflictingSnapshots:")
     public native NSConstraintConflict initWithConstraintDatabaseObjectDatabaseSnapshotConflictingObjectsConflictingSnapshots(

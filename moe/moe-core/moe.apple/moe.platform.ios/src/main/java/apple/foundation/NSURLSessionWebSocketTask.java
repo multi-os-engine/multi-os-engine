@@ -21,6 +21,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A WebSocket task can be created with a ws or wss url. A client can also provide
+ * a list of protocols it wishes to advertise during the WebSocket handshake phase.
+ * Once the handshake is successfully completed the client will be notified through an optional delegate.
+ * All reads and writes enqueued before the completion of the handshake will be queued up and
+ * executed once the hanshake succeeds. Before the handshake completes, the client can be called to handle
+ * redirection or authentication using the same delegates as NSURLSessionTask. WebSocket task will also provide
+ * support for cookies and will store cookies to the cookie storage on the session and will attach cookies to
+ * outgoing HTTP handshake requests.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -63,6 +73,10 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * Sends a close frame with the given closeCode. An optional reason can be provided while sending the close frame.
+     * Simply calling cancel on the task will result in a cancellation frame being sent without any reason.
+     */
     @Generated
     @Selector("cancelWithCloseCode:reason:")
     public native void cancelWithCloseCodeReason(@NInt long closeCode, NSData reason);
@@ -75,11 +89,17 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * A task can be queried for it's close code at any point. When the task is not closed, it will be set to NSURLSessionWebSocketCloseCodeInvalid
+     */
     @Generated
     @Selector("closeCode")
     @NInt
     public native long closeCode();
 
+    /**
+     * A task can be queried for it's close reason at any point. A nil value indicates no closeReason or that the task is still running
+     */
     @Generated
     @Selector("closeReason")
     public native NSData closeReason();
@@ -122,6 +142,9 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from continuation frames. Recieve calls will error out if this value is reached
+     */
     @Generated
     @Selector("maximumMessageSize")
     @NInt
@@ -133,6 +156,11 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Reads a WebSocket message once all the frames of the message are available.
+     * If the maximumMessage size is hit while buffering the frames, the receiveMessage call will error out
+     * and all outstanding work will also fail resulting in the end of the task.
+     */
     @Generated
     @Selector("receiveMessageWithCompletionHandler:")
     public native void receiveMessageWithCompletionHandler(
@@ -153,6 +181,12 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Sends a WebSocket message. If an error occurs, any outstanding work will also fail.
+     * Note that invocation of the completion handler does not
+     * guarantee that the remote side has received all the bytes, only
+     * that they have been written to the kernel.
+     */
     @Generated
     @Selector("sendMessage:completionHandler:")
     public native void sendMessageCompletionHandler(NSURLSessionWebSocketMessage message,
@@ -165,6 +199,12 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
         void call_sendMessageCompletionHandler(NSError error);
     }
 
+    /**
+     * Sends a ping frame from the client side. The pongReceiveHandler is invoked when the client
+     * receives a pong from the server endpoint. If a connection is lost or an error occurs before receiving
+     * the pong from the endpoint, the pongReceiveHandler block will be invoked with an error.
+     * Note - the pongReceiveHandler will always be called in the order in which the pings were sent.
+     */
     @Generated
     @Selector("sendPingWithPongReceiveHandler:")
     public native void sendPingWithPongReceiveHandler(
@@ -177,6 +217,9 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
         void call_sendPingWithPongReceiveHandler(NSError error);
     }
 
+    /**
+     * The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from continuation frames. Recieve calls will error out if this value is reached
+     */
     @Generated
     @Selector("setMaximumMessageSize:")
     public native void setMaximumMessageSize(@NInt long value);

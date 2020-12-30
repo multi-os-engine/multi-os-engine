@@ -27,6 +27,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEFilterReport
+ * @discussion The NEFilterReport declares the programmatic interface of an object that is a report of actions taken by
+ * the data provider.
+ * 
+ * NEFilterReport is part of NetworkExtension.framework
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -45,6 +52,10 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * @property action
+     * @discussion The action taken upon the reported flow.
+     */
     @Generated
     @Selector("action")
     @NInt
@@ -100,6 +111,10 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * @property flow
+     * @discussion The flow on which the described action was taken.
+     */
     @Generated
     @Selector("flow")
     public native NEFilterFlow flow();
@@ -175,16 +190,28 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
     @NInt
     public static native long version_static();
 
+    /**
+     * @property bytesInboundCount
+     * @discussion The number of inbound bytes received from the flow. This property is only non-zero when the report event is NEFilterReportEventFlowClosed or NEFilterReportEventFlowStatistics.
+     */
     @Generated
     @Selector("bytesInboundCount")
     @NUInt
     public native long bytesInboundCount();
 
+    /**
+     * @property bytesOutboundCount
+     * @discussion The number of outbound bytes sent on the flow. This property is only non-zero when the report event is NEFilterReportEventFlowClosed or NEFilterReportEventFlowStatistics.
+     */
     @Generated
     @Selector("bytesOutboundCount")
     @NUInt
     public native long bytesOutboundCount();
 
+    /**
+     * @property event
+     * @discussion The type of event that the report is reporting.
+     */
     @Generated
     @Selector("event")
     @NInt

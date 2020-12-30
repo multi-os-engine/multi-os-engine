@@ -44,6 +44,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEOnDemandRule
+ * @discussion The NEOnDemandRule class declares the programmatic interface for an object that defines an On Demand rule.
+ * 
+ * NEOnDemandRule is an abstract base class from which other action-specific rule classes are derived.
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -159,18 +167,34 @@ public class NEOnDemandRule extends NSObject implements NSSecureCoding, NSCopyin
     @NInt
     public static native long version_static();
 
+    /**
+     * @property DNSSearchDomainMatch
+     * @discussion An array of NSString objects. If the current default search domain is equal to one of the strings in this array and all of the other conditions in the rule match, then the rule matches. If this property is nil (the default), then the current default search domain does not factor into the rule match.
+     */
     @Generated
     @Selector("DNSSearchDomainMatch")
     public native NSArray<String> DNSSearchDomainMatch();
 
+    /**
+     * @property DNSServerAddressMatch
+     * @discussion An array of DNS server IP addresses represented as NSString objects. If each of the current default DNS servers is equal to one of the strings in this array and all of the other conditions in the rule match, then the rule matches. If this property is nil (the default), then the default DNS servers do not factor into the rule match.
+     */
     @Generated
     @Selector("DNSServerAddressMatch")
     public native NSArray<String> DNSServerAddressMatch();
 
+    /**
+     * @property SSIDMatch
+     * @discussion An array of NSString objects. If the Service Set Identifier (SSID) of the current primary connected network matches one of the strings in this array and all of the other conditions in the rule match, then the rule matches. If this property is nil (the default), then the current primary connected network SSID does not factor into the rule match.
+     */
     @Generated
     @Selector("SSIDMatch")
     public native NSArray<String> SSIDMatch();
 
+    /**
+     * @property action
+     * @discussion The rule's action
+     */
     @Generated
     @Selector("action")
     @NInt
@@ -194,31 +218,59 @@ public class NEOnDemandRule extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("initWithCoder:")
     public native NEOnDemandRule initWithCoder(NSCoder coder);
 
+    /**
+     * @property interfaceTypeMatch
+     * @discussion The type of interface that this rule matches. If the current primary network interface is of this type and all of the other conditions in the rule match, then the rule matches. If this property is 0 (the default), then the current primary interface type does not factor into the rule match.
+     */
     @Generated
     @Selector("interfaceTypeMatch")
     @NInt
     public native long interfaceTypeMatch();
 
+    /**
+     * @property probeURL
+     * @discussion An HTTP or HTTPS URL. If a request sent to this URL results in a HTTP 200 OK response and all of the other conditions in the rule match, then then rule matches. If this property is nil (the default), then an HTTP request does not factor into the rule match.
+     */
     @Generated
     @Selector("probeURL")
     public native NSURL probeURL();
 
+    /**
+     * @property DNSSearchDomainMatch
+     * @discussion An array of NSString objects. If the current default search domain is equal to one of the strings in this array and all of the other conditions in the rule match, then the rule matches. If this property is nil (the default), then the current default search domain does not factor into the rule match.
+     */
     @Generated
     @Selector("setDNSSearchDomainMatch:")
     public native void setDNSSearchDomainMatch(NSArray<String> value);
 
+    /**
+     * @property DNSServerAddressMatch
+     * @discussion An array of DNS server IP addresses represented as NSString objects. If each of the current default DNS servers is equal to one of the strings in this array and all of the other conditions in the rule match, then the rule matches. If this property is nil (the default), then the default DNS servers do not factor into the rule match.
+     */
     @Generated
     @Selector("setDNSServerAddressMatch:")
     public native void setDNSServerAddressMatch(NSArray<String> value);
 
+    /**
+     * @property interfaceTypeMatch
+     * @discussion The type of interface that this rule matches. If the current primary network interface is of this type and all of the other conditions in the rule match, then the rule matches. If this property is 0 (the default), then the current primary interface type does not factor into the rule match.
+     */
     @Generated
     @Selector("setInterfaceTypeMatch:")
     public native void setInterfaceTypeMatch(@NInt long value);
 
+    /**
+     * @property probeURL
+     * @discussion An HTTP or HTTPS URL. If a request sent to this URL results in a HTTP 200 OK response and all of the other conditions in the rule match, then then rule matches. If this property is nil (the default), then an HTTP request does not factor into the rule match.
+     */
     @Generated
     @Selector("setProbeURL:")
     public native void setProbeURL(NSURL value);
 
+    /**
+     * @property SSIDMatch
+     * @discussion An array of NSString objects. If the Service Set Identifier (SSID) of the current primary connected network matches one of the strings in this array and all of the other conditions in the rule match, then the rule matches. If this property is nil (the default), then the current primary connected network SSID does not factor into the rule match.
+     */
     @Generated
     @Selector("setSSIDMatch:")
     public native void setSSIDMatch(NSArray<String> value);

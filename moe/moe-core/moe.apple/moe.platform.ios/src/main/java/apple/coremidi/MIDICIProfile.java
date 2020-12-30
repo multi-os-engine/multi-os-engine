@@ -27,6 +27,19 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class		MIDICIProfile
+ * @abstract  	An NSObject representing Capability Inquiry profile. MIDI-CI profiles describe a mapping
+ * 		of MIDI messages to specific sounds and synthesis behaviors, e.g. General MIDI, a drawbar organ,
+ * 		etc. A MIDI-CI profile may be a standard registered profile or vendor-specific.
+ * 
+ * 						Standard Profile				Vendor-Specific Profile
+ * 		Profile ID Byte 1:	0x7E Standard Profile			Manufacturer SysEx ID 1 Profile
+ * 		Profile ID Byte 2:	Profile Bank				Manufacturer SysEx ID 2 Profile
+ * 		Profile ID Byte 3:	Profile Number				Manufacturer SysEx ID 3 Profile
+ * 		Profile ID Byte 4:	Profile Version				Manufacturer-specific Info
+ * 		Profile ID Byte 5:	Profile Level				Manufacturer-specific Info
+ */
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)
@@ -127,6 +140,9 @@ public class MIDICIProfile extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * An NSString describing the profile.
+     */
     @Generated
     @Selector("name")
     public native String name();
@@ -137,6 +153,9 @@ public class MIDICIProfile extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * always 5 bytes
+     */
     @Generated
     @Selector("profileID")
     public native NSData profileID();

@@ -21,19 +21,43 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSStringEnumerationOptions {
+    /**
+     * Equivalent to lineRangeForRange:
+     */
     @Generated @NUInt public static final long ByLines = 0x0000000000000000L;
+    /**
+     * Equivalent to paragraphRangeForRange:
+     */
     @Generated @NUInt public static final long ByParagraphs = 0x0000000000000001L;
+    /**
+     * Equivalent to rangeOfComposedCharacterSequencesForRange:
+     */
     @Generated @NUInt public static final long ByComposedCharacterSequences = 0x0000000000000002L;
     @Generated @NUInt public static final long ByWords = 0x0000000000000003L;
     @Generated @NUInt public static final long BySentences = 0x0000000000000004L;
+    /**
+     * ...and combine any of the desired additional options:
+     */
     @Generated @NUInt public static final long Reverse = 0x0000000000000100L;
+    /**
+     * ...and combine any of the desired additional options:
+     */
     @Generated @NUInt public static final long SubstringNotRequired = 0x0000000000000200L;
+    /**
+     * User's default locale
+     */
     @Generated @NUInt public static final long Localized = 0x0000000000000400L;
 
     @Generated
     private NSStringEnumerationOptions() {
     }
 
+    /**
+     * Enumerate text editing cursor positions. It could separate characters within a grapheme cluster.
+     */
     @Generated @NUInt public static final long ByCaretPositions = 0x0000000000000005L;
+    /**
+     * Enumerate text editing positions for backwards deletion. It could separate characters within a grapheme cluster.
+     */
     @Generated @NUInt public static final long ByDeletionClusters = 0x0000000000000006L;
 }

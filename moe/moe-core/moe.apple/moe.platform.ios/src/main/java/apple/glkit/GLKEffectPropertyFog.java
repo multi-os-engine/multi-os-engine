@@ -41,6 +41,21 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GLKEffectPropertyFog
+ * 
+ * GLKEffectPropertyFog allows specification of fog parameters and operation per the OpenGL ES 1.1 specification.
+ * Fog properties may be enabled or disabled through their enabled property.
+ * 
+ * The default values of the properties of this class are as follows:
+ * 
+ *      enabled         GL_TRUE
+ *      mode            GLKFogModeExp
+ *      color           { 0.0, 0.0, 0.0, 0.0 }
+ *      density         1.0
+ *      start           0.0
+ *      end             1.0
+ */
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)
@@ -152,19 +167,31 @@ public class GLKEffectPropertyFog extends GLKEffectProperty {
     @NInt
     public static native long version_static();
 
+    /**
+     * { 0.0, 0.0, 0.0, 0.0 }
+     */
     @Generated
     @Selector("color")
     @ByValue
     public native GLKVector4 color();
 
+    /**
+     * 1.0
+     */
     @Generated
     @Selector("density")
     public native float density();
 
+    /**
+     * GL_FALSE
+     */
     @Generated
     @Selector("enabled")
     public native byte enabled();
 
+    /**
+     * 1.0
+     */
     @Generated
     @Selector("end")
     public native float end();
@@ -173,34 +200,58 @@ public class GLKEffectPropertyFog extends GLKEffectProperty {
     @Selector("init")
     public native GLKEffectPropertyFog init();
 
+    /**
+     * GLKFogModeExp
+     */
     @Generated
     @Selector("mode")
     public native int mode();
 
+    /**
+     * { 0.0, 0.0, 0.0, 0.0 }
+     */
     @Generated
     @Selector("setColor:")
     public native void setColor(@ByValue GLKVector4 value);
 
+    /**
+     * 1.0
+     */
     @Generated
     @Selector("setDensity:")
     public native void setDensity(float value);
 
+    /**
+     * GL_FALSE
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(byte value);
 
+    /**
+     * 1.0
+     */
     @Generated
     @Selector("setEnd:")
     public native void setEnd(float value);
 
+    /**
+     * GLKFogModeExp
+     */
     @Generated
     @Selector("setMode:")
     public native void setMode(int value);
 
+    /**
+     * 0.0
+     */
     @Generated
     @Selector("setStart:")
     public native void setStart(float value);
 
+    /**
+     * 0.0
+     */
     @Generated
     @Selector("start")
     public native float start();

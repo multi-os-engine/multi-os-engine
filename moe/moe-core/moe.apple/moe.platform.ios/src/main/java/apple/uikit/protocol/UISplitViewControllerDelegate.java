@@ -37,6 +37,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UISplitViewControllerDelegate")
 public interface UISplitViewControllerDelegate {
+    /**
+     * Return the view controller which is to become the primary view controller after `splitViewController` is collapsed due to a transition to
+     * the horizontally-compact size class. If you return `nil`, then the argument will perform its default behavior (i.e. to use its current primary view
+     * controller).
+     */
     @Generated
     @IsOptional
     @Selector("primaryViewControllerForCollapsingSplitViewController:")
@@ -45,6 +50,11 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Return the view controller which is to become the primary view controller after the `splitViewController` is expanded due to a transition
+     * to the horizontally-regular size class. If you return `nil`, then the argument will perform its default behavior (i.e. to use its current
+     * primary view controller.)
+     */
     @Generated
     @IsOptional
     @Selector("primaryViewControllerForExpandingSplitViewController:")
@@ -53,6 +63,13 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This method is called when a split view controller is collapsing its children for a transition to a compact-width size class. Override this
+     * method to perform custom adjustments to the view controller hierarchy of the target controller.  When you return from this method, you're
+     * expected to have modified the `primaryViewController` so as to be suitable for display in a compact-width split view controller, potentially
+     * using `secondaryViewController` to do so.  Return YES to prevent UIKit from applying its default behavior; return NO to request that UIKit
+     * perform its default collapsing behavior.
+     */
     @Generated
     @IsOptional
     @Selector("splitViewController:collapseSecondaryViewController:ontoPrimaryViewController:")
@@ -62,6 +79,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the view controller is shown in a popover so the delegate can take action like hiding other popovers.
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -71,6 +91,13 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This method is called when a split view controller is separating its child into two children for a transition from a compact-width size
+     * class to a regular-width size class. Override this method to perform custom separation behavior.  The controller returned from this method
+     * will be set as the secondary view controller of the split view controller.  When you return from this method, `primaryViewController` should
+     * have been configured for display in a regular-width split view controller. If you return `nil`, then `UISplitViewController` will perform
+     * its default behavior.
+     */
     @Generated
     @IsOptional
     @Selector("splitViewController:separateSecondaryViewControllerFromPrimaryViewController:")
@@ -79,6 +106,10 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Returns YES if a view controller should be hidden by the split view controller in a given orientation.
+     * (This method is only called on the leftmost view controller and only discriminates portrait from landscape.)
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -88,6 +119,10 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Override this method to customize the behavior of `showDetailViewController:` on a split view controller. Return YES to indicate that you've
+     * handled the action yourself; return NO to cause the default behavior to be executed.
+     */
     @Generated
     @IsOptional
     @Selector("splitViewController:showDetailViewController:sender:")
@@ -96,6 +131,10 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Override this method to customize the behavior of `showViewController:` on a split view controller. Return YES to indicate that you've handled
+     * the action yourself; return NO to cause the default behavior to be executed.
+     */
     @Generated
     @IsOptional
     @Selector("splitViewController:showViewController:sender:")
@@ -104,6 +143,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This method allows a client to update any bar button items etc.
+     */
     @Generated
     @IsOptional
     @Selector("splitViewController:willChangeToDisplayMode:")
@@ -111,6 +153,10 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a button should be added to a toolbar for a hidden view controller.
+     * Implementing this method allows the hidden view controller to be presented via a swipe gesture if 'presentsWithGesture' is 'YES' (the default).
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -121,6 +167,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the view is shown again in the split view, invalidating the button and popover controller.
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -147,6 +196,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called by the gesture AND barButtonItem to determine what they will set the display mode to (and what the displayModeButtonItem's appearance will be.) Return UISplitViewControllerDisplayModeAutomatic to get the default behavior.
+     */
     @Generated
     @IsOptional
     @Selector("targetDisplayModeForActionInSplitViewController:")

@@ -13,6 +13,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PHPhotoLibraryAvailabilityObserver")
 public interface PHPhotoLibraryAvailabilityObserver {
+    /**
+     * This notification is posted on a private queue.
+     */
     @Generated
     @Selector("photoLibraryDidBecomeUnavailable:")
     void photoLibraryDidBecomeUnavailable(PHPhotoLibrary photoLibrary);

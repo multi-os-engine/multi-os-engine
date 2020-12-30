@@ -43,6 +43,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEFilterNewFlowVerdict
+ * @discussion The NEFilterNewFlowVerdict declares the programmatic interface of an object that is the verdict for a
+ * new flow of network data before any of the flow's data has been seen by the filter.
+ * 
+ * NEFilterNewFlowVerdict is part of NetworkExtension.framework
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -57,6 +64,12 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
         super(peer);
     }
 
+    /**
+     * @method URLAppendStringVerdictWithMapKey
+     * @discussion This class method returns a verdict indicating that safe search URL for the new should be specified
+     * @param urlAppendMapKey URL Append map key to be used by the data plugin to notify what the url should be appended with
+     * @return The NEFilterNewFlowVerdict object.
+     */
     @Generated
     @Selector("URLAppendStringVerdictWithMapKey:")
     public static native NEFilterNewFlowVerdict URLAppendStringVerdictWithMapKey(String urlAppendMapKey);
@@ -75,6 +88,11 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @method allowVerdict
+     * @discussion This class method returns a verdict indicating that the flow should be allowed.
+     * @return The NEFilterNewFlowVerdict object.
+     */
     @Generated
     @Selector("allowVerdict")
     public static native NEFilterNewFlowVerdict allowVerdict();
@@ -109,10 +127,27 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @method dropVerdict
+     * @discussion This class method returns a verdict indicating that the flow should be dropped.
+     * @return The NEFilterNewFlowVerdict object.
+     */
     @Generated
     @Selector("dropVerdict")
     public static native NEFilterNewFlowVerdict dropVerdict();
 
+    /**
+     * @method filterDataVerdictWithFilterInbound:peekInboundBytes:filterOutbound:peekOutboundBytes:
+     * @discussion This class method returns a new flow verdict indicating that the filter needs to make a decision about
+     * a new flow after seeing a portion of the flow's data.
+     * @param filterInbound A boolean indicating if the filter needs to see inbound data
+     * @param peekInboundBytes The number of inbound bytes that the filter needs to see in the subsequent call to
+     * -[NEFilterDataProvider handleInboundDataFromFlow:readBytesStartOffset:readBytes:].
+     * @param filterOutbound  boolean indicating if the filter needs to see outbound data
+     * @param peekOutboundBytes The number of outbound bytes that the filter needs to see in the subsequent call to
+     * -[NEFilterDataProvider handleOutboundDataFromFlow:readBytesStartOffset:readBytes:].
+     * @return The new flow verdict.
+     */
     @Generated
     @Selector("filterDataVerdictWithFilterInbound:peekInboundBytes:filterOutbound:peekOutboundBytes:")
     public static native NEFilterNewFlowVerdict filterDataVerdictWithFilterInboundPeekInboundBytesFilterOutboundPeekOutboundBytes(
@@ -144,6 +179,13 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @method needRulesVerdict
+     * @discussion This class method returns a verdict indicating that control provider needs to be asked how to handle
+     * the new flow. The control provider can either drop or allow the flow, or update the rules and ask the data provider
+     * to decide on the new flow again.
+     * @return The NEFilterNewFlowVerdict object.
+     */
     @Generated
     @Selector("needRulesVerdict")
     public static native NEFilterNewFlowVerdict needRulesVerdict();
@@ -154,6 +196,13 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:
+     * @discussion This class method returns a verdict indicating that a "content blocked" page should be displayed to
+     * the user. The block page should contain a link to the given URL.
+     * @param remediationURLMapKey Remediation map key used by data plugin to get remediation url
+     * @return The NEFilterNewFlowVerdict object.
+     */
     @Generated
     @Selector("remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:")
     public static native NEFilterNewFlowVerdict remediateVerdictWithRemediationURLMapKeyRemediationButtonTextMapKey(

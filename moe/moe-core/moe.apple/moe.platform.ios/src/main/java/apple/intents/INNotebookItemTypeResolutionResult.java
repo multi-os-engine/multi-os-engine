@@ -74,6 +74,9 @@ public class INNotebookItemTypeResolutionResult extends INIntentResolutionResult
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithNotebookItemTypeToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -87,6 +90,9 @@ public class INNotebookItemTypeResolutionResult extends INIntentResolutionResult
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * This resolution result is to ask Siri to disambiguate between the provided values.
+     */
     @Generated
     @Selector("disambiguationWithNotebookItemTypesToDisambiguate:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -151,6 +157,10 @@ public class INNotebookItemTypeResolutionResult extends INIntentResolutionResult
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INNotebookItemType. The resolvedValue can be different than the original INNotebookItemType. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedNotebookItemType:")
     @MappedReturn(ObjCObjectMapper.class)

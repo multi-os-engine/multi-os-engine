@@ -212,6 +212,9 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("exchangeObjectAtIndex:withObjectAtIndex:")
     public native void exchangeObjectAtIndexWithObjectAtIndex(@NUInt long idx1, @NUInt long idx2);
 
+    /**
+     * evaluate a predicate against an array of objects and filter the mutable array directly
+     */
     @Generated
     @Selector("filterUsingPredicate:")
     public native void filterUsingPredicate(NSPredicate predicate);
@@ -342,6 +345,9 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     public native void sortUsingComparator(
             @ObjCBlock(name = "call_sortUsingComparator") Block_sortUsingComparator cmptr);
 
+    /**
+     * sorts the array itself
+     */
     @Generated
     @Selector("sortUsingDescriptors:")
     public native void sortUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);

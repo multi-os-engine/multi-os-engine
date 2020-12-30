@@ -44,6 +44,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A WKUserContentController object provides a way for JavaScript to post
+ * messages to a web view.
+ * The user content controller associated with a web view is specified by its
+ * web view configuration.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -155,11 +161,22 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract Adds a script message handler to the main world used by page content itself.
+     * @param scriptMessageHandler The script message handler to add.
+     * @param name The name of the message handler.
+     * @discussion Calling this method is equivalent to calling addScriptMessageHandler:contentWorld:name:
+     * with [WKContentWorld pageWorld] as the contentWorld argument.
+     */
     @Generated
     @Selector("addScriptMessageHandler:name:")
     public native void addScriptMessageHandlerName(
             @Mapped(ObjCObjectMapper.class) WKScriptMessageHandler scriptMessageHandler, String name);
 
+    /**
+     * @abstract Adds a user script.
+     * @param userScript The user script to add.
+     */
     @Generated
     @Selector("addUserScript:")
     public native void addUserScript(WKUserScript userScript);
@@ -176,26 +193,50 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
     @Selector("initWithCoder:")
     public native WKUserContentController initWithCoder(NSCoder coder);
 
+    /**
+     * @abstract Removes all associated user scripts.
+     */
     @Generated
     @Selector("removeAllUserScripts")
     public native void removeAllUserScripts();
 
+    /**
+     * @abstract Removes a script message handler.
+     * @param name The name of the message handler to remove.
+     * @discussion Calling this method is equivalent to calling removeScriptMessageHandlerForName:contentWorld:
+     *  with [WKContentWorld pageWorld] as the contentWorld argument.
+     */
     @Generated
     @Selector("removeScriptMessageHandlerForName:")
     public native void removeScriptMessageHandlerForName(String name);
 
+    /**
+     * @abstract The user scripts associated with this user content
+     * controller.
+     */
     @Generated
     @Selector("userScripts")
     public native NSArray<? extends WKUserScript> userScripts();
 
+    /**
+     * @abstract Adds a content rule list.
+     * @param contentRuleList The content rule list to add.
+     */
     @Generated
     @Selector("addContentRuleList:")
     public native void addContentRuleList(WKContentRuleList contentRuleList);
 
+    /**
+     * @abstract Removes all associated content rule lists.
+     */
     @Generated
     @Selector("removeAllContentRuleLists")
     public native void removeAllContentRuleLists();
 
+    /**
+     * @abstract Removes a content rule list.
+     * @param contentRuleList The content rule list to remove.
+     */
     @Generated
     @Selector("removeContentRuleList:")
     public native void removeContentRuleList(WKContentRuleList contentRuleList);
@@ -210,26 +251,76 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
         return supportsSecureCoding();
     }
 
+    /**
+     * @abstract Adds a script message handler.
+     * @param scriptMessageHandler The script message handler to add.
+     * @param contentWorld The WKContentWorld in which to add the script message handler.
+     * @param name The name of the message handler.
+     * @discussion Adding a script message handler adds a function
+     * window.webkit.messageHandlers.<name>.postMessage(<messageBody>) to all frames, available in the given WKContentWorld.
+     * 
+     * The name argument must be a non-empty string.
+     * 
+     * Each WKContentWorld can have any number of script message handlers, but only one per unique name.
+     * 
+     * Once any script message handler has been added to a WKContentWorld for a given name, it is an error to add another
+     * script message handler to that WKContentWorld for that same name without first removing the previous script message handler.
+     * 
+     * The above restriction applies to any type of script message handler - WKScriptMessageHandler and WKScriptMessageHandlerWithReply
+     * objects will conflict with each other if you try to add them to the same WKContentWorld with the same name.
+     */
     @Generated
     @Selector("addScriptMessageHandler:contentWorld:name:")
     public native void addScriptMessageHandlerContentWorldName(
             @Mapped(ObjCObjectMapper.class) WKScriptMessageHandler scriptMessageHandler, WKContentWorld world,
             String name);
 
+    /**
+     * @abstract Adds a script message handler.
+     * @param scriptMessageHandlerWithReply The script message handler to add.
+     * @param contentWorld The WKContentWorld in which to add the script message handler.
+     * @param name The name of the message handler.
+     * @discussion Adding a script message handler adds a function
+     * window.webkit.messageHandlers.<name>.postMessage(<messageBody>) to all frames, available in the given WKContentWorld.
+     * 
+     * The name argument must be a non-empty string.
+     * 
+     * Each WKContentWorld can have any number of script message handlers, but only one per unique name.
+     * 
+     * Once any script message handler has been added to a WKContentWorld for a given name, it is an error to add another
+     * script message handler to that WKContentWorld for that same name without first removing the previous script message handler.
+     * 
+     * The above restriction applies to any type of script message handler - WKScriptMessageHandlerWithReply and WKScriptMessageHandler
+     * objects will conflict with each other if you try to add them to the same WKContentWorld with the same name.
+     * 
+     * Refer to the WKScriptMessageHandlerWithReply documentation for examples of how it is more flexible than WKScriptMessageHandler.
+     */
     @Generated
     @Selector("addScriptMessageHandlerWithReply:contentWorld:name:")
     public native void addScriptMessageHandlerWithReplyContentWorldName(
             @Mapped(ObjCObjectMapper.class) WKScriptMessageHandlerWithReply scriptMessageHandlerWithReply,
             WKContentWorld contentWorld, String name);
 
+    /**
+     * @abstract Removes all associated script message handlers.
+     */
     @Generated
     @Selector("removeAllScriptMessageHandlers")
     public native void removeAllScriptMessageHandlers();
 
+    /**
+     * @abstract Removes all script message handlers from a given WKContentWorld.
+     * @param contentWorld The WKContentWorld from which to remove all script message handlers.
+     */
     @Generated
     @Selector("removeAllScriptMessageHandlersFromContentWorld:")
     public native void removeAllScriptMessageHandlersFromContentWorld(WKContentWorld contentWorld);
 
+    /**
+     * @abstract Removes a script message handler.
+     * @param name The name of the message handler to remove.
+     * @param contentWorld The WKContentWorld from which to remove the script message handler.
+     */
     @Generated
     @Selector("removeScriptMessageHandlerForName:contentWorld:")
     public native void removeScriptMessageHandlerForNameContentWorld(String name, WKContentWorld contentWorld);

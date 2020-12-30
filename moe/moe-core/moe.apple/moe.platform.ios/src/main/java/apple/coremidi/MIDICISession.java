@@ -29,6 +29,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class  MIDICISession
+ * @brief  Object representating a MIDI Capability Inquiry session.
+ * 
+ * A MIDI Capability Inquiry session is a bidirectional communication path between a MIDI process
+ * and a MIDI-CI node (i.e., paired MIDI source and destination) identified using MIDI-CI discovery.
+ * A MIDICISession can be used to manipulate MIDI-CI profiles and to discover the MIDI-CI property
+ * capability.
+ */
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)
@@ -87,11 +96,21 @@ public class MIDICISession extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Given a MIDI channel number, asynchronously request that the supplied profile be disabled.
+     * The result of this operation is sent to the MIDICIProfileChangedBlock.
+     * Returnes YES if the request is valid.
+     */
     @Generated
     @Selector("disableProfile:onChannel:error:")
     public native boolean disableProfileOnChannelError(MIDICIProfile profile, byte channel,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * Given a MIDI channel number, asynchronously request that the supplied profile be enabled.
+     * The result of this operation is sent to the MIDICIProfileChangedBlock.
+     * Returns YES if the request is valid.
+     */
     @Generated
     @Selector("enableProfile:onChannel:error:")
     public native boolean enableProfileOnChannelError(MIDICIProfile profile, byte channel,
@@ -133,6 +152,9 @@ public class MIDICISession extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * An optional block called when a device signals that a profile has been enabled or disabled.
+     */
     @Generated
     @Selector("profileChangedCallback")
     @ObjCBlock(name = "call_profileChangedCallback_ret")
@@ -146,6 +168,10 @@ public class MIDICISession extends NSObject {
                 boolean enabled);
     }
 
+    /**
+     * Given a MIDI channel number, return the supported profiles. Note that the
+     * arrays will be empty if this property is queried before data is ready.
+     */
     @Generated
     @Selector("profileStateForChannel:")
     public native MIDICIProfileState profileStateForChannel(byte channel);
@@ -158,6 +184,9 @@ public class MIDICISession extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * An optional block called when a device signals that a profile has been enabled or disabled.
+     */
     @Generated
     @Selector("setProfileChangedCallback:")
     public native void setProfileChangedCallback(
@@ -179,10 +208,16 @@ public class MIDICISession extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * After CI session data is ready, indicates whether the entity supports the MIDI-CI profile capability.
+     */
     @Generated
     @Selector("supportsProfileCapability")
     public native boolean supportsProfileCapability();
 
+    /**
+     * After CI session data is ready, indicates whether the entity supports the MIDI-CI property exchange capability.
+     */
     @Generated
     @Selector("supportsPropertyCapability")
     public native boolean supportsPropertyCapability();
@@ -192,6 +227,10 @@ public class MIDICISession extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Obtain the device's basic identification. Nil before data is ready or if the device does not
+     * support MIDI-CI.
+     */
     @Generated
     @Selector("deviceInfo")
     public native MIDICIDeviceInfo deviceInfo();
@@ -217,18 +256,30 @@ public class MIDICISession extends NSObject {
         void call_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_2(MIDICISession session, NSError error);
     }
 
+    /**
+     * int
+     */
     @Generated
     @Selector("maxPropertyRequests")
     public native NSNumber maxPropertyRequests();
 
+    /**
+     * unsigned long
+     */
     @Generated
     @Selector("maxSysExSize")
     public native NSNumber maxSysExSize();
 
+    /**
+     * The MIDI destination with which the session is communicating.
+     */
     @Generated
     @Selector("midiDestination")
     public native int midiDestination();
 
+    /**
+     * An optional block called when a device sends profile-specific data to the session.
+     */
     @Generated
     @Selector("profileSpecificDataHandler")
     @ObjCBlock(name = "call_profileSpecificDataHandler_ret")
@@ -242,11 +293,18 @@ public class MIDICISession extends NSObject {
                 NSData profileSpecificData);
     }
 
+    /**
+     * Given a MIDI channel number, send profile specific data to the MIDICISession.
+     * Returns YES if the data was successfully sent.
+     */
     @Generated
     @Selector("sendProfile:onChannel:profileData:")
     public native boolean sendProfileOnChannelProfileData(MIDICIProfile profile, byte channel,
             NSData profileSpecificData);
 
+    /**
+     * An optional block called when a device sends profile-specific data to the session.
+     */
     @Generated
     @Selector("setProfileSpecificDataHandler:")
     public native void setProfileSpecificDataHandler(

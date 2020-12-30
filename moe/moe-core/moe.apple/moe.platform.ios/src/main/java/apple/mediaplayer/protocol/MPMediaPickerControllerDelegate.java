@@ -31,6 +31,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MPMediaPickerControllerDelegate")
 public interface MPMediaPickerControllerDelegate {
+    /**
+     * It is the delegate's responsibility to dismiss the modal view controller on the parent view controller.
+     */
     @Generated
     @IsOptional
     @Selector("mediaPicker:didPickMediaItems:")

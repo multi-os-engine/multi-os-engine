@@ -34,26 +34,44 @@ public final class source_version_command extends StructObject {
         setVersion(version);
     }
 
+    /**
+     * LC_SOURCE_VERSION
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int cmd();
 
+    /**
+     * LC_SOURCE_VERSION
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setCmd(int value);
 
+    /**
+     * 16
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int cmdsize();
 
+    /**
+     * 16
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setCmdsize(int value);
 
+    /**
+     * A.B.C.D.E packed as a24.b10.c10.d10.e10
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native long version();
 
+    /**
+     * A.B.C.D.E packed as a24.b10.c10.d10.e10
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setVersion(long value);

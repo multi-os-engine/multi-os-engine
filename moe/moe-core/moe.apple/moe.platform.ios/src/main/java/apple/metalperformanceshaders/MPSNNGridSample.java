@@ -25,6 +25,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNGridSample
+ * @dependency This depends on Metal.framework
+ * @abstract   Given an input and a flow-field grid, computes the output using input values and pixel locations from the grid.
+ * @discussion More details at https://pytorch.org/docs/stable/nn.html#grid-sample.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -96,10 +102,26 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
     @Selector("initWithCoder:")
     public native MPSNNGridSample initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion While the standard NSSecureCoding/NSCoding method
+     *             -initWithCoder: should work, since the file can't
+     *             know which device your data is allocated on, we
+     *             have to guess and may guess incorrectly.  To avoid
+     *             that problem, use initWithCoder:device instead.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
+     * @param      device      The MTLDevice on which to make the MPSKernel
+     * @return     A new MPSKernel object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNNGridSample initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Create a grid sample kernel.
+     * @param    device            The device the filter will run on
+     * @return     A valid MPSNNGridSample object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSNNGridSample initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
@@ -139,6 +161,12 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   useGridValueAsInputCoordinate
+     * @abstract   This determines whether the pixel locations from the grid are used as the input coordinate (if set to YES) or
+     *             is added to the input coordinate (if set to NO).
+     *             The default value is YES.
+     */
     @Generated
     @Selector("setUseGridValueAsInputCoordinate:")
     public native void setUseGridValueAsInputCoordinate(boolean value);
@@ -161,6 +189,12 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
         return supportsSecureCoding();
     }
 
+    /**
+     * @property   useGridValueAsInputCoordinate
+     * @abstract   This determines whether the pixel locations from the grid are used as the input coordinate (if set to YES) or
+     *             is added to the input coordinate (if set to NO).
+     *             The default value is YES.
+     */
     @Generated
     @Selector("useGridValueAsInputCoordinate")
     public native boolean useGridValueAsInputCoordinate();

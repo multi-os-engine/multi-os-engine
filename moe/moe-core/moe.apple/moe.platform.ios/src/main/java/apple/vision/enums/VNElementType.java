@@ -10,6 +10,12 @@ public final class VNElementType {
     }
 
     @Generated @NUInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * IEEE 754 single-precision floating point value
+     */
     @Generated @NUInt public static final long Float = 0x0000000000000001L;
+    /**
+     * IEEE 754 double-precision floating point value
+     */
     @Generated @NUInt public static final long Double = 0x0000000000000002L;
 }

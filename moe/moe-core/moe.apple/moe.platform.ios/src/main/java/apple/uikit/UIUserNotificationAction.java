@@ -160,11 +160,17 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @NInt
     public static native long version_static();
 
+    /**
+     * How the application should be activated in response to the action.
+     */
     @Generated
     @Selector("activationMode")
     @NUInt
     public native long activationMode();
 
+    /**
+     * The behavior of this action when the user activates it.
+     */
     @Generated
     @Selector("behavior")
     @NUInt
@@ -180,6 +186,9 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The unique identifier for this action.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -192,10 +201,16 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @Selector("initWithCoder:")
     public native UIUserNotificationAction initWithCoder(NSCoder coder);
 
+    /**
+     * Whether this action is secure and should require unlocking before being performed. If the activation mode is UIUserNotificationActivationModeForeground, then the action is considered secure and this property is ignored.
+     */
     @Generated
     @Selector("isAuthenticationRequired")
     public native boolean isAuthenticationRequired();
 
+    /**
+     * Whether this action should be indicated as destructive when displayed.
+     */
     @Generated
     @Selector("isDestructive")
     public native boolean isDestructive();
@@ -206,6 +221,9 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
+    /**
+     * Parameters that can be used by some types of actions.
+     */
     @Generated
     @Selector("parameters")
     public native NSDictionary<?, ?> parameters();
@@ -216,6 +234,9 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
         return supportsSecureCoding();
     }
 
+    /**
+     * The localized title to display for this action.
+     */
     @Generated
     @Selector("title")
     public native String title();

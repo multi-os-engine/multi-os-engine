@@ -81,6 +81,9 @@ public class INMassResolutionResult extends INIntentResolutionResult {
     public static native Object confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the mass with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithMassToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -94,6 +97,9 @@ public class INMassResolutionResult extends INIntentResolutionResult {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * This resolution result is to ask Siri to disambiguate between the provided mass.
+     */
     @Generated
     @Selector("disambiguationWithMassToDisambiguate:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -158,6 +164,10 @@ public class INMassResolutionResult extends INIntentResolutionResult {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given mass. The resolvedMass can be different than the original mass. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedMass:")
     @MappedReturn(ObjCObjectMapper.class)

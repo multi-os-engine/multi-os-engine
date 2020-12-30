@@ -26,42 +26,72 @@ public final class note_command extends StructObject {
         super(peer);
     }
 
+    /**
+     * LC_NOTE
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int cmd();
 
+    /**
+     * LC_NOTE
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setCmd(int value);
 
+    /**
+     * sizeof(struct note_command)
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int cmdsize();
 
+    /**
+     * sizeof(struct note_command)
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setCmdsize(int value);
 
+    /**
+     * owner name for this LC_NOTE
+     */
     @Generated
     @StructureField(order = 2, isGetter = true, count = 16)
     public native byte data_owner(int field_idx);
 
+    /**
+     * owner name for this LC_NOTE
+     */
     @Generated
     @StructureField(order = 2, isGetter = false, count = 16)
     public native void setData_owner(byte value, int field_idx);
 
+    /**
+     * file offset of this data
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native long offset();
 
+    /**
+     * file offset of this data
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setOffset(long value);
 
+    /**
+     * length of data region
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native long size();
 
+    /**
+     * length of data region
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setSize(long value);

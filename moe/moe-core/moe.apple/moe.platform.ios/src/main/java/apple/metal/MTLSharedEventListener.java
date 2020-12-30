@@ -23,6 +23,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MTLSharedEventListener
+ * @abstract This class provides a simple interface for handling the dispatching of MTLSharedEvent notifications from Metal.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)

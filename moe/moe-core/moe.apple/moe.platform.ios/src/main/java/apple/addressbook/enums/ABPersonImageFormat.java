@@ -18,9 +18,18 @@ package apple.addressbook.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Images
+ */
 @Generated
 public final class ABPersonImageFormat {
+    /**
+     * deprecated
+     */
     @Generated public static final int kABPersonImageFormatThumbnail = 0x00000000;
+    /**
+     * deprecated
+     */
     @Generated public static final int kABPersonImageFormatOriginalSize = 0x00000002;
 
     @Generated

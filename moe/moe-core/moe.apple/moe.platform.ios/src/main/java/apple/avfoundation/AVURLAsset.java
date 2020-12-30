@@ -66,6 +66,15 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
         super(peer);
     }
 
+    /**
+     * @method		URLAssetWithURL:options:
+     * @abstract		Returns an instance of AVURLAsset for inspection of a media resource.
+     * @param		URL
+     * 		An instance of NSURL that references a media resource.
+     * @param		options
+     * 		An instance of NSDictionary that contains keys for specifying options for the initialization of the AVURLAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and AVURLAssetReferenceRestrictionsKey above.
+     * @result		An instance of AVURLAsset.
+     */
     @Generated
     @Selector("URLAssetWithURL:options:")
     public static native AVURLAsset URLAssetWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
@@ -88,10 +97,20 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @Selector("assetWithURL:")
     public static native AVURLAsset assetWithURL(NSURL URL);
 
+    /**
+     * @method		audiovisualMIMETypes
+     * @abstract		Provides the MIME types the AVURLAsset class understands.
+     * @result		An NSArray of NSStrings containing MIME types the AVURLAsset class understands.
+     */
     @Generated
     @Selector("audiovisualMIMETypes")
     public static native NSArray<String> audiovisualMIMETypes();
 
+    /**
+     * @method		audiovisualTypes
+     * @abstract		Provides the file types the AVURLAsset class understands.
+     * @result		An NSArray of UTIs identifying the file types the AVURLAsset class understands.
+     */
     @Generated
     @Selector("audiovisualTypes")
     public static native NSArray<String> audiovisualTypes();
@@ -144,6 +163,12 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * @method		isPlayableExtendedMIMEType:
+     * @abstract		Returns YES if asset is playable with the codec(s) and container type specified in extendedMIMEType. Returns NO otherwise.
+     * @param		extendedMIMEType
+     * @result		YES or NO.
+     */
     @Generated
     @Selector("isPlayableExtendedMIMEType:")
     public static native boolean isPlayableExtendedMIMEType(String extendedMIMEType);
@@ -183,14 +208,32 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @NInt
     public static native long version_static();
 
+    /**
+     * indicates the URL with which the instance of AVURLAsset was initialized
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
+    /**
+     * @property	assetCache
+     * @abstract	Provides access to an instance of AVAssetCache to use for inspection of locally cached media data. Will be nil if an asset has not been configured to store or access media data from disk.
+     */
     @Generated
     @Selector("assetCache")
     public native AVAssetCache assetCache();
 
+    /**
+     *  @method		compatibleTrackForCompositionTrack:
+     *  @abstract		Provides a reference to an AVAssetTrack of the target from which any timeRange
+     * 			can be inserted into a mutable composition track (via -[AVMutableCompositionTrack insertTimeRange:ofTrack:atTime:error:]).
+     *  @param		compositionTrack
+     * 			The composition track for which a compatible AVAssetTrack is requested.
+     *  @result		an instance of AVAssetTrack
+     *  @discussion
+     * Finds a track of the target with content that can be accommodated by the specified composition track.
+     * The logical complement of -[AVMutableComposition mutableTrackCompatibleWithTrack:].
+     */
     @Generated
     @Selector("compatibleTrackForCompositionTrack:")
     public native AVAssetTrack compatibleTrackForCompositionTrack(AVCompositionTrack compositionTrack);
@@ -199,10 +242,26 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @Selector("init")
     public native AVURLAsset init();
 
+    /**
+     * @method		initWithURL:options:
+     * @abstract		Initializes an instance of AVURLAsset for inspection of a media resource.
+     * @param		URL
+     * 		An instance of NSURL that references a media resource.
+     * @param		options
+     * 		An instance of NSDictionary that contains keys for specifying options for the initialization of the AVURLAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and AVURLAssetReferenceRestrictionsKey above.
+     * @result		An instance of AVURLAsset.
+     */
     @Generated
     @Selector("initWithURL:options:")
     public native AVURLAsset initWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
 
+    /**
+     * @property resourceLoader
+     * @abstract
+     *    Provides access to an instance of AVAssetResourceLoader, which offers limited control over the handling of URLs that may be loaded in the course of performing operations on the asset, such as playback.
+     *    The loading of file URLs cannot be mediated via use of AVAssetResourceLoader.
+     *    Note that copies of an AVAsset will vend the same instance of AVAssetResourceLoader.
+     */
     @Generated
     @Selector("resourceLoader")
     public native AVAssetResourceLoader resourceLoader();

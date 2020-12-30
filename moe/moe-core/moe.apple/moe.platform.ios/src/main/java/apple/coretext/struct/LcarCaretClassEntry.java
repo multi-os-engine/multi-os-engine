@@ -57,10 +57,16 @@ public final class LcarCaretClassEntry extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setCount(char value);
 
+    /**
+     * these are either FUnits or control-point numbers
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char partials();
 
+    /**
+     * these are either FUnits or control-point numbers
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setPartials(char value);

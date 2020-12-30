@@ -3,6 +3,13 @@ package apple.imagecapturecore.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * -------------------------------------------------------------------------------------------------------------------- Constants
+ * @ICMediaPresentation
+ * @abstract
+ * @constant ICMediaPresentationConvertedAssets presents the device media contents
+ * @constant ICScannerTransferModeMemoryBased Transfer the scan as data.
+ */
 @Generated
 public final class ICMediaPresentation {
     @Generated

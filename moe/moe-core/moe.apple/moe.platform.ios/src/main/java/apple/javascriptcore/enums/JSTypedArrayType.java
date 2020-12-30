@@ -18,6 +18,21 @@ package apple.javascriptcore.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum JSTypedArrayType
+ * @abstract     A constant identifying the Typed Array type of a JSObjectRef.
+ * @constant     kJSTypedArrayTypeInt8Array            Int8Array
+ * @constant     kJSTypedArrayTypeInt16Array           Int16Array
+ * @constant     kJSTypedArrayTypeInt32Array           Int32Array
+ * @constant     kJSTypedArrayTypeUint8Array           Uint8Array
+ * @constant     kJSTypedArrayTypeUint8ClampedArray    Uint8ClampedArray
+ * @constant     kJSTypedArrayTypeUint16Array          Uint16Array
+ * @constant     kJSTypedArrayTypeUint32Array          Uint32Array
+ * @constant     kJSTypedArrayTypeFloat32Array         Float32Array
+ * @constant     kJSTypedArrayTypeFloat64Array         Float64Array
+ * @constant     kJSTypedArrayTypeArrayBuffer          ArrayBuffer
+ * @constant     kJSTypedArrayTypeNone                 Not a Typed Array
+ */
 @Generated
 public final class JSTypedArrayType {
     @Generated public static final int kJSTypedArrayTypeInt8Array = 0x00000000;

@@ -3,6 +3,9 @@ package apple.vision.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @brief    Text recognition level options to favor speed over recognition accuracy. The VNRequestTextRecognitionLevelAccurate is the default option used by VNRecognizeTextRequest.
+ */
 @Generated
 public final class VNRequestTextRecognitionLevel {
     @Generated

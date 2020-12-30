@@ -123,6 +123,10 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Shortcut for converting an NSPersonNameComponents object into a string without explicitly creating an instance.
+     * Create an instance for greater customizability.
+     */
     @Generated
     @Selector("localizedStringFromPersonNameComponents:style:options:")
     public static native String localizedStringFromPersonNameComponentsStyleOptions(NSPersonNameComponents components,
@@ -155,6 +159,10 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns attributed string with annotations for each component. For each range, attributes can be obtained by querying
+     * dictionary key NSPersonNameComponentKey , using NSPersonNameComponent constant values.
+     */
     @Generated
     @Selector("annotatedStringFromPersonNameComponents:")
     public native NSAttributedString annotatedStringFromPersonNameComponents(NSPersonNameComponents components);
@@ -173,26 +181,44 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     @Selector("initWithCoder:")
     public native NSPersonNameComponentsFormatter initWithCoder(NSCoder coder);
 
+    /**
+     * Specify that the formatter should only format the components object's phoneticRepresentation
+     */
     @Generated
     @Selector("isPhonetic")
     public native boolean isPhonetic();
 
+    /**
+     * Specify that the formatter should only format the components object's phoneticRepresentation
+     */
     @Generated
     @Selector("setPhonetic:")
     public native void setPhonetic(boolean value);
 
+    /**
+     * Convenience method on getObjectValue:forString:error:. Returns an NSPersonNameComponents object representing the name components found in the provided string.
+     */
     @Generated
     @Selector("personNameComponentsFromString:")
     public native NSPersonNameComponents personNameComponentsFromString(String string);
 
+    /**
+     * Specify the formatting style for the formatted string on an instance. ShortStyle will fall back to user preferences and language-specific defaults
+     */
     @Generated
     @Selector("setStyle:")
     public native void setStyle(@NInt long value);
 
+    /**
+     * Convenience method on stringForObjectValue:. Returns a string containing the formatted value of the provided components object.
+     */
     @Generated
     @Selector("stringFromPersonNameComponents:")
     public native String stringFromPersonNameComponents(NSPersonNameComponents components);
 
+    /**
+     * Specify the formatting style for the formatted string on an instance. ShortStyle will fall back to user preferences and language-specific defaults
+     */
     @Generated
     @Selector("style")
     @NInt

@@ -21,17 +21,41 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITouchPhase {
+    /**
+     * whenever a finger touches the surface.
+     */
     @Generated @NInt public static final long Began = 0x0000000000000000L;
+    /**
+     * whenever a finger moves on the surface.
+     */
     @Generated @NInt public static final long Moved = 0x0000000000000001L;
+    /**
+     * whenever a finger is touching the surface but hasn't moved since the previous event.
+     */
     @Generated @NInt public static final long Stationary = 0x0000000000000002L;
+    /**
+     * whenever a finger leaves the surface.
+     */
     @Generated @NInt public static final long Ended = 0x0000000000000003L;
+    /**
+     * whenever a touch doesn't end but we need to stop tracking (e.g. putting device to face)
+     */
     @Generated @NInt public static final long Cancelled = 0x0000000000000004L;
 
     @Generated
     private UITouchPhase() {
     }
 
+    /**
+     * whenever a touch is entering the region of a user interface
+     */
     @Generated @NInt public static final long RegionEntered = 0x0000000000000005L;
+    /**
+     * when a touch is inside the region of a user interface, but hasn’t yet made contact or left the region
+     */
     @Generated @NInt public static final long RegionMoved = 0x0000000000000006L;
+    /**
+     * when a touch is exiting the region of a user interface
+     */
     @Generated @NInt public static final long RegionExited = 0x0000000000000007L;
 }

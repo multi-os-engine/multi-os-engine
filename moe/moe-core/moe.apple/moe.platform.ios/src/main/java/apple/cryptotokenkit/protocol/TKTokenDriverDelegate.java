@@ -14,11 +14,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @discussion Delegate for customizing token driver operations.  SmartCard tokens should implement TKSmartCardTokenDriverDelegate instead of this base protocol.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("TKTokenDriverDelegate")
 public interface TKTokenDriverDelegate {
+    /**
+     * @discussion Terminates previously created token, should release all resources associated with it.
+     */
     @Generated
     @IsOptional
     @Selector("tokenDriver:terminateToken:")
@@ -26,6 +32,9 @@ public interface TKTokenDriverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @discussion Creates new token for specified configuration. SmartCard token drivers should not implement this method.
+     */
     @Generated
     @IsOptional
     @Selector("tokenDriver:tokenForConfiguration:error:")

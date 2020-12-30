@@ -72,6 +72,9 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * An identifier for the vehicles. Use this same value as the carIdentifier property of INGetCarPowerLevelStatusResponse. Do not use the VIN (or the equivalent code) as the identifier.
+     */
     @Generated
     @Selector("carIdentifier")
     public native String carIdentifier();
@@ -84,6 +87,9 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Color of the vehicle.
+     */
     @Generated
     @Selector("color")
     public native CGColorRef color();
@@ -102,6 +108,9 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * A user-defined display name for the vehicle that is expected to be set in the OEM app.
+     */
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -115,6 +124,9 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * A data structure containing the bluetooth identifier and the iAP 2 identifier of the head unit of the vehicle.
+     */
     @Generated
     @Selector("headUnit")
     public native INCarHeadUnit headUnit();
@@ -123,6 +135,9 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("init")
     public native INCar init();
 
+    /**
+     * Instantiates an INCar object.
+     */
     @Generated
     @Selector("initWithCarIdentifier:displayName:year:make:model:color:headUnit:supportedChargingConnectors:")
     public native INCar initWithCarIdentifierDisplayNameYearMakeModelColorHeadUnitSupportedChargingConnectors(
@@ -154,14 +169,23 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Make of the vehicle. Should be set by the OEM app. This is later used by Maps to be shown to the user.
+     */
     @Generated
     @Selector("make")
     public native String make();
 
+    /**
+     * Use this method to read the maximum power set for each charging connector type.
+     */
     @Generated
     @Selector("maximumPowerForChargingConnectorType:")
     public native NSMeasurement<NSUnitPower> maximumPowerForChargingConnectorType(String chargingConnectorType);
 
+    /**
+     * Model name of the vehicle. Should be set by the OEM app. This is later used by Maps to be shown to the user.
+     */
     @Generated
     @Selector("model")
     public native String model();
@@ -180,6 +204,9 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Use this method to set the maximum supported power for each charging connector type a vehicle supports. This function can be called multiple times for different connector types.
+     */
     @Generated
     @Selector("setMaximumPower:forChargingConnectorType:")
     public native void setMaximumPowerForChargingConnectorType(NSMeasurement<NSUnitPower> power,
@@ -193,6 +220,9 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * An array containing the supported charging connectors of a vehicle
+     */
     @Generated
     @Selector("supportedChargingConnectors")
     public native NSArray<String> supportedChargingConnectors();
@@ -212,6 +242,9 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Manufacturing year of the vehicle.
+     */
     @Generated
     @Selector("year")
     public native String year();

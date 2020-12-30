@@ -42,6 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MDLVoxelArray
+ * @summary Voxel data represented on a three dimensional grid. Voxel data can
+ *          include voxels considered to be on the surface of an object, and a 
+ *          series of shells on the outside and inside of the surface.
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -162,6 +168,9 @@ public class MDLVoxelArray extends MDLObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Creates a coarse mesh from the voxel grid
+     */
     @Generated
     @Selector("coarseMesh")
     public native MDLMesh coarseMesh();
@@ -170,15 +179,30 @@ public class MDLVoxelArray extends MDLObject {
     @Selector("coarseMeshUsingAllocator:")
     public native MDLMesh coarseMeshUsingAllocator(@Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
 
+    /**
+     * Converts volume grid into a signed shell field by surrounding the surface voxels, which have shell 
+     * level values of zero, by an inner layer of voxels with shell level values of negative one and an 
+     * outer layer of voxels with shell level values of positive one.
+     * 
+     * The volume model must be closed in order to generate a signed shell field.
+     */
     @Generated
     @Selector("convertToSignedShellField")
     public native void convertToSignedShellField();
 
+    /**
+     * The number of voxels in the grid
+     */
     @Generated
     @Selector("count")
     @NUInt
     public native long count();
 
+    /**
+     * Difference modifies the voxel grid so that voxels also in the supplied voxel grid are removed.
+     * It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel grid.
+     * Note that the shell level data will be cleared.
+     */
     @Generated
     @Selector("differenceWithVoxels:")
     public native void differenceWithVoxels(MDLVoxelArray voxels);
@@ -187,46 +211,101 @@ public class MDLVoxelArray extends MDLObject {
     @Selector("init")
     public native MDLVoxelArray init();
 
+    /**
+     * Initialize a voxel grid from an MDLAsset. Attempts to create a closed volume
+     * model by applying "patches" of radius patchRadius to any holes found in the
+     * orginal mesh. Choose a patch radius that will be large enough to fill in the largest
+     * hole in the model.
+     */
     @Generated
     @Selector("initWithAsset:divisions:patchRadius:")
     public native MDLVoxelArray initWithAssetDivisionsPatchRadius(MDLAsset asset, int divisions, float patchRadius);
 
+    /**
+     * Intersection modifies the voxel grid so that only voxels that are also in the supplied voxel grid are retained.
+     * It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel grid.
+     * Note that the shell level data will be cleared.
+     */
     @Generated
     @Selector("intersectWithVoxels:")
     public native void intersectWithVoxels(MDLVoxelArray voxels);
 
+    /**
+     * Returns whether or not the volume grid is in a valid signed shell field form.
+     * 
+     * This property will be set to YES after calling generateSignedShellField. All other 
+     * methods that modify the voxel grid will cause this property to be set to NO. Setting
+     * shellFieldInteriorThickness and shellFieldExteriorThickness will not affect the value
+     * of this property.
+     */
     @Generated
     @Selector("isValidSignedShellField")
     public native boolean isValidSignedShellField();
 
+    /**
+     * Creates a smooth mesh from the voxel grid
+     */
     @Generated
     @Selector("meshUsingAllocator:")
     public native MDLMesh meshUsingAllocator(@Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
 
+    /**
+     * If voxel grid is in a valid signed shell field form, sets the exterior thickness to the desired width,
+     * as measured from the model surface. If the voxel grid is not in a valid signed shell field form, the
+     * value of this property is zero.
+     */
     @Generated
     @Selector("setShellFieldExteriorThickness:")
     public native void setShellFieldExteriorThickness(float value);
 
+    /**
+     * If voxel grid is in a valid signed shell field form, sets the interior thickness to the desired width,
+     * as measured from the model surface. If the voxel grid is not in a valid signed shell field form, the
+     * value of this property is zero.
+     */
     @Generated
     @Selector("setShellFieldInteriorThickness:")
     public native void setShellFieldInteriorThickness(float value);
 
+    /**
+     * Set voxels corresponding to a mesh.
+     * Routine will attempt to create a closed volume model by applying "patches" of
+     * a given radius to any holes it may find in the mesh.
+     */
     @Generated
     @Selector("setVoxelsForMesh:divisions:patchRadius:")
     public native void setVoxelsForMeshDivisionsPatchRadius(MDLMesh mesh, int divisions, float patchRadius);
 
+    /**
+     * If voxel grid is in a valid signed shell field form, sets the exterior thickness to the desired width,
+     * as measured from the model surface. If the voxel grid is not in a valid signed shell field form, the
+     * value of this property is zero.
+     */
     @Generated
     @Selector("shellFieldExteriorThickness")
     public native float shellFieldExteriorThickness();
 
+    /**
+     * If voxel grid is in a valid signed shell field form, sets the interior thickness to the desired width,
+     * as measured from the model surface. If the voxel grid is not in a valid signed shell field form, the
+     * value of this property is zero.
+     */
     @Generated
     @Selector("shellFieldInteriorThickness")
     public native float shellFieldInteriorThickness();
 
+    /**
+     * Union modifies the voxel grid to be the merger with the supplied voxel grid.
+     * It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel grid.
+     * Note that the shell level data will be cleared.
+     */
     @Generated
     @Selector("unionWithVoxels:")
     public native void unionWithVoxels(MDLVoxelArray voxels);
 
+    /**
+     * Returns an NSData containing the indices of all voxels in the voxel grid
+     */
     @Generated
     @Selector("voxelIndices")
     public native NSData voxelIndices();

@@ -146,6 +146,9 @@ public class AVAudioSession extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Return singleton instance.
+     */
     @Generated
     @Selector("sharedInstance")
     public static native AVAudioSession sharedInstance();
@@ -159,26 +162,53 @@ public class AVAudioSession extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The current hardware IO buffer duration in seconds.
+     */
     @Generated
     @Selector("IOBufferDuration")
     public native double IOBufferDuration();
 
+    /**
+     * Get the list of categories available on the device.  Certain categories may be unavailable on
+     * particular devices.  For example, AVAudioSessionCategoryRecord will not be available on devices
+     * that have no support for audio input.
+     */
     @Generated
     @Selector("availableCategories")
     public native NSArray<String> availableCategories();
 
+    /**
+     * @brief	Get the set of input ports that are available for routing.
+     * 
+     * Note that this property only applies to the session's current category and mode. For
+     *    example, if the session's current category is AVAudioSessionCategoryPlayback, there will be
+     *    no available inputs.
+     */
     @Generated
     @Selector("availableInputs")
     public native NSArray<? extends AVAudioSessionPortDescription> availableInputs();
 
+    /**
+     * Get the list of modes available on the device.  Certain modes may be unavailable on particular
+     * devices.  For example, AVAudioSessionModeVideoRecording will not be available on devices that
+     * have no support for recording video.
+     */
     @Generated
     @Selector("availableModes")
     public native NSArray<String> availableModes();
 
+    /**
+     * Get session category.
+     * Examples: AVAudioSessionCategoryRecord, AVAudioSessionCategoryPlayAndRecord, etc.
+     */
     @Generated
     @Selector("category")
     public native String category();
 
+    /**
+     * Get the current set of AVAudioSessionCategoryOptions.
+     */
     @Generated
     @Selector("categoryOptions")
     @NUInt
@@ -196,11 +226,18 @@ public class AVAudioSession extends NSObject {
     @NInt
     public native long currentHardwareOutputNumberOfChannels();
 
+    /**
+     * deprecated.  Use the corresponding properties without "Hardware" in their names.
+     */
     @Generated
     @Deprecated
     @Selector("currentHardwareSampleRate")
     public native double currentHardwareSampleRate();
 
+    /**
+     * A description of the current route, consisting of zero or more input ports and zero or more
+     * output ports
+     */
     @Generated
     @Selector("currentRoute")
     public native AVAudioSessionRouteDescription currentRoute();
@@ -211,83 +248,163 @@ public class AVAudioSession extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native AVAudioSessionDelegate delegate();
 
+    /**
+     * AVAudioSession is a singleton. Use +sharedInstance instead of -init
+     */
     @Generated
     @Selector("init")
     public native AVAudioSession init();
 
+    /**
+     * Obtain the currently selected input data source.  Will be nil if no data sources are available.
+     */
     @Generated
     @Selector("inputDataSource")
     public native AVAudioSessionDataSourceDescription inputDataSource();
 
+    /**
+     * @brief DataSource methods are for use with routes that support input or output data source
+     * selection.
+     * 
+     * If the attached accessory supports data source selection, the data source properties/methods
+     * provide for discovery and selection of input and/or output data sources. Note that the
+     * properties and methods for data source selection below are equivalent to the properties and
+     * methods on AVAudioSessionPortDescription. The methods below only apply to the currently routed
+     * ports.
+     * 
+     * Key-value observable.
+     */
     @Generated
     @Selector("inputDataSources")
     public native NSArray<? extends AVAudioSessionDataSourceDescription> inputDataSources();
 
+    /**
+     * value in range [0.0, 1.0]
+     */
     @Generated
     @Selector("inputGain")
     public native float inputGain();
 
+    /**
+     * is input hardware available or not?
+     */
     @Generated
     @Deprecated
     @Selector("inputIsAvailable")
     public native boolean inputIsAvailable();
 
+    /**
+     * The current hardware input latency in seconds.
+     */
     @Generated
     @Selector("inputLatency")
     public native double inputLatency();
 
+    /**
+     * The current number of hardware input channels. Is key-value observable.
+     */
     @Generated
     @Selector("inputNumberOfChannels")
     @NInt
     public native long inputNumberOfChannels();
 
+    /**
+     * True if input hardware is available.
+     */
     @Generated
     @Selector("isInputAvailable")
     public native boolean isInputAvailable();
 
+    /**
+     * True when audio input gain is available.  Some input ports may not provide the ability to set the
+     * input gain, so check this value before attempting to set input gain.
+     */
     @Generated
     @Selector("isInputGainSettable")
     public native boolean isInputGainSettable();
 
+    /**
+     * @brief	True when another application is playing audio.
+     * 
+     * Note: As of iOS 8.0, Apple recommends that most applications use
+     * secondaryAudioShouldBeSilencedHint instead of this property. The otherAudioPlaying property
+     *    will be true if any other audio (including audio from an app using
+     *    AVAudioSessionCategoryAmbient) is playing, whereas the secondaryAudioShouldBeSilencedHint
+     *    property is more restrictive in its consideration of whether primary audio from another
+     *    application is playing.
+     */
     @Generated
     @Selector("isOtherAudioPlaying")
     public native boolean isOtherAudioPlaying();
 
+    /**
+     * Returns the largest number of audio input channels available for the current route
+     */
     @Generated
     @Selector("maximumInputNumberOfChannels")
     @NInt
     public native long maximumInputNumberOfChannels();
 
+    /**
+     * Returns the largest number of audio output channels available for the current route
+     */
     @Generated
     @Selector("maximumOutputNumberOfChannels")
     @NInt
     public native long maximumOutputNumberOfChannels();
 
+    /**
+     * Get the session's mode.
+     */
     @Generated
     @Selector("mode")
     public native String mode();
 
+    /**
+     * Obtain the currently selected output data source.  Will be nil if no data sources are available.
+     */
     @Generated
     @Selector("outputDataSource")
     public native AVAudioSessionDataSourceDescription outputDataSource();
 
+    /**
+     * See inputDataSources for background. Key-value observable.
+     */
     @Generated
     @Selector("outputDataSources")
     public native NSArray<? extends AVAudioSessionDataSourceDescription> outputDataSources();
 
+    /**
+     * The current hardware output latency in seconds.
+     */
     @Generated
     @Selector("outputLatency")
     public native double outputLatency();
 
+    /**
+     * The current number of hardware output channels. Is key-value observable.
+     */
     @Generated
     @Selector("outputNumberOfChannels")
     @NInt
     public native long outputNumberOfChannels();
 
+    /**
+     * The current output volume. Value in range [0.0, 1.0]. Is key-value observable.
+     */
     @Generated
     @Selector("outputVolume")
     public native float outputVolume();
 
+    /**
+     * @brief Use this method to temporarily override the output to built-in speaker.
+     * 
+     * This method is only valid for a session using PlayAndRecord category. This change remains in
+     * effect only until the current route changes or you call this method again with the
+     * AVAudioSessionPortOverrideNone option. Sessions using PlayAndRecord category that always want to
+     * prefer the built-in speaker output over the receiver, should use
+     * AVAudioSessionCategoryOptionDefaultToSpeaker instead.
+     */
     @Generated
     @Selector("overrideOutputAudioPort:error:")
     public native boolean overrideOutputAudioPortError(@NUInt long portOverride,
@@ -302,6 +419,9 @@ public class AVAudioSession extends NSObject {
     @Selector("preferredIOBufferDuration")
     public native double preferredIOBufferDuration();
 
+    /**
+     * Get the preferred input port.  Will be nil if no preference has been set.
+     */
     @Generated
     @Selector("preferredInput")
     public native AVAudioSessionPortDescription preferredInput();
@@ -320,24 +440,60 @@ public class AVAudioSession extends NSObject {
     @Selector("preferredSampleRate")
     public native double preferredSampleRate();
 
+    /**
+     * Returns an enum indicating whether the user has granted or denied permission to record, or has
+     * not been asked
+     */
     @Generated
     @Selector("recordPermission")
     @NUInt
     public native long recordPermission();
 
+    /**
+     * 	@brief Checks to see if calling process has permission to record audio.
+     * 
+     * The 'response' block will be called immediately if permission has already been granted or
+     * denied.  Otherwise, it presents a dialog to notify the user and allow them to choose, and calls
+     * the block once the UI has been dismissed.  'granted' indicates whether permission has been
+     * granted. Note that the block may be called in a different thread context.
+     */
     @Generated
     @Selector("requestRecordPermission:")
     public native void requestRecordPermission(
             @ObjCBlock(name = "call_requestRecordPermission") Block_requestRecordPermission response);
 
+    /**
+     * The current hardware sample rate
+     */
     @Generated
     @Selector("sampleRate")
     public native double sampleRate();
 
+    /**
+     * @brief	True when another application with a non-mixable audio session is playing audio.
+     * 
+     * Applications may use this property as a hint to silence audio that is secondary to the
+     * functionality of the application. For example, a game app using AVAudioSessionCategoryAmbient
+     * may use this property to decide to mute its soundtrack while leaving its sound effects unmuted.
+     * Note: This property is closely related to AVAudioSessionSilenceSecondaryAudioHintNotification.
+     */
     @Generated
     @Selector("secondaryAudioShouldBeSilencedHint")
     public native boolean secondaryAudioShouldBeSilencedHint();
 
+    /**
+     *    @brief  Set the session active or inactive.
+     * 
+     * Note that activating an audio session is a synchronous (blocking) operation.
+     * Therefore, we recommend that applications not activate their session from a thread where a long
+     * blocking operation will be problematic. When deactivating a session, the caller is required to
+     * first stop or pause all running I/Os (e.g. audio queues, players, recorders, converters,
+     * remote I/Os, etc.). Starting in iOS 8, if the session has running I/Os at the time that
+     * deactivation is requested, the session will be deactivated, but the method will return NO and
+     * populate the NSError with the code property set to AVAudioSessionErrorCodeIsBusy to indicate the
+     * misuse of the API. Prior to iOS 8, the session would have remained active if it had running I/Os
+     * at the time of the deactivation request.
+     */
     @Generated
     @Selector("setActive:error:")
     public native boolean setActiveError(boolean active, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
@@ -353,20 +509,36 @@ public class AVAudioSession extends NSObject {
     public native boolean setActiveWithOptionsError(boolean active, @NUInt long options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * @brief    Controls whether audio input and output are aggregated. Only valid in combination with
+     * AVAudioSessionCategoryPlayAndRecord or AVAudioSessionCategoryMultiRoute.
+     * 
+     * See the AVAudioSessionIOType documentation for a more detailed explanation of why a client may
+     * want to change the IO type.
+     */
     @Generated
     @Selector("setAggregatedIOPreference:error:")
     public native boolean setAggregatedIOPreferenceError(@NUInt long inIOType,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * Set session category.
+     */
     @Generated
     @Selector("setCategory:error:")
     public native boolean setCategoryError(String category, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * Set session category and mode with options.
+     */
     @Generated
     @Selector("setCategory:mode:options:error:")
     public native boolean setCategoryModeOptionsError(String category, String mode, @NUInt long options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * Set session category with options.
+     */
     @Generated
     @Selector("setCategory:withOptions:error:")
     public native boolean setCategoryWithOptionsError(String category, @NUInt long options,
@@ -390,19 +562,43 @@ public class AVAudioSession extends NSObject {
         }
     }
 
+    /**
+     * Select a new input data source. Setting a nil value will clear the data source preference.
+     */
     @Generated
     @Selector("setInputDataSource:error:")
     public native boolean setInputDataSourceError(AVAudioSessionDataSourceDescription dataSource,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * @brief A value defined over the range [0.0, 1.0], with 0.0 corresponding to the lowest analog
+     * gain setting and 1.0 corresponding to the highest analog gain setting.
+     * 
+     * Attempting to set values outside of the defined range will result in the value being "clamped"
+     * to a valid input.  This is a global input gain setting that applies to the current input source
+     * for the entire system. When no applications are using the input gain control, the system will
+     * restore the default input gain setting for the input source.  Note that some audio accessories,
+     * such as USB devices, may not have a default value.  This property is only valid if
+     * inputGainSettable is true.  Note: inputGain is key-value observable.
+     */
     @Generated
     @Selector("setInputGain:error:")
     public native boolean setInputGainError(float gain, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * @brief	Set the session's mode.
+     * 
+     * Modes modify the audio category in order to introduce behavior that is tailored to the specific
+     * use of audio within an application. Examples:  AVAudioSessionModeVideoRecording,
+     * AVAudioSessionModeVoiceChat, AVAudioSessionModeMeasurement, etc.
+     */
     @Generated
     @Selector("setMode:error:")
     public native boolean setModeError(String mode, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * Select a new output data source. Setting a nil value will clear the data source preference.
+     */
     @Generated
     @Selector("setOutputDataSource:error:")
     public native boolean setOutputDataSourceError(AVAudioSessionDataSourceDescription dataSource,
@@ -414,26 +610,46 @@ public class AVAudioSession extends NSObject {
     public native boolean setPreferredHardwareSampleRateError(double sampleRate,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * The preferred hardware IO buffer duration in seconds. The actual IO buffer duration may be
+     * different.
+     */
     @Generated
     @Selector("setPreferredIOBufferDuration:error:")
     public native boolean setPreferredIOBufferDurationError(double duration,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * @brief Select a preferred input port for audio routing.
+     * 
+     * If the input port is already part of the current audio route, this will have no effect.
+     * Otherwise, selecting an input port for routing will initiate a route change to use the preferred
+     * input port. Setting a nil value will clear the preference.
+     */
     @Generated
     @Selector("setPreferredInput:error:")
     public native boolean setPreferredInputError(AVAudioSessionPortDescription inPort,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * Sets the number of input channels that the app would prefer for the current route
+     */
     @Generated
     @Selector("setPreferredInputNumberOfChannels:error:")
     public native boolean setPreferredInputNumberOfChannelsError(@NInt long count,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * Sets the number of output channels that the app would prefer for the current route
+     */
     @Generated
     @Selector("setPreferredOutputNumberOfChannels:error:")
     public native boolean setPreferredOutputNumberOfChannelsError(@NInt long count,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * The preferred hardware sample rate for the session. The actual sample rate may be different.
+     */
     @Generated
     @Selector("setPreferredSampleRate:error:")
     public native boolean setPreferredSampleRateError(double sampleRate,
@@ -446,30 +662,70 @@ public class AVAudioSession extends NSObject {
         void call_requestRecordPermission(boolean granted);
     }
 
+    /**
+     * @brief	Get the route sharing policy.
+     * 
+     * See AVAudioSessionRouteSharingPolicy for a description of the available policies.
+     * See setCategory:mode:routeSharingPolicy:options:error: for additional discussion.
+     */
     @Generated
     @Selector("routeSharingPolicy")
     @NUInt
     public native long routeSharingPolicy();
 
+    /**
+     * @brief	Set session category, mode, routing sharing policy, and options.
+     * 
+     * Use of the long-form route sharing policy is only valid in conjunction with a limited set of
+     * category, mode, and option values.
+     * 
+     * Allowed categories: AVAudioSessionCategoryPlayback.
+     * 
+     * Allowed modes: AVAudioSessionModeDefault, AVAudioSessionModeMoviePlayback,
+     * AVAudioSessionModeSpokenAudio.
+     * 
+     * Allowed options: None. Options are allowed when changing the routing policy back to Default,
+     * however.
+     */
     @Generated
     @Selector("setCategory:mode:routeSharingPolicy:options:error:")
     public native boolean setCategoryModeRouteSharingPolicyOptionsError(String category, String mode,
             @NUInt long policy, @NUInt long options, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * Whether system sounds and haptics can play while the session is actively using audio input.
+     */
     @Generated
     @Selector("allowHapticsAndSystemSoundsDuringRecording")
     public native boolean allowHapticsAndSystemSoundsDuringRecording();
 
+    /**
+     * The prompt style is a hint to sessions using AVAudioSessionModeVoicePrompt to alter the type of
+     * prompts they issue in response to other audio activity on the system, such as Siri and phone
+     * calls. This property is key-value observable.
+     */
     @Generated
     @Selector("promptStyle")
     @NUInt
     public native long promptStyle();
 
+    /**
+     * Set allowHapticsAndSystemSoundsDuringRecording to YES in order to allow system sounds and haptics to play while the session is actively using audio input.
+     * Default value is NO.
+     */
     @Generated
     @Selector("setAllowHapticsAndSystemSoundsDuringRecording:error:")
     public native boolean setAllowHapticsAndSystemSoundsDuringRecordingError(boolean inValue,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * @method		prepareRouteSelectionForPlaybackWithCompletionHandler:
+     * @param		completionHandler
+     * 			Once any potential routing is complete, the completion handler is called with the selected route type and with a BOOL indicating whether playback should begin or not.
+     * @abstract	A call to this method is an indication that playback is about to start. This gives the receiver an opportunity to prompt the user to pick an output destination if necessary.
+     * 			The receiver will only prompt if the audio session has been configured with a long-form video route sharing policy. 
+     * @discussion	Presenting playback UI (e.g. AVPlayerViewController) and commencing playback should be performed in the completionHandler.
+     */
     @Generated
     @Selector("prepareRouteSelectionForPlaybackWithCompletionHandler:")
     public native void prepareRouteSelectionForPlaybackWithCompletionHandler(
@@ -483,6 +739,9 @@ public class AVAudioSession extends NSObject {
                 @NInt long routeSelection);
     }
 
+    /**
+     * Describes the orientation of the input data source (valid for the built-in mic input data source when a stereo polar pattern is selected).
+     */
     @Generated
     @Selector("inputOrientation")
     @NInt
@@ -493,6 +752,15 @@ public class AVAudioSession extends NSObject {
     @NInt
     public native long preferredInputOrientation();
 
+    /**
+     * Sets the preferred input orientation.
+     * The input orientation determines which directions will be left and right
+     * when a built-in mic data source with the AVAudioSessionPolarPatternStereo polar pattern is selected.
+     * Typically, this orientation should match how the user is holding the device while recording, which will match
+     * the application's interface orientation when a single app is on the screen.
+     * The actual input orientation may be different, for example, if another app's session is in control of routing.
+     * The input orientation is independent of the orientation property of an AVAudioSessionDataSourceDescription. 
+     */
     @Generated
     @Selector("setPreferredInputOrientation:error:")
     public native boolean setPreferredInputOrientationError(@NInt long orientation,

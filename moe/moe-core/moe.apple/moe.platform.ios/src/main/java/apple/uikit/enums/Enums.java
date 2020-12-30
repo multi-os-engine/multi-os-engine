@@ -20,7 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
+    /**
+     * Replacement character is used for attachments
+     */
     @Generated public static final int NSAttachmentCharacter = 0x0000FFFC;
+    /**
+     * segment index for no selected segment
+     */
     @Generated public static final int UISegmentedControlNoSegment = 0xFFFFFFFF;
     @Generated public static final int NSControlCharacterZeroAdvancementAction = 0x00000001;
     @Generated public static final int NSControlCharacterWhitespaceAction = 0x00000002;

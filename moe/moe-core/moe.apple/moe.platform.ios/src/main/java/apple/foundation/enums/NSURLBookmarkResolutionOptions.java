@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSURLBookmarkResolutionOptions {
+    /**
+     * don't perform any user interaction during bookmark resolution
+     */
     @Generated @NUInt public static final long UI = 0x0000000000000100L;
+    /**
+     * don't mount a volume during bookmark resolution
+     */
     @Generated @NUInt public static final long Mounting = 0x0000000000000200L;
 
     @Generated

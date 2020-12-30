@@ -22,8 +22,17 @@ import org.moe.natj.general.ann.NUInt;
 @Generated
 public final class NSCalculationError {
     @Generated @NUInt public static final long NoError = 0x0000000000000000L;
+    /**
+     * Result lost precision
+     */
     @Generated @NUInt public static final long LossOfPrecision = 0x0000000000000001L;
+    /**
+     * Result became 0
+     */
     @Generated @NUInt public static final long Underflow = 0x0000000000000002L;
+    /**
+     * Result exceeds possible representation
+     */
     @Generated @NUInt public static final long Overflow = 0x0000000000000003L;
     @Generated @NUInt public static final long DivideByZero = 0x0000000000000004L;
 

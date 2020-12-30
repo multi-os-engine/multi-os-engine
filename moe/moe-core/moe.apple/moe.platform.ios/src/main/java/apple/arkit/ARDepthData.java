@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A container for depth data and its associated confidence.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -74,6 +77,10 @@ public class ARDepthData extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * A pixel buffer containing the confidence level for each depth value in the `depthMap`.
+     * @see ARConfidenceLevel
+     */
     @Generated
     @Selector("confidenceMap")
     public native CVBufferRef confidenceMap();
@@ -82,6 +89,9 @@ public class ARDepthData extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * A pixel buffer that contains per-pixel depth data (in meters).
+     */
     @Generated
     @Selector("depthMap")
     public native CVBufferRef depthMap();

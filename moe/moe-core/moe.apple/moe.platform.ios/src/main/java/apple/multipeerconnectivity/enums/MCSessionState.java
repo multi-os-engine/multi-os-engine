@@ -19,10 +19,22 @@ package apple.multipeerconnectivity.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Peer states
+ */
 @Generated
 public final class MCSessionState {
+    /**
+     * Not connected to the session.
+     */
     @Generated @NInt public static final long NotConnected = 0x0000000000000000L;
+    /**
+     * Peer is connecting to the session.
+     */
     @Generated @NInt public static final long Connecting = 0x0000000000000001L;
+    /**
+     * Peer is connected to the session.
+     */
     @Generated @NInt public static final long Connected = 0x0000000000000002L;
 
     @Generated

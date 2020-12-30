@@ -170,6 +170,9 @@ public class GKScoreChallenge extends GKChallenge {
     @Selector("initWithCoder:")
     public native GKScoreChallenge initWithCoder(NSCoder coder);
 
+    /**
+     * The score to meet to satisfy this challenge
+     */
     @Generated
     @Selector("score")
     public native GKScore score();

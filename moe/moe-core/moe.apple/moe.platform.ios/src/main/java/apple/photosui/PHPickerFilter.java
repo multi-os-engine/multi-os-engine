@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A filter used to restrict the types \c PHPickerViewController can display.
+ */
 @Generated
 @Library("PhotosUI")
 @Runtime(ObjCRuntime.class)
@@ -52,6 +55,9 @@ public class PHPickerFilter extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Returns a new filter formed by OR-ing the filters in a given array.
+     */
     @Generated
     @Selector("anyFilterMatchingSubfilters:")
     public static native PHPickerFilter anyFilterMatchingSubfilters(NSArray<? extends PHPickerFilter> subfilters);
@@ -97,6 +103,9 @@ public class PHPickerFilter extends NSObject implements NSCopying {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The filter for images.
+     */
     @Generated
     @Selector("imagesFilter")
     public static native PHPickerFilter imagesFilter();
@@ -126,6 +135,9 @@ public class PHPickerFilter extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The filter for live photos.
+     */
     @Generated
     @Selector("livePhotosFilter")
     public static native PHPickerFilter livePhotosFilter();
@@ -157,6 +169,9 @@ public class PHPickerFilter extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * The filter for videos.
+     */
     @Generated
     @Selector("videosFilter")
     public static native PHPickerFilter videosFilter();

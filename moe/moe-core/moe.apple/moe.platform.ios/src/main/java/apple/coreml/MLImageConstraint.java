@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MLImageConstraint
+ * 
+ * Constraint on image properties.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -120,15 +125,24 @@ public class MLImageConstraint extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The accepted kCVPixelFormatType for the image.
+     */
     @Generated
     @Selector("pixelFormatType")
     public native int pixelFormatType();
 
+    /**
+     * The required or default height of the image
+     */
     @Generated
     @Selector("pixelsHigh")
     @NInt
     public native long pixelsHigh();
 
+    /**
+     * The required or default width of the image
+     */
     @Generated
     @Selector("pixelsWide")
     @NInt
@@ -163,6 +177,9 @@ public class MLImageConstraint extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native MLImageConstraint initWithCoder(NSCoder coder);
 
+    /**
+     * Detailed image size constraint
+     */
     @Generated
     @Selector("sizeConstraint")
     public native MLImageSizeConstraint sizeConstraint();

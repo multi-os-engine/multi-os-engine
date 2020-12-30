@@ -18,6 +18,9 @@ package apple.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * 23.2.8 ACL Entry Constants
+ */
 @Generated
 public final class acl_entry_id_t {
     @Generated public static final int ACL_FIRST_ENTRY = 0x00000000;

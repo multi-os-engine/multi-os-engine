@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A configuration for \c PHPickerViewController.
+ */
 @Generated
 @Library("PhotosUI")
 @Runtime(ObjCRuntime.class)
@@ -89,6 +92,10 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Applying a filter to restrict the types that can be displayed. Default is \c nil.
+     * @discussion Setting \c filter to \c nil means all asset types can be displayed.
+     */
     @Generated
     @Selector("filter")
     public native PHPickerFilter filter();
@@ -98,10 +105,16 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Initializes new configuration with the system photo library. This configuration never returns asset identifiers.
+     */
     @Generated
     @Selector("init")
     public native PHPickerConfiguration init();
 
+    /**
+     * Initializes new configuration with the \c photoLibrary the picker should use.
+     */
     @Generated
     @Selector("initWithPhotoLibrary:")
     public native PHPickerConfiguration initWithPhotoLibrary(PHPhotoLibrary photoLibrary);
@@ -133,6 +146,10 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Preferred representation mode of selected assets. Default is \c PHPickerConfigurationAssetRepresentationModeAutomatic.
+     * @discussion Setting \c preferredAssetRepresentationMode to \c PHPickerConfigurationAssetRepresentationModeAutomatic means the best representation determined by the system will be used.
+     */
     @Generated
     @Selector("preferredAssetRepresentationMode")
     @NInt
@@ -146,19 +163,35 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Maximum number of assets that can be selected. Default is 1.
+     * @discussion Setting \c selectionLimit to 0 means maximum supported by the system.
+     */
     @Generated
     @Selector("selectionLimit")
     @NInt
     public native long selectionLimit();
 
+    /**
+     * Applying a filter to restrict the types that can be displayed. Default is \c nil.
+     * @discussion Setting \c filter to \c nil means all asset types can be displayed.
+     */
     @Generated
     @Selector("setFilter:")
     public native void setFilter(PHPickerFilter value);
 
+    /**
+     * Preferred representation mode of selected assets. Default is \c PHPickerConfigurationAssetRepresentationModeAutomatic.
+     * @discussion Setting \c preferredAssetRepresentationMode to \c PHPickerConfigurationAssetRepresentationModeAutomatic means the best representation determined by the system will be used.
+     */
     @Generated
     @Selector("setPreferredAssetRepresentationMode:")
     public native void setPreferredAssetRepresentationMode(@NInt long value);
 
+    /**
+     * Maximum number of assets that can be selected. Default is 1.
+     * @discussion Setting \c selectionLimit to 0 means maximum supported by the system.
+     */
     @Generated
     @Selector("setSelectionLimit:")
     public native void setSelectionLimit(@NInt long value);

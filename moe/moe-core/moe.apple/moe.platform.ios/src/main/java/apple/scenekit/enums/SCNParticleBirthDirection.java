@@ -19,10 +19,22 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Particle Birth Direction
+ */
 @Generated
 public final class SCNParticleBirthDirection {
+    /**
+     * Z Direction of the Emitter.
+     */
     @Generated @NInt public static final long Constant = 0x0000000000000000L;
+    /**
+     * Use the direction induced by the shape
+     */
     @Generated @NInt public static final long SurfaceNormal = 0x0000000000000001L;
+    /**
+     * Random direction.
+     */
     @Generated @NInt public static final long Random = 0x0000000000000002L;
 
     @Generated

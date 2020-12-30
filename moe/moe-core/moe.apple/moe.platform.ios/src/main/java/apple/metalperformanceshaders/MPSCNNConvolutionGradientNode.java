@@ -92,6 +92,18 @@ public class MPSCNNConvolutionGradientNode extends MPSNNGradientFilterNode imple
     @Selector("init")
     public native MPSCNNConvolutionGradientNode init();
 
+    /**
+     * @abstract   A node to represent the gradient calculation for convolution training.
+     * @param sourceGradient   The input gradient from the 'downstream' gradient filter. Often
+     *                         that is a neuron gradient filter node.
+     * @param sourceImage      The input image from the forward convolution node
+     * @param gradientState    The gradient state from the forward convolution
+     * @param weights          The data source from the forward convolution. It may not contain
+     *                         an integrated neuron. Similary, any normalization should be
+     *                         broken out into a separate node. Pass nil to use the weights
+     *                         from the forward convolution pass.
+     * @return  A MPSCNNConvolutionGradientNode
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:convolutionGradientState:weights:")
     public native MPSCNNConvolutionGradientNode initWithSourceGradientSourceImageConvolutionGradientStateWeights(
@@ -125,6 +137,18 @@ public class MPSCNNConvolutionGradientNode extends MPSNNGradientFilterNode imple
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract   A node to represent the gradient calculation for convolution training.
+     * @param sourceGradient   The input gradient from the 'downstream' gradient filter. Often
+     *                         that is a neuron gradient filter node.
+     * @param sourceImage      The input image from the forward convolution node
+     * @param gradientState    The gradient state from the forward convolution
+     * @param weights          The data source from the forward convolution. It may not contain
+     *                         an integrated neuron. Similary, any normalization should be
+     *                         broken out into a separate node. Pass nil to use the weights
+     *                         from the forward convolution pass.
+     * @return  A MPSCNNConvolutionGradientNode
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:convolutionGradientState:weights:")
     public static native MPSCNNConvolutionGradientNode nodeWithSourceGradientSourceImageConvolutionGradientStateWeights(

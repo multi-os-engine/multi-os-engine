@@ -17,6 +17,13 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CPSearchTemplateDelegate")
 public interface CPSearchTemplateDelegate {
+    /**
+     * The user has selected an item in the search result list.
+     * 
+     * @param searchTemplate The search template in use by the user
+     * @param item The item selected by the user
+     * @param completionHandler You must call the completionHandler when you have handled the row selection in the search result
+     */
     @Generated
     @Selector("searchTemplate:selectedResult:completionHandler:")
     void searchTemplateSelectedResultCompletionHandler(CPSearchTemplate searchTemplate, CPListItem item,
@@ -29,6 +36,13 @@ public interface CPSearchTemplateDelegate {
         void call_searchTemplateSelectedResultCompletionHandler();
     }
 
+    /**
+     * The user has entered characters in the search text field.
+     * 
+     * @param searchTemplate The search template in use by the user
+     * @param searchText The search text entered by the user
+     * @param completionHandler You must call the completionHandler with updated search results
+     */
     @Generated
     @Selector("searchTemplate:updatedSearchText:completionHandler:")
     void searchTemplateUpdatedSearchTextCompletionHandler(CPSearchTemplate searchTemplate, String searchText,
@@ -41,6 +55,11 @@ public interface CPSearchTemplateDelegate {
         void call_searchTemplateUpdatedSearchTextCompletionHandler(NSArray<? extends CPListItem> searchResults);
     }
 
+    /**
+     * The user has selected the keyboard's search button. Generally, you should push a @c CPListTemplate containing the current search results.
+     * 
+     * @param searchTemplate The search template in use by the user
+     */
     @Generated
     @IsOptional
     @Selector("searchTemplateSearchButtonPressed:")

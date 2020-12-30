@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * PKDisbursementVoucher defines information for disbursement
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -75,6 +78,9 @@ public class PKDisbursementVoucher extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The data containing information for the disbursement
+     */
     @Generated
     @Selector("data")
     public native NSData data();
@@ -123,6 +129,9 @@ public class PKDisbursementVoucher extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The URL for redeeming the voucher
+     */
     @Generated
     @Selector("redemptionURL")
     public native NSURL redemptionURL();

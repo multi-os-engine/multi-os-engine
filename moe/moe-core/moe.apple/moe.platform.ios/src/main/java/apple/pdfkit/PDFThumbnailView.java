@@ -52,6 +52,9 @@ public class PDFThumbnailView extends UIView implements NSCoding {
         super(peer);
     }
 
+    /**
+     * PDFView associated with the thumbnail view.
+     */
     @Generated
     @Selector("PDFView")
     public native PDFView PDFView();
@@ -200,6 +203,9 @@ public class PDFThumbnailView extends UIView implements NSCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Background color of view.
+     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -234,6 +240,9 @@ public class PDFThumbnailView extends UIView implements NSCoding {
     @Selector("commitAnimations")
     public static native void commitAnimations();
 
+    /**
+     * Inset for the placement of icons within the thumbnail view. Default UIEdgeInsetsZero.
+     */
     @Generated
     @Selector("contentInset")
     @ByValue
@@ -297,6 +306,10 @@ public class PDFThumbnailView extends UIView implements NSCoding {
     @Selector("layerClass")
     public static native Class layerClass();
 
+    /**
+     * Defines if the thumbnail view is to be displayed vertically or horizontally.
+     * Default PDFThumbnailLayoutModeVertical.
+     */
     @Generated
     @Selector("layoutMode")
     @NInt
@@ -338,6 +351,9 @@ public class PDFThumbnailView extends UIView implements NSCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * This will return only a single page unless allowsMultipleSelection is set to YES.
+     */
     @Generated
     @Selector("selectedPages")
     public native NSArray<? extends PDFPage> selectedPages();
@@ -390,22 +406,38 @@ public class PDFThumbnailView extends UIView implements NSCoding {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * Background color of view.
+     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
 
+    /**
+     * Inset for the placement of icons within the thumbnail view. Default UIEdgeInsetsZero.
+     */
     @Generated
     @Selector("setContentInset:")
     public native void setContentInset(@ByValue UIEdgeInsets value);
 
+    /**
+     * Defines if the thumbnail view is to be displayed vertically or horizontally.
+     * Default PDFThumbnailLayoutModeVertical.
+     */
     @Generated
     @Selector("setLayoutMode:")
     public native void setLayoutMode(@NInt long value);
 
+    /**
+     * PDFView associated with the thumbnail view.
+     */
     @Generated
     @Selector("setPDFView:")
     public native void setPDFView_unsafe(PDFView value);
 
+    /**
+     * PDFView associated with the thumbnail view.
+     */
     @Generated
     public void setPDFView(PDFView value) {
         Object __old = PDFView();
@@ -418,6 +450,9 @@ public class PDFThumbnailView extends UIView implements NSCoding {
         }
     }
 
+    /**
+     * The maximum thumbnail size.
+     */
     @Generated
     @Selector("setThumbnailSize:")
     public native void setThumbnailSize(@ByValue CGSize value);
@@ -430,6 +465,9 @@ public class PDFThumbnailView extends UIView implements NSCoding {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * The maximum thumbnail size.
+     */
     @Generated
     @Selector("thumbnailSize")
     @ByValue

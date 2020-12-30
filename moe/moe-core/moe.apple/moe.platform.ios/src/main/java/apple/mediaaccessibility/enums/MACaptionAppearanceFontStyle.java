@@ -19,6 +19,29 @@ package apple.mediaaccessibility.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum MACaptionAppearanceFontStyle
+ * 
+ * @discussion
+ * MACaptionAppearanceFontStyle is used to specify a font style
+ * 
+ * @constant kMACaptionAppearanceFontStyleDefault
+ *    Default font style.
+ * @constant kMACaptionAppearanceFontStyleMonospacedWithSerif
+ *    Font style for fonts similar to Courier.
+ * @constant kMACaptionAppearanceFontStyleProportionalWithSerif
+ *    Font style for fonts similar to Times New Roman.
+ * @constant kMACaptionAppearanceFontStyleMonospacedWithoutSerif
+ *    Font style for fonts similar to Helvetica Monospaced.
+ * @constant kMACaptionAppearanceFontStyleProportionalWithoutSerif
+ *    Font style for fonts similar to Arial.
+ * @constant kMACaptionAppearanceFontStyleCasual
+ *    Font style for fonts similar to Dom and Impress.
+ * @constant kMACaptionAppearanceFontStyleCursive
+ *    Font style for fonts similar to Coronet and Marigold.
+ * @constant kMACaptionAppearanceFontStyleSmallCapital
+ *    Font style for fonts similar to Engravers Gothic.
+ */
 @Generated
 public final class MACaptionAppearanceFontStyle {
     @Generated @NInt public static final long Default = 0x0000000000000000L;

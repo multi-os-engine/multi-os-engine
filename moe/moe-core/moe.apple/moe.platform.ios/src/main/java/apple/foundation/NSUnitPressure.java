@@ -165,6 +165,9 @@ public class NSUnitPressure extends NSDimension implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Base unit - newtonsPerMetersSquared (equivalent to 1 pascal)
+     */
     @Generated
     @Selector("newtonsPerMetersSquared")
     public static native NSUnitPressure newtonsPerMetersSquared();

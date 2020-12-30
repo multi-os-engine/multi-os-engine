@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueCarbonDioxideDetectionStatus
+ * 
+ * @constant  HMCharacteristicValueCarbonDioxideDetectionStatusNotDetected    Carbon dioxide is not detected.
+ * @constant  HMCharacteristicValueCarbonDioxideDetectionStatusDetected       Carbon dioxide is detected.
+ */
 @Generated
 public final class HMCharacteristicValueCarbonDioxideDetectionStatus {
     @Generated @NInt public static final long NotDetected = 0x0000000000000000L;

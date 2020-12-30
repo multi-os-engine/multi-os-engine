@@ -21,11 +21,29 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class LAAccessControlOperation {
+    /**
+     * Access control will be used for item creation.
+     */
     @Generated @NInt public static final long CreateItem = 0x0000000000000000L;
+    /**
+     * Access control will be used for accessing existing item.
+     */
     @Generated @NInt public static final long UseItem = 0x0000000000000001L;
+    /**
+     * Access control will be used for key creation.
+     */
     @Generated @NInt public static final long CreateKey = 0x0000000000000002L;
+    /**
+     * Access control will be used for sign operation with existing key.
+     */
     @Generated @NInt public static final long UseKeySign = 0x0000000000000003L;
+    /**
+     * Access control will be used for data decryption using existing key.
+     */
     @Generated @NInt public static final long UseKeyDecrypt = 0x0000000000000004L;
+    /**
+     * Access control will be used for key exchange.
+     */
     @Generated @NInt public static final long UseKeyKeyExchange = 0x0000000000000005L;
 
     @Generated

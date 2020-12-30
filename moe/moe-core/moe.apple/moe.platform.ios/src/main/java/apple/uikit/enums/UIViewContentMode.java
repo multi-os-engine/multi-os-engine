@@ -22,9 +22,21 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class UIViewContentMode {
     @Generated @NInt public static final long ScaleToFill = 0x0000000000000000L;
+    /**
+     * contents scaled to fit with fixed aspect. remainder is transparent
+     */
     @Generated @NInt public static final long ScaleAspectFit = 0x0000000000000001L;
+    /**
+     * contents scaled to fill with fixed aspect. some portion of content may be clipped.
+     */
     @Generated @NInt public static final long ScaleAspectFill = 0x0000000000000002L;
+    /**
+     * redraw on bounds change (calls -setNeedsDisplay)
+     */
     @Generated @NInt public static final long Redraw = 0x0000000000000003L;
+    /**
+     * contents remain same size. positioned adjusted.
+     */
     @Generated @NInt public static final long Center = 0x0000000000000004L;
     @Generated @NInt public static final long Top = 0x0000000000000005L;
     @Generated @NInt public static final long Bottom = 0x0000000000000006L;

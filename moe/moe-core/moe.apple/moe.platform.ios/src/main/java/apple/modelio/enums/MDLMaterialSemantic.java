@@ -19,6 +19,110 @@ package apple.modelio.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * MDLMaterialSemantic
+ * 
+ * @summary The material semantics are identifiers for material properties 
+ *            formally identified by one of the standard material descriptors.
+ * 
+ * @discussion When files containing material properties are loaded and translated 
+ *             by ModelIO, an appropriate standard material descriptor will be 
+ *             chosen, and any properties translated from the loaded file can be 
+ *             retrieved using one of these semantics.
+ * 
+ * MDLMaterialSemanticBaseColor
+ *    The inherent color of a surface to be used as a modulator during shading. 
+ *    Default is 50% gray
+ * 
+ * MDLMaterialSemanticSubsurface,
+ *    The degree to which light scatters under the surface of a material
+ * 
+ * MDLMaterialSemanticMetallic
+ *    A blend between a material behaving as a dielectric material at zero, and a 
+ *    metal at one.
+ * 
+ * MDLMaterialSemanticSpecular
+ *    Specular response to incident light
+ * 
+ * MDLMaterialSemanticSpecularExponent
+ *    Power of the specular exponent in the case that a Blinn/Phong BSDF is in use.
+ * 
+ * MDLMaterialSemanticSpecularTint
+ *    At zero, the specular highlight will use the hue, saturation, and intensity 
+ *    of incoming light to color the specular response; at one, the material's 
+ *    base color, and the light's intensity will be used.
+ * 
+ * MDLMaterialSemanticRoughness
+ *    Controls diffuse and specular response. A value of zero is smooth and shiny. 
+ *    At one, a diffuse material will retroreflect, and the specular highlight 
+ *    will be very spread out.
+ * 
+ * MDLMaterialSemanticAnisotropic
+ *    The degree to which the specular highlight is elongated in the direction of 
+ *    the local tangent basis. A mesh that does not have a tangent basis will not 
+ *    respond to this parameter.
+ * 
+ * MDLMaterialSemanticAnisotropicRotation
+ *    The degree to which the anisotropy is rotated relative to the direction of the
+ *    local tangent basis. Values from zero to one are mapped to zero to two PI.
+ * 
+ * MDLMaterialSemanticSheen
+ *    A specular tint that appears at glancing angles on an object
+ * 
+ * MDLMaterialSemanticSheenTint
+ *    At zero, the specular highlight will use the hue, saturation, and intensity 
+ *    of incoming light to color the specular response; at one, the material's 
+ *    base color, and the light's intensity will be used.
+ * 
+ * MDLMaterialSemanticClearcoat
+ *    A second specular highlight, much like the gloss that results from a clear 
+ *    coat on an automotive finish
+ * 
+ * MDLMaterialSemanticClearcoatGloss
+ *    The glossiness of the clear coat highlight.
+ * 
+ * MDLMaterialSemanticEmission
+ *    A value that is to be emitted as radiance by a surface
+ * 
+ * MDLMaterialSemanticBump
+ *    A value that perturbs surface normals according to the local gradient of 
+ *    the property
+ * 
+ * MDLMaterialSemanticOpacity
+ *    The opacity of the surface
+ * 
+ * MDLMaterialSemanticInterfaceIndexOfRefraction
+ *    n1 in Schlick's equation, typically 1.0 for air
+ * 
+ * MDLMaterialSemanticMaterialIndexOfRefraction
+ *    n2 in Schlick's equation
+ * 
+ * MDLMaterialSemanticObjectSpaceNormal
+ *    A value that perturbs surface normals in object space
+ * 
+ * MDLMaterialSemanticTangentSpaceNormal
+ *    A value that perturbs surface normals in a local tangent space
+ * 
+ * MDLMaterialSemanticDisplacement
+ *    Displacement of a surface relative to surface normal
+ * 
+ * MDLMaterialSemanticDisplacementScale
+ *    Scaling factor for displacement
+ * 
+ * MDLMaterialSemanticAmbientOcclusion
+ *    Ambient occlusion describes the accessibility of the surface to the 
+ *    surrounding radiant environment and is typically used to attenuate it. It is 
+ *    not intended to attenuate direct illumination sources.
+ * 
+ * MDLMaterialSemanticAmbientOcclusionScale
+ *    The degree to which the ambient occlusion values are applied
+ * 
+ * MDLMaterialSemanticUserDefined = 0x8000
+ *    Properties with this value are created when material properties are 
+ *    translated for which no known semantic applies.
+ *    Semantics defined at greater than this value are available to be user defined.
+ *    The first value is also used to indicate
+ */
 @Generated
 public final class MDLMaterialSemantic {
     @Generated @NUInt public static final long BaseColor = 0x0000000000000000L;

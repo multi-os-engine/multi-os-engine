@@ -154,6 +154,10 @@ public class MPSeekCommandEvent extends MPRemoteCommandEvent {
     @Selector("init")
     public native MPSeekCommandEvent init();
 
+    /**
+     * The type of seek command event, which specifies whether an external player
+     * began or ended seeking.
+     */
     @Generated
     @Selector("type")
     @NUInt

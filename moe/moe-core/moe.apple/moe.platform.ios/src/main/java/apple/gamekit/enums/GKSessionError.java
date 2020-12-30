@@ -18,6 +18,9 @@ package apple.gamekit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * code
+ */
 @Generated
 public final class GKSessionError {
     @Generated public static final int InvalidParameterError = 0x00007724;

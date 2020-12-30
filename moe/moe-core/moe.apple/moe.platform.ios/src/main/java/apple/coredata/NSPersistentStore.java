@@ -128,11 +128,20 @@ public class NSPersistentStore extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Get metadata from the persistent store at url. Must be overriden by subclasses.
+     * Subclasses should validate that the URL is the type of URL they are expecting, and 
+     * should verify that the file contents are appropriate for the store type before
+     * attempting to read from it. This method should never raise an exception.
+     */
     @Generated
     @Selector("metadataForPersistentStoreWithURL:error:")
     public static native NSDictionary<String, ?> metadataForPersistentStoreWithURLError(NSURL url,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Returns the NSMigrationManager class optimized for this store class.  Subclasses of NSPersistentStore can override this to provide a custom migration manager subclass (eg to take advantage of store-specific functionality to improve migration performance).
+     */
     @Generated
     @Selector("migrationManagerClass")
     public static native Class migrationManagerClass();
@@ -151,6 +160,9 @@ public class NSPersistentStore extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Set the medatada of the store at url to metadata. Must be overriden by subclasses.
+     */
     @Generated
     @Selector("setMetadata:forPersistentStoreWithURL:error:")
     public static native boolean setMetadataForPersistentStoreWithURLError(NSDictionary<String, ?> metadata, NSURL url,
@@ -173,10 +185,16 @@ public class NSPersistentStore extends NSObject {
     @Selector("URL")
     public native NSURL URL();
 
+    /**
+     * Which configuration does this store contain
+     */
     @Generated
     @Selector("configurationName")
     public native String configurationName();
 
+    /**
+     * Gives the store a chance to do any post-init work that's necessary
+     */
     @Generated
     @Selector("didAddToPersistentStoreCoordinator:")
     public native void didAddToPersistentStoreCoordinator(NSPersistentStoreCoordinator coordinator);
@@ -189,31 +207,52 @@ public class NSPersistentStore extends NSObject {
     @Selector("init")
     public native NSPersistentStore init();
 
+    /**
+     * the designated initializer for object stores.
+     */
     @Generated
     @Selector("initWithPersistentStoreCoordinator:configurationName:URL:options:")
     public native NSPersistentStore initWithPersistentStoreCoordinatorConfigurationNameURLOptions(
             NSPersistentStoreCoordinator root, String name, NSURL url, NSDictionary<?, ?> options);
 
+    /**
+     * Do we know a priori the store is read only?
+     */
     @Generated
     @Selector("isReadOnly")
     public native boolean isReadOnly();
 
+    /**
+     * Do we know a priori the store is read only?
+     */
     @Generated
     @Selector("setReadOnly:")
     public native void setReadOnly(boolean value);
 
+    /**
+     * Store metadata must be accessible before -load: is called, but there is no way to return an error if the store is invalid
+     */
     @Generated
     @Selector("loadMetadata:")
     public native boolean loadMetadata(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * includes store type and UUID
+     */
     @Generated
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();
 
+    /**
+     * the options the store was initialized with
+     */
     @Generated
     @Selector("options")
     public native NSDictionary<?, ?> options();
 
+    /**
+     * the bridge between the control & access layers.
+     */
     @Generated
     @Selector("persistentStoreCoordinator")
     public native NSPersistentStoreCoordinator persistentStoreCoordinator();
@@ -222,6 +261,9 @@ public class NSPersistentStore extends NSObject {
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
 
+    /**
+     * includes store type and UUID
+     */
     @Generated
     @Selector("setMetadata:")
     public native void setMetadata(NSDictionary<String, ?> value);
@@ -230,14 +272,25 @@ public class NSPersistentStore extends NSObject {
     @Selector("setURL:")
     public native void setURL(NSURL value);
 
+    /**
+     * stores always know their type
+     */
     @Generated
     @Selector("type")
     public native String type();
 
+    /**
+     * Gives the store a chance to do any non-dealloc teardown (for example, closing a network connection)
+     * before removal.
+     */
     @Generated
     @Selector("willRemoveFromPersistentStoreCoordinator:")
     public native void willRemoveFromPersistentStoreCoordinator(NSPersistentStoreCoordinator coordinator);
 
+    /**
+     * Return the Core Spotlight exporter if one exists for this store. The exporter
+     * can be set as part of the store options when it is added to the coordinator. 
+     */
     @Generated
     @Selector("coreSpotlightExporter")
     public native NSCoreDataCoreSpotlightDelegate coreSpotlightExporter();

@@ -35,26 +35,47 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @protocol MTLComputePipelineState
+ * @abstract A handle to compiled code for a compute function.
+ * @discussion MTLComputePipelineState is a single compute function.  It can only be used with the device that it was created against.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLComputePipelineState")
 public interface MTLComputePipelineState {
+    /**
+     * @property device
+     * @abstract The device this resource was created against.  This resource can only be used with this device.
+     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     MTLDevice device();
 
+    /**
+     * @property maxTotalThreadsPerThreadgroup
+     * @abstract The maximum total number of threads that can be in a single compute threadgroup.
+     */
     @Generated
     @Selector("maxTotalThreadsPerThreadgroup")
     @NUInt
     long maxTotalThreadsPerThreadgroup();
 
+    /**
+     * @property threadExecutionWidth
+     * @abstract For most efficient execution, the threadgroup size should be a multiple of this when executing the kernel.
+     */
     @Generated
     @Selector("threadExecutionWidth")
     @NUInt
     long threadExecutionWidth();
 
+    /**
+     * @method imageblockMemoryLengthForDimensions:
+     * @brief Returns imageblock memory length for given image block dimensions.
+     */
     @Generated
     @Selector("imageblockMemoryLengthForDimensions:")
     @NUInt
@@ -64,11 +85,19 @@ public interface MTLComputePipelineState {
     @Selector("label")
     String label();
 
+    /**
+     * @property staticThreadgroupMemoryLength
+     * @abstract The length in bytes of threadgroup memory that is statically allocated.
+     */
     @Generated
     @Selector("staticThreadgroupMemoryLength")
     @NUInt
     long staticThreadgroupMemoryLength();
 
+    /**
+     * @property supportIndirectCommandBuffers
+     * @abstract Tells whether this pipeline state is usable through an Indirect Command Buffer.
+     */
     @Generated
     @Selector("supportIndirectCommandBuffers")
     boolean supportIndirectCommandBuffers();

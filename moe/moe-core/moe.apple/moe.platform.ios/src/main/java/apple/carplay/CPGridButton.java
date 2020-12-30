@@ -95,6 +95,13 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The image displayed on the button.
+     * 
+     * @discussion Animated images are not supported. If an animated image is assigned, only the first image will be used.
+     * To properly size your list images, your app should size them to the display scale of the car screen.
+     * See -[CPInterfaceController carTraitCollection].
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -107,6 +114,18 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPGridButton initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize a button with a title and image.
+     * 
+     * @param titleVariants An array of title variants for this button, arranged from most to least preferred. You must provide at least one title.
+     * @param image The image displayed on the button. It must be non-nil for the button to be displayed.
+     * @param handler A block to execute when the user selects the button. The block has no return value and takes the selected button as its only parameter.
+     * 
+     * The image must be non-nil and the title must be a non-zero length string for the button to be displayed.
+     * 
+     * @discussion To properly size your images, your app should size them to the display scale of the car screen.
+     * See -[CPInterfaceController carTraitCollection].
+     */
     @Generated
     @Selector("initWithTitleVariants:image:handler:")
     public native CPGridButton initWithTitleVariantsImageHandler(NSArray<String> titleVariants, UIImage image,
@@ -132,6 +151,11 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * A Boolean value indicating whether the button is enabled.
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
@@ -158,6 +182,11 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * A Boolean value indicating whether the button is enabled.
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
@@ -180,6 +209,11 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * An array of title variants for this button, arranged from most to least preferred.
+     * The system will select a title from your list of provided variants that fits the available space.
+     * The variant strings should be provided as localized, displayable content.
+     */
     @Generated
     @Selector("titleVariants")
     public native NSArray<String> titleVariants();

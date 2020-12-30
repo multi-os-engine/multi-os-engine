@@ -19,6 +19,9 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Particle Blend Mode
+ */
 @Generated
 public final class SCNParticleBlendMode {
     @Generated @NInt public static final long Additive = 0x0000000000000000L;

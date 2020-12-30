@@ -121,6 +121,9 @@ public class ILMessageCommunication extends ILCommunication {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Contains the contents of the message
+     */
     @Generated
     @Selector("messageBody")
     public native String messageBody();

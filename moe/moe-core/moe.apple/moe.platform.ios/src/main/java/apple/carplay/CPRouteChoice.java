@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @c CPRouteChoice describes a possible route for a @c CPTrip.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -45,6 +48,11 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * additionalInformationVariants is an array of additional information variants for this route choice, arranged from most to least preferred. You must provide at least one variant.
+     * The system will select the first variant that fits the available space. The variant strings should be provided as localized, displayable content.
+     * Examples: "Fastest Route", "Avoids Tolls"
+     */
     @Generated
     @Selector("additionalInformationVariants")
     public native NSArray<String> additionalInformationVariants();
@@ -112,6 +120,10 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
     @Selector("initWithCoder:")
     public native CPRouteChoice initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize a @c CPRouteChoice with summary variants, additional information variants, and selection summary variants.
+     * The variant strings should be provided as localized, displayable content.
+     */
     @Generated
     @Selector("initWithSummaryVariants:additionalInformationVariants:selectionSummaryVariants:")
     public native CPRouteChoice initWithSummaryVariantsAdditionalInformationVariantsSelectionSummaryVariants(
@@ -153,10 +165,17 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * selectionSummaryVariants is an array of summary variants for this route choice, arranged from most to least preferred. You must provide at least one variant.
+     * The system will select the first variant that fits the available space.
+     */
     @Generated
     @Selector("selectionSummaryVariants")
     public native NSArray<String> selectionSummaryVariants();
 
+    /**
+     * Any custom user info related to this route choice.
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
@@ -165,6 +184,11 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * summaryVariants is an array of summary variants for this route choice, arranged from most to least preferred. You must provide at least one variant.
+     * The system will select the first variant that fits the available space. The variant strings should be provided as localized, displayable content.
+     * Example: "Via I-280 S"
+     */
     @Generated
     @Selector("summaryVariants")
     public native NSArray<String> summaryVariants();
@@ -183,6 +207,9 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
         return supportsSecureCoding();
     }
 
+    /**
+     * Any custom user info related to this route choice.
+     */
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)

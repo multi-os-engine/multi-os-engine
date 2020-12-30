@@ -357,6 +357,10 @@ public class MKMapView extends UIView implements NSCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Annotations are models used to annotate coordinates on the map.
+     * Implement mapView:viewForAnnotation: on MKMapViewDelegate to return the annotation view for each annotation.
+     */
     @Generated
     @Selector("addAnnotation:")
     public native void addAnnotation(@Mapped(ObjCObjectMapper.class) MKAnnotation annotation);
@@ -365,10 +369,18 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("addAnnotations:")
     public native void addAnnotations(NSArray<?> annotations);
 
+    /**
+     * These methods operate implicitly on overlays in MKOverlayLevelAboveLabels and may be deprecated in a future release in favor of the methods that specify the level.
+     */
     @Generated
     @Selector("addOverlay:")
     public native void addOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
+    /**
+     * Overlays are models used to represent areas to be drawn on top of the map.
+     * This is in contrast to annotations, which represent points on the map.
+     * Implement -mapView:rendererForOverlay: on MKMapViewDelegate to return the renderer for each overlay.
+     */
     @Generated
     @Selector("addOverlay:level:")
     public native void addOverlayLevel(@Mapped(ObjCObjectMapper.class) MKOverlay overlay, @NInt long level);
@@ -381,6 +393,10 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("addOverlays:level:")
     public native void addOverlaysLevel(NSArray<?> overlays, @NInt long level);
 
+    /**
+     * annotationVisibleRect is the visible rect where the annotations views are currently displayed.
+     * The delegate can use annotationVisibleRect when animating the adding of the annotations views in mapView:didAddAnnotationViews:
+     */
     @Generated
     @Selector("annotationVisibleRect")
     @ByValue
@@ -445,6 +461,9 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("camera")
     public native MKMapCamera camera();
 
+    /**
+     * centerCoordinate allows the coordinate of the region to be changed without changing the zoom level.
+     */
     @Generated
     @Selector("centerCoordinate")
     @ByValue
@@ -475,6 +494,9 @@ public class MKMapView extends UIView implements NSCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native MKMapViewDelegate delegate();
 
+    /**
+     * Used by the delegate to acquire a reusable annotation view, or create a new view for registered class, in lieu of allocating a new one.
+     */
     @Generated
     @Selector("dequeueReusableAnnotationViewWithIdentifier:")
     public native MKAnnotationView dequeueReusableAnnotationViewWithIdentifier(String identifier);
@@ -536,10 +558,16 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("setPitchEnabled:")
     public native void setPitchEnabled(boolean value);
 
+    /**
+     * Rotate and pitch are enabled by default on Mac OS X and on iOS 7.0 and later.
+     */
     @Generated
     @Selector("isRotateEnabled")
     public native boolean isRotateEnabled();
 
+    /**
+     * Rotate and pitch are enabled by default on Mac OS X and on iOS 7.0 and later.
+     */
     @Generated
     @Selector("setRotateEnabled:")
     public native void setRotateEnabled(boolean value);
@@ -552,18 +580,32 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("setScrollEnabled:")
     public native void setScrollEnabled(boolean value);
 
+    /**
+     * Returns YES if the user's location is displayed within the currently visible map region.
+     */
     @Generated
     @Selector("isUserLocationVisible")
     public native boolean isUserLocationVisible();
 
+    /**
+     * Control the types of user interaction available
+     * Zoom and scroll are enabled by default.
+     */
     @Generated
     @Selector("isZoomEnabled")
     public native boolean isZoomEnabled();
 
+    /**
+     * Control the types of user interaction available
+     * Zoom and scroll are enabled by default.
+     */
     @Generated
     @Selector("setZoomEnabled:")
     public native void setZoomEnabled(boolean value);
 
+    /**
+     * Returns an MKMapRect modified to fit the aspect ratio of the map.
+     */
     @Generated
     @Selector("mapRectThatFits:")
     @ByValue
@@ -574,6 +616,10 @@ public class MKMapView extends UIView implements NSCoding {
     @ByValue
     public native MKMapRect mapRectThatFitsEdgePadding(@ByValue MKMapRect mapRect, @ByValue UIEdgeInsets insets);
 
+    /**
+     * Changing the map type or region can cause the map to start loading map content.
+     * The loading delegate methods will be called as map content is loaded.
+     */
     @Generated
     @Selector("mapType")
     @NUInt
@@ -587,11 +633,18 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("overlaysInLevel:")
     public native NSArray<?> overlaysInLevel(@NInt long level);
 
+    /**
+     * Region is the coordinate and span of the map.
+     * Region may be modified to fit the aspect ratio of the view using regionThatFits:.
+     */
     @Generated
     @Selector("region")
     @ByValue
     public native MKCoordinateRegion region();
 
+    /**
+     * Returns a region of the aspect ratio of the map view that contains the given region, with the same center point.
+     */
     @Generated
     @Selector("regionThatFits:")
     @ByValue
@@ -613,10 +666,16 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("removeOverlays:")
     public native void removeOverlays(NSArray<?> overlays);
 
+    /**
+     * Current renderer for overlay; returns nil if the overlay is not shown.
+     */
     @Generated
     @Selector("rendererForOverlay:")
     public native MKOverlayRenderer rendererForOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
+    /**
+     * Select or deselect a given annotation.  Asks the delegate for the corresponding annotation view if necessary.
+     */
     @Generated
     @Selector("selectAnnotation:animated:")
     public native void selectAnnotationAnimated(@Mapped(ObjCObjectMapper.class) MKAnnotation annotation,
@@ -634,6 +693,9 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("setCamera:animated:")
     public native void setCameraAnimated(MKMapCamera camera, boolean animated);
 
+    /**
+     * centerCoordinate allows the coordinate of the region to be changed without changing the zoom level.
+     */
     @Generated
     @Selector("setCenterCoordinate:")
     public native void setCenterCoordinate(@ByValue CLLocationCoordinate2D value);
@@ -658,10 +720,18 @@ public class MKMapView extends UIView implements NSCoding {
         }
     }
 
+    /**
+     * Changing the map type or region can cause the map to start loading map content.
+     * The loading delegate methods will be called as map content is loaded.
+     */
     @Generated
     @Selector("setMapType:")
     public native void setMapType(@NUInt long value);
 
+    /**
+     * Region is the coordinate and span of the map.
+     * Region may be modified to fit the aspect ratio of the view using regionThatFits:.
+     */
     @Generated
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);
@@ -674,6 +744,9 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("setSelectedAnnotations:")
     public native void setSelectedAnnotations(NSArray<?> value);
 
+    /**
+     * Affects MKMapTypeStandard
+     */
     @Generated
     @Selector("setShowsBuildings:")
     public native void setShowsBuildings(boolean value);
@@ -682,6 +755,9 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("setShowsCompass:")
     public native void setShowsCompass(boolean value);
 
+    /**
+     * Affects MKMapTypeStandard and MKMapTypeHybrid
+     */
     @Generated
     @Selector("setShowsPointsOfInterest:")
     public native void setShowsPointsOfInterest(boolean value);
@@ -690,10 +766,16 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("setShowsScale:")
     public native void setShowsScale(boolean value);
 
+    /**
+     * Affects MKMapTypeStandard and MKMapTypeHybrid
+     */
     @Generated
     @Selector("setShowsTraffic:")
     public native void setShowsTraffic(boolean value);
 
+    /**
+     * Set to YES to add the user location annotation to the map and start updating its location
+     */
     @Generated
     @Selector("setShowsUserLocation:")
     public native void setShowsUserLocation(boolean value);
@@ -706,6 +788,9 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("setUserTrackingMode:animated:")
     public native void setUserTrackingModeAnimated(@NInt long mode, boolean animated);
 
+    /**
+     * Access the visible region of the map in projected coordinates.
+     */
     @Generated
     @Selector("setVisibleMapRect:")
     public native void setVisibleMapRect(@ByValue MKMapRect value);
@@ -719,10 +804,16 @@ public class MKMapView extends UIView implements NSCoding {
     public native void setVisibleMapRectEdgePaddingAnimated(@ByValue MKMapRect mapRect, @ByValue UIEdgeInsets insets,
             boolean animate);
 
+    /**
+     * Position the map such that the provided array of annotations are all visible to the fullest extent possible.
+     */
     @Generated
     @Selector("showAnnotations:animated:")
     public native void showAnnotationsAnimated(NSArray<?> annotations, boolean animated);
 
+    /**
+     * Affects MKMapTypeStandard
+     */
     @Generated
     @Selector("showsBuildings")
     public native boolean showsBuildings();
@@ -731,6 +822,9 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("showsCompass")
     public native boolean showsCompass();
 
+    /**
+     * Affects MKMapTypeStandard and MKMapTypeHybrid
+     */
     @Generated
     @Selector("showsPointsOfInterest")
     public native boolean showsPointsOfInterest();
@@ -739,14 +833,23 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("showsScale")
     public native boolean showsScale();
 
+    /**
+     * Affects MKMapTypeStandard and MKMapTypeHybrid
+     */
     @Generated
     @Selector("showsTraffic")
     public native boolean showsTraffic();
 
+    /**
+     * Set to YES to add the user location annotation to the map and start updating its location
+     */
     @Generated
     @Selector("showsUserLocation")
     public native boolean showsUserLocation();
 
+    /**
+     * The annotation representing the user's location
+     */
     @Generated
     @Selector("userLocation")
     public native MKUserLocation userLocation();
@@ -756,24 +859,40 @@ public class MKMapView extends UIView implements NSCoding {
     @NInt
     public native long userTrackingMode();
 
+    /**
+     * Currently displayed view for an annotation; returns nil if the view for the annotation isn't being displayed.
+     */
     @Generated
     @Selector("viewForAnnotation:")
     public native MKAnnotationView viewForAnnotation(@Mapped(ObjCObjectMapper.class) MKAnnotation annotation);
 
+    /**
+     * Currently displayed view for overlay; returns nil if the view has not been created yet.
+     * Prefer using MKOverlayRenderer and -rendererForOverlay.
+     */
     @Generated
     @Selector("viewForOverlay:")
     public native MKOverlayView viewForOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
+    /**
+     * Access the visible region of the map in projected coordinates.
+     */
     @Generated
     @Selector("visibleMapRect")
     @ByValue
     public native MKMapRect visibleMapRect();
 
+    /**
+     * Used by the delegate to acquire a reusable annotation view, or create a new view for registered class, in lieu of allocating a new one. Throws an exception if view could not be aquired.
+     */
     @Generated
     @Selector("dequeueReusableAnnotationViewWithIdentifier:forAnnotation:")
     public native MKAnnotationView dequeueReusableAnnotationViewWithIdentifierForAnnotation(String identifier,
             @Mapped(ObjCObjectMapper.class) MKAnnotation annotation);
 
+    /**
+     * Register a MKAnnotationView subclass to be instantiated when dequeueReusableAnnotationViewWithIdentifier: does not have a view to reuse.
+     */
     @Generated
     @Selector("registerClass:forAnnotationViewWithReuseIdentifier:")
     public native void registerClassForAnnotationViewWithReuseIdentifier(Class viewClass, String identifier);

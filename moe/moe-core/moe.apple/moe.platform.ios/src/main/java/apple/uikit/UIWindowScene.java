@@ -149,6 +149,10 @@ public class UIWindowScene extends UIScene {
     @Selector("screen")
     public native UIScreen screen();
 
+    /**
+     * @abstract The screenshot object associated with the scene
+     * @discussion This is non-null if the screenshot service is available for this window scene
+     */
     @Generated
     @Selector("screenshotService")
     public native UIScreenshotService screenshotService();
@@ -157,6 +161,9 @@ public class UIWindowScene extends UIScene {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Restrictions which the system should use when resizing the scene. This property will be NULL on platforms which don't support scene resize, else a mutable object is returned which the client may customize.
+     */
     @Generated
     @Selector("sizeRestrictions")
     public native UISceneSizeRestrictions sizeRestrictions();
@@ -178,6 +185,9 @@ public class UIWindowScene extends UIScene {
     @NInt
     public static native long version_static();
 
+    /**
+     * The array of all windows associated with this UIWindowScene
+     */
     @Generated
     @Selector("windows")
     public native NSArray<? extends UIWindow> windows();

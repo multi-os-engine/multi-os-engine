@@ -129,10 +129,18 @@ public class AVCompositionTrackFormatDescriptionReplacement extends NSObject imp
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property       originalFormatDescription
+     * @abstract       The original format description.
+     */
     @Generated
     @Selector("originalFormatDescription")
     public native CMFormatDescriptionRef originalFormatDescription();
 
+    /**
+     * @property       replacementFormatDescription
+     * @abstract       The replacement format description.
+     */
     @Generated
     @Selector("replacementFormatDescription")
     public native CMFormatDescriptionRef replacementFormatDescription();

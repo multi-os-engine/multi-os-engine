@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An acoustic feature
+ */
 @Generated
 @Library("Speech")
 @Runtime(ObjCRuntime.class)
@@ -46,6 +49,9 @@ public class SFAcousticFeature extends NSObject implements NSCopying, NSSecureCo
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Array of feature values per audio frame, corresponding to a segment of recorded audio
+     */
     @Generated
     @Selector("acousticFeatureValuePerFrame")
     public native NSArray<? extends NSNumber> acousticFeatureValuePerFrame();
@@ -100,6 +106,9 @@ public class SFAcousticFeature extends NSObject implements NSCopying, NSSecureCo
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Duration of an audio frame
+     */
     @Generated
     @Selector("frameDuration")
     public native double frameDuration();

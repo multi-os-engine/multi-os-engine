@@ -17,10 +17,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLSharedEvent")
 public interface MTLSharedEvent extends MTLEvent {
+    /**
+     * Convenience method for creating a shared event handle that may be passed to other processes via XPC.
+     */
     @Generated
     @Selector("newSharedEventHandle")
     MTLSharedEventHandle newSharedEventHandle();
 
+    /**
+     * When the event's signaled value reaches value or higher, invoke the block on the dispatch queue owned by the listener.
+     */
     @Generated
     @Selector("notifyListener:atValue:block:")
     void notifyListenerAtValueBlock(MTLSharedEventListener listener, long value,
@@ -33,10 +39,16 @@ public interface MTLSharedEvent extends MTLEvent {
         void call_notifyListenerAtValueBlock(@Mapped(ObjCObjectMapper.class) Object arg0, long arg1);
     }
 
+    /**
+     * Read or set signaled value
+     */
     @Generated
     @Selector("setSignaledValue:")
     void setSignaledValue(long value);
 
+    /**
+     * Read or set signaled value
+     */
     @Generated
     @Selector("signaledValue")
     long signaledValue();

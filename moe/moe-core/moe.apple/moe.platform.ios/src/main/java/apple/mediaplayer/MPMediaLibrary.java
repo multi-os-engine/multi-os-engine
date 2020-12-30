@@ -180,6 +180,9 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     public native void addItemWithProductIDCompletionHandler(String productID,
             @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
 
+    /**
+     * MPMediaLibraryDidChangeNotification will be posted when a sync happens.
+     */
     @Generated
     @Selector("beginGeneratingLibraryChangeNotifications")
     public native void beginGeneratingLibraryChangeNotifications();
@@ -192,6 +195,13 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Selector("endGeneratingLibraryChangeNotifications")
     public native void endGeneratingLibraryChangeNotifications();
 
+    /**
+     * Finds the playlist associated with the UUID.
+     * If the playlist exists, the creation metadata is ignored.
+     * If no such playlist exists and creation metadata is valid, a playlist associated the UUID will be created.
+     * 
+     * @discussion The UUID should typically be pre-generated to avoid creating a new playlist with every call.
+     */
     @Generated
     @Selector("getPlaylistWithUUID:creationMetadata:completionHandler:")
     public native void getPlaylistWithUUIDCreationMetadataCompletionHandler(NSUUID uuid,
@@ -206,6 +216,9 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native MPMediaLibrary initWithCoder(NSCoder coder);
 
+    /**
+     * Returns the date at which the media library was last modified.
+     */
     @Generated
     @Selector("lastModifiedDate")
     public native NSDate lastModifiedDate();

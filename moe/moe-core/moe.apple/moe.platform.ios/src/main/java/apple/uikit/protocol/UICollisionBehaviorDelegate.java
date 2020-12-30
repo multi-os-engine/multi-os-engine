@@ -34,6 +34,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UICollisionBehaviorDelegate")
 public interface UICollisionBehaviorDelegate {
+    /**
+     * The identifier of a boundary created with translatesReferenceBoundsIntoBoundary or setTranslatesReferenceBoundsIntoBoundaryWithInsets is nil
+     */
     @Generated
     @IsOptional
     @Selector("collisionBehavior:beganContactForItem:withBoundaryIdentifier:atPoint:")

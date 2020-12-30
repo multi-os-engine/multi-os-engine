@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An allocator to use when backing with an NSData is appropriate.
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)

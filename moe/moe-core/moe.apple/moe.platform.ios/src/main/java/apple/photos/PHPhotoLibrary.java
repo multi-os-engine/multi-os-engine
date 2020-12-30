@@ -74,6 +74,9 @@ public class PHPhotoLibrary extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Deprecated and replaced by authorizationStatusForAccessLevel:, will return \c PHAuthorizationStatusAuthorized if the user has chosen limited photo library access
+     */
     @Generated
     @Selector("authorizationStatus")
     @NInt
@@ -175,6 +178,10 @@ public class PHPhotoLibrary extends NSObject {
     @Selector("init")
     public native PHPhotoLibrary init();
 
+    /**
+     * handlers are invoked on an arbitrary serial queue
+     * Nesting change requests will throw an exception
+     */
     @Generated
     @Selector("performChanges:completionHandler:")
     public native void performChangesCompletionHandler(
@@ -228,6 +235,9 @@ public class PHPhotoLibrary extends NSObject {
     public native NSArray<? extends PHCloudIdentifier> cloudIdentifiersForLocalIdentifiers(
             NSArray<String> localIdentifiers);
 
+    /**
+     * These two methods can be very expensive so they should be used sparingly for batch lookup of all needed identifiers. Clients should work in terms of local identifiers and call these methods only once after loading from and before saving to persistent storage.
+     */
     @Generated
     @Selector("localIdentifiersForCloudIdentifiers:")
     public native NSArray<String> localIdentifiersForCloudIdentifiers(
@@ -247,11 +257,21 @@ public class PHPhotoLibrary extends NSObject {
     public native void unregisterAvailabilityObserver(
             @Mapped(ObjCObjectMapper.class) PHPhotoLibraryAvailabilityObserver observer);
 
+    /**
+     * Replaces \c +authorizationStatus to support add-only/read-write access level status
+     */
     @Generated
     @Selector("authorizationStatusForAccessLevel:")
     @NInt
     public static native long authorizationStatusForAccessLevel(@NInt long accessLevel);
 
+    /**
+     * @abstract Prompt the user to update their limited library selection by presenting the limited library image picker when the user has opted into limited library access mode (see \c PHAuthorizationStatusLimited )
+     * @param controller The view controller that is used to present the limited library picker.
+     * @discussion Use this API when the user has enabled limited photo library access to present the limited library picker and give the user a way to update their selection. If the user has not enabled limited library access mode for this application, then this method will do nothing. This should be used when disabling the automatic limited library alert prompt (by adding \c PHPhotoLibraryPreventAutomaticLimitedAccessAlert = \c YES to the application's Info.plist).  
+     * 
+     * Any changes applied to the limited library selection by the user will trigger a \c PHPhotoLibraryChangeObserver update that can be used to observe the changes to the selection.
+     */
     @Generated
     @Selector("presentLimitedLibraryPickerFromViewController:")
     public native void presentLimitedLibraryPickerFromViewController(UIViewController controller);

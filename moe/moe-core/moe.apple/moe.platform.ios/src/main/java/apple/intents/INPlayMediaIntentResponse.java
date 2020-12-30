@@ -99,6 +99,11 @@ public class INPlayMediaIntentResponse extends INIntentResponse {
     @Selector("init")
     public native INPlayMediaIntentResponse init();
 
+    /**
+     * The app extension has the option of capturing its private state as an NSUserActivity and returning it as the 'currentActivity'.
+     * If the the app is launched, an NSUserActivity will be passed in with the private state.  The NSUserActivity may also be used to query the app's UI extension (if provided) for a view controller representing the current intent handling state.
+     * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This intent object will also be available in the NSUserActivity.interaction property.
+     */
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INPlayMediaIntentResponse initWithCodeUserActivity(@NInt long code, NSUserActivity userActivity);
@@ -134,6 +139,9 @@ public class INPlayMediaIntentResponse extends INIntentResponse {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * This dictionary should be populated using the keys from MPNowPlayingInfoCenter.
+     */
     @Generated
     @Selector("nowPlayingInfo")
     public native NSDictionary<String, ?> nowPlayingInfo();
@@ -146,6 +154,9 @@ public class INPlayMediaIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * This dictionary should be populated using the keys from MPNowPlayingInfoCenter.
+     */
     @Generated
     @Selector("setNowPlayingInfo:")
     public native void setNowPlayingInfo(NSDictionary<String, ?> value);

@@ -23,6 +23,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKElectrocardiogramVoltageMeasurement
+ * @abstract      An HKElectrocardiogramVoltageMeasurement contains voltage quantities for all leads at a single instance of measurement.
+ * @discussion    Each HKElectrocardiogramVoltageMeasurement object corresponds to the voltage quantities across all leads for a given instance in time.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -117,6 +122,12 @@ public class HKElectrocardiogramVoltageMeasurement extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method        quantityForLead:
+     * @abstract      Returns an HKQuantity for the specified lead with a unit compatible with [HKUnit voltageUnit].
+     * 
+     * @param         lead      The HKElectrocardiogramLead for which voltage quantity will be returned.
+     */
     @Generated
     @Selector("quantityForLead:")
     public native HKQuantity quantityForLead(@NInt long lead);
@@ -137,6 +148,9 @@ public class HKElectrocardiogramVoltageMeasurement extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * The time interval between this voltage measurement and the start of the sample.
+     */
     @Generated
     @Selector("timeSinceSampleStart")
     public native double timeSinceSampleStart();

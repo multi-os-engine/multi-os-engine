@@ -18,6 +18,9 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * The model of a color space.
+ */
 @Generated
 public final class CGColorSpaceModel {
     @Generated public static final int Unknown = 0xFFFFFFFF;

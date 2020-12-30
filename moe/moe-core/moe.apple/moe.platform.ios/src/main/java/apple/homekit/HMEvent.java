@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief This class is used to represent a generic HomeKit event.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -155,10 +158,16 @@ public class HMEvent extends NSObject {
     @Selector("init")
     public native HMEvent init();
 
+    /**
+     * @brief A unique identifier for the event.
+     */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
+    /**
+     * @brief Specifies whether the HMEvent can be added to HMEventTrigger on the given home.
+     */
     @Generated
     @Selector("isSupportedForHome:")
     public static native boolean isSupportedForHome(HMHome home);

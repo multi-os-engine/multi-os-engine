@@ -27,6 +27,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMRotationRateData
+ * 
+ * Discussion:
+ *   Contains a single rotation rate measurement.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -133,6 +139,12 @@ public class CMRotationRateData extends CMLogItem {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * rotationRate
+     * 
+     * Discussion:
+     *   The rotation rate as measured by the gyro.
+     */
     @Generated
     @Selector("rotationRate")
     @ByValue

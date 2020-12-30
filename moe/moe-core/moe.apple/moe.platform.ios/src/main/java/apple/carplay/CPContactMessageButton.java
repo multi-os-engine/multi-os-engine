@@ -97,6 +97,14 @@ public class CPContactMessageButton extends CPButton {
     public native CPContactMessageButton initWithImageHandler(UIImage image,
             @ObjCBlock(name = "call_initWithImageHandler") CPButton.Block_initWithImageHandler handler);
 
+    /**
+     * Create a contact button that, when tapped, launches to Siri to compose a message to this entity.
+     * When tapped, this button does NOT call a handler in your app. Instead, it will launch to Siri.
+     * To compose a message, you must provide a phone OR email for this contact.
+     * 
+     * @param phoneOrEmail A phone or email address for this contact. This will not be displayed in the button,
+     * but it is necessary for Siri to compose a message to this contact entity.
+     */
     @Generated
     @Selector("initWithPhoneOrEmail:")
     public native CPContactMessageButton initWithPhoneOrEmail(String phoneOrEmail);

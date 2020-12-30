@@ -40,6 +40,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A view that integrates ARSession rendering into SceneKit.
+ * 
+ * @discussion The view draws the camera background, provides and updates a camera,
+ * manages nodes for anchors, and updates lighting.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -74,6 +80,10 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Searches the scene hierarchy for an anchor associated with the provided node.
+     * @param node A node in the view’s scene.
+     */
     @Generated
     @Selector("anchorForNode:")
     public native ARAnchor anchorForNode(SCNNode node);
@@ -202,6 +212,12 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Determines whether the view will update the scene’s lighting.
+     * 
+     * @discussion When set, the view will automatically create and update lighting for 
+     * light estimates the session provides. Defaults to YES.
+     */
     @Generated
     @Selector("automaticallyUpdatesLighting")
     public native boolean automaticallyUpdatesLighting();
@@ -240,6 +256,9 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Specifies the renderer delegate.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -254,6 +273,15 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Searches the current frame for objects corresponding to a point in the view.
+     * 
+     * @discussion A 2D point in the view’s coordinate space can refer to any point along a line segment
+     * in the 3D coordinate space. Hit-testing is the process of finding objects in the world located along this line segment.
+     * @param point A point in the view’s coordinate system.
+     * @param types The types of results to search for.
+     * @return An array of all hit-test results sorted from nearest to farthest.
+     */
     @Generated
     @Selector("hitTest:types:")
     public native NSArray<? extends ARHitTestResult> hitTestTypes(@ByValue CGPoint point, @NUInt long types);
@@ -309,6 +337,10 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Returns the node that has been mapped to a specific anchor.
+     * @param anchor An anchor with an existing node mapping.
+     */
     @Generated
     @Selector("nodeForAnchor:")
     public native SCNNode nodeForAnchor(ARAnchor anchor);
@@ -337,6 +369,9 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Specifies the scene of the view.
+     */
     @Generated
     @Selector("scene")
     public native SCNScene scene();
@@ -393,14 +428,26 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * Determines whether the view will update the scene’s lighting.
+     * 
+     * @discussion When set, the view will automatically create and update lighting for 
+     * light estimates the session provides. Defaults to YES.
+     */
     @Generated
     @Selector("setAutomaticallyUpdatesLighting:")
     public native void setAutomaticallyUpdatesLighting(boolean value);
 
+    /**
+     * Specifies the renderer delegate.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * Specifies the renderer delegate.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -413,10 +460,16 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
         }
     }
 
+    /**
+     * Specifies the scene of the view.
+     */
     @Generated
     @Selector("setScene:")
     public native void setScene(SCNScene value);
 
+    /**
+     * The session that the view uses to update the scene.
+     */
     @Generated
     @Selector("setSession:")
     public native void setSession(ARSession value);
@@ -464,23 +517,56 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    /**
+     * Creates a raycast query originating from the point on view, aligned along the center of the field of view of the camera.
+     * @discussion A 2D point in the view's coordinate space and the frame camera's field of view is used to create a ray in the 3D cooridnate space originating at the point.
+     * @param point A point in the view’s coordinate system.
+     * @param target Type of target where the ray should terminate.
+     * @param alignment Alignment of the target.
+     */
     @Generated
     @Selector("raycastQueryFromPoint:allowingTarget:alignment:")
     public native ARRaycastQuery raycastQueryFromPointAllowingTargetAlignment(@ByValue CGPoint point, @NInt long target,
             @NInt long alignment);
 
+    /**
+     * Determines whether view renders camera grain.
+     * 
+     * @discussion When set, the view will automatically add camera grain to rendered
+     * content that matches the grainy noise of the camera stream. Enabled by default.
+     */
     @Generated
     @Selector("rendersCameraGrain")
     public native boolean rendersCameraGrain();
 
+    /**
+     * Determines whether view renders motion blur.
+     * 
+     * @discussion When set, the view will automatically add motion blur to rendered
+     * content that matches the motion blur of the camera stream.
+     * Overwrites SCNCamera's motionBlurIntensity property. Disabled by default.
+     */
     @Generated
     @Selector("rendersMotionBlur")
     public native boolean rendersMotionBlur();
 
+    /**
+     * Determines whether view renders camera grain.
+     * 
+     * @discussion When set, the view will automatically add camera grain to rendered
+     * content that matches the grainy noise of the camera stream. Enabled by default.
+     */
     @Generated
     @Selector("setRendersCameraGrain:")
     public native void setRendersCameraGrain(boolean value);
 
+    /**
+     * Determines whether view renders motion blur.
+     * 
+     * @discussion When set, the view will automatically add motion blur to rendered
+     * content that matches the motion blur of the camera stream.
+     * Overwrites SCNCamera's motionBlurIntensity property. Disabled by default.
+     */
     @Generated
     @Selector("setRendersMotionBlur:")
     public native void setRendersMotionBlur(boolean value);

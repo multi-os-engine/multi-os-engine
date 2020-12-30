@@ -118,6 +118,12 @@ public class BCChatAction extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Open the chat transcript configured for a given business.
+     * 
+     * @param businessIdentifier The business identifier for the given business.
+     * @param intentParameters Parameters to be sent with the initial message.
+     */
     @Generated
     @Selector("openTranscript:intentParameters:")
     public static native void openTranscriptIntentParameters(String businessIdentifier,

@@ -143,6 +143,9 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Base unit - kilograms
+     */
     @Generated
     @Selector("kilograms")
     public static native NSUnitMass kilograms();

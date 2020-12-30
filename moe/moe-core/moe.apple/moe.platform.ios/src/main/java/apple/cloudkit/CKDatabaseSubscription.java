@@ -43,6 +43,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CKDatabaseSubscription
+ * 
+ * @abstract A subscription fires whenever any change happens in the database that this subscription was saved in.
+ * 
+ * @discussion @c CKDatabaseSubscription is only supported in the Private and Shared databases.
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -180,10 +187,16 @@ public class CKDatabaseSubscription extends CKSubscription implements NSSecureCo
     @Selector("initWithSubscriptionID:")
     public native CKDatabaseSubscription initWithSubscriptionID(String subscriptionID);
 
+    /**
+     * Optional property. If set, a database subscription is scoped to record changes for this record type
+     */
     @Generated
     @Selector("recordType")
     public native String recordType();
 
+    /**
+     * Optional property. If set, a database subscription is scoped to record changes for this record type
+     */
     @Generated
     @Selector("setRecordType:")
     public native void setRecordType(String value);

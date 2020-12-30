@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKDiscreteQuantitySample
+ * @abstract      An HKQuantitySample subclass representing a quantity measurement with
+ *                discrete aggregation style.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -60,6 +65,10 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property      averageQuantity
+     * @abstract      The average of the receiver's quantities
+     */
     @Generated
     @Selector("averageQuantity")
     public native HKQuantity averageQuantity();
@@ -124,18 +133,34 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property      maximumQuantity
+     * @abstract      The maximum of the receiver's quantities
+     */
     @Generated
     @Selector("maximumQuantity")
     public native HKQuantity maximumQuantity();
 
+    /**
+     * @property      minimumQuantity
+     * @abstract      The minimum of the receiver's quantities
+     */
     @Generated
     @Selector("minimumQuantity")
     public native HKQuantity minimumQuantity();
 
+    /**
+     * @property      mostRecentQuantity
+     * @abstract      The receiver's quantity with most recent date interval
+     */
     @Generated
     @Selector("mostRecentQuantity")
     public native HKQuantity mostRecentQuantity();
 
+    /**
+     * @property      mostRecentQuantityDateInterval
+     * @abstract      The date interval for the receiver's most recent quantity
+     */
     @Generated
     @Selector("mostRecentQuantityDateInterval")
     public native NSDateInterval mostRecentQuantityDateInterval();

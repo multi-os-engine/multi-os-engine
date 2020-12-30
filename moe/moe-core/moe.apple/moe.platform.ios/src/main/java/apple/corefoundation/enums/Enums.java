@@ -24,16 +24,71 @@ import org.moe.natj.general.ann.NUInt;
 public final class Enums {
     @Generated @NUInt public static final long kCFFileDescriptorReadCallBack = 0x0000000000000001L;
     @Generated @NUInt public static final long kCFFileDescriptorWriteCallBack = 0x0000000000000002L;
+    /**
+     * Tokenization Unit
+     * Use one of tokenization unit options with CFStringTokenizerCreate to
+     * specify how the string should be tokenized. 
+     * kCFStringTokenizerUnitWord doesn't return space between words as a token.
+     */
     @Generated @NUInt public static final long kCFStringTokenizerUnitWord = 0x0000000000000000L;
+    /**
+     * Tokenization Unit
+     * Use one of tokenization unit options with CFStringTokenizerCreate to
+     * specify how the string should be tokenized. 
+     * kCFStringTokenizerUnitWord doesn't return space between words as a token.
+     */
     @Generated @NUInt public static final long kCFStringTokenizerUnitSentence = 0x0000000000000001L;
+    /**
+     * Tokenization Unit
+     * Use one of tokenization unit options with CFStringTokenizerCreate to
+     * specify how the string should be tokenized. 
+     * kCFStringTokenizerUnitWord doesn't return space between words as a token.
+     */
     @Generated @NUInt public static final long kCFStringTokenizerUnitParagraph = 0x0000000000000002L;
+    /**
+     * Tokenization Unit
+     * Use one of tokenization unit options with CFStringTokenizerCreate to
+     * specify how the string should be tokenized. 
+     * kCFStringTokenizerUnitWord doesn't return space between words as a token.
+     */
     @Generated @NUInt public static final long kCFStringTokenizerUnitLineBreak = 0x0000000000000003L;
+    /**
+     * kCFStringTokenizerUnitWordBoundary can be used in double click detection
+     * and whole word search. It is locale sensitive. If the locale parameter of
+     * CFStringTokenizerCreate is NULL, default locale is used.
+     * kCFStringTokenizerUnitWordBoundary returns space between words as a token. 
+     */
     @Generated @NUInt public static final long kCFStringTokenizerUnitWordBoundary = 0x0000000000000004L;
+    /**
+     * Attribute Specifier
+     * Use attribute specifier to tell tokenizer to prepare the specified attribute
+     * when it tokenizes the given string. The attribute value can be retrieved by
+     * calling CFStringTokenizerCopyCurrentTokenAttribute with one of the attribute
+     * option. 
+     * Latin Transcription. Used with kCFStringTokenizerUnitWord or
+     * kCFStringTokenizerUnitWordBoundary 
+     */
     @Generated @NUInt public static final long kCFStringTokenizerAttributeLatinTranscription = 0x0000000000010000L;
+    /**
+     * Language in BCP 47 string. Used with kCFStringTokenizerUnitSentence
+     * or kCFStringTokenizerUnitParagraph. 
+     */
     @Generated @NUInt public static final long kCFStringTokenizerAttributeLanguage = 0x0000000000020000L;
+    /**
+     * Error parsing a property list
+     */
     @Generated @NInt public static final long kCFPropertyListReadCorruptError = 0x0000000000000F00L;
+    /**
+     * The version number in the property list is unknown
+     */
     @Generated @NInt public static final long kCFPropertyListReadUnknownVersionError = 0x0000000000000F01L;
+    /**
+     * Stream error reading a property list
+     */
     @Generated @NInt public static final long kCFPropertyListReadStreamError = 0x0000000000000F02L;
+    /**
+     * Stream error writing a property list
+     */
     @Generated @NInt public static final long kCFPropertyListWriteStreamError = 0x0000000000000F0BL;
     @Generated @NUInt public static final long kCFNotificationDeliverImmediately = 0x0000000000000001L;
     @Generated @NUInt public static final long kCFNotificationPostToAllSessions = 0x0000000000000002L;
@@ -43,6 +98,9 @@ public final class Enums {
     @Generated @NUInt public static final long kCFSocketAutomaticallyReenableWriteCallBack = 0x0000000000000008L;
     @Generated @NUInt public static final long kCFSocketLeaveErrors = 0x0000000000000040L;
     @Generated @NUInt public static final long kCFSocketCloseOnInvalidate = 0x0000000000000080L;
+    /**
+     * option for adding
+     */
     @Generated @NUInt public static final long kCFCalendarComponentsWrap = 0x0000000000000001L;
     @Generated public static final int kCFBundleExecutableArchitectureI386 = 0x00000007;
     @Generated public static final int kCFBundleExecutableArchitecturePPC = 0x00000012;

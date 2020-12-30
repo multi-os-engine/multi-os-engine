@@ -23,6 +23,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract returns gradient for either primary or secondary source image from the inference pass.
+ * Use the isSecondarySourceFilter property to indicate whether this filter is computing the gradient
+ * for the primary or secondary source image from the inference pass.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)

@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Defines a shipping method for delivering physical goods.
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -160,10 +163,18 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     @NInt
     public static native long version_static();
 
+    /**
+     * Additional localized information about the shipping method, e.g. "Ships in 24 hours" or
+     * "Arrives Friday April 4."
+     */
     @Generated
     @Selector("detail")
     public native String detail();
 
+    /**
+     * Application-defined unique identifier for this shipping method.  The application will receive this
+     * in paymentAuthorizationViewController:didAuthorizePayment:completion:.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -172,10 +183,18 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     @Selector("init")
     public native PKShippingMethod init();
 
+    /**
+     * Additional localized information about the shipping method, e.g. "Ships in 24 hours" or
+     * "Arrives Friday April 4."
+     */
     @Generated
     @Selector("setDetail:")
     public native void setDetail(String value);
 
+    /**
+     * Application-defined unique identifier for this shipping method.  The application will receive this
+     * in paymentAuthorizationViewController:didAuthorizePayment:completion:.
+     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);

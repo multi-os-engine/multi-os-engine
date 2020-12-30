@@ -44,6 +44,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MDLPhotometricLight
+ * @abstract A light created from measurements at various angles.
+ * 
+ * @property lightCubeMap A cube map that can be sampled at various directions to
+ *           learn the intensity of the light in that direction.
+ * @property sphericalHarmonicsLevel The value generateSphericalHarmonicsFromLight: 
+ *           used to calculate the spherical harmonics coefficients
+ * @property sphericalHarmonicsCoefficients The spherical harmonic coefficiencts
+ *           calculated by generateSphericalHarmonicsFromLight:
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -180,6 +191,9 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
     @Selector("init")
     public native MDLPhotometricLight init();
 
+    /**
+     * Init with an IES profile file, generate a light web of specified width and height
+     */
     @Generated
     @Selector("initWithIESProfile:")
     public native MDLPhotometricLight initWithIESProfile(NSURL URL);
@@ -197,6 +211,16 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
     @NUInt
     public native long sphericalHarmonicsLevel();
 
+    /**
+     * @method generateTexture
+     * @abstract
+     * Generate an IES compliant MDLTexture
+     * 1D when the number of horizontal angles is one and the innerConeAngle is < 180
+     * 2D when the previous statement fails and innerConeAngle < 89
+     * 3D in all other cases
+     * the parameter textureSize is the size in pixels of the texture image. For a size of N,
+     * 1D generates an Nx1 image, 2D generates an NxN image, 3D generates an Nx(N*6) image (i.e. cubemap).
+     */
     @Generated
     @Selector("generateTexture:")
     public native MDLTexture generateTexture(@NUInt long textureSize);

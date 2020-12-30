@@ -19,11 +19,27 @@ package apple.networkextension.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @typedef NEVPNIKEv2DeadPeerDetectionRate
+ * @abstract IKEv2 Dead Peer Detection Rates
+ */
 @Generated
 public final class NEVPNIKEv2DeadPeerDetectionRate {
+    /**
+     * @const NEVPNIKEv2DeadPeerDetectionRateNone Do not perform dead peer detection
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * @const NEVPNIKEv2DeadPeerDetectionRateLow Run dead peer detection once every 30 minutes. If the peer does not respond, retry 5 times at 1 second intervals before declaring the peer dead
+     */
     @Generated @NInt public static final long Low = 0x0000000000000001L;
+    /**
+     * @const NEVPNIKEv2DeadPeerDetectionRateMedium Run dead peer detection once every 10 minutes. If the peer does not respond, retry 5 times at 1 second intervals before declaring the peer dead
+     */
     @Generated @NInt public static final long Medium = 0x0000000000000002L;
+    /**
+     * @const NEVPNIKEv2DeadPeerDetectionRateHigh Run dead peer detection once every 1 minute. If the peer does not respond, retry 5 times at 1 second intervals before declaring the peer dead
+     */
     @Generated @NInt public static final long High = 0x0000000000000003L;
 
     @Generated

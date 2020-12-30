@@ -155,14 +155,29 @@ public class AVMetadataItemValueRequest extends NSObject {
     @Selector("init")
     public native AVMetadataItemValueRequest init();
 
+    /**
+     * Indicates the AVMetadataItem for which a value is being loaded.
+     */
     @Generated
     @Selector("metadataItem")
     public native AVMetadataItem metadataItem();
 
+    /**
+     * @method			respondWithError:
+     * @abstract		Allows you to respond to an AVMetadataItemValueRequest in the case of failure.
+     * @param			error
+     * 				An instance of NSError that describes a failure encountered while loading the value of an AVMetadataItem.
+     */
     @Generated
     @Selector("respondWithError:")
     public native void respondWithError(NSError error);
 
+    /**
+     * @method			respondWithValue:
+     * @abstract		Allows you to respond to an AVMetadataItemValueRequest by providing a value.
+     * @param			value
+     * 				The value of the AVMetadataItem.
+     */
     @Generated
     @Selector("respondWithValue:")
     public native void respondWithValue(@Mapped(ObjCObjectMapper.class) Object value);

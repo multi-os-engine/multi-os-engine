@@ -3,6 +3,15 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum		AVAssetSegmentType
+ * @abstract	Indicates the type of segment.
+ * 
+ * @constant	AVAssetSegmentTypeInitialization
+ * 			Indicates that the segment is a initialization segment.
+ * @constant	AVAssetSegmentTypeSeparable
+ * 			Indicates that the segment is a separable segment.
+ */
 @Generated
 public final class AVAssetSegmentType {
     @Generated

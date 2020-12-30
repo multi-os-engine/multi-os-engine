@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An object representing a skeleton in 2D.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)

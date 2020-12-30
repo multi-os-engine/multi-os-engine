@@ -42,6 +42,10 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * _______________________________________________________________________________________________________________
+ *  this represents the display and behaviour of the cells.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -61,6 +65,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Accessories (disclosures).
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -70,6 +77,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Focus
+     */
     @Generated
     @IsOptional
     @Selector("tableView:canFocusRowAtIndexPath:")
@@ -128,6 +138,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called after the user changes the selection.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:didSelectRowAtIndexPath:")
@@ -150,6 +163,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This method supersedes -tableView:titleForDeleteConfirmationButtonForRowAtIndexPath: if return value is non-nil
+     */
     @Generated
     @IsOptional
     @Selector("tableView:editActionsForRowAtIndexPath:")
@@ -158,6 +174,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Allows customization of the editingStyle for a particular cell located at 'indexPath'. If not implemented, all editable cells will have UITableViewCellEditingStyleDelete set for them when the table has editing property set to YES.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:editingStyleForRowAtIndexPath:")
@@ -182,6 +201,10 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Use the estimatedHeight methods to quickly calcuate guessed values which will allow for fast load times of the table.
+     * If these methods are implemented, the above -tableView:heightForXXX calls will be deferred until views are ready to be displayed, so more expensive logic can be placed there.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:estimatedHeightForRowAtIndexPath:")
@@ -206,6 +229,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Variable height support
+     */
     @Generated
     @IsOptional
     @Selector("tableView:heightForRowAtIndexPath:")
@@ -214,6 +240,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * return 'depth' of row for hierarchies
+     */
     @Generated
     @IsOptional
     @Selector("tableView:indentationLevelForRowAtIndexPath:")
@@ -230,6 +259,10 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * -tableView:shouldHighlightRowAtIndexPath: is called when a touch comes down on a row.
+     * Returning NO to that message halts the selection process and does not cause the currently selected row to lose its selected look while the touch is down.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:shouldHighlightRowAtIndexPath:")
@@ -237,6 +270,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Controls whether the background is indented while editing.  If not implemented, the default is YES.  This is unrelated to the indentation level below.  This method only applies to grouped style table views.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:shouldIndentWhileEditingRowAtIndexPath:")
@@ -244,6 +280,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Copy/Paste.  All three methods must be implemented by the delegate.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:shouldShowMenuForRowAtIndexPath:")
@@ -258,6 +297,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Allows customization of the target row for a particular row as it is being moved/reordered
+     */
     @Generated
     @IsOptional
     @Selector("tableView:targetIndexPathForMoveFromRowAtIndexPath:toProposedIndexPath:")
@@ -274,6 +316,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * custom view for footer. will be adjusted to default or specified footer height
+     */
     @Generated
     @IsOptional
     @Selector("tableView:viewForFooterInSection:")
@@ -281,6 +326,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * custom view for header. will be adjusted to default or specified header height
+     */
     @Generated
     @IsOptional
     @Selector("tableView:viewForHeaderInSection:")
@@ -288,6 +336,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The willBegin/didEnd methods are called whenever the 'editing' property is automatically changed by the table (allowing insert/delete/move). This is done by a swipe activating a single row
+     */
     @Generated
     @IsOptional
     @Selector("tableView:willBeginEditingRowAtIndexPath:")
@@ -302,6 +353,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Display customization
+     */
     @Generated
     @IsOptional
     @Selector("tableView:willDisplayCell:forRowAtIndexPath:")
@@ -324,6 +378,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called before the user changes the selection. Return a new indexPath, or nil, to change the proposed selection.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:willSelectRowAtIndexPath:")
@@ -331,6 +388,11 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Swipe actions
+     * These methods supersede -editActionsForRowAtIndexPath: if implemented
+     * return nil to get the default swipe actions
+     */
     @Generated
     @IsOptional
     @Selector("tableView:leadingSwipeActionsConfigurationForRowAtIndexPath:")
@@ -339,6 +401,11 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Allows opting-out of spring loading for an particular row.
+     * If you want the interaction effect on a different subview of the spring loaded cell, modify the context.targetView property. The default is the cell.
+     * If this method is not implemented, the default is YES except when the row is part of a drag session.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:shouldSpringLoadRowAtIndexPath:withContext:")
@@ -355,6 +422,18 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @abstract Called when the interaction begins.
+     * 
+     * @param tableView  This UITableView.
+     * @param indexPath  IndexPath of the row for which a configuration is being requested.
+     * @param point      Location of the interaction in the table view's coordinate space
+     * 
+     * @return A UIContextMenuConfiguration describing the menu to be presented. Return nil to prevent the interaction from beginning.
+     *         Returning an empty configuration causes the interaction to begin then fail with a cancellation effect. You might use this
+     *         to indicate to users that it's possible for a menu to be presented from this element, but that there are no actions to
+     *         present at this particular time.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:contextMenuConfigurationForRowAtIndexPath:point:")
@@ -363,6 +442,12 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called right after the multi-select pan gesture begins and the table view is automatically transitioned into editing mode.
+     * 
+     * In your app, this would be a good opportunity to update the state of your UI to reflect the fact that the user is now selecting
+     * multiple items at once; such as updating buttons to say "Done" instead of "Select"/"Edit", for instance.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:didBeginMultipleSelectionInteractionAtIndexPath:")
@@ -371,6 +456,13 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @abstract Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal target.
+     * The interaction will animate the presented menu to the target. Use this to customize the dismissal animation.
+     * 
+     * @param tableView      This UITableView.
+     * @param configuration  The configuration of the menu displayed by this interaction.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:previewForDismissingContextMenuWithConfiguration:")
@@ -379,6 +471,12 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @abstract Called when the interaction begins. Return a UITargetedPreview to override the default preview created by the table view.
+     * 
+     * @param tableView      This UITableView.
+     * @param configuration  The configuration of the menu about to be displayed by this interaction.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:previewForHighlightingContextMenuWithConfiguration:")
@@ -387,6 +485,17 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Allows a two-finger pan gesture to automatically transition the table view into editing mode and start selecting cells.
+     * 
+     * If this method returns YES, allow the user to start selecting multiple contiguous cells via a two-finger pan gesture. If
+     * the table view is already in editing mode, the user can also select multiple cells via a one-finger pan gesture along the
+     * edge of the table that contains editing controls (checkboxes).
+     * 
+     * In order to support this behavior, you must also set allowsMultipleSelectionDuringEditing to YES.
+     * 
+     * If this method is not implemented, the default is NO.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:shouldBeginMultipleSelectionInteractionAtIndexPath:")
@@ -395,6 +504,13 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @abstract Called when the interaction is about to "commit" in response to the user tapping the preview.
+     * 
+     * @param tableView      This UITableView.
+     * @param configuration  Configuration of the currently displayed menu.
+     * @param animator       Commit animator. Add animations to this object to run them alongside the commit transition.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:willPerformPreviewActionForMenuWithConfiguration:animator:")
@@ -404,6 +520,12 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the multi-select interaction ends.
+     * 
+     * At this point, the table view will remain in multi-select mode, but this delegate method is called to indicate that the multiple
+     * selection gesture or hardware keyboard interaction has ended.
+     */
     @Generated
     @IsOptional
     @Selector("tableViewDidEndMultipleSelectionInteraction:")
@@ -411,6 +533,13 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @abstract Called when the table view is about to display a menu.
+     * 
+     * @param tableView       This UITableView.
+     * @param configuration   The configuration of the menu about to be displayed.
+     * @param animator        Appearance animator. Add animations to run them alongside the appearance transition.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:willDisplayContextMenuWithConfiguration:animator:")
@@ -420,6 +549,13 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @abstract Called when the table view's context menu interaction is about to end.
+     * 
+     * @param tableView       This UITableView.
+     * @param configuration   Ending configuration.
+     * @param animator        Disappearance animator. Add animations to run them alongside the disappearance transition.
+     */
     @Generated
     @IsOptional
     @Selector("tableView:willEndContextMenuInteractionWithConfiguration:animator:")

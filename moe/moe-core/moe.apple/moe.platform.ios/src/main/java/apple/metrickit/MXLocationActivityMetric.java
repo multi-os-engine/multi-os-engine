@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXLocationActivityMetric
+ * @abstract      An MXMetric subclass that encapsulates location metrics
+ * @discussion    The metrics contained in this class describe properties of location activity. See MXAppRunTimeMetric for time spent performing location activities.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -77,26 +82,56 @@ public class MXLocationActivityMetric extends MXMetric {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property      cumulativeBestAccuracyForNavigationTime
+     * @abstract      Cumulative time spent acquiring location at kCLLocationAccuracyBestForNavigation.
+     * @discussion    Dimensioned as NSUnitDuration.
+     */
     @Generated
     @Selector("cumulativeBestAccuracyForNavigationTime")
     public native NSMeasurement<NSUnitDuration> cumulativeBestAccuracyForNavigationTime();
 
+    /**
+     * @property      cumulativeBestAccuracyTime
+     * @abstract      Cumulative time spent acquiring location at kCLLocationAccuracyBest.
+     * @discussion    Dimensioned as NSUnitDuration.
+     */
     @Generated
     @Selector("cumulativeBestAccuracyTime")
     public native NSMeasurement<NSUnitDuration> cumulativeBestAccuracyTime();
 
+    /**
+     * @property      cumulativeHundredMetersAccuracyTime
+     * @abstract      Cumulative time spent acquiring location at kCLLocationAccuracyHundredMeters.
+     * @discussion    Dimensioned as NSUnitDuration.
+     */
     @Generated
     @Selector("cumulativeHundredMetersAccuracyTime")
     public native NSMeasurement<NSUnitDuration> cumulativeHundredMetersAccuracyTime();
 
+    /**
+     * @property      cumulativeKilometerAccuracyTime
+     * @abstract      Cumulative time spent acquiring location at kCLLocationAccuracyKilometer.
+     * @discussion    Dimensioned as NSUnitDuration.
+     */
     @Generated
     @Selector("cumulativeKilometerAccuracyTime")
     public native NSMeasurement<NSUnitDuration> cumulativeKilometerAccuracyTime();
 
+    /**
+     * @property      cumulativeNearestTenMetersAccuracyTime
+     * @abstract      Cumulative time spent acquiring location at kCLLocationAccuracyNearestTenMeters.
+     * @discussion    Dimensioned as NSUnitDuration.
+     */
     @Generated
     @Selector("cumulativeNearestTenMetersAccuracyTime")
     public native NSMeasurement<NSUnitDuration> cumulativeNearestTenMetersAccuracyTime();
 
+    /**
+     * @property      cumulativeThreeKilometersAccuracyTime
+     * @abstract      Cumulative time spent acquiring location at kCLLocationAccuracyThreeKilometers.
+     * @discussion    Dimensioned as NSUnitDuration.
+     */
     @Generated
     @Selector("cumulativeThreeKilometersAccuracyTime")
     public native NSMeasurement<NSUnitDuration> cumulativeThreeKilometersAccuracyTime();

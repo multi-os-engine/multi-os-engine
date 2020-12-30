@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract This class can be used to take an image snapshot from a camera.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +154,9 @@ public class HMCameraSnapshotControl extends HMCameraControl {
     @NInt
     public static native long version_static();
 
+    /**
+     * @brief Delegate that receives updates on the camera snapshot changes.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -160,14 +166,23 @@ public class HMCameraSnapshotControl extends HMCameraControl {
     @Selector("init")
     public native HMCameraSnapshotControl init();
 
+    /**
+     * @brief Represents the most recent snapshot taken from the camera.
+     */
     @Generated
     @Selector("mostRecentSnapshot")
     public native HMCameraSnapshot mostRecentSnapshot();
 
+    /**
+     * @brief Delegate that receives updates on the camera snapshot changes.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMCameraSnapshotControlDelegate value);
 
+    /**
+     * @brief Delegate that receives updates on the camera snapshot changes.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) HMCameraSnapshotControlDelegate value) {
         Object __old = delegate();
@@ -180,6 +195,9 @@ public class HMCameraSnapshotControl extends HMCameraControl {
         }
     }
 
+    /**
+     * @brief Takes an image snapshot.
+     */
     @Generated
     @Selector("takeSnapshot")
     public native void takeSnapshot();

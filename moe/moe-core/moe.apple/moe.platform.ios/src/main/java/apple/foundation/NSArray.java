@@ -94,6 +94,9 @@ public class NSArray<_ObjectType> extends NSObject
     @Selector("arrayWithArray:")
     public static native <_ObjectType> NSArray<?> arrayWithArray(NSArray<_ObjectType> array);
 
+    /**
+     * These methods are deprecated, and will be marked with API_DEPRECATED in a subsequent release. Use the variants that use errors instead.
+     */
     @Generated
     @Selector("arrayWithContentsOfFile:")
     public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfFile(String path);
@@ -200,11 +203,17 @@ public class NSArray<_ObjectType> extends NSObject
     @NInt
     public static native long version_static();
 
+    /**
+     * NSArrays are not observable, so these methods raise exceptions when invoked on NSArrays. Instead of observing an array, observe the ordered to-many relationship for which the array is the collection of related objects.
+     */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
     public native void addObserverForKeyPathOptionsContext(NSObject observer, String keyPath, @NUInt long options,
             VoidPtr context);
 
+    /**
+     * Register or deregister as an observer of the values at a key path relative to each indexed element of the array. The options determine what is included in observer notifications and when they're sent, as described above, and the context is passed in observer notifications as described above. These are not merely convenience methods; invoking them is potentially much faster than repeatedly invoking NSObject(NSKeyValueObserverRegistration) methods. You should use -removeObserver:fromObjectsAtIndexes:forKeyPath:context: instead of -removeObserver:fromObjectsAtIndexes:forKeyPath: whenever possible for the same reason described in the NSObject(NSKeyValueObserverRegistration) comment.
+     */
     @Generated
     @Selector("addObserver:toObjectsAtIndexes:forKeyPath:options:context:")
     public native void addObserverToObjectsAtIndexesForKeyPathOptionsContext(NSObject observer, NSIndexSet indexes,
@@ -274,6 +283,9 @@ public class NSArray<_ObjectType> extends NSObject
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
 
+    /**
+     * evaluate a predicate against an array of objects and return a filtered array
+     */
     @Generated
     @Selector("filteredArrayUsingPredicate:")
     public native NSArray<_ObjectType> filteredArrayUsingPredicate(NSPredicate predicate);
@@ -288,6 +300,9 @@ public class NSArray<_ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType firstObjectCommonWithArray(NSArray<_ObjectType> otherArray);
 
+    /**
+     * This method is unsafe because it could potentially cause buffer overruns. You should use -getObjects:range: instead.
+     */
     @Generated
     @Selector("getObjects:")
     public native void getObjects(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> objects);
@@ -308,6 +323,9 @@ public class NSArray<_ObjectType> extends NSObject
     public native long indexOfObjectInRange(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @ByValue NSRange range);
 
+    /**
+     * binary search
+     */
     @Generated
     @Selector("indexOfObject:inSortedRange:options:usingComparator:")
     @NUInt
@@ -461,14 +479,23 @@ public class NSArray<_ObjectType> extends NSObject
     @Selector("reverseObjectEnumerator")
     public native NSEnumerator<_ObjectType> reverseObjectEnumerator();
 
+    /**
+     * Invoke -setValue:forKey: on each of the receiver's elements.
+     */
     @Generated
     @Selector("setValue:forKey:")
     public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
+    /**
+     * Returns a shuffled instance of this array using the systems underlying random source, as with [GKRandomSource sharedRandom]
+     */
     @Generated
     @Selector("shuffledArray")
     public native NSArray<_ObjectType> shuffledArray();
 
+    /**
+     * Returns a shuffled instance of this array using the given random source.
+     */
     @Generated
     @Selector("shuffledArrayWithRandomSource:")
     public native NSArray<_ObjectType> shuffledArrayWithRandomSource(GKRandomSource randomSource);
@@ -482,6 +509,9 @@ public class NSArray<_ObjectType> extends NSObject
     public native NSArray<_ObjectType> sortedArrayUsingComparator(
             @ObjCBlock(name = "call_sortedArrayUsingComparator") Block_sortedArrayUsingComparator cmptr);
 
+    /**
+     * returns a new array by sorting the objects of the receiver
+     */
     @Generated
     @Selector("sortedArrayUsingDescriptors:")
     public native NSArray<_ObjectType> sortedArrayUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
@@ -517,6 +547,9 @@ public class NSArray<_ObjectType> extends NSObject
         return supportsSecureCoding();
     }
 
+    /**
+     * Return an array containing the results of invoking -valueForKey: on each of the receiver's elements. The returned array will contain NSNull elements for each instance of -valueForKey: returning nil.
+     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -937,16 +970,25 @@ public class NSArray<_ObjectType> extends NSObject
 
     }
 
+    /**
+     * Reads array stored in NSPropertyList format from the specified url.
+     */
     @Generated
     @Selector("arrayWithContentsOfURL:error:")
     public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfURLError(NSURL url,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Reads array stored in NSPropertyList format from the specified url.
+     */
     @Generated
     @Selector("initWithContentsOfURL:error:")
     public native NSArray<_ObjectType> initWithContentsOfURLError(NSURL url,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Serializes this instance to the specified URL in the NSPropertyList format (using NSPropertyListXMLFormat_v1_0). For other formats use NSPropertyListSerialization directly.
+     */
     @Generated
     @Selector("writeToURL:error:")
     public native boolean writeToURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
@@ -955,6 +997,9 @@ public class NSArray<_ObjectType> extends NSObject
     @Selector("arrayByApplyingDifference:")
     public native NSArray<_ObjectType> arrayByApplyingDifference(NSOrderedCollectionDifference<_ObjectType> difference);
 
+    /**
+     * Uses isEqual: to determine the difference between the parameter and the receiver
+     */
     @Generated
     @Selector("differenceFromArray:")
     public native NSOrderedCollectionDifference<_ObjectType> differenceFromArray(NSArray<_ObjectType> other);

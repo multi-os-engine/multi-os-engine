@@ -19,9 +19,19 @@ package apple.networkextension.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @typedef NEEvaluateConnectionRuleAction
+ * @abstract Evaluate Connection rule actions
+ */
 @Generated
 public final class NEEvaluateConnectionRuleAction {
+    /**
+     * @const NEEvaluateConnectionRuleActionConnectIfNeeded Start the VPN connection if the destination host is not accessible directly
+     */
     @Generated @NInt public static final long ConnectIfNeeded = 0x0000000000000001L;
+    /**
+     * @const NEEvaluateConnectionRuleActionNeverConnect Do not start the VPN connection
+     */
     @Generated @NInt public static final long NeverConnect = 0x0000000000000002L;
 
     @Generated

@@ -110,6 +110,9 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * A shared infinite region
+     */
     @Generated
     @Selector("infiniteRegion")
     @MappedReturn(ObjCObjectMapper.class)
@@ -163,6 +166,9 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Test for containment
+     */
     @Generated
     @Selector("containsPoint:")
     public native boolean containsPoint(@ByValue CGPoint point);
@@ -185,18 +191,33 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native SKRegion initWithCoder(NSCoder coder);
 
+    /**
+     * Create a region bounded by a CGPath. Note that this option can be
+     * costly to evaluate.
+     */
     @Generated
     @Selector("initWithPath:")
     public native SKRegion initWithPath(CGPathRef path);
 
+    /**
+     * Create a circular region with radius
+     */
     @Generated
     @Selector("initWithRadius:")
     public native SKRegion initWithRadius(float radius);
 
+    /**
+     * Create a rectangular region of size
+     */
     @Generated
     @Selector("initWithSize:")
     public native SKRegion initWithSize(@ByValue CGSize size);
 
+    /**
+     * Create a new region that is the inverse of the current region.
+     * The inverse of the infiniteRegion is an empty region.
+     * Subclasses of SKRegion need to provide an implementation of inverseRegion.
+     */
     @Generated
     @Selector("inverseRegion")
     @MappedReturn(ObjCObjectMapper.class)
@@ -206,16 +227,25 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("path")
     public native CGPathRef path();
 
+    /**
+     * Create a new region that is the original region minus the supplied region
+     */
     @Generated
     @Selector("regionByDifferenceFromRegion:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object regionByDifferenceFromRegion(SKRegion region);
 
+    /**
+     * Create a new region that is the region covered by the original region and the supplied region
+     */
     @Generated
     @Selector("regionByIntersectionWithRegion:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object regionByIntersectionWithRegion(SKRegion region);
 
+    /**
+     * Create a new region that is the original region plus the supplied region
+     */
     @Generated
     @Selector("regionByUnionWithRegion:")
     @MappedReturn(ObjCObjectMapper.class)

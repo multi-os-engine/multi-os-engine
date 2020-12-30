@@ -24,6 +24,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @c CPMessageListItemLeadingConfiguration encapsulates the configuration options for
+ * the leading side of your message list cell.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -91,6 +95,23 @@ public class CPMessageListItemLeadingConfiguration extends NSObject {
     @Selector("init")
     public native CPMessageListItemLeadingConfiguration init();
 
+    /**
+     * @param leadingItem An optional glyph displayed on the leading side of the cell.
+     * @param leadingImage An optional image displayed on the leading side of the cell.
+     * @param unread Whether this conversation is unread. If unread, the list item
+     * will render with an unread indicator and tapping this item will read the conversation. If read,
+     * no unread indicator will be displayed and tapping this item will compose a new message.
+     * 
+     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
+     * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
+     * both styles.
+     * 
+     * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
+     * 
+     * @discussion To properly size your list images, your app should size them to the display scale of the car screen.
+     * See -[CPInterfaceController carTraitCollection].
+     */
     @Generated
     @Selector("initWithLeadingItem:leadingImage:unread:")
     public native CPMessageListItemLeadingConfiguration initWithLeadingItemLeadingImageUnread(@NInt long leadingItem,

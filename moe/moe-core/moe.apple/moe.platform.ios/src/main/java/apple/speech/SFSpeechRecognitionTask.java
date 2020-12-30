@@ -155,10 +155,17 @@ public class SFSpeechRecognitionTask extends NSObject {
     @Selector("cancel")
     public native void cancel();
 
+    /**
+     * Reports error that occurred during recognition, if applicable
+     */
     @Generated
     @Selector("error")
     public native NSError error();
 
+    /**
+     * Instructs the task to stop accepting new audio (e.g. stop recording) but complete processing on audio already buffered.
+     * This has no effect on URL-based recognition requests, which effectively buffer the entire file immediately.
+     */
     @Generated
     @Selector("finish")
     public native void finish();
@@ -167,10 +174,16 @@ public class SFSpeechRecognitionTask extends NSObject {
     @Selector("init")
     public native SFSpeechRecognitionTask init();
 
+    /**
+     * True if recognition has been cancelled
+     */
     @Generated
     @Selector("isCancelled")
     public native boolean isCancelled();
 
+    /**
+     * True if recognition audio input has stopped
+     */
     @Generated
     @Selector("isFinishing")
     public native boolean isFinishing();

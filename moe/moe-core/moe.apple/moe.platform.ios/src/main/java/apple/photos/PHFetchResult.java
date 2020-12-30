@@ -49,6 +49,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Accessing fetched results (fetches objects from the backing store in chunks on demand rather than all at once)
+ * Fetched objects will be kept in a cache and purged under memory pressure
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)

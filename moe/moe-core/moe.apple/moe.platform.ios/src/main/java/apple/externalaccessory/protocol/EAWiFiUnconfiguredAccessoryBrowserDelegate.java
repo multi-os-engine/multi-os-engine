@@ -27,26 +27,68 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @protocol EAWiFiUnconfiguredAccessoryBrowserDelegate
+ * 
+ * @discussion The delegate of a EAWiFiUnconfiguredAccessoryBrowser object must adopt the
+ *             EAWiFiUnconfiguredAccessoryBrowserDelegate protocol. The required
+ *             callbacks keep the delegate informed of the state of the search and configuration processes.
+ */
 @Generated
 @Library("ExternalAccessory")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("EAWiFiUnconfiguredAccessoryBrowserDelegate")
 public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
+    /**
+     * @method accessoryBrowser:didFindUnconfiguredAccessories:
+     * 
+     * @discussion Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has found new unconfigured accessories that match
+     *             the filter predicate defined when starting the search.
+     * 
+     * @param browser     The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
+     * @param accessories The set of EAWiFiUnconfiguredAccessory objects that have been found since the last update.
+     */
     @Generated
     @Selector("accessoryBrowser:didFindUnconfiguredAccessories:")
     void accessoryBrowserDidFindUnconfiguredAccessories(EAWiFiUnconfiguredAccessoryBrowser browser,
             NSSet<? extends EAWiFiUnconfiguredAccessory> accessories);
 
+    /**
+     * @method accessoryBrowser:didFinishConfiguringAccessory:withStatus:
+     * 
+     * @discussion Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has completed configuring the selected EAWiFiUnconfiguredAccessory.
+     * 
+     * @param browser   The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
+     * @param accessory The EAWiFiUnconfiguredAccessory whose configuration process has completed.
+     * @param status    The status of the configuration process that has completed.
+     */
     @Generated
     @Selector("accessoryBrowser:didFinishConfiguringAccessory:withStatus:")
     void accessoryBrowserDidFinishConfiguringAccessoryWithStatus(EAWiFiUnconfiguredAccessoryBrowser browser,
             EAWiFiUnconfiguredAccessory accessory, @NInt long status);
 
+    /**
+     * @method accessoryBrowser:didRemoveUnconfiguredAccessories:
+     * 
+     * @discussion Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has removed unconfigured accessories from the scan results
+     *             that match the filter predicate defined when starting the search.
+     * 
+     * @param browser     The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
+     * @param accessories The set of EAWiFiUnconfiguredAccessory objects that have been removed from the scan results since the last update.
+     */
     @Generated
     @Selector("accessoryBrowser:didRemoveUnconfiguredAccessories:")
     void accessoryBrowserDidRemoveUnconfiguredAccessories(EAWiFiUnconfiguredAccessoryBrowser browser,
             NSSet<? extends EAWiFiUnconfiguredAccessory> accessories);
 
+    /**
+     * @method accessoryBrowser:didUpdateState:
+     * 
+     * @discussion Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser's state has changed.
+     * 
+     * @param browser The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
+     * @param state   The current state of the EAWiFiUnconfiguredAccessoryBrowser.
+     */
     @Generated
     @Selector("accessoryBrowser:didUpdateState:")
     void accessoryBrowserDidUpdateState(EAWiFiUnconfiguredAccessoryBrowser browser, @NInt long state);

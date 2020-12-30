@@ -35,34 +35,58 @@ public final class fpunchhole extends StructObject {
         setFp_length(fp_length);
     }
 
+    /**
+     * unused
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int fp_flags();
 
+    /**
+     * unused
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setFp_flags(int value);
 
+    /**
+     * (to maintain 8-byte alignment)
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int reserved();
 
+    /**
+     * (to maintain 8-byte alignment)
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setReserved(int value);
 
+    /**
+     * IN: start of the region
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native long fp_offset();
 
+    /**
+     * IN: start of the region
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setFp_offset(long value);
 
+    /**
+     * IN: size of the region
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native long fp_length();
 
+    /**
+     * IN: size of the region
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setFp_length(long value);

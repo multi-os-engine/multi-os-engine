@@ -66,10 +66,16 @@ public final class sfntCMapSubHeader extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setLength(char value);
 
+    /**
+     * base-1
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native char languageID();
 
+    /**
+     * base-1
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setLanguageID(char value);

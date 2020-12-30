@@ -34,26 +34,44 @@ public final class prebind_cksum_command extends StructObject {
         setCksum(cksum);
     }
 
+    /**
+     * LC_PREBIND_CKSUM
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int cmd();
 
+    /**
+     * LC_PREBIND_CKSUM
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setCmd(int value);
 
+    /**
+     * sizeof(struct prebind_cksum_command)
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int cmdsize();
 
+    /**
+     * sizeof(struct prebind_cksum_command)
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setCmdsize(int value);
 
+    /**
+     * the check sum or zero
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int cksum();
 
+    /**
+     * the check sum or zero
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setCksum(int value);

@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Animation subclass for grouped animations. *
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -162,6 +165,11 @@ public class CAAnimationGroup extends CAAnimation {
     @NInt
     public static native long version_static();
 
+    /**
+     * An array of CAAnimation objects. Each member of the array will run
+     * concurrently in the time space of the parent animation using the
+     * normal rules.
+     */
     @Generated
     @Selector("animations")
     public native NSArray<? extends CAAnimation> animations();
@@ -174,6 +182,11 @@ public class CAAnimationGroup extends CAAnimation {
     @Selector("initWithCoder:")
     public native CAAnimationGroup initWithCoder(NSCoder coder);
 
+    /**
+     * An array of CAAnimation objects. Each member of the array will run
+     * concurrently in the time space of the parent animation using the
+     * normal rules.
+     */
     @Generated
     @Selector("setAnimations:")
     public native void setAnimations(NSArray<? extends CAAnimation> value);

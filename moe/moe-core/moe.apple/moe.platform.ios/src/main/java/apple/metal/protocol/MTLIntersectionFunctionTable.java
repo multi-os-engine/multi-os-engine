@@ -40,10 +40,26 @@ public interface MTLIntersectionFunctionTable extends MTLResource {
     void setFunctionsWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> functions,
             @ByValue NSRange range);
 
+    /**
+     * @brief Initialize the function at the given index with a triangle intersection function
+     * with the given signature which always accepts ray/triangle intersections. If this method is
+     * not called and an intersection function is not otherwise set at the given index,
+     * ray/triangle intersections will be ignored if a call to the function at the given index
+     * would be required. Ray/triangle intersections are always accepted if an intersection
+     * function table is not provided.
+     */
     @Generated
     @Selector("setOpaqueTriangleIntersectionFunctionWithSignature:atIndex:")
     void setOpaqueTriangleIntersectionFunctionWithSignatureAtIndex(@NUInt long signature, @NUInt long index);
 
+    /**
+     * @brief Initialize the function at the given range with a triangle intersection function
+     * with the given signature which always accepts ray/triangle intersections. If this method is
+     * not called and an intersection function is not otherwise set at an index in the given range,
+     * ray/triangle intersections will be ignored if a call to the function at that index
+     * would be required. Ray/triangle intersections are always accepted if an intersection
+     * function table is not provided.
+     */
     @Generated
     @Selector("setOpaqueTriangleIntersectionFunctionWithSignature:withRange:")
     void setOpaqueTriangleIntersectionFunctionWithSignatureWithRange(@NUInt long signature, @ByValue NSRange range);

@@ -47,6 +47,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSImageHistogram
+ * @discussion The MPSImageHistogram computes the histogram of an image.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -158,11 +162,40 @@ public class MPSImageHistogram extends MPSKernel {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property   clipRectSource
+     * @abstract   The source rectangle to use when reading data.
+     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     *             completely within the source image, the intersection of the image bounds and clipRectSource will
+     *             be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     */
     @Generated
     @Selector("clipRectSource")
     @ByValue
     public native MTLRegion clipRectSource();
 
+    /**
+     * @abstract Encode the filter to a command buffer using a MTLComputeCommandEncoder.
+     * @discussion The filter will not begin to execute until after the command
+     * buffer has been enqueued and committed.
+     * 
+     * 
+     * @param  commandBuffer           A valid MTLCommandBuffer.
+     * @param  source                  A valid MTLTexture containing the source image for the filter
+     * @param  histogram               A valid MTLBuffer to receive the histogram results.
+     * @param  histogramOffset         Byte offset into histogram buffer at which to write the histogram results. Must be a multiple of 32 bytes.
+     *                                 The histogram results / channel are stored together.  The number of channels for which
+     *                                 histogram results are stored is determined by the number of channels in the image.
+     *                                 If histogramInfo.histogramForAlpha is false and the source image is RGBA then only histogram
+     *                                 results for RGB channels are stored.
+     * 
+     *                                 The histogram results are stored in the histogram buffer as follows:
+     *                                     - histogram results for the R channel for all bins followed by
+     *                                     - histogram results for the G channel for all bins followed by
+     *                                     - histogram results for the B channel for all bins followed by
+     *                                     - histogram results for the A channel for all bins
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:histogram:histogramOffset:")
     public native void encodeToCommandBufferSourceTextureHistogramHistogramOffset(
@@ -170,6 +203,16 @@ public class MPSImageHistogram extends MPSKernel {
             @Mapped(ObjCObjectMapper.class) MTLTexture source, @Mapped(ObjCObjectMapper.class) MTLBuffer histogram,
             @NUInt long histogramOffset);
 
+    /**
+     * @abstract   The amount of space in the output MTLBuffer the histogram will take up.
+     * @discussion This convenience function calculates the minimum amount of space
+     *             needed in the output histogram for the results.  The MTLBuffer should
+     *             be at least this length, longer if histogramOffset is non-zero.
+     * @param      sourceFormat      The MTLPixelFormat of the source image. This is
+     *                               the source parameter of -encodeToCommandBuffer:
+     *                               sourceTexture:histogram:histogramOffset
+     * @return     The number of bytes needed to store the result histograms.
+     */
     @Generated
     @Selector("histogramSizeForSourceFormat:")
     @NUInt
@@ -183,19 +226,45 @@ public class MPSImageHistogram extends MPSKernel {
     @Selector("initWithDevice:")
     public native MPSImageHistogram initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Specifies information to compute the histogram for channels of an image.
+     * @param    device            The device the filter will run on
+     * @param    histogramInfo     Pointer to the MPSHistogramInfo struct
+     * @return     A valid MPSImageHistogram object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:histogramInfo:")
     public native MPSImageHistogram initWithDeviceHistogramInfo(@Mapped(ObjCObjectMapper.class) MTLDevice device,
             VoidPtr histogramInfo);
 
+    /**
+     * @property   clipRectSource
+     * @abstract   The source rectangle to use when reading data.
+     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     *             completely within the source image, the intersection of the image bounds and clipRectSource will
+     *             be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     */
     @Generated
     @Selector("setClipRectSource:")
     public native void setClipRectSource(@ByValue MTLRegion value);
 
+    /**
+     * @property   zeroHistogram
+     * @abstract   Zero-initalize the histogram results
+     * @discussion Indicates that the memory region in which the histogram results are to be written in the
+     *             histogram buffer are to be zero-initialized or not. Default: YES.
+     */
     @Generated
     @Selector("setZeroHistogram:")
     public native void setZeroHistogram(boolean value);
 
+    /**
+     * @property   zeroHistogram
+     * @abstract   Zero-initalize the histogram results
+     * @discussion Indicates that the memory region in which the histogram results are to be written in the
+     *             histogram buffer are to be zero-initialized or not. Default: YES.
+     */
     @Generated
     @Selector("zeroHistogram")
     public native boolean zeroHistogram();
@@ -204,6 +273,17 @@ public class MPSImageHistogram extends MPSKernel {
     @Selector("initWithCoder:")
     public native MPSImageHistogram initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion While the standard NSSecureCoding/NSCoding method
+     *             -initWithCoder: should work, since the file can't
+     *             know which device your data is allocated on, we
+     *             have to guess and may guess incorrectly.  To avoid
+     *             that problem, use initWithCoder:device instead.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
+     * @param      device      The MTLDevice on which to make the MPSKernel
+     * @return     A new MPSKernel object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSImageHistogram initWithCoderDevice(NSCoder aDecoder,

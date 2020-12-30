@@ -23,6 +23,26 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * File provider domain.
+ * 
+ * A file provider domain can be used to represent accounts or different locations
+ * exposed within a given file provider.
+ * 
+ * Domains can be registered to the system using
+ * @c -[NSFileProviderMananger addDomain:completionHandler:]
+ * 
+ * By default, a file provider extension does not have any domain.
+ * 
+ * On the extension side, a separate instance of NSFileProviderExtension will be
+ * created for each @c NSFileProviderDomain registered.  In that case, the
+ * @c NSFileProviderExtension.domain properties will indicate which domain the
+ * NSFileProviderExtension belongs to (or nil if none).
+ * 
+ * All the files on disk belonging to the same domain must be grouped inside a
+ * common directory. That directory path is indicated by the
+ * @p pathRelativeToDocumentStorage property.
+ */
 @Generated
 @Library("FileProvider")
 @Runtime(ObjCRuntime.class)
@@ -81,6 +101,9 @@ public class NSFileProviderDomain extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The display name shown by the system to represent this domain.
+     */
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -90,6 +113,9 @@ public class NSFileProviderDomain extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The identifier - as provided by the file provider extension.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -98,6 +124,18 @@ public class NSFileProviderDomain extends NSObject {
     @Selector("init")
     public native NSFileProviderDomain init();
 
+    /**
+     * Initialize a new NSFileProviderDomain
+     * 
+     * The file provider extension implementation can pick any @c identifier as it sees
+     * fit to identify the group of items.
+     * 
+     * @param displayName a user visible string representing the group of items the
+     * file provider extension is using.
+     * 
+     * @param pathRelativeToDocumentStorage a path relative to
+     * @c NSFileProviderExtension.documentStorageURL.
+     */
     @Generated
     @Selector("initWithIdentifier:displayName:pathRelativeToDocumentStorage:")
     public native NSFileProviderDomain initWithIdentifierDisplayNamePathRelativeToDocumentStorage(String identifier,
@@ -130,6 +168,10 @@ public class NSFileProviderDomain extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The path relative to the document storage of the file provider extension.
+     * Files belonging to this domains should be stored under this path.
+     */
     @Generated
     @Selector("pathRelativeToDocumentStorage")
     public native String pathRelativeToDocumentStorage();

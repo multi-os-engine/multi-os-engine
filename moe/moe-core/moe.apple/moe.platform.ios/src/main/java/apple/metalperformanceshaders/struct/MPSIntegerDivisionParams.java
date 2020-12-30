@@ -43,10 +43,16 @@ public final class MPSIntegerDivisionParams extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setDivisor(char value);
 
+    /**
+     * fixed point reciprocal with value [32768, 65535]
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char recip();
 
+    /**
+     * fixed point reciprocal with value [32768, 65535]
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setRecip(char value);

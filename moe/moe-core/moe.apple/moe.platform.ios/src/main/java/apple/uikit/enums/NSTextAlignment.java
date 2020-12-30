@@ -19,12 +19,30 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Values for NSTextAlignment
+ */
 @Generated
 public final class NSTextAlignment {
+    /**
+     * Visually left aligned
+     */
     @Generated @NInt public static final long Left = 0x0000000000000000L;
+    /**
+     * Visually centered
+     */
     @Generated @NInt public static final long Center = 0x0000000000000001L;
+    /**
+     * Visually right aligned
+     */
     @Generated @NInt public static final long Right = 0x0000000000000002L;
+    /**
+     * Fully-justified. The last line in a paragraph is natural-aligned.
+     */
     @Generated @NInt public static final long Justified = 0x0000000000000003L;
+    /**
+     * Indicates the default alignment for script
+     */
     @Generated @NInt public static final long Natural = 0x0000000000000004L;
 
     @Generated

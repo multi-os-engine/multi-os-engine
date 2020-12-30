@@ -45,6 +45,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class RPScreenRecorder
+ * @abstract Singleton class used to control app recording.
+ */
 @Generated
 @Library("ReplayKit")
 @Runtime(ObjCRuntime.class)
@@ -147,6 +151,9 @@ public class RPScreenRecorder extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @abstract Shared instance of the screen recorder.
+     */
     @Generated
     @Selector("sharedRecorder")
     public static native RPScreenRecorder sharedRecorder();
@@ -164,11 +171,17 @@ public class RPScreenRecorder extends NSObject {
     @Selector("cameraPreviewView")
     public native UIView cameraPreviewView();
 
+    /**
+     * @abstract Delegate instance for RPScreenRecorder.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native RPScreenRecorderDelegate delegate();
 
+    /**
+     * @abstract Discards the current recording. This can only be called after the handler block in stopRecordingWithHandler: is executed.
+     */
     @Generated
     @Selector("discardRecordingWithHandler:")
     public native void discardRecordingWithHandler(
@@ -178,34 +191,58 @@ public class RPScreenRecorder extends NSObject {
     @Selector("init")
     public native RPScreenRecorder init();
 
+    /**
+     * @abstract Check if ReplayKit is available on the device. Implement the screenRecorderDidChangeAvailability: on the delegate to listen for changes to this property. Can be used for key value observing.
+     */
     @Generated
     @Selector("isAvailable")
     public native boolean isAvailable();
 
+    /**
+     * @abstract Specify or query whether the camera should be enabled during recording. Can be used for key value observing. Default is NO.
+     */
     @Generated
     @Selector("isCameraEnabled")
     public native boolean isCameraEnabled();
 
+    /**
+     * @abstract Specify or query whether the camera should be enabled during recording. Can be used for key value observing. Default is NO.
+     */
     @Generated
     @Selector("setCameraEnabled:")
     public native void setCameraEnabled(boolean value);
 
+    /**
+     * @abstract Specify or query whether the microphone should be enabled during recording. Can be used for key value observing. Default is NO.
+     */
     @Generated
     @Selector("isMicrophoneEnabled")
     public native boolean isMicrophoneEnabled();
 
+    /**
+     * @abstract Specify or query whether the microphone should be enabled during recording. Can be used for key value observing. Default is NO.
+     */
     @Generated
     @Selector("setMicrophoneEnabled:")
     public native void setMicrophoneEnabled(boolean value);
 
+    /**
+     * @abstract Check if a recording session is in progress. Can be used for key value observing.
+     */
     @Generated
     @Selector("isRecording")
     public native boolean isRecording();
 
+    /**
+     * @abstract Delegate instance for RPScreenRecorder.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) RPScreenRecorderDelegate value);
 
+    /**
+     * @abstract Delegate instance for RPScreenRecorder.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) RPScreenRecorderDelegate value) {
         Object __old = delegate();
@@ -218,16 +255,31 @@ public class RPScreenRecorder extends NSObject {
         }
     }
 
+    /**
+     * @abstract Starts app recording with a completion handler. Note that before recording actually starts, the user may be prompted with UI to confirm recording.
+     * @discussion handler Called after user interactions are complete. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue starting the recording.
+     */
     @Generated
     @Selector("startRecordingWithHandler:")
     public native void startRecordingWithHandler(
             @ObjCBlock(name = "call_startRecordingWithHandler") Block_startRecordingWithHandler handler);
 
+    /**
+     * Deprecated. Use startRecordingWithHandler: instead.
+     * 
+     * @abstract Starts app recording with a completion handler. Note that before recording actually starts, the user may be prompted with UI to confirm recording.
+     * @param microphoneEnabled Determines whether the microphone input should be included in the recorded movie audio.
+     * @discussion handler Called after user interactions are complete. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue starting the recording.
+     */
     @Generated
     @Selector("startRecordingWithMicrophoneEnabled:handler:")
     public native void startRecordingWithMicrophoneEnabledHandler(boolean microphoneEnabled,
             @ObjCBlock(name = "call_startRecordingWithMicrophoneEnabledHandler") Block_startRecordingWithMicrophoneEnabledHandler handler);
 
+    /**
+     * @abstract Stops app recording with a completion handler.
+     * @discussion handler Called when the movie is ready. Will return an instance of RPPreviewViewController on success which should be presented using [UIViewController presentViewController:animated:completion:]. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue stopping the recording.
+     */
     @Generated
     @Selector("stopRecordingWithHandler:")
     public native void stopRecordingWithHandler(
@@ -261,15 +313,25 @@ public class RPScreenRecorder extends NSObject {
         void call_stopRecordingWithHandler(RPPreviewViewController previewViewController, NSError error);
     }
 
+    /**
+     * @abstract Specify or query camera position. Can be used for key value observing. Default is RPCameraPositionFront.
+     */
     @Generated
     @Selector("cameraPosition")
     @NInt
     public native long cameraPosition();
 
+    /**
+     * @abstract Specify or query camera position. Can be used for key value observing. Default is RPCameraPositionFront.
+     */
     @Generated
     @Selector("setCameraPosition:")
     public native void setCameraPosition(@NInt long value);
 
+    /**
+     * @abstract Starts screen and audio capture and continually calls the supplied handler with the current sampleBuffer and bufferType and passed it back to the application. Note that before recording actually starts, the user may be prompted with UI to confirm recording.
+     * @discussion handler Called continually with sampleBuffers and the bufferType. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue starting the capture.
+     */
     @Generated
     @Selector("startCaptureWithHandler:completionHandler:")
     public native void startCaptureWithHandlerCompletionHandler(
@@ -291,6 +353,10 @@ public class RPScreenRecorder extends NSObject {
         void call_startCaptureWithHandlerCompletionHandler_1(NSError error);
     }
 
+    /**
+     * @abstract Stops screen capture with a completion handler
+     * @discussion handler Called after the screen capture has stopped. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue stopping the capture
+     */
     @Generated
     @Selector("stopCaptureWithHandler:")
     public native void stopCaptureWithHandler(
@@ -303,6 +369,11 @@ public class RPScreenRecorder extends NSObject {
         void call_stopCaptureWithHandler(NSError error);
     }
 
+    /**
+     * @abstract Stops app recording with output URL and completion handler.
+     * @param url Output URL for app recording movie.
+     * @discussion handler Called when  movie is written to specified output URL. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue stopping the recording and writing the output URL.
+     */
     @Generated
     @Selector("stopRecordingWithOutputURL:completionHandler:")
     public native void stopRecordingWithOutputURLCompletionHandler(NSURL url,

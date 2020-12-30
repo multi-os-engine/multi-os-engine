@@ -21,9 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIPageViewControllerSpineLocation {
+    /**
+     * Returned if 'spineLocation' is queried when 'transitionStyle' is not 'UIPageViewControllerTransitionStylePageCurl'.
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * Requires one view controller.
+     */
     @Generated @NInt public static final long Min = 0x0000000000000001L;
+    /**
+     * Requires two view controllers.
+     */
     @Generated @NInt public static final long Mid = 0x0000000000000002L;
+    /**
+     * Requires one view controller.
+     */
     @Generated @NInt public static final long Max = 0x0000000000000003L;
 
     @Generated

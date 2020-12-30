@@ -28,11 +28,22 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Delegate methods. *
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CALayerDelegate")
 public interface CALayerDelegate {
+    /**
+     * If defined, called by the default implementation of the
+     * -actionForKey: method. Should return an object implementing the
+     * CAAction protocol. May return 'nil' if the delegate doesn't specify
+     * a behavior for the current event. Returning the null object (i.e.
+     * '[NSNull null]') explicitly forces no further search. (I.e. the
+     * +defaultActionForKey: method will not be called.)
+     */
     @Generated
     @IsOptional
     @Selector("actionForLayer:forKey:")
@@ -41,6 +52,11 @@ public interface CALayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If defined, called by the default implementation of the -display
+     * method, in which case it should implement the entire display
+     * process (typically by setting the `contents' property).
+     */
     @Generated
     @IsOptional
     @Selector("displayLayer:")
@@ -48,6 +64,9 @@ public interface CALayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If defined, called by the default implementation of -drawInContext:
+     */
     @Generated
     @IsOptional
     @Selector("drawLayer:inContext:")
@@ -55,6 +74,12 @@ public interface CALayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If defined, called by the default implementation of the -display method.
+     * Allows the delegate to configure any layer state affecting contents prior
+     * to -drawLayer:InContext: such as `contentsFormat' and `opaque'. It will not
+     * be called if the delegate implements -displayLayer.
+     */
     @Generated
     @IsOptional
     @Selector("layerWillDraw:")
@@ -62,6 +87,11 @@ public interface CALayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called by the default -layoutSublayers implementation before the layout
+     * manager is checked. Note that if the delegate method is invoked, the
+     * layout manager will be ignored.
+     */
     @Generated
     @IsOptional
     @Selector("layoutSublayersOfLayer:")

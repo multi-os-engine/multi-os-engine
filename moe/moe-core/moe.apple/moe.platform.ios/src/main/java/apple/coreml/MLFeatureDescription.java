@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Description of a feature
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -91,6 +94,9 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Constraint when type == MLFeatureTypeDictionary, nil otherwise
+     */
     @Generated
     @Selector("dictionaryConstraint")
     public native MLDictionaryConstraint dictionaryConstraint();
@@ -100,6 +106,9 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Constraint when type == MLFeatureTypeImage, nil otherwise
+     */
     @Generated
     @Selector("imageConstraint")
     public native MLImageConstraint imageConstraint();
@@ -121,10 +130,16 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Check if MLFeatureValue is valid based on this description
+     */
     @Generated
     @Selector("isAllowedValue:")
     public native boolean isAllowedValue(MLFeatureValue value);
 
+    /**
+     * Whether this feature can take an undefined value or not
+     */
     @Generated
     @Selector("isOptional")
     public native boolean isOptional();
@@ -137,10 +152,16 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Constraint when type == MLFeatureTypeMultiArray, nil otherwise
+     */
     @Generated
     @Selector("multiArrayConstraint")
     public native MLMultiArrayConstraint multiArrayConstraint();
 
+    /**
+     * Name of feature
+     */
     @Generated
     @Selector("name")
     public native String name();
@@ -167,6 +188,9 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Type of data
+     */
     @Generated
     @Selector("type")
     @NInt
@@ -185,6 +209,9 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
     @Selector("initWithCoder:")
     public native MLFeatureDescription initWithCoder(NSCoder coder);
 
+    /**
+     * Constraint when type == MLFeatureTypeSequence, nil otherwise
+     */
     @Generated
     @Selector("sequenceConstraint")
     public native MLSequenceConstraint sequenceConstraint();

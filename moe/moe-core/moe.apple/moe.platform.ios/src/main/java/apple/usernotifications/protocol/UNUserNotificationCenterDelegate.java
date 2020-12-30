@@ -34,6 +34,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UNUserNotificationCenterDelegate")
 public interface UNUserNotificationCenterDelegate {
+    /**
+     * The method will be called on the delegate when the user responded to the notification by opening the application, dismissing the notification or choosing a UNNotificationAction. The delegate must be set before the application returns from application:didFinishLaunchingWithOptions:.
+     */
     @Generated
     @IsOptional
     @Selector("userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:")
@@ -43,6 +46,9 @@ public interface UNUserNotificationCenterDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The method will be called on the delegate only if the application is in the foreground. If the method is not implemented or the handler is not called in a timely manner then the notification will not be presented. The application can choose to have the notification presented as a sound, badge, alert and/or in the notification list. This decision should be based on whether the information in the notification is otherwise visible to the user.
+     */
     @Generated
     @IsOptional
     @Selector("userNotificationCenter:willPresentNotification:withCompletionHandler:")
@@ -66,6 +72,9 @@ public interface UNUserNotificationCenterDelegate {
         void call_userNotificationCenterWillPresentNotificationWithCompletionHandler(@NUInt long options);
     }
 
+    /**
+     * The method will be called on the delegate when the application is launched in response to the user's request to view in-app notification settings. Add UNAuthorizationOptionProvidesAppNotificationSettings as an option in requestAuthorizationWithOptions:completionHandler: to add a button to inline notification settings view and the notification settings view in Settings. The notification will be nil when opened from Settings.
+     */
     @Generated
     @IsOptional
     @Selector("userNotificationCenter:openSettingsForNotification:")

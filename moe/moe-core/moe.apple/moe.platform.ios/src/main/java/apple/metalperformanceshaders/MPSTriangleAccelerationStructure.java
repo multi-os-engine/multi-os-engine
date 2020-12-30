@@ -25,6 +25,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief An acceleration structure built over triangles
+ * 
+ * @discussion See MPSPolygonAccelerationStructure for more information
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -149,6 +154,12 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @brief Number of triangles. Changes to this property require rebuilding the acceleration
+     * structure.
+     * 
+     * Note that this property is an alias for the polygonCount property.
+     */
     @Generated
     @Selector("setTriangleCount:")
     public native void setTriangleCount(@NUInt long value);
@@ -171,6 +182,12 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
         return supportsSecureCoding();
     }
 
+    /**
+     * @brief Number of triangles. Changes to this property require rebuilding the acceleration
+     * structure.
+     * 
+     * Note that this property is an alias for the polygonCount property.
+     */
     @Generated
     @Selector("triangleCount")
     @NUInt

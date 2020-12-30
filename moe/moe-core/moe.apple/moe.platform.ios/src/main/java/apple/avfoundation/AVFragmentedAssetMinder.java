@@ -41,6 +41,12 @@ public class AVFragmentedAssetMinder extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * @method			addFragmentedAsset:
+     * @abstract		Adds a fragmented asset to the array of assets being minded.
+     * @param			asset
+     * 				The fragmented asset to add to the minder.
+     */
     @Generated
     @Selector("addFragmentedAsset:")
     public native void addFragmentedAsset(AVAsset asset);
@@ -55,6 +61,10 @@ public class AVFragmentedAssetMinder extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @property       assets
+     * @abstract       An NSArray of the AVFragmentedAsset objects being minded.
+     */
     @Generated
     @Selector("assets")
     public native NSArray<? extends AVAsset> assets();
@@ -89,6 +99,15 @@ public class AVFragmentedAssetMinder extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @method			fragmentedAssetMinderWithAsset:mindingInterval:
+     * @abstract       Creates an AVFragmentedAssetMinder, adds the specified asset to it, and sets the mindingInterval to the specified value.
+     * @param			asset
+     * 				An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
+     * @param			mindingInterval
+     * 				The initial minding interval of the AVFragmentedAssetMinder.
+     * @result			A new instance of AVFragmentedAssetMinder.
+     */
     @Generated
     @Selector("fragmentedAssetMinderWithAsset:mindingInterval:")
     public static native AVFragmentedAssetMinder fragmentedAssetMinderWithAssetMindingInterval(AVAsset asset,
@@ -103,6 +122,15 @@ public class AVFragmentedAssetMinder extends NSObject {
     @Selector("init")
     public native AVFragmentedAssetMinder init();
 
+    /**
+     * @method			initWithAsset:mindingInterval:
+     * @abstract       Creates an AVFragmentedAssetMinder, adds the specified asset to it, and sets the mindingInterval to the specified value.
+     * @param			asset
+     * 				An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
+     * @param			mindingInterval
+     * 				The initial minding interval of the AVFragmentedAssetMinder.
+     * @result			A new instance of AVFragmentedAssetMinder.
+     */
     @Generated
     @Selector("initWithAsset:mindingInterval:")
     public native AVFragmentedAssetMinder initWithAssetMindingInterval(AVAsset asset, double mindingInterval);
@@ -128,6 +156,10 @@ public class AVFragmentedAssetMinder extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property       mindingInterval
+     * @abstract       An NSTimeInterval indicating how often a check for additional fragments should be performed. The default interval is 10.0.
+     */
     @Generated
     @Selector("mindingInterval")
     public native double mindingInterval();
@@ -138,6 +170,12 @@ public class AVFragmentedAssetMinder extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method			removeFragmentedAsset:
+     * @abstract		Removes a fragmented asset from the array of assets being minded.
+     * @param			asset
+     * 				The fragmented asset to remove from the minder.
+     */
     @Generated
     @Selector("removeFragmentedAsset:")
     public native void removeFragmentedAsset(AVAsset asset);
@@ -150,6 +188,10 @@ public class AVFragmentedAssetMinder extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property       mindingInterval
+     * @abstract       An NSTimeInterval indicating how often a check for additional fragments should be performed. The default interval is 10.0.
+     */
     @Generated
     @Selector("setMindingInterval:")
     public native void setMindingInterval(double value);

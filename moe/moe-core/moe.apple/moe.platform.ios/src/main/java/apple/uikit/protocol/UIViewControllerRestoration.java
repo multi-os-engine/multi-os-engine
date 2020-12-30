@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * A class must implement this protocol if it is specified as the restoration class of a UIViewController.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)

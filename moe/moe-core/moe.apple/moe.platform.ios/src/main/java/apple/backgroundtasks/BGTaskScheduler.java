@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class BGTaskScheduler
+ * @abstract The object you use to schedule deferrable work to be done in the background.
+ */
 @Generated
 @Library("BackgroundTasks")
 @Runtime(ObjCRuntime.class)
@@ -59,6 +63,9 @@ public class BGTaskScheduler extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @abstract Cancel all previously submitted task requests.
+     */
     @Generated
     @Selector("cancelAllTaskRequests")
     public native void cancelAllTaskRequests();
@@ -73,6 +80,10 @@ public class BGTaskScheduler extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * @abstract Cancel a previously submitted task request.
+     * @param identifier The identifier of the previously submitted task request to cancel.
+     */
     @Generated
     @Selector("cancelTaskRequestWithIdentifier:")
     public native void cancelTaskRequestWithIdentifier(String identifier);
@@ -93,6 +104,10 @@ public class BGTaskScheduler extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract Returns a list of all task requests that have been submitted but not yet completed.
+     * @param completionHandler A block for processing task requests. This block may be executed on a background thread. The block has no return value and takes a single parameter, taskRequests, which is an array of BGTaskRequest objects. If there are no pending requests, this array is empty. The task request objects returned are copies and changing their property values will have no immediate effect. To modify the parameters of a pending task request, submit it again to the scheduler with submitTaskRequest:error:.
+     */
     @Generated
     @Selector("getPendingTaskRequestsWithCompletionHandler:")
     public native void getPendingTaskRequestsWithCompletionHandler(
@@ -141,6 +156,14 @@ public class BGTaskScheduler extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract Register a handler to be called for tasks that launch the app.
+     * @param identifier The identifier for the task that will be handled by the provided launch handler.
+     * @param queue The queue on which the launch handler and the expiration handler for the task will be called. The queue should be serial to ensure consistent ordering. If you pass nil, handlers will be called on a background queue.
+     * @param launchHandler The block that will be called when the app is launched for the specified task. The block has no return value and takes a single parameter, task, a BGTask object. Assign an expiration handler to the task's expirationHandler property and call setTaskCompletedWithSuccess: when the background work is complete.
+     * @discussion You must register launch handlers before your application finishes launching. Attempting to register a handler after launch or multiple handlers for the same identifier is an error. Although you may submit task requests from some extensions, only the host app will be launched to handle background work.
+     * @return YES if the handler was registered, or NO if it was not because the provided identifier was not present in the BGTaskSchedulerPermittedIdentifiers array in the app's Info.plist.
+     */
     @Generated
     @Selector("registerForTaskWithIdentifier:usingQueue:launchHandler:")
     public native boolean registerForTaskWithIdentifierUsingQueueLaunchHandler(String identifier, NSObject queue,
@@ -169,6 +192,13 @@ public class BGTaskScheduler extends NSObject {
     @Selector("sharedScheduler")
     public static native BGTaskScheduler sharedScheduler();
 
+    /**
+     * @abstract Submit a request to be launched in the background to perform work.
+     * @param taskRequest The task request object representing the parameters of the background task to be scheduled.
+     * @param error If an error occurs, upon return contains an error object that indicates why the request was rejected.
+     * @discussion Submitting a task request with the same identifier as an existing request will replace that request.
+     * @return YES if the request was successfully submitted, NO if there was an error
+     */
     @Generated
     @Selector("submitTaskRequest:error:")
     public native boolean submitTaskRequestError(BGTaskRequest taskRequest,

@@ -3,6 +3,14 @@ package apple.corebluetooth.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum CBConnectionEvent
+ * 
+ * @discussion Represents the connection state of a peer.
+ * 
+ * @constant CBConnectionEventPeerDisconnected	Peer is disconnected.
+ * @constant CBConnectionEventPeerConnected	Peer is connected.
+ */
 @Generated
 public final class CBConnectionEvent {
     @Generated

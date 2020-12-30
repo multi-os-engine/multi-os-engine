@@ -3,6 +3,10 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum          HKCategoryValueSeverity
+ * @abstract      Set of values to indicate the severity of a symptom.
+ */
 @Generated
 public final class HKCategoryValueSeverity {
     @Generated

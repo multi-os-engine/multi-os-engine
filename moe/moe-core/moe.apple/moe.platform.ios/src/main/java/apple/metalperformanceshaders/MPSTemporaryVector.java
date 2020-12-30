@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract A MPSVector allocated on GPU private memory.
+ * @discussion It may alias one or more other MPSTemporaryVector objects. Undesired data destruction
+ *             due to aliasing is avoided using the readCount property.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -135,12 +140,51 @@ public class MPSTemporaryVector extends MPSVector {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract       Help MPS decide which allocations to make ahead of time
+     * @discussion     The buffer cache that underlies the MPSTemporaryVector can automatically allocate new storage as
+     *                 needed as you create new temporary vectors.  However, sometimes a more global view of what you
+     *                 plan to make is useful for maximizing memory reuse to get the most efficient operation.
+     *                 This class method hints to the cache what the list of matrices will be.
+     * 
+     *                 It is never necessary to call this method. It is purely a performance and memory optimization.
+     * 
+     * @param commandBuffer        The command buffer on which the MPSTemporaryVector will be used
+     * @param descriptorList       A NSArray of MPSVectorDescriptor objects, indicating vectors that will be created
+     */
     @Generated
     @Selector("prefetchStorageWithCommandBuffer:descriptorList:")
     public static native void prefetchStorageWithCommandBufferDescriptorList(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
             NSArray<? extends MPSVectorDescriptor> descriptorList);
 
+    /**
+     * @abstract       The number of times a temporary vector may be read by a MPSMatrix... kernel
+     *                 before its contents become undefined.
+     * 
+     * @discussion     MPSTemporaryVector objects must release their underlying buffers for reuse
+     *                 immediately after last use. So as to facilitate *prompt* convenient
+     *                 memory recycling, each time a MPSTemporaryVector is read by a
+     *                 MPSMatrix... -encode... method, its readCount is automatically
+     *                 decremented. When the readCount reaches 0, the underlying buffer is
+     *                 automatically made available for reuse to MPS for its own needs and for
+     *                 other MPSTemporaryVector objects prior to return from the -encode.. function.
+     *                 The contents of the buffer become undefined at this time.
+     * 
+     *                 By default, the readCount is initialized to 1, indicating a matrix that
+     *                 may be overwritten any number of times, but read only once.
+     * 
+     *                 You may change the readCount as desired to allow MPSMatrix kernels to read
+     *                 the MPSTemporaryVector additional times. However, it is an error to change
+     *                 the readCount once it is zero. It is an error to read or write to a
+     *                 MPSTemporaryVector with a zero readCount. You may set the readCount to 0
+     *                 yourself to cause the underlying buffer to be returned to MPS. Writing
+     *                 to a MPSTemporaryVector does not adjust the readCount.
+     * 
+     *                 The Metal API Validation layer will assert if a MPSTemporaryVector is
+     *                 deallocated with non-zero readCount to help identify cases when resources
+     *                 are not returned promptly.
+     */
     @Generated
     @Selector("readCount")
     @NUInt
@@ -154,6 +198,33 @@ public class MPSTemporaryVector extends MPSVector {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract       The number of times a temporary vector may be read by a MPSMatrix... kernel
+     *                 before its contents become undefined.
+     * 
+     * @discussion     MPSTemporaryVector objects must release their underlying buffers for reuse
+     *                 immediately after last use. So as to facilitate *prompt* convenient
+     *                 memory recycling, each time a MPSTemporaryVector is read by a
+     *                 MPSMatrix... -encode... method, its readCount is automatically
+     *                 decremented. When the readCount reaches 0, the underlying buffer is
+     *                 automatically made available for reuse to MPS for its own needs and for
+     *                 other MPSTemporaryVector objects prior to return from the -encode.. function.
+     *                 The contents of the buffer become undefined at this time.
+     * 
+     *                 By default, the readCount is initialized to 1, indicating a matrix that
+     *                 may be overwritten any number of times, but read only once.
+     * 
+     *                 You may change the readCount as desired to allow MPSMatrix kernels to read
+     *                 the MPSTemporaryVector additional times. However, it is an error to change
+     *                 the readCount once it is zero. It is an error to read or write to a
+     *                 MPSTemporaryVector with a zero readCount. You may set the readCount to 0
+     *                 yourself to cause the underlying buffer to be returned to MPS. Writing
+     *                 to a MPSTemporaryVector does not adjust the readCount.
+     * 
+     *                 The Metal API Validation layer will assert if a MPSTemporaryVector is
+     *                 deallocated with non-zero readCount to help identify cases when resources
+     *                 are not returned promptly.
+     */
     @Generated
     @Selector("setReadCount:")
     public native void setReadCount(@NUInt long value);
@@ -166,6 +237,15 @@ public class MPSTemporaryVector extends MPSVector {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * @abstract   Initialize a MPSTemporaryVector for use on a MTLCommandBuffer
+     * @param      commandBuffer       The MTLCommandBuffer on which the MPSTemporaryMatrix will be exclusively used
+     * @param      descriptor    A valid MPSVectorDescriptor describing the MPSVector format to create
+     * @return     A valid MPSTemporaryVector.  The object is not managed by a NSAutoreleasePool. The object will be
+     *             released when the command buffer is committed. The underlying buffer will become invalid before
+     *             this time due to the action of the readCount property.  Please read and understand the use of
+     *             the readCount property before using this object.
+     */
     @Generated
     @Selector("temporaryVectorWithCommandBuffer:descriptor:")
     public static native MPSTemporaryVector temporaryVectorWithCommandBufferDescriptor(

@@ -175,6 +175,9 @@ public class INBookRestaurantReservationIntentResponse extends INIntentResponse 
     @Selector("initWithCoder:")
     public native INBookRestaurantReservationIntentResponse initWithCoder(NSCoder coder);
 
+    /**
+     * the userBooking that has been confirmed
+     */
     @Generated
     @Selector("setUserBooking:")
     public native void setUserBooking(INRestaurantReservationUserBooking value);
@@ -185,6 +188,9 @@ public class INBookRestaurantReservationIntentResponse extends INIntentResponse 
         return supportsSecureCoding();
     }
 
+    /**
+     * the userBooking that has been confirmed
+     */
     @Generated
     @Selector("userBooking")
     public native INRestaurantReservationUserBooking userBooking();

@@ -19,6 +19,11 @@ package apple.corebluetooth.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum CBError
+ * 
+ * @discussion The possible errors returned during LE transactions.
+ */
 @Generated
 public final class CBError {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
@@ -43,4 +48,7 @@ public final class CBError {
     @Generated @NInt public static final long OperationNotSupported = 0x000000000000000DL;
     @Generated @NInt public static final long PeerRemovedPairingInformation = 0x000000000000000EL;
     @Generated @NInt public static final long EncryptionTimedOut = 0x000000000000000FL;
+    @Generated
+    @NInt
+    public static final long TooManyLEPairedDevices = 0x0000000000000010L;
 }

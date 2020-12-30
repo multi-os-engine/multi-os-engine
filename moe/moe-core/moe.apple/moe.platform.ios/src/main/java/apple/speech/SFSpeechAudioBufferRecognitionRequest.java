@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A request to recognize speech from arbitrary audio buffers
+ */
 @Generated
 @Library("Speech")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +156,9 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
     @NInt
     public static native long version_static();
 
+    /**
+     * Append audio to the end of the recognition stream. Must currently be in native format.
+     */
     @Generated
     @Selector("appendAudioPCMBuffer:")
     public native void appendAudioPCMBuffer(AVAudioPCMBuffer audioPCMBuffer);
@@ -161,6 +167,9 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
     @Selector("appendAudioSampleBuffer:")
     public native void appendAudioSampleBuffer(CMSampleBufferRef sampleBuffer);
 
+    /**
+     * Indicate that the audio source is finished and no more audio will be appended
+     */
     @Generated
     @Selector("endAudio")
     public native void endAudio();
@@ -169,6 +178,9 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
     @Selector("init")
     public native SFSpeechAudioBufferRecognitionRequest init();
 
+    /**
+     * Preferred audio format for optimal speech recognition
+     */
     @Generated
     @Selector("nativeAudioFormat")
     public native AVAudioFormat nativeAudioFormat();

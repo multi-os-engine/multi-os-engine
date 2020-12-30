@@ -81,10 +81,16 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * returns array of NSNumbers (UIImagePickerControllerCameraCaptureMode)
+     */
     @Generated
     @Selector("availableCaptureModesForCameraDevice:")
     public static native NSArray<? extends NSNumber> availableCaptureModesForCameraDevice(@NInt long cameraDevice);
 
+    /**
+     * returns array of available media types (i.e. kUTTypeImage)
+     */
     @Generated
     @Selector("availableMediaTypesForSourceType:")
     public static native NSArray<String> availableMediaTypesForSourceType(@NInt long sourceType);
@@ -137,14 +143,23 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * returns YES if camera device is available
+     */
     @Generated
     @Selector("isCameraDeviceAvailable:")
     public static native boolean isCameraDeviceAvailable(@NInt long cameraDevice);
 
+    /**
+     * returns YES if camera device supports flash and torch.
+     */
     @Generated
     @Selector("isFlashAvailableForCameraDevice:")
     public static native boolean isFlashAvailableForCameraDevice(@NInt long cameraDevice);
 
+    /**
+     * returns YES if source is available (i.e. camera present)
+     */
     @Generated
     @Selector("isSourceTypeAvailable:")
     public static native boolean isSourceTypeAvailable(@NInt long sourceType);
@@ -188,6 +203,9 @@ public class UIImagePickerController extends UINavigationController implements N
     @NInt
     public static native long version_static();
 
+    /**
+     * replacement for -allowsImageEditing; default value is NO.
+     */
     @Generated
     @Selector("allowsEditing")
     public native boolean allowsEditing();
@@ -197,25 +215,40 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("allowsImageEditing")
     public native boolean allowsImageEditing();
 
+    /**
+     * default is UIImagePickerControllerCameraCaptureModePhoto
+     */
     @Generated
     @Selector("cameraCaptureMode")
     @NInt
     public native long cameraCaptureMode();
 
+    /**
+     * default is UIImagePickerControllerCameraDeviceRear
+     */
     @Generated
     @Selector("cameraDevice")
     @NInt
     public native long cameraDevice();
 
+    /**
+     * default is UIImagePickerControllerCameraFlashModeAuto.
+     */
     @Generated
     @Selector("cameraFlashMode")
     @NInt
     public native long cameraFlashMode();
 
+    /**
+     * set a view to overlay the preview view.
+     */
     @Generated
     @Selector("cameraOverlayView")
     public native UIView cameraOverlayView();
 
+    /**
+     * set the transform of the preview view.
+     */
     @Generated
     @Selector("cameraViewTransform")
     @ByValue
@@ -255,6 +288,9 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("mediaTypes")
     public native NSArray<String> mediaTypes();
 
+    /**
+     * replacement for -allowsImageEditing; default value is NO.
+     */
     @Generated
     @Selector("setAllowsEditing:")
     public native void setAllowsEditing(boolean value);
@@ -264,22 +300,37 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("setAllowsImageEditing:")
     public native void setAllowsImageEditing(boolean value);
 
+    /**
+     * default is UIImagePickerControllerCameraCaptureModePhoto
+     */
     @Generated
     @Selector("setCameraCaptureMode:")
     public native void setCameraCaptureMode(@NInt long value);
 
+    /**
+     * default is UIImagePickerControllerCameraDeviceRear
+     */
     @Generated
     @Selector("setCameraDevice:")
     public native void setCameraDevice(@NInt long value);
 
+    /**
+     * default is UIImagePickerControllerCameraFlashModeAuto.
+     */
     @Generated
     @Selector("setCameraFlashMode:")
     public native void setCameraFlashMode(@NInt long value);
 
+    /**
+     * set a view to overlay the preview view.
+     */
     @Generated
     @Selector("setCameraOverlayView:")
     public native void setCameraOverlayView(UIView value);
 
+    /**
+     * set the transform of the preview view.
+     */
     @Generated
     @Selector("setCameraViewTransform:")
     public native void setCameraViewTransform(@ByValue CGAffineTransform value);
@@ -304,31 +355,53 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("setMediaTypes:")
     public native void setMediaTypes(NSArray<String> value);
 
+    /**
+     * set to NO to hide all standard camera UI. default is YES
+     */
     @Generated
     @Selector("setShowsCameraControls:")
     public native void setShowsCameraControls(boolean value);
 
+    /**
+     * default value is UIImagePickerControllerSourceTypePhotoLibrary.
+     */
     @Generated
     @Selector("setSourceType:")
     public native void setSourceType(@NInt long value);
 
+    /**
+     * default value is 10 minutes.
+     */
     @Generated
     @Selector("setVideoMaximumDuration:")
     public native void setVideoMaximumDuration(double value);
 
+    /**
+     * default value is UIImagePickerControllerQualityTypeMedium. If the cameraDevice does not support the videoQuality, it will use the default value.
+     */
     @Generated
     @Selector("setVideoQuality:")
     public native void setVideoQuality(@NInt long value);
 
+    /**
+     * set to NO to hide all standard camera UI. default is YES
+     */
     @Generated
     @Selector("showsCameraControls")
     public native boolean showsCameraControls();
 
+    /**
+     * default value is UIImagePickerControllerSourceTypePhotoLibrary.
+     */
     @Generated
     @Selector("sourceType")
     @NInt
     public native long sourceType();
 
+    /**
+     * programatically initiates still image capture. ignored if image capture is in-flight.
+     * clients can initiate additional captures after receiving -imagePickerController:didFinishPickingMediaWithInfo: delegate callback
+     */
     @Generated
     @Selector("startVideoCapture")
     public native boolean startVideoCapture();
@@ -341,28 +414,46 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("takePicture")
     public native void takePicture();
 
+    /**
+     * default value is 10 minutes.
+     */
     @Generated
     @Selector("videoMaximumDuration")
     public native double videoMaximumDuration();
 
+    /**
+     * default value is UIImagePickerControllerQualityTypeMedium. If the cameraDevice does not support the videoQuality, it will use the default value.
+     */
     @Generated
     @Selector("videoQuality")
     @NInt
     public native long videoQuality();
 
+    /**
+     * default value is UIImagePickerControllerImageExportPresetCompatible.
+     */
     @Generated
     @Selector("imageExportPreset")
     @NInt
     public native long imageExportPreset();
 
+    /**
+     * default value is UIImagePickerControllerImageExportPresetCompatible.
+     */
     @Generated
     @Selector("setImageExportPreset:")
     public native void setImageExportPreset(@NInt long value);
 
+    /**
+     * videoExportPreset can be used to specify the transcoding quality for videos (via a AVAssetExportPreset* string). If the value is nil (the default) then the transcodeQuality is determined by videoQuality instead. Not valid if the source type is UIImagePickerControllerSourceTypeCamera
+     */
     @Generated
     @Selector("setVideoExportPreset:")
     public native void setVideoExportPreset(String value);
 
+    /**
+     * videoExportPreset can be used to specify the transcoding quality for videos (via a AVAssetExportPreset* string). If the value is nil (the default) then the transcodeQuality is determined by videoQuality instead. Not valid if the source type is UIImagePickerControllerSourceTypeCamera
+     */
     @Generated
     @Selector("videoExportPreset")
     public native String videoExportPreset();

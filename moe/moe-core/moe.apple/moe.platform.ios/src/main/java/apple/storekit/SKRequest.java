@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Base class used to fetch data from the store.  Should not be used directly.
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -150,6 +153,9 @@ public class SKRequest extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Cancel the request if it has started.
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -179,6 +185,9 @@ public class SKRequest extends NSObject {
         }
     }
 
+    /**
+     * Start the request if it has not already been started.
+     */
     @Generated
     @Selector("start")
     public native void start();

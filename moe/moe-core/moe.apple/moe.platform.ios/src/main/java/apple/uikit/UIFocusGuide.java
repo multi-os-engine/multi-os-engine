@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UIFocusGuides are UILayoutGuide subclasses that participate in the focus system from within their owning view. A UIFocusGuide may be used to expose non-view areas as focusable.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -159,30 +162,53 @@ public class UIFocusGuide extends UILayoutGuide {
     @Selector("initWithCoder:")
     public native UIFocusGuide initWithCoder(NSCoder coder);
 
+    /**
+     * If disabled, UIFocusGuides are ignored by the focus engine, but still participate in layout. Modifying this flag allows you to conditionally enable or disable certain focus behaviors. YES by default.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * If disabled, UIFocusGuides are ignored by the focus engine, but still participate in layout. Modifying this flag allows you to conditionally enable or disable certain focus behaviors. YES by default.
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * Setting preferredFocusEnvironments to a non-empty array marks this guide's layoutFrame as focusable. If empty, this guide is effectively disabled.
+     * If focused, the guide attempts to redirect focus to each environment in the array, in order, stopping when a focusable item in an environment has been found.
+     */
     @Generated
     @Selector("preferredFocusEnvironments")
     public native NSArray<?> preferredFocusEnvironments();
 
+    /**
+     * Setting a preferred focused view marks this guide's layoutFrame as focusable, and if focused, redirects focus to its preferred focused view. If nil, this guide is effectively disabled.
+     */
     @Generated
     @Selector("preferredFocusedView")
     public native UIView preferredFocusedView();
 
+    /**
+     * Setting preferredFocusEnvironments to a non-empty array marks this guide's layoutFrame as focusable. If empty, this guide is effectively disabled.
+     * If focused, the guide attempts to redirect focus to each environment in the array, in order, stopping when a focusable item in an environment has been found.
+     */
     @Generated
     @Selector("setPreferredFocusEnvironments:")
     public native void setPreferredFocusEnvironments(NSArray<?> value);
 
+    /**
+     * Setting a preferred focused view marks this guide's layoutFrame as focusable, and if focused, redirects focus to its preferred focused view. If nil, this guide is effectively disabled.
+     */
     @Generated
     @Selector("setPreferredFocusedView:")
     public native void setPreferredFocusedView_unsafe(UIView value);
 
+    /**
+     * Setting a preferred focused view marks this guide's layoutFrame as focusable, and if focused, redirects focus to its preferred focused view. If nil, this guide is effectively disabled.
+     */
     @Generated
     public void setPreferredFocusedView(UIView value) {
         Object __old = preferredFocusedView();

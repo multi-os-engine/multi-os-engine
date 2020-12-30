@@ -23,6 +23,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MPSCNNLossNode
+ * @discussion  This node calculates loss information during training
+ *              typically immediately after the inference portion
+ *              of network evaluation is performed. The result image
+ *              of the loss operations is typically the first gradient
+ *              image to be comsumed by the gradient passes that work
+ *              their way back up the graph. In addition, the node will
+ *              update the loss image in the MPSNNLabels with the
+ *              desired estimate of correctness.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -94,6 +105,9 @@ public class MPSCNNLossNode extends MPSNNFilterNode {
     @Selector("initWithSource:lossDescriptor:")
     public native MPSCNNLossNode initWithSourceLossDescriptor(MPSNNImageNode source, MPSCNNLossDescriptor descriptor);
 
+    /**
+     * @abstract Get the input node for labes and weights, for example to set the handle
+     */
     @Generated
     @Selector("inputLabels")
     public native MPSNNLabelsNode inputLabels();

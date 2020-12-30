@@ -58,10 +58,16 @@ public class UIBarButtonItemStateAppearance extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * A background image to display around the button
+     */
     @Generated
     @Selector("backgroundImage")
     public native UIImage backgroundImage();
 
+    /**
+     * An offset to apply to the backgroundImage.
+     */
     @Generated
     @Selector("backgroundImagePositionAdjustment")
     @ByValue
@@ -137,18 +143,30 @@ public class UIBarButtonItemStateAppearance extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * A background image to display around the button
+     */
     @Generated
     @Selector("setBackgroundImage:")
     public native void setBackgroundImage(UIImage value);
 
+    /**
+     * An offset to apply to the backgroundImage.
+     */
     @Generated
     @Selector("setBackgroundImagePositionAdjustment:")
     public native void setBackgroundImagePositionAdjustment(@ByValue UIOffset value);
 
+    /**
+     * An offset to apply to the button's title position
+     */
     @Generated
     @Selector("setTitlePositionAdjustment:")
     public native void setTitlePositionAdjustment(@ByValue UIOffset value);
 
+    /**
+     * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults are supplied.
+     */
     @Generated
     @Selector("setTitleTextAttributes:")
     public native void setTitleTextAttributes(NSDictionary<String, ?> value);
@@ -161,11 +179,17 @@ public class UIBarButtonItemStateAppearance extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * An offset to apply to the button's title position
+     */
     @Generated
     @Selector("titlePositionAdjustment")
     @ByValue
     public native UIOffset titlePositionAdjustment();
 
+    /**
+     * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults are supplied.
+     */
     @Generated
     @Selector("titleTextAttributes")
     public native NSDictionary<String, ?> titleTextAttributes();

@@ -24,6 +24,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MTLCommandBufferDescriptor
+ * @abstract An object that you use to configure new Metal command buffer objects.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -88,6 +92,10 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property errorOptions
+     * @abstract A set of options to influence the error reporting of the created command buffer. See MTLCommandBufferErrorOption.
+     */
     @Generated
     @Selector("errorOptions")
     @NUInt
@@ -137,14 +145,26 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property retainedReferences
+     * @abstract If YES, the created command buffer holds strong references to objects needed for it to execute. If NO, the created command buffer does not hold strong references to objects needed for it to execute.
+     */
     @Generated
     @Selector("retainedReferences")
     public native boolean retainedReferences();
 
+    /**
+     * @property errorOptions
+     * @abstract A set of options to influence the error reporting of the created command buffer. See MTLCommandBufferErrorOption.
+     */
     @Generated
     @Selector("setErrorOptions:")
     public native void setErrorOptions(@NUInt long value);
 
+    /**
+     * @property retainedReferences
+     * @abstract If YES, the created command buffer holds strong references to objects needed for it to execute. If NO, the created command buffer does not hold strong references to objects needed for it to execute.
+     */
     @Generated
     @Selector("setRetainedReferences:")
     public native void setRetainedReferences(boolean value);

@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class     HKActivityMoveModeObject
+ * @abstract  A wrapper object for HKActivityMoveMode enumeration.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)

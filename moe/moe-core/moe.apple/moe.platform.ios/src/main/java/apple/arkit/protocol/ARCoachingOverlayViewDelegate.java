@@ -14,6 +14,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ARCoachingOverlayViewDelegate")
 public interface ARCoachingOverlayViewDelegate {
+    /**
+     * This is called when the view deactivates, either manually or automatically
+     * 
+     * @param coachingOverlayView The view that was deactivated
+     */
     @Generated
     @IsOptional
     @Selector("coachingOverlayViewDidDeactivate:")
@@ -21,6 +26,15 @@ public interface ARCoachingOverlayViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This is called when the user taps the reset button in the relocalization state
+     * 
+     * @discussion By default, when the relocalization reset button is tapped, the overlay will call run on the session using the current
+     * `configuration`, and the `ARSessionRunOptionResetTracking` and `ARSessionRunOptionRemoveExistingAnchors` options. The delegate may
+     * implement this method to override this behavior. The delegate is then responsible for resetting the session.
+     * 
+     * @param coachingOverlayView The view currently active
+     */
     @Generated
     @IsOptional
     @Selector("coachingOverlayViewDidRequestSessionReset:")
@@ -28,6 +42,13 @@ public interface ARCoachingOverlayViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This is called when the view activate, either manually or automatically
+     * 
+     * @discussion The Developer may hide their application UI in in this callback, and take other appropriate actions to allow
+     * `ARCoachingOverlayView` to take over the full screen.
+     * @param coachingOverlayView The view that will be activated
+     */
     @Generated
     @IsOptional
     @Selector("coachingOverlayViewWillActivate:")

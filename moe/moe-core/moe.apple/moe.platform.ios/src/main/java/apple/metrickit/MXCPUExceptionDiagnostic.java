@@ -27,6 +27,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXCPUExceptionDiagnostic
+ * @abstract      An MXDiagnostic subclass that encapsulates CPU exception diagnostic reports.
+ * @discussion    CPU exceptions occur when your application consumes excessive CPU time in a short period of time.
+ * @discussion    CPU exceptions can be both fatal and non-fatal to your application.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -59,6 +65,10 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property      callStackTree
+     * @abstract      The application call stack tree associated with the excessive CPU consumption.
+     */
     @Generated
     @Selector("callStackTree")
     public native MXCallStackTree callStackTree();
@@ -155,10 +165,20 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
         return supportsSecureCoding();
     }
 
+    /**
+     * @property      totalCPUTime
+     * @abstract      Total CPU time consumed in the scope of this CPU exception.
+     * @discussion    Dimensioned as NSUnitDuration.
+     */
     @Generated
     @Selector("totalCPUTime")
     public native NSMeasurement<NSUnitDuration> totalCPUTime();
 
+    /**
+     * @property      totalSampledTime
+     * @abstract      Total time that the application was sampled for during the CPU exception.
+     * @discussion    Dimensioned as NSUnitDuration.
+     */
     @Generated
     @Selector("totalSampledTime")
     public native NSMeasurement<NSUnitDuration> totalSampledTime();

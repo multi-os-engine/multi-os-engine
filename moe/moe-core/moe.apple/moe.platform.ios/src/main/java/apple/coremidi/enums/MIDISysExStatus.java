@@ -2,6 +2,9 @@ package apple.coremidi.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * kMIDIMessageTypeSysEx / Data (MT=3) message status nibbles.
+ */
 @Generated
 public final class MIDISysExStatus {
     @Generated

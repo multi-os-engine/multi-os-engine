@@ -156,6 +156,9 @@ public class INSendMessageIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * Body text of the message.
+     */
     @Generated
     @Selector("content")
     public native String content();
@@ -178,14 +181,23 @@ public class INSendMessageIntent extends INIntent {
             NSArray<? extends INPerson> recipients, String content, String groupName, String serviceName,
             INPerson sender);
 
+    /**
+     * Contacts to whom the message should be sent.
+     */
     @Generated
     @Selector("recipients")
     public native NSArray<? extends INPerson> recipients();
 
+    /**
+     * The person, or account, sending the message.
+     */
     @Generated
     @Selector("sender")
     public native INPerson sender();
 
+    /**
+     * Specified service for the message.
+     */
     @Generated
     @Selector("serviceName")
     public native String serviceName();

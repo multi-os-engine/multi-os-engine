@@ -155,10 +155,18 @@ public class MPChangePlaybackRateCommand extends MPRemoteCommand {
     @Selector("init")
     public native MPChangePlaybackRateCommand init();
 
+    /**
+     * An array of NSNumbers (floats) that contain supported playback rates that
+     * the command can send.
+     */
     @Generated
     @Selector("setSupportedPlaybackRates:")
     public native void setSupportedPlaybackRates(NSArray<? extends NSNumber> value);
 
+    /**
+     * An array of NSNumbers (floats) that contain supported playback rates that
+     * the command can send.
+     */
     @Generated
     @Selector("supportedPlaybackRates")
     public native NSArray<? extends NSNumber> supportedPlaybackRates();

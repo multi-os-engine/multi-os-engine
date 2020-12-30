@@ -43,6 +43,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief This class represents a collection of action objects that can be executed.
+ *        The order of execution of these actions is undefined.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -154,14 +158,31 @@ public class HMActionSet extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @brief Specifies the action set type - user-defined, trigger-owned or one of the builtin types.
+     *        Builtin action sets cannot be removed from the home. trigger-owned action sets cannot
+     *        be executed, renamed or associated with another trigger.
+     */
     @Generated
     @Selector("actionSetType")
     public native String actionSetType();
 
+    /**
+     * @brief Set of HMAction objects that represent the individual items of the action set.
+     */
     @Generated
     @Selector("actions")
     public native NSSet<? extends HMAction> actions();
 
+    /**
+     * @brief Adds an action to the action set.
+     * 
+     * @param action Action object to add to the action set.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("addAction:completionHandler:")
     public native void addActionCompletionHandler(HMAction action,
@@ -171,27 +192,57 @@ public class HMActionSet extends NSObject {
     @Selector("init")
     public native HMActionSet init();
 
+    /**
+     * @brief Specifies whether the action set is currently executing or not.
+     */
     @Generated
     @Selector("isExecuting")
     public native boolean isExecuting();
 
+    /**
+     * @brief Specifies the last execution date for the action set.
+     */
     @Generated
     @Selector("lastExecutionDate")
     public native NSDate lastExecutionDate();
 
+    /**
+     * @brief The name of the action set.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * @brief Removes an existing action from the action set.
+     * 
+     * @param action Action object to remove from the action set.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("removeAction:completionHandler:")
     public native void removeActionCompletionHandler(HMAction action,
             @ObjCBlock(name = "call_removeActionCompletionHandler") Block_removeActionCompletionHandler completion);
 
+    /**
+     * @brief A unique identifier for the action set.
+     */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
+    /**
+     * @brief This method is used to change the name of the action set.
+     * 
+     * @param name New name for the action set.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,

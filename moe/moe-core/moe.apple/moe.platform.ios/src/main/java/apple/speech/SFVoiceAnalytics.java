@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Voice analytics corresponding to a segment of recorded audio
+ */
 @Generated
 @Library("Speech")
 @Runtime(ObjCRuntime.class)
@@ -125,6 +128,9 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Jitter measures vocal stability and is measured as an absolute difference between consecutive periods, divided by the average period. It is expressed as a percentage
+     */
     @Generated
     @Selector("jitter")
     public native SFAcousticFeature jitter();
@@ -139,6 +145,9 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Pitch measures the highness and lowness of tone and is measured in logarithm of normalized pitch estimates
+     */
     @Generated
     @Selector("pitch")
     public native SFAcousticFeature pitch();
@@ -155,6 +164,9 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Shimmer measures vocal stability and is measured in decibels
+     */
     @Generated
     @Selector("shimmer")
     public native SFAcousticFeature shimmer();
@@ -178,6 +190,9 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
     @NInt
     public static native long version_static();
 
+    /**
+     * Voicing measures the probability of whether a frame is voiced or not and is measured as a probability
+     */
     @Generated
     @Selector("voicing")
     public native SFAcousticFeature voicing();

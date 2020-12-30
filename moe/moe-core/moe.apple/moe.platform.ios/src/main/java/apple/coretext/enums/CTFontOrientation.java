@@ -18,6 +18,10 @@ package apple.coretext.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum       CTFontOrientation
+ * @abstract   Specifies the intended rendering orientation of the font for obtaining glyph metrics.
+ */
 @Generated
 public final class CTFontOrientation {
     @Generated public static final int OrientationDefault = 0x00000000;

@@ -54,6 +54,13 @@ public interface UIViewControllerInteractiveTransitioning {
     void startInteractiveTransition(
             @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
+    /**
+     * In 10.0, if an object conforming to UIViewControllerAnimatedTransitioning is
+     * known to be interruptible, it is possible to start it as if it was not
+     * interactive and then interrupt the transition and interact with it. In this
+     * case, implement this method and return NO. If an interactor does not
+     * implement this method, YES is assumed.
+     */
     @Generated
     @IsOptional
     @Selector("wantsInteractiveStart")

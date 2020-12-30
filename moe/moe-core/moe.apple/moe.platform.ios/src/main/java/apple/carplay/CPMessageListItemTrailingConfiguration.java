@@ -24,6 +24,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @c CPMessageListItemTrailingConfiguration encapsulates the configuration options for
+ * the trailing side of your message list cell.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -91,6 +95,20 @@ public class CPMessageListItemTrailingConfiguration extends NSObject {
     @Selector("init")
     public native CPMessageListItemTrailingConfiguration init();
 
+    /**
+     * @param trailingItem An optional glyph displayed on the trailing side of the cell.
+     * @param trailingImage An optional image displayed on the trailing side of the cell.
+     * 
+     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
+     * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
+     * both styles.
+     * 
+     * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
+     * 
+     * @discussion To properly size your list images, your app should size them to the display scale of the car screen.
+     * See -[CPInterfaceController carTraitCollection].
+     */
     @Generated
     @Selector("initWithTrailingItem:trailingImage:")
     public native CPMessageListItemTrailingConfiguration initWithTrailingItemTrailingImage(@NInt long trailingItem,

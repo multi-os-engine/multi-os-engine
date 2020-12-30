@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXMemoryMetric
+ * @abstract      An MXMetric subclass that encapsulates memory metrics.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -59,6 +63,11 @@ public class MXMemoryMetric extends MXMetric {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property      averageSuspendedMemory
+     * @abstract      Average memory of the application upon suspend.
+     * @discussion    Dimensioned as NSUnitInformationStorage.
+     */
     @Generated
     @Selector("averageSuspendedMemory")
     public native MXAverage<NSUnitInformationStorage> averageSuspendedMemory();
@@ -129,6 +138,11 @@ public class MXMemoryMetric extends MXMetric {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property      peakMemoryUsage
+     * @abstract      A single value representing the peak memory consumption of the application.
+     * @discussion    Dimensioned as NSUnitInformationStorage.
+     */
     @Generated
     @Selector("peakMemoryUsage")
     public native NSMeasurement<NSUnitInformationStorage> peakMemoryUsage();

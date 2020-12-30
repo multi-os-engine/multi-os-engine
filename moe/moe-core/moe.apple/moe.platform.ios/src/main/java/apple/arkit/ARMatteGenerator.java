@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An object designed to generate either full resolution or half resolution matte given the ARFrame.
+ * @discussion The caller initializes the object once and calls the alpha matte generation API for every ARFrame with the captured image and segmentation stencil.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -84,12 +88,26 @@ public class ARMatteGenerator extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Generates dilated depth at the resolution of the segmentation stencil.
+     * @discussion The caller can use depth information when compositing a virtual object with the captured scene. This API returns the dilated linear depth to the caller. The reprojection of this depth to the caller's scene space is carried out externally.
+     * @param frame Current ARFrame containing camera image and estimated depth buffer. The caller is to ensure that a valid depth buffer is present.
+     * @param commandBuffer Metal command buffer for encoding depth dilation operations. The command buffer is committed by the caller externally.
+     * @return Dilated depth MTLTexture for the given ARFrame at the segmentation stencil resolution. The texture consists of a single channel and is of type float16.
+     */
     @Generated
     @Selector("generateDilatedDepthFromFrame:commandBuffer:")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLTexture generateDilatedDepthFromFrameCommandBuffer(ARFrame frame,
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
+    /**
+     * Generates alpha matte at either full resolution or half the resolution of the captured image.
+     * 
+     * @param frame Current ARFrame containing camera image and segmentation stencil. The caller is to ensure that a valid segmentation buffer is present.
+     * @param commandBuffer Metal command buffer for encoding matting related operations. The command buffer is committed by the caller externally.
+     * @return Alpha matte MTLTexture for the given ARFrame at full resolution or half resolution as chosen by the  caller during initialization.
+     */
     @Generated
     @Selector("generateMatteFromFrame:commandBuffer:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -105,6 +123,17 @@ public class ARMatteGenerator extends NSObject {
     @Selector("init")
     public native ARMatteGenerator init();
 
+    /**
+     * Initializes an instance of ARMatteGenerator.
+     * 
+     * @discussion For efficient creation of alpha mattes in real time it is recommended to instantiate this object only once and to generate an alpha matte for every incoming frame.
+     * @see ARFrame
+     * @see -[ARMatteGenerator generateMatteFromFrame:commandBuffer:]
+     * @param device The device the filter will run on.
+     * @param matteResolution The resolution at which the matte is to be generated. Set using one of the values from 'ARMatteResolution'.
+     * @see ARMatteResolution
+     * @return Instance of ARMatteGenerator.
+     */
     @Generated
     @Selector("initWithDevice:matteResolution:")
     public native ARMatteGenerator initWithDeviceMatteResolution(@Mapped(ObjCObjectMapper.class) MTLDevice device,

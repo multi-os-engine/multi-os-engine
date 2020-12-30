@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHImageRequestOptionsDeliveryMode {
+    /**
+     * client may get several image results when the call is asynchronous or will get one result when the call is synchronous
+     */
     @Generated @NInt public static final long Opportunistic = 0x0000000000000000L;
+    /**
+     * client will get one result only and it will be as asked or better than asked
+     */
     @Generated @NInt public static final long HighQualityFormat = 0x0000000000000001L;
+    /**
+     * client will get one result only and it may be degraded
+     */
     @Generated @NInt public static final long FastFormat = 0x0000000000000002L;
 
     @Generated

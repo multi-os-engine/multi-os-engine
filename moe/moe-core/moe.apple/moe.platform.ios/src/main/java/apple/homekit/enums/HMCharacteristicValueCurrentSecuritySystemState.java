@@ -19,6 +19,15 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueCurrentSecuritySystemState
+ * 
+ * @constant  HMCharacteristicValueCurrentSecuritySystemStateStayArm       Home is occupied and residents are active.
+ * @constant  HMCharacteristicValueCurrentSecuritySystemStateAwayArm       Home is unoccupied.
+ * @constant  HMCharacteristicValueCurrentSecuritySystemStateNightArm      Home is occupied and residents are sleeping.
+ * @constant  HMCharacteristicValueCurrentSecuritySystemStateDisarmed      SecuritySystem is disarmed.
+ * @constant  HMCharacteristicValueCurrentSecuritySystemStateTriggered     SecuritySystem is triggered.
+ */
 @Generated
 public final class HMCharacteristicValueCurrentSecuritySystemState {
     @Generated @NInt public static final long StayArm = 0x0000000000000000L;

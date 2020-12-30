@@ -40,6 +40,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A gaussian distribution is biased towards the mean value, the possible outcomes are spread out from the mean
+ * with decreasing probability. Values within 1 deviation of the mean make up 68.27% of the distribution, values
+ * within 2 deviations make up 95% and values within 3 deviations make up 99.7%.
+ * 
+ * Note that a gaussian distribution's unbounded behavior beyond 3 deviations is undesired,
+ * thus this distribution deviates nominally by modifying the bounds to 3 deviations.
+ * Thus values within 3 deviations actually make up 100% of the distribution.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -170,6 +179,11 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     @NInt
     public static native long version_static();
 
+    /**
+     * The deviation, often called 'sigma', is the deviation from the mean that would include roughly 68% of the distribution.
+     * The range of the distribution is [mean - 3 * deviation, mean + 3 * deviation]. Values beyond 3 deviations
+     * are considered so improbable that they are removed from the output set.
+     */
     @Generated
     @Selector("deviation")
     public native float deviation();
@@ -178,16 +192,34 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     @Selector("init")
     public native GKGaussianDistribution init();
 
+    /**
+     * Initializes a Gaussian random distribution within the range [lowest, highest] using a source to grab input values from.
+     * This sets the gaussian parameters to:
+     * 
+     * mean = (highest + lowest) / 2
+     * deviation = (highest - lowest) / 6
+     * 
+     * The mean and deviation will be floating point numbers even if the distribution is meant to produce integer values.
+     * @see mean
+     * @see deviation
+     */
     @Generated
     @Selector("initWithRandomSource:lowestValue:highestValue:")
     public native GKGaussianDistribution initWithRandomSourceLowestValueHighestValue(
             @Mapped(ObjCObjectMapper.class) GKRandom source, @NInt long lowestInclusive, @NInt long highestInclusive);
 
+    /**
+     * Initializes a Gaussian random distribution within the range [mean - 3 * deviation, mean + 3 * deviation]
+     * using a source to grab input values from.
+     */
     @Generated
     @Selector("initWithRandomSource:mean:deviation:")
     public native GKGaussianDistribution initWithRandomSourceMeanDeviation(
             @Mapped(ObjCObjectMapper.class) GKRandom source, float mean, float deviation);
 
+    /**
+     * The mean, or expected, value of the distribution. Values are more probable the closer to the mean they are.
+     */
     @Generated
     @Selector("mean")
     public native float mean();

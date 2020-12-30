@@ -37,6 +37,12 @@ public final class CoreMotion {
     private CoreMotion() {
     }
 
+    /**
+     * kCMErrorDomain
+     * 
+     * Discussion:
+     *   Error returned as the domain to NSError from CoreMotion.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -51,28 +51,46 @@ public final class ip_mreqn extends StructObject {
         setImr_ifindex(imr_ifindex);
     }
 
+    /**
+     * IP multicast address of group
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native in_addr imr_multiaddr();
 
+    /**
+     * IP multicast address of group
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setImr_multiaddr(@ByValue in_addr value);
 
+    /**
+     * local IP address of interface
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native in_addr imr_address();
 
+    /**
+     * local IP address of interface
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setImr_address(@ByValue in_addr value);
 
+    /**
+     * Interface index; cast to uint32_t
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int imr_ifindex();
 
+    /**
+     * Interface index; cast to uint32_t
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setImr_ifindex(int value);

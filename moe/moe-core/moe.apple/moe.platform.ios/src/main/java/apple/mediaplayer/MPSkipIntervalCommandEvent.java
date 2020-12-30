@@ -154,6 +154,9 @@ public class MPSkipIntervalCommandEvent extends MPRemoteCommandEvent {
     @Selector("init")
     public native MPSkipIntervalCommandEvent init();
 
+    /**
+     * The chosen interval for this skip command event.
+     */
     @Generated
     @Selector("interval")
     public native double interval();

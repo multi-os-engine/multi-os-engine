@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A collection of GKGraphNodes that are governed by a set of extruded GKPolygonObstacles
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -103,11 +106,28 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     @Selector("graphWithNodes:")
     public static native GKObstacleGraph<?> graphWithNodes(NSArray<? extends GKGraphNode> nodes);
 
+    /**
+     * Creates an optimal bidirectional graph based on a list of obstacles.
+     * Each vertex of each obstacle is extruded and a connection is made between each vertex that does not intersect an obstacle
+     * Guaranteed not to have any edges which intersect obstacles.
+     * Same effect as [[GKObstacleGraph alloc] init], setting bufferRadius, and then calling addObstacles.
+     * @param obstacles a list of obstacles to create the graph from
+     * @param bufferRadius the circular radius of a potential agent that will navigate this graph.  Obstacles are extruded by this amount to create the graph.  Must be positive.  Negative values are clipped to 0.0f
+     */
     @Generated
     @Selector("graphWithObstacles:bufferRadius:")
     public static native <_NodeType> GKObstacleGraph<?> graphWithObstaclesBufferRadius(
             NSArray<? extends GKPolygonObstacle> obstacles, float bufferRadius);
 
+    /**
+     * Creates an optimal bidirectional graph based on a list of obstacles.
+     * Each vertex of each obstacle is extruded and a connection is made between each vertex that does not intersect an obstacle
+     * Guaranteed not to have any edges which intersect obstacles.
+     * Same effect as [[GKObstacleGraph alloc] init], setting bufferRadius, and then calling addObstacles.
+     * @param obstacles a list of obstacles to create the graph from
+     * @param bufferRadius the circular radius of a potential agent that will navigate this graph.  Obstacles are extruded by this amount to create the graph.  Must be positive.  Negative values are clipped to 0.0f
+     * @param nodeClass the class of the nodes that this graph should create.  Must descend from GKGraphNode2D
+     */
     @Generated
     @Selector("graphWithObstacles:bufferRadius:nodeClass:")
     public static native <_NodeType> GKObstacleGraph<?> graphWithObstaclesBufferRadiusNodeClass(
@@ -166,27 +186,53 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     @NInt
     public static native long version_static();
 
+    /**
+     * Adds obstacles to this graph.
+     * Obstacle is extruded and graph nodes are generated from its vertices and then connected to this graph
+     * Nothing is done if an obstacle is already present in this graph
+     * Any existing connections that intersect the new obstacles are destroyed unless they are protected with [GKObstacleGraph lockConnection:]
+     * @param obstacles an array of obstacles to be added
+     * @see lockConnection
+     */
     @Generated
     @Selector("addObstacles:")
     public native void addObstacles(NSArray<? extends GKPolygonObstacle> obstacles);
 
+    /**
+     * The distance by which all obstacles are extruded.
+     * This is most commonly the spatial bounding radius of a potential traveler on this path
+     */
     @Generated
     @Selector("bufferRadius")
     public native float bufferRadius();
 
+    /**
+     * Returns the class of the specified generic index
+     */
     @Generated
     @Selector("classForGenericArgumentAtIndex:")
     public native Class classForGenericArgumentAtIndex(@NUInt long index);
 
+    /**
+     * Connects the node to this graph by testing edge intersection with existing obstacles.
+     * Same behavior as if this node had been present during initWithObstacles.
+     * @param node the node to connect
+     */
     @Generated
     @Selector("connectNodeUsingObstacles:")
     public native void connectNodeUsingObstacles(GKGraphNode2D node);
 
+    /**
+     * Same behavior as connectNodeUsingObstacles: except you can optionally ignore the bounding radius of certain obstacles from being tested for intersection
+     */
     @Generated
     @Selector("connectNodeUsingObstacles:ignoringBufferRadiusOfObstacles:")
     public native void connectNodeUsingObstaclesIgnoringBufferRadiusOfObstacles(GKGraphNode2D node,
             NSArray<? extends GKPolygonObstacle> obstaclesBufferRadiusToIgnore);
 
+    /**
+     * Same behavior as connectNodeUsingObstacles: except you can optionally ignore certain obstacles from being tested for intersection.
+     */
     @Generated
     @Selector("connectNodeUsingObstacles:ignoringObstacles:")
     public native void connectNodeUsingObstaclesIgnoringObstacles(GKGraphNode2D node,
@@ -214,30 +260,66 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     public native GKObstacleGraph<?> initWithObstaclesBufferRadiusNodeClass(
             NSArray<? extends GKPolygonObstacle> obstacles, float bufferRadius, Class nodeClass);
 
+    /**
+     * Query if a given connection is locked
+     * @param startNode startNode of the connection to query
+     * @param endNode endNode of the connection to query
+     * @see lockConnection
+     * @see unlockConnection
+     * @return YES if the connection was locked with lockConnection, NO if it was never locked or was unlocked via unlockConnection
+     */
     @Generated
     @Selector("isConnectionLockedFromNode:toNode:")
     public native boolean isConnectionLockedFromNodeToNode(GKGraphNode2D startNode, GKGraphNode2D endNode);
 
+    /**
+     * Marks a connection as "locked", preventing this connection from being destroyed when you add obstacles that would intersect it
+     * @param startNode startNode of the connection to lock
+     * @param endNode endNode of the connection to lock
+     */
     @Generated
     @Selector("lockConnectionFromNode:toNode:")
     public native void lockConnectionFromNodeToNode(GKGraphNode2D startNode, GKGraphNode2D endNode);
 
+    /**
+     * Returns an array of the graph nodes associated with a given obstacle
+     * @param obstacle the obstacle who's nodes are to be retrieved
+     */
     @Generated
     @Selector("nodesForObstacle:")
     public native NSArray<? extends GKGraphNode2D> nodesForObstacle(GKPolygonObstacle obstacle);
 
+    /**
+     * Array of the extruded obstacles currently represented by this graph
+     */
     @Generated
     @Selector("obstacles")
     public native NSArray<? extends GKPolygonObstacle> obstacles();
 
+    /**
+     * Removes all obstacles from this graph.
+     */
     @Generated
     @Selector("removeAllObstacles")
     public native void removeAllObstacles();
 
+    /**
+     * Removes obstacles from this graph.
+     * All associated graph nodes are removed and their connections are bidirectionally removed.
+     * Connections between obstacle nodes that were previously invalidated by any of these obstacles are restored.
+     * Nothing is done if an obstacle is already present in this graph
+     * @param obstacles an array of obstacles to be removed
+     */
     @Generated
     @Selector("removeObstacles:")
     public native void removeObstacles(NSArray<? extends GKPolygonObstacle> obstacles);
 
+    /**
+     * "Unlocks" a connection, removing its protection from being destroyed when you add obstacles that would intersect it
+     * @param startNode startNode of the connection to unlock
+     * @param endNode endNode of the connection to unlock
+     * @see lockConnection
+     */
     @Generated
     @Selector("unlockConnectionFromNode:toNode:")
     public native void unlockConnectionFromNodeToNode(GKGraphNode2D startNode, GKGraphNode2D endNode);

@@ -43,6 +43,15 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A component is the data and logic for one part of an object in an entity-component system.
+ * Entities have many components but components are associated with only a single entity.
+ * 
+ * Components across entities are best arranged in ComponentSystems, which are homogeneous
+ * collections of components that the game logic updates in a deterministic order.
+ * 
+ * @see GKComponentSystem
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -160,6 +169,9 @@ public class GKComponent extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Override this to perform game logic when this component is added to an entity
+     */
     @Generated
     @Selector("didAddToEntity")
     public native void didAddToEntity();
@@ -168,6 +180,9 @@ public class GKComponent extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The entity that this component belongs to. Defaults to nil until the component is added to an entity.
+     */
     @Generated
     @Selector("entity")
     public native GKEntity entity();
@@ -180,10 +195,17 @@ public class GKComponent extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native GKComponent initWithCoder(NSCoder coder);
 
+    /**
+     * Updates the component with the given delta time since the last update. Each component should
+     * perform its time-based logic in this method.
+     */
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double seconds);
 
+    /**
+     * Override this to perform game logic before this entity is removed from it's entity
+     */
     @Generated
     @Selector("willRemoveFromEntity")
     public native void willRemoveFromEntity();

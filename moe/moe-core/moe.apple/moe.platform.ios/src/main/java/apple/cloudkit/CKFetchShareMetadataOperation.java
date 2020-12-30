@@ -42,6 +42,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CKFetchShareMetadataOperation
+ * 
+ * @abstract Fetch the @c CKShareMetadata for a share URL.
+ * 
+ * @discussion Since you can't know what container this share is in before you fetch its metadata, you may run this operation in any container you have access to
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +160,12 @@ public class CKFetchShareMetadataOperation extends CKOperation {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract This block is called when the operation completes.
+     * 
+     * @discussion The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("fetchShareMetadataCompletionBlock")
     @ObjCBlock(name = "call_fetchShareMetadataCompletionBlock_ret")
@@ -166,25 +179,55 @@ public class CKFetchShareMetadataOperation extends CKOperation {
     @Selector("initWithShareURLs:")
     public native CKFetchShareMetadataOperation initWithShareURLs(NSArray<? extends NSURL> shareURLs);
 
+    /**
+     * @abstract Called once for each share URL that the server processed
+     * 
+     * @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("perShareMetadataBlock")
     @ObjCBlock(name = "call_perShareMetadataBlock_ret")
     public native Block_perShareMetadataBlock_ret perShareMetadataBlock();
 
+    /**
+     * @abstract Declares which user-defined keys should be fetched and added to the resulting @c rootRecord.
+     * 
+     * @discussion Only consulted if @c shouldFetchRootRecord is @c YES.
+     * If nil, declares the entire root record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
+     * Defaults to @c nil.
+     */
     @Generated
     @Selector("rootRecordDesiredKeys")
     public native NSArray<String> rootRecordDesiredKeys();
 
+    /**
+     * @abstract This block is called when the operation completes.
+     * 
+     * @discussion The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("setFetchShareMetadataCompletionBlock:")
     public native void setFetchShareMetadataCompletionBlock(
             @ObjCBlock(name = "call_setFetchShareMetadataCompletionBlock") Block_setFetchShareMetadataCompletionBlock value);
 
+    /**
+     * @abstract Called once for each share URL that the server processed
+     * 
+     * @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("setPerShareMetadataBlock:")
     public native void setPerShareMetadataBlock(
             @ObjCBlock(name = "call_setPerShareMetadataBlock") Block_setPerShareMetadataBlock value);
 
+    /**
+     * @abstract Declares which user-defined keys should be fetched and added to the resulting @c rootRecord.
+     * 
+     * @discussion Only consulted if @c shouldFetchRootRecord is @c YES.
+     * If nil, declares the entire root record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
+     * Defaults to @c nil.
+     */
     @Generated
     @Selector("setRootRecordDesiredKeys:")
     public native void setRootRecordDesiredKeys(NSArray<String> value);
@@ -193,6 +236,12 @@ public class CKFetchShareMetadataOperation extends CKOperation {
     @Selector("setShareURLs:")
     public native void setShareURLs(NSArray<? extends NSURL> value);
 
+    /**
+     * @abstract If set to YES, the resulting @c CKShareMetadata will have a @c rootRecord object filled out.
+     * 
+     * @discussion Defaults to @c NO.
+     * The resulting @c CKShareMetadata will have a @c rootRecordID property regardless of the value of this property.
+     */
     @Generated
     @Selector("setShouldFetchRootRecord:")
     public native void setShouldFetchRootRecord(boolean value);
@@ -201,6 +250,12 @@ public class CKFetchShareMetadataOperation extends CKOperation {
     @Selector("shareURLs")
     public native NSArray<? extends NSURL> shareURLs();
 
+    /**
+     * @abstract If set to YES, the resulting @c CKShareMetadata will have a @c rootRecord object filled out.
+     * 
+     * @discussion Defaults to @c NO.
+     * The resulting @c CKShareMetadata will have a @c rootRecordID property regardless of the value of this property.
+     */
     @Generated
     @Selector("shouldFetchRootRecord")
     public native boolean shouldFetchRootRecord();

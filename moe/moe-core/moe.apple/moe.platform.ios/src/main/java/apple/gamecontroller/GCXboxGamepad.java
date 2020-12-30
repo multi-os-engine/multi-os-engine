@@ -23,6 +23,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The GCXboxGamepad profile represents any supported Xbox controller.
+ * 
+ * @see GCExtendedGamepad
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -117,6 +122,15 @@ public class GCXboxGamepad extends GCExtendedGamepad {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Some Xbox controller variants can support up to four additional buttons.
+     * 
+     * @example The standard Bluetooth-enabled Xbox Wireless Controller does not have paddle buttons
+     * @example The Xbox Elite Wireless Controller has four extra digital buttons.
+     * 
+     * @note The four extra digital buttons on the Xbox Elite Wireless Controller are only directly addressable when the controller
+     *    is on its default mapping profile. Otherwise, the paddle buttons are directly bound to other inputs on the controller.
+     */
     @Generated
     @Selector("paddleButton1")
     public native GCControllerButtonInput paddleButton1();

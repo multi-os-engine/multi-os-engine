@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Abstract base class. Do not instantiate directly.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -92,6 +95,9 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The state(s) for which the accessory should be displayed.
+     */
     @Generated
     @Selector("displayedState")
     @NInt
@@ -127,6 +133,10 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Hidden accessories take up space in the layout, but are not visible and do not provide any behaviors.
+     * Use this property to achieve a consistent layout across cells when some show the accessory and others do not.
+     */
     @Generated
     @Selector("isHidden")
     public native boolean isHidden();
@@ -145,6 +155,12 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The layout width that is reserved for the accessory, inside which the accessory will be centered.
+     * This is used to ensure horizontal alignment of different accessories in adjacent cells, even when
+     * the actual accessory view width varies slightly. A value of 0 means the actual width of the
+     * accessory will be used. Use UICellAccessoryStandardDimension to request the standard width.
+     */
     @Generated
     @Selector("reservedLayoutWidth")
     @NFloat
@@ -158,18 +174,34 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The state(s) for which the accessory should be displayed.
+     */
     @Generated
     @Selector("setDisplayedState:")
     public native void setDisplayedState(@NInt long value);
 
+    /**
+     * Hidden accessories take up space in the layout, but are not visible and do not provide any behaviors.
+     * Use this property to achieve a consistent layout across cells when some show the accessory and others do not.
+     */
     @Generated
     @Selector("setHidden:")
     public native void setHidden(boolean value);
 
+    /**
+     * The layout width that is reserved for the accessory, inside which the accessory will be centered.
+     * This is used to ensure horizontal alignment of different accessories in adjacent cells, even when
+     * the actual accessory view width varies slightly. A value of 0 means the actual width of the
+     * accessory will be used. Use UICellAccessoryStandardDimension to request the standard width.
+     */
     @Generated
     @Selector("setReservedLayoutWidth:")
     public native void setReservedLayoutWidth(@NFloat double value);
 
+    /**
+     * The tint color to apply to the accessory. Default value is nil, which uses the system default.
+     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
@@ -192,6 +224,9 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
         return supportsSecureCoding();
     }
 
+    /**
+     * The tint color to apply to the accessory. Default value is nil, which uses the system default.
+     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();

@@ -18,6 +18,9 @@ package apple.videotoolbox.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Informational status for decoding -- non-error flags
+ */
 @Generated
 public final class VTDecodeInfoFlags {
     @Generated public static final int Asynchronous = 0x00000001;

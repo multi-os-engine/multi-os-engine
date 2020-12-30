@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents pool of SmartCard reader slots.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -78,6 +81,10 @@ public class TKSmartCardSlotManager extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Global pool of SmartCard reader slots.
+     * Note that defaultManager instance is accessible only if the calling application has 'com.apple.security.smartcard' entitlement set to Boolean:YES.  If the calling application does not have this entitlement, defaultManager is always set to nil.
+     */
     @Generated
     @Selector("defaultManager")
     public static native TKSmartCardSlotManager defaultManager();
@@ -86,6 +93,9 @@ public class TKSmartCardSlotManager extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Instantiates smartcard reader slot of specified name.  If specified name is not registered, reports nil.
+     */
     @Generated
     @Selector("getSlotWithName:reply:")
     public native void getSlotWithNameReply(String name,
@@ -146,10 +156,16 @@ public class TKSmartCardSlotManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Gets SmartCard reader slot with specified name.  If reader slot with this name does not exist, returns nil.
+     */
     @Generated
     @Selector("slotNamed:")
     public native TKSmartCardSlot slotNamed(String name);
 
+    /**
+     * Array of currently known slots in the system.  Slots are identified by NSString name instances.  Use KVO to be notified about slots arrivals and removals.
+     */
     @Generated
     @Selector("slotNames")
     public native NSArray<String> slotNames();

@@ -77,6 +77,15 @@ public class PDFDestination extends NSObject implements NSCopying {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * If the destination passed in is further along in the document than the receiver, we return NSOrderedAscending. If
+     * the destination passed in precedes the receiver, we return NSOrderedDescending. Otherwise if the destination passed in
+     * matches the receiver, we return NSOrderedSame. For purposes of comparison, the horizontal component on the point is
+     * ignored. Also for purposes of comparison, having kPDFDestinationUnspecifiedValue for the vertical component of the
+     * destination point will be treated as the top point on the destination page.
+     * An exception will be raised if either destination does not have a page associated with it or if the pages of the two
+     * destinations are associated with different documents.
+     */
     @Generated
     @Selector("compare:")
     @NInt
@@ -105,6 +114,9 @@ public class PDFDestination extends NSObject implements NSCopying {
     @Selector("init")
     public native PDFDestination init();
 
+    /**
+     * Initializer. You do not often create PDFDestinations, but usually get them from link annotations or PDFOutline items.
+     */
     @Generated
     @Selector("initWithPage:atPoint:")
     public native PDFDestination initWithPageAtPoint(PDFPage page, @ByValue CGPoint point);
@@ -136,10 +148,16 @@ public class PDFDestination extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The page that the destination refers to (destination page).
+     */
     @Generated
     @Selector("page")
     public native PDFPage page();
 
+    /**
+     * The destination point on the page above (in page space).
+     */
     @Generated
     @Selector("point")
     @ByValue
@@ -157,6 +175,10 @@ public class PDFDestination extends NSObject implements NSCopying {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Get / set the scale factor the PDF viewer should assume for this destination.
+     * kPDFDestinationUnspecifiedValue indicates the scale factor is unaffected.
+     */
     @Generated
     @Selector("setZoom:")
     public native void setZoom(@NFloat double value);
@@ -170,6 +192,10 @@ public class PDFDestination extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * Get / set the scale factor the PDF viewer should assume for this destination.
+     * kPDFDestinationUnspecifiedValue indicates the scale factor is unaffected.
+     */
     @Generated
     @Selector("zoom")
     @NFloat

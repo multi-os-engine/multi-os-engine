@@ -18,6 +18,11 @@ package apple.coretext.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum       UI Type constants
+ * @abstract   These constants represent the specific user interface purpose to specify for font creation.
+ * @discussion Use these constants with CTFontCreateUIFontForLanguage to indicate the intended user interface usage of the font reference to be created.
+ */
 @Generated
 public final class CTFontUIFontType {
     @Generated public static final int UIFontNone = 0xFFFFFFFF;

@@ -33,6 +33,15 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INGetAvailableRestaurantReservationBookingDefaultsIntentHandling")
 public interface INGetAvailableRestaurantReservationBookingDefaultsIntentHandling {
+    /**
+     * @abstract Confirmation method - Validate that this intent is ready for the next step (i.e. handling)
+     * @discussion These methods are called prior to asking the app to handle the intent. The app should return a response object that contains additional information about the intent, which may be relevant for the system to show the user prior to handling. If unimplemented, the system will assume the intent is valid following resolution, and will assume there is no additional information relevant to this intent.
+     * 
+     * @param  intent The input intent
+     * @param  completion The response block contains an INGetAvailableRestaurantReservationBookingDefaultsIntentResponse containing additional details about the intent that may be relevant for the system to show the user prior to handling.
+     * 
+     * @see INGetAvailableRestaurantReservationBookingDefaultsIntentResponse
+     */
     @Generated
     @IsOptional
     @Selector("confirmGetAvailableRestaurantReservationBookingDefaults:completion:")
@@ -42,12 +51,30 @@ public interface INGetAvailableRestaurantReservationBookingDefaultsIntentHandlin
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @abstract Handling method - Execute the task represented by the INGetAvailableRestaurantReservationBookingDefaultsIntent that's passed in
+     * @discussion This method is called to actually execute the intent, the app must return a response for this intent and an NSUserActivity capturing the state that the app must be restored to at the end of handling this intent
+     * 
+     * @param  intent The input intent
+     * @param  completion The response handling block to invoke with the response to handling the intent.
+     * 
+     * @see  INGetAvailableRestaurantReservationBookingDefaultsIntentResponse
+     */
     @Generated
     @Selector("handleGetAvailableRestaurantReservationBookingDefaults:completion:")
     void handleGetAvailableRestaurantReservationBookingDefaultsCompletion(
             INGetAvailableRestaurantReservationBookingDefaultsIntent intent,
             @ObjCBlock(name = "call_handleGetAvailableRestaurantReservationBookingDefaultsCompletion") Block_handleGetAvailableRestaurantReservationBookingDefaultsCompletion completion);
 
+    /**
+     * @abstract Resolution methods - Determine if this intent is ready for the next step (confirmation)
+     * @discussion These methods are called to make sure the app extension is capable of handling this intent in its current form. This method is for validating if the intent needs any further fleshing out.
+     * 
+     * @param  intent The input intent
+     * @param  completion The response block contains an INIntentResolutionResult for the parameter being resolved
+     * 
+     * @see INGetAvailableRestaurantReservationBookingDefaultsIntentResponse
+     */
     @Generated
     @IsOptional
     @Selector("resolveRestaurantForGetAvailableRestaurantReservationBookingDefaults:withCompletion:")

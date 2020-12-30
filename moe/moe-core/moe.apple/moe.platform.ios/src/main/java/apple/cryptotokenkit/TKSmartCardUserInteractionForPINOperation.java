@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * User interaction for the secure PIN operations on the SmartCard reader.
+ * @note Result is available after the interaction has been successfully completed.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -40,11 +44,20 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
         super(peer);
     }
 
+    /**
+     * Bitmask specifying condition(s) under which PIN entry should be considered complete.
+     * @note Default value: TKSmartCardPINCompletionKey
+     */
     @Generated
     @Selector("PINCompletion")
     @NUInt
     public native long PINCompletion();
 
+    /**
+     * List of message indices referring to a predefined message table. It is used to specify the type and number of messages displayed during the PIN operation.
+     * @discussion If nil, the reader does not display any message (reader specific). Typically, PIN verification takes 1 message, PIN modification 1-3 messages.
+     * @note Default value: nil
+     */
     @Generated
     @Selector("PINMessageIndices")
     public native NSArray<? extends NSNumber> PINMessageIndices();
@@ -123,6 +136,10 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Locale defining the language of displayed messages. If set to nil, the user's current locale is used.
+     * @note Default value: the user's current locale
+     */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
@@ -141,30 +158,55 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Optional block of returned data (without SW1SW2 bytes).
+     */
     @Generated
     @Selector("resultData")
     public native NSData resultData();
 
+    /**
+     * SW1SW2 result code.
+     */
     @Generated
     @Selector("resultSW")
     public native char resultSW();
 
+    /**
+     * Locale defining the language of displayed messages. If set to nil, the user's current locale is used.
+     * @note Default value: the user's current locale
+     */
     @Generated
     @Selector("setLocale:")
     public native void setLocale(NSLocale value);
 
+    /**
+     * Bitmask specifying condition(s) under which PIN entry should be considered complete.
+     * @note Default value: TKSmartCardPINCompletionKey
+     */
     @Generated
     @Selector("setPINCompletion:")
     public native void setPINCompletion(@NUInt long value);
 
+    /**
+     * List of message indices referring to a predefined message table. It is used to specify the type and number of messages displayed during the PIN operation.
+     * @discussion If nil, the reader does not display any message (reader specific). Typically, PIN verification takes 1 message, PIN modification 1-3 messages.
+     * @note Default value: nil
+     */
     @Generated
     @Selector("setPINMessageIndices:")
     public native void setPINMessageIndices(NSArray<? extends NSNumber> value);
 
+    /**
+     * Optional block of returned data (without SW1SW2 bytes).
+     */
     @Generated
     @Selector("setResultData:")
     public native void setResultData(NSData value);
 
+    /**
+     * SW1SW2 result code.
+     */
     @Generated
     @Selector("setResultSW:")
     public native void setResultSW(char value);

@@ -35,6 +35,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSKeyedUnarchiverDelegate")
 public interface NSKeyedUnarchiverDelegate {
+    /**
+     * error handling
+     */
     @Generated
     @IsOptional
     @Selector("unarchiver:cannotDecodeObjectOfClassName:originalClasses:")
@@ -43,6 +46,9 @@ public interface NSKeyedUnarchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * substitution
+     */
     @Generated
     @IsOptional
     @Selector("unarchiver:didDecodeObject:")
@@ -52,6 +58,9 @@ public interface NSKeyedUnarchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * notification
+     */
     @Generated
     @IsOptional
     @Selector("unarchiver:willReplaceObject:withObject:")
@@ -60,6 +69,9 @@ public interface NSKeyedUnarchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Notifies the delegate that decoding is about to finish.
+     */
     @Generated
     @IsOptional
     @Selector("unarchiverDidFinish:")
@@ -67,6 +79,12 @@ public interface NSKeyedUnarchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Informs the delegate that the newObject is being substituted for the
+     * object. This is also called when the delegate itself is doing/has done
+     * the substitution. The delegate may use this method if it is keeping track
+     * of the encoded or decoded objects.
+     */
     @Generated
     @IsOptional
     @Selector("unarchiverWillFinish:")

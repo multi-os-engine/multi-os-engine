@@ -117,6 +117,10 @@ public class AVAssetResourceLoadingRequestor extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property 		providesExpiredSessionReports
+     * @abstract		Whether the requestor provides expired session reports (see AVContentKeySession)
+     */
     @Generated
     @Selector("providesExpiredSessionReports")
     public native boolean providesExpiredSessionReports();

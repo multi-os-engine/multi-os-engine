@@ -42,10 +42,18 @@ public final class GCExtendedGamepadSnapshotData extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setSize(char value);
 
+    /**
+     * Extended gamepad data
+     * Axes in the range [-1.0, 1.0]
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native float dpadX();
 
+    /**
+     * Extended gamepad data
+     * Axes in the range [-1.0, 1.0]
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setDpadX(float value);
@@ -58,10 +66,16 @@ public final class GCExtendedGamepadSnapshotData extends StructObject {
     @StructureField(order = 3, isGetter = false)
     public native void setDpadY(float value);
 
+    /**
+     * Buttons in the range [0.0, 1.0]
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native float buttonA();
 
+    /**
+     * Buttons in the range [0.0, 1.0]
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setButtonA(float value);
@@ -106,10 +120,16 @@ public final class GCExtendedGamepadSnapshotData extends StructObject {
     @StructureField(order = 9, isGetter = false)
     public native void setRightShoulder(float value);
 
+    /**
+     * Axes in the range [-1.0, 1.0]
+     */
     @Generated
     @StructureField(order = 10, isGetter = true)
     public native float leftThumbstickX();
 
+    /**
+     * Axes in the range [-1.0, 1.0]
+     */
     @Generated
     @StructureField(order = 10, isGetter = false)
     public native void setLeftThumbstickX(float value);
@@ -138,10 +158,16 @@ public final class GCExtendedGamepadSnapshotData extends StructObject {
     @StructureField(order = 13, isGetter = false)
     public native void setRightThumbstickY(float value);
 
+    /**
+     * Buttons in the range [0.0, 1.0]
+     */
     @Generated
     @StructureField(order = 14, isGetter = true)
     public native float leftTrigger();
 
+    /**
+     * Buttons in the range [0.0, 1.0]
+     */
     @Generated
     @StructureField(order = 14, isGetter = false)
     public native void setLeftTrigger(float value);
@@ -154,18 +180,30 @@ public final class GCExtendedGamepadSnapshotData extends StructObject {
     @StructureField(order = 15, isGetter = false)
     public native void setRightTrigger(float value);
 
+    /**
+     * Boolean indicating whether the controller supports clickable thumbsticks (1) or not (0)
+     */
     @Generated
     @StructureField(order = 16, isGetter = true)
     public native boolean supportsClickableThumbsticks();
 
+    /**
+     * Boolean indicating whether the controller supports clickable thumbsticks (1) or not (0)
+     */
     @Generated
     @StructureField(order = 16, isGetter = false)
     public native void setSupportsClickableThumbsticks(boolean value);
 
+    /**
+     * Left and right thumbstick clickable values (0, 1)
+     */
     @Generated
     @StructureField(order = 17, isGetter = true)
     public native boolean leftThumbstickButton();
 
+    /**
+     * Left and right thumbstick clickable values (0, 1)
+     */
     @Generated
     @StructureField(order = 17, isGetter = false)
     public native void setLeftThumbstickButton(boolean value);

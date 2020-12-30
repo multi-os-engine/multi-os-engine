@@ -19,6 +19,14 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueCurrentHumidifierDehumidifierState
+ * 
+ * @constant  HMCharacteristicValueCurrentHumidifierDehumidifierStateInactive       Inactive.
+ * @constant  HMCharacteristicValueCurrentHumidifierDehumidifierStateIdle           Idle.
+ * @constant  HMCharacteristicValueCurrentHumidifierDehumidifierStateHumidifying    Humidifying.
+ * @constant  HMCharacteristicValueCurrentHumidifierDehumidifierStateDehumidifying  Dehumidifying.
+ */
 @Generated
 public final class HMCharacteristicValueCurrentHumidifierDehumidifierState {
     @Generated @NInt public static final long Inactive = 0x0000000000000000L;

@@ -83,6 +83,9 @@ public class NSAttributedString extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * A convenience method for creating an attributed string containing attachment using NSAttachmentCharacter as the base character.
+     */
     @Generated
     @Selector("attributedStringWithAttachment:")
     public static native NSAttributedString attributedStringWithAttachment(NSTextAttachment attachment);
@@ -204,6 +207,9 @@ public class NSAttributedString extends NSObject
     public native CGRect boundingRectWithSizeOptionsContext(@ByValue CGSize size, @NInt long options,
             NSStringDrawingContext context);
 
+    /**
+     * Returns YES if the receiver contains a property configured (NSAttachmentAttributeName with NSAttachmentCharacter) in range
+     */
     @Generated
     @Selector("containsAttachmentsInRange:")
     public native boolean containsAttachmentsInRange(@ByValue NSRange range);
@@ -214,6 +220,9 @@ public class NSAttributedString extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Generates an NSData object for the receiver contents in range.  It requires a document attributes dict specifying at least the NSDocumentTypeDocumentAttribute to determine the format to be written.
+     */
     @Generated
     @Selector("dataFromRange:documentAttributes:error:")
     public native NSData dataFromRangeDocumentAttributesError(@ByValue NSRange range, NSDictionary<String, ?> dict,
@@ -247,6 +256,9 @@ public class NSAttributedString extends NSObject
     public native void enumerateAttributesInRangeOptionsUsingBlock(@ByValue NSRange enumerationRange, @NUInt long opts,
             @ObjCBlock(name = "call_enumerateAttributesInRangeOptionsUsingBlock") Block_enumerateAttributesInRangeOptionsUsingBlock block);
 
+    /**
+     * Returns an NSFileWrapper object for the receiver contents in range.  It requires a document attributes dict specifying at least the NSDocumentTypeDocumentAttribute to determine the format to be written.  The method returns a directory file wrapper for those document types represented by a file package such as NSRTFDTextDocumentType; otherwise, it returns a regular-file file wrapper.
+     */
     @Generated
     @Selector("fileWrapperFromRange:documentAttributes:error:")
     public native NSFileWrapper fileWrapperFromRangeDocumentAttributesError(@ByValue NSRange range,
@@ -286,6 +298,9 @@ public class NSAttributedString extends NSObject
     @Selector("initWithString:attributes:")
     public native NSAttributedString initWithStringAttributes(String str, NSDictionary<String, ?> attrs);
 
+    /**
+     * Methods initializing the receiver contents with an external document data.  options specify document attributes for interpreting the document contents.  NSDocumentTypeDocumentAttribute, NSCharacterEncodingDocumentAttribute, and NSDefaultAttributesDocumentAttribute are supported options key.  When they are not specified, these methods will examine the data and do their best to detect the appropriate attributes.  If dict is non-NULL, it will return a dictionary with various document-wide attributes accessible via NS...DocumentAttribute keys.
+     */
     @Generated
     @Selector("initWithURL:options:documentAttributes:error:")
     public native NSAttributedString initWithURLOptionsDocumentAttributesError(NSURL url,
@@ -403,6 +418,17 @@ public class NSAttributedString extends NSObject
     @Selector("writableTypeIdentifiersForItemProvider")
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
 
+    /**
+     * @abstract Converts HTML data into an attributed string.
+     * @param data The HTML data to use as the contents.
+     * @param options Document attributes for interpreting the document contents.
+     * NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption, NSTextEncodingNameDocumentOption,
+     * and NSCharacterEncodingDocumentOption are supported option keys.
+     * @param completionHandler A block to invoke when the operation completes or fails.
+     * @discussion The completionHandler is passed the attributed string result along with any
+     * document-level attributes, or an error. If neither NSTextEncodingNameDocumentOption nor
+     * NSCharacterEncodingDocumentOption is supplied, a best-guess encoding is used.
+     */
     @Generated
     @Selector("loadFromHTMLWithData:options:completionHandler:")
     public static native void loadFromHTMLWithDataOptionsCompletionHandler(NSData data, NSDictionary<String, ?> options,
@@ -416,6 +442,18 @@ public class NSAttributedString extends NSObject
                 NSError arg2);
     }
 
+    /**
+     * @abstract Converts a local HTML file into an attributed string.
+     * @param fileURL The file URL to load.
+     * @param options Document attributes for interpreting the document contents.
+     * NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption and NSReadAccessURLDocumentOption
+     * are supported option keys.
+     * @param completionHandler A block to invoke when the operation completes or fails.
+     * @discussion The completionHandler is passed the attributed string result along with any
+     * document-level attributes, or an error. If NSReadAccessURLDocumentOption references a single file,
+     * only that file may be loaded by WebKit. If NSReadAccessURLDocumentOption references a directory,
+     * files inside that directory may be loaded by WebKit.
+     */
     @Generated
     @Selector("loadFromHTMLWithFileURL:options:completionHandler:")
     public static native void loadFromHTMLWithFileURLOptionsCompletionHandler(NSURL fileURL,
@@ -430,6 +468,15 @@ public class NSAttributedString extends NSObject
                 NSError arg2);
     }
 
+    /**
+     * @abstract Loads an HTML URL request and converts the contents into an attributed string.
+     * @param request The request specifying the URL to load.
+     * @param options Document attributes for interpreting the document contents.
+     * NSTextSizeMultiplierDocumentOption and NSTimeoutDocumentOption are supported option keys.
+     * @param completionHandler A block to invoke when the operation completes or fails.
+     * @discussion The completionHandler is passed the attributed string result along with any
+     * document-level attributes, or an error.
+     */
     @Generated
     @Selector("loadFromHTMLWithRequest:options:completionHandler:")
     public static native void loadFromHTMLWithRequestOptionsCompletionHandler(NSURLRequest request,
@@ -444,6 +491,17 @@ public class NSAttributedString extends NSObject
                 NSError arg2);
     }
 
+    /**
+     * @abstract Converts an HTML string into an attributed string.
+     * @param string The HTML string to use as the contents.
+     * @param options Document attributes for interpreting the document contents.
+     * NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption and NSBaseURLDocumentOption
+     * are supported option keys.
+     * @param completionHandler A block to invoke when the operation completes or fails.
+     * @discussion The completionHandler is passed the attributed string result along with any
+     * document-level attributes, or an error. NSBaseURLDocumentOption is used to resolve relative URLs
+     * within the document.
+     */
     @Generated
     @Selector("loadFromHTMLWithString:options:completionHandler:")
     public static native void loadFromHTMLWithStringOptionsCompletionHandler(String string,

@@ -21,10 +21,25 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MKAnnotationViewDragState {
+    /**
+     * View is at rest, sitting on the map.
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * View is beginning to drag (e.g. pin lift)
+     */
     @Generated @NUInt public static final long Starting = 0x0000000000000001L;
+    /**
+     * View is dragging ("lift" animations are complete)
+     */
     @Generated @NUInt public static final long Dragging = 0x0000000000000002L;
+    /**
+     * View was not dragged and should return to its starting position (e.g. pin drop)
+     */
     @Generated @NUInt public static final long Canceling = 0x0000000000000003L;
+    /**
+     * View was dragged, new coordinate is set and view should return to resting position (e.g. pin drop)
+     */
     @Generated @NUInt public static final long Ending = 0x0000000000000004L;
 
     @Generated

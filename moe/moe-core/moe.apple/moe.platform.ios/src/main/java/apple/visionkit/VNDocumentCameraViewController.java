@@ -89,6 +89,9 @@ public class VNDocumentCameraViewController extends UIViewController {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * The delegate to be notified when the user saves or cancels
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -132,6 +135,9 @@ public class VNDocumentCameraViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Returns false for unsupported hardware
+     */
     @Generated
     @Selector("isSupported")
     public static native boolean isSupported();
@@ -158,10 +164,16 @@ public class VNDocumentCameraViewController extends UIViewController {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The delegate to be notified when the user saves or cancels
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) VNDocumentCameraViewControllerDelegate value);
 
+    /**
+     * The delegate to be notified when the user saves or cancels
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) VNDocumentCameraViewControllerDelegate value) {
         Object __old = delegate();

@@ -85,6 +85,10 @@ public class MPSNDArrayMultiaryGradientKernel extends MPSNDArrayMultiaryBase {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Gradient encode methods
+     * Inference encode calls.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:sourceGradient:gradientState:")
     public native MPSNDArray encodeToCommandBufferSourceArraysSourceGradientGradientState(
@@ -110,6 +114,9 @@ public class MPSNDArrayMultiaryGradientKernel extends MPSNDArrayMultiaryBase {
     @Selector("initWithCoder:")
     public native MPSNDArrayMultiaryGradientKernel initWithCoder(NSCoder aDecoder);
 
+    /**
+     * NSSecureCoding support
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNDArrayMultiaryGradientKernel initWithCoderDevice(NSCoder coder,
@@ -124,6 +131,13 @@ public class MPSNDArrayMultiaryGradientKernel extends MPSNDArrayMultiaryBase {
     public native MPSNDArrayMultiaryGradientKernel initWithDeviceSourceCount(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long count);
 
+    /**
+     * @abstract   Initialize a MPSNDArrayMultiaryKernel
+     * @param      device                The device on which the kernel will run
+     * @param      count                 The maximum number of NDArrays read by the kernel
+     * @param      sourceGradientIndex   The source index for which gradient will be calculated
+     * @return     A valid MPSNDArrayMultiaryKernel, or nil if allocation failure.
+     */
     @Generated
     @Selector("initWithDevice:sourceCount:sourceGradientIndex:")
     public native MPSNDArrayMultiaryGradientKernel initWithDeviceSourceCountSourceGradientIndex(

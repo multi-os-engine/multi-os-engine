@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A delete control (minus sign inside a circle) with default red color.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -44,6 +47,9 @@ public class UICellAccessoryDelete extends UICellAccessory {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * An optional handler to call when the delete accessory is tapped. If nil, a tap will reveal any trailing swipe actions for the cell.
+     */
     @Generated
     @Selector("actionHandler")
     @ObjCBlock(name = "call_actionHandler_ret")
@@ -70,6 +76,9 @@ public class UICellAccessoryDelete extends UICellAccessory {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * The background color to apply to the accessory. Default value is nil, which uses the system default.
+     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -148,6 +157,9 @@ public class UICellAccessoryDelete extends UICellAccessory {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * An optional handler to call when the delete accessory is tapped. If nil, a tap will reveal any trailing swipe actions for the cell.
+     */
     @Generated
     @Selector("setActionHandler:")
     public native void setActionHandler(@ObjCBlock(name = "call_setActionHandler") Block_setActionHandler value);
@@ -159,6 +171,9 @@ public class UICellAccessoryDelete extends UICellAccessory {
         void call_setActionHandler();
     }
 
+    /**
+     * The background color to apply to the accessory. Default value is nil, which uses the system default.
+     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);

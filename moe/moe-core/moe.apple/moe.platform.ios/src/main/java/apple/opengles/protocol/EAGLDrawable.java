@@ -24,15 +24,24 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * EAGLDrawable Interface
+ */
 @Generated
 @Library("OpenGLES")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("EAGLDrawable")
 public interface EAGLDrawable {
+    /**
+     * Contains keys from kEAGLDrawableProperty* above
+     */
     @Generated
     @Selector("drawableProperties")
     NSDictionary<String, ?> drawableProperties();
 
+    /**
+     * Contains keys from kEAGLDrawableProperty* above
+     */
     @Generated
     @Selector("setDrawableProperties:")
     void setDrawableProperties(NSDictionary<String, ?> value);

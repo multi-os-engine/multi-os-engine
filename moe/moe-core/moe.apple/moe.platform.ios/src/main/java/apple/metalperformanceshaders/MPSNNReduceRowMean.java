@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNReduceRowMean
+ * @discussion The MPSNNReduceRowMean performs a reduction operation returning the mean value for each row of an image
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -96,11 +100,23 @@ public class MPSNNReduceRowMean extends MPSNNReduceUnary {
     @Selector("initWithCoder:")
     public native MPSNNReduceRowMean initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion See @ref MPSKernel#initWithCoder.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
+     * @param      device      The MTLDevice on which to make the MPSCNNPooling
+     * @return     A new MPSNNReduceRowMean object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNNReduceRowMean initWithCoderDevice(NSCoder aDecoder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Specifies information to apply the reduction operation on an image.
+     * @param    device            The device the filter will run on
+     * @return     A valid MPSNNReduceRowMean object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSNNReduceRowMean initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);

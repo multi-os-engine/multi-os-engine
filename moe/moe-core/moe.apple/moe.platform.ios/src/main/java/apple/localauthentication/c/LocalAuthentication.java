@@ -37,10 +37,16 @@ public final class LocalAuthentication {
     private LocalAuthentication() {
     }
 
+    /**
+     * The maximum value for LAContext touchIDAuthenticationAllowableReuseDuration property.
+     */
     @Generated
     @CVariable()
     public static native double LATouchIDAuthenticationMaximumAllowableReuseDuration();
 
+    /**
+     * LocalAuthentication error domain.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -47,6 +47,9 @@ public final class SafariServices {
     @MappedReturn(ObjCStringMapper.class)
     public static native String SFContentBlockerErrorDomain();
 
+    /**
+     * domain for NSError
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

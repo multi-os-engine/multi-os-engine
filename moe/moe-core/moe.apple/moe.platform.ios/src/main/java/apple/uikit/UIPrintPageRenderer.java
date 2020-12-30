@@ -158,31 +158,52 @@ public class UIPrintPageRenderer extends NSObject {
     @Selector("addPrintFormatter:startingAtPageAtIndex:")
     public native void addPrintFormatterStartingAtPageAtIndex(UIPrintFormatter formatter, @NInt long pageIndex);
 
+    /**
+     * override point. default does nothing
+     */
     @Generated
     @Selector("drawContentForPageAtIndex:inRect:")
     public native void drawContentForPageAtIndexInRect(@NInt long pageIndex, @ByValue CGRect contentRect);
 
+    /**
+     * override point. default does nothing
+     */
     @Generated
     @Selector("drawFooterForPageAtIndex:inRect:")
     public native void drawFooterForPageAtIndexInRect(@NInt long pageIndex, @ByValue CGRect footerRect);
 
+    /**
+     * override point. default does nothing
+     */
     @Generated
     @Selector("drawHeaderForPageAtIndex:inRect:")
     public native void drawHeaderForPageAtIndexInRect(@NInt long pageIndex, @ByValue CGRect headerRect);
 
+    /**
+     * override point. may be called from non-main thread.  calls the various draw methods below.
+     */
     @Generated
     @Selector("drawPageAtIndex:inRect:")
     public native void drawPageAtIndexInRect(@NInt long pageIndex, @ByValue CGRect printableRect);
 
+    /**
+     * override point. calls each formatter to draw for that page. subclassers must call super.
+     */
     @Generated
     @Selector("drawPrintFormatter:forPageAtIndex:")
     public native void drawPrintFormatterForPageAtIndex(UIPrintFormatter printFormatter, @NInt long pageIndex);
 
+    /**
+     * bottom of contentRect from printableRect
+     */
     @Generated
     @Selector("footerHeight")
     @NFloat
     public native double footerHeight();
 
+    /**
+     * top of contentRect from printableRect
+     */
     @Generated
     @Selector("headerHeight")
     @NFloat
@@ -192,16 +213,25 @@ public class UIPrintPageRenderer extends NSObject {
     @Selector("init")
     public native UIPrintPageRenderer init();
 
+    /**
+     * override point. page count. default is maximum page count needed for all formatters or 0
+     */
     @Generated
     @Selector("numberOfPages")
     @NInt
     public native long numberOfPages();
 
+    /**
+     * complete paper rect. origin is (0,0)
+     */
     @Generated
     @Selector("paperRect")
     @ByValue
     public native CGRect paperRect();
 
+    /**
+     * override point. default does nothing. called before requesting a set of pages to draw
+     */
     @Generated
     @Selector("prepareForDrawingPages:")
     public native void prepareForDrawingPages(@ByValue NSRange range);
@@ -214,15 +244,24 @@ public class UIPrintPageRenderer extends NSObject {
     @Selector("printFormattersForPageAtIndex:")
     public native NSArray<? extends UIPrintFormatter> printFormattersForPageAtIndex(@NInt long pageIndex);
 
+    /**
+     * imageable area inside paper rect
+     */
     @Generated
     @Selector("printableRect")
     @ByValue
     public native CGRect printableRect();
 
+    /**
+     * bottom of contentRect from printableRect
+     */
     @Generated
     @Selector("setFooterHeight:")
     public native void setFooterHeight(@NFloat double value);
 
+    /**
+     * top of contentRect from printableRect
+     */
     @Generated
     @Selector("setHeaderHeight:")
     public native void setHeaderHeight(@NFloat double value);

@@ -18,6 +18,12 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * The format of a PostScript font subset. Type1 is documented in "Adobe
+ * Type 1 Font Format"; Type3 in "PostScript Language Reference, 3rd ed."
+ * and Type42 in "Adobe Technical Note 5012, The Type 42 Font Format
+ * Specification". 
+ */
 @Generated
 public final class CGFontPostScriptFormat {
     @Generated public static final int Type1 = 0x00000001;

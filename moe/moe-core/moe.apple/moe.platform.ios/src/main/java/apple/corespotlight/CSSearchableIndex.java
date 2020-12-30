@@ -124,6 +124,9 @@ public class CSSearchableIndex extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Not all devices support indexing.  Call this method to check if indexing is supported on the current device.
+     */
     @Generated
     @Selector("isIndexingAvailable")
     public static native boolean isIndexingAvailable();
@@ -163,30 +166,52 @@ public class CSSearchableIndex extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Begin a batch of index adds, updates, or deletes.
+     */
     @Generated
     @Selector("beginIndexBatch")
     public native void beginIndexBatch();
 
+    /**
+     * Call this method to delete all searchable items from the index.
+     */
     @Generated
     @Selector("deleteAllSearchableItemsWithCompletionHandler:")
     public native void deleteAllSearchableItemsWithCompletionHandler(
             @ObjCBlock(name = "call_deleteAllSearchableItemsWithCompletionHandler") Block_deleteAllSearchableItemsWithCompletionHandler completionHandler);
 
+    /**
+     * Call this method on the index to remove any items from the index with the given domain identifiers.
+     * The delete is recursive so if domain identifiers are of the form <account-id>.<mailbox-id>, for example,
+     * calling delete with <account-id> will delete all the searchable items with that account and any mailbox.
+     */
     @Generated
     @Selector("deleteSearchableItemsWithDomainIdentifiers:completionHandler:")
     public native void deleteSearchableItemsWithDomainIdentifiersCompletionHandler(NSArray<String> domainIdentifiers,
             @ObjCBlock(name = "call_deleteSearchableItemsWithDomainIdentifiersCompletionHandler") Block_deleteSearchableItemsWithDomainIdentifiersCompletionHandler completionHandler);
 
+    /**
+     * Call this method to remove items with the given identifiers from the index.
+     * Completion handlers will be called once the data has been journaled by the index.  If the completion handler returns an error, the client should retry, as it was not journaled correctly.
+     * reindexSearchableItemsWithIdentifiers will be called if the journaling completed successfully but the data was not able to be indexed for some reason.
+     */
     @Generated
     @Selector("deleteSearchableItemsWithIdentifiers:completionHandler:")
     public native void deleteSearchableItemsWithIdentifiersCompletionHandler(NSArray<String> identifiers,
             @ObjCBlock(name = "call_deleteSearchableItemsWithIdentifiersCompletionHandler") Block_deleteSearchableItemsWithIdentifiersCompletionHandler completionHandler);
 
+    /**
+     * End a batch passing in client state information to be persisted in the index.  The completion handler will be called once the client state has been persisted.
+     */
     @Generated
     @Selector("endIndexBatchWithClientState:completionHandler:")
     public native void endIndexBatchWithClientStateCompletionHandler(NSData clientState,
             @ObjCBlock(name = "call_endIndexBatchWithClientStateCompletionHandler") Block_endIndexBatchWithClientStateCompletionHandler completionHandler);
 
+    /**
+     * Async fetches the app's last stored client state information.
+     */
     @Generated
     @Selector("fetchLastClientStateWithCompletionHandler:")
     public native void fetchLastClientStateWithCompletionHandler(
@@ -197,6 +222,11 @@ public class CSSearchableIndex extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native CSSearchableIndexDelegate indexDelegate();
 
+    /**
+     * Call this method to add or update items in the index.
+     * Completion handlers will be called once the data has been journaled by the index.  If the completion handler returns an error, the client should retry, as it was not journaled correctly.
+     * reindexSearchableItemsWithIdentifiers will be called if the journaling completed successfully but the data was not able to be indexed for some reason.
+     */
     @Generated
     @Selector("indexSearchableItems:completionHandler:")
     public native void indexSearchableItemsCompletionHandler(NSArray<? extends CSSearchableItem> items,
@@ -206,10 +236,16 @@ public class CSSearchableIndex extends NSObject {
     @Selector("init")
     public native CSSearchableIndex init();
 
+    /**
+     * Apps can set a name for the index instance. This name is used as a handle for the client state used with the batch API, allowing a single client to have multiple client states; you have to retrieve the client state for an index instance with the same name as you used when setting the client state.
+     */
     @Generated
     @Selector("initWithName:")
     public native CSSearchableIndex initWithName(String name);
 
+    /**
+     * Apps can set a default protection class for items in their entitlements.  You can alternately create an instance with a custom protection class to use on iOS.  It should be one of NSFileProtectionComplete, NSFileProtectionCompleteUnlessOpen, or NSFileProtectionCompleteUntilFirstUserAuthentication.
+     */
     @Generated
     @Selector("initWithName:protectionClass:")
     public native CSSearchableIndex initWithNameProtectionClass(String name, String protectionClass);

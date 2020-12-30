@@ -18,6 +18,9 @@ package apple.corevideo.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Flags for the CVTimeStamp structure
+ */
 @Generated
 public final class CVTimeStampFlags {
     @Generated public static final long VideoTimeValid = 0x0000000000000001L;
@@ -25,9 +28,21 @@ public final class CVTimeStampFlags {
     @Generated public static final long SMPTETimeValid = 0x0000000000000004L;
     @Generated public static final long VideoRefreshPeriodValid = 0x0000000000000008L;
     @Generated public static final long RateScalarValid = 0x0000000000000010L;
+    /**
+     * There are flags for each field to make it easier to detect interlaced vs progressive output
+     */
     @Generated public static final long TopField = 0x0000000000010000L;
+    /**
+     * There are flags for each field to make it easier to detect interlaced vs progressive output
+     */
     @Generated public static final long BottomField = 0x0000000000020000L;
+    /**
+     * Some commonly used combinations of timestamp flags
+     */
     @Generated public static final long VideoHostTimeValid = 0x0000000000000003L;
+    /**
+     * Some commonly used combinations of timestamp flags
+     */
     @Generated public static final long IsInterlaced = 0x0000000000030000L;
 
     @Generated

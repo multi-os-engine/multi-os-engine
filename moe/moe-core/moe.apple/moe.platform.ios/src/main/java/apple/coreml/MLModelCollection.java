@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MLModelCollection
+ * 
+ * A collection of models managed as part of Core ML Model Deployment.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -59,6 +64,17 @@ public class MLModelCollection extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Request access to a model collection. If the collection is not downloaded on the device, it is requested
+     * from Core ML Model Deployment.
+     * 
+     * @discussion When called, this method downloads the model collection if it is not already on the device. Once
+     * all models are downloaded, an MLModelCollection instance is made available for use with the completion handler.
+     * 
+     * @param identifier The model collection identifier, as managed in Core ML Model Deployment.
+     * @param completionHandler The completion handler, invoked with a valid MLModelCollection instance on success or NSError on failure.
+     * @result NSProgress for updates during setup and download of the model collection
+     */
     @Generated
     @Selector("beginAccessingModelCollectionWithIdentifier:completionHandler:")
     public static native NSProgress beginAccessingModelCollectionWithIdentifierCompletionHandler(String identifier,
@@ -94,6 +110,9 @@ public class MLModelCollection extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * The identifier for the currently downloaded deployment, corresponding to a recent deployment on the Core ML Model Deployment dashboard.
+     */
     @Generated
     @Selector("deploymentID")
     public native String deploymentID();
@@ -102,6 +121,14 @@ public class MLModelCollection extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * End access to a model collection. This informs the system you have finished accessing the models within the collection.
+     * 
+     * @discussion Call this method as soon as you have finished using the models in this collection.
+     * 
+     * @param identifier The model collection identifier, as managed in Core ML Model Deployment.
+     * @param completionHandler The completion handler, invoked with YES on success or NSError on failure.
+     */
     @Generated
     @Selector("endAccessingModelCollectionWithIdentifier:completionHandler:")
     public static native void endAccessingModelCollectionWithIdentifierCompletionHandler(String identifier,
@@ -114,6 +141,9 @@ public class MLModelCollection extends NSObject {
         void call_endAccessingModelCollectionWithIdentifierCompletionHandler(boolean success, NSError error);
     }
 
+    /**
+     * Information about the models downloaded in the collection, or an empty dictionary if the collection has not been downloaded.
+     */
     @Generated
     @Selector("entries")
     public native NSDictionary<String, ? extends MLModelCollectionEntry> entries();
@@ -123,6 +153,9 @@ public class MLModelCollection extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The identifier of the model collection you want to access, as configured in the Core ML Model Deployment dashboard.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();

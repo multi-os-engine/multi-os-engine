@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents parsed SmartCard ATR.  Provides routine for parsing byte stream or NSData with binary ATR and accessors to parsed ATR parts.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -58,6 +61,9 @@ public class TKSmartCardATR extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Full ATR as string of bytes
+     */
     @Generated
     @Selector("bytes")
     public native NSData bytes();
@@ -93,10 +99,20 @@ public class TKSmartCardATR extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Just historical bytes of ATR, without Tck and interface bytes.
+     */
     @Generated
     @Selector("historicalBytes")
     public native NSData historicalBytes();
 
+    /**
+     * An array of TKCompactTLVRecord instances with TLV records parsed from historical bytes.  If historical bytes are
+     * not structured using Compact TLV encoding, nil is returned.
+     * @note In case that ATR historical bytes begin with 0x00, the last three bytes (status indicator) are automatically
+     *       appended into the returned records as if historical bytes would begin with 0x80 and 0x8 record is present
+     *       in historical bytes.
+     */
     @Generated
     @Selector("historicalRecords")
     public native NSArray<? extends TKCompactTLVRecord> historicalRecords();
@@ -105,10 +121,20 @@ public class TKSmartCardATR extends NSObject {
     @Selector("init")
     public native TKSmartCardATR init();
 
+    /**
+     * Parses ATR from binary data block
+     * @param bytes Data containing full valid ATR
+     * @return Parsed ATR instance, or nil when #bytes do not contain valid ATR.
+     */
     @Generated
     @Selector("initWithBytes:")
     public native TKSmartCardATR initWithBytes(NSData bytes);
 
+    /**
+     * Parses ATR from stream.
+     * @param source Provides one byte of ATR from the stream or -1 in case of an error
+     * @return Parsed ATR instance, or nil when #source method failed or an invalid ATR is detected
+     */
     @Generated
     @Selector("initWithSource:")
     public native TKSmartCardATR initWithSource(@ObjCBlock(name = "call_initWithSource") Block_initWithSource source);
@@ -133,10 +159,19 @@ public class TKSmartCardATR extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Retrieves interface group with specified index.
+     * @param index Index of the requested interface group.  Indexing conforms to ISO7816-3, i.e. starts from 1.
+     * @return Interface group with given index, or nil of no such group was present.
+     */
     @Generated
     @Selector("interfaceGroupAtIndex:")
     public native TKSmartCardATRInterfaceGroup interfaceGroupAtIndex(@NInt long index);
 
+    /**
+     * Retrieves interface group belonging to specified protocol.
+     * @param protocol Protocol number for which the interface group is requested.
+     */
     @Generated
     @Selector("interfaceGroupForProtocol:")
     public native TKSmartCardATRInterfaceGroup interfaceGroupForProtocol(@NUInt long protocol);
@@ -155,6 +190,9 @@ public class TKSmartCardATR extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Array of NSNumber of protocols indicated in ATR, in the correct order (i.e. the default protocol comes first), duplicates sorted out.
+     */
     @Generated
     @Selector("protocols")
     public native NSArray<? extends NSNumber> protocols();

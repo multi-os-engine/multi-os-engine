@@ -24,6 +24,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A touchpad is a touch-based two axis input with a notion of "touch state". It keeps track of
+ * whether the touchpad is actively being touched, and generates events based on a
+ * change in touch state.
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -56,6 +61,9 @@ public class GCControllerTouchpad extends GCControllerElement {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Button is the button built into the touch surface.
+     */
     @Generated
     @Selector("button")
     public native GCControllerButtonInput button();
@@ -122,6 +130,15 @@ public class GCControllerTouchpad extends GCControllerElement {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The touchpad can use the raw position values of its surface as D-pad values, or it can create a virtual dpad centered around the first contact point with the surface.
+     * 
+     * If NO; a smaller sliding window is created around the initial touch point and subsequent movement is relative to that center. Movement outside the window will slide the window with it to re-center it. This is great for surfaces where there is no clear sense of a middle and drift over time is an issue.
+     * 
+     * If YES; the absolute values are used and any drift will have to managed manually either through user traning or by a developer using the dpad.
+     * 
+     * The default value for this property is YES, meaning the touch surface's raw positional values are reported.
+     */
     @Generated
     @Selector("reportsAbsoluteTouchSurfaceValues")
     public native boolean reportsAbsoluteTouchSurfaceValues();
@@ -134,10 +151,22 @@ public class GCControllerTouchpad extends GCControllerElement {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The touchpad can use the raw position values of its surface as D-pad values, or it can create a virtual dpad centered around the first contact point with the surface.
+     * 
+     * If NO; a smaller sliding window is created around the initial touch point and subsequent movement is relative to that center. Movement outside the window will slide the window with it to re-center it. This is great for surfaces where there is no clear sense of a middle and drift over time is an issue.
+     * 
+     * If YES; the absolute values are used and any drift will have to managed manually either through user traning or by a developer using the dpad.
+     * 
+     * The default value for this property is YES, meaning the touch surface's raw positional values are reported.
+     */
     @Generated
     @Selector("setReportsAbsoluteTouchSurfaceValues:")
     public native void setReportsAbsoluteTouchSurfaceValues(boolean value);
 
+    /**
+     * Called when a touch event begins on the touchpad.
+     */
     @Generated
     @Selector("setTouchDown:")
     public native void setTouchDown(@ObjCBlock(name = "call_setTouchDown") Block_setTouchDown value);
@@ -150,6 +179,9 @@ public class GCControllerTouchpad extends GCControllerElement {
                 boolean buttonPressed);
     }
 
+    /**
+     * Called when a touch event continues on the touchpad, but not when it begins or ends.
+     */
     @Generated
     @Selector("setTouchMoved:")
     public native void setTouchMoved(@ObjCBlock(name = "call_setTouchMoved") Block_setTouchMoved value);
@@ -162,6 +194,9 @@ public class GCControllerTouchpad extends GCControllerElement {
                 boolean buttonPressed);
     }
 
+    /**
+     * Called when a touch event ends on the touchpad.
+     */
     @Generated
     @Selector("setTouchUp:")
     public native void setTouchUp(@ObjCBlock(name = "call_setTouchUp") Block_setTouchUp value);
@@ -174,6 +209,13 @@ public class GCControllerTouchpad extends GCControllerElement {
                 boolean buttonPressed);
     }
 
+    /**
+     * Sets the normalized value for the touchpad's axes, as well as its current touch and button state.
+     * 
+     * @note If the controller's snapshot flag is set to NO, this method has no effect.
+     * @see touchSurface
+     * @see touchState
+     */
     @Generated
     @Selector("setValueForXAxis:yAxis:touchDown:buttonValue:")
     public native void setValueForXAxisYAxisTouchDownButtonValue(float xAxis, float yAxis, boolean touchDown,
@@ -187,6 +229,9 @@ public class GCControllerTouchpad extends GCControllerElement {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Called when a touch event begins on the touchpad.
+     */
     @Generated
     @Selector("touchDown")
     @ObjCBlock(name = "call_touchDown_ret")
@@ -200,6 +245,9 @@ public class GCControllerTouchpad extends GCControllerElement {
                 boolean buttonPressed);
     }
 
+    /**
+     * Called when a touch event continues on the touchpad, but not when it begins or ends.
+     */
     @Generated
     @Selector("touchMoved")
     @ObjCBlock(name = "call_touchMoved_ret")
@@ -213,15 +261,29 @@ public class GCControllerTouchpad extends GCControllerElement {
                 boolean buttonPressed);
     }
 
+    /**
+     * Indicates the current state of the touch event on the touchpad.
+     */
     @Generated
     @Selector("touchState")
     @NInt
     public native long touchState();
 
+    /**
+     * The touch surface is a 2-axis control that represents the position of a touch event on the touchpad.
+     * 
+     * The axes will indicate the most recent touch position - a non-zero value does not indicate that the
+     * surface is being touched, and a value of (0, 0) does not indicate the surface is not being touched.
+     * 
+     * @see touchState - Should be polled in conjunction with touchSurface to determine if values are valid
+     */
     @Generated
     @Selector("touchSurface")
     public native GCControllerDirectionPad touchSurface();
 
+    /**
+     * Called when a touch event ends on the touchpad.
+     */
     @Generated
     @Selector("touchUp")
     @ObjCBlock(name = "call_touchUp_ret")

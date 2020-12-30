@@ -36,10 +36,16 @@ public final class IntentsUI {
     private IntentsUI() {
     }
 
+    /**
+     * ! Project version number for IntentsUI.
+     */
     @Generated
     @CVariable()
     public static native double IntentsUIVersionNumber();
 
+    /**
+     * ! Project version string for IntentsUI.
+     */
     @Generated
     @CVariable()
     public static native ConstBytePtr IntentsUIVersionString();

@@ -164,6 +164,9 @@ public class INCancelWorkoutIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INCancelWorkoutIntent initWithCoder(NSCoder coder);
 
+    /**
+     * Designated initializer. The `workoutName` can use `INWorkoutNameIdentifier` as its `identifier` parameter.
+     */
     @Generated
     @Selector("initWithWorkoutName:")
     public native INCancelWorkoutIntent initWithWorkoutName(INSpeakableString workoutName);

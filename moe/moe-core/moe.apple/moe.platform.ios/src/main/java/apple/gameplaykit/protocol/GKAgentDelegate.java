@@ -25,11 +25,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Delegate that will receive messages regarding GKAgent updates.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKAgentDelegate")
 public interface GKAgentDelegate {
+    /**
+     * Called after [GKAgent updateWithDeltaTime:] is called each frame.
+     */
     @Generated
     @IsOptional
     @Selector("agentDidUpdate:")
@@ -37,6 +43,9 @@ public interface GKAgentDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called before [GKAgent updateWithDeltaTime:] is called each frame.
+     */
     @Generated
     @IsOptional
     @Selector("agentWillUpdate:")

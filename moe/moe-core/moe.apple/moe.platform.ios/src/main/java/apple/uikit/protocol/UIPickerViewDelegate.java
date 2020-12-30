@@ -34,6 +34,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPickerViewDelegate")
 public interface UIPickerViewDelegate {
+    /**
+     * attributed title is favored if both methods are implemented
+     */
     @Generated
     @IsOptional
     @Selector("pickerView:attributedTitleForRow:forComponent:")
@@ -57,6 +60,11 @@ public interface UIPickerViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * these methods return either a plain NSString, a NSAttributedString, or a view (e.g UILabel) to display the row for the component.
+     * for the view versions, we cache any hidden and thus unused views and pass them back for reuse.
+     * If you return back a different object, the old one will be released. the view will be centered in the row rect
+     */
     @Generated
     @IsOptional
     @Selector("pickerView:titleForRow:forComponent:")
@@ -72,6 +80,9 @@ public interface UIPickerViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * returns width of column and height of row for each component.
+     */
     @Generated
     @IsOptional
     @Selector("pickerView:widthForComponent:")

@@ -217,10 +217,17 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @NUInt
     public native long maxTessellationFactor();
 
+    /**
+     * @method reset
+     * @abstract Restore all pipeline descriptor properties to their default values.
+     */
     @Generated
     @Selector("reset")
     public native void reset();
 
+    /**
+     * DEPRECATED - aliases rasterSampleCount property
+     */
     @Generated
     @Selector("sampleCount")
     @NUInt
@@ -242,6 +249,9 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("setMaxTessellationFactor:")
     public native void setMaxTessellationFactor(@NUInt long value);
 
+    /**
+     * DEPRECATED - aliases rasterSampleCount property
+     */
     @Generated
     @Selector("setSampleCount:")
     public native void setSampleCount(@NUInt long value);
@@ -360,10 +370,22 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("supportIndirectCommandBuffers")
     public native boolean supportIndirectCommandBuffers();
 
+    /**
+     * @property binaryArchives
+     * @abstract The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
+     * @discussion Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * @see MTLBinaryArchive
+     */
     @Generated
     @Selector("binaryArchives")
     public native NSArray<?> binaryArchives();
 
+    /**
+     * @property binaryArchives
+     * @abstract The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
+     * @discussion Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * @see MTLBinaryArchive
+     */
     @Generated
     @Selector("setBinaryArchives:")
     public native void setBinaryArchives(NSArray<?> value);

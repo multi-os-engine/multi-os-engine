@@ -43,6 +43,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The Monte Carlo Strategist is a generic AI that selects a game model update for a given player that results
+ * in the highest likelihood for that player to eventually win the game. It does this by sampling the updates available
+ * to the player in question. In doing this it will select the update it knows to produce the best result so far, expanding on this
+ * selection, simulating the rest of the game from that expansion, and then propogating the results (win or loss) upwards.
+ * It will do this until the budget has been reached, then returning the choice it has deemed best suited for the player in question.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -159,11 +166,17 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @MappedReturn(ObjCObjectMapper.class)
     public native GKGameModelUpdate bestMoveForActivePlayer();
 
+    /**
+     * The maximum number of samples that will be processed when searching for a move.
+     */
     @Generated
     @Selector("budget")
     @NUInt
     public native long budget();
 
+    /**
+     * A weight that encourages exploration of less visited updates versus the continued exploitation of previously visited updates.
+     */
     @Generated
     @Selector("explorationParameter")
     @NUInt
@@ -183,10 +196,16 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @MappedReturn(ObjCObjectMapper.class)
     public native GKRandom randomSource();
 
+    /**
+     * The maximum number of samples that will be processed when searching for a move.
+     */
     @Generated
     @Selector("setBudget:")
     public native void setBudget(@NUInt long value);
 
+    /**
+     * A weight that encourages exploration of less visited updates versus the continued exploitation of previously visited updates.
+     */
     @Generated
     @Selector("setExplorationParameter:")
     public native void setExplorationParameter(@NUInt long value);

@@ -6,6 +6,9 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 
+/**
+ * @brief The base protocol to which analysis results conform
+ */
 @Generated
 @Library("SoundAnalysis")
 @Runtime(ObjCRuntime.class)

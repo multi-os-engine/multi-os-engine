@@ -23,6 +23,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract   A node representing a MPSCNNNeuronGeLU kernel
+ * @discussion For each pixel, applies the following function:
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -90,6 +94,12 @@ public class MPSCNNNeuronGeLUNode extends MPSCNNNeuronNode {
     @Selector("init")
     public native MPSCNNNeuronGeLUNode init();
 
+    /**
+     * @abstract   Init a node representing a MPSCNNNeuronGeLU kernel
+     * @discussion For each pixel, applies the following function:
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @return     A new MPSNNFilter node for a MPSCNNNeuronLogarithm kernel.
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNNeuronGeLUNode initWithSource(MPSNNImageNode sourceNode);
@@ -121,6 +131,9 @@ public class MPSCNNNeuronGeLUNode extends MPSCNNNeuronNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract Create an autoreleased node
+     */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSCNNNeuronGeLUNode nodeWithSource(MPSNNImageNode sourceNode);

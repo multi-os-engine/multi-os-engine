@@ -94,6 +94,10 @@ public class MPNowPlayingInfoCenter extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Returns the default now playing info center.
+     * The default center holds now playing info about the current application.
+     */
     @Generated
     @Selector("defaultCenter")
     public static native MPNowPlayingInfoCenter defaultCenter();
@@ -159,19 +163,41 @@ public class MPNowPlayingInfoCenter extends NSObject {
     @Selector("init")
     public native MPNowPlayingInfoCenter init();
 
+    /**
+     * The current now playing info for the center.
+     * Setting the info to nil will clear it.
+     */
     @Generated
     @Selector("nowPlayingInfo")
     public native NSDictionary<String, ?> nowPlayingInfo();
 
+    /**
+     * The current now playing info for the center.
+     * Setting the info to nil will clear it.
+     */
     @Generated
     @Selector("setNowPlayingInfo:")
     public native void setNowPlayingInfo(NSDictionary<String, ?> value);
 
+    /**
+     * The current playback state of the app.
+     * This only applies on macOS, where playback state cannot be determined by
+     * the application's audio session. This property must be set every time
+     * the app begins or halts playback, otherwise remote control functionality may
+     * not work as expected.
+     */
     @Generated
     @Selector("playbackState")
     @NUInt
     public native long playbackState();
 
+    /**
+     * The current playback state of the app.
+     * This only applies on macOS, where playback state cannot be determined by
+     * the application's audio session. This property must be set every time
+     * the app begins or halts playback, otherwise remote control functionality may
+     * not work as expected.
+     */
     @Generated
     @Selector("setPlaybackState:")
     public native void setPlaybackState(@NUInt long value);

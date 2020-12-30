@@ -23,6 +23,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * User interaction for the secure PIN change on the SmartCard reader.
+ * @note Result is available after the interaction has been successfully completed.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -37,6 +41,10 @@ public class TKSmartCardUserInteractionForSecurePINChange extends TKSmartCardUse
         super(peer);
     }
 
+    /**
+     * Bitmask specifying whether PIN confirmation should be requested.
+     * @note Default value: TKSmartCardPINConfirmationNone
+     */
     @Generated
     @Selector("PINConfirmation")
     @NUInt
@@ -130,6 +138,10 @@ public class TKSmartCardUserInteractionForSecurePINChange extends TKSmartCardUse
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Bitmask specifying whether PIN confirmation should be requested.
+     * @note Default value: TKSmartCardPINConfirmationNone
+     */
     @Generated
     @Selector("setPINConfirmation:")
     public native void setPINConfirmation(@NUInt long value);

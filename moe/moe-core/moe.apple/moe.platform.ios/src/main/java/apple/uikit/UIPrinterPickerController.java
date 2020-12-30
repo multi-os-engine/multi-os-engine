@@ -134,6 +134,13 @@ public class UIPrinterPickerController extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method     printerPickerControllerWithInitiallySelectedPrinter:
+     * @discussion This method returns a printer picker controller object for showing the
+     *             UI that allows the user to select a printer. This is only used with the
+     *             UIPrintInteractionController's printWithoutUIToPrinter: method.
+     *             If no printer should be preselected, use a value of nil for the parameter.
+     */
     @Generated
     @Selector("printerPickerControllerWithInitiallySelectedPrinter:")
     public static native UIPrinterPickerController printerPickerControllerWithInitiallySelectedPrinter(
@@ -173,22 +180,35 @@ public class UIPrinterPickerController extends NSObject {
     @Selector("init")
     public native UIPrinterPickerController init();
 
+    /**
+     * iPhone
+     */
     @Generated
     @Selector("presentAnimated:completionHandler:")
     public native boolean presentAnimatedCompletionHandler(boolean animated,
             @ObjCBlock(name = "call_presentAnimatedCompletionHandler") Block_presentAnimatedCompletionHandler completion);
 
+    /**
+     * iPad
+     */
     @Generated
     @Selector("presentFromBarButtonItem:animated:completionHandler:")
     public native boolean presentFromBarButtonItemAnimatedCompletionHandler(UIBarButtonItem item, boolean animated,
             @ObjCBlock(name = "call_presentFromBarButtonItemAnimatedCompletionHandler") Block_presentFromBarButtonItemAnimatedCompletionHandler completion);
 
+    /**
+     * iPad
+     */
     @Generated
     @Selector("presentFromRect:inView:animated:completionHandler:")
     public native boolean presentFromRectInViewAnimatedCompletionHandler(@ByValue CGRect rect, UIView view,
             boolean animated,
             @ObjCBlock(name = "call_presentFromRectInViewAnimatedCompletionHandler") Block_presentFromRectInViewAnimatedCompletionHandler completion);
 
+    /**
+     * @discussion	The selected printer. Set this before presenting the UI to show the currently
+     * 	        selected printer. Use this to determine which printer the user selected.
+     */
     @Generated
     @Selector("selectedPrinter")
     public native UIPrinter selectedPrinter();

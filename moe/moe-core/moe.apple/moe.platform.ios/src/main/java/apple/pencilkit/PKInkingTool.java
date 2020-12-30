@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A tool for drawing on a PKCanvasView.
+ */
 @Generated
 @Library("PencilKit")
 @Runtime(ObjCRuntime.class)
@@ -79,6 +82,17 @@ public class PKInkingTool extends PKTool {
     @Selector("color")
     public native UIColor color();
 
+    /**
+     * Converts a color from one user interface style to another.
+     * 
+     * A dark color in a light user interface style is converted to a lighter color in a
+     * dark user interface style. This conversion is not guaranteed to roundtrip losslessly, or to
+     * be consistent between different OS versions.
+     * 
+     * @param color The color to convert
+     * @param fromUserInterfaceStyle The user interface style to convert the color from.
+     * @param toUserInterfaceStyle The user interface style to convert the color to.
+     */
     @Generated
     @Selector("convertColor:fromUserInterfaceStyle:to:")
     public static native UIColor convertColorFromUserInterfaceStyleTo(UIColor color, @NInt long fromUserInterfaceStyle,
@@ -88,6 +102,9 @@ public class PKInkingTool extends PKTool {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * The default width for an ink of a type.
+     */
     @Generated
     @Selector("defaultWidthForInkType:")
     @NFloat
@@ -114,6 +131,9 @@ public class PKInkingTool extends PKTool {
     @Selector("initWithInkType:color:width:")
     public native PKInkingTool initWithInkTypeColorWidth(String type, UIColor color, @NFloat double width);
 
+    /**
+     * The type of ink, eg. pen, pencil...
+     */
     @Generated
     @Selector("inkType")
     public native String inkType();
@@ -139,11 +159,17 @@ public class PKInkingTool extends PKTool {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The maximum width for an ink of a type.
+     */
     @Generated
     @Selector("maximumWidthForInkType:")
     @NFloat
     public static native double maximumWidthForInkType(String inkType);
 
+    /**
+     * The minimum width for an ink of a type.
+     */
     @Generated
     @Selector("minimumWidthForInkType:")
     @NFloat
@@ -176,15 +202,27 @@ public class PKInkingTool extends PKTool {
     @NInt
     public static native long version_static();
 
+    /**
+     * The base width of the ink.
+     */
     @Generated
     @Selector("width")
     @NFloat
     public native double width();
 
+    /**
+     * Create a new inking tool for the provided ink.
+     * 
+     * @param ink The ink to use.
+     * @param width The width of stroke to create.
+     */
     @Generated
     @Selector("initWithInk:width:")
     public native PKInkingTool initWithInkWidth(PKInk ink, @NFloat double width);
 
+    /**
+     * The ink that this tool will create strokes with.
+     */
     @Generated
     @Selector("ink")
     public native PKInk ink();

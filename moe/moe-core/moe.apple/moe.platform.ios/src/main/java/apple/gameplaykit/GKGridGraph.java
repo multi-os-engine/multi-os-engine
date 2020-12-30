@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A collection of GKGraphNodes that are governed by a 2D Cartesian grid
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -156,23 +159,40 @@ public class GKGridGraph<_NodeType> extends GKGraph {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns the class of the specified generic index
+     */
     @Generated
     @Selector("classForGenericArgumentAtIndex:")
     public native Class classForGenericArgumentAtIndex(@NUInt long index);
 
+    /**
+     * Connects the given GKGridGraphNode to this graph by connecting it to it's adjacent nodes on the grid
+     * Input node must have coordinates within the rectangle specified by minCoordinates and maxCoordinates
+     * @param node the node to be connected
+     */
     @Generated
     @Selector("connectNodeToAdjacentNodes:")
     public native void connectNodeToAdjacentNodes(GKGridGraphNode node);
 
+    /**
+     * Returns YES if this grid is also connected via it's diagonal directions rather than only it's cardinal directions
+     */
     @Generated
     @Selector("diagonalsAllowed")
     public native boolean diagonalsAllowed();
 
+    /**
+     * The height of the 2D Cartesian grid this graph represents
+     */
     @Generated
     @Selector("gridHeight")
     @NUInt
     public native long gridHeight();
 
+    /**
+     * The width of the 2D Cartesian grid this graph represents
+     */
     @Generated
     @Selector("gridWidth")
     @NUInt

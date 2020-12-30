@@ -3,6 +3,9 @@ package apple.arkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Constants indicating the confidence level of per-pixel depth data.
+ */
 @Generated
 public final class ARConfidenceLevel {
     @Generated

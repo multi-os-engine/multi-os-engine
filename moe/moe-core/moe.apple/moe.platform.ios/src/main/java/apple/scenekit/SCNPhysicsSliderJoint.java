@@ -44,6 +44,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNPhysicsSliderJoint
+ * @abstract SCNPhysicsSliderJoint provides a linear sliding joint between two bodies.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -124,11 +128,19 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Initializes and returns a physics slider joint.
+     * The joint attaches "body" to the 3d location specified by "anchor" and relative to the node that owns the body.
+     */
     @Generated
     @Selector("jointWithBody:axis:anchor:")
     public static native SCNPhysicsSliderJoint jointWithBodyAxisAnchor(SCNPhysicsBody body, @ByValue SCNVector3 axis,
             @ByValue SCNVector3 anchor);
 
+    /**
+     * Initializes and returns a physics slider joint.
+     * The joint attaches bodyA and bodyB on anchorA and anchorB respectively.
+     */
     @Generated
     @Selector("jointWithBodyA:axisA:anchorA:bodyB:axisB:anchorB:")
     public static native SCNPhysicsSliderJoint jointWithBodyAAxisAAnchorABodyBAxisBAnchorB(SCNPhysicsBody bodyA,
@@ -170,30 +182,48 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     @NInt
     public static native long version_static();
 
+    /**
+     * the attach point of bodyA
+     */
     @Generated
     @Selector("anchorA")
     @ByValue
     public native SCNVector3 anchorA();
 
+    /**
+     * the attach point of bodyB
+     */
     @Generated
     @Selector("anchorB")
     @ByValue
     public native SCNVector3 anchorB();
 
+    /**
+     * the axis on which bodyA can slide
+     */
     @Generated
     @Selector("axisA")
     @ByValue
     public native SCNVector3 axisA();
 
+    /**
+     * the axis on which bodyB can slide
+     */
     @Generated
     @Selector("axisB")
     @ByValue
     public native SCNVector3 axisB();
 
+    /**
+     * the first body attached to the slider joint
+     */
     @Generated
     @Selector("bodyA")
     public native SCNPhysicsBody bodyA();
 
+    /**
+     * the second body attached to the slider joint
+     */
     @Generated
     @Selector("bodyB")
     public native SCNPhysicsBody bodyB();
@@ -221,6 +251,9 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     @NFloat
     public native double minimumAngularLimit();
 
+    /**
+     * The minimum and maximum linear/angular limits in radians
+     */
     @Generated
     @Selector("minimumLinearLimit")
     @NFloat
@@ -241,23 +274,38 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     @NFloat
     public native double motorTargetAngularVelocity();
 
+    /**
+     * Linear and angular motors in newtons
+     */
     @Generated
     @Selector("motorTargetLinearVelocity")
     @NFloat
     public native double motorTargetLinearVelocity();
 
+    /**
+     * the attach point of bodyA
+     */
     @Generated
     @Selector("setAnchorA:")
     public native void setAnchorA(@ByValue SCNVector3 value);
 
+    /**
+     * the attach point of bodyB
+     */
     @Generated
     @Selector("setAnchorB:")
     public native void setAnchorB(@ByValue SCNVector3 value);
 
+    /**
+     * the axis on which bodyA can slide
+     */
     @Generated
     @Selector("setAxisA:")
     public native void setAxisA(@ByValue SCNVector3 value);
 
+    /**
+     * the axis on which bodyB can slide
+     */
     @Generated
     @Selector("setAxisB:")
     public native void setAxisB(@ByValue SCNVector3 value);
@@ -274,6 +322,9 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     @Selector("setMinimumAngularLimit:")
     public native void setMinimumAngularLimit(@NFloat double value);
 
+    /**
+     * The minimum and maximum linear/angular limits in radians
+     */
     @Generated
     @Selector("setMinimumLinearLimit:")
     public native void setMinimumLinearLimit(@NFloat double value);
@@ -290,6 +341,9 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     @Selector("setMotorTargetAngularVelocity:")
     public native void setMotorTargetAngularVelocity(@NFloat double value);
 
+    /**
+     * Linear and angular motors in newtons
+     */
     @Generated
     @Selector("setMotorTargetLinearVelocity:")
     public native void setMotorTargetLinearVelocity(@NFloat double value);

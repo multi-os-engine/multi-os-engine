@@ -395,28 +395,46 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * The background image will be tiled to fit, even if it was not created via the UIImage resizableImage methods.
+     */
     @Generated
     @Selector("backgroundImage")
     public native UIImage backgroundImage();
 
+    /**
+     * Valid bar styles are UIBarStyleDefault (default) and UIBarStyleBlack.
+     */
     @Generated
     @Selector("barStyle")
     @NInt
     public native long barStyle();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("barTintColor")
     public native UIColor barTintColor();
 
+    /**
+     * list all items that can be reordered. always animates a sheet up. visible items not listed are fixed in place
+     */
     @Generated
     @Selector("beginCustomizingItems:")
     public native void beginCustomizingItems(NSArray<? extends UITabBarItem> items);
 
+    /**
+     * weak reference. default is nil
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UITabBarDelegate delegate();
 
+    /**
+     * hide customization sheet. normally you should let the user do it. check list of items to see new layout. returns YES if layout changed
+     */
     @Generated
     @Selector("endCustomizingAnimated:")
     public native boolean endCustomizingAnimated(boolean animated);
@@ -437,62 +455,137 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
     @Selector("isCustomizing")
     public native boolean isCustomizing();
 
+    /**
+     * Default is YES.
+     * You may force an opaque background by setting the property to NO.
+     * If the tab bar has a custom background image, the default is inferred from the alpha
+     * values of the image—YES if it has any pixel with alpha < 1.0
+     * If you send setTranslucent:YES to a tab bar with an opaque custom background image
+     * the tab bar will apply a system opacity less than 1.0 to the image.
+     * If you send setTranslucent:NO to a tab bar with a translucent custom background image
+     * the tab bar will provide an opaque background for the image using the bar's barTintColor if defined, or black
+     * for UIBarStyleBlack or white for UIBarStyleDefault if barTintColor is nil.
+     */
     @Generated
     @Selector("isTranslucent")
     public native boolean isTranslucent();
 
+    /**
+     * Default is YES.
+     * You may force an opaque background by setting the property to NO.
+     * If the tab bar has a custom background image, the default is inferred from the alpha
+     * values of the image—YES if it has any pixel with alpha < 1.0
+     * If you send setTranslucent:YES to a tab bar with an opaque custom background image
+     * the tab bar will apply a system opacity less than 1.0 to the image.
+     * If you send setTranslucent:NO to a tab bar with a translucent custom background image
+     * the tab bar will provide an opaque background for the image using the bar's barTintColor if defined, or black
+     * for UIBarStyleBlack or white for UIBarStyleDefault if barTintColor is nil.
+     */
     @Generated
     @Selector("setTranslucent:")
     public native void setTranslucent(boolean value);
 
+    /**
+     * Default is UITabBarItemPositioningAutomatic. The tab bar items fill horizontally
+     * for the iPhone user interface idiom, and are centered with a default width and 
+     * inter-item spacing (customizable with the itemWidth and itemSpacing
+     * properties) for the iPad idiom. When the tab bar is owned by a UITabBarController
+     * further heuristics may determine the positioning for UITabBarItemPositioningAutomatic.
+     *    Use UITabBarItemPositioningFill to force the items to fill horizontally.
+     *    Use UITabBarItemPositioningCenter to force the items to center with a default
+     * width (or the itemWidth, if set).
+     */
     @Generated
     @Selector("itemPositioning")
     @NInt
     public native long itemPositioning();
 
+    /**
+     * Set the itemSpacing to a positive value to be used between tab bar items
+     * when they are positioned as a centered group.
+     * Default of 0 or values less than 0 will be interpreted as a system-defined spacing.
+     */
     @Generated
     @Selector("itemSpacing")
     @NFloat
     public native double itemSpacing();
 
+    /**
+     * Set the itemWidth to a positive value to be used as the width for tab bar items
+     * when they are positioned as a centered group (as opposed to filling the tab bar).
+     * Default of 0 or values less than 0 will be interpreted as a system-defined width.
+     */
     @Generated
     @Selector("itemWidth")
     @NFloat
     public native double itemWidth();
 
+    /**
+     * get/set visible UITabBarItems. default is nil. changes not animated. shown in order
+     */
     @Generated
     @Selector("items")
     public native NSArray<? extends UITabBarItem> items();
 
+    /**
+     * selectedImageTintColor will be applied to the gradient image used when creating the
+     * selected image. Default is nil and will result in the system bright blue for selected
+     * tab item images. If you wish to also customize the unselected image appearance, you must
+     * use the image and selectedImage properties on UITabBarItem along with UIImageRenderingModeAlways
+     * 
+     * Deprecated in iOS 8.0. On iOS 7.0 and later the selected image takes its color from the
+     * inherited tintColor of the UITabBar, which may be set separately if necessary.
+     */
     @Generated
     @Deprecated
     @Selector("selectedImageTintColor")
     public native UIColor selectedImageTintColor();
 
+    /**
+     * will show feedback based on mode. default is nil
+     */
     @Generated
     @Selector("selectedItem")
     public native UITabBarItem selectedItem();
 
+    /**
+     * The selection indicator image is drawn on top of the tab bar, behind the bar item icon.
+     */
     @Generated
     @Selector("selectionIndicatorImage")
     public native UIImage selectionIndicatorImage();
 
+    /**
+     * The background image will be tiled to fit, even if it was not created via the UIImage resizableImage methods.
+     */
     @Generated
     @Selector("setBackgroundImage:")
     public native void setBackgroundImage(UIImage value);
 
+    /**
+     * Valid bar styles are UIBarStyleDefault (default) and UIBarStyleBlack.
+     */
     @Generated
     @Selector("setBarStyle:")
     public native void setBarStyle(@NInt long value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setBarTintColor:")
     public native void setBarTintColor(UIColor value);
 
+    /**
+     * weak reference. default is nil
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITabBarDelegate value);
 
+    /**
+     * weak reference. default is nil
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UITabBarDelegate value) {
         Object __old = delegate();
@@ -505,35 +598,76 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
         }
     }
 
+    /**
+     * Default is UITabBarItemPositioningAutomatic. The tab bar items fill horizontally
+     * for the iPhone user interface idiom, and are centered with a default width and 
+     * inter-item spacing (customizable with the itemWidth and itemSpacing
+     * properties) for the iPad idiom. When the tab bar is owned by a UITabBarController
+     * further heuristics may determine the positioning for UITabBarItemPositioningAutomatic.
+     *    Use UITabBarItemPositioningFill to force the items to fill horizontally.
+     *    Use UITabBarItemPositioningCenter to force the items to center with a default
+     * width (or the itemWidth, if set).
+     */
     @Generated
     @Selector("setItemPositioning:")
     public native void setItemPositioning(@NInt long value);
 
+    /**
+     * Set the itemSpacing to a positive value to be used between tab bar items
+     * when they are positioned as a centered group.
+     * Default of 0 or values less than 0 will be interpreted as a system-defined spacing.
+     */
     @Generated
     @Selector("setItemSpacing:")
     public native void setItemSpacing(@NFloat double value);
 
+    /**
+     * Set the itemWidth to a positive value to be used as the width for tab bar items
+     * when they are positioned as a centered group (as opposed to filling the tab bar).
+     * Default of 0 or values less than 0 will be interpreted as a system-defined width.
+     */
     @Generated
     @Selector("setItemWidth:")
     public native void setItemWidth(@NFloat double value);
 
+    /**
+     * get/set visible UITabBarItems. default is nil. changes not animated. shown in order
+     */
     @Generated
     @Selector("setItems:")
     public native void setItems(NSArray<? extends UITabBarItem> value);
 
+    /**
+     * will fade in or out or reorder and adjust spacing
+     */
     @Generated
     @Selector("setItems:animated:")
     public native void setItemsAnimated(NSArray<? extends UITabBarItem> items, boolean animated);
 
+    /**
+     * selectedImageTintColor will be applied to the gradient image used when creating the
+     * selected image. Default is nil and will result in the system bright blue for selected
+     * tab item images. If you wish to also customize the unselected image appearance, you must
+     * use the image and selectedImage properties on UITabBarItem along with UIImageRenderingModeAlways
+     * 
+     * Deprecated in iOS 8.0. On iOS 7.0 and later the selected image takes its color from the
+     * inherited tintColor of the UITabBar, which may be set separately if necessary.
+     */
     @Generated
     @Deprecated
     @Selector("setSelectedImageTintColor:")
     public native void setSelectedImageTintColor(UIColor value);
 
+    /**
+     * will show feedback based on mode. default is nil
+     */
     @Generated
     @Selector("setSelectedItem:")
     public native void setSelectedItem_unsafe(UITabBarItem value);
 
+    /**
+     * will show feedback based on mode. default is nil
+     */
     @Generated
     public void setSelectedItem(UITabBarItem value) {
         Object __old = selectedItem();
@@ -546,30 +680,55 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
         }
     }
 
+    /**
+     * The selection indicator image is drawn on top of the tab bar, behind the bar item icon.
+     */
     @Generated
     @Selector("setSelectionIndicatorImage:")
     public native void setSelectionIndicatorImage(UIImage value);
 
+    /**
+     * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom shadow to be shown, a custom background image must also be set with -setBackgroundImage: (if the default background image is used, the default shadow image will be used).
+     */
     @Generated
     @Selector("setShadowImage:")
     public native void setShadowImage(UIImage value);
 
+    /**
+     * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
+     * and behaves as described for the tintColor property added to UIView.
+     * To tint the bar's background, please use -barTintColor.
+     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
+    /**
+     * Unselected items in this tab bar will be tinted with this color. Setting this value to nil indicates that UITabBar should use its default value instead.
+     */
     @Generated
     @Selector("setUnselectedItemTintColor:")
     public native void setUnselectedItemTintColor(UIColor value);
 
+    /**
+     * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom shadow to be shown, a custom background image must also be set with -setBackgroundImage: (if the default background image is used, the default shadow image will be used).
+     */
     @Generated
     @Selector("shadowImage")
     public native UIImage shadowImage();
 
+    /**
+     * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
+     * and behaves as described for the tintColor property added to UIView.
+     * To tint the bar's background, please use -barTintColor.
+     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
 
+    /**
+     * Unselected items in this tab bar will be tinted with this color. Setting this value to nil indicates that UITabBar should use its default value instead.
+     */
     @Generated
     @Selector("unselectedItemTintColor")
     public native UIColor unselectedItemTintColor();
@@ -588,10 +747,16 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    /**
+     * Describes the appearance attributes for the tab bar to use.
+     */
     @Generated
     @Selector("setStandardAppearance:")
     public native void setStandardAppearance(UITabBarAppearance value);
 
+    /**
+     * Describes the appearance attributes for the tab bar to use.
+     */
     @Generated
     @Selector("standardAppearance")
     public native UITabBarAppearance standardAppearance();

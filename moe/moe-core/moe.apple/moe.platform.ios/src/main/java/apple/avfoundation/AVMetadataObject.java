@@ -42,6 +42,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVMetadataObject
+ * @abstract
+ *    AVMetadataObject is an abstract class that defines an interface for a metadata object used by AVFoundation.
+ * 
+ * @discussion
+ *    AVMetadataObject provides an abstract interface for metadata associated with a piece of media. One example is face metadata that might be detected in a picture. All metadata objects have a time, duration, bounds, and type.
+ * 
+ *    The concrete AVMetadataFaceObject is used by AVCaptureMetadataOutput for face detection.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -153,11 +163,27 @@ public class AVMetadataObject extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property bounds
+     * @abstract
+     *    The bounding rectangle of the receiver.
+     * 
+     * @discussion
+     *    The value of this property is a CGRect representing the bounding rectangle of the object with respect to the picture in which it resides. The rectangle's origin is top left. If the metadata originates from video, bounds may be expressed as scalar values from 0. - 1. If the original video has been scaled down, the bounds of the metadata object still are meaningful. This property may return CGRectZero if the metadata has no bounds.
+     */
     @Generated
     @Selector("bounds")
     @ByValue
     public native CGRect bounds();
 
+    /**
+     * @property duration
+     * @abstract
+     *    The media duration associated with this metadata object.
+     * 
+     * @discussion
+     *    The value of this property is a CMTime representing the duration of the metadata object. If this metadata object originates from a CMSampleBuffer, its duration matches the sample buffer's duration. This property may return kCMTimeInvalid.
+     */
     @Generated
     @Selector("duration")
     @ByValue
@@ -167,11 +193,27 @@ public class AVMetadataObject extends NSObject {
     @Selector("init")
     public native AVMetadataObject init();
 
+    /**
+     * @property time
+     * @abstract
+     *    The media time associated with this metadata object.
+     * 
+     * @discussion
+     *    The value of this property is a CMTime associated with the metadata object. For capture, it is the time at which this object was captured. If this metadata object originates from a CMSampleBuffer, its time matches the sample buffer's presentation time. This property may return kCMTimeInvalid.
+     */
     @Generated
     @Selector("time")
     @ByValue
     public native CMTime time();
 
+    /**
+     * @property type
+     * @abstract
+     *    An identifier for the metadata object.
+     * 
+     * @discussion
+     *    The value of this property is an AVMetadataObjectType representing the type of the metadata object. Clients inspecting a collection of metadata objects can use this property to filter objects with a matching type.
+     */
     @Generated
     @Selector("type")
     public native String type();

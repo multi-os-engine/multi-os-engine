@@ -25,6 +25,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEHotspotConfigurationManager
+ * @discussion
+ *   The NEHotspotConfigurationManager class allows an application to
+ *   Add/Update/Remove Wi-Fi Network Configuraton.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -53,6 +59,17 @@ public class NEHotspotConfigurationManager extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @method applyConfiguration:
+     * @discussion This function adds or updates a Wi-Fi network configuration.
+     * @param configuration NEHotspotConfiguration object containing the Wi-Fi network configuration.
+     * @param completionHandler A block that will be called when add/update operation is completed.
+     *   This could be nil if application does not intend to receive the result.
+     *   The NSError passed to this block will be nil if the configuration is successfully stored, non-nil otherwise.
+     *   If the configuration is found invalid or API encounters some other error then completionHandler is called
+     *   with instance of NSError containing appropriate error code. This API attempts to join the Wi-Fi network
+     *   if the configuration is successfully added or updated and the network is found nearby.
+     */
     @Generated
     @Selector("applyConfiguration:completionHandler:")
     public native void applyConfigurationCompletionHandler(NEHotspotConfiguration configuration,
@@ -95,6 +112,11 @@ public class NEHotspotConfigurationManager extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @method getConfiguredSSIDsWithCompletionHandler:
+     * @discussion This function returns array of SSIDs and HS2.0 Domain Names that the calling application has configured.
+     *   It returns nil if there are no networks configurred by the calling application.
+     */
     @Generated
     @Selector("getConfiguredSSIDsWithCompletionHandler:")
     public native void getConfiguredSSIDsWithCompletionHandler(
@@ -143,10 +165,22 @@ public class NEHotspotConfigurationManager extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method removeConfigurationForNetworkName:
+     * @discussion This function removes Wi-Fi configuration.
+     * @param domainName HS2.0 domainName for which the configuration is to be deleted.
+     */
     @Generated
     @Selector("removeConfigurationForHS20DomainName:")
     public native void removeConfigurationForHS20DomainName(String domainName);
 
+    /**
+     * @method removeConfigurationForSSID:
+     * @discussion This function removes Wi-Fi configuration.
+     *   If the joinOnce property was set to YES, invoking this method will disassociate from the Wi-Fi network
+     *   after the configuration is removed.
+     * @param SSID Wi-Fi SSID for which the configuration is to be deleted.
+     */
     @Generated
     @Selector("removeConfigurationForSSID:")
     public native void removeConfigurationForSSID(String SSID);

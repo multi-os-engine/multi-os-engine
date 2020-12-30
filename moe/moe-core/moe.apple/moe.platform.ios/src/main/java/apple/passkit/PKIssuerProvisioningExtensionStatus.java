@@ -117,14 +117,23 @@ public class PKIssuerProvisioningExtensionStatus extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * passes will be available to add (at least one)
+     */
     @Generated
     @Selector("passEntriesAvailable")
     public native boolean passEntriesAvailable();
 
+    /**
+     * passes will be available to add on the remote device (at least one)
+     */
     @Generated
     @Selector("remotePassEntriesAvailable")
     public native boolean remotePassEntriesAvailable();
 
+    /**
+     * authorization required before passes can be added
+     */
     @Generated
     @Selector("requiresAuthentication")
     public native boolean requiresAuthentication();
@@ -137,14 +146,23 @@ public class PKIssuerProvisioningExtensionStatus extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * passes will be available to add (at least one)
+     */
     @Generated
     @Selector("setPassEntriesAvailable:")
     public native void setPassEntriesAvailable(boolean value);
 
+    /**
+     * passes will be available to add on the remote device (at least one)
+     */
     @Generated
     @Selector("setRemotePassEntriesAvailable:")
     public native void setRemotePassEntriesAvailable(boolean value);
 
+    /**
+     * authorization required before passes can be added
+     */
     @Generated
     @Selector("setRequiresAuthentication:")
     public native void setRequiresAuthentication(boolean value);

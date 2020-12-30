@@ -41,6 +41,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Begins:  when two touches have moved enough to be considered a rotation
+ * Changes: when a finger moves while two fingers are down
+ * Ends:    when both fingers have lifted
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -161,15 +166,24 @@ public class UIRotationGestureRecognizer extends UIGestureRecognizer {
     public native UIRotationGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
             SEL action);
 
+    /**
+     * rotation in radians
+     */
     @Generated
     @Selector("rotation")
     @NFloat
     public native double rotation();
 
+    /**
+     * rotation in radians
+     */
     @Generated
     @Selector("setRotation:")
     public native void setRotation(@NFloat double value);
 
+    /**
+     * velocity of the pinch in radians/second
+     */
     @Generated
     @Selector("velocity")
     @NFloat

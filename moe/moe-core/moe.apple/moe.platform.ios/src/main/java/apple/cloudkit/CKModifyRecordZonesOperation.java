@@ -161,6 +161,14 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
     public native CKModifyRecordZonesOperation initWithRecordZonesToSaveRecordZoneIDsToDelete(
             NSArray<? extends CKRecordZone> recordZonesToSave, NSArray<? extends CKRecordZoneID> recordZoneIDsToDelete);
 
+    /**
+     * @abstract This block is called when the operation completes.
+     * 
+     * @discussion The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordZoneIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * This call happens as soon as the server has seen all record changes, and may be invoked while the server is processing the side effects of those changes.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("modifyRecordZonesCompletionBlock")
     @ObjCBlock(name = "call_modifyRecordZonesCompletionBlock_ret")
@@ -174,6 +182,14 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
     @Selector("recordZonesToSave")
     public native NSArray<? extends CKRecordZone> recordZonesToSave();
 
+    /**
+     * @abstract This block is called when the operation completes.
+     * 
+     * @discussion The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordZoneIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * This call happens as soon as the server has seen all record changes, and may be invoked while the server is processing the side effects of those changes.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("setModifyRecordZonesCompletionBlock:")
     public native void setModifyRecordZonesCompletionBlock(

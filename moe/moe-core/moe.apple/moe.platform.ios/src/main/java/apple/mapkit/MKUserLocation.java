@@ -161,6 +161,9 @@ public class MKUserLocation extends NSObject implements MKAnnotation {
     @ByValue
     public native CLLocationCoordinate2D coordinate();
 
+    /**
+     * Returns nil if not in MKUserTrackingModeFollowWithHeading
+     */
     @Generated
     @Selector("heading")
     public native CLHeading heading();
@@ -169,10 +172,16 @@ public class MKUserLocation extends NSObject implements MKAnnotation {
     @Selector("init")
     public native MKUserLocation init();
 
+    /**
+     * Returns YES if the user's location is being updated.
+     */
     @Generated
     @Selector("isUpdating")
     public native boolean isUpdating();
 
+    /**
+     * Returns nil if the owning MKMapView's showsUserLocation is NO or the user's location has yet to be determined.
+     */
     @Generated
     @Selector("location")
     public native CLLocation location();
@@ -182,10 +191,16 @@ public class MKUserLocation extends NSObject implements MKAnnotation {
     @Selector("setCoordinate:")
     public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
 
+    /**
+     * The subtitle to be displayed for the user location annotation.
+     */
     @Generated
     @Selector("setSubtitle:")
     public native void setSubtitle(String value);
 
+    /**
+     * The title to be displayed for the user location annotation.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);

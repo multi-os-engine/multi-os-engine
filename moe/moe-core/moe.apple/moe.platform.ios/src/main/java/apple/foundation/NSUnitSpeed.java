@@ -135,6 +135,9 @@ public class NSUnitSpeed extends NSDimension implements NSSecureCoding {
     @Selector("knots")
     public static native NSUnitSpeed knots();
 
+    /**
+     * Base unit - metersPerSecond
+     */
     @Generated
     @Selector("metersPerSecond")
     public static native NSUnitSpeed metersPerSecond();

@@ -28,6 +28,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNDStridedSlice
+ * 
+ * @dependency This depends on Metal.framework.
+ * 
+ * @abstract   Extracts a subset of the source array using the specified slice strides.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -148,6 +155,10 @@ public class MPSNDArrayStridedSlice extends MPSNDArrayUnaryKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property  strides
+     * @abstract  The strides to use when slicing the input array.
+     */
     @Generated
     @Selector("setStrides:")
     public native void setStrides(@ByValue MPSNDArrayOffsets value);
@@ -156,6 +167,10 @@ public class MPSNDArrayStridedSlice extends MPSNDArrayUnaryKernel {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @property  strides
+     * @abstract  The strides to use when slicing the input array.
+     */
     @Generated
     @Selector("strides")
     @ByValue

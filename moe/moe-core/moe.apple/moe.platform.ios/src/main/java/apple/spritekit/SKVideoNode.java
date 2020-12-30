@@ -187,6 +187,9 @@ public class SKVideoNode extends SKNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * Create a video node from an AVPlayer. You can use the AVPlayer to control playback.
+     */
     @Generated
     @Selector("videoNodeWithAVPlayer:")
     public static native SKVideoNode videoNodeWithAVPlayer(AVPlayer player);
@@ -199,16 +202,25 @@ public class SKVideoNode extends SKNode {
     @Selector("videoNodeWithURL:")
     public static native SKVideoNode videoNodeWithURL(NSURL videoURL);
 
+    /**
+     * Create a video node from a file.
+     */
     @Generated
     @Deprecated
     @Selector("videoNodeWithVideoFileNamed:")
     public static native SKVideoNode videoNodeWithVideoFileNamed(String videoFile);
 
+    /**
+     * Create a video node from a URL.
+     */
     @Generated
     @Deprecated
     @Selector("videoNodeWithVideoURL:")
     public static native SKVideoNode videoNodeWithVideoURL(NSURL videoURL);
 
+    /**
+     * The location in the video that maps to its 'position' in the parent's coordinate space. (0.0-1.0)
+     */
     @Generated
     @Selector("anchorPoint")
     @ByValue
@@ -218,10 +230,18 @@ public class SKVideoNode extends SKNode {
     @Selector("init")
     public native SKVideoNode init();
 
+    /**
+     * Designated Initializer.
+     * 
+     * Initialize a video node from an AVPlayer. You can use the AVPlayer to control playback.
+     */
     @Generated
     @Selector("initWithAVPlayer:")
     public native SKVideoNode initWithAVPlayer(AVPlayer player);
 
+    /**
+     * Support coding and decoding via NSKeyedArchiver.
+     */
     @Generated
     @Selector("initWithCoder:")
     public native SKVideoNode initWithCoder(NSCoder aDecoder);
@@ -234,6 +254,9 @@ public class SKVideoNode extends SKNode {
     @Selector("initWithURL:")
     public native SKVideoNode initWithURL(NSURL url);
 
+    /**
+     * Initialize a video node from a file.
+     */
     @Generated
     @Deprecated
     @Selector("initWithVideoFileNamed:")
@@ -252,14 +275,23 @@ public class SKVideoNode extends SKNode {
     @Selector("play")
     public native void play();
 
+    /**
+     * The location in the video that maps to its 'position' in the parent's coordinate space. (0.0-1.0)
+     */
     @Generated
     @Selector("setAnchorPoint:")
     public native void setAnchorPoint(@ByValue CGPoint value);
 
+    /**
+     * The display size of the video (in parent's coordinate space)
+     */
     @Generated
     @Selector("setSize:")
     public native void setSize(@ByValue CGSize value);
 
+    /**
+     * The display size of the video (in parent's coordinate space)
+     */
     @Generated
     @Selector("size")
     @ByValue

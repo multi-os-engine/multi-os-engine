@@ -19,6 +19,10 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum SCNPhysicsFieldScope
+ * @abstract Specifies the domain of influence of a physics field.
+ */
 @Generated
 public final class SCNPhysicsFieldScope {
     @Generated @NInt public static final long InsideExtent = 0x0000000000000000L;

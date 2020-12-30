@@ -56,6 +56,19 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Apply a snapshot to the table view committing to the new data source state.
+     * 
+     *   animatingDifferences == YES: perform a diff between the current UITableView state and the snapshot and animate the update.
+     *   animatingDifferences == NO: commit to the new table view state from the snapshot. The changes will not be animated.
+     * 
+     *   If the (optional) completion block is specified, it will be called on the main queue when the animations are completed.
+     * 
+     *  Note: you may call this from a background queue which will cause the diff (if needed) to be generated on the calling queue and the
+     *        final UI update to be applied back on the main queue. However, all applySnapshot invocations must be confined to the same queue.
+     *        (if you violate this restriction and mix calls between the main queue and some background queue, the framework
+     *         will log and/or assert to avoid deadlocks)
+     */
     @Generated
     @Selector("applySnapshot:animatingDifferences:")
     public native void applySnapshotAnimatingDifferences(
@@ -102,6 +115,9 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Default value is UITableViewRowAnimationAutomatic. Change takes effect on the next update.
+     */
     @Generated
     @Selector("defaultRowAnimation")
     @NInt
@@ -155,6 +171,9 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * convert IndexPath <-> ItemIdentifierType
+     */
     @Generated
     @Selector("itemIdentifierForIndexPath:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -189,6 +208,9 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
     @Selector("sectionIndexTitlesForTableView:")
     public native NSArray<String> sectionIndexTitlesForTableView(UITableView tableView);
 
+    /**
+     * Default value is UITableViewRowAnimationAutomatic. Change takes effect on the next update.
+     */
     @Generated
     @Selector("setDefaultRowAnimation:")
     public native void setDefaultRowAnimation(@NInt long value);
@@ -197,6 +219,10 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Create a snapshot of the current UITableView data source state.
+     *   This snapshot can be mutated and later applied via -applySnapshot:animatingDifferences:
+     */
     @Generated
     @Selector("snapshot")
     public native NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifierType> snapshot();

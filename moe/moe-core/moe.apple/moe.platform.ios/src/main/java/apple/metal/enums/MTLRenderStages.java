@@ -19,6 +19,11 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @abstract Points at which a fence may be waited on or signaled.
+ * @constant MTLRenderStageVertex   All vertex work prior to rasterization has completed.
+ * @constant MTLRenderStageFragment All rendering work has completed.
+ */
 @Generated
 public final class MTLRenderStages {
     @Generated @NUInt public static final long Vertex = 0x0000000000000001L;

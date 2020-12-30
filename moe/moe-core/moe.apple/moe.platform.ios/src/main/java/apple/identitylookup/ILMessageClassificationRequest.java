@@ -122,6 +122,9 @@ public class ILMessageClassificationRequest extends ILClassificationRequest impl
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * An array of message communications sorted by date received
+     */
     @Generated
     @Selector("messageCommunications")
     public native NSArray<? extends ILMessageCommunication> messageCommunications();

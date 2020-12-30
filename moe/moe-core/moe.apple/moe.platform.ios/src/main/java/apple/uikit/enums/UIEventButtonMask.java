@@ -3,6 +3,11 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Set of buttons pressed for the current event
+ * Raw format of: 1 << (buttonNumber - 1)
+ * UIEventButtonMaskPrimary = 1 << 0
+ */
 @Generated
 public final class UIEventButtonMask {
     @Generated

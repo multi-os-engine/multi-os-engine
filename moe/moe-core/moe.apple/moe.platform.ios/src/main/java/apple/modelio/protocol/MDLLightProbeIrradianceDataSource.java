@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLLightProbeIrradianceDataSource")
 public interface MDLLightProbeIrradianceDataSource {
+    /**
+     * Spherical harmonics level used to calculate the spherical harmonics coefficients.
+     */
     @Generated
     @IsOptional
     @Selector("setSphericalHarmonicsLevel:")
@@ -37,6 +40,9 @@ public interface MDLLightProbeIrradianceDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Spherical harmonics level used to calculate the spherical harmonics coefficients.
+     */
     @Generated
     @IsOptional
     @Selector("sphericalHarmonicsLevel")

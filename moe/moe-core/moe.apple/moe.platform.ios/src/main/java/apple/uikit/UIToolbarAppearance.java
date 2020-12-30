@@ -57,6 +57,9 @@ public class UIToolbarAppearance extends UIBarAppearance {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * The appearance for plain-style bar button items
+     */
     @Generated
     @Selector("buttonAppearance")
     public native UIBarButtonItemAppearance buttonAppearance();
@@ -87,6 +90,9 @@ public class UIToolbarAppearance extends UIBarAppearance {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The appearance for done-style bar button items
+     */
     @Generated
     @Selector("doneButtonAppearance")
     public native UIBarButtonItemAppearance doneButtonAppearance();
@@ -147,10 +153,16 @@ public class UIToolbarAppearance extends UIBarAppearance {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The appearance for plain-style bar button items
+     */
     @Generated
     @Selector("setButtonAppearance:")
     public native void setButtonAppearance(UIBarButtonItemAppearance value);
 
+    /**
+     * The appearance for done-style bar button items
+     */
     @Generated
     @Selector("setDoneButtonAppearance:")
     public native void setDoneButtonAppearance(UIBarButtonItemAppearance value);

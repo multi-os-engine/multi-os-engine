@@ -117,6 +117,9 @@ public class UITextPlaceholder extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Return the rects of the placeholder
+     */
     @Generated
     @Selector("rects")
     public native NSArray<? extends UITextSelectionRect> rects();

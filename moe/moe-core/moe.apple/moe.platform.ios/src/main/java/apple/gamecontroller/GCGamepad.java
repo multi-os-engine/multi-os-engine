@@ -151,6 +151,16 @@ public class GCGamepad extends GCPhysicalInputProfile {
     @NInt
     public static native long version_static();
 
+    /**
+     * All face buttons are required to be analog in the Standard profile. These must be arranged
+     * in the diamond pattern given below:
+     * 
+     *   Y
+     *  / \
+     * X   B
+     *  \ /
+     *   A
+     */
     @Generated
     @Selector("buttonA")
     public native GCControllerButtonInput buttonA();
@@ -171,6 +181,9 @@ public class GCGamepad extends GCPhysicalInputProfile {
     @Selector("controller")
     public native GCController controller();
 
+    /**
+     * Required to be analog in the Standard profile. All the elements of this directional input are thus analog.
+     */
     @Generated
     @Selector("dpad")
     public native GCControllerDirectionPad dpad();
@@ -179,14 +192,28 @@ public class GCGamepad extends GCPhysicalInputProfile {
     @Selector("init")
     public native GCGamepad init();
 
+    /**
+     * Shoulder buttons are required to be analog inputs.
+     */
     @Generated
     @Selector("leftShoulder")
     public native GCControllerButtonInput leftShoulder();
 
+    /**
+     * Shoulder buttons are required to be analog inputs.
+     */
     @Generated
     @Selector("rightShoulder")
     public native GCControllerButtonInput rightShoulder();
 
+    /**
+     * Polls the state vector of the controller and saves it to a snapshot. The snapshot is stored in a device independent
+     * format that can be serialized and used at a later date. This is useful for features such as quality assurance,
+     * save game or replay functionality among many.
+     * 
+     * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
+     * a snapshot will not change based on user input once it is taken.
+     */
     @Generated
     @Selector("saveSnapshot")
     public native GCGamepadSnapshot saveSnapshot();

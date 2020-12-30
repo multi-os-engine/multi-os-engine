@@ -19,6 +19,15 @@ package apple.externalaccessory.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @options EAWiFiUnconfiguredAccessoryProperties
+ * 
+ * @discussion Represents the properties of an EAWiFiUnconfiguredAccessory.
+ * 
+ * @constant EAWiFiUnconfiguredAccessoryPropertySupportsAirPlay  Option set if the accessory is advertising that it supports AirPlay.
+ * @constant EAWiFiUnconfiguredAccessoryPropertySupportsAirPrint Option set if the accessory is advertising that it supports AirPrint.
+ * @constant EAWiFiUnconfiguredAccessoryPropertySupportsHomeKit  Option set if the accessory is advertising that it supports HomeKit.
+ */
 @Generated
 public final class EAWiFiUnconfiguredAccessoryProperties {
     @Generated @NUInt public static final long AirPlay = 0x0000000000000001L;

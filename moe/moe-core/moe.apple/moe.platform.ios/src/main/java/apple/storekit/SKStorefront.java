@@ -73,6 +73,9 @@ public class SKStorefront extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The three letter country code for the current storefront
+     */
     @Generated
     @Selector("countryCode")
     public native String countryCode();
@@ -90,6 +93,9 @@ public class SKStorefront extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The App Store storefront identifier
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();

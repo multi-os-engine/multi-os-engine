@@ -54,6 +54,10 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * List all appearance characteristics properties as key-value pairs; returns a deep copy of all pairs.
+     * Helpful for debugging.
+     */
     @Generated
     @Selector("appearanceCharacteristicsKeyValues")
     public native NSDictionary<?, ?> appearanceCharacteristicsKeyValues();
@@ -62,10 +66,16 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * The background color of the widget annotation.
+     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
+    /**
+     * The border color of the widget annotation.
+     */
     @Generated
     @Selector("borderColor")
     public native UIColor borderColor();
@@ -80,6 +90,9 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * The widget annotation’s normal caption, displayed when it is not interacting with the user.
+     */
     @Generated
     @Selector("caption")
     public native String caption();
@@ -92,6 +105,11 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * For button widget annotations, need to specify the control type for PDFAppearanceCharacteristics
+     * as certain attributes, i.e. captions, are only available for certain flavors.
+     * Control type does not need to be set for text or choice widget annotations.
+     */
     @Generated
     @Selector("controlType")
     @NInt
@@ -111,6 +129,10 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The widget's caption displayed when the user holds the mouse button while over the annotation.
+     * Applies only to kPDFWidgetPushButtonControl.
+     */
     @Generated
     @Selector("downCaption")
     public native String downCaption();
@@ -159,39 +181,73 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The widget's caption displayed when the user moves the mouse over the annotation.
+     * Applies only to kPDFWidgetPushButtonControl.
+     */
     @Generated
     @Selector("rolloverCaption")
     public native String rolloverCaption();
 
+    /**
+     * The number of *degrees* by which the widget annotation is rotated counterclockwise relative to the page.
+     * The value must be a multiple of 90. Default value: 0.
+     */
     @Generated
     @Selector("rotation")
     @NInt
     public native long rotation();
 
+    /**
+     * The background color of the widget annotation.
+     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
 
+    /**
+     * The border color of the widget annotation.
+     */
     @Generated
     @Selector("setBorderColor:")
     public native void setBorderColor(UIColor value);
 
+    /**
+     * The widget annotation’s normal caption, displayed when it is not interacting with the user.
+     */
     @Generated
     @Selector("setCaption:")
     public native void setCaption(String value);
 
+    /**
+     * For button widget annotations, need to specify the control type for PDFAppearanceCharacteristics
+     * as certain attributes, i.e. captions, are only available for certain flavors.
+     * Control type does not need to be set for text or choice widget annotations.
+     */
     @Generated
     @Selector("setControlType:")
     public native void setControlType(@NInt long value);
 
+    /**
+     * The widget's caption displayed when the user holds the mouse button while over the annotation.
+     * Applies only to kPDFWidgetPushButtonControl.
+     */
     @Generated
     @Selector("setDownCaption:")
     public native void setDownCaption(String value);
 
+    /**
+     * The widget's caption displayed when the user moves the mouse over the annotation.
+     * Applies only to kPDFWidgetPushButtonControl.
+     */
     @Generated
     @Selector("setRolloverCaption:")
     public native void setRolloverCaption(String value);
 
+    /**
+     * The number of *degrees* by which the widget annotation is rotated counterclockwise relative to the page.
+     * The value must be a multiple of 90. Default value: 0.
+     */
     @Generated
     @Selector("setRotation:")
     public native void setRotation(@NInt long value);

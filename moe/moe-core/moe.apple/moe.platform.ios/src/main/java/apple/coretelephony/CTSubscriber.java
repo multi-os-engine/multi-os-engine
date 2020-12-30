@@ -152,6 +152,13 @@ public class CTSubscriber extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * carrierToken
+     * 
+     * Description:
+     *     A data blob containing authorization information about the subscriber.
+     *     This API is deprecated without replacement. Starting in iOS 11.3, this API returns nil.
+     */
     @Generated
     @Selector("carrierToken")
     public native NSData carrierToken();
@@ -165,6 +172,15 @@ public class CTSubscriber extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native CTSubscriberDelegate delegate();
 
+    /**
+     * identifier
+     * 
+     * Description:
+     *     An implementation-defined identifier that can be used to correlate this CTSubscriber
+     *     with information vended by other API's.
+     *     The format of the identifier can change across software releases. Therefore, applications
+     *     should not persist it.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();

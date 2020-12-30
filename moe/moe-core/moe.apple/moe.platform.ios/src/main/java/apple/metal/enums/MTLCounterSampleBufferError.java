@@ -3,6 +3,17 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum MTLCounterSampleBufferError
+ * @constant MTLCounterSampleBufferErrorOutOfMemory
+ * There wasn't enough memory available to allocate the counter sample buffer.
+ * 
+ * @constant MTLCounterSampleBufferErrorInvalid
+ * Invalid parameter passed while creating counter sample buffer.
+ * 
+ * @constant MTLCounterSampleBufferErrorInternal
+ * There was some other error in allocating the counter sample buffer.
+ */
 @Generated
 public final class MTLCounterSampleBufferError {
     @Generated

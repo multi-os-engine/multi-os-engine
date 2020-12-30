@@ -153,6 +153,9 @@ public class MKDistanceFormatter extends NSFormatter {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns negative distance if distance string could not be parsed.
+     */
     @Generated
     @Selector("distanceFromString:")
     public native double distanceFromString(String distance);
@@ -165,10 +168,16 @@ public class MKDistanceFormatter extends NSFormatter {
     @Selector("initWithCoder:")
     public native MKDistanceFormatter initWithCoder(NSCoder coder);
 
+    /**
+     * defaults to current locale
+     */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
 
+    /**
+     * defaults to current locale
+     */
     @Generated
     @Selector("setLocale:")
     public native void setLocale(NSLocale value);
@@ -181,6 +190,9 @@ public class MKDistanceFormatter extends NSFormatter {
     @Selector("setUnits:")
     public native void setUnits(@NUInt long value);
 
+    /**
+     * Convenience methods. MKDistanceFormatter also responds to the usual NSFormatter methods.
+     */
     @Generated
     @Selector("stringFromDistance:")
     public native String stringFromDistance(double distance);

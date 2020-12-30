@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A tracked raycast representation.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -129,6 +132,11 @@ public class ARTrackedRaycast extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Stop raycasting.
+     * @discussion The raycast will be continuously tracked until stopped.
+     * Resetting session's tracking, changing its configuration or deallocation of ARTrackedRaycast object cause the raycast to stop.
+     */
     @Generated
     @Selector("stopTracking")
     public native void stopTracking();

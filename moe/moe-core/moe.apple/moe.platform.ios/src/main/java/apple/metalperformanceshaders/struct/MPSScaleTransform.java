@@ -51,34 +51,58 @@ public final class MPSScaleTransform extends StructObject {
         setTranslateY(translateY);
     }
 
+    /**
+     * < horizontal scaling factor
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native double scaleX();
 
+    /**
+     * < horizontal scaling factor
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setScaleX(double value);
 
+    /**
+     * < vertical scaling factor
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native double scaleY();
 
+    /**
+     * < vertical scaling factor
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setScaleY(double value);
 
+    /**
+     * < horizontal translation
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native double translateX();
 
+    /**
+     * < horizontal translation
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setTranslateX(double value);
 
+    /**
+     * < vertical translation
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native double translateY();
 
+    /**
+     * < vertical translation
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setTranslateY(double value);

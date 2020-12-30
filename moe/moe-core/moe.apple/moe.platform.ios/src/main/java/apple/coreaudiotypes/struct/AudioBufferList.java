@@ -42,11 +42,17 @@ public final class AudioBufferList extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setMNumberBuffers(int value);
 
+    /**
+     * this is a variable length array of mNumberBuffers elements
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native AudioBuffer mBuffers();
 
+    /**
+     * this is a variable length array of mNumberBuffers elements
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMBuffers(@ByValue AudioBuffer value);

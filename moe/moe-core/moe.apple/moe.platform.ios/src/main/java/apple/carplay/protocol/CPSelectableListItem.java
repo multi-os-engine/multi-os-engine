@@ -10,11 +10,18 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @c CPListSelectable describes list items that accept a list item handler, called when
+ * the user selects this list item.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CPSelectableListItem")
 public interface CPSelectableListItem extends CPListTemplateItem {
+    /**
+     * An optional action block, fired when the user selects this item in a list template.
+     */
     @Generated
     @Selector("handler")
     @ObjCBlock(name = "call_handler_ret")
@@ -35,6 +42,9 @@ public interface CPSelectableListItem extends CPListTemplateItem {
                 @ObjCBlock(name = "call_Block_handler_ret") Block_Block_handler_ret arg1);
     }
 
+    /**
+     * An optional action block, fired when the user selects this item in a list template.
+     */
     @Generated
     @Selector("setHandler:")
     void setHandler(@ObjCBlock(name = "call_setHandler") Block_setHandler value);

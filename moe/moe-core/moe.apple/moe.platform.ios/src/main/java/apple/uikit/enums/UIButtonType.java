@@ -21,12 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIButtonType {
+    /**
+     * no button type
+     */
     @Generated @NInt public static final long Custom = 0x0000000000000000L;
+    /**
+     * standard system button
+     */
     @Generated @NInt public static final long System = 0x0000000000000001L;
     @Generated @NInt public static final long DetailDisclosure = 0x0000000000000002L;
     @Generated @NInt public static final long InfoLight = 0x0000000000000003L;
     @Generated @NInt public static final long InfoDark = 0x0000000000000004L;
     @Generated @NInt public static final long ContactAdd = 0x0000000000000005L;
+    /**
+     * Deprecated, use UIButtonTypeSystem instead
+     */
     @Generated @NInt public static final long RoundedRect = 0x0000000000000001L;
 
     @Generated

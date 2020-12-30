@@ -19,6 +19,10 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum MTLLibraryError
+ * @abstract NSErrors raised when creating a library.
+ */
 @Generated
 public final class MTLLibraryError {
     @Generated @NUInt public static final long Unsupported = 0x0000000000000001L;

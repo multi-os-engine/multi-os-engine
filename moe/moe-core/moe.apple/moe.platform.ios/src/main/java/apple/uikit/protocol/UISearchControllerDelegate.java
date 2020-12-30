@@ -44,6 +44,9 @@ public interface UISearchControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called after the search controller's search bar has agreed to begin editing or when 'active' is set to YES. If you choose not to present the controller yourself or do not implement this method, a default presentation is performed on your behalf.
+     */
     @Generated
     @IsOptional
     @Selector("presentSearchController:")
@@ -58,6 +61,9 @@ public interface UISearchControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * These methods are called when automatic presentation or dismissal occurs. They will not be called if you present or dismiss the search controller yourself.
+     */
     @Generated
     @IsOptional
     @Selector("willPresentSearchController:")

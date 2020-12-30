@@ -187,6 +187,9 @@ public class PKAddPaymentPassViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native PKAddPaymentPassViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * This controller should be presented with -[UIViewController presentViewController:animated:completion:].
+     */
     @Generated
     @Selector("initWithRequestConfiguration:delegate:")
     public native PKAddPaymentPassViewController initWithRequestConfigurationDelegate(

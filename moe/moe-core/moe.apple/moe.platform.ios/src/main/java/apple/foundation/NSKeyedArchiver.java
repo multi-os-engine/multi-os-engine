@@ -99,6 +99,10 @@ public class NSKeyedArchiver extends NSCoder {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * During encoding, the coder first checks with the coder's
+     * own table, then if there was no mapping there, the class's.
+     */
     @Generated
     @Selector("classNameForClass:")
     public static native String classNameForClass_static(Class cls);
@@ -205,6 +209,9 @@ public class NSKeyedArchiver extends NSCoder {
     @Selector("encodeInt64:forKey:")
     public native void encodeInt64ForKey(long value, String key);
 
+    /**
+     * native int
+     */
     @Generated
     @Selector("encodeInt:forKey:")
     public native void encodeIntForKey(int value, String key);
@@ -213,6 +220,9 @@ public class NSKeyedArchiver extends NSCoder {
     @Selector("encodeObject:forKey:")
     public native void encodeObjectForKey(@Mapped(ObjCObjectMapper.class) Object object, String key);
 
+    /**
+     * If encoding has not yet finished, then invoking this property will call finishEncoding and return the data. If you initialized the keyed archiver with a specific mutable data instance, then it will be returned from this property after finishEncoding is called.
+     */
     @Generated
     @Selector("encodedData")
     public native NSData encodedData();
@@ -221,6 +231,9 @@ public class NSKeyedArchiver extends NSCoder {
     @Selector("finishEncoding")
     public native void finishEncoding();
 
+    /**
+     * Initialize the archiver with empty data, ready for writing.
+     */
     @Generated
     @Selector("init")
     public native NSKeyedArchiver init();
@@ -234,6 +247,9 @@ public class NSKeyedArchiver extends NSCoder {
     @NUInt
     public native long outputFormat();
 
+    /**
+     * Enables secure coding support on this keyed archiver. You do not need to enable secure coding on the archiver to enable secure coding on the unarchiver. Enabling secure coding on the archiver is a way for you to be sure that all classes that are encoded conform with NSSecureCoding (it will throw an exception if a class which does not NSSecureCoding is archived). Note that the getter is on the superclass, NSCoder. See NSCoder for more information about secure coding.
+     */
     @Generated
     @Selector("requiresSecureCoding")
     public native boolean requiresSecureCoding();
@@ -262,16 +278,33 @@ public class NSKeyedArchiver extends NSCoder {
     @Selector("setOutputFormat:")
     public native void setOutputFormat(@NUInt long value);
 
+    /**
+     * Enables secure coding support on this keyed archiver. You do not need to enable secure coding on the archiver to enable secure coding on the unarchiver. Enabling secure coding on the archiver is a way for you to be sure that all classes that are encoded conform with NSSecureCoding (it will throw an exception if a class which does not NSSecureCoding is archived). Note that the getter is on the superclass, NSCoder. See NSCoder for more information about secure coding.
+     */
     @Generated
     @Selector("setRequiresSecureCoding:")
     public native void setRequiresSecureCoding(boolean value);
 
+    /**
+     * Returns an \c NSData object containing the encoded form of the object graph whose root object is given, optionally disabling secure coding.
+     * 
+     * If \c NSSecureCoding cannot be used, \c requiresSecureCoding may be turned off here; for improved security, however, \c requiresSecureCoding should be left enabled whenever possible. \c requiresSecureCoding ensures that all encoded objects conform to \c NSSecureCoding, preventing the possibility of encoding objects which cannot be decoded later.
+     * 
+     * If the object graph cannot be encoded, returns \c nil and sets the \c error out parameter.
+     */
     @Generated
     @Selector("archivedDataWithRootObject:requiringSecureCoding:error:")
     public static native NSData archivedDataWithRootObjectRequiringSecureCodingError(
             @Mapped(ObjCObjectMapper.class) Object object, boolean requiresSecureCoding,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Initializes the receiver for encoding an archive, optionally disabling secure coding.
+     * 
+     * If \c NSSecureCoding cannot be used, \c requiresSecureCoding may be turned off here; for improved security, however, \c requiresSecureCoding should be left enabled whenever possible. \c requiresSecureCoding ensures that all encoded objects conform to \c NSSecureCoding, preventing the possibility of encoding objects which cannot be decoded later.
+     * 
+     * To produce archives whose structure matches those previously encoded using \c +archivedDataWithRootObject, encode the top-level object in your archive for the \c NSKeyedArchiveRootObjectKey.
+     */
     @Generated
     @Selector("initRequiringSecureCoding:")
     public native NSKeyedArchiver initRequiringSecureCoding(boolean requiresSecureCoding);

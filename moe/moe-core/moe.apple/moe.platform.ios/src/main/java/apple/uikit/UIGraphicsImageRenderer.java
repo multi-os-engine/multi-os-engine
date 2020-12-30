@@ -162,11 +162,18 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
     public native NSData JPEGDataWithCompressionQualityActions(@NFloat double compressionQuality,
             @ObjCBlock(name = "call_JPEGDataWithCompressionQualityActions") Block_JPEGDataWithCompressionQualityActions actions);
 
+    /**
+     * These return compressed image data with the contents of the image drawn in the renderer block.
+     */
     @Generated
     @Selector("PNGDataWithActions:")
     public native NSData PNGDataWithActions(
             @ObjCBlock(name = "call_PNGDataWithActions") Block_PNGDataWithActions actions);
 
+    /**
+     * Returns a UIImage rendered with the contents of the CGContext after the imageRenderBlock executes.
+     * If the options provided to the renderer contain a rect with a zero width or height size, this will return an empty UIImage.
+     */
     @Generated
     @Selector("imageWithActions:")
     public native UIImage imageWithActions(@ObjCBlock(name = "call_imageWithActions") Block_imageWithActions actions);

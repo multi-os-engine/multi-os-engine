@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXUnitSignalBars
+ * @abstract      An NSUnit subclass representing the number of signal bars for signal strength.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -59,6 +63,9 @@ public class MXUnitSignalBars extends NSDimension {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Base unit - bars
+     */
     @Generated
     @Selector("bars")
     public static native MXUnitSignalBars bars();

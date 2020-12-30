@@ -24,6 +24,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract TKTokenSession represents token session which shares authentication status.
+ * @discussion Token implementation must inherit its own session implementation from TKTokenSession (or its subclass TKSmartCardTokenSession in case of SmartCard tokens).
+ * 
+ * TKTokenSession should keep an authentication state of the token.  Authentication status (e.g. entered PIN to unlock SmartCard) should not be shared across borders of single TKTokenSession instance.
+ * 
+ * TKTokenSession is always instantiated by TKToken when framework detects access to the token from new authentication session.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -96,6 +104,9 @@ public class TKTokenSession extends NSObject {
     @Selector("init")
     public native TKTokenSession init();
 
+    /**
+     * @param token Token instance to which is this session instance bound.
+     */
     @Generated
     @Selector("initWithToken:")
     public native TKTokenSession initWithToken(TKToken token);

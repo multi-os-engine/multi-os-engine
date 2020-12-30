@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief A default implementation of the MPSSVGFTextureAllocator protocol. Maintains a cache of
+ * textures which is checked first when a texture is requested. If there is no suitable texture in
+ * the cache, allocates a texture directly from the Metal device.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -54,6 +59,9 @@ public class MPSSVGFDefaultTextureAllocator extends NSObject implements MPSSVGFT
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @brief The number of textures which have been allocated from this allocator
+     */
     @Generated
     @Selector("allocatedTextureCount")
     @NUInt
@@ -89,6 +97,9 @@ public class MPSSVGFDefaultTextureAllocator extends NSObject implements MPSSVGFT
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @brief Metal device this object was allocated from
+     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -103,6 +114,9 @@ public class MPSSVGFDefaultTextureAllocator extends NSObject implements MPSSVGFT
     @Selector("init")
     public native MPSSVGFDefaultTextureAllocator init();
 
+    /**
+     * @brief Initialize the MPSSVGFDefaultTextureAllocator with a Metal device
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSSVGFDefaultTextureAllocator initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
@@ -134,6 +148,9 @@ public class MPSSVGFDefaultTextureAllocator extends NSObject implements MPSSVGFT
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief Remove all textures from the cache
+     */
     @Generated
     @Selector("reset")
     public native void reset();

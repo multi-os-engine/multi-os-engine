@@ -160,6 +160,10 @@ public class MKMultiPoint extends MKShape implements MKGeoJSONObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Unproject and copy points into the provided array of coordinates that
+     * must be large enough to hold range.length coordinates.
+     */
     @Generated
     @Selector("getCoordinates:range:")
     public native void getCoordinatesRange(
@@ -180,6 +184,10 @@ public class MKMultiPoint extends MKShape implements MKGeoJSONObject {
     @ReferenceInfo(type = MKMapPoint.class)
     public native Ptr<MKMapPoint> points();
 
+    /**
+     * Conveniences for determining the location/fraction (0.0 -> 1.0) distance-wise
+     * at which a point or set of points exists on the shape
+     */
     @Generated
     @Selector("locationAtPointIndex:")
     @NFloat

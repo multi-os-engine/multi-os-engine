@@ -150,10 +150,23 @@ public class CTCarrier extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * allowsVOIP
+     * 
+     * Discussion:
+     *   A BOOL value that is YES if this carrier allows VOIP calls to be
+     *   made on its network, NO otherwise.
+     */
     @Generated
     @Selector("allowsVOIP")
     public native boolean allowsVOIP();
 
+    /**
+     * carrierName
+     * 
+     * Discussion:
+     *   An NSString containing the name of the subscriber's cellular service provider.
+     */
     @Generated
     @Selector("carrierName")
     public native String carrierName();
@@ -162,14 +175,36 @@ public class CTCarrier extends NSObject {
     @Selector("init")
     public native CTCarrier init();
 
+    /**
+     * isoCountryCode
+     * 
+     * Discussion:
+     *   Returns an NSString object that contains country code for
+     *   the subscriber's cellular service provider, represented as an ISO 3166-1
+     *   country code string
+     */
     @Generated
     @Selector("isoCountryCode")
     public native String isoCountryCode();
 
+    /**
+     * mobileCountryCode
+     * 
+     * Discussion:
+     *   An NSString containing the mobile country code for the subscriber's
+     *   cellular service provider, in its numeric representation
+     */
     @Generated
     @Selector("mobileCountryCode")
     public native String mobileCountryCode();
 
+    /**
+     * mobileNetworkCode
+     * 
+     * Discussion:
+     *   An NSString containing the  mobile network code for the subscriber's
+     *   cellular service provider, in its numeric representation
+     */
     @Generated
     @Selector("mobileNetworkCode")
     public native String mobileNetworkCode();

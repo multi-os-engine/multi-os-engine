@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief Represent a characteristic on a service of an accessory.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -154,10 +157,23 @@ public class HMCharacteristic extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @brief The type of the characteristic, e.g. HMCharacteristicTypePowerState.
+     */
     @Generated
     @Selector("characteristicType")
     public native String characteristicType();
 
+    /**
+     * @brief Enables/disables notifications or indications for the value of a specified characteristic.
+     * 
+     * @param enable A Boolean value indicating whether you wish to receive notifications or
+     *                indications whenever the characteristic’s value changes.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("enableNotification:completionHandler:")
     public native void enableNotificationCompletionHandler(boolean enable,
@@ -167,45 +183,104 @@ public class HMCharacteristic extends NSObject {
     @Selector("init")
     public native HMCharacteristic init();
 
+    /**
+     * @brief Specifies whether the characteristic has been enabled to send notifications.
+     * 
+     * @discussion This property is reset to NO if the reachability of the accessory is NO.
+     */
     @Generated
     @Selector("isNotificationEnabled")
     public native boolean isNotificationEnabled();
 
+    /**
+     * @brief The localized description of the characteristic.
+     */
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
+    /**
+     * @brief Meta data associated with the characteristic.
+     */
     @Generated
     @Selector("metadata")
     public native HMCharacteristicMetadata metadata();
 
+    /**
+     * @brief Array that describes the properties of the characteristic.
+     * 
+     * @discussion This value corresponds to the properties associated with this characteristic.
+     *             The contents of the array are one or more HMCharacteristicProperty constants.
+     */
     @Generated
     @Selector("properties")
     public native NSArray<String> properties();
 
+    /**
+     * @brief Reads the value of the characteristic. The updated value can be read from the 'value' property of the characteristic.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("readValueWithCompletionHandler:")
     public native void readValueWithCompletionHandler(
             @ObjCBlock(name = "call_readValueWithCompletionHandler") Block_readValueWithCompletionHandler completion);
 
+    /**
+     * @brief Service that contains this characteristic.
+     */
     @Generated
     @Selector("service")
     public native HMService service();
 
+    /**
+     * @brief A unique identifier for the characteristic.
+     */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
+    /**
+     * @brief Sets/clears authorization data used when writing to the characteristic.
+     * 
+     * @param data New authorization data to use. Specify nil to remove authorization data.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateAuthorizationData:completionHandler:")
     public native void updateAuthorizationDataCompletionHandler(NSData data,
             @ObjCBlock(name = "call_updateAuthorizationDataCompletionHandler") Block_updateAuthorizationDataCompletionHandler completion);
 
+    /**
+     * @brief The value of the characteristic.
+     * 
+     * @discussion The value is a cached value that may have been updated as a result of prior
+     *             interaction with the accessory.
+     */
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object value();
 
+    /**
+     * @brief Modifies the value of the characteristic.
+     * 
+     * @param value The value to be written.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     * 
+     * @discussion The value being written is validated against the metadata, format and permissions.
+     *             The value written may be bounded by metadata for characteristics with int and
+     *             float format. If validation fails, the error provided to the completion handler
+     *             indicates the type of failure.
+     */
     @Generated
     @Selector("writeValue:completionHandler:")
     public native void writeValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object value,

@@ -23,6 +23,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * --------------------------------------------------------------------------------------------------------------- ICCameraFolder
+ * @class ICCameraFolder
+ * @abstract This class represents a folder on an ICCameraDevice object.
+ */
 @Generated
 @Library("ImageCaptureCore")
 @Runtime(ObjCRuntime.class)
@@ -73,6 +78,10 @@ public class ICCameraFolder extends ICCameraItem {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property contents
+     * @abstract ￼A list of items contained by this folder.
+     */
     @Generated
     @Selector("contents")
     public native NSArray<? extends ICCameraItem> contents();

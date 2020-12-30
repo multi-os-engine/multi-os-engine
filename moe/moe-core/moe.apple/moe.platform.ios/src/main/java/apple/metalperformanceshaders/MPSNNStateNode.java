@@ -24,6 +24,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNStateNode
+ * @abstract   A placeholder node denoting the position in the graph of a MPSState object
+ * @discussion Some filters need additional information about an image in order to function. For example
+ *             a max-pooling gradient filter needs to know which position the max result came from in the
+ *             original pooling filter in order to select the right data for gradient computation.  In other cases,
+ *             state may be moved into a MPSState object in order to keep the filter itself immutable.
+ *             The MPSState object typically encapsulates one or more MTLResource objects.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -82,6 +91,10 @@ public class MPSNNStateNode extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract   MPS resource identification
+     * @discussion See MPSHandle protocol reference.  Default: nil
+     */
     @Generated
     @Selector("handle")
     @MappedReturn(ObjCObjectMapper.class)
@@ -131,6 +144,10 @@ public class MPSNNStateNode extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract   MPS resource identification
+     * @discussion See MPSHandle protocol reference.  Default: nil
+     */
     @Generated
     @Selector("setHandle:")
     public native void setHandle(@Mapped(ObjCObjectMapper.class) MPSHandle value);
@@ -148,18 +165,60 @@ public class MPSNNStateNode extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract   Tag a state node for view later
+     * @discussion Most state nodes are private to the graph. These alias memory heavily and
+     *             consequently generally have invalid state when the graph exits.  When
+     *             exportFromGraph = YES, the image is preserved and made available through
+     *             the [MPSNNGraph encode... resultStates:... list.
+     * 
+     *             CAUTION: exporting an state from a graph prevents MPS from
+     *                      recycling memory. It will nearly always cause the
+     *                      amount of memory used by the graph to increase by the size
+     *                      of the state. There will probably be a performance
+     *                      regression accordingly.  This feature should generally
+     *                      be used only when the node is needed as an input for
+     *                      further work and recomputing it is prohibitively costly.
+     * 
+     *             Default: NO
+     */
     @Generated
     @Selector("exportFromGraph")
     public native boolean exportFromGraph();
 
+    /**
+     * @abstract   Tag a state node for view later
+     * @discussion Most state nodes are private to the graph. These alias memory heavily and
+     *             consequently generally have invalid state when the graph exits.  When
+     *             exportFromGraph = YES, the image is preserved and made available through
+     *             the [MPSNNGraph encode... resultStates:... list.
+     * 
+     *             CAUTION: exporting an state from a graph prevents MPS from
+     *                      recycling memory. It will nearly always cause the
+     *                      amount of memory used by the graph to increase by the size
+     *                      of the state. There will probably be a performance
+     *                      regression accordingly.  This feature should generally
+     *                      be used only when the node is needed as an input for
+     *                      further work and recomputing it is prohibitively costly.
+     * 
+     *             Default: NO
+     */
     @Generated
     @Selector("setExportFromGraph:")
     public native void setExportFromGraph(boolean value);
 
+    /**
+     * @abstract   Set to true to cause the resource to be synchronized with the CPU
+     * @discussion Ignored on non-MacOS.
+     */
     @Generated
     @Selector("setSynchronizeResource:")
     public native void setSynchronizeResource(boolean value);
 
+    /**
+     * @abstract   Set to true to cause the resource to be synchronized with the CPU
+     * @discussion Ignored on non-MacOS.
+     */
     @Generated
     @Selector("synchronizeResource")
     public native boolean synchronizeResource();

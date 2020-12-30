@@ -45,6 +45,10 @@ public interface UIDynamicItem {
     @ByValue
     CGPoint center();
 
+    /**
+     * The path must represent a convex polygon with counter clockwise winding and no self intersection. 
+     * The point (0,0) in the path corresponds to the dynamic item's center.
+     */
     @Generated
     @IsOptional
     @Selector("collisionBoundingPath")
@@ -52,6 +56,10 @@ public interface UIDynamicItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The collision type represents how the dynamics system will evaluate collisions with 
+     * respect to the dynamic item. defaults to UIDynamicItemCollisionBoundsTypeRectangle
+     */
     @Generated
     @IsOptional
     @Selector("collisionBoundsType")

@@ -124,6 +124,10 @@ public class UICollectionViewDropPlaceholder extends UICollectionViewPlaceholder
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * If specified, will be used to modify the appearance (e.g. visiblePath to supply a "cut out" region of the placeholder cell) of the animating dropped item.
+     * Handler will be called as-needed.
+     */
     @Generated
     @Selector("previewParametersProvider")
     @ObjCBlock(name = "call_previewParametersProvider_ret")
@@ -144,6 +148,10 @@ public class UICollectionViewDropPlaceholder extends UICollectionViewPlaceholder
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * If specified, will be used to modify the appearance (e.g. visiblePath to supply a "cut out" region of the placeholder cell) of the animating dropped item.
+     * Handler will be called as-needed.
+     */
     @Generated
     @Selector("setPreviewParametersProvider:")
     public native void setPreviewParametersProvider(

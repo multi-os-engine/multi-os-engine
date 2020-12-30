@@ -71,10 +71,20 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @method		audioMixInputParameters
+     * @abstract		Returns a new instance of AVMutableAudioMixInputParameters with no volume ramps and a trackID initialized to kCMPersistentTrackID_Invalid.
+     */
     @Generated
     @Selector("audioMixInputParameters")
     public static native AVMutableAudioMixInputParameters audioMixInputParameters();
 
+    /**
+     * @method		audioMixInputParametersWithTrack:
+     * @abstract		Returns a new instance of AVMutableAudioMixInputParameters with no volume ramps and a trackID set to the specified track's trackID.
+     * @param			track
+     *   A reference to an AVAssetTrack.
+     */
     @Generated
     @Selector("audioMixInputParametersWithTrack:")
     public static native AVMutableAudioMixInputParameters audioMixInputParametersWithTrack(AVAssetTrack track);
@@ -162,10 +172,21 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
     @NInt
     public static native long version_static();
 
+    /**
+     * @property		audioTapProcessor
+     * @abstract		Indicates the audio processing tap that will be used for the audio track.
+     */
     @Generated
     @Selector("audioTapProcessor")
     public native MTAudioProcessingTapRef audioTapProcessor();
 
+    /**
+     * @property		audioTimePitchAlgorithm
+     * @abstract		Indicates the processing algorithm used to manage audio pitch at varying rates and for scaled audio edits.
+     * @discussion
+     *   Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in AVAudioProcessingSettings.h.
+     *   Can be nil, in which case the audioTimePitchAlgorithm set on the AVPlayerItem, AVAssetExportSession, or AVAssetReaderAudioMixOutput on which the AVAudioMix is set will be used for the associated track.
+     */
     @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
@@ -174,27 +195,54 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
     @Selector("init")
     public native AVMutableAudioMixInputParameters init();
 
+    /**
+     * @property		audioTapProcessor
+     * @abstract		Indicates the audio processing tap that will be used for the audio track.
+     */
     @Generated
     @Selector("setAudioTapProcessor:")
     public native void setAudioTapProcessor(MTAudioProcessingTapRef value);
 
+    /**
+     * @property		audioTimePitchAlgorithm
+     * @abstract		Indicates the processing algorithm used to manage audio pitch at varying rates and for scaled audio edits.
+     * @discussion
+     *   Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in AVAudioProcessingSettings.h.
+     *   Can be nil, in which case the audioTimePitchAlgorithm set on the AVPlayerItem, AVAssetExportSession, or AVAssetReaderAudioMixOutput on which the AVAudioMix is set will be used for the associated track.
+     */
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")
     public native void setAudioTimePitchAlgorithm(String value);
 
+    /**
+     * @property		trackID
+     * @abstract		Indicates the trackID of the audio track to which the parameters should be applied.
+     */
     @Generated
     @Selector("setTrackID:")
     public native void setTrackID(int value);
 
+    /**
+     * @method		setVolume:atTime:
+     * @abstract		Sets the value of the audio volume at a specific time.
+     */
     @Generated
     @Selector("setVolume:atTime:")
     public native void setVolumeAtTime(float volume, @ByValue CMTime time);
 
+    /**
+     * @method		setVolumeRampFromStartVolume:toEndVolume:timeRange:
+     * @abstract		Sets a volume ramp to apply during the specified timeRange.
+     */
     @Generated
     @Selector("setVolumeRampFromStartVolume:toEndVolume:timeRange:")
     public native void setVolumeRampFromStartVolumeToEndVolumeTimeRange(float startVolume, float endVolume,
             @ByValue CMTimeRange timeRange);
 
+    /**
+     * @property		trackID
+     * @abstract		Indicates the trackID of the audio track to which the parameters should be applied.
+     */
     @Generated
     @Selector("trackID")
     public native int trackID();

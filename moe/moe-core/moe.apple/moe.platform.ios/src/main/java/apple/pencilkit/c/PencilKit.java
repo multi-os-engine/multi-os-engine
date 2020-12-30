@@ -37,6 +37,9 @@ public final class PencilKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKInkTypeMarker();
 
+    /**
+     * The UTType for storing drawing data.
+     */
     @Generated
     @CVariable()
     public static native CFStringRef PKAppleDrawingTypeIdentifier();

@@ -16,6 +16,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MLWritable")
 public interface MLWritable {
+    /**
+     * Writes the model to disk and returns YES if the write is successful.
+     */
     @Generated
     @Selector("writeToURL:error:")
     boolean writeToURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);

@@ -29,11 +29,26 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * MPPlayableContentDataSource is a protocol that application objects conform to
+ * if they want to support external media players, such as vehicle head units.
+ * Data sources are responsible for providing metadata about your media to these
+ * systems in a meaningful way, so that features like user interfaces and play
+ * queues can be setup automatically.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MPPlayableContentDataSource")
 public interface MPPlayableContentDataSource {
+    /**
+     * Tells the data source to begin loading content items that are children of the
+     * item specified by indexPath. This is provided so that applications can begin
+     * asynchronous batched loading of content before MediaPlayer begins asking for
+     * content items to display.
+     * Client applications should always call the completion handler after loading
+     * has finished, if this method is implemented.
+     */
     @Generated
     @IsOptional
     @Selector("beginLoadingChildItemsAtIndexPath:completionHandler:")
@@ -42,6 +57,12 @@ public interface MPPlayableContentDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Tells MediaPlayer whether the content provided by the data source supports
+     * playback progress as a property of its metadata.
+     * If this method is not implemented, MediaPlayer will assume that progress is
+     * not supported for any content items.
+     */
     @Generated
     @IsOptional
     @Selector("childItemsDisplayPlaybackProgressAtIndexPath:")
@@ -49,10 +70,22 @@ public interface MPPlayableContentDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Returns the content item at the specified index path. If the content item is
+     * mutated after returning, its updated contents will be sent to MediaPlayer.
+     */
     @Generated
     @Selector("contentItemAtIndexPath:")
     MPContentItem contentItemAtIndexPath(NSIndexPath indexPath);
 
+    /**
+     * Provides a content item for the provided identifier.
+     * Provide nil if there is no content item corresponding to the identifier.
+     * Provide an error if there is an error that will not allow content items
+     * to be retrieved.
+     * Client applications should always call the completion handler after loading
+     * has finished, if this method is implemented.
+     */
     @Generated
     @IsOptional
     @Selector("contentItemForIdentifier:completionHandler:")
@@ -61,6 +94,11 @@ public interface MPPlayableContentDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Returns the number of child nodes at the specified index path. In a virtual
+     * filesystem, this would be the number of files in a specific folder. An empty
+     * index path represents the root node.
+     */
     @Generated
     @Selector("numberOfChildItemsAtIndexPath:")
     @NInt

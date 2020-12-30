@@ -75,6 +75,9 @@ public class ASAuthorization extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @abstract The credential that was returned by the authorization provider. Authorization provider type should be used to determine how to introspect the credential.
+     */
     @Generated
     @Selector("credential")
     @MappedReturn(ObjCObjectMapper.class)
@@ -124,6 +127,9 @@ public class ASAuthorization extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract Provider which was used to generate this authorization response.
+     */
     @Generated
     @Selector("provider")
     @MappedReturn(ObjCObjectMapper.class)

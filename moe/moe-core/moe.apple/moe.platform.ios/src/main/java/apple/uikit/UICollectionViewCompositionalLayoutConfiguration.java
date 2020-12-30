@@ -115,6 +115,9 @@ public class UICollectionViewCompositionalLayoutConfiguration extends NSObject i
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * default is 0
+     */
     @Generated
     @Selector("interSectionSpacing")
     @NFloat
@@ -142,6 +145,9 @@ public class UICollectionViewCompositionalLayoutConfiguration extends NSObject i
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * default is UICollectionViewScrollDirectionVertical
+     */
     @Generated
     @Selector("scrollDirection")
     @NInt
@@ -152,10 +158,16 @@ public class UICollectionViewCompositionalLayoutConfiguration extends NSObject i
     public native void setBoundarySupplementaryItems(
             NSArray<? extends NSCollectionLayoutBoundarySupplementaryItem> value);
 
+    /**
+     * default is 0
+     */
     @Generated
     @Selector("setInterSectionSpacing:")
     public native void setInterSectionSpacing(@NFloat double value);
 
+    /**
+     * default is UICollectionViewScrollDirectionVertical
+     */
     @Generated
     @Selector("setScrollDirection:")
     public native void setScrollDirection(@NInt long value);
@@ -173,11 +185,17 @@ public class UICollectionViewCompositionalLayoutConfiguration extends NSObject i
     @NInt
     public static native long version_static();
 
+    /**
+     * default is UIContentInsetsReferenceSafeArea
+     */
     @Generated
     @Selector("contentInsetsReference")
     @NInt
     public native long contentInsetsReference();
 
+    /**
+     * default is UIContentInsetsReferenceSafeArea
+     */
     @Generated
     @Selector("setContentInsetsReference:")
     public native void setContentInsetsReference(@NInt long value);

@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An anchor representing a mesh in the world.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -83,6 +86,9 @@ public class ARMeshAnchor extends ARAnchor {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Geometry of the mesh in anchor's coordinate system.
+     */
     @Generated
     @Selector("geometry")
     public native ARMeshGeometry geometry();

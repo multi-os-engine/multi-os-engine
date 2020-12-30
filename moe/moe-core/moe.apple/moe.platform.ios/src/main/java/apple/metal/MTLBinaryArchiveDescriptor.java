@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MTLBinaryArchiveDescriptor
+ * @abstract A class used to indicate how an archive should be created
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -133,6 +137,10 @@ public class MTLBinaryArchiveDescriptor extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property url
+     * @abstract The file URL from which to open a MTLBinaryArchive, or nil to create an empty MTLBinaryArchive.
+     */
     @Generated
     @Selector("setUrl:")
     public native void setUrl(NSURL value);
@@ -145,6 +153,10 @@ public class MTLBinaryArchiveDescriptor extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * @property url
+     * @abstract The file URL from which to open a MTLBinaryArchive, or nil to create an empty MTLBinaryArchive.
+     */
     @Generated
     @Selector("url")
     public native NSURL url();

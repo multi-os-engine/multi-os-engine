@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Produces 3D cylindrical noise with an infinite number of cylinders-within-cyliners of constantly-increasing radius.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)

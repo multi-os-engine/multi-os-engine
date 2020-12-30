@@ -3,6 +3,9 @@ package apple.cryptotokenkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Bitmask of available SmartCard protocols.
+ */
 @Generated
 public final class TKSmartCardProtocol {
     @Generated

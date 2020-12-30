@@ -27,16 +27,32 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Messages related to the operation of a task that writes data to a
+ * file and notifies the delegate upon completion.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLSessionDownloadDelegate")
 public interface NSURLSessionDownloadDelegate extends NSURLSessionTaskDelegate {
+    /**
+     * Sent when a download task that has completed a download.  The delegate should
+     * copy or move the file at the given location to a new location as it will be
+     * removed when the delegate message returns. URLSession:task:didCompleteWithError: will
+     * still be called.
+     */
     @Generated
     @Selector("URLSession:downloadTask:didFinishDownloadingToURL:")
     void URLSessionDownloadTaskDidFinishDownloadingToURL(NSURLSession session, NSURLSessionDownloadTask downloadTask,
             NSURL location);
 
+    /**
+     * Sent when a download has been resumed. If a download failed with an
+     * error, the -userInfo dictionary of the error will contain an
+     * NSURLSessionDownloadTaskResumeData key, whose value is the resume
+     * data.
+     */
     @Generated
     @IsOptional
     @Selector("URLSession:downloadTask:didResumeAtOffset:expectedTotalBytes:")
@@ -45,6 +61,9 @@ public interface NSURLSessionDownloadDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent periodically to notify the delegate of download progress.
+     */
     @Generated
     @IsOptional
     @Selector("URLSession:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:")

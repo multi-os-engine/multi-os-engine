@@ -397,6 +397,10 @@ public class MPVolumeView extends UIView implements NSCoding {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * Returns YES if wireless routes (AirPlay, Bluetooth, etc) are available for user selection.
+     * Note that the view must be in present in a window hierarchy in order to discover some types of wireless routes.
+     */
     @Generated
     @Selector("areWirelessRoutesAvailable")
     public native boolean areWirelessRoutesAvailable();
@@ -417,6 +421,9 @@ public class MPVolumeView extends UIView implements NSCoding {
     @Selector("initWithFrame:")
     public native MPVolumeView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Returns YES if a wireless route is active.
+     */
     @Generated
     @Selector("isWirelessRouteActive")
     public native boolean isWirelessRouteActive();
@@ -442,10 +449,16 @@ public class MPVolumeView extends UIView implements NSCoding {
     @Selector("setMaximumVolumeSliderImage:forState:")
     public native void setMaximumVolumeSliderImageForState(UIImage image, @NUInt long state);
 
+    /**
+     * Volume slider customization
+     */
     @Generated
     @Selector("setMinimumVolumeSliderImage:forState:")
     public native void setMinimumVolumeSliderImageForState(UIImage image, @NUInt long state);
 
+    /**
+     * Route button customization
+     */
     @Generated
     @Selector("setRouteButtonImage:forState:")
     public native void setRouteButtonImageForState(UIImage image, @NUInt long state);
@@ -454,6 +467,9 @@ public class MPVolumeView extends UIView implements NSCoding {
     @Selector("setShowsRouteButton:")
     public native void setShowsRouteButton(boolean value);
 
+    /**
+     * Default is YES.
+     */
     @Generated
     @Selector("setShowsVolumeSlider:")
     public native void setShowsVolumeSlider(boolean value);
@@ -462,6 +478,13 @@ public class MPVolumeView extends UIView implements NSCoding {
     @Selector("setVolumeThumbImage:forState:")
     public native void setVolumeThumbImageForState(UIImage image, @NUInt long state);
 
+    /**
+     * Sets the image for the EU volume limit. When appropriate, this image will be displayed on top of the
+     * maximumVolumeSliderImage. It must be visually distinct from the maximumVolumeSliderImage, and use
+     * a color similar to the default, to convey a sense of warning to the user. The same image is used for
+     * all control states. For debugging purposes, switch on the "EU Volume Limit" setting in the Developer
+     * menu of the Settings application to always enable the volume limit.
+     */
     @Generated
     @Selector("setVolumeWarningSliderImage:")
     public native void setVolumeWarningSliderImage(UIImage value);
@@ -470,6 +493,9 @@ public class MPVolumeView extends UIView implements NSCoding {
     @Selector("showsRouteButton")
     public native boolean showsRouteButton();
 
+    /**
+     * Default is YES.
+     */
     @Generated
     @Selector("showsVolumeSlider")
     public native boolean showsVolumeSlider();
@@ -489,6 +515,13 @@ public class MPVolumeView extends UIView implements NSCoding {
     public native CGRect volumeThumbRectForBoundsVolumeSliderRectValue(@ByValue CGRect bounds, @ByValue CGRect rect,
             float value);
 
+    /**
+     * Sets the image for the EU volume limit. When appropriate, this image will be displayed on top of the
+     * maximumVolumeSliderImage. It must be visually distinct from the maximumVolumeSliderImage, and use
+     * a color similar to the default, to convey a sense of warning to the user. The same image is used for
+     * all control states. For debugging purposes, switch on the "EU Volume Limit" setting in the Developer
+     * menu of the Settings application to always enable the volume limit.
+     */
     @Generated
     @Selector("volumeWarningSliderImage")
     public native UIImage volumeWarningSliderImage();

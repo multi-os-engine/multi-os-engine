@@ -85,6 +85,11 @@ public class MTLSharedTextureHandle extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property device
+     * @abstract The device this texture was created against.
+     * @discussion This shared texture handle can only be used with this device.
+     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -128,6 +133,10 @@ public class MTLSharedTextureHandle extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property label
+     * @abstract A copy of the original texture's label property, if any
+     */
     @Generated
     @Selector("label")
     public native String label();

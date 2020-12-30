@@ -39,6 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CBService
+ * 
+ * @discussion
+ *      Represents a peripheral's service or a service's included service.
+ */
 @Generated
 @Library("CoreBluetooth")
 @Runtime(ObjCRuntime.class)
@@ -150,10 +156,22 @@ public class CBService extends CBAttribute {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property characteristics
+     * 
+     * @discussion
+     *      A list of CBCharacteristics that have so far been discovered in this service.
+     */
     @Generated
     @Selector("characteristics")
     public native NSArray<? extends CBCharacteristic> characteristics();
 
+    /**
+     * @property includedServices
+     * 
+     * @discussion
+     *      A list of included CBServices that have so far been discovered in this service.
+     */
     @Generated
     @Selector("includedServices")
     public native NSArray<? extends CBService> includedServices();
@@ -162,10 +180,22 @@ public class CBService extends CBAttribute {
     @Selector("init")
     public native CBService init();
 
+    /**
+     * @property isPrimary
+     * 
+     * @discussion
+     *      The type of the service (primary or secondary).
+     */
     @Generated
     @Selector("isPrimary")
     public native boolean isPrimary();
 
+    /**
+     * @property peripheral
+     * 
+     * @discussion
+     *      A back-pointer to the peripheral this service belongs to.
+     */
     @Generated
     @Selector("peripheral")
     public native CBPeripheral peripheral();

@@ -27,10 +27,16 @@ public final class BNNSLayerParametersLossHuber extends StructObject {
         super(peer);
     }
 
+    /**
+     * Fields layout compatible with BNNSLayerParametersLoseBase
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int function();
 
+    /**
+     * Fields layout compatible with BNNSLayerParametersLoseBase
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setFunction(int value);
@@ -61,10 +67,16 @@ public final class BNNSLayerParametersLossHuber extends StructObject {
     @StructureField(order = 3, isGetter = false)
     public native void setReduction(int value);
 
+    /**
+     * Fields specific to Huber Loss
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native float huber_delta();
 
+    /**
+     * Fields specific to Huber Loss
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setHuber_delta(float value);

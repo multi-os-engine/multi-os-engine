@@ -18,6 +18,10 @@ package apple.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * [XSI] The type idtype_t shall be defined as an enumeration type whose
+ * possible values shall include at least P_ALL, P_PID, and P_PGID.
+ */
 @Generated
 public final class idtype_t {
     @Generated public static final int P_ALL = 0x00000000;

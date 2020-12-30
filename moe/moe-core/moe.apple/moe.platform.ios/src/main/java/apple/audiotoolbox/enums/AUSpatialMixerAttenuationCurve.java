@@ -18,6 +18,9 @@ package apple.audiotoolbox.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum AUSpatialMixer Attenuation Curves
+ */
 @Generated
 public final class AUSpatialMixerAttenuationCurve {
     @Generated public static final int Power = 0x00000000;

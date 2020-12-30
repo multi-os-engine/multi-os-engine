@@ -25,6 +25,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKElectrocardiogram
+ * @abstract      An HKElectrocardiogram is a collection of voltage values as waveforms
+ *                from one or more leads
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -57,6 +62,9 @@ public class HKElectrocardiogram extends HKSample {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * The average heart rate of the user while the electrocardiogram was recorded.
+     */
     @Generated
     @Selector("averageHeartRate")
     public native HKQuantity averageHeartRate();
@@ -79,6 +87,9 @@ public class HKElectrocardiogram extends HKSample {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The classification of this electrocardiogram sample.
+     */
     @Generated
     @Selector("classification")
     @NInt
@@ -132,6 +143,9 @@ public class HKElectrocardiogram extends HKSample {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The number of voltage measurements in the electrocardiogram.
+     */
     @Generated
     @Selector("numberOfVoltageMeasurements")
     @NInt
@@ -145,6 +159,9 @@ public class HKElectrocardiogram extends HKSample {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The frequency at which the data was sampled. This is reported in [HKUnit hertzUnit].
+     */
     @Generated
     @Selector("samplingFrequency")
     public native HKQuantity samplingFrequency();
@@ -167,6 +184,9 @@ public class HKElectrocardiogram extends HKSample {
         return supportsSecureCoding();
     }
 
+    /**
+     * Whether the user experienced symptoms during this electrocardiogram.
+     */
     @Generated
     @Selector("symptomsStatus")
     @NInt

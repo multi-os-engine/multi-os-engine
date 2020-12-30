@@ -18,6 +18,9 @@ package apple.glkit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Enums for stencil buffer formats.
+ */
 @Generated
 public final class GLKViewDrawableStencilFormat {
     @Generated public static final int FormatNone = 0x00000000;

@@ -80,6 +80,9 @@ public class CPTabBarTemplate extends CPTemplate {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * The tab bar delegate is informed of tab bar events, like selecting a tab.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -102,6 +105,12 @@ public class CPTabBarTemplate extends CPTemplate {
     @Selector("initWithCoder:")
     public native CPTabBarTemplate initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize the tab bar with an array of templates. Each template in the array
+     * becomes a tab on the tab bar.
+     * 
+     * The maximum number of tabs in the tab bar template is given by @c maximumTabCount.
+     */
     @Generated
     @Selector("initWithTemplates:")
     public native CPTabBarTemplate initWithTemplates(NSArray<? extends CPTemplate> templates);
@@ -127,6 +136,13 @@ public class CPTabBarTemplate extends CPTemplate {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The maximum number of tabs that your app may display in a @c CPTabBarTemplate,
+     * depending on the entitlements that your app declares.
+     * 
+     * @warning The system will throw an exception if your app attempts to display more
+     * than this number of tabs in your tab bar template.
+     */
     @Generated
     @Selector("maximumTabCount")
     @NUInt
@@ -146,14 +162,23 @@ public class CPTabBarTemplate extends CPTemplate {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The currently-selected template in the tab bar.
+     */
     @Generated
     @Selector("selectedTemplate")
     public native CPTemplate selectedTemplate();
 
+    /**
+     * The tab bar delegate is informed of tab bar events, like selecting a tab.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CPTabBarTemplateDelegate value);
 
+    /**
+     * The tab bar delegate is informed of tab bar events, like selecting a tab.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) CPTabBarTemplateDelegate value) {
         Object __old = delegate();
@@ -184,10 +209,18 @@ public class CPTabBarTemplate extends CPTemplate {
         return supportsSecureCoding();
     }
 
+    /**
+     * The currently-visible templates in the tab bar. Each template corresponds to
+     * a single tab on the tab bar.
+     */
     @Generated
     @Selector("templates")
     public native NSArray<? extends CPTemplate> templates();
 
+    /**
+     * Update the tabs displayed in this tab bar, replacing the currently-visible tabs.
+     * Each template in the array becomes a tab on the tab bar.
+     */
     @Generated
     @Selector("updateTemplates:")
     public native void updateTemplates(NSArray<? extends CPTemplate> newTemplates);

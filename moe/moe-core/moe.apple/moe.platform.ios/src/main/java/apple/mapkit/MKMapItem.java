@@ -199,6 +199,9 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Selector("phoneNumber")
     public native String phoneNumber();
 
+    /**
+     * If this MKMapItem represents your current location (isCurrentLocation == YES), then placemark will be nil.
+     */
     @Generated
     @Selector("placemark")
     public native MKPlacemark placemark();
@@ -309,6 +312,9 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Selector("writableTypeIdentifiersForItemProvider")
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
 
+    /**
+     * fromScene is used to indicate the UIScene where the user interaction took place.
+     */
     @Generated
     @Selector("openInMapsWithLaunchOptions:fromScene:completionHandler:")
     public native void openInMapsWithLaunchOptionsFromSceneCompletionHandler(NSDictionary<String, ?> launchOptions,

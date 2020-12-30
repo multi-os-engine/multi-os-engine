@@ -43,6 +43,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPMediaPickerController is a UIViewController for visually selecting media items.
+ * To display it, present it modally on an existing view controller.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -166,6 +170,9 @@ public class MPMediaPickerController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("allowsPickingMultipleItems")
     public native boolean allowsPickingMultipleItems();
@@ -196,10 +203,16 @@ public class MPMediaPickerController extends UIViewController {
     @NUInt
     public native long mediaTypes();
 
+    /**
+     * displays a prompt for the user above the navigation bar buttons
+     */
     @Generated
     @Selector("prompt")
     public native String prompt();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setAllowsPickingMultipleItems:")
     public native void setAllowsPickingMultipleItems(boolean value);
@@ -220,22 +233,37 @@ public class MPMediaPickerController extends UIViewController {
         }
     }
 
+    /**
+     * displays a prompt for the user above the navigation bar buttons
+     */
     @Generated
     @Selector("setPrompt:")
     public native void setPrompt(String value);
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("setShowsCloudItems:")
     public native void setShowsCloudItems(boolean value);
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("setShowsItemsWithProtectedAssets:")
     public native void setShowsItemsWithProtectedAssets(boolean value);
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("showsCloudItems")
     public native boolean showsCloudItems();
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("showsItemsWithProtectedAssets")
     public native boolean showsItemsWithProtectedAssets();

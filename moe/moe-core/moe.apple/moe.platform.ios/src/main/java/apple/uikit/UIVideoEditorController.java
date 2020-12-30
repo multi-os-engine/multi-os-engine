@@ -210,6 +210,9 @@ public class UIVideoEditorController extends UINavigationController {
         }
     }
 
+    /**
+     * default value is 10 minutes. set to 0 to specify no maximum duration.
+     */
     @Generated
     @Selector("setVideoMaximumDuration:")
     public native void setVideoMaximumDuration(double value);
@@ -218,10 +221,16 @@ public class UIVideoEditorController extends UINavigationController {
     @Selector("setVideoPath:")
     public native void setVideoPath(String value);
 
+    /**
+     * default value is UIImagePickerControllerQualityTypeMedium
+     */
     @Generated
     @Selector("setVideoQuality:")
     public native void setVideoQuality(@NInt long value);
 
+    /**
+     * default value is 10 minutes. set to 0 to specify no maximum duration.
+     */
     @Generated
     @Selector("videoMaximumDuration")
     public native double videoMaximumDuration();
@@ -230,6 +239,9 @@ public class UIVideoEditorController extends UINavigationController {
     @Selector("videoPath")
     public native String videoPath();
 
+    /**
+     * default value is UIImagePickerControllerQualityTypeMedium
+     */
     @Generated
     @Selector("videoQuality")
     @NInt

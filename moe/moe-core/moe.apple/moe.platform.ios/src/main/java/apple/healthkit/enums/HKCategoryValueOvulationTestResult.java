@@ -19,6 +19,12 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum          HKCategoryValueOvulationTestResult
+ * @abstract      Set of values that may be used for HKCategorySamples with the HKCategoryValueOvulationTestResult type.
+ * @discussion    This category value tracks the result of a home ovulation test that use surges in hormone levels to
+ *                indicate fertility.
+ */
 @Generated
 public final class HKCategoryValueOvulationTestResult {
     @Generated @NInt public static final long Negative = 0x0000000000000001L;

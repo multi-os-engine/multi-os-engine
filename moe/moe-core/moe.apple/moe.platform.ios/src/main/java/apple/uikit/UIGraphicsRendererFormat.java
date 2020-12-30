@@ -42,6 +42,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UIGraphicsRendererFormat is an object that describes the particular properties of the
+ * context created by its associated renderer class.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -96,6 +100,9 @@ public class UIGraphicsRendererFormat extends NSObject implements NSCopying {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * returns a default configured format object, best suited for the current device.
+     */
     @Generated
     @Selector("defaultFormat")
     @MappedReturn(ObjCObjectMapper.class)
@@ -158,6 +165,9 @@ public class UIGraphicsRendererFormat extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * returns the bounds for drawing into the owning UIGraphicsRendererContext.
+     */
     @Generated
     @Selector("bounds")
     @ByValue
@@ -173,6 +183,9 @@ public class UIGraphicsRendererFormat extends NSObject implements NSCopying {
     @Selector("init")
     public native UIGraphicsRendererFormat init();
 
+    /**
+     * Returns a new format object best suited for the main screen’s current configuration.
+     */
     @Generated
     @Selector("preferredFormat")
     @MappedReturn(ObjCObjectMapper.class)

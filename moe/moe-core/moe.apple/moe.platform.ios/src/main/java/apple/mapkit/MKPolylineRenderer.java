@@ -172,6 +172,13 @@ public class MKPolylineRenderer extends MKOverlayPathRenderer {
     @Selector("setStrokeEnd:")
     public native void setStrokeEnd(@NFloat double value);
 
+    /**
+     * These values define the subregion of the path used to draw the
+     * polyline. The values must be in the range [0,1] with zero
+     * representing the start of the polyline and one the end. Values in
+     * between zero and one are interpolated linearly along the polyline
+     * length. strokeStart defaults to 0 and strokeEnd to 1
+     */
     @Generated
     @Selector("setStrokeStart:")
     public native void setStrokeStart(@NFloat double value);
@@ -181,6 +188,13 @@ public class MKPolylineRenderer extends MKOverlayPathRenderer {
     @NFloat
     public native double strokeEnd();
 
+    /**
+     * These values define the subregion of the path used to draw the
+     * polyline. The values must be in the range [0,1] with zero
+     * representing the start of the polyline and one the end. Values in
+     * between zero and one are interpolated linearly along the polyline
+     * length. strokeStart defaults to 0 and strokeEnd to 1
+     */
     @Generated
     @Selector("strokeStart")
     @NFloat

@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Main class for setting up and controlling a model update. It provides some utility class methods for performing an update synchronously as well as class constructors for configuring an update and give developers control for the execution of that update.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -132,6 +135,9 @@ public class MLUpdateTask extends MLTask {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Request a resume with new parameters. Should be used within a progressHandler
+     */
     @Generated
     @Selector("resumeWithParameters:")
     public native void resumeWithParameters(NSDictionary<? extends MLParameterKey, ?> updateParameters);
@@ -144,6 +150,9 @@ public class MLUpdateTask extends MLTask {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Update via task control with completion handler
+     */
     @Generated
     @Selector("updateTaskForModelAtURL:trainingData:configuration:completionHandler:error:")
     public static native MLUpdateTask updateTaskForModelAtURLTrainingDataConfigurationCompletionHandlerError(
@@ -159,6 +168,9 @@ public class MLUpdateTask extends MLTask {
         void call_updateTaskForModelAtURLTrainingDataConfigurationCompletionHandlerError(MLUpdateContext context);
     }
 
+    /**
+     * Update via task control and custom progress callbacks
+     */
     @Generated
     @Selector("updateTaskForModelAtURL:trainingData:configuration:progressHandlers:error:")
     public static native MLUpdateTask updateTaskForModelAtURLTrainingDataConfigurationProgressHandlersError(
@@ -171,6 +183,9 @@ public class MLUpdateTask extends MLTask {
     @NInt
     public static native long version_static();
 
+    /**
+     * Update via task control with completion handler supplying default configuration
+     */
     @Generated
     @Selector("updateTaskForModelAtURL:trainingData:completionHandler:error:")
     public static native MLUpdateTask updateTaskForModelAtURLTrainingDataCompletionHandlerError(NSURL modelURL,
@@ -185,6 +200,9 @@ public class MLUpdateTask extends MLTask {
         void call_updateTaskForModelAtURLTrainingDataCompletionHandlerError(MLUpdateContext arg0);
     }
 
+    /**
+     * Update via task control and custom progress callbacks supplying default configuration
+     */
     @Generated
     @Selector("updateTaskForModelAtURL:trainingData:progressHandlers:error:")
     public static native MLUpdateTask updateTaskForModelAtURLTrainingDataProgressHandlersError(NSURL modelURL,

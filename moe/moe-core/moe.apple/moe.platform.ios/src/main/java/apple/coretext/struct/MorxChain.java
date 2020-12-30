@@ -43,34 +43,58 @@ public final class MorxChain extends StructObject {
         super(peer);
     }
 
+    /**
+     * default flags for this chain
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int defaultFlags();
 
+    /**
+     * default flags for this chain
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setDefaultFlags(int value);
 
+    /**
+     * byte length of this chain
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int length();
 
+    /**
+     * byte length of this chain
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setLength(int value);
 
+    /**
+     * number of feature entries
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int nFeatures();
 
+    /**
+     * number of feature entries
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setNFeatures(int value);
 
+    /**
+     * number of subtables
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int nSubtables();
 
+    /**
+     * number of subtables
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setNSubtables(int value);

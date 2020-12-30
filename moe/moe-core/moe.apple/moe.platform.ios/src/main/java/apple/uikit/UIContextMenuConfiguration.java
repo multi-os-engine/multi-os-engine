@@ -74,6 +74,14 @@ public class UIContextMenuConfiguration extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @abstract Returns a UIContextMenuConfiguration.
+     * 
+     * @param identifier       Optional unique identifier. If omitted, an NSUUID will be generated. May be used to
+     *                         identify this configuration throughout the interaction's lifecycle.
+     * @param previewProvider  Optional preview view controller provider block, called when the menu is about to be presented.
+     * @param actionProvider   Optional action provider block, called when the menu is about to be presented.
+     */
     @Generated
     @Selector("configurationWithIdentifier:previewProvider:actionProvider:")
     public static native UIContextMenuConfiguration configurationWithIdentifierPreviewProviderActionProvider(

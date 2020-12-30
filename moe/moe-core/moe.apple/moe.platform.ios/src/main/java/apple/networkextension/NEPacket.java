@@ -44,6 +44,15 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEPacket
+ * @discussion An NEPacket object represents the data, protocol family, and metadata associated with an IP packet.
+ * These packets are used to read and write on an NEPacketTunnelFlow.
+ * 
+ * NEPacket is part of NetworkExtension.framework
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -165,6 +174,10 @@ public class NEPacket extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * @property data
+     * @discussion The data content of the packet.
+     */
     @Generated
     @Selector("data")
     public native NSData data();
@@ -181,14 +194,30 @@ public class NEPacket extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native NEPacket initWithCoder(NSCoder coder);
 
+    /**
+     * @method initWithData:protocolFamily:
+     * @discussion Initializes a new NEPacket object with data and protocol family.
+     * @param data The content of the packet.
+     * @param protocolFamily The protocol family of the packet (such as AF_INET or AF_INET6).
+     */
     @Generated
     @Selector("initWithData:protocolFamily:")
     public native NEPacket initWithDataProtocolFamily(NSData data, byte protocolFamily);
 
+    /**
+     * @property metadata
+     * @discussion Metadata about the source application and flow for this packet.
+     * This property will only be non-nil when the routing method for the NEPacketTunnelProvider
+     * is NETunnelProviderRoutingMethodSourceApplication.
+     */
     @Generated
     @Selector("metadata")
     public native NEFlowMetaData metadata();
 
+    /**
+     * @property protocolFamily
+     * @discussion The protocol family of the packet (such as AF_INET or AF_INET6).
+     */
     @Generated
     @Selector("protocolFamily")
     public native byte protocolFamily();

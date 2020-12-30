@@ -42,6 +42,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NETunnelProviderProtocol
+ * @discussion The NETunnelProviderProtocol class declares the programmatic interface for an object that contains NETunnelProvider-specific configuration settings.
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -165,18 +171,34 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
     @Selector("initWithCoder:")
     public native NETunnelProviderProtocol initWithCoder(NSCoder coder);
 
+    /**
+     * @property providerBundleIdentifier
+     * @discussion A string containing the bundle identifier of the NETunnelProvider to be used by this configuration.
+     */
     @Generated
     @Selector("providerBundleIdentifier")
     public native String providerBundleIdentifier();
 
+    /**
+     * @property providerConfiguration
+     * @discussion A dictionary containing NETunnelProvider vendor-specific configuration parameters. This dictionary is passed as-is to NETunnelProviders when a tunnel is started.
+     */
     @Generated
     @Selector("providerConfiguration")
     public native NSDictionary<String, ?> providerConfiguration();
 
+    /**
+     * @property providerBundleIdentifier
+     * @discussion A string containing the bundle identifier of the NETunnelProvider to be used by this configuration.
+     */
     @Generated
     @Selector("setProviderBundleIdentifier:")
     public native void setProviderBundleIdentifier(String value);
 
+    /**
+     * @property providerConfiguration
+     * @discussion A dictionary containing NETunnelProvider vendor-specific configuration parameters. This dictionary is passed as-is to NETunnelProviders when a tunnel is started.
+     */
     @Generated
     @Selector("setProviderConfiguration:")
     public native void setProviderConfiguration(NSDictionary<String, ?> value);

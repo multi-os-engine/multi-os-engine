@@ -21,12 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITableViewStyle {
+    /**
+     * regular table view
+     */
     @Generated @NInt public static final long Plain = 0x0000000000000000L;
+    /**
+     * sections are grouped together
+     */
     @Generated @NInt public static final long Grouped = 0x0000000000000001L;
 
     @Generated
     private UITableViewStyle() {
     }
 
+    /**
+     * grouped sections are inset with rounded corners
+     */
     @Generated @NInt public static final long InsetGrouped = 0x0000000000000002L;
 }

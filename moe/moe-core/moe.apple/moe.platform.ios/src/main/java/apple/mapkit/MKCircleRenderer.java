@@ -172,6 +172,12 @@ public class MKCircleRenderer extends MKOverlayPathRenderer {
     @Selector("setStrokeEnd:")
     public native void setStrokeEnd(@NFloat double value);
 
+    /**
+     * These values define the subregion of the path used to draw the
+     * stroke. The values must be in the range [0,1] with zero
+     * representing North, and positive values increasing in the clockwise direction.
+     * strokeStart defaults to 0 and strokeEnd to 1
+     */
     @Generated
     @Selector("setStrokeStart:")
     public native void setStrokeStart(@NFloat double value);
@@ -181,6 +187,12 @@ public class MKCircleRenderer extends MKOverlayPathRenderer {
     @NFloat
     public native double strokeEnd();
 
+    /**
+     * These values define the subregion of the path used to draw the
+     * stroke. The values must be in the range [0,1] with zero
+     * representing North, and positive values increasing in the clockwise direction.
+     * strokeStart defaults to 0 and strokeEnd to 1
+     */
     @Generated
     @Selector("strokeStart")
     @NFloat

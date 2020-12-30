@@ -103,10 +103,16 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * This class method will produce a string by adding backslash escapes as necessary to the given string, to escape any characters that would otherwise be treated as pattern metacharacters.
+     */
     @Generated
     @Selector("escapedPatternForString:")
     public static native String escapedPatternForString(String string);
 
+    /**
+     * This class method will produce a string by adding backslash escapes as necessary to the given string, to escape any characters that would otherwise be treated as template metacharacters.
+     */
     @Generated
     @Selector("escapedTemplateForString:")
     public static native String escapedTemplateForString(String string);
@@ -143,6 +149,9 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * An instance of NSRegularExpression is created from a regular expression pattern and a set of options.  If the pattern is invalid, nil will be returned and an NSError will be returned by reference.  The pattern syntax currently supported is that specified by ICU.
+     */
     @Generated
     @Selector("regularExpressionWithPattern:options:error:")
     public static native NSRegularExpression regularExpressionWithPatternOptionsError(String pattern,
@@ -183,6 +192,9 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The fundamental matching method on NSRegularExpression is a block iterator.  There are several additional convenience methods, for returning all matches at once, the number of matches, the first match, or the range of the first match.  Each match is specified by an instance of NSTextCheckingResult (of type NSTextCheckingTypeRegularExpression) in which the overall match range is given by the range property (equivalent to rangeAtIndex:0) and any capture group ranges are given by rangeAtIndex: for indexes from 1 to numberOfCaptureGroups.  {NSNotFound, 0} is used if a particular capture group does not participate in the match.
+     */
     @Generated
     @Selector("enumerateMatchesInString:options:range:usingBlock:")
     public native void enumerateMatchesInStringOptionsRangeUsingBlock(String string, @NUInt long options,
@@ -243,11 +255,17 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     public native long replaceMatchesInStringOptionsRangeWithTemplate(NSMutableString string, @NUInt long options,
             @ByValue NSRange range, String templ);
 
+    /**
+     * For clients implementing their own replace functionality, this is a method to perform the template substitution for a single result, given the string from which the result was matched, an offset to be added to the location of the result in the string (for example, in case modifications to the string moved the result since it was matched), and a replacement template.
+     */
     @Generated
     @Selector("replacementStringForResult:inString:offset:template:")
     public native String replacementStringForResultInStringOffsetTemplate(NSTextCheckingResult result, String string,
             @NInt long offset, String templ);
 
+    /**
+     * NSRegularExpression also provides find-and-replace methods for both immutable and mutable strings.  The replacement is treated as a template, with $0 being replaced by the contents of the matched range, $1 by the contents of the first capture group, and so on.  Additional digits beyond the maximum required to represent the number of capture groups will be treated as ordinary characters, as will a $ not followed by digits.  Backslash will escape both $ and itself.
+     */
     @Generated
     @Selector("stringByReplacingMatchesInString:options:range:withTemplate:")
     public native String stringByReplacingMatchesInStringOptionsRangeWithTemplate(String string, @NUInt long options,

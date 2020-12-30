@@ -99,6 +99,17 @@ public interface UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This is the NSUserActivity that will be used to restore state when the Scene reconnects.
+     * It can be the same activity used for handoff or spotlight, or it can be a separate activity
+     * with a different activity type and/or userInfo.
+     * After this method is called, and before the activity is actually saved in the restoration file,
+     * if the returned NSUserActivity has a delegate (NSUserActivityDelegate), the method
+     * userActivityWillSave is called on the delegate. Additionally, if any UIResponders
+     * have the activity set as their userActivity property, the UIResponder updateUserActivityState
+     * method is called to update the activity. This is done synchronously and ensures the activity
+     * has all info filled in before it is saved.
+     */
     @Generated
     @IsOptional
     @Selector("stateRestorationActivityForScene:")

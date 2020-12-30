@@ -58,6 +58,9 @@ public class ILCallClassificationRequest extends ILClassificationRequest impleme
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * An array of call communications sorted by date received
+     */
     @Generated
     @Selector("callCommunications")
     public native NSArray<? extends ILCallCommunication> callCommunications();

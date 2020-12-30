@@ -86,14 +86,29 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Subtitle to be used when POI detail card is visible
+     * 
+     * @note If not provided, the point of interest will fall back to displaying @c subtitle
+     */
     @Generated
     @Selector("detailSubtitle")
     public native String detailSubtitle();
 
+    /**
+     * Summary text to be used when POI detail card is visible.
+     * 
+     * @note If not provided, the point of interest will fall back to displaying @c summary
+     */
     @Generated
     @Selector("detailSummary")
     public native String detailSummary();
 
+    /**
+     * Title to be used when POI detail card is visible
+     * 
+     * @note If not provided, the point of interest will fall back to displaying @c title
+     */
     @Generated
     @Selector("detailTitle")
     public native String detailTitle();
@@ -115,6 +130,25 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPPointOfInterest initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes a point of interest to be used with @c CPPointOfInterestTemplate
+     * 
+     * @param location Location indicator use by map annotations.
+     * @param title Primary title for this point of interest
+     * @param subtitle Optional: Secondary title for this point of interest
+     * @param summary Optional: Summary text for this point of interest
+     * @param detailTitle Optional: Title to be used when POI detail card is visible
+     * @param detailSubtitle Optional: Subtitle to be used when POI detail card is visible
+     * @param detailSummary Optional: Summary text to be used when POI detail card is visible
+     * @param pinImage Optional: a custom map annotation image
+     * 
+     * @note When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
+     * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
+     * both styles.
+     * 
+     * CPPointOfInterest instances appear on the Point of Interest map view as both selectable items in the table view overlay and as map annotations.
+     */
     @Generated
     @Selector("initWithLocation:title:subtitle:summary:detailTitle:detailSubtitle:detailSummary:pinImage:")
     public native CPPointOfInterest initWithLocationTitleSubtitleSummaryDetailTitleDetailSubtitleDetailSummaryPinImage(
@@ -142,6 +176,9 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Location associated with this point of interest
+     */
     @Generated
     @Selector("location")
     public native MKMapItem location();
@@ -152,10 +189,16 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Image used for map view annotations
+     */
     @Generated
     @Selector("pinImage")
     public native UIImage pinImage();
 
+    /**
+     * Point of Interest detail card buttons
+     */
     @Generated
     @Selector("primaryButton")
     public native CPTextButton primaryButton();
@@ -172,26 +215,50 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Selector("secondaryButton")
     public native CPTextButton secondaryButton();
 
+    /**
+     * Subtitle to be used when POI detail card is visible
+     * 
+     * @note If not provided, the point of interest will fall back to displaying @c subtitle
+     */
     @Generated
     @Selector("setDetailSubtitle:")
     public native void setDetailSubtitle(String value);
 
+    /**
+     * Summary text to be used when POI detail card is visible.
+     * 
+     * @note If not provided, the point of interest will fall back to displaying @c summary
+     */
     @Generated
     @Selector("setDetailSummary:")
     public native void setDetailSummary(String value);
 
+    /**
+     * Title to be used when POI detail card is visible
+     * 
+     * @note If not provided, the point of interest will fall back to displaying @c title
+     */
     @Generated
     @Selector("setDetailTitle:")
     public native void setDetailTitle(String value);
 
+    /**
+     * Location associated with this point of interest
+     */
     @Generated
     @Selector("setLocation:")
     public native void setLocation(MKMapItem value);
 
+    /**
+     * Image used for map view annotations
+     */
     @Generated
     @Selector("setPinImage:")
     public native void setPinImage(UIImage value);
 
+    /**
+     * Point of Interest detail card buttons
+     */
     @Generated
     @Selector("setPrimaryButton:")
     public native void setPrimaryButton(CPTextButton value);
@@ -200,18 +267,30 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Selector("setSecondaryButton:")
     public native void setSecondaryButton(CPTextButton value);
 
+    /**
+     * Subtitle for this point of interest
+     */
     @Generated
     @Selector("setSubtitle:")
     public native void setSubtitle(String value);
 
+    /**
+     * Summary text for this point of interest
+     */
     @Generated
     @Selector("setSummary:")
     public native void setSummary(String value);
 
+    /**
+     * Primary title for this point of interest
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
+    /**
+     * Any custom data or an object associated with this Point of Interest.
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
@@ -220,10 +299,16 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Subtitle for this point of interest
+     */
     @Generated
     @Selector("subtitle")
     public native String subtitle();
 
+    /**
+     * Summary text for this point of interest
+     */
     @Generated
     @Selector("summary")
     public native String summary();
@@ -242,10 +327,16 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * Primary title for this point of interest
+     */
     @Generated
     @Selector("title")
     public native String title();
 
+    /**
+     * Any custom data or an object associated with this Point of Interest.
+     */
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)

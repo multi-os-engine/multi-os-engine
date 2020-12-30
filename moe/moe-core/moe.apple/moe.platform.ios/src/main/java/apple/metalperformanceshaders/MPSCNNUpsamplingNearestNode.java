@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Node representing a MPSCNNUpsamplingNearest kernel
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -90,6 +93,13 @@ public class MPSCNNUpsamplingNearestNode extends MPSNNFilterNode {
     @Selector("init")
     public native MPSCNNUpsamplingNearestNode init();
 
+    /**
+     * @abstract   Init a node representing a MPSCNNUpsamplingNearest kernel
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      integerScaleFactorX     The upsampling factor for the x dimension.
+     * @param      integerScaleFactorY     The upsampling factor for the y dimension.
+     * @return     A new MPSNNFilter node for a MPSCNNUpsamplingNearest kernel.
+     */
     @Generated
     @Selector("initWithSource:integerScaleFactorX:integerScaleFactorY:")
     public native MPSCNNUpsamplingNearestNode initWithSourceIntegerScaleFactorXIntegerScaleFactorY(
@@ -122,6 +132,13 @@ public class MPSCNNUpsamplingNearestNode extends MPSNNFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract Convenience initializer for an autoreleased MPSCNNUpsamplingNearest nodes
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      integerScaleFactorX     The upsampling factor for the x dimension.
+     * @param      integerScaleFactorY     The upsampling factor for the y dimension.
+     * @return     A new MPSNNFilter node for a MPSCNNUpsamplingNearest kernel.
+     */
     @Generated
     @Selector("nodeWithSource:integerScaleFactorX:integerScaleFactorY:")
     public static native MPSCNNUpsamplingNearestNode nodeWithSourceIntegerScaleFactorXIntegerScaleFactorY(

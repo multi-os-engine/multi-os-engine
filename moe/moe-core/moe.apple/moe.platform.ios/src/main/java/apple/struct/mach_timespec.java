@@ -49,18 +49,30 @@ public final class mach_timespec extends StructObject {
         setTv_nsec(tv_nsec);
     }
 
+    /**
+     * seconds
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int tv_sec();
 
+    /**
+     * seconds
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setTv_sec(int value);
 
+    /**
+     * nanoseconds
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int tv_nsec();
 
+    /**
+     * nanoseconds
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setTv_nsec(int value);

@@ -28,6 +28,16 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSCNNDropoutGradient
+ * @dependency This depends on Metal.framework
+ * @discussion This filter is the backward filter for the MPSCNNDropout forward filter.
+ *             It requires the mask data, along with all the associated parameters used
+ *             to generate the mask, from the forward pass. The mask is associated with
+ *             a MPSCNNDropoutGradientState object.
+ * 
+ *             In this kernel, use the secondaryOffset to apply an offset to the mask data.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -99,6 +109,9 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     @Selector("initWithCoder:")
     public native MPSCNNDropoutGradient initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract <NSSecureCoding> support
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSCNNDropoutGradient initWithCoderDevice(NSCoder aDecoder,
@@ -108,6 +121,19 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     @Selector("initWithDevice:")
     public native MPSCNNDropoutGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Standard init with default properties per filter type.
+     * @param      device              The device that the filter will be used on.
+     * @param      keepProbability     The probability that each element in the input is kept.
+     *                                 The valid range is (0.0f, 1.0f).
+     * @param      seed                The seed used to generate random numbers.
+     * @param      maskStrideInPixels  The mask stride in the x, y, and z dimensions, which
+     *                                 allows for the broadcasting of mask data. The only valid
+     *                                 values are 0 and 1 for each dimension. For no
+     *                                 broadcasting, set the values for each dimension to 1.
+     *                                 For broadcasting, set desired values to 0.
+     * @result     A valid MPSCNNDropoutGradient object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:keepProbability:seed:maskStrideInPixels:")
     public native MPSCNNDropoutGradient initWithDeviceKeepProbabilitySeedMaskStrideInPixels(
@@ -131,6 +157,11 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * @property   keepProbability
+     * @abstract   The probability that each element in the input is kept.
+     *             The valid range is (0.0f, 1.0f).
+     */
     @Generated
     @Selector("keepProbability")
     public native float keepProbability();
@@ -139,6 +170,14 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property   maskStrideInPixels
+     * @abstract   The mask stride in the x, y, and x dimensions, which
+     *             allows for the broadcasting the mask data.
+     * @discussion The only valid values are 0 and 1 for each dimension.
+     *             For no broadcasting, set the values for each dimension
+     *             to 1. For broadcasting, set desired values to 0.
+     */
     @Generated
     @Selector("maskStrideInPixels")
     @ByValue
@@ -158,6 +197,10 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   seed
+     * @abstract   The seed used to generate random numbers.
+     */
     @Generated
     @Selector("seed")
     @NUInt

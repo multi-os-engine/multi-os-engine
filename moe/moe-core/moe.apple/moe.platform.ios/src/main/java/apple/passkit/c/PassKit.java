@@ -92,6 +92,10 @@ public final class PassKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKPaymentNetworkSuica();
 
+    /**
+     * PKPassKitErrorDomain is used for generic errors with PassKit, such as
+     * adding or removing passes from the user's pass library. PassKit returns these errors to you.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -177,16 +181,26 @@ public final class PassKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKContactFieldPhoneticName();
 
+    /**
+     * PKPaymentErrorDomain is used for errors with in-app or web payments.
+     * You create your own PKPaymentErrors and return them to indicate problems with a purchase
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKPaymentErrorDomain();
 
+    /**
+     * a PKContactField the error relates to. Use with PKPaymentShippingContactInvalidError
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKPaymentErrorContactFieldUserInfoKey();
 
+    /**
+     * if the error relates to PKContactFieldPostalAddress you may set the specific key here
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

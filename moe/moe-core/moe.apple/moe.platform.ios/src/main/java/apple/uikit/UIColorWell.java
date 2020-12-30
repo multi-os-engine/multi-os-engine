@@ -314,6 +314,10 @@ public class UIColorWell extends UIControl {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Sets the selected color on the color picker and is updated when the user changes the selection.
+     * Does support KVO and does send `UIControlEventValueChanged`.
+     */
     @Generated
     @Selector("selectedColor")
     public native UIColor selectedColor();
@@ -366,14 +370,28 @@ public class UIColorWell extends UIControl {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * Sets the selected color on the color picker and is updated when the user changes the selection.
+     * Does support KVO and does send `UIControlEventValueChanged`.
+     */
     @Generated
     @Selector("setSelectedColor:")
     public native void setSelectedColor(UIColor value);
 
+    /**
+     * Controls whether alpha is supported or not.
+     * 
+     * If set to `NO` users are only able to pick fully opaque colors.
+     */
     @Generated
     @Selector("setSupportsAlpha:")
     public native void setSupportsAlpha(boolean value);
 
+    /**
+     * Title for the color picker.
+     * 
+     * Should explain what kind of color to pick. Example values are "Stroke Color" or "Fill Color".
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
@@ -386,10 +404,20 @@ public class UIColorWell extends UIControl {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Controls whether alpha is supported or not.
+     * 
+     * If set to `NO` users are only able to pick fully opaque colors.
+     */
     @Generated
     @Selector("supportsAlpha")
     public native boolean supportsAlpha();
 
+    /**
+     * Title for the color picker.
+     * 
+     * Should explain what kind of color to pick. Example values are "Stroke Color" or "Fill Color".
+     */
     @Generated
     @Selector("title")
     public native String title();

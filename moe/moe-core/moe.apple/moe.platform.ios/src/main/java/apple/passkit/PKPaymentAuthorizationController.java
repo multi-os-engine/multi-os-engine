@@ -41,6 +41,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * PKPaymentAuthorizationController prompts the user to authorize a PKPaymentRequest, funding the
+ * payment amount with a valid payment card.
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -73,14 +77,33 @@ public class PKPaymentAuthorizationController extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Determine whether this device can process payment requests.
+     * YES if the device is generally capable of making in-app payments.
+     * NO if the device cannot make in-app payments or if the user is restricted from authorizing payments.
+     */
     @Generated
     @Selector("canMakePayments")
     public static native boolean canMakePayments();
 
+    /**
+     * Determine whether this device can process payment requests using specific payment network brands.
+     * Your application should confirm that the user can make payments before attempting to authorize a payment.
+     * Your application may also want to alter its appearance or behavior when the user is not allowed
+     * to make payments.
+     * YES if the user can authorize payments on this device using one of the payment networks supported
+     * by the merchant.
+     * NO if the user cannot authorize payments on these networks or if the user is restricted from
+     * authorizing payments.
+     */
     @Generated
     @Selector("canMakePaymentsUsingNetworks:")
     public static native boolean canMakePaymentsUsingNetworks(NSArray<String> supportedNetworks);
 
+    /**
+     * Determine whether this device can process payments using the specified networks and capabilities bitmask
+     * See +canMakePaymentsUsingNetworks:
+     */
     @Generated
     @Selector("canMakePaymentsUsingNetworks:capabilities:")
     public static native boolean canMakePaymentsUsingNetworksCapabilities(NSArray<String> supportedNetworks,
@@ -165,11 +188,18 @@ public class PKPaymentAuthorizationController extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The controller's delegate.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native PKPaymentAuthorizationControllerDelegate delegate();
 
+    /**
+     * Dismisses the Apple Pay UI. Call this when you receive the paymentAuthorizationControllerDidFinish delegate
+     * callback, or otherwise wish a dismissal to occur
+     */
     @Generated
     @Selector("dismissWithCompletion:")
     public native void dismissWithCompletion(
@@ -179,20 +209,32 @@ public class PKPaymentAuthorizationController extends NSObject {
     @Selector("init")
     public native PKPaymentAuthorizationController init();
 
+    /**
+     * Initialize the controller with a payment request.
+     */
     @Generated
     @Selector("initWithPaymentRequest:")
     public native PKPaymentAuthorizationController initWithPaymentRequest(PKPaymentRequest request);
 
+    /**
+     * Presents the Apple Pay UI modally over your app. You are responsible for dismissal
+     */
     @Generated
     @Selector("presentWithCompletion:")
     public native void presentWithCompletion(
             @ObjCBlock(name = "call_presentWithCompletion") Block_presentWithCompletion completion);
 
+    /**
+     * The controller's delegate.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationControllerDelegate value);
 
+    /**
+     * The controller's delegate.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationControllerDelegate value) {
         Object __old = delegate();

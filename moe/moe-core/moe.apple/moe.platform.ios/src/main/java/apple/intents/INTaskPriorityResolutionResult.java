@@ -79,6 +79,9 @@ public class INTaskPriorityResolutionResult extends INIntentResolutionResult {
     public static native Object confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithTaskPriorityToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -150,6 +153,10 @@ public class INTaskPriorityResolutionResult extends INIntentResolutionResult {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INTaskPriority. The resolvedValue can be different than the original INTaskPriority. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedTaskPriority:")
     @MappedReturn(ObjCObjectMapper.class)

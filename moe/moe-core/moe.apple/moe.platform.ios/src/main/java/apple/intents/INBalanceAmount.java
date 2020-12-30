@@ -93,6 +93,9 @@ public class INBalanceAmount extends NSObject implements NSCopying, NSSecureCodi
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * The ISO 4217 currency code that applies to the monetary amount.
+     */
     @Generated
     @Selector("currencyCode")
     public native String currencyCode();

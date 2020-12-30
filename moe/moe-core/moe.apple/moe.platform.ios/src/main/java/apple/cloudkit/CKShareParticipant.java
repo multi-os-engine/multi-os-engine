@@ -181,15 +181,24 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
     @Selector("initWithCoder:")
     public native CKShareParticipant initWithCoder(NSCoder coder);
 
+    /**
+     * The default permission for a new participant is @c CKShareParticipantPermissionReadOnly.
+     */
     @Generated
     @Selector("permission")
     @NInt
     public native long permission();
 
+    /**
+     * The default permission for a new participant is @c CKShareParticipantPermissionReadOnly.
+     */
     @Generated
     @Selector("setPermission:")
     public native void setPermission(@NInt long value);
 
+    /**
+     * The default participant type is @c CKShareParticipantTypePrivateUser.
+     */
     @Generated
     @Selector("setType:")
     public native void setType(@NInt long value);
@@ -200,6 +209,9 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
         return supportsSecureCoding();
     }
 
+    /**
+     * The default participant type is @c CKShareParticipantTypePrivateUser.
+     */
     @Generated
     @Selector("type")
     @NInt
@@ -209,11 +221,17 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
     @Selector("userIdentity")
     public native CKUserIdentity userIdentity();
 
+    /**
+     * The default participant role is @c CKShareParticipantRolePrivateUser.
+     */
     @Generated
     @Selector("role")
     @NInt
     public native long role();
 
+    /**
+     * The default participant role is @c CKShareParticipantRolePrivateUser.
+     */
     @Generated
     @Selector("setRole:")
     public native void setRole(@NInt long value);

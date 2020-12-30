@@ -45,6 +45,9 @@ public class CPContact extends NSObject implements NSSecureCoding {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Action buttons that will be displayed when this @c CPContact is displayed in a @c CPContactTemplate.
+     */
     @Generated
     @Selector("actions")
     public native NSArray<? extends CPButton> actions();
@@ -98,10 +101,16 @@ public class CPContact extends NSObject implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * An image representing the contact.
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
 
+    /**
+     * Optional text that will be displayed in addition to the contact name
+     */
     @Generated
     @Selector("informativeText")
     public native String informativeText();
@@ -114,6 +123,22 @@ public class CPContact extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPContact initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes a new contact to be used with @c CPContactTemplate, with a name and image
+     * 
+     * @param name The name to be displayed for this contact.
+     * @param image An image for this contact. The maximum image size in points is CPButtonMaximumImageSize; larger images will be scaled down.
+     * 
+     * @note When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
+     * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
+     * both styles.
+     * 
+     * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
+     * 
+     * @discussion To properly size your list images, your app should consider the display scale of the car screen.
+     * See -[CPInterfaceController carTraitCollection].
+     */
     @Generated
     @Selector("initWithName:image:")
     public native CPContact initWithNameImage(String name, UIImage image);
@@ -139,6 +164,9 @@ public class CPContact extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The name that will be displayed for this contact.
+     */
     @Generated
     @Selector("name")
     public native String name();
@@ -157,22 +185,37 @@ public class CPContact extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Action buttons that will be displayed when this @c CPContact is displayed in a @c CPContactTemplate.
+     */
     @Generated
     @Selector("setActions:")
     public native void setActions(NSArray<? extends CPButton> value);
 
+    /**
+     * An image representing the contact.
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);
 
+    /**
+     * Optional text that will be displayed in addition to the contact name
+     */
     @Generated
     @Selector("setInformativeText:")
     public native void setInformativeText(String value);
 
+    /**
+     * The name that will be displayed for this contact.
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * Optional text that will be displayed in addition to the contact name
+     */
     @Generated
     @Selector("setSubtitle:")
     public native void setSubtitle(String value);
@@ -181,6 +224,9 @@ public class CPContact extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Optional text that will be displayed in addition to the contact name
+     */
     @Generated
     @Selector("subtitle")
     public native String subtitle();

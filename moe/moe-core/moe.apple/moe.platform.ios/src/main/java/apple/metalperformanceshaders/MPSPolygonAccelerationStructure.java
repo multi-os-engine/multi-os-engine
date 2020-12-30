@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief An acceleration structure built over polygonal shapes
+ * 
+ * @discussion See MPSAccelerationStructure for more information
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -89,16 +94,37 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @brief Index buffer containing index data. Each index references a vertex in the vertex buffer.
+     * May be nil.
+     * 
+     * This is an alias for polygonBuffers[0].indexBuffer. There must be exactly one polygon buffer
+     * to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("indexBuffer")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLBuffer indexBuffer();
 
+    /**
+     * @brief Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
+     * multiple of the index type. Changes to this property require rebuilding the acceleration
+     * structure.
+     * 
+     * This is an alias for polygonBuffers[0].indexBufferOffset. There must be exactly one polygon
+     * buffer to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("indexBufferOffset")
     @NUInt
     public native long indexBufferOffset();
 
+    /**
+     * @brief Index type. Defaults to MPSDataTypeUInt32. Only MPSDataTypeUInt16 and MPSDataTypeUInt32
+     * are supported.
+     */
     @Generated
     @Selector("indexType")
     public native int indexType();
@@ -150,11 +176,26 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @brief Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
+     * type must be specified on the MPSRayIntersector with which it is used.
+     * 
+     * This is an alias for polygonBuffers[0].maskBuffer. There must be exactly one polygon buffer
+     * to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("maskBuffer")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLBuffer maskBuffer();
 
+    /**
+     * @brief Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
+     * 
+     * This is an alias for polygonBuffers[0].maskBufferOffset. There must be exactly one polygon
+     * buffer to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("maskBufferOffset")
     @NUInt
@@ -166,15 +207,44 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief Array of polygon buffers. Each buffer contains a vertex buffer and optional index and
+     * mask buffer for an array of polygons. Changing the length of this array requires rebuilding the
+     * acceleration structure.
+     * 
+     * Using more than one MPSPolygonBuffer will reduce performance. It is better to concatenate
+     * these buffers into a single vertex buffer, index buffer, and mask buffer and use a single
+     * MPSPolygonBuffer if possible. This also applies when using an MPSInstanceAccelerationStructure:
+     * each instance or subclass of MPSPolygonAccelerationStructure in an instance hierarchy should use
+     * the same vertex buffer, index buffer, and mask buffer, although each acceleration structure
+     * may use different offsets into these buffers. This allows for the vertex, index, and mask
+     * buffers to be bound directly instead of indirectly through an argument buffer.
+     * 
+     * There must be at least one MPSPolygonBuffer. On argument buffer tier 1 devices, there must be
+     * be exactly one MPSPolygonBuffer. Use the argumentBuffersSupport property of the MTLDevice to
+     * check for support.
+     */
     @Generated
     @Selector("polygonBuffers")
     public native NSArray<? extends MPSPolygonBuffer> polygonBuffers();
 
+    /**
+     * @brief Number of polygons. Changes to this property require rebuilding the acceleration
+     * structure.
+     * 
+     * This is an alias for polygonBuffers[0].polygonCount. There must be exactly one polygon buffer
+     * to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("polygonCount")
     @NUInt
     public native long polygonCount();
 
+    /**
+     * @brief The type of polygon. Defaults to MPSPolygonTypeTriangle. Changes to this property require
+     * rebuilding the acceleration structure.
+     */
     @Generated
     @Selector("polygonType")
     @NUInt
@@ -188,34 +258,99 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @brief Index buffer containing index data. Each index references a vertex in the vertex buffer.
+     * May be nil.
+     * 
+     * This is an alias for polygonBuffers[0].indexBuffer. There must be exactly one polygon buffer
+     * to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("setIndexBuffer:")
     public native void setIndexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
+    /**
+     * @brief Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
+     * multiple of the index type. Changes to this property require rebuilding the acceleration
+     * structure.
+     * 
+     * This is an alias for polygonBuffers[0].indexBufferOffset. There must be exactly one polygon
+     * buffer to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("setIndexBufferOffset:")
     public native void setIndexBufferOffset(@NUInt long value);
 
+    /**
+     * @brief Index type. Defaults to MPSDataTypeUInt32. Only MPSDataTypeUInt16 and MPSDataTypeUInt32
+     * are supported.
+     */
     @Generated
     @Selector("setIndexType:")
     public native void setIndexType(int value);
 
+    /**
+     * @brief Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
+     * type must be specified on the MPSRayIntersector with which it is used.
+     * 
+     * This is an alias for polygonBuffers[0].maskBuffer. There must be exactly one polygon buffer
+     * to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("setMaskBuffer:")
     public native void setMaskBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
+    /**
+     * @brief Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
+     * 
+     * This is an alias for polygonBuffers[0].maskBufferOffset. There must be exactly one polygon
+     * buffer to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("setMaskBufferOffset:")
     public native void setMaskBufferOffset(@NUInt long value);
 
+    /**
+     * @brief Array of polygon buffers. Each buffer contains a vertex buffer and optional index and
+     * mask buffer for an array of polygons. Changing the length of this array requires rebuilding the
+     * acceleration structure.
+     * 
+     * Using more than one MPSPolygonBuffer will reduce performance. It is better to concatenate
+     * these buffers into a single vertex buffer, index buffer, and mask buffer and use a single
+     * MPSPolygonBuffer if possible. This also applies when using an MPSInstanceAccelerationStructure:
+     * each instance or subclass of MPSPolygonAccelerationStructure in an instance hierarchy should use
+     * the same vertex buffer, index buffer, and mask buffer, although each acceleration structure
+     * may use different offsets into these buffers. This allows for the vertex, index, and mask
+     * buffers to be bound directly instead of indirectly through an argument buffer.
+     * 
+     * There must be at least one MPSPolygonBuffer. On argument buffer tier 1 devices, there must be
+     * be exactly one MPSPolygonBuffer. Use the argumentBuffersSupport property of the MTLDevice to
+     * check for support.
+     */
     @Generated
     @Selector("setPolygonBuffers:")
     public native void setPolygonBuffers(NSArray<? extends MPSPolygonBuffer> value);
 
+    /**
+     * @brief Number of polygons. Changes to this property require rebuilding the acceleration
+     * structure.
+     * 
+     * This is an alias for polygonBuffers[0].polygonCount. There must be exactly one polygon buffer
+     * to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("setPolygonCount:")
     public native void setPolygonCount(@NUInt long value);
 
+    /**
+     * @brief The type of polygon. Defaults to MPSPolygonTypeTriangle. Changes to this property require
+     * rebuilding the acceleration structure.
+     */
     @Generated
     @Selector("setPolygonType:")
     public native void setPolygonType(@NUInt long value);
@@ -224,14 +359,52 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @brief Vertex buffer containing vertex data encoded as three 32 bit floats per vertex. Note
+     * that by default each vertex is aligned to the alignment of the vector_float3 type: 16 bytes.
+     * This can be changed using the vertexStride property. A vertex buffer must be provided before
+     * the acceleration structure is built.
+     * 
+     * When using triangle polygons, degenerate (zero or negative area) triangles are ignored
+     * during acceleration structure construction. This can be used to pad triangle indices if needed.
+     * 
+     * Quadrilateral polygons are internally treated as two triangles. If the quadrilateral has
+     * vertices v0, v1, v2, and v3, the two triangles will have vertices v0, v1, v2 and v0, v2, v3.
+     * A quadrilateral may be used to represent a triangle by repeating the last vertex. If the first
+     * triangle is degenerate (zero or negative area), the entire quadrilateral will be ignored. This
+     * can be used to pad quadrilateral indices if needed. All four vertices of a quadrilateral must
+     * be coplanar and the quadrilateral must be convex.
+     * 
+     * This is an alias for polygonBuffers[0].vertexBuffer. There must be exactly one polygon buffer
+     * to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("setVertexBuffer:")
     public native void setVertexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
+    /**
+     * @brief Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
+     * bytes.
+     * 
+     * This is an alias for polygonBuffers[0].vertexBufferOffset. There must be exactly one polygon
+     * buffer to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("setVertexBufferOffset:")
     public native void setVertexBufferOffset(@NUInt long value);
 
+    /**
+     * @brief Offset, in bytes, between consecutive vertices in the vertex buffer. Defaults to 0 bytes,
+     * indicating that the vertices are packed according to the natural alignment of the vector_float3
+     * type: 16 bytes.
+     * 
+     * @discussion This can be used to skip past any additional per-vertex data which may be stored
+     * alongside the position such as the vertex normal and texture coordinates. Must be a multiple of
+     * 4 bytes, and must be at least 12 bytes. Changes to this property require rebuilding the
+     * acceleration structure.
+     */
     @Generated
     @Selector("setVertexStride:")
     public native void setVertexStride(@NUInt long value);
@@ -255,16 +428,54 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     @NInt
     public static native long version_static();
 
+    /**
+     * @brief Vertex buffer containing vertex data encoded as three 32 bit floats per vertex. Note
+     * that by default each vertex is aligned to the alignment of the vector_float3 type: 16 bytes.
+     * This can be changed using the vertexStride property. A vertex buffer must be provided before
+     * the acceleration structure is built.
+     * 
+     * When using triangle polygons, degenerate (zero or negative area) triangles are ignored
+     * during acceleration structure construction. This can be used to pad triangle indices if needed.
+     * 
+     * Quadrilateral polygons are internally treated as two triangles. If the quadrilateral has
+     * vertices v0, v1, v2, and v3, the two triangles will have vertices v0, v1, v2 and v0, v2, v3.
+     * A quadrilateral may be used to represent a triangle by repeating the last vertex. If the first
+     * triangle is degenerate (zero or negative area), the entire quadrilateral will be ignored. This
+     * can be used to pad quadrilateral indices if needed. All four vertices of a quadrilateral must
+     * be coplanar and the quadrilateral must be convex.
+     * 
+     * This is an alias for polygonBuffers[0].vertexBuffer. There must be exactly one polygon buffer
+     * to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("vertexBuffer")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLBuffer vertexBuffer();
 
+    /**
+     * @brief Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
+     * bytes.
+     * 
+     * This is an alias for polygonBuffers[0].vertexBufferOffset. There must be exactly one polygon
+     * buffer to use this property, or the polygonBuffers property must be nil, in which case an
+     * MPSPolygonBuffer will be created automatically.
+     */
     @Generated
     @Selector("vertexBufferOffset")
     @NUInt
     public native long vertexBufferOffset();
 
+    /**
+     * @brief Offset, in bytes, between consecutive vertices in the vertex buffer. Defaults to 0 bytes,
+     * indicating that the vertices are packed according to the natural alignment of the vector_float3
+     * type: 16 bytes.
+     * 
+     * @discussion This can be used to skip past any additional per-vertex data which may be stored
+     * alongside the position such as the vertex normal and texture coordinates. Must be a multiple of
+     * 4 bytes, and must be at least 12 bytes. Changes to this property require rebuilding the
+     * acceleration structure.
+     */
     @Generated
     @Selector("vertexStride")
     @NUInt

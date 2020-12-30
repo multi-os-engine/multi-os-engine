@@ -33,18 +33,30 @@ public final class thread_command extends StructObject {
         setCmdsize(cmdsize);
     }
 
+    /**
+     * LC_THREAD or  LC_UNIXTHREAD
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int cmd();
 
+    /**
+     * LC_THREAD or  LC_UNIXTHREAD
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setCmd(int value);
 
+    /**
+     * total size of this command
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int cmdsize();
 
+    /**
+     * total size of this command
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setCmdsize(int value);

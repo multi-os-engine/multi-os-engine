@@ -34,10 +34,16 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKMatchmakerViewControllerDelegate")
 public interface GKMatchmakerViewControllerDelegate {
+    /**
+     * Matchmaking has failed with an error
+     */
     @Generated
     @Selector("matchmakerViewController:didFailWithError:")
     void matchmakerViewControllerDidFailWithError(GKMatchmakerViewController viewController, NSError error);
 
+    /**
+     * Players have been found for a server-hosted game, the game should start
+     */
     @Generated
     @IsOptional
     @Selector("matchmakerViewController:didFindHostedPlayers:")
@@ -46,6 +52,9 @@ public interface GKMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * A peer-to-peer match has been found, the game should start
+     */
     @Generated
     @IsOptional
     @Selector("matchmakerViewController:didFindMatch:")
@@ -53,6 +62,9 @@ public interface GKMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * These protocol methods are obsoleted. They will never be invoked and their implementation does nothing**
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -71,6 +83,9 @@ public interface GKMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * An invited player has accepted a hosted invite.  Apps should connect through the hosting server and then update the player's connected state (using setConnected:forHostedPlayer:)
+     */
     @Generated
     @IsOptional
     @Selector("matchmakerViewController:hostedPlayerDidAccept:")
@@ -79,6 +94,9 @@ public interface GKMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The user has cancelled matchmaking
+     */
     @Generated
     @Selector("matchmakerViewControllerWasCancelled:")
     void matchmakerViewControllerWasCancelled(GKMatchmakerViewController viewController);

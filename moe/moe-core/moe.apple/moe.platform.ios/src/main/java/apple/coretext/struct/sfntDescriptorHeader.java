@@ -51,10 +51,16 @@ public final class sfntDescriptorHeader extends StructObject {
         setDescriptor(descriptor);
     }
 
+    /**
+     * 1.0 in Fixed
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int version();
 
+    /**
+     * 1.0 in Fixed
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(int value);

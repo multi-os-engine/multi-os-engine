@@ -19,6 +19,18 @@ package apple.corebluetooth.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum CBCentralManagerState
+ * 
+ * @discussion Represents the current state of a CBCentralManager.
+ * 
+ * @constant CBCentralManagerStateUnknown       State unknown, update imminent.
+ * @constant CBCentralManagerStateResetting     The connection with the system service was momentarily lost, update imminent.
+ * @constant CBCentralManagerStateUnsupported   The platform doesn't support the Bluetooth Low Energy Central/Client role.
+ * @constant CBCentralManagerStateUnauthorized  The application is not authorized to use the Bluetooth Low Energy Central/Client role.
+ * @constant CBCentralManagerStatePoweredOff    Bluetooth is currently powered off.
+ * @constant CBCentralManagerStatePoweredOn     Bluetooth is currently powered on and available to use.
+ */
 @Generated
 public final class CBCentralManagerState {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;

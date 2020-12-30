@@ -155,6 +155,9 @@ public class GKSession extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * errors: cancelled, or timeout
+     */
     @Generated
     @Selector("acceptConnectionFromPeer:error:")
     public native boolean acceptConnectionFromPeerError(String peerID,
@@ -164,6 +167,12 @@ public class GKSession extends NSObject {
     @Selector("cancelConnectToPeer:")
     public native void cancelConnectToPeer(String peerID);
 
+    /**
+     * Attempt connection to a remote peer.  Remote peer gets a callback to -session:didReceiveConnectionRequestFromPeer:.
+     * 
+     * Success results in a call to delegate -session:peer:didChangeState: GKPeerStateConnected
+     * Failure results in a call to delegate -session:connectionWithPeerFailed:withError:
+     */
     @Generated
     @Selector("connectToPeer:withTimeout:")
     public native void connectToPeerWithTimeout(String peerID, double timeout);
@@ -178,14 +187,23 @@ public class GKSession extends NSObject {
     @Selector("denyConnectionFromPeer:")
     public native void denyConnectionFromPeer(String peerID);
 
+    /**
+     * Disconnect local peer
+     */
     @Generated
     @Selector("disconnectFromAllPeers")
     public native void disconnectFromAllPeers();
 
+    /**
+     * Disconnect a peer from the session (the peer gets disconnected from all connected peers).
+     */
     @Generated
     @Selector("disconnectPeerFromAllPeers:")
     public native void disconnectPeerFromAllPeers(String peerID);
 
+    /**
+     * default is 20 seconds
+     */
     @Generated
     @Selector("disconnectTimeout")
     public native double disconnectTimeout();
@@ -194,6 +212,9 @@ public class GKSession extends NSObject {
     @Selector("displayName")
     public native String displayName();
 
+    /**
+     * Return the application chosen name of a specific peer
+     */
     @Generated
     @Selector("displayNameForPeer:")
     public native String displayNameForPeer(String peerID);
@@ -207,29 +228,47 @@ public class GKSession extends NSObject {
     @Selector("initWithSessionID:displayName:sessionMode:")
     public native GKSession initWithSessionIDDisplayNameSessionMode(String sessionID, String name, int mode);
 
+    /**
+     * Toggle availability on the network based on session mode and search criteria.  Delegate will get a callback -session:didReceiveConnectionRequestFromPeer: when a peer attempts a connection.
+     */
     @Generated
     @Selector("isAvailable")
     public native boolean isAvailable();
 
+    /**
+     * Toggle availability on the network based on session mode and search criteria.  Delegate will get a callback -session:didReceiveConnectionRequestFromPeer: when a peer attempts a connection.
+     */
     @Generated
     @Selector("setAvailable:")
     public native void setAvailable(boolean value);
 
+    /**
+     * session's peerID
+     */
     @Generated
     @Selector("peerID")
     public native String peerID();
 
+    /**
+     * Returns peers according to connection state
+     */
     @Generated
     @Deprecated
     @Selector("peersWithConnectionState:")
     public native NSArray<?> peersWithConnectionState(int state);
 
+    /**
+     * Asynchronous delivery of data to one or more peers.  Returns YES if delivery started, NO if unable to start sending, and error will be set.  Delivery will be reliable or unreliable as set by mode.
+     */
     @Generated
     @Deprecated
     @Selector("sendData:toPeers:withDataMode:error:")
     public native boolean sendDataToPeersWithDataModeError(NSData data, NSArray<?> peers, int mode,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * errors: buffer full, data too big
+     */
     @Generated
     @Deprecated
     @Selector("sendDataToAllPeers:withDataMode:error:")
@@ -245,6 +284,9 @@ public class GKSession extends NSObject {
     @Selector("sessionMode")
     public native int sessionMode();
 
+    /**
+     * SEL = -receiveData:fromPeer:inSession:context:
+     */
     @Generated
     @Selector("setDataReceiveHandler:withContext:")
     public native void setDataReceiveHandlerWithContext(@Mapped(ObjCObjectMapper.class) Object handler,
@@ -268,6 +310,9 @@ public class GKSession extends NSObject {
         }
     }
 
+    /**
+     * default is 20 seconds
+     */
     @Generated
     @Selector("setDisconnectTimeout:")
     public native void setDisconnectTimeout(double value);

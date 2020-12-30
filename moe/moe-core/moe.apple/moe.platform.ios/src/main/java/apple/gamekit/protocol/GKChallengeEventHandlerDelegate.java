@@ -25,11 +25,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * GKChallengeEventHandler's delegate must implement the following protocol to be notified of challenge-related events. All of these methods are called on the main thread.
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKChallengeEventHandlerDelegate")
 public interface GKChallengeEventHandlerDelegate {
+    /**
+     * Called when the local player has completed one of their challenges, triggered by a push notification from the server. Received only while the game is running.
+     */
     @Generated
     @IsOptional
     @Selector("localPlayerDidCompleteChallenge:")
@@ -37,6 +43,9 @@ public interface GKChallengeEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the local player has received a challenge, triggered by a push notification from the server. Received only while the game is running.
+     */
     @Generated
     @IsOptional
     @Selector("localPlayerDidReceiveChallenge:")
@@ -44,6 +53,9 @@ public interface GKChallengeEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the user taps a challenge notification banner or the "Play Now" button for a challenge inside Game Center, causing the game to launch. Also called when the user taps a challenge banner inside the game.
+     */
     @Generated
     @IsOptional
     @Selector("localPlayerDidSelectChallenge:")
@@ -51,6 +63,9 @@ public interface GKChallengeEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a non-local player has completed a challenge issued by the local player. Triggered by a push notification from the server. Received when a challenge notification banner is tapped, or while the game is running.
+     */
     @Generated
     @IsOptional
     @Selector("remotePlayerDidCompleteChallenge:")
@@ -58,6 +73,9 @@ public interface GKChallengeEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If the method returns YES, a challenge banner (like an achievement or welcome banner -- not a notification center banner) is displayed. If NO, then no banner is displayed. Default behavior for non-implementing apps is YES.
+     */
     @Generated
     @IsOptional
     @Selector("shouldShowBannerForLocallyCompletedChallenge:")
@@ -65,6 +83,9 @@ public interface GKChallengeEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If the method returns YES, a challenge banner (like an achievement or welcome banner -- not a notification center banner) is displayed when a challenge is received in-game for the local player. If NO, then no banner is displayed, and localPlayerDidSelectChallenge: will not be called for that challenge. Default behavior for non-implementing apps is YES.
+     */
     @Generated
     @IsOptional
     @Selector("shouldShowBannerForLocallyReceivedChallenge:")
@@ -72,6 +93,9 @@ public interface GKChallengeEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If the method returns YES, a challenge banner (like an achievement or welcome banner -- not a notification center banner) is displayed. If NO, then no banner is displayed. Default behavior for non-implementing apps is YES.
+     */
     @Generated
     @IsOptional
     @Selector("shouldShowBannerForRemotelyCompletedChallenge:")

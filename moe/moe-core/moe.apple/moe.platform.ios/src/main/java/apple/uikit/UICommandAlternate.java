@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents an alternate action to take for a command.
+ * 
+ * Two alternates are equal iff their modifierFlags are equal.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -45,6 +50,9 @@ public class UICommandAlternate extends NSObject implements NSCopying, NSSecureC
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Action to take on choosing this command alternate.
+     */
     @Generated
     @Selector("action")
     public native SEL action();
@@ -59,6 +67,14 @@ public class UICommandAlternate extends NSObject implements NSCopying, NSSecureC
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Initialize an alternate action to take for a command.
+     * 
+     * @param title Short display title. This should be localized.
+     * @param action Action to take on choosing this command alternate.
+     * @param modifierFlags Bitmask of modifier flags to choose this command alternate.
+     * @return A new command alternate.
+     */
     @Generated
     @Selector("alternateWithTitle:action:modifierFlags:")
     public static native UICommandAlternate alternateWithTitleActionModifierFlags(String title, SEL action,
@@ -138,6 +154,9 @@ public class UICommandAlternate extends NSObject implements NSCopying, NSSecureC
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Bitmask of modifier flags to choose this command alternate.
+     */
     @Generated
     @Selector("modifierFlags")
     @NInt
@@ -175,6 +194,9 @@ public class UICommandAlternate extends NSObject implements NSCopying, NSSecureC
         return supportsSecureCoding();
     }
 
+    /**
+     * Short display title.
+     */
     @Generated
     @Selector("title")
     public native String title();

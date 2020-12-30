@@ -18,6 +18,9 @@ package apple.glkit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Enums for depth buffer formats.
+ */
 @Generated
 public final class GLKViewDrawableDepthFormat {
     @Generated public static final int FormatNone = 0x00000000;

@@ -18,8 +18,18 @@ package apple.cfnetwork.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ *  CFNetServiceMonitorType
+ * 
+ *  Discussion:
+ * Record type specifier in order to inform CFNetServiceMonitor to
+ * watch for certain record changes.
+ */
 @Generated
 public final class CFNetServiceMonitorType {
+    /**
+     * Watch for TXT record changes.
+     */
     @Generated public static final int kCFNetServiceMonitorTXT = 0x00000001;
 
     @Generated

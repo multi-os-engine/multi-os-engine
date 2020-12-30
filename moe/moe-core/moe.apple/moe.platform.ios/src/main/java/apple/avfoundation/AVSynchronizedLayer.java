@@ -168,6 +168,11 @@ public class AVSynchronizedLayer extends CALayer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * @method			synchronizedLayerWithPlayerItem:
+     * @abstract		Returns an instance of AVSynchronizedLayer with timing synchronized with the specified AVPlayerItem.
+     * @result			An instance of AVSynchronizedLayer.
+     */
     @Generated
     @Selector("synchronizedLayerWithPlayerItem:")
     public static native AVSynchronizedLayer synchronizedLayerWithPlayerItem(AVPlayerItem playerItem);
@@ -189,10 +194,16 @@ public class AVSynchronizedLayer extends CALayer {
     @Selector("initWithLayer:")
     public native AVSynchronizedLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
+    /**
+     * indicates the instance of AVPlayerItem to which the timing of the AVSynchronizedLayer is synchronized
+     */
     @Generated
     @Selector("playerItem")
     public native AVPlayerItem playerItem();
 
+    /**
+     * indicates the instance of AVPlayerItem to which the timing of the AVSynchronizedLayer is synchronized
+     */
     @Generated
     @Selector("setPlayerItem:")
     public native void setPlayerItem(AVPlayerItem value);

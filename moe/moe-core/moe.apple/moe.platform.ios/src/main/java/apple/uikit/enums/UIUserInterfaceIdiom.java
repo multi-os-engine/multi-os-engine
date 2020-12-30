@@ -22,14 +22,29 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class UIUserInterfaceIdiom {
     @Generated @NInt public static final long Unspecified = 0xFFFFFFFFFFFFFFFFL;
+    /**
+     * iPhone and iPod touch style UI
+     */
     @Generated @NInt public static final long Phone = 0x0000000000000000L;
+    /**
+     * iPad style UI
+     */
     @Generated @NInt public static final long Pad = 0x0000000000000001L;
+    /**
+     * Apple TV style UI
+     */
     @Generated @NInt public static final long TV = 0x0000000000000002L;
+    /**
+     * CarPlay style UI
+     */
     @Generated @NInt public static final long CarPlay = 0x0000000000000003L;
 
     @Generated
     private UIUserInterfaceIdiom() {
     }
 
+    /**
+     * Optimized for Mac UI
+     */
     @Generated @NInt public static final long Mac = 0x0000000000000005L;
 }

@@ -46,6 +46,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * In order to use a CIImageProcessorInput & CIImageProcessorOutput you must
+ * subclass from a CIImageProcessorKernel and override the methods you need to
+ * produce the desired output.
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -74,6 +79,19 @@ public class CIImageProcessorKernel extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Call this method on your CIImageProcessorKernel subclass to create a new CIImage of the specified extent.
+     * The inputs and arguments will be retained so that your subclass can be called when the image is drawn.
+     * Arguments is a dictionary containing inmutable objects of type NSData, NSString, NSNumber,
+     * CIVector or CIColor.
+     * 
+     * This method will return [CIImage emptyImage] if extent is empty.
+     * 
+     * This method will return nil and an error if:
+     * * calling outputFormat on your subclass returns an unsupported format
+     * * calling formatForInputAtIndex: on your subclass returns an unsupported format
+     * * your subclass does not implement processWithInputs:arguments:output:error:
+     */
     @Generated
     @Selector("applyWithExtent:inputs:arguments:error:")
     public static native CIImage applyWithExtentInputsArgumentsError(@ByValue CGRect extent,
@@ -110,6 +128,18 @@ public class CIImageProcessorKernel extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Override this class method if you want your any of the inputs to be in a specific supported CIPixelFormat.
+     * The format must be one of kCIFormatBGRA8, kCIFormatRGBAh, kCIFormatRGBAf or kCIFormatR8.
+     * On iOS 12 and macOS 10.14, the formats kCIFormatRh and kCIFormatRf are also supported.
+     * If the requested inputFormat is 0, then the input will be a supported format that best
+     * matches the rendering context's workingFormat.
+     * 
+     * If a processor wants data in a colorspace other than the context workingspace,
+     * then call imageByColorMatchingWorkingSpaceToColorSpace on the processor input.
+     * If a processor wants it input as alpha-unpremultiplied RGBA data, then call
+     * imageByUnpremultiplyingAlpha on the processor input.
+     */
     @Generated
     @Selector("formatForInputAtIndex:")
     public static native int formatForInputAtIndex(int input);
@@ -150,6 +180,22 @@ public class CIImageProcessorKernel extends NSObject {
     @Selector("outputFormat")
     public static native int outputFormat();
 
+    /**
+     * Override this class method to implement your processor's subclass of CIImageProcessorKernel.
+     * The class method will be called to produce the requested region of the output image
+     * given the required regions of the input images and other arguments.
+     * 
+     * The class method is passed two objects:
+     *     'inputs’  An array of id<CIImageProcessorInput> that the block consumes to produces output.
+     *               The input.region may be larger than the rect returned by 'roiForInputAtIndex'.
+     *     'output'  The id<CIImageProcessorOutput> that the block must provide results to.
+     *     ‘arguments’ The arguments dictionary passed to applyWithExtent:inputs:arguments:error:
+     * The contents of these objects are not valid outside the scope of this method.
+     * 
+     * Note that since this is a class method you cannot use or capture any state by accident.
+     * All the parameters that affect the output results must be passed in ‘inputs’ and ‘arguments'.
+     * This supports 0, 1, 2 or more input images.
+     */
     @Generated
     @Selector("processWithInputs:arguments:output:error:")
     public static native boolean processWithInputsArgumentsOutputError(NSArray<?> inputs,
@@ -164,6 +210,15 @@ public class CIImageProcessorKernel extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Override this class method to implement your processor’s ROI callback, the default implementation would return outputRect.
+     * This will be called one or more times per render to determine what portion
+     * of the input images are needed to render a given 'outputRect' of the output.
+     * This will not be called if there are 0 input images.
+     * 
+     * Note that since this is a class method you cannot use or capture any state by accident.
+     * All the parameters that affect the output results must be passed in ‘inputs’ and ‘arguments’.
+     */
     @Generated
     @Selector("roiForInput:arguments:outputRect:")
     @ByValue

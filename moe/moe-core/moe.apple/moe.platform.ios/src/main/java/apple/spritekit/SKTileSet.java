@@ -46,6 +46,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A tile set contains all of the tile definitions that are available for use in a tile map. In addition, it also contains tile groups, which define collections of related tile definitions and the rules that govern their placement.
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -152,18 +155,35 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Creates a tile set from the specified tile set file. Returns nil if the URL doesn't point to a valid tile set file.
+     * @param url the URL of the tile set file
+     */
     @Generated
     @Selector("tileSetFromURL:")
     public static native SKTileSet tileSetFromURL(NSURL url);
 
+    /**
+     * Gets the tile set with the specified name from the SpriteKit resource bundle. Returns nil if a tile set with a matching name cannot be found.
+     * @param name the name of the tile set to search for
+     */
     @Generated
     @Selector("tileSetNamed:")
     public static native SKTileSet tileSetNamed(String name);
 
+    /**
+     * Create a tile set with the specified tile groups.
+     * @param tileGroups the tile groups that will be available for use with this set
+     */
     @Generated
     @Selector("tileSetWithTileGroups:")
     public static native SKTileSet tileSetWithTileGroups(NSArray<? extends SKTileGroup> tileGroups);
 
+    /**
+     * Create a tile set with the specified tile groups and tile set type.
+     * @param tileGroups the tile groups that will be available for use with this set
+     * @param tileSetType the type of tile set this will be
+     */
     @Generated
     @Selector("tileSetWithTileGroups:tileSetType:")
     public static native SKTileSet tileSetWithTileGroupsTileSetType(NSArray<? extends SKTileGroup> tileGroups,
@@ -184,6 +204,9 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("defaultTileGroup")
     public native SKTileGroup defaultTileGroup();
 
+    /**
+     * The default tile size is the value an SKTileMapNode will use for it's tiles when the tile set is assigned to it.
+     */
     @Generated
     @Selector("defaultTileSize")
     @ByValue
@@ -201,15 +224,27 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native SKTileSet initWithCoder(NSCoder coder);
 
+    /**
+     * Initilize a tile set with the specified tile groups.
+     * @param tileGroups the tile groups that will be available for use with this set
+     */
     @Generated
     @Selector("initWithTileGroups:")
     public native SKTileSet initWithTileGroups(NSArray<? extends SKTileGroup> tileGroups);
 
+    /**
+     * Initilize a tile set with the specified tile groups and tile set type.
+     * @param tileGroups the tile groups that will be available for use with this set
+     * @param tileSetType the type of tile set this will be
+     */
     @Generated
     @Selector("initWithTileGroups:tileSetType:")
     public native SKTileSet initWithTileGroupsTileSetType(NSArray<? extends SKTileGroup> tileGroups,
             @NUInt long tileSetType);
 
+    /**
+     * Client-assignable name for the tile set. Defaults to nil.
+     */
     @Generated
     @Selector("name")
     public native String name();
@@ -218,26 +253,44 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("setDefaultTileGroup:")
     public native void setDefaultTileGroup(SKTileGroup value);
 
+    /**
+     * The default tile size is the value an SKTileMapNode will use for it's tiles when the tile set is assigned to it.
+     */
     @Generated
     @Selector("setDefaultTileSize:")
     public native void setDefaultTileSize(@ByValue CGSize value);
 
+    /**
+     * Client-assignable name for the tile set. Defaults to nil.
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * The tile groups that this set provides for use.
+     */
     @Generated
     @Selector("setTileGroups:")
     public native void setTileGroups(NSArray<? extends SKTileGroup> value);
 
+    /**
+     * The tile set type specifies how the tiles in the set will be arranged when placed in a tile map. Defaults to SKTileSetTypeGrid.
+     */
     @Generated
     @Selector("setType:")
     public native void setType(@NUInt long value);
 
+    /**
+     * The tile groups that this set provides for use.
+     */
     @Generated
     @Selector("tileGroups")
     public native NSArray<? extends SKTileGroup> tileGroups();
 
+    /**
+     * The tile set type specifies how the tiles in the set will be arranged when placed in a tile map. Defaults to SKTileSetTypeGrid.
+     */
     @Generated
     @Selector("type")
     @NUInt

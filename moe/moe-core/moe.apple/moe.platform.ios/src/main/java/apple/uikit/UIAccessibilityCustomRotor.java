@@ -161,19 +161,33 @@ public class UIAccessibilityCustomRotor extends NSObject {
     public native UIAccessibilityCustomRotor initWithNameItemSearchBlock(String name,
             @ObjCBlock(name = "call_initWithNameItemSearchBlock") Block_initWithNameItemSearchBlock itemSearchBlock);
 
+    /**
+     * A block that takes a UIAccessibilityCustomRotorItemResult and the search direction and returns the next/previous instance of that rotor item.
+     * If the currentItem is nil, that implies the first/last item should be returned.
+     */
     @Generated
     @Selector("itemSearchBlock")
     @ObjCBlock(name = "call_itemSearchBlock_ret")
     public native Block_itemSearchBlock_ret itemSearchBlock();
 
+    /**
+     * The localized name the assistive technology will use to describe the custom rotor.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * A block that takes a UIAccessibilityCustomRotorItemResult and the search direction and returns the next/previous instance of that rotor item.
+     * If the currentItem is nil, that implies the first/last item should be returned.
+     */
     @Generated
     @Selector("setItemSearchBlock:")
     public native void setItemSearchBlock(@ObjCBlock(name = "call_setItemSearchBlock") Block_setItemSearchBlock value);
 
+    /**
+     * The localized name the assistive technology will use to describe the custom rotor.
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
@@ -202,6 +216,10 @@ public class UIAccessibilityCustomRotor extends NSObject {
                 UIAccessibilityCustomRotorSearchPredicate predicate);
     }
 
+    /**
+     * Underlying attributed version of the "name" property. Setting this property will change the
+     * value of the "name" property and vice-versa.
+     */
     @Generated
     @Selector("attributedName")
     public native NSAttributedString attributedName();
@@ -232,10 +250,18 @@ public class UIAccessibilityCustomRotor extends NSObject {
                 UIAccessibilityCustomRotorSearchPredicate predicate);
     }
 
+    /**
+     * Underlying attributed version of the "name" property. Setting this property will change the
+     * value of the "name" property and vice-versa.
+     */
     @Generated
     @Selector("setAttributedName:")
     public native void setAttributedName(NSAttributedString value);
 
+    /**
+     * The system rotor type that was optionally used during initialization.
+     * default = UIAccessibilityCustomSystemRotorTypeNone
+     */
     @Generated
     @Selector("systemRotorType")
     @NInt

@@ -88,6 +88,10 @@ public class MTLIntersectionFunctionTableDescriptor extends NSObject implements 
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property functionCount
+     * @abstract The number of functions in the table.
+     */
     @Generated
     @Selector("functionCount")
     @NUInt
@@ -115,6 +119,10 @@ public class MTLIntersectionFunctionTableDescriptor extends NSObject implements 
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * @method intersectionFunctionTableDescriptor
+     * @abstract Create an autoreleased intersection function table descriptor
+     */
     @Generated
     @Selector("intersectionFunctionTableDescriptor")
     public static native MTLIntersectionFunctionTableDescriptor intersectionFunctionTableDescriptor();
@@ -141,6 +149,10 @@ public class MTLIntersectionFunctionTableDescriptor extends NSObject implements 
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property functionCount
+     * @abstract The number of functions in the table.
+     */
     @Generated
     @Selector("setFunctionCount:")
     public native void setFunctionCount(@NUInt long value);

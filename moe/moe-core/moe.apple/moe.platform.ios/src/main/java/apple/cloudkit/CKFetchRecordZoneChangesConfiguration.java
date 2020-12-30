@@ -91,6 +91,12 @@ public class CKFetchRecordZoneChangesConfiguration extends NSObject implements N
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract Declares which user-defined keys should be fetched and added to the resulting CKRecords.
+     * 
+     * @discussion If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
+     * Defaults to @c nil.
+     */
     @Generated
     @Selector("desiredKeys")
     public native NSArray<String> desiredKeys();
@@ -156,6 +162,12 @@ public class CKFetchRecordZoneChangesConfiguration extends NSObject implements N
     @NUInt
     public native long resultsLimit();
 
+    /**
+     * @abstract Declares which user-defined keys should be fetched and added to the resulting CKRecords.
+     * 
+     * @discussion If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
+     * Defaults to @c nil.
+     */
     @Generated
     @Selector("setDesiredKeys:")
     public native void setDesiredKeys(NSArray<String> value);

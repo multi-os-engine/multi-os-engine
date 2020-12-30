@@ -30,6 +30,28 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief An observation that provides all of the detected contours in an image.
+ * @discussion Contours can be referenced as a flattened array or as a tree of enclosing parent contours to enclosed child contours.
+ * 
+ *      ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+ *                         ┌───────────────────┐   │
+ *      │        Λ         │       ┌─────────┐ │
+ *              ╱ ╲        │       │         │ │   │
+ *      │      ╱   ╲       │       │         │ │
+ *            ╱     ╲      │       │ C       │ │   │
+ *      │    ▕   A   ▏     │       └─────────┘ │
+ *            ╲     ╱      │                   │   │
+ *      │      ╲   ╱       │ B                 │
+ *              ╲ ╱        └───────────────────┘   │
+ *      │        V
+ *                                                 │
+ *      └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+ * 
+ *         Contour A index 0, index path [0].
+ *         Contour B index 1, index path [1].
+ *         Contour C index 2, index path [1, 0].
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -80,16 +102,32 @@ public class VNContoursObservation extends VNObservation {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @brief Returns the VNContour object at the specified index, irrespective of hierarchy.
+     * @param contourIndex The index of the contour to request. Valid values are in the range [0..contourCount-1].
+     * @param error The error returned if the index path is out of range.
+     * @return The detected VNContour at the specified index without regard to hierarchy.
+     */
     @Generated
     @Selector("contourAtIndex:error:")
     public native VNContour contourAtIndexError(@NInt long contourIndex,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * @brief Returns the VNContour object at the specified index path.
+     * @details Use the indexPath property from a VNContour instance to pass to this method.
+     * @param indexPath The index path is the heirarchical path to the contour.
+     * @param error The error returned if the index path is out of range.
+     * @return The VNContour object at the specified index path.
+     */
     @Generated
     @Selector("contourAtIndexPath:error:")
     public native VNContour contourAtIndexPathError(NSIndexPath indexPath,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * @brief The total number of contours detected.
+     */
     @Generated
     @Selector("contourCount")
     @NInt
@@ -143,6 +181,10 @@ public class VNContoursObservation extends VNObservation {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief Obtain all of the contours represented as a CGPath in normalized coordinates.
+     * @details The path is owned by the observation and therefore will be alive as long as the the observation is alive.
+     */
     @Generated
     @Selector("normalizedPath")
     public native CGPathRef normalizedPath();
@@ -173,11 +215,19 @@ public class VNContoursObservation extends VNObservation {
         return supportsSecureCoding();
     }
 
+    /**
+     * @brief The total number of top-level contours detected.
+     */
     @Generated
     @Selector("topLevelContourCount")
     @NInt
     public native long topLevelContourCount();
 
+    /**
+     * @brief An array of the top level contours (i.e. contours that are not enclosed inside another contour),.
+     * @details This array constitutes the top of the contour hierarchy. Each contour object can be further iterated to determine its children.
+     * @see VNContour for more information.
+     */
     @Generated
     @Selector("topLevelContours")
     public native NSArray<? extends VNContour> topLevelContours();

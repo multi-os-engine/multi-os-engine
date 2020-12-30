@@ -18,6 +18,9 @@ package apple.glkit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Fog modes per the OpenGL ES 1.1 specification
+ */
 @Generated
 public final class GLKFogMode {
     @Generated public static final int Exp = 0x00000000;

@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CMTremorResult
+ * @discussion A CMTremorResult object describes the presence and prevalence of tremor symptoms (specifically, resting tremor) during a one minute result period when subjects wear the Apple Watch on their most affected arm.
+ * percentUnknown + percentNoTremor + percentTremorSlight + percentTremorMild + percentTremorModerate + percentTremorStrong = 1.0
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -96,6 +101,9 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * @brief The date and time representing the end of the result.
+     */
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -140,26 +148,47 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief The percentage of time tremor was likely and displacement amplitude was mild for the result.
+     */
     @Generated
     @Selector("percentMild")
     public native float percentMild();
 
+    /**
+     * @brief The percentage of time tremor was likely and displacement amplitude was moderate for the result.
+     */
     @Generated
     @Selector("percentModerate")
     public native float percentModerate();
 
+    /**
+     * @brief The percentage of time no tremor was detected for the result.
+     */
     @Generated
     @Selector("percentNone")
     public native float percentNone();
 
+    /**
+     * @brief The percentage of time tremor was likely and displacement amplitude was slight for the result.
+     */
     @Generated
     @Selector("percentSlight")
     public native float percentSlight();
 
+    /**
+     * @brief The percentage of time tremor was likely and displacement amplitude was strong for the result.
+     */
     @Generated
     @Selector("percentStrong")
     public native float percentStrong();
 
+    /**
+     * @discussion The percentage of time tremor was unknown for the result.
+     * Unknown periods include times when:
+     *   1. the subject is moving and therefore a resting tremor cannot be assessed, and
+     *   2. the signal strength is too low to measure tremor confidently.
+     */
     @Generated
     @Selector("percentUnknown")
     public native float percentUnknown();
@@ -176,6 +205,9 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @brief The date and time representing the start of the result.
+     */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

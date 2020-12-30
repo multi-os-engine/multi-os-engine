@@ -163,10 +163,17 @@ public class SLRequest extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The request URL
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
+    /**
+     * Specify a named MIME multi-part value. If you set parameters,
+     * the parameters will automatically be added as form data in the multi-part data.
+     */
     @Generated
     @Selector("addMultipartData:withName:type:filename:")
     public native void addMultipartDataWithNameTypeFilename(NSData data, String name, String type, String filename);
@@ -175,19 +182,33 @@ public class SLRequest extends NSObject {
     @Selector("init")
     public native SLRequest init();
 
+    /**
+     * The parameters
+     */
     @Generated
     @Selector("parameters")
     public native NSDictionary<?, ?> parameters();
 
+    /**
+     * Issue the request. This block is not guaranteed to be called on any particular thread.
+     */
     @Generated
     @Selector("performRequestWithHandler:")
     public native void performRequestWithHandler(
             @ObjCBlock(name = "call_performRequestWithHandler") Block_performRequestWithHandler handler);
 
+    /**
+     * Returns a NSURLRequest for use with NSURLConnection.
+     * If an account has been set the returned request is either signed (OAuth1),
+     * or has the appropriate token set (OAuth2)
+     */
     @Generated
     @Selector("preparedURLRequest")
     public native NSURLRequest preparedURLRequest();
 
+    /**
+     * The request method
+     */
     @Generated
     @Selector("requestMethod")
     @NInt
@@ -200,10 +221,16 @@ public class SLRequest extends NSObject {
         void call_performRequestWithHandler(NSData responseData, NSHTTPURLResponse urlResponse, NSError error);
     }
 
+    /**
+     * Optional account information used to authenticate the request. Defaults to nil.
+     */
     @Generated
     @Selector("account")
     public native ACAccount account();
 
+    /**
+     * Optional account information used to authenticate the request. Defaults to nil.
+     */
     @Generated
     @Selector("setAccount:")
     public native void setAccount(ACAccount value);

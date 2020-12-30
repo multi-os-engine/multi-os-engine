@@ -160,10 +160,17 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     @Selector("applyFillPropertiesToContext:atZoomScale:")
     public native void applyFillPropertiesToContextAtZoomScale(CGContextRef context, @NFloat double zoomScale);
 
+    /**
+     * subclassers may override these
+     */
     @Generated
     @Selector("applyStrokePropertiesToContext:atZoomScale:")
     public native void applyStrokePropertiesToContextAtZoomScale(CGContextRef context, @NFloat double zoomScale);
 
+    /**
+     * subclassers should override this to create a path and then set it on
+     * themselves with self.path = newPath;
+     */
     @Generated
     @Selector("createPath")
     public native void createPath();
@@ -188,33 +195,54 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     @Selector("invalidatePath")
     public native void invalidatePath();
 
+    /**
+     * defaults to kCGLineCapRound
+     */
     @Generated
     @Selector("lineCap")
     public native int lineCap();
 
+    /**
+     * defaults to nil
+     */
     @Generated
     @Selector("lineDashPattern")
     public native NSArray<? extends NSNumber> lineDashPattern();
 
+    /**
+     * defaults to 0
+     */
     @Generated
     @Selector("lineDashPhase")
     @NFloat
     public native double lineDashPhase();
 
+    /**
+     * defaults to kCGLineJoinRound
+     */
     @Generated
     @Selector("lineJoin")
     public native int lineJoin();
 
+    /**
+     * defaults to 0, which is MKRoadWidthAtZoomScale(currentZoomScale)
+     */
     @Generated
     @Selector("lineWidth")
     @NFloat
     public native double lineWidth();
 
+    /**
+     * defaults to 10
+     */
     @Generated
     @Selector("miterLimit")
     @NFloat
     public native double miterLimit();
 
+    /**
+     * path will be retained
+     */
     @Generated
     @Selector("path")
     public native CGPathRef path();
@@ -223,30 +251,51 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     @Selector("setFillColor:")
     public native void setFillColor(UIColor value);
 
+    /**
+     * defaults to kCGLineCapRound
+     */
     @Generated
     @Selector("setLineCap:")
     public native void setLineCap(int value);
 
+    /**
+     * defaults to nil
+     */
     @Generated
     @Selector("setLineDashPattern:")
     public native void setLineDashPattern(NSArray<? extends NSNumber> value);
 
+    /**
+     * defaults to 0
+     */
     @Generated
     @Selector("setLineDashPhase:")
     public native void setLineDashPhase(@NFloat double value);
 
+    /**
+     * defaults to kCGLineJoinRound
+     */
     @Generated
     @Selector("setLineJoin:")
     public native void setLineJoin(int value);
 
+    /**
+     * defaults to 0, which is MKRoadWidthAtZoomScale(currentZoomScale)
+     */
     @Generated
     @Selector("setLineWidth:")
     public native void setLineWidth(@NFloat double value);
 
+    /**
+     * defaults to 10
+     */
     @Generated
     @Selector("setMiterLimit:")
     public native void setMiterLimit(@NFloat double value);
 
+    /**
+     * path will be retained
+     */
     @Generated
     @Selector("setPath:")
     public native void setPath(CGPathRef value);
@@ -263,10 +312,26 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     @Selector("strokePath:inContext:")
     public native void strokePathInContext(CGPathRef path, CGContextRef context);
 
+    /**
+     * For renderers which support vector drawing, controls whether the overlay is rendered
+     * as a bitmap when being composited with the map.
+     * 
+     * When false (the default), the overlay will be rendered as vector geometry whenever possible.
+     * Note that certain geometry or configurations may force rasterization even when the value
+     * of this property is false.
+     */
     @Generated
     @Selector("setShouldRasterize:")
     public native void setShouldRasterize(boolean value);
 
+    /**
+     * For renderers which support vector drawing, controls whether the overlay is rendered
+     * as a bitmap when being composited with the map.
+     * 
+     * When false (the default), the overlay will be rendered as vector geometry whenever possible.
+     * Note that certain geometry or configurations may force rasterization even when the value
+     * of this property is false.
+     */
     @Generated
     @Selector("shouldRasterize")
     public native boolean shouldRasterize();

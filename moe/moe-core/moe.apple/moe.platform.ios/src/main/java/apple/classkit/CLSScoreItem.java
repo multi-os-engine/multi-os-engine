@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract      CLSScoreItem represents user generated score information.
+ */
 @Generated
 @Library("ClassKit")
 @Runtime(ObjCRuntime.class)
@@ -96,6 +99,13 @@ public class CLSScoreItem extends CLSActivityItem {
     @Selector("initWithCoder:")
     public native CLSScoreItem initWithCoder(NSCoder coder);
 
+    /**
+     * @abstract      Create a score item with identifiers, title, score and maximum score.
+     * @param         identifier      An identifier that is unique within activity.
+     * @param         title           Title of score. Ex @em Biology- Cellular Division Quiz
+     * @param         score           The score the user received.
+     * @param         maxScore        The maximum score possible.
+     */
     @Generated
     @Selector("initWithIdentifier:title:score:maxScore:")
     public native CLSScoreItem initWithIdentifierTitleScoreMaxScore(String identifier, String title, double score,
@@ -122,6 +132,10 @@ public class CLSScoreItem extends CLSActivityItem {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @abstract      Total score possible.
+     * @discussion    Must be greater than zero.
+     */
     @Generated
     @Selector("maxScore")
     public native double maxScore();
@@ -140,14 +154,26 @@ public class CLSScoreItem extends CLSActivityItem {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract      Score out of @c maxScore.
+     * @discussion    Should be between zero and @c maxScore [0.0,maxScore].
+     */
     @Generated
     @Selector("score")
     public native double score();
 
+    /**
+     * @abstract      Total score possible.
+     * @discussion    Must be greater than zero.
+     */
     @Generated
     @Selector("setMaxScore:")
     public native void setMaxScore(double value);
 
+    /**
+     * @abstract      Score out of @c maxScore.
+     * @discussion    Should be between zero and @c maxScore [0.0,maxScore].
+     */
     @Generated
     @Selector("setScore:")
     public native void setScore(double value);

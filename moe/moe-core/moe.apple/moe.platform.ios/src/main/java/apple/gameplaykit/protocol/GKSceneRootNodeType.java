@@ -22,6 +22,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 
+/**
+ * Protocol that specifies the type of objects that can be used as root nodes of a GKScene.
+ * 
+ * @see GKScene.rootNode
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)

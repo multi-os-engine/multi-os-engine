@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSMatrixRandom
+ * @discussion Kernels that implement random number generation.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -58,11 +62,21 @@ public class MPSMatrixRandom extends MPSKernel {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property   batchSize
+     * 
+     * @discussion The size of the batch to process.
+     */
     @Generated
     @Selector("batchSize")
     @NUInt
     public native long batchSize();
 
+    /**
+     * @property   batchStart
+     * 
+     * @discussion The starting index in the destination batch.
+     */
     @Generated
     @Selector("batchStart")
     @NUInt
@@ -94,20 +108,45 @@ public class MPSMatrixRandom extends MPSKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property   destinationDataType
+     * @discussion The type of the data which makes up the values of the result.
+     *             Supported values are:
+     *                 MPSDataTypeUInt32
+     *                 MPSDataTypeFloat32
+     * 
+     *             Default is MPSDataTypeUInt32
+     */
     @Generated
     @Selector("destinationDataType")
     public native int destinationDataType();
 
+    /**
+     * @property   distributionType
+     * @discussion The distribution from which to generate random values.
+     * 
+     *             Default is MPSMatrixRandomDistributionDefault
+     */
     @Generated
     @Selector("distributionType")
     @NUInt
     public native long distributionType();
 
+    /**
+     * @abstract   Encode a MPSMatrixRandom kernel into a command Buffer.
+     * @param      commandBuffer       A valid MTLCommandBuffer to receive the encoded filter
+     * @param      destinationMatrix   A valid MPSMatrix to contain the result.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:destinationMatrix:")
     public native void encodeToCommandBufferDestinationMatrix(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix destinationMatrix);
 
+    /**
+     * @abstract   Encode a MPSMatrixRandom kernel into a command Buffer.
+     * @param      commandBuffer       A valid MTLCommandBuffer to receive the encoded filter
+     * @param      destinationVector   A valid MPSVector to contain the result.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:destinationVector:")
     public native void encodeToCommandBufferDestinationVector(
@@ -169,10 +208,20 @@ public class MPSMatrixRandom extends MPSKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   batchSize
+     * 
+     * @discussion The size of the batch to process.
+     */
     @Generated
     @Selector("setBatchSize:")
     public native void setBatchSize(@NUInt long value);
 
+    /**
+     * @property   batchStart
+     * 
+     * @discussion The starting index in the destination batch.
+     */
     @Generated
     @Selector("setBatchStart:")
     public native void setBatchStart(@NUInt long value);

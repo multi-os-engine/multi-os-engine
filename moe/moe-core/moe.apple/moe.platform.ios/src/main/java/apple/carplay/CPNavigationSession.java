@@ -23,6 +23,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @c CPNavigationSession represents the active navigation session. A @c CPNavigationSession will be created for you
+ * when calling startNavigationSessionForTrip: on @c CYMapTemplate
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -65,6 +69,9 @@ public class CPNavigationSession extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * Cancel the trip.
+     */
     @Generated
     @Selector("cancelTrip")
     public native void cancelTrip();
@@ -85,6 +92,9 @@ public class CPNavigationSession extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Finish the trip.
+     */
     @Generated
     @Selector("finishTrip")
     public native void finishTrip();
@@ -125,6 +135,12 @@ public class CPNavigationSession extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Pause the current trip.
+     * 
+     * @param reason The reason navigation was paused.
+     * @param description An optional description of the pause reason. If @c nil, a system-provided string will be used.
+     */
     @Generated
     @Selector("pauseTripForReason:description:")
     public native void pauseTripForReasonDescription(@NUInt long reason, String description);
@@ -137,6 +153,10 @@ public class CPNavigationSession extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The next maneuvers that should be performed to follow the current route.
+     * Multiple maneuvers are displayed simultaneously, however the system may limit the number of maneuvers shown at the same time.
+     */
     @Generated
     @Selector("setUpcomingManeuvers:")
     public native void setUpcomingManeuvers(NSArray<? extends CPManeuver> value);
@@ -149,14 +169,27 @@ public class CPNavigationSession extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * The trip associated with this navigation session.
+     */
     @Generated
     @Selector("trip")
     public native CPTrip trip();
 
+    /**
+     * The next maneuvers that should be performed to follow the current route.
+     * Multiple maneuvers are displayed simultaneously, however the system may limit the number of maneuvers shown at the same time.
+     */
     @Generated
     @Selector("upcomingManeuvers")
     public native NSArray<? extends CPManeuver> upcomingManeuvers();
 
+    /**
+     * Update the travel estimates for the active navigation session and maneuver.
+     * 
+     * @param estimates The updated travel estimates.
+     * @param maneuver The maneuver pertaining to this update.
+     */
     @Generated
     @Selector("updateTravelEstimates:forManeuver:")
     public native void updateTravelEstimatesForManeuver(CPTravelEstimates estimates, CPManeuver maneuver);

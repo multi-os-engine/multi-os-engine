@@ -52,19 +52,31 @@ public final class _RuneRange extends StructObject {
         set__ranges(__ranges);
     }
 
+    /**
+     * Number of ranges stored
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int __nranges();
 
+    /**
+     * Number of ranges stored
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void set__nranges(int value);
 
+    /**
+     * Pointer to the ranges
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native _RuneEntry __ranges();
 
+    /**
+     * Pointer to the ranges
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void set__ranges(

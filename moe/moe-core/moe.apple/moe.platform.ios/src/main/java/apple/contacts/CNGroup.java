@@ -45,6 +45,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract An immutable value object representing a group.
+ * 
+ * @discussion CNGroup is thread safe.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
@@ -178,6 +183,9 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The identifier is unique among groups on the device. It can be saved and used for fetching groups next application launch.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();

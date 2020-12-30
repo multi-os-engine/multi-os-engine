@@ -86,6 +86,9 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Cancels the loading of a PHLivePhoto. The request's completion handler will be called.
+     */
     @Generated
     @Selector("cancelLivePhotoRequestWithRequestID:")
     public static native void cancelLivePhotoRequestWithRequestID(int requestID);
@@ -148,6 +151,11 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Requests a Live Photo from the given resource URLs. The result handler will be called multiple times to deliver new PHLivePhoto instances with increasingly more content. If a placeholder image is provided, the result handler will first be invoked synchronously to deliver a live photo containing only the placeholder image. Subsequent invocations of the result handler will occur on the main queue.
+     *  The targetSize and contentMode parameters are used to resize the live photo content if needed. If targetSize is equal to CGRectZero, content will not be resized.
+     *  When using this method to provide content for a PHLivePhotoView, each live photo instance delivered via the result handler should be passed to -[PHLivePhotoView setLivePhoto:].
+     */
     @Generated
     @Selector("requestLivePhotoWithResourceFileURLs:placeholderImage:targetSize:contentMode:resultHandler:")
     public static native int requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler(
@@ -197,6 +205,9 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
     @Selector("initWithCoder:")
     public native PHLivePhoto initWithCoder(NSCoder coder);
 
+    /**
+     * The dimensions of the live photo measured in pixels.
+     */
     @Generated
     @Selector("size")
     @ByValue

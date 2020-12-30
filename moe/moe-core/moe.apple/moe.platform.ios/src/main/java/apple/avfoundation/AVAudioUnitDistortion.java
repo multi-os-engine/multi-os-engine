@@ -42,6 +42,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVAudioUnitDistortion
+ * @abstract An AVAudioUnitEffect that implements a multi-stage distortion effect.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -168,22 +172,59 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
     public native AVAudioUnitDistortion initWithAudioComponentDescription(
             @ByValue AudioComponentDescription audioComponentDescription);
 
+    /**
+     * @method loadFactoryPreset:
+     * @abstract Load a distortion preset.
+     * Default:    AVAudioUnitDistortionPresetDrumsBitBrush
+     */
     @Generated
     @Selector("loadFactoryPreset:")
     public native void loadFactoryPreset(@NInt long preset);
 
+    /**
+     * @property preGain
+     * @abstract
+     * Gain applied to the signal before being distorted
+     * Range:      -80 -> 20
+     * Default:    -6
+     * Unit:       dB
+     */
     @Generated
     @Selector("preGain")
     public native float preGain();
 
+    /**
+     * @property preGain
+     * @abstract
+     * Gain applied to the signal before being distorted
+     * Range:      -80 -> 20
+     * Default:    -6
+     * Unit:       dB
+     */
     @Generated
     @Selector("setPreGain:")
     public native void setPreGain(float value);
 
+    /**
+     * @property wetDryMix
+     * @abstract
+     * Blend of the distorted and dry signals
+     * Range:      0 (all dry) -> 100 (all distorted)
+     * Default:    50
+     * Unit:       Percent
+     */
     @Generated
     @Selector("setWetDryMix:")
     public native void setWetDryMix(float value);
 
+    /**
+     * @property wetDryMix
+     * @abstract
+     * Blend of the distorted and dry signals
+     * Range:      0 (all dry) -> 100 (all distorted)
+     * Default:    50
+     * Unit:       Percent
+     */
     @Generated
     @Selector("wetDryMix")
     public native float wetDryMix();

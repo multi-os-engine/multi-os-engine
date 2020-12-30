@@ -50,10 +50,16 @@ public final class JustPCConditionalAddAction extends StructObject {
         setSubstGlyph(substGlyph);
     }
 
+    /**
+     * threshold of growth factor at which subst occurs
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int substThreshold();
 
+    /**
+     * threshold of growth factor at which subst occurs
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setSubstThreshold(int value);

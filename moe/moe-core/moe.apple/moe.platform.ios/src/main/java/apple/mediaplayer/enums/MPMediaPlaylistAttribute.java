@@ -19,9 +19,15 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * A playlist may have any number of MPMediaPlaylistAttributes associated.
+ */
 @Generated
 public final class MPMediaPlaylistAttribute {
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * if set, the playlist was created on a device rather than synced from iTunes
+     */
     @Generated @NUInt public static final long OnTheGo = 0x0000000000000001L;
     @Generated @NUInt public static final long Smart = 0x0000000000000002L;
     @Generated @NUInt public static final long Genius = 0x0000000000000004L;

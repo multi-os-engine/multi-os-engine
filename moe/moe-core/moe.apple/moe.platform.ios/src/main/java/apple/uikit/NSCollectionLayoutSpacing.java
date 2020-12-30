@@ -89,11 +89,17 @@ public class NSCollectionLayoutSpacing extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * i.e. ==
+     */
     @Generated
     @Selector("fixedSpacing:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object fixedSpacing(@NFloat double fixedSpacing);
 
+    /**
+     * i.e. >=
+     */
     @Generated
     @Selector("flexibleSpacing:")
     @MappedReturn(ObjCObjectMapper.class)

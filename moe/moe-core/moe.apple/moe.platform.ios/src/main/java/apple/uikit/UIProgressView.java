@@ -411,6 +411,9 @@ public class UIProgressView extends UIView implements NSCoding {
     @Selector("initWithFrame:")
     public native UIProgressView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * sets the view height according to the style
+     */
     @Generated
     @Selector("initWithProgressViewStyle:")
     public native UIProgressView initWithProgressViewStyle(@NInt long style);
@@ -419,6 +422,9 @@ public class UIProgressView extends UIView implements NSCoding {
     @Selector("observedProgress")
     public native NSProgress observedProgress();
 
+    /**
+     * 0.0 .. 1.0, default is 0.0. values outside are pinned.
+     */
     @Generated
     @Selector("progress")
     public native float progress();
@@ -431,6 +437,9 @@ public class UIProgressView extends UIView implements NSCoding {
     @Selector("progressTintColor")
     public native UIColor progressTintColor();
 
+    /**
+     * default is UIProgressViewStyleDefault
+     */
     @Generated
     @Selector("progressViewStyle")
     @NInt
@@ -440,6 +449,9 @@ public class UIProgressView extends UIView implements NSCoding {
     @Selector("setObservedProgress:")
     public native void setObservedProgress(NSProgress value);
 
+    /**
+     * 0.0 .. 1.0, default is 0.0. values outside are pinned.
+     */
     @Generated
     @Selector("setProgress:")
     public native void setProgress(float value);
@@ -456,6 +468,9 @@ public class UIProgressView extends UIView implements NSCoding {
     @Selector("setProgressTintColor:")
     public native void setProgressTintColor(UIColor value);
 
+    /**
+     * default is UIProgressViewStyleDefault
+     */
     @Generated
     @Selector("setProgressViewStyle:")
     public native void setProgressViewStyle(@NInt long value);

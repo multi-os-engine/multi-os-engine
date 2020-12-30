@@ -9,7 +9,16 @@ public final class MPSDeviceOptions {
     private MPSDeviceOptions() {
     }
 
+    /**
+     * Use default options
+     */
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
+    /**
+     * Prefer a low power device
+     */
     @Generated @NUInt public static final long LowPower = 0x0000000000000001L;
+    /**
+     * Skip removable devices
+     */
     @Generated @NUInt public static final long SkipRemovable = 0x0000000000000002L;
 }

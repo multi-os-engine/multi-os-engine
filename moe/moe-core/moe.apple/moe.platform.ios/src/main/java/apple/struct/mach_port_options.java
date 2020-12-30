@@ -50,19 +50,31 @@ public final class mach_port_options extends StructObject {
         setMpl(mpl);
     }
 
+    /**
+     * Flags defining attributes for port
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int flags();
 
+    /**
+     * Flags defining attributes for port
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setFlags(int value);
 
+    /**
+     * Message queue limit for port
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native mach_port_limits mpl();
 
+    /**
+     * Message queue limit for port
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMpl(@ByValue mach_port_limits value);

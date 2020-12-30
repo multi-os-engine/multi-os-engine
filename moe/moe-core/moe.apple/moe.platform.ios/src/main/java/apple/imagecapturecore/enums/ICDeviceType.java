@@ -3,6 +3,13 @@ package apple.imagecapturecore.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * ------------------------------------------------------------------------------------------------------------------------------
+ * @const ICDeviceType
+ * @abstract Image Capture Device Types
+ * @constant ICDeviceTypeCamera Camera device.
+ * @constant ICDeviceTypeScanner Scanner device.
+ */
 @Generated
 public final class ICDeviceType {
     @Generated

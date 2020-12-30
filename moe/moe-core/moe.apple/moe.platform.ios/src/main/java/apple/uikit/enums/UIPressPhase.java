@@ -21,10 +21,25 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIPressPhase {
+    /**
+     * whenever a button press begins.
+     */
     @Generated @NInt public static final long Began = 0x0000000000000000L;
+    /**
+     * whenever a button moves.
+     */
     @Generated @NInt public static final long Changed = 0x0000000000000001L;
+    /**
+     * whenever a buttons was pressed and is still being held down.
+     */
     @Generated @NInt public static final long Stationary = 0x0000000000000002L;
+    /**
+     * whenever a button is releasd.
+     */
     @Generated @NInt public static final long Ended = 0x0000000000000003L;
+    /**
+     * whenever a button press doesn't end but we need to stop tracking.
+     */
     @Generated @NInt public static final long Cancelled = 0x0000000000000004L;
 
     @Generated

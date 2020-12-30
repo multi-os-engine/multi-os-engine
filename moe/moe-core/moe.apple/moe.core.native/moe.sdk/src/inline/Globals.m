@@ -24,6 +24,7 @@ limitations under the License.
 #import <math.h>
 #import <os/log.h>
 #import <os/trace.h>
+#import <signal.h>
 #import <simd/common.h>
 #import <simd/math.h>
 #import <simd/vector_types.h>
@@ -242,6 +243,10 @@ EXPORT void __natj_inline___sincospif(float __x, float * __sinp, float * __cosp)
 
 EXPORT void __natj_inline___sincospi(double __x, double * __sinp, double * __cosp) {
 	__sincospi(__x, __sinp, __cosp);
+}
+
+EXPORT int __natj_inline___sigbits(int __signo) {
+	return __sigbits(__signo);
 }
 
 EXPORT int __natj_inline___sputc(int _c, FILE * _p) {

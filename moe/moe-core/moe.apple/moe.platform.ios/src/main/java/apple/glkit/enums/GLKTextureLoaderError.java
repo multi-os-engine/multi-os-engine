@@ -18,6 +18,9 @@ package apple.glkit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Error codes
+ */
 @Generated
 public final class GLKTextureLoaderError {
     @Generated public static final int FileOrURLNotFound = 0x00000000;

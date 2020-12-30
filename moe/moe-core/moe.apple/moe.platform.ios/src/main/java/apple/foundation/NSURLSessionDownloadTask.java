@@ -37,6 +37,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSURLSessionDownloadTask is a task that represents a download to
+ * local storage.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -148,6 +152,14 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
     @NInt
     public static native long version_static();
 
+    /**
+     * Cancel the download (and calls the superclass -cancel).  If
+     * conditions will allow for resuming the download in the future, the
+     * callback will be called with an opaque data blob, which may be used
+     * with -downloadTaskWithResumeData: to attempt to resume the download.
+     * If resume data cannot be created, the completion handler will be
+     * called with nil resumeData.
+     */
     @Generated
     @Selector("cancelByProducingResumeData:")
     public native void cancelByProducingResumeData(

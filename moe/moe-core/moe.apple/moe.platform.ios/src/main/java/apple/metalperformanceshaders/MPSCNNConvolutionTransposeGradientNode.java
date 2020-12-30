@@ -97,6 +97,18 @@ public class MPSCNNConvolutionTransposeGradientNode extends MPSCNNConvolutionGra
             MPSNNImageNode sourceGradient, MPSNNImageNode sourceImage, MPSCNNConvolutionGradientStateNode gradientState,
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
+    /**
+     * @abstract   A node to represent the gradient calculation for convolution transpose training.
+     * @param sourceGradient   The input gradient from the 'downstream' gradient filter. Often
+     *                         that is a neuron gradient filter node.
+     * @param sourceImage      The input image from the forward convolution transpose node
+     * @param gradientState    The gradient state from the forward convolution transpose
+     * @param weights          The data source from the forward convolution transpose. It may not contain
+     *                         an integrated neuron. Similary, any normalization should be
+     *                         broken out into a separate node. Pass nil to use the weights
+     *                         from the forward convolution transpose pass.
+     * @return  A MPSCNNConvolutionTransposeGradientNode
+     */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:convolutionTransposeGradientState:weights:")
     public native MPSCNNConvolutionTransposeGradientNode initWithSourceGradientSourceImageConvolutionTransposeGradientStateWeights(
@@ -137,6 +149,18 @@ public class MPSCNNConvolutionTransposeGradientNode extends MPSCNNConvolutionGra
             MPSNNImageNode sourceGradient, MPSNNImageNode sourceImage, MPSCNNConvolutionGradientStateNode gradientState,
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
+    /**
+     * @abstract   A node to represent the gradient calculation for convolution transpose training.
+     * @param sourceGradient   The input gradient from the 'downstream' gradient filter. Often
+     *                         that is a neuron gradient filter node.
+     * @param sourceImage      The input image from the forward convolution transpose node
+     * @param gradientState    The gradient state from the forward convolution transpose
+     * @param weights          The data source from the forward convolution transpose. It may not contain
+     *                         an integrated neuron. Similary, any normalization should be
+     *                         broken out into a separate node. Pass nil to use the weights
+     *                         from the forward convolution transpose pass.
+     * @return  A MPSCNNConvolutionTransposeGradientNode
+     */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:convolutionTransposeGradientState:weights:")
     public static native MPSCNNConvolutionTransposeGradientNode nodeWithSourceGradientSourceImageConvolutionTransposeGradientStateWeights(

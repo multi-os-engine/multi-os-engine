@@ -42,11 +42,19 @@ public final class ReplayKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String RPRecordingErrorDomain();
 
+    /**
+     * @key RPVideoSampleOrientationKey
+     * @abstract Use this key in conjunction with CMGetAttachment on CMSampleBufferRef to get the orientation for the sample. The orientation will follow the enum CGImagePropertyOrientation
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String RPVideoSampleOrientationKey();
 
+    /**
+     * @key RPApplicationInfoBundleIdentifierKey
+     * @abstract Use this key to retrieve bundle identifier from dictionary provided by broadcastAnnotatedWithApplicationInfo
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

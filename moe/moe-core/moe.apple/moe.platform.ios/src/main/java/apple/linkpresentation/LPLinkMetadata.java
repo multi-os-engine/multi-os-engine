@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An LPLinkMetadata object contains metadata about a URL.
+ */
 @Generated
 @Library("LinkPresentation")
 @Runtime(ObjCRuntime.class)
@@ -43,6 +46,10 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
         super(peer);
     }
 
+    /**
+     * The URL that metadata was retrieved from.
+     * This takes server-side redirects into account.
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -106,10 +113,18 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
     @NUInt
     public static native long hash_static();
 
+    /**
+     * An item provider which will return data corresponding to a representative
+     * icon for the URL.
+     */
     @Generated
     @Selector("iconProvider")
     public native NSItemProvider iconProvider();
 
+    /**
+     * An item provider which will return data corresponding to a representative
+     * image for the URL.
+     */
     @Generated
     @Selector("imageProvider")
     public native NSItemProvider imageProvider();
@@ -149,10 +164,19 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The original URL that metadata was requested from.
+     */
     @Generated
     @Selector("originalURL")
     public native NSURL originalURL();
 
+    /**
+     * A remote URL corresponding to a representative video for the URL.
+     * 
+     * This may point to to a remote video file that AVFoundation can stream,
+     * or to a YouTube video URL.
+     */
     @Generated
     @Selector("remoteVideoURL")
     public native NSURL remoteVideoURL();
@@ -165,26 +189,50 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * An item provider which will return data corresponding to a representative
+     * icon for the URL.
+     */
     @Generated
     @Selector("setIconProvider:")
     public native void setIconProvider(NSItemProvider value);
 
+    /**
+     * An item provider which will return data corresponding to a representative
+     * image for the URL.
+     */
     @Generated
     @Selector("setImageProvider:")
     public native void setImageProvider(NSItemProvider value);
 
+    /**
+     * The original URL that metadata was requested from.
+     */
     @Generated
     @Selector("setOriginalURL:")
     public native void setOriginalURL(NSURL value);
 
+    /**
+     * A remote URL corresponding to a representative video for the URL.
+     * 
+     * This may point to to a remote video file that AVFoundation can stream,
+     * or to a YouTube video URL.
+     */
     @Generated
     @Selector("setRemoteVideoURL:")
     public native void setRemoteVideoURL(NSURL value);
 
+    /**
+     * A title for the URL.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
+    /**
+     * The URL that metadata was retrieved from.
+     * This takes server-side redirects into account.
+     */
     @Generated
     @Selector("setURL:")
     public native void setURL(NSURL value);
@@ -193,6 +241,10 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * An item provider which will return data corresponding to a representative
+     * video for the URL that AVFoundation can play.
+     */
     @Generated
     @Selector("setVideoProvider:")
     public native void setVideoProvider(NSItemProvider value);
@@ -211,6 +263,9 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
         return supportsSecureCoding();
     }
 
+    /**
+     * A title for the URL.
+     */
     @Generated
     @Selector("title")
     public native String title();
@@ -220,6 +275,10 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
     @NInt
     public static native long version_static();
 
+    /**
+     * An item provider which will return data corresponding to a representative
+     * video for the URL that AVFoundation can play.
+     */
     @Generated
     @Selector("videoProvider")
     public native NSItemProvider videoProvider();

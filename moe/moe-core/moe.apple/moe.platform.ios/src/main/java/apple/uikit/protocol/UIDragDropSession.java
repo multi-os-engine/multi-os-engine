@@ -20,26 +20,64 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDragDropSession")
 public interface UIDragDropSession {
+    /**
+     * Whether this session allows moving, or not.
+     * 
+     * This is determined based on the UIDragInteraction's delegate's
+     * `-dragInteraction:sessionAllowsMoveOperation:`.
+     * 
+     * If true, then the delegate of UIDropInteraction is allowed to return `UIDropOperationMove`
+     * from `-dropInteraction:sessionDidUpdate:`.
+     */
     @Generated
     @Selector("allowsMoveOperation")
     boolean allowsMoveOperation();
 
+    /**
+     * Returns true if any of the session's items could create any objects of the specified class.
+     */
     @Generated
     @Selector("canLoadObjectsOfClass:")
     boolean canLoadObjectsOfClass(@Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass);
 
+    /**
+     * Convenience methods to iterate through this session's `items`.
+     * 
+     * Returns true if any of the session's items conforms to any of the specified UTIs.
+     */
     @Generated
     @Selector("hasItemsConformingToTypeIdentifiers:")
     boolean hasItemsConformingToTypeIdentifiers(NSArray<String> typeIdentifiers);
 
+    /**
+     * Whether this session is restricted to the application that began the drag.
+     * 
+     * This is determined based on the UIDragInteraction's delegate's
+     * `-dragInteraction:sessionIsRestrictedToDraggingApplication:`.
+     */
     @Generated
     @Selector("isRestrictedToDraggingApplication")
     boolean isRestrictedToDraggingApplication();
 
+    /**
+     * The items in the session.
+     * 
+     * Before the drop happens, the items' NSItemProviders do not allow
+     * the data in the NSItemProvider to be loaded.
+     * However, `registeredTypeIdentifiers` and metadata are available at any time.
+     * You may request the data only inside the UIDropInteractionDelegate's implementation
+     * of `-dropInteraction:performDrop:`.
+     * 
+     * When handling the drop, if you display dropped items in a linear order,
+     * place them in this order, first to last.
+     */
     @Generated
     @Selector("items")
     NSArray<? extends UIDragItem> items();
 
+    /**
+     * The location of the drag in the specified view.
+     */
     @Generated
     @Selector("locationInView:")
     @ByValue

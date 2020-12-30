@@ -159,14 +159,23 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * the CGAffineTransform's six values are stored in the first six values of the CIVector.
+     */
     @Generated
     @Selector("vectorWithCGAffineTransform:")
     public static native CIVector vectorWithCGAffineTransform(@ByValue CGAffineTransform t);
 
+    /**
+     * the CGPoint x and y values are stored in the first X and Y values of the CIVector.
+     */
     @Generated
     @Selector("vectorWithCGPoint:")
     public static native CIVector vectorWithCGPoint(@ByValue CGPoint p);
 
+    /**
+     * the CGRect x, y, width, height values are stored in the first X, Y, Z, W values of the CIVector.
+     */
     @Generated
     @Selector("vectorWithCGRect:")
     public static native CIVector vectorWithCGRect(@ByValue CGRect r);
@@ -175,6 +184,9 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("vectorWithString:")
     public static native CIVector vectorWithString(String representation);
 
+    /**
+     * Create a new vector object.
+     */
     @Generated
     @Selector("vectorWithValues:count:")
     public static native CIVector vectorWithValuesCount(ConstNFloatPtr values, @NUInt long count);
@@ -221,6 +233,9 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     @NFloat
     public native double W();
 
+    /**
+     * Properties.
+     */
     @Generated
     @Selector("X")
     @NFloat
@@ -242,6 +257,9 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Return the number of values stored in the vector.
+     */
     @Generated
     @Selector("count")
     @NUInt
@@ -275,6 +293,9 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithString:")
     public native CIVector initWithString(String representation);
 
+    /**
+     * Initializers.
+     */
     @Generated
     @Selector("initWithValues:count:")
     public native CIVector initWithValuesCount(ConstNFloatPtr values, @NUInt long count);
@@ -295,6 +316,12 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithX:Y:Z:W:")
     public native CIVector initWithXYZW(@NFloat double x, @NFloat double y, @NFloat double z, @NFloat double w);
 
+    /**
+     * Returns a formatted string with the components of the vector.
+     * The string is suitable for passing to [CIVector vectorWithString:].
+     * This property is not KVO-safe because it returns a new NSString each time.
+     * The value of the NSString will be the same each time it is called.
+     */
     @Generated
     @Selector("stringRepresentation")
     public native String stringRepresentation();
@@ -305,6 +332,11 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * Return the value from the vector at position 'index' (zero-based).
+     * Any 'index' value is valid, if the component would otherwise be
+     * undefined, zero is returned.
+     */
     @Generated
     @Selector("valueAtIndex:")
     @NFloat

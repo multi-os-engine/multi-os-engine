@@ -77,11 +77,20 @@ public class UIImageConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Applies the other configuration over this configuration
+     * Any specified values in the other configuration will overwrite the values in this one.
+     * Values that are unspecified in the other configuration will leave the current configuration
+     * as is.
+     */
     @Generated
     @Selector("configurationByApplyingConfiguration:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object configurationByApplyingConfiguration(UIImageConfiguration otherConfiguration);
 
+    /**
+     * inserts/applies the traitCollection to this configuration
+     */
     @Generated
     @Selector("configurationWithTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)

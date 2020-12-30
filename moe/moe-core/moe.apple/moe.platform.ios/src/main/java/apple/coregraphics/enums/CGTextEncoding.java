@@ -18,6 +18,9 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Text encodings.
+ */
 @Generated
 public final class CGTextEncoding {
     @Generated public static final int FontSpecific = 0x00000000;

@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A renderer for displaying a SpriteKit scene in an existing Metal workflow.
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -93,6 +96,15 @@ public class SKRenderer extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Ignores sibling and traversal order to sort the rendered contents of a scene into the most efficient batching possible.
+     * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each other.
+     * 
+     * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in the view.
+     * 
+     * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only zPosition
+     * determines render order before the efficiency heuristics are used.
+     */
     @Generated
     @Selector("ignoresSiblingOrder")
     public native boolean ignoresSiblingOrder();
@@ -128,18 +140,39 @@ public class SKRenderer extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Render the scene content in the specified Metal command buffer.
+     * 
+     * @param viewport The pixel dimensions in which to render.
+     * @param commandBuffer The Metal command buffer in which SpriteKit should schedule rendering commands.
+     * @param renderPassDescriptor The Metal render pass descriptor describing the rendering target.
+     */
     @Generated
     @Selector("renderWithViewport:commandBuffer:renderPassDescriptor:")
     public native void renderWithViewportCommandBufferRenderPassDescriptor(@ByValue CGRect viewport,
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
             MTLRenderPassDescriptor renderPassDescriptor);
 
+    /**
+     * Render the scene content using a specific Metal command encoder.
+     * 
+     * @param viewport The pixel dimensions in which to render.
+     * @param renderCommandEncoder The Metal render command encoder that SpriteKit will use to encode rendering commands. This method will not call endEncoding.
+     * @param renderPassDescriptor The Metal render pass descriptor describing the rendering target.
+     * @param commandQueue The Metal command queue.
+     */
     @Generated
     @Selector("renderWithViewport:renderCommandEncoder:renderPassDescriptor:commandQueue:")
     public native void renderWithViewportRenderCommandEncoderRenderPassDescriptorCommandQueue(@ByValue CGRect viewport,
             @Mapped(ObjCObjectMapper.class) MTLRenderCommandEncoder renderCommandEncoder,
             MTLRenderPassDescriptor renderPassDescriptor, @Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
 
+    /**
+     * Creates a renderer with the specified Metal device.
+     * 
+     * @param device A Metal device.
+     * @return A new renderer object.
+     */
     @Generated
     @Selector("rendererWithDevice:")
     public static native SKRenderer rendererWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
@@ -152,22 +185,43 @@ public class SKRenderer extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The currently presented scene, otherwise nil. If in a transition, the 'incoming' scene is returned.
+     */
     @Generated
     @Selector("scene")
     public native SKScene scene();
 
+    /**
+     * Ignores sibling and traversal order to sort the rendered contents of a scene into the most efficient batching possible.
+     * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each other.
+     * 
+     * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in the view.
+     * 
+     * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only zPosition
+     * determines render order before the efficiency heuristics are used.
+     */
     @Generated
     @Selector("setIgnoresSiblingOrder:")
     public native void setIgnoresSiblingOrder(boolean value);
 
+    /**
+     * The currently presented scene, otherwise nil. If in a transition, the 'incoming' scene is returned.
+     */
     @Generated
     @Selector("setScene:")
     public native void setScene(SKScene value);
 
+    /**
+     * A boolean that indicated whether non-visible nodes should be automatically culled when rendering.
+     */
     @Generated
     @Selector("setShouldCullNonVisibleNodes:")
     public native void setShouldCullNonVisibleNodes(boolean value);
 
+    /**
+     * Toggles display of performance stats when rendering. All default to false.
+     */
     @Generated
     @Selector("setShowsDrawCount:")
     public native void setShowsDrawCount(boolean value);
@@ -192,10 +246,16 @@ public class SKRenderer extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * A boolean that indicated whether non-visible nodes should be automatically culled when rendering.
+     */
     @Generated
     @Selector("shouldCullNonVisibleNodes")
     public native boolean shouldCullNonVisibleNodes();
 
+    /**
+     * Toggles display of performance stats when rendering. All default to false.
+     */
     @Generated
     @Selector("showsDrawCount")
     public native boolean showsDrawCount();
@@ -220,6 +280,11 @@ public class SKRenderer extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Update the scene at the specified system time.
+     * 
+     * @param currentTime The timestamp in seconds.
+     */
     @Generated
     @Selector("updateAtTime:")
     public native void updateAtTime(double currentTime);

@@ -32,6 +32,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIBarPositioningDelegate")
 public interface UIBarPositioningDelegate {
+    /**
+     * Implement this method on your manual bar delegate when not managed by a UIKit controller.
+     * UINavigationBar and UISearchBar default to UIBarPositionTop, UIToolbar defaults to UIBarPositionBottom.
+     * This message will be sent when the bar moves to a window.
+     */
     @Generated
     @IsOptional
     @Selector("positionForBar:")

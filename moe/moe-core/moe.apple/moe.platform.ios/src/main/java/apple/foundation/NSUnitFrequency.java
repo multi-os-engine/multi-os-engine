@@ -181,6 +181,9 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * Base unit - hertz
+     */
     @Generated
     @Selector("terahertz")
     public static native NSUnitFrequency terahertz();
@@ -216,6 +219,9 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * 1 FPS ≡ 1 Hertz
+     */
     @Generated
     @Selector("framesPerSecond")
     public static native NSUnitFrequency framesPerSecond();

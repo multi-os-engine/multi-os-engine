@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @discussion Context of a SmartCard PIN authentication operation.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -40,19 +43,32 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
         super(peer);
     }
 
+    /**
+     * @discussion APDU template into which PIN gets filled in. If set to nil, the system will not attempt to authenticate by sending the formatted APDU to the SmartCard, but rather the token itself is expected to perform the authentication.  It is preferred to provide APDUTemplate if possible, because it allows using hardware PINPad for secure PIN entry (provided that the reader has one).
+     */
     @Generated
     @Selector("APDUTemplate")
     public native NSData APDUTemplate();
 
+    /**
+     * @discussion PIN value which will be set when 'finishWithError:' gets triggered.  Note that the PIN is not set in case that APDUTemplate was set.  In this case, PIN was already sent to the card using specified template.
+     */
     @Generated
     @Selector("PIN")
     public native String PIN();
 
+    /**
+     * @discussion Offset in bytes within APDU template to mark the location for filling in the PIN.
+     */
     @Generated
     @Selector("PINByteOffset")
     @NInt
     public native long PINByteOffset();
 
+    /**
+     * @discussion PIN formatting properties.
+     * @note The property is initialized with a default instance of TKSmartCardPINFormat.
+     */
     @Generated
     @Selector("PINFormat")
     public native TKSmartCardPINFormat PINFormat();
@@ -149,22 +165,38 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @discussion APDU template into which PIN gets filled in. If set to nil, the system will not attempt to authenticate by sending the formatted APDU to the SmartCard, but rather the token itself is expected to perform the authentication.  It is preferred to provide APDUTemplate if possible, because it allows using hardware PINPad for secure PIN entry (provided that the reader has one).
+     */
     @Generated
     @Selector("setAPDUTemplate:")
     public native void setAPDUTemplate(NSData value);
 
+    /**
+     * @discussion PIN value which will be set when 'finishWithError:' gets triggered.  Note that the PIN is not set in case that APDUTemplate was set.  In this case, PIN was already sent to the card using specified template.
+     */
     @Generated
     @Selector("setPIN:")
     public native void setPIN(String value);
 
+    /**
+     * @discussion Offset in bytes within APDU template to mark the location for filling in the PIN.
+     */
     @Generated
     @Selector("setPINByteOffset:")
     public native void setPINByteOffset(@NInt long value);
 
+    /**
+     * @discussion PIN formatting properties.
+     * @note The property is initialized with a default instance of TKSmartCardPINFormat.
+     */
     @Generated
     @Selector("setPINFormat:")
     public native void setPINFormat(TKSmartCardPINFormat value);
 
+    /**
+     * @discussion TKSmartCard to which the formatted APDU gets sent in order to authenticate (used only if 'APDUTemplate' is set).
+     */
     @Generated
     @Selector("setSmartCard:")
     public native void setSmartCard(TKSmartCard value);
@@ -173,6 +205,9 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @discussion TKSmartCard to which the formatted APDU gets sent in order to authenticate (used only if 'APDUTemplate' is set).
+     */
     @Generated
     @Selector("smartCard")
     public native TKSmartCard smartCard();

@@ -27,6 +27,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSMatrixBinaryKernel
+ * @dependency This depends on Metal.framework
+ * @discussion A MPSMatrixBinaryKernel consumes two MPSMatrix objects and produces
+ *             one MPSMatrix object.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -59,11 +65,27 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property   batchSize
+     * 
+     * @discussion The number of matrices in the batch to process.  This property
+     *             is modifiable and by default allows all matrices available at
+     *             encoding time to be processed.  If a single matrix should be
+     *             processed set this value to 1.
+     */
     @Generated
     @Selector("batchSize")
     @NUInt
     public native long batchSize();
 
+    /**
+     * @property   batchStart
+     * 
+     * @discussion The index of the first matrix in the batch.  This property is
+     *             modifiable and defaults to 0 at initialization time.  If
+     *             batch processing should begin at a different matrix this value
+     *             should be modified prior to encoding the kernel.
+     */
     @Generated
     @Selector("batchStart")
     @NUInt
@@ -144,6 +166,15 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property   primarySourceMatrixOrigin
+     * 
+     * @discussion The origin, relative to [0, 0] in the primary source matrix, at which to
+     *             start reading values.  This property is modifiable and defaults to
+     *             [0, 0] at initialization time.  If a different origin is desired then
+     *             this should be modified prior to encoding the kernel.  The z value
+     *             must be 0.
+     */
     @Generated
     @Selector("primarySourceMatrixOrigin")
     @ByValue
@@ -157,32 +188,93 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   resultMatrixOrigin
+     * 
+     * @discussion The origin, relative to [0, 0] in the result matrix, at which to
+     *             start writing results.  This property is modifiable and defaults
+     *             to [0, 0] at initialization time.  If a different origin is desired
+     *             then this should be modified prior to encoding the kernel.  The z
+     *             value must be 0.
+     */
     @Generated
     @Selector("resultMatrixOrigin")
     @ByValue
     public native MTLOrigin resultMatrixOrigin();
 
+    /**
+     * @property   secondarySourceMatrixOrigin
+     * 
+     * @discussion The origin, relative to [0, 0] in the secondary source matrix, at which to
+     *             start reading values.  This property is modifiable and defaults to
+     *             [0, 0] at initialization time.  If a different origin is desired then
+     *             this should be modified prior to encoding the kernel.  The z value
+     *             must be 0.
+     */
     @Generated
     @Selector("secondarySourceMatrixOrigin")
     @ByValue
     public native MTLOrigin secondarySourceMatrixOrigin();
 
+    /**
+     * @property   batchSize
+     * 
+     * @discussion The number of matrices in the batch to process.  This property
+     *             is modifiable and by default allows all matrices available at
+     *             encoding time to be processed.  If a single matrix should be
+     *             processed set this value to 1.
+     */
     @Generated
     @Selector("setBatchSize:")
     public native void setBatchSize(@NUInt long value);
 
+    /**
+     * @property   batchStart
+     * 
+     * @discussion The index of the first matrix in the batch.  This property is
+     *             modifiable and defaults to 0 at initialization time.  If
+     *             batch processing should begin at a different matrix this value
+     *             should be modified prior to encoding the kernel.
+     */
     @Generated
     @Selector("setBatchStart:")
     public native void setBatchStart(@NUInt long value);
 
+    /**
+     * @property   primarySourceMatrixOrigin
+     * 
+     * @discussion The origin, relative to [0, 0] in the primary source matrix, at which to
+     *             start reading values.  This property is modifiable and defaults to
+     *             [0, 0] at initialization time.  If a different origin is desired then
+     *             this should be modified prior to encoding the kernel.  The z value
+     *             must be 0.
+     */
     @Generated
     @Selector("setPrimarySourceMatrixOrigin:")
     public native void setPrimarySourceMatrixOrigin(@ByValue MTLOrigin value);
 
+    /**
+     * @property   resultMatrixOrigin
+     * 
+     * @discussion The origin, relative to [0, 0] in the result matrix, at which to
+     *             start writing results.  This property is modifiable and defaults
+     *             to [0, 0] at initialization time.  If a different origin is desired
+     *             then this should be modified prior to encoding the kernel.  The z
+     *             value must be 0.
+     */
     @Generated
     @Selector("setResultMatrixOrigin:")
     public native void setResultMatrixOrigin(@ByValue MTLOrigin value);
 
+    /**
+     * @property   secondarySourceMatrixOrigin
+     * 
+     * @discussion The origin, relative to [0, 0] in the secondary source matrix, at which to
+     *             start reading values.  This property is modifiable and defaults to
+     *             [0, 0] at initialization time.  If a different origin is desired then
+     *             this should be modified prior to encoding the kernel.  The z value
+     *             must be 0.
+     */
     @Generated
     @Selector("setSecondarySourceMatrixOrigin:")
     public native void setSecondarySourceMatrixOrigin(@ByValue MTLOrigin value);

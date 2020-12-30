@@ -19,6 +19,9 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Compound predicates are predicates which act on the results of evaluating other operators. We provide the basic boolean operators: AND, OR, and NOT.
+ */
 @Generated
 public final class NSCompoundPredicateType {
     @Generated @NUInt public static final long NotPredicateType = 0x0000000000000000L;

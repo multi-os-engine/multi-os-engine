@@ -175,6 +175,10 @@ public class UICollectionViewController extends UIViewController
     @NInt
     public static native long version_static();
 
+    /**
+     * Defaults to YES, and if YES, any selection is cleared in viewWillAppear:
+     * This property has no effect if the useLayoutToLayoutNavigationTransitions property is set to YES
+     */
     @Generated
     @Selector("clearsSelectionOnViewWillAppear")
     public native boolean clearsSelectionOnViewWillAppear();
@@ -328,6 +332,9 @@ public class UICollectionViewController extends UIViewController
     public native void collectionViewWillDisplaySupplementaryViewForElementKindAtIndexPath(
             UICollectionView collectionView, UICollectionReusableView view, String elementKind, NSIndexPath indexPath);
 
+    /**
+     * The layout object is needed when defining interactive layout to layout transitions.
+     */
     @Generated
     @Selector("collectionViewLayout")
     public native UICollectionViewLayout collectionViewLayout();
@@ -353,6 +360,9 @@ public class UICollectionViewController extends UIViewController
     @Selector("initWithNibName:bundle:")
     public native UICollectionViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * Defaults to YES, and if YES, a system standard reordering gesture is used to drive collection view reordering
+     */
     @Generated
     @Selector("installsStandardGestureForInteractiveMovement")
     public native boolean installsStandardGestureForInteractiveMovement();
@@ -425,6 +435,10 @@ public class UICollectionViewController extends UIViewController
     public native void scrollViewWillEndDraggingWithVelocityTargetContentOffset(UIScrollView scrollView,
             @ByValue CGPoint velocity, CGPoint targetContentOffset);
 
+    /**
+     * Defaults to YES, and if YES, any selection is cleared in viewWillAppear:
+     * This property has no effect if the useLayoutToLayoutNavigationTransitions property is set to YES
+     */
     @Generated
     @Selector("setClearsSelectionOnViewWillAppear:")
     public native void setClearsSelectionOnViewWillAppear(boolean value);
@@ -433,14 +447,31 @@ public class UICollectionViewController extends UIViewController
     @Selector("setCollectionView:")
     public native void setCollectionView(UICollectionView value);
 
+    /**
+     * Defaults to YES, and if YES, a system standard reordering gesture is used to drive collection view reordering
+     */
     @Generated
     @Selector("setInstallsStandardGestureForInteractiveMovement:")
     public native void setInstallsStandardGestureForInteractiveMovement(boolean value);
 
+    /**
+     * Set to YES before pushing a a UICollectionViewController onto a
+     * UINavigationController. The top view controller of the navigation controller
+     * must be a UICollectionViewController that was pushed with this property set
+     * to NO. This property should NOT be changed on a UICollectionViewController that
+     * has already been pushed onto a UINavigationController.
+     */
     @Generated
     @Selector("setUseLayoutToLayoutNavigationTransitions:")
     public native void setUseLayoutToLayoutNavigationTransitions(boolean value);
 
+    /**
+     * Set to YES before pushing a a UICollectionViewController onto a
+     * UINavigationController. The top view controller of the navigation controller
+     * must be a UICollectionViewController that was pushed with this property set
+     * to NO. This property should NOT be changed on a UICollectionViewController that
+     * has already been pushed onto a UINavigationController.
+     */
     @Generated
     @Selector("useLayoutToLayoutNavigationTransitions")
     public native boolean useLayoutToLayoutNavigationTransitions();

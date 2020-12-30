@@ -23,6 +23,21 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MPSNNGradientFilterNode
+ * @discussion For each MPSNNFilterNode, there is a corresponding MPSNNGradientFilterNode
+ *             used for training that back propagates image gradients to refine the
+ *             various parameters in each node. Generally, it takes as input a gradient
+ *             corresponding to the result image from the MPSNNFilterNode and returns
+ *             a gradient image corresponding to the source image of the MPSNNFilterNode.
+ *             In addition, there is generally a MPSNNState produced by the MPSNNFilterNode
+ *             that is consumed by the MPSNNGradientNode and the MPSNNGradientNode generally
+ *             needs to look at the MPSNNFilterNode source image.
+ * 
+ *             If you have a simple method to traverse your inference graph backwards, then
+ *             -[MPSNNFilterNode gradientFilterWithSource:] is a simple way to construct
+ *             these.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)

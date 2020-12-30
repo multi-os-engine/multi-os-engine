@@ -21,21 +21,58 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MPMediaType {
+    /**
+     * audio
+     */
     @Generated @NUInt public static final long Music = 0x0000000000000001L;
+    /**
+     * audio
+     */
     @Generated @NUInt public static final long Podcast = 0x0000000000000002L;
+    /**
+     * audio
+     */
     @Generated @NUInt public static final long AudioBook = 0x0000000000000004L;
+    /**
+     * audio
+     */
     @Generated @NUInt public static final long AudioITunesU = 0x0000000000000008L;
+    /**
+     * audio
+     */
     @Generated @NUInt public static final long AnyAudio = 0x00000000000000FFL;
+    /**
+     * video
+     */
     @Generated @NUInt public static final long Movie = 0x0000000000000100L;
+    /**
+     * video
+     */
     @Generated @NUInt public static final long TVShow = 0x0000000000000200L;
+    /**
+     * video
+     */
     @Generated @NUInt public static final long VideoPodcast = 0x0000000000000400L;
+    /**
+     * video
+     */
     @Generated @NUInt public static final long MusicVideo = 0x0000000000000800L;
+    /**
+     * video
+     */
     @Generated @NUInt public static final long VideoITunesU = 0x0000000000001000L;
+    /**
+     * video
+     */
     @Generated @NUInt public static final long HomeVideo = 0x0000000000002000L;
+    /**
+     * video
+     */
     @Generated @NUInt public static final long AnyVideo = 0x000000000000FF00L;
-    @Generated @NUInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ?
-            0xFFFFFFFFFFFFFFFFL :
-            0x00000000FFFFFFFFL;
+    /**
+     * video
+     */
+    @Generated @NUInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ? 0xFFFFFFFFFFFFFFFFL : 0x00000000FFFFFFFFL;
 
     @Generated
     private MPMediaType() {

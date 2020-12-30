@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract returns elementwise comparison of left and right
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -73,6 +76,11 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property   comparisonType
+     * @abstract   The comparison type to set on the underlying kernel.  Defaults
+     *             to MPSNNComparisonTypeEqual.
+     */
     @Generated
     @Selector("comparisonType")
     @NUInt
@@ -146,6 +154,11 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   comparisonType
+     * @abstract   The comparison type to set on the underlying kernel.  Defaults
+     *             to MPSNNComparisonTypeEqual.
+     */
     @Generated
     @Selector("setComparisonType:")
     public native void setComparisonType(@NUInt long value);

@@ -354,15 +354,24 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     @Selector("adjustsFontForContentSizeCategory")
     public native boolean adjustsFontForContentSizeCategory();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("adjustsFontSizeToFitWidth")
     public native boolean adjustsFontSizeToFitWidth();
 
+    /**
+     * Non-functional.  Hand tune by using NSKernAttributeName to affect tracking, or consider using the allowsDefaultTighteningForTruncation property.
+     */
     @Generated
     @Deprecated
     @Selector("adjustsLetterSpacingToFitWidth")
     public native boolean adjustsLetterSpacingToFitWidth();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("allowsDefaultTighteningForTruncation")
     public native boolean allowsDefaultTighteningForTruncation();
@@ -414,10 +423,16 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("attributedText")
     public native NSAttributedString attributedText();
 
+    /**
+     * default is UIBaselineAdjustmentAlignBaselines
+     */
     @Generated
     @Selector("baselineAdjustment")
     @NInt
@@ -431,10 +446,16 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * default is nil (system font 17 plain)
+     */
     @Generated
     @Selector("font")
     public native UIFont font();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("highlightedTextColor")
     public native UIColor highlightedTextColor();
@@ -451,51 +472,87 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     @Selector("initWithFrame:")
     public native UILabel initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * default is YES. changes how the label is drawn
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * default is YES. changes how the label is drawn
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("isHighlighted")
     public native boolean isHighlighted();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setHighlighted:")
     public native void setHighlighted(boolean value);
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("isUserInteractionEnabled")
     public native boolean isUserInteractionEnabled();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setUserInteractionEnabled:")
     public native void setUserInteractionEnabled(boolean value);
 
+    /**
+     * default is NSLineBreakByTruncatingTail. used for single and multiple lines of text
+     */
     @Generated
     @Selector("lineBreakMode")
     @NInt
     public native long lineBreakMode();
 
+    /**
+     * deprecated - use minimumScaleFactor. default is 0.0
+     */
     @Generated
     @Deprecated
     @Selector("minimumFontSize")
     @NFloat
     public native double minimumFontSize();
 
+    /**
+     * default is 0.0
+     */
     @Generated
     @Selector("minimumScaleFactor")
     @NFloat
     public native double minimumScaleFactor();
 
+    /**
+     * this determines the number of lines to draw and what to do when sizeToFit is called. default value is 1 (single line). A value of 0 means no limit
+     * if the height of the text reaches the # of lines or the height of the view is less than the # of lines allowed, the text will be
+     * truncated using the line break mode.
+     */
     @Generated
     @Selector("numberOfLines")
     @NInt
     public native long numberOfLines();
 
+    /**
+     * Support for constraint-based layout (auto layout)
+     * If nonzero, this is used when determining -intrinsicContentSize for multiline labels
+     */
     @Generated
     @Selector("preferredMaxLayoutWidth")
     @NFloat
@@ -505,98 +562,171 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     @Selector("setAdjustsFontForContentSizeCategory:")
     public native void setAdjustsFontForContentSizeCategory(boolean value);
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setAdjustsFontSizeToFitWidth:")
     public native void setAdjustsFontSizeToFitWidth(boolean value);
 
+    /**
+     * Non-functional.  Hand tune by using NSKernAttributeName to affect tracking, or consider using the allowsDefaultTighteningForTruncation property.
+     */
     @Generated
     @Deprecated
     @Selector("setAdjustsLetterSpacingToFitWidth:")
     public native void setAdjustsLetterSpacingToFitWidth(boolean value);
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setAllowsDefaultTighteningForTruncation:")
     public native void setAllowsDefaultTighteningForTruncation(boolean value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setAttributedText:")
     public native void setAttributedText(NSAttributedString value);
 
+    /**
+     * default is UIBaselineAdjustmentAlignBaselines
+     */
     @Generated
     @Selector("setBaselineAdjustment:")
     public native void setBaselineAdjustment(@NInt long value);
 
+    /**
+     * default is nil (system font 17 plain)
+     */
     @Generated
     @Selector("setFont:")
     public native void setFont(UIFont value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setHighlightedTextColor:")
     public native void setHighlightedTextColor(UIColor value);
 
+    /**
+     * default is NSLineBreakByTruncatingTail. used for single and multiple lines of text
+     */
     @Generated
     @Selector("setLineBreakMode:")
     public native void setLineBreakMode(@NInt long value);
 
+    /**
+     * deprecated - use minimumScaleFactor. default is 0.0
+     */
     @Generated
     @Deprecated
     @Selector("setMinimumFontSize:")
     public native void setMinimumFontSize(@NFloat double value);
 
+    /**
+     * default is 0.0
+     */
     @Generated
     @Selector("setMinimumScaleFactor:")
     public native void setMinimumScaleFactor(@NFloat double value);
 
+    /**
+     * this determines the number of lines to draw and what to do when sizeToFit is called. default value is 1 (single line). A value of 0 means no limit
+     * if the height of the text reaches the # of lines or the height of the view is less than the # of lines allowed, the text will be
+     * truncated using the line break mode.
+     */
     @Generated
     @Selector("setNumberOfLines:")
     public native void setNumberOfLines(@NInt long value);
 
+    /**
+     * Support for constraint-based layout (auto layout)
+     * If nonzero, this is used when determining -intrinsicContentSize for multiline labels
+     */
     @Generated
     @Selector("setPreferredMaxLayoutWidth:")
     public native void setPreferredMaxLayoutWidth(@NFloat double value);
 
+    /**
+     * default is nil (no shadow)
+     */
     @Generated
     @Selector("setShadowColor:")
     public native void setShadowColor(UIColor value);
 
+    /**
+     * default is CGSizeMake(0, -1) -- a top shadow
+     */
     @Generated
     @Selector("setShadowOffset:")
     public native void setShadowOffset(@ByValue CGSize value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setText:")
     public native void setText(String value);
 
+    /**
+     * default is NSTextAlignmentNatural (before iOS 9, the default was NSTextAlignmentLeft)
+     */
     @Generated
     @Selector("setTextAlignment:")
     public native void setTextAlignment(@NInt long value);
 
+    /**
+     * default is labelColor
+     */
     @Generated
     @Selector("setTextColor:")
     public native void setTextColor(UIColor value);
 
+    /**
+     * default is nil (no shadow)
+     */
     @Generated
     @Selector("shadowColor")
     public native UIColor shadowColor();
 
+    /**
+     * default is CGSizeMake(0, -1) -- a top shadow
+     */
     @Generated
     @Selector("shadowOffset")
     @ByValue
     public native CGSize shadowOffset();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("text")
     public native String text();
 
+    /**
+     * default is NSTextAlignmentNatural (before iOS 9, the default was NSTextAlignmentLeft)
+     */
     @Generated
     @Selector("textAlignment")
     @NInt
     public native long textAlignment();
 
+    /**
+     * default is labelColor
+     */
     @Generated
     @Selector("textColor")
     public native UIColor textColor();
 
+    /**
+     * override points. can adjust rect before calling super.
+     * label has default content mode of UIViewContentModeRedraw
+     */
     @Generated
     @Selector("textRectForBounds:limitedToNumberOfLines:")
     @ByValue
@@ -608,11 +738,21 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    /**
+     * Specifies the line break strategies that may be used for laying out the text in this label.
+     * If this property is not set, the default value is NSLineBreakStrategyStandard.
+     * If the label contains an attributed text with paragraph style(s) that specify a set of line break strategies, the set of strategies in the paragraph style(s) will be used instead of the set of strategies defined by this property.
+     */
     @Generated
     @Selector("lineBreakStrategy")
     @NUInt
     public native long lineBreakStrategy();
 
+    /**
+     * Specifies the line break strategies that may be used for laying out the text in this label.
+     * If this property is not set, the default value is NSLineBreakStrategyStandard.
+     * If the label contains an attributed text with paragraph style(s) that specify a set of line break strategies, the set of strategies in the paragraph style(s) will be used instead of the set of strategies defined by this property.
+     */
     @Generated
     @Selector("setLineBreakStrategy:")
     public native void setLineBreakStrategy(@NUInt long value);

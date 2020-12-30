@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CPMapTemplateDelegate")
 public interface CPMapTemplateDelegate {
+    /**
+     * Called when the map interface has completed dismissal of a navigation alert.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:didDismissNavigationAlert:dismissalContext:")
@@ -31,6 +34,9 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a pan gesture ends. May not be called when connected to some CarPlay systems.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:didEndPanGestureWithVelocity:")
@@ -38,6 +44,11 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the map interface has displayed a navigation alert.
+     * 
+     * To take action in response to button presses on the navigation alert, see -[CPAlertAction handler].
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:didShowNavigationAlert:")
@@ -45,6 +56,9 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a pan gesture changes. May not be called when connected to some CarPlay systems.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:didUpdatePanGestureWithTranslation:velocity:")
@@ -53,6 +67,10 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Changes the visual layout of the maneuver.
+     * @return a CPManeuverDisplayStyle value representing the style to be used for displaying the maneuver
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:displayStyleForManeuver:")
@@ -61,6 +79,9 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a pan button is pressed/selected for an extended duration.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:panBeganWithDirection:")
@@ -68,6 +89,9 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a pan button is released after an extended duration.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:panEndedWithDirection:")
@@ -75,6 +99,9 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a pan button is pressed/selected momentarily.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:panWithDirection:")
@@ -82,6 +109,9 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the user has selected a route choice to preview.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:selectedPreviewForTrip:usingRouteChoice:")
@@ -90,6 +120,10 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Determines if the maneuver should be presented as a notification when the app is in the background.
+     * @return YES if the maneuver should appear as a notification, otherwise NO
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:shouldShowNotificationForManeuver:")
@@ -97,6 +131,10 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Determines if the navigation alert should be presented as a notification when the app is in the background.
+     *  @return YES if the alert should appear as a notification, otherwise NO
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:shouldShowNotificationForNavigationAlert:")
@@ -105,6 +143,10 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Determines if the updated distance remaining for the maneuver should be presented as a notification when the app is in the background.
+     *  @return YES if the updated estimates should appear in the notification, otherwise NO
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:shouldUpdateNotificationForManeuver:withTravelEstimates:")
@@ -113,6 +155,9 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the user has selected a route choice to navigate.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:startedTrip:usingRouteChoice:")
@@ -121,6 +166,9 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the map interface is preparing to dismiss a navigation alert.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:willDismissNavigationAlert:dismissalContext:")
@@ -129,6 +177,9 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the map interface is about to display a navigation alert.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplate:willShowNavigationAlert:")
@@ -136,6 +187,9 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a pan gesture begins. May not be called when connected to some CarPlay systems.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplateDidBeginPanGesture:")
@@ -143,6 +197,13 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when navigation has been canceled by the system.
+     * 
+     * @note In CarPlay systems that have native navigation, it is expected that only either the native navigation or the iPhone
+     * can be actively navigating. When navigation begins in the native system, all CarPlay supported navigation
+     * apps that are actively navigating will need to end their navigation session.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplateDidCancelNavigation:")
@@ -150,6 +211,9 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This will be called when the pan interface disappears on the map interface.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplateDidDismissPanningInterface:")
@@ -157,6 +221,9 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This will be called when the pan interface appears on the map interface.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplateDidShowPanningInterface:")
@@ -164,6 +231,9 @@ public interface CPMapTemplateDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This will be called when the pan interface will disappear on the map interface.
+     */
     @Generated
     @IsOptional
     @Selector("mapTemplateWillDismissPanningInterface:")

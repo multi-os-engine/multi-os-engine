@@ -33,18 +33,30 @@ public final class timezone extends StructObject {
         setTz_dsttime(tz_dsttime);
     }
 
+    /**
+     * minutes west of Greenwich
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int tz_minuteswest();
 
+    /**
+     * minutes west of Greenwich
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setTz_minuteswest(int value);
 
+    /**
+     * type of dst correction
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int tz_dsttime();
 
+    /**
+     * type of dst correction
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setTz_dsttime(int value);

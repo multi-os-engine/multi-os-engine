@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A singleton object responsible for dispatching challenge-related events to its delegate
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

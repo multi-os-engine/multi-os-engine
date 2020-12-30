@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A transition style from one scene to another.
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -200,6 +203,9 @@ public class SKTransition extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Create a transition with a CIFilter. The filter must be a transition filter which requires only two images (inputImage, inputTargetImage) and generates a single image (outputImage). SpriteKit sets the inputImage, inputTargetImage, and inputTime properties when rendering, all others must be setup beforehand.
+     */
     @Generated
     @Selector("transitionWithCIFilter:duration:")
     public static native SKTransition transitionWithCIFilterDuration(CIFilter filter, double sec);
@@ -219,18 +225,30 @@ public class SKTransition extends NSObject implements NSCopying {
     @Selector("init")
     public native SKTransition init();
 
+    /**
+     * Pause the incoming Scene during the transition, defaults to YES.
+     */
     @Generated
     @Selector("pausesIncomingScene")
     public native boolean pausesIncomingScene();
 
+    /**
+     * Pause the outgoing Scene during the transition, defaults to YES.
+     */
     @Generated
     @Selector("pausesOutgoingScene")
     public native boolean pausesOutgoingScene();
 
+    /**
+     * Pause the incoming Scene during the transition, defaults to YES.
+     */
     @Generated
     @Selector("setPausesIncomingScene:")
     public native void setPausesIncomingScene(boolean value);
 
+    /**
+     * Pause the outgoing Scene during the transition, defaults to YES.
+     */
     @Generated
     @Selector("setPausesOutgoingScene:")
     public native void setPausesOutgoingScene(boolean value);

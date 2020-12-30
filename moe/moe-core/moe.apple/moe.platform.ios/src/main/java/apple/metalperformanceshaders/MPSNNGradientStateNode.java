@@ -23,6 +23,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MPSNNGradientStateNode
+ * @discussion During training, each MPSNNFilterNode has a corresponding
+ *             MPSNNGradientFilterNode for the gradient computation for
+ *             trainable parameter update. The two communicate through a
+ *             MPSNNGradientStateNode or subclass which carries information
+ *             about the inference pass settings to the gradient pass.
+ *             You can avoid managing these -- there will be many! -- by
+ *             using -[MPSNNFilterNode gradientFilterWithSources:] to make
+ *             the MPSNNGradientFilterNodes. That method will append
+ *             the necessary extra information like MPSNNGradientState
+ *             nodes and inference filter source image nodes to the object as
+ *             needed.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)

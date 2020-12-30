@@ -32,6 +32,13 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MCBrowserViewControllerDelegate")
 public interface MCBrowserViewControllerDelegate {
+    /**
+     * Notifies delegate that a peer was found; discoveryInfo can be used to
+     * determine whether the peer should be presented to the user, and the
+     * delegate should return a YES if the peer should be presented; this method
+     * is optional, if not implemented every nearby peer will be presented to
+     * the user.
+     */
     @Generated
     @IsOptional
     @Selector("browserViewController:shouldPresentNearbyPeer:withDiscoveryInfo:")
@@ -40,10 +47,16 @@ public interface MCBrowserViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Notifies the delegate, when the user taps the done button.
+     */
     @Generated
     @Selector("browserViewControllerDidFinish:")
     void browserViewControllerDidFinish(MCBrowserViewController browserViewController);
 
+    /**
+     * Notifies delegate that the user taps the cancel button.
+     */
     @Generated
     @Selector("browserViewControllerWasCancelled:")
     void browserViewControllerWasCancelled(MCBrowserViewController browserViewController);

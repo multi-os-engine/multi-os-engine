@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents a color used by a GCDeviceLight.
+ * 
+ * @see GCDeviceLight
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)

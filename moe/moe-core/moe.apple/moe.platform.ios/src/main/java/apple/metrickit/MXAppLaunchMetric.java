@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXAppLaunchMetric
+ * @abstract      An MXMetric subclass that encapsulates app launch metrics.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -89,10 +93,21 @@ public class MXAppLaunchMetric extends MXMetric {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @property      histogrammedApplicationResumeTime
+     * @abstract      Histogrammed application resume time data.
+     * @discussion    Dimensioned as NSUnitDuration.
+     */
     @Generated
     @Selector("histogrammedApplicationResumeTime")
     public native MXHistogram<NSUnitDuration> histogrammedApplicationResumeTime();
 
+    /**
+     * @property      histogrammedTimeToFirstDraw
+     * @abstract      Histogrammed application time-to-first-draw data.
+     * @discussion    Dimensioned as NSUnitDuration.
+     * @discussion    This represents the time when the first CA commit is finished.
+     */
     @Generated
     @Selector("histogrammedTimeToFirstDraw")
     public native MXHistogram<NSUnitDuration> histogrammedTimeToFirstDraw();

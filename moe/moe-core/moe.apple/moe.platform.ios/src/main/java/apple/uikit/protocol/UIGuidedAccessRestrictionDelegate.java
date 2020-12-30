@@ -26,11 +26,21 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * UIGuidedAccessRestrictionDelegate
+ * 
+ * Implement on the application delegate to present the user with additional Guided Access restrictions.
+ * 
+ * The initial state of all Guided Access restrictions is UIGuidedAccessRestrictionStateAllow.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIGuidedAccessRestrictionDelegate")
 public interface UIGuidedAccessRestrictionDelegate {
+    /**
+     * Returns a localized string that gives additional detail about the restriction associated with the identifier.
+     */
     @Generated
     @IsOptional
     @Selector("detailTextForGuidedAccessRestrictionWithIdentifier:")
@@ -38,15 +48,26 @@ public interface UIGuidedAccessRestrictionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Returns a list of restriction identifiers in the order they will be presented to the user.
+     * Each restriction identifier must be unique string.
+     * For example: com.MyCompany.MyApp.SomeRestrictionIdentifier
+     */
     @Generated
     @Selector("guidedAccessRestrictionIdentifiers")
     NSArray<String> guidedAccessRestrictionIdentifiers();
 
+    /**
+     * Called each time the restriction associated with the identifier changes state.
+     */
     @Generated
     @Selector("guidedAccessRestrictionWithIdentifier:didChangeState:")
     void guidedAccessRestrictionWithIdentifierDidChangeState(String restrictionIdentifier,
             @NInt long newRestrictionState);
 
+    /**
+     * Returns a localized string that describes the restriction associated with the identifier.
+     */
     @Generated
     @Selector("textForGuidedAccessRestrictionWithIdentifier:")
     String textForGuidedAccessRestrictionWithIdentifier(String restrictionIdentifier);

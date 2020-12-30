@@ -3,6 +3,33 @@ package apple.corenfc.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum NFCReaderError
+ * 
+ * @discussion  Possible errors returned by CoreNFC framework reader session.
+ * @constant    NFCReaderErrorUnsupportedFeature                                Core NFC is not supported on the current platform.
+ * @constant    NFCReaderErrorSecurityViolation                                 Missing required entitlement and/or privacy settings from the client app.
+ * @constant    NFCReaderErrorInvalidParameter                                  Input parameter is invalid.
+ * @constant    NFCReaderErrorInvalidParameterLength                            Length of input parameter is invalid, i.e. size of data container.
+ * @constant    NFCReaderErrorParameterOutOfBound                               Parameter value is outside of the acceptable boundary / range.
+ * @constant    NFCReaderErrorRadioDisabled                                     NFC Radio is disabled.
+ * @constant    NFCReaderTransceiveErrorTagConnectionLost                       Connection to the tag is lost.
+ * @constant    NFCReaderTransceiveErrorRetryExceeded                           Maximum data transmission retry has reached.
+ * @constant    NFCReaderTransceiveErrorTagResponseError                        Tag response is invalid.  Additional error information may be contain in the underlying user info dictionary.
+ * @constant    NFCReaderTransceiveErrorSessionInvalidated                      Session has been previously invalidated.
+ * @constant    NFCReaderTransceiveErrorPacketTooLong                           Packet length has exceeded the limit.
+ * @constant    NFCReaderTransceiveErrorTagNotConnected                         Tag is not in the connected state.
+ * @constant    NFCReaderSessionInvalidationErrorUserCanceled                   Session is invalidated by the user.
+ * @constant    NFCReaderSessionInvalidationErrorSessionTimeout                 Session is timed out.
+ * @constant    NFCReaderSessionInvalidationErrorSessionTerminatedUnexpectedly  Session is terminated unexpectly.
+ * @constant    NFCReaderSessionInvalidationErrorSystemIsBusy                   Core NFC is temporary unavailable due to system resource constraints.
+ * @constant    NFCReaderSessionInvalidationErrorFirstNDEFTagRead               Session is terminated after the 1st NDEF tag is read.
+ * @constant    NFCTagCommandConfigurationErrorInvalidParameters
+ * @constant    NFCNdefReaderSessionErrorTagNotWritable                         NDEF tag is not writable.
+ * @constant    NFCNdefReaderSessionErrorTagUpdateFailure                       NDEF tag write fails.
+ * @constant    NFCNdefReaderSessionErrorTagSizeTooSmall                        NDEF tag memory size is too small to store the desired data.
+ * @constant    NFCNdefReaderSessionErrorZeroLengthMessage                      NDEF tag does not contain any NDEF message.
+ */
 @Generated
 public final class NFCReaderError {
     @Generated

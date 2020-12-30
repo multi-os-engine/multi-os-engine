@@ -19,6 +19,10 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum SCNActionTimingMode
+ * @abstract The modes that an action can use to adjust the apparent timing of the action.
+ */
 @Generated
 public final class SCNActionTimingMode {
     @Generated @NInt public static final long Linear = 0x0000000000000000L;

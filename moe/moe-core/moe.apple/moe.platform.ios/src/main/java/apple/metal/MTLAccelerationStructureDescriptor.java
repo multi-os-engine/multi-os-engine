@@ -24,6 +24,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief Base class for acceleration structure descriptors. Do not use this class directly. Use
+ * one of the derived classes instead.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)

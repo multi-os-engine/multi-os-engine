@@ -19,6 +19,10 @@ package apple.eventkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum       EKEntityMask
+ * @abstract   A bitmask based on EKEntityType that can be used to specify multiple entities at once.
+ */
 @Generated
 public final class EKEntityMask {
     @Generated @NUInt public static final long Event = 0x0000000000000001L;

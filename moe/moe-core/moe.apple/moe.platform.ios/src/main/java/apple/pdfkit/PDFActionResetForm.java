@@ -88,10 +88,21 @@ public class PDFActionResetForm extends PDFAction implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Fields are an array of NSString objects corresponding to the fieldNames of Widget annotations on the page.
+     * May return nil.
+     */
     @Generated
     @Selector("fields")
     public native NSArray<String> fields();
 
+    /**
+     * If -[fieldsIncludedAreCleared] is YES, then the widget annotations associated with the fieldNames in the fields
+     * array above are to be cleared, i.e. uncheck checkboxes, clear text fields, reset radio buttons, etc.
+     * If -[fieldsIncludedAreCleared] is NO, then every widget annotation associated with the fields array is not to be
+     * cleared, meaning that every widget annotation in the document whose field name is not listed is to be cleared.
+     * Both situations above only occur when this reset-form action is performed.
+     */
     @Generated
     @Selector("fieldsIncludedAreCleared")
     public native boolean fieldsIncludedAreCleared();
@@ -101,6 +112,9 @@ public class PDFActionResetForm extends PDFAction implements NSCopying {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Initially there will be no fields, and -[fieldsIncludedAreCleared] will be YES.
+     */
     @Generated
     @Selector("init")
     public native PDFActionResetForm init();
@@ -140,10 +154,21 @@ public class PDFActionResetForm extends PDFAction implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Fields are an array of NSString objects corresponding to the fieldNames of Widget annotations on the page.
+     * May return nil.
+     */
     @Generated
     @Selector("setFields:")
     public native void setFields(NSArray<String> value);
 
+    /**
+     * If -[fieldsIncludedAreCleared] is YES, then the widget annotations associated with the fieldNames in the fields
+     * array above are to be cleared, i.e. uncheck checkboxes, clear text fields, reset radio buttons, etc.
+     * If -[fieldsIncludedAreCleared] is NO, then every widget annotation associated with the fields array is not to be
+     * cleared, meaning that every widget annotation in the document whose field name is not listed is to be cleared.
+     * Both situations above only occur when this reset-form action is performed.
+     */
     @Generated
     @Selector("setFieldsIncludedAreCleared:")
     public native void setFieldsIncludedAreCleared(boolean value);

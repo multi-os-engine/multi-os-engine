@@ -94,6 +94,9 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Attributes of an NSNumberFormatter
+     */
     @Generated
     @Selector("defaultFormatterBehavior")
     @NUInt
@@ -206,6 +209,9 @@ public class NSNumberFormatter extends NSFormatter {
     @NUInt
     public native long formatterBehavior();
 
+    /**
+     * default is NSFormattingContextUnknown
+     */
     @Generated
     @Selector("formattingContext")
     @NInt
@@ -215,6 +221,9 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("generatesDecimalNumbers")
     public native boolean generatesDecimalNumbers();
 
+    /**
+     * Report the used range of the string and an NSError, in addition to the usual stuff from NSFormatter
+     */
     @Generated
     @Selector("getObjectValue:forString:range:error:")
     public native boolean getObjectValueForStringRangeError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj,
@@ -431,6 +440,9 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("setFormatterBehavior:")
     public native void setFormatterBehavior(@NUInt long value);
 
+    /**
+     * default is NSFormattingContextUnknown
+     */
     @Generated
     @Selector("setFormattingContext:")
     public native void setFormattingContext(@NInt long value);
@@ -611,6 +623,10 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("setZeroSymbol:")
     public native void setZeroSymbol(String value);
 
+    /**
+     * Even though NSNumberFormatter responds to the usual NSFormatter methods,
+     *   here are some convenience methods which are a little more obvious.
+     */
     @Generated
     @Selector("stringFromNumber:")
     public native String stringFromNumber(NSNumber number);

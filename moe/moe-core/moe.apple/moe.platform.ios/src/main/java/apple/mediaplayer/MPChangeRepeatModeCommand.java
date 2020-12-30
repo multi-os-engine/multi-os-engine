@@ -39,6 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Command for changing the current repeat mode to use during playback. To
+ * update the system's current representation of your app's repeat mode, set
+ * the currentRepeatType property on this command to the proper repeat type
+ * value.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -150,6 +156,9 @@ public class MPChangeRepeatModeCommand extends MPRemoteCommand {
     @NInt
     public static native long version_static();
 
+    /**
+     * The app's current repeat mode.
+     */
     @Generated
     @Selector("currentRepeatType")
     @NInt
@@ -159,6 +168,9 @@ public class MPChangeRepeatModeCommand extends MPRemoteCommand {
     @Selector("init")
     public native MPChangeRepeatModeCommand init();
 
+    /**
+     * The app's current repeat mode.
+     */
     @Generated
     @Selector("setCurrentRepeatType:")
     public native void setCurrentRepeatType(@NInt long value);

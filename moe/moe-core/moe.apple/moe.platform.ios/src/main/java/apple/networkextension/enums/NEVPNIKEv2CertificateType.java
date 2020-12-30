@@ -19,16 +19,35 @@ package apple.networkextension.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @typedef NEVPNIKEv2CertificateType
+ * @abstract IKEv2 Certificate types
+ */
 @Generated
 public final class NEVPNIKEv2CertificateType {
+    /**
+     * @const NEVPNIKEv2CertificateType RSA
+     */
     @Generated @NInt public static final long RSA = 0x0000000000000001L;
+    /**
+     * @const NEVPNIKEv2CertificateTypeECDSA256 ECDSA with p-256 curve
+     */
     @Generated @NInt public static final long ECDSA256 = 0x0000000000000002L;
+    /**
+     * @const NEVPNIKEv2CertificateTypeECDSA384 ECDSA with p-384 curve
+     */
     @Generated @NInt public static final long ECDSA384 = 0x0000000000000003L;
+    /**
+     * @const NEVPNIKEv2CertificateTypeECDSA521 ECDSA with p-521 curve
+     */
     @Generated @NInt public static final long ECDSA521 = 0x0000000000000004L;
 
     @Generated
     private NEVPNIKEv2CertificateType() {
     }
 
+    /**
+     * @const NEVPNIKEv2CertificateTypeEd25519 Edwards 25519 curve
+     */
     @Generated @NInt public static final long Ed25519 = 0x0000000000000005L;
 }

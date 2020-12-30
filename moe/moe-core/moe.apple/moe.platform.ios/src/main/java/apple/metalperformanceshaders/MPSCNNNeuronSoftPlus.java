@@ -26,6 +26,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MPSCNNNeuronSoftPlus
+ * @dependency This depends on Metal.framework
+ * @discussion Specifies the parametric softplus neuron filter.
+ *             For each pixel, applies the following function: f(x) = a * log(1 + e^(b * x))
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -106,6 +112,13 @@ public class MPSCNNNeuronSoftPlus extends MPSCNNNeuron {
     @Selector("initWithDevice:")
     public native MPSCNNNeuronSoftPlus initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Initialize a parametric softplus neuron filter
+     * @param      device          The device the filter will run on
+     * @param      a               Filter property "a". See class discussion.
+     * @param      b               Filter property "b". See class discussion.
+     * @return     A valid MPSCNNNeuronSoftPlus object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:a:b:")
     public native MPSCNNNeuronSoftPlus initWithDeviceAB(@Mapped(ObjCObjectMapper.class) MTLDevice device, float a,

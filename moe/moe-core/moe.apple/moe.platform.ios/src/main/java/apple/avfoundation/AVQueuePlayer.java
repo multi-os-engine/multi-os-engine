@@ -138,6 +138,14 @@ public class AVQueuePlayer extends AVPlayer {
     @Selector("playerWithURL:")
     public static native AVQueuePlayer playerWithURL(NSURL URL);
 
+    /**
+     * @method     queuePlayerWithItems:
+     * @abstract   Creates an instance of AVQueuePlayer and enqueues the AVPlayerItems from the specified array.
+     * @param      items
+     *   An NSArray of AVPlayerItems with which to populate the player's queue initially.
+     * @result
+     *   An instance of AVQueuePlayer.
+     */
     @Generated
     @Selector("queuePlayerWithItems:")
     public static native AVQueuePlayer queuePlayerWithItems(NSArray<? extends AVPlayerItem> items);
@@ -163,10 +171,27 @@ public class AVQueuePlayer extends AVPlayer {
     @NInt
     public static native long version_static();
 
+    /**
+     * @method     advanceToNextItem
+     * @abstract   Ends playback of the current item and initiates playback of the next item in the player's queue.
+     * @discussion Removes the current item from the play queue.
+     */
     @Generated
     @Selector("advanceToNextItem")
     public native void advanceToNextItem();
 
+    /**
+     * @method     canInsertItem:afterItem:
+     * @abstract   Tests whether an AVPlayerItem can be inserted into the player's queue.
+     * @param      item
+     *   The AVPlayerItem to be tested.
+     * @param      afterItem
+     *   The item that the item to be tested is to follow in the queue. Pass nil to test whether the item can be appended to the queue.
+     * @result
+     *   An indication of whether the item can be inserted into the queue after the specified item.
+     * @discussion
+     *   Note that adding the same AVPlayerItem to an AVQueuePlayer at more than one position in the queue is not supported.
+     */
     @Generated
     @Selector("canInsertItem:afterItem:")
     public native boolean canInsertItemAfterItem(AVPlayerItem item, AVPlayerItem afterItem);
@@ -175,6 +200,14 @@ public class AVQueuePlayer extends AVPlayer {
     @Selector("init")
     public native AVQueuePlayer init();
 
+    /**
+     * @method     initWithItems:
+     * @abstract   Initializes an instance of AVQueuePlayer by enqueueing the AVPlayerItems from the specified array.
+     * @param      items
+     *   An NSArray of AVPlayerItems with which to populate the player's queue initially.
+     * @result
+     *   An instance of AVQueuePlayer.
+     */
     @Generated
     @Selector("initWithItems:")
     public native AVQueuePlayer initWithItems(NSArray<? extends AVPlayerItem> items);
@@ -187,18 +220,44 @@ public class AVQueuePlayer extends AVPlayer {
     @Selector("initWithURL:")
     public native AVQueuePlayer initWithURL(NSURL URL);
 
+    /**
+     * @method     insertItem:afterItem:
+     * @abstract   Places an AVPlayerItem after the specified item in the queue.
+     * @param      item
+     *   The item to be inserted.
+     * @param      afterItem
+     *   The item that the newly inserted item should follow in the queue. Pass nil to append the item to the queue.
+     */
     @Generated
     @Selector("insertItem:afterItem:")
     public native void insertItemAfterItem(AVPlayerItem item, AVPlayerItem afterItem);
 
+    /**
+     * @method     items
+     * @abstract   Provides an array of the currently enqueued items.
+     * @result     An NSArray containing the enqueued AVPlayerItems.
+     */
     @Generated
     @Selector("items")
     public native NSArray<? extends AVPlayerItem> items();
 
+    /**
+     * @method     removeAllItems
+     * @abstract   Removes all items from the queue.
+     * @discussion Stops playback by the target.
+     */
     @Generated
     @Selector("removeAllItems")
     public native void removeAllItems();
 
+    /**
+     * @method     removeItem:
+     * @abstract   Removes an AVPlayerItem from the queue.
+     * @param      item
+     *   The item to be removed.
+     * @discussion
+     *   If the item to be removed is currently playing, has the same effect as -advanceToNextItem.
+     */
     @Generated
     @Selector("removeItem:")
     public native void removeItem(AVPlayerItem item);

@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CXPlayDTMFCallActionType {
+    /**
+     * The user tapped a digit on the in-call keypad
+     */
     @Generated @NInt public static final long SingleTone = 0x0000000000000001L;
+    /**
+     * The user included digits after a soft pause in their dial string
+     */
     @Generated @NInt public static final long SoftPause = 0x0000000000000002L;
+    /**
+     * The user included digits after a hard pause in their dial string
+     */
     @Generated @NInt public static final long HardPause = 0x0000000000000003L;
 
     @Generated

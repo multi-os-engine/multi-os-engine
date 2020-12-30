@@ -106,6 +106,9 @@ public class NSUnitDuration extends NSDimension implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Base unit - seconds
+     */
     @Generated
     @Selector("hours")
     public static native NSUnitDuration hours();

@@ -37,6 +37,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @c CPWindow is the main window for content presented on the car screen.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -283,6 +286,9 @@ public class CPWindow extends UIWindow {
     @Selector("layerClass")
     public static native Class layerClass();
 
+    /**
+     * @c mapButtonSafeAreaLayoutGuide can be used to layout content that appears above the map buttons presented on the map template.
+     */
     @Generated
     @Selector("mapButtonSafeAreaLayoutGuide")
     public native UILayoutGuide mapButtonSafeAreaLayoutGuide();
@@ -371,10 +377,16 @@ public class CPWindow extends UIWindow {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * @c back-reference to the CPTemplateApplicationScene containing this CPWindow
+     */
     @Generated
     @Selector("setTemplateApplicationScene:")
     public native void setTemplateApplicationScene_unsafe(CPTemplateApplicationScene value);
 
+    /**
+     * @c back-reference to the CPTemplateApplicationScene containing this CPWindow
+     */
     @Generated
     public void setTemplateApplicationScene(CPTemplateApplicationScene value) {
         Object __old = templateApplicationScene();
@@ -395,6 +407,9 @@ public class CPWindow extends UIWindow {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * @c back-reference to the CPTemplateApplicationScene containing this CPWindow
+     */
     @Generated
     @Selector("templateApplicationScene")
     public native CPTemplateApplicationScene templateApplicationScene();

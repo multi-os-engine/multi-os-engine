@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKCloudServiceSetupViewControllerDelegate")
 public interface SKCloudServiceSetupViewControllerDelegate {
+    /**
+     * Sent when the view controller was dismissed.
+     */
     @Generated
     @IsOptional
     @Selector("cloudServiceSetupViewControllerDidDismiss:")

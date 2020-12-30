@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An obstacle with an impassible closed polygon
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -165,6 +168,9 @@ public class GKPolygonObstacle extends GKObstacle implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native GKPolygonObstacle initWithCoder(NSCoder coder);
 
+    /**
+     * Number of vertices on this polygon
+     */
     @Generated
     @Selector("vertexCount")
     @NUInt

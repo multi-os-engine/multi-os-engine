@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * PHCollectionListChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or -[PHPhotoLibrary performChangesAndWait:] block.
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -83,10 +86,16 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * if the collection list does not allow the type of change requested, these methods will raise an exception, call canPerformEditOperation: on the collection list to determine if the type of edit operation is allowed.
+     */
     @Generated
     @Selector("changeRequestForCollectionList:")
     public static native PHCollectionListChangeRequest changeRequestForCollectionList(PHCollectionList collectionList);
 
+    /**
+     * to add, remove or rearrange child collections in a collection list, passing in the fetched collections in that collection list will ensure that the child collection positions are tracked correctly in the case that the collection list has been externally edited after the fetch, but before this change is applied
+     */
     @Generated
     @Selector("changeRequestForCollectionList:childCollections:")
     public static native PHCollectionListChangeRequest changeRequestForCollectionListChildCollections(
@@ -109,6 +118,9 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * requests that the specified collection lists and all their child collections (recursively) be deleted
+     */
     @Generated
     @Selector("deleteCollectionLists:")
     public static native void deleteCollectionLists(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collectionLists);
@@ -170,6 +182,9 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     @NInt
     public static native long version_static();
 
+    /**
+     * A PHCollection can only belong to a single parent PHCollection
+     */
     @Generated
     @Selector("addChildCollections:")
     public native void addChildCollections(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collections);
@@ -183,10 +198,17 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     public native void insertChildCollectionsAtIndexes(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collections,
             NSIndexSet indexes);
 
+    /**
+     * The move removes the child collections at fromIndexes first then inserts those collections at the toIndex, so toIndex should point to a location based on the updated indexes after having removed the child collections at fromIndexes
+     */
     @Generated
     @Selector("moveChildCollectionsAtIndexes:toIndex:")
     public native void moveChildCollectionsAtIndexesToIndex(NSIndexSet indexes, @NUInt long toIndex);
 
+    /**
+     * This can be used to fetch the newly created collection list after the change block has completed by using -localIdentifier
+     * It can also be added directly to collection lists within the current change block
+     */
     @Generated
     @Selector("placeholderForCreatedCollectionList")
     public native PHObjectPlaceholder placeholderForCreatedCollectionList();
@@ -211,4 +233,12 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     @Generated
     @Selector("title")
     public native String title();
+
+    /**
+     * to add, remove or rearrange child collections in the TOP LEVEL collection list, passing in the fetched collections in that collection list will ensure that the child collection positions are tracked correctly in the case that the collection list has been externally edited after the fetch, but before this change is applied
+     */
+    @Generated
+    @Selector("changeRequestForTopLevelCollectionListUserCollections:")
+    public static native PHCollectionListChangeRequest changeRequestForTopLevelCollectionListUserCollections(
+            PHFetchResult<? extends PHCollection> childCollections);
 }

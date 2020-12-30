@@ -176,10 +176,18 @@ public class UIDynamicAnimator extends NSObject {
     @Selector("init")
     public native UIDynamicAnimator init();
 
+    /**
+     * When you initialize a dynamic animator with this method, you should only associate collection view layout attributes with your behaviors.
+     * The animator will employ thecollection view layout’s content size coordinate system.
+     */
     @Generated
     @Selector("initWithCollectionViewLayout:")
     public native UIDynamicAnimator initWithCollectionViewLayout(UICollectionViewLayout layout);
 
+    /**
+     * When you initialize a dynamic animator with this method, you should only associates views with your behaviors.
+     * the behaviors (and their dynamic items) that you add to the animator employ the reference view’s coordinate system.
+     */
     @Generated
     @Selector("initWithReferenceView:")
     public native UIDynamicAnimator initWithReferenceView(UIView view);
@@ -188,10 +196,16 @@ public class UIDynamicAnimator extends NSObject {
     @Selector("isRunning")
     public native boolean isRunning();
 
+    /**
+     * Returns the dynamic items associated with the animator’s behaviors that intersect a specified rectangle
+     */
     @Generated
     @Selector("itemsInRect:")
     public native NSArray<?> itemsInRect(@ByValue CGRect rect);
 
+    /**
+     * The three convenience methods returning layout attributes (if associated to behaviors in the animator) if the animator was configured with collection view layout
+     */
     @Generated
     @Selector("layoutAttributesForCellAtIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForCellAtIndexPath(NSIndexPath indexPath);
@@ -234,6 +248,9 @@ public class UIDynamicAnimator extends NSObject {
         }
     }
 
+    /**
+     * Update the item state in the animator if an external change was made to this item
+     */
     @Generated
     @Selector("updateItemUsingCurrentState:")
     public native void updateItemUsingCurrentState(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);

@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents single slot which can contain SmartCard.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -37,6 +40,9 @@ public class TKSmartCardSlot extends NSObject {
         super(peer);
     }
 
+    /**
+     * ATR of the inserted SmartCard, or nil if no or mute SmartCard is inserted.
+     */
     @Generated
     @Selector("ATR")
     public native TKSmartCardATR ATR();
@@ -115,20 +121,34 @@ public class TKSmartCardSlot extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Creates new object representing currently inserted and valid card.
+     * @discussion It is possible to instantiate multiple objects for single card, exclusivity is handled by sessions on the level of created SmartCard objects.
+     * @return Newly created SmartCard object, or nil if slot does not contain valid card.
+     */
     @Generated
     @Selector("makeSmartCard")
     public native TKSmartCard makeSmartCard();
 
+    /**
+     * Maximal length of input APDU that the slot is able to transfer to the card.
+     */
     @Generated
     @Selector("maxInputLength")
     @NInt
     public native long maxInputLength();
 
+    /**
+     * Maximal length of output APDU that the slot is able to transfer from the card.
+     */
     @Generated
     @Selector("maxOutputLength")
     @NInt
     public native long maxOutputLength();
 
+    /**
+     * Name of the SmartCard reader slot.
+     */
     @Generated
     @Selector("name")
     public native String name();
@@ -151,6 +171,9 @@ public class TKSmartCardSlot extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Current state of the slot.  Use KVO to be notified about state changes.
+     */
     @Generated
     @Selector("state")
     @NInt

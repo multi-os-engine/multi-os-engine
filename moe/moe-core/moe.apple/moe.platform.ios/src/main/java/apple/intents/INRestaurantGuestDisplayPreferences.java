@@ -164,10 +164,16 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * indicates whether the email address field should be user editable, defaults to YES
+     */
     @Generated
     @Selector("emailAddressEditable")
     public native boolean emailAddressEditable();
 
+    /**
+     * indicates whether email address input field should be displayed, defaults to YES
+     */
     @Generated
     @Selector("emailAddressFieldShouldBeDisplayed")
     public native boolean emailAddressFieldShouldBeDisplayed();
@@ -184,58 +190,100 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
     @Selector("initWithCoder:")
     public native INRestaurantGuestDisplayPreferences initWithCoder(NSCoder coder);
 
+    /**
+     * indicates whether the name field should be user editable, defaults to YES
+     */
     @Generated
     @Selector("nameEditable")
     public native boolean nameEditable();
 
+    /**
+     * indicates whether first name field is marked optional, defaults to NO
+     */
     @Generated
     @Selector("nameFieldFirstNameOptional")
     public native boolean nameFieldFirstNameOptional();
 
+    /**
+     * indicates whether last name field is marked optional, defaults to NO
+     */
     @Generated
     @Selector("nameFieldLastNameOptional")
     public native boolean nameFieldLastNameOptional();
 
+    /**
+     * indicates whether name input field should be displayed, defaults to YES
+     */
     @Generated
     @Selector("nameFieldShouldBeDisplayed")
     public native boolean nameFieldShouldBeDisplayed();
 
+    /**
+     * indicates whether the phone number field should be user editable, defaults to YES
+     */
     @Generated
     @Selector("phoneNumberEditable")
     public native boolean phoneNumberEditable();
 
+    /**
+     * indicates whether phone number field should be displayed, defaults to YES
+     */
     @Generated
     @Selector("phoneNumberFieldShouldBeDisplayed")
     public native boolean phoneNumberFieldShouldBeDisplayed();
 
+    /**
+     * indicates whether the email address field should be user editable, defaults to YES
+     */
     @Generated
     @Selector("setEmailAddressEditable:")
     public native void setEmailAddressEditable(boolean value);
 
+    /**
+     * indicates whether email address input field should be displayed, defaults to YES
+     */
     @Generated
     @Selector("setEmailAddressFieldShouldBeDisplayed:")
     public native void setEmailAddressFieldShouldBeDisplayed(boolean value);
 
+    /**
+     * indicates whether the name field should be user editable, defaults to YES
+     */
     @Generated
     @Selector("setNameEditable:")
     public native void setNameEditable(boolean value);
 
+    /**
+     * indicates whether first name field is marked optional, defaults to NO
+     */
     @Generated
     @Selector("setNameFieldFirstNameOptional:")
     public native void setNameFieldFirstNameOptional(boolean value);
 
+    /**
+     * indicates whether last name field is marked optional, defaults to NO
+     */
     @Generated
     @Selector("setNameFieldLastNameOptional:")
     public native void setNameFieldLastNameOptional(boolean value);
 
+    /**
+     * indicates whether name input field should be displayed, defaults to YES
+     */
     @Generated
     @Selector("setNameFieldShouldBeDisplayed:")
     public native void setNameFieldShouldBeDisplayed(boolean value);
 
+    /**
+     * indicates whether the phone number field should be user editable, defaults to YES
+     */
     @Generated
     @Selector("setPhoneNumberEditable:")
     public native void setPhoneNumberEditable(boolean value);
 
+    /**
+     * indicates whether phone number field should be displayed, defaults to YES
+     */
     @Generated
     @Selector("setPhoneNumberFieldShouldBeDisplayed:")
     public native void setPhoneNumberFieldShouldBeDisplayed(boolean value);

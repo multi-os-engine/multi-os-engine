@@ -39,6 +39,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class		AVMetadataGroup
+ * 
+ * @abstract	AVMetadataGroup is the common superclass for AVTimedMetadataGroup and AVDateRangeMetadataGroup; each represents a collection of metadata items associated with a segment of a timeline. AVTimedMetadataGroup is typically used with content that defines an independent timeline, while AVDateRangeMetadataGroup is typically used with content that's associated with a specific range of dates.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -150,6 +155,9 @@ public class AVMetadataGroup extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * indicates the classifyingLabel of the group; nil if no classifyingLabel is indicated
+     */
     @Generated
     @Selector("classifyingLabel")
     public native String classifyingLabel();
@@ -162,6 +170,9 @@ public class AVMetadataGroup extends NSObject {
     @Selector("items")
     public native NSArray<? extends AVMetadataItem> items();
 
+    /**
+     * indicates the unique identifier of the group; nil if no unique identifier is indicated
+     */
     @Generated
     @Selector("uniqueID")
     public native String uniqueID();

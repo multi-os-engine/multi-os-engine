@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MTLStageInputOutputDescriptor
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -170,6 +173,9 @@ public class MTLStageInputOutputDescriptor extends NSObject implements NSCopying
     @NUInt
     public native long indexBufferIndex();
 
+    /**
+     * only used for compute with MTLStepFunction...Indexed
+     */
     @Generated
     @Selector("indexType")
     @NUInt
@@ -191,6 +197,9 @@ public class MTLStageInputOutputDescriptor extends NSObject implements NSCopying
     @Selector("setIndexBufferIndex:")
     public native void setIndexBufferIndex(@NUInt long value);
 
+    /**
+     * only used for compute with MTLStepFunction...Indexed
+     */
     @Generated
     @Selector("setIndexType:")
     public native void setIndexType(@NUInt long value);

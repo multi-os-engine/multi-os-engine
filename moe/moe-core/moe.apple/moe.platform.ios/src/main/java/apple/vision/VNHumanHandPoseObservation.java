@@ -61,10 +61,16 @@ public class VNHumanHandPoseObservation extends VNRecognizedPointsObservation {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @brief All of the joint names available in the observation.
+     */
     @Generated
     @Selector("availableJointNames")
     public native NSArray<String> availableJointNames();
 
+    /**
+     * @brief All of the joints group names available in the observation.
+     */
     @Generated
     @Selector("availableJointsGroupNames")
     public native NSArray<String> availableJointsGroupNames();
@@ -135,11 +141,27 @@ public class VNHumanHandPoseObservation extends VNRecognizedPointsObservation {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief Obtain a specific normalized point for a named human hand joint.
+     * 
+     * @param jointName The name of the human hand joint.
+     * @param error The address of a variable that will be populated with the error that describes the failure.  If the caller does not require this information, NULL can be passed.
+     * @return the recognized point, or nil if the point could not be obtained.
+     */
     @Generated
     @Selector("recognizedPointForJointName:error:")
     public native VNRecognizedPoint recognizedPointForJointNameError(String jointName,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * @brief Obtains the collection of points associated with a named human hand joints group.
+     * 
+     * @discussion The obtained collection is a dictionary that provides the mapping of human hand join names to the recognized point.
+     * 
+     * @param jointsGroupName The name of the human hand joints group.
+     * @param error The address of a variable that will be populated with the error that describes the failure.  If the caller does not require this information, NULL can be passed.
+     * @return a dictionary of recognized points in the group, or nil if an error was encountered.
+     */
     @Generated
     @Selector("recognizedPointsForJointsGroupName:error:")
     public native NSDictionary<String, ? extends VNRecognizedPoint> recognizedPointsForJointsGroupNameError(

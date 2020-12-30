@@ -52,6 +52,9 @@ public final class EKErrorCode {
     @Generated @NInt public static final long ProcedureAlarmsNotMutable = 0x000000000000001CL;
     @Generated @NInt public static final long EventStoreNotAuthorized = 0x000000000000001DL;
     @Generated @NInt public static final long OSNotSupported = 0x000000000000001EL;
+    /**
+     * used internally
+     */
     @Generated @NInt public static final long Last = 0x0000000000000024L;
 
     @Generated

@@ -36,6 +36,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A subclass of NSPort which can be used for local
+ * message sending on all platforms.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)

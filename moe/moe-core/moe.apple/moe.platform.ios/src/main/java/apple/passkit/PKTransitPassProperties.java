@@ -83,6 +83,9 @@ public class PKTransitPassProperties extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * nil if pass does not expire
+     */
     @Generated
     @Selector("expirationDate")
     public native NSDate expirationDate();

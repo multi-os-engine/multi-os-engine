@@ -19,6 +19,23 @@ package apple.cloudkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum CKRecordSavePolicy
+ * 
+ * @constant CKRecordSaveIfServerRecordUnchanged
+ * @discussion Locally-edited keys are sent to the server.
+ * If the record on the server has been modified, fail the write and return an error. A CKShare's participants array is always treated as @c CKRecordSaveIfServerRecordUnchanged, regardless of the @c savePolicy of the operation that modifies the share.
+ * 
+ * @constant CKRecordSaveChangedKeys
+ * @discussion Locally-edited keys are written to the server.
+ * Any unseen changes on the server will be overwritten to the locally-edited value.
+ * 
+ * @constant CKRecordSaveAllKeys
+ * @discussion All local keys are written to the server.
+ * Any unseen changes on the server will be overwritten to the local values.  Keys present only on the server remain unchanged. There are two common ways in which a server record will contain keys not present locally:
+ * 1 - Since you've fetched this record, another client has added a new key to the record.
+ * 2 - The presence of @c desiredKeys on the fetch / query that returned this record meant that only a portion of the record's keys were downloaded.
+ */
 @Generated
 public final class CKRecordSavePolicy {
     @Generated @NInt public static final long IfServerRecordUnchanged = 0x0000000000000000L;

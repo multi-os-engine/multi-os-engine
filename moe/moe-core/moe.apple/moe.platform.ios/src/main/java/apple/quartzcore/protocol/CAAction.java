@@ -26,11 +26,20 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Action (event handler) protocol. *
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CAAction")
 public interface CAAction {
+    /**
+     * Called to trigger the event named 'path' on the receiver. The object
+     * (e.g. the layer) on which the event happened is 'anObject'. The
+     * arguments dictionary may be nil, if non-nil it carries parameters
+     * associated with the event.
+     */
     @Generated
     @Selector("runActionForKey:object:arguments:")
     void runActionForKeyObjectArguments(String event, @Mapped(ObjCObjectMapper.class) Object anObject,

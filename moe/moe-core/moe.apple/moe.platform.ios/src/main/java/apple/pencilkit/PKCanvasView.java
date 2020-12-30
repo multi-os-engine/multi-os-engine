@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The view for interactively drawing, and non-interactively showing PKDrawing contents.
+ */
 @Generated
 @Library("PencilKit")
 @Runtime(ObjCRuntime.class)
@@ -234,6 +237,9 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * The delegate for drawing operations.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -243,10 +249,16 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The drawing shown on this view.
+     */
     @Generated
     @Selector("drawing")
     public native PKDrawing drawing();
 
+    /**
+     * The gesture recognizer used to draw in the canvas.
+     */
     @Generated
     @Selector("drawingGestureRecognizer")
     public native UIGestureRecognizer drawingGestureRecognizer();
@@ -285,6 +297,9 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Is the ruler shown on the canvas.
+     */
     @Generated
     @Selector("isRulerActive")
     public native boolean isRulerActive();
@@ -389,10 +404,16 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * The delegate for drawing operations.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * The delegate for drawing operations.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -405,14 +426,24 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
         }
     }
 
+    /**
+     * The drawing shown on this view.
+     */
     @Generated
     @Selector("setDrawing:")
     public native void setDrawing(PKDrawing value);
 
+    /**
+     * Is the ruler shown on the canvas.
+     */
     @Generated
     @Selector("setRulerActive:")
     public native void setRulerActive(boolean value);
 
+    /**
+     * The tool used to interact with the canvas.
+     * Default is `[[PKInkingTool alloc] initWithType:PKInkTypePen color:UIColor.blackColor]`
+     */
     @Generated
     @Selector("setTool:")
     public native void setTool(PKTool value);
@@ -425,6 +456,10 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * The tool used to interact with the canvas.
+     * Default is `[[PKInkingTool alloc] initWithType:PKInkTypePen color:UIColor.blackColor]`
+     */
     @Generated
     @Selector("tool")
     public native PKTool tool();
@@ -478,11 +513,19 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @NInt
     public static native long version_static();
 
+    /**
+     * The drawing policy that controls the types of touches that are allowed to draw in the canvas.
+     * Defaults to `PKCanvasViewDrawingPolicyDefault`.
+     */
     @Generated
     @Selector("drawingPolicy")
     @NUInt
     public native long drawingPolicy();
 
+    /**
+     * The drawing policy that controls the types of touches that are allowed to draw in the canvas.
+     * Defaults to `PKCanvasViewDrawingPolicyDefault`.
+     */
     @Generated
     @Selector("setDrawingPolicy:")
     public native void setDrawingPolicy(@NUInt long value);

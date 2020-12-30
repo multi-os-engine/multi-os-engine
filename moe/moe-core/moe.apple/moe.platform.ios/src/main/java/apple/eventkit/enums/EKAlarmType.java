@@ -19,6 +19,15 @@ package apple.eventkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum       EKAlarmType
+ * @abstract   A value which specifies the action that occurs when the alarm is triggered.
+ * 
+ * @constant   EKAlarmTypeDisplay          The alarm displays a message.
+ * @constant   EKAlarmTypeAudio            The alarm plays a sound.
+ * @constant   EKAlarmTypeProcedure        The alarm opens a URL.
+ * @constant   EKAlarmTypeEmail            The alarm sends an email.
+ */
 @Generated
 public final class EKAlarmType {
     @Generated @NInt public static final long Display = 0x0000000000000000L;

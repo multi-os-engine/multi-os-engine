@@ -156,14 +156,28 @@ public class CXCallController extends NSObject {
     @Selector("callObserver")
     public native CXCallObserver callObserver();
 
+    /**
+     * Initialize call controller with a private, serial queue.
+     */
     @Generated
     @Selector("init")
     public native CXCallController init();
 
+    /**
+     * Initialize call controller with specified queue, which is used for calling completion blocks.
+     */
     @Generated
     @Selector("initWithQueue:")
     public native CXCallController initWithQueue(NSObject queue);
 
+    /**
+     * Request a transaction to be performed by the in-app provider.
+     * 
+     * If the completion block is called with a nil error, then the transaction will be passed to the CXProvider's -provider:executeTransaction: delegate callback.
+     * A non-nil error indicates that the requested transaction could not be executed.
+     * 
+     * Completion block is performed on the queue supplied to designated initializer.
+     */
     @Generated
     @Selector("requestTransaction:completion:")
     public native void requestTransactionCompletion(CXTransaction transaction,
@@ -176,6 +190,14 @@ public class CXCallController extends NSObject {
         void call_requestTransactionCompletion(NSError error);
     }
 
+    /**
+     * Request a transaction containing the specified action to be performed by the in-app provider.
+     * 
+     * If the completion block is called with a nil error, then the transaction will be passed to the CXProvider's -provider:executeTransaction: delegate callback.
+     * A non-nil error indicates that the requested transaction could not be executed.
+     * 
+     * Completion block is performed on the queue supplied to designated initializer.
+     */
     @Generated
     @Selector("requestTransactionWithAction:completion:")
     public native void requestTransactionWithActionCompletion(CXAction action,
@@ -188,6 +210,14 @@ public class CXCallController extends NSObject {
         void call_requestTransactionWithActionCompletion(NSError error);
     }
 
+    /**
+     * Request a transaction containing the specified actions to be performed by the in-app provider.
+     * 
+     * If the completion block is called with a nil error, then the transaction will be passed to the CXProvider's -provider:executeTransaction: delegate callback.
+     * A non-nil error indicates that the requested transaction could not be executed.
+     * 
+     * Completion block is performed on the queue supplied to designated initializer.
+     */
     @Generated
     @Selector("requestTransactionWithActions:completion:")
     public native void requestTransactionWithActionsCompletion(NSArray<? extends CXAction> actions,

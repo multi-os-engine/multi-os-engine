@@ -30,6 +30,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ABPersonViewControllerDelegate")
 public interface ABPersonViewControllerDelegate {
+    /**
+     * Called when the user selects an individual value in the Person view, identifier will be kABMultiValueInvalidIdentifier if a single value property was selected.
+     * Return NO if you do not want anything to be done or if you are handling the actions yourself.
+     * Return YES if you want the ABPersonViewController to perform its default action.
+     */
     @Generated
     @Selector("personViewController:shouldPerformDefaultActionForPerson:property:identifier:")
     boolean personViewControllerShouldPerformDefaultActionForPersonPropertyIdentifier(

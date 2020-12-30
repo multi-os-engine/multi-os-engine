@@ -21,9 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UISearchBarIcon {
+    /**
+     * The magnifying glass
+     */
     @Generated @NInt public static final long Search = 0x0000000000000000L;
+    /**
+     * The circle with an x in it
+     */
     @Generated @NInt public static final long Clear = 0x0000000000000001L;
+    /**
+     * The open book icon
+     */
     @Generated @NInt public static final long Bookmark = 0x0000000000000002L;
+    /**
+     * The list lozenge icon
+     */
     @Generated @NInt public static final long ResultsList = 0x0000000000000003L;
 
     @Generated

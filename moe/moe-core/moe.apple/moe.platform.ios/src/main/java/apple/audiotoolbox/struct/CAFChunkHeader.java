@@ -49,18 +49,30 @@ public final class CAFChunkHeader extends StructObject {
         setMChunkSize(mChunkSize);
     }
 
+    /**
+     * four char code
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int mChunkType();
 
+    /**
+     * four char code
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setMChunkType(int value);
 
+    /**
+     * size in bytes of the chunk data (not including this header).
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native long mChunkSize();
 
+    /**
+     * size in bytes of the chunk data (not including this header).
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMChunkSize(long value);

@@ -98,6 +98,9 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Returns the column terminators for locale. Passing nil returns an instance corresponding to +[NSLocale systemLocale]. For matching user's formatting preferences, pass +[NSLocale currentLocale]. Can be used as the value for NSTabColumnTerminatorsAttributeName to make a decimal tab stop.
+     */
     @Generated
     @Selector("columnTerminatorsForLocale:")
     public static native NSCharacterSet columnTerminatorsForLocale(NSLocale aLocale);
@@ -167,6 +170,9 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     @NInt
     public static native long version_static();
 
+    /**
+     * Defines the alignment of tab column contents. NSTextAlignmentNatural and NSTextAlignmentJustified are resolved either NSTextAlignmentLeft or NSTextAlignmentRight based on the user's preferred language.
+     */
     @Generated
     @Selector("alignment")
     @NInt
@@ -190,16 +196,25 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     @Selector("initWithCoder:")
     public native NSTextTab initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes a text tab with the text alignment, location, and options.  The text alignment is used to determine the position of text inside the tab column.
+     */
     @Generated
     @Selector("initWithTextAlignment:location:options:")
     public native NSTextTab initWithTextAlignmentLocationOptions(@NInt long alignment, @NFloat double loc,
             NSDictionary<String, ?> options);
 
+    /**
+     * Location of the tab stop inside the line fragment rect coordinate system
+     */
     @Generated
     @Selector("location")
     @NFloat
     public native double location();
 
+    /**
+     * Optional configuration attributes
+     */
     @Generated
     @Selector("options")
     public native NSDictionary<String, ?> options();

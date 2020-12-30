@@ -41,6 +41,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A convenient subclass of GKRule that leverages existing NSPRedicate functionality for evaluating the predicate
+ * of the rule.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -168,6 +172,12 @@ public class GKNSPredicateRule extends GKRule {
     @NInt
     public static native long version_static();
 
+    /**
+     * Overridden here to call the predicate's evaluateWithObject:substitutionVariables:, using sys
+     * as the object and the system's state dictionary as the source of the substitution variables.
+     * 
+     * @return YES if the NSPredicate evaluation passes and the action needs to be performed, NO otherwise.
+     */
     @Generated
     @Selector("evaluatePredicateWithSystem:")
     public native boolean evaluatePredicateWithSystem(GKRuleSystem system);
@@ -176,10 +186,19 @@ public class GKNSPredicateRule extends GKRule {
     @Selector("init")
     public native GKNSPredicateRule init();
 
+    /**
+     * Initializes a new rule with the given NSPredicate
+     */
     @Generated
     @Selector("initWithPredicate:")
     public native GKNSPredicateRule initWithPredicate(NSPredicate predicate);
 
+    /**
+     * The NSPredicate that is used inside this subclass's implementation of evaluatePredicateWithSystem:
+     * In order to effectively use this class you must still override performActionWithSystem:
+     * 
+     * @see GKRule.evaluatePredicateWithSystem:
+     */
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();

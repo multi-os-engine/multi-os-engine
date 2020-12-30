@@ -32,10 +32,22 @@ public final class MPSIntersectionDistance extends StructObject {
         setDistance(distance);
     }
 
+    /**
+     * @brief Distance from the ray origin to the intersection point along the ray direction
+     * vector such that intersection = ray.origin + ray.direction * distance. Is negative if
+     * there is no intersection. If the intersection type is MPSIntersectionTypeAny, is
+     * a positive value for a hit or a negative value for a miss.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native float distance();
 
+    /**
+     * @brief Distance from the ray origin to the intersection point along the ray direction
+     * vector such that intersection = ray.origin + ray.direction * distance. Is negative if
+     * there is no intersection. If the intersection type is MPSIntersectionTypeAny, is
+     * a positive value for a hit or a negative value for a miss.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setDistance(float value);

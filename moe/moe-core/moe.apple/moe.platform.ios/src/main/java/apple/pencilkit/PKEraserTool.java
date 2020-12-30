@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An eraser tool for erasing parts of a drawing.
+ */
 @Generated
 @Library("PencilKit")
 @Runtime(ObjCRuntime.class)
@@ -81,6 +84,9 @@ public class PKEraserTool extends PKTool {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The eraser type.
+     */
     @Generated
     @Selector("eraserType")
     @NInt

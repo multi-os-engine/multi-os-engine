@@ -157,19 +157,31 @@ public class INSearchForPhotosIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * Search for photos contained in albums matching this name.
+     */
     @Generated
     @Selector("albumName")
     public native String albumName();
 
+    /**
+     * Search for photos created in the specified date interval.
+     */
     @Generated
     @Selector("dateCreated")
     public native INDateComponentsRange dateCreated();
 
+    /**
+     * When specified, do not match photos of the given types.
+     */
     @Generated
     @Selector("excludedAttributes")
     @NUInt
     public native long excludedAttributes();
 
+    /**
+     * When specified, only match photos of the given types.
+     */
     @Generated
     @Selector("includedAttributes")
     @NUInt
@@ -190,23 +202,38 @@ public class INSearchForPhotosIntent extends INIntent {
             NSArray<String> searchTerms, @NUInt long includedAttributes, @NUInt long excludedAttributes,
             NSArray<? extends INPerson> peopleInPhoto);
 
+    /**
+     * Search for photos taken at the specified location.
+     */
     @Generated
     @Selector("locationCreated")
     public native CLPlacemark locationCreated();
 
+    /**
+     * INPerson objects that should be present in the matched photos, dependent on the peopleInPhotoOperator.
+     */
     @Generated
     @Selector("peopleInPhoto")
     public native NSArray<? extends INPerson> peopleInPhoto();
 
+    /**
+     * Describes how to combine the contents of the peopleInPhoto array.
+     */
     @Generated
     @Selector("peopleInPhotoOperator")
     @NInt
     public native long peopleInPhotoOperator();
 
+    /**
+     * Search for photos with keywords, names, descriptions, etc. that match these search terms.
+     */
     @Generated
     @Selector("searchTerms")
     public native NSArray<String> searchTerms();
 
+    /**
+     * Describes how to combine the contents of the searchTerm array.
+     */
     @Generated
     @Selector("searchTermsOperator")
     @NInt

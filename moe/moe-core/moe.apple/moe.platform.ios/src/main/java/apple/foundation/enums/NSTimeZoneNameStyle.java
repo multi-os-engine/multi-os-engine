@@ -21,11 +21,29 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSTimeZoneNameStyle {
+    /**
+     * Central Standard Time
+     */
     @Generated @NInt public static final long Standard = 0x0000000000000000L;
+    /**
+     * CST
+     */
     @Generated @NInt public static final long ShortStandard = 0x0000000000000001L;
+    /**
+     * Central Daylight Time
+     */
     @Generated @NInt public static final long DaylightSaving = 0x0000000000000002L;
+    /**
+     * CDT
+     */
     @Generated @NInt public static final long ShortDaylightSaving = 0x0000000000000003L;
+    /**
+     * Central Time
+     */
     @Generated @NInt public static final long Generic = 0x0000000000000004L;
+    /**
+     * CT
+     */
     @Generated @NInt public static final long ShortGeneric = 0x0000000000000005L;
 
     @Generated

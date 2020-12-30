@@ -30,11 +30,23 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @protocol	AVPlayerViewControllerDelegate
+ * @abstract	A protocol for delegates of AVPlayerViewController.
+ */
 @Generated
 @Library("AVKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVPlayerViewControllerDelegate")
 public interface AVPlayerViewControllerDelegate {
+    /**
+     * @method		playerViewController:failedToStartPictureInPictureWithError:
+     * @param		playerViewController
+     * 			The player view controller.
+     * @param		error
+     * 			An error describing why it failed.
+     * @abstract	Delegate can implement this method to be notified when Picture in Picture failed to start.
+     */
     @Generated
     @IsOptional
     @Selector("playerViewController:failedToStartPictureInPictureWithError:")
@@ -43,6 +55,14 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @method		playerViewController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:
+     * @param		playerViewController
+     * 			The player view controller.
+     * @param		completionHandler
+     * 			The completion handler the delegate needs to call after restore.
+     * @abstract	Delegate can implement this method to restore the user interface before Picture in Picture stops.
+     */
     @Generated
     @IsOptional
     @Selector("playerViewController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:")
@@ -52,6 +72,12 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @method		playerViewControllerDidStartPictureInPicture:
+     * @param		playerViewController
+     * 			The player view controller.
+     * @abstract	Delegate can implement this method to be notified when Picture in Picture did start.
+     */
     @Generated
     @IsOptional
     @Selector("playerViewControllerDidStartPictureInPicture:")
@@ -59,6 +85,12 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @method		playerViewControllerDidStopPictureInPicture:
+     * @param		playerViewController
+     * 			The player view controller.
+     * @abstract	Delegate can implement this method to be notified when Picture in Picture did stop.
+     */
     @Generated
     @IsOptional
     @Selector("playerViewControllerDidStopPictureInPicture:")
@@ -66,6 +98,12 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @method		playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart:
+     * @param		playerViewController
+     * 			The player view controller.
+     * @abstract	Delegate can implement this method and return NO to prevent player view controller from automatically being dismissed when Picture in Picture starts.
+     */
     @Generated
     @IsOptional
     @Selector("playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart:")
@@ -74,6 +112,12 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @method		playerViewControllerWillStartPictureInPicture:
+     * @param		playerViewController
+     * 			The player view controller.
+     * @abstract	Delegate can implement this method to be notified when Picture in Picture will start.
+     */
     @Generated
     @IsOptional
     @Selector("playerViewControllerWillStartPictureInPicture:")
@@ -81,6 +125,12 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @method		playerViewControllerWillStopPictureInPicture:
+     * @param		playerViewController
+     * 			The player view controller.
+     * @abstract	Delegate can implement this method to be notified when Picture in Picture will stop.
+     */
     @Generated
     @IsOptional
     @Selector("playerViewControllerWillStopPictureInPicture:")
@@ -96,6 +146,15 @@ public interface AVPlayerViewControllerDelegate {
                 boolean restored);
     }
 
+    /**
+     * @method		playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:
+     * @param		playerViewController
+     * 			The player view controller.
+     * @param		coordinator
+     * 			An object conforming to UIViewControllerTransitionCoordinator.
+     * @abstract	Informs the delegate that AVPlayerViewController is about to start displaying its contents full screen.
+     * @discussion	This method will not be called if a playerViewController is embedded inside a view controller that is being presented. If the receiver is embedded in a parent view controller, its content will be presented in a new full screen view controller and perhaps in a new window. Use the coordinator to determine whether the playerViewController or its full screen counterpart is being transitioned. Transitions can be interrupted -- use a completion block of one of the coordinator's animation methods to determine whether it has completed.
+     */
     @Generated
     @IsOptional
     @Selector("playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:")
@@ -105,6 +164,15 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * 	@method		playerViewController:willEndFullScreenPresentationWithAnimationCoordinator:
+     * 	@param		playerViewController
+     * 				The player view controller.
+     * @param		coordinator
+     * 			An object conforming to UIViewControllerTransitionCoordinator.
+     * @abstract	Informs the delegate that AVPlayerViewController is about to stop displaying its contents full screen.
+     * @discussion	See the discussion of -[AVPlayerViewControllerDelegatePrivate playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:].
+     */
     @Generated
     @IsOptional
     @Selector("playerViewController:willEndFullScreenPresentationWithAnimationCoordinator:")

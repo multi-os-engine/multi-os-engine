@@ -45,6 +45,9 @@ public interface UIActivityItemsConfigurationReading {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If not implemented, defaults to YES.
+     */
     @Generated
     @IsOptional
     @Selector("activityItemsConfigurationSupportsInteraction:")

@@ -165,10 +165,19 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * The preconditions for the URL passed to dismissGrantingAccessToURL: vary depending on the document picker mode.
+     * In Import mode, any URL that the extension has access to is valid.
+     * In Open mode, the URL needs to be on a level below the documentStorageURL returned by the corresponding non-UI extension.
+     * In Export mode, the URL needs to be below the documentStorageURL and should point to a duplicate of the object at originalURL.
+     */
     @Generated
     @Selector("dismissGrantingAccessToURL:")
     public native void dismissGrantingAccessToURL(NSURL url);
 
+    /**
+     * only valid after prepareForDocumentSelectionInMode: has been called
+     */
     @Generated
     @Selector("documentPickerMode")
     @NUInt
@@ -191,6 +200,9 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     public native UIDocumentPickerExtensionViewController initWithNibNameBundle(String nibNameOrNil,
             NSBundle nibBundleOrNil);
 
+    /**
+     * Contains the URL to duplicate if in mode UIDocumentPickerModeExportToService. nil otherwise.
+     */
     @Generated
     @Selector("originalURL")
     public native NSURL originalURL();
@@ -199,10 +211,17 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     @Selector("prepareForPresentationInMode:")
     public native void prepareForPresentationInMode(@NUInt long mode);
 
+    /**
+     * if a corresponding non-UI picker component is found, these return the values returned by the corresponding methods
+     * in the non-UI component. Otherwise, they will return the values corresponding to the default implementation of a non-UI picker.
+     */
     @Generated
     @Selector("providerIdentifier")
     public native String providerIdentifier();
 
+    /**
+     * Contains the list of valid types if in mode UIDocumentPickerModeImport or UIDocumentPickerModeOpen. nil otherwise.
+     */
     @Generated
     @Selector("validTypes")
     public native NSArray<String> validTypes();

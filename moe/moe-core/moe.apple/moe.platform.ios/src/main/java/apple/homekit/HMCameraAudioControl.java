@@ -154,10 +154,16 @@ public class HMCameraAudioControl extends HMCameraControl {
     @Selector("init")
     public native HMCameraAudioControl init();
 
+    /**
+     * Characteristic corresponding to mute setting on the camera.
+     */
     @Generated
     @Selector("mute")
     public native HMCharacteristic mute();
 
+    /**
+     * Characteristic corresponding to volume setting on the camera.
+     */
     @Generated
     @Selector("volume")
     public native HMCharacteristic volume();

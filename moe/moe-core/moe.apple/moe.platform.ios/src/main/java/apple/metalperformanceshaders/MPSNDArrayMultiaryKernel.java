@@ -87,23 +87,59 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     *  Inference encode calls
+     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * @param      cmdBuf          The command buffer into which to encode the kernel
+     * @param      sourceArrays    The list of sources for the filter in a NSArray.
+     *                             Ordering to be defined by subclass
+     * @result     A newly allocated MPSNDArray that will contain the result of the calculation
+     *             when the command buffer completes successfully.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:")
     public native MPSNDArray encodeToCommandBufferSourceArrays(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
             NSArray<? extends MPSNDArray> sourceArrays);
 
+    /**
+     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * @param      cmdBuf          The command buffer into which to encode the kernel
+     * @param      sourceArrays    The list of sources for the filter in a NSArray.
+     *                             Ordering to be defined by subclass
+     * @param      destination     The NDArray to receive the result
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:destinationArray:")
     public native void encodeToCommandBufferSourceArraysDestinationArray(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, NSArray<? extends MPSNDArray> sourceArrays,
             MPSNDArray destination);
 
+    /**
+     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * @param      cmdBuf          The command buffer into which to encode the kernel
+     * @param      sourceArrays    The list of sources for the filter in a NSArray.
+     *                             Ordering to be defined by subclass
+     * @param      outGradientState The output gradient state to record the operation for later use by gradient
+     * @param      destination     A destination array to contain the result of the calculation
+     *             when the command buffer completes successfully.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:resultState:destinationArray:")
     public native void encodeToCommandBufferSourceArraysResultStateDestinationArray(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, NSArray<? extends MPSNDArray> sourceArrays,
             MPSState outGradientState, MPSNDArray destination);
 
+    /**
+     *  Forward training encode calls
+     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * @param      cmdBuf          The command buffer into which to encode the kernel
+     * @param      sourceArrays    The list of sources for the filter in a NSArray.
+     *                             Ordering to be defined by subclass
+     * @param      outGradientState If non-nil, the address output gradient state is written to this address
+     * @param      outputStateIsTemporary  If YES, the state if any will be allocated to contain temporary textures and buffers as needed
+     * @result     A newly allocated MPSNDArray that will contain the result of the calculation
+     *             when the command buffer completes successfully.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:resultState:outputStateIsTemporary:")
     public native MPSNDArray encodeToCommandBufferSourceArraysResultStateOutputStateIsTemporary(
@@ -123,6 +159,9 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
     @Selector("initWithCoder:")
     public native MPSNDArrayMultiaryKernel initWithCoder(NSCoder aDecoder);
 
+    /**
+     * NSSecureCoding support
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNDArrayMultiaryKernel initWithCoderDevice(NSCoder coder,

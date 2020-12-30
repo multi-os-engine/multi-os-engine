@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UISearchResultsUpdating")
 public interface UISearchResultsUpdating {
+    /**
+     * Called when the search bar's text or scope has changed or when the search bar becomes first responder.
+     */
     @Generated
     @Selector("updateSearchResultsForSearchController:")
     void updateSearchResultsForSearchController(UISearchController searchController);

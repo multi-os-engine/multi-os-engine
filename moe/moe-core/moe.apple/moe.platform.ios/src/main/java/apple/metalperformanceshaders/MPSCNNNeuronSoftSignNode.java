@@ -23,6 +23,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract   A node representing a MPSCNNNeuronSoftSign kernel
+ * @discussion For each pixel, applies the following function:
+ * @code
+ *     f(x) = x / (1 + abs(x))
+ * @endcode
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -90,6 +97,9 @@ public class MPSCNNNeuronSoftSignNode extends MPSCNNNeuronNode {
     @Selector("init")
     public native MPSCNNNeuronSoftSignNode init();
 
+    /**
+     * @abstract Init a node with default values for parameters a & b
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNNeuronSoftSignNode initWithSource(MPSNNImageNode sourceNode);
@@ -121,6 +131,9 @@ public class MPSCNNNeuronSoftSignNode extends MPSCNNNeuronNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract Create an autoreleased node with default values for parameters a & b
+     */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSCNNNeuronSoftSignNode nodeWithSource(MPSNNImageNode sourceNode);

@@ -27,6 +27,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXHangDiagnostic
+ * @abstract      An MXDiagnostic subclass that encapsulates hang diagnostic reports.
+ * @discussion    Applications are considered to be "hanging" when they are unable to handle user input responsively.
+ * @discussion    This generally occurs when your applications main thread is blocked.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -59,6 +65,10 @@ public class MXHangDiagnostic extends MXDiagnostic {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property      callStackTree
+     * @abstract      The application call stack tree associated with the hang.
+     */
     @Generated
     @Selector("callStackTree")
     public native MXCallStackTree callStackTree();
@@ -89,6 +99,11 @@ public class MXHangDiagnostic extends MXDiagnostic {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property      hangDuration
+     * @abstract      Total hang duration for this diagnostic.
+     * @discussion    Dimensioned as NSUnitDuration.
+     */
     @Generated
     @Selector("hangDuration")
     public native NSMeasurement<NSUnitDuration> hangDuration();

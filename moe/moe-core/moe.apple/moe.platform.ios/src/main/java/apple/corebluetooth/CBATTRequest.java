@@ -40,6 +40,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CBATTRequest
+ * 
+ * @discussion Represents a read or write request from a central.
+ */
 @Generated
 @Library("CoreBluetooth")
 @Runtime(ObjCRuntime.class)
@@ -151,10 +156,20 @@ public class CBATTRequest extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property central
+     * 
+     * @discussion The central that originated the request.
+     */
     @Generated
     @Selector("central")
     public native CBCentral central();
 
+    /**
+     * @property characteristic
+     * 
+     * @discussion The characteristic whose value will be read or written.
+     */
     @Generated
     @Selector("characteristic")
     public native CBCharacteristic characteristic();
@@ -163,15 +178,34 @@ public class CBATTRequest extends NSObject {
     @Selector("init")
     public native CBATTRequest init();
 
+    /**
+     * @property offset
+     * 
+     * @discussion The zero-based index of the first byte for the read or write.
+     */
     @Generated
     @Selector("offset")
     @NUInt
     public native long offset();
 
+    /**
+     * @property value
+     * 
+     * @discussion The data being read or written.
+     * 		For read requests, <i>value</i> will be nil and should be set before responding via @link respondToRequest:withResult: @/link.
+     * 		For write requests, <i>value</i> will contain the data to be written.
+     */
     @Generated
     @Selector("setValue:")
     public native void setValue(NSData value);
 
+    /**
+     * @property value
+     * 
+     * @discussion The data being read or written.
+     * 		For read requests, <i>value</i> will be nil and should be set before responding via @link respondToRequest:withResult: @/link.
+     * 		For write requests, <i>value</i> will contain the data to be written.
+     */
     @Generated
     @Selector("value")
     public native NSData value();

@@ -41,6 +41,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKDocumentSample
+ * @abstract      An abstract class representing a health document.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)

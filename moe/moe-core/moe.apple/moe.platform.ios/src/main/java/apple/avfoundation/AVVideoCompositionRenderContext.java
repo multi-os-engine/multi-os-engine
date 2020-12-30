@@ -156,11 +156,18 @@ public class AVVideoCompositionRenderContext extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * indicates the thickness of the edge processing region on the left, top, right and bottom edges, in pixels.
+     */
     @Generated
     @Selector("edgeWidths")
     @ByValue
     public native AVEdgeWidths edgeWidths();
 
+    /**
+     * hints the custom compositor that it may use higher quality, potentially slower algorithms.
+     * Generally true for non real time use cases. 
+     */
     @Generated
     @Selector("highQualityRendering")
     public native boolean highQualityRendering();
@@ -169,29 +176,47 @@ public class AVVideoCompositionRenderContext extends NSObject {
     @Selector("init")
     public native AVVideoCompositionRenderContext init();
 
+    /**
+     * caller must CFRelease
+     */
     @Generated
     @Selector("newPixelBuffer")
     public native CVBufferRef newPixelBuffer();
 
+    /**
+     * indicates the pixel aspect ratio for rendered frames.
+     */
     @Generated
     @Selector("pixelAspectRatio")
     @ByValue
     public native AVPixelAspectRatio pixelAspectRatio();
 
+    /**
+     * indicates a scaling ratio that should be applied when rendering frames.
+     */
     @Generated
     @Selector("renderScale")
     public native float renderScale();
 
+    /**
+     * incorporates renderScale, pixelAspectRatio, edgeWidths
+     */
     @Generated
     @Selector("renderTransform")
     @ByValue
     public native CGAffineTransform renderTransform();
 
+    /**
+     * indicates the width and height for rendering frames.
+     */
     @Generated
     @Selector("size")
     @ByValue
     public native CGSize size();
 
+    /**
+     * The AVVideoComposition being rendered.
+     */
     @Generated
     @Selector("videoComposition")
     public native AVVideoComposition videoComposition();

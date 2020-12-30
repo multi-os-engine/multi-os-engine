@@ -31,6 +31,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A reference image to be detected in the scene.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -98,11 +101,25 @@ public class ARReferenceImage extends NSObject {
     @Selector("init")
     public native ARReferenceImage init();
 
+    /**
+     * Creates a new reference image.
+     * 
+     * @param image The reference image as CGImage.
+     * @param orientation The image orientation.
+     * @param physicalWidth The width in meters of the physical object.
+     */
     @Generated
     @Selector("initWithCGImage:orientation:physicalWidth:")
     public native ARReferenceImage initWithCGImageOrientationPhysicalWidth(CGImageRef image, int orientation,
             @NFloat double physicalWidth);
 
+    /**
+     * Creates a new reference image.
+     * 
+     * @param pixelBuffer The reference image as CVPixelBuffer.
+     * @param physicalWidth The width in meters of the physical object.
+     * @param orientation The image orientation.
+     */
     @Generated
     @Selector("initWithPixelBuffer:orientation:physicalWidth:")
     public native ARReferenceImage initWithPixelBufferOrientationPhysicalWidth(CVBufferRef pixelBuffer, int orientation,
@@ -129,6 +146,9 @@ public class ARReferenceImage extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * An optional name used to identify the image.
+     */
     @Generated
     @Selector("name")
     public native String name();
@@ -139,11 +159,21 @@ public class ARReferenceImage extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The physical size of the image in meters.
+     */
     @Generated
     @Selector("physicalSize")
     @ByValue
     public native CGSize physicalSize();
 
+    /**
+     * Returns the set of ARReferenceImages in the specified resource group and bundle.
+     * 
+     * @param name The name of the resource group.
+     * @param bundle The bundle containing the image file or asset catalog. Specify nil to search the app’s main bundle.
+     * @return The set of reference images or nil on error.
+     */
     @Generated
     @Selector("referenceImagesInGroupNamed:bundle:")
     public static native NSSet<? extends ARReferenceImage> referenceImagesInGroupNamedBundle(String name,
@@ -157,10 +187,18 @@ public class ARReferenceImage extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The AR resource group name for this image.
+     * @discussion If this image was loaded via an AR resource group in the Xcode asset catalogue this property will have the name of the resource group,
+     * else be set to nil.
+     */
     @Generated
     @Selector("resourceGroupName")
     public native String resourceGroupName();
 
+    /**
+     * An optional name used to identify the image.
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
@@ -173,6 +211,13 @@ public class ARReferenceImage extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Validate if this image can be used for image detection or tracking.
+     * @discussion When loading reference images from the asset catalog this verification is not needed as the same verification happens
+     * at compile time.
+     * @param completionHandler Completion handler invoked when validation is done. The completion handler takes the following parameters:
+     * error - An error that indicates why the image is not suitable for tracking, or nil if no error occured.
+     */
     @Generated
     @Selector("validateWithCompletionHandler:")
     public native void validateWithCompletionHandler(

@@ -97,6 +97,15 @@ public class CPPointOfInterestTemplate extends CPTemplate {
     @Selector("initWithCoder:")
     public native CPPointOfInterestTemplate initWithCoder(NSCoder coder);
 
+    /**
+     * CPPointOfInterestTemplate displays a map view with selectable points of interest.
+     * 
+     * @param title Template title
+     * @param pointsOfInterest Points of interest to be presented in the map.
+     * @param selectedIndex Index of selected point of interest instance referenced in the pointsOfInterest array. Use NSNotFound to indicate no selection.
+     * 
+     * @note the maximum number of POIs is 12. If you provide more than 12, only the first 12 will be used.
+     */
     @Generated
     @Selector("initWithTitle:pointsOfInterest:selectedIndex:")
     public native CPPointOfInterestTemplate initWithTitlePointsOfInterestSelectedIndex(String title,
@@ -129,6 +138,9 @@ public class CPPointOfInterestTemplate extends CPTemplate {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The Point of Interest template's delegate is informed of user events.
+     */
     @Generated
     @Selector("pointOfInterestDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -146,16 +158,25 @@ public class CPPointOfInterestTemplate extends CPTemplate {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Designate an instance in the pointsOfInterest array to highlight. Use NSNotFound to indicate no selection.
+     */
     @Generated
     @Selector("selectedIndex")
     @NUInt
     public native long selectedIndex();
 
+    /**
+     * The Point of Interest template's delegate is informed of user events.
+     */
     @Generated
     @Selector("setPointOfInterestDelegate:")
     public native void setPointOfInterestDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) CPPointOfInterestTemplateDelegate value);
 
+    /**
+     * The Point of Interest template's delegate is informed of user events.
+     */
     @Generated
     public void setPointOfInterestDelegate(@Mapped(ObjCObjectMapper.class) CPPointOfInterestTemplateDelegate value) {
         Object __old = pointOfInterestDelegate();
@@ -168,15 +189,29 @@ public class CPPointOfInterestTemplate extends CPTemplate {
         }
     }
 
+    /**
+     * Update the template with a list of points of interests to dispay
+     * 
+     * @param pointsOfInterest Points of interest to be presented in the map.
+     * @param selectedIndex  Index of selected point of interest instance referenced in the pointsOfInterest array. Use NSNotFound to indicate no selection.
+     * 
+     * @note the maximum number of POIs is 12. If you provide more than 12, only the first 12 will be used.
+     */
     @Generated
     @Selector("setPointsOfInterest:selectedIndex:")
     public native void setPointsOfInterestSelectedIndex(NSArray<? extends CPPointOfInterest> pointsOfInterest,
             @NUInt long selectedIndex);
 
+    /**
+     * Designate an instance in the pointsOfInterest array to highlight. Use NSNotFound to indicate no selection.
+     */
     @Generated
     @Selector("setSelectedIndex:")
     public native void setSelectedIndex(@NUInt long value);
 
+    /**
+     * Template title appears on the template point of interest picker
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
@@ -199,6 +234,9 @@ public class CPPointOfInterestTemplate extends CPTemplate {
         return supportsSecureCoding();
     }
 
+    /**
+     * Template title appears on the template point of interest picker
+     */
     @Generated
     @Selector("title")
     public native String title();

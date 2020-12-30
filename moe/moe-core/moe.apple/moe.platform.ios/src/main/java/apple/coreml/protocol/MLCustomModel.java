@@ -17,23 +17,40 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Protocol for specifying a custom model implementation.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MLCustomModel")
 public interface MLCustomModel {
+    /**
+     * Initialize the custom model implementation. The model description describes the input
+     * and output feature types and metadata in the Model specificaiton.
+     * The parameter dictionary contains the contents of the 'parameters' map from the CustomModel specification.
+     * This function is called once on model load.
+     * We expect the implementation to return 'nil' and set an error in the event of failure
+     * initializing the object.
+     */
     @Generated
     @Selector("initWithModelDescription:parameterDictionary:error:")
     @MappedReturn(ObjCObjectMapper.class)
     Object initWithModelDescriptionParameterDictionaryError(MLModelDescription modelDescription,
             NSDictionary<String, ?> parameters, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Required implemenationat of a single sample input prediction.
+     */
     @Generated
     @Selector("predictionFromFeatures:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
     MLFeatureProvider predictionFromFeaturesOptionsError(@Mapped(ObjCObjectMapper.class) MLFeatureProvider input,
             MLPredictionOptions options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Batch prediction with explicit options, if not implemented the single input predictionFromFeatures:options:error will be used
+     */
     @Generated
     @IsOptional
     @Selector("predictionsFromBatch:options:error:")

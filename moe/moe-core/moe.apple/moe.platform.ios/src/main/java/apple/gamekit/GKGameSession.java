@@ -98,6 +98,9 @@ public class GKGameSession extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Create a new session with the given title and maximum number of connected players. (You may pass 0 to use the system limit of 16 players.)
+     */
     @Generated
     @Selector("createSessionInContainer:withTitle:maxConnectedPlayers:completionHandler:")
     public static native void createSessionInContainerWithTitleMaxConnectedPlayersCompletionHandler(
@@ -138,11 +141,17 @@ public class GKGameSession extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Load a specific session.
+     */
     @Generated
     @Selector("loadSessionWithIdentifier:completionHandler:")
     public static native void loadSessionWithIdentifierCompletionHandler(String identifier,
             @ObjCBlock(name = "call_loadSessionWithIdentifierCompletionHandler") Block_loadSessionWithIdentifierCompletionHandler completionHandler);
 
+    /**
+     * Load all sessions involving the current user.
+     */
     @Generated
     @Selector("loadSessionsInContainer:completionHandler:")
     public static native void loadSessionsInContainerCompletionHandler(String containerName,
@@ -158,6 +167,9 @@ public class GKGameSession extends NSObject {
     @Selector("removeEventListener:")
     public static native void removeEventListener(NSObject listener);
 
+    /**
+     * Remove a session. If called by the owner this deletes the session from the server.
+     */
     @Generated
     @Selector("removeSessionWithIdentifier:completionHandler:")
     public static native void removeSessionWithIdentifierCompletionHandler(String identifier,
@@ -188,11 +200,17 @@ public class GKGameSession extends NSObject {
     @Selector("badgedPlayers")
     public native NSArray<? extends GKCloudPlayer> badgedPlayers();
 
+    /**
+     * Clear application badge state for players for this session.
+     */
     @Generated
     @Selector("clearBadgeForPlayers:completionHandler:")
     public native void clearBadgeForPlayersCompletionHandler(NSArray<? extends GKCloudPlayer> players,
             @ObjCBlock(name = "call_clearBadgeForPlayersCompletionHandler") Block_clearBadgeForPlayersCompletionHandler completionHandler);
 
+    /**
+     * Get the URL needed to share this session.
+     */
     @Generated
     @Selector("getShareURLWithCompletionHandler:")
     public native void getShareURLWithCompletionHandler(
@@ -214,6 +232,9 @@ public class GKGameSession extends NSObject {
     @Selector("lastModifiedPlayer")
     public native GKCloudPlayer lastModifiedPlayer();
 
+    /**
+     * Load associated persistent data.
+     */
     @Generated
     @Selector("loadDataWithCompletionHandler:")
     public native void loadDataWithCompletionHandler(
@@ -232,26 +253,42 @@ public class GKGameSession extends NSObject {
     @Selector("players")
     public native NSArray<? extends GKCloudPlayer> players();
 
+    /**
+     * Get the players with the given connection state.
+     */
     @Generated
     @Selector("playersWithConnectionState:")
     public native NSArray<? extends GKCloudPlayer> playersWithConnectionState(@NInt long state);
 
+    /**
+     * Save new/updated persistent data. Data size is limited to 512K. The session's lastModifiedDate and lastModifiedPlayer will be updated upon completion.
+     * If a version conflict is detected the handler will include the version currently on the server and an error. In this case the data has not been saved. To resolve the conflict a client would call this method again, presumably after merging data or giving the user a choice on how to resolve the conflict. (Note that when calling again it is possible to get a new conflict, if another device has since written a new version.)
+     */
     @Generated
     @Selector("saveData:completionHandler:")
     public native void saveDataCompletionHandler(NSData data,
             @ObjCBlock(name = "call_saveDataCompletionHandler") Block_saveDataCompletionHandler completionHandler);
 
+    /**
+     * Send data to all connected players.
+     */
     @Generated
     @Selector("sendData:withTransportType:completionHandler:")
     public native void sendDataWithTransportTypeCompletionHandler(NSData data, @NInt long transport,
             @ObjCBlock(name = "call_sendDataWithTransportTypeCompletionHandler") Block_sendDataWithTransportTypeCompletionHandler completionHandler);
 
+    /**
+     * Send a message to any players in the session. This uses an unreliable push mechanism. Message/data delivery is not guaranteed and may take some time to arrive. Receiving players may optionally have their application badged for this session.
+     */
     @Generated
     @Selector("sendMessageWithLocalizedFormatKey:arguments:data:toPlayers:badgePlayers:completionHandler:")
     public native void sendMessageWithLocalizedFormatKeyArgumentsDataToPlayersBadgePlayersCompletionHandler(String key,
             NSArray<String> arguments, NSData data, NSArray<? extends GKCloudPlayer> players, boolean badgePlayers,
             @ObjCBlock(name = "call_sendMessageWithLocalizedFormatKeyArgumentsDataToPlayersBadgePlayersCompletionHandler") Block_sendMessageWithLocalizedFormatKeyArgumentsDataToPlayersBadgePlayersCompletionHandler completionHandler);
 
+    /**
+     * Set your connection state. May fail if you attempt to connect but the connected player limit has already been reached or there are network problems. The session's lastModifiedDate and lastModifiedPlayer will be updated upon completion.
+     */
     @Generated
     @Selector("setConnectionState:completionHandler:")
     public native void setConnectionStateCompletionHandler(@NInt long state,

@@ -84,6 +84,10 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property frequency  Frequency where sensitivity was measured.  The unit of measurement
+     * is [HKUnit hertzUnit] or "Hz".
+     */
     @Generated
     @Selector("frequency")
     public native HKQuantity frequency();
@@ -118,6 +122,10 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property sensitivity Left ear sensitivity measured in attenuated dB from a baseline of 0 dB.
+     * The unit of measurement is [HKUnit decibelHearingLevelUnit] or "dBHL".
+     */
     @Generated
     @Selector("leftEarSensitivity")
     public native HKQuantity leftEarSensitivity();
@@ -136,10 +144,25 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property sensitivity Right ear sensitivity measured in attenuated dB from a baseline of 0 dB.
+     * The unit of measurement is [HKUnit decibelHearingLevelUnit] or "dBHL".
+     */
     @Generated
     @Selector("rightEarSensitivity")
     public native HKQuantity rightEarSensitivity();
 
+    /**
+     * @method                    sensitivityPointWithFrequency:leftEarSensitivity:rightEarSensitivity:error:
+     * @abstract                  Creates a point that can be included in a audiogram.
+     * @param frequency           Frequency where sensitivity was measured.
+     * @param leftEarSensitivity  Left ear sensitivity measured in attenuated dB from a baseline of 0 dB.
+     * @param rightEarSensitivity Right ear sensitivity measured in attenuated dB from a baseline of 0 dB.
+     * @param error               If there was a problem creating this instance this will contain the error.
+     * @return                    New instance of a sensitivity point or nil if there were problems
+     *                            creating the instance.  Errors may include incorrect quantity units
+     *                            or data that is out of an expected range.
+     */
     @Generated
     @Selector("sensitivityPointWithFrequency:leftEarSensitivity:rightEarSensitivity:error:")
     public static native HKAudiogramSensitivityPoint sensitivityPointWithFrequencyLeftEarSensitivityRightEarSensitivityError(

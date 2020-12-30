@@ -126,6 +126,9 @@ public class UISwipeActionsConfiguration extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * default YES, set to NO to prevent a full swipe from performing the first action
+     */
     @Generated
     @Selector("performsFirstActionWithFullSwipe")
     public native boolean performsFirstActionWithFullSwipe();
@@ -138,6 +141,9 @@ public class UISwipeActionsConfiguration extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * default YES, set to NO to prevent a full swipe from performing the first action
+     */
     @Generated
     @Selector("setPerformsFirstActionWithFullSwipe:")
     public native void setPerformsFirstActionWithFullSwipe(boolean value);

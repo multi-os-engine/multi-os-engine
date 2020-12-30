@@ -43,6 +43,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An MPMediaItem represents a single piece of media in an MPMediaLibrary.
+ * Media items have a unique identifier which persists across application launches.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -137,6 +141,10 @@ public class MPMediaItem extends MPMediaEntity {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Returns the item property for a given grouping type.
+     * For example, [MPMediaItem persistentIDPropertyForGroupingType:MPMediaGroupingAlbum] returns MPMediaItemPropertyAlbumPersistentID.
+     */
     @Generated
     @Selector("persistentIDPropertyForGroupingType:")
     public static native String persistentIDPropertyForGroupingType(@NInt long groupingType);
@@ -161,6 +169,11 @@ public class MPMediaItem extends MPMediaEntity {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * Returns the item property to determine a title for a given grouping type.
+     * For example, [MPMediaItem titlePropertyForGroupingType:MPMediaGroupingAlbum] returns MPMediaItemPropertyAlbumTitle.
+     * Note that distinct collections will not necessarily have unique titles, e.g. an album may exist with the title "Greatest Hits" for multiple artists.
+     */
     @Generated
     @Selector("titlePropertyForGroupingType:")
     public static native String titlePropertyForGroupingType(@NInt long groupingType);

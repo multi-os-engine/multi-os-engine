@@ -111,6 +111,9 @@ public class UICollectionViewDropProposal extends UIDropProposal {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * The default is UICollectionViewDropIntentUnspecified.
+     */
     @Generated
     @Selector("intent")
     @NInt

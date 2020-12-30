@@ -32,6 +32,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIImagePickerControllerDelegate")
 public interface UIImagePickerControllerDelegate {
+    /**
+     * The picker does not dismiss itself; the client dismisses it in these callbacks.
+     * The delegate will receive one or the other, but not both, depending whether the user
+     * confirms or cancels.
+     */
     @Generated
     @IsOptional
     @Deprecated

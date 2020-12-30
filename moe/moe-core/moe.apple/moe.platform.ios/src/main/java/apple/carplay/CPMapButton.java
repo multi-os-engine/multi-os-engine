@@ -90,6 +90,13 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The image displayed on the button when focused.
+     * 
+     * @discussion The button will automatically create a focused image using the alpha values from the source image.
+     * 
+     * @note If unspecified, the button will use the default @c image
+     */
     @Generated
     @Selector("focusedImage")
     public native UIImage focusedImage();
@@ -99,6 +106,11 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The image displayed on the button.
+     * 
+     * @discussion Animated images are not supported. If an animated image is assigned, only the first image will be used.
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -111,6 +123,11 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native CPMapButton initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes a new map button.
+     * 
+     * @param handler A block to execute when the user selects the button. The block has no return value and takes the selected button as its only parameter.
+     */
     @Generated
     @Selector("initWithHandler:")
     public native CPMapButton initWithHandler(@ObjCBlock(name = "call_initWithHandler") Block_initWithHandler handler);
@@ -135,10 +152,20 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * A Boolean value indicating whether the button is enabled.
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * A Boolean value indicating whether the button is hidden.
+     * 
+     * @discussion Setting the value of this property to @c YES hides the button and setting it to @c NO shows it. The default value is @c NO.
+     */
     @Generated
     @Selector("isHidden")
     public native boolean isHidden();
@@ -165,18 +192,40 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * A Boolean value indicating whether the button is enabled.
+     * 
+     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * The image displayed on the button when focused.
+     * 
+     * @discussion The button will automatically create a focused image using the alpha values from the source image.
+     * 
+     * @note If unspecified, the button will use the default @c image
+     */
     @Generated
     @Selector("setFocusedImage:")
     public native void setFocusedImage(UIImage value);
 
+    /**
+     * A Boolean value indicating whether the button is hidden.
+     * 
+     * @discussion Setting the value of this property to @c YES hides the button and setting it to @c NO shows it. The default value is @c NO.
+     */
     @Generated
     @Selector("setHidden:")
     public native void setHidden(boolean value);
 
+    /**
+     * The image displayed on the button.
+     * 
+     * @discussion Animated images are not supported. If an animated image is assigned, only the first image will be used.
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);

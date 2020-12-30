@@ -18,6 +18,9 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Drawing modes for paths.
+ */
 @Generated
 public final class CGPathDrawingMode {
     @Generated public static final int Fill = 0x00000000;

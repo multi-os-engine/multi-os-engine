@@ -123,6 +123,9 @@ public class AVMetadataItemFilter extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Provides an instance of an AVMetadataItemFilter useful for sharing assets.  Removes many user-identifying metadata items, such as location information, leaving only playback-, copyright- and commercial-related metadata (such as the purchaser's Apple ID), along with metadata either derivable from the media itself or necessary for its proper behavior.
+     */
     @Generated
     @Selector("metadataItemFilterForSharing")
     public static native AVMetadataItemFilter metadataItemFilterForSharing();

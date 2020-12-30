@@ -47,14 +47,23 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Whether the font is automatically updated when the content size category changes.
+     */
     @Generated
     @Selector("adjustsFontForContentSizeCategory")
     public native boolean adjustsFontForContentSizeCategory();
 
+    /**
+     * Whether the font size of the text is automatically adjusted when necessary to fit in the available width.
+     */
     @Generated
     @Selector("adjustsFontSizeToFitWidth")
     public native boolean adjustsFontSizeToFitWidth();
 
+    /**
+     * The alignment for the text.
+     */
     @Generated
     @Selector("alignment")
     @NInt
@@ -70,6 +79,9 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Whether the text is tightened before truncating.
+     */
     @Generated
     @Selector("allowsDefaultTighteningForTruncation")
     public native boolean allowsDefaultTighteningForTruncation();
@@ -96,10 +108,16 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The color of the text.
+     */
     @Generated
     @Selector("color")
     public native UIColor color();
 
+    /**
+     * Optional color transformer that is used to resolve the color. A nil value means the `color` is used as-is.
+     */
     @Generated
     @Selector("colorTransformer")
     @ObjCBlock(name = "call_colorTransformer_ret")
@@ -130,6 +148,9 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The font used for the text.
+     */
     @Generated
     @Selector("font")
     public native UIFont font();
@@ -168,11 +189,17 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The line break mode to use for the text.
+     */
     @Generated
     @Selector("lineBreakMode")
     @NInt
     public native long lineBreakMode();
 
+    /**
+     * When `adjustsFontSizeToFitWidth` is enabled, the smallest multiplier for the font size used to make the text fit.
+     */
     @Generated
     @Selector("minimumScaleFactor")
     @NFloat
@@ -184,6 +211,9 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The maximum number of lines for the text. 0 indicates the number of lines is unlimited.
+     */
     @Generated
     @Selector("numberOfLines")
     @NInt
@@ -197,30 +227,51 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Returns the resolved color, based on the `color` and `colorTransformer`.
+     */
     @Generated
     @Selector("resolvedColor")
     public native UIColor resolvedColor();
 
+    /**
+     * Whether the font is automatically updated when the content size category changes.
+     */
     @Generated
     @Selector("setAdjustsFontForContentSizeCategory:")
     public native void setAdjustsFontForContentSizeCategory(boolean value);
 
+    /**
+     * Whether the font size of the text is automatically adjusted when necessary to fit in the available width.
+     */
     @Generated
     @Selector("setAdjustsFontSizeToFitWidth:")
     public native void setAdjustsFontSizeToFitWidth(boolean value);
 
+    /**
+     * The alignment for the text.
+     */
     @Generated
     @Selector("setAlignment:")
     public native void setAlignment(@NInt long value);
 
+    /**
+     * Whether the text is tightened before truncating.
+     */
     @Generated
     @Selector("setAllowsDefaultTighteningForTruncation:")
     public native void setAllowsDefaultTighteningForTruncation(boolean value);
 
+    /**
+     * The color of the text.
+     */
     @Generated
     @Selector("setColor:")
     public native void setColor(UIColor value);
 
+    /**
+     * Optional color transformer that is used to resolve the color. A nil value means the `color` is used as-is.
+     */
     @Generated
     @Selector("setColorTransformer:")
     public native void setColorTransformer(
@@ -233,22 +284,37 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
         UIColor call_setColorTransformer(UIColor color);
     }
 
+    /**
+     * The font used for the text.
+     */
     @Generated
     @Selector("setFont:")
     public native void setFont(UIFont value);
 
+    /**
+     * The line break mode to use for the text.
+     */
     @Generated
     @Selector("setLineBreakMode:")
     public native void setLineBreakMode(@NInt long value);
 
+    /**
+     * When `adjustsFontSizeToFitWidth` is enabled, the smallest multiplier for the font size used to make the text fit.
+     */
     @Generated
     @Selector("setMinimumScaleFactor:")
     public native void setMinimumScaleFactor(@NFloat double value);
 
+    /**
+     * The maximum number of lines for the text. 0 indicates the number of lines is unlimited.
+     */
     @Generated
     @Selector("setNumberOfLines:")
     public native void setNumberOfLines(@NInt long value);
 
+    /**
+     * A transform that is applied to the text before it is displayed.
+     */
     @Generated
     @Selector("setTransform:")
     public native void setTransform(@NInt long value);
@@ -271,6 +337,9 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
         return supportsSecureCoding();
     }
 
+    /**
+     * A transform that is applied to the text before it is displayed.
+     */
     @Generated
     @Selector("transform")
     @NInt

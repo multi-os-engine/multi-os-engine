@@ -44,6 +44,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMPedometerEvent
+ * 
+ * Discussion:
+ *     An event marking the change in user's pedestrian activity.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -165,6 +171,12 @@ public class CMPedometerEvent extends NSObject implements NSSecureCoding, NSCopy
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * date
+     * 
+     * Discussion:
+     *     The time of occurence of event.
+     */
     @Generated
     @Selector("date")
     public native NSDate date();
@@ -187,6 +199,12 @@ public class CMPedometerEvent extends NSObject implements NSSecureCoding, NSCopy
         return supportsSecureCoding();
     }
 
+    /**
+     * type
+     * 
+     * Discussion:
+     *     Event type describing the transition of pedestrian activity.
+     */
     @Generated
     @Selector("type")
     @NInt

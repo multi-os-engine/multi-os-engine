@@ -18,6 +18,9 @@ package apple.corefoundation.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Reasons for CFRunLoopRunInMode() to Return
+ */
 @Generated
 public final class CFRunLoopRunResult {
     @Generated public static final int Finished = 0x00000001;

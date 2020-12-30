@@ -21,9 +21,18 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSURLSessionTaskState {
+    /**
+     * The task is currently being serviced by the session
+     */
     @Generated @NInt public static final long Running = 0x0000000000000000L;
     @Generated @NInt public static final long Suspended = 0x0000000000000001L;
+    /**
+     * The task has been told to cancel.  The session will receive a URLSession:task:didCompleteWithError: message.
+     */
     @Generated @NInt public static final long Canceling = 0x0000000000000002L;
+    /**
+     * The task has completed and the session will receive no more delegate notifications
+     */
     @Generated @NInt public static final long Completed = 0x0000000000000003L;
 
     @Generated

@@ -181,6 +181,9 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
     @Selector("localizedSubtitle")
     public native String localizedSubtitle();
 
+    /**
+     * Properties controlling how the item should be displayed on the home screen.
+     */
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();
@@ -191,14 +194,24 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
+    /**
+     * An application-specific string that identifies the type of action to perform.
+     */
     @Generated
     @Selector("type")
     public native String type();
 
+    /**
+     * Application-specific information needed to perform the action.
+     * Will throw an exception if the NSDictionary is not plist-encodable.
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<String, ?> userInfo();
 
+    /**
+     * used with UISceneActivationConditions to customize what scene should be activated for a shortcut
+     */
     @Generated
     @Selector("targetContentIdentifier")
     @MappedReturn(ObjCObjectMapper.class)

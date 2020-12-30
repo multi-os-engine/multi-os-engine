@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * PDFBorder is not directly an annotation, but instead is a supportive structure common to a few annotations.
+ */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -62,6 +65,9 @@ public class PDFBorder extends NSObject implements NSCopying, NSCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * List all border properties as key-value pairs; returns a deep copy of all pairs. Helpful for debugging.
+     */
     @Generated
     @Selector("borderKeyValues")
     public native NSDictionary<?, ?> borderKeyValues();
@@ -90,6 +96,9 @@ public class PDFBorder extends NSObject implements NSCopying, NSCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Array of floats specifying the dash pattern (see NSBezierPath for more detail).
+     */
     @Generated
     @Selector("dashPattern")
     public native NSArray<?> dashPattern();
@@ -102,6 +111,11 @@ public class PDFBorder extends NSObject implements NSCopying, NSCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Draw method. Not generally needed since the annotations themselves call this method when they are drawn.
+     * Call -[NSColor set] before calling (the various annotations do this often calling -[PDFAnnotation color] or whatever
+     * is appropriate for their class.
+     */
     @Generated
     @Selector("drawInRect:")
     public native void drawInRect(@ByValue CGRect rect);
@@ -144,6 +158,9 @@ public class PDFBorder extends NSObject implements NSCopying, NSCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Width of line used to stroke border.
+     */
     @Generated
     @Selector("lineWidth")
     @NFloat
@@ -163,14 +180,23 @@ public class PDFBorder extends NSObject implements NSCopying, NSCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Array of floats specifying the dash pattern (see NSBezierPath for more detail).
+     */
     @Generated
     @Selector("setDashPattern:")
     public native void setDashPattern(NSArray<?> value);
 
+    /**
+     * Width of line used to stroke border.
+     */
     @Generated
     @Selector("setLineWidth:")
     public native void setLineWidth(@NFloat double value);
 
+    /**
+     * See styles above. Whether border is drawn solid, dashed etc.
+     */
     @Generated
     @Selector("setStyle:")
     public native void setStyle(@NInt long value);
@@ -179,6 +205,9 @@ public class PDFBorder extends NSObject implements NSCopying, NSCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * See styles above. Whether border is drawn solid, dashed etc.
+     */
     @Generated
     @Selector("style")
     @NInt

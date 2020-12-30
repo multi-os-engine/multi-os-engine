@@ -18,6 +18,12 @@ package apple.corelocation.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * CLDeviceOrientation
+ * 
+ * Discussion:
+ *     Specifies a physical device orientation, equivalent to UIDeviceOrientation.
+ */
 @Generated
 public final class CLDeviceOrientation {
     @Generated public static final int Unknown = 0x00000000;

@@ -159,14 +159,29 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     @NInt
     public static native long version_static();
 
+    /**
+     * @method		videoCompositionInstruction
+     * @abstract		Returns a new instance of AVMutableVideoCompositionInstruction.
+     * @discussion
+     *   The returned AVMutableVideoCompositionInstruction will have a timeRange of kCMTimeRangeInvalid, a NULL backgroundColor, and a nil array of layerInstructions.
+     */
     @Generated
     @Selector("videoCompositionInstruction")
     public static native AVMutableVideoCompositionInstruction videoCompositionInstruction();
 
+    /**
+     * Indicates the background color of the composition. Solid BGRA colors only are supported; patterns and other color refs that are not supported will be ignored.
+     * If the background color is not specified the video compositor will use a default backgroundColor of opaque black.
+     * If the rendered pixel buffer does not have alpha, the alpha value of the backgroundColor will be ignored. 
+     */
     @Generated
     @Selector("backgroundColor")
     public native CGColorRef backgroundColor();
 
+    /**
+     * If NO, indicates that post-processing should be skipped for the duration of this instruction.  YES by default.
+     * See +[AVVideoCompositionCoreAnimationTool videoCompositionToolWithPostProcessingAsVideoLayer:inLayer:].
+     */
     @Generated
     @Selector("enablePostProcessing")
     public native boolean enablePostProcessing();
@@ -179,22 +194,46 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     @Selector("initWithCoder:")
     public native AVMutableVideoCompositionInstruction initWithCoder(NSCoder coder);
 
+    /**
+     * Provides an array of instances of AVVideoCompositionLayerInstruction that specify how video frames from source tracks should be layered and composed.
+     * Tracks are layered in the composition according to the top-to-bottom order of the layerInstructions array; the track with trackID of the first instruction
+     * in the array will be layered on top, with the track with the trackID of the second instruction immediately underneath, etc.
+     * If this key is nil, the output will be a fill of the background color. 
+     */
     @Generated
     @Selector("layerInstructions")
     public native NSArray<? extends AVVideoCompositionLayerInstruction> layerInstructions();
 
+    /**
+     * Indicates the background color of the composition. Solid BGRA colors only are supported; patterns and other color refs that are not supported will be ignored.
+     * If the background color is not specified the video compositor will use a default backgroundColor of opaque black.
+     * If the rendered pixel buffer does not have alpha, the alpha value of the backgroundColor will be ignored. 
+     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(CGColorRef value);
 
+    /**
+     * If NO, indicates that post-processing should be skipped for the duration of this instruction.  YES by default.
+     * See +[AVVideoCompositionCoreAnimationTool videoCompositionToolWithPostProcessingAsVideoLayer:inLayer:].
+     */
     @Generated
     @Selector("setEnablePostProcessing:")
     public native void setEnablePostProcessing(boolean value);
 
+    /**
+     * Provides an array of instances of AVVideoCompositionLayerInstruction that specify how video frames from source tracks should be layered and composed.
+     * Tracks are layered in the composition according to the top-to-bottom order of the layerInstructions array; the track with trackID of the first instruction
+     * in the array will be layered on top, with the track with the trackID of the second instruction immediately underneath, etc.
+     * If this key is nil, the output will be a fill of the background color. 
+     */
     @Generated
     @Selector("setLayerInstructions:")
     public native void setLayerInstructions(NSArray<? extends AVVideoCompositionLayerInstruction> value);
 
+    /**
+     * Indicates the timeRange during which the instruction is effective. Note requirements for the timeRanges of instructions described in connection with AVVideoComposition's instructions key above.
+     */
     @Generated
     @Selector("setTimeRange:")
     public native void setTimeRange(@ByValue CMTimeRange value);
@@ -205,6 +244,9 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
         return supportsSecureCoding();
     }
 
+    /**
+     * Indicates the timeRange during which the instruction is effective. Note requirements for the timeRanges of instructions described in connection with AVVideoComposition's instructions key above.
+     */
     @Generated
     @Selector("timeRange")
     @ByValue

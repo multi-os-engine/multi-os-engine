@@ -43,6 +43,13 @@ public class CPInformationTemplate extends CPTemplate {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * An array of actions that appear at the bottom of the template.
+     * 
+     * To update the actions appearing in this information template, assign a new array to this property.
+     * 
+     * @note The maximum number of actions is 3. If you specify more than 3, only the first 3 will be used.
+     */
     @Generated
     @Selector("actions")
     public native NSArray<? extends CPTextButton> actions();
@@ -100,6 +107,17 @@ public class CPInformationTemplate extends CPTemplate {
     @Selector("initWithCoder:")
     public native CPInformationTemplate initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize a CPInformationTemplate with a title, optional labels, and optional action buttons.
+     * 
+     * @param layout Information template layout, either leading aligned or two columns
+     * @param title Information template title, appears at the top of the template
+     * @param items Information items that will appear in the template
+     * @param actions Optional actions that appear at the bottom of the template
+     * 
+     * @note The maximum number of @c CPInformationItem is 10. If you specify more than 10 items, only the first 10 will be used.
+     *       The maximum number of @c CPTextButton is 3. If you specify more than 3, only the first 3 will be used.
+     */
     @Generated
     @Selector("initWithTitle:layout:items:actions:")
     public native CPInformationTemplate initWithTitleLayoutItemsActions(String title, @NInt long layout,
@@ -122,6 +140,13 @@ public class CPInformationTemplate extends CPTemplate {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * An array of @c CPInformationItem.
+     * 
+     * To update the items appearing in this information template, assign a new array to this property.
+     * 
+     * @note The maximum number of items is 10. If you specify more than 10 items, only the first 10 will be used.
+     */
     @Generated
     @Selector("items")
     public native NSArray<? extends CPInformationItem> items();
@@ -130,6 +155,9 @@ public class CPInformationTemplate extends CPTemplate {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Information template layout, either leading aligned or two columns.
+     */
     @Generated
     @Selector("layout")
     @NInt
@@ -149,14 +177,31 @@ public class CPInformationTemplate extends CPTemplate {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * An array of actions that appear at the bottom of the template.
+     * 
+     * To update the actions appearing in this information template, assign a new array to this property.
+     * 
+     * @note The maximum number of actions is 3. If you specify more than 3, only the first 3 will be used.
+     */
     @Generated
     @Selector("setActions:")
     public native void setActions(NSArray<? extends CPTextButton> value);
 
+    /**
+     * An array of @c CPInformationItem.
+     * 
+     * To update the items appearing in this information template, assign a new array to this property.
+     * 
+     * @note The maximum number of items is 10. If you specify more than 10 items, only the first 10 will be used.
+     */
     @Generated
     @Selector("setItems:")
     public native void setItems(NSArray<? extends CPInformationItem> value);
 
+    /**
+     * Title that will appear at the top of the template.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
@@ -179,6 +224,9 @@ public class CPInformationTemplate extends CPTemplate {
         return supportsSecureCoding();
     }
 
+    /**
+     * Title that will appear at the top of the template.
+     */
     @Generated
     @Selector("title")
     public native String title();

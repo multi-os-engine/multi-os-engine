@@ -24,6 +24,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVMetadataBodyObject
+ * @abstract
+ *    AVMetadataBodyObject is an abstract class that defines an interface for a body metadata object used by AVFoundation.
+ * 
+ * @discussion
+ *    AVMetadataBodyObject represents a single detected body in a picture. It is the base object used to represent bodies, for example AVMetadataHumanBodyObject, AVMetadataCatBodyObject, AVMetadataDogBodyObject.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -56,6 +64,14 @@ public class AVMetadataBodyObject extends AVMetadataObject implements NSCopying 
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property bodyID
+     * @abstract
+     *    A unique number associated with the receiver.
+     * 
+     * @discussion
+     *    The value of this property is an NSInteger indicating the unique identifier of this body type (Human, Dog, Cat) in the picture. When a new body enters the picture, it is assigned a new unique identifier. bodyIDs are not re-used as bodies leave the picture and new ones enter. Bodies that leave the picture then re-enter are assigned a new bodyID.
+     */
     @Generated
     @Selector("bodyID")
     @NInt

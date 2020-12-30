@@ -27,6 +27,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNReduceBinary
+ * @discussion The MPSNNReduce performs a reduction operation
+ *             The reduction operations supported are:
+ *                  - Reduce feature channels mean
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -134,6 +140,16 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract   The source rectangle to use when reading data from primary source
+     * @discussion A MTLRegion that indicates which part of the primary source to read. If the clipRectPrimarySource does not lie
+     *             completely within the primary source image, the intersection of the image bounds and clipRectPrimarySource will
+     *             be used. The primarySourceClipRect replaces the MPSBinaryImageKernel primaryOffset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * 
+     *             The clipRect specified in MPSBinaryImageKernel is used to control the origin in the destination texture
+     *             where the min, max values are written.  The clipRect.width must be >=2.  The clipRect.height must be >= 1.
+     */
     @Generated
     @Selector("primarySourceClipRect")
     @ByValue
@@ -147,15 +163,45 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract   The source rectangle to use when reading data from secondary source
+     * @discussion A MTLRegion that indicates which part of the secondary source to read. If the clipRectSecondarySource does not lie
+     *             completely within the secondary source image, the intersection of the image bounds and clipRectSecondarySource will
+     *             be used. The secondarySourceClipRect replaces the MPSBinaryImageKernel secondaryOffset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * 
+     *             The clipRect specified in MPSBinaryImageKernel is used to control the origin in the destination texture
+     *             where the min, max values are written.  The clipRect.width must be >=2.  The clipRect.height must be >= 1.
+     */
     @Generated
     @Selector("secondarySourceClipRect")
     @ByValue
     public native MTLRegion secondarySourceClipRect();
 
+    /**
+     * @abstract   The source rectangle to use when reading data from primary source
+     * @discussion A MTLRegion that indicates which part of the primary source to read. If the clipRectPrimarySource does not lie
+     *             completely within the primary source image, the intersection of the image bounds and clipRectPrimarySource will
+     *             be used. The primarySourceClipRect replaces the MPSBinaryImageKernel primaryOffset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * 
+     *             The clipRect specified in MPSBinaryImageKernel is used to control the origin in the destination texture
+     *             where the min, max values are written.  The clipRect.width must be >=2.  The clipRect.height must be >= 1.
+     */
     @Generated
     @Selector("setPrimarySourceClipRect:")
     public native void setPrimarySourceClipRect(@ByValue MTLRegion value);
 
+    /**
+     * @abstract   The source rectangle to use when reading data from secondary source
+     * @discussion A MTLRegion that indicates which part of the secondary source to read. If the clipRectSecondarySource does not lie
+     *             completely within the secondary source image, the intersection of the image bounds and clipRectSecondarySource will
+     *             be used. The secondarySourceClipRect replaces the MPSBinaryImageKernel secondaryOffset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * 
+     *             The clipRect specified in MPSBinaryImageKernel is used to control the origin in the destination texture
+     *             where the min, max values are written.  The clipRect.width must be >=2.  The clipRect.height must be >= 1.
+     */
     @Generated
     @Selector("setSecondarySourceClipRect:")
     public native void setSecondarySourceClipRect(@ByValue MTLRegion value);

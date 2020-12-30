@@ -136,6 +136,9 @@ public class ASAuthorizationRequest extends NSObject implements NSCopying, NSSec
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract The provider object that is being used to service this request
+     */
     @Generated
     @Selector("provider")
     @MappedReturn(ObjCObjectMapper.class)

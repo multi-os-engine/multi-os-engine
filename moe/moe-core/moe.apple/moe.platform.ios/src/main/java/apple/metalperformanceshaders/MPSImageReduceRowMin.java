@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSImageReduceRowMin
+ * @discussion The MPSImageReduceRowMin performs a reduction operation returning the mininmum value for each row of an image
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -101,6 +105,11 @@ public class MPSImageReduceRowMin extends MPSImageReduceUnary {
     public native MPSImageReduceRowMin initWithCoderDevice(NSCoder aDecoder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Specifies information to apply the reduction operation on an image.
+     * @param    device            The device the filter will run on
+     * @return     A valid MPSImageReduce object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSImageReduceRowMin initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);

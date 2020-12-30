@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNAvoidOccluderConstraint
+ * @abstract A SCNAvoidOccluderConstraint constraints place the receiver at a position that prevent nodes with the specified category to occlude the target.
+ * @discussion The target node and it's children are ignored as potential occluders.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -59,10 +64,19 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @method avoidOccluderConstraintWithTarget
+     * @abstract Creates and returns a SCNAvoidOccluderConstraint object.
+     */
     @Generated
     @Selector("avoidOccluderConstraintWithTarget:")
     public static native SCNAvoidOccluderConstraint avoidOccluderConstraintWithTarget(SCNNode target);
 
+    /**
+     * @property bias
+     * @abstract Defines the bias the apply after moving the receiver to avoid occluders. Defaults to 10e-5.
+     * @discussion A positive bias will move the receiver closer to the target.
+     */
     @Generated
     @Selector("bias")
     @NFloat
@@ -90,6 +104,10 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * @property delegate
+     * @abstract The receiver's delegate
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -139,6 +157,10 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property occluderCategoryBitMask
+     * @abstract Defines the category of node to consider as occluder. Defaults to 1.
+     */
     @Generated
     @Selector("occluderCategoryBitMask")
     @NUInt
@@ -152,14 +174,27 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property bias
+     * @abstract Defines the bias the apply after moving the receiver to avoid occluders. Defaults to 10e-5.
+     * @discussion A positive bias will move the receiver closer to the target.
+     */
     @Generated
     @Selector("setBias:")
     public native void setBias(@NFloat double value);
 
+    /**
+     * @property delegate
+     * @abstract The receiver's delegate
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SCNAvoidOccluderConstraintDelegate value);
 
+    /**
+     * @property delegate
+     * @abstract The receiver's delegate
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) SCNAvoidOccluderConstraintDelegate value) {
         Object __old = delegate();
@@ -172,10 +207,18 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
         }
     }
 
+    /**
+     * @property occluderCategoryBitMask
+     * @abstract Defines the category of node to consider as occluder. Defaults to 1.
+     */
     @Generated
     @Selector("setOccluderCategoryBitMask:")
     public native void setOccluderCategoryBitMask(@NUInt long value);
 
+    /**
+     * @property target
+     * @abstract Defines the target node
+     */
     @Generated
     @Selector("setTarget:")
     public native void setTarget(SCNNode value);
@@ -198,6 +241,10 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
         return supportsSecureCoding();
     }
 
+    /**
+     * @property target
+     * @abstract Defines the target node
+     */
     @Generated
     @Selector("target")
     public native SCNNode target();

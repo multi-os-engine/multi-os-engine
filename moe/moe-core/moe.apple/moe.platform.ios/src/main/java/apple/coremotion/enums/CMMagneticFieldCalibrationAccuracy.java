@@ -18,6 +18,13 @@ package apple.coremotion.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * CMMagneticFieldCalibrationAccuracy
+ * 
+ * Discussion:
+ *   CMMagneticFieldCalibrationAccuracy indicates the calibration
+ *   accuracy of a magnetic field estimate.
+ */
 @Generated
 public final class CMMagneticFieldCalibrationAccuracy {
     @Generated public static final int Uncalibrated = 0xFFFFFFFF;

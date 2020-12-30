@@ -20,6 +20,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An NSXPCCoder is used to encode or decode objects sent over an NSXPCConnection. If you want to encode or decode objects differently when sent over an NSXPCConnection, you may use isKindOfClass: to check that the coder is a kind of NSXPCCoder.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -70,6 +73,9 @@ public class NSXPCCoder extends NSCoder {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The current NSXPCConnection that is encoding or decoding.
+     */
     @Generated
     @Selector("connection")
     public native NSXPCConnection connection();

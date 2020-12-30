@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Drop all cached information your app has persisted
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)

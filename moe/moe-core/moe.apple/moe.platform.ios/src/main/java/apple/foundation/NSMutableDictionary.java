@@ -152,6 +152,13 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithObjectsAndKeys(
             @Mapped(ObjCObjectMapper.class) Object firstObject, Object... varargs);
 
+    /**
+     * Create a mutable dictionary which is optimized for dealing with a known set of keys.
+     * Keys that are not in the key set can still be set into the dictionary, but that usage is not optimal.
+     * As with any dictionary, the keys must be copyable.
+     * If keyset is nil, an exception is thrown.
+     * If keyset is not an object returned by +sharedKeySetForKeys:, an exception is thrown.
+     */
     @Generated
     @Selector("dictionaryWithSharedKeySet:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<_KeyType, _ObjectType> dictionaryWithSharedKeySet(

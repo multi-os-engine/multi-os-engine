@@ -24,6 +24,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * TKSimpleTLVRecord implements Simple-TLV encoding according to ISO7816-4.
+ * Tag is number in range <1..254> encoded as single byte, length is either single byte specifying length 0-254
+ * or 3 bytes encoded as 0xff followed by 2 bytes of big-endian encoded number.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -91,6 +96,12 @@ public class TKSimpleTLVRecord extends TKTLVRecord {
     @Selector("init")
     public native TKSimpleTLVRecord init();
 
+    /**
+     * Creates TLV record with specified tag and value.
+     * @param tag Tag value for the new record.
+     * @param value Value for the new record.
+     * @return Newly created TLV record.
+     */
     @Generated
     @Selector("initWithTag:value:")
     public native TKSimpleTLVRecord initWithTagValue(byte tag, NSData value);

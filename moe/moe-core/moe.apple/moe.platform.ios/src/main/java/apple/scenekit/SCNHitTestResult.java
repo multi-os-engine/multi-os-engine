@@ -43,6 +43,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNHitTestResult
+ * @abstract Results returned by the hit-test methods.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -154,15 +158,24 @@ public class SCNHitTestResult extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The hit bone. Only available if the node hit has a SCNSkinner attached.
+     */
     @Generated
     @Selector("boneNode")
     public native SCNNode boneNode();
 
+    /**
+     * Index of the hit primitive of the geometry element.
+     */
     @Generated
     @Selector("faceIndex")
     @NInt
     public native long faceIndex();
 
+    /**
+     * Index of the hit geometry element.
+     */
     @Generated
     @Selector("geometryIndex")
     @NInt
@@ -172,35 +185,58 @@ public class SCNHitTestResult extends NSObject {
     @Selector("init")
     public native SCNHitTestResult init();
 
+    /**
+     * Intersection point in the node's local coordinate system.
+     */
     @Generated
     @Selector("localCoordinates")
     @ByValue
     public native SCNVector3 localCoordinates();
 
+    /**
+     * Intersection normal in the node's local coordinate system.
+     */
     @Generated
     @Selector("localNormal")
     @ByValue
     public native SCNVector3 localNormal();
 
+    /**
+     * World transform of the hit node.
+     */
     @Generated
     @Selector("modelTransform")
     @ByValue
     public native SCNMatrix4 modelTransform();
 
+    /**
+     * The hit node.
+     */
     @Generated
     @Selector("node")
     public native SCNNode node();
 
+    /**
+     * @method textureCoordinatesWithMappingChannel:
+     * @abstract Returns the texture coordinates at the point of intersection, for a given mapping channel.
+     * @param channel The texture coordinates source index of the geometry to use. The channel must exists on the geometry otherwise {0,0} will be returned.
+     */
     @Generated
     @Selector("textureCoordinatesWithMappingChannel:")
     @ByValue
     public native CGPoint textureCoordinatesWithMappingChannel(@NInt long channel);
 
+    /**
+     * Intersection point in the world coordinate system.
+     */
     @Generated
     @Selector("worldCoordinates")
     @ByValue
     public native SCNVector3 worldCoordinates();
 
+    /**
+     * Intersection normal in the world coordinate system.
+     */
     @Generated
     @Selector("worldNormal")
     @ByValue

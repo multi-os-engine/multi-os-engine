@@ -76,6 +76,9 @@ public class DCDevice extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The current device. 
+     */
     @Generated
     @Selector("currentDevice")
     public static native DCDevice currentDevice();
@@ -88,6 +91,10 @@ public class DCDevice extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Generate a new device token that can be used to get/set the persistent bits for this device.
+     * This call generates a new value every time.
+     */
     @Generated
     @Selector("generateTokenWithCompletionHandler:")
     public native void generateTokenWithCompletionHandler(
@@ -126,6 +133,9 @@ public class DCDevice extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Check if this API is supported on the current device.
+     */
     @Generated
     @Selector("isSupported")
     public native boolean isSupported();

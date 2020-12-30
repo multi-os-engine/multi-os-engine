@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A class for defining common behaviors		******
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -176,6 +179,12 @@ public class NSDecimalNumberHandler extends NSObject implements NSDecimalNumberB
     @Selector("initWithCoder:")
     public native NSDecimalNumberHandler initWithCoder(NSCoder coder);
 
+    /**
+     * rounding mode: NSRoundPlain
+     * scale: No defined scale (full precision)
+     * ignore exactnessException (return nil)
+     * raise on overflow, underflow and divide by zero.
+     */
     @Generated
     @Selector("initWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:")
     public native NSDecimalNumberHandler initWithRoundingModeScaleRaiseOnExactnessRaiseOnOverflowRaiseOnUnderflowRaiseOnDivideByZero(

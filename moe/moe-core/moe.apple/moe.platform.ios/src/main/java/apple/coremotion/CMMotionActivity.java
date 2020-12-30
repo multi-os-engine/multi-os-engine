@@ -42,6 +42,26 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMMotionActivity
+ * 
+ * Discussion:
+ *   An estimate of the user's activity based on the motion of the device.
+ * 
+ *   The activity is exposed as a set of properties, the properties are not
+ *   mutually exclusive.
+ * 
+ *   For example, if you're in a car stopped at a stop sign the state might
+ *   look like:
+ *      stationary = YES, walking = NO, running = NO, automotive = YES
+ * 
+ *   Or a moving vehicle,
+ *      stationary = NO, walking = NO, running = NO, automotive = YES
+ * 
+ *   Or the device could be in motion but not walking or in a vehicle.
+ *      stationary = NO, walking = NO, running = NO, automotive = NO.
+ *   Note in this case all of the properties are NO.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -157,15 +177,36 @@ public class CMMotionActivity extends CMLogItem {
     @NInt
     public static native long version_static();
 
+    /**
+     * automotive
+     * 
+     * Discussion:
+     *   True if the device is in a vehicle.
+     */
     @Generated
     @Selector("automotive")
     public native boolean automotive();
 
+    /**
+     * confidence
+     * 
+     * Discussion:
+     *   A confidence estimate associated with this state.
+     * 
+     *   CoreMotion always provides the most likely state.  Confidence represents
+     *   how likely that the state is to be correct.
+     */
     @Generated
     @Selector("confidence")
     @NInt
     public native long confidence();
 
+    /**
+     * cycling
+     * 
+     * Discussion:
+     *   True if the device is on a bicycle.
+     */
     @Generated
     @Selector("cycling")
     public native boolean cycling();
@@ -178,14 +219,32 @@ public class CMMotionActivity extends CMLogItem {
     @Selector("initWithCoder:")
     public native CMMotionActivity initWithCoder(NSCoder coder);
 
+    /**
+     * running
+     * 
+     * Discussion:
+     *   True if the device is on a running person.
+     */
     @Generated
     @Selector("running")
     public native boolean running();
 
+    /**
+     * startDate
+     * 
+     * Discussion:
+     *   Time at which the activity started.
+     */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
 
+    /**
+     * stationary
+     * 
+     * Discussion:
+     *   True if the device is not moving.
+     */
     @Generated
     @Selector("stationary")
     public native boolean stationary();
@@ -196,10 +255,23 @@ public class CMMotionActivity extends CMLogItem {
         return supportsSecureCoding();
     }
 
+    /**
+     * unknown
+     * 
+     * Discussion:
+     *   True if there is no estimate of the current state.  This can happen if
+     *   the device was turned off.
+     */
     @Generated
     @Selector("unknown")
     public native boolean unknown();
 
+    /**
+     * walking
+     * 
+     * Discussion:
+     *   True if the device is on a walking person.
+     */
     @Generated
     @Selector("walking")
     public native boolean walking();

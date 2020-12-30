@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A now playing button that indicates the current shuffle mode for your app.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)

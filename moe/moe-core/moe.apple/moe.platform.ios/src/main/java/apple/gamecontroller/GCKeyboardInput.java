@@ -24,6 +24,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Keyboard profile. Contains the current state of buttons specified in GCKeyCodes.h.
+ * 
+ * GCKeyboardInput is designed primarly for input polling. For the best text input experience, UIKit/AppKit usage is recommended.
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -56,6 +61,13 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Alongside general subscript notation of GCPhysicalInputProfile keys can be accessed using this method.
+     * 
+     * @example [keyboard buttonForKey:GCKeyCode.UpArrow] == keyboard[GCKeyUpArrow]
+     * @param code is a low level key code that can be used for accessing a keyboard button.
+     * @note Full list of supported key constants can be found in GCKeyCodes.h and GCKeyNames.h
+     */
     @Generated
     @Selector("buttonForKeyCode:")
     public native GCControllerButtonInput buttonForKeyCode(@NInt long code);
@@ -108,6 +120,9 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Before querying any key for a value it might be useful to check if any key is actually pressed
+     */
     @Generated
     @Selector("isAnyKeyPressed")
     public native boolean isAnyKeyPressed();

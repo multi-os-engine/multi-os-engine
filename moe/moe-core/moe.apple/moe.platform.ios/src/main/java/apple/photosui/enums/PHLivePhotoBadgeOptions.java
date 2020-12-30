@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class PHLivePhotoBadgeOptions {
+    /**
+     * < Include treatments so this image can be shown directly over the content of the Live Photo
+     */
     @Generated @NUInt public static final long OverContent = 0x0000000000000001L;
+    /**
+     * < To indicate that the Live Photo aspect is turned off and it will be treated as a still (e.g. for sharing)
+     */
     @Generated @NUInt public static final long LiveOff = 0x0000000000000002L;
 
     @Generated

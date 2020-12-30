@@ -159,27 +159,103 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @NInt
     public static native long version_static();
 
+    /**
+     * @method		videoCompositionWithAsset:options:applyingCIFiltersWithHandler:
+     * @abstract
+     * Returns a new instance of AVVideoComposition with values and instructions that will apply the specified handler block to video frames represented as instances of CIImage.
+     * @param			asset		An instance of AVAsset. For best performance, ensure that the duration and tracks properties of the asset are already loaded before invoking this method.
+     * @result		An instance of AVVideoComposition.
+     * @discussion
+     * The returned AVVideoComposition will cause the specified handler block to be called to filter each frame of the asset's first enabled video track. The handler block should use the properties of the provided AVAsynchronousCIImageFilteringRequest and respond using finishWithImage:context: with a "filtered" new CIImage (or the provided source image for no affect). In the event of an error, respond to the request using finishWithError:. The error can be observed via AVPlayerItemFailedToPlayToEndTimeNotification, see AVPlayerItemFailedToPlayToEndTimeErrorKey in notification payload.
+     * 
+     * NOTE: The returned AVVideoComposition's properties are private and support only CIFilter-based operations. Mutations are not supported, either in the values of properties of the AVVideoComposition itself or in its private instructions. If rotations or other transformations are desired, they must be accomplished via the application of CIFilters during the execution of your specified handler.
+     * 
+     * The video composition will also have the following values for its properties:
+     * 
+     * 	- The original timing of the asset's first enabled video track will be used.
+     * 	- A renderSize that encompasses the asset's first enabled video track respecting the track's preferredTransform.
+     * 	- A renderScale of 1.0.
+     * 
+     * The default CIContext has the following properties:
+     * 
+     * 	- iOS: Device RGB color space
+     * 	- OS X: sRGB color space
+     * 
+     * Example usage:
+     * 
+     * 	playerItem.videoComposition = [AVVideoComposition videoCompositionWithAsset:srcAsset applyingCIFiltersWithHandler:
+     * 		^(AVAsynchronousCIImageFilteringRequest *request)
+     * 		{
+     * 			NSError *err = nil;
+     * 			CIImage *filtered = myRenderer(request, &err);
+     * 			if (filtered)
+     * 				[request finishWithImage:filtered context:nil];
+     * 			else
+     * 				[request finishWithError:err];
+     * 		}];
+     */
     @Generated
     @Selector("videoCompositionWithAsset:applyingCIFiltersWithHandler:")
     public static native AVVideoComposition videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsset asset,
             @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandler") Block_videoCompositionWithAssetApplyingCIFiltersWithHandler applier);
 
+    /**
+     * @method		videoCompositionWithPropertiesOfAsset:
+     * @abstract
+     *   Returns a new instance of AVVideoComposition with values and instructions suitable for presenting the video tracks of the specified asset according to its temporal and geometric properties and those of its tracks.
+     * @param			asset		An instance of AVAsset. Ensure that the duration and tracks properties of the asset are already loaded before invoking this method.
+     * @result		An instance of AVVideoComposition.
+     * @discussion
+     *   The returned AVVideoComposition will have instructions that respect the spatial properties and timeRanges of the specified asset's video tracks.
+     *   It will also have the following values for its properties:
+     * 
+     *   	- If the asset has exactly one video track, the original timing of the source video track will be used. If the asset has more than one video track, and the nominal frame rate of any of video tracks is known, the reciprocal of the greatest known nominalFrameRate will be used as the value of frameDuration. Otherwise, a default framerate of 30fps is used.
+     *   	- If the specified asset is an instance of AVComposition, the renderSize will be set to the naturalSize of the AVComposition; otherwise the renderSize will be set to a value that encompasses all of the asset's video tracks.
+     *   	- A renderScale of 1.0.
+     *   	- A nil animationTool.
+     * 
+     *   If the specified asset has no video tracks, this method will return an AVVideoComposition instance with an empty collection of instructions.
+     */
     @Generated
     @Selector("videoCompositionWithPropertiesOfAsset:")
     public static native AVVideoComposition videoCompositionWithPropertiesOfAsset(AVAsset asset);
 
+    /**
+     * indicates a special video composition tool for use of Core Animation; may be nil
+     */
     @Generated
     @Selector("animationTool")
     public native AVVideoCompositionCoreAnimationTool animationTool();
 
+    /**
+     * @property     colorPrimaries
+     * @abstract
+     *    Rendering will use these primaries and frames will be tagged as such. If the value of this property is nil then the source's primaries will be propagated and used.
+     * @discussion
+     *    Default is nil. Valid values are those suitable for AVVideoColorPrimariesKey. Generally set as a triple along with colorYCbCrMatrix and colorTransferFunction.
+     */
     @Generated
     @Selector("colorPrimaries")
     public native String colorPrimaries();
 
+    /**
+     * @property     colorTransferFunction
+     * @abstract
+     *    Rendering will use this transfer function and frames will be tagged as such. If the value of this property is nil then the source's transfer function will be propagated and used.
+     * @discussion
+     *    Default is nil. Valid values are those suitable for AVVideoTransferFunctionKey. Generally set as a triple along with colorYCbCrMatrix and colorYCbCrMatrix.
+     */
     @Generated
     @Selector("colorTransferFunction")
     public native String colorTransferFunction();
 
+    /**
+     * @property     colorYCbCrMatrix
+     * @abstract
+     *    Rendering will use this matrix and frames will be tagged as such. If the value of this property is nil then the source's matrix will be propagated and used.
+     * @discussion
+     *    Default is nil. Valid values are those suitable for AVVideoYCbCrMatrixKey. Generally set as a triple along with colorPrimaries and colorTransferFunction.
+     */
     @Generated
     @Selector("colorYCbCrMatrix")
     public native String colorYCbCrMatrix();
@@ -190,11 +266,18 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * indicates a custom compositor class to use. The class must implement the AVVideoCompositing protocol.
+     * If nil, the default, internal video compositor is used 
+     */
     @Generated
     @Selector("customVideoCompositorClass")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVVideoCompositing customVideoCompositorClass();
 
+    /**
+     * indicates the interval which the video composition, when enabled, should render composed video frames
+     */
     @Generated
     @Selector("frameDuration")
     @ByValue
@@ -204,10 +287,31 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @Selector("init")
     public native AVVideoComposition init();
 
+    /**
+     * Indicates instructions for video composition via an NSArray of instances of classes implementing the AVVideoCompositionInstruction protocol.
+     * For the first instruction in the array, timeRange.start must be less than or equal to the earliest time for which playback or other processing will be attempted
+     * (note that this will typically be kCMTimeZero). For subsequent instructions, timeRange.start must be equal to the prior instruction's end time. The end time of
+     * the last instruction must be greater than or equal to the latest time for which playback or other processing will be attempted (note that this will often be
+     * the duration of the asset with which the instance of AVVideoComposition is associated).
+     */
     @Generated
     @Selector("instructions")
     public native NSArray<?> instructions();
 
+    /**
+     *  @method		isValidForAsset:timeRange:validationDelegate:
+     *  @abstract
+     *    Indicates whether the timeRanges of the receiver's instructions conform to the requirements described for them immediately above (in connection with the instructions property) and also whether all of the layer instructions have a value for trackID that corresponds either to a track of the specified asset or to the receiver's animationTool. 
+     *  @param			asset
+     *     Pass a reference to an AVAsset if you wish to validate the timeRanges of the instructions against the duration of the asset and the trackIDs of the layer instructions against the asset's tracks. Pass nil to skip that validation. Clients should ensure that the keys @"tracks" and @"duration" are already loaded on the AVAsset before validation is attempted.
+     *  @param			timeRange
+     *    A CMTimeRange.  Only those instuctions with timeRanges that overlap with the specified timeRange will be validated. To validate all instructions that may be used for playback or other processing, regardless of timeRange, pass CMTimeRangeMake(kCMTimeZero, kCMTimePositiveInfinity).
+     *  @param			validationDelegate
+     *    Indicates an object implementing the AVVideoCompositionValidationHandling protocol to receive information about troublesome portions of a video composition during processing of -isValidForAsset:. May be nil.
+     * @discussion
+     *    In the course of validation, the receiver will invoke its validationDelegate with reference to any trouble spots in the video composition.
+     *    An exception will be raised if the delegate modifies the receiver's array of instructions or the array of layerInstructions of any AVVideoCompositionInstruction contained therein during validation.
+     */
     @Generated
     @Selector("isValidForAsset:timeRange:validationDelegate:")
     public native boolean isValidForAssetTimeRangeValidationDelegate(AVAsset asset, @ByValue CMTimeRange timeRange,
@@ -219,10 +323,16 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
+    /**
+     * indicates the scale at which the video composition should render. May only be other than 1.0 for a video composition set on an AVPlayerItem
+     */
     @Generated
     @Selector("renderScale")
     public native float renderScale();
 
+    /**
+     * indicates the size at which the video composition, when enabled, should render
+     */
     @Generated
     @Selector("renderSize")
     @ByValue
@@ -235,6 +345,9 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
         void call_videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsynchronousCIImageFilteringRequest request);
     }
 
+    /**
+     * If sourceTrackIDForFrameTiming is not kCMPersistentTrackID_Invalid, frame timing for the video composition is derived from the source asset's track with the corresponding ID. This may be used to preserve a source asset's variable frame timing. If an empty edit is encountered in the source asset’s track, the compositor composes frames as needed up to the frequency specified in frameDuration property.
+     */
     @Generated
     @Selector("sourceTrackIDForFrameTiming")
     public native int sourceTrackIDForFrameTiming();

@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract   This class provides some pre-rolled padding policies for common tasks
+ * @discussion You are, of course, welcome to write your own class that conforms to
+ *             The MPSNNPadding protocol and use that instead.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -140,6 +145,9 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * same size centering mode
+     */
     @Generated
     @Selector("paddingForTensorflowAveragePooling")
     public static native MPSNNDefaultPadding paddingForTensorflowAveragePooling();
@@ -149,6 +157,13 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
     @NUInt
     public native long paddingMethod();
 
+    /**
+     * @abstract   Fetch a well known object that implements a non-custom padding method
+     * @discussion For custom padding methods, you will need to implement an object that conforms
+     *             to the full MPSNNPadding protocol, including NSSecureCoding.
+     * @param      method  A MPSNNPaddingMethod
+     * @return     An object that implements <MPSNNPadding> for use with MPSNNGraphNodes.
+     */
     @Generated
     @Selector("paddingWithMethod:")
     public static native MPSNNDefaultPadding paddingWithMethod(@NUInt long method);
@@ -190,6 +205,9 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object inverse();
 
+    /**
+     * @abstract Typical pooling padding policy for valid only mode
+     */
     @Generated
     @Selector("paddingForTensorflowAveragePoolingValidOnly")
     public static native MPSNNDefaultPadding paddingForTensorflowAveragePoolingValidOnly();

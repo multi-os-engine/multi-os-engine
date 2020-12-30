@@ -39,6 +39,25 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class AVAudioOutputNode
+ * @abstract 
+ * 	A node that performs audio output in the engine.
+ * @discussion
+ * 	When the engine is rendering to/from an audio device, this node connects to the system's 
+ * 	audio output.
+ * 	When the engine is operating in manual rendering mode, this node performs output in
+ * 	response to client's requests.
+ * 
+ * 	This node has one element.
+ * 	The format of the output scope reflects:
+ * 		- the audio hardware sample rate and channel count, when connected to the hardware
+ * 		- the engine's manual rendering mode output format (see 
+ * 		  `AVAudioEngine(manualRenderingFormat)`), in the manual rendering mode
+ * 
+ * 	The format of the input scope is initially the same as that of the
+ * 	output, but you may set it to a different format, in which case the node will convert.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)

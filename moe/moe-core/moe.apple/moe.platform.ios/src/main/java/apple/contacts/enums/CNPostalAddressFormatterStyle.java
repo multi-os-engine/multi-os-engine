@@ -19,8 +19,14 @@ package apple.contacts.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @abstract The formatting styles for postal addresses.
+ */
 @Generated
 public final class CNPostalAddressFormatterStyle {
+    /**
+     * Combine the postal address components into a multi-line mailing address.
+     */
     @Generated @NInt public static final long CNPostalAddressFormatterStyleMailingAddress = 0x0000000000000000L;
 
     @Generated

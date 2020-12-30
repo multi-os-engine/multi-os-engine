@@ -19,6 +19,14 @@ package apple.eventkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum       EKAlarmProximity
+ * @abstract   A value indicating whether an alarm is triggered by entering or exiting a geofence.
+ * 
+ * @constant   EKAlarmProximityNone       The alarm has no proximity trigger.
+ * @constant   EKAlarmProximityEnter      The alarm is set to fire when entering a region (geofence).
+ * @constant   EKAlarmProximityLeave      The alarm is set to fire when leaving a region (geofence).
+ */
 @Generated
 public final class EKAlarmProximity {
     @Generated @NInt public static final long None = 0x0000000000000000L;

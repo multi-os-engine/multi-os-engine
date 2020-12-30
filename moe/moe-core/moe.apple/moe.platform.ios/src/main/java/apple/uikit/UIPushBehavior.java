@@ -180,6 +180,9 @@ public class UIPushBehavior extends UIDynamicBehavior {
     @Selector("items")
     public native NSArray<?> items();
 
+    /**
+     * A continuous force vector with a magnitude of 1.0, applied to a 100 point x 100 point view whose density value is 1.0, results in view acceleration of 100 points per s^2
+     */
     @Generated
     @Selector("magnitude")
     @NFloat
@@ -211,6 +214,9 @@ public class UIPushBehavior extends UIDynamicBehavior {
     @Selector("setAngle:magnitude:")
     public native void setAngleMagnitude(@NFloat double angle, @NFloat double magnitude);
 
+    /**
+     * A continuous force vector with a magnitude of 1.0, applied to a 100 point x 100 point view whose density value is 1.0, results in view acceleration of 100 points per s^2
+     */
     @Generated
     @Selector("setMagnitude:")
     public native void setMagnitude(@NFloat double value);

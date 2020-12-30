@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Class that abstracts state transitions and basic task controls.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -56,6 +59,9 @@ public class MLTask extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * When called, starts cancelling the task and changes the state to "Cancelling".
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -86,6 +92,9 @@ public class MLTask extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Indicates error if the task failed for any reason.
+     */
     @Generated
     @Selector("error")
     public native NSError error();
@@ -134,6 +143,9 @@ public class MLTask extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * When called, resumes the task and changes state to "Running".
+     */
     @Generated
     @Selector("resume")
     public native void resume();
@@ -142,6 +154,9 @@ public class MLTask extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Represents the current state of task.
+     */
     @Generated
     @Selector("state")
     @NInt
@@ -151,6 +166,9 @@ public class MLTask extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Unique identifier for the task.
+     */
     @Generated
     @Selector("taskIdentifier")
     public native String taskIdentifier();

@@ -133,10 +133,52 @@ public class NSCollectionLayoutAnchor extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     *                       +------------------+  +------+   +------------------+
+     *                       | [.top, .leading] |  |[.top]|   | [.top,.trailing] |
+     *                       +--+---------------+  +---+--+   +---------------+--+
+     *                          |                      |                      |
+     *                          v                      v                      v
+     *                       +-----+----------------+-----+----------------+-----+
+     *                       |~~~~~|                |~~~~~|                |~~~~~|
+     *                       |~~~~~|                |~~~~~|                |~~~~~|
+     *                       +-----+                +-----+                +-----+
+     *                       |                                                   |
+     *                       +-----+                                       +-----+
+     *   +--------------+    |~~~~~|                                       |~~~~~|    +-------------+
+     *   |  [.leading]  |--->|~~~~~|                                       |~~~~~|<---| [.trailing] |
+     *   +--------------+    +-----+                                       +-----+    +-------------+
+     *                       |                                                   |
+     *                       +-----+                +-----+                +-----+
+     *                       |~~~~~|                |~~~~~|                |~~~~~|
+     *                       |~~~~~|                |~~~~~|                |~~~~~|
+     *                       +-----+----------------+-----+----------------+-----+
+     *                          ^                      ^                      ^
+     *                          |                      |                      |
+     *                      +---+---------------+ +----+----+  +--------------+----+
+     *                      |[.bottom, .leading]| |[.bottom]|  |[.bottom,.trailing]|
+     *                      +-------------------+ +---------+  +-------------------+
+     * 
+     * Edges are specified as shown above.
+     */
     @Generated
     @Selector("layoutAnchorWithEdges:")
     public static native NSCollectionLayoutAnchor layoutAnchorWithEdges(@NUInt long edges);
 
+    /**
+     *                                +-----+       +------------------------------------+
+     *                                |~~~~~|       |      edges: [.top,.trailing]       |
+     *   +----------------------------+~~~~~|<------+ unitOffset: CGPoint(x:0.5,y:-0.5)  |
+     *   |                            |~~~~~|       +------------------------------------+
+     *   |                            +--+--+
+     *   |                               |
+     *   |                               |
+     *   |                               |
+     *   |                               |
+     *   +-------------------------------+
+     * 
+     * To specify additional offsets, combine edges with absoluteOffset or unitOffset.
+     */
     @Generated
     @Selector("layoutAnchorWithEdges:absoluteOffset:")
     public static native NSCollectionLayoutAnchor layoutAnchorWithEdgesAbsoluteOffset(@NUInt long edges,

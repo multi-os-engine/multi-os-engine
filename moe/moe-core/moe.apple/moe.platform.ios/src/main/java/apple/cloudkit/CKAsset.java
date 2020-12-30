@@ -152,6 +152,9 @@ public class CKAsset extends NSObject implements CKRecordValue {
     @NInt
     public static native long version_static();
 
+    /**
+     * Local file URL where fetched records are cached and saved records originate from.
+     */
     @Generated
     @Selector("fileURL")
     public native NSURL fileURL();
@@ -160,6 +163,9 @@ public class CKAsset extends NSObject implements CKRecordValue {
     @Selector("init")
     public native CKAsset init();
 
+    /**
+     * Initialize an asset to be saved with the content at the given file URL
+     */
     @Generated
     @Selector("initWithFileURL:")
     public native CKAsset initWithFileURL(NSURL fileURL);

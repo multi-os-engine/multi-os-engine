@@ -21,6 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UISystemAnimation {
+    /**
+     * removes the views from the hierarchy when complete
+     */
     @Generated @NUInt public static final long UISystemAnimationDelete = 0x0000000000000000L;
 
     @Generated

@@ -21,14 +21,31 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHAuthorizationStatus {
+    /**
+     * User has not yet made a choice with regards to this application
+     */
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
+    /**
+     * This application is not authorized to access photo data.
+     * The user cannot change this application’s status, possibly due to active restrictions
+     *   such as parental controls being in place.
+     */
     @Generated @NInt public static final long Restricted = 0x0000000000000001L;
+    /**
+     * User has explicitly denied this application access to photos data.
+     */
     @Generated @NInt public static final long Denied = 0x0000000000000002L;
+    /**
+     * User has authorized this application to access photos data.
+     */
     @Generated @NInt public static final long Authorized = 0x0000000000000003L;
 
     @Generated
     private PHAuthorizationStatus() {
     }
 
+    /**
+     * User has authorized this application for limited photo library access. Add PHPhotoLibraryPreventAutomaticLimitedAccessAlert = YES to the application's Info.plist to prevent the automatic alert to update the users limited library selection. Use -[PHPhotoLibrary(PhotosUISupport) presentLimitedLibraryPickerFromViewController:] from PhotosUI/PHPhotoLibrary+PhotosUISupport.h to manually present the limited library picker.
+     */
     @Generated @NInt public static final long Limited = 0x0000000000000004L;
 }

@@ -3,6 +3,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueTargetDoorState
+ * 
+ * @constant  HMCharacteristicValueTargetDoorStateOpen    Open.
+ * @constant  HMCharacteristicValueTargetDoorStateClosed  Closed.
+ */
 @Generated
 public final class HMCharacteristicValueTargetDoorState {
     @Generated

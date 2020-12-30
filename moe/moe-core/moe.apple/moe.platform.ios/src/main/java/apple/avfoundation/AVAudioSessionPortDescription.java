@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Information about a port, a physical connector or audio device.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +156,9 @@ public class AVAudioSessionPortDescription extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * A system-assigned unique identifier for the associated hardware port
+     */
     @Generated
     @Selector("UID")
     public native String UID();
@@ -161,10 +167,23 @@ public class AVAudioSessionPortDescription extends NSObject {
     @Selector("channels")
     public native NSArray<? extends AVAudioSessionChannelDescription> channels();
 
+    /**
+     * Will be nil if there are no selectable data sources.
+     */
     @Generated
     @Selector("dataSources")
     public native NSArray<? extends AVAudioSessionDataSourceDescription> dataSources();
 
+    /**
+     * @brief This property's value will be true if the associated hardware port has built-in
+     * processing for two-way voice communication.
+     * 
+     * Applications that use their own proprietary voice processing algorithms should use this property
+     * to decide when to disable processing.  On the other hand, if using Apple's Voice Processing I/O
+     * unit (subtype kAudioUnitSubType_VoiceProcessingIO), the system will automatically manage this
+     * for the application. In particular, ports of type AVAudioSessionPortBluetoothHFP and
+     * AVAudioSessionPortCarAudio often have hardware voice processing.
+     */
     @Generated
     @Selector("hasHardwareVoiceCallProcessing")
     public native boolean hasHardwareVoiceCallProcessing();
@@ -173,6 +192,9 @@ public class AVAudioSessionPortDescription extends NSObject {
     @Selector("init")
     public native AVAudioSessionPortDescription init();
 
+    /**
+     * A descriptive name for the associated hardware port
+     */
     @Generated
     @Selector("portName")
     public native String portName();
@@ -181,14 +203,30 @@ public class AVAudioSessionPortDescription extends NSObject {
     @Selector("portType")
     public native String portType();
 
+    /**
+     * This property reflects the application's preferred data source for the Port. Will be nil if
+     * there are no selectable data sources or if no preference has been set.
+     */
     @Generated
     @Selector("preferredDataSource")
     public native AVAudioSessionDataSourceDescription preferredDataSource();
 
+    /**
+     * Will be nil if there are no selectable data sources. In all other cases, this property reflects
+     * the currently selected data source.
+     */
     @Generated
     @Selector("selectedDataSource")
     public native AVAudioSessionDataSourceDescription selectedDataSource();
 
+    /**
+     * @brief Select the preferred data source for this port. The input dataSource parameter must be
+     * one of the dataSources exposed by the dataSources property. Setting a nil value will clear the
+     * preference. Note: if the port is part of the active audio route, changing the data source will
+     * likely result in a route reconfiguration.  If the port is not part of the active route,
+     * selecting a new data source will not result in an immediate route reconfiguration.  Use
+     * AVAudioSession's -setPreferredInput:error: method to activate the port.
+     */
     @Generated
     @Selector("setPreferredDataSource:error:")
     public native boolean setPreferredDataSourceError(AVAudioSessionDataSourceDescription dataSource,

@@ -55,6 +55,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNGeometry
+ * @abstract SCNGeometry is an abstract class that represents the geometry that can be attached to a SCNNode. 
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -114,6 +118,11 @@ public class SCNGeometry extends NSObject
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @method geometry
+     * @abstract Creates and returns an empty geometry object.
+     * @discussion An empty geometry may be used as the lowest level of detail of a geometry.
+     */
     @Generated
     @Selector("geometry")
     public static native SCNGeometry geometry();
@@ -122,6 +131,13 @@ public class SCNGeometry extends NSObject
     @Selector("geometryWithMDLMesh:")
     public static native SCNGeometry geometryWithMDLMesh(MDLMesh mdlMesh);
 
+    /**
+     * @method geometryWithSources:elements:
+     * @abstract Creates and returns a new geometry built from geometry sources and geometry elements.
+     * @param sources An array of geometry sources. If several geometry sources have the same semantic, only the first one is taken into account.
+     * @param elements An array of geometry elements. The sort order in the array determines the mapping between materials and geometry elements.
+     * @discussion A geometry is made of geometry sources (at least vertices) and at least one geometry element. Multiple sources for texture coordinates are accepted. In that case the mappingChannel is implicitly set based on the order of the texture sources, starting at index 0.
+     */
     @Generated
     @Selector("geometryWithSources:elements:")
     public static native SCNGeometry geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
@@ -202,10 +218,20 @@ public class SCNGeometry extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * @property edgeCreasesElement
+     * @abstract Specifies the edges creases that control the subdivision. Defaults to nil.
+     * @discussion The primitive type of this geometry element must be SCNGeometryPrimitiveTypeLine. See subdivisionLevel above to control the level of subdivision. See edgeCreasesSource below to specify sharpness of the creases.
+     */
     @Generated
     @Selector("edgeCreasesElement")
     public native SCNGeometryElement edgeCreasesElement();
 
+    /**
+     * @property edgeCreasesSource
+     * @abstract Specifies the crease value of the edges specified by edgeCreasesElement. Defaults to nil.
+     * @discussion The semantic of this geometry source must be "SCNGeometrySourceSemanticEdgeCrease". The creases values are floating values between 0 and 10, where 0 means smooth and 10 means infinitely sharp. See subdivisionLevel above to control the level of subdivision. See edgeCreasesElement above to specify edges for edge creases.
+     */
     @Generated
     @Selector("edgeCreasesSource")
     public native SCNGeometrySource edgeCreasesSource();
@@ -214,27 +240,55 @@ public class SCNGeometry extends NSObject
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * @property firstMaterial
+     * @abstract Determines the first material of the geometry. Returns nil if the geometry has no material.
+     * @discussion This method is here for convenience. It is equivalent to the first object in the "materials" array above.
+     */
     @Generated
     @Selector("firstMaterial")
     public native SCNMaterial firstMaterial();
 
+    /**
+     * @method geometryElementAtIndex:
+     * @abstract Returns the geometry element at a given index.
+     * @param elementIndex The index of the geometry element.
+     */
     @Generated
     @Selector("geometryElementAtIndex:")
     public native SCNGeometryElement geometryElementAtIndex(@NInt long elementIndex);
 
+    /**
+     * @property geometryElementCount
+     * @abstract Returns the number of geometry elements owned by the geometry.
+     */
     @Generated
     @Selector("geometryElementCount")
     @NInt
     public native long geometryElementCount();
 
+    /**
+     * @property geometryElements
+     * @abstract The array of geometry elements of the receiver.
+     */
     @Generated
     @Selector("geometryElements")
     public native NSArray<? extends SCNGeometryElement> geometryElements();
 
+    /**
+     * @property geometrySources
+     * @abstract The array of geometry sources of the receiver.
+     */
     @Generated
     @Selector("geometrySources")
     public native NSArray<? extends SCNGeometrySource> geometrySources();
 
+    /**
+     * @method geometrySourcesForSemantic:
+     * @abstract Returns the geometry sources for a given semantic.
+     * @param semantic The semantic of the geometry sources that should be retrieved.
+     * @discussion Returns nil if no geometry source is found for the given semantic. May return more than one source, typically for multiple texture coordinate sources.
+     */
     @Generated
     @Selector("geometrySourcesForSemantic:")
     public native NSArray<? extends SCNGeometrySource> geometrySourcesForSemantic(String semantic);
@@ -267,6 +321,12 @@ public class SCNGeometry extends NSObject
     @Selector("initWithCoder:")
     public native SCNGeometry initWithCoder(NSCoder coder);
 
+    /**
+     * @method insertMaterial:atIndex:
+     * @abstract Insert a material in the materials array at the specified index.
+     * @param material The material to insert.
+     * @param index Index in the materials array to insert the new material.
+     */
     @Generated
     @Selector("insertMaterial:atIndex:")
     public native void insertMaterialAtIndex(SCNMaterial material, @NUInt long index);
@@ -275,18 +335,36 @@ public class SCNGeometry extends NSObject
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
 
+    /**
+     * @property levelsOfDetail
+     * @abstract Determines the receiver's levels of detail. Defaults to nil.
+     */
     @Generated
     @Selector("levelsOfDetail")
     public native NSArray<? extends SCNLevelOfDetail> levelsOfDetail();
 
+    /**
+     * @method materialWithName:
+     * @abstract Return the first material from the materials array of the receiver with the specified name.
+     * @param name The name of the material to retrieve.
+     */
     @Generated
     @Selector("materialWithName:")
     public native SCNMaterial materialWithName(String name);
 
+    /**
+     * @property materials
+     * @abstract Specifies the receiver's materials array.
+     * @discussion Each geometry element can be rendered using a different material. The index of the material used for a geometry element is equal to the index of that element modulo the number of materials.
+     */
     @Generated
     @Selector("materials")
     public native NSArray<? extends SCNMaterial> materials();
 
+    /**
+     * @property name
+     * @abstract Determines the name of the receiver.
+     */
     @Generated
     @Selector("name")
     public native String name();
@@ -312,10 +390,21 @@ public class SCNGeometry extends NSObject
     @Selector("removeAnimationForKey:fadeOutDuration:")
     public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
 
+    /**
+     * @method removeMaterialAtIndex:
+     * @abstract Remove the material at the specified index from the materials array.
+     * @param index The index of the material to remove from the 'materials' array.
+     */
     @Generated
     @Selector("removeMaterialAtIndex:")
     public native void removeMaterialAtIndex(@NUInt long index);
 
+    /**
+     * @method replaceMaterialAtIndex:withMaterial:
+     * @abstract Remove the material at the index 'index' from the materials array of the receiver and insert 'material' in its position.
+     * @param index The index of the material to replace in the materials array.
+     * @param material The new material that will replace the previous one.
+     */
     @Generated
     @Selector("replaceMaterialAtIndex:withMaterial:")
     public native void replaceMaterialAtIndexWithMaterial(@NUInt long index, SCNMaterial material);
@@ -328,26 +417,54 @@ public class SCNGeometry extends NSObject
     @Selector("setBoundingBoxMin:max:")
     public native void setBoundingBoxMinMax(SCNVector3 min, SCNVector3 max);
 
+    /**
+     * @property edgeCreasesElement
+     * @abstract Specifies the edges creases that control the subdivision. Defaults to nil.
+     * @discussion The primitive type of this geometry element must be SCNGeometryPrimitiveTypeLine. See subdivisionLevel above to control the level of subdivision. See edgeCreasesSource below to specify sharpness of the creases.
+     */
     @Generated
     @Selector("setEdgeCreasesElement:")
     public native void setEdgeCreasesElement(SCNGeometryElement value);
 
+    /**
+     * @property edgeCreasesSource
+     * @abstract Specifies the crease value of the edges specified by edgeCreasesElement. Defaults to nil.
+     * @discussion The semantic of this geometry source must be "SCNGeometrySourceSemanticEdgeCrease". The creases values are floating values between 0 and 10, where 0 means smooth and 10 means infinitely sharp. See subdivisionLevel above to control the level of subdivision. See edgeCreasesElement above to specify edges for edge creases.
+     */
     @Generated
     @Selector("setEdgeCreasesSource:")
     public native void setEdgeCreasesSource(SCNGeometrySource value);
 
+    /**
+     * @property firstMaterial
+     * @abstract Determines the first material of the geometry. Returns nil if the geometry has no material.
+     * @discussion This method is here for convenience. It is equivalent to the first object in the "materials" array above.
+     */
     @Generated
     @Selector("setFirstMaterial:")
     public native void setFirstMaterial(SCNMaterial value);
 
+    /**
+     * @property levelsOfDetail
+     * @abstract Determines the receiver's levels of detail. Defaults to nil.
+     */
     @Generated
     @Selector("setLevelsOfDetail:")
     public native void setLevelsOfDetail(NSArray<? extends SCNLevelOfDetail> value);
 
+    /**
+     * @property materials
+     * @abstract Specifies the receiver's materials array.
+     * @discussion Each geometry element can be rendered using a different material. The index of the material used for a geometry element is equal to the index of that element modulo the number of materials.
+     */
     @Generated
     @Selector("setMaterials:")
     public native void setMaterials(NSArray<? extends SCNMaterial> value);
 
+    /**
+     * @property name
+     * @abstract Determines the name of the receiver.
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
@@ -366,6 +483,11 @@ public class SCNGeometry extends NSObject
     @Selector("setSpeed:forAnimationKey:")
     public native void setSpeedForAnimationKey(@NFloat double speed, String key);
 
+    /**
+     * @property subdivisionLevel
+     * @abstract Specifies the subdivision level of the receiver. Defaults to 0.
+     * @discussion A subdivision level of 0 means no subdivision. When the `tessellator` property of the receiver is not nil, the refinement is done on the GPU.
+     */
     @Generated
     @Selector("setSubdivisionLevel:")
     public native void setSubdivisionLevel(@NUInt long value);
@@ -375,6 +497,11 @@ public class SCNGeometry extends NSObject
     @Selector("shaderModifiers")
     public native NSDictionary<String, String> shaderModifiers();
 
+    /**
+     * @property subdivisionLevel
+     * @abstract Specifies the subdivision level of the receiver. Defaults to 0.
+     * @discussion A subdivision level of 0 means no subdivision. When the `tessellator` property of the receiver is not nil, the refinement is done on the GPU.
+     */
     @Generated
     @Selector("subdivisionLevel")
     @NUInt
@@ -402,6 +529,11 @@ public class SCNGeometry extends NSObject
     @Selector("setTessellator:")
     public native void setTessellator(SCNGeometryTessellator value);
 
+    /**
+     * @property wantsAdaptiveSubdivision
+     * @abstract Specifies if the subdivision is adaptive or uniform. Defaults to YES.
+     * @discussion Adaptive subdivision requires that the `tessellator` property of the receiver is not nil.
+     */
     @Generated
     @Selector("setWantsAdaptiveSubdivision:")
     public native void setWantsAdaptiveSubdivision(boolean value);
@@ -410,6 +542,11 @@ public class SCNGeometry extends NSObject
     @Selector("tessellator")
     public native SCNGeometryTessellator tessellator();
 
+    /**
+     * @property wantsAdaptiveSubdivision
+     * @abstract Specifies if the subdivision is adaptive or uniform. Defaults to YES.
+     * @discussion Adaptive subdivision requires that the `tessellator` property of the receiver is not nil.
+     */
     @Generated
     @Selector("wantsAdaptiveSubdivision")
     public native boolean wantsAdaptiveSubdivision();

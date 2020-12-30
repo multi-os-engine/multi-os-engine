@@ -20,6 +20,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A value transformer which transforms values to and from \c NSData by archiving and unarchiving using secure coding.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -48,6 +51,13 @@ public class NSSecureUnarchiveFromDataTransformer extends NSValueTransformer {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * The list of allowable classes which the top-level object in the archive must conform to on encoding and decoding.
+     * 
+     * Returns the result of \c +transformedValueClass if not \c Nil; otherwise, currently returns \c NSArray, \c NSDictionary, \c NSSet, \c NSString, \c NSNumber, \c NSDate, \c NSData, \c NSURL, \c NSUUID, and \c NSNull.
+     * 
+     * Can be overridden by subclasses to provide an expanded or different set of allowed transformation classes.
+     */
     @Generated
     @Selector("allowedTopLevelClasses")
     public static native NSArray<? extends Class> allowedTopLevelClasses();

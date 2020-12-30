@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSCNNFullyConnectedGradient
+ * @dependency This depends on Metal.framework
+ * @discussion Compute the gradient for fully connected layer.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -98,6 +103,17 @@ public class MPSCNNFullyConnectedGradient extends MPSCNNConvolutionGradient {
     @Selector("initWithCoder:")
     public native MPSCNNFullyConnectedGradient initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion While the standard NSSecureCoding/NSCoding method
+     *             -initWithCoder: should work, since the file can't
+     *             know which device your data is allocated on, we
+     *             have to guess and may guess incorrectly.  To avoid
+     *             that problem, use initWithCoder:device instead.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
+     * @param      device      The MTLDevice on which to make the MPSKernel
+     * @return     A new MPSKernel object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSCNNFullyConnectedGradient initWithCoderDevice(NSCoder aDecoder,
@@ -107,6 +123,14 @@ public class MPSCNNFullyConnectedGradient extends MPSCNNConvolutionGradient {
     @Selector("initWithDevice:")
     public native MPSCNNFullyConnectedGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Initializes a convolution gradient (with respect to weights and bias) object.
+     * @param      device                          The MTLDevice on which this MPSCNNConvolutionGradient filter will be used
+     * @param      weights                         A pointer to a object that conforms to the MPSCNNConvolutionDataSource
+     *                                             protocol. Note that same data source as provided to forward convolution should be used.
+     * 
+     * @return     A valid MPSCNNConvolutionGradient object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:weights:")
     public native MPSCNNFullyConnectedGradient initWithDeviceWeights(@Mapped(ObjCObjectMapper.class) MTLDevice device,

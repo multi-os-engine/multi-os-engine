@@ -9,11 +9,20 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @abstract Provides context to target where in an application's UI the authorization view should be shown.
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ASWebAuthenticationPresentationContextProviding")
 public interface ASWebAuthenticationPresentationContextProviding {
+    /**
+     * @abstract Return the ASPresentationAnchor in the closest proximity to where a user interacted with your app to trigger
+     * authentication. If starting an ASWebAuthenticationSession on first launch, use the application's main window.
+     * @param session The session requesting a presentation anchor.
+     * @result The ASPresentationAnchor most closely associated with the UI used to trigger authentication.
+     */
     @Generated
     @Selector("presentationAnchorForWebAuthenticationSession:")
     UIWindow presentationAnchorForWebAuthenticationSession(ASWebAuthenticationSession session);

@@ -19,11 +19,22 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract TKTokenSessionDelegate contains operations with token objects provided by token implementors which should be performed in the context of authentication session.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("TKTokenSessionDelegate")
 public interface TKTokenSessionDelegate {
+    /**
+     * @discussion Establishes a context for the requested authentication operation.
+     * @param session Related TKTokenSession instance.
+     * @param operation Identifier of the operation.
+     * @param constraint Constraint to be satisfied by this authentication operation.
+     * @param error Error details (see TKError.h).
+     * @return authOperation Resulting context of the operation, which will be eventually finalized by receiving 'finishWithError:'.  The resulting 'authOperation' can be of any type based on TKTokenAuthOperation. For known types (e.g. TKTokenPasswordAuthOperation) the system will first fill in the context-specific properties (e.g. 'password') before triggering 'finishWithError:'. When no authentication is actually needed (typically because the session is already authenticated for requested constraint), return instance of TKTokenAuthOperation class instead of any specific subclass.
+     */
     @Generated
     @IsOptional
     @Selector("tokenSession:beginAuthForOperation:constraint:error:")
@@ -33,6 +44,15 @@ public interface TKTokenSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @discussion Decrypts ciphertext using private key.
+     * @param session Related TKTokenSession instance.
+     * @param ciphertext Encrypted data to decrypt.
+     * @param keyObjectID Identifier of the private key object.
+     * @param algorithm Requested encryption/decryption algorithm to be used.
+     * @param error Error details (see TKError.h).  If authentication is required (by invoking beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
+     * @return Resulting decrypted plaintext, or nil if an error happened.
+     */
     @Generated
     @IsOptional
     @Selector("tokenSession:decryptData:usingKey:algorithm:error:")
@@ -42,6 +62,16 @@ public interface TKTokenSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @discussion Performs Diffie-Hellman style key exchange operation.
+     * @param session Related TKTokenSession instance.
+     * @param otherPartyPublicKeyData Raw public data of other party public key.
+     * @param objectID Identifier of the private key object.
+     * @param algorithm Requested key exchange algorithm to be used.
+     * @param parameters Additional parameters for key exchange operation.  Chosen algorithm dictates meaning of parameters.
+     * @param error Error details (see TKError.h).  If authentication is required (by invoking beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
+     * @return Result of key exchange operation, or nil if the operation failed.
+     */
     @Generated
     @IsOptional
     @Selector("tokenSession:performKeyExchangeWithPublicKey:usingKey:algorithm:parameters:error:")
@@ -52,6 +82,15 @@ public interface TKTokenSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @discussion Performs cryptographic signature operation.
+     * @param session Related TKTokenSession instance.
+     * @param dataToSign Input data for the signature operation.
+     * @param keyObjectID Identifier of the private key object.
+     * @param algorithm Requested signature algorithm to be used.
+     * @param error Error details (see TKError.h).  If authentication is required (by invoking beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
+     * @return Resulting signature, or nil if an error happened.
+     */
     @Generated
     @IsOptional
     @Selector("tokenSession:signData:usingKey:algorithm:error:")
@@ -61,6 +100,14 @@ public interface TKTokenSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @discussion Checks whether specified operation and algorithm is supported on specified key.
+     * @param session Related TKTokenSession instance.
+     * @param operation Type of cryptographic operation for which the list of supported algorithms should be retrieved.
+     * @param keyObjectID Identifier of the private key object.
+     * @param algorithm Algorithm with which the oepration should be performed.
+     * @return YES if the operation is supported, NO otherwise.
+     */
     @Generated
     @IsOptional
     @Selector("tokenSession:supportsOperation:usingKey:algorithm:")

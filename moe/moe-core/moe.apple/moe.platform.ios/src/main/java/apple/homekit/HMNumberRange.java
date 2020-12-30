@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief This class describes a range of numbers: [min, max]
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -112,10 +115,16 @@ public class HMNumberRange extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @brief The maximum value of the range.
+     */
     @Generated
     @Selector("maxValue")
     public native NSNumber maxValue();
 
+    /**
+     * @brief The minimum value of the range.
+     */
     @Generated
     @Selector("minValue")
     public native NSNumber minValue();
@@ -126,14 +135,31 @@ public class HMNumberRange extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief Initializes a new range of numbers. The minimum value is set to a small value.
+     * 
+     * @param maxValue The maximum value of the range.
+     */
     @Generated
     @Selector("numberRangeWithMaxValue:")
     public static native HMNumberRange numberRangeWithMaxValue(NSNumber maxValue);
 
+    /**
+     * @brief Initializes a new range of numbers. The maximum value is set to a large value.
+     * 
+     * @param minValue The minimum value of the range.
+     */
     @Generated
     @Selector("numberRangeWithMinValue:")
     public static native HMNumberRange numberRangeWithMinValue(NSNumber minValue);
 
+    /**
+     * @brief Initializes a new range of numbers
+     * 
+     * @param minValue The minimum value of the range.
+     * 
+     * @param maxValue The maximum value of the range.
+     */
     @Generated
     @Selector("numberRangeWithMinValue:maxValue:")
     public static native HMNumberRange numberRangeWithMinValueMaxValue(NSNumber minValue, NSNumber maxValue);

@@ -3,6 +3,11 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * -- symbol image weights
+ * only regular is supported by now, but you can specify any weight
+ * you need for future implementation.
+ */
 @Generated
 public final class UIImageSymbolWeight {
     @Generated

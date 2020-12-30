@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * PKInk provides a description of how marks on a PKCanvas render and are created.
+ */
 @Generated
 @Library("PencilKit")
 @Runtime(ObjCRuntime.class)
@@ -106,6 +109,9 @@ public class PKInk extends NSObject implements NSCopying {
     @Selector("initWithInkType:color:")
     public native PKInk initWithInkTypeColor(String type, UIColor color);
 
+    /**
+     * The type of ink, eg. pen, pencil...
+     */
     @Generated
     @Selector("inkType")
     public native String inkType();

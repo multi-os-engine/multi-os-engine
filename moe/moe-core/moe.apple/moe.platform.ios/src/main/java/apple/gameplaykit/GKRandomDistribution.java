@@ -40,6 +40,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A random distribution is a random source itself with a specific mapping from the input source to the output values.
+ * The distribution is uniform, meaning there is no bias towards any of the possible outcomes.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -90,11 +94,19 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Convenience creation for the very common d20 range [1, 20] with an isolated random source
+     * shielded from outside sources.
+     */
     @Generated
     @Selector("d20")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object d20();
 
+    /**
+     * Convenience creation for the very common d6 range [1, 6] with an isolated random source
+     * shielded from outside sources.
+     */
     @Generated
     @Selector("d6")
     @MappedReturn(ObjCObjectMapper.class)
@@ -108,10 +120,20 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Convenience creation of random distribution with the die like range [1, sideCount] using an isolated source to grab input values from.
+     * This is equivalent to calling alloc followed by initWithSource:lowest:highest:, where source is [[GKRandomSource alloc] init].
+     * @see initWithRandomSource:lowestValue:highestValue:
+     */
     @Generated
     @Selector("distributionForDieWithSideCount:")
     public static native GKRandomDistribution distributionForDieWithSideCount(@NInt long sideCount);
 
+    /**
+     * Convenience creation of random distribution within the range [lowest, highest] using an isolated source to grab input values from.
+     * This is equivalent to calling alloc followed by initWithSource:lowest:highest:, where source is [[GKRandomSource alloc] init].
+     * @see initWithRandomSource:lowestValue:highestValue:
+     */
     @Generated
     @Selector("distributionWithLowestValue:highestValue:")
     public static native GKRandomDistribution distributionWithLowestValueHighestValue(@NInt long lowestInclusive,
@@ -170,6 +192,9 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @NInt
     public static native long version_static();
 
+    /**
+     * The highest value the distribution will output.
+     */
     @Generated
     @Selector("highestValue")
     @NInt
@@ -179,11 +204,17 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @Selector("init")
     public native GKRandomDistribution init();
 
+    /**
+     * Initializes a random distribution within the range [lowest, highest] using a source to grab input values from.
+     */
     @Generated
     @Selector("initWithRandomSource:lowestValue:highestValue:")
     public native GKRandomDistribution initWithRandomSourceLowestValueHighestValue(
             @Mapped(ObjCObjectMapper.class) GKRandom source, @NInt long lowestInclusive, @NInt long highestInclusive);
 
+    /**
+     * The lowest value the distribution will output.
+     */
     @Generated
     @Selector("lowestValue")
     @NInt
@@ -207,6 +238,9 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @Selector("nextUniform")
     public native float nextUniform();
 
+    /**
+     * The number of unique possible outcomes, depending on the distribution type this is not always highest - lowest + 1.
+     */
     @Generated
     @Selector("numberOfPossibleOutcomes")
     @NUInt

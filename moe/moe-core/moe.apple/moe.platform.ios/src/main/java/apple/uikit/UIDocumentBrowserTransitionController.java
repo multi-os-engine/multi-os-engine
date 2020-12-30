@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Class to handle the loading and animation transition when opening or closing a document.
+ * @discussion You can use this object to display a loading indicator if you need time to perform time-consuming operations (loading, parsing, …) after the document download and before presenting it. You can also get a transition controller to pass to UIKit when pushing or presenting your document view
+ * in response to @c documentBrowser:didPickItem:, or when popping or dismissing it.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -133,6 +138,9 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * An optional progress can be displayed on the document thumbnail while the document is loading (during opening).
+     */
     @Generated
     @Selector("loadingProgress")
     public native NSProgress loadingProgress();
@@ -151,14 +159,27 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * An optional progress can be displayed on the document thumbnail while the document is loading (during opening).
+     */
     @Generated
     @Selector("setLoadingProgress:")
     public native void setLoadingProgress(NSProgress value);
 
+    /**
+     * This view will be used for the zoom transition from/to the document collection view.
+     * If UIDocumentBrowserViewController is being dismissed, this view should be a subview of the presented view controller's view
+     * If UIDocumentBrowserViewController is being presented, this view should be a subview of the presenting view controller's view
+     */
     @Generated
     @Selector("setTargetView:")
     public native void setTargetView_unsafe(UIView value);
 
+    /**
+     * This view will be used for the zoom transition from/to the document collection view.
+     * If UIDocumentBrowserViewController is being dismissed, this view should be a subview of the presented view controller's view
+     * If UIDocumentBrowserViewController is being presented, this view should be a subview of the presenting view controller's view
+     */
     @Generated
     public void setTargetView(UIView value) {
         Object __old = targetView();
@@ -179,6 +200,11 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * This view will be used for the zoom transition from/to the document collection view.
+     * If UIDocumentBrowserViewController is being dismissed, this view should be a subview of the presented view controller's view
+     * If UIDocumentBrowserViewController is being presented, this view should be a subview of the presenting view controller's view
+     */
     @Generated
     @Selector("targetView")
     public native UIView targetView();

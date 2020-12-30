@@ -200,6 +200,9 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     @NUInt
     public native long operationCount();
 
+    /**
+     * These two functions are inherently a race condition and should be avoided if possible
+     */
     @Generated
     @Selector("operations")
     public native NSArray<? extends NSOperation> operations();
@@ -221,10 +224,16 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     @Selector("setQualityOfService:")
     public native void setQualityOfService(@NInt long value);
 
+    /**
+     * actually retain
+     */
     @Generated
     @Selector("setUnderlyingQueue:")
     public native void setUnderlyingQueue_unsafe(NSObject value);
 
+    /**
+     * actually retain
+     */
     @Generated
     public void setUnderlyingQueue(NSObject value) {
         Object __old = underlyingQueue();
@@ -237,6 +246,9 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
         }
     }
 
+    /**
+     * actually retain
+     */
     @Generated
     @Selector("underlyingQueue")
     public native NSObject underlyingQueue();
@@ -252,6 +264,13 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
         void call_addOperationWithBlock();
     }
 
+    /**
+     * @method addBarrierBlock:
+     * @param barrier      A block to execute
+     * @discussion         The `addBarrierBlock:` method executes the block when the NSOperationQueue has finished all enqueued operations and
+     * prevents any subsequent operations to be executed until the barrier has been completed. This acts similarly to the
+     * `dispatch_barrier_async` function.
+     */
     @Generated
     @Selector("addBarrierBlock:")
     public native void addBarrierBlock(@ObjCBlock(name = "call_addBarrierBlock") Block_addBarrierBlock barrier);

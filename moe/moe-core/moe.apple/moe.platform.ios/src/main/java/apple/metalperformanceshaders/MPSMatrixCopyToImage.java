@@ -29,6 +29,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSMatrixCopyToImage
+ * @discussion The MPSMatrixCopyToImage copies matrix data to a MPSImage.
+ *             The operation is the reverse of MPSImageCopyToMatrix.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -79,6 +84,14 @@ public class MPSMatrixCopyToImage extends MPSKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property   dataLayout
+     * @abstract   The data layout to use
+     * @discussion Returns the data layout.  When copying from a MPSMatrix to a MPSImage, this
+     *             describes the order in which the image values are to be stored in the buffer associated
+     *             with the MPSMatrix.
+     *             Default: MPSDataLayoutFeatureChannelsxHeightxWidth
+     */
     @Generated
     @Selector("dataLayout")
     @NUInt
@@ -92,6 +105,19 @@ public class MPSMatrixCopyToImage extends MPSKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract Encode a kernel that copies a MPSMatrix to a MPSImage into a command buffer
+     *           using a MTLComputeCommandEncoder.
+     * @discussion The kernel copies feature channels from sourceMatrix to the destinationImage.
+     *             The kernel will not begin to execute until
+     *             after the command buffer has been enqueued and committed.
+     * 
+     *             NOTE: The sourceMatrix.dataType must match the feature channel data type in destinationImage.
+     * 
+     * @param  commandBuffer       A valid MTLCommandBuffer.
+     * @param  sourceMatrix        A valid MPSMatrix or MPSTemporaryMatrix object describing the source matrix.
+     * @param  destinationImage    A valid MPSImage describing the image to copy to.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrix:destinationImage:")
     public native void encodeToCommandBufferSourceMatrixDestinationImage(
@@ -111,6 +137,17 @@ public class MPSMatrixCopyToImage extends MPSKernel {
     @Selector("initWithCoder:")
     public native MPSMatrixCopyToImage initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion While the standard NSSecureCoding/NSCoding method
+     *             -initWithCoder: should work, since the file can't
+     *             know which device your data is allocated on, we
+     *             have to guess and may guess incorrectly.  To avoid
+     *             that problem, use initWithCoder:device instead.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
+     * @param      device      The MTLDevice on which to make the MPSKernel
+     * @return     A new MPSKernel object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSMatrixCopyToImage initWithCoderDevice(NSCoder aDecoder,
@@ -120,6 +157,12 @@ public class MPSMatrixCopyToImage extends MPSKernel {
     @Selector("initWithDevice:")
     public native MPSMatrixCopyToImage initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Initialize a MPSMatrixCopyToImage object on a device
+     * @param    device        The device the kernel will run on
+     * @param    dataLayout    The data layout
+     * @return   A valid MPSMatrixCopyToImage object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:dataLayout:")
     public native MPSMatrixCopyToImage initWithDeviceDataLayout(@Mapped(ObjCObjectMapper.class) MTLDevice device,
@@ -160,10 +203,25 @@ public class MPSMatrixCopyToImage extends MPSKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   sourceMatrixBatchIndex
+     * 
+     * @discussion The index of the source matrix in the batch.  This property is
+     *             modifiable and defaults to 0 at initialization time.
+     */
     @Generated
     @Selector("setSourceMatrixBatchIndex:")
     public native void setSourceMatrixBatchIndex(@NUInt long value);
 
+    /**
+     * @property   sourceMatrixOrigin
+     * 
+     * @discussion The origin, relative to [0, 0] in the source matrix.
+     *             This property is modifiable and defaults
+     *             to [0, 0] at initialization time.  If a different origin is desired
+     *             then this should be modified prior to encoding the kernel.  The z
+     *             value must be 0.
+     */
     @Generated
     @Selector("setSourceMatrixOrigin:")
     public native void setSourceMatrixOrigin(@ByValue MTLOrigin value);
@@ -172,11 +230,26 @@ public class MPSMatrixCopyToImage extends MPSKernel {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @property   sourceMatrixBatchIndex
+     * 
+     * @discussion The index of the source matrix in the batch.  This property is
+     *             modifiable and defaults to 0 at initialization time.
+     */
     @Generated
     @Selector("sourceMatrixBatchIndex")
     @NUInt
     public native long sourceMatrixBatchIndex();
 
+    /**
+     * @property   sourceMatrixOrigin
+     * 
+     * @discussion The origin, relative to [0, 0] in the source matrix.
+     *             This property is modifiable and defaults
+     *             to [0, 0] at initialization time.  If a different origin is desired
+     *             then this should be modified prior to encoding the kernel.  The z
+     *             value must be 0.
+     */
     @Generated
     @Selector("sourceMatrixOrigin")
     @ByValue

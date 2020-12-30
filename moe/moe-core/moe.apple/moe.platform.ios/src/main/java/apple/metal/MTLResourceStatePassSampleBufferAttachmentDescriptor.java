@@ -89,6 +89,14 @@ public class MTLResourceStatePassSampleBufferAttachmentDescriptor extends NSObje
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property endOfEncoderSampleIndex
+     * @abstract The sample index to use to store the sample taken at the end of
+     * Command encoder processing.  Setting the value to MTLCounterDontSample will cause
+     * this sample to be omitted.
+     * @discussion On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
+     * this sample index is invalid and must be set to MTLCounterDontSample or creation of a resourceState pass will fail.
+     */
     @Generated
     @Selector("endOfEncoderSampleIndex")
     @NUInt
@@ -138,19 +146,51 @@ public class MTLResourceStatePassSampleBufferAttachmentDescriptor extends NSObje
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property sampleBuffer
+     * @abstract The sample buffer to store samples for the resourceState-pass defined samples.
+     * If sampleBuffer is non-nil, the sample indices will be used to store samples into
+     * the sample buffer.  If no sample buffer is provided, no samples will be taken.
+     * If any of the sample indices are specified as MTLCounterDontSample, no sample
+     * will be taken for that action.
+     */
     @Generated
     @Selector("sampleBuffer")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLCounterSampleBuffer sampleBuffer();
 
+    /**
+     * @property endOfEncoderSampleIndex
+     * @abstract The sample index to use to store the sample taken at the end of
+     * Command encoder processing.  Setting the value to MTLCounterDontSample will cause
+     * this sample to be omitted.
+     * @discussion On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
+     * this sample index is invalid and must be set to MTLCounterDontSample or creation of a resourceState pass will fail.
+     */
     @Generated
     @Selector("setEndOfEncoderSampleIndex:")
     public native void setEndOfEncoderSampleIndex(@NUInt long value);
 
+    /**
+     * @property sampleBuffer
+     * @abstract The sample buffer to store samples for the resourceState-pass defined samples.
+     * If sampleBuffer is non-nil, the sample indices will be used to store samples into
+     * the sample buffer.  If no sample buffer is provided, no samples will be taken.
+     * If any of the sample indices are specified as MTLCounterDontSample, no sample
+     * will be taken for that action.
+     */
     @Generated
     @Selector("setSampleBuffer:")
     public native void setSampleBuffer(@Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer value);
 
+    /**
+     * @property startOfEncoderSampleIndex
+     * @abstract The sample index to use to store the sample taken at the start of
+     * command encoder processing.  Setting the value to MTLCounterDontSample will cause
+     * this sample to be omitted.
+     * @discussion On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
+     * this sample index is invalid and must be set to MTLCounterDontSample or creation of a resourceState pass will fail.
+     */
     @Generated
     @Selector("setStartOfEncoderSampleIndex:")
     public native void setStartOfEncoderSampleIndex(@NUInt long value);
@@ -159,6 +199,14 @@ public class MTLResourceStatePassSampleBufferAttachmentDescriptor extends NSObje
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @property startOfEncoderSampleIndex
+     * @abstract The sample index to use to store the sample taken at the start of
+     * command encoder processing.  Setting the value to MTLCounterDontSample will cause
+     * this sample to be omitted.
+     * @discussion On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
+     * this sample index is invalid and must be set to MTLCounterDontSample or creation of a resourceState pass will fail.
+     */
     @Generated
     @Selector("startOfEncoderSampleIndex")
     @NUInt

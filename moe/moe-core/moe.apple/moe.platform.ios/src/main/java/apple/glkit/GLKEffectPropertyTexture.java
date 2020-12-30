@@ -39,6 +39,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GLKEffectPropertyTexture
+ * 
+ * GLKEffectPropertyTexture simply contains properties to configure GL texture rendering.
+ */
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)
@@ -150,10 +155,16 @@ public class GLKEffectPropertyTexture extends GLKEffectProperty {
     @NInt
     public static native long version_static();
 
+    /**
+     * Is this texture enabled
+     */
     @Generated
     @Selector("enabled")
     public native byte enabled();
 
+    /**
+     * GLKTextureEnvModeModulate
+     */
     @Generated
     @Selector("envMode")
     public native int envMode();
@@ -162,26 +173,44 @@ public class GLKEffectPropertyTexture extends GLKEffectProperty {
     @Selector("init")
     public native GLKEffectPropertyTexture init();
 
+    /**
+     * Texture name from glGenTextures()
+     */
     @Generated
     @Selector("name")
     public native int name();
 
+    /**
+     * Is this texture enabled
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(byte value);
 
+    /**
+     * GLKTextureEnvModeModulate
+     */
     @Generated
     @Selector("setEnvMode:")
     public native void setEnvMode(int value);
 
+    /**
+     * Texture name from glGenTextures()
+     */
     @Generated
     @Selector("setName:")
     public native void setName(int value);
 
+    /**
+     * GLKTextureTarget2D
+     */
     @Generated
     @Selector("setTarget:")
     public native void setTarget(int value);
 
+    /**
+     * GLKTextureTarget2D
+     */
     @Generated
     @Selector("target")
     public native int target();

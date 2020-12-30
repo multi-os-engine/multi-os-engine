@@ -25,12 +25,24 @@ public final class Enums {
     @Generated public static final int kVTParameterErr = 0xFFFFCD9A;
     @Generated public static final int kVTInvalidSessionErr = 0xFFFFCD99;
     @Generated public static final int kVTAllocationFailedErr = 0xFFFFCD98;
+    /**
+     * c.f. -8961
+     */
     @Generated public static final int kVTPixelTransferNotSupportedErr = 0xFFFFCD97;
     @Generated public static final int kVTCouldNotFindVideoDecoderErr = 0xFFFFCD96;
     @Generated public static final int kVTCouldNotCreateInstanceErr = 0xFFFFCD95;
     @Generated public static final int kVTCouldNotFindVideoEncoderErr = 0xFFFFCD94;
+    /**
+     * c.f. -8969
+     */
     @Generated public static final int kVTVideoDecoderBadDataErr = 0xFFFFCD93;
+    /**
+     * c.f. -8970
+     */
     @Generated public static final int kVTVideoDecoderUnsupportedDataFormatErr = 0xFFFFCD92;
+    /**
+     * c.f. -8960
+     */
     @Generated public static final int kVTVideoDecoderMalfunctionErr = 0xFFFFCD91;
     @Generated public static final int kVTVideoEncoderMalfunctionErr = 0xFFFFCD90;
     @Generated public static final int kVTVideoDecoderNotAvailableNowErr = 0xFFFFCD8F;
@@ -58,4 +70,8 @@ public final class Enums {
 
     @Generated public static final int kVTVideoDecoderRemovedErr = 0xFFFFBAE6;
     @Generated public static final int kVTSessionMalfunctionErr = 0xFFFFBAE5;
+    @Generated
+    public static final int kVTVideoDecoderNeedsRosettaErr = 0xFFFFBAE4;
+    @Generated
+    public static final int kVTVideoEncoderNeedsRosettaErr = 0xFFFFBAE3;
 }

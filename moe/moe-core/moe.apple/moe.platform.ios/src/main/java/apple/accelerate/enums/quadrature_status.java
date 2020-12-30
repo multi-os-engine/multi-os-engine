@@ -18,6 +18,21 @@ package apple.accelerate.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum quadrature_status
+ * 
+ * @abstract Quadrature return status
+ * 
+ * @discussion Success is 0, and errors have a negative value.
+ * 
+ * @constant QUADRATURE_SUCCESS Success.
+ * @constant QUADRATURE_ERROR Generic error.
+ * @constant QUADRATURE_INVALID_ARG_ERROR Invalid argument.
+ * @constant QUADRATURE_ALLOC_ERROR Memory allocation failed.
+ * @constant QUADRATURE_INTERNAL_ERROR This is a bug in the Quadrature code, please file a bug report.
+ * @constant QUADRATURE_INTEGRATE_MAX_EVAL_ERROR The requested accuracy limit could not be reached with the allowed number of evals/subdivisions.
+ * @constant QUADRATURE_INTEGRATE_BAD_BEHAVIOUR_ERROR Extremely bad integrand behaviour, or excessive roundoff error occurs at some points of the integration interval.
+ */
 @Generated
 public final class quadrature_status {
     @Generated public static final int QUADRATURE_SUCCESS = 0x00000000;

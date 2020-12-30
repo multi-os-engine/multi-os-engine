@@ -165,6 +165,9 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * A ISO 4217 currency code. For a list of currency codes, see +[NSLocale ISOCurrencyCodes].
+     */
     @Generated
     @Selector("currencyCode")
     public native String currencyCode();
@@ -181,27 +184,45 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("initWithCoder:")
     public native INPriceRange initWithCoder(NSCoder coder);
 
+    /**
+     * "Up to (amount)."
+     */
     @Generated
     @Selector("initWithMaximumPrice:currencyCode:")
     public native INPriceRange initWithMaximumPriceCurrencyCode(NSDecimalNumber maximumPrice, String currencyCode);
 
+    /**
+     * "Starting from (amount)."
+     */
     @Generated
     @Selector("initWithMinimumPrice:currencyCode:")
     public native INPriceRange initWithMinimumPriceCurrencyCode(NSDecimalNumber minimumPrice, String currencyCode);
 
+    /**
+     * "(amount)". Convenience initializer.
+     */
     @Generated
     @Selector("initWithPrice:currencyCode:")
     public native INPriceRange initWithPriceCurrencyCode(NSDecimalNumber price, String currencyCode);
 
+    /**
+     * "(min amount) to (max amount)"
+     */
     @Generated
     @Selector("initWithRangeBetweenPrice:andPrice:currencyCode:")
     public native INPriceRange initWithRangeBetweenPriceAndPriceCurrencyCode(NSDecimalNumber firstPrice,
             NSDecimalNumber secondPrice, String currencyCode);
 
+    /**
+     * The highest of the two prices used to construct this range.
+     */
     @Generated
     @Selector("maximumPrice")
     public native NSDecimalNumber maximumPrice();
 
+    /**
+     * The lowest of the two prices used to construct this range.
+     */
     @Generated
     @Selector("minimumPrice")
     public native NSDecimalNumber minimumPrice();

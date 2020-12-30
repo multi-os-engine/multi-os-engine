@@ -28,6 +28,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract A view controller that will take the user through the setup flow to add a shortcut to Siri.
+ * @discussion First create the @c INShortcut object that represents the shortcut the user wants to perform. Then create an @c INUIAddVoiceShortcutViewController object and set its delegate. Then, present the view controller modally from another view controller in your app. The delegate must dismiss the view controller when the user completes the set up.
+ */
 @Generated
 @Library("IntentsUI")
 @Runtime(ObjCRuntime.class)
@@ -117,6 +121,9 @@ public class INUIAddVoiceShortcutViewController extends UIViewController {
     public native INUIAddVoiceShortcutViewController initWithNibNameBundle(String nibNameOrNil,
             NSBundle nibBundleOrNil);
 
+    /**
+     * @param shortcut The shortcut is what will be run when the resulting voice shortcut is invoked. It also provides the suggested invocation phrase, via the @c suggestedInvocationPhrase property on the intent or user activity.
+     */
     @Generated
     @Selector("initWithShortcut:")
     public native INUIAddVoiceShortcutViewController initWithShortcut(INShortcut shortcut);

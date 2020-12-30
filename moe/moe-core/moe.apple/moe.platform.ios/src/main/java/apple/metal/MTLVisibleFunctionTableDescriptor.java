@@ -88,6 +88,10 @@ public class MTLVisibleFunctionTableDescriptor extends NSObject implements NSCop
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property functionCount
+     * @abstract The number of functions in the table.
+     */
     @Generated
     @Selector("functionCount")
     @NUInt
@@ -137,6 +141,10 @@ public class MTLVisibleFunctionTableDescriptor extends NSObject implements NSCop
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property functionCount
+     * @abstract The number of functions in the table.
+     */
     @Generated
     @Selector("setFunctionCount:")
     public native void setFunctionCount(@NUInt long value);
@@ -154,6 +162,10 @@ public class MTLVisibleFunctionTableDescriptor extends NSObject implements NSCop
     @NInt
     public static native long version_static();
 
+    /**
+     * @method visibleFunctionTableDescriptor
+     * @abstract Create an autoreleased visible function table descriptor
+     */
     @Generated
     @Selector("visibleFunctionTableDescriptor")
     public static native MTLVisibleFunctionTableDescriptor visibleFunctionTableDescriptor();

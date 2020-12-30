@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract virtual base class for CNN normalization nodes
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -51,6 +54,10 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @property   alpha
+     * @abstract   The value of alpha.  Default is 1.0. Must be non-negative.
+     */
     @Generated
     @Selector("alpha")
     public native float alpha();
@@ -59,6 +66,10 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property   beta
+     * @abstract   The value of beta.  Default is 5.0
+     */
     @Generated
     @Selector("beta")
     public native float beta();
@@ -85,6 +96,10 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * @property   delta
+     * @abstract   The value of delta.  Default is 1.0
+     */
     @Generated
     @Selector("delta")
     public native float delta();
@@ -145,14 +160,26 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   alpha
+     * @abstract   The value of alpha.  Default is 1.0. Must be non-negative.
+     */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(float value);
 
+    /**
+     * @property   beta
+     * @abstract   The value of beta.  Default is 5.0
+     */
     @Generated
     @Selector("setBeta:")
     public native void setBeta(float value);
 
+    /**
+     * @property   delta
+     * @abstract   The value of delta.  Default is 1.0
+     */
     @Generated
     @Selector("setDelta:")
     public native void setDelta(float value);

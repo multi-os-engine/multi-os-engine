@@ -52,35 +52,59 @@ public final class LtagTable extends StructObject {
         setTagRange(tagRange);
     }
 
+    /**
+     * 1
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int version();
 
+    /**
+     * 1
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(int value);
 
+    /**
+     * none currently defined
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int flags();
 
+    /**
+     * none currently defined
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setFlags(int value);
 
+    /**
+     * number of language tags which follow
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int numTags();
 
+    /**
+     * number of language tags which follow
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setNumTags(int value);
 
+    /**
+     * first string range starts here
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @ByValue
     public native LtagStringRange tagRange();
 
+    /**
+     * first string range starts here
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setTagRange(@ByValue LtagStringRange value);

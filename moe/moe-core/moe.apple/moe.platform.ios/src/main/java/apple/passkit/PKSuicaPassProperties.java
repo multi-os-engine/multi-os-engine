@@ -130,6 +130,9 @@ public class PKSuicaPassProperties extends PKTransitPassProperties {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Properties for a given pass, or nil if the pass doesn’t support the set of properties being requested
+     */
     @Generated
     @Selector("passPropertiesForPass:")
     public static native PKSuicaPassProperties passPropertiesForPass(PKPass pass);
@@ -167,6 +170,9 @@ public class PKSuicaPassProperties extends PKTransitPassProperties {
     @Selector("isGreenCarTicketUsed")
     public native boolean isGreenCarTicketUsed();
 
+    /**
+     * Note: isInShinkansenStation is not a subset of isInStation.
+     */
     @Generated
     @Selector("isInShinkansenStation")
     public native boolean isInShinkansenStation();

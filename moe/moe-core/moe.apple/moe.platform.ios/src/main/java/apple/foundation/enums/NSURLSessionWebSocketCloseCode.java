@@ -3,6 +3,9 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * The WebSocket close codes follow the close codes given in the RFC
+ */
 @Generated
 public final class NSURLSessionWebSocketCloseCode {
     @Generated

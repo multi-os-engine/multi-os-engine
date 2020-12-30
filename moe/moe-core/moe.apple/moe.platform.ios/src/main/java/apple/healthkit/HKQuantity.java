@@ -43,6 +43,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKQuantity
+ * @abstract      The HKQuantity class provides an encapsulation of a quantity value and the unit of measurement.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -133,6 +137,10 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method        quantityWithUnit:doubleValue:
+     * @abstract      Returns a new object representing a quantity measurement with the given unit.
+     */
     @Generated
     @Selector("quantityWithUnit:doubleValue:")
     public static native HKQuantity quantityWithUnitDoubleValue(HKUnit unit, double value);
@@ -162,6 +170,12 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * @method        compare:
+     * @abstract      Returns an NSComparisonResult value that indicates whether the receiver is greater than, equal to, or 
+     *                less than a given quantity.
+     * @discussion    Throws an exception if the unit of the given quantity is not compatible with the receiver's unit.
+     */
     @Generated
     @Selector("compare:")
     @NInt
@@ -173,6 +187,11 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * @method        doubleValueForUnit:
+     * @abstract      Returns the quantity value converted to the given unit.
+     * @discussion    Throws an exception if the receiver's value cannot be converted to one of the requested unit.
+     */
     @Generated
     @Selector("doubleValueForUnit:")
     public native double doubleValueForUnit(HKUnit unit);
@@ -189,6 +208,10 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native HKQuantity initWithCoder(NSCoder coder);
 
+    /**
+     * @method        isCompatibleWithUnit:
+     * @abstract      Returns yes if the receiver's value can be converted to a value of the given unit.
+     */
     @Generated
     @Selector("isCompatibleWithUnit:")
     public native boolean isCompatibleWithUnit(HKUnit unit);

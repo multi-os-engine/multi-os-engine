@@ -24,6 +24,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A VSSubscription instance describes the extent to which a subscriber has
+ * access to content.
+ */
 @Generated
 @Library("VideoSubscriberAccount")
 @Runtime(ObjCRuntime.class)
@@ -42,6 +46,13 @@ public class VSSubscription extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Describes the level of access the subscriber has to your catalog of content.
+     * 
+     * It is an error to provide a subscription with an unknown access level as
+     * the current subscription.  Instead, choose the access level that describes
+     * the content that the subscriber can play.
+     */
     @Generated
     @Selector("accessLevel")
     @NInt
@@ -87,6 +98,23 @@ public class VSSubscription extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * After this point in time, the subscription will be considered inactive.
+     * 
+     * If the current subscription becomes inactive, the system will behave as
+     * though the user is not subscribed at all, i.e. as though the registration
+     * center's current subscription had been set to nil.
+     * 
+     * Defaults to distantFuture.
+     * 
+     * Providing a value is useful in a limited number of scenarios, e.g. when the
+     * a subscriber decides not to renew their subscription, you should provide an
+     * expiration date that corresponds to the point in time when the final billing
+     * cycle will end.
+     * 
+     * This might also be useful if the subscription only grants access to content
+     * that is time-limited, e.g. a single season of games for a sports league.
+     */
     @Generated
     @Selector("expirationDate")
     public native NSDate expirationDate();
@@ -135,14 +163,43 @@ public class VSSubscription extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Describes the level of access the subscriber has to your catalog of content.
+     * 
+     * It is an error to provide a subscription with an unknown access level as
+     * the current subscription.  Instead, choose the access level that describes
+     * the content that the subscriber can play.
+     */
     @Generated
     @Selector("setAccessLevel:")
     public native void setAccessLevel(@NInt long value);
 
+    /**
+     * After this point in time, the subscription will be considered inactive.
+     * 
+     * If the current subscription becomes inactive, the system will behave as
+     * though the user is not subscribed at all, i.e. as though the registration
+     * center's current subscription had been set to nil.
+     * 
+     * Defaults to distantFuture.
+     * 
+     * Providing a value is useful in a limited number of scenarios, e.g. when the
+     * a subscriber decides not to renew their subscription, you should provide an
+     * expiration date that corresponds to the point in time when the final billing
+     * cycle will end.
+     * 
+     * This might also be useful if the subscription only grants access to content
+     * that is time-limited, e.g. a single season of games for a sports league.
+     */
     @Generated
     @Selector("setExpirationDate:")
     public native void setExpirationDate(NSDate value);
 
+    /**
+     * Identifies a subset of content from your catalog that subscriber can play.
+     * 
+     * Only provide values that are used in your availability feed's tier restrictions.
+     */
     @Generated
     @Selector("setTierIdentifiers:")
     public native void setTierIdentifiers(NSArray<String> value);
@@ -155,6 +212,11 @@ public class VSSubscription extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Identifies a subset of content from your catalog that subscriber can play.
+     * 
+     * Only provide values that are used in your availability feed's tier restrictions.
+     */
     @Generated
     @Selector("tierIdentifiers")
     public native NSArray<String> tierIdentifiers();
@@ -164,10 +226,20 @@ public class VSSubscription extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Identifies the billing group associated with the subscription.  May be used,
+     * for example, to restrict content availability based on the proximity of the
+     * billing address to a specific venue.
+     */
     @Generated
     @Selector("billingIdentifier")
     public native String billingIdentifier();
 
+    /**
+     * Identifies the billing group associated with the subscription.  May be used,
+     * for example, to restrict content availability based on the proximity of the
+     * billing address to a specific venue.
+     */
     @Generated
     @Selector("setBillingIdentifier:")
     public native void setBillingIdentifier(String value);

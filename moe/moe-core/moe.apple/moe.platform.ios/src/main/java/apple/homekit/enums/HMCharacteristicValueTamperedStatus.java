@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueTamperStatus
+ * 
+ * @constant  HMCharacteristicValueTamperStatusNone               Accessory is not tampered with.
+ * @constant  HMCharacteristicValueTamperStatusTampered           Accessory is tampered with.
+ */
 @Generated
 public final class HMCharacteristicValueTamperedStatus {
     @Generated @NInt public static final long None = 0x0000000000000000L;

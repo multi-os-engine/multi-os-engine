@@ -9,11 +9,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Delegate for user interactions involving the SmartCard reader.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("TKSmartCardUserInteractionDelegate")
 public interface TKSmartCardUserInteractionDelegate {
+    /**
+     * A valid character has been entered.
+     */
     @Generated
     @IsOptional
     @Selector("characterEnteredInUserInteraction:")
@@ -21,6 +27,9 @@ public interface TKSmartCardUserInteractionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * A correction key has been pressed.
+     */
     @Generated
     @IsOptional
     @Selector("correctionKeyPressedInUserInteraction:")
@@ -28,6 +37,9 @@ public interface TKSmartCardUserInteractionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * An invalid character has been entered.
+     */
     @Generated
     @IsOptional
     @Selector("invalidCharacterEnteredInUserInteraction:")
@@ -35,6 +47,9 @@ public interface TKSmartCardUserInteractionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Indicates that the new PIN needs to be confirmed (re-entered).
+     */
     @Generated
     @IsOptional
     @Selector("newPINConfirmationRequestedInUserInteraction:")
@@ -42,6 +57,9 @@ public interface TKSmartCardUserInteractionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Indicates that the new PIN needs to be entered.
+     */
     @Generated
     @IsOptional
     @Selector("newPINRequestedInUserInteraction:")
@@ -49,6 +67,9 @@ public interface TKSmartCardUserInteractionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Indicates that the old PIN needs to be entered.
+     */
     @Generated
     @IsOptional
     @Selector("oldPINRequestedInUserInteraction:")
@@ -56,6 +77,9 @@ public interface TKSmartCardUserInteractionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The validation key has been pressed (end of PIN entry).
+     */
     @Generated
     @IsOptional
     @Selector("validationKeyPressedInUserInteraction:")

@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class			AVPlayerItemLegibleOutput
+ * @abstract		A subclass of AVPlayerItemOutput that can vend media with a legible characteristic as NSAttributedStrings.
+ * @discussion
+ * 	An instance of AVPlayerItemLegibleOutput is typically initialized using the -init method.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -152,15 +158,33 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property		advanceIntervalForDelegateInvocation
+     * @abstract		Permits advance invocation of the associated delegate, if any.
+     * @discussion
+     * 	If it is possible, an AVPlayerItemLegibleOutput will message its delegate advanceIntervalForDelegateInvocation seconds earlier than otherwise. If the value you provide is large, effectively requesting provision of samples earlier than the AVPlayerItemLegibleOutput is prepared to act on them, the delegate will be invoked as soon as possible.
+     */
     @Generated
     @Selector("advanceIntervalForDelegateInvocation")
     public native double advanceIntervalForDelegateInvocation();
 
+    /**
+     * @property		delegate
+     * @abstract		The receiver's delegate.
+     * @discussion
+     * 	The delegate is held using a zeroing-weak reference, so this property will have a value of nil after a delegate that was previously set has been deallocated.  This property is not key-value observable.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVPlayerItemLegibleOutputPushDelegate delegate();
 
+    /**
+     * @property		delegateQueue
+     * @abstract		The dispatch queue where the delegate is messaged.
+     * @discussion
+     * 	This property is not key-value observable.
+     */
     @Generated
     @Selector("delegateQueue")
     public native NSObject delegateQueue();
@@ -169,24 +193,63 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
     @Selector("init")
     public native AVPlayerItemLegibleOutput init();
 
+    /**
+     * @method			initWithMediaSubtypesForNativeRepresentation:
+     * @abstract		Returns an instance of AVPlayerItemLegibleOutput with filtering enabled for AVPlayerItemLegibleOutputPushDelegate's legibleOutput:didOutputAttributedStrings:nativeSampleBuffers:forItemTime:.
+     * @param			subtypes
+     * 				NSArray of NSNumber FourCC codes, e.g. @[ [NSNumber numberWithUnsignedInt:'tx3g'] ]
+     * @result			An instance of AVPlayerItemLegibleOutput.
+     * @discussion
+     * 	Add media subtype FourCC number objects to the subtypes array to elect to receive that type as a CMSampleBuffer instead of an NSAttributedString.  Initializing an AVPlayerItemLegibleOutput using the -init method is equivalent to calling -initWithMediaSubtypesForNativeRepresentation: with an empty array, which means that all legible data, regardless of media subtype, will be delivered using NSAttributedString in a common format.
+     * 
+     * 	If a media subtype for which there is no legible data in the current player item is included in the media subtypes array, no error will occur.  AVPlayerItemLegibleOutput will not vend closed caption data as CMSampleBuffers, so it is an error to include 'c608' in the media subtypes array.
+     */
     @Generated
     @Selector("initWithMediaSubtypesForNativeRepresentation:")
     public native AVPlayerItemLegibleOutput initWithMediaSubtypesForNativeRepresentation(
             NSArray<? extends NSNumber> subtypes);
 
+    /**
+     * @property		advanceIntervalForDelegateInvocation
+     * @abstract		Permits advance invocation of the associated delegate, if any.
+     * @discussion
+     * 	If it is possible, an AVPlayerItemLegibleOutput will message its delegate advanceIntervalForDelegateInvocation seconds earlier than otherwise. If the value you provide is large, effectively requesting provision of samples earlier than the AVPlayerItemLegibleOutput is prepared to act on them, the delegate will be invoked as soon as possible.
+     */
     @Generated
     @Selector("setAdvanceIntervalForDelegateInvocation:")
     public native void setAdvanceIntervalForDelegateInvocation(double value);
 
+    /**
+     * @method			setDelegate:queue:
+     * @abstract		Sets the receiver's delegate and a dispatch queue on which the delegate will be called.
+     * @param			delegate
+     * 				An object conforming to AVPlayerItemLegibleOutputPushDelegate protocol.
+     * @param			delegateQueue
+     * 				A dispatch queue on which all delegate methods will be called.
+     * @discussion
+     * 	The delegate is held using a zeroing-weak reference, so it is safe to deallocate the delegate while the receiver still has a reference to it.
+     */
     @Generated
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(@Mapped(ObjCObjectMapper.class) AVPlayerItemLegibleOutputPushDelegate delegate,
             NSObject delegateQueue);
 
+    /**
+     * @property		textStylingResolution
+     * @abstract		A string identifier indicating the degree of text styling to be applied to attributed strings vended by the receiver
+     * @discussion
+     * Valid values are AVPlayerItemLegibleOutputTextStylingResolutionDefault and AVPlayerItemLegibleOutputTextStylingResolutionSourceAndRulesOnly.  An NSInvalidArgumentException is raised if this property is set to any other value.  The default value is AVPlayerItemLegibleOutputTextStylingResolutionDefault, which indicates that attributed strings vended by the receiver will include the same level of styling information that would be used if AVFoundation were rendering the text via AVPlayerLayer.
+     */
     @Generated
     @Selector("setTextStylingResolution:")
     public native void setTextStylingResolution(String value);
 
+    /**
+     * @property		textStylingResolution
+     * @abstract		A string identifier indicating the degree of text styling to be applied to attributed strings vended by the receiver
+     * @discussion
+     * Valid values are AVPlayerItemLegibleOutputTextStylingResolutionDefault and AVPlayerItemLegibleOutputTextStylingResolutionSourceAndRulesOnly.  An NSInvalidArgumentException is raised if this property is set to any other value.  The default value is AVPlayerItemLegibleOutputTextStylingResolutionDefault, which indicates that attributed strings vended by the receiver will include the same level of styling information that would be used if AVFoundation were rendering the text via AVPlayerLayer.
+     */
     @Generated
     @Selector("textStylingResolution")
     public native String textStylingResolution();

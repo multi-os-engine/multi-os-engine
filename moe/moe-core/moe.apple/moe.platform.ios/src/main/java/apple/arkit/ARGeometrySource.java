@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A container for vector data of a geometry.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -59,6 +62,9 @@ public class ARGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * A Metal buffer containing per-vector data for the source.
+     */
     @Generated
     @Selector("buffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -82,11 +88,17 @@ public class ARGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The number of scalar components in each vector.
+     */
     @Generated
     @Selector("componentsPerVector")
     @NInt
     public native long componentsPerVector();
 
+    /**
+     * The number of vectors in the source.
+     */
     @Generated
     @Selector("count")
     @NInt
@@ -104,6 +116,9 @@ public class ARGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The type of per-vector data in the buffer.
+     */
     @Generated
     @Selector("format")
     @NUInt
@@ -149,6 +164,9 @@ public class ARGeometrySource extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The offset (in bytes) from the beginning of the buffer.
+     */
     @Generated
     @Selector("offset")
     @NInt
@@ -166,6 +184,9 @@ public class ARGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The number of bytes from a vector to the next one in the buffer.
+     */
     @Generated
     @Selector("stride")
     @NInt

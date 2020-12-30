@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * PHProjectChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or -[PHPhotoLibrary performChangesAndWait:] block.
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -124,10 +127,20 @@ public class PHProjectChangeRequest extends PHChangeRequest {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The projectExtensionData property is intended for storage of compressed, project specific data
+     * only. Do not include things like rasterized images that can be locally cached in this data. The
+     * total size of stored data is limited to 1 MB. Attempting to store more data than allowed will result
+     * in an error.
+     */
     @Generated
     @Selector("projectExtensionData")
     public native NSData projectExtensionData();
 
+    /**
+     * Removes the specified assets from the project.
+     * @param assets A collection of PHAsset objects to be removed from the project.
+     */
     @Generated
     @Selector("removeAssets:")
     public native void removeAssets(@Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
@@ -140,10 +153,25 @@ public class PHProjectChangeRequest extends PHChangeRequest {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The projectExtensionData property is intended for storage of compressed, project specific data
+     * only. Do not include things like rasterized images that can be locally cached in this data. The
+     * total size of stored data is limited to 1 MB. Attempting to store more data than allowed will result
+     * in an error.
+     */
     @Generated
     @Selector("setProjectExtensionData:")
     public native void setProjectExtensionData(NSData value);
 
+    /**
+     * Use this method to update the project preview visible in Photos.
+     * Extensions are expected to set a project preview:
+     * - In or after -[id<PHProjectExtensionController> beginProjectWithExtensionContext:projectInfo:].
+     * - In or after -[id<PHProjectExtensionController> resumeProjectWithExtensionContext:projectInfo:]
+     * if -[PHProject hasProjectPreview] returns NO.
+     * - Whenever the project changes in a way that a new preview is needed.
+     * @param previewImage A rendered project preview, expected dimensions are 1024x1024.
+     */
     @Generated
     @Selector("setProjectPreviewImage:")
     public native void setProjectPreviewImage(UIImage previewImage);

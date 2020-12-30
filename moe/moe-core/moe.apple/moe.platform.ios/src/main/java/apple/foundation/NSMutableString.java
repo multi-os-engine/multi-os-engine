@@ -279,6 +279,9 @@ public class NSMutableString extends NSString {
     @Selector("appendString:")
     public native void appendString(String aString);
 
+    /**
+     * Perform string transliteration.  The transformation represented by transform is applied to the given range of string in place. Only the specified range will be modified, but the transform may look at portions of the string outside that range for context. If supplied, resultingRange is modified to reflect the new range corresponding to the original range. reverse indicates that the inverse transform should be used instead, if it exists. Attempting to use an invalid transform identifier or reverse an irreversible transform will return NO; otherwise YES is returned, even if no characters are actually transformed. You can pass one of the predefined transforms listed above (NSStringTransformLatinToKatakana, etc), or any valid ICU transform ID as defined in the ICU User Guide. Arbitrary ICU transform rules are not supported.
+     */
     @Generated
     @Selector("applyTransform:reverse:range:updatedRange:")
     public native boolean applyTransformReverseRangeUpdatedRange(String transform, boolean reverse,
@@ -322,6 +325,9 @@ public class NSMutableString extends NSString {
     public native NSMutableString initWithCStringNoCopyLengthFreeWhenDone(BytePtr bytes, @NUInt long length,
             boolean freeBuffer);
 
+    /**
+     * In addition to these two, NSMutableString responds properly to all NSString creation methods.
+     */
     @Generated
     @Selector("initWithCapacity:")
     public native NSMutableString initWithCapacity(@NUInt long capacity);
@@ -401,14 +407,23 @@ public class NSMutableString extends NSString {
     @Selector("initWithUTF8String:")
     public native NSMutableString initWithUTF8String(ConstBytePtr nullTerminatedCString);
 
+    /**
+     * Additional mutation methods.  For subclassers these are all available implemented in terms of the primitive replaceCharactersInRange:range: method.
+     */
     @Generated
     @Selector("insertString:atIndex:")
     public native void insertStringAtIndex(String aString, @NUInt long loc);
 
+    /**
+     * NSMutableString primitive (funnel) method. See below for the other mutation methods.
+     */
     @Generated
     @Selector("replaceCharactersInRange:withString:")
     public native void replaceCharactersInRangeWithString(@ByValue NSRange range, String aString);
 
+    /**
+     * This method replaces all occurrences of the target string with the replacement string, in the specified range of the receiver string, and returns the number of replacements. NSBackwardsSearch means the search is done from the end of the range (the results could be different); NSAnchoredSearch means only anchored (but potentially multiple) instances will be replaced. NSLiteralSearch and NSCaseInsensitiveSearch also apply. NSNumericSearch is ignored. Use NSMakeRange(0, [receiver length]) to process whole string. If NSRegularExpressionSearch is specified, the replacement is treated as a template, as in the corresponding NSRegularExpression methods, and no other options can apply except NSCaseInsensitiveSearch and NSAnchoredSearch.
+     */
     @Generated
     @Selector("replaceOccurrencesOfString:withString:options:range:")
     @NUInt

@@ -98,6 +98,12 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
     @Selector("init")
     public native UISpringLoadedInteraction init();
 
+    /**
+     * A springloaded interaction with the default interaction behavior and effect.
+     * 
+     * @param handler The handler to be performed when springloading is activated.
+     * @return An initialied springloaded interaction object or `nil` if the springloaded interaction could not be initialized.
+     */
     @Generated
     @Selector("initWithActivationHandler:")
     public native UISpringLoadedInteraction initWithActivationHandler(
@@ -111,6 +117,14 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
                 @Mapped(ObjCObjectMapper.class) Object context);
     }
 
+    /**
+     * The designated `UISpringLoadedInteraction` initializer.
+     * 
+     * @param interactionBehavior The interaction behavior object controlling the springloaded interaction activation. If nil, the default behavior will be used.
+     * @param interactionEffect The interaction effect object styling the interaction's view. If nil, the default effect will be used.
+     * @param handler The handler to be performed when springloading is activated.
+     * @return An initialied springloaded interaction object or `nil` if the springloaded interaction could not be initialized.
+     */
     @Generated
     @Selector("initWithInteractionBehavior:interactionEffect:activationHandler:")
     public native UISpringLoadedInteraction initWithInteractionBehaviorInteractionEffectActivationHandler(

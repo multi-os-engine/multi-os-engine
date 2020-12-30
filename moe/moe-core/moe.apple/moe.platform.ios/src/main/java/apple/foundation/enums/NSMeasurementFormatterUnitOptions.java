@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSMeasurementFormatterUnitOptions {
+    /**
+     * e.g  This ensures the formatter uses this unit even if it is not the preferred unit of the set locale.
+     */
     @Generated @NUInt public static final long ProvidedUnit = 0x0000000000000001L;
+    /**
+     * e.g. This would make the formatter show "12 kilometers" instead of "12000 meters".  Note that setting NSMeasurementFormatterUnitOptionsNaturalScale results in scaling within the unit system of the preferred unit of the locale.  To scale within the unit system of the provided unit, set NSMeasurementFormatterUnitOptionsNaturalScale | NSMeasurementFormatterUnitOptionsProvidedUnit.
+     */
     @Generated @NUInt public static final long NaturalScale = 0x0000000000000002L;
+    /**
+     * e.g. This would display "90°" rather than "90°F" or "90°C"
+     */
     @Generated @NUInt public static final long TemperatureWithoutUnit = 0x0000000000000004L;
 
     @Generated

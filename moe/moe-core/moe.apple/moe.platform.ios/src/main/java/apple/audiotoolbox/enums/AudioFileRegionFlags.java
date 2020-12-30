@@ -18,6 +18,19 @@ package apple.audiotoolbox.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum		AudioFileRegionFlags
+ * @abstract   These are flags for an AudioFileRegion that specify a playback direction.
+ * @discussion One or multiple of these flags can be set. For example, if both kAudioFileRegionFlag_LoopEnable and 
+ * kAudioFileRegionFlag_PlayForward are set, then the region will play as a forward loop. If only 
+ * kAudioFileRegionFlag_PlayForward is set, then the region will be played forward once.
+ * @constant   kAudioFileRegionFlag_LoopEnable
+ * 	If this flag is set, the region will be looped. One or both of the following must also be set.
+ * @constant   kAudioFileRegionFlag_PlayForward
+ * 	If this flag is set, the region will be played forward.
+ * @constant   kAudioFileRegionFlag_PlayBackward
+ * 	If this flag is set, the region will be played backward.
+ */
 @Generated
 public final class AudioFileRegionFlags {
     @Generated public static final int LoopEnable = 0x00000001;

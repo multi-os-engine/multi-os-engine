@@ -155,6 +155,9 @@ public class MDLMaterialPropertyConnection extends NSObject implements MDLNamed 
     @Selector("init")
     public native MDLMaterialPropertyConnection init();
 
+    /**
+     * Connects the output to the input
+     */
     @Generated
     @Selector("initWithOutput:input:")
     public native MDLMaterialPropertyConnection initWithOutputInput(MDLMaterialProperty output,

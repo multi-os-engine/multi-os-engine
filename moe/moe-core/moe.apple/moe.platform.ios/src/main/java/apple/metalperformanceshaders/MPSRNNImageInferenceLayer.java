@@ -28,6 +28,23 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSRNNImageInferenceLayer
+ * @dependency This depends on Metal.framework
+ * @discussion The MPSRNNImageInferenceLayer specifies a recurrent neural network layer for inference on MPSImages.
+ *             Currently two types of recurrent layers are supported: ones that operate with convolutions on
+ *             images: @ref MPSRNNImageInferenceLayer and one that operates on matrices: @ref MPSRNNMatrixInferenceLayer.
+ *             The former can be often used to implement the latter by using 1x1-images, but due to
+ *             image size restrictions and performance, it is advisable to use @ref MPSRNNMatrixInferenceLayer for
+ *             linear recurrent layers.
+ *             A MPSRNNImageInferenceLayer is initialized using a @ref MPSRNNLayerDescriptor, which further specifies the
+ *             recurrent network layer, or an array of @ref MPSRNNLayerDescriptors, which specifies a stack
+ *             of recurrent layers, that can operate in parallel a subset of the inputs in a sequence of inputs and
+ *             recurrent outputs. Note that currently stacks with bidirectionally traversing encode functions do not support starting
+ *             from a previous set of recurrent states, but this can be achieved quite easily by defining two separate
+ *             unidirectional stacks of layers, and running the same input sequence on them separately (one forwards and one backwards)
+ *             and ultimately combining the two result sequences as desired with auxiliary functions.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -60,6 +77,12 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property   bidirectionalCombineMode
+     * @abstract   Defines how to combine the output-results, when encoding bidirectional layers using
+     *             @ref encodeBidirectionalSequenceToCommandBuffer.
+     *             Defaults to @ref MPSRNNBidirectionalCombineModeNone.
+     */
     @Generated
     @Selector("bidirectionalCombineMode")
     @NUInt
@@ -83,6 +106,15 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @abstract   Make a copy of this kernel for a new device - @see MPSKernel
+     * @param      zone        The NSZone in which to allocate the object
+     * @param      device      The device for the new MPSKernel. If nil, then use
+     *                         self.device.
+     * @result     a pointer to a copy of this MPSKernel. This will fail, returning
+     *             nil if the device is not supported. Devices must be
+     *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     */
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
@@ -97,6 +129,29 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract   Encode an MPSRNNImageInferenceLayer kernel stack for an input image sequences into a command buffer bidirectionally.
+     *                 The operation proceeds as follows: The first source image x0 is passed through all forward traversing layers in the stack,
+     *                 ie. those that were initialized with MPSRNNSequenceDirectionForward, recurrent input is assumed zero.
+     *                 This produces forward output yf0 and recurrent states hf00, hf01, hf02, ... hf0n, one for each forward layer.
+     *                 Then x1 is passed to forward layers together with recurrent state hf00, hf01, ..., hf0n, which produces yf1, and hf10,...
+     *                 This procedure is iterated until the last image in the input sequence x_(N-1), which produces forward output yf(N-1).
+     *                 The backwards layers iterate the same sequence backwards, starting from input x_(N-1) (recurrent state zero),
+     *                 that produces yb(N-1) and recurrent output hb(N-1)0, hf(N-1)1, ... hb(N-1)m, one for each backwards traversing layer.
+     *                 Then the backwards layers handle input x_(N-2) using recurrent state hb(N-1)0, ..., et cetera, until the
+     *                 first image of the sequence is computed, producing output yb0. The result of the operation is either pair of sequences
+     *                 ({yf0, yf1, ... , yf(N-1)},  {yb0, yb1, ... , yb(N-1)}) or a combined sequence, {(yf0 + yb0), ... , (yf(N-1) + yb(N-1)) },
+     *                 where '+' stands either for sum, or concatenation along feature channels, as specified by @ref bidirectionalCombineMode.
+     * 
+     * @param      commandBuffer                   A valid MTLCommandBuffer to receive the encoded filter
+     * @param      sourceSequence                  An array of valid MPSImage objects containing the source image sequence (x0, x1, ... x_n-1).
+     * @param      destinationForwardImages        An array of valid MPSImages to be overwritten by result from forward input images. If bidirectionalCombineMode
+     *                                                 is either MPSRNNBidirectionalCombineModeAdd or MPSRNNBidirectionalCombineModeConcatenate, then will
+     *                                                 contain the combined results. destinationForwardImage may not alias with any of the source images.
+     * @param      destinationBackwardImages       If bidirectionalCombineMode is MPSRNNBidirectionalCombineModeNone, then must be a valid MPSImage
+     *                                                 that will be  overwritten by result from backward input image. Otherwise this parameter is ignored
+     *                                                 and can be nil. destinationBackwardImages may not alias to any of the source images.
+     */
     @Generated
     @Selector("encodeBidirectionalSequenceToCommandBuffer:sourceSequence:destinationForwardImages:destinationBackwardImages:")
     public native void encodeBidirectionalSequenceToCommandBufferSourceSequenceDestinationForwardImagesDestinationBackwardImages(
@@ -104,6 +159,52 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
             NSArray<? extends MPSImage> destinationForwardImages,
             NSArray<? extends MPSImage> destinationBackwardImages);
 
+    /**
+     * @abstract   Encode an MPSRNNImageInferenceLayer kernel (stack) for a sequence of inputs into a command buffer.
+     *                 Note that when encoding using this function the @see layerSequenceDirection is ignored and the layer stack operates as
+     *                 if all layers were forward feeding layers. In order to run bidirectional sequences
+     *                 use @ref encodeBidirectionalSequenceToCommandBuffer:sourceSequence: or alternatively run two layer stacks and combine
+     *                 results at the end using utility functions.
+     * @param      commandBuffer                   A valid MTLCommandBuffer to receive the encoded filter
+     * @param      sourceImages                    An array of valid MPSImage objects containing the sequence of source images.
+     * @param      destinationImages               An array valid MPSImages to be overwritten by result image sequence. destinationImages may not alias sourceImages.
+     * @param      recurrentInputState             An optional state containing the output images and memory cells (for LSTMs)
+     *                                                 of the layer obtained from the previous input images in a sequence of inputs.
+     *                                                 Has to be the output of a previous call to this function or nil (assumed zero).
+     *                                                 Note: can be one of the states returned in @ref recurrentOutputStates.
+     * @param      recurrentOutputStates            An optional array that will contain the recurrent output states. If nil then
+     *                                                 the recurrent output state is discarded.
+     *                                                 If @ref storeAllIntermediateStates is YES, then all intermediate states of the sequence
+     *                                                 are returned in the array, the first one corresponding to the first input in the sequence,
+     *                                                 otherwise only the last recurrent output state is returned.
+     *                                                 If recurrentOutputIsTemporary is YES and then all returned recurrent states
+     *                                                 will be temporary. @see MPSState:isTemporary.
+     *                                                 Example: In order to get a new state one can do the following:
+     *                                                 @code
+     *                                                     MPSRNNRecurrentImageState* recurrent0 = nil;
+     *                                                     [filter encodeToCommandBuffer: cmdBuf
+     *                                                                       sourceImage: source0
+     *                                                                  destinationImage: destination0
+     *                                                               recurrentInputState: nil
+     *                                                              recurrentOutputState: &recurrent0];
+     *                                                 @endcode
+     *                                                 Then use it for the next input in sequence:
+     *                                                 @code
+     *                                                     [filter encodeToCommandBuffer: cmdBuf
+     *                                                                       sourceImage: source1
+     *                                                                  destinationImage: destination1
+     *                                                               recurrentInputState: recurrent0
+     *                                                              recurrentOutputState: &recurrent0];
+     *                                                 @endcode
+     *                                                 And discard recurrent output of the third input:
+     *                                                 @code
+     *                                                     [filter encodeToCommandBuffer: cmdBuf
+     *                                                                       sourceImage: source2
+     *                                                                  destinationImage: destination2
+     *                                                               recurrentInputState: recurrent0
+     *                                                              recurrentOutputState: nil];
+     *                                                 @endcode
+     */
     @Generated
     @Selector("encodeSequenceToCommandBuffer:sourceImages:destinationImages:recurrentInputState:recurrentOutputStates:")
     public native void encodeSequenceToCommandBufferSourceImagesDestinationImagesRecurrentInputStateRecurrentOutputStates(
@@ -124,6 +225,13 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @Selector("initWithCoder:")
     public native MPSRNNImageInferenceLayer initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion See @ref MPSKernel#initWithCoder.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSRNNImageInferenceLayer
+     * @param      device      The MTLDevice on which to make the MPSRNNImageInferenceLayer
+     * @return     A new MPSRNNImageInferenceLayer object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSRNNImageInferenceLayer initWithCoderDevice(NSCoder aDecoder,
@@ -133,16 +241,34 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @Selector("initWithDevice:")
     public native MPSRNNImageInferenceLayer initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Initializes a convolutional RNN kernel
+     * @param      device                          The MTLDevice on which this MPSRNNImageLayer filter will be used
+     * @param      rnnDescriptor                   The descriptor that defines the RNN layer
+     * @return     A valid MPSRNNImageInferenceLayer object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:rnnDescriptor:")
     public native MPSRNNImageInferenceLayer initWithDeviceRnnDescriptor(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSRNNDescriptor rnnDescriptor);
 
+    /**
+     * @abstract   Initializes a kernel that implements a stack of convolutional RNN layers
+     * @param      device                          The MTLDevice on which this MPSRNNImageLayer filter will be used
+     * @param      rnnDescriptors                  An array of RNN descriptors that defines a stack of RNN layers, starting at index zero.
+     *                                                 The number of layers in stack is the number of entries in the array.
+     *                                                 All entries in the array must be valid MPSRNNDescriptors.
+     * @return     A valid MPSRNNImageInferenceLayer object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:rnnDescriptors:")
     public native MPSRNNImageInferenceLayer initWithDeviceRnnDescriptors(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, NSArray<? extends MPSRNNDescriptor> rnnDescriptors);
 
+    /**
+     * @property   inputFeatureChannels
+     * @abstract   The number of feature channels per pixel in the input image.
+     */
     @Generated
     @Selector("inputFeatureChannels")
     @NUInt
@@ -175,16 +301,31 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property   numberOfLayers
+     * @abstract   Number of layers in the filter-stack. This will be one when using initWithDevice:rnnDescriptor to initialize
+     *                 this filter and the number of entries in the array 'rnnDescriptors' when initializing this filter with
+     *                 initWithDevice:rnnDescriptors.
+     */
     @Generated
     @Selector("numberOfLayers")
     @NUInt
     public native long numberOfLayers();
 
+    /**
+     * @property   outputFeatureChannels
+     * @abstract   The number of feature channels per pixel in the output image.
+     */
     @Generated
     @Selector("outputFeatureChannels")
     @NUInt
     public native long outputFeatureChannels();
 
+    /**
+     * @property   recurrentOutputIsTemporary
+     * @abstract   How output states from @ref encodeSequenceToCommandBuffer are constructed.
+     *             Defaults to NO. For reference @see MPSState.
+     */
     @Generated
     @Selector("recurrentOutputIsTemporary")
     public native boolean recurrentOutputIsTemporary();
@@ -197,14 +338,31 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   bidirectionalCombineMode
+     * @abstract   Defines how to combine the output-results, when encoding bidirectional layers using
+     *             @ref encodeBidirectionalSequenceToCommandBuffer.
+     *             Defaults to @ref MPSRNNBidirectionalCombineModeNone.
+     */
     @Generated
     @Selector("setBidirectionalCombineMode:")
     public native void setBidirectionalCombineMode(@NUInt long value);
 
+    /**
+     * @property   recurrentOutputIsTemporary
+     * @abstract   How output states from @ref encodeSequenceToCommandBuffer are constructed.
+     *             Defaults to NO. For reference @see MPSState.
+     */
     @Generated
     @Selector("setRecurrentOutputIsTemporary:")
     public native void setRecurrentOutputIsTemporary(boolean value);
 
+    /**
+     * @property   storeAllIntermediateStates
+     * @abstract   If YES then calls to @ref encodeSequenceToCommandBuffer return every recurrent state
+     *             in the array: recurrentOutputStates.
+     *             Defaults to NO.
+     */
     @Generated
     @Selector("setStoreAllIntermediateStates:")
     public native void setStoreAllIntermediateStates(boolean value);
@@ -213,6 +371,12 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @property   storeAllIntermediateStates
+     * @abstract   If YES then calls to @ref encodeSequenceToCommandBuffer return every recurrent state
+     *             in the array: recurrentOutputStates.
+     *             Defaults to NO.
+     */
     @Generated
     @Selector("storeAllIntermediateStates")
     public native boolean storeAllIntermediateStates();

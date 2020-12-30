@@ -91,6 +91,16 @@ public class HMAccessoryOwnershipToken extends NSObject {
     @Selector("init")
     public native HMAccessoryOwnershipToken init();
 
+    /**
+     * @brief Creates a new accessory ownership token to add an accessory to the home.
+     * 
+     * @param data Data to be sent to prove ownership of this accessory.
+     * 
+     * @discussion This initializer may return nil if the data provided is not a valid ownership token
+     *             (e.g. if it's too short or determined to be insufficient for some other reason).
+     * 
+     * @return Returns an ownership token object.
+     */
     @Generated
     @Selector("initWithData:")
     public native HMAccessoryOwnershipToken initWithData(NSData data);

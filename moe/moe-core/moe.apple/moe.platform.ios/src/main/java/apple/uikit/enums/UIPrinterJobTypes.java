@@ -19,6 +19,21 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum       UIPrinterJobTypes
+ * @abstract   Job types supported by a printer.
+ * @discussion This enumeration provides the abstract job types
+ * 		reported by the UIPrinter supportedJobTypes method.
+ * @constant   UIPrinterJobTypeUnknown		Unknown printer support.
+ * @constant   UIPrinterJobTypeDocument   	The printer supports standard document printing.
+ * @constant   UIPrinterJobTypeEnvelope	The printer supports printing on envelopes.
+ * @constant   UIPrinterJobTypeLabel      	The printer supports printing on cut labels.
+ * @constant   UIPrinterJobTypePhoto      	The printer supports printing with photographic print quality.
+ * @constant   UIPrinterJobTypeReceipt    	The printer supports printing receipts on continuous rolls.
+ * @constant   UIPrinterJobTypeRoll       	The printer supports printing documents or photos on continuous rolls.
+ * @constant   UIPrinterJobTypeLargeFormat     The printer supports printing larger than ISO A3 size.
+ * @constant   UIPrinterJobTypePostcard        The printer supports printing on postcards.
+ */
 @Generated
 public final class UIPrinterJobTypes {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;

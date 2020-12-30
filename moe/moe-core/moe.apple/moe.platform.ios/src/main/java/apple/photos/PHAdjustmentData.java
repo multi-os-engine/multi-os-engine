@@ -151,10 +151,16 @@ public class PHAdjustmentData extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Binary blob that describes the adjustments applied to the asset.
+     */
     @Generated
     @Selector("data")
     public native NSData data();
 
+    /**
+     * Used to identify the format of the data blob (e.g. identifier "com.apple.myapp" and version "1.0")
+     */
     @Generated
     @Selector("formatIdentifier")
     public native String formatIdentifier();

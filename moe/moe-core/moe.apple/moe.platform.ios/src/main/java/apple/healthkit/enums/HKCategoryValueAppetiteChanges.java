@@ -3,6 +3,10 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum          HKCategoryValueAppetiteChanges
+ * @abstract      Set of values to indicate the direction of appetite changes.
+ */
 @Generated
 public final class HKCategoryValueAppetiteChanges {
     @Generated

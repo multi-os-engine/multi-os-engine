@@ -33,18 +33,30 @@ public final class timeval64 extends StructObject {
         setTv_usec(tv_usec);
     }
 
+    /**
+     * seconds
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native long tv_sec();
 
+    /**
+     * seconds
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setTv_sec(long value);
 
+    /**
+     * and microseconds
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native long tv_usec();
 
+    /**
+     * and microseconds
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setTv_usec(long value);

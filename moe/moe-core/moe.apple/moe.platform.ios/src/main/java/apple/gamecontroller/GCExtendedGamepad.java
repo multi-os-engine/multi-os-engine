@@ -151,6 +151,16 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     @NInt
     public static native long version_static();
 
+    /**
+     * All face buttons are required to be analog in the Extended profile. These must be arranged
+     * in the diamond pattern given below:
+     * 
+     *   Y
+     *  / \
+     * X   B
+     *  \ /
+     *   A
+     */
     @Generated
     @Selector("buttonA")
     public native GCControllerButtonInput buttonA();
@@ -171,6 +181,9 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     @Selector("controller")
     public native GCController controller();
 
+    /**
+     * Required to be analog in the Extended profile. All the elements of this directional input are thus analog.
+     */
     @Generated
     @Selector("dpad")
     public native GCControllerDirectionPad dpad();
@@ -179,22 +192,37 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     @Selector("init")
     public native GCExtendedGamepad init();
 
+    /**
+     * Shoulder buttons are required to be analog inputs.
+     */
     @Generated
     @Selector("leftShoulder")
     public native GCControllerButtonInput leftShoulder();
 
+    /**
+     * A thumbstick is a 2-axis control that is physically required to be analog. All the elements of this directional input are thus analog.
+     */
     @Generated
     @Selector("leftThumbstick")
     public native GCControllerDirectionPad leftThumbstick();
 
+    /**
+     * Triggers are required to be analog inputs. Common uses would be acceleration and decelleration in a driving game for example.
+     */
     @Generated
     @Selector("leftTrigger")
     public native GCControllerButtonInput leftTrigger();
 
+    /**
+     * Shoulder buttons are required to be analog inputs.
+     */
     @Generated
     @Selector("rightShoulder")
     public native GCControllerButtonInput rightShoulder();
 
+    /**
+     * A thumbstick is a 2-axis control that is physically required to be analog. All the elements of this directional input are thus analog.
+     */
     @Generated
     @Selector("rightThumbstick")
     public native GCControllerDirectionPad rightThumbstick();
@@ -203,6 +231,14 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     @Selector("rightTrigger")
     public native GCControllerButtonInput rightTrigger();
 
+    /**
+     * Polls the state vector of the controller and saves it to a snapshot. The snapshot is stored in a device independent
+     * format that can be serialized and used at a later date. This is useful for features such as quality assurance,
+     * save game or replay functionality among many.
+     * 
+     * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
+     * a snapshot will not change based on user input once it is taken.
+     */
     @Generated
     @Selector("saveSnapshot")
     public native GCExtendedGamepadSnapshot saveSnapshot();
@@ -231,14 +267,23 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
         void call_valueChangedHandler_ret(GCExtendedGamepad gamepad, GCControllerElement element);
     }
 
+    /**
+     * Button menu is the primary menu button, and should be used to enter the main menu and pause the game.
+     */
     @Generated
     @Selector("buttonMenu")
     public native GCControllerButtonInput buttonMenu();
 
+    /**
+     * Button options is the secondary menu button. It should be used to enter a secondary menu, such as graphics and sound configuration, and pause the game.
+     */
     @Generated
     @Selector("buttonOptions")
     public native GCControllerButtonInput buttonOptions();
 
+    /**
+     * A thumbstick may also have a clickable component, which is treated as a non-analog button.
+     */
     @Generated
     @Selector("leftThumbstickButton")
     public native GCControllerButtonInput leftThumbstickButton();
@@ -247,10 +292,19 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     @Selector("rightThumbstickButton")
     public native GCControllerButtonInput rightThumbstickButton();
 
+    /**
+     * Sets the state vector of the extended gamepad to a copy of the input extended gamepad's state vector.
+     * 
+     * @note If the controller's snapshot flag is set to NO, this method has no effect.
+     * @see GCController.snapshot
+     */
     @Generated
     @Selector("setStateFromExtendedGamepad:")
     public native void setStateFromExtendedGamepad(GCExtendedGamepad extendedGamepad);
 
+    /**
+     * Button home is a special menu button. If the system does not consume button home events, they will be passed to your application and should be used to enter a secondary menu, and pause the game.
+     */
     @Generated
     @Selector("buttonHome")
     public native GCControllerButtonInput buttonHome();

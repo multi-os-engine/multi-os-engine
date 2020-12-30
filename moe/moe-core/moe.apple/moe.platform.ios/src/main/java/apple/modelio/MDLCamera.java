@@ -166,19 +166,31 @@ public class MDLCamera extends MDLObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Aperture blade count, where zero indicates a circle.
+     */
     @Generated
     @Selector("apertureBladeCount")
     @NUInt
     public native long apertureBladeCount();
 
+    /**
+     * Radial distortion of the lens, second order term
+     */
     @Generated
     @Selector("barrelDistortion")
     public native float barrelDistortion();
 
+    /**
+     * Amount of chromatic abberation, from zero to one.
+     */
     @Generated
     @Selector("chromaticAberration")
     public native float chromaticAberration();
 
+    /**
+     * f-stop, default is 5.6
+     */
     @Generated
     @Selector("fStop")
     public native float fStop();
@@ -187,18 +199,32 @@ public class MDLCamera extends MDLObject {
     @Selector("farVisibilityDistance")
     public native float farVisibilityDistance();
 
+    /**
+     * The field of view, in degrees.
+     * @see focalLength
+     */
     @Generated
     @Selector("fieldOfView")
     public native float fieldOfView();
 
+    /**
+     * Radial distortion of the lens, fourth order term
+     */
     @Generated
     @Selector("fisheyeDistortion")
     public native float fisheyeDistortion();
 
+    /**
+     * Lens focal length in mm.
+     * @see fieldOfView
+     */
     @Generated
     @Selector("focalLength")
     public native float focalLength();
 
+    /**
+     * Focus distance
+     */
     @Generated
     @Selector("focusDistance")
     public native float focusDistance();
@@ -207,43 +233,74 @@ public class MDLCamera extends MDLObject {
     @Selector("init")
     public native MDLCamera init();
 
+    /**
+     * Maximum circle of confusion size in mm on the image plane
+     */
     @Generated
     @Selector("maximumCircleOfConfusion")
     public native float maximumCircleOfConfusion();
 
+    /**
+     * Bounding distance for visible objects 
+     */
     @Generated
     @Selector("nearVisibilityDistance")
     public native float nearVisibilityDistance();
 
+    /**
+     * Amount of optical vignetting, rom zero to one.
+     */
     @Generated
     @Selector("opticalVignetting")
     public native float opticalVignetting();
 
+    /**
+     */
     @Generated
     @Selector("projection")
     @NUInt
     public native long projection();
 
+    /**
+     * Sensor or film gate aperture aspect ratio, default is 1.5
+     * @see sensorVerticalAperture
+     */
     @Generated
     @Selector("sensorAspect")
     public native float sensorAspect();
 
+    /**
+     * vertical aperture of the sensor or film gate, default is 24mm
+     * @see sensorAspect
+     */
     @Generated
     @Selector("sensorVerticalAperture")
     public native float sensorVerticalAperture();
 
+    /**
+     * Aperture blade count, where zero indicates a circle.
+     */
     @Generated
     @Selector("setApertureBladeCount:")
     public native void setApertureBladeCount(@NUInt long value);
 
+    /**
+     * Radial distortion of the lens, second order term
+     */
     @Generated
     @Selector("setBarrelDistortion:")
     public native void setBarrelDistortion(float value);
 
+    /**
+     * Amount of chromatic abberation, from zero to one.
+     */
     @Generated
     @Selector("setChromaticAberration:")
     public native void setChromaticAberration(float value);
 
+    /**
+     * f-stop, default is 5.6
+     */
     @Generated
     @Selector("setFStop:")
     public native void setFStop(float value);
@@ -252,58 +309,103 @@ public class MDLCamera extends MDLObject {
     @Selector("setFarVisibilityDistance:")
     public native void setFarVisibilityDistance(float value);
 
+    /**
+     * The field of view, in degrees.
+     * @see focalLength
+     */
     @Generated
     @Selector("setFieldOfView:")
     public native void setFieldOfView(float value);
 
+    /**
+     * Radial distortion of the lens, fourth order term
+     */
     @Generated
     @Selector("setFisheyeDistortion:")
     public native void setFisheyeDistortion(float value);
 
+    /**
+     * Lens focal length in mm.
+     * @see fieldOfView
+     */
     @Generated
     @Selector("setFocalLength:")
     public native void setFocalLength(float value);
 
+    /**
+     * Focus distance
+     */
     @Generated
     @Selector("setFocusDistance:")
     public native void setFocusDistance(float value);
 
+    /**
+     * Maximum circle of confusion size in mm on the image plane
+     */
     @Generated
     @Selector("setMaximumCircleOfConfusion:")
     public native void setMaximumCircleOfConfusion(float value);
 
+    /**
+     * Bounding distance for visible objects 
+     */
     @Generated
     @Selector("setNearVisibilityDistance:")
     public native void setNearVisibilityDistance(float value);
 
+    /**
+     * Amount of optical vignetting, rom zero to one.
+     */
     @Generated
     @Selector("setOpticalVignetting:")
     public native void setOpticalVignetting(float value);
 
+    /**
+     */
     @Generated
     @Selector("setProjection:")
     public native void setProjection(@NUInt long value);
 
+    /**
+     * Sensor or film gate aperture aspect ratio, default is 1.5
+     * @see sensorVerticalAperture
+     */
     @Generated
     @Selector("setSensorAspect:")
     public native void setSensorAspect(float value);
 
+    /**
+     * vertical aperture of the sensor or film gate, default is 24mm
+     * @see sensorAspect
+     */
     @Generated
     @Selector("setSensorVerticalAperture:")
     public native void setSensorVerticalAperture(float value);
 
+    /**
+     * Shutter open interval, in seconds
+     */
     @Generated
     @Selector("setShutterOpenInterval:")
     public native void setShutterOpenInterval(double value);
 
+    /**
+     * World to meters conversion scale. Required for certain calculations.
+     */
     @Generated
     @Selector("setWorldToMetersConversionScale:")
     public native void setWorldToMetersConversionScale(float value);
 
+    /**
+     * Shutter open interval, in seconds
+     */
     @Generated
     @Selector("shutterOpenInterval")
     public native double shutterOpenInterval();
 
+    /**
+     * World to meters conversion scale. Required for certain calculations.
+     */
     @Generated
     @Selector("worldToMetersConversionScale")
     public native float worldToMetersConversionScale();

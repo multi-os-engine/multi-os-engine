@@ -19,6 +19,9 @@ package apple.watchconnectivity.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * These are the possible error codes that can be returned from the WatchConnectivity APIs.
+ */
 @Generated
 public final class WCErrorCode {
     @Generated @NInt public static final long GenericError = 0x0000000000001B59L;

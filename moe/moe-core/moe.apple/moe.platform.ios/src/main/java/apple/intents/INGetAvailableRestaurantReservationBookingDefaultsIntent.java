@@ -164,10 +164,16 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntent extends IN
     @Selector("initWithCoder:")
     public native INGetAvailableRestaurantReservationBookingDefaultsIntent initWithCoder(NSCoder coder);
 
+    /**
+     * an optional restaurant that the extension may or may not use to tailor reservation defaults
+     */
     @Generated
     @Selector("restaurant")
     public native INRestaurant restaurant();
 
+    /**
+     * an optional restaurant that the extension may or may not use to tailor reservation defaults
+     */
     @Generated
     @Selector("setRestaurant:")
     public native void setRestaurant(INRestaurant value);

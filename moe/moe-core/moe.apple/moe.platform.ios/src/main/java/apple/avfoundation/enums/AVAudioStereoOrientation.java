@@ -3,6 +3,22 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum AVAudioStereoOrientation
+ * @brief
+ * Constants indicating stereo input audio orientation, for use with built-in mic input data sources with a stereo polar pattern selected.
+ * 
+ * @var AVAudioStereoOrientationNone
+ * Indicates that audio capture orientation is not applicable (on mono capture, for instance).
+ * @var AVAudioStereoOrientationPortrait
+ * Indicates that audio capture should be oriented vertically, Lightning connector on the bottom.
+ * @var AVAudioStereoOrientationPortraitUpsideDown
+ * Indicates that audio capture should be oriented vertically, Lightning connector on the top.
+ * @var AVAudioStereoOrientationLandscapeRight
+ * Indicates that audio capture should be oriented horizontally, Lightning connector on the right.
+ * @var AVAudioStereoOrientationLandscapeLeft
+ * Indicates that audio capture should be oriented horizontally, Lightning connector on the left.
+ */
 @Generated
 public final class AVAudioStereoOrientation {
     @Generated

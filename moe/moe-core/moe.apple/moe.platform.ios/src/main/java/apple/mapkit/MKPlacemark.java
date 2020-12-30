@@ -174,6 +174,10 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     @ByValue
     public native CLLocationCoordinate2D coordinate();
 
+    /**
+     * To create an MKPlacemark from a CLPlacemark, call [MKPlacemark initWithPlacemark:] passing the CLPlacemark instance that is returned by CLGeocoder.
+     * See CLGeocoder.h and CLPlacemark.h in CoreLocation for more information.
+     */
     @Generated
     @Selector("countryCode")
     public native String countryCode();
@@ -190,6 +194,10 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     @Selector("initWithCoordinate:")
     public native MKPlacemark initWithCoordinate(@ByValue CLLocationCoordinate2D coordinate);
 
+    /**
+     * An address dictionary is a dictionary in the same form as returned by
+     * ABRecordCopyValue(person, kABPersonAddressProperty).
+     */
     @Generated
     @Selector("initWithCoordinate:addressDictionary:")
     public native MKPlacemark initWithCoordinateAddressDictionary(@ByValue CLLocationCoordinate2D coordinate,

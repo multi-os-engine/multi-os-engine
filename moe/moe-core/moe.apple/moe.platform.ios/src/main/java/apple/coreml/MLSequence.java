@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An immutable container holding an ordered collection of feature values
+ * of the same type.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -85,6 +89,9 @@ public class MLSequence extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Empty sequence of a sepcific type
+     */
     @Generated
     @Selector("emptySequenceWithType:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -138,10 +145,16 @@ public class MLSequence extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * int64 sequence, propery will be empty array if type is MLFeatureTypeInt64
+     */
     @Generated
     @Selector("sequenceWithInt64Array:")
     public static native MLSequence sequenceWithInt64Array(NSArray<? extends NSNumber> int64Values);
 
+    /**
+     * String sequences, property will be empty array if type is MLFeatureTypeString
+     */
     @Generated
     @Selector("sequenceWithStringArray:")
     public static native MLSequence sequenceWithStringArray(NSArray<String> stringValues);
@@ -158,6 +171,9 @@ public class MLSequence extends NSObject implements NSSecureCoding {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Type of values held
+     */
     @Generated
     @Selector("type")
     @NInt

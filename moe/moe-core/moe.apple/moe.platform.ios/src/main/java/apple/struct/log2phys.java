@@ -50,26 +50,52 @@ public final class log2phys extends StructObject {
         setL2p_devoffset(l2p_devoffset);
     }
 
+    /**
+     * unused so far
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int l2p_flags();
 
+    /**
+     * unused so far
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setL2p_flags(int value);
 
+    /**
+     * F_LOG2PHYS:     unused so far
+     * F_LOG2PHYS_EXT: IN:  number of bytes to be queried
+     * OUT: number of contiguous bytes at this position
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native long l2p_contigbytes();
 
+    /**
+     * F_LOG2PHYS:     unused so far
+     * F_LOG2PHYS_EXT: IN:  number of bytes to be queried
+     * OUT: number of contiguous bytes at this position
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setL2p_contigbytes(long value);
 
+    /**
+     * F_LOG2PHYS:     OUT: bytes into device
+     * F_LOG2PHYS_EXT: IN:  bytes into file
+     * OUT: bytes into device
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native long l2p_devoffset();
 
+    /**
+     * F_LOG2PHYS:     OUT: bytes into device
+     * F_LOG2PHYS_EXT: IN:  bytes into file
+     * OUT: bytes into device
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setL2p_devoffset(long value);

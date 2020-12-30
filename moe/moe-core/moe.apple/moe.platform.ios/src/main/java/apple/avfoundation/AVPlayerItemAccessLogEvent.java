@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class			AVPlayerItemAccessLogEvent
+ * @abstract		An AVPlayerItemAccessLogEvent represents a single log entry.
+ * @discussion	An AVPlayerItemAccessLogEvent provides named properties for accessing the data
+ * 			fields of each log event. None of the properties of this class are observable.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -152,14 +158,32 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property		URI
+     * @abstract		The URI of the playback item. Can be nil.
+     * @discussion	If nil is returned the URI is unknown. Corresponds to "uri".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("URI")
     public native String URI();
 
+    /**
+     * @property		averageAudioBitrate
+     * @abstract		The average bitrate of audio track. This is not available if audio is muxed with video. Measured in bits per second.
+     * @discussion	Value is negative if unknown. Corresponds to "c-avg-audio-bitrate".
+     * This property is not observable.
+     */
     @Generated
     @Selector("averageAudioBitrate")
     public native double averageAudioBitrate();
 
+    /**
+     * @property		averageVideoBitrate
+     * @abstract		The average bitrate of video track if it is unmuxed. Average bitrate of combined content if muxed. Measured in bits per second.
+     * @discussion	Value is negative if unknown. Corresponds to "c-avg-video-bitrate".
+     * This property is not observable.
+     */
     @Generated
     @Selector("averageVideoBitrate")
     public native double averageVideoBitrate();
@@ -170,19 +194,43 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * @property		downloadOverdue
+     * @abstract		The total number of times the download of the segments took too long.
+     * @discussion	Value is negative if unknown. Corresponds to "c-overdue".
+     * 			This property is not observable.
+     */
     @Generated
     @Selector("downloadOverdue")
     @NInt
     public native long downloadOverdue();
 
+    /**
+     * @property		durationWatched
+     * @abstract		The accumulated duration of the media played. Measured in seconds.
+     * @discussion	Value is negative if unknown. Corresponds to "c-duration-watched".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("durationWatched")
     public native double durationWatched();
 
+    /**
+     * @property		indicatedAverageBitrate
+     * @abstract		Average throughput required to play the stream, as advertised by the server. Measured in bits per second.
+     * @discussion	Value is negative if unknown. Corresponds to "sc-indicated-avg-bitrate".
+     * This property is not observable.
+     */
     @Generated
     @Selector("indicatedAverageBitrate")
     public native double indicatedAverageBitrate();
 
+    /**
+     * @property		indicatedBitrate
+     * @abstract		The throughput required to play the stream, as advertised by the server. Measured in bits per second.
+     * @discussion	Value is negative if unknown. Corresponds to "sc-indicated-bitrate".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("indicatedBitrate")
     public native double indicatedBitrate();
@@ -191,89 +239,212 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     @Selector("init")
     public native AVPlayerItemAccessLogEvent init();
 
+    /**
+     * @property		mediaRequestsWWAN
+     * @abstract		Number of network read requests over WWAN.
+     * @discussion	Value is negative if unknown. Corresponds to "sc-wwan-count".
+     * 			This property is not observable.
+     */
     @Generated
     @Selector("mediaRequestsWWAN")
     @NInt
     public native long mediaRequestsWWAN();
 
+    /**
+     * @property		numberOfBytesTransferred
+     * @abstract		The accumulated number of bytes transferred.
+     * @discussion	Value is negative if unknown. Corresponds to "bytes".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("numberOfBytesTransferred")
     public native long numberOfBytesTransferred();
 
+    /**
+     * @property		numberOfDroppedVideoFrames
+     * @abstract		The total number of dropped video frames.
+     * @discussion	Value is negative if unknown. Corresponds to "c-frames-dropped".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("numberOfDroppedVideoFrames")
     @NInt
     public native long numberOfDroppedVideoFrames();
 
+    /**
+     * @property		numberOfMediaRequests
+     * @abstract		A count of media read requests.
+     * @discussion	Value is negative if unknown. A count of media read requests from the server to this client. Corresponds to "sc-count".
+     * 			For HTTP live Streaming, a count of media segments downloaded from the server to this client.
+     * 			For progressive-style HTTP media downloads, a count of HTTP GET (byte-range) requests for the resource.
+     * 				This property is not observable. 
+     */
     @Generated
     @Selector("numberOfMediaRequests")
     @NInt
     public native long numberOfMediaRequests();
 
+    /**
+     * @property		numberOfSegmentsDownloaded
+     * @abstract		A count of media segments downloaded.
+     * @discussion	Value is negative if unknown. A count of media segments downloaded from the server to this client. Corresponds to "sc-count".
+     * 				This property is not observable.
+     * 				This property is deprecated. Use numberOfMediaRequests instead.
+     */
     @Generated
     @Deprecated
     @Selector("numberOfSegmentsDownloaded")
     @NInt
     public native long numberOfSegmentsDownloaded();
 
+    /**
+     * @property		numberOfServerAddressChanges
+     * @abstract		A count of changes to the property serverAddress, see above, over the last uninterrupted period of playback.
+     * @discussion	Value is negative if unknown. Corresponds to "s-ip-changes".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("numberOfServerAddressChanges")
     @NInt
     public native long numberOfServerAddressChanges();
 
+    /**
+     * @property		numberOfStalls
+     * @abstract		The total number of playback stalls encountered.
+     * @discussion	Value is negative if unknown. Corresponds to "c-stalls".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("numberOfStalls")
     @NInt
     public native long numberOfStalls();
 
+    /**
+     * @property		observedBitrate
+     * @abstract		The empirical throughput across all media downloaded. Measured in bits per second.
+     * @discussion	Value is negative if unknown. Corresponds to "c-observed-bitrate".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("observedBitrate")
     public native double observedBitrate();
 
+    /**
+     * @property		observedBitrateStandardDeviation
+     * @abstract		Standard deviation of observed segment download bit rates.
+     * @discussion	Value is negative if unknown. Corresponds to "c-observed-bitrate-sd".
+     * 			This property is not observable.
+     */
     @Generated
     @Selector("observedBitrateStandardDeviation")
     public native double observedBitrateStandardDeviation();
 
+    /**
+     * @property		observedMaxBitrate
+     * @abstract		Maximum observed segment download bit rate.
+     * @discussion	Value is negative if unknown. Corresponds to "c-observed-max-bitrate".
+     * 			This property is not observable.
+     */
     @Generated
     @Selector("observedMaxBitrate")
     public native double observedMaxBitrate();
 
+    /**
+     * @property		observedMinBitrate
+     * @abstract		Minimum observed segment download bit rate.
+     * @discussion	Value is negative if unknown. Corresponds to "c-observed-min-bitrate".
+     * 			This property is not observable.
+     */
     @Generated
     @Selector("observedMinBitrate")
     public native double observedMinBitrate();
 
+    /**
+     * @property		playbackSessionID
+     * @abstract		A GUID that identifies the playback session. This value is used in HTTP requests. Can be nil.
+     * @discussion	If nil is returned the GUID is unknown. Corresponds to "cs-guid".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("playbackSessionID")
     public native String playbackSessionID();
 
+    /**
+     * @property		playbackStartDate
+     * @abstract		The date/time at which playback began for this event. Can be nil.
+     * @discussion	If nil is returned the date is unknown. Corresponds to "date".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("playbackStartDate")
     public native NSDate playbackStartDate();
 
+    /**
+     * @property		playbackStartOffset
+     * @abstract		An offset into the playlist where the last uninterrupted period of playback began. Measured in seconds.
+     * @discussion	Value is negative if unknown. Corresponds to "c-start-time".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("playbackStartOffset")
     public native double playbackStartOffset();
 
+    /**
+     * @property		playbackType
+     * @abstract		Playback type (LIVE, VOD, FILE).
+     * @discussion	If nil is returned the playback type is unknown. Corresponds to "s-playback-type".
+     * 			This property is not observable.
+     */
     @Generated
     @Selector("playbackType")
     public native String playbackType();
 
+    /**
+     * @property		segmentsDownloadedDuration
+     * @abstract		The accumulated duration of the media downloaded. Measured in seconds.
+     * @discussion	Value is negative if unknown. Corresponds to "c-duration-downloaded".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("segmentsDownloadedDuration")
     public native double segmentsDownloadedDuration();
 
+    /**
+     * @property		serverAddress
+     * @abstract		The IP address of the server that was the source of the last delivered media segment. Can be nil.
+     * @discussion	If nil is returned the address is unknown. Can be either an IPv4 or IPv6 address. Corresponds to "s-ip".
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();
 
+    /**
+     * @property		startupTime
+     * @abstract		The accumulated duration until player item is ready to play. Measured in seconds.
+     * @discussion	Value is negative if unknown. Corresponds to "c-startup-time".
+     * 			This property is not observable.
+     */
     @Generated
     @Selector("startupTime")
     public native double startupTime();
 
+    /**
+     * @property		switchBitrate
+     * @abstract		Bandwidth that caused us to switch (up or down).
+     * @discussion	Value is negative if unknown. Corresponds to "c-switch-bitrate".
+     * 			This property is not observable.
+     */
     @Generated
     @Selector("switchBitrate")
     public native double switchBitrate();
 
+    /**
+     * @property		transferDuration
+     * @abstract		The accumulated duration of active network transfer of bytes. Measured in seconds.
+     * @discussion	Value is negative if unknown. Corresponds to "c-transfer-duration".
+     * 			This property is not observable.
+     */
     @Generated
     @Selector("transferDuration")
     public native double transferDuration();

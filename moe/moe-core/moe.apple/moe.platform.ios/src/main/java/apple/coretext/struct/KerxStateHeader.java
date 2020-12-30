@@ -51,27 +51,45 @@ public final class KerxStateHeader extends StructObject {
         setFirstTable(firstTable);
     }
 
+    /**
+     * state table header
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native STXHeader header();
 
+    /**
+     * state table header
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setHeader(@ByValue STXHeader value);
 
+    /**
+     * offset to kerning value table
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int valueTable();
 
+    /**
+     * offset to kerning value table
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setValueTable(int value);
 
+    /**
+     * first table starts here
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native byte firstTable();
 
+    /**
+     * first table starts here
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setFirstTable(byte value);

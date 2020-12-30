@@ -19,6 +19,13 @@ package apple.gameplaykit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Adjusts how graph nodes are created when you triangulate a GKMeshGrapk
+ * 
+ * @enum GKMeshGraphTriangulationModeVertices Graph nodes will be made at all triangle vertices
+ * @enum GKMeshGraphTriangulationModeCenters Graph nodes will be made at all triangle centers
+ * @enum GKMeshGraphTriangulationModeEdgeMidpoints Graph nodes will be made at midpoint of all triangle edges
+ */
 @Generated
 public final class GKMeshGraphTriangulationMode {
     @Generated @NUInt public static final long Vertices = 0x0000000000000001L;

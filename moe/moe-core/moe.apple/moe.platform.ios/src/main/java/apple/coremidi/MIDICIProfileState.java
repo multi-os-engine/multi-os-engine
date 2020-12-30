@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class	MIDICIProfileState
+ * @brief  Lists the enabled and disabled profiles for a MIDI channel or port on a device.
+ */
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)

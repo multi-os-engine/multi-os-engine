@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueFilterChange
+ * 
+ * @constant  HMCharacteristicValueFilterChangeNotNeeded      Filter does not need to be changed.
+ * @constant  HMCharacteristicValueFilterChangeNeeded         Filter needs to be changed.
+ */
 @Generated
 public final class HMCharacteristicValueFilterChange {
     @Generated @NInt public static final long NotNeeded = 0x0000000000000000L;

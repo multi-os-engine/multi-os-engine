@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * WKWindowFeatures specifies optional attributes for the containing window when a new WKWebView is requested.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -151,10 +154,16 @@ public class WKWindowFeatures extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract BOOL. Whether the containing window should be resizable. nil if resizability was not specified.
+     */
     @Generated
     @Selector("allowsResizing")
     public native NSNumber allowsResizing();
 
+    /**
+     * @abstract CGFloat. The height coordinate of the containing window. nil if the height was not specified.
+     */
     @Generated
     @Selector("height")
     public native NSNumber height();
@@ -163,26 +172,44 @@ public class WKWindowFeatures extends NSObject {
     @Selector("init")
     public native WKWindowFeatures init();
 
+    /**
+     * @abstract BOOL. Whether the menu bar should be visible. nil if menu bar visibility was not specified.
+     */
     @Generated
     @Selector("menuBarVisibility")
     public native NSNumber menuBarVisibility();
 
+    /**
+     * @abstract BOOL. Whether the status bar should be visible. nil if status bar visibility was not specified.
+     */
     @Generated
     @Selector("statusBarVisibility")
     public native NSNumber statusBarVisibility();
 
+    /**
+     * @abstract BOOL. Whether toolbars should be visible. nil if toolbar visibility was not specified.
+     */
     @Generated
     @Selector("toolbarsVisibility")
     public native NSNumber toolbarsVisibility();
 
+    /**
+     * @abstract CGFloat. The width coordinate of the containing window. nil if the width was not specified.
+     */
     @Generated
     @Selector("width")
     public native NSNumber width();
 
+    /**
+     * @abstract CGFloat. The x coordinate of the containing window. nil if the x coordinate was not specified.
+     */
     @Generated
     @Selector("x")
     public native NSNumber x();
 
+    /**
+     * @abstract CGFloat. The y coordinate of the containing window. nil if the y coordinate was not specified.
+     */
     @Generated
     @Selector("y")
     public native NSNumber y();

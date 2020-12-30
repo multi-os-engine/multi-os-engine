@@ -117,6 +117,9 @@ public class SKAdNetwork extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Participating apps should call this on launch to complete the install+open action associated with a product view
+     */
     @Generated
     @Selector("registerAppForAdNetworkAttribution")
     public static native void registerAppForAdNetworkAttribution();

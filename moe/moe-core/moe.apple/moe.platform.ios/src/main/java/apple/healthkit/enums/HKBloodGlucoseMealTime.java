@@ -3,6 +3,13 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum          HKBloodGlucoseMealTime
+ * @abstract      Indicates how your blood glucose reading relates to a meal.
+ * 
+ * @constant      HKBloodGlucoseMealTimePreprandial   A glucose value measured at the time just before a meal.
+ * @constant      HKBloodGlucoseMealTimePostprandial  A glucose value measured after a meal.
+ */
 @Generated
 public final class HKBloodGlucoseMealTime {
     @Generated

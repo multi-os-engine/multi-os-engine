@@ -23,6 +23,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CHHapticDynamicParameter
+ * @abstract
+ * 	A CHHapticDynamicParameter contains a CHHapticDynamicParameterID/value pair which will modify (modulate) the ongoing character
+ * 	of a haptic or audio event.
+ * @discussion
+ * 	CHHapticDynamicParameters have a relative time property to allow specifying the time relationship between parameters in a pattern.
+ */
 @Generated
 @Library("CoreHaptics")
 @Runtime(ObjCRuntime.class)
@@ -90,6 +98,17 @@ public class CHHapticDynamicParameter extends NSObject {
     @Selector("init")
     public native CHHapticDynamicParameter init();
 
+    /**
+     * @method initWithParameterID:value:relativeTime
+     * @abstract
+     * 	Initialize a CHHapticDynamicParameter with a parameter ID, value, and relative time.
+     * @param parameterID
+     * 	The CHHapticDynamicParameterID for the desired parameter change.
+     * @param value
+     * 	The value for that parameter.
+     * @param time
+     * 	The time at which this parameter should be applied, relative to the start time of the pattern.
+     */
     @Generated
     @Selector("initWithParameterID:value:relativeTime:")
     public native CHHapticDynamicParameter initWithParameterIDValueRelativeTime(String parameterID, float value,
@@ -122,10 +141,18 @@ public class CHHapticDynamicParameter extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property parameterID
+     * The ID of the dynamic parameter to use.
+     */
     @Generated
     @Selector("parameterID")
     public native String parameterID();
 
+    /**
+     * @property relativeTime
+     * The time at which the parameter should be applied, relative to the start time for the pattern.
+     */
     @Generated
     @Selector("relativeTime")
     public native double relativeTime();
@@ -138,10 +165,18 @@ public class CHHapticDynamicParameter extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property relativeTime
+     * The time at which the parameter should be applied, relative to the start time for the pattern.
+     */
     @Generated
     @Selector("setRelativeTime:")
     public native void setRelativeTime(double value);
 
+    /**
+     * @property value
+     * The value of the parameter.
+     */
     @Generated
     @Selector("setValue:")
     public native void setValue(float value);
@@ -154,6 +189,10 @@ public class CHHapticDynamicParameter extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * @property value
+     * The value of the parameter.
+     */
     @Generated
     @Selector("value")
     public native float value();

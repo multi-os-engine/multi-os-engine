@@ -19,6 +19,17 @@ package apple.mediaaccessibility.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum MACaptionAppearanceBehavior
+ * 
+ * @discussion
+ * MACaptionAppearanceBehavior is used to determine how a preference value should be used.
+ * 
+ * @constant kMACaptionAppearanceBehaviorUseValue
+ *    The value should override any content, application, or otherwise-defined values.
+ * @constant kMACaptionAppearanceBehaviorUseContentIfAvailable
+ *    Content, application, or otherwise-defined values should override the returned value. If no other value is defined, then the return value should be used.
+ */
 @Generated
 public final class MACaptionAppearanceBehavior {
     @Generated @NInt public static final long Value = 0x0000000000000000L;

@@ -7,6 +7,10 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @protocol MTLCounter
+ * @abstract A descriptor for a single counter.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)

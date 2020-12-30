@@ -89,11 +89,27 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property endOfFragmentSampleIndex
+     * @abstract The sample index to use to store the sample taken at the end of
+     * fragment processing.  Setting the value to MTLCounterDontSample will cause
+     * this sample to be omitted.
+     * @discussion On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
+     * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     */
     @Generated
     @Selector("endOfFragmentSampleIndex")
     @NUInt
     public native long endOfFragmentSampleIndex();
 
+    /**
+     * @property endOfVertexSampleIndex
+     * @abstract The sample index to use to store the sample taken at the end of
+     * vertex processing.  Setting the value to MTLCounterDontSample will cause
+     * this sample to be omitted.
+     * @discussion On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
+     * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     */
     @Generated
     @Selector("endOfVertexSampleIndex")
     @NUInt
@@ -143,27 +159,75 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property sampleBuffer
+     * @abstract The sample buffer to store samples for the render-pass defined samples.
+     * If sampleBuffer is non-nil, the sample indices will be used to store samples into
+     * the sample buffer.  If no sample buffer is provided, no samples will be taken.
+     * If any of the sample indices are specified as MTLCounterDontSample, no sample
+     * will be taken for that action.
+     */
     @Generated
     @Selector("sampleBuffer")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLCounterSampleBuffer sampleBuffer();
 
+    /**
+     * @property endOfFragmentSampleIndex
+     * @abstract The sample index to use to store the sample taken at the end of
+     * fragment processing.  Setting the value to MTLCounterDontSample will cause
+     * this sample to be omitted.
+     * @discussion On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
+     * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     */
     @Generated
     @Selector("setEndOfFragmentSampleIndex:")
     public native void setEndOfFragmentSampleIndex(@NUInt long value);
 
+    /**
+     * @property endOfVertexSampleIndex
+     * @abstract The sample index to use to store the sample taken at the end of
+     * vertex processing.  Setting the value to MTLCounterDontSample will cause
+     * this sample to be omitted.
+     * @discussion On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
+     * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     */
     @Generated
     @Selector("setEndOfVertexSampleIndex:")
     public native void setEndOfVertexSampleIndex(@NUInt long value);
 
+    /**
+     * @property sampleBuffer
+     * @abstract The sample buffer to store samples for the render-pass defined samples.
+     * If sampleBuffer is non-nil, the sample indices will be used to store samples into
+     * the sample buffer.  If no sample buffer is provided, no samples will be taken.
+     * If any of the sample indices are specified as MTLCounterDontSample, no sample
+     * will be taken for that action.
+     */
     @Generated
     @Selector("setSampleBuffer:")
     public native void setSampleBuffer(@Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer value);
 
+    /**
+     * @property startOfFragmentSampleIndex
+     * @abstract The sample index to use to store the sample taken at the start of
+     * fragment processing.  Setting the value to MTLCounterDontSample will cause
+     * this sample to be omitted.
+     * @discussion On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
+     * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     */
     @Generated
     @Selector("setStartOfFragmentSampleIndex:")
     public native void setStartOfFragmentSampleIndex(@NUInt long value);
 
+    /**
+     * @property startOfVertexSampleIndex
+     * @abstract The sample index to use to store the sample taken at the start of
+     * vertex processing.  Setting the value to MTLCounterDontSample will cause
+     * this sample to be omitted.
+     * @discussion On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
+     * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     */
     @Generated
     @Selector("setStartOfVertexSampleIndex:")
     public native void setStartOfVertexSampleIndex(@NUInt long value);
@@ -172,11 +236,27 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @property startOfFragmentSampleIndex
+     * @abstract The sample index to use to store the sample taken at the start of
+     * fragment processing.  Setting the value to MTLCounterDontSample will cause
+     * this sample to be omitted.
+     * @discussion On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
+     * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     */
     @Generated
     @Selector("startOfFragmentSampleIndex")
     @NUInt
     public native long startOfFragmentSampleIndex();
 
+    /**
+     * @property startOfVertexSampleIndex
+     * @abstract The sample index to use to store the sample taken at the start of
+     * vertex processing.  Setting the value to MTLCounterDontSample will cause
+     * this sample to be omitted.
+     * @discussion On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
+     * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     */
     @Generated
     @Selector("startOfVertexSampleIndex")
     @NUInt

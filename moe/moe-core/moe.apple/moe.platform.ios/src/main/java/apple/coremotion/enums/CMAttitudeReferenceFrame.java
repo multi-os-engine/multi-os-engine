@@ -19,6 +19,31 @@ package apple.coremotion.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * CMAttitudeReferenceFrame
+ * 
+ * Discussion:
+ *   CMAttitudeReferenceFrame indicates the reference frame from which all CMAttitude
+ *       samples are referenced.
+ * 
+ *   Definitions of each reference frame is as follows:
+ *       - CMAttitudeReferenceFrameXArbitraryZVertical describes a reference frame in
+ *         which the Z axis is vertical and the X axis points in an arbitrary direction
+ *         in the horizontal plane.
+ *       - CMAttitudeReferenceFrameXArbitraryCorrectedZVertical describes the same reference
+ *         frame as CMAttitudeReferenceFrameXArbitraryZVertical with the following exception:
+ *         when available and calibrated, the magnetometer will be used to correct for accumulated
+ *         yaw errors. The downside of using this over CMAttitudeReferenceFrameXArbitraryZVertical
+ *         is increased CPU usage.
+ *       - CMAttitudeReferenceFrameXMagneticNorthZVertical describes a reference frame
+ *         in which the Z axis is vertical and the X axis points toward magnetic north.
+ *         Note that using this reference frame may require device movement to
+ *         calibrate the magnetometer.
+ *       - CMAttitudeReferenceFrameXTrueNorthZVertical describes a reference frame in
+ *         which the Z axis is vertical and the X axis points toward true north.
+ *         Note that using this reference frame may require device movement to
+ *         calibrate the magnetometer.
+ */
 @Generated
 public final class CMAttitudeReferenceFrame {
     @Generated @NUInt public static final long ArbitraryZVertical = 0x0000000000000001L;

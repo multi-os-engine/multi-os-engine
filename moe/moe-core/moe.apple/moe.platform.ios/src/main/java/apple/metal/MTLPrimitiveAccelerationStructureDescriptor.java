@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief Descriptor for a primitive acceleration structure
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -85,6 +88,9 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     @Selector("descriptor")
     public static native MTLPrimitiveAccelerationStructureDescriptor descriptor();
 
+    /**
+     * @brief Array of geometry descriptors
+     */
     @Generated
     @Selector("geometryDescriptors")
     public native NSArray<? extends MTLAccelerationStructureGeometryDescriptor> geometryDescriptors();
@@ -133,6 +139,9 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @brief Array of geometry descriptors
+     */
     @Generated
     @Selector("setGeometryDescriptors:")
     public native void setGeometryDescriptors(NSArray<? extends MTLAccelerationStructureGeometryDescriptor> value);

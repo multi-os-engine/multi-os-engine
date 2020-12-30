@@ -16,6 +16,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CIFilter")
 public interface CIFilter {
+    /**
+     * CIFilter subclasses can implement 'customAttributes' to return a dictionary
+     * containing key/value pairs describing the filter. (see description of keys below)
+     */
     @Generated
     @IsOptional
     @Selector("customAttributes")

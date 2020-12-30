@@ -43,6 +43,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CKRecordZoneSubscription
+ * 
+ * @abstract A subscription that fires whenever any change happens in the indicated Record Zone.
+ * 
+ * @discussion The RecordZone must have the capability @c CKRecordZoneCapabilityFetchChanges
+ * @c CKRecordZoneSubscriptions are not supported in a @c sharedCloudDatabase
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -184,10 +192,16 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
     @Selector("initWithZoneID:subscriptionID:")
     public native CKRecordZoneSubscription initWithZoneIDSubscriptionID(CKRecordZoneID zoneID, String subscriptionID);
 
+    /**
+     * Optional property. If set, a zone subscription is scoped to record changes for this record type
+     */
     @Generated
     @Selector("recordType")
     public native String recordType();
 
+    /**
+     * Optional property. If set, a zone subscription is scoped to record changes for this record type
+     */
     @Generated
     @Selector("setRecordType:")
     public native void setRecordType(String value);

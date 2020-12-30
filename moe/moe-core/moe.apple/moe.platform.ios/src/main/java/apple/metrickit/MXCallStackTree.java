@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXCallStackTree
+ * @abstract      A data class that encapsulates call stack trees vended by MetricKit.
+ * @discussion    You should use the JSONRepresentation API to generate human readable call stack trees for symbolication off device.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -41,6 +46,13 @@ public class MXCallStackTree extends NSObject implements NSSecureCoding {
         super(peer);
     }
 
+    /**
+     * @method        JSONRepresentation
+     * @abstract      Convenience method to return a JSON representation of this callstack tree.
+     * @discussion    The JSON structure of MXCallStackTree is organized into individual groups of call stacks. Individual call stacks contain stack frames, which consist of information needed to symbolicate the frame off device. This includes binary image name, binary UUID, offset in binary text segment, address, and sample count (for stack trees that contain temporally sampled data.)
+     * @discussion    MXCallStackTrees can be organized into a single callstack for the entire application, or broken up into callstacks associated with individual threads.
+     * @result        An NSData object containing the JSON representation
+     */
     @Generated
     @Selector("JSONRepresentation")
     public native NSData JSONRepresentation();

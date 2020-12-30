@@ -76,6 +76,9 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Default NSIndexTypeBinary
+     */
     @Generated
     @Selector("collationType")
     @NUInt
@@ -128,6 +131,9 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Default YES. Control whether this is an ascending or descending index for indexes which support direction.
+     */
     @Generated
     @Selector("isAscending")
     public native boolean isAscending();
@@ -146,6 +152,9 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * This may be an NSExpressionDescription that expresses a function
+     */
     @Generated
     @Selector("property")
     public native NSPropertyDescription property();
@@ -162,10 +171,16 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Default YES. Control whether this is an ascending or descending index for indexes which support direction.
+     */
     @Generated
     @Selector("setAscending:")
     public native void setAscending(boolean value);
 
+    /**
+     * Default NSIndexTypeBinary
+     */
     @Generated
     @Selector("setCollationType:")
     public native void setCollationType(@NUInt long value);

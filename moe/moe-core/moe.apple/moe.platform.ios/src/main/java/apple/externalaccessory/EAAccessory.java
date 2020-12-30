@@ -193,6 +193,9 @@ public class EAAccessory extends NSObject {
     @Selector("name")
     public native String name();
 
+    /**
+     * array of strings representing the protocols supported by the accessory
+     */
     @Generated
     @Selector("protocolStrings")
     public native NSArray<String> protocolStrings();

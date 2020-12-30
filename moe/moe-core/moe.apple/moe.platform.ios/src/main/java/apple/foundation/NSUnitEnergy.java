@@ -139,6 +139,9 @@ public class NSUnitEnergy extends NSDimension implements NSSecureCoding {
     @Selector("kilocalories")
     public static native NSUnitEnergy kilocalories();
 
+    /**
+     * Base unit - joules
+     */
     @Generated
     @Selector("kilojoules")
     public static native NSUnitEnergy kilojoules();

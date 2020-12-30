@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief VNTrackObjectRequest tracks an object in a sequence of images.
+ * @discussion The VNTrackObjectRequest is a general purpose object tracker. This tracker is used when the tracked entity does not have a special tracker, like VNTrackRectangleRequest. The VNTrackObjectRequest is initialized with VNDetectedObjectObservation that contains bounding box for the object of interest. This tracker is processed using one of the [VNSequenceRequestHandler performRequests:...] methods.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -98,10 +102,21 @@ public class VNTrackObjectRequest extends VNTrackingRequest {
     public native VNTrackObjectRequest initWithCompletionHandler(
             @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
+    /**
+     * @brief Create a new request with detected object observation.
+     * 
+     * @param    observation          Detected object observation with bounding box info.
+     */
     @Generated
     @Selector("initWithDetectedObjectObservation:")
     public native VNTrackObjectRequest initWithDetectedObjectObservation(VNDetectedObjectObservation observation);
 
+    /**
+     * @brief Create a new request with detected object observation.
+     * 
+     * @param    observation          Detected object observation with bounding box info.
+     * @param    completionHandler    The block that is invoked when the request has been performed.
+     */
     @Generated
     @Selector("initWithDetectedObjectObservation:completionHandler:")
     public native VNTrackObjectRequest initWithDetectedObjectObservationCompletionHandler(

@@ -19,6 +19,13 @@ package apple.cloudkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum CKApplicationPermissionStatus
+ * @constant CKApplicationPermissionStatusInitialState The user has not made a decision for this application permission.
+ * @constant CKApplicationPermissionStatusCouldNotComplete An error occurred when getting or setting the application permission status, consult the corresponding NSError
+ * @constant CKApplicationPermissionStatusDenied The user has denied this application permission
+ * @constant CKApplicationPermissionStatusGranted The user has granted this application permission
+ */
 @Generated
 public final class CKApplicationPermissionStatus {
     @Generated @NInt public static final long InitialState = 0x0000000000000000L;

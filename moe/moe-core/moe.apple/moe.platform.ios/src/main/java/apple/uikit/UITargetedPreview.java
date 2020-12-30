@@ -99,14 +99,26 @@ public class UITargetedPreview extends NSObject implements NSCopying {
     @Selector("init")
     public native UITargetedPreview init();
 
+    /**
+     * To use this initializer, the view must be in a window.
+     * Sets the parameters to defaults.
+     * Sets the target based on the view's current superview, center, and transform.
+     */
     @Generated
     @Selector("initWithView:")
     public native UITargetedPreview initWithView(UIView view);
 
+    /**
+     * To use this initializer, the view must be in a window.
+     * Sets the target based on the view's current superview, center, and transform.
+     */
     @Generated
     @Selector("initWithView:parameters:")
     public native UITargetedPreview initWithViewParameters(UIView view, UIPreviewParameters parameters);
 
+    /**
+     * To use this initializer, the view need not be in a window.
+     */
     @Generated
     @Selector("initWithView:parameters:target:")
     public native UITargetedPreview initWithViewParametersTarget(UIView view, UIPreviewParameters parameters,
@@ -151,6 +163,14 @@ public class UITargetedPreview extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Returns a preview with the same view and parameters, but a new target.
+     * 
+     * You might call this in a UIDropInteractionDelegate in
+     * -dropInteraction:previewForDroppingItem:withDefault:, or in
+     * a UIDropInteractionDelegate in -dropInteraction:previewForCancellingItem:withDefault:,
+     * to direct the default UITargetedPreview to a different target.
+     */
     @Generated
     @Selector("retargetedPreviewWithTarget:")
     public native UITargetedPreview retargetedPreviewWithTarget(UIPreviewTarget newTarget);
@@ -159,6 +179,11 @@ public class UITargetedPreview extends NSObject implements NSCopying {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Provide the size of the item.
+     * You might use this size to create an appropriately-sized gap in your view,
+     * where this item will land when it is dropped.
+     */
     @Generated
     @Selector("size")
     @ByValue

@@ -2,6 +2,10 @@ package apple.corenfc.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @discussion Type Name Format value defined by NFC Data Exchange Format (NDEF) Technical Specification
+ *             from NFC Forum.
+ */
 @Generated
 public final class NFCTypeNameFormat {
     @Generated

@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief An object that defines the cadence at which the video stream is processed.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)

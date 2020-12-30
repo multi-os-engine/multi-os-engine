@@ -125,6 +125,10 @@ public class UITableViewDropPlaceholder extends UITableViewPlaceholder {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Allows customization of the preview used when dropping to a placeholder.
+     * If no block is set, or if nil is returned, the entire cell will be used for the preview.
+     */
     @Generated
     @Selector("previewParametersProvider")
     @ObjCBlock(name = "call_previewParametersProvider_ret")
@@ -145,6 +149,10 @@ public class UITableViewDropPlaceholder extends UITableViewPlaceholder {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Allows customization of the preview used when dropping to a placeholder.
+     * If no block is set, or if nil is returned, the entire cell will be used for the preview.
+     */
     @Generated
     @Selector("setPreviewParametersProvider:")
     public native void setPreviewParametersProvider(

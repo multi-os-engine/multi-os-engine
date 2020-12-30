@@ -3,6 +3,9 @@ package apple.pdfkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Document permissions status. For encrypted PDF's, supplying the owner password will enable owner permission status.
+ */
 @Generated
 public final class PDFDocumentPermissions {
     @Generated

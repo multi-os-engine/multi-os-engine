@@ -50,6 +50,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SKMutableTextures are not currently supported in the simulator
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -222,14 +225,28 @@ public class SKMutableTexture extends SKTexture {
     @Selector("initWithCoder:")
     public native SKMutableTexture initWithCoder(NSCoder coder);
 
+    /**
+     * Create a mutable texture with a specfic size.
+     * 
+     * @param size the dimension to use when creating the given texture.
+     */
     @Generated
     @Selector("initWithSize:")
     public native SKMutableTexture initWithSize(@ByValue CGSize size);
 
+    /**
+     * Create a mutable texture with a specfic size and type.
+     * 
+     * @param size the dimension to use when creating the given texture.
+     * @param format the CoreVideo format type.  supported types include 'RGBA', 'RGhA', and 'RGfA' for byte, half-float, and float components.
+     */
     @Generated
     @Selector("initWithSize:pixelFormat:")
     public native SKMutableTexture initWithSizePixelFormat(@ByValue CGSize size, int format);
 
+    /**
+     * Modify the created mutable texture.
+     */
     @Generated
     @Selector("modifyPixelDataWithBlock:")
     public native void modifyPixelDataWithBlock(

@@ -59,6 +59,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNRenderer
+ * @abstract SCNRenderer lets you use the SceneKit renderer in an OpenGL context or Metal render pass descriptor of your own.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -149,10 +153,22 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @method rendererWithContext:options:
+     * @abstract Creates a new renderer object.
+     * @param context The context to render into.
+     * @param options An optional dictionary for future extensions.
+     */
     @Generated
     @Selector("rendererWithContext:options:")
     public static native SCNRenderer rendererWithContextOptions(EAGLContext context, NSDictionary<?, ?> options);
 
+    /**
+     * @method rendererWithDevice:options:
+     * @abstract Creates a new renderer object that renders using Metal.
+     * @param device The metal device to use. Pass nil to let SceneKit choose a default device.
+     * @param options An optional dictionary for future extensions.
+     */
     @Generated
     @Selector("rendererWithDevice:options:")
     public static native SCNRenderer rendererWithDeviceOptions(@Mapped(ObjCObjectMapper.class) MTLDevice device,
@@ -267,6 +283,10 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Selector("loops")
     public native boolean loops();
 
+    /**
+     * @property nextFrameTime
+     * @abstract Returns the time at which the next update should happen. If infinite no update needs to be scheduled yet. If the current frame time, a continuous animation is running and an update should be scheduled after a "natural" delay.
+     */
     @Generated
     @Selector("nextFrameTime")
     public native double nextFrameTime();
@@ -304,15 +324,31 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @ByValue
     public native SCNVector3 projectPoint(@ByValue SCNVector3 point);
 
+    /**
+     *  Deprecated
+     * @method render
+     * @abstract renders the receiver's scene at the current system time.
+     * @discussion This method only work if the receiver was allocated with an OpenGL context and it is deprecated (use renderAtTime: instead). Use renderAtTime:withEncoder:pass:commandQueue: to render with Metal.
+     */
     @Generated
     @Deprecated
     @Selector("render")
     public native void render();
 
+    /**
+     * @method renderAtTime:
+     * @abstract updates and renders the receiver's scene at the specified time (system time).
+     * @discussion This method only work if the receiver was allocated with an OpenGL context. Use renderAtTime:withEncoder:pass:commandQueue: to render with Metal.
+     */
     @Generated
     @Selector("renderAtTime:")
     public native void renderAtTime(double time);
 
+    /**
+     * @method renderAtTime:viewport:commandBuffer:passDescriptor:
+     * @abstract updates and renders the receiver's scene at the specified time (system time) viewport, Metal command buffer and pass descriptor.
+     * @discussion Use this method to render using Metal.
+     */
     @Generated
     @Selector("renderAtTime:viewport:commandBuffer:passDescriptor:")
     public native void renderAtTimeViewportCommandBufferPassDescriptor(double time, @ByValue CGRect viewport,
@@ -392,6 +428,10 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Selector("showsStatistics")
     public native boolean showsStatistics();
 
+    /**
+     * @method snapshotAtTime:withSize:antialiasingMode:
+     * @abstract renders the receiver's scene at the specified time (system time) into an image.
+     */
     @Generated
     @Selector("snapshotAtTime:withSize:antialiasingMode:")
     public native UIImage snapshotAtTimeWithSizeAntialiasingMode(double time, @ByValue CGSize size,
@@ -411,16 +451,32 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @ByValue
     public native SCNVector3 unprojectPoint(@ByValue SCNVector3 point);
 
+    /**
+     * @method updateProbes:atTime:
+     * @abstract Update the specified probes by computing their incoming irradiance in the receiver's scene at the specified time.
+     * @param lightProbes An array of nodes that must have a light probe attached.
+     * @param time The time used to render the scene when computing the light probes irradiance.
+     * @discussion Light probes are only supported with Metal. This method is observable using NSProgress.
+     */
     @Generated
     @Selector("updateProbes:atTime:")
     public native void updateProbesAtTime(NSArray<? extends SCNNode> lightProbes, double time);
 
+    /**
+     * @method renderWithViewport:viewport:commandBuffer:passDescriptor:
+     * @abstract renders the receiver's scene with the specified viewport, Metal command buffer and pass descriptor.
+     * @discussion Use this method to render using Metal. This method doesn't update the scene's animations, physics, particles etc... It's up to you to call "updateAtTime:" to update the scene.
+     */
     @Generated
     @Selector("renderWithViewport:commandBuffer:passDescriptor:")
     public native void renderWithViewportCommandBufferPassDescriptor(@ByValue CGRect viewport,
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
             MTLRenderPassDescriptor renderPassDescriptor);
 
+    /**
+     * @method updateAtTime:
+     * @abstract updates the receiver's scene at the specified time (system time).
+     */
     @Generated
     @Selector("updateAtTime:")
     public native void updateAtTime(double time);

@@ -19,6 +19,10 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum       HKBloodType
+ * @abstract   This enumerated type is used to represent the blood type of an individual.
+ */
 @Generated
 public final class HKBloodType {
     @Generated @NInt public static final long NotSet = 0x0000000000000000L;

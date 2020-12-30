@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A uniform cubic B-spline representing the point data of a `PKStroke`.
+ */
 @Generated
 @Library("PencilKit")
 @Runtime(ObjCRuntime.class)
@@ -86,11 +89,18 @@ public class PKStrokePath extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * The number of control points in this stroke path.
+     */
     @Generated
     @Selector("count")
     @NUInt
     public native long count();
 
+    /**
+     * The time at which this stroke path was started.
+     * The `timeOffset` of contained PKStrokePoints is relative to this date.
+     */
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -103,6 +113,15 @@ public class PKStrokePath extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Executes a given block using each point in a range with a distance step.
+     * 
+     * @param range The parametric range to enumerate points in.
+     * @param distanceStep The distance to step between points.
+     * @param block The block to execute for each point. This block takes two parameters
+     *        point The interpolated point on the spline.
+     *        stop A reference to a Boolean value. Setting the value to YES within the block stops further enumeration of the array. If a block stops further enumeration, that block continues to run until it’s finished.
+     */
     @Generated
     @Selector("enumerateInterpolatedPointsInRange:strideByDistance:usingBlock:")
     public native void enumerateInterpolatedPointsInRangeStrideByDistanceUsingBlock(PKFloatRange range,
@@ -116,6 +135,15 @@ public class PKStrokePath extends NSObject implements NSCopying {
         void call_enumerateInterpolatedPointsInRangeStrideByDistanceUsingBlock(PKStrokePoint point, BoolPtr stop);
     }
 
+    /**
+     * Executes a given block using each point in a range with a parametric step.
+     * 
+     * @param range The parametric range to enumerate points in.
+     * @param parametricStep The parametric step between points.
+     * @param block The block to execute for each point. This block takes two parameters
+     *        point The interpolated point on the spline.
+     *        stop A reference to a Boolean value. Setting the value to YES within the block stops further enumeration of the array. If a block stops further enumeration, that block continues to run until it’s finished.
+     */
     @Generated
     @Selector("enumerateInterpolatedPointsInRange:strideByParametricStep:usingBlock:")
     public native void enumerateInterpolatedPointsInRangeStrideByParametricStepUsingBlock(PKFloatRange range,
@@ -129,6 +157,15 @@ public class PKStrokePath extends NSObject implements NSCopying {
         void call_enumerateInterpolatedPointsInRangeStrideByParametricStepUsingBlock(PKStrokePoint point, BoolPtr stop);
     }
 
+    /**
+     * Executes a given block using each point in a range with a time step.
+     * 
+     * @param range The parametric range to enumerate points in.
+     * @param timeStep The time interval to step between points.
+     * @param block The block to execute for each point. This block takes two parameters
+     *        point The interpolated point on the spline.
+     *        stop A reference to a Boolean value. Setting the value to YES within the block stops further enumeration of the array. If a block stops further enumeration, that block continues to run until it’s finished.
+     */
     @Generated
     @Selector("enumerateInterpolatedPointsInRange:strideByTime:usingBlock:")
     public native void enumerateInterpolatedPointsInRangeStrideByTimeUsingBlock(PKFloatRange range, double timeStep,
@@ -150,6 +187,12 @@ public class PKStrokePath extends NSObject implements NSCopying {
     @Selector("init")
     public native PKStrokePath init();
 
+    /**
+     * Create a stroke path value with the given cubic B-spline control points.
+     * 
+     * @param controlPoints An array of control points for a cubic B-spline.
+     * @param creationDate The start time of this path.
+     */
     @Generated
     @Selector("initWithControlPoints:creationDate:")
     public native PKStrokePath initWithControlPointsCreationDate(NSArray<? extends PKStrokePoint> controlPoints,
@@ -168,11 +211,20 @@ public class PKStrokePath extends NSObject implements NSCopying {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * The on-curve location for the floating point [0, count-1] `parametricValue` parameter.
+     * 
+     * This has better performance than `[self interpolatedPointAt: parametricValue].location`
+     * for when only the location is required.
+     */
     @Generated
     @Selector("interpolatedLocationAt:")
     @ByValue
     public native CGPoint interpolatedLocationAt(@NFloat double parametricValue);
 
+    /**
+     * The on-curve point for the floating point [0, count-1] `parametricValue` parameter.
+     */
     @Generated
     @Selector("interpolatedPointAt:")
     public native PKStrokePoint interpolatedPointAt(@NFloat double parametricValue);
@@ -191,20 +243,40 @@ public class PKStrokePath extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Returns B-spline control point at index `i`.
+     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native PKStrokePoint objectAtIndexedSubscript(@NUInt long i);
 
+    /**
+     * Returns a parametric value on the B-spline that is a specified distance from the given parametric value.
+     * 
+     * @param parametricValue The floating point [0, count-1] parametric value.
+     * @param distanceStep The distance to offset `parametricValue`. `distanceStep` can be positive or negative.
+     * @return A parametric value offset by `distanceStep` from `parametricValue`.
+     */
     @Generated
     @Selector("parametricValue:offsetByDistance:")
     @NFloat
     public native double parametricValueOffsetByDistance(@NFloat double parametricValue, @NFloat double distanceStep);
 
+    /**
+     * Returns a parametric value on the B-spline that is a specified time from the given parametric value.
+     * 
+     * @param parametricValue The floating point [0, count-1] parametric value.
+     * @param timeStep The time to offset `parametricValue`. `timeStep` can be positive or negative.
+     * @return A parametric value offset by `timeStep` from `parametricValue`.
+     */
     @Generated
     @Selector("parametricValue:offsetByTime:")
     @NFloat
     public native double parametricValueOffsetByTime(@NFloat double parametricValue, double timeStep);
 
+    /**
+     * Returns B-spline control point at index `i`.
+     */
     @Generated
     @Selector("pointAtIndex:")
     public native PKStrokePoint pointAtIndex(@NUInt long i);

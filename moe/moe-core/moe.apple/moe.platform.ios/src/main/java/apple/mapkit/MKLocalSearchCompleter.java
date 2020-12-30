@@ -162,6 +162,9 @@ public class MKLocalSearchCompleter extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native MKLocalSearchCompleterDelegate delegate();
 
+    /**
+     * Defaults to MKSearchCompletionFilterTypeLocationsAndQueries
+     */
     @Generated
     @Selector("filterType")
     @NInt
@@ -204,6 +207,9 @@ public class MKLocalSearchCompleter extends NSObject {
         }
     }
 
+    /**
+     * Defaults to MKSearchCompletionFilterTypeLocationsAndQueries
+     */
     @Generated
     @Selector("setFilterType:")
     public native void setFilterType(@NInt long value);

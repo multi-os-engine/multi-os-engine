@@ -59,6 +59,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * _______________________________________________________________________________________________________________
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -358,18 +361,30 @@ public class UITableView extends UIScrollView
     @NInt
     public static native long version_static();
 
+    /**
+     * default is NO. Controls whether multiple rows can be selected simultaneously
+     */
     @Generated
     @Selector("allowsMultipleSelection")
     public native boolean allowsMultipleSelection();
 
+    /**
+     * default is NO. Controls whether multiple rows can be selected simultaneously in editing mode
+     */
     @Generated
     @Selector("allowsMultipleSelectionDuringEditing")
     public native boolean allowsMultipleSelectionDuringEditing();
 
+    /**
+     * default is YES. Controls whether rows can be selected when not in editing mode
+     */
     @Generated
     @Selector("allowsSelection")
     public native boolean allowsSelection();
 
+    /**
+     * default is NO. Controls whether rows can be selected when in editing mode
+     */
     @Generated
     @Selector("allowsSelectionDuringEditing")
     public native boolean allowsSelectionDuringEditing();
@@ -421,18 +436,30 @@ public class UITableView extends UIScrollView
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * the background view will be automatically resized to track the size of the table view.  this will be placed as a subview of the table view behind all cells and headers/footers.  default may be non-nil for some devices.
+     */
     @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
 
+    /**
+     * Use -performBatchUpdates:completion: instead of these methods, which will be deprecated in a future release.
+     */
     @Generated
     @Selector("beginUpdates")
     public native void beginUpdates();
 
+    /**
+     * returns nil if cell is not visible or index path is out of range
+     */
     @Generated
     @Selector("cellForRowAtIndexPath:")
     public native UITableViewCell cellForRowAtIndexPath(NSIndexPath indexPath);
 
+    /**
+     * if cell layout margins are derived from the width of the readableContentGuide. default is NO.
+     */
     @Generated
     @Selector("cellLayoutMarginsFollowReadableWidth")
     public native boolean cellLayoutMarginsFollowReadableWidth();
@@ -456,15 +483,24 @@ public class UITableView extends UIScrollView
     @Selector("deleteSections:withRowAnimation:")
     public native void deleteSectionsWithRowAnimation(NSIndexSet sections, @NInt long animation);
 
+    /**
+     * Used by the delegate to acquire an already allocated cell, in lieu of allocating a new one.
+     */
     @Generated
     @Selector("dequeueReusableCellWithIdentifier:")
     public native UITableViewCell dequeueReusableCellWithIdentifier(String identifier);
 
+    /**
+     * newer dequeue method guarantees a cell is returned and resized properly, assuming identifier is registered
+     */
     @Generated
     @Selector("dequeueReusableCellWithIdentifier:forIndexPath:")
     public native UITableViewCell dequeueReusableCellWithIdentifierForIndexPath(String identifier,
             NSIndexPath indexPath);
 
+    /**
+     * like dequeueReusableCellWithIdentifier:, but for headers/footers
+     */
     @Generated
     @Selector("dequeueReusableHeaderFooterViewWithIdentifier:")
     public native UITableViewHeaderFooterView dequeueReusableHeaderFooterViewWithIdentifier(String identifier);
@@ -481,16 +517,25 @@ public class UITableView extends UIScrollView
     @Selector("endUpdates")
     public native void endUpdates();
 
+    /**
+     * default is UITableViewAutomaticDimension, set to 0 to disable
+     */
     @Generated
     @Selector("estimatedRowHeight")
     @NFloat
     public native double estimatedRowHeight();
 
+    /**
+     * default is UITableViewAutomaticDimension, set to 0 to disable
+     */
     @Generated
     @Selector("estimatedSectionFooterHeight")
     @NFloat
     public native double estimatedSectionFooterHeight();
 
+    /**
+     * default is UITableViewAutomaticDimension, set to 0 to disable
+     */
     @Generated
     @Selector("estimatedSectionHeaderHeight")
     @NFloat
@@ -504,22 +549,37 @@ public class UITableView extends UIScrollView
     @Selector("headerViewForSection:")
     public native UITableViewHeaderFooterView headerViewForSection(@NInt long section);
 
+    /**
+     * returns nil if cell is not visible
+     */
     @Generated
     @Selector("indexPathForCell:")
     public native NSIndexPath indexPathForCell(UITableViewCell cell);
 
+    /**
+     * returns nil if point is outside of any row in the table
+     */
     @Generated
     @Selector("indexPathForRowAtPoint:")
     public native NSIndexPath indexPathForRowAtPoint(@ByValue CGPoint point);
 
+    /**
+     * returns nil or index path representing section and row of selection.
+     */
     @Generated
     @Selector("indexPathForSelectedRow")
     public native NSIndexPath indexPathForSelectedRow();
 
+    /**
+     * returns nil if rect not valid
+     */
     @Generated
     @Selector("indexPathsForRowsInRect:")
     public native NSArray<? extends NSIndexPath> indexPathsForRowsInRect(@ByValue CGRect rect);
 
+    /**
+     * returns nil or a set of index paths representing the sections and rows of the selection.
+     */
     @Generated
     @Selector("indexPathsForSelectedRows")
     public native NSArray<? extends NSIndexPath> indexPathsForSelectedRows();
@@ -540,6 +600,9 @@ public class UITableView extends UIScrollView
     @Selector("initWithFrame:")
     public native UITableView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * must specify style at creation. -initWithFrame: calls this with UITableViewStylePlain
+     */
     @Generated
     @Selector("initWithFrame:style:")
     public native UITableView initWithFrameStyle(@ByValue CGRect frame, @NInt long style);
@@ -553,10 +616,16 @@ public class UITableView extends UIScrollView
     @Selector("insertSections:withRowAnimation:")
     public native void insertSectionsWithRowAnimation(NSIndexSet sections, @NInt long animation);
 
+    /**
+     * default is NO. setting is not animated.
+     */
     @Generated
     @Selector("isEditing")
     public native boolean isEditing();
 
+    /**
+     * default is NO. setting is not animated.
+     */
     @Generated
     @Selector("setEditing:")
     public native void setEditing(boolean value);
@@ -574,6 +643,9 @@ public class UITableView extends UIScrollView
     @NInt
     public native long numberOfRowsInSection(@NInt long section);
 
+    /**
+     * Info
+     */
     @Generated
     @Selector("numberOfSections")
     @NInt
@@ -599,6 +671,9 @@ public class UITableView extends UIScrollView
     @ByValue
     public native CGRect rectForRowAtIndexPath(NSIndexPath indexPath);
 
+    /**
+     * includes header, footer and all rows
+     */
     @Generated
     @Selector("rectForSection:")
     @ByValue
@@ -612,6 +687,11 @@ public class UITableView extends UIScrollView
     @Selector("registerClass:forHeaderFooterViewReuseIdentifier:")
     public native void registerClassForHeaderFooterViewReuseIdentifier(Class aClass, String identifier);
 
+    /**
+     * Beginning in iOS 6, clients can register a nib or class for each cell.
+     * If all reuse identifiers are registered, use the newer -dequeueReusableCellWithIdentifier:forIndexPath: to guarantee that a cell instance is returned.
+     * Instances returned from the new dequeue method will also be properly sized when they are returned.
+     */
     @Generated
     @Selector("registerNib:forCellReuseIdentifier:")
     public native void registerNibForCellReuseIdentifier(UINib nib, String identifier);
@@ -620,6 +700,9 @@ public class UITableView extends UIScrollView
     @Selector("registerNib:forHeaderFooterViewReuseIdentifier:")
     public native void registerNibForHeaderFooterViewReuseIdentifier(UINib nib, String identifier);
 
+    /**
+     * Reloads everything from scratch. Redisplays visible rows. Note that this will cause any existing drop placeholder rows to be removed.
+     */
     @Generated
     @Selector("reloadData")
     public native void reloadData();
@@ -629,6 +712,9 @@ public class UITableView extends UIScrollView
     public native void reloadRowsAtIndexPathsWithRowAnimation(NSArray<? extends NSIndexPath> indexPaths,
             @NInt long animation);
 
+    /**
+     * Reloads the section index bar.
+     */
     @Generated
     @Selector("reloadSectionIndexTitles")
     public native void reloadSectionIndexTitles();
@@ -637,10 +723,16 @@ public class UITableView extends UIScrollView
     @Selector("reloadSections:withRowAnimation:")
     public native void reloadSectionsWithRowAnimation(NSIndexSet sections, @NInt long animation);
 
+    /**
+     * defaults to NO. If YES, when focusing on a table view the last focused index path is focused automatically. If the table view has never been focused, then the preferred focused index path is used.
+     */
     @Generated
     @Selector("remembersLastFocusedIndexPath")
     public native boolean remembersLastFocusedIndexPath();
 
+    /**
+     * default is UITableViewAutomaticDimension
+     */
     @Generated
     @Selector("rowHeight")
     @NFloat
@@ -655,76 +747,127 @@ public class UITableView extends UIScrollView
     public native void scrollToRowAtIndexPathAtScrollPositionAnimated(NSIndexPath indexPath, @NInt long scrollPosition,
             boolean animated);
 
+    /**
+     * default is UITableViewAutomaticDimension
+     */
     @Generated
     @Selector("sectionFooterHeight")
     @NFloat
     public native double sectionFooterHeight();
 
+    /**
+     * default is UITableViewAutomaticDimension
+     */
     @Generated
     @Selector("sectionHeaderHeight")
     @NFloat
     public native double sectionHeaderHeight();
 
+    /**
+     * the background color of the section index while not being touched
+     */
     @Generated
     @Selector("sectionIndexBackgroundColor")
     public native UIColor sectionIndexBackgroundColor();
 
+    /**
+     * color used for text of the section index
+     */
     @Generated
     @Selector("sectionIndexColor")
     public native UIColor sectionIndexColor();
 
+    /**
+     * show special section index list on right when row count reaches this value. default is 0
+     */
     @Generated
     @Selector("sectionIndexMinimumDisplayRowCount")
     @NInt
     public native long sectionIndexMinimumDisplayRowCount();
 
+    /**
+     * the background color of the section index while it is being touched
+     */
     @Generated
     @Selector("sectionIndexTrackingBackgroundColor")
     public native UIColor sectionIndexTrackingBackgroundColor();
 
+    /**
+     * Selects and deselects rows. These methods will not call the delegate methods (-tableView:willSelectRowAtIndexPath: or tableView:didSelectRowAtIndexPath:), nor will it send out a notification.
+     */
     @Generated
     @Selector("selectRowAtIndexPath:animated:scrollPosition:")
     public native void selectRowAtIndexPathAnimatedScrollPosition(NSIndexPath indexPath, boolean animated,
             @NInt long scrollPosition);
 
+    /**
+     * default is the standard separator gray
+     */
     @Generated
     @Selector("separatorColor")
     public native UIColor separatorColor();
 
+    /**
+     * effect to apply to table separators
+     */
     @Generated
     @Selector("separatorEffect")
     public native UIVisualEffect separatorEffect();
 
+    /**
+     * allows customization of the frame of cell separators; see also the separatorInsetReference property. Use UITableViewAutomaticDimension for the automatic inset for that edge.
+     */
     @Generated
     @Selector("separatorInset")
     @ByValue
     public native UIEdgeInsets separatorInset();
 
+    /**
+     * default is UITableViewCellSeparatorStyleSingleLine
+     */
     @Generated
     @Selector("separatorStyle")
     @NInt
     public native long separatorStyle();
 
+    /**
+     * default is NO. Controls whether multiple rows can be selected simultaneously
+     */
     @Generated
     @Selector("setAllowsMultipleSelection:")
     public native void setAllowsMultipleSelection(boolean value);
 
+    /**
+     * default is NO. Controls whether multiple rows can be selected simultaneously in editing mode
+     */
     @Generated
     @Selector("setAllowsMultipleSelectionDuringEditing:")
     public native void setAllowsMultipleSelectionDuringEditing(boolean value);
 
+    /**
+     * default is YES. Controls whether rows can be selected when not in editing mode
+     */
     @Generated
     @Selector("setAllowsSelection:")
     public native void setAllowsSelection(boolean value);
 
+    /**
+     * default is NO. Controls whether rows can be selected when in editing mode
+     */
     @Generated
     @Selector("setAllowsSelectionDuringEditing:")
     public native void setAllowsSelectionDuringEditing(boolean value);
 
+    /**
+     * the background view will be automatically resized to track the size of the table view.  this will be placed as a subview of the table view behind all cells and headers/footers.  default may be non-nil for some devices.
+     */
     @Generated
     @Selector("setBackgroundView:")
     public native void setBackgroundView(UIView value);
 
+    /**
+     * if cell layout margins are derived from the width of the readableContentGuide. default is NO.
+     */
     @Generated
     @Selector("setCellLayoutMarginsFollowReadableWidth:")
     public native void setCellLayoutMarginsFollowReadableWidth(boolean value);
@@ -765,14 +908,23 @@ public class UITableView extends UIScrollView
     @Selector("setEditing:animated:")
     public native void setEditingAnimated(boolean editing, boolean animated);
 
+    /**
+     * default is UITableViewAutomaticDimension, set to 0 to disable
+     */
     @Generated
     @Selector("setEstimatedRowHeight:")
     public native void setEstimatedRowHeight(@NFloat double value);
 
+    /**
+     * default is UITableViewAutomaticDimension, set to 0 to disable
+     */
     @Generated
     @Selector("setEstimatedSectionFooterHeight:")
     public native void setEstimatedSectionFooterHeight(@NFloat double value);
 
+    /**
+     * default is UITableViewAutomaticDimension, set to 0 to disable
+     */
     @Generated
     @Selector("setEstimatedSectionHeaderHeight:")
     public native void setEstimatedSectionHeaderHeight(@NFloat double value);
@@ -794,58 +946,100 @@ public class UITableView extends UIScrollView
         }
     }
 
+    /**
+     * defaults to NO. If YES, when focusing on a table view the last focused index path is focused automatically. If the table view has never been focused, then the preferred focused index path is used.
+     */
     @Generated
     @Selector("setRemembersLastFocusedIndexPath:")
     public native void setRemembersLastFocusedIndexPath(boolean value);
 
+    /**
+     * default is UITableViewAutomaticDimension
+     */
     @Generated
     @Selector("setRowHeight:")
     public native void setRowHeight(@NFloat double value);
 
+    /**
+     * default is UITableViewAutomaticDimension
+     */
     @Generated
     @Selector("setSectionFooterHeight:")
     public native void setSectionFooterHeight(@NFloat double value);
 
+    /**
+     * default is UITableViewAutomaticDimension
+     */
     @Generated
     @Selector("setSectionHeaderHeight:")
     public native void setSectionHeaderHeight(@NFloat double value);
 
+    /**
+     * the background color of the section index while not being touched
+     */
     @Generated
     @Selector("setSectionIndexBackgroundColor:")
     public native void setSectionIndexBackgroundColor(UIColor value);
 
+    /**
+     * color used for text of the section index
+     */
     @Generated
     @Selector("setSectionIndexColor:")
     public native void setSectionIndexColor(UIColor value);
 
+    /**
+     * show special section index list on right when row count reaches this value. default is 0
+     */
     @Generated
     @Selector("setSectionIndexMinimumDisplayRowCount:")
     public native void setSectionIndexMinimumDisplayRowCount(@NInt long value);
 
+    /**
+     * the background color of the section index while it is being touched
+     */
     @Generated
     @Selector("setSectionIndexTrackingBackgroundColor:")
     public native void setSectionIndexTrackingBackgroundColor(UIColor value);
 
+    /**
+     * default is the standard separator gray
+     */
     @Generated
     @Selector("setSeparatorColor:")
     public native void setSeparatorColor(UIColor value);
 
+    /**
+     * effect to apply to table separators
+     */
     @Generated
     @Selector("setSeparatorEffect:")
     public native void setSeparatorEffect(UIVisualEffect value);
 
+    /**
+     * allows customization of the frame of cell separators; see also the separatorInsetReference property. Use UITableViewAutomaticDimension for the automatic inset for that edge.
+     */
     @Generated
     @Selector("setSeparatorInset:")
     public native void setSeparatorInset(@ByValue UIEdgeInsets value);
 
+    /**
+     * default is UITableViewCellSeparatorStyleSingleLine
+     */
     @Generated
     @Selector("setSeparatorStyle:")
     public native void setSeparatorStyle(@NInt long value);
 
+    /**
+     * accessory view below content. default is nil. not to be confused with section footer
+     */
     @Generated
     @Selector("setTableFooterView:")
     public native void setTableFooterView(UIView value);
 
+    /**
+     * accessory view for above row content. default is nil. not to be confused with section header
+     */
     @Generated
     @Selector("setTableHeaderView:")
     public native void setTableHeaderView(UIView value);
@@ -855,10 +1049,16 @@ public class UITableView extends UIScrollView
     @NInt
     public native long style();
 
+    /**
+     * accessory view below content. default is nil. not to be confused with section footer
+     */
     @Generated
     @Selector("tableFooterView")
     public native UIView tableFooterView();
 
+    /**
+     * accessory view for above row content. default is nil. not to be confused with section header
+     */
     @Generated
     @Selector("tableHeaderView")
     public native UIView tableHeaderView();
@@ -881,6 +1081,11 @@ public class UITableView extends UIScrollView
     @MappedReturn(ObjCObjectMapper.class)
     public native UITableViewDragDelegate dragDelegate();
 
+    /**
+     * To enable intra-app drags on iPhone, set this to YES.
+     * You can also force drags to be disabled for this table view by setting this to NO.
+     * By default, this will return YES on iPad and NO on iPhone.
+     */
     @Generated
     @Selector("dragInteractionEnabled")
     public native boolean dragInteractionEnabled();
@@ -890,18 +1095,30 @@ public class UITableView extends UIScrollView
     @MappedReturn(ObjCObjectMapper.class)
     public native UITableViewDropDelegate dropDelegate();
 
+    /**
+     * YES if a drag session is currently active. A drag session begins after rows are "lifted" from the table view.
+     */
     @Generated
     @Selector("hasActiveDrag")
     public native boolean hasActiveDrag();
 
+    /**
+     * YES if table view is currently tracking a drop session.
+     */
     @Generated
     @Selector("hasActiveDrop")
     public native boolean hasActiveDrop();
 
+    /**
+     * Returns YES if the table view is in the middle of reordering, is displaying a drop target gap, or has drop placeholders. If possible, avoid calling -reloadData while there are uncommitted updates to avoid interfering with user-initiated interactions that have not yet completed.
+     */
     @Generated
     @Selector("hasUncommittedUpdates")
     public native boolean hasUncommittedUpdates();
 
+    /**
+     * default value is YES
+     */
     @Generated
     @Selector("insetsContentViewsToSafeArea")
     public native boolean insetsContentViewsToSafeArea();
@@ -910,6 +1127,9 @@ public class UITableView extends UIScrollView
     @Selector("isSpringLoaded")
     public native boolean isSpringLoaded();
 
+    /**
+     * Allows multiple insert/delete/reload/move calls to be animated simultaneously. Nestable.
+     */
     @Generated
     @Selector("performBatchUpdates:completion:")
     public native void performBatchUpdatesCompletion(
@@ -944,6 +1164,9 @@ public class UITableView extends UIScrollView
     @NInt
     public native long presentationSectionIndexForDataSourceSectionIndex(@NInt long dataSourceSectionIndex);
 
+    /**
+     * Changes how custom separatorInset values are interpreted. The default value is UITableViewSeparatorInsetFromCellEdges
+     */
     @Generated
     @Selector("separatorInsetReference")
     @NInt
@@ -965,6 +1188,11 @@ public class UITableView extends UIScrollView
         }
     }
 
+    /**
+     * To enable intra-app drags on iPhone, set this to YES.
+     * You can also force drags to be disabled for this table view by setting this to NO.
+     * By default, this will return YES on iPad and NO on iPhone.
+     */
     @Generated
     @Selector("setDragInteractionEnabled:")
     public native void setDragInteractionEnabled(boolean value);
@@ -985,10 +1213,16 @@ public class UITableView extends UIScrollView
         }
     }
 
+    /**
+     * default value is YES
+     */
     @Generated
     @Selector("setInsetsContentViewsToSafeArea:")
     public native void setInsetsContentViewsToSafeArea(boolean value);
 
+    /**
+     * Changes how custom separatorInset values are interpreted. The default value is UITableViewSeparatorInsetFromCellEdges
+     */
     @Generated
     @Selector("setSeparatorInsetReference:")
     public native void setSeparatorInsetReference(@NInt long value);
@@ -1003,10 +1237,16 @@ public class UITableView extends UIScrollView
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    /**
+     * When enabled, the table view ensures that selection is automatically triggered when focus moves to a cell.
+     */
     @Generated
     @Selector("selectionFollowsFocus")
     public native boolean selectionFollowsFocus();
 
+    /**
+     * When enabled, the table view ensures that selection is automatically triggered when focus moves to a cell.
+     */
     @Generated
     @Selector("setSelectionFollowsFocus:")
     public native void setSelectionFollowsFocus(boolean value);

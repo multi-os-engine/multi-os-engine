@@ -12,11 +12,19 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @protocol ICCameraDeviceDownloadDelegate <NSObject>
+ * @abstract The object passed in as 'downloadDelegate' in the 'requestDownloadFile:options:downloadDelegate:didDownloadSelector:contextInfo:' message must conform to ICCameraDeviceDownloadDelegate protocol.
+ */
 @Generated
 @Library("ImageCaptureCore")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ICCameraDeviceDownloadDelegate")
 public interface ICCameraDeviceDownloadDelegate {
+    /**
+     * @method didDownloadFile:error:options:contextInfo:
+     * @abstract This message is sent to the delegate when the requested download operation is complete.
+     */
     @Generated
     @IsOptional
     @Selector("didDownloadFile:error:options:contextInfo:")
@@ -25,6 +33,10 @@ public interface ICCameraDeviceDownloadDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @method didReceiveDownloadProgressForFile:downloadedBytes:maxBytes:
+     * @abstract This message is sent to the delegate to provide status of the download operation.
+     */
     @Generated
     @IsOptional
     @Selector("didReceiveDownloadProgressForFile:downloadedBytes:maxBytes:")

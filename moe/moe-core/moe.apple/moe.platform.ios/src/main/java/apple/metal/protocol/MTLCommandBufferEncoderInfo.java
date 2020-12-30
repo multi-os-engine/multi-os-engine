@@ -9,20 +9,32 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @abstract Provides execution status information for a Metal command encoder.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLCommandBufferEncoderInfo")
 public interface MTLCommandBufferEncoderInfo {
+    /**
+     * @abstract The debug signposts inserted into the associated Metal command encoder.
+     */
     @Generated
     @Selector("debugSignposts")
     NSArray<String> debugSignposts();
 
+    /**
+     * @abstract The error state of the associated Metal command encoder.
+     */
     @Generated
     @Selector("errorState")
     @NInt
     long errorState();
 
+    /**
+     * @abstract The debug label given to the associated Metal command encoder at command buffer submission.
+     */
     @Generated
     @Selector("label")
     String label();

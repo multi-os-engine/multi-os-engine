@@ -53,6 +53,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Use PKAddPassButton to show an "Add to Apple Wallet" button. Two types are available for barcode or payment passes.
+ * Refer to the Apple Pay developer documentation for more information on how to use this class
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)

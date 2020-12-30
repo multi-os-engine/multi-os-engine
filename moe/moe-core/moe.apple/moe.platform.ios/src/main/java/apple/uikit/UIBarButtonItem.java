@@ -196,6 +196,9 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @NInt
     public static native long version_static();
 
+    /**
+     * default is NULL
+     */
     @Generated
     @Selector("action")
     public native SEL action();
@@ -275,10 +278,16 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @NFloat
     public native double backgroundVerticalPositionAdjustmentForBarMetrics(@NInt long barMetrics);
 
+    /**
+     * The group that the UIBarButtonItem is currently associated with, either as a member of the barButtonItems array or as that group's representativeItem.
+     */
     @Generated
     @Selector("buttonGroup")
     public native UIBarButtonItemGroup buttonGroup();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("customView")
     public native UIView customView();
@@ -304,6 +313,9 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Selector("initWithCustomView:")
     public native UIBarButtonItem initWithCustomView(UIView customView);
 
+    /**
+     * landscapeImagePhone will be used for the bar button image when the bar has Compact or Condensed bar metrics.
+     */
     @Generated
     @Selector("initWithImage:landscapeImagePhone:style:target:action:")
     public native UIBarButtonItem initWithImageLandscapeImagePhoneStyleTargetAction(UIImage image,
@@ -319,19 +331,32 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     public native UIBarButtonItem initWithTitleStyleTargetAction(String title, @NInt long style,
             @Mapped(ObjCObjectMapper.class) Object target, SEL action);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("possibleTitles")
     public native NSSet<String> possibleTitles();
 
+    /**
+     * default is NULL
+     */
     @Generated
     @Selector("setAction:")
     public native void setAction(SEL value);
 
+    /**
+     * The remaining appearance modifiers apply solely to UINavigationBar back buttons and are ignored by other buttons.
+     * backgroundImage must be a resizable image for good results.
+     */
     @Generated
     @Selector("setBackButtonBackgroundImage:forState:barMetrics:")
     public native void setBackButtonBackgroundImageForStateBarMetrics(UIImage backgroundImage, @NUInt long state,
             @NInt long barMetrics);
 
+    /**
+     * For adjusting the vertical centering of bordered bar buttons within the bar
+     */
     @Generated
     @Selector("setBackButtonBackgroundVerticalPositionAdjustment:forBarMetrics:")
     public native void setBackButtonBackgroundVerticalPositionAdjustmentForBarMetrics(@NFloat double adjustment,
@@ -342,37 +367,65 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     public native void setBackButtonTitlePositionAdjustmentForBarMetrics(@ByValue UIOffset adjustment,
             @NInt long barMetrics);
 
+    /**
+     * In general, you should specify a value for the normal state to be used by other states which don't have a custom value set.
+     * 
+     * Similarly, when a property is dependent on the bar metrics (on the iPhone in landscape orientation, bars have a different height from standard), be sure to specify a value for UIBarMetricsDefault.
+     * 
+     * This sets the background image for buttons of any style.
+     */
     @Generated
     @Selector("setBackgroundImage:forState:barMetrics:")
     public native void setBackgroundImageForStateBarMetrics(UIImage backgroundImage, @NUInt long state,
             @NInt long barMetrics);
 
+    /**
+     * This sets the background image for buttons with a specific style. When calling this on a UIBarButtonItem instance, the style argument must match the button's style; when calling on the UIAppearance proxy, any style may be passed.
+     */
     @Generated
     @Selector("setBackgroundImage:forState:style:barMetrics:")
     public native void setBackgroundImageForStateStyleBarMetrics(UIImage backgroundImage, @NUInt long state,
             @NInt long style, @NInt long barMetrics);
 
+    /**
+     * For adjusting the vertical centering of bordered bar buttons within the bar
+     */
     @Generated
     @Selector("setBackgroundVerticalPositionAdjustment:forBarMetrics:")
     public native void setBackgroundVerticalPositionAdjustmentForBarMetrics(@NFloat double adjustment,
             @NInt long barMetrics);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setCustomView:")
     public native void setCustomView(UIView value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setPossibleTitles:")
     public native void setPossibleTitles(NSSet<String> value);
 
+    /**
+     * default is UIBarButtonItemStylePlain
+     */
     @Generated
     @Selector("setStyle:")
     public native void setStyle(@NInt long value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setTarget:")
     public native void setTarget_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * default is nil
+     */
     @Generated
     public void setTarget(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = target();
@@ -389,19 +442,31 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
+    /**
+     * For adjusting the position of a title (if any) within a bordered bar button
+     */
     @Generated
     @Selector("setTitlePositionAdjustment:forBarMetrics:")
     public native void setTitlePositionAdjustmentForBarMetrics(@ByValue UIOffset adjustment, @NInt long barMetrics);
 
+    /**
+     * default is 0.0
+     */
     @Generated
     @Selector("setWidth:")
     public native void setWidth(@NFloat double value);
 
+    /**
+     * default is UIBarButtonItemStylePlain
+     */
     @Generated
     @Selector("style")
     @NInt
     public native long style();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("target")
     @MappedReturn(ObjCObjectMapper.class)
@@ -416,6 +481,9 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @ByValue
     public native UIOffset titlePositionAdjustmentForBarMetrics(@NInt long barMetrics);
 
+    /**
+     * default is 0.0
+     */
     @Generated
     @Selector("width")
     @NFloat
@@ -429,49 +497,82 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Selector("setSpringLoaded:")
     public native void setSpringLoaded(boolean value);
 
+    /**
+     * Construct a new fixed space item with the given width.
+     */
     @Generated
     @Selector("fixedSpaceItemOfWidth:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object fixedSpaceItemOfWidth(@NFloat double width);
 
+    /**
+     * Construct a new flexible space item.
+     */
     @Generated
     @Selector("flexibleSpaceItem")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object flexibleSpaceItem();
 
+    /**
+     * Creates a bar button item for the given systemItem. The constructed item will present the menu immediately when touched.
+     */
     @Generated
     @Selector("initWithBarButtonSystemItem:menu:")
     public native UIBarButtonItem initWithBarButtonSystemItemMenu(@NInt long systemItem, UIMenu menu);
 
+    /**
+     * Creates a bar button item for the given systemItem. The primaryAction is copied, and its title & image are ignored.
+     */
     @Generated
     @Selector("initWithBarButtonSystemItem:primaryAction:")
     public native UIBarButtonItem initWithBarButtonSystemItemPrimaryAction(@NInt long systemItem,
             UIAction primaryAction);
 
+    /**
+     * Creates a plain-style bar button item with the given item. The constructed item will present the menu immediately when touched.
+     */
     @Generated
     @Selector("initWithImage:menu:")
     public native UIBarButtonItem initWithImageMenu(UIImage image, UIMenu menu);
 
+    /**
+     * Creates a plain-style bar button item from the properties of primaryAction. primaryAction is copied.
+     */
     @Generated
     @Selector("initWithPrimaryAction:")
     public native UIBarButtonItem initWithPrimaryAction(UIAction primaryAction);
 
+    /**
+     * Creates a plain-style bar button item with the given title. The constructed item will present the menu immediately when touched.
+     */
     @Generated
     @Selector("initWithTitle:menu:")
     public native UIBarButtonItem initWithTitleMenu(String title, UIMenu menu);
 
+    /**
+     * When non-nil the menu is presented, the gesture used to trigger the menu is based on if the bar button item would normally trigger an action when tapped.
+     */
     @Generated
     @Selector("menu")
     public native UIMenu menu();
 
+    /**
+     * Set the primaryAction on this item, updating the title & image of the item if appropriate (primaryAction is non-nil, and this is not a system item). When primaryAction is non-nil, the target & action properties are ignored. If primaryAction is set to nil, the title & image properties are left unchanged.
+     */
     @Generated
     @Selector("primaryAction")
     public native UIAction primaryAction();
 
+    /**
+     * When non-nil the menu is presented, the gesture used to trigger the menu is based on if the bar button item would normally trigger an action when tapped.
+     */
     @Generated
     @Selector("setMenu:")
     public native void setMenu(UIMenu value);
 
+    /**
+     * Set the primaryAction on this item, updating the title & image of the item if appropriate (primaryAction is non-nil, and this is not a system item). When primaryAction is non-nil, the target & action properties are ignored. If primaryAction is set to nil, the title & image properties are left unchanged.
+     */
     @Generated
     @Selector("setPrimaryAction:")
     public native void setPrimaryAction(UIAction value);

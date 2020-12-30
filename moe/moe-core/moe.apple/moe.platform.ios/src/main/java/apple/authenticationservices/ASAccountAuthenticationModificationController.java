@@ -79,6 +79,9 @@ public class ASAccountAuthenticationModificationController extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * @abstract This delegate will be notified upon completion of the upgrade to report success or failure.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -124,10 +127,16 @@ public class ASAccountAuthenticationModificationController extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract Perform an upgrade request, one at a time. Any requests initiated with a request already in progress will fail immediately.
+     */
     @Generated
     @Selector("performRequest:")
     public native void performRequest(ASAccountAuthenticationModificationRequest request);
 
+    /**
+     * @abstract This will be used to provide a presentation context to display authorization UI.
+     */
     @Generated
     @Selector("presentationContextProvider")
     @MappedReturn(ObjCObjectMapper.class)
@@ -141,11 +150,17 @@ public class ASAccountAuthenticationModificationController extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract This delegate will be notified upon completion of the upgrade to report success or failure.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) ASAccountAuthenticationModificationControllerDelegate value);
 
+    /**
+     * @abstract This delegate will be notified upon completion of the upgrade to report success or failure.
+     */
     @Generated
     public void setDelegate(
             @Mapped(ObjCObjectMapper.class) ASAccountAuthenticationModificationControllerDelegate value) {
@@ -159,11 +174,17 @@ public class ASAccountAuthenticationModificationController extends NSObject {
         }
     }
 
+    /**
+     * @abstract This will be used to provide a presentation context to display authorization UI.
+     */
     @Generated
     @Selector("setPresentationContextProvider:")
     public native void setPresentationContextProvider_unsafe(
             @Mapped(ObjCObjectMapper.class) ASAccountAuthenticationModificationControllerPresentationContextProviding value);
 
+    /**
+     * @abstract This will be used to provide a presentation context to display authorization UI.
+     */
     @Generated
     public void setPresentationContextProvider(
             @Mapped(ObjCObjectMapper.class) ASAccountAuthenticationModificationControllerPresentationContextProviding value) {

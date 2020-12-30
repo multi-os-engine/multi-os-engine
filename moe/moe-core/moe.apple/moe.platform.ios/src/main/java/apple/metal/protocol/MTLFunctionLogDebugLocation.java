@@ -14,19 +14,31 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLFunctionLogDebugLocation")
 public interface MTLFunctionLogDebugLocation {
+    /**
+     * source location
+     */
     @Generated
     @Selector("URL")
     NSURL URL();
 
+    /**
+     * column in line
+     */
     @Generated
     @Selector("column")
     @NUInt
     long column();
 
+    /**
+     * faulting function
+     */
     @Generated
     @Selector("functionName")
     String functionName();
 
+    /**
+     * line number
+     */
     @Generated
     @Selector("line")
     @NUInt

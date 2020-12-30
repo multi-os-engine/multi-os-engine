@@ -3,6 +3,10 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * The value of the "high contrast" Accessibility setting is available via `UIAccessibilityDarkerSystemColorsEnabled()`,
+ * and is also expressed as the UIAccessibilityContrast trait.
+ */
 @Generated
 public final class UIAccessibilityContrast {
     @Generated

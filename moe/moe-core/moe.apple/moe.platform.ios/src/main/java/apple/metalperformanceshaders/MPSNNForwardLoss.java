@@ -26,6 +26,16 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNForwardLoss
+ * @dependency This depends on Metal.framework.
+ * @discussion The MPSNNForwardLoss filter specifies a version of the loss filter which separates the forward
+ *             computation from the gradient computation. In order to compute gradients for the loss filter
+ *             use @ref MPSNNLossGradient filter and in order to start the gradient computation of an arbitrary
+ *             image use the @ref MPSNNInitialGradient filter.
+ *             NOTE: This filter does not support non-default offset or cliprects and setting them to other
+ *             than default values will result in undefined results.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -105,6 +115,9 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     @Selector("initWithCoder:")
     public native MPSNNForwardLoss initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract <NSSecureCoding> support
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNNForwardLoss initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
@@ -113,6 +126,12 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     @Selector("initWithDevice:")
     public native MPSNNForwardLoss initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Initialize the loss forward pass filter with a loss descriptor.
+     * @param      device                   The device the filter will run on.
+     * @param      lossDescriptor           The loss descriptor.
+     * @return     A valid MPSNNForwardLoss object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:lossDescriptor:")
     public native MPSNNForwardLoss initWithDeviceLossDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
@@ -143,6 +162,9 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     @Selector("labelSmoothing")
     public native float labelSmoothing();
 
+    /**
+     * See MPSCNNLossDescriptor for information about the following properties.
+     */
     @Generated
     @Selector("lossType")
     public native int lossType();
@@ -186,6 +208,9 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Dynamically adjustable parameters
+     */
     @Generated
     @Selector("setWeight:")
     public native void setWeight(float value);
@@ -209,6 +234,9 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     @NInt
     public static native long version_static();
 
+    /**
+     * Dynamically adjustable parameters
+     */
     @Generated
     @Selector("weight")
     public native float weight();

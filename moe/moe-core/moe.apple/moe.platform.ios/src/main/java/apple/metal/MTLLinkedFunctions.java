@@ -57,6 +57,10 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property binaryFunctions
+     * @abstract The array of functions compiled to binary to be linked.
+     */
     @Generated
     @Selector("binaryFunctions")
     public native NSArray<?> binaryFunctions();
@@ -93,10 +97,18 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property functions
+     * @abstract The array of functions to be AIR linked.
+     */
     @Generated
     @Selector("functions")
     public native NSArray<?> functions();
 
+    /**
+     * @property groups
+     * @abstract Groups of functions, grouped to match callsites in the shader code.
+     */
     @Generated
     @Selector("groups")
     public native NSDictionary<String, ? extends NSArray<?>> groups();
@@ -131,6 +143,10 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @method linkedFunctions
+     * @abstract Create an autoreleased MTLLinkedFunctions object.
+     */
     @Generated
     @Selector("linkedFunctions")
     public static native MTLLinkedFunctions linkedFunctions();
@@ -149,14 +165,26 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property binaryFunctions
+     * @abstract The array of functions compiled to binary to be linked.
+     */
     @Generated
     @Selector("setBinaryFunctions:")
     public native void setBinaryFunctions(NSArray<?> value);
 
+    /**
+     * @property functions
+     * @abstract The array of functions to be AIR linked.
+     */
     @Generated
     @Selector("setFunctions:")
     public native void setFunctions(NSArray<?> value);
 
+    /**
+     * @property groups
+     * @abstract Groups of functions, grouped to match callsites in the shader code.
+     */
     @Generated
     @Selector("setGroups:")
     public native void setGroups(NSDictionary<String, ? extends NSArray<?>> value);

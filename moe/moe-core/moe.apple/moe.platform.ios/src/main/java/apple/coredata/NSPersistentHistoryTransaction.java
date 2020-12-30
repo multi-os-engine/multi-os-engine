@@ -142,6 +142,9 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Get a notification that can be consumed by a NSManagedObjectContext
+     */
     @Generated
     @Selector("objectIDNotification")
     public native NSNotification objectIDNotification();

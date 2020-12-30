@@ -29,6 +29,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * --------------------------------------------------------------------------------------------------------------- ICCameraDevice
+ * @class ICCameraDevice
+ * @abstract ICCameraDevice is a concrete subclass of ICDevice class. ICDeviceBrowser creates instances of this class.
+ */
 @Generated
 @Library("ImageCaptureCore")
 @Runtime(ObjCRuntime.class)
@@ -61,11 +66,19 @@ public class ICCameraDevice extends ICDevice {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @property batteryLevel
+     * @abstract ￼Indicates the battery charge level. Its value ranges from 0 to 100.
+     */
     @Generated
     @Selector("batteryLevel")
     @NUInt
     public native long batteryLevel();
 
+    /**
+     * @property batteryLevelAvailable
+     * @abstract Indicates if the device has reported battery charge level￼.
+     */
     @Generated
     @Selector("batteryLevelAvailable")
     public native boolean batteryLevelAvailable();
@@ -88,11 +101,19 @@ public class ICCameraDevice extends ICDevice {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property contentCatalogPercentCompleted
+     * @abstract ￼Indicates the percentage of content cataloging completed on the device. Its value ranges from 0 to 100.
+     */
     @Generated
     @Selector("contentCatalogPercentCompleted")
     @NUInt
     public native long contentCatalogPercentCompleted();
 
+    /**
+     * @property contents
+     * @abstract ￼Contents of the camera. The structure of the elements in this array will reflect the folder structure of the storage reported by the camera. Each item in this array will correspond to a storage on the camera.
+     */
     @Generated
     @Selector("contents")
     public native NSArray<? extends ICCameraItem> contents();
@@ -105,6 +126,11 @@ public class ICCameraDevice extends ICDevice {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @method filesOfType:
+     * @abstract This method returns an array of files on the camera of type fileType.
+     * @discussion The fileType string is one of the following Uniform Type Identifier strings: kUTTypeImage, kUTTypeMovie, kUTTypeAudio, or kUTTypeData.
+     */
     @Generated
     @Selector("filesOfType:")
     public native NSArray<String> filesOfType(String fileUTType);
@@ -114,6 +140,10 @@ public class ICCameraDevice extends ICDevice {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @property iCloudPhotosEnabled
+     * @abstract Set to YES if the device is made by Apple and is pass-coded locked and connected to an untrusted host.
+     */
     @Generated
     @Selector("iCloudPhotosEnabled")
     public native boolean iCloudPhotosEnabled();
@@ -135,14 +165,26 @@ public class ICCameraDevice extends ICDevice {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * @property accessRestrictedAppleDevice
+     * @abstract Set to YES if the device is made by Apple and is pass-coded locked and connected to an untrusted host.
+     */
     @Generated
     @Selector("isAccessRestrictedAppleDevice")
     public native boolean isAccessRestrictedAppleDevice();
 
+    /**
+     * @property ejectable
+     * @abstract ￼Indicates whether the device can be 'soft' removed or disconnected.
+     */
     @Generated
     @Selector("isEjectable")
     public native boolean isEjectable();
 
+    /**
+     * @property locked
+     * @abstract ￼Indicates whether the device is locked.  A locked device does not allow for deletion of any asset.
+     */
     @Generated
     @Selector("isLocked")
     public native boolean isLocked();
@@ -155,6 +197,10 @@ public class ICCameraDevice extends ICDevice {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @property mediaFiles
+     * @abstract ￼The property mediaFiles represents all image, movie and audio files on the camera. These files are returned as a single array without regard to the folder hierarchy used to store these files on the camera.
+     */
     @Generated
     @Selector("mediaFiles")
     public native NSArray<? extends ICCameraItem> mediaFiles();
@@ -165,6 +211,10 @@ public class ICCameraDevice extends ICDevice {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property ptpEventHandler
+     * @abstract As an alternative to setting up an object to handle PTP event packets, a handler can be set.  The handler will always be called in place of the delegate if non-nil.  If the handler is not present, the delegate will be called if present. It is guaranteed only one of the methods will be called if both are implemented.
+     */
     @Generated
     @Selector("ptpEventHandler")
     @ObjCBlock(name = "call_ptpEventHandler_ret")
@@ -177,10 +227,31 @@ public class ICCameraDevice extends ICDevice {
         void call_ptpEventHandler_ret(NSData arg0);
     }
 
+    /**
+     * @method requestDeleteFiles
+     * @abstract Deletes files.
+     */
     @Generated
     @Selector("requestDeleteFiles:")
     public native void requestDeleteFiles(NSArray<? extends ICCameraItem> files);
 
+    /**
+     * @method requestDeleteFiles:deleteFailed:completion
+     * @abstract Allows for deletion of an array of ICCameraItem objects, with the added ability to catch delete failures using the
+     * 'deleteFailed' block, and a completion block that will return the overall state of the request.
+     * 
+     * The deleteFailed block will return:
+     * - NSDictionary<ICDeleteError, ICCameraItem*>*
+     * 
+     * The completion block will return:
+     * — error:
+     * - nil if successful
+     * - NSError* with an code set to ICReturnDeleteFilesFailed if any file failed.
+     * 
+     * - result: NSDictionary<ICDeleteResult, NSArray<ICCameraItem*>*>* result
+     * - ICDeleteSuccessful: NSArray<ICCameraItem*>* success
+     * - ICDeleteFailed: NSArray<ICCameraItem*>* failed
+     */
     @Generated
     @Selector("requestDeleteFiles:deleteFailed:completion:")
     public native NSProgress requestDeleteFilesDeleteFailedCompletion(NSArray<? extends ICCameraItem> files,
@@ -202,6 +273,11 @@ public class ICCameraDevice extends ICDevice {
                 NSDictionary<String, ? extends NSArray<? extends ICCameraItem>> result, NSError error);
     }
 
+    /**
+     * @method requestDownloadFile:options:downloadDelegate:didDownloadSelector:contextInfo:
+     * @abstract Download a file from the camera. Please refer to the top of this header for information about the options.
+     * @discussion The downloadDelegate passed must not be nil. When this request is completed, the didDownloadSelector of the downloadDelegate object is called.The didDownloadSelector should have the same signature as: - (void)didDownloadFile:(ICCameraFile*)file error:(NSError*)error options:(NSDictionary*)options contextInfo:(void*)contextInfo. The content of error returned should be examined to determine if the request completed successfully.
+     */
     @Generated
     @Selector("requestDownloadFile:options:downloadDelegate:didDownloadSelector:contextInfo:")
     public native void requestDownloadFileOptionsDownloadDelegateDidDownloadSelectorContextInfo(ICCameraFile file,
@@ -209,6 +285,11 @@ public class ICCameraDevice extends ICDevice {
             @Mapped(ObjCObjectMapper.class) ICCameraDeviceDownloadDelegate downloadDelegate, SEL selector,
             VoidPtr contextInfo);
 
+    /**
+     * @method requestSendPTPCommand:outData:completion
+     * @abstract This method asynchronously sends a PTP command to a camera.
+     * @discussion The response, data, and any error message will be returned the block.
+     */
     @Generated
     @Selector("requestSendPTPCommand:outData:completion:")
     public native void requestSendPTPCommandOutDataCompletion(NSData ptpCommand, NSData ptpData,
@@ -229,6 +310,10 @@ public class ICCameraDevice extends ICDevice {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property ptpEventHandler
+     * @abstract As an alternative to setting up an object to handle PTP event packets, a handler can be set.  The handler will always be called in place of the delegate if non-nil.  If the handler is not present, the delegate will be called if present. It is guaranteed only one of the methods will be called if both are implemented.
+     */
     @Generated
     @Selector("setPtpEventHandler:")
     public native void setPtpEventHandler(@ObjCBlock(name = "call_setPtpEventHandler") Block_setPtpEventHandler value);
@@ -248,10 +333,19 @@ public class ICCameraDevice extends ICDevice {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * @property tetheredCaptureEnabled
+     * @abstract This property is set to YES when tethered capture is enabled on the device.
+     * @discussion Use 'requestEnableTethering' and 'requestDisableTethering' to enable or disable tethered capture on the device.
+     */
     @Generated
     @Selector("tetheredCaptureEnabled")
     public native boolean tetheredCaptureEnabled();
 
+    /**
+     * @property timeOffset
+     * @abstract Indicates the time offset, in seconds, between the camera's clock and the computer's clock￼. This value is positive if the camera's clock is ahead of the computer's clock. This property should be ignored if the camera's capabilities property does not contain ICCameraDeviceCanSyncClock.
+     */
     @Generated
     @Selector("timeOffset")
     public native double timeOffset();
@@ -261,11 +355,31 @@ public class ICCameraDevice extends ICDevice {
     @NInt
     public static native long version_static();
 
+    /**
+     * @property mediaPresentation
+     * @abstract The media presentation describes the visible assets from a device that may contain multiple formats of each media asset.  The asigngments are of the type ICMediaPresentation enumeration.  This property is available only if the capability ICCameraDeviceSupportsHEIF is  present.
+     * 
+     * @discussion A device supporting this capability can specify the
+     * following presentations:
+     * 
+     * ICMediaPresentationConverted - The default behavior for applications retrieving images from a device supporting HEIF is to show only converted JPG from HEIF originals, and only H264 encoded video assets from HEVC.
+     * ICMediaPresentationOriginal - This presentation will show only original images from a device supporting HEIF and HEVC.  Burned in renders are always exported in JPG, as are burned in effects for MOV clips.
+     */
     @Generated
     @Selector("mediaPresentation")
     @NUInt
     public native long mediaPresentation();
 
+    /**
+     * @property mediaPresentation
+     * @abstract The media presentation describes the visible assets from a device that may contain multiple formats of each media asset.  The asigngments are of the type ICMediaPresentation enumeration.  This property is available only if the capability ICCameraDeviceSupportsHEIF is  present.
+     * 
+     * @discussion A device supporting this capability can specify the
+     * following presentations:
+     * 
+     * ICMediaPresentationConverted - The default behavior for applications retrieving images from a device supporting HEIF is to show only converted JPG from HEIF originals, and only H264 encoded video assets from HEVC.
+     * ICMediaPresentationOriginal - This presentation will show only original images from a device supporting HEIF and HEVC.  Burned in renders are always exported in JPG, as are burned in effects for MOV clips.
+     */
     @Generated
     @Selector("setMediaPresentation:")
     public native void setMediaPresentation(@NUInt long value);

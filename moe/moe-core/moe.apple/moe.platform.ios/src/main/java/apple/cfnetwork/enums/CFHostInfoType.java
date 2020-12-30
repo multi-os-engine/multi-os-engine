@@ -18,10 +18,27 @@ package apple.cfnetwork.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ *  CFHostInfoType
+ * 
+ *  Discussion:
+ * Host information types to be resolved.
+ */
 @Generated
 public final class CFHostInfoType {
+    /**
+     * Results value is a CFArray of CFData's (each being a struct
+     * sockaddr)
+     */
     @Generated public static final int Addresses = 0x00000000;
+    /**
+     * Results value is a CFArray of CFString's
+     */
     @Generated public static final int Names = 0x00000001;
+    /**
+     * Results value is a CFData wrapping SCNetworkConnectionFlags
+     * (defined in SystemConfiguration/SCNetwork.h)
+     */
     @Generated public static final int Reachability = 0x00000002;
 
     @Generated

@@ -23,6 +23,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Representation of a ray and its target which is used for raycasting.
+ * @discussion Represents a 3D ray and its target which is used to perform raycasting.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -133,11 +137,17 @@ public class ARRaycastQuery extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Type of target where the ray should terminate.
+     */
     @Generated
     @Selector("target")
     @NInt
     public native long target();
 
+    /**
+     * The alignment of the target that should be considered for raycasting.
+     */
     @Generated
     @Selector("targetAlignment")
     @NInt

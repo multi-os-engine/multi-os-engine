@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class		AVDateRangeMetadataGroup
+ * 
+ * @abstract	AVDateRangeMetadataGroup is used to represent a collection of metadata items that are valid for use within a specific range of dates.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -159,6 +164,9 @@ public class AVDateRangeMetadataGroup extends AVMetadataGroup implements NSCopyi
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * indicates the end date of the metadata
+     */
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -167,11 +175,25 @@ public class AVDateRangeMetadataGroup extends AVMetadataGroup implements NSCopyi
     @Selector("init")
     public native AVDateRangeMetadataGroup init();
 
+    /**
+     * @method		initWithItems:startDate:endDate:
+     * @abstract	Initializes an instance of AVDateRangeMetadataGroup with a collection of metadata items.
+     * @param		items
+     * 			An NSArray of AVMetadataItems.
+     * @param		startDate
+     * 			The start date of the collection of AVMetadataItems.
+     * @param		endDate
+     * 			The end date of the collection of AVMetadataItems. If the receiver is intended to represent information about an instantaneous event, the value of endDate should be equal to the value of startDate. A value of nil for endDate indicates that the endDate is indefinite.
+     * @result		An instance of AVDateRangeMetadataGroup.
+     */
     @Generated
     @Selector("initWithItems:startDate:endDate:")
     public native AVDateRangeMetadataGroup initWithItemsStartDateEndDate(NSArray<? extends AVMetadataItem> items,
             NSDate startDate, NSDate endDate);
 
+    /**
+     * an array of AVMetadataItems
+     */
     @Generated
     @Selector("items")
     public native NSArray<? extends AVMetadataItem> items();
@@ -182,6 +204,9 @@ public class AVDateRangeMetadataGroup extends AVMetadataGroup implements NSCopyi
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
+    /**
+     * indicates the start date of the metadata
+     */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

@@ -39,6 +39,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface
+ * @discussion JSManagedValue represents a "conditionally retained" JSValue. 
+ *  "Conditionally retained" means that as long as the JSManagedValue's 
+ *  JSValue is reachable through the JavaScript object graph,
+ *  or through the Objective-C object graph reported to the JSVirtualMachine using
+ *  addManagedReference:withOwner:, the corresponding JSValue will 
+ *  be retained. However, if neither graph reaches the JSManagedValue, the 
+ *  corresponding JSValue will be released and set to nil.
+ * 
+ * The primary use for a JSManagedValue is to store a JSValue in an Objective-C
+ * or Swift object that is exported to JavaScript. It is incorrect to store a JSValue
+ * in an object that is exported to JavaScript, since doing so creates a retain cycle.
+ */
 @Generated
 @Library("JavaScriptCore")
 @Runtime(ObjCRuntime.class)
@@ -123,6 +137,11 @@ public class JSManagedValue extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @method
+     * @abstract Create a JSManagedValue from a JSValue.
+     * @result The new JSManagedValue.
+     */
     @Generated
     @Selector("managedValueWithValue:")
     public static native JSManagedValue managedValueWithValue(JSValue value);
@@ -163,10 +182,21 @@ public class JSManagedValue extends NSObject {
     @Selector("init")
     public native JSManagedValue init();
 
+    /**
+     * @method
+     * @abstract Create a JSManagedValue.
+     * @result The new JSManagedValue.
+     */
     @Generated
     @Selector("initWithValue:")
     public native JSManagedValue initWithValue(JSValue value);
 
+    /**
+     * @property
+     * @abstract Get the JSValue from the JSManagedValue.
+     * @result The corresponding JSValue for this JSManagedValue or 
+     *  nil if the JSValue has been collected.
+     */
     @Generated
     @Selector("value")
     public native JSValue value();

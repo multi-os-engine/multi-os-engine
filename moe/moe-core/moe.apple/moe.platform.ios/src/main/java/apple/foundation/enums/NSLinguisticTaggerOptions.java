@@ -19,12 +19,30 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Options arguments of type NSLinguisticTaggerOptions may include the following flags, which allow clients interested only in certain general types of tokens to specify that tokens of other types should be omitted from the returned results.
+ */
 @Generated
 public final class NSLinguisticTaggerOptions {
+    /**
+     * Omit tokens of type NSLinguisticTagWord.
+     */
     @Generated @NUInt public static final long OmitWords = 0x0000000000000001L;
+    /**
+     * Omit tokens of type NSLinguisticTagPunctuation.
+     */
     @Generated @NUInt public static final long OmitPunctuation = 0x0000000000000002L;
+    /**
+     * Omit tokens of type NSLinguisticTagWhitespace.
+     */
     @Generated @NUInt public static final long OmitWhitespace = 0x0000000000000004L;
+    /**
+     * Omit tokens of type NSLinguisticTagOther.
+     */
     @Generated @NUInt public static final long OmitOther = 0x0000000000000008L;
+    /**
+     * Join tokens of tag scheme NSLinguisticTagSchemeNameType.
+     */
     @Generated @NUInt public static final long JoinNames = 0x0000000000000010L;
 
     @Generated

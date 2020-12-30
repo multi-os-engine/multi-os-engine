@@ -67,11 +67,17 @@ public final class CAFOverviewChunk extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setMNumFramesPerOVWSample(int value);
 
+    /**
+     * data is of variable size, calculated from the sizeo of the chunk.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @ByValue
     public native CAFOverviewSample mData();
 
+    /**
+     * data is of variable size, calculated from the sizeo of the chunk.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setMData(@ByValue CAFOverviewSample value);

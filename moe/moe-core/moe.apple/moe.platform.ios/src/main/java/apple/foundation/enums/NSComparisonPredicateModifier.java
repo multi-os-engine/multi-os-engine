@@ -19,10 +19,22 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Describes how the operator is modified: can be direct, ALL, or ANY
+ */
 @Generated
 public final class NSComparisonPredicateModifier {
+    /**
+     * Do a direct comparison
+     */
     @Generated @NUInt public static final long DirectPredicateModifier = 0x0000000000000000L;
+    /**
+     * ALL toMany.x = y
+     */
     @Generated @NUInt public static final long AllPredicateModifier = 0x0000000000000001L;
+    /**
+     * ANY toMany.x = y
+     */
     @Generated @NUInt public static final long AnyPredicateModifier = 0x0000000000000002L;
 
     @Generated

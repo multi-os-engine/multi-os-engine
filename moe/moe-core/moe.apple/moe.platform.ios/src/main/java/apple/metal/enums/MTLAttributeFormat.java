@@ -19,6 +19,9 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * MTLAttributeFormat
+ */
 @Generated
 public final class MTLAttributeFormat {
     @Generated @NUInt public static final long Invalid = 0x0000000000000000L;

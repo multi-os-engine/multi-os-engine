@@ -25,6 +25,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class CBL2CAPChannel
+ * 
+ * @discussion A CBL2CAPChannel represents a live L2CAP connection to a remote device
+ */
 @Generated
 @Library("CoreBluetooth")
 @Runtime(ObjCRuntime.class)
@@ -39,6 +44,11 @@ public class CBL2CAPChannel extends NSObject {
         super(peer);
     }
 
+    /**
+     * @property PSM
+     * 
+     * @discussion The PSM (Protocol/Service Multiplexer) of the channel
+     */
     @Generated
     @Selector("PSM")
     public native char PSM();
@@ -96,6 +106,11 @@ public class CBL2CAPChannel extends NSObject {
     @Selector("init")
     public native CBL2CAPChannel init();
 
+    /**
+     * @property inputStream
+     * 
+     * @discussion An NSStream used for reading data from the remote peer
+     */
     @Generated
     @Selector("inputStream")
     public native NSInputStream inputStream();
@@ -127,10 +142,20 @@ public class CBL2CAPChannel extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property outputStream
+     * 
+     * @discussion An NSStream used for writing data to the peer
+     */
     @Generated
     @Selector("outputStream")
     public native NSOutputStream outputStream();
 
+    /**
+     * @property peer
+     * 
+     * @discussion The peer connected to the channel
+     */
     @Generated
     @Selector("peer")
     public native CBPeer peer();

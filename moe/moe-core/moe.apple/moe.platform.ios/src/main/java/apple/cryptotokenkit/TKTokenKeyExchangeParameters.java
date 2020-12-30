@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract TKTokenKeyExchangeParameters Encapsulates parameters needed for performing specific Key Exchange operation types.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -118,6 +121,9 @@ public class TKTokenKeyExchangeParameters extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @discussion Requested output size of key exchange result.  Should be ignored if output size is not configurable for specified key exchange algorithm.
+     */
     @Generated
     @Selector("requestedSize")
     @NInt
@@ -135,6 +141,9 @@ public class TKTokenKeyExchangeParameters extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @discussion Additional shared information input, typically used for key derivation (KDF) step of key exchange algorithm.  Should be ignored if shared info is not used for specified key exchange algorithm.
+     */
     @Generated
     @Selector("sharedInfo")
     public native NSData sharedInfo();

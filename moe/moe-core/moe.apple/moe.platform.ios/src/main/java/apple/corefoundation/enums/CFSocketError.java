@@ -19,6 +19,9 @@ package apple.corefoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Values for CFSocketError
+ */
 @Generated
 public final class CFSocketError {
     @Generated @NInt public static final long Success = 0x0000000000000000L;

@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSImageReduceColumnSum
+ * @discussion The MPSImageReduceColumnSum performs a reduction operation returning the sum for each column of an image
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -101,6 +105,11 @@ public class MPSImageReduceColumnSum extends MPSImageReduceUnary {
     public native MPSImageReduceColumnSum initWithCoderDevice(NSCoder aDecoder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Specifies information to apply the reduction operation on an image.
+     * @param    device            The device the filter will run on
+     * @return     A valid MPSImageReduce object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSImageReduceColumnSum initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);

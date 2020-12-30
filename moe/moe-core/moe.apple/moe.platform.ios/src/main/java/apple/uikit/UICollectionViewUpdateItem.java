@@ -151,10 +151,16 @@ public class UICollectionViewUpdateItem extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * nil for UICollectionUpdateActionDelete
+     */
     @Generated
     @Selector("indexPathAfterUpdate")
     public native NSIndexPath indexPathAfterUpdate();
 
+    /**
+     * nil for UICollectionUpdateActionInsert
+     */
     @Generated
     @Selector("indexPathBeforeUpdate")
     public native NSIndexPath indexPathBeforeUpdate();

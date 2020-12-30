@@ -19,6 +19,9 @@ package apple.coredata.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * types explicitly distinguish between bit sizes to ensure data store independence of the underlying operating system
+ */
 @Generated
 public final class NSAttributeType {
     @Generated
@@ -38,6 +41,9 @@ public final class NSAttributeType {
     @Generated @NUInt public static final long NSBinaryDataAttributeType = 0x00000000000003E8L;
     @Generated @NUInt public static final long NSUUIDAttributeType = 0x000000000000044CL;
     @Generated @NUInt public static final long NSURIAttributeType = 0x00000000000004B0L;
+    /**
+     * If your attribute is of NSTransformableAttributeType, the attributeValueClassName must be set or attribute value class must implement NSCopying.
+     */
     @Generated @NUInt public static final long NSTransformableAttributeType = 0x0000000000000708L;
     @Generated @NUInt public static final long NSObjectIDAttributeType = 0x00000000000007D0L;
 }

@@ -19,6 +19,25 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HKErrorCode
+ * 
+ * @constant  HKNoError                           No error.
+ * @constant  HKErrorHealthDataUnavailable        HealthKit is not available on this device.
+ * @constant  HKErrorHealthDataRestricted         HealthKit is restricted on this device.
+ * @constant  HKErrorInvalidArgument              An invalid argument was provided to the API.
+ * @constant  HKErrorAuthorizationDenied          The application is not authorized to perform the requested operation.
+ * @constant  HKErrorAuthorizationNotDetermined   The user has not yet chosen whether the application is authorized to
+ *                                                perform the requested operation.
+ * @constant  HKErrorDatabaseInaccessible         Protected health data is inaccessible because the device is locked.
+ * @constant  HKErrorUserCanceled                 The user canceled the operation.
+ * @constant  HKErrorAnotherWorkoutSessionStarted Another workout session was started by this or another application.
+ * @constant  HKErrorUserExitedWorkoutSession     User exited the application while a workout session was running.
+ * @constant  HKErrorRequiredAuthorizationDenied  The user has not granted the application authorization to access
+ *                                                required data types.
+ * @constant  HKErrorNoData                       No data is available for the requested query and predicate, and so the
+ *                                                query's result could not be meaningfully computed.
+ */
 @Generated
 public final class HKErrorCode {
     @Generated @NInt public static final long NoError = 0x0000000000000000L;

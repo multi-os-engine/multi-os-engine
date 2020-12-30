@@ -166,6 +166,14 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Selector("init")
     public native PKAddPaymentPassRequestConfiguration init();
 
+    /**
+     * Schemes defined in PKConstants.h.
+     * Supported Schemes:
+     *  PKEncryptionSchemeECC_V2:
+     *      ephemeralPublicKey
+     *  PKEncryptionSchemeRSA_V2:
+     *      wrappedKey
+     */
     @Generated
     @Selector("initWithEncryptionScheme:")
     public native PKAddPaymentPassRequestConfiguration initWithEncryptionScheme(String encryptionScheme);
@@ -174,10 +182,17 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Selector("localizedDescription")
     public native String localizedDescription();
 
+    /**
+     * Filters introduction page to a specific network - does not function as a restriction.
+     */
     @Generated
     @Selector("paymentNetwork")
     public native String paymentNetwork();
 
+    /**
+     * Pass Library Filters:
+     * If the filtered set is empty, then all filter will be ignored.
+     */
     @Generated
     @Selector("primaryAccountIdentifier")
     public native String primaryAccountIdentifier();
@@ -202,10 +217,17 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Selector("setLocalizedDescription:")
     public native void setLocalizedDescription(String value);
 
+    /**
+     * Filters introduction page to a specific network - does not function as a restriction.
+     */
     @Generated
     @Selector("setPaymentNetwork:")
     public native void setPaymentNetwork(String value);
 
+    /**
+     * Pass Library Filters:
+     * If the filtered set is empty, then all filter will be ignored.
+     */
     @Generated
     @Selector("setPrimaryAccountIdentifier:")
     public native void setPrimaryAccountIdentifier(String value);
@@ -218,18 +240,32 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Selector("setRequiresFelicaSecureElement:")
     public native void setRequiresFelicaSecureElement(boolean value);
 
+    /**
+     * Filters introduction page to a specific set of images - does not function as a restriction.
+     */
     @Generated
     @Selector("productIdentifiers")
     public native NSSet<String> productIdentifiers();
 
+    /**
+     * Filters introduction page to a specific set of images - does not function as a restriction.
+     */
     @Generated
     @Selector("setProductIdentifiers:")
     public native void setProductIdentifiers(NSSet<String> value);
 
+    /**
+     * Display Properties:
+     * At least one of cardholder name or primary account suffix must be supplied.
+     */
     @Generated
     @Selector("setStyle:")
     public native void setStyle(@NInt long value);
 
+    /**
+     * Display Properties:
+     * At least one of cardholder name or primary account suffix must be supplied.
+     */
     @Generated
     @Selector("style")
     @NInt

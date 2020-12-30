@@ -127,6 +127,9 @@ public class NSUnitIlluminance extends NSDimension implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Base unit - lux
+     */
     @Generated
     @Selector("lux")
     public static native NSUnitIlluminance lux();

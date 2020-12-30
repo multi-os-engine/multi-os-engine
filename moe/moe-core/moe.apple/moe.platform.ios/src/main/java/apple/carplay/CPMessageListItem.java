@@ -24,6 +24,23 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @c CPMessageListItem is a special variant of a list item for use in a @c CPListTemplate.
+ * Unlike @c CPListItem, your application will not receive a callback when the user
+ * selects a @c CPMessageListItem in your list template. Instead, Siri will be invoked
+ * using the parameters you specify in your message item and the user will continue a
+ * message compose, read, or reply flow through Siri.
+ * 
+ * There are two modes of operation for @c CPMessageListItem:
+ * 
+ *   To represent an existing conversation with one or more recipients, use the @c CPMessageListItem
+ *   initializer that accepts a conversation identifier. This identifier is not directly displayed
+ *   to the user; rather, it should be a value meaningful to your app to identify the conversation.
+ * 
+ *   To represent a contact or person entity, use the @c CPMessageListItem initializer that
+ *   accepts a full name and phone/email. When the user selects this item, Siri will perform
+ *   a message compose flow.
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -99,12 +116,43 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     @Selector("init")
     public native CPMessageListItem init();
 
+    /**
+     * Initialize a @c CPMessageListItem for use in a @c CPListTemplate.
+     * 
+     * @param conversationIdentifier A value meaningful to your app to identify this conversation.
+     * This identifier is not directly displayed to the user; rather, when the user selects this list item,
+     * SiriKit will pass this identifier back to your app for your own use.
+     * @param text This is the main text label displayed to the user as well as spoken by
+     * Siri when the user selects this list item.
+     * @param leadingConfiguration A set of configuration options for the leading side of the list item.
+     * @param trailingConfiguration A set of configuration options for the trailing side of the list item.
+     * @param detailText Any additional text displayed underneath the @c conversationName.
+     * @param trailingText Any additional text displayed along the trailing side of the cell.
+     * 
+     * @note The maximum image size is CPMaximumMessageItemImageSize. If you supply a larger image,
+     * it will be scaled down to this size.
+     */
     @Generated
     @Selector("initWithConversationIdentifier:text:leadingConfiguration:trailingConfiguration:detailText:trailingText:")
     public native CPMessageListItem initWithConversationIdentifierTextLeadingConfigurationTrailingConfigurationDetailTextTrailingText(
             String conversationIdentifier, String text, CPMessageListItemLeadingConfiguration leadingConfiguration,
             CPMessageListItemTrailingConfiguration trailingConfiguration, String detailText, String trailingText);
 
+    /**
+     * Initialize a @c CPMessageListItem for use in a @c CPListTemplate.
+     * 
+     * @param fullName The full name of the contact entity represented by this list item. This text
+     * will be displayed as the main text label in the cell and will be spoken by Siri.
+     * @param phoneOrEmailAddress A phone or email address for this contact entity that can be used
+     * to compose a message.
+     * @param leadingConfiguration A set of configuration options for the leading side of the list item.
+     * @param trailingConfiguration A set of configuration options for the trailing side of the list item.
+     * @param detailText Any additional text displayed underneath the @c conversationName.
+     * @param trailingText Any additional text displayed along the trailing side of the cell.
+     * 
+     * @note The maximum image size is CPMaximumMessageItemImageSize. If you supply a larger image,
+     * it will be scaled down to this size.
+     */
     @Generated
     @Selector("initWithFullName:phoneOrEmailAddress:leadingConfiguration:trailingConfiguration:detailText:trailingText:")
     public native CPMessageListItem initWithFullNamePhoneOrEmailAddressLeadingConfigurationTrailingConfigurationDetailTextTrailingText(
@@ -170,6 +218,10 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     @Selector("setPhoneOrEmailAddress:")
     public native void setPhoneOrEmailAddress(String value);
 
+    /**
+     * To update the @c CPMessageListItem, assign to any of these properties. If displayed in a
+     * list template, the list item will be automatically reloaded.
+     */
     @Generated
     @Selector("setText:")
     public native void setText(String value);

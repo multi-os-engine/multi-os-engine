@@ -33,6 +33,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A concrete convenience class conforming to MLFeatureProvider.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -98,6 +101,9 @@ public class MLDictionaryFeatureProvider extends NSObject
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Dictionary holding the feature values
+     */
     @Generated
     @Selector("dictionary")
     public native NSDictionary<String, ? extends MLFeatureValue> dictionary();
@@ -119,6 +125,12 @@ public class MLDictionaryFeatureProvider extends NSObject
     @Selector("init")
     public native MLDictionaryFeatureProvider init();
 
+    /**
+     * Create from a generic dictionary by converting all values to MLFeatureValues
+     * or from a dictionary with values already stored as MLFeatureValues.
+     * 
+     * An error results if the values are not or cannot be represented as MLFeatureValues.
+     */
     @Generated
     @Selector("initWithDictionary:error:")
     public native MLDictionaryFeatureProvider initWithDictionaryError(NSDictionary<String, ?> dictionary,
@@ -151,6 +163,9 @@ public class MLDictionaryFeatureProvider extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Get the value for specified feature
+     */
     @Generated
     @Selector("objectForKeyedSubscript:")
     public native MLFeatureValue objectForKeyedSubscript(String featureName);

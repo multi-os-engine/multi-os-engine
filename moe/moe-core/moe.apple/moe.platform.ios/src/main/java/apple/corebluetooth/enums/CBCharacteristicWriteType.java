@@ -19,6 +19,11 @@ package apple.corebluetooth.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum CBCharacteristicWriteType
+ * 
+ * @discussion Specifies which type of write is to be performed on a CBCharacteristic.
+ */
 @Generated
 public final class CBCharacteristicWriteType {
     @Generated @NInt public static final long WithResponse = 0x0000000000000000L;

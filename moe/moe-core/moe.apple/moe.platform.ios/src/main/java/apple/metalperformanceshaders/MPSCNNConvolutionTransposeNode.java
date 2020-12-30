@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @abstract   A MPSNNFilterNode representing a MPSCNNConvolutionTranspose kernel
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -149,12 +152,38 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract   Init a node representing a MPSCNNConvolutionTransposeNode kernel
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      convolutionGradientState        When the convolution transpose is used to 'undo' an earlier convolution
+     *                                     in the graph, it is generally desired that the output image be the same
+     *                                     size as the input image to the earlier convolution. You may optionally
+     *                                     specify this size identity by passing in the MPSCNNConvolutionGradientState node
+     *                                     here.
+     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                                     protocol. This object is provided by you to encapsulate storage for
+     *                                     convolution weights and biases.
+     * @return     A new MPSNNFilter node for a MPSCNNConvolutionTransposeNode kernel.
+     */
     @Generated
     @Selector("initWithSource:convolutionGradientState:weights:")
     public native MPSCNNConvolutionTransposeNode initWithSourceConvolutionGradientStateWeights(
             MPSNNImageNode sourceNode, MPSCNNConvolutionGradientStateNode convolutionGradientState,
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
+    /**
+     * @abstract   Init an autoreleased not representing a MPSCNNConvolutionTransposeNode kernel
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      convolutionGradientState        When the convolution transpose is used to 'undo' an earlier convolution
+     *                                     in the graph, it is generally desired that the output image be the same
+     *                                     size as the input image to the earlier convolution. You may optionally
+     *                                     specify this size identity by passing in the MPSNNConvolutionGradientStateNode
+     *                                     created by the convolution node here.
+     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                                     protocol. This object is provided by you to encapsulate storage for
+     *                                     convolution weights and biases.
+     * @return     A new MPSNNFilter node for a MPSCNNConvolutionTransposeNode kernel.
+     */
     @Generated
     @Selector("nodeWithSource:convolutionGradientState:weights:")
     public static native MPSCNNConvolutionTransposeNode nodeWithSourceConvolutionGradientStateWeights(

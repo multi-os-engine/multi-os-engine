@@ -24,13 +24,25 @@ public final class CarPlay {
     private CarPlay() {
     }
 
+    /**
+     * Your @c CPNavigationAlert may specify a duration for which the alert will be visible onscreen,
+     * or 0 for an alert that is visible indefinitely.
+     * 
+     * For non-indefinite alerts, this is the minimum duration the alert will be visible.
+     */
     @Generated public static final double CPNavigationAlertMinimumDuration = 5.0;
 
+    /**
+     * A session role which defines a typical interactive application on the car display
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CPTemplateApplicationSceneSessionRoleApplication();
 
+    /**
+     * A session role which defines a typical interactive application in the CarPlay dashboard
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -46,11 +58,18 @@ public final class CarPlay {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CarPlayErrorDomain();
 
+    /**
+     * The maximum number of images allowed in a @c CPListImageRowItem.
+     * The system may display fewer than this number of images, depending on the available width of the car screen.
+     */
     @Generated
     @CVariable()
     @NUInt
     public static native long CPMaximumNumberOfGridImages();
 
+    /**
+     * Maximum size of an image or accessory image in a @c CPMessageListItem.
+     */
     @Generated
     @CVariable()
     @ByValue

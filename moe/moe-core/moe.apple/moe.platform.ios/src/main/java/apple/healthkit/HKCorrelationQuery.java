@@ -46,6 +46,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKCorrelationQuery
+ * @abstract      A query to find HKCorrelations
+ * @discussion    Correlations are HKSamples that contain a set of correlated samples. HKCorrelationQuery
+ *                accepts a predicate to filter HKCorrelations and a dictionary of predicates to filter the
+ *                correlated samples.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -265,12 +272,30 @@ public class HKCorrelationQuery extends HKQuery {
     @Selector("init")
     public native HKCorrelationQuery init();
 
+    /**
+     * @method    initWithTypes:predicate:samplePredicate:completion:
+     * @abstract  The designated initializer for HKCorrelationQuery.
+     * 
+     * @param     correlationType     The type of correlation that is being queried for
+     * 
+     * @param     predicate           The predicate for scoping which HKCorrelations are returned
+     * 
+     * @param     samplePredicates    A dictionary mapping HKSampleTypes to NSPredicates. If no predicate for a particular type
+     *                                is provided, it is assumed to be a nil predicate and objects of that type will not be
+     *                                filtered.
+     */
     @Generated
     @Selector("initWithType:predicate:samplePredicates:completion:")
     public native HKCorrelationQuery initWithTypePredicateSamplePredicatesCompletion(HKCorrelationType correlationType,
             NSPredicate predicate, NSDictionary<? extends HKSampleType, ? extends NSPredicate> samplePredicates,
             @ObjCBlock(name = "call_initWithTypePredicateSamplePredicatesCompletion") Block_initWithTypePredicateSamplePredicatesCompletion completion);
 
+    /**
+     * @property      samplePredicates
+     * @abstract      A dictionary of predicates for the HKCorrelation's objects
+     * @discussion    samplePredicates maps HKSampleTypes to NSPredicates. The predicate value will apply
+     *                to objects of the key type. 
+     */
     @Generated
     @Selector("samplePredicates")
     public native NSDictionary<? extends HKSampleType, ? extends NSPredicate> samplePredicates();

@@ -86,6 +86,12 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Read-only access to the grid images shown in a row in the cell.
+     * 
+     * @note The maximum number of images shown is @c CPMaximumNumberOfGridImages.
+     * If you supply more images, only the first @c CPMaximumNumberOfGridImages will be used.
+     */
     @Generated
     @Selector("gridImages")
     public native NSArray<? extends UIImage> gridImages();
@@ -104,6 +110,23 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     @Selector("init")
     public native CPListImageRowItem init();
 
+    /**
+     * Initialize a list image row item with a text string and an array of @c UIImage
+     * for the grid of images.
+     * 
+     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
+     * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
+     * both styles.
+     * 
+     * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
+     * 
+     * @note The expected image size is given by @c CPImageRowImageSize. Images provided
+     * will be resized to this size.
+     * 
+     * @discussion To properly size your images, your app should size them to the display scale of the car screen.
+     * See -[CPInterfaceController carTraitCollection].
+     */
     @Generated
     @Selector("initWithText:images:")
     public native CPListImageRowItem initWithTextImages(String text, NSArray<? extends UIImage> images);
@@ -129,6 +152,9 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The image row item that the user selected.
+     */
     @Generated
     @Selector("listImageRowHandler")
     @ObjCBlock(name = "call_listImageRowHandler_ret")
@@ -149,6 +175,13 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
                 @ObjCBlock(name = "call_Block_listImageRowHandler_ret") Block_Block_listImageRowHandler_ret arg2);
     }
 
+    /**
+     * The expected image size for the grid images in your @c CPListImageRowItem. Images provided
+     * will be resized to this size.
+     * 
+     * @discussion To properly size your images, your app should size them to the display scale of the car screen.
+     * See -[CPInterfaceController carTraitCollection].
+     */
     @Generated
     @Selector("maximumImageSize")
     @ByValue
@@ -172,6 +205,9 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     @Selector("setHandler:")
     public native void setHandler(@ObjCBlock(name = "call_setHandler") CPSelectableListItem.Block_setHandler value);
 
+    /**
+     * The image row item that the user selected.
+     */
     @Generated
     @Selector("setListImageRowHandler:")
     public native void setListImageRowHandler(
@@ -192,6 +228,9 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
                 @ObjCBlock(name = "call_Block_setListImageRowHandler") Block_Block_setListImageRowHandler arg2);
     }
 
+    /**
+     * The primary text shown in a cell displaying this list item.
+     */
     @Generated
     @Selector("setText:")
     public native void setText(String value);
@@ -212,6 +251,21 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     @Selector("text")
     public native String text();
 
+    /**
+     * Update the images displayed in this image row item. If this image row
+     * item is already displayed in a list template, this image row item will be
+     * automatically reloaded.
+     * 
+     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
+     * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
+     * both styles.
+     * 
+     * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
+     * 
+     * @see To update/reload the title of the image row item, assign to
+     * the @c text property of the image row item.
+     */
     @Generated
     @Selector("updateImages:")
     public native void updateImages(NSArray<? extends UIImage> gridImages);

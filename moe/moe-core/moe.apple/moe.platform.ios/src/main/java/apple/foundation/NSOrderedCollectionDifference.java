@@ -89,6 +89,9 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Create a new difference by mapping over this difference's members
+     */
     @Generated
     @Selector("differenceByTransformingChangesWithBlock:")
     public native NSOrderedCollectionDifference<Object> differenceByTransformingChangesWithBlock(
@@ -115,6 +118,20 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
     @Selector("init")
     public native NSOrderedCollectionDifference<?> init();
 
+    /**
+     * Creates a new difference representing the changes in the parameter.
+     * 
+     * For clients interested in the difference between two collections, the
+     * collection's differenceFrom method should be used instead.
+     * 
+     * To guarantee that instances are unambiguous and safe for compatible base
+     * states, this method requires that its parameter conform to the following
+     * requirements:
+     * 
+     * 1) All insertion offsets are unique
+     * 2) All removal offsets are unique
+     * 3) All associated indexes match a change with the opposite parity.
+     */
     @Generated
     @Selector("initWithChanges:")
     public native NSOrderedCollectionDifference<?> initWithChanges(
@@ -149,6 +166,14 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Returns a difference that is the inverse of the receiver.
+     * 
+     * In other words, given a valid difference `diff` the array `a` is equal to
+     * [[a arrayByApplyingDifference:diff] arrayByApplyingDifference:diff.inverseDifference]
+     * 
+     * To revert a chronological sequence of diffs, apply their inverses in reverse order.
+     */
     @Generated
     @Selector("inverseDifference")
     @MappedReturn(ObjCObjectMapper.class)

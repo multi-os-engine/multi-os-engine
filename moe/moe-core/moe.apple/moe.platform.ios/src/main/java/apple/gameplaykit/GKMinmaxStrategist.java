@@ -44,6 +44,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The Minmax Strategist is a generic AI that selects a game model update for a given player that maximises
+ * potential gain, while minimising potential loss. It does this by examining all of the updates available
+ * to the player in question, extrapolating the potential moves opposing players may take, projecting out
+ * maxLookAheadDepth number of turns. The selected update will result in the greatest potential gain, balanced
+ * against the potential gain of other players.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -160,6 +167,11 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
     @MappedReturn(ObjCObjectMapper.class)
     public native GKGameModelUpdate bestMoveForActivePlayer();
 
+    /**
+     * Selects the best move for the specified player. If randomSource is not nil, it will randomly select
+     * which move to use if there are one or more ties for the best. Returns nil if the player is invalid,
+     * the player is not a part of the game model, or the player has no valid moves available.
+     */
     @Generated
     @Selector("bestMoveForPlayer:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -174,11 +186,20 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
     @Selector("init")
     public native GKMinmaxStrategist init();
 
+    /**
+     * The maximum number of future turns that will be processed when searching for a move.
+     */
     @Generated
     @Selector("maxLookAheadDepth")
     @NInt
     public native long maxLookAheadDepth();
 
+    /**
+     * Selects one move from the set of N best moves for the specified player, where N is equal to
+     * numMovesToConsider. If randomSource is nil, it will not randomly select, but will behave like
+     * bestMoveForPlayer and return the first best move. Returns nil if the player is invalid, the
+     * player is not a part of the game model, or the player has no valid moves available.
+     */
     @Generated
     @Selector("randomMoveForPlayer:fromNumberOfBestMoves:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -194,6 +215,9 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
     @Selector("setGameModel:")
     public native void setGameModel(@Mapped(ObjCObjectMapper.class) GKGameModel value);
 
+    /**
+     * The maximum number of future turns that will be processed when searching for a move.
+     */
     @Generated
     @Selector("setMaxLookAheadDepth:")
     public native void setMaxLookAheadDepth(@NInt long value);

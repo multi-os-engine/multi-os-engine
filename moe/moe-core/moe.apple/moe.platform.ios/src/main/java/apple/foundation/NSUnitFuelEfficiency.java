@@ -127,6 +127,9 @@ public class NSUnitFuelEfficiency extends NSDimension implements NSSecureCoding 
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Base unit - litersPer100Kilometers
+     */
     @Generated
     @Selector("litersPer100Kilometers")
     public static native NSUnitFuelEfficiency litersPer100Kilometers();

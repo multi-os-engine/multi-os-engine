@@ -52,6 +52,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A scene is the root node of your content. It is used to display SpriteKit content on an SKView.
+ * 
+ * @see SKView
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -193,6 +198,9 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     @NInt
     public static native long version_static();
 
+    /**
+     * Used to choose the origin of the scene's coordinate system
+     */
     @Generated
     @Selector("anchorPoint")
     @ByValue
@@ -202,10 +210,16 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     @Selector("audioEngine")
     public native AVAudioEngine audioEngine();
 
+    /**
+     * Background color, defaults to gray
+     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
+    /**
+     * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the scene.
+     */
     @Generated
     @Selector("camera")
     public native SKCameraNode camera();
@@ -225,6 +239,9 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     @MappedReturn(ObjCObjectMapper.class)
     public native SKSceneDelegate delegate();
 
+    /**
+     * Override this to perform game logic. Called exactly once per frame after any enabled constraints have been applied. Any additional actions applied is not evaluated until the next update. Any changes to physics bodies is not simulated until the next update. Any changes to constarints will not be applied until the next update.
+     */
     @Generated
     @Selector("didApplyConstraints")
     public native void didApplyConstraints();
@@ -233,10 +250,18 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     @Selector("didChangeSize:")
     public native void didChangeSize(@ByValue CGSize oldSize);
 
+    /**
+     * Override this to perform game logic. Called exactly once per frame after any actions have been evaluated but before any physics are simulated. Any additional actions applied is not evaluated until the next update.
+     */
     @Generated
     @Selector("didEvaluateActions")
     public native void didEvaluateActions();
 
+    /**
+     * Override this to perform game logic. Called after all update logic has been completed. Any additional actions applied are not evaluated until the next update. Any changes to physics bodies are not simulated until the next update. Any changes to constarints will not be applied until the next update.
+     * 
+     * No futher update logic will be applied to the scene after this call. Any values set on nodes here will be used when the scene is rendered for the current frame.
+     */
     @Generated
     @Selector("didFinishUpdate")
     public native void didFinishUpdate();
@@ -245,6 +270,9 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     @Selector("didMoveToView:")
     public native void didMoveToView(SKView view);
 
+    /**
+     * Override this to perform game logic. Called exactly once per frame after any actions have been evaluated and any physics have been simulated. Any additional actions applied is not evaluated until the next update. Any changes to physics bodies is not simulated until the next update.
+     */
     @Generated
     @Selector("didSimulatePhysics")
     public native void didSimulatePhysics();
@@ -257,39 +285,71 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     @Selector("initWithCoder:")
     public native SKScene initWithCoder(NSCoder aDecoder);
 
+    /**
+     * A scene is infinitely large, but it has a viewport that is the frame through which you present the content of the scene.
+     * The passed in size defines the size of this viewport that you use to present the scene.
+     * 
+     * @param size a size in points that signifies the viewport into the scene that defines your framing of the scene.
+     */
     @Generated
     @Selector("initWithSize:")
     public native SKScene initWithSize(@ByValue CGSize size);
 
+    /**
+     * The node that is currently the listener for positional audio coming from SKAudioNodes
+     * @see SKAudioNode
+     */
     @Generated
     @Selector("listener")
     public native SKNode listener();
 
+    /**
+     * Physics simulation functionality
+     */
     @Generated
     @Selector("physicsWorld")
     public native SKPhysicsWorld physicsWorld();
 
+    /**
+     * Used to determine how to scale the scene to match the SKView it is being displayed in.
+     */
     @Generated
     @Selector("scaleMode")
     @NInt
     public native long scaleMode();
 
+    /**
+     * This is called once after the scene has been initialized or decoded,
+     * this is the recommended place to perform one-time setup 
+     */
     @Generated
     @Selector("sceneDidLoad")
     public native void sceneDidLoad();
 
+    /**
+     * Used to choose the origin of the scene's coordinate system
+     */
     @Generated
     @Selector("setAnchorPoint:")
     public native void setAnchorPoint(@ByValue CGPoint value);
 
+    /**
+     * Background color, defaults to gray
+     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
 
+    /**
+     * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the scene.
+     */
     @Generated
     @Selector("setCamera:")
     public native void setCamera_unsafe(SKCameraNode value);
 
+    /**
+     * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the scene.
+     */
     @Generated
     public void setCamera(SKCameraNode value) {
         Object __old = camera();
@@ -318,10 +378,18 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
         }
     }
 
+    /**
+     * The node that is currently the listener for positional audio coming from SKAudioNodes
+     * @see SKAudioNode
+     */
     @Generated
     @Selector("setListener:")
     public native void setListener_unsafe(SKNode value);
 
+    /**
+     * The node that is currently the listener for positional audio coming from SKAudioNodes
+     * @see SKAudioNode
+     */
     @Generated
     public void setListener(SKNode value) {
         Object __old = listener();
@@ -334,6 +402,9 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
         }
     }
 
+    /**
+     * Used to determine how to scale the scene to match the SKView it is being displayed in.
+     */
     @Generated
     @Selector("setScaleMode:")
     public native void setScaleMode(@NInt long value);
@@ -347,10 +418,18 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     @ByValue
     public native CGSize size();
 
+    /**
+     * Override this to perform per-frame game logic. Called exactly once per frame before any actions are evaluated and any physics are simulated.
+     * 
+     * @param currentTime the current time in the app. This must be monotonically increasing.
+     */
     @Generated
     @Selector("update:")
     public native void update(double currentTime);
 
+    /**
+     * The SKView this scene is currently presented in, or nil if it is not being presented.
+     */
     @Generated
     @Selector("view")
     public native SKView view();

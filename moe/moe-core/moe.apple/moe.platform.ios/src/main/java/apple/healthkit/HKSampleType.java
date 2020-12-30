@@ -41,6 +41,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKSampleType
+ * @abstract      Represents a type of HKSample.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -210,18 +214,38 @@ public class HKSampleType extends HKObjectType {
     @Selector("clinicalTypeForIdentifier:")
     public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
 
+    /**
+     * @property      isMaximumDurationRestricted
+     * @abstract      Returns YES if the start and end date for samples of this type are restricted by a maximum duration.
+     */
     @Generated
     @Selector("isMaximumDurationRestricted")
     public native boolean isMaximumDurationRestricted();
 
+    /**
+     * @property      isMinimumDurationRestricted
+     * @abstract      Returns YES if the start and end date for samples of this type are restricted by a minimum duration.
+     */
     @Generated
     @Selector("isMinimumDurationRestricted")
     public native boolean isMinimumDurationRestricted();
 
+    /**
+     * @property      maximumAllowedDuration
+     * @abstract      When the duration is restricted for samples of this type, returns the maximum duration allowed,
+     *                calculated as the difference between end and start dates.
+     * @discussion    Throws an exception if there is no maximum restriction on duration for samples of this type.
+     */
     @Generated
     @Selector("maximumAllowedDuration")
     public native double maximumAllowedDuration();
 
+    /**
+     * @property      minimumAllowedDuration
+     * @abstract      When the duration is restricted for samples of this type, returns the minimum duration allowed,
+     *                calculated as the difference between end and start dates.
+     * @discussion    Throws an exception if there is no minimum restriction on duration for samples of this type.
+     */
     @Generated
     @Selector("minimumAllowedDuration")
     public native double minimumAllowedDuration();

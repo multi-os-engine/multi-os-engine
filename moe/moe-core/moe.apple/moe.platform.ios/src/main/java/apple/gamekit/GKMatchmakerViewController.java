@@ -167,10 +167,17 @@ public class GKMatchmakerViewController extends UINavigationController {
     @NInt
     public static native long version_static();
 
+    /**
+     * Add additional players (not currently connected) to an existing peer-to-peer match.
+     * Apps should elect a single device to do this, otherwise conflicts could arise resulting in unexpected connection errors.
+     */
     @Generated
     @Selector("addPlayersToMatch:")
     public native void addPlayersToMatch(GKMatch match);
 
+    /**
+     * default message to use when inviting friends. Can be edited by the user.
+     */
     @Generated
     @Deprecated
     @Selector("defaultInvitationMessage")
@@ -184,10 +191,16 @@ public class GKMatchmakerViewController extends UINavigationController {
     @Selector("initWithCoder:")
     public native GKMatchmakerViewController initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize with an accepted invite, allowing the user to see the status of other invited players and get notified when the game starts
+     */
     @Generated
     @Selector("initWithInvite:")
     public native GKMatchmakerViewController initWithInvite(GKInvite invite);
 
+    /**
+     * Initialize with a matchmaking request, allowing the user to send invites and/or start matchmaking
+     */
     @Generated
     @Selector("initWithMatchRequest:")
     public native GKMatchmakerViewController initWithMatchRequest(GKMatchRequest request);
@@ -205,10 +218,16 @@ public class GKMatchmakerViewController extends UINavigationController {
     @Selector("initWithRootViewController:")
     public native GKMatchmakerViewController initWithRootViewController(UIViewController rootViewController);
 
+    /**
+     * set to YES to receive hosted (eg. not peer-to-peer) match results. Will cause the controller to return an array of players instead of a match.
+     */
     @Generated
     @Selector("isHosted")
     public native boolean isHosted();
 
+    /**
+     * set to YES to receive hosted (eg. not peer-to-peer) match results. Will cause the controller to return an array of players instead of a match.
+     */
     @Generated
     @Selector("setHosted:")
     public native void setHosted(boolean value);
@@ -222,11 +241,17 @@ public class GKMatchmakerViewController extends UINavigationController {
     @MappedReturn(ObjCObjectMapper.class)
     public native GKMatchmakerViewControllerDelegate matchmakerDelegate();
 
+    /**
+     * default message to use when inviting friends. Can be edited by the user.
+     */
     @Generated
     @Deprecated
     @Selector("setDefaultInvitationMessage:")
     public native void setDefaultInvitationMessage(String value);
 
+    /**
+     * This method is obsolete. It will never be invoked and its implementation does nothing**
+     */
     @Generated
     @Deprecated
     @Selector("setHostedPlayer:connected:")
@@ -236,6 +261,9 @@ public class GKMatchmakerViewController extends UINavigationController {
     @Selector("setHostedPlayer:didConnect:")
     public native void setHostedPlayerDidConnect(GKPlayer player, boolean connected);
 
+    /**
+     * This method is obsolete. It will never be invoked and its implementation does nothing**
+     */
     @Generated
     @Deprecated
     @Selector("setHostedPlayerReady:")
@@ -258,11 +286,17 @@ public class GKMatchmakerViewController extends UINavigationController {
         }
     }
 
+    /**
+     * this controls which mode of matchmaking to support in the UI (all, nearby only or automatch only).  Throws an exeption if you can not set to the desired mode (due to restrictions)
+     */
     @Generated
     @Selector("matchmakingMode")
     @NInt
     public native long matchmakingMode();
 
+    /**
+     * this controls which mode of matchmaking to support in the UI (all, nearby only or automatch only).  Throws an exeption if you can not set to the desired mode (due to restrictions)
+     */
     @Generated
     @Selector("setMatchmakingMode:")
     public native void setMatchmakingMode(@NInt long value);

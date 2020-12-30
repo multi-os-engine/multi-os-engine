@@ -44,6 +44,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CLHeading
+ * 
+ * Discussion:
+ *   Represents a vector pointing to magnetic North constructed from axis component values x, y, and z. An accuracy of the heading calculation is also provided along with timestamp information.
+ */
 @Generated
 @Library("CoreLocation")
 @Runtime(ObjCRuntime.class)
@@ -169,6 +175,12 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * headingAccuracy
+     * 
+     * Discussion:
+     *   Represents the maximum deviation of where the magnetic heading may differ from the actual geomagnetic heading in degrees. A negative value indicates an invalid heading.
+     */
     @Generated
     @Selector("headingAccuracy")
     public native double headingAccuracy();
@@ -181,6 +193,15 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native CLHeading initWithCoder(NSCoder coder);
 
+    /**
+     * magneticHeading
+     * 
+     * Discussion:
+     *   Represents the direction in degrees, where 0 degrees is magnetic North. The direction is referenced from the top of the device regardless of device orientation as well as the orientation of the user interface.
+     * 
+     * Range:
+     *   0.0 - 359.9 degrees, 0 being magnetic North
+     */
     @Generated
     @Selector("magneticHeading")
     public native double magneticHeading();
@@ -191,22 +212,57 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * timestamp
+     * 
+     * Discussion:
+     *   Returns a timestamp for when the magnetic heading was determined.
+     */
     @Generated
     @Selector("timestamp")
     public native NSDate timestamp();
 
+    /**
+     * trueHeading
+     * 
+     * Discussion:
+     *   Represents the direction in degrees, where 0 degrees is true North. The direction is referenced
+     *   from the top of the device regardless of device orientation as well as the orientation of the
+     *   user interface.
+     * 
+     * Range:
+     *   0.0 - 359.9 degrees, 0 being true North
+     */
     @Generated
     @Selector("trueHeading")
     public native double trueHeading();
 
+    /**
+     * x
+     * 
+     * Discussion:
+     *   Returns a raw value for the geomagnetism measured in the x-axis.
+     */
     @Generated
     @Selector("x")
     public native double x();
 
+    /**
+     * y
+     * 
+     * Discussion:
+     *   Returns a raw value for the geomagnetism measured in the y-axis.
+     */
     @Generated
     @Selector("y")
     public native double y();
 
+    /**
+     * z
+     * 
+     * Discussion:
+     *   Returns a raw value for the geomagnetism measured in the z-axis.
+     */
     @Generated
     @Selector("z")
     public native double z();

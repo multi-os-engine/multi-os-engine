@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An anchor representing a planar surface in the world.
+ * @discussion Planes are defined in the X and Z direction, where Y is the surface’s normal.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -43,6 +47,9 @@ public class ARPlaneAnchor extends ARAnchor {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * The alignment of the plane.
+     */
     @Generated
     @Selector("alignment")
     @NInt
@@ -145,16 +152,25 @@ public class ARPlaneAnchor extends ARAnchor {
     @NInt
     public static native long version_static();
 
+    /**
+     * Classification of the plane.
+     */
     @Generated
     @Selector("classification")
     @NInt
     public native long classification();
 
+    /**
+     * Classification status of the plane.
+     */
     @Generated
     @Selector("classificationStatus")
     @NInt
     public native long classificationStatus();
 
+    /**
+     * Geometry of the plane in the anchor's coordinate space.
+     */
     @Generated
     @Selector("geometry")
     public native ARPlaneGeometry geometry();
@@ -167,6 +183,9 @@ public class ARPlaneAnchor extends ARAnchor {
     @Selector("initWithCoder:")
     public native ARPlaneAnchor initWithCoder(NSCoder coder);
 
+    /**
+     * Determines whether plane classification is supported on this device.
+     */
     @Generated
     @Selector("isClassificationSupported")
     public static native boolean isClassificationSupported();

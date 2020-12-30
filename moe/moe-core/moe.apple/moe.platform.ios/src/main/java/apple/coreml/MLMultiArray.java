@@ -31,6 +31,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Multidimensional Array
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -81,15 +84,24 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Count of total number of elements
+     */
     @Generated
     @Selector("count")
     @NInt
     public native long count();
 
+    /**
+     * Unsafe pointer to underlying buffer holding the data
+     */
     @Generated
     @Selector("dataPointer")
     public native VoidPtr dataPointer();
 
+    /**
+     * Type of element held
+     */
     @Generated
     @Selector("dataType")
     @NInt
@@ -112,6 +124,9 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     @Selector("init")
     public native MLMultiArray init();
 
+    /**
+     * Create by wrapping existing data
+     */
     @Generated
     @Selector("initWithDataPointer:shape:dataType:strides:deallocator:error:")
     public native MLMultiArray initWithDataPointerShapeDataTypeStridesDeallocatorError(VoidPtr dataPointer,
@@ -126,6 +141,9 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
         void call_initWithDataPointerShapeDataTypeStridesDeallocatorError(VoidPtr bytes);
     }
 
+    /**
+     * Create by C-style contiguous array by allocating and managing the necessary memory
+     */
     @Generated
     @Selector("initWithShape:dataType:error:")
     public native MLMultiArray initWithShapeDataTypeError(NSArray<? extends NSNumber> shape, @NInt long dataType,
@@ -158,10 +176,16 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Get a value by its linear index (assumes C-style index ordering)
+     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native NSNumber objectAtIndexedSubscript(@NInt long idx);
 
+    /**
+     * Get a value by its multidimensional index (NSArray<NSNumber *>)
+     */
     @Generated
     @Selector("objectForKeyedSubscript:")
     public native NSNumber objectForKeyedSubscript(NSArray<? extends NSNumber> key);
@@ -174,10 +198,16 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Set a value by its linear index (assumes C-style index ordering)
+     */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(NSNumber obj, @NInt long idx);
 
+    /**
+     * Set a value by subindicies (NSArray<NSNumber *>)
+     */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
     public native void setObjectForKeyedSubscript(NSNumber obj, NSArray<? extends NSNumber> key);
@@ -186,10 +216,18 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * An array containing the sizes of each dimension in the multiarray
+     */
     @Generated
     @Selector("shape")
     public native NSArray<? extends NSNumber> shape();
 
+    /**
+     * An array containing the stride in memory for each dimension.
+     * The element referred to by a multidimensional index is located at an offset equal to
+     * sum_d index[d]*strides[d]. This offset is in the units of the specified dataType.
+     */
     @Generated
     @Selector("strides")
     public native NSArray<? extends NSNumber> strides();
@@ -211,6 +249,43 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native MLMultiArray initWithCoder(NSCoder coder);
 
+    /**
+     * Concatenate MLMultiArrays to form a new MLMultiArray.
+     * 
+     * All the source MLMultiArrays must have a same shape except the specified axis. The resultant
+     * MLMultiArray has the same shape as inputs except this axis, which dimension will be the sum of
+     * all the input dimensions of the axis.
+     * 
+     * For example,
+     * 
+     * \code
+     * // Swift
+     * let A = try MLMultiArray(shape: [2, 3], dataType: .int32)
+     * let B = try MLMultiArray(shape: [2, 2], dataType: .int32)
+     * let C = MLMultiArray(concatenating: [A, B], axis: 1, dataType: .int32)
+     * assert(C.shape == [2, 5])
+     * \endcode
+     * 
+     * \code
+     * // Obj-C
+     * MLMultiArray *A = [[MLMultiArray alloc] initWithShape:@[@2, @3] dataType:MLMultiArrayDataTypeInt32 error:NULL];
+     * MLMultiArray *B = [[MLMultiArray alloc] initWithShape:@[@2, @2] dataType:MLMultiArrayDataTypeInt32 error:NULL];
+     * MLMultiArray *C = [MLMultiArray multiArrayByConcatenatingMultiArrays:@[A, B] alongAxis:1 dataType:MLMultiArrayDataTypeInt32];
+     * assert(C.shape == @[@2, @5])
+     * \endcode
+     * 
+     * Numeric data will be up or down casted as needed.
+     * 
+     * The method raises NSInvalidArgumentException if the shapes of input multi arrays are not
+     * compatible for concatenation.
+     * 
+     * @param multiArrays Array of MLMultiArray instances to be concatenated.
+     * 
+     * @param axis Axis index with which the concatenation will performed. The value is wrapped by the
+     * dimension of the axis. For example, -1 is the last axis.
+     * 
+     * @param dataType The data type of the resultant MLMultiArray
+     */
     @Generated
     @Selector("multiArrayByConcatenatingMultiArrays:alongAxis:dataType:")
     public static native MLMultiArray multiArrayByConcatenatingMultiArraysAlongAxisDataType(

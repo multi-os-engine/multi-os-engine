@@ -45,6 +45,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class		AVTimedMetadataGroup
+ * 
+ * @abstract	AVTimedMetadataGroup is used to represent a collection of metadata items that are valid for use during a specific range of time. For example, AVTimedMetadataGroups are used to represent chapters, optionally containing metadata items for chapter titles and chapter images.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +161,15 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
     @NInt
     public static native long version_static();
 
+    /**
+     * @method		copyFormatDescription
+     * @abstract	Creates a format description based on the receiver's items.
+     * @result		An instance of CMMetadataFormatDescription sufficient to describe the contents of all the items referenced by the receiver.
+     * @discussion
+     * 	The returned format description is suitable for use as the format hint parameter when creating an instance of AVAssetWriterInput.
+     * 
+     * 	Each item referenced by the receiver must carry a non-nil value for its dataType property.  An exception will be thrown if any item does not have a data type.
+     */
     @Generated
     @Selector("copyFormatDescription")
     public native CMFormatDescriptionRef copyFormatDescription();
@@ -170,15 +184,34 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
     @Selector("init")
     public native AVTimedMetadataGroup init();
 
+    /**
+     * @method		initWithItems:timeRange:
+     * @abstract	Initializes an instance of AVTimedMetadataGroup with a collection of metadata items.
+     * @param		items
+     * 			An NSArray of AVMetadataItems.
+     * @param		timeRange
+     * 			The timeRange of the collection of AVMetadataItems.
+     * @result		An instance of AVTimedMetadataGroup.
+     */
     @Generated
     @Selector("initWithItems:timeRange:")
     public native AVTimedMetadataGroup initWithItemsTimeRange(NSArray<? extends AVMetadataItem> items,
             @ByValue CMTimeRange timeRange);
 
+    /**
+     * @method		initWithSampleBuffer:
+     * @abstract	Initializes an instance of AVTimedMetadataGroup with a sample buffer.
+     * @param		sampleBuffer
+     * 			A CMSampleBuffer with media type kCMMediaType_Metadata.
+     * @result		An instance of AVTimedMetadataGroup.
+     */
     @Generated
     @Selector("initWithSampleBuffer:")
     public native AVTimedMetadataGroup initWithSampleBuffer(CMSampleBufferRef sampleBuffer);
 
+    /**
+     * an array of AVMetadataItems
+     */
     @Generated
     @Selector("items")
     public native NSArray<? extends AVMetadataItem> items();
@@ -189,6 +222,9 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
+    /**
+     * indicates the time range of the timed metadata
+     */
     @Generated
     @Selector("timeRange")
     @ByValue

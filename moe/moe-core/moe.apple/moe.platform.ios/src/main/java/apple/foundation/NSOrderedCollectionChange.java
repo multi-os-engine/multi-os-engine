@@ -48,6 +48,12 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * When non-NSNotFound, indicates that this change is one half of a move, with
+     * this value referring to the index of the other change that completes it.
+     * For differences produced by identity comparison (instead of equality), each
+     * change representing a move operation may store different objects.
+     */
     @Generated
     @Selector("associatedIndex")
     @NUInt
@@ -67,6 +73,9 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * The change type: insert or remove
+     */
     @Generated
     @Selector("changeType")
     @NInt
@@ -104,6 +113,10 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * For removes, the index of the object in the original state.
+     * For inserts, the index of the object in the final state.
+     */
     @Generated
     @Selector("index")
     @NUInt
@@ -151,6 +164,9 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The object that was inserted or removed, if recorded
+     */
     @Generated
     @Selector("object")
     @MappedReturn(ObjCObjectMapper.class)

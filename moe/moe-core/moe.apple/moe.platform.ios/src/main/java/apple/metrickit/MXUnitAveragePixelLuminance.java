@@ -27,6 +27,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXUnitAveragePixelLuminance
+ * @abstract      An NSUnit subclass representing the linear space Display APL.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -55,6 +59,9 @@ public class MXUnitAveragePixelLuminance extends NSDimension {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Base unit - apl
+     */
     @Generated
     @Selector("apl")
     public static native MXUnitAveragePixelLuminance apl();

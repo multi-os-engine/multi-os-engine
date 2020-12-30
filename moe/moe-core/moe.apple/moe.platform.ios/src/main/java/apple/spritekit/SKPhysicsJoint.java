@@ -176,11 +176,17 @@ public class SKPhysicsJoint extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native SKPhysicsJoint initWithCoder(NSCoder coder);
 
+    /**
+     * Instantaneous directed reaction force, in Newtons at anchor point
+     */
     @Generated
     @Selector("reactionForce")
     @ByValue
     public native CGVector reactionForce();
 
+    /**
+     * Instantaneous reaction torque, in Newton-meters, at anchor point
+     */
     @Generated
     @Selector("reactionTorque")
     @NFloat

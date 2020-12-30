@@ -34,20 +34,32 @@ public final class MPSDimensionSlice extends StructObject {
         setLength(length);
     }
 
+    /**
+     * < the position of the first element in the slice
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @NUInt
     public native long start();
 
+    /**
+     * < the position of the first element in the slice
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setStart(@NUInt long value);
 
+    /**
+     * < the number of elements in the slice.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @NUInt
     public native long length();
 
+    /**
+     * < the number of elements in the slice.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setLength(@NUInt long value);

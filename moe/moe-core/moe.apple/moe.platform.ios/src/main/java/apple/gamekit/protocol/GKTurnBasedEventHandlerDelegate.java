@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * see documentation for GKTurnBasedEventListener for the equivalent methods
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

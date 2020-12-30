@@ -46,6 +46,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSShadow stores the properties of a drop shadow for drawing text.
+ * To set a shadow on an NSAttributedString use it as a value for NSShadowAttributeName.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -175,28 +179,46 @@ public class NSShadow extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native NSShadow initWithCoder(NSCoder coder);
 
+    /**
+     * blur radius of the shadow in default user space units
+     */
     @Generated
     @Selector("setShadowBlurRadius:")
     public native void setShadowBlurRadius(@NFloat double value);
 
+    /**
+     * color used for the shadow (default is black with an alpha value of 1/3)
+     */
     @Generated
     @Selector("setShadowColor:")
     public native void setShadowColor(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * offset in user space of the shadow from the original drawing
+     */
     @Generated
     @Selector("setShadowOffset:")
     public native void setShadowOffset(@ByValue CGSize value);
 
+    /**
+     * blur radius of the shadow in default user space units
+     */
     @Generated
     @Selector("shadowBlurRadius")
     @NFloat
     public native double shadowBlurRadius();
 
+    /**
+     * color used for the shadow (default is black with an alpha value of 1/3)
+     */
     @Generated
     @Selector("shadowColor")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object shadowColor();
 
+    /**
+     * offset in user space of the shadow from the original drawing
+     */
     @Generated
     @Selector("shadowOffset")
     @ByValue

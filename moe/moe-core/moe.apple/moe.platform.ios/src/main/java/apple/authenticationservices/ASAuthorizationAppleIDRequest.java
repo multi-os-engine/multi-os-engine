@@ -131,6 +131,11 @@ public class ASAuthorizationAppleIDRequest extends ASAuthorizationOpenIDRequest 
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract If you have been previously vended a 'user' value through ASAuthorization response, you may set it here to provide additional context to identity provider.
+     * 
+     * @see ASAuthorizationAppleIDCredential doc for the description of this property in context of response.
+     */
     @Generated
     @Selector("setUser:")
     public native void setUser(String value);
@@ -153,6 +158,11 @@ public class ASAuthorizationAppleIDRequest extends ASAuthorizationOpenIDRequest 
         return supportsSecureCoding();
     }
 
+    /**
+     * @abstract If you have been previously vended a 'user' value through ASAuthorization response, you may set it here to provide additional context to identity provider.
+     * 
+     * @see ASAuthorizationAppleIDCredential doc for the description of this property in context of response.
+     */
     @Generated
     @Selector("user")
     public native String user();

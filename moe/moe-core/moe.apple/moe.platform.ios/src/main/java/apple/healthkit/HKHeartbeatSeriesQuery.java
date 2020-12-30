@@ -29,6 +29,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKHeartbeatSeriesQuery
+ * @abstract      An HKHeartbeatSeriesQuery is used to access data associated with an HKHeartbeatSeriesSample.
+ * @discussion    Once instantiated, call HKHealthStore executeQuery to begin enumerating the heartbeat series data.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -96,6 +101,18 @@ public class HKHeartbeatSeriesQuery extends HKQuery {
     @Selector("init")
     public native HKHeartbeatSeriesQuery init();
 
+    /**
+     * @method        initWithHeartbeatSeries:dataHandler:
+     * @abstract      Returns a query that will retrieve heartbeat timestamps for the specified HKHeartbeatSeriesSample.
+     * 
+     * @param         heartbeatSeries    The HKHeartbeatSeriesSample for which the heartbeat data will be returned.
+     * @param         dataHandler        The block to invoke with results from the query. It is called repeatedly for each
+     *                                   heartbeat in the series. timeSinceSeriesStart is the time elapsed in seconds after the
+     *                                   series startDate that represents when the heartbeat occured. precededByGap indicates if
+     *                                   there was a gap in data collection before the current heartbeat, meaning that one or more
+     *                                   heartbeats may have occured since the previous heartbeat in the series. Once done is YES,
+     *                                   or stopQuery called, the query is complete and no more calls to the handler will be made.
+     */
     @Generated
     @Selector("initWithHeartbeatSeries:dataHandler:")
     public native HKHeartbeatSeriesQuery initWithHeartbeatSeriesDataHandler(HKHeartbeatSeriesSample heartbeatSeries,

@@ -27,6 +27,19 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSImageReduceUnary
+ * @discussion The MPSImageReduce performs a reduction operation
+ *             The reduction operations supported are:
+ *                  - Reduce row min
+ *                  - Reduce column min
+ *                  - Reduce row max
+ *                  - Reduce column max
+ *                  - Reduce row mean
+ *                  - Reduce column mean
+ *                  - Reduce row sum
+ *                  - Reduce column sum
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -77,6 +90,17 @@ public class MPSImageReduceUnary extends MPSUnaryImageKernel {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @property   clipRectSource
+     * @abstract   The source rectangle to use when reading data.
+     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     *             completely within the source image, the intersection of the image bounds and clipRectSource will
+     *             be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * 
+     *             The clipRect specified in MPSUnaryImageKernel is used to control the origin in the destination texture
+     *             where the min, max values are written.  The clipRect.width must be >=2.  The clipRect.height must be >= 1.
+     */
     @Generated
     @Selector("clipRectSource")
     @ByValue
@@ -147,6 +171,17 @@ public class MPSImageReduceUnary extends MPSUnaryImageKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   clipRectSource
+     * @abstract   The source rectangle to use when reading data.
+     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     *             completely within the source image, the intersection of the image bounds and clipRectSource will
+     *             be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
+     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * 
+     *             The clipRect specified in MPSUnaryImageKernel is used to control the origin in the destination texture
+     *             where the min, max values are written.  The clipRect.width must be >=2.  The clipRect.height must be >= 1.
+     */
     @Generated
     @Selector("setClipRectSource:")
     public native void setClipRectSource(@ByValue MTLRegion value);

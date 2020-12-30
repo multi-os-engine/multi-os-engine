@@ -37,6 +37,9 @@ public class MTLTextureReferenceType extends MTLType {
         super(peer);
     }
 
+    /**
+     * read, write, read-write
+     */
     @Generated
     @Selector("access")
     @NUInt
@@ -108,6 +111,9 @@ public class MTLTextureReferenceType extends MTLType {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * true for depth textures
+     */
     @Generated
     @Selector("isDepthTexture")
     public native boolean isDepthTexture();
@@ -142,11 +148,17 @@ public class MTLTextureReferenceType extends MTLType {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * half, float, int, or uint.
+     */
     @Generated
     @Selector("textureDataType")
     @NUInt
     public native long textureDataType();
 
+    /**
+     * texture1D, texture2D...
+     */
     @Generated
     @Selector("textureType")
     @NUInt

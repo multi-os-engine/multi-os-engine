@@ -149,6 +149,9 @@ public class INPlayMediaIntent extends INIntent {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * An NSNumber representing a boolean value where true indicates that the media should be shuffled.
+     */
     @Generated
     @Selector("playShuffled")
     public native NSNumber playShuffled();
@@ -175,6 +178,9 @@ public class INPlayMediaIntent extends INIntent {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * An NSNumber representing a boolean value where true indicates that the media should be resumed.
+     */
     @Generated
     @Selector("resumePlayback")
     public native NSNumber resumePlayback();

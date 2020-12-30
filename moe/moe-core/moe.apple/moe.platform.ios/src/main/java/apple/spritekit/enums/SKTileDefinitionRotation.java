@@ -19,6 +19,9 @@ package apple.spritekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Adjust the rotation of the tile definition image, in 90 degree increments.
+ */
 @Generated
 public final class SKTileDefinitionRotation {
     @Generated @NUInt public static final long Rotation0 = 0x0000000000000000L;

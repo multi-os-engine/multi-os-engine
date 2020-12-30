@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A class to specify list of supported model update metrics.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -83,6 +86,9 @@ public class MLMetricKey extends MLKey {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Int64 metric indicating the index of the epoch
+     */
     @Generated
     @Selector("epochIndex")
     public static native MLMetricKey epochIndex();
@@ -121,10 +127,16 @@ public class MLMetricKey extends MLKey {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Float metric indicating the current loss
+     */
     @Generated
     @Selector("lossValue")
     public static native MLMetricKey lossValue();
 
+    /**
+     * Int64 metric indicating the index of mini batches in the current epoch
+     */
     @Generated
     @Selector("miniBatchIndex")
     public static native MLMetricKey miniBatchIndex();

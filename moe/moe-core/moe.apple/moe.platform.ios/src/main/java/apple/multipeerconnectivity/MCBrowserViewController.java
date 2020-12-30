@@ -47,6 +47,37 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MCBrowserViewController
+ *   @abstract The
+ *      MCBrowserViewController class manages the system-supplied user
+ *      interface for choosing peers to connect with for multipeer sessions.
+ * 
+ *   @discussion
+ *      MCBrowserViewController manages presentation of nearby peers and the
+ *      invite process for you. The invite process is driven by the user
+ *      and handled by the peer picker and the MCNearbyServiceBrowser object
+ *      it holds.
+ * 
+ *      MCBrowserViewController must be initialized with a
+ *      MCNearbyServiceBrowser object and a MCSession object at init time.
+ *      If the browser object's delegate is nil, the browser view controller
+ *      will set itself as the browser's delegate. The session object will be
+ *      used by the browser view controller during the invite process.
+ *      A delegate that conforms to the MCBrowserViewControllerDelegate
+ *      protocol must also be provided. The delegate is notified to decide
+ *      whether to present a peer, when the user taps the done button, or when
+ *      the users taps the cancel button. No assumption should be made as to
+ *      which queue the callbacks are called on.
+ * 
+ *      When presented, the browser view controller looks for nearby peers,
+ *      and allows the user to connect up to the specified maximum number of
+ *      peers.  When the user taps on a nearby peer, the browser view
+ *      controller will send an invitation to it.
+ * 
+ *      When the browser view controller is dismissed, it will stop looking
+ *      for nearby peers.
+ */
 @Generated
 @Library("MultipeerConnectivity")
 @Runtime(ObjCRuntime.class)
@@ -197,6 +228,9 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @Selector("init")
     public native MCBrowserViewController init();
 
+    /**
+     * Create a browser view controller with a programmatic browser and a session.
+     */
     @Generated
     @Selector("initWithBrowser:session:")
     public native MCBrowserViewController initWithBrowserSession(MCNearbyServiceBrowser browser, MCSession session);
@@ -209,15 +243,24 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @Selector("initWithNibName:bundle:")
     public native MCBrowserViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * Create a browser view controller with a service type and a session.
+     */
     @Generated
     @Selector("initWithServiceType:session:")
     public native MCBrowserViewController initWithServiceTypeSession(String serviceType, MCSession session);
 
+    /**
+     * The maximum number of peers the session should expect.
+     */
     @Generated
     @Selector("maximumNumberOfPeers")
     @NUInt
     public native long maximumNumberOfPeers();
 
+    /**
+     * The minimum number of peers the session should expect.
+     */
     @Generated
     @Selector("minimumNumberOfPeers")
     @NUInt
@@ -243,10 +286,16 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
         }
     }
 
+    /**
+     * The maximum number of peers the session should expect.
+     */
     @Generated
     @Selector("setMaximumNumberOfPeers:")
     public native void setMaximumNumberOfPeers(@NUInt long value);
 
+    /**
+     * The minimum number of peers the session should expect.
+     */
     @Generated
     @Selector("setMinimumNumberOfPeers:")
     public native void setMinimumNumberOfPeers(@NUInt long value);

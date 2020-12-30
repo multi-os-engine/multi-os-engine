@@ -131,6 +131,9 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
     @Selector("kilovolts")
     public static native NSUnitElectricPotentialDifference kilovolts();
 
+    /**
+     * Base unit - volts
+     */
     @Generated
     @Selector("megavolts")
     public static native NSUnitElectricPotentialDifference megavolts();

@@ -9,6 +9,12 @@ public final class ICReturnDownloadErrorCode {
     private ICReturnDownloadErrorCode() {
     }
 
+    /**
+     * Destination path supplied is invalid
+     */
     @Generated @NInt public static final long PathInvalid = 0xFFFFFFFFFFFFAD94L;
+    /**
+     * Destination file is not writable
+     */
     @Generated @NInt public static final long FileWritable = 0xFFFFFFFFFFFFAD95L;
 }

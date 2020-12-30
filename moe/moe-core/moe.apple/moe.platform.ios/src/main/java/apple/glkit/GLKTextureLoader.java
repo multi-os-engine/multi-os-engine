@@ -101,18 +101,27 @@ public class GLKTextureLoader extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * File path of image.
+     */
     @Generated
     @Selector("cubeMapWithContentsOfFile:options:error:")
     public static native GLKTextureInfo cubeMapWithContentsOfFileOptionsError(String path,
             NSDictionary<String, ? extends NSNumber> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * An array of paths (NSStrings or NSURLs).
+     */
     @Generated
     @Selector("cubeMapWithContentsOfFiles:options:error:")
     public static native GLKTextureInfo cubeMapWithContentsOfFilesOptionsError(NSArray<?> paths,
             NSDictionary<String, ? extends NSNumber> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * File path of image.
+     */
     @Generated
     @Selector("cubeMapWithContentsOfURL:options:error:")
     public static native GLKTextureInfo cubeMapWithContentsOfURLOptionsError(NSURL url,
@@ -175,30 +184,45 @@ public class GLKTextureLoader extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * CGImage reference.
+     */
     @Generated
     @Selector("textureWithCGImage:options:error:")
     public static native GLKTextureInfo textureWithCGImageOptionsError(CGImageRef cgImage,
             NSDictionary<String, ? extends NSNumber> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * NSData containing image contents.
+     */
     @Generated
     @Selector("textureWithContentsOfData:options:error:")
     public static native GLKTextureInfo textureWithContentsOfDataOptionsError(NSData data,
             NSDictionary<String, ? extends NSNumber> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * File path of image.
+     */
     @Generated
     @Selector("textureWithContentsOfFile:options:error:")
     public static native GLKTextureInfo textureWithContentsOfFileOptionsError(String path,
             NSDictionary<String, ? extends NSNumber> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * The URL from which to read.
+     */
     @Generated
     @Selector("textureWithContentsOfURL:options:error:")
     public static native GLKTextureInfo textureWithContentsOfURLOptionsError(NSURL url,
             NSDictionary<String, ? extends NSNumber> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * The asset name
+     */
     @Generated
     @Selector("textureWithName:scaleFactor:bundle:options:error:")
     public static native GLKTextureInfo textureWithNameScaleFactorBundleOptionsError(String name,
@@ -210,18 +234,27 @@ public class GLKTextureLoader extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * File path of image.
+     */
     @Generated
     @Selector("cubeMapWithContentsOfFile:options:queue:completionHandler:")
     public native void cubeMapWithContentsOfFileOptionsQueueCompletionHandler(String path,
             NSDictionary<String, ? extends NSNumber> options, NSObject queue,
             @ObjCBlock(name = "call_cubeMapWithContentsOfFileOptionsQueueCompletionHandler") Block_cubeMapWithContentsOfFileOptionsQueueCompletionHandler block);
 
+    /**
+     * An array of paths (NSStrings or NSURLs).
+     */
     @Generated
     @Selector("cubeMapWithContentsOfFiles:options:queue:completionHandler:")
     public native void cubeMapWithContentsOfFilesOptionsQueueCompletionHandler(NSArray<?> paths,
             NSDictionary<String, ? extends NSNumber> options, NSObject queue,
             @ObjCBlock(name = "call_cubeMapWithContentsOfFilesOptionsQueueCompletionHandler") Block_cubeMapWithContentsOfFilesOptionsQueueCompletionHandler block);
 
+    /**
+     * File path of image.
+     */
     @Generated
     @Selector("cubeMapWithContentsOfURL:options:queue:completionHandler:")
     public native void cubeMapWithContentsOfURLOptionsQueueCompletionHandler(NSURL url,
@@ -236,30 +269,45 @@ public class GLKTextureLoader extends NSObject {
     @Selector("initWithSharegroup:")
     public native GLKTextureLoader initWithSharegroup(EAGLSharegroup sharegroup);
 
+    /**
+     * CGImage reference.
+     */
     @Generated
     @Selector("textureWithCGImage:options:queue:completionHandler:")
     public native void textureWithCGImageOptionsQueueCompletionHandler(CGImageRef cgImage,
             NSDictionary<String, ? extends NSNumber> options, NSObject queue,
             @ObjCBlock(name = "call_textureWithCGImageOptionsQueueCompletionHandler") Block_textureWithCGImageOptionsQueueCompletionHandler block);
 
+    /**
+     * NSData containing image contents.
+     */
     @Generated
     @Selector("textureWithContentsOfData:options:queue:completionHandler:")
     public native void textureWithContentsOfDataOptionsQueueCompletionHandler(NSData data,
             NSDictionary<String, ? extends NSNumber> options, NSObject queue,
             @ObjCBlock(name = "call_textureWithContentsOfDataOptionsQueueCompletionHandler") Block_textureWithContentsOfDataOptionsQueueCompletionHandler block);
 
+    /**
+     * File path of image.
+     */
     @Generated
     @Selector("textureWithContentsOfFile:options:queue:completionHandler:")
     public native void textureWithContentsOfFileOptionsQueueCompletionHandler(String path,
             NSDictionary<String, ? extends NSNumber> options, NSObject queue,
             @ObjCBlock(name = "call_textureWithContentsOfFileOptionsQueueCompletionHandler") Block_textureWithContentsOfFileOptionsQueueCompletionHandler block);
 
+    /**
+     * File path of image.
+     */
     @Generated
     @Selector("textureWithContentsOfURL:options:queue:completionHandler:")
     public native void textureWithContentsOfURLOptionsQueueCompletionHandler(NSURL url,
             NSDictionary<String, ? extends NSNumber> options, NSObject queue,
             @ObjCBlock(name = "call_textureWithContentsOfURLOptionsQueueCompletionHandler") Block_textureWithContentsOfURLOptionsQueueCompletionHandler block);
 
+    /**
+     * The asset name
+     */
     @Generated
     @Selector("textureWithName:scaleFactor:bundle:options:queue:completionHandler:")
     public native void textureWithNameScaleFactorBundleOptionsQueueCompletionHandler(String name,

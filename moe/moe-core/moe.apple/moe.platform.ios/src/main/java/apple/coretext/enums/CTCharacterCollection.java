@@ -18,6 +18,29 @@ package apple.coretext.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * @enum       CTCharacterCollection
+ * @abstract   These constants specify character collections.
+ * 
+ * @constant   kCTCharacterCollectionIdentityMapping
+ *             Indicates that the character identifier is equal to the CGGlyph
+ *             glyph index.
+ * 
+ * @constant   kCTCharacterCollectionAdobeCNS1
+ *             Indicates the Adobe-CNS1 mapping.
+ * 
+ * @constant   kCTCharacterCollectionAdobeGB1
+ *             Indicates the Adobe-GB1 mapping.
+ * 
+ * @constant   kCTCharacterCollectionAdobeJapan1
+ *             Indicates the Adobe-Japan1 mapping.
+ * 
+ * @constant   kCTCharacterCollectionAdobeJapan2
+ *             Indicates the Adobe-Japan2 mapping.
+ * 
+ * @constant   kCTCharacterCollectionAdobeKorea1
+ *             Indicates the Adobe-Korea1 mapping.
+ */
 @Generated
 public final class CTCharacterCollection {
     @Generated public static final char CharacterCollectionIdentityMapping = 0x0000;

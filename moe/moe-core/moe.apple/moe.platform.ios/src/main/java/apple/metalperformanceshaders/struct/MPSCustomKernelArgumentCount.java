@@ -36,29 +36,47 @@ public final class MPSCustomKernelArgumentCount extends StructObject {
         setBroadcastTextureCount(broadcastTextureCount);
     }
 
+    /**
+     * < must be 1. Can't have 2 or more. If you have 0, this is 1.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @NUInt
     public native long destinationTextureCount();
 
+    /**
+     * < must be 1. Can't have 2 or more. If you have 0, this is 1.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setDestinationTextureCount(@NUInt long value);
 
+    /**
+     * < number of source textures. These textures will be scaled by batchCount.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @NUInt
     public native long sourceTextureCount();
 
+    /**
+     * < number of source textures. These textures will be scaled by batchCount.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSourceTextureCount(@NUInt long value);
 
+    /**
+     * < number of source textures shared across all parts of a batch
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @NUInt
     public native long broadcastTextureCount();
 
+    /**
+     * < number of source textures shared across all parts of a batch
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setBroadcastTextureCount(@NUInt long value);

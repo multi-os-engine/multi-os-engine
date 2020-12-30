@@ -19,10 +19,22 @@ package apple.multipeerconnectivity.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Encryption preferences
+ */
 @Generated
 public final class MCEncryptionPreference {
+    /**
+     * Session prefers encryption but will accept unencrypted connections.
+     */
     @Generated @NInt public static final long Optional = 0x0000000000000000L;
+    /**
+     * Session requires encryption.
+     */
     @Generated @NInt public static final long Required = 0x0000000000000001L;
+    /**
+     * Session should not be encrypted.
+     */
     @Generated @NInt public static final long None = 0x0000000000000002L;
 
     @Generated

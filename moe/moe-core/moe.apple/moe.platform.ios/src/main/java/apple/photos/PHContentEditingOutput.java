@@ -163,11 +163,17 @@ public class PHContentEditingOutput extends NSObject {
     @Selector("initWithContentEditingInput:")
     public native PHContentEditingOutput initWithContentEditingInput(PHContentEditingInput contentEditingInput);
 
+    /**
+     * Create a PHContentEditingOutput from a newly created asset within the change request block
+     */
     @Generated
     @Selector("initWithPlaceholderForCreatedAsset:")
     public native PHContentEditingOutput initWithPlaceholderForCreatedAsset(
             PHObjectPlaceholder placeholderForCreatedAsset);
 
+    /**
+     * File URL where the rendered output, with adjustments baked-in, needs to be written to.
+     */
     @Generated
     @Selector("renderedContentURL")
     public native NSURL renderedContentURL();

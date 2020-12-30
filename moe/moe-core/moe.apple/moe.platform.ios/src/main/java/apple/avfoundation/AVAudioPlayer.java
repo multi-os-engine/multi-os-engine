@@ -157,39 +157,67 @@ public class AVAudioPlayer extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * returns average power in decibels for a given channel
+     */
     @Generated
     @Selector("averagePowerForChannel:")
     public native float averagePowerForChannel(@NUInt long channelNumber);
 
+    /**
+     * Array of AVAudioSessionChannelDescription objects
+     */
     @Generated
     @Selector("channelAssignments")
     public native NSArray<? extends AVAudioSessionChannelDescription> channelAssignments();
 
+    /**
+     * If the sound is playing, currentTime is the offset into the sound of the current playback position.
+     * If the sound is not playing, currentTime is the offset into the sound where playing would start. 
+     */
     @Generated
     @Selector("currentTime")
     public native double currentTime();
 
+    /**
+     * returns nil if object was not created with a data object
+     */
     @Generated
     @Selector("data")
     public native NSData data();
 
+    /**
+     * the delegate will be sent messages from the AVAudioPlayerDelegate protocol
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVAudioPlayerDelegate delegate();
 
+    /**
+     * returns the current time associated with the output device
+     */
     @Generated
     @Selector("deviceCurrentTime")
     public native double deviceCurrentTime();
 
+    /**
+     * the duration of the sound.
+     */
     @Generated
     @Selector("duration")
     public native double duration();
 
+    /**
+     * You must set enableRate to YES for the rate property to take effect. You must set this before calling prepareToPlay.
+     */
     @Generated
     @Selector("enableRate")
     public native boolean enableRate();
 
+    /**
+     * returns the format of the audio data
+     */
     @Generated
     @Selector("format")
     public native AVAudioFormat format();
@@ -198,11 +226,18 @@ public class AVAudioPlayer extends NSObject {
     @Selector("init")
     public native AVAudioPlayer init();
 
+    /**
+     * all data must be in the form of an audio file understood by CoreAudio
+     */
     @Generated
     @Selector("initWithContentsOfURL:error:")
     public native AVAudioPlayer initWithContentsOfURLError(NSURL url,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * The file type hint is a constant defined in AVMediaFormat.h whose value is a UTI for a file format. e.g. AVFileTypeAIFF.
+     * Sometimes the type of a file cannot be determined from the data, or it is actually corrupt. The file type hint tells the parser what kind of data to look for so that files which are not self identifying or possibly even corrupt can be successfully parsed.
+     */
     @Generated
     @Selector("initWithContentsOfURL:fileTypeHint:error:")
     public native AVAudioPlayer initWithContentsOfURLFileTypeHintError(NSURL url, String utiString,
@@ -218,14 +253,23 @@ public class AVAudioPlayer extends NSObject {
     public native AVAudioPlayer initWithDataFileTypeHintError(NSData data, String utiString,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * turns level metering on or off. default is off.
+     */
     @Generated
     @Selector("isMeteringEnabled")
     public native boolean isMeteringEnabled();
 
+    /**
+     * turns level metering on or off. default is off.
+     */
     @Generated
     @Selector("setMeteringEnabled:")
     public native void setMeteringEnabled(boolean value);
 
+    /**
+     * is it playing or not?
+     */
     @Generated
     @Selector("isPlaying")
     public native boolean isPlaying();
@@ -235,51 +279,94 @@ public class AVAudioPlayer extends NSObject {
     @NUInt
     public native long numberOfChannels();
 
+    /**
+     * "numberOfLoops" is the number of times that the sound will return to the beginning upon reaching the end.
+     * A value of zero means to play the sound just once.
+     * A value of one will result in playing the sound twice, and so on..
+     * Any negative number will loop indefinitely until stopped.
+     */
     @Generated
     @Selector("numberOfLoops")
     @NInt
     public native long numberOfLoops();
 
+    /**
+     * set panning. -1.0 is left, 0.0 is center, 1.0 is right.
+     */
     @Generated
     @Selector("pan")
     public native float pan();
 
+    /**
+     * Pauses playback, but remains ready to play.
+     */
     @Generated
     @Selector("pause")
     public native void pause();
 
+    /**
+     * returns peak power in decibels for a given channel
+     */
     @Generated
     @Selector("peakPowerForChannel:")
     public native float peakPowerForChannel(@NUInt long channelNumber);
 
+    /**
+     * This method starts the audio hardware synchronously (if not already running), and triggers the sound playback which is streamed asynchronously.
+     */
     @Generated
     @Selector("play")
     public native boolean play();
 
+    /**
+     * This method starts the audio hardware synchronously (if not already running), and triggers the sound playback which is streamed asynchronously at the specified time in the future.
+     * Time is an absolute time based on and greater than deviceCurrentTime. 
+     */
     @Generated
     @Selector("playAtTime:")
     public native boolean playAtTime(double time);
 
+    /**
+     * Transport control
+     * Methods that return BOOL return YES on success and NO on failure.
+     * Get ready to play the sound. This happens automatically on play.
+     */
     @Generated
     @Selector("prepareToPlay")
     public native boolean prepareToPlay();
 
+    /**
+     * See enableRate. The playback rate for the sound. 1.0 is normal, 0.5 is half speed, 2.0 is double speed.
+     */
     @Generated
     @Selector("rate")
     public native float rate();
 
+    /**
+     * Array of AVAudioSessionChannelDescription objects
+     */
     @Generated
     @Selector("setChannelAssignments:")
     public native void setChannelAssignments(NSArray<? extends AVAudioSessionChannelDescription> value);
 
+    /**
+     * If the sound is playing, currentTime is the offset into the sound of the current playback position.
+     * If the sound is not playing, currentTime is the offset into the sound where playing would start. 
+     */
     @Generated
     @Selector("setCurrentTime:")
     public native void setCurrentTime(double value);
 
+    /**
+     * the delegate will be sent messages from the AVAudioPlayerDelegate protocol
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVAudioPlayerDelegate value);
 
+    /**
+     * the delegate will be sent messages from the AVAudioPlayerDelegate protocol
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) AVAudioPlayerDelegate value) {
         Object __old = delegate();
@@ -292,46 +379,83 @@ public class AVAudioPlayer extends NSObject {
         }
     }
 
+    /**
+     * You must set enableRate to YES for the rate property to take effect. You must set this before calling prepareToPlay.
+     */
     @Generated
     @Selector("setEnableRate:")
     public native void setEnableRate(boolean value);
 
+    /**
+     * "numberOfLoops" is the number of times that the sound will return to the beginning upon reaching the end.
+     * A value of zero means to play the sound just once.
+     * A value of one will result in playing the sound twice, and so on..
+     * Any negative number will loop indefinitely until stopped.
+     */
     @Generated
     @Selector("setNumberOfLoops:")
     public native void setNumberOfLoops(@NInt long value);
 
+    /**
+     * set panning. -1.0 is left, 0.0 is center, 1.0 is right.
+     */
     @Generated
     @Selector("setPan:")
     public native void setPan(float value);
 
+    /**
+     * See enableRate. The playback rate for the sound. 1.0 is normal, 0.5 is half speed, 2.0 is double speed.
+     */
     @Generated
     @Selector("setRate:")
     public native void setRate(float value);
 
+    /**
+     * The volume for the sound. The nominal range is from 0.0 to 1.0.
+     */
     @Generated
     @Selector("setVolume:")
     public native void setVolume(float value);
 
+    /**
+     * fade to a new volume over a duration
+     */
     @Generated
     @Selector("setVolume:fadeDuration:")
     public native void setVolumeFadeDuration(float volume, double duration);
 
+    /**
+     * returns a settings dictionary with keys as described in AVAudioSettings.h
+     */
     @Generated
     @Selector("settings")
     public native NSDictionary<String, ?> settings();
 
+    /**
+     * Synchronously stops playback, no longer ready to play.
+     * NOTE: - This will block while releasing the audio hardware that was acquired upon calling play() or prepareToPlay() 
+     */
     @Generated
     @Selector("stop")
     public native void stop();
 
+    /**
+     * call to refresh meter values
+     */
     @Generated
     @Selector("updateMeters")
     public native void updateMeters();
 
+    /**
+     * returns nil if object was not created with a URL
+     */
     @Generated
     @Selector("url")
     public native NSURL url();
 
+    /**
+     * The volume for the sound. The nominal range is from 0.0 to 1.0.
+     */
     @Generated
     @Selector("volume")
     public native float volume();

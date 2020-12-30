@@ -15,6 +15,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITableViewDropPlaceholderContext")
 public interface UITableViewDropPlaceholderContext extends UIDragAnimating {
+    /**
+     * Exchange the placeholder for the final cell.
+     * You are only responsible for updating your data source inside the block using the provided insertionIndexPath.
+     * If the placeholder is no longer available (e.g. -reloadData has been called) the dataSourceUpdates block
+     * will not be executed and this will return NO.
+     */
     @Generated
     @Selector("commitInsertionWithDataSourceUpdates:")
     boolean commitInsertionWithDataSourceUpdates(
@@ -27,10 +33,18 @@ public interface UITableViewDropPlaceholderContext extends UIDragAnimating {
         void call_commitInsertionWithDataSourceUpdates(NSIndexPath insertionIndexPath);
     }
 
+    /**
+     * If the placeholder is no longer needed or you wish to manually insert a cell for the drop data, you can
+     * remove the placeholder via this method.
+     * If the placeholder is no longer available (e.g. -reloadData has been called) this will return NO.
+     */
     @Generated
     @Selector("deletePlaceholder")
     boolean deletePlaceholder();
 
+    /**
+     * The drag item this placeholder was created for.
+     */
     @Generated
     @Selector("dragItem")
     UIDragItem dragItem();

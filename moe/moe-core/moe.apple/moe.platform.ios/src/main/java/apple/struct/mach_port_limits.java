@@ -48,10 +48,16 @@ public final class mach_port_limits extends StructObject {
         setMpl_qlimit(mpl_qlimit);
     }
 
+    /**
+     * number of msgs
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int mpl_qlimit();
 
+    /**
+     * number of msgs
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setMpl_qlimit(int value);

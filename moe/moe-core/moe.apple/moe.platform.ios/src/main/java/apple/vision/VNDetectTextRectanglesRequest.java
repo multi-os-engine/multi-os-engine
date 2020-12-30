@@ -25,6 +25,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief A request that will detect regions of text in an image.
+ * 
+ * @details This request will generate VNTextObservation objects describing the locations of text detected in an image.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -124,6 +129,9 @@ public class VNDetectTextRectanglesRequest extends VNImageBasedRequest {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @brief Specify whether or not the bounding boxes of individual characters should also be returned in the resultant VNTextObservations. Default is NO.
+     */
     @Generated
     @Selector("reportCharacterBoxes")
     public native boolean reportCharacterBoxes();
@@ -136,6 +144,9 @@ public class VNDetectTextRectanglesRequest extends VNImageBasedRequest {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @brief Specify whether or not the bounding boxes of individual characters should also be returned in the resultant VNTextObservations. Default is NO.
+     */
     @Generated
     @Selector("setReportCharacterBoxes:")
     public native void setReportCharacterBoxes(boolean value);

@@ -167,17 +167,26 @@ public class UIActivityViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * set to nil after activity performs or view controller is dismissed
+     */
     @Generated
     @Deprecated
     @Selector("completionHandler")
     @ObjCBlock(name = "call_completionHandler_ret")
     public native Block_completionHandler_ret completionHandler();
 
+    /**
+     * set to nil after activity performs or view controller is dismissed
+     */
     @Generated
     @Selector("completionWithItemsHandler")
     @ObjCBlock(name = "call_completionWithItemsHandler_ret")
     public native Block_completionWithItemsHandler_ret completionWithItemsHandler();
 
+    /**
+     * default is nil. activity types listed will not be displayed
+     */
     @Generated
     @Selector("excludedActivityTypes")
     public native NSArray<String> excludedActivityTypes();
@@ -199,17 +208,26 @@ public class UIActivityViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native UIActivityViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * set to nil after activity performs or view controller is dismissed
+     */
     @Generated
     @Deprecated
     @Selector("setCompletionHandler:")
     public native void setCompletionHandler(
             @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
 
+    /**
+     * set to nil after activity performs or view controller is dismissed
+     */
     @Generated
     @Selector("setCompletionWithItemsHandler:")
     public native void setCompletionWithItemsHandler(
             @ObjCBlock(name = "call_setCompletionWithItemsHandler") Block_setCompletionWithItemsHandler value);
 
+    /**
+     * default is nil. activity types listed will not be displayed
+     */
     @Generated
     @Selector("setExcludedActivityTypes:")
     public native void setExcludedActivityTypes(NSArray<String> value);

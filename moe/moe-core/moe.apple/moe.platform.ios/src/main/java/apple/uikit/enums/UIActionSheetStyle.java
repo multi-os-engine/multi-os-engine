@@ -21,6 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIActionSheetStyle {
+    /**
+     * take appearance from toolbar style otherwise uses 'default'
+     */
     @Generated @NInt public static final long Automatic = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long Default = 0x0000000000000000L;
     @Generated @NInt public static final long BlackTranslucent = 0x0000000000000002L;

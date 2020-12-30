@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class VNRecognizedTextObservation
+ * @superclass VNDetectedObjectObservation
+ * @brief VNRecognizedTextObservation Describes a text area detected and recognized by the VNRecognizeTextRequest request.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -167,6 +172,10 @@ public class VNRecognizedTextObservation extends VNRectangleObservation {
         return supportsSecureCoding();
     }
 
+    /**
+     * @brief Returns the top N candidates sorted by decreasing confidence score
+     * @discussion This will return no more than N but can be less than N candidates. The maximum number of candidates returned cannot exceed 10 candidates.
+     */
     @Generated
     @Selector("topCandidates:")
     public native NSArray<? extends VNRecognizedText> topCandidates(@NUInt long maxCandidateCount);

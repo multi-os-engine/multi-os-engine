@@ -158,6 +158,9 @@ public class CXEndCallAction extends CXCallAction {
     @NInt
     public static native long version_static();
 
+    /**
+     * Normally, providers can just call -[CXAction fulfill] to indicate action fulfillment. Use this method to note a specific date that the call ended.
+     */
     @Generated
     @Selector("fulfillWithDateEnded:")
     public native void fulfillWithDateEnded(NSDate dateEnded);

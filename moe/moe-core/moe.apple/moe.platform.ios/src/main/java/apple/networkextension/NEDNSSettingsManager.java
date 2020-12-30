@@ -25,6 +25,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEDNSSettingsManager
+ * @discussion The NEDNSSettingsManager class declares the programmatic interface for an object that manages DNS settings configurations.
+ * 
+ * NEDNSSettingsManager declares methods and properties for configuring and controlling DNS settings on the system.
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -83,6 +91,10 @@ public class NEDNSSettingsManager extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property dnsSettings
+     * @discussion An NEDNSSettings object containing the DNS resolver configuration to apply to the system.
+     */
     @Generated
     @Selector("dnsSettings")
     public native NEDNSSettings dnsSettings();
@@ -109,6 +121,10 @@ public class NEDNSSettingsManager extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * @property enabled
+     * @discussion Checks the enabled status of the DNS settings. DNS settings must be enabled by the user in Settings or System Preferences.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
@@ -121,6 +137,11 @@ public class NEDNSSettingsManager extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @method loadFromPreferencesWithCompletionHandler:
+     * @discussion This function loads the current DNS settings configuration from the caller's DNS settings preferences.
+     * @param completionHandler A block that will be called when the load operation is completed. The NSError passed to this block will be nil if the load operation succeeded, non-nil otherwise.
+     */
     @Generated
     @Selector("loadFromPreferencesWithCompletionHandler:")
     public native void loadFromPreferencesWithCompletionHandler(
@@ -133,6 +154,10 @@ public class NEDNSSettingsManager extends NSObject {
         void call_loadFromPreferencesWithCompletionHandler(NSError error);
     }
 
+    /**
+     * @property localizedDescription
+     * @discussion A string containing a description of the DNS settings.
+     */
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
@@ -143,10 +168,19 @@ public class NEDNSSettingsManager extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property onDemandRules
+     * @discussion An array of NEOnDemandRule objects. If nil, the associated DNS settings will always apply. If non-nil, the array describes the networks on which the DNS configuration should take effect or not.
+     */
     @Generated
     @Selector("onDemandRules")
     public native NSArray<? extends NEOnDemandRule> onDemandRules();
 
+    /**
+     * @method removeFromPreferencesWithCompletionHandler:
+     * @discussion This function removes the DNS settings configuration from the caller's DNS settings preferences. If the DNS settings are enabled, the DNS settings becomes disabled.
+     * @param completionHandler A block that will be called when the remove operation is completed. The NSError passed to this block will be nil if the remove operation succeeded, non-nil otherwise.
+     */
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
     public native void removeFromPreferencesWithCompletionHandler(
@@ -167,6 +201,11 @@ public class NEDNSSettingsManager extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @method saveToPreferencesWithCompletionHandler:
+     * @discussion This function saves the DNS settingsconfiguration in the caller's DNS settings preferences. If the DNS settings are enabled, they will become active.
+     * @param completionHandler A block that will be called when the save operation is completed. The NSError passed to this block will be nil if the save operation succeeded, non-nil otherwise.
+     */
     @Generated
     @Selector("saveToPreferencesWithCompletionHandler:")
     public native void saveToPreferencesWithCompletionHandler(
@@ -179,14 +218,26 @@ public class NEDNSSettingsManager extends NSObject {
         void call_saveToPreferencesWithCompletionHandler(NSError error);
     }
 
+    /**
+     * @property dnsSettings
+     * @discussion An NEDNSSettings object containing the DNS resolver configuration to apply to the system.
+     */
     @Generated
     @Selector("setDnsSettings:")
     public native void setDnsSettings(NEDNSSettings value);
 
+    /**
+     * @property localizedDescription
+     * @discussion A string containing a description of the DNS settings.
+     */
     @Generated
     @Selector("setLocalizedDescription:")
     public native void setLocalizedDescription(String value);
 
+    /**
+     * @property onDemandRules
+     * @discussion An array of NEOnDemandRule objects. If nil, the associated DNS settings will always apply. If non-nil, the array describes the networks on which the DNS configuration should take effect or not.
+     */
     @Generated
     @Selector("setOnDemandRules:")
     public native void setOnDemandRules(NSArray<? extends NEOnDemandRule> value);
@@ -195,6 +246,10 @@ public class NEDNSSettingsManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * @method sharedManager
+     * @return The singleton NEDNSSettingsManager object for the calling process.
+     */
     @Generated
     @Selector("sharedManager")
     public static native NEDNSSettingsManager sharedManager();

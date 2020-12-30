@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Mutable Ordered Set     ***************
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -227,6 +230,9 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     @Selector("exchangeObjectAtIndex:withObjectAtIndex:")
     public native void exchangeObjectAtIndexWithObjectAtIndex(@NUInt long idx1, @NUInt long idx2);
 
+    /**
+     * evaluate a predicate against an ordered set of objects and filter the mutable ordered set directly
+     */
     @Generated
     @Selector("filterUsingPredicate:")
     public native void filterUsingPredicate(NSPredicate p);
@@ -376,6 +382,9 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     public native void sortUsingComparator(
             @ObjCBlock(name = "call_sortUsingComparator") Block_sortUsingComparator cmptr);
 
+    /**
+     * sorts the ordered set itself
+     */
     @Generated
     @Selector("sortUsingDescriptors:")
     public native void sortUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);

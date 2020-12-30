@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A user selected asset from \c PHPickerViewController.
+ */
 @Generated
 @Library("PhotosUI")
 @Runtime(ObjCRuntime.class)
@@ -52,6 +55,9 @@ public class PHPickerResult extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Local identifier of the selected asset.
+     */
     @Generated
     @Selector("assetIdentifier")
     public native String assetIdentifier();
@@ -112,6 +118,9 @@ public class PHPickerResult extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Representations of the selected asset.
+     */
     @Generated
     @Selector("itemProvider")
     public native NSItemProvider itemProvider();

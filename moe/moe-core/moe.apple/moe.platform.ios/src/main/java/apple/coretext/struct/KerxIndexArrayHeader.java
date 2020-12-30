@@ -66,34 +66,58 @@ public final class KerxIndexArrayHeader extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setColumnCount(char value);
 
+    /**
+     * offset to row index lookup table
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int rowIndexTableOffset();
 
+    /**
+     * offset to row index lookup table
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setRowIndexTableOffset(int value);
 
+    /**
+     * offset to column index offset table
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native int columnIndexTableOffset();
 
+    /**
+     * offset to column index offset table
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setColumnIndexTableOffset(int value);
 
+    /**
+     * offset to start of kerning array
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     public native int kerningArrayOffset();
 
+    /**
+     * offset to start of kerning array
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setKerningArrayOffset(int value);
 
+    /**
+     * offset to start of kerning vectors (if tupleCount is 1 or more)
+     */
     @Generated
     @StructureField(order = 6, isGetter = true)
     public native int kerningVectorOffset();
 
+    /**
+     * offset to start of kerning vectors (if tupleCount is 1 or more)
+     */
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setKerningVectorOffset(int value);

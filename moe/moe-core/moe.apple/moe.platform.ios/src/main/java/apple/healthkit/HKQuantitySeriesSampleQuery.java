@@ -30,6 +30,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         HKQuantitySeriesSampleQuery
+ * @abstract      An HKQuantitySeriesSampleQuery is used to access series data associated with
+ *                HKQuantitySample(s).
+ * @discussion    Once instantiated, call -[HKHealthStore executeQuery:] to begin enumerating
+ *                the series data.
+ *                Call -[HKHealthStore stopQuery:] to discontinue further quantity data reporting.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -93,6 +101,15 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @property      includeSample
+     * @abstract      Include owning HKQuantitySample in quantityHandler handler.
+     * @discussion    Default value is NO.
+     *                If includeSample is set then the quantitySample parameter of quantityHandler will
+     *                be non-nil anytime the quantity parameter is non-nil.
+     *                Specifying this option has a performance cost.
+     *                This property may not be modified once the query has been executed.
+     */
     @Generated
     @Selector("includeSample")
     public native boolean includeSample();
@@ -101,6 +118,28 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     @Selector("init")
     public native HKQuantitySeriesSampleQuery init();
 
+    /**
+     * @method        initWithSample:dataHandler:
+     * @abstract      Returns a query that will retrieve HKQuantity objects for samples of a specified
+     *                type that match the specified predicate.
+     * 
+     * @param         quantityType        The type of HKQuantitySample to retrieve.
+     * @param         predicate           The predicate which the query results should match.
+     *                                    To query for the quantities for a specific quantity sample
+     *                                    see: +[HKPredicates predicateForObjectWithUUID:]
+     * 
+     * @param         quantityHandler     The block to invoke with results from the query. It will be
+     *                                    called repeatedly with HKQuantity, and NSDateInterval objects in
+     *                                    ascending dateInterval.startDate order, until all quantities are
+     *                                    returned and the done parameter is YES
+     *                                    or -[HKHealthStore stopQuery:] is called.
+     *                                    The quantitySample parameter is nil unless includeSample is YES,
+     *                                    in which case it will be the quantitySample which owns the current
+     *                                    quantity anytime the quantity paramater is non-nil.
+     *                                    The stopQuery call can be made within the quantityHandler block.
+     *                                    Once done is YES, or stopQuery has been called, the query is
+     *                                    complete and no more calls to quantityHandler will be made.
+     */
     @Generated
     @Selector("initWithQuantityType:predicate:quantityHandler:")
     public native HKQuantitySeriesSampleQuery initWithQuantityTypePredicateQuantityHandler(HKQuantityType quantityType,
@@ -155,6 +194,18 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @property      orderByQuantitySampleStartDate
+     * @abstract      Order enumerated results first by quantitySample.startDate,
+     *                then by the quantity's dateInterval.startDate.
+     * @discussion    Default value is NO.
+     *                All quantities owned by a given quantitySample will be
+     *                enumerated before any quantities owned by any other quantity sample,
+     *                and the quantity samples will be enumerated in their startDate order.
+     *                Note that individual quantities may not be returned in their
+     *                dateInterval.startDate order if more than one quantitySample overlap in time.
+     *                This property may not be modified once the query has been executed.
+     */
     @Generated
     @Selector("orderByQuantitySampleStartDate")
     public native boolean orderByQuantitySampleStartDate();
@@ -281,10 +332,31 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property      includeSample
+     * @abstract      Include owning HKQuantitySample in quantityHandler handler.
+     * @discussion    Default value is NO.
+     *                If includeSample is set then the quantitySample parameter of quantityHandler will
+     *                be non-nil anytime the quantity parameter is non-nil.
+     *                Specifying this option has a performance cost.
+     *                This property may not be modified once the query has been executed.
+     */
     @Generated
     @Selector("setIncludeSample:")
     public native void setIncludeSample(boolean value);
 
+    /**
+     * @property      orderByQuantitySampleStartDate
+     * @abstract      Order enumerated results first by quantitySample.startDate,
+     *                then by the quantity's dateInterval.startDate.
+     * @discussion    Default value is NO.
+     *                All quantities owned by a given quantitySample will be
+     *                enumerated before any quantities owned by any other quantity sample,
+     *                and the quantity samples will be enumerated in their startDate order.
+     *                Note that individual quantities may not be returned in their
+     *                dateInterval.startDate order if more than one quantitySample overlap in time.
+     *                This property may not be modified once the query has been executed.
+     */
     @Generated
     @Selector("setOrderByQuantitySampleStartDate:")
     public native void setOrderByQuantitySampleStartDate(boolean value);

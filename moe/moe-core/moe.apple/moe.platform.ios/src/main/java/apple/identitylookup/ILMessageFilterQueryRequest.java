@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A request to query a MessageFilter extension about how to interpret a received message.
+ */
 @Generated
 @Library("IdentityLookup")
 @Runtime(ObjCRuntime.class)
@@ -122,6 +125,9 @@ public class ILMessageFilterQueryRequest extends NSObject implements NSSecureCod
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The body of the message the receiver relates to.
+     */
     @Generated
     @Selector("messageBody")
     public native String messageBody();
@@ -140,6 +146,9 @@ public class ILMessageFilterQueryRequest extends NSObject implements NSSecureCod
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The sender of the message the receiver relates to.
+     */
     @Generated
     @Selector("sender")
     public native String sender();

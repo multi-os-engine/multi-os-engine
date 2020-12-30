@@ -30,11 +30,31 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * @brief	Protocol to which principal classes of v3 audio units (extensions) must conform.
+ * @discussion
+ * 	The principal class of a non-UI v3 audio unit extension will generally derive from NSObject
+ * 	and implement this protocol.
+ * 
+ * 	The principal class of a UI v3 audio unit extension must derive from AUViewController and
+ * 	implement this protocol.
+ */
 @Generated
 @Library("AudioToolbox")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AUAudioUnitFactory")
 public interface AUAudioUnitFactory extends NSExtensionRequestHandling {
+    /**
+     * @brief	Create an instance of an extension's AUAudioUnit.
+     * @discussion
+     * 	This method should create and return an instance of its audio unit.
+     * 
+     * 	This method will be called only once per instance of the factory.
+     * 
+     * 	Note that in non-ARC code, "create" methods return unretained objects (unlike "create" 
+     * 	C functions); the implementor should return an object with reference count 1 but
+     * 	autoreleased.
+     */
     @Generated
     @Selector("createAudioUnitWithComponentDescription:error:")
     AUAudioUnit createAudioUnitWithComponentDescriptionError(@ByValue AudioComponentDescription desc,

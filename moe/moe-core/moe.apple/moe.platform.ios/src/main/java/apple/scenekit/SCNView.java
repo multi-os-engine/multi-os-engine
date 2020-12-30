@@ -66,6 +66,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNView
+ * @abstract A SCNView is a subclass of NSView that can display a SCNScene
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -364,10 +368,27 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @NInt
     public static native long version_static();
 
+    /**
+     * @property allowsCameraControl
+     * @abstract A Boolean value that determines whether the user can manipulate the point of view used to render the scene. 
+     * @discussion  When set to YES, a defaultCameraController is created and the view will handle UI events to pilot it so the user can manipulate the current point of view with the mouse or the trackpad. The scene graph and existing cameras won't be modified by this action. The default value of this property is NO.
+     *     Note that the default event handling provided by the view may not suite your needs. You may want to implement you own evnet handler.
+     *     The built-in camera controller let you:
+     *       - pan with 1 finger to rotate the camera around the scene.
+     *       - pan with 2 fingers to translate the camera on its local X,Y plan.
+     *       - pan with 3 fingers vertically to move the the camera forward/backward.
+     *       - double tap to switch to the next camera in the scene.
+     *       - rotate with two fingers to roll the camera (rotation on the Z axis).
+     *       - pinch to zoom-in / zoom-out (change the fov of the camera).
+     */
     @Generated
     @Selector("allowsCameraControl")
     public native boolean allowsCameraControl();
 
+    /**
+     * @property antialiasingMode
+     * @abstract Defaults to SCNAntialiasingModeMultisampling4X on macOS and SCNAntialiasingModeNone on iOS.
+     */
     @Generated
     @Selector("antialiasingMode")
     @NUInt
@@ -475,6 +496,9 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLDevice device();
 
+    /**
+     * SCN_GL_DEPRECATED(ios(8.0, 12.0), tvos(9.0, 12.0));
+     */
     @Generated
     @Selector("eaglContext")
     public native EAGLContext eaglContext();
@@ -496,6 +520,12 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("initWithFrame:")
     public native SCNView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * @method initWithFrame:options:
+     * @abstract Initializes and returns a newly allocated SCNView object with a specified frame rectangle.
+     * @param frame The frame rectangle for the created view object.
+     * @param options An optional dictionary. See "View initialization options" above.
+     */
     @Generated
     @Selector("initWithFrame:options:")
     public native SCNView initWithFrameOptions(@ByValue CGRect frame, NSDictionary<String, ?> options);
@@ -532,10 +562,22 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("overlaySKScene")
     public native SKScene overlaySKScene();
 
+    /**
+     * @method pause:
+     * @abstract This action method pauses the scene playback.
+     * @param sender The object (such as a button or menu item) sending the message to pause the scene.
+     * @discussion This method does not do anything if the scene is already paused.
+     */
     @Generated
     @Selector("pause:")
     public native void pause(@Mapped(ObjCObjectMapper.class) Object sender);
 
+    /**
+     * @method play:
+     * @abstract This action method begins playing the scene at its current location.
+     * @param sender The object (such as a button or menu item) sending the message to play the scene.
+     * @discussion This method does not do anything if the scene is already playing.
+     */
     @Generated
     @Selector("play:")
     public native void play(@Mapped(ObjCObjectMapper.class) Object sender);
@@ -544,6 +586,12 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("pointOfView")
     public native SCNNode pointOfView();
 
+    /**
+     * @property preferredFramesPerSecond
+     * @abstract The rate you want the view to redraw its contents.
+     * @discussion When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum refresh rate of the screen is 60 frames per second, that is also the highest frame rate the view sets as the actual frame rate. However, if you ask for a lower frame rate, it might choose 30, 20, 15 or some other factor to be the actual frame rate. Your application should choose a frame rate that it can consistently maintain.
+     *     The default value is 0 which means the display link will fire at the native cadence of the display hardware.
+     */
     @Generated
     @Selector("preferredFramesPerSecond")
     @NInt
@@ -583,10 +631,27 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("sceneTime")
     public native double sceneTime();
 
+    /**
+     * @property allowsCameraControl
+     * @abstract A Boolean value that determines whether the user can manipulate the point of view used to render the scene. 
+     * @discussion  When set to YES, a defaultCameraController is created and the view will handle UI events to pilot it so the user can manipulate the current point of view with the mouse or the trackpad. The scene graph and existing cameras won't be modified by this action. The default value of this property is NO.
+     *     Note that the default event handling provided by the view may not suite your needs. You may want to implement you own evnet handler.
+     *     The built-in camera controller let you:
+     *       - pan with 1 finger to rotate the camera around the scene.
+     *       - pan with 2 fingers to translate the camera on its local X,Y plan.
+     *       - pan with 3 fingers vertically to move the the camera forward/backward.
+     *       - double tap to switch to the next camera in the scene.
+     *       - rotate with two fingers to roll the camera (rotation on the Z axis).
+     *       - pinch to zoom-in / zoom-out (change the fov of the camera).
+     */
     @Generated
     @Selector("setAllowsCameraControl:")
     public native void setAllowsCameraControl(boolean value);
 
+    /**
+     * @property antialiasingMode
+     * @abstract Defaults to SCNAntialiasingModeMultisampling4X on macOS and SCNAntialiasingModeNone on iOS.
+     */
     @Generated
     @Selector("setAntialiasingMode:")
     public native void setAntialiasingMode(@NUInt long value);
@@ -619,6 +684,9 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
         }
     }
 
+    /**
+     * SCN_GL_DEPRECATED(ios(8.0, 12.0), tvos(9.0, 12.0));
+     */
     @Generated
     @Selector("setEaglContext:")
     public native void setEaglContext(EAGLContext value);
@@ -635,6 +703,12 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("setPointOfView:")
     public native void setPointOfView(SCNNode value);
 
+    /**
+     * @property preferredFramesPerSecond
+     * @abstract The rate you want the view to redraw its contents.
+     * @discussion When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum refresh rate of the screen is 60 frames per second, that is also the highest frame rate the view sets as the actual frame rate. However, if you ask for a lower frame rate, it might choose 30, 20, 15 or some other factor to be the actual frame rate. Your application should choose a frame rate that it can consistently maintain.
+     *     The default value is 0 which means the display link will fire at the native cadence of the display hardware.
+     */
     @Generated
     @Selector("setPreferredFramesPerSecond:")
     public native void setPreferredFramesPerSecond(@NInt long value);
@@ -659,6 +733,11 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("showsStatistics")
     public native boolean showsStatistics();
 
+    /**
+     * @property snapshot
+     * @abstract Draws the contents of the view and returns them as a new image object
+     * @discussion This method is thread-safe and may be called at any time.
+     */
     @Generated
     @Selector("snapshot")
     public native UIImage snapshot();
@@ -668,6 +747,11 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @NUInt
     public native long stencilPixelFormat();
 
+    /**
+     * @method stop:
+     * @abstract This action method stops the scene playback and resets the current time to the start time of the scene.
+     * @param sender The object (such as a button or menu item) sending the message to stop playing the scene.
+     */
     @Generated
     @Selector("stop:")
     public native void stop(@Mapped(ObjCObjectMapper.class) Object sender);
@@ -681,19 +765,36 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @ByValue
     public native SCNVector3 unprojectPoint(@ByValue SCNVector3 point);
 
+    /**
+     * @property cameraControlConfiguration
+     * @abstract An object describing the current configuration of the event handler which pilot the default camera controller.
+     * @discussion This object will be used to configure the event handler when allowCameraControl is set to YES.
+     */
     @Generated
     @Selector("cameraControlConfiguration")
     @MappedReturn(ObjCObjectMapper.class)
     public native SCNCameraControlConfiguration cameraControlConfiguration();
 
+    /**
+     * @property defaultCameraController
+     * @abstract Returns the default SCNCameraController used to drive the current point of view when allowCameraController is set to YES.
+     */
     @Generated
     @Selector("defaultCameraController")
     public native SCNCameraController defaultCameraController();
 
+    /**
+     * @property rendersContinuously
+     * @abstract When set to YES, the view continously redraw at the display link frame rate. When set to NO the view will only redraw when something change or animates in the receiver's scene. Defaults to NO.
+     */
     @Generated
     @Selector("rendersContinuously")
     public native boolean rendersContinuously();
 
+    /**
+     * @property rendersContinuously
+     * @abstract When set to YES, the view continously redraw at the display link frame rate. When set to NO the view will only redraw when something change or animates in the receiver's scene. Defaults to NO.
+     */
     @Generated
     @Selector("setRendersContinuously:")
     public native void setRendersContinuously(boolean value);

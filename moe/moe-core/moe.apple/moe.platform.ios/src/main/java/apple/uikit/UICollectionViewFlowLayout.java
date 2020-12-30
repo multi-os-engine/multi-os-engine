@@ -163,6 +163,9 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @NInt
     public static native long version_static();
 
+    /**
+     * defaults to CGSizeZero - setting a non-zero size enables cells that self-size via -preferredLayoutAttributesFittingAttributes:
+     */
     @Generated
     @Selector("estimatedItemSize")
     @ByValue
@@ -201,6 +204,9 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @NFloat
     public native double minimumLineSpacing();
 
+    /**
+     * default is UICollectionViewScrollDirectionVertical
+     */
     @Generated
     @Selector("scrollDirection")
     @NInt
@@ -210,6 +216,9 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Selector("sectionFootersPinToVisibleBounds")
     public native boolean sectionFootersPinToVisibleBounds();
 
+    /**
+     * Set these properties to YES to get headers that pin to the top of the screen and footers that pin to the bottom while scrolling (similar to UITableView).
+     */
     @Generated
     @Selector("sectionHeadersPinToVisibleBounds")
     public native boolean sectionHeadersPinToVisibleBounds();
@@ -219,6 +228,9 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @ByValue
     public native UIEdgeInsets sectionInset();
 
+    /**
+     * defaults to CGSizeZero - setting a non-zero size enables cells that self-size via -preferredLayoutAttributesFittingAttributes:
+     */
     @Generated
     @Selector("setEstimatedItemSize:")
     public native void setEstimatedItemSize(@ByValue CGSize value);
@@ -243,6 +255,9 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Selector("setMinimumLineSpacing:")
     public native void setMinimumLineSpacing(@NFloat double value);
 
+    /**
+     * default is UICollectionViewScrollDirectionVertical
+     */
     @Generated
     @Selector("setScrollDirection:")
     public native void setScrollDirection(@NInt long value);
@@ -251,6 +266,9 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Selector("setSectionFootersPinToVisibleBounds:")
     public native void setSectionFootersPinToVisibleBounds(boolean value);
 
+    /**
+     * Set these properties to YES to get headers that pin to the top of the screen and footers that pin to the bottom while scrolling (similar to UITableView).
+     */
     @Generated
     @Selector("setSectionHeadersPinToVisibleBounds:")
     public native void setSectionHeadersPinToVisibleBounds(boolean value);
@@ -259,11 +277,19 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Selector("setSectionInset:")
     public native void setSectionInset(@ByValue UIEdgeInsets value);
 
+    /**
+     * The reference boundary that the section insets will be defined as relative to. Defaults to `.fromContentInset`.
+     * NOTE: Content inset will always be respected at a minimum. For example, if the sectionInsetReference equals `.fromSafeArea`, but the adjusted content inset is greater that the combination of the safe area and section insets, then section content will be aligned with the content inset instead.
+     */
     @Generated
     @Selector("sectionInsetReference")
     @NInt
     public native long sectionInsetReference();
 
+    /**
+     * The reference boundary that the section insets will be defined as relative to. Defaults to `.fromContentInset`.
+     * NOTE: Content inset will always be respected at a minimum. For example, if the sectionInsetReference equals `.fromSafeArea`, but the adjusted content inset is greater that the combination of the safe area and section insets, then section content will be aligned with the content inset instead.
+     */
     @Generated
     @Selector("setSectionInsetReference:")
     public native void setSectionInsetReference(@NInt long value);

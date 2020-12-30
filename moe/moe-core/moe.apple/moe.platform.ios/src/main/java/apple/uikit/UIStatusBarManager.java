@@ -135,6 +135,9 @@ public class UIStatusBarManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * returns CGRectZero if the status bar is hidden
+     */
     @Generated
     @Selector("statusBarFrame")
     @ByValue

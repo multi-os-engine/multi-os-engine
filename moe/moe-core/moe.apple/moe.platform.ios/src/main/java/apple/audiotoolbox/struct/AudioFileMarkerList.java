@@ -67,11 +67,17 @@ public final class AudioFileMarkerList extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setMNumberMarkers(int value);
 
+    /**
+     * this is a variable length array of mNumberMarkers elements
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @ByValue
     public native AudioFileMarker mMarkers();
 
+    /**
+     * this is a variable length array of mNumberMarkers elements
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setMMarkers(@ByValue AudioFileMarker value);

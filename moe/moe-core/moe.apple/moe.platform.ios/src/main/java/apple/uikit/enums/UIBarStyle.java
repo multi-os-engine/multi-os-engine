@@ -19,6 +19,9 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * for UINavigationBar and UIToolBar
+ */
 @Generated
 public final class UIBarStyle {
     @Generated @NInt public static final long Default = 0x0000000000000000L;

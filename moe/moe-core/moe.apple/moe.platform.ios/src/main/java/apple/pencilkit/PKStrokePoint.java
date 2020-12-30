@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A point value stores all the attributes of a PKStroke at a specific point.
+ * `PKStrokePoint` stores its properties compressed, the value read for a property may not
+ * exactly equal the value set for a property.
+ */
 @Generated
 @Library("PencilKit")
 @Runtime(ObjCRuntime.class)
@@ -56,6 +61,9 @@ public class PKStrokePoint extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Altitude used to create this point in radians, 0.0-π/2 radians
+     */
     @Generated
     @Selector("altitude")
     @NFloat
@@ -65,6 +73,9 @@ public class PKStrokePoint extends NSObject implements NSCopying {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Azimuth of the point in radians, 0.0-2π radians
+     */
     @Generated
     @Selector("azimuth")
     @NFloat
@@ -102,6 +113,9 @@ public class PKStrokePoint extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Force used to create this point.
+     */
     @Generated
     @Selector("force")
     @NFloat
@@ -116,6 +130,9 @@ public class PKStrokePoint extends NSObject implements NSCopying {
     @Selector("init")
     public native PKStrokePoint init();
 
+    /**
+     * Create a new point with the provided properties.
+     */
     @Generated
     @Selector("initWithLocation:timeOffset:size:opacity:force:azimuth:altitude:")
     public native PKStrokePoint initWithLocationTimeOffsetSizeOpacityForceAzimuthAltitude(@ByValue CGPoint location,
@@ -143,6 +160,9 @@ public class PKStrokePoint extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Location of the point.
+     */
     @Generated
     @Selector("location")
     @ByValue
@@ -154,6 +174,9 @@ public class PKStrokePoint extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Opacity of the point 0-2.
+     */
     @Generated
     @Selector("opacity")
     @NFloat
@@ -171,6 +194,9 @@ public class PKStrokePoint extends NSObject implements NSCopying {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Size of the point.
+     */
     @Generated
     @Selector("size")
     @ByValue
@@ -180,6 +206,9 @@ public class PKStrokePoint extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Time offset since the start of the stroke path in seconds.
+     */
     @Generated
     @Selector("timeOffset")
     public native double timeOffset();

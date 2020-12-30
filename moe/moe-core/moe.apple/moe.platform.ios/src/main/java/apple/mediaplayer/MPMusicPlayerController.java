@@ -42,6 +42,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPMusicPlayerController allows playback of MPMediaItems through the Music application.
+ * See MPMediaPlayback.h for basic playback control.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -70,6 +74,9 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Playing items with applicationMusicPlayer does not affect Music's playback state.
+     */
     @Generated
     @Selector("applicationMusicPlayer")
     public static native MPMusicPlayerController applicationMusicPlayer();
@@ -157,6 +164,9 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Playing media items with the systemMusicPlayer will replace the user's current Music state.
+     */
     @Generated
     @Selector("systemMusicPlayer")
     public static native MPMusicPlayerController systemMusicPlayer();
@@ -166,6 +176,10 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @NInt
     public static native long version_static();
 
+    /**
+     * These methods determine whether playback notifications will be generated.
+     * Calls to begin/endGeneratingPlaybackNotifications are nestable.
+     */
     @Generated
     @Selector("beginGeneratingPlaybackNotifications")
     public native void beginGeneratingPlaybackNotifications();
@@ -194,6 +208,10 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("endSeeking")
     public native void endSeeking();
 
+    /**
+     * Returns the index of the now playing item in the current playback queue.
+     * May return NSNotFound if the index is not valid (e.g. an empty queue or an infinite playlist).
+     */
     @Generated
     @Selector("indexOfNowPlayingItem")
     @NUInt
@@ -207,6 +225,10 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("isPreparedToPlay")
     public native boolean isPreparedToPlay();
 
+    /**
+     * Returns the currently playing media item, or nil if none is playing.
+     * Setting the nowPlayingItem to an item in the current queue will begin playback at that item.
+     */
     @Generated
     @Selector("nowPlayingItem")
     public native MPMediaItem nowPlayingItem();
@@ -219,6 +241,9 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("play")
     public native void play();
 
+    /**
+     * Returns the current playback state of the music player
+     */
     @Generated
     @Selector("playbackState")
     @NInt
@@ -228,11 +253,20 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("prepareToPlay")
     public native void prepareToPlay();
 
+    /**
+     * The completion handler will be called when the first item from the queue is buffered and ready to play.
+     * If a first item has been specified using MPMusicPlayerQueueDescriptor, the error will be non-nil if the specified item cannot be prepared for playback.
+     * If a first item is not specified, the error will be non-nil if an item cannot be prepared for playback.
+     * Errors will be in MPErrorDomain.
+     */
     @Generated
     @Selector("prepareToPlayWithCompletionHandler:")
     public native void prepareToPlayWithCompletionHandler(
             @ObjCBlock(name = "call_prepareToPlayWithCompletionHandler") Block_prepareToPlayWithCompletionHandler completionHandler);
 
+    /**
+     * Determines how music repeats after playback completes. Defaults to MPMusicRepeatModeDefault.
+     */
     @Generated
     @Selector("repeatMode")
     @NInt
@@ -246,6 +280,10 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("setCurrentPlaybackTime:")
     public native void setCurrentPlaybackTime(double value);
 
+    /**
+     * Returns the currently playing media item, or nil if none is playing.
+     * Setting the nowPlayingItem to an item in the current queue will begin playback at that item.
+     */
     @Generated
     @Selector("setNowPlayingItem:")
     public native void setNowPlayingItem(MPMediaItem value);
@@ -258,6 +296,9 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("setQueueWithItemCollection:")
     public native void setQueueWithItemCollection(MPMediaItemCollection itemCollection);
 
+    /**
+     * Call -play to begin playback after setting an item queue source. Setting a query will implicitly use MPMediaGroupingTitle.
+     */
     @Generated
     @Selector("setQueueWithQuery:")
     public native void setQueueWithQuery(MPMediaQuery query);
@@ -266,32 +307,55 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("setQueueWithStoreIDs:")
     public native void setQueueWithStoreIDs(NSArray<String> storeIDs);
 
+    /**
+     * Determines how music repeats after playback completes. Defaults to MPMusicRepeatModeDefault.
+     */
     @Generated
     @Selector("setRepeatMode:")
     public native void setRepeatMode(@NInt long value);
 
+    /**
+     * Determines how music is shuffled when playing. Defaults to MPMusicShuffleModeDefault.
+     */
     @Generated
     @Selector("setShuffleMode:")
     public native void setShuffleMode(@NInt long value);
 
+    /**
+     * The current volume of playing music, in the range of 0.0 to 1.0.
+     * This property is deprecated -- use MPVolumeView for volume control instead.
+     */
     @Generated
     @Deprecated
     @Selector("setVolume:")
     public native void setVolume(float value);
 
+    /**
+     * Determines how music is shuffled when playing. Defaults to MPMusicShuffleModeDefault.
+     */
     @Generated
     @Selector("shuffleMode")
     @NInt
     public native long shuffleMode();
 
+    /**
+     * Restarts playback at the beginning of the currently playing media item.
+     */
     @Generated
     @Selector("skipToBeginning")
     public native void skipToBeginning();
 
+    /**
+     * Skips to the next item in the queue.
+     * If already at the last item, this resets the queue to the first item in a paused playback state.
+     */
     @Generated
     @Selector("skipToNextItem")
     public native void skipToNextItem();
 
+    /**
+     * Skips to the previous item in the queue. If already at the first item, this will end playback.
+     */
     @Generated
     @Selector("skipToPreviousItem")
     public native void skipToPreviousItem();
@@ -300,6 +364,10 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("stop")
     public native void stop();
 
+    /**
+     * The current volume of playing music, in the range of 0.0 to 1.0.
+     * This property is deprecated -- use MPVolumeView for volume control instead.
+     */
     @Generated
     @Deprecated
     @Selector("volume")
@@ -312,14 +380,23 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
         void call_prepareToPlayWithCompletionHandler(NSError error);
     }
 
+    /**
+     * Adds the contents of the queue descriptor to the end of the queue
+     */
     @Generated
     @Selector("appendQueueDescriptor:")
     public native void appendQueueDescriptor(MPMusicPlayerQueueDescriptor descriptor);
 
+    /**
+     * Similar to applicationMusicPlayer, but allows direct manipulation of the queue.
+     */
     @Generated
     @Selector("applicationQueuePlayer")
     public static native MPMusicPlayerApplicationController applicationQueuePlayer();
 
+    /**
+     * Inserts the contents of the queue descriptor after the now playing item
+     */
     @Generated
     @Selector("prependQueueDescriptor:")
     public native void prependQueueDescriptor(MPMusicPlayerQueueDescriptor descriptor);

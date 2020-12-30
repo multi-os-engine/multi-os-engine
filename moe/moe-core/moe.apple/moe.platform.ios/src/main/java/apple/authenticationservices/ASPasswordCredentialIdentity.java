@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class ASPasswordCredentialIdentity
+ * An ASPasswordCredentialIdentity is used to describe an identity that can use a service upon successful password based authentication.
+ * Use this class to save entries into ASCredentialIdentityStore.
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -100,6 +105,12 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @abstract Creates and initializes an instance of ASPasswordCredentialIdentity.
+     * @param serviceIdentifier the service identifier for which this credential identity is valid.
+     * @param user the user that can authenticate into the service indicated by the serviceIdentifier.
+     * @param recordIdentifier an optional string to uniquely identify this record in your local database.
+     */
     @Generated
     @Selector("identityWithServiceIdentifier:user:recordIdentifier:")
     public static native ASPasswordCredentialIdentity identityWithServiceIdentifierUserRecordIdentifier(
@@ -113,6 +124,12 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
     @Selector("initWithCoder:")
     public native ASPasswordCredentialIdentity initWithCoder(NSCoder coder);
 
+    /**
+     * @abstract Initializes an instance of ASPasswordCredentialIdentity.
+     * @param serviceIdentifier the service identifier for which this credential identity is valid.
+     * @param user the user that can authenticate into the service indicated by the serviceIdentifier.
+     * @param recordIdentifier an optional string to uniquely identify this record in your local database.
+     */
     @Generated
     @Selector("initWithServiceIdentifier:user:recordIdentifier:")
     public native ASPasswordCredentialIdentity initWithServiceIdentifierUserRecordIdentifier(
@@ -145,11 +162,23 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract Get or set the rank of the credential identity object.
+     * @discussion The system may utilize the rank to decide which credential identity precedes the other
+     * if two identities have the same service identifier. A credential identity with a larger rank value
+     * precedes one with a smaller value if both credential identities have the same service identifier.
+     * The default value of this property is 0.
+     */
     @Generated
     @Selector("rank")
     @NInt
     public native long rank();
 
+    /**
+     * @abstract Get the record identifier.
+     * @result The record identifier.
+     * @discussion You can utilize the record identifier to uniquely identify the credential identity in your local database.
+     */
     @Generated
     @Selector("recordIdentifier")
     public native String recordIdentifier();
@@ -162,10 +191,21 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @abstract Get the service identifier.
+     * @result The service identifier for this credential identity.
+     */
     @Generated
     @Selector("serviceIdentifier")
     public native ASCredentialServiceIdentifier serviceIdentifier();
 
+    /**
+     * @abstract Get or set the rank of the credential identity object.
+     * @discussion The system may utilize the rank to decide which credential identity precedes the other
+     * if two identities have the same service identifier. A credential identity with a larger rank value
+     * precedes one with a smaller value if both credential identities have the same service identifier.
+     * The default value of this property is 0.
+     */
     @Generated
     @Selector("setRank:")
     public native void setRank(@NInt long value);
@@ -188,6 +228,10 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
         return supportsSecureCoding();
     }
 
+    /**
+     * @abstract Get the user.
+     * @result The user string.
+     */
     @Generated
     @Selector("user")
     public native String user();

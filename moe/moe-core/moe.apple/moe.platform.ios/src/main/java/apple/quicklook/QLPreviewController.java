@@ -81,6 +81,9 @@ public class QLPreviewController extends UIViewController {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @abstract Returns YES if QLPreviewController can display this preview item.
+     */
     @Generated
     @Selector("canPreviewItem:")
     public static native boolean canPreviewItem(@Mapped(ObjCObjectMapper.class) QLPreviewItem item);
@@ -172,21 +175,34 @@ public class QLPreviewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract The currently previewed item in the preview panel or nil if there is none.
+     */
     @Generated
     @Selector("currentPreviewItem")
     @MappedReturn(ObjCObjectMapper.class)
     public native QLPreviewItem currentPreviewItem();
 
+    /**
+     * @abstract The index of the currently previewed item in the preview panel or NSNotFound if there is none.
+     */
     @Generated
     @Selector("currentPreviewItemIndex")
     @NInt
     public native long currentPreviewItemIndex();
 
+    /**
+     * @abstract The Preview Panel data source.
+     */
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native QLPreviewControllerDataSource dataSource();
 
+    /**
+     * @abstract The Preview Controller delegate.
+     * @discussion Should implement the <QLPreviewControllerDelegate> protocol
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -204,22 +220,38 @@ public class QLPreviewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native QLPreviewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * @abstract Asks the Preview Controller to recompute the preview of the currently previewed item.
+     */
     @Generated
     @Selector("refreshCurrentPreviewItem")
     public native void refreshCurrentPreviewItem();
 
+    /**
+     * @abstract Asks the Preview Controller to reload its data from its data source.
+     * @discussion This method does not refresh the visible item if it has not changed.
+     */
     @Generated
     @Selector("reloadData")
     public native void reloadData();
 
+    /**
+     * @abstract The index of the currently previewed item in the preview panel or NSNotFound if there is none.
+     */
     @Generated
     @Selector("setCurrentPreviewItemIndex:")
     public native void setCurrentPreviewItemIndex(@NInt long value);
 
+    /**
+     * @abstract The Preview Panel data source.
+     */
     @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) QLPreviewControllerDataSource value);
 
+    /**
+     * @abstract The Preview Panel data source.
+     */
     @Generated
     public void setDataSource(@Mapped(ObjCObjectMapper.class) QLPreviewControllerDataSource value) {
         Object __old = dataSource();
@@ -232,10 +264,18 @@ public class QLPreviewController extends UIViewController {
         }
     }
 
+    /**
+     * @abstract The Preview Controller delegate.
+     * @discussion Should implement the <QLPreviewControllerDelegate> protocol
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) QLPreviewControllerDelegate value);
 
+    /**
+     * @abstract The Preview Controller delegate.
+     * @discussion Should implement the <QLPreviewControllerDelegate> protocol
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) QLPreviewControllerDelegate value) {
         Object __old = delegate();

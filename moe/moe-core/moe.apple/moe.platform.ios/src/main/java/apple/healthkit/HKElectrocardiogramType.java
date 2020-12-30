@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class    HKElectrocardiogramType
+ * @abstract Represents an electrocardiogram sample.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)

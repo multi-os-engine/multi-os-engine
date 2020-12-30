@@ -89,18 +89,30 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Indicates if all fonts should be shown in the system font instead of themselves.
+     */
     @Generated
     @Selector("displayUsingSystemFont")
     public native boolean displayUsingSystemFont();
 
+    /**
+     * Generate a filter predicate to filter to fonts that support one of the specified language identifiers (conforming to UTS #35).
+     */
     @Generated
     @Selector("filterPredicateForFilteredLanguages:")
     public static native NSPredicate filterPredicateForFilteredLanguages(NSArray<String> filteredLanguages);
 
+    /**
+     * Filter fonts based on languages supported using a predicate. The predicate is evaluated against an array of string language identifiers (conforming to UTS #35) supported by the font.
+     */
     @Generated
     @Selector("filteredLanguagesPredicate")
     public native NSPredicate filteredLanguagesPredicate();
 
+    /**
+     * Filter to fonts with just the specified traits.
+     */
     @Generated
     @Selector("filteredTraits")
     public native int filteredTraits();
@@ -110,6 +122,9 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Indicates if individual faces can be selected instead of just families.
+     */
     @Generated
     @Selector("includeFaces")
     public native boolean includeFaces();
@@ -153,18 +168,30 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Indicates if all fonts should be shown in the system font instead of themselves.
+     */
     @Generated
     @Selector("setDisplayUsingSystemFont:")
     public native void setDisplayUsingSystemFont(boolean value);
 
+    /**
+     * Filter fonts based on languages supported using a predicate. The predicate is evaluated against an array of string language identifiers (conforming to UTS #35) supported by the font.
+     */
     @Generated
     @Selector("setFilteredLanguagesPredicate:")
     public native void setFilteredLanguagesPredicate(NSPredicate value);
 
+    /**
+     * Filter to fonts with just the specified traits.
+     */
     @Generated
     @Selector("setFilteredTraits:")
     public native void setFilteredTraits(int value);
 
+    /**
+     * Indicates if individual faces can be selected instead of just families.
+     */
     @Generated
     @Selector("setIncludeFaces:")
     public native void setIncludeFaces(boolean value);

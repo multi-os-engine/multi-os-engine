@@ -69,10 +69,16 @@ public class INCancelRideIntentResponse extends INIntentResponse {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * Used during confirmation to warn the user about any cancellation fees
+     */
     @Generated
     @Selector("cancellationFee")
     public native INCurrencyAmount cancellationFee();
 
+    /**
+     * The time after which canceling the ride will incur the cancellation fee
+     */
     @Generated
     @Selector("cancellationFeeThreshold")
     public native NSDateComponents cancellationFeeThreshold();
@@ -107,6 +113,11 @@ public class INCancelRideIntentResponse extends INIntentResponse {
     @Selector("init")
     public native INCancelRideIntentResponse init();
 
+    /**
+     * The app extension has the option of capturing its private state as an NSUserActivity and returning it as the 'currentActivity'.
+     * If the the app is launched, an NSUserActivity will be passed in with the private state.  The NSUserActivity may also be used to query the app's UI extension (if provided) for a view controller representing the current intent handling state.
+     * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This intent object will also be available in the NSUserActivity.interaction property.
+     */
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INCancelRideIntentResponse initWithCodeUserActivity(@NInt long code, NSUserActivity userActivity);
@@ -150,10 +161,16 @@ public class INCancelRideIntentResponse extends INIntentResponse {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Used during confirmation to warn the user about any cancellation fees
+     */
     @Generated
     @Selector("setCancellationFee:")
     public native void setCancellationFee(INCurrencyAmount value);
 
+    /**
+     * The time after which canceling the ride will incur the cancellation fee
+     */
     @Generated
     @Selector("setCancellationFeeThreshold:")
     public native void setCancellationFeeThreshold(NSDateComponents value);

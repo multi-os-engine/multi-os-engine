@@ -21,14 +21,30 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHCollectionListSubtype {
+    /**
+     * PHCollectionListTypeMomentList subtypes
+     */
     @Generated @NInt public static final long MomentListCluster = 0x0000000000000001L;
+    /**
+     * PHCollectionListTypeMomentList subtypes
+     */
     @Generated @NInt public static final long MomentListYear = 0x0000000000000002L;
+    /**
+     * PHCollectionListTypeFolder subtypes
+     */
     @Generated @NInt public static final long RegularFolder = 0x0000000000000064L;
+    /**
+     * PHCollectionListTypeSmartFolder subtypes
+     */
     @Generated @NInt public static final long SmartFolderEvents = 0x00000000000000C8L;
+    /**
+     * PHCollectionListTypeSmartFolder subtypes
+     */
     @Generated @NInt public static final long SmartFolderFaces = 0x00000000000000C9L;
-    @Generated @NInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ?
-            0x7FFFFFFFFFFFFFFFL :
-            0x000000007FFFFFFFL;
+    /**
+     * Used for fetching if you don't care about the exact subtype
+     */
+    @Generated @NInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ? 0x7FFFFFFFFFFFFFFFL : 0x000000007FFFFFFFL;
 
     @Generated
     private PHCollectionListSubtype() {

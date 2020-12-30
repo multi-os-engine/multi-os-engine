@@ -23,6 +23,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An object representing a skeleton.
+ * @discussion A skeleton's structure is defined by a skeleton definition.
+ * @see ARSkeletonDefinition
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -77,6 +82,9 @@ public class ARSkeleton extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Skeleton definition.
+     */
     @Generated
     @Selector("definition")
     public native ARSkeletonDefinition definition();
@@ -107,6 +115,12 @@ public class ARSkeleton extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Tracking state for a given joint.
+     * 
+     * @param jointIndex The index of the joint.
+     * @return True if the joint is tracked. False otherwise.
+     */
     @Generated
     @Selector("isJointTracked:")
     public native boolean isJointTracked(@NInt long jointIndex);
@@ -115,6 +129,9 @@ public class ARSkeleton extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * The number of joints.
+     */
     @Generated
     @Selector("jointCount")
     @NUInt

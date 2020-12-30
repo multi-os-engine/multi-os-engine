@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class         MXCellConditionMetric
+ * @abstract      An MXMetric subclass that encapsulates cellular condition metrics.
+ */
 @Generated
 @Library("MetricKit")
 @Runtime(ObjCRuntime.class)
@@ -88,6 +92,13 @@ public class MXCellularConditionMetric extends MXMetric {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @property      cellularConditionTime
+     * @abstract      Application run time bucketized by cellular condition.
+     * @discussion    This data represents the percentage of time an application spent running in different cellular conditions.
+     * @discussion    In the event that no data for any buckets is available, the histogram data will be empty.
+     * @discussion    Dimensioned as MXUnitSignalBars.
+     */
     @Generated
     @Selector("histogrammedCellularConditionTime")
     public native MXHistogram<MXUnitSignalBars> histogrammedCellularConditionTime();

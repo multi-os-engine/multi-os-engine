@@ -15,6 +15,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This protocol allows a class to be constructed from a variety of binary representations.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)

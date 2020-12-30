@@ -38,6 +38,9 @@ public interface UIVideoEditorControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * edited video is saved to a path in app's temporary directory
+     */
     @Generated
     @IsOptional
     @Selector("videoEditorController:didSaveEditedVideoToPath:")

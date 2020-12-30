@@ -27,8 +27,7 @@ public final class AudioPacketDependencyInfoTranslation extends StructObject {
     }
 
     @Generated
-    public AudioPacketDependencyInfoTranslation(long mPacket, int mIsIndependentlyDecodable,
-            int mNumberPrerollPackets) {
+    public AudioPacketDependencyInfoTranslation(long mPacket, int mIsIndependentlyDecodable, int mNumberPrerollPackets) {
         super(AudioPacketDependencyInfoTranslation.class);
         setMPacket(mPacket);
         setMIsIndependentlyDecodable(mIsIndependentlyDecodable);

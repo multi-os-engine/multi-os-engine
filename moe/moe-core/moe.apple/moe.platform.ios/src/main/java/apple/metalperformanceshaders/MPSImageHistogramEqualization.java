@@ -45,6 +45,33 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSImageHistogramEqualization
+ * @discussion The MPSImageHistogramEqualization performs equalizes the histogram of an image.
+ *             The process is divided into three steps.
+ * 
+ *             -# Call -initWithDevice:histogramInfo:   This creates a MPSImageHistogramEqualization
+ *             object.   It is done when the method returns.
+ * 
+ *             -# Call -encodeTransform:sourceTexture:histogram:histogramOffset:  This creates a privately held
+ *             image transform (i.e. a cumulative distribution function of the histogram) which will be used to
+ *             equalize the distribution of the histogram of the source image. This process runs on a MTLCommandBuffer
+ *             when it is committed to a MTLCommandQueue. It must complete before the next step can be run.
+ *             It may be performed on the same MTLCommandBuffer.  The histogram argument specifies the histogram
+ *             buffer which contains the histogram values for sourceTexture.  The sourceTexture argument is used by
+ *             encodeTransform to determine the number of channels and therefore which histogram data in histogram
+ *             buffer to use. The histogram for sourceTexture must have been computed either on the CPU or using
+ *             the MPSImageHistogram kernel
+ * 
+ *             -# Call -encodeToCommandBuffer:sourceTexture:destinationTexture: to read data from
+ *             sourceTexture, apply the equalization transform to it and write to destination texture.
+ *             This step is also done on the GPU on a MTLCommandQueue.
+ * 
+ *             You can reuse the same equalization transform on other images to perform the
+ *             same transform on those images. (Since their distribution is probably different,
+ *             they will probably not be equalized by it.) This filter usually will not be able
+ *             to work in place.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +183,28 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract Encode the transform function to a command buffer using a MTLComputeCommandEncoder.
+     *           The transform function computes the equalization lookup table.
+     * @discussion The transform function will not begin to execute until after the command
+     *             buffer has been enqueued and committed.  This step will need to be repeated
+     *             with the new MPSKernel if -copyWithZone:device or -copyWithZone: is called.
+     *             The transform is stored as internal state to the object. You still need to
+     *             call -encodeToCommandBuffer:sourceTexture:destinationTexture: afterward
+     *             to apply the transform to produce a result texture.
+     * 
+     * @param  commandBuffer   A valid MTLCommandBuffer.
+     * @param  source          A valid MTLTexture containing the source image for the filter.
+     * @param  histogram       A valid MTLBuffer containing the histogram results for an image.  This filter
+     *                         will use these histogram results to generate the cumulative histogram for equalizing
+     *                         the image.  The histogram results / channel are stored together.  The number of channels
+     *                         for which histogram results are stored is determined by the number of channels in the image.
+     *                         If histogramInfo.histogramForAlpha is false and the source image is RGBA then only histogram
+     *                         results for RGB channels are stored.
+     * @param  histogramOffset A byte offset into the histogram MTLBuffer where the histogram starts. Must conform to
+     *                         alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:] offset
+     *                         parameter.
+     */
     @Generated
     @Selector("encodeTransformToCommandBuffer:sourceTexture:histogram:histogramOffset:")
     public native void encodeTransformToCommandBufferSourceTextureHistogramHistogramOffset(
@@ -171,6 +220,12 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     @Selector("initWithDevice:")
     public native MPSImageHistogramEqualization initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract Specifies information about the histogram for the channels of an image.
+     * @param    device            The device the filter will run on
+     * @param    histogramInfo     Pointer to the MPSHistogramInfo struct
+     * @return     A valid MPSImageHistogramEqualization object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:histogramInfo:")
     public native MPSImageHistogramEqualization initWithDeviceHistogramInfo(
@@ -180,6 +235,17 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     @Selector("initWithCoder:")
     public native MPSImageHistogramEqualization initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion While the standard NSSecureCoding/NSCoding method
+     *             -initWithCoder: should work, since the file can't
+     *             know which device your data is allocated on, we
+     *             have to guess and may guess incorrectly.  To avoid
+     *             that problem, use initWithCoder:device instead.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
+     * @param      device      The MTLDevice on which to make the MPSKernel
+     * @return     A new MPSKernel object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSImageHistogramEqualization initWithCoderDevice(NSCoder aDecoder,

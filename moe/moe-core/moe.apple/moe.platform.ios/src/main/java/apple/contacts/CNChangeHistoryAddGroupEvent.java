@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A group was added
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)

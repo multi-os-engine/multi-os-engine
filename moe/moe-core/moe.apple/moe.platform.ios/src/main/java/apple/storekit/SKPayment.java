@@ -162,6 +162,9 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * Application-specific user identifier.  Optional.
+     */
     @Generated
     @Selector("applicationUsername")
     public native String applicationUsername();
@@ -182,23 +185,38 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
+    /**
+     * Identifier agreed upon with the store.  Required.
+     */
     @Generated
     @Selector("productIdentifier")
     public native String productIdentifier();
 
+    /**
+     * default: 1.  Must be at least 1.
+     */
     @Generated
     @Selector("quantity")
     @NInt
     public native long quantity();
 
+    /**
+     * Payment request data agreed upon with the store.  Optional.
+     */
     @Generated
     @Selector("requestData")
     public native NSData requestData();
 
+    /**
+     * Force an "ask to buy" flow for this payment, in the sandbox
+     */
     @Generated
     @Selector("simulatesAskToBuyInSandbox")
     public native boolean simulatesAskToBuyInSandbox();
 
+    /**
+     * The relevant data for specifying a discount to be applied to this payment. Optional.
+     */
     @Generated
     @Selector("paymentDiscount")
     public native SKPaymentDiscount paymentDiscount();

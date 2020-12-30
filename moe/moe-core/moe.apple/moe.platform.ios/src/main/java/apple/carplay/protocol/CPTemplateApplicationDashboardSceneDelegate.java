@@ -17,6 +17,14 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CPTemplateApplicationDashboardSceneDelegate")
 public interface CPTemplateApplicationDashboardSceneDelegate extends UISceneDelegate {
+    /**
+     * The Dashboard navigation widget has connected and is ready to present content.
+     * 
+     * Your app should create its view controller and assign it to the @c rootViewController property
+     * of this window.
+     * 
+     * @note The dashboardController object will be strongly retained by the CPTemplateApplicationDashboardScene, the delegate does not need to retain it.
+     */
     @Generated
     @IsOptional
     @Selector("templateApplicationDashboardScene:didConnectDashboardController:toWindow:")
@@ -26,6 +34,9 @@ public interface CPTemplateApplicationDashboardSceneDelegate extends UISceneDele
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The Dashboard navigation widget has disconnected.
+     */
     @Generated
     @IsOptional
     @Selector("templateApplicationDashboardScene:didDisconnectDashboardController:fromWindow:")

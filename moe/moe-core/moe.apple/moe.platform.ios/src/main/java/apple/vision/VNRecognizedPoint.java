@@ -27,6 +27,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class VNRecognizedPoint
+ * @brief An extension of VNDetectedPoint that associates an identifier to the point.
+ * @discussion It should be noted that VNRecognizedPoint is not intended as an overall replacement of CGPoint, NSPoint or vec2, but is used by observations that recognize labeled points of interest.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -94,6 +99,10 @@ public class VNRecognizedPoint extends VNDetectedPoint {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @brief The is the identifier that provides context as to the kind of point that was recognized.
+     * @discussion The string is defined by the model that recognized the point. Usually these are technical labels that are not localized and not meant to be used directly to be presented to an end user in the UI.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();

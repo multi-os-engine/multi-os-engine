@@ -207,6 +207,9 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native MKMapCamera initWithCoder(NSCoder coder);
 
+    /**
+     * In degrees where 0 is looking straight down. Pitch may be clamped to an appropriate value.
+     */
     @Generated
     @Selector("pitch")
     @NFloat
@@ -224,6 +227,9 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("setHeading:")
     public native void setHeading(double value);
 
+    /**
+     * In degrees where 0 is looking straight down. Pitch may be clamped to an appropriate value.
+     */
     @Generated
     @Selector("setPitch:")
     public native void setPitch(@NFloat double value);

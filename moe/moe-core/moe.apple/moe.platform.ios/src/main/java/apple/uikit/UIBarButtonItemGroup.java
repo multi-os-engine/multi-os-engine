@@ -152,6 +152,9 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * The bar button items associated with this group. Changing these items will affect the bar displaying these items without needing to re-set the groups that are in that bar. Any UIBarButtonItems that are already in group will be removed from that group.
+     */
     @Generated
     @Selector("barButtonItems")
     public native NSArray<? extends UIBarButtonItem> barButtonItems();
@@ -164,6 +167,9 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
     @Selector("init")
     public native UIBarButtonItemGroup init();
 
+    /**
+     * Create a new bar button item group with the given items. When bar button item layout is done, either the group's barButtonItems or its representativeItem is displayed (if it exists).
+     */
     @Generated
     @Selector("initWithBarButtonItems:representativeItem:")
     public native UIBarButtonItemGroup initWithBarButtonItemsRepresentativeItem(
@@ -173,18 +179,36 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
     @Selector("initWithCoder:")
     public native UIBarButtonItemGroup initWithCoder(NSCoder coder);
 
+    /**
+     * Returns YES if the representativeItem of this group is currently being displayed, rather than its barButtonItems.
+     */
     @Generated
     @Selector("isDisplayingRepresentativeItem")
     public native boolean isDisplayingRepresentativeItem();
 
+    /**
+     * In order to display as many items as possible, bars that support UIBarButtonItemGroup may choose to collapse items associated with groups to the representativeItem specified by the group.
+     * A bar will only collapse groups that have a representativeItem set, but may still choose to use an alternate presentation of these items.
+     * A UIBarButtonItem may only be either the representativeItem or a member of the barbuttonItems of a single UIBarButtonItemGroup and may only represent a single group.
+     * If the representativeItem has an action, then that action will be invoked, otherwise the bar will present a standard UI to allow selection of the barButtonItems in the representedItem's group.
+     */
     @Generated
     @Selector("representativeItem")
     public native UIBarButtonItem representativeItem();
 
+    /**
+     * The bar button items associated with this group. Changing these items will affect the bar displaying these items without needing to re-set the groups that are in that bar. Any UIBarButtonItems that are already in group will be removed from that group.
+     */
     @Generated
     @Selector("setBarButtonItems:")
     public native void setBarButtonItems(NSArray<? extends UIBarButtonItem> value);
 
+    /**
+     * In order to display as many items as possible, bars that support UIBarButtonItemGroup may choose to collapse items associated with groups to the representativeItem specified by the group.
+     * A bar will only collapse groups that have a representativeItem set, but may still choose to use an alternate presentation of these items.
+     * A UIBarButtonItem may only be either the representativeItem or a member of the barbuttonItems of a single UIBarButtonItemGroup and may only represent a single group.
+     * If the representativeItem has an action, then that action will be invoked, otherwise the bar will present a standard UI to allow selection of the barButtonItems in the representedItem's group.
+     */
     @Generated
     @Selector("setRepresentativeItem:")
     public native void setRepresentativeItem(UIBarButtonItem value);

@@ -15,21 +15,33 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSCollectionLayoutContainer")
 public interface NSCollectionLayoutContainer {
+    /**
+     * values < 1.0 are interpreted as fractional values (e.g. leading:0.15 == 15% width)
+     */
     @Generated
     @Selector("contentInsets")
     @ByValue
     NSDirectionalEdgeInsets contentInsets();
 
+    /**
+     * resolved size of container (before any insets are applied)
+     */
     @Generated
     @Selector("contentSize")
     @ByValue
     CGSize contentSize();
 
+    /**
+     * resolved value after resolving any unit values
+     */
     @Generated
     @Selector("effectiveContentInsets")
     @ByValue
     NSDirectionalEdgeInsets effectiveContentInsets();
 
+    /**
+     * after insets are applied
+     */
     @Generated
     @Selector("effectiveContentSize")
     @ByValue

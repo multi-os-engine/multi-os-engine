@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An object to hold options for loading a model.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -57,6 +60,9 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Set to YES to allow low precision accumulation on GPU when available. Defaults to NO
+     */
     @Generated
     @Selector("allowLowPrecisionAccumulationOnGPU")
     public native boolean allowLowPrecisionAccumulationOnGPU();
@@ -146,10 +152,16 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Optional dictionary with any requested changes to model or update parameters
+     */
     @Generated
     @Selector("parameters")
     public native NSDictionary<? extends MLParameterKey, ?> parameters();
 
+    /**
+     * Set to specify a preferred Metal device. Defaults to nil which indicates automatic selection
+     */
     @Generated
     @Selector("preferredMetalDevice")
     @MappedReturn(ObjCObjectMapper.class)
@@ -163,6 +175,9 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Set to YES to allow low precision accumulation on GPU when available. Defaults to NO
+     */
     @Generated
     @Selector("setAllowLowPrecisionAccumulationOnGPU:")
     public native void setAllowLowPrecisionAccumulationOnGPU(boolean value);
@@ -171,10 +186,16 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("setComputeUnits:")
     public native void setComputeUnits(@NInt long value);
 
+    /**
+     * Optional dictionary with any requested changes to model or update parameters
+     */
     @Generated
     @Selector("setParameters:")
     public native void setParameters(NSDictionary<? extends MLParameterKey, ?> value);
 
+    /**
+     * Set to specify a preferred Metal device. Defaults to nil which indicates automatic selection
+     */
     @Generated
     @Selector("setPreferredMetalDevice:")
     public native void setPreferredMetalDevice(@Mapped(ObjCObjectMapper.class) MTLDevice value);

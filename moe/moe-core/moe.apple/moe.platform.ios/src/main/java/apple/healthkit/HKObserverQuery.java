@@ -274,6 +274,13 @@ public class HKObserverQuery extends HKQuery {
     @Selector("predicateForClinicalRecordsWithFHIRResourceType:")
     public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(String resourceType);
 
+    /**
+     * @method        initWithSampleType:predicate:updateHandler:
+     * @abstract      This method installs a handler that is called when a sample type has a new sample added.
+     * @discussion    If you have subscribed to background updates you must call the passed completion block
+     *                once you have processed data from this notification. Otherwise the system will continue
+     *                to notify you of this data.
+     */
     @Generated
     @Selector("initWithSampleType:predicate:updateHandler:")
     public native HKObserverQuery initWithSampleTypePredicateUpdateHandler(HKSampleType sampleType,

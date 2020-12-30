@@ -47,6 +47,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNConstraint
+ * @abstract A SCNConstraint is an abstract class that represents a single constraint that can be applied to a node.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -184,6 +188,10 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * @property influenceFactor
+     * @abstract Specifies the inflence factor of the receiver. Defaults to 1. Animatable
+     */
     @Generated
     @Selector("influenceFactor")
     @NFloat
@@ -221,6 +229,10 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
 
+    /**
+     * @property influenceFactor
+     * @abstract Specifies the inflence factor of the receiver. Defaults to 1. Animatable
+     */
     @Generated
     @Selector("setInfluenceFactor:")
     public native void setInfluenceFactor(@NFloat double value);
@@ -243,10 +255,18 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("animationPlayerForKey:")
     public native SCNAnimationPlayer animationPlayerForKey(String key);
 
+    /**
+     * @property enable
+     * @abstract Determines whether the constraint is enabled or not. Defaults to YES.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * @property incremental
+     * @abstract Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous versions.
+     */
     @Generated
     @Selector("isIncremental")
     public native boolean isIncremental();
@@ -255,10 +275,18 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("removeAnimationForKey:blendOutDuration:")
     public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
 
+    /**
+     * @property enable
+     * @abstract Determines whether the constraint is enabled or not. Defaults to YES.
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * @property incremental
+     * @abstract Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous versions.
+     */
     @Generated
     @Selector("setIncremental:")
     public native void setIncremental(boolean value);

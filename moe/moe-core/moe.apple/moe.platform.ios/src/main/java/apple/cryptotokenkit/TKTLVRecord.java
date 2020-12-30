@@ -24,6 +24,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Base class representing Tag-Length-Value record.
+ * Every record has its tag and binary value represented as NSData instance.  Allows retrieving record's tag,
+ * value (as NSData object) and binary representation of the record. Existing subclasses implement assorted
+ * encodings - TKBERTLVRecord, TKSimpleTLVRecord and TKCompactTLVRecord.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -74,6 +80,9 @@ public class TKTLVRecord extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Data object containing whole encoded record, including tag, length and value.
+     */
     @Generated
     @Selector("data")
     public native NSData data();
@@ -122,6 +131,11 @@ public class TKTLVRecord extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Parses TLV record from data block
+     * @param data Data block containing serialized form of TLV record.
+     * @return newly parsed record instance or nil if data do not represent valid record.
+     */
     @Generated
     @Selector("recordFromData:")
     public static native TKTLVRecord recordFromData(NSData data);
@@ -134,6 +148,12 @@ public class TKTLVRecord extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Parses sequence of TLV records from data block.
+     * The amount of records is determined by the length of input data block.
+     * @param data Data block containing zero or more serialized forms of TLV record.
+     * @return An array of TLV record instances parsed from input data block or nil if data do not form valid TLV record sequence.
+     */
     @Generated
     @Selector("sequenceOfRecordsFromData:")
     public static native NSArray<? extends TKTLVRecord> sequenceOfRecordsFromData(NSData data);
@@ -146,10 +166,16 @@ public class TKTLVRecord extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Tag value of the record.
+     */
     @Generated
     @Selector("tag")
     public native long tag();
 
+    /**
+     * Value field of the record.
+     */
     @Generated
     @Selector("value")
     public native NSData value();

@@ -24,6 +24,9 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 
+/**
+ * This protocol is reserved for Contacts framework usage.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)

@@ -37,6 +37,10 @@ public final class PushKit {
     private PushKit() {
     }
 
+    /**
+     * PKPushType constants can be used to register for a PKPushType-specific push token or to identify received push
+     * notifications.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

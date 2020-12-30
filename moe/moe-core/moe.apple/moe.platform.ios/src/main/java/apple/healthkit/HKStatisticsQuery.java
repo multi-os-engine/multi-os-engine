@@ -45,6 +45,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class     HKStatisticsQuery
+ * @abstract  Calculates statistics on quantity samples matching the given quantity type and predicate.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)

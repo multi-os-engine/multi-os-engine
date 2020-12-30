@@ -24,6 +24,22 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A NSDiffableDataSourceSnapshot represents the complete state of a UI element (e.g. UICollectionView)
+ * 
+ *    Snapshots can be created in two ways:
+ *    1. From a connected data source: e.g. UICollectionViewDiffableDataSource.snapshot()
+ *       This will contain the current state of the UI element.
+ * 
+ *    2. Constructing a new instance: e.g. NSDiffableDataSourceSnapshot<Int,UUID>()
+ *       This will construct an empty snapshot with no section or item identifiers.
+ * 
+ *    Notes:
+ *      1. All identifiers must be unique. Section and Item identifiers do not overlap and may contain values that exist in the other (i.e. it is OK
+ *         to have a section identifier == 1 and an item identifier == 1)
+ * 
+ *      2. If you pass duplicate values in an item or section array (e.g. -appendItemsWithIdentifiers:), the system will throw an exception.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -53,6 +69,9 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * convenience: appends into last section
+     */
     @Generated
     @Selector("appendItemsWithIdentifiers:")
     public native void appendItemsWithIdentifiers(NSArray<_ItemIdentifierType> identifiers);
@@ -62,6 +81,9 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     public native void appendItemsWithIdentifiersIntoSectionWithIdentifier(NSArray<_ItemIdentifierType> identifiers,
             @Mapped(ObjCObjectMapper.class) _SectionIdentifierType sectionIdentifier);
 
+    /**
+     * section operations
+     */
     @Generated
     @Selector("appendSectionsWithIdentifiers:")
     public native void appendSectionsWithIdentifiers(NSArray<?> sectionIdentifiers);
@@ -119,11 +141,17 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @NUInt
     public static native long hash_static();
 
+    /**
+     * If item identifier is not present returns NSNotFound
+     */
     @Generated
     @Selector("indexOfItemIdentifier:")
     @NInt
     public native long indexOfItemIdentifier(@Mapped(ObjCObjectMapper.class) _ItemIdentifierType itemIdentifier);
 
+    /**
+     * If section identifier is not present returns NSNotFound
+     */
     @Generated
     @Selector("indexOfSectionIdentifier:")
     @NInt
@@ -216,6 +244,9 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * structure
+     */
     @Generated
     @Selector("numberOfItems")
     @NInt

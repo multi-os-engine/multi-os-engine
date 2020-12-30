@@ -29,6 +29,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class VNBarcodeObservation
+ * @superclass VNRectangleObservation
+ * @brief VNBarcodeObservation Describes an area containing a barcode detected by the VNRequestNameDetectBarcodes request.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -61,6 +66,9 @@ public class VNBarcodeObservation extends VNRectangleObservation {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @brief An object that provides symbology-specific data for the barcode.
+     */
     @Generated
     @Selector("barcodeDescriptor")
     public native CIBarcodeDescriptor barcodeDescriptor();
@@ -135,6 +143,9 @@ public class VNBarcodeObservation extends VNRectangleObservation {
     @Selector("observationWithBoundingBox:")
     public static native VNBarcodeObservation observationWithBoundingBox(@ByValue CGRect boundingBox);
 
+    /**
+     * @brief The string representation of the barcode's payload.  Depending on the symbology of the barcode and/or the payload data itself, a string representation of the payload may not be available.
+     */
     @Generated
     @Selector("payloadStringValue")
     public native String payloadStringValue();
@@ -165,6 +176,9 @@ public class VNBarcodeObservation extends VNRectangleObservation {
         return supportsSecureCoding();
     }
 
+    /**
+     * @brief The symbology of the detected barcode.
+     */
     @Generated
     @Selector("symbology")
     public native String symbology();

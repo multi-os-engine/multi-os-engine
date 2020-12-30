@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An overlay configuration that can be used to show an app clip's full app.
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -60,6 +63,9 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * A token representing an App Analytics campaign.
+     */
     @Generated
     @Selector("campaignToken")
     public native String campaignToken();
@@ -99,6 +105,10 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
     @Selector("init")
     public native SKOverlayAppClipConfiguration init();
 
+    /**
+     * Creates a new app overlay configuration that will show an app clip's full app.
+     * @param position the desired position of the overlay.
+     */
     @Generated
     @Selector("initWithPosition:")
     public native SKOverlayAppClipConfiguration initWithPosition(@NInt long position);
@@ -130,11 +140,17 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The position an overlay will show at on screen.
+     */
     @Generated
     @Selector("position")
     @NInt
     public native long position();
 
+    /**
+     * The provider token for the developer that created the app being presented.
+     */
     @Generated
     @Selector("providerToken")
     public native String providerToken();
@@ -151,14 +167,23 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
     @Selector("setAdditionalValue:forKey:")
     public native void setAdditionalValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
+    /**
+     * A token representing an App Analytics campaign.
+     */
     @Generated
     @Selector("setCampaignToken:")
     public native void setCampaignToken(String value);
 
+    /**
+     * The position an overlay will show at on screen.
+     */
     @Generated
     @Selector("setPosition:")
     public native void setPosition(@NInt long value);
 
+    /**
+     * The provider token for the developer that created the app being presented.
+     */
     @Generated
     @Selector("setProviderToken:")
     public native void setProviderToken(String value);

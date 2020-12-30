@@ -51,11 +51,17 @@ public final class AudioOutputUnitStartAtTimeParams extends StructObject {
         setMFlags(mFlags);
     }
 
+    /**
+     * see AudioDeviceStartAtTime
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native AudioTimeStamp mTimestamp();
 
+    /**
+     * see AudioDeviceStartAtTime
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setMTimestamp(@ByValue AudioTimeStamp value);

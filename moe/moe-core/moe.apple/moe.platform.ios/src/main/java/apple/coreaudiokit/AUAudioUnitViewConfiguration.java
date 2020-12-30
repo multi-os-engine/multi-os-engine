@@ -27,6 +27,17 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class	AUAudioUnitViewConfiguration
+ * @brief	Properties of the configuration that a host uses to embed the view of an audio unit.
+ * @discussion
+ * 	Hosts may support embedding the view of an audio unit in different configurations. These
+ * 	configurations may vary in the size reserved for the audio unit's view and the additional 
+ * 	control surfaces that are displayed along with it. The host can propose several view 
+ * 	configurations and the audio unit should report the ones which it supports.
+ * 
+ * 	See the documentation for supportedViewConfigurations.
+ */
 @Generated
 @Library("CoreAudioKit")
 @Runtime(ObjCRuntime.class)
@@ -94,11 +105,22 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @property	height
+     * @brief		The height of the view, measured in points.
+     * @discussion
+     * 	Setting the height to 0 will match any height.
+     */
     @Generated
     @Selector("height")
     @NFloat
     public native double height();
 
+    /**
+     * @property	hostHasController
+     * @brief		Boolean property specifying whether the host displays its own control surface
+     * 			when showing the view of the audio unit.
+     */
     @Generated
     @Selector("hostHasController")
     public native boolean hostHasController();
@@ -111,6 +133,18 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
     @Selector("initWithCoder:")
     public native AUAudioUnitViewConfiguration initWithCoder(NSCoder coder);
 
+    /**
+     * @method		initWithWidth
+     * @brief		Designated initializer.
+     * @param		width
+     * 	The width associated with this view configuration.
+     * @param		height
+     * 	The height associated with this view configuration.
+     * @param		hostHasController
+     * 	This property controls whether the host shows its own control surface in this view 
+     * 	configuration.
+     * @return		Returns the newly created view configuration object.
+     */
     @Generated
     @Selector("initWithWidth:height:hostHasController:")
     public native AUAudioUnitViewConfiguration initWithWidthHeightHostHasController(@NFloat double width,
@@ -174,6 +208,12 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
     @NInt
     public static native long version_static();
 
+    /**
+     * @property	width
+     * @brief		The width of the view, measured in points.
+     * @discussion
+     * 	Setting the width to 0 will match any width.
+     */
     @Generated
     @Selector("width")
     @NFloat

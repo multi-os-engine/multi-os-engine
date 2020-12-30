@@ -25,6 +25,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A reorder control (three horizontal lines) with default gray color that automatically initiates interactive
+ * reordering on the collection view when dragged (if supported).
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -131,6 +135,9 @@ public class UICellAccessoryReorder extends UICellAccessory {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Whether a vertical separator is displayed before the accessory when it is placed after another accessory. Default is YES.
+     */
     @Generated
     @Selector("setShowsVerticalSeparator:")
     public native void setShowsVerticalSeparator(boolean value);
@@ -139,6 +146,9 @@ public class UICellAccessoryReorder extends UICellAccessory {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Whether a vertical separator is displayed before the accessory when it is placed after another accessory. Default is YES.
+     */
     @Generated
     @Selector("showsVerticalSeparator")
     public native boolean showsVerticalSeparator();

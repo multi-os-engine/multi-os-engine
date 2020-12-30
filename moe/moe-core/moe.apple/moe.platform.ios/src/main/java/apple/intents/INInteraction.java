@@ -46,6 +46,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An app can use an INInteraction to donate an action (represented as an intent) and its state to the system.
+ * 
+ * The system may also launch the app with an NSUserActivity containing an INInteraction such that the app can perform the action if it chooses.
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -100,16 +105,25 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * delete all the interactions ever donated by the calling app
+     */
     @Generated
     @Selector("deleteAllInteractionsWithCompletion:")
     public static native void deleteAllInteractionsWithCompletion(
             @ObjCBlock(name = "call_deleteAllInteractionsWithCompletion") Block_deleteAllInteractionsWithCompletion completion);
 
+    /**
+     * delete this app's interactions with the specified group identifier
+     */
     @Generated
     @Selector("deleteInteractionsWithGroupIdentifier:completion:")
     public static native void deleteInteractionsWithGroupIdentifierCompletion(String groupIdentifier,
             @ObjCBlock(name = "call_deleteInteractionsWithGroupIdentifierCompletion") Block_deleteInteractionsWithGroupIdentifierCompletion completion);
 
+    /**
+     * delete the interactions with the specified identifiers that were donated by this app
+     */
     @Generated
     @Selector("deleteInteractionsWithIdentifiers:completion:")
     public static native void deleteInteractionsWithIdentifiersCompletion(NSArray<String> identifiers,
@@ -182,15 +196,24 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * The time the interaction started/occurred and its duration. The app can override with their own timestamp but it defaults to the time of creation of this interaction object
+     */
     @Generated
     @Selector("dateInterval")
     public native NSDateInterval dateInterval();
 
+    /**
+     * Indicates the direction of the interaction
+     */
     @Generated
     @Selector("direction")
     @NInt
     public native long direction();
 
+    /**
+     * donate this interaction to the system
+     */
     @Generated
     @Selector("donateInteractionWithCompletion:")
     public native void donateInteractionWithCompletion(
@@ -200,10 +223,17 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * A user-defined identifier for the interaction group, this is handy during deletion time
+     */
     @Generated
     @Selector("groupIdentifier")
     public native String groupIdentifier();
 
+    /**
+     * A unique identifier for the interaction. It defaults to a globally unique identifier.
+     * The app can override with their own identifier that is unique in the app's domain
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -224,6 +254,10 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @Selector("intent")
     public native INIntent intent();
 
+    /**
+     * Indicates the state of execution of the intent
+     * This is consistent with the response state of the intentResponse, if specified
+     */
     @Generated
     @Selector("intentHandlingStatus")
     @NInt
@@ -233,18 +267,31 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @Selector("intentResponse")
     public native INIntentResponse intentResponse();
 
+    /**
+     * The time the interaction started/occurred and its duration. The app can override with their own timestamp but it defaults to the time of creation of this interaction object
+     */
     @Generated
     @Selector("setDateInterval:")
     public native void setDateInterval(NSDateInterval value);
 
+    /**
+     * Indicates the direction of the interaction
+     */
     @Generated
     @Selector("setDirection:")
     public native void setDirection(@NInt long value);
 
+    /**
+     * A user-defined identifier for the interaction group, this is handy during deletion time
+     */
     @Generated
     @Selector("setGroupIdentifier:")
     public native void setGroupIdentifier(String value);
 
+    /**
+     * A unique identifier for the interaction. It defaults to a globally unique identifier.
+     * The app can override with their own identifier that is unique in the app's domain
+     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);

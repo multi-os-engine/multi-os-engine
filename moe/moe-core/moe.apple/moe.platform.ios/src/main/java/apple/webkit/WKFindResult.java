@@ -118,6 +118,9 @@ public class WKFindResult extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * @abstract Whether or not a match was found during the find operation
+     */
     @Generated
     @Selector("matchFound")
     public native boolean matchFound();

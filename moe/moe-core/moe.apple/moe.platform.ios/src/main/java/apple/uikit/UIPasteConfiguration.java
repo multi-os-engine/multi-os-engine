@@ -126,6 +126,9 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
     @Selector("initWithCoder:")
     public native UIPasteConfiguration initWithCoder(NSCoder coder);
 
+    /**
+     * Uses the readableTypeIdentifiersForItemProvider class property to get acceptable types.
+     */
     @Generated
     @Selector("initWithTypeIdentifiersForAcceptingClass:")
     public native UIPasteConfiguration initWithTypeIdentifiersForAcceptingClass(

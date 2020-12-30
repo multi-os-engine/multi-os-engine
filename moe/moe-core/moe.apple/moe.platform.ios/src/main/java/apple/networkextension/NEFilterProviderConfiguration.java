@@ -45,6 +45,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface NEFilterProviderConfiguration
+ * @discussion The NEFilterProviderConfiguration class declares the programmatic interface of an object that configures a plugin-based content filter.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -170,14 +174,26 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * @property filterBrowsers
+     * @discussion If YES, the filter plugin will be allowed to filter browser traffic. If NO, the filter plugin will not see any browser flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the filter take effect.
+     */
     @Generated
     @Selector("filterBrowsers")
     public native boolean filterBrowsers();
 
+    /**
+     * @property filterSockets
+     * @discussion If YES, the filter plugin will be allowed to filter socket traffic. If NO, the filter plugin will not see any socket flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the filter take effect.
+     */
     @Generated
     @Selector("filterSockets")
     public native boolean filterSockets();
 
+    /**
+     * @property identityReference
+     * @discussion The optional certificate identity keychain reference associated with the filter.
+     */
     @Generated
     @Selector("identityReference")
     public native NSData identityReference();
@@ -190,46 +206,90 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     @Selector("initWithCoder:")
     public native NEFilterProviderConfiguration initWithCoder(NSCoder coder);
 
+    /**
+     * @property organization
+     * @discussion The optional organization associated with the filter.
+     */
     @Generated
     @Selector("organization")
     public native String organization();
 
+    /**
+     * @property passwordReference
+     * @discussion The optional password keychain reference associated with the filter.
+     */
     @Generated
     @Selector("passwordReference")
     public native NSData passwordReference();
 
+    /**
+     * @property serverAddress
+     * @discussion The optional address of the server used to support the filter.
+     */
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();
 
+    /**
+     * @property filterBrowsers
+     * @discussion If YES, the filter plugin will be allowed to filter browser traffic. If NO, the filter plugin will not see any browser flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the filter take effect.
+     */
     @Generated
     @Selector("setFilterBrowsers:")
     public native void setFilterBrowsers(boolean value);
 
+    /**
+     * @property filterSockets
+     * @discussion If YES, the filter plugin will be allowed to filter socket traffic. If NO, the filter plugin will not see any socket flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the filter take effect.
+     */
     @Generated
     @Selector("setFilterSockets:")
     public native void setFilterSockets(boolean value);
 
+    /**
+     * @property identityReference
+     * @discussion The optional certificate identity keychain reference associated with the filter.
+     */
     @Generated
     @Selector("setIdentityReference:")
     public native void setIdentityReference(NSData value);
 
+    /**
+     * @property organization
+     * @discussion The optional organization associated with the filter.
+     */
     @Generated
     @Selector("setOrganization:")
     public native void setOrganization(String value);
 
+    /**
+     * @property passwordReference
+     * @discussion The optional password keychain reference associated with the filter.
+     */
     @Generated
     @Selector("setPasswordReference:")
     public native void setPasswordReference(NSData value);
 
+    /**
+     * @property serverAddress
+     * @discussion The optional address of the server used to support the filter.
+     */
     @Generated
     @Selector("setServerAddress:")
     public native void setServerAddress(String value);
 
+    /**
+     * @property username
+     * @discussion The optional username associated with the filter.
+     */
     @Generated
     @Selector("setUsername:")
     public native void setUsername(String value);
 
+    /**
+     * @property vendorConfiguration
+     * @discussion An optional dictionary of plugin-specific keys to be passed to the plugin.
+     */
     @Generated
     @Selector("setVendorConfiguration:")
     public native void setVendorConfiguration(NSDictionary<String, ?> value);
@@ -240,10 +300,18 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
         return supportsSecureCoding();
     }
 
+    /**
+     * @property username
+     * @discussion The optional username associated with the filter.
+     */
     @Generated
     @Selector("username")
     public native String username();
 
+    /**
+     * @property vendorConfiguration
+     * @discussion An optional dictionary of plugin-specific keys to be passed to the plugin.
+     */
     @Generated
     @Selector("vendorConfiguration")
     public native NSDictionary<String, ?> vendorConfiguration();

@@ -37,6 +37,10 @@ public final class NewsstandKit {
     private NewsstandKit() {
     }
 
+    /**
+     * @constant   NKIssueDownloadCompletedNotification
+     * @abstract   Notification when an issue's assets have all been downloaded.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

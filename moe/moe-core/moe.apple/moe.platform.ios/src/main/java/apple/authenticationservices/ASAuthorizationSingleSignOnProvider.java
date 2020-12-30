@@ -53,6 +53,9 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @abstract To get the right extension the identity provider main URL has to be provided. The URL is even part of the extension using assosiated domains mechanism or can be configured by MDM profile.
+     */
     @Generated
     @Selector("authorizationProviderWithIdentityProviderURL:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -62,6 +65,9 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @abstract Returns YES if the configured provider is capable of performing authorization within a given configuration.
+     */
     @Generated
     @Selector("canPerformAuthorization")
     public native boolean canPerformAuthorization();

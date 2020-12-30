@@ -22,6 +22,10 @@ public interface UIAccessibilityContainerDataTable {
     @NUInt
     long accessibilityColumnCount();
 
+    /**
+     * Return the cell element for a specific row/column, including elements that span rows/columns.
+     * default == nil
+     */
     @Generated
     @Selector("accessibilityDataTableCellElementForRow:column:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -35,6 +39,10 @@ public interface UIAccessibilityContainerDataTable {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Return header elements for a specific row or column.
+     * default == nil
+     */
     @Generated
     @IsOptional
     @Selector("accessibilityHeaderElementsForRow:")

@@ -45,6 +45,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNPhysicsShape
+ * @abstract SCNPhysicsShape represents the shape of a physics body.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -147,15 +151,24 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Creates an instance of a physics shape based on a geometry. see above for the possible options.
+     */
     @Generated
     @Selector("shapeWithGeometry:options:")
     public static native SCNPhysicsShape shapeWithGeometryOptions(SCNGeometry geometry,
             NSDictionary<String, ?> options);
 
+    /**
+     * Creates an instance of a physics shape based on a node hierachy. The hierarchy must contain geometries at some point to create a valid shape. see above for the possible options.
+     */
     @Generated
     @Selector("shapeWithNode:options:")
     public static native SCNPhysicsShape shapeWithNodeOptions(SCNNode node, NSDictionary<String, ?> options);
 
+    /**
+     * Creates an instance of a physics shape based on several sub shapes, associated with transforms. The transforms are to be passed as an array of NSValue wrapping SCNMatrix4
+     */
     @Generated
     @Selector("shapeWithShapes:transforms:")
     public static native SCNPhysicsShape shapeWithShapesTransforms(NSArray<? extends SCNPhysicsShape> shapes,
@@ -192,10 +205,16 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     @Selector("initWithCoder:")
     public native SCNPhysicsShape initWithCoder(NSCoder coder);
 
+    /**
+     * Returns the options requested at init time
+     */
     @Generated
     @Selector("options")
     public native NSDictionary<String, ?> options();
 
+    /**
+     * Returns the object from which this physics shape was created. It can be an SCNGeometry*, an SCNNode* or in NSArray* of subshapes.
+     */
     @Generated
     @Selector("sourceObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -207,6 +226,9 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
         return supportsSecureCoding();
     }
 
+    /**
+     * If the physics shape was created from an array of sub shapes, transforms contains the associated transforms as SCNMatrix4 wrapped in NSValue.
+     */
     @Generated
     @Selector("transforms")
     public native NSArray<? extends NSValue> transforms();

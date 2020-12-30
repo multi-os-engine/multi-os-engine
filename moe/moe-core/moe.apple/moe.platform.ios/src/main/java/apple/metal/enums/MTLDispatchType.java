@@ -3,6 +3,17 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum MTLDispatchType
+ * 
+ * @abstract MTLDispatchType Describes how a command encoder will execute dispatched work.
+ * 
+ * @constant MTLDispatchTypeSerial
+ * Command encoder dispatches are executed in dispatched order.
+ * 
+ * @constant MTLDispatchTypeConcurrent
+ * Command encoder dispatches are executed in parallel with each other. 
+ */
 @Generated
 public final class MTLDispatchType {
     @Generated

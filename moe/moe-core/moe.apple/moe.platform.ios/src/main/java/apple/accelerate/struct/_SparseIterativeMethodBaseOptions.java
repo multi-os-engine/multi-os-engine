@@ -36,6 +36,9 @@ public final class _SparseIterativeMethodBaseOptions extends StructObject {
         setReportError(reportError);
     }
 
+    /**
+     * reportError should always be FIRST member in below structs
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_reportError")
@@ -49,6 +52,9 @@ public final class _SparseIterativeMethodBaseOptions extends StructObject {
                 @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0);
     }
 
+    /**
+     * reportError should always be FIRST member in below structs
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setReportError(@FunctionPtr(name = "call_reportError") Function_reportError value);

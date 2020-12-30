@@ -57,6 +57,9 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @abstract Authorization options.
+     */
     @Generated
     @Selector("authorizationOptions")
     public native NSDictionary<?, ?> authorizationOptions();
@@ -65,10 +68,16 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * @abstract Identification of the calling application.
+     */
     @Generated
     @Selector("callerBundleIdentifier")
     public native String callerBundleIdentifier();
 
+    /**
+     * @abstract Call when authorization needs to be canceled from some reason (for example user pressed Cancel button).
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -91,18 +100,30 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @abstract Call when authorization succeeded without any output.
+     */
     @Generated
     @Selector("complete")
     public native void complete();
 
+    /**
+     * @abstract Call when authorization failed with an error.
+     */
     @Generated
     @Selector("completeWithError:")
     public native void completeWithError(NSError error);
 
+    /**
+     * @abstract Call when authorization succeeded with an authorization tokens stored in HTTP headers.
+     */
     @Generated
     @Selector("completeWithHTTPAuthorizationHeaders:")
     public native void completeWithHTTPAuthorizationHeaders(NSDictionary<String, String> httpAuthorizationHeaders);
 
+    /**
+     * @abstract Call when authorization succeeded with a HTTP response.
+     */
     @Generated
     @Selector("completeWithHTTPResponse:httpBody:")
     public native void completeWithHTTPResponseHttpBody(NSHTTPURLResponse httpResponse, NSData httpBody);
@@ -115,10 +136,16 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @abstract Call when authorization was not handled.
+     */
     @Generated
     @Selector("doNotHandle")
     public native void doNotHandle();
 
+    /**
+     * @abstract Extension data from extension configuration provided by MDM stored as a property-list.
+     */
     @Generated
     @Selector("extensionData")
     public native NSDictionary<?, ?> extensionData();
@@ -128,10 +155,16 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @abstract Request body.
+     */
     @Generated
     @Selector("httpBody")
     public native NSData httpBody();
 
+    /**
+     * @abstract Request HTTP headers.
+     */
     @Generated
     @Selector("httpHeaders")
     public native NSDictionary<String, String> httpHeaders();
@@ -167,6 +200,9 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract Asks authorization service to show extension view controller. If the controller cannot be shown an error is returned.
+     */
     @Generated
     @Selector("presentAuthorizationViewControllerWithCompletion:")
     public native void presentAuthorizationViewControllerWithCompletion(
@@ -179,10 +215,16 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
         void call_presentAuthorizationViewControllerWithCompletion(boolean success, NSError error);
     }
 
+    /**
+     * @abstract Realm.
+     */
     @Generated
     @Selector("realm")
     public native String realm();
 
+    /**
+     * @abstract Operation to be executed by the extension.
+     */
     @Generated
     @Selector("requestedOperation")
     public native String requestedOperation();
@@ -203,6 +245,9 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * @abstract Request URL with all components.
+     */
     @Generated
     @Selector("url")
     public native NSURL url();
@@ -212,14 +257,23 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @NInt
     public static native long version_static();
 
+    /**
+     * @abstract Team identifier of the calling application.
+     */
     @Generated
     @Selector("callerTeamIdentifier")
     public native String callerTeamIdentifier();
 
+    /**
+     * @abstract Indicates whether the calling application is managed.
+     */
     @Generated
     @Selector("isCallerManaged")
     public native boolean isCallerManaged();
 
+    /**
+     * @abstract Localized display name of the calling application.
+     */
     @Generated
     @Selector("localizedCallerDisplayName")
     public native String localizedCallerDisplayName();

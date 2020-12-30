@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents a view controller to subclass for displaying classification UI
+ */
 @Generated
 @Library("IdentityLookupUI")
 @Runtime(ObjCRuntime.class)
@@ -82,6 +85,9 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Override to provide a classification response for the classification request
+     */
     @Generated
     @Selector("classificationResponseForRequest:")
     public native ILClassificationResponse classificationResponseForRequest(ILClassificationRequest request);
@@ -98,6 +104,9 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The extension context to use for completing the classification request
+     */
     @Generated
     @Selector("extensionContext")
     public native ILClassificationUIExtensionContext extensionContext();
@@ -147,6 +156,9 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Override to customize UI based on the classification request before the view is loaded
+     */
     @Generated
     @Selector("prepareForClassificationRequest:")
     public native void prepareForClassificationRequest(ILClassificationRequest request);

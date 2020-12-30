@@ -142,10 +142,29 @@ public class CISampler extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Creates a new sampler object refencing 'im'.
+     */
     @Generated
     @Selector("samplerWithImage:")
     public static native CISampler samplerWithImage(CIImage im);
 
+    /**
+     * Creates a new sampler object from 'im' specifying key/value option
+     * pairs. Each key is an NSString. Supported keys include:
+     * 
+     * kCISamplerAffineMatrix: An NSArray [a b c d tx ty] defining the
+     * transformation to be applied to the sampler.
+     * 
+     * kCISamplerWrapMode: An NSString defining how pixels outside the
+     * sampler's extent are produced. Options include kCISamplerWrapBlack
+     * (pixels are transparent black, the default) and kCISamplerWrapClamp
+     * (coordinates are clamped to the extent).
+     * 
+     * kCISamplerFilterMode: An NSString defining the filter to use when
+     * sampling the image. One of kCISamplerFilterNearest (point sampling)
+     * or kCISamplerFilterLinear (bilinear interpolation, the default).
+     */
     @Generated
     @Variadic()
     @Selector("samplerWithImage:keysAndValues:")
@@ -175,10 +194,20 @@ public class CISampler extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Returns the shape containing the Domain Of Definition (DOD) of the
+     * sampler. The DOD is defined such that it contains all non-transparent
+     * pixels produced by referencing the sampler.
+     * This property is KVO-safe
+     */
     @Generated
     @Selector("definition")
     public native CIFilterShape definition();
 
+    /**
+     * Returns the extent of the sampler. Sampling outside the extent will
+     * bring the sampler's wrap mode into action.
+     */
     @Generated
     @Selector("extent")
     @ByValue
@@ -188,6 +217,9 @@ public class CISampler extends NSObject implements NSCopying {
     @Selector("init")
     public native CISampler init();
 
+    /**
+     * Initializers.
+     */
     @Generated
     @Selector("initWithImage:")
     public native CISampler initWithImage(CIImage im);

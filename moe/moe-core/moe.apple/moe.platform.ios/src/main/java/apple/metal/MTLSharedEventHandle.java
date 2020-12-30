@@ -26,6 +26,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MTLSharedEventHandle objects may be passed between processes via XPC connections and then used to recreate
+ * a MTLSharedEvent via an existing MTLDevice.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)

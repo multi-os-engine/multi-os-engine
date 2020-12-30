@@ -24,6 +24,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class MTLComputePassDescriptor
+ * @abstract MTLComputePassDescriptor represents a collection of attachments to be used to create a concrete compute command encoder
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -74,6 +78,10 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * @method computePassDescriptor
+     * @abstract Create an autoreleased default frame buffer descriptor
+     */
     @Generated
     @Selector("computePassDescriptor")
     public static native MTLComputePassDescriptor computePassDescriptor();
@@ -92,6 +100,10 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * @property dispatchType
+     * @abstract The dispatch type of the compute command encoder.
+     */
     @Generated
     @Selector("dispatchType")
     @NUInt
@@ -141,10 +153,18 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property sampleBufferAttachments
+     * @abstract An array of sample buffers and associated sample indices.
+     */
     @Generated
     @Selector("sampleBufferAttachments")
     public native MTLComputePassSampleBufferAttachmentDescriptorArray sampleBufferAttachments();
 
+    /**
+     * @property dispatchType
+     * @abstract The dispatch type of the compute command encoder.
+     */
     @Generated
     @Selector("setDispatchType:")
     public native void setDispatchType(@NUInt long value);

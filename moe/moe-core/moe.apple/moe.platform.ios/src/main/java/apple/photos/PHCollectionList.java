@@ -98,16 +98,26 @@ public class PHCollectionList extends PHCollection {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * A PHAssetCollectionTypeMoment will be contained by a PHCollectionListSubtypeMomentListCluster and a PHCollectionListSubtypeMomentListYear
+     * Non-moment PHAssetCollections will only be contained by a single collection list
+     */
     @Generated
     @Selector("fetchCollectionListsContainingCollection:options:")
     public static native PHFetchResult<? extends PHCollectionList> fetchCollectionListsContainingCollectionOptions(
             PHCollection collection, PHFetchOptions options);
 
+    /**
+     * Fetch collection lists of a single type matching the provided local identifiers (type is inferred from the local identifiers)
+     */
     @Generated
     @Selector("fetchCollectionListsWithLocalIdentifiers:options:")
     public static native PHFetchResult<? extends PHCollectionList> fetchCollectionListsWithLocalIdentifiersOptions(
             NSArray<String> identifiers, PHFetchOptions options);
 
+    /**
+     * Fetch asset collections of a single type and subtype provided (use PHCollectionListSubtypeAny to match all subtypes)
+     */
     @Generated
     @Selector("fetchCollectionListsWithType:subtype:options:")
     public static native PHFetchResult<? extends PHCollectionList> fetchCollectionListsWithTypeSubtypeOptions(
@@ -181,6 +191,9 @@ public class PHCollectionList extends PHCollection {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * These collection lists are only in-memory and are not persisted to disk
+     */
     @Generated
     @Selector("transientCollectionListWithCollections:title:")
     public static native PHCollectionList transientCollectionListWithCollectionsTitle(

@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Node representing a MPSCNNUpsamplingBilinear kernel
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -90,6 +93,13 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
     @Selector("init")
     public native MPSCNNUpsamplingBilinearNode init();
 
+    /**
+     * @abstract   Init a node representing a MPSCNNUpsamplingBilinear kernel
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      integerScaleFactorX     The upsampling factor for the x dimension.
+     * @param      integerScaleFactorY     The upsampling factor for the y dimension.
+     * @return     A new MPSNNFilter node for a MPSCNNUpsamplingBilinear kernel.
+     */
     @Generated
     @Selector("initWithSource:integerScaleFactorX:integerScaleFactorY:")
     public native MPSCNNUpsamplingBilinearNode initWithSourceIntegerScaleFactorXIntegerScaleFactorY(
@@ -122,6 +132,13 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * @abstract   Init a autoreleased node representing a MPSCNNUpsamplingBilinear kernel
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      integerScaleFactorX     The upsampling factor for the x dimension.
+     * @param      integerScaleFactorY     The upsampling factor for the y dimension.
+     * @return     A new MPSNNFilter node for a MPSCNNUpsamplingBilinear kernel.
+     */
     @Generated
     @Selector("nodeWithSource:integerScaleFactorX:integerScaleFactorY:")
     public static native MPSCNNUpsamplingBilinearNode nodeWithSourceIntegerScaleFactorXIntegerScaleFactorY(
@@ -160,12 +177,28 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
     @Selector("alignCorners")
     public native boolean alignCorners();
 
+    /**
+     * @abstract   Init a node representing a MPSCNNUpsamplingBilinear kernel
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      integerScaleFactorX     The upsampling factor for the x dimension.
+     * @param      integerScaleFactorY     The upsampling factor for the y dimension.
+     * @param      alignCorners            Specifier whether the centers of the 4 corner pixels of the input and output regions are aligned,
+     * @return     A new MPSNNFilter node for a MPSCNNUpsamplingBilinear kernel.
+     */
     @Generated
     @Selector("initWithSource:integerScaleFactorX:integerScaleFactorY:alignCorners:")
     public native MPSCNNUpsamplingBilinearNode initWithSourceIntegerScaleFactorXIntegerScaleFactorYAlignCorners(
             MPSNNImageNode sourceNode, @NUInt long integerScaleFactorX, @NUInt long integerScaleFactorY,
             boolean alignCorners);
 
+    /**
+     * @abstract   Init a autoreleased node representing a MPSCNNUpsamplingBilinear kernel
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      integerScaleFactorX     The upsampling factor for the x dimension.
+     * @param      integerScaleFactorY     The upsampling factor for the y dimension.
+     * @param      alignCorners            Specifier whether the centers of the 4 corner pixels of the input and output regions are aligned,
+     * @return     A new MPSNNFilter node for a MPSCNNUpsamplingBilinear kernel.
+     */
     @Generated
     @Selector("nodeWithSource:integerScaleFactorX:integerScaleFactorY:alignCorners:")
     public static native MPSCNNUpsamplingBilinearNode nodeWithSourceIntegerScaleFactorXIntegerScaleFactorYAlignCorners(

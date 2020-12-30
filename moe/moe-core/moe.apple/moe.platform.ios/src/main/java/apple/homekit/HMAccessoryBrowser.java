@@ -40,6 +40,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief This class is used to discover new accessories in the home
+ *        that have never been paired with and therefore not part of the home.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -151,11 +155,19 @@ public class HMAccessoryBrowser extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * @brief Delegate that receives updates on the state of the accessories discovered.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native HMAccessoryBrowserDelegate delegate();
 
+    /**
+     * @brief This is the array of HMAccessory objects that represents new
+     *        accessories that were discovered as part of a search session.
+     *        This array is not updated when a search session is not in progress.
+     */
     @Generated
     @Selector("discoveredAccessories")
     public native NSArray<? extends HMAccessory> discoveredAccessories();
@@ -164,10 +176,16 @@ public class HMAccessoryBrowser extends NSObject {
     @Selector("init")
     public native HMAccessoryBrowser init();
 
+    /**
+     * @brief Delegate that receives updates on the state of the accessories discovered.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMAccessoryBrowserDelegate value);
 
+    /**
+     * @brief Delegate that receives updates on the state of the accessories discovered.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) HMAccessoryBrowserDelegate value) {
         Object __old = delegate();
@@ -180,10 +198,32 @@ public class HMAccessoryBrowser extends NSObject {
         }
     }
 
+    /**
+     * @brief Starts searching for accessories that are not associated to any home.
+     * 
+     * @discussion If any accessories are discovered, updates are sent to the delegate.
+     *             This will scan for the following types of accessories:
+     *                 Accessories supporting HomeKit Wireless Accessory Configuration profile
+     *                 Accessories supporting HomeKit Accessory Protocol and are already on
+     *                     the same infrastructure IP network
+     *                 Accessories supporting HomeKit Accessory Protocol on Bluetooth LE transport
+     *             The array of discovered accessories will be updated when this method
+     *             is called, so applications should clear and reload any stored copies
+     *             of that array or previous new accessory objects.
+     */
     @Generated
     @Selector("startSearchingForNewAccessories")
     public native void startSearchingForNewAccessories();
 
+    /**
+     * @brief Stops searching for new accessories.
+     * 
+     * @discussion After this method is called, updates will not be sent to the delegate
+     *             if new accessories are found or removed. Scanning may continue for system
+     *             reasons or if other delegates are still in active searching sessions.
+     *             The contents of the array of discovered accessories will not be updated until
+     *             startSearchingForNewAccessories is called.
+     */
     @Generated
     @Selector("stopSearchingForNewAccessories")
     public native void stopSearchingForNewAccessories();

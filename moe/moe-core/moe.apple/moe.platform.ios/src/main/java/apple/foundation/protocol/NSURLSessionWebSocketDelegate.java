@@ -17,6 +17,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLSessionWebSocketDelegate")
 public interface NSURLSessionWebSocketDelegate extends NSURLSessionTaskDelegate {
+    /**
+     * Indicates that the WebSocket has received a close frame from the server endpoint.
+     * The close code and the close reason may be provided by the delegate if the server elects to send
+     * this information in the close frame
+     */
     @Generated
     @IsOptional
     @Selector("URLSession:webSocketTask:didCloseWithCode:reason:")
@@ -25,6 +30,10 @@ public interface NSURLSessionWebSocketDelegate extends NSURLSessionTaskDelegate 
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Indicates that the WebSocket handshake was successful and the connection has been upgraded to webSockets.
+     * It will also provide the protocol that is picked in the handshake. If the handshake fails, this delegate will not be invoked.
+     */
     @Generated
     @IsOptional
     @Selector("URLSession:webSocketTask:didOpenWithProtocol:")

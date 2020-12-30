@@ -19,6 +19,9 @@ package apple.gamekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Possible invitee responses
+ */
 @Generated
 public final class GKInviteRecipientResponse {
     @Generated @NInt public static final long InviteRecipientResponseAccepted = 0x0000000000000000L;
@@ -27,11 +30,29 @@ public final class GKInviteRecipientResponse {
     @Generated @NInt public static final long InviteRecipientResponseIncompatible = 0x0000000000000003L;
     @Generated @NInt public static final long InviteRecipientResponseUnableToConnect = 0x0000000000000004L;
     @Generated @NInt public static final long InviteRecipientResponseNoAnswer = 0x0000000000000005L;
+    /**
+     * Old names
+     */
     @Generated @NInt public static final long InviteeResponseAccepted = 0x0000000000000000L;
+    /**
+     * Old names
+     */
     @Generated @NInt public static final long InviteeResponseDeclined = 0x0000000000000001L;
+    /**
+     * Old names
+     */
     @Generated @NInt public static final long InviteeResponseFailed = 0x0000000000000002L;
+    /**
+     * Old names
+     */
     @Generated @NInt public static final long InviteeResponseIncompatible = 0x0000000000000003L;
+    /**
+     * Old names
+     */
     @Generated @NInt public static final long InviteeResponseUnableToConnect = 0x0000000000000004L;
+    /**
+     * Old names
+     */
     @Generated @NInt public static final long InviteeResponseNoAnswer = 0x0000000000000005L;
 
     @Generated

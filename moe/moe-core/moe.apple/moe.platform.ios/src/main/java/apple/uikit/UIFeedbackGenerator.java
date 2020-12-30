@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UIFeedbackGenerator is an abstract class that should not be used directly
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +157,10 @@ public class UIFeedbackGenerator extends NSObject {
     @Selector("init")
     public native UIFeedbackGenerator init();
 
+    /**
+     * informs self that it will likely receive events soon, so that it can ensure minimal latency for any feedback generated
+     * safe to call more than once before the generator receives an event, if events are still imminently possible
+     */
     @Generated
     @Selector("prepare")
     public native void prepare();

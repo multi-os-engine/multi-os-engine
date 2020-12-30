@@ -92,6 +92,11 @@ public class CPContactCallButton extends CPButton {
     @Selector("init")
     public native CPContactCallButton init();
 
+    /**
+     * Create a contact button with a system-provided call image that, when tapped, calls your custom handler.
+     * 
+     * @param handler A block that will be called when the user taps this button.
+     */
     @Generated
     @Selector("initWithHandler:")
     public native CPContactCallButton initWithHandler(

@@ -35,47 +35,89 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @protocol MTLFunction
+ * @abstract A handle to intermediate code used as inputs for either a MTLComputePipelineState or a MTLRenderPipelineState.
+ * @discussion MTLFunction is a single vertex shader, fragment shader, or compute function.  A Function can only be used with the device that it was created against.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLFunction")
 public interface MTLFunction {
+    /**
+     * @property device
+     * @abstract The device this resource was created against.  This resource can only be used with this device.
+     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     MTLDevice device();
 
+    /**
+     * @property functionConstantsDictionary
+     * @abstract A dictionary containing information about all function contents, keyed by the constant names.
+     */
     @Generated
     @Selector("functionConstantsDictionary")
     NSDictionary<String, ? extends MTLFunctionConstant> functionConstantsDictionary();
 
+    /**
+     * @property functionType
+     * @abstract The overall kind of entry point: compute, vertex, or fragment.
+     */
     @Generated
     @Selector("functionType")
     @NUInt
     long functionType();
 
+    /**
+     * @property label
+     * @abstract A string to help identify this object.
+     */
     @Generated
     @Selector("label")
     String label();
 
+    /**
+     * @property name
+     * @abstract The name of the function in the shading language.
+     */
     @Generated
     @Selector("name")
     String name();
 
+    /**
+     * @property patchControlPointCount
+     * @abstract Returns the number of patch control points if it was specified in the shader. Returns -1 if it
+     * was not specified.
+     */
     @Generated
     @Selector("patchControlPointCount")
     @NInt
     long patchControlPointCount();
 
+    /**
+     * @property patchType
+     * @abstract Returns the patch type. MTLPatchTypeNone if it is not a post tessellation vertex shader.
+     */
     @Generated
     @Selector("patchType")
     @NUInt
     long patchType();
 
+    /**
+     * @property label
+     * @abstract A string to help identify this object.
+     */
     @Generated
     @Selector("setLabel:")
     void setLabel(String value);
 
+    /**
+     * @property stageInputAttributes
+     * @abstract Returns an array describing the attributes
+     */
     @Generated
     @Selector("stageInputAttributes")
     NSArray<? extends MTLAttribute> stageInputAttributes();
@@ -84,17 +126,29 @@ public interface MTLFunction {
     @Selector("vertexAttributes")
     NSArray<? extends MTLVertexAttribute> vertexAttributes();
 
+    /**
+     * @method newArgumentEncoderWithBufferIndex:
+     * @abstract Creates an argument encoder which will encode arguments matching the layout of the argument buffer at the given bind point index.
+     */
     @Generated
     @Selector("newArgumentEncoderWithBufferIndex:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLArgumentEncoder newArgumentEncoderWithBufferIndex(@NUInt long bufferIndex);
 
+    /**
+     * @method newArgumentEncoderWithBufferIndex:
+     * @abstract Creates an argument encoder which will encode arguments matching the layout of the argument buffer at the given bind point index.
+     */
     @Generated
     @Selector("newArgumentEncoderWithBufferIndex:reflection:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLArgumentEncoder newArgumentEncoderWithBufferIndexReflection(@NUInt long bufferIndex,
             @ReferenceInfo(type = MTLArgument.class) Ptr<MTLArgument> reflection);
 
+    /**
+     * @property options
+     * @abstract The options this function was created with.
+     */
     @Generated
     @Selector("options")
     @NUInt

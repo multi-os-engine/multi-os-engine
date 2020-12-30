@@ -25,6 +25,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @brief A request for generating a feature print of an image.
+ * 
+ * @discussion This request will produce a VNFeaturePrintObservation object.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -98,6 +103,11 @@ public class VNGenerateImageFeaturePrintRequest extends VNImageBasedRequest {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @brief Determine what type of croping and scaling action should be applied to the image before generating the feature print.
+     * 
+     * @discussion The default value for this property is VNImageCropAndScaleOptionScaleFill.
+     */
     @Generated
     @Selector("imageCropAndScaleOption")
     @NUInt
@@ -147,6 +157,11 @@ public class VNGenerateImageFeaturePrintRequest extends VNImageBasedRequest {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @brief Determine what type of croping and scaling action should be applied to the image before generating the feature print.
+     * 
+     * @discussion The default value for this property is VNImageCropAndScaleOptionScaleFill.
+     */
     @Generated
     @Selector("setImageCropAndScaleOption:")
     public native void setImageCropAndScaleOption(@NUInt long value);

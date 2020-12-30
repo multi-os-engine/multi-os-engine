@@ -19,11 +19,28 @@ package apple.networkextension.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @typedef NWPathStatus
+ * @abstract Path status values
+ */
 @Generated
 public final class NWPathStatus {
+    /**
+     * @const NWPathStatusInvalid The path cannot be evaluated.
+     */
     @Generated @NInt public static final long Invalid = 0x0000000000000000L;
+    /**
+     * @const NWPathStatusSatisfied The path is ready to be used for traffic.
+     */
     @Generated @NInt public static final long Satisfied = 0x0000000000000001L;
+    /**
+     * @const NWPathStatusUnsatisfied The network for this connection is not available.
+     */
     @Generated @NInt public static final long Unsatisfied = 0x0000000000000002L;
+    /**
+     * @const NWPathStatusSatisfiable The path may become satisfied upon
+     * a connection attempt.
+     */
     @Generated @NInt public static final long Satisfiable = 0x0000000000000003L;
 
     @Generated

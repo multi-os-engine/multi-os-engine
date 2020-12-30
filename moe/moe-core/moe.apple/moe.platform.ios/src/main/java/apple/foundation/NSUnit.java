@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSUnit is the base class for all unit types (dimensional and dimensionless).
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)

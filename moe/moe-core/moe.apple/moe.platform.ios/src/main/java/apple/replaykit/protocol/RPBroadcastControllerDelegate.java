@@ -34,6 +34,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("RPBroadcastControllerDelegate")
 public interface RPBroadcastControllerDelegate {
+    /**
+     * @abstract Called when broadcasting finishes due to an error.
+     * @param broadcastController The controller instance.
+     * @param error Required error in the RPRecordingErrorCode domain.
+     */
     @Generated
     @IsOptional
     @Selector("broadcastController:didFinishWithError:")
@@ -41,6 +46,11 @@ public interface RPBroadcastControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @abstract Called when the broadcast service has data to pass back to broadcasting app.
+     * @param broadcastController The controller instance.
+     * @param serviceInfo NSDictionary instance with keys and values defined by the broadcasting service.
+     */
     @Generated
     @IsOptional
     @Selector("broadcastController:didUpdateServiceInfo:")
@@ -49,6 +59,11 @@ public interface RPBroadcastControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * @abstract Called when the broadcast service has updated broadcastURL.
+     * @param broadcastController The controller instance.
+     * @param broadcastURL NSURL instance with URL of the resource where broacast can be viewed. Defined by broadcast service.
+     */
     @Generated
     @IsOptional
     @Selector("broadcastController:didUpdateBroadcastURL:")

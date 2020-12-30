@@ -61,11 +61,17 @@ public final class AudioChannelLayout extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setMNumberChannelDescriptions(int value);
 
+    /**
+     * this is a variable length array of mNumberChannelDescriptions elements
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @ByValue
     public native AudioChannelDescription mChannelDescriptions();
 
+    /**
+     * this is a variable length array of mNumberChannelDescriptions elements
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setMChannelDescriptions(@ByValue AudioChannelDescription value);

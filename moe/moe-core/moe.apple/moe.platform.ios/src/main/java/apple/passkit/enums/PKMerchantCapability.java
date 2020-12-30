@@ -21,9 +21,21 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class PKMerchantCapability {
+    /**
+     * Merchant supports 3DS
+     */
     @Generated @NUInt public static final long Capability3DS = 0x0000000000000001L;
+    /**
+     * Merchant supports EMV
+     */
     @Generated @NUInt public static final long CapabilityEMV = 0x0000000000000002L;
+    /**
+     * Merchant supports credit
+     */
     @Generated @NUInt public static final long CapabilityCredit = 0x0000000000000004L;
+    /**
+     * Merchant supports debit
+     */
     @Generated @NUInt public static final long CapabilityDebit = 0x0000000000000008L;
 
     @Generated

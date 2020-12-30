@@ -40,6 +40,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * PKPayment represents the result of a payment request.  Successful payments
+ * have a PKPaymentToken which contains a payment credential encrypted to the merchant
+ * identifier specified in the request, and when requested, the user's shipping address
+ * and chosen shipping method.
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +162,12 @@ public class PKPayment extends NSObject {
     @Selector("billingAddress")
     public native ConstVoidPtr billingAddress();
 
+    /**
+     * The full billing address that the user selected for this transaction.  Fields are
+     * constrained to those specified in the requiredBillingAddressFields property of the original
+     * PKPaymentRequest object.  This property is only set when the application has set
+     * the requiredBillingAddressFields property of the PKPaymentRequest.
+     */
     @Generated
     @Selector("billingContact")
     public native PKContact billingContact();
@@ -169,14 +181,27 @@ public class PKPayment extends NSObject {
     @Selector("shippingAddress")
     public native ConstVoidPtr shippingAddress();
 
+    /**
+     * The full shipping address that the user selected for this transaction.  Fields are
+     * constrained to those specified in the requiredShippingAddressFields property of the original
+     * PKPaymentRequest object.  This property is only set when the application has set
+     * the requiredShippingAddressFields property of the PKPaymentRequest.
+     */
     @Generated
     @Selector("shippingContact")
     public native PKContact shippingContact();
 
+    /**
+     * The shipping method that the user chose.  This property is only set when the
+     * application has set the shippingMethods property of the PKPaymentRequest.
+     */
     @Generated
     @Selector("shippingMethod")
     public native PKShippingMethod shippingMethod();
 
+    /**
+     * A PKPaymentToken which contains an encrypted payment credential.
+     */
     @Generated
     @Selector("token")
     public native PKPaymentToken token();

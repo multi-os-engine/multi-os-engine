@@ -29,6 +29,20 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CLBeaconIdentityConstraint
+ * 
+ * Discussion:
+ *   A constraint that describes the identity caracteristics of a beacon.
+ * 
+ *   A beacon identity is defined by UUID, major and minor values.
+ *   UUID must be specified. If only UUID is specified, the major and
+ *   minor values will be wildcarded and any beacons with the same
+ *   UUID will satisfy the constraint. Similarly if only UUID and
+ *   major value are specified, the minor value will be wildcarded
+ *   and any beacons with the same UUID and major value will satisfy
+ *   the constraint.
+ */
 @Generated
 @Library("CoreLocation")
 @Runtime(ObjCRuntime.class)
@@ -43,6 +57,12 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
         super(peer);
     }
 
+    /**
+     * UUID
+     * 
+     * Discussion:
+     *   UUID associated with the beacon.
+     */
     @Generated
     @Selector("UUID")
     public native NSUUID UUID();
@@ -114,14 +134,35 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
     @Selector("initWithCoder:")
     public native CLBeaconIdentityConstraint initWithCoder(NSCoder coder);
 
+    /**
+     * initWithUUID:
+     * 
+     * Discussion:
+     *   Initialize a beacon identity constraint with a UUID. Major and
+     *   minor values will be wildcarded.
+     */
     @Generated
     @Selector("initWithUUID:")
     public native CLBeaconIdentityConstraint initWithUUID(NSUUID uuid);
 
+    /**
+     * initWithUUID:major:
+     * 
+     * Discussion:
+     *   Initialize a beacon identity constraint with a UUID and major
+     *   value.  Minor value will be wildcarded.
+     */
     @Generated
     @Selector("initWithUUID:major:")
     public native CLBeaconIdentityConstraint initWithUUIDMajor(NSUUID uuid, char major);
 
+    /**
+     * initWithUUID:major:minor:
+     * 
+     * Discussion:
+     *   Initialize a beacon identity constraint with a UUID, major, and
+     *   minor values.
+     */
     @Generated
     @Selector("initWithUUID:major:minor:")
     public native CLBeaconIdentityConstraint initWithUUIDMajorMinor(NSUUID uuid, char major, char minor);
@@ -147,10 +188,22 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * major
+     * 
+     * Discussion:
+     *   Most significant value associated with the beacon.
+     */
     @Generated
     @Selector("major")
     public native NSNumber major();
 
+    /**
+     * minor
+     * 
+     * Discussion:
+     *   Least significant value associated with the beacon.
+     */
     @Generated
     @Selector("minor")
     public native NSNumber minor();

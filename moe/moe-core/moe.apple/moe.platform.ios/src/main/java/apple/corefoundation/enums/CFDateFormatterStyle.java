@@ -19,6 +19,19 @@ package apple.corefoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * The exact formatted result for these date and time styles depends on the
+ * locale, but generally:
+ *     Short is completely numeric, such as "12/13/52" or "3:30pm"
+ *     Medium is longer, such as "Jan 12, 1952"
+ *     Long is longer, such as "January 12, 1952" or "3:30:32pm"
+ *     Full is pretty complete; e.g. "Tuesday, April 12, 1952 AD" or "3:30:42pm PST"
+ * The specifications though are left fuzzy, in part simply because a user's
+ * preference choices may affect the output, and also the results may change
+ * from one OS release to another.  To produce an exactly formatted date you
+ * should not rely on styles and localization, but set the format string and
+ * use nothing but numbers.
+ */
 @Generated
 public final class CFDateFormatterStyle {
     @Generated @NInt public static final long NoStyle = 0x0000000000000000L;

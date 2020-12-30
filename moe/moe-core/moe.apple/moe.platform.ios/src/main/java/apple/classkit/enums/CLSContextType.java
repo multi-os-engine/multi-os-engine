@@ -10,6 +10,9 @@ public final class CLSContextType {
     }
 
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * Reserved for the main app context
+     */
     @Generated @NInt public static final long App = 0x0000000000000001L;
     @Generated @NInt public static final long Chapter = 0x0000000000000002L;
     @Generated @NInt public static final long Section = 0x0000000000000003L;

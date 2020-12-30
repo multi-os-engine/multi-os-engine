@@ -19,6 +19,20 @@ package apple.networkextension.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @typedef NEHotspotHelperConfidence
+ * @abstract
+ *   The HotspotHelper's confidence in its ability to handle the network.
+ * @discussion
+ *   The HotspotHelper indicates its confidence in being able to handle the
+ *   given hotspot network.
+ * @const kNEHotspotHelperConfidenceNone The helper is unable to handle
+ *   the network.
+ * @const kNEHotspotHelperConfidenceLow The helper has some confidence
+ *   in being able to handle the network.
+ * @const kNEHotspotHelperConfidenceHigh The helper has high confidence
+ *   in being able to handle the network.
+ */
 @Generated
 public final class NEHotspotHelperConfidence {
     @Generated @NInt public static final long None = 0x0000000000000000L;

@@ -19,6 +19,14 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * @enum      HKQueryOptions
+ * @abstract  Time interval options are used to describe how an HKSample's time period overlaps with a given time period.
+ * 
+ * @constant  HKQueryOptionNone               The sample's time period must overlap with the predicate's time period.
+ * @constant  HKQueryOptionStrictStartDate    The sample's start date must fall in the time period (>= startDate, < endDate)
+ * @constant  HKQueryOptionStrictEndDate      The sample's end date must fall in the time period (>= startDate, < endDate)
+ */
 @Generated
 public final class HKQueryOptions {
     @Generated @NUInt public static final long None = 0x0000000000000000L;

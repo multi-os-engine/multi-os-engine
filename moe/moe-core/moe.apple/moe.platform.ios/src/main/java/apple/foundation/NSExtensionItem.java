@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A NSExtensionItem is an immutable collection of values representing different aspects of an item for the extension to act upon.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -154,14 +157,23 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     @NInt
     public static native long version_static();
 
+    /**
+     * (optional) Contains images, videos, URLs, etc. This is not meant to be an array of alternate data formats/types, but instead a collection to include in a social media post for example.
+     */
     @Generated
     @Selector("attachments")
     public native NSArray<? extends NSItemProvider> attachments();
 
+    /**
+     * (optional) content text
+     */
     @Generated
     @Selector("attributedContentText")
     public native NSAttributedString attributedContentText();
 
+    /**
+     * (optional) title for the item
+     */
     @Generated
     @Selector("attributedTitle")
     public native NSAttributedString attributedTitle();
@@ -184,18 +196,30 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     @Selector("initWithCoder:")
     public native NSExtensionItem initWithCoder(NSCoder coder);
 
+    /**
+     * (optional) Contains images, videos, URLs, etc. This is not meant to be an array of alternate data formats/types, but instead a collection to include in a social media post for example.
+     */
     @Generated
     @Selector("setAttachments:")
     public native void setAttachments(NSArray<? extends NSItemProvider> value);
 
+    /**
+     * (optional) content text
+     */
     @Generated
     @Selector("setAttributedContentText:")
     public native void setAttributedContentText(NSAttributedString value);
 
+    /**
+     * (optional) title for the item
+     */
     @Generated
     @Selector("setAttributedTitle:")
     public native void setAttributedTitle(NSAttributedString value);
 
+    /**
+     * (optional) dictionary of key-value data. The key/value pairs accepted by the service are expected to be specified in the extension's Info.plist. The values of NSExtensionItem's properties will be reflected into the dictionary.
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
@@ -206,6 +230,9 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
         return supportsSecureCoding();
     }
 
+    /**
+     * (optional) dictionary of key-value data. The key/value pairs accepted by the service are expected to be specified in the extension's Info.plist. The values of NSExtensionItem's properties will be reflected into the dictionary.
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

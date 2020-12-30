@@ -46,6 +46,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNPhysicsVehicleWheel
+ * @abstract SCNPhysicsVehicleWheel represents a wheel that can be attached to a SCNPhysicsVehicle instance.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -161,15 +165,24 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
     @NInt
     public static native long version_static();
 
+    /**
+     * Initializes and returns a wheel.
+     */
     @Generated
     @Selector("wheelWithNode:")
     public static native SCNPhysicsVehicleWheel wheelWithNode(SCNNode node);
 
+    /**
+     * The wheel axle in the vehicle chassis space. Defaults to (-1,0,0).
+     */
     @Generated
     @Selector("axle")
     @ByValue
     public native SCNVector3 axle();
 
+    /**
+     * The wheel connection point relative to the chassis. Defaults to the node position.
+     */
     @Generated
     @Selector("connectionPosition")
     @ByValue
@@ -185,6 +198,9 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The wheel friction slip coefficient. Defaults to 1.
+     */
     @Generated
     @Selector("frictionSlip")
     @NFloat
@@ -198,69 +214,117 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
     @Selector("initWithCoder:")
     public native SCNPhysicsVehicleWheel initWithCoder(NSCoder coder);
 
+    /**
+     * The wheel maximum suspension force in newtons. Defaults to 6000.
+     */
     @Generated
     @Selector("maximumSuspensionForce")
     @NFloat
     public native double maximumSuspensionForce();
 
+    /**
+     * The wheel maximum suspension travel in centimeters. Defaults to 500.
+     */
     @Generated
     @Selector("maximumSuspensionTravel")
     @NFloat
     public native double maximumSuspensionTravel();
 
+    /**
+     * The node of the receiver.
+     */
     @Generated
     @Selector("node")
     public native SCNNode node();
 
+    /**
+     * The wheel radius. Defaults to the half of the max dimension of the bounding box of the node.
+     */
     @Generated
     @Selector("radius")
     @NFloat
     public native double radius();
 
+    /**
+     * The wheel axle in the vehicle chassis space. Defaults to (-1,0,0).
+     */
     @Generated
     @Selector("setAxle:")
     public native void setAxle(@ByValue SCNVector3 value);
 
+    /**
+     * The wheel connection point relative to the chassis. Defaults to the node position.
+     */
     @Generated
     @Selector("setConnectionPosition:")
     public native void setConnectionPosition(@ByValue SCNVector3 value);
 
+    /**
+     * The wheel friction slip coefficient. Defaults to 1.
+     */
     @Generated
     @Selector("setFrictionSlip:")
     public native void setFrictionSlip(@NFloat double value);
 
+    /**
+     * The wheel maximum suspension force in newtons. Defaults to 6000.
+     */
     @Generated
     @Selector("setMaximumSuspensionForce:")
     public native void setMaximumSuspensionForce(@NFloat double value);
 
+    /**
+     * The wheel maximum suspension travel in centimeters. Defaults to 500.
+     */
     @Generated
     @Selector("setMaximumSuspensionTravel:")
     public native void setMaximumSuspensionTravel(@NFloat double value);
 
+    /**
+     * The wheel radius. Defaults to the half of the max dimension of the bounding box of the node.
+     */
     @Generated
     @Selector("setRadius:")
     public native void setRadius(@NFloat double value);
 
+    /**
+     * The wheel steering axis in the vehicle chassis space. Defaults to (0,-1,0).
+     */
     @Generated
     @Selector("setSteeringAxis:")
     public native void setSteeringAxis(@ByValue SCNVector3 value);
 
+    /**
+     * The wheel suspension compression. Defaults to 4.4.
+     */
     @Generated
     @Selector("setSuspensionCompression:")
     public native void setSuspensionCompression(@NFloat double value);
 
+    /**
+     * The wheel suspension damping. Defaults to 2.3.
+     */
     @Generated
     @Selector("setSuspensionDamping:")
     public native void setSuspensionDamping(@NFloat double value);
 
+    /**
+     * The wheel suspension rest length. Defaults to 1.6.
+     */
     @Generated
     @Selector("setSuspensionRestLength:")
     public native void setSuspensionRestLength(@NFloat double value);
 
+    /**
+     * The wheel suspension stiffness. Defaults to 2.0.
+     */
     @Generated
     @Selector("setSuspensionStiffness:")
     public native void setSuspensionStiffness(@NFloat double value);
 
+    /**
+     * The wheel steering axis in the vehicle chassis space. Defaults to (0,-1,0).
+     */
     @Generated
     @Selector("steeringAxis")
     @ByValue
@@ -272,21 +336,33 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
         return supportsSecureCoding();
     }
 
+    /**
+     * The wheel suspension compression. Defaults to 4.4.
+     */
     @Generated
     @Selector("suspensionCompression")
     @NFloat
     public native double suspensionCompression();
 
+    /**
+     * The wheel suspension damping. Defaults to 2.3.
+     */
     @Generated
     @Selector("suspensionDamping")
     @NFloat
     public native double suspensionDamping();
 
+    /**
+     * The wheel suspension rest length. Defaults to 1.6.
+     */
     @Generated
     @Selector("suspensionRestLength")
     @NFloat
     public native double suspensionRestLength();
 
+    /**
+     * The wheel suspension stiffness. Defaults to 2.0.
+     */
     @Generated
     @Selector("suspensionStiffness")
     @NFloat

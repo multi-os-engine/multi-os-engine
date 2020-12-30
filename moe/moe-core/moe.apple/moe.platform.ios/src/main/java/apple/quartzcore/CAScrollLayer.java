@@ -187,18 +187,32 @@ public class CAScrollLayer extends CALayer {
     @Selector("initWithLayer:")
     public native CAScrollLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
+    /**
+     * Defines the axes in which the layer may be scrolled. Possible values
+     * are `none', `vertically', `horizontally' or `both' (the default).
+     */
     @Generated
     @Selector("scrollMode")
     public native String scrollMode();
 
+    /**
+     * Changes the origin of the layer to point 'p'.
+     */
     @Generated
     @Selector("scrollToPoint:")
     public native void scrollToPoint(@ByValue CGPoint p);
 
+    /**
+     * Scroll the contents of the layer to ensure that rect 'r' is visible.
+     */
     @Generated
     @Selector("scrollToRect:")
     public native void scrollToRect(@ByValue CGRect r);
 
+    /**
+     * Defines the axes in which the layer may be scrolled. Possible values
+     * are `none', `vertically', `horizontally' or `both' (the default).
+     */
     @Generated
     @Selector("setScrollMode:")
     public native void setScrollMode(String value);

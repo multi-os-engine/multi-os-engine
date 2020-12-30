@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKProductsRequestDelegate")
 public interface SKProductsRequestDelegate extends SKRequestDelegate {
+    /**
+     * Sent immediately before -requestDidFinish:
+     */
     @Generated
     @Selector("productsRequest:didReceiveResponse:")
     void productsRequestDidReceiveResponse(SKProductsRequest request, SKProductsResponse response);

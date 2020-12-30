@@ -40,6 +40,15 @@ public final class iAd {
     private iAd() {
     }
 
+    /**
+     * @const ADErrorDomain
+     * 
+     * @discussion
+     * Error domain for NSErrors passed to the following delegate methods:
+     * 
+     *   • -[ADBannerViewDelegate bannerView:didFailToReceiveAdWithError:]
+     *   • -[ADInterstitialAdDelegate interstitialAd:didFailWithError:]
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -65,6 +74,15 @@ public final class iAd {
     @MappedReturn(ObjCStringMapper.class)
     public static native String ADBannerContentSizeIdentifierLandscape();
 
+    /**
+     * @const ADClientErrorDomain
+     * 
+     * @discussion
+     * Error domain for NSErrors passed to the completionHandler as a
+     * result of calling:
+     * 
+     *   • -[[ADClient SharedClient] requestAttributionDetailsWithBlock]
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

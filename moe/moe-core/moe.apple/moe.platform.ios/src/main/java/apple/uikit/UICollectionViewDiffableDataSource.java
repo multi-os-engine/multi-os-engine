@@ -56,6 +56,19 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Apply a snapshot to the collection view committing to the new data source state.
+     * 
+     *   animatingDifferences == YES: perform a diff between the current UICollectionView state and the snapshot and animate the update.
+     *   animatingDifferences == NO: commit to the new collection view state from the snapshot. The changes will not be animated.
+     * 
+     *   If the (optional) completion block is specified, it will be called on the main queue when the animations are completed.
+     * 
+     *  Note: you may call this from a background queue which will cause the diff (if needed) to be generated on the calling queue and the
+     *        final UI update to be applied back on the main queue. However, all applySnapshot invocations must be confined to the same queue.
+     *        (if you violate this restriction and mix calls between the main queue and some background queue, the framework
+     *         will log and/or assert to avoid deadlocks)
+     */
     @Generated
     @Selector("applySnapshot:animatingDifferences:")
     public native void applySnapshotAnimatingDifferences(
@@ -168,8 +181,8 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Generated
     public interface Block_initWithCollectionViewCellProvider {
         @Generated
-        UICollectionViewCell call_initWithCollectionViewCellProvider(UICollectionView arg0, NSIndexPath arg1,
-                @Mapped(ObjCObjectMapper.class) Object arg2);
+        UICollectionViewCell call_initWithCollectionViewCellProvider(UICollectionView collectionView, NSIndexPath indexPath,
+                @Mapped(ObjCObjectMapper.class) Object itemIdentifier);
     }
 
     @Generated
@@ -189,6 +202,9 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * convert IndexPath <-> ItemIdentifierType
+     */
     @Generated
     @Selector("itemIdentifierForIndexPath:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -227,14 +243,18 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Generated
     public interface Block_setSupplementaryViewProvider {
         @Generated
-        UICollectionReusableView call_setSupplementaryViewProvider(UICollectionView arg0, String arg1,
-                NSIndexPath arg2);
+        UICollectionReusableView call_setSupplementaryViewProvider(UICollectionView collectionView, String elementKind,
+                NSIndexPath indexPath);
     }
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Create a snapshot of the current UICollectionView data source state.
+     *   This snapshot can be mutated and later applied via -applySnapshot:animatingDifferences:
+     */
     @Generated
     @Selector("snapshot")
     public native NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifierType> snapshot();
@@ -252,8 +272,8 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Generated
     public interface Block_supplementaryViewProvider_ret {
         @Generated
-        UICollectionReusableView call_supplementaryViewProvider_ret(UICollectionView arg0, String arg1,
-                NSIndexPath arg2);
+        UICollectionReusableView call_supplementaryViewProvider_ret(UICollectionView collectionView, String elementKind,
+                NSIndexPath indexPath);
     }
 
     @Generated
@@ -261,6 +281,9 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @NInt
     public static native long version_static();
 
+    /**
+     * Section Snapshot Support
+     */
     @Generated
     @Selector("applySnapshot:toSection:animatingDifferences:")
     public native void applySnapshotToSectionAnimatingDifferences(
@@ -281,6 +304,9 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
         void call_applySnapshotToSectionAnimatingDifferencesCompletion();
     }
 
+    /**
+     * Reordering Support
+     */
     @Generated
     @Selector("reorderingHandlers")
     public native UICollectionViewDiffableDataSourceReorderingHandlers<_SectionIdentifierType, _ItemIdentifierType> reorderingHandlers();
@@ -289,6 +315,9 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Selector("sectionSnapshotHandlers")
     public native UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemIdentifierType> sectionSnapshotHandlers();
 
+    /**
+     * Reordering Support
+     */
     @Generated
     @Selector("setReorderingHandlers:")
     public native void setReorderingHandlers(

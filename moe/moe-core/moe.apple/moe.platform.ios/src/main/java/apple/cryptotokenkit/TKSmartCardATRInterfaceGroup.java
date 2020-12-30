@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents single interface-bytes group of ATR.
+ */
 @Generated
 @Library("CryptoTokenKit")
 @Runtime(ObjCRuntime.class)
@@ -38,14 +41,23 @@ public class TKSmartCardATRInterfaceGroup extends NSObject {
         super(peer);
     }
 
+    /**
+     * TA interface byte of ATR group, or nil if TA is not present.
+     */
     @Generated
     @Selector("TA")
     public native NSNumber TA();
 
+    /**
+     * TB interface byte of ATR group, or nil if TB is not present.
+     */
     @Generated
     @Selector("TB")
     public native NSNumber TB();
 
+    /**
+     * TC interface byte of ATR group, or nil if TC is not present.
+     */
     @Generated
     @Selector("TC")
     public native NSNumber TC();
@@ -130,6 +142,9 @@ public class TKSmartCardATRInterfaceGroup extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Protocol number for this group.  First group (global) has protocol unassigned, contains nil.
+     */
     @Generated
     @Selector("protocol")
     public native NSNumber protocol();

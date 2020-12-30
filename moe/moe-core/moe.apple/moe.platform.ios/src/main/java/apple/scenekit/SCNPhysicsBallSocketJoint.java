@@ -43,6 +43,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class SCNPhysicsBallSocketJoint
+ * @abstract SCNPhysicsBallSocketJoint makes two bodies to move like they are connected by a ball-and-socket joint (i.e it allows rotations around all axes).
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -123,10 +127,18 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Initializes and returns a physics ball-and-socket joint.
+     * The joint attaches "body" to the 3d location specified by "anchor" and relative to the node that owns the body.
+     */
     @Generated
     @Selector("jointWithBody:anchor:")
     public static native SCNPhysicsBallSocketJoint jointWithBodyAnchor(SCNPhysicsBody body, @ByValue SCNVector3 anchor);
 
+    /**
+     * Initializes and returns a physics ball-and-socket joint.
+     * The joint attaches bodyA and bodyB on anchorA and anchorB respectively.
+     */
     @Generated
     @Selector("jointWithBodyA:anchorA:bodyB:anchorB:")
     public static native SCNPhysicsBallSocketJoint jointWithBodyAAnchorABodyBAnchorB(SCNPhysicsBody bodyA,
@@ -167,20 +179,32 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     @NInt
     public static native long version_static();
 
+    /**
+     * the attach point of bodyA
+     */
     @Generated
     @Selector("anchorA")
     @ByValue
     public native SCNVector3 anchorA();
 
+    /**
+     * the attach point of bodyB
+     */
     @Generated
     @Selector("anchorB")
     @ByValue
     public native SCNVector3 anchorB();
 
+    /**
+     * the first body attached to the ball-and-socket joint
+     */
     @Generated
     @Selector("bodyA")
     public native SCNPhysicsBody bodyA();
 
+    /**
+     * the second body attached to the ball-and-socket joint
+     */
     @Generated
     @Selector("bodyB")
     public native SCNPhysicsBody bodyB();
@@ -193,10 +217,16 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     @Selector("initWithCoder:")
     public native SCNPhysicsBallSocketJoint initWithCoder(NSCoder coder);
 
+    /**
+     * the attach point of bodyA
+     */
     @Generated
     @Selector("setAnchorA:")
     public native void setAnchorA(@ByValue SCNVector3 value);
 
+    /**
+     * the attach point of bodyB
+     */
     @Generated
     @Selector("setAnchorB:")
     public native void setAnchorB(@ByValue SCNVector3 value);

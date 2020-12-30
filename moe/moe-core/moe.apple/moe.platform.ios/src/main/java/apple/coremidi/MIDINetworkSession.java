@@ -39,6 +39,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * __________________________________________________________________________________________________
+ * MIDINetworkSession
+ * 
+ * A network session represents one CoreMIDI entity (source/destination pair). One session can
+ * have any number of connections. Output is broadcast to all connections; input from multiple
+ * connections is merged.
+ */
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)
@@ -93,6 +101,9 @@ public class MIDINetworkSession extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * returns the singleton.
+     */
     @Generated
     @Selector("defaultSession")
     public static native MIDINetworkSession defaultSession();
@@ -162,6 +173,9 @@ public class MIDINetworkSession extends NSObject {
     @Selector("addContact:")
     public native boolean addContact(MIDINetworkHost contact);
 
+    /**
+     * who can connect to this session? see constants above.
+     */
     @Generated
     @Selector("connectionPolicy")
     @NUInt
@@ -171,6 +185,10 @@ public class MIDINetworkSession extends NSObject {
     @Selector("connections")
     public native NSSet<? extends MIDINetworkConnection> connections();
 
+    /**
+     * The driver maintains a directory of MIDINetworkHosts, "contacts," for user convenience in initiating
+     * connections, and for controlling incoming connection requests. 
+     */
     @Generated
     @Selector("contacts")
     public native NSSet<? extends MIDINetworkHost> contacts();
@@ -183,22 +201,37 @@ public class MIDINetworkSession extends NSObject {
     @Selector("init")
     public native MIDINetworkSession init();
 
+    /**
+     * disabled sessions do not appear on the network and cannot initiate or receive connections. default is NO (disabled).
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * disabled sessions do not appear on the network and cannot initiate or receive connections. default is NO (disabled).
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * name of this session's CoreMIDI entity (inherited by its endpoints)
+     */
     @Generated
     @Selector("localName")
     public native String localName();
 
+    /**
+     * name by which this session is advertised via Bonjour
+     */
     @Generated
     @Selector("networkName")
     public native String networkName();
 
+    /**
+     * UDP port
+     */
     @Generated
     @Selector("networkPort")
     @NUInt
@@ -212,6 +245,9 @@ public class MIDINetworkSession extends NSObject {
     @Selector("removeContact:")
     public native boolean removeContact(MIDINetworkHost contact);
 
+    /**
+     * who can connect to this session? see constants above.
+     */
     @Generated
     @Selector("setConnectionPolicy:")
     public native void setConnectionPolicy(@NUInt long value);

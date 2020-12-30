@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A response to an ILClassificationRequest.
+ */
 @Generated
 @Library("IdentityLookup")
 @Runtime(ObjCRuntime.class)
@@ -146,10 +149,24 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The JSON representation of this dictionary will be sent when a value for
+     * ILClassificationExtensionNetworkReportDestination has been set in the extension's Info.plist
+     * 
+     * The keys and values in this dictionary must conform to the NSJSONSerialization specifications:
+     * - Top level object is an NSDictionary
+     * - All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull
+     * - All dictionary keys are NSStrings
+     * - NSNumbers are not NaN or infinity
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<String, ?> value);
 
+    /**
+     * The value of this string will be sent when a value for
+     * ILClassificationExtensionSMSReportDestination has been set in the extension's Info.plist
+     */
     @Generated
     @Selector("setUserString:")
     public native void setUserString(String value);
@@ -172,10 +189,24 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
         return supportsSecureCoding();
     }
 
+    /**
+     * The JSON representation of this dictionary will be sent when a value for
+     * ILClassificationExtensionNetworkReportDestination has been set in the extension's Info.plist
+     * 
+     * The keys and values in this dictionary must conform to the NSJSONSerialization specifications:
+     * - Top level object is an NSDictionary
+     * - All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull
+     * - All dictionary keys are NSStrings
+     * - NSNumbers are not NaN or infinity
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<String, ?> userInfo();
 
+    /**
+     * The value of this string will be sent when a value for
+     * ILClassificationExtensionSMSReportDestination has been set in the extension's Info.plist
+     */
     @Generated
     @Selector("userString")
     public native String userString();

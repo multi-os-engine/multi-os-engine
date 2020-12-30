@@ -228,6 +228,9 @@ public class ASAuthorizationAppleIDButton extends UIControl {
     @Selector("commitAnimations")
     public static native void commitAnimations();
 
+    /**
+     * @abstract Set a custom corner radius to be used by this button.
+     */
     @Generated
     @Selector("cornerRadius")
     @NFloat
@@ -376,6 +379,9 @@ public class ASAuthorizationAppleIDButton extends UIControl {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * @abstract Set a custom corner radius to be used by this button.
+     */
     @Generated
     @Selector("setCornerRadius:")
     public native void setCornerRadius(@NFloat double value);

@@ -154,18 +154,30 @@ public class UICollectionViewFlowLayoutInvalidationContext extends UICollectionV
     @Selector("init")
     public native UICollectionViewFlowLayoutInvalidationContext init();
 
+    /**
+     * if set to NO, flow layout will keep all layout information, effectively not invalidating - useful for a subclass which invalidates only a piece of itself
+     */
     @Generated
     @Selector("invalidateFlowLayoutAttributes")
     public native boolean invalidateFlowLayoutAttributes();
 
+    /**
+     * if set to NO, flow layout will not requery the collection view delegate for size information etc.
+     */
     @Generated
     @Selector("invalidateFlowLayoutDelegateMetrics")
     public native boolean invalidateFlowLayoutDelegateMetrics();
 
+    /**
+     * if set to NO, flow layout will keep all layout information, effectively not invalidating - useful for a subclass which invalidates only a piece of itself
+     */
     @Generated
     @Selector("setInvalidateFlowLayoutAttributes:")
     public native void setInvalidateFlowLayoutAttributes(boolean value);
 
+    /**
+     * if set to NO, flow layout will not requery the collection view delegate for size information etc.
+     */
     @Generated
     @Selector("setInvalidateFlowLayoutDelegateMetrics:")
     public native void setInvalidateFlowLayoutDelegateMetrics(boolean value);

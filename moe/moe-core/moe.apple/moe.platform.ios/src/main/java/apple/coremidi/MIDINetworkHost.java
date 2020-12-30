@@ -40,6 +40,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * __________________________________________________________________________________________________
+ * MIDINetworkHost
+ * 
+ * Represents a network address.
+ * name: the user's tag for this object.
+ * Representations are either:
+ * -	address (IP address or hostname) and UDP port
+ * -	netServiceName and netServiceDomain
+ */
 @Generated
 @Library("CoreMIDI")
 @Runtime(ObjCRuntime.class)
@@ -164,6 +174,9 @@ public class MIDINetworkHost extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * IP address or hostname
+     */
     @Generated
     @Selector("address")
     public native String address();
@@ -176,18 +189,30 @@ public class MIDINetworkHost extends NSObject {
     @Selector("init")
     public native MIDINetworkHost init();
 
+    /**
+     * user's tag
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * NSNetService domain
+     */
     @Generated
     @Selector("netServiceDomain")
     public native String netServiceDomain();
 
+    /**
+     * NSNetService name
+     */
     @Generated
     @Selector("netServiceName")
     public native String netServiceName();
 
+    /**
+     * UDP port
+     */
     @Generated
     @Selector("port")
     @NUInt

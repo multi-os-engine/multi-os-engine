@@ -41,6 +41,9 @@ public class PDFActionRemoteGoTo extends PDFAction implements NSCopying {
         super(peer);
     }
 
+    /**
+     * Get and set the URL of the document referenced from the action.
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -104,6 +107,10 @@ public class PDFActionRemoteGoTo extends PDFAction implements NSCopying {
     @Selector("init")
     public native PDFActionRemoteGoTo init();
 
+    /**
+     * As with the calls below, note that PDFActionRemoteGoTo uses a zero-based page index and not a PDFPage object.
+     * This simplifies dealing with remote destinations for documents that may not be instantiated.
+     */
     @Generated
     @Selector("initWithPageIndex:atPoint:fileURL:")
     public native PDFActionRemoteGoTo initWithPageIndexAtPointFileURL(@NUInt long pageIndex, @ByValue CGPoint point,
@@ -136,11 +143,18 @@ public class PDFActionRemoteGoTo extends PDFAction implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Get and set the page index (zero-based) referenced by the action.
+     */
     @Generated
     @Selector("pageIndex")
     @NUInt
     public native long pageIndex();
 
+    /**
+     * Get and set the point on the above page referenced by the action.  Just like PDFDestination a value of
+     * kPDFDestinationUnspecifiedValue for the x or the y of the point indicates that no position is specified.
+     */
     @Generated
     @Selector("point")
     @ByValue
@@ -154,14 +168,24 @@ public class PDFActionRemoteGoTo extends PDFAction implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Get and set the page index (zero-based) referenced by the action.
+     */
     @Generated
     @Selector("setPageIndex:")
     public native void setPageIndex(@NUInt long value);
 
+    /**
+     * Get and set the point on the above page referenced by the action.  Just like PDFDestination a value of
+     * kPDFDestinationUnspecifiedValue for the x or the y of the point indicates that no position is specified.
+     */
     @Generated
     @Selector("setPoint:")
     public native void setPoint(@ByValue CGPoint value);
 
+    /**
+     * Get and set the URL of the document referenced from the action.
+     */
     @Generated
     @Selector("setURL:")
     public native void setURL(NSURL value);

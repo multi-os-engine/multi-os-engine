@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @class      MPSNNGramMatrixCalculationGradient
+ * @dependency This depends on Metal.framework
+ * @discussion The MPSNNGramMatrixCalculationGradient defines the gradient filter for MPSNNGramMatrixCalculation.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -54,6 +59,11 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * @property   alpha
+     * @abstract   Scaling factor for the output. Default: 1.0f. NOTE: the value for alpha is automatically adjusted by
+     *             the @ref MPSNNGradientState when it is provided in the encode call.
+     */
     @Generated
     @Selector("alpha")
     public native float alpha();
@@ -101,15 +111,40 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
     @Selector("initWithCoder:")
     public native MPSNNGramMatrixCalculationGradient initWithCoder(NSCoder aDecoder);
 
+    /**
+     * @abstract NSSecureCoding compatability
+     * @discussion While the standard NSSecureCoding/NSCoding method
+     *             -initWithCoder: should work, since the file can't
+     *             know which device your data is allocated on, we
+     *             have to guess and may guess incorrectly.  To avoid
+     *             that problem, use initWithCoder:device instead.
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
+     * @param      device      The MTLDevice on which to make the MPSKernel
+     * @return     A new MPSKernel object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSNNGramMatrixCalculationGradient initWithCoderDevice(NSCoder aDecoder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Initializes a MPSNNGramMatrixCalculationGradient kernel with scaling factor alpha = 1.0f.
+     * 
+     * @param      device      The MTLDevice on which this MPSNNGramMatrixCalculationGradient filter will be used.
+     * @return     A valid MPSNNGramMatrixCalculationGradient object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSNNGramMatrixCalculationGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * @abstract   Initializes a MPSNNGramMatrixCalculationGradient kernel.
+     * 
+     * @param      device      The MTLDevice on which this MPSNNGramMatrixCalculationGradient filter will be used.
+     * @param      alpha       Scaling factor for the output. NOTE: the value for alpha is automatically adjusted by
+     *                         the @ref MPSNNGradientState when it is provided in the encode call.
+     * @return     A valid MPSNNGramMatrixCalculationGradient object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:alpha:")
     public native MPSNNGramMatrixCalculationGradient initWithDeviceAlpha(
@@ -150,6 +185,11 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property   alpha
+     * @abstract   Scaling factor for the output. Default: 1.0f. NOTE: the value for alpha is automatically adjusted by
+     *             the @ref MPSNNGradientState when it is provided in the encode call.
+     */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(float value);

@@ -35,34 +35,64 @@ public final class version_min_command extends StructObject {
         setSdk(sdk);
     }
 
+    /**
+     * LC_VERSION_MIN_MACOSX or
+     * LC_VERSION_MIN_IPHONEOS or
+     * LC_VERSION_MIN_WATCHOS or
+     * LC_VERSION_MIN_TVOS 
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int cmd();
 
+    /**
+     * LC_VERSION_MIN_MACOSX or
+     * LC_VERSION_MIN_IPHONEOS or
+     * LC_VERSION_MIN_WATCHOS or
+     * LC_VERSION_MIN_TVOS 
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setCmd(int value);
 
+    /**
+     * sizeof(struct min_version_command)
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int cmdsize();
 
+    /**
+     * sizeof(struct min_version_command)
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setCmdsize(int value);
 
+    /**
+     * X.Y.Z is encoded in nibbles xxxx.yy.zz
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int version();
 
+    /**
+     * X.Y.Z is encoded in nibbles xxxx.yy.zz
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setVersion(int value);
 
+    /**
+     * X.Y.Z is encoded in nibbles xxxx.yy.zz
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int sdk();
 
+    /**
+     * X.Y.Z is encoded in nibbles xxxx.yy.zz
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setSdk(int value);

@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Attributes represent individual values like strings, numbers, dates, etc.
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +159,9 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @Selector("allowsExternalBinaryDataStorage")
     public native boolean allowsExternalBinaryDataStorage();
 
+    /**
+     * NSUndefinedAttributeType is valid for transient properties - Core Data will still track the property as an id value and register undo/redo actions, etc. NSUndefinedAttributeType is illegal for non-transient properties.
+     */
     @Generated
     @Selector("attributeType")
     @NUInt
@@ -165,6 +171,9 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @Selector("attributeValueClassName")
     public native String attributeValueClassName();
 
+    /**
+     * value is retained and not copied
+     */
     @Generated
     @Selector("defaultValue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -182,6 +191,9 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @Selector("setAllowsExternalBinaryDataStorage:")
     public native void setAllowsExternalBinaryDataStorage(boolean value);
 
+    /**
+     * NSUndefinedAttributeType is valid for transient properties - Core Data will still track the property as an id value and register undo/redo actions, etc. NSUndefinedAttributeType is illegal for non-transient properties.
+     */
     @Generated
     @Selector("setAttributeType:")
     public native void setAttributeType(@NUInt long value);
@@ -190,26 +202,44 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @Selector("setAttributeValueClassName:")
     public native void setAttributeValueClassName(String value);
 
+    /**
+     * value is retained and not copied
+     */
     @Generated
     @Selector("setDefaultValue:")
     public native void setDefaultValue(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * The name of the transformer used to convert a NSTransformedAttributeType.  The transformer must output NSData from transformValue and allow reverse transformation.  If this value is not set, or set to nil, Core Data will default to using a transformer which uses NSCoding to archive/unarchive the attribute value.
+     */
     @Generated
     @Selector("setValueTransformerName:")
     public native void setValueTransformerName(String value);
 
+    /**
+     * The name of the transformer used to convert a NSTransformedAttributeType.  The transformer must output NSData from transformValue and allow reverse transformation.  If this value is not set, or set to nil, Core Data will default to using a transformer which uses NSCoding to archive/unarchive the attribute value.
+     */
     @Generated
     @Selector("valueTransformerName")
     public native String valueTransformerName();
 
+    /**
+     * Returns the version hash for the attribute.  This value includes the versionHash information from the NSPropertyDescription superclass, and the attribute type.
+     */
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();
 
+    /**
+     * Indicates if the value of the attribute should be captured on delete when Persistent History is enabled
+     */
     @Generated
     @Selector("preservesValueInHistoryOnDeletion")
     public native boolean preservesValueInHistoryOnDeletion();
 
+    /**
+     * Indicates if the value of the attribute should be captured on delete when Persistent History is enabled
+     */
     @Generated
     @Selector("setPreservesValueInHistoryOnDeletion:")
     public native void setPreservesValueInHistoryOnDeletion(boolean value);

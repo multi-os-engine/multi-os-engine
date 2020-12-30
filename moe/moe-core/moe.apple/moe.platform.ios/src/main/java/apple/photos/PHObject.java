@@ -161,6 +161,9 @@ public class PHObject extends NSObject implements NSCopying {
     @Selector("init")
     public native PHObject init();
 
+    /**
+     * Returns an identifier which persistently identifies the object on a given device
+     */
     @Generated
     @Selector("localIdentifier")
     public native String localIdentifier();

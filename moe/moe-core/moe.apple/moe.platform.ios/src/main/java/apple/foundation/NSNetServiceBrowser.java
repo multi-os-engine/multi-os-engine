@@ -148,11 +148,17 @@ public class NSNetServiceBrowser extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Set a delegate to receive discovery events.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSNetServiceBrowserDelegate delegate();
 
+    /**
+     * Initially set to NO. Set to YES to also browse over peer to peer Wi-Fi (if available). Must be set before starting to search.
+     */
     @Generated
     @Selector("includesPeerToPeer")
     public native boolean includesPeerToPeer();
@@ -165,26 +171,44 @@ public class NSNetServiceBrowser extends NSObject {
     @Selector("removeFromRunLoop:forMode:")
     public native void removeFromRunLoopForMode(NSRunLoop aRunLoop, String mode);
 
+    /**
+     * NSNetServiceBrowser instances may be scheduled on NSRunLoops to operate in different modes, or in other threads. It is generally not necessary to schedule NSNetServiceBrowsers in other threads. NSNetServiceBrowsers are scheduled in the current thread's NSRunLoop in the NSDefaultRunLoopMode when they are created.
+     */
     @Generated
     @Selector("scheduleInRunLoop:forMode:")
     public native void scheduleInRunLoopForMode(NSRunLoop aRunLoop, String mode);
 
+    /**
+     * Starts a search for domains that are browsable via Bonjour and the computer's network configuration. Discovered domains are reported to the delegate's -netServiceBrowser:didFindDomain:moreComing: method. There may be more than one browsable domain.
+     */
     @Generated
     @Selector("searchForBrowsableDomains")
     public native void searchForBrowsableDomains();
 
+    /**
+     * Starts a search for domains in which the network configuration allows registration (i.e. publishing). Most NSNetServiceBrowser clients do not need to use this API, as it is sufficient to publish an NSNetService instance with the empty string (see -[NSNetService initWithDomain:type:name:port:]). Discovered domains are reported to the delegate's -netServiceBrowser:didFindDomain:moreComing: method. There may be more than one registration domain.
+     */
     @Generated
     @Selector("searchForRegistrationDomains")
     public native void searchForRegistrationDomains();
 
+    /**
+     * Starts a search for services of the specified type in the domain indicated by domainString. For each service discovered, a -netServiceBrowser:foundService:moreComing: message is sent to the NSNetServiceBrowser instance's delegate.
+     */
     @Generated
     @Selector("searchForServicesOfType:inDomain:")
     public native void searchForServicesOfTypeInDomain(String type, String domainString);
 
+    /**
+     * Set a delegate to receive discovery events.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSNetServiceBrowserDelegate value);
 
+    /**
+     * Set a delegate to receive discovery events.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSNetServiceBrowserDelegate value) {
         Object __old = delegate();
@@ -197,10 +221,16 @@ public class NSNetServiceBrowser extends NSObject {
         }
     }
 
+    /**
+     * Initially set to NO. Set to YES to also browse over peer to peer Wi-Fi (if available). Must be set before starting to search.
+     */
     @Generated
     @Selector("setIncludesPeerToPeer:")
     public native void setIncludesPeerToPeer(boolean value);
 
+    /**
+     * Stops the currently running search.
+     */
     @Generated
     @Selector("stop")
     public native void stop();

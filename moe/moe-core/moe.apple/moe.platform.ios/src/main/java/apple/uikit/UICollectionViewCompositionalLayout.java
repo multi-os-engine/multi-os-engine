@@ -75,6 +75,10 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Setting this property will invalidate the layout immediately to affect any changes
+     *    Note: any changes made to properites directly will have no effect.
+     */
     @Generated
     @Selector("configuration")
     public native UICollectionViewCompositionalLayoutConfiguration configuration();
@@ -179,6 +183,10 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Setting this property will invalidate the layout immediately to affect any changes
+     *    Note: any changes made to properites directly will have no effect.
+     */
     @Generated
     @Selector("setConfiguration:")
     public native void setConfiguration(UICollectionViewCompositionalLayoutConfiguration value);
@@ -196,6 +204,9 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     @NInt
     public static native long version_static();
 
+    /**
+     * Creates a compositional layout containing only list sections of the specified configuration.
+     */
     @Generated
     @Selector("layoutWithListConfiguration:")
     public static native UICollectionViewCompositionalLayout layoutWithListConfiguration(

@@ -28,6 +28,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * @interface MTLRasterizationRateLayerDescriptor
+ * @abstract Describes the minimum rasterization rate screen space using two piecewise linear functions.
+ * @discussion The two piecewise linear function (PLF) describe the desired rasterization quality on the horizontal and vertical axis separately.
+ * Each quality sample in the PLF is stored in an array as single precision floating point value between 0 (lowest quality) and 1 (highest quality).
+ * The first sample in the array describes the quality at the top (vertical) or left (horizontal) edge of screen space.
+ * The last sample in the array describes the quality at the bottom (vertical) or right (horizontal) edge of screen space.
+ * All other samples are spaced equidistant in screen space.
+ * MTLRasterizationRateLayerDescriptor instances will be stored inside a MTLRasterizationRateMapDescriptor which in turn is compiled by MTLDevice into a MTLRasterizationRateMap.
+ * Because MTLDevice may not support the requested granularity, the provided samples may be rounded up (towards higher quality) during compilation.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -97,10 +108,21 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
     @NUInt
     public static native long hash_static();
 
+    /**
+     * @property horizontal
+     * @abstract Provide convenient bounds-checked access to the quality samples stored in the descriptor.
+     * @return Returns a syntactic sugar helper to get or set sample values on the horizontal axis.
+     */
     @Generated
     @Selector("horizontal")
     public native MTLRasterizationRateSampleArray horizontal();
 
+    /**
+     * @property horizontalSampleStorage
+     * @abstract Provide direct access to the quality samples stored in the descriptor.
+     * @return Pointer to the (mutable) storage array for samples on the horizontal axis.
+     * @discussion The returned pointer points to the first element of an array of sampleCount.width elements.
+     */
     @Generated
     @Selector("horizontalSampleStorage")
     public native FloatPtr horizontalSampleStorage();
@@ -109,10 +131,24 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
     @Selector("init")
     public native MTLRasterizationRateLayerDescriptor init();
 
+    /**
+     * @method initWithSampleCount:
+     * @abstract Initialize a descriptor for a layer with the given number of quality samples on the horizontal and vertical axis.
+     * @param sampleCount The width and height components are the number of samples on the horizontal and vertical axis respectively. The depth component is ignored.
+     * @discussion All values are initialized to zero.
+     */
     @Generated
     @Selector("initWithSampleCount:")
     public native MTLRasterizationRateLayerDescriptor initWithSampleCount(@ByValue MTLSize sampleCount);
 
+    /**
+     * @method initWithSampleCount:horizontal:vertical:
+     * @abstract Initialize a descriptor for a layer with the given number of quality samples on the horizontal and vertical axis.
+     * @param sampleCount The width and height components are the number of samples on the horizontal and vertical axis respectively. The depth component is ignored.
+     * @param horizontal The initial sample values on the horizontal axis. Must point to an array of sampleCount.width elements, of which the values will be copied into the MTLRasterizationRateLayerDescriptor.
+     * @param vertical The initial sample values on the vertical axis. Must point to an array of sampleCount.height elements, of which the values will be copied into the MTLRasterizationRateLayerDescriptor.
+     * @discussion Use initWithSampleCount: to initialize with zeroes instead.
+     */
     @Generated
     @Selector("initWithSampleCount:horizontal:vertical:")
     public native MTLRasterizationRateLayerDescriptor initWithSampleCountHorizontalVertical(
@@ -153,6 +189,10 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * @property sampleCount
+     * @return The number of quality samples that this descriptor contains, for the horizontal and vertical axis. The depth component of the returned MTLSize is always 0.
+     */
     @Generated
     @Selector("sampleCount")
     @ByValue
@@ -171,10 +211,21 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
     @NInt
     public static native long version_static();
 
+    /**
+     * @property vertical
+     * @abstract Provide convenient bounds-checked access to the quality samples stored in the descriptor.
+     * @return Returns a syntactic sugar helper to get or set sample values on the vertical axis.
+     */
     @Generated
     @Selector("vertical")
     public native MTLRasterizationRateSampleArray vertical();
 
+    /**
+     * @property verticalSampleStorage
+     * @abstract Provide direct access to the quality samples stored in the descriptor.
+     * @return Pointer to the (mutable) storage array for samples on the vertical axis.
+     * @discussion The returned pointer points to the first element of an array of sampleCount.height elements.
+     */
     @Generated
     @Selector("verticalSampleStorage")
     public native FloatPtr verticalSampleStorage();

@@ -19,9 +19,18 @@ package apple.multipeerconnectivity.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * MCSession send modes
+ */
 @Generated
 public final class MCSessionSendDataMode {
+    /**
+     * Guaranteed reliable and in-order delivery.
+     */
     @Generated @NInt public static final long Reliable = 0x0000000000000000L;
+    /**
+     * Sent immediately without queuing, no guaranteed delivery.
+     */
     @Generated @NInt public static final long Unreliable = 0x0000000000000001L;
 
     @Generated

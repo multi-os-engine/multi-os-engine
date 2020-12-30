@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * @enum      HMCharacteristicValueStatusFault
+ * 
+ * @constant  HMCharacteristicValueStatusFaultNoFault               No Fault.
+ * @constant  HMCharacteristicValueStatusFaultGeneralFault          General Fault.
+ */
 @Generated
 public final class HMCharacteristicValueStatusFault {
     @Generated @NInt public static final long NoFault = 0x0000000000000000L;
