@@ -927,6 +927,28 @@ public class Configuration implements IConfigurationElement {
     }
 
     /**
+     * Whether the comment from system headers should be retained.
+     * This is typically set to `true` when generating bindings for system headers.
+     */
+    private boolean retainCommentsFromSystemHeaders = false;
+
+    /**
+     * Returns whether the comment from system headers should be retained.
+     * This is typically set to `true` when generating bindings for system headers.
+     */
+    public boolean isRetainCommentsFromSystemHeaders() {
+        return retainCommentsFromSystemHeaders;
+    }
+
+    /**
+     * Sets whether the comment from system headers should be retained.
+     * This is typically set to `true` when generating bindings for system headers.
+     */
+    public void setRetainCommentsFromSystemHeaders(boolean retainCommentsFromSystemHeaders) {
+        this.retainCommentsFromSystemHeaders = retainCommentsFromSystemHeaders;
+    }
+
+    /**
      * Validate configuration settings
      *
      * @return true if settings are valid otherwise false
@@ -987,6 +1009,7 @@ public class Configuration implements IConfigurationElement {
     public static final String CONFKEY_HEADER_SEARCH_PATHS = "header-search-paths";
     public static final String CONFKEY_USER_HEADER_SEARCH_PATHS = "user-header-search-paths";
     public static final String CONFKEY_FRAMEWORK_SEARCH_PATHS = "framework-search-paths";
+    public static final String CONFKEY_RETAIN_COMMENTS_FROM_SYSTEM_HEADERS = "retain-comments-from-system-headers";
     public static final String CONFKEY_SOURCE = "source";
     public static final String CONFKEY_OUTPUT = "output";
     public static final String CONFKEY_DOCSETS = "docsets";
@@ -1051,6 +1074,8 @@ public class Configuration implements IConfigurationElement {
                 }
                 obj.add(CONFKEY_FRAMEWORK_SEARCH_PATHS, array);
             }
+
+            obj.addProperty(CONFKEY_RETAIN_COMMENTS_FROM_SYSTEM_HEADERS, src.isRetainCommentsFromSystemHeaders());
 
             obj.addProperty(CONFKEY_SOURCE, src.getSourceCode());
             obj.addProperty(CONFKEY_OUTPUT, src.getOutputPackageFragmentRootPath());
@@ -1169,6 +1194,15 @@ public class Configuration implements IConfigurationElement {
                     }
                 } catch (Exception ex) {
                     LOG.info("Failed to read natjgen key '" + CONFKEY_FRAMEWORK_SEARCH_PATHS + "'", ex);
+                }
+
+                try {
+                    final JsonElement json = o.get(CONFKEY_RETAIN_COMMENTS_FROM_SYSTEM_HEADERS);
+                    if (json != null) {
+                        conf.setRetainCommentsFromSystemHeaders(context.deserialize(json, Boolean.class));
+                    }
+                } catch (Exception ex) {
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_RETAIN_COMMENTS_FROM_SYSTEM_HEADERS + "'", ex);
                 }
 
                 try {
@@ -1359,7 +1393,6 @@ public class Configuration implements IConfigurationElement {
                 cmdlineArgs.add("-fobjc-arc");
                 cmdlineArgs.add("-fpascal-strings");
                 cmdlineArgs.add("-ferror-limit=9999999");
-                cmdlineArgs.add("-fparse-all-comments");
 
                 // Define macros
                 cmdlineArgs.add("-DNS_BLOCK_ASSERTIONS=1");
@@ -1455,6 +1488,11 @@ public class Configuration implements IConfigurationElement {
         // Add include paths for '#include <.../...>'
         for (String path : getFrameworkSearchPaths()) {
             cmdlineArgs.add("-F" + getDemangledPath(path));
+        }
+
+        cmdlineArgs.add("-fparse-all-comments");
+        if (isRetainCommentsFromSystemHeaders()) {
+            cmdlineArgs.add("-fretain-comments-from-system-headers");
         }
 
         String args[] = new String[cmdlineArgs.size()];
