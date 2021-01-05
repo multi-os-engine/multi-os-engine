@@ -1355,4 +1355,8 @@ public class ObjCClassManager extends AbstractUnitManager {
     public void setSuperTypeGenericParams(ArrayList<Type> objCTypeArgs) {
         superTypeGenericParams = new ArrayList<Type>(objCTypeArgs);
     }
+
+    public Type toInstanceType() {
+        return new Type(getUnitName());
+    }
 }

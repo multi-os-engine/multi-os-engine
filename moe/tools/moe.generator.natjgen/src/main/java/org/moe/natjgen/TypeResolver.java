@@ -69,6 +69,7 @@ public class TypeResolver extends AbstractASTBase {
     private ChildPropertyDescriptor property;
     private ModifierEditor modifiers;
     private Type type;
+    private boolean isInstanceType;
     private boolean isArg;
     private boolean isSupportCheck;
 
@@ -154,6 +155,7 @@ public class TypeResolver extends AbstractASTBase {
             this.property = null;
             this.modifiers = null;
             this.type = type;
+            this.isInstanceType = false;
             this.isArg = isArg;
             this.isSupportCheck = true;
             _R();
@@ -165,6 +167,7 @@ public class TypeResolver extends AbstractASTBase {
             this.property = null;
             this.modifiers = null;
             this.type = null;
+            this.isInstanceType = false;
             this.isArg = false;
             this.isSupportCheck = false;
         }
@@ -179,6 +182,7 @@ public class TypeResolver extends AbstractASTBase {
             this.property = property;
             this.modifiers = modifiers;
             this.type = type;
+            this.isInstanceType = false;
             this.isArg = isArg;
             this.isSupportCheck = false;
             _R();
@@ -188,6 +192,7 @@ public class TypeResolver extends AbstractASTBase {
             this.property = null;
             this.modifiers = null;
             this.type = null;
+            this.isInstanceType = false;
             this.isArg = false;
             this.isSupportCheck = false;
         }
@@ -552,6 +557,14 @@ public class TypeResolver extends AbstractASTBase {
         }
     }
 
+    private Type getInstanceType() {
+        if (manager instanceof ObjCClassManager) {
+            return ((ObjCClassManager)manager).toInstanceType();
+        } else {
+            return new Type(manager.getUnitName());
+        }
+    }
+
     /**
      * Resolve an Objective-C generic, id or instancetype type.
      *
@@ -568,6 +581,14 @@ public class TypeResolver extends AbstractASTBase {
         switch (depth) {
         case 0: {
             // Non-referenced types (i.e. id, instancetype, T, ...)
+            if (type.getKind() == Type.ObjCInstanceType) {
+                // Replace instancetype to the owner's concrete type
+                type = getInstanceType();
+                isInstanceType = true;
+                // Then retry resolving
+                _R();
+                return;
+            }
             if (_supports(OBJC_GENERICS, depth) && type.getObjCGenericParamType() != null) {
                 _Apply(newUnimportedSimpleType(type.getObjCGenericParamType().getName()));
             } else if (type.getObjcProtocolGenerationState() != null && type.getObjcProtocolGenerationState()
@@ -629,12 +650,13 @@ public class TypeResolver extends AbstractASTBase {
         switch (depth) {
         case 0: {
             // Non-referenced types (i.e. NSArray<T>*, MyClass*, ...)
-            final ObjCClassManager clazz = manager.getGenerator().getClass(type.getElementName());
+            final ObjCClassManager clazz = isInstanceType ?
+                    (ObjCClassManager) manager : manager.getGenerator().getClass(type.getElementName());
             if (clazz == null) {
                 throw new RuntimeException("Couldn't find class with name: " + type.getElementName());
             }
 
-            if (clazz.isNSString() && supportedMappers.contains(Constants.ObjCStringMapper)) {
+            if (!isInstanceType && clazz.isNSString() && supportedMappers.contains(Constants.ObjCStringMapper)) {
                 _Apply(newSimpleType("java.lang.String"));
                 if (runtime != Constants.ObjCRuntime) {
                     String maptypename = manager.addImport(Constants.ObjCStringMapperFQ);
@@ -644,10 +666,15 @@ public class TypeResolver extends AbstractASTBase {
             }
 
             SimpleType simpleType = newSimpleType(clazz);
-            try {
-                _Apply(_CreateObjCGenericType(type, simpleType));
-            } catch (GeneratorException ex) {
+            if (isInstanceType && clazz instanceof ObjCProtocolManager) {
+                // Don't try generic for protocol type
                 _Apply(simpleType);
+            } else {
+                try {
+                    _Apply(_CreateObjCGenericType(type, simpleType));
+                } catch (GeneratorException ex) {
+                    _Apply(simpleType);
+                }
             }
             return;
         }
@@ -656,7 +683,8 @@ public class TypeResolver extends AbstractASTBase {
             // Level 1+ referenced types (i.e. NSArray<T>**, MyClass**, ...)
             final Type rootType = type.getPonierRootType();
 
-            final ObjCClassManager clazz = manager.getGenerator().getClass(rootType.getElementName());
+            final ObjCClassManager clazz = isInstanceType ?
+                    (ObjCClassManager) manager : manager.getGenerator().getClass(rootType.getElementName());
             if (clazz == null) {
                 throw new RuntimeException("Couldn't find class with name: " + rootType.getElementName());
             }
@@ -664,10 +692,15 @@ public class TypeResolver extends AbstractASTBase {
                 modifiers.setReferenceInfo(manager.addImport(clazz), depth);
             }
             SimpleType simpleType = newSimpleType(clazz);
-            try {
-                _Apply(_CreateNestedPtr(type, depth, _CreateObjCGenericType(rootType, simpleType)));
-            } catch (GeneratorException ex) {
+            if (isInstanceType && clazz instanceof ObjCProtocolManager) {
+                // Don't try generic for protocol type
                 _Apply(_CreateNestedPtr(type, depth, simpleType));
+            } else {
+                try {
+                    _Apply(_CreateNestedPtr(type, depth, _CreateObjCGenericType(rootType, simpleType)));
+                } catch (GeneratorException ex) {
+                    _Apply(_CreateNestedPtr(type, depth, simpleType));
+                }
             }
             return;
         }
