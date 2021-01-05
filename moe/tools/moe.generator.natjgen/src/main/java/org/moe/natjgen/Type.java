@@ -690,12 +690,16 @@ public class Type {
                 }
             }
 
-            elementName = pointeeType.getTypeDeclaration().toString();
-            if (elementName == null || elementName.length() == 0) {
-                elementName = null;
-                kind = ObjCId;
+            if (pointeeType.getTypeSpelling().toString().startsWith("Class<")) {
+                kind = ObjCClass;
             } else {
-                kind = ObjCObject;
+                elementName = pointeeType.getTypeDeclaration().toString();
+                if (elementName == null || elementName.length() == 0) {
+                    elementName = null;
+                    kind = ObjCId;
+                } else {
+                    kind = ObjCObject;
+                }
             }
         }
         break;
