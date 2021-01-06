@@ -895,8 +895,7 @@ public class TypeResolver extends AbstractASTBase {
                 final Type argType = baseType.getObjCTypeArgs().get(i);
                 final ObjCGenericParamType paramType = clazz.genericParamTypes.get(i);
                 org.eclipse.jdt.core.dom.Type type = CreateObjCGenericTypeArgument(resolver, manager, argType);
-                if (!(type instanceof WildcardType) && (argType.getKind() != Type.ObjCId
-                        || argType.getObjCGenericParamType() == null)) {
+                if (!(type instanceof WildcardType)) {
                     if (paramType.isInvariant()) {
                         // Nothing to be done
                     } else if (paramType.isCovariant()) {
