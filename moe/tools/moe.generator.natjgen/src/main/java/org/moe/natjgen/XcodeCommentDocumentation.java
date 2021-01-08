@@ -54,7 +54,7 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
         return result;
     }
 
-    private static final Pattern tagMatcher = Pattern.compile("^(?<leading>\\s*)@(?<tag>[a-zA-Z0-9]+?)(?<trailing>(:\\s?)|\\s|$)");
+    private static final Pattern tagMatcher = Pattern.compile("^(?<leading>\\s*)@(?<tag>[a-zA-Z0-9]+)(?<trailing>(:\\s?)|\\s|$)");
 
     // Tags that should be ignored (e.g. treat as not-a-tag)
     private static final Set<String> ignoredTags = new HashSet<>();
