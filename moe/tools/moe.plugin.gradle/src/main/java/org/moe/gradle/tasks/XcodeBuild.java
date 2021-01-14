@@ -47,6 +47,7 @@ import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.remote.Server;
+import org.moe.gradle.remote.ServerChannelException;
 import org.moe.gradle.remote.file.FileList;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
@@ -451,8 +452,18 @@ public class XcodeBuild extends AbstractBaseTask {
                 throw new GradleException("Unsupported configuration", e);
             }
 
-            remoteServer.exec("xcodebuild", "xcrun --find xcodebuild && " +
-                    "xcrun xcodebuild " + calculateArgs().stream().collect(Collectors.joining(" ")));
+            try {
+                remoteServer.exec("xcodebuild", "xcrun --find xcodebuild && " +
+                        "xcrun xcodebuild " + calculateArgs().stream().collect(Collectors.joining(" ")));
+            } catch (GradleException e) {
+                if (e.getCause() instanceof ServerChannelException) {
+                    String output = ((ServerChannelException) e.getCause()).getOutput();
+                    if (output != null && output.contains("MOE.framework: errSecInternalComponent")) {
+                        LOG.error("Codesign failed.\nMake sure /usr/bin/codesign can access the private key corresponds to your development certificate.");
+                    }
+                }
+                throw e;
+            }
 
             final String xcodeBuildSettingsRaw = remoteServer.exec("xcodebuild build settings", "" +
                     "xcrun xcodebuild -showBuildSettings " + calculateArgs().stream().collect(Collectors.joining(" ")));
