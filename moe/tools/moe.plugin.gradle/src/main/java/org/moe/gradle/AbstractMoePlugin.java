@@ -52,16 +52,16 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
     /**
      * Required major version of Gradle.
      */
-    private static final int GRADLE_MIN_VERSION_MAJOR = 2;
+    private static final int GRADLE_MIN_VERSION_MAJOR = 4;
     /**
      * Required minor version of Gradle.
      */
-    private static final int GRADLE_MIN_VERSION_MINOR = 14;
+    private static final int GRADLE_MIN_VERSION_MINOR = 5;
 
     /**
      * Optional revision version of Gradle.
      */
-    private static final Integer GRADLE_MIN_REVISION = 0;
+    private static final Integer GRADLE_MIN_REVISION = 1;
 
     @NotNull
     protected final Instantiator instantiator;
@@ -108,7 +108,11 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
      */
     @IgnoreUnused
     public final String getRequiredGradleVersion() {
-        return GRADLE_MIN_VERSION_MAJOR + "." + GRADLE_MIN_VERSION_MINOR;
+        if (GRADLE_MIN_REVISION == null) {
+            return GRADLE_MIN_VERSION_MAJOR + "." + GRADLE_MIN_VERSION_MINOR;
+        } else {
+            return GRADLE_MIN_VERSION_MAJOR + "." + GRADLE_MIN_VERSION_MINOR + "." + GRADLE_MIN_REVISION;
+        }
     }
 
     /**
