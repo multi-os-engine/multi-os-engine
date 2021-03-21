@@ -31,6 +31,8 @@ import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.remote.Server;
+import org.moe.gradle.utils.PropertiesUtil;
+import org.moe.tools.substrate.GraalVM;
 import org.moe.gradle.tasks.AbstractBaseTask;
 import org.moe.gradle.tasks.Dex;
 import org.moe.gradle.tasks.Dex2Oat;
@@ -53,6 +55,7 @@ import org.moe.gradle.utils.Require;
 import javax.inject.Inject;
 import java.io.File;
 import java.net.MalformedURLException;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -68,6 +71,8 @@ import static org.moe.gradle.AbstractMoePlugin.TaskParams.*;
 public class MoePlugin extends AbstractMoePlugin {
 
     private static final Logger LOG = Logging.getLogger(MoePlugin.class);
+
+    private static final String MOE_GRAALVM_HOME_PROPERTY = "moe.graalvm.home";
 
     @NotNull
     private MoeExtension extension;
@@ -93,6 +98,8 @@ public class MoePlugin extends AbstractMoePlugin {
     @Override
     public void apply(Project project) {
         super.apply(project);
+
+        new GraalVM(Paths.get(PropertiesUtil.getProperty(project, MOE_GRAALVM_HOME_PROPERTY)));
 
         // Setup remote build
         remoteServer = Server.setup(this);

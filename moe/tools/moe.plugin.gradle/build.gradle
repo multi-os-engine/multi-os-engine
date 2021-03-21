@@ -82,6 +82,7 @@ dependencies {
     included project(':moe.tools.common')
     included project(':moe.document.pbxproj')
     included project(':moe.generator.project')
+    included project(':moe.tools.substrate')
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile gradleTestKit()

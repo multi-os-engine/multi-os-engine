@@ -69,6 +69,7 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
     @NotNull
     private Project project;
 
+    @NotNull
     public Project getProject() {
         return Require.nonNull(project, "The plugin's 'project' property was null");
     }
