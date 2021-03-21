@@ -25,6 +25,8 @@ buildscript {
 
 plugins {
     id "com.jfrog.bintray" version "1.8.5"
+    id "org.jetbrains.kotlin.jvm"
+    id "maven-publish"
 }
 
 if (name != 'moe-gradle') {
@@ -39,9 +41,6 @@ String loadPluginVersion() {
 }
 
 version loadPluginVersion()
-
-apply plugin: 'java'
-apply plugin: 'maven-publish'
 
 if (rootProject.hasProperty('artifactory.url')) {
     apply plugin: "com.jfrog.artifactory"
@@ -214,4 +213,10 @@ task createClasspathManifest {
 // Add the classpath file to the test runtime classpath
 dependencies {
     testRuntime files(createClasspathManifest)
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
