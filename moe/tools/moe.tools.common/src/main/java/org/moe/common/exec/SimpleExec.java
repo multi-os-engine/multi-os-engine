@@ -19,6 +19,9 @@ package org.moe.common.exec;
 import org.moe.common.utils.OsUtils;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Simple executable.
@@ -138,6 +141,21 @@ public class SimpleExec extends AbstractExec {
         exec.getArguments().add("-e");
         exec.getArguments().add("tell application \"Finder\" to reveal POSIX file " + "\"" + path + "\"" + " activate");
         return exec;
+    }
+
+    /**
+     * Run the exec with given args and return the output if successful
+     *
+     * @param exec Exec name
+     * @param args Arguments passed to `exec`
+     * @return The output of the exec
+     */
+    public static String exec(String exec, String... args) throws IOException, InterruptedException {
+        SimpleExec e = getExec(exec);
+        List<String> execArgs = e.getArguments();
+        execArgs.addAll(Arrays.asList(args));
+
+        return ExecOutputCollector.collect(e);
     }
 
 }
