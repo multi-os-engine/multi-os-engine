@@ -44,6 +44,20 @@ targetCompatibility = 1.8
 
 configurations {
     included
+
+    compileOnly {
+        extendsFrom included
+    }
+
+    testCompile {
+        extendsFrom included
+    }
+
+    // Make sure the transitive dependencies are not packed into the jar
+    included_no_transitive {
+        extendsFrom included
+        transitive = false
+    }
 }
 
 dependencies {
@@ -58,17 +72,36 @@ dependencies {
 
     compile group: 'com.googlecode.plist', name: 'dd-plist', version: '1.19'
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile gradleTestKit()
-    testCompile project(':moe.generator.project')
-
-    compileOnly project(':moe.tools.common')
-    compileOnly project(':moe.document.pbxproj')
-    compileOnly project(':moe.generator.project')
-
     included project(':moe.tools.common')
     included project(':moe.document.pbxproj')
     included project(':moe.generator.project')
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile gradleTestKit()
+}
+
+// Add transitive dependencies into current project so they will be included into the pom file
+def topDeps = configurations.included.resolvedConfiguration.firstLevelModuleDependencies
+topDeps.each {topDep ->
+    topDep.children.each { child ->
+        if(!(child in topDeps)) {
+            child.allModuleArtifacts.each { artifact ->
+                def mvi = artifact.moduleVersion.id
+                def dep = [
+                        group  : mvi.group,
+                        name   : mvi.name,
+                        version: mvi.version,
+                        ext    : artifact.extension
+                ]
+                if (artifact.classifier) {
+                    dep['classifier'] = artifact.classifier
+                }
+                dependencies.compile(dep) {
+                    transitive = true
+                }
+            }
+        }
+    }
 }
 
 tasks.test.dependsOn ':moe-sdk:devsdk'
@@ -145,7 +178,7 @@ if (project.hasProperty("signing.keyId")) {
 }
 
 jar {
-    from { configurations.included.collect { it.isDirectory() ? it : zipTree(it) } }
+    from { configurations.included_no_transitive.collect {it.isDirectory() ? it : zipTree(it) } }
 }
 
 // Write the plugin's classpath to a file to share with the tests
