@@ -31,6 +31,7 @@ import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
+import org.moe.gradle.utils.PropertiesUtil;
 import org.moe.gradle.utils.Require;
 
 import java.io.File;
@@ -135,12 +136,9 @@ public class MoeSDK {
         LOG.info("Resolved moe-gradle version: {}", pluginVersion);
 
         // Check for overriding property
-        if (project.hasProperty(MOE_LOCAL_SDK_PROPERTY)) {
-            final Object property = project.property(MOE_LOCAL_SDK_PROPERTY);
-            if (!(property instanceof String)) {
-                throw new GradleException("Value of " + MOE_LOCAL_SDK_PROPERTY + " property is not a String");
-            }
-            final Path path = Paths.get((String)property);
+        final String p = PropertiesUtil.tryGetProperty(project, MOE_LOCAL_SDK_PROPERTY);
+        if (p != null) {
+            final Path path = Paths.get(p);
             LOG.quiet("Using custom local MOE SDK: {}", path.toFile().getAbsolutePath());
             // Construct the SDK.
             final MoeSDK sdk = new MoeSDK(pluginVersion, sdkVersion);

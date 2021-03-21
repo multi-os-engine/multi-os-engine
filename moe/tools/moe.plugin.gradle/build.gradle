@@ -20,6 +20,12 @@ buildscript {
     }
 }
 
+plugins {
+    id "org.jetbrains.kotlin.jvm"
+    id "maven-publish"
+    id "signing"
+}
+
 if (name != 'moe-gradle') {
     throw new GradleException('Incorrect name')
 }
@@ -32,10 +38,6 @@ String loadPluginVersion() {
 }
 
 version loadPluginVersion()
-
-apply plugin: 'java'
-apply plugin: 'maven-publish'
-apply plugin: 'signing'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -164,4 +166,10 @@ task createClasspathManifest {
 // Add the classpath file to the test runtime classpath
 dependencies {
     testRuntime files(createClasspathManifest)
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
