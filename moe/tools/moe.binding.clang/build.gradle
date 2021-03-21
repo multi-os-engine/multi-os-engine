@@ -16,8 +16,8 @@ limitations under the License.
 
 apply plugin: 'java'
 
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
 
 
 if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
