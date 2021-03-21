@@ -19,6 +19,7 @@ class GraalVM(
     val bin: Path
     val gu: Path
     val nativeImage: Path
+    val version: Version
 
     init {
         if (!Files.exists(home)) {
@@ -41,8 +42,40 @@ class GraalVM(
             unquarantine()
         }
 
+        version = parseVMVersion()
+        println("Using GraalVM $version at $home")
+
         ensureNativeImage()
         ensureLLVM()
+    }
+
+    private fun parseVMVersion(): Version {
+        val versionOut = ExecOutputCollector.collect(
+                SimpleExec
+                        .getExec(bin.resolve("java"), "-version")
+                        .runner
+                        // Not sure why java output version in stderr...
+                        .apply { builder.redirectErrorStream(true) }
+        ).trim()
+
+        val jdkVersion = "openjdk version \"([0-9._]+)\"".toPattern().matcher(versionOut).let {
+            if (!it.find()) {
+                throw IllegalStateException("Cannot determine the JDK version from $versionOut")
+            }
+            JDKVersion.parse(it.group(1))
+        }
+
+        val vmVersion = "GraalVM [a-zA-Z ]*([0-9.]+) ".toPattern().matcher(versionOut).let {
+            if (!it.find()) {
+                throw IllegalStateException("Cannot determine the GraalVM version from $versionOut")
+            }
+            GraalVMVersion.parse(it.group(1))
+        }
+
+        return Version(
+                jdkVersion = jdkVersion,
+                vmVersion = vmVersion,
+        )
     }
 
     /**
@@ -55,12 +88,16 @@ class GraalVM(
         }
     }
 
-
     /**
      * Make sure the llvm-toolchain is installed
      */
     private fun ensureLLVM() {
-        if(!Files.exists(home.resolve(Paths.get("lib", "llvm", "bin", "llvm-config")))) {
+        val llvmPath = if (version.jdkVersion.feature <= 8) {
+            home.resolve(Paths.get("jre", "lib", "llvm", "bin", "llvm-config"))
+        } else {
+            home.resolve(Paths.get("lib", "llvm", "bin", "llvm-config"))
+        }
+        if (!Files.exists(llvmPath)) {
             println("Installing llvm-toolchain")
             ExecOutputCollector.collect(SimpleExec.getExec(gu, "--jvm", "install", "llvm-toolchain"), true)
         }
@@ -92,9 +129,126 @@ class GraalVM(
         }
     }
 
+    data class Version(
+            val jdkVersion: JDKVersion,
+            val vmVersion: GraalVMVersion,
+    )
+
+    data class JDKVersion(
+            val feature: Int,
+            val interim: Int,
+            val update: Int,
+            val patch: Int
+    ) {
+
+        override fun toString(): String {
+            return if (feature <= 8) {
+                if (update == 0) {
+                    "1.$feature.$interim".trimTrailingZero()
+                } else {
+                    "1.$feature.${interim}_$update"
+                }
+            } else {
+                "$feature.$interim.$update.$patch".trimTrailingZero()
+            }
+        }
+
+        companion object {
+            private fun String.trimTrailingZero(): String {
+                var v = this
+                while (v.endsWith(".0")) {
+                    v = v.substring(0, v.length - 2)
+                }
+                return v
+            }
+
+            fun parse(v: String): JDKVersion {
+                return if (v.startsWith("1.")) {
+                    // See https://www.oracle.com/java/technologies/javase/jdk8-naming.html
+                    val tag: String
+                    val update: Int
+                    if ('_' in v) {
+                        val components = v.split('_')
+                        if (components.size != 2) {
+                            throw IllegalArgumentException("Unsupported version format: $v")
+                        }
+                        tag = components[0]
+                        update = components[1].toInt()
+                    } else {
+                        tag = v
+                        update = 0
+                    }
+
+                    val tagComponents = tag.split('.')
+                    if (tagComponents.size < 2 || tagComponents.size > 3) {
+                        throw IllegalArgumentException("Unsupported version format: $v")
+                    }
+
+                    JDKVersion(
+                            feature = tagComponents.parseComponent(1),
+                            interim = tagComponents.parseComponent(2),
+                            update = update,
+                            patch = 0
+                    )
+                } else {
+                    // See https://docs.oracle.com/en/java/javase/11/install/version-string-format.html
+                    if ('_' in v) {
+                        throw IllegalArgumentException("Unsupported version format: $v")
+                    }
+
+                    val components = v.split('.')
+                    if (components.size > 4) {
+                        throw IllegalArgumentException("Unsupported version format: $v")
+                    }
+
+                    JDKVersion(
+                            feature = components.parseComponent(0),
+                            interim = components.parseComponent(1),
+                            update = components.parseComponent(2),
+                            patch = components.parseComponent(3),
+                    )
+                }
+            }
+        }
+    }
+
+    data class GraalVMVersion(
+            val year: Int,
+            val feature: Int,
+            val patch: Int,
+            val bugfix: Int,
+    ) {
+        override fun toString(): String {
+            val base = "$year.$feature.$patch"
+            return if (bugfix > 0) {
+                return "$base.$bugfix"
+            } else {
+                base
+            }
+        }
+
+        companion object {
+            fun parse(v: String): GraalVMVersion {
+                val components = v.split('.')
+                if (components.size < 3 || components.size > 4) {
+                    throw IllegalArgumentException("Unsupported version format: $v")
+                }
+
+                return GraalVMVersion(
+                        year = components.parseComponent(0),
+                        feature = components.parseComponent(1),
+                        patch = components.parseComponent(2),
+                        bugfix = components.parseComponent(3),
+                )
+            }
+        }
+    }
+
     companion object {
         private val LOG = LoggerFactory.getLogger(GraalVM::class.java)
 
         private const val MAC_ATTR_COM_APPLE_QUARANTINE = "com.apple.quarantine"
+
+        private fun List<String>.parseComponent(index: Int): Int = getOrNull(index)?.toInt() ?: 0
     }
 }
