@@ -20,6 +20,7 @@ import org.moe.common.utils.OsUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 
@@ -85,6 +86,18 @@ public class SimpleExec extends AbstractExec {
         return new SimpleExec(name, workingDir);
     }
 
+    public static SimpleExec getExec(String exec, String... args) {
+        SimpleExec e = getExec(exec);
+        List<String> execArgs = e.getArguments();
+        execArgs.addAll(Arrays.asList(args));
+
+        return e;
+    }
+
+    public static SimpleExec getExec(Path exec, String... args) {
+        return getExec(exec.toString(), args);
+    }
+
     /**
      * Returns a new SimpleExec for 'xcode-select'.
      *
@@ -120,11 +133,7 @@ public class SimpleExec extends AbstractExec {
      * @return SimpleExec instance
      */
     public static SimpleExec getWhich(String app) {
-        SimpleExec exec = getExec(lookupCommand);
-        if (app != null) {
-            exec.getArguments().add(app);
-        }
-        return exec;
+        return getExec(lookupCommand, app);
     }
 
     /**
@@ -137,10 +146,8 @@ public class SimpleExec extends AbstractExec {
         if (path == null) {
             throw new NullPointerException();
         }
-        SimpleExec exec = getExec("osascript");
-        exec.getArguments().add("-e");
-        exec.getArguments().add("tell application \"Finder\" to reveal POSIX file " + "\"" + path + "\"" + " activate");
-        return exec;
+        return getExec("osascript", "-e",
+                "tell application \"Finder\" to reveal POSIX file " + "\"" + path + "\"" + " activate");
     }
 
     /**
@@ -151,11 +158,20 @@ public class SimpleExec extends AbstractExec {
      * @return The output of the exec
      */
     public static String exec(String exec, String... args) throws IOException, InterruptedException {
-        SimpleExec e = getExec(exec);
-        List<String> execArgs = e.getArguments();
-        execArgs.addAll(Arrays.asList(args));
+        SimpleExec e = getExec(exec, args);
 
         return ExecOutputCollector.collect(e);
+    }
+
+    /**
+     * Run the exec with given args and return the output if successful
+     *
+     * @param exec Exec path
+     * @param args Arguments passed to `exec`
+     * @return The output of the exec
+     */
+    public static String exec(Path exec, String... args) throws IOException, InterruptedException {
+        return exec(exec.toString(), args);
     }
 
 }

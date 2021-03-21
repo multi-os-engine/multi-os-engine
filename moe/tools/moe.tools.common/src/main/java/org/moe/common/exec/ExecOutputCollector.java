@@ -53,8 +53,35 @@ public class ExecOutputCollector {
      * @throws InterruptedException if the operation was interrupted
      */
     public static String collect(AbstractExec exec, Map<String, String> env) throws IOException, InterruptedException {
+        return collect(exec, env, false);
+    }
+
+    /**
+     * Collects the standard output of the specified ExecRunner.
+     *
+     * @param exec          Exec to run
+     * @param inheritOutput Whether delegate the subprocess stdout and stderr to current Java process
+     * @return Standard output
+     * @throws IOException          if an I/O error occurs
+     * @throws InterruptedException if the operation was interrupted
+     */
+    public static String collect(AbstractExec exec, boolean inheritOutput) throws IOException, InterruptedException {
+        return collect(exec, null, inheritOutput);
+    }
+
+    /**
+     * Collects the standard output of the specified ExecRunner.
+     *
+     * @param exec          Exec to run
+     * @param env           Environment to run the exec in
+     * @param inheritOutput Whether delegate the subprocess stdout and stderr to current Java process
+     * @return Standard output
+     * @throws IOException          if an I/O error occurs
+     * @throws InterruptedException if the operation was interrupted
+     */
+    public static String collect(AbstractExec exec, Map<String, String> env, boolean inheritOutput) throws IOException, InterruptedException {
         ExecRunner runner = exec.getRunner();
-        String output = collect(runner, env);
+        String output = collect(runner, env, inheritOutput);
         return output;
     }
 
@@ -80,6 +107,33 @@ public class ExecOutputCollector {
      * @throws InterruptedException if the operation was interrupted
      */
     public static String collect(ExecRunner runner, Map<String, String> env) throws IOException, InterruptedException {
+        return collect(runner, env, false);
+    }
+
+    /**
+     * Collects the standard output of the specified ExecRunner.
+     *
+     * @param runner        ExecRunner to run
+     * @param inheritOutput Whether delegate the subprocess stdout and stderr to current Java process
+     * @return Standard output
+     * @throws IOException          if an I/O error occurs
+     * @throws InterruptedException if the operation was interrupted
+     */
+    public static String collect(ExecRunner runner, boolean inheritOutput) throws IOException, InterruptedException {
+        return collect(runner, null, inheritOutput);
+    }
+
+    /**
+     * Collects the standard output of the specified ExecRunner.
+     *
+     * @param runner        ExecRunner to run
+     * @param env           Environment to run the exec in
+     * @param inheritOutput Whether delegate the subprocess stdout and stderr to current Java process
+     * @return Standard output
+     * @throws IOException          if an I/O error occurs
+     * @throws InterruptedException if the operation was interrupted
+     */
+    public static String collect(ExecRunner runner, Map<String, String> env, boolean inheritOutput) throws IOException, InterruptedException {
 
         final StringBuilder out = new StringBuilder();
         final StringBuilder err = new StringBuilder();
@@ -87,11 +141,17 @@ public class ExecOutputCollector {
         runner.setListener(new ExecRunnerBase.ExecRunnerListener() {
             @Override
             public void stdout(String line) {
+                if (inheritOutput) {
+                    System.out.println(line);
+                }
                 out.append(line).append("\n");
             }
 
             @Override
             public void stderr(String line) {
+                if (inheritOutput) {
+                    System.err.println(line);
+                }
                 err.append(line).append("\n");
             }
         });
