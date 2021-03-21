@@ -14,6 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "1.4.31" apply false
+}
+
 allprojects {
     repositories {
         mavenCentral()
