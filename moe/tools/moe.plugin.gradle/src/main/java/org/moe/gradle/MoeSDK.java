@@ -340,7 +340,7 @@ public class MoeSDK {
 
         try {
             validate(DIR, path, "");
-            validate(FIL, path, "sdk/moe-core.dex");
+//            validate(FIL, path, "sdk/moe-core.dex");
             validate(FIL, path, "sdk/moe-core.jar");
             validate(FIL, path, "sdk/moe-core-javadoc.jar");
             validate(FIL, path, "sdk/moe-core-sources.jar");
@@ -364,7 +364,7 @@ public class MoeSDK {
             validate(FIL | EXE, path, "tools/dex2oat");
             validate(FIL, path, "tools/dx.jar");
             validate(FIL, path, "tools/ios-device.jar");
-            validate(FIL, path, "tools/java8support.jar");
+//            validate(FIL, path, "tools/java8support.jar");
             validate(DIR, path, "tools/macosx/x86_64");
             validate(FIL, path, "tools/preloaded-classes");
             validate(FIL, path, "tools/proguard-full.cfg");
@@ -403,10 +403,10 @@ public class MoeSDK {
     private @Nullable File MOE_SDK_ROOT;
     private @Nullable File MOE_SDK_SDK_DIR;
     private @Nullable File MOE_SDK_TOOLS_DIR;
-    private @Nullable File MOE_SDK_CORE_JAR;
-    private @Nullable File MOE_SDK_CORE_SOURCES_JAR;
-    private @Nullable File MOE_SDK_CORE_JAVADOC_JAR;
-    private @Nullable File MOE_SDK_CORE_DEX;
+//    private @Nullable File MOE_SDK_CORE_JAR;
+//    private @Nullable File MOE_SDK_CORE_SOURCES_JAR;
+//    private @Nullable File MOE_SDK_CORE_JAVADOC_JAR;
+//    private @Nullable File MOE_SDK_CORE_DEX;
     private @Nullable File MOE_SDK_IOS_JAVADOC_JAR;
     private @Nullable File MOE_SDK_IOS_JUNIT_JAR;
     private @Nullable File MOE_SDK_IOS_JUNIT_SOURCES_JAR;
@@ -419,7 +419,7 @@ public class MoeSDK {
     private @Nullable File MOE_SDK_DEX2OAT_EXEC;
     private @Nullable File MOE_SDK_DX_JAR;
     private @Nullable File MOE_SDK_IOS_DEVICE_JAR;
-    private @Nullable File MOE_SDK_JAVA8SUPPORT_JAR;
+//    private @Nullable File MOE_SDK_JAVA8SUPPORT_JAR;
     private @Nullable File MOE_SDK_MACOS_X86_64_SUPPORT;
     private @Nullable File MOE_SDK_PRELOADEDCLASSES_FILE;
     private @Nullable File MOE_SDK_PROGUARDFULL_CFG;
@@ -434,10 +434,10 @@ public class MoeSDK {
         MOE_SDK_ROOT = path.toFile();
         MOE_SDK_SDK_DIR = path.resolve("sdk").toFile();
         MOE_SDK_TOOLS_DIR = path.resolve("tools").toFile();
-        MOE_SDK_CORE_JAR = path.resolve("sdk/moe-core.jar").toFile();
-        MOE_SDK_CORE_DEX = path.resolve("sdk/moe-core.dex").toFile();
-        MOE_SDK_CORE_SOURCES_JAR = path.resolve("sdk/moe-core-sources.jar").toFile();
-        MOE_SDK_CORE_JAVADOC_JAR = path.resolve("sdk/moe-core-javadoc.jar").toFile();
+//        MOE_SDK_CORE_JAR = path.resolve("sdk/moe-core.jar").toFile();
+//        MOE_SDK_CORE_DEX = path.resolve("sdk/moe-core.dex").toFile();
+//        MOE_SDK_CORE_SOURCES_JAR = path.resolve("sdk/moe-core-sources.jar").toFile();
+//        MOE_SDK_CORE_JAVADOC_JAR = path.resolve("sdk/moe-core-javadoc.jar").toFile();
         MOE_SDK_IOS_RETRO_JAR = path.resolve("sdk/moe-ios-retro.jar").toFile();
         MOE_SDK_IOS_RETRO_DEX = path.resolve("sdk/moe-ios-retro-dex.jar").toFile();
         MOE_SDK_IOS_JAR = path.resolve("sdk/moe-ios.jar").toFile();
@@ -450,7 +450,7 @@ public class MoeSDK {
         MOE_SDK_DEX2OAT_EXEC = path.resolve("tools/dex2oat").toFile();
         MOE_SDK_DX_JAR = path.resolve("tools/dx.jar").toFile();
         MOE_SDK_IOS_DEVICE_JAR = path.resolve("tools/ios-device.jar").toFile();
-        MOE_SDK_JAVA8SUPPORT_JAR = path.resolve("tools/java8support.jar").toFile();
+//        MOE_SDK_JAVA8SUPPORT_JAR = path.resolve("tools/java8support.jar").toFile();
         MOE_SDK_MACOS_X86_64_SUPPORT = path.resolve("tools/macosx/x86_64").toFile();
         MOE_SDK_PRELOADEDCLASSES_FILE = path.resolve("tools/preloaded-classes").toFile();
         MOE_SDK_PROGUARDFULL_CFG = path.resolve("tools/proguard-full.cfg").toFile();
@@ -478,27 +478,27 @@ public class MoeSDK {
         return safeVariable(MOE_SDK_TOOLS_DIR, "MOE_SDK_TOOLS_DIR");
     }
 
-    @NotNull
-    public File getCoreJar() {
-        return safeVariable(MOE_SDK_CORE_JAR, "MOE_SDK_CORE_JAR");
-    }
+//    @NotNull
+//    public File getCoreJar() {
+//        return safeVariable(MOE_SDK_CORE_JAR, "MOE_SDK_CORE_JAR");
+//    }
 
-    @NotNull
-    @IgnoreUnused
-    public File getCoreJavadocJar() {
-        return safeVariable(MOE_SDK_CORE_JAVADOC_JAR, "MOE_SDK_CORE_JAVADOC_JAR");
-    }
+//    @NotNull
+//    @IgnoreUnused
+//    public File getCoreJavadocJar() {
+//        return safeVariable(MOE_SDK_CORE_JAVADOC_JAR, "MOE_SDK_CORE_JAVADOC_JAR");
+//    }
 
-    @NotNull
-    @IgnoreUnused
-    public File getCoreSourcesJar() {
-        return safeVariable(MOE_SDK_CORE_SOURCES_JAR, "MOE_SDK_CORE_SOURCES_JAR");
-    }
+//    @NotNull
+//    @IgnoreUnused
+//    public File getCoreSourcesJar() {
+//        return safeVariable(MOE_SDK_CORE_SOURCES_JAR, "MOE_SDK_CORE_SOURCES_JAR");
+//    }
 
-    @NotNull
-    public File getCoreDex() {
-        return safeVariable(MOE_SDK_CORE_DEX, "MOE_SDK_CORE_DEX");
-    }
+//    @NotNull
+//    public File getCoreDex() {
+//        return safeVariable(MOE_SDK_CORE_DEX, "MOE_SDK_CORE_DEX");
+//    }
 
     @NotNull
     @IgnoreUnused
@@ -566,10 +566,10 @@ public class MoeSDK {
         return safeVariable(MOE_SDK_IOS_DEVICE_JAR, "MOE_SDK_IOS_DEVICE_JAR");
     }
 
-    @NotNull
-    public File getJava8SupportJar() {
-        return safeVariable(MOE_SDK_JAVA8SUPPORT_JAR, "MOE_SDK_JAVA8SUPPORT_JAR");
-    }
+//    @NotNull
+//    public File getJava8SupportJar() {
+//        return safeVariable(MOE_SDK_JAVA8SUPPORT_JAR, "MOE_SDK_JAVA8SUPPORT_JAR");
+//    }
 
     @NotNull
     @IgnoreUnused

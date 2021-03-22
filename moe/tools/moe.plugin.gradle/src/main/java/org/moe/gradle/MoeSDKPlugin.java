@@ -74,12 +74,12 @@ public class MoeSDKPlugin extends AbstractMoePlugin {
         Require.nonNull(javaConvention, "The 'java' Gradle plugin must be applied before the '" + MOE + "' plugin");
 
         // Add moe-core.jar to the bootclasspath
-        Arrays.asList("compileJava", "compileTestJava").forEach(name -> {
-            Task task = project.getTasks().getByName(name);
-            CompileOptions compileOptions = ((JavaCompile) task).getOptions();
-            compileOptions.setBootstrapClasspath(project.files(getSDK().getCoreJar()));
-            compileOptions.setFork(true);
-        });
+//        Arrays.asList("compileJava", "compileTestJava").forEach(name -> {
+//            Task task = project.getTasks().getByName(name);
+//            CompileOptions compileOptions = ((JavaCompile) task).getOptions();
+//            compileOptions.setBootstrapClasspath(project.files(getSDK().getCoreJar()));
+//            compileOptions.setFork(true);
+//        });
         
         // Install core, ios and junit jars as dependencies
         project.getRepositories().ivy(ivy -> {
@@ -92,8 +92,8 @@ public class MoeSDKPlugin extends AbstractMoePlugin {
             ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
         }).metadataSources(IvyArtifactRepository.MetadataSources::artifact);
 
-        project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
-                FileUtils.getNameAsArtifact(getSDK().getCoreJar(), getSDK().sdkVersion));
+//        project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
+//                FileUtils.getNameAsArtifact(getSDK().getCoreJar(), getSDK().sdkVersion));
         if (extension.getPlatformJar() != null) {
             project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
                     FileUtils.getNameAsArtifact(getExtension().getPlatformJar(), getSDK().sdkVersion));
@@ -108,7 +108,7 @@ public class MoeSDKPlugin extends AbstractMoePlugin {
                 final File platformJar = extension.getPlatformJar();
                 LOG.quiet("\n" +
                         "moe.sdk.home=" + getSDK().getRoot() + "\n" +
-                        "moe.sdk.coreJar=" + getSDK().getCoreJar() + "\n" +
+//                        "moe.sdk.coreJar=" + getSDK().getCoreJar() + "\n" +
                         "moe.sdk.platformJar=" + (platformJar == null ? "" : platformJar) + "\n" +
                         "moe.sdk.junitJar=" + getSDK().getiOSJUnitJar() + "\n" +
                         "\n");

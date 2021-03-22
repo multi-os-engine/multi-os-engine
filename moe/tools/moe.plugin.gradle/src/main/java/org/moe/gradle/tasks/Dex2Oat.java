@@ -352,13 +352,13 @@ public class Dex2Oat extends AbstractBaseTask {
 
             switch (ext.getProguardLevelRaw()) {
                 case MoeExtension.PROGUARD_LEVEL_APP:
-                    files.add(sdk.getCoreDex());
+//                    files.add(sdk.getCoreDex());
                     if (ext.getPlatformDex() != null) {
                         files.add(ext.getPlatformDex());
                     }
                     break;
                 case MoeExtension.PROGUARD_LEVEL_PLATFORM:
-                    files.add(sdk.getCoreDex());
+//                    files.add(sdk.getCoreDex());
                     break;
                 case MoeExtension.PROGUARD_LEVEL_ALL:
                     break;

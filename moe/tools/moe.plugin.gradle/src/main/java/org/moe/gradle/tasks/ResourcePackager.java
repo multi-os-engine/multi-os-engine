@@ -103,11 +103,11 @@ public class ResourcePackager {
             // When using full trim, ProGuard will copy the the resources from the common jar
             switch (ext.getProguardLevelRaw()) {
                 case MoeExtension.PROGUARD_LEVEL_APP:
-                    resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
+//                    resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
                     resourcePackagerTask.from(_project.zipTree(ext.getPlatformJar()));
                     break;
                 case MoeExtension.PROGUARD_LEVEL_PLATFORM:
-                    resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
+//                    resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
                     break;
                 case MoeExtension.PROGUARD_LEVEL_ALL:
                     break;
