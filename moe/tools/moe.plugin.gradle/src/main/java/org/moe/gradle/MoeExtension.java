@@ -68,6 +68,9 @@ public class MoeExtension extends AbstractMoeExtension {
     @NotNull
     private MoePlatform platform = MoePlatform.IOS;
 
+    @NotNull
+    private String mainClassName;
+
     private int proguardLevel = PROGUARD_LEVEL_APP;
     private int proguardLevelProperty = PROGUARD_LEVEL_INVALID;
 
@@ -220,5 +223,16 @@ public class MoeExtension extends AbstractMoeExtension {
             return null;
         }
         return plugin.getSDK().getPlatformDex(platform);
+    }
+
+    @IgnoreUnused
+    @Nullable
+    public String getMainClassName() {
+        return mainClassName;
+    }
+
+    @IgnoreUnused
+    public void setMainClassName(@Nullable String mainClassName) {
+        this.mainClassName = mainClassName;
     }
 }

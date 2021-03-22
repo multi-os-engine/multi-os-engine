@@ -198,6 +198,9 @@ public class XcodeProvider extends AbstractBaseTask {
         dependsOn(dex2oatTask);
         this.dex2OatTask = dex2oatTask;
 
+        final NativeImageTask nit = getMoePlugin().getTaskBy(NativeImageTask.class, sourceSet);
+        dependsOn(nit);
+
         final StartupProvider startupProviderTask = getMoePlugin().getTaskBy(StartupProvider.class, sourceSet);
         startupProviderTaskDep = startupProviderTask;
         dependsOn(startupProviderTask);

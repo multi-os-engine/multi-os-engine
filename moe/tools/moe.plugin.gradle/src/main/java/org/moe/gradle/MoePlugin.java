@@ -31,6 +31,7 @@ import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.remote.Server;
+import org.moe.gradle.tasks.NativeImageTask;
 import org.moe.gradle.utils.PropertiesUtil;
 import org.moe.tools.substrate.GraalVM;
 import org.moe.gradle.tasks.AbstractBaseTask;
@@ -75,6 +76,14 @@ public class MoePlugin extends AbstractMoePlugin {
     private static final String MOE_GRAALVM_HOME_PROPERTY = "moe.graalvm.home";
 
     @NotNull
+    private GraalVM graalVM;
+
+    @NotNull
+    public GraalVM getGraalVM() {
+        return Require.nonNull(graalVM, "The plugin's 'graalVM' property was null");
+    }
+
+    @NotNull
     private MoeExtension extension;
 
     @NotNull
@@ -99,7 +108,8 @@ public class MoePlugin extends AbstractMoePlugin {
     public void apply(Project project) {
         super.apply(project);
 
-        new GraalVM(Paths.get(PropertiesUtil.getProperty(project, MOE_GRAALVM_HOME_PROPERTY)));
+        // Setup GraalVM
+        graalVM = new GraalVM(Paths.get(PropertiesUtil.getProperty(project, MOE_GRAALVM_HOME_PROPERTY)));
 
         // Setup remote build
         remoteServer = Server.setup(this);
@@ -165,6 +175,8 @@ public class MoePlugin extends AbstractMoePlugin {
         addRule(ProGuard.class, "Creates a ProGuarded jar.",
                 singletonList(SOURCE_SET), MoePlugin.this);
         addRule(Retrolambda.class, "Creates a Retrolambda-d jar.",
+                singletonList(SOURCE_SET), MoePlugin.this);
+        addRule(NativeImageTask.class, "AOT compile using GraalVM native-image.",
                 singletonList(SOURCE_SET), MoePlugin.this);
         addRule(Dex.class, "Creates a Dexed jar.",
                 singletonList(SOURCE_SET), MoePlugin.this);
