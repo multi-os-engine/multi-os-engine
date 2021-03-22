@@ -177,7 +177,7 @@ public class MoePlugin extends AbstractMoePlugin {
         addRule(Retrolambda.class, "Creates a Retrolambda-d jar.",
                 singletonList(SOURCE_SET), MoePlugin.this);
         addRule(NativeImageTask.class, "AOT compile using GraalVM native-image.",
-                singletonList(SOURCE_SET), MoePlugin.this);
+                asList(SOURCE_SET, MODE, PLATFORM), MoePlugin.this);
         addRule(Dex.class, "Creates a Dexed jar.",
                 singletonList(SOURCE_SET), MoePlugin.this);
         addRule(Dex2Oat.class, "Creates art and oat files.",

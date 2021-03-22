@@ -6,10 +6,12 @@ import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.SourceSet
 import org.moe.gradle.MoeExtension
+import org.moe.gradle.MoePlatform
 import org.moe.gradle.MoePlugin
 import org.moe.gradle.anns.IgnoreUnused
 import org.moe.gradle.anns.NotNull
 import org.moe.gradle.anns.Nullable
+import org.moe.gradle.utils.Mode
 import org.moe.tools.substrate.Config
 import java.io.File
 import java.nio.file.Paths
@@ -67,13 +69,22 @@ open class NativeImageTask : AbstractBaseTask() {
     lateinit var retrolambdaTaskDep: Retrolambda
         private set
 
-    protected fun setupMoeTask(sourceSet: SourceSet) {
+    private lateinit var mode: Mode
+    private lateinit var platform: MoePlatform
+
+    protected fun setupMoeTask(
+            @NotNull sourceSet: SourceSet,
+            @NotNull mode: Mode,
+            @NotNull platform: MoePlatform
+    ) {
         setSupportsRemoteBuild(false)
 
         // Construct default output path
         val out = Paths.get(MoePlugin.MOE, sourceSet.name, "native_image")
 
-        description = "Compile the project using Native-Image (sourceset: ${sourceSet.name})."
+        description = "Compile the project using Native-Image (sourceset: ${sourceSet.name}, mode: ${mode.name}, platform: ${platform.platformName})."
+        this.mode = mode
+        this.platform = platform
 
         // Add dependencies
         val retroTask = moePlugin.getTaskBy(Retrolambda::class.java, sourceSet)
