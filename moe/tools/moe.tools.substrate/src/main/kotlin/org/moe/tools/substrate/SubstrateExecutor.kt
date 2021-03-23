@@ -3,6 +3,7 @@ package org.moe.tools.substrate
 import org.apache.commons.io.FileUtils
 import org.moe.common.exec.SimpleExec
 import org.moe.tools.substrate.utils.collect
+import org.moe.tools.substrate.utils.findOne
 import org.slf4j.LoggerFactory
 import java.io.File
 import java.nio.file.Files
@@ -19,8 +20,12 @@ class SubstrateExecutor(
     fun compile() {
         LOG.info("Native compile")
 
+        // Because SVM will generate all object files inside a folder with random name (timestamp)
+        // which is not controlled by us, we have to clear the output folder first then do a file
+        // search to figure out the correct folder name.
         clearOutputDir()
 
+        // Run the native-image command
         SimpleExec.getExec(
                 graalVM.nativeImage,
                 "-H:+SharedLibrary",
@@ -39,14 +44,28 @@ class SubstrateExecutor(
         ).apply {
             workingDir = config.outputDir.toFile()
         }.collect(logFile = config.logFile)
+
+        // Now checking the result
+        val mainObj = config.outputDir.findOne(
+                fileName = "${config.mainClassName.toLowerCase()}.o",
+                isDirectory = false,
+                maxDepth = 5,
+        )
+        println("Main object file: $mainObj")
+        val llvmObj = config.outputDir.findOne(
+                fileName = "llvm.o",
+                isDirectory = false,
+                maxDepth = 5,
+        )
+        println("LLVM object file: $llvmObj")
     }
 
-    fun clearOutputDir() {
+    private fun clearOutputDir() {
         FileUtils.deleteDirectory(config.outputDir.toFile())
         Files.createDirectories(config.outputDir)
     }
 
-    fun ensureCapCacheDir(): Path {
+    private fun ensureCapCacheDir(): Path {
         val capPath = config.outputDir.resolve("capcache")
         if (!Files.exists(capPath)) {
             Files.createDirectories(capPath)
