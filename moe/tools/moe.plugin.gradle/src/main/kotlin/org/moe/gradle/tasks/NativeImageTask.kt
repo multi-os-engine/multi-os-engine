@@ -1,5 +1,6 @@
 package org.moe.gradle.tasks
 
+import org.gradle.api.GradleException
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFiles
@@ -117,7 +118,13 @@ open class NativeImageTask : AbstractBaseTask() {
 
             files
         }
-        addConvention(CONVENTION_MAIN_CLASS_NAME) { moeExtension.mainClassName }
+        addConvention(CONVENTION_MAIN_CLASS_NAME) {
+            when (sourceSet.name) {
+                SourceSet.MAIN_SOURCE_SET_NAME -> moeExtension.mainClassName
+                SourceSet.TEST_SOURCE_SET_NAME -> moeExtension.testMainClassName
+                else -> throw GradleException("Unknown source set ${sourceSet.name}")
+            }
+        }
         addConvention(CONVENTION_SVM_OUTPUT_DIR) { resolvePathInBuildDir(out, "svmTmp") }
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "NativeImage.log") }
     }
