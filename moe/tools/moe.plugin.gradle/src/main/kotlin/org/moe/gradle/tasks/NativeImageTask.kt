@@ -13,6 +13,7 @@ import org.moe.gradle.anns.NotNull
 import org.moe.gradle.anns.Nullable
 import org.moe.gradle.utils.Mode
 import org.moe.tools.substrate.Config
+import org.moe.tools.substrate.SubstrateExecutor
 import java.io.File
 import java.nio.file.Paths
 
@@ -59,11 +60,15 @@ open class NativeImageTask : AbstractBaseTask() {
     override fun run() {
         val svmConf = Config(
                 mainClassName = getMainClassName(),
-                classpaths = getInputFiles().toSet(),
+                classpath = getInputFiles().toSet(),
                 outputDir = getSvmOutputDir().toPath(),
                 logFile = logFile,
         )
-        println(svmConf)
+        val executor = SubstrateExecutor(
+                graalVM = moePlugin.graalVM,
+                config = svmConf,
+        )
+        executor.compile()
     }
 
     lateinit var retrolambdaTaskDep: Retrolambda
