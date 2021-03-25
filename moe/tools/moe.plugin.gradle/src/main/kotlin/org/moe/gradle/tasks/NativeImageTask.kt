@@ -4,7 +4,7 @@ import org.gradle.api.GradleException
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFiles
-import org.gradle.api.tasks.OutputDirectory
+import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.SourceSet
 import org.moe.gradle.MoeExtension
 import org.moe.gradle.MoePlatform
@@ -16,7 +16,9 @@ import org.moe.gradle.utils.Mode
 import org.moe.tools.substrate.Config
 import org.moe.tools.substrate.SubstrateExecutor
 import java.io.File
+import java.nio.file.Files
 import java.nio.file.Paths
+import java.nio.file.StandardCopyOption
 
 open class NativeImageTask : AbstractBaseTask() {
 
@@ -45,24 +47,47 @@ open class NativeImageTask : AbstractBaseTask() {
         this.mainClassName = mainClassName
     }
 
-    private var svmOutputDir: Any? = null
+    private var svmTmpDir: Any? = null
 
-    @OutputDirectory
     @NotNull
-    fun getSvmOutputDir(): File {
-        return project.file(getOrConvention(svmOutputDir, CONVENTION_SVM_OUTPUT_DIR)!!)
+    fun getSvmTmpDir(): File {
+        return project.file(getOrConvention(svmTmpDir, CONVENTION_SVM_TMP_DIR)!!)
     }
 
     @IgnoreUnused
-    fun setSvmOutputDir(@Nullable svmOutputDir: Any?) {
-        this.svmOutputDir = svmOutputDir
+    fun setSvmTmpDir(@Nullable svmTmpDir: Any?) {
+        this.svmTmpDir = svmTmpDir
+    }
+
+    private var mainObjFile: Any? = null
+
+    @OutputFile
+    @NotNull
+    fun getMainObjFile(): File {
+        return project.file(getOrConvention(mainObjFile, CONVENTION_MAIN_OBJ_FILE)!!)
+    }
+
+    fun setMainObjFile(mainObjFile: Any?) {
+        this.mainObjFile = mainObjFile
+    }
+
+    private var llvmObjFile: Any? = null
+
+    @OutputFile
+    @NotNull
+    fun getLlvmObjFile(): File {
+        return project.file(getOrConvention(llvmObjFile, CONVENTION_LLVM_OBJ_FILE)!!)
+    }
+
+    fun setLlvmObjFile(llvmObjFile: Any?) {
+        this.llvmObjFile = llvmObjFile
     }
 
     override fun run() {
         val svmConf = Config(
                 mainClassName = getMainClassName(),
                 classpath = getInputFiles().toSet(),
-                outputDir = getSvmOutputDir().toPath(),
+                outputDir = getSvmTmpDir().toPath(),
                 logFile = logFile,
         )
         val executor = SubstrateExecutor(
@@ -70,6 +95,10 @@ open class NativeImageTask : AbstractBaseTask() {
                 config = svmConf,
         )
         executor.compile()
+
+        // Move generated object files to a fixed position so they can be found by Xcode
+        Files.move(executor.mainObj, getMainObjFile().toPath(), StandardCopyOption.REPLACE_EXISTING)
+        Files.move(executor.llvmObj, getLlvmObjFile().toPath(), StandardCopyOption.REPLACE_EXISTING)
     }
 
     lateinit var retrolambdaTaskDep: Retrolambda
@@ -125,13 +154,17 @@ open class NativeImageTask : AbstractBaseTask() {
                 else -> throw GradleException("Unknown source set ${sourceSet.name}")
             }
         }
-        addConvention(CONVENTION_SVM_OUTPUT_DIR) { resolvePathInBuildDir(out, "svmTmp") }
+        addConvention(CONVENTION_SVM_TMP_DIR) { resolvePathInBuildDir(out, "svmTmp") }
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "NativeImage.log") }
+        addConvention(CONVENTION_MAIN_OBJ_FILE) { resolvePathInBuildDir(out, "main.o") }
+        addConvention(CONVENTION_LLVM_OBJ_FILE) { resolvePathInBuildDir(out, "llvm.o") }
     }
 
     companion object {
         private const val CONVENTION_INPUT_FILES = "inputFiles"
         private const val CONVENTION_MAIN_CLASS_NAME = "mainClassName"
-        private const val CONVENTION_SVM_OUTPUT_DIR = "svmOutputDir"
+        private const val CONVENTION_SVM_TMP_DIR = "svmTmpDir"
+        private const val CONVENTION_MAIN_OBJ_FILE = "mainObjFile"
+        private const val CONVENTION_LLVM_OBJ_FILE = "LLVMObjFile"
     }
 }
