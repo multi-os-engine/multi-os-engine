@@ -13,6 +13,11 @@ class SubstrateExecutor(
         val graalVM: GraalVM,
         val config: Config,
 ) {
+    lateinit var mainObj: Path
+        private set
+    lateinit var llvmObj: Path
+        private set
+
     /**
      * Compile the java classes into native object, using
      * GraalVM native-image tool.
@@ -46,13 +51,13 @@ class SubstrateExecutor(
         }.collect(logFile = config.logFile)
 
         // Now checking the result
-        val mainObj = config.outputDir.findOne(
+        mainObj = config.outputDir.findOne(
                 fileName = "${config.mainClassName.toLowerCase()}.o",
                 isDirectory = false,
                 maxDepth = 5,
         )
         println("Main object file: $mainObj")
-        val llvmObj = config.outputDir.findOne(
+        llvmObj = config.outputDir.findOne(
                 fileName = "llvm.o",
                 isDirectory = false,
                 maxDepth = 5,
