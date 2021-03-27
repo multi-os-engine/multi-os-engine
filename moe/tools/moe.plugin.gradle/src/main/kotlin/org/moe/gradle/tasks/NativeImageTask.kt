@@ -3,9 +3,11 @@ package org.moe.gradle.tasks
 import org.gradle.api.GradleException
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.tasks.Input
+import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.SourceSet
+import org.gradle.api.tasks.bundling.Jar
 import org.moe.gradle.MoeExtension
 import org.moe.gradle.MoePlatform
 import org.moe.gradle.MoePlugin
@@ -32,6 +34,18 @@ open class NativeImageTask : AbstractBaseTask() {
 
     fun setInputFiles(@NotNull inputFiles: Collection<Any>?) {
         this.inputFiles = inputFiles?.toHashSet()
+    }
+
+    private var resourceJar: Any? = null
+
+    @InputFile
+    @NotNull
+    fun getResourceJar(): File {
+        return project.file(getOrConvention(resourceJar, CONVENTION_RESOURCE_JAR)!!)
+    }
+
+    fun setResourceJar(@NotNull resourceJar: Any?) {
+        this.resourceJar = resourceJar
     }
 
     private var mainClassName: String? = null
@@ -86,7 +100,9 @@ open class NativeImageTask : AbstractBaseTask() {
     override fun run() {
         val svmConf = Config(
                 mainClassName = getMainClassName(),
-                classpath = getInputFiles().toSet(),
+                classpath = getInputFiles().toSet()
+                        // Include the resource jar as part of the classpath
+                        + getResourceJar(),
                 outputDir = getSvmTmpDir().toPath(),
                 logFile = logFile,
         )
@@ -126,6 +142,9 @@ open class NativeImageTask : AbstractBaseTask() {
         retrolambdaTaskDep = retroTask
         dependsOn(retroTask)
 
+        val resourceTask = moePlugin.getTaskByName<Jar>(MoePlugin.getTaskName(ResourcePackager::class.java, sourceSet))
+        dependsOn(resourceTask)
+
         // Update convention mapping
         addConvention(CONVENTION_INPUT_FILES) {
             val files = mutableSetOf(retroTask.outputDir)
@@ -147,6 +166,7 @@ open class NativeImageTask : AbstractBaseTask() {
 
             files
         }
+        addConvention(CONVENTION_RESOURCE_JAR) { resourceTask.archiveFile.get() }
         addConvention(CONVENTION_MAIN_CLASS_NAME) {
             when (sourceSet.name) {
                 SourceSet.MAIN_SOURCE_SET_NAME -> moeExtension.mainClassName
@@ -162,6 +182,7 @@ open class NativeImageTask : AbstractBaseTask() {
 
     companion object {
         private const val CONVENTION_INPUT_FILES = "inputFiles"
+        private const val CONVENTION_RESOURCE_JAR = "resourceJar"
         private const val CONVENTION_MAIN_CLASS_NAME = "mainClassName"
         private const val CONVENTION_SVM_TMP_DIR = "svmTmpDir"
         private const val CONVENTION_MAIN_OBJ_FILE = "mainObjFile"
