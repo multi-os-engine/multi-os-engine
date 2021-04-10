@@ -1,0 +1,325 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A7FF99E261CAED300129BCA /* foundation.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FF99D261CAED300129BCA /* foundation.c */; settings = {COMPILER_FLAGS = "-x objective-c"; }; };
+		5A7FF9A1261CAEE100129BCA /* JvmFuncs.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FF9A0261CAEE100129BCA /* JvmFuncs.c */; };
+		5A7FF9A8261CAF0200129BCA /* timeZone.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FF9A3261CAF0200129BCA /* timeZone.c */; };
+		5A7FF9A9261CAF0200129BCA /* getEnviron.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FF9A4261CAF0200129BCA /* getEnviron.c */; };
+		5A7FF9AA261CAF0200129BCA /* cSunMiscSignal.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FF9A5261CAF0200129BCA /* cSunMiscSignal.c */; };
+		5A7FF9AB261CAF0200129BCA /* codeSynchronization.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FF9A6261CAF0200129BCA /* codeSynchronization.c */; };
+		5A7FF9AC261CAF0200129BCA /* macrosAsFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FF9A7261CAF0200129BCA /* macrosAsFunctions.c */; };
+		5AF08FC1261CB42A002B6026 /* JvmFuncsFallbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AF08FC0261CB42A002B6026 /* JvmFuncsFallbacks.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5A7FF98F261CAE7500129BCA /* libjvm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libjvm.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A7FF99D261CAED300129BCA /* foundation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = foundation.c; path = src/com.oracle.svm.native.darwin/src/foundation.c; sourceTree = "<group>"; };
+		5A7FF9A0261CAEE100129BCA /* JvmFuncs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = JvmFuncs.c; path = src/com.oracle.svm.native.jvm.posix/src/JvmFuncs.c; sourceTree = "<group>"; };
+		5A7FF9A3261CAF0200129BCA /* timeZone.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = timeZone.c; path = src/com.oracle.svm.native.libchelper/src/timeZone.c; sourceTree = "<group>"; };
+		5A7FF9A4261CAF0200129BCA /* getEnviron.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = getEnviron.c; path = src/com.oracle.svm.native.libchelper/src/getEnviron.c; sourceTree = "<group>"; };
+		5A7FF9A5261CAF0200129BCA /* cSunMiscSignal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cSunMiscSignal.c; path = src/com.oracle.svm.native.libchelper/src/cSunMiscSignal.c; sourceTree = "<group>"; };
+		5A7FF9A6261CAF0200129BCA /* codeSynchronization.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = codeSynchronization.c; path = src/com.oracle.svm.native.libchelper/src/codeSynchronization.c; sourceTree = "<group>"; };
+		5A7FF9A7261CAF0200129BCA /* macrosAsFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = macrosAsFunctions.c; path = src/com.oracle.svm.native.libchelper/src/macrosAsFunctions.c; sourceTree = "<group>"; };
+		5AF08FC0261CB42A002B6026 /* JvmFuncsFallbacks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = JvmFuncsFallbacks.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A7FF98C261CAE7500129BCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5519669B2621C6650060DA57 /* substratevm */ = {
+			isa = PBXGroup;
+			children = (
+				5A7FF9A6261CAF0200129BCA /* codeSynchronization.c */,
+				5A7FF9A5261CAF0200129BCA /* cSunMiscSignal.c */,
+				5A7FF9A4261CAF0200129BCA /* getEnviron.c */,
+				5A7FF9A7261CAF0200129BCA /* macrosAsFunctions.c */,
+				5A7FF9A3261CAF0200129BCA /* timeZone.c */,
+				5A7FF9A0261CAEE100129BCA /* JvmFuncs.c */,
+				5A7FF99D261CAED300129BCA /* foundation.c */,
+			);
+			name = substratevm;
+			path = ../../../../../svm/graal/substratevm;
+			sourceTree = SOURCE_ROOT;
+		};
+		5519669F2621CB6F0060DA57 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AF08FC0261CB42A002B6026 /* JvmFuncsFallbacks.c */,
+			);
+			name = "Supporting Files";
+			path = src/main/native;
+			sourceTree = "<group>";
+		};
+		5A7FF986261CAE7500129BCA = {
+			isa = PBXGroup;
+			children = (
+				5519669B2621C6650060DA57 /* substratevm */,
+				5519669F2621CB6F0060DA57 /* Supporting Files */,
+				5A7FF990261CAE7500129BCA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5A7FF990261CAE7500129BCA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A7FF98F261CAE7500129BCA /* libjvm.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A7FF98E261CAE7500129BCA /* libjvm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A7FF998261CAE7500129BCA /* Build configuration list for PBXNativeTarget "libjvm" */;
+			buildPhases = (
+				5A7FF98B261CAE7500129BCA /* Sources */,
+				5A7FF98C261CAE7500129BCA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libjvm;
+			productName = libjvm;
+			productReference = 5A7FF98F261CAE7500129BCA /* libjvm.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A7FF987261CAE7500129BCA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					5A7FF98E261CAE7500129BCA = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 5A7FF98A261CAE7500129BCA /* Build configuration list for PBXProject "svm.graal" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A7FF986261CAE7500129BCA;
+			productRefGroup = 5A7FF990261CAE7500129BCA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A7FF98E261CAE7500129BCA /* libjvm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A7FF98B261CAE7500129BCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A7FF9A8261CAF0200129BCA /* timeZone.c in Sources */,
+				5A7FF99E261CAED300129BCA /* foundation.c in Sources */,
+				5A7FF9AC261CAF0200129BCA /* macrosAsFunctions.c in Sources */,
+				5AF08FC1261CB42A002B6026 /* JvmFuncsFallbacks.c in Sources */,
+				5A7FF9A9261CAF0200129BCA /* getEnviron.c in Sources */,
+				5A7FF9A1261CAEE100129BCA /* JvmFuncs.c in Sources */,
+				5A7FF9AA261CAF0200129BCA /* cSunMiscSignal.c in Sources */,
+				5A7FF9AB261CAF0200129BCA /* codeSynchronization.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5A7FF996261CAE7500129BCA /* Debug-ios */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				EXECUTABLE_PREFIX = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SVM_ROOT = "$(SRCROOT)/../../../../../svm";
+			};
+			name = "Debug-ios";
+		};
+		5A7FF997261CAE7500129BCA /* Release-ios */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SVM_ROOT = "$(SRCROOT)/../../../../../svm";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release-ios";
+		};
+		5A7FF999261CAE7500129BCA /* Debug-ios */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SVM_ROOT)/labs-openjdk-11/src/java.base/share/native/include\"",
+					"\"$(SVM_ROOT)/labs-openjdk-11/src/java.base/unix/native/include\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug-ios";
+		};
+		5A7FF99A261CAE7500129BCA /* Release-ios */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SVM_ROOT)/labs-openjdk-11/src/java.base/share/native/include\"",
+					"\"$(SVM_ROOT)/labs-openjdk-11/src/java.base/unix/native/include\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Release-ios";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A7FF98A261CAE7500129BCA /* Build configuration list for PBXProject "svm.graal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A7FF996261CAE7500129BCA /* Debug-ios */,
+				5A7FF997261CAE7500129BCA /* Release-ios */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release-ios";
+		};
+		5A7FF998261CAE7500129BCA /* Build configuration list for PBXNativeTarget "libjvm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A7FF999261CAE7500129BCA /* Debug-ios */,
+				5A7FF99A261CAE7500129BCA /* Release-ios */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release-ios";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A7FF987261CAE7500129BCA /* Project object */;
+}
