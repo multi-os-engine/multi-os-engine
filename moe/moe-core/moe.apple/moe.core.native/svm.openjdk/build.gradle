@@ -21,3 +21,20 @@ task('jdk_gensrc', type: Script) {
     exec 'make',
             'java.base-libs', 'jdk.crypto.ec-libs'
 }
+
+XcodeBuild.createTask(project, "libjava", "ios", "iphoneos", "Debug")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+        .dependsOn('jdk_gensrc')
+XcodeBuild.createTask(project, "libjava", "ios", "iphoneos", "Release")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+        .dependsOn('jdk_gensrc')
+XcodeBuild.createTask(project, "libjava", "ios", "iphonesimulator", "Debug")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+        .dependsOn('jdk_gensrc')
+XcodeBuild.createTask(project, "libjava", "ios", "iphonesimulator", "Release")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+        .dependsOn('jdk_gensrc')
