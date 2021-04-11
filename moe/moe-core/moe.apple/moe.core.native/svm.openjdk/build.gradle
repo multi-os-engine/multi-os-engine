@@ -3,19 +3,20 @@ import org.moe.prebuilts.Script
 
 task('jdk_gensrc', type: Script) {
     progress 'Fetching boot JDK'
-    rawWorkDir file('../../../../../svm/mx').absolutePath
+    rawWorkDir external.svm.mx
+    def bootJDK = file("${external.svm.root}/bootJDK").absolutePath
     exec './mx',
             '-y', '--no-warning',
             'fetch-jdk',
             '--java-distribution', 'labsjdk-ce-11',
-            '--to', file('build/jdk').absolutePath,
+            '--to', bootJDK,
             '--alias', 'jdk11'
 
     progress 'Configure'
-    rawWorkDir file('../../../../../svm/labs-openjdk-11').absolutePath
+    rawWorkDir external.svm.openjdk
     exec './build_labsjdk.py',
             '--configure-only',
-            '--boot-jdk', file('build/jdk/jdk11/Contents/Home').absolutePath
+            '--boot-jdk', file(bootJDK + '/jdk11/Contents/Home').absolutePath
 
     progress 'Gensrc'
     exec 'make',
