@@ -210,6 +210,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SVM_ROOT = "$(SRCROOT)/../../../../../svm";
+				SYMROOT = build/xcode;
 			};
 			name = "Debug-ios";
 		};
@@ -266,6 +267,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SVM_ROOT = "$(SRCROOT)/../../../../../svm";
+				SYMROOT = build/xcode;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release-ios";
