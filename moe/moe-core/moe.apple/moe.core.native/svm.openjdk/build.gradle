@@ -1,0 +1,23 @@
+import org.moe.prebuilts.XcodeBuild
+import org.moe.prebuilts.Script
+
+task('jdk_gensrc', type: Script) {
+    progress 'Fetching boot JDK'
+    rawWorkDir file('../../../../../svm/mx').absolutePath
+    exec './mx',
+            '-y', '--no-warning',
+            'fetch-jdk',
+            '--java-distribution', 'labsjdk-ce-11',
+            '--to', file('build/jdk').absolutePath,
+            '--alias', 'jdk11'
+
+    progress 'Configure'
+    rawWorkDir file('../../../../../svm/labs-openjdk-11').absolutePath
+    exec './build_labsjdk.py',
+            '--configure-only',
+            '--boot-jdk', file('build/jdk/jdk11/Contents/Home').absolutePath
+
+    progress 'Gensrc'
+    exec 'make',
+            'java.base-libs', 'jdk.crypto.ec-libs'
+}

@@ -47,4 +47,5 @@ include ':moe.apple',
         ':moe.apple:moe.core.native:android.system.core.libutils',
         ':moe.apple:moe.core.native:android.system.core.libziparchive',
         ':moe.apple:moe.core.native:svm.graal',
+        ':moe.apple:moe.core.native:svm.openjdk',
         ':moe.apple:moe.core.native:moe.sdk'
