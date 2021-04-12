@@ -45,7 +45,7 @@ class GraalVM(
         version = parseVMVersion()
         println("Using GraalVM $version at $home")
 
-        require (version.jdkVersion.feature != 11) {
+        require (version.jdkVersion.feature == 11) {
             "Support Java 11 based GraalVM only"
         }
 
