@@ -34,6 +34,12 @@ class SubstrateExecutor(
         SimpleExec.getExec(
                 graalVM.nativeImage,
                 "-H:+SharedLibrary",
+
+                // iOS specific flags
+                "-H:-SpawnIsolates",
+                "-H:PageSize=16384",
+
+                // Common args
                 "-H:+ExitAfterRelocatableImageWrite",
                 "--features=org.graalvm.home.HomeFinderFeature",
                 "-H:CompilerBackend=llvm",
