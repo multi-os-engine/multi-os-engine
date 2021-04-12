@@ -39,7 +39,7 @@ class GraalVM(
         }
 
         if (OsUtils.isMac()) {
-            unquarantine()
+            checkQuarantine()
         }
 
         version = parseVMVersion()
@@ -108,9 +108,9 @@ class GraalVM(
     }
 
     /**
-     * Remove the [MAC_ATTR_COM_APPLE_QUARANTINE] attr from the GraalVM files.
+     * Check if the GraalVM files have [MAC_ATTR_COM_APPLE_QUARANTINE] attr.
      */
-    private fun unquarantine() {
+    private fun checkQuarantine() {
         val root = if (home.endsWith(Paths.get("Contents", "Home"))) {
             home.parent.parent
         } else {
@@ -121,15 +121,11 @@ class GraalVM(
 
         val attrs = SimpleExec.exec("xattr", root.toString()).trim().lines()
         if (MAC_ATTR_COM_APPLE_QUARANTINE in attrs) {
-            println("Removing attr \"$MAC_ATTR_COM_APPLE_QUARANTINE\" from GraalVM home: $root")
-            try {
-                SimpleExec.exec("xattr", "-r", "-d", MAC_ATTR_COM_APPLE_QUARANTINE, root.toString())
-            } catch (e: IOException) {
-                if (e.message != null && ("Permission denied" in e.message!!)) {
-                    LOG.error("Unable to remove the quarantine attr for some files, try run the build with sudo")
-                }
-                throw e
-            }
+            LOG.warn(
+                "GraalVM home quarantined, run the following command to remove the quarantine attribute:\nsudo xattr -r -d {} {}",
+                MAC_ATTR_COM_APPLE_QUARANTINE, root
+            )
+            throw IllegalArgumentException("GraalVM home quarantined")
         }
     }
 
