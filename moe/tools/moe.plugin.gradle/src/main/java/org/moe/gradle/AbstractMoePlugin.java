@@ -52,11 +52,11 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
     /**
      * Required major version of Gradle.
      */
-    private static final int GRADLE_MIN_VERSION_MAJOR = 4;
+    private static final int GRADLE_MIN_VERSION_MAJOR = 5;
     /**
      * Required minor version of Gradle.
      */
-    private static final int GRADLE_MIN_VERSION_MINOR = 5;
+    private static final int GRADLE_MIN_VERSION_MINOR = 4;
 
     /**
      * Optional revision version of Gradle.
