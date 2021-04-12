@@ -26,6 +26,12 @@ open class NativeImageTask : AbstractBaseTask() {
 
     private var inputFiles: Set<Any>? = null
 
+    @Input
+    @NotNull
+    fun getGvmHomePath(): String {
+        return moePlugin.graalVM.home.toString()
+    }
+
     @InputFiles
     @NotNull
     fun getInputFiles(): ConfigurableFileCollection {
