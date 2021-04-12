@@ -69,7 +69,7 @@ class GraalVM(
             JDKVersion.parse(it.group(1))
         }
 
-        val vmVersion = "GraalVM [a-zA-Z ]*([0-9.]+) ".toPattern().matcher(versionOut).let {
+        val vmVersion = "GraalVM [a-zA-Z ]*([0-9.]+)(?:-dev)? ".toPattern().matcher(versionOut).let {
             if (!it.find()) {
                 throw IllegalStateException("Cannot determine the GraalVM version from $versionOut")
             }
