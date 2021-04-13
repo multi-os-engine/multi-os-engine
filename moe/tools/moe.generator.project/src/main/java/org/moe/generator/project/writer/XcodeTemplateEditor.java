@@ -125,9 +125,6 @@ public class XcodeTemplateEditor extends XcodeEditor {
         setBuildSetting(target, "INFOPLIST_FILE", projectName + "/Info.plist");
         setBuildSetting(target, "PRODUCT_BUNDLE_IDENTIFIER", settings.bundleID + suffix);
 
-        appendBuildSetting(target, "FRAMEWORK_SEARCH_PATHS", "$(inherited)");
-        appendBuildSetting(target, "FRAMEWORK_SEARCH_PATHS", "${MOE_FRAMEWORK_PATH}");
-
         appendBuildSetting(target, "OTHER_LDFLAGS", "$(inherited)");
         appendBuildSetting(target, "OTHER_LDFLAGS", "${MOE_OTHER_LDFLAGS}");
 

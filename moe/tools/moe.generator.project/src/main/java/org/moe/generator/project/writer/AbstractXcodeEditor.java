@@ -385,8 +385,7 @@ public abstract class AbstractXcodeEditor {
             final XCBuildConfiguration buildConfiguration = ref.getReferenced();
             final Dictionary<Value, NextStep> buildSettings = buildConfiguration.getOrCreateBuildSettings();
 
-            Array frameworkSearchPats = null;
-            Value inherited = new Value("$(inherited)");
+            Array frameworkSearchPaths = null;
             Value moeFrameworkPath = new Value("${MOE_FRAMEWORK_PATH}");
 
             for (Iterator<Entry<Value, NextStep>> iterator = buildSettings.entrySet().iterator(); iterator
@@ -396,25 +395,16 @@ public abstract class AbstractXcodeEditor {
                 if (existingKey.value.equals("FRAMEWORK_SEARCH_PATHS")) {
                     final NextStep value = entry.getValue();
                     if (!(value instanceof Array)) {
-                        frameworkSearchPats = new Array();
-                        frameworkSearchPats.add(value);
                         buildSettings.remove(existingKey);
-                        buildSettings.put(existingKey, frameworkSearchPats);
                     } else {
-                        frameworkSearchPats = (Array) value;
+                        frameworkSearchPaths = (Array)value;
                     }
                 }
             }
 
-            if (frameworkSearchPats == null) {
-                frameworkSearchPats = new Array();
-                buildSettings.put(new Value("FRAMEWORK_SEARCH_PATHS"), frameworkSearchPats);
-            }
-            if (!frameworkSearchPats.contains(inherited)) {
-                frameworkSearchPats.add(inherited);
-            }
-            if (!frameworkSearchPats.contains(moeFrameworkPath)) {
-                frameworkSearchPats.add(moeFrameworkPath);
+            if (frameworkSearchPaths != null) {
+                // No longer needed
+                frameworkSearchPaths.remove(moeFrameworkPath);
             }
         }
     }

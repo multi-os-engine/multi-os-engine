@@ -238,8 +238,31 @@ public class XcodeEditor extends AbstractXcodeEditor {
         setAsUpToDate();
         cleanupBuildSettings(project);
 
-        // Disable arm64 build for simulators
-        setBuildSetting(project, "EXCLUDED_ARCHS[sdk=iphonesimulator*]", "arm64");
+        // Set deployment target to at least iOS 11.
+        String deploy = getBuildSettingValue(project, "IPHONEOS_DEPLOYMENT_TARGET");
+        boolean deployLow;
+        if (deploy == null || deploy.isEmpty()) {
+            deployLow = true;
+        } else {
+            try {
+                double v = Double.parseDouble(deploy);
+                deployLow = v < 11;
+            } catch (NumberFormatException ex) {
+                ex.printStackTrace();
+                deployLow = true;
+            }
+        }
+        if (deployLow) {
+            setBuildSetting(project, "IPHONEOS_DEPLOYMENT_TARGET", "11.0");
+        }
+
+        // Allow only arm64 for real device
+        setBuildSetting(project, "ARCHS[sdk=iphoneos*]", "arm64");
+
+        // Allow only x86_64 for simulators
+        // Don't use EXCLUDED_ARCHS[sdk=iphonesimulator*]=arm64 because that will cause amd64 been excluded instead
+        // on Xcode versions that do not have arm64 simulator support.
+        setBuildSetting(project, "ARCHS[sdk=iphonesimulator*]", "x86_64");
     }
 
     /**
@@ -267,8 +290,6 @@ public class XcodeEditor extends AbstractXcodeEditor {
                 getDebugReleaseMap(moeProjectPath));
         final Map<String, String> MOE_PROJECT_BUILD_DIR_VALUE = getBuildSetting(target, "MOE_PROJECT_BUILD_DIR",
                 getDebugReleaseMap("${MOE_PROJECT_DIR}/build"));
-        final Map<String, String> MOE_COPY_ANDROID_CACERTS_VALUE = getBuildSetting(target, "MOE_COPY_ANDROID_CACERTS",
-                getDebugReleaseMap("NO"));
 
         // Remove all "MOE_" values
         removeMOEPrefixKeys(target);
@@ -276,28 +297,16 @@ public class XcodeEditor extends AbstractXcodeEditor {
         // Add all "MOE_" values
         setBuildSetting(target, "MOE_PROJECT_DIR", MOE_PROJECT_DIR_VALUE);
         setBuildSetting(target, "MOE_PROJECT_BUILD_DIR", MOE_PROJECT_BUILD_DIR_VALUE);
-        setBuildSetting(target, "MOE_SECT_OAT",
-                "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
-                        + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"");
-        setBuildSetting(target, "MOE_SECT_ART",
-                "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
-                        + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"");
-
-        setBuildSetting(target, "MOE_SEGPROT[sdk=iphoneos*]", "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw");
-        setBuildSetting(target, "MOE_SEGPROT[sdk=iphonesimulator*]",
-                "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw");
-
-        setBuildSetting(target, "MOE_PAGEZERO[sdk=iphoneos*]", "");
-        setBuildSetting(target, "MOE_PAGEZERO[sdk=iphonesimulator*]", "-pagezero_size 4096");
 
         setBuildSetting(target, "MOE_SDK_PATH", "${MOE_PROJECT_BUILD_DIR}/moe/sdk");
-        setBuildSetting(target, "MOE_FRAMEWORK_PATH", "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}");
+        setBuildSetting(target, "MOE_LIB_PATH", "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}");
 
         setBuildSetting(target, "MOE_OTHER_LDFLAGS",
-                "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ "
-                        + "-framework MOE");
-
-        setBuildSetting(target, "MOE_COPY_ANDROID_CACERTS", MOE_COPY_ANDROID_CACERTS_VALUE);
+                "${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/main_${arch}.o "
+                        + "${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/llvm_${arch}.o "
+                        + "${MOE_CUSTOM_OTHER_LDFLAGS}"
+                        + "-L${MOE_LIB_PATH} -ljvm -ljava -lffi -lstdc++ -lpthread "
+                        + "-Wl,-framework,Foundation -Wl,-framework,UniformTypeIdentifiers -Wl,-framework,CoreServices");
 
         setBuildSetting(target, "STRIP_STYLE", "non-global");
         setBuildSetting(target, "DEAD_CODE_STRIPPING", "NO");
