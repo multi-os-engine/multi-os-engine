@@ -18,6 +18,7 @@ import org.moe.gradle.utils.Arch
 import org.moe.gradle.utils.Mode
 import org.moe.tools.substrate.Config
 import org.moe.tools.substrate.SubstrateExecutor
+import org.moe.tools.substrate.Triplet
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -110,6 +111,11 @@ open class NativeImageTask : AbstractBaseTask() {
                 classpath = getInputFiles().toSet()
                         // Include the resource jar as part of the classpath
                         + getResourceJar(),
+                target = Triplet(
+                        arch = arch.name,
+                        vendor = Triplet.VENDOR_APPLE,
+                        os = platform.platformName,
+                ),
                 outputDir = getSvmTmpDir().toPath(),
                 logFile = logFile,
         )
