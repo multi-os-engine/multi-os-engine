@@ -44,8 +44,8 @@ class SubstrateExecutor(
                 "--features=org.graalvm.home.HomeFinderFeature",
                 "-H:CompilerBackend=llvm",
                 "-Dsvm.targetName=iOS",
-                "-Dsvm.targetArch=arm64",
-                "-Dsvm.platform=org.graalvm.nativeimage.Platform\$IOS_AARCH64",
+                "-Dsvm.targetArch=${config.target.arch}",
+                "-Dsvm.platform=org.graalvm.nativeimage.Platform\$${config.target.toSVMPlatform()}",
                 "-H:TempDirectory=${config.outputDir.toAbsolutePath()}",
                 "-H:+UseCAPCache",
                 "-H:CAPCacheDir=${ensureCapCacheDir()}",
@@ -107,5 +107,12 @@ class SubstrateExecutor(
                 "LLVMDirectives.cap",
                 "PosixDirectives.cap",
         )
+
+        private fun Triplet.toSVMPlatform(): String = when (this) {
+            Triplet.IPHONEOS_ARM64 -> "IOS_AARCH64"
+            Triplet.IPHONESIMULATOR_AMD64 -> "IOS_AMD64"
+            else -> throw IllegalArgumentException("Target not supported: $this")
+        }
+
     }
 }

@@ -3,9 +3,33 @@ package org.moe.tools.substrate
 import java.io.File
 import java.nio.file.Path
 
+data class Triplet(
+        val arch: String,
+        val vendor: String,
+        val os: String,
+) {
+    companion object {
+        const val ARCH_AMD64 = "x86_64"
+        const val ARCH_ARM64 = "arm64"
+
+        const val VENDOR_APPLE = "apple"
+
+        const val OS_IPHONEOS = "iphoneos"
+        const val OS_IPHONESIMULATOR = "iphonesimulator"
+
+        @JvmStatic
+        val IPHONEOS_ARM64: Triplet = Triplet(arch = ARCH_ARM64, vendor = VENDOR_APPLE, os = OS_IPHONEOS)
+        @JvmStatic
+        val IPHONESIMULATOR_AMD64: Triplet = Triplet(arch = ARCH_AMD64, vendor = VENDOR_APPLE, os = OS_IPHONESIMULATOR)
+    }
+}
+
 data class Config(
         val mainClassName: String,
         val classpath: Set<File>,
+
+        // Platform & arch config
+        val target: Triplet,
 
         val outputDir: Path,
 
