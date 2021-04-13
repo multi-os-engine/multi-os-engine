@@ -401,14 +401,11 @@ public class XcodeBuild extends AbstractBaseTask {
                 excludes.add(xcodeProvider.getLogFile());
                 excludes.add(resolvePathInBuildDir(xcodeProvider.getOutRoot()));
 
-                final Dex2Oat dex2OatTask = xcodeProvider.getDex2OatTaskDep();
-                excludes.add(dex2OatTask.getLogFile());
+                final NativeImageTask nativeImageTask = xcodeProvider.getNativeImageTaskDep();
+                excludes.add(nativeImageTask.getLogFile());
+                excludes.add(resolvePathInBuildDir(nativeImageTask.getSvmTmpDir()));
 
-                final Dex dexTask = dex2OatTask.getDexTaskDep();
-                excludes.add(dexTask.getDestJar());
-                excludes.add(dexTask.getLogFile());
-
-                final Retrolambda retrolambdaTask = dexTask.getRetrolambdaTaskDep();
+                final Retrolambda retrolambdaTask = nativeImageTask.getRetrolambdaTaskDep();
                 excludes.add(retrolambdaTask.getExpandedClassesDir());
                 excludes.add(retrolambdaTask.getOutputDir());
                 excludes.add(retrolambdaTask.getLogFile());

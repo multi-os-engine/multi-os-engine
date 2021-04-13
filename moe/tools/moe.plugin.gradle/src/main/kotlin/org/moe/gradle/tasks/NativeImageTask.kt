@@ -14,6 +14,7 @@ import org.moe.gradle.MoePlugin
 import org.moe.gradle.anns.IgnoreUnused
 import org.moe.gradle.anns.NotNull
 import org.moe.gradle.anns.Nullable
+import org.moe.gradle.utils.Arch
 import org.moe.gradle.utils.Mode
 import org.moe.tools.substrate.Config
 import org.moe.tools.substrate.SubstrateExecutor
@@ -127,20 +128,28 @@ open class NativeImageTask : AbstractBaseTask() {
         private set
 
     private lateinit var mode: Mode
+    private lateinit var arch: Arch
     private lateinit var platform: MoePlatform
 
     protected fun setupMoeTask(
             @NotNull sourceSet: SourceSet,
             @NotNull mode: Mode,
+            @NotNull arch: Arch,
             @NotNull platform: MoePlatform
     ) {
         setSupportsRemoteBuild(false)
 
         // Construct default output path
-        val out = Paths.get(MoePlugin.MOE, sourceSet.name, "native_image")
+        val outRoot = Paths.get(MoePlugin.MOE, sourceSet.name, "native_image")
+        val out = if (platform.mainPlatformsHasSimulatorPair()) {
+            outRoot.resolve(mode.xcodeCompatibleName + "-" + platform.platformName + "-" + arch.name)
+        } else {
+            outRoot.resolve(mode.xcodeCompatibleName + "-" + arch.name)
+        }
 
-        description = "Compile the project using Native-Image (sourceset: ${sourceSet.name}, mode: ${mode.name}, platform: ${platform.platformName})."
+        description = "Compile the project using Native-Image (sourceset: ${sourceSet.name}, mode: ${mode.name}, arch: ${arch.name}, platform: ${platform.platformName})."
         this.mode = mode
+        this.arch = arch
         this.platform = platform
 
         // Add dependencies

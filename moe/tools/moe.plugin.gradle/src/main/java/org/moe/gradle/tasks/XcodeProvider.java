@@ -45,9 +45,6 @@ public class XcodeProvider extends AbstractBaseTask {
     @Nullable
     private Supplier<Path> outDir;
 
-    @Nullable
-    private Dex2Oat dex2OatTask;
-
     private @Nullable Arch arch;
 
     @NotNull
@@ -65,21 +62,21 @@ public class XcodeProvider extends AbstractBaseTask {
         getMoePlugin().requireMacHostOrRemoteServerConfig(this);
 
         Require.nonNull(outDir);
-        Require.nonNull(dex2OatTask);
+        Require.nonNull(nativeImageTaskDep);
         Require.nonNull(arch);
 
         final Server remoteServer = getMoePlugin().getRemoteServer();
         if (remoteServer != null) {
-            final Path artRel;
-            final Path oatRel;
+            final Path mainObjRel;
+            final Path llvmObjRel;
             try {
-                artRel = getInnerProjectRelativePath(dex2OatTask.getDestImageFile());
-                oatRel = getInnerProjectRelativePath(dex2OatTask.getDestOatFile());
+                mainObjRel = getInnerProjectRelativePath(nativeImageTaskDep.getMainObjFile());
+                llvmObjRel = getInnerProjectRelativePath(nativeImageTaskDep.getLlvmObjFile());
             } catch (IOException e) {
                 throw new GradleException("Unsupported configuration", e);
             }
-            final String remoteArt = remoteServer.getRemotePath(artRel);
-            final String remoteOat = remoteServer.getRemotePath(oatRel);
+            final String remoteMainObj = remoteServer.getRemotePath(mainObjRel);
+            final String remoteLlvmObj = remoteServer.getRemotePath(llvmObjRel);
 
             final Path outPath;
             try {
@@ -88,14 +85,14 @@ public class XcodeProvider extends AbstractBaseTask {
                 throw new GradleException("Unsupported configuration", e);
             }
 
-            final String remoteArtLink = remoteServer.getRemotePath(outPath.resolve(arch.name + ".art"));
-            final String remoteOatLink = remoteServer.getRemotePath(outPath.resolve(arch.name + ".oat"));
+            final String remoteMainObjLink = remoteServer.getRemotePath(outPath.resolve("main_" + arch.name + ".o"));
+            final String remoteLlvmObjLink = remoteServer.getRemotePath(outPath.resolve("llvm_" + arch.name + ".o"));
             remoteServer.exec("link art & oat", "" +
                     "mkdir -p '" + remoteServer.getRemotePath(outPath) + "' && " +
-                    "rm -f '" + remoteArtLink + "' && " +
-                    "rm -f '" + remoteOatLink + "' && " +
-                    "ln -s '" + remoteArt + "' '" + remoteArtLink + "' && " +
-                    "ln -s '" + remoteOat + "' '" + remoteOatLink + "'");
+                    "rm -f '" + remoteMainObjLink + "' && " +
+                    "rm -f '" + remoteLlvmObjLink + "' && " +
+                    "ln -s '" + remoteMainObj + "' '" + remoteMainObjLink + "' && " +
+                    "ln -s '" + remoteLlvmObj + "' '" + remoteLlvmObjLink + "'");
 
         } else {
             XcodeOptions xcode = getMoeExtension().xcode;
@@ -112,29 +109,29 @@ public class XcodeProvider extends AbstractBaseTask {
                 throw new GradleException("Could not determine if the Xcode project is up to date", e);
             }
 
-            final Path artLink = getArtLink();
+            final Path mainObjLink = getMainObjLink();
             try {
-                Files.deleteIfExists(artLink);
-                Files.createSymbolicLink(artLink, dex2OatTask.getDestImageFile().toPath());
+                Files.deleteIfExists(mainObjLink);
+                Files.createSymbolicLink(mainObjLink, nativeImageTaskDep.getMainObjFile().toPath());
             } catch (IOException e) {
-                throw new GradleException("Failed to create symlink to " + artLink);
+                throw new GradleException("Failed to create symlink to " + mainObjLink);
             }
 
-            final Path oatLink = getOatLink();
+            final Path llvmObjLink = getLlvmObjLink();
             try {
-                Files.deleteIfExists(oatLink);
-                Files.createSymbolicLink(oatLink, dex2OatTask.getDestOatFile().toPath());
+                Files.deleteIfExists(llvmObjLink);
+                Files.createSymbolicLink(llvmObjLink, nativeImageTaskDep.getLlvmObjFile().toPath());
             } catch (IOException e) {
-                throw new GradleException("Failed to create symlink to " + oatLink);
+                throw new GradleException("Failed to create symlink to " + llvmObjLink);
             }
         }
     }
 
-    private Dex2Oat dex2OatTaskDep;
+    private NativeImageTask nativeImageTaskDep;
 
     @NotNull
-    public Dex2Oat getDex2OatTaskDep() {
-        return Require.nonNull(dex2OatTaskDep);
+    public NativeImageTask getNativeImageTaskDep() {
+        return Require.nonNull(nativeImageTaskDep);
     }
 
     private StartupProvider startupProviderTaskDep;
@@ -152,15 +149,15 @@ public class XcodeProvider extends AbstractBaseTask {
     }
 
     @NotNull
-    public Path getArtLink() {
+    public Path getMainObjLink() {
         final String outPath = outDir.get().toString();
-        return Paths.get(getProject().getBuildDir().toString(), outPath, arch.name + ".art");
+        return Paths.get(getProject().getBuildDir().toString(), outPath, "main_" + arch.name + ".o");
     }
 
     @NotNull
-    public Path getOatLink() {
+    public Path getLlvmObjLink() {
         final String outPath = outDir.get().toString();
-        return Paths.get(getProject().getBuildDir().toString(), outPath, arch.name + ".oat");
+        return Paths.get(getProject().getBuildDir().toString(), outPath, "llvm_" + arch.name + ".o");
     }
 
     protected final void setupMoeTask(@NotNull SourceSet sourceSet, @NotNull Mode mode, @NotNull Arch arch,
@@ -193,13 +190,9 @@ public class XcodeProvider extends AbstractBaseTask {
         this.arch = arch;
 
         // Add dependencies
-        final Dex2Oat dex2oatTask = getMoePlugin().getTaskBy(Dex2Oat.class, sourceSet, mode, arch.family);
-        dex2OatTaskDep = dex2oatTask;
-        dependsOn(dex2oatTask);
-        this.dex2OatTask = dex2oatTask;
-
-        final NativeImageTask nit = getMoePlugin().getTaskBy(NativeImageTask.class, sourceSet, mode, platform);
-        dependsOn(nit);
+        final NativeImageTask nativeImageTask = getMoePlugin().getTaskBy(NativeImageTask.class, sourceSet, mode, arch, platform);
+        nativeImageTaskDep = nativeImageTask;
+        dependsOn(nativeImageTask);
 
         final StartupProvider startupProviderTask = getMoePlugin().getTaskBy(StartupProvider.class, sourceSet);
         startupProviderTaskDep = startupProviderTask;

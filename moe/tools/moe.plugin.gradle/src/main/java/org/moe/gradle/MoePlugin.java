@@ -35,8 +35,6 @@ import org.moe.gradle.tasks.NativeImageTask;
 import org.moe.gradle.utils.PropertiesUtil;
 import org.moe.tools.substrate.GraalVM;
 import org.moe.gradle.tasks.AbstractBaseTask;
-import org.moe.gradle.tasks.Dex;
-import org.moe.gradle.tasks.Dex2Oat;
 import org.moe.gradle.tasks.GenerateUIObjCInterfaces;
 import org.moe.gradle.tasks.IpaBuild;
 import org.moe.gradle.tasks.Launchers;
@@ -177,11 +175,7 @@ public class MoePlugin extends AbstractMoePlugin {
         addRule(Retrolambda.class, "Creates a Retrolambda-d jar.",
                 singletonList(SOURCE_SET), MoePlugin.this);
         addRule(NativeImageTask.class, "AOT compile using GraalVM native-image.",
-                asList(SOURCE_SET, MODE, PLATFORM), MoePlugin.this);
-        addRule(Dex.class, "Creates a Dexed jar.",
-                singletonList(SOURCE_SET), MoePlugin.this);
-        addRule(Dex2Oat.class, "Creates art and oat files.",
-                asList(SOURCE_SET, MODE, ARCH_FAMILY), MoePlugin.this);
+                asList(SOURCE_SET, MODE, ARCH, PLATFORM), MoePlugin.this);
         ResourcePackager.addRule(this);
         addRule(TestClassesProvider.class, "Creates the classlist.txt file.",
                 singletonList(SOURCE_SET), MoePlugin.this);
