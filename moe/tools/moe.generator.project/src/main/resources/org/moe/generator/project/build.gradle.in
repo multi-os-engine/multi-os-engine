@@ -73,11 +73,3 @@ sourceSets {
     main.java.srcDirs += 'src/main/kotlin'
 }
 //>>---REGION:USE_KOTLIN_PLUGIN
-
-// Setup Eclipse
-eclipse {
-    // Set Multi-OS Engine nature
-    project {
-        natures 'org.multi-os-engine.project'
-    }
-}
