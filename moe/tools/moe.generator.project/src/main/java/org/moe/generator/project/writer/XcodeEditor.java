@@ -308,6 +308,8 @@ public class XcodeEditor extends AbstractXcodeEditor {
                         + "-L${MOE_LIB_PATH} -lmoe -lstdc++ -lpthread "
                         + "-Wl,-framework,Foundation -Wl,-framework,UniformTypeIdentifiers -Wl,-framework,CoreServices");
 
+        setBuildSetting(target, "MOE_HEADER_SEARCH_PATHS", "${MOE_LIB_PATH}/include");
+
         setBuildSetting(target, "STRIP_STYLE", "non-global");
         setBuildSetting(target, "DEAD_CODE_STRIPPING", "NO");
         setBuildSetting(target, "ENABLE_BITCODE", "NO");
@@ -325,6 +327,9 @@ public class XcodeEditor extends AbstractXcodeEditor {
 
         //Check FRAMEWORK_SEARCH_PATHS
         checkFrameWorkSearchPaths(target);
+
+        //Check HEADER_SEARCH_PATHS
+        checkHeaderSearchPaths(target);
 
         //Check OTHER_LDFLAGS
         checkOtherLDFlags(target);

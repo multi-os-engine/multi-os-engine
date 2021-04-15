@@ -409,44 +409,52 @@ public abstract class AbstractXcodeEditor {
         }
     }
 
-    public static void checkOtherLDFlags(PBXNativeTarget target) {
+    protected static void checkSettingsAppend(PBXNativeTarget target, final String key, final String appendValue) {
         XCConfigurationList configurationList = target.getBuildConfigurationList().getReferenced();
         for (PBXObjectRef<XCBuildConfiguration> ref : configurationList.getOrCreateBuildConfigurations()) {
             final XCBuildConfiguration buildConfiguration = ref.getReferenced();
             final Dictionary<Value, NextStep> buildSettings = buildConfiguration.getOrCreateBuildSettings();
 
             Value inherited = new Value("$(inherited)");
-            Value moeOtherLDFlags = new Value("${MOE_OTHER_LDFLAGS}");
-            Array otherLDFlags = null;
+            Value appendedValue = new Value(appendValue);
+            Array currentValues = null;
 
             for (Iterator<Entry<Value, NextStep>> iterator = buildSettings.entrySet().iterator(); iterator
                     .hasNext(); ) {
                 final Entry<Value, NextStep> entry = iterator.next();
                 Value existingKey = entry.getKey();
-                if (existingKey.value.equals("OTHER_LDFLAGS")) {
+                if (existingKey.value.equals(key)) {
                     final NextStep value = entry.getValue();
 
                     if (!(value instanceof Array)) {
-                        otherLDFlags = new Array();
-                        otherLDFlags.add(value);
+                        currentValues = new Array();
+                        currentValues.add(value);
                         buildSettings.remove(existingKey);
-                        buildSettings.put(existingKey, otherLDFlags);
+                        buildSettings.put(existingKey, currentValues);
                     } else {
-                        otherLDFlags = (Array) value;
+                        currentValues = (Array) value;
                     }
                 }
             }
-            if (otherLDFlags == null) {
-                otherLDFlags = new Array();
-                buildSettings.put(new Value("OTHER_LDFLAGS"), otherLDFlags);
+            if (currentValues == null) {
+                currentValues = new Array();
+                buildSettings.put(new Value(key), currentValues);
             }
-            if (!otherLDFlags.contains(inherited)) {
-                otherLDFlags.add(inherited);
+            if (!currentValues.contains(inherited)) {
+                currentValues.add(inherited);
             }
-            if (!otherLDFlags.contains(moeOtherLDFlags)) {
-                otherLDFlags.add(moeOtherLDFlags);
+            if (!currentValues.contains(appendedValue)) {
+                currentValues.add(appendedValue);
             }
         }
+    }
+
+    public static void checkHeaderSearchPaths(PBXNativeTarget target) {
+        checkSettingsAppend(target, "HEADER_SEARCH_PATHS", "${MOE_HEADER_SEARCH_PATHS}");
+    }
+
+    public static void checkOtherLDFlags(PBXNativeTarget target) {
+        checkSettingsAppend(target, "OTHER_LDFLAGS", "${MOE_OTHER_LDFLAGS}");
     }
 
     /**
