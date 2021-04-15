@@ -342,6 +342,11 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				ENABLE_BITCODE = NO;
 				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LIBTOOLFLAGS = (
+					"$(SRCROOT)/../../../../natj/natj/natj-ios/build/xcode/Debug-$(PLATFORM_NAME)/libnatj.a",
+					"$(SRCROOT)/../svm.graal/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)/libjvm.a",
+					"$(SRCROOT)/../svm.openjdk/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)/libjava.a",
+				);
 				PRODUCT_NAME = moe;
 			};
 			name = "Debug-ios";
@@ -352,6 +357,11 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				ENABLE_BITCODE = NO;
 				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LIBTOOLFLAGS = (
+					"$(SRCROOT)/../../../../natj/natj/natj-ios/build/xcode/Release-$(PLATFORM_NAME)/libnatj.a",
+					"$(SRCROOT)/../svm.graal/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)/libjvm.a",
+					"$(SRCROOT)/../svm.openjdk/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)/libjava.a",
+				);
 				PRODUCT_NAME = moe;
 			};
 			name = "Release-ios";
