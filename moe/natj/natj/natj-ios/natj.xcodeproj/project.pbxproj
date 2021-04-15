@@ -288,8 +288,9 @@
 		23F5F74117D88DFE0015E98C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"ARCHS[sdk=iphonesimulator*]" = x86_64;
 				HEADER_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/ios/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MOE_PREBUILTS_DIR = "$(SRCROOT)/../../../../prebuilts";
 				OTHER_LIBTOOLFLAGS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/ios/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libffi.a\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -299,8 +300,9 @@
 		23F5F74217D88DFE0015E98C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"ARCHS[sdk=iphonesimulator*]" = x86_64;
 				HEADER_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/ios/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MOE_PREBUILTS_DIR = "$(SRCROOT)/../../../../prebuilts";
 				OTHER_LIBTOOLFLAGS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/ios/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libffi.a\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
