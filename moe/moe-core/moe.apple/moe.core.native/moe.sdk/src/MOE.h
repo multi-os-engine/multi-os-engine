@@ -21,4 +21,4 @@ limitations under the License.
 #endif
 
 //! Entry point of MOE.
-//EXTERN int moevm(const int jargc, char *const *jargv);
+EXTERN int moevm(const int jargc, char *const *jargv);
