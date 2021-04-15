@@ -29,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		23040F3E19EBF52700CB250F /* libsdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libsdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		23040F3E19EBF52700CB250F /* libmoe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmoe.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		23040F4319EBF52700CB250F /* MOE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOE.h; sourceTree = "<group>"; };
 		23040F5C19EBFC2600CB250F /* ErrorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorDelegate.h; sourceTree = "<group>"; };
 		23040F5D19EBFC2600CB250F /* ErrorDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorDelegate.m; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		23040F3F19EBF52700CB250F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				23040F3E19EBF52700CB250F /* libsdk.a */,
+				23040F3E19EBF52700CB250F /* libmoe.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,7 +152,7 @@
 			);
 			name = sdk;
 			productName = moe.sdk;
-			productReference = 23040F3E19EBF52700CB250F /* libsdk.a */;
+			productReference = 23040F3E19EBF52700CB250F /* libmoe.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -342,7 +342,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				ENABLE_BITCODE = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = moe;
 			};
 			name = "Debug-ios";
 		};
@@ -352,7 +352,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				ENABLE_BITCODE = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = moe;
 			};
 			name = "Release-ios";
 		};
