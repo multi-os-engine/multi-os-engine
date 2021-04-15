@@ -1,5 +1,5 @@
-extern "C" int run_main(int argc, char** argv);
+#include <MOE/MOE.h>
 
 int main(int argc, char *argv[]) {
-    return run_main(argc, argv);
+    return moevm(argc, argv);
 }
