@@ -34,47 +34,29 @@ import org.moe.prebuilts.XcodeBuild
 
 apply plugin: 'base'
 
-def androidDeps = [
+def graalDeps = [
         projects: [
-                ':moe.apple:moe.core.native:android.art.dalvikvm',
-                ':moe.apple:moe.core.native:android.art.runtime',
-                ':moe.apple:moe.core.native:android.art.sigchainlib',
-                ':moe.apple:moe.core.native:android.external.conscrypt',
-                ':moe.apple:moe.core.native:android.external.expat',
-                ':moe.apple:moe.core.native:android.external.fdlibm',
-                ':moe.apple:moe.core.native:android.external.icu',
-                ':moe.apple:moe.core.native:android.external.javasqlite',
-                ':moe.apple:moe.core.native:android.external.openssl',
-                ':moe.apple:moe.core.native:android.frameworks.base.core.database',
-                ':moe.apple:moe.core.native:android.frameworks.base.native.binder',
-                ':moe.apple:moe.core.native:android.libcore',
-                ':moe.apple:moe.core.native:android.libnativehelper',
-                ':moe.apple:moe.core.native:android.system.core.libbacktrace',
-                ':moe.apple:moe.core.native:android.system.core.libbase',
-                ':moe.apple:moe.core.native:android.system.core.libcutils',
-                ':moe.apple:moe.core.native:android.system.core.liblog',
-                ':moe.apple:moe.core.native:android.system.core.libnativebridge',
-                ':moe.apple:moe.core.native:android.system.core.libutils',
-                ':moe.apple:moe.core.native:android.system.core.libziparchive',
+                ':moe.apple:moe.core.native:svm.graal@libjvm',
+                ':moe.apple:moe.core.native:svm.openjdk@libjava',
         ]
 ]
 
-XcodeBuild.createTask(project, "sdk", "ios", "iphoneos", "Debug", androidDeps)
+XcodeBuild.createTask(project, "sdk", "ios", "iphoneos", "Debug", graalDeps)
         .cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
         .cond_buildopt(buildfilter.ios.archs, "ARCHS")
         .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
         .dependsOn(':ext_natj_ios')
-XcodeBuild.createTask(project, "sdk", "ios", "iphoneos", "Release", androidDeps)
+XcodeBuild.createTask(project, "sdk", "ios", "iphoneos", "Release", graalDeps)
         .cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
         .cond_buildopt(buildfilter.ios.archs, "ARCHS")
         .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
         .dependsOn(':ext_natj_ios')
-XcodeBuild.createTask(project, "sdk", "ios", "iphonesimulator", "Debug", androidDeps)
+XcodeBuild.createTask(project, "sdk", "ios", "iphonesimulator", "Debug", graalDeps)
         .cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
         .cond_buildopt(buildfilter.ios.archs, "ARCHS")
         .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
         .dependsOn(':ext_natj_ios')
-XcodeBuild.createTask(project, "sdk", "ios", "iphonesimulator", "Release", androidDeps)
+XcodeBuild.createTask(project, "sdk", "ios", "iphonesimulator", "Release", graalDeps)
         .cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
         .cond_buildopt(buildfilter.ios.archs, "ARCHS")
         .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
