@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 #include <stdio.h>
-//#import <UIKit/UIKit.h>
+#import <UIKit/UIKit.h>
 //
 //#include <pthread.h>
 //#include <iostream>
@@ -28,8 +28,8 @@ limitations under the License.
 //#define BOOTCLASSPATH_PREFIX "-Xbootclasspath:"
 //#define RESOURCES_NAME "application.jar"
 //
-//NSString* moeErrorTitle;
-//NSString* moeErrorDescription;
+NSString* moeErrorTitle;
+NSString* moeErrorDescription;
 //
 //#include "oat.h"
 //
