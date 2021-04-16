@@ -128,28 +128,22 @@ ext {
     external.moe_core.out.moe_ios_junit_javadoc_jar = file("${external.moe_core.root}/moe.apple/moe.platform.ios.junit/build/libs/moe-ios-junit-javadoc.jar")
     external.moe_core.out.moe_ios_junit_sources_jar = file("${external.moe_core.root}/moe.apple/moe.platform.ios.junit/build/libs/moe-ios-junit-sources.jar")
     external.moe_core.out.moe_core_jar = file("${external.moe_core.root}/moe.apple/moe.core.java/build/libs/core/moe-core.jar")
-    external.moe_core.out.moe_core_certificates_zip = file("${external.moe_core.root}/moe.apple/moe.core.java/build/libs/core/moe-core-certificates.zip")
     external.moe_core.out.moe_core_javadoc_jar = file("${external.moe_core.root}/moe.apple/moe.core.java/build/libs/core/moe-core-javadoc.jar")
     external.moe_core.out.moe_core_sources_jar = file("${external.moe_core.root}/moe.apple/moe.core.java/build/libs/core/moe-core-sources.jar")
-    external.moe_core.out.java8support_jar = file("${external.moe_core.root}/moe.apple/tools/java8support.jar")
-    external.moe_core.out.preloaded_classes = file('../../../aosp/frameworks/base/preloaded-classes')
     external.moe_core.out.proguard_full_cfg = file("${external.moe_core.root}/moe.apple/tools/proguard-full.cfg")
     external.moe_core.out.proguard_cfg = file("${external.moe_core.root}/moe.apple/tools/proguard.cfg")
     external.moe_core.out.retrolambda_jar = file("${external.moe_core.root}/moe.apple/tools/retrolambda-2.0.2.jar")
-    external.moe_core.out.dx_exec = file("${external.moe_core.root}/moe.apple/tools/prebuilts/dx")
-    external.moe_core.out.dx_jar = file("${external.moe_core.root}/moe.apple/tools/prebuilts/lib/dx.jar")
 
-    if (project.hasProperty('moe.moe_core.dex2oat.debug')) {
-        external.moe_core.out.dex2oat_exec = file("${external.moe_core.root}/moe.apple/moe.core.native/android.art.dex2oat/build/xcode/Debug-macos-macosx/dex2oat")
-    } else {
-        external.moe_core.out.dex2oat_exec = file("${external.moe_core.root}/moe.apple/moe.core.native/android.art.dex2oat/build/xcode/Release-macos-macosx/dex2oat")
-    }
     if (project.hasProperty('moe.moe_core.sdk.debug')) {
-        external.moe_core.out.iphoneos_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphoneos/MOE.framework")
-        external.moe_core.out.iphonesimulator_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphonesimulator/MOE.framework")
+        external.moe_core.out.iphoneos_libmoe = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphoneos/libmoe.a")
+        external.moe_core.out.iphoneos_libmoe_headers = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphoneos/include")
+        external.moe_core.out.iphonesimulator_libmoe = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphonesimulator/libmoe.a")
+        external.moe_core.out.iphonesimulator_libmoe_headers = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphonesimulator/include")
     } else {
-        external.moe_core.out.iphoneos_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphoneos/MOE.framework")
-        external.moe_core.out.iphonesimulator_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphonesimulator/MOE.framework")
+        external.moe_core.out.iphoneos_libmoe = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphoneos/libmoe.a")
+        external.moe_core.out.iphoneos_libmoe_headers = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphoneos/include")
+        external.moe_core.out.iphonesimulator_libmoe = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphonesimulator/libmoe.a")
+        external.moe_core.out.iphonesimulator_libmoe_headers = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphonesimulator/include")
     }
 }
 
