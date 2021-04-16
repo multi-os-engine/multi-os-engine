@@ -63,105 +63,8 @@ task buildDeps {
     projectDeps.each { dependsOn project(it).tasks.build }
 }
 
-task processExtractiOS(type: Copy) {
-    dependsOn buildDeps
-    doFirst {
-        delete files("$buildDir/ios.srcs")
-    }
-    from zipTree(rootProject.external.moe_core.out.moe_ios_jar)
-    into "$buildDir/ios.srcs"
-}
-
-task processRetroiOS(type: JavaExec) {
-    dependsOn processExtractiOS
-    doFirst {
-        delete files("$buildDir/ios.retro")
-    }
-    systemProperties['retrolambda.inputDir'] = file("$buildDir/ios.srcs").absolutePath
-    systemProperties['retrolambda.classpath'] = rootProject.external.moe_core.out.moe_core_jar.absolutePath
-    systemProperties['retrolambda.defaultMethods'] = 'true'
-    systemProperties['retrolambda.outputDir'] = file("$buildDir/ios.retro").absolutePath
-    main '-jar'
-    args rootProject.external.moe_core.out.retrolambda_jar.absolutePath
-
-    inputs.dir(systemProperties['retrolambda.inputDir'])
-    inputs.file(systemProperties['retrolambda.classpath'])
-    inputs.property('retrolambda_defaultMethods', systemProperties['retrolambda.defaultMethods'])
-    outputs.dir(systemProperties['retrolambda.outputDir'])
-}
-
-task processJarRetroiOS(type: Jar) {
-    dependsOn processRetroiOS
-    from file("$buildDir/ios.retro")
-    archiveName 'moe-ios-retro.jar'
-}
-
-task processDexRetroiOS(type: Exec) {
-    dependsOn processJarRetroiOS
-
-    def cmd = ["--dex"]
-
-    cmd.add("--output")
-    def dexOutput = file("$buildDir/moe-ios-retro-dex.jar")
-    cmd.add(dexOutput.absolutePath)
-    ext.dexOutput = dexOutput
-    outputs.file(dexOutput)
-
-    cmd.add("--core-library")
-    cmd.add("--multi-dex")
-    def jarInput = processJarRetroiOS.archivePath
-    cmd.add(jarInput.absolutePath)
-    inputs.file(jarInput)
-
-    executable rootProject.external.moe_core.out.dx_exec
-    args cmd
-}
-
-task processDexCore(type: Exec) {
-    dependsOn buildDeps
-
-    def cmd = ["--dex"]
-
-    cmd.add("--output")
-    def dexOutput = file("$buildDir/moe-core.dex")
-    cmd.add(dexOutput.absolutePath)
-    ext.dexOutput = dexOutput
-    outputs.file(dexOutput)
-
-    cmd.add("--core-library")
-    def jarInput = rootProject.external.moe_core.out.moe_core_jar
-    cmd.add(jarInput.absolutePath)
-    inputs.file(jarInput)
-
-    executable rootProject.external.moe_core.out.dx_exec
-    args cmd
-}
-
-task processDexiOSJUnit(type: Exec) {
-    dependsOn buildDeps
-
-    def cmd = ["--dex"]
-
-    cmd.add("--output")
-    def dexOutput = file("$buildDir/moe-ios-junit.dex")
-    cmd.add(dexOutput.absolutePath)
-    ext.dexOutput = dexOutput
-    outputs.file(dexOutput)
-
-    cmd.add("--core-library")
-    def jarInput = rootProject.external.moe_core.out.moe_ios_junit_jar
-    cmd.add(jarInput.absolutePath)
-    inputs.file(jarInput)
-
-    executable rootProject.external.moe_core.out.dx_exec
-    args cmd
-}
-
 tasks.build {
-    dependsOn processJarRetroiOS
-    dependsOn processDexRetroiOS
-    dependsOn processDexCore
-    dependsOn processDexiOSJUnit
+    dependsOn buildDeps
 }
 
 def buildfiles(def proj, def subpath, def closure) {
@@ -198,53 +101,52 @@ def getSDKCopySpec() {
             from files(rootProject.external.moe_core.out.moe_ios_junit_javadoc_jar) {
                 rename rootProject.external.moe_core.out.moe_ios_junit_javadoc_jar.name, 'moe-ios-junit-javadoc.jar'
             }
-            from files(processDexCore.dexOutput) {
-                rename processDexCore.dexOutput.name, processDexCore.dexOutput.name
+        }
+        into('sdk/iphoneos') {
+            from files(rootProject.external.moe_core.out.iphoneos_libmoe) {
+                rename rootProject.external.moe_core.out.iphoneos_libmoe.name, 'libmoe.a'
             }
-            from files(processJarRetroiOS.archivePath) {
-                rename processJarRetroiOS.archivePath.name, processJarRetroiOS.archivePath.name
-            }
-            from files(processDexRetroiOS.dexOutput) {
-                rename processDexRetroiOS.dexOutput.name, processDexRetroiOS.dexOutput.name
-            }
-            from files(processDexiOSJUnit.dexOutput) {
-                rename processDexiOSJUnit.dexOutput.name, processDexiOSJUnit.dexOutput.name
-            }
-            from files(rootProject.external.moe_core.out.moe_core_certificates_zip) {
-                rename rootProject.external.moe_core.out.moe_core_certificates_zip.name, 'moe-core-certificates.zip'
+            into('include') {
+                into('.') {
+                    from files(rootProject.external.moe_core.out.iphoneos_libmoe_headers) {
+                        include 'jni.h'
+                    }
+                }
+                into('MOE') {
+                    from files(rootProject.external.moe_core.out.iphoneos_libmoe_headers) {
+                        exclude 'jni.h'
+                    }
+                }
             }
         }
-        into('sdk/iphoneos/MOE.framework') {
-            from files(rootProject.external.moe_core.out.iphoneos_MOE_framework)
-        }
-        into('sdk/iphonesimulator/MOE.framework') {
-            from files(rootProject.external.moe_core.out.iphonesimulator_MOE_framework)
+        into('sdk/iphonesimulator') {
+            from files(rootProject.external.moe_core.out.iphonesimulator_libmoe) {
+                rename rootProject.external.moe_core.out.iphonesimulator_libmoe.name, 'libmoe.a'
+            }
+            into('include') {
+                into('.') {
+                    from files(rootProject.external.moe_core.out.iphonesimulator_libmoe_headers) {
+                        include 'jni.h'
+                    }
+                }
+                into('MOE') {
+                    from files(rootProject.external.moe_core.out.iphonesimulator_libmoe_headers) {
+                        exclude 'jni.h'
+                    }
+                }
+            }
         }
         into('tools') {
-            from files(rootProject.external.moe_core.out.dex2oat_exec.parentFile) {
-                include rootProject.external.moe_core.out.dex2oat_exec.name
-            }
-            from files(rootProject.external.moe_core.out.dx_exec.parentFile) {
-                include rootProject.external.moe_core.out.dx_exec.name
-            }
-            from files(rootProject.external.moe_core.out.dx_jar.parentFile) {
-                include rootProject.external.moe_core.out.dx_jar.name
-            }
-
             from buildfiles(':moe.ios.device.launcher', 'libs') {
                 include 'moe.ios.device.launcher.jar'
                 rename 'moe.ios.device.launcher.jar', 'ios-device.jar'
             }
 
-            from files(rootProject.external.moe_core.out.java8support_jar.parentFile) {
-                include rootProject.external.moe_core.out.java8support_jar.name
+            from files(rootProject.external.moe_core.out.proguard_cfg.parentFile) {
                 include rootProject.external.moe_core.out.proguard_full_cfg.name
                 include rootProject.external.moe_core.out.proguard_cfg.name
                 include rootProject.external.moe_core.out.retrolambda_jar.name
                 rename rootProject.external.moe_core.out.retrolambda_jar.name, 'retrolambda.jar'
-            }
-            from files(rootProject.external.moe_core.out.preloaded_classes.parentFile) {
-                include rootProject.external.moe_core.out.preloaded_classes.name
             }
 
             from buildfiles(':moe.generator.natjgen', 'libs') {
