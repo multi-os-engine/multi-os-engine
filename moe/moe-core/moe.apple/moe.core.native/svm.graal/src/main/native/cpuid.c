@@ -160,6 +160,116 @@ void determineCPUFeatures(CPUFeatures* features) {
   }
 }
 
+#elif defined(__aarch64__)
+
+#ifndef __APPLE__
+#include <sys/auxv.h>
+#include <asm/hwcap.h>
+#endif
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "aarch64cpufeatures.h"
+
+#ifndef HWCAP_FP
+#define HWCAP_FP            (1L << 0)
+#endif
+#ifndef HWCAP_ASIMD
+#define HWCAP_ASIMD         (1L << 1)
+#endif
+#ifndef HWCAP_EVTSTRM
+#define HWCAP_EVTSTRM       (1L << 2)
+#endif
+#ifndef HWCAP_AES
+#define HWCAP_AES           (1L << 3)
+#endif
+#ifndef HWCAP_PMULL
+#define HWCAP_PMULL         (1L << 4)
+#endif
+#ifndef HWCAP_SHA1
+#define HWCAP_SHA1          (1L << 5)
+#endif
+#ifndef HWCAP_SHA2
+#define HWCAP_SHA2          (1L << 6)
+#endif
+#ifndef HWCAP_CRC32
+#define HWCAP_CRC32         (1L << 7)
+#endif
+#ifndef HWCAP_LSE
+#define HWCAP_LSE           (1L << 8)
+#endif
+#ifndef HWCAP_STXR_PREFETCH
+#define HWCAP_STXR_PREFETCH (1L << 29)
+#endif
+#ifndef HWCAP_A53MAC
+#define HWCAP_A53MAC        (1L << 30)
+#endif
+
+#define CPU_ARM 'A'
+#define CPU_CAVIUM 'C'
+
+/*
+ * Extracts the CPU features by both reading the hwcaps as well as
+ * the proc cpuinfo
+ */
+void determineCPUFeatures(CPUFeatures* features) {
+
+#ifndef __APPLE__
+  unsigned long auxv = getauxval(AT_HWCAP);
+  features->fFP = !!(auxv & HWCAP_FP);
+  features->fASIMD = !!(auxv & HWCAP_ASIMD);
+  features->fEVTSTRM = !!(auxv & HWCAP_EVTSTRM);
+  features->fAES = !!(auxv & HWCAP_AES);
+  features->fPMULL = !!(auxv & HWCAP_PMULL);
+  features->fSHA1 = !!(auxv & HWCAP_SHA1);
+  features->fSHA2 = !!(auxv & HWCAP_SHA2);
+  features->fCRC32 = !!(auxv & HWCAP_CRC32);
+  features->fLSE = !!(auxv & HWCAP_LSE);
+  features->fSTXRPREFETCH = !!(auxv & HWCAP_STXR_PREFETCH);
+  features->fA53MAC = !!(auxv & HWCAP_A53MAC);
+  features->fDMBATOMICS = 0;
+#else
+  // These features are always avaliable on Apple products
+  features->fFP = 1;
+  features->fASIMD = 1;
+#endif
+
+  //checking for features signaled in another way
+
+  int _cpu = 0;
+  int _model = 0;
+  int _model2 = 0;
+  int _variant = -1;
+  int _cpu_lines = 0;
+
+  FILE *f = fopen("/proc/cpuinfo", "r");
+  if (f) {
+    char buf[128], *p;
+    while (fgets(buf, sizeof (buf), f) != NULL) {
+      if (p = strchr(buf, ':')) {
+        long v = strtol(p + 1, NULL, 0);
+        if (strncmp(buf, "CPU implementer", sizeof "CPU implementer" - 1) == 0) {
+          _cpu = v;
+          _cpu_lines++;
+        } else if (strncmp(buf, "CPU variant", sizeof "CPU variant" - 1) == 0) {
+          _variant = v;
+        } else if (strncmp(buf, "CPU part", sizeof "CPU part" - 1) == 0) {
+          if (_model != v)  _model2 = _model;
+          _model = v;
+        }
+      }
+    }
+    fclose(f);
+  } else {
+    return;
+  }
+
+  if (_cpu == CPU_ARM && _cpu_lines == 1 && _model == 0xd07) features->fA53MAC = !!(1);
+  if (_cpu == CPU_ARM && (_model == 0xd03 || _model2 == 0xd03)) features->fA53MAC = !!(1);
+  if (_cpu == CPU_ARM && (_model == 0xd07 || _model2 == 0xd07)) features->fSTXRPREFETCH = !!(1);
+  if (_cpu == CPU_CAVIUM && _model == 0xA1 && _variant == 0) features->fDMBATOMICS = !!(1);
+}
+
 #else
 
 #include <stdio.h>

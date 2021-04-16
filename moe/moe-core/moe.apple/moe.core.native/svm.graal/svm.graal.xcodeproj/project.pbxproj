@@ -21,6 +21,7 @@
 /* Begin PBXFileReference section */
 		55814BC42622DC50005B6E03 /* cpuid.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cpuid.c; sourceTree = "<group>"; };
 		55815C222624889C005B6E03 /* amd64cpufeatures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = amd64cpufeatures.h; path = src/com.oracle.svm.native.libchelper/include/amd64cpufeatures.h; sourceTree = "<group>"; };
+		55B98D0A2629F0CE006CABE4 /* aarch64cpufeatures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = aarch64cpufeatures.h; path = src/com.oracle.svm.native.libchelper/include/aarch64cpufeatures.h; sourceTree = "<group>"; };
 		5A7FF98F261CAE7500129BCA /* libjvm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libjvm.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7FF99D261CAED300129BCA /* foundation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = foundation.c; path = src/com.oracle.svm.native.darwin/src/foundation.c; sourceTree = "<group>"; };
 		5A7FF9A0261CAEE100129BCA /* JvmFuncs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = JvmFuncs.c; path = src/com.oracle.svm.native.jvm.posix/src/JvmFuncs.c; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		5519669B2621C6650060DA57 /* substratevm */ = {
 			isa = PBXGroup;
 			children = (
+				55B98D0A2629F0CE006CABE4 /* aarch64cpufeatures.h */,
 				55815C222624889C005B6E03 /* amd64cpufeatures.h */,
 				5A7FF9A6261CAF0200129BCA /* codeSynchronization.c */,
 				5A7FF9A5261CAF0200129BCA /* cSunMiscSignal.c */,
