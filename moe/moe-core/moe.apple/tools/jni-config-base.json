@@ -1,0 +1,393 @@
+[
+    {
+        "name": "[Z"
+    },
+    {
+        "name": "[B"
+    },
+    {
+        "name": "[C"
+    },
+    {
+        "name": "[S"
+    },
+    {
+        "name": "[I"
+    },
+    {
+        "name": "[J"
+    },
+    {
+        "name": "[F"
+    },
+    {
+        "name": "[D"
+    },
+    {
+        "name": "java.lang.Object"
+    },
+    {
+        "name": "java.lang.Class",
+        "methods": [
+            {"name": "getDeclaredMethods", "parameterTypes": []},
+            {"name": "getMethods", "parameterTypes": []},
+            {"name": "getInterfaces", "parameterTypes": []},
+            {"name": "getName", "parameterTypes": []},
+            {"name": "getSimpleName", "parameterTypes": []},
+            {"name": "isAnonymousClass", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.Boolean",
+        "fields": [
+            {"name": "TYPE"}
+        ],
+        "methods": [
+            {"name": "booleanValue", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.Void",
+        "fields": [
+            {"name": "TYPE"}
+        ]
+    },
+    {
+        "name": "java.lang.Character",
+        "fields": [
+            {"name": "TYPE"}
+        ],
+        "methods": [
+            {"name": "charValue", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.Byte",
+        "fields": [
+            {"name": "TYPE"}
+        ],
+        "methods": [
+            {"name": "byteValue", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.Short",
+        "fields": [
+            {"name": "TYPE"}
+        ],
+        "methods": [
+            {"name": "shortValue", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.Integer",
+        "fields": [
+            {"name": "TYPE"}
+        ],
+        "methods": [
+            {"name": "intValue", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.Long",
+        "fields": [
+            {"name": "TYPE"}
+        ],
+        "methods": [
+            {"name": "<init>", "parameterTypes": ["long"]},
+            {"name": "longValue", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.Float",
+        "fields": [
+            {"name": "TYPE"}
+        ],
+        "methods": [
+            {"name": "floatValue", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.Double",
+        "fields": [
+            {"name": "TYPE"}
+        ],
+        "methods": [
+            {"name": "doubleValue", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.reflect.Method",
+        "methods": [
+            {"name": "getDeclaringClass", "parameterTypes": []},
+            {"name": "isSynthetic", "parameterTypes": []},
+            {"name": "getModifiers", "parameterTypes": []},
+            {"name": "isDefault", "parameterTypes": []},
+            {"name": "getReturnType", "parameterTypes": []},
+            {"name": "getParameterTypes", "parameterTypes": []},
+            {"name": "getName", "parameterTypes": []},
+            {"name": "getDeclaringClass", "parameterTypes": []},
+            {"name": "getParameterAnnotations", "parameterTypes": []},
+            {"name": "getGenericParameterTypes", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.reflect.AnnotatedElement",
+        "methods": [
+            {"name": "isAnnotationPresent", "parameterTypes": ["java.lang.Class"]},
+            {"name": "getAnnotation", "parameterTypes": ["java.lang.Class"]},
+            {"name": "getAnnotations", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.reflect.ParameterizedType",
+        "methods": [
+            {"name": "getActualTypeArguments", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.annotation.Annotation",
+        "methods": [
+            {"name": "annotationType", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.Throwable",
+        "methods": [
+            {"name": "getMessage", "parameterTypes": []},
+            {"name": "printStackTrace", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.reflect.WildcardType",
+        "methods": [
+            {"name": "getUpperBounds", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.Exception",
+        "methods": [
+            {"name": "<init>", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.nio.Buffer",
+        "methods": [
+            {"name": "position", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.NatJ",
+        "methods": [
+            {"name": "lookUpLibrary", "parameterTypes": ["java.lang.String", "boolean"]},
+            {"name": "toNative", "parameterTypes": ["java.lang.Object", "org.moe.natj.general.NatJ$NativeObjectConstructionInfo"]},
+            {"name": "toJava", "parameterTypes": ["long", "org.moe.natj.general.NatJ$JavaObjectConstructionInfo"]},
+            {"name": "buildNativeObjectConstructionInfo", "parameterTypes": ["org.moe.natj.general.NativeRuntime", "java.lang.Class", "java.lang.Class", "java.lang.annotation.Annotation", "boolean", "boolean", "boolean"]},
+            {"name": "buildJavaObjectConstructionInfo", "parameterTypes": ["org.moe.natj.general.NativeRuntime", "java.lang.Class", "java.lang.Class", "java.lang.annotation.Annotation", "java.lang.Object", "boolean", "boolean", "boolean"]},
+            {"name": "getParameterAnnotationsInherited", "parameterTypes": ["java.lang.reflect.Method"]},
+            {"name": "getRuntime", "parameterTypes": ["java.lang.Class", "boolean"]},
+            {"name": "getOrCreateInstanceOfRuntimeClass", "parameterTypes": ["java.lang.Class"]},
+            {"name": "addStrongReference", "parameterTypes": ["java.lang.Object"]},
+            {"name": "removeStrongReference", "parameterTypes": ["long"]},
+            {"name": "getStrongReference", "parameterTypes": ["long"]},
+            {"name": "addWeakReference", "parameterTypes": ["java.lang.Object"]},
+            {"name": "removeWeakReference", "parameterTypes": ["long"]},
+            {"name": "getWeakReference", "parameterTypes": ["long"]}
+        ]
+    },
+    {
+        "name": "org.moe.natj.org.objectweb.asm.Type",
+        "methods": [
+            {"name": "getMethodDescriptor", "parameterTypes": ["java.lang.reflect.Method"]}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.ann.ByValue"
+    },
+    {
+        "name": "org.moe.natj.general.ann.NFloat"
+    },
+    {
+        "name": "org.moe.natj.general.ann.NUInt"
+    },
+    {
+        "name": "org.moe.natj.general.ann.NInt"
+    },
+    {
+        "name": "org.moe.natj.general.ann.NLong"
+    },
+    {
+        "name": "org.moe.natj.general.ann.NULong"
+    },
+    {
+        "name": "org.moe.natj.general.ann.WCharT"
+    },
+    {
+        "name": "org.moe.natj.general.ann.Library",
+        "methods": [
+            {"name": "value", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.ann.Runtime"
+    },
+    {
+        "name": "org.moe.natj.general.Pointer",
+        "methods": [
+            {"name": "getPeer", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.NativeObject",
+        "methods": [
+            {"name": "getPeer", "parameterTypes": []},
+            {"name": "getPeerPointer", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.ann.Mapped",
+        "methods": [
+            {"name": "value", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.ann.MappedReturn",
+        "methods": [
+            {"name": "value", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.ann.Owned"
+    },
+    {
+        "name": "org.moe.natj.general.NativeException",
+        "methods": [
+            {"name": "getNativeException", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.ann.ReferenceInfo"
+    },
+    {
+        "name": "org.moe.natj.general.ann.Callable"
+    },
+    {
+        "name": "org.moe.natj.general.ptr.Ptr"
+    },
+    {
+        "name": "org.moe.natj.c.ann.Variadic",
+        "fields": [
+            {"name": "Runtime"},
+            {"name": "Box"},
+            {"name": "Unbox"}
+        ],
+        "methods": [
+            {"name": "unboxPolicy", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.VariadicArg",
+        "methods": [
+            {"name": "getInstance", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.VariadicArg$MapVariadicArg",
+        "methods": [
+            {"name": "getMapper", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.VariadicArg$BoxVariadicArg"
+    },
+    {
+        "name": "org.moe.natj.general.VariadicArg$UnboxVariadicArg"
+    },
+    {
+        "name": "org.moe.natj.general.VariadicArg$NUIntVariadicArg",
+        "methods": [
+            {"name": "getNUInt", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.VariadicArg$NIntVariadicArg",
+        "methods": [
+            {"name": "getNInt", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.VariadicArg$NFloatVariadicArg",
+        "methods": [
+            {"name": "getNFloat", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.VariadicArg$NULongVariadicArg",
+        "methods": [
+            {"name": "getNULong", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.VariadicArg$NLongVariadicArg",
+        "methods": [
+            {"name": "getNLong", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.VariadicArg$WCharTVariadicArg",
+        "methods": [
+            {"name": "getWCharT", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.VariadicArg$ByValueVariadicArg"
+    },
+    {
+        "name": "org.moe.natj.general.NativeRuntime",
+        "methods": [
+            {"name": "getDefaultUnboxPolicy", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.NilException",
+        "methods": [
+            {"name": "<init>", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.general.ptr.impl.ObjCObjectPtrImpl",
+        "methods": [
+            {"name": "refreshRetainList", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.c.ann.Structure",
+        "methods": [
+            {"name": "alignment", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.c.ann.StructureField",
+        "methods": [
+            {"name": "order", "parameterTypes": []},
+            {"name": "isGetter", "parameterTypes": []},
+            {"name": "count", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.c.ann.CFunction",
+        "methods": [
+            {"name": "value", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.c.ann.CVariable",
+        "methods": [
+            {"name": "name", "parameterTypes": []},
+            {"name": "isGetter", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.c.ann.Inline"
+    }
+]

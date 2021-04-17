@@ -1,0 +1,26 @@
+[
+    {
+        "name": "org.moe.natj.c.CRuntime",
+        "methods": [
+            {"name": "<init>", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.c.map.CObjectMapper",
+        "methods": [
+            {"name": "<init>", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.c.map.CStringMapper",
+        "methods": [
+            {"name": "<init>", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "org.moe.natj.c.map.CCallbackMapper",
+        "methods": [
+            {"name": "<init>", "parameterTypes": []}
+        ]
+    }
+]
