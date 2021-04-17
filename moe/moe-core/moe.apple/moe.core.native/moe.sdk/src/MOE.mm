@@ -78,7 +78,9 @@ extern "C" int run_main(const int argc, char* const* argv);
 
 extern "C" int moevm(const int jargc, char* const* jargv) {
     // Call into native-image
-    return run_main(jargc, jargv);
+    @autoreleasepool {
+        return run_main(jargc, jargv);
+    }
 
 //  reserve_tls_key();
 //
