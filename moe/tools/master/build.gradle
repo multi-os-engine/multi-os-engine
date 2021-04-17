@@ -130,6 +130,8 @@ ext {
     external.moe_core.out.moe_core_jar = file("${external.moe_core.root}/moe.apple/moe.core.java/build/libs/core/moe-core.jar")
     external.moe_core.out.moe_core_javadoc_jar = file("${external.moe_core.root}/moe.apple/moe.core.java/build/libs/core/moe-core-javadoc.jar")
     external.moe_core.out.moe_core_sources_jar = file("${external.moe_core.root}/moe.apple/moe.core.java/build/libs/core/moe-core-sources.jar")
+    external.moe_core.out.jni_config_base_json = file("${external.moe_core.root}/moe.apple/tools/jni-config-base.json")
+    external.moe_core.out.reflection_config_base_json = file("${external.moe_core.root}/moe.apple/tools/reflection-config-base.json")
     external.moe_core.out.proguard_full_cfg = file("${external.moe_core.root}/moe.apple/tools/proguard-full.cfg")
     external.moe_core.out.proguard_cfg = file("${external.moe_core.root}/moe.apple/tools/proguard.cfg")
     external.moe_core.out.retrolambda_jar = file("${external.moe_core.root}/moe.apple/tools/retrolambda-2.0.2.jar")
