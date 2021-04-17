@@ -53,6 +53,12 @@ class SubstrateExecutor(
                 "-H:Log=registerResource:verbose",
                 "-H:IncludeResources=.*",
                 "-H:ExcludeResources=.*\\.class$",
+                *config.jniConfigFiles.map {
+                    "-H:JNIConfigurationFiles=${it.absolutePath}"
+                }.toTypedArray(),
+                *config.reflectionConfigFiles.map {
+                    "-H:ReflectionConfigurationFiles=${it.absolutePath}"
+                }.toTypedArray(),
                 "-cp",
                 config.classpath.joinToString(File.pathSeparator),
                 config.mainClassName,
