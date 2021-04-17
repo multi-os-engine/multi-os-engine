@@ -289,6 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"ARCHS[sdk=iphonesimulator*]" = x86_64;
+				GCC_PREPROCESSOR_DEFINITIONS = "STATIC_BUILD=1";
 				HEADER_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/ios/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MOE_PREBUILTS_DIR = "$(SRCROOT)/../../../../prebuilts";
@@ -301,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"ARCHS[sdk=iphonesimulator*]" = x86_64;
+				GCC_PREPROCESSOR_DEFINITIONS = "STATIC_BUILD=1";
 				HEADER_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/ios/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MOE_PREBUILTS_DIR = "$(SRCROOT)/../../../../prebuilts";

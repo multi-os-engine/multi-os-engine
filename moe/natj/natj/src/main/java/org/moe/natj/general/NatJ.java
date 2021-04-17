@@ -51,6 +51,11 @@ public class NatJ {
     private static final String OS_DARWIN = "Darwin";
 
     /*
+     * Constant for identifying iOS platforms.
+     */
+    private static final String OS_IOS = "iOS";
+
+    /*
      * Constant for identifying Windows platforms.
      */
     private static final String OS_WINDOWS = "Windows";
@@ -66,6 +71,11 @@ public class NatJ {
     private static boolean isDalvik;
 
     /*
+     * Whether current runtime is SubstrateVM.
+     */
+    private static boolean isSubstrateVM;
+
+    /*
      * Dynamic library extension.
      */
     private static String dynlibExt;
@@ -74,7 +84,14 @@ public class NatJ {
      * Returns whether the current platform is Darwin.
      */
     private static boolean isDarwin() {
-        return currentOS == OS_DARWIN;
+        return currentOS == OS_DARWIN || isIOS();
+    }
+
+    /*
+     * Returns whether the current platform is iOS.
+     */
+    private static boolean isIOS() {
+        return currentOS == OS_IOS;
     }
 
     /*
@@ -89,6 +106,20 @@ public class NatJ {
      */
     private static boolean isDalvik() {
         return isDalvik;
+    }
+
+    /*
+     * Returns whether the current runtime is SubstrateVM.
+     */
+    private static boolean isSubstrateVM() {
+        return isSubstrateVM;
+    }
+
+    /**
+     * Whether NatJ is statically linked
+     */
+    private static boolean isStaticLinked() {
+        return isDalvik() || (isIOS() && isSubstrateVM());
     }
 
     /**
@@ -178,15 +209,19 @@ public class NatJ {
                                 || os_name_lowercase.contains("mac")) {
                             currentOS = OS_DARWIN;
                             dynlibExt = "dylib";
+                        } else if (os_name_lowercase.contains("ios")) {
+                            currentOS = OS_IOS;
+                            dynlibExt = "dylib";
                         } else {
                             dynlibExt = "so";
                         }
 
-                        // In the Dalvik-on-Darwin case NatJ will be statically linked
                         String java_vm_name = props.getProperty("java.vm.name");
                         isDalvik = "Dalvik".equals(java_vm_name);
-                        if (isDalvik()) {
-                            if (isDarwin()) {
+                        isSubstrateVM = java_vm_name.toLowerCase().contains("substrate");
+
+                        if (isStaticLinked()) {
+                            if (isDalvik()) {
                                 System.load("NatJ");
                             } else {
                                 System.loadLibrary("natj");
