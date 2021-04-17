@@ -23,7 +23,7 @@ limitations under the License.
 #import <_types/_uint64_t.h>
 
 
-#define EXPORT __attribute__ ((visibility ("default")))
+#define EXPORT extern __attribute__ ((visibility ("default")))
 
 EXPORT CFRange __natj_inline_CFRangeMake(CFIndex loc, CFIndex len) {
 	return CFRangeMake(loc, len);

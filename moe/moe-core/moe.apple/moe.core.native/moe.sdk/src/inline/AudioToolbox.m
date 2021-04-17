@@ -21,7 +21,7 @@ limitations under the License.
 #import <sys/_types/_size_t.h>
 
 
-#define EXPORT __attribute__ ((visibility ("default")))
+#define EXPORT extern __attribute__ ((visibility ("default")))
 
 EXPORT AudioUnitParameterOptions __natj_inline_GetAudioUnitParameterDisplayType(AudioUnitParameterOptions flags) {
 	return GetAudioUnitParameterDisplayType(flags);

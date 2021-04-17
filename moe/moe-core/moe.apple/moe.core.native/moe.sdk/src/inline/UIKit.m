@@ -22,7 +22,7 @@ limitations under the License.
 #import <UIKit/UIGeometry.h>
 
 
-#define EXPORT __attribute__ ((visibility ("default")))
+#define EXPORT extern __attribute__ ((visibility ("default")))
 
 EXPORT BOOL __natj_inline_UIDeviceOrientationIsPortrait(UIDeviceOrientation orientation) {
 	return UIDeviceOrientationIsPortrait(orientation);

@@ -18,7 +18,7 @@ limitations under the License.
 #import <SceneKit/SceneKitTypes.h>
 
 
-#define EXPORT __attribute__ ((visibility ("default")))
+#define EXPORT extern __attribute__ ((visibility ("default")))
 
 EXPORT SCNVector3 __natj_inline_SCNVector3Make(float x, float y, float z) {
 	return SCNVector3Make(x, y, z);

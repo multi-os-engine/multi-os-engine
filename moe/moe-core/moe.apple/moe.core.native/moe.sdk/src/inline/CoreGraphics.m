@@ -19,7 +19,7 @@ limitations under the License.
 #import <CoreGraphics/CGGeometry.h>
 
 
-#define EXPORT __attribute__ ((visibility ("default")))
+#define EXPORT extern __attribute__ ((visibility ("default")))
 
 EXPORT CGPoint __natj_inline_CGPointMake(CGFloat x, CGFloat y) {
 	return CGPointMake(x, y);

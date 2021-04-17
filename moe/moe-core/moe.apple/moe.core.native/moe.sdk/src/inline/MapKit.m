@@ -18,7 +18,7 @@ limitations under the License.
 #import <MapKit/MKGeometry.h>
 
 
-#define EXPORT __attribute__ ((visibility ("default")))
+#define EXPORT extern __attribute__ ((visibility ("default")))
 
 EXPORT MKCoordinateSpan __natj_inline_MKCoordinateSpanMake(CLLocationDegrees latitudeDelta, CLLocationDegrees longitudeDelta) {
 	return MKCoordinateSpanMake(latitudeDelta, longitudeDelta);

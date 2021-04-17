@@ -21,7 +21,7 @@ limitations under the License.
 #import <objc/NSObjCRuntime.h>
 
 
-#define EXPORT __attribute__ ((visibility ("default")))
+#define EXPORT extern __attribute__ ((visibility ("default")))
 
 EXPORT MTLOrigin __natj_inline_MTLOriginMake(NSUInteger x, NSUInteger y, NSUInteger z) {
 	return MTLOriginMake(x, y, z);

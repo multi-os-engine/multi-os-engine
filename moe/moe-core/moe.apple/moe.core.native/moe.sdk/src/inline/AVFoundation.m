@@ -17,7 +17,7 @@ limitations under the License.
 #import <AVFoundation/AVFoundation.h>
 
 
-#define EXPORT __attribute__ ((visibility ("default")))
+#define EXPORT extern __attribute__ ((visibility ("default")))
 
 EXPORT AVAudio3DPoint __natj_inline_AVAudioMake3DPoint(float x, float y, float z) {
 	return AVAudioMake3DPoint(x, y, z);

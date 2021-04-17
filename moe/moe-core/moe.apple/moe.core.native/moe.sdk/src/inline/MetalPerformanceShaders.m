@@ -5,7 +5,7 @@
 #import <MetalPerformanceShaders/MetalPerformanceShaders.h>
 
 
-#define EXPORT __attribute__ ((visibility ("default")))
+#define EXPORT extern __attribute__ ((visibility ("default")))
 
 EXPORT MPSIntegerDivisionParams __natj_inline_MPSFindIntegerDivisionParams(uint16_t divisor) {
 	return MPSFindIntegerDivisionParams(divisor);

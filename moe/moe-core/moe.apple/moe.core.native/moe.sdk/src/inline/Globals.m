@@ -31,7 +31,7 @@ limitations under the License.
 #import <stdio.h>
 
 
-#define EXPORT __attribute__ ((visibility ("default")))
+#define EXPORT extern __attribute__ ((visibility ("default")))
 
 EXPORT uint16_t __natj_inline__OSSwapInt16(uint16_t _data) {
 	return _OSSwapInt16(_data);

@@ -21,7 +21,7 @@ limitations under the License.
 #import <objc/NSObjCRuntime.h>
 
 
-#define EXPORT __attribute__ ((visibility ("default")))
+#define EXPORT extern __attribute__ ((visibility ("default")))
 
 EXPORT CFTypeRef _Nullable __natj_inline_CFBridgingRetain(id  _Nullable __strong X) {
 	return CFBridgingRetain(X);

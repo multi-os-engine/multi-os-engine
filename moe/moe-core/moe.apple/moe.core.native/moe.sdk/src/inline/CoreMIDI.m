@@ -19,7 +19,7 @@ limitations under the License.
 #import <MacTypes.h>
 
 
-#define EXPORT __attribute__ ((visibility ("default")))
+#define EXPORT extern __attribute__ ((visibility ("default")))
 
 EXPORT MIDIEventPacket * _Nonnull __natj_inline_MIDIEventPacketNext(const MIDIEventPacket * _Nonnull pkt) {
 	return MIDIEventPacketNext(pkt);

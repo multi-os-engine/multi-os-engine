@@ -17,7 +17,7 @@ limitations under the License.
 #import <CFNetwork/CFSocketStream.h>
 
 
-#define EXPORT __attribute__ ((visibility ("default")))
+#define EXPORT extern __attribute__ ((visibility ("default")))
 
 EXPORT SInt32 __natj_inline_CFSocketStreamSOCKSGetErrorSubdomain(const CFStreamError * _Nonnull error) {
 	return CFSocketStreamSOCKSGetErrorSubdomain(error);
