@@ -162,13 +162,6 @@ public class MoePlugin extends AbstractMoePlugin {
         project.getDependencies().add(JavaPlugin.TEST_COMPILE_CONFIGURATION_NAME,
                 FileUtils.getNameAsArtifact(getSDK().getiOSJUnitJar(), getSDK().sdkVersion));
 
-        // Install java 8 support jars to fix lambda compilation
-//        project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
-//                FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion));
-
-//        project.getDependencies().add(JavaPlugin.TEST_COMPILE_CONFIGURATION_NAME,
-//                FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion));
-
         // Install rules
         addRule(ProGuard.class, "Creates a ProGuarded jar.",
                 singletonList(SOURCE_SET), MoePlugin.this);

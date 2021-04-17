@@ -5,6 +5,7 @@ import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.InputFiles
+import org.gradle.api.tasks.Optional
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.SourceSet
 import org.gradle.api.tasks.bundling.Jar
@@ -32,6 +33,18 @@ open class NativeImageTask : AbstractBaseTask() {
     @NotNull
     fun getGvmHomePath(): String {
         return moePlugin.graalVM.home.toString()
+    }
+
+    @InputFile
+    @NotNull
+    fun getJniConfigBaseFile(): Any {
+        return moeSDK.jniConfigBaseFile
+    }
+
+    @InputFile
+    @NotNull
+    fun getReflectionConfigBaseFile(): Any {
+        return moeSDK.reflectionConfigBaseFile
     }
 
     @InputFiles
@@ -105,6 +118,36 @@ open class NativeImageTask : AbstractBaseTask() {
         this.llvmObjFile = llvmObjFile
     }
 
+    private var jniConfigFile: Any? = null
+
+    @Optional
+    @InputFile
+    @Nullable
+    fun getJniConfigFile(): File? {
+        val o = nullableGetOrConvention<Any>(jniConfigFile, CONVENTION_JNI_CONFIG_FILE)
+        return if (o == null) null else project.file(o)
+    }
+
+    @IgnoreUnused
+    fun setJniConfigFile(jniConfigFile: Any?) {
+        this.jniConfigFile = jniConfigFile
+    }
+
+    private var reflectionConfigFile: Any? = null
+
+    @Optional
+    @InputFile
+    @Nullable
+    fun getReflectionConfigFile(): File? {
+        val o = nullableGetOrConvention<Any>(reflectionConfigFile, CONVENTION_REFLECTION_CONFIG_FILE)
+        return if (o == null) null else project.file(o)
+    }
+
+    @IgnoreUnused
+    fun setReflectionConfigFile(reflectionConfigFile: Any?) {
+        this.reflectionConfigFile = reflectionConfigFile
+    }
+
     override fun run() {
         val svmConf = Config(
                 mainClassName = getMainClassName(),
@@ -116,6 +159,14 @@ open class NativeImageTask : AbstractBaseTask() {
                         vendor = Triplet.VENDOR_APPLE,
                         os = platform.platformName,
                 ),
+                jniConfigFiles = listOfNotNull(
+                        moeSDK.jniConfigBaseFile,
+                        getJniConfigFile(),
+                ).toSet(),
+                reflectionConfigFiles = listOfNotNull(
+                        moeSDK.reflectionConfigBaseFile,
+                        getReflectionConfigFile(),
+                ).toSet(),
                 outputDir = getSvmTmpDir().toPath(),
                 logFile = logFile,
         )
@@ -199,6 +250,12 @@ open class NativeImageTask : AbstractBaseTask() {
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "NativeImage.log") }
         addConvention(CONVENTION_MAIN_OBJ_FILE) { resolvePathInBuildDir(out, "main.o") }
         addConvention(CONVENTION_LLVM_OBJ_FILE) { resolvePathInBuildDir(out, "llvm.o") }
+        addConvention(CONVENTION_JNI_CONFIG_FILE) {
+            project.file("jni-config.json").takeIf { it.exists() && it.isFile }
+        }
+        addConvention(CONVENTION_REFLECTION_CONFIG_FILE) {
+            project.file("reflection-config.json").takeIf { it.exists() && it.isFile }
+        }
     }
 
     companion object {
@@ -208,5 +265,7 @@ open class NativeImageTask : AbstractBaseTask() {
         private const val CONVENTION_SVM_TMP_DIR = "svmTmpDir"
         private const val CONVENTION_MAIN_OBJ_FILE = "mainObjFile"
         private const val CONVENTION_LLVM_OBJ_FILE = "LLVMObjFile"
+        private const val CONVENTION_JNI_CONFIG_FILE = "jniConfigFile"
+        private const val CONVENTION_REFLECTION_CONFIG_FILE = "reflectionConfigFile"
     }
 }
