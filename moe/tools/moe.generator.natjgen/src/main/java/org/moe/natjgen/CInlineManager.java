@@ -123,7 +123,7 @@ public class CInlineManager {
 				+ "\n"
 				+ INCLUDES + "\n"
 				+ "\n"
-				+ "#define EXPORT __attribute__ ((visibility (\"default\")))\n"
+				+ "#define EXPORT extern __attribute__ ((visibility (\"default\")))\n"
 				+ "\n"
 				+ BODY + "\n";
 		// @formatter:on
