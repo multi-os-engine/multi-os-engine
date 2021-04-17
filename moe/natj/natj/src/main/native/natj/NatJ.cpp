@@ -539,7 +539,7 @@ void JNICALL Java_org_moe_natj_general_NatJ_initialize(JNIEnv* env, jclass clazz
   jclass nilExceptionClass =
       env->FindClass("org/moe/natj/general/NilException");
   jmethodID nilExceptionConstructorMethod =
-      env->GetMethodID(gNatJClass, "<init>", "()V");
+      env->GetMethodID(nilExceptionClass, "<init>", "()V");
   gNilExceptionInstance = (jthrowable)env->NewGlobalRef(
       env->NewObject(nilExceptionClass, nilExceptionConstructorMethod));
 
