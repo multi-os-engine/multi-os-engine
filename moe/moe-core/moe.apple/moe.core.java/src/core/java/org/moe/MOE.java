@@ -16,22 +16,32 @@
 
 package org.moe;
 
-import dalvik.system.VMStack;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class MOE {
-    /**
-     * Loads staticly linked code.
-     *
-     * @param      filename   the file to load.
-     * @exception  SecurityException  if a security manager exists and its
-     *             <code>checkLink</code> method doesn't allow
-     *             loading of the specified dynamic library
-     * @exception  NullPointerException if <code>filename</code> is
-     *             <code>null</code>
-     * @see        java.lang.Runtime#load(java.lang.String)
-     * @see        java.lang.SecurityManager#checkLink(java.lang.String)
-     */
-    public static void loadStatic(String filename) {
-        Runtime.getRuntime().load(filename, VMStack.getCallingClassLoader());
+    static {
+        System.loadLibrary("moe");
     }
+
+    /**
+     * The MOE main entrance
+     */
+    public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
+        String mainClass = getUserMainClassName();
+        if(mainClass == null) {
+            throw new RuntimeException("mainClass is missing!");
+        }
+
+        Method mainMethod;
+        try {
+            Class<?> c = Class.forName(mainClass);
+            mainMethod = c.getDeclaredMethod("main", String[].class);
+        } catch (ClassNotFoundException | NoSuchMethodException e) {
+            throw new RuntimeException("Cannot execute main method from class " + mainClass, e);
+        }
+        mainMethod.invoke(null, (Object)args);
+    }
+
+    private native static String getUserMainClassName();
 }

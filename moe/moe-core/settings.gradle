@@ -20,8 +20,8 @@ include ':moe.apple:moe.platform.ios',
 
 // Native projects for Apple platforms
 include ':moe.apple',
-//        ':moe.apple:moe.core.native',
-//        ':moe.apple:moe.core.java',
+        ':moe.apple:moe.core.native',
+        ':moe.apple:moe.core.java',
 //        ':moe.apple:moe.core.java:staticload',
 //        ':moe.apple:moe.core.native:android.art.compiler',
 //        ':moe.apple:moe.core.native:android.art.dalvikvm',

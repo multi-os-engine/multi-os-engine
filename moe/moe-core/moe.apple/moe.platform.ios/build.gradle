@@ -16,11 +16,6 @@ limitations under the License.
 
 apply plugin: 'java'
 
-def JvmVersionMeets(version) {
-    def currentJvm = org.gradle.internal.jvm.Jvm.current()
-    return version <= Integer.parseInt(currentJvm.javaVersion.majorVersion)
-}
-
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
@@ -32,10 +27,8 @@ dependencies {
 }
 
 tasks.javadoc {
-    if (JvmVersionMeets(8)) {
-        options.addStringOption('Xdoclint:none', '-quiet')
-        options.addBooleanOption("-allow-script-in-comments", true)
-    }
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addBooleanOption("-allow-script-in-comments", true)
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
