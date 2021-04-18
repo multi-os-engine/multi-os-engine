@@ -223,13 +223,13 @@ open class NativeImageTask : AbstractBaseTask() {
 
             when (moeExtension.proguardLevelRaw) {
                 MoeExtension.PROGUARD_LEVEL_APP -> {
-                    // TODO: add core jar
+                    files.add(moeSDK.coreJar)
                     moeExtension.platformJar?.let {
                         files.add(it)
                     }
                 }
                 MoeExtension.PROGUARD_LEVEL_PLATFORM -> {
-                    // TODO: add core jar
+                    files.add(moeSDK.coreJar)
                 }
                 MoeExtension.PROGUARD_LEVEL_ALL -> {
                 }

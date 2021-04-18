@@ -334,7 +334,7 @@ public class ProGuard extends AbstractBaseTask {
 
             if (!usesCustomInJars) {
                 jars.addAll(sourceSet.getRuntimeClasspath().getFiles());
-//                jars.remove(sdk.getCoreJar());
+                jars.remove(sdk.getCoreJar());
                 jars.remove(ext.getPlatformJar());
 
             } else {
@@ -345,19 +345,19 @@ public class ProGuard extends AbstractBaseTask {
 
             switch (ext.getProguardLevelRaw()) {
                 case MoeExtension.PROGUARD_LEVEL_APP:
-//                    jars.remove(sdk.getCoreJar());
+                    jars.remove(sdk.getCoreJar());
                     if (ext.getPlatformJar() != null) {
                         jars.remove(ext.getPlatformJar());
                     }
                     break;
                 case MoeExtension.PROGUARD_LEVEL_PLATFORM:
-//                    jars.remove(sdk.getCoreJar());
+                    jars.remove(sdk.getCoreJar());
                     if (ext.getPlatformJar() != null) {
                         jars.add(ext.getPlatformJar());
                     }
                     break;
                 case MoeExtension.PROGUARD_LEVEL_ALL:
-//                    jars.add(sdk.getCoreJar());
+                    jars.add(sdk.getCoreJar());
                     if (ext.getPlatformJar() != null) {
                         jars.add(ext.getPlatformJar());
                     }
@@ -372,13 +372,13 @@ public class ProGuard extends AbstractBaseTask {
             final HashSet<Object> jars = new HashSet<>();
             switch (ext.getProguardLevelRaw()) {
                 case MoeExtension.PROGUARD_LEVEL_APP:
-//                    jars.add(sdk.getCoreJar());
+                    jars.add(sdk.getCoreJar());
                     if (ext.getPlatformJar() != null) {
                         jars.add(ext.getPlatformJar());
                     }
                     break;
                 case MoeExtension.PROGUARD_LEVEL_PLATFORM:
-//                    jars.add(sdk.getCoreJar());
+                    jars.add(sdk.getCoreJar());
                     break;
                 case MoeExtension.PROGUARD_LEVEL_ALL:
                     break;

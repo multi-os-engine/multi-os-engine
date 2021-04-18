@@ -340,10 +340,9 @@ public class MoeSDK {
 
         try {
             validate(DIR, path, "");
-            // TODO
-//            validate(FIL, path, "sdk/moe-core.jar");
-//            validate(FIL, path, "sdk/moe-core-javadoc.jar");
-//            validate(FIL, path, "sdk/moe-core-sources.jar");
+            validate(FIL, path, "sdk/moe-core.jar");
+            validate(FIL, path, "sdk/moe-core-javadoc.jar");
+            validate(FIL, path, "sdk/moe-core-sources.jar");
 
             validate(FIL, path, "sdk/moe-ios-junit.jar");
             validate(FIL, path, "sdk/moe-ios-junit-javadoc.jar");
@@ -400,10 +399,9 @@ public class MoeSDK {
     private @Nullable File MOE_SDK_ROOT;
     private @Nullable File MOE_SDK_SDK_DIR;
     private @Nullable File MOE_SDK_TOOLS_DIR;
-    // TODO
-//    private @Nullable File MOE_SDK_CORE_JAR;
-//    private @Nullable File MOE_SDK_CORE_SOURCES_JAR;
-//    private @Nullable File MOE_SDK_CORE_JAVADOC_JAR;
+    private @Nullable File MOE_SDK_CORE_JAR;
+    private @Nullable File MOE_SDK_CORE_SOURCES_JAR;
+    private @Nullable File MOE_SDK_CORE_JAVADOC_JAR;
     private @Nullable File MOE_SDK_IOS_JAVADOC_JAR;
     private @Nullable File MOE_SDK_IOS_JUNIT_JAR;
     private @Nullable File MOE_SDK_IOS_JUNIT_SOURCES_JAR;
@@ -426,9 +424,9 @@ public class MoeSDK {
         MOE_SDK_ROOT = path.toFile();
         MOE_SDK_SDK_DIR = path.resolve("sdk").toFile();
         MOE_SDK_TOOLS_DIR = path.resolve("tools").toFile();
-//        MOE_SDK_CORE_JAR = path.resolve("sdk/moe-core.jar").toFile();
-//        MOE_SDK_CORE_SOURCES_JAR = path.resolve("sdk/moe-core-sources.jar").toFile();
-//        MOE_SDK_CORE_JAVADOC_JAR = path.resolve("sdk/moe-core-javadoc.jar").toFile();
+        MOE_SDK_CORE_JAR = path.resolve("sdk/moe-core.jar").toFile();
+        MOE_SDK_CORE_SOURCES_JAR = path.resolve("sdk/moe-core-sources.jar").toFile();
+        MOE_SDK_CORE_JAVADOC_JAR = path.resolve("sdk/moe-core-javadoc.jar").toFile();
         MOE_SDK_IOS_JAR = path.resolve("sdk/moe-ios.jar").toFile();
         MOE_SDK_IOS_SOURCES_JAR = path.resolve("sdk/moe-ios-sources.jar").toFile();
         MOE_SDK_IOS_JAVADOC_JAR = path.resolve("sdk/moe-ios-javadoc.jar").toFile();
@@ -464,22 +462,22 @@ public class MoeSDK {
         return safeVariable(MOE_SDK_TOOLS_DIR, "MOE_SDK_TOOLS_DIR");
     }
 
-//    @NotNull
-//    public File getCoreJar() {
-//        return safeVariable(MOE_SDK_CORE_JAR, "MOE_SDK_CORE_JAR");
-//    }
+    @NotNull
+    public File getCoreJar() {
+        return safeVariable(MOE_SDK_CORE_JAR, "MOE_SDK_CORE_JAR");
+    }
 
-//    @NotNull
-//    @IgnoreUnused
-//    public File getCoreJavadocJar() {
-//        return safeVariable(MOE_SDK_CORE_JAVADOC_JAR, "MOE_SDK_CORE_JAVADOC_JAR");
-//    }
+    @NotNull
+    @IgnoreUnused
+    public File getCoreJavadocJar() {
+        return safeVariable(MOE_SDK_CORE_JAVADOC_JAR, "MOE_SDK_CORE_JAVADOC_JAR");
+    }
 
-//    @NotNull
-//    @IgnoreUnused
-//    public File getCoreSourcesJar() {
-//        return safeVariable(MOE_SDK_CORE_SOURCES_JAR, "MOE_SDK_CORE_SOURCES_JAR");
-//    }
+    @NotNull
+    @IgnoreUnused
+    public File getCoreSourcesJar() {
+        return safeVariable(MOE_SDK_CORE_SOURCES_JAR, "MOE_SDK_CORE_SOURCES_JAR");
+    }
 
     @NotNull
     @IgnoreUnused
