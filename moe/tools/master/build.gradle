@@ -134,7 +134,6 @@ ext {
     external.moe_core.out.reflection_config_base_json = file("${external.moe_core.root}/moe.apple/tools/reflection-config-base.json")
     external.moe_core.out.proguard_full_cfg = file("${external.moe_core.root}/moe.apple/tools/proguard-full.cfg")
     external.moe_core.out.proguard_cfg = file("${external.moe_core.root}/moe.apple/tools/proguard.cfg")
-    external.moe_core.out.retrolambda_jar = file("${external.moe_core.root}/moe.apple/tools/retrolambda-2.0.2.jar")
 
     if (project.hasProperty('moe.moe_core.sdk.debug')) {
         external.moe_core.out.iphoneos_libmoe = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphoneos/libmoe.a")
