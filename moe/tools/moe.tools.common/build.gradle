@@ -14,7 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-apply plugin: 'java'
+
+plugins {
+    id "org.jetbrains.kotlin.jvm"
+}
 
 targetCompatibility = 1.8
 sourceCompatibility = 1.8
@@ -38,4 +41,10 @@ dependencies {
 
 jar {
     exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
