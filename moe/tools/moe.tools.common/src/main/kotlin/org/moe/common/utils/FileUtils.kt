@@ -1,7 +1,12 @@
 package org.moe.common.utils
 
 import java.io.File
+import java.io.IOException
 import java.io.InputStream
+import java.nio.file.Files
+import java.nio.file.Path
+import java.nio.file.StandardCopyOption
+import java.nio.file.StandardOpenOption
 import java.util.jar.JarFile
 
 fun Iterable<File>.classAndJarInputIterator(consumer: (InputStream) -> Unit): Unit = forEach {
@@ -29,3 +34,22 @@ fun Iterable<File>.classAndJarInputIterator(consumer: (InputStream) -> Unit): Un
         }
     }
 }
+
+fun File.prepareDir(): Boolean {
+    return if (this.exists()) {
+        if (this.isDirectory) {
+            true
+        } else {
+            throw IOException("Expected directory at path " + this.absolutePath)
+        }
+    } else this.mkdirs()
+}
+
+fun Path.prepareDir(): Boolean = toFile().prepareDir()
+
+fun Path.touch() {
+    Files.write(this, byteArrayOf(),
+        StandardOpenOption.CREATE, StandardOpenOption.WRITE, StandardOpenOption.APPEND)
+}
+
+fun File.touch() = toPath().touch()
