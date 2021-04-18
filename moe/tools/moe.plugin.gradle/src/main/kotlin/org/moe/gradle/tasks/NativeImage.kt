@@ -1,6 +1,5 @@
 package org.moe.gradle.tasks
 
-import org.gradle.api.GradleException
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFile
@@ -181,7 +180,7 @@ open class NativeImage : AbstractBaseTask() {
         Files.move(executor.llvmObj, getLlvmObjFile().toPath(), StandardCopyOption.REPLACE_EXISTING)
     }
 
-    lateinit var retrolambdaTaskDep: Retrolambda
+    lateinit var classValidateTaskDep: ClassValidate
         private set
 
     private lateinit var mode: Mode
@@ -210,16 +209,16 @@ open class NativeImage : AbstractBaseTask() {
         this.platform = platform
 
         // Add dependencies
-        val retroTask = moePlugin.getTaskBy(Retrolambda::class.java, sourceSet)
-        retrolambdaTaskDep = retroTask
-        dependsOn(retroTask)
+        val classValidateTask = moePlugin.getTaskBy(ClassValidate::class.java, sourceSet)
+        classValidateTaskDep = classValidateTask
+        dependsOn(classValidateTask)
 
         val resourceTask = moePlugin.getTaskByName<Jar>(MoePlugin.getTaskName(ResourcePackager::class.java, sourceSet))
         dependsOn(resourceTask)
 
         // Update convention mapping
         addConvention(CONVENTION_INPUT_FILES) {
-            val files = mutableSetOf(retroTask.outputDir)
+            val files = mutableSetOf(classValidateTask.classesOutputDir)
 
             when (moeExtension.proguardLevelRaw) {
                 MoeExtension.PROGUARD_LEVEL_APP -> {

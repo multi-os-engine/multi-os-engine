@@ -32,6 +32,7 @@ import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.remote.Server;
 import org.moe.gradle.tasks.AbstractBaseTask;
+import org.moe.gradle.tasks.ClassValidate;
 import org.moe.gradle.tasks.GenerateUIObjCInterfaces;
 import org.moe.gradle.tasks.IpaBuild;
 import org.moe.gradle.tasks.Launchers;
@@ -39,7 +40,6 @@ import org.moe.gradle.tasks.NatJGen;
 import org.moe.gradle.tasks.NativeImage;
 import org.moe.gradle.tasks.ProGuard;
 import org.moe.gradle.tasks.ResourcePackager;
-import org.moe.gradle.tasks.Retrolambda;
 import org.moe.gradle.tasks.StartupProvider;
 import org.moe.gradle.tasks.TestClassesProvider;
 import org.moe.gradle.tasks.UpdateXcodeSettings;
@@ -167,7 +167,7 @@ public class MoePlugin extends AbstractMoePlugin {
         // Install rules
         addRule(ProGuard.class, "Creates a ProGuarded jar.",
                 singletonList(SOURCE_SET), MoePlugin.this);
-        addRule(Retrolambda.class, "Creates a Retrolambda-d jar.",
+        addRule(ClassValidate.class, "Validate classes.",
                 singletonList(SOURCE_SET), MoePlugin.this);
         addRule(NativeImage.class, "AOT compile using GraalVM native-image.",
                 asList(SOURCE_SET, MODE, ARCH, PLATFORM), MoePlugin.this);
