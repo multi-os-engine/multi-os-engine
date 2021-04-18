@@ -1,0 +1,19 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm"
+}
+
+targetCompatibility = 1.8
+sourceCompatibility = 1.8
+
+dependencies {
+    implementation project(':moe.tools.common')
+
+    implementation 'org.ow2.asm:asm:9.1'
+    implementation 'org.ow2.asm:asm-tree:9.1'
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
