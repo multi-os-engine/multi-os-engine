@@ -31,14 +31,12 @@ import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.remote.Server;
-import org.moe.gradle.tasks.NativeImageTask;
-import org.moe.gradle.utils.PropertiesUtil;
-import org.moe.tools.substrate.GraalVM;
 import org.moe.gradle.tasks.AbstractBaseTask;
 import org.moe.gradle.tasks.GenerateUIObjCInterfaces;
 import org.moe.gradle.tasks.IpaBuild;
 import org.moe.gradle.tasks.Launchers;
 import org.moe.gradle.tasks.NatJGen;
+import org.moe.gradle.tasks.NativeImage;
 import org.moe.gradle.tasks.ProGuard;
 import org.moe.gradle.tasks.ResourcePackager;
 import org.moe.gradle.tasks.Retrolambda;
@@ -49,7 +47,9 @@ import org.moe.gradle.tasks.XcodeBuild;
 import org.moe.gradle.tasks.XcodeInternal;
 import org.moe.gradle.tasks.XcodeProvider;
 import org.moe.gradle.utils.FileUtils;
+import org.moe.gradle.utils.PropertiesUtil;
 import org.moe.gradle.utils.Require;
+import org.moe.tools.substrate.GraalVM;
 
 import javax.inject.Inject;
 import java.io.File;
@@ -62,7 +62,10 @@ import java.util.stream.Collectors;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
-import static org.moe.gradle.AbstractMoePlugin.TaskParams.*;
+import static org.moe.gradle.AbstractMoePlugin.TaskParams.ARCH;
+import static org.moe.gradle.AbstractMoePlugin.TaskParams.MODE;
+import static org.moe.gradle.AbstractMoePlugin.TaskParams.PLATFORM;
+import static org.moe.gradle.AbstractMoePlugin.TaskParams.SOURCE_SET;
 
 /**
  * MOE's 'moe-gradle' plugin.
@@ -166,7 +169,7 @@ public class MoePlugin extends AbstractMoePlugin {
                 singletonList(SOURCE_SET), MoePlugin.this);
         addRule(Retrolambda.class, "Creates a Retrolambda-d jar.",
                 singletonList(SOURCE_SET), MoePlugin.this);
-        addRule(NativeImageTask.class, "AOT compile using GraalVM native-image.",
+        addRule(NativeImage.class, "AOT compile using GraalVM native-image.",
                 asList(SOURCE_SET, MODE, ARCH, PLATFORM), MoePlugin.this);
         ResourcePackager.addRule(this);
         addRule(TestClassesProvider.class, "Creates the classlist.txt file.",

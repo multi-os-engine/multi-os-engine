@@ -127,10 +127,10 @@ public class XcodeProvider extends AbstractBaseTask {
         }
     }
 
-    private NativeImageTask nativeImageTaskDep;
+    private NativeImage nativeImageTaskDep;
 
     @NotNull
-    public NativeImageTask getNativeImageTaskDep() {
+    public NativeImage getNativeImageTaskDep() {
         return Require.nonNull(nativeImageTaskDep);
     }
 
@@ -190,7 +190,7 @@ public class XcodeProvider extends AbstractBaseTask {
         this.arch = arch;
 
         // Add dependencies
-        final NativeImageTask nativeImageTask = getMoePlugin().getTaskBy(NativeImageTask.class, sourceSet, mode, arch, platform);
+        final NativeImage nativeImageTask = getMoePlugin().getTaskBy(NativeImage.class, sourceSet, mode, arch, platform);
         nativeImageTaskDep = nativeImageTask;
         dependsOn(nativeImageTask);
 
