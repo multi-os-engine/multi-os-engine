@@ -74,7 +74,7 @@ dependencies {
     compile group: 'commons-io', name: 'commons-io', version: '2.4'
     compile group: 'com.jcraft', name: 'jsch', version: '0.1.53'
 
-    compile group: 'org.ow2.asm', name: 'asm', version: '5.1'
+    compile group: 'org.ow2.asm', name: 'asm', version: '9.1'
     compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
 
     compile group: 'com.googlecode.plist', name: 'dd-plist', version: '1.19'
