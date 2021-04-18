@@ -239,13 +239,7 @@ open class NativeImageTask : AbstractBaseTask() {
             files
         }
         addConvention(CONVENTION_RESOURCE_JAR) { resourceTask.archiveFile.get() }
-        addConvention(CONVENTION_MAIN_CLASS_NAME) {
-            when (sourceSet.name) {
-                SourceSet.MAIN_SOURCE_SET_NAME -> moeExtension.mainClassName
-                SourceSet.TEST_SOURCE_SET_NAME -> moeExtension.testMainClassName
-                else -> throw GradleException("Unknown source set ${sourceSet.name}")
-            }
-        }
+        addConvention(CONVENTION_MAIN_CLASS_NAME) { moeExtension.mainClassName }
         addConvention(CONVENTION_SVM_TMP_DIR) { resolvePathInBuildDir(out, "svmTmp") }
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "NativeImage.log") }
         addConvention(CONVENTION_MAIN_OBJ_FILE) { resolvePathInBuildDir(out, "main.o") }

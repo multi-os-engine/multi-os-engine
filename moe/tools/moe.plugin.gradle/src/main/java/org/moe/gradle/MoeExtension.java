@@ -69,10 +69,7 @@ public class MoeExtension extends AbstractMoeExtension {
     private MoePlatform platform = MoePlatform.IOS;
 
     @Nullable
-    private String mainClassName;
-
-    @Nullable
-    private String testMainClassName = "org.moe.mdt.junit.MoeRemoteTestRunner";
+    private String mainClassName = "org.moe.MOE";
 
     private int proguardLevel = PROGUARD_LEVEL_APP;
     private int proguardLevelProperty = PROGUARD_LEVEL_INVALID;
@@ -231,14 +228,4 @@ public class MoeExtension extends AbstractMoeExtension {
         this.mainClassName = mainClassName;
     }
 
-    @IgnoreUnused
-    @Nullable
-    public String getTestMainClassName() {
-        return testMainClassName;
-    }
-
-    @IgnoreUnused
-    public void setTestMainClassName(@Nullable String testMainClassName) {
-        this.testMainClassName = testMainClassName;
-    }
 }
