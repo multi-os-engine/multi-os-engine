@@ -120,7 +120,7 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
     @Override
     protected void run() {
         final IBActionAndOutletComposer composer = new IBActionAndOutletComposer();
-        FileUtils.classAndJarInputIterator(getProject(), getInputFiles(), composer::read);
+        FileUtils.classAndJarInputIterator(getInputFiles(), composer::read);
         final String composition = composer.compose(getMoeExtension().actionsAndOutlets);
 
         // Save to file

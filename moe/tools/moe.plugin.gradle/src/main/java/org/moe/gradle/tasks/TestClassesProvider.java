@@ -89,7 +89,7 @@ public class TestClassesProvider extends AbstractBaseTask {
         // Create class map
         ClassMap classMap = new ClassMap();
 
-        FileUtils.classAndJarInputIterator(getProject(), getInputFiles(), inputStream -> {
+        FileUtils.classAndJarInputIterator(getInputFiles(), inputStream -> {
             ClassTestAnnotationFinder indexer = new ClassTestAnnotationFinder(inputStream);
             indexer.index(classMap);
         });
