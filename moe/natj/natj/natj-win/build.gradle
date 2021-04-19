@@ -25,10 +25,10 @@ def pm5_allOutputs = []
 
 def createBuildTask(pmProj, gDeps, pmConf, pmPlat, pmProducts, pm5_allOutputs) {
     def tName = "build_${pmProj}_${pmConf}_${pmPlat['name']}"
-    def tOutputs = ["build/obj/${pmPlat['name']}/${pmConf}/${pmProj}"]
-    for (product in pmProducts) {
-        tOutputs += "build/${pmConf}-${pmPlat['name']}/${product}"
-    }
+    def tOutputs = [
+            "build/obj/${pmPlat['name']}/${pmConf}/${pmProj}",
+            "build/${pmConf}-${pmPlat['name']}"
+    ]
     pm5_allOutputs.addAll(tOutputs)
 
     tasks.create(name: tName, type: Exec) {
@@ -55,19 +55,15 @@ def createBuildTask(pmProj, gDeps, pmConf, pmPlat, pmProducts, pm5_allOutputs) {
         inputs.property 'fake-time', System.currentTimeMillis()
         def stdoutfile = file("build/native-logs/${tName}.log")
         stdoutfile.parentFile.mkdirs()
-        outputs.files tOutputs
+        outputs.dirs tOutputs
         outputs.files stdoutfile
         standardOutput = new FileOutputStream(stdoutfile)
     }
 }
 
-task premakePostClean(type: Delete) {
-    delete pm5_allOutputs
-}
-
 task premake(type: Exec) {
     doFirst {
-        premakePostClean.execute()
+        delete pm5_allOutputs
     }
     executable "premake5"
     environment 'MOE_PREBUILTS', file('../../../../prebuilts').absolutePath

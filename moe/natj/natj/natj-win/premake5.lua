@@ -3,8 +3,8 @@
 location "build"
 
 local MOE_PREBUILTS = os.getenv("MOE_PREBUILTS")
-local MINGW_I686 = MOE_PREBUILTS .. "/external/libffi/build/windows/i686-w64-mingw32/lib"
-local MINGW_X86_64 = MOE_PREBUILTS .. "/external/libffi/build/windows/x86_64-w64-mingw32/lib"
+local LIBFFI_I686 = MOE_PREBUILTS .. "/external/libffi/build/windows/i686-w64-mingw32"
+local LIBFFI_X86_64 = MOE_PREBUILTS .. "/external/libffi/build/windows/x86_64-w64-mingw32"
 
 -- A solution contains projects, and defines the available configurations
 solution "NatJ"
@@ -27,10 +27,10 @@ solution "NatJ"
    -- Setup targets
    filter "configurations:Debug"
       defines { "DEBUG" }
-      flags { "Symbols" }
+      symbols "On"
    filter "configurations:Release"
       defines { "NDEBUG" }
-      flags { "Optimize" }
+      optimize "On"
 
    filter "platforms:Win32"
       linkoptions { "-Wl,--kill-at" }
@@ -58,9 +58,9 @@ solution "NatJ"
       language "C++"
       files { "../src/main/native/natj/**.h", "../src/main/native/natj/**.cpp" }
       filter "platforms:Win32"
-         includedirs {"../src/main/native/include", MINGW_I686 .. "/libffi-3.99999/include"}
+         includedirs {"../src/main/native/include", LIBFFI_I686 .. "/include"}
       filter "platforms:Win64"
-         includedirs {"../src/main/native/include", MINGW_X86_64 .. "/libffi-3.99999/include"}
+         includedirs {"../src/main/native/include", LIBFFI_X86_64 .. "/include"}
 
       -- Turn off filtering
       filter {}
@@ -77,23 +77,23 @@ solution "NatJ"
       filter { "platforms:Win32", "configurations:Debug" }
          linkoptions {
             "-Wl,--whole-archive ../build/Debug-Win32/natj-static.a",
-            "-Wl,--no-whole-archive " .. MINGW_I686 .. "/libffi.a -static-libgcc -static-libstdc++"
+            "-Wl,--no-whole-archive " .. LIBFFI_I686 .. "/lib/libffi.a -static-libgcc -static-libstdc++"
          }
       filter { "platforms:Win32", "configurations:Release" }
          linkoptions {
             "-Wl,--whole-archive ../build/Release-Win32/natj-static.a",
-            "-Wl,--no-whole-archive " .. MINGW_I686 .. "/libffi.a -static-libgcc -static-libstdc++"
+            "-Wl,--no-whole-archive " .. LIBFFI_I686 .. "/lib/libffi.a -static-libgcc -static-libstdc++"
          }
 
       filter { "platforms:Win64", "configurations:Debug" }
          linkoptions {
             "-Wl,--whole-archive ../build/Debug-Win64/natj-static.a",
-            "-Wl,--no-whole-archive " .. MINGW_X86_64 .. "/libffi.a -static-libgcc -static-libstdc++"
+            "-Wl,--no-whole-archive " .. LIBFFI_X86_64 .. "/lib/libffi.a -static-libgcc -static-libstdc++"
          }
       filter { "platforms:Win64", "configurations:Release" }
          linkoptions {
             "-Wl,--whole-archive ../build/Release-Win64/natj-static.a",
-            "-Wl,--no-whole-archive " .. MINGW_X86_64 .. "/libffi.a -static-libgcc -static-libstdc++"
+            "-Wl,--no-whole-archive " .. LIBFFI_X86_64 .. "/lib/libffi.a -static-libgcc -static-libstdc++"
          }
 
       -- Turn off filtering
@@ -119,23 +119,23 @@ solution "NatJ"
       filter { "platforms:Win32", "configurations:Debug" }
          linkoptions {
             "-Wl,--whole-archive ../build/Debug-Win32/natj-static.a",
-            "-Wl,--no-whole-archive " .. MINGW_I686 .. "/libffi.a -static-libgcc -static-libstdc++"
+            "-Wl,--no-whole-archive " .. LIBFFI_I686 .. "/lib/libffi.a -static-libgcc -static-libstdc++"
          }
       filter { "platforms:Win32", "configurations:Release" }
          linkoptions {
             "-Wl,--whole-archive ../build/Release-Win32/natj-static.a",
-            "-Wl,--no-whole-archive " .. MINGW_I686 .. "/libffi.a -static-libgcc -static-libstdc++"
+            "-Wl,--no-whole-archive " .. LIBFFI_I686 .. "/lib/libffi.a -static-libgcc -static-libstdc++"
          }
 
       filter { "platforms:Win64", "configurations:Debug" }
          linkoptions {
             "-Wl,--whole-archive ../build/Debug-Win64/natj-static.a",
-            "-Wl,--no-whole-archive " .. MINGW_X86_64 .. "/libffi.a -static-libgcc -static-libstdc++"
+            "-Wl,--no-whole-archive " .. LIBFFI_X86_64 .. "/lib/libffi.a -static-libgcc -static-libstdc++"
          }
       filter { "platforms:Win64", "configurations:Release" }
          linkoptions {
             "-Wl,--whole-archive ../build/Release-Win64/natj-static.a",
-            "-Wl,--no-whole-archive " .. MINGW_X86_64 .. "/libffi.a -static-libgcc -static-libstdc++"
+            "-Wl,--no-whole-archive " .. LIBFFI_X86_64 .. "/lib/libffi.a -static-libgcc -static-libstdc++"
          }
 
       -- Turn off filtering
@@ -157,23 +157,23 @@ solution "NatJ"
       filter { "platforms:Win32", "configurations:Debug" }
          linkoptions {
             "-Wl,--whole-archive ../build/Debug-Win32/natj-static.a",
-            "-Wl,--no-whole-archive " .. MINGW_I686 .. "/libffi.a -static-libgcc -static-libstdc++"
+            "-Wl,--no-whole-archive " .. LIBFFI_I686 .. "/lib/libffi.a -static-libgcc -static-libstdc++"
          }
       filter { "platforms:Win32", "configurations:Release" }
          linkoptions {
             "-Wl,--whole-archive ../build/Release-Win32/natj-static.a",
-            "-Wl,--no-whole-archive " .. MINGW_I686 .. "/libffi.a -static-libgcc -static-libstdc++"
+            "-Wl,--no-whole-archive " .. LIBFFI_I686 .. "/lib/libffi.a -static-libgcc -static-libstdc++"
          }
 
       filter { "platforms:Win64", "configurations:Debug" }
          linkoptions {
             "-Wl,--whole-archive ../build/Debug-Win64/natj-static.a",
-            "-Wl,--no-whole-archive " .. MINGW_X86_64 .. "/libffi.a -static-libgcc -static-libstdc++"
+            "-Wl,--no-whole-archive " .. LIBFFI_X86_64 .. "/lib/libffi.a -static-libgcc -static-libstdc++"
          }
       filter { "platforms:Win64", "configurations:Release" }
          linkoptions {
             "-Wl,--whole-archive ../build/Release-Win64/natj-static.a",
-            "-Wl,--no-whole-archive " .. MINGW_X86_64 .. "/libffi.a -static-libgcc -static-libstdc++"
+            "-Wl,--no-whole-archive " .. LIBFFI_X86_64 .. "/lib/libffi.a -static-libgcc -static-libstdc++"
          }
 
       -- Turn off filtering
