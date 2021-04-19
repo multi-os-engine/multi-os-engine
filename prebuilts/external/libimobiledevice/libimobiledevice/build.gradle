@@ -30,8 +30,8 @@ task prebuild_macos_static(type: Prebuild) {
         }
     }
 }
-prebuild_macos_static.dependsOn ':external/libimobiledevice/libusbmuxd:prebuild_macos'
-prebuild_macos_static.dependsOn ':external/libimobiledevice/openssl:prebuild_macos'
+prebuild_macos_static.dependsOn ':external:libimobiledevice:libusbmuxd:prebuild_macos'
+prebuild_macos_static.dependsOn ':external:libimobiledevice:openssl:prebuild_macos'
 
 task prebuild_macos(type: Script, dependsOn: prebuild_macos_static) {
     workDir 'macos'
@@ -62,8 +62,8 @@ task prebuild_windows_static(type: Prebuild) {
     }
 }
 prebuild_windows_static.dependsOn ':mingwPresence'
-prebuild_windows_static.dependsOn ':external/libimobiledevice/libusbmuxd:prebuild_windows'
-prebuild_windows_static.dependsOn ':external/libimobiledevice/openssl:prebuild_windows'
+prebuild_windows_static.dependsOn ':external:libimobiledevice:libusbmuxd:prebuild_windows'
+prebuild_windows_static.dependsOn ':external:libimobiledevice:openssl:prebuild_windows'
 
 task prebuild_windows(type: Script, dependsOn: prebuild_windows_static) {
     workDir 'windows/x86_64-w64-mingw32'
