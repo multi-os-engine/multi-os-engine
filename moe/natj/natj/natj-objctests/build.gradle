@@ -52,7 +52,7 @@ tasks.withType(Test) {
         sourceSets.test.output.classesDir = 'build/classes/processedTestClasses'
     }
     systemProperty 'java.library.path', file("../natj-mac/build/xcode/${nativeConfiguration}")
-    testClassesDir = processTestsClasses.outputs.files[0]
+    testClassesDirs = processTestsClasses.outputs.files
     testLogging.showStandardStreams = true
     if (rootProject.hasProperty("moe.use.addresssanitizer")) {
         environment['DYLD_INSERT_LIBRARIES'] = '/Applications/Xcode.app/Contents/Developer/Toolchains/' +
