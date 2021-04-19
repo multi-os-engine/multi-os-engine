@@ -20,8 +20,8 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = "1.6"
-targetCompatibility = "1.6"
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
 
 dependencies {
     testCompile 'junit:junit:[4,)'
@@ -70,7 +70,7 @@ tasks.withType(Test) {
     }
 
     systemProperty 'java.library.path', file("../natj-mac/build/xcode/${nativeConfiguration}")
-    testClassesDir = processCxxTests.outputs.files[0]
+    testClassesDirs = processCxxTests.outputs.files
     testLogging.showStandardStreams = true
     if (rootProject.hasProperty("moe.use.addresssanitizer")) {
         environment['DYLD_INSERT_LIBRARIES'] = '/Applications/Xcode.app/Contents/Developer/Toolchains/' +
