@@ -12,7 +12,7 @@ import org.objectweb.asm.tree.MethodNode
  * `NatJ.register()` in their own [clinit] methods.
  */
 class AddMissingNatJRegister(
-    next: ClassVisitor
+    next: ClassVisitor?
 ) : ClassVisitor(Opcodes.ASM9, next) {
 
     private var skip: Boolean = false

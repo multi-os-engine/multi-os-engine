@@ -2,6 +2,8 @@ package org.moe.tools.classvalidator
 
 import org.moe.common.utils.classAndJarInputIterator
 import org.moe.tools.classvalidator.natj.AddMissingNatJRegister
+import org.moe.tools.classvalidator.substrate.CollectReflectionConfig
+import org.moe.tools.classvalidator.substrate.ReflectionConfig
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.ClassWriter
@@ -17,17 +19,22 @@ object ClassValidator {
         ContextClassLoaderHolder(
             ChildFirstClassLoader(classpath.map { it.toURI().toURL() }.toTypedArray())
         ).use {
-            val saver = ClassSaver(outputDir.resolve(OUTPUT_CLASSES))
+            val classSaver = ClassSaver(outputDir.resolve(OUTPUT_CLASSES))
+            val reflectionConfig = ReflectionConfig()
 
             inputFiles.classAndJarInputIterator {
                 val cr = ClassReader(it)
 
                 val byteCode = processClass(cr) { next ->
-                    next.let(::AddMissingNatJRegister)
+                    next
+                        .let { CollectReflectionConfig(reflectionConfig, it) }
+                        .let(::AddMissingNatJRegister)
                 }
 
-                saver.save(byteCode)
+                classSaver.save(byteCode)
             }
+
+            reflectionConfig.save(outputDir.resolve(OUTPUT_REFLECTION).toFile())
         }
     }
 
@@ -41,4 +48,5 @@ object ClassValidator {
     }
 
     const val OUTPUT_CLASSES = "classes"
+    const val OUTPUT_REFLECTION = "reflection-config.json"
 }
