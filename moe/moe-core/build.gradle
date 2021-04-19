@@ -112,7 +112,6 @@ tasks.check {
     dependsOn createCheckExecTask('premake5', """
     Error: premake5 is not installed, please run the following to install:
 
-        cp ${file('dependencies/premake5.rb').absolutePath} /usr/local/Library/Formula
-        brew install premake5
+        brew install file://${file('dependencies/premake5.rb').absolutePath}
 """)
 }

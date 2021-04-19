@@ -1,12 +1,12 @@
 require "formula"
 
 class Premake5 < Formula
-  homepage "http://industriousone.com/premake"
-  url "https://github.com/premake/premake-core/releases/download/v5.0.0-alpha5/premake-5.0.0-alpha5-src.zip"
-  sha256 "8bdcf9e5a5502ecc671d978a9d48a3dec91322507a80cec7685d6bbed757435f"
+  homepage "https://premake.github.io/"
+  url "https://github.com/premake/premake-core/releases/download/v5.0.0-alpha16/premake-5.0.0-alpha16-src.zip"
+  sha256 "bd1c0944877cf1200a3c5499b893fef2d8af6df6e8b8645b8ba017d258019ba5"
 
   def install
-    system "make -C build/gmake.macosx"
+    system "make -C build/gmake2.macosx"
 
     # Premake has no install target, but its just a single file that is needed
     bin.install "bin/release/premake5"
