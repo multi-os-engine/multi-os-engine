@@ -63,7 +63,7 @@ for (target in [[name: 'macos', outputs: ["${external.libimobiledevice.root}/bui
     task("prebuild_libimobiledevice_${target.name}", type: Exec) {
         workingDir external.prebuilts
         executable './gradlew'
-        args ":external/libimobiledevice/libimobiledevice:prebuild_${target.name}"
+        args ":external:libimobiledevice:libimobiledevice:prebuild_${target.name}"
 
         def log = file("build/prebuild_libimobiledevice_${target.name}.log")
         mkdir log.parentFile
