@@ -56,6 +56,9 @@ open class ClassValidate : AbstractBaseTask() {
     val classesOutputDir: File
         get() = getOutputDir().resolve(ClassValidator.OUTPUT_CLASSES)
 
+    val reflectionConfigFile: File
+        get() = getOutputDir().resolve(ClassValidator.OUTPUT_REFLECTION)
+
     override fun run() {
         // Clean output dir
         FileUtils.deleteFileOrFolder(getOutputDir());

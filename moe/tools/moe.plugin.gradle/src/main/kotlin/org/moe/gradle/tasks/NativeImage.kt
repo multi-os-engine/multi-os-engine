@@ -34,18 +34,6 @@ open class NativeImage : AbstractBaseTask() {
         return moePlugin.graalVM.home.toString()
     }
 
-    @InputFile
-    @NotNull
-    fun getJniConfigBaseFile(): Any {
-        return moeSDK.jniConfigBaseFile
-    }
-
-    @InputFile
-    @NotNull
-    fun getReflectionConfigBaseFile(): Any {
-        return moeSDK.reflectionConfigBaseFile
-    }
-
     @InputFiles
     @NotNull
     fun getInputFiles(): ConfigurableFileCollection {
@@ -117,34 +105,30 @@ open class NativeImage : AbstractBaseTask() {
         this.llvmObjFile = llvmObjFile
     }
 
-    private var jniConfigFile: Any? = null
+    private var jniConfigFiles: Set<Any>? = null
 
-    @Optional
-    @InputFile
-    @Nullable
-    fun getJniConfigFile(): File? {
-        val o = nullableGetOrConvention<Any>(jniConfigFile, CONVENTION_JNI_CONFIG_FILE)
-        return if (o == null) null else project.file(o)
+    @InputFiles
+    @NotNull
+    fun getJniConfigFiles(): ConfigurableFileCollection {
+        return project.files(getOrConvention(jniConfigFiles, CONVENTION_JNI_CONFIG_FILES))
     }
 
     @IgnoreUnused
-    fun setJniConfigFile(jniConfigFile: Any?) {
-        this.jniConfigFile = jniConfigFile
+    fun setJniConfigFiles(jniConfigFiles: Collection<Any>?) {
+        this.jniConfigFiles = jniConfigFiles?.toSet()
     }
 
-    private var reflectionConfigFile: Any? = null
+    private var reflectionConfigFiles: Set<Any>? = null
 
-    @Optional
-    @InputFile
-    @Nullable
-    fun getReflectionConfigFile(): File? {
-        val o = nullableGetOrConvention<Any>(reflectionConfigFile, CONVENTION_REFLECTION_CONFIG_FILE)
-        return if (o == null) null else project.file(o)
+    @InputFiles
+    @NotNull
+    fun getReflectionConfigFiles(): ConfigurableFileCollection {
+        return project.files(getOrConvention(reflectionConfigFiles, CONVENTION_REFLECTION_CONFIG_FILES))
     }
 
     @IgnoreUnused
-    fun setReflectionConfigFile(reflectionConfigFile: Any?) {
-        this.reflectionConfigFile = reflectionConfigFile
+    fun setReflectionConfigFiles(reflectionConfigFiles: Collection<Any>?) {
+        this.reflectionConfigFiles = reflectionConfigFiles?.toSet()
     }
 
     override fun run() {
@@ -158,14 +142,8 @@ open class NativeImage : AbstractBaseTask() {
                         vendor = Triplet.VENDOR_APPLE,
                         os = platform.platformName,
                 ),
-                jniConfigFiles = listOfNotNull(
-                        moeSDK.jniConfigBaseFile,
-                        getJniConfigFile(),
-                ).toSet(),
-                reflectionConfigFiles = listOfNotNull(
-                        moeSDK.reflectionConfigBaseFile,
-                        getReflectionConfigFile(),
-                ).toSet(),
+                jniConfigFiles = getJniConfigFiles().toSet(),
+                reflectionConfigFiles = getReflectionConfigFiles().toSet(),
                 outputDir = getSvmTmpDir().toPath(),
                 logFile = logFile,
         )
@@ -243,11 +221,19 @@ open class NativeImage : AbstractBaseTask() {
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "NativeImage.log") }
         addConvention(CONVENTION_MAIN_OBJ_FILE) { resolvePathInBuildDir(out, "main.o") }
         addConvention(CONVENTION_LLVM_OBJ_FILE) { resolvePathInBuildDir(out, "llvm.o") }
-        addConvention(CONVENTION_JNI_CONFIG_FILE) {
-            project.file("jni-config.json").takeIf { it.exists() && it.isFile }
+        addConvention(CONVENTION_JNI_CONFIG_FILES) {
+            listOfNotNull(
+                moeSDK.jniConfigBaseFile,
+                classValidateTaskDep.reflectionConfigFile,
+                project.file("jni-config.json").takeIf { it.exists() && it.isFile },
+            ).toSet()
         }
-        addConvention(CONVENTION_REFLECTION_CONFIG_FILE) {
-            project.file("reflection-config.json").takeIf { it.exists() && it.isFile }
+        addConvention(CONVENTION_REFLECTION_CONFIG_FILES) {
+            listOfNotNull(
+                moeSDK.reflectionConfigBaseFile,
+                classValidateTaskDep.reflectionConfigFile,
+                project.file("reflection-config.json").takeIf { it.exists() && it.isFile },
+            ).toSet()
         }
     }
 
@@ -258,7 +244,7 @@ open class NativeImage : AbstractBaseTask() {
         private const val CONVENTION_SVM_TMP_DIR = "svmTmpDir"
         private const val CONVENTION_MAIN_OBJ_FILE = "mainObjFile"
         private const val CONVENTION_LLVM_OBJ_FILE = "LLVMObjFile"
-        private const val CONVENTION_JNI_CONFIG_FILE = "jniConfigFile"
-        private const val CONVENTION_REFLECTION_CONFIG_FILE = "reflectionConfigFile"
+        private const val CONVENTION_JNI_CONFIG_FILES = "jniConfigFiles"
+        private const val CONVENTION_REFLECTION_CONFIG_FILES = "reflectionConfigFiles"
     }
 }
