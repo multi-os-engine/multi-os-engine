@@ -3,6 +3,7 @@ package org.moe.tools.substrate
 import org.moe.common.exec.ExecOutputCollector
 import org.moe.common.exec.SimpleExec
 import org.moe.common.utils.OsUtils
+import org.moe.tools.substrate.utils.findByExt
 import org.slf4j.LoggerFactory
 import java.io.IOException
 import java.nio.file.Files
@@ -128,6 +129,25 @@ class GraalVM(
             throw IllegalArgumentException("GraalVM home quarantined")
         }
     }
+
+    /**
+     * Get all the runtime library paths of this GraalVM.
+     */
+    val runtimeLibraries: Set<Path>
+        get() = if (version.jdkVersion.feature <= 8) {
+            val libDirs = setOf(
+                home.resolve("lib"),
+                home.resolve(Paths.get("jre", "lib")),
+            )
+
+            libDirs.flatMap { it.findByExt("jar") }.toSet()
+        } else {
+            val jmodDirs = setOf(
+                home.resolve("jmods"),
+            )
+
+            jmodDirs.flatMap { it.findByExt("jmod") }.toSet()
+        }
 
     data class Version(
             val jdkVersion: JDKVersion,
