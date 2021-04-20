@@ -103,12 +103,9 @@ tasks.check {
     dependsOn createBrewCheckExecTask('libtool')
     dependsOn createBrewCheckExecTask('pkg-config')
     dependsOn createBrewCheckExecTask('wget')
-    dependsOn createBrewCheckExecTask('gcc-5')
     dependsOn createBrewCheckExecTask('cloog')
     dependsOn createBrewCheckExecTask('cmake')
-    dependsOn createBrewCheckExecTask('jasmin')
     dependsOn createBrewCheckExecTask('gpg')
-    dependsOn createBrewCheckExecTask('ant')
     dependsOn createCheckExecTask('premake5', """
     Error: premake5 is not installed, please run the following to install:
 
