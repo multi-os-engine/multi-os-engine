@@ -147,7 +147,7 @@ class GraalVM(
             )
 
             jmodDirs.flatMap { it.findByExt("jmod") }.toSet()
-        }
+        }.toSortedSet()
 
     data class Version(
             val jdkVersion: JDKVersion,
