@@ -48,6 +48,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -202,7 +203,7 @@ public class ProGuard extends AbstractBaseTask {
         startSection(conf, "Generating -libraryjars");
         getLibraryJars().forEach(it -> {
             if (it.exists()) {
-                conf.append("-libraryjars ").append(it.getAbsolutePath()).append("\n");
+                conf.append("-libraryjars ").append(it.getAbsolutePath()).append("(!module-info.class)\n");
             } else {
                 LOG.debug("libraryJars file doesn't exist: " + it.getAbsolutePath());
             }
@@ -369,7 +370,11 @@ public class ProGuard extends AbstractBaseTask {
             return jars;
         });
         addConvention(CONVENTION_LIBRARY_JARS, () -> {
-            final HashSet<Object> jars = new HashSet<>();
+            final HashSet<Object> jars = new LinkedHashSet<>(
+                // Make JDK runtime libraries available for ProGuard
+                // because we no longer have all basic runtime classes in core jar.
+                getMoePlugin().getGraalVM().getRuntimeLibraries()
+            );
             switch (ext.getProguardLevelRaw()) {
                 case MoeExtension.PROGUARD_LEVEL_APP:
                     jars.add(sdk.getCoreJar());
