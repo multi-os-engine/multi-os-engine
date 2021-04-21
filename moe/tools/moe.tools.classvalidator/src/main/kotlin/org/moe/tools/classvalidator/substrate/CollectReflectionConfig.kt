@@ -1,14 +1,11 @@
 package org.moe.tools.classvalidator.substrate
 
 import org.moe.tools.classvalidator.natj.NatJRuntime
-import org.moe.tools.classvalidator.natj.NatJRuntime.NATJ_NATIVE_RUNTIME
-import org.moe.tools.classvalidator.natj.NatJRuntime.isDescendantOf
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.FieldVisitor
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
-import org.objectweb.asm.Type
 
 /**
  * Collect all classes, methods & fields that will be used by NatJ via reflection & JNI,
@@ -39,25 +36,13 @@ class CollectReflectionConfig(
     }
 
     override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor {
-        if (!skip) {
-            if (!visit) {
-                visit = descriptor in EXPORTED_ANNOTATION_DESC
-            }
-            if (visit) {
-                config.addClass(name)
-
-                // Make sure the runtime class is available to reflection
-                if (descriptor == NatJRuntime.RUNTIME_ANNOTATION_DESC) {
-                    val av = super.visitAnnotation(descriptor, visible)
-                    return RuntimeAnnotationVisitor(
-                        config = config,
-                        className = this.name,
-                        next = av
-                    )
-                }
-            }
+        if (!skip && !visit) {
+            visit = descriptor in EXPORTED_ANNOTATION_DESC
         }
 
+        if (!skip && visit) {
+            config.addClass(name)
+        }
         return super.visitAnnotation(descriptor, visible)
     }
 
@@ -102,26 +87,6 @@ class CollectReflectionConfig(
             methodDescriptor = descriptor,
             next = mv
         )
-    }
-
-    private class RuntimeAnnotationVisitor(
-        private val config: ReflectionConfig,
-        private val className: String,
-        next: AnnotationVisitor?,
-    ) : AnnotationVisitor(Opcodes.ASM9, next) {
-        override fun visit(name: String, value: Any) {
-            if (name == "value") {
-                value as Type
-
-                require(value.isDescendantOf(NATJ_NATIVE_RUNTIME)) {
-                    "Value of Runtime annotation must be a $NATJ_NATIVE_RUNTIME"
-                }
-
-                println("Find runtime: ${value.className}")
-                config.addMethod(value.className, "<init>", NatJRuntime.NATJ_RUNTIME_INIT_DESC)
-            }
-            super.visit(name, value)
-        }
     }
 
     private class FieldInspector(
