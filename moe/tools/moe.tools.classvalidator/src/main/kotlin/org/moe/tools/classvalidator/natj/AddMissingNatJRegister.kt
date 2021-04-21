@@ -25,7 +25,7 @@ class AddMissingNatJRegister(
     override fun visit(version: Int, access: Int, name: String, signature: String?,
                        superName: String?, interfaces: Array<out String>?) {
         this.name = name
-        skip = name.startsWith(NatJRuntime.NATJ_CLASS_PREFIX)
+        skip = ((access and Opcodes.ACC_INTERFACE) != 0) || name.startsWith(NatJRuntime.NATJ_CLASS_PREFIX)
         if (!skip) {
             visit = NatJRuntime.isNativeObjectDescendant(superName)
         }
