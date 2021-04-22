@@ -13,7 +13,8 @@ import org.objectweb.asm.Opcodes
  */
 class CollectReflectionConfig(
     private val config: ReflectionConfig,
-    next: ClassVisitor?,
+    private val collectAll: Boolean = false,
+    next: ClassVisitor? = null,
 ) : ClassVisitor(Opcodes.ASM9, next) {
 
     private var skip: Boolean = false
@@ -24,69 +25,89 @@ class CollectReflectionConfig(
     override fun visit(version: Int, access: Int, name: String, signature: String?,
                        superName: String?, interfaces: Array<out String>?) {
         this.name = name
-        skip = name.startsWith(NatJRuntime.NATJ_CLASS_PREFIX)
-        if (!skip) {
-            visit = NatJRuntime.isNativeObjectDescendant(superName)
+
+        if (collectAll) {
+            config.addClass(name)
+            skip = false
+            visit = true
+        } else {
+            skip = name.startsWith(NatJRuntime.NATJ_CLASS_PREFIX)
+            if (!skip) {
+                visit = NatJRuntime.isNativeObjectDescendant(superName)
+            }
+
+            if (!skip && visit) {
+                config.addClass(name)
+            }
         }
 
-        if (!skip && visit) {
-            config.addClass(name)
-        }
         super.visit(version, access, name, signature, superName, interfaces)
     }
 
-    override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor {
-        if (!skip && !visit) {
-            visit = descriptor in EXPORTED_ANNOTATION_DESC
-        }
+    override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
+        if (!collectAll) {
+            if (!skip && !visit) {
+                visit = descriptor in EXPORTED_ANNOTATION_DESC
+            }
 
-        if (!skip && visit) {
-            config.addClass(name)
+            if (!skip && visit) {
+                config.addClass(name)
+            }
         }
         return super.visitAnnotation(descriptor, visible)
     }
 
     override fun visitField(access: Int, name: String, descriptor: String,
-                            signature: String?, value: Any?): FieldVisitor {
-        if (skip || !visit) {
-            return super.visitField(access, name, descriptor, signature, value)
-        }
-
-        if (name == NatJRuntime.NATJ_STRUCT_OBJECT_CACHE_FIELD) {
+                            signature: String?, value: Any?): FieldVisitor? {
+        if (collectAll) {
             config.addField(this.name, name)
             return super.visitField(access, name, descriptor, signature, value)
+        } else {
+            if (skip || !visit) {
+                return super.visitField(access, name, descriptor, signature, value)
+            }
+
+            if (name == NatJRuntime.NATJ_STRUCT_OBJECT_CACHE_FIELD) {
+                config.addField(this.name, name)
+                return super.visitField(access, name, descriptor, signature, value)
+            }
+
+            val fv = super.visitField(access, name, descriptor, signature, value)
+
+            return FieldInspector(
+                config = config,
+                declaringClass = this.name,
+                name = name,
+                next = fv
+            )
         }
-
-        val fv = super.visitField(access, name, descriptor, signature, value)
-
-        return FieldInspector(
-            config = config,
-            declaringClass = this.name,
-            name = name,
-            next = fv
-        )
     }
 
     override fun visitMethod(access: Int, name: String, descriptor: String,
-                             signature: String?, exceptions: Array<out String>?): MethodVisitor {
-        if (skip || !visit) {
-            return super.visitMethod(access, name, descriptor, signature, exceptions)
-        }
-
-        if (name == "<init>" && descriptor == NatJRuntime.NATJ_NATIVE_OBJECT_CONSTRUCTOR_DESC) {
+                             signature: String?, exceptions: Array<out String>?): MethodVisitor? {
+        if (collectAll) {
             config.addMethod(this.name, name, descriptor)
             return super.visitMethod(access, name, descriptor, signature, exceptions)
+        } else {
+            if (skip || !visit) {
+                return super.visitMethod(access, name, descriptor, signature, exceptions)
+            }
+
+            if (name == "<init>" && descriptor == NatJRuntime.NATJ_NATIVE_OBJECT_CONSTRUCTOR_DESC) {
+                config.addMethod(this.name, name, descriptor)
+                return super.visitMethod(access, name, descriptor, signature, exceptions)
+            }
+
+            val mv = super.visitMethod(access, name, descriptor, signature, exceptions)
+
+            return MethodInspector(
+                config = config,
+                declaringClass = this.name,
+                name = name,
+                methodDescriptor = descriptor,
+                next = mv
+            )
         }
-
-        val mv = super.visitMethod(access, name, descriptor, signature, exceptions)
-
-        return MethodInspector(
-            config = config,
-            declaringClass = this.name,
-            name = name,
-            methodDescriptor = descriptor,
-            next = mv
-        )
     }
 
     private class FieldInspector(
@@ -97,7 +118,7 @@ class CollectReflectionConfig(
     ) : FieldVisitor(Opcodes.ASM9, next) {
         private var visit: Boolean = false
 
-        override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor {
+        override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
             if (!visit) {
                 visit = descriptor in EXPORTED_ANNOTATION_DESC
             }
@@ -121,7 +142,7 @@ class CollectReflectionConfig(
     ) : MethodVisitor(Opcodes.ASM9, next) {
         private var visit: Boolean = false
 
-        override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor {
+        override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
             if (!visit) {
                 visit = descriptor in EXPORTED_ANNOTATION_DESC
             }

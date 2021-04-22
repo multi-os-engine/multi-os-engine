@@ -33,7 +33,7 @@ class AddMissingNatJRegister(
         super.visit(version, access, name, signature, superName, interfaces)
     }
 
-    override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor {
+    override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
         if (!skip && !visit) {
             visit = NatJRuntime.RUNTIME_ANNOTATION_DESC == descriptor
         }
@@ -41,7 +41,7 @@ class AddMissingNatJRegister(
     }
 
     override fun visitMethod(access: Int, name: String, descriptor: String,
-                             signature: String?, exceptions: Array<out String>?): MethodVisitor {
+                             signature: String?, exceptions: Array<out String>?): MethodVisitor? {
         if (skip || !visit || CLI != null) {
             return super.visitMethod(access, name, descriptor, signature, exceptions)
         }

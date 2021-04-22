@@ -27,7 +27,7 @@ object ClassValidator {
 
                 val byteCode = processClass(cr) { next ->
                     next
-                        .let { CollectReflectionConfig(reflectionConfig, it) }
+                        .let { CollectReflectionConfig(config = reflectionConfig, next = it) }
                         .let(::AddMissingNatJRegister)
                 }
 
