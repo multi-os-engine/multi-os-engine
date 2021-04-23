@@ -1,9 +1,11 @@
 package org.moe.gradle.tasks
 
+import org.gradle.api.GradleException
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.SourceSet
+import org.moe.gradle.MoeExtension
 import org.moe.gradle.MoePlugin
 import org.moe.gradle.anns.IgnoreUnused
 import org.moe.gradle.anns.NotNull
@@ -71,6 +73,36 @@ open class ClassValidate : AbstractBaseTask() {
                 + getInputFiles().toSet(),
             outputDir = getOutputDir().absoluteFile.toPath(),
         )
+
+        // Collect platform reflection settings
+//        val libraryJars: MutableSet<File> = linkedSetOf(moeSDK.coreJar)
+//        moeExtension.platformJar?.let {
+//            libraryJars.add(it)
+//        }
+        when (moeExtension.proguardLevelRaw) {
+            MoeExtension.PROGUARD_LEVEL_ALL -> {
+                // Nothing to be done here, should be handled by [ClassValidator] above
+            }
+            else -> {
+                throw GradleException("Only proguardLevel 'all' is supported atm.")
+            }
+        }
+//        when (moeExtension.proguardLevelRaw) {
+//            MoeExtension.PROGUARD_LEVEL_APP -> {
+////                libraryJars.add(moeSDK.coreJar)
+//                moeExtension.platformJar?.let {
+//                    libraryJars.add(it)
+//                }
+//            }
+//            MoeExtension.PROGUARD_LEVEL_PLATFORM -> {
+////                libraryJars.add(moeSDK.coreJar)
+//            }
+//        }
+//        ReflectionCollector.process(
+//            inputFiles = libraryJars,
+//            outputFile = libraryReflectionConfigFile.toPath(),
+//            classpath = emptySet()
+//        )
     }
 
     lateinit var proGuardTaskDep: ProGuard
