@@ -233,29 +233,6 @@ int moevm(const int jargc, char* const* jargv) {
 //      [args addObject:opt];
 //    }
 //
-//    // Build up class preregister list
-//    NSURL* url = [NSURL URLWithString:@"preregister.txt"
-//                        relativeToURL:[mainBundle resourceURL]];
-//    NSString* fileContents =
-//        [NSString stringWithContentsOfFile:[url path]
-//                                  encoding:NSUTF8StringEncoding
-//                                     error:nil];
-//    NSMutableArray* lines = [NSMutableArray
-//        arrayWithArray:[fileContents componentsSeparatedByCharactersInSet:
-//                                         [NSCharacterSet newlineCharacterSet]]];
-//    [lines
-//        filterUsingPredicate:
-//            [NSPredicate predicateWithBlock:^BOOL(id line, NSDictionary* dict) {
-//                return [line length] > 0;
-//            }]];
-//
-//    // Create c argument array for preregister list
-//    NSUInteger prec = [lines count];
-//    const char** prev = (char const**)alloca(prec * sizeof(char*));
-//    for (NSUInteger i = 0; i < prec; i++) {
-//      prev[i] = [[lines objectAtIndex:i] UTF8String];
-//    }
-//
 //    // Create c argument array
 //    NSUInteger argc = [args count];
 //    const char** argv = (char const**)alloca((argc + 1) * sizeof(char*));
@@ -293,6 +270,40 @@ JNIEXPORT jstring JNICALL Java_org_moe_MOE_getUserMainClassName(JNIEnv* env,
         const char* cStr = [mainClass UTF8String];
         
         return env->NewStringUTF(cStr);
+    }
+}
+    
+JNIEXPORT jobjectArray JNICALL Java_org_moe_MOE_getPreregisterClasses(JNIEnv* env,
+                                                                      jclass clazz) {
+    @autoreleasepool {
+        // Build up class preregister list
+        NSBundle* mainBundle = [NSBundle mainBundle];
+        
+        NSURL* url = [NSURL URLWithString:@"preregister.txt"
+                            relativeToURL:[mainBundle resourceURL]];
+        NSString* fileContents =
+            [NSString stringWithContentsOfFile:[url path]
+                                      encoding:NSUTF8StringEncoding
+                                         error:nil];
+        NSMutableArray* lines = [NSMutableArray
+            arrayWithArray:[fileContents componentsSeparatedByCharactersInSet:
+                                             [NSCharacterSet newlineCharacterSet]]];
+        [lines
+            filterUsingPredicate:
+                [NSPredicate predicateWithBlock:^BOOL(id line, NSDictionary* dict) {
+                    return [line length] > 0;
+                }]];
+        
+        NSUInteger prec = [lines count];
+        jclass stringClass = env->FindClass("java/lang/String");
+        jobjectArray result = env->NewObjectArray(prec, stringClass, NULL);
+        for (NSUInteger i = 0; i < prec; i++) {
+            const char* cStr = [[lines objectAtIndex:i] UTF8String];
+            jstring str = env->NewStringUTF(cStr);
+            env->SetObjectArrayElement(result, i, str);
+        }
+        
+        return result;
     }
 }
 

@@ -28,11 +28,23 @@ public class MOE {
      * The MOE main entrance
      */
     public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
+        // Register classes
+        for (String c : getPreregisterClasses()) {
+            System.out.println("Load preregistered class " + c);
+            try {
+                Class.forName(c, true, MOE.class.getClassLoader());
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException("Unable to load preregistered class " + c, e);
+            }
+        }
+
+        // Get main class
         String mainClass = getUserMainClassName();
-        if(mainClass == null) {
+        if (mainClass == null) {
             throw new RuntimeException("mainClass is missing!");
         }
 
+        // Invoke main method
         Method mainMethod;
         try {
             Class<?> c = Class.forName(mainClass);
@@ -42,6 +54,8 @@ public class MOE {
         }
         mainMethod.invoke(null, (Object)args);
     }
+
+    private native static String[] getPreregisterClasses();
 
     private native static String getUserMainClassName();
 }
