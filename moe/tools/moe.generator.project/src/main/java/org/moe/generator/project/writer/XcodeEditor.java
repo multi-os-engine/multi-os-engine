@@ -401,4 +401,23 @@ public class XcodeEditor extends AbstractXcodeEditor {
         }
         return (PBXGroup)objectRef.getReferenced();
     }
+
+    public File getInfoPlist(final String targetName, final String configuration) {
+        PBXNativeTarget t = getTarget(targetName);
+        Map<String, String> s = getBuildSetting(t, "INFOPLIST_FILE", null);
+
+        String f = s.get(configuration);
+        if (f == null) {
+            return null;
+        }
+
+        File sourceRoot = projectFile.getSourceRoot();
+        f = f.replaceAll("/", "\\" + File.separator);
+        f = f.replaceAll("\\$\\(SRCROOT\\)", sourceRoot.getAbsolutePath());
+        final File file = new File(f);
+        if (file.isAbsolute()) {
+            return file;
+        }
+        return new File(sourceRoot, f);
+    }
 }
