@@ -1,5 +1,7 @@
 package org.moe.tools.classvalidator.natj
 
+import org.objectweb.asm.Type
+
 object NatJRuntime {
 
     const val NATJ_CLASS_PREFIX = "org/moe/natj/"
@@ -43,5 +45,26 @@ object NatJRuntime {
     private val classLoader: ClassLoader
         get() = Thread.currentThread().contextClassLoader!!
 
-    fun getClassFor(cls: String): Class<*> = classLoader.loadClass(cls.replace("/", "."))
+    fun getClassFor(cls: String): Class<*> = Class.forName(cls.replace("/", "."), false, classLoader)
+
+    fun Type.getPackageName(): String {
+        return className.split('.').dropLast(1).joinToString(".")
+    }
+
+    fun Type.toClass(): Class<*> {
+        return when (this.sort) {
+            Type.VOID -> java.lang.Void.TYPE
+            Type.BOOLEAN -> java.lang.Boolean.TYPE
+            Type.CHAR -> java.lang.Character.TYPE
+            Type.BYTE -> java.lang.Byte.TYPE
+            Type.SHORT -> java.lang.Short.TYPE
+            Type.INT -> java.lang.Integer.TYPE
+            Type.FLOAT -> java.lang.Float.TYPE
+            Type.LONG -> java.lang.Long.TYPE
+            Type.DOUBLE -> java.lang.Double.TYPE
+            Type.ARRAY -> getClassFor(this.internalName)
+            Type.OBJECT -> getClassFor(this.className)
+            else -> throw IllegalArgumentException("$this")
+        }
+    }
 }

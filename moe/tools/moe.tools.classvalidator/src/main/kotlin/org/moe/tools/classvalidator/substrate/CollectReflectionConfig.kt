@@ -1,11 +1,16 @@
 package org.moe.tools.classvalidator.substrate
 
 import org.moe.tools.classvalidator.natj.NatJRuntime
+import org.moe.tools.classvalidator.natj.NatJRuntime.getPackageName
+import org.moe.tools.classvalidator.natj.NatJRuntime.toClass
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.FieldVisitor
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
+import org.objectweb.asm.Type
+import java.lang.reflect.Method
+import java.lang.reflect.Modifier
 
 /**
  * Collect all classes, methods & fields that will be used by NatJ via reflection & JNI,
@@ -21,10 +26,14 @@ class CollectReflectionConfig(
     private var visit: Boolean = false
 
     private lateinit var name: String
+    private var superName: String? = null
+    private var interfaces: Array<out String>? = null
 
     override fun visit(version: Int, access: Int, name: String, signature: String?,
                        superName: String?, interfaces: Array<out String>?) {
         this.name = name
+        this.superName = superName
+        this.interfaces = interfaces
 
         if (collectAll) {
             config.addClass(name)
@@ -75,8 +84,7 @@ class CollectReflectionConfig(
             val fv = super.visitField(access, name, descriptor, signature, value)
 
             return FieldInspector(
-                config = config,
-                declaringClass = this.name,
+                declaringClass = this,
                 name = name,
                 next = fv
             )
@@ -101,8 +109,8 @@ class CollectReflectionConfig(
             val mv = super.visitMethod(access, name, descriptor, signature, exceptions)
 
             return MethodInspector(
-                config = config,
-                declaringClass = this.name,
+                declaringClass = this,
+                access = access,
                 name = name,
                 methodDescriptor = descriptor,
                 next = mv
@@ -111,8 +119,7 @@ class CollectReflectionConfig(
     }
 
     private class FieldInspector(
-        private val config: ReflectionConfig,
-        private val declaringClass: String,
+        private val declaringClass: CollectReflectionConfig,
         private val name: String,
         next: FieldVisitor?,
     ) : FieldVisitor(Opcodes.ASM9, next) {
@@ -127,15 +134,15 @@ class CollectReflectionConfig(
 
         override fun visitEnd() {
             if (visit) {
-                config.addField(declaringClass, name)
+                declaringClass.config.addField(declaringClass.name, name)
             }
             super.visitEnd()
         }
     }
 
     private class MethodInspector(
-        private val config: ReflectionConfig,
-        private val declaringClass: String,
+        private val declaringClass: CollectReflectionConfig,
+        private val access: Int,
         private val name: String,
         private val methodDescriptor: String,
         next: MethodVisitor?,
@@ -150,10 +157,76 @@ class CollectReflectionConfig(
         }
 
         override fun visitEnd() {
+            if (!visit) {
+                // Check parent method for inherited annotations
+                val parents = mutableListOf<String>()
+
+                declaringClass.superName?.let {
+                    parents.add(it)
+                }
+                declaringClass.interfaces?.let {
+                    parents.addAll(it)
+                }
+                visit = parents.any {
+                    checkParent(NatJRuntime.getClassFor(it))
+                }
+            }
+
             if (visit) {
-                config.addMethod(declaringClass, name, methodDescriptor)
+                declaringClass.config.addMethod(declaringClass.name, name, methodDescriptor)
             }
             super.visitEnd()
+        }
+
+        private fun checkParent(c: Class<*>?): Boolean {
+            if (c == null) {
+                return false
+            }
+
+            try {
+                val m = c.getDeclaredMethod(name, *getParamClasses(methodDescriptor))
+                if (overrideByThis(m)) {
+                    return true
+                }
+            } catch (e: NoSuchMethodException) {
+                // Do nothing
+            }
+
+            if (checkParent(c.superclass)) {
+                return true
+            }
+
+            return c.interfaces.any { checkParent(it) }
+        }
+
+        private fun overrideByThis(parentMethod: Method): Boolean {
+            val parentClass = parentMethod.declaringClass
+            if (Modifier.isPrivate(access) || Modifier.isPrivate(parentMethod.modifiers)) {
+                return false
+            }
+            if (Modifier.isStatic(access) || Modifier.isStatic(parentMethod.modifiers)) {
+                return false
+            }
+            if (Modifier.isFinal(parentMethod.modifiers)) {
+                return false
+            }
+            if (compareAccess(access, parentMethod.modifiers) < 0) {
+                return false
+            }
+            if ((isPackageAccess(access) || isPackageAccess(parentMethod.modifiers))
+                && Type.getObjectType(declaringClass.name).getPackageName() != parentClass.`package`?.name) {
+                return false
+            }
+            val methodDesc = Type.getMethodType(methodDescriptor)
+            val retType = methodDesc.returnType.toClass()
+            if (!parentMethod.returnType.isAssignableFrom(retType)) {
+                return false
+            }
+            val paramsB = parentMethod.parameterTypes.map(Type::getType)
+            if (methodDesc.argumentTypes.toList() != paramsB) {
+                return false
+            }
+            return true
         }
     }
 
@@ -171,5 +244,22 @@ class CollectReflectionConfig(
             "Lorg/moe/natj/c/ann/StructureField;",
             // TODO: add CXX annotations
         )
+
+        private const val ACCESS_MODIFIERS = Modifier.PUBLIC or Modifier.PROTECTED or Modifier.PRIVATE
+
+        private fun isPackageAccess(mods: Int): Boolean = (mods and ACCESS_MODIFIERS) == 0
+        private val ACCESS_ORDER = listOf(
+            Modifier.PRIVATE,
+            0,
+            Modifier.PROTECTED,
+            Modifier.PUBLIC
+        )
+
+        private fun compareAccess(lhs: Int, rhs: Int): Int = ACCESS_ORDER.indexOf(lhs and ACCESS_MODIFIERS)
+            .compareTo(ACCESS_ORDER.indexOf(rhs and ACCESS_MODIFIERS))
+
+        private fun getParamClasses(desc: String): Array<Class<*>> {
+            return Type.getMethodType(desc).argumentTypes.map { it.toClass() }.toTypedArray()
+        }
     }
 }
