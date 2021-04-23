@@ -20,7 +20,7 @@ private fun Project.tryLocalProperty(key: String): String? {
         return propFile.getProperty(key)
     }
 
-    return null
+    return parent?.tryLocalProperty(key)
 }
 
 fun Project.tryGetProperty(key: String): String? {
