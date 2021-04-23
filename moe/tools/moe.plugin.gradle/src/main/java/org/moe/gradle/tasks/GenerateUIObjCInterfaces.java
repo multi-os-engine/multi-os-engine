@@ -234,13 +234,6 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
         }
     }
 
-    private ClassValidate classValidateTaskDep;
-
-    @NotNull
-    public ClassValidate getClassValidateTaskDep() {
-        return Require.nonNull(classValidateTaskDep);
-    }
-
     protected final void setupMoeTask() {
         SourceSet sourceSet = TaskUtils.getSourceSet(getMoePlugin(), SourceSet.MAIN_SOURCE_SET_NAME);
         Require.nonNull(sourceSet);
@@ -253,14 +246,13 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
         setDescription("Generates header files for Interface Builder");
 
         // Add dependencies
-        final ClassValidate classValidateTask = getMoePlugin().getTaskBy(ClassValidate.class, sourceSet);
-        classValidateTaskDep = classValidateTask;
-        dependsOn(classValidateTask);
+        final ProGuard proguardTask = getMoePlugin().getTaskBy(ProGuard.class, sourceSet);
+        dependsOn(proguardTask);
 
         // Update convention mapping
         addConvention(CONVENTION_INPUT_FILES, () -> {
             final ArrayList<Object> files = new ArrayList<>();
-            files.add(classValidateTask.getClassesOutputDir());
+            files.add(proguardTask.getOutJar());
             if (getMoeExtension().getProguardLevelRaw() == MoeExtension.PROGUARD_LEVEL_APP) {
                 files.add(getMoeExtension().getPlatformJar());
             }

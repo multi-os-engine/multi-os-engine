@@ -1,15 +1,22 @@
 package org.moe.gradle.tasks
 
+import com.dd.plist.NSDictionary
+import com.dd.plist.NSString
+import com.dd.plist.PropertyListParser
 import org.gradle.api.GradleException
 import org.gradle.api.file.ConfigurableFileCollection
+import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.SourceSet
+import org.moe.generator.project.writer.XcodeEditor
 import org.moe.gradle.MoeExtension
 import org.moe.gradle.MoePlugin
 import org.moe.gradle.anns.IgnoreUnused
 import org.moe.gradle.anns.NotNull
+import org.moe.gradle.anns.Nullable
 import org.moe.gradle.utils.FileUtils
+import org.moe.gradle.utils.Mode
 import org.moe.tools.classvalidator.ClassValidator
 import java.io.File
 import java.nio.file.Paths
@@ -55,6 +62,19 @@ open class ClassValidate : AbstractBaseTask() {
         this.outputDir = outputDir
     }
 
+    private var appMainClassName: String? = null
+
+    @Input
+    @Nullable
+    fun getAppMainClassName(): String? {
+        return getOrConvention(appMainClassName, CONVENTION_APP_MAIN_CLASS_NAME)
+    }
+
+    @IgnoreUnused
+    fun setAppMainClassName(appMainClassName: String?) {
+        this.appMainClassName = appMainClassName
+    }
+
     val classesOutputDir: File
         get() = getOutputDir().resolve(ClassValidator.OUTPUT_CLASSES)
 
@@ -63,10 +83,11 @@ open class ClassValidate : AbstractBaseTask() {
 
     override fun run() {
         // Clean output dir
-        FileUtils.deleteFileOrFolder(getOutputDir());
+        FileUtils.deleteFileOrFolder(getOutputDir())
 
         // Run class validator
         ClassValidator.process(
+            mainClassName = getAppMainClassName(),
             inputFiles = getInputFiles().toSet(),
             classpath = getClasspathFiles().toSet()
                 // Add input to classpath
@@ -127,6 +148,31 @@ open class ClassValidate : AbstractBaseTask() {
         addConvention(CONVENTION_INPUT_FILES) { setOf(proGuardTask.outJar) }
         addConvention(CONVENTION_CLASSPATH_FILES) { setOf(proGuardTask.libraryJars) }
         addConvention(CONVENTION_OUTPUT_DIR) { resolvePathInBuildDir(out, "output") }
+        addConvention(CONVENTION_APP_MAIN_CLASS_NAME) {
+            try {
+                // Figure out the app main class from Info.plist
+                val xcode = moeExtension.xcode
+                val target = if (SourceSet.MAIN_SOURCE_SET_NAME == sourceSet.name) {
+                    xcode.mainTarget
+                } else {
+                    xcode.testTarget
+                }
+                target?.let {
+                    val xcodeFile = project.file(xcode.project)
+                    val xcodeEditor = XcodeEditor(xcodeFile)
+                    // TODO: support different mode?
+                    val infoPlistFile = xcodeEditor.getInfoPlist(target, Mode.RELEASE.xcodeCompatibleName)
+
+                    val rootDict = PropertyListParser.parse(infoPlistFile.readBytes()) as NSDictionary
+                    val mainClass = rootDict["MOE.Main.Class"] as NSString
+
+                    mainClass.content
+                }
+            } catch (e: Exception) {
+                project.logger.warn("Unable to get the MOE.Main.Class from Info.plist, app may not work properly", e)
+                null
+            }
+        }
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "ClassValidate.log") }
     }
 
@@ -134,5 +180,6 @@ open class ClassValidate : AbstractBaseTask() {
         private const val CONVENTION_INPUT_FILES = "inputFiles"
         private const val CONVENTION_CLASSPATH_FILES = "classpathFiles"
         private const val CONVENTION_OUTPUT_DIR = "outputDir"
+        private const val CONVENTION_APP_MAIN_CLASS_NAME = "appMainClassName"
     }
 }
