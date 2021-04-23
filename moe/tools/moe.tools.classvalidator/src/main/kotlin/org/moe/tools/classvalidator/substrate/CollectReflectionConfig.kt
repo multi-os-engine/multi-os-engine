@@ -20,7 +20,7 @@ class CollectReflectionConfig(
     private val config: ReflectionConfig,
     private var collectAll: Boolean = false,
     next: ClassVisitor? = null,
-) : ClassVisitor(Opcodes.ASM9, next) {
+) : ClassVisitor(Opcodes.ASM5, next) {
 
     private var skip: Boolean = false
     private var visit: Boolean = false
@@ -127,7 +127,7 @@ class CollectReflectionConfig(
         private val declaringClass: CollectReflectionConfig,
         private val name: String,
         next: FieldVisitor?,
-    ) : FieldVisitor(Opcodes.ASM9, next) {
+    ) : FieldVisitor(Opcodes.ASM5, next) {
         private var visit: Boolean = false
 
         override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
@@ -151,7 +151,7 @@ class CollectReflectionConfig(
         private val name: String,
         private val methodDescriptor: String,
         next: MethodVisitor?,
-    ) : MethodVisitor(Opcodes.ASM9, next) {
+    ) : MethodVisitor(Opcodes.ASM5, next) {
         private var visit: Boolean = false
 
         override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
