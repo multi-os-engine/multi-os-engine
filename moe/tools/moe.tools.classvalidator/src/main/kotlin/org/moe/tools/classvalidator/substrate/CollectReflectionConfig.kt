@@ -18,7 +18,7 @@ import java.lang.reflect.Modifier
  */
 class CollectReflectionConfig(
     private val config: ReflectionConfig,
-    private val collectAll: Boolean = false,
+    private var collectAll: Boolean = false,
     next: ClassVisitor? = null,
 ) : ClassVisitor(Opcodes.ASM9, next) {
 
@@ -34,6 +34,11 @@ class CollectReflectionConfig(
         this.name = name
         this.superName = superName
         this.interfaces = interfaces
+
+        collectAll = collectAll
+            // Make sure everything from NatJ are available.
+            // TODO: This is a quick hack, refine this
+            || name.startsWith(NatJRuntime.NATJ_CLASS_PREFIX)
 
         if (collectAll) {
             config.addClass(name)
