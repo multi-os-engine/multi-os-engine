@@ -1,6 +1,7 @@
 package org.moe.tools.classvalidator.substrate
 
 import org.moe.tools.classvalidator.natj.NatJRuntime
+import org.moe.tools.classvalidator.natj.NatJRuntime.getDescriptor
 import org.moe.tools.classvalidator.natj.NatJRuntime.getPackageName
 import org.moe.tools.classvalidator.natj.NatJRuntime.toClass
 import org.objectweb.asm.AnnotationVisitor
@@ -191,7 +192,13 @@ class CollectReflectionConfig(
             try {
                 val m = c.getDeclaredMethod(name, *getParamClasses(methodDescriptor))
                 if (overrideByThis(m)) {
-                    return true
+                    // Check annotation
+                    val hasAnnotation = m.declaredAnnotations.any {
+                        it.annotationClass.java.getDescriptor() in EXPORTED_ANNOTATION_DESC
+                    }
+                    if (hasAnnotation) {
+                        return true
+                    }
                 }
             } catch (e: NoSuchMethodException) {
                 // Do nothing

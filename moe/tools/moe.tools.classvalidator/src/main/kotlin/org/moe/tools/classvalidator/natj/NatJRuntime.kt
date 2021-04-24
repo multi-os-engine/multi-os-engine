@@ -42,6 +42,8 @@ object NatJRuntime {
         return false
     }
 
+    fun Class<*>.getDescriptor(): String = Type.getDescriptor(this)
+
     private val classLoader: ClassLoader
         get() = Thread.currentThread().contextClassLoader!!
 
