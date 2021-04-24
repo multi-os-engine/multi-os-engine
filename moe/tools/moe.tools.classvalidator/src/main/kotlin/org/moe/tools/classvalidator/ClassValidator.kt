@@ -1,6 +1,7 @@
 package org.moe.tools.classvalidator
 
 import org.moe.common.utils.classAndJarInputIterator
+import org.moe.tools.classvalidator.natj.AddMissingAnnotations
 import org.moe.tools.classvalidator.natj.AddMissingNatJRegister
 import org.moe.tools.classvalidator.substrate.CollectReflectionConfig
 import org.moe.tools.classvalidator.substrate.ReflectionConfig
@@ -29,6 +30,7 @@ object ClassValidator {
                 val byteCode = processClass(cr) { next ->
                     next
                         .let { CollectReflectionConfig(config = reflectionConfig, next = it) }
+                        .let(::AddMissingAnnotations)
                         .let(::AddMissingNatJRegister)
                 }
 

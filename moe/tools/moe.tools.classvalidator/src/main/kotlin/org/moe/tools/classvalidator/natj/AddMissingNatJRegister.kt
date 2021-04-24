@@ -35,7 +35,7 @@ class AddMissingNatJRegister(
 
     override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
         if (!skip && !visit) {
-            visit = NatJRuntime.RUNTIME_ANNOTATION_DESC == descriptor
+            visit = NatJRuntime.Annotations.RUNTIME_DESC == descriptor
         }
         return super.visitAnnotation(descriptor, visible)
     }

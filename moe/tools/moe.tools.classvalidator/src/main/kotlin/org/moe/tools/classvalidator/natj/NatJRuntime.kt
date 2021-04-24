@@ -6,13 +6,78 @@ import java.lang.reflect.Modifier
 
 object NatJRuntime {
 
+    object Annotations {
+        const val BY_VALUE_DESC = "Lorg/moe/natj/general/ann/ByValue;"
+        const val MAPPED_DESC = "Lorg/moe/natj/general/ann/Mapped;"
+        const val MAPPED_RETURN_DESC = "Lorg/moe/natj/general/ann/MappedReturn;"
+        const val NFLOAT_DESC = "Lorg/moe/natj/general/ann/NFloat;"
+        const val NINT_DESC = "Lorg/moe/natj/general/ann/NInt;"
+        const val NUINT_DESC = "Lorg/moe/natj/general/ann/NUInt;"
+        const val OWNED_DESC = "Lorg/moe/natj/general/ann/Owned;"
+        const val REFERENCE_INFO_DESC = "Lorg/moe/natj/general/ann/ReferenceInfo;"
+
+        const val FUNCTION_PTR_DESC = "Lorg/moe/natj/c/ann/FunctionPtr;"
+
+        const val IBACTION_DESC = "Lorg/moe/natj/objc/ann/IBAction;"
+        const val IBOUTLET_DESC = "Lorg/moe/natj/objc/ann/IBOutlet;"
+        const val IBOUTLET_COLLECTION_DESC = "Lorg/moe/natj/objc/ann/IBOutletCollection;"
+        const val NOT_IMPLEMENTED_DESC = "Lorg/moe/natj/objc/ann/NotImplemented;"
+        const val OBJC_BLOCK_DESC = "Lorg/moe/natj/objc/ann/ObjCBlock;"
+        const val SELECTOR_DESC = "Lorg/moe/natj/objc/ann/Selector;"
+
+        const val RUNTIME_DESC = "Lorg/moe/natj/general/ann/Runtime;"
+
+        val OPTIONALS_DESC: List<String> = listOf(
+            BY_VALUE_DESC,
+            MAPPED_DESC, MAPPED_RETURN_DESC, NFLOAT_DESC, NINT_DESC, NUINT_DESC, OWNED_DESC,
+            REFERENCE_INFO_DESC, FUNCTION_PTR_DESC, IBACTION_DESC, IBOUTLET_DESC,
+            IBOUTLET_COLLECTION_DESC, NOT_IMPLEMENTED_DESC, OBJC_BLOCK_DESC,
+            SELECTOR_DESC,
+        )
+
+        val NON_OPTIONALS_DESC: List<String> = listOf(
+            BY_VALUE_DESC,
+            MAPPED_DESC, MAPPED_RETURN_DESC, NFLOAT_DESC, NINT_DESC, NUINT_DESC, OWNED_DESC,
+            REFERENCE_INFO_DESC, FUNCTION_PTR_DESC, IBACTION_DESC, IBOUTLET_DESC,
+            IBOUTLET_COLLECTION_DESC, OBJC_BLOCK_DESC, SELECTOR_DESC,
+        )
+
+        val COLLIDING_ANNS_DESC: List<List<String>> = listOf(
+            listOf(NFLOAT_DESC, NINT_DESC, NUINT_DESC),
+            listOf(FUNCTION_PTR_DESC, OBJC_BLOCK_DESC),
+            listOf(IBACTION_DESC, IBOUTLET_DESC, IBOUTLET_COLLECTION_DESC),
+            listOf(MAPPED_DESC, MAPPED_RETURN_DESC),
+        )
+
+        val ALL_ANNS_DESC: List<String> = listOf(
+            BY_VALUE_DESC,
+            MAPPED_DESC, MAPPED_RETURN_DESC, NFLOAT_DESC, NINT_DESC, NUINT_DESC, OWNED_DESC,
+            REFERENCE_INFO_DESC, FUNCTION_PTR_DESC, IBACTION_DESC, IBOUTLET_DESC,
+            IBOUTLET_COLLECTION_DESC, NOT_IMPLEMENTED_DESC, OBJC_BLOCK_DESC,
+            SELECTOR_DESC,
+        )
+
+        val RETURN_ANNS_DESC: List<String> = listOf(
+            BY_VALUE_DESC,
+            MAPPED_RETURN_DESC, NFLOAT_DESC, NINT_DESC, NUINT_DESC, OWNED_DESC,
+            REFERENCE_INFO_DESC, FUNCTION_PTR_DESC, IBACTION_DESC, IBOUTLET_DESC,
+            IBOUTLET_COLLECTION_DESC, NOT_IMPLEMENTED_DESC, OBJC_BLOCK_DESC,
+            SELECTOR_DESC,
+        )
+
+        val PARAM_ANNS_DESC: List<String> = listOf(
+            BY_VALUE_DESC,
+            MAPPED_DESC, NFLOAT_DESC, NINT_DESC, NUINT_DESC, OWNED_DESC, REFERENCE_INFO_DESC,
+            FUNCTION_PTR_DESC, OBJC_BLOCK_DESC,
+        )
+    }
+
     const val NATJ_CLASS_PREFIX = "org/moe/natj/"
     const val NATJ_NATIVE_OBJECT = "org.moe.natj.general.NativeObject"
     const val NATJ_NATIVE_OBJECT_CONSTRUCTOR_DESC = "(Lorg/moe/natj/general/Pointer;)V"
     const val NATJ_OWNER = "org/moe/natj/general/NatJ"
     const val NATJ_REGISTER_DESC = "()V"
     const val NATJ_REGISTER_NAME = "register"
-    const val RUNTIME_ANNOTATION_DESC = "Lorg/moe/natj/general/ann/Runtime;"
     const val NATJ_STRUCT_OBJECT_CACHE_FIELD = "__natjCache"
 
     fun isNatJRegisterInsn(owner: String, name: String, desc: String): Boolean {
@@ -48,6 +113,7 @@ object NatJRuntime {
         superName: String?, interfaces: Array<out String>?,
         declaringClass: String, access: Int, name: String, desc: String,
         annotations: Set<String>,
+        allowStatic: Boolean = false,
     ): Method? {
         val parents = mutableListOf<String>()
         superName?.let {
@@ -61,7 +127,8 @@ object NatJRuntime {
             checkParentMethod(
                 c = getClassFor(it),
                 declaringClass = declaringClass, access = access, name = name, desc = desc,
-                annotations = annotations
+                annotations = annotations,
+                allowStatic = allowStatic,
             )?.let { m ->
                 return m
             }
@@ -74,6 +141,7 @@ object NatJRuntime {
         c: Class<*>?,
         declaringClass: String, access: Int, name: String, desc: String,
         annotations: Set<String>,
+        allowStatic: Boolean,
     ): Method? {
         if (c == null) {
             return null
@@ -83,7 +151,8 @@ object NatJRuntime {
             val m = c.getDeclaredMethod(name, *getParamClasses(desc))
             if (isOverride(
                     declaringClass = declaringClass, access = access, desc = desc,
-                    parentMethod = m
+                    parentMethod = m,
+                    allowStatic = allowStatic,
                 )) {
                 // Check annotation
                 val hasAnnotation = m.declaredAnnotations.any {
@@ -100,7 +169,8 @@ object NatJRuntime {
         checkParentMethod(
             c = c.superclass,
             declaringClass = declaringClass, access = access, name = name, desc = desc,
-            annotations = annotations
+            annotations = annotations,
+            allowStatic = allowStatic,
         )?.let {
             return it
         }
@@ -109,7 +179,8 @@ object NatJRuntime {
             checkParentMethod(
                 c = it,
                 declaringClass = declaringClass, access = access, name = name, desc = desc,
-                annotations = annotations
+                annotations = annotations,
+                allowStatic = allowStatic,
             )?.let { m ->
                 return m
             }
@@ -121,15 +192,20 @@ object NatJRuntime {
     private fun isOverride(
         declaringClass: String, access: Int, desc: String,
         parentMethod: Method,
+        allowStatic: Boolean,
     ): Boolean {
         val parentClass = parentMethod.declaringClass
         if (Modifier.isPrivate(access) || Modifier.isPrivate(parentMethod.modifiers)) {
             return false
         }
-        if (Modifier.isStatic(access) || Modifier.isStatic(parentMethod.modifiers)) {
+        if (allowStatic) {
+            if (Modifier.isStatic(access) != Modifier.isStatic(parentMethod.modifiers)) {
+                return false
+            }
+        } else if (Modifier.isStatic(access) || Modifier.isStatic(parentMethod.modifiers)) {
             return false
         }
-        if (Modifier.isFinal(parentMethod.modifiers)) {
+        if (!Modifier.isStatic(access) && Modifier.isFinal(parentMethod.modifiers)) {
             return false
         }
         if (compareAccess(access, parentMethod.modifiers) < 0) {

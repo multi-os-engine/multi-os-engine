@@ -184,11 +184,11 @@ class CollectReflectionConfig(
     companion object {
         private val EXPORTED_ANNOTATION_DESC: Set<String> = setOf(
             "Lorg/moe/natj/general/ann/RegisterOnStartup;",
-            NatJRuntime.RUNTIME_ANNOTATION_DESC,
+            NatJRuntime.Annotations.RUNTIME_DESC,
             "Lorg/moe/natj/objc/ann/InstanceVariable;",
             "Lorg/moe/natj/objc/ann/ObjCBlock;",
             "Lorg/moe/natj/objc/ann/ProtocolClassMethod;",
-            "Lorg/moe/natj/objc/ann/Selector;",
+            NatJRuntime.Annotations.SELECTOR_DESC,
             "Lorg/moe/natj/c/ann/CFunction;",
             "Lorg/moe/natj/c/ann/CVariable;",
             "Lorg/moe/natj/c/ann/Structure;",
