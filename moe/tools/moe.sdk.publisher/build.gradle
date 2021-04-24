@@ -18,24 +18,13 @@ buildscript {
     repositories {
         jcenter()
     }
-    dependencies {
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.15.2"
-    }
-}
-
-plugins {
-    id "com.jfrog.bintray" version "1.8.5"
 }
 
 group 'org.multi-os-engine.community'
-version '1.7.2'
+version '2.0.0'
 
 apply plugin: 'base'
 apply plugin: 'maven-publish'
-
-//if (rootProject.hasProperty('artifactory.url')) {
-    apply plugin: "com.jfrog.artifactory"
-//}
 
 if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
     tasks.build.dependsOn ':ext_natj_mac'
@@ -195,53 +184,6 @@ task devsdk(type: Copy, dependsOn: build) {
     with getSDKCopySpec()
 }
 
-bintray {
-    if (project.hasProperty('bintray.user')) {
-        user = property('bintray.user')
-    }
-    if (project.hasProperty('bintray.key')) {
-        key = property('bintray.key')
-    }
-
-    publications = ['mavenJava']
-
-    pkg {
-        repo = 'maven'
-        name = 'moe-sdk'
-        // userOrg = 'multi-os-engine'
-        websiteUrl = 'https://discuss.multi-os-engine.org'
-        vcsUrl = 'https://github.com/multi-os-engine-community/multi-os-engine'
-        licenses = ['Apache-2.0']
-        labels = ['moe', 'multi-os-engine']
-        publicDownloadNumbers = false
-
-        publish = true
-
-        version {
-            name = project.version
-        }
-    }
-}
-
-if (rootProject.hasProperty('artifactory.url')) {
-    artifactory {
-        contextUrl = rootProject.getProperty('artifactory.url')
-        publish {
-            repository {
-                repoKey = rootProject.getProperty('artifactory.key')
-                username = rootProject.getProperty('artifactory.user')
-                password = rootProject.getProperty('artifactory.pass')
-            }
-            defaults {
-                publications('mavenJavaSnapshot')
-                publishArtifacts = true
-                publishPom = true
-                publishIvy = true
-            }
-        }
-    }
-}
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -250,6 +192,17 @@ publishing {
         mavenJavaSnapshot(MavenPublication) {
             artifact sdk {}
             version = "${project.version}-SNAPSHOT"
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/multi-os-engine-community/moe-sdk-publisher")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+            }
         }
     }
 }
