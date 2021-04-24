@@ -18,13 +18,9 @@ buildscript {
     repositories {
         jcenter()
     }
-    dependencies {
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.15.2"
-    }
 }
 
 plugins {
-    id "com.jfrog.bintray" version "1.8.5"
     id "org.jetbrains.kotlin.jvm"
     id "maven-publish"
 }
@@ -41,10 +37,6 @@ String loadPluginVersion() {
 }
 
 version loadPluginVersion()
-
-if (rootProject.hasProperty('artifactory.url')) {
-    apply plugin: "com.jfrog.artifactory"
-}
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -115,53 +107,6 @@ topDeps.each {topDep ->
 
 tasks.test.dependsOn ':moe-sdk:devsdk'
 
-bintray {
-    if (project.hasProperty('bintray.user')) {
-        user = property('bintray.user')
-    }
-    if (project.hasProperty('bintray.key')) {
-        key = property('bintray.key')
-    }
-
-    publications = ['mavenJava']
-
-    pkg {
-        repo = 'maven'
-        name = 'moe-gradle'
-        // userOrg = 'multi-os-engine'
-        websiteUrl = 'https://discuss.multi-os-engine.org'
-        vcsUrl = 'https://github.com/multi-os-engine-community/moe-plugin-gradle'
-        licenses = ['Apache-2.0']
-        labels = ['moe', 'multi-os-engine']
-        publicDownloadNumbers = false
-
-        publish = true
-
-        version {
-            name = project.version
-        }
-    }
-}
-
-if (rootProject.hasProperty('artifactory.url')) {
-    artifactory {
-        contextUrl = rootProject.getProperty('artifactory.url')
-        publish {
-            repository {
-                repoKey = rootProject.getProperty('artifactory.key')
-                username = rootProject.getProperty('artifactory.user')
-                password = rootProject.getProperty('artifactory.pass')
-            }
-            defaults {
-                publications('mavenJavaSnapshot')
-                publishArtifacts = true
-                publishPom = true
-                publishIvy = true
-            }
-        }
-    }
-}
-
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
@@ -189,6 +134,17 @@ publishing {
             group project.group
             artifactId 'moe-gradle'
             version = "${project.version}-SNAPSHOT"
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/multi-os-engine-community/moe-plugin-gradle")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+            }
         }
     }
 }
