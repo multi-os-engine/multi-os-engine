@@ -40,6 +40,9 @@ class SubstrateExecutor(
                 "-H:PageSize=16384",
 
                 // Common args
+                "-Djdk.internal.lambda.eagerlyInitialize=false",
+                "-H:-DeadlockWatchdogExitOnTimeout",
+                "-H:DeadlockWatchdogInterval=0",
                 "-H:+ExitAfterRelocatableImageWrite",
                 "--features=org.graalvm.home.HomeFinderFeature",
                 "-H:CompilerBackend=llvm",
