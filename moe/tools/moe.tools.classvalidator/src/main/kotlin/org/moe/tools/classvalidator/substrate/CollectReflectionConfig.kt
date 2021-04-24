@@ -110,7 +110,6 @@ class CollectReflectionConfig(
 
             return MethodInspector(
                 declaringClass = this,
-                access = access,
                 name = name,
                 methodDescriptor = descriptor,
                 next = mv
@@ -142,7 +141,6 @@ class CollectReflectionConfig(
 
     private class MethodInspector(
         private val declaringClass: CollectReflectionConfig,
-        private val access: Int,
         private val name: String,
         private val methodDescriptor: String,
         next: MethodVisitor?,
@@ -157,23 +155,6 @@ class CollectReflectionConfig(
         }
 
         override fun visitEnd() {
-            if (!visit) {
-                // Check parent method for inherited annotations
-                val parents = mutableListOf<String>()
-
-                declaringClass.superName?.let {
-                    parents.add(it)
-                }
-                declaringClass.interfaces?.let {
-                    parents.addAll(it)
-                }
-                visit = NatJRuntime.getParentImplementation(
-                    superName = declaringClass.superName, interfaces = declaringClass.interfaces,
-                    declaringClass = declaringClass.name, access = access, name = name, desc = methodDescriptor,
-                    annotations = EXPORTED_ANNOTATION_DESC
-                ) != null
-            }
-
             if (visit) {
                 declaringClass.config.addMethod(declaringClass.name, name, methodDescriptor)
             }
