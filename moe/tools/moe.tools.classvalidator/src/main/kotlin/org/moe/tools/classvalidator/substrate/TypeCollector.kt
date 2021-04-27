@@ -7,6 +7,10 @@ import org.objectweb.asm.commons.ClassRemapper
 import org.objectweb.asm.commons.Remapper
 import java.io.File
 
+/**
+ * A simple util that collect all classes that has been used by the classes from given classpath.
+ * The used types include external classes as well as the classes from the classpath.
+ */
 object TypeCollector {
     fun process(
         classpath: Set<File>,
