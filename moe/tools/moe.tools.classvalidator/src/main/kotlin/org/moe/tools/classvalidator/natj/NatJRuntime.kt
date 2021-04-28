@@ -3,6 +3,7 @@ package org.moe.tools.classvalidator.natj
 import org.objectweb.asm.Type
 import java.lang.reflect.Method
 import java.lang.reflect.Modifier
+import java.util.LinkedList
 
 object NatJRuntime {
 
@@ -26,6 +27,7 @@ object NatJRuntime {
         const val SELECTOR_DESC = "Lorg/moe/natj/objc/ann/Selector;"
 
         const val RUNTIME_DESC = "Lorg/moe/natj/general/ann/Runtime;"
+        const val OBJC_PROTOCOL_NAME_DESC = "Lorg/moe/natj/objc/ann/ObjCProtocolName;"
 
         val OPTIONALS_DESC: List<String> = listOf(
             BY_VALUE_DESC,
@@ -109,87 +111,68 @@ object NatJRuntime {
         return false
     }
 
+    fun getParentImplementations(
+        superName: String?, interfaces: Array<out String>?,
+        declaringClass: String, access: Int, name: String, desc: String,
+        annotations: Set<String>,
+        allowStatic: Boolean = false,
+    ): List<Method> {
+        val ps: MutableSet<Class<*>> = linkedSetOf()
+
+        var s: Class<*>? = superName?.let { getClassFor(it) }
+        while (s != null) {
+            ps.add(s)
+
+            s = s.superclass
+        }
+
+        val itfs: LinkedList<Class<*>> = LinkedList()
+        interfaces?.let { itfs.addAll(it.map(this::getClassFor)) }
+        while (itfs.isNotEmpty()) {
+            val itf = itfs.pop()
+            ps.add(itf)
+
+            itfs.addAll(itf.interfaces)
+        }
+
+        val results: MutableList<Method> = mutableListOf()
+
+        ps.forEach { c ->
+            try {
+                val m = c.getDeclaredMethod(name, *getParamClasses(desc))
+                if (isOverride(
+                        declaringClass = declaringClass, access = access, desc = desc,
+                        parentMethod = m,
+                        allowStatic = allowStatic,
+                    )) {
+                    // Check annotation
+                    val hasAnnotation = m.declaredAnnotations.any {
+                        it.annotationClass.java.getDescriptor() in annotations
+                    }
+                    if (hasAnnotation) {
+                        results.add(m)
+                    }
+                }
+            } catch (e: NoSuchMethodException) {
+                // Do nothing
+            }
+        }
+
+        return results
+    }
+
     fun getParentImplementation(
         superName: String?, interfaces: Array<out String>?,
         declaringClass: String, access: Int, name: String, desc: String,
         annotations: Set<String>,
         allowStatic: Boolean = false,
     ): Method? {
-        val parents = mutableListOf<String>()
-        superName?.let {
-            parents.add(it)
-        }
-        interfaces?.let {
-            parents.addAll(it)
-        }
-
-        parents.forEach {
-            checkParentMethod(
-                c = getClassFor(it),
-                declaringClass = declaringClass, access = access, name = name, desc = desc,
-                annotations = annotations,
-                allowStatic = allowStatic,
-            )?.let { m ->
-                return m
-            }
-        }
-
-        return null
+        return getParentImplementations(
+            superName, interfaces, declaringClass, access, name, desc, annotations, allowStatic
+        ).firstOrNull()
     }
 
-    private fun checkParentMethod(
-        c: Class<*>?,
-        declaringClass: String, access: Int, name: String, desc: String,
-        annotations: Set<String>,
-        allowStatic: Boolean,
-    ): Method? {
-        if (c == null) {
-            return null
-        }
-
-        try {
-            val m = c.getDeclaredMethod(name, *getParamClasses(desc))
-            if (isOverride(
-                    declaringClass = declaringClass, access = access, desc = desc,
-                    parentMethod = m,
-                    allowStatic = allowStatic,
-                )) {
-                // Check annotation
-                val hasAnnotation = m.declaredAnnotations.any {
-                    it.annotationClass.java.getDescriptor() in annotations
-                }
-                if (hasAnnotation) {
-                    return m
-                }
-            }
-        } catch (e: NoSuchMethodException) {
-            // Do nothing
-        }
-
-        checkParentMethod(
-            c = c.superclass,
-            declaringClass = declaringClass, access = access, name = name, desc = desc,
-            annotations = annotations,
-            allowStatic = allowStatic,
-        )?.let {
-            return it
-        }
-
-        c.interfaces.forEach {
-            checkParentMethod(
-                c = it,
-                declaringClass = declaringClass, access = access, name = name, desc = desc,
-                annotations = annotations,
-                allowStatic = allowStatic,
-            )?.let { m ->
-                return m
-            }
-        }
-
-        return null
-    }
-
-    private fun isOverride(
+    fun isOverride(
         declaringClass: String, access: Int, desc: String,
         parentMethod: Method,
         allowStatic: Boolean,
