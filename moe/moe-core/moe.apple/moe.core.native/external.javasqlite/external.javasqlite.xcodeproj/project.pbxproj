@@ -12,9 +12,6 @@
 
 /* Begin PBXFileReference section */
 		2353A66C17CE1B21005CF3CC /* libjavasqlite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libjavasqlite.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		238453BD19E2C2AA000DFC86 /* AndroidConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AndroidConfig.h; sourceTree = "<group>"; };
-		238453BE19E2C2AA000DFC86 /* MOE-Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOE-Common.h"; sourceTree = "<group>"; };
-		238453BF19E2C2AA000DFC86 /* MOE-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOE-Prefix.pch"; sourceTree = "<group>"; };
 		57F74FC41B8337CC00FA96FD /* sqlite_jni.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sqlite_jni.c; path = javasqlite/src/main/native/sqlite_jni.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -32,8 +29,7 @@
 		2353A5EE17CE19B5005CF3CC = {
 			isa = PBXGroup;
 			children = (
-				D9A0F132183A94F500523C62 /* Android Root */,
-				D94FEED4183AB17100589FCA /* Common Configuration */,
+				D9A0F132183A94F500523C62 /* Project Root */,
 				2353A5FA17CE1AD7005CF3CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,24 +59,13 @@
 			name = javasqlite;
 			sourceTree = "<group>";
 		};
-		D94FEED4183AB17100589FCA /* Common Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				238453BD19E2C2AA000DFC86 /* AndroidConfig.h */,
-				238453BE19E2C2AA000DFC86 /* MOE-Common.h */,
-				238453BF19E2C2AA000DFC86 /* MOE-Prefix.pch */,
-			);
-			name = "Common Configuration";
-			path = ../moe.base/src/main/native;
-			sourceTree = "<group>";
-		};
-		D9A0F132183A94F500523C62 /* Android Root */ = {
+		D9A0F132183A94F500523C62 /* Project Root */ = {
 			isa = PBXGroup;
 			children = (
 				238453C119E2C2E6000DFC86 /* external */,
 			);
-			name = "Android Root";
-			path = ../../../../../aosp;
+			name = "Project Root";
+			path = ../../../../..;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -110,11 +95,12 @@
 			attributes = {
 				LastUpgradeCheck = 0600;
 			};
-			buildConfigurationList = 2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "android.external.javasqlite" */;
+			buildConfigurationList = 2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "external.javasqlite" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -144,7 +130,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
@@ -155,8 +140,6 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"ANDROID_SMP=1",
-					ANDROID,
 					"MOE=1",
 					HAVE_LITTLE_ENDIAN,
 					"DEBUG=1",
@@ -170,6 +153,7 @@
 					"-fexceptions",
 					"-fstack-protector-strong",
 				);
+				PROJECT_ROOT = "$(SRCROOT)/../../../../..";
 				SDKROOT = iphoneos;
 				SYMROOT = build/xcode;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -185,7 +169,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
@@ -195,8 +178,6 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"ANDROID_SMP=1",
-					ANDROID,
 					"MOE=1",
 					HAVE_LITTLE_ENDIAN,
 					NDEBUG,
@@ -210,6 +191,7 @@
 					"-fexceptions",
 					"-fstack-protector-strong",
 				);
+				PROJECT_ROOT = "$(SRCROOT)/../../../../..";
 				SDKROOT = iphoneos;
 				SYMROOT = build/xcode;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -225,7 +207,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -239,15 +220,15 @@
 				GCC_INPUT_FILETYPE = sourcecode.c.c;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/../moe.base/src/main/native/MOE-Prefix.pch";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = (
-					"\"$(ANDROID_ROOT)/external/javasqlite/src/main/native\"",
-					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
+					"\"$(PROJECT_ROOT)/external/javasqlite/src/main/native\"",
+					"$(PROJECT_ROOT)/moe/natj/natj/src/main/native/include",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROJECT_ROOT = "$(SRCROOT)/../../../../..";
 				SKIP_INSTALL = YES;
 			};
 			name = "Debug-ios";
@@ -256,7 +237,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -268,15 +248,15 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_INPUT_FILETYPE = sourcecode.c.c;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/../moe.base/src/main/native/MOE-Prefix.pch";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = (
-					"\"$(ANDROID_ROOT)/external/javasqlite/src/main/native\"",
-					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
+					"\"$(PROJECT_ROOT)/external/javasqlite/src/main/native\"",
+					"$(PROJECT_ROOT)/moe/natj/natj/src/main/native/include",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROJECT_ROOT = "$(SRCROOT)/../../../../..";
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -285,7 +265,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "android.external.javasqlite" */ = {
+		2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "external.javasqlite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2353A5F317CE19B5005CF3CC /* Debug-ios */,
