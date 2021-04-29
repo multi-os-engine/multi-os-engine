@@ -21,9 +21,12 @@ targetCompatibility = "1.8"
 
 tasks.classes.dependsOn ':ext_natj_ios'
 tasks.classes.dependsOn ':ext_natj_api'
+tasks.compileJava.dependsOn ':moe.apple:moe.core.java:coreJar'
 
 dependencies {
     compile files(rootProject.external.natj.jar)
+
+    compileOnly files("../moe.core.java/build/libs/core/moe-core.jar")
 }
 
 tasks.javadoc {
