@@ -36,6 +36,7 @@ apply plugin: 'base'
 
 def graalDeps = [
         projects: [
+                ':moe.apple:moe.core.native:external.javasqlite',
                 ':moe.apple:moe.core.native:svm.graal@libjvm',
                 ':moe.apple:moe.core.native:svm.openjdk@libjava',
         ]

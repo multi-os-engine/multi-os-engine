@@ -17,10 +17,15 @@ limitations under the License.
 
 apply plugin: 'java'
 
+def external_path = rootProject.file("../../external").absolutePath
+def external_java_sources = [
+        "${external_path}/javasqlite/src/main/java",
+]
+
 sourceSets {
     core {
         java {
-
+            srcDirs += external_java_sources
         }
         resources {
             srcDirs = java.srcDirs
