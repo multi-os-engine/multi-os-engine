@@ -18,7 +18,7 @@ class CollectReflectionConfig(
 ) : ClassVisitor(Opcodes.ASM5, next) {
 
     private var skip: Boolean = false
-    private var visit: Boolean = false
+    private var isNatJBindingClass: Boolean = false
 
     private lateinit var name: String
     private var superName: String? = null
@@ -38,15 +38,14 @@ class CollectReflectionConfig(
         if (collectAll) {
             config.addClass(name)
             skip = false
-            visit = true
         } else {
             skip = name.startsWith(NatJRuntime.NATJ_CLASS_PREFIX)
             if (!skip) {
-                visit = NatJRuntime.isNativeObjectDescendant(superName)
-            }
+                isNatJBindingClass = NatJRuntime.isNativeObjectDescendant(superName)
 
-            if (!skip && visit) {
-                config.addClass(name)
+                if (isNatJBindingClass) {
+                    config.addClass(name)
+                }
             }
         }
 
@@ -55,12 +54,12 @@ class CollectReflectionConfig(
 
     override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
         if (!collectAll) {
-            if (!skip && !visit) {
-                visit = descriptor in EXPORTED_ANNOTATION_DESC
-            }
+            if (!skip && !isNatJBindingClass) {
+                isNatJBindingClass = descriptor in NATJ_EXPORTED_ANNOTATION_DESC
 
-            if (!skip && visit) {
-                config.addClass(name)
+                if (isNatJBindingClass || descriptor in SVM_EXPORTED_ANNOTATION_DESC) {
+                    config.addClass(name)
+                }
             }
         }
         return super.visitAnnotation(descriptor, visible)
@@ -72,13 +71,15 @@ class CollectReflectionConfig(
             config.addField(this.name, name)
             return super.visitField(access, name, descriptor, signature, value)
         } else {
-            if (skip || !visit) {
+            if (skip) {
                 return super.visitField(access, name, descriptor, signature, value)
             }
 
-            if (name == NatJRuntime.NATJ_STRUCT_OBJECT_CACHE_FIELD) {
-                config.addField(this.name, name)
-                return super.visitField(access, name, descriptor, signature, value)
+            if (isNatJBindingClass) {
+                if (name == NatJRuntime.NATJ_STRUCT_OBJECT_CACHE_FIELD) {
+                    config.addField(this.name, name)
+                    return super.visitField(access, name, descriptor, signature, value)
+                }
             }
 
             val fv = super.visitField(access, name, descriptor, signature, value)
@@ -86,6 +87,7 @@ class CollectReflectionConfig(
             return FieldInspector(
                 declaringClass = this,
                 name = name,
+                isNatJBindingClass = isNatJBindingClass,
                 next = fv
             )
         }
@@ -97,13 +99,15 @@ class CollectReflectionConfig(
             config.addMethod(this.name, name, descriptor)
             return super.visitMethod(access, name, descriptor, signature, exceptions)
         } else {
-            if (skip || !visit) {
+            if (skip) {
                 return super.visitMethod(access, name, descriptor, signature, exceptions)
             }
 
-            if (name == "<init>" && descriptor == NatJRuntime.NATJ_NATIVE_OBJECT_CONSTRUCTOR_DESC) {
-                config.addMethod(this.name, name, descriptor)
-                return super.visitMethod(access, name, descriptor, signature, exceptions)
+            if (isNatJBindingClass) {
+                if (name == "<init>" && descriptor == NatJRuntime.NATJ_NATIVE_OBJECT_CONSTRUCTOR_DESC) {
+                    config.addMethod(this.name, name, descriptor)
+                    return super.visitMethod(access, name, descriptor, signature, exceptions)
+                }
             }
 
             val mv = super.visitMethod(access, name, descriptor, signature, exceptions)
@@ -112,6 +116,7 @@ class CollectReflectionConfig(
                 declaringClass = this,
                 name = name,
                 methodDescriptor = descriptor,
+                isNatJBindingClass = isNatJBindingClass,
                 next = mv
             )
         }
@@ -120,13 +125,18 @@ class CollectReflectionConfig(
     private class FieldInspector(
         private val declaringClass: CollectReflectionConfig,
         private val name: String,
+        private val isNatJBindingClass: Boolean,
         next: FieldVisitor?,
     ) : FieldVisitor(Opcodes.ASM5, next) {
         private var visit: Boolean = false
 
         override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
             if (!visit) {
-                visit = descriptor in EXPORTED_ANNOTATION_DESC
+                visit = descriptor in SVM_EXPORTED_ANNOTATION_DESC
+
+                if (isNatJBindingClass) {
+                    visit = visit || descriptor in NATJ_EXPORTED_ANNOTATION_DESC
+                }
             }
             return super.visitAnnotation(descriptor, visible)
         }
@@ -143,13 +153,18 @@ class CollectReflectionConfig(
         private val declaringClass: CollectReflectionConfig,
         private val name: String,
         private val methodDescriptor: String,
+        private val isNatJBindingClass: Boolean,
         next: MethodVisitor?,
     ) : MethodVisitor(Opcodes.ASM5, next) {
         private var visit: Boolean = false
 
         override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
             if (!visit) {
-                visit = descriptor in EXPORTED_ANNOTATION_DESC
+                visit = descriptor in SVM_EXPORTED_ANNOTATION_DESC
+
+                if (isNatJBindingClass) {
+                    visit = visit || descriptor in NATJ_EXPORTED_ANNOTATION_DESC
+                }
             }
             return super.visitAnnotation(descriptor, visible)
         }
@@ -163,7 +178,7 @@ class CollectReflectionConfig(
     }
 
     companion object {
-        private val EXPORTED_ANNOTATION_DESC: Set<String> = setOf(
+        private val NATJ_EXPORTED_ANNOTATION_DESC: Set<String> = setOf(
             "Lorg/moe/natj/general/ann/RegisterOnStartup;",
             NatJRuntime.Annotations.RUNTIME_DESC,
             "Lorg/moe/natj/objc/ann/InstanceVariable;",
@@ -175,6 +190,11 @@ class CollectReflectionConfig(
             "Lorg/moe/natj/c/ann/Structure;",
             "Lorg/moe/natj/c/ann/StructureField;",
             // TODO: add CXX annotations
+        )
+
+        private val SVM_EXPORTED_ANNOTATION_DESC = setOf(
+            "Lorg/moe/svm/anns/JNI;",
+            "Lorg/moe/svm/anns/Reflection;",
         )
     }
 }
