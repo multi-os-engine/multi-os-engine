@@ -1,5 +1,8 @@
 [
     {
+        "name": "java.lang.String"
+    },
+    {
         "name": "org.moe.natj.c.CRuntime",
         "methods": [
             {"name": "<init>", "parameterTypes": []}

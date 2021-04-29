@@ -117,6 +117,15 @@
         ]
     },
     {
+        "name": "java.lang.String",
+        "methods": [
+            {"name": "<init>", "parameterTypes": ["byte[]"]},
+            {"name": "<init>", "parameterTypes": ["byte[]","java.lang.String"]},
+            {"name": "getBytes", "parameterTypes": []},
+            {"name": "getBytes", "parameterTypes": ["java.lang.String"]}
+        ]
+    },
+    {
         "name": "java.lang.reflect.Method",
         "methods": [
             {"name": "getDeclaringClass", "parameterTypes": []},
@@ -168,6 +177,18 @@
         "name": "java.lang.Exception",
         "methods": [
             {"name": "<init>", "parameterTypes": []}
+        ]
+    },
+    {
+        "name": "java.lang.OutOfMemoryError",
+        "methods": [
+            {"name": "<init>", "parameterTypes": ["java.lang.String"]}
+        ]
+    },
+    {
+        "name": "java.io.IOException",
+        "methods": [
+            {"name": "<init>", "parameterTypes": ["java.lang.String"]}
         ]
     },
     {
