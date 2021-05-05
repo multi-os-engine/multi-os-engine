@@ -16,10 +16,13 @@ limitations under the License.
 
 package org.moe.ios.device.launcher;
 
+import org.libimobiledevice.enums.idevice_connection_type;
 import org.libimobiledevice.enums.idevice_error_t;
+import org.libimobiledevice.enums.idevice_event_type;
+import org.libimobiledevice.enums.idevice_options;
 import org.libimobiledevice.opaque.idevice_t;
+import org.libimobiledevice.struct.idevice_info;
 import org.moe.common.ShutdownManager;
-import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
@@ -40,22 +43,6 @@ import static org.libimobiledevice.c.Globals.*;
 @SuppressWarnings("unchecked")
 class DeviceHelper {
 
-    /**
-     * Connection event, add.
-     */
-    public static final int CONN_EVENT_ADD = 1;
-    /**
-     * Connection event, add.
-     */
-    public static final int CONN_EVENT_REMOVE = 2;
-    /**
-     * USBMUXD connection type.
-     */
-    public static final int CONN_TYPE_USBMUXD = 1;
-    /**
-     * USB connection subtype.
-     */
-    public static final String CONN_SUB_TYPE_USB = "USB";
     /**
      * Logger.
      */
@@ -92,17 +79,20 @@ class DeviceHelper {
         Set<String> devices = new HashSet<String>();
 
         IntPtr countRef = PtrFactory.newIntReference();
-        Ptr<Ptr<BytePtr>> listRef = (Ptr<Ptr<BytePtr>>)PtrFactory.newPointerPtr(Byte.class, 3, 1, true, false);
-        idevice_get_device_list_with_connection(listRef, countRef, CONN_TYPE_USBMUXD, CONN_SUB_TYPE_USB);
+        Ptr<Ptr<Ptr<idevice_info>>> listRef = (Ptr<Ptr<Ptr<idevice_info>>>)PtrFactory.newPointerPtr(idevice_info.class, 3, 1, true, false);
+        idevice_get_device_list_extended(listRef, countRef);
 
         int count = countRef.get();
-        Ptr<BytePtr> list = listRef.get();
+        Ptr<Ptr<idevice_info>> list = listRef.get();
         for (int i = 0; i < count; ++i) {
-            String device = list.get(i).toASCIIString();
-            devices.add(device);
+            Ptr<idevice_info> device = list.get(i);
+            idevice_info d = device.get();
+            if(d.conn_type() == idevice_connection_type.USBMUXD) {
+                devices.add(d.udid().toASCIIString());
+            }
         }
 
-        idevice_device_list_free(listRef.get());
+        idevice_device_list_extended_free(listRef.get());
 
         return devices;
     }
@@ -145,7 +135,7 @@ class DeviceHelper {
         USBDeviceWatcher.IUSBDeviceListener listener = new USBDeviceWatcher.IUSBDeviceListener() {
             @Override
             public void handle(int event, String deviceUDID) {
-                if (event != CONN_EVENT_ADD) {
+                if (event != idevice_event_type.ADD) {
                     return;
                 }
                 if (udid != null && !udid.equals(deviceUDID)) {
@@ -241,7 +231,7 @@ class DeviceHelper {
 
         // Create a new device connected via USB
         Ptr<idevice_t> deviceRef = PtrFactory.newOpaquePtrReference(idevice_t.class);
-        int error = idevice_new_with_connection(deviceRef, udid, CONN_TYPE_USBMUXD, CONN_SUB_TYPE_USB);
+        int error = idevice_new_with_options(deviceRef, udid, idevice_options.USBMUX);
         if (error != idevice_error_t.IDEVICE_E_SUCCESS) {
             throw new DeviceException("Failed to create device", "idevice_new_with_connection", error);
         }

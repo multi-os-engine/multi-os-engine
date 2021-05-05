@@ -18,6 +18,7 @@ package org.moe.ios.device.launcher;
 
 import org.libimobiledevice.enums.debugserver_error_t;
 import org.libimobiledevice.enums.idevice_error_t;
+import org.libimobiledevice.enums.idevice_event_type;
 import org.libimobiledevice.opaque.debugserver_client_t;
 import org.libimobiledevice.opaque.idevice_t;
 import org.moe.common.Port;
@@ -385,13 +386,15 @@ public class LaunchHelper implements IStopReplyListener {
 
                 // Check launch success
                 String query_launchSuccess = protocol.query_LaunchSuccess();
-                if ("Locked".equals(query_launchSuccess)) {
-                    if (isFirstTry) {
-                        LOG.info("Please unlock your device");
-                    }
-                    return true;
-                }
                 if (query_launchSuccess != null) {
+                    if ("Locked".equals(query_launchSuccess)
+                            || query_launchSuccess.contains("the device was not, or could not be, unlocked")) {
+                        if (isFirstTry) {
+                            LOG.info("Please unlock your device");
+                        }
+                        return true;
+                    }
+
                     if (config.getDebugserverPort() != null) {
                         protocol.close();
                         try {
@@ -480,7 +483,7 @@ public class LaunchHelper implements IStopReplyListener {
                 USBDeviceWatcher.IUSBDeviceListener listener = new USBDeviceWatcher.IUSBDeviceListener() {
                     @Override
                     public void handle(int event, String deviceUDID) {
-                        if (deviceUDID.equals(udid) && event == DeviceHelper.CONN_EVENT_REMOVE) {
+                        if (deviceUDID.equals(udid) && event == idevice_event_type.REMOVE) {
                             signalProcessEnded(false);
                         }
                     }
