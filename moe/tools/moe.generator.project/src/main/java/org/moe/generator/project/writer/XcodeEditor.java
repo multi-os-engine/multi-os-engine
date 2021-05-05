@@ -237,6 +237,9 @@ public class XcodeEditor extends AbstractXcodeEditor {
     private void configureProject() throws IOException {
         setAsUpToDate();
         cleanupBuildSettings(project);
+
+        // Disable arm64 build for simulators
+        setBuildSetting(project, "EXCLUDED_ARCHS[sdk=iphonesimulator*]", "arm64");
     }
 
     /**
