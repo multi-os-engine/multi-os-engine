@@ -397,7 +397,7 @@ class ServerSettings {
                 }
 
                 // Print title
-                console.printf("%1s%n", title);
+                console.printf("%1$s%n", title);
 
                 // Print options
                 for (Option option : options) {
@@ -424,17 +424,17 @@ class ServerSettings {
             final Console console = System.console();
             while (!stop.get()) {
                 if (console != null) {
-                    console.printf("%1s%2s", SCR_SAVE, SCR_CLR);
+                    console.printf("%1$s%2$s", SCR_SAVE, SCR_CLR);
                 } else {
-                    LOG.quiet("%1s%2s", SCR_SAVE, SCR_CLR);
+                    LOG.quiet("{}{}", SCR_SAVE, SCR_CLR);
                 }
                 try {
                     runnable.accept(stop);
                 } finally {
                     if (console != null) {
-                        console.printf("%1s", SCR_RESTORE);
+                        console.printf("%1$s", SCR_RESTORE);
                     } else {
-                        LOG.quiet("%1s", SCR_RESTORE);
+                        LOG.quiet("{}", SCR_RESTORE);
                     }
                 }
             }
@@ -461,9 +461,9 @@ class ServerSettings {
                     Object value = settings.get(key);
                     String keyOpt = FG_SET_CYAN + key.key + FG_SET_DEFAULT;
                     if (value == null) {
-                        console.printf("    %1s:%n", keyOpt);
+                        console.printf("    %1$s:%n", keyOpt);
                     } else {
-                        console.printf("    %1s: %2s%n", keyOpt, value.toString());
+                        console.printf("    %1$s: %2$s%n", keyOpt, value.toString());
                     }
                 }
             };
@@ -516,10 +516,10 @@ class ServerSettings {
             throw new GradleException("System console is unavailable");
         }
 
-        console.printf("%1s%2s", SCR_SAVE, SCR_CLR);
+        console.printf("%1$s%2$s", SCR_SAVE, SCR_CLR);
         try {
             while (true) {
-                String line = console.readLine("Value for %1s: ", keyOpt);
+                String line = console.readLine("Value for %1$s: ", keyOpt);
                 try {
                     settings.put(key, key.validator.validate(plugin, line));
                 } catch (IOException e) {
@@ -529,7 +529,7 @@ class ServerSettings {
                 break;
             }
         } finally {
-            console.printf("%1s", SCR_RESTORE);
+            console.printf("%1$s", SCR_RESTORE);
         }
     }
 
@@ -539,9 +539,9 @@ class ServerSettings {
             throw new GradleException("System console is unavailable");
         }
         if (help != null) {
-            console.printf("    %1s - %2s%3s%4s (%5s)%n", shrt, color, lng, FG_SET_DEFAULT, help);
+            console.printf("    %1$s - %2$s%3$s%4$s (%5$s)\n", shrt, color, lng, FG_SET_DEFAULT, help);
         } else {
-            console.printf("    %1s - %2s%3s%4s%n", shrt, color, lng, FG_SET_DEFAULT);
+            console.printf("    %1$s - %2$s%3$s%4$s\n", shrt, color, lng, FG_SET_DEFAULT);
         }
     }
 
@@ -589,11 +589,11 @@ class ServerSettings {
     public boolean testConnection() {
         final Console console = System.console();
         if (console != null) {
-            console.printf("Testing remote server connection:%n");
-            console.printf("Connecting... (timeout: 30s)%n");
+            console.printf("Testing remote server connection:\n");
+            console.printf("Connecting... (timeout: 30s)\n");
         } else {
-            LOG.quiet("Testing remote server connection:%n");
-            LOG.quiet("Connecting... (timeout: 30s)%n");
+            LOG.quiet("Testing remote server connection:");
+            LOG.quiet("Connecting... (timeout: 30s)");
         }
         final Session session;
         try {
@@ -645,11 +645,11 @@ class ServerSettings {
         }
 
         if (console != null) {
-            console.printf("%1sConnection successful%2s%n", FG_SET_CYAN, FG_SET_DEFAULT);
-            console.printf("Testing keychain access%n");
+            console.printf("%1$sConnection successful%2$s\n", FG_SET_CYAN, FG_SET_DEFAULT);
+            console.printf("Testing keychain access\n");
         } else {
-            LOG.quiet("%1sConnection successful%2s%n", FG_SET_CYAN, FG_SET_DEFAULT);
-            LOG.quiet("Testing keychain access%n");
+            LOG.quiet("{}Connection successful{}", FG_SET_CYAN, FG_SET_DEFAULT);
+            LOG.quiet("Testing keychain access");
         }
 
         try {
@@ -693,9 +693,9 @@ class ServerSettings {
             channel.disconnect();
             if (channel.getExitStatus() == 0) {
                 if (console != null) {
-                    console.printf("%1sKeychain unlocked successfully%2s%n", FG_SET_CYAN, FG_SET_DEFAULT);
+                    console.printf("%1$sKeychain unlocked successfully%2$s\n", FG_SET_CYAN, FG_SET_DEFAULT);
                 } else {
-                    LOG.quiet("%1sKeychain unlocked successfully%2s%n", FG_SET_CYAN, FG_SET_DEFAULT);
+                    LOG.quiet("{}Keychain unlocked successfully{}", FG_SET_CYAN, FG_SET_DEFAULT);
                 }
                 session.disconnect();
                 return true;
@@ -711,27 +711,27 @@ class ServerSettings {
     private static void println() {
         final Console console = System.console();
         if (console != null) {
-            console.printf("%n");
+            console.printf("\n");
         } else {
-            LOG.quiet("%n");
+            LOG.quiet("\n");
         }
     }
 
     private static void printError(String msg) {
         final Console console = System.console();
         if (console != null) {
-            console.printf("%1sError:%2s %3s%n", FG_SET_RED, FG_SET_DEFAULT, msg);
+            console.printf("%1$sError:%2$s %3$s\n", FG_SET_RED, FG_SET_DEFAULT, msg);
         } else {
-            LOG.error("%1sError:%2s %3s%n", FG_SET_RED, FG_SET_DEFAULT, msg);
+            LOG.error("{}Error:{} {}", FG_SET_RED, FG_SET_DEFAULT, msg);
         }
     }
 
     private static void printWarning(String msg) {
         final Console console = System.console();
         if (console != null) {
-            console.printf("%1sWarning:%2s %3s%n", FG_SET_YELLOW, FG_SET_DEFAULT, msg);
+            console.printf("%1$sWarning:%2$s %3$s\n", FG_SET_YELLOW, FG_SET_DEFAULT, msg);
         } else {
-            LOG.warn("%1sWarning:%2s %3s%n", FG_SET_YELLOW, FG_SET_DEFAULT, msg);
+            LOG.warn("{}Warning:{} {}", FG_SET_YELLOW, FG_SET_DEFAULT, msg);
         }
     }
 

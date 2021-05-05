@@ -16,15 +16,15 @@ limitations under the License.
 
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.11.0"
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.15.2"
     }
 }
 
 plugins {
-    id "com.jfrog.bintray" version "1.8.4"
+    id "com.jfrog.bintray" version "1.8.5"
 }
 
 if (name != 'moe-gradle') {

@@ -19,6 +19,7 @@ package org.moe.gradle;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
+import org.gradle.api.artifacts.repositories.IvyArtifactRepository;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.gradle.api.plugins.JavaPlugin;
@@ -89,7 +90,7 @@ public class MoeSDKPlugin extends AbstractMoePlugin {
                 throw new GradleException("Failed to add Multi-OS Engine repo", e);
             }
             ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
-        });
+        }).metadataSources(IvyArtifactRepository.MetadataSources::artifact);
 
         project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
                 FileUtils.getNameAsArtifact(getSDK().getCoreJar(), getSDK().sdkVersion));
