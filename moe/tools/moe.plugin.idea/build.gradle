@@ -14,16 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-buildscript {
-    repositories {
-        maven {
-            url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
-        }
-    }
-}
-
 plugins {
-    id "org.jetbrains.intellij" version "0.4.9"
+    id "org.jetbrains.intellij" version "0.7.3"
 }
 
 apply plugin: 'idea'
@@ -57,10 +49,6 @@ intellij {
             password = property('intellij.password')
         }
     }
-}
-
-runIde {
-    jbrVersion '8u222b1626.3'
 }
 
 dependencies {
