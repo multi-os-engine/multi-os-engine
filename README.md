@@ -38,14 +38,14 @@ brew install repo
 Mainline branch:
 
 ```
-repo init -u https://github.com/multi-os-engine-community/manifest.git -b moe-master
+repo init -u https://github.com/multi-os-engine/manifest.git -b moe-master
 repo sync
 ```
 
 Note: if you want to get the source code from development branch with initial support of Windows and bitcode, switch to "moe-windows-bitcode" branch:
 
 ```
-repo init -u https://github.com/multi-os-engine-community/manifest.git -b moe-windows-bitcode
+repo init -u https://github.com/multi-os-engine/manifest.git -b moe-windows-bitcode
 repo sync
 ```
 
