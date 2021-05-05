@@ -40,14 +40,11 @@ intellij {
     pluginName PLUGIN_NAME
     downloadSources false
     updateSinceUntilBuild false
+}
 
-    publish {
-        if (project.hasProperty('intellij.user')) {
-            username = property('intellij.user')
-        }
-        if (project.hasProperty('intellij.password')) {
-            password = property('intellij.password')
-        }
+publishPlugin {
+    if (project.hasProperty('intellij.publishToken')) {
+        token = project.property('intellij.publishToken')
     }
 }
 
