@@ -73,7 +73,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
 
     private static final int DEFAULT_REMOTE_BUILD_PORT = 22;
     private static final int DEFAULT_REMOTE_BUILD_TIMEOUT = 3600;
-    private static final String DEFAULT_REMOTE_BUILD_REPOSITORY = "jcenter()";
+    private static final String DEFAULT_REMOTE_BUILD_REPOSITORY = "mavenCentral()";
     private JTabbedPane component;
     private JPanel panel1;
     private JComboBox moduleCombo;
