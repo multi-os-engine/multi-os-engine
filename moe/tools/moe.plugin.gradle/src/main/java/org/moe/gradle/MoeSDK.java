@@ -295,9 +295,6 @@ public class MoeSDK {
                 addedRepositories.add(repository);
             }
         });
-        project.getRepositories().maven(repo -> {
-            repo.setUrl("https://dl.bintray.com/noisyfox/maven/");
-        });
 
         try {
             return consumer.apply(configuration, dependency);
