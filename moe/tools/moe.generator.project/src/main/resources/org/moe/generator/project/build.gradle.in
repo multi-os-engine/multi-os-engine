@@ -11,7 +11,7 @@ buildscript {
     }
     dependencies {
         // Multi-OS Engine plugin
-        classpath group: 'org.multi-os-engine.community', name: 'moe-gradle', version: '${_PLACEHOLDER_MOE_VERSION}'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '${_PLACEHOLDER_MOE_VERSION}'
 //<<---REGION:USE_KOTLIN_PLUGIN
 
         // Kotlin plugin
