@@ -18,6 +18,25 @@ package apple.coretext.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * [@enum]       CTLineTruncationType
+ * 
+ * Truncation types required by CTLineCreateTruncatedLine. These
+ *             will tell truncation engine which type of truncation is being
+ *             requested.
+ * 
+ * [@constant]   kCTLineTruncationStart
+ *             Truncate at the beginning of the line, leaving the end portion
+ *             visible.
+ * 
+ * [@constant]   kCTLineTruncationEnd
+ *             Truncate at the end of the line, leaving the start portion
+ *             visible.
+ * 
+ * [@constant]   kCTLineTruncationMiddle
+ *             Truncate in the middle of the line, leaving both the start
+ *             and the end portions visible.
+ */
 @Generated
 public final class CTLineTruncationType {
     @Generated public static final int Start = 0x00000000;

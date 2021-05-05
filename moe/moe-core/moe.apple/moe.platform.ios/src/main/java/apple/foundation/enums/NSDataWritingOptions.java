@@ -21,13 +21,22 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSDataWritingOptions {
+    /**
+     * Hint to use auxiliary file when saving; equivalent to atomically:YES
+     */
     @Generated @NUInt public static final long DataWritingAtomic = 0x0000000000000001L;
+    /**
+     * Hint to  prevent overwriting an existing file. Cannot be combined with NSDataWritingAtomic.
+     */
     @Generated @NUInt public static final long DataWritingWithoutOverwriting = 0x0000000000000002L;
     @Generated @NUInt public static final long DataWritingFileProtectionNone = 0x0000000010000000L;
     @Generated @NUInt public static final long DataWritingFileProtectionComplete = 0x0000000020000000L;
     @Generated @NUInt public static final long DataWritingFileProtectionCompleteUnlessOpen = 0x0000000030000000L;
     @Generated @NUInt public static final long DataWritingFileProtectionCompleteUntilFirstUserAuthentication = 0x0000000040000000L;
     @Generated @NUInt public static final long DataWritingFileProtectionMask = 0x00000000F0000000L;
+    /**
+     * Deprecated name for NSDataWritingAtomic
+     */
     @Generated @NUInt public static final long AtomicWrite = 0x0000000000000001L;
 
     @Generated

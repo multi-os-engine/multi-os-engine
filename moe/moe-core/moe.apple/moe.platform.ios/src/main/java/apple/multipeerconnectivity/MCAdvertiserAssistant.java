@@ -41,6 +41,37 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MCAdvertiserAssistant
+ * 
+ *      MCAdvertiserAssistant is a convenience class that handles advertising,
+ *      presents incoming invitations to the user and handles user's responses.
+ * 
+ *      To create the MCAdvertiserAssistant object a new MCPeerID should be
+ *      created to represent the local peer, and a service type needs to be
+ *      specified.
+ * 
+ *      The serviceType parameter is a short text string used to describe the
+ *      app's networking protocol.  It should be in the same format as a
+ *      Bonjour service type: up to 15 characters long and valid characters
+ *      include ASCII lowercase letters, numbers, and the hyphen. A short name
+ *      that distinguishes itself from unrelated services is recommended;
+ *      for example, a text chat app made by ABC company could use the service
+ *      type "abc-txtchat".
+ * 
+ *      The discoveryInfo parameter is a dictionary of string key/value pairs
+ *      that will be advertised for browsers to see. Both keys and values must
+ *      be NSString objects. The content of discoveryInfo will be advertised
+ *      within Bonjour TXT records, and keeping the dictionary small is good
+ *      for keeping network traffic low.
+ * 
+ *      A delegate that conforms to the MCAdvertiserAssistantDelegate protocol
+ *      must be provided. No assumption should be made as to which queue the
+ *      callbacks are called on.
+ * 
+ *      See Bonjour APIs https://developer.apple.com/bonjour/ for more
+ *      information about service types.
+ */
 @Generated
 @Library("MultipeerConnectivity")
 @Runtime(ObjCRuntime.class)
@@ -194,6 +225,9 @@ public class MCAdvertiserAssistant extends NSObject {
         }
     }
 
+    /**
+     * The methods -start and -stop are used to start and stop the assistant.
+     */
     @Generated
     @Selector("start")
     public native void start();

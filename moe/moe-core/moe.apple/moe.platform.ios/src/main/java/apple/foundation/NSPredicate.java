@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Predicates wrap some combination of expressions and operators and when evaluated return a BOOL.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -142,6 +145,9 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("predicateWithFormat:")
     public static native NSPredicate predicateWithFormat(String predicateFormat, Object... varargs);
 
+    /**
+     * Parse predicateFormat and return an appropriate predicate
+     */
     @Generated
     @Selector("predicateWithFormat:argumentArray:")
     public static native NSPredicate predicateWithFormatArgumentArray(String predicateFormat, NSArray<?> arguments);
@@ -150,6 +156,9 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("predicateWithFormat:arguments:")
     public static native NSPredicate predicateWithFormatArguments(String predicateFormat, BytePtr argList);
 
+    /**
+     * return predicates that always evaluate to true/false
+     */
     @Generated
     @Selector("predicateWithValue:")
     public static native NSPredicate predicateWithValue(boolean value);
@@ -179,6 +188,9 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * Force a predicate which was securely decoded to allow evaluation
+     */
     @Generated
     @Selector("allowEvaluation")
     public native void allowEvaluation();
@@ -191,12 +203,18 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * evaluate a predicate against a single object
+     */
     @Generated
     @Selector("evaluateWithObject:")
     public native boolean evaluateWithObject(@Mapped(ObjCObjectMapper.class) Object object);
 
+    /**
+     * single pass evaluation substituting variables from the bindings dictionary for any variable expressions encountered
+     */
     @Generated
     @Selector("evaluateWithObject:substitutionVariables:")
     public native boolean evaluateWithObjectSubstitutionVariables(@Mapped(ObjCObjectMapper.class) Object object,
@@ -208,12 +226,18 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPredicate initWithCoder(NSCoder aDecoder);
+    public native NSPredicate initWithCoder(NSCoder coder);
 
+    /**
+     * returns the format string of the predicate
+     */
     @Generated
     @Selector("predicateFormat")
     public native String predicateFormat();
 
+    /**
+     * substitute constant values for variables
+     */
     @Generated
     @Selector("predicateWithSubstitutionVariables:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -229,6 +253,7 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     public interface Block_predicateWithBlock {
         @Generated
-        boolean call_predicateWithBlock(@Mapped(ObjCObjectMapper.class) Object arg0, NSDictionary<String, ?> arg1);
+        boolean call_predicateWithBlock(@Mapped(ObjCObjectMapper.class) Object evaluatedObject,
+                NSDictionary<String, ?> bindings);
     }
 }

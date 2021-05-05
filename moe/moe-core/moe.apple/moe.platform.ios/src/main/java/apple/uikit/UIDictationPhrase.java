@@ -158,6 +158,11 @@ public class UIDictationPhrase extends NSObject {
     @Selector("init")
     public native UIDictationPhrase init();
 
+    /**
+     * -text returns the most likely interpretation for a phrase. If there are other
+     * interpretations, -alternativeInterpretations will return an array of them, with
+     * the first being most likely and the last being least likely.
+     */
     @Generated
     @Selector("text")
     public native String text();

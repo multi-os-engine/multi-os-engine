@@ -39,6 +39,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVCaptureBracketedStillImageSettings
+ * 
+ *    AVCaptureBracketedStillImageSettings is an abstract base class that defines an interface for settings pertaining to a bracketed capture.
+ * 
+ *    AVCaptureBracketedStillImageSettings may not be instantiated directly.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)

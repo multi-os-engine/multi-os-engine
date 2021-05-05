@@ -117,7 +117,7 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -134,7 +134,7 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCallRecord initWithCoder(NSCoder aDecoder);
+    public native INCallRecord initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithIdentifier:dateCreated:caller:callRecordType:callCapability:callDuration:unseen:")
@@ -203,4 +203,14 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithIdentifier:dateCreated:caller:callRecordType:callCapability:callDuration:unseen:numberOfCalls:")
+    public native INCallRecord initWithIdentifierDateCreatedCallerCallRecordTypeCallCapabilityCallDurationUnseenNumberOfCalls(
+            String identifier, NSDate dateCreated, INPerson caller, @NInt long callRecordType,
+            @NInt long callCapability, NSNumber callDuration, NSNumber unseen, NSNumber numberOfCalls);
+
+    @Generated
+    @Selector("numberOfCalls")
+    public native NSNumber numberOfCalls();
 }

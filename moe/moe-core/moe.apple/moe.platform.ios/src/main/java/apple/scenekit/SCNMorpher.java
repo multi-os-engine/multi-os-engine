@@ -25,6 +25,7 @@ import apple.foundation.NSSet;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.quartzcore.CAAnimation;
 import apple.scenekit.protocol.SCNAnimatable;
+import apple.scenekit.protocol.SCNAnimation;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -46,6 +47,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNMorpher
+ * 
+ * SCNMorpher controls the deformation of morphed geometries
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -163,7 +169,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
     @Generated
     @Selector("animationForKey:")
@@ -173,6 +179,11 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
 
+    /**
+     * [@property] calculationMode
+     * 
+     * Specifies how the morph result is calculated by the receiver. Defaults to SCNMorpherCalculationModeNormalized.
+     */
     @Generated
     @Selector("calculationMode")
     @NInt
@@ -180,7 +191,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -188,7 +199,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNMorpher initWithCoder(NSCoder aDecoder);
+    public native SCNMorpher initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isAnimationForKeyPaused:")
@@ -214,6 +225,11 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
 
+    /**
+     * [@property] calculationMode
+     * 
+     * Specifies how the morph result is calculated by the receiver. Defaults to SCNMorpherCalculationModeNormalized.
+     */
     @Generated
     @Selector("setCalculationMode:")
     public native void setCalculationMode(@NInt long value);
@@ -222,10 +238,22 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("setSpeed:forAnimationKey:")
     public native void setSpeedForAnimationKey(@NFloat double speed, String key);
 
+    /**
+     * [@property] targets
+     * 
+     * Specifies the morph targets as an array of SCNGeometry.
+     * 
+     * The target geometries must have the same number of entries in their geometry sources and the same topology as the base geometry.
+     */
     @Generated
     @Selector("setTargets:")
     public native void setTargets(NSArray<? extends SCNGeometry> value);
 
+    /**
+     * setWeight:forTargetAtIndex:
+     * 
+     * Sets the weight for the target at the specified index. Animatable implicitly or explicitly with the keyPath "weights[index]" or "weights["targetName"]" (targetName is the name of the target geometry).
+     */
     @Generated
     @Selector("setWeight:forTargetAtIndex:")
     public native void setWeightForTargetAtIndex(@NFloat double weight, @NUInt long targetIndex);
@@ -236,10 +264,22 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] targets
+     * 
+     * Specifies the morph targets as an array of SCNGeometry.
+     * 
+     * The target geometries must have the same number of entries in their geometry sources and the same topology as the base geometry.
+     */
     @Generated
     @Selector("targets")
     public native NSArray<? extends SCNGeometry> targets();
 
+    /**
+     * weightForTargetAtIndex:
+     * 
+     * Retrieves the weight for the target at the specified index.
+     */
     @Generated
     @Selector("weightForTargetAtIndex:")
     @NFloat
@@ -257,27 +297,57 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("removeAnimationForKey:blendOutDuration:")
     public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
 
+    /**
+     * [@property] unifiesNormals
+     * 
+     * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO, the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
+     */
     @Generated
     @Selector("setUnifiesNormals:")
     public native void setUnifiesNormals(boolean value);
 
+    /**
+     * setWeight:forTargetNamed:
+     * 
+     * Sets the weight for the target with the specified name (targetName is the name of the target geometry).
+     */
     @Generated
     @Selector("setWeight:forTargetNamed:")
     public native void setWeightForTargetNamed(@NFloat double weight, String targetName);
 
+    /**
+     * [@property] weights
+     * 
+     * Access to all the weights of all the targets.
+     */
     @Generated
     @Selector("setWeights:")
     public native void setWeights(NSArray<? extends NSNumber> value);
 
+    /**
+     * [@property] unifiesNormals
+     * 
+     * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO, the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
+     */
     @Generated
     @Selector("unifiesNormals")
     public native boolean unifiesNormals();
 
+    /**
+     * weightForTargetNamed:
+     * 
+     * Retrieves the weight for the target with the specified name (targetName is the name of the target geometry).
+     */
     @Generated
     @Selector("weightForTargetNamed:")
     @NFloat
     public native double weightForTargetNamed(String targetName);
 
+    /**
+     * [@property] weights
+     * 
+     * Access to all the weights of all the targets.
+     */
     @Generated
     @Selector("weights")
     public native NSArray<? extends NSNumber> weights();

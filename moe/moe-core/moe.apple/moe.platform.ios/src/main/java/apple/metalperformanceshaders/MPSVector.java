@@ -5,6 +5,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.protocol.MTLBuffer;
+import apple.metal.protocol.MTLCommandBuffer;
 import apple.metal.protocol.MTLDevice;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -25,6 +26,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSVector
+ * 
+ * [@dependency] This depends on Metal.framework
+ * 
+ * A MPSVector object describes a 1-dimensional array of data and provides storage
+ *             for its values.  Some MPSMatrixKernel objects operate on MPSVector objects
+ *             for convenience.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -75,11 +85,21 @@ public class MPSVector extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * [@property]   data
+     * 
+     * An MTLBuffer to store the data.
+     */
     @Generated
     @Selector("data")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLBuffer data();
 
+    /**
+     * [@property]   dataType
+     * 
+     * The type of the MPSVector data.
+     */
     @Generated
     @Selector("dataType")
     public native int dataType();
@@ -92,6 +112,11 @@ public class MPSVector extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * [@property]   device
+     * 
+     * The device on which the MPSVector will be used.
+     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -106,6 +131,25 @@ public class MPSVector extends NSObject {
     @Selector("init")
     public native MPSVector init();
 
+    /**
+     * Initialize a MPSVector object with a MTLBuffer.
+     * 
+     * This function returns a MPSVector object which uses the supplied MTLBuffer.  The
+     *             length, number of vectors, and stride between vectors are specified by the
+     *             MPSVectorDescriptor object.
+     * 
+     *             The provided MTLBuffer must have enough storage to hold
+     * 
+     *                 (descriptor.vectors-1) * descriptor.vectorBytes +
+     *                  descriptor.length * (element size) bytes.
+     * 
+     * @param      buffer          The MTLBuffer object which contains the data to use for the
+     *                             MPSVector. May not be NULL.
+     * 
+     * @param      descriptor      The MPSVectorDescriptor. May not be NULL.
+     * 
+     * @return     A valid MPSVector object or nil, if failure.
+     */
     @Generated
     @Selector("initWithBuffer:descriptor:")
     public native MPSVector initWithBufferDescriptor(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
@@ -132,6 +176,11 @@ public class MPSVector extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * [@property]   length
+     * 
+     * The number of elements in the vector.
+     */
     @Generated
     @Selector("length")
     @NUInt
@@ -159,11 +208,22 @@ public class MPSVector extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * [@property]   vectorBytes
+     * 
+     * The stride, in bytes, between corresponding elements of
+     *             consecutive vectors.
+     */
     @Generated
     @Selector("vectorBytes")
     @NUInt
     public native long vectorBytes();
 
+    /**
+     * [@property]   vectors
+     * 
+     * The number of vectors in the MPSVector.
+     */
     @Generated
     @Selector("vectors")
     @NUInt
@@ -173,4 +233,86 @@ public class MPSVector extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Initialize a MPSVector object with a MTLBuffer and an offset.
+     * 
+     * @param      buffer  The MTLBuffer containing the data.
+     * 
+     * @param      offset  The offset, in bytes, into the buffer at which data begins.
+     * 
+     * @param      descriptor  The MPSVectorDescriptor.
+     */
+    @Generated
+    @Selector("initWithBuffer:offset:descriptor:")
+    public native MPSVector initWithBufferOffsetDescriptor(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
+            @NUInt long offset, MPSVectorDescriptor descriptor);
+
+    /**
+     * Initialize a lazily backed MPSVector object with a descriptor
+     * 
+     * The vector object will be created, but the storage to hold the
+     *             vector data will only be allocated when it is needed, typically
+     *             when the data property is invoked.  In conjunction
+     *             with -resourceSize, this will allow you to estimate storage needs
+     *             without actually creating the backing store for the vector.
+     * 
+     * @param      device      The device with which it will be used
+     * @param      descriptor  The shape and style of the matrix
+     * @return     A valid MPSVector object or nil
+     */
+    @Generated
+    @Selector("initWithDevice:descriptor:")
+    public native MPSVector initWithDeviceDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            MPSVectorDescriptor descriptor);
+
+    /**
+     * [@property]   offset
+     * 
+     * Byte-offset to the buffer where the vector data begins - see @ref initWithBuffer: offset: descriptor: .
+     */
+    @Generated
+    @Selector("offset")
+    @NUInt
+    public native long offset();
+
+    /**
+     * Get the number of bytes used to allocate underyling MTLResources
+     * 
+     * This is the size of the backing store of underlying MTLResources.
+     *                 It does not include all storage used by the object, for example
+     *                 the storage used to hold the MPSVector instantiation and MTLBuffer
+     *                 is not included. It only measures the size of the allocation used
+     *                 to hold the vector data in the buffer. This value is subject to
+     *                 change between different devices and operating systems.
+     * 
+     *                 Except when -initWithBuffer:descriptor: is used, most MPSVectors are allocated
+     *                 without a backing store. The backing store is allocated lazily when
+     *                 it is needed, typically when the .texture property is called.
+     *                 Consequently, in most cases, it should be inexpensive to make
+     *                 a MPSMatrix to see how much memory it will need, and release it
+     *                 if it is too large.
+     * 
+     *                 This method may fail in certain circumstances, such as when the
+     *                 MPSMatrix is created with -initWithBuffer:descriptor:. In
+     *                 such cases, 0 will be returned.
+     */
+    @Generated
+    @Selector("resourceSize")
+    @NUInt
+    public native long resourceSize();
+
+    /**
+     * Flush the underlying MTLBuffer from the device's caches, and invalidate any CPU caches if needed.
+     * 
+     * This will call [id <MTLBlitEncoder> synchronizeResource: ] on the vector's MTLBuffer, if any.
+     *             This is necessary for all MTLStorageModeManaged resources. For other resources, including temporary
+     *             resources (these are all MTLStorageModePrivate), and buffers that have not yet been allocated, nothing is done.
+     *             It is more efficient to use this method than to attempt to do this yourself with the data property.
+     * 
+     * @param      commandBuffer       The commandbuffer on which to synchronize
+     */
+    @Generated
+    @Selector("synchronizeOnCommandBuffer:")
+    public native void synchronizeOnCommandBuffer(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 }

@@ -40,6 +40,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSURLProtectionSpace
+ * 
+ * This class represents a protection space requiring authentication.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -155,6 +160,11 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
     @NInt
     public static native long version_static();
 
+    /**
+     * Get the authentication method to be used for this protection space
+     * 
+     * @return The authentication method
+     */
     @Generated
     @Selector("authenticationMethod")
     public native String authenticationMethod();
@@ -165,14 +175,24 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Returns an array of acceptable certificate issuing authorities for client certification authentication. Issuers are identified by their distinguished name and returned as a DER encoded data.
+     * 
+     * @return An array of NSData objects.  (Nil if the authenticationMethod is not NSURLAuthenticationMethodClientCertificate)
+     */
     @Generated
     @Selector("distinguishedNames")
     public native NSArray<? extends NSData> distinguishedNames();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Get the proxy host if this is a proxy authentication, or the host from the URL.
+     * 
+     * @return The host for this protection space.
+     */
     @Generated
     @Selector("host")
     public native String host();
@@ -183,43 +203,114 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLProtectionSpace initWithCoder(NSCoder aDecoder);
+    public native NSURLProtectionSpace initWithCoder(NSCoder coder);
 
+    /**
+     * initWithHost:port:protocol:realm:authenticationMethod:
+     * 
+     * Initialize a protection space representing an origin server, or a realm on one
+     * 
+     * @param host The hostname of the server
+     * @param port The port for the server
+     * @param protocol The sprotocol for this server - e.g. "http", "ftp", "https"
+     * @param realm A string indicating a protocol-specific subdivision
+     * of a single host. For http and https, this maps to the realm
+     * string in http authentication challenges. For many other protocols
+     * it is unused.
+     * @param authenticationMethod The authentication method to use to access this protection space -
+     * valid values include nil (default method), @"digest" and @"form".
+     * @return The initialized object.
+     */
     @Generated
     @Selector("initWithHost:port:protocol:realm:authenticationMethod:")
     public native NSURLProtectionSpace initWithHostPortProtocolRealmAuthenticationMethod(String host, @NInt long port,
             String protocol, String realm, String authenticationMethod);
 
+    /**
+     * initWithProxyHost:port:type:realm:authenticationMethod:
+     * 
+     * Initialize a protection space representing a proxy server, or a realm on one
+     * 
+     * @param host The hostname of the proxy server
+     * @param port The port for the proxy server
+     * @param type The type of proxy - e.g. "http", "ftp", "SOCKS"
+     * @param realm A string indicating a protocol-specific subdivision
+     * of a single host. For http and https, this maps to the realm
+     * string in http authentication challenges. For many other protocols
+     * it is unused.
+     * @param authenticationMethod The authentication method to use to access this protection space -
+     * valid values include nil (default method) and @"digest"
+     * @return The initialized object.
+     */
     @Generated
     @Selector("initWithProxyHost:port:type:realm:authenticationMethod:")
     public native NSURLProtectionSpace initWithProxyHostPortTypeRealmAuthenticationMethod(String host, @NInt long port,
             String type, String realm, String authenticationMethod);
 
+    /**
+     * Determine if this authenticating protection space is a proxy server
+     * 
+     * @return YES if a proxy, NO otherwise
+     */
     @Generated
     @Selector("isProxy")
     public native boolean isProxy();
 
+    /**
+     * Get the proxy port if this is a proxy authentication, or the port from the URL.
+     * 
+     * @return The port for this protection space, or 0 if not set.
+     */
     @Generated
     @Selector("port")
     @NInt
     public native long port();
 
+    /**
+     * Get the protocol of this protection space, if not a proxy
+     * 
+     * @return The type string, or nil if a proxy.
+     */
     @Generated
     @Selector("protocol")
     public native String protocol();
 
+    /**
+     * Get the type of this protection space, if a proxy
+     * 
+     * @return The type string, or nil if not a proxy.
+     */
     @Generated
     @Selector("proxyType")
     public native String proxyType();
 
+    /**
+     * Get the authentication realm for which the protection space that
+     * needs authentication
+     * 
+     * This is generally only available for http
+     * authentication, and may be nil otherwise.
+     * 
+     * @return The realm string
+     */
     @Generated
     @Selector("realm")
     public native String realm();
 
+    /**
+     * Determine if the password for this protection space can be sent securely
+     * 
+     * @return YES if a secure authentication method or protocol will be used, NO otherwise
+     */
     @Generated
     @Selector("receivesCredentialSecurely")
     public native boolean receivesCredentialSecurely();
 
+    /**
+     * Returns a SecTrustRef which represents the state of the servers SSL transaction state
+     * 
+     * @return A SecTrustRef from Security.framework.  (Nil if the authenticationMethod is not NSURLAuthenticationMethodServerTrust)
+     */
     @Generated
     @Selector("serverTrust")
     public native SecTrustRef serverTrust();

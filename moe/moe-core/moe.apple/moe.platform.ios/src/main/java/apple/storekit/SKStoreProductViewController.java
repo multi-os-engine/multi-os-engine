@@ -169,6 +169,9 @@ public class SKStoreProductViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * Delegate for product page events
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -180,21 +183,31 @@ public class SKStoreProductViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKStoreProductViewController initWithCoder(NSCoder aDecoder);
+    public native SKStoreProductViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
     public native SKStoreProductViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * Load product view for the product with the given parameters.  See below for parameters (SKStoreProductParameter*).
+     * Block is invoked when the load finishes.
+     */
     @Generated
     @Selector("loadProductWithParameters:completionBlock:")
     public native void loadProductWithParametersCompletionBlock(NSDictionary<String, ?> parameters,
             @ObjCBlock(name = "call_loadProductWithParametersCompletionBlock") Block_loadProductWithParametersCompletionBlock block);
 
+    /**
+     * Delegate for product page events
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKStoreProductViewControllerDelegate value);
 
+    /**
+     * Delegate for product page events
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) SKStoreProductViewControllerDelegate value) {
         Object __old = delegate();
@@ -211,6 +224,6 @@ public class SKStoreProductViewController extends UIViewController {
     @Generated
     public interface Block_loadProductWithParametersCompletionBlock {
         @Generated
-        void call_loadProductWithParametersCompletionBlock(boolean arg0, NSError arg1);
+        void call_loadProductWithParametersCompletionBlock(boolean result, NSError error);
     }
 }

@@ -19,16 +19,77 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum] NSURLRequestNetworkServiceType
+ * 
+ * The NSURLRequestNetworkServiceType enum defines constants that
+ * can be used to specify the service type to associate with this request.  The
+ * service type is used to provide the networking layers a hint of the purpose 
+ * of the request.
+ * 
+ * [@constant] NSURLNetworkServiceTypeDefault Is the default value for an NSURLRequest
+ * when created.  This value should be left unchanged for the vast majority of requests.
+ * 
+ * [@constant] NSURLNetworkServiceTypeVoIP Specifies that the request is for voice over IP
+ * control traffic.
+ * 
+ * [@constant] NSURLNetworkServiceTypeVideo Specifies that the request is for video
+ * traffic.
+ * 
+ * [@constant] NSURLNetworkServiceTypeBackground Specifies that the request is for background
+ * traffic (such as a file download).
+ * 
+ * [@constant] NSURLNetworkServiceTypeVoice Specifies that the request is for voice data.
+ * 
+ * [@constant] NSURLNetworkServiceTypeResponsiveData Specifies that the request is for responsive (time sensitive) data.
+ * 
+ * [@constant] NSURLNetworkServiceTypeAVStreaming Specifies that the request is streaming audio/video data.
+ * 
+ * [@constant] NSURLNetworkServiceTypeResponsiveAV Specifies that the request is for responsive (time sensitive) audio/video data.
+ * 
+ * [@constant] NSURLNetworkServiceTypeCallSignaling Specifies that the request is for call signaling.
+ */
 @Generated
 public final class NSURLRequestNetworkServiceType {
+    /**
+     * Standard internet traffic
+     */
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
+    /**
+     * Voice over IP control traffic
+     */
     @Generated @NUInt public static final long VoIP = 0x0000000000000001L;
+    /**
+     * Video traffic
+     */
     @Generated @NUInt public static final long Video = 0x0000000000000002L;
+    /**
+     * Background traffic
+     */
     @Generated @NUInt public static final long Background = 0x0000000000000003L;
+    /**
+     * Voice data
+     */
     @Generated @NUInt public static final long Voice = 0x0000000000000004L;
+    /**
+     * Call Signaling
+     */
     @Generated @NUInt public static final long CallSignaling = 0x000000000000000BL;
 
     @Generated
     private NSURLRequestNetworkServiceType() {
     }
+
+    /**
+     * Responsive data
+     */
+    @Generated @NUInt public static final long ResponsiveData = 0x0000000000000006L;
+    /**
+     * Multimedia Audio/Video Streaming
+     */
+    @Generated @NUInt public static final long AVStreaming = 0x0000000000000008L;
+    /**
+     * Responsive Multimedia Audio/Video
+     */
+    @Generated @NUInt public static final long ResponsiveAV = 0x0000000000000009L;
 }

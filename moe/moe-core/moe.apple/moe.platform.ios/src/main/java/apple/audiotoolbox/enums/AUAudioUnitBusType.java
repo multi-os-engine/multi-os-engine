@@ -19,6 +19,11 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]		AUAudioUnitBusType
+ * 
+ * Describes whether a bus array is for input or output.
+ */
 @Generated
 public final class AUAudioUnitBusType {
     @Generated @NInt public static final long Input = 0x0000000000000001L;

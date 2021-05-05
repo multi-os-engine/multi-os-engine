@@ -32,6 +32,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKSavedGameListener")
 public interface GKSavedGameListener {
+    /**
+     * Called when a player’s saved game data has been modified.
+     */
     @Generated
     @IsOptional
     @Selector("player:didModifySavedGame:")
@@ -39,6 +42,9 @@ public interface GKSavedGameListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a conflict has arisen between different versions of the same saved game. This can happen when multiple devices write to the same saved game while one or more is offline. The application should determine the correct data to use, then call resolveConflictingSavedGames:withData:completionHandler:. This may require data merging or asking the user.
+     */
     @Generated
     @IsOptional
     @Selector("player:hasConflictingSavedGames:")

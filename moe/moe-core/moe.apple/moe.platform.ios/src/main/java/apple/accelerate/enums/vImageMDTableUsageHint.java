@@ -18,6 +18,9 @@ package apple.accelerate.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Hints to describe use of vImage_MultidimensionalTableData look up table.
+ */
 @Generated
 public final class vImageMDTableUsageHint {
     @Generated public static final int kvImageMDTableHint_16Q12 = 0x00000001;

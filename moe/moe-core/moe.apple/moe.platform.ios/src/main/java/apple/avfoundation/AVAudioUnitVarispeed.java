@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioUnitVarispeed
+ * 
+ * an AVAudioUnitTimeEffect that can be used to control the playback rate
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -168,10 +173,52 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
     public native AVAudioUnitVarispeed initWithAudioComponentDescription(
             @ByValue AudioComponentDescription audioComponentDescription);
 
+    /**
+     * [@property] rate
+     * 
+     * controls the playback rate of the audio signal
+     * 
+     * Since this unit resamples the input signal, changing the playback rate also changes the pitch.
+     * 
+     * i.e. changing the rate to 2.0 results in the output audio playing one octave higher.
+     * Similarly changing the rate to 0.5, results in the output audio playing one octave lower.
+     * 
+     * The playback rate and pitch can be calculated as
+     *               rate  = pow(2, cents/1200.0)
+     *     pitch in cents  = 1200.0 * log2(rate)
+     * 
+     * Where,    1 octave  = 1200 cents
+     * 1 musical semitone  = 100 cents
+     * 
+     * Range:      0.25 -> 4.0
+     * Default:    1.0
+     * Unit:       Generic
+     */
     @Generated
     @Selector("rate")
     public native float rate();
 
+    /**
+     * [@property] rate
+     * 
+     * controls the playback rate of the audio signal
+     * 
+     * Since this unit resamples the input signal, changing the playback rate also changes the pitch.
+     * 
+     * i.e. changing the rate to 2.0 results in the output audio playing one octave higher.
+     * Similarly changing the rate to 0.5, results in the output audio playing one octave lower.
+     * 
+     * The playback rate and pitch can be calculated as
+     *               rate  = pow(2, cents/1200.0)
+     *     pitch in cents  = 1200.0 * log2(rate)
+     * 
+     * Where,    1 octave  = 1200 cents
+     * 1 musical semitone  = 100 cents
+     * 
+     * Range:      0.25 -> 4.0
+     * Default:    1.0
+     * Unit:       Generic
+     */
     @Generated
     @Selector("setRate:")
     public native void setRate(float value);

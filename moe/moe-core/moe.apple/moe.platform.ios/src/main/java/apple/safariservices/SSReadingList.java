@@ -43,6 +43,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SSReadingList
+ * Provides an interface for adding to a user's Reading List.
+ */
 @Generated
 @Library("SafariServices")
 @Runtime(ObjCRuntime.class)
@@ -97,6 +101,13 @@ public class SSReadingList extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * defaultReadingList
+     * 
+     * This class method to obtain the instance of SSReadingList should used instead of direct alloc and init.
+     * 
+     * @return Returns a pointer to a shared instance of SSReadingList, or nil if access to Reading List is not permitted.
+     */
     @Generated
     @Selector("defaultReadingList")
     public static native SSReadingList defaultReadingList();
@@ -153,6 +164,14 @@ public class SSReadingList extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * supportsURL:
+     * 
+     * Determines if the provided URL can be added to Reading List.
+     * 
+     * @param URL The URL to be tested for Reading List support.
+     * @return Returns YES if the URL is supported by Reading List, NO if not.
+     */
     @Generated
     @Selector("supportsURL:")
     public static native boolean supportsURL(NSURL URL);
@@ -162,6 +181,19 @@ public class SSReadingList extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * addReadingListItemWithURL:title:previewText:error:
+     * 
+     * Adds an item to the Reading List.
+     * 
+     * Only URLs with http:// or https:// schemes are supported by Reading List.
+     * 
+     * @param URL The URL of the item.
+     * @param title The title string of the item, or nil.
+     * @param previewText A string shown as detail text for the item, or nil.
+     * @param error Describes the error that occurred.
+     * @return Returns YES if the item was added, otherwise returns NO and error param is set.
+     */
     @Generated
     @Selector("addReadingListItemWithURL:title:previewText:error:")
     public native boolean addReadingListItemWithURLTitlePreviewTextError(NSURL URL, String title, String previewText,

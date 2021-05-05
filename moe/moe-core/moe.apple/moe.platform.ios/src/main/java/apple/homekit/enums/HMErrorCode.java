@@ -19,6 +19,10 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * This enumeration describes the possible error constants that can be
+ *        returned from the the HomeKit APIs.
+ */
 @Generated
 public final class HMErrorCode {
     @Generated @NInt public static final long AlreadyExists = 0x0000000000000001L;
@@ -119,4 +123,14 @@ public final class HMErrorCode {
     @Generated @NInt public static final long NoHomeHub = 0x000000000000005BL;
     @Generated @NInt public static final long NoCompatibleHomeHub = 0x000000000000005CL;
     @Generated @NInt public static final long IncompatibleHomeHub = 0x000000000000005CL;
+    @Generated @NInt public static final long UnexpectedError = 0xFFFFFFFFFFFFFFFFL;
+    @Generated @NInt public static final long IncompatibleAccessory = 0x000000000000005DL;
+    @Generated @NInt public static final long ObjectWithSimilarNameExists = 0x000000000000005FL;
+    @Generated @NInt public static final long OwnershipFailure = 0x0000000000000060L;
+    @Generated @NInt public static final long MaximumAccessoriesOfTypeInHome = 0x0000000000000061L;
+    @Generated @NInt public static final long WiFiCredentialGenerationFailed = 0x0000000000000062L;
+    @Generated @NInt public static final long EnterpriseNetworkNotSupported = 0x0000000000000063L;
+    @Generated @NInt public static final long TimedOutWaitingForAccessory = 0x0000000000000064L;
+    @Generated @NInt public static final long AccessoryCommunicationFailure = 0x0000000000000065L;
+    @Generated @NInt public static final long FailedToJoinNetwork = 0x0000000000000066L;
 }

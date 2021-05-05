@@ -208,4 +208,8 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("addOrientOp:inverse:")
+    public native MDLTransformOrientOp addOrientOpInverse(String animatedValueName, boolean inverse);
 }

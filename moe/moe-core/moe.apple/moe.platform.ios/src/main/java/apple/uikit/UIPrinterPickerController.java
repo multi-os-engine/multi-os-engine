@@ -134,6 +134,14 @@ public class UIPrinterPickerController extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * printerPickerControllerWithInitiallySelectedPrinter:
+     * 
+     * This method returns a printer picker controller object for showing the
+     *             UI that allows the user to select a printer. This is only used with the
+     *             UIPrintInteractionController's printWithoutUIToPrinter: method.
+     *             If no printer should be preselected, use a value of nil for the parameter.
+     */
     @Generated
     @Selector("printerPickerControllerWithInitiallySelectedPrinter:")
     public static native UIPrinterPickerController printerPickerControllerWithInitiallySelectedPrinter(
@@ -173,22 +181,35 @@ public class UIPrinterPickerController extends NSObject {
     @Selector("init")
     public native UIPrinterPickerController init();
 
+    /**
+     * iPhone
+     */
     @Generated
     @Selector("presentAnimated:completionHandler:")
     public native boolean presentAnimatedCompletionHandler(boolean animated,
             @ObjCBlock(name = "call_presentAnimatedCompletionHandler") Block_presentAnimatedCompletionHandler completion);
 
+    /**
+     * iPad
+     */
     @Generated
     @Selector("presentFromBarButtonItem:animated:completionHandler:")
     public native boolean presentFromBarButtonItemAnimatedCompletionHandler(UIBarButtonItem item, boolean animated,
             @ObjCBlock(name = "call_presentFromBarButtonItemAnimatedCompletionHandler") Block_presentFromBarButtonItemAnimatedCompletionHandler completion);
 
+    /**
+     * iPad
+     */
     @Generated
     @Selector("presentFromRect:inView:animated:completionHandler:")
     public native boolean presentFromRectInViewAnimatedCompletionHandler(@ByValue CGRect rect, UIView view,
             boolean animated,
             @ObjCBlock(name = "call_presentFromRectInViewAnimatedCompletionHandler") Block_presentFromRectInViewAnimatedCompletionHandler completion);
 
+    /**
+     * The selected printer. Set this before presenting the UI to show the currently
+     * 	        selected printer. Use this to determine which printer the user selected.
+     */
     @Generated
     @Selector("selectedPrinter")
     public native UIPrinter selectedPrinter();
@@ -213,22 +234,23 @@ public class UIPrinterPickerController extends NSObject {
     @Generated
     public interface Block_presentAnimatedCompletionHandler {
         @Generated
-        void call_presentAnimatedCompletionHandler(UIPrinterPickerController arg0, boolean arg1, NSError arg2);
+        void call_presentAnimatedCompletionHandler(UIPrinterPickerController printerPickerController,
+                boolean userDidSelect, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_presentFromBarButtonItemAnimatedCompletionHandler {
         @Generated
-        void call_presentFromBarButtonItemAnimatedCompletionHandler(UIPrinterPickerController arg0, boolean arg1,
-                NSError arg2);
+        void call_presentFromBarButtonItemAnimatedCompletionHandler(UIPrinterPickerController printerPickerController,
+                boolean userDidSelect, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_presentFromRectInViewAnimatedCompletionHandler {
         @Generated
-        void call_presentFromRectInViewAnimatedCompletionHandler(UIPrinterPickerController arg0, boolean arg1,
-                NSError arg2);
+        void call_presentFromRectInViewAnimatedCompletionHandler(UIPrinterPickerController printerPickerController,
+                boolean userDidSelect, NSError error);
     }
 }

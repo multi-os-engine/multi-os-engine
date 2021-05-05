@@ -40,6 +40,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -175,7 +176,7 @@ public class SKPhysicsJointSpring extends SKPhysicsJoint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKPhysicsJointSpring initWithCoder(NSCoder aDecoder);
+    public native SKPhysicsJointSpring initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setDamping:")
@@ -184,4 +185,14 @@ public class SKPhysicsJointSpring extends SKPhysicsJoint {
     @Generated
     @Selector("setFrequency:")
     public native void setFrequency(@NFloat double value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

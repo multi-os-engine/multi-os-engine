@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHVideoRequestOptionsVersion {
+    /**
+     * version with edits (aka adjustments) rendered or unadjusted version if there is no edits
+     */
     @Generated @NInt public static final long Current = 0x0000000000000000L;
+    /**
+     * original version
+     */
     @Generated @NInt public static final long Original = 0x0000000000000001L;
 
     @Generated

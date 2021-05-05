@@ -18,6 +18,9 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * An identifier to describe an object's type.
+ */
 @Generated
 public final class CGPDFObjectType {
     @Generated public static final int Null = 0x00000001;

@@ -152,18 +152,41 @@ public class GKDecisionNode extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Creates a predicated branch to a node containing the specified attribute
+     * 
+     * @param predicate The predicate to create a branch with
+     * @param attribute The attribute of the created node
+     * @return The node lead to by the branch
+     */
     @Generated
     @Selector("createBranchWithPredicate:attribute:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object createBranchWithPredicateAttribute(NSPredicate predicate,
             @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject attribute);
 
+    /**
+     * Creates a numeric branch to a node containing the specified attribute
+     * 
+     * @param value The value to create a branch with
+     * @param attribute The attribute of the created node
+     * @return The node lead to by the branch
+     */
     @Generated
     @Selector("createBranchWithValue:attribute:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object createBranchWithValueAttribute(NSNumber value,
             @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject attribute);
 
+    /**
+     * Creates a random branch to a node containing the specified attribute
+     * 
+     * @param weight The weight to create a branch with (weighted for random selection)
+     * @param attribute The attribute of the created node
+     * @return The node lead to by the branch
+     * 
+     * @see GKDecisionTree
+     */
     @Generated
     @Selector("createBranchWithWeight:attribute:")
     @MappedReturn(ObjCObjectMapper.class)

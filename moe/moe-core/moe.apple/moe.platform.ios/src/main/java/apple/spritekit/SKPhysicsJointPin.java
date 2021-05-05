@@ -40,6 +40,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -170,13 +171,16 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKPhysicsJointPin initWithCoder(NSCoder aDecoder);
+    public native SKPhysicsJointPin initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("lowerAngleLimit")
     @NFloat
     public native double lowerAngleLimit();
 
+    /**
+     * in radians/sec
+     */
     @Generated
     @Selector("rotationSpeed")
     @NFloat
@@ -190,6 +194,9 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
     @Selector("setLowerAngleLimit:")
     public native void setLowerAngleLimit(@NFloat double value);
 
+    /**
+     * in radians/sec
+     */
     @Generated
     @Selector("setRotationSpeed:")
     public native void setRotationSpeed(@NFloat double value);
@@ -210,4 +217,14 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
     @Selector("upperAngleLimit")
     @NFloat
     public native double upperAngleLimit();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -18,6 +18,9 @@ package apple.glkit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Enums for MSAA.
+ */
 @Generated
 public final class GLKViewDrawableMultisample {
     @Generated public static final int MultisampleNone = 0x00000000;

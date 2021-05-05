@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A contact property that has a value and label.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
@@ -127,11 +130,22 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Returns a new CNLabeledValue with a new identifier.
+     */
     @Generated
     @Selector("labeledValueWithLabel:value:")
     public static native <_ValueType> CNLabeledValue<?> labeledValueWithLabelValue(String label,
             @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * Get a localized label.
+     * 
+     * Some labels are special keys representing generic labels. Use this to obtain a localized string for a label to display to a user.
+     * 
+     * @param label to localize.
+     * @return The localized string if a Contacts framework defined label, otherwise just returns the label.
+     */
     @Generated
     @Selector("localizedStringForLabel:")
     public static native <_ValueType> String localizedStringForLabel(String label);
@@ -175,8 +189,11 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The identifier is unique among contacts on the device. It can be saved and used for finding labeled values next application launch.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -187,8 +204,11 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNLabeledValue<?> initWithCoder(NSCoder aDecoder);
+    public native CNLabeledValue<?> initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes the CNLabeledValue with a new identifier.
+     */
     @Generated
     @Selector("initWithLabel:value:")
     public native CNLabeledValue<?> initWithLabelValue(String label, @Mapped(ObjCObjectMapper.class) Object value);
@@ -197,16 +217,25 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
     @Selector("label")
     public native String label();
 
+    /**
+     * Returns a new CNLabeledValue with the existing value and identifier.
+     */
     @Generated
     @Selector("labeledValueBySettingLabel:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object labeledValueBySettingLabel(String label);
 
+    /**
+     * Returns a new CNLabeledValue with the existing identifier.
+     */
     @Generated
     @Selector("labeledValueBySettingLabel:value:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object labeledValueBySettingLabelValue(String label, @Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * Returns a new CNLabeledValue with the existing label and identifier.
+     */
     @Generated
     @Selector("labeledValueBySettingValue:")
     @MappedReturn(ObjCObjectMapper.class)

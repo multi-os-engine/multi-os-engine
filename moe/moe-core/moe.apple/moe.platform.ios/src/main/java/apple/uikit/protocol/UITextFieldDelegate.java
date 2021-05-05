@@ -33,6 +33,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextFieldDelegate")
 public interface UITextFieldDelegate {
+    /**
+     * return NO to not change text
+     */
     @Generated
     @IsOptional
     @Selector("textField:shouldChangeCharactersInRange:replacementString:")
@@ -41,6 +44,9 @@ public interface UITextFieldDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * became first responder
+     */
     @Generated
     @IsOptional
     @Selector("textFieldDidBeginEditing:")
@@ -48,6 +54,9 @@ public interface UITextFieldDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
+     */
     @Generated
     @IsOptional
     @Selector("textFieldDidEndEditing:")
@@ -55,6 +64,9 @@ public interface UITextFieldDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * if implemented, called in place of textFieldDidEndEditing:
+     */
     @Generated
     @IsOptional
     @Selector("textFieldDidEndEditing:reason:")
@@ -62,6 +74,9 @@ public interface UITextFieldDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * return NO to disallow editing.
+     */
     @Generated
     @IsOptional
     @Selector("textFieldShouldBeginEditing:")
@@ -69,6 +84,9 @@ public interface UITextFieldDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called when clear button pressed. return NO to ignore (no notifications)
+     */
     @Generated
     @IsOptional
     @Selector("textFieldShouldClear:")
@@ -76,6 +94,9 @@ public interface UITextFieldDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to end
+     */
     @Generated
     @IsOptional
     @Selector("textFieldShouldEndEditing:")
@@ -83,10 +104,20 @@ public interface UITextFieldDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called when 'return' key pressed. return NO to ignore.
+     */
     @Generated
     @IsOptional
     @Selector("textFieldShouldReturn:")
     default boolean textFieldShouldReturn(UITextField textField) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("textFieldDidChangeSelection:")
+    default void textFieldDidChangeSelection(UITextField textField) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

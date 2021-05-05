@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVMutableTimedMetadataGroup
+ * 
+ * AVMutableTimedMetadataGroup is used to represent a mutable collection of metadata items that are valid for use during a specific range of time.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -166,18 +171,30 @@ public class AVMutableTimedMetadataGroup extends AVTimedMetadataGroup {
     @Selector("initWithSampleBuffer:")
     public native AVMutableTimedMetadataGroup initWithSampleBuffer(CMSampleBufferRef sampleBuffer);
 
+    /**
+     * an array of AVMetadataItems
+     */
     @Generated
     @Selector("items")
     public native NSArray<? extends AVMetadataItem> items();
 
+    /**
+     * an array of AVMetadataItems
+     */
     @Generated
     @Selector("setItems:")
     public native void setItems(NSArray<? extends AVMetadataItem> value);
 
+    /**
+     * indicates the time range of the timed metadata
+     */
     @Generated
     @Selector("setTimeRange:")
     public native void setTimeRange(@ByValue CMTimeRange value);
 
+    /**
+     * indicates the time range of the timed metadata
+     */
     @Generated
     @Selector("timeRange")
     @ByValue

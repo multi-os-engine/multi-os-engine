@@ -26,6 +26,7 @@ import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UISpringLoadedInteractionSupporting;
 import apple.uikit.struct.UIOffset;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -134,7 +135,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -147,8 +148,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -369,7 +370,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -385,7 +386,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -396,6 +398,9 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * For segments whose width value is 0, setting this property to YES attempts to adjust segment widths based on their content widths. Default is NO.
+     */
     @Generated
     @Selector("apportionsSegmentWidthsByContent")
     public native boolean apportionsSegmentWidthsByContent();
@@ -422,7 +427,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("imageForSegmentAtIndex:")
@@ -434,12 +439,15 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISegmentedControl initWithCoder(NSCoder aDecoder);
+    public native UISegmentedControl initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
     public native UISegmentedControl initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Initializes the segmented control with the given items. Items may be NSStrings, UIImages, or (as of iOS 14.0) UIActions. When constructing from a UIAction segments will prefer images over titles when both are provided. The segmented control is automatically sized to fit content.
+     */
     @Generated
     @Selector("initWithItems:")
     public native UISegmentedControl initWithItems(NSArray<?> items);
@@ -448,6 +456,9 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("insertSegmentWithImage:atIndex:animated:")
     public native void insertSegmentWithImageAtIndexAnimated(UIImage image, @NUInt long segment, boolean animated);
 
+    /**
+     * insert before segment number. 0..#segments. value pinned
+     */
     @Generated
     @Selector("insertSegmentWithTitle:atIndex:animated:")
     public native void insertSegmentWithTitleAtIndexAnimated(String title, @NUInt long segment, boolean animated);
@@ -456,10 +467,16 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("isEnabledForSegmentAtIndex:")
     public native boolean isEnabledForSegmentAtIndex(@NUInt long segment);
 
+    /**
+     * if set, then we don't keep showing selected state after tracking ends. default is NO
+     */
     @Generated
     @Selector("isMomentary")
     public native boolean isMomentary();
 
+    /**
+     * if set, then we don't keep showing selected state after tracking ends. default is NO
+     */
     @Generated
     @Selector("setMomentary:")
     public native void setMomentary(boolean value);
@@ -483,38 +500,68 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @NInt
     public native long segmentedControlStyle();
 
+    /**
+     * ignored in momentary mode. returns last segment pressed. default is UISegmentedControlNoSegment until a segment is pressed
+     * the UIControlEventValueChanged action is invoked when the segment changes via a user event. set to UISegmentedControlNoSegment to turn off selection
+     */
     @Generated
     @Selector("selectedSegmentIndex")
     @NInt
     public native long selectedSegmentIndex();
 
+    /**
+     * For segments whose width value is 0, setting this property to YES attempts to adjust segment widths based on their content widths. Default is NO.
+     */
     @Generated
     @Selector("setApportionsSegmentWidthsByContent:")
     public native void setApportionsSegmentWidthsByContent(boolean value);
 
+    /**
+     * If backgroundImage is an image returned from -[UIImage resizableImageWithCapInsets:] the cap widths will be calculated from that information, otherwise, the cap width will be calculated by subtracting one from the image's width then dividing by 2. The cap widths will also be used as the margins for text placement. To adjust the margin use the margin adjustment methods.
+     * 
+     * In general, you should specify a value for the normal state to be used by other states which don't have a custom value set.
+     * 
+     * Similarly, when a property is dependent on the bar metrics, be sure to specify a value for UIBarMetricsDefault.
+     * In the case of the segmented control, appearance properties for UIBarMetricsCompact are only respected for segmented controls in the smaller navigation and toolbars.
+     */
     @Generated
     @Selector("setBackgroundImage:forState:barMetrics:")
     public native void setBackgroundImageForStateBarMetrics(UIImage backgroundImage, @NUInt long state,
             @NInt long barMetrics);
 
+    /**
+     * adjust offset of image or text inside the segment. default is (0,0)
+     */
     @Generated
     @Selector("setContentOffset:forSegmentAtIndex:")
     public native void setContentOffsetForSegmentAtIndex(@ByValue CGSize offset, @NUInt long segment);
 
+    /**
+     * For adjusting the position of a title or image within the given segment of a segmented control.
+     */
     @Generated
     @Selector("setContentPositionAdjustment:forSegmentType:barMetrics:")
     public native void setContentPositionAdjustmentForSegmentTypeBarMetrics(@ByValue UIOffset adjustment,
             @NInt long leftCenterRightOrAlone, @NInt long barMetrics);
 
+    /**
+     * To customize the segmented control appearance you will need to provide divider images to go between two unselected segments (leftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal), selected on the left and unselected on the right (leftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal), and unselected on the left and selected on the right (leftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected).
+     */
     @Generated
     @Selector("setDividerImage:forLeftSegmentState:rightSegmentState:barMetrics:")
     public native void setDividerImageForLeftSegmentStateRightSegmentStateBarMetrics(UIImage dividerImage,
             @NUInt long leftState, @NUInt long rightState, @NInt long barMetrics);
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("setEnabled:forSegmentAtIndex:")
     public native void setEnabledForSegmentAtIndex(boolean enabled, @NUInt long segment);
 
+    /**
+     * can only have image or title, not both. must be 0..#segments - 1 (or ignored). default is nil
+     */
     @Generated
     @Selector("setImage:forSegmentAtIndex:")
     public native void setImageForSegmentAtIndex(UIImage image, @NUInt long segment);
@@ -524,29 +571,34 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("setSegmentedControlStyle:")
     public native void setSegmentedControlStyle(@NInt long value);
 
+    /**
+     * ignored in momentary mode. returns last segment pressed. default is UISegmentedControlNoSegment until a segment is pressed
+     * the UIControlEventValueChanged action is invoked when the segment changes via a user event. set to UISegmentedControlNoSegment to turn off selection
+     */
     @Generated
     @Selector("setSelectedSegmentIndex:")
     public native void setSelectedSegmentIndex(@NInt long value);
 
-    @Generated
-    @Selector("setTintColor:")
-    public native void setTintColor(UIColor value);
-
+    /**
+     * can only have image or title, not both. must be 0..#segments - 1 (or ignored). default is nil
+     */
     @Generated
     @Selector("setTitle:forSegmentAtIndex:")
     public native void setTitleForSegmentAtIndex(String title, @NUInt long segment);
 
+    /**
+     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary, using the keys found in NSAttributedString.h.
+     */
     @Generated
     @Selector("setTitleTextAttributes:forState:")
-    public native void setTitleTextAttributesForState(NSDictionary<?, ?> attributes, @NUInt long state);
+    public native void setTitleTextAttributesForState(NSDictionary<String, ?> attributes, @NUInt long state);
 
+    /**
+     * set to 0.0 width to autosize. default is 0.0
+     */
     @Generated
     @Selector("setWidth:forSegmentAtIndex:")
     public native void setWidthForSegmentAtIndex(@NFloat double width, @NUInt long segment);
-
-    @Generated
-    @Selector("tintColor")
-    public native UIColor tintColor();
 
     @Generated
     @Selector("titleForSegmentAtIndex:")
@@ -554,7 +606,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     @Generated
     @Selector("titleTextAttributesForState:")
-    public native NSDictionary<?, ?> titleTextAttributesForState(@NUInt long state);
+    public native NSDictionary<String, ?> titleTextAttributesForState(@NUInt long state);
 
     @Generated
     @Selector("widthForSegmentAtIndex:")
@@ -568,4 +620,64 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Generated
     @Selector("setSpringLoaded:")
     public native void setSpringLoaded(boolean value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    /**
+     * The color to use for highlighting the currently selected segment.
+     */
+    @Generated
+    @Selector("selectedSegmentTintColor")
+    public native UIColor selectedSegmentTintColor();
+
+    /**
+     * The color to use for highlighting the currently selected segment.
+     */
+    @Generated
+    @Selector("setSelectedSegmentTintColor:")
+    public native void setSelectedSegmentTintColor(UIColor value);
+
+    /**
+     * Fetch the action for the given segment, if one has been assigned to that segment
+     */
+    @Generated
+    @Selector("actionForSegmentAtIndex:")
+    public native UIAction actionForSegmentAtIndex(@NUInt long segment);
+
+    /**
+     * Initializes the segmented control with the given frame and segments constructed from the given UIActions. Segments will prefer images over titles when both are provided. Selecting a segment calls UIAction.actionHandler as well as handlers for the ValueChanged and PrimaryActionTriggered control events.
+     */
+    @Generated
+    @Selector("initWithFrame:actions:")
+    public native UISegmentedControl initWithFrameActions(@ByValue CGRect frame, NSArray<? extends UIAction> actions);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UISegmentedControl initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+
+    /**
+     * Insert a segment with the given action at the given index. Segments will prefer images over titles when both are provided. When the segment is selected UIAction.actionHandler is called. If a segment already exists with the action's identifier that segment will either be updated (if the index is the same) or it will be removed (if different).
+     */
+    @Generated
+    @Selector("insertSegmentWithAction:atIndex:animated:")
+    public native void insertSegmentWithActionAtIndexAnimated(UIAction action, @NUInt long segment, boolean animated);
+
+    /**
+     * Returns the index of the segment associated with the given actionIdentifier, or NSNotFound if the identifier could not be found.
+     */
+    @Generated
+    @Selector("segmentIndexForActionIdentifier:")
+    @NInt
+    public native long segmentIndexForActionIdentifier(String actionIdentifier);
+
+    /**
+     * Reconfigures the given segment with this action. Segments will prefer images over titles when both are provided. When the segment is selected UIAction.actionHandler is called. UIAction.identifier must either match the action of the existing segment at this index, or be unique within all actions associated with the segmented control, or this method will assert.
+     */
+    @Generated
+    @Selector("setAction:forSegmentAtIndex:")
+    public native void setActionForSegmentAtIndex(UIAction action, @NUInt long segment);
 }

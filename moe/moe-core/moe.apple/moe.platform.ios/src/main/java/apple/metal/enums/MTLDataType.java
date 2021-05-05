@@ -102,4 +102,11 @@ public final class MTLDataType {
     @Generated @NUInt public static final long RGB10A2Unorm = 0x000000000000004BL;
     @Generated @NUInt public static final long RG11B10Float = 0x000000000000004CL;
     @Generated @NUInt public static final long RGB9E5Float = 0x000000000000004DL;
+    @Generated @NUInt public static final long RenderPipeline = 0x000000000000004EL;
+    @Generated @NUInt public static final long ComputePipeline = 0x000000000000004FL;
+    @Generated @NUInt public static final long IndirectCommandBuffer = 0x0000000000000050L;
+    @Generated @NUInt public static final long VisibleFunctionTable = 0x0000000000000073L;
+    @Generated @NUInt public static final long IntersectionFunctionTable = 0x0000000000000074L;
+    @Generated @NUInt public static final long PrimitiveAccelerationStructure = 0x0000000000000075L;
+    @Generated @NUInt public static final long InstanceAccelerationStructure = 0x0000000000000076L;
 }

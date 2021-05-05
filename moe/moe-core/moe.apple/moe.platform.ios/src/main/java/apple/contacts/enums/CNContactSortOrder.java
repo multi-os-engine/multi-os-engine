@@ -19,6 +19,11 @@ package apple.contacts.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Sort order for contacts.
+ * 
+ * CNContactSortOrderUserDefault is the user's preferred sort order.
+ */
 @Generated
 public final class CNContactSortOrder {
     @Generated @NInt public static final long None = 0x0000000000000000L;

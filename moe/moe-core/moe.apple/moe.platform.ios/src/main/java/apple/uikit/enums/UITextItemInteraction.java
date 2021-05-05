@@ -19,6 +19,12 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * UITextItemInteraction.h
+ * UIKit
+ * 
+ * Copyright (c) 2016-2018 Apple Inc. All rights reserved.
+ */
 @Generated
 public final class UITextItemInteraction {
     @Generated @NInt public static final long InvokeDefaultAction = 0x0000000000000000L;

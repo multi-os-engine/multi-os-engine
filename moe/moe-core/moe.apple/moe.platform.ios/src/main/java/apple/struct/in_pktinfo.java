@@ -51,28 +51,46 @@ public final class in_pktinfo extends StructObject {
         setIpi_addr(ipi_addr);
     }
 
+    /**
+     * send/recv interface index
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int ipi_ifindex();
 
+    /**
+     * send/recv interface index
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setIpi_ifindex(int value);
 
+    /**
+     * Local address
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native in_addr ipi_spec_dst();
 
+    /**
+     * Local address
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setIpi_spec_dst(@ByValue in_addr value);
 
+    /**
+     * IP Header dst address
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @ByValue
     public native in_addr ipi_addr();
 
+    /**
+     * IP Header dst address
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setIpi_addr(@ByValue in_addr value);

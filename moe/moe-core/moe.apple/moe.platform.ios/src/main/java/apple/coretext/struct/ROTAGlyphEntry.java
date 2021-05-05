@@ -58,18 +58,30 @@ public final class ROTAGlyphEntry extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setGlyphIndexOffset(short value);
 
+    /**
+     * y offset to the rotated horizontal baseline
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native short HBaselineOffset();
 
+    /**
+     * y offset to the rotated horizontal baseline
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setHBaselineOffset(short value);
 
+    /**
+     * x offset to the rotated vertical baseline
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native short VBaselineOffset();
 
+    /**
+     * x offset to the rotated vertical baseline
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setVBaselineOffset(short value);

@@ -21,5 +21,5 @@ public interface MPSImageTransformProvider extends NSSecureCoding {
     @Generated
     @Selector("transformForSourceImage:handle:")
     @ByValue
-    MPSScaleTransform transformForSourceImageHandle(MPSImage image, @Mapped(ObjCObjectMapper.class) Object handle);
+    MPSScaleTransform transformForSourceImageHandle(MPSImage image, @Mapped(ObjCObjectMapper.class) MPSHandle handle);
 }

@@ -42,6 +42,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioUnitTimePitch
+ * 
+ * an AVAudioUnitTimeEffect that provides good quality time stretching and pitch shifting
+ * 
+ *     In this time effect, the playback rate and pitch parameters function independently of each other
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -168,26 +175,92 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
     public native AVAudioUnitTimePitch initWithAudioComponentDescription(
             @ByValue AudioComponentDescription audioComponentDescription);
 
+    /**
+     * [@property] overlap
+     * 
+     * amount of overlap between segments of the input audio signal
+     * 
+     * A higher value results in fewer artifacts in the output signal.
+     * This parameter also impacts the amount of CPU used.
+     * 
+     * Range:      3.0 -> 32.0
+     * Default:    8.0
+     * Unit:       Generic
+     */
     @Generated
     @Selector("overlap")
     public native float overlap();
 
+    /**
+     * [@property] pitch
+     * 
+     * amount by which the input signal is pitch shifted
+     * 
+     *           1 octave  = 1200 cents
+     * 1 musical semitone  = 100 cents
+     * 
+     * Range:      -2400 -> 2400
+     * Default:    0.0
+     * Unit:       Cents
+     */
     @Generated
     @Selector("pitch")
     public native float pitch();
 
+    /**
+     * [@property] rate
+     * 
+     * playback rate of the input signal
+     * 
+     * Range:      1/32 -> 32.0
+     * Default:    1.0
+     * Unit:       Generic
+     */
     @Generated
     @Selector("rate")
     public native float rate();
 
+    /**
+     * [@property] overlap
+     * 
+     * amount of overlap between segments of the input audio signal
+     * 
+     * A higher value results in fewer artifacts in the output signal.
+     * This parameter also impacts the amount of CPU used.
+     * 
+     * Range:      3.0 -> 32.0
+     * Default:    8.0
+     * Unit:       Generic
+     */
     @Generated
     @Selector("setOverlap:")
     public native void setOverlap(float value);
 
+    /**
+     * [@property] pitch
+     * 
+     * amount by which the input signal is pitch shifted
+     * 
+     *           1 octave  = 1200 cents
+     * 1 musical semitone  = 100 cents
+     * 
+     * Range:      -2400 -> 2400
+     * Default:    0.0
+     * Unit:       Cents
+     */
     @Generated
     @Selector("setPitch:")
     public native void setPitch(float value);
 
+    /**
+     * [@property] rate
+     * 
+     * playback rate of the input signal
+     * 
+     * Range:      1/32 -> 32.0
+     * Default:    1.0
+     * Unit:       Generic
+     */
     @Generated
     @Selector("setRate:")
     public native void setRate(float value);

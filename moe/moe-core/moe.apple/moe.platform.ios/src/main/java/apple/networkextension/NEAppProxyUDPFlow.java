@@ -42,6 +42,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEAppProxyUDPFlow
+ * 
+ * The NEAppProxyUDPFlow class declares the programmatic interface of an object that is used by NEAppProxyProvider implementations to proxy the payload of UDP datagrams.
+ * 
+ * NEAppProxyUDPFlow is part of NetworkExtension.framework.
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -157,15 +166,36 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
     @Selector("init")
     public native NEAppProxyUDPFlow init();
 
+    /**
+     * [@property] localEndpoint
+     * 
+     * An NWEndpoint object containing the local endpoint of the flow's corresponding socket.
+     */
     @Generated
     @Selector("localEndpoint")
     public native NWEndpoint localEndpoint();
 
+    /**
+     * readDatagramWithCompletionHandler:
+     * 
+     * Read a datagram from the flow.
+     * 
+     * @param completionHandler A block that will be executed when datagrams have been read from the flow. The block takes the datagrams that were read, the destination endpoints of the datagrams, and an NSError. If an error occurred while reading then the error parameter will be non-nil. If the datagrams and remoteEndpoints arrays are non-nill but
+     */
     @Generated
     @Selector("readDatagramsWithCompletionHandler:")
     public native void readDatagramsWithCompletionHandler(
             @ObjCBlock(name = "call_readDatagramsWithCompletionHandler") Block_readDatagramsWithCompletionHandler completionHandler);
 
+    /**
+     * writeDatagram:sentByEndpoint:completionHandler:
+     * 
+     * Write a datagram to the flow.
+     * 
+     * @param datagrams An array of NSData objects containing the data to be written.
+     * @param remoteEndpoints The source endpoints of the datagrams.
+     * @param completionHandler A block that will be executed when the datagrams have been written to the corresponding socket's receive buffer.
+     */
     @Generated
     @Selector("writeDatagrams:sentByEndpoints:completionHandler:")
     public native void writeDatagramsSentByEndpointsCompletionHandler(NSArray<? extends NSData> datagrams,
@@ -176,14 +206,14 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
     @Generated
     public interface Block_readDatagramsWithCompletionHandler {
         @Generated
-        void call_readDatagramsWithCompletionHandler(NSArray<? extends NSData> arg0, NSArray<? extends NWEndpoint> arg1,
-                NSError arg2);
+        void call_readDatagramsWithCompletionHandler(NSArray<? extends NSData> datagrams,
+                NSArray<? extends NWEndpoint> remoteEndpoints, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDatagramsSentByEndpointsCompletionHandler {
         @Generated
-        void call_writeDatagramsSentByEndpointsCompletionHandler(NSError arg0);
+        void call_writeDatagramsSentByEndpointsCompletionHandler(NSError error);
     }
 }

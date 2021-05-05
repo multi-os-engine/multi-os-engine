@@ -53,6 +53,12 @@ public class UIDragInteraction extends NSObject implements UIInteraction {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Determines whether this interaction allows recognition of other gesture recognizers during the lift.
+     * If true, the interaction will be cancelled during the lift if another gesture recognizer recognizes.
+     * If false (the default value), all competing gesture recognizers will be failed when the lift begins.
+     * Note: UILongPressGestureRecognizers are always delayed and simultaneous during the lift.
+     */
     @Generated
     @Selector("allowsSimultaneousRecognitionDuringLift")
     public native boolean allowsSimultaneousRecognitionDuringLift();
@@ -123,10 +129,19 @@ public class UIDragInteraction extends NSObject implements UIInteraction {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Whether this interaction is allowed to drag.
+     * If true, the interaction will use touches to begin drags and/or add items to drags.
+     * If false, it will ignore touches.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * The default value of `enabled` in newly created UIDragInteractions.
+     * The value depends on the device.
+     */
     @Generated
     @Selector("isEnabledByDefault")
     public static native boolean isEnabledByDefault();
@@ -153,10 +168,21 @@ public class UIDragInteraction extends NSObject implements UIInteraction {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Determines whether this interaction allows recognition of other gesture recognizers during the lift.
+     * If true, the interaction will be cancelled during the lift if another gesture recognizer recognizes.
+     * If false (the default value), all competing gesture recognizers will be failed when the lift begins.
+     * Note: UILongPressGestureRecognizers are always delayed and simultaneous during the lift.
+     */
     @Generated
     @Selector("setAllowsSimultaneousRecognitionDuringLift:")
     public native void setAllowsSimultaneousRecognitionDuringLift(boolean value);
 
+    /**
+     * Whether this interaction is allowed to drag.
+     * If true, the interaction will use touches to begin drags and/or add items to drags.
+     * If false, it will ignore touches.
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);

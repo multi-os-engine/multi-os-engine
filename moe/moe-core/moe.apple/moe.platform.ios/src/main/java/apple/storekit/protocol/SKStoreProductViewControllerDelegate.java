@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKStoreProductViewControllerDelegate")
 public interface SKStoreProductViewControllerDelegate {
+    /**
+     * Sent after the page is dismissed
+     */
     @Generated
     @IsOptional
     @Selector("productViewControllerDidFinish:")

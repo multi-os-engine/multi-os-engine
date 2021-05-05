@@ -42,6 +42,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioMixingDestination
+ * 
+ * An object representing a connection to a mixer node from a node that
+ * 	conforms to AVAudioMixing protocol
+ * 
+ * 	A standalone instance of AVAudioMixingDestination cannot be created.
+ * 	Only an instance vended by a source node (e.g. AVAudioPlayerNode) can be used
+ * 	(see `AVAudioMixing`).
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +163,11 @@ public class AVAudioMixingDestination extends NSObject implements AVAudioMixing 
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] connectionPoint
+     * 
+     * Returns the underlying mixer connection point
+     */
     @Generated
     @Selector("connectionPoint")
     public native AVAudioConnectionPoint connectionPoint();
@@ -230,4 +245,22 @@ public class AVAudioMixingDestination extends NSObject implements AVAudioMixing 
     @Generated
     @Selector("volume")
     public native float volume();
+
+    @Generated
+    @Selector("pointSourceInHeadMode")
+    @NInt
+    public native long pointSourceInHeadMode();
+
+    @Generated
+    @Selector("setPointSourceInHeadMode:")
+    public native void setPointSourceInHeadMode(@NInt long value);
+
+    @Generated
+    @Selector("setSourceMode:")
+    public native void setSourceMode(@NInt long value);
+
+    @Generated
+    @Selector("sourceMode")
+    @NInt
+    public native long sourceMode();
 }

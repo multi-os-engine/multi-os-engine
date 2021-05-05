@@ -42,42 +42,72 @@ public final class fstore extends StructObject {
         super(peer);
     }
 
+    /**
+     * IN: flags word
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int fst_flags();
 
+    /**
+     * IN: flags word
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setFst_flags(int value);
 
+    /**
+     * IN: indicates use of offset field
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int fst_posmode();
 
+    /**
+     * IN: indicates use of offset field
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setFst_posmode(int value);
 
+    /**
+     * IN: start of the region
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native long fst_offset();
 
+    /**
+     * IN: start of the region
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setFst_offset(long value);
 
+    /**
+     * IN: size of the region
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native long fst_length();
 
+    /**
+     * IN: size of the region
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setFst_length(long value);
 
+    /**
+     * OUT: number of bytes allocated
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native long fst_bytesalloc();
 
+    /**
+     * OUT: number of bytes allocated
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setFst_bytesalloc(long value);

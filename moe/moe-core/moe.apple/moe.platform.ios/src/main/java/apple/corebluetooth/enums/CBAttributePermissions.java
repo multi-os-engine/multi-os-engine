@@ -19,6 +19,16 @@ package apple.corebluetooth.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ *  [@enum] CBAttributePermissions
+ * 
+ * Read, write, and encryption permissions for an ATT attribute. Can be combined.
+ * 
+ * [@constant] CBAttributePermissionsReadable					Read-only.
+ * [@constant] CBAttributePermissionsWriteable					Write-only.
+ * [@constant] CBAttributePermissionsReadEncryptionRequired		Readable by trusted devices.
+ * [@constant] CBAttributePermissionsWriteEncryptionRequired		Writeable by trusted devices.
+ */
 @Generated
 public final class CBAttributePermissions {
     @Generated @NUInt public static final long Readable = 0x0000000000000001L;

@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSDateComponents;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
 import apple.foundation.NSSet;
@@ -39,6 +40,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -262,4 +264,57 @@ public class HKObserverQuery extends HKQuery {
     @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
             HKQuantity totalFlightsClimbed);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsFromSource:FHIRResourceType:identifier:")
+    public static native NSPredicate predicateForClinicalRecordsFromSourceFHIRResourceTypeIdentifier(HKSource source,
+            String resourceType, String identifier);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsWithFHIRResourceType:")
+    public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(String resourceType);
+
+    /**
+     * initWithSampleType:predicate:updateHandler:
+     * 
+     * This method installs a handler that is called when a sample type has a new sample added.
+     * 
+     * If you have subscribed to background updates you must call the passed completion block
+     *                once you have processed data from this notification. Otherwise the system will continue
+     *                to notify you of this data.
+     */
+    @Generated
+    @Selector("initWithSampleType:predicate:updateHandler:")
+    public native HKObserverQuery initWithSampleTypePredicateUpdateHandler(HKSampleType sampleType,
+            NSPredicate predicate,
+            @ObjCBlock(name = "call_initWithSampleTypePredicateUpdateHandler") Block_initWithSampleTypePredicateUpdateHandler updateHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithSampleTypePredicateUpdateHandler {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_initWithSampleTypePredicateUpdateHandler {
+            @Generated
+            void call_Block_initWithSampleTypePredicateUpdateHandler();
+        }
+
+        @Generated
+        void call_initWithSampleTypePredicateUpdateHandler(HKObserverQuery query,
+                @ObjCBlock(name = "call_Block_initWithSampleTypePredicateUpdateHandler") Block_Block_initWithSampleTypePredicateUpdateHandler completionHandler,
+                NSError error);
+    }
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithClassification:")
+    public static native NSPredicate predicateForElectrocardiogramsWithClassification(@NInt long classification);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithSymptomsStatus:")
+    public static native NSPredicate predicateForElectrocardiogramsWithSymptomsStatus(@NInt long symptomsStatus);
+
+    @Generated
+    @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
+    public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
+            HKElectrocardiogram electrocardiogram);
 }

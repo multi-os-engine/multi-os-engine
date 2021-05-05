@@ -42,10 +42,16 @@ public final class MTLTriangleTessellationFactorsHalf extends StructObject {
         super(peer);
     }
 
+    /**
+     * NOTE: edgeTessellationFactor and insideTessellationFactor are interpreted as half (16-bit floats)
+     */
     @Generated
     @StructureField(order = 0, isGetter = true, count = 3)
     public native char edgeTessellationFactor(int field_idx);
 
+    /**
+     * NOTE: edgeTessellationFactor and insideTessellationFactor are interpreted as half (16-bit floats)
+     */
     @Generated
     @StructureField(order = 0, isGetter = false, count = 3)
     public native void setEdgeTessellationFactor(char value, int field_idx);

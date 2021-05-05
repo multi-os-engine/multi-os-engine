@@ -23,6 +23,9 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Discardable Content		**********
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)

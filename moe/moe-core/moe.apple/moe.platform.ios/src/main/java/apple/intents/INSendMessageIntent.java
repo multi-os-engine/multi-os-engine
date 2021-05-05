@@ -156,6 +156,9 @@ public class INSendMessageIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * Body text of the message.
+     */
     @Generated
     @Selector("content")
     public native String content();
@@ -170,7 +173,7 @@ public class INSendMessageIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSendMessageIntent initWithCoder(NSCoder aDecoder);
+    public native INSendMessageIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRecipients:content:groupName:serviceName:sender:")
@@ -178,14 +181,23 @@ public class INSendMessageIntent extends INIntent {
             NSArray<? extends INPerson> recipients, String content, String groupName, String serviceName,
             INPerson sender);
 
+    /**
+     * Contacts to whom the message should be sent.
+     */
     @Generated
     @Selector("recipients")
     public native NSArray<? extends INPerson> recipients();
 
+    /**
+     * The person, or account, sending the message.
+     */
     @Generated
     @Selector("sender")
     public native INPerson sender();
 
+    /**
+     * Specified service for the message.
+     */
     @Generated
     @Selector("serviceName")
     public native String serviceName();
@@ -209,4 +221,26 @@ public class INSendMessageIntent extends INIntent {
     @Generated
     @Selector("speakableGroupName")
     public native INSpeakableString speakableGroupName();
+
+    @Generated
+    @Selector("attachments")
+    public native NSArray<? extends INSendMessageAttachment> attachments();
+
+    @Generated
+    @Selector("initWithRecipients:outgoingMessageType:content:speakableGroupName:conversationIdentifier:serviceName:sender:")
+    public native INSendMessageIntent initWithRecipientsOutgoingMessageTypeContentSpeakableGroupNameConversationIdentifierServiceNameSender(
+            NSArray<? extends INPerson> recipients, @NInt long outgoingMessageType, String content,
+            INSpeakableString speakableGroupName, String conversationIdentifier, String serviceName, INPerson sender);
+
+    @Generated
+    @Selector("initWithRecipients:outgoingMessageType:content:speakableGroupName:conversationIdentifier:serviceName:sender:attachments:")
+    public native INSendMessageIntent initWithRecipientsOutgoingMessageTypeContentSpeakableGroupNameConversationIdentifierServiceNameSenderAttachments(
+            NSArray<? extends INPerson> recipients, @NInt long outgoingMessageType, String content,
+            INSpeakableString speakableGroupName, String conversationIdentifier, String serviceName, INPerson sender,
+            NSArray<? extends INSendMessageAttachment> attachments);
+
+    @Generated
+    @Selector("outgoingMessageType")
+    @NInt
+    public native long outgoingMessageType();
 }

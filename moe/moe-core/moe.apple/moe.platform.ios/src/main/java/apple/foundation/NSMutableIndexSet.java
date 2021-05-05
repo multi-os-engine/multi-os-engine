@@ -184,7 +184,7 @@ public class NSMutableIndexSet extends NSIndexSet {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableIndexSet initWithCoder(NSCoder aDecoder);
+    public native NSMutableIndexSet initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithIndex:")
@@ -214,6 +214,9 @@ public class NSMutableIndexSet extends NSIndexSet {
     @Selector("removeIndexesInRange:")
     public native void removeIndexesInRange(@ByValue NSRange range);
 
+    /**
+     * For a positive delta, shifts the indexes in [index, INT_MAX] to the right, thereby inserting an "empty space" [index, delta], for a negative delta, shifts the indexes in [index, INT_MAX] to the left, thereby deleting the indexes in the range [index - delta, delta].
+     */
     @Generated
     @Selector("shiftIndexesStartingAtIndex:by:")
     public native void shiftIndexesStartingAtIndexBy(@NUInt long index, @NInt long delta);

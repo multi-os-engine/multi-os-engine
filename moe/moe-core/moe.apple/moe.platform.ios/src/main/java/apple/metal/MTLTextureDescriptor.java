@@ -21,9 +21,11 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
+import apple.metal.struct.MTLTextureSwizzleChannels;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -146,11 +148,21 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * texture2DDescriptorWithPixelFormat:width:height:mipmapped:
+     * 
+     * Create a TextureDescriptor for a common 2D texture.
+     */
     @Generated
     @Selector("texture2DDescriptorWithPixelFormat:width:height:mipmapped:")
     public static native MTLTextureDescriptor texture2DDescriptorWithPixelFormatWidthHeightMipmapped(
             @NUInt long pixelFormat, @NUInt long width, @NUInt long height, boolean mipmapped);
 
+    /**
+     * textureCubeDescriptorWithPixelFormat:size:mipmapped:
+     * 
+     * Create a TextureDescriptor for a common Cube texture.
+     */
     @Generated
     @Selector("textureCubeDescriptorWithPixelFormat:size:mipmapped:")
     public static native MTLTextureDescriptor textureCubeDescriptorWithPixelFormatSizeMipmapped(@NUInt long pixelFormat,
@@ -161,6 +173,13 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] arrayLength
+     * 
+     * The number of array elements to allocate. The default value is 1.
+     * 
+     * When allocating any non-Array texture type, arrayLength has to be 1. Otherwise it must be set to something greater than 1 and less than 2048.
+     */
     @Generated
     @Selector("arrayLength")
     @NUInt
@@ -172,16 +191,35 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * [@property] cpuCacheMode
+     * 
+     * Options to specify CPU cache mode of texture resource.
+     */
     @Generated
     @Selector("cpuCacheMode")
     @NUInt
     public native long cpuCacheMode();
 
+    /**
+     * [@property] depth
+     * 
+     * The depth of the texture to create. The default value is 1.
+     * 
+     * depth When allocating any texture types other than 3D, depth must be 1.
+     */
     @Generated
     @Selector("depth")
     @NUInt
     public native long depth();
 
+    /**
+     * [@property] height
+     * 
+     * The height of the texture to create. The default value is 1.
+     * 
+     * height If allocating a 1D texture, height must be 1.
+     */
     @Generated
     @Selector("height")
     @NUInt
@@ -191,91 +229,291 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLTextureDescriptor init();
 
+    /**
+     * [@property] mipmapLevelCount
+     * 
+     * The number of mipmap levels to allocate. The default value is 1.
+     * 
+     * When creating Buffer and Multisample textures, mipmapLevelCount must be 1.
+     */
     @Generated
     @Selector("mipmapLevelCount")
     @NUInt
     public native long mipmapLevelCount();
 
+    /**
+     * [@property] pixelFormat
+     * 
+     * The pixel format to use when allocating this texture. This is also the pixel format that will be used to when the caller writes or reads pixels from this texture. The default value is MTLPixelFormatRGBA8Unorm.
+     */
     @Generated
     @Selector("pixelFormat")
     @NUInt
     public native long pixelFormat();
 
+    /**
+     * [@property] resourceOptions
+     * 
+     * Options to control memory allocation parameters, etc.
+     * 
+     * Contains a packed set of the storageMode, cpuCacheMode and hazardTrackingMode properties.
+     */
     @Generated
     @Selector("resourceOptions")
     @NUInt
     public native long resourceOptions();
 
+    /**
+     * [@property] sampleCount
+     * 
+     * The number of samples in the texture to create. The default value is 1.
+     * 
+     * When creating Buffer textures sampleCount must be 1. Implementations may round sample counts up to the next supported value.
+     */
     @Generated
     @Selector("sampleCount")
     @NUInt
     public native long sampleCount();
 
+    /**
+     * [@property] arrayLength
+     * 
+     * The number of array elements to allocate. The default value is 1.
+     * 
+     * When allocating any non-Array texture type, arrayLength has to be 1. Otherwise it must be set to something greater than 1 and less than 2048.
+     */
     @Generated
     @Selector("setArrayLength:")
     public native void setArrayLength(@NUInt long value);
 
+    /**
+     * [@property] cpuCacheMode
+     * 
+     * Options to specify CPU cache mode of texture resource.
+     */
     @Generated
     @Selector("setCpuCacheMode:")
     public native void setCpuCacheMode(@NUInt long value);
 
+    /**
+     * [@property] depth
+     * 
+     * The depth of the texture to create. The default value is 1.
+     * 
+     * depth When allocating any texture types other than 3D, depth must be 1.
+     */
     @Generated
     @Selector("setDepth:")
     public native void setDepth(@NUInt long value);
 
+    /**
+     * [@property] height
+     * 
+     * The height of the texture to create. The default value is 1.
+     * 
+     * height If allocating a 1D texture, height must be 1.
+     */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NUInt long value);
 
+    /**
+     * [@property] mipmapLevelCount
+     * 
+     * The number of mipmap levels to allocate. The default value is 1.
+     * 
+     * When creating Buffer and Multisample textures, mipmapLevelCount must be 1.
+     */
     @Generated
     @Selector("setMipmapLevelCount:")
     public native void setMipmapLevelCount(@NUInt long value);
 
+    /**
+     * [@property] pixelFormat
+     * 
+     * The pixel format to use when allocating this texture. This is also the pixel format that will be used to when the caller writes or reads pixels from this texture. The default value is MTLPixelFormatRGBA8Unorm.
+     */
     @Generated
     @Selector("setPixelFormat:")
     public native void setPixelFormat(@NUInt long value);
 
+    /**
+     * [@property] resourceOptions
+     * 
+     * Options to control memory allocation parameters, etc.
+     * 
+     * Contains a packed set of the storageMode, cpuCacheMode and hazardTrackingMode properties.
+     */
     @Generated
     @Selector("setResourceOptions:")
     public native void setResourceOptions(@NUInt long value);
 
+    /**
+     * [@property] sampleCount
+     * 
+     * The number of samples in the texture to create. The default value is 1.
+     * 
+     * When creating Buffer textures sampleCount must be 1. Implementations may round sample counts up to the next supported value.
+     */
     @Generated
     @Selector("setSampleCount:")
     public native void setSampleCount(@NUInt long value);
 
+    /**
+     * [@property] storageMode
+     * 
+     * To specify storage mode of texture resource.
+     */
     @Generated
     @Selector("setStorageMode:")
     public native void setStorageMode(@NUInt long value);
 
+    /**
+     * [@property] type
+     * 
+     * The overall type of the texture to be created. The default value is MTLTextureType2D.
+     */
     @Generated
     @Selector("setTextureType:")
     public native void setTextureType(@NUInt long value);
 
+    /**
+     * [@property] usage
+     * 
+     * Description of texture usage
+     */
     @Generated
     @Selector("setUsage:")
     public native void setUsage(@NUInt long value);
 
+    /**
+     * [@property] width
+     * 
+     * The width of the texture to create. The default value is 1.
+     */
     @Generated
     @Selector("setWidth:")
     public native void setWidth(@NUInt long value);
 
+    /**
+     * [@property] storageMode
+     * 
+     * To specify storage mode of texture resource.
+     */
     @Generated
     @Selector("storageMode")
     @NUInt
     public native long storageMode();
 
+    /**
+     * [@property] type
+     * 
+     * The overall type of the texture to be created. The default value is MTLTextureType2D.
+     */
     @Generated
     @Selector("textureType")
     @NUInt
     public native long textureType();
 
+    /**
+     * [@property] usage
+     * 
+     * Description of texture usage
+     */
     @Generated
     @Selector("usage")
     @NUInt
     public native long usage();
 
+    /**
+     * [@property] width
+     * 
+     * The width of the texture to create. The default value is 1.
+     */
     @Generated
     @Selector("width")
     @NUInt
     public native long width();
+
+    /**
+     * [@property] allowGPUOptimizedContents
+     * 
+     * Allow GPU-optimization for the contents of this texture. The default value is true.
+     * 
+     * Useful for opting-out of GPU-optimization when implicit optimization (e.g. RT writes) is regressing CPU-read-back performance. See the documentation for optimizeContentsForGPUAccess: and optimizeContentsForCPUAccess: APIs.
+     */
+    @Generated
+    @Selector("allowGPUOptimizedContents")
+    public native boolean allowGPUOptimizedContents();
+
+    /**
+     * [@property] hazardTrackingMode
+     * 
+     * Set hazard tracking mode for the texture. The default value is MTLHazardTrackingModeDefault.
+     * 
+     * For resources created from the device, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeTracked.
+     * For resources created on a heap, MTLHazardTrackingModeDefault is treated as the hazardTrackingMode of the heap itself.
+     * In either case, it is possible to opt-out of hazard tracking by setting MTLHazardTrackingModeUntracked.
+     * It is not possible to opt-in to hazard tracking on a heap that itself is not hazard tracked.
+     * For optimal performance, perform hazard tracking manually through MTLFence or MTLEvent instead.
+     */
+    @Generated
+    @Selector("hazardTrackingMode")
+    @NUInt
+    public native long hazardTrackingMode();
+
+    /**
+     * [@property] allowGPUOptimizedContents
+     * 
+     * Allow GPU-optimization for the contents of this texture. The default value is true.
+     * 
+     * Useful for opting-out of GPU-optimization when implicit optimization (e.g. RT writes) is regressing CPU-read-back performance. See the documentation for optimizeContentsForGPUAccess: and optimizeContentsForCPUAccess: APIs.
+     */
+    @Generated
+    @Selector("setAllowGPUOptimizedContents:")
+    public native void setAllowGPUOptimizedContents(boolean value);
+
+    /**
+     * [@property] hazardTrackingMode
+     * 
+     * Set hazard tracking mode for the texture. The default value is MTLHazardTrackingModeDefault.
+     * 
+     * For resources created from the device, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeTracked.
+     * For resources created on a heap, MTLHazardTrackingModeDefault is treated as the hazardTrackingMode of the heap itself.
+     * In either case, it is possible to opt-out of hazard tracking by setting MTLHazardTrackingModeUntracked.
+     * It is not possible to opt-in to hazard tracking on a heap that itself is not hazard tracked.
+     * For optimal performance, perform hazard tracking manually through MTLFence or MTLEvent instead.
+     */
+    @Generated
+    @Selector("setHazardTrackingMode:")
+    public native void setHazardTrackingMode(@NUInt long value);
+
+    /**
+     * [@property] swizzle
+     * 
+     * Channel swizzle to use when reading or sampling from the texture, the default value is MTLTextureSwizzleChannelsDefault.
+     */
+    @Generated
+    @Selector("setSwizzle:")
+    public native void setSwizzle(@ByValue MTLTextureSwizzleChannels value);
+
+    /**
+     * [@property] swizzle
+     * 
+     * Channel swizzle to use when reading or sampling from the texture, the default value is MTLTextureSwizzleChannelsDefault.
+     */
+    @Generated
+    @Selector("swizzle")
+    @ByValue
+    public native MTLTextureSwizzleChannels swizzle();
+
+    /**
+     * textureBufferDescriptorWithPixelFormat:width:resourceOptions:usage:
+     * 
+     * Create a TextureDescriptor for a common texture buffer.
+     */
+    @Generated
+    @Selector("textureBufferDescriptorWithPixelFormat:width:resourceOptions:usage:")
+    public static native MTLTextureDescriptor textureBufferDescriptorWithPixelFormatWidthResourceOptionsUsage(
+            @NUInt long pixelFormat, @NUInt long width, @NUInt long resourceOptions, @NUInt long usage);
 }

@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CKRecordZoneCapabilities {
+    /**
+     * This zone supports CKFetchRecordChangesOperation
+     */
     @Generated @NUInt public static final long FetchChanges = 0x0000000000000001L;
+    /**
+     * Batched changes to this zone happen atomically
+     */
     @Generated @NUInt public static final long Atomic = 0x0000000000000002L;
+    /**
+     * Records in this zone can be shared
+     */
     @Generated @NUInt public static final long Sharing = 0x0000000000000004L;
 
     @Generated

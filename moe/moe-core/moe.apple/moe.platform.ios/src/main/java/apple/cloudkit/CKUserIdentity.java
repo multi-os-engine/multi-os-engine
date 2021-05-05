@@ -167,7 +167,7 @@ public class CKUserIdentity extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hasiCloudAccount")
@@ -179,8 +179,11 @@ public class CKUserIdentity extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKUserIdentity initWithCoder(NSCoder aDecoder);
+    public native CKUserIdentity initWithCoder(NSCoder coder);
 
+    /**
+     * This is the @c lookupInfo you passed in to @c CKDiscoverUserIdentitiesOperation or @c CKFetchShareParticipantsOperation
+     */
     @Generated
     @Selector("lookupInfo")
     public native CKUserIdentityLookupInfo lookupInfo();
@@ -199,6 +202,17 @@ public class CKUserIdentity extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("userRecordID")
     public native CKRecordID userRecordID();
 
+    /**
+     * Link to the Contacts database.
+     * 
+     * Identities discovered via @c CKDiscoverAllUserIdentitiesOperation correspond to entries in the local Contacts database.  These identities will have @c contactIdentifiers filled out, which your app may use to get additional information about the contacts that were discovered.  Multiple @c contactIdentifiers may exist for a single discovered user, as multiple contacts may contain the same email addresses or phone numbers.
+     * 
+     * To transform these identifiers into an array of unified contact identifiers, pass a @c CNContact.predicateForContacts(withIdentifiers:) predicate into @c CNContactStore.unifiedContacts(matching:keysToFetch:)
+     * 
+     * @return individual, non-unified contacts.
+     * 
+     * @see Contacts.framework and CNContact.identifier
+     */
     @Generated
     @Selector("contactIdentifiers")
     public native NSArray<String> contactIdentifiers();

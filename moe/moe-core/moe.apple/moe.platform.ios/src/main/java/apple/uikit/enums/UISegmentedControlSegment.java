@@ -22,9 +22,21 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class UISegmentedControlSegment {
     @Generated @NInt public static final long Any = 0x0000000000000000L;
+    /**
+     * The capped, leftmost segment. Only applies when numSegments > 1.
+     */
     @Generated @NInt public static final long Left = 0x0000000000000001L;
+    /**
+     * Any segment between the left and rightmost segments. Only applies when numSegments > 2.
+     */
     @Generated @NInt public static final long Center = 0x0000000000000002L;
+    /**
+     * The capped,rightmost segment. Only applies when numSegments > 1.
+     */
     @Generated @NInt public static final long Right = 0x0000000000000003L;
+    /**
+     * The standalone segment, capped on both ends. Only applies when numSegments = 1.
+     */
     @Generated @NInt public static final long Alone = 0x0000000000000004L;
 
     @Generated

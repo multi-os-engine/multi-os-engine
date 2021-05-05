@@ -178,24 +178,39 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetAvailableRestaurantReservationBookingsIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INGetAvailableRestaurantReservationBookingsIntentResponse initWithCoder(NSCoder coder);
 
+    /**
+     * An optional string to be displayed in UI that allows the vendor to detail things like specials or incentives.
+     */
     @Generated
     @Selector("localizedBookingAdvisementText")
     public native String localizedBookingAdvisementText();
 
+    /**
+     * An optional string to be displayed in UI that allows the vendor to specify details or history about the restaurant.
+     */
     @Generated
     @Selector("localizedRestaurantDescriptionText")
     public native String localizedRestaurantDescriptionText();
 
+    /**
+     * An optional string to be displayed in UI that allows the vendor to detail things like specials or incentives.
+     */
     @Generated
     @Selector("setLocalizedBookingAdvisementText:")
     public native void setLocalizedBookingAdvisementText(String value);
 
+    /**
+     * An optional string to be displayed in UI that allows the vendor to specify details or history about the restaurant.
+     */
     @Generated
     @Selector("setLocalizedRestaurantDescriptionText:")
     public native void setLocalizedRestaurantDescriptionText(String value);
 
+    /**
+     * An optional object allowing the vendor to display terms of use for its service
+     */
     @Generated
     @Selector("setTermsAndConditions:")
     public native void setTermsAndConditions(INTermsAndConditions value);
@@ -206,6 +221,9 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
         return supportsSecureCoding();
     }
 
+    /**
+     * An optional object allowing the vendor to display terms of use for its service
+     */
     @Generated
     @Selector("termsAndConditions")
     public native INTermsAndConditions termsAndConditions();

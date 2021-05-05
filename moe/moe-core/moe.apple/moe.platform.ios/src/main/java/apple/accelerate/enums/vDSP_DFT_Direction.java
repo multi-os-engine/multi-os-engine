@@ -18,6 +18,9 @@ package apple.accelerate.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * DFT direction may be specified as vDSP_DFT_FORWARD or vDSP_DFT_INVERSE.
+ */
 @Generated
 public final class vDSP_DFT_Direction {
     @Generated public static final int FORWARD = 0x00000001;

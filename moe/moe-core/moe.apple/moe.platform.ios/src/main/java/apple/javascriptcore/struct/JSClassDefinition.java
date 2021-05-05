@@ -55,10 +55,16 @@ public final class JSClassDefinition extends StructObject {
         super(peer);
     }
 
+    /**
+     * current (and only) version is 0
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int version();
 
+    /**
+     * current (and only) version is 0
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(int value);

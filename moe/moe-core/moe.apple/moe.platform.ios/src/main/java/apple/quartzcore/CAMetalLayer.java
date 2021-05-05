@@ -17,6 +17,7 @@ limitations under the License.
 package apple.quartzcore;
 
 import apple.NSObject;
+import apple.coregraphics.opaque.CGColorSpaceRef;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
@@ -33,6 +34,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -46,6 +48,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Note: The default value of the `opaque' property for CAMetalLayer
+ * instances is true.
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -175,16 +181,37 @@ public class CAMetalLayer extends CALayer {
     @NInt
     public static native long version_static();
 
+    /**
+     * This property determines which MTLDevice the MTLTexture objects for
+     * the drawables will be created from.
+     * On iOS this defaults to MTLCreateSystemDefaultDevice().
+     * On macOS this defaults to nil and must be set explicitly before asking for
+     * the first drawable.
+     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLDevice device();
 
+    /**
+     * This property controls the pixel dimensions of the returned drawable
+     * objects. The most typical value will be the layer size multiplied by
+     * the layer contentsScale property.
+     */
     @Generated
     @Selector("drawableSize")
     @ByValue
     public native CGSize drawableSize();
 
+    /**
+     * This property controls whether or not the returned drawables'
+     * MTLTextures may only be used for framebuffer attachments (YES) or
+     * whether they may also be used for texture sampling and pixel
+     * read/write operations (NO). A value of YES allows CAMetalLayer to
+     * allocate the MTLTexture objects in ways that are optimized for display
+     * purposes that makes them unsuitable for sampling. The recommended
+     * value for most applications is YES.
+     */
     @Generated
     @Selector("framebufferOnly")
     public native boolean framebufferOnly();
@@ -195,50 +222,113 @@ public class CAMetalLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAMetalLayer initWithCoder(NSCoder aDecoder);
+    public native CAMetalLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
     public native CAMetalLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
+    /**
+     * Get the swap queue's next available drawable. Always blocks until a drawable
+     * is available. Can return nil under the following conditions:
+     *     1) The layer has an invalid combination of drawable properties.
+     *     2) All drawables in the swap queue are in-use and the 1 second timeout
+     *        has elapsed. (except when `allowsNextDrawableTimeout' is set to NO)
+     *     3) Process is out of memory.
+     */
     @Generated
     @Selector("nextDrawable")
     @MappedReturn(ObjCObjectMapper.class)
     public native CAMetalDrawable nextDrawable();
 
+    /**
+     * This property controls the pixel format of the MTLTexture objects.
+     * The two supported values are MTLPixelFormatBGRA8Unorm and
+     * MTLPixelFormatBGRA8Unorm_sRGB.
+     */
     @Generated
     @Selector("pixelFormat")
     @NUInt
     public native long pixelFormat();
 
+    /**
+     * When false (the default value) changes to the layer's render buffer
+     * appear on-screen asynchronously to normal layer updates. When true,
+     * changes to the MTL content are sent to the screen via the standard
+     * CATransaction mechanisms.
+     */
     @Generated
     @Selector("presentsWithTransaction")
     public native boolean presentsWithTransaction();
 
+    /**
+     * This property determines which MTLDevice the MTLTexture objects for
+     * the drawables will be created from.
+     * On iOS this defaults to MTLCreateSystemDefaultDevice().
+     * On macOS this defaults to nil and must be set explicitly before asking for
+     * the first drawable.
+     */
     @Generated
     @Selector("setDevice:")
     public native void setDevice(@Mapped(ObjCObjectMapper.class) MTLDevice value);
 
+    /**
+     * This property controls the pixel dimensions of the returned drawable
+     * objects. The most typical value will be the layer size multiplied by
+     * the layer contentsScale property.
+     */
     @Generated
     @Selector("setDrawableSize:")
     public native void setDrawableSize(@ByValue CGSize value);
 
+    /**
+     * This property controls whether or not the returned drawables'
+     * MTLTextures may only be used for framebuffer attachments (YES) or
+     * whether they may also be used for texture sampling and pixel
+     * read/write operations (NO). A value of YES allows CAMetalLayer to
+     * allocate the MTLTexture objects in ways that are optimized for display
+     * purposes that makes them unsuitable for sampling. The recommended
+     * value for most applications is YES.
+     */
     @Generated
     @Selector("setFramebufferOnly:")
     public native void setFramebufferOnly(boolean value);
 
+    /**
+     * This property controls the pixel format of the MTLTexture objects.
+     * The two supported values are MTLPixelFormatBGRA8Unorm and
+     * MTLPixelFormatBGRA8Unorm_sRGB.
+     */
     @Generated
     @Selector("setPixelFormat:")
     public native void setPixelFormat(@NUInt long value);
 
+    /**
+     * When false (the default value) changes to the layer's render buffer
+     * appear on-screen asynchronously to normal layer updates. When true,
+     * changes to the MTL content are sent to the screen via the standard
+     * CATransaction mechanisms.
+     */
     @Generated
     @Selector("setPresentsWithTransaction:")
     public native void setPresentsWithTransaction(boolean value);
 
+    /**
+     * Controls if `-nextDrawable' is allowed to timeout after 1 second and return
+     * nil if * the system does not have a free drawable available. The default
+     * value is YES. If set to NO, then `-nextDrawable' will block forever until a
+     * free drawable is available.
+     */
     @Generated
     @Selector("allowsNextDrawableTimeout")
     public native boolean allowsNextDrawableTimeout();
 
+    /**
+     * Controls if `-nextDrawable' is allowed to timeout after 1 second and return
+     * nil if * the system does not have a free drawable available. The default
+     * value is YES. If set to NO, then `-nextDrawable' will block forever until a
+     * free drawable is available.
+     */
     @Generated
     @Selector("setAllowsNextDrawableTimeout:")
     public native void setAllowsNextDrawableTimeout(boolean value);
@@ -252,4 +342,54 @@ public class CAMetalLayer extends CALayer {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * The colorspace of the rendered frames. If nil, no colormatching occurs.
+     * If non-nil, the rendered content will be colormatched to the colorspace of
+     * the context containing this layer (typically the display's colorspace).
+     */
+    @Generated
+    @Selector("colorspace")
+    public native CGColorSpaceRef colorspace();
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
+
+    /**
+     * Controls the number maximum number of drawables in the swap queue. The
+     * default value is 3. Values set outside of range [2, 3] are ignored and an
+     * exception will be thrown.
+     */
+    @Generated
+    @Selector("maximumDrawableCount")
+    @NUInt
+    public native long maximumDrawableCount();
+
+    /**
+     * This property returns the preferred MTLDevice for this CAMetalLayer.
+     */
+    @Generated
+    @Selector("preferredDevice")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLDevice preferredDevice();
+
+    /**
+     * The colorspace of the rendered frames. If nil, no colormatching occurs.
+     * If non-nil, the rendered content will be colormatched to the colorspace of
+     * the context containing this layer (typically the display's colorspace).
+     */
+    @Generated
+    @Selector("setColorspace:")
+    public native void setColorspace(CGColorSpaceRef value);
+
+    /**
+     * Controls the number maximum number of drawables in the swap queue. The
+     * default value is 3. Values set outside of range [2, 3] are ignored and an
+     * exception will be thrown.
+     */
+    @Generated
+    @Selector("setMaximumDrawableCount:")
+    public native void setMaximumDrawableCount(@NUInt long value);
 }

@@ -29,36 +29,95 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@protocol] MDLMeshBuffer
+ * 
+ * Used by ModelIO to represent a buffer to be filled with vertex and
+ *           index data
+ * 
+ * Supports deep copy of data by conforming to the NSCopying protocol
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLMeshBuffer")
 public interface MDLMeshBuffer extends NSCopying {
+    /**
+     * [@property] allocator
+     * 
+     * Allocator object used to create this buffer.
+     * 
+     * This allcoator used for copy and relayout operations (such as when
+     *             a new vertex descriptor is applied to a vertex buffer)
+     */
     @Generated
     @Selector("allocator")
     @MappedReturn(ObjCObjectMapper.class)
-    Object allocator();
+    MDLMeshBufferAllocator allocator();
 
+    /**
+     * fillData:offset:
+     * 
+     * Fills buffer with data at offset
+     * 
+     * Fills data.length bytes of data.  Will not write beyond length of
+     *             this buffer.
+     * 
+     * @param data Data to fill buffer with
+     * @param offset Byte offset in buffer to begin filling data
+     */
     @Generated
     @Selector("fillData:offset:")
     void fillDataOffset(NSData data, @NUInt long offset);
 
+    /**
+     * [@property] length
+     * 
+     * Size in bytes of the buffer allocation
+     */
     @Generated
     @Selector("length")
     @NUInt
     long length();
 
+    /**
+     * map
+     * 
+     * CPU access to buffer's memory
+     * 
+     * The buffer will remain mapped as long as the returned MDLMeshBufferMap
+     *             object exists. Mapping a buffer may impose restrictions on a system.
+     *             For instance,  if the implementing class maps an OpenGL buffer, that
+     *             buffer may be  unavailable for rendering while mapped, and cause a
+     *             draw failure.  Precautions must be taken in such cases.
+     * 
+     * @return An MDLMeshBufferMap object to read or modify a buffer's memory
+     */
     @Generated
     @Selector("map")
     MDLMeshBufferMap map();
 
+    /**
+     * [@property] type
+     * 
+     * the intended type of the buffer
+     */
     @Generated
     @Selector("type")
     @NUInt
     long type();
 
+    /**
+     * [@property] zone
+     * 
+     * Zone from which this buffer was created
+     * 
+     * This zone will be used for copy and relayout operations (such as
+     *             when a new vertex descriptor is applied to a vertex buffer).  If
+     *             the default zone is used this will be nil.
+     */
     @Generated
     @Selector("zone")
     @MappedReturn(ObjCObjectMapper.class)
-    Object zone();
+    MDLMeshBufferZone zone();
 }

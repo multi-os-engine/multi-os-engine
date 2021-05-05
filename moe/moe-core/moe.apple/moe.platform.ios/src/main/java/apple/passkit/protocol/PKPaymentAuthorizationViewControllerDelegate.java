@@ -22,6 +22,7 @@ import apple.passkit.PKPayment;
 import apple.passkit.PKPaymentAuthorizationResult;
 import apple.passkit.PKPaymentAuthorizationViewController;
 import apple.passkit.PKPaymentMethod;
+import apple.passkit.PKPaymentRequestMerchantSessionUpdate;
 import apple.passkit.PKPaymentRequestPaymentMethodUpdate;
 import apple.passkit.PKPaymentRequestShippingContactUpdate;
 import apple.passkit.PKPaymentRequestShippingMethodUpdate;
@@ -43,6 +44,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKPaymentAuthorizationViewControllerDelegate")
 public interface PKPaymentAuthorizationViewControllerDelegate {
+    /**
+     * Deprecated delegate methods
+     * These methods are deprecated. Please migrate away from them to their replacements.
+     */
     @IsOptional
     @Generated
     @Selector("paymentAuthorizationViewController:didAuthorizePayment:completion:")
@@ -89,10 +94,21 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent to the delegate when payment authorization is finished.  This may occur when
+     * the user cancels the request, or after the PKPaymentAuthorizationStatus parameter of the
+     * paymentAuthorizationViewController:didAuthorizePayment:completion: has been shown to the user.
+     * 
+     * The delegate is responsible for dismissing the view controller in this method.
+     */
     @Generated
     @Selector("paymentAuthorizationViewControllerDidFinish:")
     void paymentAuthorizationViewControllerDidFinish(PKPaymentAuthorizationViewController controller);
 
+    /**
+     * Sent to the delegate before the payment is authorized, but after the user has authenticated using
+     * passcode or Touch ID. Optional.
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewControllerWillAuthorizePayment:")
@@ -105,7 +121,7 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     @Generated
     public interface Block_paymentAuthorizationViewControllerDidAuthorizePaymentCompletion {
         @Generated
-        void call_paymentAuthorizationViewControllerDidAuthorizePaymentCompletion(@NInt long arg0);
+        void call_paymentAuthorizationViewControllerDidAuthorizePaymentCompletion(@NInt long status);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -113,33 +129,44 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     public interface Block_paymentAuthorizationViewControllerDidSelectPaymentMethodCompletion {
         @Generated
         void call_paymentAuthorizationViewControllerDidSelectPaymentMethodCompletion(
-                NSArray<? extends PKPaymentSummaryItem> arg0);
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_paymentAuthorizationViewControllerDidSelectShippingAddressCompletion {
         @Generated
-        void call_paymentAuthorizationViewControllerDidSelectShippingAddressCompletion(@NInt long arg0,
-                NSArray<? extends PKShippingMethod> arg1, NSArray<? extends PKPaymentSummaryItem> arg2);
+        void call_paymentAuthorizationViewControllerDidSelectShippingAddressCompletion(@NInt long status,
+                NSArray<? extends PKShippingMethod> shippingMethods,
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_paymentAuthorizationViewControllerDidSelectShippingContactCompletion {
         @Generated
-        void call_paymentAuthorizationViewControllerDidSelectShippingContactCompletion(@NInt long arg0,
-                NSArray<? extends PKShippingMethod> arg1, NSArray<? extends PKPaymentSummaryItem> arg2);
+        void call_paymentAuthorizationViewControllerDidSelectShippingContactCompletion(@NInt long status,
+                NSArray<? extends PKShippingMethod> shippingMethods,
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_paymentAuthorizationViewControllerDidSelectShippingMethodCompletion {
         @Generated
-        void call_paymentAuthorizationViewControllerDidSelectShippingMethodCompletion(@NInt long arg0,
-                NSArray<? extends PKPaymentSummaryItem> arg1);
+        void call_paymentAuthorizationViewControllerDidSelectShippingMethodCompletion(@NInt long status,
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
+    /**
+     * Sent to the delegate after the user has acted on the payment request.  The application
+     * should inspect the payment to determine whether the payment request was authorized.
+     * 
+     * If the application requested a shipping address then the full addresses is now part of the payment.
+     * 
+     * The delegate must call completion with an appropriate authorization status, as may be determined
+     * by submitting the payment credential to a processing gateway for payment authorization.
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewController:didAuthorizePayment:handler:")
@@ -153,9 +180,16 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     @Generated
     public interface Block_paymentAuthorizationViewControllerDidAuthorizePaymentHandler {
         @Generated
-        void call_paymentAuthorizationViewControllerDidAuthorizePaymentHandler(PKPaymentAuthorizationResult arg0);
+        void call_paymentAuthorizationViewControllerDidAuthorizePaymentHandler(PKPaymentAuthorizationResult result);
     }
 
+    /**
+     * Sent when the user has selected a new payment card.  Use this delegate callback if you need to
+     * update the summary items in response to the card type changing (for example, applying credit card surcharges)
+     * 
+     * The delegate will receive no further callbacks except paymentAuthorizationViewControllerDidFinish:
+     * until it has invoked the completion block.
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewController:didSelectPaymentMethod:handler:")
@@ -170,9 +204,16 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     public interface Block_paymentAuthorizationViewControllerDidSelectPaymentMethodHandler {
         @Generated
         void call_paymentAuthorizationViewControllerDidSelectPaymentMethodHandler(
-                PKPaymentRequestPaymentMethodUpdate arg0);
+                PKPaymentRequestPaymentMethodUpdate update);
     }
 
+    /**
+     * Sent when the user has selected a new shipping address.  The delegate should inspect the
+     * address and must invoke the completion block with an updated array of PKPaymentSummaryItem objects.
+     * 
+     * The delegate will receive no further callbacks except paymentAuthorizationViewControllerDidFinish:
+     * until it has invoked the completion block.
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewController:didSelectShippingContact:handler:")
@@ -187,9 +228,20 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     public interface Block_paymentAuthorizationViewControllerDidSelectShippingContactHandler {
         @Generated
         void call_paymentAuthorizationViewControllerDidSelectShippingContactHandler(
-                PKPaymentRequestShippingContactUpdate arg0);
+                PKPaymentRequestShippingContactUpdate update);
     }
 
+    /**
+     * Sent when the user has selected a new shipping method.  The delegate should determine
+     * shipping costs based on the shipping method and either the shipping address supplied in the original
+     * PKPaymentRequest or the address fragment provided by the last call to paymentAuthorizationViewController:
+     * didSelectShippingAddress:completion:.
+     * 
+     * The delegate must invoke the completion block with an updated array of PKPaymentSummaryItem objects.
+     * 
+     * The delegate will receive no further callbacks except paymentAuthorizationViewControllerDidFinish:
+     * until it has invoked the completion block.
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewController:didSelectShippingMethod:handler:")
@@ -204,6 +256,23 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     public interface Block_paymentAuthorizationViewControllerDidSelectShippingMethodHandler {
         @Generated
         void call_paymentAuthorizationViewControllerDidSelectShippingMethodHandler(
-                PKPaymentRequestShippingMethodUpdate arg0);
+                PKPaymentRequestShippingMethodUpdate update);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentAuthorizationViewController:didRequestMerchantSessionUpdate:")
+    default void paymentAuthorizationViewControllerDidRequestMerchantSessionUpdate(
+            PKPaymentAuthorizationViewController controller,
+            @ObjCBlock(name = "call_paymentAuthorizationViewControllerDidRequestMerchantSessionUpdate") Block_paymentAuthorizationViewControllerDidRequestMerchantSessionUpdate handler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_paymentAuthorizationViewControllerDidRequestMerchantSessionUpdate {
+        @Generated
+        void call_paymentAuthorizationViewControllerDidRequestMerchantSessionUpdate(
+                PKPaymentRequestMerchantSessionUpdate update);
     }
 }

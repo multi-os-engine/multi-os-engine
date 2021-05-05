@@ -50,20 +50,32 @@ public final class flocktimeout extends StructObject {
         setTimeout(timeout);
     }
 
+    /**
+     * flock passed for file locking
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native flock fl();
 
+    /**
+     * flock passed for file locking
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setFl(@ByValue flock value);
 
+    /**
+     * timespec struct for timeout
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native timespec timeout();
 
+    /**
+     * timespec struct for timeout
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setTimeout(@ByValue timespec value);

@@ -26,11 +26,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Callbacks to the GKSession delegate.
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKSessionDelegate")
 public interface GKSessionDelegate {
+    /**
+     * Indicates a connection error occurred with a peer, which includes connection request failures, or disconnects due to timeouts.
+     */
     @Generated
     @IsOptional
     @Selector("session:connectionWithPeerFailed:withError:")
@@ -38,6 +44,9 @@ public interface GKSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Indicates an error occurred with the session such as failing to make available.
+     */
     @Generated
     @IsOptional
     @Selector("session:didFailWithError:")
@@ -45,6 +54,12 @@ public interface GKSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Indicates a connection request was received from another peer.
+     * 
+     * Accept by calling -acceptConnectionFromPeer:
+     * Deny by calling -denyConnectionFromPeer:
+     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveConnectionRequestFromPeer:")

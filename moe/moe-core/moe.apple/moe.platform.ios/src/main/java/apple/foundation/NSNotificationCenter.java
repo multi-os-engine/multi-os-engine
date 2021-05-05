@@ -37,6 +37,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Notification Center	***************
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -194,6 +197,6 @@ public class NSNotificationCenter extends NSObject {
     @Generated
     public interface Block_addObserverForNameObjectQueueUsingBlock {
         @Generated
-        void call_addObserverForNameObjectQueueUsingBlock(NSNotification arg0);
+        void call_addObserverForNameObjectQueueUsingBlock(NSNotification note);
     }
 }

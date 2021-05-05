@@ -2,8 +2,10 @@ package apple.coreml;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -20,14 +22,20 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MLDictionaryConstraint
+ * 
+ * Constraint describing expected NSDictionary properties
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MLDictionaryConstraint extends NSObject {
+public class MLDictionaryConstraint extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -111,6 +119,9 @@ public class MLDictionaryConstraint extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Required key type, described as MLFeatureType
+     */
     @Generated
     @Selector("keyType")
     @NInt
@@ -142,4 +153,22 @@ public class MLDictionaryConstraint extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MLDictionaryConstraint initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PKSuicaPassProperties extends NSObject {
+public class PKSuicaPassProperties extends PKTransitPassProperties {
     static {
         NatJ.register();
     }
@@ -130,6 +130,9 @@ public class PKSuicaPassProperties extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Properties for a given pass, or nil if the pass doesn’t support the set of properties being requested
+     */
     @Generated
     @Selector("passPropertiesForPass:")
     public static native PKSuicaPassProperties passPropertiesForPass(PKPass pass);
@@ -167,6 +170,9 @@ public class PKSuicaPassProperties extends NSObject {
     @Selector("isGreenCarTicketUsed")
     public native boolean isGreenCarTicketUsed();
 
+    /**
+     * Note: isInShinkansenStation is not a subset of isInStation.
+     */
     @Generated
     @Selector("isInShinkansenStation")
     public native boolean isInShinkansenStation();
@@ -182,4 +188,12 @@ public class PKSuicaPassProperties extends NSObject {
     @Generated
     @Selector("transitBalanceCurrencyCode")
     public native String transitBalanceCurrencyCode();
+
+    @Generated
+    @Selector("isBalanceAllowedForCommute")
+    public native boolean isBalanceAllowedForCommute();
+
+    @Generated
+    @Selector("isLowBalanceGateNotificationEnabled")
+    public native boolean isLowBalanceGateNotificationEnabled();
 }

@@ -54,18 +54,30 @@ public final class _RuneLocale extends StructObject {
         super(peer);
     }
 
+    /**
+     * Magic saying what version we are
+     */
     @Generated
     @StructureField(order = 0, isGetter = true, count = 8)
     public native byte __magic(int field_idx);
 
+    /**
+     * Magic saying what version we are
+     */
     @Generated
     @StructureField(order = 0, isGetter = false, count = 8)
     public native void set__magic(byte value, int field_idx);
 
+    /**
+     * ASCII name of this encoding
+     */
     @Generated
     @StructureField(order = 1, isGetter = true, count = 32)
     public native byte __encoding(int field_idx);
 
+    /**
+     * ASCII name of this encoding
+     */
     @Generated
     @StructureField(order = 1, isGetter = false, count = 32)
     public native void set__encoding(byte value, int field_idx);
@@ -120,11 +132,21 @@ public final class _RuneLocale extends StructObject {
     @StructureField(order = 7, isGetter = false, count = 256)
     public native void set__mapupper(int value, int field_idx);
 
+    /**
+     * The following are to deal with Runes larger than _CACHED_RUNES - 1.
+     * Their data is actually contiguous with this structure so as to make
+     * it easier to read/write from/to disk.
+     */
     @Generated
     @StructureField(order = 8, isGetter = true)
     @ByValue
     public native _RuneRange __runetype_ext();
 
+    /**
+     * The following are to deal with Runes larger than _CACHED_RUNES - 1.
+     * Their data is actually contiguous with this structure so as to make
+     * it easier to read/write from/to disk.
+     */
     @Generated
     @StructureField(order = 8, isGetter = false)
     public native void set__runetype_ext(@ByValue _RuneRange value);
@@ -147,26 +169,44 @@ public final class _RuneLocale extends StructObject {
     @StructureField(order = 10, isGetter = false)
     public native void set__mapupper_ext(@ByValue _RuneRange value);
 
+    /**
+     * Data which depends on the encoding
+     */
     @Generated
     @StructureField(order = 11, isGetter = true)
     public native VoidPtr __variable();
 
+    /**
+     * Data which depends on the encoding
+     */
     @Generated
     @StructureField(order = 11, isGetter = false)
     public native void set__variable(VoidPtr value);
 
+    /**
+     * how long that data is
+     */
     @Generated
     @StructureField(order = 12, isGetter = true)
     public native int __variable_len();
 
+    /**
+     * how long that data is
+     */
     @Generated
     @StructureField(order = 12, isGetter = false)
     public native void set__variable_len(int value);
 
+    /**
+     * extra fields to deal with arbitrary character classes
+     */
     @Generated
     @StructureField(order = 13, isGetter = true)
     public native int __ncharclasses();
 
+    /**
+     * extra fields to deal with arbitrary character classes
+     */
     @Generated
     @StructureField(order = 13, isGetter = false)
     public native void set__ncharclasses(int value);

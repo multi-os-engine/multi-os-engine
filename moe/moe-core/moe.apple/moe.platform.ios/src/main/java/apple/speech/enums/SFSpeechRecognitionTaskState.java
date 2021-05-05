@@ -21,10 +21,25 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SFSpeechRecognitionTaskState {
+    /**
+     * Speech processing (potentially including recording) has not yet begun
+     */
     @Generated @NInt public static final long Starting = 0x0000000000000000L;
+    /**
+     * Speech processing (potentially including recording) is running
+     */
     @Generated @NInt public static final long Running = 0x0000000000000001L;
+    /**
+     * No more audio is being recorded, but more recognition results may arrive
+     */
     @Generated @NInt public static final long Finishing = 0x0000000000000002L;
+    /**
+     * No more recognition results will arrive, but recording may not have stopped yet
+     */
     @Generated @NInt public static final long Canceling = 0x0000000000000003L;
+    /**
+     * No more results will arrive, and recording is stopped.
+     */
     @Generated @NInt public static final long Completed = 0x0000000000000004L;
 
     @Generated

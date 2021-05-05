@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An MPMediaItemCollection is a collection of related MPMediaItems in a media library.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -95,6 +98,9 @@ public class MPMediaItemCollection extends MPMediaEntity {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Creates a media item collection by copying an array of MPMediaItems.
+     */
     @Generated
     @Selector("collectionWithItems:")
     public static native MPMediaItemCollection collectionWithItems(NSArray<? extends MPMediaItem> items);
@@ -164,6 +170,10 @@ public class MPMediaItemCollection extends MPMediaEntity {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns the number of items in the collection.
+     * In some cases, this is more efficient than fetching the items array and asking for the count.
+     */
     @Generated
     @Selector("count")
     @NUInt
@@ -175,21 +185,31 @@ public class MPMediaItemCollection extends MPMediaEntity {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaItemCollection initWithCoder(NSCoder aDecoder);
+    public native MPMediaItemCollection initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithItems:")
     public native MPMediaItemCollection initWithItems(NSArray<? extends MPMediaItem> items);
 
+    /**
+     * Returns the MPMediaItems in the collection.
+     */
     @Generated
     @Selector("items")
     public native NSArray<? extends MPMediaItem> items();
 
+    /**
+     * Returns the types of media which the collection holds.
+     */
     @Generated
     @Selector("mediaTypes")
     @NUInt
     public native long mediaTypes();
 
+    /**
+     * Returns an item representative of other items in the collection.
+     * This item can be used for common item properties in the collection, often more efficiently than fetching an item out of the items array.
+     */
     @Generated
     @Selector("representativeItem")
     public native MPMediaItem representativeItem();

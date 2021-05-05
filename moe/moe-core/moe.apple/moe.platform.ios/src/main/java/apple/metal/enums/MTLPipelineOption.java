@@ -19,6 +19,11 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum] MTLPipelineOption
+ * 
+ * Controls the creation of the pipeline
+ */
 @Generated
 public final class MTLPipelineOption {
     @Generated @NUInt public static final long None = 0x0000000000000000L;
@@ -28,4 +33,6 @@ public final class MTLPipelineOption {
     @Generated
     private MTLPipelineOption() {
     }
+
+    @Generated @NUInt public static final long FailOnBinaryArchiveMiss = 0x0000000000000004L;
 }

@@ -167,12 +167,15 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     @Selector("initWithType:localizedTitle:localizedSubtitle:icon:userInfo:")
     public native UIMutableApplicationShortcutItem initWithTypeLocalizedTitleLocalizedSubtitleIconUserInfo(String type,
             String localizedTitle, String localizedSubtitle, UIApplicationShortcutIcon icon,
-            NSDictionary<?, ?> userInfo);
+            NSDictionary<String, ?> userInfo);
 
     @Generated
     @Selector("localizedSubtitle")
     public native String localizedSubtitle();
 
+    /**
+     * Properties controlling how the item should be displayed on the home screen.
+     */
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();
@@ -185,23 +188,55 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     @Selector("setLocalizedSubtitle:")
     public native void setLocalizedSubtitle(String value);
 
+    /**
+     * Properties controlling how the item should be displayed on the home screen.
+     */
     @Generated
     @Selector("setLocalizedTitle:")
     public native void setLocalizedTitle(String value);
 
+    /**
+     * An application-specific string that identifies the type of action to perform.
+     */
     @Generated
     @Selector("setType:")
     public native void setType(String value);
 
+    /**
+     * Application-specific information needed to perform the action.
+     * Will throw an exception if the NSDictionary is not plist-encodable.
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<String, ?> value);
 
+    /**
+     * An application-specific string that identifies the type of action to perform.
+     */
     @Generated
     @Selector("type")
     public native String type();
 
+    /**
+     * Application-specific information needed to perform the action.
+     * Will throw an exception if the NSDictionary is not plist-encodable.
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<String, ?> userInfo();
+
+    /**
+     * used with UISceneActivationConditions to customize what scene should be activated for a shortcut
+     */
+    @Generated
+    @Selector("setTargetContentIdentifier:")
+    public native void setTargetContentIdentifier(@Mapped(ObjCObjectMapper.class) Object value);
+
+    /**
+     * used with UISceneActivationConditions to customize what scene should be activated for a shortcut
+     */
+    @Generated
+    @Selector("targetContentIdentifier")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object targetContentIdentifier();
 }

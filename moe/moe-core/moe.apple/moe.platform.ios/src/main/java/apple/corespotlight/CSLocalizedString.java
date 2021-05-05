@@ -53,11 +53,15 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CSLocalizedString can be used in place of NSString to support localization
+ */
 @Generated
 @Library("CoreSpotlight")
 @Runtime(ObjCRuntime.class)
@@ -317,7 +321,7 @@ public class CSLocalizedString extends NSString {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CSLocalizedString initWithCoder(NSCoder aDecoder);
+    public native CSLocalizedString initWithCoder(NSCoder coder);
 
     @Generated
     @Deprecated
@@ -373,6 +377,9 @@ public class CSLocalizedString extends NSString {
     public native CSLocalizedString initWithFormatLocaleArguments(String format,
             @Mapped(ObjCObjectMapper.class) Object locale, BytePtr argList);
 
+    /**
+     * Takes a dictionary of preferred codes to the localized string for that language
+     */
     @Generated
     @Selector("initWithLocalizedStrings:")
     public native CSLocalizedString initWithLocalizedStrings(NSDictionary<?, ?> localizedStrings);
@@ -385,6 +392,9 @@ public class CSLocalizedString extends NSString {
     @Selector("initWithUTF8String:")
     public native CSLocalizedString initWithUTF8String(ConstBytePtr nullTerminatedCString);
 
+    /**
+     * Returns the localized string for the current language
+     */
     @Generated
     @Selector("localizedString")
     public native String localizedString();
@@ -442,4 +452,31 @@ public class CSLocalizedString extends NSString {
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
+
+    @Generated
+    @Variadic()
+    @Selector("deferredLocalizedIntentsStringWithFormat:")
+    public static native String deferredLocalizedIntentsStringWithFormat(String format, Object... varargs);
+
+    @Generated
+    @Variadic()
+    @Selector("deferredLocalizedIntentsStringWithFormat:fromTable:")
+    public static native String deferredLocalizedIntentsStringWithFormatFromTable(String format, String table,
+            Object... varargs);
+
+    @Generated
+    @Selector("deferredLocalizedIntentsStringWithFormat:fromTable:arguments:")
+    public static native String deferredLocalizedIntentsStringWithFormatFromTableArguments(String format, String table,
+            BytePtr arguments);
+
+    @Generated
+    @Selector("initWithBytesNoCopy:length:encoding:deallocator:")
+    public native CSLocalizedString initWithBytesNoCopyLengthEncodingDeallocator(VoidPtr bytes, @NUInt long len,
+            @NUInt long encoding,
+            @ObjCBlock(name = "call_initWithBytesNoCopyLengthEncodingDeallocator") NSString.Block_initWithBytesNoCopyLengthEncodingDeallocator deallocator);
+
+    @Generated
+    @Selector("initWithCharactersNoCopy:length:deallocator:")
+    public native CSLocalizedString initWithCharactersNoCopyLengthDeallocator(CharPtr chars, @NUInt long len,
+            @ObjCBlock(name = "call_initWithCharactersNoCopyLengthDeallocator") NSString.Block_initWithCharactersNoCopyLengthDeallocator deallocator);
 }

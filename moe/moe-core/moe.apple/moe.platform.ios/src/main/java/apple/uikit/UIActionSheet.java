@@ -24,6 +24,7 @@ import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UIActionSheetDelegate;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -130,7 +131,7 @@ public class UIActionSheet extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -143,8 +144,8 @@ public class UIActionSheet extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -346,11 +347,17 @@ public class UIActionSheet extends UIView {
     @NInt
     public static native long version_static();
 
+    /**
+     * default is UIActionSheetStyleAutomatic. ignored if alert is visible
+     */
     @Generated
     @Selector("actionSheetStyle")
     @NInt
     public native long actionSheetStyle();
 
+    /**
+     * returns index of button. 0 based.
+     */
     @Generated
     @Selector("addButtonWithTitle:")
     @NInt
@@ -375,7 +382,7 @@ public class UIActionSheet extends UIView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -391,7 +398,8 @@ public class UIActionSheet extends UIView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -406,6 +414,9 @@ public class UIActionSheet extends UIView {
     @Selector("buttonTitleAtIndex:")
     public native String buttonTitleAtIndex(@NInt long buttonIndex);
 
+    /**
+     * if the delegate does not implement -actionSheetCancel:, we pretend this button was clicked on. default is -1
+     */
     @Generated
     @Selector("cancelButtonIndex")
     @NInt
@@ -416,15 +427,25 @@ public class UIActionSheet extends UIView {
     @MappedReturn(ObjCObjectMapper.class)
     public native UIActionSheetDelegate delegate();
 
+    /**
+     * sets destructive (red) button. -1 means none set. default is -1. ignored if only one button
+     */
     @Generated
     @Selector("destructiveButtonIndex")
     @NInt
     public native long destructiveButtonIndex();
 
+    /**
+     * hides alert sheet or popup. use this method when you need to explicitly dismiss the alert.
+     * it does not need to be called if the user presses on a button
+     */
     @Generated
     @Selector("dismissWithClickedButtonIndex:animated:")
     public native void dismissWithClickedButtonIndexAnimated(@NInt long buttonIndex, boolean animated);
 
+    /**
+     * -1 if no otherButtonTitles or initWithTitle:... not used
+     */
     @Generated
     @Selector("firstOtherButtonIndex")
     @NInt
@@ -436,7 +457,7 @@ public class UIActionSheet extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIActionSheet initWithCoder(NSCoder aDecoder);
+    public native UIActionSheet initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -458,10 +479,16 @@ public class UIActionSheet extends UIView {
     @NInt
     public native long numberOfButtons();
 
+    /**
+     * default is UIActionSheetStyleAutomatic. ignored if alert is visible
+     */
     @Generated
     @Selector("setActionSheetStyle:")
     public native void setActionSheetStyle(@NInt long value);
 
+    /**
+     * if the delegate does not implement -actionSheetCancel:, we pretend this button was clicked on. default is -1
+     */
     @Generated
     @Selector("setCancelButtonIndex:")
     public native void setCancelButtonIndex(@NInt long value);
@@ -482,6 +509,9 @@ public class UIActionSheet extends UIView {
         }
     }
 
+    /**
+     * sets destructive (red) button. -1 means none set. default is -1. ignored if only one button
+     */
     @Generated
     @Selector("setDestructiveButtonIndex:")
     public native void setDestructiveButtonIndex(@NInt long value);
@@ -502,6 +532,11 @@ public class UIActionSheet extends UIView {
     @Selector("showFromTabBar:")
     public native void showFromTabBar(UITabBar view);
 
+    /**
+     * show a sheet animated. you can specify either a toolbar, a tab bar, a bar button item or a plain view. We do a special animation if the sheet rises from
+     * a toolbar, tab bar or bar button item and we will automatically select the correct style based on the bar style. if not from a bar, we use
+     * UIActionSheetStyleDefault if automatic style set
+     */
     @Generated
     @Selector("showFromToolbar:")
     public native void showFromToolbar(UIToolbar view);
@@ -513,4 +548,10 @@ public class UIActionSheet extends UIView {
     @Generated
     @Selector("title")
     public native String title();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

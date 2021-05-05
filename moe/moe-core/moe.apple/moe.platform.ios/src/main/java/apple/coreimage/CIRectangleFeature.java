@@ -42,6 +42,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A rectangle feature found by a CIDetector
+ * All positions are relative to the original image. 
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)

@@ -15,6 +15,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * This protocol allows a class to export its data to a variety of binary representations.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -29,6 +32,9 @@ public interface NSItemProviderWriting {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * One of writableTypeIdentifiersForItemProvider
+     */
     @Generated
     @Selector("loadDataWithTypeIdentifier:forItemProviderCompletionHandler:")
     NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(String typeIdentifier,
@@ -38,7 +44,7 @@ public interface NSItemProviderWriting {
     @Generated
     public interface Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler {
         @Generated
-        void call_loadDataWithTypeIdentifierForItemProviderCompletionHandler(NSData arg0, NSError arg1);
+        void call_loadDataWithTypeIdentifierForItemProviderCompletionHandler(NSData data, NSError error);
     }
 
     @Generated

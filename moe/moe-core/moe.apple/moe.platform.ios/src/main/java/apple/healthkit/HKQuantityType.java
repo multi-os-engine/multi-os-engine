@@ -41,6 +41,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKQuantityType
+ * 
+ * Represents types of HKQuantitySamples.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -195,8 +200,14 @@ public class HKQuantityType extends HKSampleType {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKQuantityType initWithCoder(NSCoder aDecoder);
+    public native HKQuantityType initWithCoder(NSCoder coder);
 
+    /**
+     * isCompatibleWithUnit:
+     * 
+     * Returns YES if the type of HKQuantitySample represented by the receiver can be created with quantities
+     *                of the given unit.
+     */
     @Generated
     @Selector("isCompatibleWithUnit:")
     public native boolean isCompatibleWithUnit(HKUnit unit);
@@ -210,4 +221,16 @@ public class HKQuantityType extends HKSampleType {
     @Generated
     @Selector("seriesTypeForIdentifier:")
     public static native HKSeriesType seriesTypeForIdentifier(String identifier);
+
+    @Generated
+    @Selector("audiogramSampleType")
+    public static native HKAudiogramSampleType audiogramSampleType();
+
+    @Generated
+    @Selector("clinicalTypeForIdentifier:")
+    public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
+
+    @Generated
+    @Selector("electrocardiogramType")
+    public static native HKElectrocardiogramType electrocardiogramType();
 }

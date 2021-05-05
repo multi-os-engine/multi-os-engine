@@ -153,10 +153,16 @@ public class SKPaymentTransaction extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Available downloads (SKDownload) for this transaction
+     */
     @Generated
     @Selector("downloads")
     public native NSArray<? extends SKDownload> downloads();
 
+    /**
+     * Only set if state is SKPaymentTransactionFailed
+     */
     @Generated
     @Selector("error")
     public native NSError error();
@@ -165,6 +171,9 @@ public class SKPaymentTransaction extends NSObject {
     @Selector("init")
     public native SKPaymentTransaction init();
 
+    /**
+     * Only valid if state is SKPaymentTransactionStateRestored.
+     */
     @Generated
     @Selector("originalTransaction")
     public native SKPaymentTransaction originalTransaction();
@@ -173,14 +182,23 @@ public class SKPaymentTransaction extends NSObject {
     @Selector("payment")
     public native SKPayment payment();
 
+    /**
+     * The date when the transaction was added to the server queue.  Only valid if state is SKPaymentTransactionStatePurchased or SKPaymentTransactionStateRestored.
+     */
     @Generated
     @Selector("transactionDate")
     public native NSDate transactionDate();
 
+    /**
+     * The unique server-provided identifier.  Only valid if state is SKPaymentTransactionStatePurchased or SKPaymentTransactionStateRestored.
+     */
     @Generated
     @Selector("transactionIdentifier")
     public native String transactionIdentifier();
 
+    /**
+     * Only valid if state is SKPaymentTransactionStatePurchased.
+     */
     @Generated
     @Deprecated
     @Selector("transactionReceipt")

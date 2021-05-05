@@ -41,6 +41,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVCaptureManualExposureBracketedStillImageSettings
+ * 
+ *    AVCaptureManualExposureBracketedStillImageSettings is a concrete subclass of AVCaptureBracketedStillImageSettings to be used when bracketing exposure duration and ISO.
+ * 
+ *    An AVCaptureManualExposureBracketedStillImageSettings instance defines the exposure duration and ISO settings that should be applied to one image in a bracket. An array of settings objects is passed to -[AVCaptureStillImageOutput captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:]. Min and max duration and ISO values are queryable properties of the AVCaptureDevice supplying data to an AVCaptureStillImageOutput instance. If you wish to leave exposureDuration unchanged for this bracketed still image, you may pass the special value AVCaptureExposureDurationCurrent. To keep ISO unchanged, you may pass AVCaptureISOCurrent (see AVCaptureDevice.h).
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -125,6 +132,18 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * manualExposureSettingsWithExposureDuration:ISO:
+     * 
+     *    Creates an AVCaptureManualExposureBracketedStillImageSettings using the specified exposure duration and ISO.
+     * 
+     * @param duration
+     *    The exposure duration in seconds. Pass AVCaptureExposureDurationCurrent to leave the duration unchanged for this bracketed image.
+     * @param ISO
+     *    The ISO. Pass AVCaptureISOCurrent to leave the ISO unchanged for this bracketed image.
+     * @return
+     *    An initialized AVCaptureManualExposureBracketedStillImageSettings instance.
+     */
     @Generated
     @Selector("manualExposureSettingsWithExposureDuration:ISO:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -157,10 +176,20 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] ISO
+     * 
+     *    The ISO for the still image.
+     */
     @Generated
     @Selector("ISO")
     public native float ISO();
 
+    /**
+     * [@property] exposureDuration
+     * 
+     *    The exposure duration for the still image.
+     */
     @Generated
     @Selector("exposureDuration")
     @ByValue

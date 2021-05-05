@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A collection of information about a subscriber's account.
+ */
 @Generated
 @Library("VideoSubscriberAccount")
 @Runtime(ObjCRuntime.class)
@@ -152,18 +155,35 @@ public class VSAccountMetadata extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The SAML AttributeQuery response received from the account provider.
+     * The value might be nil if your account metadata request did not specify any SAML attributes or if the user does not have a valid authentication.
+     */
     @Generated
     @Selector("SAMLAttributeQueryResponse")
     public native String SAMLAttributeQueryResponse();
 
+    /**
+     * A value that uniquely identifies the account provider.
+     * You may use this value to brand your app.
+     */
     @Generated
     @Selector("accountProviderIdentifier")
     public native String accountProviderIdentifier();
 
+    /**
+     * The response received from the account provider.
+     * The value might be nil if your account metadata request did not specify any
+     * attributes, or if the user does not have a valid authentication.
+     */
     @Generated
     @Selector("accountProviderResponse")
     public native VSAccountProviderResponse accountProviderResponse();
 
+    /**
+     * Specifies when the user might need to re-authenticate with the account provider.
+     * The value might be nil if the user is not currently authenticated.
+     */
     @Generated
     @Selector("authenticationExpirationDate")
     public native NSDate authenticationExpirationDate();
@@ -172,6 +192,10 @@ public class VSAccountMetadata extends NSObject {
     @Selector("init")
     public native VSAccountMetadata init();
 
+    /**
+     * An opaque blob of data that can be used to cryptographically verify that the
+     * SAML AttributeQuery response actually came from the account provider.
+     */
     @Generated
     @Selector("verificationData")
     public native NSData verificationData();

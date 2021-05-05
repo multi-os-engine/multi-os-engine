@@ -27,11 +27,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * A protocol for delegates of AVAudioPlayer
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVAudioPlayerDelegate")
 public interface AVAudioPlayerDelegate {
+    /**
+     * audioPlayerBeginInterruption: is called when the audio session has been interrupted while the player was playing. The player will have been paused.
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -40,6 +46,9 @@ public interface AVAudioPlayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * if an error occurs while decoding it will be reported to the delegate.
+     */
     @Generated
     @IsOptional
     @Selector("audioPlayerDecodeErrorDidOccur:error:")
@@ -47,6 +56,9 @@ public interface AVAudioPlayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * audioPlayerDidFinishPlaying:successfully: is called when a sound has finished playing. This method is NOT called if the player is stopped due to an interruption.
+     */
     @Generated
     @IsOptional
     @Selector("audioPlayerDidFinishPlaying:successfully:")
@@ -54,6 +66,9 @@ public interface AVAudioPlayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * audioPlayerEndInterruption: is called when the preferred method, audioPlayerEndInterruption:withFlags:, is not implemented.
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -70,6 +85,10 @@ public interface AVAudioPlayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * audioPlayerEndInterruption:withOptions: is called when the audio session interruption has ended and this player had been interrupted while playing.
+     * Currently the only flag is AVAudioSessionInterruptionFlags_ShouldResume.
+     */
     @Generated
     @IsOptional
     @Deprecated

@@ -162,6 +162,9 @@ public class MKLocalSearchCompleter extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native MKLocalSearchCompleterDelegate delegate();
 
+    /**
+     * Defaults to MKSearchCompletionFilterTypeLocationsAndQueries
+     */
     @Generated
     @Selector("filterType")
     @NInt
@@ -204,6 +207,9 @@ public class MKLocalSearchCompleter extends NSObject {
         }
     }
 
+    /**
+     * Defaults to MKSearchCompletionFilterTypeLocationsAndQueries
+     */
     @Generated
     @Selector("setFilterType:")
     public native void setFilterType(@NInt long value);
@@ -215,4 +221,21 @@ public class MKLocalSearchCompleter extends NSObject {
     @Generated
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);
+
+    @Generated
+    @Selector("pointOfInterestFilter")
+    public native MKPointOfInterestFilter pointOfInterestFilter();
+
+    @Generated
+    @Selector("resultTypes")
+    @NUInt
+    public native long resultTypes();
+
+    @Generated
+    @Selector("setPointOfInterestFilter:")
+    public native void setPointOfInterestFilter(MKPointOfInterestFilter value);
+
+    @Generated
+    @Selector("setResultTypes:")
+    public native void setResultTypes(@NUInt long value);
 }

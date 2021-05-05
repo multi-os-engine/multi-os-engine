@@ -50,50 +50,86 @@ public final class JustWidthDeltaEntry extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setJustClass(int value);
 
+    /**
+     * ems AW can grow by at most on LT
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int beforeGrowLimit();
 
+    /**
+     * ems AW can grow by at most on LT
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setBeforeGrowLimit(int value);
 
+    /**
+     * ems AW can shrink by at most on LT
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int beforeShrinkLimit();
 
+    /**
+     * ems AW can shrink by at most on LT
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setBeforeShrinkLimit(int value);
 
+    /**
+     * ems AW can grow by at most on RB
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int afterGrowLimit();
 
+    /**
+     * ems AW can grow by at most on RB
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setAfterGrowLimit(int value);
 
+    /**
+     * ems AW can shrink by at most on RB
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native int afterShrinkLimit();
 
+    /**
+     * ems AW can shrink by at most on RB
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setAfterShrinkLimit(int value);
 
+    /**
+     * flags controlling grow case
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     public native char growFlags();
 
+    /**
+     * flags controlling grow case
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setGrowFlags(char value);
 
+    /**
+     * flags controlling shrink case
+     */
     @Generated
     @StructureField(order = 6, isGetter = true)
     public native char shrinkFlags();
 
+    /**
+     * flags controlling shrink case
+     */
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setShrinkFlags(char value);

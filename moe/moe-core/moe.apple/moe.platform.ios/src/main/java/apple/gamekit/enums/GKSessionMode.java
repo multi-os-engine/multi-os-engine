@@ -18,10 +18,19 @@ package apple.gamekit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Specifies how GKSession behaves when it is made available.
+ */
 @Generated
 public final class GKSessionMode {
     @Generated public static final int Server = 0x00000000;
+    /**
+     * delegate will get -didReceiveConnectionRequestFromPeer callback when a client wants to connect
+     */
     @Generated public static final int Client = 0x00000001;
+    /**
+     * delegate will get -session:peer:didChangeState: callback with GKPeerStateAvailable, or GKPeerStateUnavailable for discovered servers
+     */
     @Generated public static final int Peer = 0x00000002;
 
     @Generated

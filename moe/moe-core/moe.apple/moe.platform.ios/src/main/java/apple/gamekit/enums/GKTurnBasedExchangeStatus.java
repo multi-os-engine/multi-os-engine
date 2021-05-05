@@ -18,6 +18,9 @@ package apple.gamekit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Constants that describe the status of exchanges and their replies
+ */
 @Generated
 public final class GKTurnBasedExchangeStatus {
     @Generated public static final byte Unknown = 0;

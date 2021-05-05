@@ -29,6 +29,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEHotspotEAPSettings
+ * 
+ *   NEHotspotEAPSettings class provides a set of properties that are required
+ *   to configure a WPA/WPA2 Enterprise or Hotspot 2.0 Wi-Fi networks.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -95,7 +101,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -108,7 +114,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEHotspotEAPSettings initWithCoder(NSCoder aDecoder);
+    public native NEHotspotEAPSettings initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -127,6 +133,13 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * [@property] isTLSClientCertificateRequired
+     * 
+     * If YES, supports two-factor authentication for EAP-TTLS, PEAP, or EAP-FAST.
+     *   If NO, allows for zero-factor authentication for EAP-TLS. The default is YES for EAP-TLS,
+     *   and NO for other EAP types.
+     */
     @Generated
     @Selector("isTLSClientCertificateRequired")
     public native boolean isTLSClientCertificateRequired();
@@ -141,14 +154,32 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * [@property] outerIdentity
+     * 
+     * Identity string to be used in EAP-Response/Identity of the outer phase. This key is only
+     *   relevant to TTLS, PEAP, and EAP-FAST.
+     */
     @Generated
     @Selector("outerIdentity")
     public native String outerIdentity();
 
+    /**
+     * [@property] password
+     * 
+     * The password component of the 802.1X authentication credential.
+     *   Length of this property must be between 1 and 64 characters.
+     */
     @Generated
     @Selector("password")
     public native String password();
 
+    /**
+     * [@property] preferredTLSVersion
+     * 
+     * TLS version to use during the TLS handshake.
+     *   Default value is NEHotspotConfigurationEAPTLSVersion_1_2.
+     */
     @Generated
     @Selector("preferredTLSVersion")
     @NInt
@@ -162,42 +193,121 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * setIdentity
+     * 
+     * Setter to configure the EAP peer identity. The application needs to store
+     * this identity in keychain access group "$(TeamIdentifierPrefix)com.apple.networkextensionsharing".
+     * The API uses SecItemCopyMatching to obtain persistent reference for this identity from application's
+     * keychain and uses that at the time of EAP authentication.
+     * This property is mandatory when EAP-TLS is desired or tlsClientCertificateRequired is set to YES.
+     * 
+     * @param identity The identity of the EAP Peer. This is a SecIdentityRef object that contains
+     * a SecKeyRef object and an associated SecCertificateRef object.
+     * @return returns NO if the parameter is not an object of SecIdentityRef type or if the persistent reference
+     * is not found in the application's keychain else returns YES.
+     */
     @Generated
     @Selector("setIdentity:")
     public native boolean setIdentity(SecIdentityRef identity);
 
+    /**
+     * [@property] outerIdentity
+     * 
+     * Identity string to be used in EAP-Response/Identity of the outer phase. This key is only
+     *   relevant to TTLS, PEAP, and EAP-FAST.
+     */
     @Generated
     @Selector("setOuterIdentity:")
     public native void setOuterIdentity(String value);
 
+    /**
+     * [@property] password
+     * 
+     * The password component of the 802.1X authentication credential.
+     *   Length of this property must be between 1 and 64 characters.
+     */
     @Generated
     @Selector("setPassword:")
     public native void setPassword(String value);
 
+    /**
+     * [@property] preferredTLSVersion
+     * 
+     * TLS version to use during the TLS handshake.
+     *   Default value is NEHotspotConfigurationEAPTLSVersion_1_2.
+     */
     @Generated
     @Selector("setPreferredTLSVersion:")
     public native void setPreferredTLSVersion(@NInt long value);
 
+    /**
+     * [@property] supportedEAPTypes
+     * 
+     * Array of supported EAP Types. Refer to NEHotspotConfigurationEAPType
+     *   for valid values.
+     */
     @Generated
     @Selector("setSupportedEAPTypes:")
     public native void setSupportedEAPTypes(NSArray<? extends NSNumber> value);
 
+    /**
+     * [@property] isTLSClientCertificateRequired
+     * 
+     * If YES, supports two-factor authentication for EAP-TTLS, PEAP, or EAP-FAST.
+     *   If NO, allows for zero-factor authentication for EAP-TLS. The default is YES for EAP-TLS,
+     *   and NO for other EAP types.
+     */
     @Generated
     @Selector("setTlsClientCertificateRequired:")
     public native void setTlsClientCertificateRequired(boolean value);
 
+    /**
+     * setTrustedServerCertificates
+     * 
+     * Setter to configure an array of trusted server certificates used for trust evaluation of
+     * the server certificate.
+     * 
+     * @param certificates Each value in the array is a SecCertificateRef object. Application needs to store
+     * the certificates in keychain access group "$(TeamIdentifierPrefix)com.apple.networkextensionsharing".
+     * The API uses SecItemCopyMatching to obtain persistent reference for each certificate from application's
+     * keychain and uses that at the time os EAP authentication.
+     * Number of elements in the array cannot be more than 10.
+     * 
+     * @return returns NO if any element in the array is not an object of type SecCertificateRef or if API
+     * fails to find persistent reference for each element from the application's keychain else return YES.
+     */
     @Generated
     @Selector("setTrustedServerCertificates:")
     public native boolean setTrustedServerCertificates(NSArray<?> certificates);
 
+    /**
+     * [@property] trustedServerNames
+     * 
+     * Array of server certificate common names that will be used to verify server's certificate.
+     *   The string could have wildcards to specify the name, such as "*.mycompany.net". If a server presents
+     *   a certificate with DNSName or Common Name that isn't in this list, it won't be trusted.
+     */
     @Generated
     @Selector("setTrustedServerNames:")
     public native void setTrustedServerNames(NSArray<String> value);
 
+    /**
+     * [@property] ttlsInnerAuthentication
+     * 
+     * Specifies the inner authentication used by the TTLS module.
+     *   Possible values are PAP, CHAP, MSCHAP, MSCHAPv2, and EAP. Defaults to EAP.
+     */
     @Generated
     @Selector("setTtlsInnerAuthenticationType:")
     public native void setTtlsInnerAuthenticationType(@NInt long value);
 
+    /**
+     * [@property] username
+     * 
+     * A UTF-8 encoded string containing username component of the user authentication
+     *   credentials. Length of this property must be between 1 and 253 characters.
+     */
     @Generated
     @Selector("setUsername:")
     public native void setUsername(String value);
@@ -210,6 +320,12 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * [@property] supportedEAPTypes
+     * 
+     * Array of supported EAP Types. Refer to NEHotspotConfigurationEAPType
+     *   for valid values.
+     */
     @Generated
     @Selector("supportedEAPTypes")
     public native NSArray<? extends NSNumber> supportedEAPTypes();
@@ -224,15 +340,34 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] trustedServerNames
+     * 
+     * Array of server certificate common names that will be used to verify server's certificate.
+     *   The string could have wildcards to specify the name, such as "*.mycompany.net". If a server presents
+     *   a certificate with DNSName or Common Name that isn't in this list, it won't be trusted.
+     */
     @Generated
     @Selector("trustedServerNames")
     public native NSArray<String> trustedServerNames();
 
+    /**
+     * [@property] ttlsInnerAuthentication
+     * 
+     * Specifies the inner authentication used by the TTLS module.
+     *   Possible values are PAP, CHAP, MSCHAP, MSCHAPv2, and EAP. Defaults to EAP.
+     */
     @Generated
     @Selector("ttlsInnerAuthenticationType")
     @NInt
     public native long ttlsInnerAuthenticationType();
 
+    /**
+     * [@property] username
+     * 
+     * A UTF-8 encoded string containing username component of the user authentication
+     *   credentials. Length of this property must be between 1 and 253 characters.
+     */
     @Generated
     @Selector("username")
     public native String username();

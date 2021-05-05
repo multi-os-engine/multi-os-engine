@@ -30,6 +30,7 @@ import apple.mapkit.struct.MKMapPoint;
 import apple.mapkit.struct.MKMapRect;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -54,6 +55,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Prefer MKOverlayRenderer
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -136,7 +140,7 @@ public class MKOverlayView extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -149,8 +153,8 @@ public class MKOverlayView extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -371,7 +375,7 @@ public class MKOverlayView extends UIView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -387,7 +391,8 @@ public class MKOverlayView extends UIView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -398,6 +403,14 @@ public class MKOverlayView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * Return YES if the view is currently ready to draw in the specified rect.
+     * Return NO if the view will not draw in the specified rect or if the
+     * data necessary to draw in the specified rect is not available.  In the
+     * case where the view may want to draw in the specified rect but the data is
+     * not available, use setNeedsDisplayInMapRect:zoomLevel: to signal when the
+     * data does become available.
+     */
     @Generated
     @Deprecated
     @Selector("canDrawMapRect:zoomScale:")
@@ -415,7 +428,7 @@ public class MKOverlayView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKOverlayView initWithCoder(NSCoder aDecoder);
+    public native MKOverlayView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -444,6 +457,9 @@ public class MKOverlayView extends UIView {
     @MappedReturn(ObjCObjectMapper.class)
     public native MKOverlay overlay();
 
+    /**
+     * Convert screen points relative to this view to absolute MKMapPoints
+     */
     @Generated
     @Deprecated
     @Selector("pointForMapPoint:")
@@ -465,4 +481,10 @@ public class MKOverlayView extends UIView {
     @Deprecated
     @Selector("setNeedsDisplayInMapRect:zoomScale:")
     public native void setNeedsDisplayInMapRectZoomScale(@ByValue MKMapRect mapRect, @NFloat double zoomScale);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

@@ -41,11 +41,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * PHAssetCollectionChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or -[PHPhotoLibrary performChangesAndWait:] block.
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PHAssetCollectionChangeRequest extends NSObject {
+public class PHAssetCollectionChangeRequest extends PHChangeRequest {
     static {
         NatJ.register();
     }
@@ -83,15 +86,21 @@ public class PHAssetCollectionChangeRequest extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * if the asset collection does not allow the type of change requested, these methods will raise an exception, call canPerformEditOperation: on the asset collection to determine if the type of edit operation is allowed.
+     */
     @Generated
     @Selector("changeRequestForAssetCollection:")
     public static native PHAssetCollectionChangeRequest changeRequestForAssetCollection(
             PHAssetCollection assetCollection);
 
+    /**
+     * to add, remove or rearrange assets in a collection, passing in the fetched assets in that collection will ensure that the asset positions are tracked correctly in the case that the collection has been externally edited after the fetch, but before this change is applied
+     */
     @Generated
     @Selector("changeRequestForAssetCollection:assets:")
     public static native PHAssetCollectionChangeRequest changeRequestForAssetCollectionAssets(
-            PHAssetCollection assetCollection, PHFetchResult<PHAsset> assets);
+            PHAssetCollection assetCollection, PHFetchResult<? extends PHAsset> assets);
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
@@ -110,6 +119,9 @@ public class PHAssetCollectionChangeRequest extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * requests that the specified asset collections be deleted
+     */
     @Generated
     @Selector("deleteAssetCollections:")
     public static native void deleteAssetCollections(
@@ -185,10 +197,17 @@ public class PHAssetCollectionChangeRequest extends NSObject {
     public native void insertAssetsAtIndexes(@Mapped(ObjCObjectMapper.class) NSFastEnumeration assets,
             NSIndexSet indexes);
 
+    /**
+     * The move removes the assets at fromIndexes first then inserts those assets at the toIndex, so toIndex should point to a location based on the updated indexes after having removed the assets at fromIndexes
+     */
     @Generated
     @Selector("moveAssetsAtIndexes:toIndex:")
     public native void moveAssetsAtIndexesToIndex(NSIndexSet fromIndexes, @NUInt long toIndex);
 
+    /**
+     * This can be used to fetch the newly created asset collection after the change block has completed by using -localIdentifier
+     * It can also be added directly to collection lists within the current change block
+     */
     @Generated
     @Selector("placeholderForCreatedAssetCollection")
     public native PHObjectPlaceholder placeholderForCreatedAssetCollection();

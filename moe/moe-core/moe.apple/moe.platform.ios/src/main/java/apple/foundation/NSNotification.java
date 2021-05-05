@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Notifications	***************
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -167,15 +170,18 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API_UNAVAILABLE(macos, ios, watchos, tvos)
+     */
     @Generated
     @Selector("init")
     public native NSNotification init();
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSNotification initWithCoder(NSCoder aDecoder);
+    public native NSNotification initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithName:object:userInfo:")

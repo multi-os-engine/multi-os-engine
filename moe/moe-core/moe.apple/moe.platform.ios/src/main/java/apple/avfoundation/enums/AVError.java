@@ -40,6 +40,9 @@ public final class AVError {
     @Generated @NInt public static final long SessionWasInterrupted = 0xFFFFFFFFFFFFD1D6L;
     @Generated @NInt public static final long MediaServicesWereReset = 0xFFFFFFFFFFFFD1D5L;
     @Generated @NInt public static final long ExportFailed = 0xFFFFFFFFFFFFD1D4L;
+    /**
+     * userInfo may contain AVErrorMediaTypeKey, AVErrorMediaSubTypeKey & AVErrorPresentationTimeStampKey, if available
+     */
     @Generated @NInt public static final long DecodeFailed = 0xFFFFFFFFFFFFD1D3L;
     @Generated @NInt public static final long InvalidSourceMedia = 0xFFFFFFFFFFFFD1D2L;
     @Generated @NInt public static final long FileAlreadyExists = 0xFFFFFFFFFFFFD1D1L;
@@ -52,13 +55,25 @@ public final class AVError {
     @Generated @NInt public static final long MaximumStillImageCaptureRequestsExceeded = 0xFFFFFFFFFFFFD1CAL;
     @Generated @NInt public static final long ContentIsProtected = 0xFFFFFFFFFFFFD1C9L;
     @Generated @NInt public static final long NoImageAtTime = 0xFFFFFFFFFFFFD1C8L;
+    /**
+     * userInfo may contain AVErrorMediaTypeKey & AVErrorMediaSubTypeKey, if available
+     */
     @Generated @NInt public static final long DecoderNotFound = 0xFFFFFFFFFFFFD1C7L;
+    /**
+     * userInfo may contain AVErrorMediaTypeKey & AVErrorMediaSubTypeKey, if available
+     */
     @Generated @NInt public static final long EncoderNotFound = 0xFFFFFFFFFFFFD1C6L;
     @Generated @NInt public static final long ContentIsNotAuthorized = 0xFFFFFFFFFFFFD1C5L;
     @Generated @NInt public static final long ApplicationIsNotAuthorized = 0xFFFFFFFFFFFFD1C4L;
     @Generated @NInt public static final long DeviceIsNotAvailableInBackground = 0xFFFFFFFFFFFFD1C3L;
     @Generated @NInt public static final long OperationNotSupportedForAsset = 0xFFFFFFFFFFFFD1C2L;
+    /**
+     * userInfo may contain AVErrorMediaTypeKey & AVErrorMediaSubTypeKey, if available
+     */
     @Generated @NInt public static final long DecoderTemporarilyUnavailable = 0xFFFFFFFFFFFFD1C1L;
+    /**
+     * userInfo may contain AVErrorMediaTypeKey & AVErrorMediaSubTypeKey, if available
+     */
     @Generated @NInt public static final long EncoderTemporarilyUnavailable = 0xFFFFFFFFFFFFD1C0L;
     @Generated @NInt public static final long InvalidVideoComposition = 0xFFFFFFFFFFFFD1BFL;
     @Generated @NInt public static final long ReferenceForbiddenByReferencePolicy = 0xFFFFFFFFFFFFD1BEL;
@@ -72,11 +87,17 @@ public final class AVError {
     @Generated @NInt public static final long ServerIncorrectlyConfigured = 0xFFFFFFFFFFFFD1B6L;
     @Generated @NInt public static final long ApplicationIsNotAuthorizedToUseDevice = 0xFFFFFFFFFFFFD1B4L;
     @Generated @NInt public static final long FailedToParse = 0xFFFFFFFFFFFFD1B3L;
+    /**
+     * userInfo contains AVErrorFileTypeKey
+     */
     @Generated @NInt public static final long FileTypeDoesNotSupportSampleReferences = 0xFFFFFFFFFFFFD1B2L;
     @Generated @NInt public static final long UndecodableMediaData = 0xFFFFFFFFFFFFD1B1L;
     @Generated @NInt public static final long AirPlayControllerRequiresInternet = 0xFFFFFFFFFFFFD1B0L;
     @Generated @NInt public static final long AirPlayReceiverRequiresInternet = 0xFFFFFFFFFFFFD1AFL;
     @Generated @NInt public static final long VideoCompositorFailed = 0xFFFFFFFFFFFFD1AEL;
+    /**
+     * on iOS, AVCaptureMovieFileOutput only supports one recording at a time
+     */
     @Generated @NInt public static final long RecordingAlreadyInProgress = 0xFFFFFFFFFFFFD1ADL;
     @Generated @NInt public static final long UnsupportedOutputSettings = 0xFFFFFFFFFFFFD1ABL;
     @Generated @NInt public static final long OperationNotAllowed = 0xFFFFFFFFFFFFD1AAL;
@@ -91,4 +112,14 @@ public final class AVError {
     @Generated @NInt public static final long ContentNotUpdated = 0xFFFFFFFFFFFFD1A6L;
     @Generated @NInt public static final long NoLongerPlayable = 0xFFFFFFFFFFFFD1A5L;
     @Generated @NInt public static final long NoCompatibleAlternatesForExternalDisplay = 0xFFFFFFFFFFFFD1A4L;
+    @Generated @NInt public static final long NoSourceTrack = 0xFFFFFFFFFFFFD1A3L;
+    @Generated @NInt public static final long ExternalPlaybackNotSupportedForAsset = 0xFFFFFFFFFFFFD1A2L;
+    @Generated @NInt public static final long OperationNotSupportedForPreset = 0xFFFFFFFFFFFFD1A1L;
+    @Generated @NInt public static final long SessionHardwareCostOverage = 0xFFFFFFFFFFFFD1A0L;
+    @Generated @NInt public static final long UnsupportedDeviceActiveFormat = 0xFFFFFFFFFFFFD19FL;
+    @Generated @NInt public static final long IncorrectlyConfigured = 0xFFFFFFFFFFFFD19DL;
+    @Generated @NInt public static final long SegmentStartedWithNonSyncSample = 0xFFFFFFFFFFFFD19CL;
+    @Generated
+    @NInt
+    public static final long RosettaNotInstalled = 0xFFFFFFFFFFFFD19BL;
 }

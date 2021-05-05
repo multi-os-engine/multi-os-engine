@@ -43,35 +43,59 @@ public final class VersRec extends StructObject {
         super(peer);
     }
 
+    /**
+     * encoded version number
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native NumVersion numericVersion();
 
+    /**
+     * encoded version number
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setNumericVersion(@ByValue NumVersion value);
 
+    /**
+     * country code from intl utilities
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native short countryCode();
 
+    /**
+     * country code from intl utilities
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setCountryCode(short value);
 
+    /**
+     * version number string - worst case
+     */
     @Generated
     @StructureField(order = 2, isGetter = true, count = 256)
     public native byte shortVersion(int field_idx);
 
+    /**
+     * version number string - worst case
+     */
     @Generated
     @StructureField(order = 2, isGetter = false, count = 256)
     public native void setShortVersion(byte value, int field_idx);
 
+    /**
+     * longMessage string packed after shortVersion
+     */
     @Generated
     @StructureField(order = 3, isGetter = true, count = 256)
     public native byte reserved(int field_idx);
 
+    /**
+     * longMessage string packed after shortVersion
+     */
     @Generated
     @StructureField(order = 3, isGetter = false, count = 256)
     public native void setReserved(byte value, int field_idx);

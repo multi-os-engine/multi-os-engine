@@ -2,6 +2,7 @@ package apple.vision;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -24,6 +25,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A request that will detect rectangles in an image.
+ * 
+ * This request will generate VNRectangleObservation objects describing the location of rectangles detected in an image.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -117,23 +123,38 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Specifies the maximum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 1.0
+     */
     @Generated
     @Selector("maximumAspectRatio")
     public native float maximumAspectRatio();
 
+    /**
+     * Specifies the maximum number of rectangles to be returned.  The default is 1.  Setting this property to 0 will allow an unlimited number of observations to be returned.
+     */
     @Generated
     @Selector("maximumObservations")
     @NUInt
     public native long maximumObservations();
 
+    /**
+     * Specifies the minimum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 0.5
+     */
     @Generated
     @Selector("minimumAspectRatio")
     public native float minimumAspectRatio();
 
+    /**
+     * Specifies a minimum confidence score, range [0.0, 1.0], default 0.0. Any rectangles with a lower confidence score will not be returned.
+     */
     @Generated
     @Selector("minimumConfidence")
     public native float minimumConfidence();
 
+    /**
+     * Specifies the minimum size of the rectangle to be detected, as a proportion of the smallest dimension, range [0.0, 1.0], default .2. Any smaller rectangles that may have been detected will not be returned.
+     */
     @Generated
     @Selector("minimumSize")
     public native float minimumSize();
@@ -144,6 +165,9 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Specifies the maximum number of degrees a rectangle corner angle can deviate from 90 degrees, range [0,45], default 30
+     */
     @Generated
     @Selector("quadratureTolerance")
     public native float quadratureTolerance();
@@ -156,26 +180,44 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Specifies the maximum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 1.0
+     */
     @Generated
     @Selector("setMaximumAspectRatio:")
     public native void setMaximumAspectRatio(float value);
 
+    /**
+     * Specifies the maximum number of rectangles to be returned.  The default is 1.  Setting this property to 0 will allow an unlimited number of observations to be returned.
+     */
     @Generated
     @Selector("setMaximumObservations:")
     public native void setMaximumObservations(@NUInt long value);
 
+    /**
+     * Specifies the minimum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 0.5
+     */
     @Generated
     @Selector("setMinimumAspectRatio:")
     public native void setMinimumAspectRatio(float value);
 
+    /**
+     * Specifies a minimum confidence score, range [0.0, 1.0], default 0.0. Any rectangles with a lower confidence score will not be returned.
+     */
     @Generated
     @Selector("setMinimumConfidence:")
     public native void setMinimumConfidence(float value);
 
+    /**
+     * Specifies the minimum size of the rectangle to be detected, as a proportion of the smallest dimension, range [0.0, 1.0], default .2. Any smaller rectangles that may have been detected will not be returned.
+     */
     @Generated
     @Selector("setMinimumSize:")
     public native void setMinimumSize(float value);
 
+    /**
+     * Specifies the maximum number of degrees a rectangle corner angle can deviate from 90 degrees, range [0,45], default 30
+     */
     @Generated
     @Selector("setQuadratureTolerance:")
     public native void setQuadratureTolerance(float value);
@@ -192,4 +234,18 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("currentRevision")
+    @NUInt
+    public static native long currentRevision();
+
+    @Generated
+    @Selector("defaultRevision")
+    @NUInt
+    public static native long defaultRevision();
+
+    @Generated
+    @Selector("supportedRevisions")
+    public static native NSIndexSet supportedRevisions();
 }

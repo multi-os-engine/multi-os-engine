@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Abstract Node representing a image resampling operation
+ * 
+ * Please make a MPSNNBilinearScale or MPSNNLanczosScale object instead
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -93,10 +98,23 @@ public class MPSNNScaleNode extends MPSNNFilterNode {
     @Selector("init")
     public native MPSNNScaleNode init();
 
+    /**
+     * init a node to convert a MPSImage to the desired size
+     * 
+     * @param  sourceNode    A valid MPSNNImageNode
+     * @param  size          The size of the output image {width, height, depth}
+     */
     @Generated
     @Selector("initWithSource:outputSize:")
     public native MPSNNScaleNode initWithSourceOutputSize(MPSNNImageNode sourceNode, @ByValue MTLSize size);
 
+    /**
+     * init a node to convert a MPSImage to the desired size for a region of interest
+     * 
+     * @param  sourceNode           A valid MPSNNImageNode
+     * @param  transformProvider    If non-nil, a valid MPSImageTransformProvider that provides the region of interest
+     * @param  size                 The size of the output image {width, height, depth}
+     */
     @Generated
     @Selector("initWithSource:transformProvider:outputSize:")
     public native MPSNNScaleNode initWithSourceTransformProviderOutputSize(MPSNNImageNode sourceNode,
@@ -129,10 +147,23 @@ public class MPSNNScaleNode extends MPSNNFilterNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * create an autoreleased node to convert a MPSImage to the desired size
+     * 
+     * @param  sourceNode    A valid MPSNNImageNode
+     * @param  size          The size of the output image {width, height, depth}
+     */
     @Generated
     @Selector("nodeWithSource:outputSize:")
     public static native MPSNNScaleNode nodeWithSourceOutputSize(MPSNNImageNode sourceNode, @ByValue MTLSize size);
 
+    /**
+     * create an autoreleased node to convert a MPSImage to the desired size for a region of interest
+     * 
+     * @param  sourceNode            A valid MPSNNImageNode
+     * @param  transformProvider    If non-nil, a valid MPSImageTransformProvider that provides the region of interest
+     * @param  size              The size of the output image {width, height, depth}
+     */
     @Generated
     @Selector("nodeWithSource:transformProvider:outputSize:")
     public static native MPSNNScaleNode nodeWithSourceTransformProviderOutputSize(MPSNNImageNode sourceNode,

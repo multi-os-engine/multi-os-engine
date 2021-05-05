@@ -19,6 +19,9 @@ package apple.corefoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Run Loop Observer Activities
+ */
 @Generated
 public final class CFRunLoopActivity {
     @Generated @NUInt public static final long Entry = 0x0000000000000001L;

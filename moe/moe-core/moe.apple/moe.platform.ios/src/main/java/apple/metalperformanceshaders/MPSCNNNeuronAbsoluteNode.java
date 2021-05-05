@@ -23,6 +23,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A node representing a MPSCNNNeuronAbsolute kernel
+ * 
+ * For each pixel, applies the following function:
+ * [@code]
+ *     f(x) = fabs(x)
+ * [@endcode]
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -90,6 +98,9 @@ public class MPSCNNNeuronAbsoluteNode extends MPSCNNNeuronNode {
     @Selector("init")
     public native MPSCNNNeuronAbsoluteNode init();
 
+    /**
+     * Init a node with default values for parameters a & b
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNNeuronAbsoluteNode initWithSource(MPSNNImageNode sourceNode);
@@ -121,6 +132,9 @@ public class MPSCNNNeuronAbsoluteNode extends MPSCNNNeuronNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Create an autoreleased node with default values for parameters a & b
+     */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSCNNNeuronAbsoluteNode nodeWithSource(MPSNNImageNode sourceNode);
@@ -145,4 +159,9 @@ public class MPSCNNNeuronAbsoluteNode extends MPSCNNNeuronNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("nodeWithSource:descriptor:")
+    public static native MPSCNNNeuronAbsoluteNode nodeWithSourceDescriptor(MPSNNImageNode sourceNode,
+            MPSNNNeuronDescriptor descriptor);
 }

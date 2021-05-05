@@ -28,6 +28,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * VNRectangleObservation
+ * [@superclass] VNObservation
+ * 
+ * VNRectangleObservation is the result of a rectangle detector
+ * 
+ * The VNRectangleObservation has a bounding box that encompasses the rectangle found in the image. The rectangle itself is defined by the four corner point properties. The rectangle can be rotated in or even out of plane. A common use case is to use the CIPerspectiveTransform filter to correct a detected rectangle to its 'flat upright' representation. All coordinates are normalized and the coordinates can be outside the image.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -107,7 +115,7 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNRectangleObservation initWithCoder(NSCoder aDecoder);
+    public native VNRectangleObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -180,4 +188,15 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("observationWithRequestRevision:boundingBox:")
+    public static native VNRectangleObservation observationWithRequestRevisionBoundingBox(@NUInt long requestRevision,
+            @ByValue CGRect boundingBox);
+
+    @Generated
+    @Selector("rectangleObservationWithRequestRevision:topLeft:bottomLeft:bottomRight:topRight:")
+    public static native VNRectangleObservation rectangleObservationWithRequestRevisionTopLeftBottomLeftBottomRightTopRight(
+            @NUInt long requestRevision, @ByValue CGPoint topLeft, @ByValue CGPoint bottomLeft,
+            @ByValue CGPoint bottomRight, @ByValue CGPoint topRight);
 }

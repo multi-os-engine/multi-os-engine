@@ -37,6 +37,9 @@ public final class Accounts {
     private Accounts() {
     }
 
+    /**
+     * The identifiers for supported system account types are listed here:
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -57,41 +60,69 @@ public final class Accounts {
     @MappedReturn(ObjCStringMapper.class)
     public static native String ACAccountTypeIdentifierTencentWeibo();
 
+    /**
+     * Your Facebook App ID, as it appears on the Facebook website.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ACFacebookAppIdKey();
 
+    /**
+     * An array of of the permissions you're requesting.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ACFacebookPermissionsKey();
 
+    /**
+     * Only required when posting permissions are requested.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ACFacebookAudienceKey();
 
+    /**
+     * Posts from your app are visible to everyone.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ACFacebookAudienceEveryone();
 
+    /**
+     * Posts are visible only to friends.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ACFacebookAudienceFriends();
 
+    /**
+     * Posts are visible to the user only.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ACFacebookAudienceOnlyMe();
 
+    /**
+     * Tencent App ID
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ACTencentWeiboAppIdKey();
 
+    /**
+     * Notification name sent out when the database is changed by an external process, another account store
+     * in the same process or by calling saveAccount: or removeAccount: on a store you are managing.
+     * You may need to deal with accounts being removed by an external process while you are using them.
+     * Note: ensure when you add an observer for this notification, you do so specifying this object specifically.
+     * Otherwise, you will receive n notifications, one per active ACAccountStore instance in your process.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

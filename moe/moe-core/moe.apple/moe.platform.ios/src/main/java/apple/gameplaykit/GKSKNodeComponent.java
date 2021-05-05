@@ -40,9 +40,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A component that encapsulates a SpriteKit node.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -93,6 +97,13 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Creates a component that encapsulate the given SpriteKit node. When the component is
+     * added to an entity, the SKNode's entity property will be set.
+     * 
+     * @param node Node to associate with the component.
+     * @see SKNode.entity
+     */
     @Generated
     @Selector("componentWithNode:")
     public static native GKSKNodeComponent componentWithNode(SKNode node);
@@ -174,17 +185,40 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKSKNodeComponent initWithCoder(NSCoder aDecoder);
+    public native GKSKNodeComponent initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes component to encapsulate the given SpriteKit node. When the component is
+     * added to an entity, the SKNode's entity property will be set.
+     * 
+     * @param node Node to associate with the component.
+     * @see SKNode.entity
+     */
     @Generated
     @Selector("initWithNode:")
     public native GKSKNodeComponent initWithNode(SKNode node);
 
+    /**
+     * The SpriteKit node this component encapsulates.
+     */
     @Generated
     @Selector("node")
     public native SKNode node();
 
+    /**
+     * The SpriteKit node this component encapsulates.
+     */
     @Generated
     @Selector("setNode:")
     public native void setNode(SKNode value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

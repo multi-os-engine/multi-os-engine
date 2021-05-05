@@ -155,15 +155,39 @@ public class GCControllerButtonInput extends GCControllerElement {
     @Selector("init")
     public native GCControllerButtonInput init();
 
+    /**
+     * Buttons are mostly used in a digital sense, thus we have a recommended method for checking for pressed state instead of
+     * interpreting the value.
+     * 
+     * As a general guideline a button is pressed if the value exceeds 0. However there may be hysterisis applied
+     * to counter noisy input values, thus incidental values around the threshold value may not trigger a change
+     * in pressed state.
+     * 
+     * Others buttons may support two-stage actuation, where the button reports a value between 0 and 1 but is only considered
+     * pressed when its value is greater than some threshold other than 0.
+     * 
+     * @see pressedChangedHandler
+     * @see value
+     */
     @Generated
     @Selector("isPressed")
     public native boolean isPressed();
 
+    /**
+     * Set this block if you want to be notified when only the pressed state on this button changes. This
+     * will get called less often than the valueChangedHandler with the additional feature of the pressed state
+     * being different to the last time it was called.
+     */
     @Generated
     @Selector("pressedChangedHandler")
     @ObjCBlock(name = "call_pressedChangedHandler_ret")
     public native Block_pressedChangedHandler_ret pressedChangedHandler();
 
+    /**
+     * Set this block if you want to be notified when only the pressed state on this button changes. This
+     * will get called less often than the valueChangedHandler with the additional feature of the pressed state
+     * being different to the last time it was called.
+     */
     @Generated
     @Selector("setPressedChangedHandler:")
     public native void setPressedChangedHandler(
@@ -174,6 +198,12 @@ public class GCControllerButtonInput extends GCControllerElement {
     public native void setValueChangedHandler(
             @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
+    /**
+     * A normalized value for the input. Between 0 and 1 for button inputs. Values are saturated and thus never exceed the range of [0, 1].
+     * 
+     * @see valueChangedHandler
+     * @see pressed
+     */
     @Generated
     @Selector("value")
     public native float value();
@@ -187,27 +217,78 @@ public class GCControllerButtonInput extends GCControllerElement {
     @Generated
     public interface Block_pressedChangedHandler_ret {
         @Generated
-        void call_pressedChangedHandler_ret(GCControllerButtonInput arg0, float arg1, boolean arg2);
+        void call_pressedChangedHandler_ret(GCControllerButtonInput button, float value, boolean pressed);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPressedChangedHandler {
         @Generated
-        void call_setPressedChangedHandler(GCControllerButtonInput arg0, float arg1, boolean arg2);
+        void call_setPressedChangedHandler(GCControllerButtonInput button, float value, boolean pressed);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCControllerButtonInput arg0, float arg1, boolean arg2);
+        void call_setValueChangedHandler(GCControllerButtonInput button, float value, boolean pressed);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCControllerButtonInput arg0, float arg1, boolean arg2);
+        void call_valueChangedHandler_ret(GCControllerButtonInput button, float value, boolean pressed);
+    }
+
+    /**
+     * Sets the normalized value for the button input. Will update the pressed state of the button.
+     * 
+     * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
+     * 
+     * @param value the value to set the input to.
+     * @see value
+     */
+    @Generated
+    @Selector("setValue:")
+    public native void setValue(float value);
+
+    /**
+     * Some buttons feature capacitive touch capabilities where the user can touch the button
+     * without pressing it. In such cases, a button will be touched before it is pressed.
+     * 
+     * For buttons without capacitive sensing, the touched state is true if the value exceeds 0.
+     * 
+     * @see touchChangedHandler
+     * @see pressed
+     */
+    @Generated
+    @Selector("isTouched")
+    public native boolean isTouched();
+
+    @Generated
+    @Selector("setTouchedChangedHandler:")
+    public native void setTouchedChangedHandler(
+            @ObjCBlock(name = "call_setTouchedChangedHandler") Block_setTouchedChangedHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setTouchedChangedHandler {
+        @Generated
+        void call_setTouchedChangedHandler(GCControllerButtonInput button, float value, boolean pressed,
+                boolean touched);
+    }
+
+    @Generated
+    @Selector("touchedChangedHandler")
+    @ObjCBlock(name = "call_touchedChangedHandler_ret")
+    public native Block_touchedChangedHandler_ret touchedChangedHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_touchedChangedHandler_ret {
+        @Generated
+        void call_touchedChangedHandler_ret(GCControllerButtonInput button, float value, boolean pressed,
+                boolean touched);
     }
 }

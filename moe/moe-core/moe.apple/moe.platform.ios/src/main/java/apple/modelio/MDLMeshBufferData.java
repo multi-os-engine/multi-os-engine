@@ -22,6 +22,8 @@ import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.modelio.protocol.MDLMeshBuffer;
+import apple.modelio.protocol.MDLMeshBufferAllocator;
+import apple.modelio.protocol.MDLMeshBufferZone;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -41,6 +43,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MDLMeshBufferData
+ * 
+ * A CPU memory backed mesh buffer
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -155,7 +162,7 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @Generated
     @Selector("allocator")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object allocator();
+    public native MDLMeshBufferAllocator allocator();
 
     @Generated
     @Owned
@@ -175,10 +182,26 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @Selector("init")
     public native MDLMeshBufferData init();
 
+    /**
+     * initWithType:data
+     * 
+     * instantiate a new data backed mesh buffer
+     * 
+     * @param type the intended use of the buffer
+     * @param data the data to be used as a mesh buffer. It will be copied.
+     */
     @Generated
     @Selector("initWithType:data:")
     public native MDLMeshBufferData initWithTypeData(@NUInt long type, NSData data);
 
+    /**
+     * initWithType:length
+     * 
+     * instantiate a new data backed mesh buffer
+     * 
+     * @param type the intended use of the buffer
+     * @param length the size of buffer to allocate, in bytes
+     */
     @Generated
     @Selector("initWithType:length:")
     public native MDLMeshBufferData initWithTypeLength(@NUInt long type, @NUInt long length);
@@ -200,5 +223,5 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @Generated
     @Selector("zone")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object zone();
+    public native MDLMeshBufferZone zone();
 }

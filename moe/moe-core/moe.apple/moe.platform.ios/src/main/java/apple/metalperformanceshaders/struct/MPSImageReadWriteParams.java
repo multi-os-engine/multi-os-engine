@@ -34,20 +34,32 @@ public final class MPSImageReadWriteParams extends StructObject {
         setNumberOfFeatureChannelsToReadWrite(numberOfFeatureChannelsToReadWrite);
     }
 
+    /**
+     * < featureChannel offset from which to read/write featureChannels, this should be a multiple of 4
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @NUInt
     public native long featureChannelOffset();
 
+    /**
+     * < featureChannel offset from which to read/write featureChannels, this should be a multiple of 4
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setFeatureChannelOffset(@NUInt long value);
 
+    /**
+     * < is number of featureChannels, should be greater than 0 and multiple of 4 unless featureChannelOffset is 0
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @NUInt
     public native long numberOfFeatureChannelsToReadWrite();
 
+    /**
+     * < is number of featureChannels, should be greater than 0 and multiple of 4 unless featureChannelOffset is 0
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setNumberOfFeatureChannelsToReadWrite(@NUInt long value);

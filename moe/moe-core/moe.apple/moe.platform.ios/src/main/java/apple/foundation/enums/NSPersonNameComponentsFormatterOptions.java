@@ -21,6 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSPersonNameComponentsFormatterOptions {
+    /**
+     * Indicates that the formatter should format the component object's phoneticRepresentation components instead of its own components.
+     * The developer must have populated these manually. e.g.: Developer creates components object with the following properties:
+     * <family:"Family", given:"Given", phoneticRepresentation:<family:"FamilyPhonetic", given:"GivenPhonetic">>.
+     * If this option is specified, we perform formatting operations on <family "FamilyPhonetic", given "GivenPhonetic"> instead. 
+     */
     @Generated @NUInt public static final long NSPersonNameComponentsFormatterPhonetic = 0x0000000000000002L;
 
     @Generated

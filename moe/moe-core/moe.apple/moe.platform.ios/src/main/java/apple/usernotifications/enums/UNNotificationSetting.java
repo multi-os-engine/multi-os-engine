@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UNNotificationSetting {
+    /**
+     * The application does not support this notification type
+     */
     @Generated @NInt public static final long NotSupported = 0x0000000000000000L;
+    /**
+     * The notification setting is turned off.
+     */
     @Generated @NInt public static final long Disabled = 0x0000000000000001L;
+    /**
+     * The notification setting is turned on.
+     */
     @Generated @NInt public static final long Enabled = 0x0000000000000002L;
 
     @Generated

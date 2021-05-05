@@ -22,7 +22,13 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class MPShuffleType {
     @Generated @NInt public static final long Off = 0x0000000000000000L;
+    /**
+     * Nothing is shuffled during playback.
+     */
     @Generated @NInt public static final long Items = 0x0000000000000001L;
+    /**
+     * Individual items are shuffled during playback.
+     */
     @Generated @NInt public static final long Collections = 0x0000000000000002L;
 
     @Generated

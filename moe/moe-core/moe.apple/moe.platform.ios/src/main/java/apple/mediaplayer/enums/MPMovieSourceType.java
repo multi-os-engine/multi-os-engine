@@ -22,7 +22,13 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class MPMovieSourceType {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * Local or progressively downloaded network content
+     */
     @Generated @NInt public static final long File = 0x0000000000000001L;
+    /**
+     * Live or on-demand streaming content
+     */
     @Generated @NInt public static final long Streaming = 0x0000000000000002L;
 
     @Generated

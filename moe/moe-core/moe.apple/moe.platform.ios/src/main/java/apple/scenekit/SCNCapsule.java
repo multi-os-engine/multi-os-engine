@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNCapsule
+ * 
+ * SCNCapsule represents a capsule with controllable height and cap radius.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -85,6 +90,14 @@ public class SCNCapsule extends SCNGeometry {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * capsuleWithCapRadius:height:
+     * 
+     * Creates and returns a capsule with given radius and height.
+     * 
+     * @param capRadius The radius of the capsule.
+     * @param height The height of the capsule.
+     */
     @Generated
     @Selector("capsuleWithCapRadius:height:")
     public static native SCNCapsule capsuleWithCapRadiusHeight(@NFloat double capRadius, @NFloat double height);
@@ -175,21 +188,49 @@ public class SCNCapsule extends SCNGeometry {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] capRadius
+     * 
+     * The cap radius of the capsule. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
+     */
     @Generated
     @Selector("capRadius")
     @NFloat
     public native double capRadius();
 
+    /**
+     * [@property] capSegmentCount
+     * 
+     * The number of subdivisions in the cap. Animatable.
+     * 
+     * If the value is less than 2, the behavior is undefined. The default value is 24.
+     */
     @Generated
     @Selector("capSegmentCount")
     @NInt
     public native long capSegmentCount();
 
+    /**
+     * [@property] height
+     * 
+     * The height of the capsule. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 2.
+     */
     @Generated
     @Selector("height")
     @NFloat
     public native double height();
 
+    /**
+     * [@property] heightSegmentCount
+     * 
+     * The number of subdivisions along the Y axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
+     */
     @Generated
     @Selector("heightSegmentCount")
     @NInt
@@ -201,29 +242,71 @@ public class SCNCapsule extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNCapsule initWithCoder(NSCoder aDecoder);
+    public native SCNCapsule initWithCoder(NSCoder coder);
 
+    /**
+     * [@property] radialSegmentCount
+     * 
+     * The number of subdivisions along the radial coordinate. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 48.
+     */
     @Generated
     @Selector("radialSegmentCount")
     @NInt
     public native long radialSegmentCount();
 
+    /**
+     * [@property] capRadius
+     * 
+     * The cap radius of the capsule. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
+     */
     @Generated
     @Selector("setCapRadius:")
     public native void setCapRadius(@NFloat double value);
 
+    /**
+     * [@property] capSegmentCount
+     * 
+     * The number of subdivisions in the cap. Animatable.
+     * 
+     * If the value is less than 2, the behavior is undefined. The default value is 24.
+     */
     @Generated
     @Selector("setCapSegmentCount:")
     public native void setCapSegmentCount(@NInt long value);
 
+    /**
+     * [@property] height
+     * 
+     * The height of the capsule. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 2.
+     */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NFloat double value);
 
+    /**
+     * [@property] heightSegmentCount
+     * 
+     * The number of subdivisions along the Y axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
+     */
     @Generated
     @Selector("setHeightSegmentCount:")
     public native void setHeightSegmentCount(@NInt long value);
 
+    /**
+     * [@property] radialSegmentCount
+     * 
+     * The number of subdivisions along the radial coordinate. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 48.
+     */
     @Generated
     @Selector("setRadialSegmentCount:")
     public native void setRadialSegmentCount(@NInt long value);

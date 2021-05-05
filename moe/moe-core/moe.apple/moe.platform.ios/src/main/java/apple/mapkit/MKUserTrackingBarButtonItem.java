@@ -21,10 +21,13 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.UIAction;
 import apple.uikit.UIBarButtonItem;
 import apple.uikit.UIImage;
+import apple.uikit.UIMenu;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -33,6 +36,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -90,7 +94,7 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -103,8 +107,8 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -213,7 +217,7 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -229,7 +233,8 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -251,7 +256,7 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKUserTrackingBarButtonItem initWithCoder(NSCoder aDecoder);
+    public native MKUserTrackingBarButtonItem initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCustomView:")
@@ -283,4 +288,35 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Generated
     @Selector("setMapView:")
     public native void setMapView(MKMapView value);
+
+    @Generated
+    @Selector("fixedSpaceItemOfWidth:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object fixedSpaceItemOfWidth(@NFloat double width);
+
+    @Generated
+    @Selector("flexibleSpaceItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object flexibleSpaceItem();
+
+    @Generated
+    @Selector("initWithBarButtonSystemItem:menu:")
+    public native MKUserTrackingBarButtonItem initWithBarButtonSystemItemMenu(@NInt long systemItem, UIMenu menu);
+
+    @Generated
+    @Selector("initWithBarButtonSystemItem:primaryAction:")
+    public native MKUserTrackingBarButtonItem initWithBarButtonSystemItemPrimaryAction(@NInt long systemItem,
+            UIAction primaryAction);
+
+    @Generated
+    @Selector("initWithImage:menu:")
+    public native MKUserTrackingBarButtonItem initWithImageMenu(UIImage image, UIMenu menu);
+
+    @Generated
+    @Selector("initWithPrimaryAction:")
+    public native MKUserTrackingBarButtonItem initWithPrimaryAction(UIAction primaryAction);
+
+    @Generated
+    @Selector("initWithTitle:menu:")
+    public native MKUserTrackingBarButtonItem initWithTitleMenu(String title, UIMenu menu);
 }

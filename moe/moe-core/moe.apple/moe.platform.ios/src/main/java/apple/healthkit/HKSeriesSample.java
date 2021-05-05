@@ -25,6 +25,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKSeriesSample
+ * 
+ * This class represents a type of HKSample that references a series of data.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -75,6 +80,12 @@ public class HKSeriesSample extends HKSample {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * [@property]      count
+     * 
+     * The number of individual series datum represented by the receiver and accessible
+     *                through the appropriate HKQuery series subclass.
+     */
     @Generated
     @Selector("count")
     @NUInt
@@ -99,7 +110,7 @@ public class HKSeriesSample extends HKSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKSeriesSample initWithCoder(NSCoder aDecoder);
+    public native HKSeriesSample initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

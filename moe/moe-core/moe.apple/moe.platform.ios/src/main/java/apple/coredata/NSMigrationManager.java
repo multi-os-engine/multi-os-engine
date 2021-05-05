@@ -155,15 +155,25 @@ public class NSMigrationManager extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Associates the source instance with the specified destination instance for the given entity mapping.  Since the migration is performed as a three-step process (first create the data, then relate the data, then validate the data) it is necessary to be able to associate data between the source and destination stores, in order to allow for relationship creation/fixup after the creation pass.  This method is called in the default
+     * implementation of NSEntityMigrationPolicy's createDestinationInstancesForSourceInstance:entityMapping:manager:error: method.
+     */
     @Generated
     @Selector("associateSourceInstance:withDestinationInstance:forEntityMapping:")
     public native void associateSourceInstanceWithDestinationInstanceForEntityMapping(NSManagedObject sourceInstance,
             NSManagedObject destinationInstance, NSEntityMapping entityMapping);
 
+    /**
+     * Cancels the migration with the specified error. Calling this method causes migrateStoreFromURL:type:options:withMappingModel:toDestinationURL:destinationType:destinationOptions:error: to abort the migration and return the specified error.
+     */
     @Generated
     @Selector("cancelMigrationWithError:")
     public native void cancelMigrationWithError(NSError error);
 
+    /**
+     * Observable property that can be used to determine progress of the migration process.  Returns the current entity mapping being processed. Each entity is processed a total of three times (instance creation, relationship creation, validation)
+     */
     @Generated
     @Selector("currentEntityMapping")
     public native NSEntityMapping currentEntityMapping();
@@ -176,6 +186,9 @@ public class NSMigrationManager extends NSObject {
     @Selector("destinationEntityForEntityMapping:")
     public native NSEntityDescription destinationEntityForEntityMapping(NSEntityMapping mEntity);
 
+    /**
+     * Returns the managed object instances created in the destination store for the given entity mapping for the specified source instances.
+     */
     @Generated
     @Selector("destinationInstancesForEntityMappingNamed:sourceInstances:")
     public native NSArray<? extends NSManagedObject> destinationInstancesForEntityMappingNamedSourceInstances(
@@ -189,45 +202,76 @@ public class NSMigrationManager extends NSObject {
     @Selector("init")
     public native NSMigrationManager init();
 
+    /**
+     * Creates a migration manager instance with the corresponding source and destination models.  (All validation of the arguments is performed during migrateStoreFromURL:toURL:)  As with the NSPersistentStoreCoordinator, once models are added to the migration manager they are immutable and cannot be altered.
+     */
     @Generated
     @Selector("initWithSourceModel:destinationModel:")
     public native NSMigrationManager initWithSourceModelDestinationModel(NSManagedObjectModel sourceModel,
             NSManagedObjectModel destinationModel);
 
+    /**
+     * Accessors for the mapping model, source model, and destination model
+     */
     @Generated
     @Selector("mappingModel")
     public native NSMappingModel mappingModel();
 
+    /**
+     * Migrates of the store at the specified source URL to the store at the destination URL, performing all of the mappings in the mapping model.  A store must exist at the source URL;  if a store does not exist at the destination URL, one will be created (otherwise the migration will append to the existing store.)  Invoking this method will perform compatibility checks on the source and destination models (and the mapping model.)  If an error occurs during the validation or migration, this method will return NO.
+     */
     @Generated
     @Selector("migrateStoreFromURL:type:options:withMappingModel:toDestinationURL:destinationType:destinationOptions:error:")
     public native boolean migrateStoreFromURLTypeOptionsWithMappingModelToDestinationURLDestinationTypeDestinationOptionsError(
             NSURL sourceURL, String sStoreType, NSDictionary<?, ?> sOptions, NSMappingModel mappings, NSURL dURL,
             String dStoreType, NSDictionary<?, ?> dOptions, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Observable property that can be used to determine progress of the migration process.  Returns the percentage complete of the migration process.  The progress value is a number from 0 to 1 indicating percent complete.
+     */
     @Generated
     @Selector("migrationProgress")
     public native float migrationProgress();
 
+    /**
+     * Resets the association tables for the migration.  (Note this does NOT reset the source or destination contexts).
+     */
     @Generated
     @Selector("reset")
     public native void reset();
 
+    /**
+     * Returns/sets the user info for the migration manager
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
+    /**
+     * Tries to use a store specific migration manager to perform the store migration, note that a store specific migration manager class is not guaranteed to perform any of the migration manager delegate callbacks or update values for the observable properties.
+     * Defaults to YES 
+     */
     @Generated
     @Selector("setUsesStoreSpecificMigrationManager:")
     public native void setUsesStoreSpecificMigrationManager(boolean value);
 
+    /**
+     * Accessors for the managed object contexts used for reading the source and destination stores.  These contexts are created lazily, as part of the initialization of two Core Data stacks (one for reading, the other for writing data.)
+     */
     @Generated
     @Selector("sourceContext")
     public native NSManagedObjectContext sourceContext();
 
+    /**
+     * Returns the NSEntityDescription for the source and destination entities, respectively, of the entity mapping.  (Entity mappings do not store the actual description objects, but rather the name and version information of the entity.)
+     */
     @Generated
     @Selector("sourceEntityForEntityMapping:")
     public native NSEntityDescription sourceEntityForEntityMapping(NSEntityMapping mEntity);
 
+    /**
+     * Returns the managed object instances in the source store used to create the specified destination instances for the given entity mapping.
+     */
     @Generated
     @Selector("sourceInstancesForEntityMappingNamed:destinationInstances:")
     public native NSArray<? extends NSManagedObject> sourceInstancesForEntityMappingNamedDestinationInstances(
@@ -237,10 +281,17 @@ public class NSMigrationManager extends NSObject {
     @Selector("sourceModel")
     public native NSManagedObjectModel sourceModel();
 
+    /**
+     * Returns/sets the user info for the migration manager
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
+    /**
+     * Tries to use a store specific migration manager to perform the store migration, note that a store specific migration manager class is not guaranteed to perform any of the migration manager delegate callbacks or update values for the observable properties.
+     * Defaults to YES 
+     */
     @Generated
     @Selector("usesStoreSpecificMigrationManager")
     public native boolean usesStoreSpecificMigrationManager();

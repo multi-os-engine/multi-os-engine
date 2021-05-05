@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MKDistanceFormatterUnitStyle {
+    /**
+     * Whether to abbreviate depends on units, locale, and user interface language
+     */
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
+    /**
+     * Ex. km
+     */
     @Generated @NUInt public static final long Abbreviated = 0x0000000000000001L;
+    /**
+     * Ex. kilometers
+     */
     @Generated @NUInt public static final long Full = 0x0000000000000002L;
 
     @Generated

@@ -80,11 +80,17 @@ public final class MKTileOverlayPath extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setZ(@NInt long value);
 
+    /**
+     * The screen scale that the tile will be shown on. Either 1.0 or 2.0.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @NFloat
     public native double contentScaleFactor();
 
+    /**
+     * The screen scale that the tile will be shown on. Either 1.0 or 2.0.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setContentScaleFactor(@NFloat double value);

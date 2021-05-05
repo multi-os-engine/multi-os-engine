@@ -117,6 +117,9 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("imageNamed:")
     public static native INImage imageNamed(String name);
 
+    /**
+     * Returns the image size at which the image for an INIntentResponse will be displayed
+     */
     @Generated
     @Selector("imageSizeForIntentResponse:")
     @ByValue
@@ -198,7 +201,7 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -206,7 +209,7 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INImage initWithCoder(NSCoder aDecoder);
+    public native INImage initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -223,10 +226,15 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     public interface Block_fetchUIImageWithCompletion {
         @Generated
-        void call_fetchUIImageWithCompletion(UIImage arg0);
+        void call_fetchUIImageWithCompletion(UIImage image);
     }
 
     @Generated
     @Selector("imageWithURL:width:height:")
     public static native INImage imageWithURLWidthHeight(NSURL URL, double width, double height);
+
+    @Generated
+    @Selector("systemImageNamed:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object systemImageNamed(String systemImageName);
 }

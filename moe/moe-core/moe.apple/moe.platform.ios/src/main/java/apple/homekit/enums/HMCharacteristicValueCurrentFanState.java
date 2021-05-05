@@ -19,6 +19,13 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]      HMCharacteristicValueCurrentFanState
+ * 
+ * [@constant]  HMCharacteristicValueCurrentFanStateInactive  Inactive.
+ * [@constant]  HMCharacteristicValueCurrentFanStateIdle      Idle.
+ * [@constant]  HMCharacteristicValueCurrentFanStateActive    Blowing Air.
+ */
 @Generated
 public final class HMCharacteristicValueCurrentFanState {
     @Generated @NInt public static final long Inactive = 0x0000000000000000L;

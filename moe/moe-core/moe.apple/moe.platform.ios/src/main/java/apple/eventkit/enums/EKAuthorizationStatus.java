@@ -19,6 +19,19 @@ package apple.eventkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]       EKAuthorizationStatus
+ * 
+ * This enumerated type is used to indicate the currently granted authorization status for a specific
+ *             entity type.
+ * [@constant]   EKAuthorizationStatusNotDetermined  The user has not yet made a choice regarding whether this application
+ *                                                 may access the service.
+ * [@constant]   EKAuthorizationStatusRestricted     This application is not authorized to access the service.
+ *                                                 The user cannot change this application’s status, possibly due to
+ *                                                 active restrictions such as parental controls being in place.
+ * [@constant]   EKAuthorizationStatusDenied         The user explicitly denied access to the service for this application.
+ * [@constant]   EKAuthorizationStatusAuthorized     This application is authorized to access the service.
+ */
 @Generated
 public final class EKAuthorizationStatus {
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;

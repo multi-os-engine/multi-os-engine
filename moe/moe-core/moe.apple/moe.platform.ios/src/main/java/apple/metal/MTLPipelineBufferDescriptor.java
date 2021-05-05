@@ -118,6 +118,9 @@ public class MTLPipelineBufferDescriptor extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Buffer mutability. Defaults to MTLMutabilityDefault: mutable for standard buffers, immutable for argument buffers
+     */
     @Generated
     @Selector("mutability")
     @NUInt
@@ -137,6 +140,9 @@ public class MTLPipelineBufferDescriptor extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Buffer mutability. Defaults to MTLMutabilityDefault: mutable for standard buffers, immutable for argument buffers
+     */
     @Generated
     @Selector("setMutability:")
     public native void setMutability(@NUInt long value);

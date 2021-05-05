@@ -50,10 +50,16 @@ public final class MusicDeviceStdNoteParams extends StructObject {
         setMVelocity(mVelocity);
     }
 
+    /**
+     * should be 2
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int argCount();
 
+    /**
+     * should be 2
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setArgCount(int value);

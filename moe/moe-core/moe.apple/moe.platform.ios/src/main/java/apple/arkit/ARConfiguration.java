@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An object to describe and configure the Augmented Reality techniques to be used in an ARSession.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -110,6 +113,11 @@ public class ARConfiguration extends NSObject implements NSCopying {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Enable or disable light estimation.
+     * 
+     * Enabled by default.
+     */
     @Generated
     @Selector("isLightEstimationEnabled")
     public native boolean isLightEstimationEnabled();
@@ -118,6 +126,9 @@ public class ARConfiguration extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Determines whether this device supports the ARConfiguration.
+     */
     @Generated
     @Selector("isSupported")
     public static native boolean isSupported();
@@ -132,6 +143,11 @@ public class ARConfiguration extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Determines whether to capture and provide audio data.
+     * 
+     * Disabled by default.
+     */
     @Generated
     @Selector("providesAudioData")
     public native boolean providesAudioData();
@@ -144,10 +160,20 @@ public class ARConfiguration extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Enable or disable light estimation.
+     * 
+     * Enabled by default.
+     */
     @Generated
     @Selector("setLightEstimationEnabled:")
     public native void setLightEstimationEnabled(boolean value);
 
+    /**
+     * Determines whether to capture and provide audio data.
+     * 
+     * Disabled by default.
+     */
     @Generated
     @Selector("setProvidesAudioData:")
     public native void setProvidesAudioData(boolean value);
@@ -156,6 +182,11 @@ public class ARConfiguration extends NSObject implements NSCopying {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Determines how the coordinate system should be aligned with the world.
+     * 
+     * The default is ARWorldAlignmentGravity.
+     */
     @Generated
     @Selector("setWorldAlignment:")
     public native void setWorldAlignment(@NInt long value);
@@ -169,8 +200,80 @@ public class ARConfiguration extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * Determines how the coordinate system should be aligned with the world.
+     * 
+     * The default is ARWorldAlignmentGravity.
+     */
     @Generated
     @Selector("worldAlignment")
     @NInt
     public native long worldAlignment();
+
+    /**
+     * The type of semantic understanding to provide with each frame.
+     * 
+     * Use the `supportsFrameSemantics` class method to check if the configuration type you intend to run supports the set of frame semantics. For example, when running a session with
+     * a configuration of type ARWorldTrackingConfiguration one would need to use `+[ ARWorldTrackingConfiguration supportsFrameSemantics:]` to perform said check.
+     * An exception is thrown if the option
+     * is not supported. Defaults to ARFrameSemanticNone.
+     * 
+     * @see ARFrameSemantics
+     * @see +[ARConfiguration supportsFrameSemantics:]
+     */
+    @Generated
+    @Selector("frameSemantics")
+    @NUInt
+    public native long frameSemantics();
+
+    /**
+     * The type of semantic understanding to provide with each frame.
+     * 
+     * Use the `supportsFrameSemantics` class method to check if the configuration type you intend to run supports the set of frame semantics. For example, when running a session with
+     * a configuration of type ARWorldTrackingConfiguration one would need to use `+[ ARWorldTrackingConfiguration supportsFrameSemantics:]` to perform said check.
+     * An exception is thrown if the option
+     * is not supported. Defaults to ARFrameSemanticNone.
+     * 
+     * @see ARFrameSemantics
+     * @see +[ARConfiguration supportsFrameSemantics:]
+     */
+    @Generated
+    @Selector("setFrameSemantics:")
+    public native void setFrameSemantics(@NUInt long value);
+
+    /**
+     * Video format of the session output.
+     */
+    @Generated
+    @Selector("setVideoFormat:")
+    public native void setVideoFormat(ARVideoFormat value);
+
+    /**
+     * A list of supported video formats for this configuration and device.
+     * 
+     * The first element in the list is the default format for session output.
+     */
+    @Generated
+    @Selector("supportedVideoFormats")
+    public static native NSArray<? extends ARVideoFormat> supportedVideoFormats();
+
+    /**
+     * Determines whether the type of frame semantics is supported by the device and ARConfiguration class.
+     * 
+     * Semantic frame understanding is not supported on all devices. Use the `supportsFrameSemantics` class method to check if the configuration type you intend to run supports the
+     * set of frame semantics. For example, when running a session with a configuration of type ARWorldTrackingConfiguration one would need to use
+     * `+[ ARWorldTrackingConfiguration supportsFrameSemantics:]` to perform said check.
+     * 
+     * @see ARFrameSemantics
+     */
+    @Generated
+    @Selector("supportsFrameSemantics:")
+    public static native boolean supportsFrameSemantics(@NUInt long frameSemantics);
+
+    /**
+     * Video format of the session output.
+     */
+    @Generated
+    @Selector("videoFormat")
+    public native ARVideoFormat videoFormat();
 }

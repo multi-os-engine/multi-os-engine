@@ -108,18 +108,30 @@ public class UIFont extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Returns an array of font family names for all installed fonts
+     */
     @Generated
     @Selector("familyNames")
     public static native NSArray<String> familyNames();
 
+    /**
+     * Returns an array of font names for the specified family name
+     */
     @Generated
     @Selector("fontNamesForFamilyName:")
     public static native NSArray<String> fontNamesForFamilyName(String familyName);
 
+    /**
+     * Returns a font matching the font descriptor. If fontSize is greater than 0.0, it has precedence over UIFontDescriptorSizeAttribute in fontDescriptor.
+     */
     @Generated
     @Selector("fontWithDescriptor:size:")
     public static native UIFont fontWithDescriptorSize(UIFontDescriptor descriptor, @NFloat double pointSize);
 
+    /**
+     * Returns a font using CSS name matching semantics.
+     */
     @Generated
     @Selector("fontWithName:size:")
     public static native UIFont fontWithNameSize(String fontName, @NFloat double fontSize);
@@ -169,10 +181,16 @@ public class UIFont extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Returns an instance of the font associated with the text style and scaled appropriately for the user's selected content size category. See UIFontDescriptor.h for the complete list.
+     */
     @Generated
     @Selector("preferredFontForTextStyle:")
     public static native UIFont preferredFontForTextStyle(String style);
 
+    /**
+     * Returns an instance of the font associated with the text style and scaled appropriately for the content size category defined in the trait collection.
+     */
     @Generated
     @Selector("preferredFontForTextStyle:compatibleWithTraitCollection:")
     public static native UIFont preferredFontForTextStyleCompatibleWithTraitCollection(String style,
@@ -199,10 +217,18 @@ public class UIFont extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Think carefully before using these methods. In most cases, a font returned by +preferredFontForTextStyle: will be more appropriate, and will respect the user's selected content size category.
+     */
     @Generated
     @Selector("systemFontOfSize:")
     public static native UIFont systemFontOfSize(@NFloat double fontSize);
 
+    /**
+     * Weights used here are analogous to those used with UIFontDescriptor's UIFontWeightTrait.
+     * See the UIFontWeight... constants in UIFontDescriptor.h for suggested values.
+     * The caveat above about the use of ...systemFont... methods applies to these methods too.
+     */
     @Generated
     @Selector("systemFontOfSize:weight:")
     public static native UIFont systemFontOfSizeWeight(@NFloat double fontSize, @NFloat double weight);
@@ -238,10 +264,16 @@ public class UIFont extends NSObject implements NSCopying {
     @NFloat
     public native double descender();
 
+    /**
+     * Font attributes
+     */
     @Generated
     @Selector("familyName")
     public native String familyName();
 
+    /**
+     * Returns a font descriptor which describes the font.
+     */
     @Generated
     @Selector("fontDescriptor")
     public native UIFontDescriptor fontDescriptor();
@@ -250,6 +282,9 @@ public class UIFont extends NSObject implements NSCopying {
     @Selector("fontName")
     public native String fontName();
 
+    /**
+     * Create a new font that is identical to the current font except the specified size
+     */
     @Generated
     @Selector("fontWithSize:")
     public native UIFont fontWithSize(@NFloat double fontSize);
@@ -277,4 +312,11 @@ public class UIFont extends NSObject implements NSCopying {
     @Selector("xHeight")
     @NFloat
     public native double xHeight();
+
+    /**
+     * Returns current default monospaced font for system UI. Clients of this API should be aware that the monospaced system font has a similar coverage of default system UI font, which includes Latin and common symbols used for displaying text like source code. For the characters it does not cover, the subtituted fonts are usually not the same width as the monospaced system font, they can be wider, narrower, or variable. To ensure fixed advances in text layout, clients can consider using string attributes like UIFontDescriptorFixedAdvanceAttribute.
+     */
+    @Generated
+    @Selector("monospacedSystemFontOfSize:weight:")
+    public static native UIFont monospacedSystemFontOfSizeWeight(@NFloat double fontSize, @NFloat double weight);
 }

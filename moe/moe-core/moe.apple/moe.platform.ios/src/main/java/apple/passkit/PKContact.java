@@ -189,10 +189,16 @@ public class PKContact extends NSObject {
     @Selector("setPostalAddress:")
     public native void setPostalAddress(CNPostalAddress value);
 
+    /**
+     * This property is now deprecated. Use the -subLocality property on [PKContact -postalAddress] instead
+     */
     @Generated
     @Selector("setSupplementarySubLocality:")
     public native void setSupplementarySubLocality(String value);
 
+    /**
+     * This property is now deprecated. Use the -subLocality property on [PKContact -postalAddress] instead
+     */
     @Generated
     @Selector("supplementarySubLocality")
     public native String supplementarySubLocality();

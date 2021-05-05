@@ -29,4 +29,9 @@ public final class UNAuthorizationOptions {
     @Generated
     private UNAuthorizationOptions() {
     }
+
+    @Generated @NUInt public static final long CriticalAlert = 0x0000000000000010L;
+    @Generated @NUInt public static final long ProvidesAppNotificationSettings = 0x0000000000000020L;
+    @Generated @NUInt public static final long Provisional = 0x0000000000000040L;
+    @Generated @NUInt public static final long Announcement = 0x0000000000000080L;
 }

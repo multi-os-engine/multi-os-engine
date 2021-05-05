@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents a generic camera control.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)

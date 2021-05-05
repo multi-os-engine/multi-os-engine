@@ -19,6 +19,9 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * These values are only used for the layout direction trait, which informs but does not completely dictate the layout direction of views. To determine the effective layout direction of a view, consult the UIView.effectiveUserInterfaceLayoutDirection property, whose values are members of the UIUserInterfaceLayoutDirection enum.
+ */
 @Generated
 public final class UITraitEnvironmentLayoutDirection {
     @Generated @NInt public static final long Unspecified = 0xFFFFFFFFFFFFFFFFL;

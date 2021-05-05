@@ -25,6 +25,7 @@ import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.quartzcore.CAAnimation;
 import apple.scenekit.protocol.SCNAnimatable;
+import apple.scenekit.protocol.SCNAnimation;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -46,6 +47,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNConstraint
+ * 
+ * A SCNConstraint is an abstract class that represents a single constraint that can be applied to a node.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -163,7 +169,7 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
     @Generated
     @Selector("animationForKey:")
@@ -181,8 +187,13 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * [@property] influenceFactor
+     * 
+     * Specifies the inflence factor of the receiver. Defaults to 1. Animatable
+     */
     @Generated
     @Selector("influenceFactor")
     @NFloat
@@ -194,7 +205,7 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isAnimationForKeyPaused:")
@@ -220,6 +231,11 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
 
+    /**
+     * [@property] influenceFactor
+     * 
+     * Specifies the inflence factor of the receiver. Defaults to 1. Animatable
+     */
     @Generated
     @Selector("setInfluenceFactor:")
     public native void setInfluenceFactor(@NFloat double value);
@@ -242,10 +258,20 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("animationPlayerForKey:")
     public native SCNAnimationPlayer animationPlayerForKey(String key);
 
+    /**
+     * [@property] enable
+     * 
+     * Determines whether the constraint is enabled or not. Defaults to YES.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * [@property] incremental
+     * 
+     * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous versions.
+     */
     @Generated
     @Selector("isIncremental")
     public native boolean isIncremental();
@@ -254,10 +280,20 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("removeAnimationForKey:blendOutDuration:")
     public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
 
+    /**
+     * [@property] enable
+     * 
+     * Determines whether the constraint is enabled or not. Defaults to YES.
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * [@property] incremental
+     * 
+     * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous versions.
+     */
     @Generated
     @Selector("setIncremental:")
     public native void setIncremental(boolean value);

@@ -25,6 +25,7 @@ import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIPickerViewDataSource;
 import apple.uikit.protocol.UIPickerViewDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -133,7 +134,7 @@ public class UIPickerView extends UIView implements NSCoding {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -146,8 +147,8 @@ public class UIPickerView extends UIView implements NSCoding {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -368,7 +369,7 @@ public class UIPickerView extends UIView implements NSCoding {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -384,7 +385,8 @@ public class UIPickerView extends UIView implements NSCoding {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -395,11 +397,17 @@ public class UIPickerView extends UIView implements NSCoding {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPickerViewDataSource dataSource();
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -407,7 +415,7 @@ public class UIPickerView extends UIView implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -415,12 +423,15 @@ public class UIPickerView extends UIView implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIPickerView initWithCoder(NSCoder aDecoder);
+    public native UIPickerView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
     public native UIPickerView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * info that was fetched and cached from the data source and delegate
+     */
     @Generated
     @Selector("numberOfComponents")
     @NInt
@@ -431,6 +442,9 @@ public class UIPickerView extends UIView implements NSCoding {
     @NInt
     public native long numberOfRowsInComponent(@NInt long component);
 
+    /**
+     * Reloading whole view or single component
+     */
     @Generated
     @Selector("reloadAllComponents")
     public native void reloadAllComponents();
@@ -444,19 +458,31 @@ public class UIPickerView extends UIView implements NSCoding {
     @ByValue
     public native CGSize rowSizeForComponent(@NInt long component);
 
+    /**
+     * scrolls the specified row to center.
+     */
     @Generated
     @Selector("selectRow:inComponent:animated:")
     public native void selectRowInComponentAnimated(@NInt long row, @NInt long component, boolean animated);
 
+    /**
+     * returns selected row. -1 if nothing selected
+     */
     @Generated
     @Selector("selectedRowInComponent:")
     @NInt
     public native long selectedRowInComponent(@NInt long component);
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) UIPickerViewDataSource value);
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     public void setDataSource(@Mapped(ObjCObjectMapper.class) UIPickerViewDataSource value) {
         Object __old = dataSource();
@@ -469,10 +495,16 @@ public class UIPickerView extends UIView implements NSCoding {
         }
     }
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIPickerViewDelegate value);
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIPickerViewDelegate value) {
         Object __old = delegate();
@@ -493,7 +525,18 @@ public class UIPickerView extends UIView implements NSCoding {
     @Selector("showsSelectionIndicator")
     public native boolean showsSelectionIndicator();
 
+    /**
+     * returns the view provided by the delegate via pickerView:viewForRow:forComponent:reusingView:
+     * or nil if the row/component is not visible or the delegate does not implement
+     * pickerView:viewForRow:forComponent:reusingView:
+     */
     @Generated
     @Selector("viewForRow:forComponent:")
     public native UIView viewForRowForComponent(@NInt long row, @NInt long component);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

@@ -174,6 +174,9 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * sorting an array of indexPaths using this comparison results in an array representing nodes in depth-first traversal order
+     */
     @Generated
     @Selector("compare:")
     @NInt
@@ -187,12 +190,23 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * use -getIndexes:range: instead
+     */
     @Generated
     @Selector("getIndexes:")
     public native void getIndexes(NUIntPtr indexes);
 
+    /**
+     * Copies the indexes stored in this index path from the positions specified by positionRange into indexes.
+     * 
+     *    It is the developer’s responsibility to allocate the memory for the C array.
+     * 
+     * @param indexes Buffer of at least as many NSUIntegers as specified by the length of positionRange. On return, this memory will hold the index path's indexes.
+     * @param positionRange A range of valid positions within this index path.  If the location plus the length of positionRange is greater than the length of this index path, this method raises an NSRangeException.
+     */
     @Generated
     @Selector("getIndexes:range:")
     public native void getIndexesRange(NUIntPtr indexes, @ByValue NSRange positionRange);
@@ -216,7 +230,7 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSIndexPath initWithCoder(NSCoder aDecoder);
+    public native NSIndexPath initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithIndex:")
@@ -226,6 +240,9 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithIndexes:length:")
     public native NSIndexPath initWithIndexesLength(ConstNUIntPtr indexes, @NUInt long length);
 
+    /**
+     * Returns the index at position 1 if it exists, otherwise returns NSNotFound.
+     */
     @Generated
     @Selector("item")
     @NInt
@@ -236,11 +253,17 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     @NUInt
     public native long length();
 
+    /**
+     * Returns the index at position 1.
+     */
     @Generated
     @Selector("row")
     @NInt
     public native long row();
 
+    /**
+     * Returns the index at position 0.
+     */
     @Generated
     @Selector("section")
     @NInt

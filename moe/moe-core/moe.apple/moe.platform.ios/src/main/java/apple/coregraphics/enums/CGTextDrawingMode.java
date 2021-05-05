@@ -18,6 +18,9 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Drawing modes for text.
+ */
 @Generated
 public final class CGTextDrawingMode {
     @Generated public static final int Fill = 0x00000000;

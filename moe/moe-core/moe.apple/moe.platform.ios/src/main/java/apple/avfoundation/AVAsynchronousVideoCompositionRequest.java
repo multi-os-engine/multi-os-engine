@@ -157,6 +157,9 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     @NInt
     public static native long version_static();
 
+    /**
+     * The time for which the frame should be composed
+     */
     @Generated
     @Selector("compositionTime")
     @ByValue
@@ -168,14 +171,23 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * callback the custom compositor should call for a request that has been cancelled.
+     */
     @Generated
     @Selector("finishCancelledRequest")
     public native void finishCancelledRequest();
 
+    /**
+     * callback the custom compositor should call when composition succeeded
+     */
     @Generated
     @Selector("finishWithComposedVideoFrame:")
     public native void finishWithComposedVideoFrame(CVBufferRef composedVideoFrame);
 
+    /**
+     * callback the custom compositor should call when composition failed. The error parameter should describe the actual error.
+     */
     @Generated
     @Selector("finishWithError:")
     public native void finishWithError(NSError error);
@@ -184,18 +196,35 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     @Selector("init")
     public native AVAsynchronousVideoCompositionRequest init();
 
+    /**
+     * The AVVideoCompositionRenderContext making the request
+     */
     @Generated
     @Selector("renderContext")
     public native AVVideoCompositionRenderContext renderContext();
 
+    /**
+     * sourceFrameByTrackID:
+     * 
+     * Returns the source CVPixelBufferRef for the given track ID
+     * 
+     * @param			trackID
+     * 				The track ID for the requested source frame
+     */
     @Generated
     @Selector("sourceFrameByTrackID:")
     public native CVBufferRef sourceFrameByTrackID(int trackID);
 
+    /**
+     * Track ID of all the source buffers that are available to compose the frame.
+     */
     @Generated
     @Selector("sourceTrackIDs")
     public native NSArray<? extends NSNumber> sourceTrackIDs();
 
+    /**
+     * The AVVideoCompositionInstruction to use to compose the frame.
+     */
     @Generated
     @Selector("videoCompositionInstruction")
     @MappedReturn(ObjCObjectMapper.class)

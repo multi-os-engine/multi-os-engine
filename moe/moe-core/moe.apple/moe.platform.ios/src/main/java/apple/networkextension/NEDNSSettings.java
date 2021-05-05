@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEDNSSettings
+ * 
+ * The NEDNSSettings class declares the programmatic interface for an object that contains DNS settings.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -164,13 +169,18 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * [@property] domainName
+     * 
+     * A string containing the DNS domain.
+     */
     @Generated
     @Selector("domainName")
     public native String domainName();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,40 +188,87 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEDNSSettings initWithCoder(NSCoder aDecoder);
+    public native NEDNSSettings initWithCoder(NSCoder coder);
 
+    /**
+     * initWithServers:
+     * 
+     * Initialize a newly-allocated NEDNSSettings object.
+     * 
+     * @param servers An array of DNS server IP address strings.
+     */
     @Generated
     @Selector("initWithServers:")
     public native NEDNSSettings initWithServers(NSArray<String> servers);
 
+    /**
+     * [@property] matchDomains
+     * 
+     * An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to resolve host names within the specified domains.
+     */
     @Generated
     @Selector("matchDomains")
     public native NSArray<String> matchDomains();
 
+    /**
+     * [@property] matchDomainsNoSearch
+     * 
+     * A boolean indicating if the match domains should be appended to the search domain list.  Default is NO (match domains will be appended to the search domain list).
+     */
     @Generated
     @Selector("matchDomainsNoSearch")
     public native boolean matchDomainsNoSearch();
 
+    /**
+     * [@property] searchDomains
+     * 
+     * An array of DNS server search domain strings.
+     */
     @Generated
     @Selector("searchDomains")
     public native NSArray<String> searchDomains();
 
+    /**
+     * [@property] servers
+     * 
+     * An array of DNS server address strings.
+     */
     @Generated
     @Selector("servers")
     public native NSArray<String> servers();
 
+    /**
+     * [@property] domainName
+     * 
+     * A string containing the DNS domain.
+     */
     @Generated
     @Selector("setDomainName:")
     public native void setDomainName(String value);
 
+    /**
+     * [@property] matchDomains
+     * 
+     * An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to resolve host names within the specified domains.
+     */
     @Generated
     @Selector("setMatchDomains:")
     public native void setMatchDomains(NSArray<String> value);
 
+    /**
+     * [@property] matchDomainsNoSearch
+     * 
+     * A boolean indicating if the match domains should be appended to the search domain list.  Default is NO (match domains will be appended to the search domain list).
+     */
     @Generated
     @Selector("setMatchDomainsNoSearch:")
     public native void setMatchDomainsNoSearch(boolean value);
 
+    /**
+     * [@property] searchDomains
+     * 
+     * An array of DNS server search domain strings.
+     */
     @Generated
     @Selector("setSearchDomains:")
     public native void setSearchDomains(NSArray<String> value);
@@ -221,4 +278,14 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * [@property] dnsProtocol
+     * 
+     * The DNS protocol used by the settings.
+     */
+    @Generated
+    @Selector("dnsProtocol")
+    @NInt
+    public native long dnsProtocol();
 }

@@ -26,6 +26,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSCNNUpsamplingNearest
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * Specifies the nearest spatial upsampling filter.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -106,6 +112,14 @@ public class MPSCNNUpsamplingNearest extends MPSCNNUpsampling {
     @Selector("initWithDevice:")
     public native MPSCNNUpsamplingNearest initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * Initialize the nearest spatial upsampling filter.
+     * 
+     * @param     device                   The device the filter will run on.
+     * @param     integerScaleFactorX      The upsampling factor for the x dimension.
+     * @param     integerScaleFactorY      The upsampling factor for the y dimension.
+     * @return    A valid MPSCNNUpsamplingNearest object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:integerScaleFactorX:integerScaleFactorY:")
     public native MPSCNNUpsamplingNearest initWithDeviceIntegerScaleFactorXIntegerScaleFactorY(

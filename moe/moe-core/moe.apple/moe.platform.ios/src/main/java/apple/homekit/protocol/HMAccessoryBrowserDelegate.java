@@ -26,11 +26,21 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * This delegate receives updates about new accessories in the home.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("HMAccessoryBrowserDelegate")
 public interface HMAccessoryBrowserDelegate {
+    /**
+     * Informs the delegate about new accessories discovered in the home.
+     * 
+     * @param browser Sender of the message.
+     * 
+     * @param accessory New accessory that was discovered.
+     */
     @Generated
     @IsOptional
     @Selector("accessoryBrowser:didFindNewAccessory:")
@@ -38,6 +48,14 @@ public interface HMAccessoryBrowserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Informs the delegate about new accessories removed from the home.
+     * 
+     * @param browser Sender of the message.
+     * 
+     * @param accessory Accessory that was previously discovered but are no longer reachable.
+     * 	            This method is also invoked when an accessory is added to a home.
+     */
     @Generated
     @IsOptional
     @Selector("accessoryBrowser:didRemoveNewAccessory:")

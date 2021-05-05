@@ -37,6 +37,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSHTTPURLResponse
+ * 
+ * An NSHTTPURLResponse object represents a response to an
+ * HTTP URL load. It is a specialization of NSURLResponse which
+ * provides conveniences for accessing information specific to HTTP
+ * protocol responses.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -121,6 +129,15 @@ public class NSHTTPURLResponse extends NSURLResponse {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * localizedStringForStatusCode:
+     * 
+     * Convenience method which returns a localized string
+     * corresponding to the status code for this response.
+     * 
+     * @param statusCode the status code to use to produce a localized string.
+     * @return A localized string corresponding to the given status code.
+     */
     @Generated
     @Selector("localizedStringForStatusCode:")
     public static native String localizedStringForStatusCode(@NInt long statusCode);
@@ -156,6 +173,18 @@ public class NSHTTPURLResponse extends NSURLResponse {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns a dictionary containing all the HTTP header fields
+     * of the receiver.
+     * 
+     * By examining this header dictionary, clients can see
+     * the "raw" header information which was reported to the protocol
+     * implementation by the HTTP server. This may be of use to
+     * sophisticated or special-purpose HTTP clients.
+     * 
+     * @return A dictionary containing all the HTTP header fields of the
+     * receiver.
+     */
     @Generated
     @Selector("allHeaderFields")
     public native NSDictionary<?, ?> allHeaderFields();
@@ -166,18 +195,36 @@ public class NSHTTPURLResponse extends NSURLResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSHTTPURLResponse initWithCoder(NSCoder aDecoder);
+    public native NSHTTPURLResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithURL:MIMEType:expectedContentLength:textEncodingName:")
     public native NSHTTPURLResponse initWithURLMIMETypeExpectedContentLengthTextEncodingName(NSURL URL, String MIMEType,
             @NInt long length, String name);
 
+    /**
+     * initWithURL:statusCode:HTTPVersion:headerFields:
+     * 
+     * initializer for NSHTTPURLResponse objects.
+     * 
+     * This API was introduced in Mac OS X 10.7.2 and iOS 5.0 and is not available prior to those releases.
+     * 
+     * @param 	url the URL from which the response was generated.
+     * @param	statusCode an HTTP status code.
+     * @param	HTTPVersion The version of the HTTP response as represented by the server.  This is typically represented as "HTTP/1.1".
+     * @param 	headerFields A dictionary representing the header keys and values of the server response.
+     * @return 	the instance of the object, or NULL if an error occurred during initialization.
+     */
     @Generated
     @Selector("initWithURL:statusCode:HTTPVersion:headerFields:")
     public native NSHTTPURLResponse initWithURLStatusCodeHTTPVersionHeaderFields(NSURL url, @NInt long statusCode,
             String HTTPVersion, NSDictionary<String, String> headerFields);
 
+    /**
+     * Returns the HTTP status code of the receiver.
+     * 
+     * @return The HTTP status code of the receiver. 
+     */
     @Generated
     @Selector("statusCode")
     @NInt
@@ -188,4 +235,20 @@ public class NSHTTPURLResponse extends NSURLResponse {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * valueForHTTPHeaderField:
+     * 
+     * Returns the value which corresponds to the given header
+     * field. Note that, in keeping with the HTTP RFC, HTTP header field
+     * names are case-insensitive.
+     * 
+     * @param field the header field name to use for the lookup
+     * (case-insensitive).
+     * @return the value associated with the given header field, or nil if
+     * there is no value associated with the given header field.
+     */
+    @Generated
+    @Selector("valueForHTTPHeaderField:")
+    public native String valueForHTTPHeaderField(String field);
 }

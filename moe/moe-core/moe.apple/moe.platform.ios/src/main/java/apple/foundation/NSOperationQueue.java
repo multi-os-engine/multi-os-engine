@@ -17,6 +17,7 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
+import apple.foundation.protocol.NSProgressReporting;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -41,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSOperationQueue extends NSObject {
+public class NSOperationQueue extends NSObject implements NSProgressReporting {
     static {
         NatJ.register();
     }
@@ -199,6 +200,9 @@ public class NSOperationQueue extends NSObject {
     @NUInt
     public native long operationCount();
 
+    /**
+     * These two functions are inherently a race condition and should be avoided if possible
+     */
     @Generated
     @Selector("operations")
     public native NSArray<? extends NSOperation> operations();
@@ -220,10 +224,16 @@ public class NSOperationQueue extends NSObject {
     @Selector("setQualityOfService:")
     public native void setQualityOfService(@NInt long value);
 
+    /**
+     * actually retain
+     */
     @Generated
     @Selector("setUnderlyingQueue:")
     public native void setUnderlyingQueue_unsafe(NSObject value);
 
+    /**
+     * actually retain
+     */
     @Generated
     public void setUnderlyingQueue(NSObject value) {
         Object __old = underlyingQueue();
@@ -236,6 +246,9 @@ public class NSOperationQueue extends NSObject {
         }
     }
 
+    /**
+     * actually retain
+     */
     @Generated
     @Selector("underlyingQueue")
     public native NSObject underlyingQueue();
@@ -250,4 +263,28 @@ public class NSOperationQueue extends NSObject {
         @Generated
         void call_addOperationWithBlock();
     }
+
+    /**
+     * addBarrierBlock:
+     * 
+     * The `addBarrierBlock:` method executes the block when the NSOperationQueue has finished all enqueued operations and
+     * prevents any subsequent operations to be executed until the barrier has been completed. This acts similarly to the
+     * `dispatch_barrier_async` function.
+     * 
+     * @param barrier      A block to execute
+     */
+    @Generated
+    @Selector("addBarrierBlock:")
+    public native void addBarrierBlock(@ObjCBlock(name = "call_addBarrierBlock") Block_addBarrierBlock barrier);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addBarrierBlock {
+        @Generated
+        void call_addBarrierBlock();
+    }
+
+    @Generated
+    @Selector("progress")
+    public native NSProgress progress();
 }

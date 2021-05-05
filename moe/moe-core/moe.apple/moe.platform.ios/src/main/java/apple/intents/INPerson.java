@@ -161,10 +161,16 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @NInt
     public static native long version_static();
 
+    /**
+     * If your application has other representations for the person's handle, you can supply it for INInteraction donation
+     */
     @Generated
     @Selector("aliases")
     public native NSArray<? extends INPersonHandle> aliases();
 
+    /**
+     * Reference to this person, if present in the system's Contacts store
+     */
     @Generated
     @Selector("contactIdentifier")
     public native String contactIdentifier();
@@ -175,18 +181,28 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * This property can be set to the app's identifier for this person
+     * It is also used as the vocabulary identifier for this person
+     */
     @Generated
     @Selector("customIdentifier")
     public native String customIdentifier();
 
+    /**
+     * This will return either the displayName if non-nil, else the formatted nameComponents, else the handle, else an empty string
+     */
     @Generated
     @Selector("displayName")
     public native String displayName();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The identity of the person in the application (e.g. email address, phone number, user handle, etc.)
+     */
     @Generated
     @Selector("handle")
     public native String handle();
@@ -196,6 +212,9 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Selector("identifier")
     public native String identifier();
 
+    /**
+     * Returns an image for the person.
+     */
     @Generated
     @Selector("image")
     public native INImage image();
@@ -206,13 +225,19 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPerson initWithCoder(NSCoder aDecoder);
+    public native INPerson initWithCoder(NSCoder coder);
 
+    /**
+     * Use this convenience initializer if the person's name is unknown
+     */
     @Generated
     @Selector("initWithHandle:displayName:contactIdentifier:")
     public native INPerson initWithHandleDisplayNameContactIdentifier(String handle, String displayName,
             String contactIdentifier);
 
+    /**
+     * This is the preferred convenience initializer if the app knows the name components of the person (e.g. given name, family name, etc).
+     */
     @Generated
     @Selector("initWithHandle:nameComponents:contactIdentifier:")
     public native INPerson initWithHandleNameComponentsContactIdentifier(String handle,
@@ -236,10 +261,16 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
             String contactIdentifier, String customIdentifier, NSArray<? extends INPersonHandle> aliases,
             @NInt long suggestionType);
 
+    /**
+     * Returns the person's name components if this was initialized with them
+     */
     @Generated
     @Selector("nameComponents")
     public native NSPersonNameComponents nameComponents();
 
+    /**
+     * The identity of the person in the application
+     */
     @Generated
     @Selector("personHandle")
     public native INPersonHandle personHandle();
@@ -248,6 +279,9 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Selector("pronunciationHint")
     public native String pronunciationHint();
 
+    /**
+     * This person's relationship to the user
+     */
     @Generated
     @Selector("relationship")
     public native String relationship();
@@ -256,6 +290,9 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Selector("spokenPhrase")
     public native String spokenPhrase();
 
+    /**
+     * What Contact property this INInteraction donation should be suggested as when this person is matched to a contact in the system's Contacts store.
+     */
     @Generated
     @Selector("suggestionType")
     @NInt
@@ -271,10 +308,16 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Selector("alternativeSpeakableMatches")
     public native NSArray<?> alternativeSpeakableMatches();
 
+    /**
+     * This property is set to YES when the user says things like "Search for messages from me", etc.
+     */
     @Generated
     @Selector("isMe")
     public native boolean isMe();
 
+    /**
+     * This property is filled in with what Siri thinks are close matches to what the user said
+     */
     @Generated
     @Selector("siriMatches")
     public native NSArray<? extends INPerson> siriMatches();
@@ -282,4 +325,16 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Generated
     @Selector("vocabularyIdentifier")
     public native String vocabularyIdentifier();
+
+    @Generated
+    @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isMe:")
+    public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMe(
+            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
+            String contactIdentifier, String customIdentifier, boolean isMe);
+
+    @Generated
+    @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:relationship:")
+    public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierRelationship(
+            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
+            String contactIdentifier, String customIdentifier, String relationship);
 }

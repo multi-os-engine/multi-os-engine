@@ -68,6 +68,9 @@ public class NSCompoundPredicate extends NSPredicate {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Convenience Methods **
+     */
     @Generated
     @Selector("andPredicateWithSubpredicates:")
     public static native NSCompoundPredicate andPredicateWithSubpredicates(

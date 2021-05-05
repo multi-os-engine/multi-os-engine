@@ -15,6 +15,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UICollectionViewDropPlaceholderContext")
 public interface UICollectionViewDropPlaceholderContext extends UIDragAnimating {
+    /**
+     * Exchange the placeholder for the final cell.
+     * You are only responsible for updating your data source inside the block using the provided insertionIndexPath.
+     * If the placeholder is no longer available (e.g. -reloadData has been called) the dataSourceUpdates block
+     * will not be executed and this will return NO.
+     */
     @Generated
     @Selector("commitInsertionWithDataSourceUpdates:")
     boolean commitInsertionWithDataSourceUpdates(
@@ -24,17 +30,30 @@ public interface UICollectionViewDropPlaceholderContext extends UIDragAnimating 
     @Generated
     public interface Block_commitInsertionWithDataSourceUpdates {
         @Generated
-        void call_commitInsertionWithDataSourceUpdates(NSIndexPath arg0);
+        void call_commitInsertionWithDataSourceUpdates(NSIndexPath insertionIndexPath);
     }
 
+    /**
+     * If the placeholder is no longer needed or you wish to manually insert a cell for the drop data, you can
+     * remove the placeholder via this method.
+     * If the placeholder is no longer available (e.g. -reloadData has been called) this will return NO.
+     */
     @Generated
     @Selector("deletePlaceholder")
     boolean deletePlaceholder();
 
+    /**
+     * Retrieve drop data from the dragItem's itemProvider.
+     */
     @Generated
     @Selector("dragItem")
     UIDragItem dragItem();
 
+    /**
+     * Call this method to request an update of the placeholder cell's content via the updateCellHandler.
+     * This will only be called if the placeholder is visible. If the placeholder becomes visible via scrolling,
+     * the updateCellHandler will automatically be called.
+     */
     @Generated
     @Selector("setNeedsCellUpdate")
     void setNeedsCellUpdate();

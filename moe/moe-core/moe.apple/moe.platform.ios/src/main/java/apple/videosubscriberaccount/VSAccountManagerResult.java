@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents an in-flight request to an account manger.
+ */
 @Generated
 @Library("VideoSubscriberAccount")
 @Runtime(ObjCRuntime.class)
@@ -150,6 +153,9 @@ public class VSAccountManagerResult extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Advise the account manager that the app no longer needs the requested work to be done.
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();

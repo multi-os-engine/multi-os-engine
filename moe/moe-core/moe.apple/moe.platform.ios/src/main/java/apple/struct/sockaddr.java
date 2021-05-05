@@ -42,26 +42,44 @@ public final class sockaddr extends StructObject {
         super(peer);
     }
 
+    /**
+     * total length
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native byte sa_len();
 
+    /**
+     * total length
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setSa_len(byte value);
 
+    /**
+     * [XSI] address family
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native byte sa_family();
 
+    /**
+     * [XSI] address family
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSa_family(byte value);
 
+    /**
+     * [XSI] addr value (actually larger)
+     */
     @Generated
     @StructureField(order = 2, isGetter = true, count = 14)
     public native byte sa_data(int field_idx);
 
+    /**
+     * [XSI] addr value (actually larger)
+     */
     @Generated
     @StructureField(order = 2, isGetter = false, count = 14)
     public native void setSa_data(byte value, int field_idx);

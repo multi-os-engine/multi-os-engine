@@ -102,7 +102,7 @@ public class INActivateCarSignalIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INActivateCarSignalIntent initWithCoder(NSCoder aDecoder);
+    public native INActivateCarSignalIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

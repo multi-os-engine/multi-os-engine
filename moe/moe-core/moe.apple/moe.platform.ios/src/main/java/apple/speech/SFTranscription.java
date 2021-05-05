@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A hypothesized text form of a speech recording
+ */
 @Generated
 @Library("Speech")
 @Runtime(ObjCRuntime.class)
@@ -166,8 +169,11 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Contains the entire recognition, formatted into a single user-displayable string
+     */
     @Generated
     @Selector("formattedString")
     public native String formattedString();
@@ -178,7 +184,7 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native SFTranscription initWithCoder(NSCoder aDecoder);
+    public native SFTranscription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("segments")
@@ -189,4 +195,18 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * Measures average pause between words (in seconds)
+     */
+    @Generated
+    @Selector("averagePauseDuration")
+    public native double averagePauseDuration();
+
+    /**
+     * Measures the number of words spoken per minute
+     */
+    @Generated
+    @Selector("speakingRate")
+    public native double speakingRate();
 }

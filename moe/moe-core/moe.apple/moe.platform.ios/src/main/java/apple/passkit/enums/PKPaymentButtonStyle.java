@@ -28,4 +28,9 @@ public final class PKPaymentButtonStyle {
     @Generated
     private PKPaymentButtonStyle() {
     }
+
+    /**
+     * Automatically switches appearance based on the user interface style
+     */
+    @Generated @NInt public static final long Automatic = 0x0000000000000003L;
 }

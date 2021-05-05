@@ -18,6 +18,38 @@ package apple.imageio.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ *  Metadata value type constants.
+ * [@typedef] CGImageMetadataType
+ * 
+ * The XMP type for a CGImageMetadataTag
+ * 
+ * CGImageMetadataType defines a list of constants used to indicate
+ * the type for a CGImageMetadataTag. If you are reading metadata, use the type
+ * to determine how to interpret the CGImageMetadataTag's value. If you are
+ * creating a CGImageMetadataTag, use the type to specify how the tag
+ * should be serialized in XMP. String types have CFStringRef values, array
+ * types have CFArray values, and structure types have CFDictionary values.
+ * [@const] kCGImageMetadataTypeDefault The type will be interpretted based on the
+ * CFType of the tag's value. This is only used when creating a new
+ * CGImageMetadataTag - no existing tags should have this value. CFString
+ * defaults to kCGImageMetadataTypeString, CFArray defaults to
+ * kCGImageMetadataTypeArrayOrdered, and CFDictionary defaults to
+ * kCGImageMetadataTypeStructure.
+ * [@const] kCGImageMetadataTypeString A string value. CFNumber and CFBoolean
+ * values will be converted to a string.
+ * [@const] kCGImageMetadataTypeArrayUnordered An array where order does not matter.
+ * Serialized in XMP as <rdf:Bag>.
+ * [@const] kCGImageMetadataTypeArrayOrdered An array where order is preserved.
+ * Serialized in XMP as <rdf:Seq>.
+ * [@const] kCGImageMetadataTypeAlternateArray An ordered array where all elements
+ * are alternates for the same value. Serialized in XMP as <rdf:Alt>.
+ * [@const] kCGImageMetadataTypeAlternateText A special case of an alternate array
+ * where all elements are different localized strings for the same value.
+ * Serialized in XMP as an alternate array of strings with xml:lang qualifiers.
+ * [@const] kCGImageMetadataTypeStructure A collection of keys and values. Unlike
+ * array elements, fields of a structure may belong to different namespaces.
+ */
 @Generated
 public final class CGImageMetadataType {
     @Generated public static final int Invalid = 0xFFFFFFFF;

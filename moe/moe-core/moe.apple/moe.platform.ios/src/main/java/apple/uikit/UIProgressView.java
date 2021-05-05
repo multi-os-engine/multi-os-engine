@@ -25,6 +25,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSProgress;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -131,7 +132,7 @@ public class UIProgressView extends UIView implements NSCoding {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -144,8 +145,8 @@ public class UIProgressView extends UIView implements NSCoding {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -366,7 +367,7 @@ public class UIProgressView extends UIView implements NSCoding {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -382,7 +383,8 @@ public class UIProgressView extends UIView implements NSCoding {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -395,7 +397,7 @@ public class UIProgressView extends UIView implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -403,12 +405,15 @@ public class UIProgressView extends UIView implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIProgressView initWithCoder(NSCoder aDecoder);
+    public native UIProgressView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
     public native UIProgressView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * sets the view height according to the style
+     */
     @Generated
     @Selector("initWithProgressViewStyle:")
     public native UIProgressView initWithProgressViewStyle(@NInt long style);
@@ -417,6 +422,9 @@ public class UIProgressView extends UIView implements NSCoding {
     @Selector("observedProgress")
     public native NSProgress observedProgress();
 
+    /**
+     * 0.0 .. 1.0, default is 0.0. values outside are pinned.
+     */
     @Generated
     @Selector("progress")
     public native float progress();
@@ -429,6 +437,9 @@ public class UIProgressView extends UIView implements NSCoding {
     @Selector("progressTintColor")
     public native UIColor progressTintColor();
 
+    /**
+     * default is UIProgressViewStyleDefault
+     */
     @Generated
     @Selector("progressViewStyle")
     @NInt
@@ -438,6 +449,9 @@ public class UIProgressView extends UIView implements NSCoding {
     @Selector("setObservedProgress:")
     public native void setObservedProgress(NSProgress value);
 
+    /**
+     * 0.0 .. 1.0, default is 0.0. values outside are pinned.
+     */
     @Generated
     @Selector("setProgress:")
     public native void setProgress(float value);
@@ -454,6 +468,9 @@ public class UIProgressView extends UIView implements NSCoding {
     @Selector("setProgressTintColor:")
     public native void setProgressTintColor(UIColor value);
 
+    /**
+     * default is UIProgressViewStyleDefault
+     */
     @Generated
     @Selector("setProgressViewStyle:")
     public native void setProgressViewStyle(@NInt long value);
@@ -473,4 +490,10 @@ public class UIProgressView extends UIView implements NSCoding {
     @Generated
     @Selector("trackTintColor")
     public native UIColor trackTintColor();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

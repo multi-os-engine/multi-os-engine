@@ -1,6 +1,7 @@
 package apple.vision;
 
 import apple.NSObject;
+import apple.coremedia.struct.CMTimeRange;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -8,9 +9,11 @@ import apple.foundation.NSSet;
 import apple.foundation.NSUUID;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.vision.protocol.VNRequestRevisionProviding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -28,11 +31,16 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * VNObservation
+ * 
+ * VNObservation describes the results of performing a VNRequest. The result has a confidence score. The different types of requests will create different subclasses of VNObservation to return their results in properties of those subclasses.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class VNObservation extends NSObject implements NSCopying, NSSecureCoding {
+public class VNObservation extends NSObject implements NSCopying, NSSecureCoding, VNRequestRevisionProviding {
     static {
         NatJ.register();
     }
@@ -78,6 +86,11 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The level of confidence normalized to [0, 1] where 1 is most confident
+     * 
+     * Confidence can always be returned as 1.0 if confidence is not supported or has no meaning
+     */
     @Generated
     @Selector("confidence")
     public native float confidence();
@@ -98,7 +111,7 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -111,7 +124,7 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNObservation initWithCoder(NSCoder aDecoder);
+    public native VNObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -166,6 +179,9 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
         return supportsSecureCoding();
     }
 
+    /**
+     * The unique identifier assigned to an observation.
+     */
     @Generated
     @Selector("uuid")
     public native NSUUID uuid();
@@ -174,4 +190,19 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("requestRevision")
+    @NUInt
+    public native long requestRevision();
+
+    /**
+     * The duration of the observation reporting when first detected and how long it is valid.
+     * 
+     * The duration of the observation when used with a sequence of buffers. If a request does not support a timeRange or the timeRange is not known, the start time and duration will be set to 0.
+     */
+    @Generated
+    @Selector("timeRange")
+    @ByValue
+    public native CMTimeRange timeRange();
 }

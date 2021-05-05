@@ -17,6 +17,7 @@ limitations under the License.
 package apple.uikit.protocol;
 
 import apple.coregraphics.struct.CGSize;
+import apple.linkpresentation.LPLinkMetadata;
 import apple.uikit.UIActivityViewController;
 import apple.uikit.UIImage;
 import org.moe.natj.general.ann.ByValue;
@@ -35,6 +36,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIActivityItemSource")
 public interface UIActivityItemSource {
+    /**
+     * UTI for item if it is an NSData. iOS 7.0. will be called with nil activity and then selected activity
+     */
     @Generated
     @IsOptional
     @Selector("activityViewController:dataTypeIdentifierForActivityType:")
@@ -43,12 +47,18 @@ public interface UIActivityItemSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called to fetch data after an activity is selected. you can return nil.
+     */
     @Generated
     @Selector("activityViewController:itemForActivityType:")
     @MappedReturn(ObjCObjectMapper.class)
     Object activityViewControllerItemForActivityType(UIActivityViewController activityViewController,
             String activityType);
 
+    /**
+     * if activity supports a Subject field. iOS 7.0
+     */
     @Generated
     @IsOptional
     @Selector("activityViewController:subjectForActivityType:")
@@ -57,6 +67,9 @@ public interface UIActivityItemSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * if activity supports preview image. iOS 7.0
+     */
     @Generated
     @IsOptional
     @Selector("activityViewController:thumbnailImageForActivityType:suggestedSize:")
@@ -65,8 +78,21 @@ public interface UIActivityItemSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called to determine data type. only the class of the return type is consulted. it should match what -itemForActivityType: returns later
+     */
     @Generated
     @Selector("activityViewControllerPlaceholderItem:")
     @MappedReturn(ObjCObjectMapper.class)
     Object activityViewControllerPlaceholderItem(UIActivityViewController activityViewController);
+
+    /**
+     * called to fetch LinkPresentation metadata for the activity item. iOS 13.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("activityViewControllerLinkMetadata:")
+    default LPLinkMetadata activityViewControllerLinkMetadata(UIActivityViewController activityViewController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

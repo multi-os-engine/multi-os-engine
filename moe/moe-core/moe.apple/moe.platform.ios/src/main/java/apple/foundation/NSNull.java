@@ -167,7 +167,7 @@ public class NSNull extends NSObject implements NSCopying, NSSecureCoding, CAAct
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +175,7 @@ public class NSNull extends NSObject implements NSCopying, NSSecureCoding, CAAct
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSNull initWithCoder(NSCoder aDecoder);
+    public native NSNull initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("runActionForKey:object:arguments:")

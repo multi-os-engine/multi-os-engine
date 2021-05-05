@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIUserNotificationActionContext {
+    /**
+     * the default context of a notification action
+     */
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
+    /**
+     * the context of a notification action when space is limited
+     */
     @Generated @NUInt public static final long Minimal = 0x0000000000000001L;
 
     @Generated

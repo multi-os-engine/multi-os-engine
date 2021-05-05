@@ -39,6 +39,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A WKBackForwardList object is a list of webpages previously
+ * visited in a web view that can be reached by going back or forward.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -150,22 +154,45 @@ public class WKBackForwardList extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The item immediately preceding the current item, or nil
+     * if there isn't one.
+     */
     @Generated
     @Selector("backItem")
     public native WKBackForwardListItem backItem();
 
+    /**
+     * The portion of the list preceding the current item.
+     * 
+     * The items are in the order in which they were originally
+     * visited.
+     */
     @Generated
     @Selector("backList")
     public native NSArray<? extends WKBackForwardListItem> backList();
 
+    /**
+     * The current item.
+     */
     @Generated
     @Selector("currentItem")
     public native WKBackForwardListItem currentItem();
 
+    /**
+     * The item immediately following the current item, or nil
+     * if there isn't one.
+     */
     @Generated
     @Selector("forwardItem")
     public native WKBackForwardListItem forwardItem();
 
+    /**
+     * The portion of the list following the current item.
+     * 
+     * The items are in the order in which they were originally
+     * visited.
+     */
     @Generated
     @Selector("forwardList")
     public native NSArray<? extends WKBackForwardListItem> forwardList();
@@ -174,6 +201,16 @@ public class WKBackForwardList extends NSObject {
     @Selector("init")
     public native WKBackForwardList init();
 
+    /**
+     * Returns the item at a specified distance from the current
+     * item.
+     * 
+     * @param index Index of the desired list item relative to the current item:
+     * 0 for the current item, -1 for the immediately preceding item, 1 for the
+     * immediately following item, and so on.
+     * @return The item at the specified distance from the current item, or nil
+     * if the index parameter exceeds the limits of the list.
+     */
     @Generated
     @Selector("itemAtIndex:")
     public native WKBackForwardListItem itemAtIndex(@NInt long index);

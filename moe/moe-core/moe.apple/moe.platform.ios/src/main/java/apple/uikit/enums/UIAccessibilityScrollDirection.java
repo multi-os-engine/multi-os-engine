@@ -19,6 +19,14 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * If the user interface requires a scrolling action (e.g. turning the page of a book), a view in the view 
+ * hierarchy should implement the following method. The return result indicates whether the action 
+ * succeeded for that direction. If the action failed, the method will be called on a view higher 
+ * in the hierarchy. If the action succeeds, UIAccessibilityPageScrolledNotification must be posted after
+ * the scrolling completes.
+ * default == NO
+ */
 @Generated
 public final class UIAccessibilityScrollDirection {
     @Generated @NInt public static final long Right = 0x0000000000000001L;

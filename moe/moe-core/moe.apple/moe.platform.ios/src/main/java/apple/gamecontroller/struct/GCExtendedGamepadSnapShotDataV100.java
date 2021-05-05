@@ -24,7 +24,7 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 
 @Generated
-@Structure(alignment = 1)
+@Structure()
 public final class GCExtendedGamepadSnapShotDataV100 extends StructObject {
     private static long __natjCache;
 
@@ -42,26 +42,46 @@ public final class GCExtendedGamepadSnapShotDataV100 extends StructObject {
         super(peer);
     }
 
+    /**
+     * 0x0100
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native char version();
 
+    /**
+     * 0x0100
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(char value);
 
+    /**
+     * sizeof(GCExtendedGamepadSnapShotDataV100) or larger
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char size();
 
+    /**
+     * sizeof(GCExtendedGamepadSnapShotDataV100) or larger
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSize(char value);
 
+    /**
+     * Extended gamepad data
+     * Axes in the range [-1.0, 1.0]
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native float dpadX();
 
+    /**
+     * Extended gamepad data
+     * Axes in the range [-1.0, 1.0]
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setDpadX(float value);
@@ -74,10 +94,16 @@ public final class GCExtendedGamepadSnapShotDataV100 extends StructObject {
     @StructureField(order = 3, isGetter = false)
     public native void setDpadY(float value);
 
+    /**
+     * Buttons in the range [0.0, 1.0]
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native float buttonA();
 
+    /**
+     * Buttons in the range [0.0, 1.0]
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setButtonA(float value);
@@ -122,10 +148,16 @@ public final class GCExtendedGamepadSnapShotDataV100 extends StructObject {
     @StructureField(order = 9, isGetter = false)
     public native void setRightShoulder(float value);
 
+    /**
+     * Axes in the range [-1.0, 1.0]
+     */
     @Generated
     @StructureField(order = 10, isGetter = true)
     public native float leftThumbstickX();
 
+    /**
+     * Axes in the range [-1.0, 1.0]
+     */
     @Generated
     @StructureField(order = 10, isGetter = false)
     public native void setLeftThumbstickX(float value);
@@ -154,10 +186,16 @@ public final class GCExtendedGamepadSnapShotDataV100 extends StructObject {
     @StructureField(order = 13, isGetter = false)
     public native void setRightThumbstickY(float value);
 
+    /**
+     * Buttons in the range [0.0, 1.0]
+     */
     @Generated
     @StructureField(order = 14, isGetter = true)
     public native float leftTrigger();
 
+    /**
+     * Buttons in the range [0.0, 1.0]
+     */
     @Generated
     @StructureField(order = 14, isGetter = false)
     public native void setLeftTrigger(float value);

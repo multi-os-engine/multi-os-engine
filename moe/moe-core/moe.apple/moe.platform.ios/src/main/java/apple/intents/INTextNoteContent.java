@@ -93,7 +93,7 @@ public class INTextNoteContent extends INNoteContent implements NSSecureCoding, 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -106,7 +106,7 @@ public class INTextNoteContent extends INNoteContent implements NSSecureCoding, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INTextNoteContent initWithCoder(NSCoder aDecoder);
+    public native INTextNoteContent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithText:")
@@ -165,6 +165,9 @@ public class INTextNoteContent extends INNoteContent implements NSSecureCoding, 
         return supportsSecureCoding();
     }
 
+    /**
+     * The text that comprises the note content
+     */
     @Generated
     @Selector("text")
     public native String text();

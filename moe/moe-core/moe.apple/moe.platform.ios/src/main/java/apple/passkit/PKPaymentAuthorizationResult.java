@@ -82,6 +82,11 @@ public class PKPaymentAuthorizationResult extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Any errors that applied. These errors will be displayed to the user to correct.
+     * Errors should be ordered from most to least serious.
+     * See PKError for specific NSError keys to use to enable rich error handling.
+     */
     @Generated
     @Selector("errors")
     public native NSArray<? extends NSError> errors();
@@ -135,10 +140,18 @@ public class PKPaymentAuthorizationResult extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Any errors that applied. These errors will be displayed to the user to correct.
+     * Errors should be ordered from most to least serious.
+     * See PKError for specific NSError keys to use to enable rich error handling.
+     */
     @Generated
     @Selector("setErrors:")
     public native void setErrors(NSArray<? extends NSError> value);
 
+    /**
+     * The status of the payment
+     */
     @Generated
     @Selector("setStatus:")
     public native void setStatus(@NInt long value);
@@ -147,6 +160,9 @@ public class PKPaymentAuthorizationResult extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The status of the payment
+     */
     @Generated
     @Selector("status")
     @NInt

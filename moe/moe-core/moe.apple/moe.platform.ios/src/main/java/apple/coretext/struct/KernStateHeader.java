@@ -51,27 +51,45 @@ public final class KernStateHeader extends StructObject {
         setFirstTable(firstTable);
     }
 
+    /**
+     * state table header
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native STHeader header();
 
+    /**
+     * state table header
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setHeader(@ByValue STHeader value);
 
+    /**
+     * offset to kerning value table
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char valueTable();
 
+    /**
+     * offset to kerning value table
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setValueTable(char value);
 
+    /**
+     * first table starts here
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native byte firstTable();
 
+    /**
+     * first table starts here
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setFirstTable(byte value);

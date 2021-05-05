@@ -155,10 +155,19 @@ public class NSLayoutXAxisAnchor extends NSLayoutAnchor<NSLayoutXAxisAnchor> {
     @Selector("init")
     public native NSLayoutXAxisAnchor init();
 
+    /**
+     * A composite anchor for creating constraints relating horizontal distances between locations.
+     */
     @Generated
     @Selector("anchorWithOffsetToAnchor:")
     public native NSLayoutDimension anchorWithOffsetToAnchor(NSLayoutXAxisAnchor otherAnchor);
 
+    /**
+     * Constraints of the form,
+     * receiver [= | ≥ | ≤] 'anchor' + 'multiplier' * system space, 
+     * where the value of the system space is determined from information available from the anchors.
+     * The constraint affects how far the receiver will be positioned trailing 'anchor', per the effective user interface layout direction.
+     */
     @Generated
     @Selector("constraintEqualToSystemSpacingAfterAnchor:multiplier:")
     public native NSLayoutConstraint constraintEqualToSystemSpacingAfterAnchorMultiplier(NSLayoutXAxisAnchor anchor,

@@ -68,6 +68,9 @@ public class UITableViewPlaceholder extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * Called whenever the placeholder cell is visible to update the contents of the cell.
+     */
     @Generated
     @Selector("cellUpdateHandler")
     @ObjCBlock(name = "call_cellUpdateHandler_ret")
@@ -105,6 +108,10 @@ public class UITableViewPlaceholder extends NSObject {
     @Selector("init")
     public native UITableViewPlaceholder init();
 
+    /**
+     * A placeholder cell will be dequeued for the reuse identifier and inserted at the specified index path without requiring a data source update.
+     * You may use UITableViewAutomaticDimension for the rowHeight to have the placeholder cell self-size if the table view is using estimated row heights.
+     */
     @Generated
     @Selector("initWithInsertionIndexPath:reuseIdentifier:rowHeight:")
     public native UITableViewPlaceholder initWithInsertionIndexPathReuseIdentifierRowHeight(
@@ -145,6 +152,9 @@ public class UITableViewPlaceholder extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Called whenever the placeholder cell is visible to update the contents of the cell.
+     */
     @Generated
     @Selector("setCellUpdateHandler:")
     public native void setCellUpdateHandler(

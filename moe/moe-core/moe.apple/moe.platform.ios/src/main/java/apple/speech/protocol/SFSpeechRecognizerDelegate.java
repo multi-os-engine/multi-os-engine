@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SFSpeechRecognizerDelegate")
 public interface SFSpeechRecognizerDelegate {
+    /**
+     * Called when the availability of the given recognizer changes
+     */
     @Generated
     @IsOptional
     @Selector("speechRecognizer:availabilityDidChange:")

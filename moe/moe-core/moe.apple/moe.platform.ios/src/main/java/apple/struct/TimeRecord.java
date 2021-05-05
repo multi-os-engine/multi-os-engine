@@ -52,27 +52,45 @@ public final class TimeRecord extends StructObject {
         setBase(base);
     }
 
+    /**
+     * units (duration or absolute)
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native wide value();
 
+    /**
+     * units (duration or absolute)
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setValue(@ByValue wide value);
 
+    /**
+     * units per second
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int scale();
 
+    /**
+     * units per second
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setScale(int value);
 
+    /**
+     * refernce to the time base
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native TimeBase base();
 
+    /**
+     * refernce to the time base
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setBase(TimeBase value);

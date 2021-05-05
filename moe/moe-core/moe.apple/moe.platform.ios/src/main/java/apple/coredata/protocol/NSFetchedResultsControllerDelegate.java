@@ -17,7 +17,10 @@ limitations under the License.
 package apple.coredata.protocol;
 
 import apple.coredata.NSFetchedResultsController;
+import apple.coredata.NSManagedObjectID;
 import apple.foundation.NSIndexPath;
+import apple.foundation.NSOrderedCollectionDifference;
+import apple.uikit.NSDiffableDataSourceSnapshot;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -47,7 +50,8 @@ public interface NSFetchedResultsControllerDelegate {
     @IsOptional
     @Selector("controller:didChangeSection:atIndex:forChangeType:")
     default void controllerDidChangeSectionAtIndexForChangeType(NSFetchedResultsController<?> controller,
-            @Mapped(ObjCObjectMapper.class) Object sectionInfo, @NUInt long sectionIndex, @NUInt long type) {
+            @Mapped(ObjCObjectMapper.class) NSFetchedResultsSectionInfo sectionInfo, @NUInt long sectionIndex,
+            @NUInt long type) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -70,6 +74,35 @@ public interface NSFetchedResultsControllerDelegate {
     @IsOptional
     @Selector("controllerWillChangeContent:")
     default void controllerWillChangeContent(NSFetchedResultsController<?> controller) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the contents of the fetched results controller change.
+     * If this method is implemented and the controller is configured with
+     * sectionNameKeyPath = nil, no other delegate methods will be invoked.
+     * 
+     * This method is only invoked if the controller's `sectionNameKeyPath`
+     * property is nil and `controller:didChangeContentWithSnapshot:` is not
+     * implemented.
+     */
+    @Generated
+    @IsOptional
+    @Selector("controller:didChangeContentWithDifference:")
+    default void controllerDidChangeContentWithDifference(NSFetchedResultsController<?> controller,
+            NSOrderedCollectionDifference<NSManagedObjectID> diff) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the contents of the fetched results controller change.
+     * If this method is implemented, no other delegate methods will be invoked.
+     */
+    @Generated
+    @IsOptional
+    @Selector("controller:didChangeContentWithSnapshot:")
+    default void controllerDidChangeContentWithSnapshot(NSFetchedResultsController<?> controller,
+            NSDiffableDataSourceSnapshot<String, NSManagedObjectID> snapshot) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

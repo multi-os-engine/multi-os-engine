@@ -34,6 +34,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPageViewControllerDelegate")
 public interface UIPageViewControllerDelegate {
+    /**
+     * Sent when a gesture-initiated transition ends. The 'finished' parameter indicates whether the animation finished, while the 'completed' parameter indicates whether the transition completed or bailed out (if the user let go early).
+     */
     @Generated
     @IsOptional
     @Selector("pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:")
@@ -43,6 +46,10 @@ public interface UIPageViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Delegate may specify a different spine location for after the interface orientation change. Only sent for transition style 'UIPageViewControllerTransitionStylePageCurl'.
+     * Delegate may set new view controllers or update double-sided state within this method's implementation as well.
+     */
     @Generated
     @IsOptional
     @Selector("pageViewController:spineLocationForInterfaceOrientation:")
@@ -52,6 +59,9 @@ public interface UIPageViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent when a gesture-initiated transition begins.
+     */
     @Generated
     @IsOptional
     @Selector("pageViewController:willTransitionToViewControllers:")

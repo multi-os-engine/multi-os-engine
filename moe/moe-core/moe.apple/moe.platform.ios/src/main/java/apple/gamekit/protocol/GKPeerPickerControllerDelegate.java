@@ -27,11 +27,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * callbacks to the GKPeerPickerController delegate
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKPeerPickerControllerDelegate")
 public interface GKPeerPickerControllerDelegate {
+    /**
+     * Notifies delegate that the peer was connected to a GKSession.
+     */
     @Generated
     @IsOptional
     @Selector("peerPickerController:didConnectPeer:toSession:")
@@ -40,6 +46,9 @@ public interface GKPeerPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Notifies delegate that a connection type was chosen by the user.
+     */
     @Generated
     @IsOptional
     @Selector("peerPickerController:didSelectConnectionType:")
@@ -47,6 +56,11 @@ public interface GKPeerPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Notifies delegate that the connection type is requesting a GKSession object.
+     * 
+     * You should return a valid GKSession object for use by the picker. If this method is not implemented or returns 'nil', a default GKSession is created on the delegate's behalf.
+     */
     @Generated
     @IsOptional
     @Selector("peerPickerController:sessionForConnectionType:")
@@ -54,6 +68,9 @@ public interface GKPeerPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Notifies delegate that the user cancelled the picker.
+     */
     @Generated
     @IsOptional
     @Selector("peerPickerControllerDidCancel:")

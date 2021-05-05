@@ -44,6 +44,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVSpeechUtterance
+ * 
+ * AVSpeechUtterance is the atom of speaking a string or pausing the synthesizer.
+ * 
+ * To start speaking, specify the AVSpeechSynthesisVoice and the string to be spoken, then optionally change the rate, pitch or volume if desired.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -179,7 +186,7 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -191,48 +198,78 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVSpeechUtterance initWithCoder(NSCoder aDecoder);
+    public native AVSpeechUtterance initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithString:")
     public native AVSpeechUtterance initWithString(String string);
 
+    /**
+     * [0.5 - 2] Default = 1
+     */
     @Generated
     @Selector("pitchMultiplier")
     public native float pitchMultiplier();
 
+    /**
+     * Default is 0.0
+     */
     @Generated
     @Selector("postUtteranceDelay")
     public native double postUtteranceDelay();
 
+    /**
+     * Default is 0.0
+     */
     @Generated
     @Selector("preUtteranceDelay")
     public native double preUtteranceDelay();
 
+    /**
+     * Values are pinned between AVSpeechUtteranceMinimumSpeechRate and AVSpeechUtteranceMaximumSpeechRate.
+     */
     @Generated
     @Selector("rate")
     public native float rate();
 
+    /**
+     * [0.5 - 2] Default = 1
+     */
     @Generated
     @Selector("setPitchMultiplier:")
     public native void setPitchMultiplier(float value);
 
+    /**
+     * Default is 0.0
+     */
     @Generated
     @Selector("setPostUtteranceDelay:")
     public native void setPostUtteranceDelay(double value);
 
+    /**
+     * Default is 0.0
+     */
     @Generated
     @Selector("setPreUtteranceDelay:")
     public native void setPreUtteranceDelay(double value);
 
+    /**
+     * Values are pinned between AVSpeechUtteranceMinimumSpeechRate and AVSpeechUtteranceMaximumSpeechRate.
+     */
     @Generated
     @Selector("setRate:")
     public native void setRate(float value);
 
+    /**
+     * If no voice is specified, the system's default will be used.
+     */
     @Generated
     @Selector("setVoice:")
     public native void setVoice(AVSpeechSynthesisVoice value);
 
+    /**
+     * [0-1] Default = 1
+     */
     @Generated
     @Selector("setVolume:")
     public native void setVolume(float value);
@@ -247,11 +284,35 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
         return supportsSecureCoding();
     }
 
+    /**
+     * If no voice is specified, the system's default will be used.
+     */
     @Generated
     @Selector("voice")
     public native AVSpeechSynthesisVoice voice();
 
+    /**
+     * [0-1] Default = 1
+     */
     @Generated
     @Selector("volume")
     public native float volume();
+
+    /**
+     * If an assistive technology is on, like VoiceOver, the user's selected voice, rate and other settings will be used for this speech utterance instead of the default values.
+     * If no assistive technologies are on, then the values of the properties on AVSpeechUtterance will be used.
+     * Note that querying the properties will not refect the user's settings. 
+     */
+    @Generated
+    @Selector("prefersAssistiveTechnologySettings")
+    public native boolean prefersAssistiveTechnologySettings();
+
+    /**
+     * If an assistive technology is on, like VoiceOver, the user's selected voice, rate and other settings will be used for this speech utterance instead of the default values.
+     * If no assistive technologies are on, then the values of the properties on AVSpeechUtterance will be used.
+     * Note that querying the properties will not refect the user's settings. 
+     */
+    @Generated
+    @Selector("setPrefersAssistiveTechnologySettings:")
+    public native void setPrefersAssistiveTechnologySettings(boolean value);
 }

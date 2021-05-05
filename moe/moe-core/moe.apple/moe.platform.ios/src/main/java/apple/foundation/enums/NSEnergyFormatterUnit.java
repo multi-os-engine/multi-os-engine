@@ -23,7 +23,13 @@ import org.moe.natj.general.ann.NInt;
 public final class NSEnergyFormatterUnit {
     @Generated @NInt public static final long Joule = 0x000000000000000BL;
     @Generated @NInt public static final long Kilojoule = 0x000000000000000EL;
+    /**
+     * chemistry "calories", abbr "cal"
+     */
     @Generated @NInt public static final long Calorie = 0x0000000000000701L;
+    /**
+     * kilocalories in general, abbr “kcal”, or “C” in some locales (e.g. US) when usesFoodEnergy is set to YES
+     */
     @Generated @NInt public static final long Kilocalorie = 0x0000000000000702L;
 
     @Generated

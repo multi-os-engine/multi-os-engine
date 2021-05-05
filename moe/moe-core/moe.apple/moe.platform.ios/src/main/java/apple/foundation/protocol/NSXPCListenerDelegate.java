@@ -15,6 +15,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSXPCListenerDelegate")
 public interface NSXPCListenerDelegate {
+    /**
+     * Accept or reject a new connection to the listener. This is a good time to set up properties on the new connection, like its exported object and interfaces. If a value of NO is returned, the connection object will be invalidated after this method returns. Be sure to resume the new connection and return YES when you are finished configuring it and are ready to receive messages. You may delay resuming the connection if you wish, but still return YES from this method if you want the connection to be accepted.
+     */
     @Generated
     @IsOptional
     @Selector("listener:shouldAcceptNewConnection:")

@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Substrings of a hypothesized transcription
+ */
 @Generated
 @Library("Speech")
 @Runtime(ObjCRuntime.class)
@@ -160,10 +163,16 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
     @NInt
     public static native long version_static();
 
+    /**
+     * Other possible interpretations of this segment
+     */
     @Generated
     @Selector("alternativeSubstrings")
     public native NSArray<String> alternativeSubstrings();
 
+    /**
+     * Confidence in the accuracy of transcription. Scale is 0 (least confident) to 1.0 (most confident)
+     */
     @Generated
     @Selector("confidence")
     public native float confidence();
@@ -180,7 +189,7 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -188,7 +197,7 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native SFTranscriptionSegment initWithCoder(NSCoder aDecoder);
+    public native SFTranscriptionSegment initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("substring")
@@ -205,7 +214,14 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
         return supportsSecureCoding();
     }
 
+    /**
+     * Relative to start of utterance
+     */
     @Generated
     @Selector("timestamp")
     public native double timestamp();
+
+    @Generated
+    @Selector("voiceAnalytics")
+    public native SFVoiceAnalytics voiceAnalytics();
 }

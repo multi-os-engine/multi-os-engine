@@ -3,6 +3,9 @@ package apple.vision.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Tracking level options to favor speed or location accuracy. The VNRequestTrackingLevelFast is the default option used by trackers.
+ */
 @Generated
 public final class VNRequestTrackingLevel {
     @Generated

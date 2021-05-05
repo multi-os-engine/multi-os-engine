@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Note: IOSurface objects are "toll free bridged" to IOSurfaceRef objects
+ */
 @Generated
 @Library("IOSurface")
 @Runtime(ObjCRuntime.class)
@@ -60,11 +63,19 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * The total allocation size of the IOSurface
+     */
     @Generated
     @Selector("allocationSize")
     @NInt
     public native long allocationSize();
 
+    /**
+     * This property returns YES if it is legal to choose an OpenGL or Metal pixel format with a bytes per pixel
+     * value that is different than the bytesPerElement value(s) of this IOSurface.  Returns NO if the bytes per pixel
+     * value must be an exact match. 
+     */
     @Generated
     @Selector("allowsPixelSizeCasting")
     public native boolean allowsPixelSizeCasting();
@@ -96,6 +107,9 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @NInt
     public native long bytesPerElementOfPlaneAtIndex(@NUInt long planeIndex);
 
+    /**
+     * Note: These properties may not return well-defined values for planar surfaces
+     */
     @Generated
     @Selector("bytesPerRow")
     @NInt
@@ -158,7 +172,7 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -185,8 +199,11 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native IOSurface initWithCoder(NSCoder aDecoder);
+    public native IOSurface initWithCoder(NSCoder coder);
 
+    /**
+     * Create a new IOSurface
+     */
     @Generated
     @Selector("initWithProperties:")
     public native IOSurface initWithProperties(NSDictionary<String, ?> properties);
@@ -204,6 +221,23 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * There are cases where it is useful to know whether or not an IOSurface buffer is considered to be "in use"
+     * by other users of the same IOSurface.  In particular, CoreVideo and other APIs make use of the IOSurface
+     * use count facility to know when it is safe to recycle an IOSurface backed CVPixelBuffer object.  This is
+     * particularly important when IOSurface objects are being shared across process boundaries and the normal
+     * mechanisms one might use would not be viable.
+     * 
+     * The IOSurface use count is similar in concept to any other reference counting scheme.  When the global use
+     * count of an IOSurface goes to zero, it is no longer considered "in use".   When it is anything other than
+     * zero, then the IOSurface is still "in use" by someone and therefore anyone attempting to maintain a pool
+     * of IOSurfaces to be recycled should not reclaim that IOSurface.
+     * 
+     * Note that IOSurface maintains both a per-process and an internal system wide usage count.   In the current
+     * implementation, when the per-process usage count goes from zero to one, the system wide usage count is
+     * incremented by one.   When the per-process usage count drops back to zero (either via explicit decrement
+     * calls or the process terminates), the global usage count is decremented by one. 
+     */
     @Generated
     @Selector("isInUse")
     public native boolean isInUse();
@@ -216,10 +250,36 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * The localUseCount property returns the local per-process usage count for an IOSurface.  This call is only
+     * provided for logging/debugging purposes and should never be used to determine whether an IOSurface is
+     * considered to be "in use".   The isInUse property is the only call that should be used for that purpose. 
+     */
     @Generated
     @Selector("localUseCount")
     public native int localUseCount();
 
+    /**
+     * "Lock" or "Unlock" a IOSurface for reading or writing.
+     * 
+     * The term "lock" is used loosely in this context, and is simply used along with the
+     * "unlock" information to put a bound on CPU access to the raw IOSurface data.
+     * 
+     * If the seed parameter is non-NULL, IOSurfaceLock() will store the buffer's
+     * internal modification seed value at the time you made the lock call.   You can compare
+     * this value to a value returned previously to determine of the contents of the buffer
+     * has been changed since the last lock.
+     * 
+     * In the case of IOSurfaceUnlock(), the seed value returned will be the internal
+     * seed value at the time of the unlock.  If you locked the buffer for writing, this value
+     * will be incremented as the unlock is performed and the new value will be returned.
+     * 
+     * See the IOSurfacePropertyKeyLock enums for more information.
+     * 
+     * Note: Locking and unlocking a IOSurface is not a particularly cheap operation,
+     * so care should be taken to avoid the calls whenever possible.   The seed values are 
+     * particularly useful for keeping a cache of the buffer contents.
+     */
     @Generated
     @Selector("lockWithOptions:seed:")
     public native int lockWithOptionsSeed(int options, IntPtr seed);
@@ -234,6 +294,9 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("pixelFormat")
     public native int pixelFormat();
 
+    /**
+     * Return the number of planes in this buffer.  Will be 0 if the surface is non-planar
+     */
     @Generated
     @Selector("planeCount")
     @NUInt
@@ -255,6 +318,10 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * This will return the current seed value of the buffer and is a cheap property to read to see
+     * if the contents of the buffer have changed since the last lock/unlock. 
+     */
     @Generated
     @Selector("seed")
     public native int seed();
@@ -263,10 +330,18 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("setAllAttachments:")
     public native void setAllAttachments(NSDictionary<String, ?> dict);
 
+    /**
+     * These calls let you attach property list types to a IOSurface buffer.  These calls are
+     * expensive (they essentially must serialize the data into the kernel) and thus should be avoided whenever
+     * possible.   Note:  These functions can not be used to change the underlying surface properties. 
+     */
     @Generated
     @Selector("setAttachment:forKey:")
     public native void setAttachmentForKey(@Mapped(ObjCObjectMapper.class) Object anObject, String key);
 
+    /**
+     * See comments in IOSurfaceAPI.h
+     */
     @Generated
     @Selector("setPurgeable:oldState:")
     public native int setPurgeableOldState(int newState, IntPtr oldState);
@@ -298,11 +373,19 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Basic surface layout information
+     */
     @Generated
     @Selector("width")
     @NInt
     public native long width();
 
+    /**
+     * These properties return information about a particular plane of a IOSurface.  They will
+     * raise if called on non-planar surfaces or if the index value is not less than the number
+     * of planes. 
+     */
     @Generated
     @Selector("widthOfPlaneAtIndex:")
     @NInt

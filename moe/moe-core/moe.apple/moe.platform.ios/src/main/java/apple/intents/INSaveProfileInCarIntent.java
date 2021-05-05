@@ -163,7 +163,7 @@ public class INSaveProfileInCarIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSaveProfileInCarIntent initWithCoder(NSCoder aDecoder);
+    public native INSaveProfileInCarIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithProfileNumber:profileLabel:")

@@ -25,6 +25,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * VNClassificationObservation
+ * [@superclass] VNObservation
+ * 
+ * VNClassificationObservation returns the classifcation in form of a string.
+ * 
+ * VNClassificationObservation is the observation returned by VNCoreMLRequests that using a model that is a classifier. A classifier produces an arrary (this can be a single entry) of classifications which are labels (identifiers) and confidence scores.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -88,6 +96,9 @@ public class VNClassificationObservation extends VNObservation {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The is the label or identifier of a classification request. An example classification could be a string like 'cat' or 'hotdog'. The string is defined in the model that was used for the classification. Usually these are technical labels that are not localized and not meant to be used directly to be presented to an end user in the UI.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -98,7 +109,7 @@ public class VNClassificationObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNClassificationObservation initWithCoder(NSCoder aDecoder);
+    public native VNClassificationObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -157,4 +168,39 @@ public class VNClassificationObservation extends VNObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Determine whether or not the observation's operation point for a specific recall has a minimum precision value.
+     * 
+     * @param minimumPrecision	The minimum precision desired for an operation point.
+     * 
+     * @param recall		The recall value used to select the operation point.
+     * 
+     * @return YES if the precision value for the operation point specified by a recall value has the minimum value; otherwise, NO.
+     */
+    @Generated
+    @Selector("hasMinimumPrecision:forRecall:")
+    public native boolean hasMinimumPrecisionForRecall(float minimumPrecision, float recall);
+
+    /**
+     * Determine whether or not the observation's operation point for a specific precision has a minimum recall value.
+     * 
+     * @param minimumRecall	The minimum recall desired for an operation point.
+     * 
+     * @param precision		The precision value used to select the operation point.
+     * 
+     * @return YES if the recall value for the operation point specified by a precision value has the minimum value; otherwise, NO.
+     */
+    @Generated
+    @Selector("hasMinimumRecall:forPrecision:")
+    public native boolean hasMinimumRecallForPrecision(float minimumRecall, float precision);
+
+    /**
+     * Determine whether or not precision/recall curves are available with the observation.
+     * 
+     * If this property is YES, then all other precision/recall related methods in this addition can be called.
+     */
+    @Generated
+    @Selector("hasPrecisionRecallCurve")
+    public native boolean hasPrecisionRecallCurve();
 }

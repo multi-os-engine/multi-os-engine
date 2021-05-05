@@ -155,7 +155,7 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -163,28 +163,58 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMeasurementFormatter initWithCoder(NSCoder aDecoder);
+    public native NSMeasurementFormatter initWithCoder(NSCoder coder);
 
+    /**
+     * If not specified, locale is set to the user's current locale.
+     */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
 
+    /**
+     * If not specified, the number formatter is set up with NSNumberFormatterDecimalStyle.
+     */
     @Generated
     @Selector("numberFormatter")
     public native NSNumberFormatter numberFormatter();
 
+    /**
+     * If not specified, locale is set to the user's current locale.
+     */
     @Generated
     @Selector("setLocale:")
     public native void setLocale(NSLocale value);
 
+    /**
+     * If not specified, the number formatter is set up with NSNumberFormatterDecimalStyle.
+     */
     @Generated
     @Selector("setNumberFormatter:")
     public native void setNumberFormatter(NSNumberFormatter value);
 
+    /**
+     * This property can be set to ensure that the formatter behaves in a way the developer expects, even if it is not standard according to the preferences of the user's locale. If not specified, unitOptions defaults to localizing according to the preferences of the locale.
+     * 
+     * Ex:
+     * 
+     * By default, if unitOptions is set to the empty set, the formatter will do the following:
+     *    - kilocalories may be formatted as "C" instead of "kcal" depending on the locale.
+     *    - kilometersPerHour may be formatted as "miles per hour" for US and UK locales but "kilometers per hour" for other locales.
+     * 
+     * However, if NSMeasurementFormatterUnitOptionsProvidedUnit is set, the formatter will do the following:
+     *    - kilocalories would be formatted as "kcal" in the language of the locale, even if the locale prefers "C".
+     *    - kilometersPerHour would be formatted as "kilometers per hour" for US and UK locales even though the preference is for "miles per hour."
+     * 
+     * Note that NSMeasurementFormatter will handle converting measurement objects to the preferred units in a particular locale.  For instance, if provided a measurement object in kilometers and the set locale is en_US, the formatter will implicitly convert the measurement object to miles and return the formatted string as the equivalent measurement in miles.
+     */
     @Generated
     @Selector("setUnitOptions:")
     public native void setUnitOptions(@NUInt long value);
 
+    /**
+     * If not specified, unitStyle is set to NSFormattingUnitStyleMedium.
+     */
     @Generated
     @Selector("setUnitStyle:")
     public native void setUnitStyle(@NInt long value);
@@ -193,6 +223,10 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
     @Selector("stringFromMeasurement:")
     public native String stringFromMeasurement(NSMeasurement<?> measurement);
 
+    /**
+     * @param An NSUnit
+     * @return A formatted string representing the localized form of the unit without a value attached to it.  This method will return [unit symbol] if the provided unit cannot be localized.
+     */
     @Generated
     @Selector("stringFromUnit:")
     public native String stringFromUnit(NSUnit unit);
@@ -203,11 +237,29 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
         return supportsSecureCoding();
     }
 
+    /**
+     * This property can be set to ensure that the formatter behaves in a way the developer expects, even if it is not standard according to the preferences of the user's locale. If not specified, unitOptions defaults to localizing according to the preferences of the locale.
+     * 
+     * Ex:
+     * 
+     * By default, if unitOptions is set to the empty set, the formatter will do the following:
+     *    - kilocalories may be formatted as "C" instead of "kcal" depending on the locale.
+     *    - kilometersPerHour may be formatted as "miles per hour" for US and UK locales but "kilometers per hour" for other locales.
+     * 
+     * However, if NSMeasurementFormatterUnitOptionsProvidedUnit is set, the formatter will do the following:
+     *    - kilocalories would be formatted as "kcal" in the language of the locale, even if the locale prefers "C".
+     *    - kilometersPerHour would be formatted as "kilometers per hour" for US and UK locales even though the preference is for "miles per hour."
+     * 
+     * Note that NSMeasurementFormatter will handle converting measurement objects to the preferred units in a particular locale.  For instance, if provided a measurement object in kilometers and the set locale is en_US, the formatter will implicitly convert the measurement object to miles and return the formatted string as the equivalent measurement in miles.
+     */
     @Generated
     @Selector("unitOptions")
     @NUInt
     public native long unitOptions();
 
+    /**
+     * If not specified, unitStyle is set to NSFormattingUnitStyleMedium.
+     */
     @Generated
     @Selector("unitStyle")
     @NInt

@@ -95,6 +95,10 @@ public class PKPaymentRequestShippingContactUpdate extends PKPaymentRequestUpdat
     @Selector("init")
     public native PKPaymentRequestShippingContactUpdate init();
 
+    /**
+     * You may optionally supply errors here.
+     * See PKError for specific NSError keys to use.
+     */
     @Generated
     @Selector("initWithErrors:paymentSummaryItems:shippingMethods:")
     public native PKPaymentRequestShippingContactUpdate initWithErrorsPaymentSummaryItemsShippingMethods(

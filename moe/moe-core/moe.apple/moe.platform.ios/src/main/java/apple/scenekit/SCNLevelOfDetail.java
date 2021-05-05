@@ -44,6 +44,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNLevelOfDetail
+ * 
+ * SCNLevelOfDetail represents a level of detail of a geometry.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -128,11 +133,27 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * levelOfDetailWithGeometry:screenSpaceRadius:
+     * 
+     * This is a convenience method to create a level of detail with a coverage radius threshold mode.
+     * 
+     * @param geometry The geometry for this level of detail. nil is supported and indicates that no geometry should be rendered for this level of detail.
+     * @param radius The maximum radius in screen-space that this level of detail is suitable for. The coverage radius is calculated from the projected bounding sphere and expressed in pixels.
+     */
     @Generated
     @Selector("levelOfDetailWithGeometry:screenSpaceRadius:")
     public static native SCNLevelOfDetail levelOfDetailWithGeometryScreenSpaceRadius(SCNGeometry geometry,
             @NFloat double radius);
 
+    /**
+     * levelOfDetailWithGeometry:worldSpaceDistance:
+     * 
+     * This is a convenience method to create a level of detail with a distance threshold mode.
+     * 
+     * @param geometry The geometry for this level of detail. nil is supported and indicates that no geometry should be rendered for this level of detail.
+     * @param distance The minimum distance to the current point of view that this level of detail is suitable for.
+     */
     @Generated
     @Selector("levelOfDetailWithGeometry:worldSpaceDistance:")
     public static native SCNLevelOfDetail levelOfDetailWithGeometryWorldSpaceDistance(SCNGeometry geometry,
@@ -177,8 +198,13 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * [@property] geometry
+     * 
+     * Returns the geometry of the receiver.
+     */
     @Generated
     @Selector("geometry")
     public native SCNGeometry geometry();
@@ -189,8 +215,13 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNLevelOfDetail initWithCoder(NSCoder aDecoder);
+    public native SCNLevelOfDetail initWithCoder(NSCoder coder);
 
+    /**
+     * [@property] screenSpaceRadius
+     * 
+     * Returns the screen space radius of the receiver if any, 0 otherwise.
+     */
     @Generated
     @Selector("screenSpaceRadius")
     @NFloat
@@ -202,6 +233,11 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] worldSpaceDistance
+     * 
+     * Returns the world space distance of the receiver if any, 0 otherwise.
+     */
     @Generated
     @Selector("worldSpaceDistance")
     @NFloat

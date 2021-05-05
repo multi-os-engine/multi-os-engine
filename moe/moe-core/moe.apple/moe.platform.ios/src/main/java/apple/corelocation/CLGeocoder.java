@@ -159,6 +159,12 @@ public class CLGeocoder extends NSObject {
     @Selector("cancelGeocode")
     public native void cancelGeocode();
 
+    /**
+     * forward geocode requests
+     * geocodeAddressDictionary:completionHandler: takes an address dictionary as defined by the AddressBook framework.
+     * You can obtain an address dictionary from an ABPerson by retrieving the kABPersonAddressProperty property.
+     * Alternately, one can be constructed using the kABPersonAddress* keys defined in <AddressBook/ABPerson.h>.
+     */
     @Generated
     @Selector("geocodeAddressDictionary:completionHandler:")
     public native void geocodeAddressDictionaryCompletionHandler(NSDictionary<?, ?> addressDictionary,
@@ -182,6 +188,9 @@ public class CLGeocoder extends NSObject {
     @Selector("isGeocoding")
     public native boolean isGeocoding();
 
+    /**
+     * reverse geocode requests
+     */
     @Generated
     @Selector("reverseGeocodeLocation:completionHandler:")
     public native void reverseGeocodeLocationCompletionHandler(CLLocation location,
@@ -191,28 +200,29 @@ public class CLGeocoder extends NSObject {
     @Generated
     public interface Block_geocodeAddressDictionaryCompletionHandler {
         @Generated
-        void call_geocodeAddressDictionaryCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
+        void call_geocodeAddressDictionaryCompletionHandler(NSArray<? extends CLPlacemark> placemarks, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_geocodeAddressStringCompletionHandler {
         @Generated
-        void call_geocodeAddressStringCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
+        void call_geocodeAddressStringCompletionHandler(NSArray<? extends CLPlacemark> placemarks, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_geocodeAddressStringInRegionCompletionHandler {
         @Generated
-        void call_geocodeAddressStringInRegionCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
+        void call_geocodeAddressStringInRegionCompletionHandler(NSArray<? extends CLPlacemark> placemarks,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reverseGeocodeLocationCompletionHandler {
         @Generated
-        void call_reverseGeocodeLocationCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
+        void call_reverseGeocodeLocationCompletionHandler(NSArray<? extends CLPlacemark> placemarks, NSError error);
     }
 
     @Generated
@@ -225,8 +235,8 @@ public class CLGeocoder extends NSObject {
     @Generated
     public interface Block_geocodeAddressStringInRegionPreferredLocaleCompletionHandler {
         @Generated
-        void call_geocodeAddressStringInRegionPreferredLocaleCompletionHandler(NSArray<? extends CLPlacemark> arg0,
-                NSError arg1);
+        void call_geocodeAddressStringInRegionPreferredLocaleCompletionHandler(
+                NSArray<? extends CLPlacemark> placemarks, NSError error);
     }
 
     @Generated
@@ -238,7 +248,7 @@ public class CLGeocoder extends NSObject {
     @Generated
     public interface Block_geocodePostalAddressCompletionHandler {
         @Generated
-        void call_geocodePostalAddressCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
+        void call_geocodePostalAddressCompletionHandler(NSArray<? extends CLPlacemark> placemarks, NSError error);
     }
 
     @Generated
@@ -251,8 +261,8 @@ public class CLGeocoder extends NSObject {
     @Generated
     public interface Block_geocodePostalAddressPreferredLocaleCompletionHandler {
         @Generated
-        void call_geocodePostalAddressPreferredLocaleCompletionHandler(NSArray<? extends CLPlacemark> arg0,
-                NSError arg1);
+        void call_geocodePostalAddressPreferredLocaleCompletionHandler(NSArray<? extends CLPlacemark> placemarks,
+                NSError error);
     }
 
     @Generated
@@ -264,7 +274,7 @@ public class CLGeocoder extends NSObject {
     @Generated
     public interface Block_reverseGeocodeLocationPreferredLocaleCompletionHandler {
         @Generated
-        void call_reverseGeocodeLocationPreferredLocaleCompletionHandler(NSArray<? extends CLPlacemark> arg0,
-                NSError arg1);
+        void call_reverseGeocodeLocationPreferredLocaleCompletionHandler(NSArray<? extends CLPlacemark> placemarks,
+                NSError error);
     }
 }

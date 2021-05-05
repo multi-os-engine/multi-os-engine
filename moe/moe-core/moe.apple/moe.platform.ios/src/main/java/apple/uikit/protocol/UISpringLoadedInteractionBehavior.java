@@ -11,11 +11,19 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The interaction behavior of a `UISpringLoadedInteraction` object must adopt the `UISpringLoadedInteractionBehavior` protocol.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UISpringLoadedInteractionBehavior")
 public interface UISpringLoadedInteractionBehavior {
+    /**
+     * Informs the behavior that springloading for a given interaction was cancelled or activated.
+     * 
+     * @param interaction The springloaded interaction object providing this information.
+     */
     @Generated
     @IsOptional
     @Selector("interactionDidFinish:")
@@ -23,8 +31,15 @@ public interface UISpringLoadedInteractionBehavior {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Returns whether springloading should begin or continue for a given interaction.
+     * 
+     * @param interaction The springloaded interaction object requesting this information
+     * @param context An object that provides information about the current drag.
+     * @return true if the interaction should begin or continue springloading.
+     */
     @Generated
     @Selector("shouldAllowInteraction:withContext:")
     boolean shouldAllowInteractionWithContext(UISpringLoadedInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object context);
+            @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
 }

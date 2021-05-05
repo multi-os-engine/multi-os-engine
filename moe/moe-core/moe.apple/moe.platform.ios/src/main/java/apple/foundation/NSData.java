@@ -48,6 +48,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Immutable Data		***************
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -202,10 +205,16 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @NInt
     public static native long version_static();
 
+    /**
+     * Create a Base-64, UTF-8 encoded NSData from the receiver's contents using the given options.
+     */
     @Generated
     @Selector("base64EncodedDataWithOptions:")
     public native NSData base64EncodedDataWithOptions(@NUInt long options);
 
+    /**
+     * Create a Base-64 encoded NSString from the receiver's contents using the given options.
+     */
     @Generated
     @Selector("base64EncodedStringWithOptions:")
     public native String base64EncodedStringWithOptions(@NUInt long options);
@@ -215,6 +224,11 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Selector("base64Encoding")
     public native String base64Encoding();
 
+    /**
+     * The -bytes method returns a pointer to a contiguous region of memory managed by the receiver.
+     * If the regions of memory represented by the receiver are already contiguous, it does so in O(1) time, otherwise it may take longer
+     * Using -enumerateByteRangesUsingBlock: will be efficient for both contiguous and discontiguous data.
+     */
     @Generated
     @Selector("bytes")
     public native ConstVoidPtr bytes();
@@ -231,8 +245,11 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * 'block' is called once for each contiguous region of memory in the receiver (once total for contiguous NSDatas), until either all bytes have been enumerated, or the 'stop' parameter is set to YES.
+     */
     @Generated
     @Selector("enumerateByteRangesUsingBlock:")
     public native void enumerateByteRangesUsingBlock(
@@ -255,14 +272,23 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Selector("init")
     public native NSData init();
 
+    /**
+     * Create an NSData from a Base-64, UTF-8 encoded NSData. By default, returns nil when the input is not recognized as valid Base-64.
+     */
     @Generated
     @Selector("initWithBase64EncodedData:options:")
     public native NSData initWithBase64EncodedDataOptions(NSData base64Data, @NUInt long options);
 
+    /**
+     * Create an NSData from a Base-64 encoded NSString using the given options. By default, returns nil when the input is not recognized as valid Base-64.
+     */
     @Generated
     @Selector("initWithBase64EncodedString:options:")
     public native NSData initWithBase64EncodedStringOptions(String base64String, @NUInt long options);
 
+    /**
+     * These methods first appeared in NSData.h on OS X 10.9 and iOS 7.0. They are deprecated in the same releases in favor of the methods in the NSDataBase64Encoding category. However, these methods have existed for several releases, so they may be used for applications targeting releases prior to OS X 10.9 and iOS 7.0.
+     */
     @Generated
     @Deprecated
     @Selector("initWithBase64Encoding:")
@@ -287,7 +313,7 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSData initWithCoder(NSCoder aDecoder);
+    public native NSData initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
@@ -325,6 +351,7 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @NUInt
     public native long length();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -354,6 +381,9 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     public native boolean writeToFileOptionsError(String path, @NUInt long writeOptionsMask,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
+    /**
+     * the atomically flag is ignored if the url is not of a type the supports atomic writes
+     */
     @Generated
     @Selector("writeToURL:atomically:")
     public native boolean writeToURLAtomically(NSURL url, boolean atomically);
@@ -367,13 +397,28 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Generated
     public interface Block_enumerateByteRangesUsingBlock {
         @Generated
-        void call_enumerateByteRangesUsingBlock(ConstVoidPtr arg0, @ByValue NSRange arg1, BoolPtr arg2);
+        void call_enumerateByteRangesUsingBlock(ConstVoidPtr bytes, @ByValue NSRange byteRange, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithBytesNoCopyLengthDeallocator {
         @Generated
-        void call_initWithBytesNoCopyLengthDeallocator(VoidPtr arg0, @NUInt long arg1);
+        void call_initWithBytesNoCopyLengthDeallocator(VoidPtr bytes, @NUInt long length);
     }
+
+    @Generated
+    @Selector("compressedDataUsingAlgorithm:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object compressedDataUsingAlgorithmError(@NInt long algorithm,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * These methods return a compressed or decompressed version of the receiver using the specified algorithm.
+     */
+    @Generated
+    @Selector("decompressedDataUsingAlgorithm:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object decompressedDataUsingAlgorithmError(@NInt long algorithm,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

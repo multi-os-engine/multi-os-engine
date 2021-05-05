@@ -121,6 +121,9 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * use file to determine UTI. assumes file is complete
+     */
     @Generated
     @Selector("interactionControllerWithURL:")
     public static native UIDocumentInteractionController interactionControllerWithURL(NSURL url);
@@ -160,10 +163,16 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @NInt
     public static native long version_static();
 
+    /**
+     * default is nil. if set, updates UTI, icon and name
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
+    /**
+     * determined from name if set, URL otherwise, override if the name or URL uses a custom scheme and the UTI can't be determined automatically
+     */
     @Generated
     @Selector("UTI")
     public native String UTI();
@@ -192,11 +201,17 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Selector("actionSheetCancel:")
     public native void actionSheetCancel(UIActionSheet actionSheet);
 
+    /**
+     * additional plist information for application to pass to receiver (must be a plist object). default is nil.
+     */
     @Generated
     @Selector("annotation")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object annotation();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -208,18 +223,31 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Selector("didPresentActionSheet:")
     public native void didPresentActionSheet(UIActionSheet actionSheet);
 
+    /**
+     * Dismiss any visible menus.
+     */
     @Generated
     @Selector("dismissMenuAnimated:")
     public native void dismissMenuAnimated(boolean animated);
 
+    /**
+     * Dismiss the full screen quick look window if it is visible.
+     */
     @Generated
     @Selector("dismissPreviewAnimated:")
     public native void dismissPreviewAnimated(boolean animated);
 
+    /**
+     * Returns an array of gesture recognizers preconfigured to manage the quick look and options menu.
+     * These gesture recognizers should only be installed on your view when the file has been copied locally and is present at URL.
+     */
     @Generated
     @Selector("gestureRecognizers")
     public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
 
+    /**
+     * determined from name if set, URL otherwise. will return a generic document icon if an icon cannot be determined. returns an array of icons sorted from smallest to largest.
+     */
     @Generated
     @Selector("icons")
     public native NSArray<? extends UIImage> icons();
@@ -228,6 +256,9 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Selector("init")
     public native UIDocumentInteractionController init();
 
+    /**
+     * determined from URL, override if the URL uses a custom scheme and the name can't be determined automatically
+     */
     @Generated
     @Selector("name")
     public native String name();
@@ -236,6 +267,11 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Selector("presentOpenInMenuFromBarButtonItem:animated:")
     public native boolean presentOpenInMenuFromBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
 
+    /**
+     * Presents a menu allowing the user to open the document in another application.  The menu
+     * will contain all applications that can open the item at URL.
+     * Returns NO if there are no applications that can open the item at URL.
+     */
     @Generated
     @Selector("presentOpenInMenuFromRect:inView:animated:")
     public native boolean presentOpenInMenuFromRectInViewAnimated(@ByValue CGRect rect, UIView view, boolean animated);
@@ -244,23 +280,43 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Selector("presentOptionsMenuFromBarButtonItem:animated:")
     public native boolean presentOptionsMenuFromBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
 
+    /**
+     * This is the default method you should call to give your users the option to quick look, open, or copy the document.
+     * Presents a menu allowing the user to Quick Look, open, or copy the item specified by URL.
+     * This automatically determines the correct application or applications that can open the item at URL.
+     * Returns NO if the options menu contained no options and was not opened.
+     * Note that you must implement the delegate method documentInteractionControllerViewControllerForPreview: to get the Quick Look menu item.
+     */
     @Generated
     @Selector("presentOptionsMenuFromRect:inView:animated:")
     public native boolean presentOptionsMenuFromRectInViewAnimated(@ByValue CGRect rect, UIView view, boolean animated);
 
+    /**
+     * Bypasses the menu and opens the full screen preview window for the item at URL.  Returns NO if the item could not be previewed.
+     * Note that you must implement the delegate method documentInteractionControllerViewControllerForPreview: to preview the document.
+     */
     @Generated
     @Selector("presentPreviewAnimated:")
     public native boolean presentPreviewAnimated(boolean animated);
 
+    /**
+     * additional plist information for application to pass to receiver (must be a plist object). default is nil.
+     */
     @Generated
     @Selector("setAnnotation:")
     public native void setAnnotation(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) UIDocumentInteractionControllerDelegate value);
 
+    /**
+     * default is nil
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIDocumentInteractionControllerDelegate value) {
         Object __old = delegate();
@@ -273,14 +329,23 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
         }
     }
 
+    /**
+     * determined from URL, override if the URL uses a custom scheme and the name can't be determined automatically
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * default is nil. if set, updates UTI, icon and name
+     */
     @Generated
     @Selector("setURL:")
     public native void setURL(NSURL value);
 
+    /**
+     * determined from name if set, URL otherwise, override if the name or URL uses a custom scheme and the UTI can't be determined automatically
+     */
     @Generated
     @Selector("setUTI:")
     public native void setUTI(String value);

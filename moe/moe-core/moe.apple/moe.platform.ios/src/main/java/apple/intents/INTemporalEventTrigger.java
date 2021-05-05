@@ -97,7 +97,7 @@ public class INTemporalEventTrigger extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -110,7 +110,7 @@ public class INTemporalEventTrigger extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native INTemporalEventTrigger initWithCoder(NSCoder aDecoder);
+    public native INTemporalEventTrigger initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDateComponentsRange:")

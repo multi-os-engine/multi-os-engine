@@ -19,6 +19,9 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * NSItemProvider-related error codes
+ */
 @Generated
 public final class NSItemProviderErrorCode {
     @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFFFFFFL;

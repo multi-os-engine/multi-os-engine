@@ -19,9 +19,12 @@ package apple.mapkit;
 import apple.NSObject;
 import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
+import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import apple.foundation.struct.NSRange;
+import apple.mapkit.protocol.MKGeoJSONObject;
 import apple.mapkit.struct.MKMapPoint;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -31,6 +34,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -49,7 +53,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MKMultiPoint extends MKShape {
+public class MKMultiPoint extends MKShape implements MKGeoJSONObject {
     static {
         NatJ.register();
     }
@@ -156,6 +160,10 @@ public class MKMultiPoint extends MKShape {
     @NInt
     public static native long version_static();
 
+    /**
+     * Unproject and copy points into the provided array of coordinates that
+     * must be large enough to hold range.length coordinates.
+     */
     @Generated
     @Selector("getCoordinates:range:")
     public native void getCoordinatesRange(
@@ -175,4 +183,17 @@ public class MKMultiPoint extends MKShape {
     @Selector("points")
     @ReferenceInfo(type = MKMapPoint.class)
     public native Ptr<MKMapPoint> points();
+
+    /**
+     * Conveniences for determining the location/fraction (0.0 -> 1.0) distance-wise
+     * at which a point or set of points exists on the shape
+     */
+    @Generated
+    @Selector("locationAtPointIndex:")
+    @NFloat
+    public native double locationAtPointIndex(@NUInt long index);
+
+    @Generated
+    @Selector("locationsAtPointIndexes:")
+    public native NSArray<? extends NSNumber> locationsAtPointIndexes(NSIndexSet indexes);
 }

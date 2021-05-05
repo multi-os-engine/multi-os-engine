@@ -40,6 +40,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVMutableDateRangeMetadataGroup
+ * 
+ * AVMutableDateRangeMetadataGroup is used to represent a mutable collection of metadata items that are valid for use within a specific range of dates.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +156,9 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
     @NInt
     public static native long version_static();
 
+    /**
+     * indicates the end date of the metadata
+     */
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -164,22 +172,37 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
     public native AVMutableDateRangeMetadataGroup initWithItemsStartDateEndDate(NSArray<? extends AVMetadataItem> items,
             NSDate startDate, NSDate endDate);
 
+    /**
+     * an array of AVMetadataItems
+     */
     @Generated
     @Selector("items")
     public native NSArray<? extends AVMetadataItem> items();
 
+    /**
+     * indicates the end date of the metadata
+     */
     @Generated
     @Selector("setEndDate:")
     public native void setEndDate(NSDate value);
 
+    /**
+     * an array of AVMetadataItems
+     */
     @Generated
     @Selector("setItems:")
     public native void setItems(NSArray<? extends AVMetadataItem> value);
 
+    /**
+     * indicates the start date of the metadata
+     */
     @Generated
     @Selector("setStartDate:")
     public native void setStartDate(NSDate value);
 
+    /**
+     * indicates the start date of the metadata
+     */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

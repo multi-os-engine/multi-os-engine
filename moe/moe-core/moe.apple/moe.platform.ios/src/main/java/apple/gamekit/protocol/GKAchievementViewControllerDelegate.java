@@ -24,11 +24,17 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Optional delegate
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKAchievementViewControllerDelegate")
 public interface GKAchievementViewControllerDelegate {
+    /**
+     * The achievement view has finished
+     */
     @Generated
     @Selector("achievementViewControllerDidFinish:")
     void achievementViewControllerDidFinish(GKAchievementViewController viewController);

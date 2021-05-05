@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIStatusBarStyle {
+    /**
+     * Automatically chooses light or dark content based on the user interface style
+     */
     @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * Light content, for use on dark backgrounds
+     */
     @Generated @NInt public static final long LightContent = 0x0000000000000001L;
     @Generated @NInt public static final long BlackTranslucent = 0x0000000000000001L;
     @Generated @NInt public static final long BlackOpaque = 0x0000000000000002L;
@@ -29,4 +35,9 @@ public final class UIStatusBarStyle {
     @Generated
     private UIStatusBarStyle() {
     }
+
+    /**
+     * Dark content, for use on light backgrounds
+     */
+    @Generated @NInt public static final long DarkContent = 0x0000000000000003L;
 }

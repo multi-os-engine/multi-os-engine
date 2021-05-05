@@ -123,6 +123,11 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * [@property] label:
+     * 
+     * The descriptor label.
+     */
     @Generated
     @Selector("label")
     public native String label();
@@ -133,6 +138,9 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Rasterization and visibility state
+     */
     @Generated
     @Selector("rasterSampleCount")
     @NUInt
@@ -150,18 +158,42 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * [@property] label:
+     * 
+     * The descriptor label.
+     */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
+    /**
+     * Rasterization and visibility state
+     */
     @Generated
     @Selector("setRasterSampleCount:")
     public native void setRasterSampleCount(@NUInt long value);
 
+    /**
+     * [@property] threadgroupSizeMatchesTileSize:
+     * 
+     * Whether all threadgroups associated with this pipeline will cover tiles entirely.
+     * 
+     * Metal can optimize code generation for this case.
+     */
     @Generated
     @Selector("setThreadgroupSizeMatchesTileSize:")
     public native void setThreadgroupSizeMatchesTileSize(boolean value);
 
+    /**
+     * [@property] tileFunction:
+     * 
+     * The kernel or fragment function that serves as the tile shader for this pipeline.
+     * 
+     * Both kernel-based and fragment-based tile pipelines dispatches will barrier against previous
+     * draws and other dispatches. Kernel-based pipelines will wait until all prior access to the tile completes.
+     * Fragment-based pipelines will only wait until all prior access to the fragment's location completes.
+     */
     @Generated
     @Selector("setTileFunction:")
     public native void setTileFunction(@Mapped(ObjCObjectMapper.class) MTLFunction value);
@@ -174,6 +206,13 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * [@property] threadgroupSizeMatchesTileSize:
+     * 
+     * Whether all threadgroups associated with this pipeline will cover tiles entirely.
+     * 
+     * Metal can optimize code generation for this case.
+     */
     @Generated
     @Selector("threadgroupSizeMatchesTileSize")
     public native boolean threadgroupSizeMatchesTileSize();
@@ -182,6 +221,15 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Selector("tileBuffers")
     public native MTLPipelineBufferDescriptorArray tileBuffers();
 
+    /**
+     * [@property] tileFunction:
+     * 
+     * The kernel or fragment function that serves as the tile shader for this pipeline.
+     * 
+     * Both kernel-based and fragment-based tile pipelines dispatches will barrier against previous
+     * draws and other dispatches. Kernel-based pipelines will wait until all prior access to the tile completes.
+     * Fragment-based pipelines will only wait until all prior access to the fragment's location completes.
+     */
     @Generated
     @Selector("tileFunction")
     @MappedReturn(ObjCObjectMapper.class)
@@ -191,4 +239,49 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] maxTotalThreadsPerThreadgroup
+     * 
+     * Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
+     */
+    @Generated
+    @Selector("maxTotalThreadsPerThreadgroup")
+    @NUInt
+    public native long maxTotalThreadsPerThreadgroup();
+
+    /**
+     * [@property] maxTotalThreadsPerThreadgroup
+     * 
+     * Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
+     */
+    @Generated
+    @Selector("setMaxTotalThreadsPerThreadgroup:")
+    public native void setMaxTotalThreadsPerThreadgroup(@NUInt long value);
+
+    /**
+     * [@property] binaryArchives
+     * 
+     * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
+     * 
+     * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * 
+     * @see MTLBinaryArchive
+     */
+    @Generated
+    @Selector("binaryArchives")
+    public native NSArray<?> binaryArchives();
+
+    /**
+     * [@property] binaryArchives
+     * 
+     * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
+     * 
+     * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * 
+     * @see MTLBinaryArchive
+     */
+    @Generated
+    @Selector("setBinaryArchives:")
+    public native void setBinaryArchives(NSArray<?> value);
 }

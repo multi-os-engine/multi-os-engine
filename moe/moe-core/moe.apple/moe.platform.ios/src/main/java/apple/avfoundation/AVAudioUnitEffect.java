@@ -42,6 +42,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioUnitEffect
+ * 
+ * an AVAudioUnit that processes audio in real-time
+ * 
+ * An AVAudioUnitEffect represents an audio unit of type kAudioUnitType_Effect,
+ * kAudioUnitType_MusicEffect, kAudioUnitType_Panner, kAudioUnitType_RemoteEffect or 
+ * kAudioUnitType_RemoteMusicEffect.
+ * 
+ * These effects run in real-time and process some x number of audio input 
+ * samples to produce x number of audio output samples. A delay unit is an 
+ * example of an effect unit.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -159,6 +172,11 @@ public class AVAudioUnitEffect extends AVAudioUnit {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] bypass
+     * 
+     * Bypass state of the audio unit.
+     */
     @Generated
     @Selector("bypass")
     public native boolean bypass();
@@ -167,11 +185,31 @@ public class AVAudioUnitEffect extends AVAudioUnit {
     @Selector("init")
     public native AVAudioUnitEffect init();
 
+    /**
+     * initWithAudioComponentDescription:
+     * 
+     * Create an AVAudioUnitEffect object.
+     * 
+     * The componentType must be one of these types
+     * kAudioUnitType_Effect
+     * kAudioUnitType_MusicEffect
+     * kAudioUnitType_Panner
+     * kAudioUnitType_RemoteEffect
+     * kAudioUnitType_RemoteMusicEffect
+     * 
+     * @param audioComponentDescription
+     * AudioComponentDescription of the audio unit to be instantiated.
+     */
     @Generated
     @Selector("initWithAudioComponentDescription:")
     public native AVAudioUnitEffect initWithAudioComponentDescription(
             @ByValue AudioComponentDescription audioComponentDescription);
 
+    /**
+     * [@property] bypass
+     * 
+     * Bypass state of the audio unit.
+     */
     @Generated
     @Selector("setBypass:")
     public native void setBypass(boolean value);

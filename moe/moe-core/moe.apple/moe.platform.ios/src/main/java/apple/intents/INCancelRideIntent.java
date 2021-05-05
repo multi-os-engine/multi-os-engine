@@ -94,7 +94,7 @@ public class INCancelRideIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCancelRideIntent initWithCoder(NSCoder aDecoder);
+    public native INCancelRideIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRideIdentifier:")
@@ -135,6 +135,9 @@ public class INCancelRideIntent extends INIntent {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Specifies the identifier of the ride to cancel.
+     */
     @Generated
     @Selector("rideIdentifier")
     public native String rideIdentifier();

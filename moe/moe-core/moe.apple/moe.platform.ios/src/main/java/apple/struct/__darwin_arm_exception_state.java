@@ -50,26 +50,44 @@ public final class __darwin_arm_exception_state extends StructObject {
         set__far(__far);
     }
 
+    /**
+     * number of arm exception taken
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int __exception();
 
+    /**
+     * number of arm exception taken
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void set__exception(int value);
 
+    /**
+     * Fault status
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int __fsr();
 
+    /**
+     * Fault status
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void set__fsr(int value);
 
+    /**
+     * Virtual Fault Address
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int __far();
 
+    /**
+     * Virtual Fault Address
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void set__far(int value);

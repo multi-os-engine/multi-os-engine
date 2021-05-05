@@ -50,26 +50,44 @@ public final class KernOffsetTable extends StructObject {
         setOffsetTable(offsetTable);
     }
 
+    /**
+     * first glyph in class range
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native char firstGlyph();
 
+    /**
+     * first glyph in class range
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setFirstGlyph(char value);
 
+    /**
+     * number of glyphs in class range
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char nGlyphs();
 
+    /**
+     * number of glyphs in class range
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setNGlyphs(char value);
 
+    /**
+     * offset table starts here
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native char offsetTable();
 
+    /**
+     * offset table starts here
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setOffsetTable(char value);

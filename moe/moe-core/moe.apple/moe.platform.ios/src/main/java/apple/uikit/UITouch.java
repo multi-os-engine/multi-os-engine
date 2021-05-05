@@ -156,35 +156,64 @@ public class UITouch extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Altitude angle. Valid only for stylus touch types.
+     * Zero radians indicates that the stylus is parallel to the screen surface,
+     * while M_PI/2 radians indicates that it is normal to the screen surface.
+     */
     @Generated
     @Selector("altitudeAngle")
     @NFloat
     public native double altitudeAngle();
 
+    /**
+     * Azimuth angle. Valid only for stylus touch types. Zero radians points along the positive X axis.
+     * Passing a nil for the view parameter will return the azimuth relative to the touch's window.
+     */
     @Generated
     @Selector("azimuthAngleInView:")
     @NFloat
     public native double azimuthAngleInView(UIView view);
 
+    /**
+     * A unit vector that points in the direction of the azimuth angle. Valid only for stylus touch types.
+     * Passing nil for the view parameter will return a unit vector relative to the touch's window.
+     */
     @Generated
     @Selector("azimuthUnitVectorInView:")
     @ByValue
     public native CGVector azimuthUnitVectorInView(UIView view);
 
+    /**
+     * A set of properties that has estimated values
+     * Only denoting properties that are currently estimated
+     */
     @Generated
     @Selector("estimatedProperties")
     @NInt
     public native long estimatedProperties();
 
+    /**
+     * A set of properties that expect to have incoming updates in the future.
+     * If no updates are expected for an estimated property the current value is our final estimate.
+     * This happens e.g. for azimuth/altitude values when entering from the edges
+     */
     @Generated
     @Selector("estimatedPropertiesExpectingUpdates")
     @NInt
     public native long estimatedPropertiesExpectingUpdates();
 
+    /**
+     * An index which allows you to correlate updates with the original touch.
+     * Is only guaranteed non-nil if this UITouch expects or is an update.
+     */
     @Generated
     @Selector("estimationUpdateIndex")
     public native NSNumber estimationUpdateIndex();
 
+    /**
+     * Force of the touch, where 1.0 represents the force of an average touch
+     */
     @Generated
     @Selector("force")
     @NFloat
@@ -208,6 +237,10 @@ public class UITouch extends NSObject {
     @ByValue
     public native CGPoint locationInView(UIView view);
 
+    /**
+     * majorRadius and majorRadiusTolerance are in points
+     * The majorRadius will be accurate +/- the majorRadiusTolerance
+     */
     @Generated
     @Selector("majorRadius")
     @NFloat
@@ -218,6 +251,9 @@ public class UITouch extends NSObject {
     @NFloat
     public native double majorRadiusTolerance();
 
+    /**
+     * Maximum possible force with this input mechanism
+     */
     @Generated
     @Selector("maximumPossibleForce")
     @NFloat
@@ -228,6 +264,10 @@ public class UITouch extends NSObject {
     @NInt
     public native long phase();
 
+    /**
+     * Use these methods to gain additional precision that may be available from touches.
+     * Do not use precise locations for hit testing. A touch may hit test inside a view, yet have a precise location that lies just outside.
+     */
     @Generated
     @Selector("preciseLocationInView:")
     @ByValue
@@ -248,6 +288,9 @@ public class UITouch extends NSObject {
     @ByValue
     public native CGPoint previousLocationInView(UIView view);
 
+    /**
+     * touch down within a certain point within a certain amount of time
+     */
     @Generated
     @Selector("tapCount")
     @NUInt

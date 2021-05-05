@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This class is used to represent a calendar event.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -82,6 +85,9 @@ public class HMMutableCalendarEvent extends HMCalendarEvent {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The date component that specifies the time when the event is fired
+     */
     @Generated
     @Selector("fireDateComponents")
     public native NSDateComponents fireDateComponents();
@@ -138,6 +144,9 @@ public class HMMutableCalendarEvent extends HMCalendarEvent {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The date component that specifies the time when the event is fired
+     */
     @Generated
     @Selector("setFireDateComponents:")
     public native void setFireDateComponents(NSDateComponents value);

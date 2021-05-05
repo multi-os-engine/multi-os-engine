@@ -176,6 +176,9 @@ public class CKDatabase extends NSObject {
     public native void deleteSubscriptionWithIDCompletionHandler(String subscriptionID,
             @ObjCBlock(name = "call_deleteSubscriptionWithIDCompletionHandler") Block_deleteSubscriptionWithIDCompletionHandler completionHandler);
 
+    /**
+     * [@c] CKFetchRecordZonesOperation and @c CKModifyRecordZonesOperation are the more configurable, @c CKOperation -based alternatives to these methods
+     */
     @Generated
     @Selector("fetchAllRecordZonesWithCompletionHandler:")
     public native void fetchAllRecordZonesWithCompletionHandler(
@@ -186,6 +189,9 @@ public class CKDatabase extends NSObject {
     public native void fetchAllSubscriptionsWithCompletionHandler(
             @ObjCBlock(name = "call_fetchAllSubscriptionsWithCompletionHandler") Block_fetchAllSubscriptionsWithCompletionHandler completionHandler);
 
+    /**
+     * [@c] CKFetchRecordsOperation and @c CKModifyRecordsOperation are the more configurable, @c CKOperation -based alternatives to these methods
+     */
     @Generated
     @Selector("fetchRecordWithID:completionHandler:")
     public native void fetchRecordWithIDCompletionHandler(CKRecordID recordID,
@@ -196,6 +202,9 @@ public class CKDatabase extends NSObject {
     public native void fetchRecordZoneWithIDCompletionHandler(CKRecordZoneID zoneID,
             @ObjCBlock(name = "call_fetchRecordZoneWithIDCompletionHandler") Block_fetchRecordZoneWithIDCompletionHandler completionHandler);
 
+    /**
+     * [@c] CKFetchSubscriptionsOperation and @c CKModifySubscriptionsOperation are the more configurable, @c CKOperation -based alternative to these methods
+     */
     @Generated
     @Selector("fetchSubscriptionWithID:completionHandler:")
     public native void fetchSubscriptionWithIDCompletionHandler(String subscriptionID,
@@ -205,6 +214,12 @@ public class CKDatabase extends NSObject {
     @Selector("init")
     public native CKDatabase init();
 
+    /**
+     * [@c] CKQueryOperation is the more configurable, @c CKOperation -based alternative to this method
+     * Queries can potentially return a large number of records, and the server will return those records in batches. This convenience API will only fetch the first batch of results (equivalent to using @c CKQueryOperationMaximumResults).
+     * If you would like to fetch all results, use @c CKQueryOperation and its @c CKQueryCursor instead.
+     * Queries invoked within a @c sharedCloudDatabase must specify a @c zoneID.  Cross-zone queries are not supported in a @c sharedCloudDatabase
+     */
     @Generated
     @Selector("performQuery:inZoneWithID:completionHandler:")
     public native void performQueryInZoneWithIDCompletionHandler(CKQuery query, CKRecordZoneID zoneID,
@@ -229,83 +244,84 @@ public class CKDatabase extends NSObject {
     @Generated
     public interface Block_deleteRecordWithIDCompletionHandler {
         @Generated
-        void call_deleteRecordWithIDCompletionHandler(CKRecordID arg0, NSError arg1);
+        void call_deleteRecordWithIDCompletionHandler(CKRecordID recordID, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteRecordZoneWithIDCompletionHandler {
         @Generated
-        void call_deleteRecordZoneWithIDCompletionHandler(CKRecordZoneID arg0, NSError arg1);
+        void call_deleteRecordZoneWithIDCompletionHandler(CKRecordZoneID zoneID, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteSubscriptionWithIDCompletionHandler {
         @Generated
-        void call_deleteSubscriptionWithIDCompletionHandler(String arg0, NSError arg1);
+        void call_deleteSubscriptionWithIDCompletionHandler(String subscriptionID, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchAllRecordZonesWithCompletionHandler {
         @Generated
-        void call_fetchAllRecordZonesWithCompletionHandler(NSArray<? extends CKRecordZone> arg0, NSError arg1);
+        void call_fetchAllRecordZonesWithCompletionHandler(NSArray<? extends CKRecordZone> zones, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchAllSubscriptionsWithCompletionHandler {
         @Generated
-        void call_fetchAllSubscriptionsWithCompletionHandler(NSArray<? extends CKSubscription> arg0, NSError arg1);
+        void call_fetchAllSubscriptionsWithCompletionHandler(NSArray<? extends CKSubscription> subscriptions,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchRecordWithIDCompletionHandler {
         @Generated
-        void call_fetchRecordWithIDCompletionHandler(CKRecord arg0, NSError arg1);
+        void call_fetchRecordWithIDCompletionHandler(CKRecord record, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchRecordZoneWithIDCompletionHandler {
         @Generated
-        void call_fetchRecordZoneWithIDCompletionHandler(CKRecordZone arg0, NSError arg1);
+        void call_fetchRecordZoneWithIDCompletionHandler(CKRecordZone zone, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchSubscriptionWithIDCompletionHandler {
         @Generated
-        void call_fetchSubscriptionWithIDCompletionHandler(CKSubscription arg0, NSError arg1);
+        void call_fetchSubscriptionWithIDCompletionHandler(CKSubscription subscription, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_performQueryInZoneWithIDCompletionHandler {
         @Generated
-        void call_performQueryInZoneWithIDCompletionHandler(NSArray<? extends CKRecord> arg0, NSError arg1);
+        void call_performQueryInZoneWithIDCompletionHandler(NSArray<? extends CKRecord> results, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveRecordCompletionHandler {
         @Generated
-        void call_saveRecordCompletionHandler(CKRecord arg0, NSError arg1);
+        void call_saveRecordCompletionHandler(CKRecord record, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveRecordZoneCompletionHandler {
         @Generated
-        void call_saveRecordZoneCompletionHandler(CKRecordZone arg0, NSError arg1);
+        void call_saveRecordZoneCompletionHandler(CKRecordZone zone, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveSubscriptionCompletionHandler {
         @Generated
-        void call_saveSubscriptionCompletionHandler(CKSubscription arg0, NSError arg1);
+        void call_saveSubscriptionCompletionHandler(CKSubscription subscription, NSError error);
     }
 }

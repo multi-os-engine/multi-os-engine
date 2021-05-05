@@ -6,6 +6,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSCopying;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -29,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSFetchIndexElementDescription extends NSObject implements NSCoding {
+public class NSFetchIndexElementDescription extends NSObject implements NSCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -75,6 +76,9 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Default NSIndexTypeBinary
+     */
     @Generated
     @Selector("collationType")
     @NUInt
@@ -90,7 +94,7 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -107,7 +111,7 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFetchIndexElementDescription initWithCoder(NSCoder aDecoder);
+    public native NSFetchIndexElementDescription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithProperty:collationType:")
@@ -127,6 +131,9 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Default YES. Control whether this is an ascending or descending index for indexes which support direction.
+     */
     @Generated
     @Selector("isAscending")
     public native boolean isAscending();
@@ -145,6 +152,9 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * This may be an NSExpressionDescription that expresses a function
+     */
     @Generated
     @Selector("property")
     public native NSPropertyDescription property();
@@ -161,10 +171,16 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Default YES. Control whether this is an ascending or descending index for indexes which support direction.
+     */
     @Generated
     @Selector("setAscending:")
     public native void setAscending(boolean value);
 
+    /**
+     * Default NSIndexTypeBinary
+     */
     @Generated
     @Selector("setCollationType:")
     public native void setCollationType(@NUInt long value);
@@ -181,4 +197,10 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
 }

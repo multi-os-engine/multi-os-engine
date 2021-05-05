@@ -23,6 +23,7 @@ import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.foundation.NSUUID;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -45,6 +46,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEFilterFlow
+ * 
+ * The NEFilterFlow class declares the programmatic interface of an object that represents a flow of network data to be filtered.
+ * 
+ * NEFilterFlow is part of NetworkExtension.framework
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -160,6 +168,11 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] URL
+     * 
+     * The flow's HTTP request URL. Will be nil if the flow did not originate from WebKit.
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -172,7 +185,7 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -180,7 +193,7 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterFlow initWithCoder(NSCoder aDecoder);
+    public native NEFilterFlow initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -188,15 +201,49 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] sourceAppIdentifier
+     * 
+     * A string containing the identifier of the source application of the flow. This identifier stays the same for all versions and builds of the application. This identifier is unique among all applications.
+     */
     @Generated
     @Selector("sourceAppIdentifier")
     public native String sourceAppIdentifier();
 
+    /**
+     * [@property] sourceAppUniqueIdentifier
+     * 
+     * A byte string that uniquely identifies the binary for each build of the source application of the flow.
+     */
     @Generated
     @Selector("sourceAppUniqueIdentifier")
     public native NSData sourceAppUniqueIdentifier();
 
+    /**
+     * [@property] sourceAppVersion
+     * 
+     * The short version string of the source application. Will be nil if the app info is unavailable.
+     */
     @Generated
     @Selector("sourceAppVersion")
     public native String sourceAppVersion();
+
+    /**
+     * [@property] direction
+     * 
+     * Initial direciton of the flow (outgoing or incoming flow)
+     */
+    @Generated
+    @Selector("direction")
+    @NInt
+    public native long direction();
+
+    /**
+     * [@property] identifier
+     * 
+     * The unique identifier of the flow.
+     */
+    @Generated
+    @Selector("identifier")
+    public native NSUUID identifier();
 }

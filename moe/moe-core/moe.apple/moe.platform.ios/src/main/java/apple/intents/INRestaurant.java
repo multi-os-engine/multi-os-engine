@@ -167,7 +167,7 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +175,7 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRestaurant initWithCoder(NSCoder aDecoder);
+    public native INRestaurant initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLocation:name:vendorIdentifier:restaurantIdentifier:")
@@ -190,6 +190,9 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("name")
     public native String name();
 
+    /**
+     * vendor specific restaurant identifier. should match what Maps is ingesting through its data pipeline for the vendor.
+     */
     @Generated
     @Selector("restaurantIdentifier")
     public native String restaurantIdentifier();
@@ -202,10 +205,16 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * vendor specific restaurant identifier. should match what Maps is ingesting through its data pipeline for the vendor.
+     */
     @Generated
     @Selector("setRestaurantIdentifier:")
     public native void setRestaurantIdentifier(String value);
 
+    /**
+     * provider's vendor identifier
+     */
     @Generated
     @Selector("setVendorIdentifier:")
     public native void setVendorIdentifier(String value);
@@ -216,6 +225,9 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
         return supportsSecureCoding();
     }
 
+    /**
+     * provider's vendor identifier
+     */
     @Generated
     @Selector("vendorIdentifier")
     public native String vendorIdentifier();

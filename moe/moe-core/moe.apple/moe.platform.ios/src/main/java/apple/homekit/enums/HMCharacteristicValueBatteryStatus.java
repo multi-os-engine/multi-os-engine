@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]      HMCharacteristicValueBatteryStatus
+ * 
+ * [@constant]  HMCharacteristicValueBatteryStatusNormal  Battery level is normal.
+ * [@constant]  HMCharacteristicValueBatteryStatusLow     Battery level is low.
+ */
 @Generated
 public final class HMCharacteristicValueBatteryStatus {
     @Generated @NInt public static final long Normal = 0x0000000000000000L;

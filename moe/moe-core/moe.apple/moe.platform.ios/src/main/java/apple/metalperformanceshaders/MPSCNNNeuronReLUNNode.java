@@ -23,6 +23,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A node representing a MPSCNNNeuronReLUN kernel
+ * 
+ * For each pixel, applies the following function:
+ * [@code]
+ *     f(x) = min((x >= 0 ? x : a * x), b)
+ * [@endcode]
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -90,6 +98,9 @@ public class MPSCNNNeuronReLUNNode extends MPSCNNNeuronNode {
     @Selector("init")
     public native MPSCNNNeuronReLUNNode init();
 
+    /**
+     * Create an autoreleased node with default values for parameters a & b
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNNeuronReLUNNode initWithSource(MPSNNImageNode sourceNode);
@@ -125,6 +136,9 @@ public class MPSCNNNeuronReLUNNode extends MPSCNNNeuronNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Create an autoreleased node with default values for parameters a & b
+     */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSCNNNeuronReLUNNode nodeWithSource(MPSNNImageNode sourceNode);
@@ -153,4 +167,9 @@ public class MPSCNNNeuronReLUNNode extends MPSCNNNeuronNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("nodeWithSource:descriptor:")
+    public static native MPSCNNNeuronReLUNNode nodeWithSourceDescriptor(MPSNNImageNode sourceNode,
+            MPSNNNeuronDescriptor descriptor);
 }

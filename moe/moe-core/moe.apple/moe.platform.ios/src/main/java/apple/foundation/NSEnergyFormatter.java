@@ -151,6 +151,9 @@ public class NSEnergyFormatter extends NSFormatter {
     @NInt
     public static native long version_static();
 
+    /**
+     * No parsing is supported. This method will return NO.
+     */
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
     public native boolean getObjectValueForStringErrorDescription(
@@ -163,44 +166,74 @@ public class NSEnergyFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSEnergyFormatter initWithCoder(NSCoder aDecoder);
+    public native NSEnergyFormatter initWithCoder(NSCoder coder);
 
+    /**
+     * default is NO; if it is set to YES, NSEnergyFormatterUnitKilocalorie may be “C” instead of “kcal"
+     */
     @Generated
     @Selector("isForFoodEnergyUse")
     public native boolean isForFoodEnergyUse();
 
+    /**
+     * default is NO; if it is set to YES, NSEnergyFormatterUnitKilocalorie may be “C” instead of “kcal"
+     */
     @Generated
     @Selector("setForFoodEnergyUse:")
     public native void setForFoodEnergyUse(boolean value);
 
+    /**
+     * default is NSNumberFormatter with NSNumberFormatterDecimalStyle
+     */
     @Generated
     @Selector("numberFormatter")
     public native NSNumberFormatter numberFormatter();
 
+    /**
+     * default is NSNumberFormatter with NSNumberFormatterDecimalStyle
+     */
     @Generated
     @Selector("setNumberFormatter:")
     public native void setNumberFormatter(NSNumberFormatter value);
 
+    /**
+     * default is NSFormattingUnitStyleMedium
+     */
     @Generated
     @Selector("setUnitStyle:")
     public native void setUnitStyle(@NInt long value);
 
+    /**
+     * Format a number in joules to a localized string with the locale-appropriate unit and an appropriate scale (e.g. 10.3J = 2.46cal in the US locale).
+     */
     @Generated
     @Selector("stringFromJoules:")
     public native String stringFromJoules(double numberInJoules);
 
+    /**
+     * Format a combination of a number and an unit to a localized string.
+     */
     @Generated
     @Selector("stringFromValue:unit:")
     public native String stringFromValueUnit(double value, @NInt long unit);
 
+    /**
+     * Return the locale-appropriate unit, the same unit used by -stringFromJoules:.
+     */
     @Generated
     @Selector("unitStringFromJoules:usedUnit:")
     public native String unitStringFromJoulesUsedUnit(double numberInJoules, NIntPtr unitp);
 
+    /**
+     * Return a localized string of the given unit, and if the unit is singular or plural is based on the given number.
+     */
     @Generated
     @Selector("unitStringFromValue:unit:")
     public native String unitStringFromValueUnit(double value, @NInt long unit);
 
+    /**
+     * default is NSFormattingUnitStyleMedium
+     */
     @Generated
     @Selector("unitStyle")
     @NInt

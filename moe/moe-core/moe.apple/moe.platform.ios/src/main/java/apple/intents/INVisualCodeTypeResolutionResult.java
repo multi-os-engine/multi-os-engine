@@ -73,11 +73,9 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
-    @Generated
-    @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(@NInt long valueToConfirm);
-
+    /**
+     * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithVisualCodeTypeToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -149,11 +147,10 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
-    @Generated
-    @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(@NInt long resolvedValue);
-
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INVisualCodeType. The resolvedValue can be different than the original INVisualCodeType. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedVisualCodeType:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -172,4 +169,15 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

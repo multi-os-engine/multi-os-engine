@@ -31,6 +31,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIActionSheetDelegate")
 public interface UIActionSheetDelegate {
+    /**
+     * Called when a button is clicked. The view will be automatically dismissed after this call returns
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -39,6 +42,9 @@ public interface UIActionSheetDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * after animation
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -47,6 +53,9 @@ public interface UIActionSheetDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * before animation and hiding view
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -55,6 +64,10 @@ public interface UIActionSheetDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when we cancel a view (eg. the user clicks the Home button). This is not called when the user clicks the cancel button.
+     * If not defined in the delegate, we simulate a click in the cancel button
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -63,6 +76,9 @@ public interface UIActionSheetDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * after animation
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -71,6 +87,9 @@ public interface UIActionSheetDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * before animation and showing view
+     */
     @Generated
     @IsOptional
     @Deprecated

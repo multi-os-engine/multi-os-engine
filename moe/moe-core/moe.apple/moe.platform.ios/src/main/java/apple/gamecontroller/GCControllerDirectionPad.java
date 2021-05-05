@@ -40,6 +40,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A direction pad is a common grouping of 2 axis inputs where the input can also be interpreted as 2 sets of mutually exclusive button pairs.
+ * Only one button in each pair, {up, down} and {left, right}, can be pressed at any one time.
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -193,13 +197,27 @@ public class GCControllerDirectionPad extends GCControllerElement {
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCControllerDirectionPad arg0, float arg1, float arg2);
+        void call_setValueChangedHandler(GCControllerDirectionPad dpad, float xValue, float yValue);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCControllerDirectionPad arg0, float arg1, float arg2);
+        void call_valueChangedHandler_ret(GCControllerDirectionPad dpad, float xValue, float yValue);
     }
+
+    /**
+     * Sets the normalized value for the direction pad's axis inputs. Will update the states of the direction pad's button inputs as well.
+     * 
+     * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
+     * 
+     * @param xAxis the value to set the xAxis of the touchpad to.
+     * @param yAxis the value to set the yAxis of the touchpad to.
+     * @see value
+     * @see pressed
+     */
+    @Generated
+    @Selector("setValueForXAxis:yAxis:")
+    public native void setValueForXAxisYAxis(float xAxis, float yAxis);
 }

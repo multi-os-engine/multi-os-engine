@@ -19,6 +19,20 @@ package apple.iad.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] ADAdType
+ * 
+ * [@const] ADAdTypeBanner A device-width banner ad. The banner height varies with
+ * device type and orientation:
+ * 
+ *   • On iPhone; portrait = DEVICE_WIDTH × 50px, landscape = DEVICE_WIDTH × 32px
+ *   • On iPad; both portrait & landscape = DEVICE_WIDTH × 66px
+ * 
+ * [@const] ADAdTypeMediumRectangle An 320 × 250px ad, based on the International
+ * Advertising Bureau's "Medium Rectangle" Interactive Marketing Unit.
+ * 
+ * Ad types that can be passed to -[ADBannerView -initWithAdType:].
+ */
 @Generated
 public final class ADAdType {
     @Generated @NInt public static final long Banner = 0x0000000000000000L;

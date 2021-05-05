@@ -19,6 +19,16 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]          HKCategoryValueAppleStandHour
+ * 
+ * Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierAppleStandHour type.
+ * 
+ * [@constant]      HKCategoryValueAppleStandHourStood  The user stood up and moved a little for at least one minute during
+ *                                                    the sample.
+ * [@constant]      HKCategoryValueAppleStandHourIdle   The user did not stand up and move a little for at least one
+ *                                                    continuous minute during the sample.
+ */
 @Generated
 public final class HKCategoryValueAppleStandHour {
     @Generated @NInt public static final long Stood = 0x0000000000000000L;

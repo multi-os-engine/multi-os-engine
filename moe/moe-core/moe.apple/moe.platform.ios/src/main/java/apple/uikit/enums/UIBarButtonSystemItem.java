@@ -49,4 +49,6 @@ public final class UIBarButtonSystemItem {
     @Generated
     private UIBarButtonSystemItem() {
     }
+
+    @Generated @NInt public static final long Close = 0x0000000000000018L;
 }

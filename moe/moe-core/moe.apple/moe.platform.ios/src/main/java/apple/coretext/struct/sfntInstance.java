@@ -66,10 +66,18 @@ public final class sfntInstance extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setFlags(short value);
 
+    /**
+     * [axisCount]
+     * room to grow since the header carries a tupleSize field
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int coord();
 
+    /**
+     * [axisCount]
+     * room to grow since the header carries a tupleSize field
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setCoord(int value);

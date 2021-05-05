@@ -159,17 +159,27 @@ public class HKObject extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property]      UUID
+     * 
+     * A unique identifier of the receiver in the HealthKit database.
+     */
     @Generated
     @Selector("UUID")
     public native NSUUID UUID();
 
+    /**
+     * [@property]      device
+     * 
+     * Represents the device that generated the data of the receiver.
+     */
     @Generated
     @Selector("device")
     public native HKDevice device();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -177,8 +187,16 @@ public class HKObject extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKObject initWithCoder(NSCoder aDecoder);
+    public native HKObject initWithCoder(NSCoder coder);
 
+    /**
+     * [@property]      metadata
+     * 
+     * Extra information describing properties of the receiver.
+     * 
+     * Keys must be NSString and values must be either NSString, NSNumber, NSDate, or
+     *                HKQuantity. See HKMetadata.h for potential metadata keys and values.
+     */
     @Generated
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();
@@ -188,6 +206,11 @@ public class HKObject extends NSObject implements NSSecureCoding {
     @Selector("source")
     public native HKSource source();
 
+    /**
+     * [@property]      sourceRevision
+     * 
+     * Represents the revision of the source responsible for saving the receiver.
+     */
     @Generated
     @Selector("sourceRevision")
     public native HKSourceRevision sourceRevision();

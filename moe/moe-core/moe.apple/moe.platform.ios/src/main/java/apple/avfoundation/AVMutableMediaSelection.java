@@ -154,6 +154,19 @@ public class AVMutableMediaSelection extends AVMediaSelection {
     @Selector("init")
     public native AVMutableMediaSelection init();
 
+    /**
+     * selectMediaOption:inMediaSelectionGroup:
+     * 
+     * Selects the media option described by the specified instance of AVMediaSelectionOption in the specified AVMediaSelectionGroup and deselects all other options in that group.
+     * 
+     * 			If the specified media selection option isn't a member of the specified media selection group, no change in presentation state will result.
+     * 			If the value of the property allowsEmptySelection of the AVMediaSelectionGroup is YES, you can pass nil for mediaSelectionOption to deselect all media selection options in the group.
+     * 
+     * @param			mediaSelectionOption
+     * 			The option to select.
+     * @param			mediaSelectionGroup
+     * 			The media selection group, obtained from the receiver's asset, that contains the specified option.
+     */
     @Generated
     @Selector("selectMediaOption:inMediaSelectionGroup:")
     public native void selectMediaOptionInMediaSelectionGroup(AVMediaSelectionOption mediaSelectionOption,

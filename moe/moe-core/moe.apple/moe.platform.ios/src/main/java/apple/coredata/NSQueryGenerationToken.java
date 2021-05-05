@@ -43,6 +43,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Class used to track database generations for generational querying.
+ * See NSManagedObjectContext for details on how it is used.
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -93,6 +97,9 @@ public class NSQueryGenerationToken extends NSObject implements NSCopying, NSSec
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Used to inform a context that it should use the current generation
+     */
     @Generated
     @Selector("currentQueryGenerationToken")
     public static native NSQueryGenerationToken currentQueryGenerationToken();
@@ -170,11 +177,11 @@ public class NSQueryGenerationToken extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSQueryGenerationToken initWithCoder(NSCoder aDecoder);
+    public native NSQueryGenerationToken initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("supportsSecureCoding")

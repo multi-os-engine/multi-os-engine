@@ -150,6 +150,11 @@ public class CBAttribute extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] UUID
+     * 
+     *      The Bluetooth UUID of the attribute.
+     */
     @Generated
     @Selector("UUID")
     public native CBUUID UUID();

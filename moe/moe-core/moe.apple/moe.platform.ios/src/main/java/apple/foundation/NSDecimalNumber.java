@@ -59,6 +59,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSDecimalNumber: the class		**********
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -127,6 +130,9 @@ public class NSDecimalNumber extends NSNumber {
     public static native NSDecimalNumber decimalNumberWithStringLocale(String numberValue,
             @Mapped(ObjCObjectMapper.class) Object locale);
 
+    /**
+     * compare two NSDecimalNumbers
+     */
     @Generated
     @Selector("defaultBehavior")
     @MappedReturn(ObjCObjectMapper.class)
@@ -252,6 +258,9 @@ public class NSDecimalNumber extends NSNumber {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * compare two NSDecimalNumbers
+     */
     @Generated
     @Selector("setDefaultBehavior:")
     public static native void setDefaultBehavior(@Mapped(ObjCObjectMapper.class) NSDecimalNumberBehaviors value);
@@ -361,6 +370,9 @@ public class NSDecimalNumber extends NSNumber {
     @Selector("zero")
     public static native NSDecimalNumber zero();
 
+    /**
+     * Round to the scale of the behavior.
+     */
     @Generated
     @Selector("compare:")
     @NInt
@@ -429,6 +441,9 @@ public class NSDecimalNumber extends NSNumber {
     @Selector("descriptionWithLocale:")
     public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
 
+    /**
+     * return 'd' for double
+     */
     @Generated
     @Selector("doubleValue")
     public native double doubleValue();
@@ -451,7 +466,7 @@ public class NSDecimalNumber extends NSNumber {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDecimalNumber initWithCoder(NSCoder aDecoder);
+    public native NSDecimalNumber initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDouble:")
@@ -518,6 +533,13 @@ public class NSDecimalNumber extends NSNumber {
     @Selector("initWithUnsignedShort:")
     public native NSNumber initWithUnsignedShort(char value);
 
+    /**
+     * One behavior per thread - The default behavior is
+     *   rounding mode: NSRoundPlain
+     *   scale: No defined scale (full precision)
+     *   ignore exactnessException
+     *   raise on overflow, underflow and divide by zero.
+     */
     @Generated
     @Selector("objCType")
     @MappedReturn(CStringMapper.class)

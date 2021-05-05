@@ -44,6 +44,26 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AUAudioUnitBusArray
+ * 
+ * Container for an audio unit's input or output busses.
+ * 
+ * 	Hosts can observe a bus property across all busses by using KVO on this object, without
+ * 	having to observe it on each individual bus. (One could add listeners to individual busses,
+ * 	but that means one has to observe bus count changes and add/remove listeners in response.
+ * 	Also, NSArray's addObserver:toObjectsAtIndexes:forKeyPath:options:context: is problematic;
+ * 	it does not let the individual objects override the observation request, and so a bus which
+ * 	is proxying a bus in an extension process does not get the message.)
+ * 
+ * 	Some audio units (e.g. mixers) support variable numbers of busses, via subclassing. When the
+ * 	bus count changes, a KVO notification is sent on "inputBusses" or "outputBusses," as
+ * 	appropriate.
+ * 
+ * 	Subclassers should see also the AUAudioUnitBusImplementation category.
+ * 
+ * 	The bus array is bridged to the v2 property kAudioUnitProperty_ElementCount.
+ */
 @Generated
 @Library("AudioToolbox")
 @Runtime(ObjCRuntime.class)
@@ -155,16 +175,27 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     @NInt
     public static native long version_static();
 
+    /**
+     * addObserverToAllBusses:forKeyPath:options:context:
+     * 
+     * Add a KVO observer for a property on all busses in the array.
+     */
     @Generated
     @Selector("addObserverToAllBusses:forKeyPath:options:context:")
     public native void addObserverToAllBussesForKeyPathOptionsContext(NSObject observer, String keyPath,
             @NUInt long options, VoidPtr context);
 
+    /**
+     * Which bus array this is (input or output).
+     */
     @Generated
     @Selector("busType")
     @NInt
     public native long busType();
 
+    /**
+     * [@property]	count
+     */
     @Generated
     @Selector("count")
     @NUInt
@@ -180,35 +211,71 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     @Selector("init")
     public native AUAudioUnitBusArray init();
 
+    /**
+     * initWithAudioUnit:busType:
+     * 
+     * Initializes an empty bus array.
+     */
     @Generated
     @Selector("initWithAudioUnit:busType:")
     public native AUAudioUnitBusArray initWithAudioUnitBusType(AUAudioUnit owner, @NInt long busType);
 
+    /**
+     * initWithAudioUnit:busType:busses:
+     * 
+     * Initializes by making a copy of the supplied bus array.
+     */
     @Generated
     @Selector("initWithAudioUnit:busType:busses:")
     public native AUAudioUnitBusArray initWithAudioUnitBusTypeBusses(AUAudioUnit owner, @NInt long busType,
             NSArray<? extends AUAudioUnitBus> busArray);
 
+    /**
+     * [@property]	countChangeable
+     * 
+     * Whether the array can have a variable number of busses.
+     * 
+     * 	The base implementation returns false.
+     */
     @Generated
     @Selector("isCountChangeable")
     public native boolean isCountChangeable();
 
+    /**
+     * objectAtIndexedSubscript:
+     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native AUAudioUnitBus objectAtIndexedSubscript(@NUInt long index);
 
+    /**
+     * The audio unit that owns the bus.
+     */
     @Generated
     @Selector("ownerAudioUnit")
     public native AUAudioUnit ownerAudioUnit();
 
+    /**
+     * removeObserverFromAllBusses:forKeyPath:context:
+     * 
+     * Remove a KVO observer for a property on all busses in the array.
+     */
     @Generated
     @Selector("removeObserverFromAllBusses:forKeyPath:context:")
     public native void removeObserverFromAllBussesForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
 
+    /**
+     * Sets the bus array to be a copy of the supplied array. The base class issues KVO notifications.
+     */
     @Generated
     @Selector("replaceBusses:")
     public native void replaceBusses(NSArray<? extends AUAudioUnitBus> busArray);
 
+    /**
+     * [@property]	setBusCount:error:
+     * 
+     * Change the number of busses in the array.
+     */
     @Generated
     @Selector("setBusCount:error:")
     public native boolean setBusCountError(@NUInt long count,

@@ -42,6 +42,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSDataAsset represents the contents of data entries in your asset catalog.
+ * Data assets are not in the same class of stored content as images, so you cannot use a data asset to get image data for an image.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -159,6 +163,9 @@ public class NSDataAsset extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * The data for this asset, as stored in the asset catalog
+     */
     @Generated
     @Selector("data")
     public native NSData data();
@@ -167,18 +174,30 @@ public class NSDataAsset extends NSObject implements NSCopying {
     @Selector("init")
     public native NSDataAsset init();
 
+    /**
+     * Equivalent to -initWithName:name bundle:[NSBundle mainBundle];
+     */
     @Generated
     @Selector("initWithName:")
     public native NSDataAsset initWithName(String name);
 
+    /**
+     * Create a data asset with the given name from the given bundle. Returns nil if the asset was not found.
+     */
     @Generated
     @Selector("initWithName:bundle:")
     public native NSDataAsset initWithNameBundle(String name, NSBundle bundle);
 
+    /**
+     * The name used to reference the data asset
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * The Uniform Type Identifier for this data object.
+     */
     @Generated
     @Selector("typeIdentifier")
     public native String typeIdentifier();

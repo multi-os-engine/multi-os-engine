@@ -51,34 +51,58 @@ public final class AnkrTable extends StructObject {
         setAnchorPointTableOffset(anchorPointTableOffset);
     }
 
+    /**
+     * 0
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native char version();
 
+    /**
+     * 0
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(char value);
 
+    /**
+     * never leave home without them (see 'Zapf')
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char flags();
 
+    /**
+     * never leave home without them (see 'Zapf')
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setFlags(char value);
 
+    /**
+     * Byte offset to lookup table mapping glyphs to offset into anchor point table
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int lookupTableOffset();
 
+    /**
+     * Byte offset to lookup table mapping glyphs to offset into anchor point table
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setLookupTableOffset(int value);
 
+    /**
+     * Byte offset to start of anchor point table
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int anchorPointTableOffset();
 
+    /**
+     * Byte offset to start of anchor point table
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setAnchorPointTableOffset(int value);

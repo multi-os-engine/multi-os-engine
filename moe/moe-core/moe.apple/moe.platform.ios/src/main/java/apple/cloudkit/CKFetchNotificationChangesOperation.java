@@ -41,6 +41,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CKFetchNotificationChangesOperation
+ * 
+ * An operation that fetches all notification changes.
+ * 
+ * If a change token from a previous @c CKFetchNotificationChangesOperation is passed in, only the notifications that have changed since that token will be fetched.
+ * If this is your first fetch, pass nil for the change token.
+ * Change tokens are opaque tokens and clients should not infer any behavior based on their content.
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -152,6 +161,14 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
     @NInt
     public static native long version_static();
 
+    /**
+     * This block is called when the operation completes.
+     * 
+     * Clients are responsible for saving the change token at the end of the operation and passing it in to the next call to @c CKFetchNotificationChangesOperation.
+     * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion block so that already fetched notifications don't need to be re-downloaded on a subsequent operation.
+     * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old and the client should toss its local cache and re-fetch notification changes starting with a nil @c previousServerChangeToken.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("fetchNotificationChangesCompletionBlock")
     @ObjCBlock(name = "call_fetchNotificationChangesCompletionBlock_ret")
@@ -166,10 +183,21 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
     public native CKFetchNotificationChangesOperation initWithPreviousServerChangeToken(
             CKServerChangeToken previousServerChangeToken);
 
+    /**
+     * If true, then the server wasn't able to return all the changes in this response.
+     * 
+     * Will be set before @c fetchNotificationChangesCompletionBlock is called.
+     * Another @c CKFetchNotificationChangesOperation operation should be run with the updated @c serverChangeToken token from this operation.
+     */
     @Generated
     @Selector("moreComing")
     public native boolean moreComing();
 
+    /**
+     * Called once for each updated notification fetch from the server
+     * 
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("notificationChangedBlock")
     @ObjCBlock(name = "call_notificationChangedBlock_ret")
@@ -184,11 +212,24 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
     @NUInt
     public native long resultsLimit();
 
+    /**
+     * This block is called when the operation completes.
+     * 
+     * Clients are responsible for saving the change token at the end of the operation and passing it in to the next call to @c CKFetchNotificationChangesOperation.
+     * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion block so that already fetched notifications don't need to be re-downloaded on a subsequent operation.
+     * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old and the client should toss its local cache and re-fetch notification changes starting with a nil @c previousServerChangeToken.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("setFetchNotificationChangesCompletionBlock:")
     public native void setFetchNotificationChangesCompletionBlock(
             @ObjCBlock(name = "call_setFetchNotificationChangesCompletionBlock") Block_setFetchNotificationChangesCompletionBlock value);
 
+    /**
+     * Called once for each updated notification fetch from the server
+     * 
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("setNotificationChangedBlock:")
     public native void setNotificationChangedBlock(

@@ -67,6 +67,9 @@ public class UICollectionViewPlaceholder extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * Called whenever the placeholder cell is visible to update the contents of the cell.
+     */
     @Generated
     @Selector("cellUpdateHandler")
     @ObjCBlock(name = "call_cellUpdateHandler_ret")
@@ -144,6 +147,9 @@ public class UICollectionViewPlaceholder extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Called whenever the placeholder cell is visible to update the contents of the cell.
+     */
     @Generated
     @Selector("setCellUpdateHandler:")
     public native void setCellUpdateHandler(

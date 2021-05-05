@@ -156,6 +156,9 @@ public class INStartVideoCallIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * Recipients of the video call.
+     */
     @Generated
     @Selector("contacts")
     public native NSArray<? extends INPerson> contacts();
@@ -166,7 +169,7 @@ public class INStartVideoCallIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INStartVideoCallIntent initWithCoder(NSCoder aDecoder);
+    public native INStartVideoCallIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContacts:")

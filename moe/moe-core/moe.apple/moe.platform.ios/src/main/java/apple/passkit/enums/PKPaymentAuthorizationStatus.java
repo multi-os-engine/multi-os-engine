@@ -21,13 +21,37 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PKPaymentAuthorizationStatus {
+    /**
+     * Merchant auth'd (or expects to auth) the transaction successfully.
+     */
     @Generated @NInt public static final long Success = 0x0000000000000000L;
+    /**
+     * Merchant failed to auth the transaction.
+     */
     @Generated @NInt public static final long Failure = 0x0000000000000001L;
+    /**
+     * Supplied billing address is insufficient or otherwise invalid
+     */
     @Generated @NInt public static final long InvalidBillingPostalAddress = 0x0000000000000002L;
+    /**
+     * Supplied postal address is insufficient or otherwise invalid
+     */
     @Generated @NInt public static final long InvalidShippingPostalAddress = 0x0000000000000003L;
+    /**
+     * Supplied contact information is insufficient or otherwise invalid
+     */
     @Generated @NInt public static final long InvalidShippingContact = 0x0000000000000004L;
+    /**
+     * Transaction requires PIN entry.
+     */
     @Generated @NInt public static final long PINRequired = 0x0000000000000005L;
+    /**
+     * PIN was not entered correctly, retry.
+     */
     @Generated @NInt public static final long PINIncorrect = 0x0000000000000006L;
+    /**
+     * PIN retry limit exceeded.
+     */
     @Generated @NInt public static final long PINLockout = 0x0000000000000007L;
 
     @Generated

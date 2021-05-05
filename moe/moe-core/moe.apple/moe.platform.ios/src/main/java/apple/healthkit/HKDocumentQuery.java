@@ -46,6 +46,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKDocumentQuery
+ * 
+ * A concrete subclass of HKQuery that provides an interface to retrieve documents from the Health store.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -257,6 +262,12 @@ public class HKDocumentQuery extends HKQuery {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property]      includeDocumentData
+     * 
+     * The XML content for documents may be large.  This property can be used to control whether the query
+     *                returns the XML content for each record.
+     */
     @Generated
     @Selector("includeDocumentData")
     public native boolean includeDocumentData();
@@ -265,6 +276,31 @@ public class HKDocumentQuery extends HKQuery {
     @Selector("init")
     public native HKDocumentQuery init();
 
+    /**
+     * initWithDocumentType:predicate:limit:sortDescriptors:includeDocumentData:resultsHandler:
+     * 
+     * Returns a query that will retrieve HKDocumentSamples matching the given predicate.
+     * 
+     * Health documents may contain sensitive data that a user may want to control explicitly. HKDocumentSample
+     *                objects returned by HKSampleQuery and HKAnchoredObjectQuery do not include this data (i.e., the document
+     *                property is nil).  This query can be used to retrieve fully populated HKDocumentSample instances.  The 
+     *                query will prompt the user to authorize your app to read individual documents.  The query will then
+     *                return the documents that your app is authorized to read. The user will only be asked to authorize your
+     *                app to read documents that are new since the last time an HKDocumentQuery was executed.
+     * 
+     * @param         documentType        The type of document to retreive.
+     * @param         predicate           The predicate which documents should match.
+     * @param         limit               The maximum number of documents to return.  Pass HKObjectQueryNoLimit for no limit.
+     * @param         sortDescriptors     The sort descriptors to use to order the resulting documents.
+     * @param         includeDocumentData If true, the document content will be returned with the HKDocumentSample instance.
+     *                                    This option can be used to limit the size of the content returned since the content
+     *                                    may be large.
+     * @param         resultsHandler      The block that will receive query results.  Results will be returned incrementally
+     *                                    through several calls to this block.  When there are no more results, the done 
+     *                                    parameter will be YES and the results array will be empty.  If results is nil, then
+     *                                    an error has occurred and the error parameter will be set.  Delivery of results can
+     *                                    be stopped by calling HKHealthStore's stopQuery: method.
+     */
     @Generated
     @Selector("initWithDocumentType:predicate:limit:sortDescriptors:includeDocumentData:resultsHandler:")
     public native HKDocumentQuery initWithDocumentTypePredicateLimitSortDescriptorsIncludeDocumentDataResultsHandler(
@@ -272,11 +308,21 @@ public class HKDocumentQuery extends HKQuery {
             NSArray<? extends NSSortDescriptor> sortDescriptors, boolean includeDocumentData,
             @ObjCBlock(name = "call_initWithDocumentTypePredicateLimitSortDescriptorsIncludeDocumentDataResultsHandler") Block_initWithDocumentTypePredicateLimitSortDescriptorsIncludeDocumentDataResultsHandler resultsHandler);
 
+    /**
+     * [@property]      limit
+     * 
+     * The maximum number of documents the receiver will return upon completion.
+     */
     @Generated
     @Selector("limit")
     @NUInt
     public native long limit();
 
+    /**
+     * [@property]      sortDescriptors
+     * 
+     * An array of NSSortDescriptors.
+     */
     @Generated
     @Selector("sortDescriptors")
     public native NSArray<? extends NSSortDescriptor> sortDescriptors();
@@ -286,11 +332,33 @@ public class HKDocumentQuery extends HKQuery {
     public interface Block_initWithDocumentTypePredicateLimitSortDescriptorsIncludeDocumentDataResultsHandler {
         @Generated
         void call_initWithDocumentTypePredicateLimitSortDescriptorsIncludeDocumentDataResultsHandler(
-                HKDocumentQuery arg0, NSArray<? extends HKDocumentSample> arg1, boolean arg2, NSError arg3);
+                HKDocumentQuery query, NSArray<? extends HKDocumentSample> results, boolean done, NSError error);
     }
 
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
             HKQuantity totalFlightsClimbed);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsFromSource:FHIRResourceType:identifier:")
+    public static native NSPredicate predicateForClinicalRecordsFromSourceFHIRResourceTypeIdentifier(HKSource source,
+            String resourceType, String identifier);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsWithFHIRResourceType:")
+    public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(String resourceType);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithClassification:")
+    public static native NSPredicate predicateForElectrocardiogramsWithClassification(@NInt long classification);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithSymptomsStatus:")
+    public static native NSPredicate predicateForElectrocardiogramsWithSymptomsStatus(@NInt long symptomsStatus);
+
+    @Generated
+    @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
+    public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
+            HKElectrocardiogram electrocardiogram);
 }

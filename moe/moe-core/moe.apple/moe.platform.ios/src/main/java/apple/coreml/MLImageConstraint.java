@@ -2,8 +2,10 @@ package apple.coreml;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -20,14 +22,20 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MLImageConstraint
+ * 
+ * Constraint on image properties.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MLImageConstraint extends NSObject {
+public class MLImageConstraint extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -117,15 +125,24 @@ public class MLImageConstraint extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The accepted kCVPixelFormatType for the image.
+     */
     @Generated
     @Selector("pixelFormatType")
     public native int pixelFormatType();
 
+    /**
+     * The required or default height of the image
+     */
     @Generated
     @Selector("pixelsHigh")
     @NInt
     public native long pixelsHigh();
 
+    /**
+     * The required or default width of the image
+     */
     @Generated
     @Selector("pixelsWide")
     @NInt
@@ -151,4 +168,29 @@ public class MLImageConstraint extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MLImageConstraint initWithCoder(NSCoder coder);
+
+    /**
+     * Detailed image size constraint
+     */
+    @Generated
+    @Selector("sizeConstraint")
+    public native MLImageSizeConstraint sizeConstraint();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

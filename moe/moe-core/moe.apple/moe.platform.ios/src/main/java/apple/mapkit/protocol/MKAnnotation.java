@@ -31,11 +31,18 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MKAnnotation")
 public interface MKAnnotation {
+    /**
+     * Center latitude and longitude of the annotation view.
+     * The implementation of this property must be KVO compliant.
+     */
     @Generated
     @Selector("coordinate")
     @ByValue
     CLLocationCoordinate2D coordinate();
 
+    /**
+     * Called as a result of dragging an annotation view.
+     */
     @Generated
     @IsOptional
     @Selector("setCoordinate:")
@@ -50,6 +57,9 @@ public interface MKAnnotation {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Title and subtitle for use by selection UI.
+     */
     @Generated
     @IsOptional
     @Selector("title")

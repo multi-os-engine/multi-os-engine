@@ -32,6 +32,6 @@ public final class INPauseWorkoutIntentResponseCode {
     private INPauseWorkoutIntentResponseCode() {
     }
 
-    @Generated @NInt public static final long Success = 0x0000000000000006L;
-    @Generated @NInt public static final long HandleInApp = 0x0000000000000007L;
+    @Generated @NInt public static final long Success = 0x0000000000000007L;
+    @Generated @NInt public static final long HandleInApp = 0x0000000000000006L;
 }

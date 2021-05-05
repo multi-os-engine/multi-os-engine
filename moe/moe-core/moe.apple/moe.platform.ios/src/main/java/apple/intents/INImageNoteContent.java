@@ -93,13 +93,16 @@ public class INImageNoteContent extends INNoteContent implements NSSecureCoding,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The image that comprises the note content
+     */
     @Generated
     @Selector("image")
     public native INImage image();
@@ -110,7 +113,7 @@ public class INImageNoteContent extends INNoteContent implements NSSecureCoding,
 
     @Generated
     @Selector("initWithCoder:")
-    public native INImageNoteContent initWithCoder(NSCoder aDecoder);
+    public native INImageNoteContent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithImage:")

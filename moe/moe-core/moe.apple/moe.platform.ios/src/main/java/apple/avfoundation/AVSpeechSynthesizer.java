@@ -36,10 +36,18 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVSpeechSynthesizer
+ * 
+ * AVSpeechSynthesizer allows speaking of speech utterances with a basic queuing mechanism.
+ * 
+ * Create an instance of AVSpeechSynthesizer to start generating synthesized speech by using AVSpeechUtterance objects.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -172,6 +180,11 @@ public class AVSpeechSynthesizer extends NSObject {
     @Selector("isSpeaking")
     public native boolean isSpeaking();
 
+    /**
+     * Specify the audio channels to be used for synthesized speech as described by the channel descriptions in AVAudioSession's current route.
+     * Speech audio will be replicated to each specified channel.
+     * Default is nil, which implies system defaults.
+     */
     @Generated
     @Selector("outputChannels")
     public native NSArray<? extends AVAudioSessionChannelDescription> outputChannels();
@@ -196,15 +209,79 @@ public class AVSpeechSynthesizer extends NSObject {
         }
     }
 
+    /**
+     * Specify the audio channels to be used for synthesized speech as described by the channel descriptions in AVAudioSession's current route.
+     * Speech audio will be replicated to each specified channel.
+     * Default is nil, which implies system defaults.
+     */
     @Generated
     @Selector("setOutputChannels:")
     public native void setOutputChannels(NSArray<? extends AVAudioSessionChannelDescription> value);
 
+    /**
+     * AVSpeechUtterances are queued by default.
+     * Enqueing the same AVSpeechUtterance that is already enqueued or is speaking will raise an exception. 
+     */
     @Generated
     @Selector("speakUtterance:")
     public native void speakUtterance(AVSpeechUtterance utterance);
 
+    /**
+     * Call stopSpeakingAtBoundary: to interrupt current speech and clear the queue.
+     */
     @Generated
     @Selector("stopSpeakingAtBoundary:")
     public native boolean stopSpeakingAtBoundary(@NInt long boundary);
+
+    /**
+     * Set to YES to send synthesized speech into an outgoing telephony audio stream.
+     * If there's no active call, setting this property has no effect.
+     */
+    @Generated
+    @Selector("mixToTelephonyUplink")
+    public native boolean mixToTelephonyUplink();
+
+    /**
+     * Set to YES to send synthesized speech into an outgoing telephony audio stream.
+     * If there's no active call, setting this property has no effect.
+     */
+    @Generated
+    @Selector("setMixToTelephonyUplink:")
+    public native void setMixToTelephonyUplink(boolean value);
+
+    /**
+     * The AVSpeechSynthesizer will use the AVAudioSession sharedInstance when set to YES.
+     * The AVSpeechSynthesizer will use a separate AVAudioSession for playback when set to NO. Additionally, the audio session will mix and duck other audio, and its active state will be managed automatically.
+     * The separate audio session will use AVAudioSessionRouteSharingPolicyDefault, which means that it may have a different route from the app’s shared instance session.
+     * Default is YES. 
+     */
+    @Generated
+    @Selector("setUsesApplicationAudioSession:")
+    public native void setUsesApplicationAudioSession(boolean value);
+
+    /**
+     * The AVSpeechSynthesizer will use the AVAudioSession sharedInstance when set to YES.
+     * The AVSpeechSynthesizer will use a separate AVAudioSession for playback when set to NO. Additionally, the audio session will mix and duck other audio, and its active state will be managed automatically.
+     * The separate audio session will use AVAudioSessionRouteSharingPolicyDefault, which means that it may have a different route from the app’s shared instance session.
+     * Default is YES. 
+     */
+    @Generated
+    @Selector("usesApplicationAudioSession")
+    public native boolean usesApplicationAudioSession();
+
+    /**
+     * Use this method to receive audio buffers that can be used to store or further process synthesized speech.
+     * The dictionary provided by -[AVSpeechSynthesisVoice audioFileSettings] can be used to create an AVAudioFile.
+     */
+    @Generated
+    @Selector("writeUtterance:toBufferCallback:")
+    public native void writeUtteranceToBufferCallback(AVSpeechUtterance utterance,
+            @ObjCBlock(name = "call_writeUtteranceToBufferCallback") Block_writeUtteranceToBufferCallback bufferCallback);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeUtteranceToBufferCallback {
+        @Generated
+        void call_writeUtteranceToBufferCallback(AVAudioBuffer buffer);
+    }
 }

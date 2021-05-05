@@ -150,10 +150,16 @@ public class MKRoute extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * localized notices of route conditions. e.g. "Avoid during winter storms"
+     */
     @Generated
     @Selector("advisoryNotices")
     public native NSArray<String> advisoryNotices();
 
+    /**
+     * overall route distance in meters
+     */
     @Generated
     @Selector("distance")
     public native double distance();
@@ -166,10 +172,16 @@ public class MKRoute extends NSObject {
     @Selector("init")
     public native MKRoute init();
 
+    /**
+     * localized description of the route's significant feature, e.g. "US-101"
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * detailed route geometry
+     */
     @Generated
     @Selector("polyline")
     public native MKPolyline polyline();
@@ -178,6 +190,9 @@ public class MKRoute extends NSObject {
     @Selector("steps")
     public native NSArray<? extends MKRouteStep> steps();
 
+    /**
+     * overall route transport type
+     */
     @Generated
     @Selector("transportType")
     @NUInt

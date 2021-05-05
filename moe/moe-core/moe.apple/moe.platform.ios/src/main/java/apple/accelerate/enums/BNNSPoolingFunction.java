@@ -26,4 +26,9 @@ public final class BNNSPoolingFunction {
     @Generated
     private BNNSPoolingFunction() {
     }
+
+    @Generated public static final int BNNSPoolingFunctionAverageCountIncludePadding = 0x00000001;
+    @Generated public static final int BNNSPoolingFunctionAverageCountExcludePadding = 0x00000002;
+    @Generated public static final int BNNSPoolingFunctionUnMax = 0x00000003;
+    @Generated public static final int BNNSPoolingFunctionL2Norm = 0x00000004;
 }

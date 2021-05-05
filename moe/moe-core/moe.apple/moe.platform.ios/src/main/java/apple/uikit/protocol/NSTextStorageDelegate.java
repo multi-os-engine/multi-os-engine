@@ -29,11 +29,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * NSTextStorage delegate methods ***
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSTextStorageDelegate")
 public interface NSTextStorageDelegate {
+    /**
+     * Sent inside -processEditing right before notifying layout managers.  Delegates can change the attributes.
+     */
     @Generated
     @IsOptional
     @Selector("textStorage:didProcessEditing:range:changeInLength:")
@@ -42,6 +48,9 @@ public interface NSTextStorageDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent inside -processEditing right before fixing attributes.  Delegates can change the characters or attributes.
+     */
     @Generated
     @IsOptional
     @Selector("textStorage:willProcessEditing:range:changeInLength:")

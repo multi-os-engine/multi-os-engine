@@ -41,6 +41,9 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called when the table is created destroyed, shown or hidden. configure as necessary.
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -68,6 +71,9 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * return YES to reload table. called when search string/option changes. convenience methods on top UISearchBar delegate methods
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -86,6 +92,9 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called when table is shown/hidden
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -120,6 +129,9 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * when we start/end showing the search UI
+     */
     @Generated
     @IsOptional
     @Deprecated

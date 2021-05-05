@@ -23,6 +23,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MSMessageLiveLayout
+ * 
+ * The MSMessageLiveLayout is used to indicate a message should be rendered in Messages using an instance of `MSMessagesAppViewController` with a `presentationStyle` of `MSMessagesAppPresentationStyleTranscript`.
+ */
 @Generated
 @Library("Messages")
 @Runtime(ObjCRuntime.class)
@@ -51,6 +56,11 @@ public class MSMessageLiveLayout extends MSMessageLayout {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * [@property]   alternateLayout
+     * 
+     * The alternate layout of the message. This layout will be used on devices that don't support live layout or don't have the iMessage app installed.
+     */
     @Generated
     @Selector("alternateLayout")
     public native MSMessageTemplateLayout alternateLayout();
@@ -94,6 +104,9 @@ public class MSMessageLiveLayout extends MSMessageLayout {
     @Selector("init")
     public native MSMessageLiveLayout init();
 
+    /**
+     * @param alternateLayout The alternate layout of the message. This layout will be used on devices that don't support live layout or don't have the iMessage app installed.
+     */
     @Generated
     @Selector("initWithAlternateLayout:")
     public native MSMessageLiveLayout initWithAlternateLayout(MSMessageTemplateLayout alternateLayout);

@@ -53,37 +53,61 @@ public final class vImage_Buffer extends StructObject {
         setRowBytes(rowBytes);
     }
 
+    /**
+     * Pointer to the top left pixel of the buffer.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr data();
 
+    /**
+     * Pointer to the top left pixel of the buffer.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setData(VoidPtr value);
 
+    /**
+     * The height (in pixels) of the buffer
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @NUInt
     public native long height();
 
+    /**
+     * The height (in pixels) of the buffer
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setHeight(@NUInt long value);
 
+    /**
+     * The width (in pixels) of the buffer
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @NUInt
     public native long width();
 
+    /**
+     * The width (in pixels) of the buffer
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setWidth(@NUInt long value);
 
+    /**
+     * The number of bytes in a pixel row, including any unused space between one row and the next.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @NUInt
     public native long rowBytes();
 
+    /**
+     * The number of bytes in a pixel row, including any unused space between one row and the next.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setRowBytes(@NUInt long value);

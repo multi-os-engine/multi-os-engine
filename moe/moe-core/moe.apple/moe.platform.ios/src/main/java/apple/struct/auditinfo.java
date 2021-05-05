@@ -36,36 +36,60 @@ public final class auditinfo extends StructObject {
         setAi_asid(ai_asid);
     }
 
+    /**
+     * Audit user ID.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int ai_auid();
 
+    /**
+     * Audit user ID.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setAi_auid(int value);
 
+    /**
+     * Audit masks.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native au_mask ai_mask();
 
+    /**
+     * Audit masks.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setAi_mask(@ByValue au_mask value);
 
+    /**
+     * Terminal ID.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @ByValue
     public native au_tid ai_termid();
 
+    /**
+     * Terminal ID.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setAi_termid(@ByValue au_tid value);
 
+    /**
+     * Audit session ID.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int ai_asid();
 
+    /**
+     * Audit session ID.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setAi_asid(int value);

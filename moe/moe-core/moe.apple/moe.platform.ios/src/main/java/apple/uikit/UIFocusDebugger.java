@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UIFocusDebugger provides a collection of runtime utilities for debugging issues related to focus interaction.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -68,6 +71,11 @@ public class UIFocusDebugger extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * Outputs a diagnosis of the specified item's focusability, including any known issues that may be preventing focusability.
+     *   - To use in Swift, enter `po UIFocusDebugger.checkFocusability(for: <item reference>)` when paused in lldb.
+     *   - To use in Objective-C, enter `po [UIFocusDebugger checkFocusabilityForItem:<item reference>]` when paused in lldb.
+     */
     @Generated
     @Selector("checkFocusabilityForItem:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -95,6 +103,11 @@ public class UIFocusDebugger extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Outputs an overview of all supported debugging utilities and other relevant information.
+     *   - To use in Swift, enter `po UIFocusDebugger.help()` when paused in lldb.
+     *   - To use in Objective-C, enter `po [UIFocusDebugger help]` when paused in lldb.
+     */
     @Generated
     @Selector("help")
     @MappedReturn(ObjCObjectMapper.class)
@@ -143,12 +156,22 @@ public class UIFocusDebugger extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Simulates a fake focus update requested by the specified environment (e.g. `[environment setNeedsFocusUpdate]`), outlining each step of the process for determining the next focused item.
+     *   - To use in Swift, enter `po UIFocusDebugger.simulateFocusUpdateRequest(from: <environment reference>)` when paused in lldb.
+     *   - To use in Objective-C, enter `po [UIFocusDebugger simulateFocusUpdateRequestFromEnvironment:<environment reference>]` when paused in lldb.
+     */
     @Generated
     @Selector("simulateFocusUpdateRequestFromEnvironment:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native UIFocusDebuggerOutput simulateFocusUpdateRequestFromEnvironment(
             @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
 
+    /**
+     * Outputs information for the currently focused item.
+     *   - To use in Swift, enter `po UIFocusDebugger.status()` when paused in lldb.
+     *   - To use in Objective-C, enter `po [UIFocusDebugger status]` when paused in lldb.
+     */
     @Generated
     @Selector("status")
     @MappedReturn(ObjCObjectMapper.class)

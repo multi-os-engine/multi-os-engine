@@ -157,16 +157,25 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
     @NInt
     public static native long version_static();
 
+    /**
+     * How the application should be activated in response to the action.
+     */
     @Generated
     @Selector("activationMode")
     @NUInt
     public native long activationMode();
 
+    /**
+     * The behavior of this action when the user activates it.
+     */
     @Generated
     @Selector("behavior")
     @NUInt
     public native long behavior();
 
+    /**
+     * The unique identifier for this action.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -177,44 +186,74 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIMutableUserNotificationAction initWithCoder(NSCoder aDecoder);
+    public native UIMutableUserNotificationAction initWithCoder(NSCoder coder);
 
+    /**
+     * Whether this action is secure and should require unlocking before being performed. If the activation mode is UIUserNotificationActivationModeForeground, then the action is considered secure and this property is ignored.
+     */
     @Generated
     @Selector("isAuthenticationRequired")
     public native boolean isAuthenticationRequired();
 
+    /**
+     * Whether this action is secure and should require unlocking before being performed. If the activation mode is UIUserNotificationActivationModeForeground, then the action is considered secure and this property is ignored.
+     */
     @Generated
     @Selector("setAuthenticationRequired:")
     public native void setAuthenticationRequired(boolean value);
 
+    /**
+     * Whether this action should be indicated as destructive when displayed.
+     */
     @Generated
     @Selector("isDestructive")
     public native boolean isDestructive();
 
+    /**
+     * Whether this action should be indicated as destructive when displayed.
+     */
     @Generated
     @Selector("setDestructive:")
     public native void setDestructive(boolean value);
 
+    /**
+     * Parameters that can be used by some types of actions.
+     */
     @Generated
     @Selector("parameters")
     public native NSDictionary<?, ?> parameters();
 
+    /**
+     * How the application should be activated in response to the action.
+     */
     @Generated
     @Selector("setActivationMode:")
     public native void setActivationMode(@NUInt long value);
 
+    /**
+     * The behavior of this action when the user activates it.
+     */
     @Generated
     @Selector("setBehavior:")
     public native void setBehavior(@NUInt long value);
 
+    /**
+     * The unique identifier for this action.
+     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
 
+    /**
+     * Parameters that can be used by some types of actions.
+     */
     @Generated
     @Selector("setParameters:")
     public native void setParameters(NSDictionary<?, ?> value);
 
+    /**
+     * The localized title to display for this action.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
@@ -225,6 +264,9 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
         return supportsSecureCoding();
     }
 
+    /**
+     * The localized title to display for this action.
+     */
     @Generated
     @Selector("title")
     public native String title();

@@ -39,6 +39,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Used to wrap the result of whatever is returned by the persistent store coordinator when
+ * -[NSManagedObjectContext executeRequest:error:] is called
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)

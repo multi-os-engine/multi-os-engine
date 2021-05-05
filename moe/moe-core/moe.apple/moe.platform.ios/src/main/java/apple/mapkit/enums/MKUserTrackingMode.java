@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MKUserTrackingMode {
+    /**
+     * the user's location is not followed
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * the map follows the user's location
+     */
     @Generated @NInt public static final long Follow = 0x0000000000000001L;
+    /**
+     * the map follows the user's location and heading
+     */
     @Generated @NInt public static final long FollowWithHeading = 0x0000000000000002L;
 
     @Generated

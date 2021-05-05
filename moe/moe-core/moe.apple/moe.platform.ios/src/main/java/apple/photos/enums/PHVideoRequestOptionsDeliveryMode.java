@@ -21,9 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHVideoRequestOptionsDeliveryMode {
+    /**
+     * let us pick the quality (typ. PHVideoRequestOptionsDeliveryModeMediumQualityFormat for streamed AVPlayerItem or AVAsset, or PHVideoRequestOptionsDeliveryModeHighQualityFormat for AVAssetExportSession)
+     */
     @Generated @NInt public static final long Automatic = 0x0000000000000000L;
+    /**
+     * best quality
+     */
     @Generated @NInt public static final long HighQualityFormat = 0x0000000000000001L;
+    /**
+     * medium quality (typ. 720p), currently only supported for AVPlayerItem or AVAsset when streaming from iCloud (will systematically default to PHVideoRequestOptionsDeliveryModeHighQualityFormat if locally available)
+     */
     @Generated @NInt public static final long MediumQualityFormat = 0x0000000000000002L;
+    /**
+     * fastest available (typ. 360p MP4), currently only supported for AVPlayerItem or AVAsset when streaming from iCloud (will systematically default to PHVideoRequestOptionsDeliveryModeHighQualityFormat if locally available)
+     */
     @Generated @NInt public static final long FastFormat = 0x0000000000000003L;
 
     @Generated

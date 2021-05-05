@@ -87,7 +87,7 @@ public class SCNTimingFunction extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("functionWithCAMediaTimingFunction:")
@@ -108,7 +108,7 @@ public class SCNTimingFunction extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNTimingFunction initWithCoder(NSCoder aDecoder);
+    public native SCNTimingFunction initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

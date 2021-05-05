@@ -21,10 +21,25 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UICloudSharingPermissionOptions {
+    /**
+     * Allow the user to configure the share with the standard set of options
+     */
     @Generated @NUInt public static final long Standard = 0x0000000000000000L;
+    /**
+     * The user is allowed to share publicly
+     */
     @Generated @NUInt public static final long AllowPublic = 0x0000000000000001L;
+    /**
+     * The user is allowed to share privately
+     */
     @Generated @NUInt public static final long AllowPrivate = 0x0000000000000002L;
+    /**
+     * The user is allowed to grant participants read-only permissions
+     */
     @Generated @NUInt public static final long AllowReadOnly = 0x0000000000000004L;
+    /**
+     * The user is allowed to grant participants read/write permissions
+     */
     @Generated @NUInt public static final long AllowReadWrite = 0x0000000000000008L;
 
     @Generated

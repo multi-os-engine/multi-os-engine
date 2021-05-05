@@ -28,7 +28,9 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.MTLRenderPassDescriptor;
 import apple.metal.protocol.MTLCommandBuffer;
+import apple.metal.protocol.MTLCommandQueue;
 import apple.metal.protocol.MTLDevice;
+import apple.metal.protocol.MTLRenderCommandEncoder;
 import apple.opengles.EAGLContext;
 import apple.scenekit.protocol.SCNSceneRenderer;
 import apple.scenekit.protocol.SCNTechniqueSupport;
@@ -57,6 +59,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNRenderer
+ * 
+ * SCNRenderer lets you use the SceneKit renderer in an OpenGL context or Metal render pass descriptor of your own.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -147,10 +154,26 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * rendererWithContext:options:
+     * 
+     * Creates a new renderer object.
+     * 
+     * @param context The context to render into.
+     * @param options An optional dictionary for future extensions.
+     */
     @Generated
     @Selector("rendererWithContext:options:")
     public static native SCNRenderer rendererWithContextOptions(EAGLContext context, NSDictionary<?, ?> options);
 
+    /**
+     * rendererWithDevice:options:
+     * 
+     * Creates a new renderer object that renders using Metal.
+     * 
+     * @param device The metal device to use. Pass nil to let SceneKit choose a default device.
+     * @param options An optional dictionary for future extensions.
+     */
     @Generated
     @Selector("rendererWithDevice:options:")
     public static native SCNRenderer rendererWithDeviceOptions(@Mapped(ObjCObjectMapper.class) MTLDevice device,
@@ -201,7 +224,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object commandQueue();
+    public native MTLCommandQueue commandQueue();
 
     @Generated
     @Selector("context")
@@ -210,7 +233,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Generated
     @Selector("currentRenderCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object currentRenderCommandEncoder();
+    public native MTLRenderCommandEncoder currentRenderCommandEncoder();
 
     @Generated
     @Selector("debugOptions")
@@ -230,7 +253,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object device();
+    public native MTLDevice device();
 
     @Generated
     @Selector("hitTest:options:")
@@ -265,6 +288,11 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Selector("loops")
     public native boolean loops();
 
+    /**
+     * [@property] nextFrameTime
+     * 
+     * Returns the time at which the next update should happen. If infinite no update needs to be scheduled yet. If the current frame time, a continuous animation is running and an update should be scheduled after a "natural" delay.
+     */
     @Generated
     @Selector("nextFrameTime")
     public native double nextFrameTime();
@@ -302,15 +330,38 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @ByValue
     public native SCNVector3 projectPoint(@ByValue SCNVector3 point);
 
+    /**
+     *  Deprecated
+     * 
+     * render
+     * 
+     * renders the receiver's scene at the current system time.
+     * 
+     * This method only work if the receiver was allocated with an OpenGL context and it is deprecated (use renderAtTime: instead). Use renderAtTime:withEncoder:pass:commandQueue: to render with Metal.
+     */
     @Generated
     @Deprecated
     @Selector("render")
     public native void render();
 
+    /**
+     * renderAtTime:
+     * 
+     * updates and renders the receiver's scene at the specified time (system time).
+     * 
+     * This method only work if the receiver was allocated with an OpenGL context. Use renderAtTime:withEncoder:pass:commandQueue: to render with Metal.
+     */
     @Generated
     @Selector("renderAtTime:")
     public native void renderAtTime(double time);
 
+    /**
+     * renderAtTime:viewport:commandBuffer:passDescriptor:
+     * 
+     * updates and renders the receiver's scene at the specified time (system time) viewport, Metal command buffer and pass descriptor.
+     * 
+     * Use this method to render using Metal.
+     */
     @Generated
     @Selector("renderAtTime:viewport:commandBuffer:passDescriptor:")
     public native void renderAtTimeViewportCommandBufferPassDescriptor(double time, @ByValue CGRect viewport,
@@ -390,6 +441,11 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Selector("showsStatistics")
     public native boolean showsStatistics();
 
+    /**
+     * snapshotAtTime:withSize:antialiasingMode:
+     * 
+     * renders the receiver's scene at the specified time (system time) into an image.
+     */
     @Generated
     @Selector("snapshotAtTime:withSize:antialiasingMode:")
     public native UIImage snapshotAtTimeWithSizeAntialiasingMode(double time, @ByValue CGSize size,
@@ -409,17 +465,64 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @ByValue
     public native SCNVector3 unprojectPoint(@ByValue SCNVector3 point);
 
+    /**
+     * updateProbes:atTime:
+     * 
+     * Update the specified probes by computing their incoming irradiance in the receiver's scene at the specified time.
+     * 
+     * Light probes are only supported with Metal. This method is observable using NSProgress.
+     * 
+     * @param lightProbes An array of nodes that must have a light probe attached.
+     * @param time The time used to render the scene when computing the light probes irradiance.
+     */
     @Generated
     @Selector("updateProbes:atTime:")
     public native void updateProbesAtTime(NSArray<? extends SCNNode> lightProbes, double time);
 
+    /**
+     * renderWithViewport:viewport:commandBuffer:passDescriptor:
+     * 
+     * renders the receiver's scene with the specified viewport, Metal command buffer and pass descriptor.
+     * 
+     * Use this method to render using Metal. This method doesn't update the scene's animations, physics, particles etc... It's up to you to call "updateAtTime:" to update the scene.
+     */
     @Generated
     @Selector("renderWithViewport:commandBuffer:passDescriptor:")
     public native void renderWithViewportCommandBufferPassDescriptor(@ByValue CGRect viewport,
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
             MTLRenderPassDescriptor renderPassDescriptor);
 
+    /**
+     * updateAtTime:
+     * 
+     * updates the receiver's scene at the specified time (system time).
+     */
     @Generated
     @Selector("updateAtTime:")
     public native void updateAtTime(double time);
+
+    @Generated
+    @Selector("currentViewport")
+    @ByValue
+    public native CGRect currentViewport();
+
+    @Generated
+    @Selector("isTemporalAntialiasingEnabled")
+    public native boolean isTemporalAntialiasingEnabled();
+
+    @Generated
+    @Selector("setTemporalAntialiasingEnabled:")
+    public native void setTemporalAntialiasingEnabled(boolean value);
+
+    @Generated
+    @Selector("setUsesReverseZ:")
+    public native void setUsesReverseZ(boolean value);
+
+    @Generated
+    @Selector("usesReverseZ")
+    public native boolean usesReverseZ();
+
+    @Generated
+    @Selector("currentRenderPassDescriptor")
+    public native MTLRenderPassDescriptor currentRenderPassDescriptor();
 }

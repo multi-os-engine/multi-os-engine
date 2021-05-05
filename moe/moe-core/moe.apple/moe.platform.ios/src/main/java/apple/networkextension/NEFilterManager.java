@@ -41,6 +41,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEFilterManager
+ * 
+ * The NEFilterManager class declares the programmatic interface for an object that manages content filtering configurations.
+ * 
+ * NEFilterManager declares methods and properties for configuring and controlling a filter.
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -143,6 +152,11 @@ public class NEFilterManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * sharedManager
+     * 
+     * @return The singleton NEFilterManager object for the calling process.
+     */
     @Generated
     @Selector("sharedManager")
     public static native NEFilterManager sharedManager();
@@ -160,41 +174,94 @@ public class NEFilterManager extends NSObject {
     @Selector("init")
     public native NEFilterManager init();
 
+    /**
+     * [@property] enabled
+     * 
+     * Toggles the enabled status of the filter. On iOS, setting this property will disable filter configurations of other apps, and this property will be set to NO when other filter configurations are enabled.
+     *     On macOS, up to 4 filter configurations of the same grade can be enabled simultaneously.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * [@property] enabled
+     * 
+     * Toggles the enabled status of the filter. On iOS, setting this property will disable filter configurations of other apps, and this property will be set to NO when other filter configurations are enabled.
+     *     On macOS, up to 4 filter configurations of the same grade can be enabled simultaneously.
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * loadFromPreferencesWithCompletionHandler:
+     * 
+     * This function loads the current filter configuration from the caller's filter preferences.
+     * 
+     * @param completionHandler A block that will be called when the load operation is completed. The NSError passed to this block will be nil if the load operation succeeded, non-nil otherwise.
+     */
     @Generated
     @Selector("loadFromPreferencesWithCompletionHandler:")
     public native void loadFromPreferencesWithCompletionHandler(
             @ObjCBlock(name = "call_loadFromPreferencesWithCompletionHandler") Block_loadFromPreferencesWithCompletionHandler completionHandler);
 
+    /**
+     * [@property] localizedDescription
+     * 
+     * A string containing a description of the filter.
+     */
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
+    /**
+     * [@property] providerConfiguration
+     * 
+     * An NEFilterProviderConfiguration object containing the provider-specific portion of the filter configuration.
+     */
     @Generated
     @Selector("providerConfiguration")
     public native NEFilterProviderConfiguration providerConfiguration();
 
+    /**
+     * removeFromPreferencesWithCompletionHandler:
+     * 
+     * This function removes the filter configuration from the caller's filter preferences. If the filter is enabled, the filter becomes disabled.
+     * 
+     * @param completionHandler A block that will be called when the remove operation is completed. The NSError passed to this block will be nil if the remove operation succeeded, non-nil otherwise.
+     */
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
     public native void removeFromPreferencesWithCompletionHandler(
             @ObjCBlock(name = "call_removeFromPreferencesWithCompletionHandler") Block_removeFromPreferencesWithCompletionHandler completionHandler);
 
+    /**
+     * saveToPreferencesWithCompletionHandler:
+     * 
+     * This function saves the filter configuration in the caller's filter preferences. If the filter is enabled, it will become active.
+     * 
+     * @param completionHandler A block that will be called when the save operation is completed. The NSError passed to this block will be nil if the save operation succeeded, non-nil otherwise.
+     */
     @Generated
     @Selector("saveToPreferencesWithCompletionHandler:")
     public native void saveToPreferencesWithCompletionHandler(
             @ObjCBlock(name = "call_saveToPreferencesWithCompletionHandler") Block_saveToPreferencesWithCompletionHandler completionHandler);
 
+    /**
+     * [@property] localizedDescription
+     * 
+     * A string containing a description of the filter.
+     */
     @Generated
     @Selector("setLocalizedDescription:")
     public native void setLocalizedDescription(String value);
 
+    /**
+     * [@property] providerConfiguration
+     * 
+     * An NEFilterProviderConfiguration object containing the provider-specific portion of the filter configuration.
+     */
     @Generated
     @Selector("setProviderConfiguration:")
     public native void setProviderConfiguration(NEFilterProviderConfiguration value);
@@ -203,20 +270,20 @@ public class NEFilterManager extends NSObject {
     @Generated
     public interface Block_loadFromPreferencesWithCompletionHandler {
         @Generated
-        void call_loadFromPreferencesWithCompletionHandler(NSError arg0);
+        void call_loadFromPreferencesWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeFromPreferencesWithCompletionHandler {
         @Generated
-        void call_removeFromPreferencesWithCompletionHandler(NSError arg0);
+        void call_removeFromPreferencesWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveToPreferencesWithCompletionHandler {
         @Generated
-        void call_saveToPreferencesWithCompletionHandler(NSError arg0);
+        void call_saveToPreferencesWithCompletionHandler(NSError error);
     }
 }

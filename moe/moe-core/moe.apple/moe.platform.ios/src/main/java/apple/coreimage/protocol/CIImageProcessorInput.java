@@ -19,6 +19,7 @@ package apple.coreimage.protocol;
 import apple.coregraphics.opaque.IOSurfaceRef;
 import apple.coregraphics.struct.CGRect;
 import apple.corevideo.opaque.CVBufferRef;
+import apple.metal.protocol.MTLTexture;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -36,33 +37,59 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CIImageProcessorInput")
 public interface CIImageProcessorInput {
+    /**
+     * The base address of the input buffer that the processor block can read from.
+     * This memory must not be modified by the block.
+     */
     @Generated
     @Selector("baseAddress")
     ConstVoidPtr baseAddress();
 
+    /**
+     * The bytes per row of the input buffer that the processor block can read from.
+     */
     @Generated
     @Selector("bytesPerRow")
     @NUInt
     long bytesPerRow();
 
+    /**
+     * The pixel format of the input buffer that the processor block can read from.
+     */
     @Generated
     @Selector("format")
     int format();
 
+    /**
+     * A MTLTexture object that can be bound as input (if processing using Metal).
+     * This texture must not be modified by the block.
+     */
     @Generated
     @Selector("metalTexture")
     @MappedReturn(ObjCObjectMapper.class)
-    Object metalTexture();
+    MTLTexture metalTexture();
 
+    /**
+     * An input CVPixelBuffer that the processor block can read from.
+     * This buffer must not be modified by the block.
+     */
     @Generated
     @Selector("pixelBuffer")
     CVBufferRef pixelBuffer();
 
+    /**
+     * The rectangular region of the input image that the processor block can use to provide the output.
+     * This will be contain (but may be larger than) the rect returned by 'roiCallback'.
+     */
     @Generated
     @Selector("region")
     @ByValue
     CGRect region();
 
+    /**
+     * An input IOSurface that the processor block can read from.
+     * This surface must not be modified by the block.
+     */
     @Generated
     @Selector("surface")
     IOSurfaceRef surface();

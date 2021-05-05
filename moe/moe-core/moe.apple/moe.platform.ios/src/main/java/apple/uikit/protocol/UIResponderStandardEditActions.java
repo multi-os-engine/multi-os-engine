@@ -16,12 +16,14 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
+import apple.foundation.NSDictionary;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -120,5 +122,20 @@ public interface UIResponderStandardEditActions {
     @Selector("toggleUnderline:")
     default void toggleUnderline(@Mapped(ObjCObjectMapper.class) Object sender) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("updateTextAttributesWithConversionHandler:")
+    default void updateTextAttributesWithConversionHandler(
+            @ObjCBlock(name = "call_updateTextAttributesWithConversionHandler") Block_updateTextAttributesWithConversionHandler conversionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateTextAttributesWithConversionHandler {
+        @Generated
+        NSDictionary<String, ?> call_updateTextAttributesWithConversionHandler(NSDictionary<String, ?> arg0);
     }
 }

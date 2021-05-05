@@ -23,6 +23,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UITextDocumentProxy;
+import apple.uikit.protocol.UITextInput;
 import apple.uikit.protocol.UITextInputDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -175,6 +176,11 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Selector("dismissKeyboard")
     public native void dismissKeyboard();
 
+    /**
+     * Launch inputMode list above the view when long pressing or swiping up from the view,
+     * Advance to nextInputMode when short tapping on the view.
+     * Example: [KeyboardButton addTarget:self action:@selector(handleInputModeListFromView:withEvent:) forControlEvents:UIControlEventAllTouchEvents].
+     */
     @Generated
     @Selector("handleInputModeListFromView:withEvent:")
     public native void handleInputModeListFromViewWithEvent(UIView view, UIEvent event);
@@ -185,7 +191,7 @@ public class UIInputViewController extends UIViewController implements UITextInp
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIInputViewController initWithCoder(NSCoder aDecoder);
+    public native UIInputViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -195,10 +201,18 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Selector("inputView")
     public native UIInputView inputView();
 
+    /**
+     * The primary language of the UIInputViewController.  A BCP 47 language identifier such as en-US
+     * If specified, this will supersede any PrimaryLanguage in the Info.plist.
+     */
     @Generated
     @Selector("primaryLanguage")
     public native String primaryLanguage();
 
+    /**
+     * This will not provide a complete repository of a language's vocabulary.
+     * It is solely intended to supplement existing lexicons.
+     */
     @Generated
     @Selector("requestSupplementaryLexiconWithCompletion:")
     public native void requestSupplementaryLexiconWithCompletion(
@@ -206,23 +220,27 @@ public class UIInputViewController extends UIViewController implements UITextInp
 
     @Generated
     @Selector("selectionDidChange:")
-    public native void selectionDidChange(@Mapped(ObjCObjectMapper.class) Object textInput);
+    public native void selectionDidChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("selectionWillChange:")
-    public native void selectionWillChange(@Mapped(ObjCObjectMapper.class) Object textInput);
+    public native void selectionWillChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("setInputView:")
     public native void setInputView(UIInputView value);
 
+    /**
+     * The primary language of the UIInputViewController.  A BCP 47 language identifier such as en-US
+     * If specified, this will supersede any PrimaryLanguage in the Info.plist.
+     */
     @Generated
     @Selector("setPrimaryLanguage:")
     public native void setPrimaryLanguage(String value);
 
     @Generated
     @Selector("textDidChange:")
-    public native void textDidChange(@Mapped(ObjCObjectMapper.class) Object textInput);
+    public native void textDidChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("textDocumentProxy")
@@ -231,7 +249,7 @@ public class UIInputViewController extends UIViewController implements UITextInp
 
     @Generated
     @Selector("textWillChange:")
-    public native void textWillChange(@Mapped(ObjCObjectMapper.class) Object textInput);
+    public native void textWillChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -247,4 +265,18 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Generated
     @Selector("needsInputModeSwitchKey")
     public native boolean needsInputModeSwitchKey();
+
+    /**
+     * When this property is set to YES, the system dictation key, if provided, will be disabled.
+     */
+    @Generated
+    @Selector("hasDictationKey")
+    public native boolean hasDictationKey();
+
+    /**
+     * When this property is set to YES, the system dictation key, if provided, will be disabled.
+     */
+    @Generated
+    @Selector("setHasDictationKey:")
+    public native void setHasDictationKey(boolean value);
 }

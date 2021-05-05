@@ -98,7 +98,7 @@ public class INTransferMoneyIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INTransferMoneyIntent initWithCoder(NSCoder aDecoder);
+    public native INTransferMoneyIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFromAccount:toAccount:transactionAmount:transactionScheduledDate:transactionNote:")

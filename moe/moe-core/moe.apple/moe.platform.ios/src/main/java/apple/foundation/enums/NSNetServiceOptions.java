@@ -21,7 +21,23 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSNetServiceOptions {
+    /**
+     * When passed to -publishWithOptions:, this suppresses the auto-renaming of an
+     * NSNetService in the event of a name collision. The collision is reported to the
+     * instance's delegate on the -netService:didNotPublish: method.
+     */
     @Generated @NUInt public static final long NoAutoRename = 0x0000000000000001L;
+    /**
+     * When passed to -publishWithOptions:, in addition to publishing the service, a
+     * TCP listener is started for both IPv4 and IPv6 on the port specified by the
+     * NSNetService. If the listening port can't be opened, an error is reported using
+     * -netService:didNotPublish:. Specify a port number of zero to use a random port.
+     * When -netServiceDidPublish: is called, -port will return the actual listening
+     * port number. Since the listener only supports TCP, the publish will fail with
+     * NSNetServicesBadArgumentError if the NSNetService type does not end with "_tcp".
+     * New incoming connections will be delivered in the form of NSStreams via the
+     * -netService:didAcceptConnectionWithInputStream:outputStream: delegate method.
+     */
     @Generated @NUInt public static final long ListenForConnections = 0x0000000000000002L;
 
     @Generated

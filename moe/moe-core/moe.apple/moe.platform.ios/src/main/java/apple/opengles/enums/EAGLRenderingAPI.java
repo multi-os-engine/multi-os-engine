@@ -19,6 +19,9 @@ package apple.opengles.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * EAGL rendering API
+ */
 @Generated
 public final class EAGLRenderingAPI {
     @Generated @NUInt public static final long GLES1 = 0x0000000000000001L;

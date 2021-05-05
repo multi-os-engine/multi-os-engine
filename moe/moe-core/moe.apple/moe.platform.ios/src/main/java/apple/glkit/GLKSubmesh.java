@@ -150,10 +150,24 @@ public class GLKSubmesh extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] elementBuffer
+     * 
+     * Name of buffer object with index data
+     * 
+     * The buffer name to be used with DrawElements
+     */
     @Generated
     @Selector("elementBuffer")
     public native GLKMeshBuffer elementBuffer();
 
+    /**
+     * [@property] elementCount
+     * 
+     * Number of elements (aka indicies) in the elementBuffer (aka indexBuffer)
+     * 
+     * This value should be used for the count parameter in glDrawElements
+     */
     @Generated
     @Selector("elementCount")
     public native int elementCount();
@@ -162,18 +176,46 @@ public class GLKSubmesh extends NSObject {
     @Selector("init")
     public native GLKSubmesh init();
 
+    /**
+     * [@property] mesh
+     * 
+     * Parent GLKit mesh containing vertex data of this object
+     * 
+     * Buffer of this parent mesh should be set in the encoder before a drawIndexedPrimitives call is made
+     */
     @Generated
     @Selector("mesh")
     public native GLKMesh mesh();
 
+    /**
+     * [@property] mode
+     * 
+     * Primitive type mode value of data in the elementBuffer (aka indexBuffer)
+     * 
+     * This value should be used for the mode parameter in glDrawElements
+     */
     @Generated
     @Selector("mode")
     public native int mode();
 
+    /**
+     * [@property] name
+     * 
+     * Name from the original MDLSubmesh object.
+     * 
+     * Although not directly used by this object, the application may use this to identify the submesh in it renderer/scene/world.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * [@property] type
+     * 
+     * Type of data in the elementBuffer (aka indexBuffer)
+     * 
+     * This value should be used for the type parameter of glDrawElements
+     */
     @Generated
     @Selector("type")
     public native int type();

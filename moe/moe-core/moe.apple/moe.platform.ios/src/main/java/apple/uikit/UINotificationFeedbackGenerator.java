@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UINotificationFeedbackGenerator is used to give user feedback when an notification is displayed
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +157,9 @@ public class UINotificationFeedbackGenerator extends UIFeedbackGenerator {
     @Selector("init")
     public native UINotificationFeedbackGenerator init();
 
+    /**
+     * call when a notification is displayed, passing the corresponding type
+     */
     @Generated
     @Selector("notificationOccurred:")
     public native void notificationOccurred(@NInt long notificationType);

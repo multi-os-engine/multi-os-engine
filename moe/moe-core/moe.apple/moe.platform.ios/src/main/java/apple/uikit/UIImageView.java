@@ -24,6 +24,7 @@ import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UIAccessibilityContentSizeCategoryImageAdjusting;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -130,7 +131,7 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -143,8 +144,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -338,14 +339,23 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     @NInt
     public static native long version_static();
 
+    /**
+     * for one cycle of images. default is number of images * 1/30th of a second (i.e. 30 fps)
+     */
     @Generated
     @Selector("animationDuration")
     public native double animationDuration();
 
+    /**
+     * The array must contain UIImages. Setting hides the single image. default is nil
+     */
     @Generated
     @Selector("animationImages")
     public native NSArray<? extends UIImage> animationImages();
 
+    /**
+     * 0 means infinite (default is 0)
+     */
     @Generated
     @Selector("animationRepeatCount")
     @NInt
@@ -370,7 +380,7 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -386,7 +396,8 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -397,14 +408,23 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * The array must contain UIImages. Setting hides the single image. default is nil
+     */
     @Generated
     @Selector("highlightedAnimationImages")
     public native NSArray<? extends UIImage> highlightedAnimationImages();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("highlightedImage")
     public native UIImage highlightedImage();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -415,7 +435,7 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIImageView initWithCoder(NSCoder aDecoder);
+    public native UIImageView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -433,46 +453,80 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     @Selector("isAnimating")
     public native boolean isAnimating();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("isHighlighted")
     public native boolean isHighlighted();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setHighlighted:")
     public native void setHighlighted(boolean value);
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("isUserInteractionEnabled")
     public native boolean isUserInteractionEnabled();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setUserInteractionEnabled:")
     public native void setUserInteractionEnabled(boolean value);
 
+    /**
+     * for one cycle of images. default is number of images * 1/30th of a second (i.e. 30 fps)
+     */
     @Generated
     @Selector("setAnimationDuration:")
     public native void setAnimationDuration(double value);
 
+    /**
+     * The array must contain UIImages. Setting hides the single image. default is nil
+     */
     @Generated
     @Selector("setAnimationImages:")
     public native void setAnimationImages(NSArray<? extends UIImage> value);
 
+    /**
+     * 0 means infinite (default is 0)
+     */
     @Generated
     @Selector("setAnimationRepeatCount:")
     public native void setAnimationRepeatCount(@NInt long value);
 
+    /**
+     * The array must contain UIImages. Setting hides the single image. default is nil
+     */
     @Generated
     @Selector("setHighlightedAnimationImages:")
     public native void setHighlightedAnimationImages(NSArray<? extends UIImage> value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setHighlightedImage:")
     public native void setHighlightedImage(UIImage value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);
 
+    /**
+     * When tintColor is non-nil, any template images set on the image view will be colorized with that color.
+     * The tintColor is inherited through the superview hierarchy. See UIView for more information.
+     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
@@ -485,6 +539,10 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     @Selector("stopAnimating")
     public native void stopAnimating();
 
+    /**
+     * When tintColor is non-nil, any template images set on the image view will be colorized with that color.
+     * The tintColor is inherited through the superview hierarchy. See UIView for more information.
+     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
@@ -496,4 +554,18 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     @Generated
     @Selector("setAdjustsImageSizeForAccessibilityContentSizeCategory:")
     public native void setAdjustsImageSizeForAccessibilityContentSizeCategory(boolean value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("preferredSymbolConfiguration")
+    public native UIImageSymbolConfiguration preferredSymbolConfiguration();
+
+    @Generated
+    @Selector("setPreferredSymbolConfiguration:")
+    public native void setPreferredSymbolConfiguration(UIImageSymbolConfiguration value);
 }

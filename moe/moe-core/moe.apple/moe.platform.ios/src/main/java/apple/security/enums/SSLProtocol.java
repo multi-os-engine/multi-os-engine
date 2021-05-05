@@ -18,6 +18,13 @@ package apple.security.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * [@enum] SSLProtocol enumeration
+ * 
+ * Enumerations for the set of supported TLS and DTLS protocol versions.
+ * 
+ * [@note] This enumeration is deprecated. Use `tls_protocol_version_t` instead.
+ */
 @Generated
 public final class SSLProtocol {
     @Generated public static final int SSLProtocolUnknown = 0x00000000;
@@ -37,4 +44,5 @@ public final class SSLProtocol {
 
     @Generated public static final int TLSProtocol13 = 0x0000000A;
     @Generated public static final int TLSProtocolMaxSupported = 0x000003E7;
+    @Generated public static final int DTLSProtocol12 = 0x0000000B;
 }

@@ -36,6 +36,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSUnitConverter describes how to convert a unit to and from the base unit of its dimension.  Subclass NSUnitConverter to implement new ways of converting a unit.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -147,6 +150,12 @@ public class NSUnitConverter extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * This method takes a value in terms of a unit and returns the corresponding value in terms of the base unit of the original unit's dimension.
+     * 
+     * @param value Value in terms of the unit class
+     * @return Value in terms of the base unit
+     */
     @Generated
     @Selector("baseUnitValueFromValue:")
     public native double baseUnitValueFromValue(double value);
@@ -155,6 +164,12 @@ public class NSUnitConverter extends NSObject {
     @Selector("init")
     public native NSUnitConverter init();
 
+    /**
+     * This method takes in a value in terms of the base unit of a unit's dimension and returns the equivalent value in terms of the unit.
+     * 
+     * @param baseUnitValue Value in terms of the base unit
+     * @return Value in terms of the unit class
+     */
     @Generated
     @Selector("valueFromBaseUnitValue:")
     public native double valueFromBaseUnitValue(double baseUnitValue);

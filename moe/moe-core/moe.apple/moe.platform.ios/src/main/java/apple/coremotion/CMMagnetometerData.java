@@ -43,6 +43,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMMagnetometerData
+ * 
+ * Discussion:
+ *   Contains a single magnetometer measurement.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -164,8 +170,17 @@ public class CMMagnetometerData extends CMLogItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMMagnetometerData initWithCoder(NSCoder aDecoder);
+    public native CMMagnetometerData initWithCoder(NSCoder coder);
 
+    /**
+     * magneticField
+     * 
+     * Discussion:
+     *   Returns the magnetic field measured by the magnetometer. Note
+     *       that this is the total magnetic field observed by the device which
+     *       is equal to the Earth's geomagnetic field plus bias introduced
+     *       from the device itself and its surroundings.
+     */
     @Generated
     @Selector("magneticField")
     @ByValue

@@ -167,7 +167,7 @@ public class INTermsAndConditions extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,17 +175,23 @@ public class INTermsAndConditions extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native INTermsAndConditions initWithCoder(NSCoder aDecoder);
+    public native INTermsAndConditions initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLocalizedTermsAndConditionsText:privacyPolicyURL:termsAndConditionsURL:")
     public native INTermsAndConditions initWithLocalizedTermsAndConditionsTextPrivacyPolicyURLTermsAndConditionsURL(
             String localizedTermsAndConditionsText, NSURL privacyPolicyURL, NSURL termsAndConditionsURL);
 
+    /**
+     * A string that contains a summary of the vendor's terms and conditions.
+     */
     @Generated
     @Selector("localizedTermsAndConditionsText")
     public native String localizedTermsAndConditionsText();
 
+    /**
+     * An optional URL that links to the vendor's privacy policy.
+     */
     @Generated
     @Selector("privacyPolicyURL")
     public native NSURL privacyPolicyURL();
@@ -196,6 +202,9 @@ public class INTermsAndConditions extends NSObject implements NSSecureCoding, NS
         return supportsSecureCoding();
     }
 
+    /**
+     * An optional URL that links to the vendor's full terms and conditions.
+     */
     @Generated
     @Selector("termsAndConditionsURL")
     public native NSURL termsAndConditionsURL();

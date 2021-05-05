@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * PKPaymentRequest defines an application's request to produce a payment instrument for the
+ * purchase of goods and services. It encapsulates information about the selling party's payment
+ * processing capabilities, an amount to pay, and the currency code.
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -74,6 +79,9 @@ public class PKPaymentRequest extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * The payment networks and platforms supported for in-app payment
+     */
     @Generated
     @Selector("availableNetworks")
     public static native NSArray<String> availableNetworks();
@@ -157,6 +165,10 @@ public class PKPaymentRequest extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Optional merchant-supplied information about the payment request.  Examples of this are an order
+     * or cart identifier.  It will be signed and included in the resulting PKPaymentToken.
+     */
     @Generated
     @Selector("applicationData")
     public native NSData applicationData();
@@ -166,14 +178,23 @@ public class PKPaymentRequest extends NSObject {
     @Selector("billingAddress")
     public native ConstVoidPtr billingAddress();
 
+    /**
+     * If the merchant already has a billing address on file, set it here.
+     */
     @Generated
     @Selector("billingContact")
     public native PKContact billingContact();
 
+    /**
+     * The merchant's ISO country code.
+     */
     @Generated
     @Selector("countryCode")
     public native String countryCode();
 
+    /**
+     * Currency code for this payment.
+     */
     @Generated
     @Selector("currencyCode")
     public native String currencyCode();
@@ -182,29 +203,52 @@ public class PKPaymentRequest extends NSObject {
     @Selector("init")
     public native PKPaymentRequest init();
 
+    /**
+     * The payment processing capabilities of the merchant.
+     */
     @Generated
     @Selector("merchantCapabilities")
     @NUInt
     public native long merchantCapabilities();
 
+    /**
+     * Identifies the merchant, as previously agreed with Apple.  Must match one of the merchant
+     * identifiers in the application's entitlement.
+     */
     @Generated
     @Selector("merchantIdentifier")
     public native String merchantIdentifier();
 
+    /**
+     * Array of PKPaymentSummaryItem objects which should be presented to the user.
+     * The last item should be the total you wish to charge, and should not be pending
+     */
     @Generated
     @Selector("paymentSummaryItems")
     public native NSArray<? extends PKPaymentSummaryItem> paymentSummaryItems();
 
+    /**
+     * Indicates which billing address fields are required. The default is PKAddressFieldNone.
+     * This property is deprecated and should not be used.
+     */
     @Generated
     @Selector("requiredBillingAddressFields")
     @NUInt
     public native long requiredBillingAddressFields();
 
+    /**
+     * Indicates which shipping address fields are required. The default is PKAddressFieldNone.
+     * This property is deprecated and should not be used
+     */
     @Generated
     @Selector("requiredShippingAddressFields")
     @NUInt
     public native long requiredShippingAddressFields();
 
+    /**
+     * Optional merchant-supplied information about the payment request.  Examples of this are an order
+     * or cart identifier.  It will be signed and included in the resulting PKPaymentToken.
+     */
     @Generated
     @Selector("setApplicationData:")
     public native void setApplicationData(NSData value);
@@ -214,121 +258,219 @@ public class PKPaymentRequest extends NSObject {
     @Selector("setBillingAddress:")
     public native void setBillingAddress(ConstVoidPtr value);
 
+    /**
+     * If the merchant already has a billing address on file, set it here.
+     */
     @Generated
     @Selector("setBillingContact:")
     public native void setBillingContact(PKContact value);
 
+    /**
+     * The merchant's ISO country code.
+     */
     @Generated
     @Selector("setCountryCode:")
     public native void setCountryCode(String value);
 
+    /**
+     * Currency code for this payment.
+     */
     @Generated
     @Selector("setCurrencyCode:")
     public native void setCurrencyCode(String value);
 
+    /**
+     * The payment processing capabilities of the merchant.
+     */
     @Generated
     @Selector("setMerchantCapabilities:")
     public native void setMerchantCapabilities(@NUInt long value);
 
+    /**
+     * Identifies the merchant, as previously agreed with Apple.  Must match one of the merchant
+     * identifiers in the application's entitlement.
+     */
     @Generated
     @Selector("setMerchantIdentifier:")
     public native void setMerchantIdentifier(String value);
 
+    /**
+     * Array of PKPaymentSummaryItem objects which should be presented to the user.
+     * The last item should be the total you wish to charge, and should not be pending
+     */
     @Generated
     @Selector("setPaymentSummaryItems:")
     public native void setPaymentSummaryItems(NSArray<? extends PKPaymentSummaryItem> value);
 
+    /**
+     * Indicates which billing address fields are required. The default is PKAddressFieldNone.
+     * This property is deprecated and should not be used.
+     */
     @Generated
     @Selector("setRequiredBillingAddressFields:")
     public native void setRequiredBillingAddressFields(@NUInt long value);
 
+    /**
+     * Indicates which shipping address fields are required. The default is PKAddressFieldNone.
+     * This property is deprecated and should not be used
+     */
     @Generated
     @Selector("setRequiredShippingAddressFields:")
     public native void setRequiredShippingAddressFields(@NUInt long value);
 
+    /**
+     * These properties have been deprecated and should not be used.
+     */
     @Generated
     @Deprecated
     @Selector("setShippingAddress:")
     public native void setShippingAddress(ConstVoidPtr value);
 
+    /**
+     * If the merchant already has a shipping address on file, set it here.
+     */
     @Generated
     @Selector("setShippingContact:")
     public native void setShippingContact(PKContact value);
 
+    /**
+     * Shipping methods supported by the merchant.
+     */
     @Generated
     @Selector("setShippingMethods:")
     public native void setShippingMethods(NSArray<? extends PKShippingMethod> value);
 
+    /**
+     * Indicates the display mode for the shipping (e.g, "Pick Up", "Ship To", "Deliver To"). Localized.
+     * The default is PKShippingTypeShipping
+     */
     @Generated
     @Selector("setShippingType:")
     public native void setShippingType(@NUInt long value);
 
+    /**
+     * The payment networks supported by the merchant, for example @[ PKPaymentNetworkVisa,
+     * PKPaymentNetworkMasterCard ].  This property constrains payment cards that may fund the payment.
+     */
     @Generated
     @Selector("setSupportedNetworks:")
     public native void setSupportedNetworks(NSArray<String> value);
 
+    /**
+     * These properties have been deprecated and should not be used.
+     */
     @Generated
     @Deprecated
     @Selector("shippingAddress")
     public native ConstVoidPtr shippingAddress();
 
+    /**
+     * If the merchant already has a shipping address on file, set it here.
+     */
     @Generated
     @Selector("shippingContact")
     public native PKContact shippingContact();
 
+    /**
+     * Shipping methods supported by the merchant.
+     */
     @Generated
     @Selector("shippingMethods")
     public native NSArray<? extends PKShippingMethod> shippingMethods();
 
+    /**
+     * Indicates the display mode for the shipping (e.g, "Pick Up", "Ship To", "Deliver To"). Localized.
+     * The default is PKShippingTypeShipping
+     */
     @Generated
     @Selector("shippingType")
     @NUInt
     public native long shippingType();
 
+    /**
+     * The payment networks supported by the merchant, for example @[ PKPaymentNetworkVisa,
+     * PKPaymentNetworkMasterCard ].  This property constrains payment cards that may fund the payment.
+     */
     @Generated
     @Selector("supportedNetworks")
     public native NSArray<String> supportedNetworks();
 
+    /**
+     * Convenience method to create a payment billing address error with the supplied CNPostalAddressKey and description
+     */
     @Generated
     @Selector("paymentBillingAddressInvalidErrorWithKey:localizedDescription:")
     public static native NSError paymentBillingAddressInvalidErrorWithKeyLocalizedDescription(String postalAddressKey,
             String localizedDescription);
 
+    /**
+     * Convenience method to create a payment contact error with the supplied field
+     * You may optionally provide a localized description to be displayed to the user.
+     * Available display space for descriptions may be limited, so you should keep your messages concise
+     */
     @Generated
     @Selector("paymentContactInvalidErrorWithContactField:localizedDescription:")
     public static native NSError paymentContactInvalidErrorWithContactFieldLocalizedDescription(String field,
             String localizedDescription);
 
+    /**
+     * Convenience method to create a payment shipping address error with the supplied CNPostalAddressKey and description
+     */
     @Generated
     @Selector("paymentShippingAddressInvalidErrorWithKey:localizedDescription:")
     public static native NSError paymentShippingAddressInvalidErrorWithKeyLocalizedDescription(String postalAddressKey,
             String localizedDescription);
 
+    /**
+     * Convenience method to create a payment shipping address service error with the supplied description
+     */
     @Generated
     @Selector("paymentShippingAddressUnserviceableErrorWithLocalizedDescription:")
     public static native NSError paymentShippingAddressUnserviceableErrorWithLocalizedDescription(
             String localizedDescription);
 
+    /**
+     * Indicates which billing contact fields the merchant requires in order to process a transaction.
+     * Currently only postal address may be requested for billing contact. For all other fields use -requiredShippingContactFields
+     */
     @Generated
     @Selector("requiredBillingContactFields")
     public native NSSet<String> requiredBillingContactFields();
 
+    /**
+     * Indicates which shipping contact fields the merchant requires in order to process a transactions
+     */
     @Generated
     @Selector("requiredShippingContactFields")
     public native NSSet<String> requiredShippingContactFields();
 
+    /**
+     * Indicates which billing contact fields the merchant requires in order to process a transaction.
+     * Currently only postal address may be requested for billing contact. For all other fields use -requiredShippingContactFields
+     */
     @Generated
     @Selector("setRequiredBillingContactFields:")
     public native void setRequiredBillingContactFields(NSSet<String> value);
 
+    /**
+     * Indicates which shipping contact fields the merchant requires in order to process a transactions
+     */
     @Generated
     @Selector("setRequiredShippingContactFields:")
     public native void setRequiredShippingContactFields(NSSet<String> value);
 
+    /**
+     * Set of two-letter ISO 3166 country codes. When provided will filter the selectable payment passes to those
+     * issued in the supported countries.
+     */
     @Generated
     @Selector("setSupportedCountries:")
     public native void setSupportedCountries(NSSet<String> value);
 
+    /**
+     * Set of two-letter ISO 3166 country codes. When provided will filter the selectable payment passes to those
+     * issued in the supported countries.
+     */
     @Generated
     @Selector("supportedCountries")
     public native NSSet<String> supportedCountries();

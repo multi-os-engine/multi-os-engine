@@ -19,6 +19,23 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum] MTLArgumentType
+ * 
+ * The type for an input to a MTLRenderPipelineState or a MTLComputePipelineState
+ * 
+ * [@constant] MTLArgumentTypeBuffer
+ * This input is a MTLBuffer
+ * 
+ * [@constant] MTLArgumentTypeThreadgroupMemory
+ * This input is a pointer to the threadgroup memory.
+ * 
+ * [@constant] MTLArgumentTypeTexture
+ * This input is a MTLTexture.
+ * 
+ * [@constant] MTLArgumentTypeSampler
+ * This input is a sampler.
+ */
 @Generated
 public final class MTLArgumentType {
     @Generated @NUInt public static final long Buffer = 0x0000000000000000L;
@@ -32,4 +49,8 @@ public final class MTLArgumentType {
 
     @Generated @NUInt public static final long ImageblockData = 0x0000000000000010L;
     @Generated @NUInt public static final long Imageblock = 0x0000000000000011L;
+    @Generated @NUInt public static final long VisibleFunctionTable = 0x0000000000000018L;
+    @Generated @NUInt public static final long PrimitiveAccelerationStructure = 0x0000000000000019L;
+    @Generated @NUInt public static final long InstanceAccelerationStructure = 0x000000000000001AL;
+    @Generated @NUInt public static final long IntersectionFunctionTable = 0x000000000000001BL;
 }

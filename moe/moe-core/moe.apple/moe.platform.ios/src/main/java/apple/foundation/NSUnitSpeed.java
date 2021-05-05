@@ -135,6 +135,9 @@ public class NSUnitSpeed extends NSDimension implements NSSecureCoding {
     @Selector("knots")
     public static native NSUnitSpeed knots();
 
+    /**
+     * Base unit - metersPerSecond
+     */
     @Generated
     @Selector("metersPerSecond")
     public static native NSUnitSpeed metersPerSecond();
@@ -176,7 +179,7 @@ public class NSUnitSpeed extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -184,7 +187,7 @@ public class NSUnitSpeed extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitSpeed initWithCoder(NSCoder aDecoder);
+    public native NSUnitSpeed initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

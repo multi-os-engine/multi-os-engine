@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Models a finite state machine that has a single current state.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -141,6 +144,11 @@ public class GKStateMachine extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Creates a state machine with an array of possible states and an initial state.
+     * 
+     * @param states a list of possible states for this state machine.
+     */
     @Generated
     @Selector("stateMachineWithStates:")
     public static native GKStateMachine stateMachineWithStates(NSArray<? extends GKState> states);
@@ -154,14 +162,31 @@ public class GKStateMachine extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns YES if the indicated class is a a valid next state or if currentState is nil
+     * 
+     * @param stateClass the class of the state to be tested
+     */
     @Generated
     @Selector("canEnterState:")
     public native boolean canEnterState(Class stateClass);
 
+    /**
+     * The current state that the state machine is in.
+     * Prior to the first called to enterState this is equal to nil.
+     */
     @Generated
     @Selector("currentState")
     public native GKState currentState();
 
+    /**
+     * Calls canEnterState to check if we can enter the given state and then enters that state if so.
+     * [GKState willExitWithNextState:] is called on the old current state.
+     * [GKState didEnterWithPreviousState:] is called on the new state.
+     * 
+     * @param stateClass the class of the state to switch to
+     * @return YES if state was entered.  NO otherwise.
+     */
     @Generated
     @Selector("enterState:")
     public native boolean enterState(Class stateClass);
@@ -174,10 +199,21 @@ public class GKStateMachine extends NSObject {
     @Selector("initWithStates:")
     public native GKStateMachine initWithStates(NSArray<? extends GKState> states);
 
+    /**
+     * Gets the instance of the indicated state class from this state machine.
+     * Returns nil if the state does not exist
+     * 
+     * @param stateClass the class of the state to be retrieved
+     */
     @Generated
     @Selector("stateForClass:")
     public native GKState stateForClass(Class stateClass);
 
+    /**
+     * Updates the current state machine.
+     * 
+     * @param sec the time, in seconds, since the last frame
+     */
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double sec);

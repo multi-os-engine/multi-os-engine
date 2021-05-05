@@ -41,6 +41,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKSampleType
+ * 
+ * Represents a type of HKSample.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -190,7 +195,7 @@ public class HKSampleType extends HKObjectType {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKSampleType initWithCoder(NSCoder aDecoder);
+    public native HKSampleType initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -201,4 +206,58 @@ public class HKSampleType extends HKObjectType {
     @Generated
     @Selector("seriesTypeForIdentifier:")
     public static native HKSeriesType seriesTypeForIdentifier(String identifier);
+
+    @Generated
+    @Selector("audiogramSampleType")
+    public static native HKAudiogramSampleType audiogramSampleType();
+
+    @Generated
+    @Selector("clinicalTypeForIdentifier:")
+    public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
+
+    /**
+     * [@property]      isMaximumDurationRestricted
+     * 
+     * Returns YES if the start and end date for samples of this type are restricted by a maximum duration.
+     */
+    @Generated
+    @Selector("isMaximumDurationRestricted")
+    public native boolean isMaximumDurationRestricted();
+
+    /**
+     * [@property]      isMinimumDurationRestricted
+     * 
+     * Returns YES if the start and end date for samples of this type are restricted by a minimum duration.
+     */
+    @Generated
+    @Selector("isMinimumDurationRestricted")
+    public native boolean isMinimumDurationRestricted();
+
+    /**
+     * [@property]      maximumAllowedDuration
+     * 
+     * When the duration is restricted for samples of this type, returns the maximum duration allowed,
+     *                calculated as the difference between end and start dates.
+     * 
+     * Throws an exception if there is no maximum restriction on duration for samples of this type.
+     */
+    @Generated
+    @Selector("maximumAllowedDuration")
+    public native double maximumAllowedDuration();
+
+    /**
+     * [@property]      minimumAllowedDuration
+     * 
+     * When the duration is restricted for samples of this type, returns the minimum duration allowed,
+     *                calculated as the difference between end and start dates.
+     * 
+     * Throws an exception if there is no minimum restriction on duration for samples of this type.
+     */
+    @Generated
+    @Selector("minimumAllowedDuration")
+    public native double minimumAllowedDuration();
+
+    @Generated
+    @Selector("electrocardiogramType")
+    public static native HKElectrocardiogramType electrocardiogramType();
 }

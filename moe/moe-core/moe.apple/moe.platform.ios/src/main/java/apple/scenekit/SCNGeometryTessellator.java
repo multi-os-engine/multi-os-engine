@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNGeometryTessellator
+ * 
+ * A geometry tessellator describes how a more detailed surface is calculated from the geometry's initial surface.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -92,6 +97,13 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * [@property] edgeTessellationFactor
+     * 
+     * Specifies the edge tessellation factor. Defaults to 1.
+     * 
+     * This has no effect for adaptive subdivision
+     */
     @Generated
     @Selector("edgeTessellationFactor")
     @NFloat
@@ -99,7 +111,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -112,8 +124,15 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNGeometryTessellator initWithCoder(NSCoder aDecoder);
+    public native SCNGeometryTessellator initWithCoder(NSCoder coder);
 
+    /**
+     * [@property] insideTessellationFactor
+     * 
+     * Specifies the inside tessellation factor. Defaults to 1.
+     * 
+     * This has no effect for adaptive subdivision
+     */
     @Generated
     @Selector("insideTessellationFactor")
     @NFloat
@@ -132,10 +151,20 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * [@property] adaptive
+     * 
+     * Specifies if the tessellation should be uniform or adaptive. Defaults to NO.
+     */
     @Generated
     @Selector("isAdaptive")
     public native boolean isAdaptive();
 
+    /**
+     * [@property] screenspace
+     * 
+     * Specifies if the level of tessellation should be adapted in screenSpace. Defaults to NO.
+     */
     @Generated
     @Selector("isScreenSpace")
     public native boolean isScreenSpace();
@@ -148,6 +177,13 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * [@property] maximumEdgeLength
+     * 
+     * Specifies the maximum edge length. Defaults to 1.
+     * 
+     * This has no effect for non-adaptive subdivision
+     */
     @Generated
     @Selector("maximumEdgeLength")
     @NFloat
@@ -167,34 +203,80 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * [@property] adaptive
+     * 
+     * Specifies if the tessellation should be uniform or adaptive. Defaults to NO.
+     */
     @Generated
     @Selector("setAdaptive:")
     public native void setAdaptive(boolean value);
 
+    /**
+     * [@property] edgeTessellationFactor
+     * 
+     * Specifies the edge tessellation factor. Defaults to 1.
+     * 
+     * This has no effect for adaptive subdivision
+     */
     @Generated
     @Selector("setEdgeTessellationFactor:")
     public native void setEdgeTessellationFactor(@NFloat double value);
 
+    /**
+     * [@property] insideTessellationFactor
+     * 
+     * Specifies the inside tessellation factor. Defaults to 1.
+     * 
+     * This has no effect for adaptive subdivision
+     */
     @Generated
     @Selector("setInsideTessellationFactor:")
     public native void setInsideTessellationFactor(@NFloat double value);
 
+    /**
+     * [@property] maximumEdgeLength
+     * 
+     * Specifies the maximum edge length. Defaults to 1.
+     * 
+     * This has no effect for non-adaptive subdivision
+     */
     @Generated
     @Selector("setMaximumEdgeLength:")
     public native void setMaximumEdgeLength(@NFloat double value);
 
+    /**
+     * [@property] screenspace
+     * 
+     * Specifies if the level of tessellation should be adapted in screenSpace. Defaults to NO.
+     */
     @Generated
     @Selector("setScreenSpace:")
     public native void setScreenSpace(boolean value);
 
+    /**
+     * [@property] smoothingMode
+     * 
+     * Defaults to SCNTessellationSmoothingModeNone.
+     */
     @Generated
     @Selector("setSmoothingMode:")
     public native void setSmoothingMode(@NInt long value);
 
+    /**
+     * [@property] tessellationFactorScale
+     * 
+     * Specifies the scale factor applied to the per-patch tessellation factors. Defaults to 1.
+     */
     @Generated
     @Selector("setTessellationFactorScale:")
     public native void setTessellationFactorScale(@NFloat double value);
 
+    /**
+     * [@property] tessellationPartitionMode
+     * 
+     * Specifies the tessellation partition mode. Defaults to MTLTessellationPartitionModeInteger.
+     */
     @Generated
     @Selector("setTessellationPartitionMode:")
     public native void setTessellationPartitionMode(@NUInt long value);
@@ -203,6 +285,11 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * [@property] smoothingMode
+     * 
+     * Defaults to SCNTessellationSmoothingModeNone.
+     */
     @Generated
     @Selector("smoothingMode")
     @NInt
@@ -222,11 +309,21 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] tessellationFactorScale
+     * 
+     * Specifies the scale factor applied to the per-patch tessellation factors. Defaults to 1.
+     */
     @Generated
     @Selector("tessellationFactorScale")
     @NFloat
     public native double tessellationFactorScale();
 
+    /**
+     * [@property] tessellationPartitionMode
+     * 
+     * Specifies the tessellation partition mode. Defaults to MTLTessellationPartitionModeInteger.
+     */
     @Generated
     @Selector("tessellationPartitionMode")
     @NUInt

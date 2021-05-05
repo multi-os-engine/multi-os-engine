@@ -19,6 +19,13 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]      HMCharacteristicValuePositionState
+ * 
+ * [@constant]  HMCharacteristicValuePositionStateClosing           Position is moving towards minimum value.
+ * [@constant]  HMCharacteristicValuePositionStateOpening           Position is moving towards maximum value.
+ * [@constant]  HMCharacteristicValuePositionStateStopped           Position is Stopped.
+ */
 @Generated
 public final class HMCharacteristicValuePositionState {
     @Generated @NInt public static final long Closing = 0x0000000000000000L;

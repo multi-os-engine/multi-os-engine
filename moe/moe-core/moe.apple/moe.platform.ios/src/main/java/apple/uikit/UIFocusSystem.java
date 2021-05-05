@@ -5,6 +5,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UIFocusEnvironment;
+import apple.uikit.protocol.UIFocusItem;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -24,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UIFocusSystem instances manage focus state within a part of the user interface. They are in charge of tracking the current focused item, as well as processing focus updates.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -82,6 +86,9 @@ public class UIFocusSystem extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Returns true if `environment` is an ancestor of `otherEnvironment`, or false if otherwise.
+     */
     @Generated
     @Selector("environment:containsEnvironment:")
     public static native boolean environmentContainsEnvironment(
@@ -144,4 +151,36 @@ public class UIFocusSystem extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Return the focus system that the provided environment is contained in. Returns nil if focus
+     * interaction is not supported, or if the environment is not associated with any focus system.
+     */
+    @Generated
+    @Selector("focusSystemForEnvironment:")
+    public static native UIFocusSystem focusSystemForEnvironment(
+            @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
+
+    /**
+     * The currently focused item in this focus system.
+     */
+    @Generated
+    @Selector("focusedItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIFocusItem focusedItem();
+
+    /**
+     * Requests a focus update to the specified environment. If accepted, the focus update will happen
+     * in the next run loop cycle.
+     */
+    @Generated
+    @Selector("requestFocusUpdateToEnvironment:")
+    public native void requestFocusUpdateToEnvironment(@Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
+
+    /**
+     * Forces any pending focus update to be committed immediately.
+     */
+    @Generated
+    @Selector("updateFocusIfNeeded")
+    public native void updateFocusIfNeeded();
 }

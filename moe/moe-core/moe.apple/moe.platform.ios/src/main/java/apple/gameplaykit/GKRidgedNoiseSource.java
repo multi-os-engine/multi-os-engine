@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Ridged noise is similar to Perlin noise, with sharply-defined, relatively thin peaks.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)

@@ -24,6 +24,9 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSIndexPath;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIContextMenuInteractionAnimating;
+import apple.uikit.protocol.UIContextMenuInteractionCommitAnimating;
+import apple.uikit.protocol.UISpringLoadedInteractionContext;
 import apple.uikit.protocol.UITableViewDataSource;
 import apple.uikit.protocol.UITableViewDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -48,6 +51,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Creates a table view with the correct dimensions and autoresizing, setting the datasource and delegate to self.
+ * In -viewWillAppear:, it reloads the table's data if it's empty. Otherwise, it deselects all rows (with or without animation) if clearsSelectionOnViewWillAppear is YES.
+ * In -viewDidAppear:, it flashes the table's scroll indicators.
+ * Implements -setEditing:animated: to toggle the editing state of the table.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -171,6 +180,9 @@ public class UITableViewController extends UIViewController implements UITableVi
     @NInt
     public static native long version_static();
 
+    /**
+     * defaults to YES. If YES, any selection is cleared in viewWillAppear:
+     */
     @Generated
     @Selector("clearsSelectionOnViewWillAppear")
     public native boolean clearsSelectionOnViewWillAppear();
@@ -186,7 +198,7 @@ public class UITableViewController extends UIViewController implements UITableVi
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITableViewController initWithCoder(NSCoder aDecoder);
+    public native UITableViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -273,6 +285,9 @@ public class UITableViewController extends UIViewController implements UITableVi
     @Selector("sectionIndexTitlesForTableView:")
     public native NSArray<String> sectionIndexTitlesForTableView(UITableView tableView);
 
+    /**
+     * defaults to YES. If YES, any selection is cleared in viewWillAppear:
+     */
     @Generated
     @Selector("setClearsSelectionOnViewWillAppear:")
     public native void setClearsSelectionOnViewWillAppear(boolean value);
@@ -563,11 +578,67 @@ public class UITableViewController extends UIViewController implements UITableVi
     @IsOptional
     @Selector("tableView:shouldSpringLoadRowAtIndexPath:withContext:")
     public native boolean tableViewShouldSpringLoadRowAtIndexPathWithContext(UITableView tableView,
-            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object context);
+            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
 
     @Generated
     @IsOptional
     @Selector("tableView:trailingSwipeActionsConfigurationForRowAtIndexPath:")
     public native UISwipeActionsConfiguration tableViewTrailingSwipeActionsConfigurationForRowAtIndexPath(
             UITableView tableView, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:contextMenuConfigurationForRowAtIndexPath:point:")
+    public native UIContextMenuConfiguration tableViewContextMenuConfigurationForRowAtIndexPathPoint(
+            UITableView tableView, NSIndexPath indexPath, @ByValue CGPoint point);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:didBeginMultipleSelectionInteractionAtIndexPath:")
+    public native void tableViewDidBeginMultipleSelectionInteractionAtIndexPath(UITableView tableView,
+            NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:previewForDismissingContextMenuWithConfiguration:")
+    public native UITargetedPreview tableViewPreviewForDismissingContextMenuWithConfiguration(UITableView tableView,
+            UIContextMenuConfiguration configuration);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:previewForHighlightingContextMenuWithConfiguration:")
+    public native UITargetedPreview tableViewPreviewForHighlightingContextMenuWithConfiguration(UITableView tableView,
+            UIContextMenuConfiguration configuration);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:shouldBeginMultipleSelectionInteractionAtIndexPath:")
+    public native boolean tableViewShouldBeginMultipleSelectionInteractionAtIndexPath(UITableView tableView,
+            NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:willPerformPreviewActionForMenuWithConfiguration:animator:")
+    public native void tableViewWillPerformPreviewActionForMenuWithConfigurationAnimator(UITableView tableView,
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("tableViewDidEndMultipleSelectionInteraction:")
+    public native void tableViewDidEndMultipleSelectionInteraction(UITableView tableView);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:willDisplayContextMenuWithConfiguration:animator:")
+    public native void tableViewWillDisplayContextMenuWithConfigurationAnimator(UITableView tableView,
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:willEndContextMenuInteractionWithConfiguration:animator:")
+    public native void tableViewWillEndContextMenuInteractionWithConfigurationAnimator(UITableView tableView,
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
 }

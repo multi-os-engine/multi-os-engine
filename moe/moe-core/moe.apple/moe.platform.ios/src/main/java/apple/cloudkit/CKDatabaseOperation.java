@@ -150,6 +150,12 @@ public class CKDatabaseOperation extends CKOperation {
     @NInt
     public static native long version_static();
 
+    /**
+     * The database on which to perform the operation.
+     * 
+     * If no database is set, @code [self.container privateCloudDatabase] @endcode is used.
+     * This will also set the container property of the operation's configuration to match the container of the passed-in database.
+     */
     @Generated
     @Selector("database")
     public native CKDatabase database();
@@ -158,6 +164,12 @@ public class CKDatabaseOperation extends CKOperation {
     @Selector("init")
     public native CKDatabaseOperation init();
 
+    /**
+     * The database on which to perform the operation.
+     * 
+     * If no database is set, @code [self.container privateCloudDatabase] @endcode is used.
+     * This will also set the container property of the operation's configuration to match the container of the passed-in database.
+     */
     @Generated
     @Selector("setDatabase:")
     public native void setDatabase(CKDatabase value);

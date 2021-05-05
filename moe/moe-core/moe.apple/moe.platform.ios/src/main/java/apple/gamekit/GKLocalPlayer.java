@@ -183,21 +183,37 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     public native void authenticateWithCompletionHandler(
             @ObjCBlock(name = "call_authenticateWithCompletionHandler") Block_authenticateWithCompletionHandler completionHandler);
 
+    /**
+     * Asynchronously delete saved games with the given name. The completion handler will indicate whether or not the deletion was successful.
+     */
     @Generated
     @Selector("deleteSavedGamesWithName:completionHandler:")
     public native void deleteSavedGamesWithNameCompletionHandler(String name,
             @ObjCBlock(name = "call_deleteSavedGamesWithNameCompletionHandler") Block_deleteSavedGamesWithNameCompletionHandler handler);
 
+    /**
+     * Asynchronously fetch saved games. The handler is called with an array of GKSavedGame objects or an error.
+     * If there is more than one saved game with the same name then a conflict exists. The application should determine the correct data to use and call resolveConflictingSavedGames:withData:completionHandler:. This may require data merging or asking the user.
+     */
     @Generated
     @Selector("fetchSavedGamesWithCompletionHandler:")
     public native void fetchSavedGamesWithCompletionHandler(
             @ObjCBlock(name = "call_fetchSavedGamesWithCompletionHandler") Block_fetchSavedGamesWithCompletionHandler handler);
 
+    /**
+     * Array of player identifiers of friends for the local player. Not valid until loadFriendsWithCompletionHandler: has completed.
+     */
     @Generated
     @Deprecated
     @Selector("friends")
     public native NSArray<String> friends();
 
+    /**
+     * Generates a signature allowing 3rd party server to authenticate the GKLocalPlayer
+     * Possible reasons for error:
+     * 1. Communications problem
+     * 2. Unauthenticated player
+     */
     @Generated
     @Selector("generateIdentityVerificationSignatureWithCompletionHandler:")
     public native void generateIdentityVerificationSignatureWithCompletionHandler(
@@ -207,10 +223,16 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Selector("init")
     public native GKLocalPlayer init();
 
+    /**
+     * Authentication state
+     */
     @Generated
     @Selector("isAuthenticated")
     public native boolean isAuthenticated();
 
+    /**
+     * Indicates if a player is under age
+     */
     @Generated
     @Selector("isUnderage")
     public native boolean isUnderage();
@@ -221,6 +243,13 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     public native void loadDefaultLeaderboardCategoryIDWithCompletionHandler(
             @ObjCBlock(name = "call_loadDefaultLeaderboardCategoryIDWithCompletionHandler") Block_loadDefaultLeaderboardCategoryIDWithCompletionHandler completionHandler);
 
+    /**
+     * Load the default leaderboard identifier for the local player
+     * Possible reasons for error:
+     * 1. Communications problem
+     * 2. Unauthenticated player
+     * 3. Leaderboard not present
+     */
     @Generated
     @Selector("loadDefaultLeaderboardIdentifierWithCompletionHandler:")
     public native void loadDefaultLeaderboardIdentifierWithCompletionHandler(
@@ -231,12 +260,21 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     public native void loadFriendPlayersWithCompletionHandler(
             @ObjCBlock(name = "call_loadFriendPlayersWithCompletionHandler") Block_loadFriendPlayersWithCompletionHandler completionHandler);
 
+    /**
+     * This method is obsolete. It will never be invoked and its implementation does nothing**
+     */
     @Generated
     @Deprecated
     @Selector("loadFriendsWithCompletionHandler:")
     public native void loadFriendsWithCompletionHandler(
             @ObjCBlock(name = "call_loadFriendsWithCompletionHandler") Block_loadFriendsWithCompletionHandler completionHandler);
 
+    /**
+     * Asynchronously load the recent players list as an array of GKPlayer.  A recent player is someone that you have played a game with or is a legacy game center friend.  Calls completionHandler when finished. Error will be nil on success.
+     * Possible reasons for error:
+     * 1. Communications problem
+     * 2. Unauthenticated player
+     */
     @Generated
     @Selector("loadRecentPlayersWithCompletionHandler:")
     public native void loadRecentPlayersWithCompletionHandler(
@@ -252,16 +290,26 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Selector("player:hasConflictingSavedGames:")
     public native void playerHasConflictingSavedGames(GKPlayer player, NSArray<? extends GKSavedGame> savedGames);
 
+    /**
+     * A single listener may be registered once. Registering multiple times results in undefined behavior. The registered listener will receive callbacks for any selector it responds to.
+     */
     @Generated
     @Selector("registerListener:")
     public native void registerListener(@Mapped(ObjCObjectMapper.class) GKLocalPlayerListener listener);
 
+    /**
+     * Asynchronously resolve a saved game conflict. This deletes all versions included in conflictingSavedGames and creates a new version with the given data. The completion handler is called with the newly created save and all other remaining versions or an error.
+     */
     @Generated
     @Selector("resolveConflictingSavedGames:withData:completionHandler:")
     public native void resolveConflictingSavedGamesWithDataCompletionHandler(
             NSArray<? extends GKSavedGame> conflictingSavedGames, NSData data,
             @ObjCBlock(name = "call_resolveConflictingSavedGamesWithDataCompletionHandler") Block_resolveConflictingSavedGamesWithDataCompletionHandler handler);
 
+    /**
+     * Asynchronously save game data. If a saved game with that name already exists it is overwritten, otherwise a new one is created. The completion handler is called with the new / modified GKSavedGame or an error.
+     * If the saved game was in conflict then the overwritten version will be the one with the same deviceName if present, otherwise the most recent overall.
+     */
     @Generated
     @Selector("saveGameData:withName:completionHandler:")
     public native void saveGameDataWithNameCompletionHandler(NSData data, String name,
@@ -278,6 +326,13 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     public native void setDefaultLeaderboardCategoryIDCompletionHandler(String categoryID,
             @ObjCBlock(name = "call_setDefaultLeaderboardCategoryIDCompletionHandler") Block_setDefaultLeaderboardCategoryIDCompletionHandler completionHandler);
 
+    /**
+     * Set the default leaderboard for the current game
+     * Possible reasons for error:
+     * 1. Communications problem
+     * 2. Unauthenticated player
+     * 3. Leaderboard not present
+     */
     @Generated
     @Selector("setDefaultLeaderboardIdentifier:completionHandler:")
     public native void setDefaultLeaderboardIdentifierCompletionHandler(String leaderboardIdentifier,
@@ -302,79 +357,79 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Generated
     public interface Block_authenticateWithCompletionHandler {
         @Generated
-        void call_authenticateWithCompletionHandler(NSError arg0);
+        void call_authenticateWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteSavedGamesWithNameCompletionHandler {
         @Generated
-        void call_deleteSavedGamesWithNameCompletionHandler(NSError arg0);
+        void call_deleteSavedGamesWithNameCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchSavedGamesWithCompletionHandler {
         @Generated
-        void call_fetchSavedGamesWithCompletionHandler(NSArray<? extends GKSavedGame> arg0, NSError arg1);
+        void call_fetchSavedGamesWithCompletionHandler(NSArray<? extends GKSavedGame> savedGames, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_generateIdentityVerificationSignatureWithCompletionHandler {
         @Generated
-        void call_generateIdentityVerificationSignatureWithCompletionHandler(NSURL arg0, NSData arg1, NSData arg2,
-                long arg3, NSError arg4);
+        void call_generateIdentityVerificationSignatureWithCompletionHandler(NSURL publicKeyUrl, NSData signature,
+                NSData salt, long timestamp, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadDefaultLeaderboardCategoryIDWithCompletionHandler {
         @Generated
-        void call_loadDefaultLeaderboardCategoryIDWithCompletionHandler(String arg0, NSError arg1);
+        void call_loadDefaultLeaderboardCategoryIDWithCompletionHandler(String categoryID, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadDefaultLeaderboardIdentifierWithCompletionHandler {
         @Generated
-        void call_loadDefaultLeaderboardIdentifierWithCompletionHandler(String arg0, NSError arg1);
+        void call_loadDefaultLeaderboardIdentifierWithCompletionHandler(String leaderboardIdentifier, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadFriendPlayersWithCompletionHandler {
         @Generated
-        void call_loadFriendPlayersWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
+        void call_loadFriendPlayersWithCompletionHandler(NSArray<? extends GKPlayer> friendPlayers, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadFriendsWithCompletionHandler {
         @Generated
-        void call_loadFriendsWithCompletionHandler(NSArray<String> arg0, NSError arg1);
+        void call_loadFriendsWithCompletionHandler(NSArray<String> friendIDs, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadRecentPlayersWithCompletionHandler {
         @Generated
-        void call_loadRecentPlayersWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
+        void call_loadRecentPlayersWithCompletionHandler(NSArray<? extends GKPlayer> recentPlayers, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveConflictingSavedGamesWithDataCompletionHandler {
         @Generated
-        void call_resolveConflictingSavedGamesWithDataCompletionHandler(NSArray<? extends GKSavedGame> arg0,
-                NSError arg1);
+        void call_resolveConflictingSavedGamesWithDataCompletionHandler(NSArray<? extends GKSavedGame> savedGames,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveGameDataWithNameCompletionHandler {
         @Generated
-        void call_saveGameDataWithNameCompletionHandler(GKSavedGame arg0, NSError arg1);
+        void call_saveGameDataWithNameCompletionHandler(GKSavedGame savedGame, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -388,13 +443,74 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Generated
     public interface Block_setDefaultLeaderboardCategoryIDCompletionHandler {
         @Generated
-        void call_setDefaultLeaderboardCategoryIDCompletionHandler(NSError arg0);
+        void call_setDefaultLeaderboardCategoryIDCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setDefaultLeaderboardIdentifierCompletionHandler {
         @Generated
-        void call_setDefaultLeaderboardIdentifierCompletionHandler(NSError arg0);
+        void call_setDefaultLeaderboardIdentifierCompletionHandler(NSError error);
     }
+
+    /**
+     * A Boolean value that declares whether or not multiplayer gaming is restricted on this device.
+     */
+    @Generated
+    @Selector("isMultiplayerGamingRestricted")
+    public native boolean isMultiplayerGamingRestricted();
+
+    /**
+     * Asynchronously load the challengable friends list as an array of GKPlayer.  A challengable player is a friend player with friend level FL1 and FL2.  Calls completionHandler when finished. Error will be nil on success.
+     * Possible reasons for error:
+     * 1. Communications problem
+     * 2. Unauthenticated player
+     */
+    @Generated
+    @Selector("loadChallengableFriendsWithCompletionHandler:")
+    public native void loadChallengableFriendsWithCompletionHandler(
+            @ObjCBlock(name = "call_loadChallengableFriendsWithCompletionHandler") Block_loadChallengableFriendsWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadChallengableFriendsWithCompletionHandler {
+        @Generated
+        void call_loadChallengableFriendsWithCompletionHandler(NSArray<? extends GKPlayer> challengableFriends,
+                NSError error);
+    }
+
+    /**
+     * Obtain the primary GKLocalPlayer object.
+     * The player is only available for offline play until logged in.
+     * A temporary player is created if no account is set up.
+     */
+    @Generated
+    @Selector("local")
+    public static native GKLocalPlayer local();
+
+    /**
+     * Generates a signature allowing 3rd party server to authenticate the GKLocalPlayer
+     * Possible reasons for error:
+     * 1. Communications problem
+     * 2. Unauthenticated player
+     */
+    @Generated
+    @Selector("fetchItemsForIdentityVerificationSignature:")
+    public native void fetchItemsForIdentityVerificationSignature(
+            @ObjCBlock(name = "call_fetchItemsForIdentityVerificationSignature") Block_fetchItemsForIdentityVerificationSignature completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchItemsForIdentityVerificationSignature {
+        @Generated
+        void call_fetchItemsForIdentityVerificationSignature(NSURL publicKeyURL, NSData signature, NSData salt,
+                long timestamp, NSError error);
+    }
+
+    /**
+     * A Boolean value that declares whether personalized communication is restricted on this device. If it is restricted, the player will not be able to read or write personalized messages on game invites, challenges, or enable voice communication in multiplayer games.  Note: this value will always be true when isUnderage is true.
+     */
+    @Generated
+    @Selector("isPersonalizedCommunicationRestricted")
+    public native boolean isPersonalizedCommunicationRestricted();
 }

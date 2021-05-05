@@ -43,6 +43,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NEVPNIKEv2SecurityAssociationParameters
+ * 
+ * The NEVPNIKEv2SecurityAssociationParameters class declares the programmatic interface of an object that manages parameters for an IPSec Security Association
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -164,6 +171,11 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * [@property] diffieHellmanGroup
+     * 
+     * The Diffie Hellman group used by the Security Association. Default is NEVPNIKEv2DiffieHellmanGroup2.
+     */
     @Generated
     @Selector("diffieHellmanGroup")
     @NInt
@@ -171,8 +183,13 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * [@property] encryptionAlgorithm
+     * 
+     * The algorithm used by the Security Association to encrypt and decrypt data. Default is NEVPNIKEv2EncryptionAlgorithm3DES.
+     */
     @Generated
     @Selector("encryptionAlgorithm")
     @NInt
@@ -184,29 +201,59 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEVPNIKEv2SecurityAssociationParameters initWithCoder(NSCoder aDecoder);
+    public native NEVPNIKEv2SecurityAssociationParameters initWithCoder(NSCoder coder);
 
+    /**
+     * [@property] integrityAlgorithm
+     * 
+     * The algorithm used by the Security Association to verify the integrity of data. Default is NEVPNIKEv2IntegrityAlgorithmSHA96. The IKE psedo-random function algorithm will be inferred based on the integrity algorithm.
+     */
     @Generated
     @Selector("integrityAlgorithm")
     @NInt
     public native long integrityAlgorithm();
 
+    /**
+     * [@property] lifetimeMinutes
+     * 
+     * The life time of the Security Association, in minutes. Default is 60 for IKE Security Associations, and 30 for Child Security Associations. Before the lifetime is reached, IKEv2 will attempt to rekey the Security Association to maintain the connection.
+     */
     @Generated
     @Selector("lifetimeMinutes")
     public native int lifetimeMinutes();
 
+    /**
+     * [@property] diffieHellmanGroup
+     * 
+     * The Diffie Hellman group used by the Security Association. Default is NEVPNIKEv2DiffieHellmanGroup2.
+     */
     @Generated
     @Selector("setDiffieHellmanGroup:")
     public native void setDiffieHellmanGroup(@NInt long value);
 
+    /**
+     * [@property] encryptionAlgorithm
+     * 
+     * The algorithm used by the Security Association to encrypt and decrypt data. Default is NEVPNIKEv2EncryptionAlgorithm3DES.
+     */
     @Generated
     @Selector("setEncryptionAlgorithm:")
     public native void setEncryptionAlgorithm(@NInt long value);
 
+    /**
+     * [@property] integrityAlgorithm
+     * 
+     * The algorithm used by the Security Association to verify the integrity of data. Default is NEVPNIKEv2IntegrityAlgorithmSHA96. The IKE psedo-random function algorithm will be inferred based on the integrity algorithm.
+     */
     @Generated
     @Selector("setIntegrityAlgorithm:")
     public native void setIntegrityAlgorithm(@NInt long value);
 
+    /**
+     * [@property] lifetimeMinutes
+     * 
+     * The life time of the Security Association, in minutes. Default is 60 for IKE Security Associations, and 30 for Child Security Associations. Before the lifetime is reached, IKEv2 will attempt to rekey the Security Association to maintain the connection.
+     */
     @Generated
     @Selector("setLifetimeMinutes:")
     public native void setLifetimeMinutes(int value);

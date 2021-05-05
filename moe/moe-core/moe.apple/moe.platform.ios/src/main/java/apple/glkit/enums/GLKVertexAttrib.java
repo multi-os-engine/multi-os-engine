@@ -18,6 +18,9 @@ package apple.glkit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Named vertex attributes for mapping GLKEffects logic to client vertex attrib enables
+ */
 @Generated
 public final class GLKVertexAttrib {
     @Generated public static final int Position = 0x00000000;

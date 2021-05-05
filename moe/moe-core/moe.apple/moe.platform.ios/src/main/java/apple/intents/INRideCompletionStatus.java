@@ -86,16 +86,25 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * The ride was canceled by the service (e.g. because the driver asked to cancel)
+     */
     @Generated
     @Selector("canceledByService")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object canceledByService();
 
+    /**
+     * The ride was canceled by the user (e.g. by doing so through your application)
+     */
     @Generated
     @Selector("canceledByUser")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object canceledByUser();
 
+    /**
+     * The ride was canceled by the service because the passenger was not present for pickup and the vehicle maximum wait time elapsed.
+     */
     @Generated
     @Selector("canceledMissedPickup")
     @MappedReturn(ObjCObjectMapper.class)
@@ -109,16 +118,26 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The ride completed.
+     */
     @Generated
     @Selector("completed")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object completed();
 
+    /**
+     * The ride completed but there is a payment outstanding that the user needs to settle in the application.
+     * The .completionUserActivity should be set, and will be continued in your application to perform payment tasks.
+     */
     @Generated
     @Selector("completedWithOutstandingPaymentAmount:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object completedWithOutstandingPaymentAmount(INCurrencyAmount outstandingPaymentAmount);
 
+    /**
+     * The ride completed. The fare in the provided amount was successfully paid; this amount may be displayed to the user.
+     */
     @Generated
     @Selector("completedWithSettledPaymentAmount:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -189,6 +208,9 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     @NInt
     public static native long version_static();
 
+    /**
+     * If this property is set, UI may be shown to the user to complete post-ride tasks (e.g. for settling outstanding payment). Acting on that UI will continue this activity in your application.
+     */
     @Generated
     @Selector("completionUserActivity")
     public native NSUserActivity completionUserActivity();
@@ -201,7 +223,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -209,28 +231,46 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRideCompletionStatus initWithCoder(NSCoder aDecoder);
+    public native INRideCompletionStatus initWithCoder(NSCoder coder);
 
+    /**
+     * YES if the ride was canceled.
+     */
     @Generated
     @Selector("isCanceled")
     public native boolean isCanceled();
 
+    /**
+     * YES if the ride was completed.
+     */
     @Generated
     @Selector("isCompleted")
     public native boolean isCompleted();
 
+    /**
+     * YES if the user missed the pickup. This is only YES if .canceled is YES.
+     */
     @Generated
     @Selector("isMissedPickup")
     public native boolean isMissedPickup();
 
+    /**
+     * Whether the payment is outstanding (YES) or settled (NO).
+     */
     @Generated
     @Selector("isOutstanding")
     public native boolean isOutstanding();
 
+    /**
+     * The payment amount, if any.
+     */
     @Generated
     @Selector("paymentAmount")
     public native INCurrencyAmount paymentAmount();
 
+    /**
+     * If this property is set, UI may be shown to the user to complete post-ride tasks (e.g. for settling outstanding payment). Acting on that UI will continue this activity in your application.
+     */
     @Generated
     @Selector("setCompletionUserActivity:")
     public native void setCompletionUserActivity(NSUserActivity value);
@@ -241,20 +281,33 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
         return supportsSecureCoding();
     }
 
+    /**
+     * The ride completed but there is feedback outstanding that the user may provide to the system. See INSendRideFeedbackIntent.
+     * If feedbackType includes INRideFeedbackTypeOptionTip, the .defaultTippingOptions should be set.
+     */
     @Generated
     @Selector("completedWithOutstandingFeedbackType:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object completedWithOutstandingFeedbackType(@NUInt long feedbackType);
 
+    /**
+     * Default options the user can choose from when adding a tip.
+     */
     @Generated
     @Selector("defaultTippingOptions")
     public native NSSet<? extends INCurrencyAmount> defaultTippingOptions();
 
+    /**
+     * The type of feedback requested, if any.
+     */
     @Generated
     @Selector("feedbackType")
     @NUInt
     public native long feedbackType();
 
+    /**
+     * Default options the user can choose from when adding a tip.
+     */
     @Generated
     @Selector("setDefaultTippingOptions:")
     public native void setDefaultTippingOptions(NSSet<? extends INCurrencyAmount> value);

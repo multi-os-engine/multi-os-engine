@@ -17,12 +17,17 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
+import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIAppearanceContainer;
+import apple.uikit.protocol.UIContextMenuInteractionAnimating;
+import apple.uikit.protocol.UIContextMenuInteractionCommitAnimating;
+import apple.uikit.protocol.UIContextMenuInteractionDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -37,21 +42,26 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * ______________________________________________________
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIControl extends UIView {
+public class UIControl extends UIView implements UIContextMenuInteractionDelegate {
     static {
         NatJ.register();
     }
@@ -129,7 +139,7 @@ public class UIControl extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -142,8 +152,8 @@ public class UIControl extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -345,21 +355,35 @@ public class UIControl extends UIView {
     @NInt
     public static native long version_static();
 
+    /**
+     * single event. returns NSArray of NSString selector names. returns nil if none
+     */
     @Generated
     @Selector("actionsForTarget:forControlEvent:")
     public native NSArray<String> actionsForTargetForControlEvent(@Mapped(ObjCObjectMapper.class) Object target,
             @NUInt long controlEvent);
 
+    /**
+     * add target/action for particular event. you can call this multiple times and you can specify multiple target/actions for a particular event.
+     * passing in nil as the target goes up the responder chain. The action may optionally include the sender and the event in that order
+     * the action cannot be NULL. Note that the target is not retained.
+     */
     @Generated
     @Selector("addTarget:action:forControlEvents:")
     public native void addTargetActionForControlEvents(@Mapped(ObjCObjectMapper.class) Object target, SEL action,
             @NUInt long controlEvents);
 
+    /**
+     * list of all events that have at least one action
+     */
     @Generated
     @Selector("allControlEvents")
     @NUInt
     public native long allControlEvents();
 
+    /**
+     * set may include NSNull to indicate at least one nil target
+     */
     @Generated
     @Selector("allTargets")
     public native NSSet<?> allTargets();
@@ -383,7 +407,7 @@ public class UIControl extends UIView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -399,7 +423,8 @@ public class UIControl extends UIView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -414,15 +439,24 @@ public class UIControl extends UIView {
     @Selector("beginTrackingWithTouch:withEvent:")
     public native boolean beginTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
 
+    /**
+     * event may be nil if cancelled for non-event reasons, e.g. removed from window
+     */
     @Generated
     @Selector("cancelTrackingWithEvent:")
     public native void cancelTrackingWithEvent(UIEvent event);
 
+    /**
+     * how to position content horizontally inside control. default is center
+     */
     @Generated
     @Selector("contentHorizontalAlignment")
     @NInt
     public native long contentHorizontalAlignment();
 
+    /**
+     * how to position content vertically inside control. default is center
+     */
     @Generated
     @Selector("contentVerticalAlignment")
     @NInt
@@ -432,6 +466,9 @@ public class UIControl extends UIView {
     @Selector("continueTrackingWithTouch:withEvent:")
     public native boolean continueTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
 
+    /**
+     * touch is sometimes nil if cancelTracking calls through to this.
+     */
     @Generated
     @Selector("endTrackingWithTouch:withEvent:")
     public native void endTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
@@ -442,36 +479,57 @@ public class UIControl extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIControl initWithCoder(NSCoder aDecoder);
+    public native UIControl initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
     public native UIControl initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * default is YES. if NO, ignores touch events and subclasses may draw differently
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * default is YES. if NO, ignores touch events and subclasses may draw differently
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * default is NO. this gets set/cleared automatically when touch enters/exits during tracking and cleared on up
+     */
     @Generated
     @Selector("isHighlighted")
     public native boolean isHighlighted();
 
+    /**
+     * default is NO. this gets set/cleared automatically when touch enters/exits during tracking and cleared on up
+     */
     @Generated
     @Selector("setHighlighted:")
     public native void setHighlighted(boolean value);
 
+    /**
+     * default is NO may be used by some subclasses or by application
+     */
     @Generated
     @Selector("isSelected")
     public native boolean isSelected();
 
+    /**
+     * default is NO may be used by some subclasses or by application
+     */
     @Generated
     @Selector("setSelected:")
     public native void setSelected(boolean value);
 
+    /**
+     * valid during tracking only
+     */
     @Generated
     @Selector("isTouchInside")
     public native boolean isTouchInside();
@@ -480,27 +538,45 @@ public class UIControl extends UIView {
     @Selector("isTracking")
     public native boolean isTracking();
 
+    /**
+     * remove the target/action for a set of events. pass in NULL for the action to remove all actions for that target
+     */
     @Generated
     @Selector("removeTarget:action:forControlEvents:")
     public native void removeTargetActionForControlEvents(@Mapped(ObjCObjectMapper.class) Object target, SEL action,
             @NUInt long controlEvents);
 
+    /**
+     * Dispatch the target-action pair. This method is called repeatedly by -sendActionsForControlEvents: and is a point at which you can observe or override behavior.
+     */
     @Generated
     @Selector("sendAction:to:forEvent:")
     public native void sendActionToForEvent(SEL action, @Mapped(ObjCObjectMapper.class) Object target, UIEvent event);
 
+    /**
+     * send all actions associated with the given control events
+     */
     @Generated
     @Selector("sendActionsForControlEvents:")
     public native void sendActionsForControlEvents(@NUInt long controlEvents);
 
+    /**
+     * how to position content horizontally inside control. default is center
+     */
     @Generated
     @Selector("setContentHorizontalAlignment:")
     public native void setContentHorizontalAlignment(@NInt long value);
 
+    /**
+     * how to position content vertically inside control. default is center
+     */
     @Generated
     @Selector("setContentVerticalAlignment:")
     public native void setContentVerticalAlignment(@NInt long value);
 
+    /**
+     * could be more than one state (e.g. disabled|selected). synthesized from other flags.
+     */
     @Generated
     @Selector("state")
     @NUInt
@@ -550,8 +626,145 @@ public class UIControl extends UIView {
         }
     }
 
+    /**
+     * how to position content horizontally inside control, guaranteed to return 'left' or 'right' for any 'leading' or 'trailing'
+     */
     @Generated
     @Selector("effectiveContentHorizontalAlignment")
     @NInt
     public native long effectiveContentHorizontalAlignment();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    /**
+     * Adds the UIAction to a given event. UIActions are uniqued based on their identifier, and subsequent actions with the same identifier replace previously added actions. You may add multiple UIActions for corresponding controlEvents, and you may add the same action to multiple controlEvents.
+     */
+    @Generated
+    @Selector("addAction:forControlEvents:")
+    public native void addActionForControlEvents(UIAction action, @NUInt long controlEvents);
+
+    /**
+     * Returns a UIContextMenuInteraction with this control set as its delegate. Before constructing the UIContextMenuInteraction, UIControl verifies 'self' is a viable delegate. See 'Implementing UIControl Menus' below for more details.
+     */
+    @Generated
+    @Selector("contextMenuInteraction")
+    public native UIContextMenuInteraction contextMenuInteraction();
+
+    @Generated
+    @Selector("contextMenuInteraction:configurationForMenuAtLocation:")
+    public native UIContextMenuConfiguration contextMenuInteractionConfigurationForMenuAtLocation(
+            UIContextMenuInteraction interaction, @ByValue CGPoint location);
+
+    @Generated
+    @Selector("contextMenuInteraction:previewForDismissingMenuWithConfiguration:")
+    public native UITargetedPreview contextMenuInteractionPreviewForDismissingMenuWithConfiguration(
+            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration);
+
+    @Generated
+    @Selector("contextMenuInteraction:previewForHighlightingMenuWithConfiguration:")
+    public native UITargetedPreview contextMenuInteractionPreviewForHighlightingMenuWithConfiguration(
+            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration);
+
+    @Generated
+    @Selector("contextMenuInteraction:willDisplayMenuForConfiguration:animator:")
+    public native void contextMenuInteractionWillDisplayMenuForConfigurationAnimator(
+            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+
+    @Generated
+    @Selector("contextMenuInteraction:willEndForConfiguration:animator:")
+    public native void contextMenuInteractionWillEndForConfigurationAnimator(UIContextMenuInteraction interaction,
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("contextMenuInteraction:willPerformPreviewActionForMenuWithConfiguration:animator:")
+    public native void contextMenuInteractionWillPerformPreviewActionForMenuWithConfigurationAnimator(
+            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator);
+
+    /**
+     * Iterate over the event handlers installed on this control at the time this method is called. For each call, either actionHandler or action will be non-nil. controlEvents is always non-zero. Setting *stop to YES will terminate the enumeration early. It is legal to manipulate the control's event handlers within the block.
+     */
+    @Generated
+    @Selector("enumerateEventHandlers:")
+    public native void enumerateEventHandlers(
+            @ObjCBlock(name = "call_enumerateEventHandlers") Block_enumerateEventHandlers iterator);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateEventHandlers {
+        @Generated
+        void call_enumerateEventHandlers(UIAction actionHandler, @Mapped(ObjCObjectMapper.class) Object target,
+                SEL action, @NUInt long controlEvents, BoolPtr stop);
+    }
+
+    /**
+     * Initializes the control and adds primaryAction for the UIControlEventPrimaryActionTriggered control event. Subclasses of UIControl may alter or add behaviors around the usage of primaryAction, see subclass documentation of this initializer for additional information.
+     */
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UIControl initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+
+    /**
+     * Specifies if the context menu interaction is enabled. NO by default.
+     */
+    @Generated
+    @Selector("isContextMenuInteractionEnabled")
+    public native boolean isContextMenuInteractionEnabled();
+
+    /**
+     * Return a point in this control's coordinate space to which to attach the given configuration's menu.
+     */
+    @Generated
+    @Selector("menuAttachmentPointForConfiguration:")
+    @ByValue
+    public native CGPoint menuAttachmentPointForConfiguration(UIContextMenuConfiguration configuration);
+
+    /**
+     * Removes the action from the set of passed control events.
+     */
+    @Generated
+    @Selector("removeAction:forControlEvents:")
+    public native void removeActionForControlEvents(UIAction action, @NUInt long controlEvents);
+
+    /**
+     * Removes the action with the provided identifier from the set of passed control events.
+     */
+    @Generated
+    @Selector("removeActionForIdentifier:forControlEvents:")
+    public native void removeActionForIdentifierForControlEvents(String actionIdentifier, @NUInt long controlEvents);
+
+    /**
+     * Like -sendAction:to:forEvent:, this method is called by -sendActionsForControlEvents:. You may override this method to observe or modify behavior. If you override this method, you should call super precisely once to dispatch the action, or not call super to suppress sending that action.
+     */
+    @Generated
+    @Selector("sendAction:")
+    public native void sendAction(UIAction action);
+
+    /**
+     * Specifies if the context menu interaction is enabled. NO by default.
+     */
+    @Generated
+    @Selector("setContextMenuInteractionEnabled:")
+    public native void setContextMenuInteractionEnabled(boolean value);
+
+    /**
+     * If the contextMenuInteraction is the primary action of the control, invoked on touch-down. NO by default.
+     */
+    @Generated
+    @Selector("setShowsMenuAsPrimaryAction:")
+    public native void setShowsMenuAsPrimaryAction(boolean value);
+
+    /**
+     * If the contextMenuInteraction is the primary action of the control, invoked on touch-down. NO by default.
+     */
+    @Generated
+    @Selector("showsMenuAsPrimaryAction")
+    public native boolean showsMenuAsPrimaryAction();
 }

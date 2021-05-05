@@ -30,11 +30,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * 'NCWidgetProviding' is an optional protocol for further customizing aspects of the provided content.
+ */
 @Generated
 @Library("NotificationCenter")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NCWidgetProviding")
 public interface NCWidgetProviding {
+    /**
+     * If implemented, called when the active display mode changes.
+     * The widget may wish to change its preferredContentSize to better accommodate the new display mode.
+     */
     @Generated
     @IsOptional
     @Selector("widgetActiveDisplayModeDidChange:withMaximumSize:")
@@ -43,6 +50,10 @@ public interface NCWidgetProviding {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Widgets wishing to customize the default margin insets can return their preferred values.
+     * Widgets that choose not to implement this method will receive the default margin insets.
+     */
     @Generated
     @IsOptional
     @Selector("widgetMarginInsetsForProposedMarginInsets:")
@@ -51,6 +62,14 @@ public interface NCWidgetProviding {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If implemented, the system will call at opportune times for the widget to update its state, both when the Notification Center is visible as well as in the background.
+     * An implementation is required to enable background updates.
+     * It's expected that the widget will perform the work to update asynchronously and off the main thread as much as possible.
+     * Widgets should call the argument block when the work is complete, passing the appropriate 'NCUpdateResult'.
+     * Widgets should NOT block returning from 'viewWillAppear:' on the results of this operation.
+     * Instead, widgets should load cached state in 'viewWillAppear:' in order to match the state of the view from the last 'viewWillDisappear:', then transition smoothly to the new data when it arrives.
+     */
     @Generated
     @IsOptional
     @Selector("widgetPerformUpdateWithCompletionHandler:")
@@ -63,6 +82,6 @@ public interface NCWidgetProviding {
     @Generated
     public interface Block_widgetPerformUpdateWithCompletionHandler {
         @Generated
-        void call_widgetPerformUpdateWithCompletionHandler(@NUInt long arg0);
+        void call_widgetPerformUpdateWithCompletionHandler(@NUInt long result);
     }
 }

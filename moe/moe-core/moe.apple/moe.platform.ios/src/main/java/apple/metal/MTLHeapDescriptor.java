@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MTLHeapDescriptor
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -157,6 +160,14 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * [@property] cpuCacheMode
+     * 
+     * CPU cache mode for the heap. Default is MTLCPUCacheModeDefaultCache.
+     * 
+     * All resources created from this heap share the same cache mode.
+     * CPU cache mode is ignored for MTLStorageModePrivate.
+     */
     @Generated
     @Selector("cpuCacheMode")
     @NUInt
@@ -166,25 +177,142 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLHeapDescriptor init();
 
+    /**
+     * [@property] cpuCacheMode
+     * 
+     * CPU cache mode for the heap. Default is MTLCPUCacheModeDefaultCache.
+     * 
+     * All resources created from this heap share the same cache mode.
+     * CPU cache mode is ignored for MTLStorageModePrivate.
+     */
     @Generated
     @Selector("setCpuCacheMode:")
     public native void setCpuCacheMode(@NUInt long value);
 
+    /**
+     * [@property] size
+     * 
+     * Requested size of the heap's backing memory.
+     * 
+     * The size may be rounded up to GPU page granularity.
+     */
     @Generated
     @Selector("setSize:")
     public native void setSize(@NUInt long value);
 
+    /**
+     * [@property] storageMode
+     * 
+     * Storage mode for the heap. Default is MTLStorageModePrivate.
+     * 
+     * All resources created from this heap share the same storage mode.
+     * MTLStorageModeManaged and MTLStorageModeMemoryless are disallowed.
+     */
     @Generated
     @Selector("setStorageMode:")
     public native void setStorageMode(@NUInt long value);
 
+    /**
+     * [@property] size
+     * 
+     * Requested size of the heap's backing memory.
+     * 
+     * The size may be rounded up to GPU page granularity.
+     */
     @Generated
     @Selector("size")
     @NUInt
     public native long size();
 
+    /**
+     * [@property] storageMode
+     * 
+     * Storage mode for the heap. Default is MTLStorageModePrivate.
+     * 
+     * All resources created from this heap share the same storage mode.
+     * MTLStorageModeManaged and MTLStorageModeMemoryless are disallowed.
+     */
     @Generated
     @Selector("storageMode")
     @NUInt
     public native long storageMode();
+
+    /**
+     * [@property] hazardTrackingMode
+     * 
+     * Set hazard tracking mode for the heap. The default value is MTLHazardTrackingModeDefault.
+     * 
+     * For heaps, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeUntracked.
+     * Setting hazardTrackingMode to MTLHazardTrackingModeTracked causes hazard tracking to be enabled heap.
+     * When a resource on a hazard tracked heap is modified, reads and writes from all resources suballocated on that heap will be delayed until the modification is complete.
+     * Similarly, modifying heap resources will be delayed until all in-flight reads and writes from all resources suballocated on that heap have completed.
+     * For optimal performance, perform hazard tracking manually through MTLFence or MTLEvent instead.
+     * All resources created from this heap shared the same hazard tracking mode.
+     */
+    @Generated
+    @Selector("hazardTrackingMode")
+    @NUInt
+    public native long hazardTrackingMode();
+
+    /**
+     * [@property] resourceOptions
+     * 
+     * A packed tuple of the storageMode, cpuCacheMode and hazardTrackingMode properties.
+     * 
+     * Modifications to this property are reflected in the other properties and vice versa.
+     */
+    @Generated
+    @Selector("resourceOptions")
+    @NUInt
+    public native long resourceOptions();
+
+    /**
+     * [@property] hazardTrackingMode
+     * 
+     * Set hazard tracking mode for the heap. The default value is MTLHazardTrackingModeDefault.
+     * 
+     * For heaps, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeUntracked.
+     * Setting hazardTrackingMode to MTLHazardTrackingModeTracked causes hazard tracking to be enabled heap.
+     * When a resource on a hazard tracked heap is modified, reads and writes from all resources suballocated on that heap will be delayed until the modification is complete.
+     * Similarly, modifying heap resources will be delayed until all in-flight reads and writes from all resources suballocated on that heap have completed.
+     * For optimal performance, perform hazard tracking manually through MTLFence or MTLEvent instead.
+     * All resources created from this heap shared the same hazard tracking mode.
+     */
+    @Generated
+    @Selector("setHazardTrackingMode:")
+    public native void setHazardTrackingMode(@NUInt long value);
+
+    /**
+     * [@property] resourceOptions
+     * 
+     * A packed tuple of the storageMode, cpuCacheMode and hazardTrackingMode properties.
+     * 
+     * Modifications to this property are reflected in the other properties and vice versa.
+     */
+    @Generated
+    @Selector("setResourceOptions:")
+    public native void setResourceOptions(@NUInt long value);
+
+    /**
+     * [@property] type
+     * 
+     * The type of the heap. The default value is MTLHeapTypeAutomatic.
+     * 
+     * This constrains the resource creation functions that are available.
+     */
+    @Generated
+    @Selector("setType:")
+    public native void setType(@NInt long value);
+
+    /**
+     * [@property] type
+     * 
+     * The type of the heap. The default value is MTLHeapTypeAutomatic.
+     * 
+     * This constrains the resource creation functions that are available.
+     */
+    @Generated
+    @Selector("type")
+    @NInt
+    public native long type();
 }

@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Subclass for property-based animations. *
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -74,6 +77,10 @@ public class CAPropertyAnimation extends CAAnimation {
     @Selector("animation")
     public static native CAPropertyAnimation animation();
 
+    /**
+     * Creates a new animation object with its `keyPath' property set to
+     * 'path'.
+     */
     @Generated
     @Selector("animationWithKeyPath:")
     public static native CAPropertyAnimation animationWithKeyPath(String path);
@@ -172,36 +179,80 @@ public class CAPropertyAnimation extends CAAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAPropertyAnimation initWithCoder(NSCoder aDecoder);
+    public native CAPropertyAnimation initWithCoder(NSCoder coder);
 
+    /**
+     * When true the value specified by the animation will be "added" to
+     * the current presentation value of the property to produce the new
+     * presentation value. The addition function is type-dependent, e.g.
+     * for affine transforms the two matrices are concatenated. Defaults to
+     * NO.
+     */
     @Generated
     @Selector("isAdditive")
     public native boolean isAdditive();
 
+    /**
+     * When true the value specified by the animation will be "added" to
+     * the current presentation value of the property to produce the new
+     * presentation value. The addition function is type-dependent, e.g.
+     * for affine transforms the two matrices are concatenated. Defaults to
+     * NO.
+     */
     @Generated
     @Selector("setAdditive:")
     public native void setAdditive(boolean value);
 
+    /**
+     * The `cumulative' property affects how repeating animations produce
+     * their result. If true then the current value of the animation is the
+     * value at the end of the previous repeat cycle, plus the value of the
+     * current repeat cycle. If false, the value is simply the value
+     * calculated for the current repeat cycle. Defaults to NO.
+     */
     @Generated
     @Selector("isCumulative")
     public native boolean isCumulative();
 
+    /**
+     * The `cumulative' property affects how repeating animations produce
+     * their result. If true then the current value of the animation is the
+     * value at the end of the previous repeat cycle, plus the value of the
+     * current repeat cycle. If false, the value is simply the value
+     * calculated for the current repeat cycle. Defaults to NO.
+     */
     @Generated
     @Selector("setCumulative:")
     public native void setCumulative(boolean value);
 
+    /**
+     * The key-path describing the property to be animated.
+     */
     @Generated
     @Selector("keyPath")
     public native String keyPath();
 
+    /**
+     * The key-path describing the property to be animated.
+     */
     @Generated
     @Selector("setKeyPath:")
     public native void setKeyPath(String value);
 
+    /**
+     * If non-nil a function that is applied to interpolated values
+     * before they are set as the new presentation value of the animation's
+     * target property. Defaults to nil.
+     */
     @Generated
     @Selector("setValueFunction:")
     public native void setValueFunction(CAValueFunction value);
 
+    /**
+     * If non-nil a function that is applied to interpolated values
+     * before they are set as the new presentation value of the animation's
+     * target property. Defaults to nil.
+     */
     @Generated
     @Selector("valueFunction")
     public native CAValueFunction valueFunction();

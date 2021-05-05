@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MKSearchCompletionFilterType {
+    /**
+     * Returns completions for points of interest as well as query suggestions (e.g., "coffee")
+     */
     @Generated @NInt public static final long AndQueries = 0x0000000000000000L;
+    /**
+     * Returns completions only for points of interest
+     */
     @Generated @NInt public static final long Only = 0x0000000000000001L;
 
     @Generated

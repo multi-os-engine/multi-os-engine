@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIInputViewAudioFeedback")
 public interface UIInputViewAudioFeedback {
+    /**
+     * If YES, an input view will enable playInputClick.
+     */
     @Generated
     @IsOptional
     @Selector("enableInputClicksWhenVisible")

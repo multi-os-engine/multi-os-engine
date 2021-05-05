@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNAccelerationConstraint
+ * 
+ * A SCNAccelerationConstraint caps the acceleration and velocity of a node
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -40,6 +45,11 @@ public class SCNAccelerationConstraint extends SCNConstraint {
         super(peer);
     }
 
+    /**
+     * accelerationConstraint
+     * 
+     * Creates and returns a SCNAccelerationConstraint object.
+     */
     @Generated
     @Selector("accelerationConstraint")
     public static native SCNAccelerationConstraint accelerationConstraint();
@@ -80,6 +90,11 @@ public class SCNAccelerationConstraint extends SCNConstraint {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * [@property] damping
+     * 
+     * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate fluid/air friction. Value should be zero or greater. Defaults to 0.1. Animatable.
+     */
     @Generated
     @Selector("damping")
     @NFloat
@@ -89,6 +104,11 @@ public class SCNAccelerationConstraint extends SCNConstraint {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * [@property] decelerationDistance
+     * 
+     * Controls the distance at which the node should start decelerating. Defaults to 0. Animatable.
+     */
     @Generated
     @Selector("decelerationDistance")
     @NFloat
@@ -109,7 +129,7 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNAccelerationConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNAccelerationConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -132,11 +152,25 @@ public class SCNAccelerationConstraint extends SCNConstraint {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * [@property] maximumLinearAcceleration
+     * 
+     * Controls the maximum linear acceleration. Defaults to MAXFLOAT. Animatable.
+     * 
+     * The maximum linear acceleration is in m.s^-2
+     */
     @Generated
     @Selector("maximumLinearAcceleration")
     @NFloat
     public native double maximumLinearAcceleration();
 
+    /**
+     * [@property] maximumLinearVelocity
+     * 
+     * Controls the maximum linear velocity. Defaults to MAXFLOAT. Animatable.
+     * 
+     * The maximum linear velocity is in m.s
+     */
     @Generated
     @Selector("maximumLinearVelocity")
     @NFloat
@@ -156,18 +190,42 @@ public class SCNAccelerationConstraint extends SCNConstraint {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * [@property] damping
+     * 
+     * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate fluid/air friction. Value should be zero or greater. Defaults to 0.1. Animatable.
+     */
     @Generated
     @Selector("setDamping:")
     public native void setDamping(@NFloat double value);
 
+    /**
+     * [@property] decelerationDistance
+     * 
+     * Controls the distance at which the node should start decelerating. Defaults to 0. Animatable.
+     */
     @Generated
     @Selector("setDecelerationDistance:")
     public native void setDecelerationDistance(@NFloat double value);
 
+    /**
+     * [@property] maximumLinearAcceleration
+     * 
+     * Controls the maximum linear acceleration. Defaults to MAXFLOAT. Animatable.
+     * 
+     * The maximum linear acceleration is in m.s^-2
+     */
     @Generated
     @Selector("setMaximumLinearAcceleration:")
     public native void setMaximumLinearAcceleration(@NFloat double value);
 
+    /**
+     * [@property] maximumLinearVelocity
+     * 
+     * Controls the maximum linear velocity. Defaults to MAXFLOAT. Animatable.
+     * 
+     * The maximum linear velocity is in m.s
+     */
     @Generated
     @Selector("setMaximumLinearVelocity:")
     public native void setMaximumLinearVelocity(@NFloat double value);

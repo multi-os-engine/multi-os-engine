@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]      HMCharacteristicValueSwingMode
+ * 
+ * [@constant]  HMCharacteristicValueSwingModeDisabled  Swing mode is disabled.
+ * [@constant]  HMCharacteristicValueSwingModeEnabled   Swing mode is enabled.
+ */
 @Generated
 public final class HMCharacteristicValueSwingMode {
     @Generated @NInt public static final long Disabled = 0x0000000000000000L;

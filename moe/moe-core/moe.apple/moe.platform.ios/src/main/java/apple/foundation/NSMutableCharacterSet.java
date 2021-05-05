@@ -273,7 +273,7 @@ public class NSMutableCharacterSet extends NSCharacterSet implements NSCopying, 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("formIntersectionWithCharacterSet:")
@@ -289,12 +289,13 @@ public class NSMutableCharacterSet extends NSCharacterSet implements NSCopying, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableCharacterSet initWithCoder(NSCoder aDecoder);
+    public native NSMutableCharacterSet initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("invert")
     public native void invert();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

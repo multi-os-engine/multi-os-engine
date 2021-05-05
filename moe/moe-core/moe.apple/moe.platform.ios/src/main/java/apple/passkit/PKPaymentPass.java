@@ -47,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PKPaymentPass extends PKPass {
+public class PKPaymentPass extends PKSecureElementPass {
     static {
         NatJ.register();
     }
@@ -160,26 +160,10 @@ public class PKPaymentPass extends PKPass {
     public native long activationState();
 
     @Generated
-    @Selector("deviceAccountIdentifier")
-    public native String deviceAccountIdentifier();
-
-    @Generated
-    @Selector("deviceAccountNumberSuffix")
-    public native String deviceAccountNumberSuffix();
-
-    @Generated
     @Selector("init")
     public native PKPaymentPass init();
 
     @Generated
     @Selector("initWithData:error:")
     public native PKPaymentPass initWithDataError(NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
-
-    @Generated
-    @Selector("primaryAccountIdentifier")
-    public native String primaryAccountIdentifier();
-
-    @Generated
-    @Selector("primaryAccountNumberSuffix")
-    public native String primaryAccountNumberSuffix();
 }

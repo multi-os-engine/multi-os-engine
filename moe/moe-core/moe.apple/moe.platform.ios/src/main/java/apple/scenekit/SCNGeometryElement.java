@@ -24,6 +24,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.foundation.struct.NSRange;
+import apple.metal.protocol.MTLBuffer;
 import apple.modelio.MDLSubmesh;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -47,6 +48,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNGeometryElement
+ * 
+ * A geometry element describes how vertices from a geometry source are connected together.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -105,6 +111,16 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * geometryElementWithData:primitiveType:primitiveCount:bytesPerIndex:
+     * 
+     * Creates and returns a geometry element from the given data and data format info.
+     * 
+     * @param data The data that contains element indexes. You can pass nil to use an implicit vertex ordering (0,1,2...).
+     * @param primitiveType The primitive type, as listed in the SCNGeometryPrimitiveType enumeration.
+     * @param primitiveCount The number of primitives in the data.
+     * @param bytesPerIndex The number of bytes that represent a single index value in the data.
+     */
     @Generated
     @Selector("geometryElementWithData:primitiveType:primitiveCount:bytesPerIndex:")
     public static native SCNGeometryElement geometryElementWithDataPrimitiveTypePrimitiveCountBytesPerIndex(NSData data,
@@ -171,18 +187,28 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] bytesPerIndex
+     * 
+     * The number of bytes that represent an index value
+     */
     @Generated
     @Selector("bytesPerIndex")
     @NInt
     public native long bytesPerIndex();
 
+    /**
+     * [@property] data
+     * 
+     * The data for the geometry element
+     */
     @Generated
     @Selector("data")
     public native NSData data();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -190,13 +216,23 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNGeometryElement initWithCoder(NSCoder aDecoder);
+    public native SCNGeometryElement initWithCoder(NSCoder coder);
 
+    /**
+     * [@property] primitiveCount
+     * 
+     * The number of primitives in the data.
+     */
     @Generated
     @Selector("primitiveCount")
     @NInt
     public native long primitiveCount();
 
+    /**
+     * [@property] primitiveType
+     * 
+     * The type of the geometry element. Possible values are listed in the SCNGeometryPrimitiveType enumeration.
+     */
     @Generated
     @Selector("primitiveType")
     @NInt
@@ -208,39 +244,99 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] maximumPointScreenSpaceRadius
+     * 
+     * Specifies the maximum size in screen-space (in pixel). Defaults to 1
+     */
     @Generated
     @Selector("maximumPointScreenSpaceRadius")
     @NFloat
     public native double maximumPointScreenSpaceRadius();
 
+    /**
+     * [@property] minimumPointScreenSpaceRadius
+     * 
+     * Specifies the minimum size in screen-space (in pixel). Defaults to 1
+     */
     @Generated
     @Selector("minimumPointScreenSpaceRadius")
     @NFloat
     public native double minimumPointScreenSpaceRadius();
 
+    /**
+     * [@property] pointSize
+     * 
+     * Specifies the size of the point in local space. Defaults to 1
+     */
     @Generated
     @Selector("pointSize")
     @NFloat
     public native double pointSize();
 
+    /**
+     * [@property] primitiveRange
+     * 
+     * Specifies the subrange of primitves to render within NSMakeRange(0, primitiveCount). Defaults to NSMakeRange(NSNotFound, 0).
+     * 
+     * When the location of the range is set to NSNotFound, the entire geometry element is rendered.
+     */
     @Generated
     @Selector("primitiveRange")
     @ByValue
     public native NSRange primitiveRange();
 
+    /**
+     * [@property] maximumPointScreenSpaceRadius
+     * 
+     * Specifies the maximum size in screen-space (in pixel). Defaults to 1
+     */
     @Generated
     @Selector("setMaximumPointScreenSpaceRadius:")
     public native void setMaximumPointScreenSpaceRadius(@NFloat double value);
 
+    /**
+     * [@property] minimumPointScreenSpaceRadius
+     * 
+     * Specifies the minimum size in screen-space (in pixel). Defaults to 1
+     */
     @Generated
     @Selector("setMinimumPointScreenSpaceRadius:")
     public native void setMinimumPointScreenSpaceRadius(@NFloat double value);
 
+    /**
+     * [@property] pointSize
+     * 
+     * Specifies the size of the point in local space. Defaults to 1
+     */
     @Generated
     @Selector("setPointSize:")
     public native void setPointSize(@NFloat double value);
 
+    /**
+     * [@property] primitiveRange
+     * 
+     * Specifies the subrange of primitves to render within NSMakeRange(0, primitiveCount). Defaults to NSMakeRange(NSNotFound, 0).
+     * 
+     * When the location of the range is set to NSNotFound, the entire geometry element is rendered.
+     */
     @Generated
     @Selector("setPrimitiveRange:")
     public native void setPrimitiveRange(@ByValue NSRange value);
+
+    /**
+     * geometryElementWithBuffer:primitiveType:primitiveCount:bytesPerIndex
+     * 
+     * Creates and returns a geometry element from the given Metal buffer and parameters.
+     * 
+     * @param buffer The buffer that contains element indexes.
+     * @param primitiveType The primitive type, as listed in the SCNGeometryPrimitiveType enumeration.
+     * @param primitiveCount The number of primitives in the data.
+     * @param bytesPerIndex The number of bytes that represent a single index value in the data.
+     */
+    @Generated
+    @Selector("geometryElementWithBuffer:primitiveType:primitiveCount:bytesPerIndex:")
+    public static native SCNGeometryElement geometryElementWithBufferPrimitiveTypePrimitiveCountBytesPerIndex(
+            @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NInt long primitiveType, @NInt long primitiveCount,
+            @NInt long bytesPerIndex);
 }

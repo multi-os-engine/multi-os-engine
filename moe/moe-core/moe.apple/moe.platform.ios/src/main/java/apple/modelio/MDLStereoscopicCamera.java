@@ -170,14 +170,36 @@ public class MDLStereoscopicCamera extends MDLCamera {
     @Selector("init")
     public native MDLStereoscopicCamera init();
 
+    /**
+     * Inter-pupillary distance in mm.
+     * Default is 63mm.
+     */
     @Generated
     @Selector("interPupillaryDistance")
     public native float interPupillaryDistance();
 
+    /**
+     * Vergence in a stereoscopic camera can be controlled in two ways. A toed-in 
+     * binocular stereoscopic camera rotates the lens and sensor together such that a 
+     * ray projected from the center of either sensor and lens meets at a point. A 
+     * parallel binocular stereoscopic camera accomplishes the same thing by shifting 
+     * the relative centers of the sensor and lens.
+     * 
+     * If a parallel binocular stereoscopic camera is modeled, the sensor should be 
+     * considered to have shifted by an amount h. If left and right vergence are equal,
+     *   h = (focal length * interOcularDistance) / distance to vergence point.
+     * 
+     * Vergence is measured in degrees towards center and is usually positive.
+     */
     @Generated
     @Selector("leftVergence")
     public native float leftVergence();
 
+    /**
+     * The amount, as a percentage of image width to offset an image towards the other 
+     * camera. This value is used in a stereo grade to enhance or reduce the intensity 
+     * of the stereoscopic effect
+     */
     @Generated
     @Selector("overlap")
     public native float overlap();
@@ -186,14 +208,36 @@ public class MDLStereoscopicCamera extends MDLCamera {
     @Selector("rightVergence")
     public native float rightVergence();
 
+    /**
+     * Inter-pupillary distance in mm.
+     * Default is 63mm.
+     */
     @Generated
     @Selector("setInterPupillaryDistance:")
     public native void setInterPupillaryDistance(float value);
 
+    /**
+     * Vergence in a stereoscopic camera can be controlled in two ways. A toed-in 
+     * binocular stereoscopic camera rotates the lens and sensor together such that a 
+     * ray projected from the center of either sensor and lens meets at a point. A 
+     * parallel binocular stereoscopic camera accomplishes the same thing by shifting 
+     * the relative centers of the sensor and lens.
+     * 
+     * If a parallel binocular stereoscopic camera is modeled, the sensor should be 
+     * considered to have shifted by an amount h. If left and right vergence are equal,
+     *   h = (focal length * interOcularDistance) / distance to vergence point.
+     * 
+     * Vergence is measured in degrees towards center and is usually positive.
+     */
     @Generated
     @Selector("setLeftVergence:")
     public native void setLeftVergence(float value);
 
+    /**
+     * The amount, as a percentage of image width to offset an image towards the other 
+     * camera. This value is used in a stereo grade to enhance or reduce the intensity 
+     * of the stereoscopic effect
+     */
     @Generated
     @Selector("setOverlap:")
     public native void setOverlap(float value);

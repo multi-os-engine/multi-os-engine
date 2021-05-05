@@ -19,6 +19,17 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum] MTLSamplerMinMagFilter
+ * 
+ * Options for filtering texels within a mip level.
+ * 
+ * [@constant] MTLSamplerMinMagFilterNearest
+ * Select the single texel nearest to the sample point.
+ * 
+ * [@constant] MTLSamplerMinMagFilterLinear
+ * Select two texels in each dimension, and interpolate linearly between them.  Not all devices support linear filtering for all formats.  Integer textures can not use linear filtering on any device, and only some devices support linear filtering of Float textures.
+ */
 @Generated
 public final class MTLSamplerMinMagFilter {
     @Generated @NUInt public static final long Nearest = 0x0000000000000000L;

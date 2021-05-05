@@ -26,6 +26,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A MPSNNScale object that uses bilinear interpolation for resampling
+ * 
+ * Caution: bilinear downscaling by more than a factor of
+ *                two in any dimension causes loss of information if a
+ *                low pass filter is not run over the image first. Details
+ *                may be omitted.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)

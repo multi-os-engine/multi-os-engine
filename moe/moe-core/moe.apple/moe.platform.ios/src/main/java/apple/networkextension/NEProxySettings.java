@@ -44,6 +44,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEProxySettings
+ * 
+ * The NEProxySettings class declares the programmatic interface for an object that contains proxy settings.
+ * 
+ * NEProxySettings is used in the context of a Network Extension configuration to specify the proxy that should be used for network traffic when the Network Extension is active.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -159,22 +166,47 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] HTTPEnabled
+     * 
+     * A boolean indicating if the static HTTP proxy is enabled.
+     */
     @Generated
     @Selector("HTTPEnabled")
     public native boolean HTTPEnabled();
 
+    /**
+     * [@property] HTTPSEnabled
+     * 
+     * A boolean indicating if the static HTTPS proxy is enabled.
+     */
     @Generated
     @Selector("HTTPSEnabled")
     public native boolean HTTPSEnabled();
 
+    /**
+     * [@property] HTTPSServer
+     * 
+     * A NEProxyServer object containing the HTTPS proxy server settings.
+     */
     @Generated
     @Selector("HTTPSServer")
     public native NEProxyServer HTTPSServer();
 
+    /**
+     * [@property] HTTPServer
+     * 
+     * A NEProxyServer object containing the HTTP proxy server settings.
+     */
     @Generated
     @Selector("HTTPServer")
     public native NEProxyServer HTTPServer();
 
+    /**
+     * [@property] autoProxyConfigurationEnabled
+     * 
+     * A boolean indicating if proxy auto-configuration is enabled.
+     */
     @Generated
     @Selector("autoProxyConfigurationEnabled")
     public native boolean autoProxyConfigurationEnabled();
@@ -187,12 +219,22 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * [@property] exceptionList
+     * 
+     * An array of domain strings. If the destination host name of a connection shares a suffix with one of these strings then the proxy settings will not be used for the connection.
+     */
     @Generated
     @Selector("exceptionList")
     public native NSArray<String> exceptionList();
 
+    /**
+     * [@property] excludeSimpleHostnames
+     * 
+     * A flag indicating if the proxy settings should not be used for network destinations specified using single-label host names.
+     */
     @Generated
     @Selector("excludeSimpleHostnames")
     public native boolean excludeSimpleHostnames();
@@ -203,56 +245,121 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEProxySettings initWithCoder(NSCoder aDecoder);
+    public native NEProxySettings initWithCoder(NSCoder coder);
 
+    /**
+     * [@property] matchDomains
+     * 
+     * An array of domain strings. If the destination host name of a connection shares a suffix with one of these strings then the proxy settings will be used for the connection. Otherwise the proxy settings will not be used. If this property is nil then all connections to which the Network Extension applies will use the proxy settings.
+     */
     @Generated
     @Selector("matchDomains")
     public native NSArray<String> matchDomains();
 
+    /**
+     * [@property] proxyAutoConfigurationJavaScript
+     * 
+     * A string containing the PAC JavaScript source code.
+     */
     @Generated
     @Selector("proxyAutoConfigurationJavaScript")
     public native String proxyAutoConfigurationJavaScript();
 
+    /**
+     * [@property] proxyAutoConfigurationURL
+     * 
+     * A URL specifying where the PAC script is located.
+     */
     @Generated
     @Selector("proxyAutoConfigurationURL")
     public native NSURL proxyAutoConfigurationURL();
 
+    /**
+     * [@property] autoProxyConfigurationEnabled
+     * 
+     * A boolean indicating if proxy auto-configuration is enabled.
+     */
     @Generated
     @Selector("setAutoProxyConfigurationEnabled:")
     public native void setAutoProxyConfigurationEnabled(boolean value);
 
+    /**
+     * [@property] exceptionList
+     * 
+     * An array of domain strings. If the destination host name of a connection shares a suffix with one of these strings then the proxy settings will not be used for the connection.
+     */
     @Generated
     @Selector("setExceptionList:")
     public native void setExceptionList(NSArray<String> value);
 
+    /**
+     * [@property] excludeSimpleHostnames
+     * 
+     * A flag indicating if the proxy settings should not be used for network destinations specified using single-label host names.
+     */
     @Generated
     @Selector("setExcludeSimpleHostnames:")
     public native void setExcludeSimpleHostnames(boolean value);
 
+    /**
+     * [@property] HTTPEnabled
+     * 
+     * A boolean indicating if the static HTTP proxy is enabled.
+     */
     @Generated
     @Selector("setHTTPEnabled:")
     public native void setHTTPEnabled(boolean value);
 
+    /**
+     * [@property] HTTPSEnabled
+     * 
+     * A boolean indicating if the static HTTPS proxy is enabled.
+     */
     @Generated
     @Selector("setHTTPSEnabled:")
     public native void setHTTPSEnabled(boolean value);
 
+    /**
+     * [@property] HTTPSServer
+     * 
+     * A NEProxyServer object containing the HTTPS proxy server settings.
+     */
     @Generated
     @Selector("setHTTPSServer:")
     public native void setHTTPSServer(NEProxyServer value);
 
+    /**
+     * [@property] HTTPServer
+     * 
+     * A NEProxyServer object containing the HTTP proxy server settings.
+     */
     @Generated
     @Selector("setHTTPServer:")
     public native void setHTTPServer(NEProxyServer value);
 
+    /**
+     * [@property] matchDomains
+     * 
+     * An array of domain strings. If the destination host name of a connection shares a suffix with one of these strings then the proxy settings will be used for the connection. Otherwise the proxy settings will not be used. If this property is nil then all connections to which the Network Extension applies will use the proxy settings.
+     */
     @Generated
     @Selector("setMatchDomains:")
     public native void setMatchDomains(NSArray<String> value);
 
+    /**
+     * [@property] proxyAutoConfigurationJavaScript
+     * 
+     * A string containing the PAC JavaScript source code.
+     */
     @Generated
     @Selector("setProxyAutoConfigurationJavaScript:")
     public native void setProxyAutoConfigurationJavaScript(String value);
 
+    /**
+     * [@property] proxyAutoConfigurationURL
+     * 
+     * A URL specifying where the PAC script is located.
+     */
     @Generated
     @Selector("setProxyAutoConfigurationURL:")
     public native void setProxyAutoConfigurationURL(NSURL value);

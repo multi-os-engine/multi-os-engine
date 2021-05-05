@@ -33,18 +33,30 @@ public final class ftrimactivefile extends StructObject {
         setFta_length(fta_length);
     }
 
+    /**
+     * IN: start of the region
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native long fta_offset();
 
+    /**
+     * IN: start of the region
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setFta_offset(long value);
 
+    /**
+     * IN: size of the region
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native long fta_length();
 
+    /**
+     * IN: size of the region
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setFta_length(long value);

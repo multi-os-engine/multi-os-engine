@@ -22,11 +22,29 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class UIDeviceOrientation {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * Device oriented vertically, home button on the bottom
+     */
     @Generated @NInt public static final long Portrait = 0x0000000000000001L;
+    /**
+     * Device oriented vertically, home button on the top
+     */
     @Generated @NInt public static final long PortraitUpsideDown = 0x0000000000000002L;
+    /**
+     * Device oriented horizontally, home button on the right
+     */
     @Generated @NInt public static final long LandscapeLeft = 0x0000000000000003L;
+    /**
+     * Device oriented horizontally, home button on the left
+     */
     @Generated @NInt public static final long LandscapeRight = 0x0000000000000004L;
+    /**
+     * Device oriented flat, face up
+     */
     @Generated @NInt public static final long FaceUp = 0x0000000000000005L;
+    /**
+     * Device oriented flat, face down
+     */
     @Generated @NInt public static final long FaceDown = 0x0000000000000006L;
 
     @Generated

@@ -40,6 +40,9 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called before text changes
+     */
     @Generated
     @IsOptional
     @Selector("searchBar:shouldChangeTextInRange:replacementText:")
@@ -48,6 +51,9 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called when text changes (including clear)
+     */
     @Generated
     @IsOptional
     @Selector("searchBar:textDidChange:")
@@ -55,6 +61,9 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called when bookmark button pressed
+     */
     @Generated
     @IsOptional
     @Selector("searchBarBookmarkButtonClicked:")
@@ -62,6 +71,9 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called when cancel button pressed
+     */
     @Generated
     @IsOptional
     @Selector("searchBarCancelButtonClicked:")
@@ -69,6 +81,9 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called when search results button pressed
+     */
     @Generated
     @IsOptional
     @Selector("searchBarResultsListButtonClicked:")
@@ -76,6 +91,9 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called when keyboard search button pressed
+     */
     @Generated
     @IsOptional
     @Selector("searchBarSearchButtonClicked:")
@@ -83,6 +101,9 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * return NO to not become first responder
+     */
     @Generated
     @IsOptional
     @Selector("searchBarShouldBeginEditing:")
@@ -90,6 +111,9 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * return NO to not resign first responder
+     */
     @Generated
     @IsOptional
     @Selector("searchBarShouldEndEditing:")
@@ -97,6 +121,9 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called when text starts editing
+     */
     @Generated
     @IsOptional
     @Selector("searchBarTextDidBeginEditing:")
@@ -104,6 +131,9 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called when text ends editing
+     */
     @Generated
     @IsOptional
     @Selector("searchBarTextDidEndEditing:")

@@ -24,6 +24,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -130,7 +131,7 @@ public class UIRefreshControl extends UIControl {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -143,8 +144,8 @@ public class UIRefreshControl extends UIControl {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -365,7 +366,7 @@ public class UIRefreshControl extends UIControl {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -381,7 +382,8 @@ public class UIRefreshControl extends UIControl {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -396,21 +398,33 @@ public class UIRefreshControl extends UIControl {
     @Selector("attributedTitle")
     public native NSAttributedString attributedTitle();
 
+    /**
+     * May be used to indicate to the refreshControl that an external event has initiated the refresh action
+     */
     @Generated
     @Selector("beginRefreshing")
     public native void beginRefreshing();
 
+    /**
+     * Must be explicitly called when the refreshing has completed
+     */
     @Generated
     @Selector("endRefreshing")
     public native void endRefreshing();
 
+    /**
+     * The designated initializer
+     * This initializes a UIRefreshControl with a default height and width.
+     * Once assigned to a UITableViewController, the frame of the control is managed automatically.
+     * When a user has pulled-to-refresh, the UIRefreshControl fires its UIControlEventValueChanged event.
+     */
     @Generated
     @Selector("init")
     public native UIRefreshControl init();
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIRefreshControl initWithCoder(NSCoder aDecoder);
+    public native UIRefreshControl initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -431,4 +445,14 @@ public class UIRefreshControl extends UIControl {
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UIRefreshControl initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 }

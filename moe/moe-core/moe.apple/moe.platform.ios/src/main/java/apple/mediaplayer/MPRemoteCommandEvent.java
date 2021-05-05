@@ -150,6 +150,9 @@ public class MPRemoteCommandEvent extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The command that sent the event.
+     */
     @Generated
     @Selector("command")
     public native MPRemoteCommand command();
@@ -158,6 +161,9 @@ public class MPRemoteCommandEvent extends NSObject {
     @Selector("init")
     public native MPRemoteCommandEvent init();
 
+    /**
+     * The time when the event occurred.
+     */
     @Generated
     @Selector("timestamp")
     public native double timestamp();

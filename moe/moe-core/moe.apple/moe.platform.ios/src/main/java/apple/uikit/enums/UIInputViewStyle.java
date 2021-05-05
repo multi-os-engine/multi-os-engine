@@ -22,6 +22,9 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class UIInputViewStyle {
     @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * mimics the keyboard background
+     */
     @Generated @NInt public static final long Keyboard = 0x0000000000000001L;
 
     @Generated

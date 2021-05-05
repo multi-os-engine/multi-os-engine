@@ -166,7 +166,7 @@ public class CKRecordID extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,8 +174,11 @@ public class CKRecordID extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKRecordID initWithCoder(NSCoder aDecoder);
+    public native CKRecordID initWithCoder(NSCoder coder);
 
+    /**
+     * Creates a record ID in the default zone
+     */
     @Generated
     @Selector("initWithRecordName:")
     public native CKRecordID initWithRecordName(String recordName);

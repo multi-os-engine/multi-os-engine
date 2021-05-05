@@ -25,6 +25,7 @@ import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.uikit.protocol.UIAccessibilityIdentification;
 import apple.uikit.protocol.UIAppearance;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -92,7 +93,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -105,8 +106,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -219,7 +220,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -235,7 +236,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -248,12 +250,18 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("image")
     public native UIImage image();
 
+    /**
+     * default is UIEdgeInsetsZero
+     */
     @Generated
     @Selector("imageInsets")
     @ByValue
@@ -265,20 +273,32 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIBarItem initWithCoder(NSCoder aDecoder);
+    public native UIBarItem initWithCoder(NSCoder coder);
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("landscapeImagePhone")
     public native UIImage landscapeImagePhone();
 
+    /**
+     * default is UIEdgeInsetsZero. These insets apply only when the landscapeImagePhone property is set.
+     */
     @Generated
     @Selector("landscapeImagePhoneInsets")
     @ByValue
@@ -288,39 +308,66 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Selector("setAccessibilityIdentifier:")
     public native void setAccessibilityIdentifier(String value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);
 
+    /**
+     * default is UIEdgeInsetsZero
+     */
     @Generated
     @Selector("setImageInsets:")
     public native void setImageInsets(@ByValue UIEdgeInsets value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setLandscapeImagePhone:")
     public native void setLandscapeImagePhone(UIImage value);
 
+    /**
+     * default is UIEdgeInsetsZero. These insets apply only when the landscapeImagePhone property is set.
+     */
     @Generated
     @Selector("setLandscapeImagePhoneInsets:")
     public native void setLandscapeImagePhoneInsets(@ByValue UIEdgeInsets value);
 
+    /**
+     * default is 0
+     */
     @Generated
     @Selector("setTag:")
     public native void setTag(@NInt long value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
+    /**
+     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary, using the keys found in NSAttributedString.h.
+     */
     @Generated
     @Selector("setTitleTextAttributes:forState:")
     public native void setTitleTextAttributesForState(NSDictionary<String, ?> attributes, @NUInt long state);
 
+    /**
+     * default is 0
+     */
     @Generated
     @Selector("tag")
     @NInt
     public native long tag();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("title")
     public native String title();
@@ -329,19 +376,31 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Selector("titleTextAttributesForState:")
     public native NSDictionary<String, ?> titleTextAttributesForState(@NUInt long state);
 
+    /**
+     * Higher-resolution version of the standard image. Default is nil. Used for rendering assistive UI (e.g. for users with visual impairments who need large text). If not provided, the system may attempt to generate an image based on the standard image (for instance, by rasterizing matching PDF representations at a higher resolution).
+     */
     @Generated
     @Selector("largeContentSizeImage")
     public native UIImage largeContentSizeImage();
 
+    /**
+     * default is UIEdgeInsetsZero. These insets apply only when the largeContentSizeImage property is set.
+     */
     @Generated
     @Selector("largeContentSizeImageInsets")
     @ByValue
     public native UIEdgeInsets largeContentSizeImageInsets();
 
+    /**
+     * Higher-resolution version of the standard image. Default is nil. Used for rendering assistive UI (e.g. for users with visual impairments who need large text). If not provided, the system may attempt to generate an image based on the standard image (for instance, by rasterizing matching PDF representations at a higher resolution).
+     */
     @Generated
     @Selector("setLargeContentSizeImage:")
     public native void setLargeContentSizeImage(UIImage value);
 
+    /**
+     * default is UIEdgeInsetsZero. These insets apply only when the largeContentSizeImage property is set.
+     */
     @Generated
     @Selector("setLargeContentSizeImageInsets:")
     public native void setLargeContentSizeImageInsets(@ByValue UIEdgeInsets value);

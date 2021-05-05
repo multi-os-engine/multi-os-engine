@@ -17,6 +17,7 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
+import apple.coregraphics.opaque.CGContextRef;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
@@ -186,13 +187,26 @@ public class UIGraphicsPDFRenderer extends UIGraphicsRenderer {
     @Generated
     public interface Block_PDFDataWithActions {
         @Generated
-        void call_PDFDataWithActions(UIGraphicsPDFRendererContext arg0);
+        void call_PDFDataWithActions(UIGraphicsPDFRendererContext rendererContext);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writePDFToURLWithActionsError {
         @Generated
-        void call_writePDFToURLWithActionsError(UIGraphicsPDFRendererContext arg0);
+        void call_writePDFToURLWithActionsError(UIGraphicsPDFRendererContext rendererContext);
     }
+
+    @Generated
+    @Selector("contextWithFormat:")
+    public static native CGContextRef contextWithFormat(UIGraphicsRendererFormat format);
+
+    @Generated
+    @Selector("prepareCGContext:withRendererContext:")
+    public static native void prepareCGContextWithRendererContext(CGContextRef context,
+            UIGraphicsRendererContext rendererContext);
+
+    @Generated
+    @Selector("rendererContextClass")
+    public static native Class rendererContextClass();
 }

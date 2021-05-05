@@ -17,6 +17,7 @@ limitations under the License.
 package apple.coretelephony;
 
 import apple.NSObject;
+import apple.coretelephony.protocol.CTSubscriberDelegate;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
@@ -151,6 +152,13 @@ public class CTSubscriber extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * carrierToken
+     * 
+     * Description:
+     *     A data blob containing authorization information about the subscriber.
+     *     This API is deprecated without replacement. Starting in iOS 11.3, this API returns nil.
+     */
     @Generated
     @Selector("carrierToken")
     public native NSData carrierToken();
@@ -158,4 +166,38 @@ public class CTSubscriber extends NSObject {
     @Generated
     @Selector("init")
     public native CTSubscriber init();
+
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native CTSubscriberDelegate delegate();
+
+    /**
+     * identifier
+     * 
+     * Description:
+     *     An implementation-defined identifier that can be used to correlate this CTSubscriber
+     *     with information vended by other API's.
+     *     The format of the identifier can change across software releases. Therefore, applications
+     *     should not persist it.
+     */
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CTSubscriberDelegate value);
+
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) CTSubscriberDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
 }

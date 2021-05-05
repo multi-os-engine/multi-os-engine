@@ -19,6 +19,33 @@ package apple.eventkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]       EKParticipantScheduleStatus
+ * 
+ * Value representing the status of a meeting invite.
+ * 
+ * [@constant]   EKParticipantScheduleStatusNone                     Default value. Indicates that no
+ *                                                                 invitation has been sent yet.
+ * [@constant]   EKParticipantScheduleStatusPending                  The invitation is in the process of being
+ *                                                                 sent.
+ * [@constant]   EKParticipantScheduleStatusSent                     The invitation has been sent, but we have
+ *                                                                 no way of determing if it was successfully
+ *                                                                 delivered.
+ * [@constant]   EKParticipantScheduleStatusDelivered                The invitation has been sent and
+ *                                                                 successfully delivered.
+ * [@constant]   EKParticipantScheduleStatusRecipientNotRecognized   The invitation wasn't delivered because we
+ *                                                                 source doesn't recognize the recipient.
+ * [@constant]   EKParticipantScheduleStatusNoPrivileges             The invitation wasn't delivered because of
+ *                                                                 insufficient privileges.
+ * [@constant]   EKParticipantScheduleStatusDeliveryFailed           The invitation wasn't delivered most
+ *                                                                 likely due to a temporary failure.
+ * [@constant]   EKParticipantScheduleStatusCannotDeliver            The invitation wasn't delivered because
+ *                                                                 we're unsure how to deliver it. This is a
+ *                                                                 permanent failure.
+ * [@constant]   EKParticipantScheduleStatusRecipientNotAllowed      The invitation wasn't delivered because
+ *                                                                 scheduling with the participant isn't
+ *                                                                 allowed. This is a permanent failure.
+ */
 @Generated
 public final class EKParticipantScheduleStatus {
     @Generated @NInt public static final long None = 0x0000000000000000L;

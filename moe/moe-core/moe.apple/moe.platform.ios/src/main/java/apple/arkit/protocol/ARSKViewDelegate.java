@@ -17,6 +17,13 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ARSKViewDelegate")
 public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
+    /**
+     * Called when a new node has been mapped to the given anchor.
+     * 
+     * @param view The view that will render the scene.
+     * @param node The node that maps to the anchor.
+     * @param anchor The added anchor.
+     */
     @Generated
     @IsOptional
     @Selector("view:didAddNode:forAnchor:")
@@ -24,6 +31,13 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a mapped node has been removed from the scene graph for the given anchor.
+     * 
+     * @param view The view that will render the scene.
+     * @param node The node that was removed.
+     * @param anchor The anchor that was removed.
+     */
     @Generated
     @IsOptional
     @Selector("view:didRemoveNode:forAnchor:")
@@ -31,6 +45,13 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a node has been updated with data from the given anchor.
+     * 
+     * @param view The view that will render the scene.
+     * @param node The node that was updated.
+     * @param anchor The anchor that was updated.
+     */
     @Generated
     @IsOptional
     @Selector("view:didUpdateNode:forAnchor:")
@@ -38,6 +59,17 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Implement this to provide a custom node for the given anchor.
+     * 
+     * This node will automatically be added to the scene graph.
+     * If this method is not implemented, a node will be automatically created.
+     * If nil is returned the anchor will be ignored.
+     * 
+     * @param view The view that will render the scene.
+     * @param anchor The added anchor.
+     * @return Node that will be mapped to the anchor or nil.
+     */
     @Generated
     @IsOptional
     @Selector("view:nodeForAnchor:")
@@ -45,6 +77,13 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a node will be updated with data from the given anchor.
+     * 
+     * @param view The view that will render the scene.
+     * @param node The node that will be updated.
+     * @param anchor The anchor that was updated.
+     */
     @Generated
     @IsOptional
     @Selector("view:willUpdateNode:forAnchor:")

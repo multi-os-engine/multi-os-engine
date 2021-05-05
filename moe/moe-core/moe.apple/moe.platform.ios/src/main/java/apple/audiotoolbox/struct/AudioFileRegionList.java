@@ -67,11 +67,17 @@ public final class AudioFileRegionList extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setMNumberRegions(int value);
 
+    /**
+     * this is a variable length array of mNumberRegions elements
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @ByValue
     public native AudioFileRegion mRegions();
 
+    /**
+     * this is a variable length array of mNumberRegions elements
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setMRegions(@ByValue AudioFileRegion value);

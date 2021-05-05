@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A @link WKUserScript @/link object represents a script that can be injected into webpages.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -161,21 +164,52 @@ public class WKUserScript extends NSObject implements NSCopying {
     @Selector("init")
     public native WKUserScript init();
 
+    /**
+     * Returns an initialized user script that can be added to a @link WKUserContentController @/link.
+     * 
+     * Calling this method is the same as calling `initWithSource:injectionTime:forMainFrameOnly:inContentWorld:` with a `contentWorld` value of `WKContentWorld.pageWorld`
+     * 
+     * @param source The script source.
+     * @param injectionTime When the script should be injected.
+     * @param forMainFrameOnly Whether the script should be injected into all frames or just the main frame.
+     */
     @Generated
     @Selector("initWithSource:injectionTime:forMainFrameOnly:")
     public native WKUserScript initWithSourceInjectionTimeForMainFrameOnly(String source, @NInt long injectionTime,
             boolean forMainFrameOnly);
 
+    /**
+     * When the script should be injected.
+     */
     @Generated
     @Selector("injectionTime")
     @NInt
     public native long injectionTime();
 
+    /**
+     * Whether the script should be injected into all frames or just the main frame.
+     */
     @Generated
     @Selector("isForMainFrameOnly")
     public native boolean isForMainFrameOnly();
 
+    /**
+     * The script source code.
+     */
     @Generated
     @Selector("source")
     public native String source();
+
+    /**
+     * Returns an initialized user script that can be added to a @link WKUserContentController @/link.
+     * 
+     * @param source The script source.
+     * @param injectionTime When the script should be injected.
+     * @param forMainFrameOnly Whether the script should be injected into all frames or just the main frame.
+     * @param contentWorld The WKContentWorld in which to inject the script.
+     */
+    @Generated
+    @Selector("initWithSource:injectionTime:forMainFrameOnly:inContentWorld:")
+    public native WKUserScript initWithSourceInjectionTimeForMainFrameOnlyInContentWorld(String source,
+            @NInt long injectionTime, boolean forMainFrameOnly, WKContentWorld contentWorld);
 }

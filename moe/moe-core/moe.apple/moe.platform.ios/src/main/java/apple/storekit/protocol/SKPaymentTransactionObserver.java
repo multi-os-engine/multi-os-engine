@@ -36,6 +36,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKPaymentTransactionObserver")
 public interface SKPaymentTransactionObserver {
+    /**
+     * Sent when transactions are removed from the queue (via finishTransaction:).
+     */
     @Generated
     @IsOptional
     @Selector("paymentQueue:removedTransactions:")
@@ -44,6 +47,9 @@ public interface SKPaymentTransactionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent when an error is encountered while adding transactions from the user's purchase history back to the queue.
+     */
     @Generated
     @IsOptional
     @Selector("paymentQueue:restoreCompletedTransactionsFailedWithError:")
@@ -51,6 +57,9 @@ public interface SKPaymentTransactionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent when the download state has changed.
+     */
     @Generated
     @IsOptional
     @Selector("paymentQueue:updatedDownloads:")
@@ -58,10 +67,16 @@ public interface SKPaymentTransactionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent when the transaction array has changed (additions or state changes).  Client should check state of transactions and finish as appropriate.
+     */
     @Generated
     @Selector("paymentQueue:updatedTransactions:")
     void paymentQueueUpdatedTransactions(SKPaymentQueue queue, NSArray<? extends SKPaymentTransaction> transactions);
 
+    /**
+     * Sent when all transactions from the user's purchase history have successfully been added back to the queue.
+     */
     @Generated
     @IsOptional
     @Selector("paymentQueueRestoreCompletedTransactionsFinished:")
@@ -69,11 +84,32 @@ public interface SKPaymentTransactionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent when a user initiates an IAP buy from the App Store
+     */
     @Generated
     @IsOptional
     @Selector("paymentQueue:shouldAddStorePayment:forProduct:")
     default boolean paymentQueueShouldAddStorePaymentForProduct(SKPaymentQueue queue, SKPayment payment,
             SKProduct product) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentQueueDidChangeStorefront:")
+    default void paymentQueueDidChangeStorefront(SKPaymentQueue queue) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Sent when entitlements for a user have changed and access to the specified IAPs has been revoked.
+     */
+    @Generated
+    @IsOptional
+    @Selector("paymentQueue:didRevokeEntitlementsForProductIdentifiers:")
+    default void paymentQueueDidRevokeEntitlementsForProductIdentifiers(SKPaymentQueue queue,
+            NSArray<String> productIdentifiers) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

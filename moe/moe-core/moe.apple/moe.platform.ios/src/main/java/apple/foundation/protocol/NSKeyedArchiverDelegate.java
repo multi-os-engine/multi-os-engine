@@ -33,6 +33,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSKeyedArchiverDelegate")
 public interface NSKeyedArchiverDelegate {
+    /**
+     * Informs the delegate that the object is about to be encoded.  The delegate
+     * either returns this object or can return a different object to be encoded
+     * instead.  The delegate can also fiddle with the coder state.  If the delegate
+     * returns nil, nil is encoded.  This method is called after the original object
+     * may have replaced itself with replacementObjectForKeyedArchiver:.
+     * This method is not called for an object once a replacement mapping has been
+     * setup for that object (either explicitly, or because the object has previously
+     * been encoded).  This is also not called when nil is about to be encoded.
+     * This method is called whether or not the object is being encoded conditionally.
+     */
     @Generated
     @IsOptional
     @Selector("archiver:didEncodeObject:")
@@ -40,6 +51,9 @@ public interface NSKeyedArchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * substitution
+     */
     @Generated
     @IsOptional
     @Selector("archiver:willEncodeObject:")
@@ -48,6 +62,9 @@ public interface NSKeyedArchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * notification
+     */
     @Generated
     @IsOptional
     @Selector("archiver:willReplaceObject:withObject:")
@@ -56,6 +73,9 @@ public interface NSKeyedArchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Notifies the delegate that encoding is about to finish.
+     */
     @Generated
     @IsOptional
     @Selector("archiverDidFinish:")
@@ -63,6 +83,12 @@ public interface NSKeyedArchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Informs the delegate that the newObject is being substituted for the
+     * object. This is also called when the delegate itself is doing/has done
+     * the substitution. The delegate may use this method if it is keeping track
+     * of the encoded or decoded objects.
+     */
     @Generated
     @IsOptional
     @Selector("archiverWillFinish:")

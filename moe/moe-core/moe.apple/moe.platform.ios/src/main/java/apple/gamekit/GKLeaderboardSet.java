@@ -46,6 +46,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GKLeaderboardSet represents the sets that leaderboards can be broken out into.
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -130,6 +133,13 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Loads array with all sets for game
+     * Possible reasons for error:
+     * 1. Communications problem
+     * 2. Unauthenticated player
+     * 3. Set not present
+     */
     @Generated
     @Selector("loadLeaderboardSetsWithCompletionHandler:")
     public static native void loadLeaderboardSetsWithCompletionHandler(
@@ -168,12 +178,18 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * set when leaderboardSets have been designated a game group; set when loadLeaderboardSetsWithCompletionHandler has been called for leaderboards that support game groups
+     */
     @Generated
     @Selector("groupIdentifier")
     public native String groupIdentifier();
 
+    /**
+     * leaderboard set.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -184,18 +200,27 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKLeaderboardSet initWithCoder(NSCoder aDecoder);
+    public native GKLeaderboardSet initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("loadImageWithCompletionHandler:")
     public native void loadImageWithCompletionHandler(
             @ObjCBlock(name = "call_loadImageWithCompletionHandler") Block_loadImageWithCompletionHandler completionHandler);
 
+    /**
+     * Loads array with all leaderboards for the leaderboardSet
+     * Possible reasons for error:
+     * 1. Communications problem
+     * 2. Unauthenticated player
+     */
     @Generated
     @Selector("loadLeaderboardsWithCompletionHandler:")
     public native void loadLeaderboardsWithCompletionHandler(
             @ObjCBlock(name = "call_loadLeaderboardsWithCompletionHandler") Block_loadLeaderboardsWithCompletionHandler completionHandler);
 
+    /**
+     * leaderboard set.
+     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
@@ -206,6 +231,9 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
         return supportsSecureCoding();
     }
 
+    /**
+     * Localized set title.
+     */
     @Generated
     @Selector("title")
     public native String title();
@@ -214,20 +242,39 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     @Generated
     public interface Block_loadImageWithCompletionHandler {
         @Generated
-        void call_loadImageWithCompletionHandler(UIImage arg0, NSError arg1);
+        void call_loadImageWithCompletionHandler(UIImage image, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadLeaderboardSetsWithCompletionHandler {
         @Generated
-        void call_loadLeaderboardSetsWithCompletionHandler(NSArray<? extends GKLeaderboardSet> arg0, NSError arg1);
+        void call_loadLeaderboardSetsWithCompletionHandler(NSArray<? extends GKLeaderboardSet> leaderboardSets,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadLeaderboardsWithCompletionHandler {
         @Generated
-        void call_loadLeaderboardsWithCompletionHandler(NSArray<? extends GKLeaderboard> arg0, NSError arg1);
+        void call_loadLeaderboardsWithCompletionHandler(NSArray<? extends GKLeaderboard> leaderboards, NSError error);
+    }
+
+    /**
+     * Loads array with all classic leaderboards and current instances of recurring leaderboards for this leaderboardSet
+     * Possible reasons for error:
+     * 1. Communications problem
+     * 2. Unauthenticated player
+     */
+    @Generated
+    @Selector("loadLeaderboardsWithHandler:")
+    public native void loadLeaderboardsWithHandler(
+            @ObjCBlock(name = "call_loadLeaderboardsWithHandler") Block_loadLeaderboardsWithHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadLeaderboardsWithHandler {
+        @Generated
+        void call_loadLeaderboardsWithHandler(NSArray<? extends GKLeaderboard> leaderboards, NSError error);
     }
 }

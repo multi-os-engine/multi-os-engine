@@ -165,6 +165,9 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * specifies the earliest booking date desired for results, including dates in the past
+     */
     @Generated
     @Selector("earliestBookingDateForResults")
     public native NSDate earliestBookingDateForResults();
@@ -175,32 +178,53 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetUserCurrentRestaurantReservationBookingsIntent initWithCoder(NSCoder aDecoder);
+    public native INGetUserCurrentRestaurantReservationBookingsIntent initWithCoder(NSCoder coder);
 
+    /**
+     * if the caller has a preferred maximum number of results, one can optionally be specified. a nil here leaves it up to the extension
+     */
     @Generated
     @Selector("maximumNumberOfResults")
     public native NSNumber maximumNumberOfResults();
 
+    /**
+     * optional filter to reservation with exact ID
+     */
     @Generated
     @Selector("reservationIdentifier")
     public native String reservationIdentifier();
 
+    /**
+     * optional filter to just reservations at restaurant
+     */
     @Generated
     @Selector("restaurant")
     public native INRestaurant restaurant();
 
+    /**
+     * specifies the earliest booking date desired for results, including dates in the past
+     */
     @Generated
     @Selector("setEarliestBookingDateForResults:")
     public native void setEarliestBookingDateForResults(NSDate value);
 
+    /**
+     * if the caller has a preferred maximum number of results, one can optionally be specified. a nil here leaves it up to the extension
+     */
     @Generated
     @Selector("setMaximumNumberOfResults:")
     public native void setMaximumNumberOfResults(NSNumber value);
 
+    /**
+     * optional filter to reservation with exact ID
+     */
     @Generated
     @Selector("setReservationIdentifier:")
     public native void setReservationIdentifier(String value);
 
+    /**
+     * optional filter to just reservations at restaurant
+     */
     @Generated
     @Selector("setRestaurant:")
     public native void setRestaurant(INRestaurant value);

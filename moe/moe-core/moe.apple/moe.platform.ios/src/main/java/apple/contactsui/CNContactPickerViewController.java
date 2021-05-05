@@ -44,6 +44,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The CNContactPickerViewController allows the user to select one or multiple contacts or properties.
+ * 
+ * The entire list of contacts will be presented to the user.
+ *              The picker supports both single selection and multi-selection.
+ *              The app does not need access to the user’s contacts and the user will
+ *              not be prompted for access. It will only have access to the final selection of the user.
+ *              Changing the predicates only takes effect before the view is presented.
+ */
 @Generated
 @Library("ContactsUI")
 @Runtime(ObjCRuntime.class)
@@ -167,11 +176,19 @@ public class CNContactPickerViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * The delegate to be notified when the user selects a contact or property.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native CNContactPickerDelegate delegate();
 
+    /**
+     * The CNContact property keys to display in the contact detail card.
+     * 
+     * If not set all properties are displayed.
+     */
     @Generated
     @Selector("displayedPropertyKeys")
     public native NSArray<String> displayedPropertyKeys();
@@ -182,28 +199,43 @@ public class CNContactPickerViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContactPickerViewController initWithCoder(NSCoder aDecoder);
+    public native CNContactPickerViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
     public native CNContactPickerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * e.g. emailAddresses.@count > 0
+     */
     @Generated
     @Selector("predicateForEnablingContact")
     public native NSPredicate predicateForEnablingContact();
 
+    /**
+     * e.g. emailAddresses.@count == 1
+     */
     @Generated
     @Selector("predicateForSelectionOfContact")
     public native NSPredicate predicateForSelectionOfContact();
 
+    /**
+     * e.g. (key == 'emailAddresses') AND (value LIKE '*@apple.com')
+     */
     @Generated
     @Selector("predicateForSelectionOfProperty")
     public native NSPredicate predicateForSelectionOfProperty();
 
+    /**
+     * The delegate to be notified when the user selects a contact or property.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CNContactPickerDelegate value);
 
+    /**
+     * The delegate to be notified when the user selects a contact or property.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) CNContactPickerDelegate value) {
         Object __old = delegate();
@@ -216,18 +248,32 @@ public class CNContactPickerViewController extends UIViewController {
         }
     }
 
+    /**
+     * The CNContact property keys to display in the contact detail card.
+     * 
+     * If not set all properties are displayed.
+     */
     @Generated
     @Selector("setDisplayedPropertyKeys:")
     public native void setDisplayedPropertyKeys(NSArray<String> value);
 
+    /**
+     * e.g. emailAddresses.@count > 0
+     */
     @Generated
     @Selector("setPredicateForEnablingContact:")
     public native void setPredicateForEnablingContact(NSPredicate value);
 
+    /**
+     * e.g. emailAddresses.@count == 1
+     */
     @Generated
     @Selector("setPredicateForSelectionOfContact:")
     public native void setPredicateForSelectionOfContact(NSPredicate value);
 
+    /**
+     * e.g. (key == 'emailAddresses') AND (value LIKE '*@apple.com')
+     */
     @Generated
     @Selector("setPredicateForSelectionOfProperty:")
     public native void setPredicateForSelectionOfProperty(NSPredicate value);

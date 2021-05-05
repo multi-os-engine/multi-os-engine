@@ -42,11 +42,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UIAccessibilityElement
+ * 
+ * Instances of this class can be used as "fake" accessibility elements.
+ * An accessibility container (see UIAccessibility.h) can create and vend instances
+ * of UIAccessibilityElement to cover for user interface items that are not
+ * backed by a UIView (for example: painted text or icon).
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIAccessibilityElement extends NSObject implements UIAccessibilityIdentification {
+public class UIAccessibilityElement extends UIResponder implements UIAccessibilityIdentification {
     static {
         NatJ.register();
     }
@@ -163,6 +171,10 @@ public class UIAccessibilityElement extends NSObject implements UIAccessibilityI
     @ByValue
     public native CGRect accessibilityFrame();
 
+    /**
+     * When set, -[UIAccessibilityElement accessibilityFrame] will automatically adjust for the container's frame.
+     * This can be useful when the element is a descendant of a scroll view, for instance.
+     */
     @Generated
     @Selector("accessibilityFrameInContainerSpace")
     @ByValue
@@ -192,6 +204,9 @@ public class UIAccessibilityElement extends NSObject implements UIAccessibilityI
     @Selector("init")
     public native UIAccessibilityElement init();
 
+    /**
+     * initialize with the accessibility container that contains this element
+     */
     @Generated
     @Selector("initWithAccessibilityContainer:")
     public native UIAccessibilityElement initWithAccessibilityContainer(
@@ -221,6 +236,10 @@ public class UIAccessibilityElement extends NSObject implements UIAccessibilityI
     @Selector("setAccessibilityFrame:")
     public native void setAccessibilityFrame(@ByValue CGRect value);
 
+    /**
+     * When set, -[UIAccessibilityElement accessibilityFrame] will automatically adjust for the container's frame.
+     * This can be useful when the element is a descendant of a scroll view, for instance.
+     */
     @Generated
     @Selector("setAccessibilityFrameInContainerSpace:")
     public native void setAccessibilityFrameInContainerSpace(@ByValue CGRect value);
@@ -248,4 +267,8 @@ public class UIAccessibilityElement extends NSObject implements UIAccessibilityI
     @Generated
     @Selector("setIsAccessibilityElement:")
     public native void setIsAccessibilityElement(boolean value);
+
+    @Generated
+    @Selector("clearTextInputContextIdentifier:")
+    public static native void clearTextInputContextIdentifier(String identifier);
 }

@@ -45,6 +45,29 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSMatrixMultiplication
+ * 
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * A matrix multiplication kernel.
+ * 
+ * A MPSMatrixMultiplication object computes:
+ * 
+ *                 C = alpha * op(A) * op(B) + beta * C
+ * 
+ *             A, B, and C are matrices which are represented by MPSMatrix
+ *             objects. alpha and beta are scalar values (of the same data type
+ *             as values of C) which are applied as shown above.  A and B may
+ *             each have an optional transposition operation applied.
+ * 
+ *             A, B, and C (also referred to in later discussions as the left input
+ *             matrix, the right input matrix, and the result matrix respectively).
+ * 
+ *             A MPSMatrixMultiplication object is initialized with the transpose
+ *             operators to apply to A and B, sizes for the operation to perform,
+ *             and the scalar values alpha and beta.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +179,35 @@ public class MPSMatrixMultiplication extends MPSKernel {
     @NInt
     public static native long version_static();
 
+    /**
+     * Encode a MPSMatrixMultiplication object to a command buffer.
+     * 
+     * Certain constraints apply to the sizes of the matrices depending on the transposition
+     *             operations and sizes requested at initialization time as well as the origins at the time
+     *             this routine is called:
+     * 
+     *             The left input matrix must be large enough to hold an array of size resultRows x interiorColumns
+     *             elements beginning at leftMatrixOrigin.
+     * 
+     *             The right input matrix must be large enough to hold an array of size interiorColumns x resultColumns
+     *             elements beginning at rightMatrixOrigin.
+     * 
+     *             The result matrix must be large enough to hold an array of size resultRows x resultColumns
+     *             elements beginning at resultMatrixOrigin.
+     * 
+     *             Each matrix within the range specified by batchStart and batchSize, which also specifies
+     *             a valid set of matrices within leftMatrix, rightMatrix, and resultMatrix, will
+     *             be processed.
+     * 
+     * @param      commandBuffer   A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
+     * @param      leftMatrix      A valid MPSMatrix object which specifies the left input matrix.
+     * 
+     * @param      rightMatrix     A valid MPSMatrix object which specifies the right input matrix.
+     * 
+     * @param      resultMatrix    A valid MPSMatrix object which specifies the addend matrix which will
+     *                             also be overwritten by the result.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:leftMatrix:rightMatrix:resultMatrix:")
     public native void encodeToCommandBufferLeftMatrixRightMatrixResultMatrix(
@@ -170,44 +222,145 @@ public class MPSMatrixMultiplication extends MPSKernel {
     @Selector("initWithDevice:")
     public native MPSMatrixMultiplication initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * Initialize an MPSMatrixMultiplication object on a device for a given size
+     *             and desired transpose and scale values.
+     * 
+     * @param      device          The device on which the kernel will execute.
+     * 
+     * @param      transposeLeft   A boolean value which indicates if the left input matrix should be
+     *                             used in transposed form.  If 'YES' then op(A) = A**T, otherwise
+     *                             op(A) = A.
+     * 
+     * @param      transposeRight  A boolean value which indicates if the right input matrix should be
+     *                             used in transposed form.  If 'YES' then op(B) = B**T, otherwise
+     *                             op(B) = B.
+     * 
+     * @param      resultRows      The number of rows in the result matrix, M in BLAS GEMM description.
+     * 
+     * @param      resultColumns   The number of columns in the result matrix, N in BLAS GEMM description.
+     * 
+     * @param      interiorColumns The number of columns of the left input matrix after the
+     *                             appropriate transpose operation has been applied. K in BLAS
+     *                             GEMM description.
+     * 
+     * @param      alpha           The scale factor to apply to the product.  Specified in double
+     *                             precision.  Will be converted to the appropriate precision in the
+     *                             implementation subject to rounding and/or clamping as necessary.
+     * 
+     * @param      beta            The scale factor to apply to the initial values of C.  Specified
+     *                             in double precision.  Will be converted to the appropriate precision in the
+     *                             implementation subject to rounding and/or clamping as necessary.
+     * 
+     * @return     A valid MPSMatrixMultiplication object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:transposeLeft:transposeRight:resultRows:resultColumns:interiorColumns:alpha:beta:")
     public native MPSMatrixMultiplication initWithDeviceTransposeLeftTransposeRightResultRowsResultColumnsInteriorColumnsAlphaBeta(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, boolean transposeLeft, boolean transposeRight,
             @NUInt long resultRows, @NUInt long resultColumns, @NUInt long interiorColumns, double alpha, double beta);
 
+    /**
+     * [@property]   leftMatrixOrigin
+     * 
+     * The origin, relative to [0, 0] in the left input matrix, at which to
+     *             start reading values.  This property is modifiable and defaults to
+     *             [0, 0] at initialization time.  If a different origin is desired then
+     *             this should be modified prior to encoding the kernel.  The z value
+     *             must be 0.
+     */
     @Generated
     @Selector("leftMatrixOrigin")
     @ByValue
     public native MTLOrigin leftMatrixOrigin();
 
+    /**
+     * [@property]   resultMatrixOrigin
+     * 
+     * The origin, relative to [0, 0] in the result matrix, at which to
+     *             start writing (and reading if necessary) results.  This property is
+     *             modifiable and defaults to [0, 0] at initialization time.  If a
+     *             different origin is desired then this should be modified prior to
+     *             encoding the kernel.  The z value must be 0.
+     */
     @Generated
     @Selector("resultMatrixOrigin")
     @ByValue
     public native MTLOrigin resultMatrixOrigin();
 
+    /**
+     * [@property]   rightMatrixOrigin
+     * 
+     * The origin, relative to [0, 0] in the right input matrix, at which to
+     *             start reading values.  This property is modifiable and defaults to
+     *             [0, 0] at initialization time.  If a different origin is desired then
+     *             this should be modified prior to encoding the kernel.  The z value
+     *             must be 0.
+     */
     @Generated
     @Selector("rightMatrixOrigin")
     @ByValue
     public native MTLOrigin rightMatrixOrigin();
 
+    /**
+     * [@property]   leftMatrixOrigin
+     * 
+     * The origin, relative to [0, 0] in the left input matrix, at which to
+     *             start reading values.  This property is modifiable and defaults to
+     *             [0, 0] at initialization time.  If a different origin is desired then
+     *             this should be modified prior to encoding the kernel.  The z value
+     *             must be 0.
+     */
     @Generated
     @Selector("setLeftMatrixOrigin:")
     public native void setLeftMatrixOrigin(@ByValue MTLOrigin value);
 
+    /**
+     * [@property]   resultMatrixOrigin
+     * 
+     * The origin, relative to [0, 0] in the result matrix, at which to
+     *             start writing (and reading if necessary) results.  This property is
+     *             modifiable and defaults to [0, 0] at initialization time.  If a
+     *             different origin is desired then this should be modified prior to
+     *             encoding the kernel.  The z value must be 0.
+     */
     @Generated
     @Selector("setResultMatrixOrigin:")
     public native void setResultMatrixOrigin(@ByValue MTLOrigin value);
 
+    /**
+     * [@property]   rightMatrixOrigin
+     * 
+     * The origin, relative to [0, 0] in the right input matrix, at which to
+     *             start reading values.  This property is modifiable and defaults to
+     *             [0, 0] at initialization time.  If a different origin is desired then
+     *             this should be modified prior to encoding the kernel.  The z value
+     *             must be 0.
+     */
     @Generated
     @Selector("setRightMatrixOrigin:")
     public native void setRightMatrixOrigin(@ByValue MTLOrigin value);
 
+    /**
+     * [@property]   batchSize
+     * 
+     * The number of matrices in the batch to process.  This property
+     *             is modifiable and by default allows all matrices available at
+     *             encoding time to be processed.
+     */
     @Generated
     @Selector("batchSize")
     @NUInt
     public native long batchSize();
 
+    /**
+     * [@property]   batchStart
+     * 
+     * The index of the first matrix in the batch.  This property is
+     *             modifiable and defaults to 0 at initialization time.  If
+     *             batch processing should begin at a different matrix this value
+     *             should be modified prior to encoding the kernel.
+     */
     @Generated
     @Selector("batchStart")
     @NUInt
@@ -222,16 +375,48 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native MPSMatrixMultiplication initWithCoderDevice(NSCoder aDecoder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * Convenience initialization for a matrix-matrix multiplication
+     *             with no transpositions, unit scaling of the product, and no
+     *             accumulation of the result.  The scaling factors alpha and beta
+     *             are taken to be 1.0 and 0.0 respectively.
+     * 
+     * @param      device          The device on which the kernel will execute.
+     * 
+     * @param      resultRows      The number of rows in the result matrix, M in BLAS GEMM description.
+     * 
+     * @param      resultColumns   The number of columns in the result matrix, N in BLAS GEMM description.
+     * 
+     * @param      interiorColumns The number of columns of the left input matrix. K in BLAS
+     *                             GEMM description.
+     * 
+     * @return     A valid MPSMatrixMultiplication object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:resultRows:resultColumns:interiorColumns:")
     public native MPSMatrixMultiplication initWithDeviceResultRowsResultColumnsInteriorColumns(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long resultRows, @NUInt long resultColumns,
             @NUInt long interiorColumns);
 
+    /**
+     * [@property]   batchSize
+     * 
+     * The number of matrices in the batch to process.  This property
+     *             is modifiable and by default allows all matrices available at
+     *             encoding time to be processed.
+     */
     @Generated
     @Selector("setBatchSize:")
     public native void setBatchSize(@NUInt long value);
 
+    /**
+     * [@property]   batchStart
+     * 
+     * The index of the first matrix in the batch.  This property is
+     *             modifiable and defaults to 0 at initialization time.  If
+     *             batch processing should begin at a different matrix this value
+     *             should be modified prior to encoding the kernel.
+     */
     @Generated
     @Selector("setBatchStart:")
     public native void setBatchStart(@NUInt long value);

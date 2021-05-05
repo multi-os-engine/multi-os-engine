@@ -158,6 +158,13 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @NInt
     public static native long version_static();
 
+    /**
+     * This block is called when the operation completes.
+     * 
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of zoneIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     */
     @Generated
     @Selector("fetchRecordZonesCompletionBlock")
     @ObjCBlock(name = "call_fetchRecordZonesCompletionBlock_ret")
@@ -175,6 +182,13 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @Selector("recordZoneIDs")
     public native NSArray<? extends CKRecordZoneID> recordZoneIDs();
 
+    /**
+     * This block is called when the operation completes.
+     * 
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of zoneIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     */
     @Generated
     @Selector("setFetchRecordZonesCompletionBlock:")
     public native void setFetchRecordZonesCompletionBlock(

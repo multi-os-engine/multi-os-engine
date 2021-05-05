@@ -167,7 +167,7 @@ public class INIntentResponse extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +175,7 @@ public class INIntentResponse extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native INIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -183,7 +183,19 @@ public class INIntentResponse extends NSObject implements NSCopying, NSSecureCod
         return supportsSecureCoding();
     }
 
+    /**
+     * This user activity will be used to launch the containing application when host application finds appropriate or when users request so.
+     * The containing application should implement the continuity app delegate method(s) to consume this user activity.
+     */
     @Generated
     @Selector("userActivity")
     public native NSUserActivity userActivity();
+
+    /**
+     * This user activity will be used to launch the containing application when host application finds appropriate or when users request so.
+     * The containing application should implement the continuity app delegate method(s) to consume this user activity.
+     */
+    @Generated
+    @Selector("setUserActivity:")
+    public native void setUserActivity(NSUserActivity value);
 }

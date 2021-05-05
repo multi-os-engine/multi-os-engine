@@ -24,15 +24,25 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * A protocol used to encapsulate the data needed to affect an update to a game model.
+ * Typically represents an action or move performed by a player.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKGameModelUpdate")
 public interface GKGameModelUpdate {
+    /**
+     * Property get/set by GKMinmaxStrategist to sort GKGameModelUpdates.
+     */
     @Generated
     @Selector("setValue:")
     void setValue(@NInt long value);
 
+    /**
+     * Property get/set by GKMinmaxStrategist to sort GKGameModelUpdates.
+     */
     @Generated
     @Selector("value")
     @NInt

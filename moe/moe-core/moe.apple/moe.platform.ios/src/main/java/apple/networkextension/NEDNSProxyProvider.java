@@ -26,6 +26,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEDNSProxyProvider
+ * 
+ * The NEDNSProxyProvider class declares the programmatic interface for an object that implements the client side of a custom DNS proxy solution.
+ * 
+ * NEDNSProxyProvider is part of NetworkExtension.framework
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -68,6 +75,13 @@ public class NEDNSProxyProvider extends NEProvider {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * cancelProxyWithError:
+     * 
+     * This function is called by proxy provider implementations to stop the proxy when a network error is encountered that renders the proxy no longer viable. Subclasses should not override this method.
+     * 
+     * @param error An NSError object containing details about the error that the proxy provider implementation encountered.
+     */
     @Generated
     @Selector("cancelProxyWithError:")
     public native void cancelProxyWithError(NSError error);
@@ -88,6 +102,14 @@ public class NEDNSProxyProvider extends NEProvider {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * handleNewFlow:
+     * 
+     * This function is called by the framework to deliver a new network data flow to the proxy provider implementation. Subclasses must override this method to perform whatever steps are necessary to ready the proxy to receive data from the flow. The proxy provider implementation indicates that the proxy is ready to handle flow data by calling -[NEAppProxyFlow openWithLocalEndpoint:completionHandler:] on the flow. If the proxy implementation decides to not handle the flow and instead terminate it, the subclass implementation of this method should return NO. If the proxy implementation decides to handle the flow, the subclass implementation of this method should return YES. In this case the proxy implementation is responsible for retaining the NEAppProxyFlow object.
+     * 
+     * @param flow The new flow
+     * @return YES if the proxy implementation has retained the flow and intends to handle the flow data. NO if the proxy implementation has not retained the flow and will not handle the flow data. In this case the flow is terminated.
+     */
     @Generated
     @Selector("handleNewFlow:")
     public native boolean handleNewFlow(NEAppProxyFlow flow);
@@ -140,6 +162,14 @@ public class NEDNSProxyProvider extends NEProvider {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * startProxyWithOptions:completionHandler:
+     * 
+     * This function is called by the framework when a new proxy instance is being created. Subclasses must override this method to perform whatever steps are necessary to ready the proxy for handling flows of network data.
+     * 
+     * @param options A dictionary containing keys and values passed by the provider's containing app. If the containing app did not start the proxy then this parameter will be nil.
+     * @param completionHandler A block that must be called when the process of starting the proxy is complete. If the proxy cannot be started then the subclass' implementation of this method must pass a non-nil NSError object to this block. A value of nil passed to the completion handler indicates that the proxy was successfully started.
+     */
     @Generated
     @Selector("startProxyWithOptions:completionHandler:")
     public native void startProxyWithOptionsCompletionHandler(NSDictionary<String, ?> options,
@@ -149,9 +179,17 @@ public class NEDNSProxyProvider extends NEProvider {
     @Generated
     public interface Block_startProxyWithOptionsCompletionHandler {
         @Generated
-        void call_startProxyWithOptionsCompletionHandler(NSError arg0);
+        void call_startProxyWithOptionsCompletionHandler(NSError error);
     }
 
+    /**
+     * stopProxyWithReason:completionHandler:
+     * 
+     * This function is called by the framework when the proxy is being stopped. Subclasses must override this method to perform whatever steps are necessary to stop the proxy.
+     * 
+     * @param reason An NEProviderStopReason indicating why the proxy is being stopped.
+     * @param completionHandler A block that must be called when the proxy is completely stopped.
+     */
     @Generated
     @Selector("stopProxyWithReason:completionHandler:")
     public native void stopProxyWithReasonCompletionHandler(@NInt long reason,
@@ -168,6 +206,11 @@ public class NEDNSProxyProvider extends NEProvider {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * [@property] systemDNSSettings
+     * 
+     * The current system DNS settings. Use KVO to watch for changes.
+     */
     @Generated
     @Selector("systemDNSSettings")
     public native NSArray<? extends NEDNSSettings> systemDNSSettings();
@@ -176,4 +219,21 @@ public class NEDNSProxyProvider extends NEProvider {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * handleNewUDPFlow:initialRemoteEndpoint:
+     * 
+     * This function is called by the framework to deliver a new UDP data flow to the proxy provider implementation. Subclasses can override this method to perform whatever steps are necessary to ready the proxy to receive
+     *     data from the flow. The proxy provider implementation indicates that the proxy is ready to handle flow data by calling -[NEAppProxyFlow openWithLocalEndpoint:completionHandler:] on the flow. If the proxy implementation decides
+     *     to not handle the flow and instead terminate it, the subclass implementation of this method should return NO. If the proxy implementation decides to handle the flow, the subclass implementation of this method should return YES.
+     *     In this case the proxy implementation is responsible for retaining the NEAppProxyUDPFlow object.
+     *     The default implementation of this method calls -[NEAppProxyProvider handleNewFlow:] and returns its result.
+     * 
+     * @param flow The new UDP flow
+     * @param remoteEndpoint The initial remote endpoint provided by the proxied app when the flow was opened.
+     * @return YES if the proxy implementation has retained the flow and intends to handle the flow data. NO if the proxy implementation has not retained the flow and will not handle the flow data. In this case the flow is terminated.
+     */
+    @Generated
+    @Selector("handleNewUDPFlow:initialRemoteEndpoint:")
+    public native boolean handleNewUDPFlowInitialRemoteEndpoint(NEAppProxyUDPFlow flow, NWEndpoint remoteEndpoint);
 }

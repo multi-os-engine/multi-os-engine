@@ -182,10 +182,16 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
     @Selector("setProgressHandler:")
     public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
 
+    /**
+     * version
+     */
     @Generated
     @Selector("setVersion:")
     public native void setVersion(@NInt long value);
 
+    /**
+     * version
+     */
     @Generated
     @Selector("version")
     @NInt
@@ -195,13 +201,13 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
     @Generated
     public interface Block_progressHandler_ret {
         @Generated
-        void call_progressHandler_ret(double arg0, NSError arg1, BoolPtr arg2, NSDictionary<?, ?> arg3);
+        void call_progressHandler_ret(double progress, NSError error, BoolPtr stop, NSDictionary<?, ?> info);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setProgressHandler {
         @Generated
-        void call_setProgressHandler(double arg0, NSError arg1, BoolPtr arg2, NSDictionary<?, ?> arg3);
+        void call_setProgressHandler(double progress, NSError error, BoolPtr stop, NSDictionary<?, ?> info);
     }
 }

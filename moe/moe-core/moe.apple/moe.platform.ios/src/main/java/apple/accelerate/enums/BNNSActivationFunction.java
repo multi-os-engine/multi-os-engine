@@ -37,4 +37,23 @@ public final class BNNSActivationFunction {
     @Generated public static final int BNNSActivationFunctionIntegerLinearSaturate = 0x00000009;
     @Generated public static final int BNNSActivationFunctionIntegerLinearSaturatePerChannel = 0x0000000A;
     @Generated public static final int BNNSActivationFunctionSoftmax = 0x0000000B;
+    @Generated public static final int BNNSActivationFunctionGELUApproximation = 0x0000000C;
+    @Generated public static final int BNNSActivationFunctionGumbel = 0x0000000D;
+    @Generated public static final int BNNSActivationFunctionGumbelMax = 0x0000000E;
+    @Generated public static final int BNNSActivationFunctionHardSigmoid = 0x0000000F;
+    @Generated public static final int BNNSActivationFunctionSoftplus = 0x00000010;
+    @Generated public static final int BNNSActivationFunctionSoftsign = 0x00000011;
+    @Generated public static final int BNNSActivationFunctionELU = 0x00000012;
+    @Generated public static final int BNNSActivationFunctionClampedLeakyRectifiedLinear = 0x00000013;
+    @Generated public static final int BNNSActivationFunctionLinearWithBias = 0x00000014;
+    @Generated public static final int BNNSActivationFunctionLogSoftmax = 0x00000015;
+    @Generated public static final int BNNSActivationFunctionLogSigmoid = 0x00000016;
+    @Generated public static final int BNNSActivationFunctionSELU = 0x00000017;
+    @Generated public static final int BNNSActivationFunctionCELU = 0x00000018;
+    @Generated public static final int BNNSActivationFunctionHardShrink = 0x00000019;
+    @Generated public static final int BNNSActivationFunctionSoftShrink = 0x0000001A;
+    @Generated public static final int BNNSActivationFunctionTanhShrink = 0x0000001B;
+    @Generated public static final int BNNSActivationFunctionThreshold = 0x0000001C;
+    @Generated public static final int BNNSActivationFunctionPReLUPerChannel = 0x0000001D;
+    @Generated public static final int BNNSActivationFunctionGELUApproximation2 = 0x0000001E;
 }

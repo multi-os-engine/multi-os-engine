@@ -39,6 +39,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Specifies which information the app wants to obtain about the subscriber's account.
+ * You should only request the information you need to fulfill your contractual obligations.
+ */
 @Generated
 @Library("VideoSubscriberAccount")
 @Runtime(ObjCRuntime.class)
@@ -150,22 +154,38 @@ public class VSAccountMetadataRequest extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Attributes to add to a SAML attributeQuery request and sent to the account provider.
+     */
     @Generated
     @Selector("attributeNames")
     public native NSArray<String> attributeNames();
 
+    /**
+     * Identifies who is making the request.
+     * For use by applications using the SAML authentication scheme only.
+     */
     @Generated
     @Selector("channelIdentifier")
     public native String channelIdentifier();
 
+    /**
+     * Controls whether the request will ignore any cached credentials.
+     */
     @Generated
     @Selector("forceAuthentication")
     public native boolean forceAuthentication();
 
+    /**
+     * Whether to request information that identifies the account provider.
+     */
     @Generated
     @Selector("includeAccountProviderIdentifier")
     public native boolean includeAccountProviderIdentifier();
 
+    /**
+     * Whether to request the expiration date of the subscriber's current authentication.
+     */
     @Generated
     @Selector("includeAuthenticationExpirationDate")
     public native boolean includeAuthenticationExpirationDate();
@@ -174,71 +194,163 @@ public class VSAccountMetadataRequest extends NSObject {
     @Selector("init")
     public native VSAccountMetadataRequest init();
 
+    /**
+     * Whether the user might expect to be prompted to authenticate in order to complete this request.
+     */
     @Generated
     @Selector("isInterruptionAllowed")
     public native boolean isInterruptionAllowed();
 
+    /**
+     * Whether the user might expect to be prompted to authenticate in order to complete this request.
+     */
     @Generated
     @Selector("setInterruptionAllowed:")
     public native void setInterruptionAllowed(boolean value);
 
+    /**
+     * A brief, user-presentable name for the video that the app will play if it receives a successful response.
+     * For example, "What's New in Swift" or "Office Space"
+     * Do not provide a value if the request will not be used to play a specific video.
+     */
     @Generated
     @Selector("localizedVideoTitle")
     public native String localizedVideoTitle();
 
+    /**
+     * Attributes to add to a SAML attributeQuery request and sent to the account provider.
+     */
     @Generated
     @Selector("setAttributeNames:")
     public native void setAttributeNames(NSArray<String> value);
 
+    /**
+     * Identifies who is making the request.
+     * For use by applications using the SAML authentication scheme only.
+     */
     @Generated
     @Selector("setChannelIdentifier:")
     public native void setChannelIdentifier(String value);
 
+    /**
+     * Controls whether the request will ignore any cached credentials.
+     */
     @Generated
     @Selector("setForceAuthentication:")
     public native void setForceAuthentication(boolean value);
 
+    /**
+     * Whether to request information that identifies the account provider.
+     */
     @Generated
     @Selector("setIncludeAccountProviderIdentifier:")
     public native void setIncludeAccountProviderIdentifier(boolean value);
 
+    /**
+     * Whether to request the expiration date of the subscriber's current authentication.
+     */
     @Generated
     @Selector("setIncludeAuthenticationExpirationDate:")
     public native void setIncludeAuthenticationExpirationDate(boolean value);
 
+    /**
+     * A brief, user-presentable name for the video that the app will play if it receives a successful response.
+     * For example, "What's New in Swift" or "Office Space"
+     * Do not provide a value if the request will not be used to play a specific video.
+     */
     @Generated
     @Selector("setLocalizedVideoTitle:")
     public native void setLocalizedVideoTitle(String value);
 
+    /**
+     * If non-empty, limits which account providers can respond to the request.
+     */
     @Generated
     @Selector("setSupportedAccountProviderIdentifiers:")
     public native void setSupportedAccountProviderIdentifiers(NSArray<String> value);
 
+    /**
+     * The collection of authentication schemes that the app supports for this request.
+     * This list may be used to determine compatibility of the app with providers.
+     * Defaults to SAML.
+     */
     @Generated
     @Selector("setSupportedAuthenticationSchemes:")
     public native void setSupportedAuthenticationSchemes(NSArray<String> value);
 
+    /**
+     * A value that the account provider may use to verify the identity of the requesting app.
+     */
     @Generated
     @Selector("setVerificationToken:")
     public native void setVerificationToken(String value);
 
+    /**
+     * If non-empty, limits which account providers can respond to the request.
+     */
     @Generated
     @Selector("supportedAccountProviderIdentifiers")
     public native NSArray<String> supportedAccountProviderIdentifiers();
 
+    /**
+     * The collection of authentication schemes that the app supports for this request.
+     * This list may be used to determine compatibility of the app with providers.
+     * Defaults to SAML.
+     */
     @Generated
     @Selector("supportedAuthenticationSchemes")
     public native NSArray<String> supportedAuthenticationSchemes();
 
+    /**
+     * A value that the account provider may use to verify the identity of the requesting app.
+     */
     @Generated
     @Selector("verificationToken")
     public native String verificationToken();
 
+    /**
+     * If non-empty, specifies providers which may be given more prominent placement
+     * when choosing an account provider during authentication.
+     */
     @Generated
     @Selector("featuredAccountProviderIdentifiers")
     public native NSArray<String> featuredAccountProviderIdentifiers();
 
+    /**
+     * If non-empty, specifies providers which may be given more prominent placement
+     * when choosing an account provider during authentication.
+     */
     @Generated
     @Selector("setFeaturedAccountProviderIdentifiers:")
     public native void setFeaturedAccountProviderIdentifiers(NSArray<String> value);
+
+    /**
+     * A value that an account provider application may set to pass an existing authentication session.
+     * For use by TV Provider applications only.
+     */
+    @Generated
+    @Selector("accountProviderAuthenticationToken")
+    public native String accountProviderAuthenticationToken();
+
+    /**
+     * A value that an account provider application may set to pass an existing authentication session.
+     * For use by TV Provider applications only.
+     */
+    @Generated
+    @Selector("setAccountProviderAuthenticationToken:")
+    public native void setAccountProviderAuthenticationToken(String value);
+
+    /**
+     * Application-specific providers to be added to the list of account providers.
+     */
+    @Generated
+    @Selector("applicationAccountProviders")
+    public native NSArray<?> applicationAccountProviders();
+
+    /**
+     * Application-specific providers to be added to the list of account providers.
+     */
+    @Generated
+    @Selector("setApplicationAccountProviders:")
+    public native void setApplicationAccountProviders(NSArray<?> value);
 }

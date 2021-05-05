@@ -92,6 +92,10 @@ public final class PassKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKPaymentNetworkSuica();
 
+    /**
+     * PKPassKitErrorDomain is used for generic errors with PassKit, such as
+     * adding or removing passes from the user's pass library. PassKit returns these errors to you.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -177,18 +181,78 @@ public final class PassKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKContactFieldPhoneticName();
 
+    /**
+     * PKPaymentErrorDomain is used for errors with in-app or web payments.
+     * You create your own PKPaymentErrors and return them to indicate problems with a purchase
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKPaymentErrorDomain();
 
+    /**
+     * a PKContactField the error relates to. Use with PKPaymentShippingContactInvalidError
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKPaymentErrorContactFieldUserInfoKey();
 
+    /**
+     * if the error relates to PKContactFieldPostalAddress you may set the specific key here
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKPaymentErrorPostalAddressUserInfoKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkCartesBancaires();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkEftpos();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkElectron();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkElo();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkMada();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkMaestro();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkVPay();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKAddSecureElementPassErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkBarcode();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkGirocard();
 }

@@ -41,6 +41,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * -----------------------------------------------------------------------------
+ * An MPMovieErrorLog provides data to identify if, and when, network resource playback failures occured.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -158,14 +162,24 @@ public class MPMovieErrorLog extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * An ordered collection of MPMovieErrorLogEvent instances that represent the chronological sequence of events contained in the error log.
+     */
     @Generated
     @Selector("events")
     public native NSArray<?> events();
 
+    /**
+     * Returns the webserver error log into a textual format that conforms to the W3C Extended Log File Format for web server log files.
+     * For more information see: http://www.w3.org/pub/WWW/TR/WD-logfile.html
+     */
     @Generated
     @Selector("extendedLogData")
     public native NSData extendedLogData();
 
+    /**
+     * Returns the string encoding of the extendedLogData property.
+     */
     @Generated
     @Selector("extendedLogDataStringEncoding")
     @NUInt

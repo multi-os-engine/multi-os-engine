@@ -42,6 +42,21 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GLKEffectPropertyTransformm 
+ * 
+ * GLKEffectPropertyTransform maintains three primary matrices:
+ * 
+ *      _projectionMatrix
+ *      _modelviewMatrix
+ * 
+ * and 1 derived matrix: _normalMatrix.
+ * 
+ * When the modelview matrix is changed the normalMatrix is marked as stale.
+ * If the normalMatrix is subsequently retrieved after being marked stale
+ * the normalMatrix selector will recalculate the normalMatrix to return
+ * a current result with respect to the modelviewMatrix.
+ */
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)
@@ -157,25 +172,40 @@ public class GLKEffectPropertyTransform extends GLKEffectProperty {
     @Selector("init")
     public native GLKEffectPropertyTransform init();
 
+    /**
+     * Identity for all
+     */
     @Generated
     @Selector("modelviewMatrix")
     @ByValue
     public native GLKMatrix4 modelviewMatrix();
 
+    /**
+     * Identity
+     */
     @Generated
     @Selector("normalMatrix")
     @ByValue
     public native GLKMatrix3 normalMatrix();
 
+    /**
+     * Identity for all
+     */
     @Generated
     @Selector("projectionMatrix")
     @ByValue
     public native GLKMatrix4 projectionMatrix();
 
+    /**
+     * Identity for all
+     */
     @Generated
     @Selector("setModelviewMatrix:")
     public native void setModelviewMatrix(@ByValue GLKMatrix4 value);
 
+    /**
+     * Identity for all
+     */
     @Generated
     @Selector("setProjectionMatrix:")
     public native void setProjectionMatrix(@ByValue GLKMatrix4 value);

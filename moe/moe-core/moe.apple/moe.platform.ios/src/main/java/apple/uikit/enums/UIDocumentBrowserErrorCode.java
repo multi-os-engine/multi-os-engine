@@ -9,5 +9,6 @@ public final class UIDocumentBrowserErrorCode {
     private UIDocumentBrowserErrorCode() {
     }
 
-    @Generated @NInt public static final long UIDocumentBrowserErrorGeneric = 0x0000000000000001L;
+    @Generated @NInt public static final long Generic = 0x0000000000000001L;
+    @Generated @NInt public static final long NoLocationAvailable = 0x0000000000000002L;
 }

@@ -114,6 +114,9 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("dictionary")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionary();
 
+    /**
+     * These methods are deprecated, and will be marked with API_DEPRECATED in a subsequent release. Use the variants that use errors instead.
+     */
     @Generated
     @Selector("dictionaryWithContentsOfFile:")
     public static native <_KeyType, _ObjectType> NSDictionary<_KeyType, _ObjectType> dictionaryWithContentsOfFile(
@@ -195,6 +198,15 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Use this method to create a key set to pass to +dictionaryWithSharedKeySet:.
+     * The keys are copied from the array and must be copyable.
+     * If the array parameter is nil or not an NSArray, an exception is thrown.
+     * If the array of keys is empty, an empty key set is returned.
+     * The array of keys may contain duplicates, which are ignored (it is undefined which object of each duplicate pair is used).
+     * As for any usage of hashing, is recommended that the keys have a well-distributed implementation of -hash, and the hash codes must satisfy the hash/isEqual: invariant.
+     * Keys with duplicate hash codes are allowed, but will cause lower performance and increase memory usage.
+     */
     @Generated
     @Selector("sharedKeySetForKeys:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -260,7 +272,7 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateKeysAndObjectsUsingBlock:")
@@ -339,11 +351,17 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("fileType")
     public native String fileType();
 
+    /**
+     * This method is unsafe because it could potentially cause buffer overruns. You should use -getObjects:andKeys:count:
+     */
     @Generated
     @Selector("getObjects:andKeys:")
     public native void getObjectsAndKeys(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> objects,
             @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> keys);
 
+    /**
+     * count refers to the number of elements in the dictionary
+     */
     @Generated
     @Selector("getObjects:andKeys:count:")
     public native void getObjectsAndKeysCount(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> objects,
@@ -355,7 +373,7 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDictionary<?, ?> initWithCoder(NSCoder aDecoder);
+    public native NSDictionary<?, ?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
@@ -422,6 +440,7 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     public native NSArray<_KeyType> keysSortedByValueWithOptionsUsingComparator(@NUInt long opts,
             @ObjCBlock(name = "call_keysSortedByValueWithOptionsUsingComparator") Block_keysSortedByValueWithOptionsUsingComparator cmptr);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -452,6 +471,9 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
         return supportsSecureCoding();
     }
 
+    /**
+     * Return the result of sending -objectForKey: to the receiver.
+     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -461,6 +483,9 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("writeToFile:atomically:")
     public native boolean writeToFileAtomically(String path, boolean useAuxiliaryFile);
 
+    /**
+     * the atomically flag is ignored if url of a type that cannot be written atomically.
+     */
     @Generated
     @Selector("writeToURL:atomically:")
     public native boolean writeToURLAtomically(NSURL url, boolean atomically);
@@ -582,32 +607,32 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Generated
     public interface Block_enumerateKeysAndObjectsUsingBlock {
         @Generated
-        void call_enumerateKeysAndObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
+        void call_enumerateKeysAndObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object key,
+                @Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateKeysAndObjectsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateKeysAndObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
+        void call_enumerateKeysAndObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object key,
+                @Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_keysOfEntriesPassingTest {
         @Generated
-        boolean call_keysOfEntriesPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
+        boolean call_keysOfEntriesPassingTest(@Mapped(ObjCObjectMapper.class) Object key,
+                @Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_keysOfEntriesWithOptionsPassingTest {
         @Generated
-        boolean call_keysOfEntriesWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
+        boolean call_keysOfEntriesWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object key,
+                @Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -615,8 +640,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     public interface Block_keysSortedByValueUsingComparator {
         @Generated
         @NInt
-        long call_keysSortedByValueUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_keysSortedByValueUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -624,8 +649,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     public interface Block_keysSortedByValueWithOptionsUsingComparator {
         @Generated
         @NInt
-        long call_keysSortedByValueWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_keysSortedByValueWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     private static final class NSDictionaryEntrySet<_KeyType, _ObjectType>
@@ -1095,16 +1120,25 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
         }
     }
 
+    /**
+     * Reads dictionary stored in NSPropertyList format from the specified url.
+     */
     @Generated
     @Selector("dictionaryWithContentsOfURL:error:")
     public static native <_KeyType, _ObjectType> NSDictionary<String, _ObjectType> dictionaryWithContentsOfURLError(
             NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Reads dictionary stored in NSPropertyList format from the specified url.
+     */
     @Generated
     @Selector("initWithContentsOfURL:error:")
     public native NSDictionary<String, _ObjectType> initWithContentsOfURLError(NSURL url,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Serializes this instance to the specified URL in the NSPropertyList format (using NSPropertyListXMLFormat_v1_0). For other formats use NSPropertyListSerialization directly.
+     */
     @Generated
     @Selector("writeToURL:error:")
     public native boolean writeToURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);

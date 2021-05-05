@@ -19,6 +19,13 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]      HMCharacteristicValueChargingState
+ * 
+ * [@constant]  HMCharacteristicValueChargingStateNone           Not Charging.
+ * [@constant]  HMCharacteristicValueChargingStateInProgress     Charging.
+ * [@constant]  HMCharacteristicValueChargingStateNotChargeable  Not Chargeable.
+ */
 @Generated
 public final class HMCharacteristicValueChargingState {
     @Generated @NInt public static final long None = 0x0000000000000000L;

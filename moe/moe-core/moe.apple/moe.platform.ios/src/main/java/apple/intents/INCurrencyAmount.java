@@ -169,13 +169,16 @@ public class INCurrencyAmount extends NSObject implements NSCopying, NSSecureCod
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * The ISO 4217 currency code that applies to the monetary amount.
+     */
     @Generated
     @Selector("currencyCode")
     public native String currencyCode();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -187,7 +190,7 @@ public class INCurrencyAmount extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCurrencyAmount initWithCoder(NSCoder aDecoder);
+    public native INCurrencyAmount initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

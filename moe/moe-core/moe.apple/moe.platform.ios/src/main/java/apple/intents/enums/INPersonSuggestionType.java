@@ -27,4 +27,6 @@ public final class INPersonSuggestionType {
     @Generated
     private INPersonSuggestionType() {
     }
+
+    @Generated @NInt public static final long None = 0x0000000000000000L;
 }

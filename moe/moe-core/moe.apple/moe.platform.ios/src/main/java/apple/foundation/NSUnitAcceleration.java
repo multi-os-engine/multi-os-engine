@@ -131,6 +131,9 @@ public class NSUnitAcceleration extends NSDimension implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Base unit - metersPerSecondSquared
+     */
     @Generated
     @Selector("metersPerSecondSquared")
     public static native NSUnitAcceleration metersPerSecondSquared();
@@ -168,7 +171,7 @@ public class NSUnitAcceleration extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -176,7 +179,7 @@ public class NSUnitAcceleration extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitAcceleration initWithCoder(NSCoder aDecoder);
+    public native NSUnitAcceleration initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

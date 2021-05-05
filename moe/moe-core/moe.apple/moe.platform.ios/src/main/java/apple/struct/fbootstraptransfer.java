@@ -52,27 +52,45 @@ public final class fbootstraptransfer extends StructObject {
         setFbt_buffer(fbt_buffer);
     }
 
+    /**
+     * IN: offset to start read/write
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native long fbt_offset();
 
+    /**
+     * IN: offset to start read/write
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setFbt_offset(long value);
 
+    /**
+     * IN: number of bytes to transfer
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @NUInt
     public native long fbt_length();
 
+    /**
+     * IN: number of bytes to transfer
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setFbt_length(@NUInt long value);
 
+    /**
+     * IN: buffer to be read/written
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native VoidPtr fbt_buffer();
 
+    /**
+     * IN: buffer to be read/written
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setFbt_buffer(VoidPtr value);

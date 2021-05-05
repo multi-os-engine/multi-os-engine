@@ -19,6 +19,13 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]          HKWorkoutSwimmingLocationType
+ * 
+ * This enumerated type is used to represent the location type of a swimming workout.
+ * 
+ * This value indicates whether a swimming workout was performed in a pool or open water.
+ */
 @Generated
 public final class HKWorkoutSwimmingLocationType {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;

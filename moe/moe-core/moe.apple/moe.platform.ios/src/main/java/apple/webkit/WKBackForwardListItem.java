@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A WKBackForwardListItem object represents a webpage in the back-forward list of a web view.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +154,9 @@ public class WKBackForwardListItem extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The URL of the webpage represented by this item.
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -159,10 +165,16 @@ public class WKBackForwardListItem extends NSObject {
     @Selector("init")
     public native WKBackForwardListItem init();
 
+    /**
+     * The URL of the initial request that created this item.
+     */
     @Generated
     @Selector("initialURL")
     public native NSURL initialURL();
 
+    /**
+     * The title of the webpage represented by this item.
+     */
     @Generated
     @Selector("title")
     public native String title();

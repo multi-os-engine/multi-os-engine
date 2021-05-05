@@ -19,6 +19,9 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Physics Body type
+ */
 @Generated
 public final class SCNPhysicsBodyType {
     @Generated @NInt public static final long Static = 0x0000000000000000L;

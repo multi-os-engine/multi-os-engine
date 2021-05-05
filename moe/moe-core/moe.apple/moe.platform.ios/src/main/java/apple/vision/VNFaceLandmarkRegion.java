@@ -2,8 +2,12 @@ package apple.vision;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
+import apple.vision.protocol.VNRequestRevisionProviding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -20,14 +24,20 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * VNFaceLandmarkRegion
+ * 
+ * VNFaceLandmarkRegion the object acting as a collection of landmark points for defining a specific region of the face (including potentially all of the landmark points for a face). The VNFaceLandmarkRegion is an abstract base class.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class VNFaceLandmarkRegion extends NSObject {
+public class VNFaceLandmarkRegion extends NSObject implements NSCopying, NSSecureCoding, VNRequestRevisionProviding {
     static {
         NatJ.register();
     }
@@ -117,6 +127,9 @@ public class VNFaceLandmarkRegion extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * pointCount returns the amount of points in a given region. This can be zero if no points for a region could be found.
+     */
     @Generated
     @Selector("pointCount")
     @NUInt
@@ -142,4 +155,33 @@ public class VNFaceLandmarkRegion extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native VNFaceLandmarkRegion initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("requestRevision")
+    @NUInt
+    public native long requestRevision();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

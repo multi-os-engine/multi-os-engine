@@ -155,26 +155,46 @@ public class NSAtomicStoreCacheNode extends NSObject {
     @Selector("init")
     public native NSAtomicStoreCacheNode init();
 
+    /**
+     * The designated initializer for the cache node.
+     */
     @Generated
     @Selector("initWithObjectID:")
     public native NSAtomicStoreCacheNode initWithObjectID(NSManagedObjectID moid);
 
+    /**
+     * Returns the managed object ID for the cache node.
+     */
     @Generated
     @Selector("objectID")
     public native NSManagedObjectID objectID();
 
+    /**
+     * Returns the property cache dictionary for the cache node.  This dictionary is used by -valueForKey: and -setValue:forKey: for property values.  The default implementation will return nil unless the companion -setPropertyCache: method is invoked, or -setValue:forKey: is invoked on the cache node with non-nil property values.
+     */
     @Generated
     @Selector("propertyCache")
     public native NSMutableDictionary<String, Object> propertyCache();
 
+    /**
+     * Returns the property cache dictionary for the cache node.  This dictionary is used by -valueForKey: and -setValue:forKey: for property values.  The default implementation will return nil unless the companion -setPropertyCache: method is invoked, or -setValue:forKey: is invoked on the cache node with non-nil property values.
+     */
     @Generated
     @Selector("setPropertyCache:")
     public native void setPropertyCache(NSMutableDictionary<String, Object> value);
 
+    /**
+     * Sets the value for the specified key.  The default implementation forwards the request to the -propertyCache dictionary if the key matches a property name of the entity for this cache node.  If the key does not represent a  property, the standard -setValue:forKey: implementation will be used.
+     */
     @Generated
     @Selector("setValue:forKey:")
     public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
+    /**
+     * Returns the value for the specified key.  Subclasses must return the appropriate object value for all property keys (as specified by the names of the NSPropertyDescriptions for the entity of this cache node.)  For attributes, these are instances of NSObject; for to-one relationships, the return value must be another cache node instance; for a to-many relationship, the return value must be an NSSet of the related cache nodes.
+     * 
+     * The default implementation forwards the request to the -propertyCache dictionary if the key matches a property name of the entity for the cache node.  If the key does not represent a property, the standard -valueForKey: implementation will be used.
+     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)

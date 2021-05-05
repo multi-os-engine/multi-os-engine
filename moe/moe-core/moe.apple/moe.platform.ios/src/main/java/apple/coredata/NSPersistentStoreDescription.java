@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An instance of NSPersistentStoreDescription encapsulates all information needed to describe a persistent store.
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -175,14 +178,23 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @Selector("init")
     public native NSPersistentStoreDescription init();
 
+    /**
+     * Returns a store description instance with default values for the store located at `URL` that can be used immediately with `addPersistentStoreWithDescription:completionHandler:`.
+     */
     @Generated
     @Selector("initWithURL:")
     public native NSPersistentStoreDescription initWithURL(NSURL url);
 
+    /**
+     * Store options
+     */
     @Generated
     @Selector("isReadOnly")
     public native boolean isReadOnly();
 
+    /**
+     * Store options
+     */
     @Generated
     @Selector("setReadOnly:")
     public native void setReadOnly(boolean value);
@@ -199,6 +211,9 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @Selector("setOption:forKey:")
     public native void setOptionForKey(NSObject option, String key);
 
+    /**
+     * addPersistentStore-time behaviours
+     */
     @Generated
     @Selector("setShouldAddStoreAsynchronously:")
     public native void setShouldAddStoreAsynchronously(boolean value);
@@ -227,6 +242,9 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @Selector("setValue:forPragmaNamed:")
     public native void setValueForPragmaNamed(NSObject value, String name);
 
+    /**
+     * addPersistentStore-time behaviours
+     */
     @Generated
     @Selector("shouldAddStoreAsynchronously")
     public native boolean shouldAddStoreAsynchronously();
@@ -250,4 +268,20 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @Generated
     @Selector("type")
     public native String type();
+
+    /**
+     * Use this property to apply customized instances of NSPersistentCloudKitContainerOptions to
+     * a store description you wish to use with CloudKit.
+     */
+    @Generated
+    @Selector("cloudKitContainerOptions")
+    public native NSPersistentCloudKitContainerOptions cloudKitContainerOptions();
+
+    /**
+     * Use this property to apply customized instances of NSPersistentCloudKitContainerOptions to
+     * a store description you wish to use with CloudKit.
+     */
+    @Generated
+    @Selector("setCloudKitContainerOptions:")
+    public native void setCloudKitContainerOptions(NSPersistentCloudKitContainerOptions value);
 }

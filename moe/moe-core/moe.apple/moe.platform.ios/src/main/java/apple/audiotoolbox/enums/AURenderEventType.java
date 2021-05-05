@@ -18,6 +18,9 @@ package apple.audiotoolbox.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Describes the type of a render event.
+ */
 @Generated
 public final class AURenderEventType {
     @Generated public static final byte Parameter = 1;

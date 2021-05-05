@@ -219,7 +219,7 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -227,7 +227,7 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDate initWithCoder(NSCoder aDecoder);
+    public native NSDate initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTimeInterval:sinceDate:")
@@ -274,4 +274,8 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     @Generated
     @Selector("timeIntervalSinceReferenceDate")
     public native double timeIntervalSinceReferenceDate();
+
+    @Generated
+    @Selector("now")
+    public static native NSDate now();
 }

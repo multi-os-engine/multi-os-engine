@@ -21,9 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIPrintInfoOutputType {
+    /**
+     * B&W or color, normal quality output for mixed text, graphics, and images
+     */
     @Generated @NInt public static final long General = 0x0000000000000000L;
+    /**
+     * B&W or color, best quality output for images
+     */
     @Generated @NInt public static final long Photo = 0x0000000000000001L;
+    /**
+     * B&W content only
+     */
     @Generated @NInt public static final long Grayscale = 0x0000000000000002L;
+    /**
+     * B&W only, best quality output for images
+     */
     @Generated @NInt public static final long PhotoGrayscale = 0x0000000000000003L;
 
     @Generated

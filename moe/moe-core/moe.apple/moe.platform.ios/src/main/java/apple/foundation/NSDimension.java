@@ -70,6 +70,11 @@ public class NSDimension extends NSUnit implements NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * This class method returns an instance of the dimension class that represents the base unit of that dimension.
+     * e.g.
+     *    NSUnitSpeed *metersPerSecond = [NSUnitSpeed baseUnit];
+     */
     @Generated
     @Selector("baseUnit")
     @MappedReturn(ObjCObjectMapper.class)
@@ -164,7 +169,7 @@ public class NSDimension extends NSUnit implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -172,7 +177,7 @@ public class NSDimension extends NSUnit implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDimension initWithCoder(NSCoder aDecoder);
+    public native NSDimension initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

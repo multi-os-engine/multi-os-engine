@@ -2,6 +2,7 @@ package apple.vision;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -24,6 +25,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A request that detects barcodes in an image.
+ * 
+ * This request will return zero or more VNBarcodeObservation objects objects which describe the barcodes detected in an image.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -131,6 +137,9 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The collection of barcode symbologies that are to be detected in the image.  The default is to scan for all possible symbologies.
+     */
     @Generated
     @Selector("setSymbologies:")
     public native void setSymbologies(NSArray<String> value);
@@ -143,10 +152,20 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Obtain the collection of barcode symbologies currently recognized by the Vision framework.
+     * 
+     * Calling this method could be a potentially expensive operation.
+     * 
+     * @return An array of VNBarcodeSymbology objects describing the symbologies currently supported by the Vision framework.
+     */
     @Generated
     @Selector("supportedSymbologies")
     public static native NSArray<String> supportedSymbologies();
 
+    /**
+     * The collection of barcode symbologies that are to be detected in the image.  The default is to scan for all possible symbologies.
+     */
     @Generated
     @Selector("symbologies")
     public native NSArray<String> symbologies();
@@ -155,4 +174,18 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("currentRevision")
+    @NUInt
+    public static native long currentRevision();
+
+    @Generated
+    @Selector("defaultRevision")
+    @NUInt
+    public static native long defaultRevision();
+
+    @Generated
+    @Selector("supportedRevisions")
+    public static native NSIndexSet supportedRevisions();
 }

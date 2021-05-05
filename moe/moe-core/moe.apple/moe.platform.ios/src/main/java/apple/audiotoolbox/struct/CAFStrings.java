@@ -58,11 +58,17 @@ public final class CAFStrings extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setMNumEntries(int value);
 
+    /**
+     * this is a variable length array of mNumEntries elements
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native CAFStringID mStringsIDs();
 
+    /**
+     * this is a variable length array of mNumEntries elements
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMStringsIDs(@ByValue CAFStringID value);

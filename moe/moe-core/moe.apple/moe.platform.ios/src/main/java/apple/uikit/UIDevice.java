@@ -155,15 +155,24 @@ public class UIDevice extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * 0 .. 1.0. -1.0 if UIDeviceBatteryStateUnknown
+     */
     @Generated
     @Selector("batteryLevel")
     public native float batteryLevel();
 
+    /**
+     * UIDeviceBatteryStateUnknown if monitoring disabled
+     */
     @Generated
     @Selector("batteryState")
     @NInt
     public native long batteryState();
 
+    /**
+     * nestable
+     */
     @Generated
     @Selector("beginGeneratingDeviceOrientationNotifications")
     public native void beginGeneratingDeviceOrientationNotifications();
@@ -172,6 +181,9 @@ public class UIDevice extends NSObject {
     @Selector("endGeneratingDeviceOrientationNotifications")
     public native void endGeneratingDeviceOrientationNotifications();
 
+    /**
+     * a UUID that may be used to uniquely identify the device, same across apps from a single vendor.
+     */
     @Generated
     @Selector("identifierForVendor")
     public native NSUUID identifierForVendor();
@@ -180,10 +192,16 @@ public class UIDevice extends NSObject {
     @Selector("init")
     public native UIDevice init();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("isBatteryMonitoringEnabled")
     public native boolean isBatteryMonitoringEnabled();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setBatteryMonitoringEnabled:")
     public native void setBatteryMonitoringEnabled(boolean value);
@@ -196,43 +214,73 @@ public class UIDevice extends NSObject {
     @Selector("isMultitaskingSupported")
     public native boolean isMultitaskingSupported();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("isProximityMonitoringEnabled")
     public native boolean isProximityMonitoringEnabled();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setProximityMonitoringEnabled:")
     public native void setProximityMonitoringEnabled(boolean value);
 
+    /**
+     * localized version of model
+     */
     @Generated
     @Selector("localizedModel")
     public native String localizedModel();
 
+    /**
+     * e.g. @"iPhone", @"iPod touch"
+     */
     @Generated
     @Selector("model")
     public native String model();
 
+    /**
+     * e.g. "My iPhone"
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * return current device orientation.  this will return UIDeviceOrientationUnknown unless device orientation notifications are being generated.
+     */
     @Generated
     @Selector("orientation")
     @NInt
     public native long orientation();
 
+    /**
+     * Plays a click only if an enabling input view is on-screen and user has enabled input clicks.
+     */
     @Generated
     @Selector("playInputClick")
     public native void playInputClick();
 
+    /**
+     * always returns NO if no proximity detector
+     */
     @Generated
     @Selector("proximityState")
     public native boolean proximityState();
 
+    /**
+     * e.g. @"iOS"
+     */
     @Generated
     @Selector("systemName")
     public native String systemName();
 
+    /**
+     * e.g. @"4.0"
+     */
     @Generated
     @Selector("systemVersion")
     public native String systemVersion();

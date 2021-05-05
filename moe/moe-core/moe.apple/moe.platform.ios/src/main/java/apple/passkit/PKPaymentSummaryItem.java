@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * PKPaymentSummaryItem Defines a line-item for a payment such as tax, shipping, or discount.
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -160,6 +163,10 @@ public class PKPaymentSummaryItem extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Same currency as the enclosing PKPaymentRequest.  Negative values are permitted, for example when
+     * redeeming a coupon. An amount is always required unless the summary item's type is set to pending
+     */
     @Generated
     @Selector("amount")
     public native NSDecimalNumber amount();
@@ -168,22 +175,40 @@ public class PKPaymentSummaryItem extends NSObject {
     @Selector("init")
     public native PKPaymentSummaryItem init();
 
+    /**
+     * A short localized description of the item, e.g. "Tax" or "Gift Card".
+     */
     @Generated
     @Selector("label")
     public native String label();
 
+    /**
+     * Same currency as the enclosing PKPaymentRequest.  Negative values are permitted, for example when
+     * redeeming a coupon. An amount is always required unless the summary item's type is set to pending
+     */
     @Generated
     @Selector("setAmount:")
     public native void setAmount(NSDecimalNumber value);
 
+    /**
+     * A short localized description of the item, e.g. "Tax" or "Gift Card".
+     */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
+    /**
+     * Defaults to PKPaymentSummaryItemTypeFinal
+     * Set to PKPaymentSummaryItemTypePending if the amount of the item is not known at this time
+     */
     @Generated
     @Selector("setType:")
     public native void setType(@NUInt long value);
 
+    /**
+     * Defaults to PKPaymentSummaryItemTypeFinal
+     * Set to PKPaymentSummaryItemTypePending if the amount of the item is not known at this time
+     */
     @Generated
     @Selector("type")
     @NUInt

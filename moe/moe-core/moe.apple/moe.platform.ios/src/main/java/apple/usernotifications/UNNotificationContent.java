@@ -161,18 +161,30 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     @NInt
     public static native long version_static();
 
+    /**
+     * Optional array of attachments.
+     */
     @Generated
     @Selector("attachments")
     public native NSArray<? extends UNNotificationAttachment> attachments();
 
+    /**
+     * The application badge number.
+     */
     @Generated
     @Selector("badge")
     public native NSNumber badge();
 
+    /**
+     * The body of the notification.
+     */
     @Generated
     @Selector("body")
     public native String body();
 
+    /**
+     * The identifier for a registered UNNotificationCategory that will be used to determine the appropriate actions to display for the notification.
+     */
     @Generated
     @Selector("categoryIdentifier")
     public native String categoryIdentifier();
@@ -185,7 +197,7 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -193,21 +205,31 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationContent initWithCoder(NSCoder aDecoder);
+    public native UNNotificationContent initWithCoder(NSCoder coder);
 
+    /**
+     * The launch image that will be used when the app is opened from the notification.
+     */
     @Generated
     @Selector("launchImageName")
     public native String launchImageName();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
+    /**
+     * The sound that will be played for the notification.
+     */
     @Generated
     @Selector("sound")
     public native UNNotificationSound sound();
 
+    /**
+     * The subtitle of the notification.
+     */
     @Generated
     @Selector("subtitle")
     public native String subtitle();
@@ -218,15 +240,49 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
         return supportsSecureCoding();
     }
 
+    /**
+     * The unique identifier for the thread or conversation related to this notification request. It will be used to visually group notifications together.
+     */
     @Generated
     @Selector("threadIdentifier")
     public native String threadIdentifier();
 
+    /**
+     * The title of the notification.
+     */
     @Generated
     @Selector("title")
     public native String title();
 
+    /**
+     * Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be set as the userInfo for remote notifications.
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
+
+    /**
+     * The argument to be inserted in the summary for this notification.
+     */
+    @Generated
+    @Selector("summaryArgument")
+    public native String summaryArgument();
+
+    /**
+     * A number that indicates how many items in the summary are represented in the summary.
+     * For example if a podcast app sends one notification for 3 new episodes in a show,
+     * the argument should be the name of the show and the count should be 3.
+     * Default is 1 and cannot be 0.
+     */
+    @Generated
+    @Selector("summaryArgumentCount")
+    @NUInt
+    public native long summaryArgumentCount();
+
+    /**
+     * default nil
+     */
+    @Generated
+    @Selector("targetContentIdentifier")
+    public native String targetContentIdentifier();
 }

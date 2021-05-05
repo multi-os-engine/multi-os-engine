@@ -19,6 +19,9 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Particle Modifier Stage
+ */
 @Generated
 public final class SCNParticleModifierStage {
     @Generated @NInt public static final long PreDynamics = 0x0000000000000000L;

@@ -170,13 +170,13 @@ public class SFContentBlockerManager extends NSObject {
     @Generated
     public interface Block_getStateOfContentBlockerWithIdentifierCompletionHandler {
         @Generated
-        void call_getStateOfContentBlockerWithIdentifierCompletionHandler(SFContentBlockerState arg0, NSError arg1);
+        void call_getStateOfContentBlockerWithIdentifierCompletionHandler(SFContentBlockerState state, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reloadContentBlockerWithIdentifierCompletionHandler {
         @Generated
-        void call_reloadContentBlockerWithIdentifierCompletionHandler(NSError arg0);
+        void call_reloadContentBlockerWithIdentifierCompletionHandler(NSError error);
     }
 }

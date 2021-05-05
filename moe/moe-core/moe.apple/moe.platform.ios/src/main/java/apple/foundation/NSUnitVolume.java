@@ -223,6 +223,9 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("liters")
     public static native NSUnitVolume liters();
 
+    /**
+     * Base unit - liters
+     */
     @Generated
     @Selector("megaliters")
     public static native NSUnitVolume megaliters();
@@ -284,7 +287,7 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -292,7 +295,7 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitVolume initWithCoder(NSCoder aDecoder);
+    public native NSUnitVolume initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

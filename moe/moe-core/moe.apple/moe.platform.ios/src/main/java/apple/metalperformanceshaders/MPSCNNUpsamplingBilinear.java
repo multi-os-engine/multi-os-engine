@@ -26,6 +26,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSCNNUpsamplingBilinear
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * Specifies the bilinear spatial upsampling filter.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -106,6 +112,14 @@ public class MPSCNNUpsamplingBilinear extends MPSCNNUpsampling {
     @Selector("initWithDevice:")
     public native MPSCNNUpsamplingBilinear initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * Initialize the bilinear spatial upsampling filter.
+     * 
+     * @param     device                   The device the filter will run on.
+     * @param     integerScaleFactorX      The upsampling factor for the x dimension.
+     * @param     integerScaleFactorY      The upsampling factor for the y dimension.
+     * @return    A valid MPSCNNUpsamplingBilinear object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:integerScaleFactorX:integerScaleFactorY:")
     public native MPSCNNUpsamplingBilinear initWithDeviceIntegerScaleFactorXIntegerScaleFactorY(
@@ -169,4 +183,20 @@ public class MPSCNNUpsamplingBilinear extends MPSCNNUpsampling {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Initialize the bilinear spatial upsampling filter.
+     * 
+     * @param     device                   The device the filter will run on.
+     * @param     integerScaleFactorX      The upsampling factor for the x dimension.
+     * @param     integerScaleFactorY      The upsampling factor for the y dimension.
+     * @param     alignCorners             Specifier whether the centers of the 4 corner pixels of the input and output regions are aligned,
+     *                                     preserving the values at the corner pixels.
+     * @return    A valid MPSCNNUpsamplingBilinear object or nil, if failure.
+     */
+    @Generated
+    @Selector("initWithDevice:integerScaleFactorX:integerScaleFactorY:alignCorners:")
+    public native MPSCNNUpsamplingBilinear initWithDeviceIntegerScaleFactorXIntegerScaleFactorYAlignCorners(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long integerScaleFactorX,
+            @NUInt long integerScaleFactorY, boolean alignCorners);
 }

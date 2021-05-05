@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIPageViewControllerTransitionStyle {
+    /**
+     * Navigate between views via a page curl transition.
+     */
     @Generated @NInt public static final long PageCurl = 0x0000000000000000L;
+    /**
+     * Navigate between views by scrolling.
+     */
     @Generated @NInt public static final long Scroll = 0x0000000000000001L;
 
     @Generated

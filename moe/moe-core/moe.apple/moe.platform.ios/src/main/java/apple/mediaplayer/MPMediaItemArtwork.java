@@ -155,16 +155,25 @@ public class MPMediaItemArtwork extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The bounds of the full size image (in points).
+     */
     @Generated
     @Selector("bounds")
     @ByValue
     public native CGRect bounds();
 
+    /**
+     * MARK: - Deprecated
+     */
     @Generated
     @Selector("imageCropRect")
     @ByValue
     public native CGRect imageCropRect();
 
+    /**
+     * Returns the artwork image for an item at a given size (in points).
+     */
     @Generated
     @Selector("imageWithSize:")
     public native UIImage imageWithSize(@ByValue CGSize size);
@@ -186,6 +195,6 @@ public class MPMediaItemArtwork extends NSObject {
     @Generated
     public interface Block_initWithBoundsSizeRequestHandler {
         @Generated
-        UIImage call_initWithBoundsSizeRequestHandler(@ByValue CGSize arg0);
+        UIImage call_initWithBoundsSizeRequestHandler(@ByValue CGSize size);
     }
 }

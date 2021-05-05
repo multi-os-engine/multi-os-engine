@@ -180,18 +180,28 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     public native void addItemWithProductIDCompletionHandler(String productID,
             @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
 
+    /**
+     * MPMediaLibraryDidChangeNotification will be posted when a sync happens.
+     */
     @Generated
     @Selector("beginGeneratingLibraryChangeNotifications")
     public native void beginGeneratingLibraryChangeNotifications();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("endGeneratingLibraryChangeNotifications")
     public native void endGeneratingLibraryChangeNotifications();
 
+    /**
+     * Finds the playlist associated with the UUID.
+     * If the playlist exists, the creation metadata is ignored.
+     * If no such playlist exists and creation metadata is valid, a playlist associated the UUID will be created.
+     * 
+     * The UUID should typically be pre-generated to avoid creating a new playlist with every call.
+     */
     @Generated
     @Selector("getPlaylistWithUUID:creationMetadata:completionHandler:")
     public native void getPlaylistWithUUIDCreationMetadataCompletionHandler(NSUUID uuid,
@@ -204,8 +214,11 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaLibrary initWithCoder(NSCoder aDecoder);
+    public native MPMediaLibrary initWithCoder(NSCoder coder);
 
+    /**
+     * Returns the date at which the media library was last modified.
+     */
     @Generated
     @Selector("lastModifiedDate")
     public native NSDate lastModifiedDate();
@@ -220,20 +233,20 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_addItemWithProductIDCompletionHandler {
         @Generated
-        void call_addItemWithProductIDCompletionHandler(NSArray<? extends MPMediaEntity> arg0, NSError arg1);
+        void call_addItemWithProductIDCompletionHandler(NSArray<? extends MPMediaEntity> entities, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getPlaylistWithUUIDCreationMetadataCompletionHandler {
         @Generated
-        void call_getPlaylistWithUUIDCreationMetadataCompletionHandler(MPMediaPlaylist arg0, NSError arg1);
+        void call_getPlaylistWithUUIDCreationMetadataCompletionHandler(MPMediaPlaylist playlist, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAuthorization {
         @Generated
-        void call_requestAuthorization(@NInt long arg0);
+        void call_requestAuthorization(@NInt long status);
     }
 }

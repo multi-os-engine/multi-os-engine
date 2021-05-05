@@ -43,6 +43,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEFilterVerdict
+ * 
+ * The NEFilterVerdict class declares the programmatic interface for an object that is the verdict for a
+ * flow of network data.
+ * 
+ * NEFilterVerdict is part of NetworkExtension.framework
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -166,7 +174,7 @@ public class NEFilterVerdict extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +182,7 @@ public class NEFilterVerdict extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterVerdict initWithCoder(NSCoder aDecoder);
+    public native NEFilterVerdict initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -182,10 +190,34 @@ public class NEFilterVerdict extends NSObject implements NSSecureCoding, NSCopyi
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] shouldReport
+     * 
+     * Whether or not to send a report to the control provider's -[NEFilterProvider handleReport:]
+     * method when processing this verdict and when the flow is closed. Since the data provider does not need to wait
+     * for a response from the control provider before continuing to process the flow, this is a more efficient way to
+     * report a flow to the control provider than returning a "need rules" verdict. If the verdict originates in the
+     * control provider, this property has no effect. This property applies when the action taken upon a flow is allow,
+     * deny, remediate, or filterData (filterData for new flows only). Setting this flag on a verdict for a socket
+     * flow will also cause the data provider's -[NEFilterProvider handleReport:] method to be called when the flow
+     * is closed.
+     */
     @Generated
     @Selector("setShouldReport:")
     public native void setShouldReport(boolean value);
 
+    /**
+     * [@property] shouldReport
+     * 
+     * Whether or not to send a report to the control provider's -[NEFilterProvider handleReport:]
+     * method when processing this verdict and when the flow is closed. Since the data provider does not need to wait
+     * for a response from the control provider before continuing to process the flow, this is a more efficient way to
+     * report a flow to the control provider than returning a "need rules" verdict. If the verdict originates in the
+     * control provider, this property has no effect. This property applies when the action taken upon a flow is allow,
+     * deny, remediate, or filterData (filterData for new flows only). Setting this flag on a verdict for a socket
+     * flow will also cause the data provider's -[NEFilterProvider handleReport:] method to be called when the flow
+     * is closed.
+     */
     @Generated
     @Selector("shouldReport")
     public native boolean shouldReport();

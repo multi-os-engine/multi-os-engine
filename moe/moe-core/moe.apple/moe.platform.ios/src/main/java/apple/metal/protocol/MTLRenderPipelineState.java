@@ -28,6 +28,13 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@protocol] MTLRenderPipelineState
+ * 
+ * MTLRenderPipelineState represents a compiled render pipeline
+ * 
+ * MTLRenderPipelineState is a compiled render pipeline and can be set on a MTLRenderCommandEncoder.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -36,28 +43,52 @@ public interface MTLRenderPipelineState {
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
     @Generated
     @Selector("label")
     String label();
 
+    /**
+     * imageblockMemoryLengthForDimensions:sampleCount:
+     * 
+     * Returns imageblock memory length for given image block dimensions. Dimensions must be valid tile dimensions.
+     */
     @Generated
     @Selector("imageblockMemoryLengthForDimensions:")
     @NUInt
     long imageblockMemoryLengthForDimensions(@ByValue MTLSize imageblockDimensions);
 
+    /**
+     * [@property] imageblockSampleLength
+     * 
+     * Returns imageblock memory length used by a single sample when rendered using this pipeline.
+     */
     @Generated
     @Selector("imageblockSampleLength")
     @NUInt
     long imageblockSampleLength();
 
+    /**
+     * [@property] maxTotalThreadsPerThreadgroup
+     * 
+     * The maximum total number of threads that can be in a single threadgroup.
+     */
     @Generated
     @Selector("maxTotalThreadsPerThreadgroup")
     @NUInt
     long maxTotalThreadsPerThreadgroup();
 
+    /**
+     * [@property] threadgroupSizeMatchesTileSize
+     * 
+     * Returns true when the pipeline state requires a threadgroup size equal to the tile size
+     */
     @Generated
     @Selector("threadgroupSizeMatchesTileSize")
     boolean threadgroupSizeMatchesTileSize();
+
+    @Generated
+    @Selector("supportIndirectCommandBuffers")
+    boolean supportIndirectCommandBuffers();
 }

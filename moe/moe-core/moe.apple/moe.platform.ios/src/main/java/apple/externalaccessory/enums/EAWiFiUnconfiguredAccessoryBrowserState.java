@@ -19,6 +19,16 @@ package apple.externalaccessory.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] EAWiFiUnconfiguredAccessoryBrowserState
+ * 
+ * Represents the current state of a EAWiFiUnconfiguredAccessoryBrowser.
+ * 
+ * [@constant] EAWiFiUnconfiguredAccessoryBrowserStateWiFiUnavailable  Wi-Fi is unavailable due to the user placing the device in Airplane Mode or explicitly turning Wi-Fi off.
+ * [@constant] EAWiFiUnconfiguredAccessoryBrowserStateStopped          The browser is not actively searching for unconfigured accessories.
+ * [@constant] EAWiFiUnconfiguredAccessoryBrowserStateSearching        The browser is actively searching for unconfigured accessory.
+ * [@constant] EAWiFiUnconfiguredAccessoryBrowserStateConfiguring      The browser is actively configuring an accessory.
+ */
 @Generated
 public final class EAWiFiUnconfiguredAccessoryBrowserState {
     @Generated @NInt public static final long WiFiUnavailable = 0x0000000000000000L;

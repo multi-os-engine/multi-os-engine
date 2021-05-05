@@ -97,7 +97,7 @@ public class INBillPayee extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -110,11 +110,11 @@ public class INBillPayee extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INBillPayee initWithCoder(NSCoder aDecoder);
+    public native INBillPayee initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNickname:number:organizationName:")
-    public native INBillPayee initWithNicknameNumberOrganizationName(INSpeakableString nickname, String accountNumber,
+    public native INBillPayee initWithNicknameNumberOrganizationName(INSpeakableString nickname, String number,
             INSpeakableString organizationName);
 
     @Generated

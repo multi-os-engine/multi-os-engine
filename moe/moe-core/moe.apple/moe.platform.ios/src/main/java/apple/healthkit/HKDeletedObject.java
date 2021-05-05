@@ -44,6 +44,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKDeletedObject
+ * 
+ * A class representing an HKObject that was deleted from the HealtKit database.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -159,13 +164,18 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property]      UUID
+     * 
+     * The unique identifier of the HKObject that was deleted from the HealthKit database.
+     */
     @Generated
     @Selector("UUID")
     public native NSUUID UUID();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -173,7 +183,7 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKDeletedObject initWithCoder(NSCoder aDecoder);
+    public native HKDeletedObject initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -181,6 +191,14 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property]      metadata
+     * 
+     * Extra information describing properties of the receiver.
+     * 
+     * Metadata retained from the deleted HKObject.
+     *                Available keys: HKMetadataKeySyncIdentifier, HKMetadataKeySyncVersion
+     */
     @Generated
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();

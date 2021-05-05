@@ -38,7 +38,8 @@ public interface UIViewControllerTransitioningDelegate {
     @IsOptional
     @Selector("animationControllerForDismissedController:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object animationControllerForDismissedController(UIViewController dismissed) {
+    default UIViewControllerAnimatedTransitioning animationControllerForDismissedController(
+            UIViewController dismissed) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -46,7 +47,7 @@ public interface UIViewControllerTransitioningDelegate {
     @IsOptional
     @Selector("animationControllerForPresentedController:presentingController:sourceController:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object animationControllerForPresentedControllerPresentingControllerSourceController(
+    default UIViewControllerAnimatedTransitioning animationControllerForPresentedControllerPresentingControllerSourceController(
             UIViewController presented, UIViewController presenting, UIViewController source) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -55,7 +56,8 @@ public interface UIViewControllerTransitioningDelegate {
     @IsOptional
     @Selector("interactionControllerForDismissal:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object interactionControllerForDismissal(@Mapped(ObjCObjectMapper.class) Object animator) {
+    default UIViewControllerInteractiveTransitioning interactionControllerForDismissal(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,7 +65,8 @@ public interface UIViewControllerTransitioningDelegate {
     @IsOptional
     @Selector("interactionControllerForPresentation:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object interactionControllerForPresentation(@Mapped(ObjCObjectMapper.class) Object animator) {
+    default UIViewControllerInteractiveTransitioning interactionControllerForPresentation(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -39,6 +39,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents a mutually exclusive group of language options.
+ * Only one language option within a given group may be active at a time.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -150,10 +154,16 @@ public class MPNowPlayingInfoLanguageOptionGroup extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Indicates whether a selection in this group is required at all times.
+     */
     @Generated
     @Selector("allowEmptySelection")
     public native boolean allowEmptySelection();
 
+    /**
+     * The default language option, if any, within this group.
+     */
     @Generated
     @Selector("defaultLanguageOption")
     public native MPNowPlayingInfoLanguageOption defaultLanguageOption();
@@ -168,6 +178,9 @@ public class MPNowPlayingInfoLanguageOptionGroup extends NSObject {
             NSArray<? extends MPNowPlayingInfoLanguageOption> languageOptions,
             MPNowPlayingInfoLanguageOption defaultLanguageOption, boolean allowEmptySelection);
 
+    /**
+     * The available language options within this group.
+     */
     @Generated
     @Selector("languageOptions")
     public native NSArray<? extends MPNowPlayingInfoLanguageOption> languageOptions();

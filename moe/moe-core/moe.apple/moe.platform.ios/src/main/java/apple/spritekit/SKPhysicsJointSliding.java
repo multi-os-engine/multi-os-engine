@@ -41,6 +41,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -166,7 +167,7 @@ public class SKPhysicsJointSliding extends SKPhysicsJoint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKPhysicsJointSliding initWithCoder(NSCoder aDecoder);
+    public native SKPhysicsJointSliding initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("lowerDistanceLimit")
@@ -193,4 +194,14 @@ public class SKPhysicsJointSliding extends SKPhysicsJoint {
     @Selector("upperDistanceLimit")
     @NFloat
     public native double upperDistanceLimit();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

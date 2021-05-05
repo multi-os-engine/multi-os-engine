@@ -43,19 +43,31 @@ public final class ip_opts extends StructObject {
         super(peer);
     }
 
+    /**
+     * first hop, 0 w/o src rt
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native in_addr ip_dst();
 
+    /**
+     * first hop, 0 w/o src rt
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setIp_dst(@ByValue in_addr value);
 
+    /**
+     * actually variable in size
+     */
     @Generated
     @StructureField(order = 1, isGetter = true, count = 40)
     public native byte ip_opts(int field_idx);
 
+    /**
+     * actually variable in size
+     */
     @Generated
     @StructureField(order = 1, isGetter = false, count = 40)
     public native void setIp_opts(byte value, int field_idx);

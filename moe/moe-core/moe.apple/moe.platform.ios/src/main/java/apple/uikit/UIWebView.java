@@ -28,6 +28,7 @@ import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.NSURLRequest;
 import apple.foundation.protocol.NSCoding;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIScrollViewDelegate;
 import apple.uikit.protocol.UIWebViewDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -137,7 +138,7 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -150,8 +151,8 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -353,10 +354,16 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @NInt
     public static native long version_static();
 
+    /**
+     * iPhone Safari defaults to NO. iPad Safari defaults to YES
+     */
     @Generated
     @Selector("allowsInlineMediaPlayback")
     public native boolean allowsInlineMediaPlayback();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("allowsLinkPreview")
     public native boolean allowsLinkPreview();
@@ -384,7 +391,7 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -400,7 +407,8 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -436,7 +444,7 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("gapBetweenPages")
@@ -457,7 +465,7 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIWebView initWithCoder(NSCoder aDecoder);
+    public native UIWebView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -467,6 +475,9 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("isLoading")
     public native boolean isLoading();
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("keyboardDisplayRequiresUserAction")
     public native boolean keyboardDisplayRequiresUserAction();
@@ -484,10 +495,16 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("loadRequest:")
     public native void loadRequest(NSURLRequest request);
 
+    /**
+     * iPhone and iPad Safari both default to YES
+     */
     @Generated
     @Selector("mediaPlaybackAllowsAirPlay")
     public native boolean mediaPlaybackAllowsAirPlay();
 
+    /**
+     * iPhone and iPad Safari both default to YES
+     */
     @Generated
     @Selector("mediaPlaybackRequiresUserAction")
     public native boolean mediaPlaybackRequiresUserAction();
@@ -590,10 +607,16 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     public native void scrollViewWillEndDraggingWithVelocityTargetContentOffset(UIScrollView scrollView,
             @ByValue CGPoint velocity, CGPoint targetContentOffset);
 
+    /**
+     * iPhone Safari defaults to NO. iPad Safari defaults to YES
+     */
     @Generated
     @Selector("setAllowsInlineMediaPlayback:")
     public native void setAllowsInlineMediaPlayback(boolean value);
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setAllowsLinkPreview:")
     public native void setAllowsLinkPreview(boolean value);
@@ -631,14 +654,23 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("setGapBetweenPages:")
     public native void setGapBetweenPages(@NFloat double value);
 
+    /**
+     * default is YES
+     */
     @Generated
     @Selector("setKeyboardDisplayRequiresUserAction:")
     public native void setKeyboardDisplayRequiresUserAction(boolean value);
 
+    /**
+     * iPhone and iPad Safari both default to YES
+     */
     @Generated
     @Selector("setMediaPlaybackAllowsAirPlay:")
     public native void setMediaPlaybackAllowsAirPlay(boolean value);
 
+    /**
+     * iPhone and iPad Safari both default to YES
+     */
     @Generated
     @Selector("setMediaPlaybackRequiresUserAction:")
     public native void setMediaPlaybackRequiresUserAction(boolean value);
@@ -659,6 +691,9 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("setScalesPageToFit:")
     public native void setScalesPageToFit(boolean value);
 
+    /**
+     * iPhone and iPad Safari both default to NO
+     */
     @Generated
     @Selector("setSuppressesIncrementalRendering:")
     public native void setSuppressesIncrementalRendering(boolean value);
@@ -671,6 +706,9 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("stringByEvaluatingJavaScriptFromString:")
     public native String stringByEvaluatingJavaScriptFromString(String script);
 
+    /**
+     * iPhone and iPad Safari both default to NO
+     */
     @Generated
     @Selector("suppressesIncrementalRendering")
     public native boolean suppressesIncrementalRendering();
@@ -684,4 +722,10 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @IsOptional
     @Selector("scrollViewDidChangeAdjustedContentInset:")
     public native void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

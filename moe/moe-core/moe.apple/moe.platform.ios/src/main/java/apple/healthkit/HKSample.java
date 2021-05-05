@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKSample
+ * 
+ * An abstract class representing measurements taken over a period of time.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -167,7 +172,7 @@ public class HKSample extends HKObject {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKSample initWithCoder(NSCoder aDecoder);
+    public native HKSample initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("sampleType")

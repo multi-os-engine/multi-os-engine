@@ -23,6 +23,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MLPredictionOptions
+ * 
+ * An object to hold options / controls / parameters of how
+ * model prediction is performed
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -125,6 +131,9 @@ public class MLPredictionOptions extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Set to YES to force computation to be on the CPU only
+     */
     @Generated
     @Selector("setUsesCPUOnly:")
     public native void setUsesCPUOnly(boolean value);
@@ -137,6 +146,9 @@ public class MLPredictionOptions extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Set to YES to force computation to be on the CPU only
+     */
     @Generated
     @Selector("usesCPUOnly")
     public native boolean usesCPUOnly();

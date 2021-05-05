@@ -108,10 +108,18 @@ public class UIApplicationShortcutIcon extends NSObject implements NSCopying {
     @Selector("iconWithContact:")
     public static native UIApplicationShortcutIcon iconWithContact(CNContact contact);
 
+    /**
+     * Create an icon from a custom image.
+     * The provided image named will be loaded from the app's bundle
+     * and will be masked to conform to the system-defined icon style.
+     */
     @Generated
     @Selector("iconWithTemplateImageName:")
     public static native UIApplicationShortcutIcon iconWithTemplateImageName(String templateImageName);
 
+    /**
+     * Create an icon using a system-defined image.
+     */
     @Generated
     @Selector("iconWithType:")
     public static native UIApplicationShortcutIcon iconWithType(@NInt long type);
@@ -173,4 +181,12 @@ public class UIApplicationShortcutIcon extends NSObject implements NSCopying {
     @Generated
     @Selector("init")
     public native UIApplicationShortcutIcon init();
+
+    /**
+     * Create an icon using a system image.
+     * You can use any of the names here that are usable with -systemImageNamed:.
+     */
+    @Generated
+    @Selector("iconWithSystemImageName:")
+    public static native UIApplicationShortcutIcon iconWithSystemImageName(String systemImageName);
 }

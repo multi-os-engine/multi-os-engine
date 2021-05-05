@@ -1,6 +1,6 @@
 package apple.audiotoolbox.struct;
 
-import apple.coreaudio.struct.AudioTimeStamp;
+import apple.coreaudiotypes.struct.AudioTimeStamp;
 import apple.coremidi.struct.MIDIPacketList;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;

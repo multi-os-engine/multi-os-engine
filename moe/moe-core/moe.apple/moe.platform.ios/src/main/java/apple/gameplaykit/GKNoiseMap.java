@@ -39,6 +39,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GKNoiseMap represents an extracted portion of sampled points from continuous 3D noise.  Extracted values are useful
+ * for 2D and 3D games.  Noise values may be queried, set to explicit values or used as input for other uses,
+ * including textures and tile maps.
+ * 
+ * @see GKNoiseSource
+ * @see GKNoise
+ * @see SKTexture
+ * @see SKTileMapNode
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -129,6 +139,11 @@ public class GKNoiseMap extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Initializes a noise map with specified noise.
+     * 
+     * @param noise The 3D noise from which to sample a 2D plane.
+     */
     @Generated
     @Selector("noiseMapWithNoise:")
     public static native GKNoiseMap noiseMapWithNoise(GKNoise noise);
@@ -154,14 +169,25 @@ public class GKNoiseMap extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Initializes a noise map with constant noise of 0.0 at all positions.
+     */
     @Generated
     @Selector("init")
     public native GKNoiseMap init();
 
+    /**
+     * Initializes a noise map with specified noise.
+     * 
+     * @param noise The 3D noise from which to sample a 2D plane.
+     */
     @Generated
     @Selector("initWithNoise:")
     public native GKNoiseMap initWithNoise(GKNoise noise);
 
+    /**
+     * Whether the values at the edges of the 2D plane are modified to allow seamless tiling of the extracted noise map.
+     */
     @Generated
     @Selector("isSeamless")
     public native boolean isSeamless();

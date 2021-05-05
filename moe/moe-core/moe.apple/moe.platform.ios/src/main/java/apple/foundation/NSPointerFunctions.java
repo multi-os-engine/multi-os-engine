@@ -169,6 +169,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Selector("init")
     public native NSPointerFunctions init();
 
+    /**
+     * construction
+     */
     @Generated
     @Selector("initWithOptions:")
     public native NSPointerFunctions initWithOptions(@NUInt long options);
@@ -182,10 +185,16 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Selector("setSizeFunction:")
     public native void setSizeFunction(@FunctionPtr(name = "call_setSizeFunction") Function_setSizeFunction value);
 
+    /**
+     * pointers should (not) be assigned using the GC strong write barrier
+     */
     @Generated
     @Selector("setUsesStrongWriteBarrier:")
     public native void setUsesStrongWriteBarrier(boolean value);
 
+    /**
+     * pointers should (not) use GC weak read and write barriers
+     */
     @Generated
     @Selector("setUsesWeakReadAndWriteBarriers:")
     public native void setUsesWeakReadAndWriteBarriers(boolean value);
@@ -195,10 +204,16 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @FunctionPtr(name = "call_sizeFunction_ret")
     public native Function_sizeFunction_ret sizeFunction();
 
+    /**
+     * pointers should (not) be assigned using the GC strong write barrier
+     */
     @Generated
     @Selector("usesStrongWriteBarrier")
     public native boolean usesStrongWriteBarrier();
 
+    /**
+     * pointers should (not) use GC weak read and write barriers
+     */
     @Generated
     @Selector("usesWeakReadAndWriteBarriers")
     public native boolean usesWeakReadAndWriteBarriers();
@@ -233,5 +248,188 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
         @Generated
         @NUInt
         long call_sizeFunction_ret(ConstVoidPtr arg0);
+    }
+
+    @Generated
+    @Selector("acquireFunction")
+    @FunctionPtr(name = "call_acquireFunction_ret")
+    public native Function_acquireFunction_ret acquireFunction();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_acquireFunction_ret {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Function_Function_acquireFunction_ret {
+            @Generated
+            @NUInt
+            long call_Function_acquireFunction_ret(ConstVoidPtr arg0);
+        }
+
+        @Generated
+        VoidPtr call_acquireFunction_ret(ConstVoidPtr arg0,
+                @FunctionPtr(name = "call_Function_acquireFunction_ret") Function_Function_acquireFunction_ret arg1,
+                boolean arg2);
+    }
+
+    /**
+     * pointer personality functions
+     */
+    @Generated
+    @Selector("hashFunction")
+    @FunctionPtr(name = "call_hashFunction_ret")
+    public native Function_hashFunction_ret hashFunction();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_hashFunction_ret {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Function_Function_hashFunction_ret {
+            @Generated
+            @NUInt
+            long call_Function_hashFunction_ret(ConstVoidPtr arg0);
+        }
+
+        @Generated
+        @NUInt
+        long call_hashFunction_ret(ConstVoidPtr arg0,
+                @FunctionPtr(name = "call_Function_hashFunction_ret") Function_Function_hashFunction_ret arg1);
+    }
+
+    @Generated
+    @Selector("isEqualFunction")
+    @FunctionPtr(name = "call_isEqualFunction_ret")
+    public native Function_isEqualFunction_ret isEqualFunction();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_isEqualFunction_ret {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Function_Function_isEqualFunction_ret {
+            @Generated
+            @NUInt
+            long call_Function_isEqualFunction_ret(ConstVoidPtr arg0);
+        }
+
+        @Generated
+        boolean call_isEqualFunction_ret(ConstVoidPtr arg0, ConstVoidPtr arg1,
+                @FunctionPtr(name = "call_Function_isEqualFunction_ret") Function_Function_isEqualFunction_ret arg2);
+    }
+
+    /**
+     * custom memory configuration
+     */
+    @Generated
+    @Selector("relinquishFunction")
+    @FunctionPtr(name = "call_relinquishFunction_ret")
+    public native Function_relinquishFunction_ret relinquishFunction();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_relinquishFunction_ret {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Function_Function_relinquishFunction_ret {
+            @Generated
+            @NUInt
+            long call_Function_relinquishFunction_ret(ConstVoidPtr arg0);
+        }
+
+        @Generated
+        void call_relinquishFunction_ret(ConstVoidPtr arg0,
+                @FunctionPtr(name = "call_Function_relinquishFunction_ret") Function_Function_relinquishFunction_ret arg1);
+    }
+
+    @Generated
+    @Selector("setAcquireFunction:")
+    public native void setAcquireFunction(
+            @FunctionPtr(name = "call_setAcquireFunction") Function_setAcquireFunction value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_setAcquireFunction {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Function_Function_setAcquireFunction {
+            @Generated
+            @NUInt
+            long call_Function_setAcquireFunction(ConstVoidPtr arg0);
+        }
+
+        @Generated
+        VoidPtr call_setAcquireFunction(ConstVoidPtr arg0,
+                @FunctionPtr(name = "call_Function_setAcquireFunction") Function_Function_setAcquireFunction arg1,
+                boolean arg2);
+    }
+
+    /**
+     * pointer personality functions
+     */
+    @Generated
+    @Selector("setHashFunction:")
+    public native void setHashFunction(@FunctionPtr(name = "call_setHashFunction") Function_setHashFunction value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_setHashFunction {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Function_Function_setHashFunction {
+            @Generated
+            @NUInt
+            long call_Function_setHashFunction(ConstVoidPtr arg0);
+        }
+
+        @Generated
+        @NUInt
+        long call_setHashFunction(ConstVoidPtr arg0,
+                @FunctionPtr(name = "call_Function_setHashFunction") Function_Function_setHashFunction arg1);
+    }
+
+    @Generated
+    @Selector("setIsEqualFunction:")
+    public native void setIsEqualFunction(
+            @FunctionPtr(name = "call_setIsEqualFunction") Function_setIsEqualFunction value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_setIsEqualFunction {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Function_Function_setIsEqualFunction {
+            @Generated
+            @NUInt
+            long call_Function_setIsEqualFunction(ConstVoidPtr arg0);
+        }
+
+        @Generated
+        boolean call_setIsEqualFunction(ConstVoidPtr arg0, ConstVoidPtr arg1,
+                @FunctionPtr(name = "call_Function_setIsEqualFunction") Function_Function_setIsEqualFunction arg2);
+    }
+
+    /**
+     * custom memory configuration
+     */
+    @Generated
+    @Selector("setRelinquishFunction:")
+    public native void setRelinquishFunction(
+            @FunctionPtr(name = "call_setRelinquishFunction") Function_setRelinquishFunction value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_setRelinquishFunction {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Function_Function_setRelinquishFunction {
+            @Generated
+            @NUInt
+            long call_Function_setRelinquishFunction(ConstVoidPtr arg0);
+        }
+
+        @Generated
+        void call_setRelinquishFunction(ConstVoidPtr arg0,
+                @FunctionPtr(name = "call_Function_setRelinquishFunction") Function_Function_setRelinquishFunction arg1);
     }
 }

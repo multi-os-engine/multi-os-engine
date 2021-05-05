@@ -73,6 +73,9 @@ public class INPaymentAccountResolutionResult extends INIntentResolutionResult {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the paymentAccount with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithPaymentAccountToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -87,6 +90,9 @@ public class INPaymentAccountResolutionResult extends INIntentResolutionResult {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * This resolution result is to ask Siri to disambiguate between the provided INPaymentAccount.
+     */
     @Generated
     @Selector("disambiguationWithPaymentAccountsToDisambiguate:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -151,6 +157,10 @@ public class INPaymentAccountResolutionResult extends INIntentResolutionResult {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INPaymentAccount. The resolvedPaymentAccount can be different than the original INPaymentAccount. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedPaymentAccount:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -169,4 +179,15 @@ public class INPaymentAccountResolutionResult extends INIntentResolutionResult {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

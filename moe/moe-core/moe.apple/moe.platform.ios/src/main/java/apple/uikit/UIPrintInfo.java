@@ -172,6 +172,9 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
     @Selector("dictionaryRepresentation")
     public native NSDictionary<?, ?> dictionaryRepresentation();
 
+    /**
+     * default is based on document type (none for photo, long edge for other)
+     */
     @Generated
     @Selector("duplex")
     @NInt
@@ -179,7 +182,7 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -187,42 +190,69 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIPrintInfo initWithCoder(NSCoder aDecoder);
+    public native UIPrintInfo initWithCoder(NSCoder coder);
 
+    /**
+     * default is application name
+     */
     @Generated
     @Selector("jobName")
     public native String jobName();
 
+    /**
+     * default is UIPrintInfoOrientationPortrait
+     */
     @Generated
     @Selector("orientation")
     @NInt
     public native long orientation();
 
+    /**
+     * default is UIPrintInfoOutputGeneral
+     */
     @Generated
     @Selector("outputType")
     @NInt
     public native long outputType();
 
+    /**
+     * default is nil. set after user selects printer
+     */
     @Generated
     @Selector("printerID")
     public native String printerID();
 
+    /**
+     * default is based on document type (none for photo, long edge for other)
+     */
     @Generated
     @Selector("setDuplex:")
     public native void setDuplex(@NInt long value);
 
+    /**
+     * default is application name
+     */
     @Generated
     @Selector("setJobName:")
     public native void setJobName(String value);
 
+    /**
+     * default is UIPrintInfoOrientationPortrait
+     */
     @Generated
     @Selector("setOrientation:")
     public native void setOrientation(@NInt long value);
 
+    /**
+     * default is UIPrintInfoOutputGeneral
+     */
     @Generated
     @Selector("setOutputType:")
     public native void setOutputType(@NInt long value);
 
+    /**
+     * default is nil. set after user selects printer
+     */
     @Generated
     @Selector("setPrinterID:")
     public native void setPrinterID(String value);

@@ -22,13 +22,37 @@ import org.moe.natj.general.ann.NUInt;
 @Generated
 public final class PHAssetMediaSubtype {
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * Photo subtypes
+     */
     @Generated @NUInt public static final long PhotoPanorama = 0x0000000000000001L;
+    /**
+     * Photo subtypes
+     */
     @Generated @NUInt public static final long PhotoHDR = 0x0000000000000002L;
+    /**
+     * Photo subtypes
+     */
     @Generated @NUInt public static final long PhotoScreenshot = 0x0000000000000004L;
+    /**
+     * Photo subtypes
+     */
     @Generated @NUInt public static final long PhotoLive = 0x0000000000000008L;
+    /**
+     * Photo subtypes
+     */
     @Generated @NUInt public static final long PhotoDepthEffect = 0x0000000000000010L;
+    /**
+     * Video subtypes
+     */
     @Generated @NUInt public static final long VideoStreamed = 0x0000000000010000L;
+    /**
+     * Video subtypes
+     */
     @Generated @NUInt public static final long VideoHighFrameRate = 0x0000000000020000L;
+    /**
+     * Video subtypes
+     */
     @Generated @NUInt public static final long VideoTimelapse = 0x0000000000040000L;
 
     @Generated

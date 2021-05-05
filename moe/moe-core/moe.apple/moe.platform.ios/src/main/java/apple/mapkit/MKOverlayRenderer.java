@@ -163,6 +163,14 @@ public class MKOverlayRenderer extends NSObject {
     @NFloat
     public native double alpha();
 
+    /**
+     * Return YES if the renderer is currently ready to draw in the specified rect.
+     * Return NO if the renderer will not draw in the specified rect or if the
+     * data necessary to draw in the specified rect is not available.  In the
+     * case where the renderer may want to draw in the specified rect but the data is
+     * not available, use setNeedsDisplayInMapRect:zoomLevel: to signal when the
+     * data does become available.
+     */
     @Generated
     @Selector("canDrawMapRect:zoomScale:")
     public native boolean canDrawMapRectZoomScale(@ByValue MKMapRect mapRect, @NFloat double zoomScale);
@@ -200,6 +208,9 @@ public class MKOverlayRenderer extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native MKOverlay overlay();
 
+    /**
+     * Convert points relative to this view to absolute MKMapPoints
+     */
     @Generated
     @Selector("pointForMapPoint:")
     @ByValue

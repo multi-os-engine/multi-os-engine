@@ -16,6 +16,7 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.ConstFloatPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -24,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A MPSNNFilterNode representing a MPSCNNBinaryFullyConnected kernel
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -96,6 +100,18 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
     public native MPSCNNBinaryFullyConnectedNode initWithSourceWeights(MPSNNImageNode sourceNode,
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
+    /**
+     * Init a node representing a MPSCNNBinaryFullyConnected kernel
+     * 
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                                     protocol. This object is provided by you to encapsulate storage for
+     *                                     convolution weights and biases.
+     * @param      scaleValue              A floating point value used to scale the entire convolution.
+     * @param      type                    What kind of binarization strategy is to be used.
+     * @param      flags                   See documentation of MPSCNNBinaryConvolutionFlags.
+     * @return     A new MPSNNFilter node for a MPSCNNBinaryFullyConnected kernel.
+     */
     @Generated
     @Selector("initWithSource:weights:scaleValue:type:flags:")
     public native MPSCNNBinaryFullyConnectedNode initWithSourceWeightsScaleValueTypeFlags(MPSNNImageNode sourceNode,
@@ -134,6 +150,18 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
     public static native MPSCNNBinaryFullyConnectedNode nodeWithSourceWeights(MPSNNImageNode sourceNode,
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
+    /**
+     * Init an autoreleased node representing a MPSCNNBinaryFullyConnected kernel
+     * 
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                                     protocol. This object is provided by you to encapsulate storage for
+     *                                     convolution weights and biases.
+     * @param      scaleValue              A floating point value used to scale the entire convolution.
+     * @param      type                    What kind of binarization strategy is to be used.
+     * @param      flags                   See documentation of MPSCNNBinaryConvolutionFlags.
+     * @return     A new MPSNNFilter node for a MPSCNNBinaryFullyConnected kernel.
+     */
     @Generated
     @Selector("nodeWithSource:weights:scaleValue:type:flags:")
     public static native MPSCNNBinaryFullyConnectedNode nodeWithSourceWeightsScaleValueTypeFlags(
@@ -160,4 +188,56 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Init a node representing a MPSCNNBinaryFullyConnected kernel
+     * 
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                                     protocol. This object is provided by you to encapsulate storage for
+     *                                     convolution weights and biases.
+     * @param      outputBiasTerms         A pointer to bias terms to be applied to the convolution output.
+     *                                     See MPSCNNBinaryConvolution for more details.
+     * @param      outputScaleTerms        A pointer to scale terms to be applied to binary convolution
+     *                                     results per output feature channel. See MPSCNNBinaryConvolution for more details.
+     * @param      inputBiasTerms          A pointer to offset terms to be applied to the input before convolution and
+     *                                     before input scaling. See MPSCNNBinaryConvolution for more details.
+     * @param      inputScaleTerms         A pointer to scale terms to be applied to the input before convolution,
+     *                                     but after input biasing. See MPSCNNBinaryConvolution for more details.
+     * @param      type                    What kind of binarization strategy is to be used.
+     * @param      flags                   See documentation of MPSCNNBinaryConvolutionFlags.
+     * @return     A new MPSNNFilter node for a MPSCNNBinaryFullyConnected kernel.
+     */
+    @Generated
+    @Selector("initWithSource:weights:outputBiasTerms:outputScaleTerms:inputBiasTerms:inputScaleTerms:type:flags:")
+    public native MPSCNNBinaryFullyConnectedNode initWithSourceWeightsOutputBiasTermsOutputScaleTermsInputBiasTermsInputScaleTermsTypeFlags(
+            MPSNNImageNode sourceNode, @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights,
+            ConstFloatPtr outputBiasTerms, ConstFloatPtr outputScaleTerms, ConstFloatPtr inputBiasTerms,
+            ConstFloatPtr inputScaleTerms, @NUInt long type, @NUInt long flags);
+
+    /**
+     * Init an autoreleased node representing a MPSCNNBinaryFullyConnected kernel
+     * 
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                                     protocol. This object is provided by you to encapsulate storage for
+     *                                     convolution weights and biases.
+     * @param      outputBiasTerms         A pointer to bias terms to be applied to the convolution output.
+     *                                     See MPSCNNBinaryConvolution for more details.
+     * @param      outputScaleTerms        A pointer to scale terms to be applied to binary convolution
+     *                                     results per output feature channel. See MPSCNNBinaryConvolution for more details.
+     * @param      inputBiasTerms          A pointer to offset terms to be applied to the input before convolution and
+     *                                     before input scaling. See MPSCNNBinaryConvolution for more details.
+     * @param      inputScaleTerms         A pointer to scale terms to be applied to the input before convolution,
+     *                                     but after input biasing. See MPSCNNBinaryConvolution for more details.
+     * @param      type                    What kind of binarization strategy is to be used.
+     * @param      flags                   See documentation of MPSCNNBinaryConvolutionFlags.
+     * @return     A new MPSNNFilter node for a MPSCNNBinaryFullyConnected kernel.
+     */
+    @Generated
+    @Selector("nodeWithSource:weights:outputBiasTerms:outputScaleTerms:inputBiasTerms:inputScaleTerms:type:flags:")
+    public static native MPSCNNBinaryFullyConnectedNode nodeWithSourceWeightsOutputBiasTermsOutputScaleTermsInputBiasTermsInputScaleTermsTypeFlags(
+            MPSNNImageNode sourceNode, @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights,
+            ConstFloatPtr outputBiasTerms, ConstFloatPtr outputScaleTerms, ConstFloatPtr inputBiasTerms,
+            ConstFloatPtr inputScaleTerms, @NUInt long type, @NUInt long flags);
 }

@@ -19,6 +19,9 @@ package apple.corefoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Common error codes (returned only by the older APIs that predate CFError)
+ */
 @Generated
 public final class CFURLError {
     @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFFFFF6L;

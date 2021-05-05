@@ -28,6 +28,7 @@ import apple.mapkit.protocol.MKAnnotation;
 import apple.uikit.UIImage;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -134,7 +135,7 @@ public class MKAnnotationView extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -147,8 +148,8 @@ public class MKAnnotationView extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -374,7 +375,7 @@ public class MKAnnotationView extends UIView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -390,7 +391,8 @@ public class MKAnnotationView extends UIView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -401,15 +403,26 @@ public class MKAnnotationView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * calloutOffset is the offset in screen points from the top-middle of the annotation view, where the anchor of the callout should be shown.
+     */
     @Generated
     @Selector("calloutOffset")
     @ByValue
     public native CGPoint calloutOffset();
 
+    /**
+     * If YES, a standard callout bubble will be shown when the annotation is selected.
+     * The annotation must have a title for the callout to be shown.
+     */
     @Generated
     @Selector("canShowCallout")
     public native boolean canShowCallout();
 
+    /**
+     * By default, the center of annotation view is placed over the coordinate of the annotation.
+     * centerOffset is the offset in screen points from the center of the annotion view.
+     */
     @Generated
     @Selector("centerOffset")
     @ByValue
@@ -419,6 +432,10 @@ public class MKAnnotationView extends UIView {
     @Selector("detailCalloutAccessoryView")
     public native UIView detailCalloutAccessoryView();
 
+    /**
+     * Automatically set to MKAnnotationViewDragStateStarting, Canceling, and Ending when necessary.
+     * Implementer is responsible for transitioning to Dragging and None states as appropriate.
+     */
     @Generated
     @Selector("dragState")
     @NUInt
@@ -445,34 +462,60 @@ public class MKAnnotationView extends UIView {
     @Selector("initWithFrame:")
     public native MKAnnotationView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * If YES and the underlying id<MKAnnotation> responds to setCoordinate:,
+     * the user will be able to drag this annotation view around the map.
+     */
     @Generated
     @Selector("isDraggable")
     public native boolean isDraggable();
 
+    /**
+     * If YES and the underlying id<MKAnnotation> responds to setCoordinate:,
+     * the user will be able to drag this annotation view around the map.
+     */
     @Generated
     @Selector("setDraggable:")
     public native void setDraggable(boolean value);
 
+    /**
+     * Defaults to YES. If NO, ignores touch events and subclasses may draw differently.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * Defaults to YES. If NO, ignores touch events and subclasses may draw differently.
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * Defaults to NO. This gets set/cleared automatically when touch enters/exits during tracking and cleared on up.
+     */
     @Generated
     @Selector("isHighlighted")
     public native boolean isHighlighted();
 
+    /**
+     * Defaults to NO. This gets set/cleared automatically when touch enters/exits during tracking and cleared on up.
+     */
     @Generated
     @Selector("setHighlighted:")
     public native void setHighlighted(boolean value);
 
+    /**
+     * Defaults to NO. Becomes YES when tapped/clicked on in the map view.
+     */
     @Generated
     @Selector("isSelected")
     public native boolean isSelected();
 
+    /**
+     * Defaults to NO. Becomes YES when tapped/clicked on in the map view.
+     */
     @Generated
     @Selector("setSelected:")
     public native void setSelected(boolean value);
@@ -481,6 +524,9 @@ public class MKAnnotationView extends UIView {
     @Selector("leftCalloutAccessoryView")
     public native UIView leftCalloutAccessoryView();
 
+    /**
+     * Classes that override must call super.
+     */
     @Generated
     @Selector("prepareForReuse")
     public native void prepareForReuse();
@@ -497,14 +543,25 @@ public class MKAnnotationView extends UIView {
     @Selector("setAnnotation:")
     public native void setAnnotation(@Mapped(ObjCObjectMapper.class) MKAnnotation value);
 
+    /**
+     * calloutOffset is the offset in screen points from the top-middle of the annotation view, where the anchor of the callout should be shown.
+     */
     @Generated
     @Selector("setCalloutOffset:")
     public native void setCalloutOffset(@ByValue CGPoint value);
 
+    /**
+     * If YES, a standard callout bubble will be shown when the annotation is selected.
+     * The annotation must have a title for the callout to be shown.
+     */
     @Generated
     @Selector("setCanShowCallout:")
     public native void setCanShowCallout(boolean value);
 
+    /**
+     * By default, the center of annotation view is placed over the coordinate of the annotation.
+     * centerOffset is the offset in screen points from the center of the annotion view.
+     */
     @Generated
     @Selector("setCenterOffset:")
     public native void setCenterOffset(@ByValue CGPoint value);
@@ -513,10 +570,17 @@ public class MKAnnotationView extends UIView {
     @Selector("setDetailCalloutAccessoryView:")
     public native void setDetailCalloutAccessoryView(UIView value);
 
+    /**
+     * Automatically set to MKAnnotationViewDragStateStarting, Canceling, and Ending when necessary.
+     * Implementer is responsible for transitioning to Dragging and None states as appropriate.
+     */
     @Generated
     @Selector("setDragState:")
     public native void setDragState(@NUInt long value);
 
+    /**
+     * Developers targeting iOS 4.2 and after must use setDragState:animated: instead of setDragState:.
+     */
     @Generated
     @Selector("setDragState:animated:")
     public native void setDragStateAnimated(@NUInt long newDragState, boolean animated);
@@ -537,19 +601,31 @@ public class MKAnnotationView extends UIView {
     @Selector("setSelected:animated:")
     public native void setSelectedAnimated(boolean selected, boolean animated);
 
+    /**
+     * If non-nil this is the annotation view this view is clustered into.
+     */
     @Generated
     @Selector("clusterAnnotationView")
     public native MKAnnotationView clusterAnnotationView();
 
+    /**
+     * Annotation views with equal non-nil identifiers can cluster together.
+     */
     @Generated
     @Selector("clusteringIdentifier")
     public native String clusteringIdentifier();
 
+    /**
+     * Default collision mode is rectangle.
+     */
     @Generated
     @Selector("collisionMode")
     @NInt
     public native long collisionMode();
 
+    /**
+     * Default is MKFeatureDisplayPriorityRequired, other values opts into collision occlusion by priority.
+     */
     @Generated
     @Selector("displayPriority")
     public native float displayPriority();
@@ -558,15 +634,46 @@ public class MKAnnotationView extends UIView {
     @Selector("prepareForDisplay")
     public native void prepareForDisplay();
 
+    /**
+     * Annotation views with equal non-nil identifiers can cluster together.
+     */
     @Generated
     @Selector("setClusteringIdentifier:")
     public native void setClusteringIdentifier(String value);
 
+    /**
+     * Default collision mode is rectangle.
+     */
     @Generated
     @Selector("setCollisionMode:")
     public native void setCollisionMode(@NInt long value);
 
+    /**
+     * Default is MKFeatureDisplayPriorityRequired, other values opts into collision occlusion by priority.
+     */
     @Generated
     @Selector("setDisplayPriority:")
     public native void setDisplayPriority(float value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("selectedZPriority")
+    public native float selectedZPriority();
+
+    @Generated
+    @Selector("setSelectedZPriority:")
+    public native void setSelectedZPriority(float value);
+
+    @Generated
+    @Selector("setZPriority:")
+    public native void setZPriority(float value);
+
+    @Generated
+    @Selector("zPriority")
+    public native float zPriority();
 }

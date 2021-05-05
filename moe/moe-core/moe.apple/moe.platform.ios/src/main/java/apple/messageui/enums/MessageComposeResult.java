@@ -19,6 +19,20 @@ package apple.messageui.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]       MessageComposeResult
+ * 
+ * Composition result sent to the delegate upon user completion.
+ * 
+ * This result will inform the client of the user's message composition action.  If the
+ * 		 user cancels the composition, <tt>MessageComposeResultCancelled</tt> will be sent to the delegate.
+ * 		 Typically <tt>MessageComposeResultSent</tt> will be sent, but <tt>MessageComposeResultFailed</tt> will
+ * 		 be sent in the case of failure. </p>Send may only be interpreted as a successful queueing of
+ * 		 the message for later sending. The actual send will occur when the device is able to send.
+ * [@constant]   MessageComposeResultCancelled   User canceled the composition.
+ * [@constant]   MessageComposeResultSent        User successfully sent/queued the message.
+ * [@constant]   MessageComposeResultFailed      User's attempt to save or send was unsuccessful.
+ */
 @Generated
 public final class MessageComposeResult {
     @Generated @NInt public static final long Cancelled = 0x0000000000000000L;

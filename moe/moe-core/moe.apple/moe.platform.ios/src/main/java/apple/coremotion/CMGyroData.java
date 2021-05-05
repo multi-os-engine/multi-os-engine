@@ -43,6 +43,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMGyroData
+ * 
+ * Discussion:
+ *   Contains a single gyro measurement.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -164,8 +170,14 @@ public class CMGyroData extends CMLogItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMGyroData initWithCoder(NSCoder aDecoder);
+    public native CMGyroData initWithCoder(NSCoder coder);
 
+    /**
+     * rotationRate
+     * 
+     * Discussion:
+     *   The rotation rate as measured by the gyro.
+     */
     @Generated
     @Selector("rotationRate")
     @ByValue

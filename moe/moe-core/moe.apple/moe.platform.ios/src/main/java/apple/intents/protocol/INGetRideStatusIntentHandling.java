@@ -29,11 +29,26 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Protocol to declare support for handling an INGetRideStatusIntent. By implementing this protocol, a class can provide logic for resolving, confirming and handling the intent.
+ * 
+ * The minimum requirement for an implementing class is that it should be able to handle the intent. The resolution and confirmation methods are optional. The handling method is always called last, after resolving and confirming the intent.
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INGetRideStatusIntentHandling")
 public interface INGetRideStatusIntentHandling {
+    /**
+     * Confirmation method - Validate that this intent is ready for the next step (i.e. handling)
+     * 
+     * Called prior to asking the app to handle the intent. The app should return a response object that contains additional information about the intent, which may be relevant for the system to show the user prior to handling. If unimplemented, the system will assume the intent is valid following resolution, and will assume there is no additional information relevant to this intent.
+     * 
+     * @param  intent The input intent
+     * @param  completion The response block contains an INGetRideStatusIntentResponse containing additional details about the intent that may be relevant for the system to show the user prior to handling.
+     * 
+     * @see INGetRideStatusIntentResponse
+     */
     @Generated
     @IsOptional
     @Selector("confirmGetRideStatus:completion:")
@@ -42,6 +57,16 @@ public interface INGetRideStatusIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Handling method - Execute the task represented by the INGetRideStatusIntent that's passed in
+     * 
+     * Called to actually execute the intent. The app must return a response for this intent.
+     * 
+     * @param  intent The input intent
+     * @param  completion The response handling block takes a INGetRideStatusIntentResponse containing the details of the result of having executed the intent
+     * 
+     * @see  INGetRideStatusIntentResponse
+     */
     @Generated
     @Selector("handleGetRideStatus:completion:")
     void handleGetRideStatusCompletion(INGetRideStatusIntent intent,
@@ -50,7 +75,7 @@ public interface INGetRideStatusIntentHandling {
     @Generated
     @Selector("startSendingUpdatesForGetRideStatus:toObserver:")
     void startSendingUpdatesForGetRideStatusToObserver(INGetRideStatusIntent intent,
-            @Mapped(ObjCObjectMapper.class) Object observer);
+            @Mapped(ObjCObjectMapper.class) INGetRideStatusIntentResponseObserver observer);
 
     @Generated
     @Selector("stopSendingUpdatesForGetRideStatus:")
@@ -60,13 +85,13 @@ public interface INGetRideStatusIntentHandling {
     @Generated
     public interface Block_confirmGetRideStatusCompletion {
         @Generated
-        void call_confirmGetRideStatusCompletion(INGetRideStatusIntentResponse arg0);
+        void call_confirmGetRideStatusCompletion(INGetRideStatusIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleGetRideStatusCompletion {
         @Generated
-        void call_handleGetRideStatusCompletion(INGetRideStatusIntentResponse arg0);
+        void call_handleGetRideStatusCompletion(INGetRideStatusIntentResponse response);
     }
 }

@@ -157,4 +157,8 @@ public class CTSubscriberInfo extends NSObject {
     @Generated
     @Selector("init")
     public native CTSubscriberInfo init();
+
+    @Generated
+    @Selector("subscribers")
+    public static native NSArray<? extends CTSubscriber> subscribers();
 }

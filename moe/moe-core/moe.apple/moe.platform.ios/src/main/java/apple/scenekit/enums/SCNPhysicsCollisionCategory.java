@@ -19,13 +19,23 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Collision default category
+ */
 @Generated
 public final class SCNPhysicsCollisionCategory {
+    /**
+     * default collision group for dynamic and kinematic objects
+     */
     @Generated @NUInt public static final long Default = 0x0000000000000001L;
+    /**
+     * default collision group for static objects
+     */
     @Generated @NUInt public static final long Static = 0x0000000000000002L;
-    @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ?
-            0xFFFFFFFFFFFFFFFFL :
-            0x00000000FFFFFFFFL;
+    /**
+     * default for collision mask
+     */
+    @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ? 0xFFFFFFFFFFFFFFFFL : 0x00000000FFFFFFFFL;
 
     @Generated
     private SCNPhysicsCollisionCategory() {

@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A UITextChecker object is used by a client (e.g. a document in an application) to check a given NSString. Generally one UITextChecker instance should be created per document.  Multiple related pieces of text may share a single UITextChecker instance, if they are intended to share ignored words and other similar state.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -73,6 +76,9 @@ public class UITextChecker extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Entries in the availableLanguages list are all available spellchecking languages in user preference order, usually language abbreviations such as en_US.
+     */
     @Generated
     @Selector("availableLanguages")
     public static native NSArray<String> availableLanguages();
@@ -133,6 +139,9 @@ public class UITextChecker extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * These allow clients to programmatically instruct the checker to learn and unlearn words, and to determine whether a word has been learned (and hence can potentially be unlearned).
+     */
     @Generated
     @Selector("learnWord:")
     public static native void learnWord(String word);
@@ -168,16 +177,25 @@ public class UITextChecker extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns an array of strings, in the order in which they should be presented, representing complete words that the user might be trying to type when starting by typing the partial word at the given range in the given string.
+     */
     @Generated
     @Selector("completionsForPartialWordRange:inString:language:")
     public native NSArray<String> completionsForPartialWordRangeInStringLanguage(@ByValue NSRange range, String string,
             String language);
 
+    /**
+     * Returns an array of strings, in the order in which they should be presented, representing guesses for words that might have been intended in place of the misspelled word at the given range in the given string.
+     */
     @Generated
     @Selector("guessesForWordRange:inString:language:")
     public native NSArray<String> guessesForWordRangeInStringLanguage(@ByValue NSRange range, String string,
             String language);
 
+    /**
+     * Methods for dealing with ignored words.
+     */
     @Generated
     @Selector("ignoreWord:")
     public native void ignoreWord(String wordToIgnore);
@@ -190,6 +208,9 @@ public class UITextChecker extends NSObject {
     @Selector("init")
     public native UITextChecker init();
 
+    /**
+     * Initiates a spell-check of a string.  Returns the range of the first misspelled word, or {NSNotFound, 0} if none is found.  Checking is limited to the range specified, and starts at the specified offset (which should lie within the range), but if wrapFlag is YES then it will check from the beginning of the range if no misspelling is found between startingOffset and the end of the range.
+     */
     @Generated
     @Selector("rangeOfMisspelledWordInString:range:startingAt:wrap:language:")
     @ByValue

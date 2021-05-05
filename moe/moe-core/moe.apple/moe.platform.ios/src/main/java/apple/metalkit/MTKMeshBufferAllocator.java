@@ -23,7 +23,9 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import apple.metal.protocol.MTLDevice;
+import apple.modelio.protocol.MDLMeshBuffer;
 import apple.modelio.protocol.MDLMeshBufferAllocator;
+import apple.modelio.protocol.MDLMeshBufferZone;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -43,6 +45,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MTKMeshBufferAllocator
+ * 
+ * Allocator passed to MDLAsset init method to load vertex and index data directly into Metal buffers.
+ */
 @Generated
 @Library("MetalKit")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +161,11 @@ public class MTKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] device
+     * 
+     * Device used to create buffers.
+     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -163,6 +175,13 @@ public class MTKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
     @Selector("init")
     public native MTKMeshBufferAllocator init();
 
+    /**
+     * initWithDevice
+     * 
+     * Initialize the allocator with a device to be used to create buffers.
+     * 
+     * The designated initializer for this class.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MTKMeshBufferAllocator initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
@@ -170,33 +189,33 @@ public class MTKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
     @Generated
     @Selector("newBuffer:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object newBufferType(@NUInt long length, @NUInt long type);
+    public native MDLMeshBuffer newBufferType(@NUInt long length, @NUInt long type);
 
     @Generated
     @Selector("newBufferFromZone:data:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object newBufferFromZoneDataType(@Mapped(ObjCObjectMapper.class) Object zone, NSData data,
-            @NUInt long type);
+    public native MDLMeshBuffer newBufferFromZoneDataType(@Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone,
+            NSData data, @NUInt long type);
 
     @Generated
     @Selector("newBufferFromZone:length:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object newBufferFromZoneLengthType(@Mapped(ObjCObjectMapper.class) Object zone, @NUInt long length,
-            @NUInt long type);
+    public native MDLMeshBuffer newBufferFromZoneLengthType(@Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone,
+            @NUInt long length, @NUInt long type);
 
     @Generated
     @Selector("newBufferWithData:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object newBufferWithDataType(NSData data, @NUInt long type);
+    public native MDLMeshBuffer newBufferWithDataType(NSData data, @NUInt long type);
 
     @Generated
     @Selector("newZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object newZone(@NUInt long capacity);
+    public native MDLMeshBufferZone newZone(@NUInt long capacity);
 
     @Generated
     @Selector("newZoneForBuffersWithSize:andType:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object newZoneForBuffersWithSizeAndType(NSArray<? extends NSNumber> sizes,
+    public native MDLMeshBufferZone newZoneForBuffersWithSizeAndType(NSArray<? extends NSNumber> sizes,
             NSArray<? extends NSNumber> types);
 }

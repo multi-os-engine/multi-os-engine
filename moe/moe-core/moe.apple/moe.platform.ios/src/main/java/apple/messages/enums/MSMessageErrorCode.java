@@ -37,4 +37,5 @@ public final class MSMessageErrorCode {
     @Generated @NInt public static final long Unknown = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long SendWithoutRecentInteraction = 0x0000000000000009L;
     @Generated @NInt public static final long SendWhileNotVisible = 0x000000000000000AL;
+    @Generated @NInt public static final long APIUnavailableInPresentationContext = 0x000000000000000BL;
 }

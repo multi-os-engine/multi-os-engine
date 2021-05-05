@@ -19,10 +19,22 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * This enumeration describes the setting for audio on the recipient of the camera stream.
+ */
 @Generated
 public final class HMCameraAudioStreamSetting {
+    /**
+     * Muted for incoming and outgoing audio.
+     */
     @Generated @NUInt public static final long Muted = 0x0000000000000001L;
+    /**
+     * Only incoming audio is allowed.
+     */
     @Generated @NUInt public static final long IncomingAudioAllowed = 0x0000000000000002L;
+    /**
+     * Bidirectional audio is allowed.
+     */
     @Generated @NUInt public static final long BidirectionalAudioAllowed = 0x0000000000000003L;
 
     @Generated

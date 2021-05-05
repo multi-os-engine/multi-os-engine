@@ -42,6 +42,26 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * ADInterstitialAd is a full screen advertisement, available on iPad since
+ * iOS 4.3, and on iPhone since iOS 7.0.
+ * 
+ * There are three ways to display an ADInterstitialAd:
+ * 
+ *   • By providing a container view and calling -presentInView:
+ *   • By providing a view controller and calling -presentFromViewController:
+ *   • Indirectly, by setting the interstitial presentation policy on a view
+ *     controller to Automatic or Manual (via -[UIViewController setInterstitialPresentationPolicy:]),
+ *     and letting the framework manage presentation.
+ * 
+ * An ADInterstitialAd should not be presented until it has loaded content. This
+ * is indicated via the -interstitialAdDidLoad: delegate method, and can also be
+ * queried via the loaded property. If the interstitial ad is presented when
+ * loaded=NO, an exception will be thrown.
+ * 
+ * Note that using interstitial ads on iPhones running iOS < 7.0 will cause an
+ * exception to be thrown.
+ */
 @Generated
 @Library("iAd")
 @Runtime(ObjCRuntime.class)
@@ -153,10 +173,26 @@ public class ADInterstitialAd extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] cancelAction
+     * 
+     * Cancels the current in-progress action. This should only be used in cases
+     * where the user's attention is required immediately. If this method is called,
+     * -interstitialAdActionDidFinish: will not be called.
+     */
     @Generated
     @Selector("cancelAction")
     public native void cancelAction();
 
+    /**
+     * [@property] delegate
+     * 
+     * The interstitial ad delegate is notified when it has loaded, when errors
+     * occur in getting ads, when actions begin and end, and when it has unloaded.
+     * 
+     * On iOS 5 and later, this property is a weak reference and cannot be used with
+     * objects that modify the behavior of release or retain.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -166,27 +202,94 @@ public class ADInterstitialAd extends NSObject {
     @Selector("init")
     public native ADInterstitialAd init();
 
+    /**
+     * [@property] actionInProgress
+     * 
+     * Actions display full screen content in a modal session. Use this property to
+     * determine if such an action is currently in progress.
+     */
     @Generated
     @Selector("isActionInProgress")
     public native boolean isActionInProgress();
 
+    /**
+     * [@property] loaded
+     * 
+     * @return
+     * YES if an ad is loaded, NO otherwise. This property should always be checked
+     * before the interstitial ad is presented.
+     */
     @Generated
     @Selector("isLoaded")
     public native boolean isLoaded();
 
+    /**
+     * presentFromViewController:
+     * 
+     * As of iOS 7.0, the interstitial ad presentation APIs on UIViewController
+     * should be used instead of managing your own ADInterstitialAd and presenting
+     * it via the presentFromViewController: API.
+     * 
+     * On iOS < 7.0, this method should be used to present the interstitial ad in a
+     * non-paging UI, such as a transition or at the end of a game level. When this
+     * API is used, the framework will manage how the interstitial is displayed and
+     * what happens when the user dismisses it.
+     * 
+     * User dismissal of either the interstitial or the ad unit to which it is
+     * linked will restore control to the application immediately.
+     */
     @Generated
-    @Deprecated
     @Selector("presentFromViewController:")
     public native void presentFromViewController(UIViewController viewController);
 
+    /**
+     * presentInView:
+     * 
+     * This method should be used to display the interstitial in a view hierarchy.
+     * The view hierarchy must be managed by a view controller and the size of the
+     * container view must fit the following constraints:
+     * 
+     *   • Width must be DEVICE_WIDTH for the current orientation.
+     *   • Height must be at least (DEVICE_HEIGHT - STATUS_BAR_HEIGHT - NAVIGATION_BAR_HEIGHT - TAB_BAR_HEIGHT).
+     *   • Height must not exceed DEVICE_HEIGHT
+     * 
+     * @throws NSInternalInconsistencyException
+     * If the container view is not already in a view controller's managed hierarchy,
+     * an exception will be thrown.
+     * 
+     * @throws NSInternalInconsistencyException
+     * If the interstitial has not loaded at the time this method is invoked, an
+     * exception will be thrown.
+     * 
+     * @return
+     * YES if the interstitial could be presented, NO otherwise.
+     */
     @Generated
     @Selector("presentInView:")
     public native boolean presentInView(UIView containerView);
 
+    /**
+     * [@property] delegate
+     * 
+     * The interstitial ad delegate is notified when it has loaded, when errors
+     * occur in getting ads, when actions begin and end, and when it has unloaded.
+     * 
+     * On iOS 5 and later, this property is a weak reference and cannot be used with
+     * objects that modify the behavior of release or retain.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ADInterstitialAdDelegate value);
 
+    /**
+     * [@property] delegate
+     * 
+     * The interstitial ad delegate is notified when it has loaded, when errors
+     * occur in getting ads, when actions begin and end, and when it has unloaded.
+     * 
+     * On iOS 5 and later, this property is a weak reference and cannot be used with
+     * objects that modify the behavior of release or retain.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) ADInterstitialAdDelegate value) {
         Object __old = delegate();

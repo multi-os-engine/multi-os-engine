@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * RPBroadcastMP4ClipHandler
+ * 
+ * Subclass this class to handle movie clips as they are recorded by ReplayKit during the broadcast flow. ReplayKit will call processMP4ClipWithURL when a movie clip is available for processing.
+ */
 @Generated
 @Library("ReplayKit")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +158,12 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
     @NInt
     public static native long version_static();
 
+    /**
+     * Method that should be called when processing is complete.
+     * 
+     * @param broadcastConfiguration Optional updated configuration that will be applied to the next MP4 clip.
+     * @param error Optional error to communicate to ReplayKit and the host application that there was an issue with the broadcast and to stop broadcasting. Note that once this is called, regardles of the existence of an error, the current MP4 clip will no longer be available.
+     */
     @Generated
     @Selector("finishedProcessingMP4ClipWithUpdatedBroadcastConfiguration:error:")
     public native void finishedProcessingMP4ClipWithUpdatedBroadcastConfigurationError(
@@ -162,6 +173,13 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
     @Selector("init")
     public native RPBroadcastMP4ClipHandler init();
 
+    /**
+     * Method which ReplayKit will call when an MP4 movie clip is ready for processing.
+     * 
+     * @param mp4ClipURL URL that points to the location of the movie clip recorded by ReplayKit. Note that the URL may be nil in certain cases such as an error.
+     * @param setupInfo Dictionary supplied by the UI extension that may contain setup information required for processing. The values in this dictionary are to be defined by the extension developer.
+     * @param finished Boolean indicating that application requested the broadcast to end.
+     */
     @Generated
     @Selector("processMP4ClipWithURL:setupInfo:finished:")
     public native void processMP4ClipWithURLSetupInfoFinished(NSURL mp4ClipURL,

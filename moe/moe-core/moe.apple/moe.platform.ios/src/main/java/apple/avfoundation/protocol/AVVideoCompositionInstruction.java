@@ -27,27 +27,50 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * [@protocol]	AVVideoCompositionInstruction
+ * 
+ * The AVVideoCompositionInstruction protocol is implemented by objects to represent operations to be performed by a compositor.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVVideoCompositionInstruction")
 public interface AVVideoCompositionInstruction {
+    /**
+     * If YES, rendering a frame from the same source buffers and the same composition instruction at 2 different
+     * compositionTime may yield different output frames. If NO, 2 such compositions would yield the
+     * same frame. The media pipeline may me able to avoid some duplicate processing when containsTweening is NO 
+     */
     @Generated
     @Selector("containsTweening")
     boolean containsTweening();
 
+    /**
+     * If NO, indicates that post-processing should be skipped for the duration of this instruction.
+     * See +[AVVideoCompositionCoreAnimationTool videoCompositionToolWithPostProcessingAsVideoLayer:inLayer:].
+     */
     @Generated
     @Selector("enablePostProcessing")
     boolean enablePostProcessing();
 
+    /**
+     * kCMPersistentTrackID_Invalid if not a passthrough instruction
+     */
     @Generated
     @Selector("passthroughTrackID")
     int passthroughTrackID();
 
+    /**
+     * List of video track IDs required to compose frames for this instruction. If the value of this property is nil, all source tracks will be considered required for composition
+     */
     @Generated
     @Selector("requiredSourceTrackIDs")
     NSArray<? extends NSValue> requiredSourceTrackIDs();
 
+    /**
+     * Indicates the timeRange during which the instruction is effective. Note requirements for the timeRanges of instructions described in connection with AVVideoComposition's instructions key above.
+     */
     @Generated
     @Selector("timeRange")
     @ByValue

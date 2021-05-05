@@ -57,16 +57,32 @@ public final class CoreTelephony {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CTCallStateDisconnected();
 
+    /**
+     * CTSubscriberTokenRefreshed
+     * 
+     * Description:
+     *     The name of the NSNotification sent when the carrier token is available.
+     *     The `object' argument is set to the CTSubscriber instance for which the token was refreshed.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CTSubscriberTokenRefreshed();
 
+    /**
+     * CTRadioAccessTechnologyDataTechnologyDidChangeNotification
+     * 
+     * Description:
+     *     A NSNotification broadcast when radio access technology changes
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CTRadioAccessTechnologyDidChangeNotification();
 
+    /**
+     * Radio Access Technology values
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -121,4 +137,28 @@ public final class CoreTelephony {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CTRadioAccessTechnologyLTE();
+
+    /**
+     * CTServiceRadioAccessTechnologyDataTechnologyDidChangeNotification
+     * 
+     * Description:
+     *     A NSNotification broadcast when radio access technology changes for one of the services.  Only an object is sent with
+     *     this notfication.  The object is an NSString that represents the service identifier of the service whose radio access
+     *     technology has changed.  This NSString should be used as the key in serviceCurrentRadioAccessTechnology to get the
+     *     value of the new radio access technology for the service.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CTServiceRadioAccessTechnologyDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CTRadioAccessTechnologyNRNSA();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CTRadioAccessTechnologyNR();
 }

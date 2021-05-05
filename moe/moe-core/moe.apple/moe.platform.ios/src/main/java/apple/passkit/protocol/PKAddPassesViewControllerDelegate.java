@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKAddPassesViewControllerDelegate")
 public interface PKAddPassesViewControllerDelegate {
+    /**
+     * delegate should dismiss presentation
+     */
     @Generated
     @IsOptional
     @Selector("addPassesViewControllerDidFinish:")

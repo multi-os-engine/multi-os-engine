@@ -52,29 +52,47 @@ public final class ip_mreq_source extends StructObject {
         setImr_interface(imr_interface);
     }
 
+    /**
+     * IP multicast address of group
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native in_addr imr_multiaddr();
 
+    /**
+     * IP multicast address of group
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setImr_multiaddr(@ByValue in_addr value);
 
+    /**
+     * IP address of source
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native in_addr imr_sourceaddr();
 
+    /**
+     * IP address of source
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setImr_sourceaddr(@ByValue in_addr value);
 
+    /**
+     * local IP address of interface
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @ByValue
     public native in_addr imr_interface();
 
+    /**
+     * local IP address of interface
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setImr_interface(@ByValue in_addr value);

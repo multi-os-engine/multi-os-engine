@@ -161,11 +161,17 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Defaults to MTLCompareFuncAlways, which effectively skips the depth test
+     */
     @Generated
     @Selector("depthCompareFunction")
     @NUInt
     public native long depthCompareFunction();
 
+    /**
+     * Separate stencil state for front and back state.  Both front and back can be made to track the same state by assigning the same MTLStencilDescriptor to both.
+     */
     @Generated
     @Selector("frontFaceStencil")
     public native MTLStencilDescriptor frontFaceStencil();
@@ -174,14 +180,25 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLDepthStencilDescriptor init();
 
+    /**
+     * Defaults to NO, so no depth writes are performed
+     */
     @Generated
     @Selector("isDepthWriteEnabled")
     public native boolean isDepthWriteEnabled();
 
+    /**
+     * Defaults to NO, so no depth writes are performed
+     */
     @Generated
     @Selector("setDepthWriteEnabled:")
     public native void setDepthWriteEnabled(boolean value);
 
+    /**
+     * [@property] label
+     * 
+     * A string to help identify the created object.
+     */
     @Generated
     @Selector("label")
     public native String label();
@@ -190,14 +207,25 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
     @Selector("setBackFaceStencil:")
     public native void setBackFaceStencil(MTLStencilDescriptor value);
 
+    /**
+     * Defaults to MTLCompareFuncAlways, which effectively skips the depth test
+     */
     @Generated
     @Selector("setDepthCompareFunction:")
     public native void setDepthCompareFunction(@NUInt long value);
 
+    /**
+     * Separate stencil state for front and back state.  Both front and back can be made to track the same state by assigning the same MTLStencilDescriptor to both.
+     */
     @Generated
     @Selector("setFrontFaceStencil:")
     public native void setFrontFaceStencil(MTLStencilDescriptor value);
 
+    /**
+     * [@property] label
+     * 
+     * A string to help identify the created object.
+     */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);

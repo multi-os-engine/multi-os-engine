@@ -19,11 +19,26 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Particle Orientation Mode
+ */
 @Generated
 public final class SCNParticleOrientationMode {
+    /**
+     * particles are aligned on screen
+     */
     @Generated @NInt public static final long BillboardScreenAligned = 0x0000000000000000L;
+    /**
+     * particles are perpendicular with the vector from the point of view to the particle.
+     */
     @Generated @NInt public static final long BillboardViewAligned = 0x0000000000000001L;
+    /**
+     * free on all axis.
+     */
     @Generated @NInt public static final long Free = 0x0000000000000002L;
+    /**
+     * fixed on Y axis.
+     */
     @Generated @NInt public static final long BillboardYAligned = 0x0000000000000003L;
 
     @Generated

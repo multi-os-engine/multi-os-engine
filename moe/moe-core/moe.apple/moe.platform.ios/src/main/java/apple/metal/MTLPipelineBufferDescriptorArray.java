@@ -117,6 +117,9 @@ public class MTLPipelineBufferDescriptorArray extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Individual buffer descriptor access
+     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MTLPipelineBufferDescriptor objectAtIndexedSubscript(@NUInt long bufferIndex);
@@ -129,6 +132,9 @@ public class MTLPipelineBufferDescriptorArray extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * This always uses 'copy' semantics. It is safe to set the buffer descriptor at any legal index to nil, which resets that buffer descriptor to default vaules.
+     */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(MTLPipelineBufferDescriptor buffer, @NUInt long bufferIndex);

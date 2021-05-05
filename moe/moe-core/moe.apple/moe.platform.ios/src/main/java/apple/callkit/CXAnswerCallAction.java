@@ -158,6 +158,9 @@ public class CXAnswerCallAction extends CXCallAction {
     @NInt
     public static native long version_static();
 
+    /**
+     * Normally, providers can just call -[CXAction fulfill] to indicate action fulfillment. Use this method to note a specific date that the call connected. A call is considered connected when both caller and callee can start communicating.
+     */
     @Generated
     @Selector("fulfillWithDateConnected:")
     public native void fulfillWithDateConnected(NSDate dateConnected);

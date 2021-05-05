@@ -26,6 +26,9 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UICollectionViewDataSource;
 import apple.uikit.protocol.UICollectionViewDelegate;
+import apple.uikit.protocol.UIContextMenuInteractionAnimating;
+import apple.uikit.protocol.UIContextMenuInteractionCommitAnimating;
+import apple.uikit.protocol.UISpringLoadedInteractionContext;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -172,6 +175,10 @@ public class UICollectionViewController extends UIViewController
     @NInt
     public static native long version_static();
 
+    /**
+     * Defaults to YES, and if YES, any selection is cleared in viewWillAppear:
+     * This property has no effect if the useLayoutToLayoutNavigationTransitions property is set to YES
+     */
     @Generated
     @Selector("clearsSelectionOnViewWillAppear")
     public native boolean clearsSelectionOnViewWillAppear();
@@ -325,6 +332,9 @@ public class UICollectionViewController extends UIViewController
     public native void collectionViewWillDisplaySupplementaryViewForElementKindAtIndexPath(
             UICollectionView collectionView, UICollectionReusableView view, String elementKind, NSIndexPath indexPath);
 
+    /**
+     * The layout object is needed when defining interactive layout to layout transitions.
+     */
     @Generated
     @Selector("collectionViewLayout")
     public native UICollectionViewLayout collectionViewLayout();
@@ -340,7 +350,7 @@ public class UICollectionViewController extends UIViewController
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionViewController initWithCoder(NSCoder aDecoder);
+    public native UICollectionViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCollectionViewLayout:")
@@ -350,6 +360,9 @@ public class UICollectionViewController extends UIViewController
     @Selector("initWithNibName:bundle:")
     public native UICollectionViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * Defaults to YES, and if YES, a system standard reordering gesture is used to drive collection view reordering
+     */
     @Generated
     @Selector("installsStandardGestureForInteractiveMovement")
     public native boolean installsStandardGestureForInteractiveMovement();
@@ -422,6 +435,10 @@ public class UICollectionViewController extends UIViewController
     public native void scrollViewWillEndDraggingWithVelocityTargetContentOffset(UIScrollView scrollView,
             @ByValue CGPoint velocity, CGPoint targetContentOffset);
 
+    /**
+     * Defaults to YES, and if YES, any selection is cleared in viewWillAppear:
+     * This property has no effect if the useLayoutToLayoutNavigationTransitions property is set to YES
+     */
     @Generated
     @Selector("setClearsSelectionOnViewWillAppear:")
     public native void setClearsSelectionOnViewWillAppear(boolean value);
@@ -430,14 +447,31 @@ public class UICollectionViewController extends UIViewController
     @Selector("setCollectionView:")
     public native void setCollectionView(UICollectionView value);
 
+    /**
+     * Defaults to YES, and if YES, a system standard reordering gesture is used to drive collection view reordering
+     */
     @Generated
     @Selector("setInstallsStandardGestureForInteractiveMovement:")
     public native void setInstallsStandardGestureForInteractiveMovement(boolean value);
 
+    /**
+     * Set to YES before pushing a a UICollectionViewController onto a
+     * UINavigationController. The top view controller of the navigation controller
+     * must be a UICollectionViewController that was pushed with this property set
+     * to NO. This property should NOT be changed on a UICollectionViewController that
+     * has already been pushed onto a UINavigationController.
+     */
     @Generated
     @Selector("setUseLayoutToLayoutNavigationTransitions:")
     public native void setUseLayoutToLayoutNavigationTransitions(boolean value);
 
+    /**
+     * Set to YES before pushing a a UICollectionViewController onto a
+     * UINavigationController. The top view controller of the navigation controller
+     * must be a UICollectionViewController that was pushed with this property set
+     * to NO. This property should NOT be changed on a UICollectionViewController that
+     * has already been pushed onto a UINavigationController.
+     */
     @Generated
     @Selector("useLayoutToLayoutNavigationTransitions")
     public native boolean useLayoutToLayoutNavigationTransitions();
@@ -457,7 +491,7 @@ public class UICollectionViewController extends UIViewController
     @IsOptional
     @Selector("collectionView:shouldSpringLoadItemAtIndexPath:withContext:")
     public native boolean collectionViewShouldSpringLoadItemAtIndexPathWithContext(UICollectionView collectionView,
-            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object context);
+            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
 
     @Generated
     @IsOptional
@@ -468,4 +502,65 @@ public class UICollectionViewController extends UIViewController
     @IsOptional
     @Selector("scrollViewDidChangeAdjustedContentInset:")
     public native void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:contextMenuConfigurationForItemAtIndexPath:point:")
+    public native UIContextMenuConfiguration collectionViewContextMenuConfigurationForItemAtIndexPathPoint(
+            UICollectionView collectionView, NSIndexPath indexPath, @ByValue CGPoint point);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:didBeginMultipleSelectionInteractionAtIndexPath:")
+    public native void collectionViewDidBeginMultipleSelectionInteractionAtIndexPath(UICollectionView collectionView,
+            NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:previewForDismissingContextMenuWithConfiguration:")
+    public native UITargetedPreview collectionViewPreviewForDismissingContextMenuWithConfiguration(
+            UICollectionView collectionView, UIContextMenuConfiguration configuration);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:previewForHighlightingContextMenuWithConfiguration:")
+    public native UITargetedPreview collectionViewPreviewForHighlightingContextMenuWithConfiguration(
+            UICollectionView collectionView, UIContextMenuConfiguration configuration);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:shouldBeginMultipleSelectionInteractionAtIndexPath:")
+    public native boolean collectionViewShouldBeginMultipleSelectionInteractionAtIndexPath(
+            UICollectionView collectionView, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:willPerformPreviewActionForMenuWithConfiguration:animator:")
+    public native void collectionViewWillPerformPreviewActionForMenuWithConfigurationAnimator(
+            UICollectionView collectionView, UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionViewDidEndMultipleSelectionInteraction:")
+    public native void collectionViewDidEndMultipleSelectionInteraction(UICollectionView collectionView);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:canEditItemAtIndexPath:")
+    public native boolean collectionViewCanEditItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:willDisplayContextMenuWithConfiguration:animator:")
+    public native void collectionViewWillDisplayContextMenuWithConfigurationAnimator(UICollectionView collectionView,
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:willEndContextMenuInteractionWithConfiguration:animator:")
+    public native void collectionViewWillEndContextMenuInteractionWithConfigurationAnimator(
+            UICollectionView collectionView, UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
 }

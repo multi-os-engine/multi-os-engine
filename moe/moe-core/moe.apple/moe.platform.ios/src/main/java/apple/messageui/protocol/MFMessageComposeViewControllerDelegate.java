@@ -25,11 +25,33 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * [@protocol]    MFMessageComposeViewControllerDelegate
+ * 
+ * Protocol for delegate callbacks to MFMessageComposeViewControllerDelegate instances.
+ * 
+ * This protocol will be implemented by delegates of MFMessageComposeViewController instances.
+ * 		  It will be called at various times while the user is composing, sending, or canceling
+ * 		  message composition.
+ */
 @Generated
 @Library("MessageUI")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MFMessageComposeViewControllerDelegate")
 public interface MFMessageComposeViewControllerDelegate {
+    /**
+     * messageComposeViewController:didFinishWithResult:
+     * 
+     * Delegate callback which is called upon user's completion of message composition.
+     * 
+     * This delegate callback will be called when the user completes the message composition.
+     * 		 How the user chose to complete this task will be given as one of the parameters to the
+     * 		 callback.  Upon this call, the client should remove the view associated with the controller,
+     * 		 typically by dismissing modally.
+     * 
+     * @param      controller   The MFMessageComposeViewController instance which is returning the result.
+     * @param      result       MessageComposeResult indicating how the user chose to complete the composition process.
+     */
     @Generated
     @Selector("messageComposeViewController:didFinishWithResult:")
     void messageComposeViewControllerDidFinishWithResult(MFMessageComposeViewController controller, @NInt long result);

@@ -49,18 +49,30 @@ public final class AnchorPoint extends StructObject {
         setY(y);
     }
 
+    /**
+     * x coordinate of anchor point
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native short x();
 
+    /**
+     * x coordinate of anchor point
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setX(short value);
 
+    /**
+     * y coordinate of anchor point
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native short y();
 
+    /**
+     * y coordinate of anchor point
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setY(short value);

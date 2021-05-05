@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNPhysicsBehavior
+ * 
+ * SCNPhysicsBehavior is an abstract class that represents a behavior in the physics world.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -159,7 +164,7 @@ public class SCNPhysicsBehavior extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -167,7 +172,7 @@ public class SCNPhysicsBehavior extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsBehavior initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsBehavior initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

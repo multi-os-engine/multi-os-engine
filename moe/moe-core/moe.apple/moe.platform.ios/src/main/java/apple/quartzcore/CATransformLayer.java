@@ -29,6 +29,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -42,6 +43,29 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * "Transform" layers are used to create true 3D layer hierarchies.
+ * 
+ * Unlike normal layers, transform layers do not project (i.e. flatten)
+ * their sublayers into the plane at Z=0. However due to this neither
+ * do they support many features of the 2D compositing model:
+ * 
+ * - only their sublayers are rendered (i.e. no background, contents,
+ *   border)
+ * 
+ * - filters, backgroundFilters, compositingFilter, mask, masksToBounds
+ *   and shadow related properties are ignored (they all assume 2D
+ *   image processing of the projected layer)
+ * 
+ * - opacity is applied to each sublayer individually, i.e. the transform
+ *   layer does not form a compositing group.
+ * 
+ * Also, the -hitTest: method should never be called on transform
+ * layers (they do not have a 2D coordinate space into which to map the
+ * supplied point.) CALayer will pass over transform layers directly to
+ * their sublayers, applying the effects of the transform layer's
+ * geometry when hit-testing each sublayer.
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -177,7 +201,7 @@ public class CATransformLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CATransformLayer initWithCoder(NSCoder aDecoder);
+    public native CATransformLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -192,4 +216,9 @@ public class CATransformLayer extends CALayer {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
 }

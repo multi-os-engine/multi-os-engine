@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Fetched properties allow to specify related objects through a "weakly" resolved property, so there is no actual join necessary.
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +154,9 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
     @NInt
     public static native long version_static();
 
+    /**
+     * As part of the predicate for a fetched property, you can use the two variables $FETCH_SOURCE (which is the managed object fetching the property) and $FETCHED_PROPERTY (which is the NSFetchedPropertyDescription instance).
+     */
     @Generated
     @Selector("fetchRequest")
     public native NSFetchRequest<?> fetchRequest();
@@ -161,8 +167,11 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFetchedPropertyDescription initWithCoder(NSCoder aDecoder);
+    public native NSFetchedPropertyDescription initWithCoder(NSCoder coder);
 
+    /**
+     * As part of the predicate for a fetched property, you can use the two variables $FETCH_SOURCE (which is the managed object fetching the property) and $FETCHED_PROPERTY (which is the NSFetchedPropertyDescription instance).
+     */
     @Generated
     @Selector("setFetchRequest:")
     public native void setFetchRequest(NSFetchRequest<?> value);

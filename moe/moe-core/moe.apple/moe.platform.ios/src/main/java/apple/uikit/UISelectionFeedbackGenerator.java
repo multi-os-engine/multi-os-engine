@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UISelectionFeedbackGenerator is used to give user feedback when a selection changes
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +157,9 @@ public class UISelectionFeedbackGenerator extends UIFeedbackGenerator {
     @Selector("init")
     public native UISelectionFeedbackGenerator init();
 
+    /**
+     * call when the selection changes (not on initial selection)
+     */
     @Generated
     @Selector("selectionChanged")
     public native void selectionChanged();

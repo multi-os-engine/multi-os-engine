@@ -37,38 +37,75 @@ public final class VideoSubscriberAccount {
     private VideoSubscriberAccount() {
     }
 
+    /**
+     * The domain of all errors returned by VideoSubscriberAccount framework.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VSErrorDomain();
 
+    /**
+     * A key that can be used to obtain the subscription provider's SAML response string from an error user info dictionary.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VSErrorInfoKeySAMLResponse();
 
+    /**
+     * A key that can be used to obtain the subscription provider's SAML status code string from an error user info dictionary.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VSErrorInfoKeySAMLResponseStatus();
 
+    /**
+     * A key that can be used to obtain the account provider's response object from an error user info dictionary.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VSErrorInfoKeyAccountProviderResponse();
 
+    /**
+     * A key that can be used to obtain the identifier string of the user's unsupported subscription provider from an error user info dictionary.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VSErrorInfoKeyUnsupportedProviderIdentifier();
 
+    /**
+     * A boolean indicating whether the user may be prompted to grant access.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VSCheckAccessOptionPrompt();
 
+    /**
+     * The authentication scheme for responses that use the SAML protocol.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VSAccountProviderAuthenticationSchemeSAML();
+
+    /**
+     * The URL string used to deep link to the system TV Provider settings.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VSOpenTVProviderSettingsURLString();
+
+    /**
+     * The identifier for responses that use any authentication protocol.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VSAccountProviderAuthenticationSchemeAPI();
 }

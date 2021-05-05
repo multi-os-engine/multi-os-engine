@@ -18,6 +18,12 @@ package apple.audiotoolbox.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * [@enum]	Reverb Room Types
+ * 
+ * Used to specify room type (as identified by a factory preset number) on Apple audio
+ * 			units that use internal reverb.
+ */
 @Generated
 public final class AUReverbRoomType {
     @Generated public static final int SmallRoom = 0x00000000;

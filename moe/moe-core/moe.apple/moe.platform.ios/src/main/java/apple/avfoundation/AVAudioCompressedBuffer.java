@@ -17,7 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coreaudio.struct.AudioStreamPacketDescription;
+import apple.coreaudiotypes.struct.AudioStreamPacketDescription;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -40,6 +40,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioCompressedBuffer
+ * 
+ * A subclass of AVAudioBuffer for use with compressed audio formats.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +156,11 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] data
+     * 
+     * Access the buffer's data bytes.
+     */
     @Generated
     @Selector("data")
     public native VoidPtr data();
@@ -159,44 +169,123 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
     @Selector("init")
     public native AVAudioCompressedBuffer init();
 
+    /**
+     * initWithFormat:packetCapacity:
+     * 
+     * Initialize a buffer that is to contain constant bytes per packet compressed audio data.
+     * 
+     * 	This fails if the format is PCM or if the format has variable bytes per packet (format.streamDescription->mBytesPerPacket == 0).
+     * 
+     * @param format
+     * 	The format of the audio to be contained in the buffer.
+     * @param packetCapacity
+     * 	The capacity of the buffer in packets.
+     */
     @Generated
     @Selector("initWithFormat:packetCapacity:")
     public native AVAudioCompressedBuffer initWithFormatPacketCapacity(AVAudioFormat format, int packetCapacity);
 
+    /**
+     * initWithFormat:packetCapacity:maximumPacketSize:
+     * 
+     * Initialize a buffer that is to contain compressed audio data.
+     * 
+     * 	An exception is raised if the format is PCM.
+     * 
+     * @param format
+     * 	The format of the audio to be contained in the buffer.
+     * @param packetCapacity
+     * 	The capacity of the buffer in packets.
+     * @param maximumPacketSize
+     * 	The maximum size in bytes of a compressed packet. 
+     * 	The maximum packet size can be obtained from the maximumOutputPacketSize property of an AVAudioConverter configured for encoding this format.
+     */
     @Generated
     @Selector("initWithFormat:packetCapacity:maximumPacketSize:")
     public native AVAudioCompressedBuffer initWithFormatPacketCapacityMaximumPacketSize(AVAudioFormat format,
             int packetCapacity, @NInt long maximumPacketSize);
 
+    /**
+     * [@property] maximumPacketSize
+     * 
+     * The maximum size of a compressed packet in bytes.
+     */
     @Generated
     @Selector("maximumPacketSize")
     @NInt
     public native long maximumPacketSize();
 
+    /**
+     * [@property] packetCapacity
+     * 
+     * 	The number of compressed packets the buffer can contain.
+     */
     @Generated
     @Selector("packetCapacity")
     public native int packetCapacity();
 
+    /**
+     * [@property] packetCount
+     * 
+     * The current number of compressed packets in the buffer.
+     * 
+     * 	You may modify the packetCount as part of an operation that modifies its contents.
+     * 	The packetCount must be less than or equal to the packetCapacity.
+     */
     @Generated
     @Selector("packetCount")
     public native int packetCount();
 
+    /**
+     * [@property] packetDescriptions
+     * 
+     * Access the buffer's array of packet descriptions, if any.
+     * 
+     * 	If the format has constant bytes per packet (format.streamDescription->mBytesPerPacket != 0), then this will return nil.
+     */
     @Generated
     @Selector("packetDescriptions")
     public native AudioStreamPacketDescription packetDescriptions();
 
+    /**
+     * [@property] packetCount
+     * 
+     * The current number of compressed packets in the buffer.
+     * 
+     * 	You may modify the packetCount as part of an operation that modifies its contents.
+     * 	The packetCount must be less than or equal to the packetCapacity.
+     */
     @Generated
     @Selector("setPacketCount:")
     public native void setPacketCount(int value);
 
+    /**
+     * [@property] byteCapacity
+     * 
+     * The buffer's capacity in bytes
+     */
     @Generated
     @Selector("byteCapacity")
     public native int byteCapacity();
 
+    /**
+     * [@property] byteLength
+     * 
+     * The current number of valid bytes in the buffer.
+     * 
+     * 	Can be changed as part of an operation that modifies the contents.
+     */
     @Generated
     @Selector("byteLength")
     public native int byteLength();
 
+    /**
+     * [@property] byteLength
+     * 
+     * The current number of valid bytes in the buffer.
+     * 
+     * 	Can be changed as part of an operation that modifies the contents.
+     */
     @Generated
     @Selector("setByteLength:")
     public native void setByteLength(int value);

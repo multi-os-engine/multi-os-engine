@@ -21,11 +21,29 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UNAuthorizationStatus {
+    /**
+     * The user has not yet made a choice regarding whether the application may post user notifications.
+     */
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
+    /**
+     * The application is not authorized to post user notifications.
+     */
     @Generated @NInt public static final long Denied = 0x0000000000000001L;
+    /**
+     * The application is authorized to post user notifications.
+     */
     @Generated @NInt public static final long Authorized = 0x0000000000000002L;
 
     @Generated
     private UNAuthorizationStatus() {
     }
+
+    /**
+     * The application is authorized to post non-interruptive user notifications.
+     */
+    @Generated @NInt public static final long Provisional = 0x0000000000000003L;
+    /**
+     * The application is temporarily authorized to post notifications. Only available to app clips.
+     */
+    @Generated @NInt public static final long Ephemeral = 0x0000000000000004L;
 }

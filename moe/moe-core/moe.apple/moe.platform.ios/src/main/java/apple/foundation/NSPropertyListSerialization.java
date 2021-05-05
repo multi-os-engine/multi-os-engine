@@ -89,12 +89,18 @@ public class NSPropertyListSerialization extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * This method is deprecated. Use dataWithPropertyList:format:options:error: instead.
+     */
     @Generated
     @Deprecated
     @Selector("dataFromPropertyList:format:errorDescription:")
     public static native NSData dataFromPropertyListFormatErrorDescription(@Mapped(ObjCObjectMapper.class) Object plist,
             @NUInt long format, @ReferenceInfo(type = NSString.class) Ptr<NSString> errorString);
 
+    /**
+     * Create an NSData from a property list. The format can be either NSPropertyListXMLFormat_v1_0 or NSPropertyListBinaryFormat_v1_0. The options parameter is currently unused and should be set to 0. If an error occurs the return value will be nil and the error parameter (if non-NULL) set to an autoreleased NSError describing the problem.
+     */
     @Generated
     @Selector("dataWithPropertyList:format:options:error:")
     public static native NSData dataWithPropertyListFormatOptionsError(@Mapped(ObjCObjectMapper.class) Object plist,
@@ -140,11 +146,17 @@ public class NSPropertyListSerialization extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Verify that a specified property list is valid for a given format. Returns YES if the property list is valid.
+     */
     @Generated
     @Selector("propertyList:isValidForFormat:")
     public static native boolean propertyListIsValidForFormat(@Mapped(ObjCObjectMapper.class) Object plist,
             @NUInt long format);
 
+    /**
+     * This method is deprecated. Use propertyListWithData:options:format:error: instead.
+     */
     @Generated
     @Deprecated
     @Selector("propertyListFromData:mutabilityOption:format:errorDescription:")
@@ -152,12 +164,18 @@ public class NSPropertyListSerialization extends NSObject {
     public static native Object propertyListFromDataMutabilityOptionFormatErrorDescription(NSData data, @NUInt long opt,
             NUIntPtr format, @ReferenceInfo(type = NSString.class) Ptr<NSString> errorString);
 
+    /**
+     * Create a property list from an NSData. The options can be any of NSPropertyListMutabilityOptions. If the format parameter is non-NULL, it will be filled out with the format that the property list was stored in. If an error occurs the return value will be nil and the error parameter (if non-NULL) set to an autoreleased NSError describing the problem.
+     */
     @Generated
     @Selector("propertyListWithData:options:format:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object propertyListWithDataOptionsFormatError(NSData data, @NUInt long opt, NUIntPtr format,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Create a property list by reading from an NSInputStream. The options can be any of NSPropertyListMutabilityOptions. If the format parameter is non-NULL, it will be filled out with the format that the property list was stored in. If an error occurs the return value will be nil and the error parameter (if non-NULL) set to an autoreleased NSError describing the problem.
+     */
     @Generated
     @Selector("propertyListWithStream:options:format:error:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -185,6 +203,9 @@ public class NSPropertyListSerialization extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Write a property list to an output stream. The stream should be opened and configured. The format can be either NSPropertyListXMLFormat_v1_0 or NSPropertyListBinaryFormat_v1_0. The options parameter is currently unused and should be set to 0. If an error occurs the return value will be 0 and the error parameter (if non-NULL) set to an autoreleased NSError describing the problem. In a successful case, the return value is the number of bytes written to the stream.
+     */
     @Generated
     @Selector("writePropertyList:toStream:format:options:error:")
     @NInt

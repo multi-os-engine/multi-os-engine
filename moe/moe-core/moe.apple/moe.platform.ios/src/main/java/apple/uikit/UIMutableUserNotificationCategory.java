@@ -156,6 +156,9 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
     @NInt
     public static native long version_static();
 
+    /**
+     * The category identifier passed in a UILocalNotification or a remote notification payload
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -166,12 +169,18 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIMutableUserNotificationCategory initWithCoder(NSCoder aDecoder);
+    public native UIMutableUserNotificationCategory initWithCoder(NSCoder coder);
 
+    /**
+     * Sets the UIUserNotificationActions in the order to be displayed for the specified context
+     */
     @Generated
     @Selector("setActions:forContext:")
     public native void setActionsForContext(NSArray<? extends UIUserNotificationAction> actions, @NUInt long context);
 
+    /**
+     * The category identifier passed in a UILocalNotification or a remote notification payload
+     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);

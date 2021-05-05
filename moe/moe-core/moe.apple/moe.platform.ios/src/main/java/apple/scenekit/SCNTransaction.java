@@ -41,6 +41,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Transactions are SceneKit's mechanism for batching multiple scene graph
+ * operations into atomic updates. Every
+ * modification to the scene graph requires a transaction to be part of.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -69,10 +74,20 @@ public class SCNTransaction extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Accessors for the "animationDuration" per-thread transaction
+     * property. Defines the default duration of animations. Defaults to 1/4s for explicit transactions, 0s for implicit transactions.
+     */
     @Generated
     @Selector("animationDuration")
     public static native double animationDuration();
 
+    /**
+     * Accessors for the "animationTimingFunction" per-thread transaction
+     * property. The default value is nil, when set to a non-nil value any
+     * animations added to scene graph will have this value set as their
+     * "timingFunction" property.
+     */
     @Generated
     @Selector("animationTimingFunction")
     public static native CAMediaTimingFunction animationTimingFunction();
@@ -81,6 +96,9 @@ public class SCNTransaction extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Begin a new transaction for the current thread; nests.
+     */
     @Generated
     @Selector("begin")
     public static native void begin();
@@ -103,10 +121,19 @@ public class SCNTransaction extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Commit all changes made during the current transaction.
+     */
     @Generated
     @Selector("commit")
     public static native void commit();
 
+    /**
+     * Accessors for the "completionBlock" per-thread transaction property.
+     * Once set to a non-nil value the block is guaranteed to be called (on
+     * the main thread) as soon as all animations subsequently added by
+     * this transaction group have completed (or been removed).
+     */
     @Generated
     @Selector("completionBlock")
     @ObjCBlock(name = "call_completionBlock_ret")
@@ -120,10 +147,19 @@ public class SCNTransaction extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Accessors for the "disableActions" per-thread transaction property.
+     * Defines whether or not the implicit animations are performed.
+     * Defaults to NO, i.e. implicit animations enabled.
+     */
     @Generated
     @Selector("disableActions")
     public static native boolean disableActions();
 
+    /**
+     * Commits any extant implicit transaction. Will delay the actual commit
+     * until any nested explicit transactions have completed.
+     */
     @Generated
     @Selector("flush")
     public static native void flush();
@@ -154,6 +190,9 @@ public class SCNTransaction extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Methods to lock and unlock the global lock.
+     */
     @Generated
     @Selector("lock")
     public static native void lock();
@@ -172,19 +211,40 @@ public class SCNTransaction extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Accessors for the "animationDuration" per-thread transaction
+     * property. Defines the default duration of animations. Defaults to 1/4s for explicit transactions, 0s for implicit transactions.
+     */
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration(double value);
 
+    /**
+     * Accessors for the "animationTimingFunction" per-thread transaction
+     * property. The default value is nil, when set to a non-nil value any
+     * animations added to scene graph will have this value set as their
+     * "timingFunction" property.
+     */
     @Generated
     @Selector("setAnimationTimingFunction:")
     public static native void setAnimationTimingFunction(CAMediaTimingFunction value);
 
+    /**
+     * Accessors for the "completionBlock" per-thread transaction property.
+     * Once set to a non-nil value the block is guaranteed to be called (on
+     * the main thread) as soon as all animations subsequently added by
+     * this transaction group have completed (or been removed).
+     */
     @Generated
     @Selector("setCompletionBlock:")
     public static native void setCompletionBlock(
             @ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock value);
 
+    /**
+     * Accessors for the "disableActions" per-thread transaction property.
+     * Defines whether or not the implicit animations are performed.
+     * Defaults to NO, i.e. implicit animations enabled.
+     */
     @Generated
     @Selector("setDisableActions:")
     public static native void setDisableActions(boolean value);
@@ -205,6 +265,10 @@ public class SCNTransaction extends NSObject {
     @Selector("unlock")
     public static native void unlock();
 
+    /**
+     * Associate arbitrary keyed-data with the current transaction (i.e.
+     * with the current thread).
+     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)

@@ -19,11 +19,28 @@ package apple.networkextension.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@typedef] NEOnDemandRuleAction
+ * 
+ * On Demand rule actions
+ */
 @Generated
 public final class NEOnDemandRuleAction {
+    /**
+     * [@const] NEOnDemandRuleActionConnect Start the VPN connection
+     */
     @Generated @NInt public static final long Connect = 0x0000000000000001L;
+    /**
+     * [@const] NEOnDemandRuleActionDisconnect Do not start the VPN connection, and disconnect the VPN connection if it is not currently disconnected
+     */
     @Generated @NInt public static final long Disconnect = 0x0000000000000002L;
+    /**
+     * [@const] NEOnDemandRuleActionEvaluateConnection Start the VPN after evaluating the destination host being accessed against the rule's connection rules
+     */
     @Generated @NInt public static final long EvaluateConnection = 0x0000000000000003L;
+    /**
+     * [@const] NEOnDemandRuleActionIgnore Do not start the VPN connection, and leave the VPN connection in its current state
+     */
     @Generated @NInt public static final long Ignore = 0x0000000000000004L;
 
     @Generated

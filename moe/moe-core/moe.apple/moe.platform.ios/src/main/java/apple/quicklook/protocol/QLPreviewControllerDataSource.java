@@ -27,18 +27,34 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The QLPreviewControllerDataSource protocol declares the methods that the Preview Controller uses to access the contents of its data source object.
+ */
 @Generated
 @Library("QuickLook")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("QLPreviewControllerDataSource")
 public interface QLPreviewControllerDataSource {
+    /**
+     * Returns the number of items that the preview controller should preview.
+     * 
+     * @param controller The Preview Controller.
+     * @return The number of items.
+     */
     @Generated
     @Selector("numberOfPreviewItemsInPreviewController:")
     @NInt
     long numberOfPreviewItemsInPreviewController(QLPreviewController controller);
 
+    /**
+     * Returns the item that the preview controller should preview.
+     * 
+     * @param controller The Preview Controller.
+     * @param index The index of the item to preview.
+     * @return An item conforming to the QLPreviewItem protocol.
+     */
     @Generated
     @Selector("previewController:previewItemAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object previewControllerPreviewItemAtIndex(QLPreviewController controller, @NInt long index);
+    QLPreviewItem previewControllerPreviewItemAtIndex(QLPreviewController controller, @NInt long index);
 }

@@ -111,7 +111,7 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -131,7 +131,7 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native INBillDetails initWithCoder(NSCoder aDecoder);
+    public native INBillDetails initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

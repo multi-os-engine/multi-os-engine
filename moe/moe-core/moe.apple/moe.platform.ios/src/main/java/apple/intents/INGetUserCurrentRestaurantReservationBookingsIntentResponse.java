@@ -168,7 +168,7 @@ public class INGetUserCurrentRestaurantReservationBookingsIntentResponse extends
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetUserCurrentRestaurantReservationBookingsIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INGetUserCurrentRestaurantReservationBookingsIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithUserCurrentBookings:code:userActivity:")

@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UNNotificationRequests can be scheduled using UNUserNotificationCenter. They can also be sent to the device from a server using Apple Push Notification Service. If the application is authorized then the UNNotificationRequest will be used to create a UNNotification and it will be used to notify the user. If the user acts on the UNNotification then a UNNotificationResponse will be sent to the application.
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -92,6 +95,9 @@ public class UNUserNotificationCenter extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The UNUserNotificationCenter for the current application
+     */
     @Generated
     @Selector("currentNotificationCenter")
     public static native UNUserNotificationCenter currentNotificationCenter();
@@ -157,16 +163,25 @@ public class UNUserNotificationCenter extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Notification requests can be scheduled to notify the user via time and location. See UNNotificationTrigger for more information. Calling -addNotificationRequest: will replace an existing notification request with the same identifier. A notification request with the identifier as an existing delivered notifications will alert for the new notification request and replace the existing delivered notification when it is triggered. The number of pending notification requests that may be scheduled by an application at any one time is limited by the system.
+     */
     @Generated
     @Selector("addNotificationRequest:withCompletionHandler:")
     public native void addNotificationRequestWithCompletionHandler(UNNotificationRequest request,
             @ObjCBlock(name = "call_addNotificationRequestWithCompletionHandler") Block_addNotificationRequestWithCompletionHandler completionHandler);
 
+    /**
+     * The delegate can only be set from an application
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UNUserNotificationCenterDelegate delegate();
 
+    /**
+     * Notifications that have been delivered and remain in Notification Center. Notifications triggered by location cannot be retrieved, but can be removed.
+     */
     @Generated
     @Selector("getDeliveredNotificationsWithCompletionHandler:")
     public native void getDeliveredNotificationsWithCompletionHandler(
@@ -177,11 +192,17 @@ public class UNUserNotificationCenter extends NSObject {
     public native void getNotificationCategoriesWithCompletionHandler(
             @ObjCBlock(name = "call_getNotificationCategoriesWithCompletionHandler") Block_getNotificationCategoriesWithCompletionHandler completionHandler);
 
+    /**
+     * The application's user notification settings
+     */
     @Generated
     @Selector("getNotificationSettingsWithCompletionHandler:")
     public native void getNotificationSettingsWithCompletionHandler(
             @ObjCBlock(name = "call_getNotificationSettingsWithCompletionHandler") Block_getNotificationSettingsWithCompletionHandler completionHandler);
 
+    /**
+     * Notification requests that have been scheduled for a future time or location and are waiting for their trigger to fire
+     */
     @Generated
     @Selector("getPendingNotificationRequestsWithCompletionHandler:")
     public native void getPendingNotificationRequestsWithCompletionHandler(
@@ -203,19 +224,31 @@ public class UNUserNotificationCenter extends NSObject {
     @Selector("removeDeliveredNotificationsWithIdentifiers:")
     public native void removeDeliveredNotificationsWithIdentifiers(NSArray<String> identifiers);
 
+    /**
+     * Removes notifications that have been scheduled for a future time or location and are waiting for their trigger to fire. There is no reason to call these methods to remove push notifications or notification requests with no trigger.
+     */
     @Generated
     @Selector("removePendingNotificationRequestsWithIdentifiers:")
     public native void removePendingNotificationRequestsWithIdentifiers(NSArray<String> identifiers);
 
+    /**
+     * User authorization is required for applications to notify the user using UNUserNotificationCenter via both local and remote notifications.
+     */
     @Generated
     @Selector("requestAuthorizationWithOptions:completionHandler:")
     public native void requestAuthorizationWithOptionsCompletionHandler(@NUInt long options,
             @ObjCBlock(name = "call_requestAuthorizationWithOptionsCompletionHandler") Block_requestAuthorizationWithOptionsCompletionHandler completionHandler);
 
+    /**
+     * The delegate can only be set from an application
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UNUserNotificationCenterDelegate value);
 
+    /**
+     * The delegate can only be set from an application
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UNUserNotificationCenterDelegate value) {
         Object __old = delegate();
@@ -228,10 +261,16 @@ public class UNUserNotificationCenter extends NSObject {
         }
     }
 
+    /**
+     * Notification categories can be used to choose which actions will be displayed on which notifications.
+     */
     @Generated
     @Selector("setNotificationCategories:")
     public native void setNotificationCategories(NSSet<? extends UNNotificationCategory> categories);
 
+    /**
+     * Returns YES if the current device supports content extensions
+     */
     @Generated
     @Selector("supportsContentExtensions")
     public native boolean supportsContentExtensions();
@@ -240,41 +279,42 @@ public class UNUserNotificationCenter extends NSObject {
     @Generated
     public interface Block_addNotificationRequestWithCompletionHandler {
         @Generated
-        void call_addNotificationRequestWithCompletionHandler(NSError arg0);
+        void call_addNotificationRequestWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getDeliveredNotificationsWithCompletionHandler {
         @Generated
-        void call_getDeliveredNotificationsWithCompletionHandler(NSArray<? extends UNNotification> arg0);
+        void call_getDeliveredNotificationsWithCompletionHandler(NSArray<? extends UNNotification> notifications);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getNotificationCategoriesWithCompletionHandler {
         @Generated
-        void call_getNotificationCategoriesWithCompletionHandler(NSSet<? extends UNNotificationCategory> arg0);
+        void call_getNotificationCategoriesWithCompletionHandler(NSSet<? extends UNNotificationCategory> categories);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getNotificationSettingsWithCompletionHandler {
         @Generated
-        void call_getNotificationSettingsWithCompletionHandler(UNNotificationSettings arg0);
+        void call_getNotificationSettingsWithCompletionHandler(UNNotificationSettings settings);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getPendingNotificationRequestsWithCompletionHandler {
         @Generated
-        void call_getPendingNotificationRequestsWithCompletionHandler(NSArray<? extends UNNotificationRequest> arg0);
+        void call_getPendingNotificationRequestsWithCompletionHandler(
+                NSArray<? extends UNNotificationRequest> requests);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAuthorizationWithOptionsCompletionHandler {
         @Generated
-        void call_requestAuthorizationWithOptionsCompletionHandler(boolean arg0, NSError arg1);
+        void call_requestAuthorizationWithOptionsCompletionHandler(boolean granted, NSError error);
     }
 }

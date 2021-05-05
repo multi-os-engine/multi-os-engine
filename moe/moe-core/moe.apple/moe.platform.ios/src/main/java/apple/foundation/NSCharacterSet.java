@@ -56,26 +56,44 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
         super(peer);
     }
 
+    /**
+     * Returns a character set containing the characters allowed in an URL's fragment component.
+     */
     @Generated
     @Selector("URLFragmentAllowedCharacterSet")
     public static native NSCharacterSet URLFragmentAllowedCharacterSet();
 
+    /**
+     * Returns a character set containing the characters allowed in an URL's host subcomponent.
+     */
     @Generated
     @Selector("URLHostAllowedCharacterSet")
     public static native NSCharacterSet URLHostAllowedCharacterSet();
 
+    /**
+     * Returns a character set containing the characters allowed in an URL's password subcomponent.
+     */
     @Generated
     @Selector("URLPasswordAllowedCharacterSet")
     public static native NSCharacterSet URLPasswordAllowedCharacterSet();
 
+    /**
+     * Returns a character set containing the characters allowed in an URL's path component. ';' is a legal path character, but it is recommended that it be percent-encoded for best compatibility with NSURL (-stringByAddingPercentEncodingWithAllowedCharacters: will percent-encode any ';' characters if you pass the URLPathAllowedCharacterSet).
+     */
     @Generated
     @Selector("URLPathAllowedCharacterSet")
     public static native NSCharacterSet URLPathAllowedCharacterSet();
 
+    /**
+     * Returns a character set containing the characters allowed in an URL's query component.
+     */
     @Generated
     @Selector("URLQueryAllowedCharacterSet")
     public static native NSCharacterSet URLQueryAllowedCharacterSet();
 
+    /**
+     * Returns a character set containing the characters allowed in an URL's user subcomponent.
+     */
     @Generated
     @Selector("URLUserAllowedCharacterSet")
     public static native NSCharacterSet URLUserAllowedCharacterSet();
@@ -273,7 +291,7 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hasMemberInPlane:")
@@ -285,7 +303,7 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSCharacterSet initWithCoder(NSCoder aDecoder);
+    public native NSCharacterSet initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("invertedSet")
@@ -299,6 +317,7 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @Selector("longCharacterIsMember:")
     public native boolean longCharacterIsMember(int theLongChar);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

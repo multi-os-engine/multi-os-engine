@@ -18,6 +18,13 @@ package apple.audiotoolbox.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * [@enum]	AudioFileStreamParseFlags
+ *   [@constant]   kAudioFileStreamParseFlag_Discontinuity 
+ * This flag is passed in to AudioFileStreamParseBytes to signal a discontinuity. Any partial packet straddling a buffer
+ * boundary will be discarded. This is necessary to avoid being called with a corrupt packet. After a discontinuity occurs
+ * seeking may be approximate in some data formats.
+ */
 @Generated
 public final class AudioFileStreamParseFlags {
     @Generated public static final int kAudioFileStreamParseFlag_Discontinuity = 0x00000001;

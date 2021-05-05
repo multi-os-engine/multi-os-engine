@@ -161,6 +161,12 @@ public class CKMarkNotificationsReadOperation extends CKOperation {
     public native CKMarkNotificationsReadOperation initWithNotificationIDsToMarkRead(
             NSArray<? extends CKNotificationID> notificationIDs);
 
+    /**
+     * This block is called when the operation completes.
+     * 
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("markNotificationsReadCompletionBlock")
     @ObjCBlock(name = "call_markNotificationsReadCompletionBlock_ret")
@@ -170,6 +176,12 @@ public class CKMarkNotificationsReadOperation extends CKOperation {
     @Selector("notificationIDs")
     public native NSArray<? extends CKNotificationID> notificationIDs();
 
+    /**
+     * This block is called when the operation completes.
+     * 
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("setMarkNotificationsReadCompletionBlock:")
     public native void setMarkNotificationsReadCompletionBlock(

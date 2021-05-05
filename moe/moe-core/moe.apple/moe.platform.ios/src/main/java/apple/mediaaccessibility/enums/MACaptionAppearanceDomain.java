@@ -19,6 +19,16 @@ package apple.mediaaccessibility.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] MACaptionAppearanceDomain
+ * 
+ * MACaptionAppearanceDomain is used to specify which domain of preferences to access.
+ * 
+ * [@constant] kMACaptionAppearanceDomainUser
+ *    The user-defined preferences. This domain should be passed to retrieve settings that should be used to render captions.
+ * [@constant] kMACaptionAppearanceDomainDefault
+ *    The system defaults which will not change during a user session. These settings should be used for comparison, not to render captions. For example, when rendering a glyph some caption render engines need to get the user-defined font and the system-defined font to determeine the final pixel size to render a glyph. Most render engines will never need to use this domain.
+ */
 @Generated
 public final class MACaptionAppearanceDomain {
     @Generated @NInt public static final long Default = 0x0000000000000000L;

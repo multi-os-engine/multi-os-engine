@@ -127,6 +127,9 @@ public class NSUnitFuelEfficiency extends NSDimension implements NSSecureCoding 
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Base unit - litersPer100Kilometers
+     */
     @Generated
     @Selector("litersPer100Kilometers")
     public static native NSUnitFuelEfficiency litersPer100Kilometers();
@@ -172,7 +175,7 @@ public class NSUnitFuelEfficiency extends NSDimension implements NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -180,7 +183,7 @@ public class NSUnitFuelEfficiency extends NSDimension implements NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitFuelEfficiency initWithCoder(NSCoder aDecoder);
+    public native NSUnitFuelEfficiency initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

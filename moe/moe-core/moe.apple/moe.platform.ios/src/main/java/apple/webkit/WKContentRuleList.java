@@ -86,6 +86,9 @@ public class WKContentRuleList extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * A copy of the identifier of the content extension.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();

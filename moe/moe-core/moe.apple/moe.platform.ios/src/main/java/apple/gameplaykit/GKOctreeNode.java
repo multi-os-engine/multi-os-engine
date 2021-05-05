@@ -39,6 +39,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The individual node(s) that make up a GKOctree.
+ * Used as a hint for faster removal via [GKOctree removeData:WithNode:]
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)

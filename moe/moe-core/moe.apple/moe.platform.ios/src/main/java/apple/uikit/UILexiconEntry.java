@@ -157,6 +157,12 @@ public class UILexiconEntry extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * -documentText returns the intended text to be inserted into the document for a given -userInput.
+     * -userInput represents the expected typed string, which need not match the actual typed string.
+     * for example, if the -documentText were "iPhone", the corresponsing -userInput could be "iphone"
+     * -the documentText may also be in a different text script from the -userInput
+     */
     @Generated
     @Selector("documentText")
     public native String documentText();

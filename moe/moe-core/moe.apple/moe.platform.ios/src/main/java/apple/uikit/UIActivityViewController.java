@@ -23,6 +23,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIActivityItemsConfigurationReading;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -166,17 +167,26 @@ public class UIActivityViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * set to nil after activity performs or view controller is dismissed
+     */
     @Generated
     @Deprecated
     @Selector("completionHandler")
     @ObjCBlock(name = "call_completionHandler_ret")
     public native Block_completionHandler_ret completionHandler();
 
+    /**
+     * set to nil after activity performs or view controller is dismissed
+     */
     @Generated
     @Selector("completionWithItemsHandler")
     @ObjCBlock(name = "call_completionWithItemsHandler_ret")
     public native Block_completionWithItemsHandler_ret completionWithItemsHandler();
 
+    /**
+     * default is nil. activity types listed will not be displayed
+     */
     @Generated
     @Selector("excludedActivityTypes")
     public native NSArray<String> excludedActivityTypes();
@@ -192,23 +202,32 @@ public class UIActivityViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIActivityViewController initWithCoder(NSCoder aDecoder);
+    public native UIActivityViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
     public native UIActivityViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * set to nil after activity performs or view controller is dismissed
+     */
     @Generated
     @Deprecated
     @Selector("setCompletionHandler:")
     public native void setCompletionHandler(
             @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
 
+    /**
+     * set to nil after activity performs or view controller is dismissed
+     */
     @Generated
     @Selector("setCompletionWithItemsHandler:")
     public native void setCompletionWithItemsHandler(
             @ObjCBlock(name = "call_setCompletionWithItemsHandler") Block_setCompletionWithItemsHandler value);
 
+    /**
+     * default is nil. activity types listed will not be displayed
+     */
     @Generated
     @Selector("setExcludedActivityTypes:")
     public native void setExcludedActivityTypes(NSArray<String> value);
@@ -217,27 +236,34 @@ public class UIActivityViewController extends UIViewController {
     @Generated
     public interface Block_completionHandler_ret {
         @Generated
-        void call_completionHandler_ret(String arg0, boolean arg1);
+        void call_completionHandler_ret(String activityType, boolean completed);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_completionWithItemsHandler_ret {
         @Generated
-        void call_completionWithItemsHandler_ret(String arg0, boolean arg1, NSArray<?> arg2, NSError arg3);
+        void call_completionWithItemsHandler_ret(String activityType, boolean completed, NSArray<?> returnedItems,
+                NSError activityError);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCompletionHandler {
         @Generated
-        void call_setCompletionHandler(String arg0, boolean arg1);
+        void call_setCompletionHandler(String activityType, boolean completed);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCompletionWithItemsHandler {
         @Generated
-        void call_setCompletionWithItemsHandler(String arg0, boolean arg1, NSArray<?> arg2, NSError arg3);
+        void call_setCompletionWithItemsHandler(String activityType, boolean completed, NSArray<?> returnedItems,
+                NSError activityError);
     }
+
+    @Generated
+    @Selector("initWithActivityItemsConfiguration:")
+    public native UIActivityViewController initWithActivityItemsConfiguration(
+            @Mapped(ObjCObjectMapper.class) UIActivityItemsConfigurationReading activityItemsConfiguration);
 }

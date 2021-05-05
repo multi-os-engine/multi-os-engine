@@ -19,6 +19,12 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * UIImage will implement the resizing mode the fastest way possible while
+ * retaining the desired visual appearance.
+ * Note that if an image's resizable area is one point then UIImageResizingModeTile
+ * is visually indistinguishable from UIImageResizingModeStretch.
+ */
 @Generated
 public final class UIImageResizingMode {
     @Generated @NInt public static final long Tile = 0x0000000000000000L;

@@ -181,7 +181,7 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
     @Generated
     public interface Block_actionWithTitleStyleHandler {
         @Generated
-        void call_actionWithTitleStyleHandler(UIPreviewAction arg0, UIViewController arg1);
+        void call_actionWithTitleStyleHandler(UIPreviewAction action, UIViewController previewViewController);
     }
 
     @Runtime(ObjCRuntime.class)

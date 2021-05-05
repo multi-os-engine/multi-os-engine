@@ -39,6 +39,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSStream is an abstract class encapsulating the common API to NSInputStream and NSOutputStream.
+ * Subclassers of NSInputStream and NSOutputStream must also implement these methods.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -179,6 +183,9 @@ public class NSStream extends NSObject {
     @Selector("open")
     public native void open();
 
+    /**
+     * By default, a stream is its own delegate, and subclassers of NSInputStream and NSOutputStream must maintain this contract. [someStream setDelegate:nil] must restore this behavior. As usual, delegates are not retained.
+     */
     @Generated
     @Selector("propertyForKey:")
     @MappedReturn(ObjCObjectMapper.class)

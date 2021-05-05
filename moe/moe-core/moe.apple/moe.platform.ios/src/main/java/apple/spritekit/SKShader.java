@@ -21,8 +21,8 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -39,6 +39,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -46,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKShader extends NSObject implements NSCopying, NSCoding {
+public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -148,6 +149,15 @@ public class SKShader extends NSObject implements NSCopying, NSCoding {
     @Selector("shader")
     public static native SKShader shader();
 
+    /**
+     * Loads a shader source file named 'name' from the main bundle. This is simpler yet functionally equivalent to the following code
+     * 
+     * [SKShader shaderWithSource:[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"fsh"]
+     *                   encoding:NSUTF8StringEncoding
+     *                      error:NULL]];
+     * 
+     * The encoding is assumed to be NSUTF8StringEncoding.
+     */
     @Generated
     @Selector("shaderWithFileNamed:")
     public static native SKShader shaderWithFileNamed(String name);
@@ -185,7 +195,7 @@ public class SKShader extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -193,12 +203,23 @@ public class SKShader extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKShader initWithCoder(NSCoder aDecoder);
+    public native SKShader initWithCoder(NSCoder coder);
 
+    /**
+     * Create a custom shader with source code.
+     * 
+     * @param source the source code for the custom fragment shader.
+     */
     @Generated
     @Selector("initWithSource:")
     public native SKShader initWithSource(String source);
 
+    /**
+     * Create a custom shader with source code and uniforms.
+     * 
+     * @param source the source code for the custom fragment shader.
+     * @param uniforms the array of uniforms supplied to this shader
+     */
     @Generated
     @Selector("initWithSource:uniforms:")
     public native SKShader initWithSourceUniforms(String source, NSArray<? extends SKUniform> uniforms);
@@ -211,14 +232,70 @@ public class SKShader extends NSObject implements NSCopying, NSCoding {
     @Selector("setAttributes:")
     public native void setAttributes(NSArray<? extends SKAttribute> value);
 
+    /**
+     * Shader source must define the 'main' method of the fragment shader
+     * 
+     * Your shader must assign a premultipled fragment value to 'gl_FragColor'
+     * 
+     * The following implicit uniforms are available:
+     * 
+     *    1. sampler2D u_texture  (the primary texuture attached the the sprite)
+     * 
+     * The following varyings are available:
+     * 
+     *    1. vec2 v_tex_coord  (normalized texture coordiantes for the primary texture)
+     *    2. vec4 v_color_mix  (premultiplied color value based on color & alpha)
+     * 
+     * 
+     * The following functions are available:
+     * 
+     *    1. vec4 SKDefaultShading()  (returns the fragment value that would have been output if no shader was used)
+     * 
+     * 
+     * 
+     * Sample shader source that produces the same result are SpriteKit's normal rendering:
+     * 
+     * "void main() { gl_FragColor = SKDefaultShading(); }"
+     */
     @Generated
     @Selector("setSource:")
     public native void setSource(String value);
 
+    /**
+     * You may define additional uniforms to be used in your shader here.
+     * There is no need to declare them in you source, just use them by name.
+     * 
+     * All uniforms declared must be used within the source.
+     */
     @Generated
     @Selector("setUniforms:")
     public native void setUniforms(NSArray<? extends SKUniform> value);
 
+    /**
+     * Shader source must define the 'main' method of the fragment shader
+     * 
+     * Your shader must assign a premultipled fragment value to 'gl_FragColor'
+     * 
+     * The following implicit uniforms are available:
+     * 
+     *    1. sampler2D u_texture  (the primary texuture attached the the sprite)
+     * 
+     * The following varyings are available:
+     * 
+     *    1. vec2 v_tex_coord  (normalized texture coordiantes for the primary texture)
+     *    2. vec4 v_color_mix  (premultiplied color value based on color & alpha)
+     * 
+     * 
+     * The following functions are available:
+     * 
+     *    1. vec4 SKDefaultShading()  (returns the fragment value that would have been output if no shader was used)
+     * 
+     * 
+     * 
+     * Sample shader source that produces the same result are SpriteKit's normal rendering:
+     * 
+     * "void main() { gl_FragColor = SKDefaultShading(); }"
+     */
     @Generated
     @Selector("source")
     public native String source();
@@ -227,7 +304,23 @@ public class SKShader extends NSObject implements NSCopying, NSCoding {
     @Selector("uniformNamed:")
     public native SKUniform uniformNamed(String name);
 
+    /**
+     * You may define additional uniforms to be used in your shader here.
+     * There is no need to declare them in you source, just use them by name.
+     * 
+     * All uniforms declared must be used within the source.
+     */
     @Generated
     @Selector("uniforms")
     public native NSArray<? extends SKUniform> uniforms();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

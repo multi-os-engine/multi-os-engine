@@ -179,13 +179,31 @@ public class INCarSeatResolutionResult extends INIntentResolutionResult {
     @Selector("init")
     public native INCarSeatResolutionResult init();
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithCarSeatToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object confirmationRequiredWithCarSeatToConfirm(@NInt long carSeatToConfirm);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INCarSeat. The resolvedValue can be different than the original INCarSeat. This allows app extensions to apply business logic constraints.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedCarSeat:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedCarSeat(@NInt long resolvedCarSeat);
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

@@ -18,14 +18,35 @@ package apple.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * 23.2.6 Individual ACL types
+ */
 @Generated
 public final class acl_type_t {
     @Generated public static final int ACL_TYPE_EXTENDED = 0x00000100;
+    /**
+     * Posix 1003.1e types - not supported
+     */
     @Generated public static final int ACL_TYPE_ACCESS = 0x00000000;
+    /**
+     * Posix 1003.1e types - not supported
+     */
     @Generated public static final int ACL_TYPE_DEFAULT = 0x00000001;
+    /**
+     * The following types are defined on FreeBSD/Linux - not supported
+     */
     @Generated public static final int ACL_TYPE_AFS = 0x00000002;
+    /**
+     * The following types are defined on FreeBSD/Linux - not supported
+     */
     @Generated public static final int ACL_TYPE_CODA = 0x00000003;
+    /**
+     * The following types are defined on FreeBSD/Linux - not supported
+     */
     @Generated public static final int ACL_TYPE_NTFS = 0x00000004;
+    /**
+     * The following types are defined on FreeBSD/Linux - not supported
+     */
     @Generated public static final int ACL_TYPE_NWFS = 0x00000005;
 
     @Generated

@@ -39,11 +39,17 @@ public interface UILayoutSupport {
     @Selector("heightAnchor")
     NSLayoutDimension heightAnchor();
 
+    /**
+     * As a courtesy when not using auto layout, this value is safe to refer to in -viewDidLayoutSubviews, or in -layoutSubviews after calling super
+     */
     @Generated
     @Selector("length")
     @NFloat
     double length();
 
+    /**
+     * Constraint creation conveniences. See NSLayoutAnchor.h for details.
+     */
     @Generated
     @Selector("topAnchor")
     NSLayoutYAxisAnchor topAnchor();

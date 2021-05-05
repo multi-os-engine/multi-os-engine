@@ -151,15 +151,26 @@ public class NSURLSessionTaskMetrics extends NSObject {
     @Selector("init")
     public native NSURLSessionTaskMetrics init();
 
+    /**
+     * redirectCount is the number of redirects that were recorded.
+     */
     @Generated
     @Selector("redirectCount")
     @NUInt
     public native long redirectCount();
 
+    /**
+     * Interval from the task creation time to the task completion time.
+     * Task creation time is the time when the task was instantiated.
+     * Task completion time is the time when the task is about to change its internal state to completed.
+     */
     @Generated
     @Selector("taskInterval")
     public native NSDateInterval taskInterval();
 
+    /**
+     * transactionMetrics array contains the metrics collected for every request/response transaction created during the task execution.
+     */
     @Generated
     @Selector("transactionMetrics")
     public native NSArray<? extends NSURLSessionTaskTransactionMetrics> transactionMetrics();

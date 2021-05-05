@@ -19,6 +19,22 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum] MTLFunctionType
+ * 
+ * An identifier for a top-level Metal function.
+ * 
+ * Each location in the API where a program is used requires a function written for that specific usage.
+ * 
+ * [@constant] MTLFunctionTypeVertex
+ * A vertex shader, usable for a MTLRenderPipelineState.
+ * 
+ * [@constant] MTLFunctionTypeFragment
+ * A fragment shader, usable for a MTLRenderPipelineState.
+ * 
+ * [@constant] MTLFunctionTypeKernel
+ * A compute kernel, usable to create a MTLComputePipelineState.
+ */
 @Generated
 public final class MTLFunctionType {
     @Generated @NUInt public static final long Vertex = 0x0000000000000001L;
@@ -28,4 +44,7 @@ public final class MTLFunctionType {
     @Generated
     private MTLFunctionType() {
     }
+
+    @Generated @NUInt public static final long Visible = 0x0000000000000005L;
+    @Generated @NUInt public static final long Intersection = 0x0000000000000006L;
 }

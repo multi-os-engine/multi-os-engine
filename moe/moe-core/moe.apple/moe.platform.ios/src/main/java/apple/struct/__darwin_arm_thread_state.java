@@ -42,42 +42,72 @@ public final class __darwin_arm_thread_state extends StructObject {
         super(peer);
     }
 
+    /**
+     * General purpose register r0-r12
+     */
     @Generated
     @StructureField(order = 0, isGetter = true, count = 13)
     public native int __r(int field_idx);
 
+    /**
+     * General purpose register r0-r12
+     */
     @Generated
     @StructureField(order = 0, isGetter = false, count = 13)
     public native void set__r(int value, int field_idx);
 
+    /**
+     * Stack pointer r13
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int __sp();
 
+    /**
+     * Stack pointer r13
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void set__sp(int value);
 
+    /**
+     * Link register r14
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int __lr();
 
+    /**
+     * Link register r14
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void set__lr(int value);
 
+    /**
+     * Program counter r15
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int __pc();
 
+    /**
+     * Program counter r15
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void set__pc(int value);
 
+    /**
+     * Current program status register
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native int __cpsr();
 
+    /**
+     * Current program status register
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void set__cpsr(int value);

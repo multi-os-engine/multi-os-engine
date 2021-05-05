@@ -27,11 +27,26 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * [@protocol]	AVPictureInPictureControllerDelegate
+ * 
+ * A protocol for delegates of AVPictureInPictureController.
+ */
 @Generated
 @Library("AVKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVPictureInPictureControllerDelegate")
 public interface AVPictureInPictureControllerDelegate {
+    /**
+     * pictureInPictureController:failedToStartPictureInPictureWithError:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture failed to start.
+     * 
+     * @param		pictureInPictureController
+     * 			The Picture in Picture controller.
+     * @param		error
+     * 			An error describing why it failed.
+     */
     @Generated
     @IsOptional
     @Selector("pictureInPictureController:failedToStartPictureInPictureWithError:")
@@ -40,6 +55,16 @@ public interface AVPictureInPictureControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:
+     * 
+     * Delegate can implement this method to restore the user interface before Picture in Picture stops.
+     * 
+     * @param		pictureInPictureController
+     * 			The Picture in Picture controller.
+     * @param		completionHandler
+     * 			The completion handler the delegate needs to call after restore.
+     */
     @Generated
     @IsOptional
     @Selector("pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:")
@@ -49,6 +74,14 @@ public interface AVPictureInPictureControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * pictureInPictureControllerDidStartPictureInPicture:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture did start.
+     * 
+     * @param		pictureInPictureController
+     * 			The Picture in Picture controller.
+     */
     @Generated
     @IsOptional
     @Selector("pictureInPictureControllerDidStartPictureInPicture:")
@@ -57,6 +90,14 @@ public interface AVPictureInPictureControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * pictureInPictureControllerDidStopPictureInPicture:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture did stop.
+     * 
+     * @param		pictureInPictureController
+     * 			The Picture in Picture controller.
+     */
     @Generated
     @IsOptional
     @Selector("pictureInPictureControllerDidStopPictureInPicture:")
@@ -65,6 +106,14 @@ public interface AVPictureInPictureControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * pictureInPictureControllerWillStartPictureInPicture:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture will start.
+     * 
+     * @param		pictureInPictureController
+     * 			The Picture in Picture controller.
+     */
     @Generated
     @IsOptional
     @Selector("pictureInPictureControllerWillStartPictureInPicture:")
@@ -73,6 +122,14 @@ public interface AVPictureInPictureControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * pictureInPictureControllerWillStopPictureInPicture:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture will stop.
+     * 
+     * @param		pictureInPictureController
+     * 			The Picture in Picture controller.
+     */
     @Generated
     @IsOptional
     @Selector("pictureInPictureControllerWillStopPictureInPicture:")
@@ -86,6 +143,6 @@ public interface AVPictureInPictureControllerDelegate {
     public interface Block_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler {
         @Generated
         void call_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(
-                boolean arg0);
+                boolean restored);
     }
 }

@@ -40,6 +40,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMSensorRecorder
+ * 
+ * Discussion:
+ *    CMSensorRecorder allows applications to record sensor data for periods
+ *    during which the application is not active.  This data is then made
+ *    available for later access (up to 3 days) when the application
+ *    is run at a later time.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -116,10 +125,22 @@ public class CMSensorRecorder extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * isAccelerometerRecordingAvailable
+     * 
+     * Discussion:
+     *   Determines whether accelerometer recording is available.
+     */
     @Generated
     @Selector("isAccelerometerRecordingAvailable")
     public static native boolean isAccelerometerRecordingAvailable();
 
+    /**
+     * isAuthorizedForRecording
+     * 
+     * Discussion:
+     *   Determines whether the application is authorized for sensor recording.
+     */
     @Generated
     @Selector("isAuthorizedForRecording")
     public static native boolean isAuthorizedForRecording();
@@ -159,6 +180,15 @@ public class CMSensorRecorder extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * accelerometerDataFromDate:ToDate:
+     * 
+     * Discussion:
+     *    Gives access to recorded accelerometer samples given a time range (fromDate, toDate].
+     *    A total duration of 12 hours of data can be requested at any one time.  Data can be delayed
+     *    for up to 3 minutes before being available for retrieval.  An instance of CMSensorDataList
+     *    should only be enumerated from a single thread.
+     */
     @Generated
     @Selector("accelerometerDataFromDate:toDate:")
     public native CMSensorDataList accelerometerDataFromDateToDate(NSDate fromDate, NSDate toDate);
@@ -167,10 +197,23 @@ public class CMSensorRecorder extends NSObject {
     @Selector("init")
     public native CMSensorRecorder init();
 
+    /**
+     * recordAccelerometerForDuration:
+     * 
+     * Discussion:
+     *    Starts recording accelerometer data for the duration given at 50hz.  Data can be recorded
+     *    for up to 12 hours.
+     */
     @Generated
     @Selector("recordAccelerometerForDuration:")
     public native void recordAccelerometerForDuration(double duration);
 
+    /**
+     * authorizationStatus
+     * 
+     * Discussion:
+     *   Returns the current authorization status for sensor recording.
+     */
     @Generated
     @Selector("authorizationStatus")
     @NInt

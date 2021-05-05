@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GLKEffectPropertyMaterial
+ * 
+ * GLKEffectPropertyMaterial encapsulates material properties for an GLKEffect in
+ * accordance with the specification and lighting behavior of OpenGL ES 1.1.
+ */
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)
@@ -152,16 +158,25 @@ public class GLKEffectPropertyMaterial extends GLKEffectProperty {
     @NInt
     public static native long version_static();
 
+    /**
+     * { 0.2, 0.2, 0.2, 1.0}
+     */
     @Generated
     @Selector("ambientColor")
     @ByValue
     public native GLKVector4 ambientColor();
 
+    /**
+     * { 0.8, 0.8, 0.8, 1.0}
+     */
     @Generated
     @Selector("diffuseColor")
     @ByValue
     public native GLKVector4 diffuseColor();
 
+    /**
+     * { 0.0, 0.0, 0.0, 1.0}
+     */
     @Generated
     @Selector("emissiveColor")
     @ByValue
@@ -171,30 +186,51 @@ public class GLKEffectPropertyMaterial extends GLKEffectProperty {
     @Selector("init")
     public native GLKEffectPropertyMaterial init();
 
+    /**
+     * { 0.2, 0.2, 0.2, 1.0}
+     */
     @Generated
     @Selector("setAmbientColor:")
     public native void setAmbientColor(@ByValue GLKVector4 value);
 
+    /**
+     * { 0.8, 0.8, 0.8, 1.0}
+     */
     @Generated
     @Selector("setDiffuseColor:")
     public native void setDiffuseColor(@ByValue GLKVector4 value);
 
+    /**
+     * { 0.0, 0.0, 0.0, 1.0}
+     */
     @Generated
     @Selector("setEmissiveColor:")
     public native void setEmissiveColor(@ByValue GLKVector4 value);
 
+    /**
+     * 0.0
+     */
     @Generated
     @Selector("setShininess:")
     public native void setShininess(float value);
 
+    /**
+     * { 0.0, 0.0, 0.0, 1.0}
+     */
     @Generated
     @Selector("setSpecularColor:")
     public native void setSpecularColor(@ByValue GLKVector4 value);
 
+    /**
+     * 0.0
+     */
     @Generated
     @Selector("shininess")
     public native float shininess();
 
+    /**
+     * { 0.0, 0.0, 0.0, 1.0}
+     */
     @Generated
     @Selector("specularColor")
     @ByValue

@@ -29,4 +29,6 @@ public final class CGImageByteOrderInfo {
     @Generated
     private CGImageByteOrderInfo() {
     }
+
+    @Generated public static final int OrderDefault = 0x00000000;
 }

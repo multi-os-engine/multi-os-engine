@@ -26,6 +26,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * VNPixelBufferObservation
+ * [@superclass] VNObservation
+ * 
+ * VNPixelBufferObservation returns the prediction of a model as a CVPixelBufferRef.
+ * 
+ * This is the returned observations for models that are not classifiers and return an image as a prediction. The confidence for these observations is always 1.0.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -95,7 +103,7 @@ public class VNPixelBufferObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNPixelBufferObservation initWithCoder(NSCoder aDecoder);
+    public native VNPixelBufferObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -124,6 +132,9 @@ public class VNPixelBufferObservation extends VNObservation {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The resulting image from a request like VNCoreMLRequest where the model produces an image as an output.
+     */
     @Generated
     @Selector("pixelBuffer")
     public native CVBufferRef pixelBuffer();
@@ -158,4 +169,11 @@ public class VNPixelBufferObservation extends VNObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The name used in the model description of the CoreML model that produced this observation allowing to correlate the observation back to the output of the model. This can be nil if the observation is not the result of a VNCoreMLRequest operation.
+     */
+    @Generated
+    @Selector("featureName")
+    public native String featureName();
 }

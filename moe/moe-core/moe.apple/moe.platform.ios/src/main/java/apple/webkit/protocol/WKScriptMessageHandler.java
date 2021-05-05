@@ -25,11 +25,22 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * A class conforming to the WKScriptMessageHandler protocol provides a
+ * method for receiving messages from JavaScript running in a webpage.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("WKScriptMessageHandler")
 public interface WKScriptMessageHandler {
+    /**
+     * Invoked when a script message is received from a webpage.
+     * 
+     * @param userContentController The user content controller invoking the
+     * delegate method.
+     * @param message The script message received.
+     */
     @Generated
     @Selector("userContentController:didReceiveScriptMessage:")
     void userContentControllerDidReceiveScriptMessage(WKUserContentController userContentController,

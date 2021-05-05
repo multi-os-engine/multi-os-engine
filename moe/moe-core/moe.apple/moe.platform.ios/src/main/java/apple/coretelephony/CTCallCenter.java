@@ -151,11 +151,26 @@ public class CTCallCenter extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * callEventHandler
+     * 
+     * Discussion:
+     *   A block that will be dispatched on the default priority global dispatch
+     *   queue when a new call event occurs. Set this property to a block
+     *   that is defined in your application to handle call events.
+     */
     @Generated
     @Selector("callEventHandler")
     @ObjCBlock(name = "call_callEventHandler_ret")
     public native Block_callEventHandler_ret callEventHandler();
 
+    /**
+     * currentCalls
+     * 
+     * Discussion:
+     *   An array containing CTCall objects for all calls that are currently
+     *   in progress. If no calls are active, this will be nil.
+     */
     @Generated
     @Selector("currentCalls")
     public native NSSet<? extends CTCall> currentCalls();
@@ -164,6 +179,14 @@ public class CTCallCenter extends NSObject {
     @Selector("init")
     public native CTCallCenter init();
 
+    /**
+     * callEventHandler
+     * 
+     * Discussion:
+     *   A block that will be dispatched on the default priority global dispatch
+     *   queue when a new call event occurs. Set this property to a block
+     *   that is defined in your application to handle call events.
+     */
     @Generated
     @Selector("setCallEventHandler:")
     public native void setCallEventHandler(

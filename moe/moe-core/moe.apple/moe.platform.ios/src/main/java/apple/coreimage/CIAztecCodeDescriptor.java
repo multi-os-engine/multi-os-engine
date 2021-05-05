@@ -26,6 +26,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CIAztecCodeDescriptor
+ * 
+ *    CIAztecCodeDescriptor is a concrete subclass of CIBarcodeDescriptor that defines an abstract representation of an Aztec Code symbol.
+ * 
+ *    CIAztecCodeDescriptor may not be instantiated directly.
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -76,6 +83,15 @@ public class CIAztecCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * [@property] dataCodewordCount
+     * 
+     *    The number of non-error-correction codewords carried by the Aztec code symbol.
+     * 
+     *    Used to determine the level of error correction in conjunction with the number of data layers. Valid values are 1...2048. Compact symbols can have up to 64 message codewords.
+     * 
+     *    Note that this value can exceed the number of message codewords allowed by the number of data layers in this symbol. In this case, the actual number of message codewords is 1024 fewer than this value and the message payload is to be interpreted in an application-defined manner.
+     */
     @Generated
     @Selector("dataCodewordCount")
     @NInt
@@ -89,11 +105,23 @@ public class CIAztecCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Construct an autoreleased descriptor that can be used as input to CIBarcodeGenerator
+     */
     @Generated
     @Selector("descriptorWithPayload:isCompact:layerCount:dataCodewordCount:")
     public static native CIAztecCodeDescriptor descriptorWithPayloadIsCompactLayerCountDataCodewordCount(
             NSData errorCorrectedPayload, boolean isCompact, @NInt long layerCount, @NInt long dataCodewordCount);
 
+    /**
+     * [@property] errorCorrectedPayload
+     * 
+     * The error-corrected codewords that comprise the Aztec code symbol.
+     * 
+     * Aztec Codes are formally specified in ISO/IEC 24778:2008(E).
+     * 
+     * The error corrected payload consists of the 6-, 8-, 10-, or 12-bit message codewords produced at the end of the step described in section 7.3.1.2 "Formation of data codewords", which exists immediately prior to adding error correction. These codewords have dummy bits inserted to ensure that an entire codeword isn't all 0's or all 1's. Clients will need to remove these extra bits as part of interpreting the payload.
+     */
     @Generated
     @Selector("errorCorrectedPayload")
     public native NSData errorCorrectedPayload();
@@ -109,8 +137,11 @@ public class CIAztecCodeDescriptor extends CIBarcodeDescriptor {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIAztecCodeDescriptor initWithCoder(NSCoder aDecoder);
+    public native CIAztecCodeDescriptor initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes a descriptor that can be used as input to CIBarcodeGenerator
+     */
     @Generated
     @Selector("initWithPayload:isCompact:layerCount:dataCodewordCount:")
     public native CIAztecCodeDescriptor initWithPayloadIsCompactLayerCountDataCodewordCount(
@@ -129,6 +160,13 @@ public class CIAztecCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * [@property] isCompact
+     * 
+     *    A BOOL indicating whether the symbol is compact.
+     * 
+     *    Compact Aztec symbols use one-fewer ring in the central finder pattern than full-range Aztec symbols of the same number of data layers.
+     */
     @Generated
     @Selector("isCompact")
     public native boolean isCompact();
@@ -141,6 +179,15 @@ public class CIAztecCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * [@property] layerCount
+     * 
+     *    The number of data layers in the Aztec code symbol.
+     * 
+     *    Combined with the isCompact property, the number of data layers determines the number of modules in the Aztec Code symbol. Valid values range from 1 to 32. Compact symbols can have up to 4 data layers.
+     * 
+     *    The number of data layers also determines the number of bits in each data codeword of the message carried by the Aztec Code symbol.
+     */
     @Generated
     @Selector("layerCount")
     @NInt

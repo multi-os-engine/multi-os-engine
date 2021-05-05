@@ -19,6 +19,11 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum] MTLTextureType
+ * 
+ * MTLTextureType describes the dimensionality of each image, and if multiple images are arranged into an array or cube.
+ */
 @Generated
 public final class MTLTextureType {
     @Generated @NUInt public static final long Type1D = 0x0000000000000000L;
@@ -34,4 +39,6 @@ public final class MTLTextureType {
     }
 
     @Generated @NUInt public static final long TypeCubeArray = 0x0000000000000006L;
+    @Generated @NUInt public static final long TypeTextureBuffer = 0x0000000000000009L;
+    @Generated @NUInt public static final long Type2DMultisampleArray = 0x0000000000000008L;
 }

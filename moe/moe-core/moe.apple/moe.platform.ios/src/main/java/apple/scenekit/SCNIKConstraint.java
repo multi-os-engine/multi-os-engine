@@ -44,6 +44,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNIKConstraint
+ * 
+ * A SCNIKConstraint applies an inverse kinematics constraint
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -120,6 +125,15 @@ public class SCNIKConstraint extends SCNConstraint {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * inverseKinematicsConstraintWithChainRootNode:
+     * 
+     * Creates and returns a SCNIKConstraint object with the specified parameter.
+     * 
+     * "chainRootNode" must be an ancestor of the node on which the constraint is applied.
+     * 
+     * @param chainRootNode The root node of the kinematic chain.
+     */
     @Generated
     @Selector("inverseKinematicsConstraintWithChainRootNode:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -164,6 +178,11 @@ public class SCNIKConstraint extends SCNConstraint {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] chainRootNode
+     * 
+     * Specifies the root node of the kinematic chain.
+     */
     @Generated
     @Selector("chainRootNode")
     public native SCNNode chainRootNode();
@@ -172,23 +191,42 @@ public class SCNIKConstraint extends SCNConstraint {
     @Selector("init")
     public native SCNIKConstraint init();
 
+    /**
+     * initWithChainRootNode:
+     * 
+     * Creates and returns a SCNIKConstraint object with the specified parameter.
+     * 
+     * "chainRootNode" must be an ancestor of the node on which the constraint is applied.
+     * 
+     * @param chainRootNode The root node of the kinematic chain.
+     */
     @Generated
     @Selector("initWithChainRootNode:")
     public native SCNIKConstraint initWithChainRootNode(SCNNode chainRootNode);
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNIKConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNIKConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("maxAllowedRotationAngleForJoint:")
     @NFloat
     public native double maxAllowedRotationAngleForJoint(SCNNode node);
 
+    /**
+     * setMaxAllowedRotationAngle:forJoint:
+     * 
+     * Specifies the maximum rotation allowed (in degrees) for the specified joint from its initial orientation. Defaults to 180.
+     */
     @Generated
     @Selector("setMaxAllowedRotationAngle:forJoint:")
     public native void setMaxAllowedRotationAngleForJoint(@NFloat double angle, SCNNode node);
 
+    /**
+     * [@property] target
+     * 
+     * Specifies the target position (in world space coordinates) of the end joint (i.e the node that owns the IK constraint). Defaults to (0,0,0). Animatable.
+     */
     @Generated
     @Selector("setTargetPosition:")
     public native void setTargetPosition(@ByValue SCNVector3 value);
@@ -199,6 +237,11 @@ public class SCNIKConstraint extends SCNConstraint {
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] target
+     * 
+     * Specifies the target position (in world space coordinates) of the end joint (i.e the node that owns the IK constraint). Defaults to (0,0,0). Animatable.
+     */
     @Generated
     @Selector("targetPosition")
     @ByValue

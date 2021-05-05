@@ -40,6 +40,37 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSURLRequest
+ * 
+ * An NSURLRequest object represents a URL load request in a
+ * manner independent of protocol and URL scheme.
+ * 
+ * NSURLRequest encapsulates two basic data elements about
+ * a URL load request:
+ * <ul>
+ * <li>The URL to load.
+ * <li>The policy to use when consulting the URL content cache made
+ * available by the implementation.
+ * </ul>
+ * In addition, NSURLRequest is designed to be extended to support
+ * protocol-specific data by adding categories to access a property
+ * object provided in an interface targeted at protocol implementors.
+ * <ul>
+ * <li>Protocol implementors should direct their attention to the
+ * NSURLRequestExtensibility category on NSURLRequest for more
+ * information on how to provide extensions on NSURLRequest to
+ * support protocol-specific request information.
+ * <li>Clients of this API who wish to create NSURLRequest objects to
+ * load URL content should consult the protocol-specific NSURLRequest
+ * categories that are available. The NSHTTPURLRequest category on
+ * NSURLRequest is an example.
+ * </ul>
+ * <p>
+ * Objects of this class are used to create NSURLConnection instances,
+ * which can are used to perform the load of a URL, or as input to the
+ * NSURLConnection class method which performs synchronous loads.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -130,10 +161,36 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * requestWithURL:
+     * 
+     * Allocates and initializes an NSURLRequest with the given
+     * URL.
+     * 
+     * Default values are used for cache policy
+     * (NSURLRequestUseProtocolCachePolicy) and timeout interval (60
+     * seconds).
+     * 
+     * @param URL The URL for the request.
+     * @return A newly-created and autoreleased NSURLRequest instance.
+     */
     @Generated
     @Selector("requestWithURL:")
     public static native NSURLRequest requestWithURL(NSURL URL);
 
+    /**
+     * requestWithURL:cachePolicy:timeoutInterval:
+     * 
+     * Allocates and initializes a NSURLRequest with the given
+     * URL and cache policy.
+     * 
+     * @param URL The URL for the request. 
+     * @param cachePolicy The cache policy for the request. 
+     * @param timeoutInterval The timeout interval for the request. See the
+     * commentary for the <tt>timeoutInterval</tt> for more information on
+     * timeout intervals.
+     * @return A newly-created and autoreleased NSURLRequest instance. 
+     */
     @Generated
     @Selector("requestWithURL:cachePolicy:timeoutInterval:")
     public static native NSURLRequest requestWithURLCachePolicyTimeoutInterval(NSURL URL, @NUInt long cachePolicy,
@@ -164,38 +221,105 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns the request body data of the receiver.
+     * 
+     * This data is sent as the message body of the request, as
+     * in done in an HTTP POST request.
+     * 
+     * @return The request body data of the receiver. 
+     */
     @Generated
     @Selector("HTTPBody")
     public native NSData HTTPBody();
 
+    /**
+     * Returns the request body stream of the receiver
+     * if any has been set
+     * 
+     * The stream is returned for examination only; it is
+     * not safe for the caller to manipulate the stream in any way.  Also
+     * note that the HTTPBodyStream and HTTPBody are mutually exclusive - only
+     * one can be set on a given request.  Also note that the body stream is
+     * preserved across copies, but is LOST when the request is coded via the 
+     * NSCoding protocol
+     * 
+     * @return The request body stream of the receiver.
+     */
     @Generated
     @Selector("HTTPBodyStream")
     public native NSInputStream HTTPBodyStream();
 
+    /**
+     * Returns the HTTP request method of the receiver.
+     * 
+     * @return the HTTP request method of the receiver. 
+     */
     @Generated
     @Selector("HTTPMethod")
     public native String HTTPMethod();
 
+    /**
+     * Determine whether default cookie handling will happen for
+     * this request.
+     * 
+     * NOTE: This value is not used prior to 10.3
+     * 
+     * @return YES if cookies will be sent with and set for this request; 
+     * otherwise NO.
+     */
     @Generated
     @Selector("HTTPShouldHandleCookies")
     public native boolean HTTPShouldHandleCookies();
 
+    /**
+     * Reports whether the receiver is not expected to wait for the
+     * previous response before transmitting.
+     * 
+     * @return YES if the receiver should transmit before the previous response
+     * is received.  NO if the receiver should wait for the previous response
+     * before transmitting.
+     */
     @Generated
     @Selector("HTTPShouldUsePipelining")
     public native boolean HTTPShouldUsePipelining();
 
+    /**
+     * Returns the URL of the receiver.
+     * 
+     * @return The URL of the receiver. 
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
+    /**
+     * Returns a dictionary containing all the HTTP header fields
+     * of the receiver.
+     * 
+     * @return a dictionary containing all the HTTP header fields of the
+     * receiver.
+     */
     @Generated
     @Selector("allHTTPHeaderFields")
     public native NSDictionary<String, String> allHTTPHeaderFields();
 
+    /**
+     * returns whether a connection created with this request is allowed to use
+     * the built in cellular radios (if present).
+     * 
+     * @return YES if the receiver is allowed to use the built in cellular radios to
+     * satify the request, NO otherwise.
+     */
     @Generated
     @Selector("allowsCellularAccess")
     public native boolean allowsCellularAccess();
 
+    /**
+     * Returns the cache policy of the receiver.
+     * 
+     * @return The cache policy of the receiver. 
+     */
     @Generated
     @Selector("cachePolicy")
     @NUInt
@@ -209,7 +333,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -217,26 +341,75 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLRequest initWithCoder(NSCoder aDecoder);
+    public native NSURLRequest initWithCoder(NSCoder coder);
 
+    /**
+     * initWithURL:
+     * 
+     * Initializes an NSURLRequest with the given URL.
+     * 
+     * Default values are used for cache policy
+     * (NSURLRequestUseProtocolCachePolicy) and timeout interval (60
+     * seconds).
+     * 
+     * @param URL The URL for the request. 
+     * @return An initialized NSURLRequest. 
+     */
     @Generated
     @Selector("initWithURL:")
     public native NSURLRequest initWithURL(NSURL URL);
 
+    /**
+     * initWithURL:
+     * 
+     * Initializes an NSURLRequest with the given URL and
+     * cache policy.
+     * 
+     * This is the designated initializer for the
+     * NSURLRequest class.
+     * 
+     * @param URL The URL for the request. 
+     * @param cachePolicy The cache policy for the request. 
+     * @param timeoutInterval The timeout interval for the request. See the
+     * commentary for the <tt>timeoutInterval</tt> for more information on
+     * timeout intervals.
+     * @return An initialized NSURLRequest. 
+     */
     @Generated
     @Selector("initWithURL:cachePolicy:timeoutInterval:")
     public native NSURLRequest initWithURLCachePolicyTimeoutInterval(NSURL URL, @NUInt long cachePolicy,
             double timeoutInterval);
 
+    /**
+     * The main document URL associated with this load.
+     * 
+     * This URL is used for the cookie "same domain as main
+     * document" policy. There may also be other future uses.
+     * See setMainDocumentURL:
+     * NOTE: In the current implementation, this value is unused by the
+     * framework. A fully functional version of this method will be available 
+     * in the future. 
+     * 
+     * @return The main document URL.
+     */
     @Generated
     @Selector("mainDocumentURL")
     public native NSURL mainDocumentURL();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
+    /**
+     * Returns the NSURLRequestNetworkServiceType associated with this request.
+     * 
+     * This will return NSURLNetworkServiceTypeDefault for requests that have
+     * not explicitly set a networkServiceType (using the setNetworkServiceType method).
+     * 
+     * @return The NSURLRequestNetworkServiceType associated with this request.
+     */
     @Generated
     @Selector("networkServiceType")
     @NUInt
@@ -248,11 +421,61 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
         return supportsSecureCoding();
     }
 
+    /**
+     * Returns the timeout interval of the receiver.
+     * 
+     * The timeout interval specifies the limit on the idle
+     * interval alloted to a request in the process of loading. The "idle
+     * interval" is defined as the period of time that has passed since the
+     * last instance of load activity occurred for a request that is in the
+     * process of loading. Hence, when an instance of load activity occurs
+     * (e.g. bytes are received from the network for a request), the idle
+     * interval for a request is reset to 0. If the idle interval ever
+     * becomes greater than or equal to the timeout interval, the request
+     * is considered to have timed out. This timeout interval is measured
+     * in seconds.
+     * 
+     * @return The timeout interval of the receiver. 
+     */
     @Generated
     @Selector("timeoutInterval")
     public native double timeoutInterval();
 
+    /**
+     * valueForHTTPHeaderField:
+     * 
+     * Returns the value which corresponds to the given header
+     * field. Note that, in keeping with the HTTP RFC, HTTP header field
+     * names are case-insensitive.
+     * 
+     * @param field the header field name to use for the lookup
+     * (case-insensitive).
+     * @return the value associated with the given header field, or nil if
+     * there is no value associated with the given header field.
+     */
     @Generated
     @Selector("valueForHTTPHeaderField:")
     public native String valueForHTTPHeaderField(String field);
+
+    /**
+     * returns whether a connection created with this request is allowed to use
+     * network interfaces which have been marked as constrained.
+     * 
+     * @return YES if the receiver is allowed to use an interface marked as constrained to
+     * satify the request, NO otherwise.
+     */
+    @Generated
+    @Selector("allowsConstrainedNetworkAccess")
+    public native boolean allowsConstrainedNetworkAccess();
+
+    /**
+     * returns whether a connection created with this request is allowed to use
+     * network interfaces which have been marked as expensive.
+     * 
+     * @return YES if the receiver is allowed to use an interface marked as expensive to
+     * satify the request, NO otherwise.
+     */
+    @Generated
+    @Selector("allowsExpensiveNetworkAccess")
+    public native boolean allowsExpensiveNetworkAccess();
 }

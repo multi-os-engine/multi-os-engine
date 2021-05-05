@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNFloor
+ * 
+ * SCNFloor represents an infinite plane geometry.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -101,6 +106,13 @@ public class SCNFloor extends SCNGeometry {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * floor
+     * 
+     * Creates and returns a floor.
+     * 
+     * A floor is an infinite plane.
+     */
     @Generated
     @Selector("floor")
     public static native SCNFloor floor();
@@ -181,62 +193,151 @@ public class SCNFloor extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNFloor initWithCoder(NSCoder aDecoder);
+    public native SCNFloor initWithCoder(NSCoder coder);
 
+    /**
+     * [@property] length
+     * 
+     * The floor extent along the Z axis. Animatable.
+     * 
+     * If the value is equal to 0, the floor is infinite on the Z axis. The default value is 0.
+     */
     @Generated
     @Selector("length")
     @NFloat
     public native double length();
 
+    /**
+     * [@property] reflectionCategoryBitMask
+     * 
+     * Determines the node categories to reflect. Defaults to all bits set.
+     */
     @Generated
     @Selector("reflectionCategoryBitMask")
     @NUInt
     public native long reflectionCategoryBitMask();
 
+    /**
+     * [@property] reflectionFalloffEnd
+     * 
+     * Specifies the distance from the floor where the falloff finishes. Animatable.
+     * 
+     * If the value is 0 then there is no falloff. The default value is 0.
+     */
     @Generated
     @Selector("reflectionFalloffEnd")
     @NFloat
     public native double reflectionFalloffEnd();
 
+    /**
+     * [@property] reflectionFalloffStart
+     * 
+     * Specifies the distance from the floor where the falloff begins. Animatable.
+     * 
+     * The default value is 0.
+     */
     @Generated
     @Selector("reflectionFalloffStart")
     @NFloat
     public native double reflectionFalloffStart();
 
+    /**
+     *  [@property] reflectionResolutionScaleFactor
+     * 
+     * Specifies the resolution scale factor of the buffer used to render the reflection.
+     * 
+     * Defaults to 0.5.
+     * #endif
+     */
     @Generated
     @Selector("reflectionResolutionScaleFactor")
     @NFloat
     public native double reflectionResolutionScaleFactor();
 
+    /**
+     * [@property] reflectivity
+     * 
+     * Specifies the reflectivity of the floor. Animatable.
+     * 
+     * If the value is greater than zero then the surface will reflect other objects in the scene. The default value is 0.25.
+     */
     @Generated
     @Selector("reflectivity")
     @NFloat
     public native double reflectivity();
 
+    /**
+     * [@property] length
+     * 
+     * The floor extent along the Z axis. Animatable.
+     * 
+     * If the value is equal to 0, the floor is infinite on the Z axis. The default value is 0.
+     */
     @Generated
     @Selector("setLength:")
     public native void setLength(@NFloat double value);
 
+    /**
+     * [@property] reflectionCategoryBitMask
+     * 
+     * Determines the node categories to reflect. Defaults to all bits set.
+     */
     @Generated
     @Selector("setReflectionCategoryBitMask:")
     public native void setReflectionCategoryBitMask(@NUInt long value);
 
+    /**
+     * [@property] reflectionFalloffEnd
+     * 
+     * Specifies the distance from the floor where the falloff finishes. Animatable.
+     * 
+     * If the value is 0 then there is no falloff. The default value is 0.
+     */
     @Generated
     @Selector("setReflectionFalloffEnd:")
     public native void setReflectionFalloffEnd(@NFloat double value);
 
+    /**
+     * [@property] reflectionFalloffStart
+     * 
+     * Specifies the distance from the floor where the falloff begins. Animatable.
+     * 
+     * The default value is 0.
+     */
     @Generated
     @Selector("setReflectionFalloffStart:")
     public native void setReflectionFalloffStart(@NFloat double value);
 
+    /**
+     *  [@property] reflectionResolutionScaleFactor
+     * 
+     * Specifies the resolution scale factor of the buffer used to render the reflection.
+     * 
+     * Defaults to 0.5.
+     * #endif
+     */
     @Generated
     @Selector("setReflectionResolutionScaleFactor:")
     public native void setReflectionResolutionScaleFactor(@NFloat double value);
 
+    /**
+     * [@property] reflectivity
+     * 
+     * Specifies the reflectivity of the floor. Animatable.
+     * 
+     * If the value is greater than zero then the surface will reflect other objects in the scene. The default value is 0.25.
+     */
     @Generated
     @Selector("setReflectivity:")
     public native void setReflectivity(@NFloat double value);
 
+    /**
+     * [@property] width
+     * 
+     * The floor extent along the X axis. Animatable.
+     * 
+     * If the value is equal to 0, the floor is infinite on the X axis. The default value is 0.
+     */
     @Generated
     @Selector("setWidth:")
     public native void setWidth(@NFloat double value);
@@ -247,6 +348,13 @@ public class SCNFloor extends SCNGeometry {
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] width
+     * 
+     * The floor extent along the X axis. Animatable.
+     * 
+     * If the value is equal to 0, the floor is infinite on the X axis. The default value is 0.
+     */
     @Generated
     @Selector("width")
     @NFloat

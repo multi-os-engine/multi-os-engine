@@ -25,6 +25,7 @@ import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIBarPositioning;
 import apple.uikit.protocol.UINavigationBarDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -133,7 +134,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -146,8 +147,8 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -368,7 +369,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -384,7 +385,8 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -395,6 +397,11 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * The back indicator image is shown beside the back button.
+     * The back indicator transition mask image is used as a mask for content during push and pop transitions
+     * Note: These properties must both be set if you want to customize the back indicator image.
+     */
     @Generated
     @Selector("backIndicatorImage")
     public native UIImage backIndicatorImage();
@@ -425,6 +432,9 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @NInt
     public native long barStyle();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("barTintColor")
     public native UIColor barTintColor();
@@ -436,7 +446,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -444,16 +454,22 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
 
     @Generated
     @Selector("initWithCoder:")
-    public native UINavigationBar initWithCoder(NSCoder aDecoder);
+    public native UINavigationBar initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
     public native UINavigationBar initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Default is NO on iOS 6 and earlier. Always YES if barStyle is set to UIBarStyleBlackTranslucent
+     */
     @Generated
     @Selector("isTranslucent")
     public native boolean isTranslucent();
 
+    /**
+     * Default is NO on iOS 6 and earlier. Always YES if barStyle is set to UIBarStyleBlackTranslucent
+     */
     @Generated
     @Selector("setTranslucent:")
     public native void setTranslucent(boolean value);
@@ -462,14 +478,26 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("items")
     public native NSArray<? extends UINavigationItem> items();
 
+    /**
+     * Returns the item that was popped.
+     */
     @Generated
     @Selector("popNavigationItemAnimated:")
     public native UINavigationItem popNavigationItemAnimated(boolean animated);
 
+    /**
+     * Pushing a navigation item displays the item's title in the center of the navigation bar.
+     * The previous top navigation item (if it exists) is displayed as a "back" button on the left.
+     */
     @Generated
     @Selector("pushNavigationItem:animated:")
     public native void pushNavigationItemAnimated(UINavigationItem item, boolean animated);
 
+    /**
+     * The back indicator image is shown beside the back button.
+     * The back indicator transition mask image is used as a mask for content during push and pop transitions
+     * Note: These properties must both be set if you want to customize the back indicator image.
+     */
     @Generated
     @Selector("setBackIndicatorImage:")
     public native void setBackIndicatorImage(UIImage value);
@@ -478,10 +506,19 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("setBackIndicatorTransitionMaskImage:")
     public native void setBackIndicatorTransitionMaskImage(UIImage value);
 
+    /**
+     * Same as using UIBarPositionAny in -setBackgroundImage:forBarPosition:barMetrics. Resizable images will be stretched
+     * vertically if necessary when the navigation bar is in the position UIBarPositionTopAttached.
+     */
     @Generated
     @Selector("setBackgroundImage:forBarMetrics:")
     public native void setBackgroundImageForBarMetrics(UIImage backgroundImage, @NInt long barMetrics);
 
+    /**
+     * In general, you should specify a value for the normal state to be used by other states which don't have a custom value set.
+     * 
+     * Similarly, when a property is dependent on the bar metrics (on the iPhone in landscape orientation, bars have a different height from standard), be sure to specify a value for UIBarMetricsDefault.
+     */
     @Generated
     @Selector("setBackgroundImage:forBarPosition:barMetrics:")
     public native void setBackgroundImageForBarPositionBarMetrics(UIImage backgroundImage, @NInt long barPosition,
@@ -491,6 +528,9 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("setBarStyle:")
     public native void setBarStyle(@NInt long value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setBarTintColor:")
     public native void setBarTintColor(UIColor value);
@@ -515,18 +555,32 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("setItems:")
     public native void setItems(NSArray<? extends UINavigationItem> value);
 
+    /**
+     * If animated is YES, then simulate a push or pop depending on whether the new top item was previously in the stack.
+     */
     @Generated
     @Selector("setItems:animated:")
     public native void setItemsAnimated(NSArray<? extends UINavigationItem> items, boolean animated);
 
+    /**
+     * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom shadow to be shown, a custom background image must also be set with -setBackgroundImage:forBarMetrics: (if the default background image is used, the default shadow image will be used).
+     */
     @Generated
     @Selector("setShadowImage:")
     public native void setShadowImage(UIImage value);
 
+    /**
+     * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
+     * and behaves as described for the tintColor property added to UIView.
+     * To tint the bar's background, please use -barTintColor.
+     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
+    /**
+     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary, using the keys found in NSAttributedString.h.
+     */
     @Generated
     @Selector("setTitleTextAttributes:")
     public native void setTitleTextAttributes(NSDictionary<String, ?> value);
@@ -536,14 +590,25 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     public native void setTitleVerticalPositionAdjustmentForBarMetrics(@NFloat double adjustment,
             @NInt long barMetrics);
 
+    /**
+     * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom shadow to be shown, a custom background image must also be set with -setBackgroundImage:forBarMetrics: (if the default background image is used, the default shadow image will be used).
+     */
     @Generated
     @Selector("shadowImage")
     public native UIImage shadowImage();
 
+    /**
+     * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
+     * and behaves as described for the tintColor property added to UIView.
+     * To tint the bar's background, please use -barTintColor.
+     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
 
+    /**
+     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary, using the keys found in NSAttributedString.h.
+     */
     @Generated
     @Selector("titleTextAttributes")
     public native NSDictionary<String, ?> titleTextAttributes();
@@ -557,19 +622,79 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("topItem")
     public native UINavigationItem topItem();
 
+    /**
+     * You may specify the font, text color, and shadow properties for the large title in the text attributes dictionary, using the keys found in NSAttributedString.h.
+     */
     @Generated
     @Selector("largeTitleTextAttributes")
     public native NSDictionary<String, ?> largeTitleTextAttributes();
 
+    /**
+     * When set to YES, the navigation bar will use a larger out-of-line title view when requested by the current navigation item. To specify when the large out-of-line title view appears, see UINavigationItem.largeTitleDisplayMode. Defaults to NO.
+     */
     @Generated
     @Selector("prefersLargeTitles")
     public native boolean prefersLargeTitles();
 
+    /**
+     * You may specify the font, text color, and shadow properties for the large title in the text attributes dictionary, using the keys found in NSAttributedString.h.
+     */
     @Generated
     @Selector("setLargeTitleTextAttributes:")
     public native void setLargeTitleTextAttributes(NSDictionary<String, ?> value);
 
+    /**
+     * When set to YES, the navigation bar will use a larger out-of-line title view when requested by the current navigation item. To specify when the large out-of-line title view appears, see UINavigationItem.largeTitleDisplayMode. Defaults to NO.
+     */
     @Generated
     @Selector("setPrefersLargeTitles:")
     public native void setPrefersLargeTitles(boolean value);
+
+    /**
+     * Describes the appearance attributes for the navigation bar to use when it is displayed with its compact height. If not set, the standardAppearance will be used instead.
+     */
+    @Generated
+    @Selector("compactAppearance")
+    public native UINavigationBarAppearance compactAppearance();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    /**
+     * Describes the appearance attributes for the navigation bar to use when an associated UIScrollView has reached the edge abutting the bar (the top edge for the navigation bar). If not set, a modified standardAppearance will be used instead.
+     */
+    @Generated
+    @Selector("scrollEdgeAppearance")
+    public native UINavigationBarAppearance scrollEdgeAppearance();
+
+    /**
+     * Describes the appearance attributes for the navigation bar to use when it is displayed with its compact height. If not set, the standardAppearance will be used instead.
+     */
+    @Generated
+    @Selector("setCompactAppearance:")
+    public native void setCompactAppearance(UINavigationBarAppearance value);
+
+    /**
+     * Describes the appearance attributes for the navigation bar to use when an associated UIScrollView has reached the edge abutting the bar (the top edge for the navigation bar). If not set, a modified standardAppearance will be used instead.
+     */
+    @Generated
+    @Selector("setScrollEdgeAppearance:")
+    public native void setScrollEdgeAppearance(UINavigationBarAppearance value);
+
+    /**
+     * Describes the appearance attributes for the navigation bar to use when it is displayed with its standard height.
+     */
+    @Generated
+    @Selector("setStandardAppearance:")
+    public native void setStandardAppearance(UINavigationBarAppearance value);
+
+    /**
+     * Describes the appearance attributes for the navigation bar to use when it is displayed with its standard height.
+     */
+    @Generated
+    @Selector("standardAppearance")
+    public native UINavigationBarAppearance standardAppearance();
 }

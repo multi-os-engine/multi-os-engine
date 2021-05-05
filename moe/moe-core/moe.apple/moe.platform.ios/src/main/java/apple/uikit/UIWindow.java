@@ -24,6 +24,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -130,7 +131,7 @@ public class UIWindow extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -143,8 +144,8 @@ public class UIWindow extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -365,7 +366,7 @@ public class UIWindow extends UIView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -381,7 +382,8 @@ public class UIWindow extends UIView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -392,15 +394,24 @@ public class UIWindow extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * override point for subclass. Do not call directly
+     */
     @Generated
     @Selector("becomeKeyWindow")
     public native void becomeKeyWindow();
 
+    /**
+     * pass in nil to mean screen
+     */
     @Generated
     @Selector("convertPoint:fromWindow:")
     @ByValue
     public native CGPoint convertPointFromWindow(@ByValue CGPoint point, UIWindow window);
 
+    /**
+     * can be used to convert to another window
+     */
     @Generated
     @Selector("convertPoint:toWindow:")
     @ByValue
@@ -422,7 +433,7 @@ public class UIWindow extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIWindow initWithCoder(NSCoder aDecoder);
+    public native UIWindow initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -432,6 +443,9 @@ public class UIWindow extends UIView {
     @Selector("isKeyWindow")
     public native boolean isKeyWindow();
 
+    /**
+     * convenience. most apps call this to show the main window and also make it key. otherwise use view hidden property
+     */
     @Generated
     @Selector("makeKeyAndVisible")
     public native void makeKeyAndVisible();
@@ -440,36 +454,116 @@ public class UIWindow extends UIView {
     @Selector("makeKeyWindow")
     public native void makeKeyWindow();
 
+    /**
+     * override point for subclass. Do not call directly
+     */
     @Generated
     @Selector("resignKeyWindow")
     public native void resignKeyWindow();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("rootViewController")
     public native UIViewController rootViewController();
 
+    /**
+     * default is [UIScreen mainScreen]. changing the screen may be an expensive operation and should not be done in performance-sensitive code
+     */
     @Generated
     @Selector("screen")
     public native UIScreen screen();
 
+    /**
+     * called by UIApplication to dispatch events to views inside the window
+     */
     @Generated
     @Selector("sendEvent:")
     public native void sendEvent(UIEvent event);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setRootViewController:")
     public native void setRootViewController(UIViewController value);
 
     @Generated
     @Selector("setScreen:")
-    public native void setScreen(UIScreen value);
+    public native void setScreen(UIScreen screen);
 
+    /**
+     * default = 0.0
+     */
     @Generated
     @Selector("setWindowLevel:")
     public native void setWindowLevel(@NFloat double value);
 
+    /**
+     * default = 0.0
+     */
     @Generated
     @Selector("windowLevel")
     @NFloat
     public native double windowLevel();
+
+    /**
+     * Indicates whether content should drive the size of arbitrarily resizable windows (which are currently present only on macOS).
+     */
+    @Generated
+    @Selector("canResizeToFitContent")
+    public native boolean canResizeToFitContent();
+
+    /**
+     * instantiate a UIWindow already associated with a given UIWindowScene instance, with matching frame & interface orientations.
+     */
+    @Generated
+    @Selector("initWithWindowScene:")
+    public native UIWindow initWithWindowScene(UIWindowScene windowScene);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    /**
+     * Indicates whether content should drive the size of arbitrarily resizable windows (which are currently present only on macOS).
+     */
+    @Generated
+    @Selector("setCanResizeToFitContent:")
+    public native void setCanResizeToFitContent(boolean value);
+
+    /**
+     * If nil, window will not appear on any screen.
+     * changing the UIWindowScene may be an expensive operation and should not be done in performance-sensitive code
+     */
+    @Generated
+    @Selector("setWindowScene:")
+    public native void setWindowScene_unsafe(UIWindowScene value);
+
+    /**
+     * If nil, window will not appear on any screen.
+     * changing the UIWindowScene may be an expensive operation and should not be done in performance-sensitive code
+     */
+    @Generated
+    public void setWindowScene(UIWindowScene value) {
+        Object __old = windowScene();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setWindowScene_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * If nil, window will not appear on any screen.
+     * changing the UIWindowScene may be an expensive operation and should not be done in performance-sensitive code
+     */
+    @Generated
+    @Selector("windowScene")
+    public native UIWindowScene windowScene();
 }

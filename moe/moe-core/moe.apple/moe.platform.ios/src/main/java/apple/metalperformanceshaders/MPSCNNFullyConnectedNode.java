@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A MPSNNFilterNode representing a MPSCNNFullyConnected kernel
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -91,6 +94,15 @@ public class MPSCNNFullyConnectedNode extends MPSCNNConvolutionNode {
     @Selector("init")
     public native MPSCNNFullyConnectedNode init();
 
+    /**
+     * Init a node representing a MPSCNNFullyConnected kernel
+     * 
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                                     protocol. This object is provided by you to encapsulate storage for
+     *                                     convolution weights and biases.
+     * @return     A new MPSNNFilter node for a MPSCNNFullyConnected kernel.
+     */
     @Generated
     @Selector("initWithSource:weights:")
     public native MPSCNNFullyConnectedNode initWithSourceWeights(MPSNNImageNode sourceNode,
@@ -123,6 +135,15 @@ public class MPSCNNFullyConnectedNode extends MPSCNNConvolutionNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Init an autoreleased not representing a MPSCNNFullyConnected kernel
+     * 
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                                     protocol. This object is provided by you to encapsulate storage for
+     *                                     convolution weights and biases.
+     * @return     A new MPSNNFilter node for a MPSCNNConvolution kernel.
+     */
     @Generated
     @Selector("nodeWithSource:weights:")
     public static native MPSCNNFullyConnectedNode nodeWithSourceWeights(MPSNNImageNode sourceNode,

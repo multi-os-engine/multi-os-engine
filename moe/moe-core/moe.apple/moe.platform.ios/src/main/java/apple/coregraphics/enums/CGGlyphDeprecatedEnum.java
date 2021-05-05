@@ -18,6 +18,9 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Obsolete; don't use these.
+ */
 @Generated
 public final class CGGlyphDeprecatedEnum {
     @Generated public static final int Min = 0x00000000;

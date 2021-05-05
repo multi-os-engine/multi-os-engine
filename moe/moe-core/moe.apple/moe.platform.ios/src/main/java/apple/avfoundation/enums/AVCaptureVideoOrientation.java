@@ -19,6 +19,20 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] AVCaptureVideoOrientation
+ * 
+ *    Constants indicating video orientation, for use with AVCaptureVideoPreviewLayer (see AVCaptureVideoPreviewLayer.h) and AVCaptureConnection (see below).
+ * 
+ * [@constant] AVCaptureVideoOrientationPortrait
+ *    Indicates that video should be oriented vertically, home button on the bottom.
+ * [@constant] AVCaptureVideoOrientationPortraitUpsideDown
+ *    Indicates that video should be oriented vertically, home button on the top.
+ * [@constant] AVCaptureVideoOrientationLandscapeRight
+ *    Indicates that video should be oriented horizontally, home button on the right.
+ * [@constant] AVCaptureVideoOrientationLandscapeLeft
+ *    Indicates that video should be oriented horizontally, home button on the left.
+ */
 @Generated
 public final class AVCaptureVideoOrientation {
     @Generated @NInt public static final long Portrait = 0x0000000000000001L;

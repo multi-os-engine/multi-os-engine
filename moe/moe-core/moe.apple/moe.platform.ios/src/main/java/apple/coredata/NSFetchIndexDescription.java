@@ -7,6 +7,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSCopying;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -30,7 +31,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSFetchIndexDescription extends NSObject implements NSCoding {
+public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -84,13 +85,16 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Will throw if the new value is invalid (ie includes both rtree and non-rtree elements).
+     */
     @Generated
     @Selector("elements")
     public native NSArray<? extends NSFetchIndexElementDescription> elements();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("entity")
@@ -107,7 +111,7 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFetchIndexDescription initWithCoder(NSCoder aDecoder);
+    public native NSFetchIndexDescription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithName:elements:")
@@ -145,6 +149,9 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * If the index should be a partial index, specifies the predicate selecting rows for indexing
+     */
     @Generated
     @Selector("partialIndexPredicate")
     public native NSPredicate partialIndexPredicate();
@@ -157,6 +164,9 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Will throw if the new value is invalid (ie includes both rtree and non-rtree elements).
+     */
     @Generated
     @Selector("setElements:")
     public native void setElements(NSArray<? extends NSFetchIndexElementDescription> value);
@@ -165,6 +175,9 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding {
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * If the index should be a partial index, specifies the predicate selecting rows for indexing
+     */
     @Generated
     @Selector("setPartialIndexPredicate:")
     public native void setPartialIndexPredicate(NSPredicate value);
@@ -181,4 +194,10 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
 }

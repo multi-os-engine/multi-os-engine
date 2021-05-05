@@ -17,12 +17,16 @@ limitations under the License.
 package apple.c;
 
 import apple.NSObject;
+import apple.OS_os_workgroup;
+import apple.opaque.DNSRecordRef;
+import apple.opaque.DNSServiceRef;
 import apple.opaque.acl_entry_t;
 import apple.opaque.acl_flagset_t;
 import apple.opaque.acl_permset_t;
 import apple.opaque.acl_t;
 import apple.opaque.dispatch_source_type_t;
 import apple.opaque.filesec_t;
+import apple.opaque.os_workgroup_mpt_attr_t;
 import apple.struct.FILE;
 import apple.struct._RuneLocale;
 import apple.struct.__double2;
@@ -38,12 +42,17 @@ import apple.struct.fd_set;
 import apple.struct.imaxdiv_t;
 import apple.struct.in_addr;
 import apple.struct.iovec;
+import apple.struct.itimerval;
 import apple.struct.lconv;
 import apple.struct.ldiv_t;
 import apple.struct.lldiv_t;
+import apple.struct.mach_header;
 import apple.struct.mach_msg_header_t;
 import apple.struct.msghdr;
 import apple.struct.os_unfair_lock_s;
+import apple.struct.os_workgroup_attr_opaque_s;
+import apple.struct.os_workgroup_interval_data_opaque_s;
+import apple.struct.os_workgroup_join_token_opaque_s;
 import apple.struct.rlimit;
 import apple.struct.rusage;
 import apple.struct.sa_endpoints;
@@ -56,6 +65,7 @@ import apple.struct.sockaddr_storage;
 import apple.struct.stack_t;
 import apple.struct.timespec;
 import apple.struct.timeval;
+import apple.struct.timezone;
 import apple.struct.tm;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CFunction;
@@ -104,76 +114,130 @@ public final class Globals {
     private Globals() {
     }
 
+    /**
+     * Generic byte swapping functions.
+     */
     @Generated
     @Inline
     @CFunction
-    public static native char _OSSwapInt16(char data);
+    public static native char _OSSwapInt16(char _data);
 
     @Generated
     @Inline
     @CFunction
-    public static native int _OSSwapInt32(int data);
+    public static native int _OSSwapInt32(int _data);
 
     @Generated
     @Inline
     @CFunction
-    public static native long _OSSwapInt64(long data);
+    public static native long _OSSwapInt64(long _data);
 
     @Generated
     @Inline
     @CFunction
-    public static native char OSReadSwapInt16(ConstVoidPtr base, @NUInt long offset);
+    public static native char OSReadSwapInt16(ConstVoidPtr _base, @NUInt long _offset);
 
     @Generated
     @Inline
     @CFunction
-    public static native int OSReadSwapInt32(ConstVoidPtr base, @NUInt long offset);
+    public static native int OSReadSwapInt32(ConstVoidPtr _base, @NUInt long _offset);
 
     @Generated
     @Inline
     @CFunction
-    public static native long OSReadSwapInt64(ConstVoidPtr base, @NUInt long offset);
+    public static native long OSReadSwapInt64(ConstVoidPtr _base, @NUInt long _offset);
 
     @Generated
     @Inline
     @CFunction
-    public static native void OSWriteSwapInt16(VoidPtr base, @NUInt long offset, char data);
+    public static native void OSWriteSwapInt16(VoidPtr _base, @NUInt long _offset, char _data);
 
     @Generated
     @Inline
     @CFunction
-    public static native void OSWriteSwapInt32(VoidPtr base, @NUInt long offset, int data);
+    public static native void OSWriteSwapInt32(VoidPtr _base, @NUInt long _offset, int _data);
 
     @Generated
     @Inline
     @CFunction
-    public static native void OSWriteSwapInt64(VoidPtr base, @NUInt long offset, long data);
+    public static native void OSWriteSwapInt64(VoidPtr _base, @NUInt long _offset, long _data);
 
+    /**
+     * This inline avoids argument side-effect issues with FD_ISSET()
+     */
     @Generated
     @Inline
     @CFunction
-    public static native int __darwin_fd_isset(int _n,
+    public static native int __darwin_fd_isset(int _fd,
             @UncertainArgument("Options: reference, array Fallback: reference") fd_set _p);
 
+    /**
+     * Returns the name of the method specified by a given selector.
+     * 
+     * @param sel A pointer of type \c SEL. Pass the selector whose name you wish to determine.
+     * 
+     * @return A C string indicating the name of the selector.
+     */
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     public static native String sel_getName(SEL sel);
 
+    /**
+     * Registers a method with the Objective-C runtime system, maps the method
+     * name to a selector, and returns the selector value.
+     * 
+     * [@note] You must register a method name with the Objective-C runtime system to obtain the
+     *  method’s selector before you can add the method to a class definition. If the method name
+     *  has already been registered, this function simply returns the selector.
+     * 
+     * @param str A pointer to a C string. Pass the name of the method you wish to register.
+     * 
+     * @return A pointer of type SEL specifying the selector for the named method.
+     */
     @Generated
     @CFunction
     public static native SEL sel_registerName(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String str);
 
+    /**
+     * Returns the class name of a given object.
+     * 
+     * @param obj An Objective-C object.
+     * 
+     * @return The name of the class of which \e obj is an instance.
+     */
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     public static native String object_getClassName(@Mapped(ObjCObjectMapper.class) Object obj);
 
+    /**
+     * Identifies a selector as being valid or invalid.
+     * 
+     * [@warning] On some platforms, an invalid reference (to invalid memory addresses) can cause
+     *  a crash.
+     * 
+     * @param sel The selector you want to identify.
+     * 
+     * @return YES if selector is valid and has a function implementation, NO otherwise.
+     */
     @Generated
     @CFunction
     public static native boolean sel_isMapped(SEL sel);
 
+    /**
+     * Registers a method name with the Objective-C runtime system.
+     * 
+     * [@note] The implementation of this method is identical to the implementation of \c sel_registerName.
+     * [@note] Prior to OS X version 10.0, this method tried to find the selector mapped to the given name
+     *  and returned \c NULL if the selector was not found. This was changed for safety, because it was
+     *  observed that many of the callers of this function did not check the return value for \c NULL.
+     * 
+     * @param str A pointer to a C string. Pass the name of the method you wish to register.
+     * 
+     * @return A pointer of type SEL specifying the selector for the named method.
+     */
     @Generated
     @CFunction
     public static native SEL sel_getUid(
@@ -225,6 +289,9 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
             VoidPtr arg3, VoidPtr arg4, @NUInt long arg5, @NUInt long arg6);
 
+    /**
+     * POSIX.1-1990
+     */
     @Generated
     @CFunction
     public static native void _exit(int arg1);
@@ -546,6 +613,9 @@ public final class Globals {
     @CFunction
     public static native int setreuid(int arg1, int arg2);
 
+    /**
+     * SUS places swab() in unistd.h.  It is listed here for source compatibility
+     */
     @Generated
     @CFunction
     public static native void swab(ConstVoidPtr arg1, VoidPtr arg2, @NInt long arg3);
@@ -571,6 +641,9 @@ public final class Globals {
     @CFunction
     public static native int vfork();
 
+    /**
+     * End XSI
+     */
     @Generated
     @CFunction
     public static native int fsync(int arg1);
@@ -733,6 +806,9 @@ public final class Globals {
     @CFunction
     public static native int mkostemps(BytePtr path, int slen, int oflags);
 
+    /**
+     * Non-portable mkstemp that uses open_dprotected_np
+     */
     @Generated
     @CFunction
     public static native int mkstemp_dprotected_np(BytePtr path, int dpclass, int dpflags);
@@ -980,6 +1056,10 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1, int arg2,
             filesec_t arg3);
 
+    /**
+     * data-protected non-portable open(2) :
+     *  int open_dprotected_np(user_addr_t path, int flags, int class, int dpflags, int mode)
+     */
     @Generated
     @Variadic()
     @CFunction
@@ -1019,18 +1099,84 @@ public final class Globals {
     @CFunction
     public static native int filesec_unset_property(filesec_t arg1, int arg2);
 
+    /**
+     * [@function] os_retain
+     * 
+     * Increment the reference count of an os_object.
+     * 
+     * On a platform with the modern Objective-C runtime this is exactly equivalent
+     * to sending the object the -[retain] message.
+     * 
+     * @param object
+     * The object to retain.
+     * 
+     * @return
+     * The retained object.
+     */
     @Generated
     @CFunction
     public static native VoidPtr os_retain(VoidPtr object);
 
+    /**
+     * [@function] os_release
+     * 
+     * Decrement the reference count of a os_object.
+     * 
+     * On a platform with the modern Objective-C runtime this is exactly equivalent
+     * to sending the object the -[release] message.
+     * 
+     * @param object
+     * The object to release.
+     */
     @Generated
     @CFunction
     public static native void os_release(VoidPtr object);
 
+    /**
+     * [@function] dispatch_time
+     * 
+     * Create a dispatch_time_t relative to the current value of the default or
+     * wall time clock, or modify an existing dispatch_time_t.
+     * 
+     * On Apple platforms, the default clock is based on mach_absolute_time().
+     * 
+     * @param when
+     * An optional dispatch_time_t to add nanoseconds to. If DISPATCH_TIME_NOW is
+     * passed, then dispatch_time() will use the default clock (which is based on
+     * mach_absolute_time() on Apple platforms). If DISPATCH_WALLTIME_NOW is used,
+     * dispatch_time() will use the value returned by gettimeofday(3).
+     * dispatch_time(DISPATCH_WALLTIME_NOW, delta) is equivalent to
+     * dispatch_walltime(NULL, delta).
+     * 
+     * @param delta
+     * Nanoseconds to add.
+     * 
+     * @return
+     * A new dispatch_time_t.
+     */
     @Generated
     @CFunction
     public static native long dispatch_time(long when, long delta);
 
+    /**
+     * [@function] dispatch_walltime
+     * 
+     * Create a dispatch_time_t using the wall clock.
+     * 
+     * On Mac OS X the wall clock is based on gettimeofday(3).
+     * 
+     * @param when
+     * A struct timespec to add time to. If NULL is passed, then
+     * dispatch_walltime() will use the result of gettimeofday(3).
+     * dispatch_walltime(NULL, delta) returns the same value as
+     * dispatch_time(DISPATCH_WALLTIME_NOW, delta).
+     * 
+     * @param delta
+     * Nanoseconds to add.
+     * 
+     * @return
+     * A new dispatch_time_t.
+     */
     @Generated
     @CFunction
     public static native long dispatch_walltime(
@@ -1041,39 +1187,184 @@ public final class Globals {
     @CFunction
     public static native void _dispatch_object_validate(NSObject object);
 
+    /**
+     * [@function] dispatch_retain
+     * 
+     * Increment the reference count of a dispatch object.
+     * 
+     * Calls to dispatch_retain() must be balanced with calls to
+     * dispatch_release().
+     * 
+     * @param object
+     * The object to retain.
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_retain(NSObject object);
 
+    /**
+     * [@function] dispatch_release
+     * 
+     * Decrement the reference count of a dispatch object.
+     * 
+     * A dispatch object is asynchronously deallocated once all references are
+     * released (i.e. the reference count becomes zero). The system does not
+     * guarantee that a given client is the last or only reference to a given
+     * object.
+     * 
+     * @param object
+     * The object to release.
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_release(NSObject object);
 
+    /**
+     * [@function] dispatch_get_context
+     * 
+     * Returns the application defined context of the object.
+     * 
+     * @param object
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @return
+     * The context of the object; may be NULL.
+     */
     @Generated
     @CFunction
     public static native VoidPtr dispatch_get_context(NSObject object);
 
+    /**
+     * [@function] dispatch_set_context
+     * 
+     * Associates an application defined context with the object.
+     * 
+     * @param object
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param context
+     * The new client defined context for the object. This may be NULL.
+     */
     @Generated
     @CFunction
     public static native void dispatch_set_context(NSObject object, VoidPtr context);
 
+    /**
+     * [@function] dispatch_set_finalizer_f
+     * 
+     * Set the finalizer function for a dispatch object.
+     * 
+     * A dispatch object's finalizer will be invoked on the object's target queue
+     * after all references to the object have been released. This finalizer may be
+     * used by the application to release any resources associated with the object,
+     * such as freeing the object's context.
+     * The context parameter passed to the finalizer function is the current
+     * context of the dispatch object at the time the finalizer call is made.
+     * 
+     * @param object
+     * The dispatch object to modify.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param finalizer
+     * The finalizer function pointer.
+     */
     @Generated
     @CFunction
     public static native void dispatch_set_finalizer_f(NSObject object,
             @FunctionPtr(name = "call_dispatch_set_finalizer_f") Function_dispatch_set_finalizer_f finalizer);
 
+    /**
+     * [@function] dispatch_activate
+     * 
+     * Activates the specified dispatch object.
+     * 
+     * Dispatch objects such as queues and sources may be created in an inactive
+     * state. Objects in this state have to be activated before any blocks
+     * associated with them will be invoked.
+     * 
+     * The target queue of inactive objects can be changed using
+     * dispatch_set_target_queue(). Change of target queue is no longer permitted
+     * once an initially inactive object has been activated.
+     * 
+     * Calling dispatch_activate() on an active object has no effect.
+     * Releasing the last reference count on an inactive object is undefined.
+     * 
+     * @param object
+     * The object to be activated.
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_activate(NSObject object);
 
+    /**
+     * [@function] dispatch_suspend
+     * 
+     * Suspends the invocation of blocks on a dispatch object.
+     * 
+     * A suspended object will not invoke any blocks associated with it. The
+     * suspension of an object will occur after any running block associated with
+     * the object completes.
+     * 
+     * Calls to dispatch_suspend() must be balanced with calls
+     * to dispatch_resume().
+     * 
+     * @param object
+     * The object to be suspended.
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_suspend(NSObject object);
 
+    /**
+     * [@function] dispatch_resume
+     * 
+     * Resumes the invocation of blocks on a dispatch object.
+     * 
+     * Dispatch objects can be suspended with dispatch_suspend(), which increments
+     * an internal suspension count. dispatch_resume() is the inverse operation,
+     * and consumes suspension counts. When the last suspension count is consumed,
+     * blocks associated with the object will be invoked again.
+     * 
+     * For backward compatibility reasons, dispatch_resume() on an inactive and not
+     * otherwise suspended dispatch source object has the same effect as calling
+     * dispatch_activate(). For new code, using dispatch_activate() is preferred.
+     * 
+     * If the specified object has zero suspension count and is not an inactive
+     * source, this function will result in an assertion and the process being
+     * terminated.
+     * 
+     * @param object
+     * The object to be resumed.
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_resume(NSObject object);
 
+    /**
+     * [@function] dispatch_debug
+     * 
+     * Programmatically log debug information about a dispatch object.
+     * 
+     * Programmatically log debug information about a dispatch object. By default,
+     * the log output is sent to syslog at notice level. In the debug version of
+     * the library, the log output is sent to a file in /var/tmp.
+     * The log output destination can be configured via the LIBDISPATCH_LOG
+     * environment variable, valid values are: YES, NO, syslog, stderr, file.
+     * 
+     * This function is deprecated and will be removed in a future release.
+     * Objective-C callers may use -debugDescription instead.
+     * 
+     * @param object
+     * The object to introspect.
+     * 
+     * @param message
+     * The message to log above and beyond the introspection.
+     */
     @Generated
     @Variadic()
     @Deprecated
@@ -1089,10 +1380,34 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String message,
             BytePtr ap);
 
+    /**
+     * [@function] qos_class_self
+     * 
+     * Returns the requested QOS class of the current thread.
+     * 
+     * @return
+     * One of the QOS class values in qos_class_t.
+     */
     @Generated
     @CFunction
     public static native int qos_class_self();
 
+    /**
+     * [@function] qos_class_main
+     * 
+     * Returns the initial requested QOS class of the main thread.
+     * 
+     * The QOS class that the main thread of a process is created with depends on
+     * the type of process (e.g. application or daemon) and on how it has been
+     * launched.
+     * 
+     * This function returns that initial requested QOS class value chosen by the
+     * system to enable propagation of that classification to matching work not
+     * executing on the main thread.
+     * 
+     * @return
+     * One of the QOS class values in qos_class_t.
+     */
     @Generated
     @CFunction
     public static native int qos_class_main();
@@ -1102,6 +1417,28 @@ public final class Globals {
     public static native void dispatch_async(NSObject queue,
             @ObjCBlock(name = "call_dispatch_async") Block_dispatch_async block);
 
+    /**
+     * [@function] dispatch_async_f
+     * 
+     * Submits a function for asynchronous execution on a dispatch queue.
+     * 
+     * See dispatch_async() for details.
+     * 
+     * @param queue
+     * The target dispatch queue to which the function is submitted.
+     * The system will hold a reference on the target queue until the function
+     * has returned.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param context
+     * The application-defined context parameter to pass to the function.
+     * 
+     * @param work
+     * The application-defined function to invoke on the target queue. The first
+     * parameter passed to this function is the context provided to
+     * dispatch_async_f().
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_async_f(NSObject queue, VoidPtr context,
@@ -1112,6 +1449,26 @@ public final class Globals {
     public static native void dispatch_sync(NSObject queue,
             @ObjCBlock(name = "call_dispatch_sync") Block_dispatch_sync block);
 
+    /**
+     * [@function] dispatch_sync_f
+     * 
+     * Submits a function for synchronous execution on a dispatch queue.
+     * 
+     * See dispatch_sync() for details.
+     * 
+     * @param queue
+     * The target dispatch queue to which the function is submitted.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param context
+     * The application-defined context parameter to pass to the function.
+     * 
+     * @param work
+     * The application-defined function to invoke on the target queue. The first
+     * parameter passed to this function is the context provided to
+     * dispatch_sync_f().
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_sync_f(NSObject queue, VoidPtr context,
@@ -1122,64 +1479,494 @@ public final class Globals {
     public static native void dispatch_apply(@NUInt long iterations, NSObject queue,
             @ObjCBlock(name = "call_dispatch_apply") Block_dispatch_apply block);
 
+    /**
+     * [@function] dispatch_apply_f
+     * 
+     * Submits a function to a dispatch queue for parallel invocation.
+     * 
+     * See dispatch_apply() for details.
+     * 
+     * @param iterations
+     * The number of iterations to perform.
+     * 
+     * @param queue
+     * The dispatch queue to which the function is submitted.
+     * The preferred value to pass is DISPATCH_APPLY_AUTO to automatically use
+     * a queue appropriate for the calling thread.
+     * 
+     * @param context
+     * The application-defined context parameter to pass to the function.
+     * 
+     * @param work
+     * The application-defined function to invoke on the specified queue. The first
+     * parameter passed to this function is the context provided to
+     * dispatch_apply_f(). The second parameter passed to this function is the
+     * current index of iteration.
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_apply_f(@NUInt long iterations, NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_apply_f") Function_dispatch_apply_f work);
 
+    /**
+     * [@function] dispatch_get_current_queue
+     * 
+     * Returns the queue on which the currently executing block is running.
+     * 
+     * Returns the queue on which the currently executing block is running.
+     * 
+     * When dispatch_get_current_queue() is called outside of the context of a
+     * submitted block, it will return the default concurrent queue.
+     * 
+     * Recommended for debugging and logging purposes only:
+     * The code must not make any assumptions about the queue returned, unless it
+     * is one of the global queues or a queue the code has itself created.
+     * The code must not assume that synchronous execution onto a queue is safe
+     * from deadlock if that queue is not the one returned by
+     * dispatch_get_current_queue().
+     * 
+     * When dispatch_get_current_queue() is called on the main thread, it may
+     * or may not return the same value as dispatch_get_main_queue(). Comparing
+     * the two is not a valid way to test whether code is executing on the
+     * main thread (see dispatch_assert_queue() and dispatch_assert_queue_not()).
+     * 
+     * This function is deprecated and will be removed in a future release.
+     * 
+     * @return
+     * Returns the current queue.
+     */
     @Generated
     @Deprecated
     @CFunction
     public static native NSObject dispatch_get_current_queue();
 
+    /**
+     * [@function] dispatch_get_main_queue
+     * 
+     * Returns the default queue that is bound to the main thread.
+     * 
+     * In order to invoke blocks submitted to the main queue, the application must
+     * call dispatch_main(), NSApplicationMain(), or use a CFRunLoop on the main
+     * thread.
+     * 
+     * The main queue is meant to be used in application context to interact with
+     * the main thread and the main runloop.
+     * 
+     * Because the main queue doesn't behave entirely like a regular serial queue,
+     * it may have unwanted side-effects when used in processes that are not UI apps
+     * (daemons). For such processes, the main queue should be avoided.
+     * 
+     * @see dispatch_queue_main_t
+     * 
+     * @return
+     * Returns the main queue. This queue is created automatically on behalf of
+     * the main thread before main() is called.
+     */
     @Generated
     @Inline
     @CFunction
     public static native NSObject dispatch_get_main_queue();
 
+    /**
+     * [@function] dispatch_get_global_queue
+     * 
+     * Returns a well-known global concurrent queue of a given quality of service
+     * class.
+     * 
+     * See dispatch_queue_global_t.
+     * 
+     * @param identifier
+     * A quality of service class defined in qos_class_t or a priority defined in
+     * dispatch_queue_priority_t.
+     * 
+     * It is recommended to use quality of service class values to identify the
+     * well-known global concurrent queues:
+     *  - QOS_CLASS_USER_INTERACTIVE
+     *  - QOS_CLASS_USER_INITIATED
+     *  - QOS_CLASS_DEFAULT
+     *  - QOS_CLASS_UTILITY
+     *  - QOS_CLASS_BACKGROUND
+     * 
+     * The global concurrent queues may still be identified by their priority,
+     * which map to the following QOS classes:
+     *  - DISPATCH_QUEUE_PRIORITY_HIGH:         QOS_CLASS_USER_INITIATED
+     *  - DISPATCH_QUEUE_PRIORITY_DEFAULT:      QOS_CLASS_DEFAULT
+     *  - DISPATCH_QUEUE_PRIORITY_LOW:          QOS_CLASS_UTILITY
+     *  - DISPATCH_QUEUE_PRIORITY_BACKGROUND:   QOS_CLASS_BACKGROUND
+     * 
+     * @param flags
+     * Reserved for future use. Passing any value other than zero may result in
+     * a NULL return value.
+     * 
+     * @return
+     * Returns the requested global queue or NULL if the requested global queue
+     * does not exist.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_get_global_queue(@NInt long identifier, @NUInt long flags);
 
+    /**
+     * [@function] dispatch_queue_attr_make_initially_inactive
+     * 
+     * Returns an attribute value which may be provided to dispatch_queue_create()
+     * or dispatch_queue_create_with_target(), in order to make the created queue
+     * initially inactive.
+     * 
+     * Dispatch queues may be created in an inactive state. Queues in this state
+     * have to be activated before any blocks associated with them will be invoked.
+     * 
+     * A queue in inactive state cannot be deallocated, dispatch_activate() must be
+     * called before the last reference to a queue created with this attribute is
+     * released.
+     * 
+     * The target queue of a queue in inactive state can be changed using
+     * dispatch_set_target_queue(). Change of target queue is no longer permitted
+     * once an initially inactive queue has been activated.
+     * 
+     * @param attr
+     * A queue attribute value to be combined with the initially inactive attribute.
+     * 
+     * @return
+     * Returns an attribute value which may be provided to dispatch_queue_create()
+     * and dispatch_queue_create_with_target().
+     * The new value combines the attributes specified by the 'attr' parameter with
+     * the initially inactive attribute.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_queue_attr_make_initially_inactive(NSObject attr);
 
+    /**
+     * [@function] dispatch_queue_attr_make_with_autorelease_frequency
+     * 
+     * Returns a dispatch queue attribute value with the autorelease frequency
+     * set to the specified value.
+     * 
+     * When a queue uses the per-workitem autorelease frequency (either directly
+     * or inherithed from its target queue), any block submitted asynchronously to
+     * this queue (via dispatch_async(), dispatch_barrier_async(),
+     * dispatch_group_notify(), etc...) is executed as if surrounded by a individual
+     * Objective-C <code>@autoreleasepool</code> scope.
+     * 
+     * Autorelease frequency has no effect on blocks that are submitted
+     * synchronously to a queue (via dispatch_sync(), dispatch_barrier_sync()).
+     * 
+     * The global concurrent queues have the DISPATCH_AUTORELEASE_FREQUENCY_NEVER
+     * behavior. Manually created dispatch queues use
+     * DISPATCH_AUTORELEASE_FREQUENCY_INHERIT by default.
+     * 
+     * Queues created with this attribute cannot change target queues after having
+     * been activated. See dispatch_set_target_queue() and dispatch_activate().
+     * 
+     * @param attr
+     * A queue attribute value to be combined with the specified autorelease
+     * frequency or NULL.
+     * 
+     * @param frequency
+     * The requested autorelease frequency.
+     * 
+     * @return
+     * Returns an attribute value which may be provided to dispatch_queue_create()
+     * or NULL if an invalid autorelease frequency was requested.
+     * This new value combines the attributes specified by the 'attr' parameter and
+     * the chosen autorelease frequency.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_queue_attr_make_with_autorelease_frequency(NSObject attr,
             @NUInt long frequency);
 
+    /**
+     * [@function] dispatch_queue_attr_make_with_qos_class
+     * 
+     * Returns an attribute value which may be provided to dispatch_queue_create()
+     * or dispatch_queue_create_with_target(), in order to assign a QOS class and
+     * relative priority to the queue.
+     * 
+     * When specified in this manner, the QOS class and relative priority take
+     * precedence over those inherited from the dispatch queue's target queue (if
+     * any) as long that does not result in a lower QOS class and relative priority.
+     * 
+     * The global queue priorities map to the following QOS classes:
+     *  - DISPATCH_QUEUE_PRIORITY_HIGH:         QOS_CLASS_USER_INITIATED
+     *  - DISPATCH_QUEUE_PRIORITY_DEFAULT:      QOS_CLASS_DEFAULT
+     *  - DISPATCH_QUEUE_PRIORITY_LOW:          QOS_CLASS_UTILITY
+     *  - DISPATCH_QUEUE_PRIORITY_BACKGROUND:   QOS_CLASS_BACKGROUND
+     * 
+     * Example:
+     * <code>
+     * dispatch_queue_t queue;
+     * dispatch_queue_attr_t attr;
+     * attr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL,
+     * 		QOS_CLASS_UTILITY, 0);
+     * queue = dispatch_queue_create("com.example.myqueue", attr);
+     * </code>
+     * 
+     * The QOS class and relative priority set this way on a queue have no effect on
+     * blocks that are submitted synchronously to a queue (via dispatch_sync(),
+     * dispatch_barrier_sync()).
+     * 
+     * @param attr
+     * A queue attribute value to be combined with the QOS class, or NULL.
+     * 
+     * @param qos_class
+     * A QOS class value:
+     *  - QOS_CLASS_USER_INTERACTIVE
+     *  - QOS_CLASS_USER_INITIATED
+     *  - QOS_CLASS_DEFAULT
+     *  - QOS_CLASS_UTILITY
+     *  - QOS_CLASS_BACKGROUND
+     * Passing any other value results in NULL being returned.
+     * 
+     * @param relative_priority
+     * A relative priority within the QOS class. This value is a negative
+     * offset from the maximum supported scheduler priority for the given class.
+     * Passing a value greater than zero or less than QOS_MIN_RELATIVE_PRIORITY
+     * results in NULL being returned.
+     * 
+     * @return
+     * Returns an attribute value which may be provided to dispatch_queue_create()
+     * and dispatch_queue_create_with_target(), or NULL if an invalid QOS class was
+     * requested.
+     * The new value combines the attributes specified by the 'attr' parameter and
+     * the new QOS class and relative priority.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_queue_attr_make_with_qos_class(NSObject attr, int qos_class,
             int relative_priority);
 
+    /**
+     * [@function] dispatch_queue_create_with_target
+     * 
+     * Creates a new dispatch queue with a specified target queue.
+     * 
+     * Dispatch queues created with the DISPATCH_QUEUE_SERIAL or a NULL attribute
+     * invoke blocks serially in FIFO order.
+     * 
+     * Dispatch queues created with the DISPATCH_QUEUE_CONCURRENT attribute may
+     * invoke blocks concurrently (similarly to the global concurrent queues, but
+     * potentially with more overhead), and support barrier blocks submitted with
+     * the dispatch barrier API, which e.g. enables the implementation of efficient
+     * reader-writer schemes.
+     * 
+     * When a dispatch queue is no longer needed, it should be released with
+     * dispatch_release(). Note that any pending blocks submitted asynchronously to
+     * a queue will hold a reference to that queue. Therefore a queue will not be
+     * deallocated until all pending blocks have finished.
+     * 
+     * When using a dispatch queue attribute @a attr specifying a QoS class (derived
+     * from the result of dispatch_queue_attr_make_with_qos_class()), passing the
+     * result of dispatch_get_global_queue() in @a target will ignore the QoS class
+     * of that global queue and will use the global queue with the QoS class
+     * specified by attr instead.
+     * 
+     * Queues created with dispatch_queue_create_with_target() cannot have their
+     * target queue changed, unless created inactive (See
+     * dispatch_queue_attr_make_initially_inactive()), in which case the target
+     * queue can be changed until the newly created queue is activated with
+     * dispatch_activate().
+     * 
+     * @param label
+     * A string label to attach to the queue.
+     * This parameter is optional and may be NULL.
+     * 
+     * @param attr
+     * A predefined attribute such as DISPATCH_QUEUE_SERIAL,
+     * DISPATCH_QUEUE_CONCURRENT, or the result of a call to
+     * a dispatch_queue_attr_make_with_* function.
+     * 
+     * @param target
+     * The target queue for the newly created queue. The target queue is retained.
+     * If this parameter is DISPATCH_TARGET_QUEUE_DEFAULT, sets the queue's target
+     * queue to the default target queue for the given queue type.
+     * 
+     * @return
+     * The newly created dispatch queue.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_queue_create_with_target(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
             NSObject attr, NSObject target);
 
+    /**
+     * [@function] dispatch_queue_create
+     * 
+     * Creates a new dispatch queue to which blocks may be submitted.
+     * 
+     * Dispatch queues created with the DISPATCH_QUEUE_SERIAL or a NULL attribute
+     * invoke blocks serially in FIFO order.
+     * 
+     * Dispatch queues created with the DISPATCH_QUEUE_CONCURRENT attribute may
+     * invoke blocks concurrently (similarly to the global concurrent queues, but
+     * potentially with more overhead), and support barrier blocks submitted with
+     * the dispatch barrier API, which e.g. enables the implementation of efficient
+     * reader-writer schemes.
+     * 
+     * When a dispatch queue is no longer needed, it should be released with
+     * dispatch_release(). Note that any pending blocks submitted asynchronously to
+     * a queue will hold a reference to that queue. Therefore a queue will not be
+     * deallocated until all pending blocks have finished.
+     * 
+     * Passing the result of the dispatch_queue_attr_make_with_qos_class() function
+     * to the attr parameter of this function allows a quality of service class and
+     * relative priority to be specified for the newly created queue.
+     * The quality of service class so specified takes precedence over the quality
+     * of service class of the newly created dispatch queue's target queue (if any)
+     * as long that does not result in a lower QOS class and relative priority.
+     * 
+     * When no quality of service class is specified, the target queue of a newly
+     * created dispatch queue is the default priority global concurrent queue.
+     * 
+     * @param label
+     * A string label to attach to the queue.
+     * This parameter is optional and may be NULL.
+     * 
+     * @param attr
+     * A predefined attribute such as DISPATCH_QUEUE_SERIAL,
+     * DISPATCH_QUEUE_CONCURRENT, or the result of a call to
+     * a dispatch_queue_attr_make_with_* function.
+     * 
+     * @return
+     * The newly created dispatch queue.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_queue_create(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
             NSObject attr);
 
+    /**
+     * [@function] dispatch_queue_get_label
+     * 
+     * Returns the label of the given queue, as specified when the queue was
+     * created, or the empty string if a NULL label was specified.
+     * 
+     * Passing DISPATCH_CURRENT_QUEUE_LABEL will return the label of the current
+     * queue.
+     * 
+     * @param queue
+     * The queue to query, or DISPATCH_CURRENT_QUEUE_LABEL.
+     * 
+     * @return
+     * The label of the queue.
+     */
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     public static native String dispatch_queue_get_label(NSObject queue);
 
+    /**
+     * [@function] dispatch_queue_get_qos_class
+     * 
+     * Returns the QOS class and relative priority of the given queue.
+     * 
+     * If the given queue was created with an attribute value returned from
+     * dispatch_queue_attr_make_with_qos_class(), this function returns the QOS
+     * class and relative priority specified at that time; for any other attribute
+     * value it returns a QOS class of QOS_CLASS_UNSPECIFIED and a relative
+     * priority of 0.
+     * 
+     * If the given queue is one of the global queues, this function returns its
+     * assigned QOS class value as documented under dispatch_get_global_queue() and
+     * a relative priority of 0; in the case of the main queue it returns the QOS
+     * value provided by qos_class_main() and a relative priority of 0.
+     * 
+     * @param queue
+     * The queue to query.
+     * 
+     * @param relative_priority_ptr
+     * A pointer to an int variable to be filled with the relative priority offset
+     * within the QOS class, or NULL.
+     * 
+     * @return
+     * A QOS class value:
+     * - QOS_CLASS_USER_INTERACTIVE
+     * - QOS_CLASS_USER_INITIATED
+     * - QOS_CLASS_DEFAULT
+     * - QOS_CLASS_UTILITY
+     * - QOS_CLASS_BACKGROUND
+     * - QOS_CLASS_UNSPECIFIED
+     */
     @Generated
     @CFunction
     public static native int dispatch_queue_get_qos_class(NSObject queue, IntPtr relative_priority_ptr);
 
+    /**
+     * [@function] dispatch_set_target_queue
+     * 
+     * Sets the target queue for the given object.
+     * 
+     * An object's target queue is responsible for processing the object.
+     * 
+     * When no quality of service class and relative priority is specified for a
+     * dispatch queue at the time of creation, a dispatch queue's quality of service
+     * class is inherited from its target queue. The dispatch_get_global_queue()
+     * function may be used to obtain a target queue of a specific quality of
+     * service class, however the use of dispatch_queue_attr_make_with_qos_class()
+     * is recommended instead.
+     * 
+     * Blocks submitted to a serial queue whose target queue is another serial
+     * queue will not be invoked concurrently with blocks submitted to the target
+     * queue or to any other queue with that same target queue.
+     * 
+     * The result of introducing a cycle into the hierarchy of target queues is
+     * undefined.
+     * 
+     * A dispatch source's target queue specifies where its event handler and
+     * cancellation handler blocks will be submitted.
+     * 
+     * A dispatch I/O channel's target queue specifies where where its I/O
+     * operations are executed. If the channel's target queue's priority is set to
+     * DISPATCH_QUEUE_PRIORITY_BACKGROUND, then the I/O operations performed by
+     * dispatch_io_read() or dispatch_io_write() on that queue will be
+     * throttled when there is I/O contention.
+     * 
+     * For all other dispatch object types, the only function of the target queue
+     * is to determine where an object's finalizer function is invoked.
+     * 
+     * In general, changing the target queue of an object is an asynchronous
+     * operation that doesn't take effect immediately, and doesn't affect blocks
+     * already associated with the specified object.
+     * 
+     * However, if an object is inactive at the time dispatch_set_target_queue() is
+     * called, then the target queue change takes effect immediately, and will
+     * affect blocks already associated with the specified object. After an
+     * initially inactive object has been activated, calling
+     * dispatch_set_target_queue() results in an assertion and the process being
+     * terminated.
+     * 
+     * If a dispatch queue is active and targeted by other dispatch objects,
+     * changing its target queue results in undefined behavior.
+     * 
+     * @param object
+     * The object to modify.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param queue
+     * The new target queue for the object. The queue is retained, and the
+     * previous target queue, if any, is released.
+     * If queue is DISPATCH_TARGET_QUEUE_DEFAULT, set the object's target queue
+     * to the default target queue for the given object type.
+     */
     @Generated
     @CFunction
     public static native void dispatch_set_target_queue(NSObject object, NSObject queue);
 
+    /**
+     * [@function] dispatch_main
+     * 
+     * Execute blocks submitted to the main queue.
+     * 
+     * This function "parks" the main thread and waits for blocks to be submitted
+     * to the main queue. This function never returns.
+     * 
+     * Applications that call NSApplicationMain() or CFRunLoopRun() on the
+     * main thread do not need to call dispatch_main().
+     */
     @Generated
     @CFunction
     public static native void dispatch_main();
@@ -1189,6 +1976,29 @@ public final class Globals {
     public static native void dispatch_after(long when, NSObject queue,
             @ObjCBlock(name = "call_dispatch_after") Block_dispatch_after block);
 
+    /**
+     * [@function] dispatch_after_f
+     * 
+     * Schedule a function for execution on a given queue at a specified time.
+     * 
+     * See dispatch_after() for details.
+     * 
+     * @param when
+     * A temporal milestone returned by dispatch_time() or dispatch_walltime().
+     * 
+     * @param queue
+     * A queue to which the given function will be submitted at the specified time.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param context
+     * The application-defined context parameter to pass to the function.
+     * 
+     * @param work
+     * The application-defined function to invoke on the target queue. The first
+     * parameter passed to this function is the context provided to
+     * dispatch_after_f().
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_after_f(long when, NSObject queue, VoidPtr context,
@@ -1199,6 +2009,33 @@ public final class Globals {
     public static native void dispatch_barrier_async(NSObject queue,
             @ObjCBlock(name = "call_dispatch_barrier_async") Block_dispatch_barrier_async block);
 
+    /**
+     * [@function] dispatch_barrier_async_f
+     * 
+     * Submits a barrier function for asynchronous execution on a dispatch queue.
+     * 
+     * Submits a function to a dispatch queue like dispatch_async_f(), but marks
+     * that function as a barrier (relevant only on DISPATCH_QUEUE_CONCURRENT
+     * queues).
+     * 
+     * See dispatch_async_f() for details and "Dispatch Barrier API" for a
+     * description of the barrier semantics.
+     * 
+     * @param queue
+     * The target dispatch queue to which the function is submitted.
+     * The system will hold a reference on the target queue until the function
+     * has returned.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param context
+     * The application-defined context parameter to pass to the function.
+     * 
+     * @param work
+     * The application-defined function to invoke on the target queue. The first
+     * parameter passed to this function is the context provided to
+     * dispatch_barrier_async_f().
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_barrier_async_f(NSObject queue, VoidPtr context,
@@ -1209,42 +2046,315 @@ public final class Globals {
     public static native void dispatch_barrier_sync(NSObject queue,
             @ObjCBlock(name = "call_dispatch_barrier_sync") Block_dispatch_barrier_sync block);
 
+    /**
+     * [@function] dispatch_barrier_sync_f
+     * 
+     * Submits a barrier function for synchronous execution on a dispatch queue.
+     * 
+     * Submits a function to a dispatch queue like dispatch_sync_f(), but marks that
+     * fuction as a barrier (relevant only on DISPATCH_QUEUE_CONCURRENT queues).
+     * 
+     * See dispatch_sync_f() for details.
+     * 
+     * @param queue
+     * The target dispatch queue to which the function is submitted.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param context
+     * The application-defined context parameter to pass to the function.
+     * 
+     * @param work
+     * The application-defined function to invoke on the target queue. The first
+     * parameter passed to this function is the context provided to
+     * dispatch_barrier_sync_f().
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_barrier_sync_f(NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_barrier_sync_f") Function_dispatch_barrier_sync_f work);
 
+    /**
+     * [@function] dispatch_queue_set_specific
+     * 
+     * Associates a subsystem-specific context with a dispatch queue, for a key
+     * unique to the subsystem.
+     * 
+     * The specified destructor will be invoked with the context on the default
+     * priority global concurrent queue when a new context is set for the same key,
+     * or after all references to the queue have been released.
+     * 
+     * @param queue
+     * The dispatch queue to modify.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param key
+     * The key to set the context for, typically a pointer to a static variable
+     * specific to the subsystem. Keys are only compared as pointers and never
+     * dereferenced. Passing a string constant directly is not recommended.
+     * The NULL key is reserved and attempts to set a context for it are ignored.
+     * 
+     * @param context
+     * The new subsystem-specific context for the object. This may be NULL.
+     * 
+     * @param destructor
+     * The destructor function pointer. This may be NULL and is ignored if context
+     * is NULL.
+     */
     @Generated
     @CFunction
     public static native void dispatch_queue_set_specific(NSObject queue, ConstVoidPtr key, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_queue_set_specific") Function_dispatch_queue_set_specific destructor);
 
+    /**
+     * [@function] dispatch_queue_get_specific
+     * 
+     * Returns the subsystem-specific context associated with a dispatch queue, for
+     * a key unique to the subsystem.
+     * 
+     * Returns the context for the specified key if it has been set on the specified
+     * queue.
+     * 
+     * @param queue
+     * The dispatch queue to query.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param key
+     * The key to get the context for, typically a pointer to a static variable
+     * specific to the subsystem. Keys are only compared as pointers and never
+     * dereferenced. Passing a string constant directly is not recommended.
+     * 
+     * @return
+     * The context for the specified key or NULL if no context was found.
+     */
     @Generated
     @CFunction
     public static native VoidPtr dispatch_queue_get_specific(NSObject queue, ConstVoidPtr key);
 
+    /**
+     * [@function] dispatch_get_specific
+     * 
+     * Returns the current subsystem-specific context for a key unique to the
+     * subsystem.
+     * 
+     * When called from a block executing on a queue, returns the context for the
+     * specified key if it has been set on the queue, otherwise returns the result
+     * of dispatch_get_specific() executed on the queue's target queue or NULL
+     * if the current queue is a global concurrent queue.
+     * 
+     * @param key
+     * The key to get the context for, typically a pointer to a static variable
+     * specific to the subsystem. Keys are only compared as pointers and never
+     * dereferenced. Passing a string constant directly is not recommended.
+     * 
+     * @return
+     * The context for the specified key or NULL if no context was found.
+     */
     @Generated
     @CFunction
     public static native VoidPtr dispatch_get_specific(ConstVoidPtr key);
 
+    /**
+     * [@function] dispatch_assert_queue
+     * 
+     * Verifies that the current block is executing on a given dispatch queue.
+     * 
+     * Some code expects to be run on a specific dispatch queue. This function
+     * verifies that that expectation is true.
+     * 
+     * If the currently executing block was submitted to the specified queue or to
+     * any queue targeting it (see dispatch_set_target_queue()), this function
+     * returns.
+     * 
+     * If the currently executing block was submitted with a synchronous API
+     * (dispatch_sync(), dispatch_barrier_sync(), ...), the context of the
+     * submitting block is also evaluated (recursively).
+     * If a synchronously submitting block is found that was itself submitted to
+     * the specified queue or to any queue targeting it, this function returns.
+     * 
+     * Otherwise this function asserts: it logs an explanation to the system log and
+     * terminates the application.
+     * 
+     * Passing the result of dispatch_get_main_queue() to this function verifies
+     * that the current block was submitted to the main queue, or to a queue
+     * targeting it, or is running on the main thread (in any context).
+     * 
+     * When dispatch_assert_queue() is called outside of the context of a
+     * submitted block (for example from the context of a thread created manually
+     * with pthread_create()) then this function will also assert and terminate
+     * the application.
+     * 
+     * The variant dispatch_assert_queue_debug() is compiled out when the
+     * preprocessor macro NDEBUG is defined. (See also assert(3)).
+     * 
+     * @param queue
+     * The dispatch queue that the current block is expected to run on.
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_assert_queue(NSObject queue);
 
+    /**
+     * [@function] dispatch_assert_queue_barrier
+     * 
+     * Verifies that the current block is executing on a given dispatch queue,
+     * and that the block acts as a barrier on that queue.
+     * 
+     * This behaves exactly like dispatch_assert_queue(), with the additional check
+     * that the current block acts as a barrier on the specified queue, which is
+     * always true if the specified queue is serial (see DISPATCH_BLOCK_BARRIER or
+     * dispatch_barrier_async() for details).
+     * 
+     * The variant dispatch_assert_queue_barrier_debug() is compiled out when the
+     * preprocessor macro NDEBUG is defined. (See also assert()).
+     * 
+     * @param queue
+     * The dispatch queue that the current block is expected to run as a barrier on.
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_assert_queue_barrier(NSObject queue);
 
+    /**
+     * [@function] dispatch_assert_queue_not
+     * 
+     * Verifies that the current block is not executing on a given dispatch queue.
+     * 
+     * This function is the equivalent of dispatch_assert_queue() with the test for
+     * equality inverted. That means that it will terminate the application when
+     * dispatch_assert_queue() would return, and vice-versa. See discussion there.
+     * 
+     * The variant dispatch_assert_queue_not_debug() is compiled out when the
+     * preprocessor macro NDEBUG is defined. (See also assert(3)).
+     * 
+     * @param queue
+     * The dispatch queue that the current block is expected not to run on.
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_assert_queue_not(NSObject queue);
 
+    /**
+     * [@function] dispatch_block_create
+     * 
+     * Create a new dispatch block object on the heap from an existing block and
+     * the given flags.
+     * 
+     * The provided block is Block_copy'ed to the heap and retained by the newly
+     * created dispatch block object.
+     * 
+     * The returned dispatch block object is intended to be submitted to a dispatch
+     * queue with dispatch_async() and related functions, but may also be invoked
+     * directly. Both operations can be performed an arbitrary number of times but
+     * only the first completed execution of a dispatch block object can be waited
+     * on with dispatch_block_wait() or observed with dispatch_block_notify().
+     * 
+     * If the returned dispatch block object is submitted to a dispatch queue, the
+     * submitted block instance will be associated with the QOS class current at the
+     * time of submission, unless one of the following flags assigned a specific QOS
+     * class (or no QOS class) at the time of block creation:
+     *  - DISPATCH_BLOCK_ASSIGN_CURRENT
+     *  - DISPATCH_BLOCK_NO_QOS_CLASS
+     *  - DISPATCH_BLOCK_DETACHED
+     * The QOS class the block object will be executed with also depends on the QOS
+     * class assigned to the queue and which of the following flags was specified or
+     * defaulted to:
+     *  - DISPATCH_BLOCK_INHERIT_QOS_CLASS (default for asynchronous execution)
+     *  - DISPATCH_BLOCK_ENFORCE_QOS_CLASS (default for synchronous execution)
+     * See description of dispatch_block_flags_t for details.
+     * 
+     * If the returned dispatch block object is submitted directly to a serial queue
+     * and is configured to execute with a specific QOS class, the system will make
+     * a best effort to apply the necessary QOS overrides to ensure that blocks
+     * submitted earlier to the serial queue are executed at that same QOS class or
+     * higher.
+     * 
+     * @param flags
+     * Configuration flags for the block object.
+     * Passing a value that is not a bitwise OR of flags from dispatch_block_flags_t
+     * results in NULL being returned.
+     * 
+     * @param block
+     * The block to create the dispatch block object from.
+     * 
+     * @return
+     * The newly created dispatch block object, or NULL.
+     * When not building with Objective-C ARC, must be released with a -[release]
+     * message or the Block_release() function.
+     */
     @Generated
     @CFunction
     @ObjCBlock(name = "call_dispatch_block_create_ret")
     public static native Block_dispatch_block_create_ret dispatch_block_create(@NUInt long flags,
             @ObjCBlock(name = "call_dispatch_block_create") Block_dispatch_block_create block);
 
+    /**
+     * [@function] dispatch_block_create_with_qos_class
+     * 
+     * Create a new dispatch block object on the heap from an existing block and
+     * the given flags, and assign it the specified QOS class and relative priority.
+     * 
+     * The provided block is Block_copy'ed to the heap and retained by the newly
+     * created dispatch block object.
+     * 
+     * The returned dispatch block object is intended to be submitted to a dispatch
+     * queue with dispatch_async() and related functions, but may also be invoked
+     * directly. Both operations can be performed an arbitrary number of times but
+     * only the first completed execution of a dispatch block object can be waited
+     * on with dispatch_block_wait() or observed with dispatch_block_notify().
+     * 
+     * If invoked directly, the returned dispatch block object will be executed with
+     * the assigned QOS class as long as that does not result in a lower QOS class
+     * than what is current on the calling thread.
+     * 
+     * If the returned dispatch block object is submitted to a dispatch queue, the
+     * QOS class it will be executed with depends on the QOS class assigned to the
+     * block, the QOS class assigned to the queue and which of the following flags
+     * was specified or defaulted to:
+     *  - DISPATCH_BLOCK_INHERIT_QOS_CLASS: default for asynchronous execution
+     *  - DISPATCH_BLOCK_ENFORCE_QOS_CLASS: default for synchronous execution
+     * See description of dispatch_block_flags_t for details.
+     * 
+     * If the returned dispatch block object is submitted directly to a serial queue
+     * and is configured to execute with a specific QOS class, the system will make
+     * a best effort to apply the necessary QOS overrides to ensure that blocks
+     * submitted earlier to the serial queue are executed at that same QOS class or
+     * higher.
+     * 
+     * @param flags
+     * Configuration flags for the new block object.
+     * Passing a value that is not a bitwise OR of flags from dispatch_block_flags_t
+     * results in NULL being returned.
+     * 
+     * @param qos_class
+     * A QOS class value:
+     *  - QOS_CLASS_USER_INTERACTIVE
+     *  - QOS_CLASS_USER_INITIATED
+     *  - QOS_CLASS_DEFAULT
+     *  - QOS_CLASS_UTILITY
+     *  - QOS_CLASS_BACKGROUND
+     *  - QOS_CLASS_UNSPECIFIED
+     * Passing QOS_CLASS_UNSPECIFIED is equivalent to specifying the
+     * DISPATCH_BLOCK_NO_QOS_CLASS flag. Passing any other value results in NULL
+     * being returned.
+     * 
+     * @param relative_priority
+     * A relative priority within the QOS class. This value is a negative
+     * offset from the maximum supported scheduler priority for the given class.
+     * Passing a value greater than zero or less than QOS_MIN_RELATIVE_PRIORITY
+     * results in NULL being returned.
+     * 
+     * @param block
+     * The block to create the dispatch block object from.
+     * 
+     * @return
+     * The newly created dispatch block object, or NULL.
+     * When not building with Objective-C ARC, must be released with a -[release]
+     * message or the Block_release() function.
+     */
     @Generated
     @CFunction
     @ObjCBlock(name = "call_dispatch_block_create_with_qos_class_ret")
@@ -1252,34 +2362,187 @@ public final class Globals {
             @NUInt long flags, int qos_class, int relative_priority,
             @ObjCBlock(name = "call_dispatch_block_create_with_qos_class") Block_dispatch_block_create_with_qos_class block);
 
+    /**
+     * [@function] dispatch_block_perform
+     * 
+     * Create, synchronously execute and release a dispatch block object from the
+     * specified block and flags.
+     * 
+     * Behaves identically to the sequence
+     * <code>
+     * dispatch_block_t b = dispatch_block_create(flags, block);
+     * b();
+     * Block_release(b);
+     * </code>
+     * but may be implemented more efficiently internally by not requiring a copy
+     * to the heap of the specified block or the allocation of a new block object.
+     * 
+     * @param flags
+     * Configuration flags for the temporary block object.
+     * The result of passing a value that is not a bitwise OR of flags from
+     * dispatch_block_flags_t is undefined.
+     * 
+     * @param block
+     * The block to create the temporary block object from.
+     */
     @Generated
     @CFunction
     public static native void dispatch_block_perform(@NUInt long flags,
             @ObjCBlock(name = "call_dispatch_block_perform") Block_dispatch_block_perform block);
 
+    /**
+     * [@function] dispatch_block_wait
+     * 
+     * Wait synchronously until execution of the specified dispatch block object has
+     * completed or until the specified timeout has elapsed.
+     * 
+     * This function will return immediately if execution of the block object has
+     * already completed.
+     * 
+     * It is not possible to wait for multiple executions of the same block object
+     * with this interface; use dispatch_group_wait() for that purpose. A single
+     * dispatch block object may either be waited on once and executed once,
+     * or it may be executed any number of times. The behavior of any other
+     * combination is undefined. Submission to a dispatch queue counts as an
+     * execution, even if cancellation (dispatch_block_cancel) means the block's
+     * code never runs.
+     * 
+     * The result of calling this function from multiple threads simultaneously
+     * with the same dispatch block object is undefined, but note that doing so
+     * would violate the rules described in the previous paragraph.
+     * 
+     * If this function returns indicating that the specified timeout has elapsed,
+     * then that invocation does not count as the one allowed wait.
+     * 
+     * If at the time this function is called, the specified dispatch block object
+     * has been submitted directly to a serial queue, the system will make a best
+     * effort to apply the necessary QOS overrides to ensure that the block and any
+     * blocks submitted earlier to that serial queue are executed at the QOS class
+     * (or higher) of the thread calling dispatch_block_wait().
+     * 
+     * @param block
+     * The dispatch block object to wait on.
+     * The result of passing NULL or a block object not returned by one of the
+     * dispatch_block_create* functions is undefined.
+     * 
+     * @param timeout
+     * When to timeout (see dispatch_time). As a convenience, there are the
+     * DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
+     * 
+     * @return
+     * Returns zero on success (the dispatch block object completed within the
+     * specified timeout) or non-zero on error (i.e. timed out).
+     */
     @Generated
     @CFunction
     @NInt
     public static native long dispatch_block_wait(
             @ObjCBlock(name = "call_dispatch_block_wait") Block_dispatch_block_wait block, long timeout);
 
+    /**
+     * [@function] dispatch_block_notify
+     * 
+     * Schedule a notification block to be submitted to a queue when the execution
+     * of a specified dispatch block object has completed.
+     * 
+     * This function will submit the notification block immediately if execution of
+     * the observed block object has already completed.
+     * 
+     * It is not possible to be notified of multiple executions of the same block
+     * object with this interface, use dispatch_group_notify() for that purpose.
+     * 
+     * A single dispatch block object may either be observed one or more times
+     * and executed once, or it may be executed any number of times. The behavior
+     * of any other combination is undefined. Submission to a dispatch queue
+     * counts as an execution, even if cancellation (dispatch_block_cancel) means
+     * the block's code never runs.
+     * 
+     * If multiple notification blocks are scheduled for a single block object,
+     * there is no defined order in which the notification blocks will be submitted
+     * to their associated queues.
+     * 
+     * @param block
+     * The dispatch block object to observe.
+     * The result of passing NULL or a block object not returned by one of the
+     * dispatch_block_create* functions is undefined.
+     * 
+     * @param queue
+     * The queue to which the supplied notification block will be submitted when
+     * the observed block completes.
+     * 
+     * @param notification_block
+     * The notification block to submit when the observed block object completes.
+     */
     @Generated
     @CFunction
     public static native void dispatch_block_notify(
             @ObjCBlock(name = "call_dispatch_block_notify_0") Block_dispatch_block_notify_0 block, NSObject queue,
             @ObjCBlock(name = "call_dispatch_block_notify_2") Block_dispatch_block_notify_2 notification_block);
 
+    /**
+     * [@function] dispatch_block_cancel
+     * 
+     * Asynchronously cancel the specified dispatch block object.
+     * 
+     * Cancellation causes any future execution of the dispatch block object to
+     * return immediately, but does not affect any execution of the block object
+     * that is already in progress.
+     * 
+     * Release of any resources associated with the block object will be delayed
+     * until execution of the block object is next attempted (or any execution
+     * already in progress completes).
+     * 
+     * NOTE: care needs to be taken to ensure that a block object that may be
+     *       canceled does not capture any resources that require execution of the
+     *       block body in order to be released (e.g. memory allocated with
+     *       malloc(3) that the block body calls free(3) on). Such resources will
+     *       be leaked if the block body is never executed due to cancellation.
+     * 
+     * @param block
+     * The dispatch block object to cancel.
+     * The result of passing NULL or a block object not returned by one of the
+     * dispatch_block_create* functions is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_block_cancel(
             @ObjCBlock(name = "call_dispatch_block_cancel") Block_dispatch_block_cancel block);
 
+    /**
+     * [@function] dispatch_block_testcancel
+     * 
+     * Tests whether the given dispatch block object has been canceled.
+     * 
+     * @param block
+     * The dispatch block object to test.
+     * The result of passing NULL or a block object not returned by one of the
+     * dispatch_block_create* functions is undefined.
+     * 
+     * @return
+     * Non-zero if canceled and zero if not canceled.
+     */
     @Generated
     @CFunction
     @NInt
     public static native long dispatch_block_testcancel(
             @ObjCBlock(name = "call_dispatch_block_testcancel") Block_dispatch_block_testcancel block);
 
+    /**
+     * Routine:	mach_msg_overwrite
+     * Purpose:
+     * 	Send and/or receive a message.  If the message operation
+     * 	is interrupted, and the user did not request an indication
+     * 	of that fact, then restart the appropriate parts of the
+     * 	operation silently (trap version does not restart).
+     * 
+     * 	Distinct send and receive buffers may be specified.  If
+     * 	no separate receive buffer is specified, the msg parameter
+     * 	will be used for both send and receive operations.
+     * 
+     * 	In addition to a distinct receive buffer, that buffer may
+     * 	already contain scatter control information to direct the
+     * 	receiving of the message.
+     */
     @Generated
     @CFunction
     public static native int mach_msg_overwrite(
@@ -1288,21 +2551,81 @@ public final class Globals {
             @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t rcv_msg,
             int rcv_limit);
 
+    /**
+     * Routine:	mach_msg
+     * Purpose:
+     * 	Send and/or receive a message.  If the message operation
+     * 	is interrupted, and the user did not request an indication
+     * 	of that fact, then restart the appropriate parts of the
+     * 	operation silently (trap version does not restart).
+     */
     @Generated
     @CFunction
     public static native int mach_msg(
             @UncertainArgument("Options: reference, array Fallback: reference") mach_msg_header_t msg, int option,
             int send_size, int rcv_size, int rcv_name, int timeout, int notify_);
 
+    /**
+     * Routine:	mach_voucher_deallocate
+     * Purpose:
+     * 	Deallocate a mach voucher created or received in a message.  Drops
+     * 	one (send right) reference to the voucher.
+     */
     @Generated
     @CFunction
     public static native int mach_voucher_deallocate(int voucher);
 
+    /**
+     * For historical reasons; programs expect signal's return value to be
+     * defined by <sys/signal.h>.
+     */
     @Generated
     @CFunction
     @FunctionPtr(name = "call_signal_ret")
     public static native Function_signal_ret signal(int arg1, @FunctionPtr(name = "call_signal") Function_signal arg2);
 
+    /**
+     * [@function] dispatch_source_create
+     * 
+     * Creates a new dispatch source to monitor low-level system objects and auto-
+     * matically submit a handler block to a dispatch queue in response to events.
+     * 
+     * Dispatch sources are not reentrant. Any events received while the dispatch
+     * source is suspended or while the event handler block is currently executing
+     * will be coalesced and delivered after the dispatch source is resumed or the
+     * event handler block has returned.
+     * 
+     * Dispatch sources are created in an inactive state. After creating the
+     * source and setting any desired attributes (i.e. the handler, context, etc.),
+     * a call must be made to dispatch_activate() in order to begin event delivery.
+     * 
+     * Calling dispatch_set_target_queue() on a source once it has been activated
+     * is not allowed (see dispatch_activate() and dispatch_set_target_queue()).
+     * 
+     * For backward compatibility reasons, dispatch_resume() on an inactive,
+     * and not otherwise suspended source has the same effect as calling
+     * dispatch_activate(). For new code, using dispatch_activate() is preferred.
+     * 
+     * @param type
+     * Declares the type of the dispatch source. Must be one of the defined
+     * dispatch_source_type_t constants.
+     * 
+     * @param handle
+     * The underlying system handle to monitor. The interpretation of this argument
+     * is determined by the constant provided in the type parameter.
+     * 
+     * @param mask
+     * A mask of flags specifying which events are desired. The interpretation of
+     * this argument is determined by the constant provided in the type parameter.
+     * 
+     * @param queue
+     * The dispatch queue to which the event handler block will be submitted.
+     * If queue is DISPATCH_TARGET_QUEUE_DEFAULT, the source will submit the event
+     * handler block to the default priority global queue.
+     * 
+     * @return
+     * The newly created dispatch source. Or NULL if invalid arguments are passed.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_source_create(dispatch_source_type_t type, @NUInt long handle,
@@ -1313,6 +2636,20 @@ public final class Globals {
     public static native void dispatch_source_set_event_handler(NSObject source,
             @ObjCBlock(name = "call_dispatch_source_set_event_handler") Block_dispatch_source_set_event_handler handler);
 
+    /**
+     * [@function] dispatch_source_set_event_handler_f
+     * 
+     * Sets the event handler function for the given dispatch source.
+     * 
+     * @param source
+     * The dispatch source to modify.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param handler
+     * The event handler function to submit to the source's target queue.
+     * The context parameter passed to the event handler function is the context of
+     * the dispatch source current at the time the event handler was set.
+     */
     @Generated
     @CFunction
     public static native void dispatch_source_set_event_handler_f(NSObject source,
@@ -1323,39 +2660,229 @@ public final class Globals {
     public static native void dispatch_source_set_cancel_handler(NSObject source,
             @ObjCBlock(name = "call_dispatch_source_set_cancel_handler") Block_dispatch_source_set_cancel_handler handler);
 
+    /**
+     * [@function] dispatch_source_set_cancel_handler_f
+     * 
+     * Sets the cancellation handler function for the given dispatch source.
+     * 
+     * See dispatch_source_set_cancel_handler() for more details.
+     * 
+     * @param source
+     * The dispatch source to modify.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param handler
+     * The cancellation handler function to submit to the source's target queue.
+     * The context parameter passed to the event handler function is the current
+     * context of the dispatch source at the time the handler call is made.
+     */
     @Generated
     @CFunction
     public static native void dispatch_source_set_cancel_handler_f(NSObject source,
             @FunctionPtr(name = "call_dispatch_source_set_cancel_handler_f") Function_dispatch_source_set_cancel_handler_f handler);
 
+    /**
+     * [@function] dispatch_source_cancel
+     * 
+     * Asynchronously cancel the dispatch source, preventing any further invocation
+     * of its event handler block.
+     * 
+     * Cancellation prevents any further invocation of the event handler block for
+     * the specified dispatch source, but does not interrupt an event handler
+     * block that is already in progress.
+     * 
+     * The cancellation handler is submitted to the source's target queue once the
+     * the source's event handler has finished, indicating it is now safe to close
+     * the source's handle (i.e. file descriptor or mach port).
+     * 
+     * See dispatch_source_set_cancel_handler() for more information.
+     * 
+     * @param source
+     * The dispatch source to be canceled.
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_source_cancel(NSObject source);
 
+    /**
+     * [@function] dispatch_source_testcancel
+     * 
+     * Tests whether the given dispatch source has been canceled.
+     * 
+     * @param source
+     * The dispatch source to be tested.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @return
+     * Non-zero if canceled and zero if not canceled.
+     */
     @Generated
     @CFunction
     @NInt
     public static native long dispatch_source_testcancel(NSObject source);
 
+    /**
+     * [@function] dispatch_source_get_handle
+     * 
+     * Returns the underlying system handle associated with this dispatch source.
+     * 
+     * @param source
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @return
+     * The return value should be interpreted according to the type of the dispatch
+     * source, and may be one of the following handles:
+     * 
+     *  DISPATCH_SOURCE_TYPE_DATA_ADD:        n/a
+     *  DISPATCH_SOURCE_TYPE_DATA_OR:         n/a
+     *  DISPATCH_SOURCE_TYPE_DATA_REPLACE:    n/a
+     *  DISPATCH_SOURCE_TYPE_MACH_SEND:       mach port (mach_port_t)
+     *  DISPATCH_SOURCE_TYPE_MACH_RECV:       mach port (mach_port_t)
+     *  DISPATCH_SOURCE_TYPE_MEMORYPRESSURE   n/a
+     *  DISPATCH_SOURCE_TYPE_PROC:            process identifier (pid_t)
+     *  DISPATCH_SOURCE_TYPE_READ:            file descriptor (int)
+     *  DISPATCH_SOURCE_TYPE_SIGNAL:          signal number (int)
+     *  DISPATCH_SOURCE_TYPE_TIMER:           n/a
+     *  DISPATCH_SOURCE_TYPE_VNODE:           file descriptor (int)
+     *  DISPATCH_SOURCE_TYPE_WRITE:           file descriptor (int)
+     */
     @Generated
     @CFunction
     @NUInt
     public static native long dispatch_source_get_handle(NSObject source);
 
+    /**
+     * [@function] dispatch_source_get_mask
+     * 
+     * Returns the mask of events monitored by the dispatch source.
+     * 
+     * @param source
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @return
+     * The return value should be interpreted according to the type of the dispatch
+     * source, and may be one of the following flag sets:
+     * 
+     *  DISPATCH_SOURCE_TYPE_DATA_ADD:        n/a
+     *  DISPATCH_SOURCE_TYPE_DATA_OR:         n/a
+     *  DISPATCH_SOURCE_TYPE_DATA_REPLACE:    n/a
+     *  DISPATCH_SOURCE_TYPE_MACH_SEND:       dispatch_source_mach_send_flags_t
+     *  DISPATCH_SOURCE_TYPE_MACH_RECV:       dispatch_source_mach_recv_flags_t
+     *  DISPATCH_SOURCE_TYPE_MEMORYPRESSURE   dispatch_source_memorypressure_flags_t
+     *  DISPATCH_SOURCE_TYPE_PROC:            dispatch_source_proc_flags_t
+     *  DISPATCH_SOURCE_TYPE_READ:            n/a
+     *  DISPATCH_SOURCE_TYPE_SIGNAL:          n/a
+     *  DISPATCH_SOURCE_TYPE_TIMER:           dispatch_source_timer_flags_t
+     *  DISPATCH_SOURCE_TYPE_VNODE:           dispatch_source_vnode_flags_t
+     *  DISPATCH_SOURCE_TYPE_WRITE:           n/a
+     */
     @Generated
     @CFunction
     @NUInt
     public static native long dispatch_source_get_mask(NSObject source);
 
+    /**
+     * [@function] dispatch_source_get_data
+     * 
+     * Returns pending data for the dispatch source.
+     * 
+     * This function is intended to be called from within the event handler block.
+     * The result of calling this function outside of the event handler callback is
+     * undefined.
+     * 
+     * @param source
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @return
+     * The return value should be interpreted according to the type of the dispatch
+     * source, and may be one of the following:
+     * 
+     *  DISPATCH_SOURCE_TYPE_DATA_ADD:        application defined data
+     *  DISPATCH_SOURCE_TYPE_DATA_OR:         application defined data
+     *  DISPATCH_SOURCE_TYPE_DATA_REPLACE:    application defined data
+     *  DISPATCH_SOURCE_TYPE_MACH_SEND:       dispatch_source_mach_send_flags_t
+     *  DISPATCH_SOURCE_TYPE_MACH_RECV:       dispatch_source_mach_recv_flags_t
+     *  DISPATCH_SOURCE_TYPE_MEMORYPRESSURE   dispatch_source_memorypressure_flags_t
+     *  DISPATCH_SOURCE_TYPE_PROC:            dispatch_source_proc_flags_t
+     *  DISPATCH_SOURCE_TYPE_READ:            estimated bytes available to read
+     *  DISPATCH_SOURCE_TYPE_SIGNAL:          number of signals delivered since
+     *                                            the last handler invocation
+     *  DISPATCH_SOURCE_TYPE_TIMER:           number of times the timer has fired
+     *                                            since the last handler invocation
+     *  DISPATCH_SOURCE_TYPE_VNODE:           dispatch_source_vnode_flags_t
+     *  DISPATCH_SOURCE_TYPE_WRITE:           estimated buffer space available
+     */
     @Generated
     @CFunction
     @NUInt
     public static native long dispatch_source_get_data(NSObject source);
 
+    /**
+     * [@function] dispatch_source_merge_data
+     * 
+     * Merges data into a dispatch source of type DISPATCH_SOURCE_TYPE_DATA_ADD,
+     * DISPATCH_SOURCE_TYPE_DATA_OR or DISPATCH_SOURCE_TYPE_DATA_REPLACE,
+     * and submits its event handler block to its target queue.
+     * 
+     * @param source
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param value
+     * The value to coalesce with the pending data using a logical OR or an ADD
+     * as specified by the dispatch source type. A value of zero has no effect
+     * and will not result in the submission of the event handler block.
+     */
     @Generated
     @CFunction
     public static native void dispatch_source_merge_data(NSObject source, @NUInt long value);
 
+    /**
+     * [@function] dispatch_source_set_timer
+     * 
+     * Sets a start time, interval, and leeway value for a timer source.
+     * 
+     * Once this function returns, any pending source data accumulated for the
+     * previous timer values has been cleared; the next fire of the timer will
+     * occur at 'start', and every 'interval' nanoseconds thereafter until the
+     * timer source is canceled.
+     * 
+     * Any fire of the timer may be delayed by the system in order to improve power
+     * consumption and system performance. The upper limit to the allowable delay
+     * may be configured with the 'leeway' argument, the lower limit is under the
+     * control of the system.
+     * 
+     * For the initial timer fire at 'start', the upper limit to the allowable
+     * delay is set to 'leeway' nanoseconds. For the subsequent timer fires at
+     * 'start' + N * 'interval', the upper limit is MIN('leeway','interval'/2).
+     * 
+     * The lower limit to the allowable delay may vary with process state such as
+     * visibility of application UI. If the specified timer source was created with
+     * a mask of DISPATCH_TIMER_STRICT, the system will make a best effort to
+     * strictly observe the provided 'leeway' value even if it is smaller than the
+     * current lower limit. Note that a minimal amount of delay is to be expected
+     * even if this flag is specified.
+     * 
+     * The 'start' argument also determines which clock will be used for the timer:
+     * If 'start' is DISPATCH_TIME_NOW or was created with dispatch_time(3), the
+     * timer is based on up time (which is obtained from mach_absolute_time() on
+     * Apple platforms). If 'start' was created with dispatch_walltime(3), the
+     * timer is based on gettimeofday(3).
+     * 
+     * Calling this function has no effect if the timer source has already been
+     * canceled.
+     * 
+     * @param start
+     * The start time of the timer. See dispatch_time() and dispatch_walltime()
+     * for more information.
+     * 
+     * @param interval
+     * The nanosecond interval for the timer. Use DISPATCH_TIME_FOREVER for a
+     * one-shot timer.
+     * 
+     * @param leeway
+     * The nanosecond leeway for the timer.
+     */
     @Generated
     @CFunction
     public static native void dispatch_source_set_timer(NSObject source, long start, long interval, long leeway);
@@ -1365,11 +2892,39 @@ public final class Globals {
     public static native void dispatch_source_set_registration_handler(NSObject source,
             @ObjCBlock(name = "call_dispatch_source_set_registration_handler") Block_dispatch_source_set_registration_handler handler);
 
+    /**
+     * [@function] dispatch_source_set_registration_handler_f
+     * 
+     * Sets the registration handler function for the given dispatch source.
+     * 
+     * See dispatch_source_set_registration_handler() for more details.
+     * 
+     * @param source
+     * The dispatch source to modify.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param handler
+     * The registration handler function to submit to the source's target queue.
+     * The context parameter passed to the registration handler function is the
+     * current context of the dispatch source at the time the handler call is made.
+     */
     @Generated
     @CFunction
     public static native void dispatch_source_set_registration_handler_f(NSObject source,
             @FunctionPtr(name = "call_dispatch_source_set_registration_handler_f") Function_dispatch_source_set_registration_handler_f handler);
 
+    /**
+     * [@function] dispatch_group_create
+     * 
+     * Creates new group with which blocks may be associated.
+     * 
+     * This function creates a new group with which blocks may be associated.
+     * The dispatch group may be used to wait for the completion of the blocks it
+     * references. The group object memory is freed with dispatch_release().
+     * 
+     * @return
+     * The newly created group, or NULL on failure.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_group_create();
@@ -1379,11 +2934,67 @@ public final class Globals {
     public static native void dispatch_group_async(NSObject group, NSObject queue,
             @ObjCBlock(name = "call_dispatch_group_async") Block_dispatch_group_async block);
 
+    /**
+     * [@function] dispatch_group_async_f
+     * 
+     * Submits a function to a dispatch queue and associates the block with the
+     * given dispatch group.
+     * 
+     * See dispatch_group_async() for details.
+     * 
+     * @param group
+     * A dispatch group to associate with the submitted function.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param queue
+     * The dispatch queue to which the function will be submitted for asynchronous
+     * invocation.
+     * 
+     * @param context
+     * The application-defined context parameter to pass to the function.
+     * 
+     * @param work
+     * The application-defined function to invoke on the target queue. The first
+     * parameter passed to this function is the context provided to
+     * dispatch_group_async_f().
+     */
     @Generated
     @CFunction
     public static native void dispatch_group_async_f(NSObject group, NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_group_async_f") Function_dispatch_group_async_f work);
 
+    /**
+     * [@function] dispatch_group_wait
+     * 
+     * Wait synchronously until all the blocks associated with a group have
+     * completed or until the specified timeout has elapsed.
+     * 
+     * This function waits for the completion of the blocks associated with the
+     * given dispatch group, and returns after all blocks have completed or when
+     * the specified timeout has elapsed.
+     * 
+     * This function will return immediately if there are no blocks associated
+     * with the dispatch group (i.e. the group is empty).
+     * 
+     * The result of calling this function from multiple threads simultaneously
+     * with the same dispatch group is undefined.
+     * 
+     * After the successful return of this function, the dispatch group is empty.
+     * It may either be released with dispatch_release() or re-used for additional
+     * blocks. See dispatch_group_async() for more information.
+     * 
+     * @param group
+     * The dispatch group to wait on.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param timeout
+     * When to timeout (see dispatch_time). As a convenience, there are the
+     * DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
+     * 
+     * @return
+     * Returns zero on success (all blocks associated with the group completed
+     * within the specified timeout) or non-zero on error (i.e. timed out).
+     */
     @Generated
     @CFunction
     @NInt
@@ -1394,28 +3005,123 @@ public final class Globals {
     public static native void dispatch_group_notify(NSObject group, NSObject queue,
             @ObjCBlock(name = "call_dispatch_group_notify") Block_dispatch_group_notify block);
 
+    /**
+     * [@function] dispatch_group_notify_f
+     * 
+     * Schedule a function to be submitted to a queue when all the blocks
+     * associated with a group have completed.
+     * 
+     * See dispatch_group_notify() for details.
+     * 
+     * @param group
+     * The dispatch group to observe.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param context
+     * The application-defined context parameter to pass to the function.
+     * 
+     * @param work
+     * The application-defined function to invoke on the target queue. The first
+     * parameter passed to this function is the context provided to
+     * dispatch_group_notify_f().
+     */
     @Generated
     @CFunction
     public static native void dispatch_group_notify_f(NSObject group, NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_group_notify_f") Function_dispatch_group_notify_f work);
 
+    /**
+     * [@function] dispatch_group_enter
+     * 
+     * Manually indicate a block has entered the group
+     * 
+     * Calling this function indicates another block has joined the group through
+     * a means other than dispatch_group_async(). Calls to this function must be
+     * balanced with dispatch_group_leave().
+     * 
+     * @param group
+     * The dispatch group to update.
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_group_enter(NSObject group);
 
+    /**
+     * [@function] dispatch_group_leave
+     * 
+     * Manually indicate a block in the group has completed
+     * 
+     * Calling this function indicates block has completed and left the dispatch
+     * group by a means other than dispatch_group_async().
+     * 
+     * @param group
+     * The dispatch group to update.
+     * The result of passing NULL in this parameter is undefined.
+     */
     @Generated
     @CFunction
     public static native void dispatch_group_leave(NSObject group);
 
+    /**
+     * [@function] dispatch_semaphore_create
+     * 
+     * Creates new counting semaphore with an initial value.
+     * 
+     * Passing zero for the value is useful for when two threads need to reconcile
+     * the completion of a particular event. Passing a value greater than zero is
+     * useful for managing a finite pool of resources, where the pool size is equal
+     * to the value.
+     * 
+     * @param value
+     * The starting value for the semaphore. Passing a value less than zero will
+     * cause NULL to be returned.
+     * 
+     * @return
+     * The newly created semaphore, or NULL on failure.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_semaphore_create(@NInt long value);
 
+    /**
+     * [@function] dispatch_semaphore_wait
+     * 
+     * Wait (decrement) for a semaphore.
+     * 
+     * Decrement the counting semaphore. If the resulting value is less than zero,
+     * this function waits for a signal to occur before returning.
+     * 
+     * @param dsema
+     * The semaphore. The result of passing NULL in this parameter is undefined.
+     * 
+     * @param timeout
+     * When to timeout (see dispatch_time). As a convenience, there are the
+     * DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
+     * 
+     * @return
+     * Returns zero on success, or non-zero if the timeout occurred.
+     */
     @Generated
     @CFunction
     @NInt
     public static native long dispatch_semaphore_wait(NSObject dsema, long timeout);
 
+    /**
+     * [@function] dispatch_semaphore_signal
+     * 
+     * Signal (increment) a semaphore.
+     * 
+     * Increment the counting semaphore. If the previous value was less than zero,
+     * this function wakes a waiting thread before returning.
+     * 
+     * @param dsema The counting semaphore.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @return
+     * This function returns non-zero if a thread is woken. Otherwise, zero is
+     * returned.
+     */
     @Generated
     @CFunction
     @NInt
@@ -1443,53 +3149,287 @@ public final class Globals {
     public static native void _dispatch_once_f(NIntPtr predicate, VoidPtr context,
             @FunctionPtr(name = "call__dispatch_once_f") Function__dispatch_once_f function);
 
+    /**
+     * [@function] dispatch_data_create
+     * Creates a dispatch data object from the given contiguous buffer of memory. If
+     * a non-default destructor is provided, ownership of the buffer remains with
+     * the caller (i.e. the bytes will not be copied). The last release of the data
+     * object will result in the invocation of the specified destructor on the
+     * specified queue to free the buffer.
+     * 
+     * If the DISPATCH_DATA_DESTRUCTOR_FREE destructor is provided the buffer will
+     * be freed via free(3) and the queue argument ignored.
+     * 
+     * If the DISPATCH_DATA_DESTRUCTOR_DEFAULT destructor is provided, data object
+     * creation will copy the buffer into internal memory managed by the system.
+     * 
+     * @param buffer	A contiguous buffer of data.
+     * @param size		The size of the contiguous buffer of data.
+     * @param queue		The queue to which the destructor should be submitted.
+     * @param destructor	The destructor responsible for freeing the data when it
+     * 		is no longer needed.
+     * @return		A newly created dispatch data object.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_data_create(ConstVoidPtr buffer, @NUInt long size, NSObject queue,
             @ObjCBlock(name = "call_dispatch_data_create") Block_dispatch_data_create destructor);
 
+    /**
+     * [@function] dispatch_data_get_size
+     * Returns the logical size of the memory region(s) represented by the specified
+     * dispatch data object.
+     * 
+     * @param data	The dispatch data object to query.
+     * @return	The number of bytes represented by the data object.
+     */
     @Generated
     @CFunction
     @NUInt
     public static native long dispatch_data_get_size(NSObject data);
 
+    /**
+     * [@function] dispatch_data_create_map
+     * Maps the memory represented by the specified dispatch data object as a single
+     * contiguous memory region and returns a new data object representing it.
+     * If non-NULL references to a pointer and a size variable are provided, they
+     * are filled with the location and extent of that region. These allow direct
+     * read access to the represented memory, but are only valid until the returned
+     * object is released. Under ARC, if that object is held in a variable with
+     * automatic storage, care needs to be taken to ensure that it is not released
+     * by the compiler before memory access via the pointer has been completed.
+     * 
+     * @param data		The dispatch data object to map.
+     * @param buffer_ptr	A pointer to a pointer variable to be filled with the
+     * 		location of the mapped contiguous memory region, or
+     * 		NULL.
+     * @param size_ptr	A pointer to a size_t variable to be filled with the
+     * 		size of the mapped contiguous memory region, or NULL.
+     * @return		A newly created dispatch data object.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_data_create_map(NSObject data, Ptr<ConstVoidPtr> buffer_ptr,
             NUIntPtr size_ptr);
 
+    /**
+     * [@function] dispatch_data_create_concat
+     * Returns a new dispatch data object representing the concatenation of the
+     * specified data objects. Those objects may be released by the application
+     * after the call returns (however, the system might not deallocate the memory
+     * region(s) described by them until the newly created object has also been
+     * released).
+     * 
+     * @param data1	The data object representing the region(s) of memory to place
+     * 	at the beginning of the newly created object.
+     * @param data2	The data object representing the region(s) of memory to place
+     * 	at the end of the newly created object.
+     * @return	A newly created object representing the concatenation of the
+     * 	data1 and data2 objects.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_data_create_concat(NSObject data1, NSObject data2);
 
+    /**
+     * [@function] dispatch_data_create_subrange
+     * Returns a new dispatch data object representing a subrange of the specified
+     * data object, which may be released by the application after the call returns
+     * (however, the system might not deallocate the memory region(s) described by
+     * that object until the newly created object has also been released).
+     * 
+     * @param data		The data object representing the region(s) of memory to
+     * 		create a subrange of.
+     * @param offset	The offset into the data object where the subrange
+     * 		starts.
+     * @param length	The length of the range.
+     * @return		A newly created object representing the specified
+     * 		subrange of the data object.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_data_create_subrange(NSObject data, @NUInt long offset, @NUInt long length);
 
+    /**
+     * [@function] dispatch_data_apply
+     * Traverse the memory regions represented by the specified dispatch data object
+     * in logical order and invoke the specified block once for every contiguous
+     * memory region encountered.
+     * 
+     * Each invocation of the block is passed a data object representing the current
+     * region and its logical offset, along with the memory location and extent of
+     * the region. These allow direct read access to the memory region, but are only
+     * valid until the passed-in region object is released. Note that the region
+     * object is released by the system when the block returns, it is the
+     * responsibility of the application to retain it if the region object or the
+     * associated memory location are needed after the block returns.
+     * 
+     * @param data		The data object to traverse.
+     * @param applier	The block to be invoked for every contiguous memory
+     * 		region in the data object.
+     * @return		A Boolean indicating whether traversal completed
+     * 		successfully.
+     */
     @Generated
     @CFunction
     public static native boolean dispatch_data_apply(NSObject data,
             @ObjCBlock(name = "call_dispatch_data_apply") Block_dispatch_data_apply applier);
 
+    /**
+     * [@function] dispatch_data_copy_region
+     * Finds the contiguous memory region containing the specified location among
+     * the regions represented by the specified object and returns a copy of the
+     * internal dispatch data object representing that region along with its logical
+     * offset in the specified object.
+     * 
+     * @param data		The dispatch data object to query.
+     * @param location	The logical position in the data object to query.
+     * @param offset_ptr	A pointer to a size_t variable to be filled with the
+     * 		logical offset of the returned region object to the
+     * 		start of the queried data object.
+     * @return		A newly created dispatch data object.
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_data_copy_region(NSObject data, @NUInt long location, NUIntPtr offset_ptr);
 
+    /**
+     * [@function] dispatch_read
+     * Schedule a read operation for asynchronous execution on the specified file
+     * descriptor. The specified handler is enqueued with the data read from the
+     * file descriptor when the operation has completed or an error occurs.
+     * 
+     * The data object passed to the handler will be automatically released by the
+     * system when the handler returns. It is the responsibility of the application
+     * to retain, concatenate or copy the data object if it is needed after the
+     * handler returns.
+     * 
+     * The data object passed to the handler will only contain as much data as is
+     * currently available from the file descriptor (up to the specified length).
+     * 
+     * If an unrecoverable error occurs on the file descriptor, the handler will be
+     * enqueued with the appropriate error code along with a data object of any data
+     * that could be read successfully.
+     * 
+     * An invocation of the handler with an error code of zero and an empty data
+     * object indicates that EOF was reached.
+     * 
+     * The system takes control of the file descriptor until the handler is
+     * enqueued, and during this time file descriptor flags such as O_NONBLOCK will
+     * be modified by the system on behalf of the application. It is an error for
+     * the application to modify a file descriptor directly while it is under the
+     * control of the system, but it may create additional dispatch I/O convenience
+     * operations or dispatch I/O channels associated with that file descriptor.
+     * 
+     * @param fd		The file descriptor from which to read the data.
+     * @param length	The length of data to read from the file descriptor,
+     * 		or SIZE_MAX to indicate that all of the data currently
+     * 		available from the file descriptor should be read.
+     * @param queue		The dispatch queue to which the handler should be
+     * 		submitted.
+     * @param handler	The handler to enqueue when data is ready to be
+     * 		delivered.
+     * 	param data	The data read from the file descriptor.
+     * 	param error	An errno condition for the read operation or
+     * 			zero if the read was successful.
+     */
     @Generated
     @CFunction
     public static native void dispatch_read(int fd, @NUInt long length, NSObject queue,
             @ObjCBlock(name = "call_dispatch_read") Block_dispatch_read handler);
 
+    /**
+     * [@function] dispatch_write
+     * Schedule a write operation for asynchronous execution on the specified file
+     * descriptor. The specified handler is enqueued when the operation has
+     * completed or an error occurs.
+     * 
+     * If an unrecoverable error occurs on the file descriptor, the handler will be
+     * enqueued with the appropriate error code along with the data that could not
+     * be successfully written.
+     * 
+     * An invocation of the handler with an error code of zero indicates that the
+     * data was fully written to the channel.
+     * 
+     * The system takes control of the file descriptor until the handler is
+     * enqueued, and during this time file descriptor flags such as O_NONBLOCK will
+     * be modified by the system on behalf of the application. It is an error for
+     * the application to modify a file descriptor directly while it is under the
+     * control of the system, but it may create additional dispatch I/O convenience
+     * operations or dispatch I/O channels associated with that file descriptor.
+     * 
+     * @param fd		The file descriptor to which to write the data.
+     * @param data		The data object to write to the file descriptor.
+     * @param queue		The dispatch queue to which the handler should be
+     * 		submitted.
+     * @param handler	The handler to enqueue when the data has been written.
+     * 	param data	The data that could not be written to the I/O
+     * 			channel, or NULL.
+     * 	param error	An errno condition for the write operation or
+     * 			zero if the write was successful.
+     */
     @Generated
     @CFunction
     public static native void dispatch_write(int fd, NSObject data, NSObject queue,
             @ObjCBlock(name = "call_dispatch_write") Block_dispatch_write handler);
 
+    /**
+     * [@function] dispatch_io_create
+     * Create a dispatch I/O channel associated with a file descriptor. The system
+     * takes control of the file descriptor until the channel is closed, an error
+     * occurs on the file descriptor or all references to the channel are released.
+     * At that time the specified cleanup handler will be enqueued and control over
+     * the file descriptor relinquished.
+     * 
+     * While a file descriptor is under the control of a dispatch I/O channel, file
+     * descriptor flags such as O_NONBLOCK will be modified by the system on behalf
+     * of the application. It is an error for the application to modify a file
+     * descriptor directly while it is under the control of a dispatch I/O channel,
+     * but it may create additional channels associated with that file descriptor.
+     * 
+     * @param type	The desired type of I/O channel (DISPATCH_IO_STREAM
+     * 	or DISPATCH_IO_RANDOM).
+     * @param fd	The file descriptor to associate with the I/O channel.
+     * @param queue	The dispatch queue to which the handler should be submitted.
+     * @param cleanup_handler	The handler to enqueue when the system
+     * 			relinquishes control over the file descriptor.
+     * param error		An errno condition if control is relinquished
+     * 			because channel creation failed, zero otherwise.
+     * @return	The newly created dispatch I/O channel or NULL if an error
+     * 	occurred (invalid type specified).
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_io_create(@NUInt long type, int fd, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_create") Block_dispatch_io_create cleanup_handler);
 
+    /**
+     * [@function] dispatch_io_create_with_path
+     * Create a dispatch I/O channel associated with a path name. The specified
+     * path, oflag and mode parameters will be passed to open(2) when the first I/O
+     * operation on the channel is ready to execute and the resulting file
+     * descriptor will remain open and under the control of the system until the
+     * channel is closed, an error occurs on the file descriptor or all references
+     * to the channel are released. At that time the file descriptor will be closed
+     * and the specified cleanup handler will be enqueued.
+     * 
+     * @param type	The desired type of I/O channel (DISPATCH_IO_STREAM
+     * 	or DISPATCH_IO_RANDOM).
+     * @param path	The absolute path to associate with the I/O channel.
+     * @param oflag	The flags to pass to open(2) when opening the file at
+     * 	path.
+     * @param mode	The mode to pass to open(2) when creating the file at
+     * 	path (i.e. with flag O_CREAT), zero otherwise.
+     * @param queue	The dispatch queue to which the handler should be
+     * 	submitted.
+     * @param cleanup_handler	The handler to enqueue when the system
+     * 			has closed the file at path.
+     * param error		An errno condition if control is relinquished
+     * 			because channel creation or opening of the
+     * 			specified file failed, zero otherwise.
+     * @return	The newly created dispatch I/O channel or NULL if an error
+     * 	occurred (invalid type or non-absolute path specified).
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_io_create_with_path(@NUInt long type,
@@ -1497,42 +3437,274 @@ public final class Globals {
             char mode, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_create_with_path") Block_dispatch_io_create_with_path cleanup_handler);
 
+    /**
+     * [@function] dispatch_io_create_with_io
+     * Create a new dispatch I/O channel from an existing dispatch I/O channel.
+     * The new channel inherits the file descriptor or path name associated with
+     * the existing channel, but not its channel type or policies.
+     * 
+     * If the existing channel is associated with a file descriptor, control by the
+     * system over that file descriptor is extended until the new channel is also
+     * closed, an error occurs on the file descriptor, or all references to both
+     * channels are released. At that time the specified cleanup handler will be
+     * enqueued and control over the file descriptor relinquished.
+     * 
+     * While a file descriptor is under the control of a dispatch I/O channel, file
+     * descriptor flags such as O_NONBLOCK will be modified by the system on behalf
+     * of the application. It is an error for the application to modify a file
+     * descriptor directly while it is under the control of a dispatch I/O channel,
+     * but it may create additional channels associated with that file descriptor.
+     * 
+     * @param type	The desired type of I/O channel (DISPATCH_IO_STREAM
+     * 	or DISPATCH_IO_RANDOM).
+     * @param io	The existing channel to create the new I/O channel from.
+     * @param queue	The dispatch queue to which the handler should be submitted.
+     * @param cleanup_handler	The handler to enqueue when the system
+     * 			relinquishes control over the file descriptor
+     * 			(resp. closes the file at path) associated with
+     * 			the existing channel.
+     * param error		An errno condition if control is relinquished
+     * 			because channel creation failed, zero otherwise.
+     * @return	The newly created dispatch I/O channel or NULL if an error
+     * 	occurred (invalid type specified).
+     */
     @Generated
     @CFunction
     public static native NSObject dispatch_io_create_with_io(@NUInt long type, NSObject io, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_create_with_io") Block_dispatch_io_create_with_io cleanup_handler);
 
+    /**
+     * [@function] dispatch_io_read
+     * Schedule a read operation for asynchronous execution on the specified I/O
+     * channel. The I/O handler is enqueued one or more times depending on the
+     * general load of the system and the policy specified on the I/O channel.
+     * 
+     * Any data read from the channel is described by the dispatch data object
+     * passed to the I/O handler. This object will be automatically released by the
+     * system when the I/O handler returns. It is the responsibility of the
+     * application to retain, concatenate or copy the data object if it is needed
+     * after the I/O handler returns.
+     * 
+     * Dispatch I/O handlers are not reentrant. The system will ensure that no new
+     * I/O handler instance is invoked until the previously enqueued handler block
+     * has returned.
+     * 
+     * An invocation of the I/O handler with the done flag set indicates that the
+     * read operation is complete and that the handler will not be enqueued again.
+     * 
+     * If an unrecoverable error occurs on the I/O channel's underlying file
+     * descriptor, the I/O handler will be enqueued with the done flag set, the
+     * appropriate error code and a NULL data object.
+     * 
+     * An invocation of the I/O handler with the done flag set, an error code of
+     * zero and an empty data object indicates that EOF was reached.
+     * 
+     * @param channel	The dispatch I/O channel from which to read the data.
+     * @param offset	The offset relative to the channel position from which
+     * 		to start reading (only for DISPATCH_IO_RANDOM).
+     * @param length	The length of data to read from the I/O channel, or
+     * 		SIZE_MAX to indicate that data should be read until EOF
+     * 		is reached.
+     * @param queue		The dispatch queue to which the I/O handler should be
+     * 		submitted.
+     * @param io_handler	The I/O handler to enqueue when data is ready to be
+     * 		delivered.
+     * param done	A flag indicating whether the operation is complete.
+     * param data	An object with the data most recently read from the
+     * 		I/O channel as part of this read operation, or NULL.
+     * param error	An errno condition for the read operation or zero if
+     * 		the read was successful.
+     */
     @Generated
     @CFunction
     public static native void dispatch_io_read(NSObject channel, long offset, @NUInt long length, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_read") Block_dispatch_io_read io_handler);
 
+    /**
+     * [@function] dispatch_io_write
+     * Schedule a write operation for asynchronous execution on the specified I/O
+     * channel. The I/O handler is enqueued one or more times depending on the
+     * general load of the system and the policy specified on the I/O channel.
+     * 
+     * Any data remaining to be written to the I/O channel is described by the
+     * dispatch data object passed to the I/O handler. This object will be
+     * automatically released by the system when the I/O handler returns. It is the
+     * responsibility of the application to retain, concatenate or copy the data
+     * object if it is needed after the I/O handler returns.
+     * 
+     * Dispatch I/O handlers are not reentrant. The system will ensure that no new
+     * I/O handler instance is invoked until the previously enqueued handler block
+     * has returned.
+     * 
+     * An invocation of the I/O handler with the done flag set indicates that the
+     * write operation is complete and that the handler will not be enqueued again.
+     * 
+     * If an unrecoverable error occurs on the I/O channel's underlying file
+     * descriptor, the I/O handler will be enqueued with the done flag set, the
+     * appropriate error code and an object containing the data that could not be
+     * written.
+     * 
+     * An invocation of the I/O handler with the done flag set and an error code of
+     * zero indicates that the data was fully written to the channel.
+     * 
+     * @param channel	The dispatch I/O channel on which to write the data.
+     * @param offset	The offset relative to the channel position from which
+     * 		to start writing (only for DISPATCH_IO_RANDOM).
+     * @param data		The data to write to the I/O channel. The data object
+     * 		will be retained by the system until the write operation
+     * 		is complete.
+     * @param queue		The dispatch queue to which the I/O handler should be
+     * 		submitted.
+     * @param io_handler	The I/O handler to enqueue when data has been delivered.
+     * param done	A flag indicating whether the operation is complete.
+     * param data	An object of the data remaining to be
+     * 		written to the I/O channel as part of this write
+     * 		operation, or NULL.
+     * param error	An errno condition for the write operation or zero
+     * 		if the write was successful.
+     */
     @Generated
     @CFunction
     public static native void dispatch_io_write(NSObject channel, long offset, NSObject data, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_write") Block_dispatch_io_write io_handler);
 
+    /**
+     * [@function] dispatch_io_close
+     * Close the specified I/O channel to new read or write operations; scheduling
+     * operations on a closed channel results in their handler returning an error.
+     * 
+     * If the DISPATCH_IO_STOP flag is provided, the system will make a best effort
+     * to interrupt any outstanding read and write operations on the I/O channel,
+     * otherwise those operations will run to completion normally.
+     * Partial results of read and write operations may be returned even after a
+     * channel is closed with the DISPATCH_IO_STOP flag.
+     * The final invocation of an I/O handler of an interrupted operation will be
+     * passed an ECANCELED error code, as will the I/O handler of an operation
+     * scheduled on a closed channel.
+     * 
+     * @param channel	The dispatch I/O channel to close.
+     * @param flags		The flags for the close operation.
+     */
     @Generated
     @CFunction
     public static native void dispatch_io_close(NSObject channel, @NUInt long flags);
 
+    /**
+     * [@function] dispatch_io_barrier
+     * Schedule a barrier operation on the specified I/O channel; all previously
+     * scheduled operations on the channel will complete before the provided
+     * barrier block is enqueued onto the global queue determined by the channel's
+     * target queue, and no subsequently scheduled operations will start until the
+     * barrier block has returned.
+     * 
+     * If multiple channels are associated with the same file descriptor, a barrier
+     * operation scheduled on any of these channels will act as a barrier across all
+     * channels in question, i.e. all previously scheduled operations on any of the
+     * channels will complete before the barrier block is enqueued, and no
+     * operations subsequently scheduled on any of the channels will start until the
+     * barrier block has returned.
+     * 
+     * While the barrier block is running, it may safely operate on the channel's
+     * underlying file descriptor with fsync(2), lseek(2) etc. (but not close(2)).
+     * 
+     * @param channel	The dispatch I/O channel to schedule the barrier on.
+     * @param barrier	The barrier block.
+     */
     @Generated
     @CFunction
     public static native void dispatch_io_barrier(NSObject channel,
             @ObjCBlock(name = "call_dispatch_io_barrier") Block_dispatch_io_barrier barrier);
 
+    /**
+     * [@function] dispatch_io_get_descriptor
+     * Returns the file descriptor underlying a dispatch I/O channel.
+     * 
+     * Will return -1 for a channel closed with dispatch_io_close() and for a
+     * channel associated with a path name that has not yet been open(2)ed.
+     * 
+     * If called from a barrier block scheduled on a channel associated with a path
+     * name that has not yet been open(2)ed, this will trigger the channel open(2)
+     * operation and return the resulting file descriptor.
+     * 
+     * @param channel	The dispatch I/O channel to query.
+     * @return		The file descriptor underlying the channel, or -1.
+     */
     @Generated
     @CFunction
     public static native int dispatch_io_get_descriptor(NSObject channel);
 
+    /**
+     * [@function] dispatch_io_set_high_water
+     * Set a high water mark on the I/O channel for all operations.
+     * 
+     * The system will make a best effort to enqueue I/O handlers with partial
+     * results as soon the number of bytes processed by an operation (i.e. read or
+     * written) reaches the high water mark.
+     * 
+     * The size of data objects passed to I/O handlers for this channel will never
+     * exceed the specified high water mark.
+     * 
+     * The default value for the high water mark is unlimited (i.e. SIZE_MAX).
+     * 
+     * @param channel	The dispatch I/O channel on which to set the policy.
+     * @param high_water	The number of bytes to use as a high water mark.
+     */
     @Generated
     @CFunction
     public static native void dispatch_io_set_high_water(NSObject channel, @NUInt long high_water);
 
+    /**
+     * [@function] dispatch_io_set_low_water
+     * Set a low water mark on the I/O channel for all operations.
+     * 
+     * The system will process (i.e. read or write) at least the low water mark
+     * number of bytes for an operation before enqueueing I/O handlers with partial
+     * results.
+     * 
+     * The size of data objects passed to intermediate I/O handler invocations for
+     * this channel (i.e. excluding the final invocation) will never be smaller than
+     * the specified low water mark, except if the channel has an interval with the
+     * DISPATCH_IO_STRICT_INTERVAL flag set or if EOF or an error was encountered.
+     * 
+     * I/O handlers should be prepared to receive amounts of data significantly
+     * larger than the low water mark in general. If an I/O handler requires
+     * intermediate results of fixed size, set both the low and and the high water
+     * mark to that size.
+     * 
+     * The default value for the low water mark is unspecified, but must be assumed
+     * to be such that intermediate handler invocations may occur.
+     * If I/O handler invocations with partial results are not desired, set the
+     * low water mark to SIZE_MAX.
+     * 
+     * @param channel	The dispatch I/O channel on which to set the policy.
+     * @param low_water	The number of bytes to use as a low water mark.
+     */
     @Generated
     @CFunction
     public static native void dispatch_io_set_low_water(NSObject channel, @NUInt long low_water);
 
+    /**
+     * [@function] dispatch_io_set_interval
+     * Set a nanosecond interval at which I/O handlers are to be enqueued on the
+     * I/O channel for all operations.
+     * 
+     * This allows an application to receive periodic feedback on the progress of
+     * read and write operations, e.g. for the purposes of displaying progress bars.
+     * 
+     * If the amount of data ready to be delivered to an I/O handler at the interval
+     * is inferior to the channel low water mark, the handler will only be enqueued
+     * if the DISPATCH_IO_STRICT_INTERVAL flag is set.
+     * 
+     * Note that the system may defer enqueueing interval I/O handlers by a small
+     * unspecified amount of leeway in order to align with other system activity for
+     * improved system performance or power consumption.
+     * 
+     * @param channel	The dispatch I/O channel on which to set the policy.
+     * @param interval	The interval in nanoseconds at which delivery of the I/O
+     * 				handler is desired.
+     * @param flags		Flags indicating desired data delivery behavior at
+     * 				interval time.
+     */
     @Generated
     @CFunction
     public static native void dispatch_io_set_interval(NSObject channel, long interval, @NUInt long flags);
@@ -1599,6 +3771,12 @@ public final class Globals {
     @CFunction
     public static native int __inline_signbitd(double arg1);
 
+    /**
+     *                                                                             *
+     *                               Math Functions                                *
+     *                                                                             *
+     * ****************************************************************************
+     */
     @Generated
     @CFunction
     public static native float acosf(float arg1);
@@ -1871,6 +4049,11 @@ public final class Globals {
     @CFunction
     public static native double erfc(double arg1);
 
+    /**
+     * lgammaf, lgamma, and lgammal are not thread-safe. The thread-safe
+     * variants lgammaf_r, lgamma_r, and lgammal_r are made available if
+     * you define the _REENTRANT symbol before including <math.h>                
+     */
     @Generated
     @CFunction
     public static native float lgammaf(float arg1);
@@ -2053,6 +4236,9 @@ public final class Globals {
     @CFunction
     public static native double fma(double arg1, double arg2, double arg3);
 
+    /**
+     * __exp10(x) returns 10**x.  Edge cases match those of exp( ) and exp2( ).
+     */
     @Generated
     @CFunction
     public static native float __exp10f(float arg1);
@@ -2061,6 +4247,12 @@ public final class Globals {
     @CFunction
     public static native double __exp10(double arg1);
 
+    /**
+     * __sincos(x,sinp,cosp) computes the sine and cosine of x with a single
+     * function call, storing the sine in the memory pointed to by sinp, and
+     * the cosine in the memory pointed to by cosp. Edge cases match those of
+     * separate calls to sin( ) and cos( ).                                      
+     */
     @Generated
     @Inline
     @CFunction
@@ -2071,6 +4263,15 @@ public final class Globals {
     @CFunction
     public static native void __sincos(double __x, DoublePtr __sinp, DoublePtr __cosp);
 
+    /**
+     * __sinpi(x) returns the sine of pi times x; __cospi(x) and __tanpi(x) return
+     * the cosine and tangent, respectively.  These functions can produce a more
+     * accurate answer than expressions of the form sin(M_PI * x) because they
+     * avoid any loss of precision that results from rounding the result of the
+     * multiplication M_PI * x.  They may also be significantly more efficient in
+     * some cases because the argument reduction for these functions is easier
+     * to compute.  Consult the man pages for edge case details.                 
+     */
     @Generated
     @CFunction
     public static native float __cospif(float arg1);
@@ -2095,6 +4296,17 @@ public final class Globals {
     @CFunction
     public static native double __tanpi(double arg1);
 
+    /**
+     * __sincospi(x,sinp,cosp) computes the sine and cosine of pi times x with a
+     * single function call, storing the sine in the memory pointed to by sinp,
+     * and the cosine in the memory pointed to by cosp.  Edge cases match those
+     * of separate calls to __sinpi( ) and __cospi( ), and are documented in the
+     * man pages.
+     * 
+     * These functions were introduced in OSX 10.9 and iOS 7.0.  Because they are
+     * implemented as header inlines, weak-linking does not function as normal,
+     * and they are simply hidden when targeting earlier OS versions.            
+     */
     @Generated
     @Inline
     @CFunction
@@ -2153,18 +4365,32 @@ public final class Globals {
     @CFunction
     public static native double scalb(double arg1, double arg2);
 
+    /**
+     * Create a heap based copy of a Block or simply add a reference to an existing one.
+     * This must be paired with Block_release to recover memory, even when running
+     * under Objective-C Garbage Collection.
+     */
     @Generated
     @CFunction
     public static native VoidPtr _Block_copy(ConstVoidPtr aBlock);
 
+    /**
+     * Lose the reference, and if heap based and last reference, recover the memory
+     */
     @Generated
     @CFunction
     public static native void _Block_release(ConstVoidPtr aBlock);
 
+    /**
+     * Used by the compiler. Do not call this function yourself.
+     */
     @Generated
     @CFunction
     public static native void _Block_object_assign(VoidPtr arg1, ConstVoidPtr arg2, int arg3);
 
+    /**
+     * Used by the compiler. Do not call this function yourself.
+     */
     @Generated
     @CFunction
     public static native void _Block_object_dispose(ConstVoidPtr arg1, int arg2);
@@ -2176,6 +4402,9 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2, int arg3,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4);
 
+    /**
+     * See comments in <machine/_type.h> about __darwin_ct_rune_t.
+     */
     @Generated
     @CFunction
     @NUInt
@@ -2241,6 +4470,9 @@ public final class Globals {
     @CFunction
     public static native int iscntrl(int _c);
 
+    /**
+     * ANSI -- locale independent
+     */
     @Generated
     @Inline
     @CFunction
@@ -2276,6 +4508,9 @@ public final class Globals {
     @CFunction
     public static native int isupper(int _c);
 
+    /**
+     * ANSI -- locale independent
+     */
     @Generated
     @Inline
     @CFunction
@@ -2500,6 +4735,9 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2, int arg3,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4, int arg5);
 
+    /**
+     * ANSI-C
+     */
     @Generated
     @CFunction
     public static native void clearerr(@UncertainArgument("Options: reference, array Fallback: reference") FILE arg1);
@@ -2740,6 +4978,9 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
 
+    /**
+     * Functions internal to the implementation.
+     */
     @Generated
     @CFunction
     public static native int __srget(@UncertainArgument("Options: reference, array Fallback: reference") FILE arg1);
@@ -2924,6 +5165,9 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2, int arg3);
 
+    /**
+     * Stdio function-access interface.
+     */
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
@@ -3057,6 +5301,9 @@ public final class Globals {
     @CFunction
     public static native VoidPtr calloc(@NUInt long __count, @NUInt long __size);
 
+    /**
+     * calloc is now declared in _malloc.h
+     */
     @Generated
     @CFunction
     @ByValue
@@ -3070,6 +5317,9 @@ public final class Globals {
     @CFunction
     public static native void free(VoidPtr arg1);
 
+    /**
+     * free is now declared in _malloc.h
+     */
     @Generated
     @CFunction
     public static native BytePtr getenv(
@@ -3098,6 +5348,9 @@ public final class Globals {
     @CFunction
     public static native VoidPtr malloc(@NUInt long __size);
 
+    /**
+     * malloc is now declared in _malloc.h
+     */
     @Generated
     @CFunction
     public static native int mblen(
@@ -3121,6 +5374,9 @@ public final class Globals {
     @CFunction
     public static native int posix_memalign(Ptr<VoidPtr> __memptr, @NUInt long __alignment, @NUInt long __size);
 
+    /**
+     * posix_memalign is now declared in _malloc.h
+     */
     @Generated
     @CFunction
     public static native void qsort(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
@@ -3134,6 +5390,9 @@ public final class Globals {
     @CFunction
     public static native VoidPtr realloc(VoidPtr __ptr, @NUInt long __size);
 
+    /**
+     * realloc is now declared in _malloc.h
+     */
     @Generated
     @CFunction
     public static native void srand(int arg1);
@@ -3314,6 +5573,9 @@ public final class Globals {
     public static native VoidPtr bsearch_b(ConstVoidPtr __key, ConstVoidPtr __base, @NUInt long __nel,
             @NUInt long __width, @ObjCBlock(name = "call_bsearch_b") Block_bsearch_b __compar);
 
+    /**
+     * getcap(3) functions
+     */
     @Generated
     @CFunction
     public static native BytePtr cgetcap(BytePtr arg1,
@@ -3481,6 +5743,9 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __str,
             Ptr<BytePtr> __endptr, int __base);
 
+    /**
+     * ANSI-C
+     */
     @Generated
     @CFunction
     public static native VoidPtr memchr(ConstVoidPtr __s, int __c, @NUInt long __n);
@@ -3820,6 +6085,9 @@ public final class Globals {
     @CFunction
     public static native void tzset();
 
+    /**
+     * [TSF] Thread safe functions
+     */
     @Generated
     @CFunction
     public static native BytePtr asctime_r(@UncertainArgument("Options: reference, array Fallback: reference") tm arg1,
@@ -3885,6 +6153,9 @@ public final class Globals {
     @CFunction
     public static native long clock_gettime_nsec_np(int __clock_id);
 
+    /**
+     * 7.8.2.1
+     */
     @Generated
     @CFunction
     public static native long imaxabs(long j);
@@ -3894,6 +6165,9 @@ public final class Globals {
     @ByValue
     public static native imaxdiv_t imaxdiv(long __numer, long __denom);
 
+    /**
+     * 7.8.2.3
+     */
     @Generated
     @CFunction
     public static native long strtoimax(
@@ -3906,6 +6180,9 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __nptr,
             Ptr<BytePtr> __endptr, int __base);
 
+    /**
+     * 7.8.2.4
+     */
     @Generated
     @CFunction
     public static native long wcstoimax(ConstIntPtr __nptr, Ptr<IntPtr> __endptr, int __base);
@@ -3919,6 +6196,9 @@ public final class Globals {
     @CFunction
     public static native int OSHostByteOrder();
 
+    /**
+     * Functions for loading native endian values.
+     */
     @Generated
     @Inline
     @CFunction
@@ -3934,6 +6214,9 @@ public final class Globals {
     @CFunction
     public static native long _OSReadInt64(ConstVoidPtr base, @NUInt long byteOffset);
 
+    /**
+     * Functions for storing native endian values.
+     */
     @Generated
     @Inline
     @CFunction
@@ -3949,6 +6232,9 @@ public final class Globals {
     @CFunction
     public static native void _OSWriteInt64(VoidPtr base, @NUInt long byteOffset, long data);
 
+    /**
+     * 23.1.6.1 ACL Storage Management
+     */
     @Generated
     @CFunction
     public static native acl_t acl_dup(acl_t acl);
@@ -3961,6 +6247,9 @@ public final class Globals {
     @CFunction
     public static native acl_t acl_init(int count);
 
+    /**
+     * 23.1.6.2 (1) ACL Entry manipulation
+     */
     @Generated
     @CFunction
     public static native int acl_copy_entry(acl_entry_t dest_d, acl_entry_t src_d);
@@ -4001,6 +6290,9 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path, int type,
             acl_t acl);
 
+    /**
+     * 23.1.6.2 (2) Manipulate permissions within an ACL entry
+     */
     @Generated
     @CFunction
     public static native int acl_add_perm(acl_permset_t permset_d, int perm);
@@ -4029,6 +6321,9 @@ public final class Globals {
     @CFunction
     public static native int acl_set_permset(acl_entry_t entry_d, acl_permset_t permset_d);
 
+    /**
+     * nonstandard - manipulate permissions within an ACL entry using bitmasks
+     */
     @Generated
     @CFunction
     public static native int acl_maximal_permset_mask_np(LongPtr mask_p);
@@ -4041,6 +6336,9 @@ public final class Globals {
     @CFunction
     public static native int acl_set_permset_mask_np(acl_entry_t entry_d, long mask);
 
+    /**
+     * nonstandard - manipulate flags on ACLs and entries
+     */
     @Generated
     @CFunction
     public static native int acl_add_flag_np(acl_flagset_t flagset_d, int flag);
@@ -4065,6 +6363,9 @@ public final class Globals {
     @CFunction
     public static native int acl_set_flagset_np(VoidPtr obj_p, acl_flagset_t flagset_d);
 
+    /**
+     * 23.1.6.2 (3) Manipulate ACL entry tag type and qualifier
+     */
     @Generated
     @CFunction
     public static native VoidPtr acl_get_qualifier(acl_entry_t entry_d);
@@ -4081,6 +6382,9 @@ public final class Globals {
     @CFunction
     public static native int acl_set_tag_type(acl_entry_t entry_d, int tag_type);
 
+    /**
+     * 23.1.6.3 ACL manipulation on an Object
+     */
     @Generated
     @CFunction
     public static native int acl_delete_def_file(
@@ -4124,6 +6428,9 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path_p, int type,
             acl_t acl);
 
+    /**
+     * 23.1.6.4 ACL Format translation
+     */
     @Generated
     @CFunction
     @NInt
@@ -4156,16 +6463,51 @@ public final class Globals {
     @CFunction
     public static native BytePtr acl_to_text(acl_t acl, NIntPtr len_p);
 
+    /**
+     * [@function] os_unfair_lock_lock
+     * 
+     * Locks an os_unfair_lock.
+     * 
+     * @param lock
+     * Pointer to an os_unfair_lock.
+     */
     @Generated
     @CFunction
     public static native void os_unfair_lock_lock(
             @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
 
+    /**
+     * [@function] os_unfair_lock_trylock
+     * 
+     * Locks an os_unfair_lock if it is not already locked.
+     * 
+     * It is invalid to surround this function with a retry loop, if this function
+     * returns false, the program must be able to proceed without having acquired
+     * the lock, or it must call os_unfair_lock_lock() directly (a retry loop around
+     * os_unfair_lock_trylock() amounts to an inefficient implementation of
+     * os_unfair_lock_lock() that hides the lock waiter from the system and prevents
+     * resolution of priority inversions).
+     * 
+     * @param lock
+     * Pointer to an os_unfair_lock.
+     * 
+     * @return
+     * Returns true if the lock was succesfully locked and false if the lock was
+     * already locked.
+     */
     @Generated
     @CFunction
     public static native boolean os_unfair_lock_trylock(
             @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
 
+    /**
+     * [@function] os_unfair_lock_unlock
+     * 
+     * Unlocks an os_unfair_lock.
+     * 
+     * @param lock
+     * Pointer to an os_unfair_lock.
+     */
     @Generated
     @CFunction
     public static native void os_unfair_lock_unlock(
@@ -4279,6 +6621,11 @@ public final class Globals {
     @CFunction
     public static native int disconnectx(int arg1, int arg2, int arg3);
 
+    /**
+     * Advanced (Full-state) APIs [RFC3678]
+     * The RFC specifies uint_t for the 6th argument to [sg]etsourcefilter().
+     * We use uint32_t here to be consistent.
+     */
     @Generated
     @CFunction
     public static native int setipv4sourcefilter(int arg1, @ByValue in_addr arg2, @ByValue in_addr arg3, int arg4,
@@ -4425,10 +6772,6 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native void addrsel_policy_init();
-
-    @Generated
-    @CFunction
     public static native int bindresvport(int arg1,
             @UncertainArgument("Options: reference, array Fallback: reference") sockaddr_in arg2);
 
@@ -4437,6 +6780,9 @@ public final class Globals {
     public static native int bindresvport_sa(int arg1,
             @UncertainArgument("Options: reference, array Fallback: reference") sockaddr arg2);
 
+    /**
+     * getopt(3) external variables
+     */
     @Generated
     @CVariable()
     public static native BytePtr optarg();
@@ -4453,6 +6799,9 @@ public final class Globals {
     @CVariable()
     public static native int optopt();
 
+    /**
+     * getsubopt(3) external variable
+     */
     @Generated
     @CVariable()
     public static native BytePtr suboptarg();
@@ -4500,6 +6849,9 @@ public final class Globals {
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native FILE __stderrp();
 
+    /**
+     * perror(3) external variables
+     */
     @Generated
     @CVariable()
     public static native int sys_nerr();
@@ -4826,7 +7178,7 @@ public final class Globals {
     @Generated
     public interface Block_dispatch_data_apply {
         @Generated
-        boolean call_dispatch_data_apply(NSObject arg0, @NUInt long arg1, ConstVoidPtr arg2, @NUInt long arg3);
+        boolean call_dispatch_data_apply(NSObject region, @NUInt long offset, ConstVoidPtr buffer, @NUInt long size);
     }
 
     @Runtime(CRuntime.class)
@@ -4868,14 +7220,14 @@ public final class Globals {
     @Generated
     public interface Block_dispatch_io_read {
         @Generated
-        void call_dispatch_io_read(boolean arg0, NSObject arg1, int arg2);
+        void call_dispatch_io_read(boolean done, NSObject data, int error);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_dispatch_io_write {
         @Generated
-        void call_dispatch_io_write(boolean arg0, NSObject arg1, int arg2);
+        void call_dispatch_io_write(boolean done, NSObject data, int error);
     }
 
     @Runtime(CRuntime.class)
@@ -5916,6 +8268,10 @@ public final class Globals {
     public static native int setaudit_addr(
             @UncertainArgument("Options: reference, array Fallback: reference") auditinfo_addr arg1, int arg2);
 
+    /**
+     * getaudit()/setaudit() are deprecated and have been replaced with
+     * wrappers to the getaudit_addr()/setaudit_addr() syscalls above.
+     */
     @Generated
     @Deprecated
     @CFunction
@@ -5940,63 +8296,2525 @@ public final class Globals {
     @CFunction
     public static native int audit_session_port(int asid, IntPtr portname);
 
+    /**
+     * Computes accum + x*y by the most efficient means available;
+     * either a fused multiply add or separate multiply and add instructions.
+     */
     @Generated
     @Inline
     @CFunction
     public static native float simd_muladd(float x, float y, float z);
 
+    /**
+     * -1 if x is negative, +1 if x is positive, and 0 otherwise.
+     */
     @Generated
     @Inline
     @CFunction
     public static native float simd_sign(float x);
 
+    /**
+     * Linearly interpolates between x and y, taking the value x when
+     * t=0 and y when t=1
+     */
     @Generated
     @Inline
     @CFunction
     public static native float simd_mix(float x, float y, float t);
 
+    /**
+     * A good approximation to 1/x.
+     * 
+     * If x is very close to the limits of representation, the
+     * result may overflow or underflow; otherwise this function is accurate to
+     * a few units in the last place (ULPs).
+     */
     @Generated
     @Inline
     @CFunction
     public static native float simd_precise_recip(float x);
 
+    /**
+     * A fast approximation to 1/x.
+     * 
+     * If x is very close to the limits of representation, the
+     * result may overflow or underflow; otherwise this function is accurate to
+     * at least 11 bits for float and 22 bits for double.
+     */
     @Generated
     @Inline
     @CFunction
     public static native float simd_fast_recip(float x);
 
+    /**
+     * An approximation to 1/x.
+     * 
+     * If x is very close to the limits of representation, the
+     * result may overflow or underflow. This function maps to
+     * simd_fast_recip(x) if -ffast-math is specified, and to
+     * simd_precise_recip(x) otherwise.
+     */
     @Generated
     @Inline
     @CFunction
     public static native float simd_recip(float x);
 
+    /**
+     * A good approximation to 1/sqrt(x).
+     * 
+     * This function is accurate to a few units in the last place
+     * (ULPs).
+     */
     @Generated
     @Inline
     @CFunction
     public static native float simd_precise_rsqrt(float x);
 
+    /**
+     * A fast approximation to 1/sqrt(x).
+     * 
+     * This function is accurate to at least 11 bits for float and
+     * 22 bits for double.
+     */
     @Generated
     @Inline
     @CFunction
     public static native float simd_fast_rsqrt(float x);
 
+    /**
+     * An approximation to 1/sqrt(x).
+     * 
+     * This function maps to simd_fast_recip(x) if -ffast-math is
+     * specified, and to simd_precise_recip(x) otherwise.
+     */
     @Generated
     @Inline
     @CFunction
     public static native float simd_rsqrt(float x);
 
+    /**
+     * The "fractional part" of x, lying in the range [0, 1).
+     * 
+     * floor(x) + fract(x) is *approximately* equal to x. If x is
+     * positive and finite, then the two values are exactly equal.
+     */
     @Generated
     @Inline
     @CFunction
     public static native float simd_fract(float x);
 
+    /**
+     * 0 if x < edge, and 1 otherwise.
+     * 
+     * Use a scalar value for edge if you want to apply the same
+     * threshold to all lanes.
+     */
     @Generated
     @Inline
     @CFunction
     public static native float simd_step(float edge, float x);
 
+    /**
+     * Interpolates smoothly between 0 at edge0 and 1 at edge1
+     * 
+     * You can use a scalar value for edge0 and edge1 if you want
+     * to clamp all lanes at the same points.
+     */
     @Generated
     @Inline
     @CFunction
     public static native float simd_smoothstep(float edge0, float edge1, float x);
+
+    /**
+     * [@function] dispatch_set_qos_class_floor
+     * 
+     * Sets the QOS class floor on a dispatch queue, source or workloop.
+     * 
+     * The QOS class of workitems submitted to this object asynchronously will be
+     * elevated to at least the specified QOS class floor. The QOS of the workitem
+     * will be used if higher than the floor even when the workitem has been created
+     * without "ENFORCE" semantics.
+     * 
+     * Setting the QOS class floor is equivalent to the QOS effects of configuring
+     * a queue whose target queue has a QoS class set to the same value.
+     * 
+     * @param object
+     * A dispatch queue, workloop, or source to configure.
+     * The object must be inactive.
+     * 
+     * Passing another object type or an object that has been activated is undefined
+     * and will cause the process to be terminated.
+     * 
+     * @param qos_class
+     * A QOS class value:
+     *  - QOS_CLASS_USER_INTERACTIVE
+     *  - QOS_CLASS_USER_INITIATED
+     *  - QOS_CLASS_DEFAULT
+     *  - QOS_CLASS_UTILITY
+     *  - QOS_CLASS_BACKGROUND
+     * Passing any other value is undefined.
+     * 
+     * @param relative_priority
+     * A relative priority within the QOS class. This value is a negative
+     * offset from the maximum supported scheduler priority for the given class.
+     * Passing a value greater than zero or less than QOS_MIN_RELATIVE_PRIORITY
+     * is undefined.
+     */
+    @Generated
+    @CFunction
+    public static native void dispatch_set_qos_class_floor(NSObject object, int qos_class, int relative_priority);
+
+    @Generated
+    @CFunction
+    public static native void dispatch_async_and_wait(NSObject queue,
+            @ObjCBlock(name = "call_dispatch_async_and_wait") Block_dispatch_async_and_wait block);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_async_and_wait {
+        @Generated
+        void call_dispatch_async_and_wait();
+    }
+
+    /**
+     * [@function] dispatch_async_and_wait_f
+     * 
+     * Submits a function for synchronous execution on a dispatch queue.
+     * 
+     * See dispatch_async_and_wait() for details.
+     * 
+     * @param queue
+     * The target dispatch queue to which the function is submitted.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param context
+     * The application-defined context parameter to pass to the function.
+     * 
+     * @param work
+     * The application-defined function to invoke on the target queue. The first
+     * parameter passed to this function is the context provided to
+     * dispatch_async_and_wait_f().
+     * The result of passing NULL in this parameter is undefined.
+     */
+    @Generated
+    @CFunction
+    public static native void dispatch_async_and_wait_f(NSObject queue, VoidPtr context,
+            @FunctionPtr(name = "call_dispatch_async_and_wait_f") Function_dispatch_async_and_wait_f work);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_async_and_wait_f {
+        @Generated
+        void call_dispatch_async_and_wait_f(VoidPtr arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native void dispatch_barrier_async_and_wait(NSObject queue,
+            @ObjCBlock(name = "call_dispatch_barrier_async_and_wait") Block_dispatch_barrier_async_and_wait block);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_barrier_async_and_wait {
+        @Generated
+        void call_dispatch_barrier_async_and_wait();
+    }
+
+    /**
+     * [@function] dispatch_barrier_async_and_wait_f
+     * 
+     * Submits a function for synchronous execution on a dispatch queue.
+     * 
+     * Submits a function to a dispatch queue like dispatch_async_and_wait_f(), but
+     * marks that function as a barrier (relevant only on DISPATCH_QUEUE_CONCURRENT
+     * queues).
+     * 
+     * See "Dispatch Barrier API" for a description of the barrier semantics.
+     * 
+     * @param queue
+     * The target dispatch queue to which the function is submitted.
+     * The result of passing NULL in this parameter is undefined.
+     * 
+     * @param context
+     * The application-defined context parameter to pass to the function.
+     * 
+     * @param work
+     * The application-defined function to invoke on the target queue. The first
+     * parameter passed to this function is the context provided to
+     * dispatch_barrier_async_and_wait_f().
+     * The result of passing NULL in this parameter is undefined.
+     */
+    @Generated
+    @CFunction
+    public static native void dispatch_barrier_async_and_wait_f(NSObject queue, VoidPtr context,
+            @FunctionPtr(name = "call_dispatch_barrier_async_and_wait_f") Function_dispatch_barrier_async_and_wait_f work);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_barrier_async_and_wait_f {
+        @Generated
+        void call_dispatch_barrier_async_and_wait_f(VoidPtr arg0);
+    }
+
+    /**
+     * [@function] dispatch_workloop_create
+     * 
+     * Creates a new dispatch workloop to which workitems may be submitted.
+     * 
+     * @param label
+     * A string label to attach to the workloop.
+     * 
+     * @return
+     * The newly created dispatch workloop.
+     */
+    @Generated
+    @CFunction
+    public static native NSObject dispatch_workloop_create(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label);
+
+    /**
+     * [@function] dispatch_workloop_create_inactive
+     * 
+     * Creates a new inactive dispatch workloop that can be setup and then
+     * activated.
+     * 
+     * Creating an inactive workloop allows for it to receive further configuration
+     * before it is activated, and workitems can be submitted to it.
+     * 
+     * Submitting workitems to an inactive workloop is undefined and will cause the
+     * process to be terminated.
+     * 
+     * @param label
+     * A string label to attach to the workloop.
+     * 
+     * @return
+     * The newly created dispatch workloop.
+     */
+    @Generated
+    @CFunction
+    public static native NSObject dispatch_workloop_create_inactive(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label);
+
+    /**
+     * [@function] dispatch_workloop_set_autorelease_frequency
+     * 
+     * Sets the autorelease frequency of the workloop.
+     * 
+     * See dispatch_queue_attr_make_with_autorelease_frequency().
+     * The default policy for a workloop is
+     * DISPATCH_AUTORELEASE_FREQUENCY_WORK_ITEM.
+     * 
+     * @param workloop
+     * The dispatch workloop to modify.
+     * 
+     * This workloop must be inactive, passing an activated object is undefined
+     * and will cause the process to be terminated.
+     * 
+     * @param frequency
+     * The requested autorelease frequency.
+     */
+    @Generated
+    @CFunction
+    public static native void dispatch_workloop_set_autorelease_frequency(NSObject workloop, @NUInt long frequency);
+
+    @Generated
+    @CFunction
+    public static native int ptsname_r(int fildes, BytePtr buffer, @NUInt long buflen);
+
+    @Generated
+    @CFunction
+    public static native int rpmatch(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native char NXSwapShort(char inv);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native int NXSwapInt(int inv);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapLong(@NUInt long inv);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapLongLong(long inv);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXConvertHostFloatToSwapped(float x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native float NXConvertSwappedFloatToHost(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXConvertHostDoubleToSwapped(double x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native double NXConvertSwappedDoubleToHost(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapFloat(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapDouble(long x);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int NXHostByteOrder();
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native char NXSwapBigShortToHost(char x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native int NXSwapBigIntToHost(int x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapBigLongToHost(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapBigLongLongToHost(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native double NXSwapBigDoubleToHost(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native float NXSwapBigFloatToHost(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native char NXSwapHostShortToBig(char x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native int NXSwapHostIntToBig(int x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapHostLongToBig(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapHostLongLongToBig(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapHostDoubleToBig(double x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapHostFloatToBig(float x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native char NXSwapLittleShortToHost(char x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native int NXSwapLittleIntToHost(int x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapLittleLongToHost(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapLittleLongLongToHost(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native double NXSwapLittleDoubleToHost(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native float NXSwapLittleFloatToHost(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native char NXSwapHostShortToLittle(char x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native int NXSwapHostIntToLittle(int x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapHostLongToLittle(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapHostLongLongToLittle(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapHostDoubleToLittle(double x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapHostFloatToLittle(float x);
+
+    @Generated
+    @CFunction
+    public static native int adjtime(@UncertainArgument("Options: reference, array Fallback: reference") timeval arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") timeval arg2);
+
+    @Generated
+    @CFunction
+    public static native int futimes(int arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") timeval arg2);
+
+    @Generated
+    @CFunction
+    public static native int lutimes(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") timeval arg2);
+
+    @Generated
+    @CFunction
+    public static native int settimeofday(
+            @UncertainArgument("Options: reference, array Fallback: reference") timeval arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") timezone arg2);
+
+    @Generated
+    @CFunction
+    public static native int getitimer(int arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") itimerval arg2);
+
+    @Generated
+    @CFunction
+    public static native int gettimeofday(
+            @UncertainArgument("Options: reference, array Fallback: reference") timeval arg1, VoidPtr arg2);
+
+    @Generated
+    @CFunction
+    public static native int setitimer(int arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") itimerval arg2,
+            @UncertainArgument("Options: reference, array Fallback: reference") itimerval arg3);
+
+    @Generated
+    @CFunction
+    public static native int utimes(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") timeval arg2);
+
+    /**
+     * [@function] os_trace_info_enabled
+     * 
+     * Avoid unnecessary work for a trace point by checking if additional
+     * information is enabled.
+     * 
+     * Avoid unnecessary work for a trace point by checking if additional
+     * information is enabled. Generally trace points should not involve expensive
+     * operations, but some circumstances warrant it.  Use this function to avoid
+     * doing the work unless debug level trace messages are requested.
+     * 
+     * <code>
+     *     if (os_trace_info_enabled()) {
+     *         os_trace_info("value = %d, average = %d",
+     *                 [[dict objectForKey: @"myKey"] intValue],
+     *                 (int)[self getAverage:dict]);
+     *     }
+     * </code>
+     * 
+     * @return
+     * Returns true if info types are enabled.
+     */
+    @Generated
+    @CFunction
+    public static native boolean os_trace_info_enabled();
+
+    /**
+     * [@function] os_trace_debug_enabled
+     * 
+     * Avoid unnecessary work for a trace point by checking if debug level is
+     * enabled.
+     * 
+     * Avoid unnecessary work for a trace point by checking if debug level is
+     * enabled.  Generally trace points should not involve expensive operations, but
+     * some circumstances warrant it.  Use this function to avoid doing the work
+     * unless debug level trace messages are requested.
+     * 
+     * <code>
+     *     if (os_trace_debug_enabled()) {
+     *         os_trace_debug("value = %d, average = %d",
+     *                 [[dict objectForKey: @"myKey"] intValue],
+     *                 (int)[self getAverage:dict]);
+     *     }
+     * </code>
+     * 
+     * @return
+     * Returns true if debug mode is enabled.
+     */
+    @Generated
+    @CFunction
+    public static native boolean os_trace_debug_enabled();
+
+    /**
+     * [@function] os_trace_type_enabled
+     * 
+     * Avoid unnecessary work for a trace point by checking a specific type
+     * 
+     * Avoid unnecessary work for a trace point by checking a specific type
+     * 
+     * @return
+     * Returns true if type is enabled.
+     */
+    @Generated
+    @Inline
+    @CFunction
+    public static native boolean os_trace_type_enabled(byte type);
+
+    /**
+     * [@function] _os_trace_with_buffer
+     * 
+     * Internal function to support pre-encoded buffer.
+     */
+    @Generated
+    @CFunction
+    public static native void _os_trace_with_buffer(VoidPtr dso,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String message,
+            byte type, ConstVoidPtr buffer, @NUInt long buffer_size,
+            @ObjCBlock(name = "call__os_trace_with_buffer") Block__os_trace_with_buffer payload);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block__os_trace_with_buffer {
+        @Generated
+        void call__os_trace_with_buffer(VoidPtr xdict);
+    }
+
+    /**
+     * [@function] os_log_create
+     * 
+     * Creates a log object to be used with other log related functions.
+     * 
+     * Creates a log object to be used with other log related functions.  The
+     * log object serves two purposes:  (1) tag related messages by subsystem
+     * and category name for easy filtering, and (2) control logging system
+     * behavior for messages.
+     * 
+     * @param subsystem
+     * The identifier of the given subsystem should be in reverse DNS form
+     * (i.e., com.company.mysubsystem).
+     * 
+     * @param category
+     * The category within the given subsystem that specifies the settings for
+     * the log object.
+     * 
+     * @return
+     * Returns an os_log_t value to be passed to other os_log API calls.  This
+     * should be called once at log initialization and rely on system to detect
+     * changes to settings.  This object should be released when no longer used
+     * via os_release or -[release] method.
+     * 
+     * A value will always be returned to allow for dynamic enablement.
+     */
+    @Generated
+    @CFunction
+    public static native NSObject os_log_create(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String subsystem,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String category);
+
+    /**
+     * [@function] os_log_type_enabled
+     * 
+     * Evaluate if a specific log type is enabled before doing work
+     * 
+     * Evaluate if a specific log type is enabled before doing work
+     * 
+     * @param oslog
+     * Pass OS_LOG_DEFAULT or a log object previously created with os_log_create.
+     * 
+     * @param type
+     * Pass a valid type from os_log_type_t.
+     * 
+     * @return
+     * Will return a boolean.
+     */
+    @Generated
+    @CFunction
+    public static native boolean os_log_type_enabled(NSObject oslog, byte type);
+
+    /**
+     * [@function] _os_log_impl
+     * 
+     * Internal function that takes compiler generated encoding and captures the necessary content.
+     */
+    @Generated
+    @CFunction
+    public static native void _os_log_impl(VoidPtr dso, NSObject log, byte type,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
+            BytePtr buf, int size);
+
+    /**
+     * [@function] _os_log_debug_impl
+     * 
+     * Internal function that is taken for any debug log emitted in the system.
+     */
+    @Generated
+    @CFunction
+    public static native void _os_log_debug_impl(VoidPtr dso, NSObject log, byte type,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
+            BytePtr buf, int size);
+
+    /**
+     * [@function] _os_log_error_impl
+     * 
+     * Internal function that is taken for any error emitted in the system.
+     */
+    @Generated
+    @CFunction
+    public static native void _os_log_error_impl(VoidPtr dso, NSObject log, byte type,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
+            BytePtr buf, int size);
+
+    /**
+     * [@function] _os_log_fault_impl
+     * 
+     * Internal function that is taken for any fault emitted in the system.
+     */
+    @Generated
+    @CFunction
+    public static native void _os_log_fault_impl(VoidPtr dso, NSObject log, byte type,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
+            BytePtr buf, int size);
+
+    /**
+     * Support for older iteration of API for source compatibility only...
+     */
+    @Generated
+    @Variadic()
+    @CFunction
+    public static native void _os_log_internal(VoidPtr dso, NSObject log, byte type,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String message,
+            Object... varargs);
+
+    @Generated
+    @CFunction
+    public static native NSObject _os_log_create(VoidPtr dso,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String subsystem,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String category);
+
+    @Generated
+    @CFunction
+    public static native boolean os_log_is_enabled(NSObject log);
+
+    @Generated
+    @CFunction
+    public static native boolean os_log_is_debug_enabled(NSObject log);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native void _os_log_sensitive_deprecated();
+
+    /**
+     * [@function] os_unfair_lock_assert_owner
+     * 
+     * Asserts that the calling thread is the current owner of the specified
+     * unfair lock.
+     * 
+     * If the lock is currently owned by the calling thread, this function returns.
+     * 
+     * If the lock is unlocked or owned by a different thread, this function
+     * asserts and terminates the process.
+     * 
+     * @param lock
+     * Pointer to an os_unfair_lock.
+     */
+    @Generated
+    @CFunction
+    public static native void os_unfair_lock_assert_owner(
+            @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
+
+    /**
+     * [@function] os_unfair_lock_assert_not_owner
+     * 
+     * Asserts that the calling thread is not the current owner of the specified
+     * unfair lock.
+     * 
+     * If the lock is unlocked or owned by a different thread, this function
+     * returns.
+     * 
+     * If the lock is currently owned by the current thread, this function asserts
+     * and terminates the process.
+     * 
+     * @param lock
+     * Pointer to an os_unfair_lock.
+     */
+    @Generated
+    @CFunction
+    public static native void os_unfair_lock_assert_not_owner(
+            @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
+
+    /**
+     * DNSServiceGetProperty() Parameters:
+     * 
+     * property:        The requested property.
+     *                  Currently the only property defined is kDNSServiceProperty_DaemonVersion.
+     * 
+     * result:          Place to store result.
+     *                  For retrieving DaemonVersion, this should be the address of a uint32_t.
+     * 
+     * size:            Pointer to uint32_t containing size of the result location.
+     *                  For retrieving DaemonVersion, this should be sizeof(uint32_t).
+     *                  On return the uint32_t is updated to the size of the data returned.
+     *                  For DaemonVersion, the returned size is always sizeof(uint32_t), but
+     *                  future properties could be defined which return variable-sized results.
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success, or kDNSServiceErr_ServiceNotRunning
+     *                  if the daemon (or "system service" on Windows) is not running.
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceGetProperty(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String property,
+            VoidPtr result, IntPtr size);
+
+    /**
+     * DNSServiceRefSockFD()
+     * 
+     * Access underlying Unix domain socket for an initialized DNSServiceRef.
+     * The DNS Service Discovery implementation uses this socket to communicate between the client and
+     * the daemon. The application MUST NOT directly read from or write to this socket.
+     * Access to the socket is provided so that it can be used as a kqueue event source, a CFRunLoop
+     * event source, in a select() loop, etc. When the underlying event management subsystem (kqueue/
+     * select/CFRunLoop etc.) indicates to the client that data is available for reading on the
+     * socket, the client should call DNSServiceProcessResult(), which will extract the daemon's
+     * reply from the socket, and pass it to the appropriate application callback. By using a run
+     * loop or select(), results from the daemon can be processed asynchronously. Alternatively,
+     * a client can choose to fork a thread and have it loop calling "DNSServiceProcessResult(ref);"
+     * If DNSServiceProcessResult() is called when no data is available for reading on the socket, it
+     * will block until data does become available, and then process the data and return to the caller.
+     * The application is responsible for checking the return value of DNSServiceProcessResult()
+     * to determine if the socket is valid and if it should continue to process data on the socket.
+     * When data arrives on the socket, the client is responsible for calling DNSServiceProcessResult(ref)
+     * in a timely fashion -- if the client allows a large backlog of data to build up the daemon
+     * may terminate the connection.
+     * 
+     * sdRef:           A DNSServiceRef initialized by any of the DNSService calls.
+     * 
+     * return value:    The DNSServiceRef's underlying socket descriptor, or -1 on
+     *                  error.
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceRefSockFD(DNSServiceRef sdRef);
+
+    /**
+     * DNSServiceProcessResult()
+     * 
+     * Read a reply from the daemon, calling the appropriate application callback. This call will
+     * block until the daemon's response is received. Use DNSServiceRefSockFD() in
+     * conjunction with a run loop or select() to determine the presence of a response from the
+     * server before calling this function to process the reply without blocking. Call this function
+     * at any point if it is acceptable to block until the daemon's response arrives. Note that the
+     * client is responsible for ensuring that DNSServiceProcessResult() is called whenever there is
+     * a reply from the daemon - the daemon may terminate its connection with a client that does not
+     * process the daemon's responses.
+     * 
+     * sdRef:           A DNSServiceRef initialized by any of the DNSService calls
+     *                  that take a callback parameter.
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns
+     *                  an error code indicating the specific failure that occurred.
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceProcessResult(DNSServiceRef sdRef);
+
+    /**
+     * DNSServiceRefDeallocate()
+     * 
+     * Terminate a connection with the daemon and free memory associated with the DNSServiceRef.
+     * Any services or records registered with this DNSServiceRef will be deregistered. Any
+     * Browse, Resolve, or Query operations called with this reference will be terminated.
+     * 
+     * Note: If the reference's underlying socket is used in a run loop or select() call, it should
+     * be removed BEFORE DNSServiceRefDeallocate() is called, as this function closes the reference's
+     * socket.
+     * 
+     * Note: If the reference was initialized with DNSServiceCreateConnection(), any DNSRecordRefs
+     * created via this reference will be invalidated by this call - the resource records are
+     * deregistered, and their DNSRecordRefs may not be used in subsequent functions. Similarly,
+     * if the reference was initialized with DNSServiceRegister, and an extra resource record was
+     * added to the service via DNSServiceAddRecord(), the DNSRecordRef created by the Add() call
+     * is invalidated when this function is called - the DNSRecordRef may not be used in subsequent
+     * functions.
+     * 
+     * If the reference was passed to DNSServiceSetDispatchQueue(), DNSServiceRefDeallocate() must
+     * be called on the same queue originally passed as an argument to DNSServiceSetDispatchQueue().
+     * 
+     * Note: This call is to be used only with the DNSServiceRef defined by this API.
+     * 
+     * sdRef:           A DNSServiceRef initialized by any of the DNSService calls.
+     */
+    @Generated
+    @CFunction
+    public static native void DNSServiceRefDeallocate(DNSServiceRef sdRef);
+
+    /**
+     * DNSServiceEnumerateDomains() Parameters:
+     * 
+     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
+     *                  a copy of the shared connection reference that is to be used).
+     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     *                  returns kDNSServiceErr_NoError, and the enumeration operation
+     *                  will remain active indefinitely until the client terminates it
+     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     *                  (or by closing the underlying shared connection, if used).
+     * 
+     * flags:           Possible values are:
+     *                  kDNSServiceFlagsShareConnection to use a shared connection.
+     *                  kDNSServiceFlagsBrowseDomains to enumerate domains recommended for browsing.
+     *                  kDNSServiceFlagsRegistrationDomains to enumerate domains recommended
+     *                  for registration.
+     * 
+     * interfaceIndex:  If non-zero, specifies the interface on which to look for domains.
+     *                  (the index for a given interface is determined via the if_nametoindex()
+     *                  family of calls.) Most applications will pass 0 to enumerate domains on
+     *                  all interfaces. See "Constants for specifying an interface index" for more details.
+     * 
+     * callBack:        The function to be called when a domain is found or the call asynchronously
+     *                  fails.
+     * 
+     * context:         An application context pointer which is passed to the callback function
+     *                  (may be NULL).
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     *                  errors are delivered to the callback), otherwise returns an error code indicating
+     *                  the error that occurred (the callback is not invoked and the DNSServiceRef
+     *                  is not initialized).
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceEnumerateDomains(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            @FunctionPtr(name = "call_DNSServiceEnumerateDomains") Function_DNSServiceEnumerateDomains callBack,
+            VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceEnumerateDomains {
+        @Generated
+        void call_DNSServiceEnumerateDomains(DNSServiceRef arg0, int arg1, int arg2, int arg3,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+                VoidPtr arg5);
+    }
+
+    /**
+     * DNSServiceRegister() Parameters:
+     * 
+     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
+     *                  a copy of the shared connection reference that is to be used).
+     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     *                  returns kDNSServiceErr_NoError, and the service registration
+     *                  will remain active indefinitely until the client terminates it
+     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     *                  (or by closing the underlying shared connection, if used).
+     * 
+     * flags:           Possible values are:
+     *                  kDNSServiceFlagsShareConnection to use a shared connection.
+     *                  Other flags indicate the renaming behavior on name conflict
+     *                  (not required for most applications).
+     *                  See flag definitions above for details.
+     * 
+     * interfaceIndex:  If non-zero, specifies the interface on which to register the service
+     *                  (the index for a given interface is determined via the if_nametoindex()
+     *                  family of calls.) Most applications will pass 0 to register on all
+     *                  available interfaces. See "Constants for specifying an interface index" for more details.
+     * 
+     * name:            If non-NULL, specifies the service name to be registered.
+     *                  Most applications will not specify a name, in which case the computer
+     *                  name is used (this name is communicated to the client via the callback).
+     *                  If a name is specified, it must be 1-63 bytes of UTF-8 text.
+     *                  If the name is longer than 63 bytes it will be automatically truncated
+     *                  to a legal length, unless the NoAutoRename flag is set,
+     *                  in which case kDNSServiceErr_BadParam will be returned.
+     * 
+     * regtype:         The service type followed by the protocol, separated by a dot
+     *                  (e.g. "_ftp._tcp"). The service type must be an underscore, followed
+     *                  by 1-15 characters, which may be letters, digits, or hyphens.
+     *                  The transport protocol must be "_tcp" or "_udp". New service types
+     *                  should be registered at <http://www.dns-sd.org/ServiceTypes.html>.
+     * 
+     *                  Additional subtypes of the primary service type (where a service
+     *                  type has defined subtypes) follow the primary service type in a
+     *                  comma-separated list, with no additional spaces, e.g.
+     *                      "_primarytype._tcp,_subtype1,_subtype2,_subtype3"
+     *                  Subtypes provide a mechanism for filtered browsing: A client browsing
+     *                  for "_primarytype._tcp" will discover all instances of this type;
+     *                  a client browsing for "_primarytype._tcp,_subtype2" will discover only
+     *                  those instances that were registered with "_subtype2" in their list of
+     *                  registered subtypes.
+     * 
+     *                  The subtype mechanism can be illustrated with some examples using the
+     *                  dns-sd command-line tool:
+     * 
+     *                  % dns-sd -R Simple _test._tcp "" 1001 &
+     *                  % dns-sd -R Better _test._tcp,HasFeatureA "" 1002 &
+     *                  % dns-sd -R Best   _test._tcp,HasFeatureA,HasFeatureB "" 1003 &
+     * 
+     *                  Now:
+     *                  % dns-sd -B _test._tcp             # will find all three services
+     *                  % dns-sd -B _test._tcp,HasFeatureA # finds "Better" and "Best"
+     *                  % dns-sd -B _test._tcp,HasFeatureB # finds only "Best"
+     * 
+     *                  Subtype labels may be up to 63 bytes long, and may contain any eight-
+     *                  bit byte values, including zero bytes. However, due to the nature of
+     *                  using a C-string-based API, conventional DNS escaping must be used for
+     *                  dots ('.'), commas (','), backslashes ('\') and zero bytes, as shown below:
+     * 
+     *                  % dns-sd -R Test '_test._tcp,s\.one,s\,two,s\\three,s\000four' local 123
+     * 
+     * domain:          If non-NULL, specifies the domain on which to advertise the service.
+     *                  Most applications will not specify a domain, instead automatically
+     *                  registering in the default domain(s).
+     * 
+     * host:            If non-NULL, specifies the SRV target host name. Most applications
+     *                  will not specify a host, instead automatically using the machine's
+     *                  default host name(s). Note that specifying a non-NULL host does NOT
+     *                  create an address record for that host - the application is responsible
+     *                  for ensuring that the appropriate address record exists, or creating it
+     *                  via DNSServiceRegisterRecord().
+     * 
+     * port:            The port, in network byte order, on which the service accepts connections.
+     *                  Pass 0 for a "placeholder" service (i.e. a service that will not be discovered
+     *                  by browsing, but will cause a name conflict if another client tries to
+     *                  register that same name). Most clients will not use placeholder services.
+     * 
+     * txtLen:          The length of the txtRecord, in bytes. Must be zero if the txtRecord is NULL.
+     * 
+     * txtRecord:       The TXT record rdata. A non-NULL txtRecord MUST be a properly formatted DNS
+     *                  TXT record, i.e. <length byte> <data> <length byte> <data> ...
+     *                  Passing NULL for the txtRecord is allowed as a synonym for txtLen=1, txtRecord="",
+     *                  i.e. it creates a TXT record of length one containing a single empty string.
+     *                  RFC 1035 doesn't allow a TXT record to contain *zero* strings, so a single empty
+     *                  string is the smallest legal DNS TXT record.
+     *                  As with the other parameters, the DNSServiceRegister call copies the txtRecord
+     *                  data; e.g. if you allocated the storage for the txtRecord parameter with malloc()
+     *                  then you can safely free that memory right after the DNSServiceRegister call returns.
+     * 
+     * callBack:        The function to be called when the registration completes or asynchronously
+     *                  fails. The client MAY pass NULL for the callback -  The client will NOT be notified
+     *                  of the default values picked on its behalf, and the client will NOT be notified of any
+     *                  asynchronous errors (e.g. out of memory errors, etc.) that may prevent the registration
+     *                  of the service. The client may NOT pass the NoAutoRename flag if the callback is NULL.
+     *                  The client may still deregister the service at any time via DNSServiceRefDeallocate().
+     * 
+     * context:         An application context pointer which is passed to the callback function
+     *                  (may be NULL).
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     *                  errors are delivered to the callback), otherwise returns an error code indicating
+     *                  the error that occurred (the callback is never invoked and the DNSServiceRef
+     *                  is not initialized).
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceRegister(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String regtype,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String host, char port,
+            char txtLen, ConstVoidPtr txtRecord,
+            @FunctionPtr(name = "call_DNSServiceRegister") Function_DNSServiceRegister callBack, VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceRegister {
+        @Generated
+        void call_DNSServiceRegister(DNSServiceRef arg0, int arg1, int arg2,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5,
+                VoidPtr arg6);
+    }
+
+    /**
+     * DNSServiceAddRecord()
+     * 
+     * Add a record to a registered service. The name of the record will be the same as the
+     * registered service's name.
+     * The record can later be updated or deregistered by passing the RecordRef initialized
+     * by this function to DNSServiceUpdateRecord() or DNSServiceRemoveRecord().
+     * 
+     * Note that the DNSServiceAddRecord/UpdateRecord/RemoveRecord are *NOT* thread-safe
+     * with respect to a single DNSServiceRef. If you plan to have multiple threads
+     * in your program simultaneously add, update, or remove records from the same
+     * DNSServiceRef, then it's the caller's responsibility to use a mutex lock
+     * or take similar appropriate precautions to serialize those calls.
+     * 
+     * Parameters;
+     * 
+     * sdRef:           A DNSServiceRef initialized by DNSServiceRegister().
+     * 
+     * RecordRef:       A pointer to an uninitialized DNSRecordRef. Upon succesfull completion of this
+     *                  call, this ref may be passed to DNSServiceUpdateRecord() or DNSServiceRemoveRecord().
+     *                  If the above DNSServiceRef is passed to DNSServiceRefDeallocate(), RecordRef is also
+     *                  invalidated and may not be used further.
+     * 
+     * flags:           Currently ignored, reserved for future use.
+     * 
+     * rrtype:          The type of the record (e.g. kDNSServiceType_TXT, kDNSServiceType_SRV, etc)
+     * 
+     * rdlen:           The length, in bytes, of the rdata.
+     * 
+     * rdata:           The raw rdata to be contained in the added resource record.
+     * 
+     * ttl:             The time to live of the resource record, in seconds.
+     *                  Most clients should pass 0 to indicate that the system should
+     *                  select a sensible default value.
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns an
+     *                  error code indicating the error that occurred (the RecordRef is not initialized).
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceAddRecord(DNSServiceRef sdRef, Ptr<DNSRecordRef> RecordRef, int flags,
+            char rrtype, char rdlen, ConstVoidPtr rdata, int ttl);
+
+    /**
+     * DNSServiceUpdateRecord
+     * 
+     * Update a registered resource record. The record must either be:
+     *   - The primary txt record of a service registered via DNSServiceRegister()
+     *   - A record added to a registered service via DNSServiceAddRecord()
+     *   - An individual record registered by DNSServiceRegisterRecord()
+     * 
+     * Parameters:
+     * 
+     * sdRef:           A DNSServiceRef that was initialized by DNSServiceRegister()
+     *                  or DNSServiceCreateConnection().
+     * 
+     * RecordRef:       A DNSRecordRef initialized by DNSServiceAddRecord, or NULL to update the
+     *                  service's primary txt record.
+     * 
+     * flags:           Currently ignored, reserved for future use.
+     * 
+     * rdlen:           The length, in bytes, of the new rdata.
+     * 
+     * rdata:           The new rdata to be contained in the updated resource record.
+     * 
+     * ttl:             The time to live of the updated resource record, in seconds.
+     *                  Most clients should pass 0 to indicate that the system should
+     *                  select a sensible default value.
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns an
+     *                  error code indicating the error that occurred.
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceUpdateRecord(DNSServiceRef sdRef, DNSRecordRef RecordRef, int flags, char rdlen,
+            ConstVoidPtr rdata, int ttl);
+
+    /**
+     * DNSServiceRemoveRecord
+     * 
+     * Remove a record previously added to a service record set via DNSServiceAddRecord(), or deregister
+     * a record registered individually via DNSServiceRegisterRecord().
+     * 
+     * Parameters:
+     * 
+     * sdRef:           A DNSServiceRef initialized by DNSServiceRegister() (if the
+     *                  record being removed was registered via DNSServiceAddRecord()) or by
+     *                  DNSServiceCreateConnection() (if the record being removed was registered via
+     *                  DNSServiceRegisterRecord()).
+     * 
+     * recordRef:       A DNSRecordRef initialized by a successful call to DNSServiceAddRecord()
+     *                  or DNSServiceRegisterRecord().
+     * 
+     * flags:           Currently ignored, reserved for future use.
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns an
+     *                  error code indicating the error that occurred.
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceRemoveRecord(DNSServiceRef sdRef, DNSRecordRef RecordRef, int flags);
+
+    /**
+     * DNSServiceBrowse() Parameters:
+     * 
+     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
+     *                  a copy of the shared connection reference that is to be used).
+     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     *                  returns kDNSServiceErr_NoError, and the browse operation
+     *                  will remain active indefinitely until the client terminates it
+     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     *                  (or by closing the underlying shared connection, if used).
+     * 
+     * flags:           Possible values are:
+     *                  kDNSServiceFlagsShareConnection to use a shared connection.
+     * 
+     * interfaceIndex:  If non-zero, specifies the interface on which to browse for services
+     *                  (the index for a given interface is determined via the if_nametoindex()
+     *                  family of calls.) Most applications will pass 0 to browse on all available
+     *                  interfaces. See "Constants for specifying an interface index" for more details.
+     * 
+     * regtype:         The service type being browsed for followed by the protocol, separated by a
+     *                  dot (e.g. "_ftp._tcp"). The transport protocol must be "_tcp" or "_udp".
+     *                  A client may optionally specify a single subtype to perform filtered browsing:
+     *                  e.g. browsing for "_primarytype._tcp,_subtype" will discover only those
+     *                  instances of "_primarytype._tcp" that were registered specifying "_subtype"
+     *                  in their list of registered subtypes.
+     * 
+     * domain:          If non-NULL, specifies the domain on which to browse for services.
+     *                  Most applications will not specify a domain, instead browsing on the
+     *                  default domain(s).
+     * 
+     * callBack:        The function to be called when an instance of the service being browsed for
+     *                  is found, or if the call asynchronously fails.
+     * 
+     * context:         An application context pointer which is passed to the callback function
+     *                  (may be NULL).
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     *                  errors are delivered to the callback), otherwise returns an error code indicating
+     *                  the error that occurred (the callback is not invoked and the DNSServiceRef
+     *                  is not initialized).
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceBrowse(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String regtype,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain,
+            @FunctionPtr(name = "call_DNSServiceBrowse") Function_DNSServiceBrowse callBack, VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceBrowse {
+        @Generated
+        void call_DNSServiceBrowse(DNSServiceRef arg0, int arg1, int arg2, int arg3,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg6,
+                VoidPtr arg7);
+    }
+
+    /**
+     * DNSServiceResolve() Parameters
+     * 
+     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
+     *                  a copy of the shared connection reference that is to be used).
+     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     *                  returns kDNSServiceErr_NoError, and the resolve operation
+     *                  will remain active indefinitely until the client terminates it
+     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     *                  (or by closing the underlying shared connection, if used).
+     * 
+     * flags:           Possible values are:
+     *                  kDNSServiceFlagsShareConnection to use a shared connection.
+     *                  Specifying kDNSServiceFlagsForceMulticast will cause query to be
+     *                  performed with a link-local mDNS query, even if the name is an
+     *                  apparently non-local name (i.e. a name not ending in ".local.")
+     * 
+     * interfaceIndex:  The interface on which to resolve the service. If this resolve call is
+     *                  as a result of a currently active DNSServiceBrowse() operation, then the
+     *                  interfaceIndex should be the index reported in the DNSServiceBrowseReply
+     *                  callback. If this resolve call is using information previously saved
+     *                  (e.g. in a preference file) for later use, then use interfaceIndex 0, because
+     *                  the desired service may now be reachable via a different physical interface.
+     *                  See "Constants for specifying an interface index" for more details.
+     * 
+     * name:            The name of the service instance to be resolved, as reported to the
+     *                  DNSServiceBrowseReply() callback.
+     * 
+     * regtype:         The type of the service instance to be resolved, as reported to the
+     *                  DNSServiceBrowseReply() callback.
+     * 
+     * domain:          The domain of the service instance to be resolved, as reported to the
+     *                  DNSServiceBrowseReply() callback.
+     * 
+     * callBack:        The function to be called when a result is found, or if the call
+     *                  asynchronously fails.
+     * 
+     * context:         An application context pointer which is passed to the callback function
+     *                  (may be NULL).
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     *                  errors are delivered to the callback), otherwise returns an error code indicating
+     *                  the error that occurred (the callback is never invoked and the DNSServiceRef
+     *                  is not initialized).
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceResolve(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String regtype,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain,
+            @FunctionPtr(name = "call_DNSServiceResolve") Function_DNSServiceResolve callBack, VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceResolve {
+        @Generated
+        void call_DNSServiceResolve(DNSServiceRef arg0, int arg1, int arg2, int arg3,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5,
+                char arg6, char arg7,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg8,
+                VoidPtr arg9);
+    }
+
+    /**
+     * DNSServiceQueryRecord() Parameters:
+     * 
+     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
+     *                  a copy of the shared connection reference that is to be used).
+     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     *                  returns kDNSServiceErr_NoError, and the query operation
+     *                  will remain active indefinitely until the client terminates it
+     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     *                  (or by closing the underlying shared connection, if used).
+     * 
+     * flags:           Possible values are:
+     *                  kDNSServiceFlagsShareConnection to use a shared connection.
+     *                  kDNSServiceFlagsForceMulticast or kDNSServiceFlagsLongLivedQuery.
+     *                  Pass kDNSServiceFlagsLongLivedQuery to create a "long-lived" unicast
+     *                  query to a unicast DNS server that implements the protocol. This flag
+     *                  has no effect on link-local multicast queries.
+     * 
+     * interfaceIndex:  If non-zero, specifies the interface on which to issue the query
+     *                  (the index for a given interface is determined via the if_nametoindex()
+     *                  family of calls.) Passing 0 causes the name to be queried for on all
+     *                  interfaces. See "Constants for specifying an interface index" for more details.
+     * 
+     * fullname:        The full domain name of the resource record to be queried for.
+     * 
+     * rrtype:          The numerical type of the resource record to be queried for
+     *                  (e.g. kDNSServiceType_PTR, kDNSServiceType_SRV, etc)
+     * 
+     * rrclass:         The class of the resource record (usually kDNSServiceClass_IN).
+     * 
+     * callBack:        The function to be called when a result is found, or if the call
+     *                  asynchronously fails.
+     * 
+     * context:         An application context pointer which is passed to the callback function
+     *                  (may be NULL).
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     *                  errors are delivered to the callback), otherwise returns an error code indicating
+     *                  the error that occurred (the callback is never invoked and the DNSServiceRef
+     *                  is not initialized).
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceQueryRecord(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String fullname,
+            char rrtype, char rrclass,
+            @FunctionPtr(name = "call_DNSServiceQueryRecord") Function_DNSServiceQueryRecord callBack, VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceQueryRecord {
+        @Generated
+        void call_DNSServiceQueryRecord(DNSServiceRef arg0, int arg1, int arg2, int arg3,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+                char arg5, char arg6, char arg7, ConstVoidPtr arg8, int arg9, VoidPtr arg10);
+    }
+
+    /**
+     * DNSServiceGetAddrInfo() Parameters:
+     * 
+     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
+     *                  a copy of the shared connection reference that is to be used).
+     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     *                  returns kDNSServiceErr_NoError, and the address query operation
+     *                  will remain active indefinitely until the client terminates it
+     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     *                  (or by closing the underlying shared connection, if used).
+     * 
+     * flags:           Possible values are:
+     *                  kDNSServiceFlagsShareConnection to use a shared connection.
+     *                  kDNSServiceFlagsForceMulticast
+     * 
+     * interfaceIndex:  The interface on which to issue the query.  Passing 0 causes the query to be
+     *                  sent on all active interfaces via Multicast or the primary interface via Unicast.
+     * 
+     * protocol:        Pass in kDNSServiceProtocol_IPv4 to look up IPv4 addresses, or kDNSServiceProtocol_IPv6
+     *                  to look up IPv6 addresses, or both to look up both kinds. If neither flag is
+     *                  set, the system will apply an intelligent heuristic, which is (currently)
+     *                  that it will attempt to look up both, except:
+     * 
+     *                   * If "hostname" is a wide-area unicast DNS hostname (i.e. not a ".local." name)
+     *                     but this host has no routable IPv6 address, then the call will not try to
+     *                     look up IPv6 addresses for "hostname", since any addresses it found would be
+     *                     unlikely to be of any use anyway. Similarly, if this host has no routable
+     *                     IPv4 address, the call will not try to look up IPv4 addresses for "hostname".
+     * 
+     * hostname:        The fully qualified domain name of the host to be queried for.
+     * 
+     * callBack:        The function to be called when the query succeeds or fails asynchronously.
+     * 
+     * context:         An application context pointer which is passed to the callback function
+     *                  (may be NULL).
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     *                  errors are delivered to the callback), otherwise returns an error code indicating
+     *                  the error that occurred.
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceGetAddrInfo(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            int protocol,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String hostname,
+            @FunctionPtr(name = "call_DNSServiceGetAddrInfo") Function_DNSServiceGetAddrInfo callBack, VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceGetAddrInfo {
+        @Generated
+        void call_DNSServiceGetAddrInfo(DNSServiceRef arg0, int arg1, int arg2, int arg3,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+                @UncertainArgument("Options: reference, array Fallback: reference") sockaddr arg5, int arg6,
+                VoidPtr arg7);
+    }
+
+    /**
+     * DNSServiceCreateConnection()
+     * 
+     * Create a connection to the daemon allowing efficient registration of
+     * multiple individual records.
+     * 
+     * Parameters:
+     * 
+     * sdRef:           A pointer to an uninitialized DNSServiceRef.
+     *                  Deallocating the reference (via DNSServiceRefDeallocate())
+     *                  severs the connection and cancels all operations and
+     *                  deregisters all records registered on this connection.
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns
+     *                  an error code indicating the specific failure that occurred
+     *                  (in which case the DNSServiceRef is not initialized).
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceCreateConnection(Ptr<DNSServiceRef> sdRef);
+
+    /**
+     * DNSServiceRegisterRecord() Parameters:
+     * 
+     * sdRef:           A DNSServiceRef initialized by DNSServiceCreateConnection().
+     * 
+     * RecordRef:       A pointer to an uninitialized DNSRecordRef. Upon succesfull completion of this
+     *                  call, this ref may be passed to DNSServiceUpdateRecord() or DNSServiceRemoveRecord().
+     *                  (To deregister ALL records registered on a single connected DNSServiceRef
+     *                  and deallocate each of their corresponding DNSServiceRecordRefs, call
+     *                  DNSServiceRefDeallocate()).
+     * 
+     * flags:           One of either kDNSServiceFlagsShared, kDNSServiceFlagsUnique or kDNSServiceFlagsKnownUnique must be set.
+     * 
+     * interfaceIndex:  If non-zero, specifies the interface on which to register the record
+     *                  (the index for a given interface is determined via the if_nametoindex()
+     *                  family of calls.) Passing 0 causes the record to be registered on all interfaces.
+     *                  See "Constants for specifying an interface index" for more details.
+     * 
+     * fullname:        The full domain name of the resource record.
+     * 
+     * rrtype:          The numerical type of the resource record (e.g. kDNSServiceType_PTR, kDNSServiceType_SRV, etc)
+     * 
+     * rrclass:         The class of the resource record (usually kDNSServiceClass_IN)
+     * 
+     * rdlen:           Length, in bytes, of the rdata.
+     * 
+     * rdata:           A pointer to the raw rdata, as it is to appear in the DNS record.
+     * 
+     * ttl:             The time to live of the resource record, in seconds.
+     *                  Most clients should pass 0 to indicate that the system should
+     *                  select a sensible default value.
+     * 
+     * callBack:        The function to be called when a result is found, or if the call
+     *                  asynchronously fails (e.g. because of a name conflict.)
+     * 
+     * context:         An application context pointer which is passed to the callback function
+     *                  (may be NULL).
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     *                  errors are delivered to the callback), otherwise returns an error code indicating
+     *                  the error that occurred (the callback is never invoked and the DNSRecordRef is
+     *                  not initialized).
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceRegisterRecord(DNSServiceRef sdRef, Ptr<DNSRecordRef> RecordRef, int flags,
+            int interfaceIndex,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String fullname,
+            char rrtype, char rrclass, char rdlen, ConstVoidPtr rdata, int ttl,
+            @FunctionPtr(name = "call_DNSServiceRegisterRecord") Function_DNSServiceRegisterRecord callBack,
+            VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceRegisterRecord {
+        @Generated
+        void call_DNSServiceRegisterRecord(DNSServiceRef arg0, DNSRecordRef arg1, int arg2, int arg3, VoidPtr arg4);
+    }
+
+    /**
+     * DNSServiceReconfirmRecord
+     * 
+     * Instruct the daemon to verify the validity of a resource record that appears
+     * to be out of date (e.g. because TCP connection to a service's target failed.)
+     * Causes the record to be flushed from the daemon's cache (as well as all other
+     * daemons' caches on the network) if the record is determined to be invalid.
+     * Use this routine conservatively. Reconfirming a record necessarily consumes
+     * network bandwidth, so this should not be done indiscriminately.
+     * 
+     * Parameters:
+     * 
+     * flags:           Not currently used.
+     * 
+     * interfaceIndex:  Specifies the interface of the record in question.
+     *                  The caller must specify the interface.
+     *                  This API (by design) causes increased network traffic, so it requires
+     *                  the caller to be precise about which record should be reconfirmed.
+     *                  It is not possible to pass zero for the interface index to perform
+     *                  a "wildcard" reconfirmation, where *all* matching records are reconfirmed.
+     * 
+     * fullname:        The resource record's full domain name.
+     * 
+     * rrtype:          The resource record's type (e.g. kDNSServiceType_PTR, kDNSServiceType_SRV, etc)
+     * 
+     * rrclass:         The class of the resource record (usually kDNSServiceClass_IN).
+     * 
+     * rdlen:           The length, in bytes, of the resource record rdata.
+     * 
+     * rdata:           The raw rdata of the resource record.
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceReconfirmRecord(int flags, int interfaceIndex,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String fullname,
+            char rrtype, char rrclass, char rdlen, ConstVoidPtr rdata);
+
+    /**
+     * PeerConnectionRelease() Parameters
+     * 
+     * Release P2P connection resources associated with the service instance.
+     * When a service is resolved over a P2P interface, a connection is brought up to the
+     * peer advertising the service instance.  This call will free the resources associated
+     * with that connection.  Note that the reference to the service instance will only
+     * be maintained by the daemon while the browse for the service type is still
+     * running.  Thus the sequence of calls to discover, resolve, and then terminate the connection
+     * associated with a given P2P service instance would be:
+     * 
+     *   DNSServiceRef BrowseRef, ResolveRef;
+     *      DNSServiceBrowse(&BrowseRef, ...)    // browse for all instances of the service
+     *      DNSServiceResolve(&ResolveRef, ...)  // resolving a service instance creates a
+     *                                           // connection to the peer device advertising that service
+     *      DNSServiceRefDeallocate(ResolveRef)  // Stop the resolve, which does not close the peer connection
+     * 
+     *          // Communicate with the peer application.
+     * 
+     *      PeerConnectionRelease()  // release the connection to the peer device for the specified service instance
+     * 
+     *      DNSServiceRefDeallocate(BrowseRef)  // stop the browse
+     *          // Any further calls to PeerConnectionRelease() will have no affect since the
+     *          // service instance to peer connection relationship is only maintained by the
+     *          // daemon while the browse is running.
+     * 
+     * 
+     * flags:           Not currently used.
+     * 
+     * name:            The name of the service instance to be resolved, as reported to the
+     *                  DNSServiceBrowseReply() callback.
+     * 
+     * regtype:         The type of the service instance to be resolved, as reported to the
+     *                  DNSServiceBrowseReply() callback.
+     * 
+     * domain:          The domain of the service instance to be resolved, as reported to the
+     *                  DNSServiceBrowseReply() callback.
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success or the error that occurred.
+     */
+    @Generated
+    @CFunction
+    public static native int PeerConnectionRelease(int flags,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String regtype,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain);
+
+    /**
+     * DNSServiceNATPortMappingCreate() Parameters:
+     * 
+     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
+     *                  a copy of the shared connection reference that is to be used).
+     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     *                  returns kDNSServiceErr_NoError, and the NAT port mapping
+     *                  will remain active indefinitely until the client terminates it
+     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     *                  (or by closing the underlying shared connection, if used).
+     * 
+     * flags:           Possible values are:
+     *                  kDNSServiceFlagsShareConnection to use a shared connection.
+     * 
+     * interfaceIndex:  The interface on which to create port mappings in a NAT gateway.
+     *                  Passing 0 causes the port mapping request to be sent on the primary interface.
+     * 
+     * protocol:        To request a port mapping, pass in kDNSServiceProtocol_UDP, or kDNSServiceProtocol_TCP,
+     *                  or (kDNSServiceProtocol_UDP | kDNSServiceProtocol_TCP) to map both.
+     *                  The local listening port number must also be specified in the internalPort parameter.
+     *                  To just discover the NAT gateway's external IP address, pass zero for protocol,
+     *                  internalPort, externalPort and ttl.
+     * 
+     * internalPort:    The port number in network byte order on the local machine which is listening for packets.
+     * 
+     * externalPort:    The requested external port in network byte order in the NAT gateway that you would
+     *                  like to map to the internal port. Pass 0 if you don't care which external port is chosen for you.
+     * 
+     * ttl:             The requested renewal period of the NAT port mapping, in seconds.
+     *                  If the client machine crashes, suffers a power failure, is disconnected from
+     *                  the network, or suffers some other unfortunate demise which causes it to vanish
+     *                  unexpectedly without explicitly removing its NAT port mappings, then the NAT gateway
+     *                  will garbage-collect old stale NAT port mappings when their lifetime expires.
+     *                  Requesting a short TTL causes such orphaned mappings to be garbage-collected
+     *                  more promptly, but consumes system resources and network bandwidth with
+     *                  frequent renewal packets to keep the mapping from expiring.
+     *                  Requesting a long TTL is more efficient on the network, but in the event of the
+     *                  client vanishing, stale NAT port mappings will not be garbage-collected as quickly.
+     *                  Most clients should pass 0 to use a system-wide default value.
+     * 
+     * callBack:        The function to be called when the port mapping request succeeds or fails asynchronously.
+     * 
+     * context:         An application context pointer which is passed to the callback function
+     *                  (may be NULL).
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     *                  errors are delivered to the callback), otherwise returns an error code indicating
+     *                  the error that occurred.
+     * 
+     *                  If you don't actually want a port mapped, and are just calling the API
+     *                  because you want to find out the NAT's external IP address (e.g. for UI
+     *                  display) then pass zero for protocol, internalPort, externalPort and ttl.
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceNATPortMappingCreate(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            int protocol, char internalPort, char externalPort, int ttl,
+            @FunctionPtr(name = "call_DNSServiceNATPortMappingCreate") Function_DNSServiceNATPortMappingCreate callBack,
+            VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceNATPortMappingCreate {
+        @Generated
+        void call_DNSServiceNATPortMappingCreate(DNSServiceRef arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+                char arg6, char arg7, int arg8, VoidPtr arg9);
+    }
+
+    /**
+     * DNSServiceConstructFullName()
+     * 
+     * Concatenate a three-part domain name (as returned by the above callbacks) into a
+     * properly-escaped full domain name. Note that callbacks in the above functions ALREADY ESCAPE
+     * strings where necessary.
+     * 
+     * Parameters:
+     * 
+     * fullName:        A pointer to a buffer that where the resulting full domain name is to be written.
+     *                  The buffer must be kDNSServiceMaxDomainName (1009) bytes in length to
+     *                  accommodate the longest legal domain name without buffer overrun.
+     * 
+     * service:         The service name - any dots or backslashes must NOT be escaped.
+     *                  May be NULL (to construct a PTR record name, e.g.
+     *                  "_ftp._tcp.apple.com.").
+     * 
+     * regtype:         The service type followed by the protocol, separated by a dot
+     *                  (e.g. "_ftp._tcp").
+     * 
+     * domain:          The domain name, e.g. "apple.com.". Literal dots or backslashes,
+     *                  if any, must be escaped, e.g. "1st\. Floor.apple.com."
+     * 
+     * return value:    Returns kDNSServiceErr_NoError (0) on success, kDNSServiceErr_BadParam on error.
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceConstructFullName(BytePtr fullName,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String service,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String regtype,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain);
+
+    /**
+     * TXTRecordCreate()
+     * 
+     * Creates a new empty TXTRecordRef referencing the specified storage.
+     * 
+     * If the buffer parameter is NULL, or the specified storage size is not
+     * large enough to hold a key subsequently added using TXTRecordSetValue(),
+     * then additional memory will be added as needed using malloc(). Note that
+     * an existing TXT record buffer should not be passed to TXTRecordCreate
+     * to create a copy of another TXT Record. The correct way to copy TXTRecordRef
+     * is creating an empty TXTRecordRef with TXTRecordCreate() first, and using
+     * TXTRecordSetValue to set the same value.
+     * 
+     * On some platforms, when memory is low, malloc() may fail. In this
+     * case, TXTRecordSetValue() will return kDNSServiceErr_NoMemory, and this
+     * error condition will need to be handled as appropriate by the caller.
+     * 
+     * You can avoid the need to handle this error condition if you ensure
+     * that the storage you initially provide is large enough to hold all
+     * the key/value pairs that are to be added to the record.
+     * The caller can precompute the exact length required for all of the
+     * key/value pairs to be added, or simply provide a fixed-sized buffer
+     * known in advance to be large enough.
+     * A no-value (key-only) key requires  (1 + key length) bytes.
+     * A key with empty value requires     (1 + key length + 1) bytes.
+     * A key with non-empty value requires (1 + key length + 1 + value length).
+     * For most applications, DNS-SD TXT records are generally
+     * less than 100 bytes, so in most cases a simple fixed-sized
+     * 256-byte buffer will be more than sufficient.
+     * Recommended size limits for DNS-SD TXT Records are discussed in RFC 6763
+     * <https://tools.ietf.org/html/rfc6763#section-6.2>
+     * 
+     * Note: When passing parameters to and from these TXT record APIs,
+     * the key name does not include the '=' character. The '=' character
+     * is the separator between the key and value in the on-the-wire
+     * packet format; it is not part of either the key or the value.
+     * 
+     * txtRecord:       A pointer to an uninitialized TXTRecordRef.
+     * 
+     * bufferLen:       The size of the storage provided in the "buffer" parameter.
+     * 
+     * buffer:          Optional caller-supplied storage used to hold the TXTRecord data.
+     *                  This storage must remain valid for as long as
+     *                  the TXTRecordRef.
+     */
+    @Generated
+    @CFunction
+    public static native void TXTRecordCreate(VoidPtr txtRecord, char bufferLen, VoidPtr buffer);
+
+    /**
+     * TXTRecordDeallocate()
+     * 
+     * Releases any resources allocated in the course of preparing a TXT Record
+     * using TXTRecordCreate()/TXTRecordSetValue()/TXTRecordRemoveValue().
+     * Ownership of the buffer provided in TXTRecordCreate() returns to the client.
+     * 
+     * txtRecord:           A TXTRecordRef initialized by calling TXTRecordCreate().
+     */
+    @Generated
+    @CFunction
+    public static native void TXTRecordDeallocate(VoidPtr txtRecord);
+
+    /**
+     * TXTRecordSetValue()
+     * 
+     * Adds a key (optionally with value) to a TXTRecordRef. If the "key" already
+     * exists in the TXTRecordRef, then the current value will be replaced with
+     * the new value.
+     * Keys may exist in four states with respect to a given TXT record:
+     *  - Absent (key does not appear at all)
+     *  - Present with no value ("key" appears alone)
+     *  - Present with empty value ("key=" appears in TXT record)
+     *  - Present with non-empty value ("key=value" appears in TXT record)
+     * For more details refer to "Data Syntax for DNS-SD TXT Records" in RFC 6763
+     * <https://tools.ietf.org/html/rfc6763#section-6>
+     * 
+     * txtRecord:       A TXTRecordRef initialized by calling TXTRecordCreate().
+     * 
+     * key:             A null-terminated string which only contains printable ASCII
+     *                  values (0x20-0x7E), excluding '=' (0x3D). Keys should be
+     *                  9 characters or fewer (not counting the terminating null).
+     * 
+     * valueSize:       The size of the value.
+     * 
+     * value:           Any binary value. For values that represent
+     *                  textual data, UTF-8 is STRONGLY recommended.
+     *                  For values that represent textual data, valueSize
+     *                  should NOT include the terminating null (if any)
+     *                  at the end of the string.
+     *                  If NULL, then "key" will be added with no value.
+     *                  If non-NULL but valueSize is zero, then "key=" will be
+     *                  added with empty value.
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success.
+     *                  Returns kDNSServiceErr_Invalid if the "key" string contains
+     *                  illegal characters.
+     *                  Returns kDNSServiceErr_NoMemory if adding this key would
+     *                  exceed the available storage.
+     */
+    @Generated
+    @CFunction
+    public static native int TXTRecordSetValue(VoidPtr txtRecord,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            byte valueSize, ConstVoidPtr value);
+
+    /**
+     * TXTRecordRemoveValue()
+     * 
+     * Removes a key from a TXTRecordRef. The "key" must be an
+     * ASCII string which exists in the TXTRecordRef.
+     * 
+     * txtRecord:       A TXTRecordRef initialized by calling TXTRecordCreate().
+     * 
+     * key:             A key name which exists in the TXTRecordRef.
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success.
+     *                  Returns kDNSServiceErr_NoSuchKey if the "key" does not
+     *                  exist in the TXTRecordRef.
+     */
+    @Generated
+    @CFunction
+    public static native int TXTRecordRemoveValue(VoidPtr txtRecord,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
+
+    /**
+     * TXTRecordGetLength()
+     * 
+     * Allows you to determine the length of the raw bytes within a TXTRecordRef.
+     * 
+     * txtRecord:       A TXTRecordRef initialized by calling TXTRecordCreate().
+     * 
+     * return value:    Returns the size of the raw bytes inside a TXTRecordRef
+     *                  which you can pass directly to DNSServiceRegister() or
+     *                  to DNSServiceUpdateRecord().
+     *                  Returns 0 if the TXTRecordRef is empty.
+     */
+    @Generated
+    @CFunction
+    public static native char TXTRecordGetLength(VoidPtr txtRecord);
+
+    /**
+     * TXTRecordGetBytesPtr()
+     * 
+     * Allows you to retrieve a pointer to the raw bytes within a TXTRecordRef.
+     * 
+     * txtRecord:       A TXTRecordRef initialized by calling TXTRecordCreate().
+     * 
+     * return value:    Returns a pointer to the raw bytes inside the TXTRecordRef
+     *                  which you can pass directly to DNSServiceRegister() or
+     *                  to DNSServiceUpdateRecord().
+     */
+    @Generated
+    @CFunction
+    public static native ConstVoidPtr TXTRecordGetBytesPtr(VoidPtr txtRecord);
+
+    /**
+     * TXTRecordContainsKey()
+     * 
+     * Allows you to determine if a given TXT Record contains a specified key.
+     * 
+     * txtLen:          The size of the received TXT Record.
+     * 
+     * txtRecord:       Pointer to the received TXT Record bytes.
+     * 
+     * key:             A null-terminated ASCII string containing the key name.
+     * 
+     * return value:    Returns 1 if the TXT Record contains the specified key.
+     *                  Otherwise, it returns 0.
+     */
+    @Generated
+    @CFunction
+    public static native int TXTRecordContainsKey(char txtLen, ConstVoidPtr txtRecord,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
+
+    /**
+     * TXTRecordGetValuePtr()
+     * 
+     * Allows you to retrieve the value for a given key from a TXT Record.
+     * 
+     * txtLen:          The size of the received TXT Record
+     * 
+     * txtRecord:       Pointer to the received TXT Record bytes.
+     * 
+     * key:             A null-terminated ASCII string containing the key name.
+     * 
+     * valueLen:        On output, will be set to the size of the "value" data.
+     * 
+     * return value:    Returns NULL if the key does not exist in this TXT record,
+     *                  or exists with no value (to differentiate between
+     *                  these two cases use TXTRecordContainsKey()).
+     *                  Returns pointer to location within TXT Record bytes
+     *                  if the key exists with empty or non-empty value.
+     *                  For empty value, valueLen will be zero.
+     *                  For non-empty value, valueLen will be length of value data.
+     */
+    @Generated
+    @CFunction
+    public static native ConstVoidPtr TXTRecordGetValuePtr(char txtLen, ConstVoidPtr txtRecord,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            BytePtr valueLen);
+
+    /**
+     * TXTRecordGetCount()
+     * 
+     * Returns the number of keys stored in the TXT Record. The count
+     * can be used with TXTRecordGetItemAtIndex() to iterate through the keys.
+     * 
+     * txtLen:          The size of the received TXT Record.
+     * 
+     * txtRecord:       Pointer to the received TXT Record bytes.
+     * 
+     * return value:    Returns the total number of keys in the TXT Record.
+     */
+    @Generated
+    @CFunction
+    public static native char TXTRecordGetCount(char txtLen, ConstVoidPtr txtRecord);
+
+    /**
+     * TXTRecordGetItemAtIndex()
+     * 
+     * Allows you to retrieve a key name and value pointer, given an index into
+     * a TXT Record. Legal index values range from zero to TXTRecordGetCount()-1.
+     * It's also possible to iterate through keys in a TXT record by simply
+     * calling TXTRecordGetItemAtIndex() repeatedly, beginning with index zero
+     * and increasing until TXTRecordGetItemAtIndex() returns kDNSServiceErr_Invalid.
+     * 
+     * On return:
+     * For keys with no value, *value is set to NULL and *valueLen is zero.
+     * For keys with empty value, *value is non-NULL and *valueLen is zero.
+     * For keys with non-empty value, *value is non-NULL and *valueLen is non-zero.
+     * 
+     * txtLen:          The size of the received TXT Record.
+     * 
+     * txtRecord:       Pointer to the received TXT Record bytes.
+     * 
+     * itemIndex:       An index into the TXT Record.
+     * 
+     * keyBufLen:       The size of the string buffer being supplied.
+     * 
+     * key:             A string buffer used to store the key name.
+     *                  On return, the buffer contains a null-terminated C-string
+     *                  giving the key name. DNS-SD TXT keys are usually
+     *                  9 characters or fewer. To hold the maximum possible
+     *                  key name, the buffer should be 256 bytes long.
+     * 
+     * valueLen:        On output, will be set to the size of the "value" data.
+     * 
+     * value:           On output, *value is set to point to location within TXT
+     *                  Record bytes that holds the value data.
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success.
+     *                  Returns kDNSServiceErr_NoMemory if keyBufLen is too short.
+     *                  Returns kDNSServiceErr_Invalid if index is greater than
+     *                  TXTRecordGetCount()-1.
+     */
+    @Generated
+    @CFunction
+    public static native int TXTRecordGetItemAtIndex(char txtLen, ConstVoidPtr txtRecord, char itemIndex,
+            char keyBufLen, BytePtr key, BytePtr valueLen, Ptr<ConstVoidPtr> value);
+
+    /**
+     * DNSServiceSetDispatchQueue
+     * 
+     * Allows you to schedule a DNSServiceRef on a serial dispatch queue for receiving asynchronous
+     * callbacks.  It's the clients responsibility to ensure that the provided dispatch queue is running.
+     * 
+     * A typical application that uses CFRunLoopRun or dispatch_main on its main thread will
+     * usually schedule DNSServiceRefs on its main queue (which is always a serial queue)
+     * using "DNSServiceSetDispatchQueue(sdref, dispatch_get_main_queue());"
+     * 
+     * If there is any error during the processing of events, the application callback will
+     * be called with an error code. For shared connections, each subordinate DNSServiceRef
+     * will get its own error callback. Currently these error callbacks only happen
+     * if the daemon is manually terminated or crashes, and the error
+     * code in this case is kDNSServiceErr_ServiceNotRunning. The application must call
+     * DNSServiceRefDeallocate to free the DNSServiceRef when it gets such an error code.
+     * These error callbacks are rare and should not normally happen on customer machines,
+     * but application code should be written defensively to handle such error callbacks
+     * gracefully if they occur.
+     * 
+     * After using DNSServiceSetDispatchQueue on a DNSServiceRef, calling DNSServiceProcessResult
+     * on the same DNSServiceRef will result in undefined behavior and should be avoided.
+     * 
+     * Once the application successfully schedules a DNSServiceRef on a serial dispatch queue using
+     * DNSServiceSetDispatchQueue, it cannot remove the DNSServiceRef from the dispatch queue, or use
+     * DNSServiceSetDispatchQueue a second time to schedule the DNSServiceRef onto a different serial dispatch
+     * queue. Once scheduled onto a dispatch queue a DNSServiceRef will deliver events to that queue until
+     * the application no longer requires that operation and terminates it using DNSServiceRefDeallocate.
+     * Note that the call to DNSServiceRefDeallocate() must be done on the same queue originally passed
+     * as an argument to DNSServiceSetDispatchQueue().
+     * 
+     * service:         DNSServiceRef that was allocated and returned to the application, when the
+     *                  application calls one of the DNSService API.
+     * 
+     * queue:           dispatch queue where the application callback will be scheduled
+     * 
+     * return value:    Returns kDNSServiceErr_NoError on success.
+     *                  Returns kDNSServiceErr_NoMemory if it cannot create a dispatch source
+     *                  Returns kDNSServiceErr_BadParam if the service param is invalid or the
+     *                  queue param is invalid
+     */
+    @Generated
+    @CFunction
+    public static native int DNSServiceSetDispatchQueue(DNSServiceRef service, NSObject queue);
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceSleepKeepalive(Ptr<DNSServiceRef> sdRef, int flags, int fd, int timeout,
+            @FunctionPtr(name = "call_DNSServiceSleepKeepalive") Function_DNSServiceSleepKeepalive callBack,
+            VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceSleepKeepalive {
+        @Generated
+        void call_DNSServiceSleepKeepalive(DNSServiceRef arg0, int arg1, VoidPtr arg2);
+    }
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native mach_header __dso_handle();
+
+    /**
+     * [@function] os_signpost_id_make_with_pointer
+     * 
+     * Make an os_signpost_id from a pointer value.
+     * 
+     * Mangles the pointer to create a valid os_signpost_id, including removing
+     * address randomization. Checks that the signpost matching scope is not
+     * system-wide.
+     * 
+     * @param log
+     * Log handle previously created with os_log_create.
+     * 
+     * @param ptr
+     * Any pointer that disambiguates among concurrent intervals with the same
+     * os_log_t and interval names.
+     * 
+     * @return
+     * Returns a valid os_signpost_id_t. Returns OS_SIGNPOST_ID_NULL if signposts
+     * are turned off. Returns OS_SIGNPOST_ID_INVALID if the log handle is
+     * system-scoped.
+     */
+    @Generated
+    @CFunction
+    public static native long os_signpost_id_make_with_pointer(NSObject log, ConstVoidPtr ptr);
+
+    /**
+     * [@function] os_signpost_id_generate
+     * 
+     * Generates an ID guaranteed to be unique within the matching scope of the
+     * provided log handle.
+     * 
+     * Each call to os_signpost_id_generate() with a given log handle and its
+     * matching scope will return a different os_signpost_id_t.
+     * 
+     * @param log
+     * Log handle previously created with os_log_create.
+     * 
+     * @return
+     * Returns a valid os_signpost_id_t. Returns OS_SIGNPOST_ID_NULL if signposts
+     * are disabled.
+     */
+    @Generated
+    @CFunction
+    public static native long os_signpost_id_generate(NSObject log);
+
+    /**
+     * [@function] os_signpost_enabled
+     * 
+     * Returns true if signpost log messages are enabled for a particular log
+     * handle.
+     * 
+     * Returns true if signpost log messages are enabled for a particular log.
+     * Use this to avoid doing expensive argument marshalling leading into a call
+     * to os_signpost_*
+     * 
+     * @param log
+     * Log handle previously created with os_log_create.
+     * 
+     * @return
+     * Returns ‘true’ if signpost log messages are enabled.
+     */
+    @Generated
+    @CFunction
+    public static native boolean os_signpost_enabled(NSObject log);
+
+    @Generated
+    @CFunction
+    public static native void _os_signpost_emit_with_name_impl(VoidPtr dso, NSObject log, byte type, long spid,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
+            BytePtr buf, int size);
+
+    @Generated
+    @CFunction
+    public static native int __darwin_check_fd_set_overflow(int arg1, ConstVoidPtr arg2, int arg3);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int __darwin_check_fd_set(int _a, ConstVoidPtr _b);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native void __darwin_fd_set(int _fd,
+            @UncertainArgument("Options: reference, array Fallback: reference") fd_set _p);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native void __darwin_fd_clr(int _fd,
+            @UncertainArgument("Options: reference, array Fallback: reference") fd_set _p);
+
+    /**
+     * Returns a pointer to any extra bytes allocated with an instance given object.
+     * 
+     * [@note] This function returns a pointer to any extra bytes allocated with the instance
+     *  (as specified by \c class_createInstance with extraBytes>0). This memory follows the
+     *  object's ordinary ivars, but may not be adjacent to the last ivar.
+     * [@note] The returned pointer is guaranteed to be pointer-size aligned, even if the area following
+     *  the object's last ivar is less aligned than that. Alignment greater than pointer-size is never
+     *  guaranteed, even if the area following the object's last ivar is more aligned than that.
+     * [@note] In a garbage-collected environment, the memory is scanned conservatively.
+     * 
+     * @param obj An Objective-C object.
+     * 
+     * @return A pointer to any extra bytes allocated with \e obj. If \e obj was
+     *   not allocated with any extra bytes, then dereferencing the returned pointer is undefined.
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr object_getIndexedIvars(@Mapped(ObjCObjectMapper.class) Object obj);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr aligned_alloc(@NUInt long __alignment, @NUInt long __size);
+
+    @Generated
+    @CFunction
+    public static native long strtonum(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __numstr,
+            long __minval, long __maxval,
+            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] __errstrp);
+
+    @Generated
+    @CFunction
+    public static native int strsignal_r(int __sig, BytePtr __strsignalbuf, @NUInt long __buflen);
+
+    /**
+     * [@function] os_workgroup_create_with_workgroup
+     * 
+     * Create a new os_workgroup object from an existing os_workgroup.
+     * 
+     * The newly created os_workgroup has no initial member threads - in particular
+     * the creating threaad does not join the os_workgroup_t implicitly.
+     * 
+     * @param name
+     * A client specified string for labelling the workgroup. This parameter is
+     * optional and can be NULL.
+     * 
+     * @param wg
+     * The existing workgroup to create a new workgroup object from.
+     */
+    @Generated
+    @CFunction
+    public static native OS_os_workgroup os_workgroup_create_with_workgroup(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            OS_os_workgroup wg);
+
+    /**
+     * [@function] os_workgroup_join
+     * 
+     * Joins the current thread to the specified workgroup and populates the join
+     * token that has been passed in. This API is real-time safe.
+     * 
+     * @param wg
+     * The workgroup that the current thread would like to join
+     * 
+     * @param token_out
+     * Pointer to a client allocated struct which the function will populate
+     * with the join token. This token must be passed in by the thread when it calls
+     * os_workgroup_leave().
+     * 
+     * Errors will be returned in the following cases:
+     * 
+     * EALREADY		The thread is already part of a workgroup that the specified
+     * 			workgroup does not nest with
+     * EINVAL		The workgroup has been cancelled
+     */
+    @Generated
+    @CFunction
+    public static native int os_workgroup_join(OS_os_workgroup wg,
+            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_join_token_opaque_s token_out);
+
+    /**
+     * [@function] os_workgroup_leave
+     * 
+     * This removes the current thread from a workgroup it has previously
+     * joined. Threads must leave all workgroups in the reverse order that they
+     * have joined them. Failing to do so before exiting will result in undefined
+     * behavior.
+     * 
+     * If the join token is malformed, the process will be aborted.
+     * 
+     * This API is real time safe.
+     * 
+     * @param wg
+     * The workgroup that the current thread would like to leave.
+     * 
+     * @param token
+     * This is the join token populated by the most recent call to
+     * os_workgroup_join().
+     */
+    @Generated
+    @CFunction
+    public static native void os_workgroup_leave(OS_os_workgroup wg,
+            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_join_token_opaque_s token);
+
+    /**
+     * [@function] os_workgroup_set_working_arena
+     * 
+     * Associates a client defined working arena with the workgroup. The arena
+     * is local to the workgroup object in the process. This is intended for
+     * distributing a manually managed memory allocation between member threads
+     * of the workgroup.
+     * 
+     * This function can be called multiple times and the client specified
+     * destructor will be called on the previously assigned arena, if any. This
+     * function can only be called when no threads have currently joined the
+     * workgroup and all workloops associated with the workgroup are idle.
+     * 
+     * @param wg
+     * The workgroup to associate the working arena with
+     * 
+     * @param arena
+     * The client managed arena to associate with the workgroup. This value can
+     * be NULL.
+     * 
+     * @param max_workers
+     * The maximum number of threads that will ever query the workgroup for the
+     * arena and request an index into it.  If the arena is not used to partition
+     * work amongst member threads, then this field can be 0.
+     * 
+     * @param destructor
+     * A destructor to call on the previously assigned working arena, if any
+     */
+    @Generated
+    @CFunction
+    public static native int os_workgroup_set_working_arena(OS_os_workgroup wg, VoidPtr arena, int max_workers,
+            @FunctionPtr(name = "call_os_workgroup_set_working_arena") Function_os_workgroup_set_working_arena destructor);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_os_workgroup_set_working_arena {
+        @Generated
+        void call_os_workgroup_set_working_arena(VoidPtr arg0);
+    }
+
+    /**
+     * [@function] os_workgroup_get_working_arena
+     * 
+     * Returns the working arena associated with the workgroup and the current
+     * thread's index in the workgroup. This function can only be called by a member
+     * of the workgroup. Multiple calls to this API by a member thread will return
+     * the same arena and index until the thread leaves the workgroup.
+     * 
+     * For workloops with an associated workgroup, every work item on the workloop
+     * will receive the same index in the arena.
+     * 
+     * This method returns NULL if no arena is set on the workgroup. The index
+     * returned by this function is zero-based and is namespaced per workgroup
+     * object in the process. The indices provided are strictly monotonic and never
+     * reused until a future call to os_workgroup_set_working_arena.
+     * 
+     * @param wg
+     * The workgroup to get the working arena from.
+     * 
+     * @param index_out
+     * A pointer to a os_workgroup_index which will be populated by the caller's
+     * index in the workgroup.
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr os_workgroup_get_working_arena(OS_os_workgroup wg, IntPtr index_out);
+
+    /**
+     * [@function] os_workgroup_cancel
+     * 
+     * This API invalidates a workgroup and indicates to the system that the
+     * workload is no longer relevant to the caller.
+     * 
+     * No new work should be initiated for a cancelled workgroup and
+     * work that is already underway should periodically check for
+     * cancellation with os_workgroup_testcancel and initiate cleanup if needed.
+     * 
+     * Threads currently in the workgroup continue to be tracked together but no
+     * new threads may join this workgroup - the only possible operation allowed is
+     * to leave the workgroup. Other actions may have undefined behavior or
+     * otherwise fail.
+     * 
+     * This API is idempotent. Cancellation is local to the workgroup object
+     * it is called on and does not affect other workgroups.
+     * 
+     * @param wg
+     * The workgroup that that the thread would like to cancel
+     */
+    @Generated
+    @CFunction
+    public static native void os_workgroup_cancel(OS_os_workgroup wg);
+
+    /**
+     * [@function] os_workgroup_testcancel
+     * 
+     * Returns true if the workgroup object has been cancelled. See also
+     * os_workgroup_cancel
+     */
+    @Generated
+    @CFunction
+    public static native boolean os_workgroup_testcancel(OS_os_workgroup wg);
+
+    /**
+     * [@function] os_workgroup_max_parallel_threads
+     * 
+     * Returns the system's recommendation for maximum number of threads the client
+     * should make for a multi-threaded workload in a given workgroup.
+     * 
+     * This API takes into consideration the current hardware the code is running on
+     * and the attributes of the workgroup. It does not take into consideration the
+     * current load of the system and therefore always provides the most optimal
+     * recommendation for the workload.
+     * 
+     * @param wg
+     * The workgroup in which the multi-threaded workload will be performed in. The
+     * threads performing the multi-threaded workload are expected to join this
+     * workgroup.
+     * 
+     * @param attr
+     * This value is currently unused and should be NULL.
+     */
+    @Generated
+    @CFunction
+    public static native int os_workgroup_max_parallel_threads(OS_os_workgroup wg, os_workgroup_mpt_attr_t attr);
+
+    /**
+     * [@function] os_workgroup_interval_start
+     * 
+     * Indicates to the system that the member threads of this
+     * os_workgroup_interval_t have begun working on an instance of the repeatable
+     * interval workload with the specified timestamps. This function is real time
+     * safe.
+     * 
+     * This function will set and return an errno in the following cases:
+     * 
+     * - The current thread is not a member of the os_workgroup_interval_t
+     * - The os_workgroup_interval_t has been cancelled
+     * - The timestamps passed in are malformed
+     * - os_workgroup_interval_start() was previously called on the
+     * os_workgroup_interval_t without an intervening os_workgroup_interval_finish()
+     * - A concurrent workgroup interval configuration operation is taking place.
+     * 
+     * @param start
+     * Start timestamp specified in the os_clockid_t with which the
+     * os_workgroup_interval_t was created. This is generally a time in the past and
+     * indicates when the workgroup started working on an interval period
+     * 
+     * @param deadline
+     * Deadline timestamp specified in the os_clockid_t with which the
+     * os_workgroup_interval_t was created. This specifies the deadline which the
+     * interval period would like to meet.
+     * 
+     * @param data
+     * This field is currently unused and should be NULL
+     */
+    @Generated
+    @CFunction
+    public static native int os_workgroup_interval_start(OS_os_workgroup wg, long start, long deadline,
+            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
+
+    /**
+     * [@function] os_workgroup_interval_update
+     * 
+     * Updates an already started interval workgroup to have the new
+     * deadline specified. This function is real time safe.
+     * 
+     * This function will return an error in the following cases:
+     * - The current thread is not a member of the os_workgroup_interval_t
+     * - The os_workgroup_interval_t has been cancelled
+     * - The timestamp passed in is malformed
+     * - os_workgroup_interval_start() was not previously called on the
+     * os_workgroup_interval_t or was already matched with an
+     * os_workgroup_interval_finish()
+     * - A concurrent workgroup interval configuration operation is taking place
+     * 
+     * @param deadline
+     * Timestamp specified in the os_clockid_t with
+     * which the os_workgroup_interval_t was created.
+     * 
+     * @param data
+     * This field is currently unused and should be NULL
+     */
+    @Generated
+    @CFunction
+    public static native int os_workgroup_interval_update(OS_os_workgroup wg, long deadline,
+            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
+
+    /**
+     * [@function] os_workgroup_interval_finish
+     * 
+     * Indicates to the system that the member threads of
+     * this os_workgroup_interval_t have finished working on the current instance
+     * of the interval workload. This function is real time safe.
+     * 
+     * This function will return an error in the following cases:
+     *  - The current thread is not a member of the os_workgroup_interval_t
+     *  - os_workgroup_interval_start() was not previously called on the
+     * os_workgroup_interval_t or was already matched with an
+     * os_workgroup_interval_finish()
+     * - A concurrent workgroup interval configuration operation is taking place.
+     * 
+     * @param data
+     * This field is currently unused and should be NULL
+     */
+    @Generated
+    @CFunction
+    public static native int os_workgroup_interval_finish(OS_os_workgroup wg,
+            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
+
+    /**
+     * [@function] os_workgroup_parallel_create
+     * 
+     * Creates an os_workgroup_t which tracks a parallel workload.
+     * A newly created os_workgroup_interval_t has no initial member threads -
+     * in particular the creating thread does not join the os_workgroup_parallel_t
+     * implicitly.
+     * 
+     * See also os_workgroup_max_parallel_threads().
+     * 
+     * @param name
+     * A client specified string for labelling the workgroup. This parameter is
+     * optional and can be NULL.
+     * 
+     * @param attr
+     * The requested set of workgroup attributes. NULL is to be specified for the
+     * default set of attributes.
+     */
+    @Generated
+    @CFunction
+    public static native OS_os_workgroup os_workgroup_parallel_create(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_attr_opaque_s attr);
+
+    /**
+     * [@function] dispatch_workloop_set_os_workgroup
+     * 
+     * Associates an os_workgroup_t with the specified dispatch workloop.
+     * 
+     * The worker thread will be a member of the specified os_workgroup_t while executing
+     * work items submitted to the workloop.
+     * 
+     * @param workloop
+     * The dispatch workloop to modify.
+     * 
+     * This workloop must be inactive, passing an activated object is undefined
+     * and will cause the process to be terminated.
+     * 
+     * @param workgroup
+     * The workgroup to associate with this workloop.
+     * 
+     * The workgroup specified is retained and the previously associated workgroup
+     * (if any) is released.
+     */
+    @Generated
+    @CFunction
+    public static native void dispatch_workloop_set_os_workgroup(NSObject workloop, OS_os_workgroup workgroup);
+
+    /**
+     * List definitions after function declarations, or Reiser cpp gets upset.
+     */
+    @Generated
+    @Inline
+    @CFunction
+    public static native int __sigbits(int __signo);
 }

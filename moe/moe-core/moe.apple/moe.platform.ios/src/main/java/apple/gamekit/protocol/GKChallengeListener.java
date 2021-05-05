@@ -31,6 +31,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKChallengeListener")
 public interface GKChallengeListener {
+    /**
+     * Called when a player has completed a challenge, triggered while the game is running, or when the user has tapped a challenge notification banner while outside of the game.
+     * player: The player who completed the challenge
+     * challenge: The challenge which the player completed
+     * friendPlayer: The friend who sent the challenge originally
+     */
     @Generated
     @IsOptional
     @Selector("player:didCompleteChallenge:issuedByFriend:")
@@ -39,6 +45,11 @@ public interface GKChallengeListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a player has received a challenge, triggered by a push notification from the server. Received only while the game is running.
+     * player: The player who received the challenge
+     * challenge: The challenge which was received
+     */
     @Generated
     @IsOptional
     @Selector("player:didReceiveChallenge:")
@@ -46,6 +57,12 @@ public interface GKChallengeListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a player's friend has completed a challenge which the player sent to that friend. Triggered while the game is running, or when the user has tapped a challenge notification banner while outside of the game.
+     * player: The player who sent the challenge originally
+     * challenge: The challenge which the player created and sent
+     * friendPlayer: The friend who completed the challenge
+     */
     @Generated
     @IsOptional
     @Selector("player:issuedChallengeWasCompleted:byFriend:")
@@ -54,6 +71,11 @@ public interface GKChallengeListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when a player starts the game with the intent of playing a challenge, or intends to play a challenge after selecting it within the in-game Game Center UI.
+     * player: The player who selected the challenge
+     * challenge: The challenge which was selected
+     */
     @Generated
     @IsOptional
     @Selector("player:wantsToPlayChallenge:")

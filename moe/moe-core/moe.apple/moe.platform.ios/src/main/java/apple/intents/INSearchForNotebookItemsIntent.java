@@ -108,7 +108,7 @@ public class INSearchForNotebookItemsIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchForNotebookItemsIntent initWithCoder(NSCoder aDecoder);
+    public native INSearchForNotebookItemsIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTitle:content:itemType:status:location:locationSearchType:dateTime:dateSearchType:")
@@ -196,4 +196,32 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithTitle:content:itemType:status:location:locationSearchType:dateTime:dateSearchType:notebookItemIdentifier:")
+    public native INSearchForNotebookItemsIntent initWithTitleContentItemTypeStatusLocationLocationSearchTypeDateTimeDateSearchTypeNotebookItemIdentifier(
+            INSpeakableString title, String content, @NInt long itemType, @NInt long status, CLPlacemark location,
+            @NInt long locationSearchType, INDateComponentsRange dateTime, @NInt long dateSearchType,
+            String notebookItemIdentifier);
+
+    @Generated
+    @Selector("initWithTitle:content:itemType:status:location:locationSearchType:dateTime:dateSearchType:temporalEventTriggerTypes:taskPriority:notebookItemIdentifier:")
+    public native INSearchForNotebookItemsIntent initWithTitleContentItemTypeStatusLocationLocationSearchTypeDateTimeDateSearchTypeTemporalEventTriggerTypesTaskPriorityNotebookItemIdentifier(
+            INSpeakableString title, String content, @NInt long itemType, @NInt long status, CLPlacemark location,
+            @NInt long locationSearchType, INDateComponentsRange dateTime, @NInt long dateSearchType,
+            @NUInt long temporalEventTriggerTypes, @NInt long taskPriority, String notebookItemIdentifier);
+
+    @Generated
+    @Selector("notebookItemIdentifier")
+    public native String notebookItemIdentifier();
+
+    @Generated
+    @Selector("taskPriority")
+    @NInt
+    public native long taskPriority();
+
+    @Generated
+    @Selector("temporalEventTriggerTypes")
+    @NUInt
+    public native long temporalEventTriggerTypes();
 }

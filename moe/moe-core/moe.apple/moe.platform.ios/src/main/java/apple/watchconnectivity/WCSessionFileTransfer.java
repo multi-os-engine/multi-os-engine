@@ -19,6 +19,7 @@ package apple.watchconnectivity;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSProgress;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -39,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Used to track a file being transferred.
+ */
 @Generated
 @Library("WatchConnectivity")
 @Runtime(ObjCRuntime.class)
@@ -165,4 +169,8 @@ public class WCSessionFileTransfer extends NSObject {
     @Generated
     @Selector("isTransferring")
     public native boolean isTransferring();
+
+    @Generated
+    @Selector("progress")
+    public native NSProgress progress();
 }

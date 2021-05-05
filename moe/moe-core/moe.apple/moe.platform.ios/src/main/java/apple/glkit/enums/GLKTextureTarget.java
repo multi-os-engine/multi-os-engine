@@ -18,6 +18,9 @@ package apple.glkit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Texture target
+ */
 @Generated
 public final class GLKTextureTarget {
     @Generated public static final int Target2D = 0x00000DE1;

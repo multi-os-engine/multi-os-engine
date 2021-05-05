@@ -150,6 +150,9 @@ public class PHObjectChangeDetails<_ObjectType> extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * YES if the image or video content for this object has been changed
+     */
     @Generated
     @Selector("assetContentChanged")
     public native boolean assetContentChanged();
@@ -158,14 +161,23 @@ public class PHObjectChangeDetails<_ObjectType> extends NSObject {
     @Selector("init")
     public native PHObjectChangeDetails<?> init();
 
+    /**
+     * the object in the state after this change
+     */
     @Generated
     @Selector("objectAfterChanges")
     public native PHObject objectAfterChanges();
 
+    /**
+     * the object in the state before this change (returns the object that was passed in to changeDetailsForObject:)
+     */
     @Generated
     @Selector("objectBeforeChanges")
     public native PHObject objectBeforeChanges();
 
+    /**
+     * YES if the object was deleted
+     */
     @Generated
     @Selector("objectWasDeleted")
     public native boolean objectWasDeleted();

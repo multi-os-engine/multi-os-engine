@@ -165,13 +165,16 @@ public class INRideFareLineItem extends NSObject implements NSCopying, NSSecureC
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * the ISO currency code for the currency for this price, e.g. "USD" for U.S. Dollar.
+     */
     @Generated
     @Selector("currencyCode")
     public native String currencyCode();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -179,13 +182,19 @@ public class INRideFareLineItem extends NSObject implements NSCopying, NSSecureC
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRideFareLineItem initWithCoder(NSCoder aDecoder);
+    public native INRideFareLineItem initWithCoder(NSCoder coder);
 
+    /**
+     * A single line item in a set of pricing line items that describes
+     */
     @Generated
     @Selector("initWithTitle:price:currencyCode:")
     public native INRideFareLineItem initWithTitlePriceCurrencyCode(String title, NSDecimalNumber price,
             String currencyCode);
 
+    /**
+     * e.g. '4.50'
+     */
     @Generated
     @Selector("price")
     public native NSDecimalNumber price();
@@ -196,6 +205,9 @@ public class INRideFareLineItem extends NSObject implements NSCopying, NSSecureC
         return supportsSecureCoding();
     }
 
+    /**
+     * e.g. "Base fare", or "+ per mile"
+     */
     @Generated
     @Selector("title")
     public native String title();

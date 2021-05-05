@@ -21,11 +21,29 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITouchType {
+    /**
+     * A direct touch from a finger (on a screen)
+     */
     @Generated @NInt public static final long Direct = 0x0000000000000000L;
+    /**
+     * An indirect touch (not a screen)
+     */
     @Generated @NInt public static final long Indirect = 0x0000000000000001L;
+    /**
+     * A touch from a stylus (deprecated name, use pencil)
+     */
     @Generated @NInt public static final long Stylus = 0x0000000000000002L;
 
     @Generated
     private UITouchType() {
     }
+
+    /**
+     * Add pencil name variant
+     */
+    @Generated @NInt public static final long Pencil = 0x0000000000000002L;
+    /**
+     * A touch representing a button-based, indirect input device describing the input sequence from button press to button release
+     */
+    @Generated @NInt public static final long IndirectPointer = 0x0000000000000003L;
 }

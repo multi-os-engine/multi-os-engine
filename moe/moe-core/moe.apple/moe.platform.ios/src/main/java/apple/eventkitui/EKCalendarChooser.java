@@ -179,12 +179,15 @@ public class EKCalendarChooser extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native EKCalendarChooser initWithCoder(NSCoder aDecoder);
+    public native EKCalendarChooser initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
     public native EKCalendarChooser initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * variant to only show calendars for events or reminders.
+     */
     @Generated
     @Selector("initWithSelectionStyle:displayStyle:entityType:eventStore:")
     public native EKCalendarChooser initWithSelectionStyleDisplayStyleEntityTypeEventStore(@NInt long style,
@@ -195,6 +198,10 @@ public class EKCalendarChooser extends UIViewController {
     public native EKCalendarChooser initWithSelectionStyleDisplayStyleEventStore(@NInt long selectionStyle,
             @NInt long displayStyle, EKEventStore eventStore);
 
+    /**
+     * Regardless of whether the chooser allows you to select one or multiple
+     * calendars, the selection is always expressed as a set.
+     */
     @Generated
     @Selector("selectedCalendars")
     public native NSSet<? extends EKCalendar> selectedCalendars();
@@ -220,6 +227,10 @@ public class EKCalendarChooser extends UIViewController {
         }
     }
 
+    /**
+     * Regardless of whether the chooser allows you to select one or multiple
+     * calendars, the selection is always expressed as a set.
+     */
     @Generated
     @Selector("setSelectedCalendars:")
     public native void setSelectedCalendars(NSSet<? extends EKCalendar> value);
@@ -228,6 +239,10 @@ public class EKCalendarChooser extends UIViewController {
     @Selector("setShowsCancelButton:")
     public native void setShowsCancelButton(boolean value);
 
+    /**
+     * When used in a navigation controller (presented modally), you can enable
+     * the done/cancel buttons and get informed when pressed via the delegate.
+     */
     @Generated
     @Selector("setShowsDoneButton:")
     public native void setShowsDoneButton(boolean value);
@@ -236,6 +251,10 @@ public class EKCalendarChooser extends UIViewController {
     @Selector("showsCancelButton")
     public native boolean showsCancelButton();
 
+    /**
+     * When used in a navigation controller (presented modally), you can enable
+     * the done/cancel buttons and get informed when pressed via the delegate.
+     */
     @Generated
     @Selector("showsDoneButton")
     public native boolean showsDoneButton();

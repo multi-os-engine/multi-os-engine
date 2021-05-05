@@ -24,6 +24,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVMutableAssetDownloadStorageManagementPolicy
+ * 
+ * A mutable subclass of AVAssetDownloadStorageManagementPolicy.
+ * 
+ * System will put in best-effort to evict all the assets based on expirationDate before evicting based on priority.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -82,6 +89,11 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * [@property]	expirationDate
+     * 
+     * Returns the expiration date of asset.
+     */
     @Generated
     @Selector("expirationDate")
     public native NSDate expirationDate();
@@ -122,6 +134,14 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * [@property]	priority
+     * 
+     * Indicates the eviction priority of downloaded asset.
+     * 
+     * Assets with default priority will be purged first before assets with higher priorities.
+     * 				In case this is not set, default priority is used.
+     */
     @Generated
     @Selector("priority")
     public native String priority();
@@ -134,10 +154,23 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * [@property]	expirationDate
+     * 
+     * Returns the expiration date of asset.
+     */
     @Generated
     @Selector("setExpirationDate:")
     public native void setExpirationDate(NSDate value);
 
+    /**
+     * [@property]	priority
+     * 
+     * Indicates the eviction priority of downloaded asset.
+     * 
+     * Assets with default priority will be purged first before assets with higher priorities.
+     * 				In case this is not set, default priority is used.
+     */
     @Generated
     @Selector("setPriority:")
     public native void setPriority(String value);

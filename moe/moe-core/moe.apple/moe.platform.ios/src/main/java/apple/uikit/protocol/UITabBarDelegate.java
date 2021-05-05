@@ -27,11 +27,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * ___________________________________________________________________________________________________
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITabBarDelegate")
 public interface UITabBarDelegate {
+    /**
+     * called after customize sheet is shown. items is current item list
+     */
     @Generated
     @IsOptional
     @Selector("tabBar:didBeginCustomizingItems:")
@@ -39,6 +45,9 @@ public interface UITabBarDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called after customize sheet is hidden. items is new item list
+     */
     @Generated
     @IsOptional
     @Selector("tabBar:didEndCustomizingItems:changed:")
@@ -47,6 +56,9 @@ public interface UITabBarDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called when a new view is selected by the user (but not programatically)
+     */
     @Generated
     @IsOptional
     @Selector("tabBar:didSelectItem:")
@@ -54,6 +66,9 @@ public interface UITabBarDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called before customize sheet is shown. items is current item list
+     */
     @Generated
     @IsOptional
     @Selector("tabBar:willBeginCustomizingItems:")
@@ -61,6 +76,9 @@ public interface UITabBarDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called before customize sheet is hidden. items is new item list
+     */
     @Generated
     @IsOptional
     @Selector("tabBar:willEndCustomizingItems:changed:")

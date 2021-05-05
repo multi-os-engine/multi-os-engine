@@ -43,6 +43,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents a home.
+ * 
+ * This class represents a home and is the entry point to communicate and
+ *             configure different accessories in the home. This is also used to manage
+ *             all the rooms, zones, service groups, users, triggers, and action sets in
+ *             the home.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -154,78 +162,205 @@ public class HMHome extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Array of HMAccessory objects that represents all accessories added to the home.
+     */
     @Generated
     @Selector("accessories")
     public native NSArray<? extends HMAccessory> accessories();
 
+    /**
+     * Array of HMActionSet objects that represents all the action sets in the home.
+     */
     @Generated
     @Selector("actionSets")
     public native NSArray<? extends HMActionSet> actionSets();
 
+    /**
+     * Adds a new accessory to the home.
+     * 
+     * @param accessory Accessory to add to the home.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("addAccessory:completionHandler:")
     public native void addAccessoryCompletionHandler(HMAccessory accessory,
             @ObjCBlock(name = "call_addAccessoryCompletionHandler") Block_addAccessoryCompletionHandler completion);
 
+    /**
+     * Adds a new action set to the home.
+     * 
+     * @param actionSetName Name of the action set to add to the home.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     * 	                 The HMActionSet parameter is the new action set added to the home.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("addActionSetWithName:completionHandler:")
     public native void addActionSetWithNameCompletionHandler(String actionSetName,
             @ObjCBlock(name = "call_addActionSetWithNameCompletionHandler") Block_addActionSetWithNameCompletionHandler completion);
 
+    /**
+     * Find nearby accessories and add them to the home. During this process, each of the accessories added
+     *        to the home is assigned to a room and its services are configured.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("addAndSetupAccessoriesWithCompletionHandler:")
     public native void addAndSetupAccessoriesWithCompletionHandler(
             @ObjCBlock(name = "call_addAndSetupAccessoriesWithCompletionHandler") Block_addAndSetupAccessoriesWithCompletionHandler completion);
 
+    /**
+     * Adds a room to the home.
+     * 
+     * @param roomName Name of the room to add to the home.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     * 	                 The HMRoom is the new room added to the home.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("addRoomWithName:completionHandler:")
     public native void addRoomWithNameCompletionHandler(String roomName,
             @ObjCBlock(name = "call_addRoomWithNameCompletionHandler") Block_addRoomWithNameCompletionHandler completion);
 
+    /**
+     * Adds a service group to the home.
+     * 
+     * @param serviceGroupName Name of the service group to add to the home.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     * 	                 The HMServiceGroup is the new service group added to the home.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("addServiceGroupWithName:completionHandler:")
     public native void addServiceGroupWithNameCompletionHandler(String serviceGroupName,
             @ObjCBlock(name = "call_addServiceGroupWithNameCompletionHandler") Block_addServiceGroupWithNameCompletionHandler completion);
 
+    /**
+     * Adds a trigger to the home. Unless the trigger object is added to the home, it cannot be
+     *        activated.
+     * 
+     * Triggers are specific to an iOS device and are not synced across multiple devices to
+     *              ensure that the action sets are executed only once.
+     * 
+     * @param trigger Trigger to add to the home.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     * 	                 The HMTrigger parameter is the new trigger added to the home.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("addTrigger:completionHandler:")
     public native void addTriggerCompletionHandler(HMTrigger trigger,
             @ObjCBlock(name = "call_addTriggerCompletionHandler") Block_addTriggerCompletionHandler completion);
 
+    /**
+     * Adds a user to the home.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The HMUser object provides a reference to the user that was added to the home.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success. The userInfo dictionary will contain the HMUserFailedAccessoriesKey which provides
+     *                   more details on the accessories that failed to add the user.
+     */
     @Generated
     @Deprecated
     @Selector("addUserWithCompletionHandler:")
     public native void addUserWithCompletionHandler(
             @ObjCBlock(name = "call_addUserWithCompletionHandler") Block_addUserWithCompletionHandler completion);
 
+    /**
+     * Adds a zone to the home.
+     * 
+     * @param zoneName Name of the zone to add to the home.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     * 	                 The HMZone is the new zone added to the home.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("addZoneWithName:completionHandler:")
     public native void addZoneWithNameCompletionHandler(String zoneName,
             @ObjCBlock(name = "call_addZoneWithNameCompletionHandler") Block_addZoneWithNameCompletionHandler completion);
 
+    /**
+     * Assigns a new room for the accessory.
+     * 
+     * When an accessory is added to a home, it is automatically assigned the room corresponding to
+     *             + [HMHome roomForEntireHome]. This method is used to change the room assigned to an accessory.
+     * 
+     * @param accessory Accessory whose rooms needs to modified
+     * 
+     * @param room New room for the accessory.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("assignAccessory:toRoom:completionHandler:")
     public native void assignAccessoryToRoomCompletionHandler(HMAccessory accessory, HMRoom room,
             @ObjCBlock(name = "call_assignAccessoryToRoomCompletionHandler") Block_assignAccessoryToRoomCompletionHandler completion);
 
+    /**
+     * Retrieve a built-in action set for the home.
+     * 
+     * @param actionSetType Type of the builtin action set. Supported action set types are HMActionSetTypeWakeUp,
+     *                      HMActionSetTypeSleep, HMActionSetTypeHomeDeparture and HMActionSetTypeHomeArrival.
+     * 
+     * @return Reference to the built-in action set corresponding to type argument,
+     *         nil if no matching action set is found.
+     */
     @Generated
     @Selector("builtinActionSetOfType:")
     public native HMActionSet builtinActionSetOfType(String actionSetType);
 
+    /**
+     * HMUser object representing the current user of the home.
+     */
     @Generated
     @Selector("currentUser")
     public native HMUser currentUser();
 
+    /**
+     * Delegate that receives updates on the state of the home.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native HMHomeDelegate delegate();
 
+    /**
+     * Executes all the actions within an action set.
+     * 
+     * @param actionSet Action set to execute.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("executeActionSet:completionHandler:")
     public native void executeActionSetCompletionHandler(HMActionSet actionSet,
             @ObjCBlock(name = "call_executeActionSetCompletionHandler") Block_executeActionSetCompletionHandler completion);
 
+    /**
+     * Retrieve the access level of the user associated with the home.
+     */
     @Generated
     @Selector("homeAccessControlForUser:")
     public native HMHomeAccessControl homeAccessControlForUser(HMUser user);
@@ -234,75 +369,187 @@ public class HMHome extends NSObject {
     @Selector("init")
     public native HMHome init();
 
+    /**
+     * Specifies whether this home is the primary home.
+     */
     @Generated
     @Selector("isPrimary")
     public native boolean isPrimary();
 
+    /**
+     * Presents a view controller to manage users of the home.
+     * 
+     * This API is available only for users that have administrator access to the home.
+     * 
+     * @param completion Block that is invoked once user management is completed.
+     *                   The completion block is fired to allow clients to know when the user has dismissed the view.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success. If the user does not have administrator privileges the error code will be set to
+     *                   HMErrorCodeInsufficientPrivileges.
+     */
     @Generated
     @Selector("manageUsersWithCompletionHandler:")
     public native void manageUsersWithCompletionHandler(
             @ObjCBlock(name = "call_manageUsersWithCompletionHandler") Block_manageUsersWithCompletionHandler completion);
 
+    /**
+     * The name of the home.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * Removes an accessory from the home.
+     * 
+     * @param accessory Accessory to remove from the home.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("removeAccessory:completionHandler:")
     public native void removeAccessoryCompletionHandler(HMAccessory accessory,
             @ObjCBlock(name = "call_removeAccessoryCompletionHandler") Block_removeAccessoryCompletionHandler completion);
 
+    /**
+     * Removes an existing action set from the home.
+     * 
+     * @param actionSet Action set to remove from the home. A builtin action set cannot be removed.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("removeActionSet:completionHandler:")
     public native void removeActionSetCompletionHandler(HMActionSet actionSet,
             @ObjCBlock(name = "call_removeActionSetCompletionHandler") Block_removeActionSetCompletionHandler completion);
 
+    /**
+     * Removes a room from the home.
+     * 
+     * Any references to this room will be removed from all properties
+     *             of the home. For example, the room will be removed from the zone.
+     *             Any accessories associated contained by this room will be moved to
+     *             the room provided by - [HMHome roomForEntireHome].
+     * 
+     * @param room Room to remove from the home.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("removeRoom:completionHandler:")
     public native void removeRoomCompletionHandler(HMRoom room,
             @ObjCBlock(name = "call_removeRoomCompletionHandler") Block_removeRoomCompletionHandler completion);
 
+    /**
+     * Removes a service group from the home.
+     * 
+     * @param group Service group to remove from the home.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("removeServiceGroup:completionHandler:")
     public native void removeServiceGroupCompletionHandler(HMServiceGroup group,
             @ObjCBlock(name = "call_removeServiceGroupCompletionHandler") Block_removeServiceGroupCompletionHandler completion);
 
+    /**
+     * Removes a trigger from the home. If the trigger is active, they are automatically deactivated.
+     * 
+     * @param trigger Trigger to remove from the home.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("removeTrigger:completionHandler:")
     public native void removeTriggerCompletionHandler(HMTrigger trigger,
             @ObjCBlock(name = "call_removeTriggerCompletionHandler") Block_removeTriggerCompletionHandler completion);
 
+    /**
+     * Removes a user from the home.
+     * 
+     * @param user HMUser whose access is being revoked.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success. The userInfo dictionary will contain the HMUserFailedAccessoriesKey which provides
+     *                   more details on the accessories that failed to remove the user.
+     */
     @Generated
     @Deprecated
     @Selector("removeUser:completionHandler:")
     public native void removeUserCompletionHandler(HMUser user,
             @ObjCBlock(name = "call_removeUserCompletionHandler") Block_removeUserCompletionHandler completion);
 
+    /**
+     * Removes a zone from the home.
+     * 
+     * @param zone Zone to remove from the home.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("removeZone:completionHandler:")
     public native void removeZoneCompletionHandler(HMZone zone,
             @ObjCBlock(name = "call_removeZoneCompletionHandler") Block_removeZoneCompletionHandler completion);
 
+    /**
+     * This method returns a room that represents the entire home. This can be used to assign a room
+     *        to a service that is not necessarily located in one particular room.
+     * 
+     * @return HMRoom that represents the home.
+     */
     @Generated
     @Selector("roomForEntireHome")
     public native HMRoom roomForEntireHome();
 
+    /**
+     * Array of HMRoom objects that represents all rooms in the home.
+     */
     @Generated
     @Selector("rooms")
     public native NSArray<? extends HMRoom> rooms();
 
+    /**
+     * Array of HMServiceGroup objects that represents all service groups in the home.
+     */
     @Generated
     @Selector("serviceGroups")
     public native NSArray<? extends HMServiceGroup> serviceGroups();
 
+    /**
+     * Queries all services that match the specified types.
+     * 
+     * @param serviceTypes Array of NSString objects that specifies the service types to match.
+     * 
+     * @return Array of HMService objects that match the specified service types,
+     *         nil if no matching services were found.
+     */
     @Generated
     @Selector("servicesWithTypes:")
     public native NSArray<? extends HMService> servicesWithTypes(NSArray<String> serviceTypes);
 
+    /**
+     * Delegate that receives updates on the state of the home.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMHomeDelegate value);
 
+    /**
+     * Delegate that receives updates on the state of the home.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) HMHomeDelegate value) {
         Object __old = delegate();
@@ -315,29 +562,63 @@ public class HMHome extends NSObject {
         }
     }
 
+    /**
+     * Array of HMTrigger objects that represents all the triggers in the home.
+     */
     @Generated
     @Selector("triggers")
     public native NSArray<? extends HMTrigger> triggers();
 
+    /**
+     * unblock a blocked accessory.
+     * 
+     * A misbehaving accessory will automatically be blocked.  After that all requests to
+     *              the accessory will fail.  This API must be used to explicitly unblock the accessory
+     * 
+     * @param accessory accessory to be unblocked
+     * 
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("unblockAccessory:completionHandler:")
     public native void unblockAccessoryCompletionHandler(HMAccessory accessory,
             @ObjCBlock(name = "call_unblockAccessoryCompletionHandler") Block_unblockAccessoryCompletionHandler completion);
 
+    /**
+     * A unique identifier for the home.
+     */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
+    /**
+     * This method is used to change the name of the home.
+     * 
+     * @param name New name for the home.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,
             @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
 
+    /**
+     * Array of HMUser objects that represent all users associated with the home.
+     */
     @Generated
     @Deprecated
     @Selector("users")
     public native NSArray<? extends HMUser> users();
 
+    /**
+     * Array of HMZone objects that represents all the zones in the home.
+     */
     @Generated
     @Selector("zones")
     public native NSArray<? extends HMZone> zones();
@@ -346,144 +627,176 @@ public class HMHome extends NSObject {
     @Generated
     public interface Block_addAccessoryCompletionHandler {
         @Generated
-        void call_addAccessoryCompletionHandler(NSError arg0);
+        void call_addAccessoryCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addActionSetWithNameCompletionHandler {
         @Generated
-        void call_addActionSetWithNameCompletionHandler(HMActionSet arg0, NSError arg1);
+        void call_addActionSetWithNameCompletionHandler(HMActionSet actionSet, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addAndSetupAccessoriesWithCompletionHandler {
         @Generated
-        void call_addAndSetupAccessoriesWithCompletionHandler(NSError arg0);
+        void call_addAndSetupAccessoriesWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addRoomWithNameCompletionHandler {
         @Generated
-        void call_addRoomWithNameCompletionHandler(HMRoom arg0, NSError arg1);
+        void call_addRoomWithNameCompletionHandler(HMRoom room, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addServiceGroupWithNameCompletionHandler {
         @Generated
-        void call_addServiceGroupWithNameCompletionHandler(HMServiceGroup arg0, NSError arg1);
+        void call_addServiceGroupWithNameCompletionHandler(HMServiceGroup group, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addTriggerCompletionHandler {
         @Generated
-        void call_addTriggerCompletionHandler(NSError arg0);
+        void call_addTriggerCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addUserWithCompletionHandler {
         @Generated
-        void call_addUserWithCompletionHandler(HMUser arg0, NSError arg1);
+        void call_addUserWithCompletionHandler(HMUser user, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addZoneWithNameCompletionHandler {
         @Generated
-        void call_addZoneWithNameCompletionHandler(HMZone arg0, NSError arg1);
+        void call_addZoneWithNameCompletionHandler(HMZone zone, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_assignAccessoryToRoomCompletionHandler {
         @Generated
-        void call_assignAccessoryToRoomCompletionHandler(NSError arg0);
+        void call_assignAccessoryToRoomCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeActionSetCompletionHandler {
         @Generated
-        void call_executeActionSetCompletionHandler(NSError arg0);
+        void call_executeActionSetCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_manageUsersWithCompletionHandler {
         @Generated
-        void call_manageUsersWithCompletionHandler(NSError arg0);
+        void call_manageUsersWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeAccessoryCompletionHandler {
         @Generated
-        void call_removeAccessoryCompletionHandler(NSError arg0);
+        void call_removeAccessoryCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeActionSetCompletionHandler {
         @Generated
-        void call_removeActionSetCompletionHandler(NSError arg0);
+        void call_removeActionSetCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeRoomCompletionHandler {
         @Generated
-        void call_removeRoomCompletionHandler(NSError arg0);
+        void call_removeRoomCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeServiceGroupCompletionHandler {
         @Generated
-        void call_removeServiceGroupCompletionHandler(NSError arg0);
+        void call_removeServiceGroupCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeTriggerCompletionHandler {
         @Generated
-        void call_removeTriggerCompletionHandler(NSError arg0);
+        void call_removeTriggerCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeUserCompletionHandler {
         @Generated
-        void call_removeUserCompletionHandler(NSError arg0);
+        void call_removeUserCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeZoneCompletionHandler {
         @Generated
-        void call_removeZoneCompletionHandler(NSError arg0);
+        void call_removeZoneCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_unblockAccessoryCompletionHandler {
         @Generated
-        void call_unblockAccessoryCompletionHandler(NSError arg0);
+        void call_unblockAccessoryCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
+        void call_updateNameCompletionHandler(NSError error);
     }
 
+    /**
+     * Specifies the state of the home hub.
+     */
     @Generated
     @Selector("homeHubState")
     @NUInt
     public native long homeHubState();
+
+    /**
+     * Add accessory with the given setup payload to the home.
+     * [@note]  This SPI requires entitlement: com.apple.homekit.developer.allow-setup-payload
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   Accessories provides the list of added accessories.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
+    @Generated
+    @Selector("addAndSetupAccessoriesWithPayload:completionHandler:")
+    public native void addAndSetupAccessoriesWithPayloadCompletionHandler(HMAccessorySetupPayload payload,
+            @ObjCBlock(name = "call_addAndSetupAccessoriesWithPayloadCompletionHandler") Block_addAndSetupAccessoriesWithPayloadCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addAndSetupAccessoriesWithPayloadCompletionHandler {
+        @Generated
+        void call_addAndSetupAccessoriesWithPayloadCompletionHandler(NSArray<? extends HMAccessory> accessories,
+                NSError error);
+    }
+
+    /**
+     * True if this home supports all of the requirements for adding a network router.
+     */
+    @Generated
+    @Selector("supportsAddingNetworkRouter")
+    public native boolean supportsAddingNetworkRouter();
 }

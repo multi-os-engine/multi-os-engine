@@ -21,11 +21,29 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSDateComponentsFormatterUnitsStyle {
+    /**
+     * "1:10; may fall back to abbreviated units in some cases, e.g. 3d"
+     */
     @Generated @NInt public static final long Positional = 0x0000000000000000L;
+    /**
+     * "1h 10m"
+     */
     @Generated @NInt public static final long Abbreviated = 0x0000000000000001L;
+    /**
+     * "1 hr, 10 min"
+     */
     @Generated @NInt public static final long Short = 0x0000000000000002L;
+    /**
+     * "1 hour, 10 minutes"
+     */
     @Generated @NInt public static final long Full = 0x0000000000000003L;
+    /**
+     * "One hour, ten minutes"
+     */
     @Generated @NInt public static final long SpellOut = 0x0000000000000004L;
+    /**
+     * "1hr 10min" - Brief is shorter than Short (e.g. in English, it removes the comma)
+     */
     @Generated @NInt public static final long Brief = 0x0000000000000005L;
 
     @Generated

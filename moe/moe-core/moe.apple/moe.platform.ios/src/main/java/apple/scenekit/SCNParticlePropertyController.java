@@ -45,6 +45,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNParticlePropertyController
+ * 
+ * The SCNParticlePropertyController class controls the variation over time or over distance of a particle property.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -95,6 +100,9 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Creates and initializes a particle property controller with the specified animation.
+     */
     @Generated
     @Selector("controllerWithAnimation:")
     public static native SCNParticlePropertyController controllerWithAnimation(CAAnimation animation);
@@ -164,6 +172,10 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     @NInt
     public static native long version_static();
 
+    /**
+     * Specifies the animation to be applied on the particle system property. The type of the animation will depend of the property controlled.
+     * See the documentation along property name definition.
+     */
     @Generated
     @Selector("animation")
     public native CAAnimation animation();
@@ -176,7 +188,7 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -184,31 +196,50 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNParticlePropertyController initWithCoder(NSCoder aDecoder);
+    public native SCNParticlePropertyController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("inputBias")
     @NFloat
     public native double inputBias();
 
+    /**
+     * Specify the input mode of the receiver.
+     * This can be over life, over distance or over the evolution of another proprety.
+     * Defaults to SCNParticleInputModeOverLife.
+     */
     @Generated
     @Selector("inputMode")
     @NInt
     public native long inputMode();
 
+    /**
+     * Specifies an origin for the variation mode "SCNParticleInputModeOverDistance".
+     */
     @Generated
     @Selector("inputOrigin")
     public native SCNNode inputOrigin();
 
+    /**
+     * Specifies which property to use as input for the input mode "SCNParticleInputModeOverOtherProperty".
+     */
     @Generated
     @Selector("inputProperty")
     public native String inputProperty();
 
+    /**
+     * Specifies the input scale and bias.
+     * inputScale defaults to 1 and inputBias to 0.
+     */
     @Generated
     @Selector("inputScale")
     @NFloat
     public native double inputScale();
 
+    /**
+     * Specifies the animation to be applied on the particle system property. The type of the animation will depend of the property controlled.
+     * See the documentation along property name definition.
+     */
     @Generated
     @Selector("setAnimation:")
     public native void setAnimation(CAAnimation value);
@@ -217,14 +248,25 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     @Selector("setInputBias:")
     public native void setInputBias(@NFloat double value);
 
+    /**
+     * Specify the input mode of the receiver.
+     * This can be over life, over distance or over the evolution of another proprety.
+     * Defaults to SCNParticleInputModeOverLife.
+     */
     @Generated
     @Selector("setInputMode:")
     public native void setInputMode(@NInt long value);
 
+    /**
+     * Specifies an origin for the variation mode "SCNParticleInputModeOverDistance".
+     */
     @Generated
     @Selector("setInputOrigin:")
     public native void setInputOrigin_unsafe(SCNNode value);
 
+    /**
+     * Specifies an origin for the variation mode "SCNParticleInputModeOverDistance".
+     */
     @Generated
     public void setInputOrigin(SCNNode value) {
         Object __old = inputOrigin();
@@ -237,10 +279,17 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
         }
     }
 
+    /**
+     * Specifies which property to use as input for the input mode "SCNParticleInputModeOverOtherProperty".
+     */
     @Generated
     @Selector("setInputProperty:")
     public native void setInputProperty(String value);
 
+    /**
+     * Specifies the input scale and bias.
+     * inputScale defaults to 1 and inputBias to 0.
+     */
     @Generated
     @Selector("setInputScale:")
     public native void setInputScale(@NFloat double value);

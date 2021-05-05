@@ -154,16 +154,66 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
     @Selector("init")
     public native AVPlayerMediaSelectionCriteria init();
 
+    /**
+     * initWithPreferredLanguages:preferredMediaCharacteristics:
+     * 
+     * Creates an instance of AVPlayerMediaSelectionCriteria.
+     * 
+     * @param		preferredLanguages
+     * 		An NSArray of NSStrings containing language identifiers, in order of desirability, that are preferred for selection. Can be nil.
+     * @param		preferredMediaCharacteristics
+     * 		An NSArray of AVMediaCharacteristics indicating additional media characteristics, in order of desirability, that are preferred when selecting media with the characteristic for which the receiver is set on the AVPlayer as the selection criteria. Can be nil.
+     * @return		An instance of AVPlayerMediaSelectionCriteria.
+     */
     @Generated
     @Selector("initWithPreferredLanguages:preferredMediaCharacteristics:")
     public native AVPlayerMediaSelectionCriteria initWithPreferredLanguagesPreferredMediaCharacteristics(
             NSArray<String> preferredLanguages, NSArray<String> preferredMediaCharacteristics);
 
+    /**
+     * An NSArray of NSStrings containing language identifiers, in order of desirability, that are preferred for selection. Can be nil. Languages can be indicated via BCP 47 language identifiers or via ISO 639-2/T language codes.
+     * If no option in a media selection group with any of the preferred languages is available, the default option in the group will be considered the best match.
+     *   When making selections, AVPlayer treats language preferences as criteria that supersede preferred media characteristics.
+     */
     @Generated
     @Selector("preferredLanguages")
     public native NSArray<String> preferredLanguages();
 
+    /**
+     * An NSArray of AVMediaCharacteristics indicating additional media characteristics, in order of desirability, that are preferred when selecting media with the characteristic for which the receiver is set on the AVPlayer as the selection criteria. Can be nil. See AVMediaFormat.h for declarations of media characteristics of the form AVMediaCharacteristic*. For example, desirable characteristics of legible media may include AVMediaCharacteristicTranscribesSpokenDialogForAccessibility and AVMediaCharacteristicDescribesMusicAndSoundForAccessibility. Simiarly, desirable characteristics of audible media may include AVMediaCharacteristicDescribesVideoForAccessibility.
+     * When making automatic selections, AVPlayer treats preferred media characteristics as criteria that are superseded by language preferences.
+     */
     @Generated
     @Selector("preferredMediaCharacteristics")
     public native NSArray<String> preferredMediaCharacteristics();
+
+    /**
+     * initWithPrincipalMediaCharacteristics:principalMediaCharacteristics:preferredLanguages:preferredMediaCharacteristics:
+     * 
+     * Creates an instance of AVPlayerMediaSelectionCriteria.
+     * 
+     * Note that even though principal media characteristics, when present, will override language preferences when making a selection within a specific media selection group, language preferences may still pertain to selections in other groups. For example, language preferences for the group that corresponds to the audible characteristic may be considered when choosing whether or not to select non-forced subtitles for translation purposes.
+     * 
+     * @param		principalMediaCharacteristics
+     * 		An NSArray of AVMediaCharacteristics indicating media characteristics that are considered essential when selecting media with the characteristic for which the receiver is set on the AVPlayer as the selection criteria. Can be nil.
+     * @param		preferredLanguages
+     * 		An NSArray of NSStrings containing language identifiers, in order of desirability, that are preferred for selection. Can be nil.
+     * @param		preferredMediaCharacteristics
+     * 		An NSArray of AVMediaCharacteristics indicating additional media characteristics, in order of desirability, that are preferred when selecting media with the characteristic for which the receiver is set on the AVPlayer as the selection criteria. Can be nil.
+     *  @return		An instance of AVPlayerMediaSelectionCriteria.
+     */
+    @Generated
+    @Selector("initWithPrincipalMediaCharacteristics:preferredLanguages:preferredMediaCharacteristics:")
+    public native AVPlayerMediaSelectionCriteria initWithPrincipalMediaCharacteristicsPreferredLanguagesPreferredMediaCharacteristics(
+            NSArray<String> principalMediaCharacteristics, NSArray<String> preferredLanguages,
+            NSArray<String> preferredMediaCharacteristics);
+
+    /**
+     * An NSArray of AVMediaCharacteristics indicating media characteristics that are considered essential when selecting media with the characteristic for which the receiver is set on the AVPlayer as the selection criteria. Can be nil. See AVMediaFormat.h for declarations of media characteristics of the form AVMediaCharacteristic*. For example, principal characteristics of audible media may include AVMediaCharacteristicIsOriginalContent.
+     * If no option in a media selection group that possesses all of the principal media characteristics is available, the default option in the group will be considered the best match.
+     * When making automatic selections, AVPlayer treats principal media characteristics as criteria that supersede both language preferences and preferred media characteristics. Use principal media characteristics with caution; use cases in support of accessibility features are normally satisfied via the use of a combination of language preferences and preferred characteristics, not via the use of principal media characteristics.
+     */
+    @Generated
+    @Selector("principalMediaCharacteristics")
+    public native NSArray<String> principalMediaCharacteristics();
 }

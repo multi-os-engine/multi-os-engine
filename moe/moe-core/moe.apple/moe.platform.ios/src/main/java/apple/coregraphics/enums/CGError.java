@@ -18,6 +18,9 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Types used for errors and error handlers.
+ */
 @Generated
 public final class CGError {
     @Generated public static final int Success = 0x00000000;

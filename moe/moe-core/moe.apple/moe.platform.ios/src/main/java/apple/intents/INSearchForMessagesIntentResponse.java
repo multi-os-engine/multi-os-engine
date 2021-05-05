@@ -166,6 +166,11 @@ public class INSearchForMessagesIntentResponse extends INIntentResponse {
     @Selector("init")
     public native INSearchForMessagesIntentResponse init();
 
+    /**
+     * The app extension has the option of capturing its private state as an NSUserActivity and returning it as the 'currentActivity'.
+     * If the the app is launched, an NSUserActivity will be passed in with the private state.  The NSUserActivity may also be used to query the app's UI extension (if provided) for a view controller representing the current intent handling state.
+     * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This intent object will also be available in the NSUserActivity.interaction property.
+     */
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INSearchForMessagesIntentResponse initWithCodeUserActivity(@NInt long code,
@@ -173,7 +178,7 @@ public class INSearchForMessagesIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchForMessagesIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSearchForMessagesIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("messages")

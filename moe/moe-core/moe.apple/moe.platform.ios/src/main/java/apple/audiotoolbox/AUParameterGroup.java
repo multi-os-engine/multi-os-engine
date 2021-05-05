@@ -42,6 +42,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AUParameterGroup
+ * 
+ * A group of related parameters.
+ * 
+ * 	A parameter group is KVC-compliant for its children; e.g. valueForKey:@"volume" will
+ * 	return a child parameter whose identifier is "volume".
+ */
 @Generated
 @Library("AudioToolbox")
 @Runtime(ObjCRuntime.class)
@@ -157,17 +165,23 @@ public class AUParameterGroup extends AUParameterNode implements NSSecureCoding 
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns a flat array of all parameters in the group, including those in child groups.
+     */
     @Generated
     @Selector("allParameters")
     public native NSArray<? extends AUParameter> allParameters();
 
+    /**
+     * The group's child nodes (AUParameterGroupNode).
+     */
     @Generated
     @Selector("children")
     public native NSArray<? extends AUParameterNode> children();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +189,7 @@ public class AUParameterGroup extends AUParameterNode implements NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native AUParameterGroup initWithCoder(NSCoder aDecoder);
+    public native AUParameterGroup initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

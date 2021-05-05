@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.modelio.protocol.MDLAssetResolver;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -40,6 +41,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MDLNoiseTexture
+ * [@summary] a noise texture containing vector or scalar noise
+ * 
+ * the texture will be created if data is referenced, otherwise, this
+ * object is merely a description
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -170,4 +178,9 @@ public class MDLNoiseTexture extends MDLTexture {
     @Generated
     @Selector("init")
     public native MDLNoiseTexture init();
+
+    @Generated
+    @Selector("textureNamed:assetResolver:")
+    public static native MDLNoiseTexture textureNamedAssetResolver(String name,
+            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

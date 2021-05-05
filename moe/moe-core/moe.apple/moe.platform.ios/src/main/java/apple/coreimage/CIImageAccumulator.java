@@ -105,6 +105,13 @@ public class CIImageAccumulator extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Create a new accumulator object.
+     * For pixel format options see CIImage.h.
+     * The specified color space is used to render the image. 
+     * If no color space is specified, no color matching is done. 
+     * The return values will be null if the format is unsupported or the extent is too big.
+     */
     @Generated
     @Selector("imageAccumulatorWithExtent:format:")
     public static native CIImageAccumulator imageAccumulatorWithExtentFormat(@ByValue CGRect extent, int format);
@@ -162,19 +169,33 @@ public class CIImageAccumulator extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Reset the accumulator, discarding any pending updates and current content.
+     */
     @Generated
     @Selector("clear")
     public native void clear();
 
+    /**
+     * Return the extent of the accumulator.
+     */
     @Generated
     @Selector("extent")
     @ByValue
     public native CGRect extent();
 
+    /**
+     * Return the pixel format of the accumulator.
+     */
     @Generated
     @Selector("format")
     public native int format();
 
+    /**
+     * Return an image representing the current contents of the accumulator.
+     * Rendering the image after subsequently calling setImage: has
+     * undefined behavior.
+     */
     @Generated
     @Selector("image")
     public native CIImage image();
@@ -192,10 +213,18 @@ public class CIImageAccumulator extends NSObject {
     public native CIImageAccumulator initWithExtentFormatColorSpace(@ByValue CGRect extent, int format,
             CGColorSpaceRef colorSpace);
 
+    /**
+     * Set the image 'im' as the current contents of the accumulator.
+     */
     @Generated
     @Selector("setImage:")
     public native void setImage(CIImage image);
 
+    /**
+     * Set the image 'im' as the accumulator's contents. The caller guarantees
+     * that the new contents only differ from the old within the specified
+     * region.
+     */
     @Generated
     @Selector("setImage:dirtyRect:")
     public native void setImageDirtyRect(CIImage image, @ByValue CGRect dirtyRect);

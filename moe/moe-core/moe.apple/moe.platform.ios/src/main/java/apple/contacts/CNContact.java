@@ -56,6 +56,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An immutable value object representing a contact.
+ * 
+ * CNContact is thread safe.
+ * 
+ * If using a CNContact instance where you are not certain of the keys that were fetched, use isKeyAvailable: or areKeysAvailable:. If these return NO you need to refetch the contact by the contact identifier with the keys you want to fetch. Accessing a property that was not fetched will throw CNContactPropertyNotFetchedExceptionName.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
@@ -107,6 +114,9 @@ public class CNContact extends NSObject
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The contact comparator for a given sort order.
+     */
     @Generated
     @Selector("comparatorForNameSortOrder:")
     @ObjCBlock(name = "call_comparatorForNameSortOrder_ret")
@@ -120,6 +130,9 @@ public class CNContact extends NSObject
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Use to fetch all contact keys required for the contact sort comparator.
+     */
     @Generated
     @Selector("descriptorForAllComparatorKeys")
     @MappedReturn(ObjCObjectMapper.class)
@@ -151,6 +164,9 @@ public class CNContact extends NSObject
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Returns a user displayable property name.
+     */
     @Generated
     @Selector("localizedStringForKey:")
     public static native String localizedStringForKey(String key);
@@ -169,10 +185,18 @@ public class CNContact extends NSObject
     @Selector("predicateForContactsInGroupWithIdentifier:")
     public static native NSPredicate predicateForContactsInGroupWithIdentifier(String groupIdentifier);
 
+    /**
+     * To fetch contacts matching a name.
+     * 
+     * The name can contain any number of words.
+     */
     @Generated
     @Selector("predicateForContactsMatchingName:")
     public static native NSPredicate predicateForContactsMatchingName(String name);
 
+    /**
+     * To fetch contacts matching contact identifiers.
+     */
     @Generated
     @Selector("predicateForContactsWithIdentifiers:")
     public static native NSPredicate predicateForContactsWithIdentifiers(NSArray<String> identifiers);
@@ -202,10 +226,16 @@ public class CNContact extends NSObject
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns YES if the values for the keys specified by all the descriptors were fetched.
+     */
     @Generated
     @Selector("areKeysAvailable:")
     public native boolean areKeysAvailable(NSArray<?> keyDescriptors);
 
+    /**
+     * The Gregorian birthday.
+     */
     @Generated
     @Selector("birthday")
     public native NSDateComponents birthday();
@@ -225,6 +255,9 @@ public class CNContact extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Other Gregorian dates (anniversaries, etc).
+     */
     @Generated
     @Selector("dates")
     public native NSArray<? extends CNLabeledValue<NSDateComponents>> dates();
@@ -239,7 +272,7 @@ public class CNContact extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("familyName")
@@ -249,6 +282,9 @@ public class CNContact extends NSObject
     @Selector("givenName")
     public native String givenName();
 
+    /**
+     * The identifier is unique among contacts on the device. It can be saved and used for fetching contacts next application launch.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -267,16 +303,23 @@ public class CNContact extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContact initWithCoder(NSCoder aDecoder);
+    public native CNContact initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instantMessageAddresses")
     public native NSArray<? extends CNLabeledValue<CNInstantMessageAddress>> instantMessageAddresses();
 
+    /**
+     * Returns YES if the value for the specified key was fetched.
+     */
     @Generated
     @Selector("isKeyAvailable:")
     public native boolean isKeyAvailable(String key);
 
+    /**
+     *  Unification
+     * Returns YES if the receiver was fetched as a unified contact and includes the contact having contactIdentifier in its unification
+     */
     @Generated
     @Selector("isUnifiedWithContactWithIdentifier:")
     public native boolean isUnifiedWithContactWithIdentifier(String contactIdentifier);
@@ -289,6 +332,7 @@ public class CNContact extends NSObject
     @Selector("middleName")
     public native String middleName();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -306,6 +350,9 @@ public class CNContact extends NSObject
     @Selector("nickname")
     public native String nickname();
 
+    /**
+     * The alternate birthday (Lunisolar).
+     */
     @Generated
     @Selector("nonGregorianBirthday")
     public native NSDateComponents nonGregorianBirthday();
@@ -369,8 +416,8 @@ public class CNContact extends NSObject
     public interface Block_comparatorForNameSortOrder_ret {
         @Generated
         @NInt
-        long call_comparatorForNameSortOrder_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_comparatorForNameSortOrder_ret(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Generated
@@ -436,4 +483,32 @@ public class CNContact extends NSObject
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
+
+    /**
+     * Fetch contacts matching an email address.
+     * 
+     * Use this predicate to find the contact(s) which contain the specified
+     *              email address. The search is not case-sensitive.
+     * 
+     * @param       emailAddress
+     *              The email address to search for. Do not include a scheme (e.g., "mailto:").
+     */
+    @Generated
+    @Selector("predicateForContactsMatchingEmailAddress:")
+    public static native NSPredicate predicateForContactsMatchingEmailAddress(String emailAddress);
+
+    /**
+     * Fetch contacts matching a phone number.
+     * 
+     * If the predicate and contact differ in their use or presence of country
+     *              codes, a best effort will be made to match results; however, inexact
+     *              matches are not guaranteed.
+     * 
+     * @param       phoneNumber
+     *              A @c CNPhoneNumber representing the phone number to search for.
+     *              Do not include a scheme (e.g., "tel:").
+     */
+    @Generated
+    @Selector("predicateForContactsMatchingPhoneNumber:")
+    public static native NSPredicate predicateForContactsMatchingPhoneNumber(CNPhoneNumber phoneNumber);
 }

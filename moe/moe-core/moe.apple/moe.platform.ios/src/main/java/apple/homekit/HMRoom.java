@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This class describes a room in the home.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +156,10 @@ public class HMRoom extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Array of HMAccessory objects that correspond to the accessories
+     *        associated with this room.
+     */
     @Generated
     @Selector("accessories")
     public native NSArray<? extends HMAccessory> accessories();
@@ -161,14 +168,29 @@ public class HMRoom extends NSObject {
     @Selector("init")
     public native HMRoom init();
 
+    /**
+     * Name of the room.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * A unique identifier for the room.
+     */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
+    /**
+     * This method is used to change the name of the room.
+     * 
+     * @param name New name for the room.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,
@@ -178,6 +200,6 @@ public class HMRoom extends NSObject {
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
+        void call_updateNameCompletionHandler(NSError error);
     }
 }

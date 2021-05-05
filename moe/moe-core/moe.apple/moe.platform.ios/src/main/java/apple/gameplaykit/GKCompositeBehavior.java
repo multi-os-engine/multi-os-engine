@@ -41,6 +41,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A GKBehavior that can also contain a number of sub-behaviors
+ * Sub-behaviors and goals are both weighted and produce a force to apply to a GKAGENT
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -73,10 +77,16 @@ public class GKCompositeBehavior extends GKBehavior {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Creates a behavior with an array of sub-behaviors
+     */
     @Generated
     @Selector("behaviorWithBehaviors:")
     public static native GKCompositeBehavior behaviorWithBehaviors(NSArray<? extends GKBehavior> behaviors);
 
+    /**
+     * Creates a behavior with two associated arrays of sub-behaviors and weights
+     */
     @Generated
     @Selector("behaviorWithBehaviors:andWeights:")
     public static native GKCompositeBehavior behaviorWithBehaviorsAndWeights(NSArray<? extends GKBehavior> behaviors,
@@ -179,6 +189,9 @@ public class GKCompositeBehavior extends GKBehavior {
     @NInt
     public static native long version_static();
 
+    /**
+     * Number of sub-behaviors in this behavior
+     */
     @Generated
     @Selector("behaviorCount")
     @NInt
@@ -188,30 +201,59 @@ public class GKCompositeBehavior extends GKBehavior {
     @Selector("init")
     public native GKCompositeBehavior init();
 
+    /**
+     * Supports getting behaviors via a [int] subscript.
+     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native GKGoal objectAtIndexedSubscript(@NUInt long idx);
 
+    /**
+     * Supports getting a weight via a [behavior] subscript.
+     */
     @Generated
     @Selector("objectForKeyedSubscript:")
     public native NSNumber objectForKeyedSubscript(GKBehavior behavior);
 
+    /**
+     * Removes all the sub-behavior on the behavior.
+     */
     @Generated
     @Selector("removeAllBehaviors")
     public native void removeAllBehaviors();
 
+    /**
+     * Remove the indicated sub-behavior from this behavior.
+     * 
+     * @param behavior the sub-behavior to be removed
+     */
     @Generated
     @Selector("removeBehavior:")
     public native void removeBehavior(GKBehavior behavior);
 
+    /**
+     * Supports setting a weight via a [behavior] subscript.
+     */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
     public native void setObjectForKeyedSubscript(NSNumber weight, GKBehavior behavior);
 
+    /**
+     * Adds a new sub-behavior or changes the weight of the existing sub-behavior in this behavior.
+     * If the sub-behavior  does not exist in this behavior, it is added.
+     * 
+     * @param weight the weight for this goal
+     * @param behavior the sub-behavior who's weight to change
+     */
     @Generated
     @Selector("setWeight:forBehavior:")
     public native void setWeightForBehavior(float weight, GKBehavior behavior);
 
+    /**
+     * Gets the current weight for a given sub-behavior.
+     * 
+     * @return the weight of the sub-behavior, or 0 if there is no such sub-behavior on this behavior
+     */
     @Generated
     @Selector("weightForBehavior:")
     public native float weightForBehavior(GKBehavior behavior);

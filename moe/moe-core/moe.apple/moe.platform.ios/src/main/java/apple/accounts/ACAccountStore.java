@@ -42,6 +42,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The ACAccountStore class provides an interface for accessing and manipulating
+ * accounts. You must create an ACAccountStore object to retrieve, add and delete
+ * accounts from the Accounts database.
+ * 
+ * IMPORTANT NOTE: You MUST keep the account store around for as long as you have
+ * any objects fetched from that store if you expect other 'sub-fetches' to work,
+ * most notably being fetching credentials. If you really just want to open the
+ * store to grab credentials, just be sure to grab the credential object and then
+ * you can release the owning account and store, e.g.
+ * 
+ * WARNING: All synchronous methods on ACAccountStore invoke xpc methods
+ * on accountsd. They are not appropriate to call on a UI Application's main thread.
+ */
 @Generated
 @Library("Accounts")
 @Runtime(ObjCRuntime.class)
@@ -153,18 +167,35 @@ public class ACAccountStore extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns the account type object matching the account type identifier. See
+     * ACAccountType.h for well known account type identifiers
+     * WARNING: Synchronous, not appropriate to call on a UI Application's main thread
+     */
     @Generated
     @Selector("accountTypeWithAccountTypeIdentifier:")
     public native ACAccountType accountTypeWithAccountTypeIdentifier(String typeIdentifier);
 
+    /**
+     * Returns the account matching the given account identifier
+     * WARNING: Synchronous, not appropriate to call on a UI Application's main thread
+     */
     @Generated
     @Selector("accountWithIdentifier:")
     public native ACAccount accountWithIdentifier(String identifier);
 
+    /**
+     * An array of all the accounts in an account database
+     * WARNING: Synchronous, not appropriate to call on a UI Application's main thread
+     */
     @Generated
     @Selector("accounts")
     public native NSArray<?> accounts();
 
+    /**
+     * Returns the accounts matching a given account type.
+     * WARNING: Synchronous, not appropriate to call on a UI Application's main thread
+     */
     @Generated
     @Selector("accountsWithAccountType:")
     public native NSArray<?> accountsWithAccountType(ACAccountType accountType);
@@ -173,28 +204,56 @@ public class ACAccountStore extends NSObject {
     @Selector("init")
     public native ACAccountStore init();
 
+    /**
+     * Removes an account from the account store. The completion handler for this method is called on an arbitrary queue.
+     * This call will fail if you don't have sufficient rights to remove the account in question.
+     */
     @Generated
     @Selector("removeAccount:withCompletionHandler:")
     public native void removeAccountWithCompletionHandler(ACAccount account,
             @ObjCBlock(name = "call_removeAccountWithCompletionHandler") Block_removeAccountWithCompletionHandler completionHandler);
 
+    /**
+     * Call this if you discover that an ACAccount's credential is no longer valid.
+     * For Twitter and Sina Weibo accounts, this method will prompt the user to go to Settings to re-enter their password.
+     * For Facebook accounts, if your access token became invalid due to regular expiration, this method will obtain a new one.
+     * However, if the user has deauthorized your app, this renewal request will return ACAccountCredentialRenewResultRejected.
+     */
     @Generated
     @Selector("renewCredentialsForAccount:completion:")
     public native void renewCredentialsForAccountCompletion(ACAccount account,
             @ObjCBlock(name = "call_renewCredentialsForAccountCompletion") Block_renewCredentialsForAccountCompletion completionHandler);
 
+    /**
+     * Obtains permission, if necessary, from the user to access protected properties, and utilize accounts
+     * of a particular type in protected operations, for example OAuth signing. The completion handler for
+     * this method is called on an arbitrary queue.
+     * Certain account types (such as Facebook) require an options dictionary. A list of the required keys
+     * appears in ACAccountType.h. This method will throw an NSInvalidArgumentException if the options
+     * dictionary is not provided for such account types. Conversely, if the account type does not require
+     * an options dictionary, the options parameter must be nil.
+     */
     @Generated
     @Selector("requestAccessToAccountsWithType:options:completion:")
     public native void requestAccessToAccountsWithTypeOptionsCompletion(ACAccountType accountType,
             NSDictionary<?, ?> options,
             @ObjCBlock(name = "call_requestAccessToAccountsWithTypeOptionsCompletion") Block_requestAccessToAccountsWithTypeOptionsCompletion completion);
 
+    /**
+     * DEPRECATED: Please use requestAccessToAccountsWithType:options:completion: instead.
+     */
     @Generated
     @Deprecated
     @Selector("requestAccessToAccountsWithType:withCompletionHandler:")
     public native void requestAccessToAccountsWithTypeWithCompletionHandler(ACAccountType accountType,
             @ObjCBlock(name = "call_requestAccessToAccountsWithTypeWithCompletionHandler") Block_requestAccessToAccountsWithTypeWithCompletionHandler handler);
 
+    /**
+     * Saves the account to the account database. If the account is unauthenticated and the associated account
+     * type supports authentication, the system will attempt to authenticate with the credentials provided.
+     * Assuming a successful authentication, the account will be saved to the account store. The completion handler
+     * for this method is called on an arbitrary queue.
+     */
     @Generated
     @Selector("saveAccount:withCompletionHandler:")
     public native void saveAccountWithCompletionHandler(ACAccount account,
@@ -204,34 +263,34 @@ public class ACAccountStore extends NSObject {
     @Generated
     public interface Block_removeAccountWithCompletionHandler {
         @Generated
-        void call_removeAccountWithCompletionHandler(boolean arg0, NSError arg1);
+        void call_removeAccountWithCompletionHandler(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_renewCredentialsForAccountCompletion {
         @Generated
-        void call_renewCredentialsForAccountCompletion(@NInt long arg0, NSError arg1);
+        void call_renewCredentialsForAccountCompletion(@NInt long renewResult, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAccessToAccountsWithTypeOptionsCompletion {
         @Generated
-        void call_requestAccessToAccountsWithTypeOptionsCompletion(boolean arg0, NSError arg1);
+        void call_requestAccessToAccountsWithTypeOptionsCompletion(boolean granted, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAccessToAccountsWithTypeWithCompletionHandler {
         @Generated
-        void call_requestAccessToAccountsWithTypeWithCompletionHandler(boolean arg0, NSError arg1);
+        void call_requestAccessToAccountsWithTypeWithCompletionHandler(boolean granted, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveAccountWithCompletionHandler {
         @Generated
-        void call_saveAccountWithCompletionHandler(boolean arg0, NSError arg1);
+        void call_saveAccountWithCompletionHandler(boolean success, NSError error);
     }
 }

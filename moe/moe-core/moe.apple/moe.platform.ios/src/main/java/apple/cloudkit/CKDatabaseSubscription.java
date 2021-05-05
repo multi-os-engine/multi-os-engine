@@ -20,7 +20,6 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
-import apple.foundation.NSPredicate;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
@@ -44,6 +43,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CKDatabaseSubscription
+ * 
+ * A subscription fires whenever any change happens in the database that this subscription was saved in.
+ * 
+ * [@c] CKDatabaseSubscription is only supported in the Private and Shared databases.
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -167,7 +173,7 @@ public class CKDatabaseSubscription extends CKSubscription implements NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,32 +184,19 @@ public class CKDatabaseSubscription extends CKSubscription implements NSSecureCo
     public native CKDatabaseSubscription initWithCoder(NSCoder aDecoder);
 
     @Generated
-    @Selector("initWithRecordType:predicate:options:")
-    public native CKDatabaseSubscription initWithRecordTypePredicateOptions(String recordType, NSPredicate predicate,
-            @NUInt long subscriptionOptions);
-
-    @Generated
-    @Selector("initWithRecordType:predicate:subscriptionID:options:")
-    public native CKDatabaseSubscription initWithRecordTypePredicateSubscriptionIDOptions(String recordType,
-            NSPredicate predicate, String subscriptionID, @NUInt long subscriptionOptions);
-
-    @Generated
     @Selector("initWithSubscriptionID:")
     public native CKDatabaseSubscription initWithSubscriptionID(String subscriptionID);
 
-    @Generated
-    @Selector("initWithZoneID:options:")
-    public native CKDatabaseSubscription initWithZoneIDOptions(CKRecordZoneID zoneID, @NUInt long subscriptionOptions);
-
-    @Generated
-    @Selector("initWithZoneID:subscriptionID:options:")
-    public native CKDatabaseSubscription initWithZoneIDSubscriptionIDOptions(CKRecordZoneID zoneID,
-            String subscriptionID, @NUInt long subscriptionOptions);
-
+    /**
+     * Optional property. If set, a database subscription is scoped to record changes for this record type
+     */
     @Generated
     @Selector("recordType")
     public native String recordType();
 
+    /**
+     * Optional property. If set, a database subscription is scoped to record changes for this record type
+     */
     @Generated
     @Selector("setRecordType:")
     public native void setRecordType(String value);

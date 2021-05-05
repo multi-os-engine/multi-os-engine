@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Toll-free bridged with CFLocaleRef
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -83,6 +86,9 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * generally you should use this property
+     */
     @Generated
     @Selector("autoupdatingCurrentLocale")
     public static native NSLocale autoupdatingCurrentLocale();
@@ -130,6 +136,9 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("componentsFromLocaleIdentifier:")
     public static native NSDictionary<String, String> componentsFromLocaleIdentifier(String string);
 
+    /**
+     * an object representing the user's current locale
+     */
     @Generated
     @Selector("currentLocale")
     public static native NSLocale currentLocale();
@@ -191,6 +200,9 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * note that this list does not indicate what language the app is actually running in; the NSBundle.mainBundle object determines that at launch and knows that information
+     */
     @Generated
     @Selector("preferredLanguages")
     public static native NSArray<String> preferredLanguages();
@@ -215,6 +227,9 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * the default generic root locale with little localization
+     */
     @Generated
     @Selector("systemLocale")
     public static native NSLocale systemLocale();
@@ -276,7 +291,7 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("exemplarCharacterSet")
@@ -292,7 +307,7 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSLocale initWithCoder(NSCoder aDecoder);
+    public native NSLocale initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLocaleIdentifier:")
@@ -302,6 +317,9 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("languageCode")
     public native String languageCode();
 
+    /**
+     * same as NSLocaleIdentifier
+     */
     @Generated
     @Selector("localeIdentifier")
     public native String localeIdentifier();

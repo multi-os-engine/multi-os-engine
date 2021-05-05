@@ -90,6 +90,9 @@ public class INPlacemarkResolutionResult extends INIntentResolutionResult {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the placemark with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithPlacemarkToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -103,6 +106,9 @@ public class INPlacemarkResolutionResult extends INIntentResolutionResult {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * This resolution result is to ask Siri to disambiguate between the provided placemarks.
+     */
     @Generated
     @Selector("disambiguationWithPlacemarksToDisambiguate:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -163,6 +169,10 @@ public class INPlacemarkResolutionResult extends INIntentResolutionResult {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given CLPlacemark. The resolvedPlacemark can be different than the original CLPlacemark. This allows app extensions to dynamically fill-in details about the CLPlacemark, as appropriate. To make a new CLPlacemark, see <Intents/CLPlacemark+IntentsAdditions.h>.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedPlacemark:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -185,4 +195,15 @@ public class INPlacemarkResolutionResult extends INIntentResolutionResult {
     @Generated
     @Selector("init")
     public native INPlacemarkResolutionResult init();
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

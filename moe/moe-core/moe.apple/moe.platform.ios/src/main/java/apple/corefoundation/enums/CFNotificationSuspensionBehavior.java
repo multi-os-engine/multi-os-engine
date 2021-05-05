@@ -22,8 +22,17 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class CFNotificationSuspensionBehavior {
     @Generated @NInt public static final long Drop = 0x0000000000000001L;
+    /**
+     * The server will not queue any notifications with this name and object while the process/app is in the background.
+     */
     @Generated @NInt public static final long Coalesce = 0x0000000000000002L;
+    /**
+     * The server will only queue the last notification of the specified name and object; earlier notifications are dropped.
+     */
     @Generated @NInt public static final long Hold = 0x0000000000000003L;
+    /**
+     * The server will hold all matching notifications until the queue has been filled (queue size determined by the server) at which point the server may flush queued notifications.
+     */
     @Generated @NInt public static final long DeliverImmediately = 0x0000000000000004L;
 
     @Generated

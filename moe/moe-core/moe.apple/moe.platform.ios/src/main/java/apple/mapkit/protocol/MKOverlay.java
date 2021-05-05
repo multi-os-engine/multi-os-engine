@@ -32,11 +32,18 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MKOverlay")
 public interface MKOverlay extends MKAnnotation {
+    /**
+     * boundingMapRect should be the smallest rectangle that completely contains the overlay.
+     * For overlays that span the 180th meridian, boundingMapRect should have either a negative MinX or a MaxX that is greater than MKMapSizeWorld.width.
+     */
     @Generated
     @Selector("boundingMapRect")
     @ByValue
     MKMapRect boundingMapRect();
 
+    /**
+     * If this method is implemented and returns YES, MKMapView may use it as a hint to skip loading or drawing the built in map content in the area covered by this overlay.
+     */
     @Generated
     @IsOptional
     @Selector("canReplaceMapContent")
@@ -44,11 +51,18 @@ public interface MKOverlay extends MKAnnotation {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * From MKAnnotation, for areas this should return the centroid of the area.
+     */
     @Generated
     @Selector("coordinate")
     @ByValue
     CLLocationCoordinate2D coordinate();
 
+    /**
+     * Implement intersectsMapRect to provide more precise control over when the view for the overlay should be shown.
+     * If omitted, MKMapRectIntersectsRect([overlay boundingRect], mapRect) will be used instead.
+     */
     @Generated
     @IsOptional
     @Selector("intersectsMapRect:")

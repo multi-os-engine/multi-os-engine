@@ -165,13 +165,16 @@ public class UNNotification extends NSObject implements NSCopying, NSSecureCodin
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * The date displayed on the notification.
+     */
     @Generated
     @Selector("date")
     public native NSDate date();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -179,8 +182,11 @@ public class UNNotification extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotification initWithCoder(NSCoder aDecoder);
+    public native UNNotification initWithCoder(NSCoder coder);
 
+    /**
+     * The notification request that caused the notification to be delivered.
+     */
     @Generated
     @Selector("request")
     public native UNNotificationRequest request();

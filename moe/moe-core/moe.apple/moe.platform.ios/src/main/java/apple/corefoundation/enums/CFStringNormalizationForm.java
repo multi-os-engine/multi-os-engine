@@ -19,11 +19,29 @@ package apple.corefoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@typedef] CFStringNormalizationForm
+ * This is the type of Unicode normalization forms as described in
+ * Unicode Technical Report #15. To normalize for use with file
+ * system calls, use CFStringGetFileSystemRepresentation().
+ */
 @Generated
 public final class CFStringNormalizationForm {
+    /**
+     * Canonical Decomposition
+     */
     @Generated @NInt public static final long D = 0x0000000000000000L;
+    /**
+     * Compatibility Decomposition
+     */
     @Generated @NInt public static final long KD = 0x0000000000000001L;
+    /**
+     * Canonical Decomposition followed by Canonical Composition
+     */
     @Generated @NInt public static final long C = 0x0000000000000002L;
+    /**
+     * Compatibility Decomposition followed by Canonical Composition
+     */
     @Generated @NInt public static final long KC = 0x0000000000000003L;
 
     @Generated

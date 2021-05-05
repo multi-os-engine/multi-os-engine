@@ -153,6 +153,14 @@ public class HKStatisticsCollection extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * enumerateStatisticsFromDate:toDate:withBlock:
+     * 
+     * Enumerates all statistics objects from startDate to endDate.
+     * 
+     * Statistics objects will be enumerated in chronological order. If there are no samples for an interval
+     *                between the start and end date, then the HKStatistics object for that interval will have nil quantities.
+     */
     @Generated
     @Selector("enumerateStatisticsFromDate:toDate:withBlock:")
     public native void enumerateStatisticsFromDateToDateWithBlock(NSDate startDate, NSDate endDate,
@@ -162,14 +170,36 @@ public class HKStatisticsCollection extends NSObject {
     @Selector("init")
     public native HKStatisticsCollection init();
 
+    /**
+     * sources
+     * 
+     * Returns all HKSources found in the contained HKStatistics objects.
+     * 
+     * Sources will be empty unless HKStatisticsOptionSeparateBySource is specified in the
+     *                HKStatisticsCollectionQuery options.
+     */
     @Generated
     @Selector("sources")
     public native NSSet<? extends HKSource> sources();
 
+    /**
+     * statistics
+     * 
+     * Returns a copy of the populated statistics objects.
+     * 
+     * The statistics objects are ordered chronologically.
+     */
     @Generated
     @Selector("statistics")
     public native NSArray<? extends HKStatistics> statistics();
 
+    /**
+     * statisticsForDate:
+     * 
+     * Returns the statistics object that this date is inside of
+     * 
+     * If there are no samples for the given date, an HKStatistics instance with nil quantities will be returned.
+     */
     @Generated
     @Selector("statisticsForDate:")
     public native HKStatistics statisticsForDate(NSDate date);
@@ -178,6 +208,6 @@ public class HKStatisticsCollection extends NSObject {
     @Generated
     public interface Block_enumerateStatisticsFromDateToDateWithBlock {
         @Generated
-        void call_enumerateStatisticsFromDateToDateWithBlock(HKStatistics arg0, BoolPtr arg1);
+        void call_enumerateStatisticsFromDateToDateWithBlock(HKStatistics result, BoolPtr stop);
     }
 }

@@ -131,6 +131,9 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
     @Selector("kilovolts")
     public static native NSUnitElectricPotentialDifference kilovolts();
 
+    /**
+     * Base unit - volts
+     */
     @Generated
     @Selector("megavolts")
     public static native NSUnitElectricPotentialDifference megavolts();
@@ -180,7 +183,7 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -188,7 +191,7 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitElectricPotentialDifference initWithCoder(NSCoder aDecoder);
+    public native NSUnitElectricPotentialDifference initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

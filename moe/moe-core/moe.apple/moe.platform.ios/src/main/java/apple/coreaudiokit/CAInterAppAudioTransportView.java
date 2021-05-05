@@ -28,6 +28,7 @@ import apple.uikit.UIColor;
 import apple.uikit.UIFont;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -134,7 +135,7 @@ public class CAInterAppAudioTransportView extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -147,8 +148,8 @@ public class CAInterAppAudioTransportView extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -369,7 +370,7 @@ public class CAInterAppAudioTransportView extends UIView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -385,7 +386,8 @@ public class CAInterAppAudioTransportView extends UIView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -406,7 +408,7 @@ public class CAInterAppAudioTransportView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAInterAppAudioTransportView initWithCoder(NSCoder aDecoder);
+    public native CAInterAppAudioTransportView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -432,6 +434,9 @@ public class CAInterAppAudioTransportView extends UIView {
     @Selector("isRecording")
     public native boolean isRecording();
 
+    /**
+     * Appearance properties
+     */
     @Generated
     @Selector("labelColor")
     public native UIColor labelColor();
@@ -456,6 +461,9 @@ public class CAInterAppAudioTransportView extends UIView {
     @Selector("setCurrentTimeLabelFont:")
     public native void setCurrentTimeLabelFont(UIFont value);
 
+    /**
+     * Appearance properties
+     */
     @Generated
     @Selector("setLabelColor:")
     public native void setLabelColor(UIColor value);
@@ -479,4 +487,10 @@ public class CAInterAppAudioTransportView extends UIView {
     @Generated
     @Selector("setRewindButtonColor:")
     public native void setRewindButtonColor(UIColor value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

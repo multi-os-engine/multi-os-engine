@@ -19,10 +19,22 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * when the connected screen is overscanning, UIScreen can attempt to compensate for the overscan to avoid clipping
+ */
 @Generated
 public final class UIScreenOverscanCompensation {
+    /**
+     * the final composited framebuffer for the screen is scaled to avoid clipping
+     */
     @Generated @NInt public static final long Scale = 0x0000000000000000L;
+    /**
+     * the screen's bounds will be inset in the framebuffer to avoid clipping. no scaling will occur
+     */
     @Generated @NInt public static final long InsetBounds = 0x0000000000000001L;
+    /**
+     * no scaling will occur. use overscanCompensationInsets to determine the necessary insets to avoid clipping
+     */
     @Generated @NInt public static final long None = 0x0000000000000002L;
     @Generated @NInt public static final long InsetApplicationFrame = 0x0000000000000002L;
 

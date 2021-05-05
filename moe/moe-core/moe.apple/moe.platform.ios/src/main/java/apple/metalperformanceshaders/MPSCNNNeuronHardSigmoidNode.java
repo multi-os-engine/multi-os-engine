@@ -23,6 +23,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A node representing a MPSCNNNeuronHardSigmoid kernel
+ * 
+ * For each pixel, applies the following function:
+ * [@code]
+ *     f(x) = clamp((a * x) + b, 0, 1)
+ * [@endcode]
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -90,10 +98,21 @@ public class MPSCNNNeuronHardSigmoidNode extends MPSCNNNeuronNode {
     @Selector("init")
     public native MPSCNNNeuronHardSigmoidNode init();
 
+    /**
+     * Init a node with default values for parameters a & b
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNNeuronHardSigmoidNode initWithSource(MPSNNImageNode sourceNode);
 
+    /**
+     * Init a node representing a MPSCNNNeuronHardSigmoid kernel
+     * 
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      a                       See discussion above.
+     * @param      b                       See discussion above.
+     * @return     A new MPSNNFilter node for a MPSCNNNeuronHardSigmoid kernel.
+     */
     @Generated
     @Selector("initWithSource:a:b:")
     public native MPSCNNNeuronHardSigmoidNode initWithSourceAB(MPSNNImageNode sourceNode, float a, float b);
@@ -125,6 +144,9 @@ public class MPSCNNNeuronHardSigmoidNode extends MPSCNNNeuronNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Create an autoreleased node with default values for parameters a & b
+     */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSCNNNeuronHardSigmoidNode nodeWithSource(MPSNNImageNode sourceNode);
@@ -153,4 +175,9 @@ public class MPSCNNNeuronHardSigmoidNode extends MPSCNNNeuronNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("nodeWithSource:descriptor:")
+    public static native MPSCNNNeuronHardSigmoidNode nodeWithSourceDescriptor(MPSNNImageNode sourceNode,
+            MPSNNNeuronDescriptor descriptor);
 }

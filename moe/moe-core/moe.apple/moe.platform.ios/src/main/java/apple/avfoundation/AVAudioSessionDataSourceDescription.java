@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Information about one of potentially multiple data sources associated with a port.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -154,10 +157,16 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * System-assigned ID for the data source.
+     */
     @Generated
     @Selector("dataSourceID")
     public native NSNumber dataSourceID();
 
+    /**
+     * Human-readable name for the data source.
+     */
     @Generated
     @Selector("dataSourceName")
     public native String dataSourceName();
@@ -166,27 +175,59 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
     @Selector("init")
     public native AVAudioSessionDataSourceDescription init();
 
+    /**
+     * Describes the general location of a data source. Will be nil for data sources for which the
+     * location is not known.
+     */
     @Generated
     @Selector("location")
     public native String location();
 
+    /**
+     * Describes the orientation of a data source.  Will be nil for data sources for which the
+     * orientation is not known.
+     */
     @Generated
     @Selector("orientation")
     public native String orientation();
 
+    /**
+     * Describes the preferred polar pattern.  Will be nil for data sources that have no selectable
+     * patterns or if no preference has been set.
+     */
     @Generated
     @Selector("preferredPolarPattern")
     public native String preferredPolarPattern();
 
+    /**
+     * Describes the currently selected polar pattern.  Will be nil for data sources that have no
+     * selectable patterns.
+     */
     @Generated
     @Selector("selectedPolarPattern")
     public native String selectedPolarPattern();
 
+    /**
+     * Select the desired polar pattern from the set of available patterns. Setting a nil value
+     * will clear the preference.
+     * 
+     * [@note] If the owning port and data source are part of the active audio route, changing the polar
+     * pattern will likely result in a route reconfiguration. If the owning port and data source are
+     * not part of the active route, selecting a polar pattern will not result in an immediate route
+     * reconfiguration.  Use AVAudioSession's setPreferredInput:error: method to activate the port. Use
+     * setPreferredDataSource:error: to active the data source on the port.
+     * You must call setPreferredInputOrientation:error: on the AVAudioSession if you chose the
+     * AVAudioSessionPolarPatternStereo polar pattern.
+     */
     @Generated
     @Selector("setPreferredPolarPattern:error:")
     public native boolean setPreferredPolarPatternError(String pattern,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * Array of one or more AVAudioSessionPolarPatterns describing the supported polar patterns for a
+     * data source.  Will be nil for data sources that have no selectable patterns.
+     */
     @Generated
     @Selector("supportedPolarPatterns")
     public native NSArray<String> supportedPolarPatterns();

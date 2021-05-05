@@ -41,6 +41,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKDocumentSample
+ * 
+ * An abstract class representing a health document.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -166,7 +171,7 @@ public class HKDocumentSample extends HKSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKDocumentSample initWithCoder(NSCoder aDecoder);
+    public native HKDocumentSample initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

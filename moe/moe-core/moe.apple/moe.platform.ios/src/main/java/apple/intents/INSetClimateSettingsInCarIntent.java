@@ -199,7 +199,7 @@ public class INSetClimateSettingsInCarIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetClimateSettingsInCarIntent initWithCoder(NSCoder aDecoder);
+    public native INSetClimateSettingsInCarIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithEnableFan:enableAirConditioner:enableClimateControl:enableAutoMode:airCirculationMode:fanSpeedIndex:fanSpeedPercentage:relativeFanSpeedSetting:temperature:relativeTemperatureSetting:climateZone:")
@@ -228,4 +228,16 @@ public class INSetClimateSettingsInCarIntent extends INIntent {
     @Generated
     @Selector("temperature")
     public native NSMeasurement<NSUnitTemperature> temperature();
+
+    @Generated
+    @Selector("carName")
+    public native INSpeakableString carName();
+
+    @Generated
+    @Selector("initWithEnableFan:enableAirConditioner:enableClimateControl:enableAutoMode:airCirculationMode:fanSpeedIndex:fanSpeedPercentage:relativeFanSpeedSetting:temperature:relativeTemperatureSetting:climateZone:carName:")
+    public native INSetClimateSettingsInCarIntent initWithEnableFanEnableAirConditionerEnableClimateControlEnableAutoModeAirCirculationModeFanSpeedIndexFanSpeedPercentageRelativeFanSpeedSettingTemperatureRelativeTemperatureSettingClimateZoneCarName(
+            NSNumber enableFan, NSNumber enableAirConditioner, NSNumber enableClimateControl, NSNumber enableAutoMode,
+            @NInt long airCirculationMode, NSNumber fanSpeedIndex, NSNumber fanSpeedPercentage,
+            @NInt long relativeFanSpeedSetting, NSMeasurement<NSUnitTemperature> temperature,
+            @NInt long relativeTemperatureSetting, @NInt long climateZone, INSpeakableString carName);
 }

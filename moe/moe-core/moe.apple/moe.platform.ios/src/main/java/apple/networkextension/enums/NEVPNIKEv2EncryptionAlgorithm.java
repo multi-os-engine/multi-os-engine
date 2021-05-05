@@ -19,16 +19,44 @@ package apple.networkextension.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@typedef] NEVPNIKEv2EncryptionAlgorithm
+ * 
+ * IKEv2 Encryption Algorithms
+ */
 @Generated
 public final class NEVPNIKEv2EncryptionAlgorithm {
+    /**
+     * [@const] NEVPNIKEv2EncryptionAlgorithmDES Data Encryption Standard (DES)
+     */
     @Generated @NInt public static final long AlgorithmDES = 0x0000000000000001L;
+    /**
+     * [@const] NEVPNIKEv2EncryptionAlgorithm3DES Triple Data Encryption Algorithm (aka 3DES)
+     */
     @Generated @NInt public static final long Algorithm3DES = 0x0000000000000002L;
+    /**
+     * [@const] NEVPNIKEv2EncryptionAlgorithmAES128 Advanced Encryption Standard 128 bit (AES128)
+     */
     @Generated @NInt public static final long AlgorithmAES128 = 0x0000000000000003L;
+    /**
+     * [@const] NEVPNIKEv2EncryptionAlgorithmAES256 Advanced Encryption Standard 256 bit (AES256)
+     */
     @Generated @NInt public static final long AlgorithmAES256 = 0x0000000000000004L;
+    /**
+     * [@const] NEVPNIKEv2EncryptionAlgorithmAES128GCM Advanced Encryption Standard 128 bit (AES128GCM)
+     */
     @Generated @NInt public static final long AlgorithmAES128GCM = 0x0000000000000005L;
+    /**
+     * [@const] NEVPNIKEv2EncryptionAlgorithmAES256GCM Advanced Encryption Standard 256 bit (AES256GCM)
+     */
     @Generated @NInt public static final long AlgorithmAES256GCM = 0x0000000000000006L;
 
     @Generated
     private NEVPNIKEv2EncryptionAlgorithm() {
     }
+
+    /**
+     * [@const] NEVPNIKEv2EncryptionAlgorithmChaCha20Poly1305 ChaCha20 and Poly1305 (ChaCha20Poly1305)
+     */
+    @Generated @NInt public static final long AlgorithmChaCha20Poly1305 = 0x0000000000000007L;
 }

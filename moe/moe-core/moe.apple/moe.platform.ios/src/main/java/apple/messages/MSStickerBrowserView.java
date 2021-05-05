@@ -27,6 +27,7 @@ import apple.foundation.NSSet;
 import apple.messages.protocol.MSStickerBrowserViewDataSource;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -52,6 +53,16 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MSStickerBrowserView
+ * 
+ * A UIView subclass that can display a collection of sticker assets.
+ * 
+ * This class is a UIView subclass intended to display a collection of
+ * stickers. It provides drag and drop functionality so that user may drag an individual
+ * stickers from this view and place it in the Messages transcript. Stickers may also be
+ * tapped to add them directly to Messages input field.
+ */
 @Generated
 @Library("Messages")
 @Runtime(ObjCRuntime.class)
@@ -134,7 +145,7 @@ public class MSStickerBrowserView extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -147,8 +158,8 @@ public class MSStickerBrowserView extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -369,7 +380,7 @@ public class MSStickerBrowserView extends UIView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -385,7 +396,8 @@ public class MSStickerBrowserView extends UIView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -396,16 +408,25 @@ public class MSStickerBrowserView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * The Sticker Browser View content inset.
+     */
     @Generated
     @Selector("contentInset")
     @ByValue
     public native UIEdgeInsets contentInset();
 
+    /**
+     * The Sticker Browser View content offset.
+     */
     @Generated
     @Selector("contentOffset")
     @ByValue
     public native CGPoint contentOffset();
 
+    /**
+     * The Sticker Browser View data source.
+     */
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -417,36 +438,71 @@ public class MSStickerBrowserView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MSStickerBrowserView initWithCoder(NSCoder aDecoder);
+    public native MSStickerBrowserView initWithCoder(NSCoder coder);
 
+    /**
+     * initWithFrame:
+     * 
+     * Initializes a MSStickerBrowserView with a frame using the regular size class.
+     */
     @Generated
     @Selector("initWithFrame:")
     public native MSStickerBrowserView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * initWithFrame:stickerSize:
+     * 
+     * Initializes a MSStickerBrowserView with a frame and sticker size class.
+     * 
+     * Sticker images will be laid out in a grid similar to a UICollectionView
+     * configured with flow layout.
+     * [@property] size hints the size of the cells, the size a sticker is drawn at will
+     * vary based on the device. Sticker images will be scaled down to fit in the grid cell. If the
+     * sticker image is smaller than the cell size measured in pixels then it will be  centered
+     * in the grid cell.
+     */
     @Generated
     @Selector("initWithFrame:stickerSize:")
     public native MSStickerBrowserView initWithFrameStickerSize(@ByValue CGRect frame, @NInt long stickerSize);
 
+    /**
+     * Asks the Sticker Browser View to reload its data from its data source.
+     */
     @Generated
     @Selector("reloadData")
     public native void reloadData();
 
+    /**
+     * The Sticker Browser View content inset.
+     */
     @Generated
     @Selector("setContentInset:")
     public native void setContentInset(@ByValue UIEdgeInsets value);
 
+    /**
+     * The Sticker Browser View content offset.
+     */
     @Generated
     @Selector("setContentOffset:")
     public native void setContentOffset(@ByValue CGPoint value);
 
+    /**
+     * animate Sticker Browser View at constant velocity to new offset.
+     */
     @Generated
     @Selector("setContentOffset:animated:")
     public native void setContentOffsetAnimated(@ByValue CGPoint contentOffset, boolean animated);
 
+    /**
+     * The Sticker Browser View data source.
+     */
     @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) MSStickerBrowserViewDataSource value);
 
+    /**
+     * The Sticker Browser View data source.
+     */
     @Generated
     public void setDataSource(@Mapped(ObjCObjectMapper.class) MSStickerBrowserViewDataSource value) {
         Object __old = dataSource();
@@ -459,8 +515,17 @@ public class MSStickerBrowserView extends UIView {
         }
     }
 
+    /**
+     * The sticker size class.
+     */
     @Generated
     @Selector("stickerSize")
     @NInt
     public native long stickerSize();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

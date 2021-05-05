@@ -3,6 +3,9 @@ package apple.quartzcore.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Bit definitions for `maskedCorners' property.
+ */
 @Generated
 public final class CACornerMask {
     @Generated

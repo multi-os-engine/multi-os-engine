@@ -21,6 +21,9 @@ public interface SCNCameraControlConfiguration {
     @Selector("autoSwitchToFreeCamera")
     boolean autoSwitchToFreeCamera();
 
+    /**
+     * in m/s
+     */
     @Generated
     @Selector("flyModeVelocity")
     @NFloat
@@ -44,6 +47,9 @@ public interface SCNCameraControlConfiguration {
     @Selector("setAutoSwitchToFreeCamera:")
     void setAutoSwitchToFreeCamera(boolean value);
 
+    /**
+     * in m/s
+     */
     @Generated
     @Selector("setFlyModeVelocity:")
     void setFlyModeVelocity(@NFloat double value);

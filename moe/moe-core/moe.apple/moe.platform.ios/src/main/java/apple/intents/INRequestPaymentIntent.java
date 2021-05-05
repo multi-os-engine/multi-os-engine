@@ -166,7 +166,7 @@ public class INRequestPaymentIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRequestPaymentIntent initWithCoder(NSCoder aDecoder);
+    public native INRequestPaymentIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithPayer:currencyAmount:note:")

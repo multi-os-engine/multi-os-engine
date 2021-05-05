@@ -19,11 +19,26 @@ package apple.speech.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Hints on kind of speech recognition being performed
+ */
 @Generated
 public final class SFSpeechRecognitionTaskHint {
+    /**
+     * Unspecified recognition
+     */
     @Generated @NInt public static final long Unspecified = 0x0000000000000000L;
+    /**
+     * General dictation/keyboard-style
+     */
     @Generated @NInt public static final long Dictation = 0x0000000000000001L;
+    /**
+     * Search-style requests
+     */
     @Generated @NInt public static final long Search = 0x0000000000000002L;
+    /**
+     * Short, confirmation-style requests ("Yes", "No", "Maybe")
+     */
     @Generated @NInt public static final long Confirmation = 0x0000000000000003L;
 
     @Generated

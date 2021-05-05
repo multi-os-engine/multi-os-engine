@@ -25,19 +25,56 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * [@protocol] SCNBoundingVolume
+ * 
+ * The SCNBoundingVolume protocol is implemented by objects which can compute their bounding boxes.
+ * 
+ * You can currently use this protocol to get the bounding boxes of nodes and geometries.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SCNBoundingVolume")
 public interface SCNBoundingVolume {
+    /**
+     * getBoundingBoxMin:max:
+     * 
+     * Fill the min and max vectors with the min and max vertex of the bounding box.
+     * 
+     * the returned bounding box is in local space of the receiver.
+     * 
+     * @param min A pointer to a SCNVector3 to store the min vertex of the bounding box into.
+     * @param max A pointer to a SCNVector3 to store the max vertex of the bounding box into.
+     */
     @Generated
     @Selector("getBoundingBoxMin:max:")
     boolean getBoundingBoxMinMax(SCNVector3 min, SCNVector3 max);
 
+    /**
+     * getBoundingSphereCenter:radius:
+     * 
+     * Fill the center vector with the center of the bounding sphere and store the radius of the bounding sphere in 'radius'.
+     * 
+     * the returned bounding sphere is in local space of the receiver.
+     * 
+     * @param center A pointer to a SCNVector3 to store the center of the bounding sphere into.
+     * @param radius A pointer to a CGFloat to store the radius of the bounding sphere into.
+     */
     @Generated
     @Selector("getBoundingSphereCenter:radius:")
     boolean getBoundingSphereCenterRadius(SCNVector3 center, NFloatPtr radius);
 
+    /**
+     * setBoundingBoxMin:max:
+     * 
+     * Override the receiver bounding box with the min and max vectors provided (in local space of the receiver).
+     * 
+     * Passing nil as arguments will recompute the original bounding box of the receiver.
+     * 
+     * @param min A pointer to a SCNVector3 representing the min vertex of the desired bounding box.
+     * @param max A pointer to a SCNVector3 representing the max vertex of the desired bounding box.
+     */
     @Generated
     @Selector("setBoundingBoxMin:max:")
     void setBoundingBoxMinMax(SCNVector3 min, SCNVector3 max);

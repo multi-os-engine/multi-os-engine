@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Mutable Ordered Set     ***************
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -227,6 +230,9 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     @Selector("exchangeObjectAtIndex:withObjectAtIndex:")
     public native void exchangeObjectAtIndexWithObjectAtIndex(@NUInt long idx1, @NUInt long idx2);
 
+    /**
+     * evaluate a predicate against an ordered set of objects and filter the mutable ordered set directly
+     */
     @Generated
     @Selector("filterUsingPredicate:")
     public native void filterUsingPredicate(NSPredicate p);
@@ -254,7 +260,7 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableOrderedSet<?> initWithCoder(NSCoder aDecoder);
+    public native NSMutableOrderedSet<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithObject:")
@@ -376,6 +382,9 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     public native void sortUsingComparator(
             @ObjCBlock(name = "call_sortUsingComparator") Block_sortUsingComparator cmptr);
 
+    /**
+     * sorts the ordered set itself
+     */
     @Generated
     @Selector("sortUsingDescriptors:")
     public native void sortUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
@@ -404,8 +413,8 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     public interface Block_sortRangeOptionsUsingComparator {
         @Generated
         @NInt
-        long call_sortRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -413,8 +422,8 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     public interface Block_sortUsingComparator {
         @Generated
         @NInt
-        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -422,7 +431,11 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     public interface Block_sortWithOptionsUsingComparator {
         @Generated
         @NInt
-        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
+
+    @Generated
+    @Selector("applyDifference:")
+    public native void applyDifference(NSOrderedCollectionDifference<_ObjectType> difference);
 }

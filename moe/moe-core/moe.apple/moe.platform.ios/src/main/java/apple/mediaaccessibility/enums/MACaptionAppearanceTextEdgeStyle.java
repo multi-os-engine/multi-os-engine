@@ -19,6 +19,24 @@ package apple.mediaaccessibility.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] MACaptionAppearanceTextEdgeStyle
+ * 
+ * MACaptionAppearanceTextEdgeStyle is used to specify a text-edge style.
+ * 
+ * [@constant] kMACaptionAppearanceTextEdgeStyleUndefined
+ *    Undefined edge style.
+ * [@constant] kMACaptionAppearanceTextEdgeStyleNone
+ *    No edge style.
+ * [@constant] kMACaptionAppearanceTextEdgeStyleRaised
+ *    Raised edge style.
+ * [@constant] kMACaptionAppearanceTextEdgeStyleDepressed
+ *    Depressed edge style.
+ * [@constant] kMACaptionAppearanceTextEdgeStyleUniform
+ *    Uniform edge style.
+ * [@constant] kMACaptionAppearanceTextEdgeStyleDropShadow
+ *    Shadow edge style.
+ */
 @Generated
 public final class MACaptionAppearanceTextEdgeStyle {
     @Generated @NInt public static final long Undefined = 0x0000000000000000L;

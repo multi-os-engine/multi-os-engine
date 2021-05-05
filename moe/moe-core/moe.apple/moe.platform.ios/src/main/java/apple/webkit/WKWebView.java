@@ -22,15 +22,18 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
 import apple.foundation.NSDate;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.NSURLRequest;
 import apple.security.opaque.SecTrustRef;
+import apple.uikit.UIImage;
 import apple.uikit.UIScrollView;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.webkit.protocol.WKNavigationDelegate;
 import apple.webkit.protocol.WKUIDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -139,7 +142,7 @@ public class WKWebView extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -152,8 +155,8 @@ public class WKWebView extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -355,19 +358,42 @@ public class WKWebView extends UIView {
     @NInt
     public static native long version_static();
 
+    /**
+     * The web view's user interface delegate.
+     */
     @Generated
     @Selector("UIDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native WKUIDelegate UIDelegate();
 
+    /**
+     * The active URL.
+     * 
+     * This is the URL that should be reflected in the user
+     * interface.
+     * [@link] WKWebView @/link is key-value observing (KVO) compliant for this
+     * property.
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
+    /**
+     * A Boolean value indicating whether horizontal swipe gestures
+     * will trigger back-forward list navigations.
+     * 
+     * The default value is NO.
+     */
     @Generated
     @Selector("allowsBackForwardNavigationGestures")
     public native boolean allowsBackForwardNavigationGestures();
 
+    /**
+     * A Boolean value indicating whether link preview is allowed for any
+     * links inside this WKWebView.
+     * 
+     * The default value is YES on Mac and iOS.
+     */
     @Generated
     @Selector("allowsLinkPreview")
     public native boolean allowsLinkPreview();
@@ -391,7 +417,7 @@ public class WKWebView extends UIView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -407,7 +433,8 @@ public class WKWebView extends UIView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -418,14 +445,35 @@ public class WKWebView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * The web view's back-forward list.
+     */
     @Generated
     @Selector("backForwardList")
     public native WKBackForwardList backForwardList();
 
+    /**
+     * A Boolean value indicating whether there is a back item in
+     * the back-forward list that can be navigated to.
+     * 
+     * [@link] WKWebView @/link is key-value observing (KVO) compliant
+     * for this property.
+     * 
+     * @see backForwardList.
+     */
     @Generated
     @Selector("canGoBack")
     public native boolean canGoBack();
 
+    /**
+     * A Boolean value indicating whether there is a forward item in
+     * the back-forward list that can be navigated to.
+     * 
+     * [@link] WKWebView @/link is key-value observing (KVO) compliant
+     * for this property.
+     * 
+     * @see backForwardList.
+     */
     @Generated
     @Selector("canGoForward")
     public native boolean canGoForward();
@@ -434,35 +482,92 @@ public class WKWebView extends UIView {
     @Selector("certificateChain")
     public native NSArray<?> certificateChain();
 
+    /**
+     * A copy of the configuration with which the web view was
+     * initialized. 
+     */
     @Generated
     @Selector("configuration")
     public native WKWebViewConfiguration configuration();
 
+    /**
+     * The custom user agent string or nil if no custom user agent string has been set.
+     */
     @Generated
     @Selector("customUserAgent")
     public native String customUserAgent();
 
+    /**
+     * An estimate of what fraction of the current navigation has been completed.
+     * 
+     * This value ranges from 0.0 to 1.0 based on the total number of
+     * bytes expected to be received, including the main document and all of its
+     * potential subresources. After a navigation completes, the value remains at 1.0
+     * until a new navigation starts, at which point it is reset to 0.0.
+     * [@link] WKWebView @/link is key-value observing (KVO) compliant for this
+     * property.
+     */
     @Generated
     @Selector("estimatedProgress")
     public native double estimatedProgress();
 
+    /**
+     * Evaluates the given JavaScript string.
+     * 
+     * The completionHandler is passed the result of the script evaluation or an error.
+     * Calling this method is equivalent to calling `evaluateJavaScript:inFrame:inContentWorld:completionHandler:` with:
+     *   - A `frame` value of `nil` to represent the main frame
+     *   - A `contentWorld` value of `WKContentWorld.pageWorld`
+     * 
+     * @param javaScriptString The JavaScript string to evaluate.
+     * @param completionHandler A block to invoke when script evaluation completes or fails.
+     */
     @Generated
     @Selector("evaluateJavaScript:completionHandler:")
     public native void evaluateJavaScriptCompletionHandler(String javaScriptString,
             @ObjCBlock(name = "call_evaluateJavaScriptCompletionHandler") Block_evaluateJavaScriptCompletionHandler completionHandler);
 
+    /**
+     * Navigates to the back item in the back-forward list.
+     * 
+     * @return A new navigation to the requested item, or nil if there is no back
+     * item in the back-forward list.
+     */
     @Generated
     @Selector("goBack")
     public native WKNavigation goBack();
 
+    /**
+     * Navigates to the forward item in the back-forward list.
+     * 
+     * @return A new navigation to the requested item, or nil if there is no
+     * forward item in the back-forward list.
+     */
     @Generated
     @Selector("goForward")
     public native WKNavigation goForward();
 
+    /**
+     * Navigates to an item from the back-forward list and sets it
+     * as the current item.
+     * 
+     * @param item The item to which to navigate. Must be one of the items in the
+     * web view's back-forward list.
+     * @return A new navigation to the requested item, or nil if it is already
+     * the current item or is not part of the web view's back-forward list.
+     * @see backForwardList
+     */
     @Generated
     @Selector("goToBackForwardListItem:")
     public native WKNavigation goToBackForwardListItem(WKBackForwardListItem item);
 
+    /**
+     * A Boolean value indicating whether all resources on the page
+     * have been loaded over securely encrypted connections.
+     * 
+     * [@link] WKWebView @/link is key-value observing (KVO) compliant
+     * for this property.
+     */
     @Generated
     @Selector("hasOnlySecureContent")
     public native boolean hasOnlySecureContent();
@@ -479,68 +584,166 @@ public class WKWebView extends UIView {
     @Selector("initWithFrame:")
     public native WKWebView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Returns a web view initialized with a specified frame and
+     * configuration.
+     * 
+     * This is a designated initializer. You can use
+     * [@link] -initWithFrame: @/link to initialize an instance with the default
+     * configuration. The initializer copies the specified configuration, so
+     * mutating the configuration after invoking the initializer has no effect
+     * on the web view.
+     * 
+     * @param frame The frame for the new web view.
+     * @param configuration The configuration for the new web view.
+     * @return An initialized web view, or nil if the object could not be
+     * initialized.
+     */
     @Generated
     @Selector("initWithFrame:configuration:")
     public native WKWebView initWithFrameConfiguration(@ByValue CGRect frame, WKWebViewConfiguration configuration);
 
+    /**
+     * A Boolean value indicating whether the view is currently
+     * loading content.
+     * 
+     * [@link] WKWebView @/link is key-value observing (KVO) compliant
+     * for this property.
+     */
     @Generated
     @Selector("isLoading")
     public native boolean isLoading();
 
+    /**
+     * Sets the webpage contents and base URL.
+     * 
+     * @param data The data to use as the contents of the webpage.
+     * @param MIMEType The MIME type of the data.
+     * @param characterEncodingName The data's character encoding name.
+     * @param baseURL A URL that is used to resolve relative URLs within the document.
+     * @return A new navigation.
+     */
     @Generated
     @Selector("loadData:MIMEType:characterEncodingName:baseURL:")
     public native WKNavigation loadDataMIMETypeCharacterEncodingNameBaseURL(NSData data, String MIMEType,
             String characterEncodingName, NSURL baseURL);
 
+    /**
+     * Navigates to the requested file URL on the filesystem.
+     * 
+     * If readAccessURL references a single file, only that file may be loaded by WebKit.
+     * If readAccessURL references a directory, files inside that file may be loaded by WebKit.
+     * 
+     * @param URL The file URL to which to navigate.
+     * @param readAccessURL The URL to allow read access to.
+     * @return A new navigation for the given file URL.
+     */
     @Generated
     @Selector("loadFileURL:allowingReadAccessToURL:")
     public native WKNavigation loadFileURLAllowingReadAccessToURL(NSURL URL, NSURL readAccessURL);
 
+    /**
+     * Sets the webpage contents and base URL.
+     * 
+     * @param string The string to use as the contents of the webpage.
+     * @param baseURL A URL that is used to resolve relative URLs within the document.
+     * @return A new navigation.
+     */
     @Generated
     @Selector("loadHTMLString:baseURL:")
     public native WKNavigation loadHTMLStringBaseURL(String string, NSURL baseURL);
 
+    /**
+     * Navigates to a requested URL.
+     * 
+     * @param request The request specifying the URL to which to navigate.
+     * @return A new navigation for the given request.
+     */
     @Generated
     @Selector("loadRequest:")
     public native WKNavigation loadRequest(NSURLRequest request);
 
+    /**
+     * The web view's navigation delegate.
+     */
     @Generated
     @Selector("navigationDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native WKNavigationDelegate navigationDelegate();
 
+    /**
+     * Reloads the current page.
+     * 
+     * @return A new navigation representing the reload.
+     */
     @Generated
     @Selector("reload")
     public native WKNavigation reload();
 
+    /**
+     * Reloads the current page, performing end-to-end revalidation
+     * using cache-validating conditionals if possible.
+     * 
+     * @return A new navigation representing the reload.
+     */
     @Generated
     @Selector("reloadFromOrigin")
     public native WKNavigation reloadFromOrigin();
 
+    /**
+     * The scroll view associated with the web view.
+     */
     @Generated
     @Selector("scrollView")
     public native UIScrollView scrollView();
 
+    /**
+     * A SecTrustRef for the currently committed navigation.
+     * 
+     * [@link] WKWebView @/link is key-value observing (KVO) compliant
+     * for this property.
+     */
     @Generated
     @Selector("serverTrust")
     public native SecTrustRef serverTrust();
 
+    /**
+     * A Boolean value indicating whether horizontal swipe gestures
+     * will trigger back-forward list navigations.
+     * 
+     * The default value is NO.
+     */
     @Generated
     @Selector("setAllowsBackForwardNavigationGestures:")
     public native void setAllowsBackForwardNavigationGestures(boolean value);
 
+    /**
+     * A Boolean value indicating whether link preview is allowed for any
+     * links inside this WKWebView.
+     * 
+     * The default value is YES on Mac and iOS.
+     */
     @Generated
     @Selector("setAllowsLinkPreview:")
     public native void setAllowsLinkPreview(boolean value);
 
+    /**
+     * The custom user agent string or nil if no custom user agent string has been set.
+     */
     @Generated
     @Selector("setCustomUserAgent:")
     public native void setCustomUserAgent(String value);
 
+    /**
+     * The web view's navigation delegate.
+     */
     @Generated
     @Selector("setNavigationDelegate:")
     public native void setNavigationDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WKNavigationDelegate value);
 
+    /**
+     * The web view's navigation delegate.
+     */
     @Generated
     public void setNavigationDelegate(@Mapped(ObjCObjectMapper.class) WKNavigationDelegate value) {
         Object __old = navigationDelegate();
@@ -553,10 +756,16 @@ public class WKWebView extends UIView {
         }
     }
 
+    /**
+     * The web view's user interface delegate.
+     */
     @Generated
     @Selector("setUIDelegate:")
     public native void setUIDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WKUIDelegate value);
 
+    /**
+     * The web view's user interface delegate.
+     */
     @Generated
     public void setUIDelegate(@Mapped(ObjCObjectMapper.class) WKUIDelegate value) {
         Object __old = UIDelegate();
@@ -569,10 +778,19 @@ public class WKWebView extends UIView {
         }
     }
 
+    /**
+     * Stops loading all resources on the current page.
+     */
     @Generated
     @Selector("stopLoading")
     public native void stopLoading();
 
+    /**
+     * The page title.
+     * 
+     * [@link] WKWebView @/link is key-value observing (KVO) compliant
+     * for this property.
+     */
     @Generated
     @Selector("title")
     public native String title();
@@ -581,10 +799,269 @@ public class WKWebView extends UIView {
     @Generated
     public interface Block_evaluateJavaScriptCompletionHandler {
         @Generated
-        void call_evaluateJavaScriptCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
+        void call_evaluateJavaScriptCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0, NSError error);
     }
 
+    /**
+     * Checks whether or not WKWebViews handle the given URL scheme by default.
+     * 
+     * @param scheme The URL scheme to check.
+     */
     @Generated
     @Selector("handlesURLScheme:")
     public static native boolean handlesURLScheme(String urlScheme);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("takeSnapshotWithConfiguration:completionHandler:")
+    public native void takeSnapshotWithConfigurationCompletionHandler(WKSnapshotConfiguration snapshotConfiguration,
+            @ObjCBlock(name = "call_takeSnapshotWithConfigurationCompletionHandler") Block_takeSnapshotWithConfigurationCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_takeSnapshotWithConfigurationCompletionHandler {
+        @Generated
+        void call_takeSnapshotWithConfigurationCompletionHandler(UIImage snapshotImage, NSError error);
+    }
+
+    /**
+     * Calls the given JavaScript string as an async JavaScript function, passing the given named arguments to that function.
+     * 
+     * The functionBody string is treated as an anonymous JavaScript function body that can be called with named arguments.
+     * Do not format your functionBody string as a function-like callable object as you would in pure JavaScript.
+     * Your functionBody string should contain only the function body you want executed.
+     * 
+     * For example do not pass in the string:
+     * @textblock
+     *     function(x, y, z)
+     *     {
+     *         return x ? y : z;
+     *     }
+     * @/textblock
+     * 
+     * Instead pass in the string:
+     * @textblock
+     *     return x ? y : z;
+     * @/textblock
+     * 
+     * The arguments dictionary supplies the values for those arguments which are serialized into JavaScript equivalents.
+     * For example:
+     * @textblock
+     *     @{ @"x" : @YES, @"y" : @1, @"z" : @"hello world" };
+     * @/textblock
+     * 
+     * Combining the above arguments dictionary with the above functionBody string, a function with the arguments named "x", "y", and "z" is called with values true, 1, and "hello world" respectively.
+     * 
+     * Allowed argument types are:
+     * NSNumber, NSString, NSDate, NSArray, NSDictionary, and NSNull.
+     * Any NSArray or NSDictionary containers can only contain objects of those types.
+     * 
+     * Passing nil is equivalent to targeting the main frame.
+     * If the frame argument no longer represents a valid frame by the time WebKit attempts to call the JavaScript function your completion handler will be called with a WKErrorJavaScriptInvalidFrameTarget error.
+     * This might happen for a number of reasons, including but not limited to:
+     *     - The target frame has been removed from the DOM via JavaScript
+     *     - A parent frame has navigated, destroying all of its previous child frames
+     * 
+     * No matter which WKContentWorld you use to call your JavaScript function, you can make changes to the underlying web content. (e.g. the Document and its DOM structure)
+     * Such changes will be visible to script executing in all WKContentWorlds.
+     * Calling your JavaScript function can leave behind other changes to global state visibile to JavaScript. (e.g. `window.myVariable = 1;`)
+     * Those changes will only be visibile to scripts executed in the same WKContentWorld.
+     * 
+     * Your completion handler will be called with the explicit return value of your JavaScript function.
+     * If your JavaScript does not explicitly return any value, that undefined result manifests as nil being passed to your completion handler.
+     * If your JavaScript returns null, that result manifests as NSNull being passed to your completion handler.
+     * 
+     * JavaScript has the concept of a "thenable" object, which is any JavaScript object that has a callable "then" property.
+     * The most well known example of a "thenable" object is a JavaScript promise.
+     * If your JavaScript returns a "thenable" object WebKit will call "then" on the resulting object and wait for it to be resolved.
+     * 
+     * If the object resolves successfully (e.g. Calls the "fulfill" function) your completion handler will be called with the result.
+     * If the object rejects (e.g. Calls the "reject" function) your completion handler will be called with a WKErrorJavaScriptAsyncFunctionResultRejected error containing the reject reason in the userInfo dictionary.
+     * If the object is garbage collected before it is resolved, your completion handler will be called with a WKErrorJavaScriptAsyncFunctionResultUnreachable error indicating that it will never be resolved.
+     * 
+     * Since the function is a JavaScript "async" function you can use JavaScript "await" on thenable objects inside your function body.
+     * For example:
+     * @textblock
+     *     var p = new Promise(function (f) {
+     *         window.setTimeout("f(42)", 1000);
+     *     });
+     *     await p;
+     *     return p;
+     * @/textblock
+     * 
+     * The above function text will create a promise that will fulfull with the value 42 after a one second delay, wait for it to resolve, then return the fulfillment value of 42.
+     * 
+     * @param functionBody The JavaScript string to use as the function body.
+     * @param arguments A dictionary representing the arguments to be passed to the function call.
+     * @param frame A WKFrameInfo identifying the frame in which to call the JavaScript function.
+     * @param contentWorld The WKContentWorld in which to call the JavaScript function.
+     * @param completionHandler A block to invoke with the return value of the function call, or with the asynchronous resolution of the function's return value.
+     */
+    @Generated
+    @Selector("callAsyncJavaScript:arguments:inFrame:inContentWorld:completionHandler:")
+    public native void callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler(String functionBody,
+            NSDictionary<String, ?> arguments, WKFrameInfo frame, WKContentWorld contentWorld,
+            @ObjCBlock(name = "call_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler") Block_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler {
+        @Generated
+        void call_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) Object arg0, NSError error);
+    }
+
+    /**
+     * Create a PDF document representation from the web page currently displayed in the WKWebView
+     * 
+     * If the WKPDFConfiguration is nil, the method will create a PDF document representing the bounds of the currently displayed web page.
+     * The completionHandler is passed the resulting PDF document data or an error.
+     * The data can be used to create a PDFDocument object.
+     * If the data is written to a file the resulting file is a valid PDF document.
+     * 
+     * @param pdfConfiguration An object that specifies how the PDF capture is configured.
+     * @param completionHandler A block to invoke when the pdf document data is ready.
+     */
+    @Generated
+    @Selector("createPDFWithConfiguration:completionHandler:")
+    public native void createPDFWithConfigurationCompletionHandler(WKPDFConfiguration pdfConfiguration,
+            @ObjCBlock(name = "call_createPDFWithConfigurationCompletionHandler") Block_createPDFWithConfigurationCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_createPDFWithConfigurationCompletionHandler {
+        @Generated
+        void call_createPDFWithConfigurationCompletionHandler(NSData pdfDocumentData, NSError error);
+    }
+
+    /**
+     * Create WebKit web archive data representing the current web content of the WKWebView
+     * 
+     * WebKit web archive data represents a snapshot of web content.
+     * It can be used to represent web content on a pasteboard, loaded into a WKWebView directly, and saved to a file for later use.
+     * The uniform type identifier kUTTypeWebArchive can be used get the related pasteboard type and MIME type.
+     * 
+     * @param completionHandler A block to invoke when the web archive data is ready.
+     */
+    @Generated
+    @Selector("createWebArchiveDataWithCompletionHandler:")
+    public native void createWebArchiveDataWithCompletionHandler(
+            @ObjCBlock(name = "call_createWebArchiveDataWithCompletionHandler") Block_createWebArchiveDataWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_createWebArchiveDataWithCompletionHandler {
+        @Generated
+        void call_createWebArchiveDataWithCompletionHandler(NSData arg0, NSError arg1);
+    }
+
+    /**
+     * Evaluates the given JavaScript string.
+     * 
+     * The completionHandler is passed the result of the script evaluation or an error.
+     * 
+     * Passing nil is equivalent to targeting the main frame.
+     * If the frame argument no longer represents a valid frame by the time WebKit attempts to call the JavaScript function your completion handler will be called with a WKErrorJavaScriptInvalidFrameTarget error.
+     * This might happen for a number of reasons, including but not limited to:
+     *     - The target frame has been removed from the DOM via JavaScript
+     *     - A parent frame has navigated, destroying all of its previous child frames
+     * 
+     * No matter which WKContentWorld you use to evaluate your JavaScript string, you can make changes to the underlying web content. (e.g. the Document and its DOM structure)
+     * Such changes will be visible to script executing in all WKContentWorlds.
+     * Evaluating your JavaScript string can leave behind other changes to global state visibile to JavaScript. (e.g. `window.myVariable = 1;`)
+     * Those changes will only be visibile to scripts executed in the same WKContentWorld.
+     * evaluateJavaScript: is a great way to set up global state for future JavaScript execution in a given world. (e.g. Importing libraries/utilities that future JavaScript execution will rely on)
+     * Once your global state is set up, consider using callAsyncJavaScript: for more flexible interaction with the JavaScript programming model.
+     * 
+     * @param javaScriptString The JavaScript string to evaluate.
+     * @param frame A WKFrameInfo identifying the frame in which to evaluate the JavaScript string.
+     * @param contentWorld The WKContentWorld in which to evaluate the JavaScript string.
+     * @param completionHandler A block to invoke when script evaluation completes or fails.
+     */
+    @Generated
+    @Selector("evaluateJavaScript:inFrame:inContentWorld:completionHandler:")
+    public native void evaluateJavaScriptInFrameInContentWorldCompletionHandler(String javaScriptString,
+            WKFrameInfo frame, WKContentWorld contentWorld,
+            @ObjCBlock(name = "call_evaluateJavaScriptInFrameInContentWorldCompletionHandler") Block_evaluateJavaScriptInFrameInContentWorldCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_evaluateJavaScriptInFrameInContentWorldCompletionHandler {
+        @Generated
+        void call_evaluateJavaScriptInFrameInContentWorldCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
+                NSError error);
+    }
+
+    /**
+     * Searches the page contents for the given string.
+     * 
+     * If the WKFindConfiguration is nil, all of the default WKFindConfiguration values will be used.
+     *  A match found by the search is selected and the page is scrolled to reveal the selection.
+     *  The completion handler is called after the search completes.
+     * 
+     * @param string The string to search for.
+     * @param configuration A set of options configuring the search.
+     * @param completionHandler A block to invoke when the search completes.
+     */
+    @Generated
+    @Selector("findString:withConfiguration:completionHandler:")
+    public native void findStringWithConfigurationCompletionHandler(String string, WKFindConfiguration configuration,
+            @ObjCBlock(name = "call_findStringWithConfigurationCompletionHandler") Block_findStringWithConfigurationCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_findStringWithConfigurationCompletionHandler {
+        @Generated
+        void call_findStringWithConfigurationCompletionHandler(WKFindResult result);
+    }
+
+    /**
+     * The media type for the WKWebView
+     * 
+     * The value of mediaType will override the normal value of the CSS media property.
+     * Setting the value to nil will restore the normal value.
+     * The default value is nil.
+     */
+    @Generated
+    @Selector("mediaType")
+    public native String mediaType();
+
+    /**
+     * The factor by which page content is scaled relative to the viewport.
+     * 
+     * The default value is 1.0.
+     *  Changing this value is equivalent to web content setting the CSS "zoom"
+     *  property on all page content.
+     */
+    @Generated
+    @Selector("pageZoom")
+    @NFloat
+    public native double pageZoom();
+
+    /**
+     * The media type for the WKWebView
+     * 
+     * The value of mediaType will override the normal value of the CSS media property.
+     * Setting the value to nil will restore the normal value.
+     * The default value is nil.
+     */
+    @Generated
+    @Selector("setMediaType:")
+    public native void setMediaType(String value);
+
+    /**
+     * The factor by which page content is scaled relative to the viewport.
+     * 
+     * The default value is 1.0.
+     *  Changing this value is equivalent to web content setting the CSS "zoom"
+     *  property on all page content.
+     */
+    @Generated
+    @Selector("setPageZoom:")
+    public native void setPageZoom(@NFloat double value);
 }

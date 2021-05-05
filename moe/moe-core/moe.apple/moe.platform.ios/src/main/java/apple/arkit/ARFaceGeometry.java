@@ -2,11 +2,13 @@ package apple.arkit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -24,14 +26,21 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An object representing the geometry of a face.
+ * 
+ * The face geometry will have a constant number of triangles
+ * and vertices, updating only the vertex positions from frame to frame.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ARFaceGeometry extends NSObject implements NSCopying {
+public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -100,6 +109,14 @@ public class ARFaceGeometry extends NSObject implements NSCopying {
     @Selector("init")
     public native ARFaceGeometry init();
 
+    /**
+     * Creates and returns a face geometry by applying a set of given blend shape coefficients.
+     * 
+     * An empty dictionary can be provided to create a neutral face geometry.
+     * 
+     * @param blendShapes A dictionary of blend shape coefficients.
+     * @return Face geometry after applying the blend shapes.
+     */
     @Generated
     @Selector("initWithBlendShapes:")
     public native ARFaceGeometry initWithBlendShapes(NSDictionary<String, ? extends NSNumber> blendShapes);
@@ -147,16 +164,25 @@ public class ARFaceGeometry extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * The number of texture coordinates of the face geometry.
+     */
     @Generated
     @Selector("textureCoordinateCount")
     @NUInt
     public native long textureCoordinateCount();
 
+    /**
+     * The number of triangles of the face geometry.
+     */
     @Generated
     @Selector("triangleCount")
     @NUInt
     public native long triangleCount();
 
+    /**
+     * The triangle indices of the geometry.
+     */
     @Generated
     @Selector("triangleIndices")
     public native ConstShortPtr triangleIndices();
@@ -166,8 +192,29 @@ public class ARFaceGeometry extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * The number of mesh vertices of the geometry.
+     */
     @Generated
     @Selector("vertexCount")
     @NUInt
     public native long vertexCount();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native ARFaceGeometry initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

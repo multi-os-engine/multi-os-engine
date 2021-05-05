@@ -45,6 +45,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKAnchoredObjectQuery
+ * 
+ * This query can be used by an application to find out about new or deleted samples in the HealthKit
+ *                database.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -267,16 +273,50 @@ public class HKAnchoredObjectQuery extends HKQuery {
             NSPredicate predicate, @NUInt long anchor, @NUInt long limit,
             @ObjCBlock(name = "call_initWithTypePredicateAnchorLimitCompletionHandler") Block_initWithTypePredicateAnchorLimitCompletionHandler handler);
 
+    /**
+     * initWithType:predicate:anchor:limit:resultsHandler:
+     * 
+     * Returns a query that will retrieve HKSamples and HKDeletedObjects matching the given predicate that are
+     *                newer than the given anchor.
+     * 
+     * If no updateHandler is set on the query, the query will automatically stop after calling resultsHandler.
+     *                Otherwise, the query continues to run and call updateHandler as samples matching the predicate are
+     *                created or deleted.
+     * 
+     * @param         type            The type of sample to retrieve.
+     * @param         predicate       The predicate which samples should match.
+     * @param         anchor          The anchor which was returned by a previous HKAnchoredObjectQuery result or update
+     *                                handler.  Pass nil when querying for the first time.
+     * @param         limit           The maximum number of samples and deleted objects to return.  Pass HKObjectQueryNoLimit
+     *                                for no limit.
+     * @param         handler         The block to invoke with results when the query has finished finding.
+     */
     @Generated
     @Selector("initWithType:predicate:anchor:limit:resultsHandler:")
     public native HKAnchoredObjectQuery initWithTypePredicateAnchorLimitResultsHandler(HKSampleType type,
             NSPredicate predicate, HKQueryAnchor anchor, @NUInt long limit,
             @ObjCBlock(name = "call_initWithTypePredicateAnchorLimitResultsHandler") Block_initWithTypePredicateAnchorLimitResultsHandler handler);
 
+    /**
+     * [@property]      updateHandler
+     * 
+     * An optional handler to be called when samples matching the given predicate are added or deleted.
+     * 
+     * This property may not be modified once the query has been executed.  It may only be set if the query has
+     *                no limit.
+     */
     @Generated
     @Selector("setUpdateHandler:")
     public native void setUpdateHandler(@ObjCBlock(name = "call_setUpdateHandler") Block_setUpdateHandler value);
 
+    /**
+     * [@property]      updateHandler
+     * 
+     * An optional handler to be called when samples matching the given predicate are added or deleted.
+     * 
+     * This property may not be modified once the query has been executed.  It may only be set if the query has
+     *                no limit.
+     */
     @Generated
     @Selector("updateHandler")
     @ObjCBlock(name = "call_updateHandler_ret")
@@ -286,17 +326,17 @@ public class HKAnchoredObjectQuery extends HKQuery {
     @Generated
     public interface Block_initWithTypePredicateAnchorLimitCompletionHandler {
         @Generated
-        void call_initWithTypePredicateAnchorLimitCompletionHandler(HKAnchoredObjectQuery arg0,
-                NSArray<? extends HKSample> arg1, @NUInt long arg2, NSError arg3);
+        void call_initWithTypePredicateAnchorLimitCompletionHandler(HKAnchoredObjectQuery query,
+                NSArray<? extends HKSample> results, @NUInt long newAnchor, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithTypePredicateAnchorLimitResultsHandler {
         @Generated
-        void call_initWithTypePredicateAnchorLimitResultsHandler(HKAnchoredObjectQuery arg0,
-                NSArray<? extends HKSample> arg1, NSArray<? extends HKDeletedObject> arg2, HKQueryAnchor arg3,
-                NSError arg4);
+        void call_initWithTypePredicateAnchorLimitResultsHandler(HKAnchoredObjectQuery query,
+                NSArray<? extends HKSample> sampleObjects, NSArray<? extends HKDeletedObject> deletedObjects,
+                HKQueryAnchor newAnchor, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -319,4 +359,26 @@ public class HKAnchoredObjectQuery extends HKQuery {
     @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
             HKQuantity totalFlightsClimbed);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsFromSource:FHIRResourceType:identifier:")
+    public static native NSPredicate predicateForClinicalRecordsFromSourceFHIRResourceTypeIdentifier(HKSource source,
+            String resourceType, String identifier);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsWithFHIRResourceType:")
+    public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(String resourceType);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithClassification:")
+    public static native NSPredicate predicateForElectrocardiogramsWithClassification(@NInt long classification);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithSymptomsStatus:")
+    public static native NSPredicate predicateForElectrocardiogramsWithSymptomsStatus(@NInt long symptomsStatus);
+
+    @Generated
+    @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
+    public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
+            HKElectrocardiogram electrocardiogram);
 }

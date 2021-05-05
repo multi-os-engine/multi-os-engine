@@ -46,6 +46,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MSMessage
+ * 
+ * The MSMessage encapsulates the data to be transferred to remote devices.
+ */
 @Generated
 @Library("Messages")
 @Runtime(ObjCRuntime.class)
@@ -161,10 +166,28 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property]   URL
+     * 
+     * A HTTP(S) or data URL used to encode data to be transferred in message.
+     * 
+     * This URL should encode any data that is to be delivered to the extension running
+     * on the recipient's device(s). When no app exists on the receiving device that
+     * can consume the message, if this URL is a HTTP(S) url, it will be loaded in a web browser.
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
+    /**
+     * [@property]   accessibilityLabel
+     * 
+     * A localized string describing the message.
+     * 
+     * This string should provide a succinct description of the message. This
+     * will be used by the Accessibility Speech feature when speaking the message for users
+     * with disabilities.
+     */
     @Generated
     @Selector("accessibilityLabel")
     public native String accessibilityLabel();
@@ -177,64 +200,179 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * [@property]   error
+     * 
+     * An error object that indicates why a message failed to send.
+     * 
+     * This value is nil if the message is has not yet been sent, is still
+     * sending or has been sent successfully.
+     */
     @Generated
     @Selector("error")
     public native NSError error();
 
+    /**
+     * init
+     * 
+     * Initializes a new message that is not part of a session.
+     */
     @Generated
     @Selector("init")
     public native MSMessage init();
 
     @Generated
     @Selector("initWithCoder:")
-    public native MSMessage initWithCoder(NSCoder aDecoder);
+    public native MSMessage initWithCoder(NSCoder coder);
 
+    /**
+     * initWithSession:
+     * 
+     * Initializes a message with a session.
+     * 
+     * A message initialized with a session will be updated
+     * and moved to the bottom of the conversation transcript when another message created
+     * with the same session is sent.
+     * 
+     * @see        insertMessage:completionHandler:
+     * @param      session  The session that new message will join.
+     */
     @Generated
     @Selector("initWithSession:")
     public native MSMessage initWithSession(MSSession session);
 
+    /**
+     * [@property]   layout
+     * 
+     * A subclass of MSMessageLayout.
+     * 
+     * The MSMessageLayout subclass will be used to construct UI
+     * representing the message in the conversation transcript.
+     */
     @Generated
     @Selector("layout")
     public native MSMessageLayout layout();
 
+    /**
+     * [@property]   senderParticipantIdentifier
+     * 
+     * A NSUUID instance that identifies the participant that sent the message.
+     * 
+     * This NSUUID identifies the message's sender. This value is scoped to
+     * the current device and will be different on all devices that participate in the
+     * conversation.
+     */
     @Generated
     @Selector("senderParticipantIdentifier")
     public native NSUUID senderParticipantIdentifier();
 
+    /**
+     * [@property]   session
+     * 
+     * An MSSession that identifies the session that message belongs to.
+     */
     @Generated
     @Selector("session")
     public native MSSession session();
 
+    /**
+     * [@property]   accessibilityLabel
+     * 
+     * A localized string describing the message.
+     * 
+     * This string should provide a succinct description of the message. This
+     * will be used by the Accessibility Speech feature when speaking the message for users
+     * with disabilities.
+     */
     @Generated
     @Selector("setAccessibilityLabel:")
     public native void setAccessibilityLabel(String value);
 
+    /**
+     * [@property]   error
+     * 
+     * An error object that indicates why a message failed to send.
+     * 
+     * This value is nil if the message is has not yet been sent, is still
+     * sending or has been sent successfully.
+     */
     @Generated
     @Selector("setError:")
     public native void setError(NSError value);
 
+    /**
+     * [@property]   layout
+     * 
+     * A subclass of MSMessageLayout.
+     * 
+     * The MSMessageLayout subclass will be used to construct UI
+     * representing the message in the conversation transcript.
+     */
     @Generated
     @Selector("setLayout:")
     public native void setLayout(MSMessageLayout value);
 
+    /**
+     * [@property]   shouldExpire
+     * 
+     * A Boolean value that indicates whether the messages should expire after being read.
+     * 
+     * YES if the message should expire after it is read. Expired messages will
+     * be deleted a short time after being read by the receiver. The user may opt to keep the message.
+     * This property defaults to NO.
+     */
     @Generated
     @Selector("setShouldExpire:")
     public native void setShouldExpire(boolean value);
 
+    /**
+     * [@property]   summaryText
+     * 
+     * A localized string describing the message.
+     * 
+     * This string should provide a succinct description of the message. This
+     * will be used to provide a summary of the message in the UI.
+     */
     @Generated
     @Selector("setSummaryText:")
     public native void setSummaryText(String value);
 
+    /**
+     * [@property]   URL
+     * 
+     * A HTTP(S) or data URL used to encode data to be transferred in message.
+     * 
+     * This URL should encode any data that is to be delivered to the extension running
+     * on the recipient's device(s). When no app exists on the receiving device that
+     * can consume the message, if this URL is a HTTP(S) url, it will be loaded in a web browser.
+     */
     @Generated
     @Selector("setURL:")
     public native void setURL(NSURL value);
 
+    /**
+     * [@property]   shouldExpire
+     * 
+     * A Boolean value that indicates whether the messages should expire after being read.
+     * 
+     * YES if the message should expire after it is read. Expired messages will
+     * be deleted a short time after being read by the receiver. The user may opt to keep the message.
+     * This property defaults to NO.
+     */
     @Generated
     @Selector("shouldExpire")
     public native boolean shouldExpire();
 
+    /**
+     * [@property]   summaryText
+     * 
+     * A localized string describing the message.
+     * 
+     * This string should provide a succinct description of the message. This
+     * will be used to provide a summary of the message in the UI.
+     */
     @Generated
     @Selector("summaryText")
     public native String summaryText();
@@ -245,6 +383,13 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property]   pending
+     * 
+     * A BOOL representing whether the message is a pending message or is a message that has been sent/received.
+     * 
+     * This value starts as `YES` when creating an `MSMessage` for sending. After calling `-[MSConversation insertMessage:completionHandler:]`, `isPending` still returns `YES` until `-[MSMessagesAppViewController didStartSendingMessage:conversation]` is called. This property is useful for knowing if the `selectedMessage` of `-[MSMessagesAppViewController activeConversation]` represents an unsent message.
+     */
     @Generated
     @Selector("isPending")
     public native boolean isPending();

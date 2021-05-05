@@ -41,6 +41,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * EKReminder
+ * 
+ * The EKReminder class represents a reminder (task/todo).
+ */
 @Generated
 @Library("EventKit")
 @Runtime(ObjCRuntime.class)
@@ -131,6 +136,11 @@ public class EKReminder extends EKCalendarItem {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * reminderWithEventStore:
+     * 
+     * Creates a new reminder in the given event store.
+     */
     @Generated
     @Selector("reminderWithEventStore:")
     public static native EKReminder reminderWithEventStore(EKEventStore eventStore);
@@ -156,10 +166,27 @@ public class EKReminder extends EKCalendarItem {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property]   completionDate
+     * 
+     * The date on which this reminder was completed.
+     */
     @Generated
     @Selector("completionDate")
     public native NSDate completionDate();
 
+    /**
+     * [@property]   dueDateComponents
+     * 
+     * The date by which this reminder should be completed.
+     * 
+     * The use of date components allows the due date and its time zone to be represented in a single property.
+     *             A nil time zone represents a floating date.  Setting a date component without a hour, minute and second component will set allDay to YES.
+     *             If you set this property, the calendar must be set to NSCalendarIdentifierGregorian. An exception is raised otherwise.
+     * 
+     *             On iOS, if you set the due date for a reminder, you must also set a start date, otherwise you will receive
+     *             an error (EKErrorNoStartDate) when attempting to save this reminder. This is not a requirement on OS X.
+     */
     @Generated
     @Selector("dueDateComponents")
     public native NSDateComponents dueDateComponents();
@@ -168,35 +195,104 @@ public class EKReminder extends EKCalendarItem {
     @Selector("init")
     public native EKReminder init();
 
+    /**
+     * [@property]   completed
+     * 
+     * Whether or not the reminder is completed.
+     * 
+     * Setting it to YES will set the completed date to the current date.
+     *             Setting it to NO will set the completed date to nil.
+     */
     @Generated
     @Selector("isCompleted")
     public native boolean isCompleted();
 
+    /**
+     * [@property]   completed
+     * 
+     * Whether or not the reminder is completed.
+     * 
+     * Setting it to YES will set the completed date to the current date.
+     *             Setting it to NO will set the completed date to nil.
+     */
     @Generated
     @Selector("setCompleted:")
     public native void setCompleted(boolean value);
 
+    /**
+     * [@property]   priority
+     * 
+     * The priority of the reminder.
+     * 
+     * Priorities run from 1 (highest) to 9 (lowest).  A priority of 0 means no priority.
+     *             Saving a reminder with any other priority will fail.
+     *             Per RFC 5545, priorities of 1-4 are considered "high," a priority of 5 is "medium," and priorities of 6-9 are "low."
+     */
     @Generated
     @Selector("priority")
     @NUInt
     public native long priority();
 
+    /**
+     * [@property]   completionDate
+     * 
+     * The date on which this reminder was completed.
+     */
     @Generated
     @Selector("setCompletionDate:")
     public native void setCompletionDate(NSDate value);
 
+    /**
+     * [@property]   dueDateComponents
+     * 
+     * The date by which this reminder should be completed.
+     * 
+     * The use of date components allows the due date and its time zone to be represented in a single property.
+     *             A nil time zone represents a floating date.  Setting a date component without a hour, minute and second component will set allDay to YES.
+     *             If you set this property, the calendar must be set to NSCalendarIdentifierGregorian. An exception is raised otherwise.
+     * 
+     *             On iOS, if you set the due date for a reminder, you must also set a start date, otherwise you will receive
+     *             an error (EKErrorNoStartDate) when attempting to save this reminder. This is not a requirement on OS X.
+     */
     @Generated
     @Selector("setDueDateComponents:")
     public native void setDueDateComponents(NSDateComponents value);
 
+    /**
+     * [@property]   priority
+     * 
+     * The priority of the reminder.
+     * 
+     * Priorities run from 1 (highest) to 9 (lowest).  A priority of 0 means no priority.
+     *             Saving a reminder with any other priority will fail.
+     *             Per RFC 5545, priorities of 1-4 are considered "high," a priority of 5 is "medium," and priorities of 6-9 are "low."
+     */
     @Generated
     @Selector("setPriority:")
     public native void setPriority(@NUInt long value);
 
+    /**
+     * [@property]   startDateComponents
+     * 
+     * The start date of the task, as date components.
+     * 
+     * The use of date components allows the start date and its time zone to be represented in a single property.
+     *             A nil time zone represents a floating date.  Setting a date component without a hour, minute and second component will set allDay to YES.
+     *             If you set this property, the calendar must be set to NSCalendarIdentifierGregorian. An exception is raised otherwise.
+     */
     @Generated
     @Selector("setStartDateComponents:")
     public native void setStartDateComponents(NSDateComponents value);
 
+    /**
+     * [@property]   startDateComponents
+     * 
+     * The start date of the task, as date components.
+     * 
+     * The use of date components allows the start date and its time zone to be represented in a single property.
+     *             A nil time zone represents a floating date.  Setting a date component without a hour, minute and second component will set allDay to YES.
+     *             If you set this property, the calendar must be set to NSCalendarIdentifierGregorian. An exception is raised otherwise.
+     */
     @Generated
     @Selector("startDateComponents")
     public native NSDateComponents startDateComponents();

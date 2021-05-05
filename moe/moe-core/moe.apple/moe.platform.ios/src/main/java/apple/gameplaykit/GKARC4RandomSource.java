@@ -42,6 +42,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A deterministic pseudo-random source that generates random numbers based on an arc4 algorithm.
+ * This is a deterministic random source suitable for creating reliable gameplay mechanics.
+ * 
+ * While deterministic, this is not a cryptographic random source, however it may be useful
+ * for obfuscation of gameplay data in manner similar to a stream cipher.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -161,10 +168,18 @@ public class GKARC4RandomSource extends GKRandomSource {
     @NInt
     public static native long version_static();
 
+    /**
+     * Arc4 based random sources have repeatable initial sequences. If used for obfuscation you should
+     * drop N values from the start, where N should be any number larger than 768 to ensure the initial
+     * sequence is flushed.
+     */
     @Generated
     @Selector("dropValuesWithCount:")
     public native void dropValuesWithCount(@NUInt long count);
 
+    /**
+     * Initializes an arc4 random source with bits from high entropy system resource like SecRandomCopyBytes.
+     */
     @Generated
     @Selector("init")
     public native GKARC4RandomSource init();
@@ -173,14 +188,25 @@ public class GKARC4RandomSource extends GKRandomSource {
     @Selector("initWithCoder:")
     public native GKARC4RandomSource initWithCoder(NSCoder aDecoder);
 
+    /**
+     * Initializes an arc4 random source with bits from the seed.
+     */
     @Generated
     @Selector("initWithSeed:")
     public native GKARC4RandomSource initWithSeed(NSData seed);
 
+    /**
+     * The seed used to stir the arc4 random source.
+     * The seed is not encoded through archiving, but the equivalent state buffers are encoded.
+     */
     @Generated
     @Selector("seed")
     public native NSData seed();
 
+    /**
+     * The seed used to stir the arc4 random source.
+     * The seed is not encoded through archiving, but the equivalent state buffers are encoded.
+     */
     @Generated
     @Selector("setSeed:")
     public native void setSeed(NSData value);

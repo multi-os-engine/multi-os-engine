@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNPhysicsVehicle
+ * 
+ * SCNPhysicsVehicle provides a vehicle behavior.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -152,6 +157,11 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     *  Initializes and returns a physics vehicle that applies on the physics body "chassisBody" with the given wheels.
+     * The wheel properties can be modified at anytime by calling setValue:forKeyPath: on each wheel with the format 'wheel[n].property', where n if the zero based wheel index.
+     * A wheel can't be shared to multiple vehicle
+     */
     @Generated
     @Selector("vehicleWithChassisBody:wheels:")
     public static native SCNPhysicsVehicle vehicleWithChassisBodyWheels(SCNPhysicsBody chassisBody,
@@ -162,14 +172,23 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     @NInt
     public static native long version_static();
 
+    /**
+     * Applies a brake force on the wheel at the specified index.
+     */
     @Generated
     @Selector("applyBrakingForce:forWheelAtIndex:")
     public native void applyBrakingForceForWheelAtIndex(@NFloat double value, @NInt long index);
 
+    /**
+     * Applies a force on the wheel at the specified index
+     */
     @Generated
     @Selector("applyEngineForce:forWheelAtIndex:")
     public native void applyEngineForceForWheelAtIndex(@NFloat double value, @NInt long index);
 
+    /**
+     * The chassis of the vehicle
+     */
     @Generated
     @Selector("chassisBody")
     public native SCNPhysicsBody chassisBody();
@@ -180,12 +199,18 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsVehicle initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsVehicle initWithCoder(NSCoder coder);
 
+    /**
+     * Allows to control the direction of the wheel at the specified index. The steering value is expressed in radian, 0 means straight ahead.
+     */
     @Generated
     @Selector("setSteeringAngle:forWheelAtIndex:")
     public native void setSteeringAngleForWheelAtIndex(@NFloat double value, @NInt long index);
 
+    /**
+     * The actual speed in kilometers per hour.
+     */
     @Generated
     @Selector("speedInKilometersPerHour")
     @NFloat
@@ -197,6 +222,9 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
         return supportsSecureCoding();
     }
 
+    /**
+     * The wheels of the vehicle
+     */
     @Generated
     @Selector("wheels")
     public native NSArray<? extends SCNPhysicsVehicleWheel> wheels();

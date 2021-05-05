@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * [@protocol] SCNPhysicsContactDelegate
+ * 
+ * The SCNPhysicsContactDelegate protocol is to be implemented by delegates that want to be notified when a contact occured.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)

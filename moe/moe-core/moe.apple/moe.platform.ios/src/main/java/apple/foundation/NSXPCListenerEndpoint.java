@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An instance of this class is a reference to an NSXPCListener that may be encoded and sent over a connection. The receiver may use the object to create a new connection to the listener that supplied the NSXPCListenerEndpoint object.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -82,7 +85,7 @@ public class NSXPCListenerEndpoint extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -95,7 +98,7 @@ public class NSXPCListenerEndpoint extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSXPCListenerEndpoint initWithCoder(NSCoder aDecoder);
+    public native NSXPCListenerEndpoint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

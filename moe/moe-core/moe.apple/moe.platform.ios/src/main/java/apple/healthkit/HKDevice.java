@@ -127,6 +127,15 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * localDevice
+     * 
+     * Returns a device representing the host.
+     * 
+     * If an app chooses to save samples that were retrieved from the local device, e.g. an HKWorkout with a
+     *                totalDistance HKQuantity gathered from CoreLocation GPS distances, then this would be an appropriate 
+     *                HKDevice to use.
+     */
     @Generated
     @Selector("localDevice")
     public static native HKDevice localDevice();
@@ -162,6 +171,17 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property]      UDIDeviceIdentifier
+     * 
+     * Represents the device identifier portion of a device's FDA UDI (Unique Device Identifier).
+     * 
+     * The device identifier can be used to reference the FDA's GUDID (Globally Unique Device
+     *                Identifier Database). Note that for user privacy concerns this field should not be used to
+     *                persist the production identifier portion of the device UDI. HealthKit clients should manage
+     *                the production identifier independently, if needed.
+     *                See http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/UniqueDeviceIdentification/ for more information.
+     */
     @Generated
     @Selector("UDIDeviceIdentifier")
     public native String UDIDeviceIdentifier();
@@ -174,12 +194,22 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * [@property]      firmwareVersion
+     * 
+     * The firmware revision of the receiver.
+     */
     @Generated
     @Selector("firmwareVersion")
     public native String firmwareVersion();
 
+    /**
+     * [@property]      hardwareVersion
+     * 
+     * The hardware revision of the receiver.
+     */
     @Generated
     @Selector("hardwareVersion")
     public native String hardwareVersion();
@@ -190,30 +220,71 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKDevice initWithCoder(NSCoder aDecoder);
+    public native HKDevice initWithCoder(NSCoder coder);
 
+    /**
+     * initWithName:manufacturer:model:hardwareVersion:firmwareVersion:softwareVersion:localIdentifier:UDIDeviceIdentifier:
+     * 
+     * Initialize a new HKDevice with the specified values.
+     * 
+     * This allows initialization of an HKDevice object based on the
+     *                information provided.
+     */
     @Generated
     @Selector("initWithName:manufacturer:model:hardwareVersion:firmwareVersion:softwareVersion:localIdentifier:UDIDeviceIdentifier:")
     public native HKDevice initWithNameManufacturerModelHardwareVersionFirmwareVersionSoftwareVersionLocalIdentifierUDIDeviceIdentifier(
             String name, String manufacturer, String model, String hardwareVersion, String firmwareVersion,
             String softwareVersion, String localIdentifier, String UDIDeviceIdentifier);
 
+    /**
+     * [@property]      localIdentifier
+     * 
+     * A unique identifier for the receiver.
+     * 
+     * This property is available to clients for a local identifier.
+     *                For example, Bluetooth peripherals managed by HealthKit use this
+     *                for the CoreBluetooth UUID which is valid only on the local
+     *                device and thus distinguish the same Bluetooth peripheral used
+     *                between multiple devices.
+     */
     @Generated
     @Selector("localIdentifier")
     public native String localIdentifier();
 
+    /**
+     * [@property]      manufacturer
+     * 
+     * The manufacturer of the receiver.
+     */
     @Generated
     @Selector("manufacturer")
     public native String manufacturer();
 
+    /**
+     * [@property]      model
+     * 
+     * The model of the receiver.
+     */
     @Generated
     @Selector("model")
     public native String model();
 
+    /**
+     * [@property]      name
+     * 
+     * The name of the receiver.
+     * 
+     * The user-facing name, such as the one displayed in the Bluetooth Settings for a BLE device.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * [@property]      softwareVersion
+     * 
+     * The software revision of the receiver.
+     */
     @Generated
     @Selector("softwareVersion")
     public native String softwareVersion();

@@ -17,7 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coreaudio.struct.AudioBufferList;
+import apple.coreaudiotypes.struct.AudioBufferList;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -42,6 +42,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioBuffer
+ * 
+ * A buffer of audio data, with a format.
+ * 
+ * 	AVAudioBuffer represents a buffer of audio data and its format.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +160,17 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] audioBufferList
+     * 
+     * The buffer's underlying AudioBufferList.
+     * 
+     * 	For compatibility with lower-level CoreAudio and AudioToolbox API's, this method accesses
+     * 	the buffer implementation's internal AudioBufferList. The buffer list structure must
+     * 	not be modified, though you may modify buffer contents.
+     * 
+     * 	The mDataByteSize fields of this AudioBufferList express the buffer's current frameLength.
+     */
     @Generated
     @Selector("audioBufferList")
     public native AudioBufferList audioBufferList();
@@ -163,6 +181,11 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * [@property] format
+     * 
+     * The format of the audio in the buffer.
+     */
     @Generated
     @Selector("format")
     public native AVAudioFormat format();
@@ -171,10 +194,22 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     @Selector("init")
     public native AVAudioBuffer init();
 
+    /**
+     * [@property] mutableAudioBufferList
+     * 
+     * A mutable version of the buffer's underlying AudioBufferList.
+     * 
+     * 	Some lower-level CoreAudio and AudioToolbox API's require a mutable AudioBufferList,
+     * 	for example, AudioConverterConvertComplexBuffer.
+     * 
+     * 	The mDataByteSize fields of this AudioBufferList express the buffer's current frameCapacity.
+     * 	If they are altered, you should modify the buffer's frameLength to match.
+     */
     @Generated
     @Selector("mutableAudioBufferList")
     public native AudioBufferList mutableAudioBufferList();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

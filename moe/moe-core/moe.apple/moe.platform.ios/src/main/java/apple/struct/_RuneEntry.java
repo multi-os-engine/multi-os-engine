@@ -52,34 +52,58 @@ public final class _RuneEntry extends StructObject {
         set__types(__types);
     }
 
+    /**
+     * First rune of the range
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int __min();
 
+    /**
+     * First rune of the range
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void set__min(int value);
 
+    /**
+     * Last rune (inclusive) of the range
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int __max();
 
+    /**
+     * Last rune (inclusive) of the range
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void set__max(int value);
 
+    /**
+     * What first maps to in maps
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int __map();
 
+    /**
+     * What first maps to in maps
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void set__map(int value);
 
+    /**
+     * Array of types in range
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native IntPtr __types();
 
+    /**
+     * Array of types in range
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void set__types(IntPtr value);

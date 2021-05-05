@@ -49,6 +49,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Entities describe the "types" of objects available.
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -170,10 +173,18 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @NInt
     public static native long version_static();
 
+    /**
+     * convenience methods to get the most common (and most relevant) types of properties for an entity
+     */
     @Generated
     @Selector("attributesByName")
     public native NSDictionary<String, ? extends NSAttributeDescription> attributesByName();
 
+    /**
+     * Getter returns an array of arrays of NSPropertyDescription objects describing the components of the indexes.
+     * Setter takes an array of arrays of NSPropertyDescription objects and/or strings that are the names of properties of the entity on which the index is created. The special strings @"self" and @"entity" can be used to indicate that an index should contain a reference to the object's primary or entity key.
+     * This value does not form part of the entity's version hash, and may be ignored by stores which do not natively support compound indexes.
+     */
     @Generated
     @Selector("compoundIndexes")
     public native NSArray<? extends NSArray<?>> compoundIndexes();
@@ -192,7 +203,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -200,7 +211,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSEntityDescription initWithCoder(NSCoder aDecoder);
+    public native NSEntityDescription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isAbstract")
@@ -210,6 +221,9 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Selector("setAbstract:")
     public native void setAbstract(boolean value);
 
+    /**
+     * Returns a boolean indicating if the receiver is a subentity of the specified entity.  (This method is the Core Data entity inheritance equivalent of -isKindOfClass:)
+     */
     @Generated
     @Selector("isKindOfEntity:")
     public native boolean isKindOfEntity(NSEntityDescription entity);
@@ -247,6 +261,11 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Selector("renamingIdentifier")
     public native String renamingIdentifier();
 
+    /**
+     * Getter returns an array of arrays of NSPropertyDescription objects describing the components of the indexes.
+     * Setter takes an array of arrays of NSPropertyDescription objects and/or strings that are the names of properties of the entity on which the index is created. The special strings @"self" and @"entity" can be used to indicate that an index should contain a reference to the object's primary or entity key.
+     * This value does not form part of the entity's version hash, and may be ignored by stores which do not natively support compound indexes.
+     */
     @Generated
     @Selector("setCompoundIndexes:")
     public native void setCompoundIndexes(NSArray<? extends NSArray<?>> value);
@@ -271,6 +290,15 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Selector("setSubentities:")
     public native void setSubentities(NSArray<? extends NSEntityDescription> value);
 
+    /**
+     * Returns/sets uniqueness constraints for the entity. A uniqueness constraint is a set of one or more attributes whose value must be unique over the set of instances of that entity.
+     * 
+     * Sets an array of arrays, each of which contains one or more NSAttributeDescription or NSString instances (strings must be the names of attributes on the entity) on which the constraint is registered.
+     * Returns an array of arrays, each of which contains instances of NSString which identify the attributes on the entity that comprise the constraint.
+     * This value forms part of the entity's version hash. Stores which do not support uniqueness constraints should refuse to initialize when given a model containing such constraints.
+     * Discussion: uniqueness constraint violations can be computationally expensive to handle. It is highly suggested that there be only one uniqueness constraint per entity hierarchy,
+     * although subentites may extend a sueprentity's constraint.
+     */
     @Generated
     @Selector("setUniquenessConstraints:")
     public native void setUniquenessConstraints(NSArray<? extends NSArray<?>> value);
@@ -279,6 +307,9 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
+    /**
+     * Returns/sets the version hash modifier for the entity.  This value is included in the version hash for the entity, allowing developers to mark/denote an entity as being a different "version" than another, even if all of the values which affect persistence are equal.  (Such a difference is important in cases where the structure of an entity is unchanged, but the format or content of data has changed.)
+     */
     @Generated
     @Selector("setVersionHashModifier:")
     public native void setVersionHashModifier(String value);
@@ -295,6 +326,15 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Selector("superentity")
     public native NSEntityDescription superentity();
 
+    /**
+     * Returns/sets uniqueness constraints for the entity. A uniqueness constraint is a set of one or more attributes whose value must be unique over the set of instances of that entity.
+     * 
+     * Sets an array of arrays, each of which contains one or more NSAttributeDescription or NSString instances (strings must be the names of attributes on the entity) on which the constraint is registered.
+     * Returns an array of arrays, each of which contains instances of NSString which identify the attributes on the entity that comprise the constraint.
+     * This value forms part of the entity's version hash. Stores which do not support uniqueness constraints should refuse to initialize when given a model containing such constraints.
+     * Discussion: uniqueness constraint violations can be computationally expensive to handle. It is highly suggested that there be only one uniqueness constraint per entity hierarchy,
+     * although subentites may extend a sueprentity's constraint.
+     */
     @Generated
     @Selector("uniquenessConstraints")
     public native NSArray<? extends NSArray<?>> uniquenessConstraints();
@@ -303,26 +343,46 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
+    /**
+     * Returns the version hash for the entity.  The version hash is used to uniquely identify an entity based on the collection and configuration of properties for the entity.  The version hash uses only values which affect the persistence of data and the user-defined versionHashModifier value.  (The values which affect persistence are the name of the entity, the version hash of the superentity (if present), if the entity is abstract, and all of the version hashes for the properties.)  This value is stored as part of the version information in the metadata for stores which use this entity, as well as a definition of an entity involved in an NSEntityMapping.
+     */
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();
 
+    /**
+     * Returns/sets the version hash modifier for the entity.  This value is included in the version hash for the entity, allowing developers to mark/denote an entity as being a different "version" than another, even if all of the values which affect persistence are equal.  (Such a difference is important in cases where the structure of an entity is unchanged, but the format or content of data has changed.)
+     */
     @Generated
     @Selector("versionHashModifier")
     public native String versionHashModifier();
 
+    /**
+     * Expression used to compute the CoreSpotlight display name for instance of this entity.
+     */
     @Generated
     @Selector("coreSpotlightDisplayNameExpression")
     public native NSExpression coreSpotlightDisplayNameExpression();
 
+    /**
+     * Returns/sets the set of indexes for the entity. Returns/takes an array of NSFetchIndexDescription instances. This value does not form part of the entity's version hash, and may be ignored by stores which do not natively support indexing.
+     * IMPORTANT: Indexes should be the last things set in a model. Changing an entity hierarchy in any way that could affect the validity of indexes (adding or removing super/subentities, adding or removing properties anywhere in the hierarchy) will cause all exisiting indexes for entities in that hierarchy to be dropped.
+     */
     @Generated
     @Selector("indexes")
     public native NSArray<? extends NSFetchIndexDescription> indexes();
 
+    /**
+     * Expression used to compute the CoreSpotlight display name for instance of this entity.
+     */
     @Generated
     @Selector("setCoreSpotlightDisplayNameExpression:")
     public native void setCoreSpotlightDisplayNameExpression(NSExpression value);
 
+    /**
+     * Returns/sets the set of indexes for the entity. Returns/takes an array of NSFetchIndexDescription instances. This value does not form part of the entity's version hash, and may be ignored by stores which do not natively support indexing.
+     * IMPORTANT: Indexes should be the last things set in a model. Changing an entity hierarchy in any way that could affect the validity of indexes (adding or removing super/subentities, adding or removing properties anywhere in the hierarchy) will cause all exisiting indexes for entities in that hierarchy to be dropped.
+     */
     @Generated
     @Selector("setIndexes:")
     public native void setIndexes(NSArray<? extends NSFetchIndexDescription> value);

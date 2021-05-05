@@ -22,6 +22,9 @@ import org.moe.natj.general.ann.NUInt;
 @Generated
 public final class UIDynamicItemCollisionBoundsType {
     @Generated @NUInt public static final long Rectangle = 0x0000000000000000L;
+    /**
+     * radii will be determined from the items bounds width, height
+     */
     @Generated @NUInt public static final long Ellipse = 0x0000000000000001L;
     @Generated @NUInt public static final long Path = 0x0000000000000002L;
 

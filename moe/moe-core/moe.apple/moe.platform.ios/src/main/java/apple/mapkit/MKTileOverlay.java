@@ -50,6 +50,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MKTileOverlay represents a data source for raster image tiles in the spherical mercator projection (EPSG:3857).
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -161,6 +164,9 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @NInt
     public static native long version_static();
 
+    /**
+     * default implementation fills out the URLTemplate
+     */
     @Generated
     @Selector("URLForTilePath:")
     public native NSURL URLForTilePath(@ByValue MKTileOverlayPath path);
@@ -187,6 +193,9 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @Selector("init")
     public native MKTileOverlay init();
 
+    /**
+     * URL template is a string where the substrings "{x}", "{y}", "{z}", and "{scale}" are replaced with values from a tile path to create a URL to load. For example: http://server/path?x={x}&y={y}&z={z}&scale={scale}.
+     */
     @Generated
     @Selector("initWithURLTemplate:")
     public native MKTileOverlay initWithURLTemplate(String URLTemplate);
@@ -196,14 +205,23 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @Selector("intersectsMapRect:")
     public native boolean intersectsMapRect(@ByValue MKMapRect mapRect);
 
+    /**
+     * Default is NO. If NO, a tile at x=0, y=0 is the upper left, otherwise it is in the lower left.
+     */
     @Generated
     @Selector("isGeometryFlipped")
     public native boolean isGeometryFlipped();
 
+    /**
+     * Default is NO. If NO, a tile at x=0, y=0 is the upper left, otherwise it is in the lower left.
+     */
     @Generated
     @Selector("setGeometryFlipped:")
     public native void setGeometryFlipped(boolean value);
 
+    /**
+     * Load the requested tile and call the callback block with the tile data or with an error if the tile could not be loaded. The default implementation first uses -URLForTilePath to get a URL and then it loads it asynchronously.
+     */
     @Generated
     @Selector("loadTileAtPath:result:")
     public native void loadTileAtPathResult(@ByValue MKTileOverlayPath path,
@@ -214,6 +232,9 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @NInt
     public native long maximumZ();
 
+    /**
+     * The minimum/maximum zoom level at which tile data is available for this overlay. A tile at level 0 covers the entire world, at level 1 it covers 1/4th of the world, at level 2 it covers 1/16th of the world, and so on.
+     */
     @Generated
     @Selector("minimumZ")
     @NInt
@@ -232,10 +253,16 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @Selector("setMaximumZ:")
     public native void setMaximumZ(@NInt long value);
 
+    /**
+     * The minimum/maximum zoom level at which tile data is available for this overlay. A tile at level 0 covers the entire world, at level 1 it covers 1/4th of the world, at level 2 it covers 1/16th of the world, and so on.
+     */
     @Generated
     @Selector("setMinimumZ:")
     public native void setMinimumZ(@NInt long value);
 
+    /**
+     * default is 256x256
+     */
     @Generated
     @Selector("setTileSize:")
     public native void setTileSize(@ByValue CGSize value);
@@ -245,6 +272,9 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @Selector("subtitle")
     public native String subtitle();
 
+    /**
+     * default is 256x256
+     */
     @Generated
     @Selector("tileSize")
     @ByValue
@@ -259,6 +289,6 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @Generated
     public interface Block_loadTileAtPathResult {
         @Generated
-        void call_loadTileAtPathResult(NSData arg0, NSError arg1);
+        void call_loadTileAtPathResult(NSData tileData, NSError error);
     }
 }

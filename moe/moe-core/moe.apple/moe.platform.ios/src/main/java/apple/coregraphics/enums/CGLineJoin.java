@@ -18,6 +18,9 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Line join styles.
+ */
 @Generated
 public final class CGLineJoin {
     @Generated public static final int Miter = 0x00000000;

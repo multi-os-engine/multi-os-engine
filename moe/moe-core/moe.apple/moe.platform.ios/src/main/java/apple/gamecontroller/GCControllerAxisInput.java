@@ -160,6 +160,14 @@ public class GCControllerAxisInput extends GCControllerElement {
     public native void setValueChangedHandler(
             @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
+    /**
+     * A normalized value for the input, between -1 and 1 for axis inputs. The values are deadzoned and saturated before they are returned
+     * so there is no value ouside the range. Deadzoning does not remove values from the range, the full 0 to 1 magnitude of values
+     * are possible from the input.
+     * 
+     * As an axis is often used in a digital sense, you can rely on a value of 0 meaning the axis is inside the deadzone.
+     * Any value greater than or less than zero is not in the deadzone.
+     */
     @Generated
     @Selector("value")
     public native float value();
@@ -173,13 +181,25 @@ public class GCControllerAxisInput extends GCControllerElement {
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCControllerAxisInput arg0, float arg1);
+        void call_setValueChangedHandler(GCControllerAxisInput axis, float value);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCControllerAxisInput arg0, float arg1);
+        void call_valueChangedHandler_ret(GCControllerAxisInput axis, float value);
     }
+
+    /**
+     * Sets the normalized value for the input.
+     * 
+     * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
+     * 
+     * @param value the value to set the input to.
+     * @see value
+     */
+    @Generated
+    @Selector("setValue:")
+    public native void setValue(float value);
 }

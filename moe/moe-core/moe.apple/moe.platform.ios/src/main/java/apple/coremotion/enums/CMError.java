@@ -18,6 +18,12 @@ package apple.coremotion.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * CMError
+ * 
+ * Discussion:
+ *   Error returned as code to NSError from CoreMotion.
+ */
 @Generated
 public final class CMError {
     @Generated public static final int CMErrorNULL = 0x00000064;
@@ -36,4 +42,7 @@ public final class CMError {
     @Generated
     private CMError() {
     }
+
+    @Generated public static final int CMErrorNilData = 0x00000070;
+    @Generated public static final int CMErrorSize = 0x00000071;
 }

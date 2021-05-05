@@ -152,6 +152,13 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
     @NInt
     public static native long version_static();
 
+    /**
+     * This block is called when the operation completes.
+     * 
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of lookup infos to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("fetchShareParticipantsCompletionBlock")
     @ObjCBlock(name = "call_fetchShareParticipantsCompletionBlock_ret")
@@ -166,11 +173,23 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
     public native CKFetchShareParticipantsOperation initWithUserIdentityLookupInfos(
             NSArray<? extends CKUserIdentityLookupInfo> userIdentityLookupInfos);
 
+    /**
+     * This block is called when the operation completes.
+     * 
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of lookup infos to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("setFetchShareParticipantsCompletionBlock:")
     public native void setFetchShareParticipantsCompletionBlock(
             @ObjCBlock(name = "call_setFetchShareParticipantsCompletionBlock") Block_setFetchShareParticipantsCompletionBlock value);
 
+    /**
+     * Called once for each share participant created from a submitted user identity lookup info.
+     * 
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("setShareParticipantFetchedBlock:")
     public native void setShareParticipantFetchedBlock(
@@ -180,6 +199,11 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
     @Selector("setUserIdentityLookupInfos:")
     public native void setUserIdentityLookupInfos(NSArray<? extends CKUserIdentityLookupInfo> value);
 
+    /**
+     * Called once for each share participant created from a submitted user identity lookup info.
+     * 
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("shareParticipantFetchedBlock")
     @ObjCBlock(name = "call_shareParticipantFetchedBlock_ret")

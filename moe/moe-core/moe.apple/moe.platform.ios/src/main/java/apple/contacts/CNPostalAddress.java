@@ -44,6 +44,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An immutable value object representing a postal address.
+ * 
+ * CNPostalAddress is thread safe.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
@@ -128,6 +133,9 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Returns a user displayable property name.
+     */
     @Generated
     @Selector("localizedStringForKey:")
     public static native String localizedStringForKey(String key);
@@ -183,7 +191,7 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -191,8 +199,9 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNPostalAddress initWithCoder(NSCoder aDecoder);
+    public native CNPostalAddress initWithCoder(NSCoder coder);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -206,6 +215,9 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
     @Selector("state")
     public native String state();
 
+    /**
+     * multi-street address is delimited with carriage returns “\n”
+     */
     @Generated
     @Selector("street")
     public native String street();

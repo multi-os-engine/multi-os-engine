@@ -31,6 +31,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -112,6 +113,11 @@ public class CATiledLayer extends CALayer {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The time in seconds that newly added images take to "fade-in" to the
+     * rendered representation of the tiled layer. The default implementation
+     * returns 0.25 seconds.
+     */
     @Generated
     @Selector("fadeDuration")
     public static native double fadeDuration();
@@ -183,34 +189,74 @@ public class CATiledLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CATiledLayer initWithCoder(NSCoder aDecoder);
+    public native CATiledLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
     public native CATiledLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
+    /**
+     * The number of levels of detail maintained by this layer. Defaults to
+     * one. Each LOD is half the resolution of the previous level. If too
+     * many levels are specified for the current size of the layer, then
+     * the number of levels is clamped to the maximum value (the bottom
+     * most LOD must contain at least a single pixel in each dimension).
+     */
     @Generated
     @Selector("levelsOfDetail")
     @NUInt
     public native long levelsOfDetail();
 
+    /**
+     * The number of magnified levels of detail for this layer. Defaults to
+     * zero. Each previous level of detail is twice the resolution of the
+     * later. E.g. specifying 'levelsOfDetailBias' of two means that the
+     * layer devotes two of its specified levels of detail to
+     * magnification, i.e. 2x and 4x.
+     */
     @Generated
     @Selector("levelsOfDetailBias")
     @NUInt
     public native long levelsOfDetailBias();
 
+    /**
+     * The number of levels of detail maintained by this layer. Defaults to
+     * one. Each LOD is half the resolution of the previous level. If too
+     * many levels are specified for the current size of the layer, then
+     * the number of levels is clamped to the maximum value (the bottom
+     * most LOD must contain at least a single pixel in each dimension).
+     */
     @Generated
     @Selector("setLevelsOfDetail:")
     public native void setLevelsOfDetail(@NUInt long value);
 
+    /**
+     * The number of magnified levels of detail for this layer. Defaults to
+     * zero. Each previous level of detail is twice the resolution of the
+     * later. E.g. specifying 'levelsOfDetailBias' of two means that the
+     * layer devotes two of its specified levels of detail to
+     * magnification, i.e. 2x and 4x.
+     */
     @Generated
     @Selector("setLevelsOfDetailBias:")
     public native void setLevelsOfDetailBias(@NUInt long value);
 
+    /**
+     * The maximum size of each tile used to create the layer's content.
+     * Defaults to (256, 256). Note that there is a maximum tile size, and
+     * requests for tiles larger than that limit will cause a suitable
+     * value to be substituted.
+     */
     @Generated
     @Selector("setTileSize:")
     public native void setTileSize(@ByValue CGSize value);
 
+    /**
+     * The maximum size of each tile used to create the layer's content.
+     * Defaults to (256, 256). Note that there is a maximum tile size, and
+     * requests for tiles larger than that limit will cause a suitable
+     * value to be substituted.
+     */
     @Generated
     @Selector("tileSize")
     @ByValue
@@ -225,4 +271,9 @@ public class CATiledLayer extends CALayer {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
 }

@@ -172,7 +172,7 @@ public class MPMoviePlayerViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMoviePlayerViewController initWithCoder(NSCoder aDecoder);
+    public native MPMoviePlayerViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentURL:")

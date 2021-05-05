@@ -19,6 +19,17 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]		 AVQueuedSampleBufferRenderingStatus
+ * 
+ * These constants are the possible status values for queued sample buffer renderers.
+ * [@constant]	 AVQueuedSampleBufferRenderingStatusUnknown
+ * 	Indicates that the receiver is in a fresh state without any sample buffers enqueued on it.
+ * [@constant]	 AVQueuedSampleBufferRenderingStatusRendering
+ * 	Indicates at least one sample buffer has been enqueued on the receiver.
+ * [@constant]	 AVQueuedSampleBufferRenderingStatusFailed
+ * 	Indicates that the receiver cannot currently enqueue or render sample buffers because of an error.
+ */
 @Generated
 public final class AVQueuedSampleBufferRenderingStatus {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;

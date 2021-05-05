@@ -202,7 +202,7 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateIndexesInRange:options:usingBlock:")
@@ -224,6 +224,11 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     public native void enumerateRangesInRangeOptionsUsingBlock(@ByValue NSRange range, @NUInt long opts,
             @ObjCBlock(name = "call_enumerateRangesInRangeOptionsUsingBlock") Block_enumerateRangesInRangeOptionsUsingBlock block);
 
+    /**
+     * The following three convenience methods allow you to enumerate the indexes in the receiver by ranges of contiguous indexes. The performance of these methods is not guaranteed to be any better than if they were implemented with enumerateIndexesInRange:options:usingBlock:. However, depending on the receiver's implementation, they may perform better than that.
+     * 
+     * If the specified range for enumeration intersects a range of contiguous indexes in the receiver, then the block will be invoked with the intersection of those two ranges.
+     */
     @Generated
     @Selector("enumerateRangesUsingBlock:")
     public native void enumerateRangesUsingBlock(
@@ -234,11 +239,17 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     public native void enumerateRangesWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateRangesWithOptionsUsingBlock") Block_enumerateRangesWithOptionsUsingBlock block);
 
+    /**
+     * The following six methods will return NSNotFound if there is no index in the set satisfying the query.
+     */
     @Generated
     @Selector("firstIndex")
     @NUInt
     public native long firstIndex();
 
+    /**
+     * Fills up to bufferSize indexes in the specified range into the buffer and returns the number of indexes actually placed in the buffer; also modifies the optional range passed in by pointer to be "positioned" after the last index filled into the buffer.Example: if the index set contains the indexes 0, 2, 4, ..., 98, 100, for a buffer of size 10 and the range (20, 80) the buffer would contain 20, 22, ..., 38 and the range would be modified to (40, 60).
+     */
     @Generated
     @Selector("getIndexes:maxCount:inIndexRange:")
     @NUInt
@@ -302,7 +313,7 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSIndexSet initWithCoder(NSCoder aDecoder);
+    public native NSIndexSet initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithIndex:")
@@ -329,6 +340,7 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @NUInt
     public native long lastIndex();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -344,83 +356,83 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @Generated
     public interface Block_enumerateIndexesInRangeOptionsUsingBlock {
         @Generated
-        void call_enumerateIndexesInRangeOptionsUsingBlock(@NUInt long arg0, BoolPtr arg1);
+        void call_enumerateIndexesInRangeOptionsUsingBlock(@NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateIndexesUsingBlock {
         @Generated
-        void call_enumerateIndexesUsingBlock(@NUInt long arg0, BoolPtr arg1);
+        void call_enumerateIndexesUsingBlock(@NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateIndexesWithOptionsUsingBlock {
         @Generated
-        void call_enumerateIndexesWithOptionsUsingBlock(@NUInt long arg0, BoolPtr arg1);
+        void call_enumerateIndexesWithOptionsUsingBlock(@NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateRangesInRangeOptionsUsingBlock {
         @Generated
-        void call_enumerateRangesInRangeOptionsUsingBlock(@ByValue NSRange arg0, BoolPtr arg1);
+        void call_enumerateRangesInRangeOptionsUsingBlock(@ByValue NSRange range, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateRangesUsingBlock {
         @Generated
-        void call_enumerateRangesUsingBlock(@ByValue NSRange arg0, BoolPtr arg1);
+        void call_enumerateRangesUsingBlock(@ByValue NSRange range, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateRangesWithOptionsUsingBlock {
         @Generated
-        void call_enumerateRangesWithOptionsUsingBlock(@ByValue NSRange arg0, BoolPtr arg1);
+        void call_enumerateRangesWithOptionsUsingBlock(@ByValue NSRange range, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexInRangeOptionsPassingTest {
         @Generated
-        boolean call_indexInRangeOptionsPassingTest(@NUInt long arg0, BoolPtr arg1);
+        boolean call_indexInRangeOptionsPassingTest(@NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexPassingTest {
         @Generated
-        boolean call_indexPassingTest(@NUInt long arg0, BoolPtr arg1);
+        boolean call_indexPassingTest(@NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexWithOptionsPassingTest {
         @Generated
-        boolean call_indexWithOptionsPassingTest(@NUInt long arg0, BoolPtr arg1);
+        boolean call_indexWithOptionsPassingTest(@NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesInRangeOptionsPassingTest {
         @Generated
-        boolean call_indexesInRangeOptionsPassingTest(@NUInt long arg0, BoolPtr arg1);
+        boolean call_indexesInRangeOptionsPassingTest(@NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesPassingTest {
         @Generated
-        boolean call_indexesPassingTest(@NUInt long arg0, BoolPtr arg1);
+        boolean call_indexesPassingTest(@NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesWithOptionsPassingTest {
         @Generated
-        boolean call_indexesWithOptionsPassingTest(@NUInt long arg0, BoolPtr arg1);
+        boolean call_indexesWithOptionsPassingTest(@NUInt long idx, BoolPtr stop);
     }
 }

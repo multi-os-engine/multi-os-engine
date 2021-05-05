@@ -45,6 +45,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMDeviceMotion
+ * 
+ * Discussion:
+ *   A CMDeviceMotion object contains basic information about the device's
+ *   motion.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -160,10 +167,24 @@ public class CMDeviceMotion extends CMLogItem {
     @NInt
     public static native long version_static();
 
+    /**
+     * attitude
+     * 
+     * Discussion:
+     *   Returns the attitude of the device.
+     */
     @Generated
     @Selector("attitude")
     public native CMAttitude attitude();
 
+    /**
+     * gravity
+     * 
+     * Discussion:
+     *   Returns the gravity vector expressed in the device's reference frame. Note
+     *   that the total acceleration of the device is equal to gravity plus
+     *   userAcceleration.
+     */
     @Generated
     @Selector("gravity")
     @ByValue
@@ -175,13 +196,28 @@ public class CMDeviceMotion extends CMLogItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMDeviceMotion initWithCoder(NSCoder aDecoder);
+    public native CMDeviceMotion initWithCoder(NSCoder coder);
 
+    /**
+     * magneticField
+     * 
+     * Discussion:
+     *   Returns the magnetic field vector with respect to the device for devices with a magnetometer.
+     *   Note that this is the total magnetic field in the device's vicinity without device
+     *   bias (Earth's magnetic field plus surrounding fields, without device bias),
+     *   unlike CMMagnetometerData magneticField.
+     */
     @Generated
     @Selector("magneticField")
     @ByValue
     public native CMCalibratedMagneticField magneticField();
 
+    /**
+     * rotationRate
+     * 
+     * Discussion:
+     *   Returns the rotation rate of the device for devices with a gyro.
+     */
     @Generated
     @Selector("rotationRate")
     @ByValue
@@ -193,12 +229,38 @@ public class CMDeviceMotion extends CMLogItem {
         return supportsSecureCoding();
     }
 
+    /**
+     * userAcceleration
+     * 
+     * Discussion:
+     *   Returns the acceleration that the user is giving to the device. Note
+     *   that the total acceleration of the device is equal to gravity plus
+     *   userAcceleration.
+     */
     @Generated
     @Selector("userAcceleration")
     @ByValue
     public native CMAcceleration userAcceleration();
 
+    /**
+     * heading
+     * 
+     * Discussion:
+     *   Returns heading angle in the range [0,360) degrees with respect to the CMAttitude reference frame. A negative value is returned
+     *   for CMAttitudeReferenceFrameXArbitraryZVertical and CMAttitudeReferenceFrameXArbitraryCorrectedZVertical.
+     */
     @Generated
     @Selector("heading")
     public native double heading();
+
+    /**
+     * sensorLocation
+     * 
+     * Discussion:
+     *   Returns the location of the sensors used to compute the device motion data.
+     */
+    @Generated
+    @Selector("sensorLocation")
+    @NInt
+    public native long sensorLocation();
 }

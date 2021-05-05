@@ -28,6 +28,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Protocol for classes that act as a factory to find a restorable object during state restoration
+ * A class must implement this protocol if it is specified as the restoration class of a UIRestorableObject.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -37,5 +41,5 @@ public interface UIObjectRestoration {
     @Selector("objectWithRestorationIdentifierPath:coder:")
     @ProtocolClassMethod("objectWithRestorationIdentifierPathCoder")
     @MappedReturn(ObjCObjectMapper.class)
-    Object _objectWithRestorationIdentifierPathCoder(NSArray<String> identifierComponents, NSCoder coder);
+    UIStateRestoring _objectWithRestorationIdentifierPathCoder(NSArray<String> identifierComponents, NSCoder coder);
 }

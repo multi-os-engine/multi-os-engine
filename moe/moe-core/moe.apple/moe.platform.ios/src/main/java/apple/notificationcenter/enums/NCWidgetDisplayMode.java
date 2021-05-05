@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NCWidgetDisplayMode {
+    /**
+     * Fixed height
+     */
     @Generated @NInt public static final long Compact = 0x0000000000000000L;
+    /**
+     * Variable height
+     */
     @Generated @NInt public static final long Expanded = 0x0000000000000001L;
 
     @Generated

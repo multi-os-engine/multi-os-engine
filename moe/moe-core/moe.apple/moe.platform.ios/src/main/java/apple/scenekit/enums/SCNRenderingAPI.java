@@ -19,6 +19,14 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum] SCNRenderingAPI
+ * 
+ * rendering API used by SCNView and SCNRenderer.
+ * 
+ * Default preferred API is SCNRenderingAPIMetal on iOS and it depends on the configuration on macOS.
+ * If Metal is requested but not available then it fallbacks to SCNRenderingAPIOpenGLES2 on iOS and to SCNRenderingAPIOpenGLLegacy on macOS.
+ */
 @Generated
 public final class SCNRenderingAPI {
     @Generated @NUInt public static final long Metal = 0x0000000000000000L;

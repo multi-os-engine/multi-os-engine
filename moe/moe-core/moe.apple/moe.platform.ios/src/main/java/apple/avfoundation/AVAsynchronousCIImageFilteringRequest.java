@@ -157,6 +157,9 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
     @NInt
     public static native long version_static();
 
+    /**
+     * The time for which the frame should be filtered
+     */
     @Generated
     @Selector("compositionTime")
     @ByValue
@@ -168,10 +171,18 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Callback the filter should call when filtering failed. The error parameter should describe the actual error.
+     */
     @Generated
     @Selector("finishWithError:")
     public native void finishWithError(NSError error);
 
+    /**
+     * Callback the filter should call when filtering succeeded. The pixel format of the filteredImage must be kCIFormatBGRA8 (kCVPixelFormatType_32BGRA). If context is nil then a default context will be used, GPU-accelerated if possible.
+     * 
+     * It is safe to pass in the sourceImage in which case the filter will appear to have no effect, essentially functioning as a pass-through.
+     */
     @Generated
     @Selector("finishWithImage:context:")
     public native void finishWithImageContext(CIImage filteredImage, CIContext context);
@@ -180,11 +191,17 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
     @Selector("init")
     public native AVAsynchronousCIImageFilteringRequest init();
 
+    /**
+     * Width and height for rendering frames.
+     */
     @Generated
     @Selector("renderSize")
     @ByValue
     public native CGSize renderSize();
 
+    /**
+     * CIImage for the first enabled source video track. The pixel format will be kCIFormatBGRA8 (kCVPixelFormatType_32BGRA). Unlike AVAsynchronousVideoCompositionRequest, renderContext.renderTransform is already applied to the source image.
+     */
     @Generated
     @Selector("sourceImage")
     public native CIImage sourceImage();

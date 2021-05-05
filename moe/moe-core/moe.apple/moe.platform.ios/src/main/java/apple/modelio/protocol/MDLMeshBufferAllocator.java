@@ -30,39 +30,121 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@protocol] MDLMeshBufferAllocator
+ * 
+ * Object for allocating buffers to back vertex and index data
+ * 
+ * Accepted by MDLAsset init method.  Implementor creates objects
+ *             implementing MDLMeshBuffer with memory to be filled with vertex and 
+ *             index data during 3d file loading and parsing.
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLMeshBufferAllocator")
 public interface MDLMeshBufferAllocator {
+    /**
+     * newBuffer:type:
+     * 
+     * Create a buffer in a default zone
+     * 
+     * @param length Size of buffer to be created in bytes
+     * @param type Type of data to be stored in this buffer
+     */
     @Generated
     @Selector("newBuffer:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newBufferType(@NUInt long length, @NUInt long type);
+    MDLMeshBuffer newBufferType(@NUInt long length, @NUInt long type);
 
+    /**
+     * newBufferFromZone:data:type:
+     * 
+     * Create a buffer from a given zone and fill with data in the supplied
+     *           NSData object
+     * 
+     * An implementing MDLMeshBufferAllocator object may increase the size
+     *             of the zone if the buffer could not be allocated with the current 
+     *             zone size. Alternatively the implementation may return nil if the 
+     *             buffer could not be allocated.
+     * 
+     * @return An object conforming to the MDLMeshBuffer protocol.  Returns nil the 
+     *         buffer could not be allocated in the given zone
+     * @param zone Zone from which to allocate the memory
+     * @param data Values with which to fill the buffer
+     * @param type Type of data to be stored in this buffer
+     */
     @Generated
     @Selector("newBufferFromZone:data:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newBufferFromZoneDataType(@Mapped(ObjCObjectMapper.class) Object zone, NSData data, @NUInt long type);
+    MDLMeshBuffer newBufferFromZoneDataType(@Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone, NSData data,
+            @NUInt long type);
 
+    /**
+     * newBufferFromZone:length:type:
+     * 
+     * Create a buffer from a given zone with the given length
+     * 
+     * An implementing MDLMeshBufferAllocator object may increase the size
+     *             of the zone if the buffer could not be allocated with the current 
+     *             zone size.  Alternatively the implementation may return nil if the 
+     *             buffer could not be allocated.
+     * 
+     * @return An object conforming to the MDLMeshBuffer protocol.  Returns nil the 
+     *         buffer could not be allocated in the zone given.
+     * @param zone Zone from which to allocate the memory
+     * @param type Type of data to be stored in this buffer
+     */
     @Generated
     @Selector("newBufferFromZone:length:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newBufferFromZoneLengthType(@Mapped(ObjCObjectMapper.class) Object zone, @NUInt long length,
-            @NUInt long type);
+    MDLMeshBuffer newBufferFromZoneLengthType(@Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone,
+            @NUInt long length, @NUInt long type);
 
+    /**
+     * newBufferWithData:type:
+     * 
+     * Create a buffer in a default zone and fill with data in the supplied
+     *           NSData object
+     * 
+     * @param data Memory to fill the buffer with
+     * @param type Type of data to be stored in this buffer
+     */
     @Generated
     @Selector("newBufferWithData:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newBufferWithDataType(NSData data, @NUInt long type);
+    MDLMeshBuffer newBufferWithDataType(NSData data, @NUInt long type);
 
+    /**
+     * newZone:
+     * 
+     * Create a zone which can be used to allocate MDLMeshBuffer objects
+     * 
+     * @param capacity Total size in bytes of all buffers which can be created from 
+     *        this zone
+     */
     @Generated
     @Selector("newZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newZone(@NUInt long capacity);
+    MDLMeshBufferZone newZone(@NUInt long capacity);
 
+    /**
+     * newZoneForBuffersWithSize:andType:
+     * 
+     * Create a zone which can be used to allocate MDLMeshBuffer objects
+     * 
+     * Will create a zone from which MDLMeshBuffer objects can be
+     *             allocated.  This will allocate a zone with enough capacity
+     *             for each of the buffers with sizes and types specified even taking
+     *             into any alignment restrictions necessary to use these buffers.
+     * 
+     * @param sizes Sizes of each buffer to be created in this zone
+     * @param types Type of each buffer to be created in this zone. Values to be of
+     *              MDLMeshBufferType
+     */
     @Generated
     @Selector("newZoneForBuffersWithSize:andType:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newZoneForBuffersWithSizeAndType(NSArray<? extends NSNumber> sizes, NSArray<? extends NSNumber> types);
+    MDLMeshBufferZone newZoneForBuffersWithSizeAndType(NSArray<? extends NSNumber> sizes,
+            NSArray<? extends NSNumber> types);
 }

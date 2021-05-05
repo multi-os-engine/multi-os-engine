@@ -43,6 +43,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An MPMediaPlaylist is a collection of related MPMediaItems in an MPMediaLibrary.
+ * Playlists have a unique identifier which persists across application launches.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -190,7 +194,7 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaPlaylist initWithCoder(NSCoder aDecoder);
+    public native MPMediaPlaylist initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithItems:")
@@ -223,13 +227,17 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     @Generated
     public interface Block_addItemWithProductIDCompletionHandler {
         @Generated
-        void call_addItemWithProductIDCompletionHandler(NSError arg0);
+        void call_addItemWithProductIDCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addMediaItemsCompletionHandler {
         @Generated
-        void call_addMediaItemsCompletionHandler(NSError arg0);
+        void call_addMediaItemsCompletionHandler(NSError error);
     }
+
+    @Generated
+    @Selector("cloudGlobalID")
+    public native String cloudGlobalID();
 }

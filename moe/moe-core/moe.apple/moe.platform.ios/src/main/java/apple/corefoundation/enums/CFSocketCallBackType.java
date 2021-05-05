@@ -19,6 +19,9 @@ package apple.corefoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Values for CFSocketCallBackType
+ */
 @Generated
 public final class CFSocketCallBackType {
     @Generated @NUInt public static final long NoCallBack = 0x0000000000000000L;

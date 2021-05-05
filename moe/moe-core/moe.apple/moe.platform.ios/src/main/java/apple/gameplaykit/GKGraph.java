@@ -21,8 +21,8 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -39,14 +39,18 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Representation of a directed graph of GKGraphNodes
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKGraph extends NSObject implements NSCopying, NSCoding {
+public class GKGraph extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -100,6 +104,10 @@ public class GKGraph extends NSObject implements NSCopying, NSCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Creates a graph with the provided array of nodes.
+     * [@params] nodes the nodes to create the graph with
+     */
     @Generated
     @Selector("graphWithNodes:")
     public static native GKGraph graphWithNodes(NSArray<? extends GKGraphNode> nodes);
@@ -157,10 +165,22 @@ public class GKGraph extends NSObject implements NSCopying, NSCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Adds nodes to this graph.  No new connections are added.
+     * If the node already exists in this graph this does nothing.
+     * 
+     * @param nodes and array of nodes to be added
+     */
     @Generated
     @Selector("addNodes:")
     public native void addNodes(NSArray<? extends GKGraphNode> nodes);
 
+    /**
+     * Connects the node to this graph via the lowest cost node to reach in this graph
+     * 
+     * @param node the node to connect
+     * @param bidirectional should the connection be bidirectional? Otherwise it is one way connected into the graph
+     */
     @Generated
     @Selector("connectNodeToLowestCostNode:bidirectional:")
     public native void connectNodeToLowestCostNodeBidirectional(GKGraphNode node, boolean bidirectional);
@@ -173,8 +193,17 @@ public class GKGraph extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Attempts to find the optimal path between the two nodes indicated.
+     * If such a path exists, it is returned in start to end order.
+     * If it doesn't exist, the array returned will be empty.
+     * Asserts if neither of these nodes are in this graph.  Use [GKGraphNode findPathFromNode:] instead.
+     * 
+     * @param startNode node to start pathing from
+     * @param endNode goal node of the pathfinding attempt
+     */
     @Generated
     @Selector("findPathFromNode:toNode:")
     public native NSArray<? extends GKGraphNode> findPathFromNodeToNode(GKGraphNode startNode, GKGraphNode endNode);
@@ -185,17 +214,36 @@ public class GKGraph extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKGraph initWithCoder(NSCoder aDecoder);
+    public native GKGraph initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNodes:")
     public native GKGraph initWithNodes(NSArray<? extends GKGraphNode> nodes);
 
+    /**
+     * The list of nodes in this graph
+     */
     @Generated
     @Selector("nodes")
     public native NSArray<? extends GKGraphNode> nodes();
 
+    /**
+     * Removes nodes from this graph.
+     * All connections starting and/or ending with this node are removed.
+     * 
+     * @param nodes an array of nodes to be removed
+     */
     @Generated
     @Selector("removeNodes:")
     public native void removeNodes(NSArray<? extends GKGraphNode> nodes);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -19,6 +19,9 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Data Search Options	***************
+ */
 @Generated
 public final class NSDataSearchOptions {
     @Generated @NUInt public static final long Backwards = 0x0000000000000001L;

@@ -37,6 +37,28 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An NSURLSessionStreamTask provides an interface to perform reads
+ * and writes to a TCP/IP stream created via NSURLSession.  This task
+ * may be explicitly created from an NSURLSession, or created as a
+ * result of the appropriate disposition response to a
+ * -URLSession:dataTask:didReceiveResponse: delegate message.
+ * 
+ * NSURLSessionStreamTask can be used to perform asynchronous reads
+ * and writes.  Reads and writes are enquened and executed serially,
+ * with the completion handler being invoked on the sessions delegate
+ * queuee.  If an error occurs, or the task is canceled, all
+ * outstanding read and write calls will have their completion
+ * handlers invoked with an appropriate error.
+ * 
+ * It is also possible to create NSInputStream and NSOutputStream
+ * instances from an NSURLSessionTask by sending
+ * -captureStreams to the task.  All outstanding read and writess are
+ * completed before the streams are created.  Once the streams are
+ * delivered to the session delegate, the task is considered complete
+ * and will receive no more messsages.  These streams are
+ * disassociated from the underlying session.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -148,14 +170,34 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @NInt
     public static native long version_static();
 
+    /**
+     * -captureStreams completes any already enqueued reads
+     * and writes, and then invokes the
+     * URLSession:streamTask:didBecomeInputStream:outputStream: delegate
+     * message. When that message is received, the task object is
+     * considered completed and will not receive any more delegate
+     * messages.
+     */
     @Generated
     @Selector("captureStreams")
     public native void captureStreams();
 
+    /**
+     * Enqueue a request to close the read side of the underlying socket.
+     * All outstanding IO will complete before the read side is closed.
+     * You may continue writing to the server.
+     */
     @Generated
     @Selector("closeRead")
     public native void closeRead();
 
+    /**
+     * Enqueue a request to close the write end of the underlying socket.
+     * All outstanding IO will complete before the write side of the
+     * socket is closed.  The server, however, may continue to write bytes
+     * back to the client, so best practice is to continue reading from
+     * the server until you receive EOF.
+     */
     @Generated
     @Selector("closeWrite")
     public native void closeWrite();
@@ -164,20 +206,44 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Selector("init")
     public native NSURLSessionStreamTask init();
 
+    /**
+     * Read minBytes, or at most maxBytes bytes and invoke the completion
+     * handler on the sessions delegate queue with the data or an error.
+     * If an error occurs, any outstanding reads will also fail, and new
+     * read requests will error out immediately.
+     */
     @Generated
     @Selector("readDataOfMinLength:maxLength:timeout:completionHandler:")
     public native void readDataOfMinLengthMaxLengthTimeoutCompletionHandler(@NUInt long minBytes, @NUInt long maxBytes,
             double timeout,
             @ObjCBlock(name = "call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler") Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler completionHandler);
 
+    /**
+     * Begin encrypted handshake.  The hanshake begins after all pending
+     * IO has completed.  TLS authentication callbacks are sent to the
+     * session's -URLSession:task:didReceiveChallenge:completionHandler:
+     */
     @Generated
     @Selector("startSecureConnection")
     public native void startSecureConnection();
 
+    /**
+     * Cleanly close a secure connection after all pending secure IO has
+     * completed.
+     * 
+     * [@warning] This API is non-functional.
+     */
     @Generated
     @Selector("stopSecureConnection")
     public native void stopSecureConnection();
 
+    /**
+     * Write the data completely to the underlying socket.  If all the
+     * bytes have not been written by the timeout, a timeout error will
+     * occur.  Note that invocation of the completion handler does not
+     * guarantee that the remote side has received all the bytes, only
+     * that they have been written to the kernel.
+     */
     @Generated
     @Selector("writeData:timeout:completionHandler:")
     public native void writeDataTimeoutCompletionHandler(NSData data, double timeout,
@@ -187,13 +253,13 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Generated
     public interface Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler {
         @Generated
-        void call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler(NSData arg0, boolean arg1, NSError arg2);
+        void call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler(NSData data, boolean atEOF, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDataTimeoutCompletionHandler {
         @Generated
-        void call_writeDataTimeoutCompletionHandler(NSError arg0);
+        void call_writeDataTimeoutCompletionHandler(NSError error);
     }
 }

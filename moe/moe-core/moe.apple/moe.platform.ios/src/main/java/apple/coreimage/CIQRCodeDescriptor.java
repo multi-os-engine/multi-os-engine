@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CIQRCodeDescriptor
+ * 
+ *    CIQRCodeDescriptor is a concrete subclass of CIBarcodeDescriptor that defines an abstract representation of a QR code symbol. 
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -84,15 +89,34 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Construct an autoreleased descriptor that can be used as input to CIBarcodeGenerator
+     */
     @Generated
     @Selector("descriptorWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:")
     public static native CIQRCodeDescriptor descriptorWithPayloadSymbolVersionMaskPatternErrorCorrectionLevel(
             NSData errorCorrectedPayload, @NInt long symbolVersion, byte maskPattern, @NInt long errorCorrectionLevel);
 
+    /**
+     * [@property] errorCorrectedPayload
+     * 
+     * The error-corrected codewords that comprise the QR code symbol.
+     * 
+     * QR Codes are formally specified in ISO/IEC 18004:2006(E). Section 6.4.10 "Bitstream to codeword conversion" specifies the set of 8-bit codewords in the symbol immediately prior to splitting the message into blocks and applying error correction.
+     * 
+     * During decode, error correction is applied and if successful, the message is re-ordered to the state immediately following "Bitstream to codeword coversion." The errorCorrectedPayload corresponds to this sequence of 8-bit codewords.
+     */
     @Generated
     @Selector("errorCorrectedPayload")
     public native NSData errorCorrectedPayload();
 
+    /**
+     * [@property] errorCorrectionLevel
+     * 
+     *    The error correction level of the QR code.
+     * 
+     *    QR Codes support four levels of Reed-Solomon error correction, in increasing error correction capability: L, M, Q, and H.
+     */
     @Generated
     @Selector("errorCorrectionLevel")
     @NInt
@@ -109,8 +133,11 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIQRCodeDescriptor initWithCoder(NSCoder aDecoder);
+    public native CIQRCodeDescriptor initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes a descriptor that can be used as input to CIBarcodeGenerator
+     */
     @Generated
     @Selector("initWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:")
     public native CIQRCodeDescriptor initWithPayloadSymbolVersionMaskPatternErrorCorrectionLevel(
@@ -137,6 +164,13 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * [@property] maskPattern
+     * 
+     *    The data mask pattern for the QR code symbol.
+     * 
+     *    QR Codes support eight data mask patterns, which are used to avoid large black or large white areas inside the symbol body. Valid values range from 0 to 7.
+     */
     @Generated
     @Selector("maskPattern")
     public native byte maskPattern();
@@ -173,6 +207,13 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] symbolVersion
+     * 
+     *    The version property corresponds to the size of the QR Code.
+     * 
+     *    QR Codes are square. ISO/IEC 18004 defines versions from 1 to 40, where a higher symbol version indicates a larger data carrying capacity. This field is required in order to properly interpret the error corrected payload.
+     */
     @Generated
     @Selector("symbolVersion")
     @NInt

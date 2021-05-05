@@ -47,6 +47,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNPhysicsField
+ * 
+ * SCNPhysicsField is an abstract class that describes a force field that applies in the physics world.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -97,6 +102,9 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * A field force with a custom force evaluator.
+     */
     @Generated
     @Selector("customFieldWithEvaluationBlock:")
     public static native SCNPhysicsField customFieldWithEvaluationBlock(
@@ -110,10 +118,19 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Slows an object proportionally to the object’s velocity.
+     * Use this to simulate effects such as friction from motion through the air.
+     */
     @Generated
     @Selector("dragField")
     public static native SCNPhysicsField dragField();
 
+    /**
+     * A force proportional to the charge on the object. An example use of this field is to make objects behavior differently
+     * from one another when they enter a region, or to make an object's behavior different than its mass based behavior
+     * This field models the first part of the Lorentz equation, F = qE
+     */
     @Generated
     @Selector("electricField")
     public static native SCNPhysicsField electricField();
@@ -144,10 +161,20 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Applies a force in the direction of the "direction" vector in the local space. To repel objects, use a negative strength.
+     * The force is the same everywhere in the field. Varies with the mass of the object according to F = ma
+     * The field node's rotation property can be used to orient the gravity in a particular direction.
+     */
     @Generated
     @Selector("linearGravityField")
     public static native SCNPhysicsField linearGravityField();
 
+    /**
+     * A force proportional to the charge on the object and the object’s velocity. 
+     * An example use of this field is to make objects behavior differently from one another when they enter a region, or to make an object's behavior different than its mass based behavior
+     * This field models the second part of the Lorentz equation, F = qvB
+     */
     @Generated
     @Selector("magneticField")
     public static native SCNPhysicsField magneticField();
@@ -158,11 +185,22 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * A time varying differentiable Perlin simplex noise field. A smoothness of 0 means as noisy as possible.
+     * Use this to simulate such effects as fireflies, or snow.
+     * To freeze the noise in place, set animationSpeed to 0.0. Mass is ignored.
+     * You can change the "smoothness" and "animationSpeed" using KVC.
+     */
     @Generated
     @Selector("noiseFieldWithSmoothness:animationSpeed:")
     public static native SCNPhysicsField noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
             @NFloat double speed);
 
+    /**
+     * Applies a force in the direction of the origin of the field in local space. To repel objects, use a negative strength.
+     * The force is proportional to the distance from the field origin. Varies with the mass of the object according to F = ma
+     * The field node's rotation property can be used to orient the gravity in a particular direction.
+     */
     @Generated
     @Selector("radialGravityField")
     public static native SCNPhysicsField radialGravityField();
@@ -179,6 +217,11 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * A Hooke’s law force - a force linearly proportional to distance from the center of the field. An object in this
+     * field will oscillate with a period proportional to the inverse of the mass.
+     * An example use is to keep objects confined to a particular region.
+     */
     @Generated
     @Selector("springField")
     public static native SCNPhysicsField springField();
@@ -191,6 +234,9 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * Just like Noise, except the strength of the noise is proportional to the velocity of the object in the field.
+     */
     @Generated
     @Selector("turbulenceFieldWithSmoothness:animationSpeed:")
     public static native SCNPhysicsField turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
@@ -201,10 +247,21 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @NInt
     public static native long version_static();
 
+    /**
+     * Applies a force tangential to the direction from the sample point to the field's position.
+     * The force will be CCW to the direction. Make the strength negative to apply force in the CW direction.
+     * Amount is proportional to distance from center and the object's mass.
+     * Use this to create effects such as tornadoes.
+     */
     @Generated
     @Selector("vortexField")
     public static native SCNPhysicsField vortexField();
 
+    /**
+     * [@property] categoryBitMask
+     * 
+     * Determines the node physicsBody's categories that will be influenced by the receiver. Defaults to all bit set.
+     */
     @Generated
     @Selector("categoryBitMask")
     @NUInt
@@ -216,6 +273,9 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Direction of the field. Only applies to linear gravity and vortex fields. Defaults to (0,-1,0).
+     */
     @Generated
     @Selector("direction")
     @ByValue
@@ -223,13 +283,19 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Changes the power of the force based on the distance from the center of the field (1 / distance ^ falloffExponent). Defaults to 0.0.
+     */
     @Generated
     @Selector("falloffExponent")
     @NFloat
     public native double falloffExponent();
 
+    /**
+     * Specifies the half extent of the area of effect. Defaults to FLT_MAX.
+     */
     @Generated
     @Selector("halfExtent")
     @ByValue
@@ -241,75 +307,128 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsField initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsField initWithCoder(NSCoder coder);
 
+    /**
+     * Specifies whether force field is active or not. Defaults to YES.
+     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
+    /**
+     * Specifies whether force field is active or not. Defaults to YES.
+     */
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
 
+    /**
+     * If YES, it suppresses any other field in its area. Defaults to NO.
+     */
     @Generated
     @Selector("isExclusive")
     public native boolean isExclusive();
 
+    /**
+     * If YES, it suppresses any other field in its area. Defaults to NO.
+     */
     @Generated
     @Selector("setExclusive:")
     public native void setExclusive(boolean value);
 
+    /**
+     * Distance from the center of the field where the effect is at full strength. Defaults to 1e-6.
+     */
     @Generated
     @Selector("minimumDistance")
     @NFloat
     public native double minimumDistance();
 
+    /**
+     * Offset of origin effect within the area.
+     */
     @Generated
     @Selector("offset")
     @ByValue
     public native SCNVector3 offset();
 
+    /**
+     * Controls whether the force field should apply inside or outside of the area. Defaults to inside.
+     */
     @Generated
     @Selector("scope")
     @NInt
     public native long scope();
 
+    /**
+     * [@property] categoryBitMask
+     * 
+     * Determines the node physicsBody's categories that will be influenced by the receiver. Defaults to all bit set.
+     */
     @Generated
     @Selector("setCategoryBitMask:")
     public native void setCategoryBitMask(@NUInt long value);
 
+    /**
+     * Direction of the field. Only applies to linear gravity and vortex fields. Defaults to (0,-1,0).
+     */
     @Generated
     @Selector("setDirection:")
     public native void setDirection(@ByValue SCNVector3 value);
 
+    /**
+     * Changes the power of the force based on the distance from the center of the field (1 / distance ^ falloffExponent). Defaults to 0.0.
+     */
     @Generated
     @Selector("setFalloffExponent:")
     public native void setFalloffExponent(@NFloat double value);
 
+    /**
+     * Specifies the half extent of the area of effect. Defaults to FLT_MAX.
+     */
     @Generated
     @Selector("setHalfExtent:")
     public native void setHalfExtent(@ByValue SCNVector3 value);
 
+    /**
+     * Distance from the center of the field where the effect is at full strength. Defaults to 1e-6.
+     */
     @Generated
     @Selector("setMinimumDistance:")
     public native void setMinimumDistance(@NFloat double value);
 
+    /**
+     * Offset of origin effect within the area.
+     */
     @Generated
     @Selector("setOffset:")
     public native void setOffset(@ByValue SCNVector3 value);
 
+    /**
+     * Controls whether the force field should apply inside or outside of the area. Defaults to inside.
+     */
     @Generated
     @Selector("setScope:")
     public native void setScope(@NInt long value);
 
+    /**
+     * The strength factor of the force field. Defaults to 1.0.
+     */
     @Generated
     @Selector("setStrength:")
     public native void setStrength(@NFloat double value);
 
+    /**
+     * YES means that the area of effect is rounded within the extent. Defaults to NO.
+     */
     @Generated
     @Selector("setUsesEllipsoidalExtent:")
     public native void setUsesEllipsoidalExtent(boolean value);
 
+    /**
+     * The strength factor of the force field. Defaults to 1.0.
+     */
     @Generated
     @Selector("strength")
     @NFloat
@@ -321,6 +440,9 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
         return supportsSecureCoding();
     }
 
+    /**
+     * YES means that the area of effect is rounded within the extent. Defaults to NO.
+     */
     @Generated
     @Selector("usesEllipsoidalExtent")
     public native boolean usesEllipsoidalExtent();
@@ -330,7 +452,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public interface Block_customFieldWithEvaluationBlock {
         @Generated
         @ByValue
-        SCNVector3 call_customFieldWithEvaluationBlock(@ByValue SCNVector3 arg0, @ByValue SCNVector3 arg1, float arg2,
-                float arg3, double arg4);
+        SCNVector3 call_customFieldWithEvaluationBlock(@ByValue SCNVector3 position, @ByValue SCNVector3 velocity,
+                float mass, float charge, double time);
     }
 }

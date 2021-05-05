@@ -35,4 +35,6 @@ public final class INRequestRideIntentResponseCode {
     @Generated
     private INRequestRideIntentResponseCode() {
     }
+
+    @Generated @NInt public static final long FailureRequiringAppLaunchRideScheduledTooFar = 0x000000000000000AL;
 }

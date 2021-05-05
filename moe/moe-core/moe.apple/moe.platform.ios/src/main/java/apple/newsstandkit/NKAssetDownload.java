@@ -43,6 +43,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NKAssetDownload
+ * 
+ * Represents a downloading asset for an issue.
+ * 
+ * An NKIssue may have one or more assets that together form the structure
+ * of the Newsstand issue. You generate a downloading asset by constructing
+ * an NSURLRequest adding the request to the NKIssue using
+ * -[NKIssue addAssetWithRequest:]. Begin downloading the asset by calling
+ * -[NKAssetDownload downloadWithDelegate:].
+ * Upon download completion, you will need to put your uncompressed content
+ * in the URL specified by -[NKIssue contentURL].
+ */
 @Generated
 @Library("NewsstandKit")
 @Runtime(ObjCRuntime.class)
@@ -154,15 +167,31 @@ public class NKAssetDownload extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property]   URLRequest
+     * 
+     * The NSURLRequest of the download
+     */
     @Generated
     @Selector("URLRequest")
     public native NSURLRequest URLRequest();
 
+    /**
+     * downloadWithDelegate:
+     * 
+     * Begins downloading the asset with the specified delegate. Delegate
+     * may not be nil.
+     */
     @Generated
     @Selector("downloadWithDelegate:")
     public native NSURLConnection downloadWithDelegate(
             @Mapped(ObjCObjectMapper.class) NSURLConnectionDownloadDelegate delegate);
 
+    /**
+     * [@property]   identifier
+     * 
+     * A unique identifier representing the asset.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -171,14 +200,39 @@ public class NKAssetDownload extends NSObject {
     @Selector("init")
     public native NKAssetDownload init();
 
+    /**
+     * back-pointer to the issue this asset is associated with
+     */
     @Generated
     @Selector("issue")
     public native NKIssue issue();
 
+    /**
+     * [@property]   userInfo
+     * 
+     * Application specific information that is saved with the asset. Can be nil.
+     * 
+     * You may add arbitrary key-value pairs to this dictionary. However, the keys
+     * and values must be valid property-list types; if any are not, an exception is raised.
+     * Using this property you can save download related information such as file name/paths,
+     * encoding mechanisms, custom identifiers, etc.  However, performance concerns dictate
+     * that you should make this content as minimal as possible.
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
+    /**
+     * [@property]   userInfo
+     * 
+     * Application specific information that is saved with the asset. Can be nil.
+     * 
+     * You may add arbitrary key-value pairs to this dictionary. However, the keys
+     * and values must be valid property-list types; if any are not, an exception is raised.
+     * Using this property you can save download related information such as file name/paths,
+     * encoding mechanisms, custom identifiers, etc.  However, performance concerns dictate
+     * that you should make this content as minimal as possible.
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

@@ -97,10 +97,12 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * The default sound used for notifications.
+     */
     @Generated
     @Selector("defaultSound")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultSound();
+    public static native UNNotificationSound defaultSound();
 
     @Generated
     @Selector("description")
@@ -150,6 +152,9 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The sound file to be played for the notification. The sound must be in the Library/Sounds folder of the app's data container or the Library/Sounds folder of an app group data container. If the file is not found in a container, the system will look in the app's bundle.
+     */
     @Generated
     @Selector("soundNamed:")
     public static native UNNotificationSound soundNamed(String name);
@@ -175,7 +180,7 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -183,11 +188,42 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationSound initWithCoder(NSCoder aDecoder);
+    public native UNNotificationSound initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * The name of a sound file to be played for an critical alert. Critical alerts will bypass the mute switch and Do Not Disturb. The sound file must be contained in the app’s bundle or in the Library/Sounds folder of the app’s data container. If files exist in both locations then the file in the app’s data container will be preferred.
+     */
+    @Generated
+    @Selector("criticalSoundNamed:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object criticalSoundNamed(String name);
+
+    /**
+     * The name of a sound file to be played for an critical alert with a custom audio volume level. Critical alerts will bypass the mute switch and Do Not Disturb. The sound file must be contained in the app’s bundle or in the Library/Sounds folder of the app’s data container. If files exist in both locations then the file in the app’s data container will be preferred. The audio volume is expected to be between 0.0f and 1.0f.
+     */
+    @Generated
+    @Selector("criticalSoundNamed:withAudioVolume:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object criticalSoundNamedWithAudioVolume(String name, float volume);
+
+    /**
+     * The default sound used for critical alerts. Critical alerts will bypass the mute switch and Do Not Disturb.
+     */
+    @Generated
+    @Selector("defaultCriticalSound")
+    public static native UNNotificationSound defaultCriticalSound();
+
+    /**
+     * The default sound used for critical alerts with a custom audio volume level. Critical alerts will bypass the mute switch and Do Not Disturb. The audio volume is expected to be between 0.0f and 1.0f.
+     */
+    @Generated
+    @Selector("defaultCriticalSoundWithAudioVolume:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object defaultCriticalSoundWithAudioVolume(float volume);
 }

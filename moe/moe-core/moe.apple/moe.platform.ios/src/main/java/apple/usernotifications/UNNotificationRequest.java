@@ -133,6 +133,9 @@ public class UNNotificationRequest extends NSObject implements NSCopying, NSSecu
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Use a nil trigger to deliver immediately.
+     */
     @Generated
     @Selector("requestWithIdentifier:content:trigger:")
     public static native UNNotificationRequest requestWithIdentifierContentTrigger(String identifier,
@@ -163,6 +166,9 @@ public class UNNotificationRequest extends NSObject implements NSCopying, NSSecu
     @NInt
     public static native long version_static();
 
+    /**
+     * The content that will be shown on the notification.
+     */
     @Generated
     @Selector("content")
     public native UNNotificationContent content();
@@ -175,8 +181,11 @@ public class UNNotificationRequest extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The unique identifier for this notification request. It can be used to replace or remove a pending notification request or a delivered notification.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -187,7 +196,7 @@ public class UNNotificationRequest extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationRequest initWithCoder(NSCoder aDecoder);
+    public native UNNotificationRequest initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -195,6 +204,9 @@ public class UNNotificationRequest extends NSObject implements NSCopying, NSSecu
         return supportsSecureCoding();
     }
 
+    /**
+     * The trigger that will or did cause the notification to be delivered. A nil trigger means deliver immediately.
+     */
     @Generated
     @Selector("trigger")
     public native UNNotificationTrigger trigger();

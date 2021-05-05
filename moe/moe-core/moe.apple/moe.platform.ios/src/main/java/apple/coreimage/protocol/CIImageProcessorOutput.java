@@ -19,6 +19,8 @@ package apple.coreimage.protocol;
 import apple.coregraphics.opaque.IOSurfaceRef;
 import apple.coregraphics.struct.CGRect;
 import apple.corevideo.opaque.CVBufferRef;
+import apple.metal.protocol.MTLCommandBuffer;
+import apple.metal.protocol.MTLTexture;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -36,38 +38,62 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CIImageProcessorOutput")
 public interface CIImageProcessorOutput {
+    /**
+     * The base address of the output buffer that the processor block can write output pixels to.
+     */
     @Generated
     @Selector("baseAddress")
     VoidPtr baseAddress();
 
+    /**
+     * The bytes per row of the output buffer that the processor block can write to.
+     */
     @Generated
     @Selector("bytesPerRow")
     @NUInt
     long bytesPerRow();
 
+    /**
+     * The pixel format of the output buffer that the processor block can write to.
+     */
     @Generated
     @Selector("format")
     int format();
 
+    /**
+     * Returns a MTLCommandBuffer that can be used for encoding commands (if rendering using Metal).
+     */
     @Generated
     @Selector("metalCommandBuffer")
     @MappedReturn(ObjCObjectMapper.class)
-    Object metalCommandBuffer();
+    MTLCommandBuffer metalCommandBuffer();
 
+    /**
+     * A MTLTexture object that can be bound as output (if processing using Metal).
+     */
     @Generated
     @Selector("metalTexture")
     @MappedReturn(ObjCObjectMapper.class)
-    Object metalTexture();
+    MTLTexture metalTexture();
 
+    /**
+     * A output CVPixelBuffer that the processor block can write to.
+     */
     @Generated
     @Selector("pixelBuffer")
     CVBufferRef pixelBuffer();
 
+    /**
+     * The rectangular region of the output image that the processor block must provide.
+     */
     @Generated
     @Selector("region")
     @ByValue
     CGRect region();
 
+    /**
+     * An output IOSurface that the processor block can write to.
+     */
     @Generated
     @Selector("surface")
     IOSurfaceRef surface();

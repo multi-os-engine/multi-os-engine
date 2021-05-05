@@ -21,6 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MPSCNNConvolutionFlags {
+    /**
+     * Use default options
+     */
     @Generated @NUInt public static final long MPSCNNConvolutionFlagsNone = 0x0000000000000000L;
 
     @Generated

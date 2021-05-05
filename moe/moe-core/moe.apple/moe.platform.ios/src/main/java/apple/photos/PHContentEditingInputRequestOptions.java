@@ -152,6 +152,9 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Block to be provided by the client, used to determine if the given adjustment data can be handled (i.e. can be decoded and rendered).
+     */
     @Generated
     @Selector("canHandleAdjustmentData")
     @ObjCBlock(name = "call_canHandleAdjustmentData_ret")
@@ -161,10 +164,16 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     @Selector("init")
     public native PHContentEditingInputRequestOptions init();
 
+    /**
+     * Used if data is not available locally and needs to be retrieved from iCloud.
+     */
     @Generated
     @Selector("isNetworkAccessAllowed")
     public native boolean isNetworkAccessAllowed();
 
+    /**
+     * Used if data is not available locally and needs to be retrieved from iCloud.
+     */
     @Generated
     @Selector("setNetworkAccessAllowed:")
     public native void setNetworkAccessAllowed(boolean value);
@@ -174,6 +183,9 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     @ObjCBlock(name = "call_progressHandler_ret")
     public native Block_progressHandler_ret progressHandler();
 
+    /**
+     * Block to be provided by the client, used to determine if the given adjustment data can be handled (i.e. can be decoded and rendered).
+     */
     @Generated
     @Selector("setCanHandleAdjustmentData:")
     public native void setCanHandleAdjustmentData(

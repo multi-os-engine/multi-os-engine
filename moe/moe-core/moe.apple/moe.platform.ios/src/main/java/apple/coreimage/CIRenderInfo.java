@@ -23,6 +23,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An Xcode quicklook of this object will show a graph visualization of the render
+ * with detailed timing information.
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -107,6 +111,9 @@ public class CIRenderInfo extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * This property will return how much time a render spent executing kernels.
+     */
     @Generated
     @Selector("kernelExecutionTime")
     public native double kernelExecutionTime();
@@ -121,11 +128,19 @@ public class CIRenderInfo extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * This property will return how many passes the render requires.
+     * If passCount is 1 than the render can be fully concatinated and no
+     * intermediate buffers will be required.
+     */
     @Generated
     @Selector("passCount")
     @NInt
     public native long passCount();
 
+    /**
+     * This property will return how many pixels a render produced executing kernels.
+     */
     @Generated
     @Selector("pixelsProcessed")
     @NInt

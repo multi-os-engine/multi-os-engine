@@ -163,6 +163,9 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
     @NInt
     public static native long version_static();
 
+    /**
+     * The UNNotificationActions in the order they will be displayed.
+     */
     @Generated
     @Selector("actions")
     public native NSArray<? extends UNNotificationAction> actions();
@@ -175,8 +178,11 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The unique identifier for this category. The UNNotificationCategory's actions will be displayed on notifications when the UNNotificationCategory's identifier matches the UNNotificationRequest's categoryIdentifier.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -187,8 +193,11 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationCategory initWithCoder(NSCoder aDecoder);
+    public native UNNotificationCategory initWithCoder(NSCoder coder);
 
+    /**
+     * The intents supported support for notifications of this category. See <Intents/INIntentIdentifiers.h> for possible values.
+     */
     @Generated
     @Selector("intentIdentifiers")
     public native NSArray<String> intentIdentifiers();
@@ -210,7 +219,28 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
             String identifier, NSArray<? extends UNNotificationAction> actions, NSArray<String> intentIdentifiers,
             String hiddenPreviewsBodyPlaceholder, @NUInt long options);
 
+    /**
+     * The format string that will replace the notification body if previews are hidden.
+     */
     @Generated
     @Selector("hiddenPreviewsBodyPlaceholder")
     public native String hiddenPreviewsBodyPlaceholder();
+
+    /**
+     * A format string for a summary description when notifications from this category are grouped together.
+     * It should contain descriptive text and format arguments that will be replaced with the information
+     * from the notifications that have been grouped together. The arguments are replaced with the number
+     * of notifications and the list created by joining the argument in each grouped notification.
+     * For example: "%u new messages from %@".
+     * The arguments list is optional, "%u new messages" is also accepted.
+     */
+    @Generated
+    @Selector("categorySummaryFormat")
+    public native String categorySummaryFormat();
+
+    @Generated
+    @Selector("categoryWithIdentifier:actions:intentIdentifiers:hiddenPreviewsBodyPlaceholder:categorySummaryFormat:options:")
+    public static native UNNotificationCategory categoryWithIdentifierActionsIntentIdentifiersHiddenPreviewsBodyPlaceholderCategorySummaryFormatOptions(
+            String identifier, NSArray<? extends UNNotificationAction> actions, NSArray<String> intentIdentifiers,
+            String hiddenPreviewsBodyPlaceholder, String categorySummaryFormat, @NUInt long options);
 }

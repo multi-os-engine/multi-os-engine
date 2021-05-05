@@ -32,11 +32,17 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKTurnBasedMatchmakerViewControllerDelegate")
 public interface GKTurnBasedMatchmakerViewControllerDelegate {
+    /**
+     * Matchmaking has failed with an error
+     */
     @Generated
     @Selector("turnBasedMatchmakerViewController:didFailWithError:")
     void turnBasedMatchmakerViewControllerDidFailWithError(GKTurnBasedMatchmakerViewController viewController,
             NSError error);
 
+    /**
+     * Deprecated
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -46,6 +52,9 @@ public interface GKTurnBasedMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Deprectated
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -55,6 +64,9 @@ public interface GKTurnBasedMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The user has cancelled
+     */
     @Generated
     @Selector("turnBasedMatchmakerViewControllerWasCancelled:")
     void turnBasedMatchmakerViewControllerWasCancelled(GKTurnBasedMatchmakerViewController viewController);

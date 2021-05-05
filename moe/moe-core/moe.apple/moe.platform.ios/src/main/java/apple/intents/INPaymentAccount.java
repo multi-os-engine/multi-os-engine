@@ -106,7 +106,7 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -119,18 +119,18 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPaymentAccount initWithCoder(NSCoder aDecoder);
+    public native INPaymentAccount initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNickname:number:accountType:organizationName:")
     public native INPaymentAccount initWithNicknameNumberAccountTypeOrganizationName(INSpeakableString nickname,
-            String accountNumber, @NInt long accountType, INSpeakableString organizationName);
+            String number, @NInt long accountType, INSpeakableString organizationName);
 
     @Generated
     @Selector("initWithNickname:number:accountType:organizationName:balance:secondaryBalance:")
     public native INPaymentAccount initWithNicknameNumberAccountTypeOrganizationNameBalanceSecondaryBalance(
-            INSpeakableString nickname, String accountNumber, @NInt long accountType,
-            INSpeakableString organizationName, INBalanceAmount balance, INBalanceAmount secondaryBalance);
+            INSpeakableString nickname, String number, @NInt long accountType, INSpeakableString organizationName,
+            INBalanceAmount balance, INBalanceAmount secondaryBalance);
 
     @Generated
     @Selector("instanceMethodForSelector:")

@@ -22,11 +22,29 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class CSIndexErrorCode {
     @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFFFFFFL;
+    /**
+     * The indexer was unavailable
+     */
     @Generated @NInt public static final long IndexUnavailableError = 0xFFFFFFFFFFFFFC18L;
+    /**
+     * The CSSearchableItem is invalid for some reason
+     */
     @Generated @NInt public static final long InvalidItemError = 0xFFFFFFFFFFFFFC17L;
+    /**
+     * The provided clientState was not valid for some reason
+     */
     @Generated @NInt public static final long InvalidClientStateError = 0xFFFFFFFFFFFFFC16L;
+    /**
+     * There was an error trying to communicate with the remote process
+     */
     @Generated @NInt public static final long RemoteConnectionError = 0xFFFFFFFFFFFFFC15L;
+    /**
+     * Quota for bundle was exceeded
+     */
     @Generated @NInt public static final long QuotaExceeded = 0xFFFFFFFFFFFFFC14L;
+    /**
+     * Indexing isn't supported on this device
+     */
     @Generated @NInt public static final long IndexingUnsupported = 0xFFFFFFFFFFFFFC13L;
 
     @Generated

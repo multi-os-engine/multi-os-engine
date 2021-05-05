@@ -158,6 +158,11 @@ public class CBPeer extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * [@property] identifier
+     * 
+     * The unique, persistent identifier associated with the peer.
+     */
     @Generated
     @Selector("identifier")
     public native NSUUID identifier();

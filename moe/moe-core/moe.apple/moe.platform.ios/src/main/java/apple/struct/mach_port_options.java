@@ -25,7 +25,7 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 
 @Generated
-@Structure()
+@Structure(alignment = 8)
 public final class mach_port_options extends StructObject {
     private static long __natjCache;
 
@@ -44,27 +44,38 @@ public final class mach_port_options extends StructObject {
     }
 
     @Generated
+    public mach_port_options(int flags, @ByValue mach_port_limits mpl) {
+        super(mach_port_options.class);
+        setFlags(flags);
+        setMpl(mpl);
+    }
+
+    /**
+     * Flags defining attributes for port
+     */
+    @Generated
     @StructureField(order = 0, isGetter = true)
     public native int flags();
 
+    /**
+     * Flags defining attributes for port
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setFlags(int value);
 
+    /**
+     * Message queue limit for port
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native mach_port_limits mpl();
 
+    /**
+     * Message queue limit for port
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMpl(@ByValue mach_port_limits value);
-
-    @Generated
-    @StructureField(order = 2, isGetter = true, count = 2)
-    public native long reserved(int field_idx);
-
-    @Generated
-    @StructureField(order = 2, isGetter = false, count = 2)
-    public native void setReserved(long value, int field_idx);
 }

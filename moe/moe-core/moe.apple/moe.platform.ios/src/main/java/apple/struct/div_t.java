@@ -49,18 +49,30 @@ public final class div_t extends StructObject {
         setRem(rem);
     }
 
+    /**
+     * quotient
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int quot();
 
+    /**
+     * quotient
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setQuot(int value);
 
+    /**
+     * remainder
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int rem();
 
+    /**
+     * remainder
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setRem(int value);

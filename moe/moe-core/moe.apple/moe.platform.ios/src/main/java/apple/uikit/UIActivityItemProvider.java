@@ -22,6 +22,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSOperation;
 import apple.foundation.NSSet;
+import apple.linkpresentation.LPLinkMetadata;
 import apple.uikit.protocol.UIActivityItemSource;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -155,6 +156,9 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     @NInt
     public static native long version_static();
 
+    /**
+     * activity type available when -item is called. nil at other times. use this in your -item method to customize the data to return
+     */
     @Generated
     @Selector("activityType")
     public native String activityType();
@@ -192,11 +196,17 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     @Selector("init")
     public native UIActivityItemProvider init();
 
+    /**
+     * placeHolder is the return value for -activityViewControllerPlaceholderItem:
+     */
     @Generated
     @Selector("initWithPlaceholderItem:")
     public native UIActivityItemProvider initWithPlaceholderItem(
             @Mapped(ObjCObjectMapper.class) Object placeholderItem);
 
+    /**
+     * called on secondary thread when user selects an activity. you must subclass and return a non-nil value. The item can use the UIActivityItemSource protocol to return extra information
+     */
     @Generated
     @Selector("item")
     @MappedReturn(ObjCObjectMapper.class)
@@ -206,4 +216,9 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     @Selector("placeholderItem")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object placeholderItem();
+
+    @Generated
+    @IsOptional
+    @Selector("activityViewControllerLinkMetadata:")
+    public native LPLinkMetadata activityViewControllerLinkMetadata(UIActivityViewController activityViewController);
 }

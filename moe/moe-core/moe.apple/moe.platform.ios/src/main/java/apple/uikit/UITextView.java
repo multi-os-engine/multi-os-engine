@@ -19,6 +19,7 @@ package apple.uikit;
 import apple.NSObject;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
+import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
@@ -28,11 +29,17 @@ import apple.foundation.NSItemProvider;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.struct.NSRange;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIContentSizeCategoryAdjusting;
+import apple.uikit.protocol.UITextDragDelegate;
 import apple.uikit.protocol.UITextDraggable;
+import apple.uikit.protocol.UITextDropDelegate;
 import apple.uikit.protocol.UITextDroppable;
 import apple.uikit.protocol.UITextInput;
+import apple.uikit.protocol.UITextInputDelegate;
+import apple.uikit.protocol.UITextInputTokenizer;
 import apple.uikit.protocol.UITextPasteConfigurationSupporting;
+import apple.uikit.protocol.UITextPasteDelegate;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -143,7 +150,7 @@ public class UITextView extends UIScrollView
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -156,8 +163,8 @@ public class UITextView extends UIScrollView
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -363,6 +370,9 @@ public class UITextView extends UIScrollView
     @Selector("adjustsFontForContentSizeCategory")
     public native boolean adjustsFontForContentSizeCategory();
 
+    /**
+     * defaults to NO
+     */
     @Generated
     @Selector("allowsEditingTextAttributes")
     public native boolean allowsEditingTextAttributes();
@@ -386,7 +396,7 @@ public class UITextView extends UIScrollView
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -402,7 +412,8 @@ public class UITextView extends UIScrollView
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -463,6 +474,9 @@ public class UITextView extends UIScrollView
     public native UITextRange characterRangeByExtendingPositionInDirection(UITextPosition position,
             @NInt long direction);
 
+    /**
+     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field. changing the selection will automatically set this to NO.
+     */
     @Generated
     @Selector("clearsOnInsertion")
     public native boolean clearsOnInsertion();
@@ -543,12 +557,15 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITextView initWithCoder(NSCoder aDecoder);
+    public native UITextView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
     public native UITextView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Create a new text view with the specified text container (can be nil) - this is the new designated initializer for this class
+     */
     @Generated
     @Selector("initWithFrame:textContainer:")
     public native UITextView initWithFrameTextContainer(@ByValue CGRect frame, NSTextContainer textContainer);
@@ -560,8 +577,12 @@ public class UITextView extends UIScrollView
     @Generated
     @Selector("inputDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object inputDelegate();
+    public native UITextInputDelegate inputDelegate();
 
+    /**
+     * Presented when object becomes first responder.  If set to nil, reverts to following responder chain.  If
+     * set while first responder, will not take effect until reloadInputViews is called.
+     */
     @Generated
     @Selector("inputView")
     public native UIView inputView();
@@ -599,10 +620,16 @@ public class UITextView extends UIScrollView
     @Selector("setSecureTextEntry:")
     public native void setSecureTextEntry(boolean value);
 
+    /**
+     * toggle selectability, which controls the ability of the user to select content and interact with URLs & attachments. On tvOS this also makes the text view focusable.
+     */
     @Generated
     @Selector("isSelectable")
     public native boolean isSelectable();
 
+    /**
+     * toggle selectability, which controls the ability of the user to select content and interact with URLs & attachments. On tvOS this also makes the text view focusable.
+     */
     @Generated
     @Selector("setSelectable:")
     public native void setSelectable(boolean value);
@@ -619,10 +646,16 @@ public class UITextView extends UIScrollView
     @NInt
     public native long keyboardType();
 
+    /**
+     * Convenience accessors (access through the text container)
+     */
     @Generated
     @Selector("layoutManager")
     public native NSLayoutManager layoutManager();
 
+    /**
+     * Style for links
+     */
     @Generated
     @Selector("linkTextAttributes")
     public native NSDictionary<String, ?> linkTextAttributes();
@@ -633,7 +666,7 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("markedTextStyle")
-    public native NSDictionary<?, ?> markedTextStyle();
+    public native NSDictionary<String, ?> markedTextStyle();
 
     @Generated
     @Selector("offsetFromPosition:toPosition:")
@@ -695,12 +728,15 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("selectionRectsForRange:")
-    public native NSArray<?> selectionRectsForRange(UITextRange range);
+    public native NSArray<? extends UITextSelectionRect> selectionRectsForRange(UITextRange range);
 
     @Generated
     @Selector("setAdjustsFontForContentSizeCategory:")
     public native void setAdjustsFontForContentSizeCategory(boolean value);
 
+    /**
+     * defaults to NO
+     */
     @Generated
     @Selector("setAllowsEditingTextAttributes:")
     public native void setAllowsEditingTextAttributes(boolean value);
@@ -723,6 +759,9 @@ public class UITextView extends UIScrollView
     @Selector("setBaseWritingDirection:forRange:")
     public native void setBaseWritingDirectionForRange(@NInt long writingDirection, UITextRange range);
 
+    /**
+     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field. changing the selection will automatically set this to NO.
+     */
     @Generated
     @Selector("setClearsOnInsertion:")
     public native void setClearsOnInsertion(boolean value);
@@ -762,10 +801,10 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("setInputDelegate:")
-    public native void setInputDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setInputDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextInputDelegate value);
 
     @Generated
-    public void setInputDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setInputDelegate(@Mapped(ObjCObjectMapper.class) UITextInputDelegate value) {
         Object __old = inputDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -776,6 +815,10 @@ public class UITextView extends UIScrollView
         }
     }
 
+    /**
+     * Presented when object becomes first responder.  If set to nil, reverts to following responder chain.  If
+     * set while first responder, will not take effect until reloadInputViews is called.
+     */
     @Generated
     @Selector("setInputView:")
     public native void setInputView(UIView value);
@@ -790,6 +833,9 @@ public class UITextView extends UIScrollView
     @Selector("setKeyboardType:")
     public native void setKeyboardType(@NInt long value);
 
+    /**
+     * Style for links
+     */
     @Generated
     @Selector("setLinkTextAttributes:")
     public native void setLinkTextAttributes(NSDictionary<String, ?> value);
@@ -800,7 +846,7 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("setMarkedTextStyle:")
-    public native void setMarkedTextStyle(NSDictionary<?, ?> value);
+    public native void setMarkedTextStyle(NSDictionary<String, ?> value);
 
     @Generated
     @IsOptional
@@ -829,6 +875,9 @@ public class UITextView extends UIScrollView
     @Selector("setText:")
     public native void setText(String value);
 
+    /**
+     * default is NSLeftTextAlignment
+     */
     @Generated
     @Selector("setTextAlignment:")
     public native void setTextAlignment(@NInt long value);
@@ -837,6 +886,9 @@ public class UITextView extends UIScrollView
     @Selector("setTextColor:")
     public native void setTextColor(UIColor value);
 
+    /**
+     * Inset the text container's layout area within the text view's content area
+     */
     @Generated
     @Selector("setTextContainerInset:")
     public native void setTextContainerInset(@ByValue UIEdgeInsets value);
@@ -846,6 +898,9 @@ public class UITextView extends UIScrollView
     @Selector("setTextContentType:")
     public native void setTextContentType(String value);
 
+    /**
+     * automatically resets when the selection changes
+     */
     @Generated
     @Selector("setTypingAttributes:")
     public native void setTypingAttributes(NSDictionary<String, ?> value);
@@ -865,6 +920,9 @@ public class UITextView extends UIScrollView
     @Selector("text")
     public native String text();
 
+    /**
+     * default is NSLeftTextAlignment
+     */
     @Generated
     @Selector("textAlignment")
     @NInt
@@ -874,10 +932,16 @@ public class UITextView extends UIScrollView
     @Selector("textColor")
     public native UIColor textColor();
 
+    /**
+     * Get the text container for the text view
+     */
     @Generated
     @Selector("textContainer")
     public native NSTextContainer textContainer();
 
+    /**
+     * Inset the text container's layout area within the text view's content area
+     */
     @Generated
     @Selector("textContainerInset")
     @ByValue
@@ -914,8 +978,11 @@ public class UITextView extends UIScrollView
     @Generated
     @Selector("tokenizer")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object tokenizer();
+    public native UITextInputTokenizer tokenizer();
 
+    /**
+     * automatically resets when the selection changes
+     */
     @Generated
     @Selector("typingAttributes")
     public native NSDictionary<String, ?> typingAttributes();
@@ -949,7 +1016,7 @@ public class UITextView extends UIScrollView
     @Generated
     @Selector("pasteDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object pasteDelegate();
+    public native UITextPasteDelegate pasteDelegate();
 
     @Generated
     @IsOptional
@@ -962,10 +1029,10 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("setPasteDelegate:")
-    public native void setPasteDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setPasteDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextPasteDelegate value);
 
     @Generated
-    public void setPasteDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setPasteDelegate(@Mapped(ObjCObjectMapper.class) UITextPasteDelegate value) {
         Object __old = pasteDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -993,10 +1060,10 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("setTextDragDelegate:")
-    public native void setTextDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setTextDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextDragDelegate value);
 
     @Generated
-    public void setTextDragDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setTextDragDelegate(@Mapped(ObjCObjectMapper.class) UITextDragDelegate value) {
         Object __old = textDragDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1013,10 +1080,10 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("setTextDropDelegate:")
-    public native void setTextDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setTextDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextDropDelegate value);
 
     @Generated
-    public void setTextDropDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setTextDropDelegate(@Mapped(ObjCObjectMapper.class) UITextDropDelegate value) {
         Object __old = textDropDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1048,7 +1115,7 @@ public class UITextView extends UIScrollView
     @Generated
     @Selector("textDragDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object textDragDelegate();
+    public native UITextDragDelegate textDragDelegate();
 
     @Generated
     @Selector("textDragInteraction")
@@ -1062,9 +1129,60 @@ public class UITextView extends UIScrollView
     @Generated
     @Selector("textDropDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object textDropDelegate();
+    public native UITextDropDelegate textDropDelegate();
 
     @Generated
     @Selector("textDropInteraction")
     public native UIDropInteraction textDropInteraction();
+
+    @Generated
+    @IsOptional
+    @Selector("insertText:alternatives:style:")
+    public native void insertTextAlternativesStyle(String text, NSArray<String> alternatives, @NInt long style);
+
+    @Generated
+    @IsOptional
+    @Selector("insertTextPlaceholderWithSize:")
+    public native UITextPlaceholder insertTextPlaceholderWithSize(@ByValue CGSize size);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @IsOptional
+    @Selector("passwordRules")
+    public native UITextInputPasswordRules passwordRules();
+
+    @Generated
+    @IsOptional
+    @Selector("removeTextPlaceholder:")
+    public native void removeTextPlaceholder(UITextPlaceholder textPlaceholder);
+
+    @Generated
+    @IsOptional
+    @Selector("setAttributedMarkedText:selectedRange:")
+    public native void setAttributedMarkedTextSelectedRange(NSAttributedString markedText,
+            @ByValue NSRange selectedRange);
+
+    @Generated
+    @IsOptional
+    @Selector("setPasswordRules:")
+    public native void setPasswordRules(UITextInputPasswordRules value);
+
+    /**
+     * When turned on, this changes the rendering scale of the text to match the standard text scaling and preserves the original font point sizes when the contents of the text view are copied to the pasteboard.  Apps that show a lot of text content, such as a text viewer or editor, should turn this on and use the standard text scaling.
+     */
+    @Generated
+    @Selector("setUsesStandardTextScaling:")
+    public native void setUsesStandardTextScaling(boolean value);
+
+    /**
+     * When turned on, this changes the rendering scale of the text to match the standard text scaling and preserves the original font point sizes when the contents of the text view are copied to the pasteboard.  Apps that show a lot of text content, such as a text viewer or editor, should turn this on and use the standard text scaling.
+     */
+    @Generated
+    @Selector("usesStandardTextScaling")
+    public native boolean usesStandardTextScaling();
 }

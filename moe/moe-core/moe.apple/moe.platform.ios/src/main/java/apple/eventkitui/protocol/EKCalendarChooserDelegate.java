@@ -37,6 +37,10 @@ public interface EKCalendarChooserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * These are called when the corresponding button is pressed to dismiss the
+     * controller. It is up to the recipient to dismiss the chooser.
+     */
     @Generated
     @IsOptional
     @Selector("calendarChooserDidFinish:")
@@ -44,6 +48,9 @@ public interface EKCalendarChooserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called whenever the selection is changed by the user
+     */
     @Generated
     @IsOptional
     @Selector("calendarChooserSelectionDidChange:")

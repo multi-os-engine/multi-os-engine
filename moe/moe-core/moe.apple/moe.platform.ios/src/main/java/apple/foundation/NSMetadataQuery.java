@@ -155,6 +155,9 @@ public class NSMetadataQuery extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native NSMetadataQueryDelegate delegate();
 
+    /**
+     * these nest
+     */
     @Generated
     @Selector("disableUpdates")
     public native void disableUpdates();
@@ -173,6 +176,9 @@ public class NSMetadataQuery extends NSObject {
     public native void enumerateResultsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateResultsWithOptionsUsingBlock") Block_enumerateResultsWithOptionsUsingBlock block);
 
+    /**
+     * array of NSMetadataQueryResultGroups, for first grouping attribute
+     */
     @Generated
     @Selector("groupedResults")
     public native NSArray<? extends NSMetadataQueryResultGroup> groupedResults();
@@ -206,6 +212,10 @@ public class NSMetadataQuery extends NSObject {
     @Selector("notificationBatchingInterval")
     public native double notificationBatchingInterval();
 
+    /**
+     * items can be a mixture of NSMetadataItem, NSURL objects (file URLs only)
+     * and/or string paths; the getter returns the same mixture as was set
+     */
     @Generated
     @Selector("operationQueue")
     public native NSOperationQueue operationQueue();
@@ -219,15 +229,27 @@ public class NSMetadataQuery extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object resultAtIndex(@NUInt long idx);
 
+    /**
+     * Results are NSMetadataItems, or whatever the delegate replaces that with
+     */
     @Generated
     @Selector("resultCount")
     @NUInt
     public native long resultCount();
 
+    /**
+     * this is for K-V Bindings, and causes side-effects on the query
+     */
     @Generated
     @Selector("results")
     public native NSArray<?> results();
 
+    /**
+     * scopes is an NSArray of NSURL objects (file URLs only) and/or string
+     * paths and/or the special string constants below, which specifies the
+     * locations to which the search is limited; an empty array means no
+     * limits, which is the default state.
+     */
     @Generated
     @Selector("searchItems")
     public native NSArray<?> searchItems();
@@ -260,6 +282,10 @@ public class NSMetadataQuery extends NSObject {
     @Selector("setNotificationBatchingInterval:")
     public native void setNotificationBatchingInterval(double value);
 
+    /**
+     * items can be a mixture of NSMetadataItem, NSURL objects (file URLs only)
+     * and/or string paths; the getter returns the same mixture as was set
+     */
     @Generated
     @Selector("setOperationQueue:")
     public native void setOperationQueue(NSOperationQueue value);
@@ -268,6 +294,12 @@ public class NSMetadataQuery extends NSObject {
     @Selector("setPredicate:")
     public native void setPredicate(NSPredicate value);
 
+    /**
+     * scopes is an NSArray of NSURL objects (file URLs only) and/or string
+     * paths and/or the special string constants below, which specifies the
+     * locations to which the search is limited; an empty array means no
+     * limits, which is the default state.
+     */
     @Generated
     @Selector("setSearchItems:")
     public native void setSearchItems(NSArray<?> value);
@@ -288,6 +320,9 @@ public class NSMetadataQuery extends NSObject {
     @Selector("sortDescriptors")
     public native NSArray<? extends NSSortDescriptor> sortDescriptors();
 
+    /**
+     * optional operation queue for notifications and delegate method calls
+     */
     @Generated
     @Selector("startQuery")
     public native boolean startQuery();
@@ -300,6 +335,9 @@ public class NSMetadataQuery extends NSObject {
     @Selector("valueListAttributes")
     public native NSArray<String> valueListAttributes();
 
+    /**
+     * values are arrays of NSMetadataQueryAttributeValueTuple
+     */
     @Generated
     @Selector("valueLists")
     public native NSDictionary<String, ? extends NSArray<? extends NSMetadataQueryAttributeValueTuple>> valueLists();
@@ -313,15 +351,15 @@ public class NSMetadataQuery extends NSObject {
     @Generated
     public interface Block_enumerateResultsUsingBlock {
         @Generated
-        void call_enumerateResultsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        void call_enumerateResultsUsingBlock(@Mapped(ObjCObjectMapper.class) Object result, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateResultsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateResultsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        void call_enumerateResultsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object result, @NUInt long idx,
+                BoolPtr stop);
     }
 }

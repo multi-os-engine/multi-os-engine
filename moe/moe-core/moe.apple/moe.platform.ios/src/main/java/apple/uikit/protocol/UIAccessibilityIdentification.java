@@ -28,10 +28,18 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIAccessibilityIdentification")
 public interface UIAccessibilityIdentification {
+    /**
+     * A string that identifies the user interface element.
+     * default == nil
+     */
     @Generated
     @Selector("accessibilityIdentifier")
     String accessibilityIdentifier();
 
+    /**
+     * A string that identifies the user interface element.
+     * default == nil
+     */
     @Generated
     @Selector("setAccessibilityIdentifier:")
     void setAccessibilityIdentifier(String value);

@@ -40,6 +40,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An NSLayoutAnchor represents an edge or dimension of a layout item.  Its concrete subclasses allow concise creation of constraints.  The idea is that instead of invoking +[NSLayoutConstraint constraintWithItem: attribute: relatedBy: toItem: attribute: multiplier: constant:] directly, you can instead do something like this:
+ * 
+ * [myView.topAnchor constraintEqualToAnchor:otherView.topAnchor constant:10];
+ * 
+ * The -constraint* methods are available in multiple flavors to support use of different relations and omission of unused options.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -151,10 +158,16 @@ public class NSLayoutAnchor<_AnchorType> extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * These methods return an inactive constraint of the form thisAnchor = otherAnchor.
+     */
     @Generated
     @Selector("constraintEqualToAnchor:")
     public native NSLayoutConstraint constraintEqualToAnchor(NSLayoutAnchor<_AnchorType> anchor);
 
+    /**
+     * These methods return an inactive constraint of the form thisAnchor = otherAnchor + constant.
+     */
     @Generated
     @Selector("constraintEqualToAnchor:constant:")
     public native NSLayoutConstraint constraintEqualToAnchorConstant(NSLayoutAnchor<_AnchorType> anchor,

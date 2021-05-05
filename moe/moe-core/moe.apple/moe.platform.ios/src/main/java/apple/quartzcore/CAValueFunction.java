@@ -159,7 +159,7 @@ public class CAValueFunction extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -167,7 +167,7 @@ public class CAValueFunction extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAValueFunction initWithCoder(NSCoder aDecoder);
+    public native CAValueFunction initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("name")

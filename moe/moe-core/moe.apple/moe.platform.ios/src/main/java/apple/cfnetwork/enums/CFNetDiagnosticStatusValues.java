@@ -18,12 +18,33 @@ package apple.cfnetwork.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ *  CFNetDiagnosticStatusValues
+ * 
+ *  Discussion:
+ * Values for CFNetDiagnosticStatus
+ */
 @Generated
 public final class CFNetDiagnosticStatusValues {
+    /**
+     * There is no status, but no error has occured
+     */
     @Generated public static final int NoErr = 0x00000000;
+    /**
+     * An error occured that prevented the call from completing
+     */
     @Generated public static final int Err = 0xFFFEFC00;
+    /**
+     * The connection appears to be working
+     */
     @Generated public static final int ConnectionUp = 0xFFFEFC01;
+    /**
+     * The connection appears to be working
+     */
     @Generated public static final int ConnectionIndeterminate = 0xFFFEFC02;
+    /**
+     * The connection does not appear to be working
+     */
     @Generated public static final int ConnectionDown = 0xFFFEFC03;
 
     @Generated

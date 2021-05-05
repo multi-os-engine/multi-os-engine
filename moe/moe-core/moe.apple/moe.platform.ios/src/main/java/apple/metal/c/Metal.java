@@ -17,10 +17,12 @@ limitations under the License.
 package apple.metal.c;
 
 import apple.metal.struct.MTLClearColor;
+import apple.metal.struct.MTLIndirectCommandBufferExecutionRange;
 import apple.metal.struct.MTLOrigin;
 import apple.metal.struct.MTLRegion;
 import apple.metal.struct.MTLSamplePosition;
 import apple.metal.struct.MTLSize;
+import apple.metal.struct.MTLTextureSwizzleChannels;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CFunction;
 import org.moe.natj.c.ann.CVariable;
@@ -78,6 +80,14 @@ public final class Metal {
     public static native MTLRegion MTLRegionMake3D(@NUInt long x, @NUInt long y, @NUInt long z, @NUInt long width,
             @NUInt long height, @NUInt long depth);
 
+    /**
+     * Returns a reference to the preferred system default Metal device.
+     * 
+     * On Mac OS X systems that support automatic graphics switching, calling
+     * this API to get a Metal device will cause the system to switch to the high power
+     * GPU.  On other systems that support more than one GPU it will return the GPU that
+     * is associated with the main display.
+     */
     @Generated
     @CFunction
     @MappedReturn(ObjCObjectMapper.class)
@@ -89,11 +99,21 @@ public final class Metal {
     @ByValue
     public static native MTLClearColor MTLClearColorMake(double red, double green, double blue, double alpha);
 
+    /**
+     * [@constant] MTLLibraryErrorDomain
+     * 
+     * NSErrors raised when creating a library.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLLibraryErrorDomain();
 
+    /**
+     * [@constant] MTLCommandBufferErrorDomain
+     * 
+     * An error domain for NSError objects produced by MTLCommandBuffer
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -104,4 +124,151 @@ public final class Metal {
     @CFunction
     @ByValue
     public static native MTLSamplePosition MTLSamplePositionMake(float x, float y);
+
+    /**
+     * [@function] MTLCoordinate2DMake
+     * 
+     * Convenience function to create a 2D coordinate from 2 values.
+     */
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MTLSamplePosition MTLCoordinate2DMake(float x, float y);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MTLTextureSwizzleChannels MTLTextureSwizzleChannelsMake(byte r, byte g, byte b, byte a);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MTLIndirectCommandBufferExecutionRange MTLIndirectCommandBufferExecutionRangeMake(int location,
+            int length);
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCaptureErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterTimestamp();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterTessellationInputPatches();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterVertexInvocations();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterPostTessellationVertexInvocations();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterClipperInvocations();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterClipperPrimitivesOut();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterFragmentInvocations();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterFragmentsPassed();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterComputeKernelInvocations();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterTotalCycles();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterVertexCycles();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterTessellationCycles();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterPostTessellationVertexCycles();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterFragmentCycles();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterRenderTargetWriteCycles();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterSetTimestamp();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterSetStageUtilization();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommonCounterSetStatistic();
+
+    /**
+     * [@constant] MTLCounterErrorDomain
+     * 
+     * NSErrors raised when creating a counter sample buffer.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCounterErrorDomain();
+
+    /**
+     * Key in the userInfo for MTLCommandBufferError NSErrors. Value is an NSArray of MTLCommandBufferEncoderInfo objects in recorded order if an appropriate MTLCommandBufferErrorOption was set, otherwise the key will not exist in the userInfo dictionary.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommandBufferEncoderInfoErrorKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLDynamicLibraryDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLBinaryArchiveDomain();
 }

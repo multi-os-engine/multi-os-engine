@@ -25,6 +25,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -49,6 +50,15 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MSStickerView
+ * 
+ * A UIView subclass that can display sticker assets.
+ * 
+ * This class is a UIView subclass intended to display stickers. It provides
+ * drag and drop functionality so that user may drag the displayed sticker from this
+ * view and place it in the Messages transcript.
+ */
 @Generated
 @Library("Messages")
 @Runtime(ObjCRuntime.class)
@@ -131,7 +141,7 @@ public class MSStickerView extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -144,8 +154,8 @@ public class MSStickerView extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -347,6 +357,11 @@ public class MSStickerView extends UIView {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property]   animationDuration
+     * 
+     * The amount of time it takes to go through one cycle of the sticker animation.
+     */
     @Generated
     @Selector("animationDuration")
     public native double animationDuration();
@@ -370,7 +385,7 @@ public class MSStickerView extends UIView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -386,7 +401,8 @@ public class MSStickerView extends UIView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -403,33 +419,79 @@ public class MSStickerView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MSStickerView initWithCoder(NSCoder aDecoder);
+    public native MSStickerView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
     public native MSStickerView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * initWithFrame:sticker:
+     * 
+     * Initializes a MSStickerView with a frame and a MSSticker conforming object to display.
+     */
     @Generated
     @Selector("initWithFrame:sticker:")
     public native MSStickerView initWithFrameSticker(@ByValue CGRect frame, MSSticker sticker);
 
+    /**
+     * isAnimating
+     * 
+     * Returns a Boolean value indicating whether the animation is running.
+     */
     @Generated
     @Selector("isAnimating")
     public native boolean isAnimating();
 
+    /**
+     * [@property]   sticker
+     * 
+     * The MSSticker object to display.
+     * 
+     * Set this property to nil to remove the current sticker. Setting the
+     * sticker property does not change the size of a MSStickerView. Call sizeToFit to
+     * adjust the size of the view to match the sticker.
+     */
     @Generated
     @Selector("setSticker:")
     public native void setSticker(MSSticker value);
 
+    /**
+     * startAnimating
+     * 
+     * Starts animating the sticker in the receiver.
+     * 
+     * This method always starts the animation from the first frame.
+     */
     @Generated
     @Selector("startAnimating")
     public native void startAnimating();
 
+    /**
+     * [@property]   sticker
+     * 
+     * The MSSticker object to display.
+     * 
+     * Set this property to nil to remove the current sticker. Setting the
+     * sticker property does not change the size of a MSStickerView. Call sizeToFit to
+     * adjust the size of the view to match the sticker.
+     */
     @Generated
     @Selector("sticker")
     public native MSSticker sticker();
 
+    /**
+     * stopAnimating
+     * 
+     * Stops animating the sticker in the receiver.
+     */
     @Generated
     @Selector("stopAnimating")
     public native void stopAnimating();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

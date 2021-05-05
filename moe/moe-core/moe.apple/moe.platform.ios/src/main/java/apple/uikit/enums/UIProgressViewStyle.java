@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIProgressViewStyle {
+    /**
+     * normal progress bar
+     */
     @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * for use in a toolbar
+     */
     @Generated @NInt public static final long Bar = 0x0000000000000001L;
 
     @Generated

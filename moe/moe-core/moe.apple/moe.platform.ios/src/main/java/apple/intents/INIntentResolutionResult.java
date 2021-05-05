@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class INIntentResolutionResult<_ObjectType> extends NSObject {
+public class INIntentResolutionResult extends NSObject {
     static {
         NatJ.register();
     }
@@ -60,7 +60,7 @@ public class INIntentResolutionResult<_ObjectType> extends NSObject {
     @Generated
     @Owned
     @Selector("alloc")
-    public static native INIntentResolutionResult<?> alloc();
+    public static native INIntentResolutionResult alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -123,10 +123,13 @@ public class INIntentResolutionResult<_ObjectType> extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * This result is to tell Siri that the user must provide a non-nil value for this parameter in order to continue
+     */
     @Generated
     @Selector("needsValue")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native <_ObjectType> Object needsValue();
+    public static native Object needsValue();
 
     @Generated
     @Owned
@@ -134,10 +137,13 @@ public class INIntentResolutionResult<_ObjectType> extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * This result is to tell Siri to continue regardless of whether the user has provided a value for this parameter or not
+     */
     @Generated
     @Selector("notRequired")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native <_ObjectType> Object notRequired();
+    public static native Object notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -155,10 +161,13 @@ public class INIntentResolutionResult<_ObjectType> extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * This result is for informing Siri that this value is unsupported
+     */
     @Generated
     @Selector("unsupported")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native <_ObjectType> Object unsupported();
+    public static native Object unsupported();
 
     @Generated
     @Selector("version")
@@ -167,5 +176,16 @@ public class INIntentResolutionResult<_ObjectType> extends NSObject {
 
     @Generated
     @Selector("init")
-    public native INIntentResolutionResult<?> init();
+    public native INIntentResolutionResult init();
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

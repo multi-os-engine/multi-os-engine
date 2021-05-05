@@ -18,6 +18,7 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -150,6 +151,9 @@ public class UISwipeGestureRecognizer extends UIGestureRecognizer {
     @NInt
     public static native long version_static();
 
+    /**
+     * default is UISwipeGestureRecognizerDirectionRight. the desired direction of the swipe. multiple directions may be specified if they will result in the same behavior (for example, UITableView swipe delete)
+     */
     @Generated
     @Selector("direction")
     @NUInt
@@ -164,16 +168,29 @@ public class UISwipeGestureRecognizer extends UIGestureRecognizer {
     public native UISwipeGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
             SEL action);
 
+    /**
+     * default is 1. the number of fingers that must swipe
+     */
     @Generated
     @Selector("numberOfTouchesRequired")
     @NUInt
     public native long numberOfTouchesRequired();
 
+    /**
+     * default is UISwipeGestureRecognizerDirectionRight. the desired direction of the swipe. multiple directions may be specified if they will result in the same behavior (for example, UITableView swipe delete)
+     */
     @Generated
     @Selector("setDirection:")
     public native void setDirection(@NUInt long value);
 
+    /**
+     * default is 1. the number of fingers that must swipe
+     */
     @Generated
     @Selector("setNumberOfTouchesRequired:")
     public native void setNumberOfTouchesRequired(@NUInt long value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UISwipeGestureRecognizer initWithCoder(NSCoder coder);
 }

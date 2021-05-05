@@ -190,14 +190,26 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("init")
     public native MPRemoteCommandCenter init();
 
+    /**
+     * Feedback Commands
+     * These are generalized to three distinct actions. Your application can provide
+     * additional context about these actions with the localizedTitle property in
+     * MPFeedbackCommand.
+     */
     @Generated
     @Selector("likeCommand")
     public native MPFeedbackCommand likeCommand();
 
+    /**
+     * Previous/Next Track Commands
+     */
     @Generated
     @Selector("nextTrackCommand")
     public native MPRemoteCommand nextTrackCommand();
 
+    /**
+     * Playback Commands
+     */
     @Generated
     @Selector("pauseCommand")
     public native MPRemoteCommand pauseCommand();
@@ -210,6 +222,9 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("previousTrackCommand")
     public native MPRemoteCommand previousTrackCommand();
 
+    /**
+     * Rating Command
+     */
     @Generated
     @Selector("ratingCommand")
     public native MPRatingCommand ratingCommand();
@@ -218,6 +233,9 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("seekBackwardCommand")
     public native MPRemoteCommand seekBackwardCommand();
 
+    /**
+     * Seek Commands
+     */
     @Generated
     @Selector("seekForwardCommand")
     public native MPRemoteCommand seekForwardCommand();
@@ -226,6 +244,9 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("skipBackwardCommand")
     public native MPSkipIntervalCommand skipBackwardCommand();
 
+    /**
+     * Skip Interval Commands
+     */
     @Generated
     @Selector("skipForwardCommand")
     public native MPSkipIntervalCommand skipForwardCommand();

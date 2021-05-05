@@ -167,7 +167,7 @@ public class INRestaurantGuest extends INPerson {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRestaurantGuest initWithCoder(NSCoder aDecoder);
+    public native INRestaurantGuest initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithHandle:displayName:contactIdentifier:")
@@ -219,4 +219,16 @@ public class INRestaurantGuest extends INPerson {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isMe:")
+    public native INRestaurantGuest initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMe(
+            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
+            String contactIdentifier, String customIdentifier, boolean isMe);
+
+    @Generated
+    @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:relationship:")
+    public native INRestaurantGuest initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierRelationship(
+            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
+            String contactIdentifier, String customIdentifier, String relationship);
 }

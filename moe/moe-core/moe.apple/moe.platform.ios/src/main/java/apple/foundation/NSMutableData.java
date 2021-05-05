@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Mutable Data		***************
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -262,7 +265,7 @@ public class NSMutableData extends NSData {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableData initWithCoder(NSCoder aDecoder);
+    public native NSMutableData initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
@@ -330,4 +333,17 @@ public class NSMutableData extends NSData {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("compressUsingAlgorithm:error:")
+    public native boolean compressUsingAlgorithmError(@NInt long algorithm,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * These methods compress or decompress the receiver's contents in-place using the specified algorithm. If the operation is not successful, these methods leave the receiver unchanged..
+     */
+    @Generated
+    @Selector("decompressUsingAlgorithm:error:")
+    public native boolean decompressUsingAlgorithmError(@NInt long algorithm,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

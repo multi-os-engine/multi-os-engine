@@ -138,6 +138,9 @@ public class UIStoryboardSegue extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Convenience constructor for returning a segue that performs a handler block in its -perform method.
+     */
     @Generated
     @Selector("segueWithIdentifier:source:destination:performHandler:")
     public static native UIStoryboardSegue segueWithIdentifierSourceDestinationPerformHandler(String identifier,
@@ -174,6 +177,10 @@ public class UIStoryboardSegue extends NSObject {
     public native UIStoryboardSegue initWithIdentifierSourceDestination(String identifier, UIViewController source,
             UIViewController destination);
 
+    /**
+     * Subclasses can override this method to augment or replace the effect of this segue. For example, to animate alongside the effect of a Modal Presentation segue, an override of this method can call super, then send -animateAlongsideTransition:completion: to the transitionCoordinator of the destinationViewController.
+     * The segue runtime will call +[UIView setAnimationsAreEnabled:] prior to invoking this method, based on the value of the Animates checkbox in the Properties Inspector for the segue.
+     */
     @Generated
     @Selector("perform")
     public native void perform();

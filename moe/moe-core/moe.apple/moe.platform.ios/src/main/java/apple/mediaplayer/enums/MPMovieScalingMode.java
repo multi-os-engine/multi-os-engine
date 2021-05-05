@@ -19,11 +19,27 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * -----------------------------------------------------------------------------
+ * Types
+ */
 @Generated
 public final class MPMovieScalingMode {
+    /**
+     * No scaling
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * Uniform scale until one dimension fits
+     */
     @Generated @NInt public static final long AspectFit = 0x0000000000000001L;
+    /**
+     * Uniform scale until the movie fills the visible bounds. One dimension may have clipped contents
+     */
     @Generated @NInt public static final long AspectFill = 0x0000000000000002L;
+    /**
+     * Non-uniform scale. Both render dimensions will exactly match the visible bounds
+     */
     @Generated @NInt public static final long Fill = 0x0000000000000003L;
 
     @Generated

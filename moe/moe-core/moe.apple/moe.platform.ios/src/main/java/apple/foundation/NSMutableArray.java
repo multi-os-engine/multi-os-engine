@@ -212,6 +212,9 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("exchangeObjectAtIndex:withObjectAtIndex:")
     public native void exchangeObjectAtIndexWithObjectAtIndex(@NUInt long idx1, @NUInt long idx2);
 
+    /**
+     * evaluate a predicate against an array of objects and filter the mutable array directly
+     */
     @Generated
     @Selector("filterUsingPredicate:")
     public native void filterUsingPredicate(NSPredicate predicate);
@@ -234,7 +237,7 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableArray<?> initWithCoder(NSCoder aDecoder);
+    public native NSMutableArray<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
@@ -342,6 +345,9 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     public native void sortUsingComparator(
             @ObjCBlock(name = "call_sortUsingComparator") Block_sortUsingComparator cmptr);
 
+    /**
+     * sorts the array itself
+     */
     @Generated
     @Selector("sortUsingDescriptors:")
     public native void sortUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
@@ -543,8 +549,8 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     public interface Block_sortUsingComparator {
         @Generated
         @NInt
-        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -561,8 +567,8 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     public interface Block_sortWithOptionsUsingComparator {
         @Generated
         @NInt
-        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     private final static class NSMutableArrayIterator<_ObjectType> implements Iterator<_ObjectType> {
@@ -691,4 +697,8 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("initWithContentsOfURL:error:")
     public native NSArray<_ObjectType> initWithContentsOfURLError(NSURL url,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("applyDifference:")
+    public native void applyDifference(NSOrderedCollectionDifference<_ObjectType> difference);
 }

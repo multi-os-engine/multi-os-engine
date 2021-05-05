@@ -21,9 +21,29 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class LACredentialType {
-    @Generated @NInt public static final long LACredentialTypeApplicationPassword = 0x0000000000000000L;
-
     @Generated
     private LACredentialType() {
     }
+
+    /**
+     * Password provided by application
+     * 
+     * If not set, LocalAuthentication will ask for the password when necessary. It will use
+     *             its own user interface depending on the evaluated policy or ACL.
+     *             Applications can provide the password using the setCredential method. In such case,
+     *             LocalAuthentication will not show password entry user interface.
+     *             When entered from the LocalAuthentication user interface, the password is stored as
+     *             UTF-8 encoded string.
+     */
+    @Generated @NInt public static final long ApplicationPassword = 0x0000000000000000L;
+    /**
+     * Smart card PIN provided by application
+     * 
+     * If not set, LocalAuthentication will ask users for the smart card PIN when necessary.
+     *             Applications can provide the PIN using setCredential method. In such case,
+     *             LocalAuthentication will not show the smart card PIN user interface.
+     *             When entered from the LocalAuthentication user interface, the PIN is stored as
+     *             UTF-8 encoded string.
+     */
+    @Generated @NInt public static final long SmartCardPIN = 0xFFFFFFFFFFFFFFFDL;
 }

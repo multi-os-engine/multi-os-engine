@@ -41,6 +41,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CKFetchWebAuthTokenOperation
+ * 
+ * This operation will fetch a web auth token given an API token obtained from the CloudKit Dashboard for your container
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -152,10 +157,16 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
     @NInt
     public static native long version_static();
 
+    /**
+     * APIToken is expected to be set before you begin this operation.
+     */
     @Generated
     @Selector("APIToken")
     public native String APIToken();
 
+    /**
+     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("fetchWebAuthTokenCompletionBlock")
     @ObjCBlock(name = "call_fetchWebAuthTokenCompletionBlock_ret")
@@ -169,10 +180,16 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
     @Selector("initWithAPIToken:")
     public native CKFetchWebAuthTokenOperation initWithAPIToken(String APIToken);
 
+    /**
+     * APIToken is expected to be set before you begin this operation.
+     */
     @Generated
     @Selector("setAPIToken:")
     public native void setAPIToken(String value);
 
+    /**
+     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("setFetchWebAuthTokenCompletionBlock:")
     public native void setFetchWebAuthTokenCompletionBlock(

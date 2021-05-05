@@ -161,10 +161,17 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     @NInt
     public static native long version_static();
 
+    /**
+     * These actions may be available for the user to choose during the ride.
+     * When shown, the .title of each activity will presented to the user. Selecting an activity will open your application to continue it.
+     */
     @Generated
     @Selector("additionalActionActivities")
     public native NSArray<? extends NSUserActivity> additionalActionActivities();
 
+    /**
+     * This property should be set if the phase is INRidePhaseCompleted.
+     */
     @Generated
     @Selector("completionStatus")
     public native INRideCompletionStatus completionStatus();
@@ -185,7 +192,7 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("estimatedDropOffDate")
@@ -195,6 +202,10 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("estimatedPickupDate")
     public native NSDate estimatedPickupDate();
 
+    /**
+     * This is the date after arrival at the pickup location after which the ride may stop waiting for the passenger to be picked up.
+     * The passenger is expected to arrive at pickup before this date.
+     */
     @Generated
     @Selector("estimatedPickupEndDate")
     public native NSDate estimatedPickupEndDate();
@@ -205,7 +216,7 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRideStatus initWithCoder(NSCoder aDecoder);
+    public native INRideStatus initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("phase")
@@ -224,10 +235,17 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("rideOption")
     public native INRideOption rideOption();
 
+    /**
+     * These actions may be available for the user to choose during the ride.
+     * When shown, the .title of each activity will presented to the user. Selecting an activity will open your application to continue it.
+     */
     @Generated
     @Selector("setAdditionalActionActivities:")
     public native void setAdditionalActionActivities(NSArray<? extends NSUserActivity> value);
 
+    /**
+     * This property should be set if the phase is INRidePhaseCompleted.
+     */
     @Generated
     @Selector("setCompletionStatus:")
     public native void setCompletionStatus(INRideCompletionStatus value);
@@ -248,6 +266,10 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("setEstimatedPickupDate:")
     public native void setEstimatedPickupDate(NSDate value);
 
+    /**
+     * This is the date after arrival at the pickup location after which the ride may stop waiting for the passenger to be picked up.
+     * The passenger is expected to arrive at pickup before this date.
+     */
     @Generated
     @Selector("setEstimatedPickupEndDate:")
     public native void setEstimatedPickupEndDate(NSDate value);
@@ -268,6 +290,9 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("setRideOption:")
     public native void setRideOption(INRideOption value);
 
+    /**
+     * If set, and the ride hasn't completed or been canceled yet, the system may open the containing application and request continuation of this activity to request that the ride be canceled. It is appropriate to show confirmation UI to the user when this happens.
+     */
     @Generated
     @Selector("setUserActivityForCancelingInApplication:")
     public native void setUserActivityForCancelingInApplication(NSUserActivity value);
@@ -286,6 +311,9 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
         return supportsSecureCoding();
     }
 
+    /**
+     * If set, and the ride hasn't completed or been canceled yet, the system may open the containing application and request continuation of this activity to request that the ride be canceled. It is appropriate to show confirmation UI to the user when this happens.
+     */
     @Generated
     @Selector("userActivityForCancelingInApplication")
     public native NSUserActivity userActivityForCancelingInApplication();
@@ -298,10 +326,16 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("waypoints")
     public native NSArray<? extends CLPlacemark> waypoints();
 
+    /**
+     * Time range for the scheduled pickup.
+     */
     @Generated
     @Selector("scheduledPickupTime")
     public native INDateComponentsRange scheduledPickupTime();
 
+    /**
+     * Time range for the scheduled pickup.
+     */
     @Generated
     @Selector("setScheduledPickupTime:")
     public native void setScheduledPickupTime(INDateComponentsRange value);

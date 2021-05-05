@@ -39,6 +39,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] MTLFunctionConstant
+ * 
+ * describe an uberShader constant used by the function
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)

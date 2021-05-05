@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSDate;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSIndexSet;
 import apple.foundation.NSItemProvider;
 import apple.foundation.NSMethodSignature;
@@ -41,6 +42,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -211,7 +213,7 @@ public class UIPasteboard extends NSObject {
 
     @Generated
     @Selector("dataForPasteboardType:inItemSet:")
-    public native NSArray<?> dataForPasteboardTypeInItemSet(String pasteboardType, NSIndexSet itemSet);
+    public native NSArray<? extends NSData> dataForPasteboardTypeInItemSet(String pasteboardType, NSIndexSet itemSet);
 
     @Generated
     @Selector("hasColors")
@@ -221,6 +223,9 @@ public class UIPasteboard extends NSObject {
     @Selector("hasImages")
     public native boolean hasImages();
 
+    /**
+     * Queries
+     */
     @Generated
     @Selector("hasStrings")
     public native boolean hasStrings();
@@ -253,6 +258,9 @@ public class UIPasteboard extends NSObject {
     @Selector("itemSetWithPasteboardTypes:")
     public native NSIndexSet itemSetWithPasteboardTypes(NSArray<String> pasteboardTypes);
 
+    /**
+     * Direct access
+     */
     @Generated
     @Selector("items")
     public native NSArray<? extends NSDictionary<String, ?>> items();
@@ -261,11 +269,17 @@ public class UIPasteboard extends NSObject {
     @Selector("name")
     public native String name();
 
+    /**
+     * Multiple items
+     */
     @Generated
     @Selector("numberOfItems")
     @NInt
     public native long numberOfItems();
 
+    /**
+     * First item
+     */
     @Generated
     @Selector("pasteboardTypes")
     public native NSArray<String> pasteboardTypes();
@@ -294,6 +308,9 @@ public class UIPasteboard extends NSObject {
     @Selector("setImages:")
     public native void setImages(NSArray<? extends UIImage> value);
 
+    /**
+     * Direct access
+     */
     @Generated
     @Selector("setItems:")
     public native void setItems(NSArray<? extends NSDictionary<String, ?>> value);
@@ -340,10 +357,16 @@ public class UIPasteboard extends NSObject {
     @Selector("valuesForPasteboardType:inItemSet:")
     public native NSArray<?> valuesForPasteboardTypeInItemSet(String pasteboardType, NSIndexSet itemSet);
 
+    /**
+     * Item provider interface
+     */
     @Generated
     @Selector("itemProviders")
     public native NSArray<? extends NSItemProvider> itemProviders();
 
+    /**
+     * Item provider interface
+     */
     @Generated
     @Selector("setItemProviders:")
     public native void setItemProviders(NSArray<? extends NSItemProvider> value);
@@ -353,6 +376,9 @@ public class UIPasteboard extends NSObject {
     public native void setItemProvidersLocalOnlyExpirationDate(NSArray<? extends NSItemProvider> itemProviders,
             boolean localOnly, NSDate expirationDate);
 
+    /**
+     * Automatically creates item providers wrapping the objects passed in.
+     */
     @Generated
     @Selector("setObjects:")
     public native void setObjects(NSArray<?> objects);
@@ -360,4 +386,82 @@ public class UIPasteboard extends NSObject {
     @Generated
     @Selector("setObjects:localOnly:expirationDate:")
     public native void setObjectsLocalOnlyExpirationDate(NSArray<?> objects, boolean localOnly, NSDate expirationDate);
+
+    /**
+     * Detects patterns in the first pasteboard item.
+     * 
+     * @param patterns Detect only these patterns.
+     * @param completionHandler Receives which patterns were detected, or an error.
+     */
+    @Generated
+    @Selector("detectPatternsForPatterns:completionHandler:")
+    public native void detectPatternsForPatternsCompletionHandler(NSSet<String> patterns,
+            @ObjCBlock(name = "call_detectPatternsForPatternsCompletionHandler") Block_detectPatternsForPatternsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_detectPatternsForPatternsCompletionHandler {
+        @Generated
+        void call_detectPatternsForPatternsCompletionHandler(NSSet<String> arg0, NSError arg1);
+    }
+
+    /**
+     * Detects patterns in the specified pasteboard items.
+     * 
+     * @param patterns Detect only these patterns.
+     * @param itemSet Specifies which pasteboard items by their position. Nil means all items.
+     * @param completionHandler Receives which patterns were detected per item specified,
+     *                          or an error.
+     */
+    @Generated
+    @Selector("detectPatternsForPatterns:inItemSet:completionHandler:")
+    public native void detectPatternsForPatternsInItemSetCompletionHandler(NSSet<String> patterns, NSIndexSet itemSet,
+            @ObjCBlock(name = "call_detectPatternsForPatternsInItemSetCompletionHandler") Block_detectPatternsForPatternsInItemSetCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_detectPatternsForPatternsInItemSetCompletionHandler {
+        @Generated
+        void call_detectPatternsForPatternsInItemSetCompletionHandler(NSArray<? extends NSSet<String>> arg0,
+                NSError arg1);
+    }
+
+    /**
+     * Detects patterns and corresponding values in the first pasteboard item.
+     * 
+     * @param patterns Detect only these patterns.
+     * @param completionHandler Receives which patterns and values were detected, or an error.
+     */
+    @Generated
+    @Selector("detectValuesForPatterns:completionHandler:")
+    public native void detectValuesForPatternsCompletionHandler(NSSet<String> patterns,
+            @ObjCBlock(name = "call_detectValuesForPatternsCompletionHandler") Block_detectValuesForPatternsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_detectValuesForPatternsCompletionHandler {
+        @Generated
+        void call_detectValuesForPatternsCompletionHandler(NSDictionary<String, ?> arg0, NSError arg1);
+    }
+
+    /**
+     * Detects patterns and corresponding values in the specified pasteboard items.
+     * 
+     * @param patterns Detect only these patterns.
+     * @param itemSet Specifies which pasteboard items by their position. Nil means all items.
+     * @param completionHandler Receives which patterns and values were detected per item specified,
+     *                          or an error.
+     */
+    @Generated
+    @Selector("detectValuesForPatterns:inItemSet:completionHandler:")
+    public native void detectValuesForPatternsInItemSetCompletionHandler(NSSet<String> patterns, NSIndexSet itemSet,
+            @ObjCBlock(name = "call_detectValuesForPatternsInItemSetCompletionHandler") Block_detectValuesForPatternsInItemSetCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_detectValuesForPatternsInItemSetCompletionHandler {
+        @Generated
+        void call_detectValuesForPatternsInItemSetCompletionHandler(NSArray<? extends NSDictionary<String, ?>> arg0,
+                NSError arg1);
+    }
 }

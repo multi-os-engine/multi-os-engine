@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKQuantitySample
+ * 
+ * An abstract HKSample subclass representing a quantity measurement.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -133,17 +138,47 @@ public class HKQuantitySample extends HKSample {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * quantitySampleWithType:quantity:startDate:endDate:
+     * 
+     * Creates a new HKQuantitySample with the given type, quantity, start date, and end date.
+     * 
+     * The quantity must have a unit that is compatible with the given quantity type.
+     *                See -[HKQuantityType isCompatibleWithUnit:].
+     */
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:")
     public static native HKQuantitySample quantitySampleWithTypeQuantityStartDateEndDate(HKQuantityType quantityType,
             HKQuantity quantity, NSDate startDate, NSDate endDate);
 
+    /**
+     * quantitySampleWithType:quantity:startDate:endDate:device:metadata:
+     * 
+     * Creates a new HKQuantitySample with the given type, quantity, start date, end date, and metadata.
+     * 
+     * The quantity must have a unit that is compatible with the given quantity type.
+     *                See -[HKQuantityType isCompatibleWithUnit:].
+     * 
+     * @param         quantityType    The type of the sample.
+     * @param         startDate       The start date of the sample.
+     * @param         endDate         The end date of the sample.
+     * @param         device          The HKDevice that generated the sample (optional).
+     * @param         metadata        Metadata for the sample (optional).
+     */
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:device:metadata:")
     public static native HKQuantitySample quantitySampleWithTypeQuantityStartDateEndDateDeviceMetadata(
             HKQuantityType quantityType, HKQuantity quantity, NSDate startDate, NSDate endDate, HKDevice device,
             NSDictionary<String, ?> metadata);
 
+    /**
+     * quantitySampleWithType:quantity:startDate:endDate:metadata:
+     * 
+     * Creates a new HKQuantitySample with the given type, quantity, start date, end date, and metadata.
+     * 
+     * The quantity must have a unit that is compatible with the given quantity type.
+     *                See -[HKQuantityType isCompatibleWithUnit:].
+     */
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:metadata:")
     public static native HKQuantitySample quantitySampleWithTypeQuantityStartDateEndDateMetadata(
@@ -181,7 +216,7 @@ public class HKQuantitySample extends HKSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKQuantitySample initWithCoder(NSCoder aDecoder);
+    public native HKQuantitySample initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("quantity")
@@ -196,4 +231,16 @@ public class HKQuantitySample extends HKSample {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * [@property]      count
+     * 
+     * The number of individual values making up the receiver's quantity.
+     * 
+     * Requests for the individual series quantities can be made using HKQuantitySeriesSampleQuery.
+     */
+    @Generated
+    @Selector("count")
+    @NInt
+    public native long count();
 }

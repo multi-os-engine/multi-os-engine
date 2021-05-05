@@ -182,6 +182,6 @@ public class EAAccessoryManager extends NSObject {
     @Generated
     public interface Block_showBluetoothAccessoryPickerWithNameFilterCompletion {
         @Generated
-        void call_showBluetoothAccessoryPickerWithNameFilterCompletion(NSError arg0);
+        void call_showBluetoothAccessoryPickerWithNameFilterCompletion(NSError error);
     }
 }

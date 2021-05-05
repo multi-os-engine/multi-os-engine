@@ -131,6 +131,9 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * the device's internal screen
+     */
     @Generated
     @Selector("mainScreen")
     public static native UIScreen mainScreen();
@@ -149,6 +152,9 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * all screens currently attached to the device
+     */
     @Generated
     @Selector("screens")
     public static native NSArray<? extends UIScreen> screens();
@@ -172,15 +178,24 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @ByValue
     public native CGRect applicationFrame();
 
+    /**
+     * The list of modes that this screen supports
+     */
     @Generated
     @Selector("availableModes")
     public native NSArray<? extends UIScreenMode> availableModes();
 
+    /**
+     * Bounds of entire screen in points
+     */
     @Generated
     @Selector("bounds")
     @ByValue
     public native CGRect bounds();
 
+    /**
+     * 0 .. 1.0, where 1.0 is maximum brightness. Only supported by main screen.
+     */
     @Generated
     @Selector("brightness")
     @NFloat
@@ -191,6 +206,9 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @MappedReturn(ObjCObjectMapper.class)
     public native UICoordinateSpace coordinateSpace();
 
+    /**
+     * Current mode of this screen
+     */
     @Generated
     @Selector("currentMode")
     public native UIScreenMode currentMode();
@@ -204,11 +222,17 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @MappedReturn(ObjCObjectMapper.class)
     public native UICoordinateSpace fixedCoordinateSpace();
 
+    /**
+     * Returns the focused item for this screen's focus system. Use UIFocusSystem's focusedItem property instead – this property will be deprecated in a future release.
+     */
     @Generated
     @Selector("focusedItem")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIFocusItem focusedItem();
 
+    /**
+     * If focusedItem is not a view, this returns that item's containing view. Otherwise they are equal. Use UIFocusSystem's focusedItem property instead – this property will be deprecated in a future release.
+     */
     @Generated
     @Selector("focusedView")
     public native UIView focusedView();
@@ -217,30 +241,48 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Selector("init")
     public native UIScreen init();
 
+    /**
+     * The screen being mirrored by the receiver. nil if mirroring is disabled or unsupported. Moving a UIWindow to this screen will disable mirroring
+     */
     @Generated
     @Selector("mirroredScreen")
     public native UIScreen mirroredScreen();
 
+    /**
+     * Native bounds of the physical screen in pixels
+     */
     @Generated
     @Selector("nativeBounds")
     @ByValue
     public native CGRect nativeBounds();
 
+    /**
+     * Native scale factor of the physical screen
+     */
     @Generated
     @Selector("nativeScale")
     @NFloat
     public native double nativeScale();
 
+    /**
+     * Default is UIScreenOverscanCompensationScale. Determines how the screen behaves if the connected display is overscanning
+     */
     @Generated
     @Selector("overscanCompensation")
     @NInt
     public native long overscanCompensation();
 
+    /**
+     * The amount that should be inset to avoid clipping
+     */
     @Generated
     @Selector("overscanCompensationInsets")
     @ByValue
     public native UIEdgeInsets overscanCompensationInsets();
 
+    /**
+     * Preferred mode of this screen. Choosing this mode will likely produce the best results
+     */
     @Generated
     @Selector("preferredMode")
     public native UIScreenMode preferredMode();
@@ -250,22 +292,37 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @NFloat
     public native double scale();
 
+    /**
+     * 0 .. 1.0, where 1.0 is maximum brightness. Only supported by main screen.
+     */
     @Generated
     @Selector("setBrightness:")
     public native void setBrightness(@NFloat double value);
 
+    /**
+     * Current mode of this screen
+     */
     @Generated
     @Selector("setCurrentMode:")
     public native void setCurrentMode(UIScreenMode value);
 
+    /**
+     * Default is UIScreenOverscanCompensationScale. Determines how the screen behaves if the connected display is overscanning
+     */
     @Generated
     @Selector("setOverscanCompensation:")
     public native void setOverscanCompensation(@NInt long value);
 
+    /**
+     * Default is NO. If YES, brightness levels lower than that of which the hardware is capable are emulated in software, if neccessary. Having enabled may entail performance cost.
+     */
     @Generated
     @Selector("setWantsSoftwareDimming:")
     public native void setWantsSoftwareDimming(boolean value);
 
+    /**
+     * Please see snapshotViewAfterScreenUpdates: in UIView.h for some important details on the behavior of this method when called from layoutSubviews.
+     */
     @Generated
     @Selector("snapshotViewAfterScreenUpdates:")
     public native UIView snapshotViewAfterScreenUpdates(boolean afterUpdates);
@@ -282,16 +339,35 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Selector("traitCollectionDidChange:")
     public native void traitCollectionDidChange(UITraitCollection previousTraitCollection);
 
+    /**
+     * Default is NO. If YES, brightness levels lower than that of which the hardware is capable are emulated in software, if neccessary. Having enabled may entail performance cost.
+     */
     @Generated
     @Selector("wantsSoftwareDimming")
     public native boolean wantsSoftwareDimming();
 
+    /**
+     * True if this screen is being captured (e.g. recorded, AirPlayed, mirrored, etc.)
+     */
     @Generated
     @Selector("isCaptured")
     public native boolean isCaptured();
 
+    /**
+     * The maximumFramesPerSecond this screen is capable of
+     */
     @Generated
     @Selector("maximumFramesPerSecond")
     @NInt
     public native long maximumFramesPerSecond();
+
+    /**
+     * The latency of the display hardware associated with this screen.
+     * Can be used along with CoreAudio devices' kAudioDeviceLatencyProperty to
+     * achieve A/V sync when writing custom video playback software.
+     * Will be `0` if display latency has not been calibrated by the user.
+     */
+    @Generated
+    @Selector("calibratedLatency")
+    public native double calibratedLatency();
 }

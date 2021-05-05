@@ -43,6 +43,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEFilterRemediationVerdict
+ * 
+ * The NEFilterRemediationVerdict class declares the programmatic interface of an object that is the verdict for a flow which has been blocked by the filter, but the user has made a request for remediation.
+ * 
+ * NEFilterRemediationVerdict is part of NetworkExtension.framework
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -71,6 +78,13 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * allowVerdict
+     * 
+     * This class method returns a verdict indicating that the flow should be allowed.
+     * 
+     * @return The NEFilterRemediationVerdict object.
+     */
     @Generated
     @Selector("allowVerdict")
     public static native NEFilterRemediationVerdict allowVerdict();
@@ -105,6 +119,13 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * dropVerdict
+     * 
+     * This class method returns a verdict indicating that the flow should be dropped.
+     * 
+     * @return The NEFilterRemediationVerdict object.
+     */
     @Generated
     @Selector("dropVerdict")
     public static native NEFilterRemediationVerdict dropVerdict();
@@ -135,6 +156,13 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * needRulesVerdict
+     * 
+     * This class method returns a verdict indicating that control provider needs to be asked how to handle the remediation. The control provider can either drop or allow the flow, or update the rules and ask the data provider to decide on the data flow again.
+     * 
+     * @return The NEFilterRemediationVerdict object.
+     */
     @Generated
     @Selector("needRulesVerdict")
     public static native NEFilterRemediationVerdict needRulesVerdict();
@@ -178,7 +206,7 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -186,7 +214,7 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterRemediationVerdict initWithCoder(NSCoder aDecoder);
+    public native NEFilterRemediationVerdict initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

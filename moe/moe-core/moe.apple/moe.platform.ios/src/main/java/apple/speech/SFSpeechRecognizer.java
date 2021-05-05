@@ -161,6 +161,10 @@ public class SFSpeechRecognizer extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Locales which support speech recognition.
+     * Note that supported does not mean currently available; some locales may require an internet connection, for example.
+     */
     @Generated
     @Selector("supportedLocales")
     public static native NSSet<? extends NSLocale> supportedLocales();
@@ -170,6 +174,9 @@ public class SFSpeechRecognizer extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Default task for requests, overrides SFSpeechRecognitionTaskHintUnspecified for requests
+     */
     @Generated
     @Selector("defaultTaskHint")
     @NInt
@@ -180,10 +187,16 @@ public class SFSpeechRecognizer extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native SFSpeechRecognizerDelegate delegate();
 
+    /**
+     * Returns speech recognizer with user's current locale, or nil if is not supported
+     */
     @Generated
     @Selector("init")
     public native SFSpeechRecognizer init();
 
+    /**
+     * returns nil if the locale is not supported
+     */
     @Generated
     @Selector("initWithLocale:")
     public native SFSpeechRecognizer initWithLocale(NSLocale locale);
@@ -196,20 +209,36 @@ public class SFSpeechRecognizer extends NSObject {
     @Selector("locale")
     public native NSLocale locale();
 
+    /**
+     * Queue used the recognizer for recognition task handlers and delegate messages
+     * Defaults to the main queue
+     */
     @Generated
     @Selector("queue")
     public native NSOperationQueue queue();
 
+    /**
+     * Advanced API: Recognize a custom request with with a delegate
+     * The delegate will be weakly referenced by the returned task
+     */
     @Generated
     @Selector("recognitionTaskWithRequest:delegate:")
     public native SFSpeechRecognitionTask recognitionTaskWithRequestDelegate(SFSpeechRecognitionRequest request,
             @Mapped(ObjCObjectMapper.class) SFSpeechRecognitionTaskDelegate delegate);
 
+    /**
+     * Recognize speech utterance with a request
+     * If request.shouldReportPartialResults is true, result handler will be called
+     * repeatedly with partial results, then finally with a final result or an error.
+     */
     @Generated
     @Selector("recognitionTaskWithRequest:resultHandler:")
     public native SFSpeechRecognitionTask recognitionTaskWithRequestResultHandler(SFSpeechRecognitionRequest request,
             @ObjCBlock(name = "call_recognitionTaskWithRequestResultHandler") Block_recognitionTaskWithRequestResultHandler resultHandler);
 
+    /**
+     * Default task for requests, overrides SFSpeechRecognitionTaskHintUnspecified for requests
+     */
     @Generated
     @Selector("setDefaultTaskHint:")
     public native void setDefaultTaskHint(@NInt long value);
@@ -230,6 +259,10 @@ public class SFSpeechRecognizer extends NSObject {
         }
     }
 
+    /**
+     * Queue used the recognizer for recognition task handlers and delegate messages
+     * Defaults to the main queue
+     */
     @Generated
     @Selector("setQueue:")
     public native void setQueue(NSOperationQueue value);
@@ -238,13 +271,27 @@ public class SFSpeechRecognizer extends NSObject {
     @Generated
     public interface Block_recognitionTaskWithRequestResultHandler {
         @Generated
-        void call_recognitionTaskWithRequestResultHandler(SFSpeechRecognitionResult arg0, NSError arg1);
+        void call_recognitionTaskWithRequestResultHandler(SFSpeechRecognitionResult result, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAuthorization {
         @Generated
-        void call_requestAuthorization(@NInt long arg0);
+        void call_requestAuthorization(@NInt long status);
     }
+
+    /**
+     * True if this recognition can handle requests with requiresOnDeviceRecognition set to true
+     */
+    @Generated
+    @Selector("setSupportsOnDeviceRecognition:")
+    public native void setSupportsOnDeviceRecognition(boolean value);
+
+    /**
+     * True if this recognition can handle requests with requiresOnDeviceRecognition set to true
+     */
+    @Generated
+    @Selector("supportsOnDeviceRecognition")
+    public native boolean supportsOnDeviceRecognition();
 }

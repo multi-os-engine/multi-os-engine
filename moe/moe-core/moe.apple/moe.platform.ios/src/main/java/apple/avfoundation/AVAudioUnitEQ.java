@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioUnitEQ
+ * 
+ * An AVAudioUnitEffect that implements a Multi-Band Equalizer.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -159,10 +164,26 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] bands
+     * 
+     * Array of AVAudioUnitEQFilterParameters objects.
+     * 
+     *     The number of elements in the array is equal to the number of bands.
+     */
     @Generated
     @Selector("bands")
     public native NSArray<? extends AVAudioUnitEQFilterParameters> bands();
 
+    /**
+     * [@property] globalGain
+     * 
+     * Overall gain adjustment applied to the signal.
+     * 
+     *     Range:     -96 -> 24
+     *     Default:   0
+     *     Unit:      dB
+     */
     @Generated
     @Selector("globalGain")
     public native float globalGain();
@@ -176,10 +197,27 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
     public native AVAudioUnitEQ initWithAudioComponentDescription(
             @ByValue AudioComponentDescription audioComponentDescription);
 
+    /**
+     * initWithNumberOfBands:
+     * 
+     * Initialize the EQ with number of bands.
+     * 
+     * @param numberOfBands
+     *     The number of bands created by the EQ.
+     */
     @Generated
     @Selector("initWithNumberOfBands:")
     public native AVAudioUnitEQ initWithNumberOfBands(@NUInt long numberOfBands);
 
+    /**
+     * [@property] globalGain
+     * 
+     * Overall gain adjustment applied to the signal.
+     * 
+     *     Range:     -96 -> 24
+     *     Default:   0
+     *     Unit:      dB
+     */
     @Generated
     @Selector("setGlobalGain:")
     public native void setGlobalGain(float value);

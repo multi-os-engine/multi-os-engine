@@ -48,6 +48,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MFMessageComposeViewController
+ * 
+ * The MFMessageComposeViewController class provides an interface for editing and sending a message.
+ * 
+ * The MFMessageComposeViewController class manages all user interaction.  The client needs to set
+ * 		  the recipient or recipients.  The client may also set the body of the message. After setup, the
+ * 		  client needs to only display the view.
+ * 		  </p>The provided delegate will be informed of the user's composition completion and how they chose
+ * 		  to complete the operation.
+ * 		  <p>Prior to use, clients should verify the user has set up the device for sending messages via
+ * 		  <tt>+[MFMessageComposeViewController canSendText]</tt>.
+ */
 @Generated
 @Library("MessageUI")
 @Runtime(ObjCRuntime.class)
@@ -84,14 +97,33 @@ public class MFMessageComposeViewController extends UINavigationController {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * canSendAttachments
+     * 
+     * Returns <tt>YES</tt> if the user has set up the device for including attachments in messages.</tt>.
+     */
     @Generated
     @Selector("canSendAttachments")
     public static native boolean canSendAttachments();
 
+    /**
+     * canSendSubject
+     * 
+     * Returns <tt>YES</tt> if the user has set up the device for including subjects in messages.</tt>.
+     */
     @Generated
     @Selector("canSendSubject")
     public static native boolean canSendSubject();
 
+    /**
+     * canSendText
+     * 
+     * Returns <tt>YES</tt> if the user has set up the device for sending text only messages.
+     * 
+     * If the return value is YES, the client can set the recipients and body of the message.
+     * 		 If the return value is NO, the client may notify the user of the failure, or the
+     * 		 client may open an SMS URL via <tt>-[UIApplication openURL:]</tt>.
+     */
     @Generated
     @Selector("canSendText")
     public static native boolean canSendText();
@@ -148,6 +180,14 @@ public class MFMessageComposeViewController extends UINavigationController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * isSupportedAttachmentUTI:
+     * 
+     * Returns <tt>YES</tt>if the attachment at the specified URL could be accepted by the current composition.
+     * 
+     * If the return value is YES, the UTI is acceptable for attachment to a message, a return value of NO
+     * indicates that the given UTI is unsupported.
+     */
     @Generated
     @Selector("isSupportedAttachmentUTI:")
     public static native boolean isSupportedAttachmentUTI(String uti);
@@ -187,22 +227,63 @@ public class MFMessageComposeViewController extends UINavigationController {
     @NInt
     public static native long version_static();
 
+    /**
+     * addAttachmentData:typeIdentifier:filename:
+     * 
+     * Returns <tt>YES</tt>if the attachment was added to the composition successfully.
+     * 
+     * If the return value is YES, the attachment was added to the composition. If the return value is NO,
+     * the attachment was not added to the composition.  The data and typeIdentifer must be non-nil.  typeIdentifier should be a valid Uniform Type Identifier.
+     */
     @Generated
     @Selector("addAttachmentData:typeIdentifier:filename:")
     public native boolean addAttachmentDataTypeIdentifierFilename(NSData attachmentData, String uti, String filename);
 
+    /**
+     * addAttachmentURL:withAlternateFilename:
+     * 
+     * Returns <tt>YES</tt>if the attachment at the specified URL was added to the composition successfully.
+     * 
+     * If the return value is YES, the attachment was added to the composition. If the return value is NO,
+     *             the attachment was not added to the composition.  All attachment URLs must be file urls.  The file
+     *             URL must not be NIL.  The alternate filename will be display to the user in leiu of the attachments URL.
+     *             The alternate filename may be NIL.
+     */
     @Generated
     @Selector("addAttachmentURL:withAlternateFilename:")
     public native boolean addAttachmentURLWithAlternateFilename(NSURL attachmentURL, String alternateFilename);
 
+    /**
+     * [@property]   attachments
+     * 
+     * This property returns an NSArray of NSDictionaries describing the properties of the current attachments.
+     * 
+     * This property returns an NSArray of NSDictionaries describing the properties of the current attachments.
+     *             See MFMessageComposeViewControllerAttachmentURL, MFMessageComposeViewControllerAttachmentAlternateFilename.
+     */
     @Generated
     @Selector("attachments")
     public native NSArray<? extends NSDictionary<?, ?>> attachments();
 
+    /**
+     * [@property]   body
+     * 
+     * This property sets the initial value of the body of the message to the specified content.
+     * 
+     * This property will set the initial value of the body of the message.  This should be called prior
+     * 		 to display.
+     * 		 </p>After the view has been presented to the user, this property will no longer change the value.
+     */
     @Generated
     @Selector("body")
     public native String body();
 
+    /**
+     * disableUserAttachments;
+     * 
+     * Calling this method will disable the camera/attachment button in the view controller.  After the controller has been presented,
+     *             this call will have no effect.  The camera / attachment button is visible by default.
+     */
     @Generated
     @Selector("disableUserAttachments")
     public native void disableUserAttachments();
@@ -213,7 +294,7 @@ public class MFMessageComposeViewController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MFMessageComposeViewController initWithCoder(NSCoder aDecoder);
+    public native MFMessageComposeViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
@@ -228,32 +309,76 @@ public class MFMessageComposeViewController extends UINavigationController {
     @Selector("initWithRootViewController:")
     public native MFMessageComposeViewController initWithRootViewController(UIViewController rootViewController);
 
+    /**
+     * [@property]   message
+     * 
+     * This property sets the initial interactive message.
+     */
     @Generated
     @Selector("message")
     public native MSMessage message();
 
+    /**
+     * [@property]   messageComposeDelegate
+     * 
+     * This property is the delegate for the MFMessageComposeViewController method callbacks.
+     */
     @Generated
     @Selector("messageComposeDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native MFMessageComposeViewControllerDelegate messageComposeDelegate();
 
+    /**
+     * [@property]   recipients
+     * 
+     * This property sets the initial value of the To field for the message to the specified addresses.
+     * 
+     * This property will set the initial value of the To field for the message from an NSArray of
+     * 		 NSString instances specifying the message addresses of recipients. This should be called prior
+     * 		 to display.
+     * 		 </p>After the view has been presented to the user, this property will no longer change the value.
+     */
     @Generated
     @Selector("recipients")
     public native NSArray<String> recipients();
 
+    /**
+     * [@property]   body
+     * 
+     * This property sets the initial value of the body of the message to the specified content.
+     * 
+     * This property will set the initial value of the body of the message.  This should be called prior
+     * 		 to display.
+     * 		 </p>After the view has been presented to the user, this property will no longer change the value.
+     */
     @Generated
     @Selector("setBody:")
     public native void setBody(String value);
 
+    /**
+     * [@property]   message
+     * 
+     * This property sets the initial interactive message.
+     */
     @Generated
     @Selector("setMessage:")
     public native void setMessage(MSMessage value);
 
+    /**
+     * [@property]   messageComposeDelegate
+     * 
+     * This property is the delegate for the MFMessageComposeViewController method callbacks.
+     */
     @Generated
     @Selector("setMessageComposeDelegate:")
     public native void setMessageComposeDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) MFMessageComposeViewControllerDelegate value);
 
+    /**
+     * [@property]   messageComposeDelegate
+     * 
+     * This property is the delegate for the MFMessageComposeViewController method callbacks.
+     */
     @Generated
     public void setMessageComposeDelegate(
             @Mapped(ObjCObjectMapper.class) MFMessageComposeViewControllerDelegate value) {
@@ -267,14 +392,42 @@ public class MFMessageComposeViewController extends UINavigationController {
         }
     }
 
+    /**
+     * [@property]   recipients
+     * 
+     * This property sets the initial value of the To field for the message to the specified addresses.
+     * 
+     * This property will set the initial value of the To field for the message from an NSArray of
+     * 		 NSString instances specifying the message addresses of recipients. This should be called prior
+     * 		 to display.
+     * 		 </p>After the view has been presented to the user, this property will no longer change the value.
+     */
     @Generated
     @Selector("setRecipients:")
     public native void setRecipients(NSArray<String> value);
 
+    /**
+     * [@property]   subject
+     * 
+     * This property sets the initial value of the subject of the message to the specified content.
+     * 
+     * This property will set the initial value of the subject of the message.  This should be called prior
+     * to display.
+     * </p>After the view has been presented to the user, this property will no longer change the value.
+     */
     @Generated
     @Selector("setSubject:")
     public native void setSubject(String value);
 
+    /**
+     * [@property]   subject
+     * 
+     * This property sets the initial value of the subject of the message to the specified content.
+     * 
+     * This property will set the initial value of the subject of the message.  This should be called prior
+     * to display.
+     * </p>After the view has been presented to the user, this property will no longer change the value.
+     */
     @Generated
     @Selector("subject")
     public native String subject();

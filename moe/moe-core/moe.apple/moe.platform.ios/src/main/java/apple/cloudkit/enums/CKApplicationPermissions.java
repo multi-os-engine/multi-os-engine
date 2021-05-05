@@ -21,6 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CKApplicationPermissions {
+    /**
+     * Allows the user's record in CloudKit to be discoverable via the user's email address
+     */
     @Generated @NUInt public static final long CKApplicationPermissionUserDiscoverability = 0x0000000000000001L;
 
     @Generated

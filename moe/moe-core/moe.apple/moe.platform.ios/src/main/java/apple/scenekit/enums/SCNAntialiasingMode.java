@@ -19,6 +19,11 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum] SCNAntialiasingMode
+ * 
+ * antialiasing modes for scene renderers
+ */
 @Generated
 public final class SCNAntialiasingMode {
     @Generated @NUInt public static final long None = 0x0000000000000000L;

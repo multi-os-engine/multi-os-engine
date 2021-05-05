@@ -35,6 +35,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIAdaptivePresentationControllerDelegate")
 public interface UIAdaptivePresentationControllerDelegate {
+    /**
+     * For iOS 8.0, the only supported adaptive presentation styles are UIModalPresentationFullScreen and UIModalPresentationOverFullScreen.
+     */
     @Generated
     @IsOptional
     @Selector("adaptivePresentationStyleForPresentationController:")
@@ -43,6 +46,9 @@ public interface UIAdaptivePresentationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Returning UIModalPresentationNone will indicate that an adaptation should not happen.
+     */
     @Generated
     @IsOptional
     @Selector("adaptivePresentationStyleForPresentationController:traitCollection:")
@@ -52,6 +58,9 @@ public interface UIAdaptivePresentationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If this method is not implemented, or returns nil, then the originally presented view controller is used.
+     */
     @Generated
     @IsOptional
     @Selector("presentationController:viewControllerForAdaptivePresentationStyle:")
@@ -60,12 +69,61 @@ public interface UIAdaptivePresentationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If there is no adaptation happening and an original style is used UIModalPresentationNone will be passed as an argument.
+     */
     @Generated
     @IsOptional
     @Selector("presentationController:willPresentWithAdaptiveStyle:transitionCoordinator:")
     default void presentationControllerWillPresentWithAdaptiveStyleTransitionCoordinator(
             UIPresentationController presentationController, @NInt long style,
-            @Mapped(ObjCObjectMapper.class) Object transitionCoordinator) {
+            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator transitionCoordinator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called on the delegate when the user attempts to dismiss the presentation, but user-initiated dismissal is prevented because the presentedViewController isModalInPresentation or presentationControllerShouldDismiss: returned NO.
+     * When this method is called, it is recommended that the user be informed why they cannot dismiss the presentation, such as by presenting an instance of UIAlertController.
+     */
+    @Generated
+    @IsOptional
+    @Selector("presentationControllerDidAttemptToDismiss:")
+    default void presentationControllerDidAttemptToDismiss(UIPresentationController presentationController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called on the delegate when the user has taken action to dismiss the presentation successfully, after all animations are finished.
+     * This is not called if the presentation is dismissed programatically.
+     */
+    @Generated
+    @IsOptional
+    @Selector("presentationControllerDidDismiss:")
+    default void presentationControllerDidDismiss(UIPresentationController presentationController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called on the delegate when the presentation controller will dismiss in response to user action.
+     * This method is not called if the presentedViewController isModalInPresentation or if the presentation is dismissed programatically.
+     * Return NO to prevent dismissal of the view controller.
+     */
+    @Generated
+    @IsOptional
+    @Selector("presentationControllerShouldDismiss:")
+    default boolean presentationControllerShouldDismiss(UIPresentationController presentationController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called on the delegate when the user has taken action to dismiss the presentation, before interaction or animations begin.
+     * Use this callback to setup alongside animations or interaction notifications with the presentingViewController's transitionCoordinator.
+     * This is not called if the presentation is dismissed programatically.
+     */
+    @Generated
+    @IsOptional
+    @Selector("presentationControllerWillDismiss:")
+    default void presentationControllerWillDismiss(UIPresentationController presentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

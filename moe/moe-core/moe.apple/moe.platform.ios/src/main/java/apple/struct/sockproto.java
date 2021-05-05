@@ -49,18 +49,30 @@ public final class sockproto extends StructObject {
         setSp_protocol(sp_protocol);
     }
 
+    /**
+     * address family
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native char sp_family();
 
+    /**
+     * address family
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setSp_family(char value);
 
+    /**
+     * protocol
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char sp_protocol();
 
+    /**
+     * protocol
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSp_protocol(char value);

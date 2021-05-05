@@ -44,6 +44,26 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioUnitComponentManager
+ * 
+ * A singleton object that provides an easy way to find audio components that are
+ * 		registered with the system.
+ * 
+ * AVAudioUnitComponentManager provides methods to search and query various information about the
+ * audio components without opening them.
+ * 
+ * Currently audio components that are audio units can only be searched.
+ * 
+ * The class also supports predefined system tags and arbitrary user tags. Each audio unit can be
+ * tagged as part of its definition. Refer to AudioComponent.h for more details. AudioUnit Hosts
+ * such as Logic or GarageBand can present groupings of audio units based on the tags.
+ * 
+ * Searching for audio units can be done in various ways
+ * 	- using a NSPredicate that contains search strings for tags or descriptions
+ * 	- using a block to match on custom criteria
+ * 	- using an AudioComponentDescription
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -146,6 +166,9 @@ public class AVAudioUnitComponentManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * returns singleton instance of AVAudioUnitComponentManager
+     */
     @Generated
     @Selector("sharedAudioUnitComponentManager")
     @MappedReturn(ObjCObjectMapper.class)
@@ -160,15 +183,41 @@ public class AVAudioUnitComponentManager extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * componentsMatchingDescription:
+     * 
+     * returns an array of AVAudioUnitComponent objects that match the description.
+     * 
+     * 		This method provides a mechanism to search for AudioComponents using AudioComponentDescription
+     * 	structure. The type, subtype and manufacturer fields are used to search for audio units. A 
+     * 		value of 0 for any of these fields is a wildcard and returns the first match found.
+     */
     @Generated
     @Selector("componentsMatchingDescription:")
     public native NSArray<? extends AVAudioUnitComponent> componentsMatchingDescription(
             @ByValue AudioComponentDescription desc);
 
+    /**
+     * componentsMatchingPredicate:
+     * 
+     * returns an array of AVAudioUnitComponent objects that match the search predicate.
+     * 
+     * 		AudioComponent's information or tags can be used to build a search criteria. 
+     * 		For example, "typeName CONTAINS 'Effect'" or tags IN {'Sampler', 'MIDI'}"
+     */
     @Generated
     @Selector("componentsMatchingPredicate:")
     public native NSArray<? extends AVAudioUnitComponent> componentsMatchingPredicate(NSPredicate predicate);
 
+    /**
+     * componentsPassingTest:
+     * 
+     * returns an array of AVAudioUnitComponent objects that pass the user provided block method.
+     * 
+     * 	For each AudioComponent found by the manager, the block method will be called. If the return
+     * 		value is YES then the AudioComponent is added to the resulting array else it will excluded. 
+     * 		This gives more control to the block provider to filter out the components returned.
+     */
     @Generated
     @Selector("componentsPassingTest:")
     public native NSArray<? extends AVAudioUnitComponent> componentsPassingTest(
@@ -178,10 +227,17 @@ public class AVAudioUnitComponentManager extends NSObject {
     @Selector("init")
     public native AVAudioUnitComponentManager init();
 
+    /**
+     * returns the localized standard system tags defined by the audio unit(s).
+     */
     @Generated
     @Selector("standardLocalizedTagNames")
     public native NSArray<String> standardLocalizedTagNames();
 
+    /**
+     * 	returns all tags associated with the current user as well as all system tags defined by 
+     * the audio unit(s).
+     */
     @Generated
     @Selector("tagNames")
     public native NSArray<String> tagNames();
@@ -190,6 +246,6 @@ public class AVAudioUnitComponentManager extends NSObject {
     @Generated
     public interface Block_componentsPassingTest {
         @Generated
-        boolean call_componentsPassingTest(AVAudioUnitComponent arg0, BoolPtr arg1);
+        boolean call_componentsPassingTest(AVAudioUnitComponent comp, BoolPtr stop);
     }
 }

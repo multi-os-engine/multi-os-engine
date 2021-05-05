@@ -159,8 +159,11 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Images returned hold a strong reference to the asset that created them
+     */
     @Generated
     @Selector("imageWithTraitCollection:")
     public native UIImage imageWithTraitCollection(UITraitCollection traitCollection);
@@ -171,8 +174,11 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIImageAsset initWithCoder(NSCoder aDecoder);
+    public native UIImageAsset initWithCoder(NSCoder coder);
 
+    /**
+     * Adds a new variation to this image asset that is appropriate for the provided traits. Any traits not exposed by asset catalogs (such as forceTouchCapability) are ignored.
+     */
     @Generated
     @Selector("registerImage:withTraitCollection:")
     public native void registerImageWithTraitCollection(UIImage image, UITraitCollection traitCollection);
@@ -183,7 +189,28 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * removes only those images added with registerImage:withTraitCollection:
+     */
     @Generated
     @Selector("unregisterImageWithTraitCollection:")
     public native void unregisterImageWithTraitCollection(UITraitCollection traitCollection);
+
+    /**
+     * Images returned hold a strong reference to the asset that created them
+     */
+    @Generated
+    @Selector("imageWithConfiguration:")
+    public native UIImage imageWithConfiguration(UIImageConfiguration configuration);
+
+    @Generated
+    @Selector("registerImage:withConfiguration:")
+    public native void registerImageWithConfiguration(UIImage image, UIImageConfiguration configuration);
+
+    /**
+     * removes only those images added with registerImage:withConfiguration:
+     */
+    @Generated
+    @Selector("unregisterImageWithConfiguration:")
+    public native void unregisterImageWithConfiguration(UIImageConfiguration configuration);
 }

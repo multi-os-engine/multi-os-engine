@@ -167,10 +167,30 @@ public class EKEventViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property]   allowsCalendarPreview
+     * 
+     * Determines whether event can be shown in calendar day view preview.
+     * 
+     * This option only affects calendar invites at present. If the event is an invite,
+     *             and this option is set, a table cell will appear that allows the user to preview 
+     *             the event along with their other events for the day.
+     */
     @Generated
     @Selector("allowsCalendarPreview")
     public native boolean allowsCalendarPreview();
 
+    /**
+     * [@property]   allowsEditing
+     * 
+     * Determines whether Edit button can be shown.
+     * 
+     * Note that even if this is enabled, the edit button may not appear if this event
+     *             is in a read-only calendar, such as a subscribed calendar. It may also not appear
+     *             if the event was not created by the current user (i.e. it's an event they were
+     *             invited to). And lastly, if the event was never saved, the edit button will not
+     *             appear.
+     */
     @Generated
     @Selector("allowsEditing")
     public native boolean allowsEditing();
@@ -180,6 +200,13 @@ public class EKEventViewController extends UIViewController {
     @MappedReturn(ObjCObjectMapper.class)
     public native EKEventViewDelegate delegate();
 
+    /**
+     * [@property]   event
+     * 
+     * Specifies the event to view.
+     * 
+     * You must set this prior to displaying the view controller.
+     */
     @Generated
     @Selector("event")
     public native EKEvent event();
@@ -190,16 +217,36 @@ public class EKEventViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native EKEventViewController initWithCoder(NSCoder aDecoder);
+    public native EKEventViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
     public native EKEventViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * [@property]   allowsCalendarPreview
+     * 
+     * Determines whether event can be shown in calendar day view preview.
+     * 
+     * This option only affects calendar invites at present. If the event is an invite,
+     *             and this option is set, a table cell will appear that allows the user to preview 
+     *             the event along with their other events for the day.
+     */
     @Generated
     @Selector("setAllowsCalendarPreview:")
     public native void setAllowsCalendarPreview(boolean value);
 
+    /**
+     * [@property]   allowsEditing
+     * 
+     * Determines whether Edit button can be shown.
+     * 
+     * Note that even if this is enabled, the edit button may not appear if this event
+     *             is in a read-only calendar, such as a subscribed calendar. It may also not appear
+     *             if the event was not created by the current user (i.e. it's an event they were
+     *             invited to). And lastly, if the event was never saved, the edit button will not
+     *             appear.
+     */
     @Generated
     @Selector("setAllowsEditing:")
     public native void setAllowsEditing(boolean value);
@@ -220,6 +267,13 @@ public class EKEventViewController extends UIViewController {
         }
     }
 
+    /**
+     * [@property]   event
+     * 
+     * Specifies the event to view.
+     * 
+     * You must set this prior to displaying the view controller.
+     */
     @Generated
     @Selector("setEvent:")
     public native void setEvent(EKEvent value);

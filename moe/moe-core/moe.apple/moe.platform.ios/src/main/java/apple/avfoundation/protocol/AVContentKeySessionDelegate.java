@@ -70,4 +70,19 @@ public interface AVContentKeySessionDelegate {
     default void contentKeySessionContentProtectionSessionIdentifierDidChange(AVContentKeySession session) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("contentKeySession:contentKeyRequestDidSucceed:")
+    default void contentKeySessionContentKeyRequestDidSucceed(AVContentKeySession session,
+            AVContentKeyRequest keyRequest) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("contentKeySessionDidGenerateExpiredSessionReport:")
+    default void contentKeySessionDidGenerateExpiredSessionReport(AVContentKeySession session) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

@@ -190,7 +190,7 @@ public class UIAlertController extends UIViewController implements UISpringLoade
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIAlertController initWithCoder(NSCoder aDecoder);
+    public native UIAlertController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -233,7 +233,7 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @Generated
     public interface Block_addTextFieldWithConfigurationHandler {
         @Generated
-        void call_addTextFieldWithConfigurationHandler(UITextField arg0);
+        void call_addTextFieldWithConfigurationHandler(UITextField textField);
     }
 
     @Generated

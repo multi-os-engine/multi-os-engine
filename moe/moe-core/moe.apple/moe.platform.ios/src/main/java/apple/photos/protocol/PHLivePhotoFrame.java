@@ -28,25 +28,40 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Protocol that describes a single frame of a live photo
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PHLivePhotoFrame")
 public interface PHLivePhotoFrame {
+    /**
+     * Input image for the frame
+     */
     @Generated
     @Selector("image")
     CIImage image();
 
+    /**
+     * The scale of the frame relative to the full-size image
+     */
     @Generated
     @Selector("renderScale")
     @NFloat
     double renderScale();
 
+    /**
+     * The time of the frame relative to the beginning of the live photo
+     */
     @Generated
     @Selector("time")
     @ByValue
     CMTime time();
 
+    /**
+     * The type of frame
+     */
     @Generated
     @Selector("type")
     @NInt

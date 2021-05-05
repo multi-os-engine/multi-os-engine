@@ -50,26 +50,44 @@ public final class MPSSize extends StructObject {
         setDepth(depth);
     }
 
+    /**
+     * < The width of the region
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native double width();
 
+    /**
+     * < The width of the region
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setWidth(double value);
 
+    /**
+     * < The height of the region
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native double height();
 
+    /**
+     * < The height of the region
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setHeight(double value);
 
+    /**
+     * < The depth of the region
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native double depth();
 
+    /**
+     * < The depth of the region
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setDepth(double value);

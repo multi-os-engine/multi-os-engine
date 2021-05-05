@@ -89,6 +89,9 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * This resolution result is to ask Siri to confirm if this is the string with which the user wants to continue.
+     */
     @Generated
     @Selector("confirmationRequiredWithStringToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -102,6 +105,9 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * This resolution result is to ask Siri to disambiguate between the provided strings.
+     */
     @Generated
     @Selector("disambiguationWithStringsToDisambiguate:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -162,6 +168,10 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INSpeakableString. The resolvedString can be different than the original INSpeakableString. This allows app extensions to add a pronunciationHint, or otherwise tweak the string.
+     * Use +notRequired to continue with a 'nil' value.
+     */
     @Generated
     @Selector("successWithResolvedString:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -184,4 +194,15 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
     @Generated
     @Selector("init")
     public native INSpeakableStringResolutionResult init();
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKEventViewAction {
+    /**
+     * simply closed
+     */
     @Generated @NInt public static final long Done = 0x0000000000000000L;
+    /**
+     * event invitation was responded to and saved
+     */
     @Generated @NInt public static final long Responded = 0x0000000000000001L;
+    /**
+     * event was deleted
+     */
     @Generated @NInt public static final long Deleted = 0x0000000000000002L;
 
     @Generated

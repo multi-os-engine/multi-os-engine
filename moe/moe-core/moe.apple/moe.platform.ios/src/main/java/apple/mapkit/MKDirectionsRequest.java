@@ -160,6 +160,9 @@ public class MKDirectionsRequest extends NSObject {
     @Selector("arrivalDate")
     public native NSDate arrivalDate();
 
+    /**
+     * Set either departure or arrival date to hint to the route server when the trip will take place.
+     */
     @Generated
     @Selector("departureDate")
     public native NSDate departureDate();
@@ -176,6 +179,9 @@ public class MKDirectionsRequest extends NSObject {
     @Selector("initWithContentsOfURL:")
     public native MKDirectionsRequest initWithContentsOfURL(NSURL url);
 
+    /**
+     * if YES and there is more than one reasonable way to route from source to destination, allow the route server to return multiple routes. Default is NO.
+     */
     @Generated
     @Selector("requestsAlternateRoutes")
     public native boolean requestsAlternateRoutes();
@@ -184,6 +190,9 @@ public class MKDirectionsRequest extends NSObject {
     @Selector("setArrivalDate:")
     public native void setArrivalDate(NSDate value);
 
+    /**
+     * Set either departure or arrival date to hint to the route server when the trip will take place.
+     */
     @Generated
     @Selector("setDepartureDate:")
     public native void setDepartureDate(NSDate value);
@@ -192,6 +201,9 @@ public class MKDirectionsRequest extends NSObject {
     @Selector("setDestination:")
     public native void setDestination(MKMapItem destination);
 
+    /**
+     * if YES and there is more than one reasonable way to route from source to destination, allow the route server to return multiple routes. Default is NO.
+     */
     @Generated
     @Selector("setRequestsAlternateRoutes:")
     public native void setRequestsAlternateRoutes(boolean value);
@@ -200,6 +212,9 @@ public class MKDirectionsRequest extends NSObject {
     @Selector("setSource:")
     public native void setSource(MKMapItem source);
 
+    /**
+     * Default is MKDirectionsTransportTypeAny
+     */
     @Generated
     @Selector("setTransportType:")
     public native void setTransportType(@NUInt long value);
@@ -208,6 +223,9 @@ public class MKDirectionsRequest extends NSObject {
     @Selector("source")
     public native MKMapItem source();
 
+    /**
+     * Default is MKDirectionsTransportTypeAny
+     */
     @Generated
     @Selector("transportType")
     @NUInt

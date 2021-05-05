@@ -97,6 +97,9 @@ public class NSUnitElectricCharge extends NSDimension implements NSSecureCoding 
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Base unit - coulombs
+     */
     @Generated
     @Selector("coulombs")
     public static native NSUnitElectricCharge coulombs();
@@ -184,7 +187,7 @@ public class NSUnitElectricCharge extends NSDimension implements NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -192,7 +195,7 @@ public class NSUnitElectricCharge extends NSDimension implements NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitElectricCharge initWithCoder(NSCoder aDecoder);
+    public native NSUnitElectricCharge initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

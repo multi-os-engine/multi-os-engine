@@ -22,11 +22,13 @@ import apple.passkit.PKPayment;
 import apple.passkit.PKPaymentAuthorizationController;
 import apple.passkit.PKPaymentAuthorizationResult;
 import apple.passkit.PKPaymentMethod;
+import apple.passkit.PKPaymentRequestMerchantSessionUpdate;
 import apple.passkit.PKPaymentRequestPaymentMethodUpdate;
 import apple.passkit.PKPaymentRequestShippingContactUpdate;
 import apple.passkit.PKPaymentRequestShippingMethodUpdate;
 import apple.passkit.PKPaymentSummaryItem;
 import apple.passkit.PKShippingMethod;
+import apple.uikit.UIWindow;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NInt;
@@ -69,6 +71,10 @@ public interface PKPaymentAuthorizationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * These delegate methods are deprecated and have been replaced with new callbacks that allow more granular
+     * and comprehensive errors to be surfaced to users
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationController:didSelectShippingMethod:completion:")
@@ -78,10 +84,21 @@ public interface PKPaymentAuthorizationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent to the delegate when payment authorization is finished.  This may occur when
+     * the user cancels the request, or after the PKPaymentAuthorizationStatus parameter of the
+     * paymentAuthorizationController:didAuthorizePayment:completion: has been shown to the user.
+     * 
+     * The delegate is responsible for dismissing and releasing the controller in this method.
+     */
     @Generated
     @Selector("paymentAuthorizationControllerDidFinish:")
     void paymentAuthorizationControllerDidFinish(PKPaymentAuthorizationController controller);
 
+    /**
+     * Sent to the delegate before the payment is authorized, but after the user has authenticated using
+     * the side button. Optional.
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationControllerWillAuthorizePayment:")
@@ -93,7 +110,7 @@ public interface PKPaymentAuthorizationControllerDelegate {
     @Generated
     public interface Block_paymentAuthorizationControllerDidAuthorizePaymentCompletion {
         @Generated
-        void call_paymentAuthorizationControllerDidAuthorizePaymentCompletion(@NInt long arg0);
+        void call_paymentAuthorizationControllerDidAuthorizePaymentCompletion(@NInt long status);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -101,25 +118,35 @@ public interface PKPaymentAuthorizationControllerDelegate {
     public interface Block_paymentAuthorizationControllerDidSelectPaymentMethodCompletion {
         @Generated
         void call_paymentAuthorizationControllerDidSelectPaymentMethodCompletion(
-                NSArray<? extends PKPaymentSummaryItem> arg0);
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_paymentAuthorizationControllerDidSelectShippingContactCompletion {
         @Generated
-        void call_paymentAuthorizationControllerDidSelectShippingContactCompletion(@NInt long arg0,
-                NSArray<? extends PKShippingMethod> arg1, NSArray<? extends PKPaymentSummaryItem> arg2);
+        void call_paymentAuthorizationControllerDidSelectShippingContactCompletion(@NInt long status,
+                NSArray<? extends PKShippingMethod> shippingMethods,
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_paymentAuthorizationControllerDidSelectShippingMethodCompletion {
         @Generated
-        void call_paymentAuthorizationControllerDidSelectShippingMethodCompletion(@NInt long arg0,
-                NSArray<? extends PKPaymentSummaryItem> arg1);
+        void call_paymentAuthorizationControllerDidSelectShippingMethodCompletion(@NInt long status,
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
+    /**
+     * Sent to the delegate after the user has acted on the payment request.  The application
+     * should inspect the payment to determine whether the payment request was authorized.
+     * 
+     * If the application requested a shipping contact then the full contact is now part of the payment.
+     * 
+     * The delegate must call completion with an appropriate authorization status, as may be determined
+     * by submitting the payment credential to a processing gateway for payment authorization.
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationController:didAuthorizePayment:handler:")
@@ -133,9 +160,16 @@ public interface PKPaymentAuthorizationControllerDelegate {
     @Generated
     public interface Block_paymentAuthorizationControllerDidAuthorizePaymentHandler {
         @Generated
-        void call_paymentAuthorizationControllerDidAuthorizePaymentHandler(PKPaymentAuthorizationResult arg0);
+        void call_paymentAuthorizationControllerDidAuthorizePaymentHandler(PKPaymentAuthorizationResult result);
     }
 
+    /**
+     * Sent when the user has selected a new payment card.  Use this delegate callback if you need to
+     * update the summary items in response to the card type changing (for example, applying credit card surcharges)
+     * 
+     * The delegate will receive no further callbacks except paymentAuthorizationControllerDidFinish:
+     * until it has invoked the completion block.
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationController:didSelectPaymentMethod:handler:")
@@ -149,7 +183,8 @@ public interface PKPaymentAuthorizationControllerDelegate {
     @Generated
     public interface Block_paymentAuthorizationControllerDidSelectPaymentMethodHandler {
         @Generated
-        void call_paymentAuthorizationControllerDidSelectPaymentMethodHandler(PKPaymentRequestPaymentMethodUpdate arg0);
+        void call_paymentAuthorizationControllerDidSelectPaymentMethodHandler(
+                PKPaymentRequestPaymentMethodUpdate requestUpdate);
     }
 
     @Generated
@@ -166,9 +201,20 @@ public interface PKPaymentAuthorizationControllerDelegate {
     public interface Block_paymentAuthorizationControllerDidSelectShippingContactHandler {
         @Generated
         void call_paymentAuthorizationControllerDidSelectShippingContactHandler(
-                PKPaymentRequestShippingContactUpdate arg0);
+                PKPaymentRequestShippingContactUpdate requestUpdate);
     }
 
+    /**
+     * Sent when the user has selected a new shipping method.  The delegate should determine
+     * shipping costs based on the shipping method and either the shipping address contact in the original
+     * PKPaymentRequest or the contact provided by the last call to paymentAuthorizationController:
+     * didSelectShippingContact:completion:.
+     * 
+     * The delegate must invoke the completion block with an updated array of PKPaymentSummaryItem objects.
+     * 
+     * The delegate will receive no further callbacks except paymentAuthorizationControllerDidFinish:
+     * until it has invoked the completion block.
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationController:didSelectShippingMethod:handler:")
@@ -183,6 +229,30 @@ public interface PKPaymentAuthorizationControllerDelegate {
     public interface Block_paymentAuthorizationControllerDidSelectShippingMethodHandler {
         @Generated
         void call_paymentAuthorizationControllerDidSelectShippingMethodHandler(
-                PKPaymentRequestShippingMethodUpdate arg0);
+                PKPaymentRequestShippingMethodUpdate requestUpdate);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentAuthorizationController:didRequestMerchantSessionUpdate:")
+    default void paymentAuthorizationControllerDidRequestMerchantSessionUpdate(
+            PKPaymentAuthorizationController controller,
+            @ObjCBlock(name = "call_paymentAuthorizationControllerDidRequestMerchantSessionUpdate") Block_paymentAuthorizationControllerDidRequestMerchantSessionUpdate handler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_paymentAuthorizationControllerDidRequestMerchantSessionUpdate {
+        @Generated
+        void call_paymentAuthorizationControllerDidRequestMerchantSessionUpdate(
+                PKPaymentRequestMerchantSessionUpdate update);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("presentationWindowForPaymentAuthorizationController:")
+    default UIWindow presentationWindowForPaymentAuthorizationController(PKPaymentAuthorizationController controller) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

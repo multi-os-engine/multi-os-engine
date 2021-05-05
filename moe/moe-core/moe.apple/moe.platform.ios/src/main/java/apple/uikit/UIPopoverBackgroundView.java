@@ -23,6 +23,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIPopoverBackgroundViewMethods;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -131,7 +132,7 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -144,8 +145,8 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -362,6 +363,9 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     @NInt
     public static native long version_static();
 
+    /**
+     * This method may be overridden to prevent the drawing of the content inset and drop shadow inside the popover. The default implementation of this method returns YES.
+     */
     @Generated
     @Selector("wantsDefaultContentAppearance")
     public static native boolean wantsDefaultContentAppearance();
@@ -385,7 +389,7 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -401,7 +405,8 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -419,6 +424,9 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
         return arrowBase();
     }
 
+    /**
+     * `arrowDirection` manages which direction the popover arrow is pointing. You may be required to change the direction of the arrow while the popover is still visible on-screen.
+     */
     @Generated
     @Selector("arrowDirection")
     @NUInt
@@ -431,6 +439,11 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
         return arrowHeight();
     }
 
+    /**
+     * The arrow offset represents how far from the center of the view the center of the arrow should appear. For `UIPopoverArrowDirectionUp` and `UIPopoverArrowDirectionDown`, this is a left-to-right offset; negative is to the left. For `UIPopoverArrowDirectionLeft` and `UIPopoverArrowDirectionRight`, this is a top-to-bottom offset; negative to toward the top.
+     * 
+     * This method is called inside an animation block managed by the `UIPopoverController`.
+     */
     @Generated
     @Selector("arrowOffset")
     @NFloat
@@ -449,17 +462,31 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIPopoverBackgroundView initWithCoder(NSCoder aDecoder);
+    public native UIPopoverBackgroundView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
     public native UIPopoverBackgroundView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * `arrowDirection` manages which direction the popover arrow is pointing. You may be required to change the direction of the arrow while the popover is still visible on-screen.
+     */
     @Generated
     @Selector("setArrowDirection:")
     public native void setArrowDirection(@NUInt long value);
 
+    /**
+     * The arrow offset represents how far from the center of the view the center of the arrow should appear. For `UIPopoverArrowDirectionUp` and `UIPopoverArrowDirectionDown`, this is a left-to-right offset; negative is to the left. For `UIPopoverArrowDirectionLeft` and `UIPopoverArrowDirectionRight`, this is a top-to-bottom offset; negative to toward the top.
+     * 
+     * This method is called inside an animation block managed by the `UIPopoverController`.
+     */
     @Generated
     @Selector("setArrowOffset:")
     public native void setArrowOffset(@NFloat double value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

@@ -19,13 +19,34 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Read/Write Options	***************
+ */
 @Generated
 public final class NSDataReadingOptions {
+    /**
+     * Hint to map the file in if possible and safe
+     */
     @Generated @NUInt public static final long DataReadingMappedIfSafe = 0x0000000000000001L;
+    /**
+     * Hint to get the file not to be cached in the kernel
+     */
     @Generated @NUInt public static final long DataReadingUncached = 0x0000000000000002L;
+    /**
+     * Hint to map the file in if possible. This takes precedence over NSDataReadingMappedIfSafe if both are given.
+     */
     @Generated @NUInt public static final long DataReadingMappedAlways = 0x0000000000000008L;
+    /**
+     * Deprecated name for NSDataReadingMappedIfSafe
+     */
     @Generated @NUInt public static final long DataReadingMapped = 0x0000000000000001L;
+    /**
+     * Deprecated name for NSDataReadingMapped
+     */
     @Generated @NUInt public static final long MappedRead = 0x0000000000000001L;
+    /**
+     * Deprecated name for NSDataReadingUncached
+     */
     @Generated @NUInt public static final long UncachedRead = 0x0000000000000002L;
 
     @Generated

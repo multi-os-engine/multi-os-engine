@@ -22,9 +22,22 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class NSPersonNameComponentsFormatterStyle {
     @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * Relies on user preferences and language defaults to display shortened form appropriate
+     * for display in space-constrained settings, e.g. C Darwin 
+     */
     @Generated @NInt public static final long Short = 0x0000000000000001L;
+    /**
+     * The minimally necessary features for differentiation in a casual setting , e.g. Charles Darwin
+     */
     @Generated @NInt public static final long Medium = 0x0000000000000002L;
+    /**
+     * The fully-qualified name complete with all known components, e.g. Charles Robert Darwin, FRS
+     */
     @Generated @NInt public static final long Long = 0x0000000000000003L;
+    /**
+     * The maximally-abbreviated form of a name suitable for monograms, e.g. CRD)
+     */
     @Generated @NInt public static final long Abbreviated = 0x0000000000000004L;
 
     @Generated

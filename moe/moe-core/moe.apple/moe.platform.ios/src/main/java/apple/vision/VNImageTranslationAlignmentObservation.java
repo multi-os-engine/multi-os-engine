@@ -27,6 +27,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * VNImageTranslationAlignmentObservation
+ * [@superclass] VNImageAlignmentObservation
+ * 
+ * An observation describing the results of performing a translational image alignment.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -101,7 +107,7 @@ public class VNImageTranslationAlignmentObservation extends VNImageAlignmentObse
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNImageTranslationAlignmentObservation initWithCoder(NSCoder aDecoder);
+    public native VNImageTranslationAlignmentObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

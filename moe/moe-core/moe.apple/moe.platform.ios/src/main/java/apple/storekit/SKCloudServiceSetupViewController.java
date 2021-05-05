@@ -169,6 +169,9 @@ public class SKCloudServiceSetupViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * Optional delegate.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -180,22 +183,32 @@ public class SKCloudServiceSetupViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKCloudServiceSetupViewController initWithCoder(NSCoder aDecoder);
+    public native SKCloudServiceSetupViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
     public native SKCloudServiceSetupViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * Load cloud service setup view with the given options.
+     * Block is invoked on the main thread when the load finishes.
+     */
     @Generated
     @Selector("loadWithOptions:completionHandler:")
     public native void loadWithOptionsCompletionHandler(NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_loadWithOptionsCompletionHandler") Block_loadWithOptionsCompletionHandler completionHandler);
 
+    /**
+     * Optional delegate.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) SKCloudServiceSetupViewControllerDelegate value);
 
+    /**
+     * Optional delegate.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) SKCloudServiceSetupViewControllerDelegate value) {
         Object __old = delegate();
@@ -212,6 +225,6 @@ public class SKCloudServiceSetupViewController extends UIViewController {
     @Generated
     public interface Block_loadWithOptionsCompletionHandler {
         @Generated
-        void call_loadWithOptionsCompletionHandler(boolean arg0, NSError arg1);
+        void call_loadWithOptionsCompletionHandler(boolean result, NSError error);
     }
 }

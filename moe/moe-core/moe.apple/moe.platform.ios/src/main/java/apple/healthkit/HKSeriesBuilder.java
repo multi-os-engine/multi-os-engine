@@ -2,10 +2,8 @@ package apple.healthkit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
-import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -22,15 +20,20 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
-import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKSeriesBuilder
+ * 
+ * An HKSeriesBuilder is an abstract class for generating HKSeriesSample objects.
+ *                Concrete subclasses generate the actual HKSeriesSample objects.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class HKSeriesBuilder extends NSObject implements NSSecureCoding {
+public class HKSeriesBuilder extends NSObject {
     static {
         NatJ.register();
     }
@@ -84,13 +87,18 @@ public class HKSeriesBuilder extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * discard
+     * 
+     * Stop series generation and discard all collected data.
+     * 
+     * This method informs the receiver that no more data should be collected and all
+     *                previously collected data should be deleted and the receiver will be considered
+     *                invalid. Any further calls to the receiver will result in an exception.
+     */
     @Generated
     @Selector("discard")
     public native void discard();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
 
     @Generated
     @Selector("hash")
@@ -100,10 +108,6 @@ public class HKSeriesBuilder extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("init")
     public native HKSeriesBuilder init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKSeriesBuilder initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -147,16 +151,6 @@ public class HKSeriesBuilder extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("version")

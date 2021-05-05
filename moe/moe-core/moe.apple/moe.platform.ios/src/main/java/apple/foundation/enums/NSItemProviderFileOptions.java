@@ -3,6 +3,9 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * The default behavior is to copy files.
+ */
 @Generated
 public final class NSItemProviderFileOptions {
     @Generated

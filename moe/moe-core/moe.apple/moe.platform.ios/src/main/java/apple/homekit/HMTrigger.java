@@ -43,6 +43,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents a trigger event.
+ * 
+ * This class describes a trigger which is an event that can
+ *             be used to execute one or more action sets when the event fires.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -154,15 +160,44 @@ public class HMTrigger extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Array of HMActionSet objects that represent all the action sets associated
+     *           with this trigger.
+     */
     @Generated
     @Selector("actionSets")
     public native NSArray<? extends HMActionSet> actionSets();
 
+    /**
+     * Registers an action set to be executed when the trigger is fired.
+     * 
+     * @param actionSet HMActionSet to execute when the trigger fires. The order of execution of the
+     *                  action set is not guaranteed.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request.
+     */
     @Generated
     @Selector("addActionSet:completionHandler:")
     public native void addActionSetCompletionHandler(HMActionSet actionSet,
             @ObjCBlock(name = "call_addActionSetCompletionHandler") Block_addActionSetCompletionHandler completion);
 
+    /**
+     * Enables or disables the trigger.
+     * 
+     * In order for the trigger to be enabled the following criteria must be met:
+     *             1. The trigger must be added to a home.
+     *             2. The trigger must have at least one action set associated with it.
+     *             3. Each action set added to the trigger must have at least one action.
+     *             4. For HMTimerTrigger: The next fire date of the timer trigger must be less
+     *                than 5 weeks in the future. The fire date of a one-shot timer trigger
+     *                must be in the future.
+     * 
+     * @param enable Setting this to TRUE will enable the trigger, FALSE will disable it.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request.
+     */
     @Generated
     @Selector("enable:completionHandler:")
     public native void enableCompletionHandler(boolean enable,
@@ -172,27 +207,57 @@ public class HMTrigger extends NSObject {
     @Selector("init")
     public native HMTrigger init();
 
+    /**
+     * State of the trigger.
+     * 
+     * TRUE if the trigger is enable, FALSE otherwise.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * The date that this trigger was most recently fired.
+     */
     @Generated
     @Selector("lastFireDate")
     public native NSDate lastFireDate();
 
+    /**
+     * Name of the trigger.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * De-registers an action set from the trigger.
+     * 
+     * @param actionSet The HMActionSet to disassociate from the trigger.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request.
+     */
     @Generated
     @Selector("removeActionSet:completionHandler:")
     public native void removeActionSetCompletionHandler(HMActionSet actionSet,
             @ObjCBlock(name = "call_removeActionSetCompletionHandler") Block_removeActionSetCompletionHandler completion);
 
+    /**
+     * A unique identifier for the trigger.
+     */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
+    /**
+     * This method is used to change the name of the trigger.
+     * 
+     * @param name New name for the trigger.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request.
+     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,
@@ -202,27 +267,27 @@ public class HMTrigger extends NSObject {
     @Generated
     public interface Block_addActionSetCompletionHandler {
         @Generated
-        void call_addActionSetCompletionHandler(NSError arg0);
+        void call_addActionSetCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enableCompletionHandler {
         @Generated
-        void call_enableCompletionHandler(NSError arg0);
+        void call_enableCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeActionSetCompletionHandler {
         @Generated
-        void call_removeActionSetCompletionHandler(NSError arg0);
+        void call_removeActionSetCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
+        void call_updateNameCompletionHandler(NSError error);
     }
 }

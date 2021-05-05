@@ -21,8 +21,8 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -39,14 +39,18 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A tile group encapsulates a collection of related tile definitions that are designed to be pieced together within a tile map. How those tiles are pieced together is governed by the set of rules. When a tile group is placed in a tile map, the map evaluates the rules to determine which tiles should be placed to achieve the desired outcome.
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKTileGroup extends NSObject implements NSCopying, NSCoding {
+public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -100,6 +104,9 @@ public class SKTileGroup extends NSObject implements NSCopying, NSCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Create an empty tile group. Placing this in a tile map will erase the existing tile at that location.
+     */
     @Generated
     @Selector("emptyTileGroup")
     @MappedReturn(ObjCObjectMapper.class)
@@ -153,10 +160,20 @@ public class SKTileGroup extends NSObject implements NSCopying, NSCoding {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Create a tile group with the specified rules.
+     * 
+     * @param rules the rules the group will use to determine tile placement
+     */
     @Generated
     @Selector("tileGroupWithRules:")
     public static native SKTileGroup tileGroupWithRules(NSArray<? extends SKTileGroupRule> rules);
 
+    /**
+     * Create a simple tile group for a single tile definition. This creates and initializes the SKTileGroupRule necessary to place the provided tile definition in a tile map.
+     * 
+     * @param tileDefinition the tile definition we wish to place in a tile map
+     */
     @Generated
     @Selector("tileGroupWithTileDefinition:")
     public static native SKTileGroup tileGroupWithTileDefinition(SKTileDefinition tileDefinition);
@@ -174,7 +191,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -182,29 +199,61 @@ public class SKTileGroup extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKTileGroup initWithCoder(NSCoder aDecoder);
+    public native SKTileGroup initWithCoder(NSCoder coder);
 
+    /**
+     * Initilize a tile group with the specified rules.
+     * 
+     * @param rules the rules the group will use to determine tile placement
+     */
     @Generated
     @Selector("initWithRules:")
     public native SKTileGroup initWithRules(NSArray<? extends SKTileGroupRule> rules);
 
+    /**
+     * Initilize a simple tile group for a single tile definition. This creates and initializes the SKTileGroupRule necessary to place the provided tile definition in a tile map.
+     * 
+     * @param tileDefinition tile definition we wish to place in a tile map
+     */
     @Generated
     @Selector("initWithTileDefinition:")
     public native SKTileGroup initWithTileDefinition(SKTileDefinition tileDefinition);
 
+    /**
+     * Client-assignable name for the tile group. Defaults to nil.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * The rules that govern which tiles are placed when this group is used, and where in the map they'll be placed.
+     */
     @Generated
     @Selector("rules")
     public native NSArray<? extends SKTileGroupRule> rules();
 
+    /**
+     * Client-assignable name for the tile group. Defaults to nil.
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * The rules that govern which tiles are placed when this group is used, and where in the map they'll be placed.
+     */
     @Generated
     @Selector("setRules:")
     public native void setRules(NSArray<? extends SKTileGroupRule> value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

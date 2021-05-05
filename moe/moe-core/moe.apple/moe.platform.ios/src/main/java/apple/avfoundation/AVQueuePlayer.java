@@ -138,6 +138,16 @@ public class AVQueuePlayer extends AVPlayer {
     @Selector("playerWithURL:")
     public static native AVQueuePlayer playerWithURL(NSURL URL);
 
+    /**
+     * queuePlayerWithItems:
+     * 
+     * Creates an instance of AVQueuePlayer and enqueues the AVPlayerItems from the specified array.
+     * 
+     * @param      items
+     *   An NSArray of AVPlayerItems with which to populate the player's queue initially.
+     * @return
+     *   An instance of AVQueuePlayer.
+     */
     @Generated
     @Selector("queuePlayerWithItems:")
     public static native AVQueuePlayer queuePlayerWithItems(NSArray<? extends AVPlayerItem> items);
@@ -163,10 +173,31 @@ public class AVQueuePlayer extends AVPlayer {
     @NInt
     public static native long version_static();
 
+    /**
+     * advanceToNextItem
+     * 
+     * Ends playback of the current item and initiates playback of the next item in the player's queue.
+     * 
+     * Removes the current item from the play queue.
+     */
     @Generated
     @Selector("advanceToNextItem")
     public native void advanceToNextItem();
 
+    /**
+     * canInsertItem:afterItem:
+     * 
+     * Tests whether an AVPlayerItem can be inserted into the player's queue.
+     * 
+     *   Note that adding the same AVPlayerItem to an AVQueuePlayer at more than one position in the queue is not supported.
+     * 
+     * @param      item
+     *   The AVPlayerItem to be tested.
+     * @param      afterItem
+     *   The item that the item to be tested is to follow in the queue. Pass nil to test whether the item can be appended to the queue.
+     * @return
+     *   An indication of whether the item can be inserted into the queue after the specified item.
+     */
     @Generated
     @Selector("canInsertItem:afterItem:")
     public native boolean canInsertItemAfterItem(AVPlayerItem item, AVPlayerItem afterItem);
@@ -175,6 +206,16 @@ public class AVQueuePlayer extends AVPlayer {
     @Selector("init")
     public native AVQueuePlayer init();
 
+    /**
+     * initWithItems:
+     * 
+     * Initializes an instance of AVQueuePlayer by enqueueing the AVPlayerItems from the specified array.
+     * 
+     * @param      items
+     *   An NSArray of AVPlayerItems with which to populate the player's queue initially.
+     * @return
+     *   An instance of AVQueuePlayer.
+     */
     @Generated
     @Selector("initWithItems:")
     public native AVQueuePlayer initWithItems(NSArray<? extends AVPlayerItem> items);
@@ -187,19 +228,62 @@ public class AVQueuePlayer extends AVPlayer {
     @Selector("initWithURL:")
     public native AVQueuePlayer initWithURL(NSURL URL);
 
+    /**
+     * insertItem:afterItem:
+     * 
+     * Places an AVPlayerItem after the specified item in the queue.
+     * 
+     * @param      item
+     *   The item to be inserted.
+     * @param      afterItem
+     *   The item that the newly inserted item should follow in the queue. Pass nil to append the item to the queue.
+     */
     @Generated
     @Selector("insertItem:afterItem:")
     public native void insertItemAfterItem(AVPlayerItem item, AVPlayerItem afterItem);
 
+    /**
+     * items
+     * 
+     * Provides an array of the currently enqueued items.
+     * 
+     * @return     An NSArray containing the enqueued AVPlayerItems.
+     */
     @Generated
     @Selector("items")
     public native NSArray<? extends AVPlayerItem> items();
 
+    /**
+     * removeAllItems
+     * 
+     * Removes all items from the queue.
+     * 
+     * Stops playback by the target.
+     */
     @Generated
     @Selector("removeAllItems")
     public native void removeAllItems();
 
+    /**
+     * removeItem:
+     * 
+     * Removes an AVPlayerItem from the queue.
+     * 
+     *   If the item to be removed is currently playing, has the same effect as -advanceToNextItem.
+     * 
+     * @param      item
+     *   The item to be removed.
+     */
     @Generated
     @Selector("removeItem:")
     public native void removeItem(AVPlayerItem item);
+
+    @Generated
+    @Selector("availableHDRModes")
+    @NInt
+    public static native long availableHDRModes();
+
+    @Generated
+    @Selector("eligibleForHDRPlayback")
+    public static native boolean eligibleForHDRPlayback();
 }

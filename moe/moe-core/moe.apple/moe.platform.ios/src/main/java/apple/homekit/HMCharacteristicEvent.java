@@ -43,6 +43,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This class represents an event that is evaluated based on the value of a characteristic
+ *        set to a particular value.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +158,9 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     @NInt
     public static native long version_static();
 
+    /**
+     * The characteristic associated with the event.
+     */
     @Generated
     @Selector("characteristic")
     public native HMCharacteristic characteristic();
@@ -162,16 +169,43 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     @Selector("init")
     public native HMCharacteristicEvent<?> init();
 
+    /**
+     * Initializes a new characteristic event object
+     * 
+     * @param characteristic The characteristic bound to the event. The characteristic must
+     *                       support notification. An exception will be thrown otherwise.
+     * 
+     * @param triggerValue The value of the characteristic that triggers the event.
+     *                     Specifying nil as the trigger value corresponds to any change in the value of the
+     *                     characteristic.
+     * 
+     * @return Instance object representing the characteristic event.
+     */
     @Generated
     @Selector("initWithCharacteristic:triggerValue:")
     public native HMCharacteristicEvent<?> initWithCharacteristicTriggerValue(HMCharacteristic characteristic,
             @Mapped(ObjCObjectMapper.class) Object triggerValue);
 
+    /**
+     * The value of the characteristic that triggers the event.
+     *        A value of nil corresponds to any change in the value of the characteristic.
+     */
     @Generated
     @Selector("triggerValue")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object triggerValue();
 
+    /**
+     * This method is used to change trigger value for the characteristic.
+     * 
+     * @param triggerValue New trigger value for the characteristic.
+     *                     Specifying nil as the trigger value corresponds to any change in the value of the
+     *                     characteristic.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateTriggerValue:completionHandler:")
     public native void updateTriggerValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object triggerValue,
@@ -181,7 +215,7 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     @Generated
     public interface Block_updateTriggerValueCompletionHandler {
         @Generated
-        void call_updateTriggerValueCompletionHandler(NSError arg0);
+        void call_updateTriggerValueCompletionHandler(NSError error);
     }
 
     @Generated
@@ -194,6 +228,7 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     @Selector("isSupportedForHome:")
     public static native boolean isSupportedForHome(HMHome home);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

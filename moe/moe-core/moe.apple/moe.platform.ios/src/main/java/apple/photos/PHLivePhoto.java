@@ -20,11 +20,14 @@ import apple.NSObject;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSItemProviderReading;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.uikit.UIImage;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -38,7 +41,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -53,7 +58,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
+public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, NSItemProviderReading {
     static {
         NatJ.register();
     }
@@ -81,6 +86,9 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Cancels the loading of a PHLivePhoto. The request's completion handler will be called.
+     */
     @Generated
     @Selector("cancelLivePhotoRequestWithRequestID:")
     public static native void cancelLivePhotoRequestWithRequestID(int requestID);
@@ -143,6 +151,11 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Requests a Live Photo from the given resource URLs. The result handler will be called multiple times to deliver new PHLivePhoto instances with increasingly more content. If a placeholder image is provided, the result handler will first be invoked synchronously to deliver a live photo containing only the placeholder image. Subsequent invocations of the result handler will occur on the main queue.
+     *  The targetSize and contentMode parameters are used to resize the live photo content if needed. If targetSize is equal to CGRectZero, content will not be resized.
+     *  When using this method to provide content for a PHLivePhotoView, each live photo instance delivered via the result handler should be passed to -[PHLivePhotoView setLivePhoto:].
+     */
     @Generated
     @Selector("requestLivePhotoWithResourceFileURLs:placeholderImage:targetSize:contentMode:resultHandler:")
     public static native int requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler(
@@ -182,7 +195,7 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -190,8 +203,11 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PHLivePhoto initWithCoder(NSCoder aDecoder);
+    public native PHLivePhoto initWithCoder(NSCoder coder);
 
+    /**
+     * The dimensions of the live photo measured in pixels.
+     */
     @Generated
     @Selector("size")
     @ByValue
@@ -208,6 +224,30 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
     public interface Block_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler {
         @Generated
         void call_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler(
-                PHLivePhoto arg0, NSDictionary<?, ?> arg1);
+                PHLivePhoto livePhoto, NSDictionary<?, ?> info);
+    }
+
+    @Generated
+    @Selector("objectWithItemProviderData:typeIdentifier:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+        return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
+    }
+
+    @Generated
+    @Selector("readableTypeIdentifiersForItemProvider")
+    public static native NSArray<String> readableTypeIdentifiersForItemProvider();
+
+    @Generated
+    @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
+    public NSArray<String> _readableTypeIdentifiersForItemProvider() {
+        return readableTypeIdentifiersForItemProvider();
     }
 }

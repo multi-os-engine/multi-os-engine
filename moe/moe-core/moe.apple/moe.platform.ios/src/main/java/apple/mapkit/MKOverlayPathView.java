@@ -29,6 +29,7 @@ import apple.mapkit.protocol.MKOverlay;
 import apple.uikit.UIColor;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -53,6 +54,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Prefer MKOverlayPathRenderer
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -135,7 +139,7 @@ public class MKOverlayPathView extends MKOverlayView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -148,8 +152,8 @@ public class MKOverlayPathView extends MKOverlayView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -370,7 +374,7 @@ public class MKOverlayPathView extends MKOverlayView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -386,7 +390,8 @@ public class MKOverlayPathView extends MKOverlayView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -402,11 +407,18 @@ public class MKOverlayPathView extends MKOverlayView {
     @Selector("applyFillPropertiesToContext:atZoomScale:")
     public native void applyFillPropertiesToContextAtZoomScale(CGContextRef context, @NFloat double zoomScale);
 
+    /**
+     * subclassers may override these
+     */
     @Generated
     @Deprecated
     @Selector("applyStrokePropertiesToContext:atZoomScale:")
     public native void applyStrokePropertiesToContextAtZoomScale(CGContextRef context, @NFloat double zoomScale);
 
+    /**
+     * subclassers should override this to create a path and then set it on
+     * themselves with self.path = newPath;
+     */
     @Generated
     @Deprecated
     @Selector("createPath")
@@ -428,7 +440,7 @@ public class MKOverlayPathView extends MKOverlayView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKOverlayPathView initWithCoder(NSCoder aDecoder);
+    public native MKOverlayPathView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -444,39 +456,60 @@ public class MKOverlayPathView extends MKOverlayView {
     @Selector("invalidatePath")
     public native void invalidatePath();
 
+    /**
+     * defaults to kCGLineCapRound
+     */
     @Generated
     @Deprecated
     @Selector("lineCap")
     public native int lineCap();
 
+    /**
+     * an array of NSNumbers, defaults to nil
+     */
     @Generated
     @Deprecated
     @Selector("lineDashPattern")
     public native NSArray<?> lineDashPattern();
 
+    /**
+     * defaults to 0
+     */
     @Generated
     @Deprecated
     @Selector("lineDashPhase")
     @NFloat
     public native double lineDashPhase();
 
+    /**
+     * defaults to kCGLineJoinRound
+     */
     @Generated
     @Deprecated
     @Selector("lineJoin")
     public native int lineJoin();
 
+    /**
+     * defaults to 0, which is MKRoadWidthAtZoomScale(currentZoomScale)
+     */
     @Generated
     @Deprecated
     @Selector("lineWidth")
     @NFloat
     public native double lineWidth();
 
+    /**
+     * defaults to 10
+     */
     @Generated
     @Deprecated
     @Selector("miterLimit")
     @NFloat
     public native double miterLimit();
 
+    /**
+     * path will be retained
+     */
     @Generated
     @Deprecated
     @Selector("path")
@@ -487,36 +520,57 @@ public class MKOverlayPathView extends MKOverlayView {
     @Selector("setFillColor:")
     public native void setFillColor(UIColor value);
 
+    /**
+     * defaults to kCGLineCapRound
+     */
     @Generated
     @Deprecated
     @Selector("setLineCap:")
     public native void setLineCap(int value);
 
+    /**
+     * an array of NSNumbers, defaults to nil
+     */
     @Generated
     @Deprecated
     @Selector("setLineDashPattern:")
     public native void setLineDashPattern(NSArray<?> value);
 
+    /**
+     * defaults to 0
+     */
     @Generated
     @Deprecated
     @Selector("setLineDashPhase:")
     public native void setLineDashPhase(@NFloat double value);
 
+    /**
+     * defaults to kCGLineJoinRound
+     */
     @Generated
     @Deprecated
     @Selector("setLineJoin:")
     public native void setLineJoin(int value);
 
+    /**
+     * defaults to 0, which is MKRoadWidthAtZoomScale(currentZoomScale)
+     */
     @Generated
     @Deprecated
     @Selector("setLineWidth:")
     public native void setLineWidth(@NFloat double value);
 
+    /**
+     * defaults to 10
+     */
     @Generated
     @Deprecated
     @Selector("setMiterLimit:")
     public native void setMiterLimit(@NFloat double value);
 
+    /**
+     * path will be retained
+     */
     @Generated
     @Deprecated
     @Selector("setPath:")
@@ -536,4 +590,10 @@ public class MKOverlayPathView extends MKOverlayView {
     @Deprecated
     @Selector("strokePath:inContext:")
     public native void strokePathInContext(CGPathRef path, CGContextRef context);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

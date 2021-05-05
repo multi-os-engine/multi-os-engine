@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
+import apple.uikit.UITextInputPasswordRules;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NInt;
@@ -25,11 +26,20 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * UITextInputTraits
+ * 
+ * Controls features of text widgets (or other custom objects that might wish
+ * to respond to keyboard input).
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextInputTraits")
 public interface UITextInputTraits {
+    /**
+     * default is UITextAutocapitalizationTypeSentences
+     */
     @Generated
     @IsOptional
     @Selector("autocapitalizationType")
@@ -38,6 +48,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UITextAutocorrectionTypeDefault
+     */
     @Generated
     @IsOptional
     @Selector("autocorrectionType")
@@ -46,6 +59,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is NO (when YES, will automatically disable return key when text widget has zero-length contents, and will automatically enable when text widget has non-zero-length contents)
+     */
     @Generated
     @IsOptional
     @Selector("enablesReturnKeyAutomatically")
@@ -53,6 +69,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is NO
+     */
     @Generated
     @IsOptional
     @Selector("isSecureTextEntry")
@@ -60,6 +79,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is NO
+     */
     @Generated
     @IsOptional
     @Selector("setSecureTextEntry:")
@@ -67,6 +89,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UIKeyboardAppearanceDefault
+     */
     @Generated
     @IsOptional
     @Selector("keyboardAppearance")
@@ -75,6 +100,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UIKeyboardTypeDefault
+     */
     @Generated
     @IsOptional
     @Selector("keyboardType")
@@ -83,6 +111,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UIReturnKeyDefault (See note under UIReturnKeyType enum)
+     */
     @Generated
     @IsOptional
     @Selector("returnKeyType")
@@ -91,6 +122,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UITextAutocapitalizationTypeSentences
+     */
     @Generated
     @IsOptional
     @Selector("setAutocapitalizationType:")
@@ -98,6 +132,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UITextAutocorrectionTypeDefault
+     */
     @Generated
     @IsOptional
     @Selector("setAutocorrectionType:")
@@ -105,6 +142,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is NO (when YES, will automatically disable return key when text widget has zero-length contents, and will automatically enable when text widget has non-zero-length contents)
+     */
     @Generated
     @IsOptional
     @Selector("setEnablesReturnKeyAutomatically:")
@@ -112,6 +152,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UIKeyboardAppearanceDefault
+     */
     @Generated
     @IsOptional
     @Selector("setKeyboardAppearance:")
@@ -119,6 +162,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UIKeyboardTypeDefault
+     */
     @Generated
     @IsOptional
     @Selector("setKeyboardType:")
@@ -126,6 +172,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UIReturnKeyDefault (See note under UIReturnKeyType enum)
+     */
     @Generated
     @IsOptional
     @Selector("setReturnKeyType:")
@@ -133,6 +182,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UITextSpellCheckingTypeDefault;
+     */
     @Generated
     @IsOptional
     @Selector("setSpellCheckingType:")
@@ -140,6 +192,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is nil
+     */
     @Generated
     @IsOptional
     @Selector("setTextContentType:")
@@ -147,6 +202,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UITextSpellCheckingTypeDefault;
+     */
     @Generated
     @IsOptional
     @Selector("spellCheckingType")
@@ -155,6 +213,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is nil
+     */
     @Generated
     @IsOptional
     @Selector("textContentType")
@@ -162,6 +223,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UITextSmartDashesTypeDefault;
+     */
     @Generated
     @IsOptional
     @Selector("setSmartDashesType:")
@@ -169,6 +233,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UITextSmartInsertDeleteTypeDefault;
+     */
     @Generated
     @IsOptional
     @Selector("setSmartInsertDeleteType:")
@@ -176,6 +243,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UITextSmartQuotesTypeDefault;
+     */
     @Generated
     @IsOptional
     @Selector("setSmartQuotesType:")
@@ -183,6 +253,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UITextSmartDashesTypeDefault;
+     */
     @Generated
     @IsOptional
     @Selector("smartDashesType")
@@ -191,6 +264,9 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UITextSmartInsertDeleteTypeDefault;
+     */
     @Generated
     @IsOptional
     @Selector("smartInsertDeleteType")
@@ -199,11 +275,34 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * default is UITextSmartQuotesTypeDefault;
+     */
     @Generated
     @IsOptional
     @Selector("smartQuotesType")
     @NInt
     default long smartQuotesType() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * default is nil
+     */
+    @Generated
+    @IsOptional
+    @Selector("passwordRules")
+    default UITextInputPasswordRules passwordRules() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * default is nil
+     */
+    @Generated
+    @IsOptional
+    @Selector("setPasswordRules:")
+    default void setPasswordRules(UITextInputPasswordRules value) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

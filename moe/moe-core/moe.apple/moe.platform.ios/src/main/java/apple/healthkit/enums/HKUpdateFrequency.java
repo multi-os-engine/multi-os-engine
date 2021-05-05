@@ -19,6 +19,9 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]      HKUpdateFrequency
+ */
 @Generated
 public final class HKUpdateFrequency {
     @Generated @NInt public static final long Immediate = 0x0000000000000001L;

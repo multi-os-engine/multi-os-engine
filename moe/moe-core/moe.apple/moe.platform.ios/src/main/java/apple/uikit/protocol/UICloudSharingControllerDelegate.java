@@ -50,6 +50,9 @@ public interface UICloudSharingControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * corresponds to CKShareThumbnailImageDataKey on the expected share
+     */
     @Generated
     @IsOptional
     @Selector("itemThumbnailDataForCloudSharingController:")
@@ -57,10 +60,16 @@ public interface UICloudSharingControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * corresponds to CKShareTitleKey on the expected share
+     */
     @Generated
     @Selector("itemTitleForCloudSharingController:")
     String itemTitleForCloudSharingController(UICloudSharingController csc);
 
+    /**
+     * corresponds to CKShareTypeKey on the expected share
+     */
     @Generated
     @IsOptional
     @Selector("itemTypeForCloudSharingController:")

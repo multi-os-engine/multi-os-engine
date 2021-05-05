@@ -18,6 +18,9 @@ package apple.audiotoolbox.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * [@enum]	AUSpatial Mixer Rendering Flags
+ */
 @Generated
 public final class AUSpatialMixerRenderingFlags {
     @Generated public static final int InterAuralDelay = 0x00000001;

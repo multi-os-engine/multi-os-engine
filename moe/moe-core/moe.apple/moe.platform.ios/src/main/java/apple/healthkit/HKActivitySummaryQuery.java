@@ -260,15 +260,40 @@ public class HKActivitySummaryQuery extends HKQuery {
     @Selector("init")
     public native HKActivitySummaryQuery init();
 
+    /**
+     *  @method        initWithPredicate:resultsHandler:
+     *  @abstract      Returns a query that will retrieve HKActivitySummaries matching the given predicate.
+     *  @discussion    If no updateHandler is set on the query, the query will automatically stop after calling resultsHandler.
+     *                 Otherwise, the query continues to run and calls the updateHandler as HKActivitySummaries matching the
+     *                 predicate are updated.
+     *  
+     *  @param         predicate  The predicate which HKActivitySummaries should match.
+     *  @param         handler    The block to invoke with results when the query has finished.
+     *  
+     */
     @Generated
     @Selector("initWithPredicate:resultsHandler:")
     public native HKActivitySummaryQuery initWithPredicateResultsHandler(NSPredicate predicate,
             @ObjCBlock(name = "call_initWithPredicateResultsHandler") Block_initWithPredicateResultsHandler handler);
 
+    /**
+     *  @property      updateHandler
+     *  @abstract      An optional handler to be called when activity summaries matching the given predicate are updated.
+     *  @discussion    This property may not be modified once the query has been executed. If this property is nonnull, then
+     *                 the query must be manually stopped.
+     *  
+     */
     @Generated
     @Selector("setUpdateHandler:")
     public native void setUpdateHandler(@ObjCBlock(name = "call_setUpdateHandler") Block_setUpdateHandler value);
 
+    /**
+     *  @property      updateHandler
+     *  @abstract      An optional handler to be called when activity summaries matching the given predicate are updated.
+     *  @discussion    This property may not be modified once the query has been executed. If this property is nonnull, then
+     *                 the query must be manually stopped.
+     *  
+     */
     @Generated
     @Selector("updateHandler")
     @ObjCBlock(name = "call_updateHandler_ret")
@@ -278,8 +303,8 @@ public class HKActivitySummaryQuery extends HKQuery {
     @Generated
     public interface Block_initWithPredicateResultsHandler {
         @Generated
-        void call_initWithPredicateResultsHandler(HKActivitySummaryQuery arg0,
-                NSArray<? extends HKActivitySummary> arg1, NSError arg2);
+        void call_initWithPredicateResultsHandler(HKActivitySummaryQuery query,
+                NSArray<? extends HKActivitySummary> activitySummaries, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -302,4 +327,26 @@ public class HKActivitySummaryQuery extends HKQuery {
     @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
             HKQuantity totalFlightsClimbed);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsFromSource:FHIRResourceType:identifier:")
+    public static native NSPredicate predicateForClinicalRecordsFromSourceFHIRResourceTypeIdentifier(HKSource source,
+            String resourceType, String identifier);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsWithFHIRResourceType:")
+    public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(String resourceType);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithClassification:")
+    public static native NSPredicate predicateForElectrocardiogramsWithClassification(@NInt long classification);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithSymptomsStatus:")
+    public static native NSPredicate predicateForElectrocardiogramsWithSymptomsStatus(@NInt long symptomsStatus);
+
+    @Generated
+    @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
+    public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
+            HKElectrocardiogram electrocardiogram);
 }

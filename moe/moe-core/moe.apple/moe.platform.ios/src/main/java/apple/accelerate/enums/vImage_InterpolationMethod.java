@@ -18,10 +18,22 @@ package apple.accelerate.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * interpolation method for vImageMultiDimensionalInterpolatedLookupTable_<fmt>
+ */
 @Generated
 public final class vImage_InterpolationMethod {
+    /**
+     * nearest neighbor. Fast but probably causes banding and will certainly quantize the histogram.
+     */
     @Generated public static final int kvImageNoInterpolation = 0x00000000;
+    /**
+     * full linear interpolation
+     */
     @Generated public static final int kvImageFullInterpolation = 0x00000001;
+    /**
+     * partial linear interpolation between vertices on gray axis and N-1 nearest vertices
+     */
     @Generated public static final int kvImageHalfInterpolation = 0x00000002;
 
     @Generated

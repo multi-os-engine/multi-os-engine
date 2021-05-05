@@ -32,6 +32,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -180,24 +181,38 @@ public class CAScrollLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAScrollLayer initWithCoder(NSCoder aDecoder);
+    public native CAScrollLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
     public native CAScrollLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
+    /**
+     * Defines the axes in which the layer may be scrolled. Possible values
+     * are `none', `vertically', `horizontally' or `both' (the default).
+     */
     @Generated
     @Selector("scrollMode")
     public native String scrollMode();
 
+    /**
+     * Changes the origin of the layer to point 'p'.
+     */
     @Generated
     @Selector("scrollToPoint:")
     public native void scrollToPoint(@ByValue CGPoint p);
 
+    /**
+     * Scroll the contents of the layer to ensure that rect 'r' is visible.
+     */
     @Generated
     @Selector("scrollToRect:")
     public native void scrollToRect(@ByValue CGRect r);
 
+    /**
+     * Defines the axes in which the layer may be scrolled. Possible values
+     * are `none', `vertically', `horizontally' or `both' (the default).
+     */
     @Generated
     @Selector("setScrollMode:")
     public native void setScrollMode(String value);
@@ -211,4 +226,9 @@ public class CAScrollLayer extends CALayer {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
 }

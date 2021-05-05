@@ -167,22 +167,45 @@ public class ABUnknownPersonViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
+     * If not set, a new ABAddressBook will be created the first time the property is accessed.
+     */
     @Generated
     @Selector("addressBook")
     public native ConstVoidPtr addressBook();
 
+    /**
+     * Specifies whether buttons appear to let the user perform actions such as sharing the contact,
+     * initiating a FaceTime call, or sending a text message.
+     */
     @Generated
     @Selector("allowsActions")
     public native boolean allowsActions();
 
+    /**
+     * Whether options to create a contact or add to an existing contact should be
+     * made available to the user.
+     */
     @Generated
     @Selector("allowsAddingToAddressBook")
     public native boolean allowsAddingToAddressBook();
 
+    /**
+     * An alternateName can be provided to replace the First and Last name
+     * in case they are not available.
+     */
     @Generated
     @Selector("alternateName")
     public native String alternateName();
 
+    /**
+     * All the fields specified in displayedPerson will be displayed in the view
+     * and used if the unknown person is added to Address Book or merged into an
+     * existing person in Address Book.
+     * If displayedPerson has been added to an ABAddressBook, then the addressBook
+     * property will be updated to use the displayedPerson's ABAddressBook.
+     */
     @Generated
     @Selector("displayedPerson")
     public native ConstVoidPtr displayedPerson();
@@ -193,45 +216,80 @@ public class ABUnknownPersonViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ABUnknownPersonViewController initWithCoder(NSCoder aDecoder);
+    public native ABUnknownPersonViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
     public native ABUnknownPersonViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * The message will be displayed below the alternateName.
+     */
     @Generated
     @Selector("message")
     public native String message();
 
+    /**
+     * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
+     * If not set, a new ABAddressBook will be created the first time the property is accessed.
+     */
     @Generated
     @Selector("setAddressBook:")
     public native void setAddressBook(ConstVoidPtr value);
 
+    /**
+     * Specifies whether buttons appear to let the user perform actions such as sharing the contact,
+     * initiating a FaceTime call, or sending a text message.
+     */
     @Generated
     @Selector("setAllowsActions:")
     public native void setAllowsActions(boolean value);
 
+    /**
+     * Whether options to create a contact or add to an existing contact should be
+     * made available to the user.
+     */
     @Generated
     @Selector("setAllowsAddingToAddressBook:")
     public native void setAllowsAddingToAddressBook(boolean value);
 
+    /**
+     * An alternateName can be provided to replace the First and Last name
+     * in case they are not available.
+     */
     @Generated
     @Selector("setAlternateName:")
     public native void setAlternateName(String value);
 
+    /**
+     * All the fields specified in displayedPerson will be displayed in the view
+     * and used if the unknown person is added to Address Book or merged into an
+     * existing person in Address Book.
+     * If displayedPerson has been added to an ABAddressBook, then the addressBook
+     * property will be updated to use the displayedPerson's ABAddressBook.
+     */
     @Generated
     @Selector("setDisplayedPerson:")
     public native void setDisplayedPerson(ConstVoidPtr value);
 
+    /**
+     * The message will be displayed below the alternateName.
+     */
     @Generated
     @Selector("setMessage:")
     public native void setMessage(String value);
 
+    /**
+     * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     */
     @Generated
     @Selector("setUnknownPersonViewDelegate:")
     public native void setUnknownPersonViewDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) ABUnknownPersonViewControllerDelegate value);
 
+    /**
+     * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     */
     @Generated
     public void setUnknownPersonViewDelegate(
             @Mapped(ObjCObjectMapper.class) ABUnknownPersonViewControllerDelegate value) {
@@ -245,6 +303,9 @@ public class ABUnknownPersonViewController extends UIViewController {
         }
     }
 
+    /**
+     * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
+     */
     @Generated
     @Selector("unknownPersonViewDelegate")
     @MappedReturn(ObjCObjectMapper.class)

@@ -21,6 +21,7 @@ import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.mapkit.protocol.MKGeoJSONObject;
 import apple.mapkit.protocol.MKOverlay;
 import apple.mapkit.struct.MKMapPoint;
 import apple.mapkit.struct.MKMapRect;
@@ -51,7 +52,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MKPolygon extends MKMultiPoint implements MKOverlay {
+public class MKPolygon extends MKMultiPoint implements MKOverlay, MKGeoJSONObject {
     static {
         NatJ.register();
     }

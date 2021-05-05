@@ -19,13 +19,36 @@ package apple.networkextension.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@typedef] NEVPNError
+ * 
+ * VPN error codes
+ */
 @Generated
 public final class NEVPNError {
+    /**
+     * [@const] NEVPNErrorConfigurationInvalid The VPN configuration is invalid
+     */
     @Generated @NInt public static final long ConfigurationInvalid = 0x0000000000000001L;
+    /**
+     * [@const] NEVPNErrorConfigurationDisabled The VPN configuration is not enabled.
+     */
     @Generated @NInt public static final long ConfigurationDisabled = 0x0000000000000002L;
+    /**
+     * [@const] NEVPNErrorConnectionFailed The connection to the VPN server failed.
+     */
     @Generated @NInt public static final long ConnectionFailed = 0x0000000000000003L;
+    /**
+     * [@const] NEVPNErrorConfigurationStale The VPN configuration is stale and needs to be loaded.
+     */
     @Generated @NInt public static final long ConfigurationStale = 0x0000000000000004L;
+    /**
+     * [@const] NEVPNErrorConfigurationReadWriteFailed The VPN configuration cannot be read from or written to disk.
+     */
     @Generated @NInt public static final long ConfigurationReadWriteFailed = 0x0000000000000005L;
+    /**
+     * [@const] NEVPNErrorConfigurationUnknown An unknown configuration error occurred.
+     */
     @Generated @NInt public static final long ConfigurationUnknown = 0x0000000000000006L;
 
     @Generated

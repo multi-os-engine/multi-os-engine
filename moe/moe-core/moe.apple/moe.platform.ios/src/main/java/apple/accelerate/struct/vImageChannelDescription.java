@@ -52,38 +52,62 @@ public final class vImageChannelDescription extends StructObject {
         setMax(max);
     }
 
+    /**
+     * e.g. Minimum allowed value for format. e.g. {16, 16, 16, 0} for {Y', Cb, Cr, A} 8-bit video range
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @NFloat
     public native double min();
 
+    /**
+     * e.g. Minimum allowed value for format. e.g. {16, 16, 16, 0} for {Y', Cb, Cr, A} 8-bit video range
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setMin(@NFloat double value);
 
+    /**
+     * e.g. Encoded value for 0.0   e.g. {0, 128, 128, 0} for {Y', Cb, Cr, A} 8-bit video range
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @NFloat
     public native double zero();
 
+    /**
+     * e.g. Encoded value for 0.0   e.g. {0, 128, 128, 0} for {Y', Cb, Cr, A} 8-bit video range
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setZero(@NFloat double value);
 
+    /**
+     * e.g. Encoded value for 1.0, (0.5 for Chroma).  e.g. {235, 240, 240, 255} for {Y', Cb, Cr, A} 8-bit video range, full range alpha
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @NFloat
     public native double full();
 
+    /**
+     * e.g. Encoded value for 1.0, (0.5 for Chroma).  e.g. {235, 240, 240, 255} for {Y', Cb, Cr, A} 8-bit video range, full range alpha
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setFull(@NFloat double value);
 
+    /**
+     * e.g. Maximum allowed value for format. e,g, {235, 240, 240, 255} to clamp to {Y', Cb, Cr, A} 8-bit video range, full range alpha
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @NFloat
     public native double max();
 
+    /**
+     * e.g. Maximum allowed value for format. e,g, {235, 240, 240, 255} to clamp to {Y', Cb, Cr, A} 8-bit video range, full range alpha
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setMax(@NFloat double value);

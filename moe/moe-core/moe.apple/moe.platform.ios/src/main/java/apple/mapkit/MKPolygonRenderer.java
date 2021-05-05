@@ -28,6 +28,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -166,4 +167,36 @@ public class MKPolygonRenderer extends MKOverlayPathRenderer {
     @Generated
     @Selector("polygon")
     public native MKPolygon polygon();
+
+    @Generated
+    @Selector("setStrokeEnd:")
+    public native void setStrokeEnd(@NFloat double value);
+
+    /**
+     * These values define the subregion of the path used to draw the
+     * stroke. The values must be in the range [0,1] with zero
+     * representing the start of the path and one the end. Values in
+     * between zero and one are interpolated linearly along the length.
+     * strokeStart defaults to 0 and strokeEnd to 1
+     */
+    @Generated
+    @Selector("setStrokeStart:")
+    public native void setStrokeStart(@NFloat double value);
+
+    @Generated
+    @Selector("strokeEnd")
+    @NFloat
+    public native double strokeEnd();
+
+    /**
+     * These values define the subregion of the path used to draw the
+     * stroke. The values must be in the range [0,1] with zero
+     * representing the start of the path and one the end. Values in
+     * between zero and one are interpolated linearly along the length.
+     * strokeStart defaults to 0 and strokeEnd to 1
+     */
+    @Generated
+    @Selector("strokeStart")
+    @NFloat
+    public native double strokeStart();
 }

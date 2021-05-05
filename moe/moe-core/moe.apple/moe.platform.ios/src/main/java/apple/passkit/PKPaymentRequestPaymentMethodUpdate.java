@@ -2,6 +2,7 @@ package apple.passkit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -142,4 +143,21 @@ public class PKPaymentRequestPaymentMethodUpdate extends PKPaymentRequestUpdate 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("errors")
+    public native NSArray<? extends NSError> errors();
+
+    /**
+     * You may optionally supply errors here.
+     * See PKError for specific NSError keys to use.
+     */
+    @Generated
+    @Selector("initWithErrors:paymentSummaryItems:")
+    public native PKPaymentRequestPaymentMethodUpdate initWithErrorsPaymentSummaryItems(
+            NSArray<? extends NSError> errors, NSArray<? extends PKPaymentSummaryItem> paymentSummaryItems);
+
+    @Generated
+    @Selector("setErrors:")
+    public native void setErrors(NSArray<? extends NSError> value);
 }

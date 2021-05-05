@@ -19,6 +19,7 @@ package apple.uikit;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -36,6 +37,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -166,4 +168,28 @@ public class UIStoryboard extends NSObject {
     @Generated
     @Selector("instantiateViewControllerWithIdentifier:")
     public native UIViewController instantiateViewControllerWithIdentifier(String identifier);
+
+    @Generated
+    @Selector("instantiateInitialViewControllerWithCreator:")
+    public native UIViewController instantiateInitialViewControllerWithCreator(
+            @ObjCBlock(name = "call_instantiateInitialViewControllerWithCreator") Block_instantiateInitialViewControllerWithCreator block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_instantiateInitialViewControllerWithCreator {
+        @Generated
+        UIViewController call_instantiateInitialViewControllerWithCreator(NSCoder coder);
+    }
+
+    @Generated
+    @Selector("instantiateViewControllerWithIdentifier:creator:")
+    public native UIViewController instantiateViewControllerWithIdentifierCreator(String identifier,
+            @ObjCBlock(name = "call_instantiateViewControllerWithIdentifierCreator") Block_instantiateViewControllerWithIdentifierCreator block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_instantiateViewControllerWithIdentifierCreator {
+        @Generated
+        UIViewController call_instantiateViewControllerWithIdentifierCreator(NSCoder coder);
+    }
 }

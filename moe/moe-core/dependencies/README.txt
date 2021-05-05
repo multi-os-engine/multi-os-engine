@@ -14,9 +14,8 @@ Building MOE
 	brew tap homebrew/versions
 	brew install autogen autoconf automake openssl libtool pkg-config
 	brew install wget
-	brew install wine
-	brew install gcc@5
 	brew install cloog
+	brew install isl
 
 4. Setup MinGW environment:
 
@@ -27,11 +26,10 @@ Building MOE
 	Add to your ~/.bash_profile
 	export PATH=$PATH:/usr/local/mingw/bin
 
-5. Install premake5 and isl@0.14
+5. Install premake5
 
 	cp ./premake5.rb /usr/local/Library/Formula
-	cp ./isl@0.14.rb /usr/local/Library/Formula
-	brew install premake5 isl@0.14
+	brew install premake5
 
 6. Other dependenies
 

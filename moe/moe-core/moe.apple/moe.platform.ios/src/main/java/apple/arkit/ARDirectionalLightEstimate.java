@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A directional light estimate representing the light intensity and direction in the scene.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -119,6 +122,9 @@ public class ARDirectionalLightEstimate extends ARLightEstimate {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The intensity of light in the primary direction.
+     */
     @Generated
     @Selector("primaryLightIntensity")
     @NFloat
@@ -136,6 +142,12 @@ public class ARDirectionalLightEstimate extends ARLightEstimate {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Second degree spherical harmonics coefficients representing the intensity of light.
+     * 
+     * The data is an array of 27 32-bit floating-point values, containing three non-interleaved data sets
+     * corresponding to the red, green, and blue sets of coefficients.
+     */
     @Generated
     @Selector("sphericalHarmonicsCoefficients")
     public native NSData sphericalHarmonicsCoefficients();

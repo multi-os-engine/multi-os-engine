@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.metal.protocol.MTLDevice;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -41,6 +42,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSCNNNeuronAbsolute
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the absolute neuron filter.  For each pixel, applies the following function: f(x) = | x |
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +163,12 @@ public class MPSCNNNeuronAbsolute extends MPSCNNNeuron {
     @Selector("init")
     public native MPSCNNNeuronAbsolute init();
 
+    /**
+     * Initialize a neuron filter
+     * 
+     * @param      device          The device the filter will run on
+     * @return     A valid MPSCNNNeuronAbsolute object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSCNNNeuronAbsolute initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
@@ -178,4 +191,9 @@ public class MPSCNNNeuronAbsolute extends MPSCNNNeuron {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("initWithDevice:neuronDescriptor:")
+    public native MPSCNNNeuronAbsolute initWithDeviceNeuronDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            MPSNNNeuronDescriptor neuronDescriptor);
 }

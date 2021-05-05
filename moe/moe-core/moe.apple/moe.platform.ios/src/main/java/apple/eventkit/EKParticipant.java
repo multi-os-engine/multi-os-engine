@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * EKParticipant
+ * 
+ * Abstract class representing a participant attached to an event.
+ */
 @Generated
 @Library("EventKit")
 @Runtime(ObjCRuntime.class)
@@ -154,15 +159,38 @@ public class EKParticipant extends EKObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * ABRecordWithAddressBook
+     * 
+     * Returns the ABRecordRef that represents this participant.
+     * 
+     * This method returns the ABRecordRef that represents this participant,
+     * if a match can be found based on email address in the address book
+     * passed. If we cannot find the participant, nil is returned.
+     */
     @Generated
     @Deprecated
     @Selector("ABRecordWithAddressBook:")
     public native ConstVoidPtr ABRecordWithAddressBook(ConstVoidPtr addressBook);
 
+    /**
+     * [@property]   url
+     * 
+     * URL representing this participant.
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
+    /**
+     * contactPredicate
+     * 
+     * Returns a predicate to use with Contacts.framework to retrieve the corresponding
+     *             CNContact instance.
+     * 
+     * This method returns a predicate that can be used with a CNContactStore to fetch
+     *             a CNContact instance for this participant, if one exists.
+     */
     @Generated
     @Selector("contactPredicate")
     public native NSPredicate contactPredicate();
@@ -177,24 +205,56 @@ public class EKParticipant extends EKObject implements NSCopying {
     @Selector("init")
     public native EKParticipant init();
 
+    /**
+     * [@property]   currentUser
+     * 
+     * A boolean indicating whether this participant represents the
+     *             owner of this account.
+     */
     @Generated
     @Selector("isCurrentUser")
     public native boolean isCurrentUser();
 
+    /**
+     * [@property]   name
+     * 
+     * Name of this participant.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * [@property]   participantRole
+     * 
+     * The role of the attendee.
+     * 
+     * Returns the role of the attendee as a EKParticipantRole value.
+     */
     @Generated
     @Selector("participantRole")
     @NInt
     public native long participantRole();
 
+    /**
+     * [@property]   participantStatus
+     * 
+     * The status of the attendee.
+     * 
+     * Returns the status of the attendee as a EKParticipantStatus value.
+     */
     @Generated
     @Selector("participantStatus")
     @NInt
     public native long participantStatus();
 
+    /**
+     * [@property]   participantType
+     * 
+     * The type of the attendee.
+     * 
+     * Returns the type of the attendee as a EKParticipantType value.
+     */
     @Generated
     @Selector("participantType")
     @NInt

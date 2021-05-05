@@ -28,11 +28,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * All clients will need to implement this protocol
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKVoiceChatClient")
 public interface GKVoiceChatClient {
+    /**
+     * must be sent within some reasonble period of time and should accept at least 512 bytes.
+     */
     @Generated
     @Selector("participantID")
     String participantID();
@@ -68,11 +74,18 @@ public interface GKVoiceChatClient {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * this channel will only be used to setup voice chat, and not to send audio data. The only requirement is that messages are sent and received within a few (1-2) seconds time.
+     */
     @Generated
     @Selector("voiceChatService:sendData:toParticipantID:")
     void voiceChatServiceSendDataToParticipantID(GKVoiceChatService voiceChatService, NSData data,
             String participantID);
 
+    /**
+     * should be sent immediately with no delay on a UDP peer-to-peer connection.
+     *  If this method is implemented, then the Voice Chat Service will not attempt to set up a peer-to-peer connection. And will rely on this one.  To transmit audio.
+     */
     @Generated
     @IsOptional
     @Selector("voiceChatService:sendRealTimeData:toParticipantID:")

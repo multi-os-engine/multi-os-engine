@@ -19,6 +19,13 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] SCNMovabilityHint
+ * 
+ * The available modes of movability.
+ * 
+ * Movable nodes are not captured when computing light probes.
+ */
 @Generated
 public final class SCNMovabilityHint {
     @Generated @NInt public static final long Fixed = 0x0000000000000000L;

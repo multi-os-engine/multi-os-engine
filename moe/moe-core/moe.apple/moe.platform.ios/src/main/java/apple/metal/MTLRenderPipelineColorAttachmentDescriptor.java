@@ -151,6 +151,9 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
     @NInt
     public static native long version_static();
 
+    /**
+     * Defaults to MTLBlendOperationAdd
+     */
     @Generated
     @Selector("alphaBlendOperation")
     @NUInt
@@ -162,11 +165,17 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Defaults to MTLBlendFactorZero
+     */
     @Generated
     @Selector("destinationAlphaBlendFactor")
     @NUInt
     public native long destinationAlphaBlendFactor();
 
+    /**
+     * Defaults to MTLBlendFactorZero
+     */
     @Generated
     @Selector("destinationRGBBlendFactor")
     @NUInt
@@ -176,66 +185,111 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
     @Selector("init")
     public native MTLRenderPipelineColorAttachmentDescriptor init();
 
+    /**
+     * Enable blending.  Defaults to NO.
+     */
     @Generated
     @Selector("isBlendingEnabled")
     public native boolean isBlendingEnabled();
 
+    /**
+     * Enable blending.  Defaults to NO.
+     */
     @Generated
     @Selector("setBlendingEnabled:")
     public native void setBlendingEnabled(boolean value);
 
+    /**
+     * Pixel format.  Defaults to MTLPixelFormatInvalid
+     */
     @Generated
     @Selector("pixelFormat")
     @NUInt
     public native long pixelFormat();
 
+    /**
+     * Defaults to MTLBlendOperationAdd
+     */
     @Generated
     @Selector("rgbBlendOperation")
     @NUInt
     public native long rgbBlendOperation();
 
+    /**
+     * Defaults to MTLBlendOperationAdd
+     */
     @Generated
     @Selector("setAlphaBlendOperation:")
     public native void setAlphaBlendOperation(@NUInt long value);
 
+    /**
+     * Defaults to MTLBlendFactorZero
+     */
     @Generated
     @Selector("setDestinationAlphaBlendFactor:")
     public native void setDestinationAlphaBlendFactor(@NUInt long value);
 
+    /**
+     * Defaults to MTLBlendFactorZero
+     */
     @Generated
     @Selector("setDestinationRGBBlendFactor:")
     public native void setDestinationRGBBlendFactor(@NUInt long value);
 
+    /**
+     * Pixel format.  Defaults to MTLPixelFormatInvalid
+     */
     @Generated
     @Selector("setPixelFormat:")
     public native void setPixelFormat(@NUInt long value);
 
+    /**
+     * Defaults to MTLBlendOperationAdd
+     */
     @Generated
     @Selector("setRgbBlendOperation:")
     public native void setRgbBlendOperation(@NUInt long value);
 
+    /**
+     * Defaults to MTLBlendFactorOne
+     */
     @Generated
     @Selector("setSourceAlphaBlendFactor:")
     public native void setSourceAlphaBlendFactor(@NUInt long value);
 
+    /**
+     * Defaults to MTLBlendFactorOne
+     */
     @Generated
     @Selector("setSourceRGBBlendFactor:")
     public native void setSourceRGBBlendFactor(@NUInt long value);
 
+    /**
+     * Defaults to MTLColorWriteMaskAll
+     */
     @Generated
     @Selector("setWriteMask:")
     public native void setWriteMask(@NUInt long value);
 
+    /**
+     * Defaults to MTLBlendFactorOne
+     */
     @Generated
     @Selector("sourceAlphaBlendFactor")
     @NUInt
     public native long sourceAlphaBlendFactor();
 
+    /**
+     * Defaults to MTLBlendFactorOne
+     */
     @Generated
     @Selector("sourceRGBBlendFactor")
     @NUInt
     public native long sourceRGBBlendFactor();
 
+    /**
+     * Defaults to MTLColorWriteMaskAll
+     */
     @Generated
     @Selector("writeMask")
     @NUInt

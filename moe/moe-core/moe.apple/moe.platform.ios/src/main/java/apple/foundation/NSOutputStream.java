@@ -40,6 +40,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSOutputStream is an abstract class representing the base functionality of a write stream.
+ * Subclassers are required to implement these methods.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -179,6 +183,9 @@ public class NSOutputStream extends NSStream {
     @NInt
     public static native long version_static();
 
+    /**
+     * writes the bytes from the specified buffer to the stream up to len bytes. Returns the number of bytes actually written.
+     */
     @Generated
     @Selector("hasSpaceAvailable")
     public native boolean hasSpaceAvailable();
@@ -195,6 +202,9 @@ public class NSOutputStream extends NSStream {
     @Selector("initToFileAtPath:append:")
     public native NSOutputStream initToFileAtPathAppend(String path, boolean shouldAppend);
 
+    /**
+     * returns YES if the stream can be written to or if it is impossible to tell without actually doing the write.
+     */
     @Generated
     @Selector("initToMemory")
     public native NSOutputStream initToMemory();

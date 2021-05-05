@@ -47,6 +47,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNText
+ * 
+ * SCNText represents a block of text that has been extruded
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -170,6 +175,14 @@ public class SCNText extends SCNGeometry {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * textWithString:extrusionDepth:
+     * 
+     * Creates and returns a 3D representation of given text with given extrusion depth.
+     * 
+     * @param string The text to be represented.
+     * @param extrusionDepth The extrusion depth.
+     */
     @Generated
     @Selector("textWithString:extrusionDepth:")
     public static native SCNText textWithStringExtrusionDepth(@Mapped(ObjCObjectMapper.class) Object string,
@@ -180,34 +193,83 @@ public class SCNText extends SCNGeometry {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] alignmentMode
+     * 
+     * Determines how individual lines of text are horizontally aligned within the bounds.
+     * 
+     * For the text to be aligned you first need to set its bounds, otherwise the text is not aligned. The default value is kCAAlignmentNatural. See alignments in CATextLayer.h.
+     */
     @Generated
     @Selector("alignmentMode")
     public native String alignmentMode();
 
+    /**
+     * [@property] chamferProfile
+     * 
+     * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path representing a quadrant.
+     * 
+     * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to flatten this path. The default value is nil.
+     */
     @Generated
     @Selector("chamferProfile")
     public native UIBezierPath chamferProfile();
 
+    /**
+     * [@property] chamferRadius
+     * 
+     * The chamfer radius. Animatable.
+     * 
+     * Values are clamped to the range [0, extrusionDepth / 2]. The actual chamfer radius might be different to the one here specified: large values are clipped to a per-glyph max value. The default value is 0.
+     */
     @Generated
     @Selector("chamferRadius")
     @NFloat
     public native double chamferRadius();
 
+    /**
+     * [@property] containerFrame
+     * 
+     * A container within which the text may be wrapped or truncated.
+     * 
+     * The text will start at the top-left corner of the rect. You need to set this property for text truncation or alignment to work. Getting this property when it has never been set returns CGRectZero.
+     */
     @Generated
     @Selector("containerFrame")
     @ByValue
     public native CGRect containerFrame();
 
+    /**
+     * [@property] extrusionDepth
+     * 
+     * The extrusion depth. Animatable.
+     * 
+     * If the value is 0, we get a mono-sided, 2D version of the text.
+     */
     @Generated
     @Selector("extrusionDepth")
     @NFloat
     public native double extrusionDepth();
 
+    /**
+     * [@property] flatness
+     * 
+     * Specifies the accuracy (or smoothness) with which fonts are rendered.
+     * 
+     * Smaller numbers give smoother curves at the expense of more computation and heavier geometries in terms of vertices. The default value is 1.0, which yields smooth curves.
+     */
     @Generated
     @Selector("flatness")
     @NFloat
     public native double flatness();
 
+    /**
+     * [@property] font
+     * 
+     * The font used to represent the text.
+     * 
+     * The font property is only used when the string property is not an NSAttributedString. Defaults to Helvetica 36 point.
+     */
     @Generated
     @Selector("font")
     public native UIFont font();
@@ -218,52 +280,136 @@ public class SCNText extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNText initWithCoder(NSCoder aDecoder);
+    public native SCNText initWithCoder(NSCoder coder);
 
+    /**
+     * [@property] wrapped
+     * 
+     * Determines whether the text is wrapped to fit within the bounds.
+     * 
+     * For the text to be wrapped you first need to set its bounds, otherwise the text is not wrapped. The default value is NO.
+     */
     @Generated
     @Selector("isWrapped")
     public native boolean isWrapped();
 
+    /**
+     * [@property] wrapped
+     * 
+     * Determines whether the text is wrapped to fit within the bounds.
+     * 
+     * For the text to be wrapped you first need to set its bounds, otherwise the text is not wrapped. The default value is NO.
+     */
     @Generated
     @Selector("setWrapped:")
     public native void setWrapped(boolean value);
 
+    /**
+     * [@property] alignmentMode
+     * 
+     * Determines how individual lines of text are horizontally aligned within the bounds.
+     * 
+     * For the text to be aligned you first need to set its bounds, otherwise the text is not aligned. The default value is kCAAlignmentNatural. See alignments in CATextLayer.h.
+     */
     @Generated
     @Selector("setAlignmentMode:")
     public native void setAlignmentMode(String value);
 
+    /**
+     * [@property] chamferProfile
+     * 
+     * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path representing a quadrant.
+     * 
+     * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to flatten this path. The default value is nil.
+     */
     @Generated
     @Selector("setChamferProfile:")
     public native void setChamferProfile(UIBezierPath value);
 
+    /**
+     * [@property] chamferRadius
+     * 
+     * The chamfer radius. Animatable.
+     * 
+     * Values are clamped to the range [0, extrusionDepth / 2]. The actual chamfer radius might be different to the one here specified: large values are clipped to a per-glyph max value. The default value is 0.
+     */
     @Generated
     @Selector("setChamferRadius:")
     public native void setChamferRadius(@NFloat double value);
 
+    /**
+     * [@property] containerFrame
+     * 
+     * A container within which the text may be wrapped or truncated.
+     * 
+     * The text will start at the top-left corner of the rect. You need to set this property for text truncation or alignment to work. Getting this property when it has never been set returns CGRectZero.
+     */
     @Generated
     @Selector("setContainerFrame:")
     public native void setContainerFrame(@ByValue CGRect value);
 
+    /**
+     * [@property] extrusionDepth
+     * 
+     * The extrusion depth. Animatable.
+     * 
+     * If the value is 0, we get a mono-sided, 2D version of the text.
+     */
     @Generated
     @Selector("setExtrusionDepth:")
     public native void setExtrusionDepth(@NFloat double value);
 
+    /**
+     * [@property] flatness
+     * 
+     * Specifies the accuracy (or smoothness) with which fonts are rendered.
+     * 
+     * Smaller numbers give smoother curves at the expense of more computation and heavier geometries in terms of vertices. The default value is 1.0, which yields smooth curves.
+     */
     @Generated
     @Selector("setFlatness:")
     public native void setFlatness(@NFloat double value);
 
+    /**
+     * [@property] font
+     * 
+     * The font used to represent the text.
+     * 
+     * The font property is only used when the string property is not an NSAttributedString. Defaults to Helvetica 36 point.
+     */
     @Generated
     @Selector("setFont:")
     public native void setFont(UIFont value);
 
+    /**
+     * [@property] string
+     * 
+     * The text to be represented. The text must be an instance of NSString or NSAttributedString.
+     * 
+     * The default value is nil.
+     */
     @Generated
     @Selector("setString:")
     public native void setString(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * [@property] truncationMode
+     * 
+     * Describes how the text is truncated to fit within the bounds.
+     * 
+     * For the text to be truncated you first need to set its bounds, otherwise the text is not truncated. The default value is kCATruncationNone. See truncation modes in CATextLayer.h.
+     */
     @Generated
     @Selector("setTruncationMode:")
     public native void setTruncationMode(String value);
 
+    /**
+     * [@property] string
+     * 
+     * The text to be represented. The text must be an instance of NSString or NSAttributedString.
+     * 
+     * The default value is nil.
+     */
     @Generated
     @Selector("string")
     @MappedReturn(ObjCObjectMapper.class)
@@ -275,6 +421,13 @@ public class SCNText extends SCNGeometry {
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] truncationMode
+     * 
+     * Describes how the text is truncated to fit within the bounds.
+     * 
+     * For the text to be truncated you first need to set its bounds, otherwise the text is not truncated. The default value is kCATruncationNone. See truncation modes in CATextLayer.h.
+     */
     @Generated
     @Selector("truncationMode")
     public native String truncationMode();

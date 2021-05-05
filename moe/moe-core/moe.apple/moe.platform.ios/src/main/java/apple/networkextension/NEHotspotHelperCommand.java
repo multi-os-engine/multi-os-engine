@@ -39,6 +39,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEHotspotHelperCommand
+ * 
+ *   An NEHotspotHelperCommand object is provided to the helper's
+ *   command handler block. The HotspotHelper processes the command
+ *   instantiates an NEHotspotHelperResponse object, sets the annotated
+ *   network or networkList (Evaluate/FilterScanList only),
+ *   then delivers it.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -150,19 +159,56 @@ public class NEHotspotHelperCommand extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] commandType
+     * 
+     *   The type of the command.
+     */
     @Generated
     @Selector("commandType")
     @NInt
     public native long commandType();
 
+    /**
+     * createResponse:
+     * 
+     *   Create a response to the command.
+     * 
+     *   Instantiate an NEHotspotHelperResponse for the command.
+     * 
+     * @return
+     *   NEHotspotHelperResponse with the specified result.
+     */
     @Generated
     @Selector("createResponse:")
     public native NEHotspotHelperResponse createResponse(@NInt long result);
 
+    /**
+     * createTCPConnection
+     * 
+     *   Create a new TCP connection over the interface associated with the command.
+     * 
+     *   Instantiate an NWTCPConnection to the specified endpoint
+     *   bound to the network interface associated with the command.
+     * 
+     * @return
+     *   non-nil NWTCPConnection object if successful, nil otherwise
+     */
     @Generated
     @Selector("createTCPConnection:")
     public native NWTCPConnection createTCPConnection(NWEndpoint endpoint);
 
+    /**
+     * createUDPSession
+     * 
+     *   Create a new UDP session over the interface associated with the command.
+     * 
+     *   Instantiate an NWUDPSession to the specified endpoint
+     *   bound to the network interface associated with the command.
+     * 
+     * @return
+     *   non-nil NWUDPSession object if successful, nil otherwise
+     */
     @Generated
     @Selector("createUDPSession:")
     public native NWUDPSession createUDPSession(NWEndpoint endpoint);
@@ -171,10 +217,22 @@ public class NEHotspotHelperCommand extends NSObject {
     @Selector("init")
     public native NEHotspotHelperCommand init();
 
+    /**
+     * [@property] network
+     * 
+     *   The network associated with the command. May be nil.
+     */
     @Generated
     @Selector("network")
     public native NEHotspotNetwork network();
 
+    /**
+     * [@property] networkList
+     * 
+     *   The list of networks associated with a command. Will be nil unless
+     *   the command type is kNEHotspotHelperCommandTypeFilterScanList.
+     *   This property returns an NSArray of NEHotspotNetwork.
+     */
     @Generated
     @Selector("networkList")
     public native NSArray<? extends NEHotspotNetwork> networkList();

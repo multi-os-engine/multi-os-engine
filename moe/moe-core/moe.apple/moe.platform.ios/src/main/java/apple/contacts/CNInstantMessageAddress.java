@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An immutable value object representing an instant message address.
+ * 
+ * CNInstantMessageAddress is thread safe.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
@@ -127,10 +132,16 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Returns a user displayable property name.
+     */
     @Generated
     @Selector("localizedStringForKey:")
     public static native String localizedStringForKey(String key);
 
+    /**
+     * Returns a user displayable service name.
+     */
     @Generated
     @Selector("localizedStringForService:")
     public static native String localizedStringForService(String service);
@@ -174,7 +185,7 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -182,7 +193,7 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNInstantMessageAddress initWithCoder(NSCoder aDecoder);
+    public native CNInstantMessageAddress initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithUsername:service:")

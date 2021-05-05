@@ -41,6 +41,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MDLVertexDescriptor
+ * 
+ * Describes the layout of vertex buffers in MDLMesh objects
+ * 
+ * This object is a property of MDLMesh describing the current state of
+ * attributes and buffer layouts of the vertex buffers in the mesh. This must be 
+ * immutable otherwise even small changes could cause the buffers to be out of sync 
+ * with the layout described here.
+ * 
+ * Designed to be very similar to MTLVertexDescriptor to ease creation of one from 
+ * the other
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -152,14 +165,36 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * addOrReplaceAttribute:
+     * 
+     * Replace any attribute with the same name and time, or add it if it does not
+     *           already exist.
+     */
     @Generated
     @Selector("addOrReplaceAttribute:")
     public native void addOrReplaceAttribute(MDLVertexAttribute attribute);
 
+    /**
+     * attributeNamed:
+     * 
+     * Retrieves the attribute with the given name
+     * 
+     * @return The attribute with the supplied name or nil if attribute with the given 
+     *         name does not exist in the descriptor object
+     */
     @Generated
     @Selector("attributeNamed:")
     public native MDLVertexAttribute attributeNamed(String name);
 
+    /**
+     * [@property] attributes
+     * 
+     * An array of MDLVertexAttribute objects
+     * 
+     * ay describing the current attribute state of vertex buffers in an
+     *             MDLMesh mesh
+     */
     @Generated
     @Selector("attributes")
     public native NSMutableArray<MDLVertexAttribute> attributes();
@@ -174,34 +209,88 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MDLVertexDescriptor init();
 
+    /**
+     * initVertexDescriptor:
+     * 
+     * Initializes the object with values from supplied vertexDescriptor
+     * 
+     * This performs a deep copy of all data in the supplied descriptor.
+     */
     @Generated
     @Selector("initWithVertexDescriptor:")
     public native MDLVertexDescriptor initWithVertexDescriptor(MDLVertexDescriptor vertexDescriptor);
 
+    /**
+     * [@property] layouts
+     * 
+     * An array of MDLVertexBufferLayout
+     * 
+     * An array describing the current layout state of vertex buffers in an
+     *             MDLMesh mesh
+     */
     @Generated
     @Selector("layouts")
     public native NSMutableArray<MDLVertexBufferLayout> layouts();
 
+    /**
+     * removeAttributeNamed:
+     * 
+     * Remove the named attribute if it exists
+     */
     @Generated
     @Selector("removeAttributeNamed:")
     public native void removeAttributeNamed(String name);
 
+    /**
+     * reset
+     * 
+     * Tesets the descriptor to initial values
+     */
     @Generated
     @Selector("reset")
     public native void reset();
 
+    /**
+     * [@property] attributes
+     * 
+     * An array of MDLVertexAttribute objects
+     * 
+     * ay describing the current attribute state of vertex buffers in an
+     *             MDLMesh mesh
+     */
     @Generated
     @Selector("setAttributes:")
     public native void setAttributes(NSMutableArray<MDLVertexAttribute> value);
 
+    /**
+     * [@property] layouts
+     * 
+     * An array of MDLVertexBufferLayout
+     * 
+     * An array describing the current layout state of vertex buffers in an
+     *             MDLMesh mesh
+     */
     @Generated
     @Selector("setLayouts:")
     public native void setLayouts(NSMutableArray<MDLVertexBufferLayout> value);
 
+    /**
+     * setPackedOffsets
+     * 
+     * Sets the stride in each VertexAttribute in the attributes array to
+     *           the minimum value to pack each attribute next to each other in its 
+     *           vertexbuffer
+     */
     @Generated
     @Selector("setPackedOffsets")
     public native void setPackedOffsets();
 
+    /**
+     * setPackedStrides
+     * 
+     * Sets the stride in each VertexBufferLout in the layouts array to the
+     *           minimum value encompassing all attributes in the vertex buffer
+     */
     @Generated
     @Selector("setPackedStrides")
     public native void setPackedStrides();

@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]      HMCharacteristicValueRotationDirection
+ * 
+ * [@constant]  HMCharacteristicValueRotationDirectionClockwise         Clockwise.
+ * [@constant]  HMCharacteristicValueRotationDirectionCounterClockwise  Counter-clockwise.
+ */
 @Generated
 public final class HMCharacteristicValueRotationDirection {
     @Generated @NInt public static final long Clockwise = 0x0000000000000000L;

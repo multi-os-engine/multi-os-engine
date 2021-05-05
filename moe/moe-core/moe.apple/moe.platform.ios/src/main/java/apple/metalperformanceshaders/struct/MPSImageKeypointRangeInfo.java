@@ -34,19 +34,31 @@ public final class MPSImageKeypointRangeInfo extends StructObject {
         setMinimumThresholdValue(minimumThresholdValue);
     }
 
+    /**
+     * < maximum number of keypoints
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @NUInt
     public native long maximumKeypoints();
 
+    /**
+     * < maximum number of keypoints
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setMaximumKeypoints(@NUInt long value);
 
+    /**
+     * < minimum threshold value -  value between 0.0 and 1.0f
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native float minimumThresholdValue();
 
+    /**
+     * < minimum threshold value -  value between 0.0 and 1.0f
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMinimumThresholdValue(float value);

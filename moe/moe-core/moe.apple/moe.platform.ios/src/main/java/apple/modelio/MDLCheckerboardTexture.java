@@ -22,6 +22,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.modelio.protocol.MDLAssetResolver;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -41,6 +42,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MDLCheckerboardTexture
+ *  A two color checkboard with a certain number of divisions
+ * 
+ * the texture will be created if data is referenced, otherwise, this
+ *              object is merely a description
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -196,4 +204,9 @@ public class MDLCheckerboardTexture extends MDLTexture {
     @Generated
     @Selector("setDivisions:")
     public native void setDivisions(float value);
+
+    @Generated
+    @Selector("textureNamed:assetResolver:")
+    public static native MDLCheckerboardTexture textureNamedAssetResolver(String name,
+            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

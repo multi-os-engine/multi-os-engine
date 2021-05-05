@@ -19,8 +19,14 @@ package apple.contacts.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * The entities the user can grant access to.
+ */
 @Generated
 public final class CNEntityType {
+    /**
+     * The user's contacts.
+     */
     @Generated @NInt public static final long CNEntityTypeContacts = 0x0000000000000000L;
 
     @Generated

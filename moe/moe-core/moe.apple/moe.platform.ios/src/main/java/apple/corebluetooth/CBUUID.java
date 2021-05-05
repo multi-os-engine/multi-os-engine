@@ -43,6 +43,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CBUUID
+ * 
+ *      A 16-bit, 32-bit, or 128-bit Bluetooth UUID.
+ *      16-bit and 32-bit UUIDs are implicitly pre-filled with the Bluetooth Base UUID.
+ */
 @Generated
 @Library("CoreBluetooth")
 @Runtime(ObjCRuntime.class)
@@ -57,19 +63,40 @@ public class CBUUID extends NSObject implements NSCopying {
         super(peer);
     }
 
+    /**
+     * UUIDWithCFUUID:
+     * 
+     *      Creates a CBUUID with a CFUUIDRef.
+     */
     @Generated
     @Deprecated
     @Selector("UUIDWithCFUUID:")
     public static native CBUUID UUIDWithCFUUID(CFUUIDRef theUUID);
 
+    /**
+     * UUIDWithData:
+     * 
+     *      Creates a CBUUID with a 16-bit, 32-bit, or 128-bit UUID data container.
+     */
     @Generated
     @Selector("UUIDWithData:")
     public static native CBUUID UUIDWithData(NSData theData);
 
+    /**
+     * UUIDWithNSUUID:
+     * 
+     *      Creates a CBUUID with an NSUUID.
+     */
     @Generated
     @Selector("UUIDWithNSUUID:")
     public static native CBUUID UUIDWithNSUUID(NSUUID theUUID);
 
+    /**
+     * UUIDWithString:
+     * 
+     *      Creates a CBUUID with a 16-bit, 32-bit, or 128-bit UUID string representation.
+     *      The expected format for 128-bit UUIDs is a string punctuated by hyphens, for example 68753A44-4D6F-1226-9C60-0050E4C00067.
+     */
     @Generated
     @Selector("UUIDWithString:")
     public static native CBUUID UUIDWithString(String theString);
@@ -171,6 +198,11 @@ public class CBUUID extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] UUIDString
+     * 
+     *      The UUID as NSString.
+     */
     @Generated
     @Selector("UUIDString")
     public native String UUIDString();
@@ -181,6 +213,11 @@ public class CBUUID extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * [@property] data
+     * 
+     *      The UUID as NSData.
+     */
     @Generated
     @Selector("data")
     public native NSData data();

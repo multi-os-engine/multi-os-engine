@@ -57,6 +57,9 @@ public class UIActivity extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * default is UIActivityCategoryAction.
+     */
     @Generated
     @Selector("activityCategory")
     @NInt
@@ -155,26 +158,44 @@ public class UIActivity extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * activity must call this when activity is finished
+     */
     @Generated
     @Selector("activityDidFinish:")
     public native void activityDidFinish(boolean completed);
 
+    /**
+     * default returns nil. subclass must override and must return non-nil value
+     */
     @Generated
     @Selector("activityImage")
     public native UIImage activityImage();
 
+    /**
+     * default returns nil. subclass must override and must return non-nil value
+     */
     @Generated
     @Selector("activityTitle")
     public native String activityTitle();
 
+    /**
+     * default returns nil. subclass may override to return custom activity type that is reported to completion handler
+     */
     @Generated
     @Selector("activityType")
     public native String activityType();
 
+    /**
+     * return non-nil to have view controller presented modally. call activityDidFinish at end. default returns nil
+     */
     @Generated
     @Selector("activityViewController")
     public native UIViewController activityViewController();
 
+    /**
+     * override this to return availability of activity based on items. default returns NO
+     */
     @Generated
     @Selector("canPerformWithActivityItems:")
     public native boolean canPerformWithActivityItems(NSArray<?> activityItems);
@@ -183,10 +204,16 @@ public class UIActivity extends NSObject {
     @Selector("init")
     public native UIActivity init();
 
+    /**
+     * if no view controller, this method is called. call activityDidFinish when done. default calls [self activityDidFinish:NO]
+     */
     @Generated
     @Selector("performActivity")
     public native void performActivity();
 
+    /**
+     * override to extract items and set up your HI. default does nothing
+     */
     @Generated
     @Selector("prepareWithActivityItems:")
     public native void prepareWithActivityItems(NSArray<?> activityItems);

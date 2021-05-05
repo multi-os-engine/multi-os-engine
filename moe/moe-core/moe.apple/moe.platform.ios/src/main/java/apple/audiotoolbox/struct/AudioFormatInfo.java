@@ -16,7 +16,7 @@ limitations under the License.
 
 package apple.audiotoolbox.struct;
 
-import apple.coreaudio.struct.AudioStreamBasicDescription;
+import apple.coreaudiotypes.struct.AudioStreamBasicDescription;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -46,8 +46,7 @@ public final class AudioFormatInfo extends StructObject {
     }
 
     @Generated
-    public AudioFormatInfo(@ByValue AudioStreamBasicDescription mASBD, ConstVoidPtr mMagicCookie,
-            int mMagicCookieSize) {
+    public AudioFormatInfo(@ByValue AudioStreamBasicDescription mASBD, ConstVoidPtr mMagicCookie, int mMagicCookieSize) {
         super(AudioFormatInfo.class);
         setMASBD(mASBD);
         setMMagicCookie(mMagicCookie);

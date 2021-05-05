@@ -24,9 +24,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A component that encapsulates a SceneKit node.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -87,6 +91,13 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Creates a component that encapsulate the given SceneKit node. When the component is
+     * added to an entity, the SCNNode's entity property will be set.
+     * 
+     * @param node Node to associate with the component.
+     * @see SCNNode.entity
+     */
     @Generated
     @Selector("componentWithNode:")
     public static native GKSCNNodeComponent componentWithNode(SCNNode node);
@@ -110,8 +121,15 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKSCNNodeComponent initWithCoder(NSCoder aDecoder);
+    public native GKSCNNodeComponent initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes component to encapsulate the given SceneKit node. When the component is
+     * added to an entity, the SCNNode's entity property will be set.
+     * 
+     * @param node Node to associate with the component.
+     * @see SCNNode.entity
+     */
     @Generated
     @Selector("initWithNode:")
     public native GKSCNNodeComponent initWithNode(SCNNode node);
@@ -143,6 +161,9 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The SceneKit node this component encapsulates.
+     */
     @Generated
     @Selector("node")
     public native SCNNode node();
@@ -167,4 +188,14 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

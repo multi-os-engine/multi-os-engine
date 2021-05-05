@@ -45,6 +45,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMPedometerData
+ * 
+ * Discussion:
+ *     A description of the user's pedestrian activity. At a minimum this
+ *     object contains a step count. On supported platforms it also contains
+ *     distance, flights of stairs, pace, and cadence.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -160,6 +168,23 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
     @NInt
     public static native long version_static();
 
+    /**
+     * averageActivePace
+     * 
+     * 
+     * Discussion:
+     * 
+     *      For updates this returns the average active pace since
+     *      startPedometerUpdatesFromDate:withHandler:, in s/m (seconds per meter).
+     *      For historical queries this returns average active pace between startDate
+     *      and endDate. The average active pace omits the non-active time, giving
+     *      the average pace from when the user was moving. Value is nil if any of
+     *      the following are true:
+     * 
+     *         (1) (For historical queries) this information is not available,
+     *             e.g. the user did not move between startDate and endDate;
+     *         (2) Unsupported platform.
+     */
     @Generated
     @Selector("averageActivePace")
     public native NSNumber averageActivePace();
@@ -170,30 +195,84 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * currentCadence
+     * 
+     * 
+     * Discussion:
+     *      For updates this returns the rate at which steps are taken, in steps per second.
+     *      Value is nil if any of the following are true:
+     * 
+     *         (1) Information not yet available;
+     *         (2) Historical query;
+     *         (3) Unsupported platform.
+     */
     @Generated
     @Selector("currentCadence")
     public native NSNumber currentCadence();
 
+    /**
+     * currentPace
+     * 
+     * 
+     * Discussion:
+     *      For updates this returns the current pace, in s/m (seconds per meter).
+     *      Value is nil if any of the following are true:
+     * 
+     *         (1) Information not yet available;
+     *         (2) Historical query;
+     *         (3) Unsupported platform.
+     */
     @Generated
     @Selector("currentPace")
     public native NSNumber currentPace();
 
+    /**
+     * distance
+     * 
+     * Discussion:
+     *     Estimated distance in meters traveled by the user while walking and
+     *     running. Value is nil unsupported platforms.
+     */
     @Generated
     @Selector("distance")
     public native NSNumber distance();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * endDate
+     * 
+     * Discussion:
+     *     The end time of the period for which the pedometer data is valid.
+     * 
+     *     For updates this is the time for the most recent update. For historical
+     *     queries this is the end time requested.
+     */
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
 
+    /**
+     * floorsAscended
+     * 
+     * Discussion:
+     *     Approximate number of floors ascended by way of stairs. Value is nil
+     *     on unsupported platforms.
+     */
     @Generated
     @Selector("floorsAscended")
     public native NSNumber floorsAscended();
 
+    /**
+     * floorsDescended
+     * 
+     * Discussion:
+     *     Approximate number of floors descended by way of stairs. Value is nil
+     *     on unsupported platforms.
+     */
     @Generated
     @Selector("floorsDescended")
     public native NSNumber floorsDescended();
@@ -204,12 +283,26 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMPedometerData initWithCoder(NSCoder aDecoder);
+    public native CMPedometerData initWithCoder(NSCoder coder);
 
+    /**
+     * numberOfSteps
+     * 
+     * Discussion:
+     *     Number of steps taken by the user.
+     */
     @Generated
     @Selector("numberOfSteps")
     public native NSNumber numberOfSteps();
 
+    /**
+     * startDate
+     * 
+     * Discussion:
+     *     The start time of the period for which the pedometer data is valid.
+     * 
+     *     This is the start time requested for the session or historical query.
+     */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

@@ -18,6 +18,9 @@ package apple.accelerate.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * The matrix property type
+ */
 @Generated
 public final class sparse_matrix_property {
     @Generated public static final int SPARSE_UPPER_TRIANGULAR = 0x00000001;

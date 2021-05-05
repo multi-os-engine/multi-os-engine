@@ -21,13 +21,29 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UNNotificationCategoryOptions {
+    /**
+     * Whether dismiss action should be sent to the UNUserNotificationCenter delegate
+     */
     @Generated @NUInt public static final long CustomDismissAction = 0x0000000000000001L;
+    /**
+     * Whether notifications of this category should be allowed in CarPlay
+     */
     @Generated @NUInt public static final long AllowInCarPlay = 0x0000000000000002L;
 
     @Generated
     private UNNotificationCategoryOptions() {
     }
 
+    /**
+     * Whether the title should be shown if the user has previews off
+     */
     @Generated @NUInt public static final long HiddenPreviewsShowTitle = 0x0000000000000004L;
+    /**
+     * Whether the subtitle should be shown if the user has previews off
+     */
     @Generated @NUInt public static final long HiddenPreviewsShowSubtitle = 0x0000000000000008L;
+    /**
+     * Whether notifications of this category should be allowed for announcing notifications
+     */
+    @Generated @NUInt public static final long AllowAnnouncement = 0x0000000000000010L;
 }

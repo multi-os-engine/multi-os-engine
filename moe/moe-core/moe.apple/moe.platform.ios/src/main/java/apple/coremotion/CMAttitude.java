@@ -169,7 +169,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -177,25 +177,56 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMAttitude initWithCoder(NSCoder aDecoder);
+    public native CMAttitude initWithCoder(NSCoder coder);
 
+    /**
+     * multiplyByInverseOfAttitude:
+     * 
+     * Discussion:
+     *     Multiplies attitude by the inverse of the specified attitude. This gives
+     * 	the attitude change from the specified attitude.
+     */
     @Generated
     @Selector("multiplyByInverseOfAttitude:")
     public native void multiplyByInverseOfAttitude(CMAttitude attitude);
 
+    /**
+     * pitch
+     * 
+     * Discussion:
+     *   Returns the pitch of the device in radians.
+     */
     @Generated
     @Selector("pitch")
     public native double pitch();
 
+    /**
+     * quaternion
+     * 
+     * Discussion:
+     *   Returns a quaternion representing the device's attitude.
+     */
     @Generated
     @Selector("quaternion")
     @ByValue
     public native CMQuaternion quaternion();
 
+    /**
+     * roll
+     * 
+     * Discussion:
+     *   Returns the roll of the device in radians.
+     */
     @Generated
     @Selector("roll")
     public native double roll();
 
+    /**
+     * rotationMatrix
+     * 
+     * Discussion:
+     *   Returns a rotation matrix representing the device's attitude.
+     */
     @Generated
     @Selector("rotationMatrix")
     @ByValue
@@ -207,6 +238,12 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * yaw
+     * 
+     * Discussion:
+     *   Returns the yaw of the device in radians.
+     */
     @Generated
     @Selector("yaw")
     public native double yaw();

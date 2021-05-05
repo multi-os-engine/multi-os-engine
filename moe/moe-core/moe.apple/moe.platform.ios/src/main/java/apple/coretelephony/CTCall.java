@@ -150,10 +150,26 @@ public class CTCall extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * callID
+     * 
+     * Description:
+     *     A unique identifier for this call to be used by clients to differentiate
+     *     multiple active calls.
+     */
     @Generated
     @Selector("callID")
     public native String callID();
 
+    /**
+     * callState
+     * 
+     * Description:
+     *     An NSString constant that describes the state of this call. The initial state
+     *     will be either CTCallStateDialing or CTCallStateIncoming, will transition
+     *     to CTCallStateConnected when the call is established with all parties
+     *     involved and will move to CTCallStateDisconnected when this call is terminated.
+     */
     @Generated
     @Selector("callState")
     public native String callState();

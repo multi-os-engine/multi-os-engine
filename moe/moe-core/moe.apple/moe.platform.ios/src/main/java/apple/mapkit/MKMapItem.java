@@ -30,6 +30,7 @@ import apple.foundation.NSURL;
 import apple.foundation.protocol.NSItemProviderReading;
 import apple.foundation.protocol.NSItemProviderWriting;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.uikit.UIScene;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -198,6 +199,9 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Selector("phoneNumber")
     public native String phoneNumber();
 
+    /**
+     * If this MKMapItem represents your current location (isCurrentLocation == YES), then placemark will be nil.
+     */
     @Generated
     @Selector("placemark")
     public native MKPlacemark placemark();
@@ -228,11 +232,11 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKMapItem initWithCoder(NSCoder aDecoder);
+    public native MKMapItem initWithCoder(NSCoder coder);
 
     @Generated
     @IsOptional
@@ -307,4 +311,41 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
+
+    /**
+     * fromScene is used to indicate the UIScene where the user interaction took place.
+     */
+    @Generated
+    @Selector("openInMapsWithLaunchOptions:fromScene:completionHandler:")
+    public native void openInMapsWithLaunchOptionsFromSceneCompletionHandler(NSDictionary<String, ?> launchOptions,
+            UIScene scene,
+            @ObjCBlock(name = "call_openInMapsWithLaunchOptionsFromSceneCompletionHandler") Block_openInMapsWithLaunchOptionsFromSceneCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_openInMapsWithLaunchOptionsFromSceneCompletionHandler {
+        @Generated
+        void call_openInMapsWithLaunchOptionsFromSceneCompletionHandler(boolean success);
+    }
+
+    @Generated
+    @Selector("openMapsWithItems:launchOptions:fromScene:completionHandler:")
+    public static native void openMapsWithItemsLaunchOptionsFromSceneCompletionHandler(
+            NSArray<? extends MKMapItem> mapItems, NSDictionary<String, ?> launchOptions, UIScene scene,
+            @ObjCBlock(name = "call_openMapsWithItemsLaunchOptionsFromSceneCompletionHandler") Block_openMapsWithItemsLaunchOptionsFromSceneCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_openMapsWithItemsLaunchOptionsFromSceneCompletionHandler {
+        @Generated
+        void call_openMapsWithItemsLaunchOptionsFromSceneCompletionHandler(boolean success);
+    }
+
+    @Generated
+    @Selector("pointOfInterestCategory")
+    public native String pointOfInterestCategory();
+
+    @Generated
+    @Selector("setPointOfInterestCategory:")
+    public native void setPointOfInterestCategory(String value);
 }

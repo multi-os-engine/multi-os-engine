@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Contains the user's payment credentials, encrypted to the merchant.
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -155,24 +158,43 @@ public class PKPaymentToken extends NSObject {
     @Selector("init")
     public native PKPaymentToken init();
 
+    /**
+     * UTF-8 encoded JSON dictionary of encrypted payment data.  Ready for transmission to
+     * merchant's e-commerce backend for decryption and submission to a payment processor's
+     * gateway.
+     */
     @Generated
     @Selector("paymentData")
     public native NSData paymentData();
 
+    /**
+     * A string that describes the payment instrument the user has selected to fund the payment.
+     * Suitable for display, e.g. "Amex 1234".
+     */
     @Generated
     @Deprecated
     @Selector("paymentInstrumentName")
     public native String paymentInstrumentName();
 
+    /**
+     * Describes the properties of the underlying payment instrument selected to fund the payment
+     */
     @Generated
     @Selector("paymentMethod")
     public native PKPaymentMethod paymentMethod();
 
+    /**
+     * Payment network for the card that funds the payment.
+     */
     @Generated
     @Deprecated
     @Selector("paymentNetwork")
     public native String paymentNetwork();
 
+    /**
+     * A string that describes a globally unique identifier for this transaction that can be used
+     * for receipt purposes.
+     */
     @Generated
     @Selector("transactionIdentifier")
     public native String transactionIdentifier();

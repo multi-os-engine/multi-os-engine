@@ -20,9 +20,21 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
+    /**
+     * ordered list of kerning pairs
+     */
     @Generated public static final int kKERNOrderedList = 0x00000000;
+    /**
+     * state table for n-way contextual kerning
+     */
     @Generated public static final int kKERNStateTable = 0x00000001;
+    /**
+     * simple n X m array of kerning values
+     */
     @Generated public static final int kKERNSimpleArray = 0x00000002;
+    /**
+     * modified version of SimpleArray
+     */
     @Generated public static final int kKERNIndexArray = 0x00000003;
     @Generated public static final int kJUSTOverridePriority = 0x00008000;
     @Generated public static final int kJUSTOverrideLimits = 0x00004000;
@@ -140,14 +152,35 @@ public final class Enums {
     @Generated public static final int kFontDzongkhaLanguage = 0x00000089;
     @Generated public static final int kFontJavaneseRomLanguage = 0x0000008A;
     @Generated public static final int kFontSundaneseRomLanguage = 0x0000008B;
+    /**
+     * 'kerx'
+     */
     @Generated public static final int kKERXTag = 0x6B657278;
     @Generated public static final int kKERXCurrentVersion = 0x00020000;
+    /**
+     * set if this table has vertical kerning information
+     */
     @Generated public static final int kKERXVertical = 0x80000000;
+    /**
+     * this value in a cross-stream table means reset to zero
+     */
     @Generated public static final int kKERXResetCrossStream = 0x00008000;
+    /**
+     * set if this table contains cross-stream kerning values
+     */
     @Generated public static final int kKERXCrossStream = 0x40000000;
+    /**
+     * set if this table contains variation kerning values
+     */
     @Generated public static final int kKERXVariation = 0x20000000;
     @Generated public static final int kKERXDescending = 0x10000000;
+    /**
+     * UNUSED, MUST BE ZERO
+     */
     @Generated public static final int kKERXUnusedBits = 0x0FFFFF00;
+    /**
+     * format of this subtable
+     */
     @Generated public static final int kKERXFormatMask = 0x000000FF;
     @Generated public static final int kNormalPositionSelector = 0x00000000;
     @Generated public static final int kSuperiorsSelector = 0x00000001;
@@ -157,37 +190,124 @@ public final class Enums {
     @Generated public static final int kDefaultLowerCaseSelector = 0x00000000;
     @Generated public static final int kLowerCaseSmallCapsSelector = 0x00000001;
     @Generated public static final int kLowerCasePetiteCapsSelector = 0x00000002;
+    /**
+     * 'morx'
+     */
     @Generated public static final int kMORXTag = 0x6D6F7278;
+    /**
+     * version number for current 'morx' table
+     */
     @Generated public static final int kMORXCurrentVersion = 0x00020000;
+    /**
+     * Coverage masks
+     */
     @Generated public static final int kMORXCoverVertical = 0x80000000;
+    /**
+     * Coverage masks
+     */
     @Generated public static final int kMORXCoverDescending = 0x40000000;
+    /**
+     * Coverage masks
+     */
     @Generated public static final int kMORXCoverIgnoreVertical = 0x20000000;
+    /**
+     * Coverage masks
+     */
     @Generated public static final int kMORXCoverLogicalOrder = 0x10000000;
+    /**
+     * Coverage masks
+     */
     @Generated public static final int kMORXCoverTypeMask = 0x000000FF;
+    /**
+     * 'opbd'
+     */
     @Generated public static final int kOPBDTag = 0x6F706264;
     @Generated public static final int kOPBDCurrentVersion = 0x00010000;
     @Generated public static final int kOPBDDistanceFormat = 0x00000000;
     @Generated public static final int kOPBDControlPointFormat = 0x00000001;
+    /**
+     * Left-to-Right
+     */
     @Generated public static final int kPROPLDirectionClass = 0x00000000;
+    /**
+     * Right-to-Left
+     */
     @Generated public static final int kPROPRDirectionClass = 0x00000001;
+    /**
+     * Right-to-Left Arabic Letter
+     */
     @Generated public static final int kPROPALDirectionClass = 0x00000002;
+    /**
+     * European Number
+     */
     @Generated public static final int kPROPENDirectionClass = 0x00000003;
+    /**
+     * European Number Separator
+     */
     @Generated public static final int kPROPESDirectionClass = 0x00000004;
+    /**
+     * European Number Terminator
+     */
     @Generated public static final int kPROPETDirectionClass = 0x00000005;
+    /**
+     * Arabic Number
+     */
     @Generated public static final int kPROPANDirectionClass = 0x00000006;
+    /**
+     * Common Number Separator
+     */
     @Generated public static final int kPROPCSDirectionClass = 0x00000007;
+    /**
+     * Paragraph Separator (also referred to as Block Separator)
+     */
     @Generated public static final int kPROPPSDirectionClass = 0x00000008;
+    /**
+     * Segment Separator
+     */
     @Generated public static final int kPROPSDirectionClass = 0x00000009;
+    /**
+     * Whitespace
+     */
     @Generated public static final int kPROPWSDirectionClass = 0x0000000A;
+    /**
+     * Other Neutral
+     */
     @Generated public static final int kPROPONDirectionClass = 0x0000000B;
+    /**
+     * Special European Number (not a Unicode class)
+     */
     @Generated public static final int kPROPSENDirectionClass = 0x0000000C;
+    /**
+     * Left-to-Right Embedding
+     */
     @Generated public static final int kPROPLREDirectionClass = 0x0000000D;
+    /**
+     * Left-to-Right Override
+     */
     @Generated public static final int kPROPLRODirectionClass = 0x0000000E;
+    /**
+     * Right-to-Left Embedding
+     */
     @Generated public static final int kPROPRLEDirectionClass = 0x0000000F;
+    /**
+     * Right-to-Left Override
+     */
     @Generated public static final int kPROPRLODirectionClass = 0x00000010;
+    /**
+     * Pop Directional Format
+     */
     @Generated public static final int kPROPPDFDirectionClass = 0x00000011;
+    /**
+     * Non-Spacing Mark
+     */
     @Generated public static final int kPROPNSMDirectionClass = 0x00000012;
+    /**
+     * Boundary Neutral
+     */
     @Generated public static final int kPROPBNDirectionClass = 0x00000013;
+    /**
+     * Number of Unicode directional types + Special European Number
+     */
     @Generated public static final int kPROPNumDirectionClasses = 0x00000014;
     @Generated public static final int kFontCustom8BitScript = 0x00000000;
     @Generated public static final int kFontCustom816BitScript = 0x00000001;
@@ -212,11 +332,29 @@ public final class Enums {
     @Generated public static final int kAlternateVertKanaOffSelector = 0x00000003;
     @Generated public static final int kFullWidthKanaSelector = 0x00000000;
     @Generated public static final int kProportionalKanaSelector = 0x00000001;
+    /**
+     * a simple array indexed by glyph code
+     */
     @Generated public static final int kSFNTLookupSimpleArray = 0x00000000;
+    /**
+     * segment mapping to single value
+     */
     @Generated public static final int kSFNTLookupSegmentSingle = 0x00000002;
+    /**
+     * segment mapping to lookup array
+     */
     @Generated public static final int kSFNTLookupSegmentArray = 0x00000004;
+    /**
+     * sorted list of glyph, value pairs
+     */
     @Generated public static final int kSFNTLookupSingleTable = 0x00000006;
+    /**
+     * a simple trimmed array indexed by glyph code
+     */
     @Generated public static final int kSFNTLookupTrimmedArray = 0x00000008;
+    /**
+     * a simple trimmed vector indexed by glyph code
+     */
     @Generated public static final int kSFNTLookupVector = 0x0000000A;
     @Generated public static final int kShowDiacriticsSelector = 0x00000000;
     @Generated public static final int kHideDiacriticsSelector = 0x00000001;
@@ -250,64 +388,241 @@ public final class Enums {
     @Generated public static final int kTraditionalNamesCharactersSelector = 0x0000000E;
     @Generated public static final int variationFontTableTag = 0x66766172;
     @Generated public static final int kANKRCurrentVersion = 0x00000000;
+    /**
+     * Baseline data
+     */
     @Generated public static final int kCTFontTableBASE = 0x42415345;
+    /**
+     * Compact Font Format 1.0
+     */
     @Generated public static final int kCTFontTableCFF = 0x43464620;
+    /**
+     * Digital signature
+     */
     @Generated public static final int kCTFontTableDSIG = 0x44534947;
+    /**
+     * Embedded bitmap data
+     */
     @Generated public static final int kCTFontTableEBDT = 0x45424454;
+    /**
+     * Embedded bitmap location data
+     */
     @Generated public static final int kCTFontTableEBLC = 0x45424C43;
+    /**
+     * Embedded bitmap scaling data
+     */
     @Generated public static final int kCTFontTableEBSC = 0x45425343;
+    /**
+     * Glyph definition data
+     */
     @Generated public static final int kCTFontTableGDEF = 0x47444546;
+    /**
+     * Glyph positioning data
+     */
     @Generated public static final int kCTFontTableGPOS = 0x47504F53;
+    /**
+     * Glyph substitution data
+     */
     @Generated public static final int kCTFontTableGSUB = 0x47535542;
+    /**
+     * Justification data
+     */
     @Generated public static final int kCTFontTableJSTF = 0x4A535446;
+    /**
+     * Linear threshold data
+     */
     @Generated public static final int kCTFontTableLTSH = 0x4C545348;
+    /**
+     * Math layout data
+     */
     @Generated public static final int kCTFontTableMATH = 0x4D415448;
+    /**
+     * OS/2 and Windows specific metrics
+     */
     @Generated public static final int kCTFontTableOS2 = 0x4F532F32;
+    /**
+     * PCL 5 data
+     */
     @Generated public static final int kCTFontTablePCLT = 0x50434C54;
+    /**
+     * Vertical device metrics
+     */
     @Generated public static final int kCTFontTableVDMX = 0x56444D58;
+    /**
+     * Vertical origin
+     */
     @Generated public static final int kCTFontTableVORG = 0x564F5247;
+    /**
+     * Glyph reference
+     */
     @Generated public static final int kCTFontTableZapf = 0x5A617066;
+    /**
+     * Accent attachment
+     */
     @Generated public static final int kCTFontTableAcnt = 0x61636E74;
+    /**
+     * Anchor points
+     */
     @Generated public static final int kCTFontTableAnkr = 0x616E6B72;
+    /**
+     * Axis variations
+     */
     @Generated public static final int kCTFontTableAvar = 0x61766172;
+    /**
+     * Bitmap data
+     */
     @Generated public static final int kCTFontTableBdat = 0x62646174;
+    /**
+     * Bitmap font header
+     */
     @Generated public static final int kCTFontTableBhed = 0x62686564;
+    /**
+     * Bitmap location
+     */
     @Generated public static final int kCTFontTableBloc = 0x626C6F63;
+    /**
+     * Baseline
+     */
     @Generated public static final int kCTFontTableBsln = 0x62736C6E;
+    /**
+     * Character to glyph mapping
+     */
     @Generated public static final int kCTFontTableCmap = 0x636D6170;
+    /**
+     * CVT variations
+     */
     @Generated public static final int kCTFontTableCvar = 0x63766172;
+    /**
+     * Control value table
+     */
     @Generated public static final int kCTFontTableCvt = 0x63767420;
+    /**
+     * Font descriptor
+     */
     @Generated public static final int kCTFontTableFdsc = 0x66647363;
+    /**
+     * Layout feature
+     */
     @Generated public static final int kCTFontTableFeat = 0x66656174;
+    /**
+     * Font metrics
+     */
     @Generated public static final int kCTFontTableFmtx = 0x666D7478;
+    /**
+     * Font program
+     */
     @Generated public static final int kCTFontTableFpgm = 0x6670676D;
+    /**
+     * Font variations
+     */
     @Generated public static final int kCTFontTableFvar = 0x66766172;
+    /**
+     * Grid-fitting/scan-conversion
+     */
     @Generated public static final int kCTFontTableGasp = 0x67617370;
+    /**
+     * Glyph data
+     */
     @Generated public static final int kCTFontTableGlyf = 0x676C7966;
+    /**
+     * Glyph variations
+     */
     @Generated public static final int kCTFontTableGvar = 0x67766172;
+    /**
+     * Horizontal device metrics
+     */
     @Generated public static final int kCTFontTableHdmx = 0x68646D78;
+    /**
+     * Font header
+     */
     @Generated public static final int kCTFontTableHead = 0x68656164;
+    /**
+     * Horizontal header
+     */
     @Generated public static final int kCTFontTableHhea = 0x68686561;
+    /**
+     * Horizontal metrics
+     */
     @Generated public static final int kCTFontTableHmtx = 0x686D7478;
+    /**
+     * Horizontal style
+     */
     @Generated public static final int kCTFontTableHsty = 0x68737479;
+    /**
+     * Justification
+     */
     @Generated public static final int kCTFontTableJust = 0x6A757374;
+    /**
+     * Kerning
+     */
     @Generated public static final int kCTFontTableKern = 0x6B65726E;
+    /**
+     * Extended kerning
+     */
     @Generated public static final int kCTFontTableKerx = 0x6B657278;
+    /**
+     * Ligature caret
+     */
     @Generated public static final int kCTFontTableLcar = 0x6C636172;
+    /**
+     * Language tags
+     */
     @Generated public static final int kCTFontTableLtag = 0x6C746167;
+    /**
+     * Index to location
+     */
     @Generated public static final int kCTFontTableLoca = 0x6C6F6361;
+    /**
+     * Maximum profile
+     */
     @Generated public static final int kCTFontTableMaxp = 0x6D617870;
+    /**
+     * Morph
+     */
     @Generated public static final int kCTFontTableMort = 0x6D6F7274;
+    /**
+     * Extended morph
+     */
     @Generated public static final int kCTFontTableMorx = 0x6D6F7278;
+    /**
+     * Naming table
+     */
     @Generated public static final int kCTFontTableName = 0x6E616D65;
+    /**
+     * Optical bounds
+     */
     @Generated public static final int kCTFontTableOpbd = 0x6F706264;
+    /**
+     * PostScript information
+     */
     @Generated public static final int kCTFontTablePost = 0x706F7374;
+    /**
+     * CVT program
+     */
     @Generated public static final int kCTFontTablePrep = 0x70726570;
+    /**
+     * Properties
+     */
     @Generated public static final int kCTFontTableProp = 0x70726F70;
+    /**
+     * Bitmap data
+     */
     @Generated public static final int kCTFontTableSbit = 0x73626974;
+    /**
+     * Standard bitmap graphics
+     */
     @Generated public static final int kCTFontTableSbix = 0x73626978;
+    /**
+     * Tracking
+     */
     @Generated public static final int kCTFontTableTrak = 0x7472616B;
+    /**
+     * Vertical header
+     */
     @Generated public static final int kCTFontTableVhea = 0x76686561;
+    /**
+     * Vertical metrics
+     */
     @Generated public static final int kCTFontTableVmtx = 0x766D7478;
     @Generated public static final int kJUSTKashidaPriority = 0x00000000;
     @Generated public static final int kJUSTSpacePriority = 0x00000001;
@@ -352,55 +667,152 @@ public final class Enums {
     @Generated public static final int kDecorativeBordersSelector = 0x00000004;
     @Generated public static final int kInternationalSymbolsSelector = 0x00000005;
     @Generated public static final int kMathSymbolsSelector = 0x00000006;
+    /**
+     * deprecated - use kRubyKanaOffSelector instead
+     */
     @Generated public static final int kNoRubyKanaSelector = 0x00000000;
+    /**
+     * deprecated - use kRubyKanaOnSelector instead
+     */
     @Generated public static final int kRubyKanaSelector = 0x00000001;
     @Generated public static final int kRubyKanaOnSelector = 0x00000002;
     @Generated public static final int kRubyKanaOffSelector = 0x00000003;
+    /**
+     * 'bsln'
+     */
     @Generated public static final int kBSLNTag = 0x62736C6E;
+    /**
+     * current version number for 'bsln' table
+     */
     @Generated public static final int kBSLNCurrentVersion = 0x00010000;
     @Generated public static final int kBSLNDistanceFormatNoMap = 0x00000000;
     @Generated public static final int kBSLNDistanceFormatWithMap = 0x00000001;
     @Generated public static final int kBSLNControlPointFormatNoMap = 0x00000002;
     @Generated public static final int kBSLNControlPointFormatWithMap = 0x00000003;
+    /**
+     * deprecated - use kCJKItalicRomanOffSelector instead
+     */
     @Generated public static final int kNoCJKItalicRomanSelector = 0x00000000;
+    /**
+     * deprecated - use kCJKItalicRomanOnSelector instead
+     */
     @Generated public static final int kCJKItalicRomanSelector = 0x00000001;
     @Generated public static final int kCJKItalicRomanOnSelector = 0x00000002;
     @Generated public static final int kCJKItalicRomanOffSelector = 0x00000003;
+    /**
+     * 'lcar'
+     */
     @Generated public static final int kLCARTag = 0x6C636172;
+    /**
+     * current version number for 'lcar' table
+     */
     @Generated public static final int kLCARCurrentVersion = 0x00010000;
     @Generated public static final int kLCARLinearFormat = 0x00000000;
     @Generated public static final int kLCARCtlPointFormat = 0x00000001;
     @Generated public static final int sizeof_sfntCMapSubHeader = 0x00000006;
+    /**
+     * 'mort'
+     */
     @Generated public static final int kMORTTag = 0x6D6F7274;
+    /**
+     * current version number for 'mort' table
+     */
     @Generated public static final int kMORTCurrentVersion = 0x00010000;
+    /**
+     * Coverage masks
+     */
     @Generated public static final int kMORTCoverVertical = 0x00008000;
+    /**
+     * Coverage masks
+     */
     @Generated public static final int kMORTCoverDescending = 0x00004000;
+    /**
+     * Coverage masks
+     */
     @Generated public static final int kMORTCoverIgnoreVertical = 0x00002000;
+    /**
+     * Subtable types
+     */
     @Generated public static final int kMORTCoverTypeMask = 0x0000000F;
     @Generated public static final int kMORTRearrangementType = 0x00000000;
     @Generated public static final int kMORTContextualType = 0x00000001;
     @Generated public static final int kMORTLigatureType = 0x00000002;
     @Generated public static final int kMORTSwashType = 0x00000004;
+    /**
+     * Ligature subtable constants
+     */
     @Generated public static final int kMORTInsertionType = 0x00000005;
     @Generated public static final int kMORTLigLastAction = 0x80000000;
     @Generated public static final int kMORTLigStoreLigature = 0x40000000;
     @Generated public static final int kMORTLigFormOffsetMask = 0x3FFFFFFF;
+    /**
+     * Rearrangement subtable actions
+     */
     @Generated public static final int kMORTLigFormOffsetShift = 0x00000002;
+    /**
+     * no action
+     */
     @Generated public static final int kMORTraNoAction = 0x00000000;
+    /**
+     * Ax => xA
+     */
     @Generated public static final int kMORTraxA = 0x00000001;
+    /**
+     * xD => Dx
+     */
     @Generated public static final int kMORTraDx = 0x00000002;
+    /**
+     * AxD => DxA
+     */
     @Generated public static final int kMORTraDxA = 0x00000003;
+    /**
+     * ABx => xAB
+     */
     @Generated public static final int kMORTraxAB = 0x00000004;
+    /**
+     * ABx => xBA
+     */
     @Generated public static final int kMORTraxBA = 0x00000005;
+    /**
+     * xCD => CDx
+     */
     @Generated public static final int kMORTraCDx = 0x00000006;
+    /**
+     * xCD => DCx
+     */
     @Generated public static final int kMORTraDCx = 0x00000007;
+    /**
+     * AxCD => CDxA
+     */
     @Generated public static final int kMORTraCDxA = 0x00000008;
+    /**
+     * AxCD => DCxA
+     */
     @Generated public static final int kMORTraDCxA = 0x00000009;
+    /**
+     * ABxD => DxAB
+     */
     @Generated public static final int kMORTraDxAB = 0x0000000A;
+    /**
+     * ABxD => DxBA
+     */
     @Generated public static final int kMORTraDxBA = 0x0000000B;
+    /**
+     * ABxCD => CDxAB
+     */
     @Generated public static final int kMORTraCDxAB = 0x0000000C;
+    /**
+     * ABxCD => CDxBA
+     */
     @Generated public static final int kMORTraCDxBA = 0x0000000D;
+    /**
+     * ABxCD => DCxAB
+     */
     @Generated public static final int kMORTraDCxAB = 0x0000000E;
+    /**
+     * ABxCD => DCxBA
+     * Insertion subtable constants
+     */
     @Generated public static final int kMORTraDCxBA = 0x0000000F;
     @Generated public static final int kMORTDoInsertionsBefore = 0x00000080;
     @Generated public static final int kMORTIsSplitVowelPiece = 0x00000040;
@@ -410,16 +822,31 @@ public final class Enums {
     @Generated public static final int kMORTCurrInsertBefore = 0x00000800;
     @Generated public static final int kMORTMarkInsertBefore = 0x00000400;
     @Generated public static final int kMORTMarkJustTableCountMask = 0x00003F80;
+    /**
+     * JustTableIndex for marked character
+     */
     @Generated public static final int kMORTMarkJustTableCountShift = 0x00000007;
     @Generated public static final int kMORTCurrJustTableCountMask = 0x0000007F;
+    /**
+     * JustTableIndex for current character
+     */
     @Generated public static final int kMORTCurrJustTableCountShift = 0x00000000;
     @Generated public static final int kMORTCurrInsertCountMask = 0x000003E0;
+    /**
+     * count to insert after current glyphRec
+     */
     @Generated public static final int kMORTCurrInsertCountShift = 0x00000005;
     @Generated public static final int kMORTMarkInsertCountMask = 0x0000001F;
+    /**
+     * count to insert after marked glyphRec
+     */
     @Generated public static final int kMORTMarkInsertCountShift = 0x00000000;
     @Generated public static final int kAllTypographicFeaturesType = 0x00000000;
     @Generated public static final int kLigaturesType = 0x00000001;
     @Generated public static final int kCursiveConnectionType = 0x00000002;
+    /**
+     * deprecated - use kLowerCaseType or kUpperCaseType instead
+     */
     @Generated public static final int kLetterCaseType = 0x00000003;
     @Generated public static final int kVerticalSubstitutionType = 0x00000004;
     @Generated public static final int kLinguisticRearrangementType = 0x00000005;
@@ -457,11 +884,29 @@ public final class Enums {
     @Generated public static final int kLanguageTagType = 0x00000027;
     @Generated public static final int kCJKRomanSpacingType = 0x00000067;
     @Generated public static final int kLastFeatureType = 0xFFFFFFFF;
+    /**
+     * Mask to extract action type
+     */
     @Generated public static final int kKERXActionTypeMask = 0xC0000000;
+    /**
+     * Actions have control point numbers
+     */
     @Generated public static final int kKERXActionTypeControlPoints = 0x00000000;
+    /**
+     * Actions have anchor point numbers
+     */
     @Generated public static final int kKERXActionTypeAnchorPoints = 0x40000000;
+    /**
+     * Actions have control point coordinates
+     */
     @Generated public static final int kKERXActionTypeCoordinates = 0x80000000;
+    /**
+     * Unused, must be zero
+     */
     @Generated public static final int kKERXUnusedFlags = 0x3F000000;
+    /**
+     * Mask to extract offset to action table
+     */
     @Generated public static final int kKERXActionOffsetMask = 0x00FFFFFF;
     @Generated public static final int kSubstituteVerticalFormsOnSelector = 0x00000000;
     @Generated public static final int kSubstituteVerticalFormsOffSelector = 0x00000001;
@@ -550,10 +995,25 @@ public final class Enums {
     @Generated public static final int kSTMarkEnd = 0x00002000;
     @Generated public static final int kSTLigActionMask = 0x00003FFF;
     @Generated public static final int kSTRearrVerbMask = 0x0000000F;
+    /**
+     * ordered list of kerning pairs
+     */
     @Generated public static final int kKERXOrderedList = 0x00000000;
+    /**
+     * state table for n-way contextual kerning
+     */
     @Generated public static final int kKERXStateTable = 0x00000001;
+    /**
+     * simple n X m array of kerning values
+     */
     @Generated public static final int kKERXSimpleArray = 0x00000002;
+    /**
+     * state table for control point positioning
+     */
     @Generated public static final int kKERXControlPoint = 0x00000004;
+    /**
+     * index-based n X m array of kerning values
+     */
     @Generated public static final int kKERXIndexArray = 0x00000006;
     @Generated public static final int sizeof_sfntCMapExtendedSubHeader = 0x0000000C;
     @Generated public static final int sizeof_sfntDescriptorHeader = 0x00000008;
@@ -567,12 +1027,33 @@ public final class Enums {
     @Generated public static final int kLineFinalSwashesOffSelector = 0x00000007;
     @Generated public static final int kNonFinalSwashesOnSelector = 0x00000008;
     @Generated public static final int kNonFinalSwashesOffSelector = 0x00000009;
+    /**
+     * Array of glyphs starts a line
+     */
     @Generated public static final int kKERNLineStart = 0x00000001;
+    /**
+     * Array of glyphs ends a line
+     */
     @Generated public static final int kKERNLineEndKerning = 0x00000002;
+    /**
+     * Prohibit cross kerning
+     */
     @Generated public static final int kKERNNoCrossKerning = 0x00000004;
+    /**
+     * Caller wants kerning notes
+     */
     @Generated public static final int kKERNNotesRequested = 0x00000008;
+    /**
+     * Indicates a glyph was involved in a kerning pair/group
+     */
     @Generated public static final int kKERNNoStakeNote = 0x00000001;
+    /**
+     * Indicates a return-to-baseline in cross-stream kerning
+     */
     @Generated public static final int kKERNCrossStreamResetNote = 0x00000002;
+    /**
+     * All kerning values were zero, kerning call had no effect
+     */
     @Generated public static final int kKERNNotApplied = 0x00000001;
     @Generated public static final int kNoTransliterationSelector = 0x00000000;
     @Generated public static final int kHanjaToHangulSelector = 0x00000001;
@@ -586,24 +1067,72 @@ public final class Enums {
     @Generated public static final int kHanjaToHangulAltThreeSelector = 0x00000009;
     @Generated public static final int kLowerCaseNumbersSelector = 0x00000000;
     @Generated public static final int kUpperCaseNumbersSelector = 0x00000001;
+    /**
+     * deprecated
+     */
     @Generated public static final int kUpperAndLowerCaseSelector = 0x00000000;
+    /**
+     * deprecated
+     */
     @Generated public static final int kAllCapsSelector = 0x00000001;
+    /**
+     * deprecated
+     */
     @Generated public static final int kAllLowerCaseSelector = 0x00000002;
+    /**
+     * deprecated
+     */
     @Generated public static final int kSmallCapsSelector = 0x00000003;
+    /**
+     * deprecated
+     */
     @Generated public static final int kInitialCapsSelector = 0x00000004;
+    /**
+     * deprecated
+     */
     @Generated public static final int kInitialCapsAndSmallCapsSelector = 0x00000005;
+    /**
+     * 'trak'
+     */
     @Generated public static final int kTRAKTag = 0x7472616B;
+    /**
+     * current version number for 'trak' table
+     */
     @Generated public static final int kTRAKCurrentVersion = 0x00010000;
+    /**
+     * kTRAKPerGlyphFormat         = 2
+     */
     @Generated public static final int kTRAKUniformFormat = 0x00000000;
     @Generated public static final int kDefaultUpperCaseSelector = 0x00000000;
     @Generated public static final int kUpperCaseSmallCapsSelector = 0x00000001;
     @Generated public static final int kUpperCasePetiteCapsSelector = 0x00000002;
+    /**
+     * Array of glyphs starts a line
+     */
     @Generated public static final int kKERXLineStart = 0x00000001;
+    /**
+     * Array of glyphs ends a line
+     */
     @Generated public static final int kKERXLineEndKerning = 0x00000002;
+    /**
+     * Prohibit cross kerning
+     */
     @Generated public static final int kKERXNoCrossKerning = 0x00000004;
+    /**
+     * Caller wants kerning notes
+     */
     @Generated public static final int kKERXNotesRequested = 0x00000008;
+    /**
+     * Indicates a glyph was involved in a kerning pair/group
+     */
     @Generated public static final int kKERXNoStakeNote = 0x00000001;
+    /**
+     * Indicates a return-to-baseline in cross-stream kerning
+     */
     @Generated public static final int kKERXCrossStreamResetNote = 0x00000002;
+    /**
+     * All kerning values were zero, kerning call had no effect
+     */
     @Generated public static final int kKERXNotApplied = 0x00000001;
     @Generated public static final int sizeof_sfntNameHeader = 0x00000006;
     @Generated public static final int kHyphenToMinusOnSelector = 0x00000000;
@@ -628,9 +1157,15 @@ public final class Enums {
     @Generated public static final int sizeof_sfntVariationAxis = 0x00000014;
     @Generated public static final int kCTWritingDirectionEmbedding = 0x00000000;
     @Generated public static final int kCTWritingDirectionOverride = 0x00000002;
+    /**
+     * 'just'
+     */
     @Generated public static final int kJUSTTag = 0x6A757374;
     @Generated public static final int kJUSTCurrentVersion = 0x00010000;
     @Generated public static final int kJUSTStandardFormat = 0x00000000;
+    /**
+     * used in a pcConditionalAddAction
+     */
     @Generated public static final int kJUSTnoGlyphcode = 0x0000FFFF;
     @Generated public static final int kJUSTpcDecompositionAction = 0x00000000;
     @Generated public static final int kJUSTpcUnconditionalAddAction = 0x00000001;
@@ -665,17 +1200,47 @@ public final class Enums {
     @Generated public static final int kKERXValuesAreLong = 0x00000001;
     @Generated public static final int kCTRunDelegateVersion1 = 0x00000001;
     @Generated public static final int kCTRunDelegateCurrentVersion = 0x00000001;
+    /**
+     * 'prop'
+     */
     @Generated public static final int kPROPTag = 0x70726F70;
+    /**
+     * current version number for 'prop' table
+     */
     @Generated public static final int kPROPCurrentVersion = 0x00030000;
     @Generated public static final int kPROPPairOffsetShift = 0x00000008;
     @Generated public static final int kPROPPairOffsetSign = 0x00000007;
+    /**
+     * glyph is floater
+     */
     @Generated public static final int kPROPIsFloaterMask = 0x00008000;
+    /**
+     * glyph can hang left/top
+     */
     @Generated public static final int kPROPCanHangLTMask = 0x00004000;
+    /**
+     * glyph can hang right/bottom
+     */
     @Generated public static final int kPROPCanHangRBMask = 0x00002000;
+    /**
+     * if glyph lands in RL streak, use paired glyph
+     */
     @Generated public static final int kPROPUseRLPairMask = 0x00001000;
+    /**
+     * 4-bit signed offset to other pair member
+     */
     @Generated public static final int kPROPPairOffsetMask = 0x00000F00;
+    /**
+     * glyph connects to glyph on right
+     */
     @Generated public static final int kPROPRightConnectMask = 0x00000080;
+    /**
+     * must be zero
+     */
     @Generated public static final int kPROPZeroReserved = 0x00000060;
+    /**
+     * direction bits
+     */
     @Generated public static final int kPROPDirectionMask = 0x0000001F;
     @Generated public static final int kPreventOverlapOnSelector = 0x00000000;
     @Generated public static final int kPreventOverlapOffSelector = 0x00000001;
@@ -702,13 +1267,34 @@ public final class Enums {
     @Generated public static final int kDiamondAnnotationSelector = 0x00000008;
     @Generated public static final int kInvertedBoxAnnotationSelector = 0x00000009;
     @Generated public static final int kInvertedRoundedBoxAnnotationSelector = 0x0000000A;
+    /**
+     * 'kern'
+     */
     @Generated public static final int kKERNTag = 0x6B65726E;
     @Generated public static final int kKERNCurrentVersion = 0x00010000;
+    /**
+     * set if this table has vertical kerning information
+     */
     @Generated public static final int kKERNVertical = 0x00008000;
+    /**
+     * this value in a cross-stream table means reset to zero
+     */
     @Generated public static final int kKERNResetCrossStream = 0x00008000;
+    /**
+     * set if this table contains cross-stream kerning values
+     */
     @Generated public static final int kKERNCrossStream = 0x00004000;
+    /**
+     * set if this table contains variation kerning values
+     */
     @Generated public static final int kKERNVariation = 0x00002000;
+    /**
+     * UNUSED, MUST BE ZERO
+     */
     @Generated public static final int kKERNUnusedBits = 0x00001F00;
+    /**
+     * format of this subtable
+     */
     @Generated public static final int kKERNFormatMask = 0x000000FF;
     @Generated public static final int kContextualAlternatesOnSelector = 0x00000000;
     @Generated public static final int kContextualAlternatesOffSelector = 0x00000001;
@@ -795,19 +1381,64 @@ public final class Enums {
     private Enums() {
     }
 
+    /**
+     * Color bitmap data
+     */
     @Generated public static final int kCTFontTableCBDT = 0x43424454;
+    /**
+     * Color bitmap location data
+     */
     @Generated public static final int kCTFontTableCBLC = 0x43424C43;
+    /**
+     * Compact Font Format 2.0
+     */
     @Generated public static final int kCTFontTableCFF2 = 0x43464632;
+    /**
+     * Color table
+     */
     @Generated public static final int kCTFontTableCOLR = 0x434F4C52;
+    /**
+     * Color palette table
+     */
     @Generated public static final int kCTFontTableCPAL = 0x4350414C;
+    /**
+     * Horizontal metrics variations
+     */
     @Generated public static final int kCTFontTableHVAR = 0x48564152;
+    /**
+     * Merge
+     */
     @Generated public static final int kCTFontTableMERG = 0x4D455247;
+    /**
+     * Metrics variations
+     */
     @Generated public static final int kCTFontTableMVAR = 0x4D564152;
+    /**
+     * Style attributes
+     */
     @Generated public static final int kCTFontTableSTAT = 0x53544154;
+    /**
+     * Scalable vector graphics
+     */
     @Generated public static final int kCTFontTableSVG = 0x53564720;
+    /**
+     * Vertical metrics variations
+     */
     @Generated public static final int kCTFontTableVVAR = 0x56564152;
+    /**
+     * CID to glyph mapping
+     */
     @Generated public static final int kCTFontTableCidg = 0x63696467;
+    /**
+     * 'FOND' and 'NFNT' data
+     */
     @Generated public static final int kCTFontTableFond = 0x666F6E64;
+    /**
+     * Metadata
+     */
     @Generated public static final int kCTFontTableMeta = 0x6D657461;
+    /**
+     * Cross-reference
+     */
     @Generated public static final int kCTFontTableXref = 0x78726566;
 }

@@ -106,13 +106,18 @@ public class INPayBillIntentResponse extends INIntentResponse {
     @Selector("init")
     public native INPayBillIntentResponse init();
 
+    /**
+     * The app extension has the option of capturing its private state as an NSUserActivity and returning it as the 'currentActivity'.
+     * If the the app is launched, an NSUserActivity will be passed in with the private state.  The NSUserActivity may also be used to query the app's UI extension (if provided) for a view controller representing the current intent handling state.
+     * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This intent object will also be available in the NSUserActivity.interaction property.
+     */
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INPayBillIntentResponse initWithCodeUserActivity(@NInt long code, NSUserActivity userActivity);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPayBillIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INPayBillIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

@@ -27,6 +27,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This class provides some pre-rolled padding policies for common tasks
+ * 
+ * You are, of course, welcome to write your own class that conforms to
+ *             The MPSNNPadding protocol and use that instead.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -94,7 +100,7 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -107,7 +113,7 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNDefaultPadding initWithCoder(NSCoder aDecoder);
+    public native MPSNNDefaultPadding initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -140,6 +146,9 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * same size centering mode
+     */
     @Generated
     @Selector("paddingForTensorflowAveragePooling")
     public static native MPSNNDefaultPadding paddingForTensorflowAveragePooling();
@@ -149,6 +158,15 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
     @NUInt
     public native long paddingMethod();
 
+    /**
+     * Fetch a well known object that implements a non-custom padding method
+     * 
+     * For custom padding methods, you will need to implement an object that conforms
+     *             to the full MPSNNPadding protocol, including NSSecureCoding.
+     * 
+     * @param      method  A MPSNNPaddingMethod
+     * @return     An object that implements <MPSNNPadding> for use with MPSNNGraphNodes.
+     */
     @Generated
     @Selector("paddingWithMethod:")
     public static native MPSNNDefaultPadding paddingWithMethod(@NUInt long method);
@@ -183,4 +201,17 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @IsOptional
+    @Selector("inverse")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object inverse();
+
+    /**
+     * Typical pooling padding policy for valid only mode
+     */
+    @Generated
+    @Selector("paddingForTensorflowAveragePoolingValidOnly")
+    public static native MPSNNDefaultPadding paddingForTensorflowAveragePoolingValidOnly();
 }

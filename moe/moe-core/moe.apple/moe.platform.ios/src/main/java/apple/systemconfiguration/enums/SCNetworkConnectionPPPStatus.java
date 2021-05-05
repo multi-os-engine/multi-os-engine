@@ -18,6 +18,51 @@ package apple.systemconfiguration.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * [@enum] SCNetworkConnectionPPPStatus
+ * 
+ * PPP-specific status of the network connection.
+ * 	This status is returned as part of the extended information
+ * 	for a PPP service.
+ * 	Note: additional status might be returned in the future.
+ * 	Your application should be prepared to receive an unknown value.
+ * [@constant] kSCNetworkConnectionPPPDisconnected
+ * 	PPP is disconnected.
+ * [@constant] kSCNetworkConnectionPPPInitializing
+ * 	PPP is initializing.
+ * [@constant] kSCNetworkConnectionPPPConnectingLink
+ * 	PPP is connecting the lower connection layer (for example,
+ * 	the modem is dialing out).
+ * [@constant] kSCNetworkConnectionPPPDialOnTraffic
+ * 	PPP is waiting for networking traffic to automatically
+ * 	establish the connection.
+ * [@constant] kSCNetworkConnectionPPPNegotiatingLink
+ * 	The PPP lower layer is connected and PPP is negotiating the
+ * 	link layer (LCP protocol).
+ * [@constant] kSCNetworkConnectionPPPAuthenticating
+ * 	PPP is authenticating to the server (PAP, CHAP, MS-CHAP or
+ * 	EAP protocols).
+ * [@constant] kSCNetworkConnectionPPPWaitingForCallBack
+ * 	PPP is waiting for the server to call back.
+ * [@constant] kSCNetworkConnectionPPPNegotiatingNetwork
+ * 	PPP is now authenticated and negotiating the networking
+ * 	layer (IPCP or IPv6CP protocols)
+ * [@constant] kSCNetworkConnectionPPPConnected
+ * 	PPP is now fully connected for at least one networking layer.
+ * 	Additional networking protocol might still be negotiating.
+ * [@constant] kSCNetworkConnectionPPPTerminating
+ * 	PPP networking and link protocols are terminating.
+ * [@constant] kSCNetworkConnectionPPPDisconnectingLink
+ * 	PPP is disconnecting the lower level (for example, the modem
+ * 	is hanging up).
+ * [@constant] kSCNetworkConnectionPPPHoldingLinkOff
+ * 	PPP is disconnected and maintaining the link temporarily off.
+ * [@constant] kSCNetworkConnectionPPPSuspended
+ * 	PPP is suspended as a result of the suspend command (for
+ * 	example, when a V.92 Modem is On Hold).
+ * [@constant] kSCNetworkConnectionPPPWaitingForRedial
+ * 	PPP has found a busy server and is waiting for redial.
+ */
 @Generated
 public final class SCNetworkConnectionPPPStatus {
     @Generated public static final int Disconnected = 0x00000000;

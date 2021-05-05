@@ -154,10 +154,19 @@ public class MPChangeLanguageOptionCommandEvent extends MPRemoteCommandEvent {
     @Selector("init")
     public native MPChangeLanguageOptionCommandEvent init();
 
+    /**
+     * The requested language option to change.
+     * The supplied language option may be the Automatic Legible Language Option
+     * which would mean that best legible language option based on user preferences
+     * is being requested. See MPNowPlayingInfoLanguageOption isAutomaticLegibleLanguageOption
+     */
     @Generated
     @Selector("languageOption")
     public native MPNowPlayingInfoLanguageOption languageOption();
 
+    /**
+     * Describes the extent of the changed language option
+     */
     @Generated
     @Selector("setting")
     @NInt

@@ -32,6 +32,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -45,6 +46,15 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The replicator layer creates a specified number of copies of its
+ * sublayers, each copy potentially having geometric, temporal and
+ * color transformations applied to it.
+ * 
+ * Note: the CALayer -hitTest: method currently only tests the first
+ * instance of z replicator layer's sublayers. This may change in the
+ * future.
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -180,7 +190,7 @@ public class CAReplicatorLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAReplicatorLayer initWithCoder(NSCoder aDecoder);
+    public native CAReplicatorLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -194,15 +204,27 @@ public class CAReplicatorLayer extends CALayer {
     @Selector("instanceBlueOffset")
     public native float instanceBlueOffset();
 
+    /**
+     * The color to multiply the first object by (the source object). Defaults
+     * to opaque white. Animatable.
+     */
     @Generated
     @Selector("instanceColor")
     public native CGColorRef instanceColor();
 
+    /**
+     * The number of copies to create, including the source object.
+     * Default value is one (i.e. no extra copies). Animatable.
+     */
     @Generated
     @Selector("instanceCount")
     @NInt
     public native long instanceCount();
 
+    /**
+     * The temporal delay between replicated copies. Defaults to zero.
+     * Animatable.
+     */
     @Generated
     @Selector("instanceDelay")
     public native double instanceDelay();
@@ -211,15 +233,32 @@ public class CAReplicatorLayer extends CALayer {
     @Selector("instanceGreenOffset")
     public native float instanceGreenOffset();
 
+    /**
+     * The color components added to the color of instance k-1 to produce
+     * the modulation color of instance k. Defaults to the clear color (no
+     * change). Animatable.
+     */
     @Generated
     @Selector("instanceRedOffset")
     public native float instanceRedOffset();
 
+    /**
+     * The matrix applied to instance k-1 to produce instance k. The matrix
+     * is applied relative to the center of the replicator layer, i.e. the
+     * superlayer of each replicated sublayer. Defaults to the identity
+     * matrix. Animatable.
+     */
     @Generated
     @Selector("instanceTransform")
     @ByValue
     public native CATransform3D instanceTransform();
 
+    /**
+     * Defines whether this layer flattens its sublayers into its plane or
+     * not (i.e. whether it's treated similarly to a transform layer or
+     * not). Defaults to NO. If YES, the standard restrictions apply (see
+     * CATransformLayer.h).
+     */
     @Generated
     @Selector("preservesDepth")
     public native boolean preservesDepth();
@@ -232,14 +271,26 @@ public class CAReplicatorLayer extends CALayer {
     @Selector("setInstanceBlueOffset:")
     public native void setInstanceBlueOffset(float value);
 
+    /**
+     * The color to multiply the first object by (the source object). Defaults
+     * to opaque white. Animatable.
+     */
     @Generated
     @Selector("setInstanceColor:")
     public native void setInstanceColor(CGColorRef value);
 
+    /**
+     * The number of copies to create, including the source object.
+     * Default value is one (i.e. no extra copies). Animatable.
+     */
     @Generated
     @Selector("setInstanceCount:")
     public native void setInstanceCount(@NInt long value);
 
+    /**
+     * The temporal delay between replicated copies. Defaults to zero.
+     * Animatable.
+     */
     @Generated
     @Selector("setInstanceDelay:")
     public native void setInstanceDelay(double value);
@@ -248,14 +299,31 @@ public class CAReplicatorLayer extends CALayer {
     @Selector("setInstanceGreenOffset:")
     public native void setInstanceGreenOffset(float value);
 
+    /**
+     * The color components added to the color of instance k-1 to produce
+     * the modulation color of instance k. Defaults to the clear color (no
+     * change). Animatable.
+     */
     @Generated
     @Selector("setInstanceRedOffset:")
     public native void setInstanceRedOffset(float value);
 
+    /**
+     * The matrix applied to instance k-1 to produce instance k. The matrix
+     * is applied relative to the center of the replicator layer, i.e. the
+     * superlayer of each replicated sublayer. Defaults to the identity
+     * matrix. Animatable.
+     */
     @Generated
     @Selector("setInstanceTransform:")
     public native void setInstanceTransform(@ByValue CATransform3D value);
 
+    /**
+     * Defines whether this layer flattens its sublayers into its plane or
+     * not (i.e. whether it's treated similarly to a transform layer or
+     * not). Defaults to NO. If YES, the standard restrictions apply (see
+     * CATransformLayer.h).
+     */
     @Generated
     @Selector("setPreservesDepth:")
     public native void setPreservesDepth(boolean value);
@@ -269,4 +337,9 @@ public class CAReplicatorLayer extends CALayer {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
 }

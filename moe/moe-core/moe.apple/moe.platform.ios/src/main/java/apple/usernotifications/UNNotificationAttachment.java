@@ -76,6 +76,9 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Creates an attachment for the data at URL with an optional options dictionary. URL must be a file URL. Returns nil if the data at URL is not supported.
+     */
     @Generated
     @Selector("attachmentWithIdentifier:URL:options:error:")
     public static native UNNotificationAttachment attachmentWithIdentifierURLOptionsError(String identifier, NSURL URL,
@@ -168,6 +171,9 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
     @NInt
     public static native long version_static();
 
+    /**
+     * The URL to the attachment's data. If you have obtained this attachment from UNUserNotificationCenter then the URL will be security-scoped.
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -180,8 +186,11 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The identifier of this attachment
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -192,7 +201,7 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationAttachment initWithCoder(NSCoder aDecoder);
+    public native UNNotificationAttachment initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -200,6 +209,9 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
         return supportsSecureCoding();
     }
 
+    /**
+     * The UTI of the attachment.
+     */
     @Generated
     @Selector("type")
     public native String type();

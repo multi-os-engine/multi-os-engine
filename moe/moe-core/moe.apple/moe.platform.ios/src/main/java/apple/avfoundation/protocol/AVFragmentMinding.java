@@ -21,10 +21,31 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
+import org.moe.natj.objc.ann.Selector;
 
+/**
+ * AVFragmentedAsset
+ * 
+ * A subclass of AVURLAsset that represents media resources that can be extended in total duration without modifying previously existing data structures.
+ * Such media resources include QuickTime movie files and MPEG-4 files that indicate, via an 'mvex' box in their 'moov' box, that they accommodate additional fragments. Media resources of other types may also be supported. To check whether a given instance of AVFragmentedAsset can be used to monitor the addition of fragments, check the value of the AVURLAsset property canContainFragments.
+ * An AVFragmentedAsset is capable of changing the values of certain of its properties and those of its tracks, while an operation that appends fragments to the underlying media resource in in progress, if the AVFragmentedAsset is associated with an instance of AVFragmentedAssetMinder.
+ * 
+ * While associated with an AVFragmentedAssetMinder, AVFragmentedAsset posts AVAssetDurationDidChangeNotification whenever new fragments are detected, as appropriate. It may also post AVAssetContainsFragmentsDidChangeNotification and AVAssetWasDefragmentedNotification, as discussed in documentation of those notifications.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVFragmentMinding")
 public interface AVFragmentMinding {
+
+    /**
+     * [@property]		associatedWithFragmentMinder
+     * 
+     * Indicates whether an AVAsset that supports fragment minding is currently associated with a fragment minder, e.g. an instance of AVFragmentedAssetMinder.
+     * 
+     * AVAssets that support fragment minding post change notifications only while associated with a fragment minder.
+     */
+    @Generated
+    @Selector("isAssociatedWithFragmentMinder")
+    boolean isAssociatedWithFragmentMinder();
 }

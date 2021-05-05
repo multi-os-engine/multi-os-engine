@@ -42,18 +42,30 @@ public final class _RuneCharClass extends StructObject {
         super(peer);
     }
 
+    /**
+     * CHARCLASS_NAME_MAX = 14
+     */
     @Generated
     @StructureField(order = 0, isGetter = true, count = 14)
     public native byte __name(int field_idx);
 
+    /**
+     * CHARCLASS_NAME_MAX = 14
+     */
     @Generated
     @StructureField(order = 0, isGetter = false, count = 14)
     public native void set__name(byte value, int field_idx);
 
+    /**
+     * charclass mask
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int __mask();
 
+    /**
+     * charclass mask
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void set__mask(int value);

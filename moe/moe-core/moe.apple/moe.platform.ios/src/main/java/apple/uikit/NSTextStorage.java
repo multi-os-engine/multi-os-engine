@@ -27,6 +27,8 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSMutableAttributedString;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.foundation.NSURLRequest;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.foundation.struct.NSRange;
 import apple.uikit.protocol.NSTextStorageDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -48,16 +50,28 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Note for subclassing NSTextStorage: NSTextStorage is a semi-abstract subclass of NSMutableAttributedString. It implements change management (beginEditing/endEditing), verification of attributes, delegate handling, and layout management notification. The one aspect it does not implement is the actual attributed string storage --- this is left up to the subclassers, which need to override the two NSMutableAttributedString primitives in addition to two NSAttributedString primitives:
+ * 
+ * - (NSString *)string;
+ * - (NSDictionary *)attributesAtIndex:(NSUInteger)location effectiveRange:(NSRangePointer)range;
+ * 
+ * - (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)str;
+ * - (void)setAttributes:(NSDictionary *)attrs range:(NSRange)range;
+ * 
+ * These primitives should perform the change then call edited:range:changeInLength: to get everything else to happen.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSTextStorage extends NSMutableAttributedString {
+public class NSTextStorage extends NSMutableAttributedString implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -172,39 +186,63 @@ public class NSTextStorage extends NSMutableAttributedString {
     @NInt
     public static native long version_static();
 
+    /**
+     * Adds aLayoutManager to the receiver.  Sends -[NSLayoutManager setTextStorage:] to aLayoutManager with the receiver.
+     */
     @Generated
     @Selector("addLayoutManager:")
     public native void addLayoutManager(NSLayoutManager aLayoutManager);
 
+    /**
+     * The length delta for the pending changes.
+     */
     @Generated
     @Selector("changeInLength")
     @NInt
     public native long changeInLength();
 
+    /**
+     * Delegate ***************************
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSTextStorageDelegate delegate();
 
+    /**
+     * Notifies and records a recent change.  If there are no outstanding -beginEditing calls, this method calls -processEditing to trigger post-editing processes.  This method has to be called by the primitives after changes are made if subclassed and overridden.  editedRange is the range in the original string (before the edit).
+     */
     @Generated
     @Selector("edited:range:changeInLength:")
     public native void editedRangeChangeInLength(@NUInt long editedMask, @ByValue NSRange editedRange,
             @NInt long delta);
 
+    /**
+     * The NSTextStorageEditActions mask indicating that there are pending changes for attributes, characters, or both.
+     */
     @Generated
     @Selector("editedMask")
     @NUInt
     public native long editedMask();
 
+    /**
+     * The range for pending changes. {NSNotFound, 0} when there is no pending changes.
+     */
     @Generated
     @Selector("editedRange")
     @ByValue
     public native NSRange editedRange();
 
+    /**
+     * Ensures all attributes in range are validated and ready to be used.  An NSTextStorage that is lazy is required to call the following method before accessing any attributes.  This gives the attribute fixing a chance to occur if necessary.  NSTextStorage subclasses that wish to support laziness must call it from all attribute accessors that they implement.  The default concrete subclass does call this from its accessors.
+     */
     @Generated
     @Selector("ensureAttributesAreFixedInRange:")
     public native void ensureAttributesAreFixedInRange(@ByValue NSRange range);
 
+    /**
+     * Indicates if the receiver fixes invalidated attributes lazily.  The concrete UIKit subclass fixes attributes lazily by default.  The abstract class (hence, all custom subclasses) is not lazy.
+     */
     @Generated
     @Selector("fixesAttributesLazily")
     public native boolean fixesAttributesLazily();
@@ -219,7 +257,7 @@ public class NSTextStorage extends NSMutableAttributedString {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextStorage initWithCoder(NSCoder aDecoder);
+    public native NSTextStorage initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithData:options:documentAttributes:error:")
@@ -248,26 +286,44 @@ public class NSTextStorage extends NSMutableAttributedString {
             @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Notes the range of attributes that requires validation.  If the NSTextStorage is not lazy this just calls fixAttributesInRange:.  If it is lazy this instead just records the range needing fixing in order to do it later.
+     */
     @Generated
     @Selector("invalidateAttributesInRange:")
     public native void invalidateAttributesInRange(@ByValue NSRange range);
 
+    /**
+     * NSLayoutManager objects owned by the receiver.
+     */
     @Generated
     @Selector("layoutManagers")
     public native NSArray<? extends NSLayoutManager> layoutManagers();
 
+    /**
+     * Sends out -textStorage:willProcessEditing, fixes the attributes, sends out -textStorage:didProcessEditing, and notifies the layout managers of change with the -processEditingForTextStorage:edited:range:changeInLength:invalidatedRange: method.  Invoked from -edited:range:changeInLength: or -endEditing.
+     */
     @Generated
     @Selector("processEditing")
     public native void processEditing();
 
+    /**
+     * Removes aLayoutManager from the receiver if already owned by it.  Sends -[NSLayoutManager setTextStorage:] to aLayoutManager with nil.
+     */
     @Generated
     @Selector("removeLayoutManager:")
     public native void removeLayoutManager(NSLayoutManager aLayoutManager);
 
+    /**
+     * Delegate ***************************
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSTextStorageDelegate value);
 
+    /**
+     * Delegate ***************************
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSTextStorageDelegate value) {
         Object __old = delegate();
@@ -333,4 +389,31 @@ public class NSTextStorage extends NSMutableAttributedString {
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("loadFromHTMLWithData:options:completionHandler:")
+    public static native void loadFromHTMLWithDataOptionsCompletionHandler(NSData data, NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithDataOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithDataOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadFromHTMLWithFileURL:options:completionHandler:")
+    public static native void loadFromHTMLWithFileURLOptionsCompletionHandler(NSURL fileURL,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithFileURLOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithFileURLOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadFromHTMLWithRequest:options:completionHandler:")
+    public static native void loadFromHTMLWithRequestOptionsCompletionHandler(NSURLRequest request,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithRequestOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithRequestOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadFromHTMLWithString:options:completionHandler:")
+    public static native void loadFromHTMLWithStringOptionsCompletionHandler(String string,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithStringOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithStringOptionsCompletionHandler completionHandler);
 }

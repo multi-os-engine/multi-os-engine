@@ -21,9 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIDatePickerMode {
+    /**
+     * Displays hour, minute, and optionally AM/PM designation depending on the locale setting (e.g. 6 | 53 | PM)
+     */
     @Generated @NInt public static final long Time = 0x0000000000000000L;
+    /**
+     * Displays month, day, and year depending on the locale setting (e.g. November | 15 | 2007)
+     */
     @Generated @NInt public static final long Date = 0x0000000000000001L;
+    /**
+     * Displays date, hour, minute, and optionally AM/PM designation depending on the locale setting (e.g. Wed Nov 15 | 6 | 53 | PM)
+     */
     @Generated @NInt public static final long DateAndTime = 0x0000000000000002L;
+    /**
+     * Displays hour and minute (e.g. 1 | 53)
+     */
     @Generated @NInt public static final long CountDownTimer = 0x0000000000000003L;
 
     @Generated

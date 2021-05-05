@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A mutable value object representing a group.
+ * 
+ * CNMutableGroup is not thread safe.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
@@ -171,7 +176,7 @@ public class CNMutableGroup extends CNGroup {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNMutableGroup initWithCoder(NSCoder aDecoder);
+    public native CNMutableGroup initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("name")

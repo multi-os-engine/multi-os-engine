@@ -40,6 +40,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Behaves like CAAnimationGroup. Merges key/value pairs of constituent
+ * using Core Animation's implementations of addition for all the standard types. 
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -157,7 +161,7 @@ public class UIMotionEffectGroup extends UIMotionEffect {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIMotionEffectGroup initWithCoder(NSCoder aDecoder);
+    public native UIMotionEffectGroup initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("motionEffects")

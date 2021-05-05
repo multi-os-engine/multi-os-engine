@@ -43,6 +43,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMAccelerometerData
+ * 
+ * Discussion:
+ *   Contains a single accelerometer measurement.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -158,6 +164,12 @@ public class CMAccelerometerData extends CMLogItem {
     @NInt
     public static native long version_static();
 
+    /**
+     * acceleration
+     * 
+     * Discussion:
+     *   The acceleration measured by the accelerometer.
+     */
     @Generated
     @Selector("acceleration")
     @ByValue
@@ -169,7 +181,7 @@ public class CMAccelerometerData extends CMLogItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMAccelerometerData initWithCoder(NSCoder aDecoder);
+    public native CMAccelerometerData initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

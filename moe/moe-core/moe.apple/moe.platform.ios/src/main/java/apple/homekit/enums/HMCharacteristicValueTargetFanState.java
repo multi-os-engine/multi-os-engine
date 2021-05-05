@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]      HMCharacteristicValueTargetFanState
+ * 
+ * [@constant]  HMCharacteristicValueTargetFanStateManual     Manual.
+ * [@constant]  HMCharacteristicValueTargetFanStateAutomatic  Automatic.
+ */
 @Generated
 public final class HMCharacteristicValueTargetFanState {
     @Generated @NInt public static final long Manual = 0x0000000000000000L;

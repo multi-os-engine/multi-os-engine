@@ -150,11 +150,22 @@ public class EKSource extends EKObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property]    calendars
+     * 
+     * This is now deprecated in favor of -[EKSource calendarsForEntityType:]
+     */
     @Generated
     @Deprecated
     @Selector("calendars")
     public native NSSet<? extends EKCalendar> calendars();
 
+    /**
+     * calendarsForEntityType
+     * 
+     * Returns the calendars that belong to this source that
+     *              support a given entity type (reminders, events)
+     */
     @Generated
     @Selector("calendarsForEntityType:")
     public native NSSet<? extends EKCalendar> calendarsForEntityType(@NUInt long entityType);

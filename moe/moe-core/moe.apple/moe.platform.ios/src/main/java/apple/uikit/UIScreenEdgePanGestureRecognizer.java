@@ -18,6 +18,7 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -39,6 +40,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This subclass of UIPanGestureRecognizer only recognizes if the user slides their finger
+ * in from the bezel on the specified edge. 
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -150,6 +155,9 @@ public class UIScreenEdgePanGestureRecognizer extends UIPanGestureRecognizer {
     @NInt
     public static native long version_static();
 
+    /**
+     * The edges on which this gesture recognizes, relative to the current interface orientation
+     */
     @Generated
     @Selector("edges")
     @NUInt
@@ -164,7 +172,14 @@ public class UIScreenEdgePanGestureRecognizer extends UIPanGestureRecognizer {
     public native UIScreenEdgePanGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
             SEL action);
 
+    /**
+     * The edges on which this gesture recognizes, relative to the current interface orientation
+     */
     @Generated
     @Selector("setEdges:")
     public native void setEdges(@NUInt long value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIScreenEdgePanGestureRecognizer initWithCoder(NSCoder coder);
 }

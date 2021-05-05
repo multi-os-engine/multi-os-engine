@@ -27,19 +27,35 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@protocol] MTLDrawable
+ * 
+ * All "drawable" objects (such as those coming from CAMetalLayer) are expected to conform to this protocol
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLDrawable")
 public interface MTLDrawable {
+    /**
+     * Present this drawable as soon as possible
+     */
     @Generated
     @Selector("present")
     void present();
 
+    /**
+     * Present this drawable at the given host time
+     */
     @Generated
     @Selector("presentAtTime:")
     void presentAtTime(double presentationTime);
 
+    /**
+     * addPresentedHandler
+     * 
+     * Add a block to be called when this drawable is presented on screen.
+     */
     @Generated
     @Selector("addPresentedHandler:")
     void addPresentedHandler(@ObjCBlock(name = "call_addPresentedHandler") Block_addPresentedHandler block);
@@ -51,15 +67,36 @@ public interface MTLDrawable {
         void call_addPresentedHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
+    /**
+     * [@property] drawableID
+     * 
+     * The monotonically incremented ID for all MTLDrawable objects created from the same CAMetalLayer object.
+     * 
+     * The value starts from 0.
+     */
     @Generated
     @Selector("drawableID")
     @NUInt
     long drawableID();
 
+    /**
+     * presentAfterMinimumDuration
+     * 
+     * Present this drawable while setting a minimum duration in seconds before allowing this drawable to appear on the display.
+     * 
+     * @param duration Duration in seconds before this drawable is allowed to appear on the display
+     */
     @Generated
     @Selector("presentAfterMinimumDuration:")
     void presentAfterMinimumDuration(double duration);
 
+    /**
+     * [@property] presentedTime
+     * 
+     * The host time that this drawable was presented on screen.
+     * 
+     * Returns 0 if a frame has not been presented or has been skipped.
+     */
     @Generated
     @Selector("presentedTime")
     double presentedTime();

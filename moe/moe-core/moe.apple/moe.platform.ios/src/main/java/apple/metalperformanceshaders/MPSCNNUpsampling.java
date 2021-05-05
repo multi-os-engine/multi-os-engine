@@ -25,6 +25,22 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSCNNUpsampling
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSCNNUpsampling filter can be used to resample an existing MPSImage
+ *             using a different sampling frequency for the x and y dimensions with the purpose of
+ *             enlarging the size of an image.
+ * 
+ *             The number of output feature channels remains the same as the number of input feature
+ *             channels.
+ * 
+ *             The scaleFactor must be an integer value >= 1. The default value is 1.
+ *             If scaleFactor == 1, the filter acts as a copy kernel.
+ * 
+ *             Nearest and bilinear variants are supported.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -139,10 +155,20 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * [@property]   scaleFactorX
+     * 
+     * The upsampling scale factor for the x dimension. The default value is 1.
+     */
     @Generated
     @Selector("scaleFactorX")
     public native double scaleFactorX();
 
+    /**
+     * [@property]   scaleFactorY
+     * 
+     * The upsampling scale factor for the y dimension. The default value is 1.
+     */
     @Generated
     @Selector("scaleFactorY")
     public native double scaleFactorY();
@@ -169,4 +195,15 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property]   alignCorners
+     * 
+     * If YES, the centers of the 4 corner pixels of the input and output regions are aligned,
+     *             preserving the values at the corner pixels.
+     *             The default is NO.
+     */
+    @Generated
+    @Selector("alignCorners")
+    public native boolean alignCorners();
 }

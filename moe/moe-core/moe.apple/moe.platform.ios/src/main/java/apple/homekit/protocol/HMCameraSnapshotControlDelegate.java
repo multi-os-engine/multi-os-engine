@@ -27,11 +27,23 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * This delegate receives updates on the camera snapshot.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("HMCameraSnapshotControlDelegate")
 public interface HMCameraSnapshotControlDelegate {
+    /**
+     * Informs the delegate that the snapshot was taken.
+     * 
+     * @param cameraSnapshotControl Sender of this message.
+     * 
+     * @param snapshot Snapshot will be valid if snapshot was successfully taken.
+     * 
+     * @param error Error will be populated if the snapshot could not be taken.
+     */
     @Generated
     @IsOptional
     @Selector("cameraSnapshotControl:didTakeSnapshot:error:")
@@ -40,6 +52,11 @@ public interface HMCameraSnapshotControlDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Informs the delegate that the mostRecentSnapshot was updated.
+     * 
+     * @param cameraSnapshotControl Sender of this message.
+     */
     @Generated
     @IsOptional
     @Selector("cameraSnapshotControlDidUpdateMostRecentSnapshot:")

@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A recognized utterance, corresponding to a segment of recorded audio with speech and containing one or more transcriptions hypotheses
+ */
 @Generated
 @Library("Speech")
 @Runtime(ObjCRuntime.class)
@@ -170,7 +173,7 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,8 +181,11 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native SFSpeechRecognitionResult initWithCoder(NSCoder aDecoder);
+    public native SFSpeechRecognitionResult initWithCoder(NSCoder coder);
 
+    /**
+     * True if the hypotheses will not change; speech processing is complete.
+     */
     @Generated
     @Selector("isFinal")
     public native boolean isFinal();
@@ -190,6 +196,9 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
         return supportsSecureCoding();
     }
 
+    /**
+     * Hypotheses for possible transcriptions, sorted in descending order of confidence (more likely first)
+     */
     @Generated
     @Selector("transcriptions")
     public native NSArray<? extends SFTranscription> transcriptions();

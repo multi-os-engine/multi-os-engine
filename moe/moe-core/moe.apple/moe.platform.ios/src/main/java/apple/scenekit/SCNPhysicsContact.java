@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNPhysicsContact
+ * 
+ * SCNPhysicsContact contains information about a physics contact.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +158,9 @@ public class SCNPhysicsContact extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * the collision impulse on nodeA
+     */
     @Generated
     @Selector("collisionImpulse")
     @NFloat
@@ -163,6 +171,9 @@ public class SCNPhysicsContact extends NSObject {
     @ByValue
     public native SCNVector3 contactNormal();
 
+    /**
+     * The contact point, impulse and distance in world space coordinates.
+     */
     @Generated
     @Selector("contactPoint")
     @ByValue
@@ -172,6 +183,9 @@ public class SCNPhysicsContact extends NSObject {
     @Selector("init")
     public native SCNPhysicsContact init();
 
+    /**
+     * The two nodes in contact
+     */
     @Generated
     @Selector("nodeA")
     public native SCNNode nodeA();
@@ -185,6 +199,9 @@ public class SCNPhysicsContact extends NSObject {
     @NFloat
     public native double penetrationDistance();
 
+    /**
+     * Value between 0 and 1 giving the relative position of the physic shape when performing a convex sweep test.
+     */
     @Generated
     @Selector("sweepTestFraction")
     @NFloat

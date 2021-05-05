@@ -18,10 +18,30 @@ package apple.cfnetwork.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ *  CFStreamErrorHTTPAuthentication
+ * 
+ *  Discussion:
+ * Authentication errors which may be returned as a result of trying
+ * to apply authentication to a request.  These errors are in the
+ * kCFStreamErrorDomainHTTP domain.
+ */
 @Generated
 public final class CFStreamErrorHTTPAuthentication {
+    /**
+     * The type of authentication to be applied to a request is not
+     * supported.
+     */
     @Generated public static final int TypeUnsupported = 0xFFFFFC18;
+    /**
+     * The username was in a format not suitable for applying to the
+     * request.
+     */
     @Generated public static final int BadUserName = 0xFFFFFC17;
+    /**
+     * The password was in a format not suitable for applying to the
+     * request.
+     */
     @Generated public static final int BadPassword = 0xFFFFFC16;
 
     @Generated

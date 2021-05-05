@@ -1,6 +1,7 @@
 package apple.vision;
 
 import apple.NSObject;
+import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
@@ -27,11 +28,17 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * VNTextObservation
+ * [@superclass] VNDetectedObjectObservation
+ * 
+ * VNTextObservation Describes a text area detected by the VNRequestNameDetectTextRectangles request.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class VNTextObservation extends VNDetectedObjectObservation {
+public class VNTextObservation extends VNRectangleObservation {
     static {
         NatJ.register();
     }
@@ -69,6 +76,11 @@ public class VNTextObservation extends VNDetectedObjectObservation {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * Array of individual character bounding boxes found within the observation's boundingBox.
+     * 
+     * If the associated request indicated that it is interested in character boxes by setting the VNRequestOptionReportCharacterBoxes option to @YES, this property will be non-nil (but may still be empty, depending on the detection results).
+     */
     @Generated
     @Selector("characterBoxes")
     public native NSArray<? extends VNRectangleObservation> characterBoxes();
@@ -100,7 +112,7 @@ public class VNTextObservation extends VNDetectedObjectObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNTextObservation initWithCoder(NSCoder aDecoder);
+    public native VNTextObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -163,4 +175,15 @@ public class VNTextObservation extends VNDetectedObjectObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("observationWithRequestRevision:boundingBox:")
+    public static native VNTextObservation observationWithRequestRevisionBoundingBox(@NUInt long requestRevision,
+            @ByValue CGRect boundingBox);
+
+    @Generated
+    @Selector("rectangleObservationWithRequestRevision:topLeft:bottomLeft:bottomRight:topRight:")
+    public static native VNTextObservation rectangleObservationWithRequestRevisionTopLeftBottomLeftBottomRightTopRight(
+            @NUInt long requestRevision, @ByValue CGPoint topLeft, @ByValue CGPoint bottomLeft,
+            @ByValue CGPoint bottomRight, @ByValue CGPoint topRight);
 }

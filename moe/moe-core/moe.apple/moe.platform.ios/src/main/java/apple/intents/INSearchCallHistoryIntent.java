@@ -162,11 +162,17 @@ public class INSearchCallHistoryIntent extends INIntent {
     @NUInt
     public native long callCapabilities();
 
+    /**
+     * What type of call record to search for.
+     */
     @Generated
     @Selector("callType")
     @NInt
     public native long callType();
 
+    /**
+     * Date of the call to search for in the call history.
+     */
     @Generated
     @Selector("dateCreated")
     public native INDateComponentsRange dateCreated();
@@ -182,7 +188,7 @@ public class INSearchCallHistoryIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchCallHistoryIntent initWithCoder(NSCoder aDecoder);
+    public native INSearchCallHistoryIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("recipient")

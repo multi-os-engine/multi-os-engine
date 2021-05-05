@@ -52,38 +52,62 @@ public final class UIEdgeInsets extends StructObject {
         setRight(right);
     }
 
+    /**
+     * specify amount to inset (positive) for each of the edges. values can be negative to 'outset'
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @NFloat
     public native double top();
 
+    /**
+     * specify amount to inset (positive) for each of the edges. values can be negative to 'outset'
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setTop(@NFloat double value);
 
+    /**
+     * specify amount to inset (positive) for each of the edges. values can be negative to 'outset'
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @NFloat
     public native double left();
 
+    /**
+     * specify amount to inset (positive) for each of the edges. values can be negative to 'outset'
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setLeft(@NFloat double value);
 
+    /**
+     * specify amount to inset (positive) for each of the edges. values can be negative to 'outset'
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @NFloat
     public native double bottom();
 
+    /**
+     * specify amount to inset (positive) for each of the edges. values can be negative to 'outset'
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setBottom(@NFloat double value);
 
+    /**
+     * specify amount to inset (positive) for each of the edges. values can be negative to 'outset'
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @NFloat
     public native double right();
 
+    /**
+     * specify amount to inset (positive) for each of the edges. values can be negative to 'outset'
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setRight(@NFloat double value);

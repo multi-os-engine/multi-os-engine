@@ -38,6 +38,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
@@ -187,6 +188,9 @@ public class NSMutableAttributedString extends NSAttributedString {
     @Selector("endEditing")
     public native void endEditing();
 
+    /**
+     * This method fixes attribute inconsistencies inside range.  It ensures NSFontAttributeName covers the characters, NSParagraphStyleAttributeName is only changing at paragraph boundaries, and NSTextAttachmentAttributeName is assigned to NSAttachmentCharacter.  NSTextStorage automatically invokes this method via -ensureAttributesAreFixedInRange:.
+     */
     @Generated
     @Selector("fixAttributesInRange:")
     public native void fixAttributesInRange(@ByValue NSRange range);
@@ -201,7 +205,7 @@ public class NSMutableAttributedString extends NSAttributedString {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableAttributedString initWithCoder(NSCoder aDecoder);
+    public native NSMutableAttributedString initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithData:options:documentAttributes:error:")
@@ -253,6 +257,9 @@ public class NSMutableAttributedString extends NSAttributedString {
             @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<?, ?>> dict,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Methods replacing the receiver contents with an external document data.  options specify document attributes for interpreting the document contents.  NSDocumentTypeDocumentAttribute, NSCharacterEncodingDocumentAttribute, and NSDefaultAttributesDocumentAttribute are supported options key.  When they are not specified, these methods will examine the data and do their best to detect the appropriate attributes.  If dict is non-NULL, it will return a dictionary with various document-wide attributes accessible via NS...DocumentAttribute keys.
+     */
     @Generated
     @Selector("readFromURL:options:documentAttributes:error:")
     public native boolean readFromURLOptionsDocumentAttributesError(NSURL url, NSDictionary<String, ?> opts,
@@ -333,4 +340,27 @@ public class NSMutableAttributedString extends NSAttributedString {
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
+
+    @Generated
+    @Selector("loadFromHTMLWithData:options:completionHandler:")
+    public static native void loadFromHTMLWithDataOptionsCompletionHandler(NSData data, NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithDataOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithDataOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadFromHTMLWithFileURL:options:completionHandler:")
+    public static native void loadFromHTMLWithFileURLOptionsCompletionHandler(NSURL fileURL,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithFileURLOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithFileURLOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadFromHTMLWithRequest:options:completionHandler:")
+    public static native void loadFromHTMLWithRequestOptionsCompletionHandler(NSURLRequest request,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithRequestOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithRequestOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadFromHTMLWithString:options:completionHandler:")
+    public static native void loadFromHTMLWithStringOptionsCompletionHandler(String string,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithStringOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithStringOptionsCompletionHandler completionHandler);
 }

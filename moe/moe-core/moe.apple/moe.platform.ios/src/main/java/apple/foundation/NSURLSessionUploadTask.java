@@ -36,6 +36,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An NSURLSessionUploadTask does not currently provide any additional
+ * functionality over an NSURLSessionDataTask.  All delegate messages
+ * that may be sent referencing an NSURLSessionDataTask equally apply
+ * to NSURLSessionUploadTasks.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)

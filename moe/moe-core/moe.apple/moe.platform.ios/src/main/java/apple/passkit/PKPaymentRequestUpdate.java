@@ -122,6 +122,9 @@ public class PKPaymentRequestUpdate extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * The new payment summary items to update the payment request with
+     */
     @Generated
     @Selector("paymentSummaryItems")
     public native NSArray<? extends PKPaymentSummaryItem> paymentSummaryItems();
@@ -134,10 +137,18 @@ public class PKPaymentRequestUpdate extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The new payment summary items to update the payment request with
+     */
     @Generated
     @Selector("setPaymentSummaryItems:")
     public native void setPaymentSummaryItems(NSArray<? extends PKPaymentSummaryItem> value);
 
+    /**
+     * The status of the payment request update. Set PKPaymentAuthorizationStatusSuccess for a successful update,
+     * and PKPaymentAuthorizationStatusFailure if you were unable to process the required changes.
+     * PKPaymentAuthorizationStatusSuccess by default
+     */
     @Generated
     @Selector("setStatus:")
     public native void setStatus(@NInt long value);
@@ -146,6 +157,11 @@ public class PKPaymentRequestUpdate extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The status of the payment request update. Set PKPaymentAuthorizationStatusSuccess for a successful update,
+     * and PKPaymentAuthorizationStatusFailure if you were unable to process the required changes.
+     * PKPaymentAuthorizationStatusSuccess by default
+     */
     @Generated
     @Selector("status")
     @NInt

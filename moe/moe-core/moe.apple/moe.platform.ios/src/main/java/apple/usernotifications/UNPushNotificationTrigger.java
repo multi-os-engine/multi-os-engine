@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UNPushNotificationTrigger can be sent from a server using Apple Push Notification Service.
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -162,7 +165,7 @@ public class UNPushNotificationTrigger extends UNNotificationTrigger {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNPushNotificationTrigger initWithCoder(NSCoder aDecoder);
+    public native UNPushNotificationTrigger initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

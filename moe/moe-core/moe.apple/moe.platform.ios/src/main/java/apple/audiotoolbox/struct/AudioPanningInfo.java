@@ -16,7 +16,7 @@ limitations under the License.
 
 package apple.audiotoolbox.struct;
 
-import apple.coreaudio.struct.AudioChannelLayout;
+import apple.coreaudiotypes.struct.AudioChannelLayout;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;

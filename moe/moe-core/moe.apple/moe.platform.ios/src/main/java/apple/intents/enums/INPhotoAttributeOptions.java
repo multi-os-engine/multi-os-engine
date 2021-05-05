@@ -49,4 +49,10 @@ public final class INPhotoAttributeOptions {
     @Generated
     private INPhotoAttributeOptions() {
     }
+
+    @Generated @NUInt public static final long PortraitPhoto = 0x0000000001000000L;
+    @Generated @NUInt public static final long LivePhoto = 0x0000000002000000L;
+    @Generated @NUInt public static final long LoopPhoto = 0x0000000004000000L;
+    @Generated @NUInt public static final long BouncePhoto = 0x0000000008000000L;
+    @Generated @NUInt public static final long LongExposurePhoto = 0x0000000010000000L;
 }

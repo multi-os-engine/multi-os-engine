@@ -162,6 +162,9 @@ public class GKAchievementChallenge extends GKChallenge {
     @NInt
     public static native long version_static();
 
+    /**
+     * The achievement to achieve to satisfy this challenge
+     */
     @Generated
     @Selector("achievement")
     public native GKAchievement achievement();
@@ -172,7 +175,7 @@ public class GKAchievementChallenge extends GKChallenge {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKAchievementChallenge initWithCoder(NSCoder aDecoder);
+    public native GKAchievementChallenge initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

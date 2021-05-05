@@ -68,10 +68,21 @@ public class CATransaction extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Accessors for the "animationDuration" per-thread transaction
+     * property. Defines the default duration of animations added to
+     * layers. Defaults to 1/4s.
+     */
     @Generated
     @Selector("animationDuration")
     public static native double animationDuration();
 
+    /**
+     * Accessors for the "animationTimingFunction" per-thread transaction
+     * property. The default value is nil, when set to a non-nil value any
+     * animations added to layers will have this value set as their
+     * "timingFunction" property. Added in Mac OS X 10.6.
+     */
     @Generated
     @Selector("animationTimingFunction")
     public static native CAMediaTimingFunction animationTimingFunction();
@@ -80,6 +91,9 @@ public class CATransaction extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Begin a new transaction for the current thread; nests.
+     */
     @Generated
     @Selector("begin")
     public static native void begin();
@@ -102,6 +116,10 @@ public class CATransaction extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Commit all changes made during the current transaction. Raises an
+     * exception if no current transaction exists.
+     */
     @Generated
     @Selector("commit")
     public static native void commit();
@@ -119,10 +137,20 @@ public class CATransaction extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Accessors for the "disableActions" per-thread transaction property.
+     * Defines whether or not the layer's -actionForKey: method is used to
+     * find an action (aka. implicit animation) for each layer property
+     * change. Defaults to NO, i.e. implicit animations enabled.
+     */
     @Generated
     @Selector("disableActions")
     public static native boolean disableActions();
 
+    /**
+     * Commits any extant implicit transaction. Will delay the actual commit
+     * until any nested explicit transactions have completed.
+     */
     @Generated
     @Selector("flush")
     public static native void flush();
@@ -153,6 +181,12 @@ public class CATransaction extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Methods to lock and unlock the global lock. Layer methods automatically
+     * obtain this while modifying shared state, but callers may need to lock
+     * around multiple operations to ensure consistency. The lock is a
+     * recursive spin-lock (i.e shouldn't be held for extended periods).
+     */
     @Generated
     @Selector("lock")
     public static native void lock();
@@ -204,6 +238,22 @@ public class CATransaction extends NSObject {
     @Selector("unlock")
     public static native void unlock();
 
+    /**
+     * Associate arbitrary keyed-data with the current transaction (i.e.
+     * with the current thread).
+     * 
+     * Nested transactions have nested data scope, i.e. reading a key
+     * searches for the innermost scope that has set it, setting a key
+     * always sets it in the innermost scope.
+     * 
+     * Currently supported transaction properties include:
+     * "animationDuration", "animationTimingFunction", "completionBlock",
+     * "disableActions". See method declarations above for descriptions of
+     * each property.
+     * 
+     * Attempting to set a property to a type other than its document type
+     * has an undefined result.
+     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)

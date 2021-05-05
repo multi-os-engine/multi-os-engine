@@ -19,6 +19,11 @@ package apple.eventkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum]       EKEntityType
+ * 
+ * A value which specifies an entity type of event or reminder.
+ */
 @Generated
 public final class EKEntityType {
     @Generated @NUInt public static final long Event = 0x0000000000000000L;

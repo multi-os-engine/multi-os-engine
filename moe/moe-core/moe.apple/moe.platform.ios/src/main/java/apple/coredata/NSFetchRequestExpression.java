@@ -131,6 +131,9 @@ public class NSFetchRequestExpression extends NSExpression {
     @Selector("expressionForEvaluatedObject")
     public static native NSExpression expressionForEvaluatedObject();
 
+    /**
+     * Returns an expression which will evaluate to the result of executing a fetch request on a context.  The first argument must be an expression which evaluates to an NSFetchRequest *, and the second must be an expression which evaluates to an NSManagedObjectContext *.  If the desired result is simply the count for the request, the "countOnly" argument should be YES.
+     */
     @Generated
     @Selector("expressionForFetch:context:countOnly:")
     public static native NSExpression expressionForFetchContextCountOnly(NSExpression fetch, NSExpression context,
@@ -240,6 +243,9 @@ public class NSFetchRequestExpression extends NSExpression {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns the expression for the managed object context:  evaluating it must return an NSManagedObjectContext *.
+     */
     @Generated
     @Selector("contextExpression")
     public native NSExpression contextExpression();
@@ -256,10 +262,16 @@ public class NSFetchRequestExpression extends NSExpression {
     @Selector("initWithExpressionType:")
     public native NSFetchRequestExpression initWithExpressionType(@NUInt long type);
 
+    /**
+     * Boolean indicating if the request will return object values or merely the count.  If the value returns NO, the managed object context (from the contextExpression) will perform executeFetchRequest:error: with the requestExpression;  if the value returns YES, the managed object context will perform countForFetchRequest:error with the requestExpression.
+     */
     @Generated
     @Selector("isCountOnlyRequest")
     public native boolean isCountOnlyRequest();
 
+    /**
+     * Returns the expression for the fetch request:  evaluating it must return an NSFetchRequest *.
+     */
     @Generated
     @Selector("requestExpression")
     public native NSExpression requestExpression();

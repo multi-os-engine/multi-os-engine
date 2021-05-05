@@ -42,4 +42,14 @@ public final class CNErrorCode {
     @Generated @NInt public static final long ClientIdentifierInvalid = 0x0000000000000258L;
     @Generated @NInt public static final long ClientIdentifierDoesNotExist = 0x0000000000000259L;
     @Generated @NInt public static final long VCardMalformed = 0x00000000000002BCL;
+    @Generated @NInt public static final long NoAccessableWritableContainers = 0x0000000000000065L;
+    @Generated @NInt public static final long UnauthorizedKeys = 0x0000000000000066L;
+    @Generated @NInt public static final long FeatureDisabledByUser = 0x0000000000000067L;
+    @Generated @NInt public static final long RecordIdentifierInvalid = 0x00000000000000CDL;
+    @Generated @NInt public static final long RecordNotWritable = 0x00000000000000CEL;
+    @Generated @NInt public static final long ParentContainerNotWritable = 0x00000000000000CFL;
+    @Generated @NInt public static final long ClientIdentifierCollision = 0x000000000000025AL;
+    @Generated @NInt public static final long ChangeHistoryExpired = 0x000000000000025BL;
+    @Generated @NInt public static final long ChangeHistoryInvalidAnchor = 0x000000000000025CL;
+    @Generated @NInt public static final long VCardSummarizationError = 0x00000000000002BDL;
 }

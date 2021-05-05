@@ -21,7 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -38,6 +38,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -45,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKWarpGeometryGrid extends SKWarpGeometry implements NSCoding {
+public class SKWarpGeometryGrid extends SKWarpGeometry implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -99,10 +100,16 @@ public class SKWarpGeometryGrid extends SKWarpGeometry implements NSCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * 1x1 grid with no distortion
+     */
     @Generated
     @Selector("grid")
     public static native SKWarpGeometryGrid grid();
 
+    /**
+     * grid of the specified dimensions and no distortion
+     */
     @Generated
     @Selector("gridWithColumns:rows:")
     public static native SKWarpGeometryGrid gridWithColumnsRows(@NInt long cols, @NInt long rows);
@@ -162,7 +169,7 @@ public class SKWarpGeometryGrid extends SKWarpGeometry implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -172,18 +179,38 @@ public class SKWarpGeometryGrid extends SKWarpGeometry implements NSCoding {
     @Selector("initWithCoder:")
     public native SKWarpGeometryGrid initWithCoder(NSCoder aDecoder);
 
+    /**
+     * the number of columns in this grid
+     */
     @Generated
     @Selector("numberOfColumns")
     @NInt
     public native long numberOfColumns();
 
+    /**
+     * the number of rows in this grid
+     */
     @Generated
     @Selector("numberOfRows")
     @NInt
     public native long numberOfRows();
 
+    /**
+     * the total number of (sourcePosition + destPosition) pairs that define this grid.
+     * For a given dimension this is equal to (numberOfColumns + 1) * (numberOfRows + 1). 
+     */
     @Generated
     @Selector("vertexCount")
     @NInt
     public native long vertexCount();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

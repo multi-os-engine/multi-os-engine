@@ -42,6 +42,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents a service provided by an accessory.
+ * 
+ * This class represents a service provided by an accessory in the home.
+ *             A service is composed of one or more characteristics that can be
+ *             modified.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -153,14 +160,27 @@ public class HMService extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Accessory that provides this service.
+     */
     @Generated
     @Selector("accessory")
     public native HMAccessory accessory();
 
+    /**
+     * For HMServiceTypeOutlet and HMServiceTypeSwitch, this is the type of the associated service.
+     * 
+     * This could be any of the HomeKit Accessory Profile defined services (except HMServiceTypeOutlet
+     *             or HMServiceTypeSwitch) that supports HMCharacteristicTypePowerState characteristic.
+     */
     @Generated
     @Selector("associatedServiceType")
     public native String associatedServiceType();
 
+    /**
+     * Array of HMCharacteristic objects that represents all the characteristics
+     *        provided by the service.
+     */
     @Generated
     @Selector("characteristics")
     public native NSArray<? extends HMCharacteristic> characteristics();
@@ -169,39 +189,101 @@ public class HMService extends NSObject {
     @Selector("init")
     public native HMService init();
 
+    /**
+     * Indicates if this services is the primary service.
+     * 
+     * Applications should use this property to show the primary service on the accessory.
+     */
     @Generated
     @Selector("isPrimaryService")
     public native boolean isPrimaryService();
 
+    /**
+     * Indicates if this service supports user interaction or not.
+     * 
+     * Applications should use this property to filter out services that the users
+     *             should not directly interact with, e.g. HMServiceTypeAccessoryInformation.
+     */
     @Generated
     @Selector("isUserInteractive")
     public native boolean isUserInteractive();
 
+    /**
+     * Array of HMService objects that represents all the services that the service links to.
+     * 
+     * Applications should use this property to show logical grouping of services on the accessory.
+     *             linkedServices will be nil when the service does not link to any other services.
+     */
     @Generated
     @Selector("linkedServices")
     public native NSArray<? extends HMService> linkedServices();
 
+    /**
+     * The localized description of the service.
+     */
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
+    /**
+     * Name for the service.
+     * 
+     * Returns the service's name that is associated with HomeKit. The initial value is the value of
+     *             the name characteristic of the service, if it has one.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * The type of the service, e.g. HMServiceTypeLightbulb.
+     */
     @Generated
     @Selector("serviceType")
     public native String serviceType();
 
+    /**
+     * A unique identifier for the service.
+     */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
+    /**
+     * This method is used to set up the service type of the device connected to a contact sensor, switch or an outlet.
+     * 
+     * This method is only valid for the services of the following types:
+     *                 HMServiceTypeOutlet, HMServiceTypeContactSensor and HMServiceTypeSwitch
+     * 
+     *             For services of type HMServiceTypeOutlet and HMServiceTypeSwitch, serviceType can be one of the
+     *             HomeKit Accessory Profile defined services (except HMServiceTypeOutlet or HMServiceTypeSwitch)
+     *             that supports HMCharacteristicTypePowerState characteristic.
+     * 
+     *             For services of type HMServiceTypeContactSensor, serviceType can be one of the following services:
+     *                 HMServiceTypeDoor, HMServiceTypeGarageDoorOpener, HMServiceTypeWindow and HMServiceTypeWindowCovering
+     * 
+     * @param serviceType Service type of the device connected to a contact sensor/switch/outlet service.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateAssociatedServiceType:completionHandler:")
     public native void updateAssociatedServiceTypeCompletionHandler(String serviceType,
             @ObjCBlock(name = "call_updateAssociatedServiceTypeCompletionHandler") Block_updateAssociatedServiceTypeCompletionHandler completion);
 
+    /**
+     * This method is used to change the name of the service.
+     * 
+     * The new name is stored in HomeKit and not on the accessory.
+     * 
+     * @param name New name for the service.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,
@@ -211,13 +293,13 @@ public class HMService extends NSObject {
     @Generated
     public interface Block_updateAssociatedServiceTypeCompletionHandler {
         @Generated
-        void call_updateAssociatedServiceTypeCompletionHandler(NSError arg0);
+        void call_updateAssociatedServiceTypeCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
+        void call_updateNameCompletionHandler(NSError error);
     }
 }

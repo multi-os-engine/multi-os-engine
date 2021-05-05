@@ -41,6 +41,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Used to request that Core Data do a batch update of data in a persistent store without
+ * loading any data into memory. May not be supported by all store types.
+ * WARNING:
+ * It is up to the developer creating the request to ensure that changes made by the request to
+ * the underlying store do not violate any validation rules specified in the model.
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -164,6 +171,9 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     @Selector("entityName")
     public native String entityName();
 
+    /**
+     * Should the update include subentities? Defaults to YES.
+     */
     @Generated
     @Selector("includesSubentities")
     public native boolean includesSubentities();
@@ -184,15 +194,25 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     @Selector("predicate")
     public native NSPredicate predicate();
 
+    /**
+     * Dictionary of NSPropertyDescription|property name string -> constantValue/NSExpression pairs describing the desired updates.
+     * The expressions can be any NSExpression that evaluates to a scalar value.
+     */
     @Generated
     @Selector("propertiesToUpdate")
     public native NSDictionary<?, ?> propertiesToUpdate();
 
+    /**
+     * The type of result that should be returned from this request. Defaults to NSStatusOnlyResultType
+     */
     @Generated
     @Selector("resultType")
     @NUInt
     public native long resultType();
 
+    /**
+     * Should the update include subentities? Defaults to YES.
+     */
     @Generated
     @Selector("setIncludesSubentities:")
     public native void setIncludesSubentities(boolean value);
@@ -201,10 +221,17 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     @Selector("setPredicate:")
     public native void setPredicate(NSPredicate value);
 
+    /**
+     * Dictionary of NSPropertyDescription|property name string -> constantValue/NSExpression pairs describing the desired updates.
+     * The expressions can be any NSExpression that evaluates to a scalar value.
+     */
     @Generated
     @Selector("setPropertiesToUpdate:")
     public native void setPropertiesToUpdate(NSDictionary<?, ?> value);
 
+    /**
+     * The type of result that should be returned from this request. Defaults to NSStatusOnlyResultType
+     */
     @Generated
     @Selector("setResultType:")
     public native void setResultType(@NUInt long value);

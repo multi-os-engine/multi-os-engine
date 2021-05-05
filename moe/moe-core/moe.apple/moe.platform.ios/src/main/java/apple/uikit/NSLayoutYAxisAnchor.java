@@ -155,10 +155,21 @@ public class NSLayoutYAxisAnchor extends NSLayoutAnchor<NSLayoutYAxisAnchor> {
     @Selector("init")
     public native NSLayoutYAxisAnchor init();
 
+    /**
+     * A composite anchor for creating constraints relating vertical distances between locations.
+     */
     @Generated
     @Selector("anchorWithOffsetToAnchor:")
     public native NSLayoutDimension anchorWithOffsetToAnchor(NSLayoutYAxisAnchor otherAnchor);
 
+    /**
+     * Constraints of the form,
+     * receiver [= | ≥ | ≤] 'anchor' + 'multiplier' * system space, 
+     * where the value of the system space is determined from information available from the anchors.
+     * The constraint affects how far the receiver will be positioned below 'anchor'. 
+     * If either the receiver or 'anchor' is the firstBaselineAnchor or lastBaselineAnchor of a view with text content
+     * then the spacing will depend on the fonts involved and will change when those do.
+     */
     @Generated
     @Selector("constraintEqualToSystemSpacingBelowAnchor:multiplier:")
     public native NSLayoutConstraint constraintEqualToSystemSpacingBelowAnchorMultiplier(NSLayoutYAxisAnchor anchor,

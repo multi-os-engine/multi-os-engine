@@ -19,6 +19,11 @@ package apple.eventkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]       EKParticipantType
+ * 
+ * Value representing the type of attendee.
+ */
 @Generated
 public final class EKParticipantType {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;

@@ -162,6 +162,9 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     @Selector("bookingDateComponents")
     public native NSDateComponents bookingDateComponents();
 
+    /**
+     * unique identifier supplied by vendor to this booking
+     */
     @Generated
     @Selector("bookingIdentifier")
     public native String bookingIdentifier();
@@ -172,10 +175,16 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * model object containing contact information
+     */
     @Generated
     @Selector("guest")
     public native INRestaurantGuest guest();
 
+    /**
+     * text captured in UI from user for special requests
+     */
     @Generated
     @Selector("guestProvidedSpecialRequestText")
     public native String guestProvidedSpecialRequestText();
@@ -186,7 +195,7 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native INBookRestaurantReservationIntent initWithCoder(NSCoder aDecoder);
+    public native INBookRestaurantReservationIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("partySize")
@@ -197,6 +206,9 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     @Selector("restaurant")
     public native INRestaurant restaurant();
 
+    /**
+     * offer selected by user, if one exists
+     */
     @Generated
     @Selector("selectedOffer")
     public native INRestaurantOffer selectedOffer();
@@ -205,14 +217,23 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     @Selector("setBookingDateComponents:")
     public native void setBookingDateComponents(NSDateComponents value);
 
+    /**
+     * unique identifier supplied by vendor to this booking
+     */
     @Generated
     @Selector("setBookingIdentifier:")
     public native void setBookingIdentifier(String value);
 
+    /**
+     * model object containing contact information
+     */
     @Generated
     @Selector("setGuest:")
     public native void setGuest(INRestaurantGuest value);
 
+    /**
+     * text captured in UI from user for special requests
+     */
     @Generated
     @Selector("setGuestProvidedSpecialRequestText:")
     public native void setGuestProvidedSpecialRequestText(String value);
@@ -225,6 +246,9 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     @Selector("setRestaurant:")
     public native void setRestaurant(INRestaurant value);
 
+    /**
+     * offer selected by user, if one exists
+     */
     @Generated
     @Selector("setSelectedOffer:")
     public native void setSelectedOffer(INRestaurantOffer value);

@@ -42,6 +42,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GKNoise is the object used to manipulate and combine noise in continuous 3D space.  It takes a GKNoiseSource as input.
+ * To extract and use a portion of the noise within the 3D space use the GKNoiseMap class.
+ * 
+ * @see GKNoiseSource
+ * @see GKNoiseMap
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -132,21 +139,50 @@ public class GKNoise extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Initializes a composite noise from one or more component noises.  Useful for combining and layering noises together.
+     * 
+     * @param noises The component noises to combine.
+     * @param selectionNoise The noise that governs which component noise is chosen for each position of the resulting noise.
+     * The range of values is equally-subdivided for each component noise.
+     */
     @Generated
     @Selector("noiseWithComponentNoises:selectionNoise:")
     public static native GKNoise noiseWithComponentNoisesSelectionNoise(NSArray<? extends GKNoise> noises,
             GKNoise selectionNoise);
 
+    /**
+     * Initializes a composite noise from one or more component noises.  Useful for combining and layering noises together.
+     * 
+     * @param noises The component noises to combine.
+     * @param selectionNoise The noise that governs which component noise is chosen for each position of the resulting noise.
+     * The range of values is equally-subdivided for each component noise.
+     * @param componentBoundaries The noise value boundaries of the selection noise to use for the component noises.  Specify
+     * one less boundary than the number of component noises.  This is a parallel array to blendDistances.
+     * @param blendDistances The size of smoothing that is applied to boundaries where two component noises meet.  Specify
+     * one less blend distance than the number of component noises.  This is a parallel array to componentBoundaries.
+     */
     @Generated
     @Selector("noiseWithComponentNoises:selectionNoise:componentBoundaries:boundaryBlendDistances:")
     public static native GKNoise noiseWithComponentNoisesSelectionNoiseComponentBoundariesBoundaryBlendDistances(
             NSArray<? extends GKNoise> noises, GKNoise selectionNoise, NSArray<? extends NSNumber> componentBoundaries,
             NSArray<? extends NSNumber> blendDistances);
 
+    /**
+     * Initializes a noise with the specified noise source.
+     * 
+     * @param noiseSource The noise source to use to initially populate the 3D noise space.
+     */
     @Generated
     @Selector("noiseWithNoiseSource:")
     public static native GKNoise noiseWithNoiseSource(GKNoiseSource noiseSource);
 
+    /**
+     * Initializes a noise with the specified noise source and parameters.
+     * 
+     * @param noiseSource The noise source to use to initially populate the 3D noise space.
+     * @param gradientColors The color gradient to use for this noise in 'value : color' pairs.
+     */
     @Generated
     @Selector("noiseWithNoiseSource:gradientColors:")
     public static native GKNoise noiseWithNoiseSourceGradientColors(GKNoiseSource noiseSource,
@@ -173,79 +209,163 @@ public class GKNoise extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Adds all noise values by the noise values at the same position in specified noise.
+     * 
+     * @param noise The noise from which to add values to this noise.
+     */
     @Generated
     @Selector("addWithNoise:")
     public native void addWithNoise(GKNoise noise);
 
+    /**
+     * Takes the absoltue value of all noise positions.
+     */
     @Generated
     @Selector("applyAbsoluteValue")
     public native void applyAbsoluteValue();
 
+    /**
+     * Applies a turbulent displacement to all noise values.
+     */
     @Generated
     @Selector("applyTurbulenceWithFrequency:power:roughness:seed:")
     public native void applyTurbulenceWithFrequencyPowerRoughnessSeed(double frequency, double power, int roughness,
             int seed);
 
+    /**
+     * Clamps all noise values to the specified bounds.
+     * 
+     * @param lowerBound The noise value lower bound.
+     * @param upperBound The noise value upper bound.
+     */
     @Generated
     @Selector("clampWithLowerBound:upperBound:")
     public native void clampWithLowerBoundUpperBound(double lowerBound, double upperBound);
 
+    /**
+     * Displaces all noise values by the values at the same positions of the specified noises.
+     * 
+     * @param xDisplacementNoise The noise from which to displace along the x-axis this noise's values at the same positions.
+     * @param yDisplacementNoise The noise from which to displace along the y-axis this noise's values at the same positions.
+     * @param zDisplacementNoise The noise from which to displace along the z-axis this noise's values at the same positions.
+     */
     @Generated
     @Selector("displaceXWithNoise:yWithNoise:zWithNoise:")
     public native void displaceXWithNoiseYWithNoiseZWithNoise(GKNoise xDisplacementNoise, GKNoise yDisplacementNoise,
             GKNoise zDisplacementNoise);
 
+    /**
+     * Color gradient of this noise, represented as 'value : color' pairs.  Utilized when this noise is rendered to a texture.
+     */
     @Generated
     @Selector("gradientColors")
     public native NSDictionary<? extends NSNumber, ? extends UIColor> gradientColors();
 
+    /**
+     * Initializes a constant noise of 0.0 at all positions.
+     */
     @Generated
     @Selector("init")
     public native GKNoise init();
 
+    /**
+     * Initializes a noise with the specified noise source.
+     * 
+     * @param noiseSource The noise source to use to initially populate the 3D noise space.
+     */
     @Generated
     @Selector("initWithNoiseSource:")
     public native GKNoise initWithNoiseSource(GKNoiseSource noiseSource);
 
+    /**
+     * Initializes a noise with the specified noise source and parameters.
+     * 
+     * @param noiseSource The noise source to use to initially populate the 3D noise space.
+     * @param gradientColors The color gradient to use for this noise in 'value : color' pairs.
+     */
     @Generated
     @Selector("initWithNoiseSource:gradientColors:")
     public native GKNoise initWithNoiseSourceGradientColors(GKNoiseSource noiseSource,
             NSDictionary<? extends NSNumber, ? extends UIColor> gradientColors);
 
+    /**
+     * Inverts all noise values, from positive to negative and vice versa.
+     */
     @Generated
     @Selector("invert")
     public native void invert();
 
+    /**
+     * Takes the maximum value between this noise and the specified noise at each position.
+     * 
+     * @param noise The noise to compare against this noise at each position in determining which to take the maximum value from.
+     */
     @Generated
     @Selector("maximumWithNoise:")
     public native void maximumWithNoise(GKNoise noise);
 
+    /**
+     * Takes the minimum value between this noise and the specified noise at each position.
+     * 
+     * @param noise The noise to compare against this noise at each position in determining which to take the minimum value from.
+     */
     @Generated
     @Selector("minimumWithNoise:")
     public native void minimumWithNoise(GKNoise noise);
 
+    /**
+     * Multiplies all noise values by the noise values at the same position in specified noise.
+     * 
+     * @param noise The noise from which to multiply values to this noise.
+     */
     @Generated
     @Selector("multiplyWithNoise:")
     public native void multiplyWithNoise(GKNoise noise);
 
+    /**
+     * Raises all noise values to the specified power.
+     * 
+     * @param power The power to which to raise all noise values.
+     */
     @Generated
     @Selector("raiseToPower:")
     public native void raiseToPower(double power);
 
+    /**
+     * Raises all noise values to the power of the value at the same position of the specified noise.
+     * 
+     * @param noise The noise from which to raise this noise's values by.
+     */
     @Generated
     @Selector("raiseToPowerWithNoise:")
     public native void raiseToPowerWithNoise(GKNoise noise);
 
+    /**
+     * Remaps all noise values to a smooth curve that passes through the specified control points.
+     * 
+     * @param controlPoints Pairs of 'input : output' values to use as control points for the smooth remapping curve.
+     * Duplicate input values are not permitted.
+     */
     @Generated
     @Selector("remapValuesToCurveWithControlPoints:")
     public native void remapValuesToCurveWithControlPoints(
             NSDictionary<? extends NSNumber, ? extends NSNumber> controlPoints);
 
+    /**
+     * Remaps all noise values to one or more terraces with peaks.  Useful for creating valleys and trenches.
+     * 
+     * @param peakInputValues Inputs positions of terrace peaks.
+     * @param inverted Governs the curve direction from peak to peak.
+     */
     @Generated
     @Selector("remapValuesToTerracesWithPeaks:terracesInverted:")
     public native void remapValuesToTerracesWithPeaksTerracesInverted(NSArray<? extends NSNumber> peakInputValues,
             boolean inverted);
 
+    /**
+     * Color gradient of this noise, represented as 'value : color' pairs.  Utilized when this noise is rendered to a texture.
+     */
     @Generated
     @Selector("setGradientColors:")
     public native void setGradientColors(NSDictionary<? extends NSNumber, ? extends UIColor> value);

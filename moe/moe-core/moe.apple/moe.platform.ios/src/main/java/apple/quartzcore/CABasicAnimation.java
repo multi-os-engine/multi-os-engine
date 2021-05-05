@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Subclass for basic (single-keyframe) animations. *
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -171,6 +174,31 @@ public class CABasicAnimation extends CAPropertyAnimation {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object byValue();
 
+    /**
+     * The objects defining the property values being interpolated between.
+     * All are optional, and no more than two should be non-nil. The object
+     * type should match the type of the property being animated (using the
+     * standard rules described in CALayer.h). The supported modes of
+     * animation are:
+     * 
+     * - both `fromValue' and `toValue' non-nil. Interpolates between
+     * `fromValue' and `toValue'.
+     * 
+     * - `fromValue' and `byValue' non-nil. Interpolates between
+     * `fromValue' and `fromValue' plus `byValue'.
+     * 
+     * - `byValue' and `toValue' non-nil. Interpolates between `toValue'
+     * minus `byValue' and `toValue'.
+     * 
+     * - `fromValue' non-nil. Interpolates between `fromValue' and the
+     * current presentation value of the property.
+     * 
+     * - `toValue' non-nil. Interpolates between the layer's current value
+     * of the property in the render tree and `toValue'.
+     * 
+     * - `byValue' non-nil. Interpolates between the layer's current value
+     * of the property in the render tree and that plus `byValue'.
+     */
     @Generated
     @Selector("fromValue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -182,12 +210,37 @@ public class CABasicAnimation extends CAPropertyAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CABasicAnimation initWithCoder(NSCoder aDecoder);
+    public native CABasicAnimation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setByValue:")
     public native void setByValue(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * The objects defining the property values being interpolated between.
+     * All are optional, and no more than two should be non-nil. The object
+     * type should match the type of the property being animated (using the
+     * standard rules described in CALayer.h). The supported modes of
+     * animation are:
+     * 
+     * - both `fromValue' and `toValue' non-nil. Interpolates between
+     * `fromValue' and `toValue'.
+     * 
+     * - `fromValue' and `byValue' non-nil. Interpolates between
+     * `fromValue' and `fromValue' plus `byValue'.
+     * 
+     * - `byValue' and `toValue' non-nil. Interpolates between `toValue'
+     * minus `byValue' and `toValue'.
+     * 
+     * - `fromValue' non-nil. Interpolates between `fromValue' and the
+     * current presentation value of the property.
+     * 
+     * - `toValue' non-nil. Interpolates between the layer's current value
+     * of the property in the render tree and `toValue'.
+     * 
+     * - `byValue' non-nil. Interpolates between the layer's current value
+     * of the property in the render tree and that plus `byValue'.
+     */
     @Generated
     @Selector("setFromValue:")
     public native void setFromValue(@Mapped(ObjCObjectMapper.class) Object value);

@@ -108,6 +108,9 @@ public class NSMappingModel extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Returns a newly created mapping model to translate data from the source to the destination model, if possible.  The differences between the source and destination model are compared and if all changes are simple enough to be able to reasonably infer a data migration mapping model, such a model is created and returned.  If the mapping model can not be created, nil is returned and an error code is returned to indicate why inferring a mapping model automatically failed.
+     */
     @Generated
     @Selector("inferredMappingModelForSourceModel:destinationModel:error:")
     public static native NSMappingModel inferredMappingModelForSourceModelDestinationModelError(
@@ -135,6 +138,9 @@ public class NSMappingModel extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Returns the mapping model to translate data from the source to the destination model.  This method is a companion to the mergedModelFromBundles: methods;  in this case, the framework uses the version information from the models to locate the appropriate mapping model in the available bundles.  If the mapping model for the models cannot be found, this method returns nil.
+     */
     @Generated
     @Selector("mappingModelFromBundles:forSourceModel:destinationModel:")
     public static native NSMappingModel mappingModelFromBundlesForSourceModelDestinationModel(
@@ -168,10 +174,16 @@ public class NSMappingModel extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns/sets the collection of entity mappings for the model.  The order of the mappings dictates the order in which they will be processed during migration.
+     */
     @Generated
     @Selector("entityMappings")
     public native NSArray<? extends NSEntityMapping> entityMappings();
 
+    /**
+     * Returns a dictionary of the entity mappings for the model, keyed by their respective name.  (This API is provided for quick access to a mapping by name, rather than iterating the ordered entityMapping array.)
+     */
     @Generated
     @Selector("entityMappingsByName")
     public native NSDictionary<String, ? extends NSEntityMapping> entityMappingsByName();
@@ -180,10 +192,16 @@ public class NSMappingModel extends NSObject {
     @Selector("init")
     public native NSMappingModel init();
 
+    /**
+     * Loads the mapping model from the specified URL.
+     */
     @Generated
     @Selector("initWithContentsOfURL:")
     public native NSMappingModel initWithContentsOfURL(NSURL url);
 
+    /**
+     * Returns/sets the collection of entity mappings for the model.  The order of the mappings dictates the order in which they will be processed during migration.
+     */
     @Generated
     @Selector("setEntityMappings:")
     public native void setEntityMappings(NSArray<? extends NSEntityMapping> value);

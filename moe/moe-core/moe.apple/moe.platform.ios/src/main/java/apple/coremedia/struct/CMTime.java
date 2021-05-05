@@ -59,26 +59,44 @@ public final class CMTime extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setValue(long value);
 
+    /**
+     * [@field] value The value of the CMTime. value/timescale = seconds.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int timescale();
 
+    /**
+     * [@field] value The value of the CMTime. value/timescale = seconds.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setTimescale(int value);
 
+    /**
+     * [@field] timescale The timescale of the CMTime. value/timescale = seconds.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int flags();
 
+    /**
+     * [@field] timescale The timescale of the CMTime. value/timescale = seconds.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setFlags(int value);
 
+    /**
+     * [@field] flags The flags, eg. kCMTimeFlags_Valid, kCMTimeFlags_PositiveInfinity, etc.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native long epoch();
 
+    /**
+     * [@field] flags The flags, eg. kCMTimeFlags_Valid, kCMTimeFlags_PositiveInfinity, etc.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setEpoch(long value);

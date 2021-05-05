@@ -39,6 +39,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The ACAccount class represents an account stored on the system.
+ * Accounts are created not bound to any store. Once an account is saved it belongs
+ * to the store it was saved into.
+ */
 @Generated
 @Library("Accounts")
 @Runtime(ObjCRuntime.class)
@@ -150,18 +155,35 @@ public class ACAccount extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * A human readable description of the account.
+     * This property is only available to applications that have been granted access to the account by the user.
+     */
     @Generated
     @Selector("accountDescription")
     public native String accountDescription();
 
+    /**
+     * Accounts are stored with a particular account type. All available accounts of a particular type
+     * can be looked up using [ACAccountStore accountsWithAccountType:]. When creating new accounts
+     * this property is required.
+     */
     @Generated
     @Selector("accountType")
     public native ACAccountType accountType();
 
+    /**
+     * The credential for the account. This property can be set and saved during account creation. It is
+     * inaccessible once the account has been saved.
+     * WARNING: Backed by a synchronous xpc call to accountsd, not appropriate to call on a UI Application's main thread
+     */
     @Generated
     @Selector("credential")
     public native ACAccountCredential credential();
 
+    /**
+     * This identifier can be used to look up the account using [ACAccountStore accountWithIdentifier:].
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -170,30 +192,59 @@ public class ACAccount extends NSObject {
     @Selector("init")
     public native ACAccount init();
 
+    /**
+     * Creates a new account object with a specified account type.
+     */
     @Generated
     @Selector("initWithAccountType:")
     public native ACAccount initWithAccountType(ACAccountType type);
 
+    /**
+     * A human readable description of the account.
+     * This property is only available to applications that have been granted access to the account by the user.
+     */
     @Generated
     @Selector("setAccountDescription:")
     public native void setAccountDescription(String value);
 
+    /**
+     * Accounts are stored with a particular account type. All available accounts of a particular type
+     * can be looked up using [ACAccountStore accountsWithAccountType:]. When creating new accounts
+     * this property is required.
+     */
     @Generated
     @Selector("setAccountType:")
     public native void setAccountType(ACAccountType value);
 
+    /**
+     * The credential for the account. This property can be set and saved during account creation. It is
+     * inaccessible once the account has been saved.
+     * WARNING: Backed by a synchronous xpc call to accountsd, not appropriate to call on a UI Application's main thread
+     */
     @Generated
     @Selector("setCredential:")
     public native void setCredential(ACAccountCredential value);
 
+    /**
+     * The username for the account. This property can be set and saved during account creation. The username is
+     * only available to applications that have been granted access to the account by the user.
+     */
     @Generated
     @Selector("setUsername:")
     public native void setUsername(String value);
 
+    /**
+     * For accounts that support it (currently only Facebook accounts), you can get the user's full name for display
+     * purposes without having to talk to the network.
+     */
     @Generated
     @Selector("userFullName")
     public native String userFullName();
 
+    /**
+     * The username for the account. This property can be set and saved during account creation. The username is
+     * only available to applications that have been granted access to the account by the user.
+     */
     @Generated
     @Selector("username")
     public native String username();

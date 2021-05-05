@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNSliderConstraint
+ * 
+ * A SCNSliderConstraint constraint makes a node to collide and slide against a category of nodes
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -78,6 +83,11 @@ public class SCNSliderConstraint extends SCNConstraint {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * [@property] collisionCategoryBitMask
+     * 
+     * Defines the category of node to collide against. Defaults to 0.
+     */
     @Generated
     @Selector("collisionCategoryBitMask")
     @NUInt
@@ -102,7 +112,7 @@ public class SCNSliderConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNSliderConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNSliderConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -131,11 +141,21 @@ public class SCNSliderConstraint extends SCNConstraint {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * [@property] offset
+     * 
+     * Defines the offset of the slider. Defaults to (0,0,0).
+     */
     @Generated
     @Selector("offset")
     @ByValue
     public native SCNVector3 offset();
 
+    /**
+     * [@property] radius
+     * 
+     * Defines the radius of the slider. Defaults to 1.
+     */
     @Generated
     @Selector("radius")
     @NFloat
@@ -149,14 +169,29 @@ public class SCNSliderConstraint extends SCNConstraint {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * [@property] collisionCategoryBitMask
+     * 
+     * Defines the category of node to collide against. Defaults to 0.
+     */
     @Generated
     @Selector("setCollisionCategoryBitMask:")
     public native void setCollisionCategoryBitMask(@NUInt long value);
 
+    /**
+     * [@property] offset
+     * 
+     * Defines the offset of the slider. Defaults to (0,0,0).
+     */
     @Generated
     @Selector("setOffset:")
     public native void setOffset(@ByValue SCNVector3 value);
 
+    /**
+     * [@property] radius
+     * 
+     * Defines the radius of the slider. Defaults to 1.
+     */
     @Generated
     @Selector("setRadius:")
     public native void setRadius(@NFloat double value);
@@ -165,6 +200,11 @@ public class SCNSliderConstraint extends SCNConstraint {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * accelerationConstraint
+     * 
+     * Creates and returns a SCNSliderConstraint object.
+     */
     @Generated
     @Selector("sliderConstraint")
     public static native SCNSliderConstraint sliderConstraint();

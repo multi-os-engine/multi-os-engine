@@ -3,6 +3,10 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * UIAccessibilityCustomSystemRotorType should be used when you want to allow searching for one of the following types.
+ * This will allow VoiceOver to use appropriate gestures and keyboard commands for these specific search types.
+ */
 @Generated
 public final class UIAccessibilityCustomSystemRotorType {
     @Generated

@@ -21,11 +21,29 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SKDownloadState {
+    /**
+     * Download is inactive, waiting to be downloaded
+     */
     @Generated @NInt public static final long Waiting = 0x0000000000000000L;
+    /**
+     * Download is actively downloading
+     */
     @Generated @NInt public static final long Active = 0x0000000000000001L;
+    /**
+     * Download was paused by the user
+     */
     @Generated @NInt public static final long Paused = 0x0000000000000002L;
+    /**
+     * Download is finished, content is available
+     */
     @Generated @NInt public static final long Finished = 0x0000000000000003L;
+    /**
+     * Download failed
+     */
     @Generated @NInt public static final long Failed = 0x0000000000000004L;
+    /**
+     * Download was cancelled
+     */
     @Generated @NInt public static final long Cancelled = 0x0000000000000005L;
 
     @Generated

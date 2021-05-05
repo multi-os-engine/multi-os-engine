@@ -18,6 +18,18 @@ package apple.javascriptcore.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * [@enum] JSType
+ * 
+ * A constant identifying the type of a JSValue.
+ * [@constant]     kJSTypeUndefined  The unique undefined value.
+ * [@constant]     kJSTypeNull       The unique null value.
+ * [@constant]     kJSTypeBoolean    A primitive boolean value, one of true or false.
+ * [@constant]     kJSTypeNumber     A primitive number value.
+ * [@constant]     kJSTypeString     A primitive string value.
+ * [@constant]     kJSTypeObject     An object value (meaning that this JSValueRef is a JSObjectRef).
+ * [@constant]     kJSTypeSymbol     A primitive symbol value.
+ */
 @Generated
 public final class JSType {
     @Generated public static final int kJSTypeUndefined = 0x00000000;
@@ -30,4 +42,6 @@ public final class JSType {
     @Generated
     private JSType() {
     }
+
+    @Generated public static final int kJSTypeSymbol = 0x00000006;
 }

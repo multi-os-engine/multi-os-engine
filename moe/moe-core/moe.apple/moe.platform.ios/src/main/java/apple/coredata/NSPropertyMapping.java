@@ -156,26 +156,44 @@ public class NSPropertyMapping extends NSObject {
     @Selector("init")
     public native NSPropertyMapping init();
 
+    /**
+     * Returns/sets the name of the property in the destination entity for the mapping.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * Returns/sets the name of the property in the destination entity for the mapping.
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * Returns/sets the user info for the property mapping.
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
+    /**
+     * Returns/sets the value expression for the property mapping.  The expression is used to create the value for the destination property.
+     */
     @Generated
     @Selector("setValueExpression:")
     public native void setValueExpression(NSExpression value);
 
+    /**
+     * Returns/sets the user info for the property mapping.
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
+    /**
+     * Returns/sets the value expression for the property mapping.  The expression is used to create the value for the destination property.
+     */
     @Generated
     @Selector("valueExpression")
     public native NSExpression valueExpression();

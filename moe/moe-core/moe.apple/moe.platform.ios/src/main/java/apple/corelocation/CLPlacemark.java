@@ -46,6 +46,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CLPlacemark
+ * 
+ * Discussion:
+ *   Represents placemark data for a geographic location. Placemark data can be
+ *   information such as the country, state, city, and street address.
+ */
 @Generated
 @Library("CoreLocation")
 @Runtime(ObjCRuntime.class)
@@ -166,18 +173,34 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * eg. US
+     */
     @Generated
     @Selector("ISOcountryCode")
     public native String ISOcountryCode();
 
+    /**
+     * addressDictionary
+     * 
+     * Discussion:
+     *   This dictionary can be formatted as an address using ABCreateStringWithAddressDictionary,
+     *   defined in the AddressBookUI framework.
+     */
     @Generated
     @Selector("addressDictionary")
     public native NSDictionary<?, ?> addressDictionary();
 
+    /**
+     * state, eg. CA
+     */
     @Generated
     @Selector("administrativeArea")
     public native String administrativeArea();
 
+    /**
+     * eg. Golden Gate Park
+     */
     @Generated
     @Selector("areasOfInterest")
     public native NSArray<String> areasOfInterest();
@@ -188,13 +211,16 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * eg. United States
+     */
     @Generated
     @Selector("country")
     public native String country();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -202,48 +228,90 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLPlacemark initWithCoder(NSCoder aDecoder);
+    public native CLPlacemark initWithCoder(NSCoder coder);
 
+    /**
+     * initWithPlacemark:
+     * 
+     * Discussion:
+     *   Initialize a newly allocated placemark from another placemark, copying its data.
+     */
     @Generated
     @Selector("initWithPlacemark:")
     public native CLPlacemark initWithPlacemark(CLPlacemark placemark);
 
+    /**
+     * eg. Lake Tahoe
+     */
     @Generated
     @Selector("inlandWater")
     public native String inlandWater();
 
+    /**
+     * city, eg. Cupertino
+     */
     @Generated
     @Selector("locality")
     public native String locality();
 
+    /**
+     * location
+     * 
+     * Discussion:
+     *   Returns the geographic location associated with the placemark.
+     */
     @Generated
     @Selector("location")
     public native CLLocation location();
 
+    /**
+     * eg. Apple Inc.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * eg. Pacific Ocean
+     */
     @Generated
     @Selector("ocean")
     public native String ocean();
 
+    /**
+     * zip code, eg. 95014
+     */
     @Generated
     @Selector("postalCode")
     public native String postalCode();
 
+    /**
+     * region
+     * 
+     * Discussion:
+     *   Returns the geographic region associated with the placemark.
+     */
     @Generated
     @Selector("region")
     public native CLRegion region();
 
+    /**
+     * county, eg. Santa Clara
+     */
     @Generated
     @Selector("subAdministrativeArea")
     public native String subAdministrativeArea();
 
+    /**
+     * neighborhood, common name, eg. Mission District
+     */
     @Generated
     @Selector("subLocality")
     public native String subLocality();
 
+    /**
+     * eg. 1
+     */
     @Generated
     @Selector("subThoroughfare")
     public native String subThoroughfare();
@@ -254,10 +322,19 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * street name, eg. Infinite Loop
+     */
     @Generated
     @Selector("thoroughfare")
     public native String thoroughfare();
 
+    /**
+     * timeZone
+     * 
+     * Discussion:
+     * Returns the time zone associated with the placemark.
+     */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();

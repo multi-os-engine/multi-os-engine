@@ -18,6 +18,13 @@ package apple.corevideo.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * [@enum] CVPixelBufferPoolFlush flags
+ * 
+ * Flags to pass to CVPixelBufferPoolFlush()
+ * [@constant] kCVPixelBufferPoolFlushExcessBuffers
+ * 	This flag will cause CVPixelBufferPoolFlush to flush all unused buffers regardless of age.
+ */
 @Generated
 public final class CVPixelBufferPoolFlushFlags {
     @Generated public static final long kCVPixelBufferPoolFlushExcessBuffers = 0x0000000000000001L;

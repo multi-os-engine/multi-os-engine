@@ -34,6 +34,7 @@ dependencies {
 tasks.javadoc {
     if (JvmVersionMeets(8)) {
         options.addStringOption('Xdoclint:none', '-quiet')
+        options.addBooleanOption("-allow-script-in-comments", true)
     }
 }
 

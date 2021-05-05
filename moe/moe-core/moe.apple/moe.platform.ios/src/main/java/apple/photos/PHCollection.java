@@ -99,12 +99,13 @@ public class PHCollection extends PHObject {
 
     @Generated
     @Selector("fetchCollectionsInCollectionList:options:")
-    public static native PHFetchResult<PHCollection> fetchCollectionsInCollectionListOptions(
+    public static native PHFetchResult<? extends PHCollection> fetchCollectionsInCollectionListOptions(
             PHCollectionList collectionList, PHFetchOptions options);
 
     @Generated
     @Selector("fetchTopLevelUserCollectionsWithOptions:")
-    public static native PHFetchResult<PHCollection> fetchTopLevelUserCollectionsWithOptions(PHFetchOptions options);
+    public static native PHFetchResult<? extends PHCollection> fetchTopLevelUserCollectionsWithOptions(
+            PHFetchOptions options);
 
     @Generated
     @Selector("hash")

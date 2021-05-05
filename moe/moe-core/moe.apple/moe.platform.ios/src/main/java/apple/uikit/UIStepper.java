@@ -23,6 +23,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -129,7 +130,7 @@ public class UIStepper extends UIControl {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -142,8 +143,8 @@ public class UIStepper extends UIControl {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -364,7 +365,7 @@ public class UIStepper extends UIControl {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -380,7 +381,8 @@ public class UIStepper extends UIControl {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -391,6 +393,9 @@ public class UIStepper extends UIControl {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * if YES, press & hold repeatedly alters value. default = YES
+     */
     @Generated
     @Selector("autorepeat")
     public native boolean autorepeat();
@@ -417,86 +422,139 @@ public class UIStepper extends UIControl {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIStepper initWithCoder(NSCoder aDecoder);
+    public native UIStepper initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
     public native UIStepper initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * if YES, value change events are sent any time the value changes during interaction. default = YES
+     */
     @Generated
     @Selector("isContinuous")
     public native boolean isContinuous();
 
+    /**
+     * if YES, value change events are sent any time the value changes during interaction. default = YES
+     */
     @Generated
     @Selector("setContinuous:")
     public native void setContinuous(boolean value);
 
+    /**
+     * default 100. must be greater than minimumValue
+     */
     @Generated
     @Selector("maximumValue")
     public native double maximumValue();
 
+    /**
+     * default 0. must be less than maximumValue
+     */
     @Generated
     @Selector("minimumValue")
     public native double minimumValue();
 
+    /**
+     * if YES, press & hold repeatedly alters value. default = YES
+     */
     @Generated
     @Selector("setAutorepeat:")
     public native void setAutorepeat(boolean value);
 
+    /**
+     * a background image which will be 3-way stretched over the whole of the control. Each half of the stepper will paint the image appropriate for its state
+     */
     @Generated
     @Selector("setBackgroundImage:forState:")
     public native void setBackgroundImageForState(UIImage image, @NUInt long state);
 
+    /**
+     * the glyph image for the minus/decrease button
+     */
     @Generated
     @Selector("setDecrementImage:forState:")
     public native void setDecrementImageForState(UIImage image, @NUInt long state);
 
+    /**
+     * an image which will be painted in between the two stepper segments. The image is selected depending both segments' state
+     */
     @Generated
     @Selector("setDividerImage:forLeftSegmentState:rightSegmentState:")
     public native void setDividerImageForLeftSegmentStateRightSegmentState(UIImage image, @NUInt long leftState,
             @NUInt long rightState);
 
+    /**
+     * the glyph image for the plus/increase button
+     */
     @Generated
     @Selector("setIncrementImage:forState:")
     public native void setIncrementImageForState(UIImage image, @NUInt long state);
 
+    /**
+     * default 100. must be greater than minimumValue
+     */
     @Generated
     @Selector("setMaximumValue:")
     public native void setMaximumValue(double value);
 
+    /**
+     * default 0. must be less than maximumValue
+     */
     @Generated
     @Selector("setMinimumValue:")
     public native void setMinimumValue(double value);
 
+    /**
+     * default 1. must be greater than 0
+     */
     @Generated
     @Selector("setStepValue:")
     public native void setStepValue(double value);
 
-    @Generated
-    @Selector("setTintColor:")
-    public native void setTintColor(UIColor value);
-
+    /**
+     * default is 0. sends UIControlEventValueChanged. clamped to min/max
+     */
     @Generated
     @Selector("setValue:")
     public native void setValue(double value);
 
+    /**
+     * if YES, value wraps from min <-> max. default = NO
+     */
     @Generated
     @Selector("setWraps:")
     public native void setWraps(boolean value);
 
+    /**
+     * default 1. must be greater than 0
+     */
     @Generated
     @Selector("stepValue")
     public native double stepValue();
 
-    @Generated
-    @Selector("tintColor")
-    public native UIColor tintColor();
-
+    /**
+     * default is 0. sends UIControlEventValueChanged. clamped to min/max
+     */
     @Generated
     @Selector("value")
     public native double value();
 
+    /**
+     * if YES, value wraps from min <-> max. default = NO
+     */
     @Generated
     @Selector("wraps")
     public native boolean wraps();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UIStepper initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 }

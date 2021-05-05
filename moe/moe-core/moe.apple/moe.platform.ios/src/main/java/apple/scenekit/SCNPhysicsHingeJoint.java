@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNPhysicsHingeJoint
+ * 
+ * SCNPhysicsHingeJoint makes two bodies to move like they are connected by a hinge. It is for example suitable for doors, chains...
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -123,11 +128,19 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * Initializes and returns a physics hinge joint.
+     * The hinge attaches body to a specific location in 3d space specified by "anchor" and relative to the node that owns the body. "axis" specifies the axis of rotation for "body".
+     */
     @Generated
     @Selector("jointWithBody:axis:anchor:")
     public static native SCNPhysicsHingeJoint jointWithBodyAxisAnchor(SCNPhysicsBody body, @ByValue SCNVector3 axis,
             @ByValue SCNVector3 anchor);
 
+    /**
+     * Initializes and returns a physics hinge joint.
+     * The hinge attaches bodyA and bodyB on anchorA and anchorB respectively. "axisA" and "axisB" specify the axis of rotation for bodyA and bodyB.
+     */
     @Generated
     @Selector("jointWithBodyA:axisA:anchorA:bodyB:axisB:anchorB:")
     public static native SCNPhysicsHingeJoint jointWithBodyAAxisAAnchorABodyBAxisBAnchorB(SCNPhysicsBody bodyA,
@@ -169,30 +182,48 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
     @NInt
     public static native long version_static();
 
+    /**
+     * the anchor point on which bodyA is attached
+     */
     @Generated
     @Selector("anchorA")
     @ByValue
     public native SCNVector3 anchorA();
 
+    /**
+     * the anchor point on which bodyB is attached
+     */
     @Generated
     @Selector("anchorB")
     @ByValue
     public native SCNVector3 anchorB();
 
+    /**
+     * the axis of rotation of bodyA
+     */
     @Generated
     @Selector("axisA")
     @ByValue
     public native SCNVector3 axisA();
 
+    /**
+     * the axis of rotation of bodyB
+     */
     @Generated
     @Selector("axisB")
     @ByValue
     public native SCNVector3 axisB();
 
+    /**
+     * the first body constrained by the hinge
+     */
     @Generated
     @Selector("bodyA")
     public native SCNPhysicsBody bodyA();
 
+    /**
+     * the second body attached to the hinge.
+     */
     @Generated
     @Selector("bodyB")
     public native SCNPhysicsBody bodyB();
@@ -203,20 +234,32 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsHingeJoint initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsHingeJoint initWithCoder(NSCoder coder);
 
+    /**
+     * the anchor point on which bodyA is attached
+     */
     @Generated
     @Selector("setAnchorA:")
     public native void setAnchorA(@ByValue SCNVector3 value);
 
+    /**
+     * the anchor point on which bodyB is attached
+     */
     @Generated
     @Selector("setAnchorB:")
     public native void setAnchorB(@ByValue SCNVector3 value);
 
+    /**
+     * the axis of rotation of bodyA
+     */
     @Generated
     @Selector("setAxisA:")
     public native void setAxisA(@ByValue SCNVector3 value);
 
+    /**
+     * the axis of rotation of bodyB
+     */
     @Generated
     @Selector("setAxisB:")
     public native void setAxisB(@ByValue SCNVector3 value);

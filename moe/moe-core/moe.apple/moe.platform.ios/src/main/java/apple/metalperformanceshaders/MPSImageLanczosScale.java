@@ -41,6 +41,21 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSImageLanczosScale
+ * 
+ * Resize an image and / or change its aspect ratio
+ * 
+ * The MPSImageLanczosScale filter can be used to resample an existing image
+ *             using a different sampling frequency in each dimension. This can be
+ *             used to enlarge or reduce the size of an image, or change the aspect
+ *             ratio of an image.  The filter uses a Lanczos resampling algorithm
+ *             which typically produces better quality for photographs, but is slower
+ *             than linear sampling using the GPU texture units. Lanczos downsampling
+ *             does not require a low pass filter to be applied before it is used.
+ *             Because the resampling function has negative lobes, Lanczos can result
+ *             in ringing near sharp edges, making it less suitable for vector art.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -164,6 +179,19 @@ public class MPSImageLanczosScale extends MPSImageScale {
     @Selector("initWithCoder:")
     public native MPSImageLanczosScale initWithCoder(NSCoder aDecoder);
 
+    /**
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
+     *             -initWithCoder: should work, since the file can't
+     *             know which device your data is allocated on, we
+     *             have to guess and may guess incorrectly.  To avoid
+     *             that problem, use initWithCoder:device instead.
+     * 
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
+     * @param      device      The MTLDevice on which to make the MPSKernel
+     * @return     A new MPSKernel object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSImageLanczosScale initWithCoderDevice(NSCoder aDecoder,

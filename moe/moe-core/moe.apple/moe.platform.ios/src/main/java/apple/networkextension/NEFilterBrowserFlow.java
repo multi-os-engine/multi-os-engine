@@ -46,6 +46,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEFilterBrowserFlow
+ * 
+ * The NEFilterBrowserFlow class declares the programmatic interface of an object that represents a flow of network data to be filtered, which is originated from NEFilterSource.
+ * 
+ * NEFilterBrowserFlow is part of NetworkExtension.framework
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -169,7 +176,7 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -177,16 +184,31 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterBrowserFlow initWithCoder(NSCoder aDecoder);
+    public native NEFilterBrowserFlow initWithCoder(NSCoder coder);
 
+    /**
+     * [@property] parentURL
+     * 
+     * The parent URL for the current flow which is created to load the sub frames because the flow with the parent URL was allowed. Will be nil if the parent flow does not exist.
+     */
     @Generated
     @Selector("parentURL")
     public native NSURL parentURL();
 
+    /**
+     * [@property] request
+     * 
+     * The NSURLRequest of the flow. This property is always nil for the control providers.
+     */
     @Generated
     @Selector("request")
     public native NSURLRequest request();
 
+    /**
+     * [@property] response
+     * 
+     * The NSURLResponse of the flow. This will be nil until the request is sent to the server and the response headers are received. And this property is always nil for the control providers.
+     */
     @Generated
     @Selector("response")
     public native NSURLResponse response();

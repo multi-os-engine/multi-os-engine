@@ -2,11 +2,9 @@ package apple.mediaplayer;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
-import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -23,7 +21,6 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
-import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -31,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPMusicPlayerPlayParameters extends NSObject implements NSSecureCoding {
+public class MPMusicPlayerPlayParameters extends NSObject {
     static {
         NatJ.register();
     }
@@ -90,10 +87,6 @@ public class MPMusicPlayerPlayParameters extends NSObject implements NSSecureCod
     public native NSDictionary<String, ?> dictionary();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -101,10 +94,6 @@ public class MPMusicPlayerPlayParameters extends NSObject implements NSSecureCod
     @Generated
     @Selector("init")
     public native MPMusicPlayerPlayParameters init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMusicPlayerPlayParameters initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithDictionary:")
@@ -152,16 +141,6 @@ public class MPMusicPlayerPlayParameters extends NSObject implements NSSecureCod
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("version")

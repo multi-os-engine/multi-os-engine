@@ -19,6 +19,11 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum] MTLVertexFormat
+ * 
+ * specifies how the vertex attribute data is laid out in memory.
+ */
 @Generated
 public final class MTLVertexFormat {
     @Generated @NUInt public static final long Invalid = 0x0000000000000000L;

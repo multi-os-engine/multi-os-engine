@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Immutable Texture Object Data
+ */
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)

@@ -19,6 +19,7 @@ package apple.uikit;
 import apple.NSObject;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
+import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
@@ -29,12 +30,18 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.foundation.struct.NSRange;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIContentSizeCategoryAdjusting;
+import apple.uikit.protocol.UITextDragDelegate;
 import apple.uikit.protocol.UITextDraggable;
+import apple.uikit.protocol.UITextDropDelegate;
 import apple.uikit.protocol.UITextDroppable;
 import apple.uikit.protocol.UITextFieldDelegate;
 import apple.uikit.protocol.UITextInput;
+import apple.uikit.protocol.UITextInputDelegate;
+import apple.uikit.protocol.UITextInputTokenizer;
 import apple.uikit.protocol.UITextPasteConfigurationSupporting;
+import apple.uikit.protocol.UITextPasteDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -144,7 +151,7 @@ public class UITextField extends UIControl
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -157,8 +164,8 @@ public class UITextField extends UIControl
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -364,10 +371,16 @@ public class UITextField extends UIControl
     @Selector("adjustsFontForContentSizeCategory")
     public native boolean adjustsFontForContentSizeCategory();
 
+    /**
+     * default is NO. if YES, text will shrink to minFontSize along baseline
+     */
     @Generated
     @Selector("adjustsFontSizeToFitWidth")
     public native boolean adjustsFontSizeToFitWidth();
 
+    /**
+     * default is NO. allows editing text attributes with style operations and pasting rich text
+     */
     @Generated
     @Selector("allowsEditingTextAttributes")
     public native boolean allowsEditingTextAttributes();
@@ -391,7 +404,7 @@ public class UITextField extends UIControl
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -407,7 +420,8 @@ public class UITextField extends UIControl
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -418,10 +432,16 @@ public class UITextField extends UIControl
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("attributedPlaceholder")
     public native NSAttributedString attributedPlaceholder();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("attributedText")
     public native NSAttributedString attributedText();
@@ -438,6 +458,9 @@ public class UITextField extends UIControl
     @NInt
     public native long autocorrectionType();
 
+    /**
+     * default is nil. draw in border rect. image should be stretchable
+     */
     @Generated
     @Selector("background")
     public native UIImage background();
@@ -456,11 +479,17 @@ public class UITextField extends UIControl
     @Selector("beginningOfDocument")
     public native UITextPosition beginningOfDocument();
 
+    /**
+     * drawing and positioning overrides
+     */
     @Generated
     @Selector("borderRectForBounds:")
     @ByValue
     public native CGRect borderRectForBounds(@ByValue CGRect bounds);
 
+    /**
+     * default is UITextBorderStyleNone. If set to UITextBorderStyleRoundedRect, custom background images are ignored.
+     */
     @Generated
     @Selector("borderStyle")
     @NInt
@@ -486,6 +515,9 @@ public class UITextField extends UIControl
     public native UITextRange characterRangeByExtendingPositionInDirection(UITextPosition position,
             @NInt long direction);
 
+    /**
+     * sets when the clear button shows up. default is UITextFieldViewModeNever
+     */
     @Generated
     @Selector("clearButtonMode")
     @NInt
@@ -496,10 +528,16 @@ public class UITextField extends UIControl
     @ByValue
     public native CGRect clearButtonRectForBounds(@ByValue CGRect bounds);
 
+    /**
+     * default is NO which moves cursor to location clicked. if YES, all text cleared
+     */
     @Generated
     @Selector("clearsOnBeginEditing")
     public native boolean clearsOnBeginEditing();
 
+    /**
+     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field. changing the selection will automatically set this to NO.
+     */
     @Generated
     @Selector("clearsOnInsertion")
     public native boolean clearsOnInsertion();
@@ -517,10 +555,16 @@ public class UITextField extends UIControl
     @NInt
     public native long comparePositionToPosition(UITextPosition position, UITextPosition other);
 
+    /**
+     * applies attributes to the full range of text. Unset attributes act like default values.
+     */
     @Generated
     @Selector("defaultTextAttributes")
     public native NSDictionary<String, ?> defaultTextAttributes();
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -540,6 +584,9 @@ public class UITextField extends UIControl
     @Selector("dictationRecordingDidEnd")
     public native void dictationRecordingDidEnd();
 
+    /**
+     * default is nil. ignored if background not set. image should be stretchable
+     */
     @Generated
     @Selector("disabledBackground")
     public native UIImage disabledBackground();
@@ -564,7 +611,7 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @IsOptional
@@ -580,6 +627,9 @@ public class UITextField extends UIControl
     @ByValue
     public native CGRect firstRectForRange(UITextRange range);
 
+    /**
+     * default is nil. use system font 12 pt
+     */
     @Generated
     @Selector("font")
     public native UIFont font();
@@ -600,7 +650,7 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITextField initWithCoder(NSCoder aDecoder);
+    public native UITextField initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -613,8 +663,12 @@ public class UITextField extends UIControl
     @Generated
     @Selector("inputDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object inputDelegate();
+    public native UITextInputDelegate inputDelegate();
 
+    /**
+     * Presented when object becomes first responder.  If set to nil, reverts to following responder chain.  If
+     * set while first responder, will not take effect until reloadInputViews is called.
+     */
     @Generated
     @Selector("inputView")
     public native UIView inputView();
@@ -660,10 +714,16 @@ public class UITextField extends UIControl
     @NInt
     public native long keyboardType();
 
+    /**
+     * e.g. magnifying glass
+     */
     @Generated
     @Selector("leftView")
     public native UIView leftView();
 
+    /**
+     * sets when the left view shows up. default is UITextFieldViewModeNever
+     */
     @Generated
     @Selector("leftViewMode")
     @NInt
@@ -680,8 +740,11 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("markedTextStyle")
-    public native NSDictionary<?, ?> markedTextStyle();
+    public native NSDictionary<String, ?> markedTextStyle();
 
+    /**
+     * default is 0.0. actual min may be pinned to something readable. used if adjustsFontSizeToFitWidth is YES
+     */
     @Generated
     @Selector("minimumFontSize")
     @NFloat
@@ -692,6 +755,9 @@ public class UITextField extends UIControl
     @NInt
     public native long offsetFromPositionToPosition(UITextPosition from, UITextPosition toPosition);
 
+    /**
+     * default is nil. string is drawn 70% gray
+     */
     @Generated
     @Selector("placeholder")
     public native String placeholder();
@@ -735,10 +801,16 @@ public class UITextField extends UIControl
     @NInt
     public native long returnKeyType();
 
+    /**
+     * e.g. bookmarks button
+     */
     @Generated
     @Selector("rightView")
     public native UIView rightView();
 
+    /**
+     * sets when the right view shows up. default is UITextFieldViewModeNever
+     */
     @Generated
     @Selector("rightViewMode")
     @NInt
@@ -761,24 +833,36 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("selectionRectsForRange:")
-    public native NSArray<?> selectionRectsForRange(UITextRange range);
+    public native NSArray<? extends UITextSelectionRect> selectionRectsForRange(UITextRange range);
 
     @Generated
     @Selector("setAdjustsFontForContentSizeCategory:")
     public native void setAdjustsFontForContentSizeCategory(boolean value);
 
+    /**
+     * default is NO. if YES, text will shrink to minFontSize along baseline
+     */
     @Generated
     @Selector("setAdjustsFontSizeToFitWidth:")
     public native void setAdjustsFontSizeToFitWidth(boolean value);
 
+    /**
+     * default is NO. allows editing text attributes with style operations and pasting rich text
+     */
     @Generated
     @Selector("setAllowsEditingTextAttributes:")
     public native void setAllowsEditingTextAttributes(boolean value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setAttributedPlaceholder:")
     public native void setAttributedPlaceholder(NSAttributedString value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setAttributedText:")
     public native void setAttributedText(NSAttributedString value);
@@ -793,6 +877,9 @@ public class UITextField extends UIControl
     @Selector("setAutocorrectionType:")
     public native void setAutocorrectionType(@NInt long value);
 
+    /**
+     * default is nil. draw in border rect. image should be stretchable
+     */
     @Generated
     @Selector("setBackground:")
     public native void setBackground(UIImage value);
@@ -801,30 +888,51 @@ public class UITextField extends UIControl
     @Selector("setBaseWritingDirection:forRange:")
     public native void setBaseWritingDirectionForRange(@NInt long writingDirection, UITextRange range);
 
+    /**
+     * default is UITextBorderStyleNone. If set to UITextBorderStyleRoundedRect, custom background images are ignored.
+     */
     @Generated
     @Selector("setBorderStyle:")
     public native void setBorderStyle(@NInt long value);
 
+    /**
+     * sets when the clear button shows up. default is UITextFieldViewModeNever
+     */
     @Generated
     @Selector("setClearButtonMode:")
     public native void setClearButtonMode(@NInt long value);
 
+    /**
+     * default is NO which moves cursor to location clicked. if YES, all text cleared
+     */
     @Generated
     @Selector("setClearsOnBeginEditing:")
     public native void setClearsOnBeginEditing(boolean value);
 
+    /**
+     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field. changing the selection will automatically set this to NO.
+     */
     @Generated
     @Selector("setClearsOnInsertion:")
     public native void setClearsOnInsertion(boolean value);
 
+    /**
+     * applies attributes to the full range of text. Unset attributes act like default values.
+     */
     @Generated
     @Selector("setDefaultTextAttributes:")
     public native void setDefaultTextAttributes(NSDictionary<String, ?> value);
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextFieldDelegate value);
 
+    /**
+     * default is nil. weak reference
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UITextFieldDelegate value) {
         Object __old = delegate();
@@ -837,6 +945,9 @@ public class UITextField extends UIControl
         }
     }
 
+    /**
+     * default is nil. ignored if background not set. image should be stretchable
+     */
     @Generated
     @Selector("setDisabledBackground:")
     public native void setDisabledBackground(UIImage value);
@@ -846,6 +957,9 @@ public class UITextField extends UIControl
     @Selector("setEnablesReturnKeyAutomatically:")
     public native void setEnablesReturnKeyAutomatically(boolean value);
 
+    /**
+     * default is nil. use system font 12 pt
+     */
     @Generated
     @Selector("setFont:")
     public native void setFont(UIFont value);
@@ -856,10 +970,10 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("setInputDelegate:")
-    public native void setInputDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setInputDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextInputDelegate value);
 
     @Generated
-    public void setInputDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setInputDelegate(@Mapped(ObjCObjectMapper.class) UITextInputDelegate value) {
         Object __old = inputDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -870,6 +984,10 @@ public class UITextField extends UIControl
         }
     }
 
+    /**
+     * Presented when object becomes first responder.  If set to nil, reverts to following responder chain.  If
+     * set while first responder, will not take effect until reloadInputViews is called.
+     */
     @Generated
     @Selector("setInputView:")
     public native void setInputView(UIView value);
@@ -884,10 +1002,16 @@ public class UITextField extends UIControl
     @Selector("setKeyboardType:")
     public native void setKeyboardType(@NInt long value);
 
+    /**
+     * e.g. magnifying glass
+     */
     @Generated
     @Selector("setLeftView:")
     public native void setLeftView(UIView value);
 
+    /**
+     * sets when the left view shows up. default is UITextFieldViewModeNever
+     */
     @Generated
     @Selector("setLeftViewMode:")
     public native void setLeftViewMode(@NInt long value);
@@ -898,12 +1022,18 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("setMarkedTextStyle:")
-    public native void setMarkedTextStyle(NSDictionary<?, ?> value);
+    public native void setMarkedTextStyle(NSDictionary<String, ?> value);
 
+    /**
+     * default is 0.0. actual min may be pinned to something readable. used if adjustsFontSizeToFitWidth is YES
+     */
     @Generated
     @Selector("setMinimumFontSize:")
     public native void setMinimumFontSize(@NFloat double value);
 
+    /**
+     * default is nil. string is drawn 70% gray
+     */
     @Generated
     @Selector("setPlaceholder:")
     public native void setPlaceholder(String value);
@@ -913,10 +1043,16 @@ public class UITextField extends UIControl
     @Selector("setReturnKeyType:")
     public native void setReturnKeyType(@NInt long value);
 
+    /**
+     * e.g. bookmarks button
+     */
     @Generated
     @Selector("setRightView:")
     public native void setRightView(UIView value);
 
+    /**
+     * sets when the right view shows up. default is UITextFieldViewModeNever
+     */
     @Generated
     @Selector("setRightViewMode:")
     public native void setRightViewMode(@NInt long value);
@@ -935,14 +1071,23 @@ public class UITextField extends UIControl
     @Selector("setSpellCheckingType:")
     public native void setSpellCheckingType(@NInt long value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setText:")
     public native void setText(String value);
 
+    /**
+     * default is NSLeftTextAlignment
+     */
     @Generated
     @Selector("setTextAlignment:")
     public native void setTextAlignment(@NInt long value);
 
+    /**
+     * default is nil. use opaque black
+     */
     @Generated
     @Selector("setTextColor:")
     public native void setTextColor(UIColor value);
@@ -952,6 +1097,9 @@ public class UITextField extends UIControl
     @Selector("setTextContentType:")
     public native void setTextContentType(String value);
 
+    /**
+     * automatically resets when the selection changes
+     */
     @Generated
     @Selector("setTypingAttributes:")
     public native void setTypingAttributes(NSDictionary<String, ?> value);
@@ -967,15 +1115,24 @@ public class UITextField extends UIControl
     @NInt
     public native long spellCheckingType();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("text")
     public native String text();
 
+    /**
+     * default is NSLeftTextAlignment
+     */
     @Generated
     @Selector("textAlignment")
     @NInt
     public native long textAlignment();
 
+    /**
+     * default is nil. use opaque black
+     */
     @Generated
     @Selector("textColor")
     public native UIColor textColor();
@@ -1012,8 +1169,11 @@ public class UITextField extends UIControl
     @Generated
     @Selector("tokenizer")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object tokenizer();
+    public native UITextInputTokenizer tokenizer();
 
+    /**
+     * automatically resets when the selection changes
+     */
     @Generated
     @Selector("typingAttributes")
     public native NSDictionary<String, ?> typingAttributes();
@@ -1047,7 +1207,7 @@ public class UITextField extends UIControl
     @Generated
     @Selector("pasteDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object pasteDelegate();
+    public native UITextPasteDelegate pasteDelegate();
 
     @Generated
     @IsOptional
@@ -1060,10 +1220,10 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("setPasteDelegate:")
-    public native void setPasteDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setPasteDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextPasteDelegate value);
 
     @Generated
-    public void setPasteDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setPasteDelegate(@Mapped(ObjCObjectMapper.class) UITextPasteDelegate value) {
         Object __old = pasteDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1091,10 +1251,10 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("setTextDragDelegate:")
-    public native void setTextDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setTextDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextDragDelegate value);
 
     @Generated
-    public void setTextDragDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setTextDragDelegate(@Mapped(ObjCObjectMapper.class) UITextDragDelegate value) {
         Object __old = textDragDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1111,10 +1271,10 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("setTextDropDelegate:")
-    public native void setTextDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setTextDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextDropDelegate value);
 
     @Generated
-    public void setTextDropDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setTextDropDelegate(@Mapped(ObjCObjectMapper.class) UITextDropDelegate value) {
         Object __old = textDropDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1146,7 +1306,7 @@ public class UITextField extends UIControl
     @Generated
     @Selector("textDragDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object textDragDelegate();
+    public native UITextDragDelegate textDragDelegate();
 
     @Generated
     @Selector("textDragInteraction")
@@ -1160,9 +1320,50 @@ public class UITextField extends UIControl
     @Generated
     @Selector("textDropDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object textDropDelegate();
+    public native UITextDropDelegate textDropDelegate();
 
     @Generated
     @Selector("textDropInteraction")
     public native UIDropInteraction textDropInteraction();
+
+    @Generated
+    @IsOptional
+    @Selector("insertText:alternatives:style:")
+    public native void insertTextAlternativesStyle(String text, NSArray<String> alternatives, @NInt long style);
+
+    @Generated
+    @IsOptional
+    @Selector("insertTextPlaceholderWithSize:")
+    public native UITextPlaceholder insertTextPlaceholderWithSize(@ByValue CGSize size);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @IsOptional
+    @Selector("passwordRules")
+    public native UITextInputPasswordRules passwordRules();
+
+    @Generated
+    @IsOptional
+    @Selector("removeTextPlaceholder:")
+    public native void removeTextPlaceholder(UITextPlaceholder textPlaceholder);
+
+    @Generated
+    @IsOptional
+    @Selector("setAttributedMarkedText:selectedRange:")
+    public native void setAttributedMarkedTextSelectedRange(NSAttributedString markedText,
+            @ByValue NSRange selectedRange);
+
+    @Generated
+    @IsOptional
+    @Selector("setPasswordRules:")
+    public native void setPasswordRules(UITextInputPasswordRules value);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UITextField initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 }

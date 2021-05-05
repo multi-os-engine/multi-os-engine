@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIViewAnimatingState {
+    /**
+     * The animation is not executing.
+     */
     @Generated @NInt public static final long Inactive = 0x0000000000000000L;
+    /**
+     * The animation is executing.
+     */
     @Generated @NInt public static final long Active = 0x0000000000000001L;
+    /**
+     * The animation has been stopped and has not transitioned to inactive.
+     */
     @Generated @NInt public static final long Stopped = 0x0000000000000002L;
 
     @Generated

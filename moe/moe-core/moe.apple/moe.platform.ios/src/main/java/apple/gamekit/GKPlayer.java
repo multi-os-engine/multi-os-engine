@@ -131,6 +131,13 @@ public class GKPlayer extends GKBasePlayer {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Load the Game Center players for the playerIDs provided. Error will be nil on success.
+     * Possible reasons for error:
+     * 1. Unauthenticated local player
+     * 2. Communications failure
+     * 3. Invalid player identifier
+     */
     @Generated
     @Selector("loadPlayersForIdentifiers:withCompletionHandler:")
     public static native void loadPlayersForIdentifiersWithCompletionHandler(NSArray<String> identifiers,
@@ -163,10 +170,16 @@ public class GKPlayer extends GKBasePlayer {
     @NInt
     public static native long version_static();
 
+    /**
+     * The alias property contains the player's nickname. When you need to display the name to the user, consider using displayName instead. The nickname is unique but not invariant: the player may change their nickname. The nickname may be very long, so be sure to use appropriate string truncation API when drawing.
+     */
     @Generated
     @Selector("alias")
     public native String alias();
 
+    /**
+     * This is player's alias to be displayed. The display name may be very long, so be sure to use appropriate string truncation API when drawing.
+     */
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -179,6 +192,9 @@ public class GKPlayer extends GKBasePlayer {
     @Selector("init")
     public native GKPlayer init();
 
+    /**
+     * True if this player is a friend of the local player
+     */
     @Generated
     @Deprecated
     @Selector("isFriend")
@@ -197,13 +213,41 @@ public class GKPlayer extends GKBasePlayer {
     @Generated
     public interface Block_loadPhotoForSizeWithCompletionHandler {
         @Generated
-        void call_loadPhotoForSizeWithCompletionHandler(UIImage arg0, NSError arg1);
+        void call_loadPhotoForSizeWithCompletionHandler(UIImage photo, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadPlayersForIdentifiersWithCompletionHandler {
         @Generated
-        void call_loadPlayersForIdentifiersWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
+        void call_loadPlayersForIdentifiersWithCompletionHandler(NSArray<? extends GKPlayer> players, NSError error);
     }
+
+    /**
+     * This is the local player's unique and persistent ID that is scoped to this application. For non-local players, this ID is unique for this instantiation of this app.
+     */
+    @Generated
+    @Selector("gamePlayerID")
+    public native String gamePlayerID();
+
+    /**
+     * This convenience method checks if the gamePlayerID and the teamPlayerID (scopedIDs) are persistent or unique for the instantiation of this app.
+     */
+    @Generated
+    @Selector("scopedIDsArePersistent")
+    public native boolean scopedIDsArePersistent();
+
+    /**
+     * This is the local player's unique and persistent ID that is scoped to the Apple Store Connect Team identifier of this application. For non-local players, this ID is unique for this instantiation of this app.
+     */
+    @Generated
+    @Selector("teamPlayerID")
+    public native String teamPlayerID();
+
+    /**
+     * This convenience method checks if you can invite the player to multiplayer game.
+     */
+    @Generated
+    @Selector("isInvitable")
+    public native boolean isInvitable();
 }

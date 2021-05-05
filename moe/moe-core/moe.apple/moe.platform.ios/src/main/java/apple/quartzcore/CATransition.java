@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Transition animation subclass. *
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -172,32 +175,64 @@ public class CATransition extends CAAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CATransition initWithCoder(NSCoder aDecoder);
+    public native CATransition initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setEndProgress:")
     public native void setEndProgress(float value);
 
+    /**
+     * The amount of progress through to the transition at which to begin
+     * and end execution. Legal values are numbers in the range [0,1].
+     * `endProgress' must be greater than or equal to `startProgress'.
+     * Default values are 0 and 1 respectively.
+     */
     @Generated
     @Selector("setStartProgress:")
     public native void setStartProgress(float value);
 
+    /**
+     * An optional subtype for the transition. E.g. used to specify the
+     * transition direction for motion-based transitions, in which case
+     * the legal values are `fromLeft', `fromRight', `fromTop' and
+     * `fromBottom'.
+     */
     @Generated
     @Selector("setSubtype:")
     public native void setSubtype(String value);
 
+    /**
+     * The name of the transition. Current legal transition types include
+     * `fade', `moveIn', `push' and `reveal'. Defaults to `fade'.
+     */
     @Generated
     @Selector("setType:")
     public native void setType(String value);
 
+    /**
+     * The amount of progress through to the transition at which to begin
+     * and end execution. Legal values are numbers in the range [0,1].
+     * `endProgress' must be greater than or equal to `startProgress'.
+     * Default values are 0 and 1 respectively.
+     */
     @Generated
     @Selector("startProgress")
     public native float startProgress();
 
+    /**
+     * An optional subtype for the transition. E.g. used to specify the
+     * transition direction for motion-based transitions, in which case
+     * the legal values are `fromLeft', `fromRight', `fromTop' and
+     * `fromBottom'.
+     */
     @Generated
     @Selector("subtype")
     public native String subtype();
 
+    /**
+     * The name of the transition. Current legal transition types include
+     * `fade', `moveIn', `push' and `reveal'. Defaults to `fade'.
+     */
     @Generated
     @Selector("type")
     public native String type();

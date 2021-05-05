@@ -42,6 +42,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSCNNNeuronLinear
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the linear neuron filter. For each pixel, applies the following function: f(x) = a * x + b
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -154,14 +160,6 @@ public class MPSCNNNeuronLinear extends MPSCNNNeuron {
     public static native long version_static();
 
     @Generated
-    @Selector("a")
-    public native float a();
-
-    @Generated
-    @Selector("b")
-    public native float b();
-
-    @Generated
     @Selector("init")
     public native MPSCNNNeuronLinear init();
 
@@ -169,6 +167,14 @@ public class MPSCNNNeuronLinear extends MPSCNNNeuron {
     @Selector("initWithDevice:")
     public native MPSCNNNeuronLinear initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * Initialize the linear neuron filter
+     * 
+     * @param     device   The device the filter will run on
+     * @param     a        Filter property "a". See class discussion.
+     * @param     b        Filter property "b". See class discussion.
+     * @return    A valid MPSCNNNeuronLinear object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:a:b:")
     public native MPSCNNNeuronLinear initWithDeviceAB(@Mapped(ObjCObjectMapper.class) MTLDevice device, float a,
@@ -192,4 +198,9 @@ public class MPSCNNNeuronLinear extends MPSCNNNeuron {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("initWithDevice:neuronDescriptor:")
+    public native MPSCNNNeuronLinear initWithDeviceNeuronDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            MPSNNNeuronDescriptor neuronDescriptor);
 }

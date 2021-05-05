@@ -19,6 +19,14 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]          HKWheelchairUse
+ * 
+ * This enumerated type is used to represent whether the user uses a wheelchair.
+ * 
+ * [@constant]      HKWheelchairUseNo      The user does not use a wheelchair.
+ * [@constant]      HKWheelchairUseYes     The user does use a wheelchair.
+ */
 @Generated
 public final class HKWheelchairUse {
     @Generated @NInt public static final long NotSet = 0x0000000000000000L;

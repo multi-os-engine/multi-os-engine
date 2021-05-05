@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]      HMCharacteristicValueLockPhysicalControlsState
+ * 
+ * [@constant]  HMCharacteristicValueLockPhysicalControlsStateNotLocked  Physical controls not locked.
+ * [@constant]  HMCharacteristicValueLockPhysicalControlsStateLocked     Physical controls locked.
+ */
 @Generated
 public final class HMCharacteristicValueLockPhysicalControlsState {
     @Generated @NInt public static final long NotLocked = 0x0000000000000000L;

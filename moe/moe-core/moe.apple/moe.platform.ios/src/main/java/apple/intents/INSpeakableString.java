@@ -18,8 +18,11 @@ package apple.intents;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.intents.protocol.INSpeakable;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -38,6 +41,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -45,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class INSpeakableString extends NSObject implements INSpeakable {
+public class INSpeakableString extends NSObject implements INSpeakable, NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -190,4 +194,28 @@ public class INSpeakableString extends NSObject implements INSpeakable {
     @Generated
     @Selector("vocabularyIdentifier")
     public native String vocabularyIdentifier();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native INSpeakableString initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -164,14 +164,23 @@ public class MTLFunctionConstantValues extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLFunctionConstantValues init();
 
+    /**
+     * delete all the constants
+     */
     @Generated
     @Selector("reset")
     public native void reset();
 
+    /**
+     * using indices
+     */
     @Generated
     @Selector("setConstantValue:type:atIndex:")
     public native void setConstantValueTypeAtIndex(ConstVoidPtr value, @NUInt long type, @NUInt long index);
 
+    /**
+     * using names
+     */
     @Generated
     @Selector("setConstantValue:type:withName:")
     public native void setConstantValueTypeWithName(ConstVoidPtr value, @NUInt long type, String name);

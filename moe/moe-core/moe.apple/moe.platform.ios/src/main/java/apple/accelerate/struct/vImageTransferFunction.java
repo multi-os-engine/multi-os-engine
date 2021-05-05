@@ -43,74 +43,122 @@ public final class vImageTransferFunction extends StructObject {
         super(peer);
     }
 
+    /**
+     * R' = c0 * pow( c1 * R + c2, gamma ) + c3,    (R >= cutoff)
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @NFloat
     public native double c0();
 
+    /**
+     * R' = c0 * pow( c1 * R + c2, gamma ) + c3,    (R >= cutoff)
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setC0(@NFloat double value);
 
+    /**
+     * R' = c0 * pow( c1 * R + c2, gamma ) + c3,    (R >= cutoff)
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @NFloat
     public native double c1();
 
+    /**
+     * R' = c0 * pow( c1 * R + c2, gamma ) + c3,    (R >= cutoff)
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setC1(@NFloat double value);
 
+    /**
+     * R' = c0 * pow( c1 * R + c2, gamma ) + c3,    (R >= cutoff)
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @NFloat
     public native double c2();
 
+    /**
+     * R' = c0 * pow( c1 * R + c2, gamma ) + c3,    (R >= cutoff)
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setC2(@NFloat double value);
 
+    /**
+     * R' = c0 * pow( c1 * R + c2, gamma ) + c3,    (R >= cutoff)
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @NFloat
     public native double c3();
 
+    /**
+     * R' = c0 * pow( c1 * R + c2, gamma ) + c3,    (R >= cutoff)
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setC3(@NFloat double value);
 
+    /**
+     * R' = c0 * pow( c1 * R + c2, gamma ) + c3,    (R >= cutoff)
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     @NFloat
     public native double gamma();
 
+    /**
+     * R' = c0 * pow( c1 * R + c2, gamma ) + c3,    (R >= cutoff)
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setGamma(@NFloat double value);
 
+    /**
+     * See immediately above and below.  For no linear region (no below segment), pass -INFINITY here.
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     @NFloat
     public native double cutoff();
 
+    /**
+     * See immediately above and below.  For no linear region (no below segment), pass -INFINITY here.
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setCutoff(@NFloat double value);
 
+    /**
+     * R' = c4 * R + c5                             (R < cutoff)
+     */
     @Generated
     @StructureField(order = 6, isGetter = true)
     @NFloat
     public native double c4();
 
+    /**
+     * R' = c4 * R + c5                             (R < cutoff)
+     */
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setC4(@NFloat double value);
 
+    /**
+     * R' = c4 * R + c5                             (R < cutoff)
+     */
     @Generated
     @StructureField(order = 7, isGetter = true)
     @NFloat
     public native double c5();
 
+    /**
+     * R' = c4 * R + c5                             (R < cutoff)
+     */
     @Generated
     @StructureField(order = 7, isGetter = false)
     public native void setC5(@NFloat double value);

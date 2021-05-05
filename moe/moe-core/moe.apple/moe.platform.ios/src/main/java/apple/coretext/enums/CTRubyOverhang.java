@@ -18,6 +18,23 @@ package apple.coretext.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * [@enum]       CTRubyOverhang
+ * 
+ * These constants specify whether, and on which side, ruby text is allowed to overhang adjacent text if it is wider than the base text.
+ * 
+ * [@constant]   kCTRubyOverhangAuto
+ *             The ruby text can overhang adjacent text on both sides.
+ * 
+ * [@constant]   kCTRubyOverhangStart
+ *             The ruby text can overhang the text that proceeds it.
+ * 
+ * [@constant]   kCTRubyOverhangEnd
+ *             The ruby text can overhang the text that follows it.
+ * 
+ * [@constant]   kCTRubyOverhangNone
+ *             The ruby text cannot overhang the proceeding or following text.
+ */
 @Generated
 public final class CTRubyOverhang {
     @Generated public static final byte Invalid = -1;

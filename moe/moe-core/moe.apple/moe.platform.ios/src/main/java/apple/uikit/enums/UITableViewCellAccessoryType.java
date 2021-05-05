@@ -21,10 +21,25 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITableViewCellAccessoryType {
+    /**
+     * don't show any accessory view
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * regular chevron. doesn't track
+     */
     @Generated @NInt public static final long DisclosureIndicator = 0x0000000000000001L;
+    /**
+     * info button w/ chevron. tracks
+     */
     @Generated @NInt public static final long DetailDisclosureButton = 0x0000000000000002L;
+    /**
+     * checkmark. doesn't track
+     */
     @Generated @NInt public static final long Checkmark = 0x0000000000000003L;
+    /**
+     * info button. tracks
+     */
     @Generated @NInt public static final long DetailButton = 0x0000000000000004L;
 
     @Generated

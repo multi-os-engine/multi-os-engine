@@ -3,6 +3,7 @@ package apple.arkit;
 import apple.NSObject;
 import apple.arkit.protocol.ARTrackable;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
@@ -23,9 +24,13 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An anchor representing a face and its geometry.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -58,6 +63,11 @@ public class ARFaceAnchor extends ARAnchor implements ARTrackable {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * A dictionary of blend shape coefficients for each blend shape location.
+     * 
+     * Blend shapes coefficients define the amount of displacement of a neutral shape at a specific location on the face.
+     */
     @Generated
     @Selector("blendShapes")
     public native NSDictionary<String, ? extends NSNumber> blendShapes();
@@ -88,6 +98,9 @@ public class ARFaceAnchor extends ARAnchor implements ARTrackable {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The face geometry updated based on the computed blend shapes.
+     */
     @Generated
     @Selector("geometry")
     public native ARFaceGeometry geometry();
@@ -152,4 +165,22 @@ public class ARFaceAnchor extends ARAnchor implements ARTrackable {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithAnchor:")
+    public native ARFaceAnchor initWithAnchor(ARAnchor anchor);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native ARFaceAnchor initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

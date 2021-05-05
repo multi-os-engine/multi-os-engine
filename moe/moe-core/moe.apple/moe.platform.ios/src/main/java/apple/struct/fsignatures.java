@@ -45,14 +45,6 @@ public final class fsignatures extends StructObject {
     }
 
     @Generated
-    public fsignatures(long fs_file_start, VoidPtr fs_blob_start, @NUInt long fs_blob_size) {
-        super(fsignatures.class);
-        setFs_file_start(fs_file_start);
-        setFs_blob_start(fs_blob_start);
-        setFs_blob_size(fs_blob_size);
-    }
-
-    @Generated
     @StructureField(order = 0, isGetter = true)
     public native long fs_file_start();
 
@@ -76,4 +68,47 @@ public final class fsignatures extends StructObject {
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setFs_blob_size(@NUInt long value);
+
+    /**
+     * input: size of this struct (for compatibility)
+     */
+    @Generated
+    @StructureField(order = 3, isGetter = true)
+    @NUInt
+    public native long fs_fsignatures_size();
+
+    /**
+     * input: size of this struct (for compatibility)
+     */
+    @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void setFs_fsignatures_size(@NUInt long value);
+
+    /**
+     * output: cdhash
+     */
+    @Generated
+    @StructureField(order = 4, isGetter = true, count = 20)
+    public native byte fs_cdhash(int field_idx);
+
+    /**
+     * output: cdhash
+     */
+    @Generated
+    @StructureField(order = 4, isGetter = false, count = 20)
+    public native void setFs_cdhash(byte value, int field_idx);
+
+    /**
+     * output: hash algorithm type for cdhash
+     */
+    @Generated
+    @StructureField(order = 5, isGetter = true)
+    public native int fs_hash_type();
+
+    /**
+     * output: hash algorithm type for cdhash
+     */
+    @Generated
+    @StructureField(order = 5, isGetter = false)
+    public native void setFs_hash_type(int value);
 }

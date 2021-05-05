@@ -18,6 +18,9 @@ package apple.glkit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Texture env mode
+ */
 @Generated
 public final class GLKTextureEnvMode {
     @Generated public static final int Replace = 0x00000000;

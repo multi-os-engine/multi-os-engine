@@ -19,6 +19,20 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] AVAuthorizationStatus
+ * 
+ *    Constants indicating the client's authorization to the underlying hardware supporting a media type.
+ * 
+ * [@constant] AVAuthorizationStatusNotDetermined
+ *    Indicates that the user has not yet made a choice regarding whether the client can access the hardware.
+ * [@constant] AVAuthorizationStatusRestricted
+ *    The client is not authorized to access the hardware for the media type. The user cannot change the client's status, possibly due to active restrictions such as parental controls being in place.
+ * [@constant] AVAuthorizationStatusDenied
+ *    The user explicitly denied access to the hardware supporting a media type for the client.
+ * [@constant] AVAuthorizationStatusAuthorized
+ *    The client is authorized to access the hardware supporting a media type.
+ */
 @Generated
 public final class AVAuthorizationStatus {
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;

@@ -43,26 +43,44 @@ public final class sfntVariationHeader extends StructObject {
         super(peer);
     }
 
+    /**
+     * 1.0 Fixed
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int version();
 
+    /**
+     * 1.0 Fixed
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(int value);
 
+    /**
+     * to first axis = 16
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char offsetToData();
 
+    /**
+     * to first axis = 16
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setOffsetToData(char value);
 
+    /**
+     * axis+inst = 2
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native char countSizePairs();
 
+    /**
+     * axis+inst = 2
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setCountSizePairs(char value);
@@ -99,20 +117,32 @@ public final class sfntVariationHeader extends StructObject {
     @StructureField(order = 6, isGetter = false)
     public native void setInstanceSize(char value);
 
+    /**
+     * [axisCount]
+     */
     @Generated
     @StructureField(order = 7, isGetter = true)
     @ByValue
     public native sfntVariationAxis axis();
 
+    /**
+     * [axisCount]
+     */
     @Generated
     @StructureField(order = 7, isGetter = false)
     public native void setAxis(@ByValue sfntVariationAxis value);
 
+    /**
+     * [instanceCount]  …other arrays of data
+     */
     @Generated
     @StructureField(order = 8, isGetter = true)
     @ByValue
     public native sfntInstance instance();
 
+    /**
+     * [instanceCount]  …other arrays of data
+     */
     @Generated
     @StructureField(order = 8, isGetter = false)
     public native void setInstance(@ByValue sfntInstance value);

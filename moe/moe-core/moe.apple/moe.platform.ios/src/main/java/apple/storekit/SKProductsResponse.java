@@ -154,10 +154,16 @@ public class SKProductsResponse extends NSObject {
     @Selector("init")
     public native SKProductsResponse init();
 
+    /**
+     * Array of invalid product identifiers.
+     */
     @Generated
     @Selector("invalidProductIdentifiers")
     public native NSArray<String> invalidProductIdentifiers();
 
+    /**
+     * Array of SKProduct instances.
+     */
     @Generated
     @Selector("products")
     public native NSArray<? extends SKProduct> products();

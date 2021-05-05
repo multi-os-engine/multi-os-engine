@@ -159,20 +159,33 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Limits the maximum number of objects returned in the fetch result, a value of 0 means no limit.  Defaults to 0.
+     */
     @Generated
     @Selector("fetchLimit")
     @NUInt
     public native long fetchLimit();
 
+    /**
+     * Whether hidden burst assets are included in fetch results. Defaults to NO
+     */
     @Generated
     @Selector("includeAllBurstAssets")
     public native boolean includeAllBurstAssets();
 
+    /**
+     * The asset source types included in the fetch results.  Defaults to PHAssetSourceTypeNone.
+     * If set to PHAssetSourceTypeNone the asset source types included in the fetch results are inferred from the type of query performed (see PHAsset fetchAssetsWithOptions:)
+     */
     @Generated
     @Selector("includeAssetSourceTypes")
     @NUInt
     public native long includeAssetSourceTypes();
 
+    /**
+     * Whether hidden assets are included in fetch results. Defaults to NO
+     */
     @Generated
     @Selector("includeHiddenAssets")
     public native boolean includeHiddenAssets();
@@ -181,26 +194,45 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     @Selector("init")
     public native PHFetchOptions init();
 
+    /**
+     * Some predicates / sorts may be suboptimal and we will log
+     */
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
+    /**
+     * Limits the maximum number of objects returned in the fetch result, a value of 0 means no limit.  Defaults to 0.
+     */
     @Generated
     @Selector("setFetchLimit:")
     public native void setFetchLimit(@NUInt long value);
 
+    /**
+     * Whether hidden burst assets are included in fetch results. Defaults to NO
+     */
     @Generated
     @Selector("setIncludeAllBurstAssets:")
     public native void setIncludeAllBurstAssets(boolean value);
 
+    /**
+     * The asset source types included in the fetch results.  Defaults to PHAssetSourceTypeNone.
+     * If set to PHAssetSourceTypeNone the asset source types included in the fetch results are inferred from the type of query performed (see PHAsset fetchAssetsWithOptions:)
+     */
     @Generated
     @Selector("setIncludeAssetSourceTypes:")
     public native void setIncludeAssetSourceTypes(@NUInt long value);
 
+    /**
+     * Whether hidden assets are included in fetch results. Defaults to NO
+     */
     @Generated
     @Selector("setIncludeHiddenAssets:")
     public native void setIncludeHiddenAssets(boolean value);
 
+    /**
+     * Some predicates / sorts may be suboptimal and we will log
+     */
     @Generated
     @Selector("setPredicate:")
     public native void setPredicate(NSPredicate value);
@@ -209,6 +241,10 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     @Selector("setSortDescriptors:")
     public native void setSortDescriptors(NSArray<? extends NSSortDescriptor> value);
 
+    /**
+     * Whether the owner of this object is interested in incremental change details for the results of this fetch (see PHChange)
+     * Defaults to YES
+     */
     @Generated
     @Selector("setWantsIncrementalChangeDetails:")
     public native void setWantsIncrementalChangeDetails(boolean value);
@@ -217,6 +253,10 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     @Selector("sortDescriptors")
     public native NSArray<? extends NSSortDescriptor> sortDescriptors();
 
+    /**
+     * Whether the owner of this object is interested in incremental change details for the results of this fetch (see PHChange)
+     * Defaults to YES
+     */
     @Generated
     @Selector("wantsIncrementalChangeDetails")
     public native boolean wantsIncrementalChangeDetails();

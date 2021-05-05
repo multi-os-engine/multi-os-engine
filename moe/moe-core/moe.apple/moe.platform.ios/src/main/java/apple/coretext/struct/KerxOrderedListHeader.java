@@ -42,42 +42,72 @@ public final class KerxOrderedListHeader extends StructObject {
         super(peer);
     }
 
+    /**
+     * number of kerning pairs in table
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int nPairs();
 
+    /**
+     * number of kerning pairs in table
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setNPairs(int value);
 
+    /**
+     * (largest power of two <= nPairs) * entry size
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int searchRange();
 
+    /**
+     * (largest power of two <= nPairs) * entry size
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSearchRange(int value);
 
+    /**
+     * log2 (largest power of two <= nPairs)
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int entrySelector();
 
+    /**
+     * log2 (largest power of two <= nPairs)
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setEntrySelector(int value);
 
+    /**
+     * (nPairs - largest power of two <= nPairs) * entry size
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int rangeShift();
 
+    /**
+     * (nPairs - largest power of two <= nPairs) * entry size
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setRangeShift(int value);
 
+    /**
+     * entries are first glyph, second glyph, and value
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native int table();
 
+    /**
+     * entries are first glyph, second glyph, and value
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setTable(int value);

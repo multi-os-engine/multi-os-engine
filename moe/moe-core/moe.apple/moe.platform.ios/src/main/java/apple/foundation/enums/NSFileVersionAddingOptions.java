@@ -21,6 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSFileVersionAddingOptions {
+    /**
+     * Whether +addVersionOfItemAtURL:withContentsOfURL:options:error: can move the new version contents file into the version store instead of copying it. Moving is much faster. See the comment for -temporaryDirectoryURLForNewVersionOfItemAtURL: for an example of when this useful.
+     */
     @Generated @NUInt public static final long NSFileVersionAddingByMoving = 0x0000000000000001L;
 
     @Generated

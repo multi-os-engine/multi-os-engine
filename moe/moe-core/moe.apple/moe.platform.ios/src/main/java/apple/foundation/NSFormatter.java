@@ -171,7 +171,7 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
@@ -185,7 +185,7 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFormatter initWithCoder(NSCoder aDecoder);
+    public native NSFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isPartialStringValid:newEditingString:errorDescription:")
@@ -193,6 +193,9 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
             @ReferenceInfo(type = NSString.class) Ptr<NSString> newString,
             @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
 
+    /**
+     * Compatibility method.  If a subclass overrides this and does not override the new method below, this will be called as before (the new method just calls this one by default).  The selection range will always be set to the end of the text with this method if replacement occurs.
+     */
     @Generated
     @Selector("isPartialStringValid:proposedSelectedRange:originalString:originalSelectedRange:errorDescription:")
     public native boolean isPartialStringValidProposedSelectedRangeOriginalStringOriginalSelectedRangeErrorDescription(

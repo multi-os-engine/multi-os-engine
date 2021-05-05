@@ -67,11 +67,17 @@ public final class CAFRegionChunk extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setMNumberRegions(int value);
 
+    /**
+     * this is a variable length array of mNumberRegions elements
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @ByValue
     public native CAFRegion mRegions();
 
+    /**
+     * this is a variable length array of mNumberRegions elements
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setMRegions(@ByValue CAFRegion value);

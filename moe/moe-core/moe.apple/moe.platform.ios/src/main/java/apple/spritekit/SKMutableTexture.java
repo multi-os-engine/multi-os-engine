@@ -46,9 +46,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SKMutableTextures are not currently supported in the simulator
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -219,16 +223,30 @@ public class SKMutableTexture extends SKTexture {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKMutableTexture initWithCoder(NSCoder aDecoder);
+    public native SKMutableTexture initWithCoder(NSCoder coder);
 
+    /**
+     * Create a mutable texture with a specfic size.
+     * 
+     * @param size the dimension to use when creating the given texture.
+     */
     @Generated
     @Selector("initWithSize:")
     public native SKMutableTexture initWithSize(@ByValue CGSize size);
 
+    /**
+     * Create a mutable texture with a specfic size and type.
+     * 
+     * @param size the dimension to use when creating the given texture.
+     * @param format the CoreVideo format type.  supported types include 'RGBA', 'RGhA', and 'RGfA' for byte, half-float, and float components.
+     */
     @Generated
     @Selector("initWithSize:pixelFormat:")
     public native SKMutableTexture initWithSizePixelFormat(@ByValue CGSize size, int format);
 
+    /**
+     * Modify the created mutable texture.
+     */
     @Generated
     @Selector("modifyPixelDataWithBlock:")
     public native void modifyPixelDataWithBlock(
@@ -238,6 +256,16 @@ public class SKMutableTexture extends SKTexture {
     @Generated
     public interface Block_modifyPixelDataWithBlock {
         @Generated
-        void call_modifyPixelDataWithBlock(VoidPtr arg0, @NUInt long arg1);
+        void call_modifyPixelDataWithBlock(VoidPtr pixelData, @NUInt long lengthInBytes);
+    }
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
     }
 }

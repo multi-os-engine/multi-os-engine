@@ -19,10 +19,24 @@ package apple.networkextension.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@typedef] NEOnDemandRuleInterfaceType
+ * 
+ * On Demand rule network interface types
+ */
 @Generated
 public final class NEOnDemandRuleInterfaceType {
+    /**
+     * [@const] NEOnDemandRuleInterfaceTypeAny
+     */
     @Generated @NInt public static final long Any = 0x0000000000000000L;
+    /**
+     * [@const] NEOnDemandRuleInterfaceTypeWiFi WiFi
+     */
     @Generated @NInt public static final long WiFi = 0x0000000000000002L;
+    /**
+     * [@const] NEOnDemandRuleInterfaceTypeCellular Cellular
+     */
     @Generated @NInt public static final long Cellular = 0x0000000000000003L;
 
     @Generated

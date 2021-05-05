@@ -40,6 +40,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CBMutableCharacteristic
+ * 
+ * Used to create a local characteristic, which can be added to the local database via <code>CBPeripheralManager</code>. Once a characteristic
+ * 			is published, it is cached and can no longer be changed.
+ * 			If a characteristic value is specified, it will be cached and marked <code>CBCharacteristicPropertyRead</code> and
+ * 			<code>CBAttributePermissionsReadable</code>. If a characteristic value needs to be writeable, or may change during the lifetime of the
+ * 			published <code>CBService</code>, it is considered a dynamic value and will be requested on-demand. Dynamic values are identified by a
+ * 			<i>value</i> of <i>nil</i>.
+ */
 @Generated
 @Library("CoreBluetooth")
 @Runtime(ObjCRuntime.class)
@@ -159,11 +169,28 @@ public class CBMutableCharacteristic extends CBCharacteristic {
     @Selector("init")
     public native CBMutableCharacteristic init();
 
+    /**
+     * initWithType:properties:value:permissions
+     * 
+     * Returns an initialized characteristic.
+     * 
+     *  @param UUID			The Bluetooth UUID of the characteristic.
+     *  @param properties	The properties of the characteristic.
+     *  @param value		The characteristic value to be cached. If <i>nil</i>, the value will be dynamic and requested on-demand.
+     * @param permissions	The permissions of the characteristic value.
+     */
     @Generated
     @Selector("initWithType:properties:value:permissions:")
     public native CBMutableCharacteristic initWithTypePropertiesValuePermissions(CBUUID UUID, @NUInt long properties,
             NSData value, @NUInt long permissions);
 
+    /**
+     * [@property] permissions
+     * 
+     * The permissions of the characteristic value.
+     * 
+     * @see		CBAttributePermissions
+     */
     @Generated
     @Selector("permissions")
     @NUInt
@@ -178,6 +205,13 @@ public class CBMutableCharacteristic extends CBCharacteristic {
     @Selector("setDescriptors:")
     public native void setDescriptors(NSArray<? extends CBDescriptor> value);
 
+    /**
+     * [@property] permissions
+     * 
+     * The permissions of the characteristic value.
+     * 
+     * @see		CBAttributePermissions
+     */
     @Generated
     @Selector("setPermissions:")
     public native void setPermissions(@NUInt long value);
@@ -190,6 +224,11 @@ public class CBMutableCharacteristic extends CBCharacteristic {
     @Selector("setValue:")
     public native void setValue(NSData value);
 
+    /**
+     * [@property] subscribedCentrals
+     * 
+     * For notifying characteristics, the set of currently subscribed centrals.
+     */
     @Generated
     @Selector("subscribedCentrals")
     public native NSArray<? extends CBCentral> subscribedCentrals();

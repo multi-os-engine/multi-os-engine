@@ -3,10 +3,12 @@ package apple.vision;
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
 import apple.coreimage.CIImage;
+import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
@@ -30,6 +32,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A request that will calculate a transformation for morphing a "floating" image onto an unchanging "reference" image.
+ * 
+ * The request is created with the targeted image acting as the floating image. Processing the request will calculate the transformations that morph the floating image onto the reference image.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -259,4 +266,40 @@ public class VNImageRegistrationRequest extends VNTargetedImageRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("currentRevision")
+    @NUInt
+    public static native long currentRevision();
+
+    @Generated
+    @Selector("defaultRevision")
+    @NUInt
+    public static native long defaultRevision();
+
+    @Generated
+    @Selector("supportedRevisions")
+    public static native NSIndexSet supportedRevisions();
+
+    @Generated
+    @Selector("initWithTargetedCMSampleBuffer:options:")
+    public native VNImageRegistrationRequest initWithTargetedCMSampleBufferOptions(CMSampleBufferRef sampleBuffer,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("initWithTargetedCMSampleBuffer:options:completionHandler:")
+    public native VNImageRegistrationRequest initWithTargetedCMSampleBufferOptionsCompletionHandler(
+            CMSampleBufferRef sampleBuffer, NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCMSampleBufferOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("initWithTargetedCMSampleBuffer:orientation:options:")
+    public native VNImageRegistrationRequest initWithTargetedCMSampleBufferOrientationOptions(
+            CMSampleBufferRef sampleBuffer, int orientation, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("initWithTargetedCMSampleBuffer:orientation:options:completionHandler:")
+    public native VNImageRegistrationRequest initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler(
+            CMSampleBufferRef sampleBuffer, int orientation, NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler completionHandler);
 }

@@ -3,11 +3,13 @@ package apple.coreml;
 import apple.NSObject;
 import apple.coreml.protocol.MLFeatureProvider;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSFastEnumeration;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -27,14 +29,19 @@ import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A concrete convenience class conforming to MLFeatureProvider.
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MLDictionaryFeatureProvider extends NSObject implements MLFeatureProvider, NSFastEnumeration {
+public class MLDictionaryFeatureProvider extends NSObject
+        implements MLFeatureProvider, NSFastEnumeration, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -94,6 +101,9 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Dictionary holding the feature values
+     */
     @Generated
     @Selector("dictionary")
     public native NSDictionary<String, ? extends MLFeatureValue> dictionary();
@@ -115,6 +125,12 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
     @Selector("init")
     public native MLDictionaryFeatureProvider init();
 
+    /**
+     * Create from a generic dictionary by converting all values to MLFeatureValues
+     * or from a dictionary with values already stored as MLFeatureValues.
+     * 
+     * An error results if the values are not or cannot be represented as MLFeatureValues.
+     */
     @Generated
     @Selector("initWithDictionary:error:")
     public native MLDictionaryFeatureProvider initWithDictionaryError(NSDictionary<String, ?> dictionary,
@@ -147,6 +163,9 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Get the value for specified feature
+     */
     @Generated
     @Selector("objectForKeyedSubscript:")
     public native MLFeatureValue objectForKeyedSubscript(String featureName);
@@ -171,4 +190,22 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MLDictionaryFeatureProvider initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

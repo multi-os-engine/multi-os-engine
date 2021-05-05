@@ -159,6 +159,14 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property]       URLAssetInitializationOptions
+     * 
+     * Specifies the initialization options for the creation of AVURLAssets by the receiver, e.g. AVURLAssetPreferPreciseDurationAndTimingKey. The default behavior for creation of AVURLAssets by an AVComposition is equivalent to the behavior of +[AVURLAsset URLAssetWithURL:options:] when specifying no initialization options.
+     * 
+     *   AVCompositions create AVURLAssets internally for URLs specified by AVCompositionTrackSegments of AVCompositionTracks, as needed, whenever AVCompositionTrackSegments were originally added to a track via -[AVMutableCompositionTrack setSegments:] rather than by inserting timeranges of already existing AVAssets or AVAssetTracks.
+     *   The value of URLAssetInitializationOptions can be specified at the time an AVMutableComposition is created via +compositionWithURLAssetInitializationOptions:.
+     */
     @Generated
     @Selector("URLAssetInitializationOptions")
     public native NSDictionary<String, ?> URLAssetInitializationOptions();
@@ -167,28 +175,72 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     @Selector("init")
     public native AVComposition init();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
+    /**
+     * [@property]       naturalSize
+     * 
+     * Indicates the authored size of the visual portion of the composition.
+     */
     @Generated
     @Selector("naturalSize")
     @ByValue
     public native CGSize naturalSize();
 
+    /**
+     * trackWithTrackID:
+     * 
+     * Provides an instance of AVCompositionTrack that represents the track of the specified trackID.
+     * 
+     *   Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
+     * @param          trackID
+     *                 The trackID of the requested AVCompositionTrack.
+     * @return         An instance of AVCompositionTrack; may be nil if no track of the specified trackID is available.
+     */
     @Generated
     @Selector("trackWithTrackID:")
     public native AVCompositionTrack trackWithTrackID(int trackID);
 
+    /**
+     * [@property]       tracks
+     * 
+     * Provides the array of AVCompositionTracks contained by the composition.
+     */
     @Generated
     @Selector("tracks")
     public native NSArray<? extends AVCompositionTrack> tracks();
 
+    /**
+     * tracksWithMediaCharacteristic:
+     * 
+     * Provides an array of AVCompositionTracks of the asset that present media with the specified characteristic.
+     * 
+     *   Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
+     * @param          mediaCharacteristic
+     *                 The media characteristic according to which the receiver filters its AVCompositionTracks. (Media characteristics are defined in AVMediaFormat.h)
+     * @return         An NSArray of AVCompositionTracks; may be empty if no tracks with the specified characteristic are available.
+     */
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
     public native NSArray<? extends AVCompositionTrack> tracksWithMediaCharacteristic(String mediaCharacteristic);
 
+    /**
+     * tracksWithMediaType:
+     * 
+     * Provides an array of AVCompositionTracks of the asset that present media of the specified media type.
+     * 
+     *   Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
+     * @param          mediaType
+     *                 The media type according to which the receiver filters its AVCompositionTracks. (Media types are defined in AVMediaFormat.h)
+     * @return         An NSArray of AVCompositionTracks; may be empty if no tracks of the specified media type are available.
+     */
     @Generated
     @Selector("tracksWithMediaType:")
     public native NSArray<? extends AVCompositionTrack> tracksWithMediaType(String mediaType);

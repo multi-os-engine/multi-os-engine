@@ -22,12 +22,24 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class UITableViewRowAnimation {
     @Generated @NInt public static final long Fade = 0x0000000000000000L;
+    /**
+     * slide in from right (or out to right)
+     */
     @Generated @NInt public static final long Right = 0x0000000000000001L;
     @Generated @NInt public static final long Left = 0x0000000000000002L;
     @Generated @NInt public static final long Top = 0x0000000000000003L;
     @Generated @NInt public static final long Bottom = 0x0000000000000004L;
+    /**
+     * available in iOS 3.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000005L;
+    /**
+     * available in iOS 3.2.  attempts to keep cell centered in the space it will/did occupy
+     */
     @Generated @NInt public static final long Middle = 0x0000000000000006L;
+    /**
+     * available in iOS 5.0.  chooses an appropriate animation style for you
+     */
     @Generated @NInt public static final long Automatic = 0x0000000000000064L;
 
     @Generated

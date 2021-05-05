@@ -154,19 +154,31 @@ public class GKTurnBasedExchange extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * cancel an exchange. It is possible to cancel an exchange that is active or complete. Each recipient will receive a push notification using supplied localizable message. Returns an error if the exchange has already been canceled.
+     */
     @Generated
     @Selector("cancelWithLocalizableMessageKey:arguments:completionHandler:")
     public native void cancelWithLocalizableMessageKeyArgumentsCompletionHandler(String key, NSArray<String> arguments,
             @ObjCBlock(name = "call_cancelWithLocalizableMessageKeyArgumentsCompletionHandler") Block_cancelWithLocalizableMessageKeyArgumentsCompletionHandler completionHandler);
 
+    /**
+     * date when this exchange completed
+     */
     @Generated
     @Selector("completionDate")
     public native NSDate completionDate();
 
+    /**
+     * data to send with the exchange.
+     */
     @Generated
     @Selector("data")
     public native NSData data();
 
+    /**
+     * persistent identifier used to refer to this exchange.
+     */
     @Generated
     @Selector("exchangeID")
     public native String exchangeID();
@@ -175,36 +187,60 @@ public class GKTurnBasedExchange extends NSObject {
     @Selector("init")
     public native GKTurnBasedExchange init();
 
+    /**
+     * localized message for the push notification sent to all recipients of this exchange
+     */
     @Generated
     @Selector("message")
     public native String message();
 
+    /**
+     * participants who are the recipients of the exchange
+     */
     @Generated
     @Selector("recipients")
     public native NSArray<? extends GKTurnBasedParticipant> recipients();
 
+    /**
+     * Array of GKTurnBasedExchangeReply.
+     */
     @Generated
     @Selector("replies")
     public native NSArray<? extends GKTurnBasedExchangeReply> replies();
 
+    /**
+     * reply to an exchange. The sender will receive a push notification using supplied localizable message. Returns an error if the exchange has already been canceled.
+     */
     @Generated
     @Selector("replyWithLocalizableMessageKey:arguments:data:completionHandler:")
     public native void replyWithLocalizableMessageKeyArgumentsDataCompletionHandler(String key,
             NSArray<String> arguments, NSData data,
             @ObjCBlock(name = "call_replyWithLocalizableMessageKeyArgumentsDataCompletionHandler") Block_replyWithLocalizableMessageKeyArgumentsDataCompletionHandler completionHandler);
 
+    /**
+     * send date for the exchange.
+     */
     @Generated
     @Selector("sendDate")
     public native NSDate sendDate();
 
+    /**
+     * participant who sent the exchange
+     */
     @Generated
     @Selector("sender")
     public native GKTurnBasedParticipant sender();
 
+    /**
+     * status of the exchange
+     */
     @Generated
     @Selector("status")
     public native byte status();
 
+    /**
+     * timeout date for the exchange.
+     */
     @Generated
     @Selector("timeoutDate")
     public native NSDate timeoutDate();
@@ -213,13 +249,13 @@ public class GKTurnBasedExchange extends NSObject {
     @Generated
     public interface Block_cancelWithLocalizableMessageKeyArgumentsCompletionHandler {
         @Generated
-        void call_cancelWithLocalizableMessageKeyArgumentsCompletionHandler(NSError arg0);
+        void call_cancelWithLocalizableMessageKeyArgumentsCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_replyWithLocalizableMessageKeyArgumentsDataCompletionHandler {
         @Generated
-        void call_replyWithLocalizableMessageKeyArgumentsDataCompletionHandler(NSError arg0);
+        void call_replyWithLocalizableMessageKeyArgumentsDataCompletionHandler(NSError error);
     }
 }

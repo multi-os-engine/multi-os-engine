@@ -42,6 +42,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents one segment of a function describing a timing curve. The
+ * function maps an input time normalized to the range [0,1] to an
+ * output time also in the range [0,1]. E.g. these functions are used
+ * to define the pacing of an animation over its duration (or over the
+ * duration of one keyframe).
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -100,10 +107,22 @@ public class CAMediaTimingFunction extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Creates a timing function modelled on a cubic Bezier curve. The end
+     * points of the curve are at (0,0) and (1,1), the two points 'c1' and
+     * 'c2' defined by the class instance are the control points. Thus the
+     * points defining the Bezier curve are: '[(0,0), c1, c2, (1,1)]'
+     */
     @Generated
     @Selector("functionWithControlPoints::::")
     public static native CAMediaTimingFunction functionWithControlPoints(float c1x, float c1y, float c2x, float c2y);
 
+    /**
+     * A convenience method for creating common timing functions. The
+     * currently supported names are `linear', `easeIn', `easeOut' and
+     * `easeInEaseOut' and `default' (the curve used by implicit animations
+     * created by Core Animation).
+     */
     @Generated
     @Selector("functionWithName:")
     public static native CAMediaTimingFunction functionWithName(String name);
@@ -163,7 +182,7 @@ public class CAMediaTimingFunction extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -171,7 +190,7 @@ public class CAMediaTimingFunction extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAMediaTimingFunction initWithCoder(NSCoder aDecoder);
+    public native CAMediaTimingFunction initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithControlPoints::::")

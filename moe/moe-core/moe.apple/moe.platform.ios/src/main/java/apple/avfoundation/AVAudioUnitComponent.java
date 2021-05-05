@@ -42,6 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioUnitComponent
+ * 
+ *  Provides details about an audio unit such as type, subtype, manufacturer, location etc. User
+ *  tags can be added to the AVAudioUnitComponent which can be queried later for display.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -148,23 +154,48 @@ public class AVAudioUnitComponent extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * [@property] allTagNames
+     * 
+     * represent the tags from the current user and the system tags defined by AudioComponent.
+     */
     @Generated
     @Selector("allTagNames")
     public native NSArray<String> allTagNames();
 
+    /**
+     * [@property] audioComponent
+     * 
+     * the audioComponent that can be used in AudioComponent APIs.
+     */
     @Generated
     @Selector("audioComponent")
     public native AudioComponent audioComponent();
 
+    /**
+     * [@property] audioComponentDescription
+     * 
+     * description of the audio component that can be used in AudioComponent APIs.
+     */
     @Generated
     @Selector("audioComponentDescription")
     @ByValue
     public native AudioComponentDescription audioComponentDescription();
 
+    /**
+     * [@property] hasMIDIInput
+     * 
+     * YES if AudioComponent has midi input, otherwise NO
+     */
     @Generated
     @Selector("hasMIDIInput")
     public native boolean hasMIDIInput();
 
+    /**
+     * [@property] hasMIDIOutput
+     * 
+     * YES if AudioComponent has midi output, otherwise NO
+     */
     @Generated
     @Selector("hasMIDIOutput")
     public native boolean hasMIDIOutput();
@@ -173,31 +204,67 @@ public class AVAudioUnitComponent extends NSObject {
     @Selector("init")
     public native AVAudioUnitComponent init();
 
+    /**
+     * [@property] sandboxSafe
+     * 
+     * On OSX, YES if the AudioComponent can be loaded into a sandboxed process otherwise NO.
+     * 		  On iOS, this is always YES.
+     */
     @Generated
     @Selector("isSandboxSafe")
     public native boolean isSandboxSafe();
 
+    /**
+     * [@property] localizedTypeName
+     * 
+     * localized string of typeName for display
+     */
     @Generated
     @Selector("localizedTypeName")
     public native String localizedTypeName();
 
+    /**
+     * [@property] manufacturerName
+     * 
+     * the manufacturer name, extracted from the manufacturer key defined in Info.plist dictionary
+     */
     @Generated
     @Selector("manufacturerName")
     public native String manufacturerName();
 
+    /**
+     * [@property] name
+     * 
+     * the name of an audio component
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * [@property] typeName
+     * 
+     * standard audio component types returned as strings
+     */
     @Generated
     @Selector("typeName")
     public native String typeName();
 
+    /**
+     * [@property] version
+     * 
+     * version number comprised of a hexadecimal number with major, minor, dot-release format: 0xMMMMmmDD
+     */
     @Generated
     @Selector("version")
     @NUInt
     public native long version();
 
+    /**
+     * [@property] versionString
+     * 
+     * version number as string
+     */
     @Generated
     @Selector("versionString")
     public native String versionString();

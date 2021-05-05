@@ -151,11 +151,29 @@ public class MDLSubmeshTopology extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] edgeCreaseCount
+     * 
+     * The number of edge creases encoded in edgeCreases
+     */
     @Generated
     @Selector("edgeCreaseCount")
     @NUInt
     public native long edgeCreaseCount();
 
+    /**
+     * A crease value at an edge to be applied during subdivision. Edge creases
+     * A zero value is smooth, a one value is peaked. It is intended to be used
+     * with an index buffer, where the index buffer entries are edge index pairs.
+     * Accordingly, there will be two index entries for each edge sharpness entry,
+     * and the sharpness entry corresponds to the edge itself.
+     * The corresponding values in the edge sharpness attribute indicate the
+     * edge sharpness of those edges.  The index buffer is sparse. If a mesh
+     * has three sharp edges, then the index buffer will have six entries.
+     * Since the number of entries in this vertex buffer is likely to be different
+     * than the number of entries in any other vertex buffer, it shouldn't be
+     * interleaved with other data.
+     */
     @Generated
     @Selector("edgeCreaseIndices")
     @MappedReturn(ObjCObjectMapper.class)
@@ -166,21 +184,56 @@ public class MDLSubmeshTopology extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer edgeCreases();
 
+    /**
+     * [@property] faceCount
+     * 
+     * The number of faces encoded in faceTopologyBuffer
+     */
     @Generated
     @Selector("faceCount")
     @NUInt
     public native long faceCount();
 
+    /**
+     * [@property] faceTopologyBuffer
+     * 
+     * A buffer of 8 bit unsigned integer values, where each entry corresponds
+     * to the number of vertices making up a face.
+     * 
+     * A submesh containing two triangles, a four sided polygon, and a
+     * line, would contain the data 3 3 4 2.
+     * If geometryType is of a fixed type, such as triangles, the buffer
+     * is optional, and will be created on demand if read.
+     * 
+     * Indices to the vertex buffer will be stored in the index buffer
+     * correspondingly. In the example above, the indices would be stored
+     * in order, three indices for the first triangle, followed by three
+     * for the second, followed by four for the polygon, and finally two
+     * indices for the line.
+     */
     @Generated
     @Selector("faceTopology")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer faceTopology();
 
+    /**
+     * [@property] holeCount
+     * 
+     * The number of holes encoded in holes
+     */
     @Generated
     @Selector("holeCount")
     @NUInt
     public native long holeCount();
 
+    /**
+     * The hole attribute is a vertex attribute of single integer values where
+     * each integer is an index of a face that is to be used as a hole. If there
+     * are two holes in a mesh, then the vertex buffer will have two entries.
+     * Since the number of entries in this vertex buffer is likely to be different
+     * than the number of entries in any other vertex buffer, it shouldn't be
+     * interleaved with other data.
+     */
     @Generated
     @Selector("holes")
     @MappedReturn(ObjCObjectMapper.class)
@@ -190,14 +243,37 @@ public class MDLSubmeshTopology extends NSObject {
     @Selector("init")
     public native MDLSubmeshTopology init();
 
+    /**
+     * initWithSubmesh:
+     * 
+     * create a topology object corresponding to the topology in the submesh
+     */
     @Generated
     @Selector("initWithSubmesh:")
     public native MDLSubmeshTopology initWithSubmesh(MDLSubmesh submesh);
 
+    /**
+     * [@property] edgeCreaseCount
+     * 
+     * The number of edge creases encoded in edgeCreases
+     */
     @Generated
     @Selector("setEdgeCreaseCount:")
     public native void setEdgeCreaseCount(@NUInt long value);
 
+    /**
+     * A crease value at an edge to be applied during subdivision. Edge creases
+     * A zero value is smooth, a one value is peaked. It is intended to be used
+     * with an index buffer, where the index buffer entries are edge index pairs.
+     * Accordingly, there will be two index entries for each edge sharpness entry,
+     * and the sharpness entry corresponds to the edge itself.
+     * The corresponding values in the edge sharpness attribute indicate the
+     * edge sharpness of those edges.  The index buffer is sparse. If a mesh
+     * has three sharp edges, then the index buffer will have six entries.
+     * Since the number of entries in this vertex buffer is likely to be different
+     * than the number of entries in any other vertex buffer, it shouldn't be
+     * interleaved with other data.
+     */
     @Generated
     @Selector("setEdgeCreaseIndices:")
     public native void setEdgeCreaseIndices(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
@@ -206,26 +282,77 @@ public class MDLSubmeshTopology extends NSObject {
     @Selector("setEdgeCreases:")
     public native void setEdgeCreases(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
+    /**
+     * [@property] faceCount
+     * 
+     * The number of faces encoded in faceTopologyBuffer
+     */
     @Generated
     @Selector("setFaceCount:")
     public native void setFaceCount(@NUInt long value);
 
+    /**
+     * [@property] faceTopologyBuffer
+     * 
+     * A buffer of 8 bit unsigned integer values, where each entry corresponds
+     * to the number of vertices making up a face.
+     * 
+     * A submesh containing two triangles, a four sided polygon, and a
+     * line, would contain the data 3 3 4 2.
+     * If geometryType is of a fixed type, such as triangles, the buffer
+     * is optional, and will be created on demand if read.
+     * 
+     * Indices to the vertex buffer will be stored in the index buffer
+     * correspondingly. In the example above, the indices would be stored
+     * in order, three indices for the first triangle, followed by three
+     * for the second, followed by four for the polygon, and finally two
+     * indices for the line.
+     */
     @Generated
     @Selector("setFaceTopology:")
     public native void setFaceTopology(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
+    /**
+     * [@property] holeCount
+     * 
+     * The number of holes encoded in holes
+     */
     @Generated
     @Selector("setHoleCount:")
     public native void setHoleCount(@NUInt long value);
 
+    /**
+     * The hole attribute is a vertex attribute of single integer values where
+     * each integer is an index of a face that is to be used as a hole. If there
+     * are two holes in a mesh, then the vertex buffer will have two entries.
+     * Since the number of entries in this vertex buffer is likely to be different
+     * than the number of entries in any other vertex buffer, it shouldn't be
+     * interleaved with other data.
+     */
     @Generated
     @Selector("setHoles:")
     public native void setHoles(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
+    /**
+     * [@property] vertexCreaseCount
+     * 
+     * The number of vertex creases encoded in vertexCreases
+     */
     @Generated
     @Selector("setVertexCreaseCount:")
     public native void setVertexCreaseCount(@NUInt long value);
 
+    /**
+     * A crease value at a vertex to be applied during subdivision. Vertex creases
+     * A zero value is smooth, a one value is peaked. It is intended to be used
+     * with an index buffer, where the index buffer entries are vertex indices.
+     * The corresponding values in the corner sharpness attribute indicate the
+     * corner sharpness of those vertices. The index buffer is sparse. If a mesh
+     * has three sharp vertices, then the index buffer will have three entries.
+     * Since the number of entries in this vertex buffer is likely to be different
+     * than the number of entries in any other vertex buffer, it shouldn't be
+     * interleaved with other data.
+     */
     @Generated
     @Selector("setVertexCreaseIndices:")
     public native void setVertexCreaseIndices(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
@@ -234,11 +361,27 @@ public class MDLSubmeshTopology extends NSObject {
     @Selector("setVertexCreases:")
     public native void setVertexCreases(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
+    /**
+     * [@property] vertexCreaseCount
+     * 
+     * The number of vertex creases encoded in vertexCreases
+     */
     @Generated
     @Selector("vertexCreaseCount")
     @NUInt
     public native long vertexCreaseCount();
 
+    /**
+     * A crease value at a vertex to be applied during subdivision. Vertex creases
+     * A zero value is smooth, a one value is peaked. It is intended to be used
+     * with an index buffer, where the index buffer entries are vertex indices.
+     * The corresponding values in the corner sharpness attribute indicate the
+     * corner sharpness of those vertices. The index buffer is sparse. If a mesh
+     * has three sharp vertices, then the index buffer will have three entries.
+     * Since the number of entries in this vertex buffer is likely to be different
+     * than the number of entries in any other vertex buffer, it shouldn't be
+     * interleaved with other data.
+     */
     @Generated
     @Selector("vertexCreaseIndices")
     @MappedReturn(ObjCObjectMapper.class)

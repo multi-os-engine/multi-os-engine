@@ -22,7 +22,13 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class MPRepeatType {
     @Generated @NInt public static final long Off = 0x0000000000000000L;
+    /**
+     * Nothing is repeated during playback.
+     */
     @Generated @NInt public static final long One = 0x0000000000000001L;
+    /**
+     * Repeat a single item indefinitely.
+     */
     @Generated @NInt public static final long All = 0x0000000000000002L;
 
     @Generated

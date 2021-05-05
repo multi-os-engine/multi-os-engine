@@ -57,14 +57,23 @@ public class ALAssetsFilter extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Get all assets in the group.
+     */
     @Generated
     @Selector("allAssets")
     public static native ALAssetsFilter allAssets();
 
+    /**
+     * Get all photos assets in the assets group.
+     */
     @Generated
     @Selector("allPhotos")
     public static native ALAssetsFilter allPhotos();
 
+    /**
+     * Get all video assets in the assets group.
+     */
     @Generated
     @Selector("allVideos")
     public static native ALAssetsFilter allVideos();

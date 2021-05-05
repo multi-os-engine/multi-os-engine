@@ -181,9 +181,8 @@ def staticloadProject = project(':moe.apple:moe.core.java:staticload')
 tasks.compileCoreJava.dependsOn ':moe.apple:moe.core.java:staticload:jar'
 staticloadProject.afterEvaluate {
     def jar = staticloadProject.tasks['jar']
-    tasks.compileCoreJava.options.compilerArgs.addAll(['-Xplugin:org.moe.javacplugin.StaticLoad',
-                                                       '-processorpath',
-                                                      jar.archivePath.absolutePath])
+    tasks.compileCoreJava.options.compilerArgs.addAll(['-Xplugin:org.moe.javacplugin.StaticLoad'])
+    tasks.compileCoreJava.options.annotationProcessorPath = files([jar.archivePath])
     tasks.compileCoreJava.inputs.files jar.outputs.files
 }
 

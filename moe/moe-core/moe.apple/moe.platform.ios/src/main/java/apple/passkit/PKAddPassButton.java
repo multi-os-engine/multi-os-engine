@@ -23,9 +23,12 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.UIAction;
 import apple.uikit.UIButton;
+import apple.uikit.UIImage;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -50,6 +53,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Use PKAddPassButton to show an "Add to Apple Wallet" button. Two types are available for barcode or payment passes.
+ * Refer to the Apple Pay developer documentation for more information on how to use this class
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -136,7 +143,7 @@ public class PKAddPassButton extends UIButton {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -149,8 +156,8 @@ public class PKAddPassButton extends UIButton {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -380,7 +387,7 @@ public class PKAddPassButton extends UIButton {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -396,7 +403,8 @@ public class PKAddPassButton extends UIButton {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -417,7 +425,7 @@ public class PKAddPassButton extends UIButton {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PKAddPassButton initWithCoder(NSCoder aDecoder);
+    public native PKAddPassButton initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -426,4 +434,29 @@ public class PKAddPassButton extends UIButton {
     @Generated
     @Selector("setAddPassButtonStyle:")
     public native void setAddPassButtonStyle(@NInt long value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("systemButtonWithImage:target:action:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object systemButtonWithImageTargetAction(UIImage image,
+            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+
+    @Generated
+    @Selector("buttonWithType:primaryAction:")
+    public static native PKAddPassButton buttonWithTypePrimaryAction(@NInt long buttonType, UIAction primaryAction);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native PKAddPassButton initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+
+    @Generated
+    @Selector("systemButtonWithPrimaryAction:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object systemButtonWithPrimaryAction(UIAction primaryAction);
 }

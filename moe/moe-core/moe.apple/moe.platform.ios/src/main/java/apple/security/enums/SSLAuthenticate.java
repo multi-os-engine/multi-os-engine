@@ -18,10 +18,25 @@ package apple.security.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * [@enum] SSLAuthenticate
+ * 
+ * Optional; Default is kNeverAuthenticate.
+ *    Can only be called when no session is active.
+ */
 @Generated
 public final class SSLAuthenticate {
+    /**
+     * skip client authentication
+     */
     @Generated public static final int NeverAuthenticate = 0x00000000;
+    /**
+     * require it
+     */
     @Generated public static final int AlwaysAuthenticate = 0x00000001;
+    /**
+     * try to authenticate, but not an error if client doesn't have a cert
+     */
     @Generated public static final int TryAuthenticate = 0x00000002;
 
     @Generated

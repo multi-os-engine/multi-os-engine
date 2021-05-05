@@ -54,36 +54,60 @@ public final class sf_hdtr extends StructObject {
         setTrl_cnt(trl_cnt);
     }
 
+    /**
+     * pointer to an array of header struct iovec's
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native iovec headers();
 
+    /**
+     * pointer to an array of header struct iovec's
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setHeaders(@UncertainArgument("Options: reference, array Fallback: reference") iovec value);
 
+    /**
+     * number of header iovec's
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int hdr_cnt();
 
+    /**
+     * number of header iovec's
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setHdr_cnt(int value);
 
+    /**
+     * pointer to an array of trailer struct iovec's
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native iovec trailers();
 
+    /**
+     * pointer to an array of trailer struct iovec's
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setTrailers(@UncertainArgument("Options: reference, array Fallback: reference") iovec value);
 
+    /**
+     * number of trailer iovec's
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int trl_cnt();
 
+    /**
+     * number of trailer iovec's
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setTrl_cnt(int value);

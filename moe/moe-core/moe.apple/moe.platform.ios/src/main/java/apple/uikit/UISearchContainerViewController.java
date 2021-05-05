@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * If intending to use a UISearchController in a non-presentation manner, use this container view controller.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -170,7 +173,7 @@ public class UISearchContainerViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISearchContainerViewController initWithCoder(NSCoder aDecoder);
+    public native UISearchContainerViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

@@ -52,34 +52,58 @@ public final class AURenderEventHeader extends StructObject {
         setReserved(reserved);
     }
 
+    /**
+     * !< The next event in a linked list of events.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr next();
 
+    /**
+     * !< The next event in a linked list of events.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setNext(VoidPtr value);
 
+    /**
+     * !< The sample time at which the event is scheduled to occur.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native long eventSampleTime();
 
+    /**
+     * !< The sample time at which the event is scheduled to occur.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setEventSampleTime(long value);
 
+    /**
+     * !< The type of the event.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native byte eventType();
 
+    /**
+     * !< The type of the event.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setEventType(byte value);
 
+    /**
+     * !< Must be 0.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native byte reserved();
 
+    /**
+     * !< Must be 0.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setReserved(byte value);

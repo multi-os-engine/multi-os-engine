@@ -53,27 +53,45 @@ public final class sigvec extends StructObject {
         setSv_flags(sv_flags);
     }
 
+    /**
+     * signal handler
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_sv_handler")
     public native Function_sv_handler sv_handler();
 
+    /**
+     * signal handler
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setSv_handler(@FunctionPtr(name = "call_sv_handler") Function_sv_handler value);
 
+    /**
+     * signal mask to apply
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int sv_mask();
 
+    /**
+     * signal mask to apply
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSv_mask(int value);
 
+    /**
+     * see signal options below
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int sv_flags();
 
+    /**
+     * see signal options below
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setSv_flags(int value);

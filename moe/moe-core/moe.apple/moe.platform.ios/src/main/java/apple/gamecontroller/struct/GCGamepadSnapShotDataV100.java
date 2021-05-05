@@ -42,26 +42,46 @@ public final class GCGamepadSnapShotDataV100 extends StructObject {
         super(peer);
     }
 
+    /**
+     * 0x0100
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native char version();
 
+    /**
+     * 0x0100
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(char value);
 
+    /**
+     * sizeof(GCGamepadSnapShotDataV100) or larger
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char size();
 
+    /**
+     * sizeof(GCGamepadSnapShotDataV100) or larger
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSize(char value);
 
+    /**
+     * Standard gamepad data
+     * Axes in the range [-1.0, 1.0]
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native float dpadX();
 
+    /**
+     * Standard gamepad data
+     * Axes in the range [-1.0, 1.0]
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setDpadX(float value);
@@ -74,10 +94,16 @@ public final class GCGamepadSnapShotDataV100 extends StructObject {
     @StructureField(order = 3, isGetter = false)
     public native void setDpadY(float value);
 
+    /**
+     * Buttons in the range [0.0, 1.0]
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native float buttonA();
 
+    /**
+     * Buttons in the range [0.0, 1.0]
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setButtonA(float value);

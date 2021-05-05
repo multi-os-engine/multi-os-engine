@@ -151,6 +151,9 @@ public class NSLengthFormatter extends NSFormatter {
     @NInt
     public static native long version_static();
 
+    /**
+     * No parsing is supported. This method will return NO.
+     */
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
     public native boolean getObjectValueForStringErrorDescription(
@@ -163,44 +166,74 @@ public class NSLengthFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSLengthFormatter initWithCoder(NSCoder aDecoder);
+    public native NSLengthFormatter initWithCoder(NSCoder coder);
 
+    /**
+     * default is NO; if it is set to YES, the number argument for -stringFromMeters: and -unitStringFromMeters: is considered as a person's height
+     */
     @Generated
     @Selector("isForPersonHeightUse")
     public native boolean isForPersonHeightUse();
 
+    /**
+     * default is NO; if it is set to YES, the number argument for -stringFromMeters: and -unitStringFromMeters: is considered as a person's height
+     */
     @Generated
     @Selector("setForPersonHeightUse:")
     public native void setForPersonHeightUse(boolean value);
 
+    /**
+     * default is NSNumberFormatter with NSNumberFormatterDecimalStyle
+     */
     @Generated
     @Selector("numberFormatter")
     public native NSNumberFormatter numberFormatter();
 
+    /**
+     * default is NSNumberFormatter with NSNumberFormatterDecimalStyle
+     */
     @Generated
     @Selector("setNumberFormatter:")
     public native void setNumberFormatter(NSNumberFormatter value);
 
+    /**
+     * default is NSFormattingUnitStyleMedium
+     */
     @Generated
     @Selector("setUnitStyle:")
     public native void setUnitStyle(@NInt long value);
 
+    /**
+     * Format a number in meters to a localized string with the locale-appropriate unit and an appropriate scale (e.g. 4.3m = 14.1ft in the US locale).
+     */
     @Generated
     @Selector("stringFromMeters:")
     public native String stringFromMeters(double numberInMeters);
 
+    /**
+     * Format a combination of a number and an unit to a localized string.
+     */
     @Generated
     @Selector("stringFromValue:unit:")
     public native String stringFromValueUnit(double value, @NInt long unit);
 
+    /**
+     * Return the locale-appropriate unit, the same unit used by -stringFromMeters:.
+     */
     @Generated
     @Selector("unitStringFromMeters:usedUnit:")
     public native String unitStringFromMetersUsedUnit(double numberInMeters, NIntPtr unitp);
 
+    /**
+     * Return a localized string of the given unit, and if the unit is singular or plural is based on the given number.
+     */
     @Generated
     @Selector("unitStringFromValue:unit:")
     public native String unitStringFromValueUnit(double value, @NInt long unit);
 
+    /**
+     * default is NSFormattingUnitStyleMedium
+     */
     @Generated
     @Selector("unitStyle")
     @NInt

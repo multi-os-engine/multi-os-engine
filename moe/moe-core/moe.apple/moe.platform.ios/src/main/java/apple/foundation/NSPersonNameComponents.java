@@ -162,12 +162,18 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Name passed from one generation to another to indicate lineage, e.g. Appleseed
+     */
     @Generated
     @Selector("familyName")
     public native String familyName();
 
+    /**
+     * Name bestowed upon an individual by one's parents, e.g. Johnathan
+     */
     @Generated
     @Selector("givenName")
     public native String givenName();
@@ -178,52 +184,90 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPersonNameComponents initWithCoder(NSCoder aDecoder);
+    public native NSPersonNameComponents initWithCoder(NSCoder coder);
 
+    /**
+     * Secondary given name chosen to differentiate those with the same first name, e.g. Maple
+     */
     @Generated
     @Selector("middleName")
     public native String middleName();
 
+    /**
+     * Pre-nominal letters denoting title, salutation, or honorific, e.g. Dr., Mr.
+     */
     @Generated
     @Selector("namePrefix")
     public native String namePrefix();
 
+    /**
+     * Post-nominal letters denoting degree, accreditation, or other honor, e.g. Esq., Jr., Ph.D.
+     */
     @Generated
     @Selector("nameSuffix")
     public native String nameSuffix();
 
+    /**
+     * Name substituted for the purposes of familiarity, e.g. "Johnny"
+     */
     @Generated
     @Selector("nickname")
     public native String nickname();
 
+    /**
+     * Each element of the phoneticRepresentation should correspond to an element of the original PersonNameComponents instance.
+     * The phoneticRepresentation of the phoneticRepresentation object itself will be ignored. nil by default, must be instantiated.
+     */
     @Generated
     @Selector("phoneticRepresentation")
     public native NSPersonNameComponents phoneticRepresentation();
 
+    /**
+     * Name passed from one generation to another to indicate lineage, e.g. Appleseed
+     */
     @Generated
     @Selector("setFamilyName:")
     public native void setFamilyName(String value);
 
+    /**
+     * Name bestowed upon an individual by one's parents, e.g. Johnathan
+     */
     @Generated
     @Selector("setGivenName:")
     public native void setGivenName(String value);
 
+    /**
+     * Secondary given name chosen to differentiate those with the same first name, e.g. Maple
+     */
     @Generated
     @Selector("setMiddleName:")
     public native void setMiddleName(String value);
 
+    /**
+     * Pre-nominal letters denoting title, salutation, or honorific, e.g. Dr., Mr.
+     */
     @Generated
     @Selector("setNamePrefix:")
     public native void setNamePrefix(String value);
 
+    /**
+     * Post-nominal letters denoting degree, accreditation, or other honor, e.g. Esq., Jr., Ph.D.
+     */
     @Generated
     @Selector("setNameSuffix:")
     public native void setNameSuffix(String value);
 
+    /**
+     * Name substituted for the purposes of familiarity, e.g. "Johnny"
+     */
     @Generated
     @Selector("setNickname:")
     public native void setNickname(String value);
 
+    /**
+     * Each element of the phoneticRepresentation should correspond to an element of the original PersonNameComponents instance.
+     * The phoneticRepresentation of the phoneticRepresentation object itself will be ignored. nil by default, must be instantiated.
+     */
     @Generated
     @Selector("setPhoneticRepresentation:")
     public native void setPhoneticRepresentation(NSPersonNameComponents value);

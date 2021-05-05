@@ -23,6 +23,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A configuration for running face tracking.
+ * 
+ * Face tracking uses the front facing camera to track the face in 3D providing details on the topology and expression of the face.
+ * A detected face will be added to the session as an ARFaceAnchor object which contains information about head pose, mesh, eye pose, and blend shape
+ * coefficients. If light estimation is enabled the detected face will be treated as a light probe and used to estimate the direction of incoming light.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -141,4 +148,68 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Enable or disable World Tracking. Disabled by default.
+     * 
+     * When enabled, ARSession uses the back facing camera to track the device's orientation and position in the world. The camera transform and the ARFaceAnchor transform will be in the world coordinate space.
+     */
+    @Generated
+    @Selector("isWorldTrackingEnabled")
+    public native boolean isWorldTrackingEnabled();
+
+    /**
+     * Maximum number of faces to track simultaneously.
+     * 
+     * Setting the maximum number of tracked faces will limit the number of faces that can be tracked in a given frame.
+     * If more than the maximum is visible, only the faces already being tracked will continue to track until tracking is lost or another face is removed.
+     * Default value is one.
+     */
+    @Generated
+    @Selector("maximumNumberOfTrackedFaces")
+    @NInt
+    public native long maximumNumberOfTrackedFaces();
+
+    /**
+     * Maximum number of faces to track simultaneously.
+     * 
+     * Setting the maximum number of tracked faces will limit the number of faces that can be tracked in a given frame.
+     * If more than the maximum is visible, only the faces already being tracked will continue to track until tracking is lost or another face is removed.
+     * Default value is one.
+     */
+    @Generated
+    @Selector("setMaximumNumberOfTrackedFaces:")
+    public native void setMaximumNumberOfTrackedFaces(@NInt long value);
+
+    /**
+     * Enable or disable World Tracking. Disabled by default.
+     * 
+     * When enabled, ARSession uses the back facing camera to track the device's orientation and position in the world. The camera transform and the ARFaceAnchor transform will be in the world coordinate space.
+     */
+    @Generated
+    @Selector("setWorldTrackingEnabled:")
+    public native void setWorldTrackingEnabled(boolean value);
+
+    /**
+     * Maximum number of faces which can be tracked simultaneously.
+     */
+    @Generated
+    @Selector("supportedNumberOfTrackedFaces")
+    @NInt
+    public static native long supportedNumberOfTrackedFaces();
+
+    @Generated
+    @Selector("supportedVideoFormats")
+    public static native NSArray<? extends ARVideoFormat> supportedVideoFormats();
+
+    @Generated
+    @Selector("supportsFrameSemantics:")
+    public static native boolean supportsFrameSemantics(@NUInt long frameSemantics);
+
+    /**
+     * Indicates whether world tracking can be enabled on this device.
+     */
+    @Generated
+    @Selector("supportsWorldTracking")
+    public static native boolean supportsWorldTracking();
 }

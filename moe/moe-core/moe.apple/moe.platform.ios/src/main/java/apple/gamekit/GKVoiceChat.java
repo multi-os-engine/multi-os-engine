@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GKVoiceChat represents an instance of a named voice communications channel
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -159,18 +162,30 @@ public class GKVoiceChat extends NSObject {
     @Selector("init")
     public native GKVoiceChat init();
 
+    /**
+     * make this session active and route the microphone
+     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
+    /**
+     * make this session active and route the microphone
+     */
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
 
+    /**
+     * name the chat was created with
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * This property is obsolete. **
+     */
     @Generated
     @Deprecated
     @Selector("playerIDs")
@@ -187,15 +202,24 @@ public class GKVoiceChat extends NSObject {
     @ObjCBlock(name = "call_playerVoiceChatStateDidChangeHandler_ret")
     public native Block_playerVoiceChatStateDidChangeHandler_ret playerVoiceChatStateDidChangeHandler();
 
+    /**
+     * array of GKPlayer *
+     */
     @Generated
     @Selector("players")
     public native NSArray<? extends GKPlayer> players();
 
+    /**
+     * This method is obsolete. It will never be invoked and its implementation does nothing**
+     */
     @Generated
     @Deprecated
     @Selector("setMute:forPlayer:")
     public native void setMuteForPlayer(boolean isMuted, String playerID);
 
+    /**
+     * stop receiving audio from the chat
+     */
     @Generated
     @Selector("setPlayer:muted:")
     public native void setPlayerMuted(GKPlayer player, boolean isMuted);
@@ -211,6 +235,9 @@ public class GKVoiceChat extends NSObject {
     public native void setPlayerVoiceChatStateDidChangeHandler(
             @ObjCBlock(name = "call_setPlayerVoiceChatStateDidChangeHandler") Block_setPlayerVoiceChatStateDidChangeHandler value);
 
+    /**
+     * default 1.0 (max is 1.0, min is 0.0)
+     */
     @Generated
     @Selector("setVolume:")
     public native void setVolume(float value);
@@ -219,10 +246,16 @@ public class GKVoiceChat extends NSObject {
     @Selector("start")
     public native void start();
 
+    /**
+     * start receiving audio from the chat
+     */
     @Generated
     @Selector("stop")
     public native void stop();
 
+    /**
+     * default 1.0 (max is 1.0, min is 0.0)
+     */
     @Generated
     @Selector("volume")
     public native float volume();

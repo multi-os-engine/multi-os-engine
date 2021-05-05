@@ -23,6 +23,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A node representing a MPSCNNNeuronLinear kernel
+ * 
+ * For each pixel, applies the following function:
+ * [@code]
+ *     f(x) = a * x + b
+ * [@endcode]
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -90,10 +98,21 @@ public class MPSCNNNeuronLinearNode extends MPSCNNNeuronNode {
     @Selector("init")
     public native MPSCNNNeuronLinearNode init();
 
+    /**
+     * Init a node with default values for parameters a & b
+     */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNNeuronLinearNode initWithSource(MPSNNImageNode sourceNode);
 
+    /**
+     * Init a node representing a MPSCNNNeuronLinear kernel
+     * 
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      a                       See discussion above.
+     * @param      b                       See discussion above.
+     * @return     A new MPSNNFilter node for a MPSCNNNeuronLinear kernel.
+     */
     @Generated
     @Selector("initWithSource:a:b:")
     public native MPSCNNNeuronLinearNode initWithSourceAB(MPSNNImageNode sourceNode, float a, float b);
@@ -125,6 +144,9 @@ public class MPSCNNNeuronLinearNode extends MPSCNNNeuronNode {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Create an autoreleased node with default values for parameters a & b
+     */
     @Generated
     @Selector("nodeWithSource:")
     public static native MPSCNNNeuronLinearNode nodeWithSource(MPSNNImageNode sourceNode);
@@ -153,4 +175,9 @@ public class MPSCNNNeuronLinearNode extends MPSCNNNeuronNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("nodeWithSource:descriptor:")
+    public static native MPSCNNNeuronLinearNode nodeWithSourceDescriptor(MPSNNImageNode sourceNode,
+            MPSNNNeuronDescriptor descriptor);
 }

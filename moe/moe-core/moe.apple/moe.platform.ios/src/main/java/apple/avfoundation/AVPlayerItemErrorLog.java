@@ -41,6 +41,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVPlayerItemErrorLog
+ * 
+ * An AVPlayerItemErrorLog provides methods to retrieve the error log in a format suitable for serialization.
+ * 
+ * An AVPlayerItemErrorLog provides data to identify if, and when, network resource playback failures occured.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -158,14 +165,42 @@ public class AVPlayerItemErrorLog extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * [@property]		events
+     * 
+     * An ordered collection of AVPlayerItemErrorLogEvent instances.
+     * 
+     * An ordered collection of AVPlayerItemErrorLogEvent instances that represent the chronological
+     * 				sequence of events contained in the error log.
+     * 				This property is not observable.
+     */
     @Generated
     @Selector("events")
     public native NSArray<? extends AVPlayerItemErrorLogEvent> events();
 
+    /**
+     * extendedLogData
+     * 
+     * Serializes an AVPlayerItemErrorLog in the Extended Log File Format.
+     * 
+     * This method converts the webserver error log into a textual format that conforms to the
+     * 			W3C Extended Log File Format for web server log files.
+     * 			For more information see: http://www.w3.org/pub/WWW/TR/WD-logfile.html
+     * 
+     * @return		An autoreleased NSData instance.
+     */
     @Generated
     @Selector("extendedLogData")
     public native NSData extendedLogData();
 
+    /**
+     * [@property]		extendedLogDataStringEncoding
+     * 
+     * Returns the NSStringEncoding for extendedLogData, see above.
+     * 
+     * A string suitable for console output is obtainable by:
+     * 				[[NSString alloc] initWithData:[myLog extendedLogData] encoding:[myLog extendedLogDataStringEncoding]]
+     */
     @Generated
     @Selector("extendedLogDataStringEncoding")
     @NUInt

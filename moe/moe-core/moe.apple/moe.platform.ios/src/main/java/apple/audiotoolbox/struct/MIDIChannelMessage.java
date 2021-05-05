@@ -51,18 +51,30 @@ public final class MIDIChannelMessage extends StructObject {
         setReserved(reserved);
     }
 
+    /**
+     * contains message and channel
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native byte status();
 
+    /**
+     * contains message and channel
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setStatus(byte value);
 
+    /**
+     * message specific data
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native byte data1();
 
+    /**
+     * message specific data
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setData1(byte value);

@@ -204,4 +204,12 @@ public class SKMutablePayment extends SKPayment {
     @Generated
     @Selector("simulatesAskToBuyInSandbox")
     public native boolean simulatesAskToBuyInSandbox();
+
+    @Generated
+    @Selector("paymentDiscount")
+    public native SKPaymentDiscount paymentDiscount();
+
+    @Generated
+    @Selector("setPaymentDiscount:")
+    public native void setPaymentDiscount(SKPaymentDiscount value);
 }

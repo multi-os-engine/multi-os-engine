@@ -74,6 +74,9 @@ public class ALAssetsLibrary extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Returns photo data authorization status for this application
+     */
     @Generated
     @Deprecated
     @Selector("authorizationStatus")
@@ -110,6 +113,9 @@ public class ALAssetsLibrary extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Disable retrieval and notifications for Shared Photo Streams
+     */
     @Generated
     @Deprecated
     @Selector("disableSharedPhotoStreamsSupport")
@@ -168,6 +174,13 @@ public class ALAssetsLibrary extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Add a new ALAssetsGroup to the library.
+     * The name of the ALAssetsGroup is name and the type is ALAssetsGroupAlbum.  The editable property of this ALAssetsGroup returns YES.
+     * If name conflicts with another ALAssetsGroup with the same name, then the group is not created and the result block returns a nil group.
+     * When the ALAssetsGroup is added, the user may be asked to confirm the application's access to the data.  If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
+     * If the data is currently unavailable, the failure block will be called.
+     */
     @Generated
     @Deprecated
     @Selector("addAssetsGroupAlbumWithName:resultBlock:failureBlock:")
@@ -175,6 +188,11 @@ public class ALAssetsLibrary extends NSObject {
             @ObjCBlock(name = "call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1") Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1 resultBlock,
             @ObjCBlock(name = "call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2") Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2 failureBlock);
 
+    /**
+     * Returns an ALAsset object in the result block for a URL previously retrieved from an ALAsset object.
+     * When the ALAsset is requested, the user may be asked to confirm the application's access to the data. If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
+     * If the data is currently unavailable, the failure block will be called.
+     */
     @Generated
     @Deprecated
     @Selector("assetForURL:resultBlock:failureBlock:")
@@ -182,6 +200,12 @@ public class ALAssetsLibrary extends NSObject {
             @ObjCBlock(name = "call_assetForURLResultBlockFailureBlock_1") Block_assetForURLResultBlockFailureBlock_1 resultBlock,
             @ObjCBlock(name = "call_assetForURLResultBlockFailureBlock_2") Block_assetForURLResultBlockFailureBlock_2 failureBlock);
 
+    /**
+     * Get the list of groups that match the given types. Multiple types can be ORed together. The results are passed one by one to the caller by executing the enumeration block.
+     * When the enumeration is done, 'enumerationBlock' will be called with group set to nil.
+     * When groups are enumerated, the user may be asked to confirm the application's access to the data. If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
+     * If the data is currently unavailable, the failure block will be called.
+     */
     @Generated
     @Deprecated
     @Selector("enumerateGroupsWithTypes:usingBlock:failureBlock:")
@@ -189,6 +213,11 @@ public class ALAssetsLibrary extends NSObject {
             @ObjCBlock(name = "call_enumerateGroupsWithTypesUsingBlockFailureBlock_1") Block_enumerateGroupsWithTypesUsingBlockFailureBlock_1 enumerationBlock,
             @ObjCBlock(name = "call_enumerateGroupsWithTypesUsingBlockFailureBlock_2") Block_enumerateGroupsWithTypesUsingBlockFailureBlock_2 failureBlock);
 
+    /**
+     * Returns an ALAssetsGroup object in the result block for a URL previously retrieved from an ALAssetsGroup object.
+     * When the ALAssetsGroup is requested, the user may be asked to confirm the application's access to the data.  If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
+     * If the data is currently unavailable, the failure block will be called.
+     */
     @Generated
     @Deprecated
     @Selector("groupForURL:resultBlock:failureBlock:")
@@ -205,6 +234,9 @@ public class ALAssetsLibrary extends NSObject {
     @Selector("videoAtPathIsCompatibleWithSavedPhotosAlbum:")
     public native boolean videoAtPathIsCompatibleWithSavedPhotosAlbum(NSURL videoPathURL);
 
+    /**
+     * If there is a conflict between the metadata in the image data and the metadata dictionary, the image data metadata values will be overwritten
+     */
     @Generated
     @Deprecated
     @Selector("writeImageDataToSavedPhotosAlbum:metadata:completionBlock:")
@@ -212,6 +244,9 @@ public class ALAssetsLibrary extends NSObject {
             NSDictionary<?, ?> metadata,
             @ObjCBlock(name = "call_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock") Block_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
 
+    /**
+     * The API user will have to specify the orientation key in the metadata dictionary to preserve the orientation of the image
+     */
     @Generated
     @Deprecated
     @Selector("writeImageToSavedPhotosAlbum:metadata:completionBlock:")
@@ -219,6 +254,9 @@ public class ALAssetsLibrary extends NSObject {
             NSDictionary<?, ?> metadata,
             @ObjCBlock(name = "call_writeImageToSavedPhotosAlbumMetadataCompletionBlock") Block_writeImageToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
 
+    /**
+     * With a UIImage, the API user can use -[UIImage CGImage] to get a CGImageRef, and cast -[UIImage imageOrientation] to ALAssetOrientation.
+     */
     @Generated
     @Deprecated
     @Selector("writeImageToSavedPhotosAlbum:orientation:completionBlock:")
@@ -236,83 +274,83 @@ public class ALAssetsLibrary extends NSObject {
     @Generated
     public interface Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1 {
         @Generated
-        void call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1(ALAssetsGroup arg0);
+        void call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1(ALAssetsGroup group);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2 {
         @Generated
-        void call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2(NSError arg0);
+        void call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_assetForURLResultBlockFailureBlock_1 {
         @Generated
-        void call_assetForURLResultBlockFailureBlock_1(ALAsset arg0);
+        void call_assetForURLResultBlockFailureBlock_1(ALAsset asset);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_assetForURLResultBlockFailureBlock_2 {
         @Generated
-        void call_assetForURLResultBlockFailureBlock_2(NSError arg0);
+        void call_assetForURLResultBlockFailureBlock_2(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateGroupsWithTypesUsingBlockFailureBlock_1 {
         @Generated
-        void call_enumerateGroupsWithTypesUsingBlockFailureBlock_1(ALAssetsGroup arg0, BoolPtr arg1);
+        void call_enumerateGroupsWithTypesUsingBlockFailureBlock_1(ALAssetsGroup group, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateGroupsWithTypesUsingBlockFailureBlock_2 {
         @Generated
-        void call_enumerateGroupsWithTypesUsingBlockFailureBlock_2(NSError arg0);
+        void call_enumerateGroupsWithTypesUsingBlockFailureBlock_2(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_groupForURLResultBlockFailureBlock_1 {
         @Generated
-        void call_groupForURLResultBlockFailureBlock_1(ALAssetsGroup arg0);
+        void call_groupForURLResultBlockFailureBlock_1(ALAssetsGroup group);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_groupForURLResultBlockFailureBlock_2 {
         @Generated
-        void call_groupForURLResultBlockFailureBlock_2(NSError arg0);
+        void call_groupForURLResultBlockFailureBlock_2(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock {
         @Generated
-        void call_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSURL arg0, NSError arg1);
+        void call_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSURL assetURL, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeImageToSavedPhotosAlbumMetadataCompletionBlock {
         @Generated
-        void call_writeImageToSavedPhotosAlbumMetadataCompletionBlock(NSURL arg0, NSError arg1);
+        void call_writeImageToSavedPhotosAlbumMetadataCompletionBlock(NSURL assetURL, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeImageToSavedPhotosAlbumOrientationCompletionBlock {
         @Generated
-        void call_writeImageToSavedPhotosAlbumOrientationCompletionBlock(NSURL arg0, NSError arg1);
+        void call_writeImageToSavedPhotosAlbumOrientationCompletionBlock(NSURL assetURL, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeVideoAtPathToSavedPhotosAlbumCompletionBlock {
         @Generated
-        void call_writeVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL arg0, NSError arg1);
+        void call_writeVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL assetURL, NSError error);
     }
 }

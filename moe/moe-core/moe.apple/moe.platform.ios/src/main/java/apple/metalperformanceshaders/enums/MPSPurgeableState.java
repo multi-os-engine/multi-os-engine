@@ -21,6 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MPSPurgeableState {
+    /**
+     * The buffer hasn't been allocated yet. Attempts to set purgeability will be ignored.
+     */
     @Generated @NUInt public static final long AllocationDeferred = 0x0000000000000000L;
     @Generated @NUInt public static final long KeepCurrent = 0x0000000000000001L;
     @Generated @NUInt public static final long NonVolatile = 0x0000000000000002L;

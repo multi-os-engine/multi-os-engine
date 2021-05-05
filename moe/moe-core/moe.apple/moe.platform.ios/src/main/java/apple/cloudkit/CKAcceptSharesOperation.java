@@ -152,6 +152,14 @@ public class CKAcceptSharesOperation extends CKOperation {
     @NInt
     public static native long version_static();
 
+    /**
+     * This block is called when the operation completes.
+     * 
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of shareURLs to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * This call happens as soon as the server has seen all record changes, and may be invoked while the server is processing the side effects of those changes.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("acceptSharesCompletionBlock")
     @ObjCBlock(name = "call_acceptSharesCompletionBlock_ret")
@@ -165,16 +173,36 @@ public class CKAcceptSharesOperation extends CKOperation {
     @Selector("initWithShareMetadatas:")
     public native CKAcceptSharesOperation initWithShareMetadatas(NSArray<? extends CKShareMetadata> shareMetadatas);
 
+    /**
+     * Called once for each share metadata that the server processed
+     * 
+     * If error is nil then the share was successfully accepted.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("perShareCompletionBlock")
     @ObjCBlock(name = "call_perShareCompletionBlock_ret")
     public native Block_perShareCompletionBlock_ret perShareCompletionBlock();
 
+    /**
+     * This block is called when the operation completes.
+     * 
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of shareURLs to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * This call happens as soon as the server has seen all record changes, and may be invoked while the server is processing the side effects of those changes.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("setAcceptSharesCompletionBlock:")
     public native void setAcceptSharesCompletionBlock(
             @ObjCBlock(name = "call_setAcceptSharesCompletionBlock") Block_setAcceptSharesCompletionBlock value);
 
+    /**
+     * Called once for each share metadata that the server processed
+     * 
+     * If error is nil then the share was successfully accepted.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("setPerShareCompletionBlock:")
     public native void setPerShareCompletionBlock(

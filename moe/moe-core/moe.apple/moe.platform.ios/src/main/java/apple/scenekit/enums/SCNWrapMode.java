@@ -19,6 +19,11 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] SCNWrapeMode
+ * 
+ * Wrap modes
+ */
 @Generated
 public final class SCNWrapMode {
     @Generated @NInt public static final long Clamp = 0x0000000000000001L;

@@ -189,6 +189,9 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * Base unit - watts
+     */
     @Generated
     @Selector("terawatts")
     public static native NSUnitPower terawatts();
@@ -204,7 +207,7 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -212,7 +215,7 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitPower initWithCoder(NSCoder aDecoder);
+    public native NSUnitPower initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

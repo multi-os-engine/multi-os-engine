@@ -44,6 +44,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This class represents an event that is evaluated based on entry to and/or
+ *        exit from a Region
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -159,14 +163,34 @@ public class HMLocationEvent extends HMEvent implements NSCopying, NSMutableCopy
     @Selector("init")
     public native HMLocationEvent init();
 
+    /**
+     * Initializes a new location event object
+     * 
+     * @param region - Region with at least one property of notifyOnEntry or notifyOnExit set to TRUE.
+     * 
+     * @return Instance object representing the location event.
+     */
     @Generated
     @Selector("initWithRegion:")
     public native HMLocationEvent initWithRegion(CLRegion region);
 
+    /**
+     * Region on which events are triggered based on the properties notifyOnEntry and notifyOnExit.
+     *        This property will be nil when an application is not authorized for location services.
+     */
     @Generated
     @Selector("region")
     public native CLRegion region();
 
+    /**
+     * Updates the region
+     * 
+     * @param region - New region with at least one property of notifyOnEntry or notifyOnExit set to TRUE.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateRegion:completionHandler:")
     public native void updateRegionCompletionHandler(CLRegion region,
@@ -176,7 +200,7 @@ public class HMLocationEvent extends HMEvent implements NSCopying, NSMutableCopy
     @Generated
     public interface Block_updateRegionCompletionHandler {
         @Generated
-        void call_updateRegionCompletionHandler(NSError arg0);
+        void call_updateRegionCompletionHandler(NSError error);
     }
 
     @Generated
@@ -189,6 +213,7 @@ public class HMLocationEvent extends HMEvent implements NSCopying, NSMutableCopy
     @Selector("isSupportedForHome:")
     public static native boolean isSupportedForHome(HMHome home);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

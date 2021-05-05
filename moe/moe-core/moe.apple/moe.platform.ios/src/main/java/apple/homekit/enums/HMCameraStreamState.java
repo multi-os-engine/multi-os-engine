@@ -19,11 +19,26 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * This enumeration describes the different states of a camera stream.
+ */
 @Generated
 public final class HMCameraStreamState {
+    /**
+     * Start stream request is in progress.
+     */
     @Generated @NUInt public static final long Starting = 0x0000000000000001L;
+    /**
+     * Streaming is in progress.
+     */
     @Generated @NUInt public static final long Streaming = 0x0000000000000002L;
+    /**
+     * Stop stream request is in progress.
+     */
     @Generated @NUInt public static final long Stopping = 0x0000000000000003L;
+    /**
+     * No streaming is in progress.
+     */
     @Generated @NUInt public static final long NotStreaming = 0x0000000000000004L;
 
     @Generated

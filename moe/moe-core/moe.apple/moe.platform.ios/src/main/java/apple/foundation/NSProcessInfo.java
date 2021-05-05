@@ -163,11 +163,17 @@ public class NSProcessInfo extends NSObject {
     @Selector("arguments")
     public native NSArray<String> arguments();
 
+    /**
+     * Pass in an activity to this API, and a non-NULL, non-empty reason string. Indicate completion of the activity by calling the corresponding endActivity: method with the result of the beginActivityWithOptions:reason: method. The reason string is used for debugging.
+     */
     @Generated
     @Selector("beginActivityWithOptions:reason:")
     @MappedReturn(ObjCObjectMapper.class)
     public native apple.protocol.NSObject beginActivityWithOptionsReason(long options, String reason);
 
+    /**
+     * The argument to this method is the result of beginActivityWithOptions:reason:.
+     */
     @Generated
     @Selector("endActivity:")
     public native void endActivity(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject activity);
@@ -188,6 +194,9 @@ public class NSProcessInfo extends NSObject {
     @Selector("init")
     public native NSProcessInfo init();
 
+    /**
+     * Retrieve the current setting of the system for the low power mode setting. On systems where the low power mode is unknown or unsupported, the value returned from the lowPowerModeEnabled property is always NO
+     */
     @Generated
     @Selector("isLowPowerModeEnabled")
     public native boolean isLowPowerModeEnabled();
@@ -212,15 +221,24 @@ public class NSProcessInfo extends NSObject {
     @ByValue
     public native NSOperatingSystemVersion operatingSystemVersion();
 
+    /**
+     * Human readable, localized; appropriate for displaying to user or using in bug emails and such; NOT appropriate for parsing
+     */
     @Generated
     @Selector("operatingSystemVersionString")
     public native String operatingSystemVersionString();
 
+    /**
+     * Synchronously perform an activity. The activity will be automatically ended after your block argument returns. The reason string is used for debugging.
+     */
     @Generated
     @Selector("performActivityWithOptions:reason:usingBlock:")
     public native void performActivityWithOptionsReasonUsingBlock(long options, String reason,
             @ObjCBlock(name = "call_performActivityWithOptionsReasonUsingBlock") Block_performActivityWithOptionsReasonUsingBlock block);
 
+    /**
+     * Perform an expiring background task, which obtains an expiring task assertion on iOS. The block contains any work which needs to be completed as a background-priority task. The block will be scheduled on a system-provided concurrent queue. After a system-specified time, the block will be called with the `expired` parameter set to YES. The `expired` parameter will also be YES if the system decides to prematurely terminate a previous non-expiration invocation of the block.
+     */
     @Generated
     @Selector("performExpiringActivityWithReason:usingBlock:")
     public native void performExpiringActivityWithReasonUsingBlock(String reason,
@@ -262,11 +280,22 @@ public class NSProcessInfo extends NSObject {
     @Generated
     public interface Block_performExpiringActivityWithReasonUsingBlock {
         @Generated
-        void call_performExpiringActivityWithReasonUsingBlock(boolean arg0);
+        void call_performExpiringActivityWithReasonUsingBlock(boolean expired);
     }
 
+    /**
+     * Retrieve the current thermal state of the system. On systems where thermal state is unknown or unsupported, the value returned from the thermalState property is always NSProcessInfoThermalStateNominal.
+     */
     @Generated
     @Selector("thermalState")
     @NInt
     public native long thermalState();
+
+    @Generated
+    @Selector("isMacCatalystApp")
+    public native boolean isMacCatalystApp();
+
+    @Generated
+    @Selector("isiOSAppOnMac")
+    public native boolean isiOSAppOnMac();
 }

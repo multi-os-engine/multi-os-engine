@@ -165,6 +165,12 @@ public class CKModifyBadgeOperation extends CKOperation {
     @Selector("initWithBadgeValue:")
     public native CKModifyBadgeOperation initWithBadgeValue(@NUInt long badgeValue);
 
+    /**
+     * This block is called when the operation completes.
+     * 
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("modifyBadgeCompletionBlock")
     @ObjCBlock(name = "call_modifyBadgeCompletionBlock_ret")
@@ -174,6 +180,12 @@ public class CKModifyBadgeOperation extends CKOperation {
     @Selector("setBadgeValue:")
     public native void setBadgeValue(@NUInt long value);
 
+    /**
+     * This block is called when the operation completes.
+     * 
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
     @Generated
     @Selector("setModifyBadgeCompletionBlock:")
     public native void setModifyBadgeCompletionBlock(

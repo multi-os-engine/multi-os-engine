@@ -184,7 +184,7 @@ public class CKUserIdentityLookupInfo extends NSObject implements NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -192,7 +192,7 @@ public class CKUserIdentityLookupInfo extends NSObject implements NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKUserIdentityLookupInfo initWithCoder(NSCoder aDecoder);
+    public native CKUserIdentityLookupInfo initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithEmailAddress:")

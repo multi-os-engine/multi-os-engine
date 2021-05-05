@@ -39,6 +39,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioConnectionPoint
+ * 
+ * A representation of either a source or destination connection point in AVAudioEngine.
+ * 
+ * 	AVAudioConnectionPoint describes either a source or destination connection point (node, bus)
+ * 	in AVAudioEngine's graph.
+ * 
+ * 	Instances of this class are immutable.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -150,6 +160,11 @@ public class AVAudioConnectionPoint extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] bus
+     * 
+     * Returns the bus on the node in the connection point.
+     */
     @Generated
     @Selector("bus")
     @NUInt
@@ -159,10 +174,25 @@ public class AVAudioConnectionPoint extends NSObject {
     @Selector("init")
     public native AVAudioConnectionPoint init();
 
+    /**
+     * initWithNode:bus:
+     * 
+     * Create a connection point object.
+     * 
+     * 	If the node is nil, this method fails (returns nil).
+     * 
+     * @param node the source or destination node
+     * @param bus the output or input bus on the node
+     */
     @Generated
     @Selector("initWithNode:bus:")
     public native AVAudioConnectionPoint initWithNodeBus(AVAudioNode node, @NUInt long bus);
 
+    /**
+     * [@property] node
+     * 
+     * Returns the node in the connection point.
+     */
     @Generated
     @Selector("node")
     public native AVAudioNode node();

@@ -48,6 +48,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The @c CNContactViewController is used to display a contact.
+ * 
+ * This class can display a new contact, unknown contact or existing contact.
+ *              You must use one of the class factory methods.
+ */
 @Generated
 @Library("ContactsUI")
 @Runtime(ObjCRuntime.class)
@@ -114,6 +120,13 @@ public class CNContactViewController extends UIViewController {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Descriptor for all keys that must be fetched on a contact before setting it on the view controller.
+     * 
+     * If you want to display an existing contact in a @c CNContactViewController,
+     *              this descriptor must have been included in the @c keysToFetch property of the
+     *              [@c] CNContactFetchRequest. (A newly created @c CNMutableContact may be used safely.)
+     */
     @Generated
     @Selector("descriptorForRequiredKeys")
     @MappedReturn(ObjCObjectMapper.class)
@@ -176,47 +189,118 @@ public class CNContactViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * Initializes a contact view controller for a known contact.
+     * 
+     * Use this view controller for a contact that has been fetched
+     *              from the user’s contacts database.
+     *              Allows editing of the contact by default.
+     * [@note]        All keys of the given contact must be fetched.
+     * 
+     * @see         contactStore
+     * @see         allowsEditing
+     */
     @Generated
     @Selector("viewControllerForContact:")
     public static native CNContactViewController viewControllerForContact(CNContact contact);
 
+    /**
+     * Initializes a contact view controller for creating a new contact.
+     * 
+     * Use this view controller with a contact to be added to the user's contacts.
+     * [@note]         The given contact should be a newly initialized contact and
+     *               not one fetched from the user's contacts.
+     */
     @Generated
     @Selector("viewControllerForNewContact:")
     public static native CNContactViewController viewControllerForNewContact(CNContact contact);
 
+    /**
+     * Initializes a contact view controller for an unknown contact.
+     * 
+     * Use this view controller for a populated contact not fetched from the user’s contacts.
+     *              Such a contact might be obtained by parsing a vCard or setting properties on a newly
+     *              created @c CNMutableContact.
+     *              This controller does not allow editing, but by default does allow actions
+     *              for adding the contact to the contacts database.
+     * 
+     * @see         contactStore
+     */
     @Generated
     @Selector("viewControllerForUnknownContact:")
     public static native CNContactViewController viewControllerForUnknownContact(CNContact contact);
 
+    /**
+     * YES by default
+     */
     @Generated
     @Selector("allowsActions")
     public native boolean allowsActions();
 
+    /**
+     * YES by default
+     */
     @Generated
     @Selector("allowsEditing")
     public native boolean allowsEditing();
 
+    /**
+     * The name to use if the contact has no display name.
+     */
     @Generated
     @Selector("alternateName")
     public native String alternateName();
 
+    /**
+     * The contact being displayed.
+     */
     @Generated
     @Selector("contact")
     public native CNContact contact();
 
+    /**
+     * The @c CNContactStore where the contact was fetched from or will be saved to.
+     * 
+     * If @c contactStore is not set, actions for adding the contact to the
+     *              user's contacts are disabled. This does not affect the ability to edit
+     *              the contact.
+     * 
+     *              If the user edits the contact and the editing is committed, the contact
+     *              will be updated in the user's contacts database or added to the user's
+     *              contacts database if not already present.
+     * 
+     *              To prevent editing of a known contact, set @c allowsEditing to @c NO.
+     * 
+     * @see         allowsEditing
+     */
     @Generated
     @Selector("contactStore")
     public native CNContactStore contactStore();
 
+    /**
+     * The delegate to be notified.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native CNContactViewControllerDelegate delegate();
 
+    /**
+     * The @c CNContact property keys to display.
+     * 
+     * If @c nil, all properties are displayed. (The property is @c nil by default.)
+     * [@note]         All properties are visible when editing the contact.
+     */
     @Generated
     @Selector("displayedPropertyKeys")
     public native NSArray<?> displayedPropertyKeys();
 
+    /**
+     * Highlight a property.
+     * 
+     * Indicates whether to highlight a certain property value for the contact.
+     *              If a single value property key is specified, identifier will be ignored.
+     */
     @Generated
     @Selector("highlightPropertyWithKey:identifier:")
     public native void highlightPropertyWithKeyIdentifier(String key, String identifier);
@@ -227,44 +311,89 @@ public class CNContactViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContactViewController initWithCoder(NSCoder aDecoder);
+    public native CNContactViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
     public native CNContactViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * The message to display under the name.
+     */
     @Generated
     @Selector("message")
     public native String message();
 
+    /**
+     * A @c CNContainer where the new contact will be created.
+     * 
+     * If not set the contact is added to the default container.
+     */
     @Generated
     @Selector("parentContainer")
     public native CNContainer parentContainer();
 
+    /**
+     * A @c CNGroup where the new contact will be assigned membership.
+     * 
+     * If not set the contact is added only to the default @c CNContainer with no group membership.
+     * [@note]        When set to a group not in the default container, the container
+     *              property must also be set to the container of parentGroup.
+     */
     @Generated
     @Selector("parentGroup")
     public native CNGroup parentGroup();
 
+    /**
+     * YES by default
+     */
     @Generated
     @Selector("setAllowsActions:")
     public native void setAllowsActions(boolean value);
 
+    /**
+     * YES by default
+     */
     @Generated
     @Selector("setAllowsEditing:")
     public native void setAllowsEditing(boolean value);
 
+    /**
+     * The name to use if the contact has no display name.
+     */
     @Generated
     @Selector("setAlternateName:")
     public native void setAlternateName(String value);
 
+    /**
+     * The @c CNContactStore where the contact was fetched from or will be saved to.
+     * 
+     * If @c contactStore is not set, actions for adding the contact to the
+     *              user's contacts are disabled. This does not affect the ability to edit
+     *              the contact.
+     * 
+     *              If the user edits the contact and the editing is committed, the contact
+     *              will be updated in the user's contacts database or added to the user's
+     *              contacts database if not already present.
+     * 
+     *              To prevent editing of a known contact, set @c allowsEditing to @c NO.
+     * 
+     * @see         allowsEditing
+     */
     @Generated
     @Selector("setContactStore:")
     public native void setContactStore(CNContactStore value);
 
+    /**
+     * The delegate to be notified.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CNContactViewControllerDelegate value);
 
+    /**
+     * The delegate to be notified.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) CNContactViewControllerDelegate value) {
         Object __old = delegate();
@@ -277,26 +406,53 @@ public class CNContactViewController extends UIViewController {
         }
     }
 
+    /**
+     * The @c CNContact property keys to display.
+     * 
+     * If @c nil, all properties are displayed. (The property is @c nil by default.)
+     * [@note]         All properties are visible when editing the contact.
+     */
     @Generated
     @Selector("setDisplayedPropertyKeys:")
     public native void setDisplayedPropertyKeys(NSArray<?> value);
 
+    /**
+     * The message to display under the name.
+     */
     @Generated
     @Selector("setMessage:")
     public native void setMessage(String value);
 
+    /**
+     * A @c CNContainer where the new contact will be created.
+     * 
+     * If not set the contact is added to the default container.
+     */
     @Generated
     @Selector("setParentContainer:")
     public native void setParentContainer(CNContainer value);
 
+    /**
+     * A @c CNGroup where the new contact will be assigned membership.
+     * 
+     * If not set the contact is added only to the default @c CNContainer with no group membership.
+     * [@note]        When set to a group not in the default container, the container
+     *              property must also be set to the container of parentGroup.
+     */
     @Generated
     @Selector("setParentGroup:")
     public native void setParentGroup(CNGroup value);
 
+    /**
+     * NO by default
+     */
     @Generated
     @Selector("setShouldShowLinkedContacts:")
     public native void setShouldShowLinkedContacts(boolean value);
 
+    /**
+     * NO by default
+     */
     @Generated
     @Selector("shouldShowLinkedContacts")
     public native boolean shouldShowLinkedContacts();

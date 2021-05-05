@@ -18,12 +18,30 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Interpolation quality.
+ */
 @Generated
 public final class CGInterpolationQuality {
+    /**
+     * Let the context decide.
+     */
     @Generated public static final int Default = 0x00000000;
+    /**
+     * Never interpolate.
+     */
     @Generated public static final int None = 0x00000001;
+    /**
+     * Low quality, fast interpolation.
+     */
     @Generated public static final int Low = 0x00000002;
+    /**
+     * Medium quality, slower than kCGInterpolationLow.
+     */
     @Generated public static final int Medium = 0x00000004;
+    /**
+     * Highest quality, slower than kCGInterpolationMedium.
+     */
     @Generated public static final int High = 0x00000003;
 
     @Generated

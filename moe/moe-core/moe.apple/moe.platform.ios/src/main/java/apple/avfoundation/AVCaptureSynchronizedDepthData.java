@@ -23,6 +23,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVCaptureSynchronizedDepthData
+ * 
+ *    An concrete subclass of AVCaptureSynchronizedData representing the data delivered by an AVCaptureDepthDataOutput.
+ * 
+ *    Depth data, like video, may be dropped if not serviced in a timely fashion.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -77,10 +84,24 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * [@property] depthData
+     * 
+     *    An instance of AVDepthData.
+     * 
+     *    If depthDataWasDropped is YES, the returned depthData was dropped before it could be delivered to you, and thus this AVDepthData is a shell containing format information and calibration data, but no actual pixel map data. This property is never nil. If a data output has no data to return, it is simply not present in the dictionary of synchronized data returned by AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback.
+     */
     @Generated
     @Selector("depthData")
     public native AVDepthData depthData();
 
+    /**
+     * [@property] depthDataWasDropped
+     * 
+     *    YES if the depth data was dropped.
+     * 
+     *    If YES, inspect -droppedReason for the reason.
+     */
     @Generated
     @Selector("depthDataWasDropped")
     public native boolean depthDataWasDropped();
@@ -89,6 +110,13 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * [@property] droppedReason
+     * 
+     *    If depthDataWasDropped is YES, the reason for the drop, otherwise AVCaptureOutputDataDroppedReasonNone.
+     * 
+     *    AVCaptureOutputDataDroppedReasons are defined in AVCaptureOutputBase.h.
+     */
     @Generated
     @Selector("droppedReason")
     @NInt

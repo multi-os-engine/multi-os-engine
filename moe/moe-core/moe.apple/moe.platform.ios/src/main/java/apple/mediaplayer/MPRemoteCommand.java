@@ -151,10 +151,24 @@ public class MPRemoteCommand extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Target-action style for adding handlers to commands.
+     * Actions receive an MPRemoteCommandEvent as the first parameter.
+     * Targets are not retained by addTarget:action:, and should be removed from the
+     * command when the target is deallocated.
+     * 
+     * Your selector should return a MPRemoteCommandHandlerStatus value when
+     * possible. This allows the system to respond appropriately to commands that
+     * may not have been able to be executed in accordance with the application's
+     * current state.
+     */
     @Generated
     @Selector("addTarget:action:")
     public native void addTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
 
+    /**
+     * Returns an opaque object to act as the target.
+     */
     @Generated
     @Selector("addTargetWithHandler:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -165,10 +179,18 @@ public class MPRemoteCommand extends NSObject {
     @Selector("init")
     public native MPRemoteCommand init();
 
+    /**
+     * Whether a button (for example) should be enabled and tappable for this
+     * particular command.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
+    /**
+     * Whether a button (for example) should be enabled and tappable for this
+     * particular command.
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
@@ -186,6 +208,6 @@ public class MPRemoteCommand extends NSObject {
     public interface Block_addTargetWithHandler {
         @Generated
         @NInt
-        long call_addTargetWithHandler(MPRemoteCommandEvent arg0);
+        long call_addTargetWithHandler(MPRemoteCommandEvent event);
     }
 }

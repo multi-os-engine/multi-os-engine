@@ -17,6 +17,7 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
+import apple.coregraphics.opaque.CGContextRef;
 import apple.coregraphics.struct.CGRect;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
@@ -161,11 +162,18 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
     public native NSData JPEGDataWithCompressionQualityActions(@NFloat double compressionQuality,
             @ObjCBlock(name = "call_JPEGDataWithCompressionQualityActions") Block_JPEGDataWithCompressionQualityActions actions);
 
+    /**
+     * These return compressed image data with the contents of the image drawn in the renderer block.
+     */
     @Generated
     @Selector("PNGDataWithActions:")
     public native NSData PNGDataWithActions(
             @ObjCBlock(name = "call_PNGDataWithActions") Block_PNGDataWithActions actions);
 
+    /**
+     * Returns a UIImage rendered with the contents of the CGContext after the imageRenderBlock executes.
+     * If the options provided to the renderer contain a rect with a zero width or height size, this will return an empty UIImage.
+     */
     @Generated
     @Selector("imageWithActions:")
     public native UIImage imageWithActions(@ObjCBlock(name = "call_imageWithActions") Block_imageWithActions actions);
@@ -196,20 +204,33 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
     @Generated
     public interface Block_JPEGDataWithCompressionQualityActions {
         @Generated
-        void call_JPEGDataWithCompressionQualityActions(UIGraphicsImageRendererContext arg0);
+        void call_JPEGDataWithCompressionQualityActions(UIGraphicsImageRendererContext rendererContext);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_PNGDataWithActions {
         @Generated
-        void call_PNGDataWithActions(UIGraphicsImageRendererContext arg0);
+        void call_PNGDataWithActions(UIGraphicsImageRendererContext rendererContext);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_imageWithActions {
         @Generated
-        void call_imageWithActions(UIGraphicsImageRendererContext arg0);
+        void call_imageWithActions(UIGraphicsImageRendererContext rendererContext);
     }
+
+    @Generated
+    @Selector("contextWithFormat:")
+    public static native CGContextRef contextWithFormat(UIGraphicsRendererFormat format);
+
+    @Generated
+    @Selector("prepareCGContext:withRendererContext:")
+    public static native void prepareCGContextWithRendererContext(CGContextRef context,
+            UIGraphicsRendererContext rendererContext);
+
+    @Generated
+    @Selector("rendererContextClass")
+    public static native Class rendererContextClass();
 }

@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UNNotificationActionOptions {
+    /**
+     * Whether this action should require unlocking before being performed.
+     */
     @Generated @NUInt public static final long AuthenticationRequired = 0x0000000000000001L;
+    /**
+     * Whether this action should be indicated as destructive.
+     */
     @Generated @NUInt public static final long Destructive = 0x0000000000000002L;
+    /**
+     * Whether this action should cause the application to launch in the foreground.
+     */
     @Generated @NUInt public static final long Foreground = 0x0000000000000004L;
 
     @Generated

@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This class can be used to control the settings on a camera.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -150,22 +153,37 @@ public class HMCameraSettingsControl extends HMCameraControl {
     @NInt
     public static native long version_static();
 
+    /**
+     * Characteristic corresponding to current horizontal tilt setting on the camera.
+     */
     @Generated
     @Selector("currentHorizontalTilt")
     public native HMCharacteristic currentHorizontalTilt();
 
+    /**
+     * Characteristic corresponding to current vertical tilt setting on the camera.
+     */
     @Generated
     @Selector("currentVerticalTilt")
     public native HMCharacteristic currentVerticalTilt();
 
+    /**
+     * Characteristic corresponding to digital zoom setting on the camera.
+     */
     @Generated
     @Selector("digitalZoom")
     public native HMCharacteristic digitalZoom();
 
+    /**
+     * Characteristic corresponding to image mirroring setting on the camera.
+     */
     @Generated
     @Selector("imageMirroring")
     public native HMCharacteristic imageMirroring();
 
+    /**
+     * Characteristic corresponding to image rotation setting on the camera.
+     */
     @Generated
     @Selector("imageRotation")
     public native HMCharacteristic imageRotation();
@@ -174,18 +192,30 @@ public class HMCameraSettingsControl extends HMCameraControl {
     @Selector("init")
     public native HMCameraSettingsControl init();
 
+    /**
+     * Characteristic corresponding to night vision setting on the camera.
+     */
     @Generated
     @Selector("nightVision")
     public native HMCharacteristic nightVision();
 
+    /**
+     * Characteristic corresponding to optical zoom setting on the camera.
+     */
     @Generated
     @Selector("opticalZoom")
     public native HMCharacteristic opticalZoom();
 
+    /**
+     * Characteristic corresponding to target horizontal tilt setting on the camera.
+     */
     @Generated
     @Selector("targetHorizontalTilt")
     public native HMCharacteristic targetHorizontalTilt();
 
+    /**
+     * Characteristic corresponding to target vertical tilt setting on the camera.
+     */
     @Generated
     @Selector("targetVerticalTilt")
     public native HMCharacteristic targetVerticalTilt();

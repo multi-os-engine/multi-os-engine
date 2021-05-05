@@ -58,11 +58,17 @@ public final class CAFPeakChunk extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setMEditCount(int value);
 
+    /**
+     * this is a variable length array of peak elements (calculated from the size of the chunk)
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native CAFPositionPeak mPeaks();
 
+    /**
+     * this is a variable length array of peak elements (calculated from the size of the chunk)
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMPeaks(@ByValue CAFPositionPeak value);

@@ -2,6 +2,7 @@ package apple.uikit.protocol;
 
 import apple.foundation.NSArray;
 import apple.foundation.NSProgress;
+import apple.foundation.protocol.NSItemProviderReading;
 import apple.foundation.protocol.NSProgressReporting;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -20,28 +21,60 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDropSession")
 public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
+    /**
+     * A convenience method that can be used only during the UIDropInteractionDelegate's
+     * implementation of `-dropInteraction:performDrop:`.
+     * Asynchronously instantiates objects of the provided class for each
+     * drag item that can do so. The completion handler is called on the
+     * main queue, with an array of all objects that were created, in the
+     * same order as `items`.
+     * The progress returned is an aggregate of the progress for all objects
+     * that are loaded.
+     */
     @Generated
     @Selector("loadObjectsOfClass:completion:")
-    NSProgress loadObjectsOfClassCompletion(@Mapped(ObjCObjectMapper.class) Object aClass,
+    NSProgress loadObjectsOfClassCompletion(@Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass,
             @ObjCBlock(name = "call_loadObjectsOfClassCompletion") Block_loadObjectsOfClassCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadObjectsOfClassCompletion {
         @Generated
-        void call_loadObjectsOfClassCompletion(NSArray<?> arg0);
+        void call_loadObjectsOfClassCompletion(NSArray<?> objects);
     }
 
+    /**
+     * The `UIDragSession` that corresponds to this `UIDropSession`.
+     * If the drag was started in a different app, this is nil.
+     */
     @Generated
     @Selector("localDragSession")
     @MappedReturn(ObjCObjectMapper.class)
-    Object localDragSession();
+    UIDragSession localDragSession();
 
+    /**
+     * The kind of progress and cancellation UI that UIKit will display
+     * if handling this session's drop takes a significant amount of time.
+     * 
+     * The default value is UIDropSessionProgressIndicatorStyleDefault,
+     * meaning that some progress UI will be shown. If you show your own
+     * progress indicator, hide the system progress UI by setting this
+     * property to UIDropSessionProgressIndicatorStyleNone.
+     */
     @Generated
     @Selector("progressIndicatorStyle")
     @NUInt
     long progressIndicatorStyle();
 
+    /**
+     * The kind of progress and cancellation UI that UIKit will display
+     * if handling this session's drop takes a significant amount of time.
+     * 
+     * The default value is UIDropSessionProgressIndicatorStyleDefault,
+     * meaning that some progress UI will be shown. If you show your own
+     * progress indicator, hide the system progress UI by setting this
+     * property to UIDropSessionProgressIndicatorStyleNone.
+     */
     @Generated
     @Selector("setProgressIndicatorStyle:")
     void setProgressIndicatorStyle(@NUInt long value);

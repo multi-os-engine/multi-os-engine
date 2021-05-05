@@ -42,6 +42,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSImageAreaMax
+ * 
+ * The MPSImageAreaMax kernel finds the maximum pixel value in a rectangular region centered around each pixel
+ *             in the source image. If there are multiple channels in the source image, each channel is processed independently.
+ *             The edgeMode property is assumed to always be MPSImageEdgeModeClamp for this filter.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -161,16 +168,33 @@ public class MPSImageAreaMax extends MPSUnaryImageKernel {
     @Selector("initWithDevice:")
     public native MPSImageAreaMax initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * Set the kernel height and width
+     * 
+     * @param      device              The device the filter will run on
+     * @param      kernelWidth         The width of the kernel. Must be an odd number.
+     * @param      kernelHeight        The height of the kernel. Must be an odd number.
+     */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
     public native MPSImageAreaMax initWithDeviceKernelWidthKernelHeight(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
+    /**
+     * [@property] kernelHeight
+     * 
+     * The height of the filter window. Must be an odd number.
+     */
     @Generated
     @Selector("kernelHeight")
     @NUInt
     public native long kernelHeight();
 
+    /**
+     * [@property] kernelWidth
+     * 
+     * The width of the filter window. Must be an odd number.
+     */
     @Generated
     @Selector("kernelWidth")
     @NUInt
@@ -180,6 +204,19 @@ public class MPSImageAreaMax extends MPSUnaryImageKernel {
     @Selector("initWithCoder:")
     public native MPSImageAreaMax initWithCoder(NSCoder aDecoder);
 
+    /**
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
+     *             -initWithCoder: should work, since the file can't
+     *             know which device your data is allocated on, we
+     *             have to guess and may guess incorrectly.  To avoid
+     *             that problem, use initWithCoder:device instead.
+     * 
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
+     * @param      device      The MTLDevice on which to make the MPSKernel
+     * @return     A new MPSKernel object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSImageAreaMax initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);

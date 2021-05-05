@@ -151,6 +151,13 @@ public class CTCellularData extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * cellularDataRestrictionDidUpdateNotifier
+     * 
+     * A block that will be dispatched on the default priority global dispatch queue the first time
+     * app sets the callback handler and everytime there is a change in cellular data allowed policy
+     * for the app.
+     */
     @Generated
     @Selector("cellularDataRestrictionDidUpdateNotifier")
     @ObjCBlock(name = "call_cellularDataRestrictionDidUpdateNotifier_ret")
@@ -165,6 +172,13 @@ public class CTCellularData extends NSObject {
     @NUInt
     public native long restrictedState();
 
+    /**
+     * cellularDataRestrictionDidUpdateNotifier
+     * 
+     * A block that will be dispatched on the default priority global dispatch queue the first time
+     * app sets the callback handler and everytime there is a change in cellular data allowed policy
+     * for the app.
+     */
     @Generated
     @Selector("setCellularDataRestrictionDidUpdateNotifier:")
     public native void setCellularDataRestrictionDidUpdateNotifier(

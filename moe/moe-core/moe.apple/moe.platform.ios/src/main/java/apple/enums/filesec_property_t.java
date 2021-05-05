@@ -26,7 +26,13 @@ public final class filesec_property_t {
     @Generated public static final int FILESEC_MODE = 0x00000004;
     @Generated public static final int FILESEC_ACL = 0x00000005;
     @Generated public static final int FILESEC_GRPUUID = 0x00000006;
+    /**
+     * XXX these are private to the implementation
+     */
     @Generated public static final int FILESEC_ACL_RAW = 0x00000064;
+    /**
+     * XXX these are private to the implementation
+     */
     @Generated public static final int FILESEC_ACL_ALLOCSIZE = 0x00000065;
 
     @Generated

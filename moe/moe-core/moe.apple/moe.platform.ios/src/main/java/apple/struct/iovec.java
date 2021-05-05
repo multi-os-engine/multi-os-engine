@@ -51,19 +51,31 @@ public final class iovec extends StructObject {
         setIov_len(iov_len);
     }
 
+    /**
+     * [XSI] Base address of I/O memory region
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr iov_base();
 
+    /**
+     * [XSI] Base address of I/O memory region
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setIov_base(VoidPtr value);
 
+    /**
+     * [XSI] Size of region iov_base points to
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @NUInt
     public native long iov_len();
 
+    /**
+     * [XSI] Size of region iov_base points to
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setIov_len(@NUInt long value);

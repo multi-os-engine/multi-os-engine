@@ -29,6 +29,7 @@ import apple.uikit.UIGestureRecognizer;
 import apple.uikit.UIImage;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -135,7 +136,7 @@ public class PHLivePhotoView extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -148,8 +149,8 @@ public class PHLivePhotoView extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -236,6 +237,9 @@ public class PHLivePhotoView extends UIView {
     @Selector("layerClass")
     public static native Class layerClass();
 
+    /**
+     * System badge images representing Live Photo content
+     */
     @Generated
     @Selector("livePhotoBadgeImageWithOptions:")
     public static native UIImage livePhotoBadgeImageWithOptions(@NUInt long badgeOptions);
@@ -374,7 +378,7 @@ public class PHLivePhotoView extends UIView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -390,7 +394,8 @@ public class PHLivePhotoView extends UIView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -412,24 +417,36 @@ public class PHLivePhotoView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PHLivePhotoView initWithCoder(NSCoder aDecoder);
+    public native PHLivePhotoView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
     public native PHLivePhotoView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Indicates whether the audio of the Live Photo is muted.
+     */
     @Generated
     @Selector("isMuted")
     public native boolean isMuted();
 
+    /**
+     * Indicates whether the audio of the Live Photo is muted.
+     */
     @Generated
     @Selector("setMuted:")
     public native void setMuted(boolean value);
 
+    /**
+     * Live photo displayed in the receiver.
+     */
     @Generated
     @Selector("livePhoto")
     public native PHLivePhoto livePhoto();
 
+    /**
+     * Gesture used to trigger playback. By default, added to the receiver. Can be moved to a different view.
+     */
     @Generated
     @Selector("playbackGestureRecognizer")
     public native UIGestureRecognizer playbackGestureRecognizer();
@@ -450,10 +467,16 @@ public class PHLivePhotoView extends UIView {
         }
     }
 
+    /**
+     * Live photo displayed in the receiver.
+     */
     @Generated
     @Selector("setLivePhoto:")
     public native void setLivePhoto(PHLivePhoto value);
 
+    /**
+     * The following methods allow the client to manually trigger playback. If the live photo is changed during playback, it will be immediately interrupted.
+     */
     @Generated
     @Selector("startPlaybackWithStyle:")
     public native void startPlaybackWithStyle(@NInt long playbackStyle);
@@ -461,4 +484,10 @@ public class PHLivePhotoView extends UIView {
     @Generated
     @Selector("stopPlayback")
     public native void stopPlayback();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

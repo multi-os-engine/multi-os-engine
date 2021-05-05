@@ -31,6 +31,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -183,12 +184,18 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAEAGLLayer initWithCoder(NSCoder aDecoder);
+    public native CAEAGLLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
     public native CAEAGLLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
+    /**
+     * When false (the default value) changes to the layer's render buffer
+     * appear on-screen asynchronously to normal layer updates. When true,
+     * changes to the GLES content are sent to the screen via the standard
+     * CATransaction mechanisms.
+     */
     @Generated
     @Selector("presentsWithTransaction")
     public native boolean presentsWithTransaction();
@@ -197,6 +204,12 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
     @Selector("setDrawableProperties:")
     public native void setDrawableProperties(NSDictionary<String, ?> value);
 
+    /**
+     * When false (the default value) changes to the layer's render buffer
+     * appear on-screen asynchronously to normal layer updates. When true,
+     * changes to the GLES content are sent to the screen via the standard
+     * CATransaction mechanisms.
+     */
     @Generated
     @Selector("setPresentsWithTransaction:")
     public native void setPresentsWithTransaction(boolean value);
@@ -210,4 +223,9 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
 }

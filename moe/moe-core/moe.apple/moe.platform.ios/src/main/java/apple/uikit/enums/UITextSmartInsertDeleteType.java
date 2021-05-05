@@ -3,6 +3,11 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * UITextSmartInsertDeleteType
+ * 
+ * Controls the automatic insertion/removal of spaces for a text widget.
+ */
 @Generated
 public final class UITextSmartInsertDeleteType {
     @Generated

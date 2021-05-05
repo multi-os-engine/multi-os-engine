@@ -150,6 +150,9 @@ public class UIGraphicsImageRendererContext extends UIGraphicsRendererContext {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns a UIImage representing the current state of the renderer's CGContext
+     */
     @Generated
     @Selector("currentImage")
     public native UIImage currentImage();

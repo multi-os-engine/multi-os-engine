@@ -36,6 +36,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSDateIntervalFormatter is used to format the range between two NSDates in a locale-sensitive way.
+ * NSDateIntervalFormatter returns nil and NO for all methods in NSFormatter.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -147,15 +151,24 @@ public class NSDateIntervalFormatter extends NSFormatter {
     @NInt
     public static native long version_static();
 
+    /**
+     * default is the calendar of the locale
+     */
     @Generated
     @Selector("calendar")
     public native NSCalendar calendar();
 
+    /**
+     * default is NSDateIntervalFormatterNoStyle
+     */
     @Generated
     @Selector("dateStyle")
     @NUInt
     public native long dateStyle();
 
+    /**
+     * default is an empty string
+     */
     @Generated
     @Selector("dateTemplate")
     public native String dateTemplate();
@@ -166,36 +179,75 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDateIntervalFormatter initWithCoder(NSCoder aDecoder);
+    public native NSDateIntervalFormatter initWithCoder(NSCoder coder);
 
+    /**
+     * default is [NSLocale currentLocale]
+     */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
 
+    /**
+     * default is the calendar of the locale
+     */
     @Generated
     @Selector("setCalendar:")
     public native void setCalendar(NSCalendar value);
 
+    /**
+     * default is NSDateIntervalFormatterNoStyle
+     */
     @Generated
     @Selector("setDateStyle:")
     public native void setDateStyle(@NUInt long value);
 
+    /**
+     * default is an empty string
+     */
     @Generated
     @Selector("setDateTemplate:")
     public native void setDateTemplate(String value);
 
+    /**
+     * default is [NSLocale currentLocale]
+     */
     @Generated
     @Selector("setLocale:")
     public native void setLocale(NSLocale value);
 
+    /**
+     * default is NSDateIntervalFormatterNoStyle
+     */
     @Generated
     @Selector("setTimeStyle:")
     public native void setTimeStyle(@NUInt long value);
 
+    /**
+     * default is [NSTimeZone defaultTimeZone]
+     */
     @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone value);
 
+    /**
+     * If the range smaller than the resolution specified by the dateTemplate, a single date format will be produced. If the range is larger than the format specified by the dateTemplate, a locale-specific fallback will be used to format the items missing from the pattern.
+     * 
+     * For example, if the range is 2010-03-04 07:56 - 2010-03-04 19:56 (12 hours)
+     * - The pattern jm will produce
+     *    for en_US, "7:56 AM - 7:56 PM"
+     *    for en_GB, "7:56 - 19:56"
+     * - The pattern MMMd will produce
+     *    for en_US, "Mar 4"
+     *    for en_GB, "4 Mar"
+     * If the range is 2010-03-04 07:56 - 2010-03-08 16:11 (4 days, 8 hours, 15 minutes)
+     * - The pattern jm will produce
+     *    for en_US, "3/4/2010 7:56 AM - 3/8/2010 4:11 PM"
+     *    for en_GB, "4/3/2010 7:56 - 8/3/2010 16:11"
+     * - The pattern MMMd will produce
+     *    for en_US, "Mar 4-8"
+     *    for en_GB, "4-8 Mar"
+     */
     @Generated
     @Selector("stringFromDate:toDate:")
     public native String stringFromDateToDate(NSDate fromDate, NSDate toDate);
@@ -204,11 +256,17 @@ public class NSDateIntervalFormatter extends NSFormatter {
     @Selector("stringFromDateInterval:")
     public native String stringFromDateInterval(NSDateInterval dateInterval);
 
+    /**
+     * default is NSDateIntervalFormatterNoStyle
+     */
     @Generated
     @Selector("timeStyle")
     @NUInt
     public native long timeStyle();
 
+    /**
+     * default is [NSTimeZone defaultTimeZone]
+     */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();

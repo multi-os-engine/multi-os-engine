@@ -41,6 +41,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A mutable value object representing a postal address.
+ * 
+ * CNMutablePostalAddress is not thread safe.
+ * 
+ * [@note] To remove properties when saving a mutable postal address, set string properties to empty values.
+ */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
@@ -178,7 +185,7 @@ public class CNMutablePostalAddress extends CNPostalAddress {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNMutablePostalAddress initWithCoder(NSCoder aDecoder);
+    public native CNMutablePostalAddress initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("postalCode")
@@ -204,6 +211,9 @@ public class CNMutablePostalAddress extends CNPostalAddress {
     @Selector("setState:")
     public native void setState(String value);
 
+    /**
+     * multi-street address is delimited with carriage returns “\n”
+     */
     @Generated
     @Selector("setStreet:")
     public native void setStreet(String value);
@@ -212,6 +222,9 @@ public class CNMutablePostalAddress extends CNPostalAddress {
     @Selector("state")
     public native String state();
 
+    /**
+     * multi-street address is delimited with carriage returns “\n”
+     */
     @Generated
     @Selector("street")
     public native String street();

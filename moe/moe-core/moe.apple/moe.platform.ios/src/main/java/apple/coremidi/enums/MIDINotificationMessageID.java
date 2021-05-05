@@ -18,6 +18,30 @@ package apple.coremidi.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * [@enum]		MIDINotificationMessageID
+ * 
+ * Signifies the type of a MIDINotification.
+ * 
+ * [@constant]	kMIDIMsgSetupChanged
+ * 	Some aspect of the current MIDISetup has changed.  No data.  Should ignore this message if
+ * 	messages 2-6 are handled.
+ * [@constant]	kMIDIMsgObjectAdded
+ * 	A device, entity or endpoint was added. Structure is MIDIObjectAddRemoveNotification. New in
+ * 	Mac OS X 10.2.
+ * [@constant]	kMIDIMsgObjectRemoved
+ * 	A device, entity or endpoint was removed. Structure is MIDIObjectAddRemoveNotification. New
+ * 	in Mac OS X 10.2.
+ * [@constant]	kMIDIMsgPropertyChanged
+ * 	An object's property was changed. Structure is MIDIObjectPropertyChangeNotification. New in
+ * 	Mac OS X 10.2.
+ * [@constant]	kMIDIMsgThruConnectionsChanged
+ * 	A persistent MIDI Thru connection was created or destroyed.  No data.  New in Mac OS X 10.2.
+ * [@constant]	kMIDIMsgSerialPortOwnerChanged
+ * 	No data.  New in Mac OS X 10.2.
+ * [@constant]	kMIDIMsgIOError
+ * 	A driver I/O error occurred.
+ */
 @Generated
 public final class MIDINotificationMessageID {
     @Generated public static final int SetupChanged = 0x00000001;

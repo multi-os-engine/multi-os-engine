@@ -19,6 +19,15 @@ package apple.externalaccessory.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] EAWiFiUnconfiguredAccessoryConfigurationStatus
+ * 
+ * Represents the state of an EAWiFiUnconfiguredAccessory configuration process.
+ * 
+ * [@constant] EAWiFiUnconfiguredAccessoryConfigurationStatusSuccess                     The configuration of the accessory succeeded.
+ * [@constant] EAWiFiUnconfiguredAccessoryConfigurationStatusUserCancelledConfiguration  The user cancelled the configuration process.
+ * [@constant] EAWiFiUnconfiguredAccessoryConfigurationStatusFailed                      The configuration failed.
+ */
 @Generated
 public final class EAWiFiUnconfiguredAccessoryConfigurationStatus {
     @Generated @NInt public static final long Success = 0x0000000000000000L;

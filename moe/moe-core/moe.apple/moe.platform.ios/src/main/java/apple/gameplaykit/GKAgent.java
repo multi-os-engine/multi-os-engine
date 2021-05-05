@@ -21,7 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.gameplaykit.protocol.GKAgentDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -39,14 +39,25 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An agent is a point mass whose local coordinate system is aligned to its velocity.  Agents have a variety of
+ * steering functions that can be used to simulate vehicles or entities with agency.
+ * The units of mass, velocity and radius are dimensionless but related. The visual representation of these values
+ * are specific to each game's own situation.
+ * 
+ * Values close to 1.0 should be canonical and are expected to yield pleasing results. When applied to visuals
+ * these values should be scaled and biased into their target coordinate system and a simple filter on top ensures
+ * any noise generated from the steering logic doesn't affect the visual represtentation.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKAgent extends GKComponent implements NSCoding {
+public class GKAgent extends GKComponent implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -153,10 +164,17 @@ public class GKAgent extends GKComponent implements NSCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * The behavior to apply when updateWithDeltaTime is called.
+     * All forces from the goals in the behavior are summed and then applied.
+     */
     @Generated
     @Selector("behavior")
     public native GKBehavior behavior();
 
+    /**
+     * Object which has agentDidUpdate called on it during this agent's behavior updatekbeha
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -164,7 +182,7 @@ public class GKAgent extends GKComponent implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -172,32 +190,62 @@ public class GKAgent extends GKComponent implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKAgent initWithCoder(NSCoder aDecoder);
+    public native GKAgent initWithCoder(NSCoder coder);
 
+    /**
+     * Agent's mass. Used for agent impulse application purposes.
+     * 
+     * Defaults to 1.0
+     */
     @Generated
     @Selector("mass")
     public native float mass();
 
+    /**
+     * Maximum amount of acceleration that can be applied to this agent.  All applied impulses are clipped to this amount.
+     * 
+     * Defaults to 1.0
+     */
     @Generated
     @Selector("maxAcceleration")
     public native float maxAcceleration();
 
+    /**
+     * Maximum speed of this agent. Impulses cannot cause the agents speed to ever be greater than this value.
+     * 
+     * Defaults to 1.0
+     */
     @Generated
     @Selector("maxSpeed")
     public native float maxSpeed();
 
+    /**
+     * Radius of the agent's bounding circle.  Used by the agent avoid steering functions.
+     * 
+     * Defaults to 0.5 for a canonical diameter of 1.0
+     */
     @Generated
     @Selector("radius")
     public native float radius();
 
+    /**
+     * The behavior to apply when updateWithDeltaTime is called.
+     * All forces from the goals in the behavior are summed and then applied.
+     */
     @Generated
     @Selector("setBehavior:")
     public native void setBehavior(GKBehavior value);
 
+    /**
+     * Object which has agentDidUpdate called on it during this agent's behavior updatekbeha
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKAgentDelegate value);
 
+    /**
+     * Object which has agentDidUpdate called on it during this agent's behavior updatekbeha
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) GKAgentDelegate value) {
         Object __old = delegate();
@@ -210,27 +258,67 @@ public class GKAgent extends GKComponent implements NSCoding {
         }
     }
 
+    /**
+     * Agent's mass. Used for agent impulse application purposes.
+     * 
+     * Defaults to 1.0
+     */
     @Generated
     @Selector("setMass:")
     public native void setMass(float value);
 
+    /**
+     * Maximum amount of acceleration that can be applied to this agent.  All applied impulses are clipped to this amount.
+     * 
+     * Defaults to 1.0
+     */
     @Generated
     @Selector("setMaxAcceleration:")
     public native void setMaxAcceleration(float value);
 
+    /**
+     * Maximum speed of this agent. Impulses cannot cause the agents speed to ever be greater than this value.
+     * 
+     * Defaults to 1.0
+     */
     @Generated
     @Selector("setMaxSpeed:")
     public native void setMaxSpeed(float value);
 
+    /**
+     * Radius of the agent's bounding circle.  Used by the agent avoid steering functions.
+     * 
+     * Defaults to 0.5 for a canonical diameter of 1.0
+     */
     @Generated
     @Selector("setRadius:")
     public native void setRadius(float value);
 
+    /**
+     * Current speed of the agent along its foward direction.
+     * 
+     * Defaults to 0.0
+     */
     @Generated
     @Selector("setSpeed:")
     public native void setSpeed(float value);
 
+    /**
+     * Current speed of the agent along its foward direction.
+     * 
+     * Defaults to 0.0
+     */
     @Generated
     @Selector("speed")
     public native float speed();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

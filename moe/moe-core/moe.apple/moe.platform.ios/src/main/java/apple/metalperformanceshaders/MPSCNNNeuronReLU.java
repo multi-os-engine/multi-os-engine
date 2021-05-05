@@ -42,6 +42,16 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSCNNNeuronReLU
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the ReLU neuron filter.
+ *             For each pixel, applies the following function: f(x) = x, if x >= 0
+ *                                                                  = a * x if x < 0
+ *             This is called Leaky ReLU in literature. Some literature defines
+ *             classical ReLU as max(0, x). If you want this behavior, simply pass a = 0
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -154,10 +164,6 @@ public class MPSCNNNeuronReLU extends MPSCNNNeuron {
     public static native long version_static();
 
     @Generated
-    @Selector("a")
-    public native float a();
-
-    @Generated
     @Selector("init")
     public native MPSCNNNeuronReLU init();
 
@@ -165,6 +171,13 @@ public class MPSCNNNeuronReLU extends MPSCNNNeuron {
     @Selector("initWithDevice:")
     public native MPSCNNNeuronReLU initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * Initialize the ReLU neuron filter
+     * 
+     * @param     device           The device the filter will run on
+     * @param     a                Filter property "a". See class discussion.
+     * @return    A valid MPSCNNNeuronReLU object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:a:")
     public native MPSCNNNeuronReLU initWithDeviceA(@Mapped(ObjCObjectMapper.class) MTLDevice device, float a);
@@ -186,4 +199,9 @@ public class MPSCNNNeuronReLU extends MPSCNNNeuron {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("initWithDevice:neuronDescriptor:")
+    public native MPSCNNNeuronReLU initWithDeviceNeuronDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            MPSNNNeuronDescriptor neuronDescriptor);
 }

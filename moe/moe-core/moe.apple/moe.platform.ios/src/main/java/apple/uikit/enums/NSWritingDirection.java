@@ -19,10 +19,22 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Values for NSWritingDirection
+ */
 @Generated
 public final class NSWritingDirection {
+    /**
+     * Determines direction using the Unicode Bidi Algorithm rules P2 and P3
+     */
     @Generated @NInt public static final long Natural = 0xFFFFFFFFFFFFFFFFL;
+    /**
+     * Left to right writing direction
+     */
     @Generated @NInt public static final long LeftToRight = 0x0000000000000000L;
+    /**
+     * Right to left writing direction
+     */
     @Generated @NInt public static final long RightToLeft = 0x0000000000000001L;
 
     @Generated

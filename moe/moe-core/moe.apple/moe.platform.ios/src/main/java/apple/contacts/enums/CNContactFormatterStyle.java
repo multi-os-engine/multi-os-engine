@@ -19,9 +19,18 @@ package apple.contacts.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * The formatting styles for contact names.
+ */
 @Generated
 public final class CNContactFormatterStyle {
+    /**
+     * Combine the contact name components into a displayable full name.
+     */
     @Generated @NInt public static final long FullName = 0x0000000000000000L;
+    /**
+     * Combine the contact phonetic name components into a displayable phonetic full name.
+     */
     @Generated @NInt public static final long PhoneticFullName = 0x0000000000000001L;
 
     @Generated

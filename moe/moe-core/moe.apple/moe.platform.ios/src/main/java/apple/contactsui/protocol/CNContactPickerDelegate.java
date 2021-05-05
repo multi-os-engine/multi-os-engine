@@ -33,6 +33,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CNContactPickerDelegate")
 public interface CNContactPickerDelegate {
+    /**
+     * Singular delegate methods.
+     * 
+     * These delegate methods will be invoked when the user selects a single contact or property.
+     */
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContact:")
@@ -56,6 +61,12 @@ public interface CNContactPickerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Plural delegate methods.
+     * 
+     * These delegate methods will be invoked when the user is done selecting multiple contacts or properties.
+     *              Implementing one of these methods will configure the picker for multi-selection.
+     */
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContacts:")
@@ -64,6 +75,11 @@ public interface CNContactPickerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Invoked when the picker is closed.
+     * 
+     * The picker will be dismissed automatically after a contact or property is picked.
+     */
     @Generated
     @IsOptional
     @Selector("contactPickerDidCancel:")

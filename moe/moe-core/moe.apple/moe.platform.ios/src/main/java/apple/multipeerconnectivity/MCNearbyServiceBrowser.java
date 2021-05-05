@@ -41,6 +41,36 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MCNearbyServiceBrowser
+ * 
+ *      MCNearbyServiceBrowser looks for nearby peers, and connects them to
+ *      sessions.
+ * 
+ *      To create the MCNearbyServiceBrowser object and start browsing for
+ *      nearby peers, a new MCPeerID should be created to represent the local
+ *      peer, and a service type needs to be specified.
+ * 
+ *      The serviceType parameter is a short text string used to describe the
+ *      app's networking protocol.  It should be in the same format as a
+ *      Bonjour service type: up to 15 characters long and valid characters
+ *      include ASCII lowercase letters, numbers, and the hyphen.  A short name
+ *      that distinguishes itself from unrelated services is recommended; for
+ *      example, a text chat app made by ABC company could use the service type
+ *      "abc-txtchat". For more detailed information about service type
+ *      restrictions, see RFC 6335, Section 5.1.
+ * 
+ *      A delegate that conforms to the MCNearbyServiceBrowserDelegate
+ *      protocol must also be provided.  The delegate is notified when nearby
+ *      peers are found and lost. No assumption should be made as to which queue
+ *      the callbacks are called on.
+ * 
+ *      MCNearbyAdvertiser must be initialized with an MCPeerID object and a
+ *      valid service type.
+ * 
+ *      See Bonjour APIs https://developer.apple.com/bonjour/ for more
+ *      information about service types.
+ */
 @Generated
 @Library("MultipeerConnectivity")
 @Runtime(ObjCRuntime.class)
@@ -165,6 +195,21 @@ public class MCNearbyServiceBrowser extends NSObject {
     @Selector("initWithPeer:serviceType:")
     public native MCNearbyServiceBrowser initWithPeerServiceType(MCPeerID myPeerID, String serviceType);
 
+    /**
+     * The method -invitePeer:toSession:withContext:timeout: sends an
+     * invitation to a peer, and when the peer accepts the invitation, adds
+     * the peer to the specified session.
+     * 
+     * The invited peer will receive a -advertiser:
+     * didReceiveInvitationFromPeer:withContext:invitationHandler: callback.
+     * The context is passed through to the invited peer. It can be used to
+     * describe the session or pass some additional identification
+     * information to the invitee.
+     * 
+     * The timeout parameter is seconds and should be a positive value.  If a
+     * timeout of <=0 is specified, a default value of 30 seconds will be
+     * used instead.
+     */
     @Generated
     @Selector("invitePeer:toSession:withContext:timeout:")
     public native void invitePeerToSessionWithContextTimeout(MCPeerID peerID, MCSession session, NSData context,
@@ -194,6 +239,10 @@ public class MCNearbyServiceBrowser extends NSObject {
         }
     }
 
+    /**
+     * The methods -startBrowsingForPeers and -stopBrowsingForPeers are used to
+     * start and stop looking for nearby advertising peers.
+     */
     @Generated
     @Selector("startBrowsingForPeers")
     public native void startBrowsingForPeers();

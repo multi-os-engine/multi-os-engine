@@ -16,21 +16,33 @@ limitations under the License.
 
 package apple.homekit.protocol;
 
+import apple.homekit.HMAddAccessoryRequest;
 import apple.homekit.HMHome;
 import apple.homekit.HMHomeManager;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * This delegate receives updates on homes being managed via the home manager.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("HMHomeManagerDelegate")
 public interface HMHomeManagerDelegate {
+    /**
+     * Informs the delegate when a new home is added.
+     * 
+     * @param      manager     Sender of this message.
+     * 
+     * @param      home        New home that was added.
+     */
     @Generated
     @IsOptional
     @Selector("homeManager:didAddHome:")
@@ -38,6 +50,13 @@ public interface HMHomeManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Informs the delegate when an existing home is removed.
+     * 
+     * @param      manager     Sender of this message.
+     * 
+     * @param      home        Home that was removed.
+     */
     @Generated
     @IsOptional
     @Selector("homeManager:didRemoveHome:")
@@ -45,6 +64,15 @@ public interface HMHomeManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Informs the delegate when homes configured by the user have been detected by the system.
+     * 
+     * This delegate method is also invoked to inform an application of significant changes
+     *             to the home configuration. Applications should use this as a cue to invalidate their
+     *             current references to HomeKit objects and refresh their views with the new list of homes.
+     * 
+     * @param      manager     Sender of this message.
+     */
     @Generated
     @IsOptional
     @Selector("homeManagerDidUpdateHomes:")
@@ -52,10 +80,43 @@ public interface HMHomeManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Informs the delegate when the primary home is modified.
+     * 
+     * @param      manager     Sender of this message.
+     */
     @Generated
     @IsOptional
     @Selector("homeManagerDidUpdatePrimaryHome:")
     default void homeManagerDidUpdatePrimaryHome(HMHomeManager manager) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Informs the delegate an accessory needs to be added to the home by using one of the
+     *       HMAccessorySetupPayload factory methods on the request parameter.
+     * 
+     * @param      manager     Sender of this message.
+     * 
+     * @param      request     Information for the add accessory request.
+     */
+    @Generated
+    @IsOptional
+    @Selector("homeManager:didReceiveAddAccessoryRequest:")
+    default void homeManagerDidReceiveAddAccessoryRequest(HMHomeManager manager, HMAddAccessoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Informs the delegate a change in authorization status has occurred.
+     * 
+     * @param      manager     Sender of this message.
+     * @param      status      The updated authorization status.
+     */
+    @Generated
+    @IsOptional
+    @Selector("homeManager:didUpdateAuthorizationStatus:")
+    default void homeManagerDidUpdateAuthorizationStatus(HMHomeManager manager, @NUInt long status) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

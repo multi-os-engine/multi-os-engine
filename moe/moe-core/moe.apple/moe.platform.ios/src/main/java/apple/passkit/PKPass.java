@@ -182,19 +182,31 @@ public class PKPass extends PKObject {
     @Selector("isRemotePass")
     public native boolean isRemotePass();
 
+    /**
+     * e.g. "SFO -> LHR"
+     */
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
+    /**
+     * e.g. "Boarding Pass"
+     */
     @Generated
     @Selector("localizedName")
     public native String localizedName();
 
+    /**
+     * IBOutlet-like; allows access to field data from pass file format
+     */
     @Generated
     @Selector("localizedValueForFieldKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object localizedValueForFieldKey(String key);
 
+    /**
+     * e.g. "Great Airways"
+     */
     @Generated
     @Selector("organizationName")
     public native String organizationName();
@@ -208,6 +220,9 @@ public class PKPass extends PKObject {
     @Selector("passTypeIdentifier")
     public native String passTypeIdentifier();
 
+    /**
+     * open to view pass in Wallet app
+     */
     @Generated
     @Selector("passURL")
     public native NSURL passURL();
@@ -216,6 +231,9 @@ public class PKPass extends PKObject {
     @Selector("paymentPass")
     public native PKPaymentPass paymentPass();
 
+    /**
+     * may be useful for sorting
+     */
     @Generated
     @Selector("relevantDate")
     public native NSDate relevantDate();
@@ -231,4 +249,8 @@ public class PKPass extends PKObject {
     @Generated
     @Selector("webServiceURL")
     public native NSURL webServiceURL();
+
+    @Generated
+    @Selector("secureElementPass")
+    public native PKSecureElementPass secureElementPass();
 }

@@ -49,6 +49,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Immutable Ordered Set   ***************
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -207,11 +210,22 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @NInt
     public static native long version_static();
 
+    /**
+     * NSOrderedSets are not observable, so these methods raise exceptions when invoked on NSOrderedSets. Instead of observing an ordered set, observe the ordered to-many relationship for which the ordered set is the collection of related objects.
+     */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
     public native void addObserverForKeyPathOptionsContext(NSObject observer, String keyPath, @NUInt long options,
             VoidPtr context);
 
+    /**
+     * These two methods return a facade object for the receiving ordered set,
+     * which acts like an immutable array or set (respectively).  Note that
+     * while you cannot mutate the ordered set through these facades, mutations
+     * to the original ordered set will "show through" the facade and it will
+     * appear to change spontaneously, since a copy of the ordered set is not
+     * being made.
+     */
     @Generated
     @Selector("array")
     public native NSArray<_ObjectType> array();
@@ -251,7 +265,7 @@ public class NSOrderedSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateObjectsAtIndexes:options:usingBlock:")
@@ -268,6 +282,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
 
+    /**
+     * evaluate a predicate against an ordered set of objects and return a filtered ordered set
+     */
     @Generated
     @Selector("filteredOrderedSetUsingPredicate:")
     public native NSOrderedSet<_ObjectType> filteredOrderedSetUsingPredicate(NSPredicate p);
@@ -287,6 +304,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @NUInt
     public native long indexOfObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
+    /**
+     * binary search
+     */
     @Generated
     @Selector("indexOfObject:inSortedRange:options:usingComparator:")
     @NUInt
@@ -346,7 +366,7 @@ public class NSOrderedSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSOrderedSet<?> initWithCoder(NSCoder aDecoder);
+    public native NSOrderedSet<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithObject:")
@@ -409,6 +429,7 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType lastObject();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -452,6 +473,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @Selector("set")
     public native NSSet<_ObjectType> set();
 
+    /**
+     * Invoke -setValue:forKey: on each of the receiver's members.
+     */
     @Generated
     @Selector("setValue:forKey:")
     public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
@@ -461,6 +485,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     public native NSArray<_ObjectType> sortedArrayUsingComparator(
             @ObjCBlock(name = "call_sortedArrayUsingComparator") Block_sortedArrayUsingComparator cmptr);
 
+    /**
+     * returns a new array by sorting the objects of the receiver
+     */
     @Generated
     @Selector("sortedArrayUsingDescriptors:")
     public native NSArray<_ObjectType> sortedArrayUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
@@ -476,6 +503,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
         return supportsSecureCoding();
     }
 
+    /**
+     * Return an ordered set containing the results of invoking -valueForKey: on each of the receiver's members. The returned ordered set might not have the same number of members as the receiver. The returned ordered set will not contain any elements corresponding to instances of -valueForKey: returning nil, nor will it contain duplicates.
+     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -485,24 +515,23 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @Generated
     public interface Block_enumerateObjectsAtIndexesOptionsUsingBlock {
         @Generated
-        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
+        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsUsingBlock {
         @Generated
-        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -510,56 +539,56 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     public interface Block_indexOfObjectInSortedRangeOptionsUsingComparator {
         @Generated
         @NInt
-        long call_indexOfObjectInSortedRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_indexOfObjectInSortedRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexOfObjectAtIndexesOptionsPassingTest {
         @Generated
-        boolean call_indexOfObjectAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
+        boolean call_indexOfObjectAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexOfObjectPassingTest {
         @Generated
-        boolean call_indexOfObjectPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        boolean call_indexOfObjectPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexOfObjectWithOptionsPassingTest {
         @Generated
-        boolean call_indexOfObjectWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        boolean call_indexOfObjectWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesOfObjectsAtIndexesOptionsPassingTest {
         @Generated
-        boolean call_indexesOfObjectsAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
+        boolean call_indexesOfObjectsAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesOfObjectsPassingTest {
         @Generated
-        boolean call_indexesOfObjectsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        boolean call_indexesOfObjectsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesOfObjectsWithOptionsPassingTest {
         @Generated
-        boolean call_indexesOfObjectsWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
+        boolean call_indexesOfObjectsWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -567,8 +596,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     public interface Block_sortedArrayUsingComparator {
         @Generated
         @NInt
-        long call_sortedArrayUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortedArrayUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -576,7 +605,38 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     public interface Block_sortedArrayWithOptionsUsingComparator {
         @Generated
         @NInt
-        long call_sortedArrayWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortedArrayWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
+
+    /**
+     * Uses isEqual: to determine the difference between the parameter and the receiver
+     */
+    @Generated
+    @Selector("differenceFromOrderedSet:")
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromOrderedSet(NSOrderedSet<_ObjectType> other);
+
+    @Generated
+    @Selector("differenceFromOrderedSet:withOptions:")
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromOrderedSetWithOptions(
+            NSOrderedSet<_ObjectType> other, @NUInt long options);
+
+    @Generated
+    @Selector("differenceFromOrderedSet:withOptions:usingEquivalenceTest:")
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromOrderedSetWithOptionsUsingEquivalenceTest(
+            NSOrderedSet<_ObjectType> other, @NUInt long options,
+            @ObjCBlock(name = "call_differenceFromOrderedSetWithOptionsUsingEquivalenceTest") Block_differenceFromOrderedSetWithOptionsUsingEquivalenceTest block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_differenceFromOrderedSetWithOptionsUsingEquivalenceTest {
+        @Generated
+        boolean call_differenceFromOrderedSetWithOptionsUsingEquivalenceTest(
+                @Mapped(ObjCObjectMapper.class) Object obj1, @Mapped(ObjCObjectMapper.class) Object obj2);
+    }
+
+    @Generated
+    @Selector("orderedSetByApplyingDifference:")
+    public native NSOrderedSet<_ObjectType> orderedSetByApplyingDifference(
+            NSOrderedCollectionDifference<_ObjectType> difference);
 }

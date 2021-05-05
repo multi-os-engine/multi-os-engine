@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A WKWebsiteDataRecord represents website data, grouped by domain name using the public suffix list.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -150,10 +153,16 @@ public class WKWebsiteDataRecord extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The various types of website data that exist for this data record.
+     */
     @Generated
     @Selector("dataTypes")
     public native NSSet<String> dataTypes();
 
+    /**
+     * The display name for the data record. This is usually the domain name.
+     */
     @Generated
     @Selector("displayName")
     public native String displayName();

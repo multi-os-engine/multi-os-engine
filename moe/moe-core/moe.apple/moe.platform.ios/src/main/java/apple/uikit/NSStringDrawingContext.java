@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * When attributes=nil, the methods declared here uses the default behavior for each attribute described in <UIKit/NSAttributedString.h>. When stringDrawingContext=nil, it's equivalent of passing the default instance initialized with [[NSStringDrawingContext alloc] init].
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +156,9 @@ public class NSStringDrawingContext extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * actual scale factor used by the last drawing call where minimum scale factor was specified
+     */
     @Generated
     @Selector("actualScaleFactor")
     @NFloat
@@ -168,6 +174,9 @@ public class NSStringDrawingContext extends NSObject {
     @Selector("init")
     public native NSStringDrawingContext init();
 
+    /**
+     * Minimum scale factor for drawWithRect:options:context: and boundingRectWithSize:options:context: methods. If this property is set, the extended string drawing methods will attempt to draw the attributed string in the given bounds by proportionally scaling the font(s) in the attributed string
+     */
     @Generated
     @Selector("minimumScaleFactor")
     @NFloat
@@ -179,6 +188,9 @@ public class NSStringDrawingContext extends NSObject {
     @NFloat
     public native double minimumTrackingAdjustment();
 
+    /**
+     * Minimum scale factor for drawWithRect:options:context: and boundingRectWithSize:options:context: methods. If this property is set, the extended string drawing methods will attempt to draw the attributed string in the given bounds by proportionally scaling the font(s) in the attributed string
+     */
     @Generated
     @Selector("setMinimumScaleFactor:")
     public native void setMinimumScaleFactor(@NFloat double value);
@@ -188,6 +200,9 @@ public class NSStringDrawingContext extends NSObject {
     @Selector("setMinimumTrackingAdjustment:")
     public native void setMinimumTrackingAdjustment(@NFloat double value);
 
+    /**
+     * bounds of the string drawn by the previous invocation of drawWithRect:options:context:
+     */
     @Generated
     @Selector("totalBounds")
     @ByValue

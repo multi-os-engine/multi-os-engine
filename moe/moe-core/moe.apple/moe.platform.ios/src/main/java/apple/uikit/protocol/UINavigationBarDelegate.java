@@ -38,6 +38,9 @@ public interface UINavigationBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called at end of animation of push or immediately if not animated
+     */
     @Generated
     @IsOptional
     @Selector("navigationBar:didPushItem:")
@@ -45,6 +48,9 @@ public interface UINavigationBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * same as push methods
+     */
     @Generated
     @IsOptional
     @Selector("navigationBar:shouldPopItem:")
@@ -52,6 +58,9 @@ public interface UINavigationBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * called to push. return NO not to.
+     */
     @Generated
     @IsOptional
     @Selector("navigationBar:shouldPushItem:")

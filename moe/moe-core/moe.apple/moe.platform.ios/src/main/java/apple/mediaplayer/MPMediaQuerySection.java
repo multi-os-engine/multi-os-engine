@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An MPMediaQuerySection object represents a single section grouping for a query.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -168,7 +171,7 @@ public class MPMediaQuerySection extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -176,8 +179,11 @@ public class MPMediaQuerySection extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaQuerySection initWithCoder(NSCoder aDecoder);
+    public native MPMediaQuerySection initWithCoder(NSCoder coder);
 
+    /**
+     * The range in the query's corresponding collections or items array represented by this section.
+     */
     @Generated
     @Selector("range")
     @ByValue
@@ -189,6 +195,9 @@ public class MPMediaQuerySection extends NSObject implements NSSecureCoding, NSC
         return supportsSecureCoding();
     }
 
+    /**
+     * The localized title of the section grouping.
+     */
     @Generated
     @Selector("title")
     public native String title();

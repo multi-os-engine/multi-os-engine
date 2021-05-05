@@ -43,34 +43,58 @@ public final class MortChain extends StructObject {
         super(peer);
     }
 
+    /**
+     * default flags for this chain
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int defaultFlags();
 
+    /**
+     * default flags for this chain
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setDefaultFlags(int value);
 
+    /**
+     * byte length of this chain
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int length();
 
+    /**
+     * byte length of this chain
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setLength(int value);
 
+    /**
+     * number of feature entries
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native char nFeatures();
 
+    /**
+     * number of feature entries
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setNFeatures(char value);
 
+    /**
+     * number of subtables
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native char nSubtables();
 
+    /**
+     * number of subtables
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setNSubtables(char value);

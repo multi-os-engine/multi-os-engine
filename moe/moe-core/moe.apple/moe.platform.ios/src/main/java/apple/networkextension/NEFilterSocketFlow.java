@@ -43,6 +43,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEFilterSocketFlow
+ * 
+ * The NEFilterSocketFlow class declares the programmatic interface of an object that represents a flow of network data to be filtered, which is originated from the socket.
+ * 
+ * NEFilterSocketFlow is part of NetworkExtension.framework
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -166,7 +173,7 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,36 +181,49 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterSocketFlow initWithCoder(NSCoder aDecoder);
+    public native NEFilterSocketFlow initWithCoder(NSCoder coder);
 
+    /**
+     * * @property localEndpoint
+     * * @discussion The flow's local endpoint. This endpoint object may be nil when [NEFilterDataProvider handleNewFlow:] is invoked and if so will be populated upon receiving network data.
+     * 	In such a case, filtering on the flow may still be performed based on its socket type, socket family or socket protocol.
+     */
     @Generated
     @Selector("localEndpoint")
     public native NWEndpoint localEndpoint();
 
+    /**
+     * * @property remoteEndpoint
+     * * @discussion The flow's remote endpoint. This endpoint object may be nil when [NEFilterDataProvider handleNewFlow:] is invoked and if so will be populated upon receiving network data.
+     * 	In such a case, filtering on the flow may still be performed based on its socket type, socket family or socket protocol.
+     */
     @Generated
     @Selector("remoteEndpoint")
     public native NWEndpoint remoteEndpoint();
 
-    @Generated
-    @Selector("setSocketFamily:")
-    public native void setSocketFamily(int value);
-
-    @Generated
-    @Selector("setSocketProtocol:")
-    public native void setSocketProtocol(int value);
-
-    @Generated
-    @Selector("setSocketType:")
-    public native void setSocketType(int value);
-
+    /**
+     * [@property] socketFamily
+     * 
+     * Socket family of the socket flow, such as PF_INET.
+     */
     @Generated
     @Selector("socketFamily")
     public native int socketFamily();
 
+    /**
+     * [@property] socketProtocol
+     * 
+     * Socket protocol of the socket flow, such as IPPROTO_TCP.
+     */
     @Generated
     @Selector("socketProtocol")
     public native int socketProtocol();
 
+    /**
+     * [@property] socketType
+     * 
+     * Socket type of the socket flow, such as SOCK_STREAM.
+     */
     @Generated
     @Selector("socketType")
     public native int socketType();
@@ -213,4 +233,13 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * [@property] remoteHostname
+     * 
+     * The flow's remote hostname. This property is only non-nil if the flow was created using Network.framework or NSURLSession.
+     */
+    @Generated
+    @Selector("remoteHostname")
+    public native String remoteHostname();
 }

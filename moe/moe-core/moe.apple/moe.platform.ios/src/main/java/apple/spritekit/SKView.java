@@ -26,6 +26,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -132,7 +133,7 @@ public class SKView extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -145,8 +146,8 @@ public class SKView extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -348,6 +349,10 @@ public class SKView extends UIView {
     @NInt
     public static native long version_static();
 
+    /**
+     * Toggles whether the view allows transparent rendering. This allows content under the view to show through if
+     * a non-opaque backgroundColor is set on the scene. Defaults to NO.
+     */
     @Generated
     @Selector("allowsTransparency")
     public native boolean allowsTransparency();
@@ -371,7 +376,7 @@ public class SKView extends UIView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -387,7 +392,8 @@ public class SKView extends UIView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -398,25 +404,54 @@ public class SKView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * Converts a point from scene space to view space.
+     * 
+     * @param point the point to convert.
+     * @param scene the scene to convert the point into.
+     */
     @Generated
     @Selector("convertPoint:fromScene:")
     @ByValue
     public native CGPoint convertPointFromScene(@ByValue CGPoint point, SKScene scene);
 
+    /**
+     * Converts a point from view space to scene space.
+     * 
+     * @param point the point to convert.
+     * @param scene the scene to convert the point into.
+     */
     @Generated
     @Selector("convertPoint:toScene:")
     @ByValue
     public native CGPoint convertPointToScene(@ByValue CGPoint point, SKScene scene);
 
+    /**
+     * Optional view delegate, see SKViewDelegate.
+     */
     @Generated
     @Selector("delegate")
     public native NSObject delegate();
 
+    /**
+     * Deprecated, please use preferredFramesPerSecond.
+     * Number of frames to skip between renders, defaults to 1 (render every frame)
+     * Actual requested rate will be preferredFramesPerSecond / frameInterval.  
+     */
     @Generated
     @Selector("frameInterval")
     @NInt
     public native long frameInterval();
 
+    /**
+     * Ignores sibling and traversal order to sort the rendered contents of a scene into the most efficient batching possible.
+     * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each other.
+     * 
+     * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in the view.
+     * 
+     * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only zPosition
+     * determines render order before the efficiency heuristics are used.
+     */
     @Generated
     @Selector("ignoresSiblingOrder")
     public native boolean ignoresSiblingOrder();
@@ -427,57 +462,103 @@ public class SKView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKView initWithCoder(NSCoder aDecoder);
+    public native SKView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
     public native SKView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Toggles whether the view updates is rendered asynchronously or aligned with Core Animation updates. Defaults to YES.
+     */
     @Generated
     @Selector("isAsynchronous")
     public native boolean isAsynchronous();
 
+    /**
+     * Toggles whether the view updates is rendered asynchronously or aligned with Core Animation updates. Defaults to YES.
+     */
     @Generated
     @Selector("setAsynchronous:")
     public native void setAsynchronous(boolean value);
 
+    /**
+     * Pause the entire view
+     */
     @Generated
     @Selector("isPaused")
     public native boolean isPaused();
 
+    /**
+     * Pause the entire view
+     */
     @Generated
     @Selector("setPaused:")
     public native void setPaused(boolean value);
 
+    /**
+     * Deprecated, please use preferredFramesPerSecond.
+     * FIXME: remove from public headers once all clinets adopt preferredFramesPerSecond.
+     */
     @Generated
     @Selector("preferredFrameRate")
     public native float preferredFrameRate();
 
+    /**
+     * Defines the desired rate for this SKView to it's content.
+     * Actual rate maybe be limited by hardware or other software. 
+     */
     @Generated
     @Selector("preferredFramesPerSecond")
     @NInt
     public native long preferredFramesPerSecond();
 
+    /**
+     * Present an SKScene in the view, replacing the current scene.
+     * 
+     * @param scene the scene to present.
+     */
     @Generated
     @Selector("presentScene:")
     public native void presentScene(SKScene scene);
 
+    /**
+     * Present an SKScene in the view, replacing the current scene.
+     * 
+     * If there is currently a scene being presented in the view, the transition is used to swap between them.
+     * 
+     * @param scene the scene to present.
+     * @param transition the transition to use when presenting the scene.
+     */
     @Generated
     @Selector("presentScene:transition:")
     public native void presentSceneTransition(SKScene scene, SKTransition transition);
 
+    /**
+     * The currently presented scene, otherwise nil. If in a transition, the 'incoming' scene is returned.
+     */
     @Generated
     @Selector("scene")
     public native SKScene scene();
 
+    /**
+     * Toggles whether the view allows transparent rendering. This allows content under the view to show through if
+     * a non-opaque backgroundColor is set on the scene. Defaults to NO.
+     */
     @Generated
     @Selector("setAllowsTransparency:")
     public native void setAllowsTransparency(boolean value);
 
+    /**
+     * Optional view delegate, see SKViewDelegate.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(NSObject value);
 
+    /**
+     * Optional view delegate, see SKViewDelegate.
+     */
     @Generated
     public void setDelegate(NSObject value) {
         Object __old = delegate();
@@ -490,18 +571,40 @@ public class SKView extends UIView {
         }
     }
 
+    /**
+     * Deprecated, please use preferredFramesPerSecond.
+     * Number of frames to skip between renders, defaults to 1 (render every frame)
+     * Actual requested rate will be preferredFramesPerSecond / frameInterval.  
+     */
     @Generated
     @Selector("setFrameInterval:")
     public native void setFrameInterval(@NInt long value);
 
+    /**
+     * Ignores sibling and traversal order to sort the rendered contents of a scene into the most efficient batching possible.
+     * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each other.
+     * 
+     * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in the view.
+     * 
+     * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only zPosition
+     * determines render order before the efficiency heuristics are used.
+     */
     @Generated
     @Selector("setIgnoresSiblingOrder:")
     public native void setIgnoresSiblingOrder(boolean value);
 
+    /**
+     * Deprecated, please use preferredFramesPerSecond.
+     * FIXME: remove from public headers once all clinets adopt preferredFramesPerSecond.
+     */
     @Generated
     @Selector("setPreferredFrameRate:")
     public native void setPreferredFrameRate(float value);
 
+    /**
+     * Defines the desired rate for this SKView to it's content.
+     * Actual rate maybe be limited by hardware or other software. 
+     */
     @Generated
     @Selector("setPreferredFramesPerSecond:")
     public native void setPreferredFramesPerSecond(@NInt long value);
@@ -514,6 +617,9 @@ public class SKView extends UIView {
     @Selector("setShowsDrawCount:")
     public native void setShowsDrawCount(boolean value);
 
+    /**
+     * Toggles display of performance stats in the view. All default to false.
+     */
     @Generated
     @Selector("setShowsFPS:")
     public native void setShowsFPS(boolean value);
@@ -542,6 +648,9 @@ public class SKView extends UIView {
     @Selector("showsDrawCount")
     public native boolean showsDrawCount();
 
+    /**
+     * Toggles display of performance stats in the view. All default to false.
+     */
     @Generated
     @Selector("showsFPS")
     public native boolean showsFPS();
@@ -562,11 +671,44 @@ public class SKView extends UIView {
     @Selector("showsQuadCount")
     public native boolean showsQuadCount();
 
+    /**
+     * Create an SKTexture containing a snapshot of how it would have been rendered in this view.
+     * The texture is tightly cropped to the size of the node.
+     * 
+     * @param node the node subtree to render to the texture.
+     */
     @Generated
     @Selector("textureFromNode:")
     public native SKTexture textureFromNode(SKNode node);
 
+    /**
+     * Create an SKTexture containing a snapshot of how it would have been rendered in this view.
+     * The texture is cropped to the specified rectangle
+     * 
+     * @param node the node subtree to render to the texture.
+     * @param crop the crop
+     */
     @Generated
     @Selector("textureFromNode:crop:")
     public native SKTexture textureFromNodeCrop(SKNode node, @ByValue CGRect crop);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    /**
+     * If true SKView will not allocate a depth/stencil buffer
+     */
+    @Generated
+    @Selector("disableDepthStencilBuffer")
+    public native boolean disableDepthStencilBuffer();
+
+    /**
+     * If true SKView will not allocate a depth/stencil buffer
+     */
+    @Generated
+    @Selector("setDisableDepthStencilBuffer:")
+    public native void setDisableDepthStencilBuffer(boolean value);
 }

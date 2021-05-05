@@ -19,6 +19,20 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] AVCaptureExposureMode
+ * 
+ *    Constants indicating the mode of the exposure on the receiver's device, if it has adjustable exposure.
+ * 
+ * [@constant] AVCaptureExposureModeLocked
+ *    Indicates that the exposure should be locked at its current value.
+ * [@constant] AVCaptureExposureModeAutoExpose
+ *    Indicates that the device should automatically adjust exposure once and then change the exposure mode to AVCaptureExposureModeLocked.
+ * [@constant] AVCaptureExposureModeContinuousAutoExposure
+ *    Indicates that the device should automatically adjust exposure when needed.
+ * [@constant] AVCaptureExposureModeCustom
+ *    Indicates that the device should only adjust exposure according to user provided ISO, exposureDuration values.
+ */
 @Generated
 public final class AVCaptureExposureMode {
     @Generated @NInt public static final long Locked = 0x0000000000000000L;

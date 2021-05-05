@@ -74,6 +74,9 @@ public class UIPrintPaper extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * for use by delegate. pass in list
+     */
     @Generated
     @Selector("bestPaperForPageSize:withPapersFromArray:")
     public static native UIPrintPaper bestPaperForPageSizeWithPapersFromArray(@ByValue CGSize contentSize,

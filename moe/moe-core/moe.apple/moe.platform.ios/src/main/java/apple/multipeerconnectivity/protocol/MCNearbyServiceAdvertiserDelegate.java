@@ -35,6 +35,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MCNearbyServiceAdvertiserDelegate")
 public interface MCNearbyServiceAdvertiserDelegate {
+    /**
+     * Advertising did not start due to an error.
+     */
     @Generated
     @IsOptional
     @Selector("advertiser:didNotStartAdvertisingPeer:")
@@ -42,6 +45,10 @@ public interface MCNearbyServiceAdvertiserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Incoming invitation request.  Call the invitationHandler block with YES
+     * and a valid session to connect the inviting peer to the session.
+     */
     @Generated
     @Selector("advertiser:didReceiveInvitationFromPeer:withContext:invitationHandler:")
     void advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler(MCNearbyServiceAdvertiser advertiser,
@@ -52,6 +59,6 @@ public interface MCNearbyServiceAdvertiserDelegate {
     @Generated
     public interface Block_advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler {
         @Generated
-        void call_advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler(boolean arg0, MCSession arg1);
+        void call_advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler(boolean accept, MCSession session);
     }
 }

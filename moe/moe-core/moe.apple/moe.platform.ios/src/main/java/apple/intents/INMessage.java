@@ -175,7 +175,7 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("identifier")
@@ -187,7 +187,7 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INMessage initWithCoder(NSCoder aDecoder);
+    public native INMessage initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithIdentifier:content:dateSent:sender:recipients:")
@@ -232,4 +232,15 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("messageType")
     @NInt
     public native long messageType();
+
+    @Generated
+    @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:groupName:messageType:serviceName:")
+    public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsGroupNameMessageTypeServiceName(
+            String identifier, String conversationIdentifier, String content, NSDate dateSent, INPerson sender,
+            NSArray<? extends INPerson> recipients, INSpeakableString groupName, @NInt long messageType,
+            String serviceName);
+
+    @Generated
+    @Selector("serviceName")
+    public native String serviceName();
 }

@@ -23,6 +23,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A configuration for running orientation tracking.
+ * 
+ * Orientation tracking provides 3 degrees of freedom tracking of the device.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -141,4 +146,30 @@ public class AROrientationTrackingConfiguration extends ARConfiguration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Enable or disable continuous auto focus.
+     * 
+     * Enabled by default.
+     */
+    @Generated
+    @Selector("isAutoFocusEnabled")
+    public native boolean isAutoFocusEnabled();
+
+    /**
+     * Enable or disable continuous auto focus.
+     * 
+     * Enabled by default.
+     */
+    @Generated
+    @Selector("setAutoFocusEnabled:")
+    public native void setAutoFocusEnabled(boolean value);
+
+    @Generated
+    @Selector("supportedVideoFormats")
+    public static native NSArray<? extends ARVideoFormat> supportedVideoFormats();
+
+    @Generated
+    @Selector("supportsFrameSemantics:")
+    public static native boolean supportsFrameSemantics(@NUInt long frameSemantics);
 }

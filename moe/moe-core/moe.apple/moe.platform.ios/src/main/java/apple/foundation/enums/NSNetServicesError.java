@@ -21,16 +21,47 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSNetServicesError {
+    /**
+     * An unknown error occured during resolution or publication.
+     */
     @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFEE6C0L;
+    /**
+     * An NSNetService with the same domain, type and name was already present when the publication request was made.
+     */
     @Generated @NInt public static final long CollisionError = 0xFFFFFFFFFFFEE6BFL;
+    /**
+     * The NSNetService was not found when a resolution request was made.
+     */
     @Generated @NInt public static final long NotFoundError = 0xFFFFFFFFFFFEE6BEL;
+    /**
+     * A publication or resolution request was sent to an NSNetService instance which was already published or a search request was made of an NSNetServiceBrowser instance which was already searching.
+     */
     @Generated @NInt public static final long ActivityInProgress = 0xFFFFFFFFFFFEE6BDL;
+    /**
+     * An required argument was not provided when initializing the NSNetService instance.
+     */
     @Generated @NInt public static final long BadArgumentError = 0xFFFFFFFFFFFEE6BCL;
+    /**
+     * The operation being performed by the NSNetService or NSNetServiceBrowser instance was cancelled.
+     */
     @Generated @NInt public static final long CancelledError = 0xFFFFFFFFFFFEE6BBL;
+    /**
+     * An invalid argument was provided when initializing the NSNetService instance or starting a search with an NSNetServiceBrowser instance.
+     */
     @Generated @NInt public static final long InvalidError = 0xFFFFFFFFFFFEE6BAL;
+    /**
+     * Resolution of an NSNetService instance failed because the timeout was reached.
+     */
     @Generated @NInt public static final long TimeoutError = 0xFFFFFFFFFFFEE6B9L;
 
     @Generated
     private NSNetServicesError() {
     }
+
+    /**
+     * Missing required configuration for local network access.
+     * 
+     * NSBonjourServices and NSLocalNetworkUsageDescription are required in Info.plist
+     */
+    @Generated @NInt public static final long MissingRequiredConfigurationError = 0xFFFFFFFFFFFEE6B8L;
 }

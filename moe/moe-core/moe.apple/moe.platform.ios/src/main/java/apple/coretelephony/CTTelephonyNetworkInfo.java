@@ -17,7 +17,9 @@ limitations under the License.
 package apple.coretelephony;
 
 import apple.NSObject;
+import apple.coretelephony.protocol.CTTelephonyNetworkInfoDelegate;
 import apple.foundation.NSArray;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -40,6 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CTTelephonyNetworkInfo
+ * 
+ * Discussion:
+ *   The CTTelephonyNetworkInfo object is your entry point to the telephony service.
+ */
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +159,13 @@ public class CTTelephonyNetworkInfo extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * currentRadioAccessTechnology
+     * 
+     * Discussion:
+     *   The current radio access technology for each service of the device is registered with. May be nil
+     *   if the device is not registered on any network.
+     */
     @Generated
     @Selector("currentRadioAccessTechnology")
     public native String currentRadioAccessTechnology();
@@ -159,15 +174,40 @@ public class CTTelephonyNetworkInfo extends NSObject {
     @Selector("init")
     public native CTTelephonyNetworkInfo init();
 
+    /**
+     * subscriberCellularProviderDidUpdateNotifier
+     * 
+     * Discussion:
+     *   A block that will be dispatched on the default priority global dispatch queue when
+     *   the subscriber's cellular provider information updates for the service. Set this
+     *   property to a block that is defined in your application to receive the newly
+     *   updated information.
+     */
     @Generated
     @Selector("setSubscriberCellularProviderDidUpdateNotifier:")
     public native void setSubscriberCellularProviderDidUpdateNotifier(
             @ObjCBlock(name = "call_setSubscriberCellularProviderDidUpdateNotifier") Block_setSubscriberCellularProviderDidUpdateNotifier value);
 
+    /**
+     * subscriberCellularProvider
+     * 
+     * Discussion:
+     *   A CTCarrier object that contains information about the subscriber's
+     *   home cellular service provider for the service.
+     */
     @Generated
     @Selector("subscriberCellularProvider")
     public native CTCarrier subscriberCellularProvider();
 
+    /**
+     * subscriberCellularProviderDidUpdateNotifier
+     * 
+     * Discussion:
+     *   A block that will be dispatched on the default priority global dispatch queue when
+     *   the subscriber's cellular provider information updates for the service. Set this
+     *   property to a block that is defined in your application to receive the newly
+     *   updated information.
+     */
     @Generated
     @Selector("subscriberCellularProviderDidUpdateNotifier")
     @ObjCBlock(name = "call_subscriberCellularProviderDidUpdateNotifier_ret")
@@ -185,5 +225,104 @@ public class CTTelephonyNetworkInfo extends NSObject {
     public interface Block_subscriberCellularProviderDidUpdateNotifier_ret {
         @Generated
         void call_subscriberCellularProviderDidUpdateNotifier_ret(CTCarrier arg0);
+    }
+
+    /**
+     * dataServiceIdentifier
+     * 
+     * Discussion:
+     *   An NSString representing the identifier of the service that's currently providing data.
+     */
+    @Generated
+    @Selector("dataServiceIdentifier")
+    public native String dataServiceIdentifier();
+
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native CTTelephonyNetworkInfoDelegate delegate();
+
+    /**
+     * serviceCurrentRadioAccessTechnology
+     * 
+     * Discussion:
+     *   A dictionary containing the current radio access technology each service is registered. The key to the dictionary
+     *   is an NSString representing the service.  An entry may be nil if the service is not registered on any network.
+     */
+    @Generated
+    @Selector("serviceCurrentRadioAccessTechnology")
+    public native NSDictionary<String, String> serviceCurrentRadioAccessTechnology();
+
+    /**
+     * serviceSubscriberCellularProviders
+     * 
+     * Discussion:
+     *   A dictionary containing CTCarrier objects for each service that contains information about the subscriber's
+     *   home cellular service provider.  The key to the dictionary is an NSString representing the service.
+     */
+    @Generated
+    @Selector("serviceSubscriberCellularProviders")
+    public native NSDictionary<String, ? extends CTCarrier> serviceSubscriberCellularProviders();
+
+    /**
+     * serviceSubscriberCellularProvidersDidUpdateNotifier
+     * 
+     * Discussion:
+     *   A block that will be dispatched on the default priority global dispatch
+     *   queue when the subscriber's cellular provider information updates for any service. Set
+     *   this property to a block that is defined in your application to receive the newly
+     *   updated information.  The NSString will contain the service identifier of the service
+     *   whose information has changed.  This can be used as the key into serviceSubscriberCellularProvider
+     *   to obtain the new information.
+     */
+    @Generated
+    @Selector("serviceSubscriberCellularProvidersDidUpdateNotifier")
+    @ObjCBlock(name = "call_serviceSubscriberCellularProvidersDidUpdateNotifier_ret")
+    public native Block_serviceSubscriberCellularProvidersDidUpdateNotifier_ret serviceSubscriberCellularProvidersDidUpdateNotifier();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_serviceSubscriberCellularProvidersDidUpdateNotifier_ret {
+        @Generated
+        void call_serviceSubscriberCellularProvidersDidUpdateNotifier_ret(String arg0);
+    }
+
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CTTelephonyNetworkInfoDelegate value);
+
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) CTTelephonyNetworkInfoDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * serviceSubscriberCellularProvidersDidUpdateNotifier
+     * 
+     * Discussion:
+     *   A block that will be dispatched on the default priority global dispatch
+     *   queue when the subscriber's cellular provider information updates for any service. Set
+     *   this property to a block that is defined in your application to receive the newly
+     *   updated information.  The NSString will contain the service identifier of the service
+     *   whose information has changed.  This can be used as the key into serviceSubscriberCellularProvider
+     *   to obtain the new information.
+     */
+    @Generated
+    @Selector("setServiceSubscriberCellularProvidersDidUpdateNotifier:")
+    public native void setServiceSubscriberCellularProvidersDidUpdateNotifier(
+            @ObjCBlock(name = "call_setServiceSubscriberCellularProvidersDidUpdateNotifier") Block_setServiceSubscriberCellularProvidersDidUpdateNotifier value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setServiceSubscriberCellularProvidersDidUpdateNotifier {
+        @Generated
+        void call_setServiceSubscriberCellularProvidersDidUpdateNotifier(String arg0);
     }
 }

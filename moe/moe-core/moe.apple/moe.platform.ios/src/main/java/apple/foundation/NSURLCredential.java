@@ -41,6 +41,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSURLCredential
+ * 
+ * This class is an immutable object representing an authentication credential.  The actual type of the credential is determined by the constructor called in the categories declared below.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -91,15 +96,42 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * credentialForTrust:
+     * 
+     * Create a new NSURLCredential which specifies that a handshake has been trusted.
+     * 
+     * @return The new autoreleased NSURLCredential
+     */
     @Generated
     @Selector("credentialForTrust:")
     public static native NSURLCredential credentialForTrust(SecTrustRef trust);
 
+    /**
+     * credentialWithIdentity:certificates:persistence:
+     * 
+     * Create a new NSURLCredential with an identity and certificate array
+     * 
+     * @param identity a SecIdentityRef object
+     * @param certArray an array containing at least one SecCertificateRef objects
+     * @param persistence enum that says to store per session, permanently or not at all
+     * @return The new autoreleased NSURLCredential
+     */
     @Generated
     @Selector("credentialWithIdentity:certificates:persistence:")
     public static native NSURLCredential credentialWithIdentityCertificatesPersistence(SecIdentityRef identity,
             NSArray<?> certArray, @NUInt long persistence);
 
+    /**
+     * credentialWithUser:password:persistence:
+     * 
+     * Create a new NSURLCredential with a user and password
+     * 
+     * @param user the username
+     * @param password the password
+     * @param persistence enum that says to store per session, permanently or not at all
+     * @return The new autoreleased NSURLCredential
+     */
     @Generated
     @Selector("credentialWithUser:password:persistence:")
     public static native NSURLCredential credentialWithUserPasswordPersistence(String user, String password,
@@ -170,6 +202,11 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns an NSArray of SecCertificateRef objects representing the client certificate for this credential, if this credential was created with an identity and certificate.
+     * 
+     * @return an NSArray of SecCertificateRef or NULL if this is a username/password credential
+     */
     @Generated
     @Selector("certificates")
     public native NSArray<?> certificates();
@@ -182,12 +219,27 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Find out if this credential has a password, without trying to get it
+     * 
+     * If this credential's password is actually kept in an
+     * external store, the password method may return nil even if this
+     * method returns YES, since getting the password may fail, or the
+     * user may refuse access.
+     * 
+     * @return YES if this credential has a password, otherwise NO
+     */
     @Generated
     @Selector("hasPassword")
     public native boolean hasPassword();
 
+    /**
+     * Returns the SecIdentityRef of this credential, if it was created with a certificate and identity
+     * 
+     * @return A SecIdentityRef or NULL if this is a username/password credential
+     */
     @Generated
     @Selector("identity")
     public native SecIdentityRef identity();
@@ -198,26 +250,67 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLCredential initWithCoder(NSCoder aDecoder);
+    public native NSURLCredential initWithCoder(NSCoder coder);
 
+    /**
+     * initWithIdentity:certificates:persistence:
+     * 
+     * Initialize an NSURLCredential with an identity and array of at least 1 client certificates (SecCertificateRef)
+     * 
+     * @param identity a SecIdentityRef object
+     * @param certArray an array containing at least one SecCertificateRef objects
+     * @param persistence enum that says to store per session, permanently or not at all
+     * @return the Initialized NSURLCredential
+     */
     @Generated
     @Selector("initWithIdentity:certificates:persistence:")
     public native NSURLCredential initWithIdentityCertificatesPersistence(SecIdentityRef identity, NSArray<?> certArray,
             @NUInt long persistence);
 
+    /**
+     * initWithTrust:
+     * 
+     * Initialize a new NSURLCredential which specifies that the specified trust has been accepted.
+     * 
+     * @return the Initialized NSURLCredential
+     */
     @Generated
     @Selector("initWithTrust:")
     public native NSURLCredential initWithTrust(SecTrustRef trust);
 
+    /**
+     * initWithUser:password:persistence:
+     * 
+     * Initialize a NSURLCredential with a user and password
+     * 
+     * @param user the username
+     * @param password the password
+     * @param persistence enum that says to store per session, permanently or not at all
+     * @return The initialized NSURLCredential
+     */
     @Generated
     @Selector("initWithUser:password:persistence:")
     public native NSURLCredential initWithUserPasswordPersistence(String user, String password,
             @NUInt long persistence);
 
+    /**
+     * Get the password
+     * 
+     * This method might actually attempt to retrieve the
+     * password from an external store, possible resulting in prompting,
+     * so do not call it unless needed.
+     * 
+     * @return The password string
+     */
     @Generated
     @Selector("password")
     public native String password();
 
+    /**
+     * Determine whether this credential is or should be stored persistently
+     * 
+     * @return A value indicating whether this credential is stored permanently, per session or not at all.
+     */
     @Generated
     @Selector("persistence")
     @NUInt
@@ -229,6 +322,11 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
         return supportsSecureCoding();
     }
 
+    /**
+     * Get the username
+     * 
+     * @return The user string
+     */
     @Generated
     @Selector("user")
     public native String user();

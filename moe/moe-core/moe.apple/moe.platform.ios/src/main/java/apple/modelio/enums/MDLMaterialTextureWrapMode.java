@@ -19,6 +19,9 @@ package apple.modelio.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Texture filtering
+ */
 @Generated
 public final class MDLMaterialTextureWrapMode {
     @Generated @NUInt public static final long Clamp = 0x0000000000000000L;

@@ -165,6 +165,9 @@ public class SKProduct extends NSObject {
     @Selector("init")
     public native SKProduct init();
 
+    /**
+     * YES if this product has content downloadable using SKDownload
+     */
     @Generated
     @Selector("isDownloadable")
     public native boolean isDownloadable();
@@ -188,4 +191,34 @@ public class SKProduct extends NSObject {
     @Generated
     @Selector("productIdentifier")
     public native String productIdentifier();
+
+    /**
+     * Version of the downloadable content
+     */
+    @Generated
+    @Selector("contentVersion")
+    public native String contentVersion();
+
+    @Generated
+    @Selector("discounts")
+    public native NSArray<? extends SKProductDiscount> discounts();
+
+    @Generated
+    @Selector("introductoryPrice")
+    public native SKProductDiscount introductoryPrice();
+
+    @Generated
+    @Selector("subscriptionGroupIdentifier")
+    public native String subscriptionGroupIdentifier();
+
+    @Generated
+    @Selector("subscriptionPeriod")
+    public native SKProductSubscriptionPeriod subscriptionPeriod();
+
+    /**
+     * YES if this product allows for sharing among family members
+     */
+    @Generated
+    @Selector("isFamilyShareable")
+    public native boolean isFamilyShareable();
 }

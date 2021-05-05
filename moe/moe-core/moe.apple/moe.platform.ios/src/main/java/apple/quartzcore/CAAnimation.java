@@ -50,6 +50,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The base animation class. *
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -78,6 +81,9 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * Creates a new animation object.
+     */
     @Generated
     @Selector("animation")
     public static native CAAnimation animation();
@@ -108,6 +114,10 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * Animations implement the same property model as defined by CALayer.
+     * See CALayer.h for more details.
+     */
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -170,6 +180,11 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] animationEvents
+     * 
+     * Specifies the animation events attached to the receiver.
+     */
     @Generated
     @Selector("animationEvents")
     public native NSArray<? extends SCNAnimationEvent> animationEvents();
@@ -188,6 +203,11 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * The delegate of the animation. This object is retained for the
+     * lifetime of the animation object. Defaults to nil. See below for the
+     * supported delegate methods.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -199,13 +219,27 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * [@property] fadeInDuration
+     * 
+     * Determines the receiver's fade-in duration.
+     * 
+     * When the fadeInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
+     */
     @Generated
     @Selector("fadeInDuration")
     @NFloat
     public native double fadeInDuration();
 
+    /**
+     * [@property] fadeOutDuration
+     * 
+     * Determines the receiver's fade-out duration.
+     * 
+     * When the fadeOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
+     */
     @Generated
     @Selector("fadeOutDuration")
     @NFloat
@@ -221,12 +255,20 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAAnimation initWithCoder(NSCoder aDecoder);
+    public native CAAnimation initWithCoder(NSCoder coder);
 
+    /**
+     * When true, the animation is removed from the render tree once its
+     * active duration has passed. Defaults to YES.
+     */
     @Generated
     @Selector("isRemovedOnCompletion")
     public native boolean isRemovedOnCompletion();
 
+    /**
+     * When true, the animation is removed from the render tree once its
+     * active duration has passed. Defaults to YES.
+     */
     @Generated
     @Selector("setRemovedOnCompletion:")
     public native void setRemovedOnCompletion(boolean value);
@@ -244,6 +286,11 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     public native void runActionForKeyObjectArguments(String event, @Mapped(ObjCObjectMapper.class) Object anObject,
             NSDictionary<?, ?> dict);
 
+    /**
+     * [@property] animationEvents
+     * 
+     * Specifies the animation events attached to the receiver.
+     */
     @Generated
     @Selector("setAnimationEvents:")
     public native void setAnimationEvents(NSArray<? extends SCNAnimationEvent> value);
@@ -256,6 +303,11 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     @Selector("setBeginTime:")
     public native void setBeginTime(double value);
 
+    /**
+     * The delegate of the animation. This object is retained for the
+     * lifetime of the animation object. Defaults to nil. See below for the
+     * supported delegate methods.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate(@Mapped(ObjCObjectMapper.class) CAAnimationDelegate value);
@@ -264,10 +316,24 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     @Selector("setDuration:")
     public native void setDuration(double value);
 
+    /**
+     * [@property] fadeInDuration
+     * 
+     * Determines the receiver's fade-in duration.
+     * 
+     * When the fadeInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
+     */
     @Generated
     @Selector("setFadeInDuration:")
     public native void setFadeInDuration(@NFloat double value);
 
+    /**
+     * [@property] fadeOutDuration
+     * 
+     * Determines the receiver's fade-out duration.
+     * 
+     * When the fadeOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
+     */
     @Generated
     @Selector("setFadeOutDuration:")
     public native void setFadeOutDuration(@NFloat double value);
@@ -292,10 +358,21 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     @Selector("setTimeOffset:")
     public native void setTimeOffset(double value);
 
+    /**
+     * A timing function defining the pacing of the animation. Defaults to
+     * nil indicating linear pacing.
+     */
     @Generated
     @Selector("setTimingFunction:")
     public native void setTimingFunction(CAMediaTimingFunction value);
 
+    /**
+     * [@property] usesSceneTimeBase
+     * 
+     * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
+     * 
+     * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
+     */
     @Generated
     @Selector("setUsesSceneTimeBase:")
     public native void setUsesSceneTimeBase(boolean value);
@@ -312,14 +389,29 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     @Selector("timeOffset")
     public native double timeOffset();
 
+    /**
+     * A timing function defining the pacing of the animation. Defaults to
+     * nil indicating linear pacing.
+     */
     @Generated
     @Selector("timingFunction")
     public native CAMediaTimingFunction timingFunction();
 
+    /**
+     * [@property] usesSceneTimeBase
+     * 
+     * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
+     * 
+     * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
+     */
     @Generated
     @Selector("usesSceneTimeBase")
     public native boolean usesSceneTimeBase();
 
+    /**
+     * Bridge with SCNAnimation
+     * Initializes a CoreAnimation animation from a SCNAnimation
+     */
     @Generated
     @Selector("animationWithSCNAnimation:")
     public static native CAAnimation animationWithSCNAnimation(apple.scenekit.SCNAnimation animation);

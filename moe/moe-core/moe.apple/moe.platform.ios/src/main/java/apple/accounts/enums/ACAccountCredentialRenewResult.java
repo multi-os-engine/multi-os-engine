@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class ACAccountCredentialRenewResult {
+    /**
+     * A new credential was obtained and is now associated with the account.
+     */
     @Generated @NInt public static final long Renewed = 0x0000000000000000L;
+    /**
+     * Renewal failed because of a user-initiated action.
+     */
     @Generated @NInt public static final long Rejected = 0x0000000000000001L;
+    /**
+     * A non-user-initiated cancel of the prompt.
+     */
     @Generated @NInt public static final long Failed = 0x0000000000000002L;
 
     @Generated

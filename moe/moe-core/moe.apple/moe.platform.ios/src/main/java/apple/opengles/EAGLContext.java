@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * EAGL Context
+ */
 @Generated
 @Library("OpenGLES")
 @Runtime(ObjCRuntime.class)
@@ -188,14 +191,23 @@ public class EAGLContext extends NSObject {
     @Selector("setMultiThreaded:")
     public native void setMultiThreaded(boolean value);
 
+    /**
+     * Request the native window system display the OpenGL ES renderbuffer bound to <target>
+     */
     @Generated
     @Selector("presentRenderbuffer:")
     public native boolean presentRenderbuffer(@NUInt long target);
 
+    /**
+     * Request the native window system display the OpenGL ES renderbuffer bound to <target> at specified time
+     */
     @Generated
     @Selector("presentRenderbuffer:atTime:")
     public native boolean presentRenderbufferAtTime(@NUInt long target, double presentationTime);
 
+    /**
+     * Attaches an EAGLDrawable as storage for the OpenGL ES renderbuffer object bound to <target>
+     */
     @Generated
     @Selector("renderbufferStorage:fromDrawable:")
     public native boolean renderbufferStorageFromDrawable(@NUInt long target,
@@ -209,6 +221,9 @@ public class EAGLContext extends NSObject {
     @Selector("sharegroup")
     public native EAGLSharegroup sharegroup();
 
+    /**
+     * Request the native window system display the OpenGL ES renderbuffer bound to <target> after the previous frame is presented for at least duration time
+     */
     @Generated
     @Selector("presentRenderbuffer:afterMinimumDuration:")
     public native boolean presentRenderbufferAfterMinimumDuration(@NUInt long target, double duration);

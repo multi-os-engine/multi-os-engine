@@ -44,36 +44,53 @@ public final class group_source_req extends StructObject {
     }
 
     @Generated
-    public group_source_req(int gsr_interface, @ByValue sockaddr_storage gsr_group,
-            @ByValue sockaddr_storage gsr_source) {
+    public group_source_req(int gsr_interface, @ByValue sockaddr_storage gsr_group, @ByValue sockaddr_storage gsr_source) {
         super(group_source_req.class);
         setGsr_interface(gsr_interface);
         setGsr_group(gsr_group);
         setGsr_source(gsr_source);
     }
 
+    /**
+     * interface index
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int gsr_interface();
 
+    /**
+     * interface index
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setGsr_interface(int value);
 
+    /**
+     * group address
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native sockaddr_storage gsr_group();
 
+    /**
+     * group address
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setGsr_group(@ByValue sockaddr_storage value);
 
+    /**
+     * source address
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @ByValue
     public native sockaddr_storage gsr_source();
 
+    /**
+     * source address
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setGsr_source(@ByValue sockaddr_storage value);

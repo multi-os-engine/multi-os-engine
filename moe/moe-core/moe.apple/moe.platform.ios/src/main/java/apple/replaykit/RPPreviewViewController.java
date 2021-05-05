@@ -172,7 +172,7 @@ public class RPPreviewViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native RPPreviewViewController initWithCoder(NSCoder aDecoder);
+    public native RPPreviewViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

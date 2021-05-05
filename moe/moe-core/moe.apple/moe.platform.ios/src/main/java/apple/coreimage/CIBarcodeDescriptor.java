@@ -27,6 +27,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CIBarcodeDescriptor
+ * 
+ *    CIBarcodeDescriptor is an abstract base class that defines an abstract representation of a machine readable code's symbol attributes.
+ * 
+ * [@discsussion]
+ *    Each subclass is sufficient to recreate the symbol exactly as seen or to be used with a custom parser. Subclasses of CIBarcodeDescriptor are defined for each code type to contain the formal specification of each symbology.
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -93,7 +101,7 @@ public class CIBarcodeDescriptor extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -106,7 +114,7 @@ public class CIBarcodeDescriptor extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIBarcodeDescriptor initWithCoder(NSCoder aDecoder);
+    public native CIBarcodeDescriptor initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

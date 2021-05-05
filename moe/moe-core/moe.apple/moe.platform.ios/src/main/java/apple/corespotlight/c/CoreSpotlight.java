@@ -38,6 +38,12 @@ public final class CoreSpotlight {
     private CoreSpotlight() {
     }
 
+    /**
+     * When opening a document from Spotlight, the application's application:willContinueUserActivityWithType:
+     * method will get called with CSSearchableItemActionType, followed by  application:continueUserActivity:restorationHandler:
+     * with an NSUserActivity where the userInfo dictionary has a key value pair where CSSearchableItemActivityIdentifier is the key
+     * and the value is the uniqueIdentifier used when creating the item.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -48,6 +54,16 @@ public final class CoreSpotlight {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSSearchableItemActivityIdentifier();
 
+    /**
+     * When continuing a query from Spotlight, the application's -application:willContinueUserActivityWithType:
+     * method will get called with CSQueryContinuationActionType, followed by -application:continueUserActivity:restorationHandler:
+     * with an NSUserActivity where the userInfo dictionary has a key value pair with CSSearchQueryString as the key
+     * and the value is the string the application should use when performing its query.
+     * The application should declare that it supports the query continuation by adding the CoreSpotlightContinuation key to its Info.plist:
+     * 
+     *    <key>CoreSpotlightContinuation</key>
+     *    <true/>
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -63,6 +79,9 @@ public final class CoreSpotlight {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSIndexErrorDomain();
 
+    /**
+     * Well-known mailbox identifiers
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -98,10 +117,16 @@ public final class CoreSpotlight {
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSSearchQueryErrorDomain();
 
+    /**
+     * ! Project version number for CoreSpotlight.
+     */
     @Generated
     @CVariable()
     public static native double CoreSpotlightVersionNumber();
 
+    /**
+     * ! Project version string for CoreSpotlight.
+     */
     @Generated
     @CVariable()
     public static native ConstBytePtr CoreSpotlightVersionString();

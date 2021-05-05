@@ -19,6 +19,27 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum]          HKStatisticsOptions
+ * 
+ * Options for specifying which statistics to calculate
+ * 
+ * When querying for HKStatistics objects, an options bitmask will specify which statistics will be
+ *                calculated.
+ * 
+ *                Statistics are classified as discrete or cumulative.  If a discrete statistics option is specified for a
+ *                cumulative HKQuantityType, an exception will be thrown.  If a cumulative statistics options is specified
+ *                for a discrete HKQuantityType, an exception will also be thrown.
+ * 
+ * [@constant]      HKStatisticsOptionNone
+ * [@constant]      HKStatisticsOptionSeparateBySource
+ * [@constant]      HKStatisticsOptionDiscreteAverage      Calculate averageQuantity when creating statistics.
+ * [@constant]      HKStatisticsOptionDiscreteMin          Calculate minQuantity when creating statistics.
+ * [@constant]      HKStatisticsOptionDiscreteMax          Calculate maxQuantity when creating statistics.
+ * [@constant]      HKStatisticsOptionCumulativeSum        Calculate sumQuantity when creating statistics.
+ * [@constant]      HKStatisticsOptionMostRecent           Calculate mostRecentQuantity when creating statistics.
+ * [@constant]      HKStatisticsOptionDuration             Calculate duration when creating statistics.
+ */
 @Generated
 public final class HKStatisticsOptions {
     @Generated @NUInt public static final long None = 0x0000000000000000L;
@@ -31,4 +52,8 @@ public final class HKStatisticsOptions {
     @Generated
     private HKStatisticsOptions() {
     }
+
+    @Generated @NUInt public static final long MostRecent = 0x0000000000000020L;
+    @Generated @NUInt public static final long DiscreteMostRecent = 0x0000000000000020L;
+    @Generated @NUInt public static final long Duration = 0x0000000000000040L;
 }

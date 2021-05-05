@@ -104,36 +104,45 @@ public class PHAsset extends PHObject {
 
     @Generated
     @Selector("fetchAssetsInAssetCollection:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsInAssetCollectionOptions(PHAssetCollection assetCollection,
-            PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsInAssetCollectionOptions(
+            PHAssetCollection assetCollection, PHFetchOptions options);
 
+    /**
+     * assetURLs are URLs retrieved from ALAsset's ALAssetPropertyAssetURL
+     */
     @Generated
     @Selector("fetchAssetsWithALAssetURLs:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithALAssetURLsOptions(NSArray<? extends NSURL> assetURLs,
-            PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithALAssetURLsOptions(
+            NSArray<? extends NSURL> assetURLs, PHFetchOptions options);
 
     @Generated
     @Selector("fetchAssetsWithBurstIdentifier:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithBurstIdentifierOptions(String burstIdentifier,
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithBurstIdentifierOptions(String burstIdentifier,
             PHFetchOptions options);
 
+    /**
+     * includes hidden assets by default
+     */
     @Generated
     @Selector("fetchAssetsWithLocalIdentifiers:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithLocalIdentifiersOptions(NSArray<String> identifiers,
-            PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithLocalIdentifiersOptions(
+            NSArray<String> identifiers, PHFetchOptions options);
 
     @Generated
     @Selector("fetchAssetsWithMediaType:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithMediaTypeOptions(@NInt long mediaType,
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithMediaTypeOptions(@NInt long mediaType,
             PHFetchOptions options);
 
+    /**
+     * Fetches PHAssetSourceTypeUserLibrary assets by default (use includeAssetSourceTypes option to override)
+     */
     @Generated
     @Selector("fetchAssetsWithOptions:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithOptions(PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithOptions(PHFetchOptions options);
 
     @Generated
     @Selector("fetchKeyAssetsInAssetCollection:options:")
-    public static native PHFetchResult<PHAsset> fetchKeyAssetsInAssetCollectionOptions(
+    public static native PHFetchResult<? extends PHAsset> fetchKeyAssetsInAssetCollectionOptions(
             PHAssetCollection assetCollection, PHFetchOptions options);
 
     @Generated
@@ -222,6 +231,9 @@ public class PHAsset extends PHObject {
     @Selector("isFavorite")
     public native boolean isFavorite();
 
+    /**
+     * a hidden asset will be excluded from moment collections, but may still be included in other smart or regular album collections
+     */
     @Generated
     @Selector("isHidden")
     public native boolean isHidden();
@@ -258,6 +270,9 @@ public class PHAsset extends PHObject {
     @Selector("representsBurst")
     public native boolean representsBurst();
 
+    /**
+     * Completion and progress handlers are called on an arbitrary serial queue.
+     */
     @Generated
     @Selector("requestContentEditingInputWithOptions:completionHandler:")
     @NUInt
@@ -274,10 +289,13 @@ public class PHAsset extends PHObject {
     @Generated
     public interface Block_requestContentEditingInputWithOptionsCompletionHandler {
         @Generated
-        void call_requestContentEditingInputWithOptionsCompletionHandler(PHContentEditingInput arg0,
-                NSDictionary<?, ?> arg1);
+        void call_requestContentEditingInputWithOptionsCompletionHandler(PHContentEditingInput contentEditingInput,
+                NSDictionary<?, ?> info);
     }
 
+    /**
+     * Playback style describes how the asset should be presented to the user (regardless of the backing media for that asset).  Use this value to choose the type of view and the appropriate APIs on the PHImageManager to display this asset
+     */
     @Generated
     @Selector("playbackStyle")
     @NInt

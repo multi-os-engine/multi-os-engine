@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * ------------------------------------------------------------------------
+ * MPMediaPredicate is an abstract class that allows filtering media in an MPMediaQuery.
+ * See the concrete subclass MPMediaPropertyPredicate for filtering options.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -159,7 +164,7 @@ public class MPMediaPredicate extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -167,7 +172,7 @@ public class MPMediaPredicate extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaPredicate initWithCoder(NSCoder aDecoder);
+    public native MPMediaPredicate initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -31,6 +31,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("RPPreviewViewControllerDelegate")
 public interface RPPreviewViewControllerDelegate {
+    /**
+     * Called when the view controller is finished and returns a set of activity types that the user has completed on the recording. The built in activity types are listed in UIActivity.h.
+     */
     @Generated
     @IsOptional
     @Selector("previewController:didFinishWithActivityTypes:")
@@ -39,6 +42,9 @@ public interface RPPreviewViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the view controller is finished.
+     */
     @Generated
     @IsOptional
     @Selector("previewControllerDidFinish:")

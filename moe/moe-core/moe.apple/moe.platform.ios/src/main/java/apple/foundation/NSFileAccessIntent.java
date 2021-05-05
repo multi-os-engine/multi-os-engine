@@ -157,6 +157,9 @@ public class NSFileAccessIntent extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object writingIntentWithURLOptions(NSURL url, @NUInt long options);
 
+    /**
+     * Use this URL within the accessor block. This property may change from its original value in response to actions from other writers.
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();

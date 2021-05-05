@@ -46,6 +46,30 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The shape layer draws a cubic Bezier spline in its coordinate space.
+ * 
+ * The spline is described using a CGPath object and may have both fill
+ * and stroke components (in which case the stroke is composited over
+ * the fill). The shape as a whole is composited between the layer's
+ * contents and its first sublayer.
+ * 
+ * The path object may be animated using any of the concrete subclasses
+ * of CAPropertyAnimation. Paths will interpolate as a linear blend of
+ * the "on-line" points; "off-line" points may be interpolated
+ * non-linearly (e.g. to preserve continuity of the curve's
+ * derivative). If the two paths have a different number of control
+ * points or segments the results are undefined.
+ * 
+ * The shape will be drawn antialiased, and whenever possible it will
+ * be mapped into screen space before being rasterized to preserve
+ * resolution independence. (However, certain kinds of image processing
+ * operations, e.g. CoreImage filters, applied to the layer or its
+ * ancestors may force rasterization in a local coordinate space.)
+ * 
+ * Note: rasterization may favor speed over accuracy, e.g. pixels with
+ * multiple intersecting path segments may not give exact results.
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -175,10 +199,18 @@ public class CAShapeLayer extends CALayer {
     @NInt
     public static native long version_static();
 
+    /**
+     * The color to fill the path, or nil for no fill. Defaults to opaque
+     * black. Animatable.
+     */
     @Generated
     @Selector("fillColor")
     public native CGColorRef fillColor();
 
+    /**
+     * The fill rule used when filling the path. Options are `non-zero' and
+     * `even-odd'. Defaults to `non-zero'.
+     */
     @Generated
     @Selector("fillRule")
     public native String fillRule();
@@ -189,79 +221,155 @@ public class CAShapeLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAShapeLayer initWithCoder(NSCoder aDecoder);
+    public native CAShapeLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
     public native CAShapeLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
+    /**
+     * The cap style used when stroking the path. Options are `butt', `round'
+     * and `square'. Defaults to `butt'.
+     */
     @Generated
     @Selector("lineCap")
     public native String lineCap();
 
+    /**
+     * The dash pattern (an array of NSNumbers) applied when creating the
+     * stroked version of the path. Defaults to nil.
+     */
     @Generated
     @Selector("lineDashPattern")
     public native NSArray<? extends NSNumber> lineDashPattern();
 
+    /**
+     * The phase of the dashing pattern applied when creating the stroke.
+     * Defaults to zero. Animatable.
+     */
     @Generated
     @Selector("lineDashPhase")
     @NFloat
     public native double lineDashPhase();
 
+    /**
+     * The join style used when stroking the path. Options are `miter', `round'
+     * and `bevel'. Defaults to `miter'.
+     */
     @Generated
     @Selector("lineJoin")
     public native String lineJoin();
 
+    /**
+     * The line width used when stroking the path. Defaults to one.
+     * Animatable.
+     */
     @Generated
     @Selector("lineWidth")
     @NFloat
     public native double lineWidth();
 
+    /**
+     * The miter limit used when stroking the path. Defaults to ten.
+     * Animatable.
+     */
     @Generated
     @Selector("miterLimit")
     @NFloat
     public native double miterLimit();
 
+    /**
+     * The path defining the shape to be rendered. If the path extends
+     * outside the layer bounds it will not automatically be clipped to the
+     * layer, only if the normal layer masking rules cause that. Upon
+     * assignment the path is copied. Defaults to null. Animatable.
+     * (Note that although the path property is animatable, no implicit
+     * animation will be created when the property is changed.)
+     */
     @Generated
     @Selector("path")
     public native CGPathRef path();
 
+    /**
+     * The color to fill the path, or nil for no fill. Defaults to opaque
+     * black. Animatable.
+     */
     @Generated
     @Selector("setFillColor:")
     public native void setFillColor(CGColorRef value);
 
+    /**
+     * The fill rule used when filling the path. Options are `non-zero' and
+     * `even-odd'. Defaults to `non-zero'.
+     */
     @Generated
     @Selector("setFillRule:")
     public native void setFillRule(String value);
 
+    /**
+     * The cap style used when stroking the path. Options are `butt', `round'
+     * and `square'. Defaults to `butt'.
+     */
     @Generated
     @Selector("setLineCap:")
     public native void setLineCap(String value);
 
+    /**
+     * The dash pattern (an array of NSNumbers) applied when creating the
+     * stroked version of the path. Defaults to nil.
+     */
     @Generated
     @Selector("setLineDashPattern:")
     public native void setLineDashPattern(NSArray<? extends NSNumber> value);
 
+    /**
+     * The phase of the dashing pattern applied when creating the stroke.
+     * Defaults to zero. Animatable.
+     */
     @Generated
     @Selector("setLineDashPhase:")
     public native void setLineDashPhase(@NFloat double value);
 
+    /**
+     * The join style used when stroking the path. Options are `miter', `round'
+     * and `bevel'. Defaults to `miter'.
+     */
     @Generated
     @Selector("setLineJoin:")
     public native void setLineJoin(String value);
 
+    /**
+     * The line width used when stroking the path. Defaults to one.
+     * Animatable.
+     */
     @Generated
     @Selector("setLineWidth:")
     public native void setLineWidth(@NFloat double value);
 
+    /**
+     * The miter limit used when stroking the path. Defaults to ten.
+     * Animatable.
+     */
     @Generated
     @Selector("setMiterLimit:")
     public native void setMiterLimit(@NFloat double value);
 
+    /**
+     * The path defining the shape to be rendered. If the path extends
+     * outside the layer bounds it will not automatically be clipped to the
+     * layer, only if the normal layer masking rules cause that. Upon
+     * assignment the path is copied. Defaults to null. Animatable.
+     * (Note that although the path property is animatable, no implicit
+     * animation will be created when the property is changed.)
+     */
     @Generated
     @Selector("setPath:")
     public native void setPath(CGPathRef value);
 
+    /**
+     * The color to fill the path's stroked outline, or nil for no stroking.
+     * Defaults to nil. Animatable.
+     */
     @Generated
     @Selector("setStrokeColor:")
     public native void setStrokeColor(CGColorRef value);
@@ -270,10 +378,22 @@ public class CAShapeLayer extends CALayer {
     @Selector("setStrokeEnd:")
     public native void setStrokeEnd(@NFloat double value);
 
+    /**
+     * These values define the subregion of the path used to draw the
+     * stroked outline. The values must be in the range [0,1] with zero
+     * representing the start of the path and one the end. Values in
+     * between zero and one are interpolated linearly along the path
+     * length. strokeStart defaults to zero and strokeEnd to one. Both are
+     * animatable.
+     */
     @Generated
     @Selector("setStrokeStart:")
     public native void setStrokeStart(@NFloat double value);
 
+    /**
+     * The color to fill the path's stroked outline, or nil for no stroking.
+     * Defaults to nil. Animatable.
+     */
     @Generated
     @Selector("strokeColor")
     public native CGColorRef strokeColor();
@@ -283,6 +403,14 @@ public class CAShapeLayer extends CALayer {
     @NFloat
     public native double strokeEnd();
 
+    /**
+     * These values define the subregion of the path used to draw the
+     * stroked outline. The values must be in the range [0,1] with zero
+     * representing the start of the path and one the end. Values in
+     * between zero and one are interpolated linearly along the path
+     * length. strokeStart defaults to zero and strokeEnd to one. Both are
+     * animatable.
+     */
     @Generated
     @Selector("strokeStart")
     @NFloat
@@ -297,4 +425,9 @@ public class CAShapeLayer extends CALayer {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
 }

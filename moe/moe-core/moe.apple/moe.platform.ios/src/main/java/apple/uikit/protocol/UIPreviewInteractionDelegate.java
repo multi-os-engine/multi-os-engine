@@ -31,6 +31,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPreviewInteractionDelegate")
 public interface UIPreviewInteractionDelegate {
+    /**
+     * If implemented, a preview interaction will also trigger haptic feedback when detecting a commit (pop). The provided transitionProgress ranges from 0 to 1.
+     */
     @Generated
     @IsOptional
     @Selector("previewInteraction:didUpdateCommitTransition:ended:")
@@ -39,6 +42,9 @@ public interface UIPreviewInteractionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * transitionProgress ranges from 0 to 1
+     */
     @Generated
     @Selector("previewInteraction:didUpdatePreviewTransition:ended:")
     void previewInteractionDidUpdatePreviewTransitionEnded(UIPreviewInteraction previewInteraction,

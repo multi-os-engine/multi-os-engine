@@ -79,14 +79,33 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Determine whether this device can process payment requests.
+     * YES if the device is generally capable of making in-app payments.
+     * NO if the device cannot make in-app payments or if the user is restricted from authorizing payments.
+     */
     @Generated
     @Selector("canMakePayments")
     public static native boolean canMakePayments();
 
+    /**
+     * Determine whether this device can process payment requests using specific payment network brands.
+     * Your application should confirm that the user can make payments before attempting to authorize a payment.
+     * Your application may also want to alter its appearance or behavior when the user is not allowed
+     * to make payments.
+     * YES if the user can authorize payments on this device using one of the payment networks supported
+     * by the merchant.
+     * NO if the user cannot authorize payments on these networks or if the user is restricted from
+     * authorizing payments.
+     */
     @Generated
     @Selector("canMakePaymentsUsingNetworks:")
     public static native boolean canMakePaymentsUsingNetworks(NSArray<String> supportedNetworks);
 
+    /**
+     * Determine whether this device can process payments using the specified networks and capabilities bitmask
+     * See -canMakePaymentsUsingNetworks:
+     */
     @Generated
     @Selector("canMakePaymentsUsingNetworks:capabilities:")
     public static native boolean canMakePaymentsUsingNetworksCapabilities(NSArray<String> supportedNetworks,
@@ -179,6 +198,9 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    /**
+     * The view controller's delegate.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -190,22 +212,33 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PKPaymentAuthorizationViewController initWithCoder(NSCoder aDecoder);
+    public native PKPaymentAuthorizationViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
     public native PKPaymentAuthorizationViewController initWithNibNameBundle(String nibNameOrNil,
             NSBundle nibBundleOrNil);
 
+    /**
+     * Initializes and returns a newly created view controller for the supplied payment.
+     * It is your responsibility to present and dismiss the view controller using the
+     * appropriate means for the given device idiom.
+     */
     @Generated
     @Selector("initWithPaymentRequest:")
     public native PKPaymentAuthorizationViewController initWithPaymentRequest(PKPaymentRequest request);
 
+    /**
+     * The view controller's delegate.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationViewControllerDelegate value);
 
+    /**
+     * The view controller's delegate.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationViewControllerDelegate value) {
         Object __old = delegate();

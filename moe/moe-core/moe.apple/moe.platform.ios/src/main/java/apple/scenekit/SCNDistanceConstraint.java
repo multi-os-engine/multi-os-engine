@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNDistanceConstraint
+ * 
+ * A SCNDistanceConstraint ensure a minimum/maximum distance with a target node.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -84,6 +89,11 @@ public class SCNDistanceConstraint extends SCNConstraint {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * distanceConstraintWithTarget
+     * 
+     * Creates and returns a SCNDistanceConstraint constraint.
+     */
     @Generated
     @Selector("distanceConstraintWithTarget:")
     public static native SCNDistanceConstraint distanceConstraintWithTarget(SCNNode target);
@@ -99,7 +109,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNDistanceConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNDistanceConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -122,11 +132,21 @@ public class SCNDistanceConstraint extends SCNConstraint {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * [@property] maximumDistance
+     * 
+     * The minimum distance. Defaults to MAXFLOAT. Animatable.
+     */
     @Generated
     @Selector("maximumDistance")
     @NFloat
     public native double maximumDistance();
 
+    /**
+     * [@property] minimumDistance
+     * 
+     * The minimum distance. Defaults to 0. Animatable.
+     */
     @Generated
     @Selector("minimumDistance")
     @NFloat
@@ -146,14 +166,29 @@ public class SCNDistanceConstraint extends SCNConstraint {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * [@property] maximumDistance
+     * 
+     * The minimum distance. Defaults to MAXFLOAT. Animatable.
+     */
     @Generated
     @Selector("setMaximumDistance:")
     public native void setMaximumDistance(@NFloat double value);
 
+    /**
+     * [@property] minimumDistance
+     * 
+     * The minimum distance. Defaults to 0. Animatable.
+     */
     @Generated
     @Selector("setMinimumDistance:")
     public native void setMinimumDistance(@NFloat double value);
 
+    /**
+     * [@property] target
+     * 
+     * Defines the target node to keep distance with.
+     */
     @Generated
     @Selector("setTarget:")
     public native void setTarget(SCNNode value);
@@ -176,6 +211,11 @@ public class SCNDistanceConstraint extends SCNConstraint {
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] target
+     * 
+     * Defines the target node to keep distance with.
+     */
     @Generated
     @Selector("target")
     public native SCNNode target();

@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
-import org.moe.natj.general.ptr.VoidPtr;
+import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
@@ -32,5 +32,5 @@ import org.moe.natj.objc.ann.Selector;
 public interface SCNBufferStream {
     @Generated
     @Selector("writeBytes:length:")
-    void writeBytesLength(VoidPtr bytes, @NUInt long length);
+    void writeBytesLength(ConstVoidPtr bytes, @NUInt long length);
 }

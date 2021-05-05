@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UIFocusAnimationCoordinator is used to coordinate disparate animations that are related to a focus update.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +154,14 @@ public class UIFocusAnimationCoordinator extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Specifies focus-related animations that should be coordinated with the animations of the focusing or un-focusing view.
+     * 
+     * Any animations specified will be run in the same animation context as the main animation. The completion block is invoked after the main animation completes.
+     * (Note that this may not be after all the coordinated animations specified by the call complete if the duration is not inherited.)
+     * 
+     * It is perfectly legitimate to only specify a completion block.
+     */
     @Generated
     @Selector("addCoordinatedAnimations:completion:")
     public native void addCoordinatedAnimationsCompletion(
@@ -175,6 +186,15 @@ public class UIFocusAnimationCoordinator extends NSObject {
         void call_addCoordinatedAnimationsCompletion_1();
     }
 
+    /**
+     * Specifies focus-related animations that should be coordinated with the animations of the focusing item.
+     * 
+     * Any animations specified will be run in the same animation context as the main animation. The completion block is invoked after the UIKit-defined animations complete.
+     * 
+     * It is perfectly legitimate to only specify a completion block.
+     * 
+     * A context object is provided in the animation block with details of the UIKit-defined animations being run for the focusing item.
+     */
     @Generated
     @Selector("addCoordinatedFocusingAnimations:completion:")
     public native void addCoordinatedFocusingAnimationsCompletion(
@@ -185,7 +205,7 @@ public class UIFocusAnimationCoordinator extends NSObject {
     @Generated
     public interface Block_addCoordinatedFocusingAnimationsCompletion_0 {
         @Generated
-        void call_addCoordinatedFocusingAnimationsCompletion_0(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_addCoordinatedFocusingAnimationsCompletion_0(@Mapped(ObjCObjectMapper.class) Object animationContext);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -195,6 +215,15 @@ public class UIFocusAnimationCoordinator extends NSObject {
         void call_addCoordinatedFocusingAnimationsCompletion_1();
     }
 
+    /**
+     * Specifies focus-related animations that should be coordinated with the animations of the un-focusing item.
+     * 
+     * Any animations specified will be run in the same animation context as the main animation. The completion block is invoked after the UIKit-defined animations complete.
+     * 
+     * It is perfectly legitimate to only specify a completion block.
+     * 
+     * A context object is provided in the animation block with details of the UIKit-defined animations being run for the un-focusing item.
+     */
     @Generated
     @Selector("addCoordinatedUnfocusingAnimations:completion:")
     public native void addCoordinatedUnfocusingAnimationsCompletion(
@@ -205,7 +234,8 @@ public class UIFocusAnimationCoordinator extends NSObject {
     @Generated
     public interface Block_addCoordinatedUnfocusingAnimationsCompletion_0 {
         @Generated
-        void call_addCoordinatedUnfocusingAnimationsCompletion_0(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_addCoordinatedUnfocusingAnimationsCompletion_0(
+                @Mapped(ObjCObjectMapper.class) Object animationContext);
     }
 
     @Runtime(ObjCRuntime.class)

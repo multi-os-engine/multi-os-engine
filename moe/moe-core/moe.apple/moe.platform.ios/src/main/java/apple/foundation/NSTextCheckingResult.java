@@ -171,6 +171,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Methods for creating instances of the various types of results.
+     */
     @Generated
     @Selector("orthographyCheckingResultWithRange:orthography:")
     public static native NSTextCheckingResult orthographyCheckingResultWithRangeOrthography(@ByValue NSRange range,
@@ -235,6 +238,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("URL")
     public native NSURL URL();
 
+    /**
+     * Deprecated in favor of components
+     */
     @Generated
     @Selector("addressComponents")
     public native NSDictionary<String, String> addressComponents();
@@ -263,7 +269,7 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("grammarDetails")
@@ -275,13 +281,19 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextCheckingResult initWithCoder(NSCoder aDecoder);
+    public native NSTextCheckingResult initWithCoder(NSCoder coder);
 
+    /**
+     * A result must have at least one range, but may optionally have more (for example, to represent regular expression capture groups).  The range at index 0 always matches the range property.  Additional ranges, if any, will have indexes from 1 to numberOfRanges-1. rangeWithName: can be used with named regular expression capture groups.
+     */
     @Generated
     @Selector("numberOfRanges")
     @NUInt
     public native long numberOfRanges();
 
+    /**
+     * Optional properties, used with certain types of results.
+     */
     @Generated
     @Selector("orthography")
     public native NSOrthography orthography();
@@ -312,6 +324,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("resultByAdjustingRangesWithOffset:")
     public native NSTextCheckingResult resultByAdjustingRangesWithOffset(@NInt long offset);
 
+    /**
+     * Mandatory properties, used with all types of results.
+     */
     @Generated
     @Selector("resultType")
     public native long resultType();

@@ -24,6 +24,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAggregateAssetDownloadTask
+ * 
+ * An AVAssetDownloadTask used for downloading multiple AVMediaSelections for a single AVAsset, under the umbrella of a single download task.
+ * 
+ * Should be created with -[AVAssetDownloadURLSession aggregateAssetDownloadTaskWithURLAsset:mediaSelections:assetTitle:assetArtworkData:options:. For progress tracking, monitor the delegate callbacks for each childAssetDownloadTask.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -38,6 +45,11 @@ public class AVAggregateAssetDownloadTask extends NSURLSessionTask {
         super(peer);
     }
 
+    /**
+     * [@property]		URLAsset
+     * 
+     * The asset supplied to the download task upon initialization.
+     */
     @Generated
     @Selector("URLAsset")
     public native AVURLAsset URLAsset();

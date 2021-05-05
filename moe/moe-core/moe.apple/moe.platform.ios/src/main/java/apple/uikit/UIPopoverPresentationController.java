@@ -154,11 +154,17 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns the direction the arrow is pointing on a presented popover. Before presentation, this returns UIPopoverArrowDirectionUnknown.
+     */
     @Generated
     @Selector("arrowDirection")
     @NUInt
     public native long arrowDirection();
 
+    /**
+     * Set popover background color. Set to nil to use default background color. Default is nil.
+     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -167,6 +173,10 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Selector("barButtonItem")
     public native UIBarButtonItem barButtonItem();
 
+    /**
+     * By default, a popover is not allowed to overlap its source view rect.
+     * When this is set to YES, popovers with more content than available space are allowed to overlap the source view rect in order to accommodate the content.
+     */
     @Generated
     @Selector("canOverlapSourceViewRect")
     public native boolean canOverlapSourceViewRect();
@@ -185,6 +195,11 @@ public class UIPopoverPresentationController extends UIPresentationController {
     public native UIPopoverPresentationController initWithPresentedViewControllerPresentingViewController(
             UIViewController presentedViewController, UIViewController presentingViewController);
 
+    /**
+     * By default, a popover disallows interaction with any view outside of the popover while the popover is presented.
+     * This property allows the specification of an array of UIView instances which the user is allowed to interact with
+     * while the popover is up.
+     */
     @Generated
     @Selector("passthroughViews")
     public native NSArray<? extends UIView> passthroughViews();
@@ -194,16 +209,29 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @NUInt
     public native long permittedArrowDirections();
 
+    /**
+     * Clients may customize the popover background chrome by providing a class which subclasses `UIPopoverBackgroundView`
+     * and which implements the required instance and class methods on that class.
+     */
     @Generated
     @Selector("popoverBackgroundViewClass")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPopoverBackgroundViewMethods popoverBackgroundViewClass();
 
+    /**
+     * Clients may wish to change the available area for popover display. The default implementation of this method always
+     * returns a system defined inset from the edges of the display, and presentation of popovers always accounts
+     * for the status bar. The rectangle being inset is always expressed in terms of the current device orientation; (0, 0)
+     * is always in the upper-left of the device. This may require insets to change on device rotation.
+     */
     @Generated
     @Selector("popoverLayoutMargins")
     @ByValue
     public native UIEdgeInsets popoverLayoutMargins();
 
+    /**
+     * Set popover background color. Set to nil to use default background color. Default is nil.
+     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
@@ -212,6 +240,10 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Selector("setBarButtonItem:")
     public native void setBarButtonItem(UIBarButtonItem value);
 
+    /**
+     * By default, a popover is not allowed to overlap its source view rect.
+     * When this is set to YES, popovers with more content than available space are allowed to overlap the source view rect in order to accommodate the content.
+     */
     @Generated
     @Selector("setCanOverlapSourceViewRect:")
     public native void setCanOverlapSourceViewRect(boolean value);
@@ -232,6 +264,11 @@ public class UIPopoverPresentationController extends UIPresentationController {
         }
     }
 
+    /**
+     * By default, a popover disallows interaction with any view outside of the popover while the popover is presented.
+     * This property allows the specification of an array of UIView instances which the user is allowed to interact with
+     * while the popover is up.
+     */
     @Generated
     @Selector("setPassthroughViews:")
     public native void setPassthroughViews(NSArray<? extends UIView> value);
@@ -240,15 +277,30 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Selector("setPermittedArrowDirections:")
     public native void setPermittedArrowDirections(@NUInt long value);
 
+    /**
+     * Clients may customize the popover background chrome by providing a class which subclasses `UIPopoverBackgroundView`
+     * and which implements the required instance and class methods on that class.
+     */
     @Generated
     @Selector("setPopoverBackgroundViewClass:")
     public native void setPopoverBackgroundViewClass(
             @Mapped(ObjCObjectMapper.class) UIPopoverBackgroundViewMethods value);
 
+    /**
+     * Clients may wish to change the available area for popover display. The default implementation of this method always
+     * returns a system defined inset from the edges of the display, and presentation of popovers always accounts
+     * for the status bar. The rectangle being inset is always expressed in terms of the current device orientation; (0, 0)
+     * is always in the upper-left of the device. This may require insets to change on device rotation.
+     */
     @Generated
     @Selector("setPopoverLayoutMargins:")
     public native void setPopoverLayoutMargins(@ByValue UIEdgeInsets value);
 
+    /**
+     * The rectangle in the coordinate space of sourceView that the popover should point at. This property is ignored if a barButtonItem is set.
+     * Starting in iOS 13.2, a value of CGRectNull will cause the popover to point at the current frame of sourceView and automatically update when the size of sourceView changes. Prior to iOS 13.2, a null rectangle was not supported.
+     * The default value in iOS 13.2 is CGRectNull. Prior to iOS 13.2, the default value was CGRectZero.
+     */
     @Generated
     @Selector("setSourceRect:")
     public native void setSourceRect(@ByValue CGRect value);
@@ -257,6 +309,11 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Selector("setSourceView:")
     public native void setSourceView(UIView value);
 
+    /**
+     * The rectangle in the coordinate space of sourceView that the popover should point at. This property is ignored if a barButtonItem is set.
+     * Starting in iOS 13.2, a value of CGRectNull will cause the popover to point at the current frame of sourceView and automatically update when the size of sourceView changes. Prior to iOS 13.2, a null rectangle was not supported.
+     * The default value in iOS 13.2 is CGRectNull. Prior to iOS 13.2, the default value was CGRectZero.
+     */
     @Generated
     @Selector("sourceRect")
     @ByValue

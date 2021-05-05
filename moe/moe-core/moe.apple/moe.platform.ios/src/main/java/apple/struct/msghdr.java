@@ -45,59 +45,101 @@ public final class msghdr extends StructObject {
         super(peer);
     }
 
+    /**
+     * [XSI] optional address
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr msg_name();
 
+    /**
+     * [XSI] optional address
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setMsg_name(VoidPtr value);
 
+    /**
+     * [XSI] size of address
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int msg_namelen();
 
+    /**
+     * [XSI] size of address
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMsg_namelen(int value);
 
+    /**
+     * [XSI] scatter/gather array
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native iovec msg_iov();
 
+    /**
+     * [XSI] scatter/gather array
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setMsg_iov(@UncertainArgument("Options: reference, array Fallback: reference") iovec value);
 
+    /**
+     * [XSI] # elements in msg_iov
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int msg_iovlen();
 
+    /**
+     * [XSI] # elements in msg_iov
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setMsg_iovlen(int value);
 
+    /**
+     * [XSI] ancillary data, see below
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native VoidPtr msg_control();
 
+    /**
+     * [XSI] ancillary data, see below
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setMsg_control(VoidPtr value);
 
+    /**
+     * [XSI] ancillary data buffer len
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     public native int msg_controllen();
 
+    /**
+     * [XSI] ancillary data buffer len
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setMsg_controllen(int value);
 
+    /**
+     * [XSI] flags on received message
+     */
     @Generated
     @StructureField(order = 6, isGetter = true)
     public native int msg_flags();
 
+    /**
+     * [XSI] flags on received message
+     */
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setMsg_flags(int value);

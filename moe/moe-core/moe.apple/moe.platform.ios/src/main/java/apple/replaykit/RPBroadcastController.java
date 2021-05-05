@@ -44,6 +44,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * RPBroadcastController
+ * 
+ * Available once a user has successfully initiated a broadcast using an RPBroadcastActivityViewController. Can be used to start, pause and stop a broadcast.
+ */
 @Generated
 @Library("ReplayKit")
 @Runtime(ObjCRuntime.class)
@@ -155,19 +160,33 @@ public class RPBroadcastController extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * bundleID of the broadcast extension which was selected by the user.
+     */
     @Generated
     @Selector("broadcastExtensionBundleID")
     public native String broadcastExtensionBundleID();
 
+    /**
+     * URL that can be used to redirect the user to the on-going or completed broadcast.
+     */
     @Generated
     @Selector("broadcastURL")
     public native NSURL broadcastURL();
 
+    /**
+     * Delegate which will be notified when an error occurs during broadcast.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native RPBroadcastControllerDelegate delegate();
 
+    /**
+     * Finish the broadcast.
+     * 
+     * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has finished successfully.
+     */
     @Generated
     @Selector("finishBroadcastWithHandler:")
     public native void finishBroadcastWithHandler(
@@ -177,30 +196,51 @@ public class RPBroadcastController extends NSObject {
     @Selector("init")
     public native RPBroadcastController init();
 
+    /**
+     * Indicates whether the controller is currently broadcasting.
+     */
     @Generated
     @Selector("isBroadcasting")
     public native boolean isBroadcasting();
 
+    /**
+     * Indicates whether the controller is currently paused.
+     */
     @Generated
     @Selector("isPaused")
     public native boolean isPaused();
 
+    /**
+     * Pause the broadcast. The broadcast will pause immediately.
+     */
     @Generated
     @Selector("pauseBroadcast")
     public native void pauseBroadcast();
 
+    /**
+     * Resumes the broadcast. The broadcast will resume immediately.
+     */
     @Generated
     @Selector("resumeBroadcast")
     public native void resumeBroadcast();
 
+    /**
+     * Dictionary updated by the service during a broadcast. The keys and values of this dictionary are defined by the broadcast service. KVO observable.
+     */
     @Generated
     @Selector("serviceInfo")
     public native NSDictionary<String, ? extends NSObject> serviceInfo();
 
+    /**
+     * Delegate which will be notified when an error occurs during broadcast.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) RPBroadcastControllerDelegate value);
 
+    /**
+     * Delegate which will be notified when an error occurs during broadcast.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) RPBroadcastControllerDelegate value) {
         Object __old = delegate();
@@ -213,6 +253,11 @@ public class RPBroadcastController extends NSObject {
         }
     }
 
+    /**
+     * Start the broadcast.
+     * 
+     * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has started successfully.
+     */
     @Generated
     @Selector("startBroadcastWithHandler:")
     public native void startBroadcastWithHandler(
@@ -222,13 +267,13 @@ public class RPBroadcastController extends NSObject {
     @Generated
     public interface Block_finishBroadcastWithHandler {
         @Generated
-        void call_finishBroadcastWithHandler(NSError arg0);
+        void call_finishBroadcastWithHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startBroadcastWithHandler {
         @Generated
-        void call_startBroadcastWithHandler(NSError arg0);
+        void call_startBroadcastWithHandler(NSError error);
     }
 }

@@ -169,14 +169,23 @@ public class NSAtomicStore extends NSPersistentStore {
     @NInt
     public static native long version_static();
 
+    /**
+     * Utility method with implementation provided by NSAtomicStore
+     */
     @Generated
     @Selector("addCacheNodes:")
     public native void addCacheNodes(NSSet<? extends NSAtomicStoreCacheNode> cacheNodes);
 
+    /**
+     * Utility method with implementation provided by NSAtomicStore
+     */
     @Generated
     @Selector("cacheNodeForObjectID:")
     public native NSAtomicStoreCacheNode cacheNodeForObjectID(NSManagedObjectID objectID);
 
+    /**
+     * Utility method with implementation provided by NSAtomicStore
+     */
     @Generated
     @Selector("cacheNodes")
     public native NSSet<? extends NSAtomicStoreCacheNode> cacheNodes();
@@ -185,42 +194,69 @@ public class NSAtomicStore extends NSPersistentStore {
     @Selector("init")
     public native NSAtomicStore init();
 
+    /**
+     * API method that may be overriden by subclasses for custom initialization
+     */
     @Generated
     @Selector("initWithPersistentStoreCoordinator:configurationName:URL:options:")
     public native NSAtomicStore initWithPersistentStoreCoordinatorConfigurationNameURLOptions(
             NSPersistentStoreCoordinator coordinator, String configurationName, NSURL url, NSDictionary<?, ?> options);
 
+    /**
+     * API method that must be overriden by subclasses
+     */
     @Generated
     @Selector("load:")
     public native boolean load_objc(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API method that must be overriden by subclasses
+     */
     @Generated
     @Selector("newCacheNodeForManagedObject:")
     public native NSAtomicStoreCacheNode newCacheNodeForManagedObject(NSManagedObject managedObject);
 
+    /**
+     * API method that must be overriden by subclasses
+     */
     @Generated
     @Selector("newReferenceObjectForManagedObject:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object newReferenceObjectForManagedObject(NSManagedObject managedObject);
 
+    /**
+     * Utility method with implementation provided by NSAtomicStore
+     */
     @Generated
     @Selector("objectIDForEntity:referenceObject:")
     public native NSManagedObjectID objectIDForEntityReferenceObject(NSEntityDescription entity,
             @Mapped(ObjCObjectMapper.class) Object data);
 
+    /**
+     * Utility method with implementation provided by NSAtomicStore
+     */
     @Generated
     @Selector("referenceObjectForObjectID:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object referenceObjectForObjectID(NSManagedObjectID objectID);
 
+    /**
+     * API method that must be overriden by subclasses
+     */
     @Generated
     @Selector("save:")
     public native boolean save(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API method that must be overriden by subclasses
+     */
     @Generated
     @Selector("updateCacheNode:fromManagedObject:")
     public native void updateCacheNodeFromManagedObject(NSAtomicStoreCacheNode node, NSManagedObject managedObject);
 
+    /**
+     * Called before cache nodes are removed
+     */
     @Generated
     @Selector("willRemoveCacheNodes:")
     public native void willRemoveCacheNodes(NSSet<? extends NSAtomicStoreCacheNode> cacheNodes);

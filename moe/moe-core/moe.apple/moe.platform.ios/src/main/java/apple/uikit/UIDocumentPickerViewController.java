@@ -24,6 +24,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.uikit.protocol.UIDocumentPickerDelegate;
+import apple.uniformtypeidentifiers.UTType;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -182,8 +183,11 @@ public class UIDocumentPickerViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIDocumentPickerViewController initWithCoder(NSCoder aDecoder);
+    public native UIDocumentPickerViewController initWithCoder(NSCoder coder);
 
+    /**
+     * Initializes the picker instance for selecting a document in a remote location. The valid modes are Import and Open.
+     */
     @Generated
     @Selector("initWithDocumentTypes:inMode:")
     public native UIDocumentPickerViewController initWithDocumentTypesInMode(NSArray<String> allowedUTIs,
@@ -193,6 +197,9 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native UIDocumentPickerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * Initializes the picker for exporting a local file to an external location. The valid modes are Export and Move. The new location will be returned using `didPickDocumentAtURL:`.
+     */
     @Generated
     @Selector("initWithURL:inMode:")
     public native UIDocumentPickerViewController initWithURLInMode(NSURL url, @NUInt long mode);
@@ -217,6 +224,9 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Selector("allowsMultipleSelection")
     public native boolean allowsMultipleSelection();
 
+    /**
+     * Initializes the picker for exporting local files to an external location. The valid modes are Export and Move. The new locations will be returned using `didPickDocumentAtURLs:`.
+     */
     @Generated
     @Selector("initWithURLs:inMode:")
     public native UIDocumentPickerViewController initWithURLsInMode(NSArray<? extends NSURL> urls, @NUInt long mode);
@@ -224,4 +234,66 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Generated
     @Selector("setAllowsMultipleSelection:")
     public native void setAllowsMultipleSelection(boolean value);
+
+    /**
+     * Picker will try to display this URL when presented
+     */
+    @Generated
+    @Selector("directoryURL")
+    public native NSURL directoryURL();
+
+    /**
+     * Picker will try to display this URL when presented
+     */
+    @Generated
+    @Selector("setDirectoryURL:")
+    public native void setDirectoryURL(NSURL value);
+
+    /**
+     * Force the display of supported file extensions (default: NO).
+     */
+    @Generated
+    @Selector("setShouldShowFileExtensions:")
+    public native void setShouldShowFileExtensions(boolean value);
+
+    /**
+     * Force the display of supported file extensions (default: NO).
+     */
+    @Generated
+    @Selector("shouldShowFileExtensions")
+    public native boolean shouldShowFileExtensions();
+
+    /**
+     * Initializes the picker for exporting local documents to an external location. The new locations will be returned using `didPickDocumentAtURLs:`. The original document will be moved to the destination.
+     */
+    @Generated
+    @Selector("initForExportingURLs:")
+    public native UIDocumentPickerViewController initForExportingURLs(NSArray<? extends NSURL> urls);
+
+    /**
+     * Initializes the picker for exporting local documents to an external location. The new locations will be returned using `didPickDocumentAtURLs:`.
+     * 
+     * @param asCopy if true, a copy will be exported to the destination, otherwise the original document will be moved to the destination. For performance reasons and to avoid copies, we recommand you set `asCopy` to false.
+     */
+    @Generated
+    @Selector("initForExportingURLs:asCopy:")
+    public native UIDocumentPickerViewController initForExportingURLsAsCopy(NSArray<? extends NSURL> urls,
+            boolean asCopy);
+
+    /**
+     * Initializes the picker instance for selecting a document in a remote location, giving you access to the original document.
+     */
+    @Generated
+    @Selector("initForOpeningContentTypes:")
+    public native UIDocumentPickerViewController initForOpeningContentTypes(NSArray<? extends UTType> contentTypes);
+
+    /**
+     * Initializes the picker instance for selecting a document in a remote location.
+     * 
+     * @param asCopy if true, the picker will give you access to a local copy of the document, otherwise you will have access to the original document
+     */
+    @Generated
+    @Selector("initForOpeningContentTypes:asCopy:")
+    public native UIDocumentPickerViewController initForOpeningContentTypesAsCopy(
+            NSArray<? extends UTType> contentTypes, boolean asCopy);
 }

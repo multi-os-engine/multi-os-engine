@@ -50,20 +50,32 @@ public final class ldiv_t extends StructObject {
         setRem(rem);
     }
 
+    /**
+     * quotient
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @NInt
     public native long quot();
 
+    /**
+     * quotient
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setQuot(@NInt long value);
 
+    /**
+     * remainder
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @NInt
     public native long rem();
 
+    /**
+     * remainder
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setRem(@NInt long value);

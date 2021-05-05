@@ -154,6 +154,10 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
     @NInt
     public static native long version_static();
 
+    /**
+     * Given an NSUnit object, canBeConvertedToUnit: will check for dimensionality i.e. check the unit type (NSUnitAngle, NSUnitLength, NSUnitCustom, etc.) of the NSUnit object.  It will return YES if the unit type of the given unit is the same as the unit type of the unit within the NSMeasurement object and NO if not.
+     * Note: This method will return NO if given or called on a dimensionless unit.
+     */
     @Generated
     @Selector("canBeConvertedToUnit:")
     public native boolean canBeConvertedToUnit(NSUnit unit);
@@ -170,7 +174,7 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,16 +182,26 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMeasurement<?> initWithCoder(NSCoder aDecoder);
+    public native NSMeasurement<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDoubleValue:unit:")
     public native NSMeasurement<?> initWithDoubleValueUnit(double doubleValue, NSUnit unit);
 
+    /**
+     * Given an NSMeasurement object, these methods will first check for dimensionality i.e. check the unit type (NSUnitAngle, NSUnitLength, NSUnitCustom, etc.) of the unit contained in that object.  If the unit type of the unit in the given NSMeasurement object is not the same as the unit type of the unit within the current NSMeasurement instance (i.e. the units are of differing dimensionalities), these methods will throw an InvalidArgumentException.
+     * 
+     * @return A new NSMeasurement object with the adjusted value and a unit that is the same type as the current NSMeasurement instance.
+     */
     @Generated
     @Selector("measurementByAddingMeasurement:")
     public native NSMeasurement<NSUnit> measurementByAddingMeasurement(NSMeasurement<NSUnit> measurement);
 
+    /**
+     * Given an NSUnit object, measurementByConvertingUnit: will first check for dimensionality i.e. check the unit type (NSUnitAngle, NSUnitLength, NSUnitCustom, etc.) of the NSUnit object.  If the unit type of the given unit is not the same as the unit type of the unit within the NSMeasurement object (i.e. the units are of differing dimensionalities), measurementByConvertingToUnit: will throw an InvalidArgumentException.
+     * 
+     * @return A new NSMeasurement object with the given unit and converted value.
+     */
     @Generated
     @Selector("measurementByConvertingToUnit:")
     public native NSMeasurement<?> measurementByConvertingToUnit(NSUnit unit);

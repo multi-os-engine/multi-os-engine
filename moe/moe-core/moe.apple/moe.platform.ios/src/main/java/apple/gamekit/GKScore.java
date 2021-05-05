@@ -47,6 +47,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GKScore represents a score in the leaderboards.
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -137,11 +140,21 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Report scores to the server. The value must be set, and date may be changed.
+     * Possible reasons for error:
+     * 1. Value not set
+     * 2. Local player not authenticated
+     * 3. Communications problem
+     */
     @Generated
     @Selector("reportScores:withCompletionHandler:")
     public static native void reportScoresWithCompletionHandler(NSArray<? extends GKScore> scores,
             @ObjCBlock(name = "call_reportScoresWithCompletionHandler") Block_reportScoresWithCompletionHandler completionHandler);
 
+    /**
+     * Use this alternative to reportScores:withCompletionHandler: to allow only certain specific challenges to be completed. Pass nil to avoid completing any challenges.
+     */
     @Generated
     @Selector("reportScores:withEligibleChallenges:withCompletionHandler:")
     public static native void reportScoresWithEligibleChallengesWithCompletionHandler(NSArray<? extends GKScore> scores,
@@ -184,6 +197,9 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
             NSArray<? extends GKPlayer> players,
             @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletionHandler") Block_challengeComposeControllerWithMessagePlayersCompletionHandler completionHandler);
 
+    /**
+     * rb= GameKit.unavailableForTVOS
+     */
     @Generated
     @Deprecated
     @Selector("challengeComposeControllerWithPlayers:message:completionHandler:")
@@ -191,18 +207,27 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
             NSArray<String> playerIDs, String message,
             @ObjCBlock(name = "call_challengeComposeControllerWithPlayersMessageCompletionHandler") Block_challengeComposeControllerWithPlayersMessageCompletionHandler completionHandler);
 
+    /**
+     * optional additional context that allows a game to store and retrieve additional data associated with the store.  Default value of zero is returned if no value is set.
+     */
     @Generated
     @Selector("context")
     public native long context();
 
+    /**
+     * The date this score was recorded. A newly initialized, unsubmitted GKScore records the current date at init time.
+     */
     @Generated
     @Selector("date")
     public native NSDate date();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The score formatted as a string, localized with a label
+     */
     @Generated
     @Selector("formattedValue")
     public native String formattedValue();
@@ -218,39 +243,63 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKScore initWithCoder(NSCoder aDecoder);
+    public native GKScore initWithCoder(NSCoder coder);
 
+    /**
+     * Initialize the score with the local player and current date.
+     */
     @Generated
     @Selector("initWithLeaderboardIdentifier:")
     public native GKScore initWithLeaderboardIdentifier(String identifier);
 
+    /**
+     * This method is obsolete. Calling this initialiser does nothing and will return nil **
+     */
     @Generated
     @Deprecated
     @Selector("initWithLeaderboardIdentifier:forPlayer:")
     public native GKScore initWithLeaderboardIdentifierForPlayer(String identifier, String playerID);
 
+    /**
+     * Initialize the achievement for a specific player. Use to submit participant scores when ending a turn-based match.
+     */
     @Generated
     @Selector("initWithLeaderboardIdentifier:player:")
     public native GKScore initWithLeaderboardIdentifierPlayer(String identifier, GKPlayer player);
 
+    /**
+     * This method is obsolete. It will never be invoked and its implementation does nothing**
+     */
     @Generated
     @Deprecated
     @Selector("issueChallengeToPlayers:message:")
     public native void issueChallengeToPlayersMessage(NSArray<String> playerIDs, String message);
 
+    /**
+     * leaderboard identifier (required)
+     */
     @Generated
     @Selector("leaderboardIdentifier")
     public native String leaderboardIdentifier();
 
+    /**
+     * The player that recorded the score.
+     */
     @Generated
     @Selector("player")
     public native GKPlayer player();
 
+    /**
+     * The identifier of the player that recorded the score.
+     */
     @Generated
     @Deprecated
     @Selector("playerID")
     public native String playerID();
 
+    /**
+     * The rank of the player within the leaderboard, only valid when returned from GKLeaderboard
+     */
     @Generated
     @Selector("rank")
     @NInt
@@ -267,22 +316,39 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("setCategory:")
     public native void setCategory(String value);
 
+    /**
+     * optional additional context that allows a game to store and retrieve additional data associated with the store.  Default value of zero is returned if no value is set.
+     */
     @Generated
     @Selector("setContext:")
     public native void setContext(long value);
 
+    /**
+     * leaderboard identifier (required)
+     */
     @Generated
     @Selector("setLeaderboardIdentifier:")
     public native void setLeaderboardIdentifier(String value);
 
+    /**
+     * Convenience property to make the leaderboard associated with this GKScore, the default leaderboard for this player. Default value is false.
+     * If true, reporting that score will make the category this score belongs to, the default leaderboard for this user
+     */
     @Generated
     @Selector("setShouldSetDefaultLeaderboard:")
     public native void setShouldSetDefaultLeaderboard(boolean value);
 
+    /**
+     * The score value as a 64bit integer.
+     */
     @Generated
     @Selector("setValue:")
     public native void setValue(long value);
 
+    /**
+     * Convenience property to make the leaderboard associated with this GKScore, the default leaderboard for this player. Default value is false.
+     * If true, reporting that score will make the category this score belongs to, the default leaderboard for this user
+     */
     @Generated
     @Selector("shouldSetDefaultLeaderboard")
     public native boolean shouldSetDefaultLeaderboard();
@@ -293,6 +359,9 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * The score value as a 64bit integer.
+     */
     @Generated
     @Selector("value")
     public native long value();
@@ -301,36 +370,49 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Generated
     public interface Block_challengeComposeControllerWithMessagePlayersCompletionHandler {
         @Generated
-        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(UIViewController arg0, boolean arg1,
-                NSArray<String> arg2);
+        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(UIViewController composeController,
+                boolean didIssueChallenge, NSArray<String> sentPlayerIDs);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_challengeComposeControllerWithPlayersMessageCompletionHandler {
         @Generated
-        void call_challengeComposeControllerWithPlayersMessageCompletionHandler(UIViewController arg0, boolean arg1,
-                NSArray<String> arg2);
+        void call_challengeComposeControllerWithPlayersMessageCompletionHandler(UIViewController composeController,
+                boolean didIssueChallenge, NSArray<String> sentPlayerIDs);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportScoreWithCompletionHandler {
         @Generated
-        void call_reportScoreWithCompletionHandler(NSError arg0);
+        void call_reportScoreWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportScoresWithCompletionHandler {
         @Generated
-        void call_reportScoresWithCompletionHandler(NSError arg0);
+        void call_reportScoresWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportScoresWithEligibleChallengesWithCompletionHandler {
         @Generated
-        void call_reportScoresWithEligibleChallengesWithCompletionHandler(NSError arg0);
+        void call_reportScoresWithEligibleChallengesWithCompletionHandler(NSError error);
+    }
+
+    @Generated
+    @Selector("reportLeaderboardScores:withEligibleChallenges:withCompletionHandler:")
+    public static native void reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler(
+            NSArray<? extends GKLeaderboardScore> scores, NSArray<? extends GKChallenge> challenges,
+            @ObjCBlock(name = "call_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler") Block_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler {
+        @Generated
+        void call_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler(NSError error);
     }
 }

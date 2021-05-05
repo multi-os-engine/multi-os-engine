@@ -31,6 +31,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INIntentHandlerProviding")
 public interface INIntentHandlerProviding {
+    /**
+     * Override this function to provide classes other than the extension's principal class to handle a given intent
+     */
     @Generated
     @Selector("handlerForIntent:")
     @MappedReturn(ObjCObjectMapper.class)

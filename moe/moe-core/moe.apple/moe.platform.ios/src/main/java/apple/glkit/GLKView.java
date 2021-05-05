@@ -29,6 +29,7 @@ import apple.opengles.EAGLContext;
 import apple.uikit.UIImage;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -135,7 +136,7 @@ public class GLKView extends UIView implements NSCoding {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -148,8 +149,8 @@ public class GLKView extends UIView implements NSCoding {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -370,7 +371,7 @@ public class GLKView extends UIView implements NSCoding {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -386,7 +387,8 @@ public class GLKView extends UIView implements NSCoding {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -397,6 +399,10 @@ public class GLKView extends UIView implements NSCoding {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * Binds the context and drawable. This needs to be called when the currently bound framebuffer
+     * has been changed during the draw method.
+     */
     @Generated
     @Selector("bindDrawable")
     public native void bindDrawable();
@@ -410,10 +416,19 @@ public class GLKView extends UIView implements NSCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native GLKViewDelegate delegate();
 
+    /**
+     * deleteDrawable is normally invoked by the GLKViewController when an application is backgrounded, etc.
+     * It is the responsibility of the developer to call deleteDrawable when a GLKViewController isn't being used.
+     */
     @Generated
     @Selector("deleteDrawable")
     public native void deleteDrawable();
 
+    /**
+     * -display should be called when the view has been set to ignore calls to setNeedsDisplay. This method is used by
+     * the GLKViewController to invoke the draw method. It can also be used when not using a GLKViewController and custom
+     * control of the display loop is needed.
+     */
     @Generated
     @Selector("display")
     public native void display();
@@ -444,13 +459,20 @@ public class GLKView extends UIView implements NSCoding {
     @NInt
     public native long drawableWidth();
 
+    /**
+     * Controls whether the view responds to setNeedsDisplay. If true, then the view behaves similarily to a UIView.
+     * When the view has been marked for display, the draw method is called during the next drawing cycle. If false,
+     * the view's draw method will never be called during the next drawing cycle. It is expected that -display will be
+     * called directly in this case. enableSetNeedsDisplay is automatically set to false when used in conjunction with
+     * the GLKViewController. This value is true by default.
+     */
     @Generated
     @Selector("enableSetNeedsDisplay")
     public native boolean enableSetNeedsDisplay();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -458,7 +480,7 @@ public class GLKView extends UIView implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GLKView initWithCoder(NSCoder aDecoder);
+    public native GLKView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -504,11 +526,27 @@ public class GLKView extends UIView implements NSCoding {
     @Selector("setDrawableStencilFormat:")
     public native void setDrawableStencilFormat(int value);
 
+    /**
+     * Controls whether the view responds to setNeedsDisplay. If true, then the view behaves similarily to a UIView.
+     * When the view has been marked for display, the draw method is called during the next drawing cycle. If false,
+     * the view's draw method will never be called during the next drawing cycle. It is expected that -display will be
+     * called directly in this case. enableSetNeedsDisplay is automatically set to false when used in conjunction with
+     * the GLKViewController. This value is true by default.
+     */
     @Generated
     @Selector("setEnableSetNeedsDisplay:")
     public native void setEnableSetNeedsDisplay(boolean value);
 
+    /**
+     * Returns a UIImage of the resulting draw. Snapshot should never be called from within the draw method.
+     */
     @Generated
     @Selector("snapshot")
     public native UIImage snapshot();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

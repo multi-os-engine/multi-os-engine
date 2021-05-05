@@ -18,4 +18,5 @@ public final class INCallDestinationType {
     @Generated @NInt public static final long EmergencyDestination = 0x0000000000000002L;
     @Generated @NInt public static final long VoicemailDestination = 0x0000000000000003L;
     @Generated @NInt public static final long RedialDestination = 0x0000000000000004L;
+    @Generated @NInt public static final long CallBack = 0x0000000000000005L;
 }

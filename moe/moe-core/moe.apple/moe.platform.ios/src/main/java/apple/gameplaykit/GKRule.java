@@ -41,6 +41,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The concrete class that the GKRuleSystem uses to evaluate the current state and facts with predicated rules.
+ * These are sharable between systems, so don't retain any state in the rules themselves. Use the system-provided
+ * state storage.
+ * 
+ * @see GKRuleSystem.state
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -139,17 +146,27 @@ public class GKRule extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Short hand for making a rule that uses blocks for the predicate and action. This rule is not able to be archived
+     * using NSKeyedArchiver so use a subclass or NSPredicate based rule if serialization of the rule is needed.
+     */
     @Generated
     @Selector("ruleWithBlockPredicate:action:")
     public static native GKRule ruleWithBlockPredicateAction(
             @ObjCBlock(name = "call_ruleWithBlockPredicateAction_0") Block_ruleWithBlockPredicateAction_0 predicate,
             @ObjCBlock(name = "call_ruleWithBlockPredicateAction_1") Block_ruleWithBlockPredicateAction_1 action);
 
+    /**
+     * Create a data-driven rule that uses NSPredicate and a single assert as the action.
+     */
     @Generated
     @Selector("ruleWithPredicate:assertingFact:grade:")
     public static native GKRule ruleWithPredicateAssertingFactGrade(NSPredicate predicate,
             @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
 
+    /**
+     * Short hand for data-driven rule that uses NSPredicate and a single retract as the action.
+     */
     @Generated
     @Selector("ruleWithPredicate:retractingFact:grade:")
     public static native GKRule ruleWithPredicateRetractingFactGrade(NSPredicate predicate,
@@ -168,6 +185,17 @@ public class GKRule extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Called by the rule system when it is this rule's turn to be evaluated. If the predicate returns YES then
+     * the action for the rule will be performed. Once the action is performed the rule will move to the system's
+     * executed list until the agenda is reset.
+     * 
+     * @see performAction
+     * @see GKRuleSystem.agenda
+     * @see GKRuleSystem.executed
+     * @see GKRuleSystem.reset
+     * @return YES is the predicate passes and the action needs to be performed, NO otherwise.
+     */
     @Generated
     @Selector("evaluatePredicateWithSystem:")
     public native boolean evaluatePredicateWithSystem(GKRuleSystem system);
@@ -176,15 +204,36 @@ public class GKRule extends NSObject {
     @Selector("init")
     public native GKRule init();
 
+    /**
+     * Performs the action consequence for the rule. This will only be called if the predicate evaluates to YES.
+     * Any facts asserted or retracted by the action on the system will cause the system to evaluate the agenda
+     * rule set again once the action completes.
+     */
     @Generated
     @Selector("performActionWithSystem:")
     public native void performActionWithSystem(GKRuleSystem system);
 
+    /**
+     * Salience defines the order in the rule agenda that the system will evaluate. A rule with higher salience will
+     * be evaluated before another rule in the agenda that has a lower salience.
+     * 
+     * Defaults to 0.
+     * 
+     * @see GKRuleSystem.agenda
+     */
     @Generated
     @Selector("salience")
     @NInt
     public native long salience();
 
+    /**
+     * Salience defines the order in the rule agenda that the system will evaluate. A rule with higher salience will
+     * be evaluated before another rule in the agenda that has a lower salience.
+     * 
+     * Defaults to 0.
+     * 
+     * @see GKRuleSystem.agenda
+     */
     @Generated
     @Selector("setSalience:")
     public native void setSalience(@NInt long value);

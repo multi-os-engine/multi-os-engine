@@ -50,20 +50,32 @@ public final class MPSRegion extends StructObject {
         setSize(size);
     }
 
+    /**
+     * < The top left corner of the region.  Units: pixels
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native MPSOrigin origin();
 
+    /**
+     * < The top left corner of the region.  Units: pixels
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setOrigin(@ByValue MPSOrigin value);
 
+    /**
+     * < The size of the region. Units: pixels
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native MPSSize size();
 
+    /**
+     * < The size of the region. Units: pixels
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSize(@ByValue MPSSize value);

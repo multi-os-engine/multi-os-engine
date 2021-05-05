@@ -66,10 +66,16 @@ public final class TrakTableEntry extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setNameTableIndex(char value);
 
+    /**
+     * offset to array of TrackingValues
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native char sizesOffset();
 
+    /**
+     * offset to array of TrackingValues
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setSizesOffset(char value);

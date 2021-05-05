@@ -50,26 +50,44 @@ public final class KernTableHeader extends StructObject {
         setFirstSubtable(firstSubtable);
     }
 
+    /**
+     * font version number (currently 1.0)
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int version();
 
+    /**
+     * font version number (currently 1.0)
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(int value);
 
+    /**
+     * number of subtables present
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int nTables();
 
+    /**
+     * number of subtables present
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setNTables(int value);
 
+    /**
+     * first subtable starts here
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native char firstSubtable();
 
+    /**
+     * first subtable starts here
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setFirstSubtable(char value);

@@ -102,7 +102,7 @@ public class INGetCarPowerLevelStatusIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetCarPowerLevelStatusIntent initWithCoder(NSCoder aDecoder);
+    public native INGetCarPowerLevelStatusIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

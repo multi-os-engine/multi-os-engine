@@ -22,8 +22,8 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -41,14 +41,19 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SKConstraints are evaluated each frame after actions and physics.
+ * The node's transform will be changed to staisfy the constarint
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKConstraint extends NSObject implements NSCoding, NSCopying {
+public class SKConstraint extends NSObject implements NSSecureCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -102,6 +107,9 @@ public class SKConstraint extends NSObject implements NSCoding, NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Constrain the node's position to be within a distance of a point or node
+     */
     @Generated
     @Selector("distance:toNode:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -149,6 +157,9 @@ public class SKConstraint extends NSObject implements NSCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Constrain the node's rotation to orient to a point or node
+     */
     @Generated
     @Selector("orientToNode:offset:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -164,6 +175,9 @@ public class SKConstraint extends NSObject implements NSCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object orientToPointOffset(@ByValue CGPoint point, SKRange radians);
 
+    /**
+     * Constrain the node's position to a range
+     */
     @Generated
     @Selector("positionX:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -200,6 +214,9 @@ public class SKConstraint extends NSObject implements NSCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * Constrain the node's rotation to a range
+     */
     @Generated
     @Selector("zRotation:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -211,13 +228,16 @@ public class SKConstraint extends NSObject implements NSCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Wether the constraint should apply. Defualts to YES
+     */
     @Generated
     @Selector("enabled")
     public native boolean enabled();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -225,17 +245,36 @@ public class SKConstraint extends NSObject implements NSCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKConstraint initWithCoder(NSCoder aDecoder);
+    public native SKConstraint initWithCoder(NSCoder coder);
 
+    /**
+     * Reference node to transform the values to before apply the constraint limits. Defaults to nil (no transfrom).
+     */
     @Generated
     @Selector("referenceNode")
     public native SKNode referenceNode();
 
+    /**
+     * Wether the constraint should apply. Defualts to YES
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * Reference node to transform the values to before apply the constraint limits. Defaults to nil (no transfrom).
+     */
     @Generated
     @Selector("setReferenceNode:")
     public native void setReferenceNode(SKNode value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

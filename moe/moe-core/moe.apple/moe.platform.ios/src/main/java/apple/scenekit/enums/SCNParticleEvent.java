@@ -19,10 +19,22 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Particle Event
+ */
 @Generated
 public final class SCNParticleEvent {
+    /**
+     * Event triggered when a new particle spawns.
+     */
     @Generated @NInt public static final long Birth = 0x0000000000000000L;
+    /**
+     * Event triggered when a particle dies.
+     */
     @Generated @NInt public static final long Death = 0x0000000000000001L;
+    /**
+     * Event triggered when a particle collides with a collider node.
+     */
     @Generated @NInt public static final long Collision = 0x0000000000000002L;
 
     @Generated

@@ -212,22 +212,37 @@ public class NSScanner extends NSObject implements NSCopying {
     @Selector("scanFloat:")
     public native boolean scanFloat(FloatPtr result);
 
+    /**
+     * Corresponding to %a or %A formatting. Requires "0x" or "0X" prefix.
+     */
     @Generated
     @Selector("scanHexDouble:")
     public native boolean scanHexDouble(DoublePtr result);
 
+    /**
+     * Corresponding to %a or %A formatting. Requires "0x" or "0X" prefix.
+     */
     @Generated
     @Selector("scanHexFloat:")
     public native boolean scanHexFloat(FloatPtr result);
 
+    /**
+     * Optionally prefixed with "0x" or "0X"
+     */
     @Generated
     @Selector("scanHexInt:")
     public native boolean scanHexInt(IntPtr result);
 
+    /**
+     * Optionally prefixed with "0x" or "0X"
+     */
     @Generated
     @Selector("scanHexLongLong:")
     public native boolean scanHexLongLong(LongPtr result);
 
+    /**
+     * On overflow, the below methods will return success and clamp
+     */
     @Generated
     @Selector("scanInt:")
     public native boolean scanInt(IntPtr result);

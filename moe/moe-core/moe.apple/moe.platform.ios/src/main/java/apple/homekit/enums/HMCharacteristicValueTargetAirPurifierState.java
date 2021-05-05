@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]      HMCharacteristicValueTargetAirPurifierState
+ * 
+ * [@constant]  HMCharacteristicValueTargetAirPurifierStateManual       Air Purifier is in manual mode.
+ * [@constant]  HMCharacteristicValueTargetAirPurifierStateAutomatic    Air Purifier is in automatic mode.
+ */
 @Generated
 public final class HMCharacteristicValueTargetAirPurifierState {
     @Generated @NInt public static final long Manual = 0x0000000000000000L;

@@ -18,9 +18,9 @@ public interface UITextPasteConfigurationSupporting extends UIPasteConfiguration
     @Generated
     @Selector("pasteDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    Object pasteDelegate();
+    UITextPasteDelegate pasteDelegate();
 
     @Generated
     @Selector("setPasteDelegate:")
-    void setPasteDelegate(@Mapped(ObjCObjectMapper.class) Object value);
+    void setPasteDelegate(@Mapped(ObjCObjectMapper.class) UITextPasteDelegate value);
 }

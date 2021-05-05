@@ -18,6 +18,27 @@ package apple.corevideo.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * [@enum]           SMPTE Time Types
+ * 
+ * Constants that describe the type of SMPTE time.
+ * [@constant]       kCVSMPTETimeType24
+ *                     24 Frame
+ * [@constant]       kCVSMPTETimeType25
+ *                     25 Frame
+ * [@constant]       kCVSMPTETimeType30Drop
+ *                     30 Drop Frame
+ * [@constant]       kCVSMPTETimeType30
+ *                     30 Frame
+ * [@constant]       kCVSMPTETimeType2997
+ *                     29.97 Frame
+ * [@constant]       kCVSMPTETimeType2997Drop
+ *                     29.97 Drop Frame
+ * [@constant]       kCVSMPTETimeType60
+ *                     60 Frame
+ * [@constant]       kCVSMPTETimeType5994
+ *                     59.94 Frame
+ */
 @Generated
 public final class CVSMPTETimeType {
     @Generated public static final int Type24 = 0x00000000;

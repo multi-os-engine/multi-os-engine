@@ -19,6 +19,16 @@ package apple.corebluetooth.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] CBPeripheralManagerAuthorizationStatus
+ * 
+ * Represents the current state of a CBPeripheralManager.
+ * 
+ * [@constant] CBPeripheralManagerAuthorizationStatusNotDetermined	User has not yet made a choice with regards to this application.
+ * [@constant] CBPeripheralManagerAuthorizationStatusRestricted		This application is not authorized to share data while backgrounded. The user cannot change this application’s status, possibly due to active restrictions such as parental controls being in place.
+ * [@constant] CBPeripheralManagerAuthorizationStatusDenied			User has explicitly denied this application from sharing data while backgrounded.
+ * [@constant] CBPeripheralManagerAuthorizationStatusAuthorized		User has authorized this application to share data while backgrounded.
+ */
 @Generated
 public final class CBPeripheralManagerAuthorizationStatus {
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;

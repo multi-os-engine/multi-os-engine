@@ -32,11 +32,26 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * [@protocol] CBPeripheralDelegate
+ * 
+ * Delegate for CBPeripheral.
+ */
 @Generated
 @Library("CoreBluetooth")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CBPeripheralDelegate")
 public interface CBPeripheralDelegate {
+    /**
+     * peripheral:didDiscoverCharacteristicsForService:error:
+     * 
+     * This method returns the result of a @link discoverCharacteristics:forService: @/link call. If the characteristic(s) were read successfully,
+     * 					they can be retrieved via <i>service</i>'s <code>characteristics</code> property.
+     * 
+     *  @param peripheral	The peripheral providing this information.
+     *  @param service		The <code>CBService</code> object containing the characteristic(s).
+     * @param error		If an error occurred, the cause of the failure.
+     */
     @Generated
     @IsOptional
     @Selector("peripheral:didDiscoverCharacteristicsForService:error:")
@@ -45,6 +60,16 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheral:didDiscoverDescriptorsForCharacteristic:error:
+     * 
+     * This method returns the result of a @link discoverDescriptorsForCharacteristic: @/link call. If the descriptors were read successfully,
+     * 						they can be retrieved via <i>characteristic</i>'s <code>descriptors</code> property.
+     * 
+     *  @param peripheral		The peripheral providing this information.
+     *  @param characteristic	A <code>CBCharacteristic</code> object.
+     * @param error			If an error occurred, the cause of the failure.
+     */
     @Generated
     @IsOptional
     @Selector("peripheral:didDiscoverDescriptorsForCharacteristic:error:")
@@ -53,6 +78,16 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheral:didDiscoverIncludedServicesForService:error:
+     * 
+     * This method returns the result of a @link discoverIncludedServices:forService: @/link call. If the included service(s) were read successfully,
+     * 					they can be retrieved via <i>service</i>'s <code>includedServices</code> property.
+     * 
+     *  @param peripheral	The peripheral providing this information.
+     *  @param service		The <code>CBService</code> object containing the included services.
+     * @param error		If an error occurred, the cause of the failure.
+     */
     @Generated
     @IsOptional
     @Selector("peripheral:didDiscoverIncludedServicesForService:error:")
@@ -61,6 +96,15 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheral:didDiscoverServices:
+     * 
+     * This method returns the result of a @link discoverServices: @/link call. If the service(s) were read successfully, they can be retrieved via
+     * 					<i>peripheral</i>'s @link services @/link property.
+     * 
+     *  @param peripheral	The peripheral providing this information.
+     * @param error		If an error occurred, the cause of the failure.
+     */
     @Generated
     @IsOptional
     @Selector("peripheral:didDiscoverServices:")
@@ -68,6 +112,16 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheral:didModifyServices:
+     * 
+     * This method is invoked when the @link services @/link of <i>peripheral</i> have been changed.
+     * 				At this point, the designated <code>CBService</code> objects have been invalidated.
+     * 				Services can be re-discovered via @link discoverServices: @/link.
+     * 
+     * @param peripheral			The peripheral providing this update.
+     * @param invalidatedServices	The services that have been invalidated
+     */
     @Generated
     @IsOptional
     @Selector("peripheral:didModifyServices:")
@@ -76,6 +130,15 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheral:didReadRSSI:error:
+     * 
+     * This method returns the result of a @link readRSSI: @/link call.
+     * 
+     * @param peripheral	The peripheral providing this update.
+     * @param RSSI			The current RSSI of the link.
+     * @param error		If an error occurred, the cause of the failure.
+     */
     @Generated
     @IsOptional
     @Selector("peripheral:didReadRSSI:error:")
@@ -83,6 +146,15 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheral:didUpdateNotificationStateForCharacteristic:error:
+     * 
+     * This method returns the result of a @link setNotifyValue:forCharacteristic: @/link call.
+     * 
+     *  @param peripheral		The peripheral providing this information.
+     *  @param characteristic	A <code>CBCharacteristic</code> object.
+     * @param error			If an error occurred, the cause of the failure.
+     */
     @Generated
     @IsOptional
     @Selector("peripheral:didUpdateNotificationStateForCharacteristic:error:")
@@ -91,6 +163,15 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheral:didUpdateValueForCharacteristic:error:
+     * 
+     * This method is invoked after a @link readValueForCharacteristic: @/link call, or upon receipt of a notification/indication.
+     * 
+     *  @param peripheral		The peripheral providing this information.
+     *  @param characteristic	A <code>CBCharacteristic</code> object.
+     * @param error			If an error occurred, the cause of the failure.
+     */
     @Generated
     @IsOptional
     @Selector("peripheral:didUpdateValueForCharacteristic:error:")
@@ -99,6 +180,15 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheral:didUpdateValueForDescriptor:error:
+     * 
+     * This method returns the result of a @link readValueForDescriptor: @/link call.
+     * 
+     *  @param peripheral		The peripheral providing this information.
+     *  @param descriptor		A <code>CBDescriptor</code> object.
+     * @param error			If an error occurred, the cause of the failure.
+     */
     @Generated
     @IsOptional
     @Selector("peripheral:didUpdateValueForDescriptor:error:")
@@ -107,6 +197,15 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheral:didWriteValueForCharacteristic:error:
+     * 
+     * This method returns the result of a {@link writeValue:forCharacteristic:type:} call, when the <code>CBCharacteristicWriteWithResponse</code> type is used.
+     * 
+     *  @param peripheral		The peripheral providing this information.
+     *  @param characteristic	A <code>CBCharacteristic</code> object.
+     * @param error			If an error occurred, the cause of the failure.
+     */
     @Generated
     @IsOptional
     @Selector("peripheral:didWriteValueForCharacteristic:error:")
@@ -115,6 +214,15 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheral:didWriteValueForDescriptor:error:
+     * 
+     * This method returns the result of a @link writeValue:forDescriptor: @/link call.
+     * 
+     *  @param peripheral		The peripheral providing this information.
+     *  @param descriptor		A <code>CBDescriptor</code> object.
+     * @param error			If an error occurred, the cause of the failure.
+     */
     @Generated
     @IsOptional
     @Selector("peripheral:didWriteValueForDescriptor:error:")
@@ -123,6 +231,13 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheralDidUpdateName:
+     * 
+     * This method is invoked when the @link name @/link of <i>peripheral</i> changes.
+     * 
+     * @param peripheral	The peripheral providing this update.
+     */
     @Generated
     @IsOptional
     @Selector("peripheralDidUpdateName:")
@@ -130,6 +245,16 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheralDidUpdateRSSI:error:
+     * 
+     * This method returns the result of a @link readRSSI: @/link call.
+     * 
+     *  @param peripheral	The peripheral providing this update.
+     * @param error		If an error occurred, the cause of the failure.
+     * 
+     *  @deprecated			Use {@link peripheral:didReadRSSI:error:} instead.
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -138,6 +263,15 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheral:didOpenL2CAPChannel:error:
+     * 
+     * This method returns the result of a @link openL2CAPChannel: @link call.
+     * 
+     *  @param peripheral		The peripheral providing this information.
+     *  @param channel			A <code>CBL2CAPChannel</code> object.
+     * @param error			If an error occurred, the cause of the failure.
+     */
     @Generated
     @IsOptional
     @Selector("peripheral:didOpenL2CAPChannel:error:")
@@ -145,6 +279,14 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * peripheralIsReadyToSendWriteWithoutResponse:
+     * 
+     * This method is invoked after a failed call to @link writeValue:forCharacteristic:type: @/link, when <i>peripheral</i> is again
+     *                     ready to send characteristic value updates.
+     * 
+     * @param peripheral   The peripheral providing this update.
+     */
     @Generated
     @IsOptional
     @Selector("peripheralIsReadyToSendWriteWithoutResponse:")

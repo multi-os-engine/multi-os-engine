@@ -19,6 +19,11 @@ package apple.modelio.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum] MDLMeshBufferType
+ * 
+ * Type of data a MDLMeshBuffer has been allocated for
+ */
 @Generated
 public final class MDLMeshBufferType {
     @Generated @NUInt public static final long Vertex = 0x0000000000000001L;

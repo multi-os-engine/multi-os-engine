@@ -32,10 +32,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIViewControllerAnimatedTransitioning")
 public interface UIViewControllerAnimatedTransitioning {
+    /**
+     * This method can only  be a nop if the transition is interactive and not a percentDriven interactive transition.
+     */
     @Generated
     @Selector("animateTransition:")
-    void animateTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+    void animateTransition(@Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
+    /**
+     * This is a convenience and if implemented will be invoked by the system when the transition context's completeTransition: method is invoked.
+     */
     @Generated
     @IsOptional
     @Selector("animationEnded:")
@@ -43,15 +49,27 @@ public interface UIViewControllerAnimatedTransitioning {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * A conforming object implements this method if the transition it creates can
+     * be interrupted. For example, it could return an instance of a
+     * UIViewPropertyAnimator. It is expected that this method will return the same
+     * instance for the life of a transition.
+     */
     @Generated
     @IsOptional
     @Selector("interruptibleAnimatorForTransition:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object interruptibleAnimatorForTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext) {
+    default UIViewImplicitlyAnimating interruptibleAnimatorForTransition(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This is used for percent driven interactive transitions, as well as for
+     * container controllers that have companion animations that might need to
+     * synchronize with the main animation.
+     */
     @Generated
     @Selector("transitionDuration:")
-    double transitionDuration(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+    double transitionDuration(@Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 }

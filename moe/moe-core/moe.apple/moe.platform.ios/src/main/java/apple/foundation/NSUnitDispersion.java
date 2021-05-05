@@ -133,6 +133,9 @@ public class NSUnitDispersion extends NSDimension implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Base unit - partsPerMillion
+     */
     @Generated
     @Selector("partsPerMillion")
     public static native NSUnitDispersion partsPerMillion();
@@ -164,7 +167,7 @@ public class NSUnitDispersion extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -172,7 +175,7 @@ public class NSUnitDispersion extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitDispersion initWithCoder(NSCoder aDecoder);
+    public native NSUnitDispersion initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

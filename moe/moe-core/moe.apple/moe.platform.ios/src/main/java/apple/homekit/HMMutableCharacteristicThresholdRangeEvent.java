@@ -23,6 +23,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This class represents an event when a characteristic's value falls within the specified
+ * number range.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -65,6 +69,9 @@ public class HMMutableCharacteristicThresholdRangeEvent extends HMCharacteristic
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * The characteristic associated with the event.
+     */
     @Generated
     @Selector("characteristic")
     public native HMCharacteristic characteristic();
@@ -138,10 +145,16 @@ public class HMMutableCharacteristicThresholdRangeEvent extends HMCharacteristic
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The characteristic associated with the event.
+     */
     @Generated
     @Selector("setCharacteristic:")
     public native void setCharacteristic(HMCharacteristic value);
 
+    /**
+     * The range of the characteristic value that triggers the event.
+     */
     @Generated
     @Selector("setThresholdRange:")
     public native void setThresholdRange(HMNumberRange value);
@@ -154,6 +167,9 @@ public class HMMutableCharacteristicThresholdRangeEvent extends HMCharacteristic
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * The range of the characteristic value that triggers the event.
+     */
     @Generated
     @Selector("thresholdRange")
     public native HMNumberRange thresholdRange();

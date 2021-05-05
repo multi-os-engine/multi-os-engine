@@ -21,17 +21,42 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIDataDetectorTypes {
+    /**
+     * Phone number detection
+     */
     @Generated @NUInt public static final long PhoneNumber = 0x0000000000000001L;
+    /**
+     * URL detection
+     */
     @Generated @NUInt public static final long Link = 0x0000000000000002L;
+    /**
+     * Street address detection
+     */
     @Generated @NUInt public static final long Address = 0x0000000000000004L;
+    /**
+     * Event detection
+     */
     @Generated @NUInt public static final long CalendarEvent = 0x0000000000000008L;
+    /**
+     * Shipment tracking number detection
+     */
     @Generated @NUInt public static final long ShipmentTrackingNumber = 0x0000000000000010L;
+    /**
+     * Flight number detection
+     */
     @Generated @NUInt public static final long FlightNumber = 0x0000000000000020L;
+    /**
+     * Information users may want to look up
+     */
     @Generated @NUInt public static final long LookupSuggestion = 0x0000000000000040L;
+    /**
+     * Disable detection
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
-    @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ?
-            0xFFFFFFFFFFFFFFFFL :
-            0x00000000FFFFFFFFL;
+    /**
+     * Enable all types, including types that may be added later
+     */
+    @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ? 0xFFFFFFFFFFFFFFFFL : 0x00000000FFFFFFFFL;
 
     @Generated
     private UIDataDetectorTypes() {

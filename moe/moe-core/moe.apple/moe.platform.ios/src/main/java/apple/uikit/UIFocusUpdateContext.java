@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UIFocusUpdateContexts provide information relevant to a specific focus update from one view to another. They are ephemeral objects that are usually discarded after the update is finished.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +154,9 @@ public class UIFocusUpdateContext extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The focus heading in which the update is occuring.
+     */
     @Generated
     @Selector("focusHeading")
     @NUInt
@@ -160,20 +166,36 @@ public class UIFocusUpdateContext extends NSObject {
     @Selector("init")
     public native UIFocusUpdateContext init();
 
+    /**
+     * The item that is focused after the update, i.e. where focus is updating to. May be nil if no item is being focused, meaning focus is being lost.
+     */
     @Generated
     @Selector("nextFocusedItem")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIFocusItem nextFocusedItem();
 
+    /**
+     * The view that will be focused after the update. May be nil if no view will be focused.
+     * If nextFocusedItem is not a view, this returns that item's containing view, otherwise they are equal.
+     * NOTE: This property will be deprecated in a future release. Use nextFocusedItem instead.
+     */
     @Generated
     @Selector("nextFocusedView")
     public native UIView nextFocusedView();
 
+    /**
+     * The item that was focused before the update, i.e. where focus is updating from. May be nil if no item was focused, such as when focus is initially set.
+     */
     @Generated
     @Selector("previouslyFocusedItem")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIFocusItem previouslyFocusedItem();
 
+    /**
+     * The view that was focused before the update. May be nil if no view was focused, such as when setting initial focus.
+     * If previouslyFocusedItem is not a view, this returns that item's containing view, otherwise they are equal.
+     * NOTE: This property will be deprecated in a future release. Use previouslyFocusedItem instead.
+     */
     @Generated
     @Selector("previouslyFocusedView")
     public native UIView previouslyFocusedView();

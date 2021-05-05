@@ -183,13 +183,13 @@ public class PHAssetResourceRequestOptions extends NSObject implements NSCopying
     @Generated
     public interface Block_progressHandler_ret {
         @Generated
-        void call_progressHandler_ret(double arg0);
+        void call_progressHandler_ret(double progress);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setProgressHandler {
         @Generated
-        void call_setProgressHandler(double arg0);
+        void call_setProgressHandler(double progress);
     }
 }

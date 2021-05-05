@@ -22,6 +22,7 @@ import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
@@ -37,12 +38,15 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -183,6 +187,9 @@ public class SKVideoNode extends SKNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * Create a video node from an AVPlayer. You can use the AVPlayer to control playback.
+     */
     @Generated
     @Selector("videoNodeWithAVPlayer:")
     public static native SKVideoNode videoNodeWithAVPlayer(AVPlayer player);
@@ -195,16 +202,25 @@ public class SKVideoNode extends SKNode {
     @Selector("videoNodeWithURL:")
     public static native SKVideoNode videoNodeWithURL(NSURL videoURL);
 
+    /**
+     * Create a video node from a file.
+     */
     @Generated
     @Deprecated
     @Selector("videoNodeWithVideoFileNamed:")
     public static native SKVideoNode videoNodeWithVideoFileNamed(String videoFile);
 
+    /**
+     * Create a video node from a URL.
+     */
     @Generated
     @Deprecated
     @Selector("videoNodeWithVideoURL:")
     public static native SKVideoNode videoNodeWithVideoURL(NSURL videoURL);
 
+    /**
+     * The location in the video that maps to its 'position' in the parent's coordinate space. (0.0-1.0)
+     */
     @Generated
     @Selector("anchorPoint")
     @ByValue
@@ -214,10 +230,18 @@ public class SKVideoNode extends SKNode {
     @Selector("init")
     public native SKVideoNode init();
 
+    /**
+     * Designated Initializer.
+     * 
+     * Initialize a video node from an AVPlayer. You can use the AVPlayer to control playback.
+     */
     @Generated
     @Selector("initWithAVPlayer:")
     public native SKVideoNode initWithAVPlayer(AVPlayer player);
 
+    /**
+     * Support coding and decoding via NSKeyedArchiver.
+     */
     @Generated
     @Selector("initWithCoder:")
     public native SKVideoNode initWithCoder(NSCoder aDecoder);
@@ -230,6 +254,9 @@ public class SKVideoNode extends SKNode {
     @Selector("initWithURL:")
     public native SKVideoNode initWithURL(NSURL url);
 
+    /**
+     * Initialize a video node from a file.
+     */
     @Generated
     @Deprecated
     @Selector("initWithVideoFileNamed:")
@@ -248,16 +275,40 @@ public class SKVideoNode extends SKNode {
     @Selector("play")
     public native void play();
 
+    /**
+     * The location in the video that maps to its 'position' in the parent's coordinate space. (0.0-1.0)
+     */
     @Generated
     @Selector("setAnchorPoint:")
     public native void setAnchorPoint(@ByValue CGPoint value);
 
+    /**
+     * The display size of the video (in parent's coordinate space)
+     */
     @Generated
     @Selector("setSize:")
     public native void setSize(@ByValue CGSize value);
 
+    /**
+     * The display size of the video (in parent's coordinate space)
+     */
     @Generated
     @Selector("size")
     @ByValue
     public native CGSize size();
+
+    @Generated
+    @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
+    public static native SKVideoNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
+            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

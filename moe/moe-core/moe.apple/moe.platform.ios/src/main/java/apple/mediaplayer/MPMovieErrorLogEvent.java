@@ -41,6 +41,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * -----------------------------------------------------------------------------
+ * An MPMovieErrorLogEvent repesents a single error log entry.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -152,6 +156,9 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * The URI of the playback item.
+     */
     @Generated
     @Selector("URI")
     public native String URI();
@@ -162,18 +169,30 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * The date and time when the error occured.
+     */
     @Generated
     @Selector("date")
     public native NSDate date();
 
+    /**
+     * A description of the error encountered.
+     */
     @Generated
     @Selector("errorComment")
     public native String errorComment();
 
+    /**
+     * The domain of the error.
+     */
     @Generated
     @Selector("errorDomain")
     public native String errorDomain();
 
+    /**
+     * A unique error code identifier. The value is negative if unknown.
+     */
     @Generated
     @Selector("errorStatusCode")
     @NInt
@@ -183,10 +202,16 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     @Selector("init")
     public native MPMovieErrorLogEvent init();
 
+    /**
+     * A GUID that identifies the playback session. This value is used in HTTP requests.
+     */
     @Generated
     @Selector("playbackSessionID")
     public native String playbackSessionID();
 
+    /**
+     * The IP address of the server that was the source of the error.
+     */
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();

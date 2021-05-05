@@ -23,6 +23,7 @@ import apple.webkit.WKNavigation;
 import apple.webkit.WKNavigationAction;
 import apple.webkit.WKNavigationResponse;
 import apple.webkit.WKWebView;
+import apple.webkit.WKWebpagePreferences;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NInt;
@@ -33,11 +34,27 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * A class conforming to the WKNavigationDelegate protocol can provide
+ * methods for tracking progress for main frame navigations and for deciding
+ * policy for main frame and subframe navigations.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("WKNavigationDelegate")
 public interface WKNavigationDelegate {
+    /**
+     * Decides whether to allow or cancel a navigation.
+     * 
+     * If you do not implement this method, the web view will load the request or, if appropriate, forward it to another application.
+     * 
+     * @param webView The web view invoking the delegate method.
+     * @param navigationAction Descriptive information about the action
+     * triggering the navigation request.
+     * @param decisionHandler The decision handler to call to allow or cancel the
+     * navigation. The argument is one of the constants of the enumerated type WKNavigationActionPolicy.
+     */
     @Generated
     @IsOptional
     @Selector("webView:decidePolicyForNavigationAction:decisionHandler:")
@@ -47,6 +64,18 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Decides whether to allow or cancel a navigation after its
+     * response is known.
+     * 
+     * If you do not implement this method, the web view will allow the response, if the web view can show it.
+     * 
+     * @param webView The web view invoking the delegate method.
+     * @param navigationResponse Descriptive information about the navigation
+     * response.
+     * @param decisionHandler The decision handler to call to allow or cancel the
+     * navigation. The argument is one of the constants of the enumerated type WKNavigationResponsePolicy.
+     */
     @Generated
     @IsOptional
     @Selector("webView:decidePolicyForNavigationResponse:decisionHandler:")
@@ -56,6 +85,12 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Invoked when content starts arriving for the main frame.
+     * 
+     * @param webView The web view invoking the delegate method.
+     * @param navigation The navigation.
+     */
     @Generated
     @IsOptional
     @Selector("webView:didCommitNavigation:")
@@ -63,6 +98,14 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Invoked when an error occurs during a committed main frame
+     * navigation.
+     * 
+     * @param webView The web view invoking the delegate method.
+     * @param navigation The navigation.
+     * @param error The error that occurred.
+     */
     @Generated
     @IsOptional
     @Selector("webView:didFailNavigation:withError:")
@@ -70,6 +113,14 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Invoked when an error occurs while starting to load data for
+     * the main frame.
+     * 
+     * @param webView The web view invoking the delegate method.
+     * @param navigation The navigation.
+     * @param error The error that occurred.
+     */
     @Generated
     @IsOptional
     @Selector("webView:didFailProvisionalNavigation:withError:")
@@ -78,6 +129,12 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Invoked when a main frame navigation completes.
+     * 
+     * @param webView The web view invoking the delegate method.
+     * @param navigation The navigation.
+     */
     @Generated
     @IsOptional
     @Selector("webView:didFinishNavigation:")
@@ -85,6 +142,19 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Invoked when the web view needs to respond to an authentication challenge.
+     * 
+     * If you do not implement this method, the web view will respond to the authentication challenge with the NSURLSessionAuthChallengeRejectProtectionSpace disposition.
+     * 
+     * @param webView The web view that received the authentication challenge.
+     * @param challenge The authentication challenge.
+     * @param completionHandler The completion handler you must invoke to respond to the challenge. The
+     * disposition argument is one of the constants of the enumerated type
+     * NSURLSessionAuthChallengeDisposition. When disposition is NSURLSessionAuthChallengeUseCredential,
+     * the credential argument is the credential to use, or nil to indicate continuing without a
+     * credential.
+     */
     @Generated
     @IsOptional
     @Selector("webView:didReceiveAuthenticationChallenge:completionHandler:")
@@ -94,6 +164,13 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Invoked when a server redirect is received for the main
+     * frame.
+     * 
+     * @param webView The web view invoking the delegate method.
+     * @param navigation The navigation.
+     */
     @Generated
     @IsOptional
     @Selector("webView:didReceiveServerRedirectForProvisionalNavigation:")
@@ -101,6 +178,12 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Invoked when a main frame navigation starts.
+     * 
+     * @param webView The web view invoking the delegate method.
+     * @param navigation The navigation.
+     */
     @Generated
     @IsOptional
     @Selector("webView:didStartProvisionalNavigation:")
@@ -108,6 +191,11 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Invoked when the web view's web content process is terminated.
+     * 
+     * @param webView The web view whose underlying web content process was terminated.
+     */
     @Generated
     @IsOptional
     @Selector("webViewWebContentProcessDidTerminate:")
@@ -133,6 +221,62 @@ public interface WKNavigationDelegate {
     @Generated
     public interface Block_webViewDidReceiveAuthenticationChallengeCompletionHandler {
         @Generated
-        void call_webViewDidReceiveAuthenticationChallengeCompletionHandler(@NInt long arg0, NSURLCredential arg1);
+        void call_webViewDidReceiveAuthenticationChallengeCompletionHandler(@NInt long disposition,
+                NSURLCredential credential);
+    }
+
+    /**
+     * Decides whether to allow or cancel a navigation.
+     * 
+     * If you implement this method,
+     * -webView:decidePolicyForNavigationAction:decisionHandler: will not be called.
+     * 
+     * @param webView The web view invoking the delegate method.
+     * @param navigationAction Descriptive information about the action
+     * triggering the navigation request.
+     * @param preferences The default set of webpage preferences. This may be
+     * changed by setting defaultWebpagePreferences on WKWebViewConfiguration.
+     * @param decisionHandler The policy decision handler to call to allow or cancel
+     * the navigation. The arguments are one of the constants of the enumerated type
+     * WKNavigationActionPolicy, as well as an instance of WKWebpagePreferences.
+     */
+    @Generated
+    @IsOptional
+    @Selector("webView:decidePolicyForNavigationAction:preferences:decisionHandler:")
+    default void webViewDecidePolicyForNavigationActionPreferencesDecisionHandler(WKWebView webView,
+            WKNavigationAction navigationAction, WKWebpagePreferences preferences,
+            @ObjCBlock(name = "call_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler") Block_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler decisionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler {
+        @Generated
+        void call_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler(@NInt long arg0,
+                WKWebpagePreferences arg1);
+    }
+
+    /**
+     * Invoked when the web view is establishing a network connection using a deprecated version of TLS.
+     * 
+     * @param webView The web view initiating the connection.
+     * @param challenge The authentication challenge.
+     * @param decisionHandler The decision handler you must invoke to respond to indicate whether or not to continue with the connection establishment.
+     */
+    @Generated
+    @IsOptional
+    @Selector("webView:authenticationChallenge:shouldAllowDeprecatedTLS:")
+    default void webViewAuthenticationChallengeShouldAllowDeprecatedTLS(WKWebView webView,
+            NSURLAuthenticationChallenge challenge,
+            @ObjCBlock(name = "call_webViewAuthenticationChallengeShouldAllowDeprecatedTLS") Block_webViewAuthenticationChallengeShouldAllowDeprecatedTLS decisionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewAuthenticationChallengeShouldAllowDeprecatedTLS {
+        @Generated
+        void call_webViewAuthenticationChallengeShouldAllowDeprecatedTLS(boolean arg0);
     }
 }

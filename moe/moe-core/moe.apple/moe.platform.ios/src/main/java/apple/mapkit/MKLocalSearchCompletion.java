@@ -159,6 +159,9 @@ public class MKLocalSearchCompletion extends NSObject {
     @Selector("subtitle")
     public native String subtitle();
 
+    /**
+     * NSValue-wrapped NSRanges
+     */
     @Generated
     @Selector("subtitleHighlightRanges")
     public native NSArray<? extends NSValue> subtitleHighlightRanges();
@@ -167,6 +170,9 @@ public class MKLocalSearchCompletion extends NSObject {
     @Selector("title")
     public native String title();
 
+    /**
+     * NSValue-wrapped NSRanges
+     */
     @Generated
     @Selector("titleHighlightRanges")
     public native NSArray<? extends NSValue> titleHighlightRanges();

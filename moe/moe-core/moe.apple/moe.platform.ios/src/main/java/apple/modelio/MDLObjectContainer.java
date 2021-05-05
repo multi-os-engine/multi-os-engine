@@ -43,6 +43,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MDLObjectContainer
+ * 
+ * Default container object
+ * 
+ * Subclass the object container to support custom containers. Such
+ *             custom containers might reference in memory representations, offline 
+ *             databases, and so on.
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)

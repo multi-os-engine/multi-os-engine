@@ -159,37 +159,64 @@ public class ALAssetRepresentation extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * This is a convenience method that returns a full resolution CGImage of the representation. It takes a dictionary
+     * of options as described for CGImageSourceCreateWithData() or CGImageSourceCreateWithURL()
+     */
     @Generated
     @Deprecated
     @Selector("CGImageWithOptions:")
     public native CGImageRef CGImageWithOptions(NSDictionary<?, ?> options);
 
+    /**
+     * Returns the representation's UTI.
+     */
     @Generated
     @Deprecated
     @Selector("UTI")
     public native String UTI();
 
+    /**
+     * Returns the dimensions of this representation.  If the representation does not have valid dimensions, this method will return CGSizeZero.
+     */
     @Generated
     @Deprecated
     @Selector("dimensions")
     @ByValue
     public native CGSize dimensions();
 
+    /**
+     * Returns a string representing the filename of the representation on disk.
+     * For representations synced from iTunes, this will be the filename of the representation on the host.
+     */
     @Generated
     @Deprecated
     @Selector("filename")
     public native String filename();
 
+    /**
+     * This is a convenience method for -[ALAssetRepresentation CGImageWithOptions:] where options is nil.
+     */
     @Generated
     @Deprecated
     @Selector("fullResolutionImage")
     public native CGImageRef fullResolutionImage();
 
+    /**
+     * Returns a CGImage of the representation that is appropriate for displaying full screen.
+     * The dimensions of this image will be dependent on the hardware that the application is running on and does not mean it will match the dimensions of the screen.
+     */
     @Generated
     @Deprecated
     @Selector("fullScreenImage")
     public native CGImageRef fullScreenImage();
 
+    /**
+     * Copies the specified range of bytes into the buffer given by the caller.
+     * The method returns the number of bytes actually written to the buffer. The number of bytes read will be
+     * less than the requested range if the range exceeds the file's size.
+     * If an error occurs, the method returns 0 and upon return contains an NSError object that describes the problem. Pass NULL if you do not want error information.
+     */
     @Generated
     @Deprecated
     @Selector("getBytes:fromOffset:length:error:")
@@ -201,27 +228,43 @@ public class ALAssetRepresentation extends NSObject {
     @Selector("init")
     public native ALAssetRepresentation init();
 
+    /**
+     * Returns a dictionary of dictionaries of metadata for the representation.
+     * If the representation is one that the system cannot interpret, nil is returned.
+     */
     @Generated
     @Deprecated
     @Selector("metadata")
     public native NSDictionary<?, ?> metadata();
 
+    /**
+     * Returns the representation's orientation as defined in ALAssetOrientation.
+     */
     @Generated
     @Deprecated
     @Selector("orientation")
     @NInt
     public native long orientation();
 
+    /**
+     * Returns the representation's scale.
+     */
     @Generated
     @Deprecated
     @Selector("scale")
     public native float scale();
 
+    /**
+     * Returns the size of the file for this representation. Callers can use this to allocate buffers of the right size for -getBytes:fromOffset:length:error:
+     */
     @Generated
     @Deprecated
     @Selector("size")
     public native long size();
 
+    /**
+     * Returns a persistent URL uniquely identifying the representation
+     */
     @Generated
     @Deprecated
     @Selector("url")

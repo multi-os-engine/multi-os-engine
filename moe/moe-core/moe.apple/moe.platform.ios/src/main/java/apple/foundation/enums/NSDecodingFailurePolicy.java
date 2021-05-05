@@ -19,9 +19,18 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Describes the action an NSCoder should take when it encounters decode failures (e.g. corrupt data) for non-TopLevel decodes.
+ */
 @Generated
 public final class NSDecodingFailurePolicy {
+    /**
+     * On decode failure, the NSCoder will raise an exception internally to propagate failure messages (and unwind the stack). This exception can be transformed into an NSError via any of the TopLevel decode APIs.
+     */
     @Generated @NInt public static final long RaiseException = 0x0000000000000000L;
+    /**
+     * On decode failure, the NSCoder will capture the failure as an NSError, and prevent further decodes (by returning 0 / nil equivalent as appropriate). Clients should consider using this policy if they know that all encoded objects behave correctly in the presence of decode failures (e.g. they use -failWithError: to communicate decode failures and don't raise exceptions for error propagation)
+     */
     @Generated @NInt public static final long SetErrorAndReturn = 0x0000000000000001L;
 
     @Generated

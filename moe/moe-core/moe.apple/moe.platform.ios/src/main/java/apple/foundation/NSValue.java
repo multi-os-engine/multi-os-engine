@@ -347,8 +347,11 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * This method is unsafe because it could potentially cause buffer overruns. You should use -getValue:size: instead.
+     */
     @Generated
     @Selector("getValue:")
     public native void getValue(VoidPtr value);
@@ -363,7 +366,7 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSValue initWithCoder(NSCoder aDecoder);
+    public native NSValue initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isEqualToValue:")

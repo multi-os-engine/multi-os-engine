@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKFitzpatrickSkinTypeObject
+ * 
+ * A wrapper object for HKFitzpatrickSkinType enumeration.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -166,7 +171,7 @@ public class HKFitzpatrickSkinTypeObject extends NSObject implements NSCopying, 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +179,7 @@ public class HKFitzpatrickSkinTypeObject extends NSObject implements NSCopying, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKFitzpatrickSkinTypeObject initWithCoder(NSCoder aDecoder);
+    public native HKFitzpatrickSkinTypeObject initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("skinType")

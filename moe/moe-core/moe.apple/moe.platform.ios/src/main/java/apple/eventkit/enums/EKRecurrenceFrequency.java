@@ -19,6 +19,15 @@ package apple.eventkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]       EKRecurrenceFrequency
+ * 
+ * The frequency of a recurrence
+ * 
+ * EKRecurrenceFrequency designates the unit of time used to describe the recurrence.
+ *             It has four possible values, which correspond to recurrence rules that are defined
+ *             in terms of days, weeks, months, and years.
+ */
 @Generated
 public final class EKRecurrenceFrequency {
     @Generated @NInt public static final long Daily = 0x0000000000000000L;

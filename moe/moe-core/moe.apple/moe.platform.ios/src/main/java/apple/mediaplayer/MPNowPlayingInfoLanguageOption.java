@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents a single language option option.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -150,10 +153,16 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * A user presentable display name for this option.
+     */
     @Generated
     @Selector("displayName")
     public native String displayName();
 
+    /**
+     * A unique identifier representing this option.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -168,23 +177,46 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
             @NUInt long languageOptionType, String languageTag, NSArray<String> languageOptionCharacteristics,
             String displayName, String identifier);
 
+    /**
+     * Represents a special case that is used to
+     * represent the best audible language option based on system preferences.
+     * See AVPlayerItem-selectMediaOptionAutomaticallyInMediaSelectionGroup
+     */
     @Generated
     @Selector("isAutomaticAudibleLanguageOption")
     public native boolean isAutomaticAudibleLanguageOption();
 
+    /**
+     * Represents a special case that is used to
+     * represent the best legible language option based on system preferences.
+     * See AVPlayerItem-selectMediaOptionAutomaticallyInMediaSelectionGroup
+     */
     @Generated
     @Selector("isAutomaticLegibleLanguageOption")
     public native boolean isAutomaticLegibleLanguageOption();
 
+    /**
+     * Characteristics describing the content of the language options.
+     * See the LanguageOptionCharacteristics for the most commonly used values.
+     */
     @Generated
     @Selector("languageOptionCharacteristics")
     public native NSArray<String> languageOptionCharacteristics();
 
+    /**
+     * The type of language option.
+     */
     @Generated
     @Selector("languageOptionType")
     @NUInt
     public native long languageOptionType();
 
+    /**
+     * The IETF BCP 47 language tag.
+     * A nil languageTag reprsents that this option should be disabled.
+     * A languageTag with the value of MPLangaugeOptionAutoLangaugeTag represents
+     * that the best langauge based on the system preferences should be used.
+     */
     @Generated
     @Selector("languageTag")
     public native String languageTag();

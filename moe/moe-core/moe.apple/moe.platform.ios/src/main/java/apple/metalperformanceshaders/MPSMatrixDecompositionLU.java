@@ -28,6 +28,22 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSMatrixDecompositionLU
+ * 
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * A kernel for computing the LU factorization of a matrix using
+ *             partial pivoting with row interchanges.
+ * 
+ * A MPSMatrixDecompositionLU object computes an LU factorization:
+ * 
+ *                 P * A = L * U
+ * 
+ *             A is a matrix for which the LU factorization is to be computed.
+ *             L is a unit lower triangular matrix and U is an upper triangular
+ *             matrix.  P is a permutation matrix.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -86,6 +102,46 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Encode a MPSMatrixDecompositionLU kernel into a command Buffer.
+     * 
+     * This function encodes the MPSMatrixDecompositionLU object to a valid
+     *             command buffer.
+     * 
+     *             Upon completion the array pivotIndices contains, for each index i,
+     *             the row interchanged with row i.
+     * 
+     *             If during the computation U[k, k], for some k, is determined to be
+     *             exactly zero MPSMatrixDecompositionStatusSingular will be returned in the
+     *             provided status buffer.  The data referenced by the MTLBuffer is not valid
+     *             until the command buffer has completed execution.  If the matrix
+     *             return status is not desired NULL may be provided.
+     * 
+     *             Upon successful factorization, resultMatrix contains the resulting
+     *             lower triangular factor (without the unit diagonal elements) in its
+     *             strictly lower triangular region and the upper triangular factor in
+     *             its upper triangular region.
+     * 
+     *             This kernel functions either in-place, if the result matrix
+     *             completely aliases the source matrix, or out-of-place.  If there
+     *             is any partial overlap between input and output data the results
+     *             are undefined.
+     * 
+     * @param      commandBuffer           A valid MTLCommandBuffer to receive the encoded filter
+     * 
+     * @param      sourceMatrix            A valid MPSMatrix containing the source data.  Must have
+     *                                     enough space to hold a rows x columns matrix.
+     * 
+     * @param      resultMatrix            A valid MPSMatrix to contain the result.  Must have enough
+     *                                     space to hold a rows x columns matrix.
+     * 
+     * @param      pivotIndices            A valid MPSMatrix to contain the pivot indices. Must have enough space
+     *                                     to hold an array of size 1xmin(rows, columns) values.
+     *                                     Element type must be MPSDataTypeUInt32.
+     * 
+     * @param      status                  A MTLBuffer which indicates the resulting MPSMatrixDecompositionStatus
+     *                                     value.
+     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrix:resultMatrix:pivotIndices:status:")
     public native void encodeToCommandBufferSourceMatrixResultMatrixPivotIndicesStatus(
@@ -114,6 +170,17 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
     @Selector("initWithDevice:")
     public native MPSMatrixDecompositionLU initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * Initialize an MPSMatrixDecompositionLU object on a device
+     * 
+     * @param      device          The device on which the kernel will execute.
+     * 
+     * @param      rows            The number of rows in the source matrix.
+     * 
+     * @param      columns         The number of columns in the source matrix.
+     * 
+     * @return     A valid MPSMatrixDecompositionLU object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:rows:columns:")
     public native MPSMatrixDecompositionLU initWithDeviceRowsColumns(@Mapped(ObjCObjectMapper.class) MTLDevice device,

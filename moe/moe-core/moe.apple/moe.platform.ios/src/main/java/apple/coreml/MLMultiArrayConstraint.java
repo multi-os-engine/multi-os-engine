@@ -2,9 +2,11 @@ package apple.coreml;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -21,14 +23,18 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Constraint describing expected MLMultiArray properties
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MLMultiArrayConstraint extends NSObject {
+public class MLMultiArrayConstraint extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -74,6 +80,9 @@ public class MLMultiArrayConstraint extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * Required dataType
+     */
     @Generated
     @Selector("dataType")
     @NInt
@@ -135,6 +144,9 @@ public class MLMultiArrayConstraint extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Required or default shape of multiarray
+     */
     @Generated
     @Selector("shape")
     public native NSArray<? extends NSNumber> shape();
@@ -147,4 +159,29 @@ public class MLMultiArrayConstraint extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MLMultiArrayConstraint initWithCoder(NSCoder coder);
+
+    /**
+     * Detailed shape constraint
+     */
+    @Generated
+    @Selector("shapeConstraint")
+    public native MLMultiArrayShapeConstraint shapeConstraint();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

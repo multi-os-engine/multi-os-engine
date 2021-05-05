@@ -42,6 +42,18 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSCNNPoolingAverage
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the average pooling filter.  For each pixel, returns the mean value of pixels
+ *             in the kernelWidth x kernelHeight filter region.
+ *             When @ref edgeMode is @ref MPSImageEdgeModeClamp the filtering window is shrunk to remain
+ *             within the source image borders. What this means is that close to image borders the filtering window
+ *             will be smaller in order to fit inside the source image and less values will be used to compute the
+ *             average. In case the filtering window is entirely outside the source image border the
+ *             outputted value will be zero.
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -166,6 +178,16 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
     public native MPSCNNPoolingAverage initWithDeviceKernelWidthKernelHeight(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
+    /**
+     * Initialize a MPSCNNPoolingAverage pooling filter
+     * 
+     * @param      device              The device the filter will run on
+     * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
+     * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.
+     * @param      strideInPixelsX     The output stride (downsampling factor) in the x dimension.
+     * @param      strideInPixelsY     The output stride (downsampling factor) in the y dimension.
+     * @return     A valid MPSCNNPooling object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")
     public native MPSCNNPoolingAverage initWithDeviceKernelWidthKernelHeightStrideInPixelsXStrideInPixelsY(
@@ -176,15 +198,44 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
     @Selector("initWithCoder:")
     public native MPSCNNPoolingAverage initWithCoder(NSCoder aDecoder);
 
+    /**
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
+     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
+     * @param      device      The MTLDevice on which to make the MPSCNNPooling
+     * @return     A new MPSCNNPooling object, or nil if failure.
+     */
     @Generated
     @Selector("initWithCoder:device:")
     public native MPSCNNPoolingAverage initWithCoderDevice(NSCoder aDecoder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * [@property]   zeroPadSizeX
+     * 
+     * How much zero padding to apply to both left and right borders of the input image for average pooling,
+     *             when using @see edgeMode MPSImageEdgeModeClamp. For @see edgeMode MPSImageEdgeModeZero this property is
+     *             ignored and the area outside the image is interpreted to contain zeros.
+     *             The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
+     *             and its padding region, but the effect is that the normalization factor of the average computation is computed
+     *             also for the zeros in the padding region.
+     */
     @Generated
     @Selector("setZeroPadSizeX:")
     public native void setZeroPadSizeX(@NUInt long value);
 
+    /**
+     * [@property]   zeroPadSizeY
+     * 
+     * How much zero padding to apply to both top and bottom borders of the input image for average pooling,
+     *             when using @see edgeMode MPSImageEdgeModeClamp. For @see edgeMode MPSImageEdgeModeZero this property is
+     *             ignored and the area outside the image is interpreted to contain zeros.
+     *             The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
+     *             and its padding region, but the effect is that the normalization factor of the average computation is computed
+     *             also for the zeros in the padding region.
+     */
     @Generated
     @Selector("setZeroPadSizeY:")
     public native void setZeroPadSizeY(@NUInt long value);
@@ -199,11 +250,31 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property]   zeroPadSizeX
+     * 
+     * How much zero padding to apply to both left and right borders of the input image for average pooling,
+     *             when using @see edgeMode MPSImageEdgeModeClamp. For @see edgeMode MPSImageEdgeModeZero this property is
+     *             ignored and the area outside the image is interpreted to contain zeros.
+     *             The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
+     *             and its padding region, but the effect is that the normalization factor of the average computation is computed
+     *             also for the zeros in the padding region.
+     */
     @Generated
     @Selector("zeroPadSizeX")
     @NUInt
     public native long zeroPadSizeX();
 
+    /**
+     * [@property]   zeroPadSizeY
+     * 
+     * How much zero padding to apply to both top and bottom borders of the input image for average pooling,
+     *             when using @see edgeMode MPSImageEdgeModeClamp. For @see edgeMode MPSImageEdgeModeZero this property is
+     *             ignored and the area outside the image is interpreted to contain zeros.
+     *             The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
+     *             and its padding region, but the effect is that the normalization factor of the average computation is computed
+     *             also for the zeros in the padding region.
+     */
     @Generated
     @Selector("zeroPadSizeY")
     @NUInt

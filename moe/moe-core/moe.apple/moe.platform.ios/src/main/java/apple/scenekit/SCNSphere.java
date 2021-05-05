@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNSphere
+ * 
+ * SCNSphere represents a sphere with controllable radius
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -158,6 +163,13 @@ public class SCNSphere extends SCNGeometry {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * sphereWithRadius:
+     * 
+     * Creates and returns a sphere with given radius.
+     * 
+     * @param radius The radius of the sphere.
+     */
     @Generated
     @Selector("sphereWithRadius:")
     public static native SCNSphere sphereWithRadius(@NFloat double radius);
@@ -181,30 +193,72 @@ public class SCNSphere extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNSphere initWithCoder(NSCoder aDecoder);
+    public native SCNSphere initWithCoder(NSCoder coder);
 
+    /**
+     * [@property] geodesic
+     * 
+     * Indicate if the geometry is a geosphere.
+     * 
+     * The default value is NO.
+     */
     @Generated
     @Selector("isGeodesic")
     public native boolean isGeodesic();
 
+    /**
+     * [@property] geodesic
+     * 
+     * Indicate if the geometry is a geosphere.
+     * 
+     * The default value is NO.
+     */
     @Generated
     @Selector("setGeodesic:")
     public native void setGeodesic(boolean value);
 
+    /**
+     * [@property] radius
+     * 
+     * The sphere radius. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
+     */
     @Generated
     @Selector("radius")
     @NFloat
     public native double radius();
 
+    /**
+     * [@property] segmentCount
+     * 
+     * The number of segments along both spherical coordinates. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 24.
+     */
     @Generated
     @Selector("segmentCount")
     @NInt
     public native long segmentCount();
 
+    /**
+     * [@property] radius
+     * 
+     * The sphere radius. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
+     */
     @Generated
     @Selector("setRadius:")
     public native void setRadius(@NFloat double value);
 
+    /**
+     * [@property] segmentCount
+     * 
+     * The number of segments along both spherical coordinates. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 24.
+     */
     @Generated
     @Selector("setSegmentCount:")
     public native void setSegmentCount(@NInt long value);

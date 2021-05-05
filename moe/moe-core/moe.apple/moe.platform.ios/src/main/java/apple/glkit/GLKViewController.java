@@ -177,13 +177,23 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The total number of frames displayed since drawing began.
+     */
     @Generated
     @Selector("framesDisplayed")
     @NInt
     public native long framesDisplayed();
 
+    /**
+     * The actual frames per second that was decided upon given the value for preferredFramesPerSecond
+     * and the screen for which the GLKView resides. The value chosen will be as close to
+     * preferredFramesPerSecond as possible, without exceeding the screen's refresh rate. This value
+     * does not account for dropped frames, so it is not a measurement of your statistical frames per
+     * second. It is the static value for which updates will take place.
+     */
     @Generated
     @Selector("framesPerSecond")
     @NInt
@@ -199,29 +209,51 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
 
     @Generated
     @Selector("initWithCoder:")
-    public native GLKViewController initWithCoder(NSCoder aDecoder);
+    public native GLKViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
     public native GLKViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * Used to pause and resume the controller.
+     */
     @Generated
     @Selector("isPaused")
     public native boolean isPaused();
 
+    /**
+     * Used to pause and resume the controller.
+     */
     @Generated
     @Selector("setPaused:")
     public native void setPaused(boolean value);
 
+    /**
+     * If true, the controller will pause when the application recevies a willResignActive notification.
+     * If false, the controller will not pause and it is expected that some other mechanism will pause
+     * the controller when necessary.
+     * The default is true.
+     */
     @Generated
     @Selector("pauseOnWillResignActive")
     public native boolean pauseOnWillResignActive();
 
+    /**
+     * For setting the desired frames per second at which the update and drawing will take place.
+     * The default is 30.
+     */
     @Generated
     @Selector("preferredFramesPerSecond")
     @NInt
     public native long preferredFramesPerSecond();
 
+    /**
+     * If true, the controller will resume when the application recevies a didBecomeActive notification.
+     * If false, the controller will not resume and it is expected that some other mechanism will resume
+     * the controller when necessary.
+     * The default is true.
+     */
     @Generated
     @Selector("resumeOnDidBecomeActive")
     public native boolean resumeOnDidBecomeActive();
@@ -242,18 +274,37 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
         }
     }
 
+    /**
+     * If true, the controller will pause when the application recevies a willResignActive notification.
+     * If false, the controller will not pause and it is expected that some other mechanism will pause
+     * the controller when necessary.
+     * The default is true.
+     */
     @Generated
     @Selector("setPauseOnWillResignActive:")
     public native void setPauseOnWillResignActive(boolean value);
 
+    /**
+     * For setting the desired frames per second at which the update and drawing will take place.
+     * The default is 30.
+     */
     @Generated
     @Selector("setPreferredFramesPerSecond:")
     public native void setPreferredFramesPerSecond(@NInt long value);
 
+    /**
+     * If true, the controller will resume when the application recevies a didBecomeActive notification.
+     * If false, the controller will not resume and it is expected that some other mechanism will resume
+     * the controller when necessary.
+     * The default is true.
+     */
     @Generated
     @Selector("setResumeOnDidBecomeActive:")
     public native void setResumeOnDidBecomeActive(boolean value);
 
+    /**
+     * Time interval since properties.
+     */
     @Generated
     @Selector("timeSinceFirstResume")
     public native double timeSinceFirstResume();

@@ -26,6 +26,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSCNNNeuronELU
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the parametric ELU neuron filter.
+ *             For each pixel, applies the following function: f(x) = [ a * (exp(x) - 1), x <  0
+ *                                                                    [ x               , x >= 0
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -39,10 +47,6 @@ public class MPSCNNNeuronELU extends MPSCNNNeuron {
     protected MPSCNNNeuronELU(Pointer peer) {
         super(peer);
     }
-
-    @Generated
-    @Selector("a")
-    public native float a();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -109,6 +113,13 @@ public class MPSCNNNeuronELU extends MPSCNNNeuron {
     @Selector("initWithDevice:")
     public native MPSCNNNeuronELU initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * Initialize a parametric ELU neuron filter
+     * 
+     * @param      device          The device the filter will run on
+     * @param      a               Filter property "a". See class discussion.
+     * @return     A valid MPSCNNNeuronELU object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:a:")
     public native MPSCNNNeuronELU initWithDeviceA(@Mapped(ObjCObjectMapper.class) MTLDevice device, float a);
@@ -170,4 +181,9 @@ public class MPSCNNNeuronELU extends MPSCNNNeuron {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithDevice:neuronDescriptor:")
+    public native MPSCNNNeuronELU initWithDeviceNeuronDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            MPSNNNeuronDescriptor neuronDescriptor);
 }

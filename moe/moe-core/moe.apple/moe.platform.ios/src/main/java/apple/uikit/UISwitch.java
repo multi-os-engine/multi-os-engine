@@ -24,6 +24,7 @@ import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -130,7 +131,7 @@ public class UISwitch extends UIControl implements NSCoding {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -143,8 +144,8 @@ public class UISwitch extends UIControl implements NSCoding {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -365,7 +366,7 @@ public class UISwitch extends UIControl implements NSCoding {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -381,7 +382,8 @@ public class UISwitch extends UIControl implements NSCoding {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -394,7 +396,7 @@ public class UISwitch extends UIControl implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -402,8 +404,11 @@ public class UISwitch extends UIControl implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISwitch initWithCoder(NSCoder aDecoder);
+    public native UISwitch initWithCoder(NSCoder coder);
 
+    /**
+     * This class enforces a size appropriate for the control, and so the frame size is ignored.
+     */
     @Generated
     @Selector("initWithFrame:")
     public native UISwitch initWithFrame(@ByValue CGRect frame);
@@ -432,6 +437,9 @@ public class UISwitch extends UIControl implements NSCoding {
     @Selector("setOffImage:")
     public native void setOffImage(UIImage value);
 
+    /**
+     * does not send action
+     */
     @Generated
     @Selector("setOn:animated:")
     public native void setOnAnimated(boolean on, boolean animated);
@@ -449,14 +457,55 @@ public class UISwitch extends UIControl implements NSCoding {
     public native void setThumbTintColor(UIColor value);
 
     @Generated
-    @Selector("setTintColor:")
-    public native void setTintColor(UIColor value);
-
-    @Generated
     @Selector("thumbTintColor")
     public native UIColor thumbTintColor();
 
     @Generated
-    @Selector("tintColor")
-    public native UIColor tintColor();
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UISwitch initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+
+    /**
+     * Request a style for the switch. If the style changed, then the switch may resize.
+     */
+    @Generated
+    @Selector("preferredStyle")
+    @NInt
+    public native long preferredStyle();
+
+    /**
+     * Request a style for the switch. If the style changed, then the switch may resize.
+     */
+    @Generated
+    @Selector("setPreferredStyle:")
+    public native void setPreferredStyle(@NInt long value);
+
+    /**
+     * The title displayed alongside the switch, positioned appropriately for the @c UIUserInterfaceIdiom.
+     * [@note] This property is only supported for Catalyst in the Mac idiom.
+     */
+    @Generated
+    @Selector("setTitle:")
+    public native void setTitle(String value);
+
+    /**
+     * The switch's display style. This property always returns a concrete, resolved style (never UISwitchStyleAutomatic).
+     */
+    @Generated
+    @Selector("style")
+    @NInt
+    public native long style();
+
+    /**
+     * The title displayed alongside the switch, positioned appropriately for the @c UIUserInterfaceIdiom.
+     * [@note] This property is only supported for Catalyst in the Mac idiom.
+     */
+    @Generated
+    @Selector("title")
+    public native String title();
 }

@@ -23,6 +23,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVCaptureSynchronizedMetadataObjectData
+ * 
+ *    An concrete subclass of AVCaptureSynchronizedData representing the data delivered by an AVCaptureMetadataOutput.
+ * 
+ *    A single AVCaptureMetadataOutput may be configured to deliver multiple kinds of metadata objects (such as QRCodes and detected faces). AVCaptureSynchronizedMetadataObjectData's -metadataObjects array may contain multiple AVMetadataObject subclasses, depending on how the AVCaptureMetadataOutput was configured. All synchronized metadata objects share a common timestamp.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -111,6 +118,13 @@ public class AVCaptureSynchronizedMetadataObjectData extends AVCaptureSynchroniz
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * [@property] metadataObjects
+     * 
+     *    An array of AVMetadataObject subclasses.
+     * 
+     *    -metadataObjects is never nil. If no metadata objects are present for a given time, an empty array is returned.
+     */
     @Generated
     @Selector("metadataObjects")
     public native NSArray<? extends AVMetadataObject> metadataObjects();

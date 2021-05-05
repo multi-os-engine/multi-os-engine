@@ -32,6 +32,17 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPrinterPickerControllerDelegate")
 public interface UIPrinterPickerControllerDelegate {
+    /**
+     * printerPickerController:shouldShowPrinter:
+     * 
+     * Use to filter out specific printers from the printer picker.
+     *         Evaluate the UIPrinter object and returns YES if the printer should
+     *         be shown, NO otherwise.
+     * This delegate can assume that all UIPrinter properties are available
+     * (the contactPrinter: method need not be called).
+     *         This method may be called from threads other than the main thread,
+     *         and may be called simultaneously from several different threads.
+     */
     @Generated
     @IsOptional
     @Selector("printerPickerController:shouldShowPrinter:")

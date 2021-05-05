@@ -46,6 +46,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GKAchievementDescription is a full description of the achievement as defined before app submission in App Store Connect.
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -109,6 +112,9 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @NUInt
     public static native long hash_static();
 
+    /**
+     * The default image for any incomplete achievement
+     */
     @Generated
     @Selector("incompleteAchievementImage")
     public static native UIImage incompleteAchievementImage();
@@ -134,6 +140,9 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Asynchronously load all achievement descriptions
+     */
     @Generated
     @Selector("loadAchievementDescriptionsWithCompletionHandler:")
     public static native void loadAchievementDescriptionsWithCompletionHandler(
@@ -145,6 +154,9 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * A placeholder image to be used for any completed achievement until the description image has loaded.
+     */
     @Generated
     @Selector("placeholderCompletedAchievementImage")
     public static native UIImage placeholderCompletedAchievementImage();
@@ -174,14 +186,20 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @NInt
     public static native long version_static();
 
+    /**
+     * The description for an unachieved achievement.
+     */
     @Generated
     @Selector("achievedDescription")
     public native String achievedDescription();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The group identifier for the achievement, if one exists.
+     */
     @Generated
     @Selector("groupIdentifier")
     public native String groupIdentifier();
@@ -190,6 +208,9 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Selector("identifier")
     public native String identifier();
 
+    /**
+     * Image for completed achievement. Not valid until loadImage: has completed. Deprecated -- use loadImageWithCompletionHandler: instead.
+     */
     @Generated
     @Deprecated
     @Selector("image")
@@ -201,21 +222,33 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKAchievementDescription initWithCoder(NSCoder aDecoder);
+    public native GKAchievementDescription initWithCoder(NSCoder coder);
 
+    /**
+     * Whether or not the achievement should be listed or displayed if not yet unhidden by the game.
+     */
     @Generated
     @Selector("isHidden")
     public native boolean isHidden();
 
+    /**
+     * Whether or not the achievement will be reported by the game when the user earns it again. This allows the achievement to be used for challenges when the recipient has previously earned it.
+     */
     @Generated
     @Selector("isReplayable")
     public native boolean isReplayable();
 
+    /**
+     * Asynchronously load the image. Error will be nil on success.
+     */
     @Generated
     @Selector("loadImageWithCompletionHandler:")
     public native void loadImageWithCompletionHandler(
             @ObjCBlock(name = "call_loadImageWithCompletionHandler") Block_loadImageWithCompletionHandler completionHandler);
 
+    /**
+     * Maximum points available for completing this achievement.
+     */
     @Generated
     @Selector("maximumPoints")
     @NInt
@@ -227,10 +260,16 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
         return supportsSecureCoding();
     }
 
+    /**
+     * The title of the achievement.
+     */
     @Generated
     @Selector("title")
     public native String title();
 
+    /**
+     * The description for an achieved achievement.
+     */
     @Generated
     @Selector("unachievedDescription")
     public native String unachievedDescription();
@@ -239,14 +278,14 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Generated
     public interface Block_loadAchievementDescriptionsWithCompletionHandler {
         @Generated
-        void call_loadAchievementDescriptionsWithCompletionHandler(NSArray<? extends GKAchievementDescription> arg0,
-                NSError arg1);
+        void call_loadAchievementDescriptionsWithCompletionHandler(
+                NSArray<? extends GKAchievementDescription> descriptions, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadImageWithCompletionHandler {
         @Generated
-        void call_loadImageWithCompletionHandler(UIImage arg0, NSError arg1);
+        void call_loadImageWithCompletionHandler(UIImage image, NSError error);
     }
 }

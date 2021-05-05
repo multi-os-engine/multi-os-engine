@@ -35,6 +35,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDocumentInteractionControllerDelegate")
 public interface UIDocumentInteractionControllerDelegate {
+    /**
+     * Used to handle additional menu items that can be performed on the item specified by URL.  Currently only supports the "copy:", "print:" and "saveToCameraRoll:" actions.
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -60,6 +63,9 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * bundle ID
+     */
     @Generated
     @IsOptional
     @Selector("documentInteractionController:willBeginSendingToApplication:")
@@ -89,6 +95,12 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If preview is supported, these provide the view and rect that will be used as the starting point for the animation to the full screen preview.
+     * The actual animation that is performed depends upon the platform and other factors.
+     * If documentInteractionControllerRectForPreview is not implemented, the specified view's bounds will be used.
+     * If documentInteractionControllerViewForPreview is not implemented, the preview controller will simply fade in instead of scaling up.
+     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerRectForPreview:")
@@ -97,6 +109,11 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * If preview is supported, this provides the view controller on which the preview will be presented.
+     * This method is required if preview is supported.
+     * If presenting atop a navigation stack, provide the navigation controller in order to animate in a manner consistent with the rest of the platform.
+     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerViewControllerForPreview:")
@@ -112,6 +129,9 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Preview presented/dismissed on document.  Use to set up any HI underneath.
+     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerWillBeginPreview:")
@@ -119,6 +139,9 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Open in menu presented/dismissed on document.  Use to set up any HI underneath.
+     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerWillPresentOpenInMenu:")
@@ -126,6 +149,9 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Options menu presented/dismissed on document.  Use to set up any HI underneath.
+     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerWillPresentOptionsMenu:")

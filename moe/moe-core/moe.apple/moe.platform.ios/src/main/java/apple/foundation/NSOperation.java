@@ -177,6 +177,9 @@ public class NSOperation extends NSObject {
     @Selector("isCancelled")
     public native boolean isCancelled();
 
+    /**
+     * To be deprecated; use and override 'asynchronous' below
+     */
     @Generated
     @Selector("isConcurrent")
     public native boolean isConcurrent();

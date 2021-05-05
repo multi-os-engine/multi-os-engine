@@ -160,6 +160,9 @@ public class CXAction extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Unique ID
+     */
     @Generated
     @Selector("UUID")
     public native NSUUID UUID();
@@ -172,12 +175,18 @@ public class CXAction extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Report failed execution of the receiver.
+     */
     @Generated
     @Selector("fail")
     public native void fail();
 
+    /**
+     * Report successful execution of the receiver.
+     */
     @Generated
     @Selector("fulfill")
     public native void fulfill();
@@ -190,6 +199,9 @@ public class CXAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native CXAction initWithCoder(NSCoder aDecoder);
 
+    /**
+     * Whether all actions are either fulfilled or failed
+     */
     @Generated
     @Selector("isComplete")
     public native boolean isComplete();

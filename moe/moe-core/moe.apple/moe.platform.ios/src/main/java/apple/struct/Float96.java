@@ -42,10 +42,16 @@ public final class Float96 extends StructObject {
         super(peer);
     }
 
+    /**
+     * the second 16-bits are undefined
+     */
     @Generated
     @StructureField(order = 0, isGetter = true, count = 2)
     public native short exp(int field_idx);
 
+    /**
+     * the second 16-bits are undefined
+     */
     @Generated
     @StructureField(order = 0, isGetter = false, count = 2)
     public native void setExp(short value, int field_idx);

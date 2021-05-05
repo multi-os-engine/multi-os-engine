@@ -39,6 +39,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Coherent noise is smoothly-changing, semi-random noise.  A given input always produces the same output.
+ * A small change in input produces a small change in output.  A large change in input produces a random
+ * change in output. This class is not intended to be instantiated.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)

@@ -30,6 +30,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKWorkoutRouteQuery
+ * 
+ * An HKWorkoutRouteQuery is used to access data associated with an HKWorkoutRoute.
+ * 
+ * Once instantiated, call HKHealthStore executeQuery to begin enumerating the route data. Call
+ *                HKHealthStore stopQuery to discontinue further route data reporting.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -97,6 +105,19 @@ public class HKWorkoutRouteQuery extends HKQuery {
     @Selector("init")
     public native HKWorkoutRouteQuery init();
 
+    /**
+     * initWithRoute:handler:
+     * 
+     * Returns a query that will retrieve CLLocation objects for the specified
+     * workoutRoute.
+     * 
+     * @param workoutRoute    The HKWorkoutRoute for which the location data will be returned.
+     * @param dataHandler     The block to invoke with results from the query. It is called repeatedly with an array of
+     *                        CLLocation objects until all data is returned and the done parameter is YES or if HKHealthStore
+     *                        stopQuery: is called. The stopQuery call can be made within the dataHandler block. The number of
+     *                        objects returned in routeData per dataHandler call is unspecified. Once done is YES, or
+     *                        stopQuery called, the query is complete and no more calls to the handler will be made.
+     */
     @Generated
     @Selector("initWithRoute:dataHandler:")
     public native HKWorkoutRouteQuery initWithRouteDataHandler(HKWorkoutRoute workoutRoute,
@@ -106,8 +127,8 @@ public class HKWorkoutRouteQuery extends HKQuery {
     @Generated
     public interface Block_initWithRouteDataHandler {
         @Generated
-        void call_initWithRouteDataHandler(HKWorkoutRouteQuery arg0, NSArray<? extends CLLocation> arg1, boolean arg2,
-                NSError arg3);
+        void call_initWithRouteDataHandler(HKWorkoutRouteQuery query, NSArray<? extends CLLocation> routeData,
+                boolean done, NSError error);
     }
 
     @Generated
@@ -262,4 +283,26 @@ public class HKWorkoutRouteQuery extends HKQuery {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("predicateForClinicalRecordsFromSource:FHIRResourceType:identifier:")
+    public static native NSPredicate predicateForClinicalRecordsFromSourceFHIRResourceTypeIdentifier(HKSource source,
+            String resourceType, String identifier);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsWithFHIRResourceType:")
+    public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(String resourceType);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithClassification:")
+    public static native NSPredicate predicateForElectrocardiogramsWithClassification(@NInt long classification);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithSymptomsStatus:")
+    public static native NSPredicate predicateForElectrocardiogramsWithSymptomsStatus(@NInt long symptomsStatus);
+
+    @Generated
+    @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
+    public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
+            HKElectrocardiogram electrocardiogram);
 }

@@ -111,6 +111,9 @@ public class UITableViewDropProposal extends UIDropProposal {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * The default is UITableViewDropIntentUnspecified.
+     */
     @Generated
     @Selector("intent")
     @NInt

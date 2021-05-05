@@ -154,6 +154,9 @@ public class MPChangePlaybackPositionCommandEvent extends MPRemoteCommandEvent {
     @Selector("init")
     public native MPChangePlaybackPositionCommandEvent init();
 
+    /**
+     * The desired playback position to use when setting the current time of the player.
+     */
     @Generated
     @Selector("positionTime")
     public native double positionTime();

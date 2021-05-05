@@ -44,6 +44,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEFlowMetaData
+ * 
+ * The NEFlowMetaData class declares the programmatic interface for an object that contains extra information about a flow.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -167,7 +172,7 @@ public class NEFlowMetaData extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,12 +180,22 @@ public class NEFlowMetaData extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFlowMetaData initWithCoder(NSCoder aDecoder);
+    public native NEFlowMetaData initWithCoder(NSCoder coder);
 
+    /**
+     * [@property] sourceAppSigningIdentifier
+     * 
+     * A string containing the signing identifier (almost always equivalent to the bundle identifier) of the source app of the flow. The string may be empty in cases where the flow originates from a system process.
+     */
     @Generated
     @Selector("sourceAppSigningIdentifier")
     public native String sourceAppSigningIdentifier();
 
+    /**
+     * [@property] sourceAppUniqueIdentifier
+     * 
+     * A byte string that uniquely identifies the binary for each build of the source application of the flow. The data object may be empty in cases where the flow originates from a system process.
+     */
     @Generated
     @Selector("sourceAppUniqueIdentifier")
     public native NSData sourceAppUniqueIdentifier();

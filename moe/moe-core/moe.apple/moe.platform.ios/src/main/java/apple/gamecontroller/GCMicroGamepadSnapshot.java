@@ -40,6 +40,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A GCMicroGamepadSnapshot snapshot is a concrete GCMicroGamepad implementation. It can be used directly in an
+ * application to implement controller input replays. It is also returned as the result of polling
+ * a controller.
+ * 
+ * The current snapshotData is readily available to access as NSData. A developer can serialize this to any
+ * destination necessary using the NSData API.
+ * 
+ * The data contains some version of a GCMicroGamepadSnapShotData structure.
+ * 
+ * @see -[GCMicroGamepad saveSnapshot]
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)

@@ -19,6 +19,23 @@ package apple.iad.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] ADInterstitialPresentationPolicy
+ * 
+ * [@constant] ADInterstitialPresentationPolicyNone Default policy - this is effectively
+ * the same as the Manual policy except that setting the Manual policy will trigger
+ * the +prepareInterstitialAds logic if needed.
+ * 
+ * [@constant] ADInterstitialPresentationPolicyAutomatic Automatic policy - the framework
+ * determines when an interstitial will be presented.
+ * 
+ * [@constant] ADInterstitialPresentationPolicyManual Manual policy - the application
+ * determines when an interstitial should be presented and calls an API from the
+ * iAdAdditions category.
+ * 
+ * Policy options governing how and when interstitial ads may be presented from
+ * a given view controller.
+ */
 @Generated
 public final class ADInterstitialPresentationPolicy {
     @Generated @NInt public static final long None = 0x0000000000000000L;

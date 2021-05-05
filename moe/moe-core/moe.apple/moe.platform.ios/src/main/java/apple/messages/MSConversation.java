@@ -158,34 +158,109 @@ public class MSConversation extends NSObject {
     @Selector("init")
     public native MSConversation init();
 
+    /**
+     * insertAttachment:withAlternateFilename:completionHandler:
+     * 
+     * The NSURL instance provided in the URL parameter is inserted into the Messages.app
+     * input field. This must be a file URL.
+     * 
+     * Calling this method when the presentation context is `MSMessagesAppPresentationContextMedia` will result in the completion handler getting called with an error object whose error code is `MSMessageErrorCodeAPIUnavailableInPresentationContext` if the attachment type is not an image type supported by `MSSticker`.
+     * 
+     * @param      URL                The URL to the media file to be inserted.
+     * @param      filename           If you supply a string here, the message UI uses it for the attachment. Use an alternate filename to better describe the attachment or to make the name more readable.
+     * @param      completionHandler  A completion handler called when the insert is complete.
+     */
     @Generated
     @Selector("insertAttachment:withAlternateFilename:completionHandler:")
     public native void insertAttachmentWithAlternateFilenameCompletionHandler(NSURL URL, String filename,
             @ObjCBlock(name = "call_insertAttachmentWithAlternateFilenameCompletionHandler") Block_insertAttachmentWithAlternateFilenameCompletionHandler completionHandler);
 
+    /**
+     * insertMessage:completionHandler:
+     * 
+     * Stages the provided MSMessage object for sending.
+     * 
+     * This method inserts a MSMessage object into the Messages input field,
+     * Subsequent calls to this method will replace any existing message on the input field. 
+     * If the message was successfully inserted on the input field, the completion handler
+     * will be called with a nil error parameter otherwise the error parameter will be
+     * populated with an NSError object describing the failure.
+     * Calling this method when the presentation context is `MSMessagesAppPresentationContextMedia` will result in the completion handler getting called with an error object whose error code is `MSMessageErrorCodeAPIUnavailableInPresentationContext`.
+     * 
+     * @param      message            The MSMessage instance describing the message to be sent.
+     * @param      completionHandler  A completion handler called when the message has been staged or if there was an error.
+     */
     @Generated
     @Selector("insertMessage:completionHandler:")
     public native void insertMessageCompletionHandler(MSMessage message,
             @ObjCBlock(name = "call_insertMessageCompletionHandler") Block_insertMessageCompletionHandler completionHandler);
 
+    /**
+     * insertSticker:completionHandler:
+     * 
+     * The sticker is inserted into the Messages.app input field.
+     * 
+     * @param      sticker            The sticker to be inserted.
+     * @param      completionHandler  A completion handler called when the insert is complete.
+     */
     @Generated
     @Selector("insertSticker:completionHandler:")
     public native void insertStickerCompletionHandler(MSSticker sticker,
             @ObjCBlock(name = "call_insertStickerCompletionHandler") Block_insertStickerCompletionHandler completionHandler);
 
+    /**
+     * insertText:completionHandler:
+     * 
+     * The NSString instance provided in the text parameter is inserted into the Messages.app input field.
+     * 
+     * Calling this method when the presentation context is `MSMessagesAppPresentationContextMedia` will result in the completion handler getting called with an error object whose error code is `MSMessageErrorCodeAPIUnavailableInPresentationContext`.
+     * 
+     * @param      text               The text to be inserted.
+     * @param      completionHandler  A completion handler called when the insert is complete.
+     */
     @Generated
     @Selector("insertText:completionHandler:")
     public native void insertTextCompletionHandler(String text,
             @ObjCBlock(name = "call_insertTextCompletionHandler") Block_insertTextCompletionHandler completionHandler);
 
+    /**
+     * [@property]   localParticipantIdentifier
+     * 
+     * A NSUUID that identifies conversation participant on this device.
+     * 
+     * This NSUUID  that identifies conversation participant on this device,
+     * this value will be stable while the extension is enabled. If the extension is
+     * disabled and re-enabled or the containing App is removed and re-installed this
+     * value will change.
+     */
     @Generated
     @Selector("localParticipantIdentifier")
     public native NSUUID localParticipantIdentifier();
 
+    /**
+     * [@property]   remoteParticipantIdentifiers
+     * 
+     * A NSArray of NSUUID instances, each uniquely identifies a remote participant in the conversation.
+     * 
+     * Each NSUUID identifies the a remote participant in the conversation scoped to
+     * this device. These values will be stable while the extension is enabled. If the extension
+     * is disabled and re-enabled or the containing App is removed and re-installed these
+     * values will change.
+     */
     @Generated
     @Selector("remoteParticipantIdentifiers")
     public native NSArray<? extends NSUUID> remoteParticipantIdentifiers();
 
+    /**
+     * [@property]   selectedMessage
+     * 
+     * An MSMessage instance that may be edited and returned to Messages
+     * 
+     * If the extension has been invoked in response to the user interacting with
+     * a message in the conversation transcript this property will contain the message.
+     * Otherwise this property will be nil. The message object provided may be saved to the
+     * file system. Later, this saved object may be loaded, modified and staged for sending.
+     */
     @Generated
     @Selector("selectedMessage")
     public native MSMessage selectedMessage();
@@ -194,30 +269,42 @@ public class MSConversation extends NSObject {
     @Generated
     public interface Block_insertAttachmentWithAlternateFilenameCompletionHandler {
         @Generated
-        void call_insertAttachmentWithAlternateFilenameCompletionHandler(NSError arg0);
+        void call_insertAttachmentWithAlternateFilenameCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_insertMessageCompletionHandler {
         @Generated
-        void call_insertMessageCompletionHandler(NSError arg0);
+        void call_insertMessageCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_insertStickerCompletionHandler {
         @Generated
-        void call_insertStickerCompletionHandler(NSError arg0);
+        void call_insertStickerCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_insertTextCompletionHandler {
         @Generated
-        void call_insertTextCompletionHandler(NSError arg0);
+        void call_insertTextCompletionHandler(NSError error);
     }
 
+    /**
+     * sendAttachment:withAlternateFilename:completionHandler:
+     * 
+     * Start sending a file located at the provided URL. This must be a file URL.
+     * 
+     * This method begins sending the file at the provided file URL. The app must be visible and have had a recent touch interaction since either last launch or last send to succeed. If the message started sending successfully, the completion handler will be called with a nil error parameter. Otherwise the error parameter will be populated with an NSError object describing the failure.
+     * Calling this method when the presentation context is `MSMessagesAppPresentationContextMedia` will result in the completion handler getting called with an error object whose error code is `MSMessageErrorCodeAPIUnavailableInPresentationContext`.
+     * 
+     * @param      URL                The URL to the media file to be inserted.
+     * @param      filename           If you supply a string here, the message UI uses it for the attachment. Use an alternate filename to better describe the attachment or to make the name more readable.
+     * @param      completionHandler  A completion handler called when the insert is complete.
+     */
     @Generated
     @Selector("sendAttachment:withAlternateFilename:completionHandler:")
     public native void sendAttachmentWithAlternateFilenameCompletionHandler(NSURL URL, String filename,
@@ -227,9 +314,20 @@ public class MSConversation extends NSObject {
     @Generated
     public interface Block_sendAttachmentWithAlternateFilenameCompletionHandler {
         @Generated
-        void call_sendAttachmentWithAlternateFilenameCompletionHandler(NSError arg0);
+        void call_sendAttachmentWithAlternateFilenameCompletionHandler(NSError error);
     }
 
+    /**
+     * sendMessage:completionHandler:
+     * 
+     * Start sending a message
+     * 
+     * This method begins sending the provided MSMessage. The app must be visible and have had a recent touch interaction since either last launch or last send to succeed. If the message started sending successfully, the completion handler will be called with a nil error parameter. Otherwise the error parameter will be populated with an NSError object describing the failure.
+     * Calling this method when the presentation context is `MSMessagesAppPresentationContextMedia` will result in the completion handler getting called with an error object whose error code is `MSMessageErrorCodeAPIUnavailableInPresentationContext`.
+     * 
+     * @param      message            The MSMessage instance describing the message to be sent.
+     * @param      completionHandler  A completion handler called when the message has been staged or if there was an error.
+     */
     @Generated
     @Selector("sendMessage:completionHandler:")
     public native void sendMessageCompletionHandler(MSMessage message,
@@ -239,9 +337,19 @@ public class MSConversation extends NSObject {
     @Generated
     public interface Block_sendMessageCompletionHandler {
         @Generated
-        void call_sendMessageCompletionHandler(NSError arg0);
+        void call_sendMessageCompletionHandler(NSError error);
     }
 
+    /**
+     * sendSticker:completionHandler:
+     * 
+     * Start sending a sticker
+     * 
+     * Calling this method when the presentation context is `MSMessagesAppPresentationContextMedia` will result in the completion handler getting called with an error object whose error code is `MSMessageErrorCodeAPIUnavailableInPresentationContext`.
+     * 
+     * @param      sticker            The sticker to be inserted.
+     * @param      completionHandler  A completion handler called when the insert is complete.
+     */
     @Generated
     @Selector("sendSticker:completionHandler:")
     public native void sendStickerCompletionHandler(MSSticker sticker,
@@ -251,9 +359,20 @@ public class MSConversation extends NSObject {
     @Generated
     public interface Block_sendStickerCompletionHandler {
         @Generated
-        void call_sendStickerCompletionHandler(NSError arg0);
+        void call_sendStickerCompletionHandler(NSError error);
     }
 
+    /**
+     * sendText:completionHandler:
+     * 
+     * Start sending text
+     * 
+     * This method begins sending the provided NSString. The app must be visible and have had a recent touch interaction since either last launch or last send to succeed. If the message started sending successfully, the completion handler will be called with a nil error parameter. Otherwise the error parameter will be populated with an NSError object describing the failure.
+     * Calling this method when the presentation context is `MSMessagesAppPresentationContextMedia` will result in the completion handler getting called with an error object whose error code is `MSMessageErrorCodeAPIUnavailableInPresentationContext`.
+     * 
+     * @param      text               The text to be inserted.
+     * @param      completionHandler  A completion handler called when the insert is complete.
+     */
     @Generated
     @Selector("sendText:completionHandler:")
     public native void sendTextCompletionHandler(String text,
@@ -263,6 +382,6 @@ public class MSConversation extends NSObject {
     @Generated
     public interface Block_sendTextCompletionHandler {
         @Generated
-        void call_sendTextCompletionHandler(NSError arg0);
+        void call_sendTextCompletionHandler(NSError error);
     }
 }

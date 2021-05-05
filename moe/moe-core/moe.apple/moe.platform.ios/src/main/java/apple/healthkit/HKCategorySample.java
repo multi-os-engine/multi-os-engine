@@ -43,6 +43,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKCategorySample
+ * 
+ * An HKObject subclass representing an category measurement
+ * 
+ * Category samples are samples that can be categorized into an enum of concrete values
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -85,16 +92,49 @@ public class HKCategorySample extends HKSample {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * categorySampleWithType:value:startDate:endDate:
+     * 
+     * Creates a new HKCategorySample.
+     * 
+     * @param      type       The type of the sample.
+     * @param      value      The enumeration value for the sample. See HKCategoryTypeIdentifier for appropriate value.
+     * @param      startDate  The start date of the sample.
+     * @param      endDate    The end date of the sample.
+     */
     @Generated
     @Selector("categorySampleWithType:value:startDate:endDate:")
     public static native HKCategorySample categorySampleWithTypeValueStartDateEndDate(HKCategoryType type,
             @NInt long value, NSDate startDate, NSDate endDate);
 
+    /**
+     * categorySampleWithType:value:startDate:endDate:device:metadata:
+     * 
+     * Creates a new HKCategorySample.
+     * 
+     * @param      type       The type of the sample.
+     * @param      value      The enumeration value for the sample. See HKCategoryTypeIdentifier for appropriate value.
+     * @param      startDate  The start date of the sample.
+     * @param      endDate    The end date of the sample.
+     * @param      device     The HKDevice that generated the sample (optional).
+     * @param      metadata   Metadata for the sample (optional).
+     */
     @Generated
     @Selector("categorySampleWithType:value:startDate:endDate:device:metadata:")
     public static native HKCategorySample categorySampleWithTypeValueStartDateEndDateDeviceMetadata(HKCategoryType type,
             @NInt long value, NSDate startDate, NSDate endDate, HKDevice device, NSDictionary<String, ?> metadata);
 
+    /**
+     * categorySampleWithType:value:startDate:endDate:metadata:
+     * 
+     * Creates a new HKCategorySample.
+     * 
+     * @param      type       The type of the sample.
+     * @param      value      The enumeration value for the sample. See HKCategoryTypeIdentifier for appropriate value.
+     * @param      startDate  The start date of the sample.
+     * @param      endDate    The end date of the sample.
+     * @param      metadata   Metadata for the sample (optional).
+     */
     @Generated
     @Selector("categorySampleWithType:value:startDate:endDate:metadata:")
     public static native HKCategorySample categorySampleWithTypeValueStartDateEndDateMetadata(HKCategoryType type,
@@ -183,7 +223,7 @@ public class HKCategorySample extends HKSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKCategorySample initWithCoder(NSCoder aDecoder);
+    public native HKCategorySample initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -191,6 +231,11 @@ public class HKCategorySample extends HKSample {
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property]   value
+     * 
+     * The preferred enum for the value is determined by the receiver's category type.
+     */
     @Generated
     @Selector("value")
     @NInt

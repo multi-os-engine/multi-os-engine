@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * GKMatchmaker is a singleton object to manage match creation from invites and auto-matching.
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -143,6 +146,9 @@ public class GKMatchmaker extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The shared matchmaker
+     */
     @Generated
     @Selector("sharedMatchmaker")
     public static native GKMatchmaker sharedMatchmaker();
@@ -156,40 +162,77 @@ public class GKMatchmaker extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Auto-matching or invites to add additional players to a peer-to-peer match for the specified request. Error will be nil on success:
+     * Possible reasons for error:
+     * 1. Communications failure
+     * 2. Timeout
+     */
     @Generated
     @Selector("addPlayersToMatch:matchRequest:completionHandler:")
     public native void addPlayersToMatchMatchRequestCompletionHandler(GKMatch match, GKMatchRequest matchRequest,
             @ObjCBlock(name = "call_addPlayersToMatchMatchRequestCompletionHandler") Block_addPlayersToMatchMatchRequestCompletionHandler completionHandler);
 
+    /**
+     * Cancel matchmaking and any pending invites
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
+    /**
+     * This method is obsolete. It will never be invoked and its implementation does nothing**
+     */
     @Generated
     @Deprecated
     @Selector("cancelInviteToPlayer:")
     public native void cancelInviteToPlayer(String playerID);
 
+    /**
+     * Cancel a pending invitation to a player
+     */
     @Generated
     @Selector("cancelPendingInviteToPlayer:")
     public native void cancelPendingInviteToPlayer(GKPlayer player);
 
+    /**
+     * Auto-matching or invites to find a peer-to-peer match for the specified request. Error will be nil on success:
+     * Possible reasons for error:
+     * 1. Communications failure
+     * 2. Unauthenticated player
+     * 3. Timeout
+     * Note that the players property on the returned GKMatch instance will only contain connected players. It will initially be empty as players are connecting. Implement the GKMatchDelegate method match:player:didChangeConnectionState: to listen for updates to the GKMatch instance's players property.
+     */
     @Generated
     @Selector("findMatchForRequest:withCompletionHandler:")
     public native void findMatchForRequestWithCompletionHandler(GKMatchRequest request,
             @ObjCBlock(name = "call_findMatchForRequestWithCompletionHandler") Block_findMatchForRequestWithCompletionHandler completionHandler);
 
+    /**
+     * This method is obsolete. It will never be invoked and its implementation does nothing**
+     */
     @Generated
     @Deprecated
     @Selector("findPlayersForHostedMatchRequest:withCompletionHandler:")
     public native void findPlayersForHostedMatchRequestWithCompletionHandler(GKMatchRequest request,
             @ObjCBlock(name = "call_findPlayersForHostedMatchRequestWithCompletionHandler") Block_findPlayersForHostedMatchRequestWithCompletionHandler completionHandler);
 
+    /**
+     * Auto-matching or invites for host-client match request. This returns a list of player identifiers to be included in the match. Determination and communication with the host is not part of this API.
+     * When inviting, no player identifiers will be returned. Player responses will be reported via the inviteeResponseHandler.
+     * Possible reasons for error:
+     * 1. Communications failure
+     * 2. Unauthenticated player
+     * 3. Timeout
+     */
     @Generated
     @Selector("findPlayersForHostedRequest:withCompletionHandler:")
     public native void findPlayersForHostedRequestWithCompletionHandler(GKMatchRequest request,
             @ObjCBlock(name = "call_findPlayersForHostedRequestWithCompletionHandler") Block_findPlayersForHostedRequestWithCompletionHandler completionHandler);
 
+    /**
+     * Call this when finished with all programmatic P2P invites/matchmaking, for compatability with connected players using GKMatchmakerViewController.
+     */
     @Generated
     @Selector("finishMatchmakingForMatch:")
     public native void finishMatchmakingForMatch(GKMatch match);
@@ -204,16 +247,32 @@ public class GKMatchmaker extends NSObject {
     @ObjCBlock(name = "call_inviteHandler_ret")
     public native Block_inviteHandler_ret inviteHandler();
 
+    /**
+     * Get a match for an accepted invite
+     * Possible reasons for error:
+     * 1. Communications failure
+     * 2. Invite cancelled
+     */
     @Generated
     @Selector("matchForInvite:completionHandler:")
     public native void matchForInviteCompletionHandler(GKInvite invite,
             @ObjCBlock(name = "call_matchForInviteCompletionHandler") Block_matchForInviteCompletionHandler completionHandler);
 
+    /**
+     * Query the server for recent activity for all the player groups of that game. Error will be nil on success.
+     * Possible reasons for error:
+     * 1. Communications failure
+     */
     @Generated
     @Selector("queryActivityWithCompletionHandler:")
     public native void queryActivityWithCompletionHandler(
             @ObjCBlock(name = "call_queryActivityWithCompletionHandler") Block_queryActivityWithCompletionHandler completionHandler);
 
+    /**
+     * Query the server for recent activity in the specified player group. A larger value indicates that a given group has seen more recent activity. Error will be nil on success.
+     * Possible reasons for error:
+     * 1. Communications failure
+     */
     @Generated
     @Selector("queryPlayerGroupActivity:withCompletionHandler:")
     public native void queryPlayerGroupActivityWithCompletionHandler(@NUInt long playerGroup,
@@ -224,17 +283,26 @@ public class GKMatchmaker extends NSObject {
     @Selector("setInviteHandler:")
     public native void setInviteHandler(@ObjCBlock(name = "call_setInviteHandler") Block_setInviteHandler value);
 
+    /**
+     * Start browsing for nearby players that can be invited to a match. The reachableHandler will be called for each player found with a compatible game. It may be called more than once for the same player if that player ever becomes unreachable (e.g. moves out of range). You should call stopBrowsingForNearbyPlayers when finished browsing.
+     */
     @Generated
     @Selector("startBrowsingForNearbyPlayersWithHandler:")
     public native void startBrowsingForNearbyPlayersWithHandler(
             @ObjCBlock(name = "call_startBrowsingForNearbyPlayersWithHandler") Block_startBrowsingForNearbyPlayersWithHandler reachableHandler);
 
+    /**
+     * This method is obsolete. It will never be invoked and its implementation does nothing**
+     */
     @Generated
     @Deprecated
     @Selector("startBrowsingForNearbyPlayersWithReachableHandler:")
     public native void startBrowsingForNearbyPlayersWithReachableHandler(
             @ObjCBlock(name = "call_startBrowsingForNearbyPlayersWithReachableHandler") Block_startBrowsingForNearbyPlayersWithReachableHandler reachableHandler);
 
+    /**
+     * Stop browsing for nearby players.
+     */
     @Generated
     @Selector("stopBrowsingForNearbyPlayers")
     public native void stopBrowsingForNearbyPlayers();
@@ -243,28 +311,28 @@ public class GKMatchmaker extends NSObject {
     @Generated
     public interface Block_addPlayersToMatchMatchRequestCompletionHandler {
         @Generated
-        void call_addPlayersToMatchMatchRequestCompletionHandler(NSError arg0);
+        void call_addPlayersToMatchMatchRequestCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_findMatchForRequestWithCompletionHandler {
         @Generated
-        void call_findMatchForRequestWithCompletionHandler(GKMatch arg0, NSError arg1);
+        void call_findMatchForRequestWithCompletionHandler(GKMatch match, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_findPlayersForHostedMatchRequestWithCompletionHandler {
         @Generated
-        void call_findPlayersForHostedMatchRequestWithCompletionHandler(NSArray<String> arg0, NSError arg1);
+        void call_findPlayersForHostedMatchRequestWithCompletionHandler(NSArray<String> playerIDs, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_findPlayersForHostedRequestWithCompletionHandler {
         @Generated
-        void call_findPlayersForHostedRequestWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
+        void call_findPlayersForHostedRequestWithCompletionHandler(NSArray<? extends GKPlayer> players, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -278,21 +346,21 @@ public class GKMatchmaker extends NSObject {
     @Generated
     public interface Block_matchForInviteCompletionHandler {
         @Generated
-        void call_matchForInviteCompletionHandler(GKMatch arg0, NSError arg1);
+        void call_matchForInviteCompletionHandler(GKMatch match, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_queryActivityWithCompletionHandler {
         @Generated
-        void call_queryActivityWithCompletionHandler(@NInt long arg0, NSError arg1);
+        void call_queryActivityWithCompletionHandler(@NInt long activity, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_queryPlayerGroupActivityWithCompletionHandler {
         @Generated
-        void call_queryPlayerGroupActivityWithCompletionHandler(@NInt long arg0, NSError arg1);
+        void call_queryPlayerGroupActivityWithCompletionHandler(@NInt long activity, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -306,13 +374,13 @@ public class GKMatchmaker extends NSObject {
     @Generated
     public interface Block_startBrowsingForNearbyPlayersWithHandler {
         @Generated
-        void call_startBrowsingForNearbyPlayersWithHandler(GKPlayer arg0, boolean arg1);
+        void call_startBrowsingForNearbyPlayersWithHandler(GKPlayer player, boolean reachable);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startBrowsingForNearbyPlayersWithReachableHandler {
         @Generated
-        void call_startBrowsingForNearbyPlayersWithReachableHandler(String arg0, boolean arg1);
+        void call_startBrowsingForNearbyPlayersWithReachableHandler(String playerID, boolean reachable);
     }
 }

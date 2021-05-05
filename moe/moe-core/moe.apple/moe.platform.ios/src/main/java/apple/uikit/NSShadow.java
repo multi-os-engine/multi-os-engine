@@ -22,8 +22,8 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -42,14 +42,19 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSShadow stores the properties of a drop shadow for drawing text.
+ * To set a shadow on an NSAttributedString use it as a value for NSShadowAttributeName.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSShadow extends NSObject implements NSCopying, NSCoding {
+public class NSShadow extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -164,7 +169,7 @@ public class NSShadow extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -172,32 +177,60 @@ public class NSShadow extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSShadow initWithCoder(NSCoder aDecoder);
+    public native NSShadow initWithCoder(NSCoder coder);
 
+    /**
+     * blur radius of the shadow in default user space units
+     */
     @Generated
     @Selector("setShadowBlurRadius:")
     public native void setShadowBlurRadius(@NFloat double value);
 
+    /**
+     * color used for the shadow (default is black with an alpha value of 1/3)
+     */
     @Generated
     @Selector("setShadowColor:")
     public native void setShadowColor(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * offset in user space of the shadow from the original drawing
+     */
     @Generated
     @Selector("setShadowOffset:")
     public native void setShadowOffset(@ByValue CGSize value);
 
+    /**
+     * blur radius of the shadow in default user space units
+     */
     @Generated
     @Selector("shadowBlurRadius")
     @NFloat
     public native double shadowBlurRadius();
 
+    /**
+     * color used for the shadow (default is black with an alpha value of 1/3)
+     */
     @Generated
     @Selector("shadowColor")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object shadowColor();
 
+    /**
+     * offset in user space of the shadow from the original drawing
+     */
     @Generated
     @Selector("shadowOffset")
     @ByValue
     public native CGSize shadowOffset();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

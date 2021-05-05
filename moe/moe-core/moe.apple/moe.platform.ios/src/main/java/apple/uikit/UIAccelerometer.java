@@ -180,10 +180,16 @@ public class UIAccelerometer extends NSObject {
         }
     }
 
+    /**
+     * May be capped at a minimum interval
+     */
     @Generated
     @Selector("setUpdateInterval:")
     public native void setUpdateInterval(double value);
 
+    /**
+     * May be capped at a minimum interval
+     */
     @Generated
     @Selector("updateInterval")
     public native double updateInterval();

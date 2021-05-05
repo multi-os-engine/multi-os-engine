@@ -25,6 +25,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEDNSProxyManager
+ * 
+ * The NEDNSProxyManager class declares the programmatic interface for an object that manages DNS proxy configurations.
+ * 
+ * NEDNSProxyManager declares methods and properties for configuring and controlling a DNS proxy.
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -105,6 +114,11 @@ public class NEDNSProxyManager extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * [@property] enabled
+     * 
+     * Toggles the enabled status of the DNS proxy. Setting this property will disable DNS proxy configurations of other apps. This property will be set to NO when other DNS proxy configurations are enabled.
+     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
@@ -117,6 +131,13 @@ public class NEDNSProxyManager extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * loadFromPreferencesWithCompletionHandler:
+     * 
+     * This function loads the current DNS proxy configuration from the caller's DNS proxy preferences.
+     * 
+     * @param completionHandler A block that will be called when the load operation is completed. The NSError passed to this block will be nil if the load operation succeeded, non-nil otherwise.
+     */
     @Generated
     @Selector("loadFromPreferencesWithCompletionHandler:")
     public native void loadFromPreferencesWithCompletionHandler(
@@ -126,9 +147,14 @@ public class NEDNSProxyManager extends NSObject {
     @Generated
     public interface Block_loadFromPreferencesWithCompletionHandler {
         @Generated
-        void call_loadFromPreferencesWithCompletionHandler(NSError arg0);
+        void call_loadFromPreferencesWithCompletionHandler(NSError error);
     }
 
+    /**
+     * [@property] localizedDescription
+     * 
+     * A string containing a description of the DNS proxy.
+     */
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
@@ -139,10 +165,22 @@ public class NEDNSProxyManager extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * [@property] providerProtocol
+     * 
+     * An NEDNSProxyProviderProtocol object containing the provider-specific portion of the DNS proxy configuration.
+     */
     @Generated
     @Selector("providerProtocol")
     public native NEDNSProxyProviderProtocol providerProtocol();
 
+    /**
+     * removeFromPreferencesWithCompletionHandler:
+     * 
+     * This function removes the DNS proxy configuration from the caller's DNS proxy preferences. If the DNS proxy is enabled, the DNS proxy becomes disabled.
+     * 
+     * @param completionHandler A block that will be called when the remove operation is completed. The NSError passed to this block will be nil if the remove operation succeeded, non-nil otherwise.
+     */
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
     public native void removeFromPreferencesWithCompletionHandler(
@@ -152,7 +190,7 @@ public class NEDNSProxyManager extends NSObject {
     @Generated
     public interface Block_removeFromPreferencesWithCompletionHandler {
         @Generated
-        void call_removeFromPreferencesWithCompletionHandler(NSError arg0);
+        void call_removeFromPreferencesWithCompletionHandler(NSError error);
     }
 
     @Generated
@@ -163,6 +201,13 @@ public class NEDNSProxyManager extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * saveToPreferencesWithCompletionHandler:
+     * 
+     * This function saves the DNS proxy configuration in the caller's DNS proxy preferences. If the DNS proxy is enabled, it will become active.
+     * 
+     * @param completionHandler A block that will be called when the save operation is completed. The NSError passed to this block will be nil if the save operation succeeded, non-nil otherwise.
+     */
     @Generated
     @Selector("saveToPreferencesWithCompletionHandler:")
     public native void saveToPreferencesWithCompletionHandler(
@@ -172,17 +217,32 @@ public class NEDNSProxyManager extends NSObject {
     @Generated
     public interface Block_saveToPreferencesWithCompletionHandler {
         @Generated
-        void call_saveToPreferencesWithCompletionHandler(NSError arg0);
+        void call_saveToPreferencesWithCompletionHandler(NSError error);
     }
 
+    /**
+     * [@property] enabled
+     * 
+     * Toggles the enabled status of the DNS proxy. Setting this property will disable DNS proxy configurations of other apps. This property will be set to NO when other DNS proxy configurations are enabled.
+     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
+    /**
+     * [@property] localizedDescription
+     * 
+     * A string containing a description of the DNS proxy.
+     */
     @Generated
     @Selector("setLocalizedDescription:")
     public native void setLocalizedDescription(String value);
 
+    /**
+     * [@property] providerProtocol
+     * 
+     * An NEDNSProxyProviderProtocol object containing the provider-specific portion of the DNS proxy configuration.
+     */
     @Generated
     @Selector("setProviderProtocol:")
     public native void setProviderProtocol(NEDNSProxyProviderProtocol value);
@@ -191,6 +251,11 @@ public class NEDNSProxyManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * sharedManager
+     * 
+     * @return The singleton NEDNSProxyManager object for the calling process.
+     */
     @Generated
     @Selector("sharedManager")
     public static native NEDNSProxyManager sharedManager();

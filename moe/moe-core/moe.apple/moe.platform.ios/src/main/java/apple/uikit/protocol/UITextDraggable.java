@@ -12,18 +12,24 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Defines a text draggable control.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextDraggable")
 public interface UITextDraggable extends UITextInput {
+    /**
+     * Returns whether this control currently has at least one active drag session.
+     */
     @Generated
     @Selector("isTextDragActive")
     boolean isTextDragActive();
 
     @Generated
     @Selector("setTextDragDelegate:")
-    void setTextDragDelegate(@Mapped(ObjCObjectMapper.class) Object value);
+    void setTextDragDelegate(@Mapped(ObjCObjectMapper.class) UITextDragDelegate value);
 
     @Generated
     @Selector("setTextDragOptions:")
@@ -32,8 +38,13 @@ public interface UITextDraggable extends UITextInput {
     @Generated
     @Selector("textDragDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    Object textDragDelegate();
+    UITextDragDelegate textDragDelegate();
 
+    /**
+     * The text drag interaction that UIKit installs on the text control.
+     * Use this to explicitly disable drag interactions on system text controls,
+     * if desired.
+     */
     @Generated
     @Selector("textDragInteraction")
     UIDragInteraction textDragInteraction();

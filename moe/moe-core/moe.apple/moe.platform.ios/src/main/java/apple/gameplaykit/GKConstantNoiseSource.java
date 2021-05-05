@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Produces a single, constant value at all positions in the space.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)

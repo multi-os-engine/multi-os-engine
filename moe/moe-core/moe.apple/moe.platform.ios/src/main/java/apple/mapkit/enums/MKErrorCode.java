@@ -30,4 +30,6 @@ public final class MKErrorCode {
     @Generated
     private MKErrorCode() {
     }
+
+    @Generated @NUInt public static final long DecodingFailed = 0x0000000000000006L;
 }

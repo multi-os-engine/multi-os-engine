@@ -9,6 +9,12 @@ public final class UIDropSessionProgressIndicatorStyle {
     private UIDropSessionProgressIndicatorStyle() {
     }
 
+    /**
+     * No indicator is displayed
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * A default indicator is displayed
+     */
     @Generated @NUInt public static final long Default = 0x0000000000000001L;
 }

@@ -11,6 +11,7 @@ import apple.foundation.NSSet;
 import apple.uikit.UIColor;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -35,6 +36,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVRoutePickerView
+ * 
+ * AVRoutePickerView is a subclass of UIView that displays controls for picking playback routes.
+ * 
+ * Media from AVPlayer or AVSampleBufferAudioRenderer can be routed to compatible AirPlay destinations.
+ */
 @Generated
 @Library("AVKit")
 @Runtime(ObjCRuntime.class)
@@ -53,6 +61,11 @@ public class AVRoutePickerView extends UIView {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * [@property]	activeTintColor
+     * 
+     * The view's tint color when AirPlay is active.
+     */
     @Generated
     @Selector("activeTintColor")
     public native UIColor activeTintColor();
@@ -135,14 +148,14 @@ public class AVRoutePickerView extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -165,14 +178,15 @@ public class AVRoutePickerView extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -230,6 +244,11 @@ public class AVRoutePickerView extends UIView {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * [@property]	delegate
+     * 
+     * The route picker view's delegate.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -254,7 +273,7 @@ public class AVRoutePickerView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVRoutePickerView initWithCoder(NSCoder aDecoder);
+    public native AVRoutePickerView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -315,6 +334,11 @@ public class AVRoutePickerView extends UIView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * [@property]	activeTintColor
+     * 
+     * The view's tint color when AirPlay is active.
+     */
     @Generated
     @Selector("setActiveTintColor:")
     public native void setActiveTintColor(UIColor value);
@@ -367,10 +391,20 @@ public class AVRoutePickerView extends UIView {
     @Selector("setAnimationsEnabled:")
     public static native void setAnimationsEnabled(boolean enabled);
 
+    /**
+     * [@property]	delegate
+     * 
+     * The route picker view's delegate.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVRoutePickerViewDelegate value);
 
+    /**
+     * [@property]	delegate
+     * 
+     * The route picker view's delegate.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) AVRoutePickerViewDelegate value) {
         Object __old = delegate();
@@ -419,4 +453,28 @@ public class AVRoutePickerView extends UIView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    /**
+     * [@property]	prioritizesVideoDevices
+     * 
+     * Whether or not the route picker should sort video capable output devices to the top of the list. Setting this to YES will cause the route picker view to show a videocentric icon.
+     */
+    @Generated
+    @Selector("prioritizesVideoDevices")
+    public native boolean prioritizesVideoDevices();
+
+    /**
+     * [@property]	prioritizesVideoDevices
+     * 
+     * Whether or not the route picker should sort video capable output devices to the top of the list. Setting this to YES will cause the route picker view to show a videocentric icon.
+     */
+    @Generated
+    @Selector("setPrioritizesVideoDevices:")
+    public native void setPrioritizesVideoDevices(boolean value);
 }

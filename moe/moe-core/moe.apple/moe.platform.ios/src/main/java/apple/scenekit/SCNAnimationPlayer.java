@@ -9,6 +9,7 @@ import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.quartzcore.CAAnimation;
 import apple.scenekit.protocol.SCNAnimatable;
+import apple.scenekit.protocol.SCNAnimation;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -30,6 +31,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNAnimationPlayer let you control when and how to play and blend an animation
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -50,7 +54,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
     @Generated
     @Selector("addAnimationPlayer:forKey:")
@@ -66,6 +70,9 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * The played animation
+     */
     @Generated
     @Selector("animation")
     public native SCNAnimation animation();
@@ -82,6 +89,11 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("animationPlayerForKey:")
     public native SCNAnimationPlayer animationPlayerForKey(String key);
 
+    /**
+     * Initialize an animation player with an animation
+     * 
+     * @param animation The animation to play
+     */
     @Generated
     @Selector("animationPlayerWithAnimation:")
     public static native SCNAnimationPlayer animationPlayerWithAnimation(SCNAnimation animation);
@@ -90,6 +102,9 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Controls the influence of the played animation. When set to 1 the animation is applied without any blending. When set to less than 1, the animation value is blent with the current presentation value of the animated property. Defaults to 1.0. Animatable.
+     */
     @Generated
     @Selector("blendFactor")
     @NFloat
@@ -129,7 +144,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -142,7 +157,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNAnimationPlayer initWithCoder(NSCoder aDecoder);
+    public native SCNAnimationPlayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -179,10 +194,16 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("pauseAnimationForKey:")
     public native void pauseAnimationForKey(String key);
 
+    /**
+     * Specifies if the animation is paused. Defaults to NO.
+     */
     @Generated
     @Selector("paused")
     public native boolean paused();
 
+    /**
+     * Set paused to NO and restart playing from the beginning of the animation.
+     */
     @Generated
     @Selector("play")
     public native void play();
@@ -215,14 +236,23 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
 
+    /**
+     * Controls the influence of the played animation. When set to 1 the animation is applied without any blending. When set to less than 1, the animation value is blent with the current presentation value of the animated property. Defaults to 1.0. Animatable.
+     */
     @Generated
     @Selector("setBlendFactor:")
     public native void setBlendFactor(@NFloat double value);
 
+    /**
+     * Specifies if the animation is paused. Defaults to NO.
+     */
     @Generated
     @Selector("setPaused:")
     public native void setPaused(boolean value);
 
+    /**
+     * The speed to play the animation at. Defaults to 1.0. Animatable
+     */
     @Generated
     @Selector("setSpeed:")
     public native void setSpeed(@NFloat double value);
@@ -235,15 +265,24 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The speed to play the animation at. Defaults to 1.0. Animatable
+     */
     @Generated
     @Selector("speed")
     @NFloat
     public native double speed();
 
+    /**
+     * Stop the animation.
+     */
     @Generated
     @Selector("stop")
     public native void stop();
 
+    /**
+     * Stop the animation and smoothly blend out the animation over the specified duration.
+     */
     @Generated
     @Selector("stopWithBlendOutDuration:")
     public native void stopWithBlendOutDuration(double duration);

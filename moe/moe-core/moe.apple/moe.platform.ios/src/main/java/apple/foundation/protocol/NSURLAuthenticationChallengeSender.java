@@ -26,19 +26,38 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * [@protocol] NSURLAuthenticationChallengeSender 
+ * 
+ * This protocol represents the sender of an
+ * authentication challenge. It has methods to provide a credential,
+ * to continue without any credential, getting whatever failure
+ * result would happen in that case, cancel a challenge, perform the default
+ * action as defined by the system, or reject the currently supplied protection-space
+ * in the challenge.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLAuthenticationChallengeSender")
 public interface NSURLAuthenticationChallengeSender {
+    /**
+     * cancelAuthenticationChallenge:
+     */
     @Generated
     @Selector("cancelAuthenticationChallenge:")
     void cancelAuthenticationChallenge(NSURLAuthenticationChallenge challenge);
 
+    /**
+     * continueWithoutCredentialForAuthenticationChallenge:
+     */
     @Generated
     @Selector("continueWithoutCredentialForAuthenticationChallenge:")
     void continueWithoutCredentialForAuthenticationChallenge(NSURLAuthenticationChallenge challenge);
 
+    /**
+     * performDefaultHandlingForAuthenticationChallenge:
+     */
     @Generated
     @IsOptional
     @Selector("performDefaultHandlingForAuthenticationChallenge:")
@@ -46,6 +65,9 @@ public interface NSURLAuthenticationChallengeSender {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * rejectProtectionSpaceAndContinueWithChallenge:
+     */
     @Generated
     @IsOptional
     @Selector("rejectProtectionSpaceAndContinueWithChallenge:")
@@ -53,6 +75,9 @@ public interface NSURLAuthenticationChallengeSender {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * useCredential:forAuthenticationChallenge:
+     */
     @Generated
     @Selector("useCredential:forAuthenticationChallenge:")
     void useCredentialForAuthenticationChallenge(NSURLCredential credential, NSURLAuthenticationChallenge challenge);

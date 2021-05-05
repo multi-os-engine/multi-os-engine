@@ -25,24 +25,39 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * ================== PROTOCOLS ==================
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSFetchedResultsSectionInfo")
 public interface NSFetchedResultsSectionInfo {
+    /**
+     * Title of the section (used when displaying the index)
+     */
     @Generated
     @Selector("indexTitle")
     String indexTitle();
 
+    /**
+     * Name of the section
+     */
     @Generated
     @Selector("name")
     String name();
 
+    /**
+     * Number of objects in section
+     */
     @Generated
     @Selector("numberOfObjects")
     @NUInt
     long numberOfObjects();
 
+    /**
+     * Returns the array of objects in the section.
+     */
     @Generated
     @Selector("objects")
     NSArray<?> objects();

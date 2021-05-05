@@ -175,6 +175,9 @@ public class EKStructuredLocation extends EKObject implements NSCopying {
     @Selector("init")
     public native EKStructuredLocation init();
 
+    /**
+     * 0 = use default, unit is meters
+     */
     @Generated
     @Selector("radius")
     public native double radius();
@@ -183,6 +186,9 @@ public class EKStructuredLocation extends EKObject implements NSCopying {
     @Selector("setGeoLocation:")
     public native void setGeoLocation(CLLocation value);
 
+    /**
+     * 0 = use default, unit is meters
+     */
     @Generated
     @Selector("setRadius:")
     public native void setRadius(double value);

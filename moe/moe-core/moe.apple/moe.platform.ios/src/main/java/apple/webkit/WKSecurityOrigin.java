@@ -39,6 +39,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A WKSecurityOrigin object contains information about a security origin.
+ * 
+ * An instance of this class is a transient, data-only object;
+ * it does not uniquely identify a security origin across multiple delegate method
+ * calls.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -150,6 +157,9 @@ public class WKSecurityOrigin extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The security origin's host.
+     */
     @Generated
     @Selector("host")
     public native String host();
@@ -158,11 +168,17 @@ public class WKSecurityOrigin extends NSObject {
     @Selector("init")
     public native WKSecurityOrigin init();
 
+    /**
+     * The security origin's port.
+     */
     @Generated
     @Selector("port")
     @NInt
     public native long port();
 
+    /**
+     * The security origin's protocol.
+     */
     @Generated
     @Selector("protocol")
     public native String protocol();

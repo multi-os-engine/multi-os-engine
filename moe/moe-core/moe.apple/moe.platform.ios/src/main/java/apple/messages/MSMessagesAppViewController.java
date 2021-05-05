@@ -168,38 +168,113 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property]   activeConversation
+     * 
+     * Current active conversation.
+     */
     @Generated
     @Selector("activeConversation")
     public native MSConversation activeConversation();
 
+    /**
+     * didBecomeActiveWithConversation:
+     * 
+     * Called when the extension has become active.
+     * 
+     * @param      conversation   The current conversation.
+     */
     @Generated
     @Selector("didBecomeActiveWithConversation:")
     public native void didBecomeActiveWithConversation(MSConversation conversation);
 
+    /**
+     * didCancelSendingMessage:conversation:
+     * 
+     * Informs the extension that the user has removed the message from the input field.
+     * 
+     * This method will not be called when the `presentationStyle` is MSMessagesAppPresentationStyleTranscript or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * 
+     * @param      message    The message sent.
+     * @param      conversation    The conversation.
+     */
     @Generated
     @Selector("didCancelSendingMessage:conversation:")
     public native void didCancelSendingMessageConversation(MSMessage message, MSConversation conversation);
 
+    /**
+     * didReceiveMessage:conversation:
+     * 
+     * Informs the extension that a new message has arrived.
+     * 
+     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * 
+     * @param      message    The message received.
+     * @param      conversation    The conversation.
+     */
     @Generated
     @Selector("didReceiveMessage:conversation:")
     public native void didReceiveMessageConversation(MSMessage message, MSConversation conversation);
 
+    /**
+     * didResignActiveWithConversation:
+     * 
+     * Called when the extension has resigned active.
+     * 
+     * @param      conversation   The current conversation.
+     */
     @Generated
     @Selector("didResignActiveWithConversation:")
     public native void didResignActiveWithConversation(MSConversation conversation);
 
+    /**
+     * didSelectMessage:conversation:
+     * 
+     * Informs the extension that a new message has been selected in the conversation.
+     * 
+     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * 
+     * @param      message    The message selected.
+     * @param      conversation    The conversation.
+     */
     @Generated
     @Selector("didSelectMessage:conversation:")
     public native void didSelectMessageConversation(MSMessage message, MSConversation conversation);
 
+    /**
+     * didStartSendingMessage:conversation:
+     * 
+     * Informs the extension that the message send has been triggered.
+     * 
+     * This is called when a user interaction with Messages start the message send process. It does not guarantee the message will be successfully sent or delivered. This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * 
+     * @param      message    The message being sent.
+     * @param      conversation    The conversation the message belongs to.
+     */
     @Generated
     @Selector("didStartSendingMessage:conversation:")
     public native void didStartSendingMessageConversation(MSMessage message, MSConversation conversation);
 
+    /**
+     * didTransitionToPresentationStyle:
+     * 
+     * Called when the extension finished transitioning to a presentation style.
+     * 
+     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`.
+     * 
+     * @param      presentationStyle   The new presentation style.
+     */
     @Generated
     @Selector("didTransitionToPresentationStyle:")
     public native void didTransitionToPresentationStyle(@NUInt long presentationStyle);
 
+    /**
+     * dismiss
+     * 
+     * Tells Messages to dismiss the extension and present the keyboard.
+     * 
+     * Calling this method does nothing when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`.
+     */
     @Generated
     @Selector("dismiss")
     public native void dismiss();
@@ -210,33 +285,80 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
 
     @Generated
     @Selector("initWithCoder:")
-    public native MSMessagesAppViewController initWithCoder(NSCoder aDecoder);
+    public native MSMessagesAppViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
     public native MSMessagesAppViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * [@property]   presentationStyle
+     * 
+     * Get the presentation extension's current presentation style.
+     */
     @Generated
     @Selector("presentationStyle")
     @NUInt
     public native long presentationStyle();
 
+    /**
+     * requestPresentationStyle:
+     * 
+     * Requests that Messages transition the extension to the specified presentation style.
+     * 
+     * When the current `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`, a new instance of `MSMessagesAppViewController` will be instantiated with the requested presentation style if needed.
+     * 
+     * @param      presentationStyle   The presentation style to transition to. `MSMessagesAppPresentationStyleTranscript` is not a valid presentation style to request.
+     */
     @Generated
     @Selector("requestPresentationStyle:")
     public native void requestPresentationStyle(@NUInt long presentationStyle);
 
+    /**
+     * willBecomeActiveWithConversation:
+     * 
+     * Called when the extension is about to become active.
+     * 
+     * @param      conversation   The current conversation.
+     */
     @Generated
     @Selector("willBecomeActiveWithConversation:")
     public native void willBecomeActiveWithConversation(MSConversation conversation);
 
+    /**
+     * willResignActiveWithConversation:
+     * 
+     * Called when the extension will resign active.
+     * 
+     * @param      conversation   The current conversation.
+     */
     @Generated
     @Selector("willResignActiveWithConversation:")
     public native void willResignActiveWithConversation(MSConversation conversation);
 
+    /**
+     * willSelectMessage:conversation:
+     * 
+     * Informs the extension that a new message will be selected in the conversation.
+     * 
+     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * 
+     * @param      message    The message selected.
+     * @param      conversation    The conversation.
+     */
     @Generated
     @Selector("willSelectMessage:conversation:")
     public native void willSelectMessageConversation(MSMessage message, MSConversation conversation);
 
+    /**
+     * willTransitionToPresentationStyle:
+     * 
+     * Called when the extension is about to transition to a new presentation style.
+     * 
+     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`.
+     * 
+     * @param      presentationStyle   The new presentation style.
+     */
     @Generated
     @Selector("willTransitionToPresentationStyle:")
     public native void willTransitionToPresentationStyle(@NUInt long presentationStyle);
@@ -245,4 +367,14 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     @Selector("contentSizeThatFits:")
     @ByValue
     public native CGSize contentSizeThatFits(@ByValue CGSize size);
+
+    /**
+     * [@property]   presentationContext
+     * 
+     * The context for which the extension was launched
+     */
+    @Generated
+    @Selector("presentationContext")
+    @NUInt
+    public native long presentationContext();
 }

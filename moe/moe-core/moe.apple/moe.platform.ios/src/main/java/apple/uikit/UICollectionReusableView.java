@@ -23,6 +23,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -129,7 +130,7 @@ public class UICollectionReusableView extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -142,8 +143,8 @@ public class UICollectionReusableView extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -364,7 +365,7 @@ public class UICollectionReusableView extends UIView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -380,7 +381,8 @@ public class UICollectionReusableView extends UIView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -391,6 +393,12 @@ public class UICollectionReusableView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * Classes that want to support custom layout attributes specific to a given UICollectionViewLayout subclass can apply them here.
+     * This allows the view to work in conjunction with a layout class that returns a custom subclass of UICollectionViewLayoutAttributes from -layoutAttributesForItem: or the corresponding layoutAttributesForHeader/Footer methods.
+     * -applyLayoutAttributes: is then called after the view is added to the collection view and just before the view is returned from the reuse queue.
+     * Note that -applyLayoutAttributes: is only called when attributes change, as defined by -isEqual:.
+     */
     @Generated
     @Selector("applyLayoutAttributes:")
     public native void applyLayoutAttributes(UICollectionViewLayoutAttributes layoutAttributes);
@@ -406,7 +414,7 @@ public class UICollectionReusableView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionReusableView initWithCoder(NSCoder aDecoder);
+    public native UICollectionReusableView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -417,6 +425,11 @@ public class UICollectionReusableView extends UIView {
     public native UICollectionViewLayoutAttributes preferredLayoutAttributesFittingAttributes(
             UICollectionViewLayoutAttributes layoutAttributes);
 
+    /**
+     * Override point.
+     * Called by the collection view before the instance is returned from the reuse queue.
+     * Subclassers must call super.
+     */
     @Generated
     @Selector("prepareForReuse")
     public native void prepareForReuse();
@@ -425,8 +438,17 @@ public class UICollectionReusableView extends UIView {
     @Selector("reuseIdentifier")
     public native String reuseIdentifier();
 
+    /**
+     * Override these methods to provide custom UI for specific layouts.
+     */
     @Generated
     @Selector("willTransitionFromLayout:toLayout:")
     public native void willTransitionFromLayoutToLayout(UICollectionViewLayout oldLayout,
             UICollectionViewLayout newLayout);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

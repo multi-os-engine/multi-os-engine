@@ -39,6 +39,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioUnitEQFilterParameters
+ * 
+ * Filter parameters used by AVAudioUnitEQ.
+ * 
+ *     A standalone instance of AVAudioUnitEQFilterParameters cannot be created. Only an instance
+ *     vended out by a source object (e.g. AVAudioUnitEQ) can be used.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -150,23 +158,62 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] bandwidth
+     * 
+     * Bandwidth in octaves.
+     * 
+     * Range:      0.05 -> 5.0
+     * Unit:       Octaves
+     */
     @Generated
     @Selector("bandwidth")
     public native float bandwidth();
 
+    /**
+     * [@property] bypass
+     * 
+     * bypass state of band.
+     * 
+     * Default:    YES
+     */
     @Generated
     @Selector("bypass")
     public native boolean bypass();
 
+    /**
+     * [@property] filterType
+     * 
+     * AVAudioUnitEQFilterType
+     * 
+     * Default:    AVAudioUnitEQFilterTypeParametric
+     */
     @Generated
     @Selector("filterType")
     @NInt
     public native long filterType();
 
+    /**
+     * [@property] frequency
+     * 
+     * Frequency in Hertz.
+     * 
+     * Range:      20 -> (SampleRate/2)
+     * Unit:       Hertz
+     */
     @Generated
     @Selector("frequency")
     public native float frequency();
 
+    /**
+     * [@property] gain
+     * 
+     * Gain in dB.
+     * 
+     * Range:      -96 -> 24
+     * Default:    0
+     * Unit:       dB
+     */
     @Generated
     @Selector("gain")
     public native float gain();
@@ -175,22 +222,61 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     @Selector("init")
     public native AVAudioUnitEQFilterParameters init();
 
+    /**
+     * [@property] bandwidth
+     * 
+     * Bandwidth in octaves.
+     * 
+     * Range:      0.05 -> 5.0
+     * Unit:       Octaves
+     */
     @Generated
     @Selector("setBandwidth:")
     public native void setBandwidth(float value);
 
+    /**
+     * [@property] bypass
+     * 
+     * bypass state of band.
+     * 
+     * Default:    YES
+     */
     @Generated
     @Selector("setBypass:")
     public native void setBypass(boolean value);
 
+    /**
+     * [@property] filterType
+     * 
+     * AVAudioUnitEQFilterType
+     * 
+     * Default:    AVAudioUnitEQFilterTypeParametric
+     */
     @Generated
     @Selector("setFilterType:")
     public native void setFilterType(@NInt long value);
 
+    /**
+     * [@property] frequency
+     * 
+     * Frequency in Hertz.
+     * 
+     * Range:      20 -> (SampleRate/2)
+     * Unit:       Hertz
+     */
     @Generated
     @Selector("setFrequency:")
     public native void setFrequency(float value);
 
+    /**
+     * [@property] gain
+     * 
+     * Gain in dB.
+     * 
+     * Range:      -96 -> 24
+     * Default:    0
+     * Unit:       dB
+     */
     @Generated
     @Selector("setGain:")
     public native void setGain(float value);

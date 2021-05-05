@@ -50,26 +50,44 @@ public final class MPSOrigin extends StructObject {
         setZ(z);
     }
 
+    /**
+     * < The x coordinate of the position
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native double x();
 
+    /**
+     * < The x coordinate of the position
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setX(double value);
 
+    /**
+     * < The y coordinate of the position
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native double y();
 
+    /**
+     * < The y coordinate of the position
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setY(double value);
 
+    /**
+     * < The z coordinate of the position
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native double z();
 
+    /**
+     * < The z coordinate of the position
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setZ(double value);

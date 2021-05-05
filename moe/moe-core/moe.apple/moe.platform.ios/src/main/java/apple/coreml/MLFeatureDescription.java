@@ -2,9 +2,11 @@ package apple.coreml;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -21,14 +23,18 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Description of a feature
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MLFeatureDescription extends NSObject implements NSCopying {
+public class MLFeatureDescription extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -88,6 +94,9 @@ public class MLFeatureDescription extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Constraint when type == MLFeatureTypeDictionary, nil otherwise
+     */
     @Generated
     @Selector("dictionaryConstraint")
     public native MLDictionaryConstraint dictionaryConstraint();
@@ -97,6 +106,9 @@ public class MLFeatureDescription extends NSObject implements NSCopying {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Constraint when type == MLFeatureTypeImage, nil otherwise
+     */
     @Generated
     @Selector("imageConstraint")
     public native MLImageConstraint imageConstraint();
@@ -118,10 +130,16 @@ public class MLFeatureDescription extends NSObject implements NSCopying {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Check if MLFeatureValue is valid based on this description
+     */
     @Generated
     @Selector("isAllowedValue:")
     public native boolean isAllowedValue(MLFeatureValue value);
 
+    /**
+     * Whether this feature can take an undefined value or not
+     */
     @Generated
     @Selector("isOptional")
     public native boolean isOptional();
@@ -134,10 +152,16 @@ public class MLFeatureDescription extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * Constraint when type == MLFeatureTypeMultiArray, nil otherwise
+     */
     @Generated
     @Selector("multiArrayConstraint")
     public native MLMultiArrayConstraint multiArrayConstraint();
 
+    /**
+     * Name of feature
+     */
     @Generated
     @Selector("name")
     public native String name();
@@ -164,6 +188,9 @@ public class MLFeatureDescription extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Type of data
+     */
     @Generated
     @Selector("type")
     @NInt
@@ -173,4 +200,29 @@ public class MLFeatureDescription extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MLFeatureDescription initWithCoder(NSCoder coder);
+
+    /**
+     * Constraint when type == MLFeatureTypeSequence, nil otherwise
+     */
+    @Generated
+    @Selector("sequenceConstraint")
+    public native MLSequenceConstraint sequenceConstraint();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

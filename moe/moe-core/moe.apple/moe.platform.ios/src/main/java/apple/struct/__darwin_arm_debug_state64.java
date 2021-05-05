@@ -74,10 +74,16 @@ public final class __darwin_arm_debug_state64 extends StructObject {
     @StructureField(order = 3, isGetter = false, count = 16)
     public native void set__wcr(long value, int field_idx);
 
+    /**
+     * Bit 0 is SS (Hardware Single Step)
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native long __mdscr_el1();
 
+    /**
+     * Bit 0 is SS (Hardware Single Step)
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void set__mdscr_el1(long value);

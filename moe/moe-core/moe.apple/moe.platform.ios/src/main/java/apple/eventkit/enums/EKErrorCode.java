@@ -52,9 +52,18 @@ public final class EKErrorCode {
     @Generated @NInt public static final long ProcedureAlarmsNotMutable = 0x000000000000001CL;
     @Generated @NInt public static final long EventStoreNotAuthorized = 0x000000000000001DL;
     @Generated @NInt public static final long OSNotSupported = 0x000000000000001EL;
-    @Generated @NInt public static final long Last = 0x000000000000001FL;
+    /**
+     * used internally
+     */
+    @Generated @NInt public static final long Last = 0x0000000000000024L;
 
     @Generated
     private EKErrorCode() {
     }
+
+    @Generated @NInt public static final long InvalidInviteReplyCalendar = 0x000000000000001FL;
+    @Generated @NInt public static final long NotificationsCollectionFlagNotSet = 0x0000000000000020L;
+    @Generated @NInt public static final long SourceMismatch = 0x0000000000000021L;
+    @Generated @NInt public static final long NotificationCollectionMismatch = 0x0000000000000022L;
+    @Generated @NInt public static final long NotificationSavedWithoutCollection = 0x0000000000000023L;
 }

@@ -19,6 +19,7 @@ package apple.spritekit;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.gameplaykit.GKPolygonObstacle;
@@ -32,15 +33,37 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A Camera node is a full fledged SKNode that can have actions and physics applied to it.
+ * It also uses the standard SKNode transform system so modifying the camera node's position
+ * is how you translate the camera's viewport. Applying a scale to the node would zoom
+ * the viewport in or out etc. As an added benefit you can now rotate the viewport by
+ * applying a zRotation to the camera node, just as you would with any other SKNode.
+ * 
+ * The camera viewport is centered on the camera's position. It uses the scene's frame
+ * and scale mode along with the node transforms to determine the size, origin and
+ * rotation of the viewport.
+ * 
+ * There are some convenience functions included for testing if nodes are contained
+ * within the camera viewport. It can be used to determine if objects are no longer
+ * visible on the display.
+ * 
+ * In order to use a camera; set it on the scene that contains the camera.
+ * 
+ * @see SKScene.camera
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -178,10 +201,22 @@ public class SKCameraNode extends SKNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * Returns the set of nodes in the same scene as the camera that are contained within its viewport.
+     * 
+     * @return the set of nodes contained
+     */
     @Generated
     @Selector("containedNodeSet")
     public native NSSet<? extends SKNode> containedNodeSet();
 
+    /**
+     * Checks if the node is contained inside the viewport of the camera.
+     * The camera and node must both be in the same scene and presented on a view in order
+     * to determine if the node is inside the camera viewport rectangle.
+     * 
+     * @return YES if the node is inside the viewport. NO if node is nil or the node is outside the viewport.
+     */
     @Generated
     @Selector("containsNode:")
     public native boolean containsNode(SKNode node);
@@ -193,4 +228,19 @@ public class SKCameraNode extends SKNode {
     @Generated
     @Selector("initWithCoder:")
     public native SKCameraNode initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
+    public static native SKCameraNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
+            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

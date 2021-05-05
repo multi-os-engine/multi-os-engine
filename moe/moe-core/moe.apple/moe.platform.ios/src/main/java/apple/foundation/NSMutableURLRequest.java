@@ -38,6 +38,35 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * NSMutableURLRequest
+ * 
+ * An NSMutableURLRequest object represents a mutable URL load
+ * request in a manner independent of protocol and URL scheme.
+ * 
+ * This specialization of NSURLRequest is provided to aid
+ * developers who may find it more convenient to mutate a single request
+ * object for a series of URL loads instead of creating an immutable
+ * NSURLRequest for each load. This programming model is supported by
+ * the following contract stipulation between NSMutableURLRequest and 
+ * NSURLConnection: NSURLConnection makes a deep copy of each 
+ * NSMutableURLRequest object passed to one of its initializers.    
+ * <p>NSMutableURLRequest is designed to be extended to support
+ * protocol-specific data by adding categories to access a property
+ * object provided in an interface targeted at protocol implementors.
+ * <ul>
+ * <li>Protocol implementors should direct their attention to the
+ * NSMutableURLRequestExtensibility category on
+ * NSMutableURLRequest for more information on how to provide
+ * extensions on NSMutableURLRequest to support protocol-specific
+ * request information.
+ * <li>Clients of this API who wish to create NSMutableURLRequest
+ * objects to load URL content should consult the protocol-specific
+ * NSMutableURLRequest categories that are available. The
+ * NSMutableHTTPURLRequest category on NSMutableURLRequest is an
+ * example.
+ * </ul>
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -162,46 +191,138 @@ public class NSMutableURLRequest extends NSURLRequest {
     @NInt
     public static native long version_static();
 
+    /**
+     * Sets the request body data of the receiver.
+     * 
+     * This data is sent as the message body of the request, as
+     * in done in an HTTP POST request.
+     */
     @Generated
     @Selector("HTTPBody")
     public native NSData HTTPBody();
 
+    /**
+     * Sets the request body to be the contents of the given stream.
+     * 
+     * The provided stream should be unopened; the request will take
+     * over the stream's delegate.  The entire stream's contents will be 
+     * transmitted as the HTTP body of the request.  Note that the body stream
+     * and the body data (set by setHTTPBody:, above) are mutually exclusive 
+     * - setting one will clear the other.
+     */
     @Generated
     @Selector("HTTPBodyStream")
     public native NSInputStream HTTPBodyStream();
 
+    /**
+     * Sets the HTTP request method of the receiver.
+     */
     @Generated
     @Selector("HTTPMethod")
     public native String HTTPMethod();
 
+    /**
+     * Decide whether default cookie handling will happen for
+     * this request (YES if cookies should be sent with and set for this request;
+     * otherwise NO).
+     * 
+     * The default is YES - in other words, cookies are sent from and
+     * stored to the cookie manager by default.
+     * NOTE: In releases prior to 10.3, this value is ignored
+     */
     @Generated
     @Selector("HTTPShouldHandleCookies")
     public native boolean HTTPShouldHandleCookies();
 
+    /**
+     * Sets whether the request should not wait for the previous response
+     * before transmitting (YES if the receiver should transmit before the previous response is
+     * received.  NO to wait for the previous response before transmitting)
+     * 
+     * Calling this method with a YES value does not guarantee HTTP
+     * pipelining behavior.  This method may have no effect if an HTTP proxy is
+     * configured, or if the HTTP request uses an unsafe request method (e.g., POST
+     * requests will not pipeline).  Pipelining behavior also may not begin until
+     * the second request on a given TCP connection.  There may be other situations
+     * where pipelining does not occur even though YES was set.
+     * HTTP 1.1 allows the client to send multiple requests to the server without
+     * waiting for a response.  Though HTTP 1.1 requires support for pipelining,
+     * some servers report themselves as being HTTP 1.1 but do not support
+     * pipelining (disconnecting, sending resources misordered, omitting part of
+     * a resource, etc.).
+     */
     @Generated
     @Selector("HTTPShouldUsePipelining")
     public native boolean HTTPShouldUsePipelining();
 
+    /**
+     * The URL of the receiver.
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
+    /**
+     * addValue:forHTTPHeaderField:
+     * 
+     * Adds an HTTP header field in the current header
+     * dictionary.
+     * 
+     * This method provides a way to add values to header
+     * fields incrementally. If a value was previously set for the given
+     * header field, the given value is appended to the previously-existing
+     * value. The appropriate field delimiter, a comma in the case of HTTP,
+     * is added by the implementation, and should not be added to the given
+     * value by the caller. Note that, in keeping with the HTTP RFC, HTTP
+     * header field names are case-insensitive.
+     * 
+     * @param value the header field value. 
+     * @param field the header field name (case-insensitive). 
+     */
     @Generated
     @Selector("addValue:forHTTPHeaderField:")
     public native void addValueForHTTPHeaderField(String value, String field);
 
+    /**
+     * Sets the HTTP header fields of the receiver to the given
+     * dictionary.
+     * 
+     * This method replaces all header fields that may have
+     * existed before this method call. 
+     * <p>Since HTTP header fields must be string values, each object and
+     * key in the dictionary passed to this method must answer YES when
+     * sent an <tt>-isKindOfClass:[NSString class]</tt> message. If either
+     * the key or value for a key-value pair answers NO when sent this
+     * message, the key-value pair is skipped.
+     */
     @Generated
     @Selector("allHTTPHeaderFields")
     public native NSDictionary<String, String> allHTTPHeaderFields();
 
+    /**
+     * sets whether a connection created with this request is allowed to use
+     * the built in cellular radios (if present). 
+     * 
+     * NO if the receiver should not be allowed to use the built in
+     * cellular radios to satisfy the request, YES otherwise.  The default is YES.
+     */
     @Generated
     @Selector("allowsCellularAccess")
     public native boolean allowsCellularAccess();
 
+    /**
+     * bindToHotspotHelperCommand:
+     * 
+     *   Binds the NSMutableURLRequest to the network interface associated with
+     *   the NEHotspotHelperCommand object.
+     */
     @Generated
     @Selector("bindToHotspotHelperCommand:")
     public native void bindToHotspotHelperCommand(NEHotspotHelperCommand command);
 
+    /**
+     * The cache policy of the receiver.
+     */
     @Generated
     @Selector("cachePolicy")
     @NUInt
@@ -213,7 +334,7 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableURLRequest initWithCoder(NSCoder aDecoder);
+    public native NSMutableURLRequest initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithURL:")
@@ -224,63 +345,197 @@ public class NSMutableURLRequest extends NSURLRequest {
     public native NSMutableURLRequest initWithURLCachePolicyTimeoutInterval(NSURL URL, @NUInt long cachePolicy,
             double timeoutInterval);
 
+    /**
+     * Sets the main document URL
+     * 
+     * The caller should pass the URL for an appropriate main
+     * document, if known. For example, when loading a web page, the URL
+     * of the main html document for the top-level frame should be
+     * passed.  This main document will be used to implement the cookie
+     * "only from same domain as main document" policy, and possibly
+     * other things in the future.
+     * NOTE: In the current implementation, the passed-in value is unused by the
+     * framework. A fully functional version of this method will be available 
+     * in the future. 
+     */
     @Generated
     @Selector("mainDocumentURL")
     public native NSURL mainDocumentURL();
 
+    /**
+     * Sets the NSURLRequestNetworkServiceType to associate with this request
+     * 
+     * This method is used to provide the network layers with a hint as to the purpose
+     * of the request.  Most clients should not need to use this method.
+     */
     @Generated
     @Selector("networkServiceType")
     @NUInt
     public native long networkServiceType();
 
+    /**
+     * Sets the HTTP header fields of the receiver to the given
+     * dictionary.
+     * 
+     * This method replaces all header fields that may have
+     * existed before this method call. 
+     * <p>Since HTTP header fields must be string values, each object and
+     * key in the dictionary passed to this method must answer YES when
+     * sent an <tt>-isKindOfClass:[NSString class]</tt> message. If either
+     * the key or value for a key-value pair answers NO when sent this
+     * message, the key-value pair is skipped.
+     */
     @Generated
     @Selector("setAllHTTPHeaderFields:")
     public native void setAllHTTPHeaderFields(NSDictionary<String, String> value);
 
+    /**
+     * sets whether a connection created with this request is allowed to use
+     * the built in cellular radios (if present). 
+     * 
+     * NO if the receiver should not be allowed to use the built in
+     * cellular radios to satisfy the request, YES otherwise.  The default is YES.
+     */
     @Generated
     @Selector("setAllowsCellularAccess:")
     public native void setAllowsCellularAccess(boolean value);
 
+    /**
+     * The cache policy of the receiver.
+     */
     @Generated
     @Selector("setCachePolicy:")
     public native void setCachePolicy(@NUInt long value);
 
+    /**
+     * Sets the request body data of the receiver.
+     * 
+     * This data is sent as the message body of the request, as
+     * in done in an HTTP POST request.
+     */
     @Generated
     @Selector("setHTTPBody:")
     public native void setHTTPBody(NSData value);
 
+    /**
+     * Sets the request body to be the contents of the given stream.
+     * 
+     * The provided stream should be unopened; the request will take
+     * over the stream's delegate.  The entire stream's contents will be 
+     * transmitted as the HTTP body of the request.  Note that the body stream
+     * and the body data (set by setHTTPBody:, above) are mutually exclusive 
+     * - setting one will clear the other.
+     */
     @Generated
     @Selector("setHTTPBodyStream:")
     public native void setHTTPBodyStream(NSInputStream value);
 
+    /**
+     * Sets the HTTP request method of the receiver.
+     */
     @Generated
     @Selector("setHTTPMethod:")
     public native void setHTTPMethod(String value);
 
+    /**
+     * Decide whether default cookie handling will happen for
+     * this request (YES if cookies should be sent with and set for this request;
+     * otherwise NO).
+     * 
+     * The default is YES - in other words, cookies are sent from and
+     * stored to the cookie manager by default.
+     * NOTE: In releases prior to 10.3, this value is ignored
+     */
     @Generated
     @Selector("setHTTPShouldHandleCookies:")
     public native void setHTTPShouldHandleCookies(boolean value);
 
+    /**
+     * Sets whether the request should not wait for the previous response
+     * before transmitting (YES if the receiver should transmit before the previous response is
+     * received.  NO to wait for the previous response before transmitting)
+     * 
+     * Calling this method with a YES value does not guarantee HTTP
+     * pipelining behavior.  This method may have no effect if an HTTP proxy is
+     * configured, or if the HTTP request uses an unsafe request method (e.g., POST
+     * requests will not pipeline).  Pipelining behavior also may not begin until
+     * the second request on a given TCP connection.  There may be other situations
+     * where pipelining does not occur even though YES was set.
+     * HTTP 1.1 allows the client to send multiple requests to the server without
+     * waiting for a response.  Though HTTP 1.1 requires support for pipelining,
+     * some servers report themselves as being HTTP 1.1 but do not support
+     * pipelining (disconnecting, sending resources misordered, omitting part of
+     * a resource, etc.).
+     */
     @Generated
     @Selector("setHTTPShouldUsePipelining:")
     public native void setHTTPShouldUsePipelining(boolean value);
 
+    /**
+     * Sets the main document URL
+     * 
+     * The caller should pass the URL for an appropriate main
+     * document, if known. For example, when loading a web page, the URL
+     * of the main html document for the top-level frame should be
+     * passed.  This main document will be used to implement the cookie
+     * "only from same domain as main document" policy, and possibly
+     * other things in the future.
+     * NOTE: In the current implementation, the passed-in value is unused by the
+     * framework. A fully functional version of this method will be available 
+     * in the future. 
+     */
     @Generated
     @Selector("setMainDocumentURL:")
     public native void setMainDocumentURL(NSURL value);
 
+    /**
+     * Sets the NSURLRequestNetworkServiceType to associate with this request
+     * 
+     * This method is used to provide the network layers with a hint as to the purpose
+     * of the request.  Most clients should not need to use this method.
+     */
     @Generated
     @Selector("setNetworkServiceType:")
     public native void setNetworkServiceType(@NUInt long value);
 
+    /**
+     * Sets the timeout interval of the receiver.
+     * 
+     * The timeout interval specifies the limit on the idle
+     * interval allotted to a request in the process of loading. The "idle
+     * interval" is defined as the period of time that has passed since the
+     * last instance of load activity occurred for a request that is in the
+     * process of loading. Hence, when an instance of load activity occurs
+     * (e.g. bytes are received from the network for a request), the idle
+     * interval for a request is reset to 0. If the idle interval ever
+     * becomes greater than or equal to the timeout interval, the request
+     * is considered to have timed out. This timeout interval is measured
+     * in seconds.
+     */
     @Generated
     @Selector("setTimeoutInterval:")
     public native void setTimeoutInterval(double value);
 
+    /**
+     * The URL of the receiver.
+     */
     @Generated
     @Selector("setURL:")
     public native void setURL(NSURL value);
 
+    /**
+     * setValue:forHTTPHeaderField:
+     * 
+     * Sets the value of the given HTTP header field.
+     * 
+     * If a value was previously set for the given header
+     * field, that value is replaced with the given value. Note that, in
+     * keeping with the HTTP RFC, HTTP header field names are
+     * case-insensitive.
+     * 
+     * @param value the header field value. 
+     * @param field the header field name (case-insensitive). 
+     */
     @Generated
     @Selector("setValue:forHTTPHeaderField:")
     public native void setValueForHTTPHeaderField(String value, String field);
@@ -291,7 +546,65 @@ public class NSMutableURLRequest extends NSURLRequest {
         return supportsSecureCoding();
     }
 
+    /**
+     * Sets the timeout interval of the receiver.
+     * 
+     * The timeout interval specifies the limit on the idle
+     * interval allotted to a request in the process of loading. The "idle
+     * interval" is defined as the period of time that has passed since the
+     * last instance of load activity occurred for a request that is in the
+     * process of loading. Hence, when an instance of load activity occurs
+     * (e.g. bytes are received from the network for a request), the idle
+     * interval for a request is reset to 0. If the idle interval ever
+     * becomes greater than or equal to the timeout interval, the request
+     * is considered to have timed out. This timeout interval is measured
+     * in seconds.
+     */
     @Generated
     @Selector("timeoutInterval")
     public native double timeoutInterval();
+
+    /**
+     * sets whether a connection created with this request is allowed to use
+     * network interfaces which have been marked as constrained.
+     * 
+     * NO if the receiver should not be allowed to use an interface marked as constrained to
+     * satify the request, YES otherwise.
+     */
+    @Generated
+    @Selector("allowsConstrainedNetworkAccess")
+    public native boolean allowsConstrainedNetworkAccess();
+
+    /**
+     * sets whether a connection created with this request is allowed to use
+     * network interfaces which have been marked as expensive.
+     * 
+     * NO if the receiver should not be allowed to use an interface marked as expensive to
+     * satify the request, YES otherwise.
+     */
+    @Generated
+    @Selector("allowsExpensiveNetworkAccess")
+    public native boolean allowsExpensiveNetworkAccess();
+
+    /**
+     * sets whether a connection created with this request is allowed to use
+     * network interfaces which have been marked as constrained.
+     * 
+     * NO if the receiver should not be allowed to use an interface marked as constrained to
+     * satify the request, YES otherwise.
+     */
+    @Generated
+    @Selector("setAllowsConstrainedNetworkAccess:")
+    public native void setAllowsConstrainedNetworkAccess(boolean value);
+
+    /**
+     * sets whether a connection created with this request is allowed to use
+     * network interfaces which have been marked as expensive.
+     * 
+     * NO if the receiver should not be allowed to use an interface marked as expensive to
+     * satify the request, YES otherwise.
+     */
+    @Generated
+    @Selector("setAllowsExpensiveNetworkAccess:")
+    public native void setAllowsExpensiveNetworkAccess(boolean value);
 }

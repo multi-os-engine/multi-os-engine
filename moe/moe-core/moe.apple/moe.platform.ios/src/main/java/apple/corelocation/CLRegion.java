@@ -45,6 +45,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CLRegion
+ * 
+ * Discussion:
+ *   A logical area.
+ */
 @Generated
 @Library("CoreLocation")
 @Runtime(ObjCRuntime.class)
@@ -160,12 +166,28 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * center
+     * 
+     * Discussion:
+     *   Returns the coordinate of the center of the region.
+     * 
+     *   This method has been deprecated, please see CLCircularRegion.
+     */
     @Generated
     @Deprecated
     @Selector("center")
     @ByValue
     public native CLLocationCoordinate2D center();
 
+    /**
+     * containsCoordinate:
+     * 
+     * Discussion:
+     *   Returns YES if the coordinate lies inside the region, and NO otherwise.
+     * 
+     *   This method has been deprecated, please see CLCircularRegion.
+     */
     @Generated
     @Deprecated
     @Selector("containsCoordinate:")
@@ -179,8 +201,14 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * identifier
+     * 
+     * Discussion:
+     *   Returns the region's identifier.
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -189,6 +217,16 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("init")
     public native CLRegion init();
 
+    /**
+     * initCircularRegionWithCenter:radius:identifier:
+     * 
+     * Discussion:
+     *   Initialize a region.  center gives the coordinates of center of the region, while radius gives
+     *   the distance in meters between the center and the region's boundary. identifier is a description
+     *   for the region that could be displayed to the user, and ideally should be chosen by the user.
+     * 
+     *   This method has been deprecated, please see CLCircularRegion.
+     */
     @Generated
     @Deprecated
     @Selector("initCircularRegionWithCenter:radius:identifier:")
@@ -197,25 +235,61 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLRegion initWithCoder(NSCoder aDecoder);
+    public native CLRegion initWithCoder(NSCoder coder);
 
+    /**
+     * notifyOnEntry
+     * 
+     * Discussion:
+     *   App will be launched and the delegate will be notified via locationManager:didEnterRegion:
+     *   when the user enters the region. By default, this is YES.
+     */
     @Generated
     @Selector("notifyOnEntry")
     public native boolean notifyOnEntry();
 
+    /**
+     * notifyOnExit
+     * 
+     * Discussion:
+     *   App will be launched and the delegate will be notified via locationManager:didExitRegion:
+     *   when the user exits the region. By default, this is YES.
+     */
     @Generated
     @Selector("notifyOnExit")
     public native boolean notifyOnExit();
 
+    /**
+     * radius
+     * 
+     * Discussion:
+     *   Returns the radius of the region.
+     * 
+     *   This method has been deprecated, please see CLCircularRegion.
+     */
     @Generated
     @Deprecated
     @Selector("radius")
     public native double radius();
 
+    /**
+     * notifyOnEntry
+     * 
+     * Discussion:
+     *   App will be launched and the delegate will be notified via locationManager:didEnterRegion:
+     *   when the user enters the region. By default, this is YES.
+     */
     @Generated
     @Selector("setNotifyOnEntry:")
     public native void setNotifyOnEntry(boolean value);
 
+    /**
+     * notifyOnExit
+     * 
+     * Discussion:
+     *   App will be launched and the delegate will be notified via locationManager:didExitRegion:
+     *   when the user exits the region. By default, this is YES.
+     */
     @Generated
     @Selector("setNotifyOnExit:")
     public native void setNotifyOnExit(boolean value);

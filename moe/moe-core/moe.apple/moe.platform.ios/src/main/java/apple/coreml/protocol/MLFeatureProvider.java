@@ -9,6 +9,9 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Protocol for accessing a feature value for a feature name
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -18,6 +21,9 @@ public interface MLFeatureProvider {
     @Selector("featureNames")
     NSSet<String> featureNames();
 
+    /**
+     * Returns nil if the provided featureName is not in the set of featureNames
+     */
     @Generated
     @Selector("featureValueForName:")
     MLFeatureValue featureValueForName(String featureName);

@@ -154,10 +154,16 @@ public class MPChangeShuffleModeCommandEvent extends MPRemoteCommandEvent {
     @Selector("init")
     public native MPChangeShuffleModeCommandEvent init();
 
+    /**
+     * Whether or not the selection should be preserved between playback sessions
+     */
     @Generated
     @Selector("preservesShuffleMode")
     public native boolean preservesShuffleMode();
 
+    /**
+     * The desired shuffle type to use when fulfilling the request.
+     */
     @Generated
     @Selector("shuffleType")
     @NInt

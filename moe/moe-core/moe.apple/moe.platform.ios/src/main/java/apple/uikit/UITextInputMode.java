@@ -42,6 +42,10 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The UITextInputMode class should not be subclassed. It is to allow other in-app functionality to adapt
+ * based on the keyboard language. Different UITextInputMode objects may have the same primaryLanguage.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -60,6 +64,9 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * The active input modes.
+     */
     @Generated
     @Selector("activeInputModes")
     public static native NSArray<? extends UITextInputMode> activeInputModes();
@@ -96,6 +103,9 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The current input mode.  Nil if unset.
+     */
     @Generated
     @Deprecated
     @Selector("currentInputMode")
@@ -168,7 +178,7 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -176,8 +186,11 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITextInputMode initWithCoder(NSCoder aDecoder);
+    public native UITextInputMode initWithCoder(NSCoder coder);
 
+    /**
+     * The primary language, if any, of the input mode.  A BCP 47 language identifier such as en-US
+     */
     @Generated
     @Selector("primaryLanguage")
     public native String primaryLanguage();

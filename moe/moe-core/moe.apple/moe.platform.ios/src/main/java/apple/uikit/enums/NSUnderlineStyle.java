@@ -19,12 +19,13 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Attribute values ***********************
+ *  This defines currently supported values for NSUnderlineStyleAttributeName and NSStrikethroughStyleAttributeName. These values are or'ed together to produce an underline style.
+ *  Underlines will be drawn with a solid pattern by default, so NSUnderlineStylePatternSolid does not need to be specified.
+ */
 @Generated
 public final class NSUnderlineStyle {
-    @Generated @NInt public static final long StyleNone = 0x0000000000000000L;
-    @Generated @NInt public static final long StyleSingle = 0x0000000000000001L;
-    @Generated @NInt public static final long StyleThick = 0x0000000000000002L;
-    @Generated @NInt public static final long StyleDouble = 0x0000000000000009L;
     @Generated @NInt public static final long PatternSolid = 0x0000000000000000L;
     @Generated @NInt public static final long PatternDot = 0x0000000000000100L;
     @Generated @NInt public static final long PatternDash = 0x0000000000000200L;
@@ -35,4 +36,9 @@ public final class NSUnderlineStyle {
     @Generated
     private NSUnderlineStyle() {
     }
+
+    @Generated @NInt public static final long None = 0x0000000000000000L;
+    @Generated @NInt public static final long Single = 0x0000000000000001L;
+    @Generated @NInt public static final long Thick = 0x0000000000000002L;
+    @Generated @NInt public static final long Double = 0x0000000000000009L;
 }

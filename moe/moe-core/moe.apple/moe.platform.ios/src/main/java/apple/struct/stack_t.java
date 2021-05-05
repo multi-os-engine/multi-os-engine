@@ -52,27 +52,45 @@ public final class stack_t extends StructObject {
         setSs_flags(ss_flags);
     }
 
+    /**
+     * signal stack base
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr ss_sp();
 
+    /**
+     * signal stack base
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setSs_sp(VoidPtr value);
 
+    /**
+     * signal stack length
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @NUInt
     public native long ss_size();
 
+    /**
+     * signal stack length
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setSs_size(@NUInt long value);
 
+    /**
+     * SA_DISABLE and/or SA_ONSTACK
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int ss_flags();
 
+    /**
+     * SA_DISABLE and/or SA_ONSTACK
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setSs_flags(int value);

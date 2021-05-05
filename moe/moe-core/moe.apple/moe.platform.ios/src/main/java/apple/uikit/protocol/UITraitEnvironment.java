@@ -24,6 +24,9 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Trait environments expose a trait collection that describes their environment.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -33,6 +36,9 @@ public interface UITraitEnvironment {
     @Selector("traitCollection")
     UITraitCollection traitCollection();
 
+    /**
+     * To be overridden as needed to provide custom behavior when the environment's traits change.
+     */
     @Generated
     @Selector("traitCollectionDidChange:")
     void traitCollectionDidChange(UITraitCollection previousTraitCollection);

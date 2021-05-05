@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A request to recognize speech from a recorded audio file
+ */
 @Generated
 @Library("Speech")
 @Runtime(ObjCRuntime.class)
@@ -159,6 +162,9 @@ public class SFSpeechURLRecognitionRequest extends SFSpeechRecognitionRequest {
     @Selector("init")
     public native SFSpeechURLRecognitionRequest init();
 
+    /**
+     * Request to transcribe speech from an audio file from the given URL.
+     */
     @Generated
     @Selector("initWithURL:")
     public native SFSpeechURLRecognitionRequest initWithURL(NSURL URL);

@@ -148,6 +148,9 @@ public class NSXMLParser extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * called by the delegate to stop the parse. The delegate will get an error message sent to it.
+     */
     @Generated
     @Selector("abortParsing")
     public native void abortParsing();
@@ -161,11 +164,17 @@ public class NSXMLParser extends NSObject {
     @NInt
     public native long columnNumber();
 
+    /**
+     * delegate management. The delegate is not retained.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSXMLParserDelegate delegate();
 
+    /**
+     * defaults to NSXMLNodeLoadExternalEntitiesNever
+     */
     @Generated
     @Selector("externalEntityResolvingPolicy")
     @NUInt
@@ -175,14 +184,23 @@ public class NSXMLParser extends NSObject {
     @Selector("init")
     public native NSXMLParser init();
 
+    /**
+     * initializes the parser with the specified URL.
+     */
     @Generated
     @Selector("initWithContentsOfURL:")
     public native NSXMLParser initWithContentsOfURL(NSURL url);
 
+    /**
+     * create the parser from data
+     */
     @Generated
     @Selector("initWithData:")
     public native NSXMLParser initWithData(NSData data);
 
+    /**
+     * create a parser that incrementally pulls data from the specified stream and parses it.
+     */
     @Generated
     @Selector("initWithStream:")
     public native NSXMLParser initWithStream(NSInputStream stream);
@@ -192,10 +210,16 @@ public class NSXMLParser extends NSObject {
     @NInt
     public native long lineNumber();
 
+    /**
+     * called to start the event-driven parse. Returns YES in the event of a successful parse, and NO in case of error.
+     */
     @Generated
     @Selector("parse")
     public native boolean parse();
 
+    /**
+     * can be called after a parse is over to determine parser state.
+     */
     @Generated
     @Selector("parserError")
     public native NSError parserError();
@@ -208,10 +232,16 @@ public class NSXMLParser extends NSObject {
     @Selector("setAllowedExternalEntityURLs:")
     public native void setAllowedExternalEntityURLs(NSSet<? extends NSURL> value);
 
+    /**
+     * delegate management. The delegate is not retained.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSXMLParserDelegate value);
 
+    /**
+     * delegate management. The delegate is not retained.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSXMLParserDelegate value) {
         Object __old = delegate();
@@ -224,6 +254,9 @@ public class NSXMLParser extends NSObject {
         }
     }
 
+    /**
+     * defaults to NSXMLNodeLoadExternalEntitiesNever
+     */
     @Generated
     @Selector("setExternalEntityResolvingPolicy:")
     public native void setExternalEntityResolvingPolicy(@NUInt long value);
@@ -236,6 +269,10 @@ public class NSXMLParser extends NSObject {
     @Selector("setShouldReportNamespacePrefixes:")
     public native void setShouldReportNamespacePrefixes(boolean value);
 
+    /**
+     * Toggles between disabling external entities entirely, and the current setting of the 'externalEntityResolvingPolicy'.
+     * The 'externalEntityResolvingPolicy' property should be used instead of this, unless targeting 10.9/7.0 or earlier
+     */
     @Generated
     @Selector("setShouldResolveExternalEntities:")
     public native void setShouldResolveExternalEntities(boolean value);
@@ -248,6 +285,10 @@ public class NSXMLParser extends NSObject {
     @Selector("shouldReportNamespacePrefixes")
     public native boolean shouldReportNamespacePrefixes();
 
+    /**
+     * Toggles between disabling external entities entirely, and the current setting of the 'externalEntityResolvingPolicy'.
+     * The 'externalEntityResolvingPolicy' property should be used instead of this, unless targeting 10.9/7.0 or earlier
+     */
     @Generated
     @Selector("shouldResolveExternalEntities")
     public native boolean shouldResolveExternalEntities();

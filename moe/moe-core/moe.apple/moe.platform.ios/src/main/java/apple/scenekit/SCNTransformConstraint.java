@@ -46,6 +46,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * SCNTransformConstraint
+ * 
+ * A SCNTransformConstraint applies on the transform of a node via a custom block.
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +161,16 @@ public class SCNTransformConstraint extends SCNConstraint {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * transformConstraintInWorldSpace:withBlock:
+     * 
+     * Creates and returns a SCNTransformConstraint object with the specified parameters.
+     * 
+     * The node and its transform are passed to the block. The transform returned by the block will be used to render the node.
+     * 
+     * @param world Determines whether the constraint is evaluated in world or local space.
+     * @param block The custom block to call to evaluate the constraint.
+     */
     @Generated
     @Selector("transformConstraintInWorldSpace:withBlock:")
     public static native SCNTransformConstraint transformConstraintInWorldSpaceWithBlock(boolean world,
@@ -172,7 +187,7 @@ public class SCNTransformConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNTransformConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNTransformConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -185,9 +200,19 @@ public class SCNTransformConstraint extends SCNConstraint {
     public interface Block_transformConstraintInWorldSpaceWithBlock {
         @Generated
         @ByValue
-        SCNMatrix4 call_transformConstraintInWorldSpaceWithBlock(SCNNode arg0, @ByValue SCNMatrix4 arg1);
+        SCNMatrix4 call_transformConstraintInWorldSpaceWithBlock(SCNNode node, @ByValue SCNMatrix4 transform);
     }
 
+    /**
+     * orientationConstraintInWorldSpace:withBlock:
+     * 
+     * Creates and returns a SCNTransformConstraint object with the specified parameters.
+     * 
+     * The node and its quaternion are passed to the block. The quaternion returned by the block will be used to render the node.
+     * 
+     * @param world Determines whether the constraint is evaluated in world or local space.
+     * @param block The custom block to call to evaluate the constraint.
+     */
     @Generated
     @Selector("orientationConstraintInWorldSpace:withBlock:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -199,9 +224,19 @@ public class SCNTransformConstraint extends SCNConstraint {
     public interface Block_orientationConstraintInWorldSpaceWithBlock {
         @Generated
         @ByValue
-        SCNVector4 call_orientationConstraintInWorldSpaceWithBlock(SCNNode arg0, @ByValue SCNVector4 arg1);
+        SCNVector4 call_orientationConstraintInWorldSpaceWithBlock(SCNNode node, @ByValue SCNVector4 quaternion);
     }
 
+    /**
+     * positionConstraintInWorldSpace:withBlock:
+     * 
+     * Creates and returns a SCNTransformConstraint object with the specified parameters.
+     * 
+     * The node and its position are passed to the block. The position returned by the block will be used to render the node.
+     * 
+     * @param world Determines whether the constraint is evaluated in world or local space.
+     * @param block The custom block to call to evaluate the constraint.
+     */
     @Generated
     @Selector("positionConstraintInWorldSpace:withBlock:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -213,6 +248,6 @@ public class SCNTransformConstraint extends SCNConstraint {
     public interface Block_positionConstraintInWorldSpaceWithBlock {
         @Generated
         @ByValue
-        SCNVector3 call_positionConstraintInWorldSpaceWithBlock(SCNNode arg0, @ByValue SCNVector3 arg1);
+        SCNVector3 call_positionConstraintInWorldSpaceWithBlock(SCNNode node, @ByValue SCNVector3 position);
     }
 }

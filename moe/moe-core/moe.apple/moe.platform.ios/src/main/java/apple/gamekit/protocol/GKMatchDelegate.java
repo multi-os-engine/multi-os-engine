@@ -34,6 +34,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKMatchDelegate")
 public interface GKMatchDelegate {
+    /**
+     * The match was unable to be established with any players due to an error.
+     */
     @Generated
     @IsOptional
     @Selector("match:didFailWithError:")
@@ -49,6 +52,9 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * These protocol methods are obsoleted. They will never be invoked and their implementation does nothing**
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -57,6 +63,9 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The match received data sent from the player.
+     */
     @Generated
     @IsOptional
     @Selector("match:didReceiveData:fromRemotePlayer:")
@@ -64,6 +73,9 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The player state changed (eg. connected or disconnected)
+     */
     @Generated
     @IsOptional
     @Selector("match:player:didChangeConnectionState:")
@@ -79,6 +91,9 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This method is called when the match is interrupted; if it returns YES, a new invite will be sent to attempt reconnection. This is supported only for 1v1 games
+     */
     @Generated
     @IsOptional
     @Selector("match:shouldReinviteDisconnectedPlayer:")

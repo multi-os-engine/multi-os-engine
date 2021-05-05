@@ -35,11 +35,19 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKAddPaymentPassViewControllerDelegate")
 public interface PKAddPaymentPassViewControllerDelegate {
+    /**
+     * Error parameter will use codes from the PKAddPaymentPassError enumeration, using the PKPassKitErrorDomain domain.
+     */
     @Generated
     @Selector("addPaymentPassViewController:didFinishAddingPaymentPass:error:")
     void addPaymentPassViewControllerDidFinishAddingPaymentPassError(PKAddPaymentPassViewController controller,
             PKPaymentPass pass, NSError error);
 
+    /**
+     * Certificates is an array of NSData, each a DER encoded X.509 certificate, with the leaf first and root last.
+     * The continuation handler must be called within 20 seconds or an error will be displayed.
+     * Subsequent to timeout, the continuation handler is invalid and invocations will be ignored.
+     */
     @Generated
     @Selector("addPaymentPassViewController:generateRequestWithCertificateChain:nonce:nonceSignature:completionHandler:")
     void addPaymentPassViewControllerGenerateRequestWithCertificateChainNonceNonceSignatureCompletionHandler(
@@ -52,6 +60,6 @@ public interface PKAddPaymentPassViewControllerDelegate {
     public interface Block_addPaymentPassViewControllerGenerateRequestWithCertificateChainNonceNonceSignatureCompletionHandler {
         @Generated
         void call_addPaymentPassViewControllerGenerateRequestWithCertificateChainNonceNonceSignatureCompletionHandler(
-                PKAddPaymentPassRequest arg0);
+                PKAddPaymentPassRequest request);
     }
 }

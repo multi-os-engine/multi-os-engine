@@ -39,6 +39,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A WKNavigation object can be used for tracking the loading progress of a webpage.
+ * 
+ * A navigation is returned from the web view load methods, and is
+ * also passed to the navigation delegate methods, to uniquely identify a webpage
+ * load from start to finish.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -153,4 +160,14 @@ public class WKNavigation extends NSObject {
     @Generated
     @Selector("init")
     public native WKNavigation init();
+
+    /**
+     * The content mode used when loading this webpage.
+     * 
+     * The value is either WKContentModeMobile or WKContentModeDesktop.
+     */
+    @Generated
+    @Selector("effectiveContentMode")
+    @NInt
+    public native long effectiveContentMode();
 }

@@ -18,6 +18,9 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Line cap styles.
+ */
 @Generated
 public final class CGLineCap {
     @Generated public static final int Butt = 0x00000000;

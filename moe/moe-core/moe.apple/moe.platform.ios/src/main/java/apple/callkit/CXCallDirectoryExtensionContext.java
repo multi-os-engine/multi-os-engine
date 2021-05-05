@@ -196,25 +196,63 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
     @Generated
     public interface Block_completeRequestWithCompletionHandler {
         @Generated
-        void call_completeRequestWithCompletionHandler(boolean arg0);
+        void call_completeRequestWithCompletionHandler(boolean expired);
     }
 
+    /**
+     * Whether the request should provide incremental data.
+     * 
+     * If this is called at the beginning of the request (before any entries have been added or removed) and the result is YES,
+     * then the request must only provide an "incremental" set of entries, i.e. only add or remove entries relative to the last time data
+     * was loaded for the extension. Otherwise, if this method is not called OR is called and returns NO, then the request must provide
+     * a "complete" set of entries, adding the full list of entries from scratch (and removing none), regardless of whether data has ever been
+     * successfully loaded in the past.
+     */
     @Generated
     @Selector("isIncremental")
     public native boolean isIncremental();
 
+    /**
+     * Remove all currently-stored blocking entries.
+     * 
+     * May only be used when `-isIncremental` returns YES, indicating that the request should provide incremental entries and thus may use this
+     * API to remove all previously-added blocking entries.
+     */
     @Generated
     @Selector("removeAllBlockingEntries")
     public native void removeAllBlockingEntries();
 
+    /**
+     * Remove all currently-stored identification entries.
+     * 
+     * May only be used when `-isIncremental` returns YES, indicating that the request should provide incremental entries and thus may use this
+     * API to remove all previously-added identification entries.
+     */
     @Generated
     @Selector("removeAllIdentificationEntries")
     public native void removeAllIdentificationEntries();
 
+    /**
+     * Remove blocking entry with the specified phone number.
+     * 
+     * May only be used when `-isIncremental` returns YES, indicating that the request should provide incremental entries and thus may use this
+     * API to remove a previously-added blocking entry.
+     * 
+     * @param phoneNumber The blocking entry phone number to remove.
+     */
     @Generated
     @Selector("removeBlockingEntryWithPhoneNumber:")
     public native void removeBlockingEntryWithPhoneNumber(long phoneNumber);
 
+    /**
+     * Remove identification entry with the specified phone number.
+     * 
+     * May only be used when `-isIncremental` returns YES, indicating that the request should provide incremental entries and thus may use this
+     * API to remove a previously-added identification entry. Removes all identification entries with the specified phone number, even if
+     * multiple identification entries with different labels are present for a single phone number.
+     * 
+     * @param phoneNumber The identification entry phone number to remove.
+     */
     @Generated
     @Selector("removeIdentificationEntryWithPhoneNumber:")
     public native void removeIdentificationEntryWithPhoneNumber(long phoneNumber);

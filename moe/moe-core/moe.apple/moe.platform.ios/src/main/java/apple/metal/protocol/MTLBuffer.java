@@ -30,30 +30,71 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@protocol] MTLBuffer
+ * 
+ * A typeless allocation accessible by both the CPU and the GPU (MTLDevice) or by only the GPU when the storage mode is
+ * MTLResourceStorageModePrivate.
+ * 
+ * Unlike in OpenGL and OpenCL, access to buffers is not synchronized.  The caller may use the CPU to modify the data at any time
+ * but is also responsible for ensuring synchronization and coherency.
+ * 
+ * The contents become undefined if both the CPU and GPU write to the same buffer without a synchronizing action between those writes.
+ * This is true even when the regions written do not overlap.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLBuffer")
 public interface MTLBuffer extends MTLResource {
+    /**
+     * addDebugMarker:range:
+     * 
+     * Adds a marker to a specific range in the buffer.
+     * When inspecting a buffer in the GPU debugging tools the marker will be shown.
+     * 
+     * @param marker A label used for the marker.
+     * @param range The range of bytes the marker is using.
+     */
     @Generated
     @Selector("addDebugMarker:range:")
     void addDebugMarkerRange(String marker, @ByValue NSRange range);
 
+    /**
+     * contents
+     * 
+     * Returns the data pointer of this buffer's shared copy.
+     */
     @Generated
     @Selector("contents")
     VoidPtr contents();
 
+    /**
+     * [@property] length
+     * 
+     * The length of the buffer in bytes.
+     */
     @Generated
     @Selector("length")
     @NUInt
     long length();
 
+    /**
+     * newTextureWithDescriptor:offset:bytesPerRow:
+     * 
+     * Create a 2D texture or texture buffer that shares storage with this buffer.
+     */
     @Generated
     @Selector("newTextureWithDescriptor:offset:bytesPerRow:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newTextureWithDescriptorOffsetBytesPerRow(MTLTextureDescriptor descriptor, @NUInt long offset,
+    MTLTexture newTextureWithDescriptorOffsetBytesPerRow(MTLTextureDescriptor descriptor, @NUInt long offset,
             @NUInt long bytesPerRow);
 
+    /**
+     * removeAllDebugMarkers
+     * 
+     * Removes all debug markers from a buffer.
+     */
     @Generated
     @Selector("removeAllDebugMarkers")
     void removeAllDebugMarkers();

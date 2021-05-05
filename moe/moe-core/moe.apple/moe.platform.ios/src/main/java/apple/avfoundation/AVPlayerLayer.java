@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -154,6 +155,13 @@ public class AVPlayerLayer extends CALayer {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * layerWithPlayer:
+     * 
+     * Returns an instance of AVPlayerLayer to display the visual output of the specified AVPlayer.
+     * 
+     * @return		An instance of AVPlayerLayer.
+     */
     @Generated
     @Selector("playerLayerWithPlayer:")
     public static native AVPlayerLayer playerLayerWithPlayer(AVPlayer player);
@@ -185,40 +193,93 @@ public class AVPlayerLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVPlayerLayer initWithCoder(NSCoder aDecoder);
+    public native AVPlayerLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
     public native AVPlayerLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
+    /**
+     * [@property]		readyForDisplay
+     * 
+     * Boolean indicating that the first video frame has been made ready for display for the current item of the associated AVPlayer.
+     * [@discusssion]	Use this property as an indicator of when best to show or animate-in an AVPlayerLayer into view. 
+     * 			An AVPlayerLayer may be displayed, or made visible, while this propoerty is NO, however the layer will not have any user-visible content until the value becomes YES. Note that if an animation is added to an AVPlayerLayer before it becomes readyForDisplay the video image displayed inside might not animate with the receiver.
+     * 			This property remains NO for an AVPlayer currentItem whose AVAsset contains no enabled video tracks.
+     */
     @Generated
     @Selector("isReadyForDisplay")
     public native boolean isReadyForDisplay();
 
+    /**
+     * [@property]		pixelBufferAttributes
+     * 
+     * The client requirements for the visual output displayed in AVPlayerLayer during playback.
+     * 
+     * Pixel buffer attribute keys are defined in <CoreVideo/CVPixelBuffer.h>
+     */
     @Generated
     @Selector("pixelBufferAttributes")
     public native NSDictionary<String, ?> pixelBufferAttributes();
 
+    /**
+     * [@property]		player
+     * 
+     * Indicates the instance of AVPlayer for which the AVPlayerLayer displays visual output
+     */
     @Generated
     @Selector("player")
     public native AVPlayer player();
 
+    /**
+     * [@property]		pixelBufferAttributes
+     * 
+     * The client requirements for the visual output displayed in AVPlayerLayer during playback.
+     * 
+     * Pixel buffer attribute keys are defined in <CoreVideo/CVPixelBuffer.h>
+     */
     @Generated
     @Selector("setPixelBufferAttributes:")
     public native void setPixelBufferAttributes(NSDictionary<String, ?> value);
 
+    /**
+     * [@property]		player
+     * 
+     * Indicates the instance of AVPlayer for which the AVPlayerLayer displays visual output
+     */
     @Generated
     @Selector("setPlayer:")
     public native void setPlayer(AVPlayer value);
 
+    /**
+     * [@property]		videoGravity
+     * 
+     * A string defining how the video is displayed within an AVPlayerLayer bounds rect.
+     * [@discusssion]	Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill 
+     * 					and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default. 
+     * 				See <AVFoundation/AVAnimation.h> for a description of these options.
+     */
     @Generated
     @Selector("setVideoGravity:")
     public native void setVideoGravity(String value);
 
+    /**
+     * [@property]		videoGravity
+     * 
+     * A string defining how the video is displayed within an AVPlayerLayer bounds rect.
+     * [@discusssion]	Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill 
+     * 					and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default. 
+     * 				See <AVFoundation/AVAnimation.h> for a description of these options.
+     */
     @Generated
     @Selector("videoGravity")
     public native String videoGravity();
 
+    /**
+     * [@property]		videoRect
+     * 
+     * The current size and position of the video image as displayed within the receiver's bounds.
+     */
     @Generated
     @Selector("videoRect")
     @ByValue
@@ -233,4 +294,9 @@ public class AVPlayerLayer extends CALayer {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
 }

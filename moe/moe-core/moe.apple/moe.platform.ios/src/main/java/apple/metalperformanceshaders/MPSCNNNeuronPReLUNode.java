@@ -24,6 +24,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A ReLU node with parameter a provided independently for each feature channel
+ * 
+ * For each pixel, applies the following function:
+ * [@code]
+ *     f(x) = x                if x >= 0
+ *          = aData[i] * x     if x < 0,  i is the index of the feature channel
+ * [@endcode]
+ * 
+ * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+ * @param      aData                   An array of single precision floating-point alpha values to use
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -91,6 +103,19 @@ public class MPSCNNNeuronPReLUNode extends MPSCNNNeuronNode {
     @Selector("init")
     public native MPSCNNNeuronPReLUNode init();
 
+    /**
+     * Init a node representing a MPSCNNNeuronTanH kernel
+     * 
+     * For each pixel, applies the following function:
+     * [@code]
+     *     f(x) = x                if x >= 0
+     *          = aData[i] * x     if x < 0,  i is the index of the feature channel
+     * [@endcode]
+     * 
+     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+     * @param      aData                   An array of single precision floating-point alpha values to use
+     * @return     A new MPSNNFilter node for a MPSCNNNeuronTanH kernel.
+     */
     @Generated
     @Selector("initWithSource:aData:")
     public native MPSCNNNeuronPReLUNode initWithSourceAData(MPSNNImageNode sourceNode, NSData aData);
@@ -146,4 +171,9 @@ public class MPSCNNNeuronPReLUNode extends MPSCNNNeuronNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("nodeWithSource:descriptor:")
+    public static native MPSCNNNeuronPReLUNode nodeWithSourceDescriptor(MPSNNImageNode sourceNode,
+            MPSNNNeuronDescriptor descriptor);
 }

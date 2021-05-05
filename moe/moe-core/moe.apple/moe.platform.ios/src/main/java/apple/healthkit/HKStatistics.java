@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
+import apple.foundation.NSDateInterval;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
@@ -44,6 +45,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKStatistics
+ * 
+ * Represents statistics for quantity samples over a period of time.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -159,10 +165,22 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
     @NInt
     public static native long version_static();
 
+    /**
+     * averageQuantity
+     * 
+     * Returns the average quantity in the time period represented by the receiver.
+     */
     @Generated
     @Selector("averageQuantity")
     public native HKQuantity averageQuantity();
 
+    /**
+     * averageQuantityForSource:
+     * 
+     * Returns the average quantity for the given source in the time period represented by the receiver.
+     * 
+     * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     */
     @Generated
     @Selector("averageQuantityForSource:")
     public native HKQuantity averageQuantityForSource(HKSource source);
@@ -175,7 +193,7 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("endDate")
@@ -187,20 +205,44 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKStatistics initWithCoder(NSCoder aDecoder);
+    public native HKStatistics initWithCoder(NSCoder coder);
 
+    /**
+     * maximumQuantity
+     * 
+     * Returns the maximum quantity in the time period represented by the receiver.
+     */
     @Generated
     @Selector("maximumQuantity")
     public native HKQuantity maximumQuantity();
 
+    /**
+     * maximumQuantityForSource:
+     * 
+     * Returns the maximum quantity for the given source in the time period represented by the receiver.
+     * 
+     * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     */
     @Generated
     @Selector("maximumQuantityForSource:")
     public native HKQuantity maximumQuantityForSource(HKSource source);
 
+    /**
+     * minimumQuantity
+     * 
+     * Returns the minimum quantity in the time period represented by the receiver.
+     */
     @Generated
     @Selector("minimumQuantity")
     public native HKQuantity minimumQuantity();
 
+    /**
+     * minimumQuantityForSource:
+     * 
+     * Returns the minimum quantity for the given source in the time period represented by the receiver.
+     * 
+     * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     */
     @Generated
     @Selector("minimumQuantityForSource:")
     public native HKQuantity minimumQuantityForSource(HKSource source);
@@ -217,10 +259,22 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("startDate")
     public native NSDate startDate();
 
+    /**
+     * sumQuantity
+     * 
+     * Returns the sum of quantities in the time period represented by the receiver.
+     */
     @Generated
     @Selector("sumQuantity")
     public native HKQuantity sumQuantity();
 
+    /**
+     * sumQuantityForSource:
+     * 
+     * Returns the sum quantity for the given source in the time period represented by the receiver.
+     * 
+     * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     */
     @Generated
     @Selector("sumQuantityForSource:")
     public native HKQuantity sumQuantityForSource(HKSource source);
@@ -230,4 +284,70 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     *  Total duration (in seconds) covered by the samples represented by these statistics.
+     *  Only present if HKStatisticsOptionDuration is is specified.
+     * 
+     * duration
+     * 
+     * Total duration, as a time-unit compatible quantity, covered by the samples represented by these statistics.
+     * 
+     * Only present if HKStatisticsOptionDuration is is specified.
+     */
+    @Generated
+    @Selector("duration")
+    public native HKQuantity duration();
+
+    /**
+     * durationForSource:
+     * 
+     * Returns the duration, as a time-unit compatible quantity, for the given source in the time period represented by the receiver.
+     * 
+     * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     */
+    @Generated
+    @Selector("durationForSource:")
+    public native HKQuantity durationForSource(HKSource source);
+
+    /**
+     * mostRecentQuantity
+     * 
+     * Returns the most recent quantity in the time period represented by the receiver.
+     */
+    @Generated
+    @Selector("mostRecentQuantity")
+    public native HKQuantity mostRecentQuantity();
+
+    /**
+     * mostRecentQuantityDateInterval
+     * 
+     * Returns the date interval of the most recent quantity in the time period represented by the receiver.
+     */
+    @Generated
+    @Selector("mostRecentQuantityDateInterval")
+    public native NSDateInterval mostRecentQuantityDateInterval();
+
+    /**
+     * mostRecentQuantityDateIntervalForSource:
+     * 
+     * Returns the date interval of the most recent quantity for the given source in the time period
+     *                represented by the receiver.
+     * 
+     * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     */
+    @Generated
+    @Selector("mostRecentQuantityDateIntervalForSource:")
+    public native NSDateInterval mostRecentQuantityDateIntervalForSource(HKSource source);
+
+    /**
+     * mostRecentQuantityForSource:
+     * 
+     * Returns the most recent quantity for the given source in the time period represented by the receiver.
+     * 
+     * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     */
+    @Generated
+    @Selector("mostRecentQuantityForSource:")
+    public native HKQuantity mostRecentQuantityForSource(HKSource source);
 }

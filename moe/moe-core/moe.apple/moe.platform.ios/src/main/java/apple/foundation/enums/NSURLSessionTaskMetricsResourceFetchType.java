@@ -19,11 +19,23 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * The resource fetch type.
+ */
 @Generated
 public final class NSURLSessionTaskMetricsResourceFetchType {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * The resource was loaded over the network.
+     */
     @Generated @NInt public static final long NetworkLoad = 0x0000000000000001L;
+    /**
+     * The resource was pushed by the server to the client.
+     */
     @Generated @NInt public static final long ServerPush = 0x0000000000000002L;
+    /**
+     * The resource was retrieved from the local storage.
+     */
     @Generated @NInt public static final long LocalCache = 0x0000000000000003L;
 
     @Generated

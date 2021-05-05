@@ -22,8 +22,17 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class UIDeviceBatteryState {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * on battery, discharging
+     */
     @Generated @NInt public static final long Unplugged = 0x0000000000000001L;
+    /**
+     * plugged in, less than 100%
+     */
     @Generated @NInt public static final long Charging = 0x0000000000000002L;
+    /**
+     * plugged in, at 100%
+     */
     @Generated @NInt public static final long Full = 0x0000000000000003L;
 
     @Generated

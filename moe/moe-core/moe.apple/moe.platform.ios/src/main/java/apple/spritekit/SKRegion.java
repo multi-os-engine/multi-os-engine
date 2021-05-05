@@ -24,8 +24,8 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -43,6 +43,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -50,7 +51,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKRegion extends NSObject implements NSCopying, NSCoding {
+public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -109,6 +110,9 @@ public class SKRegion extends NSObject implements NSCopying, NSCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * A shared infinite region
+     */
     @Generated
     @Selector("infiniteRegion")
     @MappedReturn(ObjCObjectMapper.class)
@@ -162,6 +166,9 @@ public class SKRegion extends NSObject implements NSCopying, NSCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Test for containment
+     */
     @Generated
     @Selector("containsPoint:")
     public native boolean containsPoint(@ByValue CGPoint point);
@@ -174,7 +181,7 @@ public class SKRegion extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -182,20 +189,35 @@ public class SKRegion extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKRegion initWithCoder(NSCoder aDecoder);
+    public native SKRegion initWithCoder(NSCoder coder);
 
+    /**
+     * Create a region bounded by a CGPath. Note that this option can be
+     * costly to evaluate.
+     */
     @Generated
     @Selector("initWithPath:")
     public native SKRegion initWithPath(CGPathRef path);
 
+    /**
+     * Create a circular region with radius
+     */
     @Generated
     @Selector("initWithRadius:")
     public native SKRegion initWithRadius(float radius);
 
+    /**
+     * Create a rectangular region of size
+     */
     @Generated
     @Selector("initWithSize:")
     public native SKRegion initWithSize(@ByValue CGSize size);
 
+    /**
+     * Create a new region that is the inverse of the current region.
+     * The inverse of the infiniteRegion is an empty region.
+     * Subclasses of SKRegion need to provide an implementation of inverseRegion.
+     */
     @Generated
     @Selector("inverseRegion")
     @MappedReturn(ObjCObjectMapper.class)
@@ -205,18 +227,37 @@ public class SKRegion extends NSObject implements NSCopying, NSCoding {
     @Selector("path")
     public native CGPathRef path();
 
+    /**
+     * Create a new region that is the original region minus the supplied region
+     */
     @Generated
     @Selector("regionByDifferenceFromRegion:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object regionByDifferenceFromRegion(SKRegion region);
 
+    /**
+     * Create a new region that is the region covered by the original region and the supplied region
+     */
     @Generated
     @Selector("regionByIntersectionWithRegion:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object regionByIntersectionWithRegion(SKRegion region);
 
+    /**
+     * Create a new region that is the original region plus the supplied region
+     */
     @Generated
     @Selector("regionByUnionWithRegion:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object regionByUnionWithRegion(SKRegion region);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

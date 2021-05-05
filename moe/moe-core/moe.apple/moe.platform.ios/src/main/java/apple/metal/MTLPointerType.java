@@ -46,6 +46,9 @@ public class MTLPointerType extends MTLType {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * min alignment for the element data
+     */
     @Generated
     @Selector("alignment")
     @NUInt
@@ -83,6 +86,9 @@ public class MTLPointerType extends MTLType {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * sizeof(T) for T *argName
+     */
     @Generated
     @Selector("dataSize")
     @NUInt
@@ -108,6 +114,9 @@ public class MTLPointerType extends MTLType {
     @Selector("elementStructType")
     public native MTLStructType elementStructType();
 
+    /**
+     * MTLDataTypeFloat, MTLDataTypeFloat4, MTLDataTypeStruct, ...
+     */
     @Generated
     @Selector("elementType")
     @NUInt

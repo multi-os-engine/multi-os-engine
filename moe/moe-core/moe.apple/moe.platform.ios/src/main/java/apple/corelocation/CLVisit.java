@@ -46,6 +46,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CLVisit
+ * 
+ * Discussion
+ *   An instance of this class represents a possibly open-ended event
+ *   during which the device was at the specified coordinate.
+ */
 @Generated
 @Library("CoreLocation")
 @Runtime(ObjCRuntime.class)
@@ -161,10 +168,23 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * arrivalDate
+     * 
+     * Discussion:
+     *   The date when the visit began.  This may be equal to [NSDate
+     *   distantPast] if the true arrival date isn't available.
+     */
     @Generated
     @Selector("arrivalDate")
     public native NSDate arrivalDate();
 
+    /**
+     * coordinate
+     * 
+     * Discussion:
+     *   The center of the region which the device is visiting.
+     */
     @Generated
     @Selector("coordinate")
     @ByValue
@@ -176,14 +196,28 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * departureDate
+     * 
+     * Discussion:
+     *   The date when the visit ended.  This is equal to [NSDate
+     *   distantFuture] if the device hasn't yet left.
+     */
     @Generated
     @Selector("departureDate")
     public native NSDate departureDate();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * horizontalAccuracy
+     * 
+     * Discussion:
+     *   An estimate of the radius (in meters) of the region which the
+     *   device is visiting.
+     */
     @Generated
     @Selector("horizontalAccuracy")
     public native double horizontalAccuracy();
@@ -194,7 +228,7 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLVisit initWithCoder(NSCoder aDecoder);
+    public native CLVisit initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

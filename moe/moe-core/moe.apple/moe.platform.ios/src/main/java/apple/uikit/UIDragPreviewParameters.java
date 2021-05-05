@@ -5,7 +5,6 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSValue;
-import apple.foundation.protocol.NSCopying;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -29,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIDragPreviewParameters extends NSObject implements NSCopying {
+public class UIDragPreviewParameters extends UIPreviewParameters {
     static {
         NatJ.register();
     }
@@ -58,10 +57,6 @@ public class UIDragPreviewParameters extends NSObject implements NSCopying {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
-    @Selector("backgroundColor")
-    public native UIColor backgroundColor();
-
-    @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
     public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
 
@@ -78,12 +73,6 @@ public class UIDragPreviewParameters extends NSObject implements NSCopying {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -142,16 +131,8 @@ public class UIDragPreviewParameters extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
-    @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor value);
-
-    @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("setVisiblePath:")
-    public native void setVisiblePath(UIBezierPath value);
 
     @Generated
     @Selector("superclass")
@@ -161,8 +142,4 @@ public class UIDragPreviewParameters extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
-
-    @Generated
-    @Selector("visiblePath")
-    public native UIBezierPath visiblePath();
 }

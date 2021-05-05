@@ -40,6 +40,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * An existing credential may be provided when creating an account.
+ * For example, to create a system Twitter account using an existing OAuth token/secret pair:
+ * 
+ * 1. Create the new account instance.
+ * 2. Set the account type.
+ * 3. Create an ACAccountCredential using your existing OAuth token/secret and set the account's credential property.
+ * 4. Save the account.
+ * 
+ * The account will be validated and saved as a system account.
+ */
 @Generated
 @Library("Accounts")
 @Runtime(ObjCRuntime.class)
@@ -164,10 +175,16 @@ public class ACAccountCredential extends NSObject {
     @Selector("initWithOAuthToken:tokenSecret:")
     public native ACAccountCredential initWithOAuthTokenTokenSecret(String token, String secret);
 
+    /**
+     * This property is only valid for OAuth2 credentials
+     */
     @Generated
     @Selector("oauthToken")
     public native String oauthToken();
 
+    /**
+     * This property is only valid for OAuth2 credentials
+     */
     @Generated
     @Selector("setOauthToken:")
     public native void setOauthToken(String value);

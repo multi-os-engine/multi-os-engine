@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * ______________________________
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -187,6 +190,9 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @Selector("setFont:")
     public native void setFont(UIFont value);
 
+    /**
+     * cannot change once drawing started
+     */
     @Generated
     @Selector("setText:")
     public native void setText(String value);
@@ -195,6 +201,9 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @Selector("setTextAlignment:")
     public native void setTextAlignment(@NInt long value);
 
+    /**
+     * cannot change once drawing started
+     */
     @Generated
     @Selector("text")
     public native String text();

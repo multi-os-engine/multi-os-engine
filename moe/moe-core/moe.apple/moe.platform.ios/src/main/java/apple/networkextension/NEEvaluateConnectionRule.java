@@ -44,6 +44,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEEvaluateConnectionRule
+ * 
+ * The NEEvaluateConnectionRule class declares the programmatic interface for an object that associates properties of network connections with an action.
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -159,6 +166,11 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] action
+     * 
+     * The action to take if the properties of the network connection being established match the rule.
+     */
     @Generated
     @Selector("action")
     @NInt
@@ -172,7 +184,7 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -180,24 +192,49 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEEvaluateConnectionRule initWithCoder(NSCoder aDecoder);
+    public native NEEvaluateConnectionRule initWithCoder(NSCoder coder);
 
+    /**
+     * initWithMatchDomains:andAction
+     * 
+     * Initialize an NEEvaluateConnectionRule instance with a list of destination host domains and an action
+     */
     @Generated
     @Selector("initWithMatchDomains:andAction:")
     public native NEEvaluateConnectionRule initWithMatchDomainsAndAction(NSArray<String> domains, @NInt long action);
 
+    /**
+     * [@property] matchDomains
+     * 
+     * An array of NSString objects. If the host name of the destination of the network connection being established shares a suffix with one of the strings in this array, then the rule matches.
+     */
     @Generated
     @Selector("matchDomains")
     public native NSArray<String> matchDomains();
 
+    /**
+     * [@property] probeURL
+     * 
+     * An HTTP or HTTPS URL. If the rule matches the connection being established and the action is NEEvaluateConnectionRuleActionConnectIfNeeded and a request sent to this URL results in a response with an HTTP response code other than 200, then the VPN is started.
+     */
     @Generated
     @Selector("probeURL")
     public native NSURL probeURL();
 
+    /**
+     * [@property] probeURL
+     * 
+     * An HTTP or HTTPS URL. If the rule matches the connection being established and the action is NEEvaluateConnectionRuleActionConnectIfNeeded and a request sent to this URL results in a response with an HTTP response code other than 200, then the VPN is started.
+     */
     @Generated
     @Selector("setProbeURL:")
     public native void setProbeURL(NSURL value);
 
+    /**
+     * [@property] useDNSServers
+     * 
+     * An array of NSString objects. If the rule matches the connection being established and the action is NEEvaluateConnectionRuleActionConnectIfNeeded, the DNS servers specified in this array are used to resolve the host name of the destination while evaluating connectivity to the destination. If the resolution fails for any reason, the VPN is started.
+     */
     @Generated
     @Selector("setUseDNSServers:")
     public native void setUseDNSServers(NSArray<String> value);
@@ -208,6 +245,11 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] useDNSServers
+     * 
+     * An array of NSString objects. If the rule matches the connection being established and the action is NEEvaluateConnectionRuleActionConnectIfNeeded, the DNS servers specified in this array are used to resolve the host name of the destination while evaluating connectivity to the destination. If the resolution fails for any reason, the VPN is started.
+     */
     @Generated
     @Selector("useDNSServers")
     public native NSArray<String> useDNSServers();

@@ -9,6 +9,10 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * The UIAccessibilityContainerDataTable and UIAccessibilityContainerDataTableCell protocols
+ * convey more information specific to tables that contain structured data.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -19,6 +23,10 @@ public interface UIAccessibilityContainerDataTableCell {
     @ByValue
     NSRange accessibilityColumnRange();
 
+    /**
+     * The row/column index + the row/column span.
+     * default == { NSNotFound, 0 }
+     */
     @Generated
     @Selector("accessibilityRowRange")
     @ByValue

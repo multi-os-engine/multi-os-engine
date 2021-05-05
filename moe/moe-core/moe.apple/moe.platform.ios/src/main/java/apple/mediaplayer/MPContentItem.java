@@ -39,6 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPContentItem represents high-level metadata for a particular media item for
+ * representation outside the client application. Examples of media items that a
+ * developer might want to represent include song files, streaming audio URLs,
+ * or radio stations.
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -150,10 +156,17 @@ public class MPContentItem extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Artwork for this item. Examples of artwork for a content item are the album
+     * cover for a song, or a movie poster for a movie.
+     */
     @Generated
     @Selector("artwork")
     public native MPMediaItemArtwork artwork();
 
+    /**
+     * A unique identifier for this content item. (Required)
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -162,66 +175,136 @@ public class MPContentItem extends NSObject {
     @Selector("init")
     public native MPContentItem init();
 
+    /**
+     * Designated initializer. A unique identifier is required to identify the item
+     * for later use.
+     */
     @Generated
     @Selector("initWithIdentifier:")
     public native MPContentItem initWithIdentifier(String identifier);
 
+    /**
+     * Represents whether the content item is a container that may contain other
+     * content items, e.g. an album or a playlist.
+     */
     @Generated
     @Selector("isContainer")
     public native boolean isContainer();
 
+    /**
+     * Represents whether the content item is a container that may contain other
+     * content items, e.g. an album or a playlist.
+     */
     @Generated
     @Selector("setContainer:")
     public native void setContainer(boolean value);
 
+    /**
+     * Represents whether this content item is explicit content
+     */
     @Generated
     @Selector("isExplicitContent")
     public native boolean isExplicitContent();
 
+    /**
+     * Represents whether this content item is explicit content
+     */
     @Generated
     @Selector("setExplicitContent:")
     public native void setExplicitContent(boolean value);
 
+    /**
+     * Represents whether the content item is actionable from a playback
+     * perspective. Albums are playable, for example, because selecting an album
+     * for playback means the app should play each song in the album in order. An
+     * example of a content item that may not be playable is a genre, since an app
+     * experience typically doesn't involve selecting an entire genre for playback.
+     */
     @Generated
     @Selector("isPlayable")
     public native boolean isPlayable();
 
+    /**
+     * Represents whether the content item is actionable from a playback
+     * perspective. Albums are playable, for example, because selecting an album
+     * for playback means the app should play each song in the album in order. An
+     * example of a content item that may not be playable is a genre, since an app
+     * experience typically doesn't involve selecting an entire genre for playback.
+     */
     @Generated
     @Selector("setPlayable:")
     public native void setPlayable(boolean value);
 
+    /**
+     * Represents whether this content item is streaming content, i.e. from the cloud
+     * where the content is not stored locally.
+     */
     @Generated
     @Selector("isStreamingContent")
     public native boolean isStreamingContent();
 
+    /**
+     * Represents whether this content item is streaming content, i.e. from the cloud
+     * where the content is not stored locally.
+     */
     @Generated
     @Selector("setStreamingContent:")
     public native void setStreamingContent(boolean value);
 
+    /**
+     * Represents the current playback progress of the item.
+     * 0.0 = not watched/listened/viewed, 1.0 = fully watched/listened/viewed
+     * Default is -1.0 (no progress indicator shown)
+     */
     @Generated
     @Selector("playbackProgress")
     public native float playbackProgress();
 
+    /**
+     * Artwork for this item. Examples of artwork for a content item are the album
+     * cover for a song, or a movie poster for a movie.
+     */
     @Generated
     @Selector("setArtwork:")
     public native void setArtwork(MPMediaItemArtwork value);
 
+    /**
+     * Represents the current playback progress of the item.
+     * 0.0 = not watched/listened/viewed, 1.0 = fully watched/listened/viewed
+     * Default is -1.0 (no progress indicator shown)
+     */
     @Generated
     @Selector("setPlaybackProgress:")
     public native void setPlaybackProgress(float value);
 
+    /**
+     * A subtitle for this item. If this were representing a song, this would
+     * usually be the artist or composer.
+     */
     @Generated
     @Selector("setSubtitle:")
     public native void setSubtitle(String value);
 
+    /**
+     * A title for this item. Usually this would be the track name, if representing
+     * a song, the episode name of a podcast, etc.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
+    /**
+     * A subtitle for this item. If this were representing a song, this would
+     * usually be the artist or composer.
+     */
     @Generated
     @Selector("subtitle")
     public native String subtitle();
 
+    /**
+     * A title for this item. Usually this would be the track name, if representing
+     * a song, the episode name of a podcast, etc.
+     */
     @Generated
     @Selector("title")
     public native String title();

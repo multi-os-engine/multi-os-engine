@@ -46,6 +46,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CIKernel is an object that encapsulates a Core Image Kernel Language
+ * routine that generates a new images based on input images and agruments.
+ * 
+ * General kernel functions are declared akin to this example:
+ *   kernel vec4 myColorKernel (sampler fore, sampler back, vec4 params)
+ * 
+ * The function must take a sampler argument for each input image.
+ * Additional arguments can be of type float, vec2, vec3, vec4, or __color.
+ * The destination pixel location is obtained by calling destCoord().
+ * The kernel should call sample() with coordinates based on either
+ * samplerCoord() or samplerTransform() to read pixel values from input images.
+ * The function must return a vec4 pixel color.
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -126,10 +140,24 @@ public class CIKernel extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * The string argument should contain a program with one kernel.
+     * On OSX 10.10 and before, this returns a CIKernel object.
+     * On OSX after 10.10, this returns a CIKernel, CIColorKernel, or CIWarpKernel object.
+     * On iOS this returns a CIKernel, CIColorKernel, or CIWarpKernel object.
+     */
     @Generated
     @Selector("kernelWithString:")
     public static native CIKernel kernelWithString(String string);
 
+    /**
+     * The string argument should contain a program in the Core Image Kernel Language.
+     * All the kernel functions in the program are converted to instances of a CIKernel objects
+     * and returned in an array.
+     * On OSX 10.10 and before, the array will contain instances of CIKernel class.
+     * On OSX after 10.10, the array will contain instances of CIKernel, CIColorKernel or CIWarpKernel classes.
+     * On iOS, the array will contain instances of CIKernel, CIColorKernel or CIWarpKernel classes.
+     */
     @Generated
     @Selector("kernelsWithString:")
     public static native NSArray<? extends CIKernel> kernelsWithString(String string);
@@ -165,6 +193,20 @@ public class CIKernel extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Apply the receiver CIKernel to produce a new CIImage object.
+     * 
+     * The 'extent' is the bounding box of all non-clear pixels produced by the kernel.
+     * 
+     * The 'callback' is a block that should return the rectangle of each input image
+     * that is needed to produce a given rectangle in the coordinate space of the
+     * new image.
+     * 
+     * The 'args' is an array of parameters needed to describe the new image.
+     * The object types of the items in the array correspond to the argument types of the
+     * kernel function.  For example, if the first argument in the kernel is a sampler,
+     * then the first object in the array must be a CIImage.
+     */
     @Generated
     @Selector("applyWithExtent:roiCallback:arguments:")
     public native CIImage applyWithExtentRoiCallbackArguments(@ByValue CGRect extent,
@@ -175,10 +217,32 @@ public class CIKernel extends NSObject {
     @Selector("init")
     public native CIKernel init();
 
+    /**
+     * The name of the kernel.
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * Sets the selector used by Core Image to ask what rectangles of a kernel's input images
+     * are needed to produce a desired rectangle of the kernel's output image.
+     * 
+     * Using setROISelector: is suppoted but not recommended.
+     * The selector is only used if one the [CIFilter apply:...] methods is used.
+     * Instead, use one of the [CIKernel applyWithExtent:roiCallback:...] methods.
+     * 
+     * The method should have one of the following signatures:
+     *  - (CGRect)regionOf:(int)samplerIndex destRect:(CGRect)r userInfo:obj;
+     *  - (CGRect)regionOf:(int)samplerIndex destRect:(CGRect)r;
+     * 
+     * 'samplerIndex' is the 0-based index specifying which of the kernel's input images is being queried.
+     * 'destRect' is the extent rectangle of kernel's output image being queried.
+     * 'userInfo' is the object associated with the kCIApplyOptionUserInfo when the kernel was applied.
+     * 
+     * The method should return the rectangle of the index'th input image that is needed to produce destRect.
+     * Returning CGRectNull indicates that the index'th input image is not needed to produce destRect.
+     */
     @Generated
     @Selector("setROISelector:")
     public native void setROISelector(SEL method);
@@ -188,9 +252,16 @@ public class CIKernel extends NSObject {
     public interface Block_applyWithExtentRoiCallbackArguments {
         @Generated
         @ByValue
-        CGRect call_applyWithExtentRoiCallbackArguments(int arg0, @ByValue CGRect arg1);
+        CGRect call_applyWithExtentRoiCallbackArguments(int index, @ByValue CGRect destRect);
     }
 
+    /**
+     * The data argument should represent a metallib file compiled with the Core Image Standard Library
+     * and contain the given function written in the Metal Shading Language.
+     * 
+     * An optional output pixel format can be specified, and would be used if the output of the kernel
+     * needs to be written to an intermediate texture.
+     */
     @Generated
     @Selector("kernelWithFunctionName:fromMetalLibraryData:error:")
     public static native CIKernel kernelWithFunctionNameFromMetalLibraryDataError(String name, NSData data,
@@ -200,4 +271,12 @@ public class CIKernel extends NSObject {
     @Selector("kernelWithFunctionName:fromMetalLibraryData:outputPixelFormat:error:")
     public static native CIKernel kernelWithFunctionNameFromMetalLibraryDataOutputPixelFormatError(String name,
             NSData data, int format, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * This method will return an array of strings corresponding to names of all of the kernels
+     * contained within the underlying Metal library in the associated NSData.
+     */
+    @Generated
+    @Selector("kernelNamesFromMetalLibraryData:")
+    public static native NSArray<String> kernelNamesFromMetalLibraryData(NSData data);
 }

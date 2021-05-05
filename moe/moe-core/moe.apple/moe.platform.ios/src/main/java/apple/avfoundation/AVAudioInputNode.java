@@ -19,7 +19,7 @@ package apple.avfoundation;
 import apple.NSObject;
 import apple.avfoundation.protocol.AVAudioMixing;
 import apple.avfoundation.struct.AVAudio3DPoint;
-import apple.coreaudio.struct.AudioBufferList;
+import apple.coreaudiotypes.struct.AudioBufferList;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -45,6 +45,29 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioInputNode
+ * 
+ * 	A node that performs audio input in the engine.
+ * 
+ * 		When the engine is rendering to/from an audio device, this node connects to the system's 
+ * 	audio input.
+ * 	When the engine is operating in manual rendering mode, this node can be used to supply
+ * 	the input data to the engine.
+ * 
+ * 	This node has one element.
+ * 	The format of the input scope reflects:
+ * 		- the audio hardware sample rate and channel count, when connected to the hardware
+ * 		- the format of the PCM audio data that the node will supply to the engine, in the
+ * 		  manual rendering mode (see `setManualRenderingInputPCMFormat:inputBlock:`)
+ * 
+ * 	When rendering from an audio device, the input node does not support format conversion.
+ * 	Hence the format of the output scope must be same as that of the input, as well as the
+ * 	formats for all the nodes connected in the input node chain.
+ * 
+ * 	In the manual rendering mode, the format of the output scope is initially the same as that
+ * 	of the input, but you may set it to a different format, in which case the node will convert.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -230,6 +253,24 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     @Selector("volume")
     public native float volume();
 
+    /**
+     * setManualRenderingInputPCMFormat:inputBlock:
+     * 
+     * 	Supply the data through the input node to the engine operating in the manual rendering mode.
+     * 
+     * 		This block must be set if the input node is being used when the engine is operating in 
+     * 	manual rendering mode.
+     * 	Switching the engine to render to/from an audio device invalidates any previously set block, 
+     * 	and makes this method ineffective.
+     * 
+     * @param format
+     * 	The format of the PCM audio data the block will supply to the engine
+     * @param block
+     * 	The block the engine will call on the input node to get the audio to send to the output,
+     * 	when operating in the manual rendering mode. See `AVAudioIONodeInputBlock` for more details
+     * @return
+     * 	YES for success
+     */
     @Generated
     @Selector("setManualRenderingInputPCMFormat:inputBlock:")
     public native boolean setManualRenderingInputPCMFormatInputBlock(AVAudioFormat format,
@@ -240,6 +281,92 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     public interface Block_setManualRenderingInputPCMFormatInputBlock {
         @Generated
         @UncertainReturn("Options: reference, array Fallback: reference")
-        AudioBufferList call_setManualRenderingInputPCMFormatInputBlock(int arg0);
+        AudioBufferList call_setManualRenderingInputPCMFormatInputBlock(int inNumberOfFrames);
     }
+
+    /**
+     * [@property] voiceProcessingAGCEnabled
+     * 
+     *     Enable automatic gain control on the processed microphone/uplink
+     *     signal. Enabled by default.
+     * 
+     *     Querying this property when voice processing is disabled will return false.
+     */
+    @Generated
+    @Selector("isVoiceProcessingAGCEnabled")
+    public native boolean isVoiceProcessingAGCEnabled();
+
+    /**
+     * [@property] voiceProcessingBypassed
+     * 
+     *    Bypass all processing done by the voice processing unit.
+     * 
+     *    Querying this property when voice processing is disabled will return false.
+     */
+    @Generated
+    @Selector("isVoiceProcessingBypassed")
+    public native boolean isVoiceProcessingBypassed();
+
+    /**
+     * [@property] voiceProcessingInputMuted
+     * 
+     *     Mutes the input of the voice processing unit.
+     * 
+     *     Querying this property when voice processing is disabled will return false.
+     */
+    @Generated
+    @Selector("isVoiceProcessingInputMuted")
+    public native boolean isVoiceProcessingInputMuted();
+
+    @Generated
+    @Selector("pointSourceInHeadMode")
+    @NInt
+    public native long pointSourceInHeadMode();
+
+    @Generated
+    @Selector("setPointSourceInHeadMode:")
+    public native void setPointSourceInHeadMode(@NInt long value);
+
+    @Generated
+    @Selector("setSourceMode:")
+    public native void setSourceMode(@NInt long value);
+
+    /**
+     * [@property] voiceProcessingAGCEnabled
+     * 
+     *     Enable automatic gain control on the processed microphone/uplink
+     *     signal. Enabled by default.
+     * 
+     *     Querying this property when voice processing is disabled will return false.
+     */
+    @Generated
+    @Selector("setVoiceProcessingAGCEnabled:")
+    public native void setVoiceProcessingAGCEnabled(boolean value);
+
+    /**
+     * [@property] voiceProcessingBypassed
+     * 
+     *    Bypass all processing done by the voice processing unit.
+     * 
+     *    Querying this property when voice processing is disabled will return false.
+     */
+    @Generated
+    @Selector("setVoiceProcessingBypassed:")
+    public native void setVoiceProcessingBypassed(boolean value);
+
+    /**
+     * [@property] voiceProcessingInputMuted
+     * 
+     *     Mutes the input of the voice processing unit.
+     * 
+     *     Querying this property when voice processing is disabled will return false.
+     */
+    @Generated
+    @Selector("setVoiceProcessingInputMuted:")
+    public native void setVoiceProcessingInputMuted(boolean value);
+
+    @Generated
+    @Selector("sourceMode")
+    @NInt
+    public native long sourceMode();
 }

@@ -171,6 +171,9 @@ public class UIPreviewInteraction extends NSObject {
     @Selector("initWithView:")
     public native UIPreviewInteraction initWithView(UIView view);
 
+    /**
+     * returns the current location of the touch that started the interaction
+     */
     @Generated
     @Selector("locationInCoordinateSpace:")
     @ByValue

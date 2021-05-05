@@ -154,18 +154,30 @@ public class MPRatingCommand extends MPRemoteCommand {
     @Selector("init")
     public native MPRatingCommand init();
 
+    /**
+     * Maximum rating for the command.
+     */
     @Generated
     @Selector("maximumRating")
     public native float maximumRating();
 
+    /**
+     * Minimum rating for the command.
+     */
     @Generated
     @Selector("minimumRating")
     public native float minimumRating();
 
+    /**
+     * Maximum rating for the command.
+     */
     @Generated
     @Selector("setMaximumRating:")
     public native void setMaximumRating(float value);
 
+    /**
+     * Minimum rating for the command.
+     */
     @Generated
     @Selector("setMinimumRating:")
     public native void setMinimumRating(float value);

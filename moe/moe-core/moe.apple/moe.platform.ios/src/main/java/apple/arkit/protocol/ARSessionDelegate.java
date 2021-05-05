@@ -17,6 +17,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ARSessionDelegate")
 public interface ARSessionDelegate extends ARSessionObserver {
+    /**
+     * This is called when new anchors are added to the session.
+     * 
+     * @param session The session being run.
+     * @param anchors An array of added anchors.
+     */
     @Generated
     @IsOptional
     @Selector("session:didAddAnchors:")
@@ -24,6 +30,12 @@ public interface ARSessionDelegate extends ARSessionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This is called when anchors are removed from the session.
+     * 
+     * @param session The session being run.
+     * @param anchors An array of removed anchors.
+     */
     @Generated
     @IsOptional
     @Selector("session:didRemoveAnchors:")
@@ -31,6 +43,12 @@ public interface ARSessionDelegate extends ARSessionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This is called when anchors are updated.
+     * 
+     * @param session The session being run.
+     * @param anchors An array of updated anchors.
+     */
     @Generated
     @IsOptional
     @Selector("session:didUpdateAnchors:")
@@ -38,6 +56,12 @@ public interface ARSessionDelegate extends ARSessionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * This is called when a new frame has been updated.
+     * 
+     * @param session The session being run.
+     * @param frame The frame that has been updated.
+     */
     @Generated
     @IsOptional
     @Selector("session:didUpdateFrame:")

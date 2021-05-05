@@ -43,6 +43,17 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKCorrelation
+ * 
+ * An HKCorrelation is a collection of correlated objects.
+ * 
+ * When multiple readings are taken together, it may be beneficial to correlate them so that they can be
+ *                displayed together and share common metadata about how they were created.
+ * 
+ *                For example, systolic and diastolic blood pressure readings are typically presented together so these
+ *                readings should be saved with a correlation of type blood pressure.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -93,17 +104,44 @@ public class HKCorrelation extends HKSample {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * correlationWithType:startDate:endDate:objects:
+     * 
+     * Creates a new HKCorrelation with the given type, start date, end date, and objects.
+     * 
+     * objects must be a set of HKQuantitySamples and HKCategorySamples
+     */
     @Generated
     @Selector("correlationWithType:startDate:endDate:objects:")
     public static native HKCorrelation correlationWithTypeStartDateEndDateObjects(HKCorrelationType correlationType,
             NSDate startDate, NSDate endDate, NSSet<? extends HKSample> objects);
 
+    /**
+     * correlationWithType:startDate:endDate:objects:device:metadata:
+     * 
+     * Creates a new HKCorrelation with the given type, start date, end date, objects, and metadata.
+     * 
+     * objects must be a set of HKQuantitySamples and HKCategorySamples
+     * 
+     * @param         correlationType The correlation type of the objects set.
+     * @param         startDate       The start date of the correlation.
+     * @param         endDate         The end date of the correlation.
+     * @param         device          The HKDevice that generated the samples (optional).
+     * @param         metadata        Metadata for the correlation (optional).
+     */
     @Generated
     @Selector("correlationWithType:startDate:endDate:objects:device:metadata:")
     public static native HKCorrelation correlationWithTypeStartDateEndDateObjectsDeviceMetadata(
             HKCorrelationType correlationType, NSDate startDate, NSDate endDate, NSSet<? extends HKSample> objects,
             HKDevice device, NSDictionary<String, ?> metadata);
 
+    /**
+     * correlationWithType:startDate:endDate:objects:metadata:
+     * 
+     * Creates a new HKCorrelation with the given type, start date, end date, objects, and metadata.
+     * 
+     * objects must be a set of HKQuantitySamples and HKCategorySamples
+     */
     @Generated
     @Selector("correlationWithType:startDate:endDate:objects:metadata:")
     public static native HKCorrelation correlationWithTypeStartDateEndDateObjectsMetadata(
@@ -185,12 +223,22 @@ public class HKCorrelation extends HKSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKCorrelation initWithCoder(NSCoder aDecoder);
+    public native HKCorrelation initWithCoder(NSCoder coder);
 
+    /**
+     * [@property]  objects
+     * 
+     * A set of HKSamples containing all of the objects that were saved with the receiver.
+     */
     @Generated
     @Selector("objects")
     public native NSSet<? extends HKSample> objects();
 
+    /**
+     * objectsForType:
+     * 
+     * Returns the set of correlated objects with the specified type.
+     */
     @Generated
     @Selector("objectsForType:")
     public native NSSet<? extends HKSample> objectsForType(HKObjectType objectType);

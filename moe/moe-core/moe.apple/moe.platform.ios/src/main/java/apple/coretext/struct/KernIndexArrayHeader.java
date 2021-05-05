@@ -74,42 +74,72 @@ public final class KernIndexArrayHeader extends StructObject {
     @StructureField(order = 3, isGetter = false)
     public native void setRightClassCount(byte value);
 
+    /**
+     * set to 0 for now
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native byte flags();
 
+    /**
+     * set to 0 for now
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setFlags(byte value);
 
+    /**
+     * actual kerning values reference by index in kernIndex
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     public native short kernValue();
 
+    /**
+     * actual kerning values reference by index in kernIndex
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setKernValue(short value);
 
+    /**
+     * maps left glyph to offset into kern index
+     */
     @Generated
     @StructureField(order = 6, isGetter = true)
     public native byte leftClass();
 
+    /**
+     * maps left glyph to offset into kern index
+     */
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setLeftClass(byte value);
 
+    /**
+     * maps right glyph to offset into kern index
+     */
     @Generated
     @StructureField(order = 7, isGetter = true)
     public native byte rightClass();
 
+    /**
+     * maps right glyph to offset into kern index
+     */
     @Generated
     @StructureField(order = 7, isGetter = false)
     public native void setRightClass(byte value);
 
+    /**
+     * contains indicies into kernValue
+     */
     @Generated
     @StructureField(order = 8, isGetter = true)
     public native byte kernIndex();
 
+    /**
+     * contains indicies into kernValue
+     */
     @Generated
     @StructureField(order = 8, isGetter = false)
     public native void setKernIndex(byte value);

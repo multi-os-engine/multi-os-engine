@@ -19,6 +19,15 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum] NSHTTPCookieAcceptPolicy
+ * 
+ * Values for the different cookie accept policies
+ * [@constant] NSHTTPCookieAcceptPolicyAlways Accept all cookies
+ * [@constant] NSHTTPCookieAcceptPolicyNever Reject all cookies
+ * [@constant] NSHTTPCookieAcceptPolicyOnlyFromMainDocumentDomain Accept cookies
+ * only from the main document domain
+ */
 @Generated
 public final class NSHTTPCookieAcceptPolicy {
     @Generated @NUInt public static final long Always = 0x0000000000000000L;

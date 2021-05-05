@@ -3,6 +3,16 @@ package apple.networkextension.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@typedef] NEHotspotConfigurationEAPTTLSInnerAuthenticationType
+ * 
+ * TTLS Inner Authentication Type.
+ * [@const] NEHotspotConfigurationEAPTTLSInnerAuthenticationPAP PAP.
+ * [@const] NEHotspotConfigurationEAPTTLSInnerAuthenticationCHAP CHAP.
+ * [@const] NEHotspotConfigurationEAPTTLSInnerAuthenticationMSCHAP MSCHAP.
+ * [@const] NEHotspotConfigurationEAPTTLSInnerAuthenticationMSCHAPv2 MSCHAPv2.
+ * [@const] NEHotspotConfigurationEAPTTLSInnerAuthenticationEAP EAP (Default).
+ */
 @Generated
 public final class NEHotspotConfigurationTTLSInnerAuthenticationType {
     @Generated

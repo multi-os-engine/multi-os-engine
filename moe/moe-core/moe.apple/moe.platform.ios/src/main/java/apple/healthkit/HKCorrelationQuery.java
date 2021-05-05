@@ -46,6 +46,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKCorrelationQuery
+ * 
+ * A query to find HKCorrelations
+ * 
+ * Correlations are HKSamples that contain a set of correlated samples. HKCorrelationQuery
+ *                accepts a predicate to filter HKCorrelations and a dictionary of predicates to filter the
+ *                correlated samples.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -265,12 +274,33 @@ public class HKCorrelationQuery extends HKQuery {
     @Selector("init")
     public native HKCorrelationQuery init();
 
+    /**
+     * initWithTypes:predicate:samplePredicate:completion:
+     * 
+     * The designated initializer for HKCorrelationQuery.
+     * 
+     * @param     correlationType     The type of correlation that is being queried for
+     * 
+     * @param     predicate           The predicate for scoping which HKCorrelations are returned
+     * 
+     * @param     samplePredicates    A dictionary mapping HKSampleTypes to NSPredicates. If no predicate for a particular type
+     *                                is provided, it is assumed to be a nil predicate and objects of that type will not be
+     *                                filtered.
+     */
     @Generated
     @Selector("initWithType:predicate:samplePredicates:completion:")
     public native HKCorrelationQuery initWithTypePredicateSamplePredicatesCompletion(HKCorrelationType correlationType,
             NSPredicate predicate, NSDictionary<? extends HKSampleType, ? extends NSPredicate> samplePredicates,
             @ObjCBlock(name = "call_initWithTypePredicateSamplePredicatesCompletion") Block_initWithTypePredicateSamplePredicatesCompletion completion);
 
+    /**
+     * [@property]      samplePredicates
+     * 
+     * A dictionary of predicates for the HKCorrelation's objects
+     * 
+     * samplePredicates maps HKSampleTypes to NSPredicates. The predicate value will apply
+     *                to objects of the key type. 
+     */
     @Generated
     @Selector("samplePredicates")
     public native NSDictionary<? extends HKSampleType, ? extends NSPredicate> samplePredicates();
@@ -279,12 +309,34 @@ public class HKCorrelationQuery extends HKQuery {
     @Generated
     public interface Block_initWithTypePredicateSamplePredicatesCompletion {
         @Generated
-        void call_initWithTypePredicateSamplePredicatesCompletion(HKCorrelationQuery arg0,
-                NSArray<? extends HKCorrelation> arg1, NSError arg2);
+        void call_initWithTypePredicateSamplePredicatesCompletion(HKCorrelationQuery query,
+                NSArray<? extends HKCorrelation> correlations, NSError error);
     }
 
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
             HKQuantity totalFlightsClimbed);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsFromSource:FHIRResourceType:identifier:")
+    public static native NSPredicate predicateForClinicalRecordsFromSourceFHIRResourceTypeIdentifier(HKSource source,
+            String resourceType, String identifier);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsWithFHIRResourceType:")
+    public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(String resourceType);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithClassification:")
+    public static native NSPredicate predicateForElectrocardiogramsWithClassification(@NInt long classification);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithSymptomsStatus:")
+    public static native NSPredicate predicateForElectrocardiogramsWithSymptomsStatus(@NInt long symptomsStatus);
+
+    @Generated
+    @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
+    public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
+            HKElectrocardiogram electrocardiogram);
 }

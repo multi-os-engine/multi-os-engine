@@ -23,6 +23,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIBarPositioning;
 import apple.uikit.protocol.UIToolbarDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -131,7 +132,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -144,8 +145,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -366,7 +367,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -382,7 +383,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -402,15 +404,24 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @NInt
     public native long barPosition();
 
+    /**
+     * default is UIBarStyleDefault
+     */
     @Generated
     @Selector("barStyle")
     @NInt
     public native long barStyle();
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("barTintColor")
     public native UIColor barTintColor();
 
+    /**
+     * You may not set the delegate when the toolbar is managed by a UINavigationController.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -422,41 +433,73 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIToolbar initWithCoder(NSCoder aDecoder);
+    public native UIToolbar initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
     public native UIToolbar initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Default is NO on iOS 6 and earlier. Always YES if barStyle is set to UIBarStyleBlackTranslucent
+     */
     @Generated
     @Selector("isTranslucent")
     public native boolean isTranslucent();
 
+    /**
+     * Default is NO on iOS 6 and earlier. Always YES if barStyle is set to UIBarStyleBlackTranslucent
+     */
     @Generated
     @Selector("setTranslucent:")
     public native void setTranslucent(boolean value);
 
+    /**
+     * get/set visible UIBarButtonItem. default is nil. changes not animated. shown in order
+     */
     @Generated
     @Selector("items")
     public native NSArray<? extends UIBarButtonItem> items();
 
+    /**
+     * Use these methods to set and access custom background images for toolbars.
+     *      Default is nil. When non-nil the image will be used instead of the system image for toolbars in the
+     * specified position.
+     *      For the barMetrics argument, UIBarMetricsDefault is the fallback.
+     * 
+     * DISCUSSION: Interdependence of barStyle, tintColor, backgroundImage.
+     * When barStyle or tintColor is set as well as the bar's background image,
+     * the bar buttons (unless otherwise customized) will inherit the underlying
+     * barStyle or tintColor.
+     */
     @Generated
     @Selector("setBackgroundImage:forToolbarPosition:barMetrics:")
     public native void setBackgroundImageForToolbarPositionBarMetrics(UIImage backgroundImage, @NInt long topOrBottom,
             @NInt long barMetrics);
 
+    /**
+     * default is UIBarStyleDefault
+     */
     @Generated
     @Selector("setBarStyle:")
     public native void setBarStyle(@NInt long value);
 
+    /**
+     * default is nil
+     */
     @Generated
     @Selector("setBarTintColor:")
     public native void setBarTintColor(UIColor value);
 
+    /**
+     * You may not set the delegate when the toolbar is managed by a UINavigationController.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIToolbarDelegate value);
 
+    /**
+     * You may not set the delegate when the toolbar is managed by a UINavigationController.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIToolbarDelegate value) {
         Object __old = delegate();
@@ -469,18 +512,32 @@ public class UIToolbar extends UIView implements UIBarPositioning {
         }
     }
 
+    /**
+     * get/set visible UIBarButtonItem. default is nil. changes not animated. shown in order
+     */
     @Generated
     @Selector("setItems:")
     public native void setItems(NSArray<? extends UIBarButtonItem> value);
 
+    /**
+     * will fade in or out or reorder and adjust spacing
+     */
     @Generated
     @Selector("setItems:animated:")
     public native void setItemsAnimated(NSArray<? extends UIBarButtonItem> items, boolean animated);
 
+    /**
+     * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom shadow to be shown, a custom background image must also be set with -setBackgroundImage:forToolbarPosition:barMetrics: (if the default background image is used, the default shadow image will be used).
+     */
     @Generated
     @Selector("setShadowImage:forToolbarPosition:")
     public native void setShadowImageForToolbarPosition(UIImage shadowImage, @NInt long topOrBottom);
 
+    /**
+     * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
+     * and behaves as described for the tintColor property added to UIView.
+     * To tint the bar's background, please use -barTintColor.
+     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
@@ -489,7 +546,46 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Selector("shadowImageForToolbarPosition:")
     public native UIImage shadowImageForToolbarPosition(@NInt long topOrBottom);
 
+    /**
+     * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
+     * and behaves as described for the tintColor property added to UIView.
+     * To tint the bar's background, please use -barTintColor.
+     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
+
+    /**
+     * Describes the appearance attributes for the toolbar to use when it is displayed with its compact height. If not set, the standardAppearance will be used instead.
+     */
+    @Generated
+    @Selector("compactAppearance")
+    public native UIToolbarAppearance compactAppearance();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    /**
+     * Describes the appearance attributes for the toolbar to use when it is displayed with its compact height. If not set, the standardAppearance will be used instead.
+     */
+    @Generated
+    @Selector("setCompactAppearance:")
+    public native void setCompactAppearance(UIToolbarAppearance value);
+
+    /**
+     * Describes the appearance attributes for the toolbar to use when it is displayed with its standard height.
+     */
+    @Generated
+    @Selector("setStandardAppearance:")
+    public native void setStandardAppearance(UIToolbarAppearance value);
+
+    /**
+     * Describes the appearance attributes for the toolbar to use when it is displayed with its standard height.
+     */
+    @Generated
+    @Selector("standardAppearance")
+    public native UIToolbarAppearance standardAppearance();
 }

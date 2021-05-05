@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Subclass for mass-spring animations.
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -167,6 +170,10 @@ public class CASpringAnimation extends CABasicAnimation {
     @NInt
     public static native long version_static();
 
+    /**
+     * The damping coefficient. Must be greater than or equal to 0.
+     * Defaults to 10.
+     */
     @Generated
     @Selector("damping")
     @NFloat
@@ -178,38 +185,77 @@ public class CASpringAnimation extends CABasicAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CASpringAnimation initWithCoder(NSCoder aDecoder);
+    public native CASpringAnimation initWithCoder(NSCoder coder);
 
+    /**
+     * The initial velocity of the object attached to the spring. Defaults
+     * to zero, which represents an unmoving object. Negative values
+     * represent the object moving away from the spring attachment point,
+     * positive values represent the object moving towards the spring
+     * attachment point.
+     */
     @Generated
     @Selector("initialVelocity")
     @NFloat
     public native double initialVelocity();
 
+    /**
+     * The mass of the object attached to the end of the spring. Must be greater
+     * than 0. Defaults to one. 
+     */
     @Generated
     @Selector("mass")
     @NFloat
     public native double mass();
 
+    /**
+     * The damping coefficient. Must be greater than or equal to 0.
+     * Defaults to 10.
+     */
     @Generated
     @Selector("setDamping:")
     public native void setDamping(@NFloat double value);
 
+    /**
+     * The initial velocity of the object attached to the spring. Defaults
+     * to zero, which represents an unmoving object. Negative values
+     * represent the object moving away from the spring attachment point,
+     * positive values represent the object moving towards the spring
+     * attachment point.
+     */
     @Generated
     @Selector("setInitialVelocity:")
     public native void setInitialVelocity(@NFloat double value);
 
+    /**
+     * The mass of the object attached to the end of the spring. Must be greater
+     * than 0. Defaults to one. 
+     */
     @Generated
     @Selector("setMass:")
     public native void setMass(@NFloat double value);
 
+    /**
+     * The spring stiffness coefficient. Must be greater than 0.
+     * Defaults to 100.
+     */
     @Generated
     @Selector("setStiffness:")
     public native void setStiffness(@NFloat double value);
 
+    /**
+     * Returns the estimated duration required for the spring system to be
+     * considered at rest. The duration is evaluated for the current animation
+     * parameters.
+     */
     @Generated
     @Selector("settlingDuration")
     public native double settlingDuration();
 
+    /**
+     * The spring stiffness coefficient. Must be greater than 0.
+     * Defaults to 100.
+     */
     @Generated
     @Selector("stiffness")
     @NFloat

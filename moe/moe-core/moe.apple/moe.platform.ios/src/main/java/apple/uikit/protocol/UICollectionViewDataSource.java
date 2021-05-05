@@ -42,6 +42,9 @@ public interface UICollectionViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+     */
     @Generated
     @Selector("collectionView:cellForItemAtIndexPath:")
     UICollectionViewCell collectionViewCellForItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
@@ -59,6 +62,9 @@ public interface UICollectionViewDataSource {
     @NInt
     long collectionViewNumberOfItemsInSection(UICollectionView collectionView, @NInt long section);
 
+    /**
+     * The view that is returned must be retrieved from a call to -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
+     */
     @Generated
     @IsOptional
     @Selector("collectionView:viewForSupplementaryElementOfKind:atIndexPath:")
@@ -75,6 +81,10 @@ public interface UICollectionViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Returns the index path that corresponds to the given title / index. (e.g. "B",1)
+     * Return an index path with a single index to indicate an entire section, instead of a specific item.
+     */
     @Generated
     @IsOptional
     @Selector("collectionView:indexPathForIndexTitle:atIndex:")
@@ -83,6 +93,9 @@ public interface UICollectionViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Returns a list of index titles to display in the index view (e.g. ["A", "B", "C" ... "Z", "#"])
+     */
     @Generated
     @IsOptional
     @Selector("indexTitlesForCollectionView:")

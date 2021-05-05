@@ -35,11 +35,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UIViewControllerPreviewingDelegate {
     @Generated
     @Selector("previewingContext:commitViewController:")
-    void previewingContextCommitViewController(@Mapped(ObjCObjectMapper.class) Object previewingContext,
+    void previewingContextCommitViewController(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewingContext,
             UIViewController viewControllerToCommit);
 
+    /**
+     * If you return nil, a preview presentation will not be performed
+     */
     @Generated
     @Selector("previewingContext:viewControllerForLocation:")
     UIViewController previewingContextViewControllerForLocation(
-            @Mapped(ObjCObjectMapper.class) Object previewingContext, @ByValue CGPoint location);
+            @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewingContext, @ByValue CGPoint location);
 }

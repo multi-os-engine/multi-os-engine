@@ -43,34 +43,58 @@ public final class AUParameterEvent extends StructObject {
         super(peer);
     }
 
+    /**
+     * !< The next event in a linked list of events.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr next();
 
+    /**
+     * !< The next event in a linked list of events.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setNext(VoidPtr value);
 
+    /**
+     * !< The sample time at which the event is scheduled to occur.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native long eventSampleTime();
 
+    /**
+     * !< The sample time at which the event is scheduled to occur.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setEventSampleTime(long value);
 
+    /**
+     * !< AURenderEventParameter or AURenderEventParameterRamp.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native byte eventType();
 
+    /**
+     * !< AURenderEventParameter or AURenderEventParameterRamp.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setEventType(byte value);
 
+    /**
+     * !< Must be 0.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true, count = 3)
     public native byte reserved(int field_idx);
 
+    /**
+     * !< Must be 0.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false, count = 3)
     public native void setReserved(byte value, int field_idx);
@@ -83,18 +107,30 @@ public final class AUParameterEvent extends StructObject {
     @StructureField(order = 4, isGetter = false)
     public native void setRampDurationSampleFrames(int value);
 
+    /**
+     * !< The parameter to change.
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     public native long parameterAddress();
 
+    /**
+     * !< The parameter to change.
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setParameterAddress(long value);
 
+    /**
+     * !< If ramped, the parameter value at the
+     */
     @Generated
     @StructureField(order = 6, isGetter = true)
     public native float value();
 
+    /**
+     * !< If ramped, the parameter value at the
+     */
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setValue(float value);

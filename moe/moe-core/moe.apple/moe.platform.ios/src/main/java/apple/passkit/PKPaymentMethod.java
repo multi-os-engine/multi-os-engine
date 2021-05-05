@@ -17,6 +17,7 @@ limitations under the License.
 package apple.passkit;
 
 import apple.NSObject;
+import apple.contacts.CNContact;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -150,6 +151,10 @@ public class PKPaymentMethod extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * A string describing the instrument that's suitable for display
+     * This property will be nil prior to the user authorizing the payment
+     */
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -158,16 +163,37 @@ public class PKPaymentMethod extends NSObject {
     @Selector("init")
     public native PKPaymentMethod init();
 
+    /**
+     * The payment network that backs the instrument. Suitable for display.
+     * This property will be nil prior to the user authorizing the payment
+     */
     @Generated
     @Selector("network")
     public native String network();
 
+    /**
+     * The payment pass - will only be provided if your app is entitled to view the pass in question
+     */
     @Generated
     @Selector("paymentPass")
     public native PKPaymentPass paymentPass();
 
+    /**
+     * The underlying instrument type (Credit, Debit, etc)
+     */
     @Generated
     @Selector("type")
     @NUInt
     public native long type();
+
+    /**
+     * A partially redacted billing address. Only available if no shipping address info was requested.
+     */
+    @Generated
+    @Selector("billingAddress")
+    public native CNContact billingAddress();
+
+    @Generated
+    @Selector("secureElementPass")
+    public native PKSecureElementPass secureElementPass();
 }

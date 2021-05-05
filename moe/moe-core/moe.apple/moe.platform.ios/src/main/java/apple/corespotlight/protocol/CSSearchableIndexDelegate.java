@@ -32,16 +32,34 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * An application that is long running should provide a CSSearchableIndexDelegate conforming object to handle communication from the index.
+ * Alternatively, an app can provide an extension whose request handler conforms to this protocol and the extension will be called if the app isn't running.
+ */
 @Generated
 @Library("CoreSpotlight")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CSSearchableIndexDelegate")
 public interface CSSearchableIndexDelegate {
+    /**
+     * The index requests that the delegate should reindex all of its searchable data and clear any local state that it might have persisted because the index has been lost.
+     * The app or extension should call indexSearchableItems on the passed in CSSearchableIndex.
+     * The app or extension must call the acknowledgement handler once any client state information has been persisted, that way, in case of a crash, the indexer can call this again.
+     * If the app passes clientState information in a batch, the acknowledgement can be called right away.
+     * The passed in index shouldn't be used in an extension if a custom protection class is needed.
+     */
     @Generated
     @Selector("searchableIndex:reindexAllSearchableItemsWithAcknowledgementHandler:")
     void searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler(CSSearchableIndex searchableIndex,
             @ObjCBlock(name = "call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler") Block_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler acknowledgementHandler);
 
+    /**
+     * The index requests that the delegate should reindex the searchable data with the provided identifiers.
+     * The app or extension should call indexSearchableItems:completionHandler on the passed in index CSSearchableIndex to update the items' states.
+     * The app or extension must call the acknowledgement handler once any client state information has been persisted, that way, in case of a crash, the indexer can call this again.
+     * If the app passes clientState information in a batch, the acknowledgement can be called right away.
+     * The passed in index shouldn't be used in an extension if a custom protection class is needed.
+     */
     @Generated
     @Selector("searchableIndex:reindexSearchableItemsWithIdentifiers:acknowledgementHandler:")
     void searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler(CSSearchableIndex searchableIndex,
@@ -55,6 +73,10 @@ public interface CSSearchableIndexDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * When on battery power, it is possible for indexing to slowed down to prevent battery drain.
+     * The developer may want to optionally implement these methods to receive notice that indexing is being throttled and react accordingly (e.g. by priortizing indexing of more important content).
+     */
     @Generated
     @IsOptional
     @Selector("searchableIndexDidThrottle:")
@@ -76,6 +98,9 @@ public interface CSSearchableIndexDelegate {
         void call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler();
     }
 
+    /**
+     * The developer may provided a NSData representation if type was specified in providerDataTypeIdentifiers property.
+     */
     @Generated
     @IsOptional
     @Selector("dataForSearchableIndex:itemIdentifier:typeIdentifier:error:")
@@ -84,6 +109,9 @@ public interface CSSearchableIndexDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The developer may provided a NSURL to file representation representation if type was specified from providerDataTypeIdentifiers or providerInPlaceFileTypeIdentifiers property.
+     */
     @Generated
     @IsOptional
     @Selector("fileURLForSearchableIndex:itemIdentifier:typeIdentifier:inPlace:error:")

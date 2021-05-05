@@ -19,6 +19,11 @@ package apple.healthkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]       HKBiologicalSex
+ * 
+ * This enumerated type is used to represent the biological sex of an individual.
+ */
 @Generated
 public final class HKBiologicalSex {
     @Generated @NInt public static final long NotSet = 0x0000000000000000L;

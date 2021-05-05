@@ -21,6 +21,7 @@ import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.mapkit.protocol.MKGeoJSONObject;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -45,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MKPointAnnotation extends MKShape {
+public class MKPointAnnotation extends MKShape implements MKGeoJSONObject {
     static {
         NatJ.register();
     }
@@ -164,4 +165,13 @@ public class MKPointAnnotation extends MKShape {
     @Generated
     @Selector("setCoordinate:")
     public native void setCoordinate(@ByValue CLLocationCoordinate2D value);
+
+    @Generated
+    @Selector("initWithCoordinate:")
+    public native MKPointAnnotation initWithCoordinate(@ByValue CLLocationCoordinate2D coordinate);
+
+    @Generated
+    @Selector("initWithCoordinate:title:subtitle:")
+    public native MKPointAnnotation initWithCoordinateTitleSubtitle(@ByValue CLLocationCoordinate2D coordinate,
+            String title, String subtitle);
 }

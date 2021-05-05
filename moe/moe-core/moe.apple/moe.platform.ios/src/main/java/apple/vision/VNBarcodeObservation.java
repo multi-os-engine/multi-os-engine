@@ -1,6 +1,7 @@
 package apple.vision;
 
 import apple.NSObject;
+import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.coreimage.CIBarcodeDescriptor;
 import apple.foundation.NSArray;
@@ -28,6 +29,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * VNBarcodeObservation
+ * [@superclass] VNRectangleObservation
+ * 
+ * VNBarcodeObservation Describes an area containing a barcode detected by the VNRequestNameDetectBarcodes request.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -60,6 +67,9 @@ public class VNBarcodeObservation extends VNRectangleObservation {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * An object that provides symbology-specific data for the barcode.
+     */
     @Generated
     @Selector("barcodeDescriptor")
     public native CIBarcodeDescriptor barcodeDescriptor();
@@ -101,7 +111,7 @@ public class VNBarcodeObservation extends VNRectangleObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNBarcodeObservation initWithCoder(NSCoder aDecoder);
+    public native VNBarcodeObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -134,6 +144,9 @@ public class VNBarcodeObservation extends VNRectangleObservation {
     @Selector("observationWithBoundingBox:")
     public static native VNBarcodeObservation observationWithBoundingBox(@ByValue CGRect boundingBox);
 
+    /**
+     * The string representation of the barcode's payload.  Depending on the symbology of the barcode and/or the payload data itself, a string representation of the payload may not be available.
+     */
     @Generated
     @Selector("payloadStringValue")
     public native String payloadStringValue();
@@ -164,6 +177,9 @@ public class VNBarcodeObservation extends VNRectangleObservation {
         return supportsSecureCoding();
     }
 
+    /**
+     * The symbology of the detected barcode.
+     */
     @Generated
     @Selector("symbology")
     public native String symbology();
@@ -172,4 +188,15 @@ public class VNBarcodeObservation extends VNRectangleObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("observationWithRequestRevision:boundingBox:")
+    public static native VNBarcodeObservation observationWithRequestRevisionBoundingBox(@NUInt long requestRevision,
+            @ByValue CGRect boundingBox);
+
+    @Generated
+    @Selector("rectangleObservationWithRequestRevision:topLeft:bottomLeft:bottomRight:topRight:")
+    public static native VNBarcodeObservation rectangleObservationWithRequestRevisionTopLeftBottomLeftBottomRightTopRight(
+            @NUInt long requestRevision, @ByValue CGPoint topLeft, @ByValue CGPoint bottomLeft,
+            @ByValue CGPoint bottomRight, @ByValue CGPoint topRight);
 }

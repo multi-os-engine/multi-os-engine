@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNMorpherCalculationMode {
+    /**
+     * (1 - w0 - w1 - ...) * BaseMesh + w0 * Target0 + w1 * Target1 + ...
+     */
     @Generated @NInt public static final long Normalized = 0x0000000000000000L;
+    /**
+     * BaseMesh + w0 * Target0 + w1 * Target1 + ...
+     */
     @Generated @NInt public static final long Additive = 0x0000000000000001L;
 
     @Generated

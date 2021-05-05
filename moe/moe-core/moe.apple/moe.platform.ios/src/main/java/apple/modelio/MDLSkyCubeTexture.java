@@ -22,6 +22,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.modelio.protocol.MDLAssetResolver;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -41,6 +42,54 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MDLSkyCubeTexture
+ *  [@summary] A physically realistic sky as a cube texture
+ * 
+ *  [@property] sunElevation A value of zero is at the zenith, 0.5 is at the horizon,
+ *            1.0 is at the nadir. Use in conjunction with turbidity to give a dawn, 
+ *            dusk, or noon look.
+ *  [@property] turbidity A value of zero simulates the effect of a clear sky, the sun
+ *            will impart very little color to the sky. A value of one simulates a
+ *            great deal of dust and moisture in the sky, and will cause the sun's
+ *            color to spread across the atmosphere.
+ *  [@property] upperAtmosphereScattering A value of zero will give very dusky colors,
+ *            a value of one will give noon-ish saturated colors.
+ *  [@property] groundAlbedo controls the amount of light that bounces back up into
+ *            the sky from the ground. A value of zero will yield a clear sky, a
+ *            value of one will reduce the contrast of the sky, making it a bit foggy.
+ * 
+ *  [@property] horizonElevation If the lower half of the environment is being replaced
+ *            by a color, horizonElevation is angle, in radians, below which the
+ *            replacement should occur. Negative values are below the horizon.
+ * 
+ *  [@property] groundColor If this value is set, the environment will be replaced with
+ *            the color below the horizonElevation value blended with the w factor up to
+ *            Pi/2.0 past the horizon.
+ *            (e.g. w = 0.0 groundColor is applied immediatly on the horizon with no blend
+ *                  w = Pi/2 groundColor is linearly applied all the way to the south pole)
+ *            NOTE: To maintain default behavior a simple length(groundColor) != 0 is used to determine
+ *                  if we want to set the ground color (e.g. black and blended immediatly
+ *                  on the horizon use (0.0, 0.0, 0.0, 0.0000001))
+ *            4 component treats the first 3 components as color and w as blend factor
+ *            3 component treats the first 3 components as color and 0 as blend factor
+ *            2 component treats the first component as greyscale color and y as blend factor
+ *            1 component treats the scalar component as greyscale color and 0 as blend factor
+ * 
+ *  [@property] gamma Modifies the amount of gamma correction applied during
+ *            tone mapping.
+ *  [@property] exposure Modifies the exposure applied during tone mapping.
+ *  [@property] brighness Modifies the brightness of the image during tone mapping.
+ *  [@property] contrast Modifies the contrast of the image during tone mapping.
+ *  [@property] saturation Modifes the saturation of the image during tone mapping.
+ *  [@property] highDynamicRangeCompression values below the x component of this value 
+ *            are not compressed during tone mapping. Values between the x component
+ *            and y component are compressed to the maximum brightness value during
+ *            tone mapping. Values above the limit are clamped.
+ * 
+ * the texture will be created if data is referenced, otherwise, this
+ *  object is merely a description. All parameters have legal values between zero and one.
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -257,6 +306,9 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @Selector("turbidity")
     public native float turbidity();
 
+    /**
+     * Call updateTexture if parameters have been changed and a new sky is required.
+     */
     @Generated
     @Selector("updateTexture")
     public native void updateTexture();
@@ -272,4 +324,9 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @Generated
     @Selector("sunAzimuth")
     public native float sunAzimuth();
+
+    @Generated
+    @Selector("textureNamed:assetResolver:")
+    public static native MDLSkyCubeTexture textureNamedAssetResolver(String name,
+            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

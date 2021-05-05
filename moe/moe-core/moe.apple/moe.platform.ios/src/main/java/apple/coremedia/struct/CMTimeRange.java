@@ -59,11 +59,17 @@ public final class CMTimeRange extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setStart(@ByValue CMTime value);
 
+    /**
+     * [@field] start The start time of the time range.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native CMTime duration();
 
+    /**
+     * [@field] start The start time of the time range.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setDuration(@ByValue CMTime value);

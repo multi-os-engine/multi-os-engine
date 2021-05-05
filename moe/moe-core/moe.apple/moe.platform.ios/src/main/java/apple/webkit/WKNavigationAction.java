@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A WKNavigationAction object contains information about an action that may cause a navigation, used for making policy decisions.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -155,19 +158,33 @@ public class WKNavigationAction extends NSObject {
     @Selector("init")
     public native WKNavigationAction init();
 
+    /**
+     * The type of action that triggered the navigation.
+     * 
+     * The value is one of the constants of the enumerated type WKNavigationType.
+     */
     @Generated
     @Selector("navigationType")
     @NInt
     public native long navigationType();
 
+    /**
+     * The navigation's request.
+     */
     @Generated
     @Selector("request")
     public native NSURLRequest request();
 
+    /**
+     * The frame requesting the navigation.
+     */
     @Generated
     @Selector("sourceFrame")
     public native WKFrameInfo sourceFrame();
 
+    /**
+     * The target frame, or nil if this is a new window navigation.
+     */
     @Generated
     @Selector("targetFrame")
     public native WKFrameInfo targetFrame();

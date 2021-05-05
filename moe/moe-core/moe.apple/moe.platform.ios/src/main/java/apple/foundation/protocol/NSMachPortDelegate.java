@@ -30,6 +30,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSMachPortDelegate")
 public interface NSMachPortDelegate extends NSPortDelegate {
+    /**
+     * Delegates are sent this if they respond, otherwise they
+     * are sent handlePortMessage:; argument is the raw Mach message
+     */
     @Generated
     @IsOptional
     @Selector("handleMachMessage:")

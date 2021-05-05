@@ -93,7 +93,7 @@ public class INRecurrenceRule extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("frequency")
@@ -111,7 +111,7 @@ public class INRecurrenceRule extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRecurrenceRule initWithCoder(NSCoder aDecoder);
+    public native INRecurrenceRule initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithInterval:frequency:")
@@ -179,4 +179,14 @@ public class INRecurrenceRule extends NSObject implements NSCopying, NSSecureCod
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithInterval:frequency:weeklyRecurrenceDays:")
+    public native INRecurrenceRule initWithIntervalFrequencyWeeklyRecurrenceDays(@NUInt long interval,
+            @NInt long frequency, @NUInt long weeklyRecurrenceDays);
+
+    @Generated
+    @Selector("weeklyRecurrenceDays")
+    @NUInt
+    public native long weeklyRecurrenceDays();
 }

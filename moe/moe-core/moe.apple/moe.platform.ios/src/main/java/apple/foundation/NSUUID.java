@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Note: NSUUID is not toll-free bridged with CFUUID. Use UUID strings to convert between CFUUID and NSUUID, if needed. NSUUIDs are not guaranteed to be comparable by pointer value (as CFUUIDRef is); use isEqual: to compare two NSUUIDs.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -53,6 +56,9 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
         super(peer);
     }
 
+    /**
+     * Create a new autoreleased NSUUID with RFC 4122 version 4 random bytes
+     */
     @Generated
     @Selector("UUID")
     public static native NSUUID UUID();
@@ -158,6 +164,9 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Return a string description of the UUID, such as "E621E1F8-C36C-495A-93FC-0C247A3E6E5F"
+     */
     @Generated
     @Selector("UUIDString")
     public native String UUIDString();
@@ -170,16 +179,22 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * Create a new NSUUID with RFC 4122 version 4 random bytes
+     */
     @Generated
     @Selector("init")
     public native NSUUID init();
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUUID initWithCoder(NSCoder aDecoder);
+    public native NSUUID initWithCoder(NSCoder coder);
 
+    /**
+     * Create an NSUUID from a string such as "E621E1F8-C36C-495A-93FC-0C247A3E6E5F". Returns nil for invalid strings.
+     */
     @Generated
     @Selector("initWithUUIDString:")
     public native NSUUID initWithUUIDString(String string);

@@ -42,6 +42,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioMixerNode
+ * 
+ * A node that mixes its inputs to a single output.
+ * 
+ * 	Mixers may have any number of inputs.
+ * 
+ * 	The mixer accepts input at any sample rate and efficiently combines sample rate
+ * 	conversions. It also accepts any channel count and will correctly upmix or downmix
+ * 	to the output channel count.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -161,6 +172,13 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("init")
     public native AVAudioMixerNode init();
 
+    /**
+     * [@property] nextAvailableInputBus
+     * 
+     * Find an unused input bus.
+     * 
+     * 	This will find and return the first input bus to which no other node is connected.
+     */
     @Generated
     @Selector("nextAvailableInputBus")
     @NUInt
@@ -174,6 +192,13 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("occlusion")
     public native float occlusion();
 
+    /**
+     * [@property] outputVolume
+     * 
+     * The mixer's output volume.
+     * 
+     * 	This accesses the mixer's output volume (0.0-1.0, inclusive).
+     */
     @Generated
     @Selector("outputVolume")
     public native float outputVolume();
@@ -208,6 +233,13 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("setOcclusion:")
     public native void setOcclusion(float value);
 
+    /**
+     * [@property] outputVolume
+     * 
+     * The mixer's output volume.
+     * 
+     * 	This accesses the mixer's output volume (0.0-1.0, inclusive).
+     */
     @Generated
     @Selector("setOutputVolume:")
     public native void setOutputVolume(float value);
@@ -239,4 +271,22 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
     @Generated
     @Selector("volume")
     public native float volume();
+
+    @Generated
+    @Selector("pointSourceInHeadMode")
+    @NInt
+    public native long pointSourceInHeadMode();
+
+    @Generated
+    @Selector("setPointSourceInHeadMode:")
+    public native void setPointSourceInHeadMode(@NInt long value);
+
+    @Generated
+    @Selector("setSourceMode:")
+    public native void setSourceMode(@NInt long value);
+
+    @Generated
+    @Selector("sourceMode")
+    @NInt
+    public native long sourceMode();
 }

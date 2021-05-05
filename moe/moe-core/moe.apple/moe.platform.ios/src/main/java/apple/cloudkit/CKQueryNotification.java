@@ -40,6 +40,32 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CKQueryNotification
+ * 
+ * [@c] notificationType == @c CKNotificationTypeQuery
+ * When properties must be dropped (see @c isPruned), here's the order of importance.  The most important properties are first, they'll be the last ones to be dropped.
+ * - notificationID
+ * - badge
+ * - alertLocalizationKey
+ * - alertLocalizationArgs
+ * - alertBody
+ * - alertActionLocalizationKey
+ * - alertLaunchImage
+ * - soundName
+ * - content-available
+ * - desiredKeys
+ * - queryNotificationReason
+ * - recordID
+ * - containerIdentifier
+ * - subscriptionOwnerUserRecordID
+ * - titleLocalizationKey
+ * - titleLocalizationArgs
+ * - title
+ * - subtitleLocalizationKey
+ * - subtitleLocalizationArgs
+ * - subtitle
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -166,14 +192,15 @@ public class CKQueryNotification extends CKNotification {
     public native CKQueryNotification init();
 
     @Generated
-    @Selector("isPublicDatabase")
-    public native boolean isPublicDatabase();
-
-    @Generated
     @Selector("queryNotificationReason")
     @NInt
     public native long queryNotificationReason();
 
+    /**
+     * A set of key->value pairs for creates and updates.
+     * 
+     * You request the server fill out this property via the @c desiredKeys property of @c CKNotificationInfo
+     */
     @Generated
     @Selector("recordFields")
     public native NSDictionary<String, ?> recordFields();

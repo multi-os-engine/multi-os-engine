@@ -19,6 +19,58 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] AVAudioUnitEQFilterType
+ * 
+ * Filter types available to use with AVAudioUnitEQ.
+ * 
+ *     Depending on the filter type, a combination of one or all of the filter parameters defined 
+ *     in AVAudioUnitEQFilterParameters are used to set the filter.
+ * 
+ *     AVAudioUnitEQFilterTypeParametric
+ *         Parametric filter based on Butterworth analog prototype.
+ *         Required parameters: frequency (center), bandwidth, gain
+ * 
+ *     AVAudioUnitEQFilterTypeLowPass
+ *         Simple Butterworth 2nd order low pass filter
+ *         Required parameters: frequency (-3 dB cutoff at specified frequency)
+ * 
+ *     AVAudioUnitEQFilterTypeHighPass
+ *         Simple Butterworth 2nd order high pass filter
+ *         Required parameters: frequency (-3 dB cutoff at specified frequency)
+ * 
+ *     AVAudioUnitEQFilterTypeResonantLowPass
+ *         Low pass filter with resonance support (via bandwidth parameter)
+ *         Required parameters: frequency (-3 dB cutoff at specified frequency), bandwidth
+ * 
+ *     AVAudioUnitEQFilterTypeResonantHighPass
+ *         High pass filter with resonance support (via bandwidth parameter)
+ *         Required parameters: frequency (-3 dB cutoff at specified frequency), bandwidth
+ * 
+ *     AVAudioUnitEQFilterTypeBandPass
+ *         Band pass filter
+ *         Required parameters: frequency (center), bandwidth
+ * 
+ *     AVAudioUnitEQFilterTypeBandStop
+ *         Band stop filter (aka "notch filter")
+ *         Required parameters: frequency (center), bandwidth
+ * 
+ *     AVAudioUnitEQFilterTypeLowShelf
+ *         Low shelf filter
+ *         Required parameters: frequency (center), gain
+ * 
+ *     AVAudioUnitEQFilterTypeHighShelf
+ *         High shelf filter
+ *         Required parameters: frequency (center), gain
+ * 
+ *     AVAudioUnitEQFilterTypeResonantLowShelf
+ *         Low shelf filter with resonance support (via bandwidth parameter)
+ *         Required parameters: frequency (center), bandwidth, gain
+ * 
+ *     AVAudioUnitEQFilterTypeResonantHighShelf
+ *         High shelf filter with resonance support (via bandwidth parameter)
+ *         Required parameters: frequency (center), bandwidth, gain
+ */
 @Generated
 public final class AVAudioUnitEQFilterType {
     @Generated @NInt public static final long Parametric = 0x0000000000000000L;

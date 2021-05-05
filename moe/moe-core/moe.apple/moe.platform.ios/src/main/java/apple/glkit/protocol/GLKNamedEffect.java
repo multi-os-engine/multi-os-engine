@@ -23,6 +23,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * GLKNamedEffect.h
+ * GLKit
+ * 
+ * Copyright (c) 2011-2012 Apple Inc. All rights reserved.
+ */
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)

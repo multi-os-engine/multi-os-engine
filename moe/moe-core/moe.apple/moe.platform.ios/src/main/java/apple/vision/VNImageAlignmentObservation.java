@@ -25,6 +25,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * VNImageAlignmentObservation
+ * [@superclass] VNObservation
+ * 
+ * VNImageAlignmentObservation is generated from an image registration. This is an abstract base class. The type of registration request used defines which subclass describes the result.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -94,7 +100,7 @@ public class VNImageAlignmentObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNImageAlignmentObservation initWithCoder(NSCoder aDecoder);
+    public native VNImageAlignmentObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

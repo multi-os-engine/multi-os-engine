@@ -157,11 +157,17 @@ public class UIScreenMode extends NSObject {
     @Selector("init")
     public native UIScreenMode init();
 
+    /**
+     * The aspect ratio of a single pixel. The ratio is defined as X/Y.
+     */
     @Generated
     @Selector("pixelAspectRatio")
     @NFloat
     public native double pixelAspectRatio();
 
+    /**
+     * The width and height in pixels
+     */
     @Generated
     @Selector("size")
     @ByValue

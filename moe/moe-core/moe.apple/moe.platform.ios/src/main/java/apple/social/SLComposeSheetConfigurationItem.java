@@ -40,6 +40,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents a user-configurable option for the compose session.
+ * For allowing the user to choose which account to post from, what privacy settings to use, etc.
+ */
 @Generated
 @Library("Social")
 @Runtime(ObjCRuntime.class)
@@ -151,39 +155,68 @@ public class SLComposeSheetConfigurationItem extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Designated initializer
+     */
     @Generated
     @Selector("init")
     public native SLComposeSheetConfigurationItem init();
 
+    /**
+     * Called on the main queue when the configuration item is tapped.
+     * Your block should not keep a strong reference to either the configuration item, or the SLComposeServiceViewController, otherwise you'll end up with a retain cycle.
+     */
     @Generated
     @Selector("setTapHandler:")
     public native void setTapHandler(@ObjCBlock(name = "call_setTapHandler") Block_setTapHandler value);
 
+    /**
+     * The displayed name of the option.
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
+    /**
+     * The current value/setting of the option.
+     */
     @Generated
     @Selector("setValue:")
     public native void setValue(String value);
 
+    /**
+     * Default is NO. set to YES to show a progress indicator. Can be used with a value too.
+     */
     @Generated
     @Selector("setValuePending:")
     public native void setValuePending(boolean value);
 
+    /**
+     * Called on the main queue when the configuration item is tapped.
+     * Your block should not keep a strong reference to either the configuration item, or the SLComposeServiceViewController, otherwise you'll end up with a retain cycle.
+     */
     @Generated
     @Selector("tapHandler")
     @ObjCBlock(name = "call_tapHandler_ret")
     public native Block_tapHandler_ret tapHandler();
 
+    /**
+     * The displayed name of the option.
+     */
     @Generated
     @Selector("title")
     public native String title();
 
+    /**
+     * The current value/setting of the option.
+     */
     @Generated
     @Selector("value")
     public native String value();
 
+    /**
+     * Default is NO. set to YES to show a progress indicator. Can be used with a value too.
+     */
     @Generated
     @Selector("valuePending")
     public native boolean valuePending();

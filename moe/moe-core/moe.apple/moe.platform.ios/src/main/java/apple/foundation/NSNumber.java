@@ -362,7 +362,7 @@ public class NSNumber extends NSValue implements CKRecordValue, NSFetchRequestRe
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSNumber initWithCoder(NSCoder aDecoder);
+    public native NSNumber initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDouble:")

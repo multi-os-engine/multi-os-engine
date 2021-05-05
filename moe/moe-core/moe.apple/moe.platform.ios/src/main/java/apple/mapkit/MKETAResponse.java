@@ -155,6 +155,9 @@ public class MKETAResponse extends NSObject {
     @Selector("destination")
     public native MKMapItem destination();
 
+    /**
+     * overall route distance in meters
+     */
     @Generated
     @Selector("distance")
     public native double distance();
@@ -175,6 +178,9 @@ public class MKETAResponse extends NSObject {
     @Selector("init")
     public native MKETAResponse init();
 
+    /**
+     * Source and destination may be filled with additional details compared to the request object.
+     */
     @Generated
     @Selector("source")
     public native MKMapItem source();

@@ -19,6 +19,16 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]      HMCharacteristicValueAirQuality
+ * 
+ * [@constant]  HMCharacteristicValueAirQualityUnknown              Air quality is unknown.
+ * [@constant]  HMCharacteristicValueAirQualityExcellent            Air quality is excellent.
+ * [@constant]  HMCharacteristicValueAirQualityGood                 Air quality is good.
+ * [@constant]  HMCharacteristicValueAirQualityFair                 Air quality is fair.
+ * [@constant]  HMCharacteristicValueAirQualityInferior             Air quality is inferior.
+ * [@constant]  HMCharacteristicValueAirQualityPoor                 Air quality is poor.
+ */
 @Generated
 public final class HMCharacteristicValueAirQuality {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;

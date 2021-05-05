@@ -162,7 +162,7 @@ public class INGetRestaurantGuestIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetRestaurantGuestIntent initWithCoder(NSCoder aDecoder);
+    public native INGetRestaurantGuestIntent initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

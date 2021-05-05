@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UNTimeIntervalNotificationTrigger can be scheduled on the device to notify after the time interval, and optionally repeat.
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -168,7 +171,7 @@ public class UNTimeIntervalNotificationTrigger extends UNNotificationTrigger {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNTimeIntervalNotificationTrigger initWithCoder(NSCoder aDecoder);
+    public native UNTimeIntervalNotificationTrigger initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("nextTriggerDate")

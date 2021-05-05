@@ -161,11 +161,20 @@ public class CSSearchQuery extends NSObject {
     @ObjCBlock(name = "call_completionHandler_ret")
     public native Block_completionHandler_ret completionHandler();
 
+    /**
+     * The query will update the count before each foundItemsHandler invocation to reflect
+     * the number of items found so far; if foundItemsHandler is nil then the count will
+     * contain the total number of found items when the query completes.
+     */
     @Generated
     @Selector("foundItemCount")
     @NUInt
     public native long foundItemCount();
 
+    /**
+     * The foundItemsHandler will be invoked repeatedly with a new batch of searchable items.
+     * The query serializes all the foundItemsHandler invocations.
+     */
     @Generated
     @Selector("foundItemsHandler")
     @ObjCBlock(name = "call_foundItemsHandler_ret")
@@ -175,6 +184,10 @@ public class CSSearchQuery extends NSObject {
     @Selector("init")
     public native CSSearchQuery init();
 
+    /**
+     * queryString: The query string (e.g., 'contentType == "public.email-message" && subject != "Re:*"')
+     * attributes: The attributes to be fetched for the searchable items
+     */
     @Generated
     @Selector("initWithQueryString:attributes:")
     public native CSSearchQuery initWithQueryStringAttributes(String queryString, NSArray<String> attributes);
@@ -183,6 +196,12 @@ public class CSSearchQuery extends NSObject {
     @Selector("isCancelled")
     public native boolean isCancelled();
 
+    /**
+     * An array of NSFileProtectionComplete, NSFileProtectionCompleteUnlessOpen,
+     * or NSFileProtectionCompleteUntilFirstUserAuthentication.
+     * By default the data protection will be read from the "com.apple.developer.default-data-protection"
+     * entitlement if any or NSFileProtectionCompleteUntilFirstUserAuthentication will be used otherwise.
+     */
     @Generated
     @Selector("protectionClasses")
     public native NSArray<String> protectionClasses();
@@ -192,11 +211,21 @@ public class CSSearchQuery extends NSObject {
     public native void setCompletionHandler(
             @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
 
+    /**
+     * The foundItemsHandler will be invoked repeatedly with a new batch of searchable items.
+     * The query serializes all the foundItemsHandler invocations.
+     */
     @Generated
     @Selector("setFoundItemsHandler:")
     public native void setFoundItemsHandler(
             @ObjCBlock(name = "call_setFoundItemsHandler") Block_setFoundItemsHandler value);
 
+    /**
+     * An array of NSFileProtectionComplete, NSFileProtectionCompleteUnlessOpen,
+     * or NSFileProtectionCompleteUntilFirstUserAuthentication.
+     * By default the data protection will be read from the "com.apple.developer.default-data-protection"
+     * entitlement if any or NSFileProtectionCompleteUntilFirstUserAuthentication will be used otherwise.
+     */
     @Generated
     @Selector("setProtectionClasses:")
     public native void setProtectionClasses(NSArray<String> value);

@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Represents a camera snapshot.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +154,9 @@ public class HMCameraSnapshot extends HMCameraSource {
     @NInt
     public static native long version_static();
 
+    /**
+     * Time corresponding to the snapshot request.
+     */
     @Generated
     @Selector("captureDate")
     public native NSDate captureDate();

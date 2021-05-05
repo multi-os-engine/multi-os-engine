@@ -166,7 +166,7 @@ public class CMLogItem extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class CMLogItem extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMLogItem initWithCoder(NSCoder aDecoder);
+    public native CMLogItem initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -182,6 +182,12 @@ public class CMLogItem extends NSObject implements NSSecureCoding, NSCopying {
         return supportsSecureCoding();
     }
 
+    /**
+     * timestamp
+     * 
+     * Discussion:
+     *   Time at which the item is valid.
+     */
     @Generated
     @Selector("timestamp")
     public native double timestamp();

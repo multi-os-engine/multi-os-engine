@@ -24,6 +24,7 @@ import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.foundation.NSUserActivity;
 import apple.uikit.protocol.UIApplicationDelegate;
 import apple.uikit.protocol.UIStateRestoring;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -141,6 +142,12 @@ public class UIApplication extends UIResponder {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Register non-View/ViewController objects for state restoration so other objects can reference them within state restoration archives.
+     * If the object implements encode/decode, those methods will be called during save/restore.
+     * Obj and identifier must not be nil, or will raise UIRestorationObjectRegistrationException.
+     * Objects do not need to be unregistered when they are deleted, the State Restoration system will notice and stop tracking the object.
+     */
     @Generated
     @Selector("registerObjectForStateRestoration:restorationIdentifier:")
     public static native void registerObjectForStateRestorationRestorationIdentifier(
@@ -171,6 +178,9 @@ public class UIApplication extends UIResponder {
     @NInt
     public static native long version_static();
 
+    /**
+     * set to 0 to hide. default is 0. In iOS 8.0 and later, your application must register for user notifications using -[UIApplication registerUserNotificationSettings:] before being able to set the icon badge.
+     */
     @Generated
     @Selector("applicationIconBadgeNumber")
     @NInt
@@ -185,6 +195,11 @@ public class UIApplication extends UIResponder {
     @Selector("applicationSupportsShakeToEdit")
     public native boolean applicationSupportsShakeToEdit();
 
+    /**
+     * When background refresh is available for an application, it may launched or resumed in the background to handle significant
+     * location changes, remote notifications, background fetches, etc. Observe UIApplicationBackgroundRefreshStatusDidChangeNotification to
+     * be notified of changes. 
+     */
     @Generated
     @Selector("backgroundRefreshStatus")
     @NInt
@@ -206,6 +221,9 @@ public class UIApplication extends UIResponder {
     public native long beginBackgroundTaskWithNameExpirationHandler(String taskName,
             @ObjCBlock(name = "call_beginBackgroundTaskWithNameExpirationHandler") Block_beginBackgroundTaskWithNameExpirationHandler handler);
 
+    /**
+     * nested. set should be set during animations & transitions to ignore touch and other events
+     */
     @Generated
     @Selector("beginIgnoringInteractionEvents")
     public native void beginIgnoringInteractionEvents();
@@ -235,6 +253,9 @@ public class UIApplication extends UIResponder {
     @Selector("completeStateRestoration")
     public native void completeStateRestoration();
 
+    /**
+     * Returns the enabled user notification settings, also taking into account any systemwide settings.
+     */
     @Generated
     @Selector("currentUserNotificationSettings")
     public native UIUserNotificationSettings currentUserNotificationSettings();
@@ -244,6 +265,9 @@ public class UIApplication extends UIResponder {
     @MappedReturn(ObjCObjectMapper.class)
     public native UIApplicationDelegate delegate();
 
+    /**
+     * Returns the enabled types, also taking into account any systemwide settings; doesn't relate to connectivity.
+     */
     @Generated
     @Deprecated
     @Selector("enabledRemoteNotificationTypes")
@@ -262,10 +286,19 @@ public class UIApplication extends UIResponder {
     @Selector("endReceivingRemoteControlEvents")
     public native void endReceivingRemoteControlEvents();
 
+    /**
+     * These methods are used to inform the system that state restoration is occuring asynchronously after the application
+     * has processed its restoration archive on launch. In the even of a crash, the system will be able to detect that it may
+     * have been caused by a bad restoration archive and arrange to ignore it on a subsequent application launch.
+     */
     @Generated
     @Selector("extendStateRestoration")
     public native void extendStateRestoration();
 
+    /**
+     * Indicate the application should not use the snapshot on next launch, even if there is a valid state restoration archive.
+     * This should only be called from methods invoked from State Preservation, else it is ignored.
+     */
     @Generated
     @Selector("ignoreSnapshotOnNextApplicationLaunch")
     public native void ignoreSnapshotOnNextApplicationLaunch();
@@ -274,14 +307,23 @@ public class UIApplication extends UIResponder {
     @Selector("init")
     public native UIApplication init();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("isIdleTimerDisabled")
     public native boolean isIdleTimerDisabled();
 
+    /**
+     * default is NO
+     */
     @Generated
     @Selector("setIdleTimerDisabled:")
     public native void setIdleTimerDisabled(boolean value);
 
+    /**
+     * returns YES if we are at least one deep in ignoring events
+     */
     @Generated
     @Selector("isIgnoringInteractionEvents")
     public native boolean isIgnoringInteractionEvents();
@@ -298,16 +340,25 @@ public class UIApplication extends UIResponder {
     @Selector("isProtectedDataAvailable")
     public native boolean isProtectedDataAvailable();
 
+    /**
+     * default is NO. see UIDevice for replacement
+     */
     @Generated
     @Deprecated
     @Selector("isProximitySensingEnabled")
     public native boolean isProximitySensingEnabled();
 
+    /**
+     * default is NO. see UIDevice for replacement
+     */
     @Generated
     @Deprecated
     @Selector("setProximitySensingEnabled:")
     public native void setProximitySensingEnabled(boolean value);
 
+    /**
+     * Returns YES if the application is currently registered for remote notifications, taking into account any systemwide settings; doesn't relate to connectivity.
+     */
     @Generated
     @Selector("isRegisteredForRemoteNotifications")
     public native boolean isRegisteredForRemoteNotifications();
@@ -316,6 +367,9 @@ public class UIApplication extends UIResponder {
     @Selector("isStatusBarHidden")
     public native boolean isStatusBarHidden();
 
+    /**
+     * Setting statusBarHidden does nothing if your application is using the default UIViewController-based status bar system.
+     */
     @Generated
     @Deprecated
     @Selector("setStatusBarHidden:")
@@ -329,11 +383,20 @@ public class UIApplication extends UIResponder {
     @Selector("openURL:")
     public native boolean openURL(NSURL url);
 
+    /**
+     * Options are specified in the section below for openURL options. An empty options dictionary will result in the same
+     * behavior as the older openURL call, aside from the fact that this is asynchronous and calls the completion handler rather
+     * than returning a result.
+     * The completion handler is called on the main queue.
+     */
     @Generated
     @Selector("openURL:options:completionHandler:")
     public native void openURLOptionsCompletionHandler(NSURL url, NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_openURLOptionsCompletionHandler") Block_openURLOptionsCompletionHandler completion);
 
+    /**
+     * Return the size category
+     */
     @Generated
     @Selector("preferredContentSizeCategory")
     public native String preferredContentSizeCategory();
@@ -347,14 +410,23 @@ public class UIApplication extends UIResponder {
     @Selector("registerForRemoteNotificationTypes:")
     public native void registerForRemoteNotificationTypes(@NUInt long types);
 
+    /**
+     * Calling this will result in either application:didRegisterForRemoteNotificationsWithDeviceToken: or application:didFailToRegisterForRemoteNotificationsWithError: to be called on the application delegate. Note: these callbacks will be made only if the application has successfully registered for user notifications with registerUserNotificationSettings:, or if it is enabled for Background App Refresh.
+     */
     @Generated
     @Selector("registerForRemoteNotifications")
     public native void registerForRemoteNotifications();
 
+    /**
+     * Registering UIUserNotificationSettings more than once results in previous settings being overwritten.
+     */
     @Generated
     @Selector("registerUserNotificationSettings:")
     public native void registerUserNotificationSettings(UIUserNotificationSettings notificationSettings);
 
+    /**
+     * copies notification
+     */
     @Generated
     @Selector("scheduleLocalNotification:")
     public native void scheduleLocalNotification(UILocalNotification notification);
@@ -372,6 +444,9 @@ public class UIApplication extends UIResponder {
     @Selector("sendEvent:")
     public native void sendEvent(UIEvent event);
 
+    /**
+     * set to 0 to hide. default is 0. In iOS 8.0 and later, your application must register for user notifications using -[UIApplication registerUserNotificationSettings:] before being able to set the icon badge.
+     */
     @Generated
     @Selector("setApplicationIconBadgeNumber:")
     public native void setApplicationIconBadgeNumber(@NInt long value);
@@ -402,6 +477,16 @@ public class UIApplication extends UIResponder {
     public native boolean setKeepAliveTimeoutHandler(double timeout,
             @ObjCBlock(name = "call_setKeepAliveTimeoutHandler") Block_setKeepAliveTimeoutHandler keepAliveHandler);
 
+    /**
+     * The system guarantees that it will not wake up your application for a background fetch more
+     * frequently than the interval provided. Set to UIApplicationBackgroundFetchIntervalMinimum to be
+     * woken as frequently as the system desires, or to UIApplicationBackgroundFetchIntervalNever (the
+     * default) to never be woken for a background fetch.
+     * 
+     * This setter will have no effect unless your application has the "fetch" 
+     * UIBackgroundMode. See the UIApplicationDelegate method
+     * `application:performFetchWithCompletionHandler:` for more. 
+     */
     @Generated
     @Selector("setMinimumBackgroundFetchInterval:")
     public native void setMinimumBackgroundFetchInterval(double minimumBackgroundFetchInterval);
@@ -415,6 +500,9 @@ public class UIApplication extends UIResponder {
     @Selector("setScheduledLocalNotifications:")
     public native void setScheduledLocalNotifications(NSArray<? extends UILocalNotification> value);
 
+    /**
+     * Register shortcuts to display on the home screen, or retrieve currently registered shortcuts.
+     */
     @Generated
     @Selector("setShortcutItems:")
     public native void setShortcutItems(NSArray<? extends UIApplicationShortcutItem> value);
@@ -429,6 +517,9 @@ public class UIApplication extends UIResponder {
     @Selector("setStatusBarHidden:withAnimation:")
     public native void setStatusBarHiddenWithAnimation(boolean hidden, @NInt long animation);
 
+    /**
+     * Explicit setting of the status bar orientation is more limited in iOS 6.0 and later.
+     */
     @Generated
     @Deprecated
     @Selector("setStatusBarOrientation:")
@@ -439,6 +530,9 @@ public class UIApplication extends UIResponder {
     @Selector("setStatusBarOrientation:animated:")
     public native void setStatusBarOrientationAnimated(@NInt long interfaceOrientation, boolean animated);
 
+    /**
+     * Setting the statusBarStyle does nothing if your application is using the default UIViewController-based status bar system.
+     */
     @Generated
     @Deprecated
     @Selector("setStatusBarStyle:")
@@ -449,10 +543,16 @@ public class UIApplication extends UIResponder {
     @Selector("setStatusBarStyle:animated:")
     public native void setStatusBarStyleAnimated(@NInt long statusBarStyle, boolean animated);
 
+    /**
+     * Register shortcuts to display on the home screen, or retrieve currently registered shortcuts.
+     */
     @Generated
     @Selector("shortcutItems")
     public native NSArray<? extends UIApplicationShortcutItem> shortcutItems();
 
+    /**
+     * returns CGRectZero if the status bar is hidden
+     */
     @Generated
     @Selector("statusBarFrame")
     @ByValue
@@ -463,15 +563,30 @@ public class UIApplication extends UIResponder {
     @NInt
     public native long statusBarOrientation();
 
+    /**
+     * Returns the animation duration for the status bar during a 90 degree orientation change.  It should be doubled for a 180 degree orientation change.
+     */
     @Generated
     @Selector("statusBarOrientationAnimationDuration")
     public native double statusBarOrientationAnimationDuration();
 
+    /**
+     * default is UIStatusBarStyleDefault
+     */
     @Generated
     @Selector("statusBarStyle")
     @NInt
     public native long statusBarStyle();
 
+    /**
+     * The system only calls this method if the application delegate has not
+     * implemented the delegate equivalent. It returns the orientations specified by
+     * the application's info.plist. If no supported interface orientations were
+     * specified it will return UIInterfaceOrientationMaskAll on an iPad and
+     * UIInterfaceOrientationMaskAllButUpsideDown on a phone.  The return value
+     * should be one of the UIInterfaceOrientationMask values which indicates the
+     * orientations supported by this application.
+     */
     @Generated
     @Selector("supportedInterfaceOrientationsForWindow:")
     @NUInt
@@ -508,7 +623,7 @@ public class UIApplication extends UIResponder {
     @Generated
     public interface Block_openURLOptionsCompletionHandler {
         @Generated
-        void call_openURLOptionsCompletionHandler(boolean arg0);
+        void call_openURLOptionsCompletionHandler(boolean success);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -518,10 +633,16 @@ public class UIApplication extends UIResponder {
         void call_setKeepAliveTimeoutHandler();
     }
 
+    /**
+     * If `nil`, the primary application icon is being used.
+     */
     @Generated
     @Selector("alternateIconName")
     public native String alternateIconName();
 
+    /**
+     * Pass `nil` to use the primary application icon. The completion handler will be invoked asynchronously on an arbitrary background queue; be sure to dispatch back to the main queue before doing any further UI work.
+     */
     @Generated
     @Selector("setAlternateIconName:completionHandler:")
     public native void setAlternateIconNameCompletionHandler(String alternateIconName,
@@ -531,10 +652,75 @@ public class UIApplication extends UIResponder {
     @Generated
     public interface Block_setAlternateIconNameCompletionHandler {
         @Generated
-        void call_setAlternateIconNameCompletionHandler(NSError arg0);
+        void call_setAlternateIconNameCompletionHandler(NSError error);
     }
 
+    /**
+     * If false, alternate icons are not supported for the current process.
+     */
     @Generated
     @Selector("supportsAlternateIcons")
     public native boolean supportsAlternateIcons();
+
+    /**
+     * All of the currently connected UIScene instances
+     */
+    @Generated
+    @Selector("connectedScenes")
+    public native NSSet<? extends UIScene> connectedScenes();
+
+    /**
+     * All of the representations that currently have connected UIScene instances or had their sessions persisted by the system (ex: visible in iOS' switcher)
+     */
+    @Generated
+    @Selector("openSessions")
+    public native NSSet<? extends UISceneSession> openSessions();
+
+    /**
+     * Request a given session be activated, first connecting it to the application if necessary.
+     * Providing a session will activate, connecting if necessary, the interface backed by the already existing UISceneSession.
+     * Providing a user activity will dispatch that activity to the provided session's scene. If no session is provided, then the system will select one (possibly creating a new session, if appropriate) and pass the activity to the session scene's delegate.
+     */
+    @Generated
+    @Selector("requestSceneSessionActivation:userActivity:options:errorHandler:")
+    public native void requestSceneSessionActivationUserActivityOptionsErrorHandler(UISceneSession sceneSession,
+            NSUserActivity userActivity, UISceneActivationRequestOptions options,
+            @ObjCBlock(name = "call_requestSceneSessionActivationUserActivityOptionsErrorHandler") Block_requestSceneSessionActivationUserActivityOptionsErrorHandler errorHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestSceneSessionActivationUserActivityOptionsErrorHandler {
+        @Generated
+        void call_requestSceneSessionActivationUserActivityOptionsErrorHandler(NSError error);
+    }
+
+    /**
+     * requests that a given session be closed, disconnecting the currently connected scene if present, and calling the -application:didDiscardSceneSessions: method on the application's delegate
+     */
+    @Generated
+    @Selector("requestSceneSessionDestruction:options:errorHandler:")
+    public native void requestSceneSessionDestructionOptionsErrorHandler(UISceneSession sceneSession,
+            UISceneDestructionRequestOptions options,
+            @ObjCBlock(name = "call_requestSceneSessionDestructionOptionsErrorHandler") Block_requestSceneSessionDestructionOptionsErrorHandler errorHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestSceneSessionDestructionOptionsErrorHandler {
+        @Generated
+        void call_requestSceneSessionDestructionOptionsErrorHandler(NSError error);
+    }
+
+    /**
+     * requests that any system UI representing a scene be updated due to background updates or any other relevant model/state update.
+     */
+    @Generated
+    @Selector("requestSceneSessionRefresh:")
+    public native void requestSceneSessionRefresh(UISceneSession sceneSession);
+
+    /**
+     * returns YES if the application both declares multiple scene support in its info.plist and the executing environment allows multiple scenes for at least one system type. NO otherwise.
+     */
+    @Generated
+    @Selector("supportsMultipleScenes")
+    public native boolean supportsMultipleScenes();
 }

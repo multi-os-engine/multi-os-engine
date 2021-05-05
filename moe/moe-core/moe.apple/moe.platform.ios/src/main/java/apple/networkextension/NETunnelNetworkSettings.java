@@ -43,6 +43,15 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NETunnelNetworkSettings
+ * 
+ * The NETunnelNetworkSettings class declares the programmatic interface for an object that contains network settings.
+ * 
+ * NETunnelNetworkSettings is used by NETunnelProviders to communicate the desired network settings for the tunnel to the framework. The framework takes care of applying the contained settings to the system.
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -158,6 +167,11 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] DNSSettings
+     * 
+     * An NEDNSSettings object that contains the desired tunnel DNS settings.
+     */
     @Generated
     @Selector("DNSSettings")
     public native NEDNSSettings DNSSettings();
@@ -170,7 +184,7 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,20 +192,42 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
 
     @Generated
     @Selector("initWithCoder:")
-    public native NETunnelNetworkSettings initWithCoder(NSCoder aDecoder);
+    public native NETunnelNetworkSettings initWithCoder(NSCoder coder);
 
+    /**
+     * initWithTunnelRemoteAddress:
+     * 
+     * This function initializes a newly-allocated NETunnelNetworkSettings object with a given tunnel remote address.
+     * 
+     * @param address The address of the remote endpoint that is providing the tunnel service.
+     */
     @Generated
     @Selector("initWithTunnelRemoteAddress:")
     public native NETunnelNetworkSettings initWithTunnelRemoteAddress(String address);
 
+    /**
+     * [@property] proxySettings
+     * 
+     * An NEProxySettings object that contains the desired tunnel proxy settings.
+     */
     @Generated
     @Selector("proxySettings")
     public native NEProxySettings proxySettings();
 
+    /**
+     * [@property] DNSSettings
+     * 
+     * An NEDNSSettings object that contains the desired tunnel DNS settings.
+     */
     @Generated
     @Selector("setDNSSettings:")
     public native void setDNSSettings(NEDNSSettings value);
 
+    /**
+     * [@property] proxySettings
+     * 
+     * An NEProxySettings object that contains the desired tunnel proxy settings.
+     */
     @Generated
     @Selector("setProxySettings:")
     public native void setProxySettings(NEProxySettings value);
@@ -202,6 +238,11 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
         return supportsSecureCoding();
     }
 
+    /**
+     * [@property] tunnelRemoteAddress
+     * 
+     * A string containing the IP address of the remote endpoint that is providing the tunnel service.
+     */
     @Generated
     @Selector("tunnelRemoteAddress")
     public native String tunnelRemoteAddress();

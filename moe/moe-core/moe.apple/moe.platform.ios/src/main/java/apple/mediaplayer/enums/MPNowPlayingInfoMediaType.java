@@ -19,6 +19,32 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * -----------------------------------------------------------------------------
+ * MPNowPlayingInfoCenter provides an interface for setting the current now
+ * playing information for the application. This information will be displayed
+ * wherever now playing information typically appears, such as the lock screen
+ * and app switcher. The now playing info dictionary contains a group of
+ * metadata properties for a now playing item. The list of property constants
+ * is available in <MediaPlayer/MPMediaItem.h>. The properties which are
+ * currently supported include:
+ * 
+ * MPMediaItemPropertyAlbumTitle
+ * MPMediaItemPropertyAlbumTrackCount
+ * MPMediaItemPropertyAlbumTrackNumber
+ * MPMediaItemPropertyArtist
+ * MPMediaItemPropertyArtwork
+ * MPMediaItemPropertyComposer
+ * MPMediaItemPropertyDiscCount
+ * MPMediaItemPropertyDiscNumber
+ * MPMediaItemPropertyGenre
+ * MPMediaItemPropertyPersistentID
+ * MPMediaItemPropertyPlaybackDuration
+ * MPMediaItemPropertyTitle
+ * 
+ * In addition, metadata properties specific to the current playback session
+ * may also be specified -- see "Additional metadata properties" below.
+ */
 @Generated
 public final class MPNowPlayingInfoMediaType {
     @Generated @NUInt public static final long None = 0x0000000000000000L;

@@ -159,6 +159,9 @@ public class UIUserNotificationCategory extends NSObject implements NSCopying, N
     @NInt
     public static native long version_static();
 
+    /**
+     * UIUserNotificationActions in the order to be displayed for the specified context
+     */
     @Generated
     @Selector("actionsForContext:")
     public native NSArray<? extends UIUserNotificationAction> actionsForContext(@NUInt long context);
@@ -171,8 +174,11 @@ public class UIUserNotificationCategory extends NSObject implements NSCopying, N
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The category identifier passed in a UILocalNotification or a remote notification payload
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -183,8 +189,9 @@ public class UIUserNotificationCategory extends NSObject implements NSCopying, N
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIUserNotificationCategory initWithCoder(NSCoder aDecoder);
+    public native UIUserNotificationCategory initWithCoder(NSCoder coder);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

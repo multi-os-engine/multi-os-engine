@@ -31,6 +31,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ABPeoplePickerNavigationControllerDelegate")
 public interface ABPeoplePickerNavigationControllerDelegate {
+    /**
+     * Called after a person has been selected by the user.
+     */
     @Generated
     @IsOptional
     @Selector("peoplePickerNavigationController:didSelectPerson:")
@@ -39,6 +42,9 @@ public interface ABPeoplePickerNavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called after a property has been selected by the user.
+     */
     @Generated
     @IsOptional
     @Selector("peoplePickerNavigationController:didSelectPerson:property:identifier:")
@@ -47,6 +53,9 @@ public interface ABPeoplePickerNavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Deprecated, use predicateForSelectionOfPerson and/or -peoplePickerNavigationController:didSelectPerson: instead.
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -56,6 +65,9 @@ public interface ABPeoplePickerNavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Deprecated, use predicateForSelectionOfProperty and/or -peoplePickerNavigationController:didSelectPerson:property:identifier: instead.
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -65,6 +77,9 @@ public interface ABPeoplePickerNavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called after the user has pressed cancel.
+     */
     @Generated
     @IsOptional
     @Selector("peoplePickerNavigationControllerDidCancel:")

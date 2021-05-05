@@ -22,6 +22,7 @@ import apple.foundation.NSBundle;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.modelio.protocol.MDLAssetResolver;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -41,6 +42,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MDLURLTexture
+ * [@summary] a texture provider initialized with a URL or file path.
+ * 
+ * if any of the properties of the texture, such as data, are referenced,
+ *             then the texture may be loaded, otherwise, the MDLURLTexture is merely
+ *             a lightweight reference to something that could be loaded
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -183,4 +192,9 @@ public class MDLURLTexture extends MDLTexture {
     @Generated
     @Selector("setURL:")
     public native void setURL(NSURL value);
+
+    @Generated
+    @Selector("textureNamed:assetResolver:")
+    public static native MDLURLTexture textureNamedAssetResolver(String name,
+            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

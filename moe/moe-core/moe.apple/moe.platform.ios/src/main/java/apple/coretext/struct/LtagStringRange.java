@@ -49,18 +49,30 @@ public final class LtagStringRange extends StructObject {
         setLength(length);
     }
 
+    /**
+     * offset to the beginning of the string
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native char offset();
 
+    /**
+     * offset to the beginning of the string
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setOffset(char value);
 
+    /**
+     * string length in bytes
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native char length();
 
+    /**
+     * string length in bytes
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setLength(char value);

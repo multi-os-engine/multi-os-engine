@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * RPBroadcastProcessExtension
+ * 
+ * Base class for extensions that are responsible for handling video and audio data.
+ */
 @Generated
 @Library("ReplayKit")
 @Runtime(ObjCRuntime.class)
@@ -162,10 +167,20 @@ public class RPBroadcastHandler extends NSObject implements NSExtensionRequestHa
     @Selector("init")
     public native RPBroadcastHandler init();
 
+    /**
+     * Call this method, supplying it with a dictionary defined by the service, to populate the serviceInfo property on RPBroadcastController. This can be used to communicate viewing stats or messages back to the broadcasting app.
+     * 
+     * @param serviceInfo Dictionary that can be passed back to the broadcasting app that may contain information about the ongoing broadcast.
+     */
     @Generated
     @Selector("updateServiceInfo:")
     public native void updateServiceInfo(NSDictionary<String, ? extends NSObject> serviceInfo);
 
+    /**
+     * Call this method, supplying it with a URL to update the broadcastURL property on RPBroadcastController.
+     * 
+     * @param broadcastURL URL of the resource where broadcast can be viewed which will be passed to the broadcasting app.
+     */
     @Generated
     @Selector("updateBroadcastURL:")
     public native void updateBroadcastURL(NSURL broadcastURL);

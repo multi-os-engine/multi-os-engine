@@ -17,9 +17,9 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSFastEnumeration;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -39,6 +39,7 @@ import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -46,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSCoding, NSFastEnumeration {
+public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSSecureCoding, NSFastEnumeration {
     static {
         NatJ.register();
     }
@@ -105,6 +106,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @NUInt
     public static native long hash_static();
 
+    /**
+     * conveniences
+     */
     @Generated
     @Selector("hashTableWithOptions:")
     public static native <_ObjectType> NSHashTable<_ObjectType> hashTableWithOptions(@NUInt long options);
@@ -157,6 +161,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @NInt
     public static native long version_static();
 
+    /**
+     * entries are not necessarily purged right away when the weak object is reclaimed
+     */
     @Generated
     @Selector("weakObjectsHashTable")
     public static native <_ObjectType> NSHashTable<_ObjectType> weakObjectsHashTable();
@@ -165,6 +172,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @Selector("addObject:")
     public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
+    /**
+     * convenience
+     */
     @Generated
     @Selector("allObjects")
     public native NSArray<_ObjectType> allObjects();
@@ -197,7 +207,7 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -205,7 +215,7 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSHashTable<?> initWithCoder(NSCoder aDecoder);
+    public native NSHashTable<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithOptions:capacity:")
@@ -245,6 +255,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
+    /**
+     * return an NSPointerFunctions object reflecting the functions in use.  This is a new autoreleased object that can be subsequently modified and/or used directly in the creation of other pointer "collections".
+     */
     @Generated
     @Selector("pointerFunctions")
     public native NSPointerFunctions pointerFunctions();
@@ -257,6 +270,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @Selector("removeObject:")
     public native void removeObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
+    /**
+     * create a set of the contents
+     */
     @Generated
     @Selector("setRepresentation")
     public native NSSet<_ObjectType> setRepresentation();
@@ -264,4 +280,14 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @Generated
     @Selector("unionHashTable:")
     public native void unionHashTable(NSHashTable<_ObjectType> other);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native <_ObjectType> boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

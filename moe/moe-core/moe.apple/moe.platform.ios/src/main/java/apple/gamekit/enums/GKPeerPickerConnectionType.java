@@ -19,9 +19,18 @@ package apple.gamekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * Connection types
+ */
 @Generated
 public final class GKPeerPickerConnectionType {
+    /**
+     * Online (Internet) based multiplayer connection
+     */
     @Generated @NUInt public static final long Online = 0x0000000000000001L;
+    /**
+     * Nearby (Bluetooth) based multiplayer connection
+     */
     @Generated @NUInt public static final long Nearby = 0x0000000000000002L;
 
     @Generated

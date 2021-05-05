@@ -19,6 +19,23 @@ package apple.corebluetooth.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ *  [@enum] CBCharacteristicProperties
+ * 
+ * Characteristic properties determine how the characteristic value can be	used, or how the descriptor(s) can be accessed. Can be combined. Unless
+ * 			otherwise specified, properties are valid for local characteristics published via @link CBPeripheralManager @/link.
+ * 
+ * [@constant] CBCharacteristicPropertyBroadcast						Permits broadcasts of the characteristic value using a characteristic configuration descriptor. Not allowed for local characteristics.
+ * [@constant] CBCharacteristicPropertyRead							Permits reads of the characteristic value.
+ * [@constant] CBCharacteristicPropertyWriteWithoutResponse			Permits writes of the characteristic value, without a response.
+ * [@constant] CBCharacteristicPropertyWrite							Permits writes of the characteristic value.
+ * [@constant] CBCharacteristicPropertyNotify						Permits notifications of the characteristic value, without a response.
+ * [@constant] CBCharacteristicPropertyIndicate						Permits indications of the characteristic value.
+ * [@constant] CBCharacteristicPropertyAuthenticatedSignedWrites		Permits signed writes of the characteristic value
+ * [@constant] CBCharacteristicPropertyExtendedProperties			If set, additional characteristic properties are defined in the characteristic extended properties descriptor. Not allowed for local characteristics.
+ * [@constant] CBCharacteristicPropertyNotifyEncryptionRequired		If set, only trusted devices can enable notifications of the characteristic value.
+ * [@constant] CBCharacteristicPropertyIndicateEncryptionRequired	If set, only trusted devices can enable indications of the characteristic value.
+ */
 @Generated
 public final class CBCharacteristicProperties {
     @Generated @NUInt public static final long Broadcast = 0x0000000000000001L;

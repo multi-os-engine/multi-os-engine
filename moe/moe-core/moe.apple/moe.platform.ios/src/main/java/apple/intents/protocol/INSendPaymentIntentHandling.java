@@ -32,11 +32,26 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Protocol to declare support for handling an INSendPaymentIntent. By implementing this protocol, a class can provide logic for resolving, confirming and handling the intent.
+ * 
+ * The minimum requirement for an implementing class is that it should be able to handle the intent. The resolution and confirmation methods are optional. The handling method is always called last, after resolving and confirming the intent.
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INSendPaymentIntentHandling")
 public interface INSendPaymentIntentHandling {
+    /**
+     * Confirmation method - Validate that this intent is ready for the next step (i.e. handling)
+     * 
+     * Called prior to asking the app to handle the intent. The app should return a response object that contains additional information about the intent, which may be relevant for the system to show the user prior to handling. If unimplemented, the system will assume the intent is valid following resolution, and will assume there is no additional information relevant to this intent.
+     * 
+     * @param  intent The input intent
+     * @param  completion The response block contains an INSendPaymentIntentResponse containing additional details about the intent that may be relevant for the system to show the user prior to handling.
+     * 
+     * @see INSendPaymentIntentResponse
+     */
     @Generated
     @IsOptional
     @Selector("confirmSendPayment:completion:")
@@ -45,6 +60,16 @@ public interface INSendPaymentIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Handling method - Execute the task represented by the INSendPaymentIntent that's passed in
+     * 
+     * Called to actually execute the intent. The app must return a response for this intent.
+     * 
+     * @param  intent The input intent
+     * @param  completion The response handling block takes a INSendPaymentIntentResponse containing the details of the result of having executed the intent
+     * 
+     * @see  INSendPaymentIntentResponse
+     */
     @Generated
     @Selector("handleSendPayment:completion:")
     void handleSendPaymentCompletion(INSendPaymentIntent intent,
@@ -66,6 +91,16 @@ public interface INSendPaymentIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Resolution methods - Determine if this intent is ready for the next step (confirmation)
+     * 
+     * Called to make sure the app extension is capable of handling this intent in its current form. This method is for validating if the intent needs any further fleshing out.
+     * 
+     * @param  intent The input intent
+     * @param  completion The response block contains an INIntentResolutionResult for the parameter being resolved
+     * 
+     * @see INIntentResolutionResult
+     */
     @Generated
     @IsOptional
     @Selector("resolvePayeeForSendPayment:withCompletion:")
@@ -78,35 +113,35 @@ public interface INSendPaymentIntentHandling {
     @Generated
     public interface Block_confirmSendPaymentCompletion {
         @Generated
-        void call_confirmSendPaymentCompletion(INSendPaymentIntentResponse arg0);
+        void call_confirmSendPaymentCompletion(INSendPaymentIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSendPaymentCompletion {
         @Generated
-        void call_handleSendPaymentCompletion(INSendPaymentIntentResponse arg0);
+        void call_handleSendPaymentCompletion(INSendPaymentIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveCurrencyAmountForSendPaymentWithCompletion {
         @Generated
-        void call_resolveCurrencyAmountForSendPaymentWithCompletion(INCurrencyAmountResolutionResult arg0);
+        void call_resolveCurrencyAmountForSendPaymentWithCompletion(INCurrencyAmountResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveNoteForSendPaymentWithCompletion {
         @Generated
-        void call_resolveNoteForSendPaymentWithCompletion(INStringResolutionResult arg0);
+        void call_resolveNoteForSendPaymentWithCompletion(INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolvePayeeForSendPaymentWithCompletion {
         @Generated
-        void call_resolvePayeeForSendPaymentWithCompletion(INPersonResolutionResult arg0);
+        void call_resolvePayeeForSendPaymentWithCompletion(INPersonResolutionResult resolutionResult);
     }
 
     @Generated
@@ -121,7 +156,8 @@ public interface INSendPaymentIntentHandling {
     @Generated
     public interface Block_resolveCurrencyAmountForSendPaymentCompletion {
         @Generated
-        void call_resolveCurrencyAmountForSendPaymentCompletion(INSendPaymentCurrencyAmountResolutionResult arg0);
+        void call_resolveCurrencyAmountForSendPaymentCompletion(
+                INSendPaymentCurrencyAmountResolutionResult resolutionResult);
     }
 
     @Generated
@@ -136,6 +172,6 @@ public interface INSendPaymentIntentHandling {
     @Generated
     public interface Block_resolvePayeeForSendPaymentCompletion {
         @Generated
-        void call_resolvePayeeForSendPaymentCompletion(INSendPaymentPayeeResolutionResult arg0);
+        void call_resolvePayeeForSendPaymentCompletion(INSendPaymentPayeeResolutionResult resolutionResult);
     }
 }

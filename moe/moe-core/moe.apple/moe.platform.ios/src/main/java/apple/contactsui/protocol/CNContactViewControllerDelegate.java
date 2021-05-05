@@ -32,6 +32,13 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CNContactViewControllerDelegate")
 public interface CNContactViewControllerDelegate {
+    /**
+     * Called when the view has completed.
+     * 
+     * If creating a new contact, the new contact added to the contacts list will be passed.
+     *              If adding to an existing contact, the existing contact will be passed.
+     * [@note]        It is up to the delegate to dismiss the view controller.
+     */
     @Generated
     @IsOptional
     @Selector("contactViewController:didCompleteWithContact:")
@@ -40,6 +47,13 @@ public interface CNContactViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the user selects a single property.
+     * 
+     * Return @c NO if you do not want anything to be done or if you are handling the actions yourself.
+     * 
+     * @return      @c YES if you want the default action performed for the property otherwise return @c NO.
+     */
     @Generated
     @IsOptional
     @Selector("contactViewController:shouldPerformDefaultActionForContactProperty:")

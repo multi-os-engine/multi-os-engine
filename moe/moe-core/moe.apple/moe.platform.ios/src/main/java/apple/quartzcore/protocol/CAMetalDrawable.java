@@ -17,6 +17,7 @@ limitations under the License.
 package apple.quartzcore.protocol;
 
 import apple.metal.protocol.MTLDrawable;
+import apple.metal.protocol.MTLTexture;
 import apple.quartzcore.CAMetalLayer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -27,17 +28,34 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CAMetalDrawable represents a displayable buffer that vends an object
+ * that conforms to the MTLTexture protocol that may be used to create
+ * a render target for Metal.
+ * 
+ * Note: CAMetalLayer maintains an internal pool of textures used for
+ * display. In order for a texture to be re-used for a new CAMetalDrawable,
+ * any prior CAMetalDrawable must have been deallocated and another
+ * CAMetalDrawable presented.
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CAMetalDrawable")
 public interface CAMetalDrawable extends MTLDrawable {
+    /**
+     * This is the CAMetalLayer responsible for displaying the drawable
+     */
     @Generated
     @Selector("layer")
     CAMetalLayer layer();
 
+    /**
+     * This is an object that conforms to the MTLTexture protocol and will
+     * typically be used to create an MTLRenderTargetDescriptor.
+     */
     @Generated
     @Selector("texture")
     @MappedReturn(ObjCObjectMapper.class)
-    Object texture();
+    MTLTexture texture();
 }

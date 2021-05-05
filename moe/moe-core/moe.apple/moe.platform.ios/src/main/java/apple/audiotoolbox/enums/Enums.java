@@ -21,37 +21,109 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class Enums {
+    /**
+     * range  (2000 -> 2999)
+     */
     @Generated public static final int kAudioOutputUnitProperty_CurrentDevice = 0x000007D0;
+    /**
+     * this will also work with AUConverter
+     */
     @Generated public static final int kAudioOutputUnitProperty_ChannelMap = 0x000007D2;
     @Generated public static final int kAudioOutputUnitProperty_EnableIO = 0x000007D3;
     @Generated public static final int kAudioOutputUnitProperty_StartTime = 0x000007D4;
     @Generated public static final int kAudioOutputUnitProperty_SetInputCallback = 0x000007D5;
     @Generated public static final int kAudioOutputUnitProperty_HasIO = 0x000007D6;
+    /**
+     * this will also work with AUConverter
+     */
     @Generated public static final int kAudioOutputUnitProperty_StartTimestampsAtZero = 0x000007D7;
     @Generated public static final int kAudioUnitSubType_GenericOutput = 0x67656E72;
     @Generated public static final int kAudioUnitSubType_VoiceProcessingIO = 0x7670696F;
+    /**
+     * 0x7768743F, 2003334207
+     */
     @Generated public static final int kAudioFileUnspecifiedError = 0x7768743F;
+    /**
+     * 0x7479703F, 1954115647
+     */
     @Generated public static final int kAudioFileUnsupportedFileTypeError = 0x7479703F;
+    /**
+     * 0x666D743F, 1718449215
+     */
     @Generated public static final int kAudioFileUnsupportedDataFormatError = 0x666D743F;
+    /**
+     * 0x7074793F, 1886681407
+     */
     @Generated public static final int kAudioFileUnsupportedPropertyError = 0x7074793F;
+    /**
+     * 0x2173697A,  561211770
+     */
     @Generated public static final int kAudioFileBadPropertySizeError = 0x2173697A;
+    /**
+     * 0x70726D3F, 1886547263
+     */
     @Generated public static final int kAudioFilePermissionsError = 0x70726D3F;
+    /**
+     * 0x6F70746D, 1869640813
+     */
     @Generated public static final int kAudioFileNotOptimizedError = 0x6F70746D;
+    /**
+     * 0x63686B3F, 1667787583
+     */
     @Generated public static final int kAudioFileInvalidChunkError = 0x63686B3F;
+    /**
+     * 0x6F66663F, 1868981823
+     */
     @Generated public static final int kAudioFileDoesNotAllow64BitDataSizeError = 0x6F66663F;
+    /**
+     * 0x70636B3F, 1885563711
+     */
     @Generated public static final int kAudioFileInvalidPacketOffsetError = 0x70636B3F;
+    /**
+     * 0x6474613F, 1685348671
+     */
     @Generated public static final int kAudioFileInvalidFileError = 0x6474613F;
+    /**
+     * 'op??', integer used because of trigraph
+     */
     @Generated public static final int kAudioFileOperationNotSupportedError = 0x6F703F3F;
+    /**
+     * general file error codes
+     */
     @Generated public static final int kAudioFileNotOpenError = 0xFFFFFFDA;
+    /**
+     * general file error codes
+     */
     @Generated public static final int kAudioFileEndOfFileError = 0xFFFFFFD9;
+    /**
+     * general file error codes
+     */
     @Generated public static final int kAudioFilePositionError = 0xFFFFFFD8;
+    /**
+     * general file error codes
+     */
     @Generated public static final int kAudioFileFileNotFoundError = 0xFFFFFFD5;
+    /**
+     * range (4100->4999)
+     */
     @Generated public static final int kAUSamplerProperty_LoadInstrument = 0x00001006;
+    /**
+     * range (4100->4999)
+     */
     @Generated public static final int kAUSamplerProperty_LoadAudioFiles = 0x00001005;
+    /**
+     * selector range
+     */
     @Generated public static final int kAudioOutputUnitRange = 0x00000200;
     @Generated public static final int kAudioOutputUnitStartSelect = 0x00000201;
     @Generated public static final int kAudioOutputUnitStopSelect = 0x00000202;
+    /**
+     * Global, Hz, 10000->(SampleRate/2), 10000
+     */
     @Generated public static final int kHighShelfParam_CutOffFrequency = 0x00000000;
+    /**
+     * Global, dB, -40->40, 0
+     */
     @Generated public static final int kHighShelfParam_Gain = 0x00000001;
     @Generated public static final int kAUGraphErr_NodeNotFound = 0xFFFFD594;
     @Generated public static final int kAUGraphErr_InvalidConnection = 0xFFFFD593;
@@ -70,34 +142,100 @@ public final class Enums {
     @Generated public static final int kAudioFileStreamError_IllegalOperation = 0x6E6F7065;
     @Generated public static final int kAudioFileStreamError_UnspecifiedError = 0x7768743F;
     @Generated public static final int kAudioFileStreamError_DiscontinuityCantRecover = 0x64736321;
+    /**
+     * !< value is UInt32
+     */
     @Generated public static final int kAudioQueueProperty_IsRunning = 0x6171726E;
+    /**
+     * value is Float64
+     */
     @Generated public static final int kAudioQueueDeviceProperty_SampleRate = 0x61717372;
+    /**
+     * value is UInt32
+     */
     @Generated public static final int kAudioQueueDeviceProperty_NumberChannels = 0x61716463;
+    /**
+     * value is CFStringRef
+     */
     @Generated public static final int kAudioQueueProperty_CurrentDevice = 0x61716364;
+    /**
+     * value is void*
+     */
     @Generated public static final int kAudioQueueProperty_MagicCookie = 0x61716D63;
+    /**
+     * value is UInt32
+     */
     @Generated public static final int kAudioQueueProperty_MaximumOutputPacketSize = 0x786F7073;
+    /**
+     * value is AudioStreamBasicDescription
+     */
     @Generated public static final int kAudioQueueProperty_StreamDescription = 0x61716674;
+    /**
+     * value is AudioChannelLayout
+     */
     @Generated public static final int kAudioQueueProperty_ChannelLayout = 0x6171636C;
+    /**
+     * value is UInt32
+     */
     @Generated public static final int kAudioQueueProperty_EnableLevelMetering = 0x61716D65;
+    /**
+     * value is array of AudioQueueLevelMeterState, 1 per channel
+     */
     @Generated public static final int kAudioQueueProperty_CurrentLevelMeter = 0x61716D76;
+    /**
+     * value is array of AudioQueueLevelMeterState, 1 per channel
+     */
     @Generated public static final int kAudioQueueProperty_CurrentLevelMeterDB = 0x61716D64;
+    /**
+     * value is UInt32
+     */
     @Generated public static final int kAudioQueueProperty_DecodeBufferSizeFrames = 0x64636266;
+    /**
+     * value is UInt32
+     */
     @Generated public static final int kAudioQueueProperty_ConverterError = 0x71637665;
+    /**
+     * value is UInt32, 0/1
+     */
     @Generated public static final int kAudioQueueProperty_EnableTimePitch = 0x715F7470;
+    /**
+     * value is UInt32. See values below.
+     */
     @Generated public static final int kAudioQueueProperty_TimePitchAlgorithm = 0x71747061;
+    /**
+     * value is UInt32, 1=bypassed
+     */
     @Generated public static final int kAudioQueueProperty_TimePitchBypass = 0x71747062;
     @Generated public static final int kExtAudioFileError_InvalidProperty = 0xFFFEFBFF;
     @Generated public static final int kExtAudioFileError_InvalidPropertySize = 0xFFFEFBFE;
     @Generated public static final int kExtAudioFileError_NonPCMClientFormat = 0xFFFEFBFD;
+    /**
+     * number of channels doesn't match format
+     */
     @Generated public static final int kExtAudioFileError_InvalidChannelMap = 0xFFFEFBFC;
     @Generated public static final int kExtAudioFileError_InvalidOperationOrder = 0xFFFEFBFB;
     @Generated public static final int kExtAudioFileError_InvalidDataFormat = 0xFFFEFBFA;
     @Generated public static final int kExtAudioFileError_MaxPacketSizeUnknown = 0xFFFEFBF9;
+    /**
+     * writing, or offset out of bounds
+     */
     @Generated public static final int kExtAudioFileError_InvalidSeek = 0xFFFEFBF8;
     @Generated public static final int kExtAudioFileError_AsyncWriteTooLarge = 0xFFFEFBF7;
+    /**
+     * an async write could not be completed in time
+     */
     @Generated public static final int kExtAudioFileError_AsyncWriteBufferOverflow = 0xFFFEFBF6;
+    /**
+     * Global, Secs, 0.001->0.03, 0.012
+     */
     @Generated public static final int kLimiterParam_AttackTime = 0x00000000;
+    /**
+     * Global, Secs, 0.001->0.06, 0.024
+     */
     @Generated public static final int kLimiterParam_DecayTime = 0x00000001;
+    /**
+     * Global, dB, -40->40, 0
+     */
     @Generated public static final int kLimiterParam_PreGain = 0x00000002;
     @Generated public static final int kAudioSessionOverrideAudioRoute_None = 0x00000000;
     @Generated public static final int kAudioSessionOverrideAudioRoute_Speaker = 0x73706B72;
@@ -107,46 +245,169 @@ public final class Enums {
     @Generated public static final int kAudioUnitProperty_SpatialMixerDistanceParams = 0x00000BC2;
     @Generated public static final int kAudioUnitProperty_SpatialMixerAttenuationCurve = 0x00000BC5;
     @Generated public static final int kAudioUnitProperty_SpatialMixerRenderingFlags = 0x00000BBB;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ClassInfo = 0x00000000;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_MakeConnection = 0x00000001;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_SampleRate = 0x00000002;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ParameterList = 0x00000003;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ParameterInfo = 0x00000004;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_CPULoad = 0x00000006;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_StreamFormat = 0x00000008;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ElementCount = 0x0000000B;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_Latency = 0x0000000C;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_SupportedNumChannels = 0x0000000D;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_MaximumFramesPerSlice = 0x0000000E;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ParameterValueStrings = 0x00000010;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_AudioChannelLayout = 0x00000013;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_TailTime = 0x00000014;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_BypassEffect = 0x00000015;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_LastRenderError = 0x00000016;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_SetRenderCallback = 0x00000017;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_FactoryPresets = 0x00000018;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_RenderQuality = 0x0000001A;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_HostCallbacks = 0x0000001B;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_InPlaceProcessing = 0x0000001D;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ElementName = 0x0000001E;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_SupportedChannelLayoutTags = 0x00000020;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_PresentPreset = 0x00000024;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_DependentParameters = 0x0000002D;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_InputSamplesInOutput = 0x00000031;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ShouldAllocateBuffer = 0x00000033;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_FrequencyResponse = 0x00000034;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ParameterHistoryInfo = 0x00000035;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_NickName = 0x00000036;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_OfflineRender = 0x00000025;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ParameterIDName = 0x00000022;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ParameterStringFromValue = 0x00000021;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ParameterClumpName = 0x00000023;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ParameterValueFromString = 0x00000026;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ContextName = 0x00000019;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_PresentationLatency = 0x00000028;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ClassInfoFromDocument = 0x00000032;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_RequestViewController = 0x00000038;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_ParametersForOverview = 0x00000039;
+    /**
+     * range (0 -> 999)
+     */
     @Generated public static final int kAudioUnitProperty_SupportsMPE = 0x0000003A;
     @Generated public static final int kMusicEventType_NULL = 0x00000000;
     @Generated public static final int kMusicEventType_ExtendedNote = 0x00000001;
@@ -179,11 +440,29 @@ public final class Enums {
     @Generated public static final int kAudioSessionNoCategorySet = 0x3F636174;
     @Generated public static final int kAudioSessionIncompatibleCategory = 0x21636174;
     @Generated public static final int kAudioSessionUnspecifiedError = 0x77686174;
+    /**
+     * 0x77686174, 2003329396
+     */
     @Generated public static final int kAudioFormatUnspecifiedError = 0x77686174;
+    /**
+     * 0x70726F70, 1886547824
+     */
     @Generated public static final int kAudioFormatUnsupportedPropertyError = 0x70726F70;
+    /**
+     * 0x2173697A, 561211770
+     */
     @Generated public static final int kAudioFormatBadPropertySizeError = 0x2173697A;
+    /**
+     * 0x21737063, 561213539
+     */
     @Generated public static final int kAudioFormatBadSpecifierSizeError = 0x21737063;
+    /**
+     * 0x666D743F, 1718449215
+     */
     @Generated public static final int kAudioFormatUnsupportedDataFormatError = 0x666D743F;
+    /**
+     * 0x21666D74, 560360820
+     */
     @Generated public static final int kAudioFormatUnknownFormatError = 0x21666D74;
     @Generated public static final int kConverterPrimeMethod_Pre = 0x00000000;
     @Generated public static final int kConverterPrimeMethod_Normal = 0x00000001;
@@ -207,43 +486,233 @@ public final class Enums {
     @Generated public static final int kMusicDeviceReleaseInstrumentSelect = 0x00000104;
     @Generated public static final int kMusicDeviceStartNoteSelect = 0x00000105;
     @Generated public static final int kMusicDeviceStopNoteSelect = 0x00000106;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_FormatInfo = 0x666D7469;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_FormatName = 0x666E616D;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_EncodeFormatIDs = 0x61636F66;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_DecodeFormatIDs = 0x61636966;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_FormatList = 0x666C7374;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ASBDFromESDS = 0x65737364;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ChannelLayoutFromESDS = 0x6573636C;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_OutputFormatList = 0x6F666C73;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_FirstPlayableFormatFromList = 0x6670666C;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_FormatIsVBR = 0x66766272;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_FormatIsExternallyFramed = 0x66657866;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_FormatIsEncrypted = 0x63727970;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_Encoders = 0x6176656E;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_Decoders = 0x61766465;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_AvailableEncodeBitRates = 0x61656272;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_AvailableEncodeSampleRates = 0x61657372;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_AvailableEncodeChannelLayoutTags = 0x6165636C;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_AvailableEncodeNumberChannels = 0x61766E63;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ASBDFromMPEGPacket = 0x61646D70;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_BitmapForLayoutTag = 0x626D7467;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_MatrixMixMap = 0x6D6D6170;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ChannelMap = 0x63686D70;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_NumberOfChannelsForLayout = 0x6E63686D;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_AreChannelLayoutsEquivalent = 0x63686571;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ChannelLayoutHash = 0x63686861;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ValidateChannelLayout = 0x7661636C;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ChannelLayoutForTag = 0x636D706C;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_TagForChannelLayout = 0x636D7074;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ChannelLayoutName = 0x6C6F6E6D;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ChannelLayoutSimpleName = 0x6C736E6D;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ChannelLayoutForBitmap = 0x636D7062;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ChannelName = 0x636E616D;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ChannelShortName = 0x63736E6D;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_TagsForNumberOfChannels = 0x74616763;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_PanningMatrix = 0x70616E6D;
+    /**
+     * =============================================================================
+     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_BalanceFade = 0x62616C66;
+    /**
+     * =============================================================================
+     * 	The following properties concern the ID3 Tags
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ID3TagSize = 0x69643373;
+    /**
+     * =============================================================================
+     * 	The following properties concern the ID3 Tags
+     * =============================================================================
+     */
     @Generated public static final int kAudioFormatProperty_ID3TagToDictionary = 0x69643364;
     @Generated public static final int kAudioSessionCategory_AmbientSound = 0x616D6269;
     @Generated public static final int kAudioSessionCategory_SoloAmbientSound = 0x736F6C6F;
@@ -256,8 +725,17 @@ public final class Enums {
     @Generated public static final int kAudioFileWAVEType = 0x57415645;
     @Generated public static final int kAudioFileSoundDesigner2Type = 0x53643266;
     @Generated public static final int kAudioFileNextType = 0x4E655854;
+    /**
+     * mpeg layer 3
+     */
     @Generated public static final int kAudioFileMP3Type = 0x4D504733;
+    /**
+     * mpeg layer 2
+     */
     @Generated public static final int kAudioFileMP2Type = 0x4D504732;
+    /**
+     * mpeg layer 1
+     */
     @Generated public static final int kAudioFileMP1Type = 0x4D504731;
     @Generated public static final int kAudioFileAC3Type = 0x61632D33;
     @Generated public static final int kAudioFileAAC_ADTSType = 0x61647473;
@@ -269,14 +747,32 @@ public final class Enums {
     @Generated public static final int kAudioFile3GP2Type = 0x33677032;
     @Generated public static final int kAudioFileAMRType = 0x616D7266;
     @Generated public static final int kAudioConverterErr_FormatNotSupported = 0x666D743F;
+    /**
+     * 'op??', integer used because of trigraph
+     */
     @Generated public static final int kAudioConverterErr_OperationNotSupported = 0x6F703F3F;
     @Generated public static final int kAudioConverterErr_PropertyNotSupported = 0x70726F70;
     @Generated public static final int kAudioConverterErr_InvalidInputSize = 0x696E737A;
     @Generated public static final int kAudioConverterErr_InvalidOutputSize = 0x6F74737A;
+    /**
+     * e.g. byte size is not a multiple of the frame size
+     */
     @Generated public static final int kAudioConverterErr_UnspecifiedError = 0x77686174;
+    /**
+     * e.g. byte size is not a multiple of the frame size
+     */
     @Generated public static final int kAudioConverterErr_BadPropertySizeError = 0x2173697A;
+    /**
+     * e.g. byte size is not a multiple of the frame size
+     */
     @Generated public static final int kAudioConverterErr_RequiresPacketDescriptionsError = 0x21706B64;
+    /**
+     * e.g. byte size is not a multiple of the frame size
+     */
     @Generated public static final int kAudioConverterErr_InputSampleRateOutOfRange = 0x21697372;
+    /**
+     * e.g. byte size is not a multiple of the frame size
+     */
     @Generated public static final int kAudioConverterErr_OutputSampleRateOutOfRange = 0x216F7372;
     @Generated public static final int kAudioSessionInterruptionType_ShouldResume = 0x6972736D;
     @Generated public static final int kAudioSessionInterruptionType_ShouldNotResume = 0x2172736D;
@@ -297,28 +793,79 @@ public final class Enums {
     @Generated public static final int kAudioFileGlobalInfo_TypesForUTI = 0x74757469;
     @Generated public static final int kAudioFileGlobalInfo_TypesForHFSTypeCode = 0x74686673;
     @Generated public static final int kAudioFileGlobalInfo_TypesForExtension = 0x74657874;
+    /**
+     * Global, LinearGain, 0->1, 1
+     */
     @Generated public static final int kHALOutputParam_Volume = 0x0000000E;
     @Generated public static final int kAUSampler_DefaultPercussionBankMSB = 0x00000078;
     @Generated public static final int kAUSampler_DefaultMelodicBankMSB = 0x00000079;
     @Generated public static final int kAUSampler_DefaultBankLSB = 0x00000000;
+    /**
+     * Global, dB, -40->20, -20
+     */
     @Generated public static final int kDynamicsProcessorParam_Threshold = 0x00000000;
+    /**
+     * Global, dB, 0.1->40.0, 5
+     */
     @Generated public static final int kDynamicsProcessorParam_HeadRoom = 0x00000001;
+    /**
+     * Global, rate, 1->50.0, 2
+     */
     @Generated public static final int kDynamicsProcessorParam_ExpansionRatio = 0x00000002;
+    /**
+     * Global, dB
+     */
     @Generated public static final int kDynamicsProcessorParam_ExpansionThreshold = 0x00000003;
+    /**
+     * Global, secs, 0.0001->0.2, 0.001
+     */
     @Generated public static final int kDynamicsProcessorParam_AttackTime = 0x00000004;
+    /**
+     * Global, secs, 0.01->3, 0.05
+     */
     @Generated public static final int kDynamicsProcessorParam_ReleaseTime = 0x00000005;
+    /**
+     * Global, dB, -40->40, 0
+     */
     @Generated public static final int kDynamicsProcessorParam_MasterGain = 0x00000006;
+    /**
+     * Global, dB, read-only parameter
+     */
     @Generated public static final int kDynamicsProcessorParam_CompressionAmount = 0x000003E8;
+    /**
+     * Global, dB, read-only parameter
+     */
     @Generated public static final int kDynamicsProcessorParam_InputAmplitude = 0x000007D0;
+    /**
+     * Global, dB, read-only parameter
+     */
     @Generated public static final int kDynamicsProcessorParam_OutputAmplitude = 0x00000BB8;
     @Generated public static final int kAudioUnitParameterName_Full = 0xFFFFFFFF;
+    /**
+     * Global, EqPow Crossfade, 0->100, 50
+     */
     @Generated public static final int kDelayParam_WetDryMix = 0x00000000;
+    /**
+     * Global, Secs, 0->2, 1
+     */
     @Generated public static final int kDelayParam_DelayTime = 0x00000001;
+    /**
+     * Global, Percent, -100->100, 50
+     */
     @Generated public static final int kDelayParam_Feedback = 0x00000002;
+    /**
+     * Global, Hz, 10->(SampleRate/2), 15000
+     */
     @Generated public static final int kDelayParam_LopassCutoff = 0x00000003;
     @Generated public static final int kAudioUnitSubType_ScheduledSoundPlayer = 0x7373706C;
     @Generated public static final int kAudioUnitSubType_AudioFilePlayer = 0x6166706C;
+    /**
+     * Global, Hz, 10->200, 80
+     */
     @Generated public static final int kAULowShelfParam_CutoffFrequency = 0x00000000;
+    /**
+     * Global, dB, -40->40, 0
+     */
     @Generated public static final int kAULowShelfParam_Gain = 0x00000001;
     @Generated public static final int kRenderQuality_Max = 0x0000007F;
     @Generated public static final int kRenderQuality_High = 0x00000060;
@@ -328,12 +875,21 @@ public final class Enums {
     @Generated public static final int kMusicDeviceProperty_InstrumentCount = 0x000003E8;
     @Generated public static final int kMusicDeviceProperty_BankName = 0x000003EF;
     @Generated public static final int kMusicDeviceProperty_SoundBankURL = 0x0000044C;
+    /**
+     * Global, Rate, 0.25 -> 4.0, 1.0
+     */
     @Generated public static final int kVarispeedParam_PlaybackRate = 0x00000000;
+    /**
+     * Global, Cents, -2400 -> 2400, 0.0
+     */
     @Generated public static final int kVarispeedParam_PlaybackCents = 0x00000001;
     @Generated public static final int kAUNBandEQProperty_NumberOfBands = 0x00000898;
     @Generated public static final int kAUNBandEQProperty_MaxNumberOfBands = 0x00000899;
     @Generated public static final int kAUNBandEQProperty_BiquadCoefficients = 0x0000089B;
     @Generated public static final int kAudioUnitClumpID_System = 0x00000000;
+    /**
+     * 0x01
+     */
     @Generated public static final int kAudioSessionSetActiveFlag_NotifyOthersOnDeactivation = 0x00000001;
     @Generated public static final int kAudioUnitSubType_Reverb2 = 0x72766232;
     @Generated public static final int kAudioUnitSubType_AUiPodEQ = 0x69706571;
@@ -431,16 +987,43 @@ public final class Enums {
     @Generated public static final int kAudioUnitProperty_RemoteControlEventListener = 0x00000064;
     @Generated public static final int kAudioUnitProperty_IsInterAppConnected = 0x00000065;
     @Generated public static final int kAudioUnitProperty_PeerURL = 0x00000066;
+    /**
+     * linear interpolation
+     */
     @Generated public static final int kAudioUnitSampleRateConverterComplexity_Linear = 0x6C696E65;
+    /**
+     * the default
+     */
     @Generated public static final int kAudioUnitSampleRateConverterComplexity_Normal = 0x6E6F726D;
+    /**
+     * higher quality, more expensive
+     */
     @Generated public static final int kAudioUnitSampleRateConverterComplexity_Mastering = 0x62617473;
     @Generated public static final int kAUNodeInteraction_Connection = 0x00000001;
     @Generated public static final int kAUNodeInteraction_InputCallback = 0x00000002;
+    /**
+     * Global, dB, -96->24, 0
+     */
     @Generated public static final int kAUNBandEQParam_GlobalGain = 0x00000000;
+    /**
+     * Global, Boolean, 0 or 1, 1
+     */
     @Generated public static final int kAUNBandEQParam_BypassBand = 0x000003E8;
+    /**
+     * Global, Indexed, 0->kNumAUNBandEQFilterTypes-1, 0
+     */
     @Generated public static final int kAUNBandEQParam_FilterType = 0x000007D0;
+    /**
+     * Global, Hz, 20->(SampleRate/2), 1000
+     */
     @Generated public static final int kAUNBandEQParam_Frequency = 0x00000BB8;
+    /**
+     * Global, dB, -96->24, 0
+     */
     @Generated public static final int kAUNBandEQParam_Gain = 0x00000FA0;
+    /**
+     * Global, octaves, 0.05->5.0, 0.5
+     */
     @Generated public static final int kAUNBandEQParam_Bandwidth = 0x00001388;
     @Generated public static final int kAudioUnitScope_Global = 0x00000000;
     @Generated public static final int kAudioUnitScope_Input = 0x00000001;
@@ -450,6 +1033,9 @@ public final class Enums {
     @Generated public static final int kAudioUnitScope_Note = 0x00000005;
     @Generated public static final int kAudioUnitScope_Layer = 0x00000006;
     @Generated public static final int kAudioUnitScope_LayerItem = 0x00000007;
+    /**
+     * range of selectors for audio units
+     */
     @Generated public static final int kAudioUnitRange = 0x00000000;
     @Generated public static final int kAudioUnitInitializeSelect = 0x00000001;
     @Generated public static final int kAudioUnitUninitializeSelect = 0x00000002;
@@ -469,14 +1055,44 @@ public final class Enums {
     @Generated public static final int kAudioUnitComplexRenderSelect = 0x00000013;
     @Generated public static final int kAudioUnitProcessSelect = 0x00000014;
     @Generated public static final int kAudioUnitProcessMultipleSelect = 0x00000015;
+    /**
+     * rate control.
+     * Global, rate, 1/32 -> 32.0, 1.0
+     */
     @Generated public static final int kNewTimePitchParam_Rate = 0x00000000;
+    /**
+     * pitch shift in cents.
+     * Global, Cents, -2400 -> 2400, 1.0
+     */
     @Generated public static final int kNewTimePitchParam_Pitch = 0x00000001;
+    /**
+     * Overlap is the number of overlapped spectral windows that are used to produce the output.
+     * The value of overlap is directly proportional to CPU cost. More overlaps can make smooth
+     * passages sound smoother. For percussive sound, a lower overlap may be better.
+     * Global, generic, 3.0 -> 32.0, 8.0
+     */
     @Generated public static final int kNewTimePitchParam_Overlap = 0x00000004;
+    /**
+     * Peak locking enforces phase coherence of spectral peaks.
+     * Peak locking adds some expense but results in a less "phasey"
+     * or reverberant sound, sometimes also called loss of presence.
+     * However the flip side is that it can sound more stuttery for some content.
+     * Global, Boolean, 0->1, 1
+     */
     @Generated public static final int kNewTimePitchParam_EnablePeakLocking = 0x00000006;
     @Generated public static final int kAudioSessionCategory_UserInterfaceSoundEffects = 0x75696678;
     @Generated public static final int kAudioSessionCategory_LiveAudio = 0x6C697665;
+    /**
+     * Global, Hz, 20->(SampleRate/2), 2000
+     */
     @Generated public static final int kParametricEQParam_CenterFreq = 0x00000000;
+    /**
+     * Global, Hz, 0.1->20, 1.0
+     */
     @Generated public static final int kParametricEQParam_Q = 0x00000001;
+    /**
+     * Global, dB, -20->20, 0
+     */
     @Generated public static final int kParametricEQParam_Gain = 0x00000002;
     @Generated public static final int kAudioUnitProperty_DeferredRendererPullSize = 0x00000CF8;
     @Generated public static final int kAudioUnitProperty_DeferredRendererExtraLatency = 0x00000CF9;
@@ -501,26 +1117,81 @@ public final class Enums {
     @Generated public static final int kAudioUnitProperty_ScheduleStartTimeStamp = 0x00000CE5;
     @Generated public static final int kAudioUnitProperty_CurrentPlayTime = 0x00000CE6;
     @Generated public static final int kAudioFileMarkerType_Generic = 0x00000000;
+    /**
+     * General mixers
+     */
     @Generated public static final int kAudioUnitProperty_MeteringMode = 0x00000BBF;
+    /**
+     * Matrix Mixer
+     */
     @Generated public static final int kAudioUnitProperty_MatrixLevels = 0x00000BBE;
+    /**
+     * Matrix Mixer
+     */
     @Generated public static final int kAudioUnitProperty_MatrixDimensions = 0x00000BC1;
+    /**
+     * Matrix Mixer
+     */
     @Generated public static final int kAudioUnitProperty_MeterClipping = 0x00000BC3;
+    /**
+     * Multichannel Mixer
+     */
     @Generated public static final int kAudioUnitProperty_InputAnchorTimeStamp = 0x00000BC8;
     @Generated public static final int kAudioQueueTimePitchAlgorithm_LowQualityZeroLatency = 0x6C717A6C;
     @Generated public static final int kAUVoiceIOProperty_BypassVoiceProcessing = 0x00000834;
     @Generated public static final int kAUVoiceIOProperty_VoiceProcessingEnableAGC = 0x00000835;
     @Generated public static final int kAUVoiceIOProperty_MuteOutput = 0x00000838;
+    /**
+     * Input, Degrees, -180->180, 0
+     */
     @Generated public static final int k3DMixerParam_Azimuth = 0x00000000;
+    /**
+     * Input, Degrees, -90->90, 0
+     */
     @Generated public static final int k3DMixerParam_Elevation = 0x00000001;
+    /**
+     * Input, Metres, 0->10000, 0
+     */
     @Generated public static final int k3DMixerParam_Distance = 0x00000002;
+    /**
+     * Input/Output, dB, -120->20, 0
+     */
     @Generated public static final int k3DMixerParam_Gain = 0x00000003;
+    /**
+     * Input, rate scaler	0.5 -> 2.0
+     */
     @Generated public static final int k3DMixerParam_PlaybackRate = 0x00000004;
+    /**
+     * bus enable : 0.0 or 1.0
+     */
     @Generated public static final int k3DMixerParam_Enable = 0x00000005;
+    /**
+     * Minimum input gain constraint : 0.0 -> 1.0 (available on iphone only)
+     */
     @Generated public static final int k3DMixerParam_MinGain = 0x00000006;
+    /**
+     * Maximum input gain constraint : 0.0 -> 1.0 (available on iphone only)
+     */
     @Generated public static final int k3DMixerParam_MaxGain = 0x00000007;
+    /**
+     * Input, Dry/Wet equal-power blend, %	  0.0 -> 100.0
+     */
     @Generated public static final int k3DMixerParam_ReverbBlend = 0x00000008;
+    /**
+     * Global, dB,		-40.0 -> +40.0
+     */
     @Generated public static final int k3DMixerParam_GlobalReverbGain = 0x00000009;
+    /**
+     * Input, Lowpass filter attenuation at 5KHz :		decibels -100.0dB -> 0.0dB
+     * smaller values make both direct and reverb sound more muffled; a value of 0.0 indicates no filtering
+     * Occlusion is a filter applied to the sound prior to the reverb send
+     */
     @Generated public static final int k3DMixerParam_OcclusionAttenuation = 0x0000000A;
+    /**
+     * Input, Lowpass filter attenuation at 5KHz :		decibels -100.0dB -> 0.0dB
+     * smaller values make direct sound more muffled; a value of 0.0 indicates no filtering
+     * Obstruction is a filter applied to the "direct" part of the sound (so is post reverb send)
+     */
     @Generated public static final int k3DMixerParam_ObstructionAttenuation = 0x0000000B;
     @Generated public static final int kAudioUnitSubType_RemoteIO = 0x72696F63;
     @Generated public static final int kCAF_FileType = 0x63616666;
@@ -530,6 +1201,9 @@ public final class Enums {
     @Generated public static final int kAudioOutputUnitProperty_RemoteControlToHost = 0x000007DC;
     @Generated public static final int kAudioOutputUnitProperty_HostTransportState = 0x000007DD;
     @Generated public static final int kAudioOutputUnitProperty_NodeComponentDescription = 0x000007DE;
+    /**
+     * range  (2000 -> 2999)
+     */
     @Generated public static final int kAudioOutputUnitProperty_IsRunning = 0x000007D1;
     @Generated public static final int kAudioUnitErr_InvalidProperty = 0xFFFFD581;
     @Generated public static final int kAudioUnitErr_InvalidParameter = 0xFFFFD582;
@@ -552,23 +1226,53 @@ public final class Enums {
     @Generated public static final int kAudioUnitErr_Unauthorized = 0xFFFFD5A1;
     @Generated public static final int kAudioComponentErr_InstanceInvalidated = 0xFFFEFB43;
     @Generated public static final int kAudioUnitErr_RenderTimeout = 0xFFFEFB47;
+    /**
+     * Global, Hz, 20->(SampleRate/2), 5000
+     */
     @Generated public static final int kBandpassParam_CenterFrequency = 0x00000000;
+    /**
+     * Global, Cents, 100->12000, 600
+     */
     @Generated public static final int kBandpassParam_Bandwidth = 0x00000001;
     @Generated public static final int kAUMIDISynthProperty_EnablePreload = 0x00001017;
+    /**
+     * Global, dB, -90->12, 0
+     */
     @Generated public static final int kAUSamplerParam_Gain = 0x00000384;
+    /**
+     * Global, Semitones, -24->24, 0
+     */
     @Generated public static final int kAUSamplerParam_CoarseTuning = 0x00000385;
+    /**
+     * Global, Cents, -99->99, 0
+     */
     @Generated public static final int kAUSamplerParam_FineTuning = 0x00000386;
+    /**
+     * Global, -1.0->1.0, 0
+     */
     @Generated public static final int kAUSamplerParam_Pan = 0x00000387;
     @Generated public static final int kSequenceTrackProperty_LoopInfo = 0x00000000;
     @Generated public static final int kSequenceTrackProperty_OffsetTime = 0x00000001;
     @Generated public static final int kSequenceTrackProperty_MuteStatus = 0x00000002;
     @Generated public static final int kSequenceTrackProperty_SoloStatus = 0x00000003;
+    /**
+     * added in 10.2
+     */
     @Generated public static final int kSequenceTrackProperty_AutomatedParameters = 0x00000004;
+    /**
+     * added in 10.3
+     */
     @Generated public static final int kSequenceTrackProperty_TrackLength = 0x00000005;
+    /**
+     * added in 10.5
+     */
     @Generated public static final int kSequenceTrackProperty_TimeResolution = 0x00000006;
     @Generated public static final int kAudioQueueTimePitchAlgorithm_Spectral = 0x73706563;
     @Generated public static final int kAudioQueueTimePitchAlgorithm_TimeDomain = 0x7469646F;
     @Generated public static final int kAudioQueueTimePitchAlgorithm_Varispeed = 0x76737064;
+    /**
+     * CFStringRef      (get only)
+     */
     @Generated public static final int kAudioSessionProperty_AudioRoute = 0x726F7574;
     @Generated public static final int kCAF_StreamDescriptionChunkID = 0x64657363;
     @Generated public static final int kCAF_AudioDataChunkID = 0x64617461;
@@ -598,33 +1302,117 @@ public final class Enums {
     @Generated public static final int kAudioUnitSubType_NewTimePitch = 0x6E757470;
     @Generated public static final int kAudioUnitSubType_AUiPodTimeOther = 0x6970746F;
     @Generated public static final int kAudioUnitSubType_RoundTripAAC = 0x72616163;
+    /**
+     * Float64          (get/set)
+     */
     @Generated public static final int kAudioSessionProperty_PreferredHardwareSampleRate = 0x68777372;
+    /**
+     * Float32          (get/set)
+     */
     @Generated public static final int kAudioSessionProperty_PreferredHardwareIOBufferDuration = 0x696F6264;
+    /**
+     * UInt32           (get/set)
+     */
     @Generated public static final int kAudioSessionProperty_AudioCategory = 0x61636174;
+    /**
+     * CFDictionaryRef  (property listener)
+     */
     @Generated public static final int kAudioSessionProperty_AudioRouteChange = 0x726F6368;
+    /**
+     * Float64          (get only)
+     */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareSampleRate = 0x63687372;
+    /**
+     * UInt32           (get only/property listener)
+     */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareInputNumberChannels = 0x63686963;
+    /**
+     * UInt32           (get only/property listener)
+     */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareOutputNumberChannels = 0x63686F63;
+    /**
+     * Float32          (get only/property listener)
+     */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareOutputVolume = 0x63686F76;
+    /**
+     * Float32          (get only)
+     */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareInputLatency = 0x63696C74;
+    /**
+     * Float32          (get only)
+     */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareOutputLatency = 0x636F6C74;
+    /**
+     * Float32          (get only)
+     */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareIOBufferDuration = 0x63686264;
+    /**
+     * UInt32           (get only)
+     */
     @Generated public static final int kAudioSessionProperty_OtherAudioIsPlaying = 0x6F746872;
+    /**
+     * UInt32           (set only)
+     */
     @Generated public static final int kAudioSessionProperty_OverrideAudioRoute = 0x6F767264;
+    /**
+     * UInt32           (get only/property listener)
+     */
     @Generated public static final int kAudioSessionProperty_AudioInputAvailable = 0x61696176;
+    /**
+     * UInt32           (property listener)
+     */
     @Generated public static final int kAudioSessionProperty_ServerDied = 0x64696564;
+    /**
+     * UInt32           (get/set)
+     */
     @Generated public static final int kAudioSessionProperty_OtherMixableAudioShouldDuck = 0x6475636B;
+    /**
+     * UInt32           (get, some set)
+     */
     @Generated public static final int kAudioSessionProperty_OverrideCategoryMixWithOthers = 0x636D6978;
+    /**
+     * UInt32           (get, some set)
+     */
     @Generated public static final int kAudioSessionProperty_OverrideCategoryDefaultToSpeaker = 0x6373706B;
+    /**
+     * UInt32           (get, some set)
+     */
     @Generated public static final int kAudioSessionProperty_OverrideCategoryEnableBluetoothInput = 0x63626C75;
+    /**
+     * UInt32           (get only)
+     */
     @Generated public static final int kAudioSessionProperty_InterruptionType = 0x74797065;
+    /**
+     * UInt32           (get/set)
+     */
     @Generated public static final int kAudioSessionProperty_Mode = 0x6D6F6465;
+    /**
+     * CFArrayRef       (get only/property listener)
+     */
     @Generated public static final int kAudioSessionProperty_InputSources = 0x73726373;
+    /**
+     * CFArrayRef       (get only/property listener)
+     */
     @Generated public static final int kAudioSessionProperty_OutputDestinations = 0x64737473;
+    /**
+     * CFNumberRef      (get/set)
+     */
     @Generated public static final int kAudioSessionProperty_InputSource = 0x69737263;
+    /**
+     * CFNumberRef      (get/set)
+     */
     @Generated public static final int kAudioSessionProperty_OutputDestination = 0x6F647374;
+    /**
+     * UInt32           (get only/property listener)
+     */
     @Generated public static final int kAudioSessionProperty_InputGainAvailable = 0x69676176;
+    /**
+     * Float32          (get/set/property listener)
+     */
     @Generated public static final int kAudioSessionProperty_InputGainScalar = 0x69677363;
+    /**
+     * CFDictionaryRef  (get only)
+     */
     @Generated public static final int kAudioSessionProperty_AudioRouteDescription = 0x63726172;
     @Generated public static final int kAudioSessionRouteChangeReason_Unknown = 0x00000000;
     @Generated public static final int kAudioSessionRouteChangeReason_NewDeviceAvailable = 0x00000001;
@@ -639,6 +1427,9 @@ public final class Enums {
     @Generated public static final int kAudioConverterQuality_Medium = 0x00000040;
     @Generated public static final int kAudioConverterQuality_Low = 0x00000020;
     @Generated public static final int kAudioConverterQuality_Min = 0x00000000;
+    /**
+     * value is UInt32
+     */
     @Generated public static final int kAudioQueueProperty_HardwareCodecPolicy = 0x61716370;
     @Generated public static final int kAudioFileStreamProperty_ReadyToProducePackets = 0x72656479;
     @Generated public static final int kAudioFileStreamProperty_FileFormat = 0x66666D74;
@@ -659,21 +1450,69 @@ public final class Enums {
     @Generated public static final int kAudioFileStreamProperty_AverageBytesPerPacket = 0x61627070;
     @Generated public static final int kAudioFileStreamProperty_BitRate = 0x62726174;
     @Generated public static final int kAudioFileStreamProperty_InfoDictionary = 0x696E666F;
+    /**
+     * Global, Milliseconds, 0.1 -> 500, 0.1
+     */
     @Generated public static final int kDistortionParam_Delay = 0x00000000;
+    /**
+     * Global, Rate, 0.1 -> 50, 1.0
+     */
     @Generated public static final int kDistortionParam_Decay = 0x00000001;
+    /**
+     * Global, Percent, 0 -> 100, 50
+     */
     @Generated public static final int kDistortionParam_DelayMix = 0x00000002;
+    /**
+     * Global, Percent, 0 -> 100
+     */
     @Generated public static final int kDistortionParam_Decimation = 0x00000003;
+    /**
+     * Global, Percent, 0 -> 100, 0
+     */
     @Generated public static final int kDistortionParam_Rounding = 0x00000004;
+    /**
+     * Global, Percent, 0 -> 100, 50
+     */
     @Generated public static final int kDistortionParam_DecimationMix = 0x00000005;
+    /**
+     * Global, Linear Gain, 0 -> 1, 1
+     */
     @Generated public static final int kDistortionParam_LinearTerm = 0x00000006;
+    /**
+     * Global, Linear Gain, 0 -> 20, 0
+     */
     @Generated public static final int kDistortionParam_SquaredTerm = 0x00000007;
+    /**
+     * Global, Linear Gain, 0 -> 20, 0
+     */
     @Generated public static final int kDistortionParam_CubicTerm = 0x00000008;
+    /**
+     * Global, Percent, 0 -> 100, 50
+     */
     @Generated public static final int kDistortionParam_PolynomialMix = 0x00000009;
+    /**
+     * Global, Hertz, 0.5 -> 8000, 100
+     */
     @Generated public static final int kDistortionParam_RingModFreq1 = 0x0000000A;
+    /**
+     * Global, Hertz, 0.5 -> 8000, 100
+     */
     @Generated public static final int kDistortionParam_RingModFreq2 = 0x0000000B;
+    /**
+     * Global, Percent, 0 -> 100, 50
+     */
     @Generated public static final int kDistortionParam_RingModBalance = 0x0000000C;
+    /**
+     * Global, Percent, 0 -> 100, 0
+     */
     @Generated public static final int kDistortionParam_RingModMix = 0x0000000D;
+    /**
+     * Global, dB, -80 -> 20, -6
+     */
     @Generated public static final int kDistortionParam_SoftClipGain = 0x0000000E;
+    /**
+     * Global, Percent, 0 -> 100, 50
+     */
     @Generated public static final int kDistortionParam_FinalMix = 0x0000000F;
     @Generated public static final int kTimePitchParam_Rate = 0x00000000;
     @Generated public static final int kCAFMarkerType_Generic = 0x00000000;
@@ -701,17 +1540,48 @@ public final class Enums {
     @Generated public static final int kCAFMarkerType_KeySignature = 0x6B736967;
     @Generated public static final int kAudioUnitProperty_SampleRateConverterComplexity = 0x00000BC6;
     @Generated public static final int kNumberOfResponseFrequencies = 0x00000400;
+    /**
+     * Global, Linear Gain, 0->1, 1. (the volume value can actually be any finite number, including negative.)
+     */
     @Generated public static final int kMultiChannelMixerParam_Volume = 0x00000000;
+    /**
+     * Global, Boolean, 0->1, 1
+     */
     @Generated public static final int kMultiChannelMixerParam_Enable = 0x00000001;
+    /**
+     * -1 - 0 - 1, only valid when output is not mono
+     */
     @Generated public static final int kMultiChannelMixerParam_Pan = 0x00000002;
+    /**
+     * read-only, Input or Output scope.
+     * these report level in dB, as do the other mixers
+     */
     @Generated public static final int kMultiChannelMixerParam_PreAveragePower = 0x000003E8;
+    /**
+     * read-only, Input or Output scope.
+     * these report level in dB, as do the other mixers
+     */
     @Generated public static final int kMultiChannelMixerParam_PrePeakHoldLevel = 0x000007D0;
+    /**
+     * read-only, Input or Output scope.
+     * these report level in dB, as do the other mixers
+     */
     @Generated public static final int kMultiChannelMixerParam_PostAveragePower = 0x00000BB8;
+    /**
+     * read-only, Input or Output scope.
+     * these report level in dB, as do the other mixers
+     */
     @Generated public static final int kMultiChannelMixerParam_PostPeakHoldLevel = 0x00000FA0;
     @Generated public static final int kAudioUnitSubType_AUiPodTime = 0x6970746D;
     @Generated public static final int kAppleSoftwareAudioCodecManufacturer = 0x6170706C;
     @Generated public static final int kAppleHardwareAudioCodecManufacturer = 0x61706877;
+    /**
+     * Global, Hz, 10->(SampleRate/2), 6900
+     */
     @Generated public static final int kLowPassParam_CutoffFrequency = 0x00000000;
+    /**
+     * Global, dB, -20->40, 0
+     */
     @Generated public static final int kLowPassParam_Resonance = 0x00000001;
     @Generated public static final int kSystemSoundID_Vibrate = 0x00000FFF;
     @Generated public static final int kAudioFilePropertyFileFormat = 0x66666D74;
@@ -746,42 +1616,152 @@ public final class Enums {
     @Generated public static final int kAudioFilePropertyUseAudioTrack = 0x7561746B;
     @Generated public static final int kMatrixMixerParam_Volume = 0x00000000;
     @Generated public static final int kMatrixMixerParam_Enable = 0x00000001;
+    /**
+     * read-only
+     * these report level in dB, as do the other mixers
+     */
     @Generated public static final int kMatrixMixerParam_PreAveragePower = 0x000003E8;
+    /**
+     * read-only
+     * these report level in dB, as do the other mixers
+     */
     @Generated public static final int kMatrixMixerParam_PrePeakHoldLevel = 0x000007D0;
+    /**
+     * read-only
+     * these report level in dB, as do the other mixers
+     */
     @Generated public static final int kMatrixMixerParam_PostAveragePower = 0x00000BB8;
+    /**
+     * read-only
+     * these report level in dB, as do the other mixers
+     */
     @Generated public static final int kMatrixMixerParam_PostPeakHoldLevel = 0x00000FA0;
+    /**
+     * these report linear levels - for "expert" use only.
+     */
     @Generated public static final int kMatrixMixerParam_PreAveragePowerLinear = 0x00001388;
+    /**
+     * these report linear levels - for "expert" use only.
+     */
     @Generated public static final int kMatrixMixerParam_PrePeakHoldLevelLinear = 0x00001770;
+    /**
+     * these report linear levels - for "expert" use only.
+     */
     @Generated public static final int kMatrixMixerParam_PostAveragePowerLinear = 0x00001B58;
+    /**
+     * these report linear levels - for "expert" use only.
+     */
     @Generated public static final int kMatrixMixerParam_PostPeakHoldLevelLinear = 0x00001F40;
+    /**
+     * Input, Degrees, -180->180, 0
+     */
     @Generated public static final int kSpatialMixerParam_Azimuth = 0x00000000;
+    /**
+     * Input, Degrees, -90->90, 0
+     */
     @Generated public static final int kSpatialMixerParam_Elevation = 0x00000001;
+    /**
+     * Input, Metres, 0->10000, 0
+     */
     @Generated public static final int kSpatialMixerParam_Distance = 0x00000002;
+    /**
+     * Input/Output, dB, -120->20, 0
+     */
     @Generated public static final int kSpatialMixerParam_Gain = 0x00000003;
+    /**
+     * Input, rate scaler	0.5 -> 2.0, 1.0
+     */
     @Generated public static final int kSpatialMixerParam_PlaybackRate = 0x00000004;
+    /**
+     * bus enable : 0 or 1, 1
+     */
     @Generated public static final int kSpatialMixerParam_Enable = 0x00000005;
+    /**
+     * Minimum input gain constraint : 0.0 -> 10.0, 0.0
+     */
     @Generated public static final int kSpatialMixerParam_MinGain = 0x00000006;
+    /**
+     * Maximum input gain constraint : 0.0 -> 10.0, 10.0
+     */
     @Generated public static final int kSpatialMixerParam_MaxGain = 0x00000007;
+    /**
+     * Input, Dry/Wet equal-power blend, %	  0.0 -> 100.0, 30.0
+     */
     @Generated public static final int kSpatialMixerParam_ReverbBlend = 0x00000008;
+    /**
+     * Global, dB,		-40.0 -> +40.0, 0.0
+     */
     @Generated public static final int kSpatialMixerParam_GlobalReverbGain = 0x00000009;
+    /**
+     * Input, Lowpass filter attenuation at 5KHz :		decibels -100.0dB -> 0.0dB, 0.0dB
+     * smaller values make both direct and reverb sound more muffled; a value of 0.0 indicates no filtering
+     * Occlusion is a filter applied to the sound prior to the reverb send
+     */
     @Generated public static final int kSpatialMixerParam_OcclusionAttenuation = 0x0000000A;
+    /**
+     * Input, Lowpass filter attenuation at 5KHz :		decibels -100.0dB -> 0.0dB, 0.0dB
+     * smaller values make direct sound more muffled; a value of 0.0 indicates no filtering
+     * Obstruction is a filter applied to the "direct" part of the sound (so is post reverb send)
+     */
     @Generated public static final int kSpatialMixerParam_ObstructionAttenuation = 0x0000000B;
     @Generated public static final long AUEventSampleTimeImmediate = 0xFFFFFFFF00000000L;
     @Generated public static final int kAudioQueueProperty_ChannelAssignments = 0x61716361;
+    /**
+     * Global, CrossFade, 0->100, 100
+     */
     @Generated public static final int kReverb2Param_DryWetMix = 0x00000000;
+    /**
+     * Global, Decibels, -20->20, 0
+     */
     @Generated public static final int kReverb2Param_Gain = 0x00000001;
+    /**
+     * Global, Secs, 0.0001->1.0, 0.008
+     */
     @Generated public static final int kReverb2Param_MinDelayTime = 0x00000002;
+    /**
+     * Global, Secs, 0.0001->1.0, 0.050
+     */
     @Generated public static final int kReverb2Param_MaxDelayTime = 0x00000003;
+    /**
+     * Global, Secs, 0.001->20.0, 1.0
+     */
     @Generated public static final int kReverb2Param_DecayTimeAt0Hz = 0x00000004;
+    /**
+     * Global, Secs, 0.001->20.0, 0.5
+     */
     @Generated public static final int kReverb2Param_DecayTimeAtNyquist = 0x00000005;
+    /**
+     * Global, Integer, 1->1000
+     */
     @Generated public static final int kReverb2Param_RandomizeReflections = 0x00000006;
+    /**
+     * Global, Hertz, 10.0 -> 20000.0, 800.0
+     */
     @Generated public static final int kReverbParam_FilterFrequency = 0x0000000E;
+    /**
+     * Global, Octaves, 0.05 -> 4.0, 3.0
+     */
     @Generated public static final int kReverbParam_FilterBandwidth = 0x0000000F;
+    /**
+     * Global, Decibels, -18.0 -> +18.0, 0.0
+     */
     @Generated public static final int kReverbParam_FilterGain = 0x00000010;
+    /**
+     * only available for AUSpatialMixer
+     */
     @Generated public static final int kReverbParam_FilterType = 0x00000011;
+    /**
+     * only available for AUSpatialMixer
+     */
     @Generated public static final int kReverbParam_FilterEnable = 0x00000012;
     @Generated public static final int kAudioUnitManufacturer_Apple = 0x6170706C;
+    /**
+     * Global, Hz, 10->(SampleRate/2), 6900
+     */
     @Generated public static final int kHipassParam_CutoffFrequency = 0x00000000;
+    /**
+     * Global, dB, -20->40, 0
+     */
     @Generated public static final int kHipassParam_Resonance = 0x00000001;
     @Generated public static final int kAudioUnitProperty_3DMixerDistanceParams = 0x00000BC2;
     @Generated public static final int kAudioUnitProperty_3DMixerAttenuationCurve = 0x00000BC5;
@@ -832,56 +1812,185 @@ public final class Enums {
     @Generated public static final int kAudioUnitSubType_Delay = 0x64656C79;
     @Generated public static final int kAudioUnitSubType_SampleDelay = 0x73646C79;
     @Generated public static final int kAudioUnitSubType_NBandEQ = 0x6E626571;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_Volume = 0x00000007;
+    /**
+     * value 0-63 (off), 64-127 (on)
+     */
     @Generated public static final int kAUGroupParameterID_Sustain = 0x00000040;
+    /**
+     * value 0-63 (off), 64-127 (on)
+     */
     @Generated public static final int kAUGroupParameterID_Sostenuto = 0x00000042;
+    /**
+     * value ignored
+     */
     @Generated public static final int kAUGroupParameterID_AllNotesOff = 0x0000007B;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_ModWheel = 0x00000001;
+    /**
+     * value -8192 - 8191
+     */
     @Generated public static final int kAUGroupParameterID_PitchBend = 0x000000E0;
+    /**
+     * value ignored
+     */
     @Generated public static final int kAUGroupParameterID_AllSoundOff = 0x00000078;
+    /**
+     * value ignored
+     */
     @Generated public static final int kAUGroupParameterID_ResetAllControllers = 0x00000079;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_Pan = 0x0000000A;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_Foot = 0x00000004;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_ChannelPressure = 0x000000D0;
+    /**
+     * values 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_KeyPressure = 0x000000A0;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_Expression = 0x0000000B;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_DataEntry = 0x00000006;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_Volume_LSB = 0x00000027;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_ModWheel_LSB = 0x00000021;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_Pan_LSB = 0x0000002A;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_Foot_LSB = 0x00000024;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_Expression_LSB = 0x0000002B;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_DataEntry_LSB = 0x00000026;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_KeyPressure_FirstKey = 0x00000100;
+    /**
+     * value 0 < 128
+     */
     @Generated public static final int kAUGroupParameterID_KeyPressure_LastKey = 0x0000017F;
     @Generated public static final int kAudioUnitSubType_MultiChannelMixer = 0x6D636D78;
     @Generated public static final int kAudioUnitSubType_MatrixMixer = 0x6D786D78;
     @Generated public static final int kAudioUnitSubType_SpatialMixer = 0x3364656D;
     @Generated public static final int kAudioFormatProperty_HardwareCodecCapabilities = 0x68776363;
+    /**
+     * AudioStreamBasicDescription
+     */
     @Generated public static final int kExtAudioFileProperty_FileDataFormat = 0x66666D74;
+    /**
+     * AudioChannelLayout
+     */
     @Generated public static final int kExtAudioFileProperty_FileChannelLayout = 0x66636C6F;
+    /**
+     * AudioStreamBasicDescription
+     */
     @Generated public static final int kExtAudioFileProperty_ClientDataFormat = 0x63666D74;
+    /**
+     * AudioChannelLayout
+     */
     @Generated public static final int kExtAudioFileProperty_ClientChannelLayout = 0x63636C6F;
+    /**
+     * UInt32
+     */
     @Generated public static final int kExtAudioFileProperty_CodecManufacturer = 0x636D616E;
+    /**
+     * AudioConverterRef
+     */
     @Generated public static final int kExtAudioFileProperty_AudioConverter = 0x61636E76;
+    /**
+     * AudioFileID
+     */
     @Generated public static final int kExtAudioFileProperty_AudioFile = 0x6166696C;
+    /**
+     * UInt32
+     */
     @Generated public static final int kExtAudioFileProperty_FileMaxPacketSize = 0x666D7073;
+    /**
+     * UInt32
+     */
     @Generated public static final int kExtAudioFileProperty_ClientMaxPacketSize = 0x636D7073;
+    /**
+     * SInt64
+     */
     @Generated public static final int kExtAudioFileProperty_FileLengthFrames = 0x2366726D;
+    /**
+     * CFPropertyListRef
+     */
     @Generated public static final int kExtAudioFileProperty_ConverterConfig = 0x61636366;
+    /**
+     * UInt32
+     */
     @Generated public static final int kExtAudioFileProperty_IOBufferSizeBytes = 0x696F6273;
+    /**
+     * void *
+     */
     @Generated public static final int kExtAudioFileProperty_IOBuffer = 0x696F6266;
+    /**
+     * AudioFilePacketTableInfo
+     */
     @Generated public static final int kExtAudioFileProperty_PacketTable = 0x78707469;
     @Generated public static final int kAudioConverterErr_HardwareInUse = 0x68776975;
     @Generated public static final int kAudioConverterErr_NoHardwarePermission = 0x7065726D;
+    /**
+     * Global, indexed : AAC, HE-AAC, HE-AACv2
+     */
     @Generated public static final int kRoundTripAACParam_Format = 0x00000000;
+    /**
+     * Global, indexed
+     */
     @Generated public static final int kRoundTripAACParam_EncodingStrategy = 0x00000001;
+    /**
+     * Global, indexed
+     */
     @Generated public static final int kRoundTripAACParam_RateOrQuality = 0x00000002;
     @Generated public static final int kAudioUnitSubType_Sampler = 0x73616D70;
     @Generated public static final int kAudioUnitSubType_MIDISynth = 0x6D73796E;
+    /**
+     * linear interpolation
+     */
     @Generated public static final int kAudioConverterSampleRateConverterComplexity_Linear = 0x6C696E65;
+    /**
+     * normal quality range, the default
+     */
     @Generated public static final int kAudioConverterSampleRateConverterComplexity_Normal = 0x6E6F726D;
+    /**
+     * higher quality range, more expensive
+     */
     @Generated public static final int kAudioConverterSampleRateConverterComplexity_Mastering = 0x62617473;
+    /**
+     * minimum phase impulse response.
+     */
     @Generated public static final int kAudioConverterSampleRateConverterComplexity_MinimumPhase = 0x6D696E70;
     @Generated public static final int kCAF_SMPTE_TimeTypeNone = 0x00000000;
     @Generated public static final int kCAF_SMPTE_TimeType24 = 0x00000001;
@@ -907,4 +2016,254 @@ public final class Enums {
     @Generated public static final int kAudioUnitErr_ExtensionNotFound = 0xFFFEFB48;
     @Generated public static final int kAudioFileRF64Type = 0x52463634;
     @Generated public static final int kAudioFileFLACType = 0x666C6163;
+    @Generated public static final int kAudioCodecPrimeMethod_Pre = 0x00000000;
+    @Generated public static final int kAudioCodecPrimeMethod_Normal = 0x00000001;
+    @Generated public static final int kAudioCodecPrimeMethod_None = 0x00000002;
+    @Generated public static final int kAudioCodecQuality_Max = 0x0000007F;
+    @Generated public static final int kAudioCodecQuality_High = 0x00000060;
+    @Generated public static final int kAudioCodecQuality_Medium = 0x00000040;
+    @Generated public static final int kAudioCodecQuality_Low = 0x00000020;
+    @Generated public static final int kAudioCodecQuality_Min = 0x00000000;
+    @Generated public static final int kAudioComponentErr_InstanceTimedOut = 0xFFFEFB3E;
+    @Generated public static final int kAudioUnitErr_InvalidParameterValue = 0xFFFEFB49;
+    @Generated public static final int kAudioUnitErr_InvalidFilePath = 0xFFFEFB4A;
+    @Generated public static final int kAudioUnitErr_MissingKey = 0xFFFEFB4B;
+    @Generated public static final int kHintBasic = 0x00000000;
+    @Generated public static final int kHintAdvanced = 0x00000001;
+    @Generated public static final int kHintHidden = 0x00000002;
+    @Generated public static final int kAudioCodecPropertyRequiresPacketDescription = 0x70616B64;
+    @Generated public static final int kAudioCodecPropertyAvailableBitRates = 0x62727423;
+    @Generated public static final int kAudioCodecExtendFrequencies = 0x61636566;
+    @Generated public static final int kAudioCodecUseRecommendedSampleRate = 0x75727372;
+    @Generated public static final int kAudioCodecOutputPrecedence = 0x6F707072;
+    @Generated public static final int kAudioCodecBitRateFormat = 0x61636266;
+    @Generated public static final int kAudioCodecDoesSampleRateConversion = 0x6C6D7263;
+    @Generated public static final int kAudioCodecInputFormatsForOutputFormat = 0x6966346F;
+    @Generated public static final int kAudioCodecOutputFormatsForInputFormat = 0x6F663469;
+    @Generated public static final int kAudioCodecPropertyInputChannelLayout = 0x69636C20;
+    @Generated public static final int kAudioCodecPropertyOutputChannelLayout = 0x6F636C20;
+    @Generated public static final int kAudioCodecPropertyAvailableInputChannelLayouts = 0x6169636C;
+    @Generated public static final int kAudioCodecPropertyAvailableOutputChannelLayouts = 0x616F636C;
+    @Generated public static final int kAudioCodecPropertyZeroFramesPadded = 0x70616430;
+    @Generated public static final int kAudioCodecPropertySupportedInputFormats = 0x69666D23;
+    @Generated public static final int kAudioCodecPropertySupportedOutputFormats = 0x6F666D23;
+    @Generated public static final int kAudioCodecPropertyAvailableInputSampleRates = 0x61697372;
+    @Generated public static final int kAudioCodecPropertyAvailableOutputSampleRates = 0x616F7372;
+    @Generated public static final int kAudioCodecPropertyAvailableBitRateRange = 0x61627274;
+    @Generated public static final int kAudioCodecPropertyMinimumNumberInputPackets = 0x6D6E6970;
+    @Generated public static final int kAudioCodecPropertyMinimumNumberOutputPackets = 0x6D6E6F70;
+    @Generated public static final int kAudioCodecPropertyAvailableNumberChannels = 0x636D6E63;
+    @Generated public static final int kAudioCodecPropertyDoesSampleRateConversion = 0x6C6D7263;
+    @Generated public static final int kAudioCodecPropertyAvailableInputChannelLayoutTags = 0x6169636C;
+    @Generated public static final int kAudioCodecPropertyAvailableOutputChannelLayoutTags = 0x616F636C;
+    @Generated public static final int kAudioCodecPropertyInputFormatsForOutputFormat = 0x6966346F;
+    @Generated public static final int kAudioCodecPropertyOutputFormatsForInputFormat = 0x6F663469;
+    @Generated public static final int kAudioCodecPropertyFormatInfo = 0x61636669;
+    @Generated public static final int kAudioCodecPropertyNameCFString = 0x6C6E616D;
+    @Generated public static final int kAudioCodecPropertyManufacturerCFString = 0x6C6D616B;
+    @Generated public static final int kAudioCodecPropertyFormatCFString = 0x6C666F72;
+    @Generated public static final int kProgramTargetLevel_None = 0x00000000;
+    @Generated public static final int kProgramTargetLevel_Minus31dB = 0x00000001;
+    @Generated public static final int kProgramTargetLevel_Minus23dB = 0x00000002;
+    @Generated public static final int kProgramTargetLevel_Minus20dB = 0x00000003;
+    @Generated public static final int kAudioCodecProduceOutputPacketFailure = 0x00000001;
+    @Generated public static final int kAudioCodecProduceOutputPacketSuccess = 0x00000002;
+    @Generated public static final int kAudioCodecProduceOutputPacketSuccessHasMore = 0x00000003;
+    @Generated public static final int kAudioCodecProduceOutputPacketNeedsMoreInputData = 0x00000004;
+    @Generated public static final int kAudioCodecProduceOutputPacketAtEOF = 0x00000005;
+    @Generated public static final int kDynamicRangeControlMode_None = 0x00000000;
+    @Generated public static final int kDynamicRangeControlMode_Light = 0x00000001;
+    @Generated public static final int kDynamicRangeControlMode_Heavy = 0x00000002;
+    @Generated public static final int kAudioCodecPropertyInputBufferSize = 0x74627566;
+    @Generated public static final int kAudioCodecPropertyPacketFrameSize = 0x70616B66;
+    @Generated public static final int kAudioCodecPropertyHasVariablePacketByteSizes = 0x76706B3F;
+    @Generated public static final int kAudioCodecPropertyEmploysDependentPackets = 0x64706B3F;
+    @Generated public static final int kAudioCodecPropertyMaximumPacketByteSize = 0x70616B62;
+    @Generated public static final int kAudioCodecPropertyPacketSizeLimitForVBR = 0x70616B6C;
+    @Generated public static final int kAudioCodecPropertyCurrentInputFormat = 0x69666D74;
+    @Generated public static final int kAudioCodecPropertyCurrentOutputFormat = 0x6F666D74;
+    @Generated public static final int kAudioCodecPropertyMagicCookie = 0x6B756B69;
+    @Generated public static final int kAudioCodecPropertyUsedInputBufferSize = 0x75627566;
+    @Generated public static final int kAudioCodecPropertyIsInitialized = 0x696E6974;
+    @Generated public static final int kAudioCodecPropertyCurrentTargetBitRate = 0x62726174;
+    @Generated public static final int kAudioCodecPropertyCurrentInputSampleRate = 0x63697372;
+    @Generated public static final int kAudioCodecPropertyCurrentOutputSampleRate = 0x636F7372;
+    @Generated public static final int kAudioCodecPropertyQualitySetting = 0x73726371;
+    @Generated public static final int kAudioCodecPropertyApplicableBitRateRange = 0x62727461;
+    @Generated public static final int kAudioCodecPropertyRecommendedBitRateRange = 0x62727472;
+    @Generated public static final int kAudioCodecPropertyApplicableInputSampleRates = 0x69737261;
+    @Generated public static final int kAudioCodecPropertyApplicableOutputSampleRates = 0x6F737261;
+    @Generated public static final int kAudioCodecPropertyPaddedZeros = 0x70616430;
+    @Generated public static final int kAudioCodecPropertyPrimeMethod = 0x70726D6D;
+    @Generated public static final int kAudioCodecPropertyPrimeInfo = 0x7072696D;
+    @Generated public static final int kAudioCodecPropertyCurrentInputChannelLayout = 0x69636C20;
+    @Generated public static final int kAudioCodecPropertyCurrentOutputChannelLayout = 0x6F636C20;
+    @Generated public static final int kAudioCodecPropertySettings = 0x61637320;
+    @Generated public static final int kAudioCodecPropertyFormatList = 0x6163666C;
+    @Generated public static final int kAudioCodecPropertyBitRateControlMode = 0x61636266;
+    @Generated public static final int kAudioCodecPropertySoundQualityForVBR = 0x76627271;
+    @Generated public static final int kAudioCodecPropertyBitRateForVBR = 0x76627262;
+    @Generated public static final int kAudioCodecPropertyDelayMode = 0x646D6F64;
+    @Generated public static final int kAudioCodecPropertyAdjustLocalQuality = 0x5E71616C;
+    @Generated public static final int kAudioCodecPropertyProgramTargetLevel = 0x7070746C;
+    @Generated public static final int kAudioCodecPropertyDynamicRangeControlMode = 0x6D647263;
+    @Generated public static final int kAudioCodecPropertyProgramTargetLevelConstant = 0x70746C63;
+    @Generated public static final int kAudioFileLATMInLOASType = 0x6C6F6173;
+    @Generated public static final int kAudioCodecPropertyMinimumDelayMode = 0x6D64656C;
+    @Generated public static final int kAudioFilePropertyRestrictsRandomAccess = 0x72726170;
+    @Generated public static final int kAudioFilePropertyPacketToRollDistance = 0x706B726C;
+    @Generated public static final int kAudioFilePropertyPreviousIndependentPacket = 0x70696E64;
+    @Generated public static final int kAudioFilePropertyNextIndependentPacket = 0x6E696E64;
+    @Generated public static final int kAudioFilePropertyPacketToDependencyInfo = 0x706B6470;
+    @Generated public static final int kAudioFilePropertyPacketRangeByteCountUpperBound = 0x70727562;
+    @Generated public static final int kAudioCodecBitRateFormat_CBR = 0x00000000;
+    @Generated public static final int kAudioCodecBitRateFormat_ABR = 0x00000001;
+    @Generated public static final int kAudioCodecBitRateFormat_VBR = 0x00000002;
+    @Generated public static final int kAudioCodecDelayMode_Compatibility = 0x00000000;
+    @Generated public static final int kAudioCodecDelayMode_Minimum = 0x00000001;
+    @Generated public static final int kAudioCodecDelayMode_Optimal = 0x00000002;
+    /**
+     * bus enable : 0.0 or 1.0
+     */
+    @Generated public static final int k3DMixerParam_BusEnable = 0x00000014;
+    /**
+     * Input/Output, dB, -120->20, 0
+     */
+    @Generated public static final int k3DMixerParam_MinGainInDecibels = 0x00000015;
+    /**
+     * Input/Output, dB, -120->20, 0
+     */
+    @Generated public static final int k3DMixerParam_MaxGainInDecibels = 0x00000016;
+    /**
+     * Input, Dry/Wet equal-power blend, %      0.0 -> 100.0
+     */
+    @Generated public static final int k3DMixerParam_DryWetReverbBlend = 0x00000017;
+    /**
+     * Global, dB,        -40.0 -> +40.0
+     */
+    @Generated public static final int k3DMixerParam_GlobalReverbGainInDecibels = 0x00000018;
+    /**
+     * Input, Lowpass filter attenuation at 5KHz :        decibels -100.0dB -> 0.0dB
+     * smaller values make both direct and reverb sound more muffled; a value of 0.0 indicates no filtering
+     * Occlusion is a filter applied to the sound prior to the reverb send
+     */
+    @Generated public static final int k3DMixerParam_OcclusionAttenuationInDecibels = 0x00000019;
+    /**
+     * Input, Lowpass filter attenuation at 5KHz :        decibels -100.0dB -> 0.0dB
+     * smaller values make direct sound more muffled; a value of 0.0 indicates no filtering
+     * Obstruction is a filter applied to the "direct" part of the sound (so is post reverb send)
+     */
+    @Generated public static final int k3DMixerParam_ObstructionAttenuationInDecibels = 0x0000001A;
+    /**
+     * read-only
+     * 
+     * For each of the following, use the parameter ID plus the channel number
+     * to get the specific parameter ID for a given channel.
+     * For example, k3DMixerParam_PostAveragePower indicates the left channel
+     * while k3DMixerParam_PostAveragePower + 1 indicates the right channel.
+     */
+    @Generated public static final int k3DMixerParam_PreAveragePower = 0x000003E8;
+    /**
+     * read-only
+     * 
+     * For each of the following, use the parameter ID plus the channel number
+     * to get the specific parameter ID for a given channel.
+     * For example, k3DMixerParam_PostAveragePower indicates the left channel
+     * while k3DMixerParam_PostAveragePower + 1 indicates the right channel.
+     */
+    @Generated public static final int k3DMixerParam_PrePeakHoldLevel = 0x000007D0;
+    /**
+     * read-only
+     * 
+     * For each of the following, use the parameter ID plus the channel number
+     * to get the specific parameter ID for a given channel.
+     * For example, k3DMixerParam_PostAveragePower indicates the left channel
+     * while k3DMixerParam_PostAveragePower + 1 indicates the right channel.
+     */
+    @Generated public static final int k3DMixerParam_PostAveragePower = 0x00000BB8;
+    /**
+     * read-only
+     * 
+     * For each of the following, use the parameter ID plus the channel number
+     * to get the specific parameter ID for a given channel.
+     * For example, k3DMixerParam_PostAveragePower indicates the left channel
+     * while k3DMixerParam_PostAveragePower + 1 indicates the right channel.
+     */
+    @Generated public static final int k3DMixerParam_PostPeakHoldLevel = 0x00000FA0;
+    @Generated public static final int kAudioCodecNoError = 0x00000000;
+    @Generated public static final int kAudioCodecUnspecifiedError = 0x77686174;
+    @Generated public static final int kAudioCodecUnknownPropertyError = 0x77686F3F;
+    @Generated public static final int kAudioCodecBadPropertySizeError = 0x2173697A;
+    @Generated public static final int kAudioCodecIllegalOperationError = 0x6E6F7065;
+    @Generated public static final int kAudioCodecUnsupportedFormatError = 0x21646174;
+    @Generated public static final int kAudioCodecStateError = 0x21737474;
+    @Generated public static final int kAudioCodecNotEnoughBufferSpaceError = 0x21627566;
+    @Generated public static final int kAudioCodecBadDataError = 0x62616461;
+    @Generated public static final int kAudioFileStreamProperty_RestrictsRandomAccess = 0x72726170;
+    @Generated public static final int kAudioFileStreamProperty_PacketToRollDistance = 0x706B726C;
+    @Generated public static final int kAudioFileStreamProperty_PreviousIndependentPacket = 0x70696E64;
+    @Generated public static final int kAudioFileStreamProperty_NextIndependentPacket = 0x6E696E64;
+    @Generated public static final int kAudioFileStreamProperty_PacketToDependencyInfo = 0x706B6470;
+    @Generated public static final int kAudioCodecBitRateControlMode_Constant = 0x00000000;
+    @Generated public static final int kAudioCodecBitRateControlMode_LongTermAverage = 0x00000001;
+    @Generated public static final int kAudioCodecBitRateControlMode_VariableConstrained = 0x00000002;
+    @Generated public static final int kAudioCodecBitRateControlMode_Variable = 0x00000003;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
+    @Generated public static final int kAudioFormatProperty_FormatEmploysDependentPackets = 0x66646570;
+    @Generated public static final int kAudioCodecOutputPrecedenceNone = 0x00000000;
+    @Generated public static final int kAudioCodecOutputPrecedenceBitRate = 0x00000001;
+    @Generated public static final int kAudioCodecOutputPrecedenceSampleRate = 0x00000002;
+    @Generated public static final int kAudioCodecGetPropertyInfoSelect = 0x00000001;
+    @Generated public static final int kAudioCodecGetPropertySelect = 0x00000002;
+    @Generated public static final int kAudioCodecSetPropertySelect = 0x00000003;
+    @Generated public static final int kAudioCodecInitializeSelect = 0x00000004;
+    @Generated public static final int kAudioCodecUninitializeSelect = 0x00000005;
+    @Generated public static final int kAudioCodecAppendInputDataSelect = 0x00000006;
+    @Generated public static final int kAudioCodecProduceOutputDataSelect = 0x00000007;
+    @Generated public static final int kAudioCodecResetSelect = 0x00000008;
+    @Generated public static final int kAudioCodecAppendInputBufferListSelect = 0x00000009;
+    @Generated public static final int kAudioCodecProduceOutputBufferListSelect = 0x0000000A;
+    /**
+     * 0x6465703F, 1684369471
+     */
+    @Generated public static final int kAudioFileInvalidPacketDependencyError = 0x6465703F;
+    @Generated public static final int kAudioFileBW64Type = 0x42573634;
+    @Generated public static final int kAudioFileWave64Type = 0x57363466;
+    @Generated public static final int kAudioUnitProperty_SpatialMixerSourceMode = 0x00000BBD;
+    @Generated public static final int kAudioUnitProperty_SpatialMixerOutputType = 0x00000C1C;
+    @Generated public static final int kAudioUnitProperty_SpatialMixerPointSourceInHeadMode = 0x00000C1F;
+    /**
+     * Global, Degrees, -180->180, 0
+     */
+    @Generated public static final int kSpatialMixerParam_HeadYaw = 0x00000013;
+    /**
+     * Global, Degrees, -90->90, 0
+     */
+    @Generated public static final int kSpatialMixerParam_HeadPitch = 0x00000014;
+    /**
+     * Global, Degrees, -180->180, 0
+     */
+    @Generated public static final int kSpatialMixerParam_HeadRoll = 0x00000015;
+    @Generated public static final int kAudioFilePropertyID3TagOffset = 0x6964336F;
+    /**
+     * Global, Samples, 0->(SampleRate), 0
+     */
+    @Generated public static final int kSampleDelayParam_DelayFrames = 0x00000000;
+    /**
+     * range (0 -> 999)
+     */
+    @Generated public static final int kAudioUnitProperty_RenderContextObserver = 0x0000003C;
+    @Generated public static final int kExtAudioFilePacketTableInfoOverride_UseFileValue = 0xFFFFFFFF;
+    @Generated public static final int kExtAudioFilePacketTableInfoOverride_UseFileValueIfValid = 0xFFFFFFFE;
+    /**
+     * =============================================================================
+     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * =============================================================================
+     */
+    @Generated public static final int kAudioFormatProperty_AvailableDecodeNumberChannels = 0x61646E63;
+    @Generated public static final int kAudioOutputUnitProperty_OSWorkgroup = 0x000007DF;
 }

@@ -25,6 +25,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * VNImageHomographicAlignmentObservation
+ * [@superclass] VNImageAlignmentObservation
+ * 
+ * An observation describing the results of performing a homographic image alignment.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -94,7 +100,7 @@ public class VNImageHomographicAlignmentObservation extends VNImageAlignmentObse
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNImageHomographicAlignmentObservation initWithCoder(NSCoder aDecoder);
+    public native VNImageHomographicAlignmentObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

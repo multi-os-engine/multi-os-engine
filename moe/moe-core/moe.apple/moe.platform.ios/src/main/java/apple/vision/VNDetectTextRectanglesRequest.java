@@ -2,6 +2,7 @@ package apple.vision;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -24,6 +25,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A request that will detect regions of text in an image.
+ * 
+ * This request will generate VNTextObservation objects describing the locations of text detected in an image.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -123,6 +129,9 @@ public class VNDetectTextRectanglesRequest extends VNImageBasedRequest {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Specify whether or not the bounding boxes of individual characters should also be returned in the resultant VNTextObservations. Default is NO.
+     */
     @Generated
     @Selector("reportCharacterBoxes")
     public native boolean reportCharacterBoxes();
@@ -135,6 +144,9 @@ public class VNDetectTextRectanglesRequest extends VNImageBasedRequest {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Specify whether or not the bounding boxes of individual characters should also be returned in the resultant VNTextObservations. Default is NO.
+     */
     @Generated
     @Selector("setReportCharacterBoxes:")
     public native void setReportCharacterBoxes(boolean value);
@@ -151,4 +163,18 @@ public class VNDetectTextRectanglesRequest extends VNImageBasedRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("currentRevision")
+    @NUInt
+    public static native long currentRevision();
+
+    @Generated
+    @Selector("defaultRevision")
+    @NUInt
+    public static native long defaultRevision();
+
+    @Generated
+    @Selector("supportedRevisions")
+    public static native NSIndexSet supportedRevisions();
 }

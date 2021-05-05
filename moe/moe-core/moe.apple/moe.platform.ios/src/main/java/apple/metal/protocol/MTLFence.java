@@ -33,12 +33,22 @@ public interface MTLFence {
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
+    /**
+     * [@property] label
+     * 
+     * A string to help identify this object.
+     */
     @Generated
     @Selector("label")
     String label();
 
+    /**
+     * [@property] label
+     * 
+     * A string to help identify this object.
+     */
     @Generated
     @Selector("setLabel:")
     void setLabel(String value);

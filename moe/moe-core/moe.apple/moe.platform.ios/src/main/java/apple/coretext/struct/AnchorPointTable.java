@@ -50,19 +50,31 @@ public final class AnchorPointTable extends StructObject {
         setPoints(points);
     }
 
+    /**
+     * number of anchor points defined for this glyph
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int nPoints();
 
+    /**
+     * number of anchor points defined for this glyph
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setNPoints(int value);
 
+    /**
+     * first anchor point starts here
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native AnchorPoint points();
 
+    /**
+     * first anchor point starts here
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setPoints(@ByValue AnchorPoint value);

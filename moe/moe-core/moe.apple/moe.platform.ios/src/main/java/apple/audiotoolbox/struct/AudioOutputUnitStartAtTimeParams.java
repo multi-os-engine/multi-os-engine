@@ -16,7 +16,7 @@ limitations under the License.
 
 package apple.audiotoolbox.struct;
 
-import apple.coreaudio.struct.AudioTimeStamp;
+import apple.coreaudiotypes.struct.AudioTimeStamp;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -51,11 +51,17 @@ public final class AudioOutputUnitStartAtTimeParams extends StructObject {
         setMFlags(mFlags);
     }
 
+    /**
+     * see AudioDeviceStartAtTime
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native AudioTimeStamp mTimestamp();
 
+    /**
+     * see AudioDeviceStartAtTime
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setMTimestamp(@ByValue AudioTimeStamp value);

@@ -37,6 +37,16 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INBookRestaurantReservationIntentHandling")
 public interface INBookRestaurantReservationIntentHandling {
+    /**
+     * Confirmation method - Validate that this intent is ready for the next step (i.e. handling)
+     * 
+     * These methods are called prior to asking the app to handle the intent. The app should return a response object that contains additional information about the intent, which may be relevant for the system to show the user prior to handling. If unimplemented, the system will assume the intent is valid following resolution, and will assume there is no additional information relevant to this intent.
+     * 
+     * @param  intent The input intent
+     * @param  completion The response block contains an INBookRestaurantReservationIntentResponse containing additional details about the intent that may be relevant for the system to show the user prior to handling.
+     * 
+     * @see INEndWorkoutIntentResponse
+     */
     @Generated
     @IsOptional
     @Selector("confirmBookRestaurantReservation:completion:")
@@ -45,6 +55,16 @@ public interface INBookRestaurantReservationIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Handling method - Execute the task represented by the INBookRestaurantReservationIntent that's passed in
+     * 
+     * This method is called to actually execute the intent, the app must return a response for this intent and an NSUserActivity capturing the state that the app must be restored to at the end of handling this intent
+     * 
+     * @param  intent The input intent
+     * @param  completion The response handling block to invoke with the response to handling the intent.
+     * 
+     * @see  INBookRestaurantReservationIntentResponse
+     */
     @Generated
     @Selector("handleBookRestaurantReservation:completion:")
     void handleBookRestaurantReservationCompletion(INBookRestaurantReservationIntent intent,
@@ -84,6 +104,16 @@ public interface INBookRestaurantReservationIntentHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Resolution methods - Determine if this intent is ready for the next step (confirmation)
+     * 
+     * These methods are called to make sure the app extension is capable of handling this intent in its current form. This method is for validating if the intent needs any further fleshing out.
+     * 
+     * @param  intent The input intent
+     * @param  completion The response block contains an INIntentResolutionResult for the parameter being resolved
+     * 
+     * @see INIntentResolutionResult
+     */
     @Generated
     @IsOptional
     @Selector("resolveRestaurantForBookRestaurantReservation:withCompletion:")
@@ -96,14 +126,14 @@ public interface INBookRestaurantReservationIntentHandling {
     @Generated
     public interface Block_confirmBookRestaurantReservationCompletion {
         @Generated
-        void call_confirmBookRestaurantReservationCompletion(INBookRestaurantReservationIntentResponse arg0);
+        void call_confirmBookRestaurantReservationCompletion(INBookRestaurantReservationIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleBookRestaurantReservationCompletion {
         @Generated
-        void call_handleBookRestaurantReservationCompletion(INBookRestaurantReservationIntentResponse arg0);
+        void call_handleBookRestaurantReservationCompletion(INBookRestaurantReservationIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -111,14 +141,15 @@ public interface INBookRestaurantReservationIntentHandling {
     public interface Block_resolveBookingDateComponentsForBookRestaurantReservationWithCompletion {
         @Generated
         void call_resolveBookingDateComponentsForBookRestaurantReservationWithCompletion(
-                INDateComponentsResolutionResult arg0);
+                INDateComponentsResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveGuestForBookRestaurantReservationWithCompletion {
         @Generated
-        void call_resolveGuestForBookRestaurantReservationWithCompletion(INRestaurantGuestResolutionResult arg0);
+        void call_resolveGuestForBookRestaurantReservationWithCompletion(
+                INRestaurantGuestResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -126,20 +157,22 @@ public interface INBookRestaurantReservationIntentHandling {
     public interface Block_resolveGuestProvidedSpecialRequestTextForBookRestaurantReservationWithCompletion {
         @Generated
         void call_resolveGuestProvidedSpecialRequestTextForBookRestaurantReservationWithCompletion(
-                INStringResolutionResult arg0);
+                INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolvePartySizeForBookRestaurantReservationWithCompletion {
         @Generated
-        void call_resolvePartySizeForBookRestaurantReservationWithCompletion(INIntegerResolutionResult arg0);
+        void call_resolvePartySizeForBookRestaurantReservationWithCompletion(
+                INIntegerResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveRestaurantForBookRestaurantReservationWithCompletion {
         @Generated
-        void call_resolveRestaurantForBookRestaurantReservationWithCompletion(INRestaurantResolutionResult arg0);
+        void call_resolveRestaurantForBookRestaurantReservationWithCompletion(
+                INRestaurantResolutionResult resolutionResult);
     }
 }

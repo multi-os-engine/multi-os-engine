@@ -194,10 +194,19 @@ public class NSRunLoop extends NSObject {
     @Selector("limitDateForMode:")
     public native NSDate limitDateForMode(String mode);
 
+    /**
+     * Schedules the execution of a block on the target run loop.
+     * - parameter: block   The block to execute
+     */
     @Generated
     @Selector("performBlock:")
     public native void performBlock(@ObjCBlock(name = "call_performBlock") Block_performBlock block);
 
+    /**
+     * Schedules the execution of a block on the target run loop in given modes.
+     * - parameter: modes   An array of input modes for which the block may be executed.
+     * - parameter: block   The block to execute
+     */
     @Generated
     @Selector("performInModes:block:")
     public native void performInModesBlock(NSArray<String> modes,

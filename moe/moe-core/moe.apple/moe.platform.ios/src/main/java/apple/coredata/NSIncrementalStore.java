@@ -44,6 +44,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Abstract class defining the API through which Core Data communicates with a store.
+ * This API is designed to allow users to create persistent stores which load and save
+ * data incrementally, allowing for the management of large and/or shared datasets.
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -107,6 +112,9 @@ public class NSIncrementalStore extends NSPersistentStore {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API methods that may be overriden:
+     */
     @Generated
     @Selector("identifierForNewStoreAtURL:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -174,6 +182,20 @@ public class NSIncrementalStore extends NSPersistentStore {
     @NInt
     public static native long version_static();
 
+    /**
+     * Return a value as appropriate for the request, or nil if the request cannot be completed.
+     * If the request is a fetch request whose result type is set to one of NSManagedObjectResultType,
+     * NSManagedObjectIDResultType, NSDictionaryResultType, return an array containing all objects
+     * in the store matching the request.
+     * If the request is a fetch request whose result type is set to NSCountResultType, return an
+     * array containing an NSNumber of all objects in the store matching the request.
+     * If the request is a save request, the result should be an empty array. Note that
+     * save requests may have nil inserted/updated/deleted/locked collections; this should be
+     * treated as a request to save the store metadata.
+     * Note that subclasses of NSIncrementalStore should implement this method conservatively,
+     * and expect that unknown request types may at some point be passed to the
+     * method. The correct behavior in these cases would be to return nil and an error.
+     */
     @Generated
     @Selector("executeRequest:withContext:error:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -189,23 +211,47 @@ public class NSIncrementalStore extends NSPersistentStore {
     public native NSIncrementalStore initWithPersistentStoreCoordinatorConfigurationNameURLOptions(
             NSPersistentStoreCoordinator root, String name, NSURL url, NSDictionary<?, ?> options);
 
+    /**
+     * CoreData expects loadMetadata: to validate that the URL used to create the store is usable
+     * (location exists, is writable (if applicable), schema is compatible, etc) and return an
+     * error if there is an issue.
+     * Any subclass of NSIncrementalStore which is file-based must be able to handle being initialized
+     * with a URL pointing to a zero-length file. This serves as an indicator that a new store is to be
+     * constructed at the specified location and allows applications using the store to securly create
+     * reservation files in known locations.
+     */
     @Generated
     @Selector("loadMetadata:")
     public native boolean loadMetadata(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Inform the store that the objects with ids in objectIDs are in use in a client NSManagedObjectContext
+     */
     @Generated
     @Selector("managedObjectContextDidRegisterObjectsWithIDs:")
     public native void managedObjectContextDidRegisterObjectsWithIDs(NSArray<? extends NSManagedObjectID> objectIDs);
 
+    /**
+     * Inform the store that the objects with ids in objectIDs are no longer in use in a client NSManagedObjectContext
+     */
     @Generated
     @Selector("managedObjectContextDidUnregisterObjectsWithIDs:")
     public native void managedObjectContextDidUnregisterObjectsWithIDs(NSArray<? extends NSManagedObjectID> objectIDs);
 
+    /**
+     * Returns a new objectID with retain count 1 that uses data as the key.
+     */
     @Generated
     @Selector("newObjectIDForEntity:referenceObject:")
     public native NSManagedObjectID newObjectIDForEntityReferenceObject(NSEntityDescription entity,
             @Mapped(ObjCObjectMapper.class) Object data);
 
+    /**
+     * Returns the relationship for the given relationship on the object with ID objectID. If the relationship
+     * is a to-one it should return an NSManagedObjectID corresponding to the destination or NSNull if the relationship value is nil.
+     * If the relationship is a to-many, should return an NSSet or NSArray containing the NSManagedObjectIDs of the related objects.
+     * Should return nil and set the error if the source object cannot be found.
+     */
     @Generated
     @Selector("newValueForRelationship:forObjectWithID:withContext:error:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -213,16 +259,29 @@ public class NSIncrementalStore extends NSPersistentStore {
             NSManagedObjectID objectID, NSManagedObjectContext context,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Returns an NSIncrementalStoreNode encapsulating the persistent external values for the object for an objectID.
+     * It should include all attributes values and may include to-one relationship values as NSManagedObjectIDs.
+     * Should return nil and set the error if the object cannot be found.
+     */
     @Generated
     @Selector("newValuesForObjectWithID:withContext:error:")
     public native NSIncrementalStoreNode newValuesForObjectWithIDWithContextError(NSManagedObjectID objectID,
             NSManagedObjectContext context, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Called before executeRequest with a save request, to assign permanent IDs to newly inserted objects;
+     * must return the objectIDs in the same order as the objects appear in array.
+     */
     @Generated
     @Selector("obtainPermanentIDsForObjects:error:")
     public native NSArray<? extends NSManagedObjectID> obtainPermanentIDsForObjectsError(
             NSArray<? extends NSManagedObject> array, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Returns the reference data used to construct the objectID. Will raise an NSInvalidArgumentException if the objectID was not created
+     * by this store.
+     */
     @Generated
     @Selector("referenceObjectForObjectID:")
     @MappedReturn(ObjCObjectMapper.class)

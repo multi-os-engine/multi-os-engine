@@ -158,6 +158,9 @@ public class INRequestRideIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * Specifies where the ride should end.
+     */
     @Generated
     @Selector("dropOffLocation")
     public native CLPlacemark dropOffLocation();
@@ -168,7 +171,7 @@ public class INRequestRideIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRequestRideIntent initWithCoder(NSCoder aDecoder);
+    public native INRequestRideIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithPickupLocation:dropOffLocation:rideOptionName:partySize:paymentMethod:")
@@ -176,6 +179,9 @@ public class INRequestRideIntent extends INIntent {
             CLPlacemark pickupLocation, CLPlacemark dropOffLocation, INSpeakableString rideOptionName,
             NSNumber partySize, INPaymentMethod paymentMethod);
 
+    /**
+     * Defines the number of people in the party requesting the ride.
+     */
     @Generated
     @Selector("partySize")
     public native NSNumber partySize();
@@ -184,6 +190,9 @@ public class INRequestRideIntent extends INIntent {
     @Selector("paymentMethod")
     public native INPaymentMethod paymentMethod();
 
+    /**
+     * Specifies the location to to begin the ride.
+     */
     @Generated
     @Selector("pickupLocation")
     public native CLPlacemark pickupLocation();

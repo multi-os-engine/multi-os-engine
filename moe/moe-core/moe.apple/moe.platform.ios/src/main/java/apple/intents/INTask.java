@@ -98,7 +98,7 @@ public class INTask extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -115,7 +115,7 @@ public class INTask extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INTask initWithCoder(NSCoder aDecoder);
+    public native INTask initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTitle:status:taskType:spatialEventTrigger:temporalEventTrigger:createdDateComponents:modifiedDateComponents:identifier:")
@@ -207,4 +207,16 @@ public class INTask extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithTitle:status:taskType:spatialEventTrigger:temporalEventTrigger:createdDateComponents:modifiedDateComponents:identifier:priority:")
+    public native INTask initWithTitleStatusTaskTypeSpatialEventTriggerTemporalEventTriggerCreatedDateComponentsModifiedDateComponentsIdentifierPriority(
+            INSpeakableString title, @NInt long status, @NInt long taskType, INSpatialEventTrigger spatialEventTrigger,
+            INTemporalEventTrigger temporalEventTrigger, NSDateComponents createdDateComponents,
+            NSDateComponents modifiedDateComponents, String identifier, @NInt long priority);
+
+    @Generated
+    @Selector("priority")
+    @NInt
+    public native long priority();
 }

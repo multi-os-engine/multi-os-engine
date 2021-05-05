@@ -41,6 +41,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * [@interface] NEAppProxyFlow
+ * 
+ * The NEAppProxyFlow class is an abstract base class that declares the programmatic interface for a flow of network data.
+ * 
+ * NEAppProxyFlow is part of NetworkExtension.framework.
+ * 
+ * Instances of this class are thread safe.
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -152,10 +161,24 @@ public class NEAppProxyFlow extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * closeReadWithError:
+     * 
+     * This function is used by an NEProvider implementation to indicate that it does not want to receive any more data from the flow.
+     * 
+     * @param error An error in NEAppProxyErrorDomain that should be passed to the flow's source application.
+     */
     @Generated
     @Selector("closeReadWithError:")
     public native void closeReadWithError(NSError error);
 
+    /**
+     * closeWriteWithError:
+     * 
+     * This functions is used by an NEProvider implementation to indicate that it does not have any more data to write to the flow.
+     * 
+     * @param error An error in NEAppProxyErrorDomain that should be passed to the flow's source application.
+     */
     @Generated
     @Selector("closeWriteWithError:")
     public native void closeWriteWithError(NSError error);
@@ -164,10 +187,23 @@ public class NEAppProxyFlow extends NSObject {
     @Selector("init")
     public native NEAppProxyFlow init();
 
+    /**
+     * [@property] metaData
+     * 
+     * An NEFlowMetaData object containing meta data for the flow.
+     */
     @Generated
     @Selector("metaData")
     public native NEFlowMetaData metaData();
 
+    /**
+     * openWithLocalEndpoint:completionHandler:
+     * 
+     * This function is used by an NEProvider implementation to indicate that it is ready to handle flow data.
+     * 
+     * @param localEndpoint The address and port that should be used as the local endpoint of the socket associated with this flow. If the source application already specifed a local endpoint by binding the socket then this parameter is ignored.
+     * @param completionHandler A block that is called when the process of opening flow is complete. A nil value passed to this block indicates that the flow was opened successfully. A non-nil NSError value indicates that the flow failed to open successfully.
+     */
     @Generated
     @Selector("openWithLocalEndpoint:completionHandler:")
     public native void openWithLocalEndpointCompletionHandler(NWHostEndpoint localEndpoint,
@@ -177,6 +213,36 @@ public class NEAppProxyFlow extends NSObject {
     @Generated
     public interface Block_openWithLocalEndpointCompletionHandler {
         @Generated
-        void call_openWithLocalEndpointCompletionHandler(NSError arg0);
+        void call_openWithLocalEndpointCompletionHandler(NSError error);
     }
+
+    /**
+     * [@property] networkInterface
+     * 
+     * An nw_interface_t containing information about the network interface used by the flow. If the flow's data is transported using a different interface, this property
+     *    should be set to that interface.
+     */
+    @Generated
+    @Selector("networkInterface")
+    public native NSObject networkInterface();
+
+    /**
+     * [@property] networkInterface
+     * 
+     * An nw_interface_t containing information about the network interface used by the flow. If the flow's data is transported using a different interface, this property
+     *    should be set to that interface.
+     */
+    @Generated
+    @Selector("setNetworkInterface:")
+    public native void setNetworkInterface(NSObject value);
+
+    /**
+     * [@property] remoteHostname
+     * 
+     * If the flow was created by passing a hostname to a "connect by name" API such as NSURLSession or Network.framework, this property is set to the
+     *     remote hostname.
+     */
+    @Generated
+    @Selector("remoteHostname")
+    public native String remoteHostname();
 }

@@ -152,6 +152,11 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property]		asset
+     * 
+     * The asset associated with the receiver.
+     */
     @Generated
     @Selector("asset")
     public native AVAsset asset();
@@ -166,16 +171,39 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
     @Selector("init")
     public native AVMediaSelection init();
 
+    /**
+     * mediaSelectionCriteriaCanBeAppliedAutomaticallyToMediaSelectionGroup:
+     * 
+     * Indicates that specified media selection group is subject to automatic media selection.
+     * 
+     * Automatic application of media selection criteria is suspended in any group in which a specific selection has been made via an invocation of -selectMediaOption:inMediaSelectionGroup:.
+     * 
+     * @param 		mediaSelectionGroup
+     * 			A media selection group obtained from the receiver's asset.
+     * @return		YES if the group is subject to automatic media selection.
+     */
     @Generated
     @Selector("mediaSelectionCriteriaCanBeAppliedAutomaticallyToMediaSelectionGroup:")
     public native boolean mediaSelectionCriteriaCanBeAppliedAutomaticallyToMediaSelectionGroup(
             AVMediaSelectionGroup mediaSelectionGroup);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
+    /**
+     * selectedMediaOptionInMediaSelectionGroup:
+     * 
+     * Indicates the media selection option that's currently selected from the specified group. May be nil.
+     * 
+     * 			If the value of the property allowsEmptySelection of the AVMediaSelectionGroup is YES, the currently selected option in the group may be nil.
+     * 
+     * @param 		mediaSelectionGroup
+     * 			A media selection group obtained from the receiver's asset.
+     * @return		An instance of AVMediaSelectionOption that describes the currently selection option in the group.
+     */
     @Generated
     @Selector("selectedMediaOptionInMediaSelectionGroup:")
     public native AVMediaSelectionOption selectedMediaOptionInMediaSelectionGroup(

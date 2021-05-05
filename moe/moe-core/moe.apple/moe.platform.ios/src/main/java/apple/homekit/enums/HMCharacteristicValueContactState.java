@@ -19,6 +19,12 @@ package apple.homekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]      HMCharacteristicValueContactState
+ * 
+ * [@constant]  HMCharacteristicValueContactStateDetected           Contact is detected.
+ * [@constant]  HMCharacteristicValueContactStateNone               Contact is not detected.
+ */
 @Generated
 public final class HMCharacteristicValueContactState {
     @Generated @NInt public static final long None = 0x0000000000000001L;

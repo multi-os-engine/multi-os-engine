@@ -19,6 +19,7 @@ package apple.avfoundation;
 import apple.NSObject;
 import apple.audiotoolbox.opaque.AudioComponentInstance;
 import apple.foundation.NSArray;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -31,7 +32,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -40,6 +43,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioIONode
+ * 
+ * 	Base class for a node that performs audio input or output in the engine.
+ * 
+ * 	When the engine is configured to render to/from an audio device, on macOS, AVAudioInputNode 
+ * 	and AVAudioOutputNode communicate with the system's default input and output devices. 
+ * 	On iOS, they communicate with the devices appropriate to the app's AVAudioSession category 
+ * 	and other configuration, also considering the user's actions such as 
+ * 	connecting/disconnecting external devices.
+ * 
+ * 	In the manual rendering mode, the AVAudioInputNode and AVAudioOutputNode perform the input
+ * 	and output in the engine, in response to client's request.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +168,13 @@ public class AVAudioIONode extends AVAudioNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] audioUnit
+     * 
+     * 	The node's underlying AudioUnit, if any.
+     * 
+     * 	This is only necessary for certain advanced usages.
+     */
     @Generated
     @Selector("audioUnit")
     public native AudioComponentInstance audioUnit();
@@ -159,7 +183,55 @@ public class AVAudioIONode extends AVAudioNode {
     @Selector("init")
     public native AVAudioIONode init();
 
+    /**
+     * [@property] presentationLatency
+     * 
+     * 	The presentation or hardware latency, applicable when the engine is rendering to/from an
+     * 	audio device.
+     * 
+     * 	This corresponds to kAudioDevicePropertyLatency and kAudioStreamPropertyLatency.
+     * 	See <CoreAudio/AudioHardwareBase.h>.
+     */
     @Generated
     @Selector("presentationLatency")
     public native double presentationLatency();
+
+    /**
+     * [@property] voiceProcessingEnabled
+     * 
+     *     Indicates whether voice processing is enabled.
+     */
+    @Generated
+    @Selector("isVoiceProcessingEnabled")
+    public native boolean isVoiceProcessingEnabled();
+
+    /**
+     * setVoiceProcessingEnabled:error:
+     * 
+     *        Enable or disable voice processing on the IO node.
+     * 
+     *        If enabled, the input node does signal processing on the incoming audio (taking out any
+     *        of the audio that is played from the device at a given time from the incoming audio).
+     *        Disabling this mode on either of the IO nodes automatically disabled it on the other IO node.
+     * 
+     *        Voice processing requires both input and output nodes to be in the voice processing mode.
+     *        Enabling this mode on either of the IO nodes automatically enables it on the other IO node.
+     *        Voice processing is only supported when the engine is rendering to the audio device and not
+     *        in the manual rendering mode.
+     *        Voice processing can only be be enabled or disabled when the engine is in a stopped state.
+     * 
+     *        The output format of the input node and the input format of the output node have to be
+     *        the same and they can only be changed when the engine is in a stopped state.
+     * 
+     * @param enabled
+     * 	Whether voice processing is to be enabled.
+     *    @param outError
+     *        On exit, if the IO node cannot enable or diable voice processing, a description of the error
+     *    @return
+     *        YES for success
+     */
+    @Generated
+    @Selector("setVoiceProcessingEnabled:error:")
+    public native boolean setVoiceProcessingEnabledError(boolean enabled,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

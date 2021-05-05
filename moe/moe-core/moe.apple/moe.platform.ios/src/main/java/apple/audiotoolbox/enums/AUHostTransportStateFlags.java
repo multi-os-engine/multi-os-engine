@@ -19,6 +19,22 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * [@enum]		AUHostTransportStateFlags
+ * 
+ * Flags describing the host's transport state.
+ * [@constant]	AUHostTransportStateChanged
+ * 	True if, since the callback was last called, there was a change to the state of, or
+ * 	discontinuities in, the host's transport. Can indicate such state changes as
+ * 	start/stop, or seeking to another position in the timeline.
+ * [@constant]	AUHostTransportStateMoving
+ * 	True if the transport is moving.
+ * [@constant]	AUHostTransportStateRecording
+ * 	True if the host is recording, or prepared to record. Can be true with or without the
+ * 	transport moving.
+ * [@constant]	AUHostTransportStateCycling
+ * 	True if the host is cycling or looping.
+ */
 @Generated
 public final class AUHostTransportStateFlags {
     @Generated @NUInt public static final long Changed = 0x0000000000000001L;

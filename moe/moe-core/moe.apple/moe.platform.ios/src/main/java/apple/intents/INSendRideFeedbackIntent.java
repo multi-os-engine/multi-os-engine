@@ -95,7 +95,7 @@ public class INSendRideFeedbackIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSendRideFeedbackIntent initWithCoder(NSCoder aDecoder);
+    public native INSendRideFeedbackIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRideIdentifier:")
@@ -128,6 +128,9 @@ public class INSendRideFeedbackIntent extends INIntent {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * Will be between 0 and 10 inclusive.
+     */
     @Generated
     @Selector("rating")
     public native NSNumber rating();
@@ -140,10 +143,16 @@ public class INSendRideFeedbackIntent extends INIntent {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Specifies the identifier of the ride to send feedback for.
+     */
     @Generated
     @Selector("rideIdentifier")
     public native String rideIdentifier();
 
+    /**
+     * Will be between 0 and 10 inclusive.
+     */
     @Generated
     @Selector("setRating:")
     public native void setRating(NSNumber value);

@@ -58,19 +58,31 @@ public final class __darwin_pthread_handler_rec extends StructObject {
         set__next(__next);
     }
 
+    /**
+     * Routine to call
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call___routine")
     public native Function___routine __routine();
 
+    /**
+     * Routine to call
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void set__routine(@FunctionPtr(name = "call___routine") Function___routine value);
 
+    /**
+     * Argument to pass
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr __arg();
 
+    /**
+     * Argument to pass
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void set__arg(VoidPtr value);

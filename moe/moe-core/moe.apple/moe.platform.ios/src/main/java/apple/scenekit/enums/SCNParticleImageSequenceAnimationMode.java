@@ -19,10 +19,22 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Texture Animation Mode
+ */
 @Generated
 public final class SCNParticleImageSequenceAnimationMode {
+    /**
+     * The animation will loop.
+     */
     @Generated @NInt public static final long Repeat = 0x0000000000000000L;
+    /**
+     * The animation will stop at both ends.
+     */
     @Generated @NInt public static final long Clamp = 0x0000000000000001L;
+    /**
+     * The animation will reverse when reaching an end.
+     */
     @Generated @NInt public static final long AutoReverse = 0x0000000000000002L;
 
     @Generated

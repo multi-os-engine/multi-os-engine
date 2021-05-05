@@ -162,10 +162,14 @@ public class AVAudioMix extends NSObject implements NSCopying, NSMutableCopying 
     @Selector("init")
     public native AVAudioMix init();
 
+    /**
+     * Indicates parameters for inputs to the mix; an NSArray of instances of AVAudioMixInputParameters. Note that an instance of AVAudioMixInputParameters is not required for each audio track that contributes to the mix; audio for those without associated AVAudioMixInputParameters will be included in the mix, processed according to default behavior.
+     */
     @Generated
     @Selector("inputParameters")
     public native NSArray<? extends AVAudioMixInputParameters> inputParameters();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

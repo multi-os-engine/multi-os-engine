@@ -22,8 +22,8 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.gameplaykit.protocol.GKSceneRootNodeType;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -41,14 +41,18 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A scene stores and handles loading of data related to a particular scene.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKScene extends NSObject implements NSCopying, NSCoding {
+public class GKScene extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -142,6 +146,9 @@ public class GKScene extends NSObject implements NSCopying, NSCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Loads a scene from a file contained within the bundle.
+     */
     @Generated
     @Selector("sceneWithFileNamed:")
     public static native GKScene sceneWithFileNamed(String filename);
@@ -159,10 +166,20 @@ public class GKScene extends NSObject implements NSCopying, NSCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * Adds an entity to the scene's list of entities.
+     * 
+     * @param entity the entity to add.
+     */
     @Generated
     @Selector("addEntity:")
     public native void addEntity(GKEntity entity);
 
+    /**
+     * Adds a graph to the scene's list of graphs.
+     * 
+     * @param graph the graph to add.
+     */
     @Generated
     @Selector("addGraph:name:")
     public native void addGraphName(GKGraph graph, String name);
@@ -175,12 +192,18 @@ public class GKScene extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * The entities of this scene.
+     */
     @Generated
     @Selector("entities")
     public native NSArray<? extends GKEntity> entities();
 
+    /**
+     * The navigational graphs of this scene.
+     */
     @Generated
     @Selector("graphs")
     public native NSDictionary<String, ? extends GKGraph> graphs();
@@ -191,27 +214,60 @@ public class GKScene extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKScene initWithCoder(NSCoder aDecoder);
+    public native GKScene initWithCoder(NSCoder coder);
 
+    /**
+     * Removes an entity from the scene's list of entities.
+     * 
+     * @param entity the entity to remove.
+     */
     @Generated
     @Selector("removeEntity:")
     public native void removeEntity(GKEntity entity);
 
+    /**
+     * Removes a graph from the scene's list of graphs.
+     * 
+     * @param name the name of the corresponding graph as added via addGraph:
+     */
     @Generated
     @Selector("removeGraph:")
     public native void removeGraph(String name);
 
+    /**
+     * The root node for the scene.
+     * 
+     * @see GKSceneRootNodeType
+     */
     @Generated
     @Selector("rootNode")
     @MappedReturn(ObjCObjectMapper.class)
     public native GKSceneRootNodeType rootNode();
 
+    /**
+     * The root node for the scene.
+     * 
+     * @see GKSceneRootNodeType
+     */
     @Generated
     @Selector("setRootNode:")
     public native void setRootNode(@Mapped(ObjCObjectMapper.class) GKSceneRootNodeType value);
 
+    /**
+     * Loads a scene from a file contained within the bundle and link with the specified rootNode.
+     */
     @Generated
     @Selector("sceneWithFileNamed:rootNode:")
     public static native GKScene sceneWithFileNamedRootNode(String filename,
             @Mapped(ObjCObjectMapper.class) GKSceneRootNodeType rootNode);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -19,6 +19,13 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * UITextAutocapitalizationType
+ * 
+ * Controls autocapitalization behavior for a text widget.
+ * Note: Capitalization does not apply in all script systems. In such
+ * cases, these values are ignored by the keyboard/input method implementation.
+ */
 @Generated
 public final class UITextAutocapitalizationType {
     @Generated @NInt public static final long None = 0x0000000000000000L;

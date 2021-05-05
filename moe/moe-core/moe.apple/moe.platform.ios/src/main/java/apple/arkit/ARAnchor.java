@@ -1,11 +1,13 @@
 package apple.arkit;
 
 import apple.NSObject;
+import apple.arkit.protocol.ARAnchorCopying;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSUUID;
-import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -22,14 +24,18 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Object representing a physical location and orientation in 3D space.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ARAnchor extends NSObject implements NSCopying {
+public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -94,6 +100,9 @@ public class ARAnchor extends NSObject implements NSCopying {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Unique identifier of the anchor.
+     */
     @Generated
     @Selector("identifier")
     public native NSUUID identifier();
@@ -149,4 +158,42 @@ public class ARAnchor extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithAnchor:")
+    public native ARAnchor initWithAnchor(ARAnchor anchor);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native ARAnchor initWithCoder(NSCoder coder);
+
+    /**
+     * An optional name used to associate with the anchor.
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * Identifier of the session that owns the anchor.
+     * 
+     * The session identifier will be assigned to anchor when added to the session.
+     */
+    @Generated
+    @Selector("sessionIdentifier")
+    public native NSUUID sessionIdentifier();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

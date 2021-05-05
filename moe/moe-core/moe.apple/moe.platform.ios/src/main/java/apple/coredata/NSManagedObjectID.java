@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Managed object IDs are opaque identifiers for managed objects.
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +156,9 @@ public class NSManagedObjectID extends NSObject implements NSCopying, NSFetchReq
     @NInt
     public static native long version_static();
 
+    /**
+     * URI which provides an archivable reference to the object which this ID refers
+     */
     @Generated
     @Selector("URIRepresentation")
     public native NSURL URIRepresentation();
@@ -163,6 +169,9 @@ public class NSManagedObjectID extends NSObject implements NSCopying, NSFetchReq
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * entity for the object identified by an ID
+     */
     @Generated
     @Selector("entity")
     public native NSEntityDescription entity();
@@ -171,10 +180,16 @@ public class NSManagedObjectID extends NSObject implements NSCopying, NSFetchReq
     @Selector("init")
     public native NSManagedObjectID init();
 
+    /**
+     * indicates whether or not this ID will be replaced later, such as after a save operation (temporary IDs are assigned to newly inserted objects and replaced with permanent IDs when an object is written to a persistent store); most IDs return NO
+     */
     @Generated
     @Selector("isTemporaryID")
     public native boolean isTemporaryID();
 
+    /**
+     * persistent store that fetched the object identified by an ID
+     */
     @Generated
     @Selector("persistentStore")
     public native NSPersistentStore persistentStore();

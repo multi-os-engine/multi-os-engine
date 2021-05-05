@@ -48,10 +48,16 @@ public final class gss_krb5_lucid_context_version extends StructObject {
         setVersion(version);
     }
 
+    /**
+     * Structure version number
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int version();
 
+    /**
+     * Structure version number
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(int value);

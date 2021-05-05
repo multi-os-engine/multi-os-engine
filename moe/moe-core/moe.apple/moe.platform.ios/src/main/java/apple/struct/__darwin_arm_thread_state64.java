@@ -42,58 +42,100 @@ public final class __darwin_arm_thread_state64 extends StructObject {
         super(peer);
     }
 
+    /**
+     * General purpose registers x0-x28
+     */
     @Generated
     @StructureField(order = 0, isGetter = true, count = 29)
     public native long __x(int field_idx);
 
+    /**
+     * General purpose registers x0-x28
+     */
     @Generated
     @StructureField(order = 0, isGetter = false, count = 29)
     public native void set__x(long value, int field_idx);
 
+    /**
+     * Frame pointer x29
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native long __fp();
 
+    /**
+     * Frame pointer x29
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void set__fp(long value);
 
+    /**
+     * Link register x30
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native long __lr();
 
+    /**
+     * Link register x30
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void set__lr(long value);
 
+    /**
+     * Stack pointer x31
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native long __sp();
 
+    /**
+     * Stack pointer x31
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void set__sp(long value);
 
+    /**
+     * Program counter
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native long __pc();
 
+    /**
+     * Program counter
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void set__pc(long value);
 
+    /**
+     * Current program status register
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     public native int __cpsr();
 
+    /**
+     * Current program status register
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void set__cpsr(int value);
 
+    /**
+     * Same size for 32-bit or 64-bit clients
+     */
     @Generated
     @StructureField(order = 6, isGetter = true)
     public native int __pad();
 
+    /**
+     * Same size for 32-bit or 64-bit clients
+     */
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void set__pad(int value);

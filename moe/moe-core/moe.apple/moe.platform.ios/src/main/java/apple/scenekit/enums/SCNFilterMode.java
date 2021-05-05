@@ -19,6 +19,11 @@ package apple.scenekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] SCNFilterMode
+ * 
+ * Filtering modes
+ */
 @Generated
 public final class SCNFilterMode {
     @Generated @NInt public static final long None = 0x0000000000000000L;

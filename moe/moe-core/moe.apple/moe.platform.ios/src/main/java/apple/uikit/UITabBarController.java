@@ -45,6 +45,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UITabBarController manages a button bar and transition view, for an application with multiple top-level modes.
+ * 
+ * To use in your application, add its view to the view hierarchy, then add top-level view controllers in order.
+ * Most clients will not need to subclass UITabBarController.
+ * 
+ * If more than five view controllers are added to a tab bar controller, only the first four will display.
+ * The rest will be accessible under an automatically generated More item.
+ * 
+ * UITabBarController is rotatable if all of its view controllers are rotatable.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -168,6 +179,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @NInt
     public static native long version_static();
 
+    /**
+     * If non-nil, then the "More" view will include an "Edit" button that displays customization UI for the specified controllers. By default, all view controllers are customizable.
+     */
     @Generated
     @Selector("customizableViewControllers")
     public native NSArray<? extends UIViewController> customizableViewControllers();
@@ -179,7 +193,7 @@ public class UITabBarController extends UIViewController implements UITabBarDele
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -187,12 +201,15 @@ public class UITabBarController extends UIViewController implements UITabBarDele
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITabBarController initWithCoder(NSCoder aDecoder);
+    public native UITabBarController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
     public native UITabBarController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * Returns the "More" navigation controller, creating it if it does not already exist.
+     */
     @Generated
     @Selector("moreNavigationController")
     public native UINavigationController moreNavigationController();
@@ -202,10 +219,16 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @NUInt
     public native long selectedIndex();
 
+    /**
+     * This may return the "More" navigation controller if it exists.
+     */
     @Generated
     @Selector("selectedViewController")
     public native UIViewController selectedViewController();
 
+    /**
+     * If non-nil, then the "More" view will include an "Edit" button that displays customization UI for the specified controllers. By default, all view controllers are customizable.
+     */
     @Generated
     @Selector("setCustomizableViewControllers:")
     public native void setCustomizableViewControllers(NSArray<? extends UIViewController> value);
@@ -230,10 +253,16 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Selector("setSelectedIndex:")
     public native void setSelectedIndex(@NUInt long value);
 
+    /**
+     * This may return the "More" navigation controller if it exists.
+     */
     @Generated
     @Selector("setSelectedViewController:")
     public native void setSelectedViewController_unsafe(UIViewController value);
 
+    /**
+     * This may return the "More" navigation controller if it exists.
+     */
     @Generated
     public void setSelectedViewController(UIViewController value) {
         Object __old = selectedViewController();
@@ -250,11 +279,18 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Selector("setViewControllers:")
     public native void setViewControllers(NSArray<? extends UIViewController> value);
 
+    /**
+     * If the number of view controllers is greater than the number displayable by a tab bar, a "More" navigation controller will automatically be shown.
+     * The "More" navigation controller will not be returned by -viewControllers, but it may be returned by -selectedViewController.
+     */
     @Generated
     @Selector("setViewControllers:animated:")
     public native void setViewControllersAnimated(NSArray<? extends UIViewController> viewControllers,
             boolean animated);
 
+    /**
+     * Provided for -[UIActionSheet showFromTabBar:]. Attempting to modify the contents of the tab bar directly will throw an exception.
+     */
     @Generated
     @Selector("tabBar")
     public native UITabBar tabBar();

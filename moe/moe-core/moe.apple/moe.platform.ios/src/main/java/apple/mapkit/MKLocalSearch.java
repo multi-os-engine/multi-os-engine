@@ -160,6 +160,10 @@ public class MKLocalSearch extends NSObject {
     @Selector("init")
     public native MKLocalSearch init();
 
+    /**
+     * The request will be copied during initialization, so any changes made to the request
+     * after this method returns do not affect the request used in -startWithCompletionHandler:
+     */
     @Generated
     @Selector("initWithRequest:")
     public native MKLocalSearch initWithRequest(MKLocalSearchRequest request);
@@ -168,6 +172,10 @@ public class MKLocalSearch extends NSObject {
     @Selector("isSearching")
     public native boolean isSearching();
 
+    /**
+     * Any calls to -startWithCompletionHandler: while -[MKLocalSearch isSearching] will fail.
+     * completionHandler will be called on the main queue
+     */
     @Generated
     @Selector("startWithCompletionHandler:")
     public native void startWithCompletionHandler(
@@ -177,6 +185,14 @@ public class MKLocalSearch extends NSObject {
     @Generated
     public interface Block_startWithCompletionHandler {
         @Generated
-        void call_startWithCompletionHandler(MKLocalSearchResponse arg0, NSError arg1);
+        void call_startWithCompletionHandler(MKLocalSearchResponse response, NSError error);
     }
+
+    /**
+     * The request will be copied during initialization, so any changes made to the request
+     * after this method returns do not affect the request used in -startWithCompletionHandler:
+     */
+    @Generated
+    @Selector("initWithPointsOfInterestRequest:")
+    public native MKLocalSearch initWithPointsOfInterestRequest(MKLocalPointsOfInterestRequest request);
 }

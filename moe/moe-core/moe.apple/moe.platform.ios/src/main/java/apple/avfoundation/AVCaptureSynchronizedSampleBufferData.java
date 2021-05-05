@@ -24,6 +24,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVCaptureSynchronizedSampleBufferData
+ * 
+ *    An concrete subclass of AVCaptureSynchronizedData representing the data delivered by an AVCaptureVideoDataOutput or AVCaptureAudioDataOutput.
+ * 
+ *    Synchronized sample buffer data is valid for the duration of AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback. To extend the sample buffer data beyond the callback, you must CFRetain it, and later call CFRelease when you're done with it.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -82,6 +89,13 @@ public class AVCaptureSynchronizedSampleBufferData extends AVCaptureSynchronized
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * [@property] droppedReason
+     * 
+     *    If sampleBufferWasDropped is YES, the reason for the drop, otherwise AVCaptureOutputDataDroppedReasonNone.
+     * 
+     *    AVCaptureOutputDataDroppedReasons are defined in AVCaptureOutputBase.h.
+     */
     @Generated
     @Selector("droppedReason")
     @NInt
@@ -131,10 +145,24 @@ public class AVCaptureSynchronizedSampleBufferData extends AVCaptureSynchronized
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * [@property] sampleBuffer
+     * 
+     *    A sample buffer containing video or audio data.
+     * 
+     *    If sampleBufferWasDropped is YES, the returned sampleBuffer was dropped before it could be delivered to you, and thus this sample buffer is a shell containing metadata and format information, but no actual pixel data. This property is never NULL. If a data output has no data to return, it is simply not present in the dictionary of synchronized data returned by AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback.
+     */
     @Generated
     @Selector("sampleBuffer")
     public native CMSampleBufferRef sampleBuffer();
 
+    /**
+     * [@property] sampleBufferWasDropped
+     * 
+     *    YES if the sample buffer was dropped.
+     * 
+     *    AVCaptureVideoDataOutput has a delegate callback for dropped sample buffers. AVCaptureAudioDataOutput does not. Therefore, sampleBufferWasDropped may be YES for video, but never for audio.
+     */
     @Generated
     @Selector("sampleBufferWasDropped")
     public native boolean sampleBufferWasDropped();

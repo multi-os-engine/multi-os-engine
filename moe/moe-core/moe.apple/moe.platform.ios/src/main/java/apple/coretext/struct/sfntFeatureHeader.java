@@ -43,10 +43,16 @@ public final class sfntFeatureHeader extends StructObject {
         super(peer);
     }
 
+    /**
+     * 1.0
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int version();
 
+    /**
+     * 1.0
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(int value);
@@ -67,10 +73,16 @@ public final class sfntFeatureHeader extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setFeatureSetCount(char value);
 
+    /**
+     * set to 0
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int reserved();
 
+    /**
+     * set to 0
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setReserved(int value);

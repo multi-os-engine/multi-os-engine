@@ -158,6 +158,9 @@ public class UISearchDisplayController extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native UISearchDisplayDelegate delegate();
 
+    /**
+     * Displaying the search bar in a navigation bar will override the contentsController's navigationItem if it has one.
+     */
     @Generated
     @Selector("displaysSearchBarInNavigationBar")
     public native boolean displaysSearchBarInNavigationBar();
@@ -171,10 +174,16 @@ public class UISearchDisplayController extends NSObject {
     public native UISearchDisplayController initWithSearchBarContentsController(UISearchBar searchBar,
             UIViewController viewController);
 
+    /**
+     * configure the view controller for searching. default is NO. animated is NO
+     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
+    /**
+     * configure the view controller for searching. default is NO. animated is NO
+     */
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
@@ -187,28 +196,46 @@ public class UISearchDisplayController extends NSObject {
     @Selector("searchBar")
     public native UISearchBar searchBar();
 
+    /**
+     * the view we are searching (often a UITableViewController)
+     */
     @Generated
     @Selector("searchContentsController")
     public native UIViewController searchContentsController();
 
+    /**
+     * default is nil. delegate can provide
+     */
     @Generated
     @Selector("searchResultsDataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native UITableViewDataSource searchResultsDataSource();
 
+    /**
+     * default is nil. delegate can provide
+     */
     @Generated
     @Selector("searchResultsDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UITableViewDelegate searchResultsDelegate();
 
+    /**
+     * will return non-nil. create if requested
+     */
     @Generated
     @Selector("searchResultsTableView")
     public native UITableView searchResultsTableView();
 
+    /**
+     * default is nil. If nil, the controller uses the default title string
+     */
     @Generated
     @Selector("searchResultsTitle")
     public native String searchResultsTitle();
 
+    /**
+     * animate the view controller for searching
+     */
     @Generated
     @Selector("setActive:animated:")
     public native void setActiveAnimated(boolean visible, boolean animated);
@@ -229,14 +256,23 @@ public class UISearchDisplayController extends NSObject {
         }
     }
 
+    /**
+     * Displaying the search bar in a navigation bar will override the contentsController's navigationItem if it has one.
+     */
     @Generated
     @Selector("setDisplaysSearchBarInNavigationBar:")
     public native void setDisplaysSearchBarInNavigationBar(boolean value);
 
+    /**
+     * default is nil. delegate can provide
+     */
     @Generated
     @Selector("setSearchResultsDataSource:")
     public native void setSearchResultsDataSource_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDataSource value);
 
+    /**
+     * default is nil. delegate can provide
+     */
     @Generated
     public void setSearchResultsDataSource(@Mapped(ObjCObjectMapper.class) UITableViewDataSource value) {
         Object __old = searchResultsDataSource();
@@ -249,10 +285,16 @@ public class UISearchDisplayController extends NSObject {
         }
     }
 
+    /**
+     * default is nil. delegate can provide
+     */
     @Generated
     @Selector("setSearchResultsDelegate:")
     public native void setSearchResultsDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDelegate value);
 
+    /**
+     * default is nil. delegate can provide
+     */
     @Generated
     public void setSearchResultsDelegate(@Mapped(ObjCObjectMapper.class) UITableViewDelegate value) {
         Object __old = searchResultsDelegate();
@@ -265,6 +307,9 @@ public class UISearchDisplayController extends NSObject {
         }
     }
 
+    /**
+     * default is nil. If nil, the controller uses the default title string
+     */
     @Generated
     @Selector("setSearchResultsTitle:")
     public native void setSearchResultsTitle(String value);

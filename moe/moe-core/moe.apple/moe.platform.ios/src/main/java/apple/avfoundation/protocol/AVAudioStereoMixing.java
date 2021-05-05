@@ -23,15 +23,38 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * [@protocol]   AVAudioStereoMixing
+ * 
+ * Protocol that defines stereo mixing properties
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVAudioStereoMixing")
 public interface AVAudioStereoMixing {
+    /**
+     * [@property] pan
+     * 
+     * Set a bus's stereo pan
+     * 
+     *     Range:      -1.0 -> 1.0
+     *     Default:    0.0
+     *     Mixer:      AVAudioMixerNode
+     */
     @Generated
     @Selector("pan")
     float pan();
 
+    /**
+     * [@property] pan
+     * 
+     * Set a bus's stereo pan
+     * 
+     *     Range:      -1.0 -> 1.0
+     *     Default:    0.0
+     *     Mixer:      AVAudioMixerNode
+     */
     @Generated
     @Selector("setPan:")
     void setPan(float value);

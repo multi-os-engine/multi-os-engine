@@ -33,18 +33,30 @@ public final class au_mask extends StructObject {
         setAm_failure(am_failure);
     }
 
+    /**
+     * Success bits.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int am_success();
 
+    /**
+     * Success bits.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setAm_success(int value);
 
+    /**
+     * Failure bits.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int am_failure();
 
+    /**
+     * Failure bits.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setAm_failure(int value);

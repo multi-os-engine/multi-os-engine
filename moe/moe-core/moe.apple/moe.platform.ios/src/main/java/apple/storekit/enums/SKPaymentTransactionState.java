@@ -21,10 +21,25 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SKPaymentTransactionState {
+    /**
+     * Transaction is being added to the server queue.
+     */
     @Generated @NInt public static final long Purchasing = 0x0000000000000000L;
+    /**
+     * Transaction is in queue, user has been charged.  Client should complete the transaction.
+     */
     @Generated @NInt public static final long Purchased = 0x0000000000000001L;
+    /**
+     * Transaction was cancelled or failed before being added to the server queue.
+     */
     @Generated @NInt public static final long Failed = 0x0000000000000002L;
+    /**
+     * Transaction was restored from user's purchase history.  Client should complete the transaction.
+     */
     @Generated @NInt public static final long Restored = 0x0000000000000003L;
+    /**
+     * The transaction is in the queue, but its final status is pending external action.
+     */
     @Generated @NInt public static final long Deferred = 0x0000000000000004L;
 
     @Generated

@@ -159,24 +159,44 @@ public class PHLivePhotoEditingContext extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Specify the audio volume of the edited live photo
+     * Must be between 0.0 and 1.0
+     * Default to 1.0
+     */
     @Generated
     @Selector("audioVolume")
     public native float audioVolume();
 
+    /**
+     * Cancel the current asynchronous operation
+     * This is implicitly called whenever prepare or save is called
+     * A canceled operation will call its completion handler with an appropriate error code
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
+    /**
+     * The duration of the live photo
+     */
     @Generated
     @Selector("duration")
     @ByValue
     public native CMTime duration();
 
+    /**
+     * A block that can be set to process each frame of the live photo
+     * Note that the context uses a copy of the processor block during processing
+     */
     @Generated
     @Selector("frameProcessor")
     @ObjCBlock(name = "call_frameProcessor_ret")
     public native Block_frameProcessor_ret frameProcessor();
 
+    /**
+     * The original full-size image from the input live photo
+     */
     @Generated
     @Selector("fullSizeImage")
     public native CIImage fullSizeImage();
@@ -185,35 +205,62 @@ public class PHLivePhotoEditingContext extends NSObject {
     @Selector("init")
     public native PHLivePhotoEditingContext init();
 
+    /**
+     * Initializer from the specified live photo input
+     * Return nil if the specified input is not for a live photo
+     */
     @Generated
     @Selector("initWithLivePhotoEditingInput:")
     public native PHLivePhotoEditingContext initWithLivePhotoEditingInput(PHContentEditingInput livePhotoInput);
 
+    /**
+     * The orientation of the live photo
+     */
     @Generated
     @Selector("orientation")
     public native int orientation();
 
+    /**
+     * The time of the still image within the live photo
+     */
     @Generated
     @Selector("photoTime")
     @ByValue
     public native CMTime photoTime();
 
+    /**
+     * Asynchronously generate a new live photo suitable for playback in a PHLivePhotoView of the specified target size
+     * The options dictionary can contain additional options, see below
+     */
     @Generated
     @Selector("prepareLivePhotoForPlaybackWithTargetSize:options:completionHandler:")
     public native void prepareLivePhotoForPlaybackWithTargetSizeOptionsCompletionHandler(@ByValue CGSize targetSize,
             NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_prepareLivePhotoForPlaybackWithTargetSizeOptionsCompletionHandler") Block_prepareLivePhotoForPlaybackWithTargetSizeOptionsCompletionHandler handler);
 
+    /**
+     * Asynchronously process and save the edited live photo to the specified content editing output
+     * Options dictionary should be nil, reserved for future expansion
+     */
     @Generated
     @Selector("saveLivePhotoToOutput:options:completionHandler:")
     public native void saveLivePhotoToOutputOptionsCompletionHandler(PHContentEditingOutput output,
             NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_saveLivePhotoToOutputOptionsCompletionHandler") Block_saveLivePhotoToOutputOptionsCompletionHandler handler);
 
+    /**
+     * Specify the audio volume of the edited live photo
+     * Must be between 0.0 and 1.0
+     * Default to 1.0
+     */
     @Generated
     @Selector("setAudioVolume:")
     public native void setAudioVolume(float value);
 
+    /**
+     * A block that can be set to process each frame of the live photo
+     * Note that the context uses a copy of the processor block during processing
+     */
     @Generated
     @Selector("setFrameProcessor:")
     public native void setFrameProcessor(@ObjCBlock(name = "call_setFrameProcessor") Block_setFrameProcessor value);
@@ -222,29 +269,30 @@ public class PHLivePhotoEditingContext extends NSObject {
     @Generated
     public interface Block_frameProcessor_ret {
         @Generated
-        CIImage call_frameProcessor_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @ReferenceInfo(type = NSError.class) Ptr<NSError> arg1);
+        CIImage call_frameProcessor_ret(@Mapped(ObjCObjectMapper.class) Object frame,
+                @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_prepareLivePhotoForPlaybackWithTargetSizeOptionsCompletionHandler {
         @Generated
-        void call_prepareLivePhotoForPlaybackWithTargetSizeOptionsCompletionHandler(PHLivePhoto arg0, NSError arg1);
+        void call_prepareLivePhotoForPlaybackWithTargetSizeOptionsCompletionHandler(PHLivePhoto livePhoto,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveLivePhotoToOutputOptionsCompletionHandler {
         @Generated
-        void call_saveLivePhotoToOutputOptionsCompletionHandler(boolean arg0, NSError arg1);
+        void call_saveLivePhotoToOutputOptionsCompletionHandler(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setFrameProcessor {
         @Generated
-        CIImage call_setFrameProcessor(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @ReferenceInfo(type = NSError.class) Ptr<NSError> arg1);
+        CIImage call_setFrameProcessor(@Mapped(ObjCObjectMapper.class) Object frame,
+                @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
     }
 }

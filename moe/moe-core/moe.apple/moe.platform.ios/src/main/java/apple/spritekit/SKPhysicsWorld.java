@@ -24,7 +24,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.spritekit.protocol.SKPhysicsContactDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -46,6 +46,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -53,7 +54,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKPhysicsWorld extends NSObject implements NSCoding {
+public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -183,7 +184,7 @@ public class SKPhysicsWorld extends NSObject implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateBodiesAlongRayStart:end:usingBlock:")
@@ -200,6 +201,9 @@ public class SKPhysicsWorld extends NSObject implements NSCoding {
     public native void enumerateBodiesInRectUsingBlock(@ByValue CGRect rect,
             @ObjCBlock(name = "call_enumerateBodiesInRectUsingBlock") Block_enumerateBodiesInRectUsingBlock block);
 
+    /**
+     * A global 2D vector specifying the field force acceleration due to gravity. The unit is meters per second so standard earth gravity would be { 0.0, +/-9.8 }.
+     */
     @Generated
     @Selector("gravity")
     @ByValue
@@ -211,7 +215,7 @@ public class SKPhysicsWorld extends NSObject implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKPhysicsWorld initWithCoder(NSCoder aDecoder);
+    public native SKPhysicsWorld initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("removeAllJoints")
@@ -237,6 +241,9 @@ public class SKPhysicsWorld extends NSObject implements NSCoding {
         }
     }
 
+    /**
+     * A global 2D vector specifying the field force acceleration due to gravity. The unit is meters per second so standard earth gravity would be { 0.0, +/-9.8 }.
+     */
     @Generated
     @Selector("setGravity:")
     public native void setGravity(@ByValue CGVector value);
@@ -254,21 +261,31 @@ public class SKPhysicsWorld extends NSObject implements NSCoding {
     @Generated
     public interface Block_enumerateBodiesAlongRayStartEndUsingBlock {
         @Generated
-        void call_enumerateBodiesAlongRayStartEndUsingBlock(SKPhysicsBody arg0, @ByValue CGPoint arg1,
-                @ByValue CGVector arg2, BoolPtr arg3);
+        void call_enumerateBodiesAlongRayStartEndUsingBlock(SKPhysicsBody body, @ByValue CGPoint point,
+                @ByValue CGVector normal, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateBodiesAtPointUsingBlock {
         @Generated
-        void call_enumerateBodiesAtPointUsingBlock(SKPhysicsBody arg0, BoolPtr arg1);
+        void call_enumerateBodiesAtPointUsingBlock(SKPhysicsBody body, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateBodiesInRectUsingBlock {
         @Generated
-        void call_enumerateBodiesInRectUsingBlock(SKPhysicsBody arg0, BoolPtr arg1);
+        void call_enumerateBodiesInRectUsingBlock(SKPhysicsBody body, BoolPtr stop);
+    }
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
     }
 }

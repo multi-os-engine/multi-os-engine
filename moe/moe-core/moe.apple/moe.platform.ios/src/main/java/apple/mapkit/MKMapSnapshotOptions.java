@@ -24,6 +24,7 @@ import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.mapkit.struct.MKCoordinateRegion;
 import apple.mapkit.struct.MKMapRect;
+import apple.uikit.UITraitCollection;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -185,6 +186,9 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @ByValue
     public native MKCoordinateRegion region();
 
+    /**
+     * Defaults to the device's screen scale
+     */
     @Generated
     @Selector("scale")
     @NFloat
@@ -206,14 +210,23 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);
 
+    /**
+     * Defaults to the device's screen scale
+     */
     @Generated
     @Selector("setScale:")
     public native void setScale(@NFloat double value);
 
+    /**
+     * Affects MKMapTypeStandard
+     */
     @Generated
     @Selector("setShowsBuildings:")
     public native void setShowsBuildings(boolean value);
 
+    /**
+     * Affects MKMapTypeStandard and MKMapTypeHybrid
+     */
     @Generated
     @Selector("setShowsPointsOfInterest:")
     public native void setShowsPointsOfInterest(boolean value);
@@ -222,10 +235,16 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Selector("setSize:")
     public native void setSize(@ByValue CGSize value);
 
+    /**
+     * Affects MKMapTypeStandard
+     */
     @Generated
     @Selector("showsBuildings")
     public native boolean showsBuildings();
 
+    /**
+     * Affects MKMapTypeStandard and MKMapTypeHybrid
+     */
     @Generated
     @Selector("showsPointsOfInterest")
     public native boolean showsPointsOfInterest();
@@ -234,4 +253,20 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Selector("size")
     @ByValue
     public native CGSize size();
+
+    @Generated
+    @Selector("pointOfInterestFilter")
+    public native MKPointOfInterestFilter pointOfInterestFilter();
+
+    @Generated
+    @Selector("setPointOfInterestFilter:")
+    public native void setPointOfInterestFilter(MKPointOfInterestFilter value);
+
+    @Generated
+    @Selector("setTraitCollection:")
+    public native void setTraitCollection(UITraitCollection value);
+
+    @Generated
+    @Selector("traitCollection")
+    public native UITraitCollection traitCollection();
 }

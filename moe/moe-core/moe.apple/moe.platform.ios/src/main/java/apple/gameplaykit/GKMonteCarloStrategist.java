@@ -20,6 +20,9 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.gameplaykit.protocol.GKGameModel;
+import apple.gameplaykit.protocol.GKGameModelUpdate;
+import apple.gameplaykit.protocol.GKRandom;
 import apple.gameplaykit.protocol.GKStrategist;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -40,6 +43,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * The Monte Carlo Strategist is a generic AI that selects a game model update for a given player that results
+ * in the highest likelihood for that player to eventually win the game. It does this by sampling the updates available
+ * to the player in question. In doing this it will select the update it knows to produce the best result so far, expanding on this
+ * selection, simulating the rest of the game from that expansion, and then propogating the results (win or loss) upwards.
+ * It will do this until the budget has been reached, then returning the choice it has deemed best suited for the player in question.
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -154,13 +164,19 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @Generated
     @Selector("bestMoveForActivePlayer")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object bestMoveForActivePlayer();
+    public native GKGameModelUpdate bestMoveForActivePlayer();
 
+    /**
+     * The maximum number of samples that will be processed when searching for a move.
+     */
     @Generated
     @Selector("budget")
     @NUInt
     public native long budget();
 
+    /**
+     * A weight that encourages exploration of less visited updates versus the continued exploitation of previously visited updates.
+     */
     @Generated
     @Selector("explorationParameter")
     @NUInt
@@ -169,7 +185,7 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @Generated
     @Selector("gameModel")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object gameModel();
+    public native GKGameModel gameModel();
 
     @Generated
     @Selector("init")
@@ -178,21 +194,27 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @Generated
     @Selector("randomSource")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object randomSource();
+    public native GKRandom randomSource();
 
+    /**
+     * The maximum number of samples that will be processed when searching for a move.
+     */
     @Generated
     @Selector("setBudget:")
     public native void setBudget(@NUInt long value);
 
+    /**
+     * A weight that encourages exploration of less visited updates versus the continued exploitation of previously visited updates.
+     */
     @Generated
     @Selector("setExplorationParameter:")
     public native void setExplorationParameter(@NUInt long value);
 
     @Generated
     @Selector("setGameModel:")
-    public native void setGameModel(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setGameModel(@Mapped(ObjCObjectMapper.class) GKGameModel value);
 
     @Generated
     @Selector("setRandomSource:")
-    public native void setRandomSource(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setRandomSource(@Mapped(ObjCObjectMapper.class) GKRandom value);
 }

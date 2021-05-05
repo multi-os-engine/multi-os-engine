@@ -47,6 +47,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * In iOS 8.0 and later, your application must register for user notifications using -[UIApplication registerUserNotificationSettings:] before being able to schedule and present UILocalNotifications
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -158,27 +161,45 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     @NInt
     public static native long version_static();
 
+    /**
+     * used in UIAlert button or 'slide to unlock...' slider in place of unlock
+     */
     @Generated
     @Selector("alertAction")
     public native String alertAction();
 
+    /**
+     * defaults to nil. pass a string or localized string key to show an alert
+     */
     @Generated
     @Selector("alertBody")
     public native String alertBody();
 
+    /**
+     * used as the launch image (UILaunchImageFile) when launch button is tapped
+     */
     @Generated
     @Selector("alertLaunchImage")
     public native String alertLaunchImage();
 
+    /**
+     * defaults to nil. pass a string or localized string key
+     */
     @Generated
     @Selector("alertTitle")
     public native String alertTitle();
 
+    /**
+     * 0 means no change. defaults to 0
+     */
     @Generated
     @Selector("applicationIconBadgeNumber")
     @NInt
     public native long applicationIconBadgeNumber();
 
+    /**
+     * category identifer of the local notification, as set on a UIUserNotificationCategory and passed to +[UIUserNotificationSettings settingsForTypes:categories:]
+     */
     @Generated
     @Selector("category")
     public native String category();
@@ -191,12 +212,18 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * timer-based scheduling
+     */
     @Generated
     @Selector("fireDate")
     public native NSDate fireDate();
 
+    /**
+     * defaults to YES. pass NO to hide launching button/slider
+     */
     @Generated
     @Selector("hasAction")
     public native boolean hasAction();
@@ -207,12 +234,18 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native UILocalNotification initWithCoder(NSCoder aDecoder);
+    public native UILocalNotification initWithCoder(NSCoder coder);
 
+    /**
+     * set a CLRegion object to trigger the notification when the user enters or leaves a geographic region, depending upon the properties set on the CLRegion object itself. registering multiple UILocalNotifications with different regions containing the same identifier will result in undefined behavior. the number of region-triggered UILocalNotifications that may be registered at any one time is internally limited. in order to use region-triggered notifications, applications must have "when-in-use" authorization through CoreLocation. see the CoreLocation documentation for more information.
+     */
     @Generated
     @Selector("region")
     public native CLRegion region();
 
+    /**
+     * when YES, the notification will only fire one time. when NO, the notification will fire every time the region is entered or exited (depending upon the CLRegion object's configuration). default is YES.
+     */
     @Generated
     @Selector("regionTriggersOnce")
     public native boolean regionTriggersOnce();
@@ -221,47 +254,80 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     @Selector("repeatCalendar")
     public native NSCalendar repeatCalendar();
 
+    /**
+     * 0 means don't repeat
+     */
     @Generated
     @Selector("repeatInterval")
     @NUInt
     public native long repeatInterval();
 
+    /**
+     * used in UIAlert button or 'slide to unlock...' slider in place of unlock
+     */
     @Generated
     @Selector("setAlertAction:")
     public native void setAlertAction(String value);
 
+    /**
+     * defaults to nil. pass a string or localized string key to show an alert
+     */
     @Generated
     @Selector("setAlertBody:")
     public native void setAlertBody(String value);
 
+    /**
+     * used as the launch image (UILaunchImageFile) when launch button is tapped
+     */
     @Generated
     @Selector("setAlertLaunchImage:")
     public native void setAlertLaunchImage(String value);
 
+    /**
+     * defaults to nil. pass a string or localized string key
+     */
     @Generated
     @Selector("setAlertTitle:")
     public native void setAlertTitle(String value);
 
+    /**
+     * 0 means no change. defaults to 0
+     */
     @Generated
     @Selector("setApplicationIconBadgeNumber:")
     public native void setApplicationIconBadgeNumber(@NInt long value);
 
+    /**
+     * category identifer of the local notification, as set on a UIUserNotificationCategory and passed to +[UIUserNotificationSettings settingsForTypes:categories:]
+     */
     @Generated
     @Selector("setCategory:")
     public native void setCategory(String value);
 
+    /**
+     * timer-based scheduling
+     */
     @Generated
     @Selector("setFireDate:")
     public native void setFireDate(NSDate value);
 
+    /**
+     * defaults to YES. pass NO to hide launching button/slider
+     */
     @Generated
     @Selector("setHasAction:")
     public native void setHasAction(boolean value);
 
+    /**
+     * set a CLRegion object to trigger the notification when the user enters or leaves a geographic region, depending upon the properties set on the CLRegion object itself. registering multiple UILocalNotifications with different regions containing the same identifier will result in undefined behavior. the number of region-triggered UILocalNotifications that may be registered at any one time is internally limited. in order to use region-triggered notifications, applications must have "when-in-use" authorization through CoreLocation. see the CoreLocation documentation for more information.
+     */
     @Generated
     @Selector("setRegion:")
     public native void setRegion(CLRegion value);
 
+    /**
+     * when YES, the notification will only fire one time. when NO, the notification will fire every time the region is entered or exited (depending upon the CLRegion object's configuration). default is YES.
+     */
     @Generated
     @Selector("setRegionTriggersOnce:")
     public native void setRegionTriggersOnce(boolean value);
@@ -270,30 +336,53 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     @Selector("setRepeatCalendar:")
     public native void setRepeatCalendar(NSCalendar value);
 
+    /**
+     * 0 means don't repeat
+     */
     @Generated
     @Selector("setRepeatInterval:")
     public native void setRepeatInterval(@NUInt long value);
 
+    /**
+     * name of resource in app's bundle to play or UILocalNotificationDefaultSoundName
+     */
     @Generated
     @Selector("setSoundName:")
     public native void setSoundName(String value);
 
+    /**
+     * the time zone to interpret fireDate in. pass nil if fireDate is an absolute GMT time (e.g. for an egg timer).
+     * pass a time zone to interpret fireDate as a wall time to be adjusted automatically upon time zone changes (e.g. for an alarm clock).
+     */
     @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone value);
 
+    /**
+     * throws if contains non-property list types
+     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
+    /**
+     * name of resource in app's bundle to play or UILocalNotificationDefaultSoundName
+     */
     @Generated
     @Selector("soundName")
     public native String soundName();
 
+    /**
+     * the time zone to interpret fireDate in. pass nil if fireDate is an absolute GMT time (e.g. for an egg timer).
+     * pass a time zone to interpret fireDate as a wall time to be adjusted automatically upon time zone changes (e.g. for an alarm clock).
+     */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
 
+    /**
+     * throws if contains non-property list types
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

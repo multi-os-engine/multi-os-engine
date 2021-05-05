@@ -16,8 +16,8 @@ limitations under the License.
 
 package apple.audiotoolbox.struct;
 
-import apple.coreaudio.struct.AudioBufferList;
-import apple.coreaudio.struct.AudioTimeStamp;
+import apple.coreaudiotypes.struct.AudioBufferList;
+import apple.coreaudiotypes.struct.AudioTimeStamp;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -84,34 +84,58 @@ public final class ScheduledAudioSlice extends StructObject {
     @StructureField(order = 3, isGetter = false)
     public native void setMFlags(int value);
 
+    /**
+     * must be 0
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native int mReserved();
 
+    /**
+     * must be 0
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setMReserved(int value);
 
+    /**
+     * for internal use
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     public native VoidPtr mReserved2();
 
+    /**
+     * for internal use
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setMReserved2(VoidPtr value);
 
+    /**
+     * must be consistent with byte count of mBufferList
+     */
     @Generated
     @StructureField(order = 6, isGetter = true)
     public native int mNumberFrames();
 
+    /**
+     * must be consistent with byte count of mBufferList
+     */
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setMNumberFrames(int value);
 
+    /**
+     * must contain deinterleaved Float32
+     */
     @Generated
     @StructureField(order = 7, isGetter = true)
     public native AudioBufferList mBufferList();
 
+    /**
+     * must contain deinterleaved Float32
+     */
     @Generated
     @StructureField(order = 7, isGetter = false)
     public native void setMBufferList(AudioBufferList value);

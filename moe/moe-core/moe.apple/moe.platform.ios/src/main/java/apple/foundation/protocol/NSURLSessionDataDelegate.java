@@ -33,11 +33,19 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * Messages related to the operation of a task that delivers data
+ * directly to the delegate.
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLSessionDataDelegate")
 public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
+    /**
+     * Notification that a data task has become a download task.  No
+     * future messages will be sent to the data task.
+     */
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didBecomeDownloadTask:")
@@ -46,6 +54,22 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Notification that a data task has become a bidirectional stream
+     * task.  No future messages will be sent to the data task.  The newly
+     * created streamTask will carry the original request and response as
+     * properties.
+     * 
+     * For requests that were pipelined, the stream object will only allow
+     * reading, and the object will immediately issue a
+     * -URLSession:writeClosedForStream:.  Pipelining can be disabled for
+     * all requests in a session, or by the NSURLRequest
+     * HTTPShouldUsePipelining property.
+     * 
+     * The underlying connection is no longer considered part of the HTTP
+     * connection cache and won't count against the total number of
+     * connections per host.
+     */
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didBecomeStreamTask:")
@@ -54,6 +78,12 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Sent when data is available for the delegate to consume.  It is
+     * assumed that the delegate will retain and not copy the data.  As
+     * the data may be discontiguous, you should use
+     * [NSData enumerateByteRangesUsingBlock:] to access it.
+     */
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didReceiveData:")
@@ -61,6 +91,15 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The task has received a response and no further messages will be
+     * received until the completion block is called. The disposition
+     * allows you to cancel a request or to turn a data task into a
+     * download task. This delegate message is optional - if you do not
+     * implement it, you can get the response as a property of the task.
+     * 
+     * This method will not be called for background upload tasks (which cannot be converted to download tasks).
+     */
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didReceiveResponse:completionHandler:")
@@ -70,6 +109,13 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Invoke the completion routine with a valid NSCachedURLResponse to
+     * allow the resulting data to be cached, or pass nil to prevent
+     * caching. Note that there is no guarantee that caching will be
+     * attempted for a given resource, and you should not rely on this
+     * message to receive the resource data.
+     */
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:willCacheResponse:completionHandler:")
@@ -83,13 +129,13 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     @Generated
     public interface Block_URLSessionDataTaskDidReceiveResponseCompletionHandler {
         @Generated
-        void call_URLSessionDataTaskDidReceiveResponseCompletionHandler(@NInt long arg0);
+        void call_URLSessionDataTaskDidReceiveResponseCompletionHandler(@NInt long disposition);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_URLSessionDataTaskWillCacheResponseCompletionHandler {
         @Generated
-        void call_URLSessionDataTaskWillCacheResponseCompletionHandler(NSCachedURLResponse arg0);
+        void call_URLSessionDataTaskWillCacheResponseCompletionHandler(NSCachedURLResponse cachedResponse);
     }
 }

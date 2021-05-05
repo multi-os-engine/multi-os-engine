@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UITimingCurveProvider;
+import apple.uikit.protocol.UIViewControllerContextTransitioning;
 import apple.uikit.protocol.UIViewControllerInteractiveTransitioning;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -167,6 +168,10 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     @NFloat
     public native double completionSpeed();
 
+    /**
+     * This is the non-interactive duration that was returned when the
+     * animators transitionDuration: method was called when the transition started.
+     */
     @Generated
     @Selector("duration")
     @NFloat
@@ -180,40 +185,88 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     @Selector("init")
     public native UIPercentDrivenInteractiveTransition init();
 
+    /**
+     * Use this method to pause a running interruptible animator. This will ensure that all blocks
+     * provided by a transition coordinator's notifyWhenInteractionChangesUsingBlock: method
+     * are executed when a transition moves in and out of an interactive mode.
+     */
     @Generated
     @Selector("pauseInteractiveTransition")
     public native void pauseInteractiveTransition();
 
+    /**
+     * The last percentComplete value specified by updateInteractiveTransition:
+     */
     @Generated
     @Selector("percentComplete")
     @NFloat
     public native double percentComplete();
 
+    /**
+     * When the interactive part of the transition has completed, this property can
+     * be set to indicate a different animation curve. It defaults to UIViewAnimationCurveEaseInOut.
+     * Note that during the interactive portion of the animation the timing curve is linear.
+     */
     @Generated
     @Selector("setCompletionCurve:")
     public native void setCompletionCurve(@NInt long value);
 
+    /**
+     * completionSpeed defaults to 1.0 which corresponds to a completion duration of
+     * (1 - percentComplete)*duration.  It must be greater than 0.0. The actual
+     * completion is inversely proportional to the completionSpeed.  This can be set
+     * before cancelInteractiveTransition or finishInteractiveTransition is called
+     * in order to speed up or slow down the non interactive part of the
+     * transition.
+     */
     @Generated
     @Selector("setCompletionSpeed:")
     public native void setCompletionSpeed(@NFloat double value);
 
+    /**
+     * For an interruptible animator, one can specify a different timing curve provider to use when the
+     * transition is continued. This property is ignored if the animated transitioning object does not
+     * vend an interruptible animator.
+     */
     @Generated
     @Selector("setTimingCurve:")
     public native void setTimingCurve(@Mapped(ObjCObjectMapper.class) UITimingCurveProvider value);
 
+    /**
+     * Set this to NO in order to start an interruptible transition non
+     * interactively. By default this is YES, which is consistent with the behavior
+     * before 10.0.
+     */
     @Generated
     @Selector("setWantsInteractiveStart:")
     public native void setWantsInteractiveStart(boolean value);
 
     @Generated
     @Selector("startInteractiveTransition:")
-    public native void startInteractiveTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+    public native void startInteractiveTransition(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
+    /**
+     * For an interruptible animator, one can specify a different timing curve provider to use when the
+     * transition is continued. This property is ignored if the animated transitioning object does not
+     * vend an interruptible animator.
+     */
     @Generated
     @Selector("timingCurve")
     @MappedReturn(ObjCObjectMapper.class)
     public native UITimingCurveProvider timingCurve();
 
+    /**
+     * These methods should be called by the gesture recognizer or some other logic
+     * to drive the interaction. This style of interaction controller should only be
+     * used with an animator that implements a CA style transition in the animator's
+     * animateTransition: method. If this type of interaction controller is
+     * specified, the animateTransition: method must ensure to call the
+     * UIViewControllerTransitionParameters completeTransition: method. The other
+     * interactive methods on UIViewControllerContextTransitioning should NOT be
+     * called. If there is an interruptible animator, these methods will either scrub or continue
+     * the transition in the forward or reverse directions.
+     */
     @Generated
     @Selector("updateInteractiveTransition:")
     public native void updateInteractiveTransition(@NFloat double percentComplete);

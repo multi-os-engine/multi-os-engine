@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * ______________________________
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -158,10 +161,16 @@ public class UIMarkupTextPrintFormatter extends UIPrintFormatter {
     @Selector("initWithMarkupText:")
     public native UIMarkupTextPrintFormatter initWithMarkupText(String markupText);
 
+    /**
+     * cannot change once drawing started
+     */
     @Generated
     @Selector("markupText")
     public native String markupText();
 
+    /**
+     * cannot change once drawing started
+     */
     @Generated
     @Selector("setMarkupText:")
     public native void setMarkupText(String value);

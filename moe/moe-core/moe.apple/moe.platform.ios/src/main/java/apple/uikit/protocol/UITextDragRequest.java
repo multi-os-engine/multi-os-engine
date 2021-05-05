@@ -17,23 +17,44 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextDragRequest")
 public interface UITextDragRequest {
+    /**
+     * The text range being dragged.
+     */
     @Generated
     @Selector("dragRange")
     UITextRange dragRange();
 
+    /**
+     * The current drag session.
+     */
     @Generated
     @Selector("dragSession")
     @MappedReturn(ObjCObjectMapper.class)
-    Object dragSession();
+    UIDragSession dragSession();
 
+    /**
+     * The existing items in the session.
+     * Will be filled when we request new items.
+     */
     @Generated
     @Selector("existingItems")
     NSArray<? extends UIDragItem> existingItems();
 
+    /**
+     * Indicates whether the drag context contains a selection.
+     * Use this to disable dragging from an attachment or links
+     * without them being selected. (In those cases, `selected` will be false.)
+     * For regular dragged text, this will always be true.
+     */
     @Generated
     @Selector("isSelected")
     boolean isSelected();
 
+    /**
+     * The suggested items that the text control would return,
+     * if the responsible delegate method were not implemented.
+     * This is populated lazily, so only use it when you need it.
+     */
     @Generated
     @Selector("suggestedItems")
     NSArray<? extends UIDragItem> suggestedItems();

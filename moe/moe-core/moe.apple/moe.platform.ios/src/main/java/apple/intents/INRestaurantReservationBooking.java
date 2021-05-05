@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * represents a booking at a restaurant during a given time for a given party size
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -163,10 +166,16 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     @Selector("bookingDate")
     public native NSDate bookingDate();
 
+    /**
+     * A nullable string describing the booking
+     */
     @Generated
     @Selector("bookingDescription")
     public native String bookingDescription();
 
+    /**
+     * A vendor specific identifier that refers to this booking.
+     */
     @Generated
     @Selector("bookingIdentifier")
     public native String bookingIdentifier();
@@ -179,7 +188,7 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -187,17 +196,23 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRestaurantReservationBooking initWithCoder(NSCoder aDecoder);
+    public native INRestaurantReservationBooking initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRestaurant:bookingDate:partySize:bookingIdentifier:")
     public native INRestaurantReservationBooking initWithRestaurantBookingDatePartySizeBookingIdentifier(
             INRestaurant restaurant, NSDate bookingDate, @NUInt long partySize, String bookingIdentifier);
 
+    /**
+     * Boolean indicating whether timeslot is available for booking. Defaults to YES.
+     */
     @Generated
     @Selector("isBookingAvailable")
     public native boolean isBookingAvailable();
 
+    /**
+     * Boolean indicating whether timeslot is available for booking. Defaults to YES.
+     */
     @Generated
     @Selector("setBookingAvailable:")
     public native void setBookingAvailable(boolean value);
@@ -211,18 +226,30 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     @NUInt
     public native long partySize();
 
+    /**
+     * YES means an email address is required to book. Defaults to NO.
+     */
     @Generated
     @Selector("requiresEmailAddress")
     public native boolean requiresEmailAddress();
 
+    /**
+     * YES means restaurant must be contacted by phone before confirmation is given. Defaults to NO.
+     */
     @Generated
     @Selector("requiresManualRequest")
     public native boolean requiresManualRequest();
 
+    /**
+     * YES means a name is required to book. Defaults to NO.
+     */
     @Generated
     @Selector("requiresName")
     public native boolean requiresName();
 
+    /**
+     * YES means a phone number required to book. Defaults to NO.
+     */
     @Generated
     @Selector("requiresPhoneNumber")
     public native boolean requiresPhoneNumber();
@@ -235,10 +262,16 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     @Selector("setBookingDate:")
     public native void setBookingDate(NSDate value);
 
+    /**
+     * A nullable string describing the booking
+     */
     @Generated
     @Selector("setBookingDescription:")
     public native void setBookingDescription(String value);
 
+    /**
+     * A vendor specific identifier that refers to this booking.
+     */
     @Generated
     @Selector("setBookingIdentifier:")
     public native void setBookingIdentifier(String value);
@@ -251,18 +284,30 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     @Selector("setPartySize:")
     public native void setPartySize(@NUInt long value);
 
+    /**
+     * YES means an email address is required to book. Defaults to NO.
+     */
     @Generated
     @Selector("setRequiresEmailAddress:")
     public native void setRequiresEmailAddress(boolean value);
 
+    /**
+     * YES means restaurant must be contacted by phone before confirmation is given. Defaults to NO.
+     */
     @Generated
     @Selector("setRequiresManualRequest:")
     public native void setRequiresManualRequest(boolean value);
 
+    /**
+     * YES means a name is required to book. Defaults to NO.
+     */
     @Generated
     @Selector("setRequiresName:")
     public native void setRequiresName(boolean value);
 
+    /**
+     * YES means a phone number required to book. Defaults to NO.
+     */
     @Generated
     @Selector("setRequiresPhoneNumber:")
     public native void setRequiresPhoneNumber(boolean value);

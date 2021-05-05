@@ -19,6 +19,11 @@ package apple.corebluetooth.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum] CBPeripheralState
+ * 
+ * Represents the current connection state of a CBPeripheral.
+ */
 @Generated
 public final class CBPeripheralState {
     @Generated @NInt public static final long Disconnected = 0x0000000000000000L;

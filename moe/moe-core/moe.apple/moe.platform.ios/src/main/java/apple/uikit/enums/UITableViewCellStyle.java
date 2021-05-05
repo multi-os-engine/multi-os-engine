@@ -21,9 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITableViewCellStyle {
+    /**
+     * Simple cell with text label and optional image view (behavior of UITableViewCell in iPhoneOS 2.x)
+     */
     @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * Left aligned label on left and right aligned label on right with blue text (Used in Settings)
+     */
     @Generated @NInt public static final long Value1 = 0x0000000000000001L;
+    /**
+     * Right aligned label on left with blue text and left aligned label on right (Used in Phone/Contacts)
+     */
     @Generated @NInt public static final long Value2 = 0x0000000000000002L;
+    /**
+     * Left aligned label on top and left aligned label on bottom with gray text (Used in iPod).
+     */
     @Generated @NInt public static final long Subtitle = 0x0000000000000003L;
 
     @Generated

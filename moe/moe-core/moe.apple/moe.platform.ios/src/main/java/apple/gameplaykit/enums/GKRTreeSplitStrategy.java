@@ -19,6 +19,14 @@ package apple.gameplaykit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * Used to adjust the way in which RTree nodes are split when they grow too large.
+ * 
+ * [@enum] GKRTreeSplitStrategyHalve Specifies that nodes should be split in half based on insert order.
+ * [@enum] GKRTreeSplitStrategyLinear Specifies that nodes should be split along the best dividing axis.
+ * [@enum] GKRTreeSplitStrategyQuadratic Specifies that nodes should be split into groups with the least area.
+ * [@enum] GKRTreeSplitStrategyReduceOverlap Specifies that nodes should be split as to reduce overlap.
+ */
 @Generated
 public final class GKRTreeSplitStrategy {
     @Generated @NInt public static final long Halve = 0x0000000000000000L;

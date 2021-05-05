@@ -27,11 +27,22 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Conform to this protocol if you want your objects to participate in state restoration.
+ * 
+ * To participate in state restoration, the function registerObjectForStateRestoration must
+ * be called for the object.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIStateRestoring")
 public interface UIStateRestoring {
+    /**
+     * applicationFinishedRestoringState is called on all restored objects that implement the method *after* all other object
+     * decoding has been done (including the application delegate). This allows an object to complete setup after state
+     * restoration, knowing that all objects from the restoration archive have decoded their state.
+     */
     @Generated
     @IsOptional
     @Selector("applicationFinishedRestoringState")
@@ -46,6 +57,11 @@ public interface UIStateRestoring {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Methods to save and restore state for the object. If these aren't implemented, the object
+     * can still be referenced by other objects in state restoration archives, but it won't
+     * save/restore any state of its own.
+     */
     @Generated
     @IsOptional
     @Selector("encodeRestorableStateWithCoder:")
@@ -53,19 +69,28 @@ public interface UIStateRestoring {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The restoration class specifies a class which is consulted during restoration to find/create
+     * the object, rather than trying to look it up implicitly
+     */
     @Generated
     @IsOptional
     @Selector("objectRestorationClass")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object objectRestorationClass() {
+    default UIObjectRestoration objectRestorationClass() {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * The parent property is used to scope the restoration identifier path for an object, to
+     * disambiguate it from other objects that might be using the same identifier. The parent
+     * must be a restorable object or a view controller, else it will be ignored.
+     */
     @Generated
     @IsOptional
     @Selector("restorationParent")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object restorationParent() {
+    default UIStateRestoring restorationParent() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

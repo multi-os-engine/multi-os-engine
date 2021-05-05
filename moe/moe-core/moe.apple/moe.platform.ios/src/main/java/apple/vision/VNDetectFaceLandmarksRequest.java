@@ -2,6 +2,7 @@ package apple.vision;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.vision.protocol.VNFaceObservationAccepting;
@@ -25,6 +26,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A request that will produce face landmark information.
+ * 
+ * This request will generate VNFaceObservation objects with the landmarks property populated with information describing face landmarks. If VNFaceObservations are provided via the VNFaceObservationAccepting protocol without the landmarks property populated, new observations will be created as copies of the input VNFaceObservations with the landmarks property populated. If the landmarks property has already been populated, the original VNFaceObservations will be returned. If no VNFaceObservations are provided, face detection will be run first.
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -152,4 +158,41 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] property constellation
+     * 
+     * Constellation type defines how many landmark points are used to map a face. Revisions 1, 2, and 3 of the request support 65 points, where Revision 3 also supports 76 points.
+     */
+    @Generated
+    @Selector("constellation")
+    @NUInt
+    public native long constellation();
+
+    @Generated
+    @Selector("currentRevision")
+    @NUInt
+    public static native long currentRevision();
+
+    @Generated
+    @Selector("defaultRevision")
+    @NUInt
+    public static native long defaultRevision();
+
+    @Generated
+    @Selector("revision:supportsConstellation:")
+    public static native boolean revisionSupportsConstellation(@NUInt long requestRevision, @NUInt long constellation);
+
+    /**
+     * [@property] property constellation
+     * 
+     * Constellation type defines how many landmark points are used to map a face. Revisions 1, 2, and 3 of the request support 65 points, where Revision 3 also supports 76 points.
+     */
+    @Generated
+    @Selector("setConstellation:")
+    public native void setConstellation(@NUInt long value);
+
+    @Generated
+    @Selector("supportedRevisions")
+    public static native NSIndexSet supportedRevisions();
 }

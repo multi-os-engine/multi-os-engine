@@ -98,10 +98,17 @@ public class UIDragPreview extends NSObject implements NSCopying {
     @Selector("init")
     public native UIDragPreview init();
 
+    /**
+     * Use the default parameters.
+     */
     @Generated
     @Selector("initWithView:")
     public native UIDragPreview initWithView(UIView view);
 
+    /**
+     * Create a preview based on a view and parameters.
+     * Note: it doesn't matter whether this view is in a window or not.
+     */
     @Generated
     @Selector("initWithView:parameters:")
     public native UIDragPreview initWithViewParameters(UIView view, UIDragPreviewParameters parameters);
@@ -141,6 +148,9 @@ public class UIDragPreview extends NSObject implements NSCopying {
     @Selector("previewForURL:")
     public static native UIDragPreview previewForURL(NSURL url);
 
+    /**
+     * If the title is nil or empty, this is the same as `previewForURL:`.
+     */
     @Generated
     @Selector("previewForURL:title:")
     public static native UIDragPreview previewForURLTitle(NSURL url, String title);

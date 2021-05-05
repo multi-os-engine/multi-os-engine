@@ -37,6 +37,13 @@ public final class AssetsLibrary {
     private AssetsLibrary() {
     }
 
+    /**
+     * This notification will be sent when the contents of the ALAssetsLibrary have changed from under the app that is using the data.
+     * The API user should retain the library object to receive this notification.
+     * The userInfo may include the keys listed below, which identify specific ALAssets or ALAssetGroups that have become invalid and should be discarded. The values are NSSets of NSURLs which match the ALAssetPropertyURL and ALAssetsGroupPropertyURL properties.
+     * If the userInfo is nil, all ALAssets and ALAssetGroups should be considered invalid and discarded.
+     * Modified ALAssets will be identified by the ALAssetLibraryUpdatedAssetsKey, but inserted or deleted ALAssets are identified by invalidating the containing ALAssetGroups.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -62,6 +69,9 @@ public final class AssetsLibrary {
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetLibraryDeletedAssetGroupsKey();
 
+    /**
+     * Constant used by NSError to distinguish errors belonging to the AssetsLibrary domain
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -72,76 +82,121 @@ public final class AssetsLibrary {
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALErrorInvalidProperty();
 
+    /**
+     * An NSString that encodes the type of asset. One of ALAssetTypePhoto, ALAssetTypeVideo or ALAssetTypeUnknown.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetPropertyType();
 
+    /**
+     * CLLocation object with the location information of the asset. Only available if location services are enabled for the caller.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetPropertyLocation();
 
+    /**
+     * Play time duration of a video asset expressed as a double wrapped in an NSNumber. For photos, kALErrorInvalidProperty is returned.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetPropertyDuration();
 
+    /**
+     * NSNumber containing an asset's orientation as defined by ALAssetOrientation.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetPropertyOrientation();
 
+    /**
+     * An NSDate with the asset's creation date.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetPropertyDate();
 
+    /**
+     * Array with all the representations available for a given asset (e.g. RAW, JPEG). It is expressed as UTIs.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetPropertyRepresentations();
 
+    /**
+     * Dictionary that maps asset representation UTIs to URLs that uniquely identify the asset.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetPropertyURLs();
 
+    /**
+     * An NSURL that uniquely identifies the asset
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetPropertyAssetURL();
 
+    /**
+     * The asset is a photo
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetTypePhoto();
 
+    /**
+     * The asset is a video
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetTypeVideo();
 
+    /**
+     * The asset's type cannot be determined. It could be a sound file, a video or photo file that we don't know about, or something else. This is possible only for assets imported from a camera onto the device.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetTypeUnknown();
 
+    /**
+     * An NSString with the name of the group
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetsGroupPropertyName();
 
+    /**
+     * An ALAssetsGroupType wrapped in an NSNumber
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetsGroupPropertyType();
 
+    /**
+     * An NSString with the group's persistent ID.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetsGroupPropertyPersistentID();
 
+    /**
+     * An NSURL that uniquely identifies the group
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

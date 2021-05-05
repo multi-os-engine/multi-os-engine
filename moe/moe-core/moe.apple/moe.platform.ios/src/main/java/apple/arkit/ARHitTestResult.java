@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A result of an intersection found during a hit-test.
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -52,6 +55,11 @@ public class ARHitTestResult extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
 
+    /**
+     * The anchor that the hit-test intersected.
+     * 
+     * An anchor will only be provided for existing plane result types.
+     */
     @Generated
     @Selector("anchor")
     public native ARAnchor anchor();
@@ -86,6 +94,9 @@ public class ARHitTestResult extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The distance from the camera to the intersection in meters.
+     */
     @Generated
     @Selector("distance")
     @NFloat
@@ -143,6 +154,9 @@ public class ARHitTestResult extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * The type of the hit-test result.
+     */
     @Generated
     @Selector("type")
     @NUInt

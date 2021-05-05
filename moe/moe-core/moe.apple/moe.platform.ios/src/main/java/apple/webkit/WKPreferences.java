@@ -21,7 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -39,14 +39,20 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * A WKPreferences object encapsulates the preference settings for a web
+ * view. The preferences object associated with a web view is specified by
+ * its web view configuration.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class WKPreferences extends NSObject implements NSCoding {
+public class WKPreferences extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -155,7 +161,7 @@ public class WKPreferences extends NSObject implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -163,8 +169,14 @@ public class WKPreferences extends NSObject implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native WKPreferences initWithCoder(NSCoder aDecoder);
+    public native WKPreferences initWithCoder(NSCoder coder);
 
+    /**
+     * A Boolean value indicating whether JavaScript can open
+     * windows without user interaction.
+     * 
+     * The default value is NO in iOS and YES in OS X.
+     */
     @Generated
     @Selector("javaScriptCanOpenWindowsAutomatically")
     public native boolean javaScriptCanOpenWindowsAutomatically();
@@ -173,11 +185,22 @@ public class WKPreferences extends NSObject implements NSCoding {
     @Selector("javaScriptEnabled")
     public native boolean javaScriptEnabled();
 
+    /**
+     * The minimum font size in points.
+     * 
+     * The default value is 0.
+     */
     @Generated
     @Selector("minimumFontSize")
     @NFloat
     public native double minimumFontSize();
 
+    /**
+     * A Boolean value indicating whether JavaScript can open
+     * windows without user interaction.
+     * 
+     * The default value is NO in iOS and YES in OS X.
+     */
     @Generated
     @Selector("setJavaScriptCanOpenWindowsAutomatically:")
     public native void setJavaScriptCanOpenWindowsAutomatically(boolean value);
@@ -186,7 +209,42 @@ public class WKPreferences extends NSObject implements NSCoding {
     @Selector("setJavaScriptEnabled:")
     public native void setJavaScriptEnabled(boolean value);
 
+    /**
+     * The minimum font size in points.
+     * 
+     * The default value is 0.
+     */
     @Generated
     @Selector("setMinimumFontSize:")
     public native void setMinimumFontSize(@NFloat double value);
+
+    /**
+     * A Boolean value indicating whether warnings should be
+     * shown for suspected fraudulent content such as phishing or malware.
+     * 
+     * The default value is YES.
+     */
+    @Generated
+    @Selector("isFraudulentWebsiteWarningEnabled")
+    public native boolean isFraudulentWebsiteWarningEnabled();
+
+    /**
+     * A Boolean value indicating whether warnings should be
+     * shown for suspected fraudulent content such as phishing or malware.
+     * 
+     * The default value is YES.
+     */
+    @Generated
+    @Selector("setFraudulentWebsiteWarningEnabled:")
+    public native void setFraudulentWebsiteWarningEnabled(boolean value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

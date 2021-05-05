@@ -1,10 +1,12 @@
 package apple.arkit.c;
 
 import org.moe.natj.c.CRuntime;
+import org.moe.natj.c.ann.CFunction;
 import org.moe.natj.c.ann.CVariable;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
@@ -282,13 +284,84 @@ public final class ARKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String ARBlendShapeLocationNoseSneerRight();
 
+    /**
+     * Show the world origin in the scene.
+     */
     @Generated
     @CVariable()
     @NUInt
     public static native long ARSCNDebugOptionShowWorldOrigin();
 
+    /**
+     * Show detected 3D feature points in the world.
+     */
     @Generated
     @CVariable()
     @NUInt
     public static native long ARSCNDebugOptionShowFeaturePoints();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARReferenceObjectArchiveExtension();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARBlendShapeLocationTongueOut();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameRoot();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameHead();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameLeftHand();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameRightHand();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameLeftFoot();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameRightFoot();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameLeftShoulder();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameRightShoulder();
+
+    /**
+     * Returns the landmark joint name that corresponds to a key point defined in Vision framework.
+     * 
+     * If an invalid key point is passed the returned point will be nil.
+     * 
+     * @see VNRecognizedPointKey, VNDetectHumanBodyPoseRequest
+     * @param recognizedPointKey Recognized key point.
+     * @return Joint name that could be mapped to a ARSkeleton2D. Nil if no mapping exists.
+     */
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameForRecognizedPointKey(
+            @Mapped(ObjCStringMapper.class) String recognizedPointKey);
 }

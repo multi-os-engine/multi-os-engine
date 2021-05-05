@@ -41,6 +41,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAssetReaderOutput
+ * 
+ * AVAssetReaderOutput is an abstract class that defines an interface for reading a single collection of samples of a common media type from an AVAssetReader.
+ * 
+ * Clients can read the media data of an asset by adding one or more concrete instances of AVAssetReaderOutput to an AVAssetReader using the -[AVAssetReader addOutput:] method.
+ * 
+ * IMPORTANT PERFORMANCE NOTE: Make sure to set the alwaysCopiesSampleData property to NO if you do not need to modify the sample data in-place, to avoid unnecessary and inefficient copying.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -152,10 +161,29 @@ public class AVAssetReaderOutput extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] alwaysCopiesSampleData
+     * 
+     * Indicates whether or not the data in buffers gets copied before being vended to the client.
+     * 
+     * When the value of this property is YES, the AVAssetReaderOutput will always vend a buffer with copied data to the client.  Data in such buffers can be freely modified by the client. When the value of this property is NO, the buffers vended to the client may not be copied.  Such buffers may still be referenced by other entities. The result of modifying a buffer whose data hasn't been copied is undefined.  Requesting buffers whose data hasn't been copied when possible can lead to performance improvements.
+     * 
+     * The default value is YES.
+     */
     @Generated
     @Selector("alwaysCopiesSampleData")
     public native boolean alwaysCopiesSampleData();
 
+    /**
+     * copyNextSampleBuffer
+     * 
+     * Copies the next sample buffer for the output synchronously.
+     * 
+     * The client is responsible for calling CFRelease on the returned CMSampleBuffer object when finished with it. This method will return NULL if there are no more sample buffers available for the receiver within the time range specified by its AVAssetReader's timeRange property, or if there is an error that prevents the AVAssetReader from reading more media data. When this method returns NULL, clients should check the value of the associated AVAssetReader's status property to determine why no more samples could be read.
+     * 
+     * @return
+     * A CMSampleBuffer object referencing the output sample buffer.
+     */
     @Generated
     @Selector("copyNextSampleBuffer")
     public native CMSampleBufferRef copyNextSampleBuffer();
@@ -164,26 +192,93 @@ public class AVAssetReaderOutput extends NSObject {
     @Selector("init")
     public native AVAssetReaderOutput init();
 
+    /**
+     * markConfigurationAsFinal
+     * 
+     * Informs the receiver that no more reconfiguration of time ranges is necessary and allows the attached AVAssetReader to advance to AVAssetReaderStatusCompleted.
+     * 
+     * When the value of supportsRandomAccess is YES, the attached asset reader will not advance to AVAssetReaderStatusCompleted until this method is called.
+     * 
+     * When the destination of media data vended by the receiver is an AVAssetWriterInput configured for multi-pass encoding, a convenient time to invoke this method is after the asset writer input indicates that no more passes will be performed.
+     * 
+     * Once this method has been called, further invocations of -resetForReadingTimeRanges: are disallowed.
+     */
     @Generated
     @Selector("markConfigurationAsFinal")
     public native void markConfigurationAsFinal();
 
+    /**
+     * [@property] mediaType
+     * 
+     * The media type of the samples that can be read from the receiver.
+     * 
+     * The value of this property is one of the media type strings defined in AVMediaFormat.h.
+     */
     @Generated
     @Selector("mediaType")
     public native String mediaType();
 
+    /**
+     * resetForReadingTimeRanges:
+     * 
+     * Starts reading over with a new set of time ranges.
+     * 
+     * This method may only be used if supportsRandomAccess has been set to YES and may not be called after -markConfigurationAsFinal has been invoked.
+     * 
+     * This method is often used in conjunction with AVAssetWriter multi-pass (see AVAssetWriterInput category AVAssetWriterInputMultiPass).  In this usage, the caller will invoke -copyNextSampleBuffer until that method returns NULL and then ask the AVAssetWriterInput for a set of time ranges from which it thinks media data should be re-encoded.  These time ranges are then given to this method to set up the asset reader output for the next pass.
+     * 
+     * The time ranges set here override the time range set on AVAssetReader.timeRange.  Just as with that property, for each time range in the array the intersection of that time range and CMTimeRangeMake(kCMTimeZero, asset.duration) will take effect.  If the start times of each time range in the array are not strictly increasing or if two or more time ranges in the array overlap, an NSInvalidArgumentException will be raised.  It is an error to include a time range with a non-numeric start time or duration (see CMTIME_IS_NUMERIC), unless the duration is kCMTimePositiveInfinity.
+     * 
+     * If this method is invoked after the status of the attached AVAssetReader has become AVAssetReaderStatusFailed or AVAssetReaderStatusCancelled, no change in status will occur and the result of the next call to -copyNextSampleBuffer will be NULL.
+     * 
+     * If this method is invoked before all media data has been read (i.e. -copyNextSampleBuffer has not yet returned NULL), an exception will be thrown.  This method may not be called before -startReading has been invoked on the attached asset reader.
+     * 
+     * @param timeRanges
+     * An NSArray of NSValue objects, each representing a single CMTimeRange structure
+     */
     @Generated
     @Selector("resetForReadingTimeRanges:")
     public native void resetForReadingTimeRanges(NSArray<? extends NSValue> timeRanges);
 
+    /**
+     * [@property] alwaysCopiesSampleData
+     * 
+     * Indicates whether or not the data in buffers gets copied before being vended to the client.
+     * 
+     * When the value of this property is YES, the AVAssetReaderOutput will always vend a buffer with copied data to the client.  Data in such buffers can be freely modified by the client. When the value of this property is NO, the buffers vended to the client may not be copied.  Such buffers may still be referenced by other entities. The result of modifying a buffer whose data hasn't been copied is undefined.  Requesting buffers whose data hasn't been copied when possible can lead to performance improvements.
+     * 
+     * The default value is YES.
+     */
     @Generated
     @Selector("setAlwaysCopiesSampleData:")
     public native void setAlwaysCopiesSampleData(boolean value);
 
+    /**
+     * [@property] supportsRandomAccess
+     * 
+     * Indicates whether the asset reader output supports reconfiguration of the time ranges to read.
+     * 
+     * When the value of this property is YES, the time ranges read by the asset reader output can be reconfigured during reading using the -resetForReadingTimeRanges: method.  This also prevents the attached AVAssetReader from progressing to AVAssetReaderStatusCompleted until -markConfigurationAsFinal has been invoked.
+     * 
+     * The default value is NO, which means that the asset reader output may not be reconfigured once reading has begun.  When the value of this property is NO, AVAssetReader may be able to read media data more efficiently, particularly when multiple asset reader outputs are attached.
+     * 
+     * This property may not be set after -startReading has been called on the attached asset reader.
+     */
     @Generated
     @Selector("setSupportsRandomAccess:")
     public native void setSupportsRandomAccess(boolean value);
 
+    /**
+     * [@property] supportsRandomAccess
+     * 
+     * Indicates whether the asset reader output supports reconfiguration of the time ranges to read.
+     * 
+     * When the value of this property is YES, the time ranges read by the asset reader output can be reconfigured during reading using the -resetForReadingTimeRanges: method.  This also prevents the attached AVAssetReader from progressing to AVAssetReaderStatusCompleted until -markConfigurationAsFinal has been invoked.
+     * 
+     * The default value is NO, which means that the asset reader output may not be reconfigured once reading has begun.  When the value of this property is NO, AVAssetReader may be able to read media data more efficiently, particularly when multiple asset reader outputs are attached.
+     * 
+     * This property may not be set after -startReading has been called on the attached asset reader.
+     */
     @Generated
     @Selector("supportsRandomAccess")
     public native boolean supportsRandomAccess();

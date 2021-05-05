@@ -167,7 +167,7 @@ public class INListRideOptionsIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INListRideOptionsIntent initWithCoder(NSCoder aDecoder);
+    public native INListRideOptionsIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithPickupLocation:dropOffLocation:")

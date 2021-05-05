@@ -132,10 +132,17 @@ public class UINib extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
+    /**
+     * If the bundle parameter is nil, the main bundle is used.
+     */
     @Generated
     @Selector("nibWithData:bundle:")
     public static native UINib nibWithDataBundle(NSData data, NSBundle bundleOrNil);
 
+    /**
+     * If the bundle parameter is nil, the main bundle is used.
+     * Releases resources in response to memory pressure (e.g. memory warning), reloading from the bundle when necessary.
+     */
     @Generated
     @Selector("nibWithNibName:bundle:")
     public static native UINib nibWithNibNameBundle(String name, NSBundle bundleOrNil);
@@ -165,8 +172,14 @@ public class UINib extends NSObject {
     @Selector("init")
     public native UINib init();
 
+    /**
+     * Returns an array containing the top-level objects from the NIB.
+     * The owner and options parameters may both be nil.
+     * If the owner parameter is nil, connections to File's Owner are not permitted.
+     * Options are identical to the options specified with -[NSBundle loadNibNamed:owner:options:]
+     */
     @Generated
     @Selector("instantiateWithOwner:options:")
     public native NSArray<?> instantiateWithOwnerOptions(@Mapped(ObjCObjectMapper.class) Object ownerOrNil,
-            NSDictionary<?, ?> optionsOrNil);
+            NSDictionary<String, ?> optionsOrNil);
 }

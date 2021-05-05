@@ -25,9 +25,7 @@ public final class UIRectCorner {
     @Generated @NUInt public static final long TopRight = 0x0000000000000002L;
     @Generated @NUInt public static final long BottomLeft = 0x0000000000000004L;
     @Generated @NUInt public static final long BottomRight = 0x0000000000000008L;
-    @Generated @NUInt public static final long AllCorners = org.moe.natj.general.NatJ.is64Bit() ?
-            0xFFFFFFFFFFFFFFFFL :
-            0x00000000FFFFFFFFL;
+    @Generated @NUInt public static final long AllCorners = org.moe.natj.general.NatJ.is64Bit() ? 0xFFFFFFFFFFFFFFFFL : 0x00000000FFFFFFFFL;
 
     @Generated
     private UIRectCorner() {

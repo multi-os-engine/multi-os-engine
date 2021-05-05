@@ -45,6 +45,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKSourceQuery
+ * 
+ * A query that returns a set of sources that have saved objects matching certain criteria.
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -260,6 +265,16 @@ public class HKSourceQuery extends HKQuery {
     @Selector("init")
     public native HKSourceQuery init();
 
+    /**
+     * initWithSampleType:samplePredicate:completionHandler:
+     * 
+     * Returns a query that will retrieve HKSources that have saved samples of the given type matching the
+     *                given predicate.
+     * 
+     * @param         sampleType          The type of sample.
+     * @param         objectPredicate     The predicate which samples must match.
+     * @param         completionHandler   The block to be called when the query has finished executing.
+     */
     @Generated
     @Selector("initWithSampleType:samplePredicate:completionHandler:")
     public native HKSourceQuery initWithSampleTypeSamplePredicateCompletionHandler(HKSampleType sampleType,
@@ -270,12 +285,34 @@ public class HKSourceQuery extends HKQuery {
     @Generated
     public interface Block_initWithSampleTypeSamplePredicateCompletionHandler {
         @Generated
-        void call_initWithSampleTypeSamplePredicateCompletionHandler(HKSourceQuery arg0, NSSet<? extends HKSource> arg1,
-                NSError arg2);
+        void call_initWithSampleTypeSamplePredicateCompletionHandler(HKSourceQuery query,
+                NSSet<? extends HKSource> sources, NSError error);
     }
 
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
             HKQuantity totalFlightsClimbed);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsFromSource:FHIRResourceType:identifier:")
+    public static native NSPredicate predicateForClinicalRecordsFromSourceFHIRResourceTypeIdentifier(HKSource source,
+            String resourceType, String identifier);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsWithFHIRResourceType:")
+    public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(String resourceType);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithClassification:")
+    public static native NSPredicate predicateForElectrocardiogramsWithClassification(@NInt long classification);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithSymptomsStatus:")
+    public static native NSPredicate predicateForElectrocardiogramsWithSymptomsStatus(@NInt long symptomsStatus);
+
+    @Generated
+    @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
+    public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
+            HKElectrocardiogram electrocardiogram);
 }

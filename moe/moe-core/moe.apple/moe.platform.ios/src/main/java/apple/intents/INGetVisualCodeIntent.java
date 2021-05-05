@@ -94,7 +94,7 @@ public class INGetVisualCodeIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetVisualCodeIntent initWithCoder(NSCoder aDecoder);
+    public native INGetVisualCodeIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithVisualCodeType:")

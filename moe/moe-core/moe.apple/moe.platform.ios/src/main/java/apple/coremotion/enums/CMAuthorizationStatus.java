@@ -3,6 +3,17 @@ package apple.coremotion.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * CMAuthorizationStatus
+ * 
+ * Discussion:
+ *     Represents the current motion authorization state.
+ * 
+ *     CMAuthorizationStatusNotDetermined when the user has not been prompted yet.
+ *     CMAuthorizationStatusRestricted when access is denied due to system-wide restrictions.
+ *     CMAuthorizationStatusDenied when access is denied by the user.
+ *     CMAuthorizationStatusAuthorized when access is authorized by the user.
+ */
 @Generated
 public final class CMAuthorizationStatus {
     @Generated

@@ -80,6 +80,9 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Convenience constant CIColors in the sRGB colorspace.
+     */
     @Generated
     @Selector("blackColor")
     public static native CIColor blackColor();
@@ -110,6 +113,9 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("clearColor")
     public static native CIColor clearColor();
 
+    /**
+     * Create a new color object.
+     */
     @Generated
     @Selector("colorWithCGColor:")
     public static native CIColor colorWithCGColor(CGColorRef c);
@@ -118,11 +124,20 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("colorWithRed:green:blue:")
     public static native CIColor colorWithRedGreenBlue(@NFloat double r, @NFloat double g, @NFloat double b);
 
+    /**
+     * Create a new color object in CI's default RGB colorspace
+     * which is kCGColorSpaceSRGB or, if running on OSX before 10.10,
+     * kCGColorSpaceGenericRGB. 
+     */
     @Generated
     @Selector("colorWithRed:green:blue:alpha:")
     public static native CIColor colorWithRedGreenBlueAlpha(@NFloat double r, @NFloat double g, @NFloat double b,
             @NFloat double a);
 
+    /**
+     * Create a new color object in a given colorspace.
+     * Will return null if the colorspace is not kCGColorSpaceModelRGB.
+     */
     @Generated
     @Selector("colorWithRed:green:blue:alpha:colorSpace:")
     public static native CIColor colorWithRedGreenBlueAlphaColorSpace(@NFloat double r, @NFloat double g,
@@ -133,6 +148,10 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     public static native CIColor colorWithRedGreenBlueColorSpace(@NFloat double r, @NFloat double g, @NFloat double b,
             CGColorSpaceRef colorSpace);
 
+    /**
+     * Create a new color object, 'representation' should be a string in one of
+     * the formats returned by the stringRepresentation method.
+     */
     @Generated
     @Selector("colorWithString:")
     public static native CIColor colorWithString(String representation);
@@ -230,6 +249,9 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("yellowColor")
     public static native CIColor yellowColor();
 
+    /**
+     * Return the alpha value of the color.
+     */
     @Generated
     @Selector("alpha")
     @NFloat
@@ -240,10 +262,16 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @NFloat
     public native double blue();
 
+    /**
+     * Return the color space object associated with the color.
+     */
     @Generated
     @Selector("colorSpace")
     public native CGColorSpaceRef colorSpace();
 
+    /**
+     * Return the color components (including alpha).
+     */
     @Generated
     @Selector("components")
     public native ConstNFloatPtr components();
@@ -256,7 +284,7 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("green")
@@ -267,13 +295,16 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("init")
     public native CIColor init();
 
+    /**
+     * Initialize a new color object.
+     */
     @Generated
     @Selector("initWithCGColor:")
     public native CIColor initWithCGColor(CGColorRef c);
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIColor initWithCoder(NSCoder aDecoder);
+    public native CIColor initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithColor:")
@@ -283,11 +314,20 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithRed:green:blue:")
     public native CIColor initWithRedGreenBlue(@NFloat double r, @NFloat double g, @NFloat double b);
 
+    /**
+     * Initialize a new color object in CI's default RGB colorspace
+     * which is kCGColorSpaceSRGB or, if running on OSX before 10.10,
+     * kCGColorSpaceGenericRGB. 
+     */
     @Generated
     @Selector("initWithRed:green:blue:alpha:")
     public native CIColor initWithRedGreenBlueAlpha(@NFloat double r, @NFloat double g, @NFloat double b,
             @NFloat double a);
 
+    /**
+     * Initialize a new color object in a given colorspace.
+     * Will return null if the colorspace is not kCGColorSpaceModelRGB.
+     */
     @Generated
     @Selector("initWithRed:green:blue:alpha:colorSpace:")
     public native CIColor initWithRedGreenBlueAlphaColorSpace(@NFloat double r, @NFloat double g, @NFloat double b,
@@ -298,16 +338,28 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     public native CIColor initWithRedGreenBlueColorSpace(@NFloat double r, @NFloat double g, @NFloat double b,
             CGColorSpaceRef colorSpace);
 
+    /**
+     * Return the number of color components (including alpha).
+     */
     @Generated
     @Selector("numberOfComponents")
     @NUInt
     public native long numberOfComponents();
 
+    /**
+     * Return the (unpremultiplied) red, green or blue components of the color.
+     */
     @Generated
     @Selector("red")
     @NFloat
     public native double red();
 
+    /**
+     * Returns a formatted string with the components of the color.
+     * The string is suitable for passing to [CIColor colorWithString:].
+     * This property is not KVO-safe because it returns a new NSString each time.
+     * The value of the NSString will be the same each time it is called.
+     */
     @Generated
     @Selector("stringRepresentation")
     public native String stringRepresentation();

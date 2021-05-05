@@ -17,7 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coreaudio.struct.AudioChannelLayout;
+import apple.coreaudiotypes.struct.AudioChannelLayout;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -43,6 +43,14 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * AVAudioChannelLayout
+ * 
+ * A description of the roles of a set of audio channels.
+ * 
+ * 	This object is a thin wrapper for the AudioChannelLayout structure, described
+ * 	in <CoreAudio/CoreAudioTypes.h>.
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -127,10 +135,20 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * layoutWithLayout:
+     * 
+     * Create from an AudioChannelLayout
+     */
     @Generated
     @Selector("layoutWithLayout:")
     public static native AVAudioChannelLayout layoutWithLayout(AudioChannelLayout layout);
 
+    /**
+     * layoutWithLayoutTag:
+     * 
+     * Create from a layout tag.
+     */
     @Generated
     @Selector("layoutWithLayoutTag:")
     public static native AVAudioChannelLayout layoutWithLayoutTag(int layoutTag);
@@ -166,13 +184,18 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * [@property] channelCount
+     * 
+     * The number of channels of audio data.
+     */
     @Generated
     @Selector("channelCount")
     public native int channelCount();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -180,24 +203,66 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVAudioChannelLayout initWithCoder(NSCoder aDecoder);
+    public native AVAudioChannelLayout initWithCoder(NSCoder coder);
 
+    /**
+     * initWithLayout:
+     * 
+     * Initialize from an AudioChannelLayout.
+     * 
+     * 	If the provided layout's tag is kAudioChannelLayoutTag_UseChannelDescriptions, this
+     * 	initializer attempts to convert it to a more specific tag.
+     * 
+     * @param layout
+     * 	The AudioChannelLayout.
+     */
     @Generated
     @Selector("initWithLayout:")
     public native AVAudioChannelLayout initWithLayout(AudioChannelLayout layout);
 
+    /**
+     * initWithLayoutTag:
+     * 
+     * Initialize from a layout tag.
+     * 
+     * 	Returns nil if the tag is either kAudioChannelLayoutTag_UseChannelDescriptions or
+     * 	kAudioChannelLayoutTag_UseChannelBitmap.
+     * 
+     * @param layoutTag
+     * 	The tag.
+     */
     @Generated
     @Selector("initWithLayoutTag:")
     public native AVAudioChannelLayout initWithLayoutTag(int layoutTag);
 
+    /**
+     * isEqual:
+     * 
+     * Determine whether another AVAudioChannelLayout is exactly equal to this layout.
+     * 
+     * 	The underlying AudioChannelLayoutTag and AudioChannelLayout are compared for equality.
+     * 
+     * @param object
+     * 	The AVAudioChannelLayout to compare against.
+     */
     @Generated
     @Selector("isEqual:")
     public native boolean isEqual(@Mapped(ObjCObjectMapper.class) Object object);
 
+    /**
+     * [@property] layout
+     * 
+     * The underlying AudioChannelLayout.
+     */
     @Generated
     @Selector("layout")
     public native AudioChannelLayout layout();
 
+    /**
+     * [@property] layoutTag
+     * 
+     * The layout's tag.
+     */
     @Generated
     @Selector("layoutTag")
     public native int layoutTag();

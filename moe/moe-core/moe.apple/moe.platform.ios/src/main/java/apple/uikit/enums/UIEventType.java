@@ -29,4 +29,8 @@ public final class UIEventType {
     @Generated
     private UIEventType() {
     }
+
+    @Generated @NInt public static final long Scroll = 0x000000000000000AL;
+    @Generated @NInt public static final long Hover = 0x000000000000000BL;
+    @Generated @NInt public static final long Transform = 0x000000000000000EL;
 }

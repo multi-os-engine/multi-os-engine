@@ -60,8 +60,8 @@ public interface UIViewImplicitlyAnimating extends UIViewAnimating {
     @Generated
     @IsOptional
     @Selector("continueAnimationWithTimingParameters:durationFactor:")
-    default void continueAnimationWithTimingParametersDurationFactor(@Mapped(ObjCObjectMapper.class) Object parameters,
-            @NFloat double durationFactor) {
+    default void continueAnimationWithTimingParametersDurationFactor(
+            @Mapped(ObjCObjectMapper.class) UITimingCurveProvider parameters, @NFloat double durationFactor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,6 +83,6 @@ public interface UIViewImplicitlyAnimating extends UIViewAnimating {
     @Generated
     public interface Block_addCompletion {
         @Generated
-        void call_addCompletion(@NInt long arg0);
+        void call_addCompletion(@NInt long finalPosition);
     }
 }

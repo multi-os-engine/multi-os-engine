@@ -169,6 +169,15 @@ public class EKEventEditViewController extends UINavigationController {
     @NInt
     public static native long version_static();
 
+    /**
+     * cancelEditing
+     * 
+     * Ends the editing session discarding any changes to the event.
+     * 
+     * This method simulates the user tapping the Cancel button. The delegate will not
+     *             receive the eventEditViewController:didCompleteWithAction: message, so you are
+     *             responsible for dismissing the controller after calling this method.
+     */
     @Generated
     @Selector("cancelEditing")
     public native void cancelEditing();
@@ -178,10 +187,27 @@ public class EKEventEditViewController extends UINavigationController {
     @MappedReturn(ObjCObjectMapper.class)
     public native EKEventEditViewDelegate editViewDelegate();
 
+    /**
+     * [@property]   event
+     * 
+     * The event to edit.
+     * 
+     * You must set this before presenting the view controller. You can leave
+     *             it set to nil and a new event will be created for you. If you pass an event
+     *             here and it does not belong to the event store (if set) an exception will be
+     *             raised.
+     */
     @Generated
     @Selector("event")
     public native EKEvent event();
 
+    /**
+     * [@property]   eventStore
+     * 
+     * The event store to use to save events.
+     * 
+     * You must set this before presenting the view controller.
+     */
     @Generated
     @Selector("eventStore")
     public native EKEventStore eventStore();
@@ -192,7 +218,7 @@ public class EKEventEditViewController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native EKEventEditViewController initWithCoder(NSCoder aDecoder);
+    public native EKEventEditViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
@@ -223,10 +249,27 @@ public class EKEventEditViewController extends UINavigationController {
         }
     }
 
+    /**
+     * [@property]   event
+     * 
+     * The event to edit.
+     * 
+     * You must set this before presenting the view controller. You can leave
+     *             it set to nil and a new event will be created for you. If you pass an event
+     *             here and it does not belong to the event store (if set) an exception will be
+     *             raised.
+     */
     @Generated
     @Selector("setEvent:")
     public native void setEvent(EKEvent value);
 
+    /**
+     * [@property]   eventStore
+     * 
+     * The event store to use to save events.
+     * 
+     * You must set this before presenting the view controller.
+     */
     @Generated
     @Selector("setEventStore:")
     public native void setEventStore(EKEventStore value);

@@ -16,8 +16,8 @@ limitations under the License.
 
 package apple.mediatoolbox.struct;
 
-import apple.coreaudio.struct.AudioBufferList;
-import apple.coreaudio.struct.AudioStreamBasicDescription;
+import apple.coreaudiotypes.struct.AudioBufferList;
+import apple.coreaudiotypes.struct.AudioStreamBasicDescription;
 import apple.mediatoolbox.opaque.MTAudioProcessingTapRef;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;

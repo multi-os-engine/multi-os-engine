@@ -38,4 +38,15 @@ public final class BNNSDataType {
     @Generated public static final int BNNSDataTypeUInt8 = 0x00040008;
     @Generated public static final int BNNSDataTypeUInt16 = 0x00040010;
     @Generated public static final int BNNSDataTypeUInt32 = 0x00040020;
+    @Generated public static final int BNNSDataTypeInt1 = 0x00020001;
+    @Generated public static final int BNNSDataTypeInt2 = 0x00020002;
+    @Generated public static final int BNNSDataTypeInt4 = 0x00020004;
+    @Generated public static final int BNNSDataTypeUInt1 = 0x00040001;
+    @Generated public static final int BNNSDataTypeUInt2 = 0x00040002;
+    @Generated public static final int BNNSDataTypeUInt4 = 0x00040004;
+    @Generated public static final int BNNSDataTypeIndexed1 = 0x00080001;
+    @Generated public static final int BNNSDataTypeIndexed2 = 0x00080002;
+    @Generated public static final int BNNSDataTypeIndexed4 = 0x00080004;
+    @Generated public static final int BNNSDataTypeMiscellaneousBit = 0x00100000;
+    @Generated public static final int BNNSDataTypeBoolean = 0x00100008;
 }

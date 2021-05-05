@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Manages collection of one or more homes.
+ * 
+ * This class is responsible for managing a collection of homes.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -153,16 +158,35 @@ public class HMHomeManager extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * Adds a new home to the collection.
+     * 
+     * @param      homeName    Name of the  home to create and add to the collection.
+     * 
+     * @param      completion  Block that is invoked once the request is processed.
+     *                         The NSError provides more information on the status of the request, error
+     *                         will be nil on success.
+     */
     @Generated
     @Selector("addHomeWithName:completionHandler:")
     public native void addHomeWithNameCompletionHandler(String homeName,
             @ObjCBlock(name = "call_addHomeWithNameCompletionHandler") Block_addHomeWithNameCompletionHandler completion);
 
+    /**
+     * Delegate that receives updates on the collection of homes.
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native HMHomeManagerDelegate delegate();
 
+    /**
+     * Array of HMHome objects that represents the homes associated with the home manager.
+     * 
+     * When a new home manager is created, this array is inialized as an empty array. It is
+     *             not guaranteed to be filled with the list of homes, represented as HMHome objects,
+     *             until the homeManagerDidUpdateHomes: delegate method has been invoked.
+     */
     @Generated
     @Selector("homes")
     public native NSArray<? extends HMHome> homes();
@@ -171,19 +195,37 @@ public class HMHomeManager extends NSObject {
     @Selector("init")
     public native HMHomeManager init();
 
+    /**
+     * The primary home for this collection.
+     */
     @Generated
     @Selector("primaryHome")
     public native HMHome primaryHome();
 
+    /**
+     * Removes an existing home from the collection.
+     * 
+     * @param      home        Home object that needs to be removed from the collection.
+     * 
+     * @param      completion  Block that is invoked once the request is processed.
+     *                         The NSError provides more information on the status of the request, error
+     *                         will be nil on success.
+     */
     @Generated
     @Selector("removeHome:completionHandler:")
     public native void removeHomeCompletionHandler(HMHome home,
             @ObjCBlock(name = "call_removeHomeCompletionHandler") Block_removeHomeCompletionHandler completion);
 
+    /**
+     * Delegate that receives updates on the collection of homes.
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value);
 
+    /**
+     * Delegate that receives updates on the collection of homes.
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value) {
         Object __old = delegate();
@@ -196,6 +238,15 @@ public class HMHomeManager extends NSObject {
         }
     }
 
+    /**
+     * This method is used to change the primary home.
+     * 
+     * @param      home        New primary home.
+     * 
+     * @param      completion  Block that is invoked once the request is processed.
+     *                         The NSError provides more information on the status of the request, error
+     *                         will be nil on success.
+     */
     @Generated
     @Selector("updatePrimaryHome:completionHandler:")
     public native void updatePrimaryHomeCompletionHandler(HMHome home,
@@ -205,20 +256,30 @@ public class HMHomeManager extends NSObject {
     @Generated
     public interface Block_addHomeWithNameCompletionHandler {
         @Generated
-        void call_addHomeWithNameCompletionHandler(HMHome arg0, NSError arg1);
+        void call_addHomeWithNameCompletionHandler(HMHome home, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeHomeCompletionHandler {
         @Generated
-        void call_removeHomeCompletionHandler(NSError arg0);
+        void call_removeHomeCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updatePrimaryHomeCompletionHandler {
         @Generated
-        void call_updatePrimaryHomeCompletionHandler(NSError arg0);
+        void call_updatePrimaryHomeCompletionHandler(NSError error);
     }
+
+    /**
+     * The current authorization status of the application.
+     * 
+     * The authorization is managed by the system, there is no need to explicitly request authorization.
+     */
+    @Generated
+    @Selector("authorizationStatus")
+    @NUInt
+    public native long authorizationStatus();
 }

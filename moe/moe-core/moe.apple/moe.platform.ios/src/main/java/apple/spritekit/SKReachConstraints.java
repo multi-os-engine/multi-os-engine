@@ -21,7 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -39,6 +39,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -46,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKReachConstraints extends NSObject implements NSCoding {
+public class SKReachConstraints extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -155,7 +156,7 @@ public class SKReachConstraints extends NSObject implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -163,28 +164,50 @@ public class SKReachConstraints extends NSObject implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKReachConstraints initWithCoder(NSCoder aDecoder);
+    public native SKReachConstraints initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLowerAngleLimit:upperAngleLimit:")
     public native SKReachConstraints initWithLowerAngleLimitUpperAngleLimit(@NFloat double lowerAngleLimit,
             @NFloat double upperAngleLimit);
 
+    /**
+     * Lower angle limit in radians
+     */
     @Generated
     @Selector("lowerAngleLimit")
     @NFloat
     public native double lowerAngleLimit();
 
+    /**
+     * Lower angle limit in radians
+     */
     @Generated
     @Selector("setLowerAngleLimit:")
     public native void setLowerAngleLimit(@NFloat double value);
 
+    /**
+     * Upper angle limit in radians
+     */
     @Generated
     @Selector("setUpperAngleLimit:")
     public native void setUpperAngleLimit(@NFloat double value);
 
+    /**
+     * Upper angle limit in radians
+     */
     @Generated
     @Selector("upperAngleLimit")
     @NFloat
     public native double upperAngleLimit();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

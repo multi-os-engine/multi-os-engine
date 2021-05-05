@@ -14,7 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+#import <Metal/MTLIndirectCommandBuffer.h>
 #import <Metal/MTLRenderPass.h>
+#import <Metal/MTLTexture.h>
 #import <Metal/MTLTypes.h>
 #import <objc/NSObjCRuntime.h>
 
@@ -45,8 +47,20 @@ EXPORT MTLSamplePosition __natj_inline_MTLSamplePositionMake(float x, float y) {
 	return MTLSamplePositionMake(x, y);
 }
 
+EXPORT MTLCoordinate2D __natj_inline_MTLCoordinate2DMake(float x, float y) {
+	return MTLCoordinate2DMake(x, y);
+}
+
+EXPORT MTLTextureSwizzleChannels __natj_inline_MTLTextureSwizzleChannelsMake(MTLTextureSwizzle r, MTLTextureSwizzle g, MTLTextureSwizzle b, MTLTextureSwizzle a) {
+	return MTLTextureSwizzleChannelsMake(r, g, b, a);
+}
+
 EXPORT MTLClearColor __natj_inline_MTLClearColorMake(double red, double green, double blue, double alpha) {
 	return MTLClearColorMake(red, green, blue, alpha);
+}
+
+EXPORT MTLIndirectCommandBufferExecutionRange __natj_inline_MTLIndirectCommandBufferExecutionRangeMake(uint32_t location, uint32_t length) {
+	return MTLIndirectCommandBufferExecutionRangeMake(location, length);
 }
 
 

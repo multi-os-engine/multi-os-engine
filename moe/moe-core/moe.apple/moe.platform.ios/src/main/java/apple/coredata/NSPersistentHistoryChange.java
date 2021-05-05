@@ -170,4 +170,16 @@ public class NSPersistentHistoryChange extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("entityDescription")
+    public static native NSEntityDescription entityDescription();
+
+    @Generated
+    @Selector("entityDescriptionWithContext:")
+    public static native NSEntityDescription entityDescriptionWithContext(NSManagedObjectContext context);
+
+    @Generated
+    @Selector("fetchRequest")
+    public static native NSFetchRequest<?> fetchRequest();
 }

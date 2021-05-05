@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Used to track a user info dictionary being transferred.
+ */
 @Generated
 @Library("WatchConnectivity")
 @Runtime(ObjCRuntime.class)
@@ -164,7 +167,7 @@ public class WCSessionUserInfoTransfer extends NSObject implements NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -172,7 +175,7 @@ public class WCSessionUserInfoTransfer extends NSObject implements NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native WCSessionUserInfoTransfer initWithCoder(NSCoder aDecoder);
+    public native WCSessionUserInfoTransfer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isCurrentComplicationInfo")

@@ -159,25 +159,46 @@ public class UILocalizedIndexedCollation extends NSObject {
     @Selector("init")
     public native UILocalizedIndexedCollation init();
 
+    /**
+     * Returns the index of the section that will contain the object.
+     * selector must not take any arguments and return an NSString.
+     */
     @Generated
     @Selector("sectionForObject:collationStringSelector:")
     @NInt
     public native long sectionForObjectCollationStringSelector(@Mapped(ObjCObjectMapper.class) Object object,
             SEL selector);
 
+    /**
+     * Specifies the section that should be scrolled to for the title at the given index.
+     * This method allows you to map between a given item in the index
+     * and a given section where there isn't a one-to-one mapping.
+     */
     @Generated
     @Selector("sectionForSectionIndexTitleAtIndex:")
     @NInt
     public native long sectionForSectionIndexTitleAtIndex(@NInt long indexTitleIndex);
 
+    /**
+     * Provides the list of index titles used to quickly jump to particular sections
+     */
     @Generated
     @Selector("sectionIndexTitles")
     public native NSArray<String> sectionIndexTitles();
 
+    /**
+     * Provides the list of section titles used to group results (e.g. A-Z,# in US/English)
+     */
     @Generated
     @Selector("sectionTitles")
     public native NSArray<String> sectionTitles();
 
+    /**
+     * Used for sorting objects within the same section.
+     * selector must not take any arguments and return an NSString.
+     * In the process of sorting the array, each object may receive
+     * selector multiple times, so this method should be fast.
+     */
     @Generated
     @Selector("sortedArrayFromArray:collationStringSelector:")
     public native NSArray<?> sortedArrayFromArrayCollationStringSelector(NSArray<?> array, SEL selector);

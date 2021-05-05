@@ -156,11 +156,17 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The type of result that should be returned from this request. Defaults to NSPersistentHistoryResultTypeTransactionsAndChanges
+     */
     @Generated
     @Selector("resultType")
     @NInt
     public native long resultType();
 
+    /**
+     * The type of result that should be returned from this request. Defaults to NSPersistentHistoryResultTypeTransactionsAndChanges
+     */
     @Generated
     @Selector("setResultType:")
     public native void setResultType(@NInt long value);
@@ -181,4 +187,17 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("fetchHistoryWithFetchRequest:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object fetchHistoryWithFetchRequest(NSFetchRequest<?> fetchRequest);
+
+    @Generated
+    @Selector("fetchRequest")
+    public native NSFetchRequest<?> fetchRequest();
+
+    @Generated
+    @Selector("setFetchRequest:")
+    public native void setFetchRequest(NSFetchRequest<?> value);
 }

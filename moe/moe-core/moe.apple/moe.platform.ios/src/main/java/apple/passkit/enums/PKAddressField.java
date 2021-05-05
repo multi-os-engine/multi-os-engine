@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class PKAddressField {
+    /**
+     * No address fields required.
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * Full street address including name, street, city, state/province, postal code, country.
+     */
     @Generated @NUInt public static final long PostalAddress = 0x0000000000000001L;
     @Generated @NUInt public static final long Phone = 0x0000000000000002L;
     @Generated @NUInt public static final long Email = 0x0000000000000004L;

@@ -94,6 +94,9 @@ public class NSArray<_ObjectType> extends NSObject
     @Selector("arrayWithArray:")
     public static native <_ObjectType> NSArray<?> arrayWithArray(NSArray<_ObjectType> array);
 
+    /**
+     * These methods are deprecated, and will be marked with API_DEPRECATED in a subsequent release. Use the variants that use errors instead.
+     */
     @Generated
     @Selector("arrayWithContentsOfFile:")
     public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfFile(String path);
@@ -200,11 +203,17 @@ public class NSArray<_ObjectType> extends NSObject
     @NInt
     public static native long version_static();
 
+    /**
+     * NSArrays are not observable, so these methods raise exceptions when invoked on NSArrays. Instead of observing an array, observe the ordered to-many relationship for which the array is the collection of related objects.
+     */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
     public native void addObserverForKeyPathOptionsContext(NSObject observer, String keyPath, @NUInt long options,
             VoidPtr context);
 
+    /**
+     * Register or deregister as an observer of the values at a key path relative to each indexed element of the array. The options determine what is included in observer notifications and when they're sent, as described above, and the context is passed in observer notifications as described above. These are not merely convenience methods; invoking them is potentially much faster than repeatedly invoking NSObject(NSKeyValueObserverRegistration) methods. You should use -removeObserver:fromObjectsAtIndexes:forKeyPath:context: instead of -removeObserver:fromObjectsAtIndexes:forKeyPath: whenever possible for the same reason described in the NSObject(NSKeyValueObserverRegistration) comment.
+     */
     @Generated
     @Selector("addObserver:toObjectsAtIndexes:forKeyPath:options:context:")
     public native void addObserverToObjectsAtIndexesForKeyPathOptionsContext(NSObject observer, NSIndexSet indexes,
@@ -257,7 +266,7 @@ public class NSArray<_ObjectType> extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateObjectsAtIndexes:options:usingBlock:")
@@ -274,6 +283,9 @@ public class NSArray<_ObjectType> extends NSObject
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
 
+    /**
+     * evaluate a predicate against an array of objects and return a filtered array
+     */
     @Generated
     @Selector("filteredArrayUsingPredicate:")
     public native NSArray<_ObjectType> filteredArrayUsingPredicate(NSPredicate predicate);
@@ -288,6 +300,9 @@ public class NSArray<_ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType firstObjectCommonWithArray(NSArray<_ObjectType> otherArray);
 
+    /**
+     * This method is unsafe because it could potentially cause buffer overruns. You should use -getObjects:range: instead.
+     */
     @Generated
     @Selector("getObjects:")
     public native void getObjects(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> objects);
@@ -308,6 +323,9 @@ public class NSArray<_ObjectType> extends NSObject
     public native long indexOfObjectInRange(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @ByValue NSRange range);
 
+    /**
+     * binary search
+     */
     @Generated
     @Selector("indexOfObject:inSortedRange:options:usingComparator:")
     @NUInt
@@ -373,7 +391,7 @@ public class NSArray<_ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSArray<?> initWithCoder(NSCoder aDecoder);
+    public native NSArray<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
@@ -411,6 +429,7 @@ public class NSArray<_ObjectType> extends NSObject
     public native void makeObjectsPerformSelectorWithObject(SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object argument);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -460,14 +479,23 @@ public class NSArray<_ObjectType> extends NSObject
     @Selector("reverseObjectEnumerator")
     public native NSEnumerator<_ObjectType> reverseObjectEnumerator();
 
+    /**
+     * Invoke -setValue:forKey: on each of the receiver's elements.
+     */
     @Generated
     @Selector("setValue:forKey:")
     public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
+    /**
+     * Returns a shuffled instance of this array using the systems underlying random source, as with [GKRandomSource sharedRandom]
+     */
     @Generated
     @Selector("shuffledArray")
     public native NSArray<_ObjectType> shuffledArray();
 
+    /**
+     * Returns a shuffled instance of this array using the given random source.
+     */
     @Generated
     @Selector("shuffledArrayWithRandomSource:")
     public native NSArray<_ObjectType> shuffledArrayWithRandomSource(GKRandomSource randomSource);
@@ -481,6 +509,9 @@ public class NSArray<_ObjectType> extends NSObject
     public native NSArray<_ObjectType> sortedArrayUsingComparator(
             @ObjCBlock(name = "call_sortedArrayUsingComparator") Block_sortedArrayUsingComparator cmptr);
 
+    /**
+     * returns a new array by sorting the objects of the receiver
+     */
     @Generated
     @Selector("sortedArrayUsingDescriptors:")
     public native NSArray<_ObjectType> sortedArrayUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
@@ -516,6 +547,9 @@ public class NSArray<_ObjectType> extends NSObject
         return supportsSecureCoding();
     }
 
+    /**
+     * Return an array containing the results of invoking -valueForKey: on each of the receiver's elements. The returned array will contain NSNull elements for each instance of -valueForKey: returning nil.
+     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -728,24 +762,23 @@ public class NSArray<_ObjectType> extends NSObject
     @Generated
     public interface Block_enumerateObjectsAtIndexesOptionsUsingBlock {
         @Generated
-        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
+        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsUsingBlock {
         @Generated
-        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -753,56 +786,56 @@ public class NSArray<_ObjectType> extends NSObject
     public interface Block_indexOfObjectInSortedRangeOptionsUsingComparator {
         @Generated
         @NInt
-        long call_indexOfObjectInSortedRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_indexOfObjectInSortedRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexOfObjectAtIndexesOptionsPassingTest {
         @Generated
-        boolean call_indexOfObjectAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
+        boolean call_indexOfObjectAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexOfObjectPassingTest {
         @Generated
-        boolean call_indexOfObjectPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        boolean call_indexOfObjectPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexOfObjectWithOptionsPassingTest {
         @Generated
-        boolean call_indexOfObjectWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        boolean call_indexOfObjectWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesOfObjectsAtIndexesOptionsPassingTest {
         @Generated
-        boolean call_indexesOfObjectsAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
+        boolean call_indexesOfObjectsAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesOfObjectsPassingTest {
         @Generated
-        boolean call_indexesOfObjectsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        boolean call_indexesOfObjectsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesOfObjectsWithOptionsPassingTest {
         @Generated
-        boolean call_indexesOfObjectsWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
+        boolean call_indexesOfObjectsWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -810,8 +843,8 @@ public class NSArray<_ObjectType> extends NSObject
     public interface Block_sortedArrayUsingComparator {
         @Generated
         @NInt
-        long call_sortedArrayUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortedArrayUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -837,8 +870,8 @@ public class NSArray<_ObjectType> extends NSObject
     public interface Block_sortedArrayWithOptionsUsingComparator {
         @Generated
         @NInt
-        long call_sortedArrayWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortedArrayWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     private final static class NSArrayIterator<_ObjectType> implements Iterator<_ObjectType> {
@@ -937,17 +970,56 @@ public class NSArray<_ObjectType> extends NSObject
 
     }
 
+    /**
+     * Reads array stored in NSPropertyList format from the specified url.
+     */
     @Generated
     @Selector("arrayWithContentsOfURL:error:")
     public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfURLError(NSURL url,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Reads array stored in NSPropertyList format from the specified url.
+     */
     @Generated
     @Selector("initWithContentsOfURL:error:")
     public native NSArray<_ObjectType> initWithContentsOfURLError(NSURL url,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * Serializes this instance to the specified URL in the NSPropertyList format (using NSPropertyListXMLFormat_v1_0). For other formats use NSPropertyListSerialization directly.
+     */
     @Generated
     @Selector("writeToURL:error:")
     public native boolean writeToURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("arrayByApplyingDifference:")
+    public native NSArray<_ObjectType> arrayByApplyingDifference(NSOrderedCollectionDifference<_ObjectType> difference);
+
+    /**
+     * Uses isEqual: to determine the difference between the parameter and the receiver
+     */
+    @Generated
+    @Selector("differenceFromArray:")
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromArray(NSArray<_ObjectType> other);
+
+    @Generated
+    @Selector("differenceFromArray:withOptions:")
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromArrayWithOptions(NSArray<_ObjectType> other,
+            @NUInt long options);
+
+    @Generated
+    @Selector("differenceFromArray:withOptions:usingEquivalenceTest:")
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromArrayWithOptionsUsingEquivalenceTest(
+            NSArray<_ObjectType> other, @NUInt long options,
+            @ObjCBlock(name = "call_differenceFromArrayWithOptionsUsingEquivalenceTest") Block_differenceFromArrayWithOptionsUsingEquivalenceTest block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_differenceFromArrayWithOptionsUsingEquivalenceTest {
+        @Generated
+        boolean call_differenceFromArrayWithOptionsUsingEquivalenceTest(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
+    }
 }

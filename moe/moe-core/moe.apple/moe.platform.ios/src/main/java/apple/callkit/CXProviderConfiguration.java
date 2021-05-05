@@ -159,6 +159,9 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * Image should be a square with side length of 40 points
+     */
     @Generated
     @Selector("iconTemplateImageData")
     public native NSData iconTemplateImageData();
@@ -171,60 +174,104 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     @Selector("initWithLocalizedName:")
     public native CXProviderConfiguration initWithLocalizedName(String localizedName);
 
+    /**
+     * Localized name of the provider
+     */
     @Generated
     @Selector("localizedName")
     public native String localizedName();
 
+    /**
+     * Default 2
+     */
     @Generated
     @Selector("maximumCallGroups")
     @NUInt
     public native long maximumCallGroups();
 
+    /**
+     * Default 5
+     */
     @Generated
     @Selector("maximumCallsPerCallGroup")
     @NUInt
     public native long maximumCallsPerCallGroup();
 
+    /**
+     * Name of resource in app's bundle to play as ringtone for incoming call
+     */
     @Generated
     @Selector("ringtoneSound")
     public native String ringtoneSound();
 
+    /**
+     * Image should be a square with side length of 40 points
+     */
     @Generated
     @Selector("setIconTemplateImageData:")
     public native void setIconTemplateImageData(NSData value);
 
+    /**
+     * Default 2
+     */
     @Generated
     @Selector("setMaximumCallGroups:")
     public native void setMaximumCallGroups(@NUInt long value);
 
+    /**
+     * Default 5
+     */
     @Generated
     @Selector("setMaximumCallsPerCallGroup:")
     public native void setMaximumCallsPerCallGroup(@NUInt long value);
 
+    /**
+     * Name of resource in app's bundle to play as ringtone for incoming call
+     */
     @Generated
     @Selector("setRingtoneSound:")
     public native void setRingtoneSound(String value);
 
+    /**
+     * Numbers are of type CXHandleType
+     */
     @Generated
     @Selector("setSupportedHandleTypes:")
     public native void setSupportedHandleTypes(NSSet<? extends NSNumber> value);
 
+    /**
+     * Default NO
+     */
     @Generated
     @Selector("setSupportsVideo:")
     public native void setSupportsVideo(boolean value);
 
+    /**
+     * Numbers are of type CXHandleType
+     */
     @Generated
     @Selector("supportedHandleTypes")
     public native NSSet<? extends NSNumber> supportedHandleTypes();
 
+    /**
+     * Default NO
+     */
     @Generated
     @Selector("supportsVideo")
     public native boolean supportsVideo();
 
+    /**
+     * Whether this provider's calls should be included in the system's Recents list at the end of each call.
+     * Default: YES
+     */
     @Generated
     @Selector("includesCallsInRecents")
     public native boolean includesCallsInRecents();
 
+    /**
+     * Whether this provider's calls should be included in the system's Recents list at the end of each call.
+     * Default: YES
+     */
     @Generated
     @Selector("setIncludesCallsInRecents:")
     public native void setIncludesCallsInRecents(boolean value);

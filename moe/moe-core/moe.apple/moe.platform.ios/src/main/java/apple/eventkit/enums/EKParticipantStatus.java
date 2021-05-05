@@ -19,6 +19,11 @@ package apple.eventkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * [@enum]       EKParticipantStatus
+ * 
+ * Value representing the status of a meeting participant.
+ */
 @Generated
 public final class EKParticipantStatus {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;

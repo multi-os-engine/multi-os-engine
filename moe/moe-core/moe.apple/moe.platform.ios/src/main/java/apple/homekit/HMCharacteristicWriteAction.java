@@ -41,6 +41,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This class is used to represent an entry in an action set that writes a specific
+ *        value to a characteristic.
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -152,6 +156,9 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
     @NInt
     public static native long version_static();
 
+    /**
+     * The characteristic associated with the action.
+     */
     @Generated
     @Selector("characteristic")
     public native HMCharacteristic characteristic();
@@ -160,16 +167,37 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
     @Selector("init")
     public native HMCharacteristicWriteAction<?> init();
 
+    /**
+     * Initializer method that ties the action to a particular characteristic.
+     * 
+     * @param characteristic The characteristic bound to the action.
+     * 
+     * @param targetValue The target value for the characteristic.
+     * 
+     * @return Instance object representing the characteristic write action.
+     */
     @Generated
     @Selector("initWithCharacteristic:targetValue:")
     public native HMCharacteristicWriteAction<?> initWithCharacteristicTargetValue(HMCharacteristic characteristic,
             @Mapped(ObjCObjectMapper.class) Object targetValue);
 
+    /**
+     * The target value for the action.
+     */
     @Generated
     @Selector("targetValue")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object targetValue();
 
+    /**
+     * This method is used to change target value for the characteristic.
+     * 
+     * @param targetValue New target value for the characteristic.
+     * 
+     * @param completion Block that is invoked once the request is processed.
+     *                   The NSError provides more information on the status of the request, error
+     *                   will be nil on success.
+     */
     @Generated
     @Selector("updateTargetValue:completionHandler:")
     public native void updateTargetValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object targetValue,
@@ -179,6 +207,6 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
     @Generated
     public interface Block_updateTargetValueCompletionHandler {
         @Generated
-        void call_updateTargetValueCompletionHandler(NSError arg0);
+        void call_updateTargetValueCompletionHandler(NSError error);
     }
 }

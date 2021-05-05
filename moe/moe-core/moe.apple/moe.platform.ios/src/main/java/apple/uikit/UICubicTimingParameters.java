@@ -181,8 +181,11 @@ public class UICubicTimingParameters extends NSObject implements UITimingCurvePr
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * initializes with the default CA timing curve
+     */
     @Generated
     @Selector("init")
     public native UICubicTimingParameters init();
@@ -193,7 +196,7 @@ public class UICubicTimingParameters extends NSObject implements UITimingCurvePr
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICubicTimingParameters initWithCoder(NSCoder aDecoder);
+    public native UICubicTimingParameters initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithControlPoint1:controlPoint2:")

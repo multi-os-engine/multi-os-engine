@@ -23,6 +23,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -47,6 +48,27 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UIStackView is a non-rendering subclass of UIView, intended for managing layout of its subviews.
+ * You may not override +[UIStackView layerClass], and -drawLayer:inContext: will not be sent to
+ * UIStackView.
+ * 
+ * UIStackView arranges its subviews in its arrangedSubviews list in the order of 
+ * that list along a vertical or horizontal axis, with exact arrangement determined
+ * by the distribution, alignment, and spacing properties.
+ * 
+ * The layout will update automatically when arrangedSubviews list changes
+ * due to adding, removing, or inserting arrangedSubviews, and also when
+ * views in the arrangedSubviews list change their hidden property.
+ * 
+ * A horizontal UIStackView will return its tallest view for -viewForFirst/LastBaselineLayout,
+ * or if that is another stack view, then the relevant viewForFirst/LastBaselineLayout from that
+ * stack view.
+ * 
+ * A vertical UIStackView will return its first view for -viewForFirstBaselineLayout and its
+ * last view for -viewForLastBaselineLayout, or if that is another stack view, then the relevant  
+ * viewForFirst/LastBaselineLayout from that stack view.
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -129,7 +151,7 @@ public class UIStackView extends UIView {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -142,8 +164,8 @@ public class UIStackView extends UIView {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -345,10 +367,22 @@ public class UIStackView extends UIView {
     @NInt
     public static native long version_static();
 
+    /**
+     * Add a view to the end of the arrangedSubviews list.
+     * Maintains the rule that the arrangedSubviews list is a subset of the
+     * subviews list by adding the view as a subview of the receiver if
+     * necessary.
+     *    Does not affect the subview ordering if view is already a subview 
+     * of the receiver.
+     */
     @Generated
     @Selector("addArrangedSubview:")
     public native void addArrangedSubview(UIView view);
 
+    /**
+     * The layout of the arrangedSubviews transverse to the axis;
+     * e.g., leading/trailing edges in a vertical stack
+     */
     @Generated
     @Selector("alignment")
     @NInt
@@ -373,7 +407,7 @@ public class UIStackView extends UIView {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -389,7 +423,8 @@ public class UIStackView extends UIView {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -404,11 +439,18 @@ public class UIStackView extends UIView {
     @Selector("arrangedSubviews")
     public native NSArray<? extends UIView> arrangedSubviews();
 
+    /**
+     * A stack with a horizontal axis is a row of arrangedSubviews,
+     * and a stack with a vertical axis is a column of arrangedSubviews.
+     */
     @Generated
     @Selector("axis")
     @NInt
     public native long axis();
 
+    /**
+     * The layout of the arrangedSubviews along the axis
+     */
     @Generated
     @Selector("distribution")
     @NInt
@@ -418,6 +460,9 @@ public class UIStackView extends UIView {
     @Selector("init")
     public native UIStackView init();
 
+    /**
+     * Adds views as subviews of the receiver.
+     */
     @Generated
     @Selector("initWithArrangedSubviews:")
     public native UIStackView initWithArrangedSubviews(NSArray<? extends UIView> views);
@@ -430,46 +475,129 @@ public class UIStackView extends UIView {
     @Selector("initWithFrame:")
     public native UIStackView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Adds the view as a subview of the container if it isn't already.
+     *    Updates the stack index (but not the subview index) of the
+     * arranged subview if it's already in the arrangedSubviews list.
+     */
     @Generated
     @Selector("insertArrangedSubview:atIndex:")
     public native void insertArrangedSubviewAtIndex(UIView view, @NUInt long stackIndex);
 
+    /**
+     * Baseline-to-baseline spacing in vertical stacks.
+     *    The baselineRelativeArrangement property supports specifications of vertical 
+     * space from the last baseline of one text-based view to the first baseline of a
+     * text-based view below, or from the  top (or bottom) of a container to the first
+     * (or last) baseline of a contained text-based view.
+     *    This property is ignored in horizontal stacks. Use the alignment property
+     * to specify baseline alignment in horizontal stacks.
+     *    Defaults to NO.
+     */
     @Generated
     @Selector("isBaselineRelativeArrangement")
     public native boolean isBaselineRelativeArrangement();
 
+    /**
+     * Baseline-to-baseline spacing in vertical stacks.
+     *    The baselineRelativeArrangement property supports specifications of vertical 
+     * space from the last baseline of one text-based view to the first baseline of a
+     * text-based view below, or from the  top (or bottom) of a container to the first
+     * (or last) baseline of a contained text-based view.
+     *    This property is ignored in horizontal stacks. Use the alignment property
+     * to specify baseline alignment in horizontal stacks.
+     *    Defaults to NO.
+     */
     @Generated
     @Selector("setBaselineRelativeArrangement:")
     public native void setBaselineRelativeArrangement(boolean value);
 
+    /**
+     * Uses margin layout attributes for edge constraints where applicable.
+     * Defaults to NO.
+     */
     @Generated
     @Selector("isLayoutMarginsRelativeArrangement")
     public native boolean isLayoutMarginsRelativeArrangement();
 
+    /**
+     * Uses margin layout attributes for edge constraints where applicable.
+     * Defaults to NO.
+     */
     @Generated
     @Selector("setLayoutMarginsRelativeArrangement:")
     public native void setLayoutMarginsRelativeArrangement(boolean value);
 
+    /**
+     * Removes a subview from the list of arranged subviews without removing it as
+     * a subview of the receiver.
+     *    To remove the view as a subview, send it -removeFromSuperview as usual;
+     * the relevant UIStackView will remove it from its arrangedSubviews list
+     * automatically.
+     */
     @Generated
     @Selector("removeArrangedSubview:")
     public native void removeArrangedSubview(UIView view);
 
+    /**
+     * The layout of the arrangedSubviews transverse to the axis;
+     * e.g., leading/trailing edges in a vertical stack
+     */
     @Generated
     @Selector("setAlignment:")
     public native void setAlignment(@NInt long value);
 
+    /**
+     * A stack with a horizontal axis is a row of arrangedSubviews,
+     * and a stack with a vertical axis is a column of arrangedSubviews.
+     */
     @Generated
     @Selector("setAxis:")
     public native void setAxis(@NInt long value);
 
+    /**
+     * The layout of the arrangedSubviews along the axis
+     */
     @Generated
     @Selector("setDistribution:")
     public native void setDistribution(@NInt long value);
 
+    /**
+     * Spacing between adjacent edges of arrangedSubviews.
+     * Used as a strict spacing for the Fill distributions, and
+     * as a minimum spacing for the EqualCentering and EqualSpacing
+     * distributions. Use negative values to allow overlap.
+     * 
+     * On iOS 11.0 or later, use UIStackViewSpacingUseSystem (Swift: UIStackView.spacingUseSystem) 
+     * to get a system standard spacing value. Setting spacing to UIStackViewSpacingUseDefault 
+     * (Swift: UIStackView.spacingUseDefault) will result in a spacing of 0.
+     * 
+     * System spacing between views depends on the views involved, and may vary across the 
+     * stack view.
+     * 
+     * In vertical stack views with baselineRelativeArrangement == YES, the spacing between 
+     * text-containing views (such as UILabels) will depend on the fonts involved.
+     */
     @Generated
     @Selector("setSpacing:")
     public native void setSpacing(@NFloat double value);
 
+    /**
+     * Spacing between adjacent edges of arrangedSubviews.
+     * Used as a strict spacing for the Fill distributions, and
+     * as a minimum spacing for the EqualCentering and EqualSpacing
+     * distributions. Use negative values to allow overlap.
+     * 
+     * On iOS 11.0 or later, use UIStackViewSpacingUseSystem (Swift: UIStackView.spacingUseSystem) 
+     * to get a system standard spacing value. Setting spacing to UIStackViewSpacingUseDefault 
+     * (Swift: UIStackView.spacingUseDefault) will result in a spacing of 0.
+     * 
+     * System spacing between views depends on the views involved, and may vary across the 
+     * stack view.
+     * 
+     * In vertical stack views with baselineRelativeArrangement == YES, the spacing between 
+     * text-containing views (such as UILabels) will depend on the fonts involved.
+     */
     @Generated
     @Selector("spacing")
     @NFloat
@@ -480,7 +608,31 @@ public class UIStackView extends UIView {
     @NFloat
     public native double customSpacingAfterView(UIView arrangedSubview);
 
+    /**
+     * Set and get custom spacing after a view.
+     * 
+     * This custom spacing takes precedence over any other value that might otherwise be used 
+     * for the space following the arranged subview.
+     * 
+     * Defaults to UIStackViewSpacingUseDefault (Swift: UIStackView.spacingUseDefault), where 
+     * resolved value will match the spacing property.
+     * 
+     * You may also set the custom spacing to UIStackViewSpacingUseSystem (Swift: UIStackView.spacingUseSystem),
+     * where the resolved value will match the system-defined value for the space to the neighboring view, 
+     * independent of the spacing property.
+     * 
+     * Maintained when the arranged subview changes position in the stack view, but not after it
+     * is removed from the arrangedSubviews list.
+     * 
+     * Ignored if arrangedSubview is not actually an arranged subview.
+     */
     @Generated
     @Selector("setCustomSpacing:afterView:")
     public native void setCustomSpacingAfterView(@NFloat double spacing, UIView arrangedSubview);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

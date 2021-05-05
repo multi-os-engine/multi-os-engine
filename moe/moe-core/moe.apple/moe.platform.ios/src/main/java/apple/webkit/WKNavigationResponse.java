@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Contains information about a navigation response, used for making policy decisions.
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +154,11 @@ public class WKNavigationResponse extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * A Boolean value indicating whether WebKit can display the response's MIME type natively.
+     * 
+     * Allowing a navigation response with a MIME type that can't be shown will cause the navigation to fail.
+     */
     @Generated
     @Selector("canShowMIMEType")
     public native boolean canShowMIMEType();
@@ -159,10 +167,16 @@ public class WKNavigationResponse extends NSObject {
     @Selector("init")
     public native WKNavigationResponse init();
 
+    /**
+     * A Boolean value indicating whether the frame being navigated is the main frame.
+     */
     @Generated
     @Selector("isForMainFrame")
     public native boolean isForMainFrame();
 
+    /**
+     * The frame's response.
+     */
     @Generated
     @Selector("response")
     public native NSURLResponse response();

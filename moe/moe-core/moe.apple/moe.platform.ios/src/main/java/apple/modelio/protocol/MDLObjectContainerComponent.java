@@ -36,6 +36,9 @@ public interface MDLObjectContainerComponent extends MDLComponent, NSFastEnumera
     @Selector("addObject:")
     void addObject(MDLObject object);
 
+    /**
+     * returns an array of this object's contained objects, aka children
+     */
     @Generated
     @Selector("objects")
     NSArray<? extends MDLObject> objects();

@@ -99,6 +99,9 @@ public class GKCloudPlayer extends GKBasePlayer {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Retrieve a player instance representing the active iCloud account for a given iCloud container. Returns nil and an error if the user is not signed in to iCloud or the container is invalid.
+     */
     @Generated
     @Selector("getCurrentSignedInPlayerForContainer:completionHandler:")
     public static native void getCurrentSignedInPlayerForContainerCompletionHandler(String containerName,
@@ -165,6 +168,6 @@ public class GKCloudPlayer extends GKBasePlayer {
     @Generated
     public interface Block_getCurrentSignedInPlayerForContainerCompletionHandler {
         @Generated
-        void call_getCurrentSignedInPlayerForContainerCompletionHandler(GKCloudPlayer arg0, NSError arg1);
+        void call_getCurrentSignedInPlayerForContainerCompletionHandler(GKCloudPlayer player, NSError error);
     }
 }

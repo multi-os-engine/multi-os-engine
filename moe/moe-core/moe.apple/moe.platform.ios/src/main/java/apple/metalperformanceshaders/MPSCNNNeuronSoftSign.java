@@ -5,6 +5,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.metal.protocol.MTLDevice;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -25,6 +26,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MPSCNNNeuronSoftSign
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the softsign neuron filter.
+ *             For each pixel, applies the following function: f(x) = x / (1 + abs(x))
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -101,6 +109,12 @@ public class MPSCNNNeuronSoftSign extends MPSCNNNeuron {
     public native MPSCNNNeuronSoftSign initWithCoderDevice(NSCoder aDecoder,
             @Mapped(ObjCObjectMapper.class) Object device);
 
+    /**
+     * Initialize a softsign neuron filter
+     * 
+     * @param      device          The device the filter will run on
+     * @return     A valid MPSCNNNeuronSoftSign object or nil, if failure.
+     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSCNNNeuronSoftSign initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
@@ -162,4 +176,9 @@ public class MPSCNNNeuronSoftSign extends MPSCNNNeuron {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithDevice:neuronDescriptor:")
+    public native MPSCNNNeuronSoftSign initWithDeviceNeuronDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            MPSNNNeuronDescriptor neuronDescriptor);
 }

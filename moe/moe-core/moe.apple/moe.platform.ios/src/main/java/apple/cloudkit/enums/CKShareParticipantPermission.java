@@ -19,6 +19,9 @@ package apple.cloudkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * These permissions determine what share participants can do with records inside that share
+ */
 @Generated
 public final class CKShareParticipantPermission {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;

@@ -42,6 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * CMAltimeter
+ * 
+ * Discussion:
+ * CMAltimeter provides information about the altitude of the device.
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -118,6 +124,12 @@ public class CMAltimeter extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * isRelativeAltitudeAvailable
+     * 
+     * Discussion:
+     * Determines whether the device supports reporting relative altitude changes.
+     */
     @Generated
     @Selector("isRelativeAltitudeAvailable")
     public static native boolean isRelativeAltitudeAvailable();
@@ -161,11 +173,28 @@ public class CMAltimeter extends NSObject {
     @Selector("init")
     public native CMAltimeter init();
 
+    /**
+     * startRelativeAltitudeUpdatesToQueue:withHandler:
+     * 
+     * Discussion:
+     * Starts relative altitude updates, providing data to the given handler on the given queue
+     * every few seconds. The first altitude update will be established as the reference altitude
+     * and have relative altitude 0.
+     * 
+     * Calls to start must be balanced with calls to stopRelativeAltitudeUpdates even if an error
+     * is returned to the handler.
+     */
     @Generated
     @Selector("startRelativeAltitudeUpdatesToQueue:withHandler:")
     public native void startRelativeAltitudeUpdatesToQueueWithHandler(NSOperationQueue queue,
             @ObjCBlock(name = "call_startRelativeAltitudeUpdatesToQueueWithHandler") Block_startRelativeAltitudeUpdatesToQueueWithHandler handler);
 
+    /**
+     * stopRelativeAltitudeUpdates
+     * 
+     * Discussion:
+     *     Stops relative altitude updates.
+     */
     @Generated
     @Selector("stopRelativeAltitudeUpdates")
     public native void stopRelativeAltitudeUpdates();
@@ -174,9 +203,15 @@ public class CMAltimeter extends NSObject {
     @Generated
     public interface Block_startRelativeAltitudeUpdatesToQueueWithHandler {
         @Generated
-        void call_startRelativeAltitudeUpdatesToQueueWithHandler(CMAltitudeData arg0, NSError arg1);
+        void call_startRelativeAltitudeUpdatesToQueueWithHandler(CMAltitudeData altitudeData, NSError error);
     }
 
+    /**
+     * authorizationStatus
+     * 
+     * Discussion:
+     * Returns the current authorization status for altimeter.
+     */
     @Generated
     @Selector("authorizationStatus")
     @NInt

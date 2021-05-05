@@ -21,6 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSDataBase64DecodingOptions {
+    /**
+     * Use the following option to modify the decoding algorithm so that it ignores unknown non-Base64 bytes, including line ending characters.
+     */
     @Generated @NUInt public static final long NSDataBase64DecodingIgnoreUnknownCharacters = 0x0000000000000001L;
 
     @Generated

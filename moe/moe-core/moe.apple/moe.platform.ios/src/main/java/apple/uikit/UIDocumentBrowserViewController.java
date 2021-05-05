@@ -10,6 +10,7 @@ import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.protocol.NSCoding;
 import apple.uikit.protocol.UIDocumentBrowserViewControllerDelegate;
+import apple.uniformtypeidentifiers.UTType;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -17,6 +18,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -30,6 +32,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * UIDocumentBrowserViewController is a view controller to browse the files on the user's device or cloud services and open them directly in your application
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -48,10 +53,16 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation bar
+     */
     @Generated
     @Selector("additionalLeadingNavigationBarButtonItems")
     public native NSArray<? extends UIBarButtonItem> additionalLeadingNavigationBarButtonItems();
 
+    /**
+     * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation bar
+     */
     @Generated
     @Selector("additionalTrailingNavigationBarButtonItems")
     public native NSArray<? extends UIBarButtonItem> additionalTrailingNavigationBarButtonItems();
@@ -70,10 +81,16 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("allowedContentTypes")
     public native NSArray<String> allowedContentTypes();
 
+    /**
+     * Defaults to YES
+     */
     @Generated
     @Selector("allowsDocumentCreation")
     public native boolean allowsDocumentCreation();
 
+    /**
+     * Defaults to NO
+     */
     @Generated
     @Selector("allowsPickingMultipleItems")
     public native boolean allowsPickingMultipleItems();
@@ -86,6 +103,9 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * Allows clients to customize the look of the browser. Default: UIDocumentBrowserUserInterfaceStyleWhite
+     */
     @Generated
     @Selector("browserUserInterfaceStyle")
     @NUInt
@@ -113,6 +133,9 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    /**
+     * Allows clients to add custom actions in the menu and the navigation bar. These actions are contextual to the document items.
+     */
     @Generated
     @Selector("customActions")
     public native NSArray<? extends UIDocumentBrowserAction> customActions();
@@ -132,13 +155,16 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
+    /**
+     * Allow a document to be imported next to another document.
+     */
     @Generated
     @Selector("importDocumentAtURL:nextToDocumentAtURL:mode:completionHandler:")
     public native void importDocumentAtURLNextToDocumentAtURLModeCompletionHandler(NSURL documentURL,
@@ -156,6 +182,9 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("init")
     public native UIDocumentBrowserViewController init();
 
+    /**
+     * @param allowedContentTypes  The document types that the user should be able to open. If nil, the types specified via the CFBundleDocumentTypes key in the application plist will be used instead.
+     */
     @Generated
     @Selector("initForOpeningFilesWithContentTypes:")
     public native UIDocumentBrowserViewController initForOpeningFilesWithContentTypes(
@@ -163,7 +192,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIDocumentBrowserViewController initWithCoder(NSCoder aDecoder);
+    public native UIDocumentBrowserViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -208,6 +237,10 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Called to reveal a document at the URL.
+     * Typically called from the application delegate method application:openURL:options:; to let the application present the document.
+     */
     @Generated
     @Selector("revealDocumentAtURL:importIfNeeded:completion:")
     public native void revealDocumentAtURLImportIfNeededCompletion(NSURL url, boolean importIfNeeded,
@@ -217,29 +250,47 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Generated
     public interface Block_revealDocumentAtURLImportIfNeededCompletion {
         @Generated
-        void call_revealDocumentAtURLImportIfNeededCompletion(NSURL arg0, NSError arg1);
+        void call_revealDocumentAtURLImportIfNeededCompletion(NSURL revealedDocumentURL, NSError error);
     }
 
+    /**
+     * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation bar
+     */
     @Generated
     @Selector("setAdditionalLeadingNavigationBarButtonItems:")
     public native void setAdditionalLeadingNavigationBarButtonItems(NSArray<? extends UIBarButtonItem> value);
 
+    /**
+     * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation bar
+     */
     @Generated
     @Selector("setAdditionalTrailingNavigationBarButtonItems:")
     public native void setAdditionalTrailingNavigationBarButtonItems(NSArray<? extends UIBarButtonItem> value);
 
+    /**
+     * Defaults to YES
+     */
     @Generated
     @Selector("setAllowsDocumentCreation:")
     public native void setAllowsDocumentCreation(boolean value);
 
+    /**
+     * Defaults to NO
+     */
     @Generated
     @Selector("setAllowsPickingMultipleItems:")
     public native void setAllowsPickingMultipleItems(boolean value);
 
+    /**
+     * Allows clients to customize the look of the browser. Default: UIDocumentBrowserUserInterfaceStyleWhite
+     */
     @Generated
     @Selector("setBrowserUserInterfaceStyle:")
     public native void setBrowserUserInterfaceStyle(@NUInt long value);
 
+    /**
+     * Allows clients to add custom actions in the menu and the navigation bar. These actions are contextual to the document items.
+     */
     @Generated
     @Selector("setCustomActions:")
     public native void setCustomActions(NSArray<? extends UIDocumentBrowserAction> value);
@@ -277,4 +328,81 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Aspect ratio of the Create Document button defined as width / height (default: 2/3).
+     */
+    @Generated
+    @Selector("defaultDocumentAspectRatio")
+    @NFloat
+    public native double defaultDocumentAspectRatio();
+
+    /**
+     * Title of the Create Document button (default: "Create Document”).
+     */
+    @Generated
+    @Selector("localizedCreateDocumentActionTitle")
+    public native String localizedCreateDocumentActionTitle();
+
+    /**
+     * Array of content types supported for Recents documents.
+     * Default is same as allowedContentTypes.
+     * Can be defined via the 'UIDocumentBrowserRecentDocumentContentTypes' key in the app Info.plist.
+     * Note that the recentDocumentsContentTypes must be a subset conforming to the types declared in allowedContentTypes.
+     */
+    @Generated
+    @Selector("recentDocumentsContentTypes")
+    public native NSArray<String> recentDocumentsContentTypes();
+
+    /**
+     * Aspect ratio of the Create Document button defined as width / height (default: 2/3).
+     */
+    @Generated
+    @Selector("setDefaultDocumentAspectRatio:")
+    public native void setDefaultDocumentAspectRatio(@NFloat double value);
+
+    /**
+     * Title of the Create Document button (default: "Create Document”).
+     */
+    @Generated
+    @Selector("setLocalizedCreateDocumentActionTitle:")
+    public native void setLocalizedCreateDocumentActionTitle(String value);
+
+    /**
+     * Force the display of file extensions (default: NO).
+     */
+    @Generated
+    @Selector("setShouldShowFileExtensions:")
+    public native void setShouldShowFileExtensions(boolean value);
+
+    /**
+     * Force the display of file extensions (default: NO).
+     */
+    @Generated
+    @Selector("shouldShowFileExtensions")
+    public native boolean shouldShowFileExtensions();
+
+    /**
+     * A UIDocumentBrowserTransitionController object is used to display a loading indicator, while the application is spending time on time-consuming operations (e.g., loading, parsing, …) after having finished the file download, and before presenting it. To be used together with the UIViewControllerTransitioningDelegate protocol for custom view controller transitions.
+     */
+    @Generated
+    @Selector("transitionControllerForDocumentAtURL:")
+    public native UIDocumentBrowserTransitionController transitionControllerForDocumentAtURL(NSURL documentURL);
+
+    /**
+     * Array of content types supported for Recents documents.
+     * Default is same as content types passed in the designated initializer or as CFBundleDocumentTypes  in the app Info.plist.
+     * Can be defined via the 'UIDocumentBrowserRecentDocumentContentTypes' key in the app Info.plist.
+     * Note that the contentTypesForRecentDocuments must be a subset conforming to the types passed in the initializer or Info.plist.
+     */
+    @Generated
+    @Selector("contentTypesForRecentDocuments")
+    public native NSArray<? extends UTType> contentTypesForRecentDocuments();
+
+    /**
+     * @param contentTypes  The content types that the user should be able to open. If nil, the types specified via the CFBundleDocumentTypes key in the application plist will be used instead.
+     */
+    @Generated
+    @Selector("initForOpeningContentTypes:")
+    public native UIDocumentBrowserViewController initForOpeningContentTypes(NSArray<? extends UTType> contentTypes);
 }
