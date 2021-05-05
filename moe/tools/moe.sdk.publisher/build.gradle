@@ -16,15 +16,8 @@ limitations under the License.
 
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
-    dependencies {
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.15.2"
-    }
-}
-
-plugins {
-    id "com.jfrog.bintray" version "1.8.5"
 }
 
 group 'org.multi-os-engine.community'
@@ -32,10 +25,8 @@ version '1.7.2'
 
 apply plugin: 'base'
 apply plugin: 'maven-publish'
-
-//if (rootProject.hasProperty('artifactory.url')) {
-    apply plugin: "com.jfrog.artifactory"
-//}
+apply plugin: 'maven'
+apply plugin: 'signing'
 
 if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
     tasks.build.dependsOn ':ext_natj_mac'
@@ -157,7 +148,7 @@ task processDexiOSJUnit(type: Exec) {
     args cmd
 }
 
-tasks.build {
+task processSDK {
     dependsOn processJarRetroiOS
     dependsOn processDexRetroiOS
     dependsOn processDexCore
@@ -284,57 +275,53 @@ def getSDKCopySpec() {
     }
 }
 
-task sdk(type: Zip, dependsOn: build) {
+task sdk(type: Zip, dependsOn: processSDK) {
     with getSDKCopySpec()
 }
 
-task devsdk(type: Copy, dependsOn: build) {
+task devsdk(type: Copy, dependsOn: processSDK) {
     destinationDir = file("$buildDir/dev-sdk")
     with getSDKCopySpec()
 }
 
-bintray {
-    if (project.hasProperty('bintray.user')) {
-        user = property('bintray.user')
-    }
-    if (project.hasProperty('bintray.key')) {
-        key = property('bintray.key')
-    }
-
-    publications = ['mavenJava']
-
-    pkg {
-        repo = 'maven'
-        name = 'moe-sdk'
-        // userOrg = 'multi-os-engine'
-        websiteUrl = 'https://discuss.multi-os-engine.org'
-        vcsUrl = 'https://github.com/multi-os-engine-community/multi-os-engine'
-        licenses = ['Apache-2.0']
-        labels = ['moe', 'multi-os-engine']
-        publicDownloadNumbers = false
-
-        publish = true
-
-        version {
-            name = project.version
-        }
-    }
+artifacts {
+    archives sdk
 }
 
-if (rootProject.hasProperty('artifactory.url')) {
-    artifactory {
-        contextUrl = rootProject.getProperty('artifactory.url')
-        publish {
-            repository {
-                repoKey = rootProject.getProperty('artifactory.key')
-                username = rootProject.getProperty('artifactory.user')
-                password = rootProject.getProperty('artifactory.pass')
+signing {
+    sign configurations.archives
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
             }
-            defaults {
-                publications('mavenJavaSnapshot')
-                publishArtifacts = true
-                publishPom = true
-                publishIvy = true
+
+            snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'moe-sdk'
+                packaging 'zip'
+                artifactId 'moe-sdk'
+                description 'MOE sdk'
+                url 'https://discuss.multi-os-engine.org'
+
+                scm {
+                    url 'https://github.com/multi-os-engine-community/multi-os-engine'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
             }
         }
     }
