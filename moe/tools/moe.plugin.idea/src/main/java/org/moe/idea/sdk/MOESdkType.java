@@ -243,7 +243,7 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
             }
 
             for (File jdkPath : jdkPaths) {
-                if (JdkUtil.checkForJdk(jdkPath)) {
+                if (JdkUtil.checkForJdk(jdkPath.getAbsolutePath())) {
                     Sdk jdk = SdkConfigurationUtil.createAndAddSDK(jdkPath.getAbsolutePath(), JavaSdk.getInstance());
 
                     if(jdk != null) {
