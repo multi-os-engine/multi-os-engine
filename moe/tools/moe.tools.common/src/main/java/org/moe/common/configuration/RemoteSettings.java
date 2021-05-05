@@ -292,7 +292,7 @@ public class RemoteSettings {
                 + "   keychain.name: name of keychain to unlock, defaults to 'moeremotebuild.keychain'" + "\n"
                 + "   keychain.pass: password for keychain, defaults to ''" + "\n"
                 + "   keychain.locktimeout: keychain lock timeout in seconds, defaults to 3600" + "\n"
-                + "   gradle.repositories: repositories to be used when setting up the MOE SDK on the remote server, defaults to 'jcenter()'" + "\n"
+                + "   gradle.repositories: repositories to be used when setting up the MOE SDK on the remote server, defaults to 'mavenCentral()'" + "\n"
                 + "\n"
                 + "The identity and knownhosts keys accept special parameters to access" + "\n"
                 + "   environmental variables ($env$KEY), system properties ($sys$KEY)" + "\n"
