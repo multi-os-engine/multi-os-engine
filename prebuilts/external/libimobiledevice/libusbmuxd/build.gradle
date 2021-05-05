@@ -39,6 +39,7 @@ task prebuild_windows(type: Prebuild) {
     preBuildCopySpec project.copySpec {
         from('.') {
             include 'moe-prebuild-windows.sh'
+            include 'libusbmuxd-windows.patch'
         }
     }
 }

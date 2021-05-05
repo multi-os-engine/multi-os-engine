@@ -17,6 +17,8 @@ echo "MOE_PREBUILTS_TARGET_DIR=$MOE_PREBUILTS_TARGET_DIR"
 # Clean old build
 rm -rf "$MOE_PREBUILTS_DIR/$MOE_PREBUILTS_TARGET_DIR"
 
+git apply libimobiledevice-fix-ssl_read_with_timeout.patch
+
 __MOE_TARGET="$MOE_PREBUILTS_DIR/$MOE_PREBUILTS_TARGET_DIR"
 __MOE_PREBUILTS_DIR="$MOE_PREBUILTS_DIR/external/libimobiledevice/libplist/build/macos/lib/pkgconfig"
 __MOE_PREBUILTS_DIR="$__MOE_PREBUILTS_DIR:$MOE_PREBUILTS_DIR/external/libimobiledevice/libusbmuxd/build/macos/lib/pkgconfig"
@@ -25,7 +27,9 @@ __MOE_PREBUILTS_DIR="$__MOE_PREBUILTS_DIR:$MOE_PREBUILTS_DIR/external/libimobile
 ./autogen.sh \
 --prefix="$__MOE_TARGET" \
 --disable-shared \
-CFLAGS="-DMOE -I$MOE_PREBUILTS_DIR/external/libimobiledevice/openssl/build/macos/include" \
+CFLAGS="-DMOE"\
+" -I$MOE_PREBUILTS_DIR/external/libimobiledevice/openssl/build/macos/include"\
+" -I$MOE_PREBUILTS_DIR/external/libimobiledevice/libusbmuxd/build/macos/include" \
 --without-cython \
 PKG_CONFIG_LIBDIR="$__MOE_PREBUILTS_DIR"
 make

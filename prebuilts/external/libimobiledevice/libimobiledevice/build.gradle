@@ -26,6 +26,7 @@ task prebuild_macos_static(type: Prebuild) {
     preBuildCopySpec project.copySpec {
         from('.') {
             include 'moe-prebuild-macos.sh'
+            include 'libimobiledevice-fix-ssl_read_with_timeout.patch'
         }
     }
 }
@@ -35,9 +36,9 @@ prebuild_macos_static.dependsOn ':external/libimobiledevice/openssl:prebuild_mac
 task prebuild_macos(type: Script, dependsOn: prebuild_macos_static) {
     workDir 'macos'
     exec 'cc', '-dynamiclib', '-o', 'libimobiledevice.dylib',
-            '../../../libusbmuxd/build/macos/lib/libusbmuxd.a',
-            '../../../libplist/build/macos/lib/libplist.a',
-            '-force_load', 'lib/libimobiledevice.a',
+            '../../../libusbmuxd/build/macos/lib/libusbmuxd-2.0.a',
+            '../../../libplist/build/macos/lib/libplist-2.0.a',
+            '-force_load', 'lib/libimobiledevice-1.0.a',
             '../../../openssl/build/macos/lib/libcrypto.a',
             '../../../openssl/build/macos/lib/libssl.a',
             '-lz', '-liconv', '-llzma'
@@ -52,6 +53,7 @@ task prebuild_windows_static(type: Prebuild) {
     preBuildCopySpec project.copySpec {
         from('.') {
             include 'moe-prebuild-windows.sh'
+            include 'libimobiledevice-fix-ssl_read_with_timeout.patch'
         }
     }
 }
@@ -62,10 +64,10 @@ prebuild_windows_static.dependsOn ':external/libimobiledevice/openssl:prebuild_w
 task prebuild_windows(type: Script, dependsOn: prebuild_windows_static) {
     workDir 'windows/x86_64-w64-mingw32'
     exec rootProject.file('mingw/bin/x86_64-w64-mingw32-g++').absolutePath, '-shared', '-o', 'libimobiledevice.dll',
-            '-Wl,--whole-archive', 'lib/libimobiledevice.a',
+            '-Wl,--whole-archive', 'lib/libimobiledevice-1.0.a',
             '-Wl,--no-whole-archive',
-            '../../../../libusbmuxd/build/windows/x86_64-w64-mingw32/lib/libusbmuxd.a',
-            '../../../../libplist/build/windows/x86_64-w64-mingw32/lib/libplist.a',
+            '../../../../libusbmuxd/build/windows/x86_64-w64-mingw32/lib/libusbmuxd-2.0.a',
+            '../../../../libplist/build/windows/x86_64-w64-mingw32/lib/libplist-2.0.a',
             '../../../../openssl/build/windows/x86_64-w64-mingw32/lib/libssl.a',
             '../../../../openssl/build/windows/x86_64-w64-mingw32/lib/libcrypto.a',
             '-lole32', '-lws2_32', '-lgdi32'
