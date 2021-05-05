@@ -59,7 +59,6 @@ brew install autogen autoconf automake libtool pkg-config wget isl cloog cmake j
 
 cd <repo>/moe/moe-core
 brew install file://`pwd`/dependencies/premake5.rb
-brew install file://`pwd`/dependencies/isl@0.14.rb
 ```
 
 ### Building MinGW & LLVM
