@@ -235,7 +235,7 @@ public class Server {
                 "echo '        " + settings.getGradleRepositories() + "' >> build.gradle && " +
                 "echo '    }' >> build.gradle && " +
                 "echo '    dependencies {' >> build.gradle && " +
-                "echo '        classpath group: \"org.multi-os-engine.community\", name: \"moe-gradle\", version: \"" + sdk.pluginVersion + "\"' >> build.gradle && " +
+                "echo '        classpath group: \"org.multi-os-engine\", name: \"moe-gradle\", version: \"" + sdk.pluginVersion + "\"' >> build.gradle && " +
                 "echo '    }' >> build.gradle && " +
                 "echo '}' >> build.gradle && " +
                 "echo '' >> build.gradle && " +

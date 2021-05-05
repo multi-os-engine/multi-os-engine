@@ -96,7 +96,7 @@ bintray {
         name = 'moe-gradle'
         // userOrg = 'multi-os-engine'
         websiteUrl = 'https://discuss.multi-os-engine.org'
-        vcsUrl = 'https://github.com/multi-os-engine-community/moe-plugin-gradle'
+        vcsUrl = 'https://github.com/multi-os-engine/moe-plugin-gradle'
         licenses = ['Apache-2.0']
         labels = ['moe', 'multi-os-engine']
         publicDownloadNumbers = false
