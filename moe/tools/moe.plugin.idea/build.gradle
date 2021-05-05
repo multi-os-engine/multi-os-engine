@@ -35,7 +35,7 @@ def PLUGIN_NAME = 'moe_intellij_plugin'
 //}
 
 intellij {
-    version 'IC-2019.2.3'
+    version 'IC-2020.2.4'
     plugins = ['gradle', 'java']
     pluginName PLUGIN_NAME
     downloadSources false

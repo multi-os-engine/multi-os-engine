@@ -21,11 +21,12 @@ import com.intellij.ide.projectWizard.NewProjectWizard;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.roots.ui.configuration.ModulesProvider;
+import org.jetbrains.annotations.NotNull;
 
 public class MOENewProjectAction extends AnAction {
     @Override
-    public void actionPerformed(AnActionEvent anActionEvent) {
+    public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
         NewProjectWizard wizard = new NewProjectWizard(null, ModulesProvider.EMPTY_MODULES_PROVIDER, null);
-        NewProjectUtil.createNewProject(getEventProject(anActionEvent), wizard);
+        NewProjectUtil.createNewProject(wizard);
     }
 }
