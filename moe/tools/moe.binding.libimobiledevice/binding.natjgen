@@ -2,7 +2,7 @@
   "platform": "OS X",
   "architecture": "x86_64",
   "package-base": "org.undefined",
-  "base-sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk",
+  "base-sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
   "header-search-paths": [
     "${PROJECT}/src/main/headers",
     "${PROJECT}/../../../prebuilts/external/libimobiledevice/libimobiledevice/build/macos/include",

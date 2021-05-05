@@ -31,7 +31,6 @@ public final class lockdownd_error_t {
     @Generated public static final int LOCKDOWN_E_PAIRING_FAILED = 0xFFFFFFFC;
     @Generated public static final int LOCKDOWN_E_SSL_ERROR = 0xFFFFFFFB;
     @Generated public static final int LOCKDOWN_E_DICT_ERROR = 0xFFFFFFFA;
-    @Generated public static final int LOCKDOWN_E_NOT_ENOUGH_DATA = 0xFFFFFFF9;
     @Generated public static final int LOCKDOWN_E_MUX_ERROR = 0xFFFFFFF8;
     @Generated public static final int LOCKDOWN_E_PASSWORD_PROTECTED = 0xFFFFFFEF;
     @Generated public static final int LOCKDOWN_E_NO_RUNNING_SESSION = 0xFFFFFFF7;
@@ -69,4 +68,6 @@ public final class lockdownd_error_t {
     @Generated
     private lockdownd_error_t() {
     }
+
+    @Generated public static final int LOCKDOWN_E_RECEIVE_TIMEOUT = 0xFFFFFFF9;
 }

@@ -35,4 +35,6 @@ public final class property_list_service_error_t {
     @Generated
     private property_list_service_error_t() {
     }
+
+    @Generated public static final int PROPERTY_LIST_SERVICE_E_NOT_ENOUGH_DATA = 0xFFFFFFFA;
 }

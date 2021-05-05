@@ -35,6 +35,7 @@
 #include <libimobiledevice/mobilebackup2.h>
 #include <libimobiledevice/mobilesync.h>
 #include <libimobiledevice/notification_proxy.h>
+#include <libimobiledevice/preboard.h>
 #include <libimobiledevice/property_list_service.h>
 #include <libimobiledevice/restore.h>
 #include <libimobiledevice/sbservices.h>

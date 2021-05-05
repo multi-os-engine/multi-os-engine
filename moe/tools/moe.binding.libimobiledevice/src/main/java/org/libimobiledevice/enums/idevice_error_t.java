@@ -29,10 +29,11 @@ public final class idevice_error_t {
     @Generated public static final int IDEVICE_E_UNKNOWN_ERROR = 0xFFFFFFFE;
     @Generated public static final int IDEVICE_E_NO_DEVICE = 0xFFFFFFFD;
     @Generated public static final int IDEVICE_E_NOT_ENOUGH_DATA = 0xFFFFFFFC;
-    @Generated public static final int IDEVICE_E_BAD_HEADER = 0xFFFFFFFB;
     @Generated public static final int IDEVICE_E_SSL_ERROR = 0xFFFFFFFA;
 
     @Generated
     private idevice_error_t() {
     }
+
+    @Generated public static final int IDEVICE_E_TIMEOUT = 0xFFFFFFF9;
 }

@@ -28,11 +28,14 @@ public final class mobilebackup_error_t {
     @Generated public static final int MOBILEBACKUP_E_INVALID_ARG = 0xFFFFFFFF;
     @Generated public static final int MOBILEBACKUP_E_PLIST_ERROR = 0xFFFFFFFE;
     @Generated public static final int MOBILEBACKUP_E_MUX_ERROR = 0xFFFFFFFD;
-    @Generated public static final int MOBILEBACKUP_E_BAD_VERSION = 0xFFFFFFFC;
-    @Generated public static final int MOBILEBACKUP_E_REPLY_NOT_OK = 0xFFFFFFFB;
+    @Generated public static final int MOBILEBACKUP_E_BAD_VERSION = 0xFFFFFFFA;
+    @Generated public static final int MOBILEBACKUP_E_REPLY_NOT_OK = 0xFFFFFFF9;
     @Generated public static final int MOBILEBACKUP_E_UNKNOWN_ERROR = 0xFFFFFF00;
 
     @Generated
     private mobilebackup_error_t() {
     }
+
+    @Generated public static final int MOBILEBACKUP_E_SSL_ERROR = 0xFFFFFFFC;
+    @Generated public static final int MOBILEBACKUP_E_RECEIVE_TIMEOUT = 0xFFFFFFFB;
 }

@@ -34,4 +34,7 @@ public final class service_error_t {
     @Generated
     private service_error_t() {
     }
+
+    @Generated public static final int SERVICE_E_NOT_ENOUGH_DATA = 0xFFFFFFFA;
+    @Generated public static final int SERVICE_E_TIMEOUT = 0xFFFFFFF9;
 }

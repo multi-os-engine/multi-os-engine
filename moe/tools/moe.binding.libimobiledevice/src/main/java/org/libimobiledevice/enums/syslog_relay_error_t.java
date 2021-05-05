@@ -33,4 +33,7 @@ public final class syslog_relay_error_t {
     @Generated
     private syslog_relay_error_t() {
     }
+
+    @Generated public static final int SYSLOG_RELAY_E_NOT_ENOUGH_DATA = 0xFFFFFFFC;
+    @Generated public static final int SYSLOG_RELAY_E_TIMEOUT = 0xFFFFFFFB;
 }

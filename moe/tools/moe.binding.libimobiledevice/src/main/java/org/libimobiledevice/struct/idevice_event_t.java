@@ -51,13 +51,11 @@ public final class idevice_event_t extends StructObject {
     @Generated
     public idevice_event_t(int event,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String udid,
-            int conn_type,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String conn_subtype) {
+            int conn_type) {
         super(idevice_event_t.class);
         setEvent(event);
         setUdid(udid);
         setConn_type(conn_type);
-        setConn_subtype(conn_subtype);
     }
 
     @Generated
@@ -85,14 +83,4 @@ public final class idevice_event_t extends StructObject {
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setConn_type(int value);
-
-    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    @Generated
-    @StructureField(order = 3, isGetter = true)
-    public native String conn_subtype();
-
-    @Generated
-    @StructureField(order = 3, isGetter = false)
-    public native void setConn_subtype(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
 }
