@@ -20,7 +20,7 @@ buildscript {
     }
 }
 
-group 'org.multi-os-engine.community'
+group 'org.multi-os-engine'
 version '1.7.2'
 
 apply plugin: 'base'
@@ -313,7 +313,7 @@ uploadArchives {
                 url 'https://discuss.multi-os-engine.org'
 
                 scm {
-                    url 'https://github.com/multi-os-engine-community/multi-os-engine'
+                    url 'https://github.com/multi-os-engine/multi-os-engine'
                 }
 
                 licenses {
