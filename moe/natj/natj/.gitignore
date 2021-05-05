@@ -9,3 +9,4 @@ local.properties
 .project
 .classpath
 .settings
+bin/

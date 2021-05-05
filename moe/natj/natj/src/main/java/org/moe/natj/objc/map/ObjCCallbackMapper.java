@@ -20,7 +20,6 @@ import org.moe.natj.general.Mapper;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Runtime;
-import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.WeakReference;
 import org.moe.natj.objc.ann.ObjCBlock;
@@ -126,30 +125,79 @@ public class ObjCCallbackMapper implements Mapper {
 
     /**
      * Base for invocation handlers.
+     *
+     * Handling of hashCode(), equals() and toString() use the sample code from
+     * https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/proxy.html
      */
     private abstract static class BlockInvocationHandler implements InvocationHandler {
+        // preloaded Method objects for the methods in java.lang.Object
+        private static Method hashCodeMethod;
+        private static Method equalsMethod;
+        private static Method toStringMethod;
+        static {
+            try {
+                hashCodeMethod = Object.class.getMethod("hashCode", null);
+                equalsMethod = Object.class.getMethod("equals", new Class[] { Object.class });
+                toStringMethod = Object.class.getMethod("toString", null);
+            } catch (NoSuchMethodException e) {
+                throw new NoSuchMethodError(e.getMessage());
+            }
+        }
+
+        private final String name;
         public Pointer peer;
         public long data;
 
-        protected BlockInvocationHandler(Pointer peer, long data) {
+        protected BlockInvocationHandler(String name, Pointer peer, long data) {
+            this.name = name;
             this.peer = peer;
             this.data = data;
         }
 
         @Override
-        public abstract Object invoke(Object proxy, Method method, Object[] args);
+        public Object invoke(Object proxy, Method method, Object[] args) {
+            Class declaringClass = method.getDeclaringClass();
+
+            if (declaringClass == Object.class) {
+                if (method.equals(hashCodeMethod)) {
+                    return proxyHashCode(proxy);
+                } else if (method.equals(equalsMethod)) {
+                    return proxyEquals(proxy, args[0]);
+                } else if (method.equals(toStringMethod)) {
+                    return proxyToString(proxy);
+                } else {
+                    throw new InternalError("unexpected Object method dispatched: " + method);
+                }
+            } else {
+                return invoke0(proxy, method, args);
+            }
+        }
+
+        protected Integer proxyHashCode(Object proxy) {
+            return new Integer(System.identityHashCode(proxy));
+        }
+
+        protected Boolean proxyEquals(Object proxy, Object other) {
+            return (proxy == other ? Boolean.TRUE : Boolean.FALSE);
+        }
+
+        protected String proxyToString(Object proxy) {
+            return name + '@' + Integer.toHexString(proxy.hashCode());
+        }
+
+        protected abstract Object invoke0(Object proxy, Method method, Object[] args);
     }
 
     /**
      * Invocation handler for native blocks with boolean return value.
      */
     private static class BooleanInvocationHandler extends BlockInvocationHandler {
-        public BooleanInvocationHandler(Pointer peer, long data) {
-            super(peer, data);
+        public BooleanInvocationHandler(String name, Pointer peer, long data) {
+            super(name, peer, data);
         }
 
         @Override
-        public Object invoke(Object proxy, Method method, Object[] args) {
+        public Object invoke0(Object proxy, Method method, Object[] args) {
             return new Boolean(ObjCRuntime.forwardBooleanBlockCall(peer.getPeer(), data, args));
         }
     }
@@ -158,12 +206,12 @@ public class ObjCCallbackMapper implements Mapper {
      * Invocation handler for native blocks with byte return value.
      */
     private static class ByteInvocationHandler extends BlockInvocationHandler {
-        public ByteInvocationHandler(Pointer peer, long data) {
-            super(peer, data);
+        public ByteInvocationHandler(String name, Pointer peer, long data) {
+            super(name, peer, data);
         }
 
         @Override
-        public Object invoke(Object proxy, Method method, Object[] args) {
+        public Object invoke0(Object proxy, Method method, Object[] args) {
             return new Byte(ObjCRuntime.forwardByteBlockCall(peer.getPeer(), data, args));
         }
     }
@@ -172,12 +220,12 @@ public class ObjCCallbackMapper implements Mapper {
      * Invocation handler for native blocks with char return value.
      */
     private static class CharacterInvocationHandler extends BlockInvocationHandler {
-        public CharacterInvocationHandler(Pointer peer, long data) {
-            super(peer, data);
+        public CharacterInvocationHandler(String name, Pointer peer, long data) {
+            super(name, peer, data);
         }
 
         @Override
-        public Object invoke(Object proxy, Method method, Object[] args) {
+        public Object invoke0(Object proxy, Method method, Object[] args) {
             return new Character(ObjCRuntime.forwardCharBlockCall(peer.getPeer(), data, args));
         }
     }
@@ -186,12 +234,12 @@ public class ObjCCallbackMapper implements Mapper {
      * Invocation handler for native blocks with short return value.
      */
     private static class ShortInvocationHandler extends BlockInvocationHandler {
-        public ShortInvocationHandler(Pointer peer, long data) {
-            super(peer, data);
+        public ShortInvocationHandler(String name, Pointer peer, long data) {
+            super(name, peer, data);
         }
 
         @Override
-        public Object invoke(Object proxy, Method method, Object[] args) {
+        public Object invoke0(Object proxy, Method method, Object[] args) {
             return new Short(ObjCRuntime.forwardShortBlockCall(peer.getPeer(), data, args));
         }
     }
@@ -200,12 +248,12 @@ public class ObjCCallbackMapper implements Mapper {
      * Invocation handler for native blocks with int return value.
      */
     private static class IntegerInvocationHandler extends BlockInvocationHandler {
-        public IntegerInvocationHandler(Pointer peer, long data) {
-            super(peer, data);
+        public IntegerInvocationHandler(String name, Pointer peer, long data) {
+            super(name, peer, data);
         }
 
         @Override
-        public Object invoke(Object proxy, Method method, Object[] args) {
+        public Object invoke0(Object proxy, Method method, Object[] args) {
             return new Integer(ObjCRuntime.forwardIntBlockCall(peer.getPeer(), data, args));
         }
     }
@@ -214,12 +262,12 @@ public class ObjCCallbackMapper implements Mapper {
      * Invocation handler for native blocks with long return value.
      */
     private static class LongInvocationHandler extends BlockInvocationHandler {
-        public LongInvocationHandler(Pointer peer, long data) {
-            super(peer, data);
+        public LongInvocationHandler(String name, Pointer peer, long data) {
+            super(name, peer, data);
         }
 
         @Override
-        public Object invoke(Object proxy, Method method, Object[] args) {
+        public Object invoke0(Object proxy, Method method, Object[] args) {
             return new Long(ObjCRuntime.forwardLongBlockCall(peer.getPeer(), data, args));
         }
     }
@@ -228,12 +276,12 @@ public class ObjCCallbackMapper implements Mapper {
      * Invocation handler for native blocks with float return value.
      */
     private static class FloatInvocationHandler extends BlockInvocationHandler {
-        public FloatInvocationHandler(Pointer peer, long data) {
-            super(peer, data);
+        public FloatInvocationHandler(String name, Pointer peer, long data) {
+            super(name, peer, data);
         }
 
         @Override
-        public Object invoke(Object proxy, Method method, Object[] args) {
+        public Object invoke0(Object proxy, Method method, Object[] args) {
             return new Float(ObjCRuntime.forwardFloatBlockCall(peer.getPeer(), data, args));
         }
     }
@@ -242,12 +290,12 @@ public class ObjCCallbackMapper implements Mapper {
      * Invocation handler for native blocks with double return value.
      */
     private static class DoubleInvocationHandler extends BlockInvocationHandler {
-        public DoubleInvocationHandler(Pointer peer, long data) {
-            super(peer, data);
+        public DoubleInvocationHandler(String name, Pointer peer, long data) {
+            super(name, peer, data);
         }
 
         @Override
-        public Object invoke(Object proxy, Method method, Object[] args) {
+        public Object invoke0(Object proxy, Method method, Object[] args) {
             return new Double(ObjCRuntime.forwardDoubleBlockCall(peer.getPeer(), data, args));
         }
     }
@@ -256,12 +304,12 @@ public class ObjCCallbackMapper implements Mapper {
      * Invocation handler for native blocks with boolean return value.
      */
     private static class VoidInvocationHandler extends BlockInvocationHandler {
-        public VoidInvocationHandler(Pointer peer, long data) {
-            super(peer, data);
+        public VoidInvocationHandler(String name, Pointer peer, long data) {
+            super(name, peer, data);
         }
 
         @Override
-        public Object invoke(Object proxy, Method method, Object[] args) {
+        public Object invoke0(Object proxy, Method method, Object[] args) {
             ObjCRuntime.forwardVoidBlockCall(peer.getPeer(), data, args);
             return null;
         }
@@ -271,12 +319,12 @@ public class ObjCCallbackMapper implements Mapper {
      * Invocation handler for native blocks with boolean return value.
      */
     private static class ObjectInvocationHandler extends BlockInvocationHandler {
-        public ObjectInvocationHandler(Pointer peer, long data) {
-            super(peer, data);
+        public ObjectInvocationHandler(String name, Pointer peer, long data) {
+            super(name, peer, data);
         }
 
         @Override
-        public Object invoke(Object proxy, Method method, Object[] args) {
+        public Object invoke0(Object proxy, Method method, Object[] args) {
             return ObjCRuntime.forwardObjectBlockCall(peer.getPeer(), data, args);
         }
     }
@@ -571,7 +619,7 @@ public class ObjCCallbackMapper implements Mapper {
                                 }
                                 try {
                                     blockInfo.handlerConstructor = handler.getConstructor(
-                                            Pointer.class, Long.TYPE);
+                                            String.class, Pointer.class, Long.TYPE);
                                     blockInfo.proxyConstructor = Proxy.getProxyClass(
                                             info.type.getClassLoader(), new Class[] {
                                                 info.type
@@ -592,7 +640,7 @@ public class ObjCCallbackMapper implements Mapper {
                 }
                 try {
                     instance = blockInfo.proxyConstructor.newInstance(blockInfo.handlerConstructor
-                            .newInstance(pointer, blockInfo.data));
+                            .newInstance(info.type.getName(), pointer, blockInfo.data));
                 } catch (Exception e) {
                     throw new RuntimeException("Java object construction error!", e);
                 }

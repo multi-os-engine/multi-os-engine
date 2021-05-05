@@ -30,9 +30,12 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
@@ -917,6 +920,71 @@ public class NatJ {
 
         /** Specifies which mapper to use. */
         public Mapper mapper;
+    }
+
+    public static Annotation[][] getParameterAnnotationsInherited(Method method) {
+        Class<?>[] parameterTypes = method.getParameterTypes();
+        if (parameterTypes.length == 0) {
+            return new Annotation[0][];
+        }
+
+        List<List<Annotation>> results = new ArrayList<>(parameterTypes.length);
+        for (int i = 0; i < parameterTypes.length; i++) {
+            results.add(new ArrayList<Annotation>());
+        }
+
+        ArrayList<Class<?>> supers = new ArrayList<>();
+        // First get annotations from interfaces
+        Class<?> methodDeclaredKlass = method.getDeclaringClass();
+        Class<?>[] interfaces = methodDeclaredKlass.getInterfaces();
+        supers.addAll(Arrays.asList(interfaces));
+        // Then super class
+        Class<?> superClass = methodDeclaredKlass.getSuperclass();
+        if (superClass != null) {
+            supers.add(superClass);
+        }
+
+        for (Class<?> c : supers) {
+            // Find method
+            try {
+                for (Method sm : c.getDeclaredMethods()) {
+                    int modifiers = sm.getModifiers();
+                    if (Modifier.isStatic(modifiers)
+                            || Modifier.isPrivate(modifiers)
+                            || Modifier.isFinal(modifiers)) {
+                        continue;
+                    }
+
+                    if (method.getName().equals(sm.getName()) && Arrays.equals(parameterTypes, sm.getParameterTypes())) {
+                        int idx = 0;
+                        for (Annotation[] annotations : sm.getParameterAnnotations()) {
+                            results.get(idx).addAll(Arrays.asList(annotations));
+                            idx++;
+                        }
+                        break;
+                    }
+                }
+            } catch (Throwable e) {
+                // Do nothing
+            }
+        }
+
+        // Finally add annotations from current method
+        int idx = 0;
+        for (Annotation[] annotations : method.getParameterAnnotations()) {
+            results.get(idx).addAll(Arrays.asList(annotations));
+            idx++;
+        }
+
+        // Convert list to array
+        Annotation[][] resultArray = new Annotation[parameterTypes.length][];
+        for (int i = 0; i < parameterTypes.length; i++) {
+            List<Annotation> al = results.get(i);
+            Annotation[] aa = new Annotation[al.size()];
+            aa = al.toArray(aa);
+            resultArray[i] = aa;
+        }
+        return resultArray;
     }
 
     /**

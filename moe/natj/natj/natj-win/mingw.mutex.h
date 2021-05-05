@@ -191,7 +191,7 @@ protected:
 public:
     using base::base;
     template <class Rep, class Period>
-    void try_lock_for(const std::chrono::duration<Rep,Period>& dur)
+    bool try_lock_for(const std::chrono::duration<Rep,Period>& dur)
     {
         bool ret = base::try_lock_for(dur);
 #ifdef STDTHREAD_STRICT_NONRECURSIVE_LOCKS
