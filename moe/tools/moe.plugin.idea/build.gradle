@@ -14,23 +14,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-buildscript {
-    repositories {
-        maven {
-            url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
-        }
-    }
-}
-
 plugins {
-    id "org.jetbrains.intellij" version "0.4.9"
+    id "org.jetbrains.intellij" version "0.7.3"
 }
 
 apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
 group 'org.multi-os-engine'
-version '1.5.0'
+version '1.4.10'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -43,24 +35,17 @@ def PLUGIN_NAME = 'moe_intellij_plugin'
 //}
 
 intellij {
-    version 'IC-2019.2.3'
+    version 'IC-2020.2.4'
     plugins = ['gradle', 'java']
     pluginName PLUGIN_NAME
     downloadSources false
     updateSinceUntilBuild false
-
-    publish {
-        if (project.hasProperty('intellij.user')) {
-            username = property('intellij.user')
-        }
-        if (project.hasProperty('intellij.password')) {
-            password = property('intellij.password')
-        }
-    }
 }
 
-runIde {
-    jbrVersion '8u222b1626.3'
+publishPlugin {
+    if (project.hasProperty('intellij.publishToken')) {
+        token = project.property('intellij.publishToken')
+    }
 }
 
 dependencies {

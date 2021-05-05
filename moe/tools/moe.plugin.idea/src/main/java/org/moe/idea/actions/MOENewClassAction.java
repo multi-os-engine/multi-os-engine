@@ -24,11 +24,12 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ContentEntry;
-import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.ModuleRootModel;
 import com.intellij.openapi.roots.SourceFolder;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.vfs.VirtualFile;
+
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.utils.logger.LoggerFactory;
 import org.moe.template.MOEClassTemplate;
@@ -87,7 +88,7 @@ public class MOENewClassAction extends AnAction {
 
     private boolean isSourceFolder(Module module, VirtualFile file) {
         if (file != null && module != null) {
-            ModifiableRootModel rootModel = ModuleRootManager.getInstance(module).getModifiableModel();
+            ModuleRootModel rootModel = ModuleRootManager.getInstance(module);
             for (ContentEntry entry : rootModel.getContentEntries()) {
                 for (SourceFolder srcFolder : entry.getSourceFolders()) {
                     String candidate = file.getPath();

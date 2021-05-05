@@ -21,8 +21,9 @@ import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ui.ConsoleView;
 import com.intellij.execution.ui.ConsoleViewContentType;
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.AbstractProjectComponent;
+import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.util.Disposer;
@@ -33,26 +34,29 @@ import com.intellij.pom.Navigatable;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactory;
 import com.intellij.util.ui.UIUtil;
+
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JPanel;
+
 import res.MOEIcons;
 import res.MOEText;
 
-import javax.swing.*;
-
-public class MOEToolWindow extends AbstractProjectComponent {
+public class MOEToolWindow implements Disposable {
     public static final String TOOL_WINDOW_ID = MOEText.get("Console.Title");
 
+    protected final Project myProject;
     private JPanel mainPanel;
     private ConsoleViewImpl consoleViewImpl;
 
     private ToolWindow window;
 
     public MOEToolWindow(final Project project) {
-        super(project);
+        this.myProject = project;
     }
 
     public static MOEToolWindow getInstance(@NotNull Project project) {
-        return project.getComponent(MOEToolWindow.class);
+        return ServiceManager.getService(project, MOEToolWindow.class);
     }
 
     public void initToolWindow(final ToolWindow window) {
@@ -141,16 +145,6 @@ public class MOEToolWindow extends AbstractProjectComponent {
      */
     public void attachConsoleViewToProcess(ProcessHandler processHandler) {
         consoleViewImpl.attachToProcess(processHandler);
-    }
-
-    @Override
-    public void disposeComponent() {
-        // HACK: avoiding a NPE that we have no idea where it comes from. refs #1021
-        if (consoleViewImpl != null) {
-            consoleViewImpl.dispose();
-            Disposer.dispose(consoleViewImpl);
-            consoleViewImpl = null;
-        }
     }
 
     public void balloon(final MessageType messageType, String format, Object... args) {
@@ -251,5 +245,15 @@ public class MOEToolWindow extends AbstractProjectComponent {
                 return false;
             }
         };
+    }
+
+    @Override
+    public void dispose() {
+        // HACK: avoiding a NPE that we have no idea where it comes from. refs #1021
+        if (consoleViewImpl != null) {
+            consoleViewImpl.dispose();
+            Disposer.dispose(consoleViewImpl);
+            consoleViewImpl = null;
+        }
     }
 }

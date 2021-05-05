@@ -26,6 +26,7 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.moe.common.utils.ProjectUtil;
 import org.moe.idea.MOESdkPlugin;
@@ -56,8 +57,8 @@ public class MOEOpenXcodeEditorAction extends AnAction {
             }
             Project project = getEventProject(anActionEvent);
             if (project != null) {
-                VirtualFile virtualFile = project.getBaseDir().getFileSystem().findFileByPath(file.getAbsolutePath());
-                if (virtualFile.exists()) {
+                VirtualFile virtualFile = LocalFileSystem.getInstance().findFileByIoFile(file);
+                if (virtualFile != null && virtualFile.exists()) {
                     FileEditorManager.getInstance(project).openFile(virtualFile, true);
                 }
             }

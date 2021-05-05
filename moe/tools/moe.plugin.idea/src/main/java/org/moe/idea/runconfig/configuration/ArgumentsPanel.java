@@ -23,13 +23,17 @@ import com.intellij.openapi.ui.VerticalFlowLayout;
 import com.intellij.ui.PanelWithAnchor;
 import com.intellij.ui.RawCommandLineEditor;
 import com.intellij.util.execution.ParametersListUtil;
+
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import javax.swing.JComponent;
+import javax.swing.JPanel;
 
 public class ArgumentsPanel extends JPanel implements PanelWithAnchor {
     private LabeledComponent<RawCommandLineEditor> myProgramParametersComponent;
@@ -96,7 +100,6 @@ public class ArgumentsPanel extends JPanel implements PanelWithAnchor {
 
     protected void copyDialogCaption(LabeledComponent<RawCommandLineEditor> component) {
         RawCommandLineEditor rawCommandLineEditor = (RawCommandLineEditor)component.getComponent();
-        rawCommandLineEditor.setDialogCaption(component.getRawText());
         component.getLabel().setLabelFor(rawCommandLineEditor.getTextField());
     }
 

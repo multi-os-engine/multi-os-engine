@@ -69,7 +69,7 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
             throws Exception {
         RunManager runManager = RunManager.getInstance(project);
 
-        RunnerAndConfigurationSettings settings = runManager.createRunConfiguration(module.getName(),
+        RunnerAndConfigurationSettings settings = runManager.createConfiguration(module.getName(),
                 MOERunConfigurationType.getInstance().getConfigurationFactories()[0]);
 
         MOERunConfiguration configuration = (MOERunConfiguration)settings.getConfiguration();

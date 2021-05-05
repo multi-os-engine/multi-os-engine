@@ -91,21 +91,21 @@
           <component id="14ce" class="javax.swing.JButton" binding="upButton" default-binding="true">
             <constraints/>
             <properties>
-              <icon value="actions/up.png"/>
+              <icon value="actions/moveUp.png"/>
               <toolTipText value="Move Up"/>
             </properties>
           </component>
           <component id="6632e" class="javax.swing.JButton" binding="downButton" default-binding="true">
             <constraints/>
             <properties>
-              <icon value="actions/down.png"/>
+              <icon value="actions/moveDown.png"/>
               <toolTipText value="Move Down"/>
             </properties>
           </component>
           <component id="c6a16" class="javax.swing.JButton" binding="actionsButton">
             <constraints/>
             <properties>
-              <icon value="general/gear.png"/>
+              <icon value="general/gearPlain.png"/>
               <text value=""/>
               <toolTipText value="Actions"/>
             </properties>

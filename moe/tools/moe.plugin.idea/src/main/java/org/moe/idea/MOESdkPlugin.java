@@ -20,11 +20,6 @@ import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.externalSystem.model.ProjectSystemId;
-import com.intellij.openapi.externalSystem.model.execution.ExternalTaskPojo;
-import com.intellij.openapi.externalSystem.model.project.ExternalProjectPojo;
-import com.intellij.openapi.externalSystem.model.task.TaskData;
-import com.intellij.openapi.externalSystem.util.ExternalSystemApiUtil;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleUtil;
@@ -32,26 +27,21 @@ import com.intellij.openapi.module.impl.scopes.ModuleWithDependenciesScope;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.jetbrains.plugins.gradle.service.project.GradleProjectResolverUtil;
-import org.jetbrains.plugins.gradle.settings.GradleLocalSettings;
-import org.jetbrains.plugins.gradle.util.GradleConstants;
+
+import org.jetbrains.plugins.gradle.settings.GradleExtensionsSettings;
 import org.moe.common.utils.ProjectUtil;
 import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
-import res.MOEIcons;
-import res.MOEText;
 
 import java.io.File;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Properties;
+
+import res.MOEIcons;
+import res.MOEText;
 
 public class MOESdkPlugin {
 
@@ -159,103 +149,16 @@ public class MOESdkPlugin {
         }
 
         final Project project = module.getProject();
-        final String path = ModuleUtils.getModulePath(module);
-        final GradleLocalSettings localSettings = GradleLocalSettings.getInstance(project);
-
-        // Get available projects
-        Collection<ExternalProjectPojo> availableProjects = null;
-        for (Entry<ExternalProjectPojo, Collection<ExternalProjectPojo>> entry : localSettings.getAvailableProjects()
-                .entrySet()) {
-            if (entry.getKey().getPath().equals(project.getBasePath())) {
-                availableProjects = entry.getValue();
-                break;
-            }
-        }
-        if (availableProjects == null) {
-            LOG.info("Not found available projects: " + moduleName);
+        final GradleExtensionsSettings.Settings extensionSettings = GradleExtensionsSettings.getInstance(project);
+        final GradleExtensionsSettings.GradleExtensionsData moduleExtensionData = extensionSettings.getExtensionsFor(module);
+        if (moduleExtensionData == null) {
+            LOG.info("Gradle extension data not found for module: " + module.getName());
             return false;
-        }
-
-        // Match IDEA module to Gradle project/subproject
-        String moduleId = ModuleUtils.getModuleId(module);
-        String sourceSet = GradleProjectResolverUtil.getSourceSetName(module);
-        if (sourceSet == null) {
-            sourceSet = "";
-        } else {
-            sourceSet = ":" + sourceSet;
-        }
-        for (ExternalProjectPojo availableProject : availableProjects) {
-            if (availableProject.getPath().equals(path)) {
-                boolean matchById = (availableProject.getName() + sourceSet).equals(moduleId);
-                boolean matchByExplicitModuleName = availableProject.getName().equals(moduleName)
-                        || availableProject.getName().endsWith(":" + moduleName);
-
-                if (!matchById && !matchByExplicitModuleName) {
-                    LOG.info("Could not associate IDEA module with Gradle project: " + moduleName);
-                    return false;
-                }
-                break;
-            }
         }
 
         // Check for moeLaunch task
-        if (checkTaskFix(project, path, taskName)) {
-            return true;
-        }
-
-        // Backward compatibility for pre IDEA 2018.3
-        Map<String, Collection<ExternalTaskPojo>> tasks = localSettings.getAvailableTasks();
-        Collection<ExternalTaskPojo> taskPojos = tasks.get(path);
-        if (taskPojos == null) {
-            LOG.info("Not found gradle task pojos: " + moduleName);
-            return false;
-        }
-        for (ExternalTaskPojo taskPojo : taskPojos) {
-            if (taskName.equals(taskPojo.getName())) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Workaround of IDEA-204092.
-     */
-    @SuppressWarnings("unchecked")
-    private static boolean checkTaskFix(Project project, String path, String taskName) {
-        Method m;
-        try {
-            m = ExternalSystemApiUtil.class.getMethod("findProjectTasks", Project.class, ProjectSystemId.class, String.class);
-        } catch (NoSuchMethodException e) {
-            // We are running on IDEA < 2018.3
-            return false;
-        }
-
-        try {
-            ExternalSystemApiUtil ins = null;
-            if (!Modifier.isStatic(m.getModifiers())) {
-                // IDEA-204092 hack
-                Constructor<ExternalSystemApiUtil> c = ExternalSystemApiUtil.class.getDeclaredConstructor();
-                c.setAccessible(true);
-                ins = c.newInstance();
-            }
-            Collection<TaskData> tasks = (Collection<TaskData>) m.invoke(ins, project, GradleConstants.SYSTEM_ID, path);
-
-            if (tasks != null) {
-                for (TaskData t : tasks) {
-                    if (taskName.equals(t.getName())) {
-                        return true;
-                    }
-                }
-            } else {
-                LOG.info("Not found gradle task path: " + path);
-            }
-        } catch (Throwable e) {
-            e.printStackTrace();
-        }
-
-        return false;
+        GradleExtensionsSettings.GradleTask t = moduleExtensionData.tasksMap.get(taskName);
+        return t != null;
     }
 
     public static boolean isMoeJarsInModule(Module module) {
@@ -286,11 +189,11 @@ public class MOESdkPlugin {
 
     public static Module findModuleForFile(Project project, VirtualFile file) {
 
-        if (project == null || project.getBaseDir() == null) {
+        if (project == null || project.getBasePath() == null) {
             return null;
         }
 
-        String projectPath = project.getBaseDir().getPath();
+        String projectPath = project.getBasePath();
 
         Module module = null;
 

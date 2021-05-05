@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>org.moe.community</id>
   <name>Multi-OS Engine Community Edition</name>
-  <version>1.4.6</version>
+  <version>1.4.8</version>
 
   <vendor url="https://discuss.multi-os-engine.org/">Multi-OS Engine Community</vendor>
 
@@ -10,6 +10,17 @@
     ]]></description>
 
   <change-notes><![CDATA[
+      1.4.10<br>
+      - Fix context menu on AS 4.2/Intellij 2020.2+<br>
+      <br>
+      1.4.9<br>
+      - Fix binding editor on AS 4.1/Intellij 2020.1+<br>
+      <br>
+      1.4.8<br>
+      - Fix "Wrapper not found" issue after creating new MOE module<br>
+      - Update MOE plugin to 1.7.+<br>
+      - Other bug fixes and improvements<br>
+      <br>
       1.4.7<br>
       - Support Gradle group modules using qualified names<br>
       - Support storing generated project files externally<br>
@@ -26,7 +37,7 @@
     ]]></change-notes>
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-  <idea-version since-build="181"/>
+  <idea-version since-build="201"/>
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
        on how to target different products -->
@@ -46,7 +57,7 @@
       <projectTemplatesFactory implementation="org.moe.idea.builder.MOEProjectTemplatesFactory"/>
 
       <moduleConfigurable instance="org.moe.idea.configurable.MOEModuleConfigurable"/>
-      <postStartupActivity implementation="org.moe.idea.Startup"></postStartupActivity>
+      <postStartupActivity implementation="org.moe.idea.Startup"/>
 
       <applicationService
               serviceInterface="org.moe.idea.MOEGlobalSettings"
@@ -64,17 +75,8 @@
 
       <stepsBeforeRunProvider implementation="org.moe.idea.runconfig.beforeRunTasks.MOEGradleTaskProvider" />
 
+      <projectService serviceImplementation="org.moe.idea.ui.MOEToolWindow" />
   </extensions>
-
-    <project-components>
-        <component>
-            <implementation-class>org.moe.idea.ui.MOEToolWindow</implementation-class>
-        </component>
-
-        <component>
-            <implementation-class>org.moe.idea.component.MOEProjectComponent</implementation-class>
-        </component>
-    </project-components>
 
   <actions>
 

@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.idea.builder;
 
+import com.google.common.io.FileWriteMode;
 import com.google.common.io.Files;
 import com.intellij.codeInsight.actions.ReformatCodeProcessor;
 import com.intellij.execution.RunManager;
@@ -26,7 +27,6 @@ import com.intellij.ide.util.projectWizard.SettingsStep;
 import com.intellij.ide.util.projectWizard.WizardContext;
 import com.intellij.openapi.externalSystem.importing.ImportSpecBuilder;
 import com.intellij.openapi.externalSystem.model.ExternalSystemDataKeys;
-import com.intellij.openapi.externalSystem.settings.AbstractExternalSystemSettings;
 import com.intellij.openapi.externalSystem.util.ExternalSystemApiUtil;
 import com.intellij.openapi.externalSystem.util.ExternalSystemUtil;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
@@ -47,6 +47,7 @@ import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
+
 import org.apache.commons.codec.Charsets;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -55,6 +56,7 @@ import org.jetbrains.jps.model.java.JavaResourceRootType;
 import org.jetbrains.jps.model.java.JavaSourceRootProperties;
 import org.jetbrains.plugins.gradle.settings.DistributionType;
 import org.jetbrains.plugins.gradle.settings.GradleProjectSettings;
+import org.jetbrains.plugins.gradle.settings.GradleSettings;
 import org.jetbrains.plugins.gradle.util.GradleConstants;
 import org.moe.generator.project.MOEProjectComposer;
 import org.moe.idea.MOESdkPlugin;
@@ -66,6 +68,7 @@ import org.moe.idea.wizards.project.MOEWizardPageOne;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MOEModuleBuilder extends JavaModuleBuilder {
@@ -174,12 +177,6 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
             }
         }
 
-        try {
-            configureGradle(rootModel);
-        } catch (IOException e) {
-            MOEToolWindow.getInstance(project).error("Error occurred during gradle configuration: " + e.getMessage());
-        }
-
         if (!isNewProject) {
             File settingsGradle = new File(projectPath, "settings.gradle");
 
@@ -194,7 +191,18 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
             } catch (IOException e) {
                 MOEToolWindow.getInstance(project).error("Error occurred during gradle configuration: " + e.getMessage());
             }
+        } else {
+            try {
+                configureGradle(rootModel);
+            } catch (IOException e) {
+                MOEToolWindow.getInstance(project).error("Error occurred during gradle configuration: " + e.getMessage());
+            }
         }
+
+        // Refresh the gradle import
+        ImportSpecBuilder builder = new ImportSpecBuilder(rootModel.getProject(), GradleConstants.SYSTEM_ID);
+        builder.forceWhenUptodate(true);
+        ExternalSystemUtil.refreshProjects(builder);
 
         if (contentRoot != null) {
             contentRoot.refresh(false, true);
@@ -257,7 +265,7 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
         String packageName = moduleProperties.getPackageName();
 
         projectComposer.setTargetDirectory(new File(moduleProperties.getProjectRoot()))
-        .setMoeVersion("1.4.+")
+        .setMoeVersion("1.7.+")
         .setProjectName(moduleProperties.getProjectName())
         .setOrganizationName(moduleProperties.getOrganizationName())
         .setOrganizationID(moduleProperties.getCompanyIdentifier())
@@ -284,16 +292,11 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
 
         gradleSettings.setResolveModulePerSourceSet(false);
 
-        AbstractExternalSystemSettings settings = ExternalSystemApiUtil.getSettings(rootModel.getProject(), GradleConstants.SYSTEM_ID);
+        GradleSettings settings = (GradleSettings) ExternalSystemApiUtil.getSettings(rootModel.getProject(), GradleConstants.SYSTEM_ID);
         project.putUserData(ExternalSystemDataKeys.NEWLY_CREATED_PROJECT, Boolean.TRUE);
         settings.linkProject(gradleSettings);
 
         FileDocumentManager.getInstance().saveAllDocuments();
-
-        ImportSpecBuilder builder = new ImportSpecBuilder(rootModel.getProject(), GradleConstants.SYSTEM_ID);
-        builder.forceWhenUptodate(true);
-
-        ExternalSystemUtil.refreshProjects(builder);
     }
 
     private void modifyGradleSettings(@NotNull File file, Module[] modules) throws IOException {
@@ -301,7 +304,7 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
 
         String newLine = System.getProperty("line.separator");
 
-        String existing = Files.toString(file, Charsets.UTF_8);
+        String existing = Files.asCharSource(file, Charsets.UTF_8).read();
 
         if (!existing.endsWith(newLine)) {
             stringBuilder.append(newLine);
@@ -314,7 +317,9 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
             stringBuilder.append(newLine);
         }
 
-        Files.append(stringBuilder.toString(), file, Charsets.UTF_8);
+        Files.asCharSink(file, Charsets.UTF_8, FileWriteMode.APPEND).write(stringBuilder.toString());
+
+        LocalFileSystem.getInstance().refreshIoFiles(Collections.singletonList(file));
     }
 
     private void configureRun(ModifiableRootModel rootModel) {

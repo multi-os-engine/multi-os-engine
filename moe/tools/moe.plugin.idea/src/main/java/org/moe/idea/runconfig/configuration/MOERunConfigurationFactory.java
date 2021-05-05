@@ -46,4 +46,10 @@ class MOERunConfigurationFactory extends ConfigurationFactory {
 
         return super.createTemplateConfiguration(project, RunManager.getInstance(project));
     }
+
+    @NotNull
+    @Override
+    public String getId() {
+        return "Multi-OS Engine iOS Application";
+    }
 }

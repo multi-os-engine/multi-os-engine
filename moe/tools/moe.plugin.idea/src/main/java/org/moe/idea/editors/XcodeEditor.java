@@ -29,8 +29,10 @@ import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.impl.text.TextEditorProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Key;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileListener;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.document.pbxproj.ProjectException;
@@ -41,9 +43,10 @@ import org.moe.editors.XcodeEditorManager;
 import org.moe.idea.ui.XcodeEditorForm;
 import org.moe.idea.utils.logger.LoggerFactory;
 
-import javax.swing.*;
 import java.beans.PropertyChangeListener;
 import java.io.File;
+
+import javax.swing.JComponent;
 
 public class XcodeEditor implements VirtualFileListener, FileEditor {
 
@@ -226,7 +229,7 @@ public class XcodeEditor implements VirtualFileListener, FileEditor {
 
         File testInfoPlist = getFileFromXcodeConfiguration(root, xcodeEditorManager.getInfoTestPlist());
 
-        VirtualFile testInfoVirtualFile = project.getBaseDir().getFileSystem().findFileByPath(testInfoPlist.getAbsolutePath());
+        VirtualFile testInfoVirtualFile = LocalFileSystem.getInstance().findFileByIoFile(testInfoPlist);
         this.testInfoPlistDocument = fileDocumentManager.getDocument(testInfoVirtualFile);
         try {
             this.testInfoPlistManager = new InfoPlistManager(testInfoPlistDocument.getText());

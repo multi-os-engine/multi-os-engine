@@ -63,7 +63,7 @@ public class MOEProgramRunner extends GenericProgramRunner {
     }
 
     @Override
-    protected void execute(@NotNull ExecutionEnvironment environment, @Nullable Callback callback, @NotNull RunProfileState state) throws ExecutionException {
+    protected void execute(@NotNull ExecutionEnvironment environment, @Nullable Callback callback, @NotNull RunProfileState state) {
         if(environment.getRunnerAndConfigurationSettings() != null) {
             MOERunConfigurationBase runConfig = (MOERunConfigurationBase) environment.getRunnerAndConfigurationSettings().getConfiguration();
             runConfig.debug(isDebugExecutor(environment.getExecutor()));
@@ -126,7 +126,6 @@ public class MOEProgramRunner extends GenericProgramRunner {
 
                 if (executionResult instanceof DefaultExecutionResult) {
                     sessionImpl.addRestartActions(((DefaultExecutionResult)executionResult).getRestartActions());
-                    sessionImpl.addExtraStopActions(((DefaultExecutionResult)executionResult).getAdditionalStopActions());
                 }
 
                 return JavaDebugProcess.create(session, debuggerSession);

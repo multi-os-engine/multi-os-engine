@@ -22,19 +22,24 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ContentEntry;
-import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.ModuleRootModel;
 import com.intellij.openapi.roots.SourceFolder;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+
 import org.jetbrains.annotations.Nullable;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.utils.logger.LoggerFactory;
 import org.moe.template.MOEClassTemplate;
-import res.MOEIcons;
 
-import javax.swing.*;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import res.MOEIcons;
 
 public class MOECreateClassTemplateDialog extends DialogWrapper {
 
@@ -110,7 +115,7 @@ public class MOECreateClassTemplateDialog extends DialogWrapper {
     private String getPackageName(VirtualFile file) throws Exception {
         Module module = MOESdkPlugin.findModuleForFile(project, file);
         if (module != null) {
-            ModifiableRootModel rootModel = ModuleRootManager.getInstance(module).getModifiableModel();
+            ModuleRootModel rootModel = ModuleRootManager.getInstance(module);
             for (ContentEntry entry : rootModel.getContentEntries()) {
                 for (SourceFolder srcFolder : entry.getSourceFolders()) {
                     String candidate = file.getPath();
