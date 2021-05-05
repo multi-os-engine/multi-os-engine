@@ -399,6 +399,9 @@ public final class CManager extends AbstractUnitManager {
                 }
                 modifiers.setGenerated();
 
+                XcodeDocumentation doc = new XcodeDocumentation(getComment(), getEditGroup());
+                editor.setJavaDoc(doc);
+
                 editor.close();
             }
 
@@ -475,7 +478,7 @@ public final class CManager extends AbstractUnitManager {
 
                 try {
                     XcodeDocumentation doc = new XcodeDocumentation(getIndexer(), XcodeDocumentation.DocCLanguage,
-                            XcodeDocumentation.DocFunctionType, "-", function.getName(), getEditGroup());
+                            XcodeDocumentation.DocFunctionType, "-", function.getName(), function.getComment(), getEditGroup());
                     editor.setJavaDoc(doc, function.getArguments());
                 } catch (IOException e) {
                 }
@@ -521,7 +524,7 @@ public final class CManager extends AbstractUnitManager {
      */
     private void update(CVariable variable, ClassMemberEditor cme) {
         if (variable.getValue() != null) {
-            updateContant(variable, cme);
+            updateConstant(variable, cme);
             return;
         }
 
@@ -552,6 +555,9 @@ public final class CManager extends AbstractUnitManager {
                         true);
                 modifiers.setGenerated();
 
+                XcodeDocumentation doc = new XcodeDocumentation(variable.getComment(), getEditGroup());
+                editor.setJavaDoc(doc, null);
+
                 editor.close();
             }
 
@@ -581,7 +587,7 @@ public final class CManager extends AbstractUnitManager {
         }
     }
 
-    private void updateContant(CVariable variable, ClassMemberEditor cme) {
+    private void updateConstant(CVariable variable, ClassMemberEditor cme) {
         if (variable.getDontGenerate()) {
             return;
         }
@@ -612,6 +618,9 @@ public final class CManager extends AbstractUnitManager {
                 modifiers.setStatic();
                 modifiers.setFinal();
                 modifiers.setGenerated();
+
+                XcodeDocumentation doc = new XcodeDocumentation(variable.getComment(), getEditGroup());
+                editor.setJavaDoc(doc);
 
                 editor.close();
             }

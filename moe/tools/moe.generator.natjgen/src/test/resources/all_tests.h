@@ -21,3 +21,4 @@ limitations under the License.
 #include "structs.h"
 
 #include "objc_generics.h"
+#include "protocols.h"

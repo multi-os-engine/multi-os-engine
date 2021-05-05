@@ -21,7 +21,7 @@ import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
-import org.eclipse.jdt.core.formatter.DefaultCodeFormatterConstants;
+import org.eclipse.jdt.internal.formatter.DefaultCodeFormatterOptions;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.Document;
 import org.eclipse.text.edits.MalformedTreeException;
@@ -35,7 +35,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.Map;
 import java.util.regex.Matcher;
 
 public class UnitEditContext {
@@ -150,10 +149,13 @@ public class UnitEditContext {
      */
     public void save() {
         try {
-            Map<?, ?> defaultSettings = DefaultCodeFormatterConstants.getEclipseDefaultSettings();
+            DefaultCodeFormatterOptions o = DefaultCodeFormatterOptions.getEclipseDefaultSettings();
+            o.tab_char = DefaultCodeFormatterOptions.SPACE;
+            o.page_width = 120;
+            o.comment_line_length = 120;
             // When passed null instead of defaultSettings, eclipse did not find
             // the default formatter settings.
-            TextEdit edit = rewrite.rewriteAST(document, defaultSettings);
+            TextEdit edit = rewrite.rewriteAST(document, o.getMap());
             edit.apply(document);
             String newSource = document.get();
             unit.setSource(newSource);

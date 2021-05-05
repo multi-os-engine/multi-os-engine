@@ -77,11 +77,6 @@ public class ObjCProtocolManager extends ObjCClassManager {
     }
 
     @Override
-    public void preparationPhase_Final() {
-        sortAllMethods();
-    }
-
-    @Override
     public void update() {
         ClassMemberEditor cme = updateClass();
         for (ObjCMethod method : allMethods) {
@@ -117,6 +112,9 @@ public class ObjCProtocolManager extends ObjCClassManager {
                     modifiers.setLibrary(libraryName);
                 }
                 modifiers.setGenerated();
+
+                XcodeDocumentation doc = new XcodeDocumentation(getComment(), getEditGroup());
+                editor.setJavaDoc(doc);
 
                 editor.close();
             }
@@ -199,7 +197,7 @@ public class ObjCProtocolManager extends ObjCClassManager {
                     if (type != null) {
                         try {
                             XcodeDocumentation doc = new XcodeDocumentation(getIndexer(),
-                                    XcodeDocumentation.DocObjectiveCLanguage, type, originalName, method.getSelector(),
+                                    XcodeDocumentation.DocObjectiveCLanguage, type, originalName, method.getSelector(), method.getComment(),
                                     getEditGroup());
                             editor.setJavaDoc(doc, method.getArguments());
                         } catch (IOException e) {
@@ -212,7 +210,7 @@ public class ObjCProtocolManager extends ObjCClassManager {
                         try {
                             XcodeDocumentation doc = new XcodeDocumentation(getIndexer(),
                                     XcodeDocumentation.DocObjectiveCLanguage, type, originalName,
-                                    method.getPropertyName(), getEditGroup());
+                                    method.getPropertyName(), method.getComment(), getEditGroup());
                             editor.setJavaDoc(doc, method.getArguments());
                         } catch (IOException e) {
                         }

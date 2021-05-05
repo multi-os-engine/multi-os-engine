@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.natjgen.util;
 
+import org.apache.commons.lang3.StringUtils;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.jdt.core.IClasspathEntry;
@@ -30,6 +31,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -169,6 +171,25 @@ public class StringUtil {
             out.close();
         } catch (Exception e) {
             // TODO: handle exception
+        }
+    }
+
+    public static int getIndentCount(String input) {
+        int s = 0;
+        for (; s < input.length() && input.charAt(s) <= ' '; s++) ;
+
+        return s;
+    }
+
+    /**
+     * Remove blank lines at the start and end of the list
+     */
+    public static void removeLeadingAndTrailingBlankLines(LinkedList<String> lines) {
+        while (!lines.isEmpty() && StringUtils.isBlank(lines.peekFirst())) {
+            lines.removeFirst();
+        }
+        while (!lines.isEmpty() && StringUtils.isBlank(lines.peekLast())) {
+            lines.removeLast();
         }
     }
 

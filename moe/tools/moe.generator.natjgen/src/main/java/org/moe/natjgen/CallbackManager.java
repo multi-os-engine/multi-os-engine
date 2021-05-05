@@ -16,7 +16,10 @@ limitations under the License.
 
 package org.moe.natjgen;
 
+import org.moe.natjgen.Type.CallbackArgument;
 import org.moe.natjgen.TypeResolver.Context;
+
+import java.util.ArrayList;
 
 public class CallbackManager {
 
@@ -37,9 +40,11 @@ public class CallbackManager {
         blockTResolver.set(TypeResolver.PRIMITIVE, TypeResolver.BOTH, true, true, true);
         blockTResolver.set(TypeResolver.STRUCT, TypeResolver.BOTH, true, true, true);
         blockTResolver.set(TypeResolver.OPAQUE, TypeResolver.BOTH, true, true, true);
+        blockTResolver.set(TypeResolver.FUNCTION_CB, TypeResolver.BOTH, false, true, false);
         blockTResolver.set(TypeResolver.OBJC_OBJECT, TypeResolver.BOTH, true, true, true);
         blockTResolver.set(TypeResolver.OBJC_CLASS, TypeResolver.BOTH, true, false, false);
         blockTResolver.set(TypeResolver.OBJC_SELECTOR, TypeResolver.BOTH, true, false, false);
+        blockTResolver.set(TypeResolver.OBJC_BLOCK, TypeResolver.BOTH, true, false, false);
         blockTResolver.setSupportedMappers(new String[] { Constants.CStringMapper, Constants.ObjCStringMapper
         });
 
@@ -49,9 +54,11 @@ public class CallbackManager {
         funcTResolver.set(TypeResolver.PRIMITIVE, TypeResolver.BOTH, true, true, true);
         funcTResolver.set(TypeResolver.STRUCT, TypeResolver.BOTH, true, true, true);
         funcTResolver.set(TypeResolver.OPAQUE, TypeResolver.BOTH, true, true, true);
+        funcTResolver.set(TypeResolver.FUNCTION_CB, TypeResolver.BOTH, false, true, false);
         funcTResolver.set(TypeResolver.OBJC_OBJECT, TypeResolver.BOTH, true, true, true);
         funcTResolver.set(TypeResolver.OBJC_CLASS, TypeResolver.BOTH, true, false, false);
         funcTResolver.set(TypeResolver.OBJC_SELECTOR, TypeResolver.BOTH, true, false, false);
+        funcTResolver.set(TypeResolver.OBJC_BLOCK, TypeResolver.BOTH, true, false, false);
         funcTResolver.setSupportedMappers(new String[] { Constants.CStringMapper, Constants.ObjCStringMapper
         });
     }
@@ -61,9 +68,51 @@ public class CallbackManager {
     private final String prefix;
     private final String callbackPrefix = "call_";
     private final String commonSuffix;
+    private final Type type;
     private final Type.CallbackDescriptor descriptor;
     private final TypeResolver tResolver;
     private final String runtime;
+
+    private class NestedCallback implements IParameterizedCallable {
+        private final ArrayList<CalleeArgument> arguments;
+
+        public NestedCallback() {
+            this.arguments = new ArrayList<>();
+            for (CallbackArgument a : type.getCallbackDescriptor().getArguments()) {
+                arguments.add(new CalleeArgument(a.getName(), a.getType()));
+            }
+        }
+
+        @Override
+        public ArrayList<CalleeArgument> getArguments() {
+            return arguments;
+        }
+
+        @Override
+        public boolean isVariadic() {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override
+        public String getVariadicName() {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override
+        public String getJavaName() {
+            return getName();
+        }
+
+        @Override
+        public Type getType() {
+            return type;
+        }
+
+        @Override
+        public String getDefaultRuntime() {
+            return runtime;
+        }
+    }
 
     public CallbackManager(AbstractUnitManager manager, IParameterizedCallable callable, int idx) {
         if (manager == null || callable == null || idx < -1) {
@@ -84,7 +133,6 @@ public class CallbackManager {
             commonSuffix = "";
         }
 
-        Type type;
         if (idx == -1) {
             type = callable.getType();
         } else {
@@ -110,15 +158,37 @@ public class CallbackManager {
 
     public final boolean isSupported() {
         // Check return type
+        if (descriptor.getType().isCallback()) {
+            CallbackManager cbman = descriptor.getType().getCallbackManager();
+            if (cbman == null) {
+                cbman = new CallbackManager(manager, new NestedCallback(), -1);
+                descriptor.getType().setCallbackManager(cbman);
+            }
+            if (!cbman.isSupported()) {
+                return false;
+            }
+        }
         if (!tResolver.supports(descriptor.getType(), false)) {
             return false;
         }
 
         // Check argument types
+        int idx = 0;
         for (Type.CallbackArgument cb_arg : descriptor.getArguments()) {
+            if (cb_arg.getType().isCallback()) {
+                CallbackManager cbman = cb_arg.getType().getCallbackManager();
+                if (cbman == null) {
+                    cbman = new CallbackManager(manager, new NestedCallback(), idx);
+                    cb_arg.getType().setCallbackManager(cbman);
+                }
+                if (!cbman.isSupported()) {
+                    return false;
+                }
+            }
             if (!tResolver.supports(cb_arg.getType(), true)) {
                 return false;
             }
+            ++idx;
         }
 
         return true;
@@ -157,6 +227,18 @@ public class CallbackManager {
     }
 
     private final void updateCallback(ClassMemberEditor cme) throws GeneratorException {
+        // Generate nested callback first
+        if (descriptor.getType().isCallback()) {
+            CallbackManager cbman = descriptor.getType().getCallbackManager();
+            cbman.update(cme);
+        }
+        for (Type.CallbackArgument arg : descriptor.getArguments()) {
+            if (arg.getType().isCallback()) {
+                CallbackManager cbman = arg.getType().getCallbackManager();
+                cbman.update(cme);
+            }
+        }
+
         MethodEditor editor = cme.getMehtod(getCallbackName(), false, descriptor.getArguments().size());
         if (editor == null) {
             editor = cme.newMethod();

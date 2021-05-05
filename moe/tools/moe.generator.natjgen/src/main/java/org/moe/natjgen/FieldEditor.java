@@ -131,14 +131,14 @@ public class FieldEditor extends EditContext {
             if ((value & 0xFFFFFFFF00000000L) > 0) {
                 throw new IllegalStateException();
             }
-            NumberLiteral literal = getAST().newNumberLiteral(String.format("0x%08X", value));
+            NumberLiteral literal = getAST().newNumberLiteral(Float.toString(Float.intBitsToFloat((int)value)));
             CastExpression cast = getAST().newCastExpression();
             cast.setType(getAST().newPrimitiveType(PrimitiveType.FLOAT));
             cast.setExpression(literal);
             return cast;
         }
         case Type.Double:
-            return getAST().newNumberLiteral(String.format("0x%016XL", value));
+            return getAST().newNumberLiteral(Double.toString(Double.longBitsToDouble(value)));
 
         default:
             throw new IllegalStateException();
@@ -209,6 +209,11 @@ public class FieldEditor extends EditContext {
 
     public void forceEdit() {
         modifiers.forceEdit();
+    }
+
+    public void setJavaDoc(XcodeDocumentation doc) {
+        getRewrite().set(fieldDecl, FieldDeclaration.JAVADOC_PROPERTY, doc.getJavaDoc(getRewrite(), null),
+                getEditGroup());
     }
 
 }

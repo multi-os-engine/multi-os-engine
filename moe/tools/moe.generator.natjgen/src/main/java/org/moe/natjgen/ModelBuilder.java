@@ -84,6 +84,7 @@ class ModelBuilder extends AbstractModelEditor {
         manager.setLibraryName(unit.getFramework());
         manager.setDeprecated(ClangUtil.isDeprecated(declCursor));
         manager.setHybridClass(unit.generateHybridClass());
+        manager.setComment(ClangUtil.getComment(declCursor));
 
         boolean typeParamsFailed = false;
         int numOLG = clang.clang_Cursor_getNumObjCGenericParams(declCursor);
@@ -206,6 +207,7 @@ class ModelBuilder extends AbstractModelEditor {
         manager.setExternalUnit(unit.handlingExternal());
         manager.setLibraryName(unit.getFramework());
         manager.setDeprecated(ClangUtil.isDeprecated(declCursor));
+        manager.setComment(ClangUtil.getComment(declCursor));
 
         // Add protocols
         final CXIdxObjCProtocolRefListInfo info = decl.getObjCProtocolRefListInfo();
@@ -267,11 +269,12 @@ class ModelBuilder extends AbstractModelEditor {
             CXCursor argCursor = declCursor.getArgument(i);
             CXType type = argCursor.getCursorType();
             String name = argCursor.toString();
-            method.getArguments().add(new CalleeArgument(name, new Type(type, memModel)));
+            method.getArguments().add(new CalleeArgument(name, new Type(type, memModel, argCursor)));
         }
         method.close();
         method.setDeprecated(ClangUtil.isDeprecated(declCursor));
         method.setAttribute(attrInfo);
+        method.setComment(ClangUtil.getComment(declCursor));
 
         // Skip if needed
         if (unit.handlingExternal()) {
@@ -324,6 +327,8 @@ class ModelBuilder extends AbstractModelEditor {
         final int propertyFlags = clang_Cursor_getObjCPropertyAttributes(declCursor, 0);
         final boolean isStatic = (propertyFlags & CXObjCPropertyAttrKind.CXObjCPropertyAttr_class) > 0;
 
+        final String comment = ClangUtil.getComment(declCursor);
+
         // Create getter
         final ObjCMethod getter = new ObjCMethod(getter_info.cursor().toString(), isStatic, new Type(type, memModel), 0,
                 ObjCMethodKind.PROPERTY_GETTER, false, manager);
@@ -332,6 +337,7 @@ class ModelBuilder extends AbstractModelEditor {
         getter.setPropertyName(name);
         getter.setAttribute(attrInfo);
         getter.setPropertyFlags(propertyFlags);
+        getter.setComment(comment);
 
         // Skip if needed
         if (unit.handlingExternal()) {
@@ -352,6 +358,7 @@ class ModelBuilder extends AbstractModelEditor {
             setter.setAttribute(attrInfo);
             setter.setPropertyFlags(propertyFlags);
             setter.setAssociatedGetter(getter);
+            setter.setComment(comment);
 
             // Skip if needed
             if (unit.handlingExternal()) {
@@ -415,6 +422,7 @@ class ModelBuilder extends AbstractModelEditor {
         if (fieldname != null) {
             final CStructField field = new CStructField(fieldname, new Type(decl.cursor().getCursorType(), memModel),
                     decl.cursor().isBitField());
+            field.setComment(ClangUtil.getComment(decl.cursor()));
             if (field.getConstantArraySize() > 0) {
                 struct.getFields().add(field);
             }
@@ -449,6 +457,7 @@ class ModelBuilder extends AbstractModelEditor {
         if (getGenerator().getEnum(unitKey) == null) {
             CEnumManager manager = new CEnumManager(indexer, unit.getFQName(), unit.getOriginalName(), unit.getPath());
             manager.setExternalUnit(unit.handlingExternal());
+            manager.setComment(ClangUtil.getComment(decl.cursor()));
             getGenerator().put(unitKey, manager);
         }
     }
@@ -489,7 +498,9 @@ class ModelBuilder extends AbstractModelEditor {
         final CEnumManager manager = getGenerator().getEnum(enum_name);
         if (manager != null) {
             ConstantValue constantValue = ConstantValue.fromSignExtendedValue(const_type, const_value);
-            manager.getConstants().add(new CEnumConstant(const_name, constantValue));
+            CEnumConstant constant = new CEnumConstant(const_name, constantValue);
+            constant.setComment(ClangUtil.getComment(declCursor));
+            manager.getConstants().add(constant);
         } else {
             statLog().log(Statistics.SKIPPING, Statistics.C_ENUM_CONST, declCursor.getCursorUSR().toString(),
                     "no manager found");
@@ -554,14 +565,16 @@ class ModelBuilder extends AbstractModelEditor {
                     function.addLocation(clang_getFileName(argtfile).toString());
                 }
             }
-            String name = declCursor.getArgument(i).toString();
+            CXCursor argCursor = declCursor.getArgument(i);
+            String name = argCursor.toString();
             if (name == null || name.length() == 0) {
                 name = "arg" + (i + 1);
             }
-            function.getArguments().add(new CalleeArgument(name, new Type(type, memModel)));
+            function.getArguments().add(new CalleeArgument(name, new Type(type, memModel, argCursor)));
         }
         function.close();
         function.setDeprecated(ClangUtil.isDeprecated(declCursor));
+        function.setComment(ClangUtil.getComment(declCursor));
 
         // Add function to manager
         final CManager manager = getGenerator().getCManager(indexer, unit);
@@ -622,6 +635,7 @@ class ModelBuilder extends AbstractModelEditor {
             }
             variable.setValue(ConstantValue.fromRawValue(variable.getType(), val.getValue()));
         }
+        variable.setComment(ClangUtil.getComment(declCursor));
 
         // Add variable to manager
         final CManager manager = getGenerator().getCManager(indexer, unit);

@@ -902,6 +902,9 @@ public class ObjCClassManager extends AbstractUnitManager {
                 }
                 modifiers.setGenerated();
 
+                XcodeDocumentation doc = new XcodeDocumentation(getComment(), getEditGroup());
+                editor.setJavaDoc(doc);
+
                 editor.close();
             }
 
@@ -1049,7 +1052,7 @@ public class ObjCClassManager extends AbstractUnitManager {
                     if (type != null) {
                         try {
                             XcodeDocumentation doc = new XcodeDocumentation(getIndexer(),
-                                    XcodeDocumentation.DocObjectiveCLanguage, type, originalName, method.getSelector(),
+                                    XcodeDocumentation.DocObjectiveCLanguage, type, originalName, method.getSelector(), method.getComment(),
                                     getEditGroup());
                             editor.setJavaDoc(doc, method.getArguments());
                         } catch (IOException e) {
@@ -1064,7 +1067,7 @@ public class ObjCClassManager extends AbstractUnitManager {
                         try {
                             XcodeDocumentation doc = new XcodeDocumentation(getIndexer(),
                                     XcodeDocumentation.DocObjectiveCLanguage, type, originalName,
-                                    method.getPropertyName(), getEditGroup());
+                                    method.getPropertyName(), method.getComment(), getEditGroup());
                             editor.setJavaDoc(doc, method.getArguments());
                         } catch (IOException e) {
                         }
@@ -1190,7 +1193,7 @@ public class ObjCClassManager extends AbstractUnitManager {
                     if (type != null) {
                         try {
                             XcodeDocumentation doc = new XcodeDocumentation(getIndexer(),
-                                    XcodeDocumentation.DocObjectiveCLanguage, type, originalName, method.getSelector(),
+                                    XcodeDocumentation.DocObjectiveCLanguage, type, originalName, method.getSelector(), method.getComment(),
                                     getEditGroup());
                             editor.setJavaDoc(doc, method.getArguments());
                         } catch (IOException e) {
@@ -1205,7 +1208,7 @@ public class ObjCClassManager extends AbstractUnitManager {
                         try {
                             XcodeDocumentation doc = new XcodeDocumentation(getIndexer(),
                                     XcodeDocumentation.DocObjectiveCLanguage, type, originalName,
-                                    method.getPropertyName(), getEditGroup());
+                                    method.getPropertyName(), method.getComment(), getEditGroup());
                             editor.setJavaDoc(doc, method.getArguments());
                         } catch (IOException e) {
                         }
