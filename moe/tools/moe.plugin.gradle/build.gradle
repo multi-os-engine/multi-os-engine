@@ -18,13 +18,6 @@ buildscript {
     repositories {
         mavenCentral()
     }
-    dependencies {
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.15.2"
-    }
-}
-
-plugins {
-    id "com.jfrog.bintray" version "1.8.5"
 }
 
 if (name != 'moe-gradle') {
@@ -42,10 +35,8 @@ version loadPluginVersion()
 
 apply plugin: 'java'
 apply plugin: 'maven-publish'
-
-if (rootProject.hasProperty('artifactory.url')) {
-    apply plugin: "com.jfrog.artifactory"
-}
+apply plugin: 'maven'
+apply plugin: 'signing'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -81,53 +72,6 @@ dependencies {
 
 tasks.test.dependsOn ':moe-sdk:devsdk'
 
-bintray {
-    if (project.hasProperty('bintray.user')) {
-        user = property('bintray.user')
-    }
-    if (project.hasProperty('bintray.key')) {
-        key = property('bintray.key')
-    }
-
-    publications = ['mavenJava']
-
-    pkg {
-        repo = 'maven'
-        name = 'moe-gradle'
-        // userOrg = 'multi-os-engine'
-        websiteUrl = 'https://discuss.multi-os-engine.org'
-        vcsUrl = 'https://github.com/multi-os-engine/moe-plugin-gradle'
-        licenses = ['Apache-2.0']
-        labels = ['moe', 'multi-os-engine']
-        publicDownloadNumbers = false
-
-        publish = true
-
-        version {
-            name = project.version
-        }
-    }
-}
-
-if (rootProject.hasProperty('artifactory.url')) {
-    artifactory {
-        contextUrl = rootProject.getProperty('artifactory.url')
-        publish {
-            repository {
-                repoKey = rootProject.getProperty('artifactory.key')
-                username = rootProject.getProperty('artifactory.user')
-                password = rootProject.getProperty('artifactory.pass')
-            }
-            defaults {
-                publications('mavenJavaSnapshot')
-                publishArtifacts = true
-                publishPom = true
-                publishIvy = true
-            }
-        }
-    }
-}
-
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
@@ -136,6 +80,49 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 task sourceJar(type: Jar) {
     classifier = 'sources'
     from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourceJar
+}
+
+signing {
+    sign configurations.archives
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'moe-gradle'
+                packaging 'jar'
+                artifactId 'moe-gradle'
+                description 'MOE Gradle Plugin'
+                url 'https://discuss.multi-os-engine.org'
+
+                scm {
+                    url 'https://github.com/multi-os-engine/moe-plugin-gradle'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+            }
+        }
+    }
 }
 
 publishing {
