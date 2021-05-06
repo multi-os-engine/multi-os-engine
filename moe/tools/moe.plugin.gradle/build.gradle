@@ -16,19 +16,20 @@ limitations under the License.
 
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
 }
 
 plugins {
     id "org.jetbrains.kotlin.jvm"
     id "maven-publish"
+    id "signing"
 }
 
 if (name != 'moe-gradle') {
     throw new GradleException('Incorrect name')
 }
-group 'org.multi-os-engine.community'
+group 'org.multi-os-engine'
 
 String loadPluginVersion() {
     final Properties props = new Properties()
@@ -123,17 +124,47 @@ publishing {
             from components.java
             artifact(javadocJar)
             artifact(sourceJar)
-            group project.group
-            artifactId 'moe-gradle'
-            version project.version
+            artifactId = 'moe-gradle'
+
+            pom {
+                name = 'moe-gradle'
+                packaging = 'jar'
+                description = 'MOE Gradle Plugin'
+                url = 'https://discuss.multi-os-engine.org'
+
+                scm {
+                    url = 'https://github.com/multi-os-engine/moe-plugin-gradle'
+                }
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'MOE'
+                        name = 'Multi-OS Engine Dev'
+                        organization = 'Multi-OS Engine'
+                        organizationUrl = 'https://www.multi-os-engine.org/'
+                    }
+                }
+            }
         }
-        mavenJavaSnapshot(MavenPublication) {
-            from components.java
-            artifact(javadocJar)
-            artifact(sourceJar)
-            group project.group
-            artifactId 'moe-gradle'
-            version = "${project.version}-SNAPSHOT"
+    }
+    repositories {
+        maven {
+            name = 'MavenCentral'
+            def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+            def snapshotsRepoUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+
+            credentials {
+                username = ossrhUsername
+                password = ossrhPassword
+            }
         }
     }
 
@@ -147,6 +178,10 @@ publishing {
             }
         }
     }
+}
+
+signing {
+    sign publishing.publications.mavenJava
 }
 
 jar {

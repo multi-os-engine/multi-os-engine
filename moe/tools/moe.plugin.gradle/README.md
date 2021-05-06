@@ -723,7 +723,7 @@ The following settings are available for configuring the remote connection:
 - `keychain.pass`: password for keychain, defaults to ''.
 - `keychain.locktimeout`: keychain lock timeout in seconds, defaults to 3600.
 - `gradle.repositories`: repositories to be used when setting up the MOE SDK on the remote server, defaults to
-'jcenter()'.
+'mavenCentral()'.
 
 The identity and knownhosts keys accept special parameters to access environmental variables (`$env$KEY`),
 system properties (`$sys$KEY`) and project properties (`$proj$KEY`).

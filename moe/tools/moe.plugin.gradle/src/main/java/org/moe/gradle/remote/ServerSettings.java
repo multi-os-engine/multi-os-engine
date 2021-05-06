@@ -192,7 +192,7 @@ class ServerSettings {
         return i;
     });
 
-    private static final Key<String> GRADLE_REPOSITORIES_KEY = new Key<>("gradle.repositories", "repositories to be used when setting up the MOE SDK on the remote server, defaults to 'jcenter()'", (plugin, value) -> {
+    private static final Key<String> GRADLE_REPOSITORIES_KEY = new Key<>("gradle.repositories", "repositories to be used when setting up the MOE SDK on the remote server, defaults to 'mavenCentral()'", (plugin, value) -> {
         if (value == null) {
             return null;
         }
@@ -322,7 +322,7 @@ class ServerSettings {
     @NotNull
     public String getGradleRepositories() {
         final String value = get(GRADLE_REPOSITORIES_KEY);
-        return value == null ? "jcenter()" : value;
+        return value == null ? "mavenCentral()" : value;
     }
 
     private static class OptionScreen {
