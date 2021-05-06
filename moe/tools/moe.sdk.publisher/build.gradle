@@ -25,7 +25,6 @@ version '1.7.3'
 
 apply plugin: 'base'
 apply plugin: 'maven-publish'
-apply plugin: 'maven'
 apply plugin: 'signing'
 
 if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
@@ -284,66 +283,55 @@ task devsdk(type: Copy, dependsOn: processSDK) {
     with getSDKCopySpec()
 }
 
-artifacts {
-    archives sdk
-}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact sdk {}
+            artifactId = 'moe-sdk'
 
-signing {
-    sign configurations.archives
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-                name 'moe-sdk'
-                packaging 'zip'
-                artifactId 'moe-sdk'
-                description 'MOE sdk'
-                url 'https://discuss.multi-os-engine.org'
+            pom {
+                name = 'moe-sdk'
+                packaging = 'zip'
+                description = 'MOE sdk'
+                url = 'https://discuss.multi-os-engine.org'
 
                 scm {
-                    url 'https://github.com/multi-os-engine/multi-os-engine'
+                    url = 'https://github.com/multi-os-engine/multi-os-engine'
                 }
 
                 licenses {
                     license {
-                        name 'The Apache License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
                     }
                 }
 
                 developers {
                     developer {
-                        id 'MOE'
-                        name 'Multi-OS Engine Dev'
-                        organization 'Multi-OS Engine'
-                        organizationUrl 'https://www.multi-os-engine.org/'
+                        id = 'MOE'
+                        name = 'Multi-OS Engine Dev'
+                        organization = 'Multi-OS Engine'
+                        organizationUrl = 'https://www.multi-os-engine.org/'
                     }
                 }
             }
         }
     }
-}
+    repositories {
+        maven {
+            name = 'MavenCentral'
+            def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+            def snapshotsRepoUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifact sdk {}
-        }
-        mavenJavaSnapshot(MavenPublication) {
-            artifact sdk {}
-            version = "${project.version}-SNAPSHOT"
+            credentials {
+                username = ossrhUsername
+                password = ossrhPassword
+            }
         }
     }
+}
+
+signing {
+    sign publishing.publications.mavenJava
 }
