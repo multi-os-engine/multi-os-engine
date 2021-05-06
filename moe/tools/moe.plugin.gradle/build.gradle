@@ -120,6 +120,15 @@ uploadArchives {
                         url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
                     }
                 }
+
+                developers {
+                    developer {
+                        id 'MOE'
+                        name 'Multi-OS Engine Dev'
+                        organization 'Multi-OS Engine'
+                        organizationUrl 'https://www.multi-os-engine.org/'
+                    }
+                }
             }
         }
     }
