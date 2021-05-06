@@ -3,15 +3,12 @@ buildscript {
     ext.kotlin_version = '${_PLACEHOLDER_KOTLIN_VERSION}'
 //>>---REGION:USE_KOTLIN_PLUGIN
     repositories {
-        jcenter()
-//<<---REGION:USE_KOTLIN_PLUGIN
-        maven { url 'http://oss.sonatype.org/content/repositories/snapshots' }
-//>>---REGION:USE_KOTLIN_PLUGIN
+        mavenCentral()
         mavenLocal()
     }
     dependencies {
         // Multi-OS Engine plugin
-        classpath group: 'org.multi-os-engine.community', name: 'moe-gradle', version: '${_PLACEHOLDER_MOE_VERSION}'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '${_PLACEHOLDER_MOE_VERSION}'
 //<<---REGION:USE_KOTLIN_PLUGIN
 
         // Kotlin plugin
@@ -33,7 +30,7 @@ targetCompatibility = "1.8"
 
 // Set maven repository
 repositories {
-    jcenter()
+    mavenCentral()
 //<<---REGION:USE_KOTLIN_PLUGIN
     maven {
         url 'http://oss.sonatype.org/content/repositories/snapshots'
