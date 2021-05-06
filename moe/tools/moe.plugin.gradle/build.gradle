@@ -35,7 +35,6 @@ version loadPluginVersion()
 
 apply plugin: 'java'
 apply plugin: 'maven-publish'
-apply plugin: 'maven'
 apply plugin: 'signing'
 
 sourceCompatibility = 1.8
@@ -82,77 +81,59 @@ task sourceJar(type: Jar) {
     from sourceSets.main.allSource
 }
 
-artifacts {
-    archives javadocJar, sourceJar
-}
-
-signing {
-    sign configurations.archives
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-                name 'moe-gradle'
-                packaging 'jar'
-                artifactId 'moe-gradle'
-                description 'MOE Gradle Plugin'
-                url 'https://discuss.multi-os-engine.org'
-
-                scm {
-                    url 'https://github.com/multi-os-engine/moe-plugin-gradle'
-                }
-
-                licenses {
-                    license {
-                        name 'The Apache License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-
-                developers {
-                    developer {
-                        id 'MOE'
-                        name 'Multi-OS Engine Dev'
-                        organization 'Multi-OS Engine'
-                        organizationUrl 'https://www.multi-os-engine.org/'
-                    }
-                }
-            }
-        }
-    }
-}
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
             artifact(javadocJar)
             artifact(sourceJar)
-            group project.group
-            artifactId 'moe-gradle'
-            version project.version
-        }
-        mavenJavaSnapshot(MavenPublication) {
-            from components.java
-            artifact(javadocJar)
-            artifact(sourceJar)
-            group project.group
-            artifactId 'moe-gradle'
-            version = "${project.version}-SNAPSHOT"
+            artifactId = 'moe-gradle'
+
+            pom {
+                name = 'moe-gradle'
+                packaging = 'jar'
+                description = 'MOE Gradle Plugin'
+                url = 'https://discuss.multi-os-engine.org'
+
+                scm {
+                    url = 'https://github.com/multi-os-engine/moe-plugin-gradle'
+                }
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'MOE'
+                        name = 'Multi-OS Engine Dev'
+                        organization = 'Multi-OS Engine'
+                        organizationUrl = 'https://www.multi-os-engine.org/'
+                    }
+                }
+            }
         }
     }
+    repositories {
+        maven {
+            name = 'MavenCentral'
+            def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+            def snapshotsRepoUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+
+            credentials {
+                username = ossrhUsername
+                password = ossrhPassword
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
 }
 
 jar {
