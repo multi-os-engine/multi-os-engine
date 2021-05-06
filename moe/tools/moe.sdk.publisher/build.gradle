@@ -16,15 +16,16 @@ limitations under the License.
 
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
 }
 
-group 'org.multi-os-engine.community'
+group 'org.multi-os-engine'
 version '2.0.0'
 
 apply plugin: 'base'
 apply plugin: 'maven-publish'
+apply plugin: 'signing'
 
 if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
     tasks.build.dependsOn ':ext_natj_mac'
@@ -52,7 +53,7 @@ task buildDeps {
     projectDeps.each { dependsOn project(it).tasks.build }
 }
 
-tasks.build {
+task processSDK {
     dependsOn buildDeps
 }
 
@@ -175,11 +176,11 @@ def getSDKCopySpec() {
     }
 }
 
-task sdk(type: Zip, dependsOn: build) {
+task sdk(type: Zip, dependsOn: processSDK) {
     with getSDKCopySpec()
 }
 
-task devsdk(type: Copy, dependsOn: build) {
+task devsdk(type: Copy, dependsOn: processSDK) {
     destinationDir = file("$buildDir/dev-sdk")
     with getSDKCopySpec()
 }
@@ -188,10 +189,47 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             artifact sdk {}
+            artifactId = 'moe-sdk'
+
+            pom {
+                name = 'moe-sdk'
+                packaging = 'zip'
+                description = 'MOE sdk'
+                url = 'https://discuss.multi-os-engine.org'
+
+                scm {
+                    url = 'https://github.com/multi-os-engine/multi-os-engine'
+                }
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'MOE'
+                        name = 'Multi-OS Engine Dev'
+                        organization = 'Multi-OS Engine'
+                        organizationUrl = 'https://www.multi-os-engine.org/'
+                    }
+                }
+            }
         }
-        mavenJavaSnapshot(MavenPublication) {
-            artifact sdk {}
-            version = "${project.version}-SNAPSHOT"
+    }
+    repositories {
+        maven {
+            name = 'MavenCentral'
+            def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+            def snapshotsRepoUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+
+            credentials {
+                username = ossrhUsername
+                password = ossrhPassword
+            }
         }
     }
 
@@ -205,4 +243,8 @@ publishing {
             }
         }
     }
+}
+
+signing {
+    sign publishing.publications.mavenJava
 }
