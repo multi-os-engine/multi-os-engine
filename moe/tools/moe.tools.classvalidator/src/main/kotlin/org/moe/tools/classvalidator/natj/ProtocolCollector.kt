@@ -27,7 +27,7 @@ object ProtocolCollector {
             inputFiles.classAndJarInputIterator {
                 val cr = ClassReader(it)
 
-                cr.accept(object : ClassVisitor(Opcodes.ASM5) {
+                cr.accept(object : ClassVisitor(Opcodes.ASM6) {
 
                     private var skip: Boolean = false
                     private lateinit var className: String
