@@ -13,12 +13,57 @@ class ReflectionConfig {
      */
     private val classes: MutableMap<String, ClassConf> = sortedMapOf()
 
-    private fun ensureClass(className: String): ClassConf {
-        return classes.getOrPut(className) { ClassConf(name = getBinaryClassName(className)) }
+    private fun ensureClass(
+        className: String,
+        allDeclaredConstructors: Boolean = false,
+        allPublicConstructors: Boolean = false,
+        allDeclaredMethods: Boolean = false,
+        allPublicMethods: Boolean = false,
+        allDeclaredClasses: Boolean = false,
+        allPublicClasses: Boolean = false,
+    ): ClassConf {
+        return classes.getOrPut(className) {
+            ClassConf(name = getBinaryClassName(className))
+        }.apply {
+            this.allDeclaredConstructors = this.allDeclaredConstructors || allDeclaredConstructors
+            this.allPublicConstructors = this.allPublicConstructors || allPublicConstructors
+            this.allDeclaredMethods = this.allDeclaredMethods || allDeclaredMethods
+            this.allPublicMethods = this.allPublicMethods || allPublicMethods
+            this.allDeclaredClasses = this.allDeclaredClasses || allDeclaredClasses
+            this.allPublicClasses = this.allPublicClasses || allPublicClasses
+        }
     }
 
-    fun addClass(className: String) {
-        ensureClass(className)
+    fun addClass(
+        className: String,
+        allDeclaredConstructors: Boolean = false,
+        allPublicConstructors: Boolean = false,
+        allDeclaredMethods: Boolean = false,
+        allPublicMethods: Boolean = false,
+        allDeclaredClasses: Boolean = false,
+        allPublicClasses: Boolean = false,
+    ) {
+        ensureClass(
+            className = className,
+            allDeclaredConstructors = allDeclaredConstructors,
+            allPublicConstructors = allPublicConstructors,
+            allDeclaredMethods = allDeclaredMethods,
+            allPublicMethods = allPublicMethods,
+            allDeclaredClasses = allDeclaredClasses,
+            allPublicClasses = allPublicClasses,
+        )
+    }
+
+    fun addClass(className: String, exportAll: Boolean) {
+        addClass(
+            className = className,
+            allDeclaredConstructors = exportAll,
+            allPublicConstructors = exportAll,
+            allDeclaredMethods = exportAll,
+            allPublicMethods = exportAll,
+            allDeclaredClasses = exportAll,
+            allPublicClasses = exportAll
+        )
     }
 
     fun addMethod(declaringClass: String, methodName: String, methodDescriptor: String) {
@@ -48,6 +93,24 @@ class ReflectionConfig {
             val co = JsonObject()
 
             co.addProperty("name", clazz.name)
+            if (clazz.allDeclaredConstructors) {
+                co.addProperty("allDeclaredConstructors", true)
+            }
+            if (clazz.allPublicConstructors) {
+                co.addProperty("allPublicConstructors", true)
+            }
+            if (clazz.allDeclaredMethods) {
+                co.addProperty("allDeclaredMethods", true)
+            }
+            if (clazz.allPublicMethods) {
+                co.addProperty("allPublicMethods", true)
+            }
+            if (clazz.allDeclaredClasses) {
+                co.addProperty("allDeclaredClasses", true)
+            }
+            if (clazz.allPublicClasses) {
+                co.addProperty("allPublicClasses", true)
+            }
 
             if (clazz.fields.isNotEmpty()) {
                 val farr = JsonArray()
@@ -98,6 +161,12 @@ class ReflectionConfig {
      */
     private data class ClassConf(
         val name: String,
+        var allDeclaredConstructors: Boolean = false,
+        var allPublicConstructors: Boolean = false,
+        var allDeclaredMethods: Boolean = false,
+        var allPublicMethods: Boolean = false,
+        var allDeclaredClasses: Boolean = false,
+        var allPublicClasses: Boolean = false,
         val fields: MutableSet<FieldConf> = linkedSetOf(),
         val methods: MutableSet<MethodConf> = linkedSetOf(),
     )
