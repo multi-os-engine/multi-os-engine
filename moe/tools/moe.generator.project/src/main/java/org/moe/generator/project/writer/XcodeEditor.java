@@ -302,8 +302,8 @@ public class XcodeEditor extends AbstractXcodeEditor {
         setBuildSetting(target, "MOE_LIB_PATH", "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}");
 
         setBuildSetting(target, "MOE_OTHER_LDFLAGS",
-                "${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/main_${arch}.o "
-                        + "${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/llvm_${arch}.o "
+                "${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/main_${arch}.o "
+                        + "${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/llvm_${arch}.o "
                         + "${MOE_CUSTOM_OTHER_LDFLAGS} "
                         + "-Wl,-force_load,${MOE_LIB_PATH}/libmoe.a "
                         + "-lstdc++ -lpthread -lsqlite3 "
