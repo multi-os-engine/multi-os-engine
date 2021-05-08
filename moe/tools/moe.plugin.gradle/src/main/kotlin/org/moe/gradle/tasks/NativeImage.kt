@@ -4,7 +4,6 @@ import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.InputFiles
-import org.gradle.api.tasks.Optional
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.SourceSet
 import org.gradle.api.tasks.bundling.Jar
@@ -165,6 +164,8 @@ open class NativeImage : AbstractBaseTask() {
     private lateinit var arch: Arch
     private lateinit var platform: MoePlatform
 
+    private var testClassesProviderTaskDep: TestClassesProvider? = null
+
     protected fun setupMoeTask(
             @NotNull sourceSet: SourceSet,
             @NotNull mode: Mode,
@@ -193,6 +194,12 @@ open class NativeImage : AbstractBaseTask() {
 
         val resourceTask = moePlugin.getTaskByName<Jar>(MoePlugin.getTaskName(ResourcePackager::class.java, sourceSet))
         dependsOn(resourceTask)
+
+        if (SourceSet.TEST_SOURCE_SET_NAME == sourceSet.name) {
+            val t = moePlugin.getTaskBy(TestClassesProvider::class.java, sourceSet)
+            dependsOn(t)
+            testClassesProviderTaskDep = t
+        }
 
         // Update convention mapping
         addConvention(CONVENTION_INPUT_FILES) {
@@ -233,6 +240,7 @@ open class NativeImage : AbstractBaseTask() {
                 moeSDK.reflectionConfigBaseFile,
                 classValidateTaskDep.reflectionConfigFile,
                 project.file("reflection-config.json").takeIf { it.exists() && it.isFile },
+                testClassesProviderTaskDep?.reflectionConfigFile,
             ).toSet()
         }
     }

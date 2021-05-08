@@ -27,6 +27,7 @@ import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Require;
+import org.moe.tools.classvalidator.substrate.ReflectionConfig;
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
@@ -51,6 +52,7 @@ public class TestClassesProvider extends AbstractBaseTask {
 
     private static final String CONVENTION_INPUT_FILES = "inputFiles";
     private static final String CONVENTION_CLASS_LIST_FILE = "classListFile";
+    private static final String CONVENTION_REFLECTION_CONFIG_FILE = "reflectionConfigFile";
 
     @Nullable
     private Set<Object> inputFiles;
@@ -80,11 +82,26 @@ public class TestClassesProvider extends AbstractBaseTask {
         this.classListFile = classListFile;
     }
 
+    @Nullable
+    private Object reflectionConfigFile;
+
+    @OutputFile
+    @NotNull
+    public File getReflectionConfigFile() {
+        return getProject().file(getOrConvention(reflectionConfigFile, CONVENTION_REFLECTION_CONFIG_FILE));
+    }
+
+    @IgnoreUnused
+    public void setReflectionConfigFile(@Nullable Object reflectionConfigFile) {
+        this.reflectionConfigFile = reflectionConfigFile;
+    }
+
     @Override
     protected void run() {
         // Reset logs
         FileUtils.write(getLogFile(), "");
         FileUtils.write(getClassListFile(), "");
+        FileUtils.write(getReflectionConfigFile(), "[]");
 
         // Create class map
         ClassMap classMap = new ClassMap();
@@ -94,7 +111,9 @@ public class TestClassesProvider extends AbstractBaseTask {
             indexer.index(classMap);
         });
 
-        classMap.resolve(getClassListFile());
+        ReflectionConfig reflectionConfig = new ReflectionConfig();
+        classMap.resolve(getClassListFile(), reflectionConfig);
+        reflectionConfig.save(getReflectionConfigFile());
     }
 
     /**
@@ -312,7 +331,7 @@ public class TestClassesProvider extends AbstractBaseTask {
          *
          * @param output output to write to
          */
-        private void resolve(File output) {
+        private void resolve(File output, ReflectionConfig reflectionConfig) {
             StringBuilder builder = new StringBuilder();
             map.entrySet().forEach(it -> {
                 getProject().getLogger().debug("@resolving: " + it.getKey());
@@ -320,6 +339,7 @@ public class TestClassesProvider extends AbstractBaseTask {
                     case ClassRep.IS_TEST:
                         getProject().getLogger().debug("+ " + it.getKey());
                         if (it.getValue().isInstantiatable) {
+                            reflectionConfig.addClass(it.getKey(), true);
                             builder.append(it.getKey().replaceAll("/", ".")).append("\n");
                         }
                         break;
@@ -383,7 +403,7 @@ public class TestClassesProvider extends AbstractBaseTask {
         setSupportsRemoteBuild(false);
 
         // Construct default output path
-        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName());
+        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName(), "test_provider");
 
         // Create task
         setDescription("Generates classlist.txt file (sourceset: " + sourceSet.getName() + ").");
@@ -401,6 +421,7 @@ public class TestClassesProvider extends AbstractBaseTask {
         // Update convention mapping
         addConvention(CONVENTION_INPUT_FILES, () -> Collections.singletonList(proguardTask.getOutJar()));
         addConvention(CONVENTION_CLASS_LIST_FILE, () -> resolvePathInBuildDir(out, "classlist.txt"));
+        addConvention(CONVENTION_REFLECTION_CONFIG_FILE, () -> resolvePathInBuildDir(out, "reflection-config.json"));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "TestClassesProvider.log"));
     }
 }
