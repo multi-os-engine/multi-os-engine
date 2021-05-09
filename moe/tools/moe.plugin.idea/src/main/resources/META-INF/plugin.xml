@@ -97,11 +97,11 @@
       </action>
 
       <action id="org.moe.idea.NewProject"
-              text="Multi-OS Engine Project"
+              text="New Multi-OS Engine Project..."
               description="Create new Multi-OS Engine project"
               class="org.moe.idea.actions.MOENewProjectAction"
               icon="/icons/moe_small.png">
-          <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
+          <add-to-group group-id="JavaNewProjectOrModuleGroup" anchor="after" relative-to-action="NewProject"/>
       </action>
 
 
