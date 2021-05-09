@@ -151,4 +151,6 @@
   <depends>org.jetbrains.plugins.gradle</depends>
   <depends>com.intellij.modules.java</depends>
 
+  <depends optional="true" config-file="studio-contribs.xml">com.intellij.modules.androidstudio</depends>
+
 </idea-plugin>

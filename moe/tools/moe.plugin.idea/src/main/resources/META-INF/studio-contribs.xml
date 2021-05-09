@@ -1,0 +1,12 @@
+<idea-plugin>
+    <actions>
+        <!-- Add a new MOE project option to AS welcome screen -->
+        <action id="org.moe.idea.NewProject.welcome"
+                text="Create New Multi-OS Engine Project"
+                description="Create new Multi-OS Engine project"
+                class="org.moe.idea.actions.MOENewProjectAction"
+                icon="/icons/moe_small.png">
+            <add-to-group group-id="WelcomeScreen.QuickStart.IDEA" anchor="after" relative-to-action="WelcomeScreen.CreateNewProject"/>
+        </action>
+    </actions>
+</idea-plugin>
