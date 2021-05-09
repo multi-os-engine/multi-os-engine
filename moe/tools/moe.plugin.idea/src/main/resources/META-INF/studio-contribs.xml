@@ -1,5 +1,15 @@
 <idea-plugin>
     <actions>
+
+        <!-- Add a new MOE project option to menu -->
+        <action id="org.moe.idea.NewProject"
+                text="New Multi-OS Engine Project..."
+                description="Create new Multi-OS Engine project"
+                class="org.moe.idea.actions.MOENewProjectAction"
+                icon="/icons/moe_small.png">
+            <add-to-group group-id="JavaNewProjectOrModuleGroup" anchor="after" relative-to-action="NewProject"/>
+        </action>
+
         <!-- Add a new MOE project option to AS welcome screen -->
         <action id="org.moe.idea.NewProject.welcome"
                 text="Create New Multi-OS Engine Project"
@@ -7,6 +17,15 @@
                 class="org.moe.idea.actions.MOENewProjectAction"
                 icon="/icons/moe_small.png">
             <add-to-group group-id="WelcomeScreen.QuickStart.IDEA" anchor="after" relative-to-action="WelcomeScreen.CreateNewProject"/>
+        </action>
+
+        <!-- Add a new MOE Module option to menu -->
+        <action id="org.moe.idea.NewModule"
+                text="Multi-OS Engine Module"
+                description="Create new Multi-OS Engine module"
+                class="org.moe.idea.actions.MOENewModuleAction"
+                icon="/icons/moe_small.png">
+            <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
         </action>
     </actions>
 </idea-plugin>

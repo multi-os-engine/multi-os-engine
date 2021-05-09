@@ -28,12 +28,17 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ui.configuration.DefaultModulesProvider;
 import com.intellij.openapi.roots.ui.configuration.ModulesConfigurator;
 import com.intellij.openapi.roots.ui.configuration.actions.NewModuleAction;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.List;
 
 public class MOENewModuleAction extends NewModuleAction {
+
+    public MOENewModuleAction() {
+        getTemplatePresentation().setText("New Multi-OS Engine Module...");
+    }
 
     @Override
     public void update(AnActionEvent event) {
