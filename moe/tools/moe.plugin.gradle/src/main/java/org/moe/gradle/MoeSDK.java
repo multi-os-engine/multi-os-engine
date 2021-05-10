@@ -213,7 +213,7 @@ public class MoeSDK {
                     FileUtils.deleteFileOrFolder(SDK_PATH);
                     LOG.info("Deleted existing SDK: {}", SDK_PATH.toFile().getAbsolutePath());
                 } catch (IOException e) {
-                    throw new GradleException("Failed to remote directory at " + SDK_PATH.toFile().getAbsolutePath(), e);
+                    throw new GradleException("Failed to remove directory at " + SDK_PATH.toFile().getAbsolutePath(), e);
                 }
             }
         }
