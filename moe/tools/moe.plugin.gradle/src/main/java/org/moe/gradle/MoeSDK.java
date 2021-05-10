@@ -202,7 +202,8 @@ public class MoeSDK {
 
         // Calculate MD5 on the SDK.
         final AtomicReference<String> sdkCalculatedMD5Ref = new AtomicReference<>();
-        final boolean sdkUpToDate = checkComponentUpToDate(file, SDK_PATH.resolve("sdk.md5").toFile(), sdkCalculatedMD5Ref);
+        final File md5CacheFile = SDK_PATH.resolve("sdk.md5").toFile();
+        final boolean sdkUpToDate = checkComponentUpToDate(file, md5CacheFile, sdkCalculatedMD5Ref);
         if (SDK_PATH.toFile().exists() && isSnapshotSDKVersion) {
             if (sdkUpToDate) {
                 sdk.validateSDK(SDK_PATH, false);
@@ -226,6 +227,16 @@ public class MoeSDK {
             spec.from(project.zipTree(file));
             spec.into(SDK_PATH.toFile());
         });
+
+        if (isSnapshotSDKVersion && sdkCalculatedMD5Ref.get() != null) {
+            // Cache md5
+            try {
+                FileUtils.deleteFileOrFolder(md5CacheFile);
+            } catch (IOException e) {
+                throw new GradleException("Failed to delete file " + md5CacheFile, e);
+            }
+            FileUtils.write(md5CacheFile, sdkCalculatedMD5Ref.get());
+        }
 
         // Validate files
         sdk.validateSDK(SDK_PATH, false);
