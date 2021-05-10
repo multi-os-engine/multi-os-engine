@@ -206,6 +206,7 @@ public class MoeSDK {
         final boolean sdkUpToDate = checkComponentUpToDate(file, md5CacheFile, sdkCalculatedMD5Ref);
         if (SDK_PATH.toFile().exists() && isSnapshotSDKVersion) {
             if (sdkUpToDate) {
+                LOG.quiet("Using already downloaded SDK: {}", SDK_PATH.toFile().getAbsolutePath());
                 sdk.validateSDK(SDK_PATH, false);
                 sdk.bakeSDKPaths(SDK_PATH);
                 return sdk;
