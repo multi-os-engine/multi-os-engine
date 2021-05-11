@@ -1296,7 +1296,7 @@ jthrowable handleObjCException(JNIEnv* env, void* exception) {
       env->DeleteLocalRef(buildInfo);
       [gObjCAllocMap
           setObject:[NSValue value:&info withObjCType:@encode(ObjCAllocInfo)]
-             forKey:ncls];
+             forKey:(id)ncls];
 
       // Release local ref
       env->DeleteLocalRef(cls);
@@ -1577,7 +1577,7 @@ Class registerObjCClass(JNIEnv* env, jclass type, bool isProxy, jstring baseClas
     // Store the Java class object into the Objective-C class object
     @autoreleasepool {
       [gObjCTypeMap setObject:[NSValue valueWithPointer:env->NewGlobalRef(type)]
-                       forKey:objcClass];
+                       forKey:(id)objcClass];
     }
 
     // Add hybrid class marker protocol
