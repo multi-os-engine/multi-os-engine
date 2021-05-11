@@ -204,6 +204,7 @@ public class MoeSDK {
         final boolean sdkUpToDate = checkComponentUpToDate(file, md5CacheFile, sdkCalculatedMD5Ref);
         if (SDK_PATH.toFile().exists() && isSnapshotSDKVersion) {
             if (sdkUpToDate) {
+                LOG.quiet("Using already downloaded SDK: {}", SDK_PATH.toFile().getAbsolutePath());
                 sdk.validateSDK(SDK_PATH, false);
                 sdk.bakeSDKPaths(SDK_PATH);
                 return sdk;
@@ -212,7 +213,7 @@ public class MoeSDK {
                     FileUtils.deleteFileOrFolder(SDK_PATH);
                     LOG.info("Deleted existing SDK: {}", SDK_PATH.toFile().getAbsolutePath());
                 } catch (IOException e) {
-                    throw new GradleException("Failed to remote directory at " + SDK_PATH.toFile().getAbsolutePath(), e);
+                    throw new GradleException("Failed to remove directory at " + SDK_PATH.toFile().getAbsolutePath(), e);
                 }
             }
         }
