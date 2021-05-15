@@ -288,7 +288,7 @@ public class MoeSDK {
         try {
             configuration = project.getConfigurations().getByName(MOE_SDK_CONFIGURATION_NAME);
             Require.EQ(configuration.getDependencies().size(), 1,
-                    "Unexpected number of dependencies in moeSDK configuration.");
+                    "Unexpected number of dependencies in " + MOE_SDK_CONFIGURATION_NAME + " configuration.");
             dependency = (ExternalDependency)configuration.getDependencies().iterator().next();
         } catch (UnknownConfigurationException ex) {
             configuration = project.getConfigurations().create(MOE_SDK_CONFIGURATION_NAME);
