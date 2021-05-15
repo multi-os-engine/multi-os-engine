@@ -53,12 +53,12 @@ public class CCallbackMapper implements Mapper {
      * Collection used for caching generated native callbacks where the Java instance has no cache
      * field.
      */
-    public Map<Object, CallbackInfo[]> instance2callbacks = new HashMap<Object, CallbackInfo[]>();
+    public final Map<Object, CallbackInfo[]> instance2callbacks = new HashMap<Object, CallbackInfo[]>();
 
     /**
      * Collection used for caching extras for callbacks.
      */
-    public Map<Long, Long> callback2extras = new HashMap<Long, Long>();
+    public final Map<Long, Long> callback2extras = new HashMap<Long, Long>();
 
     /**
      * Cache constructor class used for constructing cache through the NatJ interface.

@@ -37,7 +37,7 @@ public class CStringArrayMapper implements Mapper {
      * Because this is a weak has map, the C string arrays will be released after every Java
      * reference to them is gone.
      */
-    public Map<String[], Pointer> strings2addr = new WeakHashMap<String[], Pointer>();
+    public final Map<String[], Pointer> strings2addr = new WeakHashMap<String[], Pointer>();
 
     /**
      * Creates a C string array.

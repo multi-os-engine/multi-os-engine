@@ -125,20 +125,20 @@ public class NatJ {
     /**
      * Collection for caching runtime objects.
      */
-    private static Map<Class<? extends NativeRuntime>, NativeRuntime> runtimes =
+    private static final Map<Class<? extends NativeRuntime>, NativeRuntime> runtimes =
             new HashMap<Class<? extends NativeRuntime>, NativeRuntime>();
 
     /**
      * Collection used for marking runtimes that are being constructed to keep these runtimes from
      * being constructed multiple times.
      */
-    private static Set<Class<? extends NativeRuntime>> runtimesUnderConstruction =
+    private static final Set<Class<? extends NativeRuntime>> runtimesUnderConstruction =
             new HashSet<Class<? extends NativeRuntime>>();
 
     /**
      * A placeholder runtime instance, used for registering a runtime as invalid;.
      */
-    private static NativeRuntime invalidRuntime = new NativeRuntime(null, null, null) {
+    private static final NativeRuntime invalidRuntime = new NativeRuntime(null, null, null) {
         @Override
         public void tryToDisposeCallback(Object callback) {
         }
@@ -435,7 +435,7 @@ public class NatJ {
     /**
      * Collection for caching any resolved library name.
      */
-    private static Map<String, String> resolvedLibraries = new HashMap<String, String>();
+    private static final Map<String, String> resolvedLibraries = new HashMap<String, String>();
 
     /**
      * Looks up a library by its name in the file system.
@@ -587,7 +587,7 @@ public class NatJ {
     /**
      * Collection for strong references.
      */
-    private static HashMap<Long, Object> strongReferences = new HashMap<Long, Object>();
+    private final static HashMap<Long, Object> strongReferences = new HashMap<Long, Object>();
 
     /**
      * Adds a strong reference.
@@ -636,7 +636,7 @@ public class NatJ {
     /**
      * Collection for weak references.
      */
-    private static HashMap<Long, WeakReference<Object>> weakReferences =
+    private static final HashMap<Long, WeakReference<Object>> weakReferences =
         new HashMap<Long, WeakReference<Object>>();
 
     /**
