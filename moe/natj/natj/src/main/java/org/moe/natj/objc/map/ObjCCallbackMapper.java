@@ -42,13 +42,13 @@ public class ObjCCallbackMapper implements Mapper {
      * Collection used for caching generated native blocks where the Java instance has no cache
      * field.
      */
-    public Map<Object, WeakReference[]> instance2callbacks =
+    public final Map<Object, WeakReference[]> instance2callbacks =
             new WeakHashMap<Object, WeakReference[]>();
 
     /**
      * Collection used for caching data generated for Java blocks.
      */
-    public Map<Class<?>, Long> class2data = new HashMap<Class<?>, Long>();
+    public final Map<Class<?>, Long> class2data = new HashMap<Class<?>, Long>();
 
     /**
      * Cache constructor class used for constructing cache through the NatJ interface.
@@ -78,7 +78,7 @@ public class ObjCCallbackMapper implements Mapper {
     /**
      * Collection for caching the created Java proxy classes and data of native blocks.
      */
-    public Map<Class<?>, NativeBlockInfo> block2blockInfo =
+    public final Map<Class<?>, NativeBlockInfo> block2blockInfo =
             new HashMap<Class<?>, NativeBlockInfo>();
 
     /**
@@ -88,7 +88,7 @@ public class ObjCCallbackMapper implements Mapper {
      * Will remove the weak reference from the Objective-C block object and send release message
      * to the pointed object.
      */
-    private static Pointer.Releaser strongBlockBindingReleaser = new Pointer.Releaser() {
+    private static final Pointer.Releaser strongBlockBindingReleaser = new Pointer.Releaser() {
         @Override
         public void release(long peer) {
             ObjCRuntime.lockObject(peer);

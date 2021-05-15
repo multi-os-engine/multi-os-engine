@@ -152,7 +152,7 @@ public class ObjCRuntime extends NativeRuntime {
      * <p>
      * Will send release message to the pointed object.
      */
-    private static Releaser strongReleaser = new Releaser() {
+    private static final Releaser strongReleaser = new Releaser() {
         @Override
         public void release(long peer) {
             releaseObject(peer);
@@ -401,25 +401,25 @@ public class ObjCRuntime extends NativeRuntime {
     /**
      * Cache for resolved Objective-C classes.
      */
-    private HashMap<Long, java.lang.Class<?>> resolvedObjCClasses =
+    private final HashMap<Long, java.lang.Class<?>> resolvedObjCClasses =
             new HashMap<Long, java.lang.Class<?>>();
 
     /**
      * Contains the every packages of the of the SDK.
      */
-    private Set<String> sdkPackages = new HashSet<String>();
+    private final Set<String> sdkPackages = new HashSet<String>();
 
     /**
      * Contains what packages to use when trying to resolve a class by the prefix of its name.
      */
-    private SortedMap<String, Set<String>> preferablePackagesForPrefixes =
+    private final SortedMap<String, Set<String>> preferablePackagesForPrefixes =
             new TreeMap<String, Set<String>>();
 
     /**
      * List of external packages that will be used when a class can not be resolved by any package
      * of {@link #sdkPackages}.
      */
-    private Set<String> externalPackages = new HashSet<String>();
+    private final Set<String> externalPackages = new HashSet<String>();
 
     /**
      * Handles an @{link org.moe.natj.objc.IFrameworkInitializer} instance.

@@ -33,7 +33,7 @@ public class Class extends ObjCObject {
     /**
      * Collection to cached already resolved Objective-C classes.
      */
-    private static Map<String, Long> resolvedClasses = new HashMap<String, Long>();
+    private final static Map<String, Long> resolvedClasses = new HashMap<String, Long>();
 
     /**
      * Resolves Objective-C class by its name with using {@link #resolvedClasses} collection as a

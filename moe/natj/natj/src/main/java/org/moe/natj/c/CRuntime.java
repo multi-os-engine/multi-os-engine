@@ -117,7 +117,7 @@ public class CRuntime extends NativeRuntime {
      * <p>
      * Will call free on the pointer.
      */
-    private static Releaser strongReleaser = new Releaser() {
+    private static final Releaser strongReleaser = new Releaser() {
         @Override
         public void release(long peer) {
             free(peer);

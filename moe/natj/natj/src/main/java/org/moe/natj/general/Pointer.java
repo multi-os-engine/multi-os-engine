@@ -39,7 +39,7 @@ public class Pointer {
     /**
      * The releaser responsible to cleanup after the GC trashed the {@link Pointer} object.
      */
-    private Releaser releaser;
+    private final Releaser releaser;
 
     /**
      * Constructs a {@link Pointer} object for a native pointer with a given releaser.

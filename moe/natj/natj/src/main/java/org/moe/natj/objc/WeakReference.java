@@ -23,7 +23,7 @@ import org.moe.natj.general.Pointer;
  * Objective-C weak reference holder, used for weak pointers.
  */
 public class WeakReference {
-    private long location;
+    private final long location;
 
     /**
      * Creates an weak reference to an Objective-C object.

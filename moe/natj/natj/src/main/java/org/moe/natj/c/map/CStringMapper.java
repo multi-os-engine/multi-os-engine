@@ -37,7 +37,7 @@ public class CStringMapper implements Mapper {
      * Because this is a weak has map, the C strings will be released after every Java reference
      * to them is gone.
      */
-    public Map<String, Pointer> string2addr = new WeakHashMap<String, Pointer>();
+    public final Map<String, Pointer> string2addr = new WeakHashMap<String, Pointer>();
 
     /**
      * Creates a C string.

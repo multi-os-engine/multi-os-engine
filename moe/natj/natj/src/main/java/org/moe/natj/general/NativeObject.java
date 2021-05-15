@@ -23,7 +23,7 @@ public class NativeObject {
     /**
      * The pointer pointing to the native value.
      */
-    private Pointer peer;
+    private final Pointer peer;
 
     /**
      * Returns the native pointer.
