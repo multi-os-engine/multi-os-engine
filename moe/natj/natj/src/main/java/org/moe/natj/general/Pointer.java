@@ -16,30 +16,20 @@ limitations under the License.
 
 package org.moe.natj.general;
 
+import org.moe.natj.general.mem.Finalizer;
+import org.moe.natj.general.mem.Releaser;
+import org.moe.natj.general.mem.ReleaserMetadata;
+
 /**
  * Pointer class to handle pointers.
  *
  * <p>
  * Have automatic cleanup with using {@link Releaser releasers}.
  */
-public class Pointer {
-
-    /**
-     * Interface for releasers.
-     * {@code #release(long)} will be called for doing cleanup.
-     */
-    public interface Releaser {
-        void release(long peer);
-        boolean ifFinalizedExternally();
-    }
+public final class Pointer {
 
     /** The native pointer. */
-    private long peer;
-
-    /**
-     * The releaser responsible to cleanup after the GC trashed the {@link Pointer} object.
-     */
-    private final Releaser releaser;
+    final ReleaserMetadata peer;
 
     /**
      * Constructs a {@link Pointer} object for a native pointer with a given releaser.
@@ -49,11 +39,10 @@ public class Pointer {
      *      has been collected by the GC.
      */
     public Pointer(long peer, Releaser releaser) {
-        if (peer == -1) {
-            throw new IllegalArgumentException();
+        this.peer = new ReleaserMetadata(this, releaser, peer);
+        if (!this.peer.ifFinalizedExternally()) {
+            Finalizer.registerForFinalize(this.peer);
         }
-        this.peer = peer;
-        this.releaser = releaser;
     }
 
     /**
@@ -62,36 +51,7 @@ public class Pointer {
      * @param peer The native peer pointer.
      */
     public Pointer(long peer) {
-        if (peer == -1) {
-            throw new IllegalArgumentException();
-        }
-        this.peer = peer;
-        this.releaser = null;
-    }
-
-    /**
-     * Invokes the {@link #releaser releaser}'s {@link Releaser#release(long)} method.
-     */
-    protected void finalize() {
-        if (releaser != null && peer != 0 && !releaser.ifFinalizedExternally()) {
-            releaser.release(peer);
-        }
-    }
-
-    /**
-     * Invokes the {@link #releaser releaser}'s {@link Releaser#release(long)} method.
-     *
-     * This method should only be accessed from {@link NativeObject}.
-     */
-    void release() {
-        if (releaser != null && peer != 0 && releaser.ifFinalizedExternally()) {
-            if (peer == -1) {
-                new RuntimeException("peer already released").printStackTrace();
-            } else {
-                releaser.release(peer);
-                peer = -1;
-            }
-        }
+        this.peer = new ReleaserMetadata(this, peer);
     }
 
     /**
@@ -100,7 +60,7 @@ public class Pointer {
     @Override
     public boolean equals(Object object) {
         if (object instanceof Pointer) {
-            return peer == ((Pointer) object).peer;
+            return peer.isSamePeer(((Pointer) object).peer);
         }
         return false;
     }
@@ -111,10 +71,7 @@ public class Pointer {
      * @return The native peer pointer.
      */
     public long getPeer() {
-        if (this.peer == -1) {
-            throw new IllegalStateException();
-        }
-        return peer;
+        return peer.getPeer();
     }
 
     /**
@@ -123,13 +80,7 @@ public class Pointer {
      * @param peer The native peer pointer.
      */
     public void setPeer(long peer) {
-        if (peer == -1) {
-            throw new IllegalArgumentException();
-        }
-        if (this.peer == -1) {
-            throw new IllegalStateException();
-        }
-        this.peer = peer;
+        this.peer.setPeer(peer);
     }
 
     /**
@@ -138,6 +89,6 @@ public class Pointer {
      * @return true when releaser is set
      */
     public boolean hasReleaser() {
-        return releaser != null;
+        return peer.hasReleaser();
     }
 }

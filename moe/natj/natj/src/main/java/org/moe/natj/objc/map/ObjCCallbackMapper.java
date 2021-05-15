@@ -20,6 +20,7 @@ import org.moe.natj.general.Mapper;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.mem.Releaser;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.WeakReference;
 import org.moe.natj.objc.ann.ObjCBlock;
@@ -88,7 +89,7 @@ public class ObjCCallbackMapper implements Mapper {
      * Will remove the weak reference from the Objective-C block object and send release message
      * to the pointed object.
      */
-    private static final Pointer.Releaser strongBlockBindingReleaser = new Pointer.Releaser() {
+    private static final Releaser strongBlockBindingReleaser = new Releaser() {
         @Override
         public void release(long peer) {
             ObjCRuntime.lockObject(peer);

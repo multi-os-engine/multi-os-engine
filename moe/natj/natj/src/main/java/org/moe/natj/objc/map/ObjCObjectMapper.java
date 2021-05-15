@@ -22,7 +22,7 @@ import org.moe.natj.general.NatJ.JavaObjectConstructionInfo;
 import org.moe.natj.general.NatJ.NativeObjectConstructionInfo;
 import org.moe.natj.general.NativeObject;
 import org.moe.natj.general.Pointer;
-import org.moe.natj.general.Pointer.Releaser;
+import org.moe.natj.general.mem.Releaser;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCObject;

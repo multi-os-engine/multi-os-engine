@@ -19,6 +19,7 @@ package org.moe.natj.general.ptr.impl;
 import org.moe.natj.cxx.CxxObject;
 import org.moe.natj.cxx.CxxRuntime;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.mem.Releaser;
 import org.moe.natj.general.ptr.IGuardedPtr;
 import org.moe.natj.general.ptr.Ptr;
 
@@ -431,7 +432,7 @@ class CxxObjectPtrImpl<T extends CxxObject> extends AbstractTypedPtr<T, T> {
 
     }
 
-    private static class CxxObjectReleaser implements Pointer.Releaser {
+    private static class CxxObjectReleaser implements Releaser {
         private final Method delete;
 
         public CxxObjectReleaser(Method delete) {

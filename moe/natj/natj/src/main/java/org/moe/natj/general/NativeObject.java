@@ -16,6 +16,8 @@ limitations under the License.
 
 package org.moe.natj.general;
 
+import org.moe.natj.general.mem.Finalizer;
+
 /**
  * The ascendant of every native object.
  */
@@ -53,12 +55,8 @@ public class NativeObject {
      */
     protected NativeObject(Pointer peer) {
         this.peer = peer;
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        if (peer != null) {
-            peer.release();
+        if (peer.peer.ifFinalizedExternally()) {
+            Finalizer.registerForFinalize(this.peer.peer);
         }
     }
 }

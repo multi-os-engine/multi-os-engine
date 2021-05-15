@@ -25,7 +25,7 @@ import org.moe.natj.general.NatJ.JavaObjectConstructionInfo;
 import org.moe.natj.general.NativeObject;
 import org.moe.natj.general.NativeRuntime;
 import org.moe.natj.general.Pointer;
-import org.moe.natj.general.Pointer.Releaser;
+import org.moe.natj.general.mem.Releaser;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
