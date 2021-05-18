@@ -54,6 +54,7 @@ public class LinkedFrameworksForm extends JPanel {
                             } else {
                                 xcodeEditorManager.addFramewokToTest(selectedFramework);
                             }
+                            listModel.addElement(selectedFramework);
                         }
                     }
                 }
@@ -70,6 +71,7 @@ public class LinkedFrameworksForm extends JPanel {
                     } else {
                         xcodeEditorManager.removeTestFramework(selectedFramework);
                     }
+                    listModel.removeElement(selectedFramework);
                 }
             }
         });
