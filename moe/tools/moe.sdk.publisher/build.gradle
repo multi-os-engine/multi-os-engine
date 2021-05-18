@@ -227,8 +227,12 @@ publishing {
             url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
 
             credentials {
-                username = ossrhUsername
-                password = ossrhPassword
+                if (project.hasProperty('ossrhUsername')) {
+                    username = property('ossrhUsername')
+                }
+                if (project.hasProperty('ossrhPassword')) {
+                    password = property('ossrhPassword')
+                }
             }
         }
     }
