@@ -114,7 +114,7 @@ object NatJRuntime {
     fun getParentImplementations(
         superName: String?, interfaces: Array<out String>?,
         declaringClass: String, access: Int, name: String, desc: String,
-        annotations: Set<String>,
+        annotations: Set<String> = emptySet(),
         allowStatic: Boolean = false,
     ): List<Method> {
         val ps: MutableSet<Class<*>> = linkedSetOf()
@@ -146,7 +146,7 @@ object NatJRuntime {
                         allowStatic = allowStatic,
                     )) {
                     // Check annotation
-                    val hasAnnotation = m.declaredAnnotations.any {
+                    val hasAnnotation = annotations.isEmpty() || m.declaredAnnotations.any {
                         it.annotationClass.java.getDescriptor() in annotations
                     }
                     if (hasAnnotation) {
@@ -164,7 +164,7 @@ object NatJRuntime {
     fun getParentImplementation(
         superName: String?, interfaces: Array<out String>?,
         declaringClass: String, access: Int, name: String, desc: String,
-        annotations: Set<String>,
+        annotations: Set<String> = emptySet(),
         allowStatic: Boolean = false,
     ): Method? {
         return getParentImplementations(

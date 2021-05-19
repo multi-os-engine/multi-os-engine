@@ -1,11 +1,13 @@
 package org.moe.tools.classvalidator.substrate
 
 import org.moe.tools.classvalidator.natj.NatJRuntime
+import org.moe.tools.classvalidator.natj.NatJRuntime.getDescriptor
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.FieldVisitor
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
+import java.lang.reflect.Modifier
 
 /**
  * Collect all classes, methods & fields that will be used by NatJ via reflection & JNI,
@@ -112,6 +114,26 @@ class CollectReflectionConfig(
 
             val mv = super.visitMethod(access, name, descriptor, signature, exceptions)
 
+            if (Modifier.isPublic(access)
+                && !Modifier.isAbstract(access)
+                && !Modifier.isStatic(access)
+                && name.startsWith("call_")) {
+                // Check if this method is a Block/Function callback
+                val supers = NatJRuntime.getParentImplementations(
+                    superName, interfaces, this.name,
+                    access, name, descriptor
+                )
+
+                val isBlockMethod = supers.any {
+                    it.declaringClass.isBlockClass()
+                }
+
+                if (isBlockMethod) {
+                    config.addMethod(this.name, name, descriptor)
+                    return mv
+                }
+            }
+
             return MethodInspector(
                 declaringClass = this,
                 name = name,
@@ -196,5 +218,27 @@ class CollectReflectionConfig(
             "Lorg/moe/svm/anns/JNI;",
             "Lorg/moe/svm/anns/Reflection;",
         )
+
+        private fun Class<*>.isBlockClass(): Boolean {
+            if (!isInterface) {
+                return false
+            }
+
+            val cname = name
+            if ("\$Block_" !in cname && "\$Function_" !in cname) {
+                return false
+            }
+
+            if (declaredMethods.size != 1) {
+                return false
+            }
+
+            val hasRuntime = declaredAnnotations.any {
+                val desc = it.annotationClass.java.getDescriptor()
+                desc == NatJRuntime.Annotations.RUNTIME_DESC
+            }
+
+            return hasRuntime
+        }
     }
 }
