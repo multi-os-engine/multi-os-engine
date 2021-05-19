@@ -141,7 +141,7 @@ open class NativeImage : AbstractBaseTask() {
 
     private var customOptions: List<String>? = null
 
-    @InputFiles
+    @Input
     @NotNull
     fun getCustomOptions(): List<String> {
         return getOrConvention(customOptions, CONVENTION_CUSTOM_OPTIONS) ?: emptyList()
