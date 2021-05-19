@@ -274,8 +274,16 @@ open class NativeImage : AbstractBaseTask() {
             ).toSet()
         }
         addConvention(CONVENTION_CUSTOM_OPTIONS) {
-            val list: List<String> = project.file("customConfig.cfg").takeIf { it.exists() && it.isFile }?.useLines { it.toList() } ?: emptyList()
-            list + (moeExtension.nativeImage.options ?: emptyList<String>())
+            listOfNotNull(
+                // Read the project custom config file
+                project.file("customConfig.cfg").takeIf { it.exists() && it.isFile }?.readLines(),
+                // Then the options from moe extension
+                moeExtension.nativeImage.options?.toList(),
+            ).flatten()
+                // Remove extra spaces
+                .map { it.trim() }
+                // Remove any empty lines
+                .filter { it.isNotEmpty() }
         }
     }
 
