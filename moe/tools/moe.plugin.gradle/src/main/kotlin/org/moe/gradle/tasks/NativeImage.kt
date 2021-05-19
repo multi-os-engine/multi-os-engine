@@ -148,8 +148,8 @@ open class NativeImage : AbstractBaseTask() {
     }
 
     @IgnoreUnused
-    fun setCustomOptions(customOptions: Collection<String>) {
-        this.customOptions = customOptions.toList()
+    fun setCustomOptions(customOptions: Collection<String>?) {
+        this.customOptions = customOptions?.toList()
     }
 
     override fun run() {
