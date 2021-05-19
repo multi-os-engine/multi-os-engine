@@ -276,7 +276,7 @@ open class NativeImage : AbstractBaseTask() {
         addConvention(CONVENTION_CUSTOM_OPTIONS) {
             listOfNotNull(
                 // Read the project custom config file
-                project.file("customConfig.cfg").takeIf { it.exists() && it.isFile }?.readLines(),
+                project.file("custom-config.cfg").takeIf { it.exists() && it.isFile }?.readLines(),
                 // Then the options from moe extension
                 moeExtension.nativeImage.options?.toList(),
             ).flatten()
