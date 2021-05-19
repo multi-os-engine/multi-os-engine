@@ -31,6 +31,7 @@ data class Config(
         val jniConfigFiles: Set<File> = emptySet(),
         val reflectionConfigFiles: Set<File> = emptySet(),
 
+        val customOptions: Set<String> = emptySet(),
         // Platform & arch config
         val target: Triplet,
 

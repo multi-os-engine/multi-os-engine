@@ -53,6 +53,7 @@ class SubstrateExecutor(
                 "-H:+UseCAPCache",
                 "-H:CAPCacheDir=${ensureCapCacheDir()}",
                 "--no-server",
+                *config.customOptions.toTypedArray(),
                 "-H:Log=registerResource:verbose",
                 "-H:IncludeResources=.*",
                 "-H:ExcludeResources=.*\\.class$",
