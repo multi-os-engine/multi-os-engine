@@ -64,6 +64,9 @@ public class MoeExtension extends AbstractMoeExtension {
     public final RemoteBuildOptions remoteBuildOptions;
 
     @NotNull
+    public final NativeImageOptions nativeImage;
+
+    @NotNull
     private MoePlatform platform = MoePlatform.IOS;
 
     @Nullable
@@ -81,6 +84,7 @@ public class MoeExtension extends AbstractMoeExtension {
         this.actionsAndOutlets = instantiator.newInstance(UIActionsAndOutletsOptions.class);
         this.ipaExport = instantiator.newInstance(IpaExportOptions.class);
         this.remoteBuildOptions = instantiator.newInstance(RemoteBuildOptions.class);
+        this.nativeImage = instantiator.newInstance(NativeImageOptions.class);
     }
 
     void setup() {
@@ -131,6 +135,11 @@ public class MoeExtension extends AbstractMoeExtension {
     @IgnoreUnused
     public void remoteBuild(Action<RemoteBuildOptions> action) {
         Require.nonNull(action).execute(remoteBuildOptions);
+    }
+
+    @IgnoreUnused
+    public void nativeImage(Action<NativeImageOptions> action) {
+        Require.nonNull(action).execute(nativeImage);
     }
 
     @NotNull

@@ -1,11 +1,7 @@
 package org.moe.gradle.tasks
 
 import org.gradle.api.file.ConfigurableFileCollection
-import org.gradle.api.tasks.Input
-import org.gradle.api.tasks.InputFile
-import org.gradle.api.tasks.InputFiles
-import org.gradle.api.tasks.OutputFile
-import org.gradle.api.tasks.SourceSet
+import org.gradle.api.tasks.*
 import org.gradle.api.tasks.bundling.Jar
 import org.moe.gradle.MoeExtension
 import org.moe.gradle.MoePlatform
@@ -130,6 +126,19 @@ open class NativeImage : AbstractBaseTask() {
         this.reflectionConfigFiles = reflectionConfigFiles?.toSet()
     }
 
+    private var customOptions: Set<String>? = null
+
+    @InputFiles
+    @NotNull
+    fun getCustomOptions(): Set<String> {
+        return getOrConvention(customOptions, CONVENTION_CUSTOM_OPTIONS) ?: emptySet()
+    }
+
+    @IgnoreUnused
+    fun setCustomOptions(customOptions: Collection<String>) {
+        this.customOptions = customOptions.toSet()
+    }
+
     override fun run() {
         val svmConf = Config(
                 mainClassName = getMainClassName(),
@@ -143,12 +152,13 @@ open class NativeImage : AbstractBaseTask() {
                 ),
                 jniConfigFiles = getJniConfigFiles().toSet(),
                 reflectionConfigFiles = getReflectionConfigFiles().toSet(),
+                customOptions = getCustomOptions(),
                 outputDir = getSvmTmpDir().toPath(),
                 logFile = logFile,
         )
         val executor = SubstrateExecutor(
                 graalVM = moePlugin.graalVM,
-                config = svmConf,
+                config = svmConf
         )
         executor.compile()
 
@@ -243,6 +253,10 @@ open class NativeImage : AbstractBaseTask() {
                 testClassesProviderTaskDep?.reflectionConfigFile,
             ).toSet()
         }
+        addConvention(CONVENTION_CUSTOM_OPTIONS) {
+            val list: List<String> = project.file("customConfig.cfg").takeIf { it.exists() && it.isFile }?.useLines { it.toList() } ?: emptyList()
+            list.union(moeExtension.nativeImage.options?.toList() ?: emptyList())
+        }
     }
 
     companion object {
@@ -254,5 +268,7 @@ open class NativeImage : AbstractBaseTask() {
         private const val CONVENTION_LLVM_OBJ_FILE = "LLVMObjFile"
         private const val CONVENTION_JNI_CONFIG_FILES = "jniConfigFiles"
         private const val CONVENTION_REFLECTION_CONFIG_FILES = "reflectionConfigFiles"
+        private const val CONVENTION_CUSTOM_OPTIONS = "customOptions"
+
     }
 }
