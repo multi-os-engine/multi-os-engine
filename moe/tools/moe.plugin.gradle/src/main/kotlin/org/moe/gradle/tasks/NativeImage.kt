@@ -126,6 +126,19 @@ open class NativeImage : AbstractBaseTask() {
         this.reflectionConfigFiles = reflectionConfigFiles?.toSet()
     }
 
+    private var proxyConfigFiles: Set<Any>? = null
+
+    @InputFiles
+    @NotNull
+    fun getProxyConfigFiles(): ConfigurableFileCollection {
+        return project.files(getOrConvention(proxyConfigFiles, CONVENTION_PROXY_CONFIG_FILES))
+    }
+
+    @IgnoreUnused
+    fun setProxyConfigFiles(proxyConfigFiles: Collection<Any>?) {
+        this.proxyConfigFiles = proxyConfigFiles?.toSet()
+    }
+
     private var customOptions: Set<String>? = null
 
     @InputFiles
@@ -152,6 +165,7 @@ open class NativeImage : AbstractBaseTask() {
                 ),
                 jniConfigFiles = getJniConfigFiles().toSet(),
                 reflectionConfigFiles = getReflectionConfigFiles().toSet(),
+                proxyConfigFiles = getProxyConfigFiles().toSet(),
                 customOptions = getCustomOptions(),
                 outputDir = getSvmTmpDir().toPath(),
                 logFile = logFile,
@@ -253,6 +267,12 @@ open class NativeImage : AbstractBaseTask() {
                 testClassesProviderTaskDep?.reflectionConfigFile,
             ).toSet()
         }
+        addConvention(CONVENTION_PROXY_CONFIG_FILES) {
+            listOfNotNull(
+                    moeSDK.proxyConfigBaseFile,
+                    project.file("dynamic-proxies.json").takeIf { it.exists() && it.isFile }
+            ).toSet()
+        }
         addConvention(CONVENTION_CUSTOM_OPTIONS) {
             val list: List<String> = project.file("customConfig.cfg").takeIf { it.exists() && it.isFile }?.useLines { it.toList() } ?: emptyList()
             list.union(moeExtension.nativeImage.options?.toList() ?: emptyList())
@@ -268,6 +288,7 @@ open class NativeImage : AbstractBaseTask() {
         private const val CONVENTION_LLVM_OBJ_FILE = "LLVMObjFile"
         private const val CONVENTION_JNI_CONFIG_FILES = "jniConfigFiles"
         private const val CONVENTION_REFLECTION_CONFIG_FILES = "reflectionConfigFiles"
+        private const val CONVENTION_PROXY_CONFIG_FILES = "proxyConfigFiles"
         private const val CONVENTION_CUSTOM_OPTIONS = "customOptions"
 
     }
