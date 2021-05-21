@@ -63,6 +63,9 @@ class SubstrateExecutor(
                 *config.reflectionConfigFiles.map {
                     "-H:ReflectionConfigurationFiles=${it.absolutePath}"
                 }.toTypedArray(),
+                *config.proxyConfigFiles.map {
+                    "-H:DynamicProxyConfigurationFiles=${it.absolutePath}"
+                }.toTypedArray(),
                 "-H:+AllowIncompleteClasspath",
                 "-cp",
                 config.classpath.joinToString(File.pathSeparator),
