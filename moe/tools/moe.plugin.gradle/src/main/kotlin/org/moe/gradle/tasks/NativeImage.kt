@@ -275,7 +275,7 @@ open class NativeImage : AbstractBaseTask() {
         }
         addConvention(CONVENTION_CUSTOM_OPTIONS) {
             val list: List<String> = project.file("customConfig.cfg").takeIf { it.exists() && it.isFile }?.useLines { it.toList() } ?: emptyList()
-            list.union(moeExtension.nativeImage.options?.toList() ?: emptyList()).toList()
+            list + (moeExtension.nativeImage.options ?: emptyList<String>())
         }
     }
 
