@@ -32,7 +32,7 @@ data class Config(
         val reflectionConfigFiles: Set<File> = emptySet(),
         val proxyConfigFiles: Set<File> = emptySet(),
 
-        val customOptions: Set<String> = emptySet(),
+        val customOptions: List<String> = emptyList(),
         // Platform & arch config
         val target: Triplet,
 
