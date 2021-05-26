@@ -53,6 +53,7 @@ class SubstrateExecutor(
                 "-H:+UseCAPCache",
                 "-H:CAPCacheDir=${ensureCapCacheDir()}",
                 "--no-server",
+                *config.customOptions.toTypedArray(),
                 "-H:Log=registerResource:verbose",
                 "-H:IncludeResources=.*",
                 "-H:ExcludeResources=.*\\.class$",
@@ -61,6 +62,9 @@ class SubstrateExecutor(
                 }.toTypedArray(),
                 *config.reflectionConfigFiles.map {
                     "-H:ReflectionConfigurationFiles=${it.absolutePath}"
+                }.toTypedArray(),
+                *config.proxyConfigFiles.map {
+                    "-H:DynamicProxyConfigurationFiles=${it.absolutePath}"
                 }.toTypedArray(),
                 "-H:+AllowIncompleteClasspath",
                 "-cp",
