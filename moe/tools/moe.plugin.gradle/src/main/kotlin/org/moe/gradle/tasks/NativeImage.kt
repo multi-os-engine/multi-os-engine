@@ -139,17 +139,17 @@ open class NativeImage : AbstractBaseTask() {
         this.proxyConfigFiles = proxyConfigFiles?.toSet()
     }
 
-    private var customOptions: Set<String>? = null
+    private var customOptions: List<String>? = null
 
     @InputFiles
     @NotNull
-    fun getCustomOptions(): Set<String> {
-        return getOrConvention(customOptions, CONVENTION_CUSTOM_OPTIONS) ?: emptySet()
+    fun getCustomOptions(): List<String> {
+        return getOrConvention(customOptions, CONVENTION_CUSTOM_OPTIONS) ?: emptyList()
     }
 
     @IgnoreUnused
     fun setCustomOptions(customOptions: Collection<String>) {
-        this.customOptions = customOptions.toSet()
+        this.customOptions = customOptions.toList()
     }
 
     override fun run() {
@@ -275,7 +275,7 @@ open class NativeImage : AbstractBaseTask() {
         }
         addConvention(CONVENTION_CUSTOM_OPTIONS) {
             val list: List<String> = project.file("customConfig.cfg").takeIf { it.exists() && it.isFile }?.useLines { it.toList() } ?: emptyList()
-            list.union(moeExtension.nativeImage.options?.toList() ?: emptyList())
+            list.union(moeExtension.nativeImage.options?.toList() ?: emptyList()).toList()
         }
     }
 
