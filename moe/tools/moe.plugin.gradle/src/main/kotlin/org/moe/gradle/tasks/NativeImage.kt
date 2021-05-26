@@ -1,11 +1,7 @@
 package org.moe.gradle.tasks
 
 import org.gradle.api.file.ConfigurableFileCollection
-import org.gradle.api.tasks.Input
-import org.gradle.api.tasks.InputFile
-import org.gradle.api.tasks.InputFiles
-import org.gradle.api.tasks.OutputFile
-import org.gradle.api.tasks.SourceSet
+import org.gradle.api.tasks.*
 import org.gradle.api.tasks.bundling.Jar
 import org.moe.gradle.MoeExtension
 import org.moe.gradle.MoePlatform
@@ -130,6 +126,32 @@ open class NativeImage : AbstractBaseTask() {
         this.reflectionConfigFiles = reflectionConfigFiles?.toSet()
     }
 
+    private var proxyConfigFiles: Set<Any>? = null
+
+    @InputFiles
+    @NotNull
+    fun getProxyConfigFiles(): ConfigurableFileCollection {
+        return project.files(getOrConvention(proxyConfigFiles, CONVENTION_PROXY_CONFIG_FILES))
+    }
+
+    @IgnoreUnused
+    fun setProxyConfigFiles(proxyConfigFiles: Collection<Any>?) {
+        this.proxyConfigFiles = proxyConfigFiles?.toSet()
+    }
+
+    private var customOptions: List<String>? = null
+
+    @InputFiles
+    @NotNull
+    fun getCustomOptions(): List<String> {
+        return getOrConvention(customOptions, CONVENTION_CUSTOM_OPTIONS) ?: emptyList()
+    }
+
+    @IgnoreUnused
+    fun setCustomOptions(customOptions: Collection<String>) {
+        this.customOptions = customOptions.toList()
+    }
+
     override fun run() {
         val svmConf = Config(
                 mainClassName = getMainClassName(),
@@ -143,12 +165,14 @@ open class NativeImage : AbstractBaseTask() {
                 ),
                 jniConfigFiles = getJniConfigFiles().toSet(),
                 reflectionConfigFiles = getReflectionConfigFiles().toSet(),
+                proxyConfigFiles = getProxyConfigFiles().toSet(),
+                customOptions = getCustomOptions(),
                 outputDir = getSvmTmpDir().toPath(),
                 logFile = logFile,
         )
         val executor = SubstrateExecutor(
                 graalVM = moePlugin.graalVM,
-                config = svmConf,
+                config = svmConf
         )
         executor.compile()
 
@@ -243,6 +267,16 @@ open class NativeImage : AbstractBaseTask() {
                 testClassesProviderTaskDep?.reflectionConfigFile,
             ).toSet()
         }
+        addConvention(CONVENTION_PROXY_CONFIG_FILES) {
+            listOfNotNull(
+                    moeSDK.proxyConfigBaseFile,
+                    project.file("dynamic-proxies.json").takeIf { it.exists() && it.isFile }
+            ).toSet()
+        }
+        addConvention(CONVENTION_CUSTOM_OPTIONS) {
+            val list: List<String> = project.file("customConfig.cfg").takeIf { it.exists() && it.isFile }?.useLines { it.toList() } ?: emptyList()
+            list + (moeExtension.nativeImage.options ?: emptyList<String>())
+        }
     }
 
     companion object {
@@ -254,5 +288,8 @@ open class NativeImage : AbstractBaseTask() {
         private const val CONVENTION_LLVM_OBJ_FILE = "LLVMObjFile"
         private const val CONVENTION_JNI_CONFIG_FILES = "jniConfigFiles"
         private const val CONVENTION_REFLECTION_CONFIG_FILES = "reflectionConfigFiles"
+        private const val CONVENTION_PROXY_CONFIG_FILES = "proxyConfigFiles"
+        private const val CONVENTION_CUSTOM_OPTIONS = "customOptions"
+
     }
 }
