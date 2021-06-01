@@ -103,7 +103,7 @@ if (!$arch) {
     # look for -target flag
     foreach my $i (1 .. $#gcc_cmd-1) {
         if ($gcc_cmd[$i] eq "-target" and
-            $gcc_cmd[$i+1] =~ /(arm64|aarch64|arm|powerpc|ppc)/) {
+            $gcc_cmd[$i+1] =~ /(i386|x86_64|arm64|aarch64|arm|powerpc|ppc)/) {
             $arch = $1;
         }
     }
