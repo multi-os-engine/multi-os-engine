@@ -40,9 +40,9 @@ subprojects {
     }
 }
 
-def brewPath(suffix) {
-    def isAppleSilicon = System.getProperty("os.arch") == "aarch64"
+ext.isAppleSilicon = System.getProperty("os.arch") == "aarch64"
 
+def brewPath(suffix) {
     return (isAppleSilicon ? "/opt/homebrew/" : "/usr/local/") + suffix
 }
 
@@ -69,11 +69,11 @@ task mingw(type: Script) {
 
     workDir 'mingw'
 
-    def BREW_GMP = checkDir '/usr/local/opt/gmp'
-    def BREW_MPFR = checkDir '/usr/local/opt/mpfr'
-    def BREW_MPC = checkDir '/usr/local/opt/libmpc'
-    def BREW_CLOOG = checkDir '/usr/local/opt/cloog'
-    def BREW_ISL = checkDir '/usr/local/opt/isl'
+    def BREW_GMP = checkDir brewPath('./opt/gmp')
+    def BREW_MPFR = checkDir brewPath('./opt/mpfr')
+    def BREW_MPC = checkDir brewPath('./opt/libmpc')
+    def BREW_CLOOG = checkDir brewPath('./opt/cloog')
+    def BREW_ISL = checkDir brewPath('./opt/isl')
 
     progress "Downloading $binutils_version"
     workDir 'mingw'
@@ -119,6 +119,13 @@ task mingw(type: Script) {
     rawWorkDir 'mingw'
     exec 'rm', '-f', 'mingw'
     exec 'ln', '-s', 'x86_64-w64-mingw32', 'mingw'
+
+    if (isAppleSilicon) {
+        // Patch for apple silicon
+        workDir "mingw/${gcc_version}"
+        exec 'git', 'apply', '../../../mingw-apple-silicon.patch'
+    }
+
     workDir "mingw/${gcc_version}/build64"
     exec '../configure', '--target=x86_64-w64-mingw32',
             '--disable-multilib', '--enable-languages=c,c++,objc,obj-c++',
