@@ -35,12 +35,16 @@ prebuild_macos_static.dependsOn ':external/libimobiledevice/openssl:prebuild_mac
 
 task prebuild_macos(type: Script, dependsOn: prebuild_macos_static) {
     workDir 'macos'
-    exec 'cc', '-dynamiclib', '-o', 'libimobiledevice.dylib',
+    exec 'cc', '-arch', 'x86_64', '-arch', 'arm64',
+            '-dynamiclib', '-o', 'libimobiledevice.dylib',
             '../../../libusbmuxd/build/macos/lib/libusbmuxd-2.0.a',
             '../../../libplist/build/macos/lib/libplist-2.0.a',
-            '-force_load', 'lib/libimobiledevice-1.0.a',
-            '../../../openssl/build/macos/lib/libcrypto.a',
-            '../../../openssl/build/macos/lib/libssl.a',
+            '-force_load', 'x86_64/lib/libimobiledevice-1.0.a',
+            '-force_load', 'arm64/lib/libimobiledevice-1.0.a',
+            '../../../openssl/build/macos/x86_64/lib/libcrypto.a',
+            '../../../openssl/build/macos/x86_64/lib/libssl.a',
+            '../../../openssl/build/macos/arm64/lib/libcrypto.a',
+            '../../../openssl/build/macos/arm64/lib/libssl.a',
             '-lz', '-liconv', '-llzma'
 }
 prebuild.dependsOn prebuild_macos
