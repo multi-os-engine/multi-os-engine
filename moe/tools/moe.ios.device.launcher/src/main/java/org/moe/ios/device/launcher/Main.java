@@ -47,8 +47,8 @@ public class Main {
         String osName = NativeUtil.getUnifiedSystemName();
 
         if (osName.equals(NativeUtil.OS_NAME_MAC_OS_X)) {
-            System.load(current + "/macosx/x86_64/libnatj.dylib");
-            System.load(current + "/macosx/x86_64/libimobiledevice.dylib");
+            System.load(current + "/macosx/libnatj.dylib");
+            System.load(current + "/macosx/libimobiledevice.dylib");
         } else if (osName.equals(NativeUtil.OS_NAME_WINDOWS)) {
             System.load(current + "/windows/x86_64/natj.dll");
             System.load(current + "/windows/x86_64/libimobiledevice.dll");
