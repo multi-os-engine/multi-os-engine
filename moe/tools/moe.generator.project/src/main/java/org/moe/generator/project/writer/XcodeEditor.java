@@ -237,9 +237,6 @@ public class XcodeEditor extends AbstractXcodeEditor {
     private void configureProject() throws IOException {
         setAsUpToDate();
         cleanupBuildSettings(project);
-
-        // Disable arm64 build for simulators
-        setBuildSetting(project, "EXCLUDED_ARCHS[sdk=iphonesimulator*]", "arm64");
     }
 
     /**
@@ -283,12 +280,12 @@ public class XcodeEditor extends AbstractXcodeEditor {
                 "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
                         + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"");
 
-        setBuildSetting(target, "MOE_SEGPROT[sdk=iphoneos*]", "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw");
-        setBuildSetting(target, "MOE_SEGPROT[sdk=iphonesimulator*]",
+        setBuildSetting(target, "MOE_SEGPROT", "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw");
+        setBuildSetting(target, "MOE_SEGPROT[arch=x86_64]",
                 "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw");
 
-        setBuildSetting(target, "MOE_PAGEZERO[sdk=iphoneos*]", "");
-        setBuildSetting(target, "MOE_PAGEZERO[sdk=iphonesimulator*]", "-pagezero_size 4096");
+        setBuildSetting(target, "MOE_PAGEZERO", "");
+        setBuildSetting(target, "MOE_PAGEZERO[arch=x86_64]", "-pagezero_size 4096");
 
         setBuildSetting(target, "MOE_SDK_PATH", "${MOE_PROJECT_BUILD_DIR}/moe/sdk");
         setBuildSetting(target, "MOE_FRAMEWORK_PATH", "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}");
