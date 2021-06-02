@@ -376,7 +376,7 @@ public class MoeSDK {
             validate(FIL, path, "tools/dx.jar");
             validate(FIL, path, "tools/ios-device.jar");
             validate(FIL, path, "tools/java8support.jar");
-            validate(DIR, path, "tools/macosx/x86_64");
+            validate(DIR, path, "tools/macosx");
             validate(FIL, path, "tools/preloaded-classes");
             validate(FIL, path, "tools/proguard-full.cfg");
             validate(FIL, path, "tools/proguard.cfg");
@@ -431,7 +431,7 @@ public class MoeSDK {
     private @Nullable File MOE_SDK_DX_JAR;
     private @Nullable File MOE_SDK_IOS_DEVICE_JAR;
     private @Nullable File MOE_SDK_JAVA8SUPPORT_JAR;
-    private @Nullable File MOE_SDK_MACOS_X86_64_SUPPORT;
+    private @Nullable File MOE_SDK_MACOS_SUPPORT;
     private @Nullable File MOE_SDK_PRELOADEDCLASSES_FILE;
     private @Nullable File MOE_SDK_PROGUARDFULL_CFG;
     private @Nullable File MOE_SDK_PROGUARD_CFG;
@@ -462,7 +462,7 @@ public class MoeSDK {
         MOE_SDK_DX_JAR = path.resolve("tools/dx.jar").toFile();
         MOE_SDK_IOS_DEVICE_JAR = path.resolve("tools/ios-device.jar").toFile();
         MOE_SDK_JAVA8SUPPORT_JAR = path.resolve("tools/java8support.jar").toFile();
-        MOE_SDK_MACOS_X86_64_SUPPORT = path.resolve("tools/macosx/x86_64").toFile();
+        MOE_SDK_MACOS_SUPPORT = path.resolve("tools/macosx").toFile();
         MOE_SDK_PRELOADEDCLASSES_FILE = path.resolve("tools/preloaded-classes").toFile();
         MOE_SDK_PROGUARDFULL_CFG = path.resolve("tools/proguard-full.cfg").toFile();
         MOE_SDK_PROGUARD_CFG = path.resolve("tools/proguard.cfg").toFile();
@@ -584,8 +584,8 @@ public class MoeSDK {
 
     @NotNull
     @IgnoreUnused
-    public File getMacOS_X86_64Support() {
-        return safeVariable(MOE_SDK_MACOS_X86_64_SUPPORT, "MOE_SDK_MACOS_X86_64_SUPPORT");
+    public File getMacOS_Support() {
+        return safeVariable(MOE_SDK_MACOS_SUPPORT, "MOE_SDK_MACOS_SUPPORT");
     }
 
     @NotNull
