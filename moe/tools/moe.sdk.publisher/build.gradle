@@ -325,13 +325,19 @@ publishing {
             url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
 
             credentials {
-                username = ossrhUsername
-                password = ossrhPassword
+                if (project.hasProperty('ossrhUsername')) {
+                    username = ossrhUsername
+                }
+                if (project.hasProperty('ossrhPassword')) {
+                    password = ossrhPassword
+                }
             }
         }
     }
 }
 
-signing {
-    sign publishing.publications.mavenJava
+if (project.hasProperty("signing.keyId")) {
+    signing {
+        sign publishing.publications.mavenJava
+    }
 }
