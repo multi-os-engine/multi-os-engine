@@ -154,7 +154,7 @@ def getSDKCopySpec() {
             }
         }
 
-        into('tools/macosx/x86_64') {
+        into('tools/macosx') {
             if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
                 from files(external.llvm.macos)
                 from files(external.libimobiledevice.macos)
