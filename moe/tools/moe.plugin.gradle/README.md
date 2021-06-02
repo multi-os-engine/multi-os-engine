@@ -135,7 +135,7 @@ The SDK's structure must be as follows, otherwise the validation will fail:
    +- dx.jar
    +- ios-device.jar
    +- java8support.jar
-   +- macosx/x86_64/lib(clang|imobiledevice|natj).dylib
+   +- macosx/lib(clang|imobiledevice|natj).dylib
    +- preloaded-classes
    +- proguard-full.cfg
    +- proguard.cfg

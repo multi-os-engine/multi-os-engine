@@ -369,7 +369,7 @@ public class MoeSDK {
             }
 
             validate(FIL, path, "tools/ios-device.jar");
-            validate(DIR, path, "tools/macosx/x86_64");
+            validate(DIR, path, "tools/macosx");
             validate(FIL, path, "tools/jni-config-base.json");
             validate(FIL, path, "tools/reflection-config-base.json");
             validate(FIL, path, "tools/proxy-config-base.json");
@@ -418,7 +418,7 @@ public class MoeSDK {
     private @Nullable File MOE_SDK_IOS_JAR;
     private @Nullable File MOE_SDK_IOS_SOURCES_JAR;
     private @Nullable File MOE_SDK_IOS_DEVICE_JAR;
-    private @Nullable File MOE_SDK_MACOS_X86_64_SUPPORT;
+    private @Nullable File MOE_SDK_MACOS_SUPPORT;
     private @Nullable File MOE_SDK_JNICONFIGBASE_FILE;
     private @Nullable File MOE_SDK_REFLECTIONCONFIGBASE_FILE;
     private @Nullable File MOE_SDK_PROXYCONFIGBASE_FILE;
@@ -443,7 +443,7 @@ public class MoeSDK {
         MOE_SDK_IOS_JUNIT_SOURCES_JAR = path.resolve("sdk/moe-ios-junit-sources.jar").toFile();
         MOE_SDK_IOS_JUNIT_JAVADOC_JAR = path.resolve("sdk/moe-ios-junit-javadoc.jar").toFile();
         MOE_SDK_IOS_DEVICE_JAR = path.resolve("tools/ios-device.jar").toFile();
-        MOE_SDK_MACOS_X86_64_SUPPORT = path.resolve("tools/macosx/x86_64").toFile();
+        MOE_SDK_MACOS_SUPPORT = path.resolve("tools/macosx").toFile();
         MOE_SDK_JNICONFIGBASE_FILE = path.resolve("tools/jni-config-base.json").toFile();
         MOE_SDK_REFLECTIONCONFIGBASE_FILE = path.resolve("tools/reflection-config-base.json").toFile();
         MOE_SDK_PROXYCONFIGBASE_FILE = path.resolve("tools/proxy-config-base.json").toFile();
@@ -529,8 +529,8 @@ public class MoeSDK {
 
     @NotNull
     @IgnoreUnused
-    public File getMacOS_X86_64Support() {
-        return safeVariable(MOE_SDK_MACOS_X86_64_SUPPORT, "MOE_SDK_MACOS_X86_64_SUPPORT");
+    public File getMacOS_Support() {
+        return safeVariable(MOE_SDK_MACOS_SUPPORT, "MOE_SDK_MACOS_SUPPORT");
     }
 
     @NotNull
