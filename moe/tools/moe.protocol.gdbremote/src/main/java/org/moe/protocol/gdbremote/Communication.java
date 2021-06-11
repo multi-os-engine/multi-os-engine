@@ -217,7 +217,7 @@ final class Communication {
             }
             return true;
         } else if (packet.startsWith("T")) {
-            if (!packet.matches("T\\d\\d([\\w\\d]+\\:[\\w\\d]+;)*")) {
+            if (!packet.matches("T\\d\\d([\\w\\d]+\\:[\\w\\d=]+;)*")) {
                 return false;
             }
             int code = Integer.parseInt(packet.substring(1, 3), 16);
