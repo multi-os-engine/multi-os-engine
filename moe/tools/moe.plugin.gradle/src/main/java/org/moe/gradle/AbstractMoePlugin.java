@@ -22,10 +22,13 @@ import org.gradle.api.GradleException;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
+import org.gradle.api.artifacts.repositories.IvyArtifactRepository;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.plugins.JavaPluginConvention;
 import org.gradle.api.tasks.SourceSet;
+import org.gradle.api.tasks.compile.CompileOptions;
+import org.gradle.api.tasks.compile.JavaCompile;
 import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
@@ -35,6 +38,8 @@ import org.moe.gradle.tasks.AbstractBaseTask;
 import org.moe.gradle.utils.*;
 
 import javax.inject.Inject;
+import java.net.MalformedURLException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -99,6 +104,10 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
 
         // Setup the SDK
         sdk = MoeSDK.setup(this);
+
+        // Get Java convention
+        javaConvention = (JavaPluginConvention) project.getConvention().getPlugins().get("java");
+        Require.nonNull(javaConvention, "The 'java' Gradle plugin must be applied before the '" + MOE + "' plugin");
     }
 
     /**
@@ -204,6 +213,9 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         return Require.nonNull(javaConvention, "The plugin's 'javaConvention' property was null");
     }
 
+    @NotNull
+    public abstract AbstractMoeExtension getExtension();
+
     protected enum TaskParams {
         SOURCE_SET, MODE, ARCH, ARCH_FAMILY, PLATFORM;
 
@@ -302,6 +314,53 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
                 return task;
             }
         });
+    }
+
+    protected void installCommonDependencies() {
+        // Add moe-core.jar to the bootclasspath
+        Arrays.asList("compileJava", "compileTestJava").forEach(name -> {
+            Task task = project.getTasks().getByName(name);
+            CompileOptions compileOptions = ((JavaCompile) task).getOptions();
+            compileOptions.setBootstrapClasspath(project.files(getSDK().getCoreJar()));
+            compileOptions.setFork(true);
+        });
+
+        // Install core, ios and junit jars as dependencies
+        project.getRepositories().ivy(ivy -> {
+            ivy.setName("multi-os-engine-implicit-sdk-repo");
+            try {
+                ivy.setUrl(getSDK().getSDKDir().toURI().toURL());
+            } catch (MalformedURLException e) {
+                throw new GradleException("Failed to add Multi-OS Engine SDK repo", e);
+            }
+            ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
+        }).metadataSources(IvyArtifactRepository.MetadataSources::artifact);
+        project.getRepositories().ivy(ivy -> {
+            ivy.setName("multi-os-engine-implicit-tools-repo");
+            try {
+                ivy.setUrl(getSDK().getToolsDir().toURI().toURL());
+            } catch (MalformedURLException e) {
+                throw new GradleException("Failed to add Multi-OS Engine Tools repo", e);
+            }
+            ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
+        }).metadataSources(IvyArtifactRepository.MetadataSources::artifact);
+
+        project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
+            FileUtils.getNameAsArtifact(getSDK().getCoreJar(), getSDK().sdkVersion));
+
+        if (getExtension().getPlatformJar() != null) {
+            project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
+                FileUtils.getNameAsArtifact(getExtension().getPlatformJar(), getSDK().sdkVersion));
+        }
+        project.getDependencies().add(JavaPlugin.TEST_COMPILE_CONFIGURATION_NAME,
+            FileUtils.getNameAsArtifact(getSDK().getiOSJUnitJar(), getSDK().sdkVersion));
+
+        // Install java 8 support jars to fix lambda compilation
+        project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
+            FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion));
+
+        project.getDependencies().add(JavaPlugin.TEST_COMPILE_CONFIGURATION_NAME,
+            FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion));
     }
 
     abstract protected void checkRemoteServer(AbstractBaseTask task);
