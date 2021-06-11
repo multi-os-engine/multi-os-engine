@@ -134,6 +134,23 @@ class CollectReflectionConfig(
                 }
             }
 
+            //Maybe move inside the MethodInspector in visitParameter? But for some reason it didn't got called
+            val params: List<String> = descriptor.replace("(", "").split(")")[0].split(";")
+            params.filter { s: String -> s.isNotBlank() }.forEach { s: String ->
+                if (s.matches(Regex(".*/opaque/.*"))) {
+                    val param: String = s.removePrefix("L")
+                    config.addClass(
+                            param,
+                            allDeclaredClasses = true
+                    )
+                    config.addClass(
+                            "$param\$Impl",
+                            allDeclaredConstructors = true
+                    )
+                }
+            }
+
+
             return MethodInspector(
                 declaringClass = this,
                 name = name,
@@ -196,6 +213,44 @@ class CollectReflectionConfig(
                 declaringClass.config.addMethod(declaringClass.name, name, methodDescriptor)
             }
             super.visitEnd()
+        }
+
+        override fun visitParameter(name: String?, access: Int) {
+            super.visitParameter(name, access)
+        }
+
+        override fun visitLdcInsn(value: Any?) {
+            val s: String = value.toString()
+            if (s.matches(Regex(".*/opaque/.*"))){
+                val className: String = s.removePrefix("L").removeSuffix(";")
+                declaringClass.config.addClass(
+                        className,
+                        allDeclaredClasses = true
+                )
+                declaringClass.config.addClass(
+                        "$className\$Impl",
+                        allDeclaredConstructors = true
+                )
+            }
+            super.visitLdcInsn(value)
+        }
+
+        override fun visitMethodInsn(opcode: Int, owner: String?, name: String?, descriptor: String?, isInterface: Boolean) {
+            val splitDescriptor: List<String> = descriptor?.split(")L").orEmpty()
+            if (splitDescriptor.size == 2){
+                val returnType: String = splitDescriptor[1].replace(";","")
+                if (returnType.matches(Regex(".*/opaque/.*"))){
+                    declaringClass.config.addClass(
+                            returnType,
+                            allDeclaredClasses = true
+                    )
+                    declaringClass.config.addClass(
+                            "$returnType\$Impl",
+                            allDeclaredConstructors = true
+                    )
+                }
+            }
+            super.visitMethodInsn(opcode, owner, name, descriptor, isInterface)
         }
     }
 
