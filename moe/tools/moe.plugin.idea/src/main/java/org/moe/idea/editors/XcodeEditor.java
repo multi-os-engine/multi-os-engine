@@ -226,35 +226,38 @@ public class XcodeEditor implements VirtualFileListener, FileEditor {
                 reloadMainInfoPlist();
             }
         });
+        if (xcodeEditorManager.hasTestTarget()) {
+            File testInfoPlist = getFileFromXcodeConfiguration(root, xcodeEditorManager.getInfoTestPlist());
 
-        File testInfoPlist = getFileFromXcodeConfiguration(root, xcodeEditorManager.getInfoTestPlist());
+            VirtualFile testInfoVirtualFile = LocalFileSystem.getInstance().findFileByIoFile(testInfoPlist);
+            this.testInfoPlistDocument = fileDocumentManager.getDocument(testInfoVirtualFile);
+            try {
+                this.testInfoPlistManager = new InfoPlistManager(testInfoPlistDocument.getText());
+            } catch (Exception e) {
+                LOG.error("Unable read test Info.plist", e);
+            }
 
-        VirtualFile testInfoVirtualFile = LocalFileSystem.getInstance().findFileByIoFile(testInfoPlist);
-        this.testInfoPlistDocument = fileDocumentManager.getDocument(testInfoVirtualFile);
-        try {
-            this.testInfoPlistManager = new InfoPlistManager(testInfoPlistDocument.getText());
-        } catch (Exception e) {
-            LOG.error("Unable read test Info.plist", e);
+            testInfoPlistManager.setListener(new DocumentChangeListener() {
+                @Override
+                public void documentChanged() {
+                    saveTestInfoPlistDocument();
+                }
+            });
+
+            testInfoPlistDocument.addDocumentListener(new com.intellij.openapi.editor.event.DocumentListener() {
+                @Override
+                public void beforeDocumentChange(com.intellij.openapi.editor.event.DocumentEvent documentEvent) {
+
+                }
+
+                @Override
+                public void documentChanged(com.intellij.openapi.editor.event.DocumentEvent documentEvent) {
+                    reloadTestInfoPlist();
+                }
+            });
+        }else {
+            LOG.error("No test target provided. Consider to provide one. It needs \"-Test\" at the end of its name.");
         }
-
-        testInfoPlistManager.setListener(new DocumentChangeListener() {
-            @Override
-            public void documentChanged() {
-                saveTestInfoPlistDocument();
-            }
-        });
-
-        testInfoPlistDocument.addDocumentListener(new com.intellij.openapi.editor.event.DocumentListener() {
-            @Override
-            public void beforeDocumentChange(com.intellij.openapi.editor.event.DocumentEvent documentEvent) {
-
-            }
-
-            @Override
-            public void documentChanged(com.intellij.openapi.editor.event.DocumentEvent documentEvent) {
-                reloadTestInfoPlist();
-            }
-        });
     }
 
     @NotNull
