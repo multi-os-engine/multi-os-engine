@@ -9,7 +9,14 @@ fi
 cd "$MOE_PROJECT_DIR"
 
 # Export JAVA_HOME
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+if [ -z "$JAVA_HOME" ]; then
+    if [ -z "$MOE_JAVA_VERSION_OVERRIDE" ]; then
+        export JAVA_HOME=$(/usr/libexec/java_home)
+    else
+        export JAVA_HOME=$(/usr/libexec/java_home -v "$MOE_JAVA_VERSION_OVERRIDE")
+    fi
+fi
+echo $JAVA_HOME
 
 # Utility function for finding the Gradle implementation
 function findGradle {

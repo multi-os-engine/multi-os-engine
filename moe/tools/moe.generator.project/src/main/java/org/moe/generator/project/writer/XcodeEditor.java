@@ -299,6 +299,8 @@ public class XcodeEditor extends AbstractXcodeEditor {
 
         setBuildSetting(target, "MOE_COPY_ANDROID_CACERTS", MOE_COPY_ANDROID_CACERTS_VALUE);
 
+        setBuildSetting(target, "MOE_JAVA_VERSION_OVERRIDE", "");
+
         setBuildSetting(target, "STRIP_STYLE", "non-global");
         setBuildSetting(target, "DEAD_CODE_STRIPPING", "NO");
         setBuildSetting(target, "ENABLE_BITCODE", "NO");
