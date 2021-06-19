@@ -98,8 +98,7 @@ public class TestClassesProvider extends AbstractBaseTask {
 
     @Override
     protected void run() {
-        // Reset logs
-        FileUtils.write(getLogFile(), "");
+        // Reset output
         FileUtils.write(getClassListFile(), "");
         FileUtils.write(getReflectionConfigFile(), "[]");
 

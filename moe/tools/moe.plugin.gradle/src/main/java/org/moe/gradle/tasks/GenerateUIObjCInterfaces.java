@@ -118,9 +118,6 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
 
     @Override
     protected void run() {
-        // Reset logs
-        FileUtils.write(getLogFile(), "");
-
         final IBActionAndOutletComposer composer = new IBActionAndOutletComposer();
         FileUtils.classAndJarInputIterator(getInputFiles(), composer::read);
         final String composition = composer.compose(getMoeExtension().actionsAndOutlets);

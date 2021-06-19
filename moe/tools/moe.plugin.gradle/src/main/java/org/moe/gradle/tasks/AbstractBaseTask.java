@@ -102,6 +102,7 @@ public abstract class AbstractBaseTask extends DefaultTask {
     @TaskAction
     @IgnoreUnused
     private void runInternal() {
+        // Reset logs
         FileUtils.write(getLogFile(), "");
         run();
         setDidWork(true);
@@ -190,7 +191,7 @@ public abstract class AbstractBaseTask extends DefaultTask {
             // Set logging
             FileOutputStream ostream = null;
             try {
-                ostream = new FileOutputStream(getLogFile());
+                ostream = new FileOutputStream(getLogFile(), true);
             } catch (FileNotFoundException e) {
                 throw new GradleException("Failed to open output stream to " + getLogFile(), e);
             }
@@ -227,7 +228,7 @@ public abstract class AbstractBaseTask extends DefaultTask {
             // Set logging
             FileOutputStream ostream = null;
             try {
-                ostream = new FileOutputStream(getLogFile());
+                ostream = new FileOutputStream(getLogFile(), true);
             } catch (FileNotFoundException e) {
                 throw new GradleException("Failed to open output stream to " + getLogFile(), e);
             }
