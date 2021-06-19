@@ -75,10 +75,9 @@ public class StartupProvider extends AbstractBaseTask {
     @Override
     protected void run() {
         try {
-            FileUtils.deleteFileOrFolder(getLogFile());
             FileUtils.deleteFileOrFolder(getPreregisterFile());
 
-            try (FileWriter log = new FileWriter(getLogFile());
+            try (FileWriter log = new FileWriter(getLogFile(), true);
                  FileWriter txt = new FileWriter(getPreregisterFile())) {
                 getInputFiles().forEach(it -> {
                     JarFile file;
