@@ -27,21 +27,20 @@ import com.intellij.openapi.module.impl.scopes.ModuleWithDependenciesScope;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
-
-import org.jetbrains.plugins.gradle.settings.GradleExtensionsSettings;
 import org.moe.common.utils.ProjectUtil;
+import org.moe.idea.facet.gradle.GradleFacet;
+import org.moe.idea.model.GradleModuleModel;
 import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
+import res.MOEIcons;
+import res.MOEText;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Properties;
-
-import res.MOEIcons;
-import res.MOEText;
 
 public class MOESdkPlugin {
 
@@ -131,14 +130,14 @@ public class MOESdkPlugin {
     }
 
     public static boolean isValidMoeLibModule(Module module) {
-        return isValidMoeModule(module, "moeSDKProperties");
+        return isValidMoeModule(module, false);
     }
 
     public static boolean isValidMoeModule(Module module) {
-        return isValidMoeModule(module, "moeLaunch");
+        return isValidMoeModule(module, true);
     }
 
-    public static boolean isValidMoeModule(Module module, String taskName) {
+    public static boolean isValidMoeModule(Module module, boolean isMOEApp) {
         if (module == null) {
             return false;
         }
@@ -148,17 +147,23 @@ public class MOESdkPlugin {
             return false;
         }
 
-        final Project project = module.getProject();
-        final GradleExtensionsSettings.Settings extensionSettings = GradleExtensionsSettings.getInstance(project);
-        final GradleExtensionsSettings.GradleExtensionsData moduleExtensionData = extensionSettings.getExtensionsFor(module);
-        if (moduleExtensionData == null) {
-            LOG.info("Gradle extension data not found for module: " + module.getName());
-            return false;
+        GradleFacet facet = GradleFacet.getInstance(module);
+        if (facet != null) {
+            GradleModuleModel gradleModuleModel = facet.getGradleModuleModel();
+            if (gradleModuleModel != null) {
+                if (gradleModuleModel.getGradlePlugins().contains("org.moe.gradle.MoePlugin")) {
+                    return true;
+                }
+                if (!isMOEApp && gradleModuleModel.getGradlePlugins().contains("org.moe.gradle.MoeSDKPlugin")) {
+                    return true;
+                }
+
+                String taskName = isMOEApp ? "moeLaunch" : "moeSDKProperties";
+                return gradleModuleModel.getTaskNames().contains(taskName);
+            }
         }
 
-        // Check for moeLaunch task
-        GradleExtensionsSettings.GradleTask t = moduleExtensionData.tasksMap.get(taskName);
-        return t != null;
+        return false;
     }
 
     public static boolean isMoeJarsInModule(Module module) {

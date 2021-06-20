@@ -76,6 +76,13 @@
         <stepsBeforeRunProvider implementation="org.moe.idea.runconfig.beforeRunTasks.MOEGradleTaskProvider"/>
 
         <projectService serviceImplementation="org.moe.idea.ui.MOEToolWindow"/>
+
+        <externalProjectDataService implementation="org.moe.idea.service.GradleModuleModelDataService"/>
+        <facetType implementation="org.moe.idea.facet.gradle.GradleFacetType"/>
+    </extensions>
+
+    <extensions defaultExtensionNs="org.jetbrains.plugins.gradle">
+        <projectResolve implementation="org.moe.idea.extension.MOEGradleProjectResolver"/>
     </extensions>
 
     <actions>
