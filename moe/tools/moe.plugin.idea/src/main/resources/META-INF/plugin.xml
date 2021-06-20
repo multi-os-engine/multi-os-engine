@@ -1,15 +1,19 @@
 <idea-plugin>
     <id>org.moe</id>
     <name>Multi-OS Engine</name>
-    <version>1.4.8</version>
 
-    <vendor url="https://discuss.multi-os-engine.org/">Multi-OS Engine</vendor>
+    <vendor url="https://discuss.multi-os-engine.org/">multi-os-engine</vendor>
 
     <description><![CDATA[
       Multi-OS Engine IDE plugin for Android Studio
     ]]></description>
 
     <change-notes><![CDATA[
+      1.4.11<br>
+      - Add New MOE project option to Android Studio welcome screen<br>
+      - Improvements to the Xcode project editor<br>
+      - Fix context menu on AS 4.2<br>
+      <br>
       1.4.10<br>
       - Fix context menu on AS 4.2/Intellij 2020.2+<br>
       <br>
