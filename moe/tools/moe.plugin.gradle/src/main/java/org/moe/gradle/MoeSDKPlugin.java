@@ -27,6 +27,7 @@ import org.gradle.api.plugins.JavaPluginConvention;
 import org.gradle.api.tasks.compile.CompileOptions;
 import org.gradle.api.tasks.compile.JavaCompile;
 import org.gradle.internal.reflect.Instantiator;
+import org.gradle.tooling.provider.model.ToolingModelBuilderRegistry;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.tasks.AbstractBaseTask;
@@ -58,8 +59,8 @@ public class MoeSDKPlugin extends AbstractMoePlugin {
     }
 
     @Inject
-    public MoeSDKPlugin(Instantiator instantiator) {
-        super(instantiator);
+    public MoeSDKPlugin(Instantiator instantiator, ToolingModelBuilderRegistry registry) {
+        super(instantiator, registry);
     }
 
     @Override
