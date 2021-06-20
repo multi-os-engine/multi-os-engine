@@ -1,15 +1,15 @@
-<idea-plugin version="2">
-  <id>org.moe</id>
-  <name>Multi-OS Engine</name>
-  <version>1.4.8</version>
+<idea-plugin>
+    <id>org.moe</id>
+    <name>Multi-OS Engine</name>
+    <version>1.4.8</version>
 
-  <vendor url="https://discuss.multi-os-engine.org/">Multi-OS Engine</vendor>
+    <vendor url="https://discuss.multi-os-engine.org/">Multi-OS Engine</vendor>
 
-  <description><![CDATA[
+    <description><![CDATA[
       Multi-OS Engine IDE plugin for Android Studio
     ]]></description>
 
-  <change-notes><![CDATA[
+    <change-notes><![CDATA[
       1.4.10<br>
       - Fix context menu on AS 4.2/Intellij 2020.2+<br>
       <br>
@@ -36,104 +36,105 @@
       - Use MOE gradle plugin community edition for new project<br>
     ]]></change-notes>
 
-  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-  <idea-version since-build="201"/>
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="201"/>
 
-  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
-  <depends>com.intellij.modules.lang</depends>
-  -->
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
 
-  <extensions defaultExtensionNs="com.intellij">
-      <configurationType implementation="org.moe.idea.runconfig.configuration.MOERunConfigurationType" />
+    <extensions defaultExtensionNs="com.intellij">
+        <configurationType implementation="org.moe.idea.runconfig.configuration.MOERunConfigurationType"/>
 
-      <toolWindow id="Multi-OS Engine" anchor="bottom" icon="/icons/moe_tool.png"
-                  secondary="false"
-                  factoryClass="org.moe.idea.ui.MOEToolWindowFactory"/>
+        <toolWindow id="Multi-OS Engine" anchor="bottom" icon="/icons/moe_tool.png"
+                    secondary="false"
+                    factoryClass="org.moe.idea.ui.MOEToolWindowFactory"/>
 
-      <programRunner implementation="org.moe.idea.runconfig.MOEProgramRunner"/>
+        <programRunner implementation="org.moe.idea.runconfig.MOEProgramRunner"/>
 
-      <projectTemplatesFactory implementation="org.moe.idea.builder.MOEProjectTemplatesFactory"/>
+        <projectTemplatesFactory implementation="org.moe.idea.builder.MOEProjectTemplatesFactory"/>
 
-<!--      <moduleConfigurable instance="org.moe.idea.configurable.MOEModuleConfigurable"/>-->
-      <postStartupActivity implementation="org.moe.idea.Startup"/>
+        <!--      <moduleConfigurable instance="org.moe.idea.configurable.MOEModuleConfigurable"/>-->
+        <postStartupActivity implementation="org.moe.idea.Startup"/>
 
-      <applicationService
-              serviceInterface="org.moe.idea.MOEGlobalSettings"
-              serviceImplementation="org.moe.idea.MOEGlobalSettings"/>
+        <applicationService
+            serviceInterface="org.moe.idea.MOEGlobalSettings"
+            serviceImplementation="org.moe.idea.MOEGlobalSettings"/>
 
-      <applicationConfigurable instance="org.moe.idea.MOEGlobalSearchableConfigurable" groupId="tools"/>
+        <applicationConfigurable instance="org.moe.idea.MOEGlobalSearchableConfigurable" groupId="tools"/>
 
-      <applicationService
-              serviceInterface="org.moe.idea.fileTypes.MOEFileTypeFactory"
-              serviceImplementation="org.moe.idea.fileTypes.MOEFileTypeFactory"/>
-      <fileTypeFactory implementation="org.moe.idea.fileTypes.MOEFileTypeFactory"/>
+        <applicationService
+            serviceInterface="org.moe.idea.fileTypes.MOEFileTypeFactory"
+            serviceImplementation="org.moe.idea.fileTypes.MOEFileTypeFactory"/>
+        <fileTypeFactory implementation="org.moe.idea.fileTypes.MOEFileTypeFactory"/>
 
-      <fileEditorProvider implementation="org.moe.idea.editors.XcodeProjectEditorProvider"/>
-      <fileEditorProvider implementation="org.moe.idea.editors.BindingEditorProvider"/>
+        <fileEditorProvider implementation="org.moe.idea.editors.XcodeProjectEditorProvider"/>
+        <fileEditorProvider implementation="org.moe.idea.editors.BindingEditorProvider"/>
 
-      <stepsBeforeRunProvider implementation="org.moe.idea.runconfig.beforeRunTasks.MOEGradleTaskProvider" />
+        <stepsBeforeRunProvider implementation="org.moe.idea.runconfig.beforeRunTasks.MOEGradleTaskProvider"/>
 
-      <projectService serviceImplementation="org.moe.idea.ui.MOEToolWindow" />
-  </extensions>
+        <projectService serviceImplementation="org.moe.idea.ui.MOEToolWindow"/>
+    </extensions>
 
-  <actions>
+    <actions>
 
-      <action id="org.moe.idea.NewClass"
-              text="Multi-OS Engine Class"
-              description="Create new Multi-OS Engine class"
-              class="org.moe.idea.actions.MOENewClassAction"
-              icon="/icons/moe_small.png">
-          <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
-      </action>
+        <action id="org.moe.idea.NewClass"
+                text="Multi-OS Engine Class"
+                description="Create new Multi-OS Engine class"
+                class="org.moe.idea.actions.MOENewClassAction"
+                icon="/icons/moe_small.png">
+            <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
+        </action>
 
-      <group id="MOEModuleActions.Separator">
-          <separator/>
-          <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="EditSource" anchor="after"/>
-      </group>
+        <group id="MOEModuleActions.Separator">
+            <separator/>
+            <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="EditSource" anchor="after"/>
+        </group>
 
-      <group id="MOEModuleActions" text="Multi-OS Engine Actions" popup="true" icon="/icons/moe_small.png">
-          <separator/>
+        <group id="MOEModuleActions" text="Multi-OS Engine Actions" popup="true" icon="/icons/moe_small.png">
+            <separator/>
 
-          <action id="org.moe.idea.OpenXcodeProject"
-                  class="org.moe.idea.actions.MOEOpenXcodeAction"
-                  text="Open Project in Xcode"
-                  description="Open Project in Xcode"/>
+            <action id="org.moe.idea.OpenXcodeProject"
+                    class="org.moe.idea.actions.MOEOpenXcodeAction"
+                    text="Open Project in Xcode"
+                    description="Open Project in Xcode"/>
 
-          <action id="org.moe.idea.MOEOpenXcodeEditorAction"
-                  class="org.moe.idea.actions.MOEOpenXcodeEditorAction"
-                  text="Open Xcode Editor"
-                  description="Open Xcode project settings editor"/>
+            <action id="org.moe.idea.MOEOpenXcodeEditorAction"
+                    class="org.moe.idea.actions.MOEOpenXcodeEditorAction"
+                    text="Open Xcode Editor"
+                    description="Open Xcode project settings editor"/>
 
-          <action id="org.moe.idea.MOEGenerateActionsAndOutletsAction"
-                  class="org.moe.idea.actions.MOEGenerateActionsAndOutletsAction"
-                  text="Generate Actions and Outlets for Interface Builder"
-                  description="Generate Actions and Outlets for Interface Builder"/>
+            <action id="org.moe.idea.MOEGenerateActionsAndOutletsAction"
+                    class="org.moe.idea.actions.MOEGenerateActionsAndOutletsAction"
+                    text="Generate Actions and Outlets for Interface Builder"
+                    description="Generate Actions and Outlets for Interface Builder"/>
 
-          <action id="org.moe.idea.MOERefreshXcodeProject"
-                  class="org.moe.idea.actions.MOERefreshXcodeProject"
-                  text="Inject/Refresh Xcode Project Settings"
-                  description="Inject/Refresh changes required to use Multi-OS Engine"/>
+            <action id="org.moe.idea.MOERefreshXcodeProject"
+                    class="org.moe.idea.actions.MOERefreshXcodeProject"
+                    text="Inject/Refresh Xcode Project Settings"
+                    description="Inject/Refresh changes required to use Multi-OS Engine"/>
 
-          <action id="org.moe.idea.MOENewBinding"
-                  class="org.moe.idea.actions.MOENewBindingAction"
-                  text="Create New Binding"
-                  description="Create a new binding"/>
+            <action id="org.moe.idea.MOENewBinding"
+                    class="org.moe.idea.actions.MOENewBindingAction"
+                    text="Create New Binding"
+                    description="Create a new binding"/>
 
-          <separator/>
-          <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="MOEModuleActions.Separator" anchor="after"/>
-      </group>
-      <group id="MOEModuleActions.SeparatorEnd">
-          <separator/>
-          <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="MOEModuleActions" anchor="after"/>
-      </group>
+            <separator/>
+            <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="MOEModuleActions.Separator"
+                          anchor="after"/>
+        </group>
+        <group id="MOEModuleActions.SeparatorEnd">
+            <separator/>
+            <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="MOEModuleActions" anchor="after"/>
+        </group>
 
-  </actions>
+    </actions>
 
-  <depends>org.jetbrains.plugins.gradle</depends>
-  <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.plugins.gradle</depends>
+    <depends>com.intellij.modules.java</depends>
 
-  <depends optional="true" config-file="studio-contribs.xml">com.intellij.modules.androidstudio</depends>
+    <depends optional="true" config-file="studio-contribs.xml">com.intellij.modules.androidstudio</depends>
 
 </idea-plugin>
