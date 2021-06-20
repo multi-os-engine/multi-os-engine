@@ -137,6 +137,9 @@ public class MOESdkPlugin {
         return isValidMoeModule(module, true);
     }
 
+    public static final String GRADLE_PLUGIN_MOE = "org.moe.gradle.MoePlugin";
+    public static final String GRADLE_PLUGIN_MOE_SDK = "org.moe.gradle.MoeSDKPlugin";
+
     public static boolean isValidMoeModule(Module module, boolean isMOEApp) {
         if (module == null) {
             return false;
@@ -151,10 +154,10 @@ public class MOESdkPlugin {
         if (facet != null) {
             GradleModuleModel gradleModuleModel = facet.getGradleModuleModel();
             if (gradleModuleModel != null) {
-                if (gradleModuleModel.getGradlePlugins().contains("org.moe.gradle.MoePlugin")) {
+                if (gradleModuleModel.getGradlePlugins().contains(GRADLE_PLUGIN_MOE)) {
                     return true;
                 }
-                if (!isMOEApp && gradleModuleModel.getGradlePlugins().contains("org.moe.gradle.MoeSDKPlugin")) {
+                if (!isMOEApp && gradleModuleModel.getGradlePlugins().contains(GRADLE_PLUGIN_MOE_SDK)) {
                     return true;
                 }
 
