@@ -23,6 +23,7 @@ import org.gradle.api.Task;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.gradle.internal.reflect.Instantiator;
+import org.gradle.tooling.provider.model.ToolingModelBuilderRegistry;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.remote.Server;
@@ -84,8 +85,8 @@ public class MoePlugin extends AbstractMoePlugin {
     }
 
     @Inject
-    public MoePlugin(Instantiator instantiator) {
-        super(instantiator);
+    public MoePlugin(Instantiator instantiator, ToolingModelBuilderRegistry registry) {
+        super(instantiator, registry);
     }
 
     @Override

@@ -30,10 +30,12 @@ import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.compile.CompileOptions;
 import org.gradle.api.tasks.compile.JavaCompile;
 import org.gradle.internal.reflect.Instantiator;
+import org.gradle.tooling.provider.model.ToolingModelBuilderRegistry;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.groovy.closures.RuleClosure;
+import org.moe.gradle.model.builder.GradlePluginModelBuilder;
 import org.moe.gradle.tasks.AbstractBaseTask;
 import org.moe.gradle.utils.*;
 
@@ -72,6 +74,9 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
     protected final Instantiator instantiator;
 
     @NotNull
+    protected final ToolingModelBuilderRegistry registry;
+
+    @NotNull
     private Project project;
 
     public Project getProject() {
@@ -87,12 +92,16 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
     }
 
     @Inject
-    AbstractMoePlugin(Instantiator instantiator) {
+    AbstractMoePlugin(Instantiator instantiator, ToolingModelBuilderRegistry registry) {
         this.instantiator = Require.nonNull(instantiator);
+        this.registry = Require.nonNull(registry);
     }
 
     @Override
     public void apply(Project project) {
+        // Register tooling
+        registry.register(new GradlePluginModelBuilder());
+
         // Set project
         this.project = Require.nonNull(project);
 
