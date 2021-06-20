@@ -16,6 +16,7 @@ limitations under the License.
 
 plugins {
     id "org.jetbrains.intellij" version "0.7.3"
+    id "org.jetbrains.kotlin.jvm"
 }
 
 apply plugin: 'idea'
@@ -54,6 +55,9 @@ dependencies {
     compile project(':moe.generator.project')
     compile project(':moe.tools.natjgen')
     compile project(':moe.plugin.common')
+
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
 }
@@ -66,5 +70,11 @@ publishing {
 
             artifact file("build/distributions/${PLUGIN_NAME}.zip")
         }
+    }
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
