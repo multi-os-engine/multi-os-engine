@@ -106,20 +106,23 @@ public class XcodeEditorForm {
     public void init() {
         inited = false;
         baseTabbedPane.setTitleAt(1, xcodeEditorManager.getMainTargetName());
-        baseTabbedPane.setTitleAt(2, xcodeEditorManager.getTestTargetName());
         projectNameTextField.setText(xcodeEditorManager.getProjectName());
         devicesComboBox.setSelectedItem(EditorUtil.getKey(devices, xcodeEditorManager.getDefaultDevices()));
         deploymentComboBox.setSelectedItem(xcodeEditorManager.getDefaultDeploymentTarget());
         organizationTextField.setText(xcodeEditorManager.getOrganizationName());
-
         mainIdentity.init(true, xcodeEditorManager, mainInfoPlistManager);
-        testIdentity.init(false, xcodeEditorManager, testInfoPlistManager);
         mainDeploymentInfo.init(true, xcodeEditorManager, mainInfoPlistManager);
-        testDeploymentInfo.init(false, xcodeEditorManager, testInfoPlistManager);
         mainLinkedFrameworks.init(true, xcodeEditorManager);
-        testLinkedFrameworks.init(false, xcodeEditorManager);
         appIconsAndLaunchImagesMain.init(xcodeEditorManager, mainInfoPlistManager);
-        appIconsAndLaunchImagesTest.init(xcodeEditorManager, testInfoPlistManager);
+        if (xcodeEditorManager.hasTestTarget()) {
+            baseTabbedPane.setTitleAt(2, xcodeEditorManager.getTestTargetName());
+            testIdentity.init(false, xcodeEditorManager, testInfoPlistManager);
+            testDeploymentInfo.init(false, xcodeEditorManager, testInfoPlistManager);
+            testLinkedFrameworks.init(false, xcodeEditorManager);
+            appIconsAndLaunchImagesTest.init(xcodeEditorManager, testInfoPlistManager);
+        }else {
+            baseTabbedPane.remove(2);
+        }
         inited = true;
     }
 
