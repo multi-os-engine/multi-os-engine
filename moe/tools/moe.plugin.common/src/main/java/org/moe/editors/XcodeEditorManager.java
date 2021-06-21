@@ -108,6 +108,7 @@ public class XcodeEditorManager {
     private void setXCBuildConfigurations() {
         this.mainReleaseXCBuildConfiguration = getXCBuildConfiguration(mainTarget, RELEASE);
         this.mainDebugXCBuildConfiguration = getXCBuildConfiguration(mainTarget, DEBUG);
+        if (testTarget == null) return;
         this.testReleaseXCBuildConfiguration = getXCBuildConfiguration(testTarget, RELEASE);
         this.testDebugXCBuildConfiguration = getXCBuildConfiguration(testTarget, DEBUG);
     }
@@ -138,6 +139,10 @@ public class XcodeEditorManager {
         if (documentChangeListener != null) {
             documentChangeListener.documentChanged();
         }
+    }
+
+    public boolean hasTestTarget(){
+        return testTarget != null;
     }
 
     public String getTestTargetName() {
