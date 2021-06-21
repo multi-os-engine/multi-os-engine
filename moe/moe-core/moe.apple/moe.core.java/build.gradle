@@ -251,6 +251,7 @@ task coreJavadoc(type: Javadoc) {
     if (JvmVersionMeets(8)) {
         options.addStringOption('Xdoclint:none', '-quiet')
     }
+    options.addStringOption('source', '1.7')
 }
 
 task coreJavadocJar(type: Jar, dependsOn: coreJavadoc) {
