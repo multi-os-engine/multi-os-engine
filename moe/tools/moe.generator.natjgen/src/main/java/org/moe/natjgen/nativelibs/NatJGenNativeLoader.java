@@ -43,8 +43,8 @@ public class NatJGenNativeLoader {
 			System.loadLibrary("natj");
 		} catch(UnsatisfiedLinkError e) {
 			if (NativeUtil.OS_NAME_MAC_OS_X.equals(osName)) {
-				System.load(Path.compose("macosx", "x86_64", "libclang.dylib"));
-				System.load(Path.compose("macosx", "x86_64", "libnatj.dylib"));
+				System.load(Path.compose("macosx", "libclang.dylib"));
+				System.load(Path.compose("macosx", "libnatj.dylib"));
 			} else if (NativeUtil.OS_NAME_WINDOWS.equals(osName)) {
 				System.load(Path.compose("windows", "x86_64", "libclang.dll"));
 				System.load(Path.compose("windows", "x86_64", "libnatj.dll"));
