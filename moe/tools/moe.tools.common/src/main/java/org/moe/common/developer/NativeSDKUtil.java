@@ -130,23 +130,27 @@ public class NativeSDKUtil {
      */
     public static File getXcodePath() {
         File path = getXcodeDeveloperPath();
-        if (path == null) {
-            LOG.debug("Failed to get Xcode.app path, developer path is null, falling back to /Applications/Xcode.app");
-            return null;
+        label1: {
+            if (path == null) {
+                LOG.debug("Failed to get Xcode.app path, developer path is null, falling back to /Applications/Xcode.app");
+                break label1;
+            }
+            if (!"Developer".equals(path.getName())) {
+                break label1;
+            }
+            path = path.getParentFile();
+            if (!"Contents".equals(path.getName())) {
+                break label1;
+            }
+            path = path.getParentFile();
+            if (!path.getName().endsWith(".app")) {
+                LOG.debug("Failed to get Xcode.app path, didn't find .app file");
+                break label1;
+            }
+            return path;
         }
-        if (!"Developer".equals(path.getName())) {
-            return null;
-        }
-        path = path.getParentFile();
-        if (!"Contents".equals(path.getName())) {
-            return null;
-        }
-        path = path.getParentFile();
-        if (!path.getName().endsWith(".app")) {
-            LOG.debug("Failed to get Xcode.app path, didn't find .app file");
-            return null;
-        }
-        return path;
+        path = new File("/Applications/Xcode.app");
+        return path.exists() ? path : null;
     }
 
     /**
@@ -210,19 +214,5 @@ public class NativeSDKUtil {
         } else {
             return null;
         }
-    }
-
-    /**
-     * Returns the path to Xcode's DocSets.
-     *
-     * @return Path to Xcode's DocSets
-     */
-    public static File getDocsetPath() {
-        File dev = getXcodeDeveloperPath();
-        if (dev == null) {
-            return null;
-        }
-        File ds = new File(dev, "Documentation" + File.separator + "DocSets");
-        return ds;
     }
 }
