@@ -23,7 +23,7 @@ __MOE_PREBUILTS_DIR="$MOE_PREBUILTS_DIR/external/libimobiledevice/libplist/build
 ./autogen.sh \
 --prefix="$__MOE_TARGET" \
 --disable-shared \
-CFLAGS="-DMOE" \
+CFLAGS="-DMOE -arch arm64 -arch x86_64" \
 PKG_CONFIG_LIBDIR="$__MOE_PREBUILTS_DIR"
 make
 make install

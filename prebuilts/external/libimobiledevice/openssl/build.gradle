@@ -25,6 +25,7 @@ task prebuild_macos(type: Prebuild) {
     preBuildCopySpec project.copySpec {
         from('.') {
             include 'openssl-enable-deprecated.patch'
+            include 'openssl-darwin-arm64.patch'
             include 'moe-prebuild-macos.sh'
         }
     }
