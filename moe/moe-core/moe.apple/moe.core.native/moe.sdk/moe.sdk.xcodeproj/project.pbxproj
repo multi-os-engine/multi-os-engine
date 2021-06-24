@@ -337,8 +337,10 @@
 		23040F5219EBF52700CB250F /* Debug-ios */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = arm64;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_LIBTOOLFLAGS = (
 					"$(SRCROOT)/../../../../natj/natj/natj-ios/build/xcode/Debug-$(PLATFORM_NAME)/libnatj.a",
@@ -353,8 +355,10 @@
 		23040F5319EBF52700CB250F /* Release-ios */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = arm64;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_LIBTOOLFLAGS = (
 					"$(SRCROOT)/../../../../natj/natj/natj-ios/build/xcode/Release-$(PLATFORM_NAME)/libnatj.a",
