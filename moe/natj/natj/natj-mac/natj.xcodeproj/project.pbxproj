@@ -1177,6 +1177,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 23E37DAA17CE759700844AD6;
@@ -1449,7 +1450,6 @@
 				);
 				SDKROOT = macosx;
 				SYMROOT = build/xcode;
-				VALID_ARCHS = x86_64;
 				WARNING_CFLAGS = (
 					"-Wformat",
 					"-Wformat-security",
@@ -1489,7 +1489,6 @@
 				);
 				SDKROOT = macosx;
 				SYMROOT = build/xcode;
-				VALID_ARCHS = x86_64;
 				WARNING_CFLAGS = (
 					"-Wformat",
 					"-Wformat-security",
