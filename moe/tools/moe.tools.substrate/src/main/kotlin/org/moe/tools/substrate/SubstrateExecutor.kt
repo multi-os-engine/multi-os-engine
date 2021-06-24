@@ -32,8 +32,7 @@ class SubstrateExecutor(
 
         // Run the native-image command
         SimpleExec.getExec(
-                "arch", "-x86_64", // TODO: remove once graalvm has Apple silicon support
-                graalVM.nativeImage.toString(),
+                graalVM.nativeImage,
                 "-H:+SharedLibrary",
 
                 // iOS specific flags
