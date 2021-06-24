@@ -5,7 +5,7 @@ task('jdk_gensrc', type: Script) {
     progress 'Fetching boot JDK'
     rawWorkDir external.svm.mx
     def bootJDK = file("${external.svm.root}/bootJDK").absolutePath
-    exec './mx',
+    exec 'arch', '-x86_64', './mx',
             '-y', '--no-warning',
             'fetch-jdk',
             '--java-distribution', 'labsjdk-ce-11',
@@ -14,12 +14,12 @@ task('jdk_gensrc', type: Script) {
 
     progress 'Configure'
     rawWorkDir external.svm.openjdk
-    exec './build_labsjdk.py',
+    exec 'arch', '-x86_64', 'python', './build_labsjdk.py',
             '--configure-only',
             '--boot-jdk', file(bootJDK + '/jdk11/Contents/Home').absolutePath
 
     progress 'Gensrc'
-    exec 'make',
+    exec 'arch', '-x86_64', 'make',
             'java.base-libs', 'jdk.crypto.ec-libs'
 }
 
