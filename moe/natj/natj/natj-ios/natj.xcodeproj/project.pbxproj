@@ -176,6 +176,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 23F5F70217D889630015E98C;
@@ -288,6 +289,7 @@
 		23F5F74117D88DFE0015E98C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_PREPROCESSOR_DEFINITIONS = "STATIC_BUILD=1";
 				HEADER_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/ios/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -300,6 +302,7 @@
 		23F5F74217D88DFE0015E98C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_PREPROCESSOR_DEFINITIONS = "STATIC_BUILD=1";
 				HEADER_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/ios/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
