@@ -21,6 +21,8 @@ data class Triplet(
         val IPHONEOS_ARM64: Triplet = Triplet(arch = ARCH_ARM64, vendor = VENDOR_APPLE, os = OS_IPHONEOS)
         @JvmStatic
         val IPHONESIMULATOR_AMD64: Triplet = Triplet(arch = ARCH_AMD64, vendor = VENDOR_APPLE, os = OS_IPHONESIMULATOR)
+        @JvmStatic
+        val IPHONESIMULATOR_ARM64: Triplet = Triplet(arch = ARCH_ARM64, vendor = VENDOR_APPLE, os = OS_IPHONESIMULATOR)
     }
 }
 

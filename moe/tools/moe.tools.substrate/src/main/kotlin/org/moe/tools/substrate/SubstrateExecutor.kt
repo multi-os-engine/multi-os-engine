@@ -123,8 +123,11 @@ class SubstrateExecutor(
         )
 
         private fun Triplet.toSVMPlatform(): String = when (this) {
-            Triplet.IPHONEOS_ARM64 -> "IOS_AARCH64"
+            Triplet.IPHONEOS_ARM64,
+            Triplet.IPHONESIMULATOR_ARM64 -> "IOS_AARCH64"
+
             Triplet.IPHONESIMULATOR_AMD64 -> "IOS_AMD64"
+
             else -> throw IllegalArgumentException("Target not supported: $this")
         }
 
