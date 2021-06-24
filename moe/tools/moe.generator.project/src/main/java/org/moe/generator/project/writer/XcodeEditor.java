@@ -259,10 +259,8 @@ public class XcodeEditor extends AbstractXcodeEditor {
         // Allow only arm64 for real device
         setBuildSetting(project, "ARCHS[sdk=iphoneos*]", "arm64");
 
-        // Allow only x86_64 for simulators
-        // Don't use EXCLUDED_ARCHS[sdk=iphonesimulator*]=arm64 because that will cause amd64 been excluded instead
-        // on Xcode versions that do not have arm64 simulator support.
-        setBuildSetting(project, "ARCHS[sdk=iphonesimulator*]", "x86_64");
+        // Disable i386 build for simulators
+        setBuildSetting(project, "EXCLUDED_ARCHS[sdk=iphonesimulator*]", "i386");
     }
 
     /**
