@@ -16,6 +16,8 @@ limitations under the License.
 
 package org.moe.editors;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.moe.document.pbxproj.*;
 import org.moe.document.pbxproj.nextstep.Array;
 import org.moe.document.pbxproj.nextstep.Array.Predicate;
@@ -476,23 +478,39 @@ public class XcodeEditorManager {
     }
 
 
+    @Nullable
     public String getInfoMainPlist() {
         String infoPlist = getInfoPlist(mainReleaseXCBuildConfiguration);
         infoPlist = infoPlist == null ? getInfoPlist(mainDebugXCBuildConfiguration) : infoPlist;
-        return infoPlist;
+        infoPlist = infoPlist == null ? getInfoPlist(defaultReleaseXCBuildConfiguration) : infoPlist;
+        infoPlist = infoPlist == null ? getInfoPlist(defaultDebugXCBuildConfiguration) : infoPlist;
+        return replaceTargetName(infoPlist, mainTarget.getName());
     }
 
+    @Nullable
     public String getInfoTestPlist() {
         String infoPlist = getInfoPlist(testReleaseXCBuildConfiguration);
         infoPlist = infoPlist == null ? getInfoPlist(testDebugXCBuildConfiguration) : infoPlist;
-        return infoPlist;
+        infoPlist = infoPlist == null ? getInfoPlist(defaultReleaseXCBuildConfiguration) : infoPlist;
+        infoPlist = infoPlist == null ? getInfoPlist(defaultDebugXCBuildConfiguration) : infoPlist;
+        return replaceTargetName(infoPlist, testTarget.getName());
     }
 
-    private String getInfoPlist(XCBuildConfiguration configuration) {
+    @Nullable
+    private String replaceTargetName(@Nullable String path, @NotNull String targetName) {
+        if (path != null) {
+            path = path.replaceAll("\\$\\(TARGET_NAME\\)", targetName);
+        }
+
+        return path;
+    }
+
+    @Nullable
+    private String getInfoPlist(@NotNull XCBuildConfiguration configuration) {
         Dictionary<Value, NextStep> settings = configuration.getBuildSettingsOrNull();
         if (settings != null) {
             Value value = (Value) settings.get(new Value("INFOPLIST_FILE"));
-            return value.value;
+            return value != null ? value.value : null;
         }
         return null;
     }
