@@ -52,7 +52,11 @@ public class XcodeEditor implements VirtualFileListener, FileEditor {
 
     private static final Logger LOG = LoggerFactory.getLogger(XcodeEditor.class);
 
-    private  Project project;
+    @NotNull
+    private final VirtualFile myFile;
+    @NotNull
+    private Project project;
+    @NotNull
     private XcodeEditorForm editorForm;
     private XcodeEditorManager xcodeEditorManager;
     private InfoPlistManager mainInfoPlistManager;
@@ -63,9 +67,10 @@ public class XcodeEditor implements VirtualFileListener, FileEditor {
     private String projectName;
     private FileDocumentManager fileDocumentManager;
 
-    public XcodeEditor(Project project, VirtualFile virtualFile) {
+    public XcodeEditor(@NotNull Project project, @NotNull VirtualFile virtualFile) {
         this.project = project;
         this.editorForm = new XcodeEditorForm();
+        this.myFile = virtualFile;
         initManagers(virtualFile);
         editorForm.setXcodeEditorManager(xcodeEditorManager);
         editorForm.setMainInfoPlistManager(mainInfoPlistManager);
@@ -164,6 +169,11 @@ public class XcodeEditor implements VirtualFileListener, FileEditor {
     @Override
     public <T> void putUserData(@NotNull Key<T> key, @Nullable T t) {
 
+    }
+
+    @Override
+    public @NotNull VirtualFile getFile() {
+        return myFile;
     }
 
     private void initManagers(VirtualFile virtualFile) {

@@ -36,10 +36,14 @@ import java.beans.PropertyChangeListener;
 
 public class BindingEditor implements VirtualFileListener, FileEditor {
 
+    @NotNull
+    private final VirtualFile myFile;
+    @NotNull
     private BindingEditorForm bindingEditorForm;
     private FileDocumentManager fileDocumentManager;
 
-    public BindingEditor(Project project, VirtualFile virtualFile) {
+    public BindingEditor(@NotNull Project project, @NotNull VirtualFile virtualFile) {
+        this.myFile = virtualFile;
         this.bindingEditorForm = new BindingEditorForm(project, virtualFile);
     }
 
@@ -128,5 +132,10 @@ public class BindingEditor implements VirtualFileListener, FileEditor {
     @Override
     public <T> void putUserData(@NotNull Key<T> key, @Nullable T t) {
 
+    }
+
+    @Override
+    public @NotNull VirtualFile getFile() {
+        return myFile;
     }
 }
