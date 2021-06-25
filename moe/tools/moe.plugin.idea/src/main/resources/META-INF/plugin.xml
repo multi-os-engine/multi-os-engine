@@ -9,6 +9,10 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      1.4.12<br>
+      - Fix NPE in Xcode project editor<br>
+      - Improvements to the Xcode project editor<br>
+      <br>
       1.4.11<br>
       - Add New MOE project option to Android Studio welcome screen<br>
       - Improvements to the Xcode project editor<br>
