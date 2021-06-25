@@ -408,12 +408,18 @@ public class XcodeEditor extends AbstractXcodeEditor {
 
         String f = s.get(configuration);
         if (f == null) {
+            s = getBuildSetting(project, "INFOPLIST_FILE", null);
+            f = s.get(configuration);
+        }
+
+        if (f == null) {
             return null;
         }
 
         File sourceRoot = projectFile.getSourceRoot();
         f = f.replaceAll("/", "\\" + File.separator);
         f = f.replaceAll("\\$\\(SRCROOT\\)", sourceRoot.getAbsolutePath());
+        f = f.replaceAll("\\$\\(TARGET_NAME\\)", targetName);
         final File file = new File(f);
         if (file.isAbsolute()) {
             return file;
