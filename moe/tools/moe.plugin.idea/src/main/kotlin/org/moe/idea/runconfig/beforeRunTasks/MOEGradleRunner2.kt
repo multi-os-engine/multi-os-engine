@@ -268,6 +268,10 @@ class MOEGradleRunner2(
         } catch (e: ExternalSystemException) {
             if (e.originalReason.startsWith("com.intellij.openapi.progress.ProcessCanceledException")) {
                 LOGGER.info("Gradle execution cancelled.", e)
+
+                result.isBuildSuccessful = false
+                taskListener.onCancel(taskId)
+                taskListener.onEnd(taskId)
             } else {
                 throw e
             }
