@@ -22,7 +22,6 @@ import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.LocatableConfigurationBase;
 import com.intellij.execution.configurations.RunConfigurationWithSuppressedDefaultDebugAction;
 import com.intellij.execution.configurations.RunProfileState;
-import com.intellij.execution.configurations.RunProfileWithCompileBeforeLaunchOption;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.runners.RunConfigurationWithSuppressedDefaultRunAction;
 import com.intellij.ide.passwordSafe.PasswordSafe;
@@ -42,10 +41,9 @@ import org.moe.idea.utils.JDOMHelper;
 import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
 
-public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
+public abstract class MOERunConfigurationBase extends LocatableConfigurationBase<Element>
         implements RunConfigurationWithSuppressedDefaultDebugAction,
-        RunConfigurationWithSuppressedDefaultRunAction,
-        RunProfileWithCompileBeforeLaunchOption {
+        RunConfigurationWithSuppressedDefaultRunAction {
 
     private static final Logger LOG = LoggerFactory.getLogger(MOERunConfigurationBase.class);
 
@@ -302,7 +300,6 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
     }
 
     @NotNull
-    @Override
     public Module[] getModules() {
         final String moduleName = moduleName();
         if (moduleName == null || moduleName.isEmpty()) {
