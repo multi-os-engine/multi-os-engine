@@ -100,8 +100,6 @@ public class MOEGradleTaskProvider extends BeforeRunTaskProvider<MOEGradleTask> 
 
         final AtomicBoolean success = new AtomicBoolean();
 
-        final AtomicReference<String> errorMsgRef = new AtomicReference<String>();
-
         try {
             final Semaphore doneSemaphore = new Semaphore();
             doneSemaphore.down();
@@ -109,14 +107,13 @@ public class MOEGradleTaskProvider extends BeforeRunTaskProvider<MOEGradleTask> 
             final MOERunConfiguration runConfig = (MOERunConfiguration) configuration;
             isOpenDialog = runConfig.getOpenDeploymentTargetDialog();
 
-            final MOEGradleRunner gradleRunner = new MOEGradleRunner(env.getProject(), "Building MOE application", runConfig);
+            final MOEGradleRunner2 gradleRunner = new MOEGradleRunner2(runConfig);
 
             final MOEAfterGradleInvocationTask afterTask = new MOEAfterGradleInvocationTask() {
                 @Override
                 public void execute(@NotNull MOEGradleInvocationResult result) {
                     LOG.debug("MOE application gradle build ended");
                     success.set(result.isBuildSuccessful());
-                    errorMsgRef.set(result.getErrorMessage());
                     gradleRunner.removeAfterTask(this);
                     doneSemaphore.up();
                 }
@@ -149,18 +146,6 @@ public class MOEGradleTaskProvider extends BeforeRunTaskProvider<MOEGradleTask> 
             LOG.debug("Unable execute task", e);
             return false;
         }
-
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                String errorMessage = errorMsgRef.get();
-
-                if (errorMessage != null) {
-                    MOEToolWindow toolWindow = MOEToolWindow.getInstance(env.getProject());
-                    toolWindow.printErrorMessage(errorMessage);
-                }
-            }
-        });
 
         return success.get();
     }
