@@ -17,7 +17,6 @@ limitations under the License.
 package org.moe.gradle;
 
 import org.gradle.api.GradleException;
-import org.gradle.api.logging.Logging;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.Arch;
@@ -57,20 +56,8 @@ public class MoePlatform {
 
     private static final MoePlatform IOS_SIMULATOR =
             new MoePlatform("iOS Simulator", "iphonesimulator", new Arch[]{Arch.X86_64, Arch.ARM64}, null);
-    public static final MoePlatform IOS;
-    static {
-        // Disable ARM build on AARCH64 platform
-        String arch = System.getProperty("os.arch");
-        boolean disableArm = arch != null && arch.toLowerCase().contains("aarch64");
-        Arch[] archs;
-        if (disableArm) {
-            Logging.getLogger(MoePlatform.class).quiet("iOS armv7 support is disabled on aarch64 platform");
-            archs = new Arch[]{Arch.ARM64};
-        } else {
-            archs = new Arch[]{Arch.ARMV7, Arch.ARM64};
-        }
-        IOS = new MoePlatform("iOS", "iphoneos", archs, IOS_SIMULATOR);
-    }
+    public static final MoePlatform IOS =
+            new MoePlatform("iOS", "iphoneos", new Arch[]{Arch.ARMV7, Arch.ARM64}, IOS_SIMULATOR);
 
     /* NOTE: Unsupported but may be in the future
     private static final MoePlatform TVOS_SIMULATOR =

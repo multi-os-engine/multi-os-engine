@@ -47,6 +47,11 @@ public class TaskUtils {
     private TaskUtils() {
     }
 
+    public static boolean isHostAARCH64() {
+        String arch = System.getProperty("os.arch");
+        return arch != null && arch.toLowerCase().contains("aarch64");
+    }
+
     public static void assertSize(@NotNull List<String> elements, int count, @NotNull String desc) {
         Require.nonNull(elements);
         Require.GE(count, 0, null);
