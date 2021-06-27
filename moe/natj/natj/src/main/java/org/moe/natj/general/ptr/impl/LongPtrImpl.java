@@ -415,7 +415,7 @@ class LongPtrImpl extends VoidPtrImpl implements LongPtr {
 
         @Override
         public void copyTo(int srcOffset, Long[] dest, int destOffset, int length) {
-            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length)) {
+            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyTo(srcOffset, dest, destOffset, length);
@@ -423,7 +423,7 @@ class LongPtrImpl extends VoidPtrImpl implements LongPtr {
 
         @Override
         public void copyTo(int srcOffset, long[] dest, int destOffset, int length) {
-            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length)) {
+            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyTo(srcOffset, dest, destOffset, length);
@@ -439,7 +439,7 @@ class LongPtrImpl extends VoidPtrImpl implements LongPtr {
 
         @Override
         public void copyFrom(Long[] src, int srcOffset, int destOffset, int length) {
-            if (!checkIndex(destOffset) || !checkIndex(destOffset + length)) {
+            if (!checkIndex(destOffset) || !checkIndex(destOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyFrom(src, srcOffset, destOffset, length);
@@ -447,7 +447,7 @@ class LongPtrImpl extends VoidPtrImpl implements LongPtr {
 
         @Override
         public void copyFrom(long[] src, int srcOffset, int destOffset, int length) {
-            if (!checkIndex(destOffset) || !checkIndex(destOffset + length)) {
+            if (!checkIndex(destOffset) || !checkIndex(destOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyFrom(src, srcOffset, destOffset, length);

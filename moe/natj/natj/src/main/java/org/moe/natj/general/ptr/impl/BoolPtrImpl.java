@@ -415,7 +415,7 @@ class BoolPtrImpl extends VoidPtrImpl implements BoolPtr {
 
         @Override
         public void copyTo(int srcOffset, Boolean[] dest, int destOffset, int length) {
-            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length)) {
+            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyTo(srcOffset, dest, destOffset, length);
@@ -423,7 +423,7 @@ class BoolPtrImpl extends VoidPtrImpl implements BoolPtr {
 
         @Override
         public void copyTo(int srcOffset, boolean[] dest, int destOffset, int length) {
-            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length)) {
+            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyTo(srcOffset, dest, destOffset, length);
@@ -439,7 +439,7 @@ class BoolPtrImpl extends VoidPtrImpl implements BoolPtr {
 
         @Override
         public void copyFrom(Boolean[] src, int srcOffset, int destOffset, int length) {
-            if (!checkIndex(destOffset) || !checkIndex(destOffset + length)) {
+            if (!checkIndex(destOffset) || !checkIndex(destOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyFrom(src, srcOffset, destOffset, length);
@@ -447,7 +447,7 @@ class BoolPtrImpl extends VoidPtrImpl implements BoolPtr {
 
         @Override
         public void copyFrom(boolean[] src, int srcOffset, int destOffset, int length) {
-            if (!checkIndex(destOffset) || !checkIndex(destOffset + length)) {
+            if (!checkIndex(destOffset) || !checkIndex(destOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyFrom(src, srcOffset, destOffset, length);
