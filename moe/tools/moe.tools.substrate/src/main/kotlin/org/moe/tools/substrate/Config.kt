@@ -33,6 +33,7 @@ data class Config(
         val jniConfigFiles: Set<File> = emptySet(),
         val reflectionConfigFiles: Set<File> = emptySet(),
         val proxyConfigFiles: Set<File> = emptySet(),
+        val resourceConfigFile: Set<File> = emptySet(),
 
         val customOptions: List<String> = emptyList(),
         // Platform & arch config
