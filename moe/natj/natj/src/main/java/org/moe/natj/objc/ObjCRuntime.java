@@ -1601,4 +1601,30 @@ public class ObjCRuntime extends NativeRuntime {
      * @return The peer of _NatJObjCCastProxy
      */
     public static native long getObjCCastProxyPeer(long instance);
+
+    /**
+     * Throw the given Java exception to native side
+     *
+     * @param ex The exception to throw
+     */
+    private static native void throwJavaExceptionToNative(Throwable ex);
+
+    private static final Thread.UncaughtExceptionHandler crashHandler = new Thread.UncaughtExceptionHandler() {
+        @Override
+        public void uncaughtException(Thread thread, Throwable ex) {
+            ex.printStackTrace();
+
+            // Throw the exception to native side. This should cause the app to crash
+            // when calling from the thread uncaught exception handler.
+            throwJavaExceptionToNative(ex);
+        }
+    };
+
+    /**
+     * Install a default uncaught exception handler that forces the app to natively crash
+     * whenever a Java exception is uncaught.
+     */
+    public static void crashAppWhenExceptionUncaught() {
+        Thread.setDefaultUncaughtExceptionHandler(crashHandler);
+    }
 }

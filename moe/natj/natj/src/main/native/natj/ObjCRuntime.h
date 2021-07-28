@@ -988,6 +988,17 @@ JNIEXPORT void JNICALL
     Java_org_moe_natj_objc_ObjCRuntime_releaseAutoReleasePool(JNIEnv* env,
                                                                   jclass clazz,
                                                                   jlong pool);
+
+/**
+ * Throw the given Java exception to native side.
+ *
+ * @param ex The exception to throw
+ */
+JNIEXPORT void JNICALL
+Java_org_moe_natj_objc_ObjCRuntime_throwJavaExceptionToNative(JNIEnv* env,
+                                                             jclass clazz,
+                                                             jthrowable ex);
+
 }
 
 #endif

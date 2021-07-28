@@ -1105,6 +1105,14 @@ void Java_org_moe_natj_objc_ObjCRuntime_releaseAutoReleasePool(JNIEnv* env,
                                                                    jlong pool) {
   [reinterpret_cast<NSAutoreleasePool*>(pool) release];
 }
+  
+void Java_org_moe_natj_objc_ObjCRuntime_throwJavaExceptionToNative(JNIEnv* env,
+                                                               jclass clazz,
+                                                               jthrowable ex) {
+  jthrowable JAVA_EXC = ex;
+  bool _hadToAttach = false;
+  THROW_JAVA_EXCEPTION_TO_NATIVE(env);
+}
 
 void setCurrentInitTargetOnCurrentThread(jobject target) {
   @autoreleasepool {
