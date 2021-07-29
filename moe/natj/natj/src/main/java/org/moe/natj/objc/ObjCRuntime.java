@@ -1621,10 +1621,29 @@ public class ObjCRuntime extends NativeRuntime {
     };
 
     /**
-     * Install a default uncaught exception handler that forces the app to natively crash
+     * Install uncaught exception handler on this thread that forces the app to natively crash
      * whenever a Java exception is uncaught.
+     * <p>
+     * This call is equivalent to <code>crashAppWhenExceptionUncaught(true)</code>.
+     *
+     * @see ObjCRuntime#crashAppWhenExceptionUncaught(boolean)
      */
     public static void crashAppWhenExceptionUncaught() {
-        Thread.setDefaultUncaughtExceptionHandler(crashHandler);
+        crashAppWhenExceptionUncaught(true);
+    }
+
+    /**
+     * Install uncaught exception handler that forces the app to natively crash
+     * whenever a Java exception is uncaught.
+     *
+     * @param currentThreadOnly whether this should be applied to uncaught exception occurred on current thread only,
+     *                          or on any thread.
+     */
+    public static void crashAppWhenExceptionUncaught(boolean currentThreadOnly) {
+        if (currentThreadOnly) {
+            Thread.currentThread().setUncaughtExceptionHandler(crashHandler);
+        } else {
+            Thread.setDefaultUncaughtExceptionHandler(crashHandler);
+        }
     }
 }
