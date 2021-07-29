@@ -24,6 +24,7 @@ import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.artifacts.repositories.IvyArtifactRepository;
 import org.gradle.api.logging.Logger;
+import org.gradle.api.plugins.JavaLibraryPlugin;
 import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.plugins.JavaPluginConvention;
 import org.gradle.api.tasks.SourceSet;
@@ -91,10 +92,20 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         return Require.nonNull(sdk, "The plugin's 'sdk' property was null");
     }
 
+    /**
+     * Whether this plugin is meant to produce a library or an application.
+     *
+     * If `isLibrary` == `true` then this plugin will add the "java-library" plugin to the project
+     * and add all MOE dependencies using the "api" configuration, otherwise "java" plugin will be used
+     * and all dependencies are added into "implementation" configuration.
+     */
+    private final boolean isLibrary;
+
     @Inject
-    AbstractMoePlugin(Instantiator instantiator, ToolingModelBuilderRegistry registry) {
+    AbstractMoePlugin(Instantiator instantiator, ToolingModelBuilderRegistry registry, boolean isLibrary) {
         this.instantiator = Require.nonNull(instantiator);
         this.registry = Require.nonNull(registry);
+        this.isLibrary = isLibrary;
     }
 
     @Override
@@ -109,7 +120,9 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         checkGradleVersion(project);
 
         // Apply Java plugin
-        project.getPluginManager().apply(JavaPlugin.class);
+        project.getPluginManager().apply(
+            isLibrary ? JavaLibraryPlugin.class : JavaPlugin.class
+        );
 
         // Setup the SDK
         sdk = MoeSDK.setup(this);
@@ -354,21 +367,27 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
             ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
         }).metadataSources(IvyArtifactRepository.MetadataSources::artifact);
 
-        project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
-            FileUtils.getNameAsArtifact(getSDK().getCoreJar(), getSDK().sdkVersion));
+        project.getDependencies().add(
+            isLibrary ? JavaPlugin.API_CONFIGURATION_NAME : JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME,
+            FileUtils.getNameAsArtifact(getSDK().getCoreJar(), getSDK().sdkVersion)
+        );
 
         if (getExtension().getPlatformJar() != null) {
-            project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
-                FileUtils.getNameAsArtifact(getExtension().getPlatformJar(), getSDK().sdkVersion));
+            project.getDependencies().add(
+                isLibrary ? JavaPlugin.API_CONFIGURATION_NAME : JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME,
+                FileUtils.getNameAsArtifact(getExtension().getPlatformJar(), getSDK().sdkVersion)
+            );
         }
-        project.getDependencies().add(JavaPlugin.TEST_COMPILE_CONFIGURATION_NAME,
+        project.getDependencies().add(JavaPlugin.TEST_IMPLEMENTATION_CONFIGURATION_NAME,
             FileUtils.getNameAsArtifact(getSDK().getiOSJUnitJar(), getSDK().sdkVersion));
 
         // Install java 8 support jars to fix lambda compilation
-        project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
-            FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion));
+        project.getDependencies().add(
+            isLibrary ? JavaPlugin.API_CONFIGURATION_NAME : JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME,
+            FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion)
+        );
 
-        project.getDependencies().add(JavaPlugin.TEST_COMPILE_CONFIGURATION_NAME,
+        project.getDependencies().add(JavaPlugin.TEST_IMPLEMENTATION_CONFIGURATION_NAME,
             FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion));
     }
 

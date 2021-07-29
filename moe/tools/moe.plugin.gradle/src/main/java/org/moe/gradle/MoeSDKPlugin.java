@@ -51,7 +51,7 @@ public class MoeSDKPlugin extends AbstractMoePlugin {
 
     @Inject
     public MoeSDKPlugin(Instantiator instantiator, ToolingModelBuilderRegistry registry) {
-        super(instantiator, registry);
+        super(instantiator, registry, true);
     }
 
     @Override

@@ -86,7 +86,7 @@ public class MoePlugin extends AbstractMoePlugin {
 
     @Inject
     public MoePlugin(Instantiator instantiator, ToolingModelBuilderRegistry registry) {
-        super(instantiator, registry);
+        super(instantiator, registry, false);
     }
 
     @Override
