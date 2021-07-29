@@ -20,6 +20,7 @@ import org.gradle.api.*;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.gradle.api.tasks.Input;
+import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
 import org.gradle.process.ExecResult;
@@ -69,6 +70,7 @@ public abstract class AbstractBaseTask extends DefaultTask {
 
     private Boolean remoteExecutionStatusSet;
 
+    @Internal
     public boolean getRemoteExecutionStatusSet() {
         return Require.nonNull(remoteExecutionStatusSet);
     }
@@ -109,19 +111,23 @@ public abstract class AbstractBaseTask extends DefaultTask {
 
     abstract protected void run();
 
+    @Internal
     protected @NotNull MoeExtension getMoeExtension() {
         return Require.nonNull((MoeExtension) getProject().getExtensions().findByName(MoePlugin.MOE));
     }
 
+    @Internal
     public @NotNull AbstractMoeExtension getExtension() {
         return Require.nonNull((AbstractMoeExtension) getProject().getExtensions().findByName(AbstractMoePlugin.MOE));
     }
 
     @NotNull
+    @Internal
     protected MoePlugin getMoePlugin() {
         return Require.nonNull((MoePlugin) getMoeExtension().plugin);
     }
 
+    @Internal
     protected @NotNull MoeSDK getMoeSDK() {
         return getMoeExtension().plugin.getSDK();
     }
@@ -308,6 +314,7 @@ public abstract class AbstractBaseTask extends DefaultTask {
         return path;
     }
 
+    @Internal
     protected Path getLocalSDKLink() {
         final String outPath = Paths.get(MoePlugin.MOE).toString();
         return Paths.get(getProject().getBuildDir().toString(), outPath, "sdk");

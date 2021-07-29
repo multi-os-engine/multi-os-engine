@@ -18,6 +18,7 @@ package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
 import org.gradle.api.tasks.Input;
+import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.SourceSet;
 import org.moe.document.pbxproj.ProjectException;
 import org.moe.generator.project.writer.XcodeEditor;
@@ -133,6 +134,7 @@ public class XcodeProvider extends AbstractBaseTask {
     private Dex2Oat dex2OatTaskDep;
 
     @NotNull
+    @Internal
     public Dex2Oat getDex2OatTaskDep() {
         return Require.nonNull(dex2OatTaskDep);
     }
@@ -140,6 +142,7 @@ public class XcodeProvider extends AbstractBaseTask {
     private StartupProvider startupProviderTaskDep;
 
     @NotNull
+    @Internal
     public StartupProvider getStartupProviderTaskDep() {
         return Require.nonNull(startupProviderTaskDep);
     }
@@ -147,17 +150,20 @@ public class XcodeProvider extends AbstractBaseTask {
     private Path outRoot;
 
     @NotNull
+    @Internal
     public Path getOutRoot() {
         return Require.nonNull(outRoot);
     }
 
     @NotNull
+    @Internal
     public Path getArtLink() {
         final String outPath = outDir.get().toString();
         return Paths.get(getProject().getBuildDir().toString(), outPath, arch.name + ".art");
     }
 
     @NotNull
+    @Internal
     public Path getOatLink() {
         final String outPath = outDir.get().toString();
         return Paths.get(getProject().getBuildDir().toString(), outPath, arch.name + ".oat");

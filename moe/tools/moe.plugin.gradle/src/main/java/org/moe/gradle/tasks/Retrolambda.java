@@ -21,6 +21,7 @@ import org.gradle.api.file.ConfigurableFileCollection;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.InputFiles;
+import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputDirectory;
 import org.gradle.api.tasks.SourceSet;
 import org.moe.gradle.MoeExtension;
@@ -128,6 +129,7 @@ public class Retrolambda extends AbstractBaseTask {
     private Object expandedClassesDir;
 
     @NotNull
+    @Internal
     public File getExpandedClassesDir() {
         return getProject().file(getOrConvention(expandedClassesDir, CONVENTION_EXPANDED_CLASSES_DIR));
     }
@@ -194,6 +196,7 @@ public class Retrolambda extends AbstractBaseTask {
     private ProGuard proGuardTaskDep;
 
     @NotNull
+    @Internal
     public ProGuard getProGuardTaskDep() {
         return Require.nonNull(proGuardTaskDep);
     }

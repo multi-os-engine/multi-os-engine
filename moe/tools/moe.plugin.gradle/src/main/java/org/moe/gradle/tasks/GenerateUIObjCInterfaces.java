@@ -21,6 +21,7 @@ import org.gradle.api.file.ConfigurableFileCollection;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.InputFiles;
+import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
 import org.moe.document.pbxproj.PBXBuildFile;
@@ -234,6 +235,7 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
     private Retrolambda retrolambdaTaskDep;
 
     @NotNull
+    @Internal
     public Retrolambda getRetrolambdaTaskDep() {
         return Require.nonNull(retrolambdaTaskDep);
     }

@@ -27,6 +27,7 @@ import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.tasks.Classpath;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.InputFiles;
+import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
@@ -241,6 +242,7 @@ public class ProGuard extends AbstractBaseTask {
 
     @Nullable
     @IgnoreUnused
+    @Internal
     public Task getClassesTaskDep() {
         return classesTaskDep;
     }
@@ -248,6 +250,7 @@ public class ProGuard extends AbstractBaseTask {
     private JavaCompile javaCompileTaskDep;
 
     @Nullable
+    @Internal
     public JavaCompile getJavaCompileTaskDep() {
         return javaCompileTaskDep;
     }

@@ -19,6 +19,7 @@ package org.moe.gradle.tasks;
 import org.gradle.api.GradleException;
 import org.gradle.api.file.ConfigurableFileCollection;
 import org.gradle.api.tasks.InputFiles;
+import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
 import org.moe.gradle.MoePlugin;
@@ -113,6 +114,7 @@ public class StartupProvider extends AbstractBaseTask {
 
     @NotNull
     @IgnoreUnused
+    @Internal
     public ProGuard getProGuardTaskDep() {
         return Require.nonNull(proGuardTaskDep);
     }

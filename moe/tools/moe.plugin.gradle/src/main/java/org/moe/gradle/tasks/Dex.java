@@ -21,6 +21,7 @@ import org.gradle.api.file.ConfigurableFileCollection;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.InputFiles;
+import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
 import org.moe.gradle.MoePlugin;
@@ -53,11 +54,11 @@ public class Dex extends AbstractBaseTask {
     private Object dxJar;
 
     @NotNull
+    @InputFile
     public File getDxJar() {
         return getProject().file(getOrConvention(dxJar, CONVENTION_DX_JAR));
     }
 
-    @InputFile
     @IgnoreUnused
     public void setDxJar(@Nullable Object dxJar) {
         this.dxJar = dxJar;
@@ -145,6 +146,7 @@ public class Dex extends AbstractBaseTask {
     private Retrolambda retrolambdaTaskDep;
 
     @NotNull
+    @Internal
     public Retrolambda getRetrolambdaTaskDep() {
         return Require.nonNull(retrolambdaTaskDep);
     }
