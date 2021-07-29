@@ -115,7 +115,7 @@ extern "C" int moevm(const int jargc, char* const* jargv) {
       setenv("MOE_ICU_DATA", [resourcePath UTF8String], true);
     }
 #endif
-      
+
     // Set default properties
     setenv("MOE_TMP_DIR", [NSTemporaryDirectory() UTF8String], true);
     setenv("MOE_USER_HOME", [[mainBundle bundlePath] UTF8String], true);
@@ -197,8 +197,12 @@ extern "C" int moevm(const int jargc, char* const* jargv) {
       std::cerr << "FATAL: mainClass is nil! Please specify with '-mainClass' argument or with the 'MOE.Main.Class' key in Info.plist file.\n";
       abort();
     }
+    // Run the ios launcher class as the main class
+    // so we could have some extra code running before user code
+    [args addObject:@"org.moe.IOSLauncher"];
+    // Pass the user main class as the first argument to the launcher
     [args addObject:mainClass];
-    
+
     NSDictionary* plistEnvs = [[mainBundle infoDictionary] objectForKey:@"MOE.Env"];
     if (plistEnvs != nil) {
       if (![plistEnvs isKindOfClass:[NSDictionary class]]) {
