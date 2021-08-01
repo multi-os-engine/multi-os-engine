@@ -27,16 +27,6 @@ apply plugin: 'base'
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
 
-if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
-    tasks.build.dependsOn ':ext_natj_mac'
-    tasks.build.dependsOn ':prebuild_libimobiledevice_macos'
-}
-
-if (!rootProject.hasProperty('moe.tools.sdk.mac_only')) {
-    tasks.build.dependsOn ':ext_natj_win'
-    tasks.build.dependsOn ':prebuild_libimobiledevice_windows'
-}
-
 def projectDeps = [
         ':moe.binding.clang',
         ':moe.binding.libimobiledevice',
@@ -51,6 +41,16 @@ mkdir buildDir
 
 task buildDeps {
     projectDeps.each { dependsOn project(it).tasks.build }
+}
+
+if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
+    tasks.buildDeps.dependsOn ':ext_natj_mac'
+    tasks.buildDeps.dependsOn ':prebuild_libimobiledevice_macos'
+}
+
+if (!rootProject.hasProperty('moe.tools.sdk.mac_only')) {
+    tasks.buildDeps.dependsOn ':ext_natj_win'
+    tasks.buildDeps.dependsOn ':prebuild_libimobiledevice_windows'
 }
 
 task processExtractiOS(type: Copy) {
