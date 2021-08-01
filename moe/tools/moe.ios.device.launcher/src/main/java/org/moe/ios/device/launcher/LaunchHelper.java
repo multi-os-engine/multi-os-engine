@@ -369,6 +369,16 @@ public class LaunchHelper implements IStopReplyListener {
                     }
                 }
 
+                // https://github.com/llvm/llvm-project/blob/7ad854c41e2b08b8cd6aae1d3b6f22125512585b/lldb/source/Plugins/Platform/MacOSX/PlatformDarwin.cpp#L1719-L1721
+                // > We want to make sure that OS_ACTIVITY_DT_MODE is set so that we get
+                //   os_log and NSLog messages mirrored to the target process stderr.
+                // which will then be streamed to the stdout of this application, and finally
+                // get displayed in Android Studio run window. This ensures the app crash information
+                // are displayed as well.
+                protocol.set_EnvironmentHexEncoded("NSUnbufferedIO", "YES");
+                protocol.set_EnvironmentHexEncoded("OS_ACTIVITY_MODE", "enable");
+                protocol.set_EnvironmentHexEncoded("OS_ACTIVITY_DT_MODE", "enable");
+
                 // Pass env vars
                 for (Map.Entry<String, String> next : envVars.entrySet()) {
                     protocol.set_EnvironmentHexEncoded(next.getKey(), next.getValue());
