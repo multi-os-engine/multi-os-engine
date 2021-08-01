@@ -30,6 +30,8 @@ task prebuildAll {}
 task cleanAll {
     doLast {
         delete('build')
+        delete('llvm')
+        delete('mingw')
     }
 }
 
