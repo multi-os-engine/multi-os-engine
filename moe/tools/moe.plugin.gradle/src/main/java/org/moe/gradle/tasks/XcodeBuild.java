@@ -26,6 +26,7 @@ import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
+import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
@@ -98,6 +99,7 @@ public class XcodeBuild extends AbstractBaseTask {
     private SourceSet sourceSet;
 
     @NotNull
+    @Internal
     public SourceSet getSourceSet() {
         return Require.nonNull(sourceSet);
     }
@@ -106,6 +108,7 @@ public class XcodeBuild extends AbstractBaseTask {
     private Mode mode;
 
     @NotNull
+    @Internal
     public Mode getMode() {
         return Require.nonNull(mode);
     }
@@ -114,6 +117,7 @@ public class XcodeBuild extends AbstractBaseTask {
     private MoePlatform platform;
 
     @NotNull
+    @Internal
     public MoePlatform getPlatform() {
         return Require.nonNull(platform);
     }
@@ -297,8 +301,8 @@ public class XcodeBuild extends AbstractBaseTask {
 
     @Input
     @NotNull
-    public File getXcodeBuildRoot() {
-        return getProject().file(getOrConvention(xcodeBuildRoot, CONVENTION_XCODE_BUILD_ROOT));
+    public String getXcodeBuildRoot() {
+        return getProject().file(getOrConvention(xcodeBuildRoot, CONVENTION_XCODE_BUILD_ROOT)).getAbsolutePath();
     }
 
     @IgnoreUnused
@@ -307,6 +311,7 @@ public class XcodeBuild extends AbstractBaseTask {
     }
 
     @NotNull
+    @Internal
     public File getConfigurationBuildDir() {
         if (getPlatform().mainPlatformsHasSimulatorPair()) {
             return new File(getXcodeBuildRoot(), mode.getXcodeCompatibleName() + "-" + getPlatform().platformName);
@@ -333,6 +338,7 @@ public class XcodeBuild extends AbstractBaseTask {
     private Map<String, String> xcodeBuildSettings;
 
     @NotNull
+    @Internal
     public Map<String, String> getXcodeBuildSettings() {
         if (xcodeBuildSettings == null && getState().getSkipped()) {
             this.xcodeBuildSettings = getCachedXcodeBuildSettings();
@@ -341,6 +347,7 @@ public class XcodeBuild extends AbstractBaseTask {
     }
 
     @Nullable
+    @Internal
     public Map<String, String> getNullableXcodeBuildSettings() {
         if (xcodeBuildSettings == null && getState().getSkipped()) {
             this.xcodeBuildSettings = getCachedXcodeBuildSettings();
@@ -349,6 +356,7 @@ public class XcodeBuild extends AbstractBaseTask {
     }
 
     @NotNull
+    @Internal
     public Map<String, String> getCachedXcodeBuildSettings() {
         Properties xcodeBuildSettingsP = new Properties();
         try {
@@ -425,7 +433,7 @@ public class XcodeBuild extends AbstractBaseTask {
 
             // Exclude files from "self"
             excludes.add(getLogFile());
-            excludes.add(getXcodeBuildRoot());
+            excludes.add(new File(getXcodeBuildRoot()));
             excludes.add(getLocalSDKLink().toFile());
 
             // TODO: exclude IPA
@@ -612,7 +620,7 @@ public class XcodeBuild extends AbstractBaseTask {
                 } else {
                     xcodeWorkspaceFileRel = null;
                 }
-                xcodeBuildRootRel = getInnerProjectRelativePath(getXcodeBuildRoot());
+                xcodeBuildRootRel = getInnerProjectRelativePath(new File(getXcodeBuildRoot()));
             } catch (IOException e) {
                 throw new GradleException("Unsupported configuration", e);
             }
@@ -631,7 +639,7 @@ public class XcodeBuild extends AbstractBaseTask {
             } else {
                 _xcodeWorkspaceFile = null;
             }
-            _xcodeBuildRoot = getXcodeBuildRoot().getAbsolutePath();
+            _xcodeBuildRoot = getXcodeBuildRoot();
         }
 
         if (_xcodeWorkspaceFile != null) {
@@ -683,6 +691,7 @@ public class XcodeBuild extends AbstractBaseTask {
     private List<XcodeProvider> xcodeProviderTaskDeps;
 
     @NotNull
+    @Internal
     public List<XcodeProvider> getXcodeProviderTaskDeps() {
         return Collections.unmodifiableList(Require.nonNull(xcodeProviderTaskDeps));
     }

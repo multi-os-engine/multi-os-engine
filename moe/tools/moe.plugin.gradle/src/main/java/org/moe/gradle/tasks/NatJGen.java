@@ -22,6 +22,7 @@ import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.gradle.api.specs.Spec;
 import org.gradle.api.tasks.Input;
+import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.Optional;
 import org.moe.gradle.AbstractMoeExtension;
 import org.moe.gradle.anns.IgnoreUnused;
@@ -72,7 +73,7 @@ public class NatJGen extends AbstractBaseTask {
 
     private File natjgen;
 
-    @Input
+    @InputFile
     public File getNatJGenJar() {
         return nullableGetOrConvention(natjgen, CONVENTION_NATJGEN_JAR);
     }

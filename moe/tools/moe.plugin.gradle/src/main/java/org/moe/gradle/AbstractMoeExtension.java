@@ -20,11 +20,14 @@ import org.gradle.api.Action;
 import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
+import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.options.JavaProcessOptions;
 import org.moe.gradle.options.NatjgenOptions;
 import org.moe.gradle.utils.Require;
 
-public class AbstractMoeExtension {
+import java.io.File;
+
+public abstract class AbstractMoeExtension {
 
     @NotNull
     public final AbstractMoePlugin plugin;
@@ -64,4 +67,7 @@ public class AbstractMoeExtension {
     public void natjgen(Action<NatjgenOptions> action) {
         Require.nonNull(action).execute(natjgen);
     }
+
+    @Nullable
+    public abstract File getPlatformJar();
 }

@@ -18,6 +18,7 @@ package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
 import org.gradle.api.tasks.Input;
+import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.SourceSet;
 import org.moe.document.pbxproj.ProjectException;
 import org.moe.generator.project.writer.XcodeEditor;
@@ -130,6 +131,7 @@ public class XcodeProvider extends AbstractBaseTask {
     private NativeImage nativeImageTaskDep;
 
     @NotNull
+    @Internal
     public NativeImage getNativeImageTaskDep() {
         return Require.nonNull(nativeImageTaskDep);
     }
@@ -137,6 +139,7 @@ public class XcodeProvider extends AbstractBaseTask {
     private StartupProvider startupProviderTaskDep;
 
     @NotNull
+    @Internal
     public StartupProvider getStartupProviderTaskDep() {
         return Require.nonNull(startupProviderTaskDep);
     }
@@ -144,17 +147,20 @@ public class XcodeProvider extends AbstractBaseTask {
     private Path outRoot;
 
     @NotNull
+    @Internal
     public Path getOutRoot() {
         return Require.nonNull(outRoot);
     }
 
     @NotNull
+    @Internal
     public Path getMainObjLink() {
         final String outPath = outDir.get().toString();
         return Paths.get(getProject().getBuildDir().toString(), outPath, "main_" + arch.name + ".o");
     }
 
     @NotNull
+    @Internal
     public Path getLlvmObjLink() {
         final String outPath = outDir.get().toString();
         return Paths.get(getProject().getBuildDir().toString(), outPath, "llvm_" + arch.name + ".o");

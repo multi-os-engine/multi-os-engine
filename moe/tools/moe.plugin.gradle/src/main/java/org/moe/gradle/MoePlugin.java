@@ -20,13 +20,8 @@ import org.apache.tools.ant.taskdefs.condition.Os;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
-import org.gradle.api.artifacts.repositories.IvyArtifactRepository;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
-import org.gradle.api.plugins.JavaPlugin;
-import org.gradle.api.plugins.JavaPluginConvention;
-import org.gradle.api.tasks.compile.CompileOptions;
-import org.gradle.api.tasks.compile.JavaCompile;
 import org.gradle.internal.reflect.Instantiator;
 import org.gradle.tooling.provider.model.ToolingModelBuilderRegistry;
 import org.moe.gradle.anns.NotNull;
@@ -47,14 +42,12 @@ import org.moe.gradle.tasks.UpdateXcodeSettings;
 import org.moe.gradle.tasks.XcodeBuild;
 import org.moe.gradle.tasks.XcodeInternal;
 import org.moe.gradle.tasks.XcodeProvider;
-import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.PropertiesUtil;
 import org.moe.gradle.utils.Require;
 import org.moe.tools.substrate.GraalVM;
 
 import javax.inject.Inject;
 import java.io.File;
-import java.net.MalformedURLException;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Optional;
@@ -89,6 +82,7 @@ public class MoePlugin extends AbstractMoePlugin {
     private MoeExtension extension;
 
     @NotNull
+    @Override
     public MoeExtension getExtension() {
         return Require.nonNull(extension, "The plugin's 'extension' property was null");
     }
@@ -103,7 +97,7 @@ public class MoePlugin extends AbstractMoePlugin {
 
     @Inject
     public MoePlugin(Instantiator instantiator, ToolingModelBuilderRegistry registry) {
-        super(instantiator, registry);
+        super(instantiator, registry, false);
     }
 
     @Override
@@ -123,47 +117,8 @@ public class MoePlugin extends AbstractMoePlugin {
         extension = project.getExtensions().create(MOE, MoeExtension.class, this, instantiator);
         extension.setup();
 
-        // Get Java convention
-        javaConvention = (JavaPluginConvention) project.getConvention().getPlugins().get("java");
-        Require.nonNull(javaConvention, "The 'java' Gradle plugin must be applied before the '" + MOE + "' plugin");
-
-        // Add moe-core.jar to the bootclasspath
-        Arrays.asList("compileJava", "compileTestJava").forEach(name -> {
-            Task task = project.getTasks().getByName(name);
-            CompileOptions compileOptions = ((JavaCompile) task).getOptions();
-//            compileOptions.setBootstrapClasspath(project.files(getSDK().getCoreJar()));
-            compileOptions.setFork(true);
-        });
-
-        // Install core, ios and junit jars as dependencies
-        project.getRepositories().ivy(ivy -> {
-            ivy.setName("multi-os-engine-implicit-sdk-repo");
-            try {
-                ivy.setUrl(getSDK().getSDKDir().toURI().toURL());
-            } catch (MalformedURLException e) {
-                throw new GradleException("Failed to add Multi-OS Engine SDK repo", e);
-            }
-            ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
-        }).metadataSources(IvyArtifactRepository.MetadataSources::artifact);
-        project.getRepositories().ivy(ivy -> {
-            ivy.setName("multi-os-engine-implicit-tools-repo");
-            try {
-                ivy.setUrl(getSDK().getToolsDir().toURI().toURL());
-            } catch (MalformedURLException e) {
-                throw new GradleException("Failed to add Multi-OS Engine Tools repo", e);
-            }
-            ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
-        }).metadataSources(IvyArtifactRepository.MetadataSources::artifact);
-
-        project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
-                FileUtils.getNameAsArtifact(getSDK().getCoreJar(), getSDK().sdkVersion));
-
-        if (extension.getPlatformJar() != null) {
-            project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
-                    FileUtils.getNameAsArtifact(getExtension().getPlatformJar(), getSDK().sdkVersion));
-        }
-        project.getDependencies().add(JavaPlugin.TEST_COMPILE_CONFIGURATION_NAME,
-                FileUtils.getNameAsArtifact(getSDK().getiOSJUnitJar(), getSDK().sdkVersion));
+        // Add common MOE dependencies
+        installCommonDependencies();
 
         // Install rules
         addRule(ProGuard.class, "Creates a ProGuarded jar.",

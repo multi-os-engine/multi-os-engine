@@ -22,6 +22,7 @@ import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
+import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
@@ -333,12 +334,12 @@ public class IpaBuild extends AbstractBaseTask {
         this.embedOnDemandResourcesAssetPacksInBundle = embedOnDemandResourcesAssetPacksInBundle;
     }
 
-    @Input
-    @Optional
     @Nullable
-    public String iCloudContainerEnvironment;
+    private String iCloudContainerEnvironment;
 
     @Nullable
+    @Input
+    @Optional
     public String getICloudContainerEnvironment() {
         return nullableGetOrConvention(iCloudContainerEnvironment, CONVENTION_EXPORT_ICLOUD);
     }
@@ -348,10 +349,8 @@ public class IpaBuild extends AbstractBaseTask {
         this.iCloudContainerEnvironment = iCloudContainerEnvironment;
     }
 
-    @Input
-    @Optional
     @Nullable
-    public String onDemandResourcesAssetPacksBaseURL;
+    private String onDemandResourcesAssetPacksBaseURL;
 
     @Input
     @Optional
@@ -365,11 +364,11 @@ public class IpaBuild extends AbstractBaseTask {
         this.onDemandResourcesAssetPacksBaseURL = onDemandResourcesAssetPacksBaseURL;
     }
 
+    @Nullable
+    private String thinning;
+
     @Input
     @Optional
-    @Nullable
-    public String thinning;
-
     @Nullable
     public String getThinning() {
         return nullableGetOrConvention(thinning, CONVENTION_THINNING);
@@ -380,11 +379,11 @@ public class IpaBuild extends AbstractBaseTask {
         this.thinning = thinning;
     }
 
+    @Nullable
+    private String appURL;
+
     @Input
     @Optional
-    @Nullable
-    public String appURL;
-
     public String getAppURL() {
         return nullableGetOrConvention(appURL, CONVENTION_APP_URL);
     }
@@ -394,11 +393,11 @@ public class IpaBuild extends AbstractBaseTask {
         this.appURL = appURL;
     }
 
+    @Nullable
+    private String displayImageURL;
+
     @Input
     @Optional
-    @Nullable
-    public String displayImageURL;
-
     @Nullable
     public String getDisplayImageURL() {
         return nullableGetOrConvention(displayImageURL, CONVENTION_DISPLAY_IMAGE_URL);
@@ -409,11 +408,11 @@ public class IpaBuild extends AbstractBaseTask {
         this.displayImageURL = displayImageURL;
     }
 
+    @Nullable
+    private String fullSizeImageURL;
+
     @Input
     @Optional
-    @Nullable
-    public String fullSizeImageURL;
-
     @Nullable
     public String getFullSizeImageURL() {
         return nullableGetOrConvention(fullSizeImageURL, CONVENTION_FULL_SIZE_IMAGE_URL);
@@ -424,11 +423,11 @@ public class IpaBuild extends AbstractBaseTask {
         this.fullSizeImageURL = fullSizeImageURL;
     }
 
+    @Nullable
+    private String plistFile;
+
     @Input
     @Optional
-    @Nullable
-    public String plistFile;
-
     @Nullable
     public String getPlistFile() {
         return nullableGetOrConvention(plistFile, CONVENTION_USER_PLIST_FILE);
@@ -580,6 +579,7 @@ public class IpaBuild extends AbstractBaseTask {
 
     @NotNull
     @IgnoreUnused
+    @Internal
     public XcodeBuild getXcodeBuildTaskDep() {
         return Require.nonNull(xcodeBuildTaskDep);
     }

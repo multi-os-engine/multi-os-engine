@@ -22,10 +22,14 @@ import org.gradle.api.GradleException;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
+import org.gradle.api.artifacts.repositories.IvyArtifactRepository;
 import org.gradle.api.logging.Logger;
+import org.gradle.api.plugins.JavaLibraryPlugin;
 import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.plugins.JavaPluginConvention;
 import org.gradle.api.tasks.SourceSet;
+import org.gradle.api.tasks.compile.CompileOptions;
+import org.gradle.api.tasks.compile.JavaCompile;
 import org.gradle.internal.reflect.Instantiator;
 import org.gradle.tooling.provider.model.ToolingModelBuilderRegistry;
 import org.moe.gradle.anns.IgnoreUnused;
@@ -37,6 +41,8 @@ import org.moe.gradle.tasks.AbstractBaseTask;
 import org.moe.gradle.utils.*;
 
 import javax.inject.Inject;
+import java.net.MalformedURLException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -87,10 +93,20 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         return Require.nonNull(sdk, "The plugin's 'sdk' property was null");
     }
 
+    /**
+     * Whether this plugin is meant to produce a library or an application.
+     *
+     * If `isLibrary` == `true` then this plugin will add the "java-library" plugin to the project
+     * and add all MOE dependencies using the "api" configuration, otherwise "java" plugin will be used
+     * and all dependencies are added into "implementation" configuration.
+     */
+    private final boolean isLibrary;
+
     @Inject
-    AbstractMoePlugin(Instantiator instantiator, ToolingModelBuilderRegistry registry) {
+    AbstractMoePlugin(Instantiator instantiator, ToolingModelBuilderRegistry registry, boolean isLibrary) {
         this.instantiator = Require.nonNull(instantiator);
         this.registry = Require.nonNull(registry);
+        this.isLibrary = isLibrary;
     }
 
     @Override
@@ -105,10 +121,16 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         checkGradleVersion(project);
 
         // Apply Java plugin
-        project.getPluginManager().apply(JavaPlugin.class);
+        project.getPluginManager().apply(
+            isLibrary ? JavaLibraryPlugin.class : JavaPlugin.class
+        );
 
         // Setup the SDK
         sdk = MoeSDK.setup(this);
+
+        // Get Java convention
+        javaConvention = (JavaPluginConvention) project.getConvention().getPlugins().get("java");
+        Require.nonNull(javaConvention, "The 'java' Gradle plugin must be applied before the '" + MOE + "' plugin");
     }
 
     /**
@@ -214,6 +236,9 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         return Require.nonNull(javaConvention, "The plugin's 'javaConvention' property was null");
     }
 
+    @NotNull
+    public abstract AbstractMoeExtension getExtension();
+
     protected enum TaskParams {
         SOURCE_SET, MODE, ARCH, ARCH_FAMILY, PLATFORM;
 
@@ -312,6 +337,50 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
                 return task;
             }
         });
+    }
+
+    protected void installCommonDependencies() {
+        // Add moe-core.jar to the bootclasspath
+        Arrays.asList("compileJava", "compileTestJava").forEach(name -> {
+            Task task = project.getTasks().getByName(name);
+            CompileOptions compileOptions = ((JavaCompile) task).getOptions();
+//            compileOptions.setBootstrapClasspath(project.files(getSDK().getCoreJar()));
+            compileOptions.setFork(true);
+        });
+
+        // Install core, ios and junit jars as dependencies
+        project.getRepositories().ivy(ivy -> {
+            ivy.setName("multi-os-engine-implicit-sdk-repo");
+            try {
+                ivy.setUrl(getSDK().getSDKDir().toURI().toURL());
+            } catch (MalformedURLException e) {
+                throw new GradleException("Failed to add Multi-OS Engine SDK repo", e);
+            }
+            ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
+        }).metadataSources(IvyArtifactRepository.MetadataSources::artifact);
+        project.getRepositories().ivy(ivy -> {
+            ivy.setName("multi-os-engine-implicit-tools-repo");
+            try {
+                ivy.setUrl(getSDK().getToolsDir().toURI().toURL());
+            } catch (MalformedURLException e) {
+                throw new GradleException("Failed to add Multi-OS Engine Tools repo", e);
+            }
+            ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
+        }).metadataSources(IvyArtifactRepository.MetadataSources::artifact);
+
+        project.getDependencies().add(
+            isLibrary ? JavaPlugin.API_CONFIGURATION_NAME : JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME,
+            FileUtils.getNameAsArtifact(getSDK().getCoreJar(), getSDK().sdkVersion)
+        );
+
+        if (getExtension().getPlatformJar() != null) {
+            project.getDependencies().add(
+                isLibrary ? JavaPlugin.API_CONFIGURATION_NAME : JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME,
+                FileUtils.getNameAsArtifact(getExtension().getPlatformJar(), getSDK().sdkVersion)
+            );
+        }
+        project.getDependencies().add(JavaPlugin.TEST_IMPLEMENTATION_CONFIGURATION_NAME,
+            FileUtils.getNameAsArtifact(getSDK().getiOSJUnitJar(), getSDK().sdkVersion));
     }
 
     abstract protected void checkRemoteServer(AbstractBaseTask task);
