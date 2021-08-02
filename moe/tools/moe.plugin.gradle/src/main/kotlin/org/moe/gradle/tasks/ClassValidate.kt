@@ -7,6 +7,7 @@ import org.gradle.api.GradleException
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFiles
+import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.SourceSet
 import org.moe.generator.project.writer.XcodeEditor
@@ -76,9 +77,11 @@ open class ClassValidate : AbstractBaseTask() {
     }
 
     val classesOutputDir: File
+        @Internal
         get() = getOutputDir().resolve(ClassValidator.OUTPUT_CLASSES)
 
     val reflectionConfigFile: File
+        @Internal
         get() = getOutputDir().resolve(ClassValidator.OUTPUT_REFLECTION)
 
     override fun run() {
@@ -126,6 +129,7 @@ open class ClassValidate : AbstractBaseTask() {
 //        )
     }
 
+    @get:Internal
     lateinit var proGuardTaskDep: ProGuard
         private set
 

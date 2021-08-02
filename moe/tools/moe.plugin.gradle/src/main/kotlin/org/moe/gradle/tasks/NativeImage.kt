@@ -67,6 +67,7 @@ open class NativeImage : AbstractBaseTask() {
     private var svmTmpDir: Any? = null
 
     @NotNull
+    @Internal
     fun getSvmTmpDir(): File {
         return project.file(getOrConvention(svmTmpDir, CONVENTION_SVM_TMP_DIR)!!)
     }
@@ -181,6 +182,7 @@ open class NativeImage : AbstractBaseTask() {
         Files.move(executor.llvmObj, getLlvmObjFile().toPath(), StandardCopyOption.REPLACE_EXISTING)
     }
 
+    @get:Internal
     lateinit var classValidateTaskDep: ClassValidate
         private set
 
