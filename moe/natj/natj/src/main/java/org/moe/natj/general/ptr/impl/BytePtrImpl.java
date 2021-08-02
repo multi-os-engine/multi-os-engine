@@ -446,7 +446,7 @@ class BytePtrImpl extends VoidPtrImpl implements BytePtr {
 
         @Override
         public void copyTo(int srcOffset, Byte[] dest, int destOffset, int length) {
-            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length)) {
+            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyTo(srcOffset, dest, destOffset, length);
@@ -454,7 +454,7 @@ class BytePtrImpl extends VoidPtrImpl implements BytePtr {
 
         @Override
         public void copyTo(int srcOffset, byte[] dest, int destOffset, int length) {
-            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length)) {
+            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyTo(srcOffset, dest, destOffset, length);
@@ -470,7 +470,7 @@ class BytePtrImpl extends VoidPtrImpl implements BytePtr {
 
         @Override
         public void copyFrom(Byte[] src, int srcOffset, int destOffset, int length) {
-            if (!checkIndex(destOffset) || !checkIndex(destOffset + length)) {
+            if (!checkIndex(destOffset) || !checkIndex(destOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyFrom(src, srcOffset, destOffset, length);
@@ -478,7 +478,7 @@ class BytePtrImpl extends VoidPtrImpl implements BytePtr {
 
         @Override
         public void copyFrom(byte[] src, int srcOffset, int destOffset, int length) {
-            if (!checkIndex(destOffset) || !checkIndex(destOffset + length)) {
+            if (!checkIndex(destOffset) || !checkIndex(destOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyFrom(src, srcOffset, destOffset, length);

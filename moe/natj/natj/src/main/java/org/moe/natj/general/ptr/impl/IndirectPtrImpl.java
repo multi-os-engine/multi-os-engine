@@ -296,7 +296,7 @@ class IndirectPtrImpl<E extends ConstVoidPtr, T> extends AbstractTypedPtr<T, E> 
 
         @Override
         public void copyTo(int srcOffset, E[] dest, int destOffset, int length) {
-            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length)) {
+            if (!checkIndex(srcOffset) || !checkIndex(srcOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyTo(srcOffset, dest, destOffset, length);
@@ -312,7 +312,7 @@ class IndirectPtrImpl<E extends ConstVoidPtr, T> extends AbstractTypedPtr<T, E> 
 
         @Override
         public void copyFrom(E[] src, int srcOffset, int destOffset, int length) {
-            if (!checkIndex(destOffset) || !checkIndex(destOffset + length)) {
+            if (!checkIndex(destOffset) || !checkIndex(destOffset + length - 1)) {
                 throw new IndexOutOfBoundsException();
             }
             super.copyFrom(src, srcOffset, destOffset, length);
