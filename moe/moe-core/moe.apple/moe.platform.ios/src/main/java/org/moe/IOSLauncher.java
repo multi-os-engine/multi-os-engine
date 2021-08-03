@@ -12,7 +12,7 @@ import java.util.Arrays;
  * This is mainly used for registering the crash hook on main thread.
  */
 public class IOSLauncher {
-    public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
+    public static void main(String[] args) throws Throwable {
         // Register the crash hook for main thread
         ObjCRuntime.crashAppWhenExceptionUncaught();
 
@@ -30,6 +30,11 @@ public class IOSLauncher {
         } catch (ClassNotFoundException | NoSuchMethodException e) {
             throw new RuntimeException("Cannot execute main method from class " + mainClassName, e);
         }
-        mainMethod.invoke(null, (Object) realArgs);
+        try {
+            mainMethod.invoke(null, (Object) realArgs);
+        } catch (InvocationTargetException e) {
+            // Thrown out the wrapped exception instead
+            throw e.getCause();
+        }
     }
 }
