@@ -27,7 +27,7 @@ public class MOE {
     /**
      * The MOE main entrance
      */
-    public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
+    public static void main(String[] args) throws Throwable {
         // Register classes
         for (String c : getPreregisterClasses()) {
             System.out.println("Load preregistered class " + c);
@@ -52,7 +52,12 @@ public class MOE {
         } catch (ClassNotFoundException | NoSuchMethodException e) {
             throw new RuntimeException("Cannot execute main method from class " + mainClass, e);
         }
-        mainMethod.invoke(null, (Object)args);
+        try {
+            mainMethod.invoke(null, (Object) args);
+        } catch (InvocationTargetException e) {
+            // Thrown out the wrapped exception instead
+            throw e.getCause();
+        }
     }
 
     private native static String[] getPreregisterClasses();
