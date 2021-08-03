@@ -990,14 +990,14 @@ JNIEXPORT void JNICALL
                                                                   jlong pool);
 
 /**
- * Throw the given Java exception to native side.
+ * Terminate the app with the given Java exception
  *
  * @param ex The exception to throw
  */
 JNIEXPORT void JNICALL
-Java_org_moe_natj_objc_ObjCRuntime_throwJavaExceptionToNative(JNIEnv* env,
-                                                             jclass clazz,
-                                                             jthrowable ex);
+Java_org_moe_natj_objc_ObjCRuntime_terminateWithJavaException(JNIEnv* env,
+                                                              jclass clazz,
+                                                              jthrowable ex);
 
 }
 
