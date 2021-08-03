@@ -70,7 +70,7 @@ public class MoeExtension extends AbstractMoeExtension {
     private MoePlatform platform = MoePlatform.IOS;
 
     @Nullable
-    private String mainClassName = "org.moe.MOE";
+    private String mainClassName = "org.moe.IOSLauncher";
 
     private int proguardLevel = PROGUARD_LEVEL_ALL;
     private int proguardLevelProperty = PROGUARD_LEVEL_INVALID;
