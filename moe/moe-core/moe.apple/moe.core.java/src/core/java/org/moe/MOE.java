@@ -22,12 +22,7 @@ import java.lang.reflect.Method;
 public class MOE {
     static {
         System.loadLibrary("moe");
-    }
 
-    /**
-     * The MOE main entrance
-     */
-    public static void main(String[] args) throws Throwable {
         // Register classes
         for (String c : getPreregisterClasses()) {
             System.out.println("Load preregistered class " + c);
@@ -37,7 +32,12 @@ public class MOE {
                 throw new RuntimeException("Unable to load preregistered class " + c, e);
             }
         }
+    }
 
+    /**
+     * The MOE main entrance
+     */
+    public static void launchMain(String[] args) throws Throwable {
         // Get main class
         String mainClass = getUserMainClassName();
         if (mainClass == null) {
