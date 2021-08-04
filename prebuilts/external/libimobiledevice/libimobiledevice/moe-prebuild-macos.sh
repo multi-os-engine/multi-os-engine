@@ -26,6 +26,7 @@ __MOE_PREBUILTS_DIR="$__MOE_PREBUILTS_DIR:$MOE_PREBUILTS_DIR/external/libimobile
 ./autogen.sh \
 --prefix="$__MOE_TARGET/x86_64" \
 --disable-shared \
+--host="x86_64-apple-darwin" \
 CFLAGS="-DMOE -arch x86_64"\
 " -I$MOE_PREBUILTS_DIR/external/libimobiledevice/openssl/build/macos/x86_64/include"\
 " -I$MOE_PREBUILTS_DIR/external/libimobiledevice/libusbmuxd/build/macos/include" \
@@ -39,6 +40,7 @@ make clean
 ./autogen.sh \
 --prefix="$__MOE_TARGET/arm64" \
 --disable-shared \
+--host="aarch64-apple-darwin" \
 CFLAGS="-DMOE -arch arm64"\
 " -I$MOE_PREBUILTS_DIR/external/libimobiledevice/openssl/build/macos/arm64/include"\
 " -I$MOE_PREBUILTS_DIR/external/libimobiledevice/libusbmuxd/build/macos/include" \
