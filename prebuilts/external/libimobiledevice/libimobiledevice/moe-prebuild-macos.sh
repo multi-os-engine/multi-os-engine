@@ -32,7 +32,7 @@ CFLAGS="-DMOE -arch x86_64"\
 " -I$MOE_PREBUILTS_DIR/external/libimobiledevice/libusbmuxd/build/macos/include" \
 --without-cython \
 PKG_CONFIG_LIBDIR="$__MOE_PREBUILTS_DIR:$MOE_PREBUILTS_DIR/external/libimobiledevice/openssl/build/macos/x86_64/lib/pkgconfig"
-make
+make -j$(sysctl -n hw.logicalcpu)
 make install
 
 make clean
@@ -46,5 +46,5 @@ CFLAGS="-DMOE -arch arm64"\
 " -I$MOE_PREBUILTS_DIR/external/libimobiledevice/libusbmuxd/build/macos/include" \
 --without-cython \
 PKG_CONFIG_LIBDIR="$__MOE_PREBUILTS_DIR:$MOE_PREBUILTS_DIR/external/libimobiledevice/openssl/build/macos/arm64/lib/pkgconfig"
-make
+make -j$(sysctl -n hw.logicalcpu)
 make install

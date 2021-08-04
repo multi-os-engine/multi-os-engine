@@ -29,7 +29,7 @@ no-dynamic \
 no-asm \
 enable-deprecated
 make depend
-make
+make -j$(sysctl -n hw.logicalcpu)
 make install
 
 make clean
@@ -41,5 +41,5 @@ no-dynamic \
 no-asm \
 enable-deprecated
 make depend
-make
+make -j$(sysctl -n hw.logicalcpu)
 make install

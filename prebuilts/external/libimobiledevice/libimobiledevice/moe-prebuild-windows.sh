@@ -34,5 +34,5 @@ CFLAGS="-std=gnu99 -DMOE -DWIN32"\
 LDFLAGS="-lgdi32" \
 --without-cython \
 PKG_CONFIG_LIBDIR="$__MOE_PREBUILTS_DIR"
-make
+make -j$(sysctl -n hw.logicalcpu)
 make install

@@ -28,5 +28,5 @@ __MOE_PREBUILTS_DIR="$MOE_PREBUILTS_DIR/external/libimobiledevice/libplist/build
 CFLAGS="-DMOE -arch arm64 -arch x86_64" \
 --without-cython \
 PKG_CONFIG_LIBDIR="$__MOE_PREBUILTS_DIR"
-make
+make -j$(sysctl -n hw.logicalcpu)
 make install
