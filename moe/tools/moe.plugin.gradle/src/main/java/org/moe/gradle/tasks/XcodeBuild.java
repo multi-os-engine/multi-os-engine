@@ -50,6 +50,7 @@ import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.remote.Server;
 import org.moe.gradle.remote.ServerChannelException;
 import org.moe.gradle.remote.file.FileList;
+import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 
@@ -719,9 +720,11 @@ public class XcodeBuild extends AbstractBaseTask {
         // Add dependencies
         final ArrayList<XcodeProvider> xcodeProviderTasks = new ArrayList<>();
         platform.archs.forEach(arch -> {
-            final XcodeProvider xcodeProvider = getMoePlugin().getTaskBy(XcodeProvider.class, sourceSet, mode, arch, platform);
-            xcodeProviderTasks.add(xcodeProvider);
-            dependsOn(xcodeProvider);
+            if (arch != Arch.X86_64 || getMoePlugin().isX86_64Supported()) {
+                final XcodeProvider xcodeProvider = getMoePlugin().getTaskBy(XcodeProvider.class, sourceSet, mode, arch, platform);
+                xcodeProviderTasks.add(xcodeProvider);
+                dependsOn(xcodeProvider);
+            }
         });
         xcodeProviderTaskDeps = xcodeProviderTasks;
 

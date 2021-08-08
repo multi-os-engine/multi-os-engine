@@ -69,6 +69,7 @@ public class MoePlugin extends AbstractMoePlugin {
     private static final Logger LOG = Logging.getLogger(MoePlugin.class);
 
     private static final String MOE_GRAALVM_HOME_PROPERTY = "moe.graalvm.home";
+    private static final String MOE_GRAALVM_X86_64_SUPPORTED_PROPERTY = "moe.graalvm.x86_64supported";
 
     @NotNull
     private GraalVM graalVM;
@@ -93,6 +94,11 @@ public class MoePlugin extends AbstractMoePlugin {
     @Nullable
     public Server getRemoteServer() {
         return remoteServer;
+    }
+
+    public boolean isX86_64Supported() {
+        String supported = PropertiesUtil.tryGetProperty(getProject(), MOE_GRAALVM_X86_64_SUPPORTED_PROPERTY);
+        return "true".equals(supported);
     }
 
     @Inject
