@@ -30,6 +30,15 @@ class SubstrateExecutor(
         // search to figure out the correct folder name.
         clearOutputDir()
 
+        //If there are no resource-config files defined, the old regex search pattern is used.
+        //If there are resource-config files, only the config files are used.
+        val resourceArguments: Set<String>
+        resourceArguments = if (config.resourceConfigFile.isEmpty()) {
+            setOf("-H:IncludeResources=.*", "-H:ExcludeResources=.*\\.class$")
+        } else{
+            config.resourceConfigFile.map { "-H:ResourceConfigurationFiles=${it.absolutePath}" }.toSet()
+        }
+
         // Run the native-image command
         SimpleExec.getExec(
                 graalVM.nativeImage,
@@ -55,8 +64,7 @@ class SubstrateExecutor(
                 "--no-server",
                 *config.customOptions.toTypedArray(),
                 "-H:Log=registerResource:verbose",
-                "-H:IncludeResources=.*",
-                "-H:ExcludeResources=.*\\.class$",
+                *resourceArguments.toTypedArray(),
                 *config.jniConfigFiles.map {
                     "-H:JNIConfigurationFiles=${it.absolutePath}"
                 }.toTypedArray(),
