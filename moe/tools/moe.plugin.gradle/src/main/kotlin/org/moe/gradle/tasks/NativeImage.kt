@@ -146,6 +146,19 @@ open class NativeImage : AbstractBaseTask() {
         this.proxyConfigFiles = proxyConfigFiles?.toSet()
     }
 
+    private var resourceConfigFiles: Set<Any>? = null
+
+    @InputFiles
+    @NotNull
+    fun getResourceConfigFiles(): ConfigurableFileCollection {
+        return project.files(getOrConvention(resourceConfigFiles, CONVENTION_RESOURCE_CONFIG_FILES))
+    }
+
+    @IgnoreUnused
+    fun setResourceConfigFiles(resourceConfigFile: Collection<Any>?) {
+        this.resourceConfigFiles = resourceConfigFile?.toSet()
+    }
+
     private var customOptions: List<String>? = null
 
     @Input
@@ -177,6 +190,7 @@ open class NativeImage : AbstractBaseTask() {
                 jniConfigFiles = getJniConfigFiles().toSet(),
                 reflectionConfigFiles = getReflectionConfigFiles().toSet(),
                 proxyConfigFiles = getProxyConfigFiles().toSet(),
+                resourceConfigFile = getResourceConfigFiles().toSet(),
                 customOptions = getCustomOptions(),
                 outputDir = getSvmTmpDir().toPath(),
                 logFile = logFile,
@@ -285,6 +299,11 @@ open class NativeImage : AbstractBaseTask() {
                     project.file("dynamic-proxies.json").takeIf { it.exists() && it.isFile }
             ).toSet()
         }
+        addConvention(CONVENTION_RESOURCE_CONFIG_FILES) {
+            listOfNotNull(
+                project.file("resource-config.json").takeIf { it.exists() && it.isFile }
+            )
+        }
         addConvention(CONVENTION_CUSTOM_OPTIONS) {
             listOfNotNull(
                 // Read the project custom config file
@@ -309,6 +328,7 @@ open class NativeImage : AbstractBaseTask() {
         private const val CONVENTION_JNI_CONFIG_FILES = "jniConfigFiles"
         private const val CONVENTION_REFLECTION_CONFIG_FILES = "reflectionConfigFiles"
         private const val CONVENTION_PROXY_CONFIG_FILES = "proxyConfigFiles"
+        private const val CONVENTION_RESOURCE_CONFIG_FILES = "resourceConfigFiles"
         private const val CONVENTION_CUSTOM_OPTIONS = "customOptions"
 
     }
