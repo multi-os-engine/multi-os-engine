@@ -199,11 +199,15 @@ open class NativeImage : AbstractBaseTask() {
                 graalVM = moePlugin.graalVM,
                 config = svmConf
         )
-        executor.compile()
+        val result = executor.compile()
 
-        // Move generated object files to a fixed position so they can be found by Xcode
-        Files.move(executor.mainObj, getMainObjFile().toPath(), StandardCopyOption.REPLACE_EXISTING)
-        Files.move(executor.llvmObj, getLlvmObjFile().toPath(), StandardCopyOption.REPLACE_EXISTING)
+        // Move generated object files to a fixed position, so they can be found by Xcode
+        Files.move(result.mainObj, getMainObjFile().toPath(), StandardCopyOption.REPLACE_EXISTING)
+        if (svmConf.useLLVM) {
+            Files.move(result.llvmObj!!, getLlvmObjFile().toPath(), StandardCopyOption.REPLACE_EXISTING)
+        } else {
+            getLlvmObjFile().delete()
+        }
     }
 
     @get:Internal
