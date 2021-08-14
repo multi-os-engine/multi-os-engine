@@ -20,4 +20,15 @@ public class NativeImageOptions {
     public void setOptions(@Nullable String[] options) {
         this.options = options;
     }
+
+    private boolean useLLVM = true;
+
+    public boolean isUseLLVM() {
+        return useLLVM;
+    }
+
+    @IgnoreUnused
+    public void setUseLLVM(boolean useLLVM) {
+        this.useLLVM = useLLVM;
+    }
 }

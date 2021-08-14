@@ -72,6 +72,7 @@ public class XcodeProvider extends AbstractBaseTask {
             final Path llvmObjRel;
             try {
                 mainObjRel = getInnerProjectRelativePath(nativeImageTaskDep.getMainObjFile());
+                // TODO: optional
                 llvmObjRel = getInnerProjectRelativePath(nativeImageTaskDep.getLlvmObjFile());
             } catch (IOException e) {
                 throw new GradleException("Unsupported configuration", e);
@@ -121,7 +122,9 @@ public class XcodeProvider extends AbstractBaseTask {
             final Path llvmObjLink = getLlvmObjLink();
             try {
                 Files.deleteIfExists(llvmObjLink);
-                Files.createSymbolicLink(llvmObjLink, nativeImageTaskDep.getLlvmObjFile().toPath());
+                if (getMoeExtension().nativeImage.isUseLLVM()) {
+                    Files.createSymbolicLink(llvmObjLink, nativeImageTaskDep.getLlvmObjFile().toPath());
+                }
             } catch (IOException e) {
                 throw new GradleException("Failed to create symlink to " + llvmObjLink);
             }

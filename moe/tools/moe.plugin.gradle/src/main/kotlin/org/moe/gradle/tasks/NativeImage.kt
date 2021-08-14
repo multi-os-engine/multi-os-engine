@@ -172,6 +172,9 @@ open class NativeImage : AbstractBaseTask() {
         this.customOptions = customOptions?.toList()
     }
 
+    @Input
+    fun isUseLLVM(): Boolean = moeExtension.nativeImage.isUseLLVM
+
     override fun run() {
         if (arch == Arch.X86_64 && !moePlugin.isX86_64Supported) {
             throw GradleException("Architecture '$arch' is not enabled. Enable it by setting property 'moe.graalvm.x86_64Supported' to 'true'.")
@@ -191,6 +194,7 @@ open class NativeImage : AbstractBaseTask() {
                 reflectionConfigFiles = getReflectionConfigFiles().toSet(),
                 proxyConfigFiles = getProxyConfigFiles().toSet(),
                 resourceConfigFile = getResourceConfigFiles().toSet(),
+                useLLVM = isUseLLVM(),
                 customOptions = getCustomOptions(),
                 outputDir = getSvmTmpDir().toPath(),
                 logFile = logFile,

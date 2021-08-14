@@ -21,6 +21,7 @@ import org.gradle.api.Task;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.gradle.api.specs.Spec;
+import org.gradle.api.tasks.Input;
 import org.moe.document.pbxproj.ProjectException;
 import org.moe.generator.project.writer.XcodeEditor;
 import org.moe.generator.project.writer.XcodeEditor.Settings;
@@ -68,6 +69,11 @@ public class UpdateXcodeSettings extends AbstractBaseTask {
         });
     }
 
+    @Input
+    public boolean isUseLLVM() {
+        return getMoeExtension().nativeImage.isUseLLVM();
+    }
+
     @Override
     protected void run() {
         XcodeOptions xcode = getMoeExtension().xcode;
@@ -79,6 +85,7 @@ public class UpdateXcodeSettings extends AbstractBaseTask {
         settings.testTarget = xcode.getTestTarget();
         settings.moeProject = getProject().getProjectDir();
         settings.xcodeProject = xcodeFile;
+        settings.useLLVM = getMoeExtension().nativeImage.isUseLLVM();
         try {
             xcodeEditor.update(settings);
             xcodeEditor.getProjectFile().save();
