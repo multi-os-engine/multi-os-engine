@@ -150,6 +150,8 @@ public class XcodeEditor extends AbstractXcodeEditor {
          */
         public File xcodeProject;
 
+        public boolean useLLVM = true;
+
         /**
          * Validates the fields.
          */
@@ -299,13 +301,18 @@ public class XcodeEditor extends AbstractXcodeEditor {
         setBuildSetting(target, "MOE_SDK_PATH", "${MOE_PROJECT_BUILD_DIR}/moe/sdk");
         setBuildSetting(target, "MOE_LIB_PATH", "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}");
 
-        setBuildSetting(target, "MOE_OTHER_LDFLAGS",
-                "${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/main_${arch}.o "
-                        + "${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/llvm_${arch}.o "
-                        + "${MOE_CUSTOM_OTHER_LDFLAGS} "
-                        + "-Wl,-force_load,${MOE_LIB_PATH}/libmoe.a "
-                        + "-lpthread -lsqlite3 "
-                        + "-Wl,-framework,Foundation -Wl,-framework,UniformTypeIdentifiers -Wl,-framework,CoreServices");
+        StringBuilder sb = new StringBuilder();
+        sb.append("${MOE_PROJECT_BUILD_DIR}/moe/").append(sourceSet).append("/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/main_${arch}.o ");
+        if (settings.useLLVM) {
+            sb.append("${MOE_PROJECT_BUILD_DIR}/moe/").append(sourceSet).append("/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/llvm_${arch}.o ");
+        }
+        sb.append(
+            "${MOE_CUSTOM_OTHER_LDFLAGS} "
+                + "-Wl,-force_load,${MOE_LIB_PATH}/libmoe.a "
+                + "-lpthread -lsqlite3 "
+                + "-Wl,-framework,Foundation -Wl,-framework,UniformTypeIdentifiers -Wl,-framework,CoreServices"
+        );
+        setBuildSetting(target, "MOE_OTHER_LDFLAGS", sb.toString());
 
         setBuildSetting(target, "MOE_HEADER_SEARCH_PATHS", "${MOE_LIB_PATH}/include");
 
