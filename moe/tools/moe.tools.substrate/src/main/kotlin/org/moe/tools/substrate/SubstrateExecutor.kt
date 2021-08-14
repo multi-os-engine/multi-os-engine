@@ -31,6 +31,10 @@ class SubstrateExecutor(
         // search to figure out the correct folder name.
         clearOutputDir()
 
+        if (config.useLLVM) {
+            graalVM.ensureLLVM()
+        }
+
         //If there are no resource-config files defined, the old regex search pattern is used.
         //If there are resource-config files, only the config files are used.
         val resourceArguments = if (config.resourceConfigFile.isEmpty()) {

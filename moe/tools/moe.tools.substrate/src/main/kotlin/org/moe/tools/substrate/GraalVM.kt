@@ -51,7 +51,6 @@ class GraalVM(
         }
 
         ensureNativeImage()
-        ensureLLVM()
     }
 
     private fun parseVMVersion(): Version {
@@ -96,7 +95,7 @@ class GraalVM(
     /**
      * Make sure the llvm-toolchain is installed
      */
-    private fun ensureLLVM() {
+    fun ensureLLVM() {
         val llvmPath = if (version.jdkVersion.feature <= 8) {
             home.resolve(Paths.get("jre", "lib", "llvm", "bin", "llvm-config"))
         } else {
