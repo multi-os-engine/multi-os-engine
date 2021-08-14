@@ -9,20 +9,21 @@ import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
 
+data class CompileResult(
+    val mainObj: Path,
+    val llvmObj: Path?,
+)
+
 class SubstrateExecutor(
         val graalVM: GraalVM,
         val config: Config,
 ) {
-    lateinit var mainObj: Path
-        private set
-    lateinit var llvmObj: Path
-        private set
 
     /**
      * Compile the java classes into native object, using
      * GraalVM native-image tool.
      */
-    fun compile() {
+    fun compile(): CompileResult {
         LOG.info("Native compile")
 
         // Because SVM will generate all object files inside a folder with random name (timestamp)
@@ -43,8 +44,10 @@ class SubstrateExecutor(
                 graalVM.nativeImage,
                 "-H:+SharedLibrary",
 
-                // iOS specific flags
+                // We don't need isolates
                 "-H:-SpawnIsolates",
+
+                // iOS specific flags
                 "-H:PageSize=16384",
 
                 // Common args
@@ -53,7 +56,7 @@ class SubstrateExecutor(
                 "-H:DeadlockWatchdogInterval=0",
                 "-H:+ExitAfterRelocatableImageWrite",
                 "--features=org.graalvm.home.HomeFinderFeature",
-                "-H:CompilerBackend=llvm",
+                *argsIf(config.useLLVM, "-H:CompilerBackend=llvm"),
                 "-Dsvm.targetName=iOS",
                 "-Dsvm.targetArch=${config.target.arch}",
                 "-Dsvm.platform=org.graalvm.nativeimage.Platform\$${config.target.toSVMPlatform()}",
@@ -82,18 +85,29 @@ class SubstrateExecutor(
         }.collect(logFile = config.logFile)
 
         // Now checking the result
-        mainObj = config.outputDir.findOne(
+        val mainObj = config.outputDir.findOne(
                 fileName = "${config.mainClassName.toLowerCase()}.o",
                 isDirectory = false,
                 maxDepth = 5,
         )
         println("Main object file: $mainObj")
-        llvmObj = config.outputDir.findOne(
+
+        val llvmObj: Path?
+        if (config.useLLVM) {
+            llvmObj = config.outputDir.findOne(
                 fileName = "llvm.o",
                 isDirectory = false,
                 maxDepth = 5,
+            )
+            println("LLVM object file: $llvmObj")
+        } else {
+            llvmObj = null
+        }
+
+        return CompileResult(
+            mainObj = mainObj,
+            llvmObj = llvmObj,
         )
-        println("LLVM object file: $llvmObj")
     }
 
     private fun clearOutputDir() {
@@ -136,6 +150,12 @@ class SubstrateExecutor(
             Triplet.IPHONESIMULATOR_AMD64 -> "IOS_AMD64"
 
             else -> throw IllegalArgumentException("Target not supported: $this")
+        }
+
+        private fun argsIf(condition: Boolean, vararg args: String): Array<out String> = if (condition) {
+            args
+        } else {
+            emptyArray()
         }
 
     }
