@@ -294,7 +294,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
         setBuildSetting(target, "MOE_FRAMEWORK_PATH", "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}");
 
         setBuildSetting(target, "MOE_OTHER_LDFLAGS",
-                "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} "
+                "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lc++ "
                         + "-framework MOE");
 
         setBuildSetting(target, "MOE_COPY_ANDROID_CACERTS", MOE_COPY_ANDROID_CACERTS_VALUE);
