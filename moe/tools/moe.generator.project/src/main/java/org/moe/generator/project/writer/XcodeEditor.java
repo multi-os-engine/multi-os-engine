@@ -309,7 +309,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
         sb.append(
             "${MOE_CUSTOM_OTHER_LDFLAGS} "
                 + "-Wl,-force_load,${MOE_LIB_PATH}/libmoe.a "
-                + "-lpthread -lsqlite3 "
+                + "-lc++ -lpthread -lsqlite3 "
                 + "-Wl,-framework,Foundation -Wl,-framework,UniformTypeIdentifiers -Wl,-framework,CoreServices"
         );
         setBuildSetting(target, "MOE_OTHER_LDFLAGS", sb.toString());
