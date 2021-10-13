@@ -532,20 +532,11 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
      * @return selector's first word
      */
     public static String clangFirstWord(String selector, int start) {
-        int loc = start;
+        int loc = start + 1;
         while (loc < selector.length()) {
             char c = selector.charAt(loc);
             if (Character.isUpperCase(c) || c == ':') break;
             ++loc;
-        }
-
-        if (loc == 0) {
-            while (loc < selector.length()) {
-                char c = selector.charAt(loc);
-                if (Character.isLowerCase(c) || c == ':') break;
-                ++loc;
-            }
-            if (loc != selector.length()) --loc;
         }
 
         return selector.substring(start, loc);
