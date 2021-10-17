@@ -31,9 +31,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * VNPoint
- * 
+ * <p>
  * VNPoint represents a single, immutable, two-dimensional point in an image.
- * 
+ * <p>
  * It should be noted that VNPoint is not intended as an overall replacement of CGPoint, NSPoint or vec2, but is used by observations that need to present points which may contain additional metadata.
  */
 @Generated
@@ -109,7 +109,7 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns the Euclidean distance to another point.
-     * 
+     *
      * @param point The destination point.
      * @return the Euclidean distance between the target and specified points.
      */
@@ -185,9 +185,9 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a new VNPoint object that is shifted by X and Y offsets of the vector.
-     * 
-     * @param vector	The vector offset to be applied to a source point.
-     * @param point	The source point.
+     *
+     * @param vector The vector offset to be applied to a source point.
+     * @param point  The source point.
      * @return the translated point.
      */
     @Generated

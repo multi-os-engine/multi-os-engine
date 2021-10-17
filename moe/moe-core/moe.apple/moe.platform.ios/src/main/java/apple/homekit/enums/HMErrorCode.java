@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * This enumeration describes the possible error constants that can be
- *        returned from the the HomeKit APIs.
+ * returned from the the HomeKit APIs.
  */
 @Generated
 public final class HMErrorCode {
@@ -133,4 +133,5 @@ public final class HMErrorCode {
     @Generated @NInt public static final long TimedOutWaitingForAccessory = 0x0000000000000064L;
     @Generated @NInt public static final long AccessoryCommunicationFailure = 0x0000000000000065L;
     @Generated @NInt public static final long FailedToJoinNetwork = 0x0000000000000066L;
+    @Generated @NInt public static final long AccessoryIsSuspended = 0x0000000000000067L;
 }

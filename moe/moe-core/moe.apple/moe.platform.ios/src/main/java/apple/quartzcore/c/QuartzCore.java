@@ -17,6 +17,7 @@ limitations under the License.
 package apple.quartzcore.c;
 
 import apple.coregraphics.struct.CGAffineTransform;
+import apple.quartzcore.struct.CAFrameRateRange;
 import apple.quartzcore.struct.CATransform3D;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CFunction;
@@ -795,4 +796,19 @@ public final class QuartzCore {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String kCAGradientLayerConic();
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CAFrameRateRange CAFrameRateRangeMake(float minimum, float maximum, float preferred);
+
+    @Generated
+    @CFunction
+    public static native boolean CAFrameRateRangeIsEqualToRange(@ByValue CAFrameRateRange range,
+            @ByValue CAFrameRateRange other);
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CAFrameRateRange CAFrameRateRangeDefault();
 }

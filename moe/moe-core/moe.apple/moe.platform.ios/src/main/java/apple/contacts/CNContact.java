@@ -58,9 +58,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An immutable value object representing a contact.
- * 
+ * <p>
  * CNContact is thread safe.
- * 
+ * <p>
  * If using a CNContact instance where you are not certain of the keys that were fetched, use isKeyAvailable: or areKeysAvailable:. If these return NO you need to refetch the contact by the contact identifier with the keys you want to fetch. Accessing a property that was not fetched will throw CNContactPropertyNotFetchedExceptionName.
  */
 @Generated
@@ -187,7 +187,7 @@ public class CNContact extends NSObject
 
     /**
      * To fetch contacts matching a name.
-     * 
+     * <p>
      * The name can contain any number of words.
      */
     @Generated
@@ -317,7 +317,7 @@ public class CNContact extends NSObject
     public native boolean isKeyAvailable(String key);
 
     /**
-     *  Unification
+     * Unification
      * Returns YES if the receiver was fetched as a unified contact and includes the contact having contactIdentifier in its unification
      */
     @Generated
@@ -486,12 +486,11 @@ public class CNContact extends NSObject
 
     /**
      * Fetch contacts matching an email address.
-     * 
+     * <p>
      * Use this predicate to find the contact(s) which contain the specified
-     *              email address. The search is not case-sensitive.
-     * 
-     * @param       emailAddress
-     *              The email address to search for. Do not include a scheme (e.g., "mailto:").
+     * email address. The search is not case-sensitive.
+     *
+     * @param emailAddress The email address to search for. Do not include a scheme (e.g., "mailto:").
      */
     @Generated
     @Selector("predicateForContactsMatchingEmailAddress:")
@@ -499,14 +498,13 @@ public class CNContact extends NSObject
 
     /**
      * Fetch contacts matching a phone number.
-     * 
+     * <p>
      * If the predicate and contact differ in their use or presence of country
-     *              codes, a best effort will be made to match results; however, inexact
-     *              matches are not guaranteed.
-     * 
-     * @param       phoneNumber
-     *              A @c CNPhoneNumber representing the phone number to search for.
-     *              Do not include a scheme (e.g., "tel:").
+     * codes, a best effort will be made to match results; however, inexact
+     * matches are not guaranteed.
+     *
+     * @param phoneNumber A @c CNPhoneNumber representing the phone number to search for.
+     *                    Do not include a scheme (e.g., "tel:").
      */
     @Generated
     @Selector("predicateForContactsMatchingPhoneNumber:")

@@ -28,4 +28,8 @@ public final class ARCoachingGoal {
      * Session requires one plane of any type
      */
     @Generated @NInt public static final long AnyPlane = 0x0000000000000003L;
+    /**
+     * Session requires geo tracking
+     */
+    @Generated @NInt public static final long GeoTracking = 0x0000000000000004L;
 }

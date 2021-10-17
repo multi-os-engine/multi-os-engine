@@ -23,6 +23,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSUndoManager;
 import apple.foundation.NSUserActivity;
+import apple.uikit.protocol.UIActivityItemsConfigurationProviding;
 import apple.uikit.protocol.UIActivityItemsConfigurationReading;
 import apple.uikit.protocol.UIMenuBuilder;
 import apple.uikit.protocol.UIPasteConfigurationSupporting;
@@ -54,7 +55,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class UIResponder extends NSObject
-        implements UIResponderStandardEditActions, UIUserActivityRestoring, UIPasteConfigurationSupporting {
+        implements UIResponderStandardEditActions, UIUserActivityRestoring, UIPasteConfigurationSupporting,
+        UIActivityItemsConfigurationProviding {
     static {
         NatJ.register();
     }
@@ -484,4 +486,28 @@ public class UIResponder extends NSObject
     @Generated
     @Selector("validateCommand:")
     public native void validateCommand(UICommand command);
+
+    @Generated
+    @Selector("captureTextFromCamera:")
+    public native void captureTextFromCamera(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("pasteAndGo:")
+    public native void pasteAndGo(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("pasteAndMatchStyle:")
+    public native void pasteAndMatchStyle(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("pasteAndSearch:")
+    public native void pasteAndSearch(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("print:")
+    public native void print(@Mapped(ObjCObjectMapper.class) Object sender);
 }

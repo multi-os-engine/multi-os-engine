@@ -52,7 +52,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The default session is used to communicate between two counterpart apps
  * (i.e. iOS app and its native WatchKit extension). The session provides
  * methods for sending, receiving, and tracking state.
- * 
+ * <p>
  * On start up an app should set a delegate on the default session and call
  * activate. This will allow the system to populate the state properties and
  * deliver any outstanding background transfers.

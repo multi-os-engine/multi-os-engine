@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] SCNTechniqueSupport
- * 
+ * <p>
  * The SCNTechniqueSupport protocol describes an object that supports single or multi-pass techniques
  */
 @Generated
@@ -36,7 +36,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface SCNTechniqueSupport {
     /**
      * [@property] technique
-     * 
+     * <p>
      * Specifies the technique of the receiver. Defaults to nil.
      */
     @Generated
@@ -45,7 +45,7 @@ public interface SCNTechniqueSupport {
 
     /**
      * [@property] technique
-     * 
+     * <p>
      * Specifies the technique of the receiver. Defaults to nil.
      */
     @Generated

@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBCentralManagerState
- * 
+ * <p>
  * Represents the current state of a CBCentralManager.
- * 
+ * <p>
  * [@constant] CBCentralManagerStateUnknown       State unknown, update imminent.
  * [@constant] CBCentralManagerStateResetting     The connection with the system service was momentarily lost, update imminent.
  * [@constant] CBCentralManagerStateUnsupported   The platform doesn't support the Bluetooth Low Energy Central/Client role.

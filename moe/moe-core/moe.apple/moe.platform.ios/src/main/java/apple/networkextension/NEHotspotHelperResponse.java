@@ -41,9 +41,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEHotspotHelperResponse
- * 
- *   The HotspotHelper creates an NEHotspotHelperResponse object to provide
- *   the results of running the corresponding NEHotspotHelperCommand.
+ * <p>
+ * The HotspotHelper creates an NEHotspotHelperResponse object to provide
+ * the results of running the corresponding NEHotspotHelperCommand.
  */
 @Generated
 @Library("NetworkExtension")
@@ -158,10 +158,10 @@ public class NEHotspotHelperResponse extends NSObject {
 
     /**
      * deliver
-     * 
-     *   Delivers the response to the command.
-     * 
-     *   Deliver the NEHotspotHelperResponse to the HotspotHelper infrastructure.
+     * <p>
+     * Delivers the response to the command.
+     * <p>
+     * Deliver the NEHotspotHelperResponse to the HotspotHelper infrastructure.
      */
     @Generated
     @Selector("deliver")
@@ -173,13 +173,13 @@ public class NEHotspotHelperResponse extends NSObject {
 
     /**
      * setNetwork
-     * 
-     *   Set the network that conveys the confidence level.
-     * 
-     *   Provide the annotated NEHotspotNetwork object in the response to the
-     *   kNEHotspotHelperCommandTypeEvaluate command. The helper sets the
-     *   confidence in the network object to indicate its ability to handle
-     *   the current network.
+     * <p>
+     * Set the network that conveys the confidence level.
+     * <p>
+     * Provide the annotated NEHotspotNetwork object in the response to the
+     * kNEHotspotHelperCommandTypeEvaluate command. The helper sets the
+     * confidence in the network object to indicate its ability to handle
+     * the current network.
      */
     @Generated
     @Selector("setNetwork:")
@@ -187,14 +187,14 @@ public class NEHotspotHelperResponse extends NSObject {
 
     /**
      * setNetworkList
-     * 
-     *   Set the list of handled networks.
-     * 
-     *   Provide an NSArray of annotated NEHotspotNetwork objects in response
-     *   to the kNEHotspotHelperCommandTypeFilterScanList command.
-     *   The helper provides the list of network objects that it is capable of
-     *   handling with at least low confidence. Networks that it has no
-     *   confidence in handling should not be specified.
+     * <p>
+     * Set the list of handled networks.
+     * <p>
+     * Provide an NSArray of annotated NEHotspotNetwork objects in response
+     * to the kNEHotspotHelperCommandTypeFilterScanList command.
+     * The helper provides the list of network objects that it is capable of
+     * handling with at least low confidence. Networks that it has no
+     * confidence in handling should not be specified.
      */
     @Generated
     @Selector("setNetworkList:")

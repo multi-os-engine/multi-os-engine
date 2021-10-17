@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]       MSStickerSize
- * 
+ * <p>
  * Sticker size is used to control the display size of the stickers in the Sticker Browser View.
  * [@constant]   MSStickerSizeSmall     Stickers will be drawn in a small frame.
  * [@constant]   MSStickerSizeRegular   Stickers will be drawn in a medium frame.

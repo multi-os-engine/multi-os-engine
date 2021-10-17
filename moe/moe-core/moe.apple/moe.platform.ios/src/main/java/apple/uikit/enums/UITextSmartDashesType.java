@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * UITextSmartDashesType
- * 
+ * <p>
  * Controls the automatic conversion of hyphens into en/em-dashes for a text widget.
  */
 @Generated

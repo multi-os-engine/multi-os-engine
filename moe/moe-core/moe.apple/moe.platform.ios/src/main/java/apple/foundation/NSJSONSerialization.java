@@ -40,12 +40,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A class for converting JSON to Foundation objects and converting Foundation objects to JSON.
- * 
+ * <p>
  * An object that may be converted to JSON must have the following properties:
- *  - Top level object is an NSArray or NSDictionary
- *  - All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull
- *  - All dictionary keys are NSStrings
- *  - NSNumbers are not NaN or infinity
+ * - Top level object is an NSArray or NSDictionary
+ * - All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull
+ * - All dictionary keys are NSStrings
+ * - NSNumbers are not NaN or infinity
  */
 @Generated
 @Library("Foundation")
@@ -156,10 +156,10 @@ public class NSJSONSerialization extends NSObject {
 
     /**
      * Returns YES if the given object can be converted to JSON data, NO otherwise. The object must have the following properties:
-     *    - Top level object is an NSArray or NSDictionary
-     *    - All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull
-     *    - All dictionary keys are NSStrings
-     *    - NSNumbers are not NaN or infinity
+     * - Top level object is an NSArray or NSDictionary
+     * - All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull
+     * - All dictionary keys are NSStrings
+     * - NSNumbers are not NaN or infinity
      * Other rules may apply. Calling this method or attempting a conversion are the definitive ways to tell if a given object can be converted to JSON data.
      */
     @Generated

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueLockPhysicalControlsState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueLockPhysicalControlsStateNotLocked  Physical controls not locked.
  * [@constant]  HMCharacteristicValueLockPhysicalControlsStateLocked     Physical controls locked.
  */

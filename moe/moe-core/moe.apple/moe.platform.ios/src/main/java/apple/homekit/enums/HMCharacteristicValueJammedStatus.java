@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueJammedStatus
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueJammedStatusNone               Not Jammed.
  * [@constant]  HMCharacteristicValueJammedStatusJammed             Jammed.
  */

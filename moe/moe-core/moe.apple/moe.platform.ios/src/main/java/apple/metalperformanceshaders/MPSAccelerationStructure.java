@@ -32,237 +32,237 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A data structure built over geometry used to accelerate ray tracing
- * 
+ * <p>
  * Do not use this base class directly. Use one of the derived classes instead.
  * The general pattern for creating an acceleration structure is as follows. First, create the
  * acceleration structure:
- * 
- *     [@code]
- *     MPSTriangleAccelerationStructure *accelerationStructure = nil;
- *     accelerationStructure = [[MPSTriangleAccelerationStructure alloc] initWithDevice:device];
- *     [@endcode]
- * 
+ * <p>
+ * [@code]
+ * MPSTriangleAccelerationStructure *accelerationStructure = nil;
+ * accelerationStructure = [[MPSTriangleAccelerationStructure alloc] initWithDevice:device];
+ * [@endcode]
+ * <p>
  * Then, assign values to the acceleration structure's properties:
- * 
- *     [@code]
- *     accelerationStructure.vertexBuffer = vertexBuffer;
- *     accelerationStructure.triangleCount = triangleCount;
- *     [@endcode]
- * 
+ * <p>
+ * [@code]
+ * accelerationStructure.vertexBuffer = vertexBuffer;
+ * accelerationStructure.triangleCount = triangleCount;
+ * [@endcode]
+ * <p>
  * Finally, the acceleration structure must be built:
- * 
- *     [@code]
- *     [accelerationStructure rebuild];
- *     [@endcode]
- * 
+ * <p>
+ * [@code]
+ * [accelerationStructure rebuild];
+ * [@endcode]
+ * <p>
  * The acceleration structure can then be used to encode ray intersection tests with an
  * MPSRayIntersector:
- * 
- *     [@code]
- *     [raytracer encodeIntersectionToCommandBuffer:commandBuffer
- *                                 intersectionType:MPSIntersectionTypeNearest
- *                                        rayBuffer:rayBuffer
- *                                  rayBufferOffset:0
- *                               intersectionBuffer:intersectionBuffer
- *                         intersectionBufferOffset:0
- *                                         rayCount:rayCount
- *                            accelerationStructure:accelerationStructure];
- *     [@endcode]
- * 
+ * <p>
+ * [@code]
+ * [raytracer encodeIntersectionToCommandBuffer:commandBuffer
+ * intersectionType:MPSIntersectionTypeNearest
+ * rayBuffer:rayBuffer
+ * rayBufferOffset:0
+ * intersectionBuffer:intersectionBuffer
+ * intersectionBufferOffset:0
+ * rayCount:rayCount
+ * accelerationStructure:accelerationStructure];
+ * [@endcode]
+ * <p>
  * Asynchronous Acceleration Structure Builds: Rebuilding an acceleration structure is an expensive
  * operation. Note that there is also a method to rebuild the acceleration structure asynchronously
  * to avoid blocking the main thread.
- * 
- *     [@code]
- *     [accelerationStructure rebuildWithCompletionHandler:^(MPSAccelerationStructure *accel) {
- *         // Kick off ray intersection work
- *     }];
- *     [@endcode]
- * 
+ * <p>
+ * [@code]
+ * [accelerationStructure rebuildWithCompletionHandler:^(MPSAccelerationStructure *accel) {
+ * // Kick off ray intersection work
+ * }];
+ * [@endcode]
+ * <p>
  * Streaming Geometry Updates: It is generally safe to change buffer properties such as the vertex
  * buffer after intersection tests have been encoded into a command buffer, but the contents of
  * those buffers cannot be safely changed by the CPU until the command buffer has finished
  * executing on the GPU. It is also not safe to rebuild the acceleration structure until the
  * command buffer has completed.
- * 
+ * <p>
  * If the CPU needs to stream geometry updates to the GPU, ensure the vertex and other buffers are
  * double or triple buffered.
- * 
- *     [@code]
- *     #define MAX_ASYNC_OPERATIONS 3
- * 
- *     // Initialization:
- * 
- *     // Create a semaphore with the maximum number of asynchronous operations in flight
- *     dispatch_semaphore_t asyncOperationSemaphore = dispatch_semaphore_create(MAX_ASYNC_OPERATIONS);
- * 
- *     // Create an acceleration structure for each vertex buffer range
- *     NSMutableArray *accelerationStructures = [NSMutableArray array];
- * 
- *     NSUInteger vertexBufferLength = sizeof(float3) * vertexCount * MAX_ASYNC_OPERATIONS;
- *     id <MTLBuffer> vertexBuffer = [device newBufferWithLength:vertexBufferLength
- *                                                       options:MTLResourceStorageModeManaged];
- * 
- *     for (NSUInteger i = 0; i < MAX_ASYNC_OPERATIONS; i++) {
- *         MPSTriangleAccelerationStructure *accel = nil;
- *         accel = [[MPSTriangleAccelerationStructure alloc] initWithDevice:device];
- * 
- *         // Configure acceleration structure
- *         accel.vertexBuffer = vertexBuffer;
- *         accel.vertexBufferOffset = i * sizeof(float3) * vertexCount;
- * 
- *         [accelerationStructures addObject:accel];
- *     }
- * 
- *     NSUInteger asyncOperationIndex = 0;
- * 
- *     // Encode intersection testing:
- * 
- *     // Wait until there is a free acceleration structure
- *     dispatch_semaphore_wait(asyncOperationSemaphore, DISPATCH_TIME_FOREVER);
- * 
- *     MPSTriangleAccelerationStructure *accel = accelerationStructures[asyncOperationIndex];
- *     asyncOperationIndex = (asyncOperationIndex + 1) % MAX_ASYNC_OPERATIONS;
- * 
- *     float3 *vertices = (float3 *)((uint8_t *)vertexBuffer.contents + accel.vertexBufferOffset);
- *     // Update vertices
- *     MPSDidModifyRange(vertexBuffer, NSMakeRange(accel.vertexBufferOffset, sizeof(float3) * vertexCount));
- * 
- *     // Rebuild the acceleration structure
- *     [accel rebuild];
- * 
- *     // Encode actual intersection work
- *     [raytracer encodeIntersectionToCommandBuffer:commandBuffer
- *                                 intersectionType:MPSIntersectionTypeNearest
- *                                        rayBuffer:rayBuffer
- *                                  rayBufferOffset:rayBufferOffset
- *                               intersectionBuffer:intersectionBuffer
- *                         intersectionBufferOffset:intersectionBufferOffset
- *                                         rayCount:rayCount
- *                            accelerationStructure:accel];
- * 
- *     // Register a completion handler to run when the GPU finishes executing
- *     [commandBuffer addCompletedHandler:^(id <MTLCommandBuffer> commandBuffer) {
- *         Intersection *intersections = (Intersection *)((uint8_t *)intersectionBuffer.contents +
- *             intersectionBufferOffset);
- * 
- *         // Process intersections
- * 
- *         // Signal that the acceleration structure is now available for reuse
- *         dispatch_semaphore_signal(asyncOperationSemaphore);
- *     }];
- * 
- *     // Commit the command buffer to allow the GPU to start executing
- *     [commandBuffer commit];
- *     [@endcode]
- * 
+ * <p>
+ * [@code]
+ * #define MAX_ASYNC_OPERATIONS 3
+ * <p>
+ * // Initialization:
+ * <p>
+ * // Create a semaphore with the maximum number of asynchronous operations in flight
+ * dispatch_semaphore_t asyncOperationSemaphore = dispatch_semaphore_create(MAX_ASYNC_OPERATIONS);
+ * <p>
+ * // Create an acceleration structure for each vertex buffer range
+ * NSMutableArray *accelerationStructures = [NSMutableArray array];
+ * <p>
+ * NSUInteger vertexBufferLength = sizeof(float3) * vertexCount * MAX_ASYNC_OPERATIONS;
+ * id <MTLBuffer> vertexBuffer = [device newBufferWithLength:vertexBufferLength
+ * options:MTLResourceStorageModeManaged];
+ * <p>
+ * for (NSUInteger i = 0; i < MAX_ASYNC_OPERATIONS; i++) {
+ * MPSTriangleAccelerationStructure *accel = nil;
+ * accel = [[MPSTriangleAccelerationStructure alloc] initWithDevice:device];
+ * <p>
+ * // Configure acceleration structure
+ * accel.vertexBuffer = vertexBuffer;
+ * accel.vertexBufferOffset = i * sizeof(float3) * vertexCount;
+ * <p>
+ * [accelerationStructures addObject:accel];
+ * }
+ * <p>
+ * NSUInteger asyncOperationIndex = 0;
+ * <p>
+ * // Encode intersection testing:
+ * <p>
+ * // Wait until there is a free acceleration structure
+ * dispatch_semaphore_wait(asyncOperationSemaphore, DISPATCH_TIME_FOREVER);
+ * <p>
+ * MPSTriangleAccelerationStructure *accel = accelerationStructures[asyncOperationIndex];
+ * asyncOperationIndex = (asyncOperationIndex + 1) % MAX_ASYNC_OPERATIONS;
+ * <p>
+ * float3 *vertices = (float3 *)((uint8_t *)vertexBuffer.contents + accel.vertexBufferOffset);
+ * // Update vertices
+ * MPSDidModifyRange(vertexBuffer, NSMakeRange(accel.vertexBufferOffset, sizeof(float3) * vertexCount));
+ * <p>
+ * // Rebuild the acceleration structure
+ * [accel rebuild];
+ * <p>
+ * // Encode actual intersection work
+ * [raytracer encodeIntersectionToCommandBuffer:commandBuffer
+ * intersectionType:MPSIntersectionTypeNearest
+ * rayBuffer:rayBuffer
+ * rayBufferOffset:rayBufferOffset
+ * intersectionBuffer:intersectionBuffer
+ * intersectionBufferOffset:intersectionBufferOffset
+ * rayCount:rayCount
+ * accelerationStructure:accel];
+ * <p>
+ * // Register a completion handler to run when the GPU finishes executing
+ * [commandBuffer addCompletedHandler:^(id <MTLCommandBuffer> commandBuffer) {
+ * Intersection *intersections = (Intersection *)((uint8_t *)intersectionBuffer.contents +
+ * intersectionBufferOffset);
+ * <p>
+ * // Process intersections
+ * <p>
+ * // Signal that the acceleration structure is now available for reuse
+ * dispatch_semaphore_signal(asyncOperationSemaphore);
+ * }];
+ * <p>
+ * // Commit the command buffer to allow the GPU to start executing
+ * [commandBuffer commit];
+ * [@endcode]
+ * <p>
  * Refitting acceleration structures: If geometry has only moved slightly and not added or removed
  * from the scene, it can be much faster to refit the existing topology of an acceleration
  * structure to the new geometry than to rebuild the acceleration structure from scratch. Refitting
  * can also be pipelined with other GPU work such as intersection testing. If the geometry is
  * transformed entirely on the GPU, it is not necessary to use double or triple buffering. For
  * example:
- * 
- *     [@code]
- *     id <MTLCommandBuffer> commandBuffer = [commandQueue commandBuffer];
- * 
- *     id <MTLComputeCommandEncoder> encoder = [commandBuffer computeCommandEncoder];
- * 
- *     [encoder setBuffer:untransformedVertexBuffer offset:0 atIndex:0];
- * 
- *     [encoder setBuffer:accelerationStructure.vertexBuffer
- *                 offset:accelerationStructure.vertexBufferOffset
- *                atIndex:1];
- * 
- *     [encoder setBuffer:transformationMatrices offset:0 atIndex:2];
- * 
- *     [encoder setComputePipelineState:transformVerticesPipeline];
- * 
- *     [encoder dispatchThreads:MTLSizeMake(accelerationStructure.triangleCount * 3, 1, 1)
- *        threadsPerThreadgroup:MTLSizeMake(64, 1, 1)];
- * 
- *     [encoder endEncoding];
- * 
- *     [accelerationStructure encodeRefitToCommandBuffer:commandBuffer];
- * 
- *     [commandBuffer commit];
- *     [@endcode]
- * 
+ * <p>
+ * [@code]
+ * id <MTLCommandBuffer> commandBuffer = [commandQueue commandBuffer];
+ * <p>
+ * id <MTLComputeCommandEncoder> encoder = [commandBuffer computeCommandEncoder];
+ * <p>
+ * [encoder setBuffer:untransformedVertexBuffer offset:0 atIndex:0];
+ * <p>
+ * [encoder setBuffer:accelerationStructure.vertexBuffer
+ * offset:accelerationStructure.vertexBufferOffset
+ * atIndex:1];
+ * <p>
+ * [encoder setBuffer:transformationMatrices offset:0 atIndex:2];
+ * <p>
+ * [encoder setComputePipelineState:transformVerticesPipeline];
+ * <p>
+ * [encoder dispatchThreads:MTLSizeMake(accelerationStructure.triangleCount * 3, 1, 1)
+ * threadsPerThreadgroup:MTLSizeMake(64, 1, 1)];
+ * <p>
+ * [encoder endEncoding];
+ * <p>
+ * [accelerationStructure encodeRefitToCommandBuffer:commandBuffer];
+ * <p>
+ * [commandBuffer commit];
+ * [@endcode]
+ * <p>
  * Serializing Acceleration Structures: Instead of rebuilding acceleration structures from scratch
  * they can be built offline, serialized, and reloaded at runtime using the NSSecureCoding
  * protocol:
- * 
- *     [@code]
- *     // Build time:
- *     NSError *error = nil;
- *     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:accel
- *                                          requiringSecureCoding:YES
- *                                                          error:&error];
- * 
- *     if (!data)
- *         NSLog(@"Error archiving MPSAccelerationStructure: %@",
- *             error.localizedDescription);
- * 
- *     // Runtime:
- *     MPSTriangleAccelerationStructure *accel;
- *     accel = [NSKeyedUnarchiver unarchivedObjectOfClass:[MPSTriangleAccelerationStructure class]
- *                                               fromData:data
- *                                                  error:&error];
- * 
- *     if (!accel)
- *         NSLog(@"Error unarchiving MPSAccelerationStructure: %@",
- *             error.localizedDescription);
- *     [@endcode]
- * 
+ * <p>
+ * [@code]
+ * // Build time:
+ * NSError *error = nil;
+ * NSData *data = [NSKeyedArchiver archivedDataWithRootObject:accel
+ * requiringSecureCoding:YES
+ * error:&error];
+ * <p>
+ * if (!data)
+ * NSLog(@"Error archiving MPSAccelerationStructure: %@",
+ * error.localizedDescription);
+ * <p>
+ * // Runtime:
+ * MPSTriangleAccelerationStructure *accel;
+ * accel = [NSKeyedUnarchiver unarchivedObjectOfClass:[MPSTriangleAccelerationStructure class]
+ * fromData:data
+ * error:&error];
+ * <p>
+ * if (!accel)
+ * NSLog(@"Error unarchiving MPSAccelerationStructure: %@",
+ * error.localizedDescription);
+ * [@endcode]
+ * <p>
  * Copying Acceleration Structures: Acceleration structures can be copied using the NSCopying
  * protocol, even to a different Metal device. This can be used for multi-GPU raytracing. Buffer
  * properties are not copied to the new acceleration structure. These buffers must instead be
  * copied to the new Metal device and assigned to the new acceleration structure. For example:
- * 
- *     [@code]
- *     MPSTriangleAccelerationStructure *copy = [accelerationStructure copyWithZone:nil
- *                                                                           device:newDevice];
- * 
- *     copy.vertexBuffer = [self copyBuffer:accelerationStructure.vertexBuffer
- *                               withDevice:newDevice];
- *     [@endcode]
- * 
+ * <p>
+ * [@code]
+ * MPSTriangleAccelerationStructure *copy = [accelerationStructure copyWithZone:nil
+ * device:newDevice];
+ * <p>
+ * copy.vertexBuffer = [self copyBuffer:accelerationStructure.vertexBuffer
+ * withDevice:newDevice];
+ * [@endcode]
+ * <p>
  * Performance Guidelines:
- * 
- *     - Provide accurate acceleration structure hints: if an acceleration structure does not
- *       require support for refitting, a higher quality construction algorithm can be used.
- *       However, if an acceleration structure must be rebuilt frequently, a lower quality
- *       but higher performance construction algorithm can be used.
- * 
- *     - Consider refitting existing acceleration structures rather than rebuilding them from
- *       scratch. This is typically much faster and can result in a reasonably high quality
- *       tree if the geometry has not been modified dramatically. Refitting can also be pipelined
- *       with other GPU work. If objects have been added to or removed from the scene, it is
- *       typically necessary to rebuild the acceleration structure rather than refit it.
- * 
- *     - Rebuild acceleration structures asynchronously when possible to avoid blocking the main
- *       thread. Consider presenting a UI indicating that work is happening in the background while
- *       allowing the user to consider interacting with your application.
- * 
- *     - If you need to mix intersection testing with acceleration structure builds (e.g. if the
- *       user is interactively editing the scene while rendering or if objects are moving
- *       significantly) consider allocating two independent acceleration structures that refer to
- *       two copies of the scene data. Then, asynchronously rebuild one acceleration structure
- *       while the other one is used for rendering. Once the rebuild has completed, swap the
- *       acceleration structures. The intermediate frames could be filled by refitting the
- *       rendering acceleration structure until the rebuilt acceleration structure is ready.
- * 
- *     - When running in Xcode, disable "Enable Backtrace Recording" in your scheme settings.
- *       Enabling this setting can significantly increase acceleration structure build time.
- * 
- *     - Consider using quadrilaterals instead of triangles to represent your geometry.
- *       The cost of intersecting a quadrilateral is typically less than the cost of intersecting
- *       two triangles, so quadrilaterals can improve performance. Quadrilaterals also typically
- *       require 30-40% less memory than triangles including vertex data and internal buffers
- *       allocated by the acceleration structure. Whether quadrilaterals improve or hurt
- *       performance can depend on the geometry and ray distribution, so you should choose
- *       whichever performs better for your application.
- * 
+ * <p>
+ * - Provide accurate acceleration structure hints: if an acceleration structure does not
+ * require support for refitting, a higher quality construction algorithm can be used.
+ * However, if an acceleration structure must be rebuilt frequently, a lower quality
+ * but higher performance construction algorithm can be used.
+ * <p>
+ * - Consider refitting existing acceleration structures rather than rebuilding them from
+ * scratch. This is typically much faster and can result in a reasonably high quality
+ * tree if the geometry has not been modified dramatically. Refitting can also be pipelined
+ * with other GPU work. If objects have been added to or removed from the scene, it is
+ * typically necessary to rebuild the acceleration structure rather than refit it.
+ * <p>
+ * - Rebuild acceleration structures asynchronously when possible to avoid blocking the main
+ * thread. Consider presenting a UI indicating that work is happening in the background while
+ * allowing the user to consider interacting with your application.
+ * <p>
+ * - If you need to mix intersection testing with acceleration structure builds (e.g. if the
+ * user is interactively editing the scene while rendering or if objects are moving
+ * significantly) consider allocating two independent acceleration structures that refer to
+ * two copies of the scene data. Then, asynchronously rebuild one acceleration structure
+ * while the other one is used for rendering. Once the rebuild has completed, swap the
+ * acceleration structures. The intermediate frames could be filled by refitting the
+ * rendering acceleration structure until the rebuilt acceleration structure is ready.
+ * <p>
+ * - When running in Xcode, disable "Enable Backtrace Recording" in your scheme settings.
+ * Enabling this setting can significantly increase acceleration structure build time.
+ * <p>
+ * - Consider using quadrilaterals instead of triangles to represent your geometry.
+ * The cost of intersecting a quadrilateral is typically less than the cost of intersecting
+ * two triangles, so quadrilaterals can improve performance. Quadrilaterals also typically
+ * require 30-40% less memory than triangles including vertex data and internal buffers
+ * allocated by the acceleration structure. Whether quadrilaterals improve or hurt
+ * performance can depend on the geometry and ray distribution, so you should choose
+ * whichever performs better for your application.
+ * <p>
  * Thread Safety: MPSAccelerationStructures are generally not thread safe. Changing properties
  * and rebuilding acceleration structures from multiple threads result in undefined behavior.
  * However, it is safe to encode intersection tests with a single acceleration structure
@@ -326,13 +326,13 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
 
     /**
      * Create a a copy of this acceleration structure
-     * 
+     * <p>
      * The acceleration structure may be copied to a different Metal device. Buffer
      * properties of the acceleration structure such as the vertex buffer, instance, buffer, etc. are
      * set to nil. Copy these buffers to the new Metal device and assign them to the new acceleration
      * structure instead. Do not copy the acceleration structure until any prior refit or rebuild
      * operations have completed.
-     * 
+     *
      * @param zone   This parameter is ignored. Memory zones are no longer used by Objective-C.
      * @param device New Metal device
      */
@@ -344,13 +344,13 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
 
     /**
      * Create a a copy of this acceleration structure
-     * 
+     * <p>
      * The acceleration structure may be copied with a different acceleration structure
      * group. Buffer properties of the acceleration structure such as the vertex buffer, instance
      * buffer, etc. are set to nil. Copy these buffers with the new Metal device and assign them to
      * the new acceleration structure instead. Do not copy the acceleration structure until any prior
      * refit or rebuild operations have completed.
-     * 
+     *
      * @param zone  This parameter is ignored. Memory zones are no longer used by Objective-C.
      * @param group New acceleration structure group
      */
@@ -370,12 +370,12 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
 
     /**
      * Refit the existing acceleration structure to new data
-     * 
+     * <p>
      * This method is used to refit the acceleration structure to new vertex data,
      * index data, instance data, etc. while preserving the existing acceleration structure topology.
      * This is typically much faster than a full rebuild of the acceleration structure. Refitting can
      * also be pipelined with other GPU work such as ray intersection.
-     * 
+     * <p>
      * Until the command buffer has completed, the acceleration structure cannot be copied,
      * encoded with NSSecureCoding, or rebuilt. Changes to properties such as the triangle count or
      * instance count might not be reflected. These changes require that the acceleration structure be
@@ -441,7 +441,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     /**
      * Initialize the acceleration structure with an acceleration structure group, if the
      * acceleration structure will be used in an instance hierarchy.
-     * 
+     * <p>
      * The Metal device is determined from the acceleration structure group. All
      * acceleration structures in the instance hierarchy must share the same group.
      */
@@ -478,7 +478,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
 
     /**
      * Rebuild the acceleration structure
-     * 
+     * <p>
      * This method must be called before any intersection tests can be scheduled with this
      * acceleration structure. Before calling this method, fill out the properties of the acceleration
      * structure such as vertex buffer, instance buffer, etc. The acceleration structure should be
@@ -486,7 +486,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      * modified significantly and must be rebuilt when properties such as triangle count,
      * vertex stride, etc. have changed. When the contents of the acceleration structure have only been
      * modified slightly, it may be cheaper to refit the acceleration structure instead.
-     * 
+     * <p>
      * This method blocks until the acceleration structure has been rebuilt. Until the rebuild has
      * completed, the acceleration structure cannot be copied, encoded with NSSecureCoding, rebuilt, or
      * refit. Before this method can be called, any pending GPU writes to the vertex buffer, index
@@ -499,7 +499,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
 
     /**
      * Rebuild the acceleration structure asynchronously
-     * 
+     * <p>
      * This method must be called before any intersection tests can be scheduled with this
      * acceleration structure. Before calling this method, fill out the properties of the acceleration
      * structure such as vertex buffer, instance buffer, etc. The acceleration structure should be
@@ -507,7 +507,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      * modified significantly and must be rebuilt when properties such as triangle count,
      * vertex stride, etc. have changed. When the contents of the acceleration structure have only been
      * modified slightly, it may be cheaper to refit the acceleration structure instead.
-     * 
+     * <p>
      * Until the rebuild has completed, the acceleration structure cannot be copied, encoded with
      * NSSecureCoding, rebuilt, or refit. Before this method can be called, any pending GPU writes to
      * the vertex buffer, index buffer, etc. must be completed (and, for managed buffers,

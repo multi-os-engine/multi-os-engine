@@ -21,24 +21,24 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLCommandBufferStatus
- * 
+ * <p>
  * MTLCommandBufferStatus reports the current stage in the lifetime of MTLCommandBuffer, as it proceeds to enqueued, committed, scheduled, and completed.
- * 
+ * <p>
  * [@constant] MTLCommandBufferStatusNotEnqueued
  * The command buffer has not been enqueued yet.
- * 
+ * <p>
  * [@constant] MTLCommandBufferStatusEnqueued
  * This command buffer is enqueued, but not committed.
- * 
+ * <p>
  * [@constant] MTLCommandBufferStatusCommitted
  * Commited to its command queue, but not yet scheduled for execution.
- * 
+ * <p>
  * [@constant] MTLCommandBufferStatusScheduled
  * All dependencies have been resolved and the command buffer has been scheduled for execution.
- * 
+ * <p>
  * [@constant] MTLCommandBufferStatusCompleted
  * The command buffer has finished executing successfully: any blocks set with -addCompletedHandler: may now be called.
- * 
+ * <p>
  * [@constant] MTLCommandBufferStatusError
  * Execution of the command buffer was aborted due to an error during execution.  Check -error for more information.
  */

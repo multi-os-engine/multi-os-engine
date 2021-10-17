@@ -153,19 +153,19 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
 
     /**
      * videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:
-     * 
+     * <p>
      * Add a Core Animation layer to the video composition
-     * 
+     * <p>
      * Include a Core Animation layer as an individual track input in video composition.
-     * 							This layer should not come from, or be added to, another layer tree.
-     * 							trackID should not match any real trackID in the source. Use -[AVAsset unusedTrackID] 
-     * 							to obtain a trackID that's guaranteed not to coincide with the trackID of any track of the asset.
-     * 							AVVideoCompositionInstructions should reference trackID where the rendered animation should be included.
-     * 							For best performance, no transform should be set in the AVVideoCompositionLayerInstruction for this trackID.
-     * 							Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the
-     * 							-contentsAreFlipped method). It may be required to insert a CALayer with its geometryFlipped property set
-     * 							to YES in the layer hierarchy to get the same result when attaching a CALayer to a AVVideoCompositionCoreAnimationTool
-     * 							as when using it to back a UIView.
+     * This layer should not come from, or be added to, another layer tree.
+     * trackID should not match any real trackID in the source. Use -[AVAsset unusedTrackID]
+     * to obtain a trackID that's guaranteed not to coincide with the trackID of any track of the asset.
+     * AVVideoCompositionInstructions should reference trackID where the rendered animation should be included.
+     * For best performance, no transform should be set in the AVVideoCompositionLayerInstruction for this trackID.
+     * Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the
+     * -contentsAreFlipped method). It may be required to insert a CALayer with its geometryFlipped property set
+     * to YES in the layer hierarchy to get the same result when attaching a CALayer to a AVVideoCompositionCoreAnimationTool
+     * as when using it to back a UIView.
      */
     @Generated
     @Selector("videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:")
@@ -174,16 +174,16 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
 
     /**
      * videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:
-     * 
+     * <p>
      * Compose the composited video frames with the Core Animation layer
-     * 
+     * <p>
      * Place composited video frames in videoLayer and render animationLayer
-     * 							to produce the final frame. Normally videoLayer should be in animationLayer's sublayer tree.
-     * 							The animationLayer should not come from, or be added to, another layer tree.
-     * 							Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the
-     * 							-contentsAreFlipped method). It may be required to insert a CALayer with its geometryFlipped property set
-     * 							to YES in the layer hierarchy to get the same result when attaching a CALayer to a AVVideoCompositionCoreAnimationTool
-     * 							as when using it to back a UIView.
+     * to produce the final frame. Normally videoLayer should be in animationLayer's sublayer tree.
+     * The animationLayer should not come from, or be added to, another layer tree.
+     * Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the
+     * -contentsAreFlipped method). It may be required to insert a CALayer with its geometryFlipped property set
+     * to YES in the layer hierarchy to get the same result when attaching a CALayer to a AVVideoCompositionCoreAnimationTool
+     * as when using it to back a UIView.
      */
     @Generated
     @Selector("videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:")
@@ -192,16 +192,16 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
 
     /**
      * videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:
-     * 
+     * <p>
      * Compose the composited video frames with the Core Animation layer
-     * 
+     * <p>
      * Duplicate the composited video frames in each videoLayer and render animationLayer
-     * 							to produce the final frame. Normally videoLayers should be in animationLayer's sublayer tree.
-     * 							The animationLayer should not come from, or be added to, another layer tree.
-     * 							Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the
-     * 							-contentsAreFlipped method). It may be required to insert a CALayer with its geometryFlipped property set
-     * 							to YES in the layer hierarchy to get the same result when attaching a CALayer to a AVVideoCompositionCoreAnimationTool
-     * 							as when using it to back a UIView.
+     * to produce the final frame. Normally videoLayers should be in animationLayer's sublayer tree.
+     * The animationLayer should not come from, or be added to, another layer tree.
+     * Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the
+     * -contentsAreFlipped method). It may be required to insert a CALayer with its geometryFlipped property set
+     * to YES in the layer hierarchy to get the same result when attaching a CALayer to a AVVideoCompositionCoreAnimationTool
+     * as when using it to back a UIView.
      */
     @Generated
     @Selector("videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:")

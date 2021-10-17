@@ -45,10 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFilterVerdict
- * 
+ * <p>
  * The NEFilterVerdict class declares the programmatic interface for an object that is the verdict for a
  * flow of network data.
- * 
+ * <p>
  * NEFilterVerdict is part of NetworkExtension.framework
  */
 @Generated
@@ -192,7 +192,7 @@ public class NEFilterVerdict extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * [@property] shouldReport
-     * 
+     * <p>
      * Whether or not to send a report to the control provider's -[NEFilterProvider handleReport:]
      * method when processing this verdict and when the flow is closed. Since the data provider does not need to wait
      * for a response from the control provider before continuing to process the flow, this is a more efficient way to
@@ -208,7 +208,7 @@ public class NEFilterVerdict extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * [@property] shouldReport
-     * 
+     * <p>
      * Whether or not to send a report to the control provider's -[NEFilterProvider handleReport:]
      * method when processing this verdict and when the flow is closed. Since the data provider does not need to wait
      * for a response from the control provider before continuing to process the flow, this is a more efficient way to

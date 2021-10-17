@@ -42,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This subclass of UIPanGestureRecognizer only recognizes if the user slides their finger
- * in from the bezel on the specified edge. 
+ * in from the bezel on the specified edge.
  */
 @Generated
 @Library("UIKit")

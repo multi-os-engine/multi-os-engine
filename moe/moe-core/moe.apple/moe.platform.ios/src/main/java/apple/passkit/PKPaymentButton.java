@@ -25,6 +25,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.UIAction;
 import apple.uikit.UIButton;
+import apple.uikit.UIButtonConfiguration;
 import apple.uikit.UIImage;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
@@ -455,4 +456,9 @@ public class PKPaymentButton extends UIButton {
     @Selector("systemButtonWithPrimaryAction:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object systemButtonWithPrimaryAction(UIAction primaryAction);
+
+    @Generated
+    @Selector("buttonWithConfiguration:primaryAction:")
+    public static native PKPaymentButton buttonWithConfigurationPrimaryAction(UIButtonConfiguration configuration,
+            UIAction primaryAction);
 }

@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * There are 2 ways to access keyboard paired to the system:
  * 1: Querying for the coalescedKeyboard using [GCKeyboard coalescedKeyboard]
  * 2: Registering for Connection/Disconnection notifications from NSNotificationCenter
- * 
+ * <p>
  * [@note] All connected keyboards are coalesced into one keyboard object, so notification about connection/disconnection will only be delivered once.
  */
 @Generated
@@ -134,7 +134,7 @@ public class GCKeyboard extends NSObject implements GCDevice {
 
     /**
      * Unlike GCController GCKeyboard only has one input profile.
-     * 
+     * <p>
      * This profile allows you to query buttons and button state
      */
     @Generated

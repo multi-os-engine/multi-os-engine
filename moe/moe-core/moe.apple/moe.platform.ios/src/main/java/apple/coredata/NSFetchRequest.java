@@ -25,6 +25,7 @@ import apple.foundation.NSPredicate;
 import apple.foundation.NSSet;
 import apple.foundation.NSSortDescriptor;
 import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSCopying;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -50,7 +51,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implements NSCoding {
+public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implements NSCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -207,7 +208,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     /**
      * Specifies a predicate that will be used to filter rows being returned by a query containing a GROUP BY. If a having predicate is
-     * supplied, it will be run after the GROUP BY.  Specifying a HAVING predicate requires that a GROUP BY also be specified. 
+     * supplied, it will be run after the GROUP BY.  Specifying a HAVING predicate requires that a GROUP BY also be specified.
      */
     @Generated
     @Selector("havingPredicate")
@@ -259,10 +260,10 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     /**
      * Specifies the way in which data should be grouped before a select statement is run in an SQL database.
-     * Values passed to propertiesToGroupBy must be NSPropertyDescriptions, NSExpressionDescriptions, or keypath strings; keypaths can not contain 
-     * any to-many steps. 
-     * If GROUP BY is used, then you must set the resultsType to NSDictionaryResultsType, and the SELECT values must be literals, aggregates, 
-     * or columns specified in the GROUP BY. Aggregates will operate on the groups specified in the GROUP BY rather than the whole table. 
+     * Values passed to propertiesToGroupBy must be NSPropertyDescriptions, NSExpressionDescriptions, or keypath strings; keypaths can not contain
+     * any to-many steps.
+     * If GROUP BY is used, then you must set the resultsType to NSDictionaryResultsType, and the SELECT values must be literals, aggregates,
+     * or columns specified in the GROUP BY. Aggregates will operate on the groups specified in the GROUP BY rather than the whole table.
      */
     @Generated
     @Selector("propertiesToGroupBy")
@@ -325,7 +326,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     /**
      * Specifies a predicate that will be used to filter rows being returned by a query containing a GROUP BY. If a having predicate is
-     * supplied, it will be run after the GROUP BY.  Specifying a HAVING predicate requires that a GROUP BY also be specified. 
+     * supplied, it will be run after the GROUP BY.  Specifying a HAVING predicate requires that a GROUP BY also be specified.
      */
     @Generated
     @Selector("setHavingPredicate:")
@@ -365,10 +366,10 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     /**
      * Specifies the way in which data should be grouped before a select statement is run in an SQL database.
-     * Values passed to propertiesToGroupBy must be NSPropertyDescriptions, NSExpressionDescriptions, or keypath strings; keypaths can not contain 
-     * any to-many steps. 
-     * If GROUP BY is used, then you must set the resultsType to NSDictionaryResultsType, and the SELECT values must be literals, aggregates, 
-     * or columns specified in the GROUP BY. Aggregates will operate on the groups specified in the GROUP BY rather than the whole table. 
+     * Values passed to propertiesToGroupBy must be NSPropertyDescriptions, NSExpressionDescriptions, or keypath strings; keypaths can not contain
+     * any to-many steps.
+     * If GROUP BY is used, then you must set the resultsType to NSDictionaryResultsType, and the SELECT values must be literals, aggregates,
+     * or columns specified in the GROUP BY. Aggregates will operate on the groups specified in the GROUP BY rather than the whole table.
      */
     @Generated
     @Selector("setPropertiesToGroupBy:")
@@ -417,4 +418,10 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Generated
     @Selector("sortDescriptors")
     public native NSArray<? extends NSSortDescriptor> sortDescriptors();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
 }

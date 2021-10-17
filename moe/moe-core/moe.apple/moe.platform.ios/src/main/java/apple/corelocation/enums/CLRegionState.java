@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CLRegionState
- * 
+ * <p>
  * Discussion:
- *    Represents the current state of the device with reference to a region.
+ * Represents the current state of the device with reference to a region.
  */
 @Generated
 public final class CLRegionState {

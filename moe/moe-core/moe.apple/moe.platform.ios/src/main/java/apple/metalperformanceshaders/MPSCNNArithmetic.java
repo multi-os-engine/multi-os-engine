@@ -29,46 +29,46 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNArithmetic
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * The MPSCNNArithmetic filter takes two source images, a primary source image and a
- *             secondary source image, and outputs a single destination image. It applies an
- *             element-wise arithmetic operator to each pixel in a primary source image and a
- *             corresponding pixel in a secondary source image over a specified region.
- * 
- *             The supported arithmetic operators are the following:
- *             - Addition
- *             - Subtraction
- *             - Multiplication
- *             - Division
- *             - Comparison
- * 
- *             This filter takes additional parameters: primaryScale, secondaryScale, and bias. The default
- *             value for primaryScale and secondaryScale is 1.0f. The default value for bias is 0.0f. This
- *             filter applies primaryScale, secondaryScale, and bias to the primary source pixel (x) and
- *             secondary source pixel (y) in the following way:
- *             - Addition:         result = ((primaryScale * x) + (secondaryScale * y)) + bias
- *             - Subtraction:      result = ((primaryScale * x) - (secondaryScale * y)) + bias
- *             - Multiplicaton:    result = ((primaryScale * x) * (secondaryScale * y)) + bias
- *             - Division:         result = ((primaryScale * x) / (secondaryScale * y)) + bias
- *             - Comparison:       Unused.
- * 
- *             To clamp the result of an arithmetic operation, where
- *             result = clamp(result, minimumValue, maximumValue),
- *             set the minimumValue and maximumValue appropriately. The default value of minimumValue
- *             is -FLT_MAX. The default value of maximumValue is FLT_MAX.
- * 
- *             This filter also takes the following additional parameters:
- *             - primaryStrideInPixelsX, primaryStrideInPixelsY, primaryStrideInFeatureChannels
- *             - secondaryStrideInPixelsX, secondaryStrideInPixelsY, secondaryStrideInFeatureChannels
- *             These parameters can be used to control broadcasting for the data stored in the primary and
- *             secondary source images. For example, setting all strides for the primary source image to 0
- *             will result in the primarySource image being treated as a scalar value. The only supported
- *             values are 0 or 1. The default value of these parameters is 1.
- * 
- *             The number of output feature channels remains the same as the number of input feature
- *             channels.
- * 
- *             You must use one of the sub-classes of MPSImageArithmetic.
+ * secondary source image, and outputs a single destination image. It applies an
+ * element-wise arithmetic operator to each pixel in a primary source image and a
+ * corresponding pixel in a secondary source image over a specified region.
+ * <p>
+ * The supported arithmetic operators are the following:
+ * - Addition
+ * - Subtraction
+ * - Multiplication
+ * - Division
+ * - Comparison
+ * <p>
+ * This filter takes additional parameters: primaryScale, secondaryScale, and bias. The default
+ * value for primaryScale and secondaryScale is 1.0f. The default value for bias is 0.0f. This
+ * filter applies primaryScale, secondaryScale, and bias to the primary source pixel (x) and
+ * secondary source pixel (y) in the following way:
+ * - Addition:         result = ((primaryScale * x) + (secondaryScale * y)) + bias
+ * - Subtraction:      result = ((primaryScale * x) - (secondaryScale * y)) + bias
+ * - Multiplicaton:    result = ((primaryScale * x) * (secondaryScale * y)) + bias
+ * - Division:         result = ((primaryScale * x) / (secondaryScale * y)) + bias
+ * - Comparison:       Unused.
+ * <p>
+ * To clamp the result of an arithmetic operation, where
+ * result = clamp(result, minimumValue, maximumValue),
+ * set the minimumValue and maximumValue appropriately. The default value of minimumValue
+ * is -FLT_MAX. The default value of maximumValue is FLT_MAX.
+ * <p>
+ * This filter also takes the following additional parameters:
+ * - primaryStrideInPixelsX, primaryStrideInPixelsY, primaryStrideInFeatureChannels
+ * - secondaryStrideInPixelsX, secondaryStrideInPixelsY, secondaryStrideInFeatureChannels
+ * These parameters can be used to control broadcasting for the data stored in the primary and
+ * secondary source images. For example, setting all strides for the primary source image to 0
+ * will result in the primarySource image being treated as a scalar value. The only supported
+ * values are 0 or 1. The default value of these parameters is 1.
+ * <p>
+ * The number of output feature channels remains the same as the number of input feature
+ * channels.
+ * <p>
+ * You must use one of the sub-classes of MPSImageArithmetic.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -134,16 +134,16 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * Encode call that operates on a state for later consumption by a gradient kernel in training
-     * 
+     * <p>
      * This is the older style of encode which reads the offset, doesn't change it,
-     *                 and ignores the padding method.
-     * 
-     * @param          commandBuffer       The command buffer
-     * @param          primaryImage        A MPSImage to use as the source images for the filter.
-     * @param          secondaryImage      A MPSImage to use as the source images for the filter.
-     * @param          destinationState    MPSCNNArithmeticGradientState to be consumed by the gradient layer
-     * @param          destinationImage    A valid MPSImage to be overwritten by result image. destinationImage
-     *                                     may not alias primarySourceImage or secondarySourceImage.
+     * and ignores the padding method.
+     *
+     * @param commandBuffer    The command buffer
+     * @param primaryImage     A MPSImage to use as the source images for the filter.
+     * @param secondaryImage   A MPSImage to use as the source images for the filter.
+     * @param destinationState MPSCNNArithmeticGradientState to be consumed by the gradient layer
+     * @param destinationImage A valid MPSImage to be overwritten by result image. destinationImage
+     *                         may not alias primarySourceImage or secondarySourceImage.
      */
     @Generated
     @Selector("encodeToCommandBuffer:primaryImage:secondaryImage:destinationState:destinationImage:")
@@ -195,10 +195,10 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property]   maximumValue
-     * 
+     * <p>
      * maximumValue is used to clamp the result of an arithmetic operation:
-     *             result = clamp(result, minimumValue, maximumValue).
-     *             The default value of maximumValue is FLT_MAX.
+     * result = clamp(result, minimumValue, maximumValue).
+     * The default value of maximumValue is FLT_MAX.
      */
     @Generated
     @Selector("maximumValue")
@@ -206,10 +206,10 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property]   minimumValue
-     * 
+     * <p>
      * minimumValue is to clamp the result of an arithmetic operation:
-     *             result = clamp(result, minimumValue, maximumValue).
-     *             The default value of minimumValue is -FLT_MAX.
+     * result = clamp(result, minimumValue, maximumValue).
+     * The default value of minimumValue is -FLT_MAX.
      */
     @Generated
     @Selector("minimumValue")
@@ -227,9 +227,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property]   primaryStrideInPixels
-     * 
+     * <p>
      * The primarySource stride in the feature channel dimension. The only supported values are 0 or 1.
-     *             The default value for each dimension is 1.
+     * The default value for each dimension is 1.
      */
     @Generated
     @Selector("primaryStrideInFeatureChannels")
@@ -250,9 +250,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property]   secondaryStrideInPixels
-     * 
+     * <p>
      * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
-     *             The default value for each dimension is 1.
+     * The default value for each dimension is 1.
      */
     @Generated
     @Selector("secondaryStrideInFeatureChannels")
@@ -265,10 +265,10 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property]   maximumValue
-     * 
+     * <p>
      * maximumValue is used to clamp the result of an arithmetic operation:
-     *             result = clamp(result, minimumValue, maximumValue).
-     *             The default value of maximumValue is FLT_MAX.
+     * result = clamp(result, minimumValue, maximumValue).
+     * The default value of maximumValue is FLT_MAX.
      */
     @Generated
     @Selector("setMaximumValue:")
@@ -276,10 +276,10 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property]   minimumValue
-     * 
+     * <p>
      * minimumValue is to clamp the result of an arithmetic operation:
-     *             result = clamp(result, minimumValue, maximumValue).
-     *             The default value of minimumValue is -FLT_MAX.
+     * result = clamp(result, minimumValue, maximumValue).
+     * The default value of minimumValue is -FLT_MAX.
      */
     @Generated
     @Selector("setMinimumValue:")
@@ -291,9 +291,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property]   primaryStrideInPixels
-     * 
+     * <p>
      * The primarySource stride in the feature channel dimension. The only supported values are 0 or 1.
-     *             The default value for each dimension is 1.
+     * The default value for each dimension is 1.
      */
     @Generated
     @Selector("setPrimaryStrideInFeatureChannels:")
@@ -305,9 +305,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property]   secondaryStrideInPixels
-     * 
+     * <p>
      * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
-     *             The default value for each dimension is 1.
+     * The default value for each dimension is 1.
      */
     @Generated
     @Selector("setSecondaryStrideInFeatureChannels:")

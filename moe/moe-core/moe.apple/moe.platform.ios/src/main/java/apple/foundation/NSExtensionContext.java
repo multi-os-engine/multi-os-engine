@@ -200,7 +200,7 @@ public class NSExtensionContext extends NSObject {
 
     /**
      * Load information about the broadcasting app.
-     * 
+     *
      * @param handler block which will be supplied a bundleID, displayName and an optional appIcon.
      */
     @Generated
@@ -221,7 +221,7 @@ public class NSExtensionContext extends NSObject {
     public native void mediaPlayingStarted();
 
     /**
-     * Asks the host to open an URL on the extension's behalf
+     * Asks the host to open a URL on the extension's behalf
      */
     @Generated
     @Selector("openURL:completionHandler:")

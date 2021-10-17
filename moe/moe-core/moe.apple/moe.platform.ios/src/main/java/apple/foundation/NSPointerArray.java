@@ -45,12 +45,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NSPointerArray.h
- * 
+ * <p>
  * A PointerArray acts like a traditional array that slides elements on insertion or deletion.
  * Unlike traditional arrays, it holds NULLs, which can be inserted or extracted (and contribute to count).
  * Also unlike traditional arrays, the 'count' of the array may be set directly.
  * Using NSPointerFunctionsWeakMemory object references will turn to NULL on last release.
- * 
+ * <p>
  * The copying and archiving protocols are applicable only when NSPointerArray is configured for Object uses.
  * The fast enumeration protocol (supporting the for..in statement) will yield NULLs if present.  It is defined for all types of pointers although the language syntax doesn't directly support this.
  */

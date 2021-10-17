@@ -1129,4 +1129,36 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Selector("updateConfigurationUsingState:")
     public native void updateConfigurationUsingState(UICellConfigurationState state);
+
+    /**
+     * Optional block-based alternative to overriding `-updateConfigurationUsingState:` in a subclass. This handler
+     * is called after `-updateConfigurationUsingState:`. Setting a new handler triggers `setNeedsUpdateConfiguration`.
+     */
+    @Generated
+    @Selector("configurationUpdateHandler")
+    @ObjCBlock(name = "call_configurationUpdateHandler_ret")
+    public native Block_configurationUpdateHandler_ret configurationUpdateHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_configurationUpdateHandler_ret {
+        @Generated
+        void call_configurationUpdateHandler_ret(UITableViewCell cell, UICellConfigurationState state);
+    }
+
+    /**
+     * Optional block-based alternative to overriding `-updateConfigurationUsingState:` in a subclass. This handler
+     * is called after `-updateConfigurationUsingState:`. Setting a new handler triggers `setNeedsUpdateConfiguration`.
+     */
+    @Generated
+    @Selector("setConfigurationUpdateHandler:")
+    public native void setConfigurationUpdateHandler(
+            @ObjCBlock(name = "call_setConfigurationUpdateHandler") Block_setConfigurationUpdateHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setConfigurationUpdateHandler {
+        @Generated
+        void call_setConfigurationUpdateHandler(UITableViewCell cell, UICellConfigurationState state);
+    }
 }

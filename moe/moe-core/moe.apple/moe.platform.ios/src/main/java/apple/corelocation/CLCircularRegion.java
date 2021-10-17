@@ -45,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLCircularRegion
- * 
+ * <p>
  * Discussion:
- *   A circular geographic area.
+ * A circular geographic area.
  */
 @Generated
 @Library("CoreLocation")
@@ -166,9 +166,9 @@ public class CLCircularRegion extends CLRegion {
 
     /**
      * center
-     * 
+     * <p>
      * Discussion:
-     *   Returns the coordinate of the center of the region.
+     * Returns the coordinate of the center of the region.
      */
     @Generated
     @Selector("center")
@@ -177,9 +177,9 @@ public class CLCircularRegion extends CLRegion {
 
     /**
      * containsCoordinate:
-     * 
+     * <p>
      * Discussion:
-     *   Returns YES if the coordinate lies inside the region, and NO otherwise.
+     * Returns YES if the coordinate lies inside the region, and NO otherwise.
      */
     @Generated
     @Selector("containsCoordinate:")
@@ -197,11 +197,11 @@ public class CLCircularRegion extends CLRegion {
 
     /**
      * initWithCenter:radius:identifier:
-     * 
+     * <p>
      * Discussion:
-     *   Initialize a region.  center gives the coordinates of center of the region, while radius gives
-     *   the distance in meters between the center and the region's boundary. identifier is a description
-     *   for the region that could be displayed to the user, and ideally should be chosen by the user.
+     * Initialize a region.  center gives the coordinates of center of the region, while radius gives
+     * the distance in meters between the center and the region's boundary. identifier is a description
+     * for the region that could be displayed to the user, and ideally should be chosen by the user.
      */
     @Generated
     @Selector("initWithCenter:radius:identifier:")
@@ -214,9 +214,9 @@ public class CLCircularRegion extends CLRegion {
 
     /**
      * radius
-     * 
+     * <p>
      * Discussion:
-     *   Returns the radius of the region.
+     * Returns the radius of the region.
      */
     @Generated
     @Selector("radius")

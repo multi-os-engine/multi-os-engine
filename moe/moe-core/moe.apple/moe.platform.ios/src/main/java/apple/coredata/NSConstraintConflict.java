@@ -205,17 +205,17 @@ public class NSConstraintConflict extends NSObject {
 
     /**
      * There are two situations in which a constraint conflict may occur:
-     * 
+     * <p>
      * 1. Between multiple objects being saved in a single managed object context. In this case, the conflict
-     *      will have a nil database object/snapshot, and multiple conflicting objects/snapshots representing
-     *      the state of the objects when they were first faulted or inserted into the context.
-     * 
+     * will have a nil database object/snapshot, and multiple conflicting objects/snapshots representing
+     * the state of the objects when they were first faulted or inserted into the context.
+     * <p>
      * 2. Between a single object being saved in a managed object context and the external store. In this case, the
-     *      constraint conflict will have a database object, the current row snapshot for the database object, plus a
-     *      a single conflicting object and its snapshot from when it was first faulted or inserted.
-     * 
-     *  Snapshot dictionaries include values for all attributes and to-one relationships, but not to-many relationships.
-     *   Relationship values are NSManagedObjectID references. to-many relationships must be pulled from the persistent store as needed.
+     * constraint conflict will have a database object, the current row snapshot for the database object, plus a
+     * a single conflicting object and its snapshot from when it was first faulted or inserted.
+     * <p>
+     * Snapshot dictionaries include values for all attributes and to-one relationships, but not to-many relationships.
+     * Relationship values are NSManagedObjectID references. to-many relationships must be pulled from the persistent store as needed.
      */
     @Generated
     @Selector("initWithConstraint:databaseObject:databaseSnapshot:conflictingObjects:conflictingSnapshots:")

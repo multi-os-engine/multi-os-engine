@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]       EKAlarmProximity
- * 
+ * <p>
  * A value indicating whether an alarm is triggered by entering or exiting a geofence.
- * 
+ * <p>
  * [@constant]   EKAlarmProximityNone       The alarm has no proximity trigger.
  * [@constant]   EKAlarmProximityEnter      The alarm is set to fire when entering a region (geofence).
  * [@constant]   EKAlarmProximityLeave      The alarm is set to fire when leaving a region (geofence).

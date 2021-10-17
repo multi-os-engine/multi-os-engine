@@ -142,10 +142,6 @@ public class UIColorPickerViewController extends UIViewController {
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -187,7 +183,7 @@ public class UIColorPickerViewController extends UIViewController {
 
     /**
      * Controls whether the color picker shows an alpha slider or not.
-     * 
+     * <p>
      * If set to `NO` users are only able to pick fully opaque colors.
      */
     @Generated
@@ -204,7 +200,7 @@ public class UIColorPickerViewController extends UIViewController {
 
     /**
      * Controls whether the color picker shows an alpha slider or not.
-     * 
+     * <p>
      * If set to `NO` users are only able to pick fully opaque colors.
      */
     @Generated

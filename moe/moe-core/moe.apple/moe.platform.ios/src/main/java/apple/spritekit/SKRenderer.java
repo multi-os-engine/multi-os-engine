@@ -99,9 +99,9 @@ public class SKRenderer extends NSObject {
     /**
      * Ignores sibling and traversal order to sort the rendered contents of a scene into the most efficient batching possible.
      * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each other.
-     * 
+     * <p>
      * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in the view.
-     * 
+     * <p>
      * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only zPosition
      * determines render order before the efficiency heuristics are used.
      */
@@ -142,9 +142,9 @@ public class SKRenderer extends NSObject {
 
     /**
      * Render the scene content in the specified Metal command buffer.
-     * 
-     * @param viewport The pixel dimensions in which to render.
-     * @param commandBuffer The Metal command buffer in which SpriteKit should schedule rendering commands.
+     *
+     * @param viewport             The pixel dimensions in which to render.
+     * @param commandBuffer        The Metal command buffer in which SpriteKit should schedule rendering commands.
      * @param renderPassDescriptor The Metal render pass descriptor describing the rendering target.
      */
     @Generated
@@ -155,11 +155,11 @@ public class SKRenderer extends NSObject {
 
     /**
      * Render the scene content using a specific Metal command encoder.
-     * 
-     * @param viewport The pixel dimensions in which to render.
+     *
+     * @param viewport             The pixel dimensions in which to render.
      * @param renderCommandEncoder The Metal render command encoder that SpriteKit will use to encode rendering commands. This method will not call endEncoding.
      * @param renderPassDescriptor The Metal render pass descriptor describing the rendering target.
-     * @param commandQueue The Metal command queue.
+     * @param commandQueue         The Metal command queue.
      */
     @Generated
     @Selector("renderWithViewport:renderCommandEncoder:renderPassDescriptor:commandQueue:")
@@ -169,7 +169,7 @@ public class SKRenderer extends NSObject {
 
     /**
      * Creates a renderer with the specified Metal device.
-     * 
+     *
      * @param device A Metal device.
      * @return A new renderer object.
      */
@@ -195,9 +195,9 @@ public class SKRenderer extends NSObject {
     /**
      * Ignores sibling and traversal order to sort the rendered contents of a scene into the most efficient batching possible.
      * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each other.
-     * 
+     * <p>
      * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in the view.
-     * 
+     * <p>
      * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only zPosition
      * determines render order before the efficiency heuristics are used.
      */
@@ -282,7 +282,7 @@ public class SKRenderer extends NSObject {
 
     /**
      * Update the scene at the specified system time.
-     * 
+     *
      * @param currentTime The timestamp in seconds.
      */
     @Generated

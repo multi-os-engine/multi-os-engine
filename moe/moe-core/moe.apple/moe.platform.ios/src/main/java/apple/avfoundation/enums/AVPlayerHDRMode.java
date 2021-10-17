@@ -5,17 +5,17 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] AVPlayerHDRMode
- * 
+ * <p>
  * A bitfield type that specifies an HDR mode.
- * 
+ * <p>
  * [@constant]	AVPlayerHDRModeHLG
- * 
+ * <p>
  * Indicates that HLG (Hybrid Log-Gamma) HDR mode is available.
  * [@constant]	AVPlayerHDRModeHDR10
- * 
+ * <p>
  * Indicates that HDR10 HDR mode is available.
  * [@constant]	AVPlayerHDRModeDolbyVision
- * 
+ * <p>
  * Indicates that Dolby Vision HDR mode is available.
  */
 @Generated

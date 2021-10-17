@@ -25,4 +25,12 @@ public final class SoundAnalysis {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SNErrorDomain();
+
+    /**
+     * Denotes the first edition of the Apple-provided sound classifier.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SNClassifierIdentifierVersion1();
 }

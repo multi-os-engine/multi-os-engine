@@ -59,7 +59,7 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     /**
      * Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom toolbar
      * when the user scrolls web content.
-     * 
+     * <p>
      * The default value is YES.
      */
     @Generated
@@ -153,7 +153,7 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     /**
      * Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom toolbar
      * when the user scrolls web content.
-     * 
+     * <p>
      * The default value is YES.
      */
     @Generated
@@ -180,4 +180,22 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * An additional button to be shown in SFSafariViewController's toolbar. See @link SFSafariViewControllerActivityButton @/link for more details.
+     * <p>
+     * This allows the user to access powerful functionality from your extension without needing to first show the UIActivityViewController.
+     */
+    @Generated
+    @Selector("activityButton")
+    public native SFSafariViewControllerActivityButton activityButton();
+
+    /**
+     * An additional button to be shown in SFSafariViewController's toolbar. See @link SFSafariViewControllerActivityButton @/link for more details.
+     * <p>
+     * This allows the user to access powerful functionality from your extension without needing to first show the UIActivityViewController.
+     */
+    @Generated
+    @Selector("setActivityButton:")
+    public native void setActivityButton(SFSafariViewControllerActivityButton value);
 }

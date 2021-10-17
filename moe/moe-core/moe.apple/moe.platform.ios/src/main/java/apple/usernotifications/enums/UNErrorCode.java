@@ -34,4 +34,7 @@ public final class UNErrorCode {
     @Generated
     private UNErrorCode() {
     }
+
+    @Generated @NInt public static final long ContentProvidingObjectNotAllowed = 0x00000000000005DCL;
+    @Generated @NInt public static final long ContentProvidingInvalid = 0x00000000000005DDL;
 }

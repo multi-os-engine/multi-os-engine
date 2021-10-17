@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] NFCVASMode
- * 
+ * <p>
  * [@constant] NFCVASModeURLOnly     Reserved.
  * [@constant] NFCVASModeNormal      Full VAS protocol.
  */

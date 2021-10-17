@@ -21,16 +21,16 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum]          HKStatisticsOptions
- * 
+ * <p>
  * Options for specifying which statistics to calculate
- * 
+ * <p>
  * When querying for HKStatistics objects, an options bitmask will specify which statistics will be
- *                calculated.
- * 
- *                Statistics are classified as discrete or cumulative.  If a discrete statistics option is specified for a
- *                cumulative HKQuantityType, an exception will be thrown.  If a cumulative statistics options is specified
- *                for a discrete HKQuantityType, an exception will also be thrown.
- * 
+ * calculated.
+ * <p>
+ * Statistics are classified as discrete or cumulative.  If a discrete statistics option is specified for a
+ * cumulative HKQuantityType, an exception will be thrown.  If a cumulative statistics options is specified
+ * for a discrete HKQuantityType, an exception will also be thrown.
+ * <p>
  * [@constant]      HKStatisticsOptionNone
  * [@constant]      HKStatisticsOptionSeparateBySource
  * [@constant]      HKStatisticsOptionDiscreteAverage      Calculate averageQuantity when creating statistics.

@@ -39,18 +39,18 @@ public final class EventKit {
 
     /**
      * [@constant]   EKEventStoreChangedNotification
-     * 
+     * <p>
      * Notification name sent out when the database is changed by either an external process,
-     *             another event store in the same process, or by calling saveEvent: or removeEvent: on a
-     *             store you are managing. When you receive this notification, you should consider all EKEvent
-     *             instances you have to be invalid. If you had selected events for a date range using
-     *             eventsMatchingPredicate, etc. for display, you should release them and re-fetch the events
-     *             again. If you have an event you are actively using (e.g. you are currently viewing details
-     *             for it or editing it), you can call [EKEvent refresh] to try to revalidate it against the
-     *             latest state of the database. If that method returns YES, you can continue to use the event,
-     *             otherwise, you should release it and abandon what you were doing with it. The view
-     *             controllers provided by EventKitUI automatically deal with this for you.
-     *             This notification will also be posted if access to events or reminders is changed by the user.
+     * another event store in the same process, or by calling saveEvent: or removeEvent: on a
+     * store you are managing. When you receive this notification, you should consider all EKEvent
+     * instances you have to be invalid. If you had selected events for a date range using
+     * eventsMatchingPredicate, etc. for display, you should release them and re-fetch the events
+     * again. If you have an event you are actively using (e.g. you are currently viewing details
+     * for it or editing it), you can call [EKEvent refresh] to try to revalidate it against the
+     * latest state of the database. If that method returns YES, you can continue to use the event,
+     * otherwise, you should release it and abandon what you were doing with it. The view
+     * controllers provided by EventKitUI automatically deal with this for you.
+     * This notification will also be posted if access to events or reminders is changed by the user.
      */
     @Generated
     @CVariable()
@@ -58,12 +58,12 @@ public final class EventKit {
     public static native String EKEventStoreChangedNotification();
 
     /**
-     * [@const]      EKErrorDomain 
-     * 
+     * [@const]      EKErrorDomain
+     * <p>
      * Error domain for NSError values stemming from the EventKit Framework API.
-     * 
+     * <p>
      * This error domain is used as the domain for all NSError instances stemming from the
-     *             EventKit Framework.
+     * EventKit Framework.
      */
     @Generated
     @CVariable()

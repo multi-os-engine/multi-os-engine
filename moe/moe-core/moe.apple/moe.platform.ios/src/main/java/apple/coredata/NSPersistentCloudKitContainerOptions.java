@@ -152,25 +152,11 @@ public class NSPersistentCloudKitContainerOptions extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * databaseScope allows clients to specify the database scope they wish the NSPersistentCloudKitContainer to use
-     * for a given store.
-     * 
-     * Default Value: CKDatabaseScopePrivate
-     * Currently only CKDatabaseScopePrivate and CKDatabaseScopePublic are supported.
-     */
     @Generated
     @Selector("databaseScope")
     @NInt
     public native long databaseScope();
 
-    /**
-     * databaseScope allows clients to specify the database scope they wish the NSPersistentCloudKitContainer to use
-     * for a given store.
-     * 
-     * Default Value: CKDatabaseScopePrivate
-     * Currently only CKDatabaseScopePrivate and CKDatabaseScopePublic are supported.
-     */
     @Generated
     @Selector("setDatabaseScope:")
     public native void setDatabaseScope(@NInt long value);

@@ -28,12 +28,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNBatchNormalizationStatistics
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * MPSCNNBatchNormalizationStatistics updates a MPSCNNBatchNormalizationState
- *             with the batch statistics necessary to perform a batch normalization.
- *             MPSCNNBatchNormalizationStatistics may be executed multiple times with
- *             multiple images to accumulate all the statistics necessary to perform
- *             a batch normalization as described in  https://arxiv.org/pdf/1502.03167v3.pdf.
+ * with the batch statistics necessary to perform a batch normalization.
+ * MPSCNNBatchNormalizationStatistics may be executed multiple times with
+ * multiple images to accumulate all the statistics necessary to perform
+ * a batch normalization as described in  https://arxiv.org/pdf/1502.03167v3.pdf.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -108,16 +108,16 @@ public class MPSCNNBatchNormalizationStatistics extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * While the standard NSSecureCoding/NSCoding method
-     *             -initWithCoder: should work, since the file can't
-     *             know which device your data is allocated on, we
-     *             have to guess and may guess incorrectly.  To avoid
-     *             that problem, use initWithCoder:device instead.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
-     * @param      device      The MTLDevice on which to make the MPSKernel
-     * @return     A new MPSCNNBatchNormalizationStatistics object, or nil if failure.
+     * -initWithCoder: should work, since the file can't
+     * know which device your data is allocated on, we
+     * have to guess and may guess incorrectly.  To avoid
+     * that problem, use initWithCoder:device instead.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSKernel
+     * @param device   The MTLDevice on which to make the MPSKernel
+     * @return A new MPSCNNBatchNormalizationStatistics object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -126,8 +126,8 @@ public class MPSCNNBatchNormalizationStatistics extends MPSCNNKernel {
 
     /**
      * Initialize this kernel on a device.
-     * 
-     *  @param      device      The MTLDevice on which to initialize the kernel.
+     *
+     * @param device The MTLDevice on which to initialize the kernel.
      */
     @Generated
     @Selector("initWithDevice:")

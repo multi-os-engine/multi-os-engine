@@ -30,11 +30,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * VNFaceObservation
- * [@superclass] VNObservation
- * 
+ * [@superclass] VNDetectedObjectObservation
+ * <p>
  * VNFaceObservation is the result of a face detection request or derivatives like a face landmark request.
- * 
- * The properties filled in this obervation depend on the request being performed. For instance if just a VNDetectFaceRectanglesRequest was performed the landmarks will not be populated. VNFaceObservation are also used as inputs to other request as defined by the VNFaceObservationAccepting protocol. An example would be the VNDetectFaceLandmarksRequest. This can be helpful for instance if the face rectangles in an image are not derived from a VNDetectFaceRectanglesRequest but instead come from other sources like EXIF or other face detectors. In that case the client of the API creates a VNFaceObservation with the boundingBox (in normalized coordinates) that were based on those detected faces.
+ * <p>
+ * The properties filled in this obervation depend on the request being performed. For instance, if just a VNDetectFaceRectanglesRequest was performed the landmarks will not be populated. VNFaceObservation are also used as inputs to other request as defined by the VNFaceObservationAccepting protocol. An example would be the VNDetectFaceLandmarksRequest. This can be helpful for instance if the face rectangles in an image are not derived from a VNDetectFaceRectanglesRequest but instead come from other sources like EXIF or other face detectors. In that case the client of the API creates a VNFaceObservation with the boundingBox (in normalized coordinates) that were based on those detected faces.
  */
 @Generated
 @Library("Vision")
@@ -185,10 +185,11 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
 
     /**
      * Create a new VNFaceObservation with a normalized bounding box, roll and yaw.
-     * 
+     *
      * @param requestRevision The revision of the VNDetectFaceRectanglesRequest that provided the bounding box.  If this observation is being created with data that did not originate from a Vision request, this parameter should be VNRequestRevisionUnspecified.
-     * @param roll The roll angle of the face, reported in radians.  A positive angle corresponds to counterclockwise direction, range [-Pi, Pi). If no roll information is avilable, this parameter should be nil.
-     * @param yaw The yaw angle of the face, reported in radians.  A positive angle corresponds to counterclockwise direction, range [-Pi/2, Pi/2). If no yaw information is avilable, this parameter should be nil.
+     * @param roll            The roll angle of the face, reported in radians.  A positive angle corresponds to counterclockwise direction, range [-Pi, Pi). If no roll information is available, this parameter should be nil.
+     * @param yaw             The yaw angle of the face, reported in radians.  A positive angle corresponds to counterclockwise direction, range [-Pi/2, Pi/2). If no yaw information is available, this parameter should be nil.
+     * @param pitch           The pitch angle of the face, reported in radians.  A positive angle corresponds to nodding head down direction, range [-Pi/2, Pi/2]. If no pitch information is available, this parameter should be nil.
      */
     @Generated
     @Selector("faceObservationWithRequestRevision:boundingBox:roll:yaw:")
@@ -208,9 +209,21 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
     public native NSNumber roll();
 
     /**
-     * Face yaw angle populated by VNDetectFaceRectanglesRequest. The yaw is reported in radians, positive angle corresponds to counterclockwise direction, range [-Pi/2, Pi/2). nil value indicates that the yaw angle hasn't been computed
+     * Face yaw angle populated by VNDetectFaceRectanglesRequest. The yaw is reported in radians, positive angle corresponds to counterclockwise direction, range [-Pi/2, Pi/2]. nil value indicates that the yaw angle hasn't been computed
      */
     @Generated
     @Selector("yaw")
     public native NSNumber yaw();
+
+    @Generated
+    @Selector("faceObservationWithRequestRevision:boundingBox:roll:yaw:pitch:")
+    public static native VNFaceObservation faceObservationWithRequestRevisionBoundingBoxRollYawPitch(
+            @NUInt long requestRevision, @ByValue CGRect boundingBox, NSNumber roll, NSNumber yaw, NSNumber pitch);
+
+    /**
+     * Face pitch angle populated by VNDetectFaceRectanglesRequest. The pitch is reported in radians, positive angle corresponds to nodding head down direction, range [-Pi/2, Pi/2]. nil value indicates that the pitch angle hasn't been computed
+     */
+    @Generated
+    @Selector("pitch")
+    public native NSNumber pitch();
 }

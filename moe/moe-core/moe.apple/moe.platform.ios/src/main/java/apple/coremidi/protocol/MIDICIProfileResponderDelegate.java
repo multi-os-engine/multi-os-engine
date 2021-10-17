@@ -14,9 +14,9 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol]  MIDICIProfileResponderDelegate
- * 
+ * <p>
  * Protocol for an NSObject that constructs and issues responses for a MIDICIResponder.
- *            A MIDICIProfileResponderDelegate is required to construct a MIDICIResponder.
+ * A MIDICIProfileResponderDelegate is required to construct a MIDICIResponder.
  */
 @Generated
 @Library("CoreMIDI")

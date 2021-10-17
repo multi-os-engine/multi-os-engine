@@ -30,9 +30,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKDiscreteQuantitySample
- * 
+ * <p>
  * An HKQuantitySample subclass representing a quantity measurement with
- *                discrete aggregation style.
+ * discrete aggregation style.
  */
 @Generated
 @Library("HealthKit")
@@ -68,7 +68,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
 
     /**
      * [@property]      averageQuantity
-     * 
+     * <p>
      * The average of the receiver's quantities
      */
     @Generated
@@ -137,7 +137,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
 
     /**
      * [@property]      maximumQuantity
-     * 
+     * <p>
      * The maximum of the receiver's quantities
      */
     @Generated
@@ -146,7 +146,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
 
     /**
      * [@property]      minimumQuantity
-     * 
+     * <p>
      * The minimum of the receiver's quantities
      */
     @Generated
@@ -155,7 +155,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
 
     /**
      * [@property]      mostRecentQuantity
-     * 
+     * <p>
      * The receiver's quantity with most recent date interval
      */
     @Generated
@@ -164,7 +164,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
 
     /**
      * [@property]      mostRecentQuantityDateInterval
-     * 
+     * <p>
      * The date interval for the receiver's most recent quantity
      */
     @Generated

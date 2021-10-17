@@ -354,7 +354,7 @@ public class UICollectionViewListCell extends UICollectionViewCell {
      * insets of the separators. To align the separators to your content, add constraints to the leading
      * or trailing anchors of this layout guide. When a system-provided content configuration is applied
      * to the cell, the separator will be automatically aligned to the primary text in the content view.
-     * 
+     *
      * @see UICollectionLayoutListConfiguration
      */
     @Generated

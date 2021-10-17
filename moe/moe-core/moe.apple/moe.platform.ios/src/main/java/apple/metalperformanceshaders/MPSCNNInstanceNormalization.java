@@ -31,13 +31,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNInstanceNormalization
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * This kernel normalizes each image, on a per-channel basis, to
- *             have zero mean and unit variance:
- * 
- *             for each image:
- *                 for each channel:
- *                     y = (x - mean) * gamma / sqrt(variance + epsilon) + beta;
+ * have zero mean and unit variance:
+ * <p>
+ * for each image:
+ * for each channel:
+ * y = (x - mean) * gamma / sqrt(variance + epsilon) + beta;
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -107,7 +107,7 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
 
     /**
      * [@property]   epsilon
-     * 
+     * <p>
      * The epsilon value used to bias the variance when normalizing.
      */
     @Generated
@@ -129,16 +129,16 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * While the standard NSSecureCoding/NSCoding method
-     *             -initWithCoder: should work, since the file can't
-     *             know which device your data is allocated on, we
-     *             have to guess and may guess incorrectly.  To avoid
-     *             that problem, use initWithCoder:device instead.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
-     * @param      device      The MTLDevice on which to make the MPSKernel
-     * @return     A new MPSCNNInstanceNormalization object, or nil if failure.
+     * -initWithCoder: should work, since the file can't
+     * know which device your data is allocated on, we
+     * have to guess and may guess incorrectly.  To avoid
+     * that problem, use initWithCoder:device instead.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSKernel
+     * @param device   The MTLDevice on which to make the MPSKernel
+     * @return A new MPSCNNInstanceNormalization object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -151,9 +151,9 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
 
     /**
      * Initialize a MPSCNNInstanceNormalization kernel on a device.
-     * 
-     * @param      dataSource  An object conforming to the MPSCNNInstanceNormalizationDataSource
-     *                         protocol which
+     *
+     * @param dataSource An object conforming to the MPSCNNInstanceNormalizationDataSource
+     *                   protocol which
      */
     @Generated
     @Selector("initWithDevice:dataSource:")
@@ -189,9 +189,9 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
 
     /**
      * Reload data using a data source.
-     * 
-     * @param      dataSource  The data source which will provide the gamma and beta terms
-     *                         to scale and bias the normalized result respectively.
+     *
+     * @param dataSource The data source which will provide the gamma and beta terms
+     *                   to scale and bias the normalized result respectively.
      */
     @Generated
     @Selector("reloadDataSource:")
@@ -207,12 +207,11 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
 
     /**
      * Reload data using new gamma and beta terms contained within an
-     *             MPSCNNInstanceNormalizationGradientState object.
-     * 
-     * @param      commandBuffer               The command buffer on which to encode the reload.
-     * 
-     * @param      gammaAndBetaState           The state containing the updated weights which are to
-     *                                         be reloaded.
+     * MPSCNNInstanceNormalizationGradientState object.
+     *
+     * @param commandBuffer     The command buffer on which to encode the reload.
+     * @param gammaAndBetaState The state containing the updated weights which are to
+     *                          be reloaded.
      */
     @Generated
     @Selector("reloadGammaAndBetaWithCommandBuffer:gammaAndBetaState:")
@@ -230,7 +229,7 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
 
     /**
      * Return a MPSCNNInstanceNormalizationGradientState object for the provided
-     *             source image, source states, and destination image.
+     * source image, source states, and destination image.
      */
     @Generated
     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
@@ -239,7 +238,7 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
 
     /**
      * [@property]   epsilon
-     * 
+     * <p>
      * The epsilon value used to bias the variance when normalizing.
      */
     @Generated

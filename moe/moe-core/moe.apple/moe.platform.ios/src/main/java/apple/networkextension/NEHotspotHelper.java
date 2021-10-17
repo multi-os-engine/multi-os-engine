@@ -43,9 +43,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEHotspotHelper
- * 
- *   The NEHotspotHelper class allows an application to register itself as a
- *   HotspotHelper.
+ * <p>
+ * The NEHotspotHelper class allows an application to register itself as a
+ * HotspotHelper.
  */
 @Generated
 @Library("NetworkExtension")
@@ -133,27 +133,26 @@ public class NEHotspotHelper extends NSObject {
 
     /**
      * logoff:
-     * 
-     *   Terminate the authentication session.
-     * 
-     *   The application invokes this method when it wants to logoff from the
-     *   current network. Invoking this method causes an NEHotspotHelperCommand
-     *   of type kNEHotspotHelperCommandTypeLogoff to be issued to the application's
-     *   'handler' block (see +[NEHotspotHelper registerWithOptions:queue:handler]).
-     * 
-     *   'network' must correspond to the currently associated Wi-Fi network
-     *   i.e. it must have come from the NEHotspotHelperCommand's 'network' property
-     *   or from the +[NEHotspotHelper supportedInterfaces] method.
+     * <p>
+     * Terminate the authentication session.
+     * <p>
+     * The application invokes this method when it wants to logoff from the
+     * current network. Invoking this method causes an NEHotspotHelperCommand
+     * of type kNEHotspotHelperCommandTypeLogoff to be issued to the application's
+     * 'handler' block (see +[NEHotspotHelper registerWithOptions:queue:handler]).
+     * <p>
+     * 'network' must correspond to the currently associated Wi-Fi network
+     * i.e. it must have come from the NEHotspotHelperCommand's 'network' property
+     * or from the +[NEHotspotHelper supportedInterfaces] method.
      * [@note] Notes
      * [@note] 1
-     *   The application MUST NOT actually logoff from the network until it
-     *   receives the command to logoff.
+     * The application MUST NOT actually logoff from the network until it
+     * receives the command to logoff.
      * [@note] 2
-     *   After the application invokes -[NEHotspotHelperResponse deliver] indicating
-     *   kNEHotspotHelperResultSuccess, the Wi-Fi network is disassociated.
-     * 
-     * @return
-     *   YES if the logoff command was successfully queued, NO otherwise.
+     * After the application invokes -[NEHotspotHelperResponse deliver] indicating
+     * kNEHotspotHelperResultSuccess, the Wi-Fi network is disassociated.
+     *
+     * @return YES if the logoff command was successfully queued, NO otherwise.
      */
     @Generated
     @Selector("logoff:")
@@ -167,36 +166,35 @@ public class NEHotspotHelper extends NSObject {
 
     /**
      * registerWithOptions:queue:handler
-     * 
-     *   Register the application as a HotspotHelper.
-     * 
-     *   Once this API is invoked successfully, the application becomes
-     *   eligible to be launched in the background and participate in
-     *   various hotspot related functions.
-     * 
-     *   This function should be called once when the application starts up.
-     *   Invoking it again will have no effect and result in FALSE being returned.
-     * 
-     *   The 'options' dictionary may be nil, or contain the single property
-     *   kNEHotspotHelperOptionDisplayName.
-     * 
+     * <p>
+     * Register the application as a HotspotHelper.
+     * <p>
+     * Once this API is invoked successfully, the application becomes
+     * eligible to be launched in the background and participate in
+     * various hotspot related functions.
+     * <p>
+     * This function should be called once when the application starts up.
+     * Invoking it again will have no effect and result in FALSE being returned.
+     * <p>
+     * The 'options' dictionary may be nil, or contain the single property
+     * kNEHotspotHelperOptionDisplayName.
+     * <p>
      * [@note] Notes
      * [@note] 1
-     *   The application's Info.plist MUST include a UIBackgroundModes array
-     *   containing 'network-authentication'.
+     * The application's Info.plist MUST include a UIBackgroundModes array
+     * containing 'network-authentication'.
      * [@note] 2
-     *   The application MUST set 'com.apple.developer.networking.HotspotHelper'
-     *   as one of its entitlements. The value of the entitlement is a boolean
-     *   value true.
-     * 
+     * The application MUST set 'com.apple.developer.networking.HotspotHelper'
+     * as one of its entitlements. The value of the entitlement is a boolean
+     * value true.
+     *
      * @param options If not nil, 'options' is an NSDictionary containing
-     *   kNEHotspotHelperOption* keys (currently just
-     *   kNEHotspotHelperOptionDisplayName).
-     * @param queue The dispatch_queue_t to invoke the handle block on.
+     *                kNEHotspotHelperOption* keys (currently just
+     *                kNEHotspotHelperOptionDisplayName).
+     * @param queue   The dispatch_queue_t to invoke the handle block on.
      * @param handler The NEHotspotHelperHandler block to execute to process
-     *   helper commands.
-     * @return
-     *   YES if the registration was successful, NO otherwise.
+     *                helper commands.
+     * @return YES if the registration was successful, NO otherwise.
      */
     @Generated
     @Selector("registerWithOptions:queue:handler:")

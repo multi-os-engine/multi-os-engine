@@ -266,10 +266,10 @@ public class NSURLSession extends NSObject {
      * to run to completion.  New tasks may not be created.  The session
      * will continue to make delegate callbacks until URLSession:didBecomeInvalidWithError:
      * has been issued.
-     * 
+     * <p>
      * -finishTasksAndInvalidate and -invalidateAndCancel do not
      * have any effect on the shared session singleton.
-     * 
+     * <p>
      * When invalidating a background session, it is not safe to create another background
      * session with the same identifier until URLSession:didBecomeInvalidWithError: has
      * been issued.

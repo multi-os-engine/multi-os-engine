@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEDNSProtocol
- * 
+ * <p>
  * DNS protocol variants
  */
 @Generated

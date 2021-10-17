@@ -120,9 +120,9 @@ public class BCChatAction extends NSObject {
 
     /**
      * Open the chat transcript configured for a given business.
-     * 
+     *
      * @param businessIdentifier The business identifier for the given business.
-     * @param intentParameters Parameters to be sent with the initial message.
+     * @param intentParameters   Parameters to be sent with the initial message.
      */
     @Generated
     @Selector("openTranscript:intentParameters:")

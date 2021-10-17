@@ -45,12 +45,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNNeuronReLU
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Specifies the ReLU neuron filter.
- *             For each pixel, applies the following function: f(x) = x, if x >= 0
- *                                                                  = a * x if x < 0
- *             This is called Leaky ReLU in literature. Some literature defines
- *             classical ReLU as max(0, x). If you want this behavior, simply pass a = 0
+ * For each pixel, applies the following function: f(x) = x, if x >= 0
+ * = a * x if x < 0
+ * This is called Leaky ReLU in literature. Some literature defines
+ * classical ReLU as max(0, x). If you want this behavior, simply pass a = 0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -173,10 +173,10 @@ public class MPSCNNNeuronReLU extends MPSCNNNeuron {
 
     /**
      * Initialize the ReLU neuron filter
-     * 
-     * @param     device           The device the filter will run on
-     * @param     a                Filter property "a". See class discussion.
-     * @return    A valid MPSCNNNeuronReLU object or nil, if failure.
+     *
+     * @param device The device the filter will run on
+     * @param a      Filter property "a". See class discussion.
+     * @return A valid MPSCNNNeuronReLU object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:a:")

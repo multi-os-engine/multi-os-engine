@@ -45,7 +45,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * SKRange object used to define a range of allowable values 
+ * SKRange object used to define a range of allowable values
  */
 @Generated
 @Library("SpriteKit")

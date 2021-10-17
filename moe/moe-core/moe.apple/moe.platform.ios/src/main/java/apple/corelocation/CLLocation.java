@@ -49,9 +49,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLLocation
- * 
+ * <p>
  * Discussion:
- *   Represents a geographical coordinate along with accuracy and timestamp information.
+ * Represents a geographical coordinate along with accuracy and timestamp information.
  */
 @Generated
 @Library("CoreLocation")
@@ -170,9 +170,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * altitude
-     * 
+     * <p>
      * Discussion:
-     *   Returns the altitude of the location. Can be positive (above sea level) or negative (below sea level).
+     * Returns the altitude of the location. Can be positive (above sea level) or negative (below sea level).
      */
     @Generated
     @Selector("altitude")
@@ -180,9 +180,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * coordinate
-     * 
+     * <p>
      * Discussion:
-     *   Returns the coordinate of the current location.
+     * Returns the coordinate of the current location.
      */
     @Generated
     @Selector("coordinate")
@@ -197,12 +197,12 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * course
-     * 
+     * <p>
      * Discussion:
-     *   Returns the course of the location in degrees true North. Negative if course is invalid.
-     * 
+     * Returns the course of the location in degrees true North. Negative if course is invalid.
+     * <p>
      * Range:
-     *   0.0 - 359.9 degrees, 0 being true North
+     * 0.0 - 359.9 degrees, 0 being true North
      */
     @Generated
     @Selector("course")
@@ -210,9 +210,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * distanceFromLocation:
-     * 
+     * <p>
      * Discussion:
-     *   Returns the lateral distance between two locations.
+     * Returns the lateral distance between two locations.
      */
     @Generated
     @Selector("distanceFromLocation:")
@@ -224,11 +224,11 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * floor
-     * 
+     * <p>
      * Discussion:
-     *   Contains information about the logical floor that you are on
-     *   in the current building if you are inside a supported venue.
-     *   This will be nil if the floor is unavailable.
+     * Contains information about the logical floor that you are on
+     * in the current building if you are inside a supported venue.
+     * This will be nil if the floor is unavailable.
      */
     @Generated
     @Selector("floor")
@@ -236,9 +236,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * getDistanceFrom:
-     * 
+     * <p>
      * Discussion:
-     *   Deprecated. Use -distanceFromLocation: instead.
+     * Deprecated. Use -distanceFromLocation: instead.
      */
     @Generated
     @Deprecated
@@ -247,9 +247,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * horizontalAccuracy
-     * 
+     * <p>
      * Discussion:
-     *   Returns the horizontal accuracy of the location. Negative if the lateral location is invalid.
+     * Returns the horizontal accuracy of the location. Negative if the lateral location is invalid.
      */
     @Generated
     @Selector("horizontalAccuracy")
@@ -265,9 +265,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:speed:timestamp:
-     * 
+     * <p>
      * Discussion:
-     *   Initialize with the specified parameters.
+     * Initialize with the specified parameters.
      */
     @Generated
     @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:speed:timestamp:")
@@ -277,9 +277,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:timestamp:
-     * 
+     * <p>
      * Discussion:
-     *   Initialize with the specified parameters.
+     * Initialize with the specified parameters.
      */
     @Generated
     @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:timestamp:")
@@ -289,9 +289,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * initWithLatitude:longitude:
-     * 
+     * <p>
      * Discussion:
-     *   Initialize with the specified latitude and longitude.
+     * Initialize with the specified latitude and longitude.
      */
     @Generated
     @Selector("initWithLatitude:longitude:")
@@ -299,9 +299,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * speed
-     * 
+     * <p>
      * Discussion:
-     *   Returns the speed of the location in m/s. Negative if speed is invalid.
+     * Returns the speed of the location in m/s. Negative if speed is invalid.
      */
     @Generated
     @Selector("speed")
@@ -315,9 +315,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * timestamp
-     * 
+     * <p>
      * Discussion:
-     *   Returns the timestamp when this location was determined.
+     * Returns the timestamp when this location was determined.
      */
     @Generated
     @Selector("timestamp")
@@ -325,9 +325,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * verticalAccuracy
-     * 
+     * <p>
      * Discussion:
-     *   Returns the vertical accuracy of the location. Negative if the altitude is invalid.
+     * Returns the vertical accuracy of the location. Negative if the altitude is invalid.
      */
     @Generated
     @Selector("verticalAccuracy")
@@ -335,9 +335,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * courseAccuracy
-     * 
+     * <p>
      * Discussion:
-     *   Returns the course accuracy of the location in degrees.  Returns negative if course is invalid.
+     * Returns the course accuracy of the location in degrees.  Returns negative if course is invalid.
      */
     @Generated
     @Selector("courseAccuracy")
@@ -345,9 +345,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:
-     * 
+     * <p>
      * Discussion:
-     *   Initialize with the specified parameters.
+     * Initialize with the specified parameters.
      */
     @Generated
     @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:")
@@ -357,11 +357,45 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * speedAccuracy
-     * 
+     * <p>
      * Discussion:
-     *   Returns the speed accuracy of the location in m/s. Returns -1 if invalid.
+     * Returns the speed accuracy of the location in m/s. Returns -1 if invalid.
      */
     @Generated
     @Selector("speedAccuracy")
     public native double speedAccuracy();
+
+    /**
+     * ellipsoidalAltitude
+     * <p>
+     * Discussion:
+     * Returns the ellipsoidal altitude of the location under the WGS 84 reference frame.
+     * Can be positive or negative.
+     */
+    @Generated
+    @Selector("ellipsoidalAltitude")
+    public native double ellipsoidalAltitude();
+
+    /**
+     * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:sourceInfo
+     * <p>
+     * Discussion:
+     * Initialize with the specified parameters.
+     */
+    @Generated
+    @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:sourceInfo:")
+    public native CLLocation initWithCoordinateAltitudeHorizontalAccuracyVerticalAccuracyCourseCourseAccuracySpeedSpeedAccuracyTimestampSourceInfo(
+            @ByValue CLLocationCoordinate2D coordinate, double altitude, double hAccuracy, double vAccuracy,
+            double course, double courseAccuracy, double speed, double speedAccuracy, NSDate timestamp,
+            CLLocationSourceInformation sourceInfo);
+
+    /**
+     * sourceInformation
+     * <p>
+     * Discussion:
+     * Contains information about the source of this location.
+     */
+    @Generated
+    @Selector("sourceInformation")
+    public native CLLocationSourceInformation sourceInformation();
 }

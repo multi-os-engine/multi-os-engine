@@ -56,7 +56,9 @@ public final class UIDataDetectorTypes {
     /**
      * Enable all types, including types that may be added later
      */
-    @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ? 0xFFFFFFFFFFFFFFFFL : 0x00000000FFFFFFFFL;
+    @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ?
+            0xFFFFFFFFFFFFFFFFL :
+            0x00000000FFFFFFFFL;
 
     @Generated
     private UIDataDetectorTypes() {

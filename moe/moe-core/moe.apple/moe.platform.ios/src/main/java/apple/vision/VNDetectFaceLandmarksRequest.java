@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that will produce face landmark information.
- * 
+ * <p>
  * This request will generate VNFaceObservation objects with the landmarks property populated with information describing face landmarks. If VNFaceObservations are provided via the VNFaceObservationAccepting protocol without the landmarks property populated, new observations will be created as copies of the input VNFaceObservations with the landmarks property populated. If the landmarks property has already been populated, the original VNFaceObservations will be returned. If no VNFaceObservations are provided, face detection will be run first.
  */
 @Generated
@@ -161,7 +161,7 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
 
     /**
      * [@property] property constellation
-     * 
+     * <p>
      * Constellation type defines how many landmark points are used to map a face. Revisions 1, 2, and 3 of the request support 65 points, where Revision 3 also supports 76 points.
      */
     @Generated
@@ -185,7 +185,7 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
 
     /**
      * [@property] property constellation
-     * 
+     * <p>
      * Constellation type defines how many landmark points are used to map a face. Revisions 1, 2, and 3 of the request support 65 points, where Revision 3 also supports 76 points.
      */
     @Generated
@@ -195,4 +195,11 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
+
+    /**
+     * VNFaceObservation with populated landmarks-related properties results.
+     */
+    @Generated
+    @Selector("results")
+    public native NSArray<? extends VNFaceObservation> results();
 }

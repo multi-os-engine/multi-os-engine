@@ -30,4 +30,6 @@ public final class PKPaymentMethodType {
     @Generated
     private PKPaymentMethodType() {
     }
+
+    @Generated @NUInt public static final long EMoney = 0x0000000000000005L;
 }

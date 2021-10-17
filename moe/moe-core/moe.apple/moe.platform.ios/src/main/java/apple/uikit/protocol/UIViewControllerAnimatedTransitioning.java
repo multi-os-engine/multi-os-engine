@@ -33,7 +33,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("UIViewControllerAnimatedTransitioning")
 public interface UIViewControllerAnimatedTransitioning {
     /**
-     * This method can only  be a nop if the transition is interactive and not a percentDriven interactive transition.
+     * This method can only be a no-op if the transition is interactive and not a percentDriven interactive transition.
      */
     @Generated
     @Selector("animateTransition:")

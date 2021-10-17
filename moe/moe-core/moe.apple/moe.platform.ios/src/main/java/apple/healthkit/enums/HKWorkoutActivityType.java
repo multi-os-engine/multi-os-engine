@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum]          HKWorkoutActivityType
- * 
+ * <p>
  * Represents a particular type of workout or exercise
  */
 @Generated

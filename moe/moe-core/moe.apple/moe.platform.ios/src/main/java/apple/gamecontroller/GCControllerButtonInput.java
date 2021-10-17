@@ -158,14 +158,14 @@ public class GCControllerButtonInput extends GCControllerElement {
     /**
      * Buttons are mostly used in a digital sense, thus we have a recommended method for checking for pressed state instead of
      * interpreting the value.
-     * 
+     * <p>
      * As a general guideline a button is pressed if the value exceeds 0. However there may be hysterisis applied
      * to counter noisy input values, thus incidental values around the threshold value may not trigger a change
      * in pressed state.
-     * 
+     * <p>
      * Others buttons may support two-stage actuation, where the button reports a value between 0 and 1 but is only considered
      * pressed when its value is greater than some threshold other than 0.
-     * 
+     *
      * @see pressedChangedHandler
      * @see value
      */
@@ -200,7 +200,7 @@ public class GCControllerButtonInput extends GCControllerElement {
 
     /**
      * A normalized value for the input. Between 0 and 1 for button inputs. Values are saturated and thus never exceed the range of [0, 1].
-     * 
+     *
      * @see valueChangedHandler
      * @see pressed
      */
@@ -243,9 +243,9 @@ public class GCControllerButtonInput extends GCControllerElement {
 
     /**
      * Sets the normalized value for the button input. Will update the pressed state of the button.
-     * 
+     * <p>
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     * 
+     *
      * @param value the value to set the input to.
      * @see value
      */
@@ -256,9 +256,9 @@ public class GCControllerButtonInput extends GCControllerElement {
     /**
      * Some buttons feature capacitive touch capabilities where the user can touch the button
      * without pressing it. In such cases, a button will be touched before it is pressed.
-     * 
+     * <p>
      * For buttons without capacitive sensing, the touched state is true if the value exceeds 0.
-     * 
+     *
      * @see touchChangedHandler
      * @see pressed
      */

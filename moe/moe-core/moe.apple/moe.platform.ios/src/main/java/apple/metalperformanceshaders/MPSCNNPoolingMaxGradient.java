@@ -29,42 +29,42 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNPoolingMaxGradient
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Specifies the filter for computing the gradient of the max pooling filter.
- *             The operation backpropagates a gradient vector using chain rule.
- * 
- *             Dilated Max pooling forward pass is defined as:
- * 
- *                 out(x) = max_{dx \in Window(x)} in(s*x+D*dx), where
- * 
- *             the pooling window definition 'Window(x)' follows MPSCNNPooling specification,
- *             's' is the pixel stride and in() is the source input image and D is the dilation factor.
- *             For MPSCNNPoolingMaxGradient the dilationRate 'D' is one. NOTE: For even-sized pooling
- *             windows with dilation rate greater than one the effective pooling window is centered
- *             around s*x with non-even windows leaning towards top-left corner. For example if
- *             kernel width = 2, dilation rate = 3, then the pooling considers positions '-2' and '+1'
- *             relative to the pooling window center 's*x'.
- * 
- *             Hence the partial derivative of the output value wrt. to the input value needed in the
- *             gradient backpropagation in MPSCNNPoolingGradient is:
- * 
- *                 d out(x)/d in(y) = delta_{x_m, y}, where
- * 
- *             delta_{x,y} is the Kronecker delta symbol (see MPSCNNPoolingAverageGradient) and x_m
- *             is the index of the maximum value in the corresponding pooling window.
- * 
- *             In practice this means that the gradient value for the destination image at pixel 'x' is
- *             the sum over these contributions coming from all pooling windows that contribute
- *             to the max pooling computation in the forward pass, multiplied by the input
- *             gradient value in the source area of the corresponding pooling window. If there are
- *             multiple maximal values within a single pooling window one of them is picked for the
- *             gradient and this decision is implementation specific, which means that it can vary
- *             between different architectures and even between different filter parameters.
- * 
- *             Note: The gradient max pooling needs the secondary input image in order to compute
- *             the indices of maximal values for each pooling window, but this means redundant computations.
- *             Later we may add encode calls to MPSCNNPoolingMax that produce a state that contains the
- *             coordinates of the maximal values to be consumed by the gradient filters.
+ * The operation backpropagates a gradient vector using chain rule.
+ * <p>
+ * Dilated Max pooling forward pass is defined as:
+ * <p>
+ * out(x) = max_{dx \in Window(x)} in(s*x+D*dx), where
+ * <p>
+ * the pooling window definition 'Window(x)' follows MPSCNNPooling specification,
+ * 's' is the pixel stride and in() is the source input image and D is the dilation factor.
+ * For MPSCNNPoolingMaxGradient the dilationRate 'D' is one. NOTE: For even-sized pooling
+ * windows with dilation rate greater than one the effective pooling window is centered
+ * around s*x with non-even windows leaning towards top-left corner. For example if
+ * kernel width = 2, dilation rate = 3, then the pooling considers positions '-2' and '+1'
+ * relative to the pooling window center 's*x'.
+ * <p>
+ * Hence the partial derivative of the output value wrt. to the input value needed in the
+ * gradient backpropagation in MPSCNNPoolingGradient is:
+ * <p>
+ * d out(x)/d in(y) = delta_{x_m, y}, where
+ * <p>
+ * delta_{x,y} is the Kronecker delta symbol (see MPSCNNPoolingAverageGradient) and x_m
+ * is the index of the maximum value in the corresponding pooling window.
+ * <p>
+ * In practice this means that the gradient value for the destination image at pixel 'x' is
+ * the sum over these contributions coming from all pooling windows that contribute
+ * to the max pooling computation in the forward pass, multiplied by the input
+ * gradient value in the source area of the corresponding pooling window. If there are
+ * multiple maximal values within a single pooling window one of them is picked for the
+ * gradient and this decision is implementation specific, which means that it can vary
+ * between different architectures and even between different filter parameters.
+ * <p>
+ * Note: The gradient max pooling needs the secondary input image in order to compute
+ * the indices of maximal values for each pooling window, but this means redundant computations.
+ * Later we may add encode calls to MPSCNNPoolingMax that produce a state that contains the
+ * coordinates of the maximal values to be consumed by the gradient filters.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -139,12 +139,12 @@ public class MPSCNNPoolingMaxGradient extends MPSCNNPoolingGradient {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * See @ref MPSKernel#initWithCoder.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPoolingMaxGradient
-     * @param      device      The MTLDevice on which to make the MPSCNNPoolingMaxGradient
-     * @return     A new MPSCNNPoolingMaxGradient object, or nil if failure.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSCNNPoolingMaxGradient
+     * @param device   The MTLDevice on which to make the MPSCNNPoolingMaxGradient
+     * @return A new MPSCNNPoolingMaxGradient object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -162,13 +162,13 @@ public class MPSCNNPoolingMaxGradient extends MPSCNNPoolingGradient {
 
     /**
      * Initialize a gradient max pooling filter
-     * 
-     * @param      device              The device the filter will run on
-     * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
-     * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.
-     * @param      strideInPixelsX     The input stride (upsampling factor) in the x dimension.
-     * @param      strideInPixelsY     The input stride (upsampling factor) in the y dimension.
-     * @return     A valid MPSCNNPoolingGradient object or nil, if failure.
+     *
+     * @param device          The device the filter will run on
+     * @param kernelWidth     The width of the kernel.  Can be an odd or even value.
+     * @param kernelHeight    The height of the kernel.  Can be an odd or even value.
+     * @param strideInPixelsX The input stride (upsampling factor) in the x dimension.
+     * @param strideInPixelsY The input stride (upsampling factor) in the y dimension.
+     * @return A valid MPSCNNPoolingGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")

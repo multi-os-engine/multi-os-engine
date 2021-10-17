@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBPeripheralState
- * 
+ * <p>
  * Represents the current connection state of a CBPeripheral.
  */
 @Generated

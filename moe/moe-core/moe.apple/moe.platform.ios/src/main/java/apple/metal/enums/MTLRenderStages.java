@@ -20,7 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * Points at which a fence may be waited on or signaled.
+ * Generic render stage enum
+ * <p>
+ * Can also be used for points at which a fence may be waited on or signaled.
  * [@constant] MTLRenderStageVertex   All vertex work prior to rasterization has completed.
  * [@constant] MTLRenderStageFragment All rendering work has completed.
  */
@@ -32,4 +34,6 @@ public final class MTLRenderStages {
     @Generated
     private MTLRenderStages() {
     }
+
+    @Generated @NUInt public static final long Tile = 0x0000000000000004L;
 }

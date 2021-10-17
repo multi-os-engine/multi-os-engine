@@ -45,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NKAssetDownload
- * 
+ * <p>
  * Represents a downloading asset for an issue.
- * 
+ * <p>
  * An NKIssue may have one or more assets that together form the structure
  * of the Newsstand issue. You generate a downloading asset by constructing
  * an NSURLRequest adding the request to the NKIssue using
@@ -169,7 +169,7 @@ public class NKAssetDownload extends NSObject {
 
     /**
      * [@property]   URLRequest
-     * 
+     * <p>
      * The NSURLRequest of the download
      */
     @Generated
@@ -178,7 +178,7 @@ public class NKAssetDownload extends NSObject {
 
     /**
      * downloadWithDelegate:
-     * 
+     * <p>
      * Begins downloading the asset with the specified delegate. Delegate
      * may not be nil.
      */
@@ -189,7 +189,7 @@ public class NKAssetDownload extends NSObject {
 
     /**
      * [@property]   identifier
-     * 
+     * <p>
      * A unique identifier representing the asset.
      */
     @Generated
@@ -209,9 +209,9 @@ public class NKAssetDownload extends NSObject {
 
     /**
      * [@property]   userInfo
-     * 
+     * <p>
      * Application specific information that is saved with the asset. Can be nil.
-     * 
+     * <p>
      * You may add arbitrary key-value pairs to this dictionary. However, the keys
      * and values must be valid property-list types; if any are not, an exception is raised.
      * Using this property you can save download related information such as file name/paths,
@@ -224,9 +224,9 @@ public class NKAssetDownload extends NSObject {
 
     /**
      * [@property]   userInfo
-     * 
+     * <p>
      * Application specific information that is saved with the asset. Can be nil.
-     * 
+     * <p>
      * You may add arbitrary key-value pairs to this dictionary. However, the keys
      * and values must be valid property-list types; if any are not, an exception is raised.
      * Using this property you can save download related information such as file name/paths,

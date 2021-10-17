@@ -32,4 +32,20 @@ public final class MPSIntersectionDataType {
      * Use the DistancePrimitiveIndexInstanceIndexCoordinates struct type
      */
     @Generated @NUInt public static final long DistancePrimitiveIndexInstanceIndexCoordinates = 0x0000000000000004L;
+    /**
+     * Use the MPSIntersectionDistancePrimitiveIndexBufferIndex struct type
+     */
+    @Generated @NUInt public static final long DistancePrimitiveIndexBufferIndex = 0x0000000000000005L;
+    /**
+     * Use the MPSIntersectionDistancePrimitiveIndexBufferIndexCoordinates struct type
+     */
+    @Generated @NUInt public static final long DistancePrimitiveIndexBufferIndexCoordinates = 0x0000000000000006L;
+    /**
+     * Use the DistancePrimitiveIndexBufferIndexInstanceIndex struct type
+     */
+    @Generated @NUInt public static final long DistancePrimitiveIndexBufferIndexInstanceIndex = 0x0000000000000007L;
+    /**
+     * Use the DistancePrimitiveIndexBufferIndexInstanceIndexCoordinates struct type
+     */
+    @Generated @NUInt public static final long DistancePrimitiveIndexBufferIndexInstanceIndexCoordinates = 0x0000000000000008L;
 }

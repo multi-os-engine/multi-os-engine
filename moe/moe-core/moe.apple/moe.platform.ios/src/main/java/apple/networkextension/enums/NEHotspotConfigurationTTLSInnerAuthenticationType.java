@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEHotspotConfigurationEAPTTLSInnerAuthenticationType
- * 
+ * <p>
  * TTLS Inner Authentication Type.
  * [@const] NEHotspotConfigurationEAPTTLSInnerAuthenticationPAP PAP.
  * [@const] NEHotspotConfigurationEAPTTLSInnerAuthenticationCHAP CHAP.

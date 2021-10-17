@@ -157,10 +157,10 @@ public class AVPlayerLayer extends CALayer {
 
     /**
      * layerWithPlayer:
-     * 
+     * <p>
      * Returns an instance of AVPlayerLayer to display the visual output of the specified AVPlayer.
-     * 
-     * @return		An instance of AVPlayerLayer.
+     *
+     * @return An instance of AVPlayerLayer.
      */
     @Generated
     @Selector("playerLayerWithPlayer:")
@@ -201,11 +201,11 @@ public class AVPlayerLayer extends CALayer {
 
     /**
      * [@property]		readyForDisplay
-     * 
+     * <p>
      * Boolean indicating that the first video frame has been made ready for display for the current item of the associated AVPlayer.
-     * [@discusssion]	Use this property as an indicator of when best to show or animate-in an AVPlayerLayer into view. 
-     * 			An AVPlayerLayer may be displayed, or made visible, while this propoerty is NO, however the layer will not have any user-visible content until the value becomes YES. Note that if an animation is added to an AVPlayerLayer before it becomes readyForDisplay the video image displayed inside might not animate with the receiver.
-     * 			This property remains NO for an AVPlayer currentItem whose AVAsset contains no enabled video tracks.
+     * [@discusssion]	Use this property as an indicator of when best to show or animate-in an AVPlayerLayer into view.
+     * An AVPlayerLayer may be displayed, or made visible, while this propoerty is NO, however the layer will not have any user-visible content until the value becomes YES. Note that if an animation is added to an AVPlayerLayer before it becomes readyForDisplay the video image displayed inside might not animate with the receiver.
+     * This property remains NO for an AVPlayer currentItem whose AVAsset contains no enabled video tracks.
      */
     @Generated
     @Selector("isReadyForDisplay")
@@ -213,9 +213,9 @@ public class AVPlayerLayer extends CALayer {
 
     /**
      * [@property]		pixelBufferAttributes
-     * 
+     * <p>
      * The client requirements for the visual output displayed in AVPlayerLayer during playback.
-     * 
+     * <p>
      * Pixel buffer attribute keys are defined in <CoreVideo/CVPixelBuffer.h>
      */
     @Generated
@@ -224,7 +224,7 @@ public class AVPlayerLayer extends CALayer {
 
     /**
      * [@property]		player
-     * 
+     * <p>
      * Indicates the instance of AVPlayer for which the AVPlayerLayer displays visual output
      */
     @Generated
@@ -233,9 +233,9 @@ public class AVPlayerLayer extends CALayer {
 
     /**
      * [@property]		pixelBufferAttributes
-     * 
+     * <p>
      * The client requirements for the visual output displayed in AVPlayerLayer during playback.
-     * 
+     * <p>
      * Pixel buffer attribute keys are defined in <CoreVideo/CVPixelBuffer.h>
      */
     @Generated
@@ -244,7 +244,7 @@ public class AVPlayerLayer extends CALayer {
 
     /**
      * [@property]		player
-     * 
+     * <p>
      * Indicates the instance of AVPlayer for which the AVPlayerLayer displays visual output
      */
     @Generated
@@ -253,11 +253,11 @@ public class AVPlayerLayer extends CALayer {
 
     /**
      * [@property]		videoGravity
-     * 
+     * <p>
      * A string defining how the video is displayed within an AVPlayerLayer bounds rect.
-     * [@discusssion]	Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill 
-     * 					and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default. 
-     * 				See <AVFoundation/AVAnimation.h> for a description of these options.
+     * [@discusssion]	Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
+     * and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
+     * See <AVFoundation/AVAnimation.h> for a description of these options.
      */
     @Generated
     @Selector("setVideoGravity:")
@@ -265,11 +265,11 @@ public class AVPlayerLayer extends CALayer {
 
     /**
      * [@property]		videoGravity
-     * 
+     * <p>
      * A string defining how the video is displayed within an AVPlayerLayer bounds rect.
-     * [@discusssion]	Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill 
-     * 					and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default. 
-     * 				See <AVFoundation/AVAnimation.h> for a description of these options.
+     * [@discusssion]	Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
+     * and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
+     * See <AVFoundation/AVAnimation.h> for a description of these options.
      */
     @Generated
     @Selector("videoGravity")
@@ -277,7 +277,7 @@ public class AVPlayerLayer extends CALayer {
 
     /**
      * [@property]		videoRect
-     * 
+     * <p>
      * The current size and position of the video image as displayed within the receiver's bounds.
      */
     @Generated

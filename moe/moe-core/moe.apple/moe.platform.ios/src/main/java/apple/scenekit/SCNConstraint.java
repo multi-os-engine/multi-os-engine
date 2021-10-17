@@ -49,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNConstraint
- * 
+ * <p>
  * A SCNConstraint is an abstract class that represents a single constraint that can be applied to a node.
  */
 @Generated
@@ -191,7 +191,7 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] influenceFactor
-     * 
+     * <p>
      * Specifies the inflence factor of the receiver. Defaults to 1. Animatable
      */
     @Generated
@@ -233,7 +233,7 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] influenceFactor
-     * 
+     * <p>
      * Specifies the inflence factor of the receiver. Defaults to 1. Animatable
      */
     @Generated
@@ -260,7 +260,7 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] enable
-     * 
+     * <p>
      * Determines whether the constraint is enabled or not. Defaults to YES.
      */
     @Generated
@@ -269,7 +269,7 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] incremental
-     * 
+     * <p>
      * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous versions.
      */
     @Generated
@@ -282,7 +282,7 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] enable
-     * 
+     * <p>
      * Determines whether the constraint is enabled or not. Defaults to YES.
      */
     @Generated
@@ -291,10 +291,14 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] incremental
-     * 
+     * <p>
      * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous versions.
      */
     @Generated
     @Selector("setIncremental:")
     public native void setIncremental(boolean value);
+
+    @Generated
+    @Selector("removeAllAnimationsWithBlendOutDuration:")
+    public native void removeAllAnimationsWithBlendOutDuration(@NFloat double duration);
 }

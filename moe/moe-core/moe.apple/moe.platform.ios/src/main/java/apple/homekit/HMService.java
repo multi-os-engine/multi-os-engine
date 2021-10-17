@@ -44,10 +44,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents a service provided by an accessory.
- * 
+ * <p>
  * This class represents a service provided by an accessory in the home.
- *             A service is composed of one or more characteristics that can be
- *             modified.
+ * A service is composed of one or more characteristics that can be
+ * modified.
  */
 @Generated
 @Library("HomeKit")
@@ -169,9 +169,9 @@ public class HMService extends NSObject {
 
     /**
      * For HMServiceTypeOutlet and HMServiceTypeSwitch, this is the type of the associated service.
-     * 
+     * <p>
      * This could be any of the HomeKit Accessory Profile defined services (except HMServiceTypeOutlet
-     *             or HMServiceTypeSwitch) that supports HMCharacteristicTypePowerState characteristic.
+     * or HMServiceTypeSwitch) that supports HMCharacteristicTypePowerState characteristic.
      */
     @Generated
     @Selector("associatedServiceType")
@@ -179,7 +179,7 @@ public class HMService extends NSObject {
 
     /**
      * Array of HMCharacteristic objects that represents all the characteristics
-     *        provided by the service.
+     * provided by the service.
      */
     @Generated
     @Selector("characteristics")
@@ -191,7 +191,7 @@ public class HMService extends NSObject {
 
     /**
      * Indicates if this services is the primary service.
-     * 
+     * <p>
      * Applications should use this property to show the primary service on the accessory.
      */
     @Generated
@@ -200,9 +200,9 @@ public class HMService extends NSObject {
 
     /**
      * Indicates if this service supports user interaction or not.
-     * 
+     * <p>
      * Applications should use this property to filter out services that the users
-     *             should not directly interact with, e.g. HMServiceTypeAccessoryInformation.
+     * should not directly interact with, e.g. HMServiceTypeAccessoryInformation.
      */
     @Generated
     @Selector("isUserInteractive")
@@ -210,9 +210,9 @@ public class HMService extends NSObject {
 
     /**
      * Array of HMService objects that represents all the services that the service links to.
-     * 
+     * <p>
      * Applications should use this property to show logical grouping of services on the accessory.
-     *             linkedServices will be nil when the service does not link to any other services.
+     * linkedServices will be nil when the service does not link to any other services.
      */
     @Generated
     @Selector("linkedServices")
@@ -227,9 +227,9 @@ public class HMService extends NSObject {
 
     /**
      * Name for the service.
-     * 
+     * <p>
      * Returns the service's name that is associated with HomeKit. The initial value is the value of
-     *             the name characteristic of the service, if it has one.
+     * the name characteristic of the service, if it has one.
      */
     @Generated
     @Selector("name")
@@ -251,22 +251,21 @@ public class HMService extends NSObject {
 
     /**
      * This method is used to set up the service type of the device connected to a contact sensor, switch or an outlet.
-     * 
+     * <p>
      * This method is only valid for the services of the following types:
-     *                 HMServiceTypeOutlet, HMServiceTypeContactSensor and HMServiceTypeSwitch
-     * 
-     *             For services of type HMServiceTypeOutlet and HMServiceTypeSwitch, serviceType can be one of the
-     *             HomeKit Accessory Profile defined services (except HMServiceTypeOutlet or HMServiceTypeSwitch)
-     *             that supports HMCharacteristicTypePowerState characteristic.
-     * 
-     *             For services of type HMServiceTypeContactSensor, serviceType can be one of the following services:
-     *                 HMServiceTypeDoor, HMServiceTypeGarageDoorOpener, HMServiceTypeWindow and HMServiceTypeWindowCovering
-     * 
+     * HMServiceTypeOutlet, HMServiceTypeContactSensor and HMServiceTypeSwitch
+     * <p>
+     * For services of type HMServiceTypeOutlet and HMServiceTypeSwitch, serviceType can be one of the
+     * HomeKit Accessory Profile defined services (except HMServiceTypeOutlet or HMServiceTypeSwitch)
+     * that supports HMCharacteristicTypePowerState characteristic.
+     * <p>
+     * For services of type HMServiceTypeContactSensor, serviceType can be one of the following services:
+     * HMServiceTypeDoor, HMServiceTypeGarageDoorOpener, HMServiceTypeWindow and HMServiceTypeWindowCovering
+     *
      * @param serviceType Service type of the device connected to a contact sensor/switch/outlet service.
-     * 
-     * @param completion Block that is invoked once the request is processed.
-     *                   The NSError provides more information on the status of the request, error
-     *                   will be nil on success.
+     * @param completion  Block that is invoked once the request is processed.
+     *                    The NSError provides more information on the status of the request, error
+     *                    will be nil on success.
      */
     @Generated
     @Selector("updateAssociatedServiceType:completionHandler:")
@@ -275,11 +274,10 @@ public class HMService extends NSObject {
 
     /**
      * This method is used to change the name of the service.
-     * 
+     * <p>
      * The new name is stored in HomeKit and not on the accessory.
-     * 
-     * @param name New name for the service.
-     * 
+     *
+     * @param name       New name for the service.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.

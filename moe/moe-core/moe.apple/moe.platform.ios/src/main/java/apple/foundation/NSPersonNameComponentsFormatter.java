@@ -223,4 +223,18 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     @Selector("style")
     @NInt
     public native long style();
+
+    /**
+     * Specifies the locale to format names. Defaults to autoupdatingCurrentLocale. Also resets to autoupdatingCurrentLocale on assignment of nil.
+     */
+    @Generated
+    @Selector("locale")
+    public native NSLocale locale();
+
+    /**
+     * Specifies the locale to format names. Defaults to autoupdatingCurrentLocale. Also resets to autoupdatingCurrentLocale on assignment of nil.
+     */
+    @Generated
+    @Selector("setLocale:")
+    public native void setLocale(NSLocale value);
 }

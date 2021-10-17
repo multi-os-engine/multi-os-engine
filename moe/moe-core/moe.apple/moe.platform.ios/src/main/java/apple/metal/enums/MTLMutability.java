@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLMutability
- * 
+ * <p>
  * Specifies whether a buffer will be modified between the time it is bound and a compute
  * or render pipeline is executed in a draw or dispatch.
  */

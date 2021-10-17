@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MTLSharedEventListener
- * 
+ * <p>
  * This class provides a simple interface for handling the dispatching of MTLSharedEvent notifications from Metal.
  */
 @Generated

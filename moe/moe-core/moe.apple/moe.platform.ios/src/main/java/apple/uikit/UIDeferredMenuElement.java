@@ -86,12 +86,12 @@ public class UIDeferredMenuElement extends UIMenuElement {
 
     /**
      * Returns a placeholder menu element that is replaced with the result of the block's
-     *           completion handler. A loading UI takes the place of the element in the menu
-     *           until it is fulfilled. While the element may be stored and re-used across menus, its block is
-     *           called only once, when the element is first encountered in a menu.
-     * 
-     * @param elementProvider  Called by the system to request the deferred menu items when the containing menu is presented.
-     *                         Call this block's completion handler when the menu items are available.
+     * completion handler. A loading UI takes the place of the element in the menu
+     * until it is fulfilled. While the element may be stored and re-used across menus, its block is
+     * called only once, when the element is first encountered in a menu.
+     *
+     * @param elementProvider Called by the system to request the deferred menu items when the containing menu is presented.
+     *                        Call this block's completion handler when the menu items are available.
      */
     @Generated
     @Selector("elementWithProvider:")
@@ -183,4 +183,33 @@ public class UIDeferredMenuElement extends UIMenuElement {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Returns a placeholder menu element that is replaced with the result of the block's
+     * completion handler. A loading UI takes the place of the element in the menu
+     * until it is fulfilled. Elements created using this initializer are "uncached",
+     * so their @c elementProvider block is called every time the element is displayed.
+     *
+     * @param elementProvider Called by the system to request the deferred menu items when the containing menu is presented.
+     *                        Call this block's completion handler when the menu items are available.
+     */
+    @Generated
+    @Selector("elementWithUncachedProvider:")
+    public static native UIDeferredMenuElement elementWithUncachedProvider(
+            @ObjCBlock(name = "call_elementWithUncachedProvider") Block_elementWithUncachedProvider elementProvider);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_elementWithUncachedProvider {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_elementWithUncachedProvider {
+            @Generated
+            void call_Block_elementWithUncachedProvider(NSArray<? extends UIMenuElement> arg0);
+        }
+
+        @Generated
+        void call_elementWithUncachedProvider(
+                @ObjCBlock(name = "call_Block_elementWithUncachedProvider") Block_Block_elementWithUncachedProvider completion);
+    }
 }

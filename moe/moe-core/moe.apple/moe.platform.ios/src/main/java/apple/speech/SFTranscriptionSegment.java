@@ -215,7 +215,7 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
     }
 
     /**
-     * Relative to start of utterance
+     * Relative to start of audio
      */
     @Generated
     @Selector("timestamp")

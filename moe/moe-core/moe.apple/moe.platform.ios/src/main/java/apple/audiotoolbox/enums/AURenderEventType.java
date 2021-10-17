@@ -31,4 +31,6 @@ public final class AURenderEventType {
     @Generated
     private AURenderEventType() {
     }
+
+    @Generated public static final byte MIDIEventList = 10;
 }

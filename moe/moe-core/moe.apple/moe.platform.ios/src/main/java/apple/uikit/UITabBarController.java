@@ -47,13 +47,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * UITabBarController manages a button bar and transition view, for an application with multiple top-level modes.
- * 
+ * <p>
  * To use in your application, add its view to the view hierarchy, then add top-level view controllers in order.
  * Most clients will not need to subclass UITabBarController.
- * 
+ * <p>
  * If more than five view controllers are added to a tab bar controller, only the first four will display.
  * The rest will be accessible under an automatically generated More item.
- * 
+ * <p>
  * UITabBarController is rotatable if all of its view controllers are rotatable.
  */
 @Generated
@@ -153,10 +153,6 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
-
-    @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
 
     @Generated
     @Selector("resolveClassMethod:")

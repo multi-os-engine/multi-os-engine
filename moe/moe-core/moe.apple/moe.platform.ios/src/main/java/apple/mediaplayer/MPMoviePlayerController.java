@@ -48,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * -----------------------------------------------------------------------------
  * Movie Player
- * 
+ * <p>
  * See MPMediaPlayback.h for the playback methods.
  */
 @Generated

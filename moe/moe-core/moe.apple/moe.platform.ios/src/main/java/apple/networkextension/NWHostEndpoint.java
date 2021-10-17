@@ -43,9 +43,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NWHostEndpoint
- * 
+ * <p>
  * NWHostEndpoint is a subclass of NWEndpoint. It represents an endpoint backed by a
- * 	hostname and port. Note that a hostname string may be an IP or IPv6 address.
+ * hostname and port. Note that a hostname string may be an IP or IPv6 address.
  */
 @Generated
 @Library("NetworkExtension")
@@ -107,9 +107,9 @@ public class NWHostEndpoint extends NWEndpoint {
 
     /**
      * endpointWithHostname:port:
-     * 
+     *
      * @param hostname A string representation of the hostname or address, such as www.apple.com or 10.0.0.1.
-     * @param port A string containing the port on the host, such as 80.
+     * @param port     A string containing the port on the host, such as 80.
      * @return An initialized NWHostEndpoint object.
      */
     @Generated
@@ -175,7 +175,7 @@ public class NWHostEndpoint extends NWEndpoint {
 
     /**
      * [@property] hostname
-     * 
+     * <p>
      * The endpoint's hostname.
      */
     @Generated
@@ -192,7 +192,7 @@ public class NWHostEndpoint extends NWEndpoint {
 
     /**
      * [@property] port
-     * 
+     * <p>
      * The endpoint's port.
      */
     @Generated

@@ -193,10 +193,10 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * Use these properties to set multiple items in a navigation bar.
      * The older single properties (leftBarButtonItem and rightBarButtonItem) now refer to
      * the first item in the respective array of items.
-     * 
+     * <p>
      * NOTE: You'll achieve the best results if you use either the singular properties or
      * the plural properties consistently and don't try to mix them.
-     * 
+     * <p>
      * leftBarButtonItems are placed in the navigation bar left to right with the first
      * item in the list at the left outside edge and left aligned.
      * rightBarButtonItems are placed right to left with the first item in the list at
@@ -264,10 +264,10 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * Use these properties to set multiple items in a navigation bar.
      * The older single properties (leftBarButtonItem and rightBarButtonItem) now refer to
      * the first item in the respective array of items.
-     * 
+     * <p>
      * NOTE: You'll achieve the best results if you use either the singular properties or
      * the plural properties consistently and don't try to mix them.
-     * 
+     * <p>
      * leftBarButtonItems are placed in the navigation bar left to right with the first
      * item in the list at the left outside edge and left aligned.
      * rightBarButtonItems are placed right to left with the first item in the list at
@@ -455,4 +455,18 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Generated
     @Selector("setBackButtonTitle:")
     public native void setBackButtonTitle(String value);
+
+    /**
+     * When set and this item is topmost, overrides the hosting navigation bar's compactScrollEdgeAppearance. See UINavigationBar.h for further details.
+     */
+    @Generated
+    @Selector("compactScrollEdgeAppearance")
+    public native UINavigationBarAppearance compactScrollEdgeAppearance();
+
+    /**
+     * When set and this item is topmost, overrides the hosting navigation bar's compactScrollEdgeAppearance. See UINavigationBar.h for further details.
+     */
+    @Generated
+    @Selector("setCompactScrollEdgeAppearance:")
+    public native void setCompactScrollEdgeAppearance(UINavigationBarAppearance value);
 }

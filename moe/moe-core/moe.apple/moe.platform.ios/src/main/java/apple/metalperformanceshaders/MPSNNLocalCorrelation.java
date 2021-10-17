@@ -28,20 +28,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNLocalCorrelation
- * 
+ * <p>
  * The MPSNNLocalCorrelation filter computes the correlation between two images locally with a
- *             varying offset on x-y plane between the two source images (controlled by the window and
- *             stride properties) and the end result is summed over the feature channels. The results are
- *             stored in the different feature channels of the destination image, ordered such that the offset
- *             in the x direction is the faster running index.
- * 
- *             Given two images A and B, the output image has (2*windowInX + 1)*(2*windowInY + 1)
- *             feature channels, with each feature channel computed as:
- *                                 O(x, y, f(m, n)) = sum_z{A(x, y, z) * B(x + M[m], y + N[n], z)}
- *             where m runs from {0, 1, ... , (2*windowInX)}, n runs from {0, 1, ... , (2*windowInY)},
- *             f(m, n) = n * (2*windowInY + 1) + m,
- *             M = {-windowInX*strideInX, (-windowInX + 1)*strideInX,  ... 0 ... , (windowInX - 1)*strideInX, windowInX*strideInX},
- *             N = {-windowInY*strideInY, (-windowInY + 1)*strideInY,  ... 0 ... , (windowInY - 1)*strideInY, windowInX*strideInY}
+ * varying offset on x-y plane between the two source images (controlled by the window and
+ * stride properties) and the end result is summed over the feature channels. The results are
+ * stored in the different feature channels of the destination image, ordered such that the offset
+ * in the x direction is the faster running index.
+ * <p>
+ * Given two images A and B, the output image has (2*windowInX + 1)*(2*windowInY + 1)
+ * feature channels, with each feature channel computed as:
+ * O(x, y, f(m, n)) = sum_z{A(x, y, z) * B(x + M[m], y + N[n], z)}
+ * where m runs from {0, 1, ... , (2*windowInX)}, n runs from {0, 1, ... , (2*windowInY)},
+ * f(m, n) = n * (2*windowInY + 1) + m,
+ * M = {-windowInX*strideInX, (-windowInX + 1)*strideInX,  ... 0 ... , (windowInX - 1)*strideInX, windowInX*strideInX},
+ * N = {-windowInY*strideInY, (-windowInY + 1)*strideInY,  ... 0 ... , (windowInY - 1)*strideInY, windowInX*strideInY}
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -116,12 +116,12 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * See @ref MPSKernel#initWithCoder.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
-     * @param      device      The MTLDevice on which to make the MPSCNNPooling
-     * @return     A new MPSCNNPooling object, or nil if failure.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
+     * @param device   The MTLDevice on which to make the MPSCNNPooling
+     * @return A new MPSCNNPooling object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -130,9 +130,9 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Initialize the MPSNNLocalCorrelation filter with default property values.
-     * 
-     * @param     device            The device the filter will run on
-     * @return    A valid MPSNNReduceLocalCorrelation object or nil, if failure.
+     *
+     * @param device The device the filter will run on
+     * @return A valid MPSNNReduceLocalCorrelation object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
@@ -140,15 +140,15 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies information to apply the local correlation operation on an image.
-     * 
-     * @param    device                The device the filter will run on
-     * @param    windowInX             Specifies a symmetric window around 0 for offsetting
-     *                                 the secondary source in the x dimension.
-     * @param    windowInY             Specifies a symmetric window around 0 for offsetting
-     *                                 the secondary source in the y dimension.
-     * @param    strideInX             Specifies the stride for the offset in the x dimension.
-     * @param    strideInY             Specifies the stride for the offset in the y dimension.
-     * @return   A valid MPSNNReduceLocalCorrelation object or nil, if failure.
+     *
+     * @param device    The device the filter will run on
+     * @param windowInX Specifies a symmetric window around 0 for offsetting
+     *                  the secondary source in the x dimension.
+     * @param windowInY Specifies a symmetric window around 0 for offsetting
+     *                  the secondary source in the y dimension.
+     * @param strideInX Specifies the stride for the offset in the x dimension.
+     * @param strideInY Specifies the stride for the offset in the y dimension.
+     * @return A valid MPSNNReduceLocalCorrelation object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:windowInX:windowInY:strideInX:strideInY:")
@@ -193,7 +193,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies the stride for the offset in the x dimension.
-     * 
+     * <p>
      * strideInX must be > 0. The default value for strideInX is 1.
      */
     @Generated
@@ -202,7 +202,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies the stride for the offset in the y dimension.
-     * 
+     * <p>
      * strideInY must be > 0. The default value for strideInY is 1.
      */
     @Generated
@@ -215,7 +215,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies a symmetric window around 0 for offsetting the secondary source in the x dimension.
-     * 
+     * <p>
      * The default value for windowInX is 0.
      */
     @Generated
@@ -224,7 +224,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies a symmetric window around 0 for offsetting the secondary source in the y dimension.
-     * 
+     * <p>
      * The default value for windowInY is 0.
      */
     @Generated
@@ -233,7 +233,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies the stride for the offset in the x dimension.
-     * 
+     * <p>
      * strideInX must be > 0. The default value for strideInX is 1.
      */
     @Generated
@@ -243,7 +243,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies the stride for the offset in the y dimension.
-     * 
+     * <p>
      * strideInY must be > 0. The default value for strideInY is 1.
      */
     @Generated
@@ -272,7 +272,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies a symmetric window around 0 for offsetting the secondary source in the x dimension.
-     * 
+     * <p>
      * The default value for windowInX is 0.
      */
     @Generated
@@ -282,7 +282,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies a symmetric window around 0 for offsetting the secondary source in the y dimension.
-     * 
+     * <p>
      * The default value for windowInY is 0.
      */
     @Generated

@@ -183,7 +183,7 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     public native UIBarAppearance initWithCoder(NSCoder coder);
 
     /**
-     * Constructs a new bar appearance, targetting the passed-in idiom as a hint. Not all platforms support all available idioms. See the idiom property to determine the resolved idiom.
+     * Constructs a new bar appearance, targeting the passed-in idiom as a hint. Not all platforms support all available idioms. See the idiom property to determine the resolved idiom.
      */
     @Generated
     @Selector("initWithIdiom:")

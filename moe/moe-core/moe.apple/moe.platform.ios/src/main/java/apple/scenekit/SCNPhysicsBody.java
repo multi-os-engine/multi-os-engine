@@ -49,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPhysicsBody
- * 
+ * <p>
  * The SCNPhysicsBody class describes the physics properties (such as mass, friction...) of a node.
  */
 @Generated

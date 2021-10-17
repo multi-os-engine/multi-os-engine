@@ -26,12 +26,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NFCVASReaderSession
- * 
+ * <p>
  * Reader session for processing Value Added Service (VAS) tags.  This session requires the "com.apple.developer.nfc.readersession.formats"
- *             entitlement in your process.  In addition your application's Info.plist must contain a non-empty usage description string.
- *             [@link] NFCReaderErrorSecurityViolation @link/ will be returned from @link [NFCVASReaderSessionDelegate readerSession:didInvalidateWithError:] @link/
- *             if the required entitlement is missing when session is started.
- * 
+ * entitlement in your process.  In addition your application's Info.plist must contain a non-empty usage description string.
+ * [@link] NFCReaderErrorSecurityViolation @link/ will be returned from @link [NFCVASReaderSessionDelegate readerSession:didInvalidateWithError:] @link/
+ * if the required entitlement is missing when session is started.
+ * <p>
  * NOTE:
  * Only one NFCReaderSession can be active at any time in the system. Subsequent opened sessions will get queued up and processed by the system in FIFO order.
  */
@@ -104,30 +104,29 @@ public class NFCVASReaderSession extends NFCReaderSession {
 
     /**
      * initWithVASCommandConfigurations:delegate:queue:invalidateAfterFirstRead:
-     * 
+     * <p>
      * A VAS reader session will automatically scan and detect tag that is compatible with the VAS protocol.  The session will advertise as a
-     *                  VAS App Only terminal.  A modal system UI will present once -beginSession is called to inform the start of the session; the UI sheet
-     *                  is automatically dismissed when the session is invalidated either by the user or by calling -invalidateSession.  The alertMessage property shall be set
-     *                  prior to -beginSession to display a message on the action sheet UI for the tag scanning operation.
-     * 
-     *                  The reader session has the following properties:
-     *                  + An opened session has a 60 seconds time limit restriction after -beginSession is called; -readerSession:didInvalidateWithError: will return
-     *                  NFCReaderSessionInvalidationErrorSessionTimeout error when the time limit is reached.
-     *                  + Only 1 active reader session is allowed in the system; -readerSession:didInvalidateWithError: will return NFCReaderSessionInvalidationErrorSystemIsBusy
-     *                  when a new reader session is initiated by -beginSession when there is an active reader session.
-     *                  + -readerSession:didInvalidateWithError: will return NFCReaderSessionInvalidationErrorUserCanceled when user clicks on the done button on the UI.
-     *                  + -readerSession:didInvalidateWithError: will return NFCReaderSessionInvalidationErrorSessionTerminatedUnexpectedly when the client application enters
-     *                  the background state.
-     *                  + -readerSession:didInvalidateWithError: will return NFCReaderErrorUnsupportedFeature when 1) reader mode feature is not available on the hardware,
-     *                  2) client application does not have the required entitlement.
-     * 
-     * @param commandConfigurations     NSArray of NFCVASCommandConfiguration objects.  Each NFCVASCommandConfiguration defines one GET VAS DATA command send to
-     *                                  a compatible tag when discovered.  The order of elements in the array defines the order of the command execution.
-     * @param delegate  The session will hold a weak ARC reference to this @link NFCVASReaderSessionDelegate @link/ object.
-     * @param queue     A dispatch queue where NFCVASReaderSessionDelegate delegate callbacks will be dispatched to.  A <i>nil</i> value will
-     *                  cause the creation of a serial dispatch queue internally for the session.  The session object will retain the provided dispatch queue.
-     * 
-     * @return          A new NFCVASReaderSession instance.
+     * VAS App Only terminal.  A modal system UI will present once -beginSession is called to inform the start of the session; the UI sheet
+     * is automatically dismissed when the session is invalidated either by the user or by calling -invalidateSession.  The alertMessage property shall be set
+     * prior to -beginSession to display a message on the action sheet UI for the tag scanning operation.
+     * <p>
+     * The reader session has the following properties:
+     * + An opened session has a 60 seconds time limit restriction after -beginSession is called; -readerSession:didInvalidateWithError: will return
+     * NFCReaderSessionInvalidationErrorSessionTimeout error when the time limit is reached.
+     * + Only 1 active reader session is allowed in the system; -readerSession:didInvalidateWithError: will return NFCReaderSessionInvalidationErrorSystemIsBusy
+     * when a new reader session is initiated by -beginSession when there is an active reader session.
+     * + -readerSession:didInvalidateWithError: will return NFCReaderSessionInvalidationErrorUserCanceled when user clicks on the done button on the UI.
+     * + -readerSession:didInvalidateWithError: will return NFCReaderSessionInvalidationErrorSessionTerminatedUnexpectedly when the client application enters
+     * the background state.
+     * + -readerSession:didInvalidateWithError: will return NFCReaderErrorUnsupportedFeature when 1) reader mode feature is not available on the hardware,
+     * 2) client application does not have the required entitlement.
+     *
+     * @param commandConfigurations NSArray of NFCVASCommandConfiguration objects.  Each NFCVASCommandConfiguration defines one GET VAS DATA command send to
+     *                              a compatible tag when discovered.  The order of elements in the array defines the order of the command execution.
+     * @param delegate              The session will hold a weak ARC reference to this @link NFCVASReaderSessionDelegate @link/ object.
+     * @param queue                 A dispatch queue where NFCVASReaderSessionDelegate delegate callbacks will be dispatched to.  A <i>nil</i> value will
+     *                              cause the creation of a serial dispatch queue internally for the session.  The session object will retain the provided dispatch queue.
+     * @return A new NFCVASReaderSession instance.
      */
     @Generated
     @Selector("initWithVASCommandConfigurations:delegate:queue:")

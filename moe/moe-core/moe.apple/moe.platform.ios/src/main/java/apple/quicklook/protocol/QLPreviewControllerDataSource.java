@@ -37,7 +37,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface QLPreviewControllerDataSource {
     /**
      * Returns the number of items that the preview controller should preview.
-     * 
+     *
      * @param controller The Preview Controller.
      * @return The number of items.
      */
@@ -48,9 +48,9 @@ public interface QLPreviewControllerDataSource {
 
     /**
      * Returns the item that the preview controller should preview.
-     * 
+     *
      * @param controller The Preview Controller.
-     * @param index The index of the item to preview.
+     * @param index      The index of the item to preview.
      * @return An item conforming to the QLPreviewItem protocol.
      */
     @Generated

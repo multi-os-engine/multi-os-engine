@@ -32,12 +32,22 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The file provider manager allows you to communicate with the file provider
- * framework for purposes that may be relevant from both the extension and
- * the containing application (or sibling extensions).
- * 
+ * framework from both the extension and related processes.
+ * <p>
+ * NSFileProviderManager can be used from the following processes:
+ * - the extension
+ * - the main app containing the extension
+ * - sibling extensions to the extension
+ * - executables contained in the main app bundle (on macOS only)
+ * <p>
+ * Executables contained in the main app bundle need to have a bundle identifier that is
+ * prefixed by the bundle identifier of the main app (note that this is generally required
+ * for extensions). They must also have access to the document group defined for the provider
+ * (via its `NSExtensionFileProviderDocumentGroup` key).
+ * <p>
  * The file provider framework will invoke your file provider extension in response
  * to those calls if appropriate.
- * 
+ * <p>
  * The class also provides methods to manage provider domains. Each domain has a
  * corresponding manager.
  */
@@ -61,6 +71,13 @@ public class NSFileProviderManager extends NSObject {
 
     /**
      * Register a domain in which items can be stored.
+     * <p>
+     * If a domain with the same identifier already exists, `addDomain` will update the display name
+     * and hidden state of the domain and succeed.
+     * <p>
+     * When the domain is backed by a NSFileProviderReplicatedExtension, the system will create
+     * a disk location where the domain will be replicated. If that location already exists on disk
+     * this call will fail with the code NSFileWriteFileExistsError.
      */
     @Generated
     @Selector("addDomain:completionHandler:")
@@ -126,7 +143,7 @@ public class NSFileProviderManager extends NSObject {
      * NSExtensionFileProviderDocumentGroup property on your extension. The document
      * storage URL is the folder "File Provider Storage" in the corresponding
      * container.
-     * 
+     * <p>
      * If the NSExtensionFileProviderDocumentGroup property is not set, calling this
      * method will result in an error.
      */
@@ -274,26 +291,26 @@ public class NSFileProviderManager extends NSObject {
     /**
      * Call this method either in the app or in the extension to trigger an
      * enumeration, typically in response to a push.
-     * 
+     * <p>
      * Set the containerItemIdentifier to the identifier of the enumerated container
      * that was specified in
      * -[NSFileProviderExtension enumeratorForContainerItemIdentifier:error:]
-     * 
+     * <p>
      * This will trigger another call to
      * -[NSFileProviderEnumerator enumerateChangesForObserver:fromSyncAnchor:]
      * and the UI will be refreshed, giving the user live updates on the presented
      * enumeration.
-     * 
+     * <p>
      * If you have a change in the working set, call this method with
      * containerItemIdentifier set to NSFileProviderWorkingSetContainerItemIdentifier,
      * even if there is no live enumeration for this item.  The working set is cached
      * on the device and it's important to keep the cache in sync.
-     * 
+     * <p>
      * In addition to using this method, your application/extension can register for
      * pushes using the PKPushTypeFileProvider push type. Pushes of the form
      * {
-     *     container-identifier = "<identifier>"
-     *     domain = "<domain identifier>"
+     * container-identifier = "<identifier>"
+     * domain = "<domain identifier>"
      * }
      * with a topic of "<your application identifier>.pushkit.fileprovider" will be
      * translated into a call to signalEnumeratorForContainerItemIdentifier:completionHandler:.
@@ -328,14 +345,14 @@ public class NSFileProviderManager extends NSObject {
      * - or via a coordination with the
      * NSFileCoordinatorReadingImmediatelyAvailableMetadataOnly flag set
      * - to verify whether an application has access to a file
-     * 
+     * <p>
      * Your extension should provide placeholders by implementing the
      * providePlaceholderAtURL: method, but your application may choose to proactively
      * write out placeholders to facilitate access to files. This is especially useful
      * if your application wants to actively hand out a file URL, e.g. using
      * UIActivityViewController, in which case it should ensure that either the file
      * or a placeholder is present on disk first.
-     * 
+     * <p>
      * The path of the placeholder is fixed and must be determined in advance by
      * calling the placeholderURLForURL: method.
      */

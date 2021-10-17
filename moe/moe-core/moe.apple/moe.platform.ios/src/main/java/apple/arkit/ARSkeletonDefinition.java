@@ -26,7 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Definition of a skeleton.
- * 
+ * <p>
  * A skeleton consists of a set of labeled joints that are defined in a certain hierarchy, i.e. joints are parented to other joints.
  * One may use the parentIndices property to identify the hierarchy for a given skeleton definition.
  */
@@ -86,7 +86,7 @@ public class ARSkeletonDefinition extends NSObject {
 
     /**
      * Default skeleton definition for bodies defined in 2D.
-     * 
+     *
      * @see ARBody2D
      */
     @Generated
@@ -96,7 +96,7 @@ public class ARSkeletonDefinition extends NSObject {
     /**
      * Default skeleton definition for bodies defined in 3D.
      * [@note] The default height of this skeleton, measured from lowest to highest joint in standing position, is defined to be 1.71 meters.
-     * 
+     *
      * @see ARSkeleton3D
      */
     @Generated
@@ -114,9 +114,9 @@ public class ARSkeletonDefinition extends NSObject {
 
     /**
      * Returns the index for a given joint identifier.
-     * 
+     * <p>
      * This function returns NSNotFound if an invalid joint name is passed.
-     * 
+     *
      * @param jointName Name of a given joint.
      * @return Joint index.
      */
@@ -167,7 +167,7 @@ public class ARSkeletonDefinition extends NSObject {
 
     /**
      * The 3D skeleton in neutral pose.
-     * 
+     * <p>
      * The neutral skeleton pose assumes a standardized size of the skeleton in meters. The neutral pose is defined as the skeleton's T-pose.
      */
     @Generated
@@ -182,7 +182,7 @@ public class ARSkeletonDefinition extends NSObject {
 
     /**
      * The parent index for each joint.
-     * 
+     * <p>
      * This property may be used to identify the hierarchical dependency between joints. If a line is drawn for every joint and its parent joint
      * the result is a visualization of the underlying skeleton. The joint with no parent is denoted as the root joint. The root joint's parent index has
      * a value of -1.

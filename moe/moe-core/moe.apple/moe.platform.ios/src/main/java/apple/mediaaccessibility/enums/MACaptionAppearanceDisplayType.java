@@ -21,15 +21,15 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] MACaptionAppearanceDisplayType
- * 
+ * <p>
  * MACaptionAppearanceDisplayType is used to specify the the type of captions that should be displayed
- * 
+ * <p>
  * [@constant] kMACaptionAppearanceDisplayTypeForcedOnly
- *    Only forced captions for translation should be displayed.
+ * Only forced captions for translation should be displayed.
  * [@constant] kMACaptionAppearanceDisplayTypeAutomatic
- *    If the language of the audio track differs from the system locale then captions matching the system locale should be displayed (if available).
+ * If the language of the audio track differs from the system locale then captions matching the system locale should be displayed (if available).
  * [@constant] kMACaptionAppearanceDisplayTypeAlwaysOn
- *    The best available captioning track should always be displayed, whether it be CC, SDH, or subtitles.
+ * The best available captioning track should always be displayed, whether it be CC, SDH, or subtitles.
  */
 @Generated
 public final class MACaptionAppearanceDisplayType {

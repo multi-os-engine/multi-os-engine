@@ -42,7 +42,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * If intending to use a UISearchController in a non-presentation manner, use this container view controller.
+ * Use this container view controller for UISearchController containment or presentation on tvOS
  */
 @Generated
 @Library("UIKit")
@@ -141,10 +141,6 @@ public class UISearchContainerViewController extends UIViewController {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
-
-    @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -234,7 +234,7 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
 
     /**
      * Executes the fetch request on the store to get objects.
-     * Returns YES if successful or NO (and an error) if a problem occurred. 
+     * Returns YES if successful or NO (and an error) if a problem occurred.
      * An error is returned if the fetch request specified doesn't include a sort descriptor that uses sectionNameKeyPath.
      * After executing this method, the fetched objects can be accessed with the property 'fetchedObjects'
      */

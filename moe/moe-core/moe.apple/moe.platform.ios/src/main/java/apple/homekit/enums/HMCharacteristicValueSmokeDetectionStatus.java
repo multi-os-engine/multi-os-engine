@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueSmokeDetectionStatus
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueSmokeDetectionStatusNone      Smoke is not detected.
  * [@constant]  HMCharacteristicValueSmokeDetectionStatusDetected  Smoke is detected.
  */

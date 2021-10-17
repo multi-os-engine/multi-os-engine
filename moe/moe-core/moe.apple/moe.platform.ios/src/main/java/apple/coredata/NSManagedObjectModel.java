@@ -279,14 +279,14 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
      * NSDictionary containing localized string values for entities, properties, and error strings related to this model. The key and value pattern follows:
      * key = "Entity/NonLocalizedEntityName"
      * value = "LocalizedEntityName"
-     * 
+     * <p>
      * // for properties of the same non-localized name in differenct entities, which should have different localized names
-     * key = "Property/NonLocalizedPropertyName/Entity/EntityName" 
+     * key = "Property/NonLocalizedPropertyName/Entity/EntityName"
      * value = "LocalizedPropertyName"
-     * 
+     * <p>
      * key = "Property/NonLocalizedPropertyName"
      * value = "LocalizedPropertyName"
-     * 
+     * <p>
      * key = "ErrorString/NonLocalizedErrorString"
      * value = "LocalizedErrorString"
      */
@@ -314,14 +314,14 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
      * NSDictionary containing localized string values for entities, properties, and error strings related to this model. The key and value pattern follows:
      * key = "Entity/NonLocalizedEntityName"
      * value = "LocalizedEntityName"
-     * 
+     * <p>
      * // for properties of the same non-localized name in differenct entities, which should have different localized names
-     * key = "Property/NonLocalizedPropertyName/Entity/EntityName" 
+     * key = "Property/NonLocalizedPropertyName/Entity/EntityName"
      * value = "LocalizedPropertyName"
-     * 
+     * <p>
      * key = "Property/NonLocalizedPropertyName"
      * value = "LocalizedPropertyName"
-     * 
+     * <p>
      * key = "ErrorString/NonLocalizedErrorString"
      * value = "LocalizedErrorString"
      */

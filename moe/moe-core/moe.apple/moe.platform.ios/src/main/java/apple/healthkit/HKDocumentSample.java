@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKDocumentSample
- * 
+ * <p>
  * An abstract class representing a health document.
  */
 @Generated

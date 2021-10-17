@@ -83,7 +83,7 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
      * If no matching name is found, or no descriptions of the provided sessionType exist in your Info.plist,
      * then an instance with a nil sceneSubclass, delegateClass, and storyboard is returned.
      * The name parameter passed in is used to lookup a predefined configuration from your app's Info.plist.
-     * the returned UISceneConfiguration instance is not guarenteed to share the value of the parameter.
+     * the returned UISceneConfiguration instance is not guaranteed to share the value of the parameter.
      */
     @Generated
     @Selector("configurationWithName:sessionRole:")

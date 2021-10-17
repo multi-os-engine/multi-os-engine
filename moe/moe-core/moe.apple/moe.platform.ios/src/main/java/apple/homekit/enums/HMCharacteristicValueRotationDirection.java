@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueRotationDirection
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueRotationDirectionClockwise         Clockwise.
  * [@constant]  HMCharacteristicValueRotationDirectionCounterClockwise  Counter-clockwise.
  */

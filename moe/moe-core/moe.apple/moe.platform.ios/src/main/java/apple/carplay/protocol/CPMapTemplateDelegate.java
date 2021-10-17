@@ -46,7 +46,7 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Called when the map interface has displayed a navigation alert.
-     * 
+     * <p>
      * To take action in response to button presses on the navigation alert, see -[CPAlertAction handler].
      */
     @Generated
@@ -69,7 +69,7 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Changes the visual layout of the maneuver.
-     * 
+     *
      * @return a CPManeuverDisplayStyle value representing the style to be used for displaying the maneuver
      */
     @Generated
@@ -123,7 +123,7 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Determines if the maneuver should be presented as a notification when the app is in the background.
-     * 
+     *
      * @return YES if the maneuver should appear as a notification, otherwise NO
      */
     @Generated
@@ -135,8 +135,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Determines if the navigation alert should be presented as a notification when the app is in the background.
-     * 
-     *  @return YES if the alert should appear as a notification, otherwise NO
+     *
+     * @return YES if the alert should appear as a notification, otherwise NO
      */
     @Generated
     @IsOptional
@@ -148,8 +148,8 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Determines if the updated distance remaining for the maneuver should be presented as a notification when the app is in the background.
-     * 
-     *  @return YES if the updated estimates should appear in the notification, otherwise NO
+     *
+     * @return YES if the updated estimates should appear in the notification, otherwise NO
      */
     @Generated
     @IsOptional
@@ -203,7 +203,7 @@ public interface CPMapTemplateDelegate {
 
     /**
      * Called when navigation has been canceled by the system.
-     * 
+     * <p>
      * [@note] In CarPlay systems that have native navigation, it is expected that only either the native navigation or the iPhone
      * can be actively navigating. When navigation begins in the native system, all CarPlay supported navigation
      * apps that are actively navigating will need to end their navigation session.

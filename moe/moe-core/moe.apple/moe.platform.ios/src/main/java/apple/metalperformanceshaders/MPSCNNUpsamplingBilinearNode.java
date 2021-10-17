@@ -95,11 +95,11 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSCNNUpsamplingBilinear kernel
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      integerScaleFactorX     The upsampling factor for the x dimension.
-     * @param      integerScaleFactorY     The upsampling factor for the y dimension.
-     * @return     A new MPSNNFilter node for a MPSCNNUpsamplingBilinear kernel.
+     *
+     * @param sourceNode          The MPSNNImageNode representing the source MPSImage for the filter
+     * @param integerScaleFactorX The upsampling factor for the x dimension.
+     * @param integerScaleFactorY The upsampling factor for the y dimension.
+     * @return A new MPSNNFilter node for a MPSCNNUpsamplingBilinear kernel.
      */
     @Generated
     @Selector("initWithSource:integerScaleFactorX:integerScaleFactorY:")
@@ -135,11 +135,11 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
 
     /**
      * Init a autoreleased node representing a MPSCNNUpsamplingBilinear kernel
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      integerScaleFactorX     The upsampling factor for the x dimension.
-     * @param      integerScaleFactorY     The upsampling factor for the y dimension.
-     * @return     A new MPSNNFilter node for a MPSCNNUpsamplingBilinear kernel.
+     *
+     * @param sourceNode          The MPSNNImageNode representing the source MPSImage for the filter
+     * @param integerScaleFactorX The upsampling factor for the x dimension.
+     * @param integerScaleFactorY The upsampling factor for the y dimension.
+     * @return A new MPSNNFilter node for a MPSCNNUpsamplingBilinear kernel.
      */
     @Generated
     @Selector("nodeWithSource:integerScaleFactorX:integerScaleFactorY:")
@@ -181,12 +181,12 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSCNNUpsamplingBilinear kernel
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      integerScaleFactorX     The upsampling factor for the x dimension.
-     * @param      integerScaleFactorY     The upsampling factor for the y dimension.
-     * @param      alignCorners            Specifier whether the centers of the 4 corner pixels of the input and output regions are aligned,
-     * @return     A new MPSNNFilter node for a MPSCNNUpsamplingBilinear kernel.
+     *
+     * @param sourceNode          The MPSNNImageNode representing the source MPSImage for the filter
+     * @param integerScaleFactorX The upsampling factor for the x dimension.
+     * @param integerScaleFactorY The upsampling factor for the y dimension.
+     * @param alignCorners        Specifier whether the centers of the 4 corner pixels of the input and output regions are aligned,
+     * @return A new MPSNNFilter node for a MPSCNNUpsamplingBilinear kernel.
      */
     @Generated
     @Selector("initWithSource:integerScaleFactorX:integerScaleFactorY:alignCorners:")
@@ -196,12 +196,12 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
 
     /**
      * Init a autoreleased node representing a MPSCNNUpsamplingBilinear kernel
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      integerScaleFactorX     The upsampling factor for the x dimension.
-     * @param      integerScaleFactorY     The upsampling factor for the y dimension.
-     * @param      alignCorners            Specifier whether the centers of the 4 corner pixels of the input and output regions are aligned,
-     * @return     A new MPSNNFilter node for a MPSCNNUpsamplingBilinear kernel.
+     *
+     * @param sourceNode          The MPSNNImageNode representing the source MPSImage for the filter
+     * @param integerScaleFactorX The upsampling factor for the x dimension.
+     * @param integerScaleFactorY The upsampling factor for the y dimension.
+     * @param alignCorners        Specifier whether the centers of the 4 corner pixels of the input and output regions are aligned,
+     * @return A new MPSNNFilter node for a MPSCNNUpsamplingBilinear kernel.
      */
     @Generated
     @Selector("nodeWithSource:integerScaleFactorX:integerScaleFactorY:alignCorners:")

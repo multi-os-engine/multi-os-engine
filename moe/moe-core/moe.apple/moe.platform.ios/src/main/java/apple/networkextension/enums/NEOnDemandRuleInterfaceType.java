@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEOnDemandRuleInterfaceType
- * 
+ * <p>
  * On Demand rule network interface types
  */
 @Generated

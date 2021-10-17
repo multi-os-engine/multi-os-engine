@@ -349,8 +349,8 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     /**
      * Support for constraint-based layout (auto layout)
      * The alignmentRectInsets of a UIImage are used by UIImageView and other UIView and UIControl
-     *  subclasses that take custom images to determine the view's alignment rect insets for
-     *  constraint-based layout.
+     * subclasses that take custom images to determine the view's alignment rect insets for
+     * constraint-based layout.
      * The default alignmentRectInsets are UIEdgeInsetsZero.
      */
     @Generated
@@ -575,7 +575,7 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public static native UIImage actionsImage();
 
     /**
-     * currently: white + on green filled cirlce
+     * currently: white + on green filled circle
      */
     @Generated
     @Selector("addImage")
@@ -620,14 +620,14 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public native boolean hasBaseline();
 
     /**
-     * This is a convience method to apply another symbol configuration over an existing one.
-     * If the image doesn't have a symbolconfiguration, it will just merge the traits of the existing
-     * with the new one (where the new traits override the old traits). The symbol in
-     * 
-     * Create a new image by applying the specified configuration over the existing  one.
+     * This is a convenience method to apply another symbol configuration over an existing one.
+     * If the image doesn't have a symbol configuration, it will just merge the traits of the existing
+     * with the new one (where the new traits override the old traits).
+     * <p>
+     * Create a new image by applying the specified configuration over the existing one.
      * This only works if the configuration already has a configuration (i.e. is a symbol image).
      * The image will be configured with a combination of both configurations.
-     * 
+     * <p>
      * If you use this on a symbol image with other layout modifications done (e.g. changed baseline),
      * those changes will be lost and overwritten with the new configuration's layout properties.
      * This applies to size, contentInsets and baseline.
@@ -655,7 +655,7 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
      * * Important note! Given (for example):
      * *
      * *    image = image(named:"the_image").withRenderingMode(.alwaysTemplate)
-     * 
+     * <p>
      * * the following two statements aren't exactly equivalent:
      * *
      * *    a = image.imageAsset.withConfiguration(configuration)
@@ -708,7 +708,7 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
      * This describes the symbol configuration of a symbol image.
      * Symbol images start off with an unspecified configuration but can be modified by using
      * `image.withConfiguration(:)`.
-     * 
+     * <p>
      * However... the preferred ways of adding configurations for displaying images is to specify
      * them on the image view using `preferredSymbolConfiguration`, but it is possible to modify
      * images with a more specific configuration. This include image related traits, for example
@@ -723,10 +723,10 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
      * Retrieve a system-provided image with the specified name.
      * This will only return system-provided images. If you want a custom
      * image as defined in your own catalogs, you should use +imageNamed:.
-     * 
+     * <p>
      * UIKit applications on macOS may pass NSImageName values (defined in
      * <AppKit/NSImage.h>) for the name to access macOS system images.
-     * 
+     * <p>
      * Returns nil if an image with specified name doesn't exist.
      */
     @Generated
@@ -741,4 +741,52 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     @Generated
     @Selector("systemImageNamed:withConfiguration:")
     public static native UIImage systemImageNamedWithConfiguration(String name, UIImageConfiguration configuration);
+
+    /**
+     * Synchronously prepares this image for displaying on the specified screen.
+     * <p>
+     * [@note] The prepared UIImage is not related to the original image. If the properties of the screen (such as its resolution or color gamut) change, or if the image is displayed on a different screen that the one it was prepared for, it may not render correctly.
+     *
+     * @return A UIImage object that contains the prepared image.
+     */
+    @Generated
+    @Selector("imageByPreparingForDisplay")
+    public native UIImage imageByPreparingForDisplay();
+
+    @Generated
+    @Selector("imageByPreparingThumbnailOfSize:")
+    public native UIImage imageByPreparingThumbnailOfSize(@ByValue CGSize size);
+
+    /**
+     * Asynchronously prepares this image for displaying on the specified screen.
+     * <p>
+     * The completion handler will be invoked on a private queue. Be sure to return to the main queue before assigning the prepared image to an image view.
+     * <p>
+     * [@note] The prepared UIImage is not related to the original image. If the properties of the screen (such as its resolution or color gamut) change, or if the image is displayed on a different screen that the one it was prepared for, it may not render correctly.
+     *
+     * @param completionHandler A block to invoke with the prepared image. If preparation failed (for example, beacuse the image data is corrupt), @c image will be nil.
+     */
+    @Generated
+    @Selector("prepareForDisplayWithCompletionHandler:")
+    public native void prepareForDisplayWithCompletionHandler(
+            @ObjCBlock(name = "call_prepareForDisplayWithCompletionHandler") Block_prepareForDisplayWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_prepareForDisplayWithCompletionHandler {
+        @Generated
+        void call_prepareForDisplayWithCompletionHandler(UIImage arg0);
+    }
+
+    @Generated
+    @Selector("prepareThumbnailOfSize:completionHandler:")
+    public native void prepareThumbnailOfSizeCompletionHandler(@ByValue CGSize size,
+            @ObjCBlock(name = "call_prepareThumbnailOfSizeCompletionHandler") Block_prepareThumbnailOfSizeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_prepareThumbnailOfSizeCompletionHandler {
+        @Generated
+        void call_prepareThumbnailOfSizeCompletionHandler(UIImage arg0);
+    }
 }

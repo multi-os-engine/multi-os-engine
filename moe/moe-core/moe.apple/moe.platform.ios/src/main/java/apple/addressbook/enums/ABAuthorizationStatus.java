@@ -22,18 +22,18 @@ import org.moe.natj.general.ann.NInt;
 /**
  * To check the app's access to contact data. Based upon the access, the app could
  * display or hide its UI elements that would access any AddressBook API.
- * 
+ * <p>
  * kABAuthorizationStatusNotDetermined
  * The user has not yet made a choice regarding whether this app can access the data class.
- * 
+ * <p>
  * kABAuthorizationStatusRestricted
  * This application is not authorized to access the data class. The user cannot change
  * this application’s status, possibly due to active restrictions such as parental controls
  * being in place.
- * 
+ * <p>
  * kABAuthorizationStatusDenied
  * The user explicitly denied access to the data class for this application.
- * 
+ * <p>
  * kABAuthorizationStatusAuthorized
  * This application is authorized to access the data class.
  */

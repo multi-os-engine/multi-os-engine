@@ -44,9 +44,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKContainer
- * 
+ * <p>
  * A CKContainer, and its CKDatabases, are the main entry points into the CloudKit framework.
- * 
+ * <p>
  * Several methods in CloudKit accept completion handlers to indicate when they're completed.
  * All CKOperation subclasses include progress and completion blocks to report significant events in their lifecycles.
  * Each of these handlers and blocks is invoked on a non-main serial queue.  The receiver is responsible for handling the message on a different queue or thread if it is required.
@@ -103,7 +103,7 @@ public class CKContainer extends NSObject {
 
     /**
      * Obtain a CKContainer for the given containerIdentifier
-     * 
+     * <p>
      * If the application is in production mode (aka, @c com.apple.developer.icloud-container-environment is set to Production in your entitlements plist, and you have no override in @c com.apple.developer.icloud-container-development-container-identifiers), then the production environment is used.
      */
     @Generated
@@ -116,7 +116,7 @@ public class CKContainer extends NSObject {
 
     /**
      * Convenience method that uses the calling process' "iCloud.\(application-identifier)" as the container identifier
-     * 
+     * <p>
      * application-identifier is the calling process' @c application-identifier entitlement on iOS / tvOS / watchOS.
      * application-identifier is the calling process' @c com.apple.application-identifier entitlement on macOS.
      * On all OSes, if an @c com.apple.developer.associated-application-identifier entitlement is present, its value will be preferred over the @c application-identifier variants.
@@ -202,7 +202,7 @@ public class CKContainer extends NSObject {
 
     /**
      * Convenience methods
-     * 
+     *
      * @return a database that's pointer-equal to one of the above properties@enum
      */
     @Generated
@@ -210,25 +210,40 @@ public class CKContainer extends NSObject {
     public native CKDatabase databaseWithDatabaseScope(@NInt long databaseScope);
 
     /**
-     * Fetches all user records that match an entry in the user's address book.
-     * 
-     * [@c] CKDiscoverUserIdentityOperation is the more configurable, @c CKOperation -based alternatives to these methods
+     * Fetches all user identities that match an entry in the user's contacts database.
+     * <p>
+     * [@c] CKDiscoverAllUserIdentitiesOperation is the more configurable, @c CKOperation -based alternative to this methods
      */
     @Generated
     @Selector("discoverAllIdentitiesWithCompletionHandler:")
     public native void discoverAllIdentitiesWithCompletionHandler(
             @ObjCBlock(name = "call_discoverAllIdentitiesWithCompletionHandler") Block_discoverAllIdentitiesWithCompletionHandler completionHandler);
 
+    /**
+     * Fetches the user identity that corresponds to the given email address.
+     * <p>
+     * Only users who have opted-in to user discoverability will have their identities returned by this method.  If a user with the inputted email exists in iCloud, but has not opted-in to user discoverability, this method completes with a nil @c userInfo.  @c CKDiscoverUserIdentitiesOperation is the more configurable, @c CKOperation -based alternative to this method
+     */
     @Generated
     @Selector("discoverUserIdentityWithEmailAddress:completionHandler:")
     public native void discoverUserIdentityWithEmailAddressCompletionHandler(String email,
             @ObjCBlock(name = "call_discoverUserIdentityWithEmailAddressCompletionHandler") Block_discoverUserIdentityWithEmailAddressCompletionHandler completionHandler);
 
+    /**
+     * Fetches the user identity that corresponds to the given phone number.
+     * <p>
+     * Only users who have opted-in to user discoverability will have their identities returned by this method.  If a user with the inputted phone number exists in iCloud, but has not opted-in to user discoverability, this method completes with a nil @c userInfo.  @c CKDiscoverUserIdentitiesOperation is the more configurable, @c CKOperation -based alternative to this method
+     */
     @Generated
     @Selector("discoverUserIdentityWithPhoneNumber:completionHandler:")
     public native void discoverUserIdentityWithPhoneNumberCompletionHandler(String phoneNumber,
             @ObjCBlock(name = "call_discoverUserIdentityWithPhoneNumberCompletionHandler") Block_discoverUserIdentityWithPhoneNumberCompletionHandler completionHandler);
 
+    /**
+     * Fetches the user identity that corresponds to the given user record id.
+     * <p>
+     * Only users who have opted-in to user discoverability will have their identities returned by this method.  If a user has not opted-in to user discoverability, this method completes with a nil @c userInfo.  @c CKDiscoverUserIdentitiesOperation is the more configurable, @c CKOperation -based alternative to this method
+     */
     @Generated
     @Selector("discoverUserIdentityWithUserRecordID:completionHandler:")
     public native void discoverUserIdentityWithUserRecordIDCompletionHandler(CKRecordID userRecordID,
@@ -257,7 +272,7 @@ public class CKContainer extends NSObject {
 
     /**
      * Fetches share participants matching the provided info.
-     * 
+     * <p>
      * [@c] CKFetchShareParticipantsOperation is the more configurable, @c CKOperation -based alternative to these methods.
      */
     @Generated
@@ -277,7 +292,7 @@ public class CKContainer extends NSObject {
 
     /**
      * If there is no iCloud account configured, or if access is restricted, a @c CKErrorNotAuthenticated error will be returned.
-     * 
+     * <p>
      * This work is treated as having @c NSQualityOfServiceUserInitiated quality of service.
      */
     @Generated
@@ -337,21 +352,21 @@ public class CKContainer extends NSObject {
     @Generated
     public interface Block_discoverUserIdentityWithEmailAddressCompletionHandler {
         @Generated
-        void call_discoverUserIdentityWithEmailAddressCompletionHandler(CKUserIdentity userInfo, NSError error);
+        void call_discoverUserIdentityWithEmailAddressCompletionHandler(CKUserIdentity _Nullable_result);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverUserIdentityWithPhoneNumberCompletionHandler {
         @Generated
-        void call_discoverUserIdentityWithPhoneNumberCompletionHandler(CKUserIdentity userInfo, NSError error);
+        void call_discoverUserIdentityWithPhoneNumberCompletionHandler(CKUserIdentity _Nullable_result);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverUserIdentityWithUserRecordIDCompletionHandler {
         @Generated
-        void call_discoverUserIdentityWithUserRecordIDCompletionHandler(CKUserIdentity userInfo, NSError error);
+        void call_discoverUserIdentityWithUserRecordIDCompletionHandler(CKUserIdentity _Nullable_result);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -366,7 +381,7 @@ public class CKContainer extends NSObject {
     @Generated
     public interface Block_fetchLongLivedOperationWithIDCompletionHandler {
         @Generated
-        void call_fetchLongLivedOperationWithIDCompletionHandler(CKOperation outstandingOperation, NSError error);
+        void call_fetchLongLivedOperationWithIDCompletionHandler(CKOperation _Nullable_result);
     }
 
     @Runtime(ObjCRuntime.class)

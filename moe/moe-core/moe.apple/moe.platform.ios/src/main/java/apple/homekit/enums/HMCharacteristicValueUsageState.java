@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueUsageState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueUsageStateNotInUse        Not in use.
  * [@constant]  HMCharacteristicValueUsageStateInUse           Currently in use.
  */

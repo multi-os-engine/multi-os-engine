@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CBL2CAPChannel
- * 
+ * <p>
  * A CBL2CAPChannel represents a live L2CAP connection to a remote device
  */
 @Generated
@@ -46,7 +46,7 @@ public class CBL2CAPChannel extends NSObject {
 
     /**
      * [@property] PSM
-     * 
+     * <p>
      * The PSM (Protocol/Service Multiplexer) of the channel
      */
     @Generated
@@ -108,7 +108,7 @@ public class CBL2CAPChannel extends NSObject {
 
     /**
      * [@property] inputStream
-     * 
+     * <p>
      * An NSStream used for reading data from the remote peer
      */
     @Generated
@@ -144,7 +144,7 @@ public class CBL2CAPChannel extends NSObject {
 
     /**
      * [@property] outputStream
-     * 
+     * <p>
      * An NSStream used for writing data to the peer
      */
     @Generated
@@ -153,7 +153,7 @@ public class CBL2CAPChannel extends NSObject {
 
     /**
      * [@property] peer
-     * 
+     * <p>
      * The peer connected to the channel
      */
     @Generated

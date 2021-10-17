@@ -205,4 +205,17 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("zoneID")
     public native CKRecordZoneID zoneID();
+
+    /**
+     * The share property on a record zone will only be set on zones fetched from the server and only if a
+     * corresponding zone-wide share record for the zone exists on the server.
+     * <p>
+     * You can create a zone-wide share for a zone using @code -[CKShare initWithRecordZoneID:] @endcode.
+     * <p>
+     * Zone-wide sharing is only supported in zones with the @c CKRecordZoneCapabilityZoneWideSharing sharing capability.
+     * You cannot share a zone if it already contains shared records.
+     */
+    @Generated
+    @Selector("share")
+    public native CKReference share();
 }

@@ -43,9 +43,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKFetchNotificationChangesOperation
- * 
+ * <p>
  * An operation that fetches all notification changes.
- * 
+ * <p>
  * If a change token from a previous @c CKFetchNotificationChangesOperation is passed in, only the notifications that have changed since that token will be fetched.
  * If this is your first fetch, pass nil for the change token.
  * Change tokens are opaque tokens and clients should not infer any behavior based on their content.
@@ -163,7 +163,7 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * Clients are responsible for saving the change token at the end of the operation and passing it in to the next call to @c CKFetchNotificationChangesOperation.
      * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion block so that already fetched notifications don't need to be re-downloaded on a subsequent operation.
      * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old and the client should toss its local cache and re-fetch notification changes starting with a nil @c previousServerChangeToken.
@@ -185,7 +185,7 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
 
     /**
      * If true, then the server wasn't able to return all the changes in this response.
-     * 
+     * <p>
      * Will be set before @c fetchNotificationChangesCompletionBlock is called.
      * Another @c CKFetchNotificationChangesOperation operation should be run with the updated @c serverChangeToken token from this operation.
      */
@@ -195,7 +195,7 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
 
     /**
      * Called once for each updated notification fetch from the server
-     * 
+     * <p>
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -214,7 +214,7 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * Clients are responsible for saving the change token at the end of the operation and passing it in to the next call to @c CKFetchNotificationChangesOperation.
      * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion block so that already fetched notifications don't need to be re-downloaded on a subsequent operation.
      * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old and the client should toss its local cache and re-fetch notification changes starting with a nil @c previousServerChangeToken.
@@ -227,7 +227,7 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
 
     /**
      * Called once for each updated notification fetch from the server
-     * 
+     * <p>
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated

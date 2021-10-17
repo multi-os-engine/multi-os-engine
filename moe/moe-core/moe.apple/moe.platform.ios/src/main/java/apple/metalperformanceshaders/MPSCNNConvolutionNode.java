@@ -97,13 +97,13 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
 
     /**
      * Init a node representing a MPSCNNConvolution kernel
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
-     *                                     protocol. This object is provided by you to encapsulate storage for
-     *                                     convolution weights and biases. If it is used for training, it may not
-     *                                     have a neuron embedded in the convolution descriptor.
-     * @return     A new MPSNNFilter node for a MPSCNNConvolution kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
+     * @param weights    A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                   protocol. This object is provided by you to encapsulate storage for
+     *                   convolution weights and biases. If it is used for training, it may not
+     *                   have a neuron embedded in the convolution descriptor.
+     * @return A new MPSNNFilter node for a MPSCNNConvolution kernel.
      */
     @Generated
     @Selector("initWithSource:weights:")
@@ -139,13 +139,13 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
 
     /**
      * Init an autoreleased not representing a MPSCNNConvolution kernel
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
-     *                                     protocol. This object is provided by you to encapsulate storage for
-     *                                     convolution weights and biases. If it is used for training, it may not
-     *                                     have a neuron embedded in the convolution descriptor.
-     * @return     A new MPSNNFilter node for a MPSCNNConvolution kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
+     * @param weights    A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                   protocol. This object is provided by you to encapsulate storage for
+     *                   convolution weights and biases. If it is used for training, it may not
+     *                   have a neuron embedded in the convolution descriptor.
+     * @return A new MPSNNFilter node for a MPSCNNConvolution kernel.
      */
     @Generated
     @Selector("nodeWithSource:weights:")
@@ -175,7 +175,7 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
 
     /**
      * Set the floating-point precision used by the convolution accumulator
-     * 
+     * <p>
      * Default:  MPSNNConvolutionAccumulatorPrecisionOptionFloat
      */
     @Generated
@@ -185,11 +185,11 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
 
     /**
      * A node to represent a MPSCNNConvolutionGradientState object
-     * 
+     * <p>
      * Use this if the convolution is mirrored by a convolution transpose node
-     *              later on in the graph to make sure that the size of the image returned
-     *              from the convolution transpose matches the size of the image passed in
-     *              to this node.
+     * later on in the graph to make sure that the size of the image returned
+     * from the convolution transpose matches the size of the image passed in
+     * to this node.
      */
     @Generated
     @Selector("convolutionGradientState")
@@ -197,7 +197,7 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
 
     /**
      * Set the floating-point precision used by the convolution accumulator
-     * 
+     * <p>
      * Default:  MPSNNConvolutionAccumulatorPrecisionOptionFloat
      */
     @Generated

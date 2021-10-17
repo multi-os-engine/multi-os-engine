@@ -96,7 +96,7 @@ public class CPNowPlayingImageButton extends CPNowPlayingButton {
 
     /**
      * The custom image, if any, displayed on the button.
-     * 
+     * <p>
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      */
     @Generated
@@ -118,8 +118,8 @@ public class CPNowPlayingImageButton extends CPNowPlayingButton {
 
     /**
      * Initialize a button with a custom image.
-     * 
-     * @param image A custom image for this button. The maximum image size is CPNowPlayingButtonMaximumImageSize; larger images will be scaled down.
+     *
+     * @param image   A custom image for this button. The maximum image size is CPNowPlayingButtonMaximumImageSize; larger images will be scaled down.
      * @param handler A block to execute when the user selects the button. The block has no return value and takes the selected button as its only parameter.
      */
     @Generated

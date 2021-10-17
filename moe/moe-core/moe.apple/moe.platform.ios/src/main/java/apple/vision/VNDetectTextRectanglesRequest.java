@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that will detect regions of text in an image.
- * 
+ * <p>
  * This request will generate VNTextObservation objects describing the locations of text detected in an image.
  */
 @Generated
@@ -177,4 +177,11 @@ public class VNDetectTextRectanglesRequest extends VNImageBasedRequest {
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
+
+    /**
+     * VNTextObservation results.
+     */
+    @Generated
+    @Selector("results")
+    public native NSArray<? extends VNTextObservation> results();
 }

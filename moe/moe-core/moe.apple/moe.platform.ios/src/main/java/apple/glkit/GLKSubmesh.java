@@ -152,9 +152,9 @@ public class GLKSubmesh extends NSObject {
 
     /**
      * [@property] elementBuffer
-     * 
+     * <p>
      * Name of buffer object with index data
-     * 
+     * <p>
      * The buffer name to be used with DrawElements
      */
     @Generated
@@ -163,9 +163,9 @@ public class GLKSubmesh extends NSObject {
 
     /**
      * [@property] elementCount
-     * 
+     * <p>
      * Number of elements (aka indicies) in the elementBuffer (aka indexBuffer)
-     * 
+     * <p>
      * This value should be used for the count parameter in glDrawElements
      */
     @Generated
@@ -178,9 +178,9 @@ public class GLKSubmesh extends NSObject {
 
     /**
      * [@property] mesh
-     * 
+     * <p>
      * Parent GLKit mesh containing vertex data of this object
-     * 
+     * <p>
      * Buffer of this parent mesh should be set in the encoder before a drawIndexedPrimitives call is made
      */
     @Generated
@@ -189,9 +189,9 @@ public class GLKSubmesh extends NSObject {
 
     /**
      * [@property] mode
-     * 
+     * <p>
      * Primitive type mode value of data in the elementBuffer (aka indexBuffer)
-     * 
+     * <p>
      * This value should be used for the mode parameter in glDrawElements
      */
     @Generated
@@ -200,9 +200,9 @@ public class GLKSubmesh extends NSObject {
 
     /**
      * [@property] name
-     * 
+     * <p>
      * Name from the original MDLSubmesh object.
-     * 
+     * <p>
      * Although not directly used by this object, the application may use this to identify the submesh in it renderer/scene/world.
      */
     @Generated
@@ -211,9 +211,9 @@ public class GLKSubmesh extends NSObject {
 
     /**
      * [@property] type
-     * 
+     * <p>
      * Type of data in the elementBuffer (aka indexBuffer)
-     * 
+     * <p>
      * This value should be used for the type parameter of glDrawElements
      */
     @Generated

@@ -25,10 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCaptureSynchronizedDepthData
- * 
- *    An concrete subclass of AVCaptureSynchronizedData representing the data delivered by an AVCaptureDepthDataOutput.
- * 
- *    Depth data, like video, may be dropped if not serviced in a timely fashion.
+ * <p>
+ * An concrete subclass of AVCaptureSynchronizedData representing the data delivered by an AVCaptureDepthDataOutput.
+ * <p>
+ * Depth data, like video, may be dropped if not serviced in a timely fashion.
  */
 @Generated
 @Library("AVFoundation")
@@ -86,10 +86,10 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
 
     /**
      * [@property] depthData
-     * 
-     *    An instance of AVDepthData.
-     * 
-     *    If depthDataWasDropped is YES, the returned depthData was dropped before it could be delivered to you, and thus this AVDepthData is a shell containing format information and calibration data, but no actual pixel map data. This property is never nil. If a data output has no data to return, it is simply not present in the dictionary of synchronized data returned by AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback.
+     * <p>
+     * An instance of AVDepthData.
+     * <p>
+     * If depthDataWasDropped is YES, the returned depthData was dropped before it could be delivered to you, and thus this AVDepthData is a shell containing format information and calibration data, but no actual pixel map data. This property is never nil. If a data output has no data to return, it is simply not present in the dictionary of synchronized data returned by AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback.
      */
     @Generated
     @Selector("depthData")
@@ -97,10 +97,10 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
 
     /**
      * [@property] depthDataWasDropped
-     * 
-     *    YES if the depth data was dropped.
-     * 
-     *    If YES, inspect -droppedReason for the reason.
+     * <p>
+     * YES if the depth data was dropped.
+     * <p>
+     * If YES, inspect -droppedReason for the reason.
      */
     @Generated
     @Selector("depthDataWasDropped")
@@ -112,10 +112,10 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
 
     /**
      * [@property] droppedReason
-     * 
-     *    If depthDataWasDropped is YES, the reason for the drop, otherwise AVCaptureOutputDataDroppedReasonNone.
-     * 
-     *    AVCaptureOutputDataDroppedReasons are defined in AVCaptureOutputBase.h.
+     * <p>
+     * If depthDataWasDropped is YES, the reason for the drop, otherwise AVCaptureOutputDataDroppedReasonNone.
+     * <p>
+     * AVCaptureOutputDataDroppedReasons are defined in AVCaptureOutputBase.h.
      */
     @Generated
     @Selector("droppedReason")

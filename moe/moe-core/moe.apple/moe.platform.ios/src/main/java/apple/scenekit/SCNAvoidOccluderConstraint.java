@@ -29,9 +29,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNAvoidOccluderConstraint
- * 
+ * <p>
  * A SCNAvoidOccluderConstraint constraints place the receiver at a position that prevent nodes with the specified category to occlude the target.
- * 
+ * <p>
  * The target node and it's children are ignored as potential occluders.
  */
 @Generated
@@ -68,7 +68,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     /**
      * avoidOccluderConstraintWithTarget
-     * 
+     * <p>
      * Creates and returns a SCNAvoidOccluderConstraint object.
      */
     @Generated
@@ -77,9 +77,9 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     /**
      * [@property] bias
-     * 
+     * <p>
      * Defines the bias the apply after moving the receiver to avoid occluders. Defaults to 10e-5.
-     * 
+     * <p>
      * A positive bias will move the receiver closer to the target.
      */
     @Generated
@@ -111,7 +111,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * The receiver's delegate
      */
     @Generated
@@ -165,7 +165,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     /**
      * [@property] occluderCategoryBitMask
-     * 
+     * <p>
      * Defines the category of node to consider as occluder. Defaults to 1.
      */
     @Generated
@@ -183,9 +183,9 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     /**
      * [@property] bias
-     * 
+     * <p>
      * Defines the bias the apply after moving the receiver to avoid occluders. Defaults to 10e-5.
-     * 
+     * <p>
      * A positive bias will move the receiver closer to the target.
      */
     @Generated
@@ -194,7 +194,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * The receiver's delegate
      */
     @Generated
@@ -203,7 +203,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * The receiver's delegate
      */
     @Generated
@@ -220,7 +220,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     /**
      * [@property] occluderCategoryBitMask
-     * 
+     * <p>
      * Defines the category of node to consider as occluder. Defaults to 1.
      */
     @Generated
@@ -229,7 +229,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     /**
      * [@property] target
-     * 
+     * <p>
      * Defines the target node
      */
     @Generated
@@ -256,7 +256,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     /**
      * [@property] target
-     * 
+     * <p>
      * Defines the target node
      */
     @Generated

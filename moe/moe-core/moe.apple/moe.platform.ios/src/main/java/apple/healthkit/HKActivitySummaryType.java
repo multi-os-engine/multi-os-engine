@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKActivitySummaryType
- * 
+ * <p>
  * Represents an HKActivitySummary
  */
 @Generated

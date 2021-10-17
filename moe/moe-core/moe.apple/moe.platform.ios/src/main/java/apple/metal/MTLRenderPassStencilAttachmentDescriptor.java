@@ -152,7 +152,7 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
 
     /**
      * [@property] clearStencil
-     * 
+     * <p>
      * The clear stencil value to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
@@ -165,7 +165,7 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
 
     /**
      * [@property] clearStencil
-     * 
+     * <p>
      * The clear stencil value to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
@@ -174,7 +174,7 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
 
     /**
      * [@property] stencilResolveFilter
-     * 
+     * <p>
      * The filter to be used for stencil multisample resolve. Defaults to MTLMultisampleStencilResolveFilterSample0.
      */
     @Generated
@@ -183,7 +183,7 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
 
     /**
      * [@property] stencilResolveFilter
-     * 
+     * <p>
      * The filter to be used for stencil multisample resolve. Defaults to MTLMultisampleStencilResolveFilterSample0.
      */
     @Generated

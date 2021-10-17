@@ -154,12 +154,12 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     /**
      * All face buttons are required to be analog in the Extended profile. These must be arranged
      * in the diamond pattern given below:
-     * 
-     *   Y
-     *  / \
+     * <p>
+     * Y
+     * / \
      * X   B
-     *  \ /
-     *   A
+     * \ /
+     * A
      */
     @Generated
     @Selector("buttonA")
@@ -235,7 +235,7 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
      * Polls the state vector of the controller and saves it to a snapshot. The snapshot is stored in a device independent
      * format that can be serialized and used at a later date. This is useful for features such as quality assurance,
      * save game or replay functionality among many.
-     * 
+     * <p>
      * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
      * a snapshot will not change based on user input once it is taken.
      */
@@ -294,9 +294,9 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
 
     /**
      * Sets the state vector of the extended gamepad to a copy of the input extended gamepad's state vector.
-     * 
+     * <p>
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     * 
+     *
      * @see GCController.snapshot
      */
     @Generated

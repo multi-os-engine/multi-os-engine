@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]       EKEventEditViewAction
- * 
+ * <p>
  * Represents actions that should cause the edit view controller to be dismissed
- * 
+ * <p>
  * [@constant]   EKEventEditViewActionCanceled    The Cancel button was pressed, or the Done button was pressed, but the event was not dirty.
  * [@constant]   EKEventEditViewActionSaved       The event was saved.
  * [@constant]   EKEventEditViewActionDeleted     The event was deleted, either by the user or by another calendar store.

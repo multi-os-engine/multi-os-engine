@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * CMError
- * 
+ * <p>
  * Discussion:
- *   Error returned as code to NSError from CoreMotion.
+ * Error returned as code to NSError from CoreMotion.
  */
 @Generated
 public final class CMError {

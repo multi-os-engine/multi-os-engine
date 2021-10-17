@@ -4,10 +4,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- *  [@enum] CBCentralManagerFeature
- * 
+ * [@enum] CBCentralManagerFeature
+ * <p>
  * The set of device specific features.
- * 
+ * <p>
  * [@constant] CBCentralManagerFeatureExtendedScanAndConnect      The hardware supports extended scans and enhanced connection creation
  */
 @Generated

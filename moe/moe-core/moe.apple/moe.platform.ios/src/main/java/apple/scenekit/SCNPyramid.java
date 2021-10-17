@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPyramid
- * 
+ * <p>
  * SCNPyramid represents a right pyramid with a rectangular base.
  */
 @Generated
@@ -153,10 +153,10 @@ public class SCNPyramid extends SCNGeometry {
 
     /**
      * pyramidWithWidth:height:length:
-     * 
+     * <p>
      * Creates and returns a pyramid with given width, height, and length.
-     * 
-     * @param width The width of the pyramid.
+     *
+     * @param width  The width of the pyramid.
      * @param height The height of the pyramid.
      * @param length The length of the pyramid.
      */
@@ -192,9 +192,9 @@ public class SCNPyramid extends SCNGeometry {
 
     /**
      * [@property] height
-     * 
+     * <p>
      * The height of the pyramid. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -204,9 +204,9 @@ public class SCNPyramid extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the Y axis. Animatable.
-     * 
+     * <p>
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -224,9 +224,9 @@ public class SCNPyramid extends SCNGeometry {
 
     /**
      * [@property] length
-     * 
+     * <p>
      * The length of the pyramid base. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -236,9 +236,9 @@ public class SCNPyramid extends SCNGeometry {
 
     /**
      * [@property] lengthSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the Z axis. Animatable.
-     * 
+     * <p>
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -248,9 +248,9 @@ public class SCNPyramid extends SCNGeometry {
 
     /**
      * [@property] height
-     * 
+     * <p>
      * The height of the pyramid. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -259,9 +259,9 @@ public class SCNPyramid extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the Y axis. Animatable.
-     * 
+     * <p>
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -270,9 +270,9 @@ public class SCNPyramid extends SCNGeometry {
 
     /**
      * [@property] length
-     * 
+     * <p>
      * The length of the pyramid base. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -281,9 +281,9 @@ public class SCNPyramid extends SCNGeometry {
 
     /**
      * [@property] lengthSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the Z axis. Animatable.
-     * 
+     * <p>
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -292,9 +292,9 @@ public class SCNPyramid extends SCNGeometry {
 
     /**
      * [@property] width
-     * 
+     * <p>
      * The width of the pyramid base. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -303,9 +303,9 @@ public class SCNPyramid extends SCNGeometry {
 
     /**
      * [@property] widthSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the X axis. Animatable.
-     * 
+     * <p>
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -320,9 +320,9 @@ public class SCNPyramid extends SCNGeometry {
 
     /**
      * [@property] width
-     * 
+     * <p>
      * The width of the pyramid base. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -332,9 +332,9 @@ public class SCNPyramid extends SCNGeometry {
 
     /**
      * [@property] widthSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the X axis. Animatable.
-     * 
+     * <p>
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated

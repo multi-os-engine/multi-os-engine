@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSDateComponents;
+import apple.foundation.NSDateInterval;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
@@ -47,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKSourceQuery
- * 
+ * <p>
  * A query that returns a set of sources that have saved objects matching certain criteria.
  */
 @Generated
@@ -267,13 +268,13 @@ public class HKSourceQuery extends HKQuery {
 
     /**
      * initWithSampleType:samplePredicate:completionHandler:
-     * 
+     * <p>
      * Returns a query that will retrieve HKSources that have saved samples of the given type matching the
-     *                given predicate.
-     * 
-     * @param         sampleType          The type of sample.
-     * @param         objectPredicate     The predicate which samples must match.
-     * @param         completionHandler   The block to be called when the query has finished executing.
+     * given predicate.
+     *
+     * @param sampleType        The type of sample.
+     * @param objectPredicate   The predicate which samples must match.
+     * @param completionHandler The block to be called when the query has finished executing.
      */
     @Generated
     @Selector("initWithSampleType:samplePredicate:completionHandler:")
@@ -315,4 +316,9 @@ public class HKSourceQuery extends HKQuery {
     @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
     public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
             HKElectrocardiogram electrocardiogram);
+
+    @Generated
+    @Selector("predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:")
+    public static native NSPredicate predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval(
+            NSDateInterval dateInterval);
 }

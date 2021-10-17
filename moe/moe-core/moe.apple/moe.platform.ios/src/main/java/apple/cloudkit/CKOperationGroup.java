@@ -28,14 +28,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKOperationGroup
- * 
+ * <p>
  * A mechanism for your app to group several operations at the granularity of a user action.
- * 
+ * <p>
  * For example, when building a Calendar application, these things might warrant being their own operation groups:
  * - an initial fetch of data from the server, consisting of many queries, fetchChanges, and fetch operations
  * - doing an incremental fetch of data in response to a push notification
  * - saving several records due to a user saving a calendar event
- * 
+ * <p>
  * You associate @c CKOperationGroup s with@c  CKOperation s by setting the @c CKOperation.group property.  Create a new @c CKOperationGroup instance for each distinct user action.
  */
 @Generated
@@ -94,7 +94,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * This is the default configuration applied to operations in this operation group.
-     * 
+     * <p>
      * If an operation associated with this operation group has its own configuration, then any explicitly-set properties in that operation's configuration will override these default configuration values.  See the example in CKOperation.h
      */
     @Generated
@@ -111,7 +111,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * Estimated size of traffic being downloaded from the CloudKit Server
-     * 
+     * <p>
      * Inform the system how much data you plan on transferring.  Obviously, these won't be exact.  Be as accurate as possible, but even an order-of-magnitude estimate is better than no value.  The system will consult these values when scheduling discretionary network requests (see the description of @c CKOperationConfiguration.qualityOfService).
      * Overestimating your workload means that an operation group issuing discretionary network requests may be delayed until network conditions are good.
      * Underestimating your workload may cause the system to oversaturate a constrained connection, leading to network failures.
@@ -125,7 +125,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * Estimated size of traffic being uploaded to the CloudKit Server
-     * 
+     * <p>
      * Inform the system how much data you plan on transferring.  Obviously, these won't be exact.  Be as accurate as possible, but even an order-of-magnitude estimate is better than no value.  The system will consult these values when scheduling discretionary network requests (see the description of @c CKOperationConfiguration.qualityOfService).
      * Overestimating your workload means that an operation group issuing discretionary network requests may be delayed until network conditions are good.
      * Underestimating your workload may cause the system to oversaturate a constrained connection, leading to network failures.
@@ -173,7 +173,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * Describes the user action attributed to the operation group.
-     * 
+     * <p>
      * [@c] name should describe the type of work being done.  Some examples:
      * "Initial Fetch"
      * "Incremental Fetch"
@@ -192,7 +192,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * This is an identifier unique to this @c CKOperationGroup
-     * 
+     * <p>
      * This value is chosen by the system, and will be unique to this instance of a @c CKOperationGroup.  This identifier will be sent to Apple's servers, and can be used to identify any server-side logging associated with this operation group.
      */
     @Generated
@@ -201,7 +201,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * Describes an application-specific "number of elements" associated with the operation group.
-     * 
+     * <p>
      * [@c] quantity is intended to show the app-specific count of items contained within the operation group.  It is your job to assign meaning to this value.  For example, if an app created an operation group to save 3 calendar events the user had created, the app might want to set this to "3".  This value is not shown to your users, it's meant to aid your development and debugging.  This value will be reported in the CloudKit Dashboard's log entries for all operations associated with this operation group.
      */
     @Generated
@@ -219,7 +219,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * This is the default configuration applied to operations in this operation group.
-     * 
+     * <p>
      * If an operation associated with this operation group has its own configuration, then any explicitly-set properties in that operation's configuration will override these default configuration values.  See the example in CKOperation.h
      */
     @Generated
@@ -228,7 +228,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * Estimated size of traffic being downloaded from the CloudKit Server
-     * 
+     * <p>
      * Inform the system how much data you plan on transferring.  Obviously, these won't be exact.  Be as accurate as possible, but even an order-of-magnitude estimate is better than no value.  The system will consult these values when scheduling discretionary network requests (see the description of @c CKOperationConfiguration.qualityOfService).
      * Overestimating your workload means that an operation group issuing discretionary network requests may be delayed until network conditions are good.
      * Underestimating your workload may cause the system to oversaturate a constrained connection, leading to network failures.
@@ -241,7 +241,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * Estimated size of traffic being uploaded to the CloudKit Server
-     * 
+     * <p>
      * Inform the system how much data you plan on transferring.  Obviously, these won't be exact.  Be as accurate as possible, but even an order-of-magnitude estimate is better than no value.  The system will consult these values when scheduling discretionary network requests (see the description of @c CKOperationConfiguration.qualityOfService).
      * Overestimating your workload means that an operation group issuing discretionary network requests may be delayed until network conditions are good.
      * Underestimating your workload may cause the system to oversaturate a constrained connection, leading to network failures.
@@ -254,7 +254,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * Describes the user action attributed to the operation group.
-     * 
+     * <p>
      * [@c] name should describe the type of work being done.  Some examples:
      * "Initial Fetch"
      * "Incremental Fetch"
@@ -267,7 +267,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * Describes an application-specific "number of elements" associated with the operation group.
-     * 
+     * <p>
      * [@c] quantity is intended to show the app-specific count of items contained within the operation group.  It is your job to assign meaning to this value.  For example, if an app created an operation group to save 3 calendar events the user had created, the app might want to set this to "3".  This value is not shown to your users, it's meant to aid your development and debugging.  This value will be reported in the CloudKit Dashboard's log entries for all operations associated with this operation group.
      */
     @Generated

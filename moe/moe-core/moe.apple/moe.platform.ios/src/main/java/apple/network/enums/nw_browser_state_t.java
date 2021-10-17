@@ -4,8 +4,8 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_browser_state_t
- * 
- * 	Browser states sent by nw_browser_set_state_changed_handler.
+ * <p>
+ * Browser states sent by nw_browser_set_state_changed_handler.
  */
 @Generated
 public final class nw_browser_state_t {
@@ -15,8 +15,8 @@ public final class nw_browser_state_t {
 
     /**
      * [@const] nw_browser_state_invalid The state of the browser is not valid.
-     * 		This state will never be delivered in the browser's state update
-     * 	handler and can be treated as an unexpected value.
+     * This state will never be delivered in the browser's state update
+     * handler and can be treated as an unexpected value.
      */
     @Generated public static final int nw_browser_state_invalid = 0x00000000;
     /**

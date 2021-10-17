@@ -36,9 +36,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface HMAccessoryBrowserDelegate {
     /**
      * Informs the delegate about new accessories discovered in the home.
-     * 
-     * @param browser Sender of the message.
-     * 
+     *
+     * @param browser   Sender of the message.
      * @param accessory New accessory that was discovered.
      */
     @Generated
@@ -50,11 +49,10 @@ public interface HMAccessoryBrowserDelegate {
 
     /**
      * Informs the delegate about new accessories removed from the home.
-     * 
-     * @param browser Sender of the message.
-     * 
+     *
+     * @param browser   Sender of the message.
      * @param accessory Accessory that was previously discovered but are no longer reachable.
-     * 	            This method is also invoked when an accessory is added to a home.
+     *                  This method is also invoked when an accessory is added to a home.
      */
     @Generated
     @IsOptional

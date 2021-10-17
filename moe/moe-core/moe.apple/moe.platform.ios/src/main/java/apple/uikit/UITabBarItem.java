@@ -338,7 +338,7 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
 
     /**
      * To set item label text attributes use the appearance selectors available on the superclass, UIBarItem.
-     * 
+     * <p>
      * Use the following to tweak the relative position of the label within the tab button (for handling visual centering corrections if needed because of custom text attributes)
      */
     @Generated
@@ -347,7 +347,7 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
 
     /**
      * To set item label text attributes use the appearance selectors available on the superclass, UIBarItem.
-     * 
+     * <p>
      * Use the following to tweak the relative position of the label within the tab button (for handling visual centering corrections if needed because of custom text attributes)
      */
     @Generated
@@ -376,4 +376,18 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     @Generated
     @Selector("standardAppearance")
     public native UITabBarAppearance standardAppearance();
+
+    /**
+     * When set and this item is selected, overrides the hosting tab bar's scrollEdgeAppearance.
+     */
+    @Generated
+    @Selector("scrollEdgeAppearance")
+    public native UITabBarAppearance scrollEdgeAppearance();
+
+    /**
+     * When set and this item is selected, overrides the hosting tab bar's scrollEdgeAppearance.
+     */
+    @Generated
+    @Selector("setScrollEdgeAppearance:")
+    public native void setScrollEdgeAppearance(UITabBarAppearance value);
 }

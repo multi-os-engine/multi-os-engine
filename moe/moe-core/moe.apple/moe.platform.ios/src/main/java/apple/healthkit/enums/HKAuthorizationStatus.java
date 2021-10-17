@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HKAuthorizationStatus
- * 
+ * <p>
  * This enumerated type is used to indicate the currently granted authorization status for a specific
- *            HKObjectType.
- * 
+ * HKObjectType.
+ * <p>
  * [@constant]  HKAuthorizationStatusNotDetermined      The user has not yet made a choice regarding whether this
- *                                                    application may save objects of the specified type.
+ * application may save objects of the specified type.
  * [@constant]  HKAuthorizationStatusSharingDenied      This application is not allowed to save objects of the specified type.
  * [@constant]  HKAuthorizationStatusSharingAuthorized  This application is authorized to save objects of the specified type.
  */

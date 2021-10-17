@@ -118,7 +118,7 @@ public class UIPreviewTarget extends NSObject implements NSCopying {
 
     /**
      * UIPreviewTarget specifies where a preview should come from, or go to.
-     * 
+     * <p>
      * `container` must be a view that is currently in a window.
      * `center` specifies where the center of the preview should go,
      * in `container`'s coordinate system.

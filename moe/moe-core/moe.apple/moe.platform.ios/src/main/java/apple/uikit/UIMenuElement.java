@@ -188,4 +188,18 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
     @Generated
     @Selector("setAccessibilityIdentifier:")
     public native void setAccessibilityIdentifier(String value);
+
+    /**
+     * The element's subtitle.
+     */
+    @Generated
+    @Selector("setSubtitle:")
+    public native void setSubtitle(String value);
+
+    /**
+     * The element's subtitle.
+     */
+    @Generated
+    @Selector("subtitle")
+    public native String subtitle();
 }

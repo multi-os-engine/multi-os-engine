@@ -55,6 +55,7 @@ public final class OpenGLES {
     }
 
     /**
+     *
      */
     @Generated
     @CFunction
@@ -214,7 +215,7 @@ public final class OpenGLES {
 
     /**
      * -------------------------------------------------------------------------
-     *  Entrypoint definitions
+     * Entrypoint definitions
      * -----------------------------------------------------------------------
      */
     @Generated

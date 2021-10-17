@@ -214,7 +214,7 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
 
     /**
      * An opaque user ID associated with the AppleID used for the sign in. This identifier will be stable across the 'developer team', it can later be used as an input to @see ASAuthorizationRequest to request user contact information.
-     * 
+     * <p>
      * The identifier will remain stable as long as the user is connected with the requesting client.  The value may change upon user disconnecting from the identity provider.
      */
     @Generated

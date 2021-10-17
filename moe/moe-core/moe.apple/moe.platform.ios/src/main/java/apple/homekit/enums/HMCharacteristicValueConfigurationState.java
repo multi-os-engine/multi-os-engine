@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueConfigurationState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueConfigurationStateNotConfigured  Not Configured.
  * [@constant]  HMCharacteristicValueConfigurationStateConfigured     Configured.
  */

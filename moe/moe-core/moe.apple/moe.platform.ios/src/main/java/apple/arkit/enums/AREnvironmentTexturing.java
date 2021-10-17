@@ -18,7 +18,7 @@ public final class AREnvironmentTexturing {
     @Generated @NInt public static final long None = 0x0000000000000000L;
     /**
      * Texture information is gathered for the environment.
-     * Environment textures will be generated for AREnvironmentProbes added to the session. 
+     * Environment textures will be generated for AREnvironmentProbes added to the session.
      */
     @Generated @NInt public static final long Manual = 0x0000000000000001L;
     /**

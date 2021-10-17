@@ -164,7 +164,7 @@ public class NSLayoutXAxisAnchor extends NSLayoutAnchor<NSLayoutXAxisAnchor> {
 
     /**
      * Constraints of the form,
-     * receiver [= | ≥ | ≤] 'anchor' + 'multiplier' * system space, 
+     * receiver [= | ≥ | ≤] 'anchor' + 'multiplier' * system space,
      * where the value of the system space is determined from information available from the anchors.
      * The constraint affects how far the receiver will be positioned trailing 'anchor', per the effective user interface layout direction.
      */

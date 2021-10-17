@@ -25,6 +25,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * MTLLinkedFunctions
+ * <p>
+ * A class to set functions to be linked.
+ * <p>
+ * All functions set on this object must have unique names.
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -59,7 +66,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
 
     /**
      * [@property] binaryFunctions
-     * 
+     * <p>
      * The array of functions compiled to binary to be linked.
      */
     @Generated
@@ -100,7 +107,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
 
     /**
      * [@property] functions
-     * 
+     * <p>
      * The array of functions to be AIR linked.
      */
     @Generated
@@ -109,7 +116,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
 
     /**
      * [@property] groups
-     * 
+     * <p>
      * Groups of functions, grouped to match callsites in the shader code.
      */
     @Generated
@@ -148,7 +155,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
 
     /**
      * linkedFunctions
-     * 
+     * <p>
      * Create an autoreleased MTLLinkedFunctions object.
      */
     @Generated
@@ -171,7 +178,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
 
     /**
      * [@property] binaryFunctions
-     * 
+     * <p>
      * The array of functions compiled to binary to be linked.
      */
     @Generated
@@ -180,7 +187,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
 
     /**
      * [@property] functions
-     * 
+     * <p>
      * The array of functions to be AIR linked.
      */
     @Generated
@@ -189,7 +196,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
 
     /**
      * [@property] groups
-     * 
+     * <p>
      * Groups of functions, grouped to match callsites in the shader code.
      */
     @Generated
@@ -208,4 +215,28 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] privateFunctions
+     * <p>
+     * The array of functions to be AIR linked.
+     * <p>
+     * These functions are not exported by the pipeline state as MTLFunctionHandle objects.
+     * Function pointer support is not required to link private functions.
+     */
+    @Generated
+    @Selector("privateFunctions")
+    public native NSArray<?> privateFunctions();
+
+    /**
+     * [@property] privateFunctions
+     * <p>
+     * The array of functions to be AIR linked.
+     * <p>
+     * These functions are not exported by the pipeline state as MTLFunctionHandle objects.
+     * Function pointer support is not required to link private functions.
+     */
+    @Generated
+    @Selector("setPrivateFunctions:")
+    public native void setPrivateFunctions(NSArray<?> value);
 }

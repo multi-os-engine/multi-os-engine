@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Additional vibrancy styles available in iOS 13, intended for use with the "system material" UIBlurEffect styles.
- * 
+ * <p>
  * These vibrancy styles, combined with those blur effect styles, cause only the alpha component of the content
  * to be used. Color information is ignored. (UIVibrancyEffectStyleLabel is an exception; it passes color through.)
  */

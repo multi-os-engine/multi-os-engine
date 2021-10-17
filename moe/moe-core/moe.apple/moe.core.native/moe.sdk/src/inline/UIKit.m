@@ -20,29 +20,10 @@ limitations under the License.
 #import <UIKit/UIAttachmentBehavior.h>
 #import <UIKit/UIDevice.h>
 #import <UIKit/UIGeometry.h>
+#import <UIKit/UIPointerAccessory.h>
 
 
 #define EXPORT extern __attribute__ ((visibility ("default")))
-
-EXPORT BOOL __natj_inline_UIDeviceOrientationIsPortrait(UIDeviceOrientation orientation) {
-	return UIDeviceOrientationIsPortrait(orientation);
-}
-
-EXPORT BOOL __natj_inline_UIDeviceOrientationIsLandscape(UIDeviceOrientation orientation) {
-	return UIDeviceOrientationIsLandscape(orientation);
-}
-
-EXPORT BOOL __natj_inline_UIDeviceOrientationIsFlat(UIDeviceOrientation orientation) {
-	return UIDeviceOrientationIsFlat(orientation);
-}
-
-EXPORT BOOL __natj_inline_UIDeviceOrientationIsValidInterfaceOrientation(UIDeviceOrientation orientation) {
-	return UIDeviceOrientationIsValidInterfaceOrientation(orientation);
-}
-
-EXPORT UIUserInterfaceIdiom __natj_inline_UI_USER_INTERFACE_IDIOM() {
-	return UI_USER_INTERFACE_IDIOM();
-}
 
 EXPORT UIEdgeInsets __natj_inline_UIEdgeInsetsMake(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {
 	return UIEdgeInsetsMake(top, left, bottom, right);
@@ -72,6 +53,26 @@ EXPORT BOOL __natj_inline_UIOffsetEqualToOffset(UIOffset offset1, UIOffset offse
 	return UIOffsetEqualToOffset(offset1, offset2);
 }
 
+EXPORT BOOL __natj_inline_UIDeviceOrientationIsPortrait(UIDeviceOrientation orientation) {
+	return UIDeviceOrientationIsPortrait(orientation);
+}
+
+EXPORT BOOL __natj_inline_UIDeviceOrientationIsLandscape(UIDeviceOrientation orientation) {
+	return UIDeviceOrientationIsLandscape(orientation);
+}
+
+EXPORT BOOL __natj_inline_UIDeviceOrientationIsFlat(UIDeviceOrientation orientation) {
+	return UIDeviceOrientationIsFlat(orientation);
+}
+
+EXPORT BOOL __natj_inline_UIDeviceOrientationIsValidInterfaceOrientation(UIDeviceOrientation orientation) {
+	return UIDeviceOrientationIsValidInterfaceOrientation(orientation);
+}
+
+EXPORT UIUserInterfaceIdiom __natj_inline_UI_USER_INTERFACE_IDIOM() {
+	return UI_USER_INTERFACE_IDIOM();
+}
+
 EXPORT BOOL __natj_inline_UIInterfaceOrientationIsPortrait(UIInterfaceOrientation orientation) {
 	return UIInterfaceOrientationIsPortrait(orientation);
 }
@@ -86,6 +87,10 @@ EXPORT UIFloatRange __natj_inline_UIFloatRangeMake(CGFloat minimum, CGFloat maxi
 
 EXPORT BOOL __natj_inline_UIFloatRangeIsEqualToRange(UIFloatRange range, UIFloatRange otherRange) {
 	return UIFloatRangeIsEqualToRange(range, otherRange);
+}
+
+EXPORT UIPointerAccessoryPosition __natj_inline_UIPointerAccessoryPositionMake(CGFloat offset, CGFloat angle) {
+	return UIPointerAccessoryPositionMake(offset, angle);
 }
 
 

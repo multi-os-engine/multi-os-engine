@@ -145,4 +145,13 @@ public class PKAddCarKeyPassConfiguration extends PKAddSecureElementPassConfigur
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("setSupportedRadioTechnologies:")
+    public native void setSupportedRadioTechnologies(@NUInt long value);
+
+    @Generated
+    @Selector("supportedRadioTechnologies")
+    @NUInt
+    public native long supportedRadioTechnologies();
 }

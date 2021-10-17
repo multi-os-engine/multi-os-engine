@@ -259,10 +259,10 @@ public class NSUndoManager extends NSObject {
 
     /**
      * records single undo operation for the specified target
-     * 
-     *   As with other undo operations, this does not strongly retain target. Care should be taken to avoid introducing retain cycles by other references captured by the block.
-     * 
-     * @param target non-nil target of the undo operation
+     * <p>
+     * As with other undo operations, this does not strongly retain target. Care should be taken to avoid introducing retain cycles by other references captured by the block.
+     *
+     * @param target      non-nil target of the undo operation
      * @param undoHandler non-nil block to be executed for the undo operation
      */
     @Generated

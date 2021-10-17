@@ -4,9 +4,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_multipath_service_t
- * 
- * 	Multipath services represent the modes of multipath usage that are
- * 	allowed for connections.
+ * <p>
+ * Multipath services represent the modes of multipath usage that are
+ * allowed for connections.
  */
 @Generated
 public final class nw_multipath_service_t {

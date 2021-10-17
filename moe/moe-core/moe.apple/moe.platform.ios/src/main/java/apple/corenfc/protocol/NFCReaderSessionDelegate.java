@@ -13,7 +13,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] NFCReaderSession
- * 
+ * <p>
  * General reader session callbacks
  */
 @Generated
@@ -23,11 +23,11 @@ import org.moe.natj.objc.ann.Selector;
 public interface NFCReaderSessionDelegate {
     /**
      * readerSession:didDetectTags:
-     * 
+     * <p>
      * Gets called when the reader detects NFC tag(s) in the polling sequence.
-     * 
-     * @param session   The session object used for tag detection.
-     * @param tags      Array of @link NFCTag @link/ objects.
+     *
+     * @param session The session object used for tag detection.
+     * @param tags    Array of @link NFCTag @link/ objects.
      */
     @Generated
     @IsOptional
@@ -38,12 +38,12 @@ public interface NFCReaderSessionDelegate {
 
     /**
      * readerSession:didInvalidateWithError:
-     * 
+     * <p>
      * Gets called when a session becomes invalid.  At this point the client is expected to discard
-     *                  the returned session object.
-     * 
-     * @param session   The session object that is invalidated.
-     * @param error     The error indicates the invalidation reason.
+     * the returned session object.
+     *
+     * @param session The session object that is invalidated.
+     * @param error   The error indicates the invalidation reason.
      */
     @Generated
     @Selector("readerSession:didInvalidateWithError:")
@@ -51,11 +51,11 @@ public interface NFCReaderSessionDelegate {
 
     /**
      * readerSessionDidBecomeActive:
-     * 
+     * <p>
      * Gets called when the NFC reader session has become active. RF is enabled and reader is scanning for tags.
-     *                  The @link readerSession:didDetectTags: @link/ will be called when a tag is detected.
-     * 
-     * @param session   The session object in the active state.
+     * The @link readerSession:didDetectTags: @link/ will be called when a tag is detected.
+     *
+     * @param session The session object in the active state.
      */
     @Generated
     @Selector("readerSessionDidBecomeActive:")

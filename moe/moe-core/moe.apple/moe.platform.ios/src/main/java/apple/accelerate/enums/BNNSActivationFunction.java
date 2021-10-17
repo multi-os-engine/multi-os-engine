@@ -56,4 +56,6 @@ public final class BNNSActivationFunction {
     @Generated public static final int BNNSActivationFunctionThreshold = 0x0000001C;
     @Generated public static final int BNNSActivationFunctionPReLUPerChannel = 0x0000001D;
     @Generated public static final int BNNSActivationFunctionGELUApproximation2 = 0x0000001E;
+    @Generated public static final int BNNSActivationFunctionHardSwish = 0x0000001E;
+    @Generated public static final int BNNSActivationFunctionSiLU = 0x0000001F;
 }

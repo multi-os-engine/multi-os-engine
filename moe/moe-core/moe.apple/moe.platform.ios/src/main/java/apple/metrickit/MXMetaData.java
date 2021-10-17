@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXMetaData
- * 
+ * <p>
  * A class that contains miscellaneous metadata about an associated payload.
  */
 @Generated
@@ -49,10 +49,10 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
 
     /**
      * DictionaryRepresentation
-     * 
+     * <p>
      * Convenience method to return a NSDictionary representation of this metadata.
-     * 
-     * @return        An NSDictionary object containing the dictionary representation
+     *
+     * @return An NSDictionary object containing the dictionary representation
      */
     @Generated
     @Selector("DictionaryRepresentation")
@@ -60,10 +60,10 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
 
     /**
      * JSONRepresentation
-     * 
+     * <p>
      * Convenience method to return a JSON representation of this metadata.
-     * 
-     * @return        An NSData object containing the JSON representation
+     *
+     * @return An NSData object containing the JSON representation
      */
     @Generated
     @Selector("JSONRepresentation")
@@ -85,7 +85,7 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      applicationBuildVersion
-     * 
+     * <p>
      * An NSString designating the app build version.
      */
     @Generated
@@ -124,7 +124,7 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      deviceType
-     * 
+     * <p>
      * An NSString designating the device type associated with this device.
      */
     @Generated
@@ -177,7 +177,7 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      osVersion
-     * 
+     * <p>
      * An NSString designating the OS version associated with the device.
      */
     @Generated
@@ -186,7 +186,7 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      regionFormat
-     * 
+     * <p>
      * An NSString designating the region format associated with the application.
      */
     @Generated
@@ -226,10 +226,10 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
 
     /**
      * dictionaryRepresentation
-     * 
+     * <p>
      * Convenience method to return a NSDictionary representation of this metadata.
-     * 
-     * @return        An NSDictionary object containing the dictionary representation
+     *
+     * @return An NSDictionary object containing the dictionary representation
      */
     @Generated
     @Selector("dictionaryRepresentation")
@@ -237,7 +237,7 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      platformArchitecture
-     * 
+     * <p>
      * An NSString designating the current architecture.
      */
     @Generated

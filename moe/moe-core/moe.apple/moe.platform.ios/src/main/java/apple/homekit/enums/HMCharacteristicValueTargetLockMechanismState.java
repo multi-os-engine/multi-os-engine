@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueTargetLockMechanismState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueTargetLockMechanismStateUnsecured  Unsecured.
  * [@constant]  HMCharacteristicValueTargetLockMechanismStateSecured    Secured.
  */

@@ -25,9 +25,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKSeriesBuilder
- * 
+ * <p>
  * An HKSeriesBuilder is an abstract class for generating HKSeriesSample objects.
- *                Concrete subclasses generate the actual HKSeriesSample objects.
+ * Concrete subclasses generate the actual HKSeriesSample objects.
  */
 @Generated
 @Library("HealthKit")
@@ -89,12 +89,12 @@ public class HKSeriesBuilder extends NSObject {
 
     /**
      * discard
-     * 
+     * <p>
      * Stop series generation and discard all collected data.
-     * 
+     * <p>
      * This method informs the receiver that no more data should be collected and all
-     *                previously collected data should be deleted and the receiver will be considered
-     *                invalid. Any further calls to the receiver will result in an exception.
+     * previously collected data should be deleted and the receiver will be considered
+     * invalid. Any further calls to the receiver will result in an exception.
      */
     @Generated
     @Selector("discard")

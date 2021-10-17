@@ -48,9 +48,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNConvolution
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * The MPSCNNConvolution specifies a convolution.
- *             The MPSCNNConvolution convolves the input image with a set of filters, each producing one feature map in the output image.
+ * The MPSCNNConvolution convolves the input image with a set of filters, each producing one feature map in the output image.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -165,7 +165,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * [@property]   groups
-     * 
+     * <p>
      * Number of groups input and output channels are divided into.
      */
     @Generated
@@ -183,22 +183,21 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * Initializes a convolution kernel
-     *             WARNING:                        This API is depreated and will be removed in the future. It cannot be used
-     *                                             when training. Also serialization/unserialization wont work for MPSCNNConvolution
-     *                                             objects created with this init. Please move onto using initWithDevice:weights:.
-     * 
-     * @param      device                          The MTLDevice on which this MPSCNNConvolution filter will be used
-     * @param      convolutionDescriptor           A pointer to a MPSCNNConvolutionDescriptor.
-     * @param      kernelWeights                   A pointer to a weights array.  Each entry is a float value. The number of entries is =
-     *                                             inputFeatureChannels * outputFeatureChannels * kernelHeight * kernelWidth
-     *                                             The layout of filter weight is so that it can be reinterpreted as 4D tensor (array)
-     *                                             weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ inputChannels / groups ]
-     *                                             Weights are converted to half float (fp16) internally for best performance.
-     * @param      biasTerms                       A pointer to bias terms to be applied to the convolution output.  Each entry is a float value.
-     *                                             The number of entries is = numberOfOutputFeatureMaps
-     * @param      flags                           Currently unused. Pass MPSCNNConvolutionFlagsNone
-     * 
-     * @return     A valid MPSCNNConvolution object or nil, if failure.
+     * WARNING:                        This API is depreated and will be removed in the future. It cannot be used
+     * when training. Also serialization/unserialization wont work for MPSCNNConvolution
+     * objects created with this init. Please move onto using initWithDevice:weights:.
+     *
+     * @param device                The MTLDevice on which this MPSCNNConvolution filter will be used
+     * @param convolutionDescriptor A pointer to a MPSCNNConvolutionDescriptor.
+     * @param kernelWeights         A pointer to a weights array.  Each entry is a float value. The number of entries is =
+     *                              inputFeatureChannels * outputFeatureChannels * kernelHeight * kernelWidth
+     *                              The layout of filter weight is so that it can be reinterpreted as 4D tensor (array)
+     *                              weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ inputChannels / groups ]
+     *                              Weights are converted to half float (fp16) internally for best performance.
+     * @param biasTerms             A pointer to bias terms to be applied to the convolution output.  Each entry is a float value.
+     *                              The number of entries is = numberOfOutputFeatureMaps
+     * @param flags                 Currently unused. Pass MPSCNNConvolutionFlagsNone
+     * @return A valid MPSCNNConvolution object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:")
@@ -208,7 +207,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * [@property]   inputFeatureChannels
-     * 
+     * <p>
      * The number of feature channels per pixel in the input image.
      */
     @Generated
@@ -218,9 +217,9 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * [@property]   neuron
-     * 
+     * <p>
      * MPSCNNNeuron filter to be applied as part of convolution.
-     *             Can be nil in wich case no neuron activation fuction is applied.
+     * Can be nil in wich case no neuron activation fuction is applied.
      */
     @Generated
     @Selector("neuron")
@@ -228,7 +227,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * [@property]   outputFeatureChannels
-     * 
+     * <p>
      * The number of feature channels per pixel in the output image.
      */
     @Generated
@@ -238,10 +237,10 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * Channel multiplier.
-     * 
+     * <p>
      * For convolution created with MPSCNNDepthWiseConvolutionDescriptor, it is the number of
-     *             output feature channels for each input channel. See MPSCNNDepthWiseConvolutionDescriptor for more details.
-     *             Default is 0 which means regular CNN convolution.
+     * output feature channels for each input channel. See MPSCNNDepthWiseConvolutionDescriptor for more details.
+     * Default is 0 which means regular CNN convolution.
      */
     @Generated
     @Selector("channelMultiplier")
@@ -254,16 +253,16 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * While the standard NSSecureCoding/NSCoding method
-     *             -initWithCoder: should work, since the file can't
-     *             know which device your data is allocated on, we
-     *             have to guess and may guess incorrectly.  To avoid
-     *             that problem, use initWithCoder:device instead.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
-     * @param      device      The MTLDevice on which to make the MPSKernel
-     * @return     A new MPSKernel object, or nil if failure.
+     * -initWithCoder: should work, since the file can't
+     * know which device your data is allocated on, we
+     * have to guess and may guess incorrectly.  To avoid
+     * that problem, use initWithCoder:device instead.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSKernel
+     * @param device   The MTLDevice on which to make the MPSKernel
+     * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -272,14 +271,13 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * Initializes a convolution kernel
-     * 
-     * @param      device                          The MTLDevice on which this MPSCNNConvolution filter will be used
-     * @param      weights                         A pointer to a object that conforms to the MPSCNNConvolutionDataSource
-     *                                             protocol. The MPSCNNConvolutionDataSource protocol declares the methods that an
-     *                                             instance of MPSCNNConvolution uses to obtain the weights and bias terms
-     *                                             for the CNN convolution filter.
-     * 
-     * @return     A valid MPSCNNConvolution object or nil, if failure.
+     *
+     * @param device  The MTLDevice on which this MPSCNNConvolution filter will be used
+     * @param weights A pointer to a object that conforms to the MPSCNNConvolutionDataSource
+     *                protocol. The MPSCNNConvolutionDataSource protocol declares the methods that an
+     *                instance of MPSCNNConvolution uses to obtain the weights and bias terms
+     *                for the CNN convolution filter.
+     * @return A valid MPSCNNConvolution object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:weights:")
@@ -288,7 +286,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * Parameter "a" for the neuron.  Default: 1.0f
-     * 
+     * <p>
      * Please see class description for interpretation of a.
      */
     @Generated
@@ -297,7 +295,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * Parameter "b" for the neuron.  Default: 1.0f
-     * 
+     * <p>
      * Please see class description for interpretation of b.
      */
     @Generated
@@ -306,7 +304,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * The type of neuron to append to the convolution
-     * 
+     * <p>
      * Please see class description for a full list. Default is MPSCNNNeuronTypeNone.
      */
     @Generated
@@ -315,7 +313,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * [@property]   subPixelScaleFactor
-     * 
+     * <p>
      * Sub pixel scale factor which was passed in as part of MPSCNNConvolutionDescriptor when creating this MPSCNNConvolution object.
      */
     @Generated
@@ -335,7 +333,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * Precision of accumulator used in convolution.
-     * 
+     * <p>
      * See MPSNeuralNetworkTypes.h for discussion. Default is MPSNNConvolutionAccumulatorPrecisionOptionFloat.
      */
     @Generated
@@ -345,7 +343,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * [@property]   dataSource
-     * 
+     * <p>
      * dataSource with which convolution object was created
      */
     @Generated
@@ -360,7 +358,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
      * *  @param      commandBuffer              Metal command buffer on which export kernel is enqueued.
      * *  @param      resultStateCanBeTemporary  If FALSE, state returned will be non-temporary. If TRUE, returned state may or may not be temporary.
      * *  @return     MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffer to which weights got exported. This state and be
-     *                temporary or non-temporary depending on the flag resultStateCanBeTemporary
+     * temporary or non-temporary depending on the flag resultStateCanBeTemporary
      */
     @Generated
     @Selector("exportWeightsAndBiasesWithCommandBuffer:resultStateCanBeTemporary:")
@@ -369,7 +367,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * Fused neuron descritor passed in convolution descriptor for fusion with convolution.
-     * 
+     * <p>
      * Please see class description for interpretation of c.
      */
     @Generated
@@ -378,7 +376,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * Parameter "c" for the neuron.  Default: 1.0f
-     * 
+     * <p>
      * Please see class description for interpretation of c.
      */
     @Generated
@@ -395,12 +393,12 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * GPU side reload. Reload the updated weights and biases from update buffer produced by application enqueued metal kernel into internal weights
-     *             and biases buffer. Weights and biases gradients needed for update are obtained from MPSCNNConvolutionGradientState object's gradientForWeights and gradientForBiases metal buffer.
-     * 
-     * @param      commandBuffer      Metal command buffer on which application update kernel was enqueued consuming MPSCNNConvolutionGradientState's gradientForWeights and gradientForBiases buffers
-     *                                and producing updateBuffer metal buffer.
-     * @param      state              MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffers which have updated weights produced by application's update kernel.
-     *                                The state readcount will be decremented.
+     * and biases buffer. Weights and biases gradients needed for update are obtained from MPSCNNConvolutionGradientState object's gradientForWeights and gradientForBiases metal buffer.
+     *
+     * @param commandBuffer Metal command buffer on which application update kernel was enqueued consuming MPSCNNConvolutionGradientState's gradientForWeights and gradientForBiases buffers
+     *                      and producing updateBuffer metal buffer.
+     * @param state         MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffers which have updated weights produced by application's update kernel.
+     *                      The state readcount will be decremented.
      */
     @Generated
     @Selector("reloadWeightsAndBiasesWithCommandBuffer:state:")
@@ -418,13 +416,13 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * Allocate a MPCNNConvolutionGradientSState to hold the results from a -encodeBatchToCommandBuffer... operation
-     * 
-     * @param      sourceImage         The MPSImage consumed by the associated -encode call.
-     * @param      sourceStates        The list of MPSStates consumed by the associated -encode call,
-     *                                 for a batch size of 1.
-     * @return     The list of states produced by the -encode call for batch size of 1.
-     *             -isResultStateReusedAcrossBatch returns YES for MPSCNNConvolution so same
-     *             state is used across entire batch. State object is not reusasable across batches.
+     *
+     * @param sourceImage  The MPSImage consumed by the associated -encode call.
+     * @param sourceStates The list of MPSStates consumed by the associated -encode call,
+     *                     for a batch size of 1.
+     * @return The list of states produced by the -encode call for batch size of 1.
+     * -isResultStateReusedAcrossBatch returns YES for MPSCNNConvolution so same
+     * state is used across entire batch. State object is not reusasable across batches.
      */
     @Generated
     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
@@ -433,7 +431,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * Precision of accumulator used in convolution.
-     * 
+     * <p>
      * See MPSNeuralNetworkTypes.h for discussion. Default is MPSNNConvolutionAccumulatorPrecisionOptionFloat.
      */
     @Generated

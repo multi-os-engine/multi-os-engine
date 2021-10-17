@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * MDLTransformComponent
  * [@summary] a container for a time sampled local transformation
- * 
+ * <p>
  * Accessors to get the local transform and the global transform
  * for a particular MDLObject are provided.
  */
@@ -39,7 +39,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface MDLTransformComponent extends MDLComponent {
     /**
      * An array of sample times for which a key has been stored
-     * If no animation data is present, the array will contain a single value of zero 
+     * If no animation data is present, the array will contain a single value of zero
      */
     @Generated
     @Selector("keyTimes")

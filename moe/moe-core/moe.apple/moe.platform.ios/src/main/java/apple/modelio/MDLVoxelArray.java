@@ -45,8 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MDLVoxelArray
  * [@summary] Voxel data represented on a three dimensional grid. Voxel data can
- *          include voxels considered to be on the surface of an object, and a 
- *          series of shells on the outside and inside of the surface.
+ * include voxels considered to be on the surface of an object, and a
+ * series of shells on the outside and inside of the surface.
  */
 @Generated
 @Library("ModelIO")
@@ -180,10 +180,10 @@ public class MDLVoxelArray extends MDLObject {
     public native MDLMesh coarseMeshUsingAllocator(@Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
 
     /**
-     * Converts volume grid into a signed shell field by surrounding the surface voxels, which have shell 
-     * level values of zero, by an inner layer of voxels with shell level values of negative one and an 
+     * Converts volume grid into a signed shell field by surrounding the surface voxels, which have shell
+     * level values of zero, by an inner layer of voxels with shell level values of negative one and an
      * outer layer of voxels with shell level values of positive one.
-     * 
+     * <p>
      * The volume model must be closed in order to generate a signed shell field.
      */
     @Generated
@@ -232,8 +232,8 @@ public class MDLVoxelArray extends MDLObject {
 
     /**
      * Returns whether or not the volume grid is in a valid signed shell field form.
-     * 
-     * This property will be set to YES after calling generateSignedShellField. All other 
+     * <p>
+     * This property will be set to YES after calling generateSignedShellField. All other
      * methods that modify the voxel grid will cause this property to be set to NO. Setting
      * shellFieldInteriorThickness and shellFieldExteriorThickness will not affect the value
      * of this property.

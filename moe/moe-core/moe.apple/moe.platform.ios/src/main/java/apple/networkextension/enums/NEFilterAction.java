@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEFilterAction
- * 
+ * <p>
  * A NEFilterAction represents the possible actions taken upon a NEFilterFlow that can be reported by the
  * data provider extension to the control provider extension.
  */

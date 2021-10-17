@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum]	AudioFileStreamParseFlags
- *   [@constant]   kAudioFileStreamSeekFlag_OffsetIsEstimated 
+ * [@constant]   kAudioFileStreamSeekFlag_OffsetIsEstimated
  * This flag may be returned from AudioFileStreamSeek if the byte offset is only an estimate, not exact.
  */
 @Generated

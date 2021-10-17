@@ -158,7 +158,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a shader uniform with a given name.
-     * 
+     *
      * @param name the name of the shader uniform.
      */
     @Generated
@@ -167,8 +167,8 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a shader uniform with a given name, and a float value
-     * 
-     * @param name the name of the shader uniform.
+     *
+     * @param name  the name of the shader uniform.
      * @param value the floating point value associated with this uniform.
      */
     @Generated
@@ -201,8 +201,8 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a shader uniform with a given name, and texture data
-     * 
-     * @param name the name of the shader uniform.
+     *
+     * @param name    the name of the shader uniform.
      * @param texture the texture data associated with this uniform.
      */
     @Generated

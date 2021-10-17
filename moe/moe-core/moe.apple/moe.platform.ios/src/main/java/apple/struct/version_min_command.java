@@ -39,7 +39,7 @@ public final class version_min_command extends StructObject {
      * LC_VERSION_MIN_MACOSX or
      * LC_VERSION_MIN_IPHONEOS or
      * LC_VERSION_MIN_WATCHOS or
-     * LC_VERSION_MIN_TVOS 
+     * LC_VERSION_MIN_TVOS
      */
     @Generated
     @StructureField(order = 0, isGetter = true)
@@ -49,7 +49,7 @@ public final class version_min_command extends StructObject {
      * LC_VERSION_MIN_MACOSX or
      * LC_VERSION_MIN_IPHONEOS or
      * LC_VERSION_MIN_WATCHOS or
-     * LC_VERSION_MIN_TVOS 
+     * LC_VERSION_MIN_TVOS
      */
     @Generated
     @StructureField(order = 0, isGetter = false)

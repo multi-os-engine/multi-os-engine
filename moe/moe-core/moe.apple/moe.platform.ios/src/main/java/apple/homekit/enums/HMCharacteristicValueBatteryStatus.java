@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueBatteryStatus
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueBatteryStatusNormal  Battery level is normal.
  * [@constant]  HMCharacteristicValueBatteryStatusLow     Battery level is low.
  */

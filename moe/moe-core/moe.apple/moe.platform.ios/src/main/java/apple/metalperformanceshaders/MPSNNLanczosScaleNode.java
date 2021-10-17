@@ -28,12 +28,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A MPSNNScale object that uses the Lanczos resampling filter
- * 
+ * <p>
  * This method does not require a low pass filter for downsampling
- *                by more than a factor of two. Caution: may cause ringing, which
- *                could prove distracting to a neural network unused to seeing it.
- *                You should use the resampling method that was used to train the
- *                network.
+ * by more than a factor of two. Caution: may cause ringing, which
+ * could prove distracting to a neural network unused to seeing it.
+ * You should use the resampling method that was used to train the
+ * network.
  */
 @Generated
 @Library("MetalPerformanceShaders")

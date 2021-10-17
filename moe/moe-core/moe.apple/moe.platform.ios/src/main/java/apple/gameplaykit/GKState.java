@@ -42,9 +42,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Represents a single state in a state machine.
  * By default, states allow transitions freely to and from the states in the machine.
- * 
+ * <p>
  * If a more restricted set of valid transitions are needed in the state machine, you may override isValidNextState: where applicable.
- * 
+ *
  * @see GKStateMachine
  * @see isValidNextState:
  */
@@ -152,7 +152,7 @@ public class GKState extends NSObject {
 
     /**
      * Creates a new state to be used in a state machine.
-     * 
+     *
      * @see GKStateMachine
      */
     @Generated
@@ -170,7 +170,7 @@ public class GKState extends NSObject {
 
     /**
      * Called by GKStateMachine when this state is entered.
-     * 
+     *
      * @param previousState the state that was exited to enter this state.  This is nil if this is the state machine's first entered state.
      * @see stateMachineWithStates:initialStateClass:
      */
@@ -184,15 +184,14 @@ public class GKState extends NSObject {
 
     /**
      * Returns YES if the given class is a valid next state to enter.
-     * 
+     * <p>
      * By default GKState will return YES for any class that is subclass of GKState.
      * Override this in a subclass to enforce limited edge traversals in the state machine.
-     * 
-     * @see GKStateMachine.canEnterState:
-     * @see GKStateMachine.enterState:
-     * 
+     *
      * @param stateClass the class to be checked
      * @return YES if the class is kind of GKState and the state transition is valid, else NO.
+     * @see GKStateMachine.canEnterState:
+     * @see GKStateMachine.enterState:
      */
     @Generated
     @Selector("isValidNextState:")
@@ -208,7 +207,7 @@ public class GKState extends NSObject {
 
     /**
      * Called by GKStateMachine when it is updated
-     * 
+     *
      * @param seconds the time in seconds since the last update
      */
     @Generated
@@ -217,7 +216,7 @@ public class GKState extends NSObject {
 
     /**
      * Called by GKStateMachine when this state is exited
-     * 
+     *
      * @param nextState the state that is being entered next
      */
     @Generated

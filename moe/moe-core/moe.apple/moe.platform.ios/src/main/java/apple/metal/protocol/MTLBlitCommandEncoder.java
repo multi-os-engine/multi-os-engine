@@ -33,7 +33,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLBlitCommandEncoder
- * 
+ * <p>
  * A command encoder that performs basic copies and blits between buffers and textures.
  */
 @Generated
@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     /**
      * copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:
-     * 
+     * <p>
      * Copy an image from a buffer into a texture.
      */
     @Generated
@@ -56,7 +56,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:
-     * 
+     * <p>
      * Copy an image from a buffer into a texture.
      */
     @Generated
@@ -69,7 +69,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:
-     * 
+     * <p>
      * Basic memory copy between buffers.
      */
     @Generated
@@ -80,7 +80,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:
-     * 
+     * <p>
      * Copy an image from a texture into a buffer.
      */
     @Generated
@@ -93,7 +93,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:sourceOptions:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:
-     * 
+     * <p>
      * Copy an image from a texture into a buffer.
      */
     @Generated
@@ -106,7 +106,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:
-     * 
+     * <p>
      * Copy a rectangle of pixels between textures.
      */
     @Generated
@@ -119,7 +119,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * fillBuffer:range:value:
-     * 
+     * <p>
      * Fill a buffer with a fixed value in each byte.
      */
     @Generated
@@ -128,7 +128,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * generateMipmapsForTexture:
-     * 
+     * <p>
      * Generate mipmaps for a texture from the base level up to the max level.
      */
     @Generated
@@ -137,9 +137,9 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * updateFence:
-     * 
+     * <p>
      * Update the fence to capture all GPU work so far enqueued by this encoder.
-     * 
+     * <p>
      * The fence is updated at kernel submission to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */
@@ -149,9 +149,9 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * waitForFence:
-     * 
+     * <p>
      * Prevent further GPU work until the fence is reached.
-     * 
+     * <p>
      * The fence is evaluated at kernel submision to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */
@@ -161,9 +161,9 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * copyFromTexture:sourceSlice:sourceLevel:toTexture:destinationSlice:destinationLevel:sliceCount:levelCount:
-     * 
+     * <p>
      * Copy whole surfaces between textures.
-     * 
+     * <p>
      * Convenience function to copy sliceCount * levelCount whole surfaces between textures
      * The source and destination pixel format must be identical.
      * The source and destination sample count must be identical.
@@ -182,9 +182,9 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * copyFromTexture:toTexture:
-     * 
+     * <p>
      * Copy as many whole surfaces as possible between textures.
-     * 
+     * <p>
      * Convenience function that calls copyFromTexture:sourceSlice:sourceLevel:toTexture:destinationSlice:destinationLevel:sliceCount:levelCount:
      * The source and destination pixel format must be identical.
      * The source and destination sample count must be identical.
@@ -192,7 +192,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * - sourceTexture must have a mip M with identical dimensions as the first mip of destinationTexture: sourceLevel = M, destinationLevel = 0
      * - destinationTexture must have a mip M with identical dimensions as the first mip of sourceTexture: sourceLevel = 0, destinationLevel = M
      * Computes: levelCount = min(sourceTexture.mipmapLevelCount - sourceLevel, destinationTexture.mipmapLevelCount - destinationLevel)
-     *           sliceCount = min(sourceTexture.arrayLength, destinationTexture.arrayLength)
+     * sliceCount = min(sourceTexture.arrayLength, destinationTexture.arrayLength)
      * Then invokes the method above using the computed parameters.
      */
     @Generated
@@ -202,7 +202,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * copyIndirectCommandBuffer:source:sourceRange:destination:destinationIndex
-     * 
+     * <p>
      * copy a region of a buffer into a destination buffer starting at destinationIndex using the GPU
      */
     @Generated
@@ -213,7 +213,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * getTextureAccessCounters:region:mipLevel:slice:type:resetCounters:countersBuffer:countersBufferOffset
-     * 
+     * <p>
      * Copies tile access counters within specified region into provided buffer
      */
     @Generated
@@ -225,7 +225,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * optimizeContentsForCPUAccess:
-     * 
+     * <p>
      * Optimizes the texture data to ensure the best possible performance when accessing content on the CPU at the expense of GPU-access performance.
      */
     @Generated
@@ -234,7 +234,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * optimizeContentsForCPUAccess:slice:level:
-     * 
+     * <p>
      * Optimizes a subset of the texture data to ensure the best possible performance when accessing content on the CPU at the expense of GPU-access performance.
      */
     @Generated
@@ -244,7 +244,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * optimizeContentsForGPUAccess:
-     * 
+     * <p>
      * Optimizes the texture data to ensure the best possible performance when accessing content on the GPU at the expense of CPU-access performance.
      */
     @Generated
@@ -253,7 +253,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * optimizeContentsForGPUAccess:slice:level:
-     * 
+     * <p>
      * Optimizes a subset of the texture data to ensure the best possible performance when accessing content on the GPU at the expense of CPU-access performance.
      */
     @Generated
@@ -262,8 +262,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
             @NUInt long level);
 
     /**
-     * optimizeIndirectCommandBuffer:indirectCommandBuffer:range:
-     * 
+     * optimizeIndirectCommandBuffer:withRange:
+     * <p>
      * Optimizes a subset of the texture data to ensure the best possible performance when accessing content on the CPU at the expense of GPU-access performance.
      */
     @Generated
@@ -272,8 +272,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
             @Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer indirectCommandBuffer, @ByValue NSRange range);
 
     /**
-     * resetCommandsInBuffer:buffer:withRange:
-     * 
+     * resetCommandsInBuffer:withRange:
+     * <p>
      * reset commands in a indirect command buffer using the GPU
      */
     @Generated
@@ -283,7 +283,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * resetTextureAccessCounters:region:mipLevel:slice:type:
-     * 
+     * <p>
      * Resets tile access counters within specified region
      */
     @Generated
@@ -293,17 +293,17 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * resolveCounters:inRange:destinationBuffer:destinationOffset:
-     * 
+     * <p>
      * Resolve the counters from the raw buffer to a processed buffer.
-     * 
+     * <p>
      * Samples that encountered an error during resolve will be set to
      * MTLCounterErrorValue.
-     * 
-     * @param sampleBuffer The sample buffer to resolve.
-     * @param range The range of indices to resolve.
+     *
+     * @param sampleBuffer      The sample buffer to resolve.
+     * @param range             The range of indices to resolve.
      * @param destinationBuffer The buffer to resolve values into.
      * @param destinationOffset The offset to begin writing values out to.  This must be a multiple of
-     * the minimum constant buffer alignment.
+     *                          the minimum constant buffer alignment.
      */
     @Generated
     @Selector("resolveCounters:inRange:destinationBuffer:destinationOffset:")
@@ -313,23 +313,23 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
 
     /**
      * sampleCountersInBuffer:atSampleIndex:withBarrier:
-     * 
+     * <p>
      * Sample hardware counters at this point in the blit encoder and
      * store the counter sample into the sample buffer at the specified index.
-     * 
+     * <p>
      * On devices where MTLCounterSamplingPointAtBlitBoundary is unsupported,
      * this method is not available and will generate an error if called.
-     * 
+     *
      * @param sampleBuffer The sample buffer to sample into
-     * @param sampleIndex The index into the counter buffer to write the sample.
-     * @param barrier Insert a barrier before taking the sample.  Passing
-     * YES will ensure that all work encoded before this operation in the encoder is
-     * complete but does not isolate the work with respect to other encoders.  Passing
-     * NO will allow the sample to be taken concurrently with other operations in this
-     * encoder.
-     * In general, passing YES will lead to more repeatable counter results but
-     * may negatively impact performance.  Passing NO will generally be higher performance
-     * but counter results may not be repeatable.
+     * @param sampleIndex  The index into the counter buffer to write the sample.
+     * @param barrier      Insert a barrier before taking the sample.  Passing
+     *                     YES will ensure that all work encoded before this operation in the encoder is
+     *                     complete but does not isolate the work with respect to other encoders.  Passing
+     *                     NO will allow the sample to be taken concurrently with other operations in this
+     *                     encoder.
+     *                     In general, passing YES will lead to more repeatable counter results but
+     *                     may negatively impact performance.  Passing NO will generally be higher performance
+     *                     but counter results may not be repeatable.
      */
     @Generated
     @Selector("sampleCountersInBuffer:atSampleIndex:withBarrier:")

@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNDArrayDivisionPrimaryGradient
- * 
+ * <p>
  * [@dependency] This depends on Metal.framework.
  */
 @Generated

@@ -43,7 +43,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A UIGraphicsRendererContext provides primative drawing routines not provided through other
+ * A UIGraphicsRendererContext provides primitive drawing routines not provided through other
  * UIKit classes (UIImage, UIBezierPath, etc) in addition to providing access to the underlying
  * CGContextRef.
  */

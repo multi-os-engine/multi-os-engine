@@ -17,9 +17,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLRasterizationRateMap
- * 
+ * <p>
  * Compiled read-only object that determines how variable rasterization rate is applied when rendering.
- * 
+ * <p>
  * A variable rasterization rate map is compiled by MTLDevice from a MTLRasterizationRateMapDescriptor containing one or more MTLRasterizationRateLayerDescriptor.
  * During compilation, the quality samples provided in the MTLRasterizationRateLayerDescriptor may be rounded up to the nearest supported value or granularity, depending on hardware support.
  * However, the compilation will never round values down, so the actual rasterization will always happen at a quality level matching or exceeding the provided quality samples.
@@ -35,9 +35,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLRasterizationRateMap {
     /**
      * copyParameterDataToBuffer:offset:
-     * 
+     * <p>
      * Copy the parameter data into the provided buffer at the provided offset.
-     * 
+     * <p>
      * The buffer must have storageMode MTLStorageModeShared, and a size of at least parameterBufferSizeAndAlign.size + offset.
      * The specified offset must be a multiple of parameterBufferSize.align.
      * The buffer can be bound to a shader stage to map screen space to physical fragment space, or vice versa.
@@ -48,7 +48,7 @@ public interface MTLRasterizationRateMap {
 
     /**
      * [@property] device
-     * 
+     *
      * @return The device on which the rasterization rate map was created
      */
     @Generated
@@ -58,7 +58,7 @@ public interface MTLRasterizationRateMap {
 
     /**
      * [@property] label
-     * 
+     * <p>
      * A string to help identify this object.
      */
     @Generated
@@ -67,10 +67,10 @@ public interface MTLRasterizationRateMap {
 
     /**
      * [@property] layerCount
-     * 
+     * <p>
      * Different render-target layers may target different variable rasterization configurations.
      * The rasterization rate layer for a primitive is selected on the [[render_target_layer_index]].
-     * 
+     *
      * @return The number of different configured layers in the rasterization map.
      */
     @Generated
@@ -80,7 +80,7 @@ public interface MTLRasterizationRateMap {
 
     /**
      * mapPhysicalToScreenCoordinates:forLayer:
-     * 
+     * <p>
      * Computes where an offset relative to the top-left of the framebuffer, in physical pixels, would end up in screen space, in screen space pixels.
      * The returned value is greater-or-equal the input value because the rasterization quality never exceeds 1:1 in any region.
      */
@@ -92,7 +92,7 @@ public interface MTLRasterizationRateMap {
 
     /**
      * mapScreenToPhysicalCoordinates:forLayer:
-     * 
+     * <p>
      * Computes where an offset relative to the top-left of screen space, in screen space pixels, would end up in the framebuffer, in physical fragments.
      * The returned value is less-or-equal the input value because the rasterization quality never exceeds 1:1 in any region.
      */
@@ -104,9 +104,9 @@ public interface MTLRasterizationRateMap {
 
     /**
      * [@property] parameterBufferSizeAndAlign
-     * 
+     * <p>
      * Returns the size and alignment requirements of the parameter buffer for this rate map.
-     * 
+     * <p>
      * The parameter data can be copied into a buffer with this size and alignment using copyParameterDataToBuffer:offset:
      */
     @Generated
@@ -116,10 +116,10 @@ public interface MTLRasterizationRateMap {
 
     /**
      * [@property] physicalGranularity
-     * 
+     * <p>
      * Rendering algorithms that use binning or tiling in screen space may want to determine the screen space bin size using this value.
      * The depth component of the returned MTLSize is always 0.
-     * 
+     *
      * @return The granularity, in physical pixels, at which variable rasterization rate varies.
      */
     @Generated
@@ -129,9 +129,9 @@ public interface MTLRasterizationRateMap {
 
     /**
      * getPhysicalSizeForLayer:
-     * 
+     * <p>
      * The dimensions, in physical fragments, of the area in the render target where variable rasterization is applied
-     * 
+     * <p>
      * Different configured layers may have a different rasterization rate and may have different size after rendering.
      * The rasterization rate layer for a primitive is selected on the [[render_target_layer_index]].
      */
@@ -142,10 +142,10 @@ public interface MTLRasterizationRateMap {
 
     /**
      * [@property] screenSize
-     * 
+     * <p>
      * The region always has its origin at [0, 0].
      * The depth component of the returned MTLSize is always 0.
-     * 
+     *
      * @return The dimensions, in screen space pixels, of the region where variable rasterization is applied.
      */
     @Generated

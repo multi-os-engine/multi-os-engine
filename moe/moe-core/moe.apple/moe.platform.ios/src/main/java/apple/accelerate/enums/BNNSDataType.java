@@ -49,4 +49,7 @@ public final class BNNSDataType {
     @Generated public static final int BNNSDataTypeIndexed4 = 0x00080004;
     @Generated public static final int BNNSDataTypeMiscellaneousBit = 0x00100000;
     @Generated public static final int BNNSDataTypeBoolean = 0x00100008;
+    @Generated public static final int BNNSDataTypeBFloat16 = 0x00018010;
+    @Generated public static final int BNNSDataTypeInt64 = 0x00020040;
+    @Generated public static final int BNNSDataTypeUInt64 = 0x00040040;
 }

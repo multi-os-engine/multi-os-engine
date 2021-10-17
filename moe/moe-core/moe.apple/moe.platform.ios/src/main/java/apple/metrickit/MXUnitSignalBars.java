@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXUnitSignalBars
- * 
+ * <p>
  * An NSUnit subclass representing the number of signal bars for signal strength.
  */
 @Generated

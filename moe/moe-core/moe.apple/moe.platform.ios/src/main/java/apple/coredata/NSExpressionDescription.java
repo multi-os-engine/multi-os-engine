@@ -43,9 +43,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Special property description type intended for use with the NSFetchRequest -propertiesToFetch method.
- * An NSExpressionDescription describes a column to be returned from a fetch that may not appear 
+ * An NSExpressionDescription describes a column to be returned from a fetch that may not appear
  * directly as an attribute or relationship on an entity. Examples would be: upper(attribute) or
- * max(attribute). NSExpressionDescriptions cannot be set as properties on NSEntityDescription. 
+ * max(attribute). NSExpressionDescriptions cannot be set as properties on NSEntityDescription.
  */
 @Generated
 @Library("CoreData")

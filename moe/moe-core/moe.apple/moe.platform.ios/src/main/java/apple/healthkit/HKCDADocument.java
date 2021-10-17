@@ -153,9 +153,9 @@ public class HKCDADocument extends NSObject {
 
     /**
      * [@property]      authorName
-     * 
+     * <p>
      * The person responsible for authoring the document.  Usually, this is the treating physician.
-     * 
+     * <p>
      * This property is extracted automatically from the document.
      */
     @Generated
@@ -164,9 +164,9 @@ public class HKCDADocument extends NSObject {
 
     /**
      * [@property]      custodianName
-     * 
+     * <p>
      * The organization responsible for the document.  This is usually the treating institution name.
-     * 
+     * <p>
      * This property is extracted automatically from the document.
      */
     @Generated
@@ -175,9 +175,9 @@ public class HKCDADocument extends NSObject {
 
     /**
      * [@property]  documentData
-     * 
+     * <p>
      * The CDA document content in XML format as specified in the CDA standard. This may be nil if the
-     *            includeDocumentData option in HKDocumentQuery is specified as NO.
+     * includeDocumentData option in HKDocumentQuery is specified as NO.
      */
     @Generated
     @Selector("documentData")
@@ -189,9 +189,9 @@ public class HKCDADocument extends NSObject {
 
     /**
      * [@property]      patientName
-     * 
+     * <p>
      * The name of the patient receiving treatment.
-     * 
+     * <p>
      * This property is extracted automatically from the document.
      */
     @Generated
@@ -200,9 +200,9 @@ public class HKCDADocument extends NSObject {
 
     /**
      * [@property]      title
-     * 
+     * <p>
      * The title of the document.
-     * 
+     * <p>
      * This property is extracted automatically from the document.
      */
     @Generated

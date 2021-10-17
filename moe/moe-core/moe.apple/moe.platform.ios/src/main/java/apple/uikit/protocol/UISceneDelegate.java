@@ -116,4 +116,18 @@ public interface UISceneDelegate {
     default NSUserActivity stateRestorationActivityForScene(UIScene scene) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    /**
+     * This will be called after scene connection, but before activation, and will provide the
+     * activity that was last supplied to the stateRestorationActivityForScene callback, or
+     * set on the UISceneSession.stateRestorationActivity property.
+     * Note that, if it's required earlier, this activity is also already available in the
+     * UISceneSession.stateRestorationActivity at scene connection time.
+     */
+    @Generated
+    @IsOptional
+    @Selector("scene:restoreInteractionStateWithUserActivity:")
+    default void sceneRestoreInteractionStateWithUserActivity(UIScene scene, NSUserActivity stateRestorationActivity) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

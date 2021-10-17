@@ -30,9 +30,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNDetectedObjectObservation
  * [@superclass] VNObservation
- * 
+ * <p>
  * VNDetectedObjectObservation is VNObservation in an image that has a location and/or dimension. Further attributes depend on the specific detected object.
- * 
+ * <p>
  * All result objects (faces, scene objects, shapes etc) must extend from this class.
  */
 @Generated
@@ -183,4 +183,11 @@ public class VNDetectedObjectObservation extends VNObservation {
     @Selector("observationWithRequestRevision:boundingBox:")
     public static native VNDetectedObjectObservation observationWithRequestRevisionBoundingBox(
             @NUInt long requestRevision, @ByValue CGRect boundingBox);
+
+    /**
+     * The resulting CVPixelBuffer from requests that generate a segmentation mask for the entire image.
+     */
+    @Generated
+    @Selector("globalSegmentationMask")
+    public native VNPixelBufferObservation globalSegmentationMask();
 }

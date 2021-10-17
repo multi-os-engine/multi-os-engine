@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * _______________________________________________________________________________________________________________
- *  this represents the display and behaviour of the cells.
+ * this represents the display and behavior of the cells.
  */
 @Generated
 @Library("UIKit")
@@ -202,7 +202,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * Use the estimatedHeight methods to quickly calcuate guessed values which will allow for fast load times of the table.
+     * Use the estimatedHeight methods to quickly calculate guessed values which will allow for fast load times of the table.
      * If these methods are implemented, the above -tableView:heightForXXX calls will be deferred until views are ready to be displayed, so more expensive logic can be placed there.
      */
     @Generated
@@ -424,15 +424,14 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the interaction begins.
-     * 
-     * @param tableView  This UITableView.
-     * @param indexPath  IndexPath of the row for which a configuration is being requested.
-     * @param point      Location of the interaction in the table view's coordinate space
-     * 
+     *
+     * @param tableView This UITableView.
+     * @param indexPath IndexPath of the row for which a configuration is being requested.
+     * @param point     Location of the interaction in the table view's coordinate space
      * @return A UIContextMenuConfiguration describing the menu to be presented. Return nil to prevent the interaction from beginning.
-     *         Returning an empty configuration causes the interaction to begin then fail with a cancellation effect. You might use this
-     *         to indicate to users that it's possible for a menu to be presented from this element, but that there are no actions to
-     *         present at this particular time.
+     * Returning an empty configuration causes the interaction to begin then fail with a cancellation effect. You might use this
+     * to indicate to users that it's possible for a menu to be presented from this element, but that there are no actions to
+     * present at this particular time.
      */
     @Generated
     @IsOptional
@@ -444,7 +443,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called right after the multi-select pan gesture begins and the table view is automatically transitioned into editing mode.
-     * 
+     * <p>
      * In your app, this would be a good opportunity to update the state of your UI to reflect the fact that the user is now selecting
      * multiple items at once; such as updating buttons to say "Done" instead of "Select"/"Edit", for instance.
      */
@@ -459,9 +458,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     /**
      * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal target.
      * The interaction will animate the presented menu to the target. Use this to customize the dismissal animation.
-     * 
-     * @param tableView      This UITableView.
-     * @param configuration  The configuration of the menu displayed by this interaction.
+     *
+     * @param tableView     This UITableView.
+     * @param configuration The configuration of the menu displayed by this interaction.
      */
     @Generated
     @IsOptional
@@ -473,9 +472,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the interaction begins. Return a UITargetedPreview to override the default preview created by the table view.
-     * 
-     * @param tableView      This UITableView.
-     * @param configuration  The configuration of the menu about to be displayed by this interaction.
+     *
+     * @param tableView     This UITableView.
+     * @param configuration The configuration of the menu about to be displayed by this interaction.
      */
     @Generated
     @IsOptional
@@ -487,13 +486,13 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Allows a two-finger pan gesture to automatically transition the table view into editing mode and start selecting cells.
-     * 
+     * <p>
      * If this method returns YES, allow the user to start selecting multiple contiguous cells via a two-finger pan gesture. If
      * the table view is already in editing mode, the user can also select multiple cells via a one-finger pan gesture along the
      * edge of the table that contains editing controls (checkboxes).
-     * 
+     * <p>
      * In order to support this behavior, you must also set allowsMultipleSelectionDuringEditing to YES.
-     * 
+     * <p>
      * If this method is not implemented, the default is NO.
      */
     @Generated
@@ -506,10 +505,10 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the interaction is about to "commit" in response to the user tapping the preview.
-     * 
-     * @param tableView      This UITableView.
-     * @param configuration  Configuration of the currently displayed menu.
-     * @param animator       Commit animator. Add animations to this object to run them alongside the commit transition.
+     *
+     * @param tableView     This UITableView.
+     * @param configuration Configuration of the currently displayed menu.
+     * @param animator      Commit animator. Add animations to this object to run them alongside the commit transition.
      */
     @Generated
     @IsOptional
@@ -522,7 +521,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the multi-select interaction ends.
-     * 
+     * <p>
      * At this point, the table view will remain in multi-select mode, but this delegate method is called to indicate that the multiple
      * selection gesture or hardware keyboard interaction has ended.
      */
@@ -535,10 +534,10 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the table view is about to display a menu.
-     * 
-     * @param tableView       This UITableView.
-     * @param configuration   The configuration of the menu about to be displayed.
-     * @param animator        Appearance animator. Add animations to run them alongside the appearance transition.
+     *
+     * @param tableView     This UITableView.
+     * @param configuration The configuration of the menu about to be displayed.
+     * @param animator      Appearance animator. Add animations to run them alongside the appearance transition.
      */
     @Generated
     @IsOptional
@@ -551,10 +550,10 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the table view's context menu interaction is about to end.
-     * 
-     * @param tableView       This UITableView.
-     * @param configuration   Ending configuration.
-     * @param animator        Disappearance animator. Add animations to run them alongside the disappearance transition.
+     *
+     * @param tableView     This UITableView.
+     * @param configuration Ending configuration.
+     * @param animator      Disappearance animator. Add animations to run them alongside the disappearance transition.
      */
     @Generated
     @IsOptional
@@ -562,6 +561,17 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     default void tableViewWillEndContextMenuInteractionWithConfigurationAnimator(UITableView tableView,
             UIContextMenuConfiguration configuration,
             @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Determines if the row at the specified index path should also become selected when focus moves to it.
+     * If the table view's global selectionFollowsFocus is enabled, this method will allow you to override that behavior on a per-index path basis. This method is not called if selectionFollowsFocus is disabled.
+     */
+    @Generated
+    @IsOptional
+    @Selector("tableView:selectionFollowsFocusForRowAtIndexPath:")
+    default boolean tableViewSelectionFollowsFocusForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

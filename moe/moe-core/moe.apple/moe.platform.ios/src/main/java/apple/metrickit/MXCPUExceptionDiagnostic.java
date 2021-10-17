@@ -29,11 +29,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXCPUExceptionDiagnostic
- * 
+ * <p>
  * An MXDiagnostic subclass that encapsulates CPU exception diagnostic reports.
- * 
+ * <p>
  * CPU exceptions occur when your application consumes excessive CPU time in a short period of time.
- * 
+ * <p>
  * CPU exceptions can be both fatal and non-fatal to your application.
  */
 @Generated
@@ -70,7 +70,7 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
 
     /**
      * [@property]      callStackTree
-     * 
+     * <p>
      * The application call stack tree associated with the excessive CPU consumption.
      */
     @Generated
@@ -171,9 +171,9 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
 
     /**
      * [@property]      totalCPUTime
-     * 
+     * <p>
      * Total CPU time consumed in the scope of this CPU exception.
-     * 
+     * <p>
      * Dimensioned as NSUnitDuration.
      */
     @Generated
@@ -182,9 +182,9 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
 
     /**
      * [@property]      totalSampledTime
-     * 
+     * <p>
      * Total time that the application was sampled for during the CPU exception.
-     * 
+     * <p>
      * Dimensioned as NSUnitDuration.
      */
     @Generated

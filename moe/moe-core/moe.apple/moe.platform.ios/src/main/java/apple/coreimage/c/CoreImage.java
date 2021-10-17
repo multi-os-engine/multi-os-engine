@@ -122,8 +122,8 @@ public final class CoreImage {
     /**
      * A NSDictionary of metadata properties to pass to CIImage initialization methods.
      * When used with imageWithCGImage:options:, initWithCGImage:options:, imageWithData:options:, initWithData:options:
-     *   If this option is not specified, the properties will be set to CGImageSourceCopyPropertiesAtIndex.
-     *   If this option is [NSNull null], the properties will be set to nil.
+     * If this option is not specified, the properties will be set to CGImageSourceCopyPropertiesAtIndex.
+     * If this option is [NSNull null], the properties will be set to nil.
      */
     @Generated
     @CVariable()
@@ -197,8 +197,8 @@ public final class CoreImage {
     /**
      * An NSNumber with a CIFormat value defining the pixel format to use for intermediate buffers.
      * On iOS the supported values for this key are RGBA8 and RGBAh. If not specified:
-     *   RGBA8 is used if app is linked against OSX 10.12 SDK or earlier.
-     *   RGBAh is used if app is linked against OSX 10.13 SDK or later.
+     * RGBA8 is used if app is linked against OSX 10.12 SDK or earlier.
+     * RGBAh is used if app is linked against OSX 10.13 SDK or later.
      * On OSX the supported values for this key are RGBA8, RGBAh and RGBAf. If not specified, RGBAh is used.
      */
     @Generated
@@ -389,7 +389,7 @@ public final class CoreImage {
 
     /**
      * Key to request the desired set of controls in a filter UIView. The defined values for this key are:
-     * CIUISetBasic, CIUISetIntermediate, CIUISetAdvanced and CIUISetDevelopment. 
+     * CIUISetBasic, CIUISetIntermediate, CIUISetAdvanced and CIUISetDevelopment.
      */
     @Generated
     @CVariable()
@@ -845,7 +845,7 @@ public final class CoreImage {
     /**
      * For text detector, the value for this key is an float NSNumber
      * from 0.0 ... 1.0 that represents a percentage of height of an input image.
-     * valid values range: 0.0 <= CIDetectorMinFeatureSize <= 1.0. The default value is 10/(height of input image). 
+     * valid values range: 0.0 <= CIDetectorMinFeatureSize <= 1.0. The default value is 10/(height of input image).
      */
     @Generated
     @CVariable()
@@ -854,7 +854,7 @@ public final class CoreImage {
 
     /**
      * For rectangle detector, the value for this key is an integer NSNumber
-     * from 1 ... 256 that represents the maximum number of features to return. 
+     * from 1 ... 256 that represents the maximum number of features to return.
      * valid value range: 1 <= CIDetectorMaxFeatureCount <= 256. The default value is 1.
      */
     @Generated
@@ -874,7 +874,7 @@ public final class CoreImage {
      * The value for this key is an integer NSNumber from 1..8 such as that
      * found in kCGImagePropertyOrientation.  If present, the detection will be done
      * based on that orientation but the coordinates in the returned features will
-     * still be based on those of the image. 
+     * still be based on those of the image.
      */
     @Generated
     @CVariable()
@@ -956,13 +956,13 @@ public final class CoreImage {
     /**
      * Specifies the the tile size that the provideImageData: method will be called for.
      * If the value is:
-     *   An NSNumber, then the value specifies a square tile size.
-     * 
-     *   An NSArray or CIVector with two values, then it specifies a rectangular tile width and height.
-     * 
-     *   Not specified, then provideImageData: will be called for the entire image.
-     * 
-     *   NSNull, then provideImageData: can be called for any possible origin and size.
+     * An NSNumber, then the value specifies a square tile size.
+     * <p>
+     * An NSArray or CIVector with two values, then it specifies a rectangular tile width and height.
+     * <p>
+     * Not specified, then provideImageData: will be called for the entire image.
+     * <p>
+     * NSNull, then provideImageData: can be called for any possible origin and size.
      */
     @Generated
     @CVariable()
@@ -1028,7 +1028,7 @@ public final class CoreImage {
 
     /**
      * NSNumber (BOOL) : Setting Draft Mode to YES can improve image decoding speed without minimal loss of quality.
-     * The default value is NO. 
+     * The default value is NO.
      */
     @Generated
     @CVariable()
@@ -1053,7 +1053,7 @@ public final class CoreImage {
 
     /**
      * NSNumber (float) : A value controlling the amount of baseline exposure applied to the image.
-     * A value of 0 indicates no baseline exposure, i.e. linear response. Default varies from with camera settings. 
+     * A value of 0 indicates no baseline exposure, i.e. linear response. Default varies from with camera settings.
      */
     @Generated
     @CVariable()
@@ -1062,7 +1062,7 @@ public final class CoreImage {
 
     /**
      * NSNumber (float) : A value in the range of 0...1, controlling the amount of boost applied to the image.
-     * A value of 0 indicates no boost, i.e. linear response. Default is 1, full boost. 
+     * A value of 0 indicates no boost, i.e. linear response. Default is 1, full boost.
      */
     @Generated
     @CVariable()
@@ -1071,7 +1071,7 @@ public final class CoreImage {
 
     /**
      * NSNumber (float) : The amount to boost the shadow areas of the image. Can be used to lighten details in shadows.
-     * Has no effect if the image used for initialization was not RAW. 
+     * Has no effect if the image used for initialization was not RAW.
      */
     @Generated
     @CVariable()
@@ -1080,7 +1080,7 @@ public final class CoreImage {
 
     /**
      * NSNumber (BOOL) : Setting DisableGamutMap to YES disables gamut mapping.
-     * The default value is NO. 
+     * The default value is NO.
      */
     @Generated
     @CVariable()
@@ -1121,7 +1121,7 @@ public final class CoreImage {
 
     /**
      * CIVector : (x, y) location in geometric coordinates of the unrotated output image that should be used as neutral.
-     * You can't query this value - it's undefined for reading. 
+     * You can't query this value - it's undefined for reading.
      */
     @Generated
     @CVariable()
@@ -1234,7 +1234,7 @@ public final class CoreImage {
 
     /**
      * CIVector containing the full native size of the unscaled image. The vector's X value is the width, Y is the height.
-     * This is not affected by changing either kCIInputIgnoreImageOrientationKey or kCIInputImageOrientationKey. 
+     * This is not affected by changing either kCIInputIgnoreImageOrientationKey or kCIInputImageOrientationKey.
      */
     @Generated
     @CVariable()
@@ -1243,8 +1243,8 @@ public final class CoreImage {
 
     /**
      * Read-only NSSet containing a list of keys that affect the output image.
-     * Depending on the RAW decoder version (kCIInputDecoderVersionKey) and the input image type, 
-     * some input keys might have no effect. 
+     * Depending on the RAW decoder version (kCIInputDecoderVersionKey) and the input image type,
+     * some input keys might have no effect.
      */
     @Generated
     @CVariable()
@@ -1300,10 +1300,10 @@ public final class CoreImage {
      * A boolean value specifying whether the image should transformed according to orientation metadata properties.
      * This can be used with imageWithContentsOfURL: or initWithData: when the image contains orientation metadata
      * or with any of the initWith:options: method if the kCIImageProperties option is also provided.
-     *   If this option value is @YES, the image will transformed according to the orientation metadata
-     *   and the orientation metadata will be be removed.
-     *   If this option not present or the value is @NO, then the image will not be transformed
-     *   and the orientation metadata will left unaltered.
+     * If this option value is @YES, the image will transformed according to the orientation metadata
+     * and the orientation metadata will be be removed.
+     * If this option not present or the value is @NO, then the image will not be transformed
+     * and the orientation metadata will left unaltered.
      */
     @Generated
     @CVariable()
@@ -1480,9 +1480,9 @@ public final class CoreImage {
      * applied that will tone map to standard dynamic range (SDR).
      * The option will only have an effect if the image has a CGColorSpace that is high dynamic range (HDR).
      * This option can be useful if further usage of an image is not prepared for HDR values.
-     *   If the value for this option is @YES, then the HDR input image will be tone mapped to working space SDR.
-     *   If the value for this option is @NO, then the HDR  input image will be linearized to unclamped working space.
-     *   If this option is not specified, then it will behave as if @NO was specified.
+     * If the value for this option is @YES, then the HDR input image will be tone mapped to working space SDR.
+     * If the value for this option is @NO, then the HDR  input image will be linearized to unclamped working space.
+     * If this option is not specified, then it will behave as if @NO was specified.
      */
     @Generated
     @CVariable()
@@ -1501,4 +1501,68 @@ public final class CoreImage {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String kCIImageRepresentationSemanticSegmentationGlassesMatteImage();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageAuxiliarySemanticSegmentationSkyMatte();
+
+    /**
+     * The value for kCIImageRepresentationSemanticSegmentationSkyMatteImage should be a monochome CIImage object.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageRepresentationSemanticSegmentationSkyMatteImage();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CIRAWDecoderVersionNone();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CIRAWDecoderVersion8();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CIRAWDecoderVersion8DNG();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CIRAWDecoderVersion7();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CIRAWDecoderVersion7DNG();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CIRAWDecoderVersion6();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CIRAWDecoderVersion6DNG();
+
+    /**
+     * NSNumber (double): The amount of the local tone map. Range is 0 to 1. Default is 1
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputLocalToneMapAmountKey();
+
+    /**
+     * Read-only NSDictionary containing properties for the output image.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIPropertiesKey();
 }

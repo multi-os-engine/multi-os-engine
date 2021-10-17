@@ -110,9 +110,9 @@ public class NSFileVersion extends NSObject {
 
     /**
      * Asynchronously return an array of NSFileVersions associated with the file located by the given URL, or nil if there is no such file or another error occurs. Versions returned by this method do not initially have their contents stored locally on the device, so a download may be required before you are able to access them. File attributes are accessible via -[NSURL getPromisedItemResourceValue:forKey:error:]. You can request a download by performing a coordinated read with NSFileCoordinator on the URL property of the resulting NSFileVersions.
-     * 
+     * <p>
      * When a version is successfully downloaded, its contents are cached locally, and the version will no longer be returned by this method. The version will be returned by +[NSFileVersion otherVersionsOfItemAtURL:] instead, but will retain the same persistentIdentifier value. If the local version is later discarded, future invocations of this method may resume returning the version.
-     * 
+     * <p>
      * If you need to get all versions for a document, both local and non-local, you should use an NSFilePresenter that implements -presentedItemDidGainVersion: and -presentedItemDidLoseVersion: and invoke +[NSFileCoordinator addFilePresenter:], +[NSFileVersion otherVersionsOfItemAtURL:], and this method within a single coordinated read.
      */
     @Generated
@@ -161,7 +161,7 @@ public class NSFileVersion extends NSObject {
 
     /**
      * Delete all of the versions associated with the file located by a URL, except for the current one, and return YES if successful. If not successful, return NO after setting *outError to an NSError that encapsulates why not.
-     * 
+     * <p>
      * When removing versions of a file you should do it as part of a coordinated write to the file. The advice about this for +addVersionOfItemAtURL:withContentsOfURL:options:error: applies here too.
      */
     @Generated
@@ -239,9 +239,9 @@ public class NSFileVersion extends NSObject {
 
     /**
      * If the version is a conflict version, whether the conflict has been resolved. If the version is not a conflict version, simply YES.
-     * 
+     * <p>
      * The operating system's reaction to your setting this to YES is complicated and subject to change in future releases. One result however is that the version won't appear in arrays returned by +unresolvedConflictVersionsOfItemAtURL: anymore, unless setting fails.
-     * 
+     * <p>
      * Once you have indicated that a conflict has been resolved you cannot make it unresolved again. Setting this to NO causes an exception to be thrown.
      */
     @Generated
@@ -250,9 +250,9 @@ public class NSFileVersion extends NSObject {
 
     /**
      * If the version is a conflict version, whether the conflict has been resolved. If the version is not a conflict version, simply YES.
-     * 
+     * <p>
      * The operating system's reaction to your setting this to YES is complicated and subject to change in future releases. One result however is that the version won't appear in arrays returned by +unresolvedConflictVersionsOfItemAtURL: anymore, unless setting fails.
-     * 
+     * <p>
      * Once you have indicated that a conflict has been resolved you cannot make it unresolved again. Setting this to NO causes an exception to be thrown.
      */
     @Generated
@@ -290,9 +290,9 @@ public class NSFileVersion extends NSObject {
 
     /**
      * Delete the receiver's storage, and return YES if successful. If not successful, return NO after setting *outError to an NSError that encapsulates why not. Subsequent invocations of +versionsOfItemAtURL: won't include an NSFileVersion for a successfully removed version.
-     * 
+     * <p>
      * You cannot use this method to delete the versioned file itself. This method always throws an exception when sent to the result of invoking +currentVersionOfItemAtURL:. Use -[NSFileManager removeItemAtURL:error:] for that instead.
-     * 
+     * <p>
      * When removing versions of a file you should do it as part of a coordinated write to the file. The advice about this for +addVersionOfItemAtURL:withContentsOfURL:options:error: applies here too.
      */
     @Generated
@@ -301,7 +301,7 @@ public class NSFileVersion extends NSObject {
 
     /**
      * If the passed-in URL locates a file, replace the file with a file whose contents are taken from the version but whose display name is taken from the file. If the passed-in URL does not locate a file then simply write one. If successful, return a URL that locates the resulting file; it may be different from the passed-in URL. The one exception to taking the display name from an existing file is if the version is of a different type than the overwritten file. In that case the file name extension will be taken from the version. (When file name extensions are being hidden in a user-friendly way this is not actually an exception.) If not successful, return NO after setting *outError to an NSError that encapsulates why not.
-     * 
+     * <p>
      * When you use NSFileVersionReplacingByMoving you remove a version of the file, and should do it as part of a coordinated write to the file. The advice about this for +addVersionOfItemAtURL:withContentsOfURL:options:error: applies here too. When you use it to promote a version to a separate file you actually write to two files, and should do it as part of a coordinated write to two files, using -[NSFileCoordinator coordinateWritingItemAtURL:options:writingItemAtURL:options:error:byAccessor:], most likely using NSFileCoordinatorWritingForReplacing for the file you're promoting the version to.
      */
     @Generated

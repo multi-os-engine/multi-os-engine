@@ -45,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NEVPNIKEv2SecurityAssociationParameters
- * 
+ * <p>
  * The NEVPNIKEv2SecurityAssociationParameters class declares the programmatic interface of an object that manages parameters for an IPSec Security Association
- * 
+ * <p>
  * Instances of this class are thread safe.
  */
 @Generated
@@ -173,7 +173,7 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     /**
      * [@property] diffieHellmanGroup
-     * 
+     * <p>
      * The Diffie Hellman group used by the Security Association. Default is NEVPNIKEv2DiffieHellmanGroup2.
      */
     @Generated
@@ -187,7 +187,7 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     /**
      * [@property] encryptionAlgorithm
-     * 
+     * <p>
      * The algorithm used by the Security Association to encrypt and decrypt data. Default is NEVPNIKEv2EncryptionAlgorithm3DES.
      */
     @Generated
@@ -205,7 +205,7 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     /**
      * [@property] integrityAlgorithm
-     * 
+     * <p>
      * The algorithm used by the Security Association to verify the integrity of data. Default is NEVPNIKEv2IntegrityAlgorithmSHA96. The IKE psedo-random function algorithm will be inferred based on the integrity algorithm.
      */
     @Generated
@@ -215,7 +215,7 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     /**
      * [@property] lifetimeMinutes
-     * 
+     * <p>
      * The life time of the Security Association, in minutes. Default is 60 for IKE Security Associations, and 30 for Child Security Associations. Before the lifetime is reached, IKEv2 will attempt to rekey the Security Association to maintain the connection.
      */
     @Generated
@@ -224,7 +224,7 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     /**
      * [@property] diffieHellmanGroup
-     * 
+     * <p>
      * The Diffie Hellman group used by the Security Association. Default is NEVPNIKEv2DiffieHellmanGroup2.
      */
     @Generated
@@ -233,7 +233,7 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     /**
      * [@property] encryptionAlgorithm
-     * 
+     * <p>
      * The algorithm used by the Security Association to encrypt and decrypt data. Default is NEVPNIKEv2EncryptionAlgorithm3DES.
      */
     @Generated
@@ -242,7 +242,7 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     /**
      * [@property] integrityAlgorithm
-     * 
+     * <p>
      * The algorithm used by the Security Association to verify the integrity of data. Default is NEVPNIKEv2IntegrityAlgorithmSHA96. The IKE psedo-random function algorithm will be inferred based on the integrity algorithm.
      */
     @Generated
@@ -251,7 +251,7 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     /**
      * [@property] lifetimeMinutes
-     * 
+     * <p>
      * The life time of the Security Association, in minutes. Default is 60 for IKE Security Associations, and 30 for Child Security Associations. Before the lifetime is reached, IKEv2 will attempt to rekey the Security Association to maintain the connection.
      */
     @Generated

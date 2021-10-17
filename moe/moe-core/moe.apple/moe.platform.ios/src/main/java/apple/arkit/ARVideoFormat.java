@@ -170,4 +170,11 @@ public class ARVideoFormat extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Indicates the type of AVCaptureDevice.
+     */
+    @Generated
+    @Selector("captureDeviceType")
+    public native String captureDeviceType();
 }

@@ -48,10 +48,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * CIColorKernel is an object that encapsulates a Core Image Kernel Language
  * routine that processes only the color information in images.
- * 
+ * <p>
  * Color kernel functions are declared akin to this example:
- *   kernel vec4 myColorKernel (__sample fore, __sample back, vec4 params)
- * 
+ * kernel vec4 myColorKernel (__sample fore, __sample back, vec4 params)
+ * <p>
  * The function must take a __sample argument for each input image.
  * Additional arguments can be of type float, vec2, vec3, vec4, or __color.
  * The destination pixel location is obtained by calling destCoord().
@@ -185,9 +185,9 @@ public class CIColorKernel extends CIKernel {
 
     /**
      * Apply the receiver CIColorKernel to produce a new CIImage object.
-     * 
+     * <p>
      * The 'extent' is the bounding box of all non-clear pixels produced by the kernel.
-     * 
+     * <p>
      * The 'args' is an array of parameters needed to describe the new image.
      * The object types of the items in the array correspond to the argument types of the
      * kernel function.  For example, if the first argument in the kernel is a __sample,
@@ -214,4 +214,9 @@ public class CIColorKernel extends CIKernel {
     @Generated
     @Selector("kernelNamesFromMetalLibraryData:")
     public static native NSArray<String> kernelNamesFromMetalLibraryData(NSData data);
+
+    @Generated
+    @Selector("kernelsWithMetalString:error:")
+    public static native NSArray<? extends CIKernel> kernelsWithMetalStringError(String source,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

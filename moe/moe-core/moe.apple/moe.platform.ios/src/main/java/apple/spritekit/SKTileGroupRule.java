@@ -154,8 +154,8 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Create a tile group rule with the specified adjacency and tile definitions.
-     * 
-     * @param adjacency the adjacency requirements for this rule; use the mask that covers the adjacent spaces that must be filled with tiles belonging to the same group; tiles not masked out must be empty
+     *
+     * @param adjacency       the adjacency requirements for this rule; use the mask that covers the adjacent spaces that must be filled with tiles belonging to the same group; tiles not masked out must be empty
      * @param tileDefinitions the tile definitions used for this rule
      */
     @Generated
@@ -192,8 +192,8 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Initilize a tile group rule with the specified adjacency and tile definitions.
-     * 
-     * @param adjacency the adjacency requirements for this rule; use the mask that covers the adjacent spaces that must be filled with tiles belonging to the same group; tiles not masked out must be empty
+     *
+     * @param adjacency       the adjacency requirements for this rule; use the mask that covers the adjacent spaces that must be filled with tiles belonging to the same group; tiles not masked out must be empty
      * @param tileDefinitions the tile definitions used for this rule
      */
     @Generated

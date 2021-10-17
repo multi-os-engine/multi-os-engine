@@ -312,6 +312,9 @@ public final class Enums {
     @Generated public static final int kFontCustom8BitScript = 0x00000000;
     @Generated public static final int kFontCustom816BitScript = 0x00000001;
     @Generated public static final int kFontCustom16BitScript = 0x00000002;
+    /**
+     * 'name'
+     */
     @Generated public static final int nameFontTableTag = 0x6E616D65;
     @Generated public static final int kDesignLevel1Selector = 0x00000000;
     @Generated public static final int kDesignLevel2Selector = 0x00000001;
@@ -386,6 +389,9 @@ public final class Enums {
     @Generated public static final int kHojoCharactersSelector = 0x0000000C;
     @Generated public static final int kNLCCharactersSelector = 0x0000000D;
     @Generated public static final int kTraditionalNamesCharactersSelector = 0x0000000E;
+    /**
+     * 'fvar'
+     */
     @Generated public static final int variationFontTableTag = 0x66766172;
     @Generated public static final int kANKRCurrentVersion = 0x00000000;
     /**
@@ -630,6 +636,9 @@ public final class Enums {
     @Generated public static final int kJUSTNullPriority = 0x00000003;
     @Generated public static final int kJUSTPriorityCount = 0x00000004;
     @Generated public static final int kLTAGCurrentVersion = 0x00000001;
+    /**
+     * 'fdsc'
+     */
     @Generated public static final int descriptorFontTableTag = 0x66647363;
     @Generated public static final int sizeof_sfntInstance = 0x00000004;
     @Generated public static final int kRequiredLigaturesOnSelector = 0x00000000;
@@ -985,6 +994,9 @@ public final class Enums {
     @Generated public static final int kFontReservedPlatform = 0x00000002;
     @Generated public static final int kFontMicrosoftPlatform = 0x00000003;
     @Generated public static final int kFontCustomPlatform = 0x00000004;
+    /**
+     * 'cmap'
+     */
     @Generated public static final int cmapFontTableTag = 0x636D6170;
     @Generated public static final int kSTClassEndOfText = 0x00000000;
     @Generated public static final int kSTClassOutOfBounds = 0x00000001;
@@ -1147,6 +1159,9 @@ public final class Enums {
     @Generated public static final int kExponentsOffSelector = 0x00000009;
     @Generated public static final int kMathematicalGreekOnSelector = 0x0000000A;
     @Generated public static final int kMathematicalGreekOffSelector = 0x0000000B;
+    /**
+     * 'feat'
+     */
     @Generated public static final int featureFontTableTag = 0x66656174;
     @Generated public static final int kFullWidthIdeographsSelector = 0x00000000;
     @Generated public static final int kProportionalIdeographsSelector = 0x00000001;
@@ -1356,6 +1371,9 @@ public final class Enums {
     @Generated public static final int kFontUnicodeV2_0FullCoverageSemantics = 0x00000004;
     @Generated public static final int kFontUnicodeV4_0VariationSequenceSemantics = 0x00000005;
     @Generated public static final int kFontUnicode_FullRepertoire = 0x00000006;
+    /**
+     * 'OS/2'
+     */
     @Generated public static final int os2FontTableTag = 0x4F532F32;
     @Generated public static final int kSTKCrossStreamReset = 0x00002000;
     @Generated public static final int sizeof_sfntNameRecord = 0x0000000C;

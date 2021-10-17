@@ -152,7 +152,7 @@ public class NSUnitConverter extends NSObject {
 
     /**
      * This method takes a value in terms of a unit and returns the corresponding value in terms of the base unit of the original unit's dimension.
-     * 
+     *
      * @param value Value in terms of the unit class
      * @return Value in terms of the base unit
      */
@@ -166,7 +166,7 @@ public class NSUnitConverter extends NSObject {
 
     /**
      * This method takes in a value in terms of the base unit of a unit's dimension and returns the equivalent value in terms of the unit.
-     * 
+     *
      * @param baseUnitValue Value in terms of the base unit
      * @return Value in terms of the unit class
      */

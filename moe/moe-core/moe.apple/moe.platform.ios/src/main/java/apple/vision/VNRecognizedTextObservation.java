@@ -31,7 +31,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNRecognizedTextObservation
  * [@superclass] VNDetectedObjectObservation
- * 
+ * <p>
  * VNRecognizedTextObservation Describes a text area detected and recognized by the VNRecognizeTextRequest request.
  */
 @Generated
@@ -175,7 +175,7 @@ public class VNRecognizedTextObservation extends VNRectangleObservation {
 
     /**
      * Returns the top N candidates sorted by decreasing confidence score
-     * 
+     * <p>
      * This will return no more than N but can be less than N candidates. The maximum number of candidates returned cannot exceed 10 candidates.
      */
     @Generated

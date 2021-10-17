@@ -277,4 +277,12 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @Generated
     @Selector("localizedCallerDisplayName")
     public native String localizedCallerDisplayName();
+
+    /**
+     * Call when authorization succeeded with @see ASAuthorizationProviderExtensionAuthorizationResult.
+     */
+    @Generated
+    @Selector("completeWithAuthorizationResult:")
+    public native void completeWithAuthorizationResult(
+            ASAuthorizationProviderExtensionAuthorizationResult authorizationResult);
 }

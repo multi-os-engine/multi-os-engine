@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CLError
- * 
+ * <p>
  * Discussion:
- *   Error returned as code to NSError from CoreLocation.
+ * Error returned as code to NSError from CoreLocation.
  */
 @Generated
 public final class CLError {

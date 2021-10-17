@@ -97,7 +97,7 @@ public class SKProductStorePromotionController extends NSObject {
     @Generated
     public interface Block_fetchStorePromotionOrderWithCompletionHandler {
         @Generated
-        void call_fetchStorePromotionOrderWithCompletionHandler(NSArray<? extends SKProduct> storePromotionOrder,
+        void call_fetchStorePromotionOrderWithCompletionHandler(NSArray<? extends SKProduct> promotionOrder,
                 NSError error);
     }
 
@@ -168,7 +168,7 @@ public class SKProductStorePromotionController extends NSObject {
 
     @Generated
     @Selector("updateStorePromotionOrder:completionHandler:")
-    public native void updateStorePromotionOrderCompletionHandler(NSArray<? extends SKProduct> storePromotionOrder,
+    public native void updateStorePromotionOrderCompletionHandler(NSArray<? extends SKProduct> promotionOrder,
             @ObjCBlock(name = "call_updateStorePromotionOrderCompletionHandler") Block_updateStorePromotionOrderCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)

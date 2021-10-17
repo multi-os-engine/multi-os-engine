@@ -197,4 +197,15 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
     @Generated
     @Selector("textInputPlaceholder")
     public native String textInputPlaceholder();
+
+    @Generated
+    @Selector("actionWithIdentifier:title:options:icon:")
+    public static native UNTextInputNotificationAction actionWithIdentifierTitleOptionsIcon(String identifier,
+            String title, @NUInt long options, UNNotificationActionIcon icon);
+
+    @Generated
+    @Selector("actionWithIdentifier:title:options:icon:textInputButtonTitle:textInputPlaceholder:")
+    public static native UNTextInputNotificationAction actionWithIdentifierTitleOptionsIconTextInputButtonTitleTextInputPlaceholder(
+            String identifier, String title, @NUInt long options, UNNotificationActionIcon icon,
+            String textInputButtonTitle, String textInputPlaceholder);
 }

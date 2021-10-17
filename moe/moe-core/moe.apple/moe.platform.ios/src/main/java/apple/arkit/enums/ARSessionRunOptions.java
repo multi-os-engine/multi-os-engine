@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * Set of options for running the session.
- * 
+ * <p>
  * These options alter the behavior of calling run on a session.
  * Providing no options will result in the default behavior of resuming tracking
  * from the last known position and keeping all existing anchors.

@@ -52,9 +52,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A mutable value object representing a contact.
- * 
+ * <p>
  * CNMutableContact is not thread safe. If this is a mutable copy of CNContact then it will throw CNContactPropertyNotFetchedExceptionName when accessing a property that was not fetched for the CNContact.
- * 
+ * <p>
  * [@note] To remove properties when saving a mutable contact, set string properties and array properties to empty values. Set other properties to nil.
  */
 @Generated
@@ -205,7 +205,7 @@ public class CNMutableContact extends CNContact {
 
     /**
      * The Gregorian birthday.
-     * 
+     * <p>
      * [@description] Only uses day, month and year components. Needs to have at least a day and a month.
      */
     @Generated
@@ -223,7 +223,7 @@ public class CNMutableContact extends CNContact {
 
     /**
      * Other Gregorian dates (anniversaries, etc).
-     * 
+     * <p>
      * [@description] Only uses day, month and year components. Needs to have at least a day and a month.
      */
     @Generated
@@ -284,7 +284,7 @@ public class CNMutableContact extends CNContact {
 
     /**
      * The alternate birthday (Lunisolar).
-     * 
+     * <p>
      * [@description] Only uses day, month, year and calendar components. Needs to have at least a day and a month. Calendar must be Chinese, Hebrew or Islamic.
      */
     @Generated
@@ -329,7 +329,7 @@ public class CNMutableContact extends CNContact {
 
     /**
      * The Gregorian birthday.
-     * 
+     * <p>
      * [@description] Only uses day, month and year components. Needs to have at least a day and a month.
      */
     @Generated
@@ -346,7 +346,7 @@ public class CNMutableContact extends CNContact {
 
     /**
      * Other Gregorian dates (anniversaries, etc).
-     * 
+     * <p>
      * [@description] Only uses day, month and year components. Needs to have at least a day and a month.
      */
     @Generated
@@ -399,7 +399,7 @@ public class CNMutableContact extends CNContact {
 
     /**
      * The alternate birthday (Lunisolar).
-     * 
+     * <p>
      * [@description] Only uses day, month, year and calendar components. Needs to have at least a day and a month. Calendar must be Chinese, Hebrew or Islamic.
      */
     @Generated

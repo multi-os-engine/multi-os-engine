@@ -2,6 +2,7 @@ package apple.vision;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSError;
 import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -15,7 +16,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -27,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that detects barcodes in an image.
- * 
+ * <p>
  * This request will return zero or more VNBarcodeObservation objects objects which describe the barcodes detected in an image.
  */
 @Generated
@@ -138,7 +141,7 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The collection of barcode symbologies that are to be detected in the image.  The default is to scan for all possible symbologies.
+     * The collection of barcode symbologies that are to be detected in the image.  The default is to scan for all possible symbologies. Setting a revision on the request will reset the symbologies to all symbologies for the specified revision.
      */
     @Generated
     @Selector("setSymbologies:")
@@ -154,9 +157,9 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
 
     /**
      * Obtain the collection of barcode symbologies currently recognized by the Vision framework.
-     * 
+     * <p>
      * Calling this method could be a potentially expensive operation.
-     * 
+     *
      * @return An array of VNBarcodeSymbology objects describing the symbologies currently supported by the Vision framework.
      */
     @Generated
@@ -164,7 +167,7 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
     public static native NSArray<String> supportedSymbologies();
 
     /**
-     * The collection of barcode symbologies that are to be detected in the image.  The default is to scan for all possible symbologies.
+     * The collection of barcode symbologies that are to be detected in the image.  The default is to scan for all possible symbologies. Setting a revision on the request will reset the symbologies to all symbologies for the specified revision.
      */
     @Generated
     @Selector("symbologies")
@@ -188,4 +191,23 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
+
+    /**
+     * VNBarcodeObservation results.
+     */
+    @Generated
+    @Selector("results")
+    public native NSArray<? extends VNBarcodeObservation> results();
+
+    /**
+     * Obtain the collection of barcode symbologies that can be recognized by the request in its current configuration.
+     * <p>
+     * Calling this method could be a potentially expensive operation.
+     *
+     * @return An array of VNBarcodeSymbology objects describing the symbologies recognized by the request in its current configuration.
+     */
+    @Generated
+    @Selector("supportedSymbologiesAndReturnError:")
+    public native NSArray<String> supportedSymbologiesAndReturnError(
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

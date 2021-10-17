@@ -842,4 +842,9 @@ public final class MediaPlayer {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaPlaylistPropertyCloudGlobalID();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPMediaItemPropertyIsPreorder();
 }

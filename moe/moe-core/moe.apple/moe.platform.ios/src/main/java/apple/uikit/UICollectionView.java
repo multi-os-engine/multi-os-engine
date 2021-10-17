@@ -439,6 +439,9 @@ public class UICollectionView extends UIScrollView
     @Selector("cancelInteractiveTransition")
     public native void cancelInteractiveTransition();
 
+    /**
+     * Returns any existing visible or prepared cell for the index path. Returns nil when no cell exists, or if index path is out of range.
+     */
     @Generated
     @Selector("cellForItemAtIndexPath:")
     public native UICollectionViewCell cellForItemAtIndexPath(NSIndexPath indexPath);
@@ -807,9 +810,8 @@ public class UICollectionView extends UIScrollView
     public native UICollectionViewDragDelegate dragDelegate();
 
     /**
-     * To enable intra-app drags on iPhone, set this to YES.
-     * You can also force drags to be disabled for this collection view by setting this to NO.
-     * By default, For iPad this will return YES and iPhone will return NO.
+     * You can force drags to be disabled for this collection view by setting this to NO.
+     * As of iOS 15, this is true for both iPhone and iPad by default. Prior to iOS 15, it defaulted to false on iPhone.
      */
     @Generated
     @Selector("dragInteractionEnabled")
@@ -885,9 +887,8 @@ public class UICollectionView extends UIScrollView
     }
 
     /**
-     * To enable intra-app drags on iPhone, set this to YES.
-     * You can also force drags to be disabled for this collection view by setting this to NO.
-     * By default, For iPad this will return YES and iPhone will return NO.
+     * You can force drags to be disabled for this collection view by setting this to NO.
+     * As of iOS 15, this is true for both iPhone and iPad by default. Prior to iOS 15, it defaulted to false on iPhone.
      */
     @Generated
     @Selector("setDragInteractionEnabled:")
@@ -963,6 +964,7 @@ public class UICollectionView extends UIScrollView
 
     /**
      * When enabled, the collection view ensures that selection is automatically triggered when focus moves to a cell.
+     * Defaults to a system derived value based on platform and other properties of the collection view.
      */
     @Generated
     @Selector("selectionFollowsFocus")
@@ -993,8 +995,57 @@ public class UICollectionView extends UIScrollView
 
     /**
      * When enabled, the collection view ensures that selection is automatically triggered when focus moves to a cell.
+     * Defaults to a system derived value based on platform and other properties of the collection view.
      */
     @Generated
     @Selector("setSelectionFollowsFocus:")
     public native void setSelectionFollowsFocus(boolean value);
+
+    /**
+     * Determines if the collection view allows its cells to become focused.
+     * When collectionView:canFocusItemAtIndexPath: is implemented, its return value takes precedence over this method.
+     * Defaults to a system derived value based on platform and other properties of the collection view.
+     */
+    @Generated
+    @Selector("allowsFocus")
+    public native boolean allowsFocus();
+
+    /**
+     * Determines if the collection view allows its cells to become focused while editing.
+     * When collectionView:canFocusItemAtIndexPath: is implemented, its return value takes precedence over this method.
+     * Defaults to a system derived value based on platform and other properties of the collection view.
+     */
+    @Generated
+    @Selector("allowsFocusDuringEditing")
+    public native boolean allowsFocusDuringEditing();
+
+    @Generated
+    @Selector("contextMenuInteraction")
+    public native UIContextMenuInteraction contextMenuInteraction();
+
+    /**
+     * Reconfigures any existing cells for the items. Reconfiguring is more efficient than reloading an item, as it does not replace the
+     * existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell for the item.
+     */
+    @Generated
+    @Selector("reconfigureItemsAtIndexPaths:")
+    public native void reconfigureItemsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
+
+    /**
+     * Determines if the collection view allows its cells to become focused.
+     * When collectionView:canFocusItemAtIndexPath: is implemented, its return value takes precedence over this method.
+     * Defaults to a system derived value based on platform and other properties of the collection view.
+     */
+    @Generated
+    @Selector("setAllowsFocus:")
+    public native void setAllowsFocus(boolean value);
+
+    /**
+     * Determines if the collection view allows its cells to become focused while editing.
+     * When collectionView:canFocusItemAtIndexPath: is implemented, its return value takes precedence over this method.
+     * Defaults to a system derived value based on platform and other properties of the collection view.
+     */
+    @Generated
+    @Selector("setAllowsFocusDuringEditing:")
+    public native void setAllowsFocusDuringEditing(boolean value);
 }

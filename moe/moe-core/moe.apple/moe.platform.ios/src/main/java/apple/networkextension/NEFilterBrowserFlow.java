@@ -48,9 +48,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFilterBrowserFlow
- * 
+ * <p>
  * The NEFilterBrowserFlow class declares the programmatic interface of an object that represents a flow of network data to be filtered, which is originated from NEFilterSource.
- * 
+ * <p>
  * NEFilterBrowserFlow is part of NetworkExtension.framework
  */
 @Generated
@@ -188,7 +188,7 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
 
     /**
      * [@property] parentURL
-     * 
+     * <p>
      * The parent URL for the current flow which is created to load the sub frames because the flow with the parent URL was allowed. Will be nil if the parent flow does not exist.
      */
     @Generated
@@ -197,7 +197,7 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
 
     /**
      * [@property] request
-     * 
+     * <p>
      * The NSURLRequest of the flow. This property is always nil for the control providers.
      */
     @Generated
@@ -206,7 +206,7 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
 
     /**
      * [@property] response
-     * 
+     * <p>
      * The NSURLResponse of the flow. This will be nil until the request is sent to the server and the response headers are received. And this property is always nil for the control providers.
      */
     @Generated

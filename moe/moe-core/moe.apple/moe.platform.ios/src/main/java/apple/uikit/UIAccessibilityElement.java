@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * UIAccessibilityElement
- * 
+ * <p>
  * Instances of this class can be used as "fake" accessibility elements.
  * An accessibility container (see UIAccessibility.h) can create and vend instances
  * of UIAccessibilityElement to cover for user interface items that are not

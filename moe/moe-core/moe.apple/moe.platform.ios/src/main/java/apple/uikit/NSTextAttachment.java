@@ -22,11 +22,14 @@ import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSFileWrapper;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.uikit.protocol.NSTextAttachmentContainer;
+import apple.uikit.protocol.NSTextAttachmentLayout;
+import apple.uikit.protocol.NSTextLocation;
 import apple.uikit.protocol.UIAccessibilityContentSizeCategoryImageAdjusting;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -36,6 +39,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -54,7 +58,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class NSTextAttachment extends NSObject
-        implements NSTextAttachmentContainer, NSSecureCoding, UIAccessibilityContentSizeCategoryImageAdjusting {
+        implements NSTextAttachmentLayout, NSTextAttachmentContainer, NSSecureCoding,
+        UIAccessibilityContentSizeCategoryImageAdjusting {
     static {
         NatJ.register();
     }
@@ -277,4 +282,70 @@ public class NSTextAttachment extends NSObject
     @Generated
     @Selector("textAttachmentWithImage:")
     public static native NSTextAttachment textAttachmentWithImage(UIImage image);
+
+    /**
+     * When YES, the text attachment tries to use a text attachment view returned by -viewProviderForParentView:location:textContainer:. YES by default
+     */
+    @Generated
+    @Selector("allowsTextAttachmentView")
+    public native boolean allowsTextAttachmentView();
+
+    @Generated
+    @Selector("attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:")
+    @ByValue
+    public native CGRect attachmentBoundsForAttributesLocationTextContainerProposedLineFragmentPosition(
+            NSDictionary<String, ?> attributes, @Mapped(ObjCObjectMapper.class) NSTextLocation location,
+            NSTextContainer textContainer, @ByValue CGRect proposedLineFragment, @ByValue CGPoint position);
+
+    @Generated
+    @Selector("imageForBounds:attributes:location:textContainer:")
+    public native UIImage imageForBoundsAttributesLocationTextContainer(@ByValue CGRect bounds,
+            NSDictionary<String, ?> attributes, @Mapped(ObjCObjectMapper.class) NSTextLocation location,
+            NSTextContainer textContainer);
+
+    /**
+     * Layout padding before and after the text attachment bounds. The layout and rendering bounds X origin gets inset by the padding value. This affects the relationship between the text attachment bounds. 0.0 by default
+     */
+    @Generated
+    @Selector("lineLayoutPadding")
+    @NFloat
+    public native double lineLayoutPadding();
+
+    @Generated
+    @Selector("registerTextAttachmentViewProviderClass:forFileType:")
+    public static native void registerTextAttachmentViewProviderClassForFileType(Class textAttachmentViewProviderClass,
+            String fileType);
+
+    /**
+     * When YES, the text attachment tries to use a text attachment view returned by -viewProviderForParentView:location:textContainer:. YES by default
+     */
+    @Generated
+    @Selector("setAllowsTextAttachmentView:")
+    public native void setAllowsTextAttachmentView(boolean value);
+
+    /**
+     * Layout padding before and after the text attachment bounds. The layout and rendering bounds X origin gets inset by the padding value. This affects the relationship between the text attachment bounds. 0.0 by default
+     */
+    @Generated
+    @Selector("setLineLayoutPadding:")
+    public native void setLineLayoutPadding(@NFloat double value);
+
+    /**
+     * Factory methods for defining the mapping between UTI and text attachment view provider class
+     */
+    @Generated
+    @Selector("textAttachmentViewProviderClassForFileType:")
+    public static native Class textAttachmentViewProviderClassForFileType(String fileType);
+
+    /**
+     * Returns YES if the text attachment is configured to use text attachment views. By default, it checks -allowsTextAttachmentView, +textAttachmentViewClassForFileType:, and its contents
+     */
+    @Generated
+    @Selector("usesTextAttachmentView")
+    public native boolean usesTextAttachmentView();
+
+    @Generated
+    @Selector("viewProviderForParentView:location:textContainer:")
+    public native NSTextAttachmentViewProvider viewProviderForParentViewLocationTextContainer(UIView parentView,
+            @Mapped(ObjCObjectMapper.class) NSTextLocation location, NSTextContainer textContainer);
 }

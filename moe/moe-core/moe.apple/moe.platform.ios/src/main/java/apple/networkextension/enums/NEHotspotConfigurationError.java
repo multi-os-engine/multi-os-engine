@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEHotspotConfigurationError
- * 
+ * <p>
  * Hotspot Configuration error codes
  * [@const] NEHotspotConfigurationErrorInvalid The Wi-Fi configuration is invalid
  * [@const] NEHotspotConfigurationErrorInvalidSSID The given SSID string is invalid.

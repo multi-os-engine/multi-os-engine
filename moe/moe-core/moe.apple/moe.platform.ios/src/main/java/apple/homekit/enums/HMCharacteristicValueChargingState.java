@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueChargingState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueChargingStateNone           Not Charging.
  * [@constant]  HMCharacteristicValueChargingStateInProgress     Charging.
  * [@constant]  HMCharacteristicValueChargingStateNotChargeable  Not Chargeable.

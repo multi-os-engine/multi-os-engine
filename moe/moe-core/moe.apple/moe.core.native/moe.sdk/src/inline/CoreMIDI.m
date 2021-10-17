@@ -61,6 +61,14 @@ EXPORT MIDIMessage_32 __natj_inline_MIDI1UPSystemCommon(UInt8 group, UInt8 statu
 	return MIDI1UPSystemCommon(group, status, byte1, byte2);
 }
 
+EXPORT MIDIMessage_64 __natj_inline_MIDI1UPSysEx(UInt8 group, UInt8 status, UInt8 bytesUsed, UInt8 byte1, UInt8 byte2, UInt8 byte3, UInt8 byte4, UInt8 byte5, UInt8 byte6) {
+	return MIDI1UPSysEx(group, status, bytesUsed, byte1, byte2, byte3, byte4, byte5, byte6);
+}
+
+EXPORT MIDIMessage_64 __natj_inline_MIDI1UPSysExArray(UInt8 group, UInt8 status, const Byte * begin, const Byte * end) {
+	return MIDI1UPSysExArray(group, status, begin, end);
+}
+
 EXPORT MIDIMessage_64 __natj_inline_MIDI2ChannelVoiceMessage(UInt8 group, UInt8 status, UInt8 channel, UInt16 index, UInt32 value) {
 	return MIDI2ChannelVoiceMessage(group, status, channel, index, value);
 }

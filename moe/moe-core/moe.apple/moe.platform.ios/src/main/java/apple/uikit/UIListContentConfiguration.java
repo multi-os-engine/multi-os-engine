@@ -77,7 +77,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * An attributed variant of the primary text, which supersedes the `text` and some properties of the `textConfiguration` if set.
+     * An attributed variant of the primary text, which supersedes the `text` and some properties of the `textProperties` if set.
      */
     @Generated
     @Selector("attributedText")
@@ -261,7 +261,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * An attributed variant of the secondary text, which supersedes the `secondaryText` and some properties of the `secondaryTextConfiguration` if set.
+     * An attributed variant of the secondary text, which supersedes the `secondaryText` and some properties of the `secondaryTextProperties` if set.
      */
     @Generated
     @Selector("secondaryAttributedText")
@@ -282,7 +282,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public native UIListContentTextProperties secondaryTextProperties();
 
     /**
-     * An attributed variant of the primary text, which supersedes the `text` and some properties of the `textConfiguration` if set.
+     * An attributed variant of the primary text, which supersedes the `text` and some properties of the `textProperties` if set.
      */
     @Generated
     @Selector("setAttributedText:")
@@ -324,7 +324,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public native void setPrefersSideBySideTextAndSecondaryText(boolean value);
 
     /**
-     * An attributed variant of the secondary text, which supersedes the `secondaryText` and some properties of the `secondaryTextConfiguration` if set.
+     * An attributed variant of the secondary text, which supersedes the `secondaryText` and some properties of the `secondaryTextProperties` if set.
      */
     @Generated
     @Selector("setSecondaryAttributedText:")
@@ -455,4 +455,20 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Returns the default configuration for an extra prominent inset grouped list header.
+     */
+    @Generated
+    @Selector("extraProminentInsetGroupedHeaderConfiguration")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object extraProminentInsetGroupedHeaderConfiguration();
+
+    /**
+     * Returns the default configuration for a prominent inset grouped list header.
+     */
+    @Generated
+    @Selector("prominentInsetGroupedHeaderConfiguration")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object prominentInsetGroupedHeaderConfiguration();
 }

@@ -54,7 +54,7 @@ public class NSFileProviderExtension extends NSObject {
     /**
      * Should return the URL corresponding to a specific identifier. Fail if it's not
      * a subpath of documentStorageURL.
-     * 
+     * <p>
      * This is a static mapping; each identifier must always return a path
      * corresponding to the same file. By default, this returns the path relative to
      * the path returned by documentStorageURL.
@@ -184,7 +184,7 @@ public class NSFileProviderExtension extends NSObject {
     /**
      * This method is called when a placeholder URL should be provided for the item at
      * the given URL.
-     * 
+     * <p>
      * The implementation of this method should call +[NSFileProviderManager
      * writePlaceholderAtURL:withMetadata:error:] with the URL returned by
      * +[NSFileProviderManager placeholderURLForURL:], then call the completion
@@ -204,7 +204,7 @@ public class NSFileProviderExtension extends NSObject {
 
     /**
      * An identifier unique to this provider.
-     * 
+     * <p>
      * When modifying the files stored in the directory returned by
      * documentStorageURL, you should pass this identifier to your file coordinator's
      * setPurposeIdentifier: method.
@@ -244,7 +244,7 @@ public class NSFileProviderExtension extends NSObject {
     /**
      * Called after the last claim to the file has been released. At this point, it is
      * safe for the file provider to remove the content file.
-     * 
+     * <p>
      * Care should be taken that the corresponding placeholder file stays behind after
      * the content file has been deleted.
      */
@@ -265,7 +265,7 @@ public class NSFileProviderExtension extends NSObject {
      * Writes out a placeholder at the specified URL. The URL should be one returned
      * by placeholderURLForURL:; if URL resource values are requested, the system will
      * consult the placeholder before consulting your app extension.
-     * 
+     * <p>
      * Metadata contains NSURLNameKey, NSURLFileSizeKey, NSURLIsPackageKey.
      */
     @Generated
@@ -275,18 +275,18 @@ public class NSFileProviderExtension extends NSObject {
 
     /**
      * Create a directory.
-     * 
+     * <p>
      * This is expected to complete before doing any network.
-     * 
+     * <p>
      * In the completion block, createdDirectoryItem should have these properties set:
      * - itemIdentifier
      * - parentItemIdentifier (to the value passed in to this method)
      * - filename (to directoryName)
      * - creationDate (to the current date and time)
-     * - typeIdentifier (to "public.folder")
+     * - contentType (to "public.folder" - UTTypeFolder)
      * - childItemCount (to 0)
      * - capabilities
-     * 
+     * <p>
      * Errors (including collision errors) are handled as documented for the import
      * method above.  Directory creation is gated by the capabilities of the
      * destination directory, with NSFileProviderItemCapabilitiesAllowsAddingSubItems.
@@ -307,11 +307,11 @@ public class NSFileProviderExtension extends NSObject {
 
     /**
      * Delete an item forever.
-     * 
+     * <p>
      * This is called when the user deletes an item that was already in the Trash and
      * the item should no longer appear there after this call.  This call should
      * remove the item from the working set.
-     * 
+     * <p>
      * Delete is gated by the capabilities of the removed item with
      * NSFileProviderItemCapabilitiesAllowsDeleting.
      */
@@ -333,29 +333,29 @@ public class NSFileProviderExtension extends NSObject {
 
     /**
      * Create an enumerator for an item.
-     * 
+     * <p>
      * When the user opens the browse tab of the UIDocumentsBrowserViewController and
      * selects a file provider, this is called with
      * NSFileProviderRootContainerItemIdentifier, and -[NSFileProviderEnumerator
      * enumerateItemsForObserver:startingAtPage:] is immediately called to list the
      * first items available under at the root level of the file provider.
-     * 
+     * <p>
      * As the user navigates down into directories, new enumerators are created with
      * this method, passing in the itemIdentifier of those directories.  Past
      * enumerators are then invalidated.
-     * 
+     * <p>
      * This method is also called with
      * NSFileProviderWorkingSetContainerItemIdentifier, which is enumerated with
      * -[NSFileProviderEnumerator enumerateChangesForObserver:fromSyncAnchor:].  That
      * enumeration is special in that it isn't driven by the
      * UIDocumentsBrowserViewController.  It happens in the background to sync the
      * working set down to the device.
-     * 
+     * <p>
      * This is also used to subscribe to live updates for a single document.  In that
      * case, -[NSFileProviderEnumerator enumerateChangesToObserver:fromSyncAnchor:]
      * will be called and the enumeration results shouldn't include items other than
      * the very item that the enumeration was started on.
-     * 
+     * <p>
      * If returning nil, you must set the error out parameter.
      */
     @Generated
@@ -366,23 +366,23 @@ public class NSFileProviderExtension extends NSObject {
 
     /**
      * The system calls this method to fetch thumbnails.
-     * 
+     * <p>
      * The @p perThumbnailCompletionHandler should be called for each thumbnail, and
      * [@p] completionHandler only after all the per thumbnail completion blocks.
-     * 
+     * <p>
      * In the event of a global error, the implementation is allowed to skip calling
      * the @p perThumbnailCompletionHandler for individual thumbnails. In that case,
      * the @p completionHandler's error parameter would apply to all item identifiers
      * for which @p perThumbnailCompletionHandler had not been called.
-     * 
+     * <p>
      * If there is no thumbnail for a given item, the @p perThumbnailCompletionHandler
      * should be called with its @p imageData and @p error parameters both
      * set to nil.
-     * 
+     * <p>
      * If the system decides that an in-flight thumbnail request is not needed anymore,
      * it will call the returned @p NSProgress object's @p -cancel method,
      * at which time the implementation should clean up any held resources.
-     * 
+     * <p>
      * The system will cache the thumbnail for the item, and the cache will be
      * invalidated when itemVersion.contentVersion changes.
      */
@@ -411,61 +411,61 @@ public class NSFileProviderExtension extends NSObject {
 
     /**
      * Import a document.
-     * 
+     * <p>
      * The file or package at fileURL should be moved on disk into the file provider's
      * own storage, where it will later be uploaded.  The completion block should be
      * executed after the move on disk, but before the upload.  Before doing any
      * network, actually.
-     * 
+     * <p>
      * In the completion block, importedDocumentItem should have these properties set:
-     *   - itemIdentifier
-     *   - parentItemIdentifier (to the value passed in to this method)
-     *   - filename (to fileURL's resource value for key NSURLNameKey)
-     *   - creationDate (to NSURLCreationDateKey)
-     *   - contentModificationDate (to NSURLContentModificationDateKey)
-     *   - typeIdentifier (to NSURLTypeIdentifierKey)
-     *   - documentSize (to NSURLTotalFileSizeKey on a flat file, or to the sum of the
-     *     files sizes for a package)
-     *   - capabilities
-     * 
+     * - itemIdentifier
+     * - parentItemIdentifier (to the value passed in to this method)
+     * - filename (to fileURL's resource value for key NSURLNameKey)
+     * - creationDate (to NSURLCreationDateKey)
+     * - contentModificationDate (to NSURLContentModificationDateKey)
+     * - contentType (to NSURLContentTypeKey)
+     * - documentSize (to NSURLTotalFileSizeKey on a flat file, or to the sum of the
+     * files sizes for a package)
+     * - capabilities
+     * <p>
      * [fileURL startAccessingSecurityScopedResource] needs to be called prior to
      * accessing this security scoped URL, and stopAccessingSecurityScopedResource
      * needs to be called when done.
-     * 
+     * <p>
      * Note that itemIdentifier should be set with no network call.  It doesn't have
      * to be the final identifier.  If the identifier changes after talking to the
      * server then the file provider should send a delete for the temporary, local
      * identifier immediately followed by an add with the final identifier.
-     * 
+     * <p>
      * A reasonable way of organizing files in the file provider storage is:
-     *     <file provider storage path>/<itemIdentifier>/<filename>.<extension>
+     * <file provider storage path>/<itemIdentifier>/<filename>.<extension>
      * If the item identifier was to change, you should move the file on disk to
      * update its path, under coordination with NSFileCoordinatorWritingForMoving.
-     * 
+     * <p>
      * This is expected to work offline even if there might be a collision (another
      * item with the same filename and parentItemIdentifier) only detected when later
      * syncing up this change to the server.  In that case, it is suggested that a
      * follow up update to the item change its filename to something unique.  This
      * wouldn't be considered an error to import.
-     * 
+     * <p>
      * If however you can tell right away, with no communication to your server, that
      * there is a collision then this call should fail with error code
      * NSFileProviderErrorFilenameCollision generated with this method:
-     *   -[NSError (NSFileProviderError) fileProviderErrorForCollisionWithItem:].
-     * 
+     * -[NSError (NSFileProviderError) fileProviderErrorForCollisionWithItem:].
+     * <p>
      * The existing item set in this error will be used to handle the collision, and
      * ask the user if she or he would like to replace the existing item.  This takes
      * into account the existing item's capabilities (particularly
      * NSFileProviderItemCapabilitiesAllowsTrashing and AllowsDeleting.)
-     * 
+     * <p>
      * Collision checks should be case insensitive even if the filesystem or file
      * provider might allow two coexisting filenames differing only by their case.
-     * 
+     * <p>
      * Upload errors (such as NSFileProviderErrorInsufficientQuota) should be handled
      * with a subsequent update to the item, setting its uploadingError property.
      * Upload errors should not prevent creating or importing a document, because they
      * can be resolved at a later date (for example, when the user has quota again.)
-     * 
+     * <p>
      * Other errors will be presented to the user, but are unexpected.  If you want to
      * prevent imports in a given directory, then the directory item's capacities
      * should exclude NSFileProviderItemCapabilitiesAllowsAddingSubItems.
@@ -486,14 +486,14 @@ public class NSFileProviderExtension extends NSObject {
 
     /**
      * Rename a document or a directory.
-     * 
+     * <p>
      * This is expected to complete before doing any network.
-     * 
+     * <p>
      * itemName is the full file or directory name, complete with its file extension.
      * In the completion block, property renamedItem.filename should change to
      * itemName.  Property renamedItem.displayName should also be updated if you
      * chose to overwrite that method.
-     * 
+     * <p>
      * Errors (including collision errors) are handled as documented for the import
      * method above.  Renames are gated by the capabilities of the renamed item, with
      * NSFileProviderItemCapabilitiesAllowsRenaming.
@@ -513,11 +513,11 @@ public class NSFileProviderExtension extends NSObject {
 
     /**
      * Move an item to a new directory.
-     * 
+     * <p>
      * This is expected to complete before doing any network.
-     * 
+     * <p>
      * If newName is non null, the moved item should be renamed to newName.
-     * 
+     * <p>
      * Errors (including collision errors) are handled as documented for the import
      * method above.  Moves are gated by the capabilities of both the moved item with
      * NSFileProviderItemCapabilitiesAllowsReparenting, and the destination directory
@@ -539,15 +539,15 @@ public class NSFileProviderExtension extends NSObject {
 
     /**
      * Mark a directory as favorite (or no longer favorite if favoriteRank is nil.)
-     * 
+     * <p>
      * The favorite rank is used to represent the relative order of two favorite
      * directories in the UI.  It is a 64 bit unsigned integer.  It needs to be synced.
-     * 
+     * <p>
      * Favorite directories are relevant to the user and should be in the working set
      * even if they haven't been used recently.  The documents and directories in the
      * favorite directory however don't all have to be in the working set, and don't
      * all have to be made accessible offline.
-     * 
+     * <p>
      * The file provider is asked to persist the new favorite rank on disk, then call
      * the completion callback with the updated favorite rank.  At a later point, the
      * file provider should sync the new favorite rank to their server.
@@ -567,15 +567,15 @@ public class NSFileProviderExtension extends NSObject {
 
     /**
      * Mark an item as recently used, or clear its lastUsedDate if nil.
-     * 
+     * <p>
      * This last used date is the sort key for the recent lists.  It is the primary
      * hint that an item must belong to the working set cached and indexed on the
      * user's device.
-     * 
+     * <p>
      * The file provider is asked to persist the new last used date on disk, then call
      * the completion callback with the updated last used date.  At a later point, the
      * file provider should sync the new last used date to their server.
-     * 
+     * <p>
      * The error parameter is here for debugging purposes alone; it won't be presented
      * to the user or otherwise handled, but it will be logged.
      */
@@ -594,17 +594,17 @@ public class NSFileProviderExtension extends NSObject {
 
     /**
      * Tag an item, or untag it if tagData is nil.
-     * 
+     * <p>
      * The file provider is asked to persist the new tag data on disk, then call the
      * completion callback with the updated tagged data.  At a later point, the file
      * provider should sync the new tag data to their server.
-     * 
+     * <p>
      * Tagged items are relevant to the user and should be in the working set even if
      * they haven't been used recently.
-     * 
+     * <p>
      * If set, the error will be immediately presented to the user and the item just
      * won't be tagged.
-     * 
+     * <p>
      * On shared items, tags should sync across the devices of any one participant but
      * shouldn't sync across users.
      */
@@ -628,21 +628,21 @@ public class NSFileProviderExtension extends NSObject {
 
     /**
      * Move an item to the trash.
-     * 
+     * <p>
      * In the completion block, property trashedItem.isTrashed should be set to YES.
      * You should keep track of the original parentItemIdentifier of the item before
      * it was moved to trash, so you can move the item back where it used to be in the
      * untrash method.  You could use the trashedItem.parentItemIdentifier property
      * for that.
-     * 
+     * <p>
      * The trashed item should continue to belong to the working set of documents
      * cached on the device and visible offline to the user.  But if it is a
      * directory, then all of its children should be removed from the working set and
      * the file provider extension should send deletion events to make sure that they
      * no longer appear in the recent lists.
-     * 
+     * <p>
      * It is also suggested that shared documents be unshared when trashed.
-     * 
+     * <p>
      * Trash is gated by the capabilities of the trashed item with
      * NSFileProviderItemCapabilitiesAllowsTrashing.
      */
@@ -661,15 +661,15 @@ public class NSFileProviderExtension extends NSObject {
 
     /**
      * Move an item out of the trash.
-     * 
+     * <p>
      * If parentItemIdentifier is nil, the file provider should attempt to put the
      * item back where it was when it was moved to the trash; otherwise it should move
      * it to this new parent.
-     * 
+     * <p>
      * If the item is a directory, then the file provider extension should enumerate
      * the children and send addition events in the working set so that the documents
      * in the now untrashed directory may be reindexed.
-     * 
+     * <p>
      * Untrash is gated by the capabilities of the destination directory, with
      * NSFileProviderItemCapabilitiesAllowsAddingSubItems.
      */

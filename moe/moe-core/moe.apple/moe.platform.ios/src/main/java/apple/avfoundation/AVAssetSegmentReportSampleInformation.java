@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAssetSegmentReportSampleInformation
- * 
+ * <p>
  * This class is vended by AVAssetSegmentTrackReport. It will provide information on a sample in a track.
  */
 @Generated
@@ -116,7 +116,7 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
 
     /**
      * [@property]	isSyncSample
-     * 
+     * <p>
      * Indicates whether the sample is a sync sample.
      */
     @Generated
@@ -129,7 +129,7 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
 
     /**
      * [@property]	length
-     * 
+     * <p>
      * The length of the sample.
      */
     @Generated
@@ -145,7 +145,7 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
 
     /**
      * [@property]	offset
-     * 
+     * <p>
      * The offset of the sample in the segment.
      */
     @Generated
@@ -155,9 +155,9 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
 
     /**
      * [@property]	presentationTimeStamp
-     * 
+     * <p>
      * The presentation timestamp (PTS) of the sample.
-     * 
+     * <p>
      * This timestamp may be different from the earliestPresentationTimeStamp if the video is encoded using frame reordering.
      */
     @Generated

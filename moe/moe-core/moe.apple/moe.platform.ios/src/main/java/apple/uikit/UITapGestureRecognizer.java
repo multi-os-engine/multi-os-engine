@@ -42,8 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Touch Location Behaviors:
- *     locationInView:         location of the tap, from the first tap in the sequence if numberOfTapsRequired > 1. this is the centroid if numberOfTouchesRequired > 1
- *     locationOfTouch:inView: location of a particular touch, from the first tap in the sequence if numberOfTapsRequired > 1
+ * locationInView:         location of the tap, from the first tap in the sequence if numberOfTapsRequired > 1. this is the centroid if numberOfTouchesRequired > 1
+ * locationOfTouch:inView: location of a particular touch, from the first tap in the sequence if numberOfTapsRequired > 1
  */
 @Generated
 @Library("UIKit")

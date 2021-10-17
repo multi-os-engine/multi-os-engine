@@ -516,7 +516,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
 
     /**
      * In general, you should specify a value for the normal state to be used by other states which don't have a custom value set.
-     * 
+     * <p>
      * Similarly, when a property is dependent on the bar metrics (on the iPhone in landscape orientation, bars have a different height from standard), be sure to specify a value for UIBarMetricsDefault.
      */
     @Generated
@@ -697,4 +697,18 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Generated
     @Selector("standardAppearance")
     public native UINavigationBarAppearance standardAppearance();
+
+    /**
+     * Describes the appearance attributes for the navigation bar to use when it is displayed with its compact heights, and an associated UIScrollView has reached the edge abutting the bar. If not set, first the scrollEdgeAppearance will be tried, and if that is nil then compactAppearance followed by a modified standardAppearance.
+     */
+    @Generated
+    @Selector("compactScrollEdgeAppearance")
+    public native UINavigationBarAppearance compactScrollEdgeAppearance();
+
+    /**
+     * Describes the appearance attributes for the navigation bar to use when it is displayed with its compact heights, and an associated UIScrollView has reached the edge abutting the bar. If not set, first the scrollEdgeAppearance will be tried, and if that is nil then compactAppearance followed by a modified standardAppearance.
+     */
+    @Generated
+    @Selector("setCompactScrollEdgeAppearance:")
+    public native void setCompactScrollEdgeAppearance(UINavigationBarAppearance value);
 }

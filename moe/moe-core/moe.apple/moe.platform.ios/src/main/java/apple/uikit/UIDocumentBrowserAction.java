@@ -165,7 +165,7 @@ public class UIDocumentBrowserAction extends NSObject {
     public native void setImage(UIImage value);
 
     /**
-     * Allows clients to restrict the action to only a specific set of content types. Default: [kUTTypeItem]
+     * Allows clients to restrict the action to only a specific set of content types. Default: [UTTypeItem.identifier]
      */
     @Generated
     @Selector("setSupportedContentTypes:")
@@ -187,7 +187,7 @@ public class UIDocumentBrowserAction extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * Allows clients to restrict the action to only a specific set of content types. Default: [kUTTypeItem]
+     * Allows clients to restrict the action to only a specific set of content types. Default: [UTTypeItem.identifier]
      */
     @Generated
     @Selector("supportedContentTypes")

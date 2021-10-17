@@ -15,4 +15,6 @@ public final class BNNSFilterType {
     @Generated public static final int BNNSLayerNorm = 0x00000004;
     @Generated public static final int BNNSGroupNorm = 0x00000005;
     @Generated public static final int BNNSTransposedConvolution = 0x00000006;
+    @Generated public static final int BNNSQuantization = 0x00000007;
+    @Generated public static final int BNNSArithmetic = 0x00000008;
 }

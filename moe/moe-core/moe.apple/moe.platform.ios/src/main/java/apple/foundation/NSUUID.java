@@ -204,4 +204,12 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * Compare the receiver to another NSUUID in constant time
+     */
+    @Generated
+    @Selector("compare:")
+    @NInt
+    public native long compare(NSUUID otherUUID);
 }

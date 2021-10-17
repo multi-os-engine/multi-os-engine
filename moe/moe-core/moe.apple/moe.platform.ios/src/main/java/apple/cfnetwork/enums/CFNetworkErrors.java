@@ -19,9 +19,9 @@ package apple.cfnetwork.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- *  CFNetworkErrors
- * 
- *  Discussion:
+ * CFNetworkErrors
+ * <p>
+ * Discussion:
  * The list of all public error codes returned under the error domain
  * kCFErrorDomainCFNetwork
  */

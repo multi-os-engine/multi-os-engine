@@ -43,10 +43,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageTranspose
- * 
+ * <p>
  * The MPSImageTranspose transposes an image
- * 
- *             This kernel accepts uint and int textures in addition to unorm and floating-point textures.
+ * <p>
+ * This kernel accepts uint and int textures in addition to unorm and floating-point textures.
  */
 @Generated
 @Library("MetalPerformanceShaders")

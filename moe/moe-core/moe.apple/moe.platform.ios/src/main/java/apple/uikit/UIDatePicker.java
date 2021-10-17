@@ -580,4 +580,22 @@ public class UIDatePicker extends UIControl implements NSCoding {
     @Generated
     @Selector("initWithFrame:primaryAction:")
     public native UIDatePicker initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+
+    /**
+     * When this property is YES, @c date will always round to the @c minuteInterval, and
+     * only emit dates that are aligned with the @c minuteInterval. Otherwise, any changes
+     * to @c date will ignore the @c minuteInterval property. Default is @c YES.
+     */
+    @Generated
+    @Selector("roundsToMinuteInterval")
+    public native boolean roundsToMinuteInterval();
+
+    /**
+     * When this property is YES, @c date will always round to the @c minuteInterval, and
+     * only emit dates that are aligned with the @c minuteInterval. Otherwise, any changes
+     * to @c date will ignore the @c minuteInterval property. Default is @c YES.
+     */
+    @Generated
+    @Selector("setRoundsToMinuteInterval:")
+    public native void setRoundsToMinuteInterval(boolean value);
 }

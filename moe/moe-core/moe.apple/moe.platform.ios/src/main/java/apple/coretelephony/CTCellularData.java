@@ -153,7 +153,7 @@ public class CTCellularData extends NSObject {
 
     /**
      * cellularDataRestrictionDidUpdateNotifier
-     * 
+     * <p>
      * A block that will be dispatched on the default priority global dispatch queue the first time
      * app sets the callback handler and everytime there is a change in cellular data allowed policy
      * for the app.
@@ -174,7 +174,7 @@ public class CTCellularData extends NSObject {
 
     /**
      * cellularDataRestrictionDidUpdateNotifier
-     * 
+     * <p>
      * A block that will be dispatched on the default priority global dispatch queue the first time
      * app sets the callback handler and everytime there is a change in cellular data allowed policy
      * for the app.

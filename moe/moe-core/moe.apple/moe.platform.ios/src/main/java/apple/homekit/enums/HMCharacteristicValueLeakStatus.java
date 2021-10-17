@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueLeakDetectionStatus
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueLeakDetectionStatusNone        Leak is not detected.
  * [@constant]  HMCharacteristicValueLeakDetectionStatusDetected    Leak is detected.
  */

@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * UITextInputTraits
- * 
+ * <p>
  * Controls features of text widgets (or other custom objects that might wish
  * to respond to keyboard input).
  */

@@ -18,18 +18,20 @@ package apple.avfoundation.protocol;
 
 import apple.coremedia.struct.CMTimeRange;
 import apple.foundation.NSArray;
+import apple.foundation.NSNumber;
 import apple.foundation.NSValue;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol]	AVVideoCompositionInstruction
- * 
+ * <p>
  * The AVVideoCompositionInstruction protocol is implemented by objects to represent operations to be performed by a compositor.
  */
 @Generated
@@ -40,7 +42,7 @@ public interface AVVideoCompositionInstruction {
     /**
      * If YES, rendering a frame from the same source buffers and the same composition instruction at 2 different
      * compositionTime may yield different output frames. If NO, 2 such compositions would yield the
-     * same frame. The media pipeline may me able to avoid some duplicate processing when containsTweening is NO 
+     * same frame. The media pipeline may me able to avoid some duplicate processing when containsTweening is NO
      */
     @Generated
     @Selector("containsTweening")
@@ -75,4 +77,14 @@ public interface AVVideoCompositionInstruction {
     @Selector("timeRange")
     @ByValue
     CMTimeRange timeRange();
+
+    /**
+     * List of sample data track IDs required to compose frames for this instruction.  An empty array indicates that no sample data is required for this instruction.
+     */
+    @Generated
+    @IsOptional
+    @Selector("requiredSourceSampleDataTrackIDs")
+    default NSArray<? extends NSNumber> requiredSourceSampleDataTrackIDs() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

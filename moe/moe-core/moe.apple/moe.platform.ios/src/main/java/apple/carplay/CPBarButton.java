@@ -105,9 +105,9 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
 
     /**
      * The image displayed on the button.
-     * 
+     * <p>
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
-     * 
+     * <p>
      * [@note] If both an image and title are specified, the title will take precedence.
      * To use an image, ensure that the button's title is nil.
      */
@@ -150,7 +150,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * 
+     * <p>
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
      */
     @Generated
@@ -181,7 +181,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * 
+     * <p>
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
      */
     @Generated
@@ -190,9 +190,9 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
 
     /**
      * The image displayed on the button.
-     * 
+     * <p>
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
-     * 
+     * <p>
      * [@note] If both an image and title are specified, the title will take precedence.
      * To use an image, ensure that the button's title is nil.
      */
@@ -202,7 +202,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
 
     /**
      * The title displayed on the button.
-     * 
+     * <p>
      * [@note] If both an image and title are specified, the title will take precedence.
      * To use an image, ensure that the button's title is nil.
      */
@@ -230,7 +230,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
 
     /**
      * The title displayed on the button.
-     * 
+     * <p>
      * [@note] If both an image and title are specified, the title will take precedence.
      * To use an image, ensure that the button's title is nil.
      */
@@ -245,7 +245,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
 
     /**
      * The style used to display this button.
-     * 
+     * <p>
      * Defaults to @c CPBarButtonStyleNone.
      */
     @Generated
@@ -285,7 +285,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
 
     /**
      * The style used to display this button.
-     * 
+     * <p>
      * Defaults to @c CPBarButtonStyleNone.
      */
     @Generated

@@ -21,10 +21,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol]   MPSCNNInstanceNormalizationDataSource
- * 
+ * <p>
  * The MPSCNNInstanceNormalizationDataSource protocol declares the methods that an
- *             instance of MPSCNNInstanceNormalization uses to initialize the
- *             scale factors (gamma) and bias terms (beta).
+ * instance of MPSCNNInstanceNormalization uses to initialize the
+ * scale factors (gamma) and bias terms (beta).
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -40,11 +40,10 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
 
     /**
      * Optional copy method to create a copy of the data source for use with a new device.
-     * 
-     * @param      zone    The NSZone on which to allocate.
-     * @param      device  The device where the kernel which uses this data source will be used.
-     * 
-     * @return     A pointer to a copy of this data source.
+     *
+     * @param zone   The NSZone on which to allocate.
+     * @param device The device where the kernel which uses this data source will be used.
+     * @return A pointer to a copy of this data source.
      */
     @Generated
     @Owned
@@ -67,9 +66,9 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
 
     /**
      * An optional tiny number to use to maintain numerical stability.
-     * 
+     * <p>
      * output_image = (input_image - mean[c]) * gamma[c] / sqrt(variance[c] + epsilon) + beta[c];
-     *                 Defalt value if method unavailable: FLT_MIN
+     * Defalt value if method unavailable: FLT_MIN
      */
     @Generated
     @IsOptional
@@ -98,7 +97,7 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
 
     /**
      * A label that is transferred to the instance normalization filter at init time
-     * 
+     * <p>
      * Overridden by a MPSCNNInstanceNormalizationNode.label if it is non-nil.
      */
     @Generated
@@ -107,9 +106,9 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
 
     /**
      * Alerts the data source that the data will be needed soon
-     * 
-     * @return     Returns YES on success.  If NO is returned, expect MPS
-     *             object construction to fail.
+     *
+     * @return Returns YES on success.  If NO is returned, expect MPS
+     * object construction to fail.
      */
     @Generated
     @IsOptional

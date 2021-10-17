@@ -42,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A view that integrates ARSession rendering into SceneKit.
- * 
+ * <p>
  * The view draws the camera background, provides and updates a camera,
  * manages nodes for anchors, and updates lighting.
  */
@@ -82,7 +82,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Searches the scene hierarchy for an anchor associated with the provided node.
-     * 
+     *
      * @param node A node in the view’s scene.
      */
     @Generated
@@ -215,7 +215,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Determines whether the view will update the scene’s lighting.
-     * 
+     * <p>
      * When set, the view will automatically create and update lighting for
      * light estimates the session provides. Defaults to YES.
      */
@@ -276,10 +276,10 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Searches the current frame for objects corresponding to a point in the view.
-     * 
+     * <p>
      * A 2D point in the view’s coordinate space can refer to any point along a line segment
      * in the 3D coordinate space. Hit-testing is the process of finding objects in the world located along this line segment.
-     * 
+     *
      * @param point A point in the view’s coordinate system.
      * @param types The types of results to search for.
      * @return An array of all hit-test results sorted from nearest to farthest.
@@ -341,7 +341,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Returns the node that has been mapped to a specific anchor.
-     * 
+     *
      * @param anchor An anchor with an existing node mapping.
      */
     @Generated
@@ -433,7 +433,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Determines whether the view will update the scene’s lighting.
-     * 
+     * <p>
      * When set, the view will automatically create and update lighting for
      * light estimates the session provides. Defaults to YES.
      */
@@ -522,11 +522,11 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Creates a raycast query originating from the point on view, aligned along the center of the field of view of the camera.
-     * 
+     * <p>
      * A 2D point in the view's coordinate space and the frame camera's field of view is used to create a ray in the 3D cooridnate space originating at the point.
-     * 
-     * @param point A point in the view’s coordinate system.
-     * @param target Type of target where the ray should terminate.
+     *
+     * @param point     A point in the view’s coordinate system.
+     * @param target    Type of target where the ray should terminate.
      * @param alignment Alignment of the target.
      */
     @Generated
@@ -536,7 +536,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Determines whether view renders camera grain.
-     * 
+     * <p>
      * When set, the view will automatically add camera grain to rendered
      * content that matches the grainy noise of the camera stream. Enabled by default.
      */
@@ -546,7 +546,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Determines whether view renders motion blur.
-     * 
+     * <p>
      * When set, the view will automatically add motion blur to rendered
      * content that matches the motion blur of the camera stream.
      * Overwrites SCNCamera's motionBlurIntensity property. Disabled by default.
@@ -557,7 +557,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Determines whether view renders camera grain.
-     * 
+     * <p>
      * When set, the view will automatically add camera grain to rendered
      * content that matches the grainy noise of the camera stream. Enabled by default.
      */
@@ -567,7 +567,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Determines whether view renders motion blur.
-     * 
+     * <p>
      * When set, the view will automatically add motion blur to rendered
      * content that matches the motion blur of the camera stream.
      * Overwrites SCNCamera's motionBlurIntensity property. Disabled by default.

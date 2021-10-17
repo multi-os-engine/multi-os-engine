@@ -42,11 +42,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEProvider
- * 
+ * <p>
  * The NEProvider class declares the programmatic interface that is common for all Network Extension providers.
- * 
+ * <p>
  * See the sub classes of NEProvider for more details. Developers of Network Extension providers should create sub classes of the sub classes of NEProvider.
- * 
+ * <p>
  * Instances of this class are thread safe.
  */
 @Generated
@@ -162,13 +162,13 @@ public class NEProvider extends NSObject {
 
     /**
      * createTCPConnectionToEndpoint:enableTLS:TLSParameters:delegate:
-     * 
+     * <p>
      * This function can be called by subclass implementations to create a TCP connection to a given network endpoint. This function should not be overridden by subclasses.
-     * 
+     *
      * @param remoteEndpoint An NWEndpoint object that specifies the remote network endpoint to connect to.
-     * @param enableTLS A flag indicating if a TLS session should be negotiated on the connection.
-     * @param TLSParameters A set of optional TLS parameters. Only valid if enableTLS is YES. If TLSParameters is nil, the default system parameters will be used for TLS negotiation.
-     * @param delegate An object to use as the connections delegate. This object should conform to the NWTCPConnectionAuthenticationDelegate protocol.
+     * @param enableTLS      A flag indicating if a TLS session should be negotiated on the connection.
+     * @param TLSParameters  A set of optional TLS parameters. Only valid if enableTLS is YES. If TLSParameters is nil, the default system parameters will be used for TLS negotiation.
+     * @param delegate       An object to use as the connections delegate. This object should conform to the NWTCPConnectionAuthenticationDelegate protocol.
      * @return An NWTCPConnection object.
      */
     @Generated
@@ -178,11 +178,11 @@ public class NEProvider extends NSObject {
 
     /**
      * createUDPSessionToEndpoint:fromEndpoint:
-     * 
+     * <p>
      * This function can be called by subclass implementations to create a UDP session between a local network endpoint and a remote network endpoint. This function should not be overridden by subclasses.
-     * 
+     *
      * @param remoteEndpoint An NWEndpoint object that specifies the remote endpoint to which UDP datagrams will be sent by the UDP session.
-     * @param localEndpoint An NWHostEndpoint object that specifies the local IP address endpoint to use as the source endpoint of the UDP session.
+     * @param localEndpoint  An NWHostEndpoint object that specifies the local IP address endpoint to use as the source endpoint of the UDP session.
      * @return An NWUDPSession object.
      */
     @Generated
@@ -192,7 +192,7 @@ public class NEProvider extends NSObject {
 
     /**
      * [@property] defaultPath
-     * 
+     * <p>
      * The current default path for connections created by the provider. Use KVO to watch for network changes.
      */
     @Generated
@@ -201,10 +201,10 @@ public class NEProvider extends NSObject {
 
     /**
      * displayMessage:completionHandler:
-     * 
+     * <p>
      * This method can be called by subclass implementations to display a message to the user.
-     * 
-     * @param message The message to be displayed.
+     *
+     * @param message           The message to be displayed.
      * @param completionHandler A block that is executed when the user acknowledges the message. If this method is called on a NEFilterDataProvider instance or the message cannot be displayed, then the completion handler block will be executed immediately with success parameter set to NO. If the message was successfully displayed to the user, then the completion handler block is executed with the success parameter set to YES when the user dismisses the message.
      */
     @Generated
@@ -218,9 +218,9 @@ public class NEProvider extends NSObject {
 
     /**
      * sleepWithCompletionHandler:
-     * 
+     * <p>
      * This function is called by the framework when the system is about to go to sleep. Subclass developers can override this method to implement custom behavior such as closing connections or pausing some network activity.
-     * 
+     *
      * @param completionHandler When the method is finished handling the sleep event it must execute this completion handler.
      */
     @Generated
@@ -230,7 +230,7 @@ public class NEProvider extends NSObject {
 
     /**
      * wake
-     * 
+     * <p>
      * This function is called by the framework immediately after the system wakes up from sleep. Subclass developers can override this method to implement custom behavior such as re-establishing connections or resuming some network activity.
      */
     @Generated

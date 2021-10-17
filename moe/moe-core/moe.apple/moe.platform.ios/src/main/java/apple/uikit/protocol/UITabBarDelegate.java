@@ -57,7 +57,7 @@ public interface UITabBarDelegate {
     }
 
     /**
-     * called when a new view is selected by the user (but not programatically)
+     * called when a new view is selected by the user (but not programmatically)
      */
     @Generated
     @IsOptional

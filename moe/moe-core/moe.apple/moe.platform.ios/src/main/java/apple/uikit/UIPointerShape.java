@@ -61,9 +61,9 @@ public class UIPointerShape extends NSObject implements NSCopying {
 
     /**
      * Morphs the pointer to a beam with the given length and axis.
-     * 
-     * @param length  The beam's length. Limited to the region's width or height, depending on the beam's axis.
-     * @param axis    The axis along which to draw the beam. Axis must be either UIAxisVertical or UIAxisHorizontal.
+     *
+     * @param length The beam's length. Limited to the region's width or height, depending on the beam's axis.
+     * @param axis   The axis along which to draw the beam. Axis must be either UIAxisVertical or UIAxisHorizontal.
      */
     @Generated
     @Selector("beamWithPreferredLength:axis:")
@@ -151,7 +151,9 @@ public class UIPointerShape extends NSObject implements NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Morphs the pointer to the given path.
+     * UIBezierPath describing the pointer's shape. If used alongside a content effect, the shape must be
+     * in the effect's preview's container view's coordinate space. When used as a standalone shape,
+     * The path's bounds' origin corresponds to the pointer's physical location.
      */
     @Generated
     @Selector("shapeWithPath:")
@@ -159,10 +161,10 @@ public class UIPointerShape extends NSObject implements NSCopying {
 
     /**
      * Morphs the pointer to a rounded rectangle with the provided rect and the standard system corner radius.
-     * 
-     * @param rect  CGRect describing the pointer's frame. If used alongside a content effect, this rect must be in the effect's
-     *              preview's container view's coordinate space. Otherwise, it is centered about the pointer's current location
-     *              and the rect's origin is interpreted as an offset.
+     *
+     * @param rect CGRect describing the pointer's frame. If used alongside a content effect, this rect must be in the effect's
+     *             preview's container view's coordinate space. Otherwise, it is centered about the pointer's current location
+     *             and the rect's origin is interpreted as an offset.
      */
     @Generated
     @Selector("shapeWithRoundedRect:")
@@ -170,11 +172,11 @@ public class UIPointerShape extends NSObject implements NSCopying {
 
     /**
      * Morphs the pointer to a rounded rectangle with the provided rect and cornerRadius.
-     * 
-     * @param rect          CGRect describing the pointer's frame. If used alongside a content effect, this rect must be in
-     *                      the effect's preview's container view's coordinate space. Otherwise, it is centered about the
-     *                      pointer's current location and the rect's origin is interpreted as an offset.
-     * @param cornerRadius  Corner radius to apply to the pointer.
+     *
+     * @param rect         CGRect describing the pointer's frame. If used alongside a content effect, this rect must be in
+     *                     the effect's preview's container view's coordinate space. Otherwise, it is centered about the
+     *                     pointer's current location and the rect's origin is interpreted as an offset.
+     * @param cornerRadius Corner radius to apply to the pointer.
      */
     @Generated
     @Selector("shapeWithRoundedRect:cornerRadius:")

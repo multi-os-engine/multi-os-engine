@@ -38,9 +38,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVRoutePickerView
- * 
+ * <p>
  * AVRoutePickerView is a subclass of UIView that displays controls for picking playback routes.
- * 
+ * <p>
  * Media from AVPlayer or AVSampleBufferAudioRenderer can be routed to compatible AirPlay destinations.
  */
 @Generated
@@ -63,7 +63,7 @@ public class AVRoutePickerView extends UIView {
 
     /**
      * [@property]	activeTintColor
-     * 
+     * <p>
      * The view's tint color when AirPlay is active.
      */
     @Generated
@@ -246,7 +246,7 @@ public class AVRoutePickerView extends UIView {
 
     /**
      * [@property]	delegate
-     * 
+     * <p>
      * The route picker view's delegate.
      */
     @Generated
@@ -336,7 +336,7 @@ public class AVRoutePickerView extends UIView {
 
     /**
      * [@property]	activeTintColor
-     * 
+     * <p>
      * The view's tint color when AirPlay is active.
      */
     @Generated
@@ -393,7 +393,7 @@ public class AVRoutePickerView extends UIView {
 
     /**
      * [@property]	delegate
-     * 
+     * <p>
      * The route picker view's delegate.
      */
     @Generated
@@ -402,7 +402,7 @@ public class AVRoutePickerView extends UIView {
 
     /**
      * [@property]	delegate
-     * 
+     * <p>
      * The route picker view's delegate.
      */
     @Generated
@@ -462,7 +462,7 @@ public class AVRoutePickerView extends UIView {
 
     /**
      * [@property]	prioritizesVideoDevices
-     * 
+     * <p>
      * Whether or not the route picker should sort video capable output devices to the top of the list. Setting this to YES will cause the route picker view to show a videocentric icon.
      */
     @Generated
@@ -471,7 +471,7 @@ public class AVRoutePickerView extends UIView {
 
     /**
      * [@property]	prioritizesVideoDevices
-     * 
+     * <p>
      * Whether or not the route picker should sort video capable output devices to the top of the list. Setting this to YES will cause the route picker view to show a videocentric icon.
      */
     @Generated

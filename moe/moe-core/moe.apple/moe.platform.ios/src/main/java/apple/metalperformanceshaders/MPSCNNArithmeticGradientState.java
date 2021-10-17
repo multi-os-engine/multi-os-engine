@@ -30,14 +30,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNArithmeticGradientState
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * The MPSCNNArithmeticGradientState is used to hold the clamp mask used by both
- *             MPSCNNArithmetic forward filter and MPSCNNArithmeticGradient backward filter.
- *             The MPSCNNArithmetic forward filter populates the MPSCNNArithmeticGradientState
- *             object and the MPSCNNArithmeticGradient backward filter consumes the state
- *             object.
- * 
- *             The clamp mask is stored internally and is not accessible by the user.
+ * MPSCNNArithmetic forward filter and MPSCNNArithmeticGradient backward filter.
+ * The MPSCNNArithmetic forward filter populates the MPSCNNArithmeticGradientState
+ * object and the MPSCNNArithmeticGradient backward filter consumes the state
+ * object.
+ * <p>
+ * The clamp mask is stored internally and is not accessible by the user.
  */
 @Generated
 @Library("MetalPerformanceShaders")

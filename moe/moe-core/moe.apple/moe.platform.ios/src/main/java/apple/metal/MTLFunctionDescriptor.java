@@ -76,7 +76,7 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] constantValues
-     * 
+     * <p>
      * The set of constant values assigned to the function constants. Compilation fails if you do not provide valid constant values for all required function constants.
      */
     @Generated
@@ -99,7 +99,7 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * functionDescriptor
-     * 
+     * <p>
      * Create an autoreleased function descriptor
      */
     @Generated
@@ -138,7 +138,7 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] name
-     * 
+     * <p>
      * The name of the `visible` function to find.
      */
     @Generated
@@ -153,7 +153,7 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] options
-     * 
+     * <p>
      * The options to use for this new `MTLFunction`.
      */
     @Generated
@@ -171,7 +171,7 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] constantValues
-     * 
+     * <p>
      * The set of constant values assigned to the function constants. Compilation fails if you do not provide valid constant values for all required function constants.
      */
     @Generated
@@ -180,7 +180,7 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] name
-     * 
+     * <p>
      * The name of the `visible` function to find.
      */
     @Generated
@@ -189,7 +189,7 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] options
-     * 
+     * <p>
      * The options to use for this new `MTLFunction`.
      */
     @Generated
@@ -198,7 +198,7 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] specializedName
-     * 
+     * <p>
      * An optional new name for a `visible` function to allow reuse with different specializations.
      */
     @Generated
@@ -211,7 +211,7 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] specializedName
-     * 
+     * <p>
      * An optional new name for a `visible` function to allow reuse with different specializations.
      */
     @Generated
@@ -226,4 +226,26 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] binaryArchives
+     * <p>
+     * The array of archives to be searched.
+     * <p>
+     * Binary archives to be searched for precompiled functions during the compilation of this function.
+     */
+    @Generated
+    @Selector("binaryArchives")
+    public native NSArray<?> binaryArchives();
+
+    /**
+     * [@property] binaryArchives
+     * <p>
+     * The array of archives to be searched.
+     * <p>
+     * Binary archives to be searched for precompiled functions during the compilation of this function.
+     */
+    @Generated
+    @Selector("setBinaryArchives:")
+    public native void setBinaryArchives(NSArray<?> value);
 }

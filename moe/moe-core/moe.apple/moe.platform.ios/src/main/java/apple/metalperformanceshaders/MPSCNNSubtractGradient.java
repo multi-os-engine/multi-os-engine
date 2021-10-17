@@ -29,24 +29,24 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNSubtractGradient
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * Specifies the subtraction gradient operator.
- *             This arithmetic gradient filter requires the following inputs: gradient image from
- *             the previous layer (going backwards) and either the primary or the secondary source
- *             image from the forward pass. You will need a separate filter for the primary and
- *             secondary source images.
- * 
- *             Without broadcasting, the arithmetic subtract gradient operation for the primary
- *             source image is a copy operation on the input gradient image (for x - y, d/dx(x - y) = 1).
- *             This copy operation can be optimized away by the graph interface.
- * 
- *             For the secondary source image, the result is a negation of the gradient image from
- *             the previous layer (for x - y, d/dy(x - y) = -1).
- * 
- *             Setting the broadcasting parameters results in a reduction operation (sum) across all
- *             of the applicable broadcasting dimensions (rows, columns, feature channels, or any
- *             combination thereof) to produce the destination image of the size that matches the
- *             primary/secondary input images used in the forward pass.
+ * This arithmetic gradient filter requires the following inputs: gradient image from
+ * the previous layer (going backwards) and either the primary or the secondary source
+ * image from the forward pass. You will need a separate filter for the primary and
+ * secondary source images.
+ * <p>
+ * Without broadcasting, the arithmetic subtract gradient operation for the primary
+ * source image is a copy operation on the input gradient image (for x - y, d/dx(x - y) = 1).
+ * This copy operation can be optimized away by the graph interface.
+ * <p>
+ * For the secondary source image, the result is a negation of the gradient image from
+ * the previous layer (for x - y, d/dy(x - y) = -1).
+ * <p>
+ * Setting the broadcasting parameters results in a reduction operation (sum) across all
+ * of the applicable broadcasting dimensions (rows, columns, feature channels, or any
+ * combination thereof) to produce the destination image of the size that matches the
+ * primary/secondary input images used in the forward pass.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -130,11 +130,11 @@ public class MPSCNNSubtractGradient extends MPSCNNArithmeticGradient {
 
     /**
      * Initialize the subtraction gradient operator.
-     * 
-     * @param     device                   The device the filter will run on.
-     * @param     isSecondarySourceFilter  A boolean indicating whether the arithmetic gradient
-     *            filter is operating on the primary or secondary source image from the forward pass.
-     * @return    A valid MPSCNNSubtractGradient object or nil, if failure.
+     *
+     * @param device                  The device the filter will run on.
+     * @param isSecondarySourceFilter A boolean indicating whether the arithmetic gradient
+     *                                filter is operating on the primary or secondary source image from the forward pass.
+     * @return A valid MPSCNNSubtractGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:isSecondarySourceFilter:")

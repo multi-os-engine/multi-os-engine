@@ -45,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKNotificationInfo
- * 
+ * <p>
  * The payload of a push notification delivered in the UIApplication @c application:didReceiveRemoteNotification: delegate method contains information about the firing subscription.
- * 
+ * <p>
  * Use @code +[CKNotification notificationFromRemoteNotificationDictionary:] @endcode to parse that payload.
  * On tvOS, alerts, badges, sounds, and categories are not handled in push notifications. However, CKSubscriptions remain available to help you avoid polling the server.
  */
@@ -203,9 +203,9 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * Optional property for the category to be sent with the push when this subscription fires.
-     * 
+     * <p>
      * Categories allow you to present custom actions to the user on your push notifications.
-     * 
+     *
      * @see UIMutableUserNotificationCategory
      */
     @Generated
@@ -220,7 +220,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * A list of keys from the matching record to include in the notification payload.
-     * 
+     * <p>
      * Only some keys are allowed.  The value types associated with those keys on the server must be one of these classes:
      * - CKReference
      * - CLLocation
@@ -281,9 +281,9 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * Optional property for the category to be sent with the push when this subscription fires.
-     * 
+     * <p>
      * Categories allow you to present custom actions to the user on your push notifications.
-     * 
+     *
      * @see UIMutableUserNotificationCategory
      */
     @Generated
@@ -292,7 +292,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * A list of keys from the matching record to include in the notification payload.
-     * 
+     * <p>
      * Only some keys are allowed.  The value types associated with those keys on the server must be one of these classes:
      * - CKReference
      * - CLLocation
@@ -313,7 +313,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * Indicates that the notification should be sent with the "content-available" flag to allow for background downloads in the application.
-     * 
+     * <p>
      * Default value is @c NO.
      */
     @Generated
@@ -336,7 +336,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * Indicates that the notification should be sent with the "content-available" flag to allow for background downloads in the application.
-     * 
+     * <p>
      * Default value is @c NO.
      */
     @Generated
@@ -358,7 +358,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * Optional property specifying a field name to take from the matching record whose value is used as the apns-collapse-id header.
-     * 
+     *
      * @see APNs Notification API documentation
      */
     @Generated
@@ -367,7 +367,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * Optional property specifying a field name to take from the matching record whose value is used as the apns-collapse-id header.
-     * 
+     *
      * @see APNs Notification API documentation
      */
     @Generated
@@ -376,7 +376,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * Indicates that the notification should be sent with the "mutable-content" flag to allow a Notification Service app extension to modify or replace the push payload.
-     * 
+     * <p>
      * Default value is @c NO.
      */
     @Generated
@@ -427,7 +427,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * Indicates that the notification should be sent with the "mutable-content" flag to allow a Notification Service app extension to modify or replace the push payload.
-     * 
+     * <p>
      * Default value is @c NO.
      */
     @Generated

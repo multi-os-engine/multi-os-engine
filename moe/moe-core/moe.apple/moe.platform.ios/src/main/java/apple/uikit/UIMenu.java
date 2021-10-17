@@ -133,9 +133,8 @@ public class UIMenu extends UIMenuElement {
 
     /**
      * Copies this menu and replaces its children.
-     * 
-     * @param newChildren  The replacement children.
-     * 
+     *
+     * @param newChildren The replacement children.
      * @return A copy of this menu with updated children.
      */
     @Generated
@@ -144,10 +143,9 @@ public class UIMenu extends UIMenuElement {
 
     /**
      * Creates a UIMenu with the given arguments.
-     * 
-     * @param title       The menu's title.
-     * @param children    The menu's action-based sub-elements and sub-menus.
-     * 
+     *
+     * @param title    The menu's title.
+     * @param children The menu's action-based sub-elements and sub-menus.
      * @return A new UIMenu.
      */
     @Generated
@@ -156,13 +154,12 @@ public class UIMenu extends UIMenuElement {
 
     /**
      * Creates a UIMenu with the given arguments.
-     * 
-     * @param title       The menu's title.
-     * @param image       Image to be displayed alongside the menu's title.
-     * @param identifier  The menu's unique identifier. Pass nil to use an auto-generated identifier.
-     * @param options     The menu's options.
-     * @param children    The menu's action-based sub-elements and sub-menus.
-     * 
+     *
+     * @param title      The menu's title.
+     * @param image      Image to be displayed alongside the menu's title.
+     * @param identifier The menu's unique identifier. Pass nil to use an auto-generated identifier.
+     * @param options    The menu's options.
+     * @param children   The menu's action-based sub-elements and sub-menus.
      * @return A new UIMenu.
      */
     @Generated
@@ -217,12 +214,18 @@ public class UIMenu extends UIMenuElement {
 
     /**
      * Creates a UIMenu with an empty title, nil image, automatically generated identifier, and default options.
-     * 
-     * @param children    The menu's action-based sub-elements and sub-menus.
-     * 
+     *
+     * @param children The menu's action-based sub-elements and sub-menus.
      * @return A new UIMenu.
      */
     @Generated
     @Selector("menuWithChildren:")
     public static native UIMenu menuWithChildren(NSArray<? extends UIMenuElement> children);
+
+    /**
+     * The element(s) in the menu and sub-menus that have an "on" menu item state.
+     */
+    @Generated
+    @Selector("selectedElements")
+    public native NSArray<? extends UIMenuElement> selectedElements();
 }

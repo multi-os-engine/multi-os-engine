@@ -27,34 +27,34 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSRNNSingleGateDescriptor
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * The MPSRNNSingleGateDescriptor specifies a simple recurrent block/layer descriptor.
- *             The RNN layer initialized with a MPSRNNSingleGateDescriptor transforms the input data (image or matrix),
- *             and previous output with a set of filters, each producing one feature map in the new output data.
- *             The user may provide the RNN unit a single input or a sequence of inputs.
- * 
- *                 Description of operation:
- * 
- *             Let x_j be the input data (at time index t of sequence,
- *                         j index containing quadruplet: batch index, x,y and feature index (x=y=0 for matrices)).
- *             Let h0_j be the recurrent input (previous output) data from previous time step (at time index t-1 of sequence).
- *             Let h1_i be the output data produced at this time step.
- * 
- *             Let W_ij, U_ij be the weights for input and recurrent input data respectively
- *             Let b_i be a bias term
- * 
- *             Let gi(x) be a neuron activation function
- * 
- *             Then the new output image h1_i data is computed as follows:
- * 
- *                 h1_i = gi( W_ij * x_j + U_ij * h0_j  + b_i )
- * 
- *             The '*' stands for convolution (see @ref MPSRNNImageInferenceLayer) or matrix-vector/matrix multiplication
- *             (see @ref MPSRNNMatrixInferenceLayer).
- *             Summation is over index j (except for the batch index), but there is no summation over
- *             repeated index i - the output index.
- *             Note that for validity all intermediate images have to be of same size and the U matrix has to be square
- *             (ie. outputFeatureChannels == inputFeatureChannels in those). Also the bias terms are scalars wrt. spatial dimensions.
+ * The RNN layer initialized with a MPSRNNSingleGateDescriptor transforms the input data (image or matrix),
+ * and previous output with a set of filters, each producing one feature map in the new output data.
+ * The user may provide the RNN unit a single input or a sequence of inputs.
+ * <p>
+ * Description of operation:
+ * <p>
+ * Let x_j be the input data (at time index t of sequence,
+ * j index containing quadruplet: batch index, x,y and feature index (x=y=0 for matrices)).
+ * Let h0_j be the recurrent input (previous output) data from previous time step (at time index t-1 of sequence).
+ * Let h1_i be the output data produced at this time step.
+ * <p>
+ * Let W_ij, U_ij be the weights for input and recurrent input data respectively
+ * Let b_i be a bias term
+ * <p>
+ * Let gi(x) be a neuron activation function
+ * <p>
+ * Then the new output image h1_i data is computed as follows:
+ * <p>
+ * h1_i = gi( W_ij * x_j + U_ij * h0_j  + b_i )
+ * <p>
+ * The '*' stands for convolution (see @ref MPSRNNImageInferenceLayer) or matrix-vector/matrix multiplication
+ * (see @ref MPSRNNMatrixInferenceLayer).
+ * Summation is over index j (except for the batch index), but there is no summation over
+ * repeated index i - the output index.
+ * Note that for validity all intermediate images have to be of same size and the U matrix has to be square
+ * (ie. outputFeatureChannels == inputFeatureChannels in those). Also the bias terms are scalars wrt. spatial dimensions.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -108,10 +108,10 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
 
     /**
      * Creates a MPSRNNSingleGateDescriptor
-     * 
-     * @param      inputFeatureChannels    The number of feature channels in the input image/matrix. Must be >= 1.
-     * @param      outputFeatureChannels   The number of feature channels in the output image/matrix. Must be >= 1.
-     * @return     A valid MPSRNNSingleGateDescriptor object or nil, if failure.
+     *
+     * @param inputFeatureChannels  The number of feature channels in the input image/matrix. Must be >= 1.
+     * @param outputFeatureChannels The number of feature channels in the output image/matrix. Must be >= 1.
+     * @return A valid MPSRNNSingleGateDescriptor object or nil, if failure.
      */
     @Generated
     @Selector("createRNNSingleGateDescriptorWithInputFeatureChannels:outputFeatureChannels:")
@@ -138,9 +138,9 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property]   inputWeights
-     * 
+     * <p>
      * Contains weights 'W_ij', bias 'b_i' and neuron 'gi' from the simple RNN layer formula.
-     *             If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
+     * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
     @Generated
     @Selector("inputWeights")
@@ -176,9 +176,9 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property]   recurrentWeights
-     * 
+     * <p>
      * Contains weights 'U_ij' from the simple RNN layer formula.
-     *             If nil then assumed zero weights. Defaults to nil.
+     * If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
     @Selector("recurrentWeights")
@@ -195,9 +195,9 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property]   inputWeights
-     * 
+     * <p>
      * Contains weights 'W_ij', bias 'b_i' and neuron 'gi' from the simple RNN layer formula.
-     *             If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
+     * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
     @Generated
     @Selector("setInputWeights:")
@@ -205,9 +205,9 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property]   recurrentWeights
-     * 
+     * <p>
      * Contains weights 'U_ij' from the simple RNN layer formula.
-     *             If nil then assumed zero weights. Defaults to nil.
+     * If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
     @Selector("setRecurrentWeights:")

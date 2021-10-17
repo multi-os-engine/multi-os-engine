@@ -103,11 +103,9 @@ public class HMPresenceEvent extends HMEvent implements NSCopying, NSMutableCopy
 
     /**
      * Creates a presence based event.
-     * 
+     *
      * @param presenceEventType The event type desired for the event.
-     * 
-     * @param presenceUserType The user type whose presence will trigger the event.
-     * 
+     * @param presenceUserType  The user type whose presence will trigger the event.
      * @return Instance object representing the presence event.
      */
     @Generated

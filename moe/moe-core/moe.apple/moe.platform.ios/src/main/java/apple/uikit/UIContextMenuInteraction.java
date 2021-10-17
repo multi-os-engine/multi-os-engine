@@ -135,7 +135,7 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
 
     /**
      * Returns the interaction's location within the given view.
-     * 
+     *
      * @param view The view in which to locate the interaction.
      */
     @Generated
@@ -196,9 +196,18 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
 
     /**
      * Call to update the currently visible menu. This method does nothing if called before a menu is presented.
-     * 
-     * @param block  Called with the a mutable copy of the currently visible menu. Modify and return this menu (or an entirely
-     *               new one) to change the currently visible menu items.
+     *
+     * @param block Called with a mutable copy of the currently visible menu. Modify and return this menu (or an entirely
+     *              new one) to change the currently visible menu items. Starting in iOS 15, this block is called once for
+     *              every visible submenu. For example, in the following hierarchy:
+     *              <p>
+     *              *- Root Menu
+     *              *- Submenu A
+     *              *- Submenu B
+     *              *- Submenu C
+     *              <p>
+     *              If Submenu A is visible, the block is called twice (once for the Root Menu and once for Submenu A).
+     *              If both A and B are visible, it's called 3 times (for the Root Menu, A, and B).
      */
     @Generated
     @Selector("updateVisibleMenuWithBlock:")

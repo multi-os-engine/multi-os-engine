@@ -73,8 +73,8 @@ public class UIFocusDebugger extends NSObject {
 
     /**
      * Outputs a diagnosis of the specified item's focusability, including any known issues that may be preventing focusability.
-     *   - To use in Swift, enter `po UIFocusDebugger.checkFocusability(for: <item reference>)` when paused in lldb.
-     *   - To use in Objective-C, enter `po [UIFocusDebugger checkFocusabilityForItem:<item reference>]` when paused in lldb.
+     * - To use in Swift, enter `po UIFocusDebugger.checkFocusability(for: <item reference>)` when paused in lldb.
+     * - To use in Objective-C, enter `po [UIFocusDebugger checkFocusabilityForItem:<item reference>]` when paused in lldb.
      */
     @Generated
     @Selector("checkFocusabilityForItem:")
@@ -105,8 +105,8 @@ public class UIFocusDebugger extends NSObject {
 
     /**
      * Outputs an overview of all supported debugging utilities and other relevant information.
-     *   - To use in Swift, enter `po UIFocusDebugger.help()` when paused in lldb.
-     *   - To use in Objective-C, enter `po [UIFocusDebugger help]` when paused in lldb.
+     * - To use in Swift, enter `po UIFocusDebugger.help()` when paused in lldb.
+     * - To use in Objective-C, enter `po [UIFocusDebugger help]` when paused in lldb.
      */
     @Generated
     @Selector("help")
@@ -158,8 +158,8 @@ public class UIFocusDebugger extends NSObject {
 
     /**
      * Simulates a fake focus update requested by the specified environment (e.g. `[environment setNeedsFocusUpdate]`), outlining each step of the process for determining the next focused item.
-     *   - To use in Swift, enter `po UIFocusDebugger.simulateFocusUpdateRequest(from: <environment reference>)` when paused in lldb.
-     *   - To use in Objective-C, enter `po [UIFocusDebugger simulateFocusUpdateRequestFromEnvironment:<environment reference>]` when paused in lldb.
+     * - To use in Swift, enter `po UIFocusDebugger.simulateFocusUpdateRequest(from: <environment reference>)` when paused in lldb.
+     * - To use in Objective-C, enter `po [UIFocusDebugger simulateFocusUpdateRequestFromEnvironment:<environment reference>]` when paused in lldb.
      */
     @Generated
     @Selector("simulateFocusUpdateRequestFromEnvironment:")
@@ -169,8 +169,8 @@ public class UIFocusDebugger extends NSObject {
 
     /**
      * Outputs information for the currently focused item.
-     *   - To use in Swift, enter `po UIFocusDebugger.status()` when paused in lldb.
-     *   - To use in Objective-C, enter `po [UIFocusDebugger status]` when paused in lldb.
+     * - To use in Swift, enter `po UIFocusDebugger.status()` when paused in lldb.
+     * - To use in Objective-C, enter `po [UIFocusDebugger status]` when paused in lldb.
      */
     @Generated
     @Selector("status")
@@ -185,4 +185,15 @@ public class UIFocusDebugger extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Outputs a diagnosis of the focus groups of the specified environment and its children.
+     * Pass a focus system as the environment to get the full focus group tree for this focus system.
+     * - To use in Swift, enter `po UIFocusDebugger.checkFocusGroupTree(for: <environment reference>)` when paused in lldb.
+     * - To use in Objective-C, enter `po [UIFocusDebugger checkFocusGroupTreeForEnvironment:<environment reference>]` when paused in lldb.
+     */
+    @Generated
+    @Selector("checkFocusGroupTreeForEnvironment:")
+    public static native String checkFocusGroupTreeForEnvironment(
+            @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
 }

@@ -29,9 +29,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXAppRunTimeMetric
- * 
+ * <p>
  * An MXMetric subclass that encapsulates app runtime metrics.
- * 
+ * <p>
  * Runtime metrics describe application time spent running in different modes, such as audio, location, etc.
  */
 @Generated
@@ -86,9 +86,9 @@ public class MXAppRunTimeMetric extends MXMetric {
 
     /**
      * [@property]      cumulativeBackgroundAudioTime
-     * 
+     * <p>
      * Cumulative time the application spent running in the background to play audio
-     * 
+     * <p>
      * Dimensioned as NSUnitDuration.
      */
     @Generated
@@ -97,9 +97,9 @@ public class MXAppRunTimeMetric extends MXMetric {
 
     /**
      * [@property]      cumulativeBackgroundLocationTime
-     * 
+     * <p>
      * Cumulative time the application spent running in the background to acquire or process location.
-     * 
+     * <p>
      * Dimensioned as NSUnitDuration.
      */
     @Generated
@@ -108,11 +108,11 @@ public class MXAppRunTimeMetric extends MXMetric {
 
     /**
      * [@property]      cumulativeBackgroundTime
-     * 
+     * <p>
      * Cumulative application background time.
-     * 
+     * <p>
      * Time spent off screen and in the background, invisible to the user.
-     * 
+     * <p>
      * Dimensioned as NSUnitDuration.
      */
     @Generated
@@ -121,11 +121,11 @@ public class MXAppRunTimeMetric extends MXMetric {
 
     /**
      * [@property]      cumulativeForegroundTime
-     * 
+     * <p>
      * Cumulative application foreground time.
-     * 
+     * <p>
      * Time spent on screen and visible to the user.
-     * 
+     * <p>
      * Dimensioned as NSUnitDuration.
      */
     @Generated

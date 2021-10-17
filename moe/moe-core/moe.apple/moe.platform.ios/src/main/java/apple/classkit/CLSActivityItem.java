@@ -93,7 +93,7 @@ public class CLSActivityItem extends CLSObject {
 
     /**
      * An identifier that is unique within its owning activity
-     * 
+     * <p>
      * The identifier can be used to look up existing activityItems in a given activity.
      */
     @Generated
@@ -145,7 +145,7 @@ public class CLSActivityItem extends CLSObject {
 
     /**
      * Title of what this ActivityItem respresents.
-     * 
+     * <p>
      * This will be the title associated with the activity item in the generated progress report.
      */
     @Generated
@@ -172,7 +172,7 @@ public class CLSActivityItem extends CLSObject {
 
     /**
      * Title of what this ActivityItem respresents.
-     * 
+     * <p>
      * This will be the title associated with the activity item in the generated progress report.
      */
     @Generated

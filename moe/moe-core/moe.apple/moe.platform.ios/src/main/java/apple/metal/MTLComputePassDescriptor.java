@@ -26,7 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MTLComputePassDescriptor
- * 
+ * <p>
  * MTLComputePassDescriptor represents a collection of attachments to be used to create a concrete compute command encoder
  */
 @Generated
@@ -81,7 +81,7 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
 
     /**
      * computePassDescriptor
-     * 
+     * <p>
      * Create an autoreleased default frame buffer descriptor
      */
     @Generated
@@ -104,7 +104,7 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dispatchType
-     * 
+     * <p>
      * The dispatch type of the compute command encoder.
      */
     @Generated
@@ -158,7 +158,7 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] sampleBufferAttachments
-     * 
+     * <p>
      * An array of sample buffers and associated sample indices.
      */
     @Generated
@@ -167,7 +167,7 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dispatchType
-     * 
+     * <p>
      * The dispatch type of the compute command encoder.
      */
     @Generated

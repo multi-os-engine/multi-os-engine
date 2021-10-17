@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLLibraryError
- * 
+ * <p>
  * NSErrors raised when creating a library.
  */
 @Generated

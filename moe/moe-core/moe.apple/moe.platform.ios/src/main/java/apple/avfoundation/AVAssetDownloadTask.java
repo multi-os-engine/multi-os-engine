@@ -45,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAssetDownloadTask
- * 
+ * <p>
  * A NSURLSessionTask that accepts remote AVURLAssets to download locally.
- * 
+ * <p>
  * Should be created with -[AVAssetDownloadURLSession assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options:]. To utilize local data for playback for downloads that are in-progress, re-use the URLAsset supplied in initialization. An AVAssetDownloadTask may be instantiated with a destinationURL pointing to an existing asset on disk, for the purpose of completing or augmenting a downloaded asset.
  */
 @Generated
@@ -163,7 +163,7 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
 
     /**
      * [@property]		URLAsset
-     * 
+     * <p>
      * The asset supplied to the download task upon initialization.
      */
     @Generated
@@ -172,9 +172,9 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
 
     /**
      * [@property]		destinationURL
-     * 
+     * <p>
      * The file URL supplied to the download task upon initialization.
-     * 
+     * <p>
      * This URL may have been appended with the appropriate extension for the asset.
      */
     @Generated
@@ -187,9 +187,9 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
 
     /**
      * [@property]		loadedTimeRanges
-     * 
+     * <p>
      * This property provides a collection of time ranges for which the download task has media data already downloaded and playable. The ranges provided might be discontinuous.
-     * 
+     * <p>
      * Returns an NSArray of NSValues containing CMTimeRanges.
      */
     @Generated
@@ -198,7 +198,7 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
 
     /**
      * [@property]		options
-     * 
+     * <p>
      * The options supplied to the download task upon initialization.
      */
     @Generated

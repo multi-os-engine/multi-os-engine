@@ -30,10 +30,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNLossDataDescriptor
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * The MPSCNNLossDataDescriptor specifies a loss data descriptor.
- *             The same descriptor can be used to initialize both the
- *             labels and the optional weights data.
+ * The same descriptor can be used to initialize both the
+ * labels and the optional weights data.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -69,9 +69,9 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property]   bytesPerImage
-     * 
+     * <p>
      * Slice bytes of loss data.
-     * 
+     * <p>
      * This parameter specifies the slice bytes of loss data.
      */
     @Generated
@@ -81,9 +81,9 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property]   bytesPerRow
-     * 
+     * <p>
      * Row bytes of loss data.
-     * 
+     * <p>
      * This parameter specifies the row bytes of loss data.
      */
     @Generated
@@ -111,14 +111,14 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
 
     /**
      * Make a descriptor loss data. The bytesPerRow and bytesPerImage
-     *             are automatically calculated assuming a dense array. If it is
-     *             not a dense array, adjust bytesPerRow and bytesPerImage to the
-     *             right value by changing properties.
-     * 
-     * @param      data                        The per-element loss data. The data must be in floating point format.
-     * @param      layout                      The data layout of loss data.
-     * @param      size                        The size of loss data.
-     * @return     A valid MPSCNNLossDataDescriptor object or nil, if failure.
+     * are automatically calculated assuming a dense array. If it is
+     * not a dense array, adjust bytesPerRow and bytesPerImage to the
+     * right value by changing properties.
+     *
+     * @param data   The per-element loss data. The data must be in floating point format.
+     * @param layout The data layout of loss data.
+     * @param size   The size of loss data.
+     * @return A valid MPSCNNLossDataDescriptor object or nil, if failure.
      */
     @Generated
     @Selector("cnnLossDataDescriptorWithData:layout:size:")
@@ -171,9 +171,9 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property]   layout
-     * 
+     * <p>
      * Data layout of loss data. See MPSImage.h for more information.
-     * 
+     * <p>
      * This parameter specifies the layout of loss data.
      */
     @Generated
@@ -197,9 +197,9 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property]   bytesPerImage
-     * 
+     * <p>
      * Slice bytes of loss data.
-     * 
+     * <p>
      * This parameter specifies the slice bytes of loss data.
      */
     @Generated
@@ -208,9 +208,9 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property]   bytesPerRow
-     * 
+     * <p>
      * Row bytes of loss data.
-     * 
+     * <p>
      * This parameter specifies the row bytes of loss data.
      */
     @Generated
@@ -223,9 +223,9 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property]   size
-     * 
+     * <p>
      * Size of loss data: (width, height, feature channels}.
-     * 
+     * <p>
      * This parameter specifies the size of loss data.
      */
     @Generated

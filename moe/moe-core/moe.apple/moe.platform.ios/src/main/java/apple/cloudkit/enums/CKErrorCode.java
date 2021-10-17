@@ -27,6 +27,8 @@ public final class CKErrorCode {
     @Generated @NInt public static final long InternalError = 0x0000000000000001L;
     /**
      * Some items failed, but the operation succeeded overall. Check CKPartialErrorsByItemIDKey in the userInfo dictionary for more details.
+     * This error is only returned from CKOperation completion blocks, which are deprecated in swift.
+     * It will not be returned from (swift-only) CKOperation result blocks, which are their replacements
      */
     @Generated @NInt public static final long PartialFailure = 0x0000000000000002L;
     /**
@@ -166,4 +168,8 @@ public final class CKErrorCode {
      * The file for this asset could not be accessed. It is likely your application does not have permission to open the file, or the file may be temporarily unavailable due to its data protection class. This operation can be retried after it is able to be opened in your process.
      */
     @Generated @NInt public static final long AssetNotAvailable = 0x0000000000000023L;
+    /**
+     * The current account is in a state that may need user intervention to recover from. The user should be directed to check the Settings app. Listen for CKAccountChangedNotifications to know when to re-check account status and retry.
+     */
+    @Generated @NInt public static final long AccountTemporarilyUnavailable = 0x0000000000000024L;
 }

@@ -33,9 +33,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NFCNDEFPayload
- * 
+ * <p>
  * A NDEF message payload consists of Type Name Format, Type, Payload Identifier, and Payload data.
- *              The NDEF payload cannot result into a record that is greater than 128KB in size.
+ * The NDEF payload cannot result into a record that is greater than 128KB in size.
  */
 @Generated
 @Library("CoreNFC")
@@ -118,13 +118,13 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
 
     /**
      * initWithFormat:type:identifier:paylaod:
-     * 
-     * @param format        NFCTypeNameFormat value.
-     * @param type          Identifier describing the type of the payload.  Empty data indicates field is absent from the payload.
-     * @param identifier    Identifier in the form of a URI reference.  Empty data indicates field is absent from the payload.
-     * @param payload       Payload data.  Empty data indicates field is absent from the payload.
-     * 
-     * This initializer uses the maximum payload chunk size defined by the NFC NDEF specification, i.e. 2^32-1 octets.
+     *
+     * @param format     NFCTypeNameFormat value.
+     * @param type       Identifier describing the type of the payload.  Empty data indicates field is absent from the payload.
+     * @param identifier Identifier in the form of a URI reference.  Empty data indicates field is absent from the payload.
+     * @param payload    Payload data.  Empty data indicates field is absent from the payload.
+     *                   <p>
+     *                   This initializer uses the maximum payload chunk size defined by the NFC NDEF specification, i.e. 2^32-1 octets.
      */
     @Generated
     @Selector("initWithFormat:type:identifier:payload:")
@@ -133,12 +133,12 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
 
     /**
      * initWithFormat:type:identifier:paylaod:
-     * 
-     * @param format        NFCTypeNameFormat value.
-     * @param type          Identifier describing the type of the payload.  Empty data indicates field is absent from the payload.
-     * @param identifier    Identifier in the form of a URI reference.  Empty data indicates field is absent from the payload.
-     * @param payload       Payload data.  Empty data indicates field is absent from the payload.
-     * @param chunkSize     Maximum size of a payload chunk.  0 means no chunking on the payload, i.e. payload is fit in a single record.
+     *
+     * @param format     NFCTypeNameFormat value.
+     * @param type       Identifier describing the type of the payload.  Empty data indicates field is absent from the payload.
+     * @param identifier Identifier in the form of a URI reference.  Empty data indicates field is absent from the payload.
+     * @param payload    Payload data.  Empty data indicates field is absent from the payload.
+     * @param chunkSize  Maximum size of a payload chunk.  0 means no chunking on the payload, i.e. payload is fit in a single record.
      */
     @Generated
     @Selector("initWithFormat:type:identifier:payload:chunkSize:")
@@ -238,9 +238,9 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
 
     /**
      * wellKnownTypeTextPayloadWithLocale:
-     * 
-     * @param locale    Returns NSLocale object that is constructed from the IANA language code stored with the text payload.
-     * @return          NSString object base on a valid Well Known Type Text payload.  nil if payload is not a text.
+     *
+     * @param locale Returns NSLocale object that is constructed from the IANA language code stored with the text payload.
+     * @return NSString object base on a valid Well Known Type Text payload.  nil if payload is not a text.
      */
     @Generated
     @Selector("wellKnownTypeTextPayloadWithLocale:")
@@ -248,9 +248,9 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
 
     /**
      * wellKnownTypeTextPayloadWithString:locale:
-     * 
-     * @param text      Text message.
-     * @param locale    NSLocale object.  IANA language code specified by the locale will be saved with the payload.
+     *
+     * @param text   Text message.
+     * @param locale NSLocale object.  IANA language code specified by the locale will be saved with the payload.
      */
     @Generated
     @Selector("wellKnownTypeTextPayloadWithString:locale:")
@@ -259,8 +259,8 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
 
     /**
      * wellKnownTypeURIPayload
-     * 
-     * @return      NSURL object base on a valid Well Known Type URI payload. nil if payload is not a URI.
+     *
+     * @return NSURL object base on a valid Well Known Type URI payload. nil if payload is not a URI.
      */
     @Generated
     @Selector("wellKnownTypeURIPayload")
@@ -268,11 +268,11 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
 
     /**
      * wellKnownTypeURIRecordWithString:
-     * 
+     * <p>
      * Used for creating NDEF URI payloads which cannot be represented with NSURL object.  These are URIs that contain characters
-     *                  such as 'ä' and 'ö' which cannot be represent by the 7 bits ASCII encoding.
-     * 
-     * @param uri       URI string.  UTF-8 encoding representation will be used.
+     * such as 'ä' and 'ö' which cannot be represent by the 7 bits ASCII encoding.
+     *
+     * @param uri URI string.  UTF-8 encoding representation will be used.
      */
     @Generated
     @Selector("wellKnownTypeURIPayloadWithString:")
@@ -281,10 +281,10 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
 
     /**
      * wellKnownTypeURIPayloadWithURL:
-     * 
+     * <p>
      * Preferred convenience function for creating NDEF URI payload with common URLs such as "https://www.apple.com" or "tel:+1-555-555-5555".
-     * 
-     * @param url       NSURL object.
+     *
+     * @param url NSURL object.
      */
     @Generated
     @Selector("wellKnownTypeURIPayloadWithURL:")

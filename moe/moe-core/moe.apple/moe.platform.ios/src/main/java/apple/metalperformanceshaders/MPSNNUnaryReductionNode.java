@@ -27,10 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A node for a unary MPSNNReduce node.
- * 
+ * <p>
  * This is an abstract base class that does not correspond with any
- *             particular MPSCNNKernel. Please make one of the MPSNNReduction
- *             subclasses instead.
+ * particular MPSCNNKernel. Please make one of the MPSNNReduction
+ * subclasses instead.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -109,9 +109,9 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing an MPS reduction kernel.
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @return     A new MPSNNFilter node for an MPS reduction kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
+     * @return A new MPSNNFilter node for an MPS reduction kernel.
      */
     @Generated
     @Selector("initWithSource:")
@@ -146,9 +146,9 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
 
     /**
      * Create an autoreleased node representing an MPS reduction kernel.
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @return     A new MPSNNFilter node for an MPS reduction kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
+     * @return A new MPSNNFilter node for an MPS reduction kernel.
      */
     @Generated
     @Selector("nodeWithSource:")

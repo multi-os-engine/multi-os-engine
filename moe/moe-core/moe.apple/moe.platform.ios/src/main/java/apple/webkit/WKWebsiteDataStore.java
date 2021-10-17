@@ -155,7 +155,7 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
 
     /**
      * Returns a new non-persistent data store.
-     * 
+     * <p>
      * If a WKWebView is associated with a non-persistent data store, no data will
      * be written to the file system. This is useful for implementing "private browsing" in a web view.
      */
@@ -190,8 +190,8 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
 
     /**
      * Fetches data records containing the given website data types.
-     * 
-     * @param dataTypes The website data types to fetch records for.
+     *
+     * @param dataTypes         The website data types to fetch records for.
      * @param completionHandler A block to invoke when the data records have been fetched.
      */
     @Generated
@@ -216,9 +216,9 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
 
     /**
      * Removes website data of the given types for the given data records.
-     * 
-     * @param dataTypes The website data types that should be removed.
-     * @param dataRecords The website data records to delete website data for.
+     *
+     * @param dataTypes         The website data types that should be removed.
+     * @param dataRecords       The website data records to delete website data for.
      * @param completionHandler A block to invoke when the website data for the records has been removed.
      */
     @Generated
@@ -229,9 +229,9 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
 
     /**
      * Removes all website data of the given types that has been modified since the given date.
-     * 
-     * @param dataTypes The website data types that should be removed.
-     * @param date A date. All website data modified after this date will be removed.
+     *
+     * @param dataTypes         The website data types that should be removed.
+     * @param date              A date. All website data modified after this date will be removed.
      * @param completionHandler A block to invoke when the website data has been removed.
      */
     @Generated

@@ -27,8 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that will detect human Torsos in an image.
- * 
- * This request will generate VNDetectedObjectObservation objects with a defined boundingBox and confidence score.
+ * <p>
+ * This request will generate VNHumanObservation objects with defined boundingBox and confidence score.
  */
 @Generated
 @Library("Vision")
@@ -163,4 +163,25 @@ public class VNDetectHumanRectanglesRequest extends VNImageBasedRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * VNHumanObservation results.
+     */
+    @Generated
+    @Selector("results")
+    public native NSArray<? extends VNHumanObservation> results();
+
+    /**
+     * Boolean property to specify whether the human upper body or full body needs to be detected. The default is YES, meaning the request is setup to detect upper body only
+     */
+    @Generated
+    @Selector("setUpperBodyOnly:")
+    public native void setUpperBodyOnly(boolean value);
+
+    /**
+     * Boolean property to specify whether the human upper body or full body needs to be detected. The default is YES, meaning the request is setup to detect upper body only
+     */
+    @Generated
+    @Selector("upperBodyOnly")
+    public native boolean upperBodyOnly();
 }

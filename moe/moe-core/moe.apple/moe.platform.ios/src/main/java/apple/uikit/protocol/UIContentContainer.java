@@ -44,8 +44,8 @@ public interface UIContentContainer {
             @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
     /**
-     * When the content container forwards viewWillTransitionToSize:withTransitionCoordinator: to its children, it will call this method to determine what size to send them. 
-     * 
+     * When the content container forwards viewWillTransitionToSize:withTransitionCoordinator: to its children, it will call this method to determine what size to send them.
+     * <p>
      * If the returned size is the same as the child container's current size, viewWillTransitionToSize:withTransitionCoordinator: will not be called.
      */
     @Generated
@@ -56,7 +56,7 @@ public interface UIContentContainer {
 
     /**
      * Intended as a bridge for a view controller that does not use auto layout presenting a child that does use auto layout.
-     * 
+     * <p>
      * If the child's view is using auto layout and the -systemLayoutSizeFittingSize: of the view
      * changes, -systemLayoutFittingSizeDidChangeForChildContentContainer: will be sent to the view controller's parent.
      */
@@ -66,8 +66,8 @@ public interface UIContentContainer {
             @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
     /**
-     * This method is called when the view controller's view's size is changed by its parent (i.e. for the root view controller when its window rotates or is resized). 
-     * 
+     * This method is called when the view controller's view's size is changed by its parent (i.e. for the root view controller when its window rotates or is resized).
+     * <p>
      * If you override this method, you should either call super to propagate the change to children or manually forward the change to children.
      */
     @Generated
@@ -77,7 +77,7 @@ public interface UIContentContainer {
 
     /**
      * This method is called when the view controller's trait collection is changed by its parent.
-     * 
+     * <p>
      * If you override this method, you should either call super to propagate the change to children or manually forward the change to children.
      */
     @Generated

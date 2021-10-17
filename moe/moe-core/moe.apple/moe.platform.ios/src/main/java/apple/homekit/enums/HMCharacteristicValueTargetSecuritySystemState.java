@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueTargetSecuritySystemState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueTargetSecuritySystemStateStayArm        Home is occupied and residents are active.
  * [@constant]  HMCharacteristicValueTargetSecuritySystemStateAwayArm        Home is unoccupied.
  * [@constant]  HMCharacteristicValueTargetSecuritySystemStateNightArm       Home is occupied and residents are sleeping.

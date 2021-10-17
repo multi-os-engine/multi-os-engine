@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NSHTTPCookieStorage
- * 
+ * <p>
  * NSHTTPCookieStorage implements a singleton object (shared
  * instance) which manages the shared cookie store.  It has methods
  * to allow clients to set and remove cookies, and get the current
@@ -150,15 +150,15 @@ public class NSHTTPCookieStorage extends NSObject {
 
     /**
      * sharedCookieStorageForGroupContainerIdentifier:
-     * 
+     * <p>
      * Get the cookie storage for the container associated with the specified application group identifier
-     * 
+     * <p>
      * By default, applications and associated app extensions have different data containers, which means
      * that the sharedHTTPCookieStorage singleton will refer to different persistent cookie stores in an application and
      * any app extensions that it contains. This method allows clients to create a persistent cookie storage that can be
      * shared among all applications and extensions with access to the same application group. Subsequent calls to this
      * method with the same identifier will return the same cookie storage instance.
-     * 
+     *
      * @param identifier The application group identifier
      * @return A cookie storage with a persistent store in the application group container
      */
@@ -168,12 +168,12 @@ public class NSHTTPCookieStorage extends NSObject {
 
     /**
      * [@property] sharedHTTPCookieStorage
-     * 
+     * <p>
      * Get the shared cookie storage in the default location.
-     * 
+     * <p>
      * Starting in OS X 10.11, each app has its own sharedHTTPCookieStorage singleton,
      * which will not be shared with other applications.
-     * 
+     *
      * @return The shared cookie storage
      */
     @Generated
@@ -200,7 +200,7 @@ public class NSHTTPCookieStorage extends NSObject {
 
     /**
      * Get all the cookies
-     * 
+     *
      * @return An NSArray of NSHTTPCookies
      */
     @Generated
@@ -209,14 +209,14 @@ public class NSHTTPCookieStorage extends NSObject {
 
     /**
      * cookiesForURL:
-     * 
+     * <p>
      * Returns an array of cookies to send to the given URL.
-     * 
+     * <p>
      * The cookie manager examines the cookies it stores and
      * includes those which should be sent to the given URL. You can use
      * <tt>+[NSCookie requestHeaderFieldsWithCookies:]</tt> to turn this array
      * into a set of header fields to add to a request.
-     * 
+     *
      * @param URL The URL for which to get cookies.
      * @return an NSArray of NSHTTPCookie objects.
      */
@@ -226,7 +226,7 @@ public class NSHTTPCookieStorage extends NSObject {
 
     /**
      * deleteCookie:
-     * 
+     * <p>
      * Delete the specified cookie
      */
     @Generated
@@ -244,7 +244,7 @@ public class NSHTTPCookieStorage extends NSObject {
 
     /**
      * removeCookiesSince:
-     * 
+     * <p>
      * Delete all cookies from the cookie storage since the provided date.
      */
     @Generated
@@ -253,9 +253,9 @@ public class NSHTTPCookieStorage extends NSObject {
 
     /**
      * setCookie:
-     * 
+     * <p>
      * Set a cookie
-     * 
+     * <p>
      * The cookie will override an existing cookie with the
      * same name, domain and path, if any.
      */
@@ -273,10 +273,10 @@ public class NSHTTPCookieStorage extends NSObject {
 
     /**
      * setCookies:forURL:mainDocumentURL:
-     * 
+     * <p>
      * Adds an array cookies to the cookie store, following the
      * cookie accept policy.
-     * 
+     * <p>
      * For mainDocumentURL, the caller should pass the URL for
      * an appropriate main document, if known. For example, when loading
      * a web page, the URL of the main html document for the top-level
@@ -285,11 +285,11 @@ public class NSHTTPCookieStorage extends NSObject {
      * cookiesWithResponseHeaderFields:forURL:]</tt> on a header field
      * dictionary and then use this method to store the resulting cookies
      * in accordance with policy settings.
-     * 
-     * @param cookies The cookies to set.
-     * @param URL The URL from which the cookies were sent.
+     *
+     * @param cookies         The cookies to set.
+     * @param URL             The URL from which the cookies were sent.
      * @param mainDocumentURL The main document URL to be used as a base for the "same
-     * domain as main document" policy.
+     *                        domain as main document" policy.
      */
     @Generated
     @Selector("setCookies:forURL:mainDocumentURL:")
@@ -298,11 +298,11 @@ public class NSHTTPCookieStorage extends NSObject {
 
     /**
      * sortedCookiesUsingDescriptors:
-     * 
+     * <p>
      * Returns an array of all cookies in the store, sorted according to the key value and sorting direction of the NSSortDescriptors specified in the parameter.
-     * 
+     * <p>
      * proper sorting of cookies may require extensive string conversion, which can be avoided by allowing the system to perform the sorting.  This API is to be preferred over the more generic -[NSHTTPCookieStorage cookies] API, if sorting is going to be performed.
-     * 
+     *
      * @param sortOrder an array of NSSortDescriptors which represent the preferred sort order of the resulting array.
      */
     @Generated

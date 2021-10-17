@@ -26,7 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MTLBlitPassDescriptor
- * 
+ * <p>
  * MTLBlitPassDescriptor represents a collection of attachments to be used to create a concrete blit command encoder
  */
 @Generated
@@ -63,7 +63,7 @@ public class MTLBlitPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * blitPassDescriptor
-     * 
+     * <p>
      * Create an autoreleased default frame buffer descriptor
      */
     @Generated
@@ -148,7 +148,7 @@ public class MTLBlitPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] sampleBufferAttachments
-     * 
+     * <p>
      * An array of sample buffers and associated sample indices.
      */
     @Generated

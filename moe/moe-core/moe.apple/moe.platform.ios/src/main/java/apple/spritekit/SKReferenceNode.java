@@ -233,7 +233,7 @@ public class SKReferenceNode extends SKNode {
      * Force the reference to be reloaded. The resolved node will added
      * as a child of this node. If the resolved node has not yet been loaded,
      * it will be automatically loaded when the resolved node is queryed or
-     * the refenece node is rendered. 
+     * the refenece node is rendered.
      */
     @Generated
     @Selector("resolveReferenceNode")

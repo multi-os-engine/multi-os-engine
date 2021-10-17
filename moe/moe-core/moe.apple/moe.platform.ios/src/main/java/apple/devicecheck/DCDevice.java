@@ -77,7 +77,7 @@ public class DCDevice extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * The current device. 
+     * The current device.
      */
     @Generated
     @Selector("currentDevice")

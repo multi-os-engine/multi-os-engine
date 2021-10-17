@@ -115,7 +115,7 @@ public class CPTravelEstimates extends NSObject implements NSSecureCoding {
 
     /**
      * Initialize a @c CPTravelEstimates with distance and time remaining.
-     * 
+     * <p>
      * [@note] A distance value less than 0 or a time remaining value less than 0 will render
      * as "--" in the ETA and trip preview cards, indicating that distance or time remaining are
      * unavailable, due to route calculations/rerouting or internet connectivity problems.

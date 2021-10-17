@@ -90,7 +90,7 @@ public class MTLIntersectionFunctionTableDescriptor extends NSObject implements 
 
     /**
      * [@property] functionCount
-     * 
+     * <p>
      * The number of functions in the table.
      */
     @Generated
@@ -122,7 +122,7 @@ public class MTLIntersectionFunctionTableDescriptor extends NSObject implements 
 
     /**
      * intersectionFunctionTableDescriptor
-     * 
+     * <p>
      * Create an autoreleased intersection function table descriptor
      */
     @Generated
@@ -153,7 +153,7 @@ public class MTLIntersectionFunctionTableDescriptor extends NSObject implements 
 
     /**
      * [@property] functionCount
-     * 
+     * <p>
      * The number of functions in the table.
      */
     @Generated

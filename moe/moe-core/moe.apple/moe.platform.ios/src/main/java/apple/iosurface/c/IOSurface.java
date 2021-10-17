@@ -45,8 +45,8 @@ public final class IOSurface {
      * Perform an atomic lookup and retain of a IOSurface by its IOSurfaceID.
      * Note: Performing multiple lookups of the same IOSurface will *NOT* return
      * the same IOSurfaceRef.   If you need to compare two IOSurface objects
-     * for equality, you must either do so by comparing their IOSurfaceIDs, or by 
-     * using CFEqual(). 
+     * for equality, you must either do so by comparing their IOSurfaceIDs, or by
+     * using CFEqual().
      */
     @Generated
     @CFunction
@@ -61,23 +61,23 @@ public final class IOSurface {
 
     /**
      * "Lock" or "Unlock" a IOSurface for reading or writing.
-     * 
+     * <p>
      * The term "lock" is used loosely in this context, and is simply used along with the
      * "unlock" information to put a bound on CPU access to the raw IOSurface data.
-     * 
+     * <p>
      * If the seed parameter is non-NULL, IOSurfaceLock() will store the buffer's
      * internal modification seed value at the time you made the lock call.   You can compare
      * this value to a value returned previously to determine of the contents of the buffer
      * has been changed since the last lock.
-     * 
+     * <p>
      * In the case of IOSurfaceUnlock(), the seed value returned will be the internal
      * seed value at the time of the unlock.  If you locked the buffer for writing, this value
      * will be incremented as the unlock is performed and the new value will be returned.
-     * 
+     * <p>
      * See the kIOSurfaceLock enums for more information.
-     * 
+     * <p>
      * Note: Locking and unlocking a IOSurface is not a particularly cheap operation,
-     * so care should be taken to avoid the calls whenever possible.   The seed values are 
+     * so care should be taken to avoid the calls whenever possible.   The seed values are
      * particularly useful for keeping a cache of the buffer contents.
      */
     @Generated
@@ -136,7 +136,7 @@ public final class IOSurface {
 
     /**
      * This will return the current seed value of the buffer and is a cheap call to make to see
-     * if the contents of the buffer have changed since the last lock/unlock. 
+     * if the contents of the buffer have changed since the last lock/unlock.
      */
     @Generated
     @CFunction
@@ -152,11 +152,11 @@ public final class IOSurface {
 
     /**
      * These routines return information about a particular plane of a IOSurface.
-     * 
+     * <p>
      * If the planeIndex is greater than or equal to the plane count of the IOSurface, zero
      * is returned.... with one exception.   If this IOSurface has zero planes and a planeIndex
      * of zero is passed in, the routines function just like the non-planar APIs.  This is to allow
-     * higher level code to treat planar and non-planar buffers is a more uniform fashion. 
+     * higher level code to treat planar and non-planar buffers is a more uniform fashion.
      */
     @Generated
     @CFunction
@@ -194,7 +194,7 @@ public final class IOSurface {
 
     /**
      * These routines return information about a particular component of a particular plane of a IOSurface.
-     * For non-planar IOSurfaces, pass zero for planeIndex. 
+     * For non-planar IOSurfaces, pass zero for planeIndex.
      */
     @Generated
     @CFunction
@@ -235,7 +235,7 @@ public final class IOSurface {
     /**
      * These  calls let you attach CF property list types to a IOSurface buffer.  These calls are
      * expensive (they essentially must serialize the data into the kernel) and thus should be avoided whenever
-     * possible.   Note:  These functions can not be used to change the underlying surface properties. 
+     * possible.   Note:  These functions can not be used to change the underlying surface properties.
      */
     @Generated
     @CFunction
@@ -268,9 +268,9 @@ public final class IOSurface {
     /**
      * This call lets you get a mach_port_t that holds a reference to the IOSurface. This is useful
      * if you need to atomically or securely pass an IOSurface to another task without making the surface global to
-     * the entire system.  The returned port must be deallocated with mach_port_deallocate or the equivalent.  
+     * the entire system.  The returned port must be deallocated with mach_port_deallocate or the equivalent.
      * Note: Any live mach ports created from an IOSurfaceRef implicity increase the IOSurface's global use
-     * count by one until the port is deleted. 
+     * count by one until the port is deleted.
      */
     @Generated
     @CFunction
@@ -278,27 +278,27 @@ public final class IOSurface {
 
     /**
      * This call lets you take a mach_port_t created via IOSurfaceCreatePort() and recreate an IOSurfaceRef from it.
-     * Note: This call does NOT destroy the port. 
+     * Note: This call does NOT destroy the port.
      */
     @Generated
     @CFunction
     public static native IOSurfaceRef IOSurfaceLookupFromMachPort(int port);
 
     /**
-     * IOSurfaceGetPropertyMaximum() will return the maximum of a given property that is guaranteed to be 
+     * IOSurfaceGetPropertyMaximum() will return the maximum of a given property that is guaranteed to be
      * compatible with all of the current devices (GPUs, etc.) in the system.   The most important ones being:
-     * 
+     * <p>
      * kIOSurfaceBytesPerRow
      * kIOSurfaceWidth
      * kIOSurfaceHeight
      * kIOSurfacePlaneBytesPerRow
      * kIOSurfacePlaneWidth
      * kIOSurfacePlaneHeight
-     * 
+     * <p>
      * For the width and height properties, the maximum values are the largest that are guaranteed to work
      * for both reading and writing.   In OpenGL terms this translates into the largest size that will work
      * for both textures and render targets.
-     * 
+     * <p>
      * This function returns 0 for properties that have no predefined limit or where the concept of a limit
      * would be considered invalid (such as kIOSurfacePixelFormat).
      */
@@ -308,13 +308,13 @@ public final class IOSurface {
     public static native long IOSurfaceGetPropertyMaximum(CFStringRef property);
 
     /**
-     * If a property has a particular alignment requirement, then IOSurfaceGetPropertyAlignment() will return it.  
-     * If the property has no alignment requirement then 1 will be returned.   The following properties 
+     * If a property has a particular alignment requirement, then IOSurfaceGetPropertyAlignment() will return it.
+     * If the property has no alignment requirement then 1 will be returned.   The following properties
      * should always be aligned if you choose calculate them yourself:
-     * 
+     * <p>
      * kIOSurfaceBytesPerRow
      * kIOSurfaceOffset
-     * 
+     * <p>
      * kIOSurfacePlaneBase
      * kIOSurfacePlaneOffset
      * kIOSurfacePlaneBytesPerRow
@@ -326,7 +326,7 @@ public final class IOSurface {
 
     /**
      * This is a convenience function to automatically align property values.  For properties with no alignment
-     * requirements, the original value will be returned. 
+     * requirements, the original value will be returned.
      */
     @Generated
     @CFunction
@@ -372,9 +372,9 @@ public final class IOSurface {
      * You should assume that if you mark an IOSurface as Purgeable/Empty and mark it
      * NonVolatile and it comes back with the old state being Empty that any texture
      * objects bound to the IOSurface now have undefined content in them.
-     * 
+     * <p>
      * If oldState is non-NULL, it will return the previous state of the IOSurface.
-     * 
+     * <p>
      * kIOSurfacePurgeableNonVolatile - The IOSurface was not volatile and the contents are still valid
      * kIOSurfacePurgeableVolatile    - The IOSurface was volatile, but the contents were not discarded
      * kIOSurfacePurgeableEmpty       - The IOSurface was empty and the contents have been discarded.
@@ -387,7 +387,7 @@ public final class IOSurface {
     /**
      * kIOSurfaceAllocSize    - CFNumber of the total allocation size of the buffer including all planes.
      * Defaults to BufferHeight * BytesPerRow if not specified.   Must be specified for
-     * dimensionless buffers. 
+     * dimensionless buffers.
      */
     @Generated
     @CVariable()
@@ -410,7 +410,7 @@ public final class IOSurface {
     /**
      * kIOSurfaceBytesPerRow - CFNumber for the bytes per row of the buffer.   If not specified, IOSurface will first calculate
      * the number full elements required on each row (by rounding up), multiplied by the bytes per element
-     * for this buffer.   That value will then be appropriately aligned. 
+     * for this buffer.   That value will then be appropriately aligned.
      */
     @Generated
     @CVariable()
@@ -468,7 +468,7 @@ public final class IOSurface {
     /**
      * kIOSurfacePlaneBytesPerRow    - CFNumber for the bytes per row of this plane.  If not specified, IOSurface will first calculate
      * the number full elements required on each row (by rounding up), multiplied by the bytes per element
-     * for this plane.   That value will then be appropriately aligned. 
+     * for this plane.   That value will then be appropriately aligned.
      */
     @Generated
     @CVariable()
@@ -476,7 +476,7 @@ public final class IOSurface {
 
     /**
      * kIOSurfacePlaneOffset  - CFNumber for the offset into the buffer for this plane.  If not specified then IOSurface
-     * will lay out each plane sequentially based on the previous plane's allocation size. 
+     * will lay out each plane sequentially based on the previous plane's allocation size.
      */
     @Generated
     @CVariable()
@@ -498,7 +498,7 @@ public final class IOSurface {
 
     /**
      * kIOSurfacePlaneBitsPerElement    - CFNumber for the bits per element of this plane.  Optional, default is 1.
-     * For use in cases where kIOSurfacePlaneBytesPerElement doesn't allow sufficient precision. 
+     * For use in cases where kIOSurfacePlaneBytesPerElement doesn't allow sufficient precision.
      */
     @Generated
     @CVariable()
@@ -569,7 +569,7 @@ public final class IOSurface {
 
     /**
      * kIOSurfacePlaneComponentNames   - CFArray[CFNumber] for IOSurfaceComponentName of each component in this plane.
-     * For example 'BGRA' would be {4, 3, 2, 1} 
+     * For example 'BGRA' would be {4, 3, 2, 1}
      */
     @Generated
     @CVariable()
@@ -623,7 +623,7 @@ public final class IOSurface {
     /**
      * IOSurfacePropertyKeyBytesPerRow - NSNumber for the bytes per row of the buffer.   If not specified, IOSurface will first calculate
      * the number full elements required on each row (by rounding up), multiplied by the bytes per element for this surface.
-     * That value will then be appropriately aligned. 
+     * That value will then be appropriately aligned.
      */
     @Generated
     @CVariable()
@@ -688,8 +688,8 @@ public final class IOSurface {
 
     /**
      * IOSurfacePropertyKeyPlaneBytesPerRow    - NSNumber for the bytes per row of this plane.  If not specified, IOSurface will first calculate
-     * the number full elements required on each row (by rounding up), multiplied by the bytes per element for this plane.  
-     * That value will then be appropriately aligned. 
+     * the number full elements required on each row (by rounding up), multiplied by the bytes per element for this plane.
+     * That value will then be appropriately aligned.
      */
     @Generated
     @CVariable()
@@ -698,7 +698,7 @@ public final class IOSurface {
 
     /**
      * IOSurfacePropertyKeyPlaneOffset  - NSNumber for the offset into the buffer for this plane.  If not specified then IOSurface
-     * will lay out each plane sequentially based on the previous plane's allocation size. 
+     * will lay out each plane sequentially based on the previous plane's allocation size.
      */
     @Generated
     @CVariable()
@@ -772,10 +772,26 @@ public final class IOSurface {
     /**
      * IOSurfacePropertyKeyAllocSize    - NSNumber of the total allocation size of the buffer including all planes.
      * Defaults to BufferHeight * BytesPerRow if not specified.   Must be specified for
-     * dimensionless buffers. 
+     * dimensionless buffers.
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String IOSurfacePropertyKeyAllocSize();
+
+    /**
+     * kIOSurfaceColorSpace defines the RGB (or other) color space for the data stored in the IOSurface. It
+     * is expected that this is a serialized CGColorSpaceRef, provided by the CoreGraphics CGColorSpaceRef
+     * serialization APIs (CGColorSpaceCopyPropertyList).
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kIOSurfaceColorSpace();
+
+    /**
+     * CFData representation of the ICC Profile, generally via CGColorSpaceCopyICCData
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kIOSurfaceICCProfile();
 }

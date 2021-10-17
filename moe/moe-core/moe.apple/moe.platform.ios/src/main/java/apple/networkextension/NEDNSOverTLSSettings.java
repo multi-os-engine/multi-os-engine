@@ -137,7 +137,7 @@ public class NEDNSOverTLSSettings extends NEDNSSettings {
 
     /**
      * [@property] serverName
-     * 
+     * <p>
      * The name of the server to use for TLS certificate validation.
      */
     @Generated
@@ -146,7 +146,7 @@ public class NEDNSOverTLSSettings extends NEDNSSettings {
 
     /**
      * [@property] serverName
-     * 
+     * <p>
      * The name of the server to use for TLS certificate validation.
      */
     @Generated

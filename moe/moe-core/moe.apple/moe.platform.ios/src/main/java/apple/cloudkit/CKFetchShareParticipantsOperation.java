@@ -154,9 +154,9 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
-     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of lookup infos to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of lookup infos to errors keyed off of @c CKPartialErrorsByItemIDKey.  These errors are repeats of those sent back in previous @c perShareParticipantCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -175,9 +175,9 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
-     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of lookup infos to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of lookup infos to errors keyed off of @c CKPartialErrorsByItemIDKey.  These errors are repeats of those sent back in previous @c perShareParticipantCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -187,7 +187,8 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
 
     /**
      * Called once for each share participant created from a submitted user identity lookup info.
-     * 
+     * <p>
+     * If the replacement callback @c perShareParticipantCompletionBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -201,7 +202,8 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
 
     /**
      * Called once for each share participant created from a submitted user identity lookup info.
-     * 
+     * <p>
+     * If the replacement callback @c perShareParticipantCompletionBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -239,5 +241,41 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
     public interface Block_shareParticipantFetchedBlock_ret {
         @Generated
         void call_shareParticipantFetchedBlock_ret(CKShareParticipant arg0);
+    }
+
+    /**
+     * Called once for each lookup info.
+     * <p>
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("perShareParticipantCompletionBlock")
+    @ObjCBlock(name = "call_perShareParticipantCompletionBlock_ret")
+    public native Block_perShareParticipantCompletionBlock_ret perShareParticipantCompletionBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_perShareParticipantCompletionBlock_ret {
+        @Generated
+        void call_perShareParticipantCompletionBlock_ret(CKUserIdentityLookupInfo arg0, CKShareParticipant arg1,
+                NSError arg2);
+    }
+
+    /**
+     * Called once for each lookup info.
+     * <p>
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("setPerShareParticipantCompletionBlock:")
+    public native void setPerShareParticipantCompletionBlock(
+            @ObjCBlock(name = "call_setPerShareParticipantCompletionBlock") Block_setPerShareParticipantCompletionBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setPerShareParticipantCompletionBlock {
+        @Generated
+        void call_setPerShareParticipantCompletionBlock(CKUserIdentityLookupInfo arg0, CKShareParticipant arg1,
+                NSError arg2);
     }
 }

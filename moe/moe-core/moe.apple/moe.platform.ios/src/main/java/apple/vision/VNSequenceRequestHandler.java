@@ -34,9 +34,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Performs requests on a sequence of images.
- * 
+ * <p>
  * The VNSequenceRequestHandler is created without any specific image source.  The -performRequests:on<ImageSource>:error: methods will retain the image source for no longer than the lifetime of the call.
- *             The VNSequenceRequestHandler can choose to also cache state information related to the previously-processed image sources.
+ * The VNSequenceRequestHandler can choose to also cache state information related to the previously-processed image sources.
  */
 @Generated
 @Library("Vision")
@@ -137,12 +137,10 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on an image in a CGImageRef.
-     * 
-     * @param	requests		The VNRequests to be performed on the image.
-     * 
-     * @param	image			The CGImageRef containing the image to be processed.
-     * 
-     * @param	error			On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
+     *
+     * @param    requests        The VNRequests to be performed on the image.
+     * @param    image            The CGImageRef containing the image to be processed.
+     * @param    error            On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
      */
     @Generated
     @Selector("performRequests:onCGImage:error:")
@@ -151,14 +149,11 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on an image in a CGImageRef.
-     * 
-     * @param	requests		The VNRequests to be performed on the image.
-     * 
-     * @param	image			The CGImageRef containing the image to be processed.
-     * 
-     * @param	orientation		The orientation of the image.
-     * 
-     * @param	error			On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
+     *
+     * @param    requests        The VNRequests to be performed on the image.
+     * @param    image            The CGImageRef containing the image to be processed.
+     * @param    orientation        The orientation of the image.
+     * @param    error            On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
      */
     @Generated
     @Selector("performRequests:onCGImage:orientation:error:")
@@ -167,12 +162,10 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on an image in a CIImage.
-     * 
-     * @param	requests		The VNRequests to be performed on the image.
-     * 
-     * @param	image			The CIImage containing the image to be processed.
-     * 
-     * @param	error			On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
+     *
+     * @param    requests        The VNRequests to be performed on the image.
+     * @param    image            The CIImage containing the image to be processed.
+     * @param    error            On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
      */
     @Generated
     @Selector("performRequests:onCIImage:error:")
@@ -181,14 +174,11 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on an image in a CIImage.
-     * 
-     * @param	requests		The VNRequests to be performed on the image.
-     * 
-     * @param	image			The CIImage containing the image to be processed.
-     * 
-     * @param	orientation		The orientation of the image.
-     * 
-     * @param	error			On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
+     *
+     * @param    requests        The VNRequests to be performed on the image.
+     * @param    image            The CIImage containing the image to be processed.
+     * @param    orientation        The orientation of the image.
+     * @param    error            On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
      */
     @Generated
     @Selector("performRequests:onCIImage:orientation:error:")
@@ -197,12 +187,10 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on an image in a CVPixelBuffer.
-     * 
-     * @param	requests		The VNRequests to be performed on the image.
-     * 
-     * @param	pixelBuffer		The CVPixelBuffer containing the image to be processed.
-     * 
-     * @param	error			On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
+     *
+     * @param    requests        The VNRequests to be performed on the image.
+     * @param    pixelBuffer        The CVPixelBuffer containing the image to be processed.
+     * @param    error            On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
      */
     @Generated
     @Selector("performRequests:onCVPixelBuffer:error:")
@@ -211,14 +199,11 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on an image in a CVPixelBuffer.
-     * 
-     * @param	requests		The VNRequests to be performed on the image.
-     * 
-     * @param	pixelBuffer		The CVPixelBuffer containing the image to be processed.
-     * 
-     * @param	orientation		The orientation of the image as it is captured in the pixel buffer.
-     * 
-     * @param	error			On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
+     *
+     * @param    requests        The VNRequests to be performed on the image.
+     * @param    pixelBuffer        The CVPixelBuffer containing the image to be processed.
+     * @param    orientation        The orientation of the image as it is captured in the pixel buffer.
+     * @param    error            On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
      */
     @Generated
     @Selector("performRequests:onCVPixelBuffer:orientation:error:")
@@ -227,12 +212,10 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on an image with its source format in memory.
-     * 
-     * @param	requests		The VNRequests to be performed on the image.
-     * 
-     * @param	imageData		The data representing the source format of the image to be processed.
-     * 
-     * @param	error			On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
+     *
+     * @param    requests        The VNRequests to be performed on the image.
+     * @param    imageData        The data representing the source format of the image to be processed.
+     * @param    error            On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
      */
     @Generated
     @Selector("performRequests:onImageData:error:")
@@ -241,14 +224,11 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on an image with its source format in memory.
-     * 
-     * @param	requests		The VNRequests to be performed on the image.
-     * 
-     * @param	imageData		The data representing the source format of the image to be processed.
-     * 
-     * @param	orientation		The orientation of the image.
-     * 
-     * @param	error			On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
+     *
+     * @param    requests        The VNRequests to be performed on the image.
+     * @param    imageData        The data representing the source format of the image to be processed.
+     * @param    orientation        The orientation of the image.
+     * @param    error            On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
      */
     @Generated
     @Selector("performRequests:onImageData:orientation:error:")
@@ -257,12 +237,10 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on an image referenced by an URL.
-     * 
-     * @param	requests		The VNRequests to be performed on the image.
-     * 
-     * @param	imageURL		The URL of the image to be processed.  If this is not a file-based URL, the method will fail.
-     * 
-     * @param	error			On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
+     *
+     * @param    requests        The VNRequests to be performed on the image.
+     * @param    imageURL        The URL of the image to be processed.  If this is not a file-based URL, the method will fail.
+     * @param    error            On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
      */
     @Generated
     @Selector("performRequests:onImageURL:error:")
@@ -271,14 +249,11 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on an image referenced by an URL.
-     * 
-     * @param	requests		The VNRequests to be performed on the image.
-     * 
-     * @param	imageURL		The URL of the image to be processed.  If this is not a file-based URL, the method will fail.
-     * 
-     * @param	orientation		The orientation of the image.
-     * 
-     * @param	error			On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
+     *
+     * @param    requests        The VNRequests to be performed on the image.
+     * @param    imageURL        The URL of the image to be processed.  If this is not a file-based URL, the method will fail.
+     * @param    orientation        The orientation of the image.
+     * @param    error            On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
      */
     @Generated
     @Selector("performRequests:onImageURL:orientation:error:")
@@ -308,12 +283,10 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on the image buffer contained in the CMSampleBufferRef.
-     * 
-     * @param	requests		The VNRequests to be performed on the image.
-     * 
-     * @param	sampleBuffer	A CMSampleBuffer containing an image that will be used for performing the requests. Not all types of sample buffers are supported. They need to contain a CVImageBuffer, be valid and ready.
-     * 
-     * @param	error			On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
+     *
+     * @param    requests        The VNRequests to be performed on the image.
+     * @param    sampleBuffer    A CMSampleBuffer containing an image that will be used for performing the requests. Not all types of sample buffers are supported. They need to contain a CVImageBuffer, be valid and ready.
+     * @param    error            On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
      */
     @Generated
     @Selector("performRequests:onCMSampleBuffer:error:")
@@ -322,14 +295,11 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on the image buffer contained in the CMSampleBufferRef.
-     * 
-     * @param	requests		The VNRequests to be performed on the image.
-     * 
-     * @param	sampleBuffer	A CMSampleBuffer containing an image that will be used for performing the requests. Not all types of sample buffers are supported. They need to contain a CVImageBuffer, be valid and ready.
-     * 
-     * @param	orientation		The orientation of the image.
-     * 
-     * @param	error			On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
+     *
+     * @param    requests        The VNRequests to be performed on the image.
+     * @param    sampleBuffer    A CMSampleBuffer containing an image that will be used for performing the requests. Not all types of sample buffers are supported. They need to contain a CVImageBuffer, be valid and ready.
+     * @param    orientation        The orientation of the image.
+     * @param    error            On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify NULL for this parameter if you do not want the error information.
      */
     @Generated
     @Selector("performRequests:onCMSampleBuffer:orientation:error:")

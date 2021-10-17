@@ -29,25 +29,25 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNMultiplyGradient
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * Specifies the multiplication gradient operator.
- *             This arithmetic gradient filter requires the following inputs: gradient image from
- *             the previous layer (going backwards) and either the primary or the secondary source
- *             image from the forward pass. You will need a separate filter for the primary and
- *             secondary source images.
- * 
- *             Without broadcasting, the arithmetic multiply gradient operation is an element-wise
- *             multiplication operation between the gradient image from the previous layer (going
- *             backwards) and:
- *             - The secondary source image from the forward pass for the primary source filter
- *               (for x * y, d/dx(x * y) = y).
- *             - The primary source image from the forward pass for the secondary source filter
- *               (for x * y, d/dy(x * y) = x).
- * 
- *             Setting the broadcasting parameters results in a reduction operation (sum) across all
- *             of the applicable broadcasting dimensions (rows, columns, feature channels, or any
- *             combination thereof) to produce the destination image of the size that matches the
- *             primary/secondary input images used in the forward pass.
+ * This arithmetic gradient filter requires the following inputs: gradient image from
+ * the previous layer (going backwards) and either the primary or the secondary source
+ * image from the forward pass. You will need a separate filter for the primary and
+ * secondary source images.
+ * <p>
+ * Without broadcasting, the arithmetic multiply gradient operation is an element-wise
+ * multiplication operation between the gradient image from the previous layer (going
+ * backwards) and:
+ * - The secondary source image from the forward pass for the primary source filter
+ * (for x * y, d/dx(x * y) = y).
+ * - The primary source image from the forward pass for the secondary source filter
+ * (for x * y, d/dy(x * y) = x).
+ * <p>
+ * Setting the broadcasting parameters results in a reduction operation (sum) across all
+ * of the applicable broadcasting dimensions (rows, columns, feature channels, or any
+ * combination thereof) to produce the destination image of the size that matches the
+ * primary/secondary input images used in the forward pass.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -131,11 +131,11 @@ public class MPSCNNMultiplyGradient extends MPSCNNArithmeticGradient {
 
     /**
      * Initialize the multiplication gradient operator.
-     * 
-     * @param     device                   The device the filter will run on.
-     * @param     isSecondarySourceFilter  A boolean indicating whether the arithmetic gradient
-     *            filter is operating on the primary or secondary source image from the forward pass.
-     * @return    A valid MPSCNNMultiplyGradient object or nil, if failure.
+     *
+     * @param device                  The device the filter will run on.
+     * @param isSecondarySourceFilter A boolean indicating whether the arithmetic gradient
+     *                                filter is operating on the primary or secondary source image from the forward pass.
+     * @return A valid MPSCNNMultiplyGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:isSecondarySourceFilter:")

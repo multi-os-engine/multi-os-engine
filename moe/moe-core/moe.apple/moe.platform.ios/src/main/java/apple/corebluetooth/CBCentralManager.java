@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CBCentralManager
- * 
+ * <p>
  * Entry point to the central role. Commands should only be issued when its state is <code>CBCentralManagerStatePoweredOn</code>.
  */
 @Generated
@@ -160,13 +160,12 @@ public class CBCentralManager extends CBManager {
 
     /**
      * cancelPeripheralConnection:
-     * 
+     * <p>
      * Cancels an active or pending connection to <i>peripheral</i>. Note that this is non-blocking, and any <code>CBPeripheral</code>
-     *                     commands that are still pending to <i>peripheral</i> may or may not complete.
-     * 
-     * @param peripheral   A <code>CBPeripheral</code>.
-     * 
-     * @see                centralManager:didDisconnectPeripheral:error:
+     * commands that are still pending to <i>peripheral</i> may or may not complete.
+     *
+     * @param peripheral A <code>CBPeripheral</code>.
+     * @see centralManager:didDisconnectPeripheral:error:
      */
     @Generated
     @Selector("cancelPeripheralConnection:")
@@ -174,21 +173,20 @@ public class CBCentralManager extends CBManager {
 
     /**
      * connectPeripheral:options:
-     * 
+     * <p>
      * Initiates a connection to <i>peripheral</i>. Connection attempts never time out and, depending on the outcome, will result
-     *                      in a call to either {@link centralManager:didConnectPeripheral:} or {@link centralManager:didFailToConnectPeripheral:error:}.
-     *                      Pending attempts are cancelled automatically upon deallocation of <i>peripheral</i>, and explicitly via {@link cancelPeripheralConnection}.
-     * 
-     *  @param peripheral   The <code>CBPeripheral</code> to be connected.
-     *  @param options      An optional dictionary specifying connection behavior options.
-     * 
-     *  @see                centralManager:didConnectPeripheral:
-     *  @see                centralManager:didFailToConnectPeripheral:error:
-     *  @see            CBConnectPeripheralOptionNotifyOnConnectionKey
-     *  @see            CBConnectPeripheralOptionNotifyOnDisconnectionKey
-     *  @see            CBConnectPeripheralOptionNotifyOnNotificationKey
-     *  @see            CBConnectPeripheralOptionEnableTransportBridgingKey
-     * @see			CBConnectPeripheralOptionRequiresANCS
+     * in a call to either {@link centralManager:didConnectPeripheral:} or {@link centralManager:didFailToConnectPeripheral:error:}.
+     * Pending attempts are cancelled automatically upon deallocation of <i>peripheral</i>, and explicitly via {@link cancelPeripheralConnection}.
+     *
+     * @param peripheral The <code>CBPeripheral</code> to be connected.
+     * @param options    An optional dictionary specifying connection behavior options.
+     * @see            CBConnectPeripheralOptionRequiresANCS
+     * @see centralManager:didConnectPeripheral:
+     * @see centralManager:didFailToConnectPeripheral:error:
+     * @see CBConnectPeripheralOptionNotifyOnConnectionKey
+     * @see CBConnectPeripheralOptionNotifyOnDisconnectionKey
+     * @see CBConnectPeripheralOptionNotifyOnNotificationKey
+     * @see CBConnectPeripheralOptionEnableTransportBridgingKey
      */
     @Generated
     @Selector("connectPeripheral:options:")
@@ -196,7 +194,7 @@ public class CBCentralManager extends CBManager {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * The delegate object that will receive central events.
      */
     @Generated
@@ -210,10 +208,10 @@ public class CBCentralManager extends CBManager {
 
     /**
      * initWithDelegate:queue:
-     * 
+     * <p>
      * The initialization call. The events of the central role will be dispatched on the provided queue.
-     *                 If <i>nil</i>, the main queue will be used.
-     * 
+     * If <i>nil</i>, the main queue will be used.
+     *
      * @param delegate The delegate that will receive central role events.
      * @param queue    The dispatch queue on which the events will be dispatched.
      */
@@ -224,16 +222,15 @@ public class CBCentralManager extends CBManager {
 
     /**
      * initWithDelegate:queue:options:
-     * 
+     * <p>
      * The initialization call. The events of the central role will be dispatched on the provided queue.
-     *                  If <i>nil</i>, the main queue will be used.
-     * 
-     *  @param delegate The delegate that will receive central role events.
-     *  @param queue    The dispatch queue on which the events will be dispatched.
-     *  @param options  An optional dictionary specifying options for the manager.
-     * 
-     * @see		CBCentralManagerOptionShowPowerAlertKey
-     * @see		CBCentralManagerOptionRestoreIdentifierKey
+     * If <i>nil</i>, the main queue will be used.
+     *
+     * @param delegate The delegate that will receive central role events.
+     * @param queue    The dispatch queue on which the events will be dispatched.
+     * @param options  An optional dictionary specifying options for the manager.
+     * @see        CBCentralManagerOptionShowPowerAlertKey
+     * @see        CBCentralManagerOptionRestoreIdentifierKey
      */
     @Generated
     @Selector("initWithDelegate:queue:options:")
@@ -243,7 +240,7 @@ public class CBCentralManager extends CBManager {
 
     /**
      * [@property] isScanning
-     * 
+     * <p>
      * Whether or not the central is currently scanning.
      */
     @Generated
@@ -252,12 +249,12 @@ public class CBCentralManager extends CBManager {
 
     /**
      * retrieveConnectedPeripheralsWithServices
-     * 
+     * <p>
      * Retrieves all peripherals that are connected to the system and implement any of the services listed in <i>serviceUUIDs</i>.
-     * 			Note that this set can include peripherals which were connected by other applications, which will need to be connected locally
-     * 			via {@link connectPeripheral:options:} before they can be used.
-     * 
-     * @return		A list of <code>CBPeripheral</code> objects.
+     * Note that this set can include peripherals which were connected by other applications, which will need to be connected locally
+     * via {@link connectPeripheral:options:} before they can be used.
+     *
+     * @return A list of <code>CBPeripheral</code> objects.
      */
     @Generated
     @Selector("retrieveConnectedPeripheralsWithServices:")
@@ -266,12 +263,11 @@ public class CBCentralManager extends CBManager {
 
     /**
      * retrievePeripheralsWithIdentifiers:
-     * 
+     * <p>
      * Attempts to retrieve the <code>CBPeripheral</code> object(s) with the corresponding <i>identifiers</i>.
-     * 
-     *  @param identifiers	A list of <code>NSUUID</code> objects.
-     * 
-     * @return				A list of <code>CBPeripheral</code> objects.
+     *
+     * @param identifiers A list of <code>NSUUID</code> objects.
+     * @return A list of <code>CBPeripheral</code> objects.
      */
     @Generated
     @Selector("retrievePeripheralsWithIdentifiers:")
@@ -280,20 +276,19 @@ public class CBCentralManager extends CBManager {
 
     /**
      * scanForPeripheralsWithServices:options:
-     * 
+     * <p>
      * Starts scanning for peripherals that are advertising any of the services listed in <i>serviceUUIDs</i>. Although strongly discouraged,
-     *                      if <i>serviceUUIDs</i> is <i>nil</i> all discovered peripherals will be returned. If the central is already scanning with different
-     *                      <i>serviceUUIDs</i> or <i>options</i>, the provided parameters will replace them.
-     *                      Applications that have specified the <code>bluetooth-central</code> background mode are allowed to scan while backgrounded, with two
-     *                      caveats: the scan must specify one or more service types in <i>serviceUUIDs</i>, and the <code>CBCentralManagerScanOptionAllowDuplicatesKey</code>
-     *                      scan option will be ignored.
-     * 
-     *  @param serviceUUIDs A list of <code>CBUUID</code> objects representing the service(s) to scan for.
-     *  @param options      An optional dictionary specifying options for the scan.
-     * 
-     *  @see                centralManager:didDiscoverPeripheral:advertisementData:RSSI:
-     *  @see            CBCentralManagerScanOptionAllowDuplicatesKey
-     * @see			CBCentralManagerScanOptionSolicitedServiceUUIDsKey
+     * if <i>serviceUUIDs</i> is <i>nil</i> all discovered peripherals will be returned. If the central is already scanning with different
+     * <i>serviceUUIDs</i> or <i>options</i>, the provided parameters will replace them.
+     * Applications that have specified the <code>bluetooth-central</code> background mode are allowed to scan while backgrounded, with two
+     * caveats: the scan must specify one or more service types in <i>serviceUUIDs</i>, and the <code>CBCentralManagerScanOptionAllowDuplicatesKey</code>
+     * scan option will be ignored.
+     *
+     * @param serviceUUIDs A list of <code>CBUUID</code> objects representing the service(s) to scan for.
+     * @param options      An optional dictionary specifying options for the scan.
+     * @see            CBCentralManagerScanOptionSolicitedServiceUUIDsKey
+     * @see centralManager:didDiscoverPeripheral:advertisementData:RSSI:
+     * @see CBCentralManagerScanOptionAllowDuplicatesKey
      */
     @Generated
     @Selector("scanForPeripheralsWithServices:options:")
@@ -302,7 +297,7 @@ public class CBCentralManager extends CBManager {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * The delegate object that will receive central events.
      */
     @Generated
@@ -311,7 +306,7 @@ public class CBCentralManager extends CBManager {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * The delegate object that will receive central events.
      */
     @Generated
@@ -328,7 +323,7 @@ public class CBCentralManager extends CBManager {
 
     /**
      * stopScan:
-     * 
+     * <p>
      * Stops scanning for peripherals.
      */
     @Generated
@@ -342,15 +337,14 @@ public class CBCentralManager extends CBManager {
 
     /**
      * registerForConnectionEventsWithOptions:
-     * 
+     * <p>
      * Calls {@link centralManager:connectionEventDidOccur:forPeripheral:} when a connection event occurs matching any of the given options.
-     *                     Passing nil in the option parameter clears any prior registered matching options.
-     * 
-     * @param options		A dictionary specifying connection event options.
-     * 
-     * @see				centralManager:connectionEventDidOccur:forPeripheral:
-     * @see        	CBConnectionEventMatchingOptionServiceUUIDs
-     * @see            CBConnectionEventMatchingOptionPeripheralUUIDs
+     * Passing nil in the option parameter clears any prior registered matching options.
+     *
+     * @param options A dictionary specifying connection event options.
+     * @see                centralManager:connectionEventDidOccur:forPeripheral:
+     * @see CBConnectionEventMatchingOptionServiceUUIDs
+     * @see CBConnectionEventMatchingOptionPeripheralUUIDs
      */
     @Generated
     @Selector("registerForConnectionEventsWithOptions:")
@@ -358,10 +352,10 @@ public class CBCentralManager extends CBManager {
 
     /**
      * supportsFeatures
-     * 
+     * <p>
      * Returns a boolean value representing the support for the provided features.
-     * 
-     * @param features	One or more features you would like to check if supported.
+     *
+     * @param features One or more features you would like to check if supported.
      */
     @Generated
     @Selector("supportsFeatures:")

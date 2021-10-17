@@ -21,38 +21,38 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum]       CTLineBoundsOptions
- * 
+ * <p>
  * Options for CTLineGetBoundsWithOptions.
- * 
+ * <p>
  * Passing 0 (no options) returns the typographic bounds,
- *             including typographic leading and shifts.
- * 
+ * including typographic leading and shifts.
+ * <p>
  * [@constant]   kCTLineBoundsExcludeTypographicLeading
- *             Pass this option to exclude typographic leading.
- * 
+ * Pass this option to exclude typographic leading.
+ * <p>
  * [@constant]   kCTLineBoundsExcludeTypographicShifts
- *             Pass this option to ignore cross-stream shifts due to
- *             positioning (such as kerning or baseline alignment).
- * 
+ * Pass this option to ignore cross-stream shifts due to
+ * positioning (such as kerning or baseline alignment).
+ * <p>
  * [@constant]   kCTLineBoundsUseHangingPunctuation
- *             Normally line bounds include all glyphs; pass this option to
- *             treat standard punctuation hanging off either end of the line
- *             as fully hanging.
- * 
+ * Normally line bounds include all glyphs; pass this option to
+ * treat standard punctuation hanging off either end of the line
+ * as fully hanging.
+ * <p>
  * [@constant]   kCTLineBoundsUseGlyphPathBounds
- *             Pass this option to use glyph path bounds rather than the
- *             default typographic bounds.
- * 
+ * Pass this option to use glyph path bounds rather than the
+ * default typographic bounds.
+ * <p>
  * [@constant]   kCTLineBoundsUseOpticalBounds
- *             Pass this option to use optical bounds. This option overrides
- *             kCTLineBoundsUseGlyphPathBounds.
- * 
+ * Pass this option to use optical bounds. This option overrides
+ * kCTLineBoundsUseGlyphPathBounds.
+ * <p>
  * [@constant]   kCTLineBoundsIncludeLanguageExtents
- *             Pass this option to include additional space based on common
- *             glyph sequences for various languages. The result is intended
- *             to be used when drawing to avoid clipping that may be caused
- *             by the typographic bounds. This option does not have any effect
- *             when used with kCTLineBoundsUseGlyphPathBounds.
+ * Pass this option to include additional space based on common
+ * glyph sequences for various languages. The result is intended
+ * to be used when drawing to avoid clipping that may be caused
+ * by the typographic bounds. This option does not have any effect
+ * when used with kCTLineBoundsUseGlyphPathBounds.
  */
 @Generated
 public final class CTLineBoundsOptions {

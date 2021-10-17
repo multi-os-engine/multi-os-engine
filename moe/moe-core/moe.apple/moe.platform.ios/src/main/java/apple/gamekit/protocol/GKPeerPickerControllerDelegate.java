@@ -58,7 +58,7 @@ public interface GKPeerPickerControllerDelegate {
 
     /**
      * Notifies delegate that the connection type is requesting a GKSession object.
-     * 
+     * <p>
      * You should return a valid GKSession object for use by the picker. If this method is not implemented or returns 'nil', a default GKSession is created on the delegate's behalf.
      */
     @Generated

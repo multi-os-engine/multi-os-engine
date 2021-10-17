@@ -152,10 +152,6 @@ public class UIFocusSystem extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * Return the focus system that the provided environment is contained in. Returns nil if focus
-     * interaction is not supported, or if the environment is not associated with any focus system.
-     */
     @Generated
     @Selector("focusSystemForEnvironment:")
     public static native UIFocusSystem focusSystemForEnvironment(

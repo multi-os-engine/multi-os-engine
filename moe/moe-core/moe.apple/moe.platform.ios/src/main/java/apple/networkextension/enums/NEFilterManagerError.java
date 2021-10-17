@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEFilterManagerError
- * 
+ * <p>
  * Filter error codes
  */
 @Generated

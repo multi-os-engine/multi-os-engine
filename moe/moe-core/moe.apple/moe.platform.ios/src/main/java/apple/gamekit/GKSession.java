@@ -169,7 +169,7 @@ public class GKSession extends NSObject {
 
     /**
      * Attempt connection to a remote peer.  Remote peer gets a callback to -session:didReceiveConnectionRequestFromPeer:.
-     * 
+     * <p>
      * Success results in a call to delegate -session:peer:didChangeState: GKPeerStateConnected
      * Failure results in a call to delegate -session:connectionWithPeerFailed:withError:
      */

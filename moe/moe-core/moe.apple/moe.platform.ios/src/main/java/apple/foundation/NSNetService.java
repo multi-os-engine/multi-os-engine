@@ -222,7 +222,7 @@ public class NSNetService extends NSObject {
 
     /**
      * This is the initializer for resolution. If you know the domain, type and name of the service for which you wish to discover addresses, you should initialize an NSNetService instance using this method and call resolve: on the result. If you wish to connect to this service immediately, you should call getInputStream:getOutputStream: on the result and forego the resolution step entirely.
-     * 
+     * <p>
      * If publish: is called on an NSNetService instance initialized with this method, an NSNetServicesBadArgumentError will be sent in the error dictionary to the delegate's netService:didNotPublish: method.
      */
     @Generated
@@ -253,7 +253,7 @@ public class NSNetService extends NSObject {
 
     /**
      * Advertises a given service on the network. This method returns immediately. Success or failure is indicated by callbacks to the NSNetService instance's delegate.
-     * 
+     * <p>
      * If the name of the service is the default name (@""), then the service will be renamed automatically. If the name of the service has been specified, then the service will not be renamed automatically. If more control over renaming is required, then -[NSNetService publishWithOptions:] is available.
      */
     @Generated
@@ -262,7 +262,7 @@ public class NSNetService extends NSObject {
 
     /**
      * Advertises a given service on the network. This method returns immediately. Success or failure is indicated by callbacks to the NSNetService instance's delegate.
-     * 
+     * <p>
      * See the notes above for NSNetServiceNoAutoRename for information about controlling the auto-renaming behavior using this method.
      */
     @Generated

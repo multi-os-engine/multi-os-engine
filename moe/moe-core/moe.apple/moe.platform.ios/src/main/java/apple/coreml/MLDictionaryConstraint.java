@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLDictionaryConstraint
- * 
+ * <p>
  * Constraint describing expected NSDictionary properties
  */
 @Generated

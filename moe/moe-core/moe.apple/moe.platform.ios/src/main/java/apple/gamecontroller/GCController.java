@@ -44,10 +44,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Controllers are available to an application that links to GameController.framework. There are 2 ways to access controllers
  * paired to the system, adopt both to ensure the best user experience:
- * 
+ * <p>
  * 1: Querying for the the current array or controllers using [GCController controllers].
  * 2: Registering for Connection/Disconnection notifications from NSNotificationCenter.
- * 
+ * <p>
  * Only controllers that support one of the allowed profiles, such as GCExtendedGamepad, will be enumerated. Check for the profile
  * supported before using a controller in your application. Ignore a controller that doesn't support a profile that suits
  * your application, as the user will expect their controller to either be fully supported or not supported at all.
@@ -104,7 +104,7 @@ public class GCController extends NSObject implements GCDevice {
 
     /**
      * Get a list of controllers currently attached to the system.
-     * 
+     *
      * @see GCControllerDidConnectNotification
      * @see GCControllerDidDisconnectNotification
      */
@@ -169,21 +169,21 @@ public class GCController extends NSObject implements GCDevice {
      * will get called once no more devices can be found. If there are already multiple controllers available for use, there
      * may be little reason to automatically start discovery of new wireless controllers. In this situation it may be best to
      * allow the user to start discovery manually via in-game UI.
-     * 
+     * <p>
      * Once discovery has started new controllers will notify themselves as connected via GCControllerDidConnectNotification.
      * As the notification arrives the controller is also available in the controllers array.
-     * 
+     * <p>
      * The completionHandler could be used to update UI and/or game state to indicate that no more controllers will be found
      * and the current set of controllers is what is available for use in the game.
-     * 
+     * <p>
      * If a completionHandler was provided, it will be called once when discovery stops. Either from an explicit call to
      * stopWirelessControllerDiscovery or from timing out or stopping in its natural course of operation. Thus the
      * completionHandler will at most be called once per call to startWirelessControllerDiscoveryWithCompletionHandler:.
-     * 
+     * <p>
      * The completionHandler may also not get called at all, if for example startWirelessControllerDiscoveryWithCompletionHandler:
      * is called multiple times during dicovery. For this case the net effect is that the completionHandler is replaced with each call
      * and only the last one set before discovery stops will be called.
-     * 
+     *
      * @param completionHandler an optional handler that is called when discovery stops. (may be nil, in which case you will not be notified when discovery stops)
      * @see stopWirelessControllerDiscovery
      * @see controllers
@@ -198,7 +198,7 @@ public class GCController extends NSObject implements GCDevice {
      * process can be stopped. Calling stopWirelessControllerDiscovery when no discovery is currently in progress will return
      * immediately without any effect, thus it is safe to call even if the completionHandler of
      * startWirelessControllerDiscoveryWithCompletionHandler: has been called.
-     * 
+     *
      * @see startWirelessControllerDiscoveryWithCompletionHandler:
      */
     @Generated
@@ -218,13 +218,13 @@ public class GCController extends NSObject implements GCDevice {
      * Set this block to be notified when a user intends to suspend or resume the current game state. A controller will have a button
      * dedicated to suspending and resuming play and invoking context sensitive actions. During event handling the system will
      * notify the application using this block such that the application can handle the suspension and resumption from the given controller.
-     * 
+     * <p>
      * Use this to implement your canonical transition to a pause menu for example if that is your application's desired handling
      * of suspension in play. You may pause and resume based on game state as well so the event is only called each time the
      * pause/resume button is pressed.
-     * 
+     * <p>
      * [@note] This handler has been deprecated in favor of the Menu button found on GCMicroGamepad and GCExtendedGamepad.
-     * 
+     *
      * @see microGamepad
      * @see extendedGamepad
      */
@@ -239,19 +239,19 @@ public class GCController extends NSObject implements GCDevice {
 
     /**
      * Gets the profile for the controller that suits current application.
-     * 
+     * <p>
      * There are several supported profiles, with an additional optional profile for motion as well.
      * Each controller may be able to map its inputs into all profiles or just one kind of profile. Query for the controller
      * profile that suits your game, the simplest kind will be supported by the broadest variety
      * of controllers. A controller supporting the Extended Gamepad profile for example supports the Gamepad profile and more.
      * As such it can always be used just in the Gamepad profile if that suits the game.
-     * 
+     * <p>
      * A physical controller that supports a profile must support it completely. That means that all buttons and axis inputs must
      * be valid inputs that a developer can utilize.
-     * 
+     * <p>
      * If a controller does not support the given profile the returned value will be nil. Use this to filter controllers if the
      * application requires a specific kind of profile.
-     * 
+     *
      * @see motion
      */
     @Generated
@@ -282,7 +282,7 @@ public class GCController extends NSObject implements GCDevice {
     /**
      * Gets the motion input profile. This profile is optional and may be available if the controller is attached to a device that supports motion.
      * If this is nil the controller does not support motion input and only the gamepad & extendedGamepad profiles are available.
-     * 
+     *
      * @see gamepad
      * @see extendedGamepad
      */
@@ -292,13 +292,13 @@ public class GCController extends NSObject implements GCDevice {
 
     /**
      * A player index for the controller, defaults to GCControllerPlayerIndexUnset.
-     * 
+     * <p>
      * This can be set both for the application to keep track of controllers and as a signal to make a controller display a player
      * index on a set of LEDs or some other mechanism.
-     * 
+     * <p>
      * A controller is not guaranteed to have a visual display of the playerIndex, playerIndex does not persist for a controller
      * with regards to a system.
-     * 
+     * <p>
      * Negative values less than GCControllerPlayerIndexUnset will just map back to GCControllerPlayerIndexUnset when read back.
      */
     @Generated
@@ -310,13 +310,13 @@ public class GCController extends NSObject implements GCDevice {
      * Set this block to be notified when a user intends to suspend or resume the current game state. A controller will have a button
      * dedicated to suspending and resuming play and invoking context sensitive actions. During event handling the system will
      * notify the application using this block such that the application can handle the suspension and resumption from the given controller.
-     * 
+     * <p>
      * Use this to implement your canonical transition to a pause menu for example if that is your application's desired handling
      * of suspension in play. You may pause and resume based on game state as well so the event is only called each time the
      * pause/resume button is pressed.
-     * 
+     * <p>
      * [@note] This handler has been deprecated in favor of the Menu button found on GCMicroGamepad and GCExtendedGamepad.
-     * 
+     *
      * @see microGamepad
      * @see extendedGamepad
      */
@@ -331,13 +331,13 @@ public class GCController extends NSObject implements GCDevice {
 
     /**
      * A player index for the controller, defaults to GCControllerPlayerIndexUnset.
-     * 
+     * <p>
      * This can be set both for the application to keep track of controllers and as a signal to make a controller display a player
      * index on a set of LEDs or some other mechanism.
-     * 
+     * <p>
      * A controller is not guaranteed to have a visual display of the playerIndex, playerIndex does not persist for a controller
      * with regards to a system.
-     * 
+     * <p>
      * Negative values less than GCControllerPlayerIndexUnset will just map back to GCControllerPlayerIndexUnset when read back.
      */
     @Generated
@@ -371,12 +371,12 @@ public class GCController extends NSObject implements GCDevice {
 
     /**
      * Polls the state vector of the controller and saves it to a new and writable instance of GCController.
-     * 
+     * <p>
      * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
      * a snapshot will not change based on user input once it is taken.
-     * 
-     * @see snapshot
+     *
      * @return A new controller with the duplicated state vector of the current controller
+     * @see snapshot
      */
     @Generated
     @Selector("capture")
@@ -384,11 +384,11 @@ public class GCController extends NSObject implements GCDevice {
 
     /**
      * Creates a controller with an extended gamepad profile.
-     * 
+     * <p>
      * This controller will be considered a snapshot, allowing developers to write to any GCControllerElement of its profiles.
-     * 
-     * @see snapshot
+     *
      * @return A new controller with an extended gamepad profile
+     * @see snapshot
      */
     @Generated
     @Selector("controllerWithExtendedGamepad")
@@ -396,11 +396,11 @@ public class GCController extends NSObject implements GCDevice {
 
     /**
      * Creates a controller with a micro gamepad profile.
-     * 
+     * <p>
      * This controller will be considered a snapshot, allowing developers to write to any GCControllerElement of its profiles.
-     * 
-     * @see snapshot
+     *
      * @return A new controller with a micro gamepad profile
+     * @see snapshot
      */
     @Generated
     @Selector("controllerWithMicroGamepad")
@@ -410,7 +410,7 @@ public class GCController extends NSObject implements GCDevice {
      * A controller may represent a real device managed by the operating system, or a virtual snapshot created by the developer.
      * If a controller is directly created by the developer, it is considered to be a snapshot, allowing direct writes to any
      * GCControllerElement of its profiles. If the controller is not snapshot, the system will reject any write requests to GCControllerElement.
-     * 
+     *
      * @see controllerWithMicroGamepad
      * @see controllerWithExtendedGamepad
      * @see capture
@@ -425,7 +425,7 @@ public class GCController extends NSObject implements GCDevice {
 
     /**
      * Gets the battery information if controller supports one
-     * 
+     * <p>
      * This property is useful when you try to notify your user to change or charge controller before it runs out of battery life
      * or simply display the current battery level and status.
      */
@@ -435,7 +435,7 @@ public class GCController extends NSObject implements GCDevice {
 
     /**
      * The most recently used game controller. If a user actuates a game controller input, that controller will become the current one.
-     * 
+     * <p>
      * [@note] This is useful for single player games where you only care about whether an input is pressed, and not where it came from. You
      * will still need to register for changes to GCController.current so that your UI can remain up-to-date with the current controller.
      */
@@ -445,10 +445,10 @@ public class GCController extends NSObject implements GCDevice {
 
     /**
      * Gets the haptics for the controller, if one exists.
-     * 
-     * Use this property to create CHHapticEngine instances according to your needs. 
-     * 
-     * [@note] Haptics are a drain on the controller's battery, and can be distracting when used excessively. 
+     * <p>
+     * Use this property to create CHHapticEngine instances according to your needs.
+     * <p>
+     * [@note] Haptics are a drain on the controller's battery, and can be distracting when used excessively.
      */
     @Generated
     @Selector("haptics")
@@ -456,7 +456,7 @@ public class GCController extends NSObject implements GCDevice {
 
     /**
      * Gets the light for the controller, if one exists.
-     * 
+     * <p>
      * A controller's light can be used to signal information to the player, such as using different light colors based on the player
      * index. It can also be used to react to in-game events and enhance user immersion.
      */
@@ -467,4 +467,30 @@ public class GCController extends NSObject implements GCDevice {
     @Generated
     @Selector("physicalInputProfile")
     public native GCPhysicalInputProfile physicalInputProfile();
+
+    /**
+     * Whether the current application should monitor and respond to game controller events when it is not the frontmost application.
+     * <p>
+     * [@example] If shouldMonitorBackgroundEvents is NO, and the application is not the frontmost application, any inputs from a game controller will
+     * not be forwarded to the application. Once the application becomes the frontmost application, game controller events will be forwarded.
+     * <p>
+     * [@note] Starting with macOS Big Sur 11.3, shouldMonitorBackgroundEvents will be NO by default. For applications built prior to macOS Big Sur 11.3,
+     * (or running on devices with an earlier version of macOS), shouldMonitorBackgroundEvents will be YES by default. On iOS and tvOS, this property is ignored.
+     */
+    @Generated
+    @Selector("setShouldMonitorBackgroundEvents:")
+    public static native void setShouldMonitorBackgroundEvents(boolean value);
+
+    /**
+     * Whether the current application should monitor and respond to game controller events when it is not the frontmost application.
+     * <p>
+     * [@example] If shouldMonitorBackgroundEvents is NO, and the application is not the frontmost application, any inputs from a game controller will
+     * not be forwarded to the application. Once the application becomes the frontmost application, game controller events will be forwarded.
+     * <p>
+     * [@note] Starting with macOS Big Sur 11.3, shouldMonitorBackgroundEvents will be NO by default. For applications built prior to macOS Big Sur 11.3,
+     * (or running on devices with an earlier version of macOS), shouldMonitorBackgroundEvents will be YES by default. On iOS and tvOS, this property is ignored.
+     */
+    @Generated
+    @Selector("shouldMonitorBackgroundEvents")
+    public static native boolean shouldMonitorBackgroundEvents();
 }

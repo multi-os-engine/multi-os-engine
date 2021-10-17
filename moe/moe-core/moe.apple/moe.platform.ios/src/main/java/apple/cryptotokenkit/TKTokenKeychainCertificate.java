@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] TKTokenKeychainCertificate
- * 
+ * <p>
  * Interface for propagation token's certificates into the keychain.
  */
 @Generated

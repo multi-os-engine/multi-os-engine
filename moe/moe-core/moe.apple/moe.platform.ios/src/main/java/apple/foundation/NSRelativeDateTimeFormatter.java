@@ -154,7 +154,7 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
 
     /**
      * Convenience method for formatting a relative time represented by an NSDateComponents object. Negative component values are evaluated as a date in the past. This method formats the value of the least granular unit in the NSDateComponents object, and does not provide a compound format of the date component.
-     * 
+     * <p>
      * Note this method only supports the following components: year, month, week of month, day, hour, minute, and second. The rest will be ignored.
      */
     @Generated

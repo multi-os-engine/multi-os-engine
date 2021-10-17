@@ -28,37 +28,37 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol]       NSURLConnectionDownloadDelegate
- * 
- *                 Delegate methods used to perform resource
- *                 downloads directly to a disk file.  All the
- *                 methods are optional with the exception of
- *                 connectionDidFinishDownloading:destinationURL:
- *                 which must be implemented in order to inform the
- *                 delegate of the location of the finished download.
- *                 This delegate and download implementation is
- *                 currently only available on iOS 5.0 or later.
- * 
- *                 connection:didWriteData:totalBytesWritten:expectedTotalBytes:
- *                 provides progress information about the state of
- *                 the download, the number of bytes written since
- *                 the last delegate callback, the total number of
- *                 bytes written to disk and the total number of
- *                 bytes that are expected (or 0 if this is unknown.)
- * 
- *                 connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:
- *                 is called when the connection is able to resume an
- *                 in progress download.  This may happen due to a
- *                 connection or network failure.
- * 
- *                 connectionDidFinishDownloading:destinationURL: is
- *                 a terminal event which indicates the completion of
- *                 a download and provides the location of the file.
- *                 The file will be located in the applications cache
- *                 directory and is guaranteed to exist for the
- *                 duration of the delegate callback.  The
- *                 implication is that the delegate should copy or
- *                 move the download to a more persistent location if
- *                 desired.
+ * <p>
+ * Delegate methods used to perform resource
+ * downloads directly to a disk file.  All the
+ * methods are optional with the exception of
+ * connectionDidFinishDownloading:destinationURL:
+ * which must be implemented in order to inform the
+ * delegate of the location of the finished download.
+ * This delegate and download implementation is
+ * currently only available on iOS 5.0 or later.
+ * <p>
+ * connection:didWriteData:totalBytesWritten:expectedTotalBytes:
+ * provides progress information about the state of
+ * the download, the number of bytes written since
+ * the last delegate callback, the total number of
+ * bytes written to disk and the total number of
+ * bytes that are expected (or 0 if this is unknown.)
+ * <p>
+ * connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:
+ * is called when the connection is able to resume an
+ * in progress download.  This may happen due to a
+ * connection or network failure.
+ * <p>
+ * connectionDidFinishDownloading:destinationURL: is
+ * a terminal event which indicates the completion of
+ * a download and provides the location of the file.
+ * The file will be located in the applications cache
+ * directory and is guaranteed to exist for the
+ * duration of the delegate callback.  The
+ * implication is that the delegate should copy or
+ * move the download to a more persistent location if
+ * desired.
  */
 @Generated
 @Library("Foundation")

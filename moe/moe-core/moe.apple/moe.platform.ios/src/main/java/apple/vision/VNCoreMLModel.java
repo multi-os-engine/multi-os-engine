@@ -121,10 +121,9 @@ public class VNCoreMLModel extends NSObject {
 
     /**
      * Create a model container to be used with VNCoreMLRequest based on a Core ML model. This can fail if the model is not supported. Examples for a model that is not supported is a model that does not take an image as any of its inputs.
-     * 
-     * @param model	The MLModel from CoreML to be used.
-     * 
-     * @param	error	Returns the error code and description, if the model is not supported.
+     *
+     * @param model The MLModel from CoreML to be used.
+     * @param    error    Returns the error code and description, if the model is not supported.
      */
     @Generated
     @Selector("modelForMLModel:error:")

@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKActivityMoveModeObject
- * 
+ * <p>
  * A wrapper object for HKActivityMoveMode enumeration.
  */
 @Generated

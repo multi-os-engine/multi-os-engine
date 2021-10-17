@@ -55,9 +55,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MSStickerBrowserView
- * 
+ * <p>
  * A UIView subclass that can display a collection of sticker assets.
- * 
+ * <p>
  * This class is a UIView subclass intended to display a collection of
  * stickers. It provides drag and drop functionality so that user may drag an individual
  * stickers from this view and place it in the Messages transcript. Stickers may also be
@@ -442,7 +442,7 @@ public class MSStickerBrowserView extends UIView {
 
     /**
      * initWithFrame:
-     * 
+     * <p>
      * Initializes a MSStickerBrowserView with a frame using the regular size class.
      */
     @Generated
@@ -451,9 +451,9 @@ public class MSStickerBrowserView extends UIView {
 
     /**
      * initWithFrame:stickerSize:
-     * 
+     * <p>
      * Initializes a MSStickerBrowserView with a frame and sticker size class.
-     * 
+     * <p>
      * Sticker images will be laid out in a grid similar to a UICollectionView
      * configured with flow layout.
      * [@property] size hints the size of the cells, the size a sticker is drawn at will

@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MIDICIProfileState
- * 
+ * <p>
  * Lists the enabled and disabled profiles for a MIDI channel or port on a device.
  */
 @Generated

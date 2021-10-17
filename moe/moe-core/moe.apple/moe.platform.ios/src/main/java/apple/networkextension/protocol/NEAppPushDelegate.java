@@ -11,7 +11,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] NEAppPushDelegate
- * 
+ * <p>
  * Delegate for NEAppPushManager.
  */
 @Generated
@@ -21,9 +21,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface NEAppPushDelegate {
     /**
      * appPushManager:didReceiveIncomingCallWithUserInfo:userInfo
-     * 
+     * <p>
      * This delegate method is called when the provider reports incoming call using reportIncomingCommunicationWithUserInfo method.
-     * 
+     *
      * @param userInfo A dictionary of custom information that the provider passes to reportIncomingCommunicationWithUserInfo method.
      */
     @Generated

@@ -4,11 +4,11 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_ethernet_channel_state_t
- * 
- * 	Channel states sent by nw_ethernet_channel_set_state_changed_handler.
- * 	States generally progress forward and do not move backwards, with the
- * 	exception of preparing and waiting, which may alternate before the channel
- * 	becomes ready or failed.
+ * <p>
+ * Channel states sent by nw_ethernet_channel_set_state_changed_handler.
+ * States generally progress forward and do not move backwards, with the
+ * exception of preparing and waiting, which may alternate before the channel
+ * becomes ready or failed.
  */
 @Generated
 public final class nw_ethernet_channel_state_t {
@@ -18,8 +18,8 @@ public final class nw_ethernet_channel_state_t {
 
     /**
      * [@const] nw_ethernet_channel_state_invalid The state of the channel is not valid. This state
-     * 	will never be delivered in the channel's state update handler, and can be treated as
-     * 	an unexpected value.
+     * will never be delivered in the channel's state update handler, and can be treated as
+     * an unexpected value.
      */
     @Generated public static final int nw_ethernet_channel_state_invalid = 0x00000000;
     /**

@@ -49,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNMorpher
- * 
+ * <p>
  * SCNMorpher controls the deformation of morphed geometries
  */
 @Generated
@@ -181,7 +181,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] calculationMode
-     * 
+     * <p>
      * Specifies how the morph result is calculated by the receiver. Defaults to SCNMorpherCalculationModeNormalized.
      */
     @Generated
@@ -227,7 +227,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] calculationMode
-     * 
+     * <p>
      * Specifies how the morph result is calculated by the receiver. Defaults to SCNMorpherCalculationModeNormalized.
      */
     @Generated
@@ -240,9 +240,9 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] targets
-     * 
+     * <p>
      * Specifies the morph targets as an array of SCNGeometry.
-     * 
+     * <p>
      * The target geometries must have the same number of entries in their geometry sources and the same topology as the base geometry.
      */
     @Generated
@@ -251,7 +251,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * setWeight:forTargetAtIndex:
-     * 
+     * <p>
      * Sets the weight for the target at the specified index. Animatable implicitly or explicitly with the keyPath "weights[index]" or "weights["targetName"]" (targetName is the name of the target geometry).
      */
     @Generated
@@ -266,9 +266,9 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] targets
-     * 
+     * <p>
      * Specifies the morph targets as an array of SCNGeometry.
-     * 
+     * <p>
      * The target geometries must have the same number of entries in their geometry sources and the same topology as the base geometry.
      */
     @Generated
@@ -277,7 +277,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * weightForTargetAtIndex:
-     * 
+     * <p>
      * Retrieves the weight for the target at the specified index.
      */
     @Generated
@@ -299,7 +299,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] unifiesNormals
-     * 
+     * <p>
      * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO, the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
      */
     @Generated
@@ -308,7 +308,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * setWeight:forTargetNamed:
-     * 
+     * <p>
      * Sets the weight for the target with the specified name (targetName is the name of the target geometry).
      */
     @Generated
@@ -317,7 +317,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] weights
-     * 
+     * <p>
      * Access to all the weights of all the targets.
      */
     @Generated
@@ -326,7 +326,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] unifiesNormals
-     * 
+     * <p>
      * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO, the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
      */
     @Generated
@@ -335,7 +335,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * weightForTargetNamed:
-     * 
+     * <p>
      * Retrieves the weight for the target with the specified name (targetName is the name of the target geometry).
      */
     @Generated
@@ -345,10 +345,14 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] weights
-     * 
+     * <p>
      * Access to all the weights of all the targets.
      */
     @Generated
     @Selector("weights")
     public native NSArray<? extends NSNumber> weights();
+
+    @Generated
+    @Selector("removeAllAnimationsWithBlendOutDuration:")
+    public native void removeAllAnimationsWithBlendOutDuration(@NFloat double duration);
 }

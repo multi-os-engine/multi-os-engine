@@ -102,7 +102,7 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
      * - load the data from the item providers
      * - insert it into the text droppable view
      * - provide a preview for the drop
-     * 
+     * <p>
      * The default is `UITextDropPerformerView`.
      */
     @Generated
@@ -179,7 +179,7 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
      * - load the data from the item providers
      * - insert it into the text droppable view
      * - provide a preview for the drop
-     * 
+     * <p>
      * The default is `UITextDropPerformerView`.
      */
     @Generated

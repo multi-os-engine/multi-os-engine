@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXUnitAveragePixelLuminance
- * 
+ * <p>
  * An NSUnit subclass representing the linear space Display APL.
  */
 @Generated

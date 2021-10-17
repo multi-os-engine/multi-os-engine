@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSRNNMatrixTrainingState
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * This class holds the data that is passed from the forward pass needed in the backward pass.
  */
 @Generated

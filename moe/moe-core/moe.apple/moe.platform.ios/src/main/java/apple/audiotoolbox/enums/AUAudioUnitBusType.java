@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]		AUAudioUnitBusType
- * 
+ * <p>
  * Describes whether a bus array is for input or output.
  */
 @Generated

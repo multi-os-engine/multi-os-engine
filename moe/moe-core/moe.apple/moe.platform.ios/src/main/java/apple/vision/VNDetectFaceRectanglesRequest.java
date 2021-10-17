@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that will detect faces in an image.
- * 
+ * <p>
  * This request will generate VNFaceObservation objects with a defined boundingBox.
  */
 @Generated
@@ -163,4 +163,11 @@ public class VNDetectFaceRectanglesRequest extends VNImageBasedRequest {
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
+
+    /**
+     * VNFaceObservation results.
+     */
+    @Generated
+    @Selector("results")
+    public native NSArray<? extends VNFaceObservation> results();
 }

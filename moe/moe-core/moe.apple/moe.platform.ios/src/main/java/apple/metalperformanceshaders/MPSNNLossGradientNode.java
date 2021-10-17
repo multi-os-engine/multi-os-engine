@@ -116,10 +116,10 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * Init a gradient loss node from multiple images
-     * 
-     * @param      sourceNodes             The MPSNNImageNode representing the source MPSImages for the filter
-     *                                     Node0: input gradients, Node1: logits, Node2: labels, Node3: weights
-     * @return     A new MPSNNFilter node.
+     *
+     * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
+     *                    Node0: input gradients, Node1: logits, Node2: labels, Node3: weights
+     * @return A new MPSNNFilter node.
      */
     @Generated
     @Selector("initWithSources:gradientState:lossDescriptor:isLabelsGradientFilter:")
@@ -180,10 +180,10 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * Init a gradient loss node from multiple images
-     * 
-     * @param      sourceNodes             The MPSNNImageNode representing the source MPSImages for the filter
-     *                                     Node0: logits, Node1: labels, Node2: weights
-     * @return     A new MPSNNFilter node.
+     *
+     * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
+     *                    Node0: logits, Node1: labels, Node2: weights
+     * @return A new MPSNNFilter node.
      */
     @Generated
     @Selector("nodeWithSources:gradientState:lossDescriptor:isLabelsGradientFilter:")
@@ -198,9 +198,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * [@property]   propertyCallBack
-     * 
+     * <p>
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
-     *             Default value: nil.
+     * Default value: nil.
      */
     @Generated
     @Selector("propertyCallBack")
@@ -221,9 +221,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * [@property]   propertyCallBack
-     * 
+     * <p>
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
-     *             Default value: nil.
+     * Default value: nil.
      */
     @Generated
     @Selector("setPropertyCallBack:")

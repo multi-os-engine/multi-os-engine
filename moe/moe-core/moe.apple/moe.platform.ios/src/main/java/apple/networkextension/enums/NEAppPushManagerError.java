@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEAppPushManagerError
- * 
+ * <p>
  * App Push Manager error codes
  */
 @Generated

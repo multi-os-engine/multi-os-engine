@@ -102,10 +102,10 @@ public class UICommand extends UIMenuElement {
 
     /**
      * Initializes a keyless command.
-     * 
-     * @param title Short display title. This should be localized.
-     * @param image Image that can appear next to this command, if needed.
-     * @param action Action to take on choosing this command.
+     *
+     * @param title        Short display title. This should be localized.
+     * @param image        Image that can appear next to this command, if needed.
+     * @param action       Action to take on choosing this command.
      * @param propertyList Property list object to distinguish commands, if needed.
      * @return A new keyless command.
      */
@@ -116,12 +116,12 @@ public class UICommand extends UIMenuElement {
 
     /**
      * Initializes a keyless command with alternates.
-     * 
-     * @param title Short display title. This should be localized.
-     * @param image Image that can appear next to this command, if needed.
-     * @param action Action to take on choosing this command.
+     *
+     * @param title        Short display title. This should be localized.
+     * @param image        Image that can appear next to this command, if needed.
+     * @param action       Action to take on choosing this command.
      * @param propertyList Property list object to distinguish commands, if needed.
-     * @param alternates Alternates that differ in modifier flags.
+     * @param alternates   Alternates that differ in modifier flags.
      * @return A new keyless command with alternates.
      */
     @Generated

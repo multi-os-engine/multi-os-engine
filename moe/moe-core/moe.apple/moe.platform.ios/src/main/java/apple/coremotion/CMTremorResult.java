@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMTremorResult
- * 
+ * <p>
  * A CMTremorResult object describes the presence and prevalence of tremor symptoms (specifically, resting tremor) during a one minute result period when subjects wear the Apple Watch on their most affected arm.
  * percentUnknown + percentNoTremor + percentTremorSlight + percentTremorMild + percentTremorModerate + percentTremorStrong = 1.0
  */
@@ -187,8 +187,8 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
     /**
      * The percentage of time tremor was unknown for the result.
      * Unknown periods include times when:
-     *   1. the subject is moving and therefore a resting tremor cannot be assessed, and
-     *   2. the signal strength is too low to measure tremor confidently.
+     * 1. the subject is moving and therefore a resting tremor cannot be assessed, and
+     * 2. the signal strength is too low to measure tremor confidently.
      */
     @Generated
     @Selector("percentUnknown")

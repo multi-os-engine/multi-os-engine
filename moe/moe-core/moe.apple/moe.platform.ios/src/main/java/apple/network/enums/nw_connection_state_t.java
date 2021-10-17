@@ -4,11 +4,11 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_connection_state_t
- * 
- * 	Connection states sent by nw_connection_set_state_changed_handler.
- * 	States generally progress forward and do not move backwards, with the
- * 	exception of preparing and waiting, which may alternate before the connection
- * 	becomes ready or failed.
+ * <p>
+ * Connection states sent by nw_connection_set_state_changed_handler.
+ * States generally progress forward and do not move backwards, with the
+ * exception of preparing and waiting, which may alternate before the connection
+ * becomes ready or failed.
  */
 @Generated
 public final class nw_connection_state_t {
@@ -18,8 +18,8 @@ public final class nw_connection_state_t {
 
     /**
      * [@const] nw_connection_state_invalid The state of the connection is not valid. This state
-     * 	will never be delivered in the connection's state update handler, and can be treated as
-     * 	an unexpected value.
+     * will never be delivered in the connection's state update handler, and can be treated as
+     * an unexpected value.
      */
     @Generated public static final int nw_connection_state_invalid = 0x00000000;
     /**

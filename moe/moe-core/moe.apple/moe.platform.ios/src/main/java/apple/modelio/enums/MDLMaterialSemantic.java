@@ -21,107 +21,107 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * MDLMaterialSemantic
- * 
- * [@summary] The material semantics are identifiers for material properties 
- *            formally identified by one of the standard material descriptors.
- * 
+ * <p>
+ * [@summary] The material semantics are identifiers for material properties
+ * formally identified by one of the standard material descriptors.
+ * <p>
  * When files containing material properties are loaded and translated
- *             by ModelIO, an appropriate standard material descriptor will be 
- *             chosen, and any properties translated from the loaded file can be 
- *             retrieved using one of these semantics.
- * 
+ * by ModelIO, an appropriate standard material descriptor will be
+ * chosen, and any properties translated from the loaded file can be
+ * retrieved using one of these semantics.
+ * <p>
  * MDLMaterialSemanticBaseColor
- *    The inherent color of a surface to be used as a modulator during shading. 
- *    Default is 50% gray
- * 
+ * The inherent color of a surface to be used as a modulator during shading.
+ * Default is 50% gray
+ * <p>
  * MDLMaterialSemanticSubsurface,
- *    The degree to which light scatters under the surface of a material
- * 
+ * The degree to which light scatters under the surface of a material
+ * <p>
  * MDLMaterialSemanticMetallic
- *    A blend between a material behaving as a dielectric material at zero, and a 
- *    metal at one.
- * 
+ * A blend between a material behaving as a dielectric material at zero, and a
+ * metal at one.
+ * <p>
  * MDLMaterialSemanticSpecular
- *    Specular response to incident light
- * 
+ * Specular response to incident light
+ * <p>
  * MDLMaterialSemanticSpecularExponent
- *    Power of the specular exponent in the case that a Blinn/Phong BSDF is in use.
- * 
+ * Power of the specular exponent in the case that a Blinn/Phong BSDF is in use.
+ * <p>
  * MDLMaterialSemanticSpecularTint
- *    At zero, the specular highlight will use the hue, saturation, and intensity 
- *    of incoming light to color the specular response; at one, the material's 
- *    base color, and the light's intensity will be used.
- * 
+ * At zero, the specular highlight will use the hue, saturation, and intensity
+ * of incoming light to color the specular response; at one, the material's
+ * base color, and the light's intensity will be used.
+ * <p>
  * MDLMaterialSemanticRoughness
- *    Controls diffuse and specular response. A value of zero is smooth and shiny. 
- *    At one, a diffuse material will retroreflect, and the specular highlight 
- *    will be very spread out.
- * 
+ * Controls diffuse and specular response. A value of zero is smooth and shiny.
+ * At one, a diffuse material will retroreflect, and the specular highlight
+ * will be very spread out.
+ * <p>
  * MDLMaterialSemanticAnisotropic
- *    The degree to which the specular highlight is elongated in the direction of 
- *    the local tangent basis. A mesh that does not have a tangent basis will not 
- *    respond to this parameter.
- * 
+ * The degree to which the specular highlight is elongated in the direction of
+ * the local tangent basis. A mesh that does not have a tangent basis will not
+ * respond to this parameter.
+ * <p>
  * MDLMaterialSemanticAnisotropicRotation
- *    The degree to which the anisotropy is rotated relative to the direction of the
- *    local tangent basis. Values from zero to one are mapped to zero to two PI.
- * 
+ * The degree to which the anisotropy is rotated relative to the direction of the
+ * local tangent basis. Values from zero to one are mapped to zero to two PI.
+ * <p>
  * MDLMaterialSemanticSheen
- *    A specular tint that appears at glancing angles on an object
- * 
+ * A specular tint that appears at glancing angles on an object
+ * <p>
  * MDLMaterialSemanticSheenTint
- *    At zero, the specular highlight will use the hue, saturation, and intensity 
- *    of incoming light to color the specular response; at one, the material's 
- *    base color, and the light's intensity will be used.
- * 
+ * At zero, the specular highlight will use the hue, saturation, and intensity
+ * of incoming light to color the specular response; at one, the material's
+ * base color, and the light's intensity will be used.
+ * <p>
  * MDLMaterialSemanticClearcoat
- *    A second specular highlight, much like the gloss that results from a clear 
- *    coat on an automotive finish
- * 
+ * A second specular highlight, much like the gloss that results from a clear
+ * coat on an automotive finish
+ * <p>
  * MDLMaterialSemanticClearcoatGloss
- *    The glossiness of the clear coat highlight.
- * 
+ * The glossiness of the clear coat highlight.
+ * <p>
  * MDLMaterialSemanticEmission
- *    A value that is to be emitted as radiance by a surface
- * 
+ * A value that is to be emitted as radiance by a surface
+ * <p>
  * MDLMaterialSemanticBump
- *    A value that perturbs surface normals according to the local gradient of 
- *    the property
- * 
+ * A value that perturbs surface normals according to the local gradient of
+ * the property
+ * <p>
  * MDLMaterialSemanticOpacity
- *    The opacity of the surface
- * 
+ * The opacity of the surface
+ * <p>
  * MDLMaterialSemanticInterfaceIndexOfRefraction
- *    n1 in Schlick's equation, typically 1.0 for air
- * 
+ * n1 in Schlick's equation, typically 1.0 for air
+ * <p>
  * MDLMaterialSemanticMaterialIndexOfRefraction
- *    n2 in Schlick's equation
- * 
+ * n2 in Schlick's equation
+ * <p>
  * MDLMaterialSemanticObjectSpaceNormal
- *    A value that perturbs surface normals in object space
- * 
+ * A value that perturbs surface normals in object space
+ * <p>
  * MDLMaterialSemanticTangentSpaceNormal
- *    A value that perturbs surface normals in a local tangent space
- * 
+ * A value that perturbs surface normals in a local tangent space
+ * <p>
  * MDLMaterialSemanticDisplacement
- *    Displacement of a surface relative to surface normal
- * 
+ * Displacement of a surface relative to surface normal
+ * <p>
  * MDLMaterialSemanticDisplacementScale
- *    Scaling factor for displacement
- * 
+ * Scaling factor for displacement
+ * <p>
  * MDLMaterialSemanticAmbientOcclusion
- *    Ambient occlusion describes the accessibility of the surface to the 
- *    surrounding radiant environment and is typically used to attenuate it. It is 
- *    not intended to attenuate direct illumination sources.
- * 
+ * Ambient occlusion describes the accessibility of the surface to the
+ * surrounding radiant environment and is typically used to attenuate it. It is
+ * not intended to attenuate direct illumination sources.
+ * <p>
  * MDLMaterialSemanticAmbientOcclusionScale
- *    The degree to which the ambient occlusion values are applied
- * 
+ * The degree to which the ambient occlusion values are applied
+ * <p>
  * MDLMaterialSemanticUserDefined = 0x8000
- *    Properties with this value are created when material properties are 
- *    translated for which no known semantic applies.
- *    Semantics defined at greater than this value are available to be user defined.
- *    The first value is also used to indicate
+ * Properties with this value are created when material properties are
+ * translated for which no known semantic applies.
+ * Semantics defined at greater than this value are available to be user defined.
+ * The first value is also used to indicate
  */
 @Generated
 public final class MDLMaterialSemantic {

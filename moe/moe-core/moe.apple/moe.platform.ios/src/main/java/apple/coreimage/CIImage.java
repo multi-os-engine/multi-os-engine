@@ -297,7 +297,7 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Return an array of filters to apply to an image to improve its
      * skin tones, saturation, contrast, shadows and repair red-eyes or LED-eyes.
-     * 
+     * <p>
      * The options dictionary can contain a CIDetectorImageOrientation key value.
      * The value for this key is an integer NSNumber from 1..8 such as that
      * found in kCGImagePropertyOrientation.  If present, the adjustment will be done

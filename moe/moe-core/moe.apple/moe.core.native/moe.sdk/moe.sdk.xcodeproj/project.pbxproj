@@ -12,10 +12,11 @@
 		23040F6319EBFC2600CB250F /* MOE.mm in Sources */ = {isa = PBXBuildFile; fileRef = 23040F5F19EBFC2600CB250F /* MOE.mm */; };
 		555E7EDA241E7E9F001AC2E4 /* MetalPerformanceShaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 555E7ED8241E7E9F001AC2E4 /* MetalPerformanceShaders.m */; };
 		555E7EDB241E7E9F001AC2E4 /* CoreAudioTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 555E7ED9241E7E9F001AC2E4 /* CoreAudioTypes.m */; };
+		5586F6BD271BE13700A10696 /* CoreMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 5586F6BC271BE13700A10696 /* CoreMedia.m */; };
 		589215051D9AA0E300F8ACC0 /* jni.h in Headers */ = {isa = PBXBuildFile; fileRef = 589215041D9AA0E300F8ACC0 /* jni.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D92C47C1B90A67F00D21D3A /* CoreMIDI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92C47B1B90A67F00D21D3A /* CoreMIDI.m */; };
 		D99B125919F0479D00F6B669 /* AudioToolbox.m in Sources */ = {isa = PBXBuildFile; fileRef = D99B124D19F0479D00F6B669 /* AudioToolbox.m */; };
-		D99B125A19F0479D00F6B669 /* AVFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = D99B124E19F0479D00F6B669 /* AVFoundation.m */; };
+		D99B125A19F0479D00F6B669 /* AVFAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = D99B124E19F0479D00F6B669 /* AVFAudio.m */; };
 		D99B125B19F0479D00F6B669 /* CFNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = D99B124F19F0479D00F6B669 /* CFNetwork.m */; };
 		D99B125C19F0479D00F6B669 /* CoreFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = D99B125019F0479D00F6B669 /* CoreFoundation.m */; };
 		D99B125D19F0479D00F6B669 /* CoreGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = D99B125119F0479D00F6B669 /* CoreGraphics.m */; };
@@ -36,10 +37,11 @@
 		23040F5F19EBFC2600CB250F /* MOE.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MOE.mm; sourceTree = "<group>"; };
 		555E7ED8241E7E9F001AC2E4 /* MetalPerformanceShaders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetalPerformanceShaders.m; sourceTree = "<group>"; };
 		555E7ED9241E7E9F001AC2E4 /* CoreAudioTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreAudioTypes.m; sourceTree = "<group>"; };
+		5586F6BC271BE13700A10696 /* CoreMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreMedia.m; sourceTree = "<group>"; };
 		589215041D9AA0E300F8ACC0 /* jni.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jni.h; path = ../../../../../natj/natj/src/main/native/include/jni.h; sourceTree = "<group>"; };
 		6D92C47B1B90A67F00D21D3A /* CoreMIDI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreMIDI.m; sourceTree = "<group>"; };
 		D99B124D19F0479D00F6B669 /* AudioToolbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioToolbox.m; sourceTree = "<group>"; };
-		D99B124E19F0479D00F6B669 /* AVFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVFoundation.m; sourceTree = "<group>"; };
+		D99B124E19F0479D00F6B669 /* AVFAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVFAudio.m; sourceTree = "<group>"; };
 		D99B124F19F0479D00F6B669 /* CFNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFNetwork.m; sourceTree = "<group>"; };
 		D99B125019F0479D00F6B669 /* CoreFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreFoundation.m; sourceTree = "<group>"; };
 		D99B125119F0479D00F6B669 /* CoreGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreGraphics.m; sourceTree = "<group>"; };
@@ -105,11 +107,12 @@
 			isa = PBXGroup;
 			children = (
 				D99B124D19F0479D00F6B669 /* AudioToolbox.m */,
-				D99B124E19F0479D00F6B669 /* AVFoundation.m */,
+				D99B124E19F0479D00F6B669 /* AVFAudio.m */,
 				D99B124F19F0479D00F6B669 /* CFNetwork.m */,
 				555E7ED9241E7E9F001AC2E4 /* CoreAudioTypes.m */,
 				D99B125019F0479D00F6B669 /* CoreFoundation.m */,
 				D99B125119F0479D00F6B669 /* CoreGraphics.m */,
+				5586F6BC271BE13700A10696 /* CoreMedia.m */,
 				6D92C47B1B90A67F00D21D3A /* CoreMIDI.m */,
 				D99B125219F0479D00F6B669 /* Foundation.m */,
 				D99B125319F0479D00F6B669 /* GLKit.m */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D99B126319F0479D00F6B669 /* SceneKit.m in Sources */,
+				5586F6BD271BE13700A10696 /* CoreMedia.m in Sources */,
 				D99B126119F0479D00F6B669 /* MapKit.m in Sources */,
 				D99B125F19F0479D00F6B669 /* GLKit.m in Sources */,
 				555E7EDA241E7E9F001AC2E4 /* MetalPerformanceShaders.m in Sources */,
@@ -202,7 +206,7 @@
 				23040F6319EBFC2600CB250F /* MOE.mm in Sources */,
 				D99B125919F0479D00F6B669 /* AudioToolbox.m in Sources */,
 				D99B125D19F0479D00F6B669 /* CoreGraphics.m in Sources */,
-				D99B125A19F0479D00F6B669 /* AVFoundation.m in Sources */,
+				D99B125A19F0479D00F6B669 /* AVFAudio.m in Sources */,
 				D99B125E19F0479D00F6B669 /* Foundation.m in Sources */,
 				D99B126219F0479D00F6B669 /* Metal.m in Sources */,
 				D99B126019F0479D00F6B669 /* Globals.m in Sources */,

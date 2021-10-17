@@ -4,10 +4,10 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_ws_opcode_t
- * 
- * 	WebSocket opcodes that denote the type of frame sent or received by
- * 	a WebSocket endpoint. Opcodes define the interpretation of their
- * 	associated payload data.
+ * <p>
+ * WebSocket opcodes that denote the type of frame sent or received by
+ * a WebSocket endpoint. Opcodes define the interpretation of their
+ * associated payload data.
  */
 @Generated
 public final class nw_ws_opcode_t {

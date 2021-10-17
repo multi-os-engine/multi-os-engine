@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSDateComponents;
+import apple.foundation.NSDateInterval;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
@@ -265,7 +266,7 @@ public class HKActivitySummaryQuery extends HKQuery {
      *  @abstract      Returns a query that will retrieve HKActivitySummaries matching the given predicate.
      *  @discussion    If no updateHandler is set on the query, the query will automatically stop after calling resultsHandler.
      *                 Otherwise, the query continues to run and calls the updateHandler as HKActivitySummaries matching the
-     *                 predicate are updated.
+     * predicate are updated.
      *  
      *  @param         predicate  The predicate which HKActivitySummaries should match.
      *  @param         handler    The block to invoke with results when the query has finished.
@@ -349,4 +350,9 @@ public class HKActivitySummaryQuery extends HKQuery {
     @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
     public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
             HKElectrocardiogram electrocardiogram);
+
+    @Generated
+    @Selector("predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:")
+    public static native NSPredicate predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval(
+            NSDateInterval dateInterval);
 }

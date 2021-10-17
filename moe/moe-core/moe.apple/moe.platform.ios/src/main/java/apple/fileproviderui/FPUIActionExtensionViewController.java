@@ -157,10 +157,6 @@ public class FPUIActionExtensionViewController extends UIViewController {
     public native void prepareForError(NSError error);
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 

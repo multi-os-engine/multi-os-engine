@@ -29,19 +29,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSMatrixSolveLU
- * 
+ * <p>
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * A kernel for computing the solution of a linear system of equations
- *             using the LU factorization resulting from a MPSMatrixDecompositionLU
- *             kernel.
- * 
+ * using the LU factorization resulting from a MPSMatrixDecompositionLU
+ * kernel.
+ * <p>
  * A MPSMatrixSolveLU finds the solution matrix to the system:
- * 
- *                 op(A) * X = B
- * 
- *             Where op(A) is A**T or A.  B is the array of right hand sides for which
- *             the equations are to be solved.  X is the resulting matrix of solutions.
+ * <p>
+ * op(A) * X = B
+ * <p>
+ * Where op(A) is A**T or A.  B is the array of right hand sides for which
+ * the equations are to be solved.  X is the resulting matrix of solutions.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -103,33 +103,29 @@ public class MPSMatrixSolveLU extends MPSMatrixBinaryKernel {
 
     /**
      * Encode a MPSMatrixSolveLU kernel into a command Buffer.
-     * 
+     * <p>
      * This function encodes the MPSMatrixSolveLU object to a valid command buffer.
-     *             sourceMatrix should contain the lower and upper triangular factors of A as
-     *             results from a previous execution of MPSMatrixDecompositionLU.
-     * 
-     *             pivotIndices is an array of pivots resulting from a previous execution of
-     *             MPSMatrixDecompositionLU.
-     * 
-     *             rightHandSideMatrix and solutionMatrix must be large enough to hold a matrix
-     *             of size order x numberOfRightHandSides starting at secondarySourceMatrixOrigin and
-     *             resultMatrixOrigin respectively.
-     * 
-     *             sourceMatrix must be at least size order x order starting at primarySourceMatrixOrigin.
-     * 
-     * @param      commandBuffer       A valid MTLCommandBuffer to receive the encoded filter
-     * 
-     * @param      sourceMatrix        A valid MPSMatrix containing the source matrix in factored
-     *                                 form as returned by a previous successful execution of a
-     *                                 MPSMatrixDecompositionLU kernel.
-     * 
-     * @param      rightHandSideMatrix A valid MPSMatrix containing the right hand side values.
-     * 
-     * @param      pivotIndices        A valid MPSMatrix which contains the pivot indices as returned by
-     *                                 a previous successful execution of a MPSMatrixDecompositionLU
-     *                                 kernel.
-     * 
-     * @param      solutionMatrix      A valid MPSMatrix to contain the result.
+     * sourceMatrix should contain the lower and upper triangular factors of A as
+     * results from a previous execution of MPSMatrixDecompositionLU.
+     * <p>
+     * pivotIndices is an array of pivots resulting from a previous execution of
+     * MPSMatrixDecompositionLU.
+     * <p>
+     * rightHandSideMatrix and solutionMatrix must be large enough to hold a matrix
+     * of size order x numberOfRightHandSides starting at secondarySourceMatrixOrigin and
+     * resultMatrixOrigin respectively.
+     * <p>
+     * sourceMatrix must be at least size order x order starting at primarySourceMatrixOrigin.
+     *
+     * @param commandBuffer       A valid MTLCommandBuffer to receive the encoded filter
+     * @param sourceMatrix        A valid MPSMatrix containing the source matrix in factored
+     *                            form as returned by a previous successful execution of a
+     *                            MPSMatrixDecompositionLU kernel.
+     * @param rightHandSideMatrix A valid MPSMatrix containing the right hand side values.
+     * @param pivotIndices        A valid MPSMatrix which contains the pivot indices as returned by
+     *                            a previous successful execution of a MPSMatrixDecompositionLU
+     *                            kernel.
+     * @param solutionMatrix      A valid MPSMatrix to contain the result.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:pivotIndices:solutionMatrix:")
@@ -160,19 +156,15 @@ public class MPSMatrixSolveLU extends MPSMatrixBinaryKernel {
 
     /**
      * Initialize an MPSMatrixSolveLU object on a device
-     * 
-     * @param      device          The device on which the kernel will execute.
-     * 
-     * @param      transpose       A boolean value which indicates if the source
-     *                             matrix should be used in transposed form.
-     * 
-     * @param      order           The order of the source matrix and the number of
-     *                             rows in the solution and right hand side matrices.
-     * 
-     * @param      numberOfRightHandSides  The number of columns in the solution and right hand side
-     *                                     matrices.
-     * 
-     * @return     A valid MPSMatrixSolveLU object or nil, if failure.
+     *
+     * @param device                 The device on which the kernel will execute.
+     * @param transpose              A boolean value which indicates if the source
+     *                               matrix should be used in transposed form.
+     * @param order                  The order of the source matrix and the number of
+     *                               rows in the solution and right hand side matrices.
+     * @param numberOfRightHandSides The number of columns in the solution and right hand side
+     *                               matrices.
+     * @return A valid MPSMatrixSolveLU object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:transpose:order:numberOfRightHandSides:")

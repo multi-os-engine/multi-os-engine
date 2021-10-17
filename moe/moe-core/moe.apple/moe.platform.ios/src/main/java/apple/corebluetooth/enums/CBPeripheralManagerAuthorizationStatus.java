@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBPeripheralManagerAuthorizationStatus
- * 
+ * <p>
  * Represents the current state of a CBPeripheralManager.
- * 
+ * <p>
  * [@constant] CBPeripheralManagerAuthorizationStatusNotDetermined	User has not yet made a choice with regards to this application.
  * [@constant] CBPeripheralManagerAuthorizationStatusRestricted		This application is not authorized to share data while backgrounded. The user cannot change this application’s status, possibly due to active restrictions such as parental controls being in place.
  * [@constant] CBPeripheralManagerAuthorizationStatusDenied			User has explicitly denied this application from sharing data while backgrounded.

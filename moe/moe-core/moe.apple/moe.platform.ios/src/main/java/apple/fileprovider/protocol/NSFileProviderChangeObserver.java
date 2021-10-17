@@ -34,15 +34,15 @@ public interface NSFileProviderChangeObserver {
      * while enumerating changes to NSFileProviderWorkingSetContainerItemIdentifier.
      * If the device reboots during an enumeration, it would later resume starting
      * at the latest known sync anchor.
-     * 
+     * <p>
      * It is expected that the sync anchor passed here be different than the sync
      * anchor that the enumeration started at, unless the client was already up to
      * date on all the changes on the server, and didn't have any pending updates or
      * deletions.
-     * 
+     * <p>
      * Additionally, if the client is up to date on all the changes on the server it
      * should set moreComing to NO.
-     * 
+     * <p>
      * Sync anchor data is limited to 500 bytes.  Setting a larger anchor has the
      * same effect as calling finishEnumeratingWithError with an expired sync anchor
      * error.

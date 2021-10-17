@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLTextureUsage
- * 
+ * <p>
  * MTLTextureUsage declares how the texture will be used over its lifetime (bitwise OR for multiple uses).
- * 
+ * <p>
  * This information may be used by the driver to make optimization decisions.
  */
 @Generated

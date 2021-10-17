@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKFetchWebAuthTokenOperation
- * 
+ * <p>
  * This operation will fetch a web auth token given an API token obtained from the CloudKit Dashboard for your container
  */
 @Generated
@@ -165,7 +165,10 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
     public native String APIToken();
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block is called when the operation completes.
+     * <p>
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
     @Selector("fetchWebAuthTokenCompletionBlock")
@@ -188,7 +191,10 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
     public native void setAPIToken(String value);
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block is called when the operation completes.
+     * <p>
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
     @Selector("setFetchWebAuthTokenCompletionBlock:")

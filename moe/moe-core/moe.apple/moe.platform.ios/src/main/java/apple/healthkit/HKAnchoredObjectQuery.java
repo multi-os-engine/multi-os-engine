@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSDateComponents;
+import apple.foundation.NSDateInterval;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
@@ -47,9 +48,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKAnchoredObjectQuery
- * 
+ * <p>
  * This query can be used by an application to find out about new or deleted samples in the HealthKit
- *                database.
+ * database.
  */
 @Generated
 @Library("HealthKit")
@@ -275,21 +276,21 @@ public class HKAnchoredObjectQuery extends HKQuery {
 
     /**
      * initWithType:predicate:anchor:limit:resultsHandler:
-     * 
+     * <p>
      * Returns a query that will retrieve HKSamples and HKDeletedObjects matching the given predicate that are
-     *                newer than the given anchor.
-     * 
+     * newer than the given anchor.
+     * <p>
      * If no updateHandler is set on the query, the query will automatically stop after calling resultsHandler.
-     *                Otherwise, the query continues to run and call updateHandler as samples matching the predicate are
-     *                created or deleted.
-     * 
-     * @param         type            The type of sample to retrieve.
-     * @param         predicate       The predicate which samples should match.
-     * @param         anchor          The anchor which was returned by a previous HKAnchoredObjectQuery result or update
-     *                                handler.  Pass nil when querying for the first time.
-     * @param         limit           The maximum number of samples and deleted objects to return.  Pass HKObjectQueryNoLimit
-     *                                for no limit.
-     * @param         handler         The block to invoke with results when the query has finished finding.
+     * Otherwise, the query continues to run and call updateHandler as samples matching the predicate are
+     * created or deleted.
+     *
+     * @param type      The type of sample to retrieve.
+     * @param predicate The predicate which samples should match.
+     * @param anchor    The anchor which was returned by a previous HKAnchoredObjectQuery result or update
+     *                  handler.  Pass nil when querying for the first time.
+     * @param limit     The maximum number of samples and deleted objects to return.  Pass HKObjectQueryNoLimit
+     *                  for no limit.
+     * @param handler   The block to invoke with results when the query has finished finding.
      */
     @Generated
     @Selector("initWithType:predicate:anchor:limit:resultsHandler:")
@@ -299,11 +300,11 @@ public class HKAnchoredObjectQuery extends HKQuery {
 
     /**
      * [@property]      updateHandler
-     * 
+     * <p>
      * An optional handler to be called when samples matching the given predicate are added or deleted.
-     * 
+     * <p>
      * This property may not be modified once the query has been executed.  It may only be set if the query has
-     *                no limit.
+     * no limit.
      */
     @Generated
     @Selector("setUpdateHandler:")
@@ -311,11 +312,11 @@ public class HKAnchoredObjectQuery extends HKQuery {
 
     /**
      * [@property]      updateHandler
-     * 
+     * <p>
      * An optional handler to be called when samples matching the given predicate are added or deleted.
-     * 
+     * <p>
      * This property may not be modified once the query has been executed.  It may only be set if the query has
-     *                no limit.
+     * no limit.
      */
     @Generated
     @Selector("updateHandler")
@@ -381,4 +382,42 @@ public class HKAnchoredObjectQuery extends HKQuery {
     @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
     public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
             HKElectrocardiogram electrocardiogram);
+
+    /**
+     * initWithQueryDescriptors:anchor:limit:resultsHandler
+     * <p>
+     * Returns a query that will retrieve HKSamples and HKDeletedObjects matching the given query descriptors
+     * that are newer than the given anchor.
+     * <p>
+     * If no updateHandler is set on the query, the query will automatically stop after calling resultsHandler.
+     * Otherwise, the query continues to run and call updateHandler as samples matching the query descriptors
+     * are created or deleted.
+     *
+     * @param queryDescriptors An array of query descriptors that describes the sample types and predicates that
+     *                         you are interested in getting notified for.
+     * @param anchor           The anchor which was returned by a previous HKAnchoredObjectQuery result or update
+     *                         handler.  Pass nil when querying for the first time.
+     * @param limit            The maximum number of samples and deleted objects to return. Pass
+     *                         HKObjectQueryNoLimit for no limit.
+     * @param handler          The block to invoke with results when the query has finished finding.
+     */
+    @Generated
+    @Selector("initWithQueryDescriptors:anchor:limit:resultsHandler:")
+    public native HKAnchoredObjectQuery initWithQueryDescriptorsAnchorLimitResultsHandler(
+            NSArray<? extends HKQueryDescriptor> queryDescriptors, HKQueryAnchor anchor, @NInt long limit,
+            @ObjCBlock(name = "call_initWithQueryDescriptorsAnchorLimitResultsHandler") Block_initWithQueryDescriptorsAnchorLimitResultsHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithQueryDescriptorsAnchorLimitResultsHandler {
+        @Generated
+        void call_initWithQueryDescriptorsAnchorLimitResultsHandler(HKAnchoredObjectQuery query,
+                NSArray<? extends HKSample> sampleObjects, NSArray<? extends HKDeletedObject> deletedObjects,
+                HKQueryAnchor newAnchor, NSError error);
+    }
+
+    @Generated
+    @Selector("predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:")
+    public static native NSPredicate predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval(
+            NSDateInterval dateInterval);
 }

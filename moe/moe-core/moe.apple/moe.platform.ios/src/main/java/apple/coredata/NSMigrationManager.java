@@ -249,7 +249,7 @@ public class NSMigrationManager extends NSObject {
 
     /**
      * Tries to use a store specific migration manager to perform the store migration, note that a store specific migration manager class is not guaranteed to perform any of the migration manager delegate callbacks or update values for the observable properties.
-     * Defaults to YES 
+     * Defaults to YES
      */
     @Generated
     @Selector("setUsesStoreSpecificMigrationManager:")
@@ -290,7 +290,7 @@ public class NSMigrationManager extends NSObject {
 
     /**
      * Tries to use a store specific migration manager to perform the store migration, note that a store specific migration manager class is not guaranteed to perform any of the migration manager delegate callbacks or update values for the observable properties.
-     * Defaults to YES 
+     * Defaults to YES
      */
     @Generated
     @Selector("usesStoreSpecificMigrationManager")

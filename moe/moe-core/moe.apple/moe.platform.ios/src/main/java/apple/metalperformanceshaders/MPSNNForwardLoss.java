@@ -29,13 +29,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNForwardLoss
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * The MPSNNForwardLoss filter specifies a version of the loss filter which separates the forward
- *             computation from the gradient computation. In order to compute gradients for the loss filter
- *             use @ref MPSNNLossGradient filter and in order to start the gradient computation of an arbitrary
- *             image use the @ref MPSNNInitialGradient filter.
- *             NOTE: This filter does not support non-default offset or cliprects and setting them to other
- *             than default values will result in undefined results.
+ * computation from the gradient computation. In order to compute gradients for the loss filter
+ * use @ref MPSNNLossGradient filter and in order to start the gradient computation of an arbitrary
+ * image use the @ref MPSNNInitialGradient filter.
+ * NOTE: This filter does not support non-default offset or cliprects and setting them to other
+ * than default values will result in undefined results.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -129,10 +129,10 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
 
     /**
      * Initialize the loss forward pass filter with a loss descriptor.
-     * 
-     * @param      device                   The device the filter will run on.
-     * @param      lossDescriptor           The loss descriptor.
-     * @return     A valid MPSNNForwardLoss object or nil, if failure.
+     *
+     * @param device         The device the filter will run on.
+     * @param lossDescriptor The loss descriptor.
+     * @return A valid MPSNNForwardLoss object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:lossDescriptor:")

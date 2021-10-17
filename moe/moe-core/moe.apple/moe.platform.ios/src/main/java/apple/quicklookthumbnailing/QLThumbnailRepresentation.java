@@ -2,6 +2,7 @@ package apple.quicklookthumbnailing;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
+import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -9,6 +10,7 @@ import apple.uikit.UIImage;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -158,4 +160,12 @@ public class QLThumbnailRepresentation extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Returns the the effective rect within the thumbnail image representing the content of the document. In icon mode, this is the part of the image without all the image decorations.
+     */
+    @Generated
+    @Selector("contentRect")
+    @ByValue
+    public native CGRect contentRect();
 }

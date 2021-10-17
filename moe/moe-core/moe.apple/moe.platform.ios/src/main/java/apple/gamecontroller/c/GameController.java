@@ -48,7 +48,7 @@ public final class GameController {
 
     /**
      * Fills out a v100 snapshot from any compatible NSData source
-     * 
+     *
      * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot. YES for all other cases.
      */
     @Generated
@@ -60,7 +60,7 @@ public final class GameController {
     /**
      * Creates an NSData object from a v100 snapshot.
      * If the version and size is not set in the snapshot the data will automatically have version 0x100 and sizeof(GCGamepadSnapShotDataV100) set as the values implicitly.
-     * 
+     *
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCGamepadSnapshot.snapshotData
      */
     @Generated
@@ -70,7 +70,7 @@ public final class GameController {
 
     /**
      * Fills out a v100 snapshot from any compatible NSData source
-     * 
+     *
      * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot. YES for all other cases.
      */
     @Generated
@@ -82,7 +82,7 @@ public final class GameController {
     /**
      * Creates an NSData object from a v100 snapshot.
      * If the version and size is not set in the snapshot the data will automatically have version 0x100 and sizeof(GCExtendedGamepadSnapShotDataV100) set as the values implicitly.
-     * 
+     *
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCExtendedGamepadSnapshot.snapshotData
      */
     @Generated
@@ -92,7 +92,7 @@ public final class GameController {
 
     /**
      * Fills out a v100 snapshot from any compatible NSData source
-     * 
+     *
      * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot. YES for all other cases.
      */
     @Generated
@@ -104,7 +104,7 @@ public final class GameController {
     /**
      * Creates an NSData object from a v100 snapshot.
      * If the version and size is not set in the snapshot the data will automatically have version 0x100 and sizeof(GCMicroGamepadSnapShotDataV100) set as the values implicitly.
-     * 
+     *
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCGamepadSnapshot.snapshotData
      */
     @Generated
@@ -114,23 +114,23 @@ public final class GameController {
 
     /**
      * Use these constants with NSNotificationCenter to listen to connection and disconnection events.
-     * 
+     * <p>
      * Use GCControllerDidConnectNotification for observing connections of controllers.
      * Use GCControllerDidDisconnectNotification for observing disconnections of controllers.
-     * 
+     * <p>
      * Connections and disconnections of controllers will also be reflected in the controllers array
      * of the GCController class.
-     * 
+     * <p>
      * The 'object' property of the notification will contain the GCController that was connected or disconnected.
      * For example:
-     * 
+     * <p>
      * - (void)controllerDidConnect:(NSNotification *)note {
-     * 
+     * <p>
      * GCController *controller = note.object;
-     * 
+     * <p>
      * ....
      * }
-     * 
+     *
      * @see NSNotificationCenter
      * @see GCController.controllers
      */
@@ -146,7 +146,7 @@ public final class GameController {
 
     /**
      * Fills out a snapshot from any compatible NSData source
-     * 
+     *
      * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot. YES for all other cases.
      */
     @Generated
@@ -158,7 +158,7 @@ public final class GameController {
     /**
      * Creates an NSData object from a snapshot.
      * If the version and size is not set in the snapshot the data will automatically have the version GCCurrentExtendedGamepadSnapshotDataVersion and sizeof(GCExtendedGamepadSnapshotData) set as the values implicitly.
-     * 
+     *
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCExtendedGamepadSnapshot.snapshotData
      */
     @Generated
@@ -168,7 +168,7 @@ public final class GameController {
 
     /**
      * Fills out a snapshot from any compatible NSData source
-     * 
+     *
      * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot. YES for all other cases.
      */
     @Generated
@@ -180,7 +180,7 @@ public final class GameController {
     /**
      * Creates an NSData object from a snapshot.
      * If the version and size is not set in the snapshot the data will automatically have version GCCurrentMicroGamepadSnapshotDataVersion and sizeof(GCMicroGamepadSnapshotData) set as the values implicitly.
-     * 
+     *
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCGamepadSnapshot.snapshotData
      */
     @Generated
@@ -200,9 +200,9 @@ public final class GameController {
 
     /**
      * A set of commonly used strings that can be used to access controller buttons
-     * 
+     * <p>
      * [@example] controller.physicalInputProfile.buttons[GCInputButtonA]
-     * 
+     *
      * @see GCController.h
      * @see GCPhysicalInputProfile.h
      */
@@ -288,9 +288,9 @@ public final class GameController {
 
     /**
      * A set of strings commonly used to access Xbox buttons
-     * 
+     * <p>
      * [@example] controller.physicalInputProfile.buttons[GCInputButtonPaddleOne]
-     * 
+     *
      * @see GCController.h
      * @see GCPhysicalInputProfile.h
      */
@@ -316,9 +316,9 @@ public final class GameController {
 
     /**
      * A set of strings commonly used to access DualShock buttons
-     * 
+     * <p>
      * [@example] controller.physicalInputProfile.dpads[GCInputDualShockTouchpadOne]
-     * 
+     *
      * @see GCController.h
      * @see GCPhysicalInputProfile.h
      */
@@ -2356,18 +2356,18 @@ public final class GameController {
     /**
      * Use these constants with NSNotificationCenter to listen to a controller becoming the most recently used controller.
      * This is a good time to swap out UI to match the new current controller, and unregister any handlers with
-     *  the old current controller.
-     * 
+     * the old current controller.
+     * <p>
      * The 'object' property of the notification will contain the GCController that became the current controller.
      * For example:
-     * 
+     * <p>
      * - (void)controllerDidBecomeCurrent:(NSNotification *)note {
-     * 
+     * <p>
      * GCController *controller = note.object;
-     * 
+     * <p>
      * ...
      * }
-     * 
+     *
      * @see NSNotificationCenter
      * @see GCController.controllers
      */
@@ -2383,14 +2383,14 @@ public final class GameController {
 
     /**
      * Use these constants with NSNotificationCenter to listen to connection and disconnection events
-     * 
+     * <p>
      * Use GCKeyboardDidConnectNotification for observing keyboard connection
      * Use GCKeyboardDidDisconnectNotification for observing keyboard disconnection
-     * 
+     * <p>
      * The 'object' property of the notification will contain the GCKeyboard that was connected or disconnected.
-     * 
+     * <p>
      * [@note] All connected keyboards are coalesced into one keyboard object, so notification about connection/disconnection will only be delivered once until last keyboard disconnects.
-     * 
+     *
      * @see NSNotificationCetner
      */
     @Generated
@@ -2405,23 +2405,23 @@ public final class GameController {
 
     /**
      * Use these constants with NSNotificationCenter to listen to connection and disconnection events.
-     * 
+     * <p>
      * Use GCMouseDidConnectNotification for observing connections of mice.
      * Use GCMouserDidDisconnectNotification for observing disconnections of mice.
-     * 
+     * <p>
      * Connections and disconnections of mice will also be reflected in the mice array
      * of the GCMouse class.
-     * 
+     * <p>
      * The 'object' property of the notification will contain the GCMouse that was connected or disconnected.
      * For example:
-     * 
+     * <p>
      * - (void)controllerDidConnect:(NSNotification *)note {
-     * 
+     * <p>
      * GCMouse *mouse = note.object;
-     * 
+     * <p>
      * ....
      * }
-     * 
+     *
      * @see NSNotificationCenter
      * @see GCMouse.mice
      */
@@ -2438,18 +2438,18 @@ public final class GameController {
     /**
      * Use these constants with NSNotificationCenter to listen to a controller becoming the most recently used mouse.
      * This is a good time to swap out UI to match the new current mouse, and unregister any handlers with
-     *  the old current controller.
-     * 
+     * the old current controller.
+     * <p>
      * The 'object' property of the notification will contain the GCMouse that became the current one.
      * For example:
-     * 
+     * <p>
      * - (void)mouseDidBecomeCurrent:(NSNotification *)note {
-     * 
+     * <p>
      * GCMouse *mouse = note.object;
-     * 
+     * <p>
      * ...
      * }
-     * 
+     *
      * @see NSNotificationCenter
      * @see GCMouse.mice
      * @see GCMouse.current
@@ -2513,4 +2513,310 @@ public final class GameController {
     @Generated
     @CVariable()
     public static native float GCHapticDurationInfinite();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputButtonShare();
+
+    /**
+     * F13
+     */
+    @Generated
+    @CVariable()
+    @NInt
+    public static native long GCKeyCodeF13();
+
+    /**
+     * F14
+     */
+    @Generated
+    @CVariable()
+    @NInt
+    public static native long GCKeyCodeF14();
+
+    /**
+     * F15
+     */
+    @Generated
+    @CVariable()
+    @NInt
+    public static native long GCKeyCodeF15();
+
+    /**
+     * F16
+     */
+    @Generated
+    @CVariable()
+    @NInt
+    public static native long GCKeyCodeF16();
+
+    /**
+     * F17
+     */
+    @Generated
+    @CVariable()
+    @NInt
+    public static native long GCKeyCodeF17();
+
+    /**
+     * F18
+     */
+    @Generated
+    @CVariable()
+    @NInt
+    public static native long GCKeyCodeF18();
+
+    /**
+     * F19
+     */
+    @Generated
+    @CVariable()
+    @NInt
+    public static native long GCKeyCodeF19();
+
+    /**
+     * F20
+     */
+    @Generated
+    @CVariable()
+    @NInt
+    public static native long GCKeyCodeF20();
+
+    /**
+     * F13
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCKeyF13();
+
+    /**
+     * F14
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCKeyF14();
+
+    /**
+     * F15
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCKeyF15();
+
+    /**
+     * F16
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCKeyF16();
+
+    /**
+     * F17
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCKeyF17();
+
+    /**
+     * F18
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCKeyF18();
+
+    /**
+     * F19
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCKeyF19();
+
+    /**
+     * F20
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCKeyF20();
+
+    /**
+     * The primary directional input surface for the directional gamepad
+     * <p>
+     * [@note] Equivalent to microgamepad.dpad
+     * <p>
+     * [@note] For the 1st generation and 2nd generation Siri Remotes, this represents touching anywhere on the entire touch surface.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputMicroGamepadDpad();
+
+    /**
+     * The primary button for the microgamepad
+     * <p>
+     * [@note] For the 1st generation and 2nd generation Siri Remotes, this represents pressing anywhere on the touch surface.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputMicroGamepadButtonA();
+
+    /**
+     * The secondary button for the microgamepad
+     * <p>
+     * [@note] Equivalent to microgamepad.buttonX
+     * <p>
+     * [@note] For the 1st and 2nd generation Siri Remotes, this represents pressing the play/pause button.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputMicroGamepadButtonX();
+
+    /**
+     * The primary menu button for the microgamepad
+     * <p>
+     * [@note] Equivalent to microgamepad.buttonMenu
+     * <p>
+     * [@note] For the 1st generation Siri Remote, this represents pressing the play/pause button. For the 2nd generation Siri Remote, this represents pressing the back button.
+     * <p>
+     * [@note] You should avoid polling this button every frame. tvOS will run a gesture recognizer on events before forwarding them to your application that can reduce the window
+     * to poll button changes. Instead, register a pressedChangedHandler or a valueChangedHandler.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputMicroGamepadButtonMenu();
+
+    /**
+     * The primary directional input surface for the directional gamepad
+     * <p>
+     * [@note] Equivalent to microgamepad.dpad
+     * <p>
+     * [@note] For the 2021 2nd generation Siri Remote, this represents touching anywhere on the entire touch surface - including the inner and outer rings.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputDirectionalDpad();
+
+    /**
+     * The button corresponding to pressing anywhere on the primary directional input surface for the directional gamepad
+     * <p>
+     * [@note] Equivalent to microgamepad.buttonA
+     * <p>
+     * [@note] For the 2021 2nd generation Siri Remote, this represents pressing anywhere the entire touch surface - including the inner and outer rings.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputDirectionalTouchSurfaceButton();
+
+    /**
+     * An optional secondary directional input surface for the directional gamepad. This input is guaranteed to be an 8-way digital dpad with physical Up, Down, Left, Right butttons.
+     * <p>
+     * [@note] For the 2021 2nd generation Siri Remote, this represents pressing on the outer ring of the touch surface.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputDirectionalCardinalDpad();
+
+    /**
+     * An optional button for the directional gamepad. This input represents the center button of the cardinal dpad.
+     * <p>
+     * [@note] For the 2021 2nd generation Siri Remote, this represents pressing anywhere on the inner ring of the touch surface.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputDirectionalCenterButton();
+
+    /**
+     * Game Controller Product Categories
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategoryDualSense();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategoryDualShock4();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategoryMFi();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategoryXboxOne();
+
+    /**
+     * The Siri Remote (1st generation), or Apple TV Remote (1st generation), was first introduced in 2015. It features a Touch surface for touch navigation, and supports device motion.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategorySiriRemote1stGen();
+
+    /**
+     * The Siri Remote (2nd generation), or Apple TV Remote (2nd generation), was first introduced in 2021. It features a touch-enabled clickpad for navigation.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategorySiriRemote2ndGen();
+
+    /**
+     * Users can use Apple TV Remote controls in Control Center on an iOS or iPadOS device.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategoryControlCenterRemote();
+
+    /**
+     * The Universal Electronics remote is an infrared and Bluetooth Low Energy remote designed to work with the Apple TV.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategoryUniversalElectronicsRemote();
+
+    /**
+     * If multiple remotes have been combined into one, the device will have the GCProductCategoryCoalescedRemote product category.
+     * <p>
+     * By default, the Game Controller framework will try to coalesce, or combine, the physical Apple TV Remote and the
+     * virtual Control Center remote and treat them as a single GCDevice instance. By setting GCSupportsMultipleMicroGamepads in your
+     * app's plist to true, you can disable this behavior.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategoryCoalescedRemote();
+
+    /**
+     * Keyboards and Mice Product Categories
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategoryMouse();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategoryKeyboard();
 }

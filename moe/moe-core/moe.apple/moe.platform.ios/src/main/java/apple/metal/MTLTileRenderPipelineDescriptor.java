@@ -125,7 +125,7 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     /**
      * [@property] label:
-     * 
+     * <p>
      * The descriptor label.
      */
     @Generated
@@ -160,7 +160,7 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     /**
      * [@property] label:
-     * 
+     * <p>
      * The descriptor label.
      */
     @Generated
@@ -176,9 +176,9 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     /**
      * [@property] threadgroupSizeMatchesTileSize:
-     * 
+     * <p>
      * Whether all threadgroups associated with this pipeline will cover tiles entirely.
-     * 
+     * <p>
      * Metal can optimize code generation for this case.
      */
     @Generated
@@ -187,9 +187,9 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     /**
      * [@property] tileFunction:
-     * 
+     * <p>
      * The kernel or fragment function that serves as the tile shader for this pipeline.
-     * 
+     * <p>
      * Both kernel-based and fragment-based tile pipelines dispatches will barrier against previous
      * draws and other dispatches. Kernel-based pipelines will wait until all prior access to the tile completes.
      * Fragment-based pipelines will only wait until all prior access to the fragment's location completes.
@@ -208,9 +208,9 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     /**
      * [@property] threadgroupSizeMatchesTileSize:
-     * 
+     * <p>
      * Whether all threadgroups associated with this pipeline will cover tiles entirely.
-     * 
+     * <p>
      * Metal can optimize code generation for this case.
      */
     @Generated
@@ -223,9 +223,9 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     /**
      * [@property] tileFunction:
-     * 
+     * <p>
      * The kernel or fragment function that serves as the tile shader for this pipeline.
-     * 
+     * <p>
      * Both kernel-based and fragment-based tile pipelines dispatches will barrier against previous
      * draws and other dispatches. Kernel-based pipelines will wait until all prior access to the tile completes.
      * Fragment-based pipelines will only wait until all prior access to the fragment's location completes.
@@ -242,7 +242,7 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     /**
      * [@property] maxTotalThreadsPerThreadgroup
-     * 
+     * <p>
      * Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
      */
     @Generated
@@ -252,7 +252,7 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     /**
      * [@property] maxTotalThreadsPerThreadgroup
-     * 
+     * <p>
      * Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
      */
     @Generated
@@ -261,11 +261,11 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     /**
      * [@property] binaryArchives
-     * 
+     * <p>
      * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
-     * 
+     * <p>
      * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
-     * 
+     *
      * @see MTLBinaryArchive
      */
     @Generated
@@ -274,14 +274,103 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     /**
      * [@property] binaryArchives
-     * 
+     * <p>
      * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
-     * 
+     * <p>
      * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
-     * 
+     *
      * @see MTLBinaryArchive
      */
     @Generated
     @Selector("setBinaryArchives:")
     public native void setBinaryArchives(NSArray<?> value);
+
+    /**
+     * [@property] linkedFunctions
+     * <p>
+     * The set of functions to be linked with the pipeline state and accessed from the tile function.
+     *
+     * @see MTLLinkedFunctions
+     */
+    @Generated
+    @Selector("linkedFunctions")
+    public native MTLLinkedFunctions linkedFunctions();
+
+    /**
+     * [@property] maxCallStackDepth
+     * <p>
+     * The maximum depth of the call stack in stack frames from the tile function. Defaults to 1 additional stack frame.
+     */
+    @Generated
+    @Selector("maxCallStackDepth")
+    @NUInt
+    public native long maxCallStackDepth();
+
+    /**
+     * [@property] preloadedLibraries
+     * <p>
+     * The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent MTLDynamicLibrary.
+     * <p>
+     * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time without having to use preloadedLibraries.
+     * This property can be used to override symbols from dependent libraries for experimentation or evaluating alternative implementations.
+     * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that have no stable installName that can be used to automatically load from the file system.
+     *
+     * @see MTLDynamicLibrary
+     */
+    @Generated
+    @Selector("preloadedLibraries")
+    public native NSArray<?> preloadedLibraries();
+
+    /**
+     * [@property] linkedFunctions
+     * <p>
+     * The set of functions to be linked with the pipeline state and accessed from the tile function.
+     *
+     * @see MTLLinkedFunctions
+     */
+    @Generated
+    @Selector("setLinkedFunctions:")
+    public native void setLinkedFunctions(MTLLinkedFunctions value);
+
+    /**
+     * [@property] maxCallStackDepth
+     * <p>
+     * The maximum depth of the call stack in stack frames from the tile function. Defaults to 1 additional stack frame.
+     */
+    @Generated
+    @Selector("setMaxCallStackDepth:")
+    public native void setMaxCallStackDepth(@NUInt long value);
+
+    /**
+     * [@property] preloadedLibraries
+     * <p>
+     * The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent MTLDynamicLibrary.
+     * <p>
+     * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time without having to use preloadedLibraries.
+     * This property can be used to override symbols from dependent libraries for experimentation or evaluating alternative implementations.
+     * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that have no stable installName that can be used to automatically load from the file system.
+     *
+     * @see MTLDynamicLibrary
+     */
+    @Generated
+    @Selector("setPreloadedLibraries:")
+    public native void setPreloadedLibraries(NSArray<?> value);
+
+    /**
+     * [@property] supportAddingBinaryFunctions
+     * <p>
+     * This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     */
+    @Generated
+    @Selector("setSupportAddingBinaryFunctions:")
+    public native void setSupportAddingBinaryFunctions(boolean value);
+
+    /**
+     * [@property] supportAddingBinaryFunctions
+     * <p>
+     * This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     */
+    @Generated
+    @Selector("supportAddingBinaryFunctions")
+    public native boolean supportAddingBinaryFunctions();
 }

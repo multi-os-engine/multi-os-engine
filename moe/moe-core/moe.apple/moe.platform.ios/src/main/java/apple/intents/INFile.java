@@ -101,7 +101,7 @@ public class INFile extends NSObject implements NSSecureCoding {
     /**
      * URL to the file on disk, if any.
      * If the file isn't stored on disk, access the contents using the `data` property.
-     * 
+     * <p>
      * If the file was created elsewhere on the system, make sure to surround access to file contents
      * with `-[NSURL startAccessingSecurityScopedResource]` and `-[NSURL stopAccessingSecurityScopedResource]`.
      */

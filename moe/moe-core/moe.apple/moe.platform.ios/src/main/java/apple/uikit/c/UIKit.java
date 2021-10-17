@@ -36,6 +36,7 @@ import apple.uikit.struct.NSDirectionalEdgeInsets;
 import apple.uikit.struct.UIEdgeInsets;
 import apple.uikit.struct.UIFloatRange;
 import apple.uikit.struct.UIOffset;
+import apple.uikit.struct.UIPointerAccessoryPosition;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CFunction;
 import org.moe.natj.c.ann.CVariable;
@@ -67,19 +68,19 @@ public final class UIKit {
     /**
      * A required constraint.  Do not exceed this.
      */
-    @Generated public static final float UILayoutPriorityRequired = (float) 1000.0;
+    @Generated public static final float UILayoutPriorityRequired = (float)1000.0;
     /**
      * This is the priority level with which a button resists compressing its content.
      */
-    @Generated public static final float UILayoutPriorityDefaultHigh = (float) 750.0;
+    @Generated public static final float UILayoutPriorityDefaultHigh = (float)750.0;
     /**
      * This is the priority level at which a button hugs its contents horizontally.
      */
-    @Generated public static final float UILayoutPriorityDefaultLow = (float) 250.0;
+    @Generated public static final float UILayoutPriorityDefaultLow = (float)250.0;
     /**
      * When you send -[UIView systemLayoutSizeFittingSize:], the size fitting most closely to the target size (the argument) is computed.  UILayoutPriorityFittingSizeLevel is the priority level with which the view wants to conform to the target size in that computation.  It's quite low.  It is generally not appropriate to make a constraint at exactly this priority.  You want to be higher or lower.
      */
-    @Generated public static final float UILayoutPriorityFittingSizeLevel = (float) 50.0;
+    @Generated public static final float UILayoutPriorityFittingSizeLevel = (float)50.0;
 
     static {
         NatJ.register();
@@ -257,7 +258,7 @@ public final class UIKit {
     public static native void UIAccessibilityZoomFocusChanged(@NInt long type, @ByValue CGRect frame, UIView view);
 
     /**
-     * If your app uses multi-finger gestures that conflict with system Zoom gestures (by using three fingers), 
+     * If your app uses multi-finger gestures that conflict with system Zoom gestures (by using three fingers),
      * calling this method will warn users of the conflict.
      */
     @Generated
@@ -306,10 +307,10 @@ public final class UIKit {
 
     /**
      * UIAccessibilityPostNotification
-     * 
+     * <p>
      * This function posts a notification to assistive applications.
      * Some notifications specify a required or optional argument.
-     * Pass nil for the argument if the notification does not specify otherwise. 
+     * Pass nil for the argument if the notification does not specify otherwise.
      * See UIAccessibilityConstants.h for a list of notifications.
      */
     @Generated
@@ -319,7 +320,7 @@ public final class UIKit {
 
     /**
      * Assistive Technology
-     * 
+     * <p>
      * Use UIAccessibilityIsVoiceOverRunning() to determine if VoiceOver is running.
      * Listen for UIAccessibilityVoiceOverStatusDidChangeNotification to know when VoiceOver starts or stops.
      */
@@ -480,7 +481,7 @@ public final class UIKit {
 
     /**
      * The following methods will only return a 8-bit per channel context in the DeviceRGB color space.
-     * Any new bitmap drawing code is encouraged to use UIGraphicsImageRenderer in leiu of this API.
+     * Any new bitmap drawing code is encouraged to use UIGraphicsImageRenderer in lieu of this API.
      */
     @Generated
     @CFunction
@@ -545,7 +546,7 @@ public final class UIKit {
 
     /**
      * Adds a photo to the saved photos album.  The optional completionSelector should have the form:
-     *  - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+     * - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
      */
     @Generated
     @CFunction
@@ -562,7 +563,7 @@ public final class UIKit {
 
     /**
      * Adds a video to the saved photos album. The optional completionSelector should have the form:
-     *  - (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+     * - (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
      */
     @Generated
     @CFunction
@@ -780,7 +781,6 @@ public final class UIKit {
     public static native double UIFontWeightBlack();
 
     /**
-     * Font feature keys
      * A number object specifying font feature type such as ligature, character shape, etc.
      */
     @Generated
@@ -996,7 +996,7 @@ public final class UIKit {
      * Keys for text attributes dictionaries.
      * These keys are superseded by the corresponding attribute name keys (NSFontAttributeName, NSForegroundColorAttributeName, NSShadowAttributeName)
      * in NSAttributedString.h.
-     *  Key to the font in the text attributes dictionary. A UIFont instance is expected. Use a font with size 0.0 to get the default font size for the situation.
+     * Key to the font in the text attributes dictionary. A UIFont instance is expected. Use a font with size 0.0 to get the default font size for the situation.
      */
     @Generated
     @CVariable()
@@ -1631,7 +1631,7 @@ public final class UIKit {
     public static native long UIAccessibilityTraitStaticText();
 
     /**
-     * Used when an element can be used to provide a quick summary of current 
+     * Used when an element can be used to provide a quick summary of current
      * conditions in the app when the app first launches.  For example, when Weather
      * first launches, the element with today's weather conditions is marked with
      * this trait.
@@ -1656,7 +1656,7 @@ public final class UIKit {
     public static native long UIAccessibilityTraitUpdatesFrequently();
 
     /**
-     * Used when activating an element starts a media session (e.g. playing a movie, recording audio) 
+     * Used when activating an element starts a media session (e.g. playing a movie, recording audio)
      * that should not be interrupted by output from an assistive technology, like VoiceOver.
      */
     @Generated
@@ -1664,7 +1664,7 @@ public final class UIKit {
     public static native long UIAccessibilityTraitStartsMediaSession();
 
     /**
-     * Used when an element can be "adjusted" (e.g. a slider). The element must also 
+     * Used when an element can be "adjusted" (e.g. a slider). The element must also
      * implement accessibilityIncrement and accessibilityDecrement.
      */
     @Generated
@@ -1680,7 +1680,7 @@ public final class UIKit {
 
     /**
      * Informs VoiceOver that it should scroll to the next page when it finishes reading the contents of the
-     * element. VoiceOver will scroll by calling accessibilityScroll: with UIAccessibilityScrollDirectionNext and will 
+     * element. VoiceOver will scroll by calling accessibilityScroll: with UIAccessibilityScrollDirectionNext and will
      * stop scrolling when it detects the content has not changed.
      */
     @Generated
@@ -1713,7 +1713,7 @@ public final class UIKit {
     public static native int UIAccessibilityLayoutChangedNotification();
 
     /**
-     * Should be posted when an announcement needs to be conveyed to VoiceOver. 
+     * Should be posted when an announcement needs to be conveyed to VoiceOver.
      * VoiceOver will output the announcement string that is used as the argument.
      * The argument is a NSString.
      */
@@ -1722,7 +1722,7 @@ public final class UIKit {
     public static native int UIAccessibilityAnnouncementNotification();
 
     /**
-     * Listen for this notification to know when VoiceOver finishes outputting an announcement. 
+     * Listen for this notification to know when VoiceOver finishes outputting an announcement.
      * The userInfo dictionary contains UIAccessibilityAnnouncementKeyString and UIAccessibilityAnnouncementKeyWasSuccessful.
      */
     @Generated
@@ -2013,10 +2013,6 @@ public final class UIKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypeOpenInIBooks();
 
-    /**
-     * The UICollectionViewLayout class is provided as an abstract class for subclassing to define custom collection layouts.
-     * Defining a custom layout is an advanced operation intended for applications with complex needs.
-     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2373,7 +2369,7 @@ public final class UIKit {
     public static native double UIWindowLevelStatusBar();
 
     /**
-     * nil
+     * Posted when the window becomes visible with a nil userInfo dictionary.
      */
     @Generated
     @CVariable()
@@ -2381,7 +2377,7 @@ public final class UIKit {
     public static native String UIWindowDidBecomeVisibleNotification();
 
     /**
-     * nil
+     * Posted when the window becomes hidden with a nil userInfo dictionary.
      */
     @Generated
     @CVariable()
@@ -2389,7 +2385,10 @@ public final class UIKit {
     public static native String UIWindowDidBecomeHiddenNotification();
 
     /**
-     * nil
+     * Posted when the window becomes the key window with a nil userInfo dictionary. In apps built
+     * against the iOS 15 or tvOS 15 SDK (or later), this notification will be posted when the window
+     * becomes its scene's key window. For apps built against earlier SDKs, it will be posted when
+     * the window becomes the application's key window.
      */
     @Generated
     @CVariable()
@@ -2397,7 +2396,10 @@ public final class UIKit {
     public static native String UIWindowDidBecomeKeyNotification();
 
     /**
-     * nil
+     * Posted when the window resigns key window status with a nil userInfo dictionary. In apps built
+     * against the iOS 15 or tvOS 15 SDK (or later), this notification will be posted when the window
+     * resigns key in its scene. For apps built against earlier SDKs, it will be posted when the window
+     * resigns key in the application.
      */
     @Generated
     @CVariable()
@@ -2406,7 +2408,7 @@ public final class UIKit {
 
     /**
      * Each notification includes a nil object and a userInfo dictionary containing the
-     * begining and ending keyboard frame in screen coordinates. Use the various UIView and
+     * beginning and ending keyboard frame in screen coordinates. Use the various UIView and
      * UIWindow convertRect facilities to get the frame in the desired coordinate system.
      * Animation key/value pairs are only available for the "will" family of notification.
      */
@@ -3022,21 +3024,25 @@ public final class UIKit {
 
     /**
      * Used when setting custom spacing after an arranged subview to indicate reverting to
-     * the value specified by the spacing property. 
-     * 
+     * the value specified by the spacing property.
+     * <p>
      * See -setCustomSpacing:afterView:, -customSpacingAfterView:
      */
-    @Generated @NFloat public static final double UIStackViewSpacingUseDefault = org.moe.natj.general.NatJ.is64Bit() ? 3.4028234663852886E38 : (float) 3.4028235E38;
+    @Generated @NFloat public static final double UIStackViewSpacingUseDefault = org.moe.natj.general.NatJ.is64Bit() ?
+            3.4028234663852886E38 :
+            (float)3.4028235E38;
     /**
      * Used when setting custom spacing after an arranged subview to request the system
-     * spacing to the neighboring view. 
-     * 
+     * spacing to the neighboring view.
+     * <p>
      * Also used as a token for the spacing property to request system spacing between
      * arranged subviews.
-     * 
+     * <p>
      * See spacing, -setCustomSpacing:afterView:, -customSpacingAfterView:
      */
-    @Generated @NFloat public static final double UIStackViewSpacingUseSystem = org.moe.natj.general.NatJ.is64Bit() ? 1.1754943508222875E-38 : (float) 1.17549435E-38;
+    @Generated @NFloat public static final double UIStackViewSpacingUseSystem = org.moe.natj.general.NatJ.is64Bit() ?
+            1.1754943508222875E-38 :
+            (float)1.17549435E-38;
 
     @Generated
     @CVariable()
@@ -3471,15 +3477,15 @@ public final class UIKit {
     /**
      * This is the appropriate priority level for a drag that may end up resizing the window's scene.
      */
-    @Generated public static final float UILayoutPriorityDragThatCanResizeScene = (float) 510.0;
+    @Generated public static final float UILayoutPriorityDragThatCanResizeScene = (float)510.0;
     /**
      * This is the priority level at which the window's scene prefers to stay the same size.  It's generally not appropriate to make a constraint at exactly this priority. You want to be higher or lower.
      */
-    @Generated public static final float UILayoutPrioritySceneSizeStayPut = (float) 500.0;
+    @Generated public static final float UILayoutPrioritySceneSizeStayPut = (float)500.0;
     /**
      * This is the priority level at which a split view divider, say, is dragged.  It won't resize the window's scene.
      */
-    @Generated public static final float UILayoutPriorityDragThatCannotResizeScene = (float) 490.0;
+    @Generated public static final float UILayoutPriorityDragThatCannotResizeScene = (float)490.0;
 
     @Generated
     @CVariable()
@@ -3658,8 +3664,8 @@ public final class UIKit {
 
     /**
      * Deprecated ***********************
-     *  NSUnderlineByWord and the NSUnderlinePattern* values are soft deprecated starting with macOS 10.14/iOS 12 and will be officially deprecated in a future release.  Please use the NSUnderlineStyle* equivalents instead.
-     *  Underlines will be drawn with a solid pattern by default, so NSUnderlinePatternSolid does not need to be specified.
+     * NSUnderlineByWord and the NSUnderlinePattern* values are soft deprecated starting with macOS 10.14/iOS 12 and will be officially deprecated in a future release.  Please use the NSUnderlineStyle* equivalents instead.
+     * Underlines will be drawn with a solid pattern by default, so NSUnderlinePatternSolid does not need to be specified.
      */
     @Generated @NInt public static final long NSUnderlinePatternSolid = 0x0000000000000000L;
     @Generated @NInt public static final long NSUnderlinePatternDot = 0x0000000000000100L;
@@ -3812,7 +3818,7 @@ public final class UIKit {
     public static native boolean UIAccessibilityButtonShapesEnabled();
 
     /**
-     * Returns whether the system preference for redcue motion: prefer cross-fade transitions is enabled
+     * Returns whether the system preference for reduce motion: prefer cross-fade transitions is enabled
      */
     @Generated
     @CFunction
@@ -3934,4 +3940,261 @@ public final class UIKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIPasteboardDetectionPatternNumber();
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native UIPointerAccessoryPosition UIPointerAccessoryPositionMake(@NFloat double offset,
+            @NFloat double angle);
+
+    /**
+     * Sidebar menu
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuSidebar();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIKeyInputDelete();
+
+    @Generated @NInt public static final long UIFocusGroupPriorityIgnored = 0x0000000000000000L;
+    @Generated @NInt public static final long UIFocusGroupPriorityPreviouslyFocused = 0x00000000000003E8L;
+    @Generated @NInt public static final long UIFocusGroupPriorityPrioritized = 0x00000000000007D0L;
+    @Generated @NInt public static final long UIFocusGroupPriorityCurrentlyFocused = org.moe.natj.general.NatJ.is64Bit() ?
+            0x7FFFFFFFFFFFFFFFL :
+            0x000000007FFFFFFFL;
+
+    /**
+     * Default action identifiers for paste variants
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActionPaste();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActionPasteAndMatchStyle();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActionPasteAndGo();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActionPasteAndSearch();
+
+    /**
+     * Parcel tracking numbers such as "FedEx 8602 9191 3550", "1Z50T0536891664106", and "729445720428778".
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeShipmentTrackingNumber();
+
+    /**
+     * Airline flight numbers such as "CZ # 1234", "AA212", and "SW Flight 573".
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeFlightNumber();
+
+    /**
+     * Dates, times, or durations such as "7-3-2021" or "This Saturday", "12:30", and "10-11am", respectively.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeDateTime();
+
+    /**
+     * userInfo contains a UIEventAttribution to go along with a URL open on launch
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIApplicationLaunchOptionsEventAttributionKey();
+
+    /**
+     * value is a UIEventAttribution to go along with the URL to open
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIApplicationOpenURLOptionsEventAttributionKey();
+
+    /**
+     * value is a UIEventAttribution
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIApplicationOpenExternalURLOptionsEventAttributionKey();
+
+    /**
+     * The UICollectionViewLayout class is provided as an abstract class for subclassing to define custom collection layouts.
+     * Defining a custom layout is an advanced operation intended for applications with complex needs.
+     */
+    @Generated
+    @CVariable()
+    @NFloat
+    public static native double UICollectionViewLayoutAutomaticDimension();
+
+    /**
+     * Use the values from the edges in this constant to indicate to the consumer of a UIListSeparatorConfiguration that the value for that
+     * edge should be replaced with an appropriate inset.
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSDirectionalEdgeInsets UIListSeparatorAutomaticInsets();
+
+    /**
+     * Array of DDMatchLink values
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardDetectionPatternLink();
+
+    /**
+     * Array of DDMatchPhoneNumber values
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardDetectionPatternPhoneNumber();
+
+    /**
+     * Array of DDMatchEmailAddress values
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardDetectionPatternEmailAddress();
+
+    /**
+     * Array of DDMatchAddress values
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardDetectionPatternPostalAddress();
+
+    /**
+     * Array of DDMatchCalendarEvent values
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardDetectionPatternCalendarEvent();
+
+    /**
+     * Array of DDMatchShipmentTrackingNumber values
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardDetectionPatternShipmentTrackingNumber();
+
+    /**
+     * Array of DDMatchFlightNumber values
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardDetectionPatternFlightNumber();
+
+    /**
+     * Array of DDMatchMoneyAmount values
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardDetectionPatternMoneyAmount();
+
+    /**
+     * LPLinkMetadata
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActivityItemsConfigurationMetadataKeyLinkPresentationMetadata();
+
+    /**
+     * The identifier for the system medium detent.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UISheetPresentationControllerDetentIdentifierMedium();
+
+    /**
+     * The identifier for the system large detent.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UISheetPresentationControllerDetentIdentifierLarge();
+
+    @Generated
+    @CVariable()
+    @NFloat
+    public static native double UISheetPresentationControllerAutomaticDimension();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native UIPointerAccessoryPosition UIPointerAccessoryPositionTop();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native UIPointerAccessoryPosition UIPointerAccessoryPositionTopRight();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native UIPointerAccessoryPosition UIPointerAccessoryPositionRight();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native UIPointerAccessoryPosition UIPointerAccessoryPositionBottomRight();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native UIPointerAccessoryPosition UIPointerAccessoryPositionBottom();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native UIPointerAccessoryPosition UIPointerAccessoryPositionBottomLeft();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native UIPointerAccessoryPosition UIPointerAccessoryPositionLeft();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native UIPointerAccessoryPosition UIPointerAccessoryPositionTopLeft();
+
+    /**
+     * Posted by NSTextContentStorage when a text attribute unsupported by NSTextContentStorage is added to the underlying text storage.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextContentStorageUnsupportedAttributeAddedNotification();
 }

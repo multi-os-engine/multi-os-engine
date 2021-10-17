@@ -44,11 +44,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Used to describe a collection of HMRoom objects
- * 
+ * <p>
  * This class is used to group a collection of rooms.
- *             This allows for association of a set of rooms into a group.
- *             Eg. "Living Room" and "Kitchen" rooms can be grouped together
- *             in the "Downstairs" zone.
+ * This allows for association of a set of rooms into a group.
+ * Eg. "Living Room" and "Kitchen" rooms can be grouped together
+ * in the "Downstairs" zone.
  */
 @Generated
 @Library("HomeKit")
@@ -163,12 +163,11 @@ public class HMZone extends NSObject {
 
     /**
      * Adds a room to a zone.
-     * 
+     * <p>
      * Both the room and the zone should be part of the home.  A room can be added to multiple
-     *             zones, e.g., a room "Kitchen" can be added to "Downstairs" as well as "Outdoor" zones.
-     * 
-     * @param room Room to add to this zone.
-     * 
+     * zones, e.g., a room "Kitchen" can be added to "Downstairs" as well as "Outdoor" zones.
+     *
+     * @param room       Room to add to this zone.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -191,9 +190,8 @@ public class HMZone extends NSObject {
 
     /**
      * Removes a room from the zone.
-     * 
-     * @param room Room to remove from this zone.
-     * 
+     *
+     * @param room       Room to remove from this zone.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -219,9 +217,8 @@ public class HMZone extends NSObject {
 
     /**
      * This method is used to change the name of the zone.
-     * 
-     * @param name New name for the zone.
-     * 
+     *
+     * @param name       New name for the zone.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.

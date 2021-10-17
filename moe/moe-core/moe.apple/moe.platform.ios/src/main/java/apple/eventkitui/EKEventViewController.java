@@ -143,10 +143,6 @@ public class EKEventViewController extends UIViewController {
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -169,12 +165,12 @@ public class EKEventViewController extends UIViewController {
 
     /**
      * [@property]   allowsCalendarPreview
-     * 
+     * <p>
      * Determines whether event can be shown in calendar day view preview.
-     * 
+     * <p>
      * This option only affects calendar invites at present. If the event is an invite,
-     *             and this option is set, a table cell will appear that allows the user to preview 
-     *             the event along with their other events for the day.
+     * and this option is set, a table cell will appear that allows the user to preview
+     * the event along with their other events for the day.
      */
     @Generated
     @Selector("allowsCalendarPreview")
@@ -182,14 +178,14 @@ public class EKEventViewController extends UIViewController {
 
     /**
      * [@property]   allowsEditing
-     * 
+     * <p>
      * Determines whether Edit button can be shown.
-     * 
+     * <p>
      * Note that even if this is enabled, the edit button may not appear if this event
-     *             is in a read-only calendar, such as a subscribed calendar. It may also not appear
-     *             if the event was not created by the current user (i.e. it's an event they were
-     *             invited to). And lastly, if the event was never saved, the edit button will not
-     *             appear.
+     * is in a read-only calendar, such as a subscribed calendar. It may also not appear
+     * if the event was not created by the current user (i.e. it's an event they were
+     * invited to). And lastly, if the event was never saved, the edit button will not
+     * appear.
      */
     @Generated
     @Selector("allowsEditing")
@@ -202,9 +198,9 @@ public class EKEventViewController extends UIViewController {
 
     /**
      * [@property]   event
-     * 
+     * <p>
      * Specifies the event to view.
-     * 
+     * <p>
      * You must set this prior to displaying the view controller.
      */
     @Generated
@@ -225,12 +221,12 @@ public class EKEventViewController extends UIViewController {
 
     /**
      * [@property]   allowsCalendarPreview
-     * 
+     * <p>
      * Determines whether event can be shown in calendar day view preview.
-     * 
+     * <p>
      * This option only affects calendar invites at present. If the event is an invite,
-     *             and this option is set, a table cell will appear that allows the user to preview 
-     *             the event along with their other events for the day.
+     * and this option is set, a table cell will appear that allows the user to preview
+     * the event along with their other events for the day.
      */
     @Generated
     @Selector("setAllowsCalendarPreview:")
@@ -238,14 +234,14 @@ public class EKEventViewController extends UIViewController {
 
     /**
      * [@property]   allowsEditing
-     * 
+     * <p>
      * Determines whether Edit button can be shown.
-     * 
+     * <p>
      * Note that even if this is enabled, the edit button may not appear if this event
-     *             is in a read-only calendar, such as a subscribed calendar. It may also not appear
-     *             if the event was not created by the current user (i.e. it's an event they were
-     *             invited to). And lastly, if the event was never saved, the edit button will not
-     *             appear.
+     * is in a read-only calendar, such as a subscribed calendar. It may also not appear
+     * if the event was not created by the current user (i.e. it's an event they were
+     * invited to). And lastly, if the event was never saved, the edit button will not
+     * appear.
      */
     @Generated
     @Selector("setAllowsEditing:")
@@ -269,9 +265,9 @@ public class EKEventViewController extends UIViewController {
 
     /**
      * [@property]   event
-     * 
+     * <p>
      * Specifies the event to view.
-     * 
+     * <p>
      * You must set this prior to displaying the view controller.
      */
     @Generated

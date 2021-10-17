@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NWTCPConnectionState
- * 
+ * <p>
  * Defined connection states. New types may be defined in the future.
  */
 @Generated

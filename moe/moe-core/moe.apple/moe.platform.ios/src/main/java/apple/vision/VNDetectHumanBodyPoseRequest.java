@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Detects specific landmark points on human bodies.
- * 
+ * <p>
  * This request will produce a collection of VNHumanBodyPoseObservation objects which describe the pose of each detected human body.
  */
 @Generated
@@ -165,21 +165,11 @@ public class VNDetectHumanBodyPoseRequest extends VNImageBasedRequest {
     @Selector("superclass")
     public static native Class superclass_static();
 
-    @Generated
-    @Selector("supportedIdentifiedPointGroupKeysForRevision:error:")
-    public static native NSArray<String> supportedIdentifiedPointGroupKeysForRevisionError(@NUInt long revision,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
-
-    @Generated
-    @Selector("supportedIdentifiedPointKeysForRevision:error:")
-    public static native NSArray<String> supportedIdentifiedPointKeysForRevisionError(@NUInt long revision,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
-
     /**
      * Obtain the collection of human body joint names that are supported by a given request revision.
-     * 
+     *
      * @param revision The revision of VNDetectHumanBodyPoseRequest being queried.
-     * @param error The address of a variable that will be populated with an error upon failure.  If the caller does not need this information, NULL can be passed.
+     * @param error    The address of a variable that will be populated with an error upon failure.  If the caller does not need this information, NULL can be passed.
      * @return An array of VNHumanBodyPoseObservationJointName symbols that are supported by the request revision, or nil if a failure occurs.
      */
     @Generated
@@ -189,24 +179,14 @@ public class VNDetectHumanBodyPoseRequest extends VNImageBasedRequest {
 
     /**
      * Obtain the collection of human body joints group names that are supported by a given request revision.
-     * 
+     *
      * @param revision The revision of VNDetectHumanBodyPoseRequest being queried.
-     * @param error The address of a variable that will be populated with an error upon failure.  If the caller does not need this information, NULL can be passed.
+     * @param error    The address of a variable that will be populated with an error upon failure.  If the caller does not need this information, NULL can be passed.
      * @return An array of VNHumanBodyPoseObservationJointsGroupName symbols that are supported by the request revision, or nil if a failure occurs.
      */
     @Generated
     @Selector("supportedJointsGroupNamesForRevision:error:")
     public static native NSArray<String> supportedJointsGroupNamesForRevisionError(@NUInt long revision,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
-
-    @Generated
-    @Selector("supportedRecognizedPointGroupKeysForRevision:error:")
-    public static native NSArray<String> supportedRecognizedPointGroupKeysForRevisionError(@NUInt long revision,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
-
-    @Generated
-    @Selector("supportedRecognizedPointKeysForRevision:error:")
-    public static native NSArray<String> supportedRecognizedPointKeysForRevisionError(@NUInt long revision,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated

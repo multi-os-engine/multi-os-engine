@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An immutable value object representing a phone number.
- * 
+ * <p>
  * CNPhoneNumber is thread safe.
  */
 @Generated

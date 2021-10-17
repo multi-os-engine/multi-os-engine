@@ -42,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVMutableDateRangeMetadataGroup
- * 
+ * <p>
  * AVMutableDateRangeMetadataGroup is used to represent a mutable collection of metadata items that are valid for use within a specific range of dates.
  */
 @Generated

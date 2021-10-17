@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLArgumentBuffersTier
- * 
+ * <p>
  * MTLArgumentBuffersTier determines support level for argument buffers.
  */
 @Generated

@@ -221,7 +221,7 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     public static native Class superclass_static();
 
     /**
-     * An array containing the supported charging connectors of a vehicle
+     * An array containing the supported charging connectors of a vehicle.
      */
     @Generated
     @Selector("supportedChargingConnectors")

@@ -48,9 +48,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLBeacon
- * 
+ * <p>
  * Discussion:
- *   A single beacon within a CLBeaconRegion.
+ * A single beacon within a CLBeaconRegion.
  */
 @Generated
 @Library("CoreLocation")
@@ -169,11 +169,11 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * accuracy
-     * 
+     * <p>
      * Discussion:
-     *   Represents an one sigma horizontal accuracy in meters where the measuring device's location is
-     *   referenced at the beaconing device. This value is heavily subject to variations in an RF environment.
-     *   A negative accuracy value indicates the proximity is unknown.
+     * Represents an one sigma horizontal accuracy in meters where the measuring device's location is
+     * referenced at the beaconing device. This value is heavily subject to variations in an RF environment.
+     * A negative accuracy value indicates the proximity is unknown.
      */
     @Generated
     @Selector("accuracy")
@@ -199,9 +199,9 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * major
-     * 
+     * <p>
      * Discussion:
-     *   Most significant value associated with the beacon.
+     * Most significant value associated with the beacon.
      */
     @Generated
     @Selector("major")
@@ -209,9 +209,9 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * minor
-     * 
+     * <p>
      * Discussion:
-     *   Least significant value associated with the beacon.
+     * Least significant value associated with the beacon.
      */
     @Generated
     @Selector("minor")
@@ -219,9 +219,9 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * proximity
-     * 
+     * <p>
      * Discussion:
-     *   Proximity of the beacon from the device.
+     * Proximity of the beacon from the device.
      */
     @Generated
     @Selector("proximity")
@@ -234,10 +234,10 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * rssi
-     * 
+     * <p>
      * Discussion:
-     *   Received signal strength in decibels of the specified beacon.
-     *   This value is an average of the RSSI samples collected since this beacon was last reported.
+     * Received signal strength in decibels of the specified beacon.
+     * This value is an average of the RSSI samples collected since this beacon was last reported.
      */
     @Generated
     @Selector("rssi")
@@ -252,9 +252,9 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * UUID
-     * 
+     * <p>
      * Discussion:
-     *   UUID associated with the beacon.
+     * UUID associated with the beacon.
      */
     @Generated
     @Selector("UUID")
@@ -262,9 +262,9 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * timestamp
-     * 
+     * <p>
      * Discussion:
-     *   The time when this beacon was observed.
+     * The time when this beacon was observed.
      */
     @Generated
     @Selector("timestamp")

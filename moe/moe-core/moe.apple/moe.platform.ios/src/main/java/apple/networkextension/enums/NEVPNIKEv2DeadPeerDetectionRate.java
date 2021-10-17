@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEVPNIKEv2DeadPeerDetectionRate
- * 
+ * <p>
  * IKEv2 Dead Peer Detection Rates
  */
 @Generated

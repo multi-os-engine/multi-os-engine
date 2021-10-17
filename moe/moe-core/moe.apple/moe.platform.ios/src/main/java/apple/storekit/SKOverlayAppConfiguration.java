@@ -114,9 +114,9 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * Creates a new app overlay configuration that will show an app from the App Store.
-     * 
+     *
      * @param appIdentifier the app identifier of the app to show.
-     * @param position the desired position of the overlay.
+     * @param position      the desired position of the overlay.
      */
     @Generated
     @Selector("initWithAppIdentifier:position:")
@@ -230,4 +230,32 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * An optional identifier for an app's custom product page.
+     */
+    @Generated
+    @Selector("customProductPageIdentifier")
+    public native String customProductPageIdentifier();
+
+    /**
+     * An optional extra parameter for specifying the version of your app that will be shown to the user.
+     */
+    @Generated
+    @Selector("latestReleaseID")
+    public native String latestReleaseID();
+
+    /**
+     * An optional identifier for an app's custom product page.
+     */
+    @Generated
+    @Selector("setCustomProductPageIdentifier:")
+    public native void setCustomProductPageIdentifier(String value);
+
+    /**
+     * An optional extra parameter for specifying the version of your app that will be shown to the user.
+     */
+    @Generated
+    @Selector("setLatestReleaseID:")
+    public native void setLatestReleaseID(String value);
 }

@@ -100,11 +100,11 @@ public interface GKTurnBasedEventListener {
 
     /**
      * called when it becomes this player's turn.  It also gets called under the following conditions:
-     *      the player's turn has a timeout and it is about to expire.
-     *      the player accepts an invite from another player.
+     * the player's turn has a timeout and it is about to expire.
+     * the player accepts an invite from another player.
      * when the game is running it will additionally recieve turn events for the following:
-     *      turn was passed to another player
-     *      another player saved the match data
+     * turn was passed to another player
+     * another player saved the match data
      * Because of this the app needs to be prepared to handle this even while the player is taking a turn in an existing match.  The boolean indicates whether this event launched or brought to forground the app.
      */
     @Generated

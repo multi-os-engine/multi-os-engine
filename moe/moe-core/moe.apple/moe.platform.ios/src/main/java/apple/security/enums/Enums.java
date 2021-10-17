@@ -756,82 +756,82 @@ public final class Enums {
     @Generated public static final char TLS_RSA_PSK_WITH_NULL_SHA384 = 0x00B9;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * HMAC SHA-256/384. 
+     * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256 = 0xC023;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * HMAC SHA-256/384. 
+     * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 = 0xC024;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * HMAC SHA-256/384. 
+     * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256 = 0xC025;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * HMAC SHA-256/384. 
+     * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384 = 0xC026;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * HMAC SHA-256/384. 
+     * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 = 0xC027;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * HMAC SHA-256/384. 
+     * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 = 0xC028;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * HMAC SHA-256/384. 
+     * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256 = 0xC029;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * HMAC SHA-256/384. 
+     * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384 = 0xC02A;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * SHA-256/384 and AES Galois Counter Mode (GCM) 
+     * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 = 0xC02B;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * SHA-256/384 and AES Galois Counter Mode (GCM) 
+     * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 = 0xC02C;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * SHA-256/384 and AES Galois Counter Mode (GCM) 
+     * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256 = 0xC02D;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * SHA-256/384 and AES Galois Counter Mode (GCM) 
+     * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384 = 0xC02E;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * SHA-256/384 and AES Galois Counter Mode (GCM) 
+     * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 = 0xC02F;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * SHA-256/384 and AES Galois Counter Mode (GCM) 
+     * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 = 0xC030;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * SHA-256/384 and AES Galois Counter Mode (GCM) 
+     * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256 = 0xC031;
     /**
      * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
-     * SHA-256/384 and AES Galois Counter Mode (GCM) 
+     * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384 = 0xC032;
     /**
@@ -1980,9 +1980,6 @@ public final class Enums {
      * The certificate authority was not valid.
      */
     @Generated public static final int errSecInvalidCertAuthority = 0xFFFEF70E;
-    /**
-     * The CRL authority was not valid.
-     */
     @Generated public static final int errSecInvaldCRLAuthority = 0xFFFEF70D;
     /**
      * The CRL encoding was not valid.
@@ -2080,9 +2077,6 @@ public final class Enums {
      * The base ACLs are not valid.
      */
     @Generated public static final int errSecInvalidBaseACLs = 0xFFFEF6F5;
-    /**
-     * The tuple credentials are not valid.
-     */
     @Generated public static final int errSecInvalidTupleCredendtials = 0xFFFEF6F4;
     /**
      * The encoding was not valid.
@@ -2271,41 +2265,41 @@ public final class Enums {
     /**
      * TLS 1.3 standard cipher suites for ChaCha20+Poly1305.
      * Note: TLS 1.3 ciphersuites do not specify the key exchange
-     * algorithm -- they only specify the symmetric ciphers. 
+     * algorithm -- they only specify the symmetric ciphers.
      */
     @Generated public static final char TLS_AES_128_GCM_SHA256 = 0x1301;
     /**
      * TLS 1.3 standard cipher suites for ChaCha20+Poly1305.
      * Note: TLS 1.3 ciphersuites do not specify the key exchange
-     * algorithm -- they only specify the symmetric ciphers. 
+     * algorithm -- they only specify the symmetric ciphers.
      */
     @Generated public static final char TLS_AES_256_GCM_SHA384 = 0x1302;
     /**
      * TLS 1.3 standard cipher suites for ChaCha20+Poly1305.
      * Note: TLS 1.3 ciphersuites do not specify the key exchange
-     * algorithm -- they only specify the symmetric ciphers. 
+     * algorithm -- they only specify the symmetric ciphers.
      */
     @Generated public static final char TLS_CHACHA20_POLY1305_SHA256 = 0x1303;
     /**
      * TLS 1.3 standard cipher suites for ChaCha20+Poly1305.
      * Note: TLS 1.3 ciphersuites do not specify the key exchange
-     * algorithm -- they only specify the symmetric ciphers. 
+     * algorithm -- they only specify the symmetric ciphers.
      */
     @Generated public static final char TLS_AES_128_CCM_SHA256 = 0x1304;
     /**
      * TLS 1.3 standard cipher suites for ChaCha20+Poly1305.
      * Note: TLS 1.3 ciphersuites do not specify the key exchange
-     * algorithm -- they only specify the symmetric ciphers. 
+     * algorithm -- they only specify the symmetric ciphers.
      */
     @Generated public static final char TLS_AES_128_CCM_8_SHA256 = 0x1305;
     /**
      * Addenda from rfc 7905  ChaCha20-Poly1305 Cipher Suites for
-     * Transport Layer Security (TLS). 
+     * Transport Layer Security (TLS).
      */
     @Generated public static final char TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 = 0xCCA8;
     /**
      * Addenda from rfc 7905  ChaCha20-Poly1305 Cipher Suites for
-     * Transport Layer Security (TLS). 
+     * Transport Layer Security (TLS).
      */
     @Generated public static final char TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 = 0xCCA9;
     /**
@@ -2428,4 +2422,16 @@ public final class Enums {
      * Early application data rejected by peer
      */
     @Generated public static final int errSSLEarlyDataRejected = 0xFFFFD95E;
+    /**
+     * The CRL authority was not valid.
+     */
+    @Generated public static final int errSecInvalidCRLAuthority = 0xFFFEF70D;
+    /**
+     * The tuple credentials are not valid.
+     */
+    @Generated public static final int errSecInvalidTupleCredentials = 0xFFFEF6F4;
+    /**
+     * The certificate contains multiple extensions with the same extension ID.
+     */
+    @Generated public static final int errSecCertificateDuplicateExtension = 0xFFFEF6C1;
 }

@@ -28,10 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNMultiply
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * Specifies the multiplication operator.
- *             For each pixel in the primary source image (x) and each pixel in a secondary source image (y),
- *             it applies the following function: result = ((primaryScale * x) * (secondaryScale * y)) + bias.
+ * For each pixel in the primary source image (x) and each pixel in a secondary source image (y),
+ * it applies the following function: result = ((primaryScale * x) * (secondaryScale * y)) + bias.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -110,9 +110,9 @@ public class MPSCNNMultiply extends MPSCNNArithmetic {
 
     /**
      * Initialize the multiplication operator
-     * 
-     * @param     device           The device the filter will run on.
-     * @return    A valid MPSCNNMultiply object or nil, if failure.
+     *
+     * @param device The device the filter will run on.
+     * @return A valid MPSCNNMultiply object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")

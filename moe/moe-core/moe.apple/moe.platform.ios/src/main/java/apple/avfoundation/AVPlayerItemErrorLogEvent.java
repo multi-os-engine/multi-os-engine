@@ -43,11 +43,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVPlayerItemErrorLogEvent
- * 
+ * <p>
  * An AVPlayerItemErrorLogEvent represents a single log entry.
- * 
+ * <p>
  * An AVPlayerItemErrorLogEvent provides named properties for accessing the data
- * 			fields of each log event. None of the properties of this class are observable.
+ * fields of each log event. None of the properties of this class are observable.
  */
 @Generated
 @Library("AVFoundation")
@@ -162,11 +162,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * [@property]		URI
-     * 
+     * <p>
      * The URI of the playback item. Can be nil.
-     * 
+     * <p>
      * If nil is returned the URI is unknown. Corresponds to "uri".
-     * 				This property is not observable.
+     * This property is not observable.
      */
     @Generated
     @Selector("URI")
@@ -180,11 +180,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * [@property]		date
-     * 
+     * <p>
      * The date and time when the error occured. Can be nil.
-     * 
+     * <p>
      * If nil is returned the date is unknown. Corresponds to "date".
-     * 				This property is not observable.
+     * This property is not observable.
      */
     @Generated
     @Selector("date")
@@ -192,11 +192,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * [@property]		errorComment
-     * 
+     * <p>
      * A description of the error encountered. Can be nil.
-     * 
+     * <p>
      * If nil is returned further information is not available. Corresponds to "comment".
-     * 				This property is not observable.
+     * This property is not observable.
      */
     @Generated
     @Selector("errorComment")
@@ -204,11 +204,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * [@property]		errorDomain
-     * 
+     * <p>
      * The domain of the error.
-     * 
+     * <p>
      * Corresponds to "domain".
-     * 				This property is not observable.
+     * This property is not observable.
      */
     @Generated
     @Selector("errorDomain")
@@ -216,11 +216,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * [@property]		errorStatusCode
-     * 
+     * <p>
      * A unique error code identifier.
-     * 
+     * <p>
      * Corresponds to "status".
-     * 				This property is not observable.
+     * This property is not observable.
      */
     @Generated
     @Selector("errorStatusCode")
@@ -233,11 +233,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * [@property]		playbackSessionID
-     * 
+     * <p>
      * A GUID that identifies the playback session. This value is used in HTTP requests. Can be nil.
-     * 
+     * <p>
      * If nil is returned the GUID is unknown. Corresponds to "cs-guid".
-     * 				This property is not observable.
+     * This property is not observable.
      */
     @Generated
     @Selector("playbackSessionID")
@@ -245,11 +245,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * [@property]		serverAddress
-     * 
+     * <p>
      * The IP address of the server that was the source of the error. Can be nil.
-     * 
+     * <p>
      * If nil is returned the address is unknown. Can be either an IPv4 or IPv6 address. Corresponds to "s-ip".
-     * 				This property is not observable.
+     * This property is not observable.
      */
     @Generated
     @Selector("serverAddress")

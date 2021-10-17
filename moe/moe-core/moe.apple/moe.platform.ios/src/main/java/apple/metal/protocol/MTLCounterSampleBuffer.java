@@ -15,7 +15,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLCounterSampleBuffer
- * 
+ * <p>
  * The Counter Sample Buffer contains opaque counter samples as well
  * as state needed to request a sample from the API.
  */
@@ -43,14 +43,14 @@ public interface MTLCounterSampleBuffer {
 
     /**
      * resolveCounterRange:
-     * 
+     * <p>
      * Resolve the counters from the sample buffer to an NSData containing
      * the counter values.  This may only be used with sample buffers that have
      * MTLStorageModeShared.
-     * 
+     * <p>
      * Samples that encountered an error during resolve will be set to
      * MTLCounterErrorValue.
-     * 
+     *
      * @param range The range of indices in the sample buffer to resolve.
      * @return The resolved samples.
      */

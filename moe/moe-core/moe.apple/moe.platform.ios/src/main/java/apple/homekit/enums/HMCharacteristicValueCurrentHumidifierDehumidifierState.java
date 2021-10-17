@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueCurrentHumidifierDehumidifierState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueCurrentHumidifierDehumidifierStateInactive       Inactive.
  * [@constant]  HMCharacteristicValueCurrentHumidifierDehumidifierStateIdle           Idle.
  * [@constant]  HMCharacteristicValueCurrentHumidifierDehumidifierStateHumidifying    Humidifying.

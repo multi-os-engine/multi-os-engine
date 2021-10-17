@@ -29,9 +29,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNDilatedPoolingMax
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Specifies the dilated max pooling filter.  For each pixel, returns the maximum value of pixels
- *             in the kernelWidth x kernelHeight filter region by step size dilationRateX x dilationRateY.
+ * in the kernelWidth x kernelHeight filter region by step size dilationRateX x dilationRateY.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -93,7 +93,7 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
 
     /**
      * [@property]   dilationRateX
-     * 
+     * <p>
      * dilationRateX for accessing the image passed in as source
      */
     @Generated
@@ -103,7 +103,7 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
 
     /**
      * [@property]   dilationRateY
-     * 
+     * <p>
      * dilationRateY for accessing the image passed in as source
      */
     @Generated
@@ -126,12 +126,12 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * See @ref MPSKernel.h initWithCoder.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNDilatedPoolingMax
-     * @param      device      The MTLDevice on which to make the MPSCNNDilatedPoolingMax
-     * @return     A new MPSCNNDilatedPoolingMax object, or nil if failure.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSCNNDilatedPoolingMax
+     * @param device   The MTLDevice on which to make the MPSCNNDilatedPoolingMax
+     * @return A new MPSCNNDilatedPoolingMax object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -149,15 +149,15 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
 
     /**
      * Initialize a MPSCNNDilatedPoolingMax pooling filter
-     * 
-     * @param      device              The device the filter will run on
-     * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
-     * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.
-     * @param      dilationRateX       The dilation rate in the x dimension.
-     * @param      dilationRateY       The dilation rate in the y dimension.
-     * @param      strideInPixelsX     The output stride (downsampling factor) in the x dimension.
-     * @param      strideInPixelsY     The output stride (downsampling factor) in the y dimension.
-     * @return     A valid MPSCNNDilatedPoolingMax object or nil, if failure.
+     *
+     * @param device          The device the filter will run on
+     * @param kernelWidth     The width of the kernel.  Can be an odd or even value.
+     * @param kernelHeight    The height of the kernel.  Can be an odd or even value.
+     * @param dilationRateX   The dilation rate in the x dimension.
+     * @param dilationRateY   The dilation rate in the y dimension.
+     * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
+     * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
+     * @return A valid MPSCNNDilatedPoolingMax object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:dilationRateX:dilationRateY:strideInPixelsX:strideInPixelsY:")

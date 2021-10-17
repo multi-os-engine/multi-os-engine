@@ -625,7 +625,7 @@ public class NSNumberFormatter extends NSFormatter {
 
     /**
      * Even though NSNumberFormatter responds to the usual NSFormatter methods,
-     *   here are some convenience methods which are a little more obvious.
+     * here are some convenience methods which are a little more obvious.
      */
     @Generated
     @Selector("stringFromNumber:")

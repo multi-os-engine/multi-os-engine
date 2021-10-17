@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEHotspotConfigurationEAPType
- * 
+ * <p>
  * EAP Type.
  * [@const] NEHotspotConfigurationEAPTypeTLS EAP-TLS.
  * [@const] NEHotspotConfigurationEAPTypeTTLS TTLS.

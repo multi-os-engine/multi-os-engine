@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The GCXboxGamepad profile represents any supported Xbox controller.
- * 
+ *
  * @see GCExtendedGamepad
  */
 @Generated
@@ -124,12 +124,12 @@ public class GCXboxGamepad extends GCExtendedGamepad {
 
     /**
      * Some Xbox controller variants can support up to four additional buttons.
-     * 
+     * <p>
      * [@example] The standard Bluetooth-enabled Xbox Wireless Controller does not have paddle buttons
      * [@example] The Xbox Elite Wireless Controller has four extra digital buttons.
-     * 
+     * <p>
      * [@note] The four extra digital buttons on the Xbox Elite Wireless Controller are only directly addressable when the controller
-     *    is on its default mapping profile. Otherwise, the paddle buttons are directly bound to other inputs on the controller.
+     * is on its default mapping profile. Otherwise, the paddle buttons are directly bound to other inputs on the controller.
      */
     @Generated
     @Selector("paddleButton1")
@@ -167,4 +167,18 @@ public class GCXboxGamepad extends GCExtendedGamepad {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Some Xbox controller variants feature a Share button.
+     * <p>
+     * [@example] The Bluetooth-enabled Xbox Wireless Controller introduced with the Xbox Series X and Xbox Series S in 2020
+     * has a Share button.
+     * <p>
+     * [@note] The Share button is reserved by the system for screenshot and video recording gestures. If you wish to disable these
+     * gestures in your app and take control of the Share button, set buttonShare.preferredSystemGestureState to
+     * GCSystemGestureStateDisabled.
+     */
+    @Generated
+    @Selector("buttonShare")
+    public native GCControllerButtonInput buttonShare();
 }

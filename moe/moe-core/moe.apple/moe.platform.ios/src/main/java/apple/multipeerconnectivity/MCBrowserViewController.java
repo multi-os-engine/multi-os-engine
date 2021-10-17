@@ -49,34 +49,34 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MCBrowserViewController
- * 
+ * <p>
  * The
- *      MCBrowserViewController class manages the system-supplied user
- *      interface for choosing peers to connect with for multipeer sessions.
- * 
- *      MCBrowserViewController manages presentation of nearby peers and the
- *      invite process for you. The invite process is driven by the user
- *      and handled by the peer picker and the MCNearbyServiceBrowser object
- *      it holds.
- * 
- *      MCBrowserViewController must be initialized with a
- *      MCNearbyServiceBrowser object and a MCSession object at init time.
- *      If the browser object's delegate is nil, the browser view controller
- *      will set itself as the browser's delegate. The session object will be
- *      used by the browser view controller during the invite process.
- *      A delegate that conforms to the MCBrowserViewControllerDelegate
- *      protocol must also be provided. The delegate is notified to decide
- *      whether to present a peer, when the user taps the done button, or when
- *      the users taps the cancel button. No assumption should be made as to
- *      which queue the callbacks are called on.
- * 
- *      When presented, the browser view controller looks for nearby peers,
- *      and allows the user to connect up to the specified maximum number of
- *      peers.  When the user taps on a nearby peer, the browser view
- *      controller will send an invitation to it.
- * 
- *      When the browser view controller is dismissed, it will stop looking
- *      for nearby peers.
+ * MCBrowserViewController class manages the system-supplied user
+ * interface for choosing peers to connect with for multipeer sessions.
+ * <p>
+ * MCBrowserViewController manages presentation of nearby peers and the
+ * invite process for you. The invite process is driven by the user
+ * and handled by the peer picker and the MCNearbyServiceBrowser object
+ * it holds.
+ * <p>
+ * MCBrowserViewController must be initialized with a
+ * MCNearbyServiceBrowser object and a MCSession object at init time.
+ * If the browser object's delegate is nil, the browser view controller
+ * will set itself as the browser's delegate. The session object will be
+ * used by the browser view controller during the invite process.
+ * A delegate that conforms to the MCBrowserViewControllerDelegate
+ * protocol must also be provided. The delegate is notified to decide
+ * whether to present a peer, when the user taps the done button, or when
+ * the users taps the cancel button. No assumption should be made as to
+ * which queue the callbacks are called on.
+ * <p>
+ * When presented, the browser view controller looks for nearby peers,
+ * and allows the user to connect up to the specified maximum number of
+ * peers.  When the user taps on a nearby peer, the browser view
+ * controller will send an invitation to it.
+ * <p>
+ * When the browser view controller is dismissed, it will stop looking
+ * for nearby peers.
  */
 @Generated
 @Library("MultipeerConnectivity")
@@ -175,10 +175,6 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
-
-    @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
 
     @Generated
     @Selector("resolveClassMethod:")

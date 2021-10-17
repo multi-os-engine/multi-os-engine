@@ -92,10 +92,10 @@ public class MPSNNReductionSpatialMeanGradientNode extends MPSNNGradientFilterNo
 
     /**
      * A node to represent the gradient of a spatial mean reduction node.
-     * 
-     * @param sourceGradient   The input gradient from the 'downstream' gradient filter.
-     * @param sourceImage      The input image from the forward spatial mean reduction node.
-     * @return  A MPSNNReductionSpatialMeanGradientNode
+     *
+     * @param sourceGradient The input gradient from the 'downstream' gradient filter.
+     * @param sourceImage    The input image from the forward spatial mean reduction node.
+     * @return A MPSNNReductionSpatialMeanGradientNode
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:")
@@ -131,10 +131,10 @@ public class MPSNNReductionSpatialMeanGradientNode extends MPSNNGradientFilterNo
 
     /**
      * A node to represent the gradient of a spatial mean reduction node.
-     * 
-     * @param sourceGradient   The input gradient from the 'downstream' gradient filter.
-     * @param sourceImage      The input image from the forward spatial mean reduction node.
-     * @return  A MPSNNReductionSpatialMeanGradientNode
+     *
+     * @param sourceGradient The input gradient from the 'downstream' gradient filter.
+     * @param sourceImage    The input image from the forward spatial mean reduction node.
+     * @return A MPSNNReductionSpatialMeanGradientNode
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:")

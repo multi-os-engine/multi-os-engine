@@ -37,12 +37,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface HMCameraSnapshotControlDelegate {
     /**
      * Informs the delegate that the snapshot was taken.
-     * 
+     *
      * @param cameraSnapshotControl Sender of this message.
-     * 
-     * @param snapshot Snapshot will be valid if snapshot was successfully taken.
-     * 
-     * @param error Error will be populated if the snapshot could not be taken.
+     * @param snapshot              Snapshot will be valid if snapshot was successfully taken.
+     * @param error                 Error will be populated if the snapshot could not be taken.
      */
     @Generated
     @IsOptional
@@ -54,7 +52,7 @@ public interface HMCameraSnapshotControlDelegate {
 
     /**
      * Informs the delegate that the mostRecentSnapshot was updated.
-     * 
+     *
      * @param cameraSnapshotControl Sender of this message.
      */
     @Generated

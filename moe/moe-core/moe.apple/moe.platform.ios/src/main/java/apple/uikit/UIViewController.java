@@ -168,19 +168,6 @@ public class UIViewController extends UIResponder
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
-    /**
-     * prepareInterstitials
-     * 
-     * Ads involve network requests, so if an application needs to use interstitial
-     * ads and wants to ensure early availability, this method can be called to trigger
-     * a prefetch. If this method is not called, the first fetch will occur when a
-     * view controller's interstitialPresentationPolicy is set to something other
-     * than ADInterstitialPresentationPolicyNone.
-     */
-    @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
     @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
@@ -269,22 +256,6 @@ public class UIViewController extends UIResponder
     @Selector("bottomLayoutGuide")
     @MappedReturn(ObjCObjectMapper.class)
     public native UILayoutSupport bottomLayoutGuide();
-
-    /**
-     * [@property] canDisplayBannerAds
-     * 
-     * Set this to enable automatic management of banner ad display with the view controller.
-     * It's important to note that this will modify the view hierarchy of the view controller
-     * by inserting a new container view above the view controller's view. The impact
-     * is that the view controller's view property will no longer return the originally
-     * provided view, it will return the new container. To access the original view,
-     * use the originalContentView property.
-     * 
-     * @see originalContentView
-     */
-    @Generated
-    @Selector("canDisplayBannerAds")
-    public native boolean canDisplayBannerAds();
 
     @Generated
     @Selector("canPerformUnwindSegueAction:fromViewController:withSender:")
@@ -480,19 +451,6 @@ public class UIViewController extends UIResponder
     @NInt
     public native long interfaceOrientation();
 
-    /**
-     * [@property] interstitialPresentationPolicy
-     * 
-     * The presentation policy determines whether the timing of presentation is entirely
-     * managed by the framework or should only take place when the application calls
-     * -requestInterstitialAdPresentation. By default the policy is "None", so to be
-     * able to present an interstitial it must be changed to either "Automatic" or "Manual".
-     */
-    @Generated
-    @Selector("interstitialPresentationPolicy")
-    @NInt
-    public native long interstitialPresentationPolicy();
-
     @Generated
     @Selector("isBeingDismissed")
     public native boolean isBeingDismissed();
@@ -506,15 +464,6 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("isBeingPresented")
     public native boolean isBeingPresented();
-
-    /**
-     * [@property] displayingBannerAd
-     * 
-     * Can be used to query the controller to determine if it is displaying a banner ad.
-     */
-    @Generated
-    @Selector("isDisplayingBannerAd")
-    public native boolean isDisplayingBannerAd();
 
     @Generated
     @Selector("isEditing")
@@ -545,16 +494,6 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("isMovingToParentViewController")
     public native boolean isMovingToParentViewController();
-
-    /**
-     * [@property] presentingFullScreenAd
-     * 
-     * Can be used to query the controller to determine if it is presenting a full screen
-     * ad, which may be an interstitial or the iAd shown when the user taps a banner.
-     */
-    @Generated
-    @Selector("isPresentingFullScreenAd")
-    public native boolean isPresentingFullScreenAd();
 
     @Generated
     @Selector("isViewLoaded")
@@ -642,19 +581,6 @@ public class UIViewController extends UIResponder
     @Selector("objectRestorationClass")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIObjectRestoration objectRestorationClass();
-
-    /**
-     * [@property] originalContentView
-     * 
-     * If banner ads have not been enabled, originalContentView will return the view
-     * controller's view. If banner ads are enabled, originalContentView returns the
-     * view that was previously the view controller's view. If banner ads are then subsequently
-     * disabled, the view controller's content view will remain embedded - that operation
-     * will not be reversed.
-     */
-    @Generated
-    @Selector("originalContentView")
-    public native UIView originalContentView();
 
     @Generated
     @Selector("overrideTraitCollectionForChildViewController:")
@@ -805,21 +731,6 @@ public class UIViewController extends UIResponder
     @Selector("removeKeyCommand:")
     public native void removeKeyCommand(UIKeyCommand keyCommand);
 
-    /**
-     * requestInterstitialAdPresentation
-     * 
-     * Call at any time to request that an interstitial ad be presented. This is appropriate
-     * for view controllers that are on screen for long periods of time and internally
-     * manage significant state changes, such as game levels. Returns YES if an interstitial
-     * will be presented.
-     * 
-     * @return
-     * Returns YES if an interstitial can be displayed, NO if not.
-     */
-    @Generated
-    @Selector("requestInterstitialAdPresentation")
-    public native boolean requestInterstitialAdPresentation();
-
     @Generated
     @Selector("restorationClass")
     @MappedReturn(ObjCObjectMapper.class)
@@ -890,22 +801,6 @@ public class UIViewController extends UIResponder
     public native void setAutomaticallyAdjustsScrollViewInsets(boolean value);
 
     /**
-     * [@property] canDisplayBannerAds
-     * 
-     * Set this to enable automatic management of banner ad display with the view controller.
-     * It's important to note that this will modify the view hierarchy of the view controller
-     * by inserting a new container view above the view controller's view. The impact
-     * is that the view controller's view property will no longer return the originally
-     * provided view, it will return the new container. To access the original view,
-     * use the originalContentView property.
-     * 
-     * @see originalContentView
-     */
-    @Generated
-    @Selector("setCanDisplayBannerAds:")
-    public native void setCanDisplayBannerAds(boolean value);
-
-    /**
      * contentSizeForViewInPopover allows you to set the size of the content from within the view controller. This property is read/write, and you should generally not override it.
      */
     @Generated
@@ -949,18 +844,6 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("setHidesBottomBarWhenPushed:")
     public native void setHidesBottomBarWhenPushed(boolean value);
-
-    /**
-     * [@property] interstitialPresentationPolicy
-     * 
-     * The presentation policy determines whether the timing of presentation is entirely
-     * managed by the framework or should only take place when the application calls
-     * -requestInterstitialAdPresentation. By default the policy is "None", so to be
-     * able to present an interstitial it must be changed to either "Automatic" or "Manual".
-     */
-    @Generated
-    @Selector("setInterstitialPresentationPolicy:")
-    public native void setInterstitialPresentationPolicy(@NInt long value);
 
     /**
      * This controls whether this view controller takes over control of the status bar's appearance when presented non-full screen on another view controller. Defaults to NO.
@@ -1133,22 +1016,6 @@ public class UIViewController extends UIResponder
     public native boolean shouldPerformSegueWithIdentifierSender(String identifier,
             @Mapped(ObjCObjectMapper.class) Object sender);
 
-    /**
-     * shouldPresentInterstitialAd
-     * 
-     * Subclasses should override this method if they use ADInterstitialPresentationPolicyAutomatic
-     * and require the ability to selectively prevent presentation based on application
-     * state. The method will be invoked when the framework is about to present an interstitial
-     * ad in the ADInterstitialPresentationPolicyAutomatic configuration.
-     * 
-     * @return
-     * Should return YES to allow presentation to proceed, NO to prevent it. The default
-     * implementation always returns YES.
-     */
-    @Generated
-    @Selector("shouldPresentInterstitialAd")
-    public native boolean shouldPresentInterstitialAd();
-
     @Generated
     @Selector("shouldUpdateFocusInContext:")
     public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
@@ -1163,7 +1030,7 @@ public class UIViewController extends UIResponder
 
     /**
      * This method will show a view controller appropriately for the current size-class environment. It's implementation calls
-     * `[self targetViewControllerForAction:sender:]` first and redirects accordingly if the return value is not `self`, otherwise it will present the vc. 
+     * `[self targetViewControllerForAction:sender:]` first and redirects accordingly if the return value is not `self`, otherwise it will present the vc.
      */
     @Generated
     @Selector("showViewController:sender:")
@@ -1303,11 +1170,11 @@ public class UIViewController extends UIResponder
 
     /**
      * Base implementation sends -updateConstraints to the view.
-     * When a view has a view controller, this message is sent to the view controller during 
-     *  the autolayout updateConstraints pass in lieu of sending updateConstraints directly
-     *  to the view.
-     * You may override this method in a UIViewController subclass for updating custom 
-     *  constraints instead of subclassing your view and overriding -[UIView updateConstraints].
+     * When a view has a view controller, this message is sent to the view controller during
+     * the Auto Layout updateConstraints pass in lieu of sending updateConstraints directly
+     * to the view.
+     * You may override this method in a UIViewController subclass for updating custom
+     * constraints instead of subclassing your view and overriding -[UIView updateConstraints].
      * Overrides must call super or send -updateConstraints to the view.
      */
     @Generated
@@ -1346,7 +1213,7 @@ public class UIViewController extends UIResponder
     public native void viewDidDisappear(boolean animated);
 
     /**
-     * Called just after the view controller's view's layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a nop.
+     * Called just after the view controller's view's layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a no-op.
      */
     @Generated
     @Selector("viewDidLayoutSubviews")
@@ -1389,7 +1256,7 @@ public class UIViewController extends UIResponder
     public native void viewWillDisappear(boolean animated);
 
     /**
-     * Called just before the view controller's view's layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a nop.
+     * Called just before the view controller's view's layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a no-op.
      */
     @Generated
     @Selector("viewWillLayoutSubviews")
@@ -1439,13 +1306,13 @@ public class UIViewController extends UIResponder
      * controllers. If they are overridden, the overrides should ensure to call the super. The parent argument in
      * both of these methods is nil when a child is being removed from its parent; otherwise it is equal to the new
      * parent view controller.
-     * 
+     * <p>
      * addChildViewController: will call [child willMoveToParentViewController:self] before adding the
      * child. However, it will not call didMoveToParentViewController:. It is expected that a container view
      * controller subclass will make this call after a transition to the new child has completed or, in the
      * case of no transition, immediately after the call to addChildViewController:. Similarly,
      * removeFromParentViewController does not call [self willMoveToParentViewController:nil] before removing the
-     * child. This is also the responsibilty of the container subclass. Container subclasses will typically define
+     * child. This is also the responsibility of the container subclass. Container subclasses will typically define
      * a method that transitions to a new child by first calling addChildViewController:, then executing a
      * transition which will add the new child's view into the view hierarchy of its parent, and finally will call
      * didMoveToParentViewController:. Similarly, subclasses will typically define a method that removes a child in
@@ -1627,7 +1494,7 @@ public class UIViewController extends UIResponder
 
     /**
      * Determines whether the receiver continues to respond to actions while it is presenting a view controller modally.
-     * 
+     * <p>
      * Defaults to YES. You can change the default return value by providing a value for UIViewControllerPerformsActionsWhilePresentingModally in your Info.plist file.
      */
     @Generated
@@ -1656,7 +1523,6 @@ public class UIViewController extends UIResponder
     public native UIViewController childViewControllerForPointerLock();
 
     @Generated
-    @IsOptional
     @Selector("focusGroupIdentifier")
     public native String focusGroupIdentifier();
 
@@ -1675,4 +1541,37 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("setNeedsUpdateOfPrefersPointerLocked")
     public native void setNeedsUpdateOfPrefersPointerLocked();
+
+    /**
+     * Subclass overrides will be called when available
+     */
+    @Generated
+    @Selector("contentScrollViewForEdge:")
+    public native UIScrollView contentScrollViewForEdge(@NUInt long edge);
+
+    /**
+     * Depending on the value passed in the `edge` parameter, a containing UINavigationController,
+     * UITabBarController, or both will observe the UIScrollView instance in the
+     * `contentScrollView` parameter to determine the background blur for the bars and to
+     * update contentInset adjustments for the scroll view.
+     * <p>
+     * When contentScrollView is nil for an edge, UIKit uses a heuristic to search for
+     * a UIScrollView to track. If none is found, the relevant bar will be transparent unless
+     * otherwise customized with the `scrollEdgeAppearance` APIs.
+     * Aggregate values (e.g., NSDirectionalRectEdgeAll) are accepted in the `edge` parameter; NSDirectionalRectEdgeLeading and Trailing are ignored on iOS 15.0
+     */
+    @Generated
+    @Selector("setContentScrollView:forEdge:")
+    public native void setContentScrollViewForEdge(UIScrollView scrollView, @NUInt long edge);
+
+    /**
+     * The identifier of the focus group that this view controller belongs to. If this is nil, the view controller inherits the focus group of its parent focus environment.
+     */
+    @Generated
+    @Selector("setFocusGroupIdentifier:")
+    public native void setFocusGroupIdentifier(String value);
+
+    @Generated
+    @Selector("sheetPresentationController")
+    public native UISheetPresentationController sheetPresentationController();
 }

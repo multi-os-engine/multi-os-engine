@@ -168,21 +168,21 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
 
     /**
      * Supplementary items are positioned (i.e. anchored) to coordinate spaces throughout the layout
-     *   In this example, a supplementary is anchored to the top+trailing edge of a cell.
-     *   Supplementary items can be anchored to items (and groups, since a group is-a item)
-     *   Boundary supplementary items can be anchored to sections and the global layout
-     * 
-     *                               +-----+       +------------------------------------------+
-     *                               |~~~~~|       | edges: [.top,.trailing]                  |
-     *  +----------------------------+~~~~~|<------+ fractionalOffset: CGPoint(x:0.5,y:-0.5)  |
-     *  |                            |~~~~~|       +------------------------------------------+
-     *  |                            +--+--+
-     *  |                               |
-     *  |                               |
-     *  |                               |
-     *  |                               |
-     *  +-------------------------------+
-     * 
+     * In this example, a supplementary is anchored to the top+trailing edge of a cell.
+     * Supplementary items can be anchored to items (and groups, since a group is-a item)
+     * Boundary supplementary items can be anchored to sections and the global layout
+     * <p>
+     * +-----+       +------------------------------------------+
+     * |~~~~~|       | edges: [.top,.trailing]                  |
+     * +----------------------------+~~~~~|<------+ fractionalOffset: CGPoint(x:0.5,y:-0.5)  |
+     * |                            |~~~~~|       +------------------------------------------+
+     * |                            +--+--+
+     * |                               |
+     * |                               |
+     * |                               |
+     * |                               |
+     * +-------------------------------+
+     * <p>
      * Container anchors are used to specify positioning of an item within the host geometry (e.g. item, group, section)
      */
     @Generated
@@ -191,12 +191,12 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
             NSCollectionLayoutSize layoutSize, String elementKind, NSCollectionLayoutAnchor containerAnchor);
 
     /**
-     *                                                   +----------------------------------------------------+
-     *                                   +-----+         |* Container Anchor                                  |
-     *                                   |~~~~~|         |edges: [.top,.trailing] offset: CGPoint(x:10,y:-10) |
-     *                                   |~~~~~|<--------|                                                    |
-     *                                   |~~~~~|         |* Item Anchor:                                      |
-     *                                   +-----+         |edges: [.bottom, .leading]                          |
+     * +----------------------------------------------------+
+     * +-----+         |* Container Anchor                                  |
+     * |~~~~~|         |edges: [.top,.trailing] offset: CGPoint(x:10,y:-10) |
+     * |~~~~~|<--------|                                                    |
+     * |~~~~~|         |* Item Anchor:                                      |
+     * +-----+         |edges: [.bottom, .leading]                          |
      * +-------------------------------+                 +----------------------------------------------------+
      * |                               |
      * |                               |
@@ -205,9 +205,9 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
      * |                               |
      * |                               |
      * +-------------------------------+
-     * 
+     * <p>
      * Combine a container anchor with an item anchor for fine-grained positioning.
-     *   Optionally add an offset for additional refinement.
+     * Optionally add an offset for additional refinement.
      */
     @Generated
     @Selector("supplementaryItemWithLayoutSize:elementKind:containerAnchor:itemAnchor:")

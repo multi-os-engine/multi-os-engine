@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueLabelNamespace
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueLabelNamespaceDot                      Service labels are dots.
  * [@constant]  HMCharacteristicValueLabelNamespaceNumeral                  Service labels are Arabic numerals.
  */

@@ -168,4 +168,27 @@ public class PKShareablePassMetadata extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("accountHash")
+    public native String accountHash();
+
+    @Generated
+    @Selector("initWithProvisioningCredentialIdentifier:sharingInstanceIdentifier:passThumbnailImage:ownerDisplayName:localizedDescription:accountHash:templateIdentifier:relyingPartyIdentifier:requiresUnifiedAccessCapableDevice:")
+    public native PKShareablePassMetadata initWithProvisioningCredentialIdentifierSharingInstanceIdentifierPassThumbnailImageOwnerDisplayNameLocalizedDescriptionAccountHashTemplateIdentifierRelyingPartyIdentifierRequiresUnifiedAccessCapableDevice(
+            String credentialIdentifier, String sharingInstanceIdentifier, CGImageRef passThumbnailImage,
+            String ownerDisplayName, String localizedDescription, String accountHash, String templateIdentifier,
+            String relyingPartyIdentifier, boolean requiresUnifiedAccessCapableDevice);
+
+    @Generated
+    @Selector("relyingPartyIdentifier")
+    public native String relyingPartyIdentifier();
+
+    @Generated
+    @Selector("requiresUnifiedAccessCapableDevice")
+    public native boolean requiresUnifiedAccessCapableDevice();
+
+    @Generated
+    @Selector("templateIdentifier")
+    public native String templateIdentifier();
 }

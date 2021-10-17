@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Sort order for contacts.
- * 
+ * <p>
  * CNContactSortOrderUserDefault is the user's preferred sort order.
  */
 @Generated

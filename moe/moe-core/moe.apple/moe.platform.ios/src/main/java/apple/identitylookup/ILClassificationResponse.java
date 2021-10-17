@@ -152,7 +152,7 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
     /**
      * The JSON representation of this dictionary will be sent when a value for
      * ILClassificationExtensionNetworkReportDestination has been set in the extension's Info.plist
-     * 
+     * <p>
      * The keys and values in this dictionary must conform to the NSJSONSerialization specifications:
      * - Top level object is an NSDictionary
      * - All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull
@@ -192,7 +192,7 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
     /**
      * The JSON representation of this dictionary will be sent when a value for
      * ILClassificationExtensionNetworkReportDestination has been set in the extension's Info.plist
-     * 
+     * <p>
      * The keys and values in this dictionary must conform to the NSJSONSerialization specifications:
      * - Top level object is an NSDictionary
      * - All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull

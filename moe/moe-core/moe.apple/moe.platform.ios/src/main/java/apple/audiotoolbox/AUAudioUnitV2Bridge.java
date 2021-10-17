@@ -47,16 +47,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Wraps a v2 audio unit in an AUAudioUnit subclass.
- * 
- * 	Implementors of version 3 audio units may derive their implementations from
- * 	AUAudioUnitV2Bridge. It expects the component description with which it is initialized to
- * 	refer to a registered component with a v2 implementation using an
- * 	AudioComponentFactoryFunction. The bridge will instantiate the v2 audio unit via the factory
- * 	function and communicate it with it using the v2 AudioUnit API's (AudioUnitSetProperty,
- * 	etc.)
- * 
- * 	Hosts should not access this class; it will be instantiated when needed when creating an
- * 	AUAudioUnit.
+ * <p>
+ * Implementors of version 3 audio units may derive their implementations from
+ * AUAudioUnitV2Bridge. It expects the component description with which it is initialized to
+ * refer to a registered component with a v2 implementation using an
+ * AudioComponentFactoryFunction. The bridge will instantiate the v2 audio unit via the factory
+ * function and communicate it with it using the v2 AudioUnit API's (AudioUnitSetProperty,
+ * etc.)
+ * <p>
+ * Hosts should not access this class; it will be instantiated when needed when creating an
+ * AUAudioUnit.
  */
 @Generated
 @Library("AudioToolbox")

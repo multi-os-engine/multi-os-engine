@@ -108,8 +108,8 @@ public class CIImageAccumulator extends NSObject {
     /**
      * Create a new accumulator object.
      * For pixel format options see CIImage.h.
-     * The specified color space is used to render the image. 
-     * If no color space is specified, no color matching is done. 
+     * The specified color space is used to render the image.
+     * If no color space is specified, no color matching is done.
      * The return values will be null if the format is unsupported or the extent is too big.
      */
     @Generated

@@ -151,8 +151,8 @@ public class SKTextureAtlas extends NSObject implements NSSecureCoding {
 
     /**
      * Start a texture atlas preload operation on an array of texture atlas
-     * 
-     * @param textureAtlases an array of SKTextureAtlas to be preloaded
+     *
+     * @param textureAtlases    an array of SKTextureAtlas to be preloaded
      * @param completionHandler will be called upon the preload completion
      */
     @Generated
@@ -165,8 +165,8 @@ public class SKTextureAtlas extends NSObject implements NSSecureCoding {
      * Start a texture atlas preload operation on an array of texture atlas identifiers, error == nil if all atlases were found,
      * else an NSError is returned and the user info will contain a list of the atlases that couldn't be found
      * the ones that could be found are looked up and prefetched.
-     * 
-     * @param atlasNames is an array of the SKTextureAtlas, that were located and preloaded.
+     *
+     * @param atlasNames        is an array of the SKTextureAtlas, that were located and preloaded.
      * @param completionHandler will be called upon the preload completion.
      */
     @Generated

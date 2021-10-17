@@ -52,9 +52,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MSStickerView
- * 
+ * <p>
  * A UIView subclass that can display sticker assets.
- * 
+ * <p>
  * This class is a UIView subclass intended to display stickers. It provides
  * drag and drop functionality so that user may drag the displayed sticker from this
  * view and place it in the Messages transcript.
@@ -359,7 +359,7 @@ public class MSStickerView extends UIView {
 
     /**
      * [@property]   animationDuration
-     * 
+     * <p>
      * The amount of time it takes to go through one cycle of the sticker animation.
      */
     @Generated
@@ -427,7 +427,7 @@ public class MSStickerView extends UIView {
 
     /**
      * initWithFrame:sticker:
-     * 
+     * <p>
      * Initializes a MSStickerView with a frame and a MSSticker conforming object to display.
      */
     @Generated
@@ -436,7 +436,7 @@ public class MSStickerView extends UIView {
 
     /**
      * isAnimating
-     * 
+     * <p>
      * Returns a Boolean value indicating whether the animation is running.
      */
     @Generated
@@ -445,9 +445,9 @@ public class MSStickerView extends UIView {
 
     /**
      * [@property]   sticker
-     * 
+     * <p>
      * The MSSticker object to display.
-     * 
+     * <p>
      * Set this property to nil to remove the current sticker. Setting the
      * sticker property does not change the size of a MSStickerView. Call sizeToFit to
      * adjust the size of the view to match the sticker.
@@ -458,9 +458,9 @@ public class MSStickerView extends UIView {
 
     /**
      * startAnimating
-     * 
+     * <p>
      * Starts animating the sticker in the receiver.
-     * 
+     * <p>
      * This method always starts the animation from the first frame.
      */
     @Generated
@@ -469,9 +469,9 @@ public class MSStickerView extends UIView {
 
     /**
      * [@property]   sticker
-     * 
+     * <p>
      * The MSSticker object to display.
-     * 
+     * <p>
      * Set this property to nil to remove the current sticker. Setting the
      * sticker property does not change the size of a MSStickerView. Call sizeToFit to
      * adjust the size of the view to match the sticker.
@@ -482,7 +482,7 @@ public class MSStickerView extends UIView {
 
     /**
      * stopAnimating
-     * 
+     * <p>
      * Stops animating the sticker in the receiver.
      */
     @Generated

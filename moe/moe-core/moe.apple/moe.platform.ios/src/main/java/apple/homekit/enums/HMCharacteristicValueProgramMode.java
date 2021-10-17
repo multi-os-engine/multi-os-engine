@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueProgramMode
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueProgramModeNotScheduled                No programs scheduled.
  * [@constant]  HMCharacteristicValueProgramModeScheduled                   Program scheduled.
  * [@constant]  HMCharacteristicValueProgramModeScheduleOverriddenToManual  Schedule currently overridden to manual mode.

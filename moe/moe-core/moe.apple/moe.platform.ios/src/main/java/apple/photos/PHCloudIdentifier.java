@@ -5,6 +5,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -30,7 +31,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PHCloudIdentifier extends NSObject implements NSSecureCoding {
+public class PHCloudIdentifier extends NSObject implements NSSecureCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -135,13 +136,6 @@ public class PHCloudIdentifier extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
 
-    /**
-     * If there is a failure to determine the global identifier for a local identifier, the notFoundIdentifier is provided in that array slot.
-     */
-    @Generated
-    @Selector("notFoundIdentifier")
-    public static native PHCloudIdentifier notFoundIdentifier();
-
     @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
@@ -176,4 +170,10 @@ public class PHCloudIdentifier extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
 }

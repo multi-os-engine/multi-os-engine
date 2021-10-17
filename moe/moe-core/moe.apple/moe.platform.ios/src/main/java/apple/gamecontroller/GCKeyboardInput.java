@@ -26,7 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Keyboard profile. Contains the current state of buttons specified in GCKeyCodes.h.
- * 
+ * <p>
  * GCKeyboardInput is designed primarly for input polling. For the best text input experience, UIKit/AppKit usage is recommended.
  */
 @Generated
@@ -63,10 +63,10 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
 
     /**
      * Alongside general subscript notation of GCPhysicalInputProfile keys can be accessed using this method.
-     * 
+     * <p>
      * [@example] [keyboard buttonForKey:GCKeyCode.UpArrow] == keyboard[GCKeyUpArrow]
      * [@note] Full list of supported key constants can be found in GCKeyCodes.h and GCKeyNames.h
-     * 
+     *
      * @param code is a low level key code that can be used for accessing a keyboard button.
      */
     @Generated

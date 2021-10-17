@@ -19,6 +19,7 @@ package apple.foundation;
 import apple.NSObject;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSProgressReporting;
+import apple.foundation.protocol.NSURLSessionTaskDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -228,12 +229,12 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * Sets a scaling factor for the priority of the task. The scaling factor is a
      * value between 0.0 and 1.0 (inclusive), where 0.0 is considered the lowest
      * priority and 1.0 is considered the highest.
-     * 
+     * <p>
      * The priority is a hint and not a hard requirement of task performance. The
      * priority of a task may be changed using this API at any time, but not all
      * protocols support this; in these cases, the last priority that took effect
      * will be used.
-     * 
+     * <p>
      * If no priority is specified, the task will operate with the default priority
      * as defined by the constant NSURLSessionTaskPriorityDefault. Two additional
      * priority levels are provided: NSURLSessionTaskPriorityLow and
@@ -258,12 +259,12 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * Sets a scaling factor for the priority of the task. The scaling factor is a
      * value between 0.0 and 1.0 (inclusive), where 0.0 is considered the lowest
      * priority and 1.0 is considered the highest.
-     * 
+     * <p>
      * The priority is a hint and not a hard requirement of task performance. The
      * priority of a task may be changed using this API at any time, but not all
      * protocols support this; in these cases, the last priority that took effect
      * will be used.
-     * 
+     * <p>
      * If no priority is specified, the task will operate with the default priority
      * as defined by the constant NSURLSessionTaskPriorityDefault. Two additional
      * priority levels are provided: NSURLSessionTaskPriorityLow and
@@ -334,7 +335,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * Start the network load for this task no earlier than the specified date. If
      * not specified, no start delay is used.
-     * 
+     * <p>
      * Only applies to tasks created from background NSURLSession instances; has no
      * effect for tasks created from other session types.
      */
@@ -362,11 +363,66 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * Start the network load for this task no earlier than the specified date. If
      * not specified, no start delay is used.
-     * 
+     * <p>
      * Only applies to tasks created from background NSURLSession instances; has no
      * effect for tasks created from other session types.
      */
     @Generated
     @Selector("setEarliestBeginDate:")
     public native void setEarliestBeginDate(NSDate value);
+
+    /**
+     * Sets a task-specific delegate. Methods not implemented on this delegate will
+     * still be forwarded to the session delegate.
+     * <p>
+     * Cannot be modified after task resumes. Not supported on background session.
+     * <p>
+     * Delegate is strongly referenced until the task completes, after which it is
+     * reset to `nil`.
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native NSURLSessionTaskDelegate delegate();
+
+    /**
+     * Provides a hint indicating if incremental delivery of a partial response body
+     * would be useful for the application, or if it cannot process the response
+     * until it is complete. Indicating that incremental delivery is not desired may
+     * improve task performance. For example, if a response cannot be decoded until
+     * the entire content is received, set this property to false.
+     * <p>
+     * Defaults to true unless this task is created with completion-handler based
+     * convenience methods, or if it is a download task.
+     */
+    @Generated
+    @Selector("prefersIncrementalDelivery")
+    public native boolean prefersIncrementalDelivery();
+
+    /**
+     * Sets a task-specific delegate. Methods not implemented on this delegate will
+     * still be forwarded to the session delegate.
+     * <p>
+     * Cannot be modified after task resumes. Not supported on background session.
+     * <p>
+     * Delegate is strongly referenced until the task completes, after which it is
+     * reset to `nil`.
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate(@Mapped(ObjCObjectMapper.class) NSURLSessionTaskDelegate value);
+
+    /**
+     * Provides a hint indicating if incremental delivery of a partial response body
+     * would be useful for the application, or if it cannot process the response
+     * until it is complete. Indicating that incremental delivery is not desired may
+     * improve task performance. For example, if a response cannot be decoded until
+     * the entire content is received, set this property to false.
+     * <p>
+     * Defaults to true unless this task is created with completion-handler based
+     * convenience methods, or if it is a download task.
+     */
+    @Generated
+    @Selector("setPrefersIncrementalDelivery:")
+    public native void setPrefersIncrementalDelivery(boolean value);
 }

@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * CLDeviceOrientation
- * 
+ * <p>
  * Discussion:
- *     Specifies a physical device orientation, equivalent to UIDeviceOrientation.
+ * Specifies a physical device orientation, equivalent to UIDeviceOrientation.
  */
 @Generated
 public final class CLDeviceOrientation {

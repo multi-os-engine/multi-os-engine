@@ -12,7 +12,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * The CLSContext provider protocol.
- * 
+ * <p>
  * The app extension that provides CLSContexts should adopt this protocol.
  */
 @Generated
@@ -22,11 +22,11 @@ import org.moe.natj.objc.ann.Selector;
 public interface CLSContextProvider {
     /**
      * This method asks the app extension to update CLSContexts that are descendants of a given context.
-     * 
+     * <p>
      * The extension may choose to modify, delete, or create some or all descendants of the given context. The host app may call this method as the user selects a context.
-     * 
-     * @param         context     A CLSContext whose descendants are to be updated
-     * @param         completion  A completion block the extension should call with an optional error to indicate success or failure.
+     *
+     * @param context    A CLSContext whose descendants are to be updated
+     * @param completion A completion block the extension should call with an optional error to indicate success or failure.
      */
     @Generated
     @Selector("updateDescendantsOfContext:completion:")

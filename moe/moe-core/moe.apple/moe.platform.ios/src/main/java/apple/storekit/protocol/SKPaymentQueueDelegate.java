@@ -17,7 +17,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("SKPaymentQueueDelegate")
 public interface SKPaymentQueueDelegate {
     /**
-     * Sent when a user has initiated a purchase of a Promoted IAP from the App Store
+     * Sent when the storefront changes while a payment is processing.
      */
     @Generated
     @IsOptional

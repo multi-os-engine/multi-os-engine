@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueFilterChange
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueFilterChangeNotNeeded      Filter does not need to be changed.
  * [@constant]  HMCharacteristicValueFilterChangeNeeded         Filter needs to be changed.
  */

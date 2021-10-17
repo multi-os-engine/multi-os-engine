@@ -19,10 +19,12 @@ package apple.uikit;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
+import apple.foundation.NSAttributedStringMarkdownParsingOptions;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
+import apple.foundation.NSLocale;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSMutableAttributedString;
 import apple.foundation.NSSet;
@@ -31,7 +33,9 @@ import apple.foundation.NSURLRequest;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.foundation.struct.NSRange;
 import apple.uikit.protocol.NSTextStorageDelegate;
+import apple.uikit.protocol.NSTextStorageObserving;
 import org.moe.natj.c.ann.FunctionPtr;
+import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
@@ -44,6 +48,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
@@ -58,13 +63,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Note for subclassing NSTextStorage: NSTextStorage is a semi-abstract subclass of NSMutableAttributedString. It implements change management (beginEditing/endEditing), verification of attributes, delegate handling, and layout management notification. The one aspect it does not implement is the actual attributed string storage --- this is left up to the subclassers, which need to override the two NSMutableAttributedString primitives in addition to two NSAttributedString primitives:
- * 
+ * <p>
  * - (NSString *)string;
  * - (NSDictionary *)attributesAtIndex:(NSUInteger)location effectiveRange:(NSRangePointer)range;
- * 
+ * <p>
  * - (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)str;
  * - (void)setAttributes:(NSDictionary *)attrs range:(NSRange)range;
- * 
+ * <p>
  * These primitives should perform the change then call edited:range:changeInLength: to get everything else to happen.
  */
 @Generated
@@ -416,4 +421,79 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     public static native void loadFromHTMLWithStringOptionsCompletionHandler(String string,
             NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_loadFromHTMLWithStringOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithStringOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("initWithContentsOfMarkdownFileAtURL:options:baseURL:error:")
+    public native NSTextStorage initWithContentsOfMarkdownFileAtURLOptionsBaseURLError(NSURL markdownFile,
+            NSAttributedStringMarkdownParsingOptions options, NSURL baseURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Variadic()
+    @Selector("initWithFormat:options:locale:")
+    public native NSTextStorage initWithFormatOptionsLocale(NSAttributedString format, @NUInt long options,
+            NSLocale locale, Object... varargs);
+
+    @Generated
+    @Selector("initWithFormat:options:locale:arguments:")
+    public native NSTextStorage initWithFormatOptionsLocaleArguments(NSAttributedString format, @NUInt long options,
+            NSLocale locale, BytePtr arguments);
+
+    @Generated
+    @Selector("initWithMarkdown:options:baseURL:error:")
+    public native NSTextStorage initWithMarkdownOptionsBaseURLError(NSData markdown,
+            NSAttributedStringMarkdownParsingOptions options, NSURL baseURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("initWithMarkdownString:options:baseURL:error:")
+    public native NSTextStorage initWithMarkdownStringOptionsBaseURLError(String markdownString,
+            NSAttributedStringMarkdownParsingOptions options, NSURL baseURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Variadic()
+    @Selector("localizedAttributedStringWithFormat:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object localizedAttributedStringWithFormat(NSAttributedString format, Object... varargs);
+
+    @Generated
+    @Variadic()
+    @Selector("localizedAttributedStringWithFormat:options:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object localizedAttributedStringWithFormatOptions(NSAttributedString format,
+            @NUInt long options, Object... varargs);
+
+    /**
+     * NSTextStorageObserving ***************************
+     * An object conforming to NSTextStorageObserving observing and retaining NSTextStorage
+     */
+    @Generated
+    @Selector("setTextStorageObserver:")
+    public native void setTextStorageObserver_unsafe(@Mapped(ObjCObjectMapper.class) NSTextStorageObserving value);
+
+    /**
+     * NSTextStorageObserving ***************************
+     * An object conforming to NSTextStorageObserving observing and retaining NSTextStorage
+     */
+    @Generated
+    public void setTextStorageObserver(@Mapped(ObjCObjectMapper.class) NSTextStorageObserving value) {
+        Object __old = textStorageObserver();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setTextStorageObserver_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * NSTextStorageObserving ***************************
+     * An object conforming to NSTextStorageObserving observing and retaining NSTextStorage
+     */
+    @Generated
+    @Selector("textStorageObserver")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native NSTextStorageObserving textStorageObserver();
 }

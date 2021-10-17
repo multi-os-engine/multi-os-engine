@@ -166,7 +166,7 @@ public class AVVideoCompositionRenderContext extends NSObject {
 
     /**
      * hints the custom compositor that it may use higher quality, potentially slower algorithms.
-     * Generally true for non real time use cases. 
+     * Generally true for non real time use cases.
      */
     @Generated
     @Selector("highQualityRendering")

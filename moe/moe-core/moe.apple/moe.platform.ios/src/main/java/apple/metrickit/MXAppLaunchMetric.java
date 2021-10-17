@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXAppLaunchMetric
- * 
+ * <p>
  * An MXMetric subclass that encapsulates app launch metrics.
  */
 @Generated
@@ -96,9 +96,9 @@ public class MXAppLaunchMetric extends MXMetric {
 
     /**
      * [@property]      histogrammedApplicationResumeTime
-     * 
+     * <p>
      * Histogrammed application resume time data.
-     * 
+     * <p>
      * Dimensioned as NSUnitDuration.
      */
     @Generated
@@ -107,11 +107,11 @@ public class MXAppLaunchMetric extends MXMetric {
 
     /**
      * [@property]      histogrammedTimeToFirstDraw
-     * 
+     * <p>
      * Histogrammed application time-to-first-draw data.
-     * 
+     * <p>
      * Dimensioned as NSUnitDuration.
-     * 
+     * <p>
      * This represents the time when the first CA commit is finished.
      */
     @Generated

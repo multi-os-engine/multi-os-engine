@@ -287,9 +287,9 @@ public class NSKeyedArchiver extends NSCoder {
 
     /**
      * Returns an \c NSData object containing the encoded form of the object graph whose root object is given, optionally disabling secure coding.
-     * 
+     * <p>
      * If \c NSSecureCoding cannot be used, \c requiresSecureCoding may be turned off here; for improved security, however, \c requiresSecureCoding should be left enabled whenever possible. \c requiresSecureCoding ensures that all encoded objects conform to \c NSSecureCoding, preventing the possibility of encoding objects which cannot be decoded later.
-     * 
+     * <p>
      * If the object graph cannot be encoded, returns \c nil and sets the \c error out parameter.
      */
     @Generated
@@ -300,9 +300,9 @@ public class NSKeyedArchiver extends NSCoder {
 
     /**
      * Initializes the receiver for encoding an archive, optionally disabling secure coding.
-     * 
+     * <p>
      * If \c NSSecureCoding cannot be used, \c requiresSecureCoding may be turned off here; for improved security, however, \c requiresSecureCoding should be left enabled whenever possible. \c requiresSecureCoding ensures that all encoded objects conform to \c NSSecureCoding, preventing the possibility of encoding objects which cannot be decoded later.
-     * 
+     * <p>
      * To produce archives whose structure matches those previously encoded using \c +archivedDataWithRootObject, encode the top-level object in your archive for the \c NSKeyedArchiveRootObjectKey.
      */
     @Generated

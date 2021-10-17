@@ -46,12 +46,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEPacket
- * 
+ * <p>
  * An NEPacket object represents the data, protocol family, and metadata associated with an IP packet.
  * These packets are used to read and write on an NEPacketTunnelFlow.
- * 
+ * <p>
  * NEPacket is part of NetworkExtension.framework
- * 
+ * <p>
  * Instances of this class are thread safe.
  */
 @Generated
@@ -177,7 +177,7 @@ public class NEPacket extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] data
-     * 
+     * <p>
      * The data content of the packet.
      */
     @Generated
@@ -198,10 +198,10 @@ public class NEPacket extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * initWithData:protocolFamily:
-     * 
+     * <p>
      * Initializes a new NEPacket object with data and protocol family.
-     * 
-     * @param data The content of the packet.
+     *
+     * @param data           The content of the packet.
      * @param protocolFamily The protocol family of the packet (such as AF_INET or AF_INET6).
      */
     @Generated
@@ -210,7 +210,7 @@ public class NEPacket extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] metadata
-     * 
+     * <p>
      * Metadata about the source application and flow for this packet.
      * This property will only be non-nil when the routing method for the NEPacketTunnelProvider
      * is NETunnelProviderRoutingMethodSourceApplication.
@@ -221,7 +221,7 @@ public class NEPacket extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] protocolFamily
-     * 
+     * <p>
      * The protocol family of the packet (such as AF_INET or AF_INET6).
      */
     @Generated

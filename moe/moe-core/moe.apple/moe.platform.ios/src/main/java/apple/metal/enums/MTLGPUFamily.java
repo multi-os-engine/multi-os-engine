@@ -23,4 +23,5 @@ public final class MTLGPUFamily {
     @Generated @NInt public static final long MacCatalyst1 = 0x0000000000000FA1L;
     @Generated @NInt public static final long MacCatalyst2 = 0x0000000000000FA2L;
     @Generated @NInt public static final long Apple7 = 0x00000000000003EFL;
+    @Generated @NInt public static final long Apple8 = 0x00000000000003F0L;
 }

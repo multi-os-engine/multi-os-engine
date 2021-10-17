@@ -39,14 +39,14 @@ import org.moe.natj.objc.ann.Selector;
  * animateTransition: method if needed. If there is no interaction controller,
  * then the system automatically invokes the animator's animateTransition:
  * method.
- * 
+ * <p>
  * The system queries the view controller's transitioningDelegate or the
  * navigation controller's delegate to determine if an animator or interaction
  * controller should be used in a transition. The transitioningDelegate is a new
- * propery on UIViewController and conforms to the
+ * property on UIViewController and conforms to the
  * UIViewControllerTransitioningDelegate protocol defined below. The navigation
  * controller likewise has been augmented with a couple of new delegate methods.
- * 
+ * <p>
  * The UIViewControllerContextTransitioning protocol can be adopted by custom
  * container controllers.  It is purposely general to cover more complex
  * transitions than the system currently supports. For now, navigation push/pops
@@ -56,7 +56,7 @@ import org.moe.natj.objc.ann.Selector;
  * finalFrameForViewController: methods. The system provides two keys for
  * identifying the from view controller and the to view controller for
  * navigation push/pop and view controller present/dismiss transitions.
- * 
+ * <p>
  * All custom animations must invoke the context's completeTransition: method
  * when the transition completes.  Furthermore the animation should take place
  * within the containerView specified by the context. For interactive

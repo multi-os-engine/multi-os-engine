@@ -124,11 +124,11 @@ public class MPSNDArrayUnaryGradientKernel extends MPSNDArrayMultiaryGradientKer
 
     /**
      * RFC:  While this design is nice as it allows the same set of source arrays to
-     *       be used for forward and gradient passees, it causes a problem for the
-     *       getters and setters of properties like offset, kernel size, etc.
-     *       There is currently no way to manually set this information for the gradient.
-     *       This may not be viewed as a problem as this information is automatically
-     *       set by the gradient state.
+     * be used for forward and gradient passees, it causes a problem for the
+     * getters and setters of properties like offset, kernel size, etc.
+     * There is currently no way to manually set this information for the gradient.
+     * This may not be viewed as a problem as this information is automatically
+     * set by the gradient state.
      */
     @Generated
     @Selector("initWithDevice:")

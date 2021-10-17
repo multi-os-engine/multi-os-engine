@@ -160,7 +160,7 @@ public class CBPeer extends NSObject implements NSCopying {
 
     /**
      * [@property] identifier
-     * 
+     * <p>
      * The unique, persistent identifier associated with the peer.
      */
     @Generated

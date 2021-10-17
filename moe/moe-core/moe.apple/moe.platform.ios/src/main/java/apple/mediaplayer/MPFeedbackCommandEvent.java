@@ -159,11 +159,10 @@ public class MPFeedbackCommandEvent extends MPRemoteCommandEvent {
      * might ask that the app remove a bookmark for a particular track, rather than
      * add it. In this case, the handler for the bookmark command should check this
      * flag and remove the bookmark if it is set to YES.
-     * 
+     * <p>
      * For like/dislike, a "negative like" might be treated differently from a
      * dislike command. The app might want to remove the "like" flag from the
-     * current track, but not blacklist and skip to the next track as it would for
-     * a dislike command.
+     * current track, but not treat it as a dislike command.
      */
     @Generated
     @Selector("isNegative")

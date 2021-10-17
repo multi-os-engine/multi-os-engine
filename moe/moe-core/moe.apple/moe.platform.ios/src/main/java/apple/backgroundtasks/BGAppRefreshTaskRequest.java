@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request to briefly launch your app to keep its contents up to date.
- * 
+ * <p>
  * Schedule a refresh task request to ask that the system launch your app briefly so that you can download data and keep your app's contents up-to-date. The system will fulfill this request intelligently based on system conditions and app usage.
  */
 @Generated

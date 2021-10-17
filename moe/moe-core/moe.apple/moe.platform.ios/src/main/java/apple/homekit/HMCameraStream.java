@@ -169,7 +169,7 @@ public class HMCameraStream extends HMCameraSource {
 
     /**
      * Sets the audio stream setting.
-     * 
+     *
      * @param audioStreamSetting New audio stream setting.
      */
     @Generated
@@ -178,12 +178,11 @@ public class HMCameraStream extends HMCameraSource {
 
     /**
      * Updates the settings of the audio stream.
-     * 
-     * @param audioStreamSetting New audio stream setting.
-     * 
-     * @param completion Block that is invoked once the request is processed.
-     *                   The NSError provides more information on the status of the request, error
-     *                   will be nil on success.
+     *
+     * @param audioStreamSetting New audio stream setting. Bidirectional audio is not allowed on TVOS.
+     * @param completion         Block that is invoked once the request is processed.
+     *                           The NSError provides more information on the status of the request, error
+     *                           will be nil on success.
      */
     @Generated
     @Selector("updateAudioStreamSetting:completionHandler:")

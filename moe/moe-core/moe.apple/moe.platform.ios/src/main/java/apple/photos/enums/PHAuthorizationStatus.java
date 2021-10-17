@@ -28,7 +28,7 @@ public final class PHAuthorizationStatus {
     /**
      * This application is not authorized to access photo data.
      * The user cannot change this application’s status, possibly due to active restrictions
-     *   such as parental controls being in place.
+     * such as parental controls being in place.
      */
     @Generated @NInt public static final long Restricted = 0x0000000000000001L;
     /**

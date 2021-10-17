@@ -394,6 +394,65 @@ public final class Enums {
     /**
      * 64 bit RGBA, 16-bit little-endian full-range (0-65535) samples
      */
-    @Generated
-    public static final int kCVPixelFormatType_64RGBALE = 0x6C363472;
+    @Generated public static final int kCVPixelFormatType_64RGBALE = 0x6C363472;
+    /**
+     * little-endian ARGB10101010, each 10 bits in the MSBs of 16bits, wide-gamut (384-895, including alpha)
+     */
+    @Generated public static final int kCVPixelFormatType_40ARGBLEWideGamut = 0x77343061;
+    /**
+     * little-endian ARGB10101010, each 10 bits in the MSBs of 16bits, wide-gamut (384-895, including alpha). Alpha premultiplied
+     */
+    @Generated public static final int kCVPixelFormatType_40ARGBLEWideGamutPremultiplied = 0x7734306D;
+    /**
+     * 2 plane YCbCr16 4:2:2, video-range (luma=[4096,60160] chroma=[4096,61440])
+     */
+    @Generated public static final int kCVPixelFormatType_422YpCbCr16BiPlanarVideoRange = 0x73763232;
+    /**
+     * 2 plane YCbCr16 4:4:4, video-range (luma=[4096,60160] chroma=[4096,61440])
+     */
+    @Generated public static final int kCVPixelFormatType_444YpCbCr16BiPlanarVideoRange = 0x73763434;
+    /**
+     * 3 plane video-range YCbCr16 4:4:4 with 16-bit full-range alpha (luma=[4096,60160] chroma=[4096,61440] alpha=[0,65535]).  No CVPlanarPixelBufferInfo struct.
+     */
+    @Generated public static final int kCVPixelFormatType_444YpCbCr16VideoRange_16A_TriPlanar = 0x73346173;
+    /**
+     * Lossy-compressed form of kCVPixelFormatType_32BGRA. No CVPlanarPixelBufferInfo struct.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossy_32BGRA = 0x2D424741;
+    /**
+     * Lossy-compressed form of kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange.  No CVPlanarPixelBufferInfo struct.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossy_420YpCbCr8BiPlanarVideoRange = 0x2D387630;
+    /**
+     * Lossy-compressed form of kCVPixelFormatType_420YpCbCr8BiPlanarFullRange.  No CVPlanarPixelBufferInfo struct.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossy_420YpCbCr8BiPlanarFullRange = 0x2D386630;
+    /**
+     * Lossy-compressed form of kCVPixelFormatType_420YpCbCr10BiPlanarVideoRange.  No CVPlanarPixelBufferInfo struct. Format is compressed-packed with no padding bits between pixels.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossy_420YpCbCr10PackedBiPlanarVideoRange = 0x2D787630;
+    /**
+     * Lossy-compressed form of kCVPixelFormatType_422YpCbCr10BiPlanarVideoRange.  No CVPlanarPixelBufferInfo struct. Format is compressed-packed with no padding bits between pixels.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossy_422YpCbCr10PackedBiPlanarVideoRange = 0x2D787632;
+    /**
+     * Lossless-compressed form of kCVPixelFormatType_32BGRA.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossless_32BGRA = 0x26424741;
+    /**
+     * Lossless-compressed form of kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange.  No CVPlanarPixelBufferInfo struct.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossless_420YpCbCr8BiPlanarVideoRange = 0x26387630;
+    /**
+     * Lossless-compressed form of kCVPixelFormatType_420YpCbCr8BiPlanarFullRange.  No CVPlanarPixelBufferInfo struct.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossless_420YpCbCr8BiPlanarFullRange = 0x26386630;
+    /**
+     * Lossless-compressed-packed form of kCVPixelFormatType_420YpCbCr10BiPlanarVideoRange.  No CVPlanarPixelBufferInfo struct. Format is compressed-packed with no padding bits between pixels.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossless_420YpCbCr10PackedBiPlanarVideoRange = 0x26787630;
+    /**
+     * Lossless-compressed form of kCVPixelFormatType_422YpCbCr10BiPlanarVideoRange.  No CVPlanarPixelBufferInfo struct. Format is compressed-packed with no padding bits between pixels.
+     */
+    @Generated public static final int kCVPixelFormatType_Lossless_422YpCbCr10PackedBiPlanarVideoRange = 0x26787632;
 }

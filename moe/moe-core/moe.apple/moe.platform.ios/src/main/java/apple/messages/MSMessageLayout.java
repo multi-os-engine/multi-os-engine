@@ -42,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MSMessageLayout
- * 
+ * <p>
  * The MSMessageLayout is an abstract base for classes that define a messages presentation in the conversation transcript.
  */
 @Generated

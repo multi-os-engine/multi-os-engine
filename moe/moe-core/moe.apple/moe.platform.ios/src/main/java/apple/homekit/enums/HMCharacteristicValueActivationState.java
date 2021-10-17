@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueActivationState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueActivationStateInactive  Inactive.
  * [@constant]  HMCharacteristicValueActivationStateActive    Active.
  */

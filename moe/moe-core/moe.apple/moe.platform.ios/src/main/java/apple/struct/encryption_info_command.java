@@ -84,7 +84,7 @@ public final class encryption_info_command extends StructObject {
 
     /**
      * which enryption system,
-     * 0 means not-encrypted yet 
+     * 0 means not-encrypted yet
      */
     @Generated
     @StructureField(order = 4, isGetter = true)
@@ -92,7 +92,7 @@ public final class encryption_info_command extends StructObject {
 
     /**
      * which enryption system,
-     * 0 means not-encrypted yet 
+     * 0 means not-encrypted yet
      */
     @Generated
     @StructureField(order = 4, isGetter = false)

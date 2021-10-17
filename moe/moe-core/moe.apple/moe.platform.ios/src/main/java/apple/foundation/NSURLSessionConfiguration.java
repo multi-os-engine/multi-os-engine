@@ -41,13 +41,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Configuration options for an NSURLSession.  When a session is
  * created, a copy of the configuration object is made - you cannot
  * modify the configuration of a session after it has been created.
- * 
+ * <p>
  * The shared session uses the global singleton credential, cache
  * and cookie storage objects.
- * 
+ * <p>
  * An ephemeral session has no persistent disk storage for cookies,
  * cache or credentials.
- * 
+ * <p>
  * A background session can be used to perform networking operations
  * on behalf of a suspended application, within certain constraints.
  */
@@ -181,7 +181,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * Specifies additional headers which will be set on outgoing requests.
-     * Note that these headers are added to the request only if not already present. 
+     * Note that these headers are added to the request only if not already present.
      */
     @Generated
     @Selector("HTTPAdditionalHeaders")
@@ -311,7 +311,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * an instance of the class can be used for a given URL scheme.
      * You should not use +[NSURLProtocol registerClass:], as that
      * method will register your class with the default session rather
-     * than with an instance of NSURLSession. 
+     * than with an instance of NSURLSession.
      * Custom NSURLProtocol subclasses are not available to background
      * sessions.
      */
@@ -331,7 +331,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * Allows the app to be resumed or launched in the background when tasks in background sessions complete
      * or when auth is required. This only applies to configurations created with +backgroundSessionConfigurationWithIdentifier:
      * and the default value is YES.
-     * 
+     * <p>
      * NOTE: macOS apps based on AppKit do not support background launch.
      */
     @Generated
@@ -354,7 +354,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * Specifies additional headers which will be set on outgoing requests.
-     * Note that these headers are added to the request only if not already present. 
+     * Note that these headers are added to the request only if not already present.
      */
     @Generated
     @Selector("setHTTPAdditionalHeaders:")
@@ -408,7 +408,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * an instance of the class can be used for a given URL scheme.
      * You should not use +[NSURLProtocol registerClass:], as that
      * method will register your class with the default session rather
-     * than with an instance of NSURLSession. 
+     * than with an instance of NSURLSession.
      * Custom NSURLProtocol subclasses are not available to background
      * sessions.
      */
@@ -427,7 +427,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * Allows the app to be resumed or launched in the background when tasks in background sessions complete
      * or when auth is required. This only applies to configurations created with +backgroundSessionConfigurationWithIdentifier:
      * and the default value is YES.
-     * 
+     * <p>
      * NOTE: macOS apps based on AppKit do not support background launch.
      */
     @Generated
@@ -544,12 +544,12 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * than immediately failing with an error (such as NSURLErrorNotConnectedToInternet)
      * when it is not. When waiting for connectivity, the timeoutIntervalForRequest
      * property does not apply, but the timeoutIntervalForResource property does.
-     * 
+     * <p>
      * Unsatisfactory connectivity (that requires waiting) includes cases where the
      * device has limited or insufficient connectivity for a task (e.g., only has a
      * cellular connection but the allowsCellularAccess property is NO, or requires
      * a VPN connection in order to reach the desired host).
-     * 
+     * <p>
      * Default value is NO. Ignored by background sessions, as background sessions
      * always wait for connectivity.
      */
@@ -562,12 +562,12 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * than immediately failing with an error (such as NSURLErrorNotConnectedToInternet)
      * when it is not. When waiting for connectivity, the timeoutIntervalForRequest
      * property does not apply, but the timeoutIntervalForResource property does.
-     * 
+     * <p>
      * Unsatisfactory connectivity (that requires waiting) includes cases where the
      * device has limited or insufficient connectivity for a task (e.g., only has a
      * cellular connection but the allowsCellularAccess property is NO, or requires
      * a VPN connection in order to reach the desired host).
-     * 
+     * <p>
      * Default value is NO. Ignored by background sessions, as background sessions
      * always wait for connectivity.
      */

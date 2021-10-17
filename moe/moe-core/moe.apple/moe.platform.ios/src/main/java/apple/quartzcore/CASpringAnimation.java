@@ -201,7 +201,7 @@ public class CASpringAnimation extends CABasicAnimation {
 
     /**
      * The mass of the object attached to the end of the spring. Must be greater
-     * than 0. Defaults to one. 
+     * than 0. Defaults to one.
      */
     @Generated
     @Selector("mass")
@@ -229,7 +229,7 @@ public class CASpringAnimation extends CABasicAnimation {
 
     /**
      * The mass of the object attached to the end of the spring. Must be greater
-     * than 0. Defaults to one. 
+     * than 0. Defaults to one.
      */
     @Generated
     @Selector("setMass:")

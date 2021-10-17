@@ -44,13 +44,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageMedian
- * 
+ * <p>
  * The MPSImageMedian applies a median filter to an image.  A median filter finds the
- *             median color value for each channel within a kernelDiameter x kernelDiameter
- *             window surrounding the pixel of interest.  It is a common means of noise reduction
- *             and also as a smoothing filter with edge preserving qualities.
- * 
- *             NOTE: The MPSImageMedian filter currently only supports images with <= 8 bits/channel.
+ * median color value for each channel within a kernelDiameter x kernelDiameter
+ * window surrounding the pixel of interest.  It is a common means of noise reduction
+ * and also as a smoothing filter with edge preserving qualities.
+ * <p>
+ * NOTE: The MPSImageMedian filter currently only supports images with <= 8 bits/channel.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -189,10 +189,10 @@ public class MPSImageMedian extends MPSUnaryImageKernel {
 
     /**
      * Initialize a filter for a particular kernel size and device
-     * 
-     * @param      device          The device the filter will run on
-     * @param      kernelDiameter  Diameter of the median filter. Must be an odd number.
-     * @return     A valid object or nil, if failure.
+     *
+     * @param device         The device the filter will run on
+     * @param kernelDiameter Diameter of the median filter. Must be an odd number.
+     * @return A valid object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:kernelDiameter:")
@@ -201,12 +201,12 @@ public class MPSImageMedian extends MPSUnaryImageKernel {
 
     /**
      * [@property]   kernelDiameter
-     * 
+     * <p>
      * The diameter in pixels of the filter window.
-     * 
+     * <p>
      * The median filter is applied to a kernelDiameter x kernelDiameter window
-     *             of pixels centered on the corresponding source pixel for each destination
-     *             pixel.  The kernel diameter must be an odd number.
+     * of pixels centered on the corresponding source pixel for each destination
+     * pixel.  The kernel diameter must be an odd number.
      */
     @Generated
     @Selector("kernelDiameter")
@@ -219,16 +219,16 @@ public class MPSImageMedian extends MPSUnaryImageKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * While the standard NSSecureCoding/NSCoding method
-     *             -initWithCoder: should work, since the file can't
-     *             know which device your data is allocated on, we
-     *             have to guess and may guess incorrectly.  To avoid
-     *             that problem, use initWithCoder:device instead.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
-     * @param      device      The MTLDevice on which to make the MPSKernel
-     * @return     A new MPSKernel object, or nil if failure.
+     * -initWithCoder: should work, since the file can't
+     * know which device your data is allocated on, we
+     * have to guess and may guess incorrectly.  To avoid
+     * that problem, use initWithCoder:device instead.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSKernel
+     * @param device   The MTLDevice on which to make the MPSKernel
+     * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")

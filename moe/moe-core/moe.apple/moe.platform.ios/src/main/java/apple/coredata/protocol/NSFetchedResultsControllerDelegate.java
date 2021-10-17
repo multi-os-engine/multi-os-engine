@@ -81,7 +81,7 @@ public interface NSFetchedResultsControllerDelegate {
      * Called when the contents of the fetched results controller change.
      * If this method is implemented and the controller is configured with
      * sectionNameKeyPath = nil, no other delegate methods will be invoked.
-     * 
+     * <p>
      * This method is only invoked if the controller's `sectionNameKeyPath`
      * property is nil and `controller:didChangeContentWithSnapshot:` is not
      * implemented.

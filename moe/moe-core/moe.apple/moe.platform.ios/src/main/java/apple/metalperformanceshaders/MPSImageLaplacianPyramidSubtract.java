@@ -29,16 +29,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageLaplacianPyramidSubtract
- * 
+ * <p>
  * For each mip-level of the destination, MPSImageLaplacianPyramidSubtract constructs Laplacian pyramid
- *             according to the procedure specified in the discussion section for MPSImageLaplacianPyramid
- * 
- *             There needs to be at least as many mip-levels in the destination texture
- *             as in the source texture less one, which is the exact number of destination mip-levels
- *             that will be overwritten by MPSImageLaplacianPyramidSubtract, starting from the bottom level.
- *             Note that the top mip-level of the source texture still contains data required
- *             for reconstruction of the original Gaussian pyramid data, and it is user's responsibility
- *             to propagate it around, i.e. via the use of MTLBlitCommandEncoder.
+ * according to the procedure specified in the discussion section for MPSImageLaplacianPyramid
+ * <p>
+ * There needs to be at least as many mip-levels in the destination texture
+ * as in the source texture less one, which is the exact number of destination mip-levels
+ * that will be overwritten by MPSImageLaplacianPyramidSubtract, starting from the bottom level.
+ * Note that the top mip-level of the source texture still contains data required
+ * for reconstruction of the original Gaussian pyramid data, and it is user's responsibility
+ * to propagate it around, i.e. via the use of MTLBlitCommandEncoder.
  */
 @Generated
 @Library("MetalPerformanceShaders")

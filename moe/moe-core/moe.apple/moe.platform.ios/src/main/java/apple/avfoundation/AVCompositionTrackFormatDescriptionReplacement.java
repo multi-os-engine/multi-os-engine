@@ -131,7 +131,7 @@ public class AVCompositionTrackFormatDescriptionReplacement extends NSObject imp
 
     /**
      * [@property]       originalFormatDescription
-     * 
+     * <p>
      * The original format description.
      */
     @Generated
@@ -140,7 +140,7 @@ public class AVCompositionTrackFormatDescriptionReplacement extends NSObject imp
 
     /**
      * [@property]       replacementFormatDescription
-     * 
+     * <p>
      * The replacement format description.
      */
     @Generated

@@ -41,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GLKEffectPropertyTexture
- * 
+ * <p>
  * GLKEffectPropertyTexture simply contains properties to configure GL texture rendering.
  */
 @Generated

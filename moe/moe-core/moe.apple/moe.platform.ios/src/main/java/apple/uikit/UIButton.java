@@ -427,9 +427,8 @@ public class UIButton extends UIControl
     public native UIImage backgroundImageForState(@NUInt long state);
 
     /**
-     * these return the rectangle for the background (assumes bounds), the content (image + title) and for the image and title separately. the content rect is calculated based
-     * on the title and image size and padding and then adjusted based on the control content alignment. there are no draw methods since the contents
-     * are rendered in separate subviews (UIImageView, UILabel)
+     * These methods will not be called when using a configuration.
+     * To change the layout of button content, override -layoutSubviews, call super, and then position views as you see fit.
      */
     @Generated
     @Selector("backgroundRectForBounds:")
@@ -618,7 +617,7 @@ public class UIButton extends UIControl
     public native void setReversesTitleShadowWhenHighlighted(boolean value);
 
     /**
-     * default is NO. if YES, show a simple feedback (currently a glow) while highlighted
+     * These properties are ignored when a configuration is set and have no replacement.
      */
     @Generated
     @Selector("setShowsTouchWhenHighlighted:")
@@ -665,7 +664,7 @@ public class UIButton extends UIControl
     public native void setTitleShadowOffset(@ByValue CGSize value);
 
     /**
-     * default is NO. if YES, show a simple feedback (currently a glow) while highlighted
+     * These properties are ignored when a configuration is set and have no replacement.
      */
     @Generated
     @Selector("showsTouchWhenHighlighted")
@@ -772,8 +771,9 @@ public class UIButton extends UIControl
 
     /**
      * Called when the system pointer hovers over this button if its pointer interaction is enabled. The
-     *           system calls this block with a proposed UIPointerEffect and UIPointerShape. You may use them to construct
-     *           a customized version of the system provided style or return an entirely custom one.
+     * system calls this block with a proposed UIPointerEffect and UIPointerShape. You may use them to construct
+     * a customized version of the system provided style or return an entirely custom one.
+     * Setting this property automatically enables the button's pointer interaction and sets @c pointerInteractionEnabled to true.
      */
     @Generated
     @Selector("pointerStyleProvider")
@@ -797,8 +797,9 @@ public class UIButton extends UIControl
 
     /**
      * Called when the system pointer hovers over this button if its pointer interaction is enabled. The
-     *           system calls this block with a proposed UIPointerEffect and UIPointerShape. You may use them to construct
-     *           a customized version of the system provided style or return an entirely custom one.
+     * system calls this block with a proposed UIPointerEffect and UIPointerShape. You may use them to construct
+     * a customized version of the system provided style or return an entirely custom one.
+     * Setting this property automatically enables the button's pointer interaction and sets @c pointerInteractionEnabled to true.
      */
     @Generated
     @Selector("setPointerStyleProvider:")
@@ -863,4 +864,146 @@ public class UIButton extends UIControl
     @Selector("systemButtonWithPrimaryAction:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object systemButtonWithPrimaryAction(UIAction primaryAction);
+
+    /**
+     * When YES, the button will automatically call -updatedConfigurationForButton: on its `configuration ` when the button's state changes, and apply the updated configuration to the button. The default value is YES.
+     */
+    @Generated
+    @Selector("automaticallyUpdatesConfiguration")
+    public native boolean automaticallyUpdatesConfiguration();
+
+    /**
+     * The button's behavioral style. This property always returns a concrete, resolved style (never UIBehavioralStyleAutomatic).
+     */
+    @Generated
+    @Selector("behavioralStyle")
+    @NUInt
+    public native long behavioralStyle();
+
+    /**
+     * Construct a new UIButton. `configuration` will be installed on the created button, and `primaryAction` added to handle the .primaryActionTriggered control event. If `primaryAction` has a title or image, they will be copied to `configuration`
+     */
+    @Generated
+    @Selector("buttonWithConfiguration:primaryAction:")
+    public static native UIButton buttonWithConfigurationPrimaryAction(UIButtonConfiguration configuration,
+            UIAction primaryAction);
+
+    /**
+     * Indicates if the button changes selection as its primary action.
+     * This shows the menu as options for selection if a menu is populated and showsMenuAsPrimaryAction is enabled.
+     * If no menu is provided or it is not the primary action, UIControlStateSelected is toggled on and off for the primary action.
+     */
+    @Generated
+    @Selector("changesSelectionAsPrimaryAction")
+    public native boolean changesSelectionAsPrimaryAction();
+
+    /**
+     * Setting a non-nil value for `configuration` will opt into configuration-based behavior on UIButton, update the button in a platform specific manner, and enable/disable some API.
+     */
+    @Generated
+    @Selector("configuration")
+    public native UIButtonConfiguration configuration();
+
+    /**
+     * Block-based equivalent to overriding -updateConfiguration in a subclass. Setting this handler will force the button into configuration-based behavior (see the `configuration` property). This block is called after `-updateConfiguration`
+     */
+    @Generated
+    @Selector("configurationUpdateHandler")
+    @ObjCBlock(name = "call_configurationUpdateHandler_ret")
+    public native Block_configurationUpdateHandler_ret configurationUpdateHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_configurationUpdateHandler_ret {
+        @Generated
+        void call_configurationUpdateHandler_ret(UIButton button);
+    }
+
+    /**
+     * Returns true while the button is presenting a menu.
+     */
+    @Generated
+    @Selector("isHeld")
+    public native boolean isHeld();
+
+    /**
+     * If pointer effects are enabled for the button, this will return true when an effect is active.
+     */
+    @Generated
+    @Selector("isHovered")
+    public native boolean isHovered();
+
+    /**
+     * Request a style for the button. If the style changed, the button will redraw and its metrics may change.
+     */
+    @Generated
+    @Selector("preferredBehavioralStyle")
+    @NUInt
+    public native long preferredBehavioralStyle();
+
+    /**
+     * When YES, the button will automatically call -updatedConfigurationForButton: on its `configuration ` when the button's state changes, and apply the updated configuration to the button. The default value is YES.
+     */
+    @Generated
+    @Selector("setAutomaticallyUpdatesConfiguration:")
+    public native void setAutomaticallyUpdatesConfiguration(boolean value);
+
+    /**
+     * Indicates if the button changes selection as its primary action.
+     * This shows the menu as options for selection if a menu is populated and showsMenuAsPrimaryAction is enabled.
+     * If no menu is provided or it is not the primary action, UIControlStateSelected is toggled on and off for the primary action.
+     */
+    @Generated
+    @Selector("setChangesSelectionAsPrimaryAction:")
+    public native void setChangesSelectionAsPrimaryAction(boolean value);
+
+    /**
+     * Setting a non-nil value for `configuration` will opt into configuration-based behavior on UIButton, update the button in a platform specific manner, and enable/disable some API.
+     */
+    @Generated
+    @Selector("setConfiguration:")
+    public native void setConfiguration(UIButtonConfiguration value);
+
+    /**
+     * Block-based equivalent to overriding -updateConfiguration in a subclass. Setting this handler will force the button into configuration-based behavior (see the `configuration` property). This block is called after `-updateConfiguration`
+     */
+    @Generated
+    @Selector("setConfigurationUpdateHandler:")
+    public native void setConfigurationUpdateHandler(
+            @ObjCBlock(name = "call_setConfigurationUpdateHandler") Block_setConfigurationUpdateHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setConfigurationUpdateHandler {
+        @Generated
+        void call_setConfigurationUpdateHandler(UIButton button);
+    }
+
+    /**
+     * Requests the view update its configuration for its current state. This method is called automatically when the button's state may have changed, as well as in other circumstances where an update may be required. Multiple requests may be coalesced into a single update at the appropriate time.
+     */
+    @Generated
+    @Selector("setNeedsUpdateConfiguration")
+    public native void setNeedsUpdateConfiguration();
+
+    /**
+     * Request a style for the button. If the style changed, the button will redraw and its metrics may change.
+     */
+    @Generated
+    @Selector("setPreferredBehavioralStyle:")
+    public native void setPreferredBehavioralStyle(@NUInt long value);
+
+    /**
+     * The label used to display the subtitle, when present.
+     */
+    @Generated
+    @Selector("subtitleLabel")
+    public native UILabel subtitleLabel();
+
+    /**
+     * Subclasses should override this method and update the button's `configuration`. This method should not be called directly, use `setNeedsUpdateConfiguration` to request an update.
+     */
+    @Generated
+    @Selector("updateConfiguration")
+    public native void updateConfiguration();
 }

@@ -107,7 +107,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     public native long instanceCount();
 
     /**
-     * Buffer containing MTLAccelerationStructureInstanceDescriptors
+     * Buffer containing instance descriptors of the type specified by the instanceDescriptorType property
      */
     @Generated
     @Selector("instanceDescriptorBuffer")
@@ -125,7 +125,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Stride, in bytes, between instance descriptors in the instance descriptor buffer. Must
-     * be at least 64 bytes and must be a multiple of 4 bytes. Defaults to 64 bytes.
+     * be at least the size of the instance descriptor type and must be a multiple of 4 bytes.
+     * Defaults to the size of the instance descriptor type.
      */
     @Generated
     @Selector("instanceDescriptorStride")
@@ -182,7 +183,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     public native void setInstanceCount(@NUInt long value);
 
     /**
-     * Buffer containing MTLAccelerationStructureInstanceDescriptors
+     * Buffer containing instance descriptors of the type specified by the instanceDescriptorType property
      */
     @Generated
     @Selector("setInstanceDescriptorBuffer:")
@@ -198,7 +199,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Stride, in bytes, between instance descriptors in the instance descriptor buffer. Must
-     * be at least 64 bytes and must be a multiple of 4 bytes. Defaults to 64 bytes.
+     * be at least the size of the instance descriptor type and must be a multiple of 4 bytes.
+     * Defaults to the size of the instance descriptor type.
      */
     @Generated
     @Selector("setInstanceDescriptorStride:")
@@ -223,4 +225,68 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Type of instance descriptor in the instance descriptor buffer. Defaults to
+     * MTLAccelerationStructureInstanceDescriptorTypeDefault.
+     */
+    @Generated
+    @Selector("instanceDescriptorType")
+    @NUInt
+    public native long instanceDescriptorType();
+
+    /**
+     * Buffer containing transformation information for motion
+     */
+    @Generated
+    @Selector("motionTransformBuffer")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLBuffer motionTransformBuffer();
+
+    /**
+     * Offset into the instance motion descriptor buffer. Must be a multiple of 64 bytes and
+     * must be aligned to the platform's buffer offset alignment.
+     */
+    @Generated
+    @Selector("motionTransformBufferOffset")
+    @NUInt
+    public native long motionTransformBufferOffset();
+
+    /**
+     * Number of motion transforms
+     */
+    @Generated
+    @Selector("motionTransformCount")
+    @NUInt
+    public native long motionTransformCount();
+
+    /**
+     * Type of instance descriptor in the instance descriptor buffer. Defaults to
+     * MTLAccelerationStructureInstanceDescriptorTypeDefault.
+     */
+    @Generated
+    @Selector("setInstanceDescriptorType:")
+    public native void setInstanceDescriptorType(@NUInt long value);
+
+    /**
+     * Buffer containing transformation information for motion
+     */
+    @Generated
+    @Selector("setMotionTransformBuffer:")
+    public native void setMotionTransformBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+
+    /**
+     * Offset into the instance motion descriptor buffer. Must be a multiple of 64 bytes and
+     * must be aligned to the platform's buffer offset alignment.
+     */
+    @Generated
+    @Selector("setMotionTransformBufferOffset:")
+    public native void setMotionTransformBufferOffset(@NUInt long value);
+
+    /**
+     * Number of motion transforms
+     */
+    @Generated
+    @Selector("setMotionTransformCount:")
+    public native void setMotionTransformCount(@NUInt long value);
 }

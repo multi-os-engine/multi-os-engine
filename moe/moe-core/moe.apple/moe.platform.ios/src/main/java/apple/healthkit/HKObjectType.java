@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKObjectType
- * 
+ * <p>
  * An abstract class representing a type of object that can be stored by HealthKit.
  */
 @Generated
@@ -203,9 +203,9 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property]      identifier
-     * 
+     * <p>
      * A unique string identifying a type of health object.
-     * 
+     * <p>
      * See HKTypeIdentifiers.h for possible values.
      */
     @Generated

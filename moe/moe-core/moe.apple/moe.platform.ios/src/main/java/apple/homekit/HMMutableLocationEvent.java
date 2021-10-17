@@ -26,7 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class represents an event that is evaluated based on entry to and/or
- *        exit from a Region
+ * exit from a Region
  */
 @Generated
 @Library("HomeKit")
@@ -132,7 +132,7 @@ public class HMMutableLocationEvent extends HMLocationEvent {
 
     /**
      * Region on which events are triggered based on the properties notifyOnEntry and notifyOnExit.
-     *        This property will be nil when an application is not authorized for location services.
+     * This property will be nil when an application is not authorized for location services.
      */
     @Generated
     @Selector("region")
@@ -148,7 +148,7 @@ public class HMMutableLocationEvent extends HMLocationEvent {
 
     /**
      * Region on which events are triggered based on the properties notifyOnEntry and notifyOnExit.
-     *        This property will be nil when an application is not authorized for location services.
+     * This property will be nil when an application is not authorized for location services.
      */
     @Generated
     @Selector("setRegion:")

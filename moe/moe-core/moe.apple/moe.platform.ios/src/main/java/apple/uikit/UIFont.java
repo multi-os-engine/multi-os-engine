@@ -18,9 +18,11 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -38,6 +40,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -45,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIFont extends NSObject implements NSCopying {
+public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -314,9 +317,27 @@ public class UIFont extends NSObject implements NSCopying {
     public native double xHeight();
 
     /**
-     * Returns current default monospaced font for system UI. Clients of this API should be aware that the monospaced system font has a similar coverage of default system UI font, which includes Latin and common symbols used for displaying text like source code. For the characters it does not cover, the subtituted fonts are usually not the same width as the monospaced system font, they can be wider, narrower, or variable. To ensure fixed advances in text layout, clients can consider using string attributes like UIFontDescriptorFixedAdvanceAttribute.
+     * Returns current default monospaced font for system UI. Clients of this API should be aware that the monospaced system font has a similar coverage of default system UI font, which includes Latin and common symbols used for displaying text like source code. For the characters it does not cover, the substituted fonts are usually not the same width as the monospaced system font, they can be wider, narrower, or variable. To ensure fixed advances in text layout, clients can consider using string attributes like UIFontDescriptorFixedAdvanceAttribute.
      */
     @Generated
     @Selector("monospacedSystemFontOfSize:weight:")
     public static native UIFont monospacedSystemFontOfSizeWeight(@NFloat double fontSize, @NFloat double weight);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIFont initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

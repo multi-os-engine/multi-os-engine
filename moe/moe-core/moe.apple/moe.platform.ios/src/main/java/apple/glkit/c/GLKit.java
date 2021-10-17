@@ -1552,7 +1552,7 @@ public final class GLKit {
 
     /**
      * [@struct] GLKVertexAttributeParametersFromModelIO
-     * 
+     * <p>
      * Returns parameters to use in a call to glVertexAttribPointer given a MDLVertexFormat
      */
     @Generated
@@ -1608,7 +1608,7 @@ public final class GLKit {
      * Generates all levels of mipmaps for the current image being loaded as a texture.
      * Generates mipmap levels for all faces when used with cube maps.
      * Sets GL_TEXTURE_MIN_FILTER parameter to GL_LINEAR_MIPMAP_LINEAR when true.
-     * False by default. 
+     * False by default.
      */
     @Generated
     @CVariable()
@@ -1618,7 +1618,7 @@ public final class GLKit {
     /**
      * GLKTextureLoaderOriginBottomLeft - A boolean NSNumber.
      * Transform image data to match OpenGL's bottom left orientation specification.
-     * False by default. 
+     * False by default.
      */
     @Generated
     @CVariable()

@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNNeuronHardSigmoid
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Specifies the hard sigmoid neuron filter.  For each pixel, applies the following function: f(x) = clamp((a * x) + b, 0, 1)
  */
 @Generated
@@ -114,11 +114,11 @@ public class MPSCNNNeuronHardSigmoid extends MPSCNNNeuron {
 
     /**
      * Initialize a neuron filter
-     * 
-     * @param     device           The device the filter will run on
-     * @param     a                Filter property "a". See class discussion.
-     * @param     b                Filter property "b". See class discussion.
-     * @return    A valid MPSCNNNeuronHardSigmoid object or nil, if failure.
+     *
+     * @param device The device the filter will run on
+     * @param a      Filter property "a". See class discussion.
+     * @param b      Filter property "b". See class discussion.
+     * @return A valid MPSCNNNeuronHardSigmoid object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:a:b:")

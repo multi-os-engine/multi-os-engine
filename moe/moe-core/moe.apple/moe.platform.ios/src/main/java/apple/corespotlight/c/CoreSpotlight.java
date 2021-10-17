@@ -60,9 +60,9 @@ public final class CoreSpotlight {
      * with an NSUserActivity where the userInfo dictionary has a key value pair with CSSearchQueryString as the key
      * and the value is the string the application should use when performing its query.
      * The application should declare that it supports the query continuation by adding the CoreSpotlightContinuation key to its Info.plist:
-     * 
-     *    <key>CoreSpotlightContinuation</key>
-     *    <true/>
+     *
+     * <key>CoreSpotlightContinuation</key>
+     * <true/>
      */
     @Generated
     @CVariable()
@@ -130,4 +130,13 @@ public final class CoreSpotlight {
     @Generated
     @CVariable()
     public static native ConstBytePtr CoreSpotlightVersionString();
+
+    /**
+     * For custom actions on iOS, the userInfo dictionary also has another key value pair where CSActionIdentifier is the key
+     * and the value is the action tapped in the UI based on what was indexed by the app.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CSActionIdentifier();
 }

@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * These constants are used to indicate how items in a request are ordered, from the first one given in a method invocation or function call to the last (that is, left to right in code).
- * 
+ * <p>
  * Given the function:
- *   NSComparisonResult f(int a, int b)
- * 
+ * NSComparisonResult f(int a, int b)
+ * <p>
  * If:
- *    a < b   then return NSOrderedAscending. The left operand is smaller than the right operand.
- *    a > b   then return NSOrderedDescending. The left operand is greater than the right operand.
- *    a == b  then return NSOrderedSame. The operands are equal.
+ * a < b   then return NSOrderedAscending. The left operand is smaller than the right operand.
+ * a > b   then return NSOrderedDescending. The left operand is greater than the right operand.
+ * a == b  then return NSOrderedSame. The operands are equal.
  */
 @Generated
 public final class NSComparisonResult {

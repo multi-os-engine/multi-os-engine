@@ -128,7 +128,7 @@ public interface NSLayoutManagerDelegate {
 
     /**
      * Glyph generation ***********************
-     *  This is sent whenever layoutManager is about to store the initial glyph information via -setGlyphs:properties:characterIndexes:forGlyphRange:.  This method allows customizing the initial glyph generation process.  It can invoke -setGlyphs:properties:characterIndexes:forGlyphRange: with modified glyph information.  The return value specifies the actual glyph range stored in this method.  By returning 0, it can indicate layoutManager to do the default processing. Note that querying glyph information surrounding glyphRange could lead to recursion since the data might not be available, yet.
+     * This is sent whenever layoutManager is about to store the initial glyph information via -setGlyphs:properties:characterIndexes:forGlyphRange:.  This method allows customizing the initial glyph generation process.  It can invoke -setGlyphs:properties:characterIndexes:forGlyphRange: with modified glyph information.  The return value specifies the actual glyph range stored in this method.  By returning 0, it can indicate layoutManager to do the default processing. Note that querying glyph information surrounding glyphRange could lead to recursion since the data might not be available, yet.
      */
     @Generated
     @IsOptional
@@ -177,7 +177,7 @@ public interface NSLayoutManagerDelegate {
 
     /**
      * Layout processing ***********************
-     *  This is sent whenever layout or glyphs become invalidated in a layout manager which previously had all layout complete.
+     * This is sent whenever layout or glyphs become invalidated in a layout manager which previously had all layout complete.
      */
     @Generated
     @IsOptional

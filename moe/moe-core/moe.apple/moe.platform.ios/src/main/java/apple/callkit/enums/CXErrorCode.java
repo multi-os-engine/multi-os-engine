@@ -28,4 +28,5 @@ public final class CXErrorCode {
     @Generated @NInt public static final long UnknownError = 0x0000000000000000L;
     @Generated @NInt public static final long Unentitled = 0x0000000000000001L;
     @Generated @NInt public static final long InvalidArgument = 0x0000000000000002L;
+    @Generated @NInt public static final long MissingVoIPBackgroundMode = 0x0000000000000003L;
 }

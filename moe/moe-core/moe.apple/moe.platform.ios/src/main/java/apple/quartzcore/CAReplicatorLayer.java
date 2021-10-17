@@ -50,7 +50,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The replicator layer creates a specified number of copies of its
  * sublayers, each copy potentially having geometric, temporal and
  * color transformations applied to it.
- * 
+ * <p>
  * Note: the CALayer -hitTest: method currently only tests the first
  * instance of z replicator layer's sublayers. This may change in the
  * future.

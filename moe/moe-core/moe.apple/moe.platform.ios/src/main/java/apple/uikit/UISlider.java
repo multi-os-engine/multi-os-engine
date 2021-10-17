@@ -597,4 +597,27 @@ public class UISlider extends UIControl implements NSCoding {
     @Generated
     @Selector("initWithFrame:primaryAction:")
     public native UISlider initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+
+    /**
+     * The slider's behavioral style. This property always returns a concrete, resolved style (never UIBehavioralStyleAutomatic).
+     */
+    @Generated
+    @Selector("behavioralStyle")
+    @NUInt
+    public native long behavioralStyle();
+
+    /**
+     * Request a style for the slider. If the style changes, the slider will redraw and its metrics may change.
+     */
+    @Generated
+    @Selector("preferredBehavioralStyle")
+    @NUInt
+    public native long preferredBehavioralStyle();
+
+    /**
+     * Request a style for the slider. If the style changes, the slider will redraw and its metrics may change.
+     */
+    @Generated
+    @Selector("setPreferredBehavioralStyle:")
+    public native void setPreferredBehavioralStyle(@NUInt long value);
 }

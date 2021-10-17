@@ -79,7 +79,7 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
 
     /**
      * A bitfield of the command types that be encoded.
-     * 
+     * <p>
      * MTLCommandTypeDispatch cannot be mixed with any other command type.
      */
     @Generated
@@ -181,7 +181,7 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
 
     /**
      * A bitfield of the command types that be encoded.
-     * 
+     * <p>
      * MTLCommandTypeDispatch cannot be mixed with any other command type.
      */
     @Generated

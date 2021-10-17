@@ -32,4 +32,5 @@ public final class GKGameCenterViewControllerState {
 
     @Generated @NInt public static final long LocalPlayerProfile = 0x0000000000000003L;
     @Generated @NInt public static final long Dashboard = 0x0000000000000004L;
+    @Generated @NInt public static final long LocalPlayerFriendsList = 0x0000000000000005L;
 }

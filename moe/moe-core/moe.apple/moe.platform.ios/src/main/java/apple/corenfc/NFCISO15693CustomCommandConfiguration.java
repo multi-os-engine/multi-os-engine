@@ -26,7 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NFCISO15693CustomCommandConfiguration
- * 
+ * <p>
  * Configuration options for the Manufacturer Custom command.
  */
 @Generated
@@ -106,12 +106,12 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
 
     /**
      * initWithManufacturerCode:customCommandCode:requestParameters:
-     * 
+     * <p>
      * Initialize with default zero maximum retry and zero retry interval.
-     * 
-     * @param manufacturerCode      8 bits manufacturer code.
-     * @param customCommandCode     8 bits custom command code.  Valid range is 0xA0 to 0xDF.
-     * @param requestParameters     Optional custom request parameters.
+     *
+     * @param manufacturerCode  8 bits manufacturer code.
+     * @param customCommandCode 8 bits custom command code.  Valid range is 0xA0 to 0xDF.
+     * @param requestParameters Optional custom request parameters.
      */
     @Generated
     @Selector("initWithManufacturerCode:customCommandCode:requestParameters:")
@@ -120,12 +120,12 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
 
     /**
      * initWithManufacturerCode:customCommandCode:requestParameters:maximumRetries:retryInterval:
-     * 
-     * @param manufacturerCode      8 bits manufacturer code.
-     * @param customCommandCode     8 bits custom command code.  Valid range is 0xA0 to 0xDF.
-     * @param requestParameters     Optional custom request parameters.
-     * @param maximumRetries        Maximum number of retry attempt when tag response is not recevied.
-     * @param retryInterval         Time interval wait between each retry attempt.
+     *
+     * @param manufacturerCode  8 bits manufacturer code.
+     * @param customCommandCode 8 bits custom command code.  Valid range is 0xA0 to 0xDF.
+     * @param requestParameters Optional custom request parameters.
+     * @param maximumRetries    Maximum number of retry attempt when tag response is not recevied.
+     * @param retryInterval     Time interval wait between each retry attempt.
      */
     @Generated
     @Selector("initWithManufacturerCode:customCommandCode:requestParameters:maximumRetries:retryInterval:")

@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]          HKFitzpatrickSkinType
- * 
+ * <p>
  * This enumerated type is used to represent the skin type of an individual based on the Fitzpatrick scale.
- * 
+ * <p>
  * The Fitzpatrick scale is a numerical classification for skin color based on the skin's response to sun
- *                exposure in terms of the degree of burning and tanning.
- * 
+ * exposure in terms of the degree of burning and tanning.
+ * <p>
  * [@constant]      HKFitzpatrickSkinTypeI      Pale white skin that always burns easily in the sun and never tans.
  * [@constant]      HKFitzpatrickSkinTypeII     White skin that burns easily and tans minimally.
  * [@constant]      HKFitzpatrickSkinTypeIII    White to light brown skin that burns moderately and tans uniformly.

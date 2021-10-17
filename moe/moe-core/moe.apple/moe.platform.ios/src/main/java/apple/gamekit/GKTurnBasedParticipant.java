@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * GKTurnBasedMatch represents an ongoing turn-based game among the matched group of participants
  * Existing matches can be shown and new matches created using GKTurnBasedMatchmakerViewController
  * A list of existing matches can be retrieved using +loadMatchesWithCompletionHandler:
- * 
+ * <p>
  * By default turn based events will badge your app.  To opt out of this add GKGameCenterBadgingDisabled  with a boolean value of YES to your info plist
  */
 @Generated

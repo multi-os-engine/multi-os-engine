@@ -49,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNProgram
- * 
+ * <p>
  * A SCNProgram lets you specify custom shaders to use when rendering materials.
  */
 @Generated
@@ -144,7 +144,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * program
-     * 
+     * <p>
      * Creates and initialize a program instance.
      */
     @Generated
@@ -184,7 +184,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * Determines the receiver's delegate
      */
     @Generated
@@ -198,9 +198,9 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] fragmentFunctionName
-     * 
+     * <p>
      * Determines the receiver's fragment function name.
-     * 
+     * <p>
      * The name of the fragment function (for Metal programs).
      */
     @Generated
@@ -209,7 +209,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] fragmentShader
-     * 
+     * <p>
      * Determines the receiver's fragment shader.
      */
     @Generated
@@ -218,14 +218,14 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * handleBindingOfBufferNamed:frequency:usingBlock:
-     * 
+     * <p>
      * Sets the block to call at render time to bind the buffer of the specified symbol of the receiver's program.
-     * 
+     * <p>
      * This method can only be used with Metal based programs.
-     * 
-     * @param name The name of the buffer to bind.
+     *
+     * @param name      The name of the buffer to bind.
      * @param frequency The frequency at which the block has to be invoked. Can be per frame, per node or per geometry or material. See SCNBufferBindingBlock above.
-     * @param block The block that binds the buffer.
+     * @param block     The block that binds the buffer.
      */
     @Generated
     @Selector("handleBindingOfBufferNamed:frequency:usingBlock:")
@@ -242,7 +242,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] opaque
-     * 
+     * <p>
      * Determines the receiver's fragment are opaque or not. Defaults to YES.
      */
     @Generated
@@ -251,7 +251,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] opaque
-     * 
+     * <p>
      * Determines the receiver's fragment are opaque or not. Defaults to YES.
      */
     @Generated
@@ -260,9 +260,9 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] library
-     * 
-     * Specifies the metal library to use to locate the function names specified above.
-     * 
+     * <p>
+     * Specifies the Metal library to use to locate the function names specified above.
+     * <p>
      * If set to nil the default library is used. Defaults to nil.
      */
     @Generated
@@ -272,9 +272,9 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * semanticForSymbol:
-     * 
+     * <p>
      * Retrieves the SceneKit semantic associated to a symbol from the program source code.
-     * 
+     *
      * @param symbol A symbol from the program source code.
      */
     @Generated
@@ -283,7 +283,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * Determines the receiver's delegate
      */
     @Generated
@@ -292,7 +292,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * Determines the receiver's delegate
      */
     @Generated
@@ -309,9 +309,9 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] fragmentFunctionName
-     * 
+     * <p>
      * Determines the receiver's fragment function name.
-     * 
+     * <p>
      * The name of the fragment function (for Metal programs).
      */
     @Generated
@@ -320,7 +320,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] fragmentShader
-     * 
+     * <p>
      * Determines the receiver's fragment shader.
      */
     @Generated
@@ -329,9 +329,9 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] library
-     * 
-     * Specifies the metal library to use to locate the function names specified above.
-     * 
+     * <p>
+     * Specifies the Metal library to use to locate the function names specified above.
+     * <p>
      * If set to nil the default library is used. Defaults to nil.
      */
     @Generated
@@ -340,14 +340,14 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * setSemantic:forSymbol:options:
-     * 
+     * <p>
      * Associates a SceneKit semantic to a symbol.
-     * 
+     * <p>
      * Associates semantics handled by the SceneKit runtime to a symbol from the program. Supported semantics are listed in SCNGeometry.h and SCNNode.h.
-     * 
+     *
      * @param semantic The SceneKit semantic to associate to the specified symbol.
-     * @param symbol A symbol from the program source code.
-     * @param options An optional dictionary. See the 'Semantic options' above.
+     * @param symbol   A symbol from the program source code.
+     * @param options  An optional dictionary. See the 'Semantic options' above.
      */
     @Generated
     @Selector("setSemantic:forSymbol:options:")
@@ -355,9 +355,9 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] vertexFunctionName
-     * 
+     * <p>
      * Determines the receiver's vertex function name.
-     * 
+     * <p>
      * The name of the vertex function (for Metal programs).
      */
     @Generated
@@ -366,7 +366,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] vertexShader
-     * 
+     * <p>
      * Determines the receiver's vertex shader.
      */
     @Generated
@@ -381,9 +381,9 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] vertexFunctionName
-     * 
+     * <p>
      * Determines the receiver's vertex function name.
-     * 
+     * <p>
      * The name of the vertex function (for Metal programs).
      */
     @Generated
@@ -392,7 +392,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] vertexShader
-     * 
+     * <p>
      * Determines the receiver's vertex shader.
      */
     @Generated

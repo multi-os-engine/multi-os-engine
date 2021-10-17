@@ -44,7 +44,8 @@ public final class AudioBalanceFade extends StructObject {
     }
 
     @Generated
-    public AudioBalanceFade(float mLeftRightBalance, float mBackFrontFade, int mType, AudioChannelLayout mChannelLayout) {
+    public AudioBalanceFade(float mLeftRightBalance, float mBackFrontFade, int mType,
+            AudioChannelLayout mChannelLayout) {
         super(AudioBalanceFade.class);
         setMLeftRightBalance(mLeftRightBalance);
         setMBackFrontFade(mBackFrontFade);

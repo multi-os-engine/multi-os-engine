@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An immutable value object representing a postal address.
- * 
+ * <p>
  * CNPostalAddress is thread safe.
  */
 @Generated

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] NSHTTPCookieAcceptPolicy
- * 
+ * <p>
  * Values for the different cookie accept policies
  * [@constant] NSHTTPCookieAcceptPolicyAlways Accept all cookies
  * [@constant] NSHTTPCookieAcceptPolicyNever Reject all cookies

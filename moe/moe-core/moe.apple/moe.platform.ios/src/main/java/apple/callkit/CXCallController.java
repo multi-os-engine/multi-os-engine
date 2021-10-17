@@ -172,10 +172,10 @@ public class CXCallController extends NSObject {
 
     /**
      * Request a transaction to be performed by the in-app provider.
-     * 
+     * <p>
      * If the completion block is called with a nil error, then the transaction will be passed to the CXProvider's -provider:executeTransaction: delegate callback.
      * A non-nil error indicates that the requested transaction could not be executed.
-     * 
+     * <p>
      * Completion block is performed on the queue supplied to designated initializer.
      */
     @Generated
@@ -192,10 +192,10 @@ public class CXCallController extends NSObject {
 
     /**
      * Request a transaction containing the specified action to be performed by the in-app provider.
-     * 
+     * <p>
      * If the completion block is called with a nil error, then the transaction will be passed to the CXProvider's -provider:executeTransaction: delegate callback.
      * A non-nil error indicates that the requested transaction could not be executed.
-     * 
+     * <p>
      * Completion block is performed on the queue supplied to designated initializer.
      */
     @Generated
@@ -212,10 +212,10 @@ public class CXCallController extends NSObject {
 
     /**
      * Request a transaction containing the specified actions to be performed by the in-app provider.
-     * 
+     * <p>
      * If the completion block is called with a nil error, then the transaction will be passed to the CXProvider's -provider:executeTransaction: delegate callback.
      * A non-nil error indicates that the requested transaction could not be executed.
-     * 
+     * <p>
      * Completion block is performed on the queue supplied to designated initializer.
      */
     @Generated

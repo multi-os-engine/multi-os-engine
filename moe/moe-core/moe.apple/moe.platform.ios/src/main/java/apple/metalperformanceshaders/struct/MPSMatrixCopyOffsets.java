@@ -29,12 +29,12 @@ public final class MPSMatrixCopyOffsets extends StructObject {
     @Generated
     public MPSMatrixCopyOffsets(int sourceRowOffset, int sourceColumnOffset, int destinationRowOffset,
             int destinationColumnOffset) {
-                super(MPSMatrixCopyOffsets.class);
-                setSourceRowOffset(sourceRowOffset);
-                setSourceColumnOffset(sourceColumnOffset);
-                setDestinationRowOffset(destinationRowOffset);
-                setDestinationColumnOffset(destinationColumnOffset);
-            }
+        super(MPSMatrixCopyOffsets.class);
+        setSourceRowOffset(sourceRowOffset);
+        setSourceColumnOffset(sourceColumnOffset);
+        setDestinationRowOffset(destinationRowOffset);
+        setDestinationColumnOffset(destinationColumnOffset);
+    }
 
     /**
      * < offset to start of source region to read in rows

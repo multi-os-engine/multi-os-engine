@@ -45,28 +45,28 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImagePyramid
- * 
+ * <p>
  * The MPSImagePyramid is a base class for creating different kinds of pyramid images
- * 
- *             Currently supported pyramid-types are:
- *             [@ref] MPSImageGaussianPyramid
- * 
- *             The Gaussian image pyramid kernel is enqueued as a in-place operation using
- *             [@ref] MPSUnaryImageKernel::encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:
- *             and all mipmap levels after level=1, present in the provided image are filled using
- *             the provided filtering kernel. The fallbackCopyAllocator parameter is not used.
- * 
- *             The Gaussian image pyramid filter ignores @ref clipRect and @ref offset and fills
- *             the entire mipmap levels.
- * 
+ * <p>
+ * Currently supported pyramid-types are:
+ * [@ref] MPSImageGaussianPyramid
+ * <p>
+ * The Gaussian image pyramid kernel is enqueued as a in-place operation using
+ * [@ref] MPSUnaryImageKernel::encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:
+ * and all mipmap levels after level=1, present in the provided image are filled using
+ * the provided filtering kernel. The fallbackCopyAllocator parameter is not used.
+ * <p>
+ * The Gaussian image pyramid filter ignores @ref clipRect and @ref offset and fills
+ * the entire mipmap levels.
+ * <p>
  * [@note]       Make sure your texture type is compatible with mipmapping and supports texture views
- *                 (see @ref MTLTextureUsagePixelFormatView).
+ * (see @ref MTLTextureUsagePixelFormatView).
  * [@note]       Recall the size of the nth mipmap level:
- *             [@code]
- *                 w_n = max(1, floor(w_0 / 2^n))
- *                 h_n = max(1, floor(h_0 / 2^n)),
- *             [@endcode]
- *             where w_0, h_0 are the zeroth level width and height. ie the image dimensions themselves.
+ * [@code]
+ * w_n = max(1, floor(w_0 / 2^n))
+ * h_n = max(1, floor(h_0 / 2^n)),
+ * [@endcode]
+ * where w_0, h_0 are the zeroth level width and height. ie the image dimensions themselves.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -185,12 +185,11 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
 
     /**
      * Initialize a downwards 5-tap image pyramid with the default filter kernel and device
-     * 
+     * <p>
      * The filter kernel is the outer product of w = [ 1/16,  1/4,  3/8,  1/4,  1/16 ]^T, with itself
-     * 
-     * @param      device  The device the filter will run on
-     * 
-     * @return     A valid object or nil, if failure.
+     *
+     * @param device The device the filter will run on
+     * @return A valid object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
@@ -198,12 +197,11 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
 
     /**
      * Initialize a downwards 5-tap image pyramid with a central weight parameter and device
-     * 
-     * @param      device  The device the filter will run on
-     * @param      centerWeight Defines form of the filter-kernel  through the outer product ww^T, where
-     *             w = [ (1/4 - a/2),  1/4,  a,  1/4,  (1/4 - a/2) ]^T and 'a' is centerWeight.
-     * 
-     * @return     A valid object or nil, if failure.
+     *
+     * @param device       The device the filter will run on
+     * @param centerWeight Defines form of the filter-kernel  through the outer product ww^T, where
+     *                     w = [ (1/4 - a/2),  1/4,  a,  1/4,  (1/4 - a/2) ]^T and 'a' is centerWeight.
+     * @return A valid object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:centerWeight:")
@@ -212,15 +210,14 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
 
     /**
      * Initialize a downwards n-tap pyramid with a custom filter kernel and device
-     * 
-     * @param      device  The device the filter will run on
-     * @param      kernelWidth The width of the filtering kernel. See @ref MPSImageConvolution.
-     * @param      kernelHeight    The height of the filtering kernel. See @ref MPSImageConvolution.
-     * @param      kernelWeights   A pointer to an array of kernelWidth * kernelHeight values to be
-     *                             used as the kernel.
-     *                             These are in row major order. See @ref MPSImageConvolution.
-     * 
-     * @return     A valid object or nil, if failure.
+     *
+     * @param device        The device the filter will run on
+     * @param kernelWidth   The width of the filtering kernel. See @ref MPSImageConvolution.
+     * @param kernelHeight  The height of the filtering kernel. See @ref MPSImageConvolution.
+     * @param kernelWeights A pointer to an array of kernelWidth * kernelHeight values to be
+     *                      used as the kernel.
+     *                      These are in row major order. See @ref MPSImageConvolution.
+     * @return A valid object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:weights:")
@@ -230,7 +227,7 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
 
     /**
      * [@property] kernelHeight
-     * 
+     * <p>
      * The height of the filter window. Must be an odd number.
      */
     @Generated
@@ -240,7 +237,7 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
 
     /**
      * [@property] kernelWidth
-     * 
+     * <p>
      * The width of the filter window. Must be an odd number.
      */
     @Generated
@@ -254,12 +251,12 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * See @ref MPSKernel#initWithCoder.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
-     * @param      device      The MTLDevice on which to make the MPSCNNPooling
-     * @return     A new MPSCNNPooling object, or nil if failure.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
+     * @param device   The MTLDevice on which to make the MPSCNNPooling
+     * @return A new MPSCNNPooling object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")

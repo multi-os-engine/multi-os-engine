@@ -756,4 +756,18 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     @Generated
     @Selector("setLineBreakStrategy:")
     public native void setLineBreakStrategy(@NUInt long value);
+
+    /**
+     * Indicates whether expansion text will be shown when the view is too small to show all the contents. Defaults to NO.
+     */
+    @Generated
+    @Selector("setShowsExpansionTextWhenTruncated:")
+    public native void setShowsExpansionTextWhenTruncated(boolean value);
+
+    /**
+     * Indicates whether expansion text will be shown when the view is too small to show all the contents. Defaults to NO.
+     */
+    @Generated
+    @Selector("showsExpansionTextWhenTruncated")
+    public native boolean showsExpansionTextWhenTruncated();
 }

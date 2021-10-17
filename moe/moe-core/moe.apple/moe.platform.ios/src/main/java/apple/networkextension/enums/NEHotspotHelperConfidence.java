@@ -21,17 +21,17 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEHotspotHelperConfidence
- * 
- *   The HotspotHelper's confidence in its ability to handle the network.
- * 
- *   The HotspotHelper indicates its confidence in being able to handle the
- *   given hotspot network.
+ * <p>
+ * The HotspotHelper's confidence in its ability to handle the network.
+ * <p>
+ * The HotspotHelper indicates its confidence in being able to handle the
+ * given hotspot network.
  * [@const] kNEHotspotHelperConfidenceNone The helper is unable to handle
- *   the network.
+ * the network.
  * [@const] kNEHotspotHelperConfidenceLow The helper has some confidence
- *   in being able to handle the network.
+ * in being able to handle the network.
  * [@const] kNEHotspotHelperConfidenceHigh The helper has high confidence
- *   in being able to handle the network.
+ * in being able to handle the network.
  */
 @Generated
 public final class NEHotspotHelperConfidence {

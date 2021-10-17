@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueStatusFault
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueStatusFaultNoFault               No Fault.
  * [@constant]  HMCharacteristicValueStatusFaultGeneralFault          General Fault.
  */

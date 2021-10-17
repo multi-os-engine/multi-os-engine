@@ -25,11 +25,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CHHapticDynamicParameter
- * 
- * 	A CHHapticDynamicParameter contains a CHHapticDynamicParameterID/value pair which will modify (modulate) the ongoing character
- * 	of a haptic or audio event.
- * 
- * 	CHHapticDynamicParameters have a relative time property to allow specifying the time relationship between parameters in a pattern.
+ * <p>
+ * A CHHapticDynamicParameter contains a CHHapticDynamicParameterID/value pair which will modify (modulate) the ongoing character
+ * of a haptic or audio event.
+ * <p>
+ * CHHapticDynamicParameters have a relative time property to allow specifying the time relationship between parameters in a pattern.
  */
 @Generated
 @Library("CoreHaptics")
@@ -100,15 +100,12 @@ public class CHHapticDynamicParameter extends NSObject {
 
     /**
      * initWithParameterID:value:relativeTime
-     * 
-     * 	Initialize a CHHapticDynamicParameter with a parameter ID, value, and relative time.
-     * 
-     * @param parameterID
-     * 	The CHHapticDynamicParameterID for the desired parameter change.
-     * @param value
-     * 	The value for that parameter.
-     * @param time
-     * 	The time at which this parameter should be applied, relative to the start time of the pattern.
+     * <p>
+     * Initialize a CHHapticDynamicParameter with a parameter ID, value, and relative time.
+     *
+     * @param parameterID The CHHapticDynamicParameterID for the desired parameter change.
+     * @param value       The value for that parameter.
+     * @param time        The time at which this parameter should be applied, relative to the start time of the pattern.
      */
     @Generated
     @Selector("initWithParameterID:value:relativeTime:")

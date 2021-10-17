@@ -21,9 +21,11 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSRunLoop;
 import apple.foundation.NSSet;
+import apple.quartzcore.struct.CAFrameRateRange;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -277,4 +279,27 @@ public class CADisplayLink extends NSObject {
     @Generated
     @Selector("timestamp")
     public native double timestamp();
+
+    /**
+     * Defines the range of desired callback rate in frames-per-second for this
+     * display link. If the range contains the same minimum and maximum frame rate,
+     * this property is identical as preferredFramesPerSecond. Otherwise, the actual
+     * callback rate will be dynamically adjusted to better align with other
+     * animation sources.
+     */
+    @Generated
+    @Selector("preferredFrameRateRange")
+    @ByValue
+    public native CAFrameRateRange preferredFrameRateRange();
+
+    /**
+     * Defines the range of desired callback rate in frames-per-second for this
+     * display link. If the range contains the same minimum and maximum frame rate,
+     * this property is identical as preferredFramesPerSecond. Otherwise, the actual
+     * callback rate will be dynamically adjusted to better align with other
+     * animation sources.
+     */
+    @Generated
+    @Selector("setPreferredFrameRateRange:")
+    public native void setPreferredFrameRateRange(@ByValue CAFrameRateRange value);
 }

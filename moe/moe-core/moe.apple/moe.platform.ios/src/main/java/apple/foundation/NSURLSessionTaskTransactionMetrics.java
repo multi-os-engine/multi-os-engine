@@ -159,7 +159,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * connectStartDate is the time immediately before the user agent started establishing the connection to the server.
-     * 
+     * <p>
      * For example, this would correspond to the time immediately before the user agent started trying to establish the TCP connection.
      */
     @Generated
@@ -182,15 +182,15 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * fetchStartDate returns the time when the user agent started fetching the resource, whether or not the resource was retrieved from the server or local resources.
-     * 
+     * <p>
      * The following metrics will be set to nil, if a persistent connection was used or the resource was retrieved from local resources:
-     * 
-     *   domainLookupStartDate
-     *   domainLookupEndDate
-     *   connectStartDate
-     *   connectEndDate
-     *   secureConnectionStartDate
-     *   secureConnectionEndDate
+     * <p>
+     * domainLookupStartDate
+     * domainLookupEndDate
+     * connectStartDate
+     * connectEndDate
+     * secureConnectionStartDate
+     * secureConnectionEndDate
      */
     @Generated
     @Selector("fetchStartDate")
@@ -217,9 +217,9 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * The network protocol used to fetch the resource, as identified by the ALPN Protocol ID Identification Sequence [RFC7301].
      * E.g., h2, http/1.1, spdy/3.1.
-     * 
+     * <p>
      * When a proxy is configured AND a tunnel connection is established, then this attribute returns the value for the tunneled protocol.
-     * 
+     * <p>
      * For example:
      * If no proxy were used, and HTTP/2 was negotiated, then h2 would be returned.
      * If HTTP/1.1 were used to the proxy, and the tunneled connection was HTTP/2, then h2 would be returned.
@@ -238,7 +238,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * requestEndDate is the time immediately after the user agent finished requesting the source, regardless of whether the resource was retrieved from the server or local resources.
-     * 
+     * <p>
      * For example, this would correspond to the time immediately after the user agent finished sending the last byte of the request.
      */
     @Generated
@@ -247,7 +247,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * requestStartDate is the time immediately before the user agent started requesting the source, regardless of whether the resource was retrieved from the server or local resources.
-     * 
+     * <p>
      * For example, this would correspond to the time immediately before the user agent sent an HTTP GET request.
      */
     @Generated
@@ -278,7 +278,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * responseStartDate is the time immediately after the user agent received the first byte of the response from the server or from local resources.
-     * 
+     * <p>
      * For example, this would correspond to the time immediately after the user agent received the first byte of an HTTP response.
      */
     @Generated
@@ -287,7 +287,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * If an encrypted connection was used, secureConnectionEndDate is the time immediately after the security handshake completed.
-     * 
+     * <p>
      * If an encrypted connection was not used, this attribute is set to nil.
      */
     @Generated
@@ -296,9 +296,9 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * If an encrypted connection was used, secureConnectionStartDate is the time immediately before the user agent started the security handshake to secure the current connection.
-     * 
+     * <p>
      * For example, this would correspond to the time immediately before the user agent started the TLS handshake.
-     * 
+     * <p>
      * If an encrypted connection was not used, this attribute is set to nil.
      */
     @Generated
@@ -379,9 +379,9 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * localAddress is the IP address string of the local interface for the connection.
-     * 
+     * <p>
      * For multipath protocols, this is the local address of the initial flow.
-     * 
+     * <p>
      * If a connection was not used, this attribute is set to nil.
      */
     @Generated
@@ -390,9 +390,9 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * localPort is the port number of the local interface for the connection.
-     * 
+     * <p>
      * For multipath protocols, this is the local port of the initial flow.
-     * 
+     * <p>
      * If a connection was not used, this attribute is set to nil.
      */
     @Generated
@@ -402,9 +402,9 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * negotiatedTLSCipherSuite is the TLS cipher suite negotiated for the connection.
      * It is a 2-byte sequence in host byte order.
-     * 
+     * <p>
      * Please refer to tls_ciphersuite_t enum in Security/SecProtocolTypes.h
-     * 
+     * <p>
      * If an encrypted connection was not used, this attribute is set to nil.
      */
     @Generated
@@ -414,9 +414,9 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * negotiatedTLSProtocolVersion is the TLS protocol version negotiated for the connection.
      * It is a 2-byte sequence in host byte order.
-     * 
+     * <p>
      * Please refer to tls_protocol_version_t enum in Security/SecProtocolTypes.h
-     * 
+     * <p>
      * If an encrypted connection was not used, this attribute is set to nil.
      */
     @Generated
@@ -425,9 +425,9 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * remoteAddress is the IP address string of the remote interface for the connection.
-     * 
+     * <p>
      * For multipath protocols, this is the remote address of the initial flow.
-     * 
+     * <p>
      * If a connection was not used, this attribute is set to nil.
      */
     @Generated
@@ -436,9 +436,9 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * remotePort is the port number of the remote interface for the connection.
-     * 
+     * <p>
      * For multipath protocols, this is the remote port of the initial flow.
-     * 
+     * <p>
      * If a connection was not used, this attribute is set to nil.
      */
     @Generated

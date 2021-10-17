@@ -26,7 +26,9 @@ public final class UIPopoverArrowDirection {
     @Generated @NUInt public static final long Left = 0x0000000000000004L;
     @Generated @NUInt public static final long Right = 0x0000000000000008L;
     @Generated @NUInt public static final long Any = 0x000000000000000FL;
-    @Generated @NUInt public static final long Unknown = org.moe.natj.general.NatJ.is64Bit() ? 0xFFFFFFFFFFFFFFFFL : 0x00000000FFFFFFFFL;
+    @Generated @NUInt public static final long Unknown = org.moe.natj.general.NatJ.is64Bit() ?
+            0xFFFFFFFFFFFFFFFFL :
+            0x00000000FFFFFFFFL;
 
     @Generated
     private UIPopoverArrowDirection() {

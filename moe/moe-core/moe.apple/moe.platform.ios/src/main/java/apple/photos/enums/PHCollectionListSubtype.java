@@ -44,7 +44,9 @@ public final class PHCollectionListSubtype {
     /**
      * Used for fetching if you don't care about the exact subtype
      */
-    @Generated @NInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ? 0x7FFFFFFFFFFFFFFFL : 0x000000007FFFFFFFL;
+    @Generated @NInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ?
+            0x7FFFFFFFFFFFFFFFL :
+            0x000000007FFFFFFFL;
 
     @Generated
     private PHCollectionListSubtype() {

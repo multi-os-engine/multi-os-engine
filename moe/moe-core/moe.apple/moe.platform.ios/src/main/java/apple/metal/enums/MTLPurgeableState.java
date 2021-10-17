@@ -21,18 +21,18 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLPurgeableOption
- * 
+ * <p>
  * Options for setPurgeable call.
- * 
+ * <p>
  * [@constant] MTLPurgeableStateNonVolatile
  * The contents of this resource may not be discarded.
- * 
+ * <p>
  * [@constant] MTLPurgeableStateVolatile
  * The contents of this resource may be discarded.
- * 
+ * <p>
  * [@constant] MTLPurgeableStateEmpty
  * The contents of this are discarded.
- * 
+ * <p>
  * [@constant] MTLPurgeableStateKeepCurrent
  * The purgeabelity state is not changed.
  */

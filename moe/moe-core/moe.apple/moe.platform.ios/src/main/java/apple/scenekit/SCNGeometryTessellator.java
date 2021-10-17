@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNGeometryTessellator
- * 
+ * <p>
  * A geometry tessellator describes how a more detailed surface is calculated from the geometry's initial surface.
  */
 @Generated
@@ -99,9 +99,9 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] edgeTessellationFactor
-     * 
+     * <p>
      * Specifies the edge tessellation factor. Defaults to 1.
-     * 
+     * <p>
      * This has no effect for adaptive subdivision
      */
     @Generated
@@ -128,9 +128,9 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] insideTessellationFactor
-     * 
+     * <p>
      * Specifies the inside tessellation factor. Defaults to 1.
-     * 
+     * <p>
      * This has no effect for adaptive subdivision
      */
     @Generated
@@ -153,7 +153,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] adaptive
-     * 
+     * <p>
      * Specifies if the tessellation should be uniform or adaptive. Defaults to NO.
      */
     @Generated
@@ -162,7 +162,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] screenspace
-     * 
+     * <p>
      * Specifies if the level of tessellation should be adapted in screenSpace. Defaults to NO.
      */
     @Generated
@@ -179,9 +179,9 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] maximumEdgeLength
-     * 
+     * <p>
      * Specifies the maximum edge length. Defaults to 1.
-     * 
+     * <p>
      * This has no effect for non-adaptive subdivision
      */
     @Generated
@@ -205,7 +205,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] adaptive
-     * 
+     * <p>
      * Specifies if the tessellation should be uniform or adaptive. Defaults to NO.
      */
     @Generated
@@ -214,9 +214,9 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] edgeTessellationFactor
-     * 
+     * <p>
      * Specifies the edge tessellation factor. Defaults to 1.
-     * 
+     * <p>
      * This has no effect for adaptive subdivision
      */
     @Generated
@@ -225,9 +225,9 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] insideTessellationFactor
-     * 
+     * <p>
      * Specifies the inside tessellation factor. Defaults to 1.
-     * 
+     * <p>
      * This has no effect for adaptive subdivision
      */
     @Generated
@@ -236,9 +236,9 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] maximumEdgeLength
-     * 
+     * <p>
      * Specifies the maximum edge length. Defaults to 1.
-     * 
+     * <p>
      * This has no effect for non-adaptive subdivision
      */
     @Generated
@@ -247,7 +247,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] screenspace
-     * 
+     * <p>
      * Specifies if the level of tessellation should be adapted in screenSpace. Defaults to NO.
      */
     @Generated
@@ -256,7 +256,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] smoothingMode
-     * 
+     * <p>
      * Defaults to SCNTessellationSmoothingModeNone.
      */
     @Generated
@@ -265,7 +265,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] tessellationFactorScale
-     * 
+     * <p>
      * Specifies the scale factor applied to the per-patch tessellation factors. Defaults to 1.
      */
     @Generated
@@ -274,7 +274,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] tessellationPartitionMode
-     * 
+     * <p>
      * Specifies the tessellation partition mode. Defaults to MTLTessellationPartitionModeInteger.
      */
     @Generated
@@ -287,7 +287,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] smoothingMode
-     * 
+     * <p>
      * Defaults to SCNTessellationSmoothingModeNone.
      */
     @Generated
@@ -311,7 +311,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] tessellationFactorScale
-     * 
+     * <p>
      * Specifies the scale factor applied to the per-patch tessellation factors. Defaults to 1.
      */
     @Generated
@@ -321,7 +321,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property] tessellationPartitionMode
-     * 
+     * <p>
      * Specifies the tessellation partition mode. Defaults to MTLTessellationPartitionModeInteger.
      */
     @Generated

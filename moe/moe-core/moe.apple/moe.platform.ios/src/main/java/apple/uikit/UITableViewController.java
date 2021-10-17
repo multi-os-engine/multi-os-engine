@@ -156,10 +156,6 @@ public class UITableViewController extends UIViewController implements UITableVi
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -641,4 +637,9 @@ public class UITableViewController extends UIViewController implements UITableVi
     public native void tableViewWillEndContextMenuInteractionWithConfigurationAnimator(UITableView tableView,
             UIContextMenuConfiguration configuration,
             @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:selectionFollowsFocusForRowAtIndexPath:")
+    public native boolean tableViewSelectionFollowsFocusForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
 }

@@ -146,7 +146,7 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
 
     /**
      * Creates a new plane geometry using a Metal device.
-     * 
+     *
      * @param device A Metal device.
      * @return A new plane geometry.
      */
@@ -182,7 +182,7 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
 
     /**
      * Updates the geometry with the vertices of a plane geometry.
-     * 
+     *
      * @param planeGeometry A plane geometry.
      */
     @Generated

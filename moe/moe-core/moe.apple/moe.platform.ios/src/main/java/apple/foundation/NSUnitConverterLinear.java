@@ -155,24 +155,24 @@ public class NSUnitConverterLinear extends NSUnitConverter implements NSSecureCo
 
     /**
      * For units that require linear conversion, the methods perform calculations in the form of y = ax + b, where
-     *    - x is the value in terms of the unit on which this method is called
-     *    - y is the value in terms of the base unit of the dimension
-     *    - a is the known coefficient used for this unit's conversion
-     *    - b is the known constant used for this unit's conversion
-     * 
+     * - x is the value in terms of the unit on which this method is called
+     * - y is the value in terms of the base unit of the dimension
+     * - a is the known coefficient used for this unit's conversion
+     * - b is the known constant used for this unit's conversion
+     * <p>
      * baseUnitValueFromValue: performs the conversion in the form of y = ax + b, where x represents the value passed in and y represents the value returned.
      * valueFromBaseUnitValue: performs the inverse conversion in the form of x = (y + (-1 * b))/a, where y represents the value passed in and x represents the value returned.
-     * 
+     * <p>
      * An example of this is NSUnitTemperature.  For Celsius, baseUnitValueFromValue: calculates the value in Kelvin using the formula
-     *            K = 1 * °C + 273.15
+     * K = 1 * °C + 273.15
      * and valueFromBaseUnitValue: calculates the value in Celsius using the formula
-     *            C° = (K + (-1 * 273.15))/1
+     * C° = (K + (-1 * 273.15))/1
      * where the coefficient is 1 and the constant is 273.15.
-     * 
+     * <p>
      * For units that only require conversion by scale factor, the coefficient is the scale factor and the constant is always 0.  baseUnitValueFromValue: calculates the value in meters using the formula
-     *            valueInMeters = 1000 * valueInKilometers + 0
+     * valueInMeters = 1000 * valueInKilometers + 0
      * and valueFromBaseUnitValue: calculates the value in kilometers using the formula
-     *            valueInKilometers = valueInMeters / 1000
+     * valueInKilometers = valueInMeters / 1000
      * where the coefficient is 1000 and the constant is 0.  This API provides a convenience initializer initWithCoefficient: that assumes the constant is 0.
      */
     @Generated

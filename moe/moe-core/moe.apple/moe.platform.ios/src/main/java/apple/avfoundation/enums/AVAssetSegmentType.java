@@ -5,13 +5,13 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]		AVAssetSegmentType
- * 
+ * <p>
  * Indicates the type of segment.
- * 
+ * <p>
  * [@constant]	AVAssetSegmentTypeInitialization
- * 			Indicates that the segment is a initialization segment.
+ * Indicates that the segment is a initialization segment.
  * [@constant]	AVAssetSegmentTypeSeparable
- * 			Indicates that the segment is a separable segment.
+ * Indicates that the segment is a separable segment.
  */
 @Generated
 public final class AVAssetSegmentType {

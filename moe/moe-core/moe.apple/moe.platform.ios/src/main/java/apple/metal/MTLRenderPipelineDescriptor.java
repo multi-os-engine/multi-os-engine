@@ -219,7 +219,7 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * reset
-     * 
+     * <p>
      * Restore all pipeline descriptor properties to their default values.
      */
     @Generated
@@ -373,11 +373,11 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] binaryArchives
-     * 
+     * <p>
      * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
-     * 
+     * <p>
      * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
-     * 
+     *
      * @see MTLBinaryArchive
      */
     @Generated
@@ -386,14 +386,192 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] binaryArchives
-     * 
+     * <p>
      * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
-     * 
+     * <p>
      * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
-     * 
+     *
      * @see MTLBinaryArchive
      */
     @Generated
     @Selector("setBinaryArchives:")
     public native void setBinaryArchives(NSArray<?> value);
+
+    /**
+     * [@property] fragmentLinkedFunctions
+     * <p>
+     * The set of functions to be linked with the pipeline state and accessed from the fragment function.
+     *
+     * @see MTLLinkedFunctions
+     */
+    @Generated
+    @Selector("fragmentLinkedFunctions")
+    public native MTLLinkedFunctions fragmentLinkedFunctions();
+
+    /**
+     * [@property] fragmentPreloadedLibraries
+     * <p>
+     * The set of MTLDynamicLibrary to use to resolve external symbols for the fragmentFunction before considering symbols from dependent MTLDynamicLibrary.
+     * <p>
+     * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time without having to use fragmentPreloadedLibraries.
+     * This property can be used to override symbols from dependent libraries for experimentation or evaluating alternative implementations.
+     * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that have no stable installName that can be used to automatically load from the file system.
+     *
+     * @see MTLDynamicLibrary
+     */
+    @Generated
+    @Selector("fragmentPreloadedLibraries")
+    public native NSArray<?> fragmentPreloadedLibraries();
+
+    /**
+     * [@property] maxFragmentCallStackDepth
+     * <p>
+     * The maximum depth of the call stack in stack frames from the shader. Defaults to 1 additional stack frame.
+     */
+    @Generated
+    @Selector("maxFragmentCallStackDepth")
+    @NUInt
+    public native long maxFragmentCallStackDepth();
+
+    /**
+     * [@property] maxVertexCallStackDepth
+     * <p>
+     * The maximum depth of the call stack in stack frames from the shader. Defaults to 1 additional stack frame.
+     */
+    @Generated
+    @Selector("maxVertexCallStackDepth")
+    @NUInt
+    public native long maxVertexCallStackDepth();
+
+    /**
+     * [@property] fragmentLinkedFunctions
+     * <p>
+     * The set of functions to be linked with the pipeline state and accessed from the fragment function.
+     *
+     * @see MTLLinkedFunctions
+     */
+    @Generated
+    @Selector("setFragmentLinkedFunctions:")
+    public native void setFragmentLinkedFunctions(MTLLinkedFunctions value);
+
+    /**
+     * [@property] fragmentPreloadedLibraries
+     * <p>
+     * The set of MTLDynamicLibrary to use to resolve external symbols for the fragmentFunction before considering symbols from dependent MTLDynamicLibrary.
+     * <p>
+     * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time without having to use fragmentPreloadedLibraries.
+     * This property can be used to override symbols from dependent libraries for experimentation or evaluating alternative implementations.
+     * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that have no stable installName that can be used to automatically load from the file system.
+     *
+     * @see MTLDynamicLibrary
+     */
+    @Generated
+    @Selector("setFragmentPreloadedLibraries:")
+    public native void setFragmentPreloadedLibraries(NSArray<?> value);
+
+    /**
+     * [@property] maxFragmentCallStackDepth
+     * <p>
+     * The maximum depth of the call stack in stack frames from the shader. Defaults to 1 additional stack frame.
+     */
+    @Generated
+    @Selector("setMaxFragmentCallStackDepth:")
+    public native void setMaxFragmentCallStackDepth(@NUInt long value);
+
+    /**
+     * [@property] maxVertexCallStackDepth
+     * <p>
+     * The maximum depth of the call stack in stack frames from the shader. Defaults to 1 additional stack frame.
+     */
+    @Generated
+    @Selector("setMaxVertexCallStackDepth:")
+    public native void setMaxVertexCallStackDepth(@NUInt long value);
+
+    /**
+     * [@property] supportFragmentAddingBinaryFunctions
+     * <p>
+     * This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     */
+    @Generated
+    @Selector("setSupportAddingFragmentBinaryFunctions:")
+    public native void setSupportAddingFragmentBinaryFunctions(boolean value);
+
+    /**
+     * [@property] supportAddingVertexBinaryFunctions
+     * <p>
+     * This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     */
+    @Generated
+    @Selector("setSupportAddingVertexBinaryFunctions:")
+    public native void setSupportAddingVertexBinaryFunctions(boolean value);
+
+    /**
+     * [@property] vertexLinkedFunctions
+     * <p>
+     * The set of functions to be linked with the pipeline state and accessed from the vertex function.
+     *
+     * @see MTLLinkedFunctions
+     */
+    @Generated
+    @Selector("setVertexLinkedFunctions:")
+    public native void setVertexLinkedFunctions(MTLLinkedFunctions value);
+
+    /**
+     * [@property] vertexPreloadedLibraries
+     * <p>
+     * The set of MTLDynamicLibrary to use to resolve external symbols for the vertexFunction before considering symbols from dependent MTLDynamicLibrary.
+     * <p>
+     * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time without having to use vertexPreloadedLibraries.
+     * This property can be used to override symbols from dependent libraries for experimentation or evaluating alternative implementations.
+     * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that have no stable installName that can be used to automatically load from the file system.
+     *
+     * @see MTLDynamicLibrary
+     */
+    @Generated
+    @Selector("setVertexPreloadedLibraries:")
+    public native void setVertexPreloadedLibraries(NSArray<?> value);
+
+    /**
+     * [@property] supportFragmentAddingBinaryFunctions
+     * <p>
+     * This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     */
+    @Generated
+    @Selector("supportAddingFragmentBinaryFunctions")
+    public native boolean supportAddingFragmentBinaryFunctions();
+
+    /**
+     * [@property] supportAddingVertexBinaryFunctions
+     * <p>
+     * This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     */
+    @Generated
+    @Selector("supportAddingVertexBinaryFunctions")
+    public native boolean supportAddingVertexBinaryFunctions();
+
+    /**
+     * [@property] vertexLinkedFunctions
+     * <p>
+     * The set of functions to be linked with the pipeline state and accessed from the vertex function.
+     *
+     * @see MTLLinkedFunctions
+     */
+    @Generated
+    @Selector("vertexLinkedFunctions")
+    public native MTLLinkedFunctions vertexLinkedFunctions();
+
+    /**
+     * [@property] vertexPreloadedLibraries
+     * <p>
+     * The set of MTLDynamicLibrary to use to resolve external symbols for the vertexFunction before considering symbols from dependent MTLDynamicLibrary.
+     * <p>
+     * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time without having to use vertexPreloadedLibraries.
+     * This property can be used to override symbols from dependent libraries for experimentation or evaluating alternative implementations.
+     * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that have no stable installName that can be used to automatically load from the file system.
+     *
+     * @see MTLDynamicLibrary
+     */
+    @Generated
+    @Selector("vertexPreloadedLibraries")
+    public native NSArray<?> vertexPreloadedLibraries();
 }

@@ -130,7 +130,7 @@ public final class Enums {
     @Generated public static final int kvImageNoFlags = 0x00000000;
     /**
      * Operate on red, green and blue channels only. Alpha is copied from source
-     * to destination. For Interleaved formats only. 
+     * to destination. For Interleaved formats only.
      */
     @Generated public static final int kvImageLeaveAlphaUnchanged = 0x00000001;
     /**
@@ -147,30 +147,30 @@ public final class Enums {
     @Generated public static final int kvImageEdgeExtend = 0x00000008;
     /**
      * Pass to turn off internal tiling and disable internal multithreading. Use this if
-     * you want to do your own tiling, or to use the Min/Max filters in place. 
+     * you want to do your own tiling, or to use the Min/Max filters in place.
      */
     @Generated public static final int kvImageDoNotTile = 0x00000010;
     /**
      * Use a higher quality, slower resampling filter for Geometry operations
-     * (shear, scale, rotate, affine transform, etc.) 
+     * (shear, scale, rotate, affine transform, etc.)
      */
     @Generated public static final int kvImageHighQualityResampling = 0x00000020;
     /**
      * Use only the part of the kernel that overlaps the image. For integer kernels,
-     * real_divisor = divisor * (sum of used kernel elements) / (sum of kernel elements). 
-     * This should preserve image brightness at the edges. Convolution only. 
+     * real_divisor = divisor * (sum of used kernel elements) / (sum of kernel elements).
+     * This should preserve image brightness at the edges. Convolution only.
      */
     @Generated public static final int kvImageTruncateKernel = 0x00000040;
     /**
      * The function will return the number of bytes required for the temp buffer.
-     * If this value is negative, it is an error, per standard usage. 
+     * If this value is negative, it is an error, per standard usage.
      */
     @Generated public static final int kvImageGetTempBufferSize = 0x00000080;
     /**
      * Some functions such as vImageConverter_CreateWithCGImageFormat have so many possible error conditions
-     * that developers may need more help than a simple error code to diagnose problems. When this 
-     * flag is set and an error is encountered, an informative error message will be logged to the Apple 
-     * System Logger (ASL).  The output should be visible in Console.app. 
+     * that developers may need more help than a simple error code to diagnose problems. When this
+     * flag is set and an error is encountered, an informative error message will be logged to the Apple
+     * System Logger (ASL).  The output should be visible in Console.app.
      */
     @Generated public static final int kvImagePrintDiagnosticsToConsole = 0x00000100;
     /**
@@ -179,12 +179,12 @@ public final class Enums {
     @Generated public static final int kvImageNoAllocate = 0x00000200;
     /**
      * Use methods that are HDR-aware, capable of providing correct results for input images with pixel values
-     * outside the otherwise limited (typically [-2,2]) range. This may be slower. 
+     * outside the otherwise limited (typically [-2,2]) range. This may be slower.
      */
     @Generated public static final int kvImageHDRContent = 0x00000400;
     /**
      * Pass to disable clamping is some conversions to floating point formats. Use this if the input data
-     * may describe values outside [0,1] which should be preserved.. 
+     * may describe values outside [0,1] which should be preserved..
      */
     @Generated public static final int kvImageDoNotClamp = 0x00000800;
     @Generated public static final int kvImageNoError = 0x00000000;

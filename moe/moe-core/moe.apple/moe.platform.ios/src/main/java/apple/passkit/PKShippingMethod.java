@@ -198,4 +198,20 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
+
+    /**
+     * Localized date range for this shipping method e.g. "Shipping by May 12 - 19"
+     * Setting this results in the detail property not being displayed.
+     */
+    @Generated
+    @Selector("dateComponentsRange")
+    public native PKDateComponentsRange dateComponentsRange();
+
+    /**
+     * Localized date range for this shipping method e.g. "Shipping by May 12 - 19"
+     * Setting this results in the detail property not being displayed.
+     */
+    @Generated
+    @Selector("setDateComponentsRange:")
+    public native void setDateComponentsRange(PKDateComponentsRange value);
 }

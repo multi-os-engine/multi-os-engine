@@ -21,17 +21,17 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLFunctionType
- * 
+ * <p>
  * An identifier for a top-level Metal function.
- * 
+ * <p>
  * Each location in the API where a program is used requires a function written for that specific usage.
- * 
+ * <p>
  * [@constant] MTLFunctionTypeVertex
  * A vertex shader, usable for a MTLRenderPipelineState.
- * 
+ * <p>
  * [@constant] MTLFunctionTypeFragment
  * A fragment shader, usable for a MTLRenderPipelineState.
- * 
+ * <p>
  * [@constant] MTLFunctionTypeKernel
  * A compute kernel, usable to create a MTLComputePipelineState.
  */

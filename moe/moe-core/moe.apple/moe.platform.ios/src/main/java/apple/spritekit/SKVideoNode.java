@@ -232,7 +232,7 @@ public class SKVideoNode extends SKNode {
 
     /**
      * Designated Initializer.
-     * 
+     * <p>
      * Initialize a video node from an AVPlayer. You can use the AVPlayer to control playback.
      */
     @Generated

@@ -106,8 +106,8 @@ public class CPActionSheetTemplate extends CPTemplate {
 
     /**
      * Initialize a @c CPActionSheetTemplate with a title and/or message, and at least one action.
-     * 
-     * @param title The title of the action sheet.
+     *
+     * @param title   The title of the action sheet.
      * @param message Descriptive message that provides more detail about the reason for the action sheet.
      * @param actions The actions for the action sheet.
      */

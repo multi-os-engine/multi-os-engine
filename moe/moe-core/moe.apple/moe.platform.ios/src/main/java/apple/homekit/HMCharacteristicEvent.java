@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class represents an event that is evaluated based on the value of a characteristic
- *        set to a particular value.
+ * set to a particular value.
  */
 @Generated
 @Library("HomeKit")
@@ -171,14 +171,12 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
 
     /**
      * Initializes a new characteristic event object
-     * 
+     *
      * @param characteristic The characteristic bound to the event. The characteristic must
      *                       support notification. An exception will be thrown otherwise.
-     * 
-     * @param triggerValue The value of the characteristic that triggers the event.
-     *                     Specifying nil as the trigger value corresponds to any change in the value of the
-     *                     characteristic.
-     * 
+     * @param triggerValue   The value of the characteristic that triggers the event.
+     *                       Specifying nil as the trigger value corresponds to any change in the value of the
+     *                       characteristic.
      * @return Instance object representing the characteristic event.
      */
     @Generated
@@ -188,7 +186,7 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
 
     /**
      * The value of the characteristic that triggers the event.
-     *        A value of nil corresponds to any change in the value of the characteristic.
+     * A value of nil corresponds to any change in the value of the characteristic.
      */
     @Generated
     @Selector("triggerValue")
@@ -197,14 +195,13 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
 
     /**
      * This method is used to change trigger value for the characteristic.
-     * 
+     *
      * @param triggerValue New trigger value for the characteristic.
      *                     Specifying nil as the trigger value corresponds to any change in the value of the
      *                     characteristic.
-     * 
-     * @param completion Block that is invoked once the request is processed.
-     *                   The NSError provides more information on the status of the request, error
-     *                   will be nil on success.
+     * @param completion   Block that is invoked once the request is processed.
+     *                     The NSError provides more information on the status of the request, error
+     *                     will be nil on success.
      */
     @Generated
     @Selector("updateTriggerValue:completionHandler:")

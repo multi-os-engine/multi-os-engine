@@ -147,10 +147,6 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 

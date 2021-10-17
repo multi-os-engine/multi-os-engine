@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueTargetAirPurifierState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueTargetAirPurifierStateManual       Air Purifier is in manual mode.
  * [@constant]  HMCharacteristicValueTargetAirPurifierStateAutomatic    Air Purifier is in automatic mode.
  */

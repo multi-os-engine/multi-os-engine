@@ -41,10 +41,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NWPath
- * 
+ * <p>
  * A network path, represented with NWPath, expresses the viability status and
- * 	properties of the path that a networking connection will take on the device. For example,
- * 	if the path status is NWPathStatusSatisfied, then a connection could use that path.
+ * properties of the path that a networking connection will take on the device. For example,
+ * if the path status is NWPathStatusSatisfied, then a connection could use that path.
  */
 @Generated
 @Library("NetworkExtension")
@@ -163,7 +163,7 @@ public class NWPath extends NSObject {
 
     /**
      * isEqualToPath:
-     * 
+     *
      * @param path An NWPath object to compare.
      * @return YES if the two path objects have the same content, NO otherwise.
      */
@@ -173,7 +173,7 @@ public class NWPath extends NSObject {
 
     /**
      * [@property] expensive
-     * 
+     * <p>
      * Returns YES if the path is considered expensive, as when using a cellular data plan.
      */
     @Generated
@@ -182,7 +182,7 @@ public class NWPath extends NSObject {
 
     /**
      * [@property] status
-     * 
+     * <p>
      * The evaluated NWPathStatus of the NWPath.
      */
     @Generated
@@ -192,7 +192,7 @@ public class NWPath extends NSObject {
 
     /**
      * [@property] constrained
-     * 
+     * <p>
      * Returns YES if the path is considered constrained, as when it is in save data mode.
      */
     @Generated

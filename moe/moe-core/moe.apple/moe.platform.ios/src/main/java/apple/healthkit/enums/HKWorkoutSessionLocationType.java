@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]          HKWorkoutSessionLocationType
- * 
+ * <p>
  * This enumerated type is used to represent the location type of a workout session.
- * 
+ * <p>
  * This value represents whether a workout is performed indoors or outdoors.
  */
 @Generated

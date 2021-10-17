@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPhysicsContact
- * 
+ * <p>
  * SCNPhysicsContact contains information about a physics contact.
  */
 @Generated

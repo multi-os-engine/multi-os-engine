@@ -26,13 +26,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXMetricManager
- * 
+ * <p>
  * An instance of this class can be used to retrieve periodic, aggregated power and performance metrics.
- * 
+ * <p>
  * To receive metrics, clients must acquire a reference to the shared instance of the metric manager and add an eligible MXMetricManagerSubscriber.
- * 
+ * <p>
  * Metrics are not guaranteed to be delivered, but can be expected atleast once per day when conditions permit.
- * 
+ * <p>
  * Subscribers to the metric manager can remove themselves using removeSubscriber:subscriber if they no longer wish to receive metrics.
  */
 @Generated
@@ -55,12 +55,12 @@ public class MXMetricManager extends NSObject {
 
     /**
      * addSubscriber:subscriber
-     * 
+     * <p>
      * Adds a subscriber to the metric manager.
-     * 
+     * <p>
      * Subscribers can receive metric payloads by conforming to the MXMetricManagerSubscriber protocol.
-     * 
-     * @param         subscriber An object that conforms to the MXMetricManagerSubscriber protocol.
+     *
+     * @param subscriber An object that conforms to the MXMetricManagerSubscriber protocol.
      */
     @Generated
     @Selector("addSubscriber:")
@@ -138,13 +138,13 @@ public class MXMetricManager extends NSObject {
 
     /**
      * makeLogHandleWithCategory:category
-     * 
+     * <p>
      * Retrieve a log handle for flagging critical sections with os_signpost().
-     * 
+     * <p>
      * The log handle configures persistence for any signposts emit while using the log handle.
-     * 
-     * @param         category A string used to define a log category
-     * @return        A log handle that can be used with the logging framework.
+     *
+     * @param category A string used to define a log category
+     * @return A log handle that can be used with the logging framework.
      */
     @Generated
     @Selector("makeLogHandleWithCategory:")
@@ -158,7 +158,7 @@ public class MXMetricManager extends NSObject {
 
     /**
      * [@property]      pastPayloads
-     * 
+     * <p>
      * A list of past metric payloads received.
      */
     @Generated
@@ -167,12 +167,12 @@ public class MXMetricManager extends NSObject {
 
     /**
      * removeSubscriber:subscriber
-     * 
+     * <p>
      * Removes a subscriber from the metric manager.
-     * 
+     * <p>
      * The subscriber indicated, if previously registered, will no longer receive metric payloads.
-     * 
-     * @param         subscriber An object that conforms to the MXMetricManagerSubscriber protocol.
+     *
+     * @param subscriber An object that conforms to the MXMetricManagerSubscriber protocol.
      */
     @Generated
     @Selector("removeSubscriber:")
@@ -192,7 +192,7 @@ public class MXMetricManager extends NSObject {
 
     /**
      * [@property]      sharedManager
-     * 
+     * <p>
      * Singleton instance of MXMetricManager.
      */
     @Generated
@@ -210,7 +210,7 @@ public class MXMetricManager extends NSObject {
 
     /**
      * [@property]      pastDiagnosticPayloads
-     * 
+     * <p>
      * A list of past diagnostic payloads received.
      */
     @Generated

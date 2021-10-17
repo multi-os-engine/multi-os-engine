@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEHotspotHelperCommandType
- * 
+ * <p>
  * The type of the NEHotspotHelperCommand object.
  * [@const] kNEHotspotHelperCommandTypeNone Placeholder for the null command.
  * [@const] kNEHotspotHelperCommandTypeFilterScanList Filter the Wi-Fi scan list.

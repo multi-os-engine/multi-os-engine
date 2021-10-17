@@ -156,10 +156,10 @@ public class UIFocusAnimationCoordinator extends NSObject {
 
     /**
      * Specifies focus-related animations that should be coordinated with the animations of the focusing or un-focusing view.
-     * 
+     * <p>
      * Any animations specified will be run in the same animation context as the main animation. The completion block is invoked after the main animation completes.
      * (Note that this may not be after all the coordinated animations specified by the call complete if the duration is not inherited.)
-     * 
+     * <p>
      * It is perfectly legitimate to only specify a completion block.
      */
     @Generated
@@ -188,11 +188,11 @@ public class UIFocusAnimationCoordinator extends NSObject {
 
     /**
      * Specifies focus-related animations that should be coordinated with the animations of the focusing item.
-     * 
+     * <p>
      * Any animations specified will be run in the same animation context as the main animation. The completion block is invoked after the UIKit-defined animations complete.
-     * 
+     * <p>
      * It is perfectly legitimate to only specify a completion block.
-     * 
+     * <p>
      * A context object is provided in the animation block with details of the UIKit-defined animations being run for the focusing item.
      */
     @Generated
@@ -217,11 +217,11 @@ public class UIFocusAnimationCoordinator extends NSObject {
 
     /**
      * Specifies focus-related animations that should be coordinated with the animations of the un-focusing item.
-     * 
+     * <p>
      * Any animations specified will be run in the same animation context as the main animation. The completion block is invoked after the UIKit-defined animations complete.
-     * 
+     * <p>
      * It is perfectly legitimate to only specify a completion block.
-     * 
+     * <p>
      * A context object is provided in the animation block with details of the UIKit-defined animations being run for the un-focusing item.
      */
     @Generated

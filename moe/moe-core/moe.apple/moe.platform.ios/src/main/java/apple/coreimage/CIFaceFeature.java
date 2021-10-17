@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A face feature found by a CIDetector.
- * All positions are relative to the original image. 
+ * All positions are relative to the original image.
  */
 @Generated
 @Library("CoreImage")
@@ -159,10 +159,10 @@ public class CIFaceFeature extends CIFeature {
 
     /**
      * coordinates of various cardinal points within a face.
-     * 
+     * <p>
      * Note that the left eye is the eye on the left side of the face
      * from the observer's perspective. It is not the left eye from
-     * the subject's perspective. 
+     * the subject's perspective.
      */
     @Generated
     @Selector("bounds")

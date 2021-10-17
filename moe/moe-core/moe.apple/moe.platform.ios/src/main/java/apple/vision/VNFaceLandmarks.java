@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * VNFaceLandmarks
- * 
+ * <p>
  * VNFaceLandmarks2D is the result of a face landmarks request. It is an abstract base class.
  */
 @Generated

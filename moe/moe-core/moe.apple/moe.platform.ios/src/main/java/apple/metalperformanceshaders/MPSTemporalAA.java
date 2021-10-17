@@ -32,18 +32,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Reduces aliasing in an image by accumulating samples over multiple frames
- * 
+ * <p>
  * The color for the previous frame will be sampled using the provided motion vector
  * texture and blended with the current frame according to the blendFactor property. The colors
  * from the previous frame will be clamped to the color-space bounding box formed by the center
  * pixel's neighbors to avoid reprojection artifacts, and the motion vector texture will be
  * dilated to avoid aliased silhouette edges under motion.
- * 
+ * <p>
  * For the best result, the sample positions produced by the renderer should be jittered every
  * frame, ideally using a low discrepency sequence. This will ensure that different sample
  * positions along edges will be visited over time even if the camera is not moving. This will
  * also reduce aliasing due to textures and high-frequency shading.
- * 
+ * <p>
  * For reference, see "High-Quality Temporal Supersampling" by Karis.
  */
 @Generated
@@ -128,19 +128,19 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
 
     /**
      * Encode temporal antialiasing a command buffer
-     * 
+     * <p>
      * The motion vector texture must be at least a two channel texture representing how
      * many texels each texel in the source image(s) have moved since the previous frame. The remaining
      * channels will be ignored if present. This texture may be nil, in which case the motion vector is
      * assumed to be zero, which is suitable for static images.
-     * 
+     * <p>
      * The depth texture must contain the depth values for directly visible geometry for the current
      * frame for each pixel. The first channel must store the depth value from zero to infinity.
      * The depth texture may be nil, but this will prevent motion vectors from being dilated and
      * may introduce aliasing along silhouette edges.
-     * 
+     * <p>
      * The destination texture should be used as the previous texture in the next frame.
-     * 
+     *
      * @param commandBuffer       Command buffer to encode into
      * @param sourceTexture       Current frame to denoise
      * @param previousTexture     Previous denoised frame to reproject into current

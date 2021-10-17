@@ -46,15 +46,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MDLPhotometricLight
- * 
+ * <p>
  * A light created from measurements at various angles.
- * 
+ * <p>
  * [@property] lightCubeMap A cube map that can be sampled at various directions to
- *           learn the intensity of the light in that direction.
- * [@property] sphericalHarmonicsLevel The value generateSphericalHarmonicsFromLight: 
- *           used to calculate the spherical harmonics coefficients
+ * learn the intensity of the light in that direction.
+ * [@property] sphericalHarmonicsLevel The value generateSphericalHarmonicsFromLight:
+ * used to calculate the spherical harmonics coefficients
  * [@property] sphericalHarmonicsCoefficients The spherical harmonic coefficiencts
- *           calculated by generateSphericalHarmonicsFromLight:
+ * calculated by generateSphericalHarmonicsFromLight:
  */
 @Generated
 @Library("ModelIO")
@@ -214,7 +214,7 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
 
     /**
      * generateTexture
-     * 
+     * <p>
      * Generate an IES compliant MDLTexture
      * 1D when the number of horizontal angles is one and the innerConeAngle is < 180
      * 2D when the previous statement fails and innerConeAngle < 89

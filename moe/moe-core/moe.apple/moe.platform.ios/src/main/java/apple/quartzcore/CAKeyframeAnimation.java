@@ -289,14 +289,14 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * have a tension, continuity and bias value associated with it, each
      * in the range [-1, 1] (this defines a Kochanek-Bartels spline, see
      * http://en.wikipedia.org/wiki/Kochanek-Bartels_spline).
-     * 
+     * <p>
      * The tension value controls the "tightness" of the curve (positive
      * values are tighter, negative values are rounder). The continuity
      * value controls how segments are joined (positive values give sharp
      * corners, negative values give inverted corners). The bias value
      * defines where the curve occurs (positive values move the curve before
      * the control point, negative values move it after the control point).
-     * 
+     * <p>
      * The first value in each array defines the behavior of the tangent to
      * the first control point, the second value controls the second
      * point's tangents, and so on. Any unspecified values default to zero
@@ -330,14 +330,14 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * have a tension, continuity and bias value associated with it, each
      * in the range [-1, 1] (this defines a Kochanek-Bartels spline, see
      * http://en.wikipedia.org/wiki/Kochanek-Bartels_spline).
-     * 
+     * <p>
      * The tension value controls the "tightness" of the curve (positive
      * values are tighter, negative values are rounder). The continuity
      * value controls how segments are joined (positive values give sharp
      * corners, negative values give inverted corners). The bias value
      * defines where the curve occurs (positive values move the curve before
      * the control point, negative values move it after the control point).
-     * 
+     * <p>
      * The first value in each array defines the behavior of the tangent to
      * the first control point, the second value controls the second
      * point's tangents, and so on. Any unspecified values default to zero

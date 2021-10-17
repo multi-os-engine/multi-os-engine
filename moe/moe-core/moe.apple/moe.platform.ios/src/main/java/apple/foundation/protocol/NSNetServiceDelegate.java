@@ -40,7 +40,7 @@ public interface NSNetServiceDelegate {
      * * received. Before you can communicate with the connecting client, you must -open
      * * and schedule the streams. To reject a connection, just -open both streams and
      * * then immediately -close them.
-     * 
+     * <p>
      * * To enable TLS on the stream, set the various TLS settings using
      * * kCFStreamPropertySSLSettings before calling -open. You must also specify
      * * kCFBooleanTrue for kCFStreamSSLIsServer in the settings dictionary along with

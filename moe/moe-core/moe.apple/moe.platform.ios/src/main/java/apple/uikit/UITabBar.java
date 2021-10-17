@@ -487,12 +487,12 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
 
     /**
      * Default is UITabBarItemPositioningAutomatic. The tab bar items fill horizontally
-     * for the iPhone user interface idiom, and are centered with a default width and 
+     * for the iPhone user interface idiom, and are centered with a default width and
      * inter-item spacing (customizable with the itemWidth and itemSpacing
      * properties) for the iPad idiom. When the tab bar is owned by a UITabBarController
      * further heuristics may determine the positioning for UITabBarItemPositioningAutomatic.
-     *    Use UITabBarItemPositioningFill to force the items to fill horizontally.
-     *    Use UITabBarItemPositioningCenter to force the items to center with a default
+     * Use UITabBarItemPositioningFill to force the items to fill horizontally.
+     * Use UITabBarItemPositioningCenter to force the items to center with a default
      * width (or the itemWidth, if set).
      */
     @Generated
@@ -532,7 +532,7 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
      * selected image. Default is nil and will result in the system bright blue for selected
      * tab item images. If you wish to also customize the unselected image appearance, you must
      * use the image and selectedImage properties on UITabBarItem along with UIImageRenderingModeAlways
-     * 
+     * <p>
      * Deprecated in iOS 8.0. On iOS 7.0 and later the selected image takes its color from the
      * inherited tintColor of the UITabBar, which may be set separately if necessary.
      */
@@ -600,12 +600,12 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
 
     /**
      * Default is UITabBarItemPositioningAutomatic. The tab bar items fill horizontally
-     * for the iPhone user interface idiom, and are centered with a default width and 
+     * for the iPhone user interface idiom, and are centered with a default width and
      * inter-item spacing (customizable with the itemWidth and itemSpacing
      * properties) for the iPad idiom. When the tab bar is owned by a UITabBarController
      * further heuristics may determine the positioning for UITabBarItemPositioningAutomatic.
-     *    Use UITabBarItemPositioningFill to force the items to fill horizontally.
-     *    Use UITabBarItemPositioningCenter to force the items to center with a default
+     * Use UITabBarItemPositioningFill to force the items to fill horizontally.
+     * Use UITabBarItemPositioningCenter to force the items to center with a default
      * width (or the itemWidth, if set).
      */
     @Generated
@@ -649,7 +649,7 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
      * selected image. Default is nil and will result in the system bright blue for selected
      * tab item images. If you wish to also customize the unselected image appearance, you must
      * use the image and selectedImage properties on UITabBarItem along with UIImageRenderingModeAlways
-     * 
+     * <p>
      * Deprecated in iOS 8.0. On iOS 7.0 and later the selected image takes its color from the
      * inherited tintColor of the UITabBar, which may be set separately if necessary.
      */
@@ -760,4 +760,18 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
     @Generated
     @Selector("standardAppearance")
     public native UITabBarAppearance standardAppearance();
+
+    /**
+     * Describes the appearance attributes for the tabBar to use when an observable scroll view is scrolled to the bottom. If not set, standardAppearance will be used instead.
+     */
+    @Generated
+    @Selector("scrollEdgeAppearance")
+    public native UITabBarAppearance scrollEdgeAppearance();
+
+    /**
+     * Describes the appearance attributes for the tabBar to use when an observable scroll view is scrolled to the bottom. If not set, standardAppearance will be used instead.
+     */
+    @Generated
+    @Selector("setScrollEdgeAppearance:")
+    public native void setScrollEdgeAppearance(UITabBarAppearance value);
 }

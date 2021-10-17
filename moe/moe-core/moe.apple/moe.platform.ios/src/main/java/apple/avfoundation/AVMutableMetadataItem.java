@@ -144,7 +144,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * metadataItem
-     * 
+     * <p>
      * Returns an instance of AVMutableMetadataItem.
      */
     @Generated

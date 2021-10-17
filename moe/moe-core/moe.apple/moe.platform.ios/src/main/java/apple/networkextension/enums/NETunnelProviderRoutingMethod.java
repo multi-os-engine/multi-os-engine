@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NETunnelProviderRoutingMethod
- * 
+ * <p>
  * Network traffic routing methods.
  */
 @Generated

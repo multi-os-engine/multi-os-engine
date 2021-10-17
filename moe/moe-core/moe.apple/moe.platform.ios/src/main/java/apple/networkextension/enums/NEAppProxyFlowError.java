@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEAppProxyFlowError
- * 
+ * <p>
  * Flow error codes
  */
 @Generated

@@ -50,10 +50,6 @@ public final class ARErrorCode {
      */
     @Generated @NInt public static final long InvalidConfiguration = 0x000000000000012FL;
     /**
-     * Collaboration data is not available.
-     */
-    @Generated @NInt public static final long CollaborationDataUnavailable = 0x0000000000000130L;
-    /**
      * Invalid collaboration data.
      */
     @Generated @NInt public static final long InvalidCollaborationData = 0x0000000000000130L;

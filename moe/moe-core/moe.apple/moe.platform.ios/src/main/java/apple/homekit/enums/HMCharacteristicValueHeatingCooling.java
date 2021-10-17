@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueHeatingCooling
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueHeatingCoolingOff   Off.
  * [@constant]  HMCharacteristicValueHeatingCoolingHeat  If the current temperature is below the target temperature then turn on heating.
  * [@constant]  HMCharacteristicValueHeatingCoolingCool  If the current temperature is above the target temperature then turn on cooling.

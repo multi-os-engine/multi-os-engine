@@ -60,7 +60,9 @@ import org.moe.natj.objc.map.ObjCStringMapper;
 @Library("Foundation")
 @Runtime(CRuntime.class)
 public final class Foundation {
-    @Generated @NInt public static final long NSNotFound = org.moe.natj.general.NatJ.is64Bit() ? 0x7FFFFFFFFFFFFFFFL : 0x000000007FFFFFFFL;
+    @Generated @NInt public static final long NSNotFound = org.moe.natj.general.NatJ.is64Bit() ?
+            0x7FFFFFFFFFFFFFFFL :
+            0x000000007FFFFFFFL;
     /**
      * An NSHashTable is modeled after a set, although, because of its options, is not a set because it can behave differently (for example, if pointer equality is specified two isEqual strings will both be entered).  The major option is to provide for "weak" references that are removed automatically, but at some indefinite point in the future.
      * An NSHashTable can also be configured to operate on arbitrary pointers and not just objects.  We recommend the C function API for "void *" access.  To configure for pointer use, consult and choose the appropriate NSPointerFunctionsOptions or configure or use an NSPointerFunctions object itself for initialization.
@@ -864,9 +866,9 @@ public final class Foundation {
 
     /**
      * This notification is posted to the default notification center when the resource request system detects a low disk space condition.
-     * 
+     * <p>
      * If the application is in the background, the system needs more space, and the application does not free up enough in response to the notification then the application may be killed. The application can free up space by calling -endAccessingResources on any outstanding requests. This will inform the system that you are done with those resources and it may purge the content to make room for a new request.
-     * 
+     * <p>
      * Note that this notification may not be the same as low disk space on the system, as applications can have a smaller quota.
      */
     @Generated
@@ -2605,7 +2607,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieName
-     * 
+     * <p>
      * Key for cookie name
      */
     @Generated
@@ -2615,7 +2617,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieValue
-     * 
+     * <p>
      * Key for cookie value
      */
     @Generated
@@ -2625,7 +2627,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieOriginURL
-     * 
+     * <p>
      * Key for cookie origin URL
      */
     @Generated
@@ -2635,7 +2637,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieVersion
-     * 
+     * <p>
      * Key for cookie version
      */
     @Generated
@@ -2645,7 +2647,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieDomain
-     * 
+     * <p>
      * Key for cookie domain
      */
     @Generated
@@ -2655,7 +2657,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookiePath
-     * 
+     * <p>
      * Key for cookie path
      */
     @Generated
@@ -2665,7 +2667,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieSecure
-     * 
+     * <p>
      * Key for cookie secure flag
      */
     @Generated
@@ -2675,7 +2677,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieExpires
-     * 
+     * <p>
      * Key for cookie expiration date
      */
     @Generated
@@ -2685,7 +2687,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieComment
-     * 
+     * <p>
      * Key for cookie comment text
      */
     @Generated
@@ -2695,7 +2697,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieCommentURL
-     * 
+     * <p>
      * Key for cookie comment URL
      */
     @Generated
@@ -2705,7 +2707,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieDiscard
-     * 
+     * <p>
      * Key for cookie discard (session-only) flag
      */
     @Generated
@@ -2715,7 +2717,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieMaximumAge
-     * 
+     * <p>
      * Key for cookie maximum age (an alternate way of specifying the expiration)
      */
     @Generated
@@ -2725,7 +2727,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookiePort
-     * 
+     * <p>
      * Key for cookie ports
      */
     @Generated
@@ -2735,7 +2737,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieManagerAcceptPolicyChangedNotification
-     * 
+     * <p>
      * Name of notification that should be posted to the
      * distributed notification center whenever the accept cookies
      * preference is changed
@@ -2747,7 +2749,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieManagerCookiesChangedNotification
-     * 
+     * <p>
      * Notification sent when the set of cookies changes
      */
     @Generated
@@ -2757,9 +2759,9 @@ public final class Foundation {
 
     /**
      * The exception that is thrown when a key value coding operation fails. The exception's user info dictionary will contain at least two entries:
-     *     - @"NSTargetObjectUserInfoKey": the receiver of the failed KVC message.
-     *     - @"NSUnknownUserInfoKey": the key that was used in the failed KVC message.
-     * 
+     * - @"NSTargetObjectUserInfoKey": the receiver of the failed KVC message.
+     * - @"NSUnknownUserInfoKey": the key that was used in the failed KVC message.
+     * <p>
      * The actual value of this constant string is "NSUnknownKeyException," to match the exceptions that are thrown by KVC methods that were deprecated in Mac OS 10.3.
      */
     @Generated
@@ -2888,9 +2890,9 @@ public final class Foundation {
 
     /**
      * NSProcessInfoPowerStateDidChangeNotification is posted once any power usage mode of the system has changed. Once the notification is posted, use the isLowPowerModeEnabled property to retrieve the current state of the low power mode setting of the system.
-     * 
+     * <p>
      * When this notification is posted your application should attempt to reduce power usage by reducing potentially costly computation and other power using activities like network activity or keeping the screen on if the low power mode setting is enabled.
-     * 
+     * <p>
      * This notification is posted on the global dispatch queue. Register for it using the default notification center. The object associated with the notification is NSProcessInfo.processInfo.
      */
     @Generated
@@ -3141,7 +3143,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceHTTP
-     * 
+     * <p>
      * The protocol for HTTP
      */
     @Generated
@@ -3151,7 +3153,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceHTTPS
-     * 
+     * <p>
      * The protocol for HTTPS
      */
     @Generated
@@ -3161,7 +3163,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceFTP
-     * 
+     * <p>
      * The protocol for FTP
      */
     @Generated
@@ -3171,7 +3173,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceHTTPProxy
-     * 
+     * <p>
      * The proxy type for http proxies
      */
     @Generated
@@ -3181,7 +3183,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceHTTPSProxy
-     * 
+     * <p>
      * The proxy type for https proxies
      */
     @Generated
@@ -3191,7 +3193,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceFTPProxy
-     * 
+     * <p>
      * The proxy type for ftp proxies
      */
     @Generated
@@ -3201,7 +3203,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceSOCKSProxy
-     * 
+     * <p>
      * The proxy type for SOCKS proxies
      */
     @Generated
@@ -3211,7 +3213,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodDefault
-     * 
+     * <p>
      * The default authentication method for a protocol
      */
     @Generated
@@ -3221,7 +3223,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodHTTPBasic
-     * 
+     * <p>
      * HTTP basic authentication. Equivalent to
      * NSURLAuthenticationMethodDefault for http.
      */
@@ -3232,7 +3234,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodHTTPDigest
-     * 
+     * <p>
      * HTTP digest authentication.
      */
     @Generated
@@ -3242,7 +3244,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodHTMLForm
-     * 
+     * <p>
      * HTML form authentication. Applies to any protocol.
      */
     @Generated
@@ -3252,7 +3254,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodNTLM
-     * 
+     * <p>
      * NTLM authentication.
      */
     @Generated
@@ -3262,7 +3264,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodNegotiate
-     * 
+     * <p>
      * Negotiate authentication.
      */
     @Generated
@@ -3272,7 +3274,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodClientCertificate
-     * 
+     * <p>
      * SSL Client certificate.  Applies to any protocol.
      */
     @Generated
@@ -3282,7 +3284,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodServerTrust
-     * 
+     * <p>
      * SecTrustRef validation required.  Applies to any protocol.
      */
     @Generated
@@ -3292,7 +3294,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLCredentialStorageChangedNotification
-     * 
+     * <p>
      * This notification is sent on the main thread whenever
      * the set of stored credentials changes.
      */
@@ -3323,7 +3325,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLErrorFailingURLErrorKey
-     * 
+     * <p>
      * The NSError userInfo dictionary key used to store and retrieve the URL which caused a load to fail.
      */
     @Generated
@@ -3333,9 +3335,9 @@ public final class Foundation {
 
     /**
      * [@const] NSURLErrorFailingURLStringErrorKey
-     * 
+     * <p>
      * The NSError userInfo dictionary key used to store and retrieve the NSString object for the URL which caused a load to fail.
-     * 
+     * <p>
      * This constant supersedes NSErrorFailingURLStringKey, which was deprecated in Mac OS X 10.6.  Both constants refer to the same value for backward-compatibility, but this symbol name has a better prefix.
      */
     @Generated
@@ -3345,9 +3347,9 @@ public final class Foundation {
 
     /**
      * [@const] NSErrorFailingURLStringKey
-     * 
+     * <p>
      * The NSError userInfo dictionary key used to store and retrieve the NSString object for the URL which caused a load to fail.
-     * 
+     * <p>
      * This constant is deprecated in Mac OS X 10.6, and is superseded by NSURLErrorFailingURLStringErrorKey.  Both constants refer to the same value for backward-compatibility, but the new symbol name has a better prefix.
      */
     @Generated
@@ -3357,7 +3359,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLErrorFailingURLPeerTrustErrorKey
-     * 
+     * <p>
      * The NSError userInfo dictionary key used to store and retrieve the SecTrustRef object representing the state of a failed SSL handshake.
      */
     @Generated
@@ -3366,8 +3368,8 @@ public final class Foundation {
     public static native String NSURLErrorFailingURLPeerTrustErrorKey();
 
     /**
-     *    [@const] NSURLErrorBackgroundTaskCancelledReasonKey
-     * 
+     * [@const] NSURLErrorBackgroundTaskCancelledReasonKey
+     * <p>
      * The NSError userInfo dictionary key used to store and retrieve the NSNumber corresponding to the reason why a background
      * NSURLSessionTask was cancelled
      */
@@ -3410,7 +3412,7 @@ public final class Foundation {
 
     /**
      * NSUbiquitousUserDefaultsNoCloudAccountNotification is posted on the main queue to the default notification center when a cloud default is set, but no iCloud user is logged in.
-     * 
+     * <p>
      * This is not necessarily an error: ubiquitous defaults set when no iCloud user is logged in will be uploaded the next time one is available if configured to do so.
      */
     @Generated
@@ -4332,9 +4334,9 @@ public final class Foundation {
 
     /**
      * NSProcessInfoThermalStateDidChangeNotification is posted once the thermal state of the system has changed. Once the notification is posted, use the thermalState property to retrieve the current thermal state of the system.
-     * 
+     * <p>
      * You can use this opportunity to take corrective action in your application to help cool the system down. Work that could be done in the background or at opportunistic times should be using the Quality of Service levels in NSOperation or the NSBackgroundActivityScheduler API.
-     * 
+     * <p>
      * This notification is posted on the global dispatch queue. Register for it using the default notification center. The object associated with the notification is NSProcessInfo.processInfo.
      */
     @Generated
@@ -4611,7 +4613,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieSameSitePolicy
-     * 
+     * <p>
      * Key for cookie same site
      */
     @Generated
@@ -4621,7 +4623,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieSameSiteLax
-     * 
+     * <p>
      * String constant "lax" to be used as a value for the property key NSHTTPCookieSameSite
      */
     @Generated
@@ -4631,7 +4633,7 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieSameSiteStrict
-     * 
+     * <p>
      * String constant "strict" to be used as a value for the property key NSHTTPCookieSameSite
      */
     @Generated
@@ -4696,7 +4698,7 @@ public final class Foundation {
 
     /**
      * [@const] NSURLErrorNetworkUnavailableReasonKey
-     * 
+     * <p>
      * The NSErrorUserInfoKey used to store and retrieve the NSNumber object corresponding to the reason why the network is unavailable when the task failed due to unsatisfiable network constraints.  See the NSURLErrorNetworkUnavailableReason enum for details.
      */
     @Generated
@@ -4764,4 +4766,87 @@ public final class Foundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSURLVolumeSupportsFileProtectionKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSProgressFileOperationKindUploading();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSProgressFileOperationKindDuplicating();
+
+    /**
+     * a NSNumber wrapping a value of type NSInlinePresentationIntent
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSInlinePresentationIntentAttributeName();
+
+    /**
+     * a NSString
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSAlternateDescriptionAttributeName();
+
+    /**
+     * a NSURL
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSImageURLAttributeName();
+
+    /**
+     * a NSString
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSLanguageIdentifierAttributeName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSReplacementIndexAttributeName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSMorphologyAttributeName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSInflectionRuleAttributeName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSInflectionAlternativeAttributeName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSPresentationIntentAttributeName();
+
+    /**
+     * Key in userInfo. A recommended standard way to embed a list of several NSErrors from underlying calls. The value of this key should be an NSArray of NSError. This value is independent from the value of `NSUnderlyingErrorKey` - neither, one, or both may be set.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSMultipleUnderlyingErrorsKey();
+
+    /**
+     * true if the item is excluded from sync, which means it is locally on disk but won't be available on the server. An excluded item is no longer ubiquitous. (Read-write, value type boolean NSNumber
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLUbiquitousItemIsExcludedFromSyncKey();
 }

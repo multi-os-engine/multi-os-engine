@@ -17,7 +17,6 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.avfoundation.AVAudioEngine;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
@@ -54,7 +53,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A scene is the root node of your content. It is used to display SpriteKit content on an SKView.
- * 
+ *
  * @see SKView
  */
 @Generated
@@ -208,7 +207,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     @Generated
     @Selector("audioEngine")
-    public native AVAudioEngine audioEngine();
+    public native apple.avfaudio.AVAudioEngine audioEngine();
 
     /**
      * Background color, defaults to gray
@@ -240,7 +239,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     public native SKSceneDelegate delegate();
 
     /**
-     * Override this to perform game logic. Called exactly once per frame after any enabled constraints have been applied. Any additional actions applied is not evaluated until the next update. Any changes to physics bodies is not simulated until the next update. Any changes to constarints will not be applied until the next update.
+     * Override this to perform game logic. Called exactly once per frame after any enabled constraints have been applied. Any additional actions applied is not evaluated until the next update. Any changes to physics bodies is not simulated until the next update. Any changes to constraints will not be applied until the next update.
      */
     @Generated
     @Selector("didApplyConstraints")
@@ -258,8 +257,8 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     public native void didEvaluateActions();
 
     /**
-     * Override this to perform game logic. Called after all update logic has been completed. Any additional actions applied are not evaluated until the next update. Any changes to physics bodies are not simulated until the next update. Any changes to constarints will not be applied until the next update.
-     * 
+     * Override this to perform game logic. Called after all update logic has been completed. Any additional actions applied are not evaluated until the next update. Any changes to physics bodies are not simulated until the next update. Any changes to constraints will not be applied until the next update.
+     * <p>
      * No futher update logic will be applied to the scene after this call. Any values set on nodes here will be used when the scene is rendered for the current frame.
      */
     @Generated
@@ -288,7 +287,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     /**
      * A scene is infinitely large, but it has a viewport that is the frame through which you present the content of the scene.
      * The passed in size defines the size of this viewport that you use to present the scene.
-     * 
+     *
      * @param size a size in points that signifies the viewport into the scene that defines your framing of the scene.
      */
     @Generated
@@ -297,7 +296,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     /**
      * The node that is currently the listener for positional audio coming from SKAudioNodes
-     * 
+     *
      * @see SKAudioNode
      */
     @Generated
@@ -321,7 +320,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     /**
      * This is called once after the scene has been initialized or decoded,
-     * this is the recommended place to perform one-time setup 
+     * this is the recommended place to perform one-time setup
      */
     @Generated
     @Selector("sceneDidLoad")
@@ -381,7 +380,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     /**
      * The node that is currently the listener for positional audio coming from SKAudioNodes
-     * 
+     *
      * @see SKAudioNode
      */
     @Generated
@@ -390,7 +389,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     /**
      * The node that is currently the listener for positional audio coming from SKAudioNodes
-     * 
+     *
      * @see SKAudioNode
      */
     @Generated
@@ -423,7 +422,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     /**
      * Override this to perform per-frame game logic. Called exactly once per frame before any actions are evaluated and any physics are simulated.
-     * 
+     *
      * @param currentTime the current time in the app. This must be monotonically increasing.
      */
     @Generated

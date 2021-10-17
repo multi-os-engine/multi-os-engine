@@ -60,8 +60,9 @@ public final class MPSNNPaddingMethod {
      * where a pixel would read beyond the padding area. Set this bit for Caffe emulation with average pooling.
      */
     @Generated @NUInt public static final long ExcludeEdges = 0x0000000000008000L;
-    /**
-     * < By itself, MPSNNPaddingMethodCustom will inhibit automatic fusion between nodes producing and consuming the image described by the padding policy. MPSNNPaddingMethodCustomWhitelistForNodeFusion signals that the custom method is benign and fusion may go ahead.
-     */
     @Generated @NUInt public static final long CustomWhitelistForNodeFusion = 0x0000000000002000L;
+    /**
+     * < By itself, MPSNNPaddingMethodCustom will inhibit automatic fusion between nodes producing and consuming the image described by the padding policy. MPSNNPaddingMethodCustomAllowForNodeFusion signals that the custom method is benign and fusion may go ahead.
+     */
+    @Generated @NUInt public static final long CustomAllowForNodeFusion = 0x0000000000002000L;
 }

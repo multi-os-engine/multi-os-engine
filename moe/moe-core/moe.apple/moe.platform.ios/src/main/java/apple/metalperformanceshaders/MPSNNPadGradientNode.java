@@ -92,10 +92,10 @@ public class MPSNNPadGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * A node to represent the gradient of a padding node.
-     * 
-     * @param      sourceGradient   The input gradient from the 'downstream' gradient filter.
-     * @param      sourceImage      The input image from the forward reshape node.
-     * @return     A MPSNNPadGradientNode
+     *
+     * @param sourceGradient The input gradient from the 'downstream' gradient filter.
+     * @param sourceImage    The input image from the forward reshape node.
+     * @return A MPSNNPadGradientNode
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:")
@@ -131,10 +131,10 @@ public class MPSNNPadGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * A node to represent the gradient of a padding node.
-     * 
-     * @param      sourceGradient   The input gradient from the 'downstream' gradient filter.
-     * @param      sourceImage      The input image from the forward padding node.
-     * @return     A MPSNNPadGradientNode
+     *
+     * @param sourceGradient The input gradient from the 'downstream' gradient filter.
+     * @param sourceImage    The input image from the forward padding node.
+     * @return A MPSNNPadGradientNode
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:")

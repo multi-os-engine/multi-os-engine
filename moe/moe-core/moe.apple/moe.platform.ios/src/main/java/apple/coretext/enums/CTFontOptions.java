@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum]       CTFontOptions
- * 
+ * <p>
  * Options for descriptor match and font creation.
  * [@constant]   kCTFontOptionsPreventAutoActivation
- *             Prevents automatic font activation from taking place.
+ * Prevents automatic font activation from taking place.
  * [@constant]   kCTFontOptionsPreferSystemFont
- *             Font matching will prefer to match Apple system fonts.
+ * Font matching will prefer to match Apple system fonts.
  */
 @Generated
 public final class CTFontOptions {

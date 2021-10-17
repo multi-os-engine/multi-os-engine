@@ -31,15 +31,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXDiagnosticPayload
- * 
+ * <p>
  * A wrapper class which contains a diagnostic payload and associated properties of that payload.
- * 
+ * <p>
  * MXDiagnosticPayload encapsulates currently supported diagnostics that can be vended by MetricKit. Arrays of MXDiangostic subclasses on MXDiagnosticPayload are nullable. If an array of MXDiagnostic subclasses is nil, it indicates that the diagnostics are not available for this payload.
- * 
+ * <p>
  * MXDiagnosticPayload exposes a convenience function, JSONRepresentation, to convert the contents of the payload to a human readable JSON. This should be used in conjunction with other APIs that accept NSData.
- * 
+ * <p>
  * An MXDiagnosticPayload contains diagnostics that cover a 24 hour period of application usage. The properties timeStampBegin and timeStampEnd should be used to determine which time range the payload covers.
- * 
+ * <p>
  * It is possible for an MXDiagnosticPayload to cover regions of time where an application was updated, and thus each MXDiagnostic subclass will contain its own application version string. This is in contrast to MXMetricPayload, where only the latest application version string is included as metadata of the payload. Each MXDiagnostic subclass application version string should be inspected prior to processing.
  */
 @Generated
@@ -58,10 +58,10 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
 
     /**
      * JSONRepresentation
-     * 
+     * <p>
      * Convenience method to return a JSON representation of this diagnostic payload.
-     * 
-     * @return        An NSData object containing the JSON representation
+     *
+     * @return An NSData object containing the JSON representation
      */
     @Generated
     @Selector("JSONRepresentation")
@@ -105,7 +105,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cpuExceptionDiagnostics
-     * 
+     * <p>
      * An array containing CPU exception diagnostics for this application.
      */
     @Generated
@@ -114,7 +114,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      crashDiagnostics
-     * 
+     * <p>
      * An array containing crash diagnostics for this application.
      */
     @Generated
@@ -131,10 +131,10 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
 
     /**
      * dictionaryRepresentation
-     * 
+     * <p>
      * Convenience method to return a NSDictionary representation of this diagnostic payload.
-     * 
-     * @return        An NSDictionary object containing the dictionary representation
+     *
+     * @return An NSDictionary object containing the dictionary representation
      */
     @Generated
     @Selector("dictionaryRepresentation")
@@ -142,7 +142,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      diskWriteExceptionDiagnostics
-     * 
+     * <p>
      * An array containing disk write exception diagnostics for this application.
      */
     @Generated
@@ -155,7 +155,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      hangDiagnostics
-     * 
+     * <p>
      * An array containing hang diagnostics for this application.
      */
     @Generated
@@ -230,7 +230,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      timeStampBegin
-     * 
+     * <p>
      * An NSDate object that indicates the start time for which the payload was generated.
      */
     @Generated
@@ -239,7 +239,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      timeStampEnd
-     * 
+     * <p>
      * An NSDate object that indicates the end time for which the payload was generated.
      */
     @Generated

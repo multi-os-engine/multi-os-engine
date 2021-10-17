@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that detects trajectories of shapes (even small ones) that follow a parabolic path in a sequence of images.
- * 
+ * <p>
  * This request detects objects moving and (once their path follows the constraint of a parabola), a VNTrajectoryObservation will be returned with the detected points and the equation describing the parabola.
  */
 @Generated
@@ -123,10 +123,10 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
 
     /**
      * Create a new request that will detect the trajectory of a shape in motion.
-     * 
-     * @param frameAnalysisSpacing	The reciprocal of the maximum rate at which buffers will be processed. The request will not process buffers that fall within the frameAnalysisSpacing after it has performed the analysis. The analysis is not done by wall time but by analysis of the time stamps of the samplebuffers being processed. This property is for instance useful to throttle the processing on slower devices. If this is set to kCMTimeZero then no frames get skipped in the analysis.
-     * @param trajectoryLength		The number of points required to analyze a parabola that indicates a trajectory. Must be at least 5.
-     * @param completionHandler		The block to be invoked after the request has completed its processing. The completion handler gets executed on the same dispatch queue as the request being executed.
+     *
+     * @param frameAnalysisSpacing The reciprocal of the maximum rate at which buffers will be processed. The request will not process buffers that fall within the frameAnalysisSpacing after it has performed the analysis. The analysis is not done by wall time but by analysis of the time stamps of the samplebuffers being processed. This property is for instance useful to throttle the processing on slower devices. If this is set to kCMTimeZero then no frames get skipped in the analysis.
+     * @param trajectoryLength     The number of points required to analyze a parabola that indicates a trajectory. Must be at least 5.
+     * @param completionHandler    The block to be invoked after the request has completed its processing. The completion handler gets executed on the same dispatch queue as the request being executed.
      */
     @Generated
     @Selector("initWithFrameAnalysisSpacing:trajectoryLength:completionHandler:")
@@ -251,4 +251,19 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Specifies the desired target frame time for processing trajectory detection. This can be used for real-time processing of frames, which requires execution with a specific amount of time. The target frame time is evaluated from frame-to-frame. If processing takes longer than this target frame time for the currect frame, it will attempt to reduce the amount of time taken by reducing the accuracy (down to a set minimum) for the next frame. If a frame takes less time than this target, then accuracy of the next frame will be increased (up to a set maximum). The default value is kCMTimeIndefinite, meaning accuracy stays at the predefined maximum.
+     */
+    @Generated
+    @Selector("setTargetFrameTime:")
+    public native void setTargetFrameTime(@ByValue CMTime value);
+
+    /**
+     * Specifies the desired target frame time for processing trajectory detection. This can be used for real-time processing of frames, which requires execution with a specific amount of time. The target frame time is evaluated from frame-to-frame. If processing takes longer than this target frame time for the currect frame, it will attempt to reduce the amount of time taken by reducing the accuracy (down to a set minimum) for the next frame. If a frame takes less time than this target, then accuracy of the next frame will be increased (up to a set maximum). The default value is kCMTimeIndefinite, meaning accuracy stays at the predefined maximum.
+     */
+    @Generated
+    @Selector("targetFrameTime")
+    @ByValue
+    public native CMTime targetFrameTime();
 }

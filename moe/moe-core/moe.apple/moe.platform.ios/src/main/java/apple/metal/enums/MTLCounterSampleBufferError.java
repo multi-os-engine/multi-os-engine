@@ -7,10 +7,10 @@ import org.moe.natj.general.ann.NInt;
  * [@enum] MTLCounterSampleBufferError
  * [@constant] MTLCounterSampleBufferErrorOutOfMemory
  * There wasn't enough memory available to allocate the counter sample buffer.
- * 
+ * <p>
  * [@constant] MTLCounterSampleBufferErrorInvalid
  * Invalid parameter passed while creating counter sample buffer.
- * 
+ * <p>
  * [@constant] MTLCounterSampleBufferErrorInternal
  * There was some other error in allocating the counter sample buffer.
  */

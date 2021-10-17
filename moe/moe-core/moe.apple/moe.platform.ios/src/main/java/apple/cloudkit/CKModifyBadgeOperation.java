@@ -167,7 +167,7 @@ public class CKModifyBadgeOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -182,7 +182,7 @@ public class CKModifyBadgeOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */

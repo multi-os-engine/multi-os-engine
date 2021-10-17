@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] SCNColorComponent
- * 
+ * <p>
  * Color components
  */
 @Generated

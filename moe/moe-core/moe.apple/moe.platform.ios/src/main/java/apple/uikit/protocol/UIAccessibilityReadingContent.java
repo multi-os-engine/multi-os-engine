@@ -31,9 +31,9 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * UIAccessibilityReadingContent
- * 
- * Implemented on an element that represents content meant to be read, like a book or periodical. 
- * Use in conjuction with UIAccessibilityTraitCausesPageTurn to provide a continuous reading experience with VoiceOver.
+ * <p>
+ * Implemented on an element that represents content meant to be read, like a book or periodical.
+ * Use in conjunction with UIAccessibilityTraitCausesPageTurn to provide a continuous reading experience with VoiceOver.
  */
 @Generated
 @Library("UIKit")

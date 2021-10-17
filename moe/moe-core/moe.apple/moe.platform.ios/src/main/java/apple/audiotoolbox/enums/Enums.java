@@ -488,229 +488,229 @@ public final class Enums {
     @Generated public static final int kMusicDeviceStopNoteSelect = 0x00000106;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_FormatInfo = 0x666D7469;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_FormatName = 0x666E616D;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_EncodeFormatIDs = 0x61636F66;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_DecodeFormatIDs = 0x61636966;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_FormatList = 0x666C7374;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ASBDFromESDS = 0x65737364;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ChannelLayoutFromESDS = 0x6573636C;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_OutputFormatList = 0x6F666C73;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_FirstPlayableFormatFromList = 0x6670666C;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_FormatIsVBR = 0x66766272;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_FormatIsExternallyFramed = 0x66657866;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_FormatIsEncrypted = 0x63727970;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_Encoders = 0x6176656E;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_Decoders = 0x61766465;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_AvailableEncodeBitRates = 0x61656272;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_AvailableEncodeSampleRates = 0x61657372;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_AvailableEncodeChannelLayoutTags = 0x6165636C;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_AvailableEncodeNumberChannels = 0x61766E63;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ASBDFromMPEGPacket = 0x61646D70;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_BitmapForLayoutTag = 0x626D7467;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_MatrixMixMap = 0x6D6D6170;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ChannelMap = 0x63686D70;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_NumberOfChannelsForLayout = 0x6E63686D;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_AreChannelLayoutsEquivalent = 0x63686571;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ChannelLayoutHash = 0x63686861;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ValidateChannelLayout = 0x7661636C;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ChannelLayoutForTag = 0x636D706C;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_TagForChannelLayout = 0x636D7074;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ChannelLayoutName = 0x6C6F6E6D;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ChannelLayoutSimpleName = 0x6C736E6D;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ChannelLayoutForBitmap = 0x636D7062;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ChannelName = 0x636E616D;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ChannelShortName = 0x63736E6D;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_TagsForNumberOfChannels = 0x74616763;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_PanningMatrix = 0x70616E6D;
     /**
      * =============================================================================
-     * 	The following properties concern the AudioChannelLayout struct (speaker layouts)
+     * The following properties concern the AudioChannelLayout struct (speaker layouts)
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_BalanceFade = 0x62616C66;
     /**
      * =============================================================================
-     * 	The following properties concern the ID3 Tags
+     * The following properties concern the ID3 Tags
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ID3TagSize = 0x69643373;
     /**
      * =============================================================================
-     * 	The following properties concern the ID3 Tags
+     * The following properties concern the ID3 Tags
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_ID3TagToDictionary = 0x69643364;
@@ -2156,7 +2156,7 @@ public final class Enums {
     @Generated public static final int k3DMixerParam_ObstructionAttenuationInDecibels = 0x0000001A;
     /**
      * read-only
-     * 
+     * <p>
      * For each of the following, use the parameter ID plus the channel number
      * to get the specific parameter ID for a given channel.
      * For example, k3DMixerParam_PostAveragePower indicates the left channel
@@ -2165,7 +2165,7 @@ public final class Enums {
     @Generated public static final int k3DMixerParam_PreAveragePower = 0x000003E8;
     /**
      * read-only
-     * 
+     * <p>
      * For each of the following, use the parameter ID plus the channel number
      * to get the specific parameter ID for a given channel.
      * For example, k3DMixerParam_PostAveragePower indicates the left channel
@@ -2174,7 +2174,7 @@ public final class Enums {
     @Generated public static final int k3DMixerParam_PrePeakHoldLevel = 0x000007D0;
     /**
      * read-only
-     * 
+     * <p>
      * For each of the following, use the parameter ID plus the channel number
      * to get the specific parameter ID for a given channel.
      * For example, k3DMixerParam_PostAveragePower indicates the left channel
@@ -2183,7 +2183,7 @@ public final class Enums {
     @Generated public static final int k3DMixerParam_PostAveragePower = 0x00000BB8;
     /**
      * read-only
-     * 
+     * <p>
      * For each of the following, use the parameter ID plus the channel number
      * to get the specific parameter ID for a given channel.
      * For example, k3DMixerParam_PostAveragePower indicates the left channel
@@ -2210,7 +2210,7 @@ public final class Enums {
     @Generated public static final int kAudioCodecBitRateControlMode_Variable = 0x00000003;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_FormatEmploysDependentPackets = 0x66646570;
@@ -2261,9 +2261,32 @@ public final class Enums {
     @Generated public static final int kExtAudioFilePacketTableInfoOverride_UseFileValueIfValid = 0xFFFFFFFE;
     /**
      * =============================================================================
-     * 	The following properties are concerned with the AudioStreamBasicDescription
+     * The following properties are concerned with the AudioStreamBasicDescription
      * =============================================================================
      */
     @Generated public static final int kAudioFormatProperty_AvailableDecodeNumberChannels = 0x61646E63;
     @Generated public static final int kAudioOutputUnitProperty_OSWorkgroup = 0x000007DF;
+    /**
+     * range (0 -> 999)
+     */
+    @Generated public static final int kAudioUnitProperty_LastRenderSampleTime = 0x0000003D;
+    /**
+     * range (0 -> 999)
+     */
+    @Generated public static final int kAudioUnitProperty_LoadedOutOfProcess = 0x0000003E;
+    @Generated public static final int kAudioUnitProperty_MIDIOutputEventListCallback = 0x0000003F;
+    @Generated public static final int kAudioUnitProperty_AudioUnitMIDIProtocol = 0x00000040;
+    @Generated public static final int kAudioUnitProperty_HostMIDIProtocol = 0x00000041;
+    /**
+     * Global, dB, -40->40, 0
+     */
+    @Generated public static final int kDynamicsProcessorParam_OverallGain = 0x00000006;
+    @Generated public static final int kMusicDeviceMIDIEventListSelect = 0x00000107;
+    @Generated public static final int kAUVoiceIOProperty_MutedSpeechActivityEventListener = 0x0000083A;
+    @Generated public static final int kAudioUnitSubType_TimePitch = 0x746D7074;
+    @Generated public static final int kTimePitchParam_Pitch = 0x00000001;
+    /**
+     * only for the AUPitch unit
+     */
+    @Generated public static final int kTimePitchParam_EffectBlend = 0x00000002;
 }

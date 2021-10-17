@@ -23,4 +23,9 @@ public final class MTLAccelerationStructureUsage {
      * tracing performance.
      */
     @Generated @NUInt public static final long PreferFastBuild = 0x0000000000000002L;
+    /**
+     * Enable extended limits for this acceleration structure, possibly at the cost of
+     * reduced ray tracing performance.
+     */
+    @Generated @NUInt public static final long ExtendedLimits = 0x0000000000000004L;
 }

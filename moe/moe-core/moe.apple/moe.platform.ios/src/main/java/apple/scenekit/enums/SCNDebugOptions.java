@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] SCNDebugOptions
- * 
+ * <p>
  * Debug options.
  */
 @Generated

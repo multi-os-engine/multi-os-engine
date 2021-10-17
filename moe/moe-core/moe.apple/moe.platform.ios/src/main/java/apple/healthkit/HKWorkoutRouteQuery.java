@@ -5,6 +5,7 @@ import apple.corelocation.CLLocation;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSDateComponents;
+import apple.foundation.NSDateInterval;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
@@ -32,11 +33,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKWorkoutRouteQuery
- * 
+ * <p>
  * An HKWorkoutRouteQuery is used to access data associated with an HKWorkoutRoute.
- * 
+ * <p>
  * Once instantiated, call HKHealthStore executeQuery to begin enumerating the route data. Call
- *                HKHealthStore stopQuery to discontinue further route data reporting.
+ * HKHealthStore stopQuery to discontinue further route data reporting.
  */
 @Generated
 @Library("HealthKit")
@@ -107,16 +108,16 @@ public class HKWorkoutRouteQuery extends HKQuery {
 
     /**
      * initWithRoute:handler:
-     * 
+     * <p>
      * Returns a query that will retrieve CLLocation objects for the specified
      * workoutRoute.
-     * 
-     * @param workoutRoute    The HKWorkoutRoute for which the location data will be returned.
-     * @param dataHandler     The block to invoke with results from the query. It is called repeatedly with an array of
-     *                        CLLocation objects until all data is returned and the done parameter is YES or if HKHealthStore
-     *                        stopQuery: is called. The stopQuery call can be made within the dataHandler block. The number of
-     *                        objects returned in routeData per dataHandler call is unspecified. Once done is YES, or
-     *                        stopQuery called, the query is complete and no more calls to the handler will be made.
+     *
+     * @param workoutRoute The HKWorkoutRoute for which the location data will be returned.
+     * @param dataHandler  The block to invoke with results from the query. It is called repeatedly with an array of
+     *                     CLLocation objects until all data is returned and the done parameter is YES or if HKHealthStore
+     *                     stopQuery: is called. The stopQuery call can be made within the dataHandler block. The number of
+     *                     objects returned in routeData per dataHandler call is unspecified. Once done is YES, or
+     *                     stopQuery called, the query is complete and no more calls to the handler will be made.
      */
     @Generated
     @Selector("initWithRoute:dataHandler:")
@@ -305,4 +306,9 @@ public class HKWorkoutRouteQuery extends HKQuery {
     @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
     public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
             HKElectrocardiogram electrocardiogram);
+
+    @Generated
+    @Selector("predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:")
+    public static native NSPredicate predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval(
+            NSDateInterval dateInterval);
 }

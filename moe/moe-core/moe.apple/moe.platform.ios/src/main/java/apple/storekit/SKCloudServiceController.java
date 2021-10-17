@@ -139,7 +139,7 @@ public class SKCloudServiceController extends NSObject {
     @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
-            @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
+            @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization completionHandler);
 
     @Generated
     @Selector("resolveClassMethod:")

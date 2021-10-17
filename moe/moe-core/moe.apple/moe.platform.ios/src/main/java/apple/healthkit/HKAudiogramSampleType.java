@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKAudiogramSampleType
- * 
+ * <p>
  * Represents an audiogram sample.
  */
 @Generated

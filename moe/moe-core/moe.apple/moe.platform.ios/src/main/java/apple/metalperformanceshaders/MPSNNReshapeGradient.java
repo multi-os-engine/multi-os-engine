@@ -28,9 +28,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNReshapeGradient
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * The reshape gradient filter reshapes the incoming gradient into the dimensions
- *             of the forward reshape kernel's source image.
+ * of the forward reshape kernel's source image.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -105,16 +105,16 @@ public class MPSNNReshapeGradient extends MPSCNNGradientKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * While the standard NSSecureCoding/NSCoding method
-     *             -initWithCoder: should work, since the file can't
-     *             know which device your data is allocated on, we
-     *             have to guess and may guess incorrectly.  To avoid
-     *             that problem, use initWithCoder:device instead.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
-     * @param      device      The MTLDevice on which to make the MPSKernel
-     * @return     A new MPSKernel object, or nil if failure.
+     * -initWithCoder: should work, since the file can't
+     * know which device your data is allocated on, we
+     * have to guess and may guess incorrectly.  To avoid
+     * that problem, use initWithCoder:device instead.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSKernel
+     * @param device   The MTLDevice on which to make the MPSKernel
+     * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -123,10 +123,9 @@ public class MPSNNReshapeGradient extends MPSCNNGradientKernel {
 
     /**
      * Initializes a MPSNNReshapeGradient function
-     * 
-     * @param      device  The MTLDevice on which this filter will be used
-     * 
-     * @return     A valid MPSNNReshapeGradient object or nil, if failure.
+     *
+     * @param device The MTLDevice on which this filter will be used
+     * @return A valid MPSNNReshapeGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")

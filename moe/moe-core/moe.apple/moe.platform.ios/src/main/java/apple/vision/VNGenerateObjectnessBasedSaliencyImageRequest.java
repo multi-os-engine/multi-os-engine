@@ -162,4 +162,11 @@ public class VNGenerateObjectnessBasedSaliencyImageRequest extends VNImageBasedR
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * VNSaliencyImageObservation results.
+     */
+    @Generated
+    @Selector("results")
+    public native NSArray<? extends VNSaliencyImageObservation> results();
 }

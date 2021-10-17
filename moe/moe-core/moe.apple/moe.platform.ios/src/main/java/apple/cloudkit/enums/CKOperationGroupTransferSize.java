@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CKOperationGroupTransferSize
- * 
+ * <p>
  * Valid values for expectedSendSize and expectedReceiveSize
  * [@constant] CKOperationGroupTransferSizeUnknown Default value when you're completely unsure of your working set size.
  * [@constant] CKOperationGroupTransferSizeKilobytes Less than 1MB

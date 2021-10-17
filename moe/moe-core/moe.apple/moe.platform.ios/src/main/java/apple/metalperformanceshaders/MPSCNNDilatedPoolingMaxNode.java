@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A node for a MPSCNNDilatedPooling kernel
- * 
+ * <p>
  * This class corresponds to the MPSCNNDilatedPooling class.
  */
 @Generated
@@ -107,10 +107,10 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
 
     /**
      * Convenience initializer for MPSCNNDilatedPooling nodes with square non-overlapping kernels
-     * 
-     * @param      sourceNode      The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      size            kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = dilationRateX = dilationRateY = size
-     * @return     A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
+     * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = dilationRateX = dilationRateY = size
+     * @return A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
      */
     @Generated
     @Selector("initWithSource:filterSize:")
@@ -118,12 +118,12 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
 
     /**
      * Convenience initializer for MPSCNNDilatedPooling nodes with square kernels and equal dilation factors
-     * 
-     * @param      sourceNode      The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      size            kernelWidth = kernelHeight = size
-     * @param      stride          strideInPixelsX = strideInPixelsY = stride
-     * @param      dilationRate    dilationRateX = dilationRateY = stride
-     * @return     A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
+     *
+     * @param sourceNode   The MPSNNImageNode representing the source MPSImage for the filter
+     * @param size         kernelWidth = kernelHeight = size
+     * @param stride       strideInPixelsX = strideInPixelsY = stride
+     * @param dilationRate dilationRateX = dilationRateY = stride
+     * @return A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
      */
     @Generated
     @Selector("initWithSource:filterSize:stride:dilationRate:")
@@ -132,15 +132,15 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSCNNPooling kernel
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      kernelWidth             The width of the max filter window
-     * @param      kernelHeight            The height of the max filter window
-     * @param      strideInPixelsX         The output stride (downsampling factor) in the x dimension.
-     * @param      strideInPixelsY         The output stride (downsampling factor) in the y dimension.
-     * @param      dilationRateX           The dilation factor in the x dimension.
-     * @param      dilationRateY           The dilation factor in the y dimension.
-     * @return     A new MPSNNFilter node for a MPSCNNPooling kernel.
+     *
+     * @param sourceNode      The MPSNNImageNode representing the source MPSImage for the filter
+     * @param kernelWidth     The width of the max filter window
+     * @param kernelHeight    The height of the max filter window
+     * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
+     * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
+     * @param dilationRateX   The dilation factor in the x dimension.
+     * @param dilationRateY   The dilation factor in the y dimension.
+     * @return A new MPSNNFilter node for a MPSCNNPooling kernel.
      */
     @Generated
     @Selector("initWithSource:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:dilationRateX:dilationRateY:")
@@ -177,10 +177,10 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
 
     /**
      * Convenience initializer for MPSCNNDilatedPooling nodes with square non-overlapping kernels
-     * 
-     * @param      sourceNode      The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      size            kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = dilationRateX = dilationRateY = size
-     * @return     A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
+     * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = dilationRateX = dilationRateY = size
+     * @return A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
      */
     @Generated
     @Selector("nodeWithSource:filterSize:")
@@ -189,12 +189,12 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
 
     /**
      * Convenience initializer for MPSCNNDilatedPooling nodes with square kernels and equal dilation factors
-     * 
-     * @param      sourceNode      The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      size            kernelWidth = kernelHeight = size
-     * @param      stride          strideInPixelsX = strideInPixelsY = stride
-     * @param      dilationRate    dilationRateX = dilationRateY = stride
-     * @return     A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
+     *
+     * @param sourceNode   The MPSNNImageNode representing the source MPSImage for the filter
+     * @param size         kernelWidth = kernelHeight = size
+     * @param stride       strideInPixelsX = strideInPixelsY = stride
+     * @param dilationRate dilationRateX = dilationRateY = stride
+     * @return A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
      */
     @Generated
     @Selector("nodeWithSource:filterSize:stride:dilationRate:")

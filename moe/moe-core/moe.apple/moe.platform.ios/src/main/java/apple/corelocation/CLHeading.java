@@ -46,9 +46,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLHeading
- * 
+ * <p>
  * Discussion:
- *   Represents a vector pointing to magnetic North constructed from axis component values x, y, and z. An accuracy of the heading calculation is also provided along with timestamp information.
+ * Represents a vector pointing to magnetic North constructed from axis component values x, y, and z. An accuracy of the heading calculation is also provided along with timestamp information.
  */
 @Generated
 @Library("CoreLocation")
@@ -177,9 +177,9 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * headingAccuracy
-     * 
+     * <p>
      * Discussion:
-     *   Represents the maximum deviation of where the magnetic heading may differ from the actual geomagnetic heading in degrees. A negative value indicates an invalid heading.
+     * Represents the maximum deviation of where the magnetic heading may differ from the actual geomagnetic heading in degrees. A negative value indicates an invalid heading.
      */
     @Generated
     @Selector("headingAccuracy")
@@ -195,12 +195,12 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * magneticHeading
-     * 
+     * <p>
      * Discussion:
-     *   Represents the direction in degrees, where 0 degrees is magnetic North. The direction is referenced from the top of the device regardless of device orientation as well as the orientation of the user interface.
-     * 
+     * Represents the direction in degrees, where 0 degrees is magnetic North. The direction is referenced from the top of the device regardless of device orientation as well as the orientation of the user interface.
+     * <p>
      * Range:
-     *   0.0 - 359.9 degrees, 0 being magnetic North
+     * 0.0 - 359.9 degrees, 0 being magnetic North
      */
     @Generated
     @Selector("magneticHeading")
@@ -214,9 +214,9 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * timestamp
-     * 
+     * <p>
      * Discussion:
-     *   Returns a timestamp for when the magnetic heading was determined.
+     * Returns a timestamp for when the magnetic heading was determined.
      */
     @Generated
     @Selector("timestamp")
@@ -224,14 +224,14 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * trueHeading
-     * 
+     * <p>
      * Discussion:
-     *   Represents the direction in degrees, where 0 degrees is true North. The direction is referenced
-     *   from the top of the device regardless of device orientation as well as the orientation of the
-     *   user interface.
-     * 
+     * Represents the direction in degrees, where 0 degrees is true North. The direction is referenced
+     * from the top of the device regardless of device orientation as well as the orientation of the
+     * user interface.
+     * <p>
      * Range:
-     *   0.0 - 359.9 degrees, 0 being true North
+     * 0.0 - 359.9 degrees, 0 being true North
      */
     @Generated
     @Selector("trueHeading")
@@ -239,9 +239,9 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * x
-     * 
+     * <p>
      * Discussion:
-     *   Returns a raw value for the geomagnetism measured in the x-axis.
+     * Returns a raw value for the geomagnetism measured in the x-axis.
      */
     @Generated
     @Selector("x")
@@ -249,9 +249,9 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * y
-     * 
+     * <p>
      * Discussion:
-     *   Returns a raw value for the geomagnetism measured in the y-axis.
+     * Returns a raw value for the geomagnetism measured in the y-axis.
      */
     @Generated
     @Selector("y")
@@ -259,9 +259,9 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * z
-     * 
+     * <p>
      * Discussion:
-     *   Returns a raw value for the geomagnetism measured in the z-axis.
+     * Returns a raw value for the geomagnetism measured in the z-axis.
      */
     @Generated
     @Selector("z")

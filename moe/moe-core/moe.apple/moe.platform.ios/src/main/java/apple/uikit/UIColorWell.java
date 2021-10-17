@@ -380,7 +380,7 @@ public class UIColorWell extends UIControl {
 
     /**
      * Controls whether alpha is supported or not.
-     * 
+     * <p>
      * If set to `NO` users are only able to pick fully opaque colors.
      */
     @Generated
@@ -389,7 +389,7 @@ public class UIColorWell extends UIControl {
 
     /**
      * Title for the color picker.
-     * 
+     * <p>
      * Should explain what kind of color to pick. Example values are "Stroke Color" or "Fill Color".
      */
     @Generated
@@ -406,7 +406,7 @@ public class UIColorWell extends UIControl {
 
     /**
      * Controls whether alpha is supported or not.
-     * 
+     * <p>
      * If set to `NO` users are only able to pick fully opaque colors.
      */
     @Generated
@@ -415,7 +415,7 @@ public class UIColorWell extends UIControl {
 
     /**
      * Title for the color picker.
-     * 
+     * <p>
      * Should explain what kind of color to pick. Example values are "Stroke Color" or "Fill Color".
      */
     @Generated

@@ -31,7 +31,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] NWTCPConnectionAuthenticationDelegate
- * 
+ * <p>
  * Allows the caller to take custom actions on some connection events.
  */
 @Generated
@@ -41,18 +41,18 @@ import org.moe.natj.objc.ann.Selector;
 public interface NWTCPConnectionAuthenticationDelegate {
     /**
      * evaluateTrustForConnection:peerCertificateChain:completionHandler:
-     * 
+     * <p>
      * The caller can implement this optional protocol method to set up custom policies
-     * 	for peer certificate trust evaluation. If the delegate method is implemented, the caller
-     * 	is responsible for creating and setting up the SecTrustRef object and passing it to the
-     * 	completion handler. Otherwise, the default trust evaluation policy is used for the connection.
-     * 
-     * @param connection The connection sending this message
+     * for peer certificate trust evaluation. If the delegate method is implemented, the caller
+     * is responsible for creating and setting up the SecTrustRef object and passing it to the
+     * completion handler. Otherwise, the default trust evaluation policy is used for the connection.
+     *
+     * @param connection           The connection sending this message
      * @param peerCertificateChain The peer certificate chain
-     * @param completion The completion handler for passing the SecTrustRef object to the connection.
-     * 	The SecTrustRef object "trust" is required and must not be nil. It will be evaluated using
-     * 	SecTrustEvaluate() if necessary. The caller is responsible for keeping the argument object
-     * 	alive for the duration of the completion handler invocation.
+     * @param completion           The completion handler for passing the SecTrustRef object to the connection.
+     *                             The SecTrustRef object "trust" is required and must not be nil. It will be evaluated using
+     *                             SecTrustEvaluate() if necessary. The caller is responsible for keeping the argument object
+     *                             alive for the duration of the completion handler invocation.
      */
     @Generated
     @IsOptional
@@ -65,19 +65,19 @@ public interface NWTCPConnectionAuthenticationDelegate {
 
     /**
      * provideIdentityForConnection:completionHandler:
-     * 
+     * <p>
      * The caller can implement this optional protocol method to provide the identity
-     * 	and an optional certificate chain to be used for authentication.
-     * 
+     * and an optional certificate chain to be used for authentication.
+     *
      * @param connection The connection sending this message
      * @param completion The completion handler for passing identity and certificate chain to the connection.
-     * 	The "identity" argument is required and must not be nil. The "certificateChain" argument is optional,
-     * 	and is an array of one or more SecCertificateRef objects. The certificate chain must contain objects
-     * 	of type SecCertificateRef only. If the certificate chain is set, it will be used. Otherwise, the leaf
-     * 	certificate will be extracted from the SecIdentityRef object and will be used for authentication.
-     * 
-     * 	The caller is responsible for keeping the argument object(s) alive for the duration of the
-     * 	completion handler invocation.
+     *                   The "identity" argument is required and must not be nil. The "certificateChain" argument is optional,
+     *                   and is an array of one or more SecCertificateRef objects. The certificate chain must contain objects
+     *                   of type SecCertificateRef only. If the certificate chain is set, it will be used. Otherwise, the leaf
+     *                   certificate will be extracted from the SecIdentityRef object and will be used for authentication.
+     *                   <p>
+     *                   The caller is responsible for keeping the argument object(s) alive for the duration of the
+     *                   completion handler invocation.
      */
     @Generated
     @IsOptional
@@ -89,15 +89,15 @@ public interface NWTCPConnectionAuthenticationDelegate {
 
     /**
      * shouldEvaluateTrustForConnection:
-     * 
+     * <p>
      * The caller can implement this optional protocol method to decide whether it
-     * 	wants to take over the default trust evaluation for this connection. If this delegate method
-     * 	is not implemented, the return value will default to YES if
-     * 	provideIdentityForConnection:completionHandler: is implemented.
-     * 
+     * wants to take over the default trust evaluation for this connection. If this delegate method
+     * is not implemented, the return value will default to YES if
+     * provideIdentityForConnection:completionHandler: is implemented.
+     *
      * @param connection The connection sending this message
      * @return YES to take over the default trust evaluation, in which case, the delegate method
-     * 	evaluateTrustForConnection:peerCertificateChain:completionHandler: will be called.
+     * evaluateTrustForConnection:peerCertificateChain:completionHandler: will be called.
      */
     @Generated
     @IsOptional
@@ -108,15 +108,15 @@ public interface NWTCPConnectionAuthenticationDelegate {
 
     /**
      * shouldProvideIdentityForConnection:
-     * 
+     * <p>
      * The caller can implement this optional protocol method to decide whether it
-     * 	wants to provide the identity for this connection for authentication. If this delegate
-     * 	method is not implemented, the return value will default to YES if
-     * 	provideIdentityForConnection:completionHandler: is implemented.
-     * 
+     * wants to provide the identity for this connection for authentication. If this delegate
+     * method is not implemented, the return value will default to YES if
+     * provideIdentityForConnection:completionHandler: is implemented.
+     *
      * @param connection The connection sending this message
      * @return YES to provide the identity for this connection, in which case, the delegate method
-     * 	provideIdentityForConnection:completionHandler: will be called.
+     * provideIdentityForConnection:completionHandler: will be called.
      */
     @Generated
     @IsOptional

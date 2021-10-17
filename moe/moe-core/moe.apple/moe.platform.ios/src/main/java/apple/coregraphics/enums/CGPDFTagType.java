@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * All CGPDFTagType reflect official "Role Types" defined in the Adobe Portable Document
- * Format Version 1.7 November 2006. The enums below are defined between pages 899 to 912. 
+ * Format Version 1.7 November 2006. The enums below are defined between pages 899 to 912.
  */
 @Generated
 public final class CGPDFTagType {

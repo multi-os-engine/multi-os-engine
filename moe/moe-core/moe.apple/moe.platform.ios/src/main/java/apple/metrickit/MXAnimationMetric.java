@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXAnimationMetric
- * 
+ * <p>
  * An MXMetric subclass that encapsulates app animation metrics.
  */
 @Generated
@@ -140,13 +140,13 @@ public class MXAnimationMetric extends MXMetric {
 
     /**
      * [@property]      scrollHitchTimeRatio
-     * 
+     * <p>
      * Ratio of time the application spent hitching while scrolling.
-     * 
+     * <p>
      * Scroll hitches are user perceptible animation issues that occur during scrolling.
-     * 
+     * <p>
      * This metric only applies to UIScrollViews.
-     * 
+     * <p>
      * Dimensionless.
      */
     @Generated

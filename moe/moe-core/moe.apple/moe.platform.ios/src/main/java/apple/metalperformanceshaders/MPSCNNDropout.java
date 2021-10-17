@@ -32,12 +32,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNDropout
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Dropout is a regularization technique used to prevent neural networks from
- *             overfitting during training. With probability keepProbability, this filter
- *             outputs the input element scaled by 1 / keepProbability. Otherwise, it
- *             outputs 0. Each input element is kept or dropped independently. The scaling
- *             is performed to keep the energy of the output unchanged.
+ * overfitting during training. With probability keepProbability, this filter
+ * outputs the input element scaled by 1 / keepProbability. Otherwise, it
+ * outputs 0. Each input element is kept or dropped independently. The scaling
+ * is performed to keep the energy of the output unchanged.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -123,17 +123,17 @@ public class MPSCNNDropout extends MPSCNNKernel {
 
     /**
      * Standard init with default properties per filter type.
-     * 
-     * @param      device              The device that the filter will be used on.
-     * @param      keepProbability     The probability that each element in the input is kept.
-     *                                 The valid range is (0.0f, 1.0f).
-     * @param      seed                The seed used to generate random numbers.
-     * @param      maskStrideInPixels  The mask stride in the x, y, and z dimensions, which
-     *                                 allows for the broadcasting of mask data. The only valid
-     *                                 values are 0 and 1 for each dimension. For no
-     *                                 broadcasting, set the values for each dimension to 1.
-     *                                 For broadcasting, set desired values to 0.
-     * @return     A valid MPSCNNDropout object or nil, if failure.
+     *
+     * @param device             The device that the filter will be used on.
+     * @param keepProbability    The probability that each element in the input is kept.
+     *                           The valid range is (0.0f, 1.0f).
+     * @param seed               The seed used to generate random numbers.
+     * @param maskStrideInPixels The mask stride in the x, y, and z dimensions, which
+     *                           allows for the broadcasting of mask data. The only valid
+     *                           values are 0 and 1 for each dimension. For no
+     *                           broadcasting, set the values for each dimension to 1.
+     *                           For broadcasting, set desired values to 0.
+     * @return A valid MPSCNNDropout object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:keepProbability:seed:maskStrideInPixels:")
@@ -160,9 +160,9 @@ public class MPSCNNDropout extends MPSCNNKernel {
 
     /**
      * [@property]   keepProbability
-     * 
+     * <p>
      * The probability that each element in the input is kept.
-     *             The valid range is (0.0f, 1.0f).
+     * The valid range is (0.0f, 1.0f).
      */
     @Generated
     @Selector("keepProbability")
@@ -174,13 +174,13 @@ public class MPSCNNDropout extends MPSCNNKernel {
 
     /**
      * [@property]   maskStrideInPixels
-     * 
+     * <p>
      * The mask stride in the x, y, and x dimensions, which
-     *             allows for the broadcasting the mask data.
-     * 
+     * allows for the broadcasting the mask data.
+     * <p>
      * The only valid values are 0 and 1 for each dimension.
-     *             For no broadcasting, set the values for each dimension
-     *             to 1. For broadcasting, set desired values to 0.
+     * For no broadcasting, set the values for each dimension
+     * to 1. For broadcasting, set desired values to 0.
      */
     @Generated
     @Selector("maskStrideInPixels")
@@ -208,7 +208,7 @@ public class MPSCNNDropout extends MPSCNNKernel {
 
     /**
      * [@property]   seed
-     * 
+     * <p>
      * The seed used to generate random numbers.
      */
     @Generated

@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLPredictionOptions
- * 
+ * <p>
  * An object to hold options / controls / parameters of how
  * model prediction is performed
  */

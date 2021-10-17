@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Generates an image that identifies which part(s) of a given image is most interesting (i.e. something that a human is likely to look at - hence attention based).
- * 		The resulting observation, VNSaliencyImageObservation, encodes this data as a heat map which can be used to highlight regions of interest.
+ * The resulting observation, VNSaliencyImageObservation, encodes this data as a heat map which can be used to highlight regions of interest.
  */
 @Generated
 @Library("Vision")
@@ -162,4 +162,11 @@ public class VNGenerateAttentionBasedSaliencyImageRequest extends VNImageBasedRe
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * VNSaliencyImageObservation results.
+     */
+    @Generated
+    @Selector("results")
+    public native NSArray<? extends VNSaliencyImageObservation> results();
 }

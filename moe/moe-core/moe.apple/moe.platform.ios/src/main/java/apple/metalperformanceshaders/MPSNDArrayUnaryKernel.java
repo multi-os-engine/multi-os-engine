@@ -92,9 +92,9 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property]  dilationRate
-     * 
+     * <p>
      * The stride in each dimension from one PSF tap to an adjacent
-     *            PSF tap. Default: 1
+     * PSF tap. Default: 1
      */
     @Generated
     @Selector("dilationRates")
@@ -103,9 +103,9 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property]  edgeMode
-     * 
+     * <p>
      * The edge mode used for a source NDArray
-     *            Default: MPSImageEdgeModeZero
+     * Default: MPSImageEdgeModeZero
      */
     @Generated
     @Selector("edgeMode")
@@ -113,14 +113,14 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
     public native long edgeMode();
 
     /**
-     *  Inference encode calls
-     * 
+     * Inference encode calls
+     * <p>
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     * 
-     * @param      cmdBuf          The command buffer into which to encode the kernel
-     * @param      sourceArray     The source for the filter in an NSArray.
-     * @return     A newly allocated MPSNDArray that will contain the result of the calculation
-     *             when the command buffer completes successfully.
+     *
+     * @param cmdBuf      The command buffer into which to encode the kernel
+     * @param sourceArray The source for the filter in an NSArray.
+     * @return A newly allocated MPSNDArray that will contain the result of the calculation
+     * when the command buffer completes successfully.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:")
@@ -129,10 +129,10 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     * 
-     * @param      cmdBuf          The command buffer into which to encode the kernel
-     * @param      sourceArray     The source for the filter in an NSArray.
-     * @param      destination     The NDArray to receive the result
+     *
+     * @param cmdBuf      The command buffer into which to encode the kernel
+     * @param sourceArray The source for the filter in an NSArray.
+     * @param destination The NDArray to receive the result
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:destinationArray:")
@@ -141,12 +141,12 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     * 
-     * @param      cmdBuf          The command buffer into which to encode the kernel
-     * @param      sourceArray     The source for the filter in an NSArray.
-     * @param      outGradientState The output gradient state to record the operation for later use by gradient
-     * @param      destination     A destination array to contain the result of the calculation
-     *             when the command buffer completes successfully.
+     *
+     * @param cmdBuf           The command buffer into which to encode the kernel
+     * @param sourceArray      The source for the filter in an NSArray.
+     * @param outGradientState The output gradient state to record the operation for later use by gradient
+     * @param destination      A destination array to contain the result of the calculation
+     *                         when the command buffer completes successfully.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:resultState:destinationArray:")
@@ -155,16 +155,16 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
             MPSNDArray destination);
 
     /**
-     *  Forward training encode calls
-     * 
+     * Forward training encode calls
+     * <p>
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     * 
-     * @param      cmdBuf          The command buffer into which to encode the kernel
-     * @param      sourceArray     The source for the filter in an NSArray.
-     * @param      outGradientState If non-nil, the address output gradient state is written to this address
-     * @param      outputStateIsTemporary  If YES, the state if any will be allocated to contain temporary textures and buffers as needed
-     * @return     A newly allocated MPSNDArray that will contain the result of the calculation
-     *             when the command buffer completes successfully.
+     *
+     * @param cmdBuf                 The command buffer into which to encode the kernel
+     * @param sourceArray            The source for the filter in an NSArray.
+     * @param outGradientState       If non-nil, the address output gradient state is written to this address
+     * @param outputStateIsTemporary If YES, the state if any will be allocated to contain temporary textures and buffers as needed
+     * @return A newly allocated MPSNDArray that will contain the result of the calculation
+     * when the command buffer completes successfully.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:resultState:outputStateIsTemporary:")
@@ -221,9 +221,9 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property]  kernelSizes
-     * 
+     * <p>
      * The diameters of the point spread function in each dimension for a source NDArray
-     *            Default: 1
+     * Default: 1
      */
     @Generated
     @Selector("kernelSizes")
@@ -242,13 +242,13 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property]  offsets
-     * 
+     * <p>
      * The coordinate of the position read from this source array which is
-     *            used to calculate the result value at [0,0,0,....]
-     *            If the position read is actually a contiguous region (e.g. the area covered by
-     *            a convolution kernel) then this is the center of that region, rounded down, for
-     *            each dimension.
-     *            Default: 0,0,0...
+     * used to calculate the result value at [0,0,0,....]
+     * If the position read is actually a contiguous region (e.g. the area covered by
+     * a convolution kernel) then this is the center of that region, rounded down, for
+     * each dimension.
+     * Default: 0,0,0...
      */
     @Generated
     @Selector("offsets")
@@ -269,11 +269,11 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property]  kernelStrides
-     * 
+     * <p>
      * If the filter is a "backwards" filter such as a gradient filter
-     *            or convolution transpose, then this is the upsampling ratio and
-     *            zeros are inserted in the result.
-     *            Default: 1
+     * or convolution transpose, then this is the upsampling ratio and
+     * zeros are inserted in the result.
+     * Default: 1
      */
     @Generated
     @Selector("strides")

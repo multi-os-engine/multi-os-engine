@@ -18,6 +18,7 @@ package apple.avfoundation;
 
 import apple.NSObject;
 import apple.avfoundation.protocol.AVVideoCompositionInstruction;
+import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.coremedia.struct.CMTime;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
@@ -205,18 +206,17 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
 
     /**
      * sourceFrameByTrackID:
-     * 
+     * <p>
      * Returns the source CVPixelBufferRef for the given track ID
-     * 
-     * @param			trackID
-     * 				The track ID for the requested source frame
+     *
+     * @param            trackID The track ID for the requested source frame
      */
     @Generated
     @Selector("sourceFrameByTrackID:")
     public native CVBufferRef sourceFrameByTrackID(int trackID);
 
     /**
-     * Track ID of all the source buffers that are available to compose the frame.
+     * Track IDs of all the source video buffers that are available to compose the frame.
      */
     @Generated
     @Selector("sourceTrackIDs")
@@ -229,4 +229,33 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     @Selector("videoCompositionInstruction")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVVideoCompositionInstruction videoCompositionInstruction();
+
+    /**
+     * sourceSampleBufferByTrackID:
+     * <p>
+     * Returns the source CMSampleBufferRef for the given track ID
+     *
+     * @param            trackID The track ID for the requested source sample buffer
+     */
+    @Generated
+    @Selector("sourceSampleBufferByTrackID:")
+    public native CMSampleBufferRef sourceSampleBufferByTrackID(int trackID);
+
+    /**
+     * Track IDs of all the source sample data buffers that are available to compose the frame.
+     */
+    @Generated
+    @Selector("sourceSampleDataTrackIDs")
+    public native NSArray<? extends NSNumber> sourceSampleDataTrackIDs();
+
+    /**
+     * sourceTimedMetadataByTrackID:
+     * <p>
+     * Returns the source AVTimedMetadataGroup * for the given track ID
+     *
+     * @param            trackID The track ID for the requested source timed metadata group.
+     */
+    @Generated
+    @Selector("sourceTimedMetadataByTrackID:")
+    public native AVTimedMetadataGroup sourceTimedMetadataByTrackID(int trackID);
 }

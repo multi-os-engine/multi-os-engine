@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]       UIPrinterJobTypes
- * 
+ * <p>
  * Job types supported by a printer.
- * 
+ * <p>
  * This enumeration provides the abstract job types
- * 		reported by the UIPrinter supportedJobTypes method.
+ * reported by the UIPrinter supportedJobTypes method.
  * [@constant]   UIPrinterJobTypeUnknown		Unknown printer support.
  * [@constant]   UIPrinterJobTypeDocument   	The printer supports standard document printing.
  * [@constant]   UIPrinterJobTypeEnvelope	The printer supports printing on envelopes.

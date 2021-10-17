@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKElectrocardiogramType
- * 
+ * <p>
  * Represents an electrocardiogram sample.
  */
 @Generated

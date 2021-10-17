@@ -41,15 +41,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface]
- * 
+ * <p>
  * JSManagedValue represents a "conditionally retained" JSValue.
- *  "Conditionally retained" means that as long as the JSManagedValue's 
- *  JSValue is reachable through the JavaScript object graph,
- *  or through the Objective-C object graph reported to the JSVirtualMachine using
- *  addManagedReference:withOwner:, the corresponding JSValue will 
- *  be retained. However, if neither graph reaches the JSManagedValue, the 
- *  corresponding JSValue will be released and set to nil.
- * 
+ * "Conditionally retained" means that as long as the JSManagedValue's
+ * JSValue is reachable through the JavaScript object graph,
+ * or through the Objective-C object graph reported to the JSVirtualMachine using
+ * addManagedReference:withOwner:, the corresponding JSValue will
+ * be retained. However, if neither graph reaches the JSManagedValue, the
+ * corresponding JSValue will be released and set to nil.
+ * <p>
  * The primary use for a JSManagedValue is to store a JSValue in an Objective-C
  * or Swift object that is exported to JavaScript. It is incorrect to store a JSValue
  * in an object that is exported to JavaScript, since doing so creates a retain cycle.
@@ -140,7 +140,7 @@ public class JSManagedValue extends NSObject {
 
     /**
      * Create a JSManagedValue from a JSValue.
-     * 
+     *
      * @return The new JSManagedValue.
      */
     @Generated
@@ -185,7 +185,7 @@ public class JSManagedValue extends NSObject {
 
     /**
      * Create a JSManagedValue.
-     * 
+     *
      * @return The new JSManagedValue.
      */
     @Generated
@@ -194,11 +194,11 @@ public class JSManagedValue extends NSObject {
 
     /**
      * [@property]
-     * 
+     * <p>
      * Get the JSValue from the JSManagedValue.
-     * 
-     * @return The corresponding JSValue for this JSManagedValue or 
-     *  nil if the JSValue has been collected.
+     *
+     * @return The corresponding JSValue for this JSManagedValue or
+     * nil if the JSValue has been collected.
      */
     @Generated
     @Selector("value")

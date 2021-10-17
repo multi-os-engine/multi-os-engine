@@ -58,16 +58,16 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
 
     /**
      * Apply a snapshot to the collection view committing to the new data source state.
-     * 
-     *   animatingDifferences == YES: perform a diff between the current UICollectionView state and the snapshot and animate the update.
-     *   animatingDifferences == NO: commit to the new collection view state from the snapshot. The changes will not be animated.
-     * 
-     *   If the (optional) completion block is specified, it will be called on the main queue when the animations are completed.
-     * 
-     *  Note: you may call this from a background queue which will cause the diff (if needed) to be generated on the calling queue and the
-     *        final UI update to be applied back on the main queue. However, all applySnapshot invocations must be confined to the same queue.
-     *        (if you violate this restriction and mix calls between the main queue and some background queue, the framework
-     *         will log and/or assert to avoid deadlocks)
+     * <p>
+     * animatingDifferences == YES: perform a diff between the current UICollectionView state and the snapshot, and animate the update.
+     * animatingDifferences == NO: perform a diff between the current UICollectionView state and the snapshot, but don't animate the update.
+     * <p>
+     * If the (optional) completion block is specified, it will be called on the main queue when any animations are completed.
+     * <p>
+     * Note: you may call this from a background queue which will cause the diff (if needed) to be generated on the calling queue and the
+     * final UI update to be applied back on the main queue. However, all applySnapshot invocations must be confined to the same queue.
+     * (if you violate this restriction and mix calls between the main queue and some background queue, the framework
+     * will log and/or assert to avoid deadlocks)
      */
     @Generated
     @Selector("applySnapshot:animatingDifferences:")
@@ -181,8 +181,8 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Generated
     public interface Block_initWithCollectionViewCellProvider {
         @Generated
-        UICollectionViewCell call_initWithCollectionViewCellProvider(UICollectionView collectionView, NSIndexPath indexPath,
-                @Mapped(ObjCObjectMapper.class) Object itemIdentifier);
+        UICollectionViewCell call_initWithCollectionViewCellProvider(UICollectionView collectionView,
+                NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object itemIdentifier);
     }
 
     @Generated
@@ -203,7 +203,7 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * convert IndexPath <-> ItemIdentifierType
+     * convert item NSIndexPath <-> ItemIdentifierType
      */
     @Generated
     @Selector("itemIdentifierForIndexPath:")
@@ -253,7 +253,7 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
 
     /**
      * Create a snapshot of the current UICollectionView data source state.
-     *   This snapshot can be mutated and later applied via -applySnapshot:animatingDifferences:
+     * This snapshot can be mutated and later applied via -applySnapshot:animatingDifferences:
      */
     @Generated
     @Selector("snapshot")
@@ -332,4 +332,43 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Selector("snapshotForSection:")
     public native NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshotForSection(
             @Mapped(ObjCObjectMapper.class) _SectionIdentifierType section);
+
+    /**
+     * Apply a snapshot to the collection view using reloadData.
+     * <p>
+     * This always skips diffing, and immediately resets the UICollectionView to the new data source state without animation.
+     * Generally this should only be used for specific cases where you need to fully reset the collection view's data to the
+     * new state immediately (e.g. recycling the collection view for use with a completely different data set), or when you
+     * specifically want to skip diffing (e.g. applying an exceptionally large changeset).
+     */
+    @Generated
+    @Selector("applySnapshotUsingReloadData:")
+    public native void applySnapshotUsingReloadData(
+            NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifierType> snapshot);
+
+    @Generated
+    @Selector("applySnapshotUsingReloadData:completion:")
+    public native void applySnapshotUsingReloadDataCompletion(
+            NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifierType> snapshot,
+            @ObjCBlock(name = "call_applySnapshotUsingReloadDataCompletion") Block_applySnapshotUsingReloadDataCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applySnapshotUsingReloadDataCompletion {
+        @Generated
+        void call_applySnapshotUsingReloadDataCompletion();
+    }
+
+    @Generated
+    @Selector("indexForSectionIdentifier:")
+    @NInt
+    public native long indexForSectionIdentifier(@Mapped(ObjCObjectMapper.class) _SectionIdentifierType identifier);
+
+    /**
+     * convert section index <-> SectionIdentifierType
+     */
+    @Generated
+    @Selector("sectionIdentifierForIndex:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native _SectionIdentifierType sectionIdentifierForIndex(@NInt long index);
 }

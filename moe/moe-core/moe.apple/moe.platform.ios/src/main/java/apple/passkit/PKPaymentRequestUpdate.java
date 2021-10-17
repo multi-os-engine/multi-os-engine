@@ -175,4 +175,20 @@ public class PKPaymentRequestUpdate extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The new shipping methods to update the payment request with. An empty array, the default value,
+     * indicates that the shipping methods don't need updating.
+     */
+    @Generated
+    @Selector("setShippingMethods:")
+    public native void setShippingMethods(NSArray<? extends PKShippingMethod> value);
+
+    /**
+     * The new shipping methods to update the payment request with. An empty array, the default value,
+     * indicates that the shipping methods don't need updating.
+     */
+    @Generated
+    @Selector("shippingMethods")
+    public native NSArray<? extends PKShippingMethod> shippingMethods();
 }

@@ -14,7 +14,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol]    NFCVASReaderSessionDelegate
- * 
+ * <p>
  * Value Added Service (VAS) reader session callbacks.
  */
 @Generated
@@ -24,12 +24,12 @@ import org.moe.natj.objc.ann.Selector;
 public interface NFCVASReaderSessionDelegate {
     /**
      * readerSession:didInvalidateWithError:
-     * 
+     * <p>
      * Gets called when a session becomes invalid.  At this point the client is expected to discard
-     *                  the returned session object.
-     * 
-     * @param session   The session object that is invalidated.
-     * @param error     The error indicates the invalidation reason.
+     * the returned session object.
+     *
+     * @param session The session object that is invalidated.
+     * @param error   The error indicates the invalidation reason.
      */
     @Generated
     @Selector("readerSession:didInvalidateWithError:")
@@ -37,10 +37,10 @@ public interface NFCVASReaderSessionDelegate {
 
     /**
      * readerSession:didReceiveVASResponses:
-     * 
+     * <p>
      * Gets called when the reader completes the requested VAS transaction.  Polling
-     *                  is automatically restarted once the detected tag is removed from the reader's read range.
-     * 
+     * is automatically restarted once the detected tag is removed from the reader's read range.
+     *
      * @param session   The session object used for tag detection.
      * @param responses Array of @link NFCVASResponse @link/ objects.  The order of the response objects follows the
      *                  sequence of GET VAS DATA sent by the reader session.
@@ -51,11 +51,11 @@ public interface NFCVASReaderSessionDelegate {
 
     /**
      * readerSessionDidBecomeActive:
-     * 
+     * <p>
      * Gets called when the NFC reader session has become active. RF is enabled and reader is scanning for VAS tags.
-     *                  The @link readerSession:didReceiveVASResponses: @link/ will be called when a VAS transaction is completed.
-     * 
-     * @param session   The session object in the active state.
+     * The @link readerSession:didReceiveVASResponses: @link/ will be called when a VAS transaction is completed.
+     *
+     * @param session The session object in the active state.
      */
     @Generated
     @IsOptional

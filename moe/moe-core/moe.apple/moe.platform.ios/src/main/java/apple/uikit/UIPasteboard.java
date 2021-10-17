@@ -389,8 +389,8 @@ public class UIPasteboard extends NSObject {
 
     /**
      * Detects patterns in the first pasteboard item.
-     * 
-     * @param patterns Detect only these patterns.
+     *
+     * @param patterns          Detect only these patterns.
      * @param completionHandler Receives which patterns were detected, or an error.
      */
     @Generated
@@ -407,9 +407,9 @@ public class UIPasteboard extends NSObject {
 
     /**
      * Detects patterns in the specified pasteboard items.
-     * 
-     * @param patterns Detect only these patterns.
-     * @param itemSet Specifies which pasteboard items by their position. Nil means all items.
+     *
+     * @param patterns          Detect only these patterns.
+     * @param itemSet           Specifies which pasteboard items by their position. Nil means all items.
      * @param completionHandler Receives which patterns were detected per item specified,
      *                          or an error.
      */
@@ -428,8 +428,8 @@ public class UIPasteboard extends NSObject {
 
     /**
      * Detects patterns and corresponding values in the first pasteboard item.
-     * 
-     * @param patterns Detect only these patterns.
+     *
+     * @param patterns          Detect only these patterns.
      * @param completionHandler Receives which patterns and values were detected, or an error.
      */
     @Generated
@@ -446,9 +446,9 @@ public class UIPasteboard extends NSObject {
 
     /**
      * Detects patterns and corresponding values in the specified pasteboard items.
-     * 
-     * @param patterns Detect only these patterns.
-     * @param itemSet Specifies which pasteboard items by their position. Nil means all items.
+     *
+     * @param patterns          Detect only these patterns.
+     * @param itemSet           Specifies which pasteboard items by their position. Nil means all items.
      * @param completionHandler Receives which patterns and values were detected per item specified,
      *                          or an error.
      */

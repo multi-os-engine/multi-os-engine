@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NFCNDEFMessage
- * 
+ * <p>
  * A NDEF message consists of payload records.  The maximum size of the NDEF message is limited to 128KB.
  */
 @Generated
@@ -109,8 +109,8 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
 
     /**
      * initWithNDEFRecords:
-     * 
-     * @param records  NSArray of NFCNDEFPayload object.  An empty array will create an empty NDEF message.
+     *
+     * @param records NSArray of NFCNDEFPayload object.  An empty array will create an empty NDEF message.
      */
     @Generated
     @Selector("initWithNDEFRecords:")
@@ -139,7 +139,7 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] length
-     * 
+     * <p>
      * Length of the resulting NDEF message in bytes as it would be stored on a NFC tag.
      */
     @Generated
@@ -149,9 +149,9 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
 
     /**
      * ndefMessageWithData:
-     * 
-     * @param data  NSData storing raw bytes of a complete NDEF message.  The data content will be validated; all NDEF payloads must
-     *              be valid according to the NFC Forum NDEF RTD specification and it shall only contain a single NDEF message.
+     *
+     * @param data NSData storing raw bytes of a complete NDEF message.  The data content will be validated; all NDEF payloads must
+     *             be valid according to the NFC Forum NDEF RTD specification and it shall only contain a single NDEF message.
      */
     @Generated
     @Selector("ndefMessageWithData:")
@@ -166,7 +166,7 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] records
-     * 
+     * <p>
      * Array of NFCNDEFPayload records contained in this message.
      */
     @Generated
@@ -183,7 +183,7 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] records
-     * 
+     * <p>
      * Array of NFCNDEFPayload records contained in this message.
      */
     @Generated

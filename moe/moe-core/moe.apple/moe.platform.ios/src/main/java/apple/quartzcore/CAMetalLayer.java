@@ -231,10 +231,10 @@ public class CAMetalLayer extends CALayer {
     /**
      * Get the swap queue's next available drawable. Always blocks until a drawable
      * is available. Can return nil under the following conditions:
-     *     1) The layer has an invalid combination of drawable properties.
-     *     2) All drawables in the swap queue are in-use and the 1 second timeout
-     *        has elapsed. (except when `allowsNextDrawableTimeout' is set to NO)
-     *     3) Process is out of memory.
+     * 1) The layer has an invalid combination of drawable properties.
+     * 2) All drawables in the swap queue are in-use and the 1 second timeout
+     * has elapsed. (except when `allowsNextDrawableTimeout' is set to NO)
+     * 3) Process is out of memory.
      */
     @Generated
     @Selector("nextDrawable")

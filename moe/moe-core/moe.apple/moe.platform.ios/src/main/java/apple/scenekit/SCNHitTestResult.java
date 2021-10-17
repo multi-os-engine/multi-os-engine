@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNHitTestResult
- * 
+ * <p>
  * Results returned by the hit-test methods.
  */
 @Generated
@@ -219,9 +219,9 @@ public class SCNHitTestResult extends NSObject {
 
     /**
      * textureCoordinatesWithMappingChannel:
-     * 
+     * <p>
      * Returns the texture coordinates at the point of intersection, for a given mapping channel.
-     * 
+     *
      * @param channel The texture coordinates source index of the geometry to use. The channel must exists on the geometry otherwise {0,0} will be returned.
      */
     @Generated

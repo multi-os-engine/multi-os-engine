@@ -160,7 +160,7 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] fastMathEnabled
-     * 
+     * <p>
      * If YES, enables the compiler to perform optimizations for floating-point arithmetic that may violate the IEEE 754 standard. It also enables the high precision variant of math functions for single precision floating-point scalar and vector types. fastMathEnabled defaults to YES.
      */
     @Generated
@@ -173,7 +173,7 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] languageVersion
-     * 
+     * <p>
      * set the metal language version used to interpret the source.
      */
     @Generated
@@ -183,9 +183,9 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] preprocessorNames
-     * 
+     * <p>
      * List of preprocessor macros to consider to when compiling this program. Specified as key value pairs, using a NSDictionary. The keys must be NSString objects and values can be either NSString or NSNumber objects.
-     * 
+     * <p>
      * The default value is nil.
      */
     @Generated
@@ -194,7 +194,7 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] fastMathEnabled
-     * 
+     * <p>
      * If YES, enables the compiler to perform optimizations for floating-point arithmetic that may violate the IEEE 754 standard. It also enables the high precision variant of math functions for single precision floating-point scalar and vector types. fastMathEnabled defaults to YES.
      */
     @Generated
@@ -203,7 +203,7 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] languageVersion
-     * 
+     * <p>
      * set the metal language version used to interpret the source.
      */
     @Generated
@@ -212,9 +212,9 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] preprocessorNames
-     * 
+     * <p>
      * List of preprocessor macros to consider to when compiling this program. Specified as key value pairs, using a NSDictionary. The keys must be NSString objects and values can be either NSString or NSNumber objects.
-     * 
+     * <p>
      * The default value is nil.
      */
     @Generated
@@ -223,9 +223,9 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] installName
-     * 
+     * <p>
      * The install name of this dynamic library.
-     * 
+     * <p>
      * The install name is used when a pipeline state is created that depends, directly or indirectly, on a dynamic library.
      * The installName is embedded into any other MTLLibrary that links against the compilation result.
      * This property should be set such that the dynamic library can be found in the file system at the time a pipeline state is created.
@@ -244,11 +244,11 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] libraries
-     * 
+     * <p>
      * A set of MTLDynamicLibrary instances to link against.
      * The installName of the provided MTLDynamicLibrary is embedded into the compilation result.
      * When a function from the resulting MTLLibrary is used (either as an MTLFunction, or as an to create a pipeline state, the embedded install names are used to automatically load the MTLDynamicLibrary instances.
-     * This property can be null if no libraries should be automatically loaded, either because the MTLLibrary has no external dependencies, or because you will use insertLibraries to specify the libraries to use at pipeline creation time.
+     * This property can be null if no libraries should be automatically loaded, either because the MTLLibrary has no external dependencies, or because you will use preloadedLibraries to specify the libraries to use at pipeline creation time.
      */
     @Generated
     @Selector("libraries")
@@ -256,9 +256,9 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] type
-     * 
+     * <p>
      * Which type the library should be compiled as. The default value is MTLLibraryTypeExecutable.
-     * 
+     * <p>
      * MTLLibraryTypeExecutable is suitable to build a library of "kernel", "vertex" and "fragment" qualified functions.
      * MTLLibraryType is suitable when the compilation result will instead be used to instantiate a MTLDynamicLibrary.
      * MTLDynamicLibrary contains no qualified functions, but it's unqualified functions and variables can be used as an external dependency for compiling other libraries.
@@ -270,7 +270,7 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] preserveInvariance
-     * 
+     * <p>
      * If YES,  set the compiler to compile shaders to preserve invariance.  The default is false.
      */
     @Generated
@@ -279,9 +279,9 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] installName
-     * 
+     * <p>
      * The install name of this dynamic library.
-     * 
+     * <p>
      * The install name is used when a pipeline state is created that depends, directly or indirectly, on a dynamic library.
      * The installName is embedded into any other MTLLibrary that links against the compilation result.
      * This property should be set such that the dynamic library can be found in the file system at the time a pipeline state is created.
@@ -300,11 +300,11 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] libraries
-     * 
+     * <p>
      * A set of MTLDynamicLibrary instances to link against.
      * The installName of the provided MTLDynamicLibrary is embedded into the compilation result.
      * When a function from the resulting MTLLibrary is used (either as an MTLFunction, or as an to create a pipeline state, the embedded install names are used to automatically load the MTLDynamicLibrary instances.
-     * This property can be null if no libraries should be automatically loaded, either because the MTLLibrary has no external dependencies, or because you will use insertLibraries to specify the libraries to use at pipeline creation time.
+     * This property can be null if no libraries should be automatically loaded, either because the MTLLibrary has no external dependencies, or because you will use preloadedLibraries to specify the libraries to use at pipeline creation time.
      */
     @Generated
     @Selector("setLibraries:")
@@ -312,9 +312,9 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] type
-     * 
+     * <p>
      * Which type the library should be compiled as. The default value is MTLLibraryTypeExecutable.
-     * 
+     * <p>
      * MTLLibraryTypeExecutable is suitable to build a library of "kernel", "vertex" and "fragment" qualified functions.
      * MTLLibraryType is suitable when the compilation result will instead be used to instantiate a MTLDynamicLibrary.
      * MTLDynamicLibrary contains no qualified functions, but it's unqualified functions and variables can be used as an external dependency for compiling other libraries.
@@ -325,7 +325,7 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
 
     /**
      * [@property] preserveInvariance
-     * 
+     * <p>
      * If YES,  set the compiler to compile shaders to preserve invariance.  The default is false.
      */
     @Generated

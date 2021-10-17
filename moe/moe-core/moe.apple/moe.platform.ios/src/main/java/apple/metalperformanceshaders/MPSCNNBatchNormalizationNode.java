@@ -27,29 +27,29 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSCNNBatchNormalizationNode
- * 
+ * <p>
  * A node representing batch normalization for inference or training
- * 
+ * <p>
  * Batch normalization operates differently for inference and training.
- *             For inference, the normalization is done according to a static statistical
- *             representation of data saved during training. For training, this representation
- *             is ever evolving.  In the low level MPS batch normalization interface,
- *             during training, the batch normalization is broken up into two steps:
- *             calculation of the statistical representation of input data, followed
- *             by normalization once the statistics are known for the entire batch.
- *             These are MPSCNNBatchNormalizationStatistics and MPSCNNBatchNormalization,
- *             respectively.
- * 
- *             When this node appears in a graph and is not required to produce a
- *             MPSCNNBatchNormalizationState -- that is, MPSCNNBatchNormalizationNode.resultState
- *             is not used within the graph -- then it operates in inference mode
- *             and new batch-only statistics are not calculated. When this state node
- *             is consumed, then the node is assumed to be in training mode and
- *             new statistics will be calculated and written to the MPSCNNBatchNormalizationState
- *             and passed along to the MPSCNNBatchNormalizationGradient and
- *             MPSCNNBatchNormalizationStatisticsGradient as necessary. This should
- *             allow you to construct an identical sequence of nodes for inference
- *             and training and expect the right thing to happen.
+ * For inference, the normalization is done according to a static statistical
+ * representation of data saved during training. For training, this representation
+ * is ever evolving.  In the low level MPS batch normalization interface,
+ * during training, the batch normalization is broken up into two steps:
+ * calculation of the statistical representation of input data, followed
+ * by normalization once the statistics are known for the entire batch.
+ * These are MPSCNNBatchNormalizationStatistics and MPSCNNBatchNormalization,
+ * respectively.
+ * <p>
+ * When this node appears in a graph and is not required to produce a
+ * MPSCNNBatchNormalizationState -- that is, MPSCNNBatchNormalizationNode.resultState
+ * is not used within the graph -- then it operates in inference mode
+ * and new batch-only statistics are not calculated. When this state node
+ * is consumed, then the node is assumed to be in training mode and
+ * new statistics will be calculated and written to the MPSCNNBatchNormalizationState
+ * and passed along to the MPSCNNBatchNormalizationGradient and
+ * MPSCNNBatchNormalizationStatisticsGradient as necessary. This should
+ * allow you to construct an identical sequence of nodes for inference
+ * and training and expect the right thing to happen.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -111,7 +111,7 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
 
     /**
      * Options controlling how batch normalization is calculated
-     * 
+     * <p>
      * Default: MPSCNNBatchNormalizationFlagsDefault
      */
     @Generated
@@ -175,7 +175,7 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
 
     /**
      * Options controlling how batch normalization is calculated
-     * 
+     * <p>
      * Default: MPSCNNBatchNormalizationFlagsDefault
      */
     @Generated

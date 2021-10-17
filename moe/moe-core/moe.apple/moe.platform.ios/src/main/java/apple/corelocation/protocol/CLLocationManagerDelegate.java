@@ -37,9 +37,9 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * CLLocationManagerDelegate
- * 
+ * <p>
  * Discussion:
- *   Delegate for CLLocationManager.
+ * Delegate for CLLocationManager.
  */
 @Generated
 @Library("CoreLocation")
@@ -48,9 +48,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface CLLocationManagerDelegate {
     /**
      * locationManager:didChangeAuthorizationStatus:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when the authorization status changes for this application.
+     * Invoked when the authorization status changes for this application.
      */
     @Generated
     @IsOptional
@@ -61,10 +61,10 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didDetermineState:forRegion:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when there's a state transition for a monitored region or in response to a request for state via a
-     *   a call to requestStateForRegion:.
+     * Invoked when there's a state transition for a monitored region or in response to a request for state via a
+     * a call to requestStateForRegion:.
      */
     @Generated
     @IsOptional
@@ -76,10 +76,10 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didEnterRegion:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when the user enters a monitored region.  This callback will be invoked for every allocated
-     *   CLLocationManager instance with a non-nil delegate that implements this method.
+     * Invoked when the user enters a monitored region.  This callback will be invoked for every allocated
+     * CLLocationManager instance with a non-nil delegate that implements this method.
      */
     @Generated
     @IsOptional
@@ -90,10 +90,10 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didExitRegion:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when the user exits a monitored region.  This callback will be invoked for every allocated
-     *   CLLocationManager instance with a non-nil delegate that implements this method.
+     * Invoked when the user exits a monitored region.  This callback will be invoked for every allocated
+     * CLLocationManager instance with a non-nil delegate that implements this method.
      */
     @Generated
     @IsOptional
@@ -104,9 +104,9 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didFailWithError:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when an error has occurred. Error types are defined in "CLError.h".
+     * Invoked when an error has occurred. Error types are defined in "CLError.h".
      */
     @Generated
     @IsOptional
@@ -117,14 +117,14 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didFinishDeferredUpdatesWithError:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when deferred updates will no longer be delivered. Stopping
-     *   location, disallowing deferred updates, and meeting a specified criterion
-     *   are all possible reasons for finishing deferred updates.
-     * 
-     *   An error will be returned if deferred updates end before the specified
-     *   criteria are met (see CLError), otherwise error will be nil.
+     * Invoked when deferred updates will no longer be delivered. Stopping
+     * location, disallowing deferred updates, and meeting a specified criterion
+     * are all possible reasons for finishing deferred updates.
+     * <p>
+     * An error will be returned if deferred updates end before the specified
+     * criteria are met (see CLError), otherwise error will be nil.
      */
     @Generated
     @IsOptional
@@ -135,13 +135,13 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didRangeBeacons:inRegion:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when a new set of beacons are available in the specified region.
-     *   beacons is an array of CLBeacon objects.
-     *   If beacons is empty, it may be assumed no beacons that match the specified region are nearby.
-     *   Similarly if a specific beacon no longer appears in beacons, it may be assumed the beacon is no longer received
-     *   by the device.
+     * Invoked when a new set of beacons are available in the specified region.
+     * beacons is an array of CLBeacon objects.
+     * If beacons is empty, it may be assumed no beacons that match the specified region are nearby.
+     * Similarly if a specific beacon no longer appears in beacons, it may be assumed the beacon is no longer received
+     * by the device.
      */
     @Generated
     @IsOptional
@@ -153,9 +153,9 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didStartMonitoringForRegion:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when a monitoring for a region started successfully.
+     * Invoked when a monitoring for a region started successfully.
      */
     @Generated
     @IsOptional
@@ -166,9 +166,9 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didUpdateHeading:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when a new heading is available.
+     * Invoked when a new heading is available.
      */
     @Generated
     @IsOptional
@@ -179,13 +179,13 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didUpdateLocations:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when new locations are available.  Required for delivery of
-     *   deferred locations.  If implemented, updates will
-     *   not be delivered to locationManager:didUpdateToLocation:fromLocation:
-     * 
-     *   locations is an array of CLLocation objects in chronological order.
+     * Invoked when new locations are available.  Required for delivery of
+     * deferred locations.  If implemented, updates will
+     * not be delivered to locationManager:didUpdateToLocation:fromLocation:
+     * <p>
+     * locations is an array of CLLocation objects in chronological order.
      */
     @Generated
     @IsOptional
@@ -196,13 +196,13 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didUpdateToLocation:fromLocation:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when a new location is available. oldLocation may be nil if there is no previous location
-     *   available.
-     * 
-     *   This method is deprecated. If locationManager:didUpdateLocations: is
-     *   implemented, this method will not be called.
+     * Invoked when a new location is available. oldLocation may be nil if there is no previous location
+     * available.
+     * <p>
+     * This method is deprecated. If locationManager:didUpdateLocations: is
+     * implemented, this method will not be called.
      */
     @Generated
     @IsOptional
@@ -215,11 +215,11 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didVisit:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when the CLLocationManager determines that the device has visited
-     *   a location, if visit monitoring is currently started (possibly from a
-     *   prior launch).
+     * Invoked when the CLLocationManager determines that the device has visited
+     * a location, if visit monitoring is currently started (possibly from a
+     * prior launch).
      */
     @Generated
     @IsOptional
@@ -230,9 +230,9 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:monitoringDidFailForRegion:withError:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when a region monitoring error has occurred. Error types are defined in "CLError.h".
+     * Invoked when a region monitoring error has occurred. Error types are defined in "CLError.h".
      */
     @Generated
     @IsOptional
@@ -244,9 +244,9 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:rangingBeaconsDidFailForRegion:withError:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when an error has occurred ranging beacons in a region. Error types are defined in "CLError.h".
+     * Invoked when an error has occurred ranging beacons in a region. Error types are defined in "CLError.h".
      */
     @Generated
     @IsOptional
@@ -258,7 +258,7 @@ public interface CLLocationManagerDelegate {
 
     /**
      * Discussion:
-     *   Invoked when location updates are automatically paused.
+     * Invoked when location updates are automatically paused.
      */
     @Generated
     @IsOptional
@@ -269,10 +269,10 @@ public interface CLLocationManagerDelegate {
 
     /**
      * Discussion:
-     *   Invoked when location updates are automatically resumed.
-     * 
-     *   In the event that your application is terminated while suspended, you will
-     *  not receive this notification.
+     * Invoked when location updates are automatically resumed.
+     * <p>
+     * In the event that your application is terminated while suspended, you will
+     * not receive this notification.
      */
     @Generated
     @IsOptional
@@ -283,10 +283,10 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManagerShouldDisplayHeadingCalibration:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when a new heading is available. Return YES to display heading calibration info. The display
-     *   will remain until heading is calibrated, unless dismissed early via dismissHeadingCalibrationDisplay.
+     * Invoked when a new heading is available. Return YES to display heading calibration info. The display
+     * will remain until heading is calibrated, unless dismissed early via dismissHeadingCalibrationDisplay.
      */
     @Generated
     @IsOptional
@@ -313,10 +313,10 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManagerDidChangeAuthorization:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when either the authorizationStatus or
-     *   accuracyAuthorization properties change
+     * Invoked when either the authorizationStatus or
+     * accuracyAuthorization properties change
      */
     @Generated
     @IsOptional

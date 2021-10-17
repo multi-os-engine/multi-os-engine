@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueTargetFanState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueTargetFanStateManual     Manual.
  * [@constant]  HMCharacteristicValueTargetFanStateAutomatic  Automatic.
  */

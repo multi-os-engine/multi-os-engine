@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum]       MSMessagesAppPresentationContext
- * 
+ * <p>
  * Describes the context for which the extension was launched
  * [@constant]   MSMessagesAppPresentationContextMessages   The extension was launched for presentation in Messages
  * [@constant]   MSMessagesAppPresentationContextMedia      The extension was launched for presentation over media content, such as a photo or camera feed

@@ -201,7 +201,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * The field of view, in degrees.
-     * 
+     *
      * @see focalLength
      */
     @Generated
@@ -217,7 +217,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Lens focal length in mm.
-     * 
+     *
      * @see fieldOfView
      */
     @Generated
@@ -243,7 +243,7 @@ public class MDLCamera extends MDLObject {
     public native float maximumCircleOfConfusion();
 
     /**
-     * Bounding distance for visible objects 
+     * Bounding distance for visible objects
      */
     @Generated
     @Selector("nearVisibilityDistance")
@@ -257,6 +257,7 @@ public class MDLCamera extends MDLObject {
     public native float opticalVignetting();
 
     /**
+     *
      */
     @Generated
     @Selector("projection")
@@ -265,7 +266,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Sensor or film gate aperture aspect ratio, default is 1.5
-     * 
+     *
      * @see sensorVerticalAperture
      */
     @Generated
@@ -274,7 +275,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * vertical aperture of the sensor or film gate, default is 24mm
-     * 
+     *
      * @see sensorAspect
      */
     @Generated
@@ -315,7 +316,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * The field of view, in degrees.
-     * 
+     *
      * @see focalLength
      */
     @Generated
@@ -331,7 +332,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Lens focal length in mm.
-     * 
+     *
      * @see fieldOfView
      */
     @Generated
@@ -353,7 +354,7 @@ public class MDLCamera extends MDLObject {
     public native void setMaximumCircleOfConfusion(float value);
 
     /**
-     * Bounding distance for visible objects 
+     * Bounding distance for visible objects
      */
     @Generated
     @Selector("setNearVisibilityDistance:")
@@ -367,6 +368,7 @@ public class MDLCamera extends MDLObject {
     public native void setOpticalVignetting(float value);
 
     /**
+     *
      */
     @Generated
     @Selector("setProjection:")
@@ -374,7 +376,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Sensor or film gate aperture aspect ratio, default is 1.5
-     * 
+     *
      * @see sensorVerticalAperture
      */
     @Generated
@@ -383,7 +385,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * vertical aperture of the sensor or film gate, default is 24mm
-     * 
+     *
      * @see sensorAspect
      */
     @Generated

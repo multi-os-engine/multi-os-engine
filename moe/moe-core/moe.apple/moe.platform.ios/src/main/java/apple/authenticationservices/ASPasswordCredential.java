@@ -84,8 +84,8 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
 
     /**
      * Creates and initializes a new ASPasswordCredential object.
-     * 
-     * @param user the user.
+     *
+     * @param user     the user.
      * @param password the password.
      */
     @Generated
@@ -119,8 +119,8 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
 
     /**
      * Initializes an ASPasswordCredential object.
-     * 
-     * @param user the user.
+     *
+     * @param user     the user.
      * @param password the password.
      */
     @Generated
@@ -156,7 +156,7 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
 
     /**
      * The password of this credential.
-     * 
+     *
      * @return The password string.
      */
     @Generated
@@ -191,7 +191,7 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
 
     /**
      * The user name of this credential.
-     * 
+     *
      * @return The user string.
      */
     @Generated

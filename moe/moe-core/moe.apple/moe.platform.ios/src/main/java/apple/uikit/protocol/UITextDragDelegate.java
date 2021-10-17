@@ -23,7 +23,7 @@ public interface UITextDragDelegate {
     /**
      * Provide a preview for lifting the item out of the text control.
      * If you return nil, the drag interaction will provide a default preview.
-     * 
+     * <p>
      * Note: This will not be called for items obtained from a UITextDragRequest’s suggestedItems
      * (via textDraggableView:itemsForDrag:).
      * The text control will use its own previews for those items.
@@ -67,7 +67,7 @@ public interface UITextDragDelegate {
      * The drag request provides the text range from which the user is dragging, and
      * a set of default drag items which would be used if this delegate method were
      * not implemented. You can modify and/or augment these at will.
-     * 
+     * <p>
      * Note: this method might be called more than once. For instance, if the control
      * is asked to provide more items to add to an existing session.
      * You can detect this by checking the `existingItems` in the drag request.

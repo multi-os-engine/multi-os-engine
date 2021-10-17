@@ -107,7 +107,7 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     /**
      * Creates a new app overlay configuration that will show an app clip's full app.
-     * 
+     *
      * @param position the desired position of the overlay.
      */
     @Generated
@@ -201,4 +201,32 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * An optional identifier for a parent app's custom product page.
+     */
+    @Generated
+    @Selector("customProductPageIdentifier")
+    public native String customProductPageIdentifier();
+
+    /**
+     * An optional extra parameter for specifying the version of your app that will be shown to the user.
+     */
+    @Generated
+    @Selector("latestReleaseID")
+    public native String latestReleaseID();
+
+    /**
+     * An optional identifier for a parent app's custom product page.
+     */
+    @Generated
+    @Selector("setCustomProductPageIdentifier:")
+    public native void setCustomProductPageIdentifier(String value);
+
+    /**
+     * An optional extra parameter for specifying the version of your app that will be shown to the user.
+     */
+    @Generated
+    @Selector("setLatestReleaseID:")
+    public native void setLatestReleaseID(String value);
 }

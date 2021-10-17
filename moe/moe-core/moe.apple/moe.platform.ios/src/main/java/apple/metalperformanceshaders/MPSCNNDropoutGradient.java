@@ -31,13 +31,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNDropoutGradient
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * This filter is the backward filter for the MPSCNNDropout forward filter.
- *             It requires the mask data, along with all the associated parameters used
- *             to generate the mask, from the forward pass. The mask is associated with
- *             a MPSCNNDropoutGradientState object.
- * 
- *             In this kernel, use the secondaryOffset to apply an offset to the mask data.
+ * It requires the mask data, along with all the associated parameters used
+ * to generate the mask, from the forward pass. The mask is associated with
+ * a MPSCNNDropoutGradientState object.
+ * <p>
+ * In this kernel, use the secondaryOffset to apply an offset to the mask data.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -124,17 +124,17 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
 
     /**
      * Standard init with default properties per filter type.
-     * 
-     * @param      device              The device that the filter will be used on.
-     * @param      keepProbability     The probability that each element in the input is kept.
-     *                                 The valid range is (0.0f, 1.0f).
-     * @param      seed                The seed used to generate random numbers.
-     * @param      maskStrideInPixels  The mask stride in the x, y, and z dimensions, which
-     *                                 allows for the broadcasting of mask data. The only valid
-     *                                 values are 0 and 1 for each dimension. For no
-     *                                 broadcasting, set the values for each dimension to 1.
-     *                                 For broadcasting, set desired values to 0.
-     * @return     A valid MPSCNNDropoutGradient object or nil, if failure.
+     *
+     * @param device             The device that the filter will be used on.
+     * @param keepProbability    The probability that each element in the input is kept.
+     *                           The valid range is (0.0f, 1.0f).
+     * @param seed               The seed used to generate random numbers.
+     * @param maskStrideInPixels The mask stride in the x, y, and z dimensions, which
+     *                           allows for the broadcasting of mask data. The only valid
+     *                           values are 0 and 1 for each dimension. For no
+     *                           broadcasting, set the values for each dimension to 1.
+     *                           For broadcasting, set desired values to 0.
+     * @return A valid MPSCNNDropoutGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:keepProbability:seed:maskStrideInPixels:")
@@ -161,9 +161,9 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property]   keepProbability
-     * 
+     * <p>
      * The probability that each element in the input is kept.
-     *             The valid range is (0.0f, 1.0f).
+     * The valid range is (0.0f, 1.0f).
      */
     @Generated
     @Selector("keepProbability")
@@ -175,13 +175,13 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property]   maskStrideInPixels
-     * 
+     * <p>
      * The mask stride in the x, y, and x dimensions, which
-     *             allows for the broadcasting the mask data.
-     * 
+     * allows for the broadcasting the mask data.
+     * <p>
      * The only valid values are 0 and 1 for each dimension.
-     *             For no broadcasting, set the values for each dimension
-     *             to 1. For broadcasting, set desired values to 0.
+     * For no broadcasting, set the values for each dimension
+     * to 1. For broadcasting, set desired values to 0.
      */
     @Generated
     @Selector("maskStrideInPixels")
@@ -204,7 +204,7 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property]   seed
-     * 
+     * <p>
      * The seed used to generate random numbers.
      */
     @Generated

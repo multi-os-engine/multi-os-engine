@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A deterministic pseudo-random source that generates random numbers based on an arc4 algorithm.
  * This is a deterministic random source suitable for creating reliable gameplay mechanics.
- * 
+ * <p>
  * While deterministic, this is not a cryptographic random source, however it may be useful
  * for obfuscation of gameplay data in manner similar to a stream cipher.
  */

@@ -136,11 +136,11 @@ public class UIPrinterPickerController extends NSObject {
 
     /**
      * printerPickerControllerWithInitiallySelectedPrinter:
-     * 
+     * <p>
      * This method returns a printer picker controller object for showing the
-     *             UI that allows the user to select a printer. This is only used with the
-     *             UIPrintInteractionController's printWithoutUIToPrinter: method.
-     *             If no printer should be preselected, use a value of nil for the parameter.
+     * UI that allows the user to select a printer. This is only used with the
+     * UIPrintInteractionController's printWithoutUIToPrinter: method.
+     * If no printer should be preselected, use a value of nil for the parameter.
      */
     @Generated
     @Selector("printerPickerControllerWithInitiallySelectedPrinter:")
@@ -208,7 +208,7 @@ public class UIPrinterPickerController extends NSObject {
 
     /**
      * The selected printer. Set this before presenting the UI to show the currently
-     * 	        selected printer. Use this to determine which printer the user selected.
+     * selected printer. Use this to determine which printer the user selected.
      */
     @Generated
     @Selector("selectedPrinter")

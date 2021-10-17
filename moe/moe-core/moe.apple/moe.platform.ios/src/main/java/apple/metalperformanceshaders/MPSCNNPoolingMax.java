@@ -45,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNPoolingMax
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Specifies the max pooling filter.  For each pixel, returns the maximum value of pixels
- *             in the kernelWidth x kernelHeight filter region.
+ * in the kernelWidth x kernelHeight filter region.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -175,13 +175,13 @@ public class MPSCNNPoolingMax extends MPSCNNPooling {
 
     /**
      * Initialize a MPSCNNPoolingMax pooling filter
-     * 
-     * @param      device              The device the filter will run on
-     * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
-     * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.
-     * @param      strideInPixelsX     The output stride (downsampling factor) in the x dimension.
-     * @param      strideInPixelsY     The output stride (downsampling factor) in the y dimension.
-     * @return     A valid MPSCNNPooling object or nil, if failure.
+     *
+     * @param device          The device the filter will run on
+     * @param kernelWidth     The width of the kernel.  Can be an odd or even value.
+     * @param kernelHeight    The height of the kernel.  Can be an odd or even value.
+     * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
+     * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
+     * @return A valid MPSCNNPooling object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")
@@ -195,12 +195,12 @@ public class MPSCNNPoolingMax extends MPSCNNPooling {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * See @ref MPSKernel#initWithCoder.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
-     * @param      device      The MTLDevice on which to make the MPSCNNPooling
-     * @return     A new MPSCNNPooling object, or nil if failure.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
+     * @param device   The MTLDevice on which to make the MPSCNNPooling
+     * @return A new MPSCNNPooling object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")

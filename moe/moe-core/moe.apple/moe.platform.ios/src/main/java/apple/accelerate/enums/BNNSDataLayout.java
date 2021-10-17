@@ -32,4 +32,6 @@ public final class BNNSDataLayout {
     @Generated public static final int BNNSDataLayout7DFirstMajor = 0x00078001;
     @Generated public static final int BNNSDataLayout8DLastMajor = 0x00088000;
     @Generated public static final int BNNSDataLayout8DFirstMajor = 0x00088001;
+    @Generated public static final int BNNSDataLayoutSNE = 0x00030001;
+    @Generated public static final int BNNSDataLayoutNSE = 0x00030002;
 }

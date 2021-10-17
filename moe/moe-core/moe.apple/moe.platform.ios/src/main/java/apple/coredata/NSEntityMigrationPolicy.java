@@ -163,7 +163,7 @@ public class NSEntityMigrationPolicy extends NSObject {
 
     /**
      * Invoked by the migration manager on each source instance (as specified by the sourceExpression in the mapping) to create the corresponding destination instance.  The method also associates the source and destination instances by calling NSMigrationManager's
-     * associateSourceInstance:withDestinationInstance:forEntityMapping: method.  Subclass implementations of this method must be careful to 
+     * associateSourceInstance:withDestinationInstance:forEntityMapping: method.  Subclass implementations of this method must be careful to
      * associate the source and destination instances as required if super is not called. A return value of NO indicates an error.
      */
     @Generated

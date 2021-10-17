@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueSwingMode
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueSwingModeDisabled  Swing mode is disabled.
  * [@constant]  HMCharacteristicValueSwingModeEnabled   Swing mode is enabled.
  */

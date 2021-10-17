@@ -55,7 +55,7 @@ public final class EKErrorCode {
     /**
      * used internally
      */
-    @Generated @NInt public static final long Last = 0x0000000000000024L;
+    @Generated @NInt public static final long Last = 0x0000000000000025L;
 
     @Generated
     private EKErrorCode() {
@@ -66,4 +66,5 @@ public final class EKErrorCode {
     @Generated @NInt public static final long SourceMismatch = 0x0000000000000021L;
     @Generated @NInt public static final long NotificationCollectionMismatch = 0x0000000000000022L;
     @Generated @NInt public static final long NotificationSavedWithoutCollection = 0x0000000000000023L;
+    @Generated @NInt public static final long ReminderAlarmContainsEmailOrUrl = 0x0000000000000024L;
 }

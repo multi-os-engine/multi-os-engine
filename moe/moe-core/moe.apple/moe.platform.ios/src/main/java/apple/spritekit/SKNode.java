@@ -31,6 +31,7 @@ import apple.foundation.protocol.NSSecureCoding;
 import apple.gameplaykit.GKEntity;
 import apple.gameplaykit.GKPolygonObstacle;
 import apple.uikit.UIFocusAnimationCoordinator;
+import apple.uikit.UIFocusEffect;
 import apple.uikit.UIFocusMovementHint;
 import apple.uikit.UIFocusUpdateContext;
 import apple.uikit.UIResponder;
@@ -169,7 +170,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     /**
      * Returns an array of GKPolygonObstacles from a group of SKNode's transformed bounds in scene space.
-     * 
+     *
      * @see GKObstacleGraph
      */
     @Generated
@@ -178,7 +179,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     /**
      * Returns an array of GKPolygonObstacles from a group of SKNode's physics bodies in scene space.
-     * 
+     *
      * @see GKObstacleGraph
      */
     @Generated
@@ -188,7 +189,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     /**
      * Returns an array of GKPolygonObstacles from a group of SKSpriteNode's textures in scene space.
-     * 
+     *
      * @see GKObstacleGraph
      */
     @Generated
@@ -223,9 +224,9 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     /**
      * Adds a node as a child node of this node
-     * 
+     * <p>
      * The added node must not have a parent.
-     * 
+     *
      * @param node the child node to add.
      */
     @Generated
@@ -303,7 +304,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     /**
      * The GKEntity associated with the node via a GKSKNodeComponent.
-     * 
+     *
      * @see GKEntity
      */
     @Generated
@@ -405,7 +406,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     /**
      * The client assignable name.
-     * 
+     * <p>
      * In general, this should be unique among peers in the scene graph.
      */
     @Generated
@@ -415,7 +416,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     /**
      * Returns the node itself or a child node at the point given.
      * If the receiver is returned there is no child node at the given point.
-     * 
+     *
      * @return a child node or self at the given location.
      */
     @Generated
@@ -429,11 +430,11 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     /**
      * Simplified shorthand for enumerateChildNodesWithName that returns an array of the matching nodes.
      * This allows subscripting of the form:
-     *      NSArray *childrenMatchingName = node[@"name"]
-     * 
+     * NSArray *childrenMatchingName = node[@"name"]
+     * <p>
      * or even complex like:
-     *      NSArray *siblingsBeginningWithA = node[@"../a*"]
-     * 
+     * NSArray *siblingsBeginningWithA = node[@"../a*"]
+     *
      * @param name An Xpath style path that can include simple regular expressions for matching node names.
      * @see enumerateChildNodesWithName:usingBlock:
      */
@@ -443,7 +444,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     /**
      * The parent of the node.
-     * 
+     * <p>
      * If this is nil the node has not been added to another group and is thus the root node of its own graph.
      */
     @Generated
@@ -539,7 +540,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     /**
      * The GKEntity associated with the node via a GKSKNodeComponent.
-     * 
+     *
      * @see GKEntity
      */
     @Generated
@@ -548,7 +549,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     /**
      * The GKEntity associated with the node via a GKSKNodeComponent.
-     * 
+     *
      * @see GKEntity
      */
     @Generated
@@ -565,7 +566,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     /**
      * The client assignable name.
-     * 
+     * <p>
      * In general, this should be unique among peers in the scene graph.
      */
     @Generated
@@ -599,7 +600,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     /**
      * Sets both the x & y scale
-     * 
+     *
      * @param scale the uniform scale to set.
      */
     @Generated
@@ -792,4 +793,20 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @IsOptional
     @Selector("focusGroupIdentifier")
     public native String focusGroupIdentifier();
+
+    @Generated
+    @IsOptional
+    @Selector("focusEffect")
+    public native UIFocusEffect focusEffect();
+
+    @Generated
+    @IsOptional
+    @Selector("focusGroupPriority")
+    @NInt
+    public native long focusGroupPriority();
+
+    @Generated
+    @IsOptional
+    @Selector("isTransparentFocusItem")
+    public native boolean isTransparentFocusItem();
 }

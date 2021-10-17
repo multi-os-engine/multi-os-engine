@@ -25,10 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A node representing a MPSCNNNeuronSoftSign kernel
- * 
+ * <p>
  * For each pixel, applies the following function:
  * [@code]
- *     f(x) = x / (1 + abs(x))
+ * f(x) = x / (1 + abs(x))
  * [@endcode]
  */
 @Generated

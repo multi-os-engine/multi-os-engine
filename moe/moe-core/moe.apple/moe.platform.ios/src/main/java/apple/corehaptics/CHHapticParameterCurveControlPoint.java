@@ -25,11 +25,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CHHapticParameterCurveControlPoint
- * 
- * 	A CHHapticParameterCurveControlPoint contains a time/value pair for a single control point within a CHHapticParameterCurve.
- * 
- * 	The relativeTime property specifies the amount of time elapsed since the start of the CHHapticParameterCurve before the
- * 	value is reached.
+ * <p>
+ * A CHHapticParameterCurveControlPoint contains a time/value pair for a single control point within a CHHapticParameterCurve.
+ * <p>
+ * The relativeTime property specifies the amount of time elapsed since the start of the CHHapticParameterCurve before the
+ * value is reached.
  */
 @Generated
 @Library("CoreHaptics")
@@ -100,13 +100,11 @@ public class CHHapticParameterCurveControlPoint extends NSObject {
 
     /**
      * initWithRelativeTime:value
-     * 
-     * 	Initialize a CHHapticParameterCurveControlPoint with a relative time and value.
-     * 
-     * @param value
-     * 	The value of the associated parameter.
-     * @param time
-     * 	The time at which the associated parameter will reach this value, relative to the start time of the parameter curve.
+     * <p>
+     * Initialize a CHHapticParameterCurveControlPoint with a relative time and value.
+     *
+     * @param value The value of the associated parameter.
+     * @param time  The time at which the associated parameter will reach this value, relative to the start time of the parameter curve.
      */
     @Generated
     @Selector("initWithRelativeTime:value:")

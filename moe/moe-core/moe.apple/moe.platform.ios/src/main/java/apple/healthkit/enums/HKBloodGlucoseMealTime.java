@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]          HKBloodGlucoseMealTime
- * 
+ * <p>
  * Indicates how your blood glucose reading relates to a meal.
- * 
+ * <p>
  * [@constant]      HKBloodGlucoseMealTimePreprandial   A glucose value measured at the time just before a meal.
  * [@constant]      HKBloodGlucoseMealTimePostprandial  A glucose value measured after a meal.
  */

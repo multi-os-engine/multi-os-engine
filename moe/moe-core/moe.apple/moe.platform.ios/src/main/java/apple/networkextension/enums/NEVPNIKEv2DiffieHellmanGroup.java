@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEVPNIKEv2DiffieHellmanGroup
- * 
+ * <p>
  * IKEv2 Diffie Hellman groups
  */
 @Generated

@@ -48,7 +48,7 @@ public class VSSubscription extends NSObject {
 
     /**
      * Describes the level of access the subscriber has to your catalog of content.
-     * 
+     * <p>
      * It is an error to provide a subscription with an unknown access level as
      * the current subscription.  Instead, choose the access level that describes
      * the content that the subscriber can play.
@@ -100,18 +100,18 @@ public class VSSubscription extends NSObject {
 
     /**
      * After this point in time, the subscription will be considered inactive.
-     * 
+     * <p>
      * If the current subscription becomes inactive, the system will behave as
      * though the user is not subscribed at all, i.e. as though the registration
      * center's current subscription had been set to nil.
-     * 
+     * <p>
      * Defaults to distantFuture.
-     * 
+     * <p>
      * Providing a value is useful in a limited number of scenarios, e.g. when the
      * a subscriber decides not to renew their subscription, you should provide an
      * expiration date that corresponds to the point in time when the final billing
      * cycle will end.
-     * 
+     * <p>
      * This might also be useful if the subscription only grants access to content
      * that is time-limited, e.g. a single season of games for a sports league.
      */
@@ -165,7 +165,7 @@ public class VSSubscription extends NSObject {
 
     /**
      * Describes the level of access the subscriber has to your catalog of content.
-     * 
+     * <p>
      * It is an error to provide a subscription with an unknown access level as
      * the current subscription.  Instead, choose the access level that describes
      * the content that the subscriber can play.
@@ -176,18 +176,18 @@ public class VSSubscription extends NSObject {
 
     /**
      * After this point in time, the subscription will be considered inactive.
-     * 
+     * <p>
      * If the current subscription becomes inactive, the system will behave as
      * though the user is not subscribed at all, i.e. as though the registration
      * center's current subscription had been set to nil.
-     * 
+     * <p>
      * Defaults to distantFuture.
-     * 
+     * <p>
      * Providing a value is useful in a limited number of scenarios, e.g. when the
      * a subscriber decides not to renew their subscription, you should provide an
      * expiration date that corresponds to the point in time when the final billing
      * cycle will end.
-     * 
+     * <p>
      * This might also be useful if the subscription only grants access to content
      * that is time-limited, e.g. a single season of games for a sports league.
      */
@@ -197,7 +197,7 @@ public class VSSubscription extends NSObject {
 
     /**
      * Identifies a subset of content from your catalog that subscriber can play.
-     * 
+     * <p>
      * Only provide values that are used in your availability feed's tier restrictions.
      */
     @Generated
@@ -214,7 +214,7 @@ public class VSSubscription extends NSObject {
 
     /**
      * Identifies a subset of content from your catalog that subscriber can play.
-     * 
+     * <p>
      * Only provide values that are used in your availability feed's tier restrictions.
      */
     @Generated

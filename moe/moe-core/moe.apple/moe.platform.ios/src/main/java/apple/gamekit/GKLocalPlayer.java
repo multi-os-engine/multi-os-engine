@@ -36,7 +36,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -513,4 +515,135 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Generated
     @Selector("isPersonalizedCommunicationRestricted")
     public native boolean isPersonalizedCommunicationRestricted();
+
+    /**
+     * observable property that becomes true when the friend request view controller is displayed.  It becomes false when it is dismissed
+     */
+    @Generated
+    @Selector("isPresentingFriendRequestViewController")
+    public native boolean isPresentingFriendRequestViewController();
+
+    /**
+     * *  loadFriends:
+     * *
+     * *  Discussion:
+     * *      Calling this method will asynchronously load the player Game Center's
+     * *      friend list scoped to the calling application.
+     * *      Calls handler when finished.
+     * *
+     * *      When -loadFriendsAuthorizationStatus == GKFriendsAuthorizationStatusNotDetermined or
+     * *      GKFriendsAuthorizationStatusRemoved, calling this method will trigger a
+     * *      prompt to request friend list authorization from the user.
+     * *
+     * *      When -loadFriendsAuthorizationStatus == GKFriendsAuthorizationStatusAuthorized,
+     * *      This method will return an array of GKPlayers which have agreed to share their
+     * *      friend list with the calling application based on the same bundleID.
+     * *
+     * *      The NSGKFriendListUsageDescription key must be specified in your
+     * *      Info.plist; otherwise, GKErrorFriendListUsageDescriptionMissing will be returned,
+     * *      as your app will be assumed not to support friend list.
+     * <p>
+     * *      Possible reasons for error:
+     * *          - Communication error with server.
+     * *          - AuthorizationStatus != GKFriendsAuthorizationStatusAuthorized
+     * *          - NSGKFriendListUsageDescription missing from your Info.plist
+     * *          - User is not online
+     * *          - Unauthenticated player
+     */
+    @Generated
+    @Selector("loadFriends:")
+    public native void loadFriends(@ObjCBlock(name = "call_loadFriends") Block_loadFriends completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadFriends {
+        @Generated
+        void call_loadFriends(NSArray<? extends GKPlayer> friends, NSError error);
+    }
+
+    /**
+     * loadFriendsAuthorizationStatus:
+     * <p>
+     * Discussion:
+     * Calling this will asynchronously load the current friend list authorization status
+     * of calling application.
+     * There may be an server call involve so there could be some slight delay
+     * in getting the authorization status via handler block.
+     * Calls handler when finished. Error will be nil on success.
+     * <p>
+     * Possible reasons for error:
+     * - Communication error with server.
+     * - NSGKFriendListUsageDescription missing from your Info.plist
+     * - User is not online
+     * - Unauthenticated player
+     */
+    @Generated
+    @Selector("loadFriendsAuthorizationStatus:")
+    public native void loadFriendsAuthorizationStatus(
+            @ObjCBlock(name = "call_loadFriendsAuthorizationStatus") Block_loadFriendsAuthorizationStatus completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadFriendsAuthorizationStatus {
+        @Generated
+        void call_loadFriendsAuthorizationStatus(@NInt long authorizationStatus, NSError error);
+    }
+
+    /**
+     * loadFriendsWithIdentifiers:completionHandler:
+     * <p>
+     * Discussion:
+     * Calling this method will asynchronously return a list of GKPlayers to the provided
+     * scoped identifiers (gamePlayerID or teamPlayerID) that you can use to interact with
+     * GameKit framework.
+     * Calls handler when finished.
+     * <p>
+     * When -loadFriendsAuthorizationStatus == GKFriendsAuthorizationStatusNotDetermined or
+     * GKFriendsAuthorizationStatusRemoved, calling this method will trigger a
+     * prompt to request friend list authorization from the user.
+     * <p>
+     * This method accepts gamePlayerID or teamPlayerID, and if the identifier
+     * is valid, we will return a GKPlayer object correspond to that identifier.
+     * <p>
+     * No GKPlayer object will be returned for invalid identifiers. If all supplied
+     * identifiers are invalid, and empty array will be returned.
+     * <p>
+     * If a player's friend revoke the friend list authorization for your application,
+     * we will no longer return the GKPlayer object and you should delete the data
+     * you've collected for the player with gamePlayerID or teamPlayerID on your end.
+     * <p>
+     * Possible reasons for error:
+     * - Communication error with server.
+     * - AuthorizationStatus != GKFriendsAuthorizationStatusAuthorized
+     * - NSGKFriendListUsageDescription missing from your Info.plist
+     * - Unauthenticated player
+     * - User is not online
+     */
+    @Generated
+    @Selector("loadFriendsWithIdentifiers:completionHandler:")
+    public native void loadFriendsWithIdentifiersCompletionHandler(NSArray<String> identifiers,
+            @ObjCBlock(name = "call_loadFriendsWithIdentifiersCompletionHandler") Block_loadFriendsWithIdentifiersCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadFriendsWithIdentifiersCompletionHandler {
+        @Generated
+        void call_loadFriendsWithIdentifiersCompletionHandler(NSArray<? extends GKPlayer> friends, NSError error);
+    }
+
+    /**
+     * presentFriendRequestCreatorFromViewController:
+     * <p>
+     * Discussion:
+     * iOS only. When invoked, a Messages sheet will be presented on the viewController passed in, using the existing flow of presentation on behalf of an application.
+     * If an error is returned, control are returned directly to the application, without presentation.
+     * <p>
+     * Possible reasons for error:
+     * - The local player user account is not allowed to add friends
+     * - The device is not allowing outgoing traffic at the time of the operation
+     */
+    @Generated
+    @Selector("presentFriendRequestCreatorFromViewController:error:")
+    public native boolean presentFriendRequestCreatorFromViewControllerError(UIViewController viewController,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

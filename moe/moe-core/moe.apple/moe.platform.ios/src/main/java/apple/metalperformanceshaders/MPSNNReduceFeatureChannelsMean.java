@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNReduceFeatureChannelsMean
- * 
+ * <p>
  * The MPSNNReduceFeatureChannelsMean performs a reduction operation returning the mean value for each column of an image
  */
 @Generated
@@ -103,12 +103,12 @@ public class MPSNNReduceFeatureChannelsMean extends MPSNNReduceUnary {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * See @ref MPSKernel#initWithCoder.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
-     * @param      device      The MTLDevice on which to make the MPSCNNPooling
-     * @return     A new MPSNNReduceFeatureChannelsMean object, or nil if failure.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
+     * @param device   The MTLDevice on which to make the MPSCNNPooling
+     * @return A new MPSNNReduceFeatureChannelsMean object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -117,9 +117,9 @@ public class MPSNNReduceFeatureChannelsMean extends MPSNNReduceUnary {
 
     /**
      * Specifies information to apply the reduction operation on an image.
-     * 
-     * @param    device            The device the filter will run on
-     * @return     A valid MPSNNReduceFeatureChannelsMean object or nil, if failure.
+     *
+     * @param device The device the filter will run on
+     * @return A valid MPSNNReduceFeatureChannelsMean object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")

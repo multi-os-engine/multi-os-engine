@@ -90,20 +90,32 @@ public final class BNNSLayerParametersPooling extends StructObject {
     @StructureField(order = 6, isGetter = false)
     public native void setK_height(@NUInt long value);
 
+    /**
+     * stride 0 will be set 1 during computation
+     */
     @Generated
     @StructureField(order = 7, isGetter = true)
     @NUInt
     public native long x_stride();
 
+    /**
+     * stride 0 will be set 1 during computation
+     */
     @Generated
     @StructureField(order = 7, isGetter = false)
     public native void setX_stride(@NUInt long value);
 
+    /**
+     * stride 0 will be set 1 during computation
+     */
     @Generated
     @StructureField(order = 8, isGetter = true)
     @NUInt
     public native long y_stride();
 
+    /**
+     * stride 0 will be set 1 during computation
+     */
     @Generated
     @StructureField(order = 8, isGetter = false)
     public native void setY_stride(@NUInt long value);

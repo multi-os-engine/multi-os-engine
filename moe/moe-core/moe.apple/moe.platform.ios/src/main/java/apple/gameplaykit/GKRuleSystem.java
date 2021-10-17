@@ -45,14 +45,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * - The current state, which upon creation is considered the inital state.
  * - The current set of rules.
  * - The current set of facts.
- * 
+ * <p>
  * Each time a fact is added to the system, the set of rules are evaluated in order and their actions executed in the system if their predicates are true.
  * Rules can be fuzzy, allowing predicates and facts to be asserted to a degree of confidence instead of just boolean on/off.
- * 
+ * <p>
  * The facts can be any kind of objects as long as they correctly determine equality using isEqual:
  * The simplest approach is to use strings or dictionaries as they provide the most flexibility in defining
  * facts, but user defined classes work just as well and may describe the problem space better.
- * 
+ * <p>
  * The fact set is at all times a fuzzy set, as defined by fact membership in the set being modulated by their
  * grade of membership. The rules may use the grade of membership to predicate their actions and in such a
  * manner create fuzzy logic. The fuzzy logic Zadeh operators are available on the system itself in order
@@ -188,9 +188,9 @@ public class GKRuleSystem extends NSObject {
      * the order of insertion into the agenda is used to decide which is first.
      * Adjust salience of your rules to adjust the order the next time the agenda is reset. Changing salience
      * on a rule currently in the agenda does not change its order in the agenda.
-     * 
+     * <p>
      * This is at all times the difference between the rules and executed sets.
-     * 
+     *
      * @see rules
      * @see executed
      * @see reset
@@ -201,12 +201,12 @@ public class GKRuleSystem extends NSObject {
 
     /**
      * Asserts a fact with membership grade of 1.0.
-     * 
+     * <p>
      * This will cause the current rules to be evaluated, which may in turn assert or retract more facts
      * or change the state of the system.
-     * 
+     * <p>
      * This is shorthand for calling assertFact:grade: with a grade of 1.0
-     * 
+     *
      * @see assertFact:grade:
      * @see evaluate
      * @see NSObject.isEqual:
@@ -217,10 +217,10 @@ public class GKRuleSystem extends NSObject {
 
     /**
      * Asserts a fact with the supplied membership grade.
-     * 
+     * <p>
      * This will cause the current rules to be evaluated, which may in turn assert or retract more facts
      * or change the state of the system.
-     * 
+     *
      * @see evaluate
      */
     @Generated
@@ -229,7 +229,7 @@ public class GKRuleSystem extends NSObject {
 
     /**
      * Explicitly evaluate the agenda of the rule system based on the current state and the current set of facts.
-     * 
+     * <p>
      * This may in turn assert or retract more facts or change the state of the system, including activating more
      * rules in the agenda.
      */
@@ -240,9 +240,9 @@ public class GKRuleSystem extends NSObject {
     /**
      * The current set of rules that have already executed. Rules in this set will not be executed again until
      * the system is reset.
-     * 
+     * <p>
      * This is at all times the difference between the rules and agenda sets.
-     * 
+     *
      * @see rules
      * @see agenda
      * @see reset
@@ -254,7 +254,7 @@ public class GKRuleSystem extends NSObject {
     /**
      * The current set of facts. Facts have a grade of membership that is >= 0.0. Query the system for the
      * individual grades of membership with gradeForFact:
-     * 
+     *
      * @see gradeForFact:
      */
     @Generated
@@ -264,7 +264,7 @@ public class GKRuleSystem extends NSObject {
     /**
      * Returns the current membership grade for the given fact, which is 0.0 if the fact
      * is not a member of the current set of facts.
-     * 
+     *
      * @return The membership grade of the given fact, in the range [0.0, 1.0].
      */
     @Generated
@@ -280,9 +280,9 @@ public class GKRuleSystem extends NSObject {
 
     /**
      * Returns the maximum membership grade for the any one of the given facts.
-     * 
+     * <p>
      * This performs the logical OR operation between the given facts.
-     * 
+     *
      * @return The membership grade by applying the OR operator on the given facts, in the range [0.0, 1.0].
      */
     @Generated
@@ -291,9 +291,9 @@ public class GKRuleSystem extends NSObject {
 
     /**
      * Returns the combined membership grade for the all the given facts.
-     * 
+     * <p>
      * This performs the logical AND operation between the given facts.
-     * 
+     *
      * @return The membership grade by applying the AND operator on the given facts, in the range [0.0, 1.0].
      */
     @Generated
@@ -310,7 +310,7 @@ public class GKRuleSystem extends NSObject {
     /**
      * Clears the agenda and executed sets and removes all facts currently in the system.
      * It then fills the agenda with rules from the rule set, in salience order.
-     * 
+     *
      * @see rules
      * @see facts
      */
@@ -320,12 +320,12 @@ public class GKRuleSystem extends NSObject {
 
     /**
      * Retracts a fact, setting its membership grade to 0, which also removes it from the fact set.
-     * 
+     * <p>
      * This will cause the current rules to be evaluated, which may in turn assert or retract more facts
      * or change the state of the system.
-     * 
+     * <p>
      * This is short hand for calling retractFact:grade: with a grade of 1.0
-     * 
+     *
      * @see retractFact:grade:
      * @see evaluate
      */
@@ -336,10 +336,10 @@ public class GKRuleSystem extends NSObject {
     /**
      * Retracts a fact, reducing its membership grade by the supplied grade. If this brings the grade to 0
      * it is also removed from the fact set.
-     * 
+     * <p>
      * This will cause the current rules to be evaluated, which may in turn assert or retract more facts
      * or change the state of the system.
-     * 
+     *
      * @see evaluate
      */
     @Generated
@@ -349,9 +349,9 @@ public class GKRuleSystem extends NSObject {
     /**
      * The current set of rules that will be used to set the agenda when rules are first added to the system.
      * They will also be used to refill the agenda whenever it is set.
-     * 
+     * <p>
      * This is at all times the union of the agenda and executed sets.
-     * 
+     *
      * @see agenda
      * @see executed
      */
@@ -362,7 +362,7 @@ public class GKRuleSystem extends NSObject {
     /**
      * The implementation-defined state. If any changes are made on this outside the system you must
      * call evaluate to have the system take account of the changes.
-     * 
+     *
      * @see evaluate
      */
     @Generated

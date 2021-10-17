@@ -1036,7 +1036,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * (relative to the instrument category) Files can have an
      * instrument name associated with them if they have certain
      * instrument categories (e.g., the category Percussion has
-     *                        multiple instruments, including Conga and Bongo).
+     * multiple instruments, including Conga and Bongo).
      */
     @Generated
     @Selector("musicalInstrumentName")
@@ -2132,7 +2132,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * (relative to the instrument category) Files can have an
      * instrument name associated with them if they have certain
      * instrument categories (e.g., the category Percussion has
-     *                        multiple instruments, including Conga and Bongo).
+     * multiple instruments, including Conga and Bongo).
      */
     @Generated
     @Selector("setMusicalInstrumentName:")
@@ -2852,4 +2852,46 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Generated
     @Selector("initWithContentType:")
     public native CSSearchableItemAttributeSet initWithContentType(UTType contentType);
+
+    /**
+     * An array of strings that are the custom action identifiers.
+     */
+    @Generated
+    @Selector("actionIdentifiers")
+    public native NSArray<String> actionIdentifiers();
+
+    /**
+     * Optional file URL pointing to a thumbnail image for this item that will be preferred in dark appearances
+     */
+    @Generated
+    @Selector("darkThumbnailURL")
+    public native NSURL darkThumbnailURL();
+
+    /**
+     * An array of strings that are the custom action identifiers.
+     */
+    @Generated
+    @Selector("setActionIdentifiers:")
+    public native void setActionIdentifiers(NSArray<String> value);
+
+    /**
+     * Optional file URL pointing to a thumbnail image for this item that will be preferred in dark appearances
+     */
+    @Generated
+    @Selector("setDarkThumbnailURL:")
+    public native void setDarkThumbnailURL(NSURL value);
+
+    /**
+     * The file type used for the share action.
+     */
+    @Generated
+    @Selector("setSharedItemContentType:")
+    public native void setSharedItemContentType(UTType value);
+
+    /**
+     * The file type used for the share action.
+     */
+    @Generated
+    @Selector("sharedItemContentType")
+    public native UTType sharedItemContentType();
 }

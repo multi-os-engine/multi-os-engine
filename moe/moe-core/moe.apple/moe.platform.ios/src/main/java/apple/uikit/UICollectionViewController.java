@@ -151,10 +151,6 @@ public class UICollectionViewController extends UIViewController
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -306,7 +302,7 @@ public class UICollectionViewController extends UIViewController
     @IsOptional
     @Selector("collectionView:targetIndexPathForMoveFromItemAtIndexPath:toProposedIndexPath:")
     public native NSIndexPath collectionViewTargetIndexPathForMoveFromItemAtIndexPathToProposedIndexPath(
-            UICollectionView collectionView, NSIndexPath originalIndexPath, NSIndexPath proposedIndexPath);
+            UICollectionView collectionView, NSIndexPath currentIndexPath, NSIndexPath proposedIndexPath);
 
     @Generated
     @IsOptional
@@ -563,4 +559,23 @@ public class UICollectionViewController extends UIViewController
     public native void collectionViewWillEndContextMenuInteractionWithConfigurationAnimator(
             UICollectionView collectionView, UIContextMenuConfiguration configuration,
             @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:sceneActivationConfigurationForItemAtIndexPath:point:")
+    public native UIWindowSceneActivationConfiguration collectionViewSceneActivationConfigurationForItemAtIndexPathPoint(
+            UICollectionView collectionView, NSIndexPath indexPath, @ByValue CGPoint point);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:selectionFollowsFocusForItemAtIndexPath:")
+    public native boolean collectionViewSelectionFollowsFocusForItemAtIndexPath(UICollectionView collectionView,
+            NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:targetIndexPathForMoveOfItemFromOriginalIndexPath:atCurrentIndexPath:toProposedIndexPath:")
+    public native NSIndexPath collectionViewTargetIndexPathForMoveOfItemFromOriginalIndexPathAtCurrentIndexPathToProposedIndexPath(
+            UICollectionView collectionView, NSIndexPath originalIndexPath, NSIndexPath currentIndexPath,
+            NSIndexPath proposedIndexPath);
 }

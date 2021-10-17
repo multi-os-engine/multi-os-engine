@@ -28,11 +28,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXForegroundExitData
- * 
+ * <p>
  * A class that encapsulates cumulative application exit metrics when the application is on screen.
- * 
+ * <p>
  * Foreground exits are user visible terminations that, when unexpected, interrupt usage.
- * 
+ * <p>
  * Not all foreground exits are unexpected. See the documentation for each exit reason for more information.
  */
 @Generated
@@ -87,9 +87,9 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeAbnormalExitCount
-     * 
+     * <p>
      * Cumulative number of times the application exited abnormally.
-     * 
+     * <p>
      * The most common causes of crashes with this exception type are uncaught Objective-C/C++ exceptions and calls to abort().
      */
     @Generated
@@ -99,9 +99,9 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeAppWatchdogExitCount
-     * 
+     * <p>
      * Cumulative number of times the application was terminated because a watchdog timeout occured.
-     * 
+     * <p>
      * These can occur when the application took too long to launch, terminate, or respond to system events.
      */
     @Generated
@@ -111,7 +111,7 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeBadAccessExitCount
-     * 
+     * <p>
      * Cumulative number of times the application was terminated for attempting to access invalid memory, or attempting to access memory in a manner not allowed by the memory's protection level (e.g. writing to read-only memory).
      */
     @Generated
@@ -121,9 +121,9 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeIllegalInstructionExitCount
-     * 
+     * <p>
      * Cumulative number of times the application terminated for attempting to execute an illegal or undefined instruction.
-     * 
+     * <p>
      * The process may have attempted to jump to an invalid address via a misconfigured function pointer.
      */
     @Generated
@@ -133,7 +133,7 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeMemoryResourceLimitExitCount
-     * 
+     * <p>
      * Cumulative number of times the application was terminated for exceeding a memory consumption limit.
      */
     @Generated
@@ -143,7 +143,7 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeNormalAppExitCount
-     * 
+     * <p>
      * Cumulative number of times the application exited normally, or was gracefully terminated by the system.
      */
     @Generated

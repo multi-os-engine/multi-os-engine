@@ -122,17 +122,17 @@ public final class CoreFoundation {
      * also means that any allocator set as the default needs to be ready to
      * deal with arbitrary memory allocation requests; in addition, the size
      * and number of requests will change between releases.
-     * 
+     * <p>
      * An allocator set as the default will never be released, even if later
      * another allocator replaces it as the default. Not only is it impractical
      * for it to be released (as there might be caches created under the covers
      * that refer to the allocator), in general it's also safer and more
      * efficient to keep it around.
-     * 
+     * <p>
      * If you wish to use a custom allocator in a context, it's best to provide
      * it as the argument to the various creation functions rather than setting
      * it as the default. Setting the default allocator is not encouraged.
-     * 
+     * <p>
      * If you do set an allocator as the default, either do it for all time in
      * your app, or do it in a nested fashion (by restoring the previous allocator
      * when you exit your context). The latter might be appropriate for plug-ins
@@ -233,84 +233,84 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryCreate
      * Creates a new immutable dictionary with the given values.
-     * 
-     * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the dictionary and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     * @param keys A C array of the pointer-sized keys to be used for
-     * 	the parallel C array of values to be put into the dictionary.
-     * 	This parameter may be NULL if the numValues parameter is 0.
-     * 	This C array is not changed or freed by this function. If
-     * 	this parameter is not a valid pointer to a C array of at
-     * 	least numValues pointers, the behavior is undefined.
-     * @param values A C array of the pointer-sized values to be in the
-     * 	dictionary. This parameter may be NULL if the numValues
-     * 	parameter is 0. This C array is not changed or freed by
-     * 	this function. If this parameter is not a valid pointer to
-     * 	a C array of at least numValues pointers, the behavior is
-     * 	undefined.
-     * @param numValues The number of values to copy from the keys and
-     * 	values C arrays into the CFDictionary. This number will be
-     * 	the count of the dictionary. If this parameter is
-     * 	negative, or greater than the number of values actually
-     * 	in the keys or values C arrays, the behavior is undefined.
-     * @param keyCallBacks A pointer to a CFDictionaryKeyCallBacks structure
-     * 	initialized with the callbacks for the dictionary to use on
-     * 	each key in the dictionary. The retain callback will be used
-     * 	within this function, for example, to retain all of the new
-     * 	keys from the keys C array. A copy of the contents of the
-     * 	callbacks structure is made, so that a pointer to a structure
-     * 	on the stack can be passed in, or can be reused for multiple
-     * 	dictionary creations. If the version field of this
-     * 	callbacks structure is not one of the defined ones for
-     * 	CFDictionary, the behavior is undefined. The retain field may
-     * 	be NULL, in which case the CFDictionary will do nothing to add
-     * 	a retain to the keys of the contained values. The release field
-     * 	may be NULL, in which case the CFDictionary will do nothing
-     * 	to remove the dictionary's retain (if any) on the keys when the
-     * 	dictionary is destroyed or a key-value pair is removed. If the
-     * 	copyDescription field is NULL, the dictionary will create a
-     * 	simple description for a key. If the equal field is NULL, the
-     * 	dictionary will use pointer equality to test for equality of
-     * 	keys. If the hash field is NULL, a key will be converted from
-     * 	a pointer to an integer to compute the hash code. This callbacks
-     * 	parameter itself may be NULL, which is treated as if a valid
-     * 	structure of version 0 with all fields NULL had been passed in.
-     * 	Otherwise, if any of the fields are not valid pointers to
-     * 	functions of the correct type, or this parameter is not a
-     * 	valid pointer to a CFDictionaryKeyCallBacks callbacks structure,
-     * 	the behavior is undefined. If any of the keys put into the
-     * 	dictionary is not one understood by one of the callback functions
-     * 	the behavior when that callback function is used is undefined.
+     *
+     * @param allocator      The CFAllocator which should be used to allocate
+     *                       memory for the dictionary and its storage for values. This
+     *                       parameter may be NULL in which case the current default
+     *                       CFAllocator is used. If this reference is not a valid
+     *                       CFAllocator, the behavior is undefined.
+     * @param keys           A C array of the pointer-sized keys to be used for
+     *                       the parallel C array of values to be put into the dictionary.
+     *                       This parameter may be NULL if the numValues parameter is 0.
+     *                       This C array is not changed or freed by this function. If
+     *                       this parameter is not a valid pointer to a C array of at
+     *                       least numValues pointers, the behavior is undefined.
+     * @param values         A C array of the pointer-sized values to be in the
+     *                       dictionary. This parameter may be NULL if the numValues
+     *                       parameter is 0. This C array is not changed or freed by
+     *                       this function. If this parameter is not a valid pointer to
+     *                       a C array of at least numValues pointers, the behavior is
+     *                       undefined.
+     * @param numValues      The number of values to copy from the keys and
+     *                       values C arrays into the CFDictionary. This number will be
+     *                       the count of the dictionary. If this parameter is
+     *                       negative, or greater than the number of values actually
+     *                       in the keys or values C arrays, the behavior is undefined.
+     * @param keyCallBacks   A pointer to a CFDictionaryKeyCallBacks structure
+     *                       initialized with the callbacks for the dictionary to use on
+     *                       each key in the dictionary. The retain callback will be used
+     *                       within this function, for example, to retain all of the new
+     *                       keys from the keys C array. A copy of the contents of the
+     *                       callbacks structure is made, so that a pointer to a structure
+     *                       on the stack can be passed in, or can be reused for multiple
+     *                       dictionary creations. If the version field of this
+     *                       callbacks structure is not one of the defined ones for
+     *                       CFDictionary, the behavior is undefined. The retain field may
+     *                       be NULL, in which case the CFDictionary will do nothing to add
+     *                       a retain to the keys of the contained values. The release field
+     *                       may be NULL, in which case the CFDictionary will do nothing
+     *                       to remove the dictionary's retain (if any) on the keys when the
+     *                       dictionary is destroyed or a key-value pair is removed. If the
+     *                       copyDescription field is NULL, the dictionary will create a
+     *                       simple description for a key. If the equal field is NULL, the
+     *                       dictionary will use pointer equality to test for equality of
+     *                       keys. If the hash field is NULL, a key will be converted from
+     *                       a pointer to an integer to compute the hash code. This callbacks
+     *                       parameter itself may be NULL, which is treated as if a valid
+     *                       structure of version 0 with all fields NULL had been passed in.
+     *                       Otherwise, if any of the fields are not valid pointers to
+     *                       functions of the correct type, or this parameter is not a
+     *                       valid pointer to a CFDictionaryKeyCallBacks callbacks structure,
+     *                       the behavior is undefined. If any of the keys put into the
+     *                       dictionary is not one understood by one of the callback functions
+     *                       the behavior when that callback function is used is undefined.
      * @param valueCallBacks A pointer to a CFDictionaryValueCallBacks structure
-     * 	initialized with the callbacks for the dictionary to use on
-     * 	each value in the dictionary. The retain callback will be used
-     * 	within this function, for example, to retain all of the new
-     * 	values from the values C array. A copy of the contents of the
-     * 	callbacks structure is made, so that a pointer to a structure
-     * 	on the stack can be passed in, or can be reused for multiple
-     * 	dictionary creations. If the version field of this callbacks
-     * 	structure is not one of the defined ones for CFDictionary, the
-     * 	behavior is undefined. The retain field may be NULL, in which
-     * 	case the CFDictionary will do nothing to add a retain to values
-     * 	as they are put into the dictionary. The release field may be
-     * 	NULL, in which case the CFDictionary will do nothing to remove
-     * 	the dictionary's retain (if any) on the values when the
-     * 	dictionary is destroyed or a key-value pair is removed. If the
-     * 	copyDescription field is NULL, the dictionary will create a
-     * 	simple description for a value. If the equal field is NULL, the
-     * 	dictionary will use pointer equality to test for equality of
-     * 	values. This callbacks parameter itself may be NULL, which is
-     * 	treated as if a valid structure of version 0 with all fields
-     * 	NULL had been passed in. Otherwise,
-     * 	if any of the fields are not valid pointers to functions
-     * 	of the correct type, or this parameter is not a valid
-     * 	pointer to a CFDictionaryValueCallBacks callbacks structure,
-     * 	the behavior is undefined. If any of the values put into the
-     * 	dictionary is not one understood by one of the callback functions
-     * 	the behavior when that callback function is used is undefined.
+     *                       initialized with the callbacks for the dictionary to use on
+     *                       each value in the dictionary. The retain callback will be used
+     *                       within this function, for example, to retain all of the new
+     *                       values from the values C array. A copy of the contents of the
+     *                       callbacks structure is made, so that a pointer to a structure
+     *                       on the stack can be passed in, or can be reused for multiple
+     *                       dictionary creations. If the version field of this callbacks
+     *                       structure is not one of the defined ones for CFDictionary, the
+     *                       behavior is undefined. The retain field may be NULL, in which
+     *                       case the CFDictionary will do nothing to add a retain to values
+     *                       as they are put into the dictionary. The release field may be
+     *                       NULL, in which case the CFDictionary will do nothing to remove
+     *                       the dictionary's retain (if any) on the values when the
+     *                       dictionary is destroyed or a key-value pair is removed. If the
+     *                       copyDescription field is NULL, the dictionary will create a
+     *                       simple description for a value. If the equal field is NULL, the
+     *                       dictionary will use pointer equality to test for equality of
+     *                       values. This callbacks parameter itself may be NULL, which is
+     *                       treated as if a valid structure of version 0 with all fields
+     *                       NULL had been passed in. Otherwise,
+     *                       if any of the fields are not valid pointers to functions
+     *                       of the correct type, or this parameter is not a valid
+     *                       pointer to a CFDictionaryValueCallBacks callbacks structure,
+     *                       the behavior is undefined. If any of the values put into the
+     *                       dictionary is not one understood by one of the callback functions
+     *                       the behavior when that callback function is used is undefined.
      * @return A reference to the new immutable CFDictionary.
      */
     @Generated
@@ -323,23 +323,23 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryCreateCopy
      * Creates a new immutable dictionary with the key-value pairs from
-     * 	the given dictionary.
-     * 
+     * the given dictionary.
+     *
      * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the dictionary and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     * @param theDict The dictionary which is to be copied. The keys and values
-     * 	from the dictionary are copied as pointers into the new
-     * 	dictionary (that is, the values themselves are copied, not
-     * 	that which the values point to, if anything). However, the
-     * 	keys and values are also retained by the new dictionary using
-     * 	the retain function of the original dictionary.
-     * 	The count of the new dictionary will be the same as the
-     * 	given dictionary. The new dictionary uses the same callbacks
-     * 	as the dictionary to be copied. If this parameter is
-     * 	not a valid CFDictionary, the behavior is undefined.
+     *                  memory for the dictionary and its storage for values. This
+     *                  parameter may be NULL in which case the current default
+     *                  CFAllocator is used. If this reference is not a valid
+     *                  CFAllocator, the behavior is undefined.
+     * @param theDict   The dictionary which is to be copied. The keys and values
+     *                  from the dictionary are copied as pointers into the new
+     *                  dictionary (that is, the values themselves are copied, not
+     *                  that which the values point to, if anything). However, the
+     *                  keys and values are also retained by the new dictionary using
+     *                  the retain function of the original dictionary.
+     *                  The count of the new dictionary will be the same as the
+     *                  given dictionary. The new dictionary uses the same callbacks
+     *                  as the dictionary to be copied. If this parameter is
+     *                  not a valid CFDictionary, the behavior is undefined.
      * @return A reference to the new immutable CFDictionary.
      */
     @Generated
@@ -349,71 +349,71 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryCreateMutable
      * Creates a new mutable dictionary.
-     * 
-     * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the dictionary and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     *        @param capacity A hint about the number of values that will be held
-     *                by the CFDictionary. Pass 0 for no hint. The implementation may
-     *                ignore this hint, or may use it to optimize various
-     *                operations. A dictionary's actual capacity is only limited by 
-     *                address space and available memory constraints). If this 
-     *                parameter is negative, the behavior is undefined.
-     * @param keyCallBacks A pointer to a CFDictionaryKeyCallBacks structure
-     * 	initialized with the callbacks for the dictionary to use on
-     * 	each key in the dictionary. A copy of the contents of the
-     * 	callbacks structure is made, so that a pointer to a structure
-     * 	on the stack can be passed in, or can be reused for multiple
-     * 	dictionary creations. If the version field of this
-     * 	callbacks structure is not one of the defined ones for
-     * 	CFDictionary, the behavior is undefined. The retain field may
-     * 	be NULL, in which case the CFDictionary will do nothing to add
-     * 	a retain to the keys of the contained values. The release field
-     * 	may be NULL, in which case the CFDictionary will do nothing
-     * 	to remove the dictionary's retain (if any) on the keys when the
-     * 	dictionary is destroyed or a key-value pair is removed. If the
-     * 	copyDescription field is NULL, the dictionary will create a
-     * 	simple description for a key. If the equal field is NULL, the
-     * 	dictionary will use pointer equality to test for equality of
-     * 	keys. If the hash field is NULL, a key will be converted from
-     * 	a pointer to an integer to compute the hash code. This callbacks
-     * 	parameter itself may be NULL, which is treated as if a valid
-     * 	structure of version 0 with all fields NULL had been passed in.
-     * 	Otherwise, if any of the fields are not valid pointers to
-     * 	functions of the correct type, or this parameter is not a
-     * 	valid pointer to a CFDictionaryKeyCallBacks callbacks structure,
-     * 	the behavior is undefined. If any of the keys put into the
-     * 	dictionary is not one understood by one of the callback functions
-     * 	the behavior when that callback function is used is undefined.
+     *
+     * @param allocator      The CFAllocator which should be used to allocate
+     *                       memory for the dictionary and its storage for values. This
+     *                       parameter may be NULL in which case the current default
+     *                       CFAllocator is used. If this reference is not a valid
+     *                       CFAllocator, the behavior is undefined.
+     * @param capacity       A hint about the number of values that will be held
+     *                       by the CFDictionary. Pass 0 for no hint. The implementation may
+     *                       ignore this hint, or may use it to optimize various
+     *                       operations. A dictionary's actual capacity is only limited by
+     *                       address space and available memory constraints). If this
+     *                       parameter is negative, the behavior is undefined.
+     * @param keyCallBacks   A pointer to a CFDictionaryKeyCallBacks structure
+     *                       initialized with the callbacks for the dictionary to use on
+     *                       each key in the dictionary. A copy of the contents of the
+     *                       callbacks structure is made, so that a pointer to a structure
+     *                       on the stack can be passed in, or can be reused for multiple
+     *                       dictionary creations. If the version field of this
+     *                       callbacks structure is not one of the defined ones for
+     *                       CFDictionary, the behavior is undefined. The retain field may
+     *                       be NULL, in which case the CFDictionary will do nothing to add
+     *                       a retain to the keys of the contained values. The release field
+     *                       may be NULL, in which case the CFDictionary will do nothing
+     *                       to remove the dictionary's retain (if any) on the keys when the
+     *                       dictionary is destroyed or a key-value pair is removed. If the
+     *                       copyDescription field is NULL, the dictionary will create a
+     *                       simple description for a key. If the equal field is NULL, the
+     *                       dictionary will use pointer equality to test for equality of
+     *                       keys. If the hash field is NULL, a key will be converted from
+     *                       a pointer to an integer to compute the hash code. This callbacks
+     *                       parameter itself may be NULL, which is treated as if a valid
+     *                       structure of version 0 with all fields NULL had been passed in.
+     *                       Otherwise, if any of the fields are not valid pointers to
+     *                       functions of the correct type, or this parameter is not a
+     *                       valid pointer to a CFDictionaryKeyCallBacks callbacks structure,
+     *                       the behavior is undefined. If any of the keys put into the
+     *                       dictionary is not one understood by one of the callback functions
+     *                       the behavior when that callback function is used is undefined.
      * @param valueCallBacks A pointer to a CFDictionaryValueCallBacks structure
-     * 	initialized with the callbacks for the dictionary to use on
-     * 	each value in the dictionary. The retain callback will be used
-     * 	within this function, for example, to retain all of the new
-     * 	values from the values C array. A copy of the contents of the
-     * 	callbacks structure is made, so that a pointer to a structure
-     * 	on the stack can be passed in, or can be reused for multiple
-     * 	dictionary creations. If the version field of this callbacks
-     * 	structure is not one of the defined ones for CFDictionary, the
-     * 	behavior is undefined. The retain field may be NULL, in which
-     * 	case the CFDictionary will do nothing to add a retain to values
-     * 	as they are put into the dictionary. The release field may be
-     * 	NULL, in which case the CFDictionary will do nothing to remove
-     * 	the dictionary's retain (if any) on the values when the
-     * 	dictionary is destroyed or a key-value pair is removed. If the
-     * 	copyDescription field is NULL, the dictionary will create a
-     * 	simple description for a value. If the equal field is NULL, the
-     * 	dictionary will use pointer equality to test for equality of
-     * 	values. This callbacks parameter itself may be NULL, which is
-     * 	treated as if a valid structure of version 0 with all fields
-     * 	NULL had been passed in. Otherwise,
-     * 	if any of the fields are not valid pointers to functions
-     * 	of the correct type, or this parameter is not a valid
-     * 	pointer to a CFDictionaryValueCallBacks callbacks structure,
-     * 	the behavior is undefined. If any of the values put into the
-     * 	dictionary is not one understood by one of the callback functions
-     * 	the behavior when that callback function is used is undefined.
+     *                       initialized with the callbacks for the dictionary to use on
+     *                       each value in the dictionary. The retain callback will be used
+     *                       within this function, for example, to retain all of the new
+     *                       values from the values C array. A copy of the contents of the
+     *                       callbacks structure is made, so that a pointer to a structure
+     *                       on the stack can be passed in, or can be reused for multiple
+     *                       dictionary creations. If the version field of this callbacks
+     *                       structure is not one of the defined ones for CFDictionary, the
+     *                       behavior is undefined. The retain field may be NULL, in which
+     *                       case the CFDictionary will do nothing to add a retain to values
+     *                       as they are put into the dictionary. The release field may be
+     *                       NULL, in which case the CFDictionary will do nothing to remove
+     *                       the dictionary's retain (if any) on the values when the
+     *                       dictionary is destroyed or a key-value pair is removed. If the
+     *                       copyDescription field is NULL, the dictionary will create a
+     *                       simple description for a value. If the equal field is NULL, the
+     *                       dictionary will use pointer equality to test for equality of
+     *                       values. This callbacks parameter itself may be NULL, which is
+     *                       treated as if a valid structure of version 0 with all fields
+     *                       NULL had been passed in. Otherwise,
+     *                       if any of the fields are not valid pointers to functions
+     *                       of the correct type, or this parameter is not a valid
+     *                       pointer to a CFDictionaryValueCallBacks callbacks structure,
+     *                       the behavior is undefined. If any of the values put into the
+     *                       dictionary is not one understood by one of the callback functions
+     *                       the behavior when that callback function is used is undefined.
      * @return A reference to the new mutable CFDictionary.
      */
     @Generated
@@ -425,32 +425,32 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryCreateMutableCopy
      * Creates a new mutable dictionary with the key-value pairs from
-     * 	the given dictionary.
-     * 
+     * the given dictionary.
+     *
      * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the dictionary and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     *        @param capacity A hint about the number of values that will be held
-     *                by the CFDictionary. Pass 0 for no hint. The implementation may
-     *                ignore this hint, or may use it to optimize various
-     *                operations. A dictionary's actual capacity is only limited by
-     *                address space and available memory constraints). 
-     *                This parameter must be greater than or equal
-     *                to the count of the dictionary which is to be copied, or the
-     *                behavior is undefined. If this parameter is negative, the
-     *                behavior is undefined.
-     * @param theDict The dictionary which is to be copied. The keys and values
-     * 	from the dictionary are copied as pointers into the new
-     * 	dictionary (that is, the values themselves are copied, not
-     * 	that which the values point to, if anything). However, the
-     * 	keys and values are also retained by the new dictionary using
-     * 	the retain function of the original dictionary.
-     * 	The count of the new dictionary will be the same as the
-     * 	given dictionary. The new dictionary uses the same callbacks
-     * 	as the dictionary to be copied. If this parameter is
-     * 	not a valid CFDictionary, the behavior is undefined.
+     *                  memory for the dictionary and its storage for values. This
+     *                  parameter may be NULL in which case the current default
+     *                  CFAllocator is used. If this reference is not a valid
+     *                  CFAllocator, the behavior is undefined.
+     * @param capacity  A hint about the number of values that will be held
+     *                  by the CFDictionary. Pass 0 for no hint. The implementation may
+     *                  ignore this hint, or may use it to optimize various
+     *                  operations. A dictionary's actual capacity is only limited by
+     *                  address space and available memory constraints).
+     *                  This parameter must be greater than or equal
+     *                  to the count of the dictionary which is to be copied, or the
+     *                  behavior is undefined. If this parameter is negative, the
+     *                  behavior is undefined.
+     * @param theDict   The dictionary which is to be copied. The keys and values
+     *                  from the dictionary are copied as pointers into the new
+     *                  dictionary (that is, the values themselves are copied, not
+     *                  that which the values point to, if anything). However, the
+     *                  keys and values are also retained by the new dictionary using
+     *                  the retain function of the original dictionary.
+     *                  The count of the new dictionary will be the same as the
+     *                  given dictionary. The new dictionary uses the same callbacks
+     *                  as the dictionary to be copied. If this parameter is
+     *                  not a valid CFDictionary, the behavior is undefined.
      * @return A reference to the new mutable CFDictionary.
      */
     @Generated
@@ -461,9 +461,9 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryGetCount
      * Returns the number of values currently in the dictionary.
-     * 
+     *
      * @param theDict The dictionary to be queried. If this parameter is
-     * 	not a valid CFDictionary, the behavior is undefined.
+     *                not a valid CFDictionary, the behavior is undefined.
      * @return The number of values in the dictionary.
      */
     @Generated
@@ -474,19 +474,19 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryGetCountOfKey
      * Counts the number of times the given key occurs in the dictionary.
-     * 
+     *
      * @param theDict The dictionary to be searched. If this parameter is
-     * 	not a valid CFDictionary, the behavior is undefined.
-     * @param key The key for which to find matches in the dictionary. The
-     * 	hash() and equal() key callbacks provided when the dictionary
-     * 	was created are used to compare. If the hash() key callback
-     * 	was NULL, the key is treated as a pointer and converted to
-     * 	an integer. If the equal() key callback was NULL, pointer
-     * 	equality (in C, ==) is used. If key, or any of the keys in
-     * 	the dictionary, are not understood by the equal() callback,
-     * 	the behavior is undefined.
+     *                not a valid CFDictionary, the behavior is undefined.
+     * @param key     The key for which to find matches in the dictionary. The
+     *                hash() and equal() key callbacks provided when the dictionary
+     *                was created are used to compare. If the hash() key callback
+     *                was NULL, the key is treated as a pointer and converted to
+     *                an integer. If the equal() key callback was NULL, pointer
+     *                equality (in C, ==) is used. If key, or any of the keys in
+     *                the dictionary, are not understood by the equal() callback,
+     *                the behavior is undefined.
      * @return Returns 1 if a matching key is used by the dictionary,
-     * 	0 otherwise.
+     * 0 otherwise.
      */
     @Generated
     @CFunction
@@ -496,15 +496,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryGetCountOfValue
      * Counts the number of times the given value occurs in the dictionary.
-     * 
+     *
      * @param theDict The dictionary to be searched. If this parameter is
-     * 	not a valid CFDictionary, the behavior is undefined.
-     * @param value The value for which to find matches in the dictionary. The
-     * 	equal() callback provided when the dictionary was created is
-     * 	used to compare. If the equal() value callback was NULL, pointer
-     * 	equality (in C, ==) is used. If value, or any of the values in
-     * 	the dictionary, are not understood by the equal() callback,
-     * 	the behavior is undefined.
+     *                not a valid CFDictionary, the behavior is undefined.
+     * @param value   The value for which to find matches in the dictionary. The
+     *                equal() callback provided when the dictionary was created is
+     *                used to compare. If the equal() value callback was NULL, pointer
+     *                equality (in C, ==) is used. If value, or any of the values in
+     *                the dictionary, are not understood by the equal() callback,
+     *                the behavior is undefined.
      * @return The number of times the given value occurs in the dictionary.
      */
     @Generated
@@ -515,17 +515,17 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryContainsKey
      * Reports whether or not the key is in the dictionary.
-     * 
+     *
      * @param theDict The dictionary to be searched. If this parameter is
-     * 	not a valid CFDictionary, the behavior is undefined.
-     * @param key The key for which to find matches in the dictionary. The
-     * 	hash() and equal() key callbacks provided when the dictionary
-     * 	was created are used to compare. If the hash() key callback
-     * 	was NULL, the key is treated as a pointer and converted to
-     * 	an integer. If the equal() key callback was NULL, pointer
-     * 	equality (in C, ==) is used. If key, or any of the keys in
-     * 	the dictionary, are not understood by the equal() callback,
-     * 	the behavior is undefined.
+     *                not a valid CFDictionary, the behavior is undefined.
+     * @param key     The key for which to find matches in the dictionary. The
+     *                hash() and equal() key callbacks provided when the dictionary
+     *                was created are used to compare. If the hash() key callback
+     *                was NULL, the key is treated as a pointer and converted to
+     *                an integer. If the equal() key callback was NULL, pointer
+     *                equality (in C, ==) is used. If key, or any of the keys in
+     *                the dictionary, are not understood by the equal() callback,
+     *                the behavior is undefined.
      * @return true, if the key is in the dictionary, otherwise false.
      */
     @Generated
@@ -535,15 +535,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryContainsValue
      * Reports whether or not the value is in the dictionary.
-     * 
+     *
      * @param theDict The dictionary to be searched. If this parameter is
-     * 	not a valid CFDictionary, the behavior is undefined.
-     * @param value The value for which to find matches in the dictionary. The
-     * 	equal() callback provided when the dictionary was created is
-     * 	used to compare. If the equal() callback was NULL, pointer
-     * 	equality (in C, ==) is used. If value, or any of the values
-     * 	in the dictionary, are not understood by the equal() callback,
-     * 	the behavior is undefined.
+     *                not a valid CFDictionary, the behavior is undefined.
+     * @param value   The value for which to find matches in the dictionary. The
+     *                equal() callback provided when the dictionary was created is
+     *                used to compare. If the equal() callback was NULL, pointer
+     *                equality (in C, ==) is used. If value, or any of the values
+     *                in the dictionary, are not understood by the equal() callback,
+     *                the behavior is undefined.
      * @return true, if the value is in the dictionary, otherwise false.
      */
     @Generated
@@ -553,22 +553,22 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryGetValue
      * Retrieves the value associated with the given key.
-     * 
+     *
      * @param theDict The dictionary to be queried. If this parameter is
-     * 	not a valid CFDictionary, the behavior is undefined.
-     * @param key The key for which to find a match in the dictionary. The
-     * 	hash() and equal() key callbacks provided when the dictionary
-     * 	was created are used to compare. If the hash() key callback
-     * 	was NULL, the key is treated as a pointer and converted to
-     * 	an integer. If the equal() key callback was NULL, pointer
-     * 	equality (in C, ==) is used. If key, or any of the keys in
-     * 	the dictionary, are not understood by the equal() callback,
-     * 	the behavior is undefined.
+     *                not a valid CFDictionary, the behavior is undefined.
+     * @param key     The key for which to find a match in the dictionary. The
+     *                hash() and equal() key callbacks provided when the dictionary
+     *                was created are used to compare. If the hash() key callback
+     *                was NULL, the key is treated as a pointer and converted to
+     *                an integer. If the equal() key callback was NULL, pointer
+     *                equality (in C, ==) is used. If key, or any of the keys in
+     *                the dictionary, are not understood by the equal() callback,
+     *                the behavior is undefined.
      * @return The value with the given key in the dictionary, or NULL if
-     * 	no key-value pair with a matching key exists. Since NULL
-     * 	can be a valid value in some dictionaries, the function
-     * 	CFDictionaryGetValueIfPresent() must be used to distinguish
-     * 	NULL-no-found from NULL-is-the-value.
+     * no key-value pair with a matching key exists. Since NULL
+     * can be a valid value in some dictionaries, the function
+     * CFDictionaryGetValueIfPresent() must be used to distinguish
+     * NULL-no-found from NULL-is-the-value.
      */
     @Generated
     @CFunction
@@ -577,24 +577,24 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryGetValueIfPresent
      * Retrieves the value associated with the given key.
-     * 
+     *
      * @param theDict The dictionary to be queried. If this parameter is
-     * 	not a valid CFDictionary, the behavior is undefined.
-     * @param key The key for which to find a match in the dictionary. The
-     * 	hash() and equal() key callbacks provided when the dictionary
-     * 	was created are used to compare. If the hash() key callback
-     * 	was NULL, the key is treated as a pointer and converted to
-     * 	an integer. If the equal() key callback was NULL, pointer
-     * 	equality (in C, ==) is used. If key, or any of the keys in
-     * 	the dictionary, are not understood by the equal() callback,
-     * 	the behavior is undefined.
-     * @param value A pointer to memory which should be filled with the
-     * 	pointer-sized value if a matching key is found. If no key
-     * 	match is found, the contents of the storage pointed to by
-     * 	this parameter are undefined. This parameter may be NULL,
-     * 	in which case the value from the dictionary is not returned
-     * 	(but the return value of this function still indicates
-     * 	whether or not the key-value pair was present).
+     *                not a valid CFDictionary, the behavior is undefined.
+     * @param key     The key for which to find a match in the dictionary. The
+     *                hash() and equal() key callbacks provided when the dictionary
+     *                was created are used to compare. If the hash() key callback
+     *                was NULL, the key is treated as a pointer and converted to
+     *                an integer. If the equal() key callback was NULL, pointer
+     *                equality (in C, ==) is used. If key, or any of the keys in
+     *                the dictionary, are not understood by the equal() callback,
+     *                the behavior is undefined.
+     * @param value   A pointer to memory which should be filled with the
+     *                pointer-sized value if a matching key is found. If no key
+     *                match is found, the contents of the storage pointed to by
+     *                this parameter are undefined. This parameter may be NULL,
+     *                in which case the value from the dictionary is not returned
+     *                (but the return value of this function still indicates
+     *                whether or not the key-value pair was present).
      * @return true, if a matching key was found, false otherwise.
      */
     @Generated
@@ -605,23 +605,23 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryGetKeysAndValues
      * Fills the two buffers with the keys and values from the dictionary.
-     * 
+     *
      * @param theDict The dictionary to be queried. If this parameter is
-     * 	not a valid CFDictionary, the behavior is undefined.
-     * @param keys A C array of pointer-sized values to be filled with keys
-     * 	from the dictionary. The keys and values C arrays are parallel
-     * 	to each other (that is, the items at the same indices form a
-     * 	key-value pair from the dictionary). This parameter may be NULL
-     * 	if the keys are not desired. If this parameter is not a valid
-     * 	pointer to a C array of at least CFDictionaryGetCount() pointers,
-     * 	or NULL, the behavior is undefined.
-     * @param values A C array of pointer-sized values to be filled with values
-     * 	from the dictionary. The keys and values C arrays are parallel
-     * 	to each other (that is, the items at the same indices form a
-     * 	key-value pair from the dictionary). This parameter may be NULL
-     * 	if the values are not desired. If this parameter is not a valid
-     * 	pointer to a C array of at least CFDictionaryGetCount() pointers,
-     * 	or NULL, the behavior is undefined.
+     *                not a valid CFDictionary, the behavior is undefined.
+     * @param keys    A C array of pointer-sized values to be filled with keys
+     *                from the dictionary. The keys and values C arrays are parallel
+     *                to each other (that is, the items at the same indices form a
+     *                key-value pair from the dictionary). This parameter may be NULL
+     *                if the keys are not desired. If this parameter is not a valid
+     *                pointer to a C array of at least CFDictionaryGetCount() pointers,
+     *                or NULL, the behavior is undefined.
+     * @param values  A C array of pointer-sized values to be filled with values
+     *                from the dictionary. The keys and values C arrays are parallel
+     *                to each other (that is, the items at the same indices form a
+     *                key-value pair from the dictionary). This parameter may be NULL
+     *                if the values are not desired. If this parameter is not a valid
+     *                pointer to a C array of at least CFDictionaryGetCount() pointers,
+     *                or NULL, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -631,20 +631,20 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryApplyFunction
      * Calls a function once for each value in the dictionary.
-     * 
+     *
      * @param theDict The dictionary to be queried. If this parameter is
-     * 	not a valid CFDictionary, the behavior is undefined.
+     *                not a valid CFDictionary, the behavior is undefined.
      * @param applier The callback function to call once for each value in
-     * 	the dictionary. If this parameter is not a
-     * 	pointer to a function of the correct prototype, the behavior
-     * 	is undefined. If there are keys or values which the
-     * 	applier function does not expect or cannot properly apply
-     * 	to, the behavior is undefined. 
+     *                the dictionary. If this parameter is not a
+     *                pointer to a function of the correct prototype, the behavior
+     *                is undefined. If there are keys or values which the
+     *                applier function does not expect or cannot properly apply
+     *                to, the behavior is undefined.
      * @param context A pointer-sized user-defined value, which is passed
-     * 	as the third parameter to the applier function, but is
-     * 	otherwise unused by this function. If the context is not
-     * 	what is expected by the applier function, the behavior is
-     * 	undefined.
+     *                as the third parameter to the applier function, but is
+     *                otherwise unused by this function. If the context is not
+     *                what is expected by the applier function, the behavior is
+     *                undefined.
      */
     @Generated
     @CFunction
@@ -655,20 +655,20 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryAddValue
      * Adds the key-value pair to the dictionary if no such key already exists.
-     * 
+     *
      * @param theDict The dictionary to which the value is to be added. If this
-     * 	parameter is not a valid mutable CFDictionary, the behavior is
-     * 	undefined.
-     * @param key The key of the value to add to the dictionary. The key is
-     * 	retained by the dictionary using the retain callback provided
-     * 	when the dictionary was created. If the key is not of the sort
-     * 	expected by the retain callback, the behavior is undefined. If
-     * 	a key which matches this key is already present in the dictionary,
-     * 	this function does nothing ("add if absent").
-     * @param value The value to add to the dictionary. The value is retained
-     * 	by the dictionary using the retain callback provided when the
-     * 	dictionary was created. If the value is not of the sort expected
-     * 	by the retain callback, the behavior is undefined.
+     *                parameter is not a valid mutable CFDictionary, the behavior is
+     *                undefined.
+     * @param key     The key of the value to add to the dictionary. The key is
+     *                retained by the dictionary using the retain callback provided
+     *                when the dictionary was created. If the key is not of the sort
+     *                expected by the retain callback, the behavior is undefined. If
+     *                a key which matches this key is already present in the dictionary,
+     *                this function does nothing ("add if absent").
+     * @param value   The value to add to the dictionary. The value is retained
+     *                by the dictionary using the retain callback provided when the
+     *                dictionary was created. If the value is not of the sort expected
+     *                by the retain callback, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -678,23 +678,23 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionarySetValue
      * Sets the value of the key in the dictionary.
-     * 
+     *
      * @param theDict The dictionary to which the value is to be set. If this
-     * 	parameter is not a valid mutable CFDictionary, the behavior is
-     * 	undefined.
-     * @param key The key of the value to set into the dictionary. If a key 
-     * 	which matches this key is already present in the dictionary, only
-     * 	the value is changed ("add if absent, replace if present"). If
-     * 	no key matches the given key, the key-value pair is added to the
-     * 	dictionary. If added, the key is retained by the dictionary,
-     * 	using the retain callback provided
-     * 	when the dictionary was created. If the key is not of the sort
-     * 	expected by the key retain callback, the behavior is undefined.
-     * @param value The value to add to or replace into the dictionary. The value
-     * 	is retained by the dictionary using the retain callback provided
-     * 	when the dictionary was created, and the previous value if any is
-     * 	released. If the value is not of the sort expected by the
-     * 	retain or release callbacks, the behavior is undefined.
+     *                parameter is not a valid mutable CFDictionary, the behavior is
+     *                undefined.
+     * @param key     The key of the value to set into the dictionary. If a key
+     *                which matches this key is already present in the dictionary, only
+     *                the value is changed ("add if absent, replace if present"). If
+     *                no key matches the given key, the key-value pair is added to the
+     *                dictionary. If added, the key is retained by the dictionary,
+     *                using the retain callback provided
+     *                when the dictionary was created. If the key is not of the sort
+     *                expected by the key retain callback, the behavior is undefined.
+     * @param value   The value to add to or replace into the dictionary. The value
+     *                is retained by the dictionary using the retain callback provided
+     *                when the dictionary was created, and the previous value if any is
+     *                released. If the value is not of the sort expected by the
+     *                retain or release callbacks, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -704,19 +704,19 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryReplaceValue
      * Replaces the value of the key in the dictionary.
-     * 
+     *
      * @param theDict The dictionary to which the value is to be replaced. If this
-     * 	parameter is not a valid mutable CFDictionary, the behavior is
-     * 	undefined.
-     * @param key The key of the value to replace in the dictionary. If a key 
-     * 	which matches this key is present in the dictionary, the value
-     * 	is changed to the given value, otherwise this function does
-     * 	nothing ("replace if present").
-     * @param value The value to replace into the dictionary. The value
-     * 	is retained by the dictionary using the retain callback provided
-     * 	when the dictionary was created, and the previous value is
-     * 	released. If the value is not of the sort expected by the
-     * 	retain or release callbacks, the behavior is undefined.
+     *                parameter is not a valid mutable CFDictionary, the behavior is
+     *                undefined.
+     * @param key     The key of the value to replace in the dictionary. If a key
+     *                which matches this key is present in the dictionary, the value
+     *                is changed to the given value, otherwise this function does
+     *                nothing ("replace if present").
+     * @param value   The value to replace into the dictionary. The value
+     *                is retained by the dictionary using the retain callback provided
+     *                when the dictionary was created, and the previous value is
+     *                released. If the value is not of the sort expected by the
+     *                retain or release callbacks, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -726,14 +726,14 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryRemoveValue
      * Removes the value of the key from the dictionary.
-     * 
+     *
      * @param theDict The dictionary from which the value is to be removed. If this
-     * 	parameter is not a valid mutable CFDictionary, the behavior is
-     * 	undefined.
-     * @param key The key of the value to remove from the dictionary. If a key 
-     * 	which matches this key is present in the dictionary, the key-value
-     * 	pair is removed from the dictionary, otherwise this function does
-     * 	nothing ("remove if present").
+     *                parameter is not a valid mutable CFDictionary, the behavior is
+     *                undefined.
+     * @param key     The key of the value to remove from the dictionary. If a key
+     *                which matches this key is present in the dictionary, the key-value
+     *                pair is removed from the dictionary, otherwise this function does
+     *                nothing ("remove if present").
      */
     @Generated
     @CFunction
@@ -742,10 +742,10 @@ public final class CoreFoundation {
     /**
      * [@function] CFDictionaryRemoveAllValues
      * Removes all the values from the dictionary, making it empty.
-     * 
+     *
      * @param theDict The dictionary from which all of the values are to be
-     * 	removed. If this parameter is not a valid mutable
-     * 	CFDictionary, the behavior is undefined.
+     *                removed. If this parameter is not a valid mutable
+     *                CFDictionary, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -844,52 +844,52 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayCreate
      * Creates a new immutable array with the given values.
-     * 
+     *
      * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the array and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     * @param values A C array of the pointer-sized values to be in the
-     * 	array. The values in the array are ordered in the same order
-     * 	in which they appear in this C array. This parameter may be
-     * 	NULL if the numValues parameter is 0. This C array is not
-     * 	changed or freed by this function. If this parameter is not
-     * 	a valid pointer to a C array of at least numValues pointers,
-     * 	the behavior is undefined.
+     *                  memory for the array and its storage for values. This
+     *                  parameter may be NULL in which case the current default
+     *                  CFAllocator is used. If this reference is not a valid
+     *                  CFAllocator, the behavior is undefined.
+     * @param values    A C array of the pointer-sized values to be in the
+     *                  array. The values in the array are ordered in the same order
+     *                  in which they appear in this C array. This parameter may be
+     *                  NULL if the numValues parameter is 0. This C array is not
+     *                  changed or freed by this function. If this parameter is not
+     *                  a valid pointer to a C array of at least numValues pointers,
+     *                  the behavior is undefined.
      * @param numValues The number of values to copy from the values C
-     * 	array into the CFArray. This number will be the count of the
-     * 	array.
-     * 	If this parameter is negative, or greater than the number of
-     * 	values actually in the value's C array, the behavior is
-     * 	undefined.
+     *                  array into the CFArray. This number will be the count of the
+     *                  array.
+     *                  If this parameter is negative, or greater than the number of
+     *                  values actually in the value's C array, the behavior is
+     *                  undefined.
      * @param callBacks A pointer to a CFArrayCallBacks structure
-     * 	initialized with the callbacks for the array to use on each
-     * 	value in the array. The retain callback will be used within
-     * 	this function, for example, to retain all of the new values
-     * 	from the values C array. A copy of the contents of the
-     * 	callbacks structure is made, so that a pointer to a
-     * 	structure on the stack can be passed in, or can be reused
-     * 	for multiple array creations. If the version field of this
-     * 	callbacks structure is not one of the defined ones for
-     * 	CFArray, the behavior is undefined. The retain field may be
-     * 	NULL, in which case the CFArray will do nothing to add a
-     * 	retain to the contained values for the array. The release
-     * 	field may be NULL, in which case the CFArray will do nothing
-     * 	to remove the array's retain (if any) on the values when the
-     * 	array is destroyed. If the copyDescription field is NULL,
-     * 	the array will create a simple description for the value. If
-     * 	the equal field is NULL, the array will use pointer equality
-     * 	to test for equality of values. This callbacks parameter
-     * 	itself may be NULL, which is treated as if a valid structure
-     * 	of version 0 with all fields NULL had been passed in.
-     * 	Otherwise, if any of the fields are not valid pointers to
-     * 	functions of the correct type, or this parameter is not a
-     * 	valid pointer to a  CFArrayCallBacks callbacks structure,
-     * 	the behavior is undefined. If any of the values put into the
-     * 	array is not one understood by one of the callback functions
-     * 	the behavior when that callback function is used is
-     * 	undefined.
+     *                  initialized with the callbacks for the array to use on each
+     *                  value in the array. The retain callback will be used within
+     *                  this function, for example, to retain all of the new values
+     *                  from the values C array. A copy of the contents of the
+     *                  callbacks structure is made, so that a pointer to a
+     *                  structure on the stack can be passed in, or can be reused
+     *                  for multiple array creations. If the version field of this
+     *                  callbacks structure is not one of the defined ones for
+     *                  CFArray, the behavior is undefined. The retain field may be
+     *                  NULL, in which case the CFArray will do nothing to add a
+     *                  retain to the contained values for the array. The release
+     *                  field may be NULL, in which case the CFArray will do nothing
+     *                  to remove the array's retain (if any) on the values when the
+     *                  array is destroyed. If the copyDescription field is NULL,
+     *                  the array will create a simple description for the value. If
+     *                  the equal field is NULL, the array will use pointer equality
+     *                  to test for equality of values. This callbacks parameter
+     *                  itself may be NULL, which is treated as if a valid structure
+     *                  of version 0 with all fields NULL had been passed in.
+     *                  Otherwise, if any of the fields are not valid pointers to
+     *                  functions of the correct type, or this parameter is not a
+     *                  valid pointer to a  CFArrayCallBacks callbacks structure,
+     *                  the behavior is undefined. If any of the values put into the
+     *                  array is not one understood by one of the callback functions
+     *                  the behavior when that callback function is used is
+     *                  undefined.
      * @return A reference to the new immutable CFArray.
      */
     @Generated
@@ -901,20 +901,20 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayCreateCopy
      * Creates a new immutable array with the values from the given array.
-     * 
+     *
      * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the array and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     * @param theArray The array which is to be copied. The values from the
-     * 	array are copied as pointers into the new array (that is,
-     * 	the values themselves are copied, not that which the values
-     * 	point to, if anything). However, the values are also
-     * 	retained by the new array. The count of the new array will
-     * 	be the same as the given array. The new array uses the same
-     * 	callbacks as the array to be copied. If this parameter is
-     * 	not a valid CFArray, the behavior is undefined.
+     *                  memory for the array and its storage for values. This
+     *                  parameter may be NULL in which case the current default
+     *                  CFAllocator is used. If this reference is not a valid
+     *                  CFAllocator, the behavior is undefined.
+     * @param theArray  The array which is to be copied. The values from the
+     *                  array are copied as pointers into the new array (that is,
+     *                  the values themselves are copied, not that which the values
+     *                  point to, if anything). However, the values are also
+     *                  retained by the new array. The count of the new array will
+     *                  be the same as the given array. The new array uses the same
+     *                  callbacks as the array to be copied. If this parameter is
+     *                  not a valid CFArray, the behavior is undefined.
      * @return A reference to the new immutable CFArray.
      */
     @Generated
@@ -924,43 +924,43 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayCreateMutable
      * Creates a new empty mutable array.
-     * 
+     *
      * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the array and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     * @param capacity A hint about the number of values that will be held
-     * 	by the CFArray. Pass 0 for no hint. The implementation may
-     * 	ignore this hint, or may use it to optimize various
-     * 	operations. An array's actual capacity is only limited by
-     * 	address space and available memory constraints). If this
-     * 	parameter is negative, the behavior is undefined.
+     *                  memory for the array and its storage for values. This
+     *                  parameter may be NULL in which case the current default
+     *                  CFAllocator is used. If this reference is not a valid
+     *                  CFAllocator, the behavior is undefined.
+     * @param capacity  A hint about the number of values that will be held
+     *                  by the CFArray. Pass 0 for no hint. The implementation may
+     *                  ignore this hint, or may use it to optimize various
+     *                  operations. An array's actual capacity is only limited by
+     *                  address space and available memory constraints). If this
+     *                  parameter is negative, the behavior is undefined.
      * @param callBacks A pointer to a CFArrayCallBacks structure
-     * 	initialized with the callbacks for the array to use on each
-     * 	value in the array. A copy of the contents of the
-     * 	callbacks structure is made, so that a pointer to a
-     * 	structure on the stack can be passed in, or can be reused
-     * 	for multiple array creations. If the version field of this
-     * 	callbacks structure is not one of the defined ones for
-     * 	CFArray, the behavior is undefined. The retain field may be
-     * 	NULL, in which case the CFArray will do nothing to add a
-     * 	retain to the contained values for the array. The release
-     * 	field may be NULL, in which case the CFArray will do nothing
-     * 	to remove the array's retain (if any) on the values when the
-     * 	array is destroyed. If the copyDescription field is NULL,
-     * 	the array will create a simple description for the value. If
-     * 	the equal field is NULL, the array will use pointer equality
-     * 	to test for equality of values. This callbacks parameter
-     * 	itself may be NULL, which is treated as if a valid structure
-     * 	of version 0 with all fields NULL had been passed in.
-     * 	Otherwise, if any of the fields are not valid pointers to
-     * 	functions of the correct type, or this parameter is not a
-     * 	valid pointer to a  CFArrayCallBacks callbacks structure,
-     * 	the behavior is undefined. If any of the values put into the
-     * 	array is not one understood by one of the callback functions
-     * 	the behavior when that callback function is used is
-     * 	undefined.
+     *                  initialized with the callbacks for the array to use on each
+     *                  value in the array. A copy of the contents of the
+     *                  callbacks structure is made, so that a pointer to a
+     *                  structure on the stack can be passed in, or can be reused
+     *                  for multiple array creations. If the version field of this
+     *                  callbacks structure is not one of the defined ones for
+     *                  CFArray, the behavior is undefined. The retain field may be
+     *                  NULL, in which case the CFArray will do nothing to add a
+     *                  retain to the contained values for the array. The release
+     *                  field may be NULL, in which case the CFArray will do nothing
+     *                  to remove the array's retain (if any) on the values when the
+     *                  array is destroyed. If the copyDescription field is NULL,
+     *                  the array will create a simple description for the value. If
+     *                  the equal field is NULL, the array will use pointer equality
+     *                  to test for equality of values. This callbacks parameter
+     *                  itself may be NULL, which is treated as if a valid structure
+     *                  of version 0 with all fields NULL had been passed in.
+     *                  Otherwise, if any of the fields are not valid pointers to
+     *                  functions of the correct type, or this parameter is not a
+     *                  valid pointer to a  CFArrayCallBacks callbacks structure,
+     *                  the behavior is undefined. If any of the values put into the
+     *                  array is not one understood by one of the callback functions
+     *                  the behavior when that callback function is used is
+     *                  undefined.
      * @return A reference to the new mutable CFArray.
      */
     @Generated
@@ -971,29 +971,29 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayCreateMutableCopy
      * Creates a new mutable array with the values from the given array.
-     * 
+     *
      * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the array and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     *        @param capacity A hint about the number of values that will be held
-     *                by the CFArray. Pass 0 for no hint. The implementation may
-     *                ignore this hint, or may use it to optimize various
-     *                operations. An array's actual capacity is only limited by 
-     *                address space and available memory constraints).
-     * 	This parameter must be greater than or equal
-     * 	to the count of the array which is to be copied, or the
-     * 	behavior is undefined. If this parameter is negative, the
-     * 	behavior is undefined.
-     * @param theArray The array which is to be copied. The values from the
-     * 	array are copied as pointers into the new array (that is,
-     * 	the values themselves are copied, not that which the values
-     * 	point to, if anything). However, the values are also
-     * 	retained by the new array. The count of the new array will
-     * 	be the same as the given array. The new array uses the same
-     * 	callbacks as the array to be copied. If this parameter is
-     * 	not a valid CFArray, the behavior is undefined.
+     *                  memory for the array and its storage for values. This
+     *                  parameter may be NULL in which case the current default
+     *                  CFAllocator is used. If this reference is not a valid
+     *                  CFAllocator, the behavior is undefined.
+     * @param capacity  A hint about the number of values that will be held
+     *                  by the CFArray. Pass 0 for no hint. The implementation may
+     *                  ignore this hint, or may use it to optimize various
+     *                  operations. An array's actual capacity is only limited by
+     *                  address space and available memory constraints).
+     *                  This parameter must be greater than or equal
+     *                  to the count of the array which is to be copied, or the
+     *                  behavior is undefined. If this parameter is negative, the
+     *                  behavior is undefined.
+     * @param theArray  The array which is to be copied. The values from the
+     *                  array are copied as pointers into the new array (that is,
+     *                  the values themselves are copied, not that which the values
+     *                  point to, if anything). However, the values are also
+     *                  retained by the new array. The count of the new array will
+     *                  be the same as the given array. The new array uses the same
+     *                  callbacks as the array to be copied. If this parameter is
+     *                  not a valid CFArray, the behavior is undefined.
      * @return A reference to the new mutable CFArray.
      */
     @Generated
@@ -1004,9 +1004,9 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayGetCount
      * Returns the number of values currently in the array.
-     * 
+     *
      * @param theArray The array to be queried. If this parameter is not a valid
-     * 	CFArray, the behavior is undefined.
+     *                 CFArray, the behavior is undefined.
      * @return The number of values in the array.
      */
     @Generated
@@ -1017,23 +1017,23 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayGetCountOfValue
      * Counts the number of times the given value occurs in the array.
-     * 
+     *
      * @param theArray The array to be searched. If this parameter is not a
-     * 	valid CFArray, the behavior is undefined.
-     * @param range The range within the array to search. If the range
-     * 	location or end point (defined by the location plus length
-     * 	minus 1) is outside the index space of the array (0 to
-     * 	N-1 inclusive, where N is the count of the array), the
-     * 	behavior is undefined. If the range length is negative, the
-     * 	behavior is undefined. The range may be empty (length 0).
-     * @param value The value for which to find matches in the array. The
-     * 	equal() callback provided when the array was created is
-     * 	used to compare. If the equal() callback was NULL, pointer
-     * 	equality (in C, ==) is used. If value, or any of the values
-     * 	in the array, are not understood by the equal() callback,
-     * 	the behavior is undefined.
+     *                 valid CFArray, the behavior is undefined.
+     * @param range    The range within the array to search. If the range
+     *                 location or end point (defined by the location plus length
+     *                 minus 1) is outside the index space of the array (0 to
+     *                 N-1 inclusive, where N is the count of the array), the
+     *                 behavior is undefined. If the range length is negative, the
+     *                 behavior is undefined. The range may be empty (length 0).
+     * @param value    The value for which to find matches in the array. The
+     *                 equal() callback provided when the array was created is
+     *                 used to compare. If the equal() callback was NULL, pointer
+     *                 equality (in C, ==) is used. If value, or any of the values
+     *                 in the array, are not understood by the equal() callback,
+     *                 the behavior is undefined.
      * @return The number of times the given value occurs in the array,
-     * 	within the specified range.
+     * within the specified range.
      */
     @Generated
     @CFunction
@@ -1043,23 +1043,23 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayContainsValue
      * Reports whether or not the value is in the array.
-     * 
+     *
      * @param theArray The array to be searched. If this parameter is not a
-     * 	valid CFArray, the behavior is undefined.
-     * @param range The range within the array to search. If the range
-     * 	location or end point (defined by the location plus length
-     * 	minus 1) is outside the index space of the array (0 to
-     * 	N-1 inclusive, where N is the count of the array), the
-     * 	behavior is undefined. If the range length is negative, the
-     * 	behavior is undefined. The range may be empty (length 0).
-     * @param value The value for which to find matches in the array. The
-     * 	equal() callback provided when the array was created is
-     * 	used to compare. If the equal() callback was NULL, pointer
-     * 	equality (in C, ==) is used. If value, or any of the values
-     * 	in the array, are not understood by the equal() callback,
-     * 	the behavior is undefined.
+     *                 valid CFArray, the behavior is undefined.
+     * @param range    The range within the array to search. If the range
+     *                 location or end point (defined by the location plus length
+     *                 minus 1) is outside the index space of the array (0 to
+     *                 N-1 inclusive, where N is the count of the array), the
+     *                 behavior is undefined. If the range length is negative, the
+     *                 behavior is undefined. The range may be empty (length 0).
+     * @param value    The value for which to find matches in the array. The
+     *                 equal() callback provided when the array was created is
+     *                 used to compare. If the equal() callback was NULL, pointer
+     *                 equality (in C, ==) is used. If value, or any of the values
+     *                 in the array, are not understood by the equal() callback,
+     *                 the behavior is undefined.
      * @return true, if the value is in the specified range of the array,
-     * 	otherwise false.
+     * otherwise false.
      */
     @Generated
     @CFunction
@@ -1068,13 +1068,13 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayGetValueAtIndex
      * Retrieves the value at the given index.
-     * 
+     *
      * @param theArray The array to be queried. If this parameter is not a
-     * 	valid CFArray, the behavior is undefined.
-     * @param idx The index of the value to retrieve. If the index is
-     * 	outside the index space of the array (0 to N-1 inclusive,
-     * 	where N is the count of the array), the behavior is
-     * 	undefined.
+     *                 valid CFArray, the behavior is undefined.
+     * @param idx      The index of the value to retrieve. If the index is
+     *                 outside the index space of the array (0 to N-1 inclusive,
+     *                 where N is the count of the array), the behavior is
+     *                 undefined.
      * @return The value with the given index in the array.
      */
     @Generated
@@ -1084,21 +1084,21 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayGetValues
      * Fills the buffer with values from the array.
-     * 
+     *
      * @param theArray The array to be queried. If this parameter is not a
-     * 	valid CFArray, the behavior is undefined.
-     * @param range The range of values within the array to retrieve. If
-     * 	the range location or end point (defined by the location
-     * 	plus length minus 1) is outside the index space of the
-     * 	array (0 to N-1 inclusive, where N is the count of the
-     * 	array), the behavior is undefined. If the range length is
-     * 	negative, the behavior is undefined. The range may be empty
-     * 	(length 0), in which case no values are put into the buffer.
-     * @param values A C array of pointer-sized values to be filled with
-     * 	values from the array. The values in the C array are ordered
-     * 	in the same order in which they appear in the array. If this
-     * 	parameter is not a valid pointer to a C array of at least
-     * 	range.length pointers, the behavior is undefined.
+     *                 valid CFArray, the behavior is undefined.
+     * @param range    The range of values within the array to retrieve. If
+     *                 the range location or end point (defined by the location
+     *                 plus length minus 1) is outside the index space of the
+     *                 array (0 to N-1 inclusive, where N is the count of the
+     *                 array), the behavior is undefined. If the range length is
+     *                 negative, the behavior is undefined. The range may be empty
+     *                 (length 0), in which case no values are put into the buffer.
+     * @param values   A C array of pointer-sized values to be filled with
+     *                 values from the array. The values in the C array are ordered
+     *                 in the same order in which they appear in the array. If this
+     *                 parameter is not a valid pointer to a C array of at least
+     *                 range.length pointers, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -1107,27 +1107,27 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayApplyFunction
      * Calls a function once for each value in the array.
-     * 
+     *
      * @param theArray The array to be operated upon. If this parameter is not
-     * 	a valid CFArray, the behavior is undefined.
-     * @param range The range of values within the array to which to apply
-     * 	the function. If the range location or end point (defined by
-     * 	the location plus length minus 1) is outside the index
-     * 	space of the array (0 to N-1 inclusive, where N is the count
-     * 	of the array), the behavior is undefined. If the range
-     * 	length is negative, the behavior is undefined. The range may
-     * 	be empty (length 0).
-     * @param applier The callback function to call once for each value in
-     * 	the given range in the array. If this parameter is not a
-     * 	pointer to a function of the correct prototype, the behavior
-     * 	is undefined. If there are values in the range which the
-     * 	applier function does not expect or cannot properly apply
-     * 	to, the behavior is undefined. 
-     * @param context A pointer-sized user-defined value, which is passed
-     * 	as the second parameter to the applier function, but is
-     * 	otherwise unused by this function. If the context is not
-     * 	what is expected by the applier function, the behavior is
-     * 	undefined.
+     *                 a valid CFArray, the behavior is undefined.
+     * @param range    The range of values within the array to which to apply
+     *                 the function. If the range location or end point (defined by
+     *                 the location plus length minus 1) is outside the index
+     *                 space of the array (0 to N-1 inclusive, where N is the count
+     *                 of the array), the behavior is undefined. If the range
+     *                 length is negative, the behavior is undefined. The range may
+     *                 be empty (length 0).
+     * @param applier  The callback function to call once for each value in
+     *                 the given range in the array. If this parameter is not a
+     *                 pointer to a function of the correct prototype, the behavior
+     *                 is undefined. If there are values in the range which the
+     *                 applier function does not expect or cannot properly apply
+     *                 to, the behavior is undefined.
+     * @param context  A pointer-sized user-defined value, which is passed
+     *                 as the second parameter to the applier function, but is
+     *                 otherwise unused by this function. If the context is not
+     *                 what is expected by the applier function, the behavior is
+     *                 undefined.
      */
     @Generated
     @CFunction
@@ -1137,25 +1137,25 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayGetFirstIndexOfValue
      * Searches the array for the value.
-     * 
+     *
      * @param theArray The array to be searched. If this parameter is not a
-     * 	valid CFArray, the behavior is undefined.
-     * @param range The range within the array to search. If the range
-     * 	location or end point (defined by the location plus length
-     * 	minus 1) is outside the index space of the array (0 to
-     * 	N-1 inclusive, where N is the count of the array), the
-     * 	behavior is undefined. If the range length is negative, the
-     * 	behavior is undefined. The range may be empty (length 0).
-     * 	The search progresses from the smallest index defined by
-     * 	the range to the largest.
-     * @param value The value for which to find a match in the array. The
-     * 	equal() callback provided when the array was created is
-     * 	used to compare. If the equal() callback was NULL, pointer
-     * 	equality (in C, ==) is used. If value, or any of the values
-     * 	in the array, are not understood by the equal() callback,
-     * 	the behavior is undefined.
+     *                 valid CFArray, the behavior is undefined.
+     * @param range    The range within the array to search. If the range
+     *                 location or end point (defined by the location plus length
+     *                 minus 1) is outside the index space of the array (0 to
+     *                 N-1 inclusive, where N is the count of the array), the
+     *                 behavior is undefined. If the range length is negative, the
+     *                 behavior is undefined. The range may be empty (length 0).
+     *                 The search progresses from the smallest index defined by
+     *                 the range to the largest.
+     * @param value    The value for which to find a match in the array. The
+     *                 equal() callback provided when the array was created is
+     *                 used to compare. If the equal() callback was NULL, pointer
+     *                 equality (in C, ==) is used. If value, or any of the values
+     *                 in the array, are not understood by the equal() callback,
+     *                 the behavior is undefined.
      * @return The lowest index of the matching values in the range, or
-     * 	kCFNotFound if no value in the range matched.
+     * kCFNotFound if no value in the range matched.
      */
     @Generated
     @CFunction
@@ -1166,25 +1166,25 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayGetLastIndexOfValue
      * Searches the array for the value.
-     * 
+     *
      * @param theArray The array to be searched. If this parameter is not a
-     * 	valid CFArray, the behavior is undefined.
-     * @param range The range within the array to search. If the range
-     * 	location or end point (defined by the location plus length
-     * 	minus 1) is outside the index space of the array (0 to
-     * 	N-1 inclusive, where N is the count of the array), the
-     * 	behavior is undefined. If the range length is negative, the
-     * 	behavior is undefined. The range may be empty (length 0).
-     * 	The search progresses from the largest index defined by the
-     * 	range to the smallest.
-     * @param value The value for which to find a match in the array. The
-     * 	equal() callback provided when the array was created is
-     * 	used to compare. If the equal() callback was NULL, pointer
-     * 	equality (in C, ==) is used. If value, or any of the values
-     * 	in the array, are not understood by the equal() callback,
-     * 	the behavior is undefined.
+     *                 valid CFArray, the behavior is undefined.
+     * @param range    The range within the array to search. If the range
+     *                 location or end point (defined by the location plus length
+     *                 minus 1) is outside the index space of the array (0 to
+     *                 N-1 inclusive, where N is the count of the array), the
+     *                 behavior is undefined. If the range length is negative, the
+     *                 behavior is undefined. The range may be empty (length 0).
+     *                 The search progresses from the largest index defined by the
+     *                 range to the smallest.
+     * @param value    The value for which to find a match in the array. The
+     *                 equal() callback provided when the array was created is
+     *                 used to compare. If the equal() callback was NULL, pointer
+     *                 equality (in C, ==) is used. If value, or any of the values
+     *                 in the array, are not understood by the equal() callback,
+     *                 the behavior is undefined.
      * @return The highest index of the matching values in the range, or
-     * 	kCFNotFound if no value in the range matched.
+     * kCFNotFound if no value in the range matched.
      */
     @Generated
     @CFunction
@@ -1195,39 +1195,39 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayBSearchValues
      * Searches the array for the value using a binary search algorithm.
-     * 
-     * @param theArray The array to be searched. If this parameter is not a
-     * 	valid CFArray, the behavior is undefined. If the array is
-     * 	not sorted from least to greatest according to the
-     * 	comparator function, the behavior is undefined.
-     * @param range The range within the array to search. If the range
-     * 	location or end point (defined by the location plus length
-     * 	minus 1) is outside the index space of the array (0 to
-     * 	N-1 inclusive, where N is the count of the array), the
-     * 	behavior is undefined. If the range length is negative, the
-     * 	behavior is undefined. The range may be empty (length 0).
-     * @param value The value for which to find a match in the array. If
-     * 	value, or any of the values in the array, are not understood
-     * 	by the comparator callback, the behavior is undefined.
+     *
+     * @param theArray   The array to be searched. If this parameter is not a
+     *                   valid CFArray, the behavior is undefined. If the array is
+     *                   not sorted from least to greatest according to the
+     *                   comparator function, the behavior is undefined.
+     * @param range      The range within the array to search. If the range
+     *                   location or end point (defined by the location plus length
+     *                   minus 1) is outside the index space of the array (0 to
+     *                   N-1 inclusive, where N is the count of the array), the
+     *                   behavior is undefined. If the range length is negative, the
+     *                   behavior is undefined. The range may be empty (length 0).
+     * @param value      The value for which to find a match in the array. If
+     *                   value, or any of the values in the array, are not understood
+     *                   by the comparator callback, the behavior is undefined.
      * @param comparator The function with the comparator function type
-     * 	signature which is used in the binary search operation to
-     * 	compare values in the array with the given value. If this
-     * 	parameter is not a pointer to a function of the correct
-     * 	prototype, the behavior is undefined. If there are values
-     * 	in the range which the comparator function does not expect
-     * 	or cannot properly compare, the behavior is undefined.
-     * @param context A pointer-sized user-defined value, which is passed
-     * 	as the third parameter to the comparator function, but is
-     * 	otherwise unused by this function. If the context is not
-     * 	what is expected by the comparator function, the behavior is
-     * 	undefined.
+     *                   signature which is used in the binary search operation to
+     *                   compare values in the array with the given value. If this
+     *                   parameter is not a pointer to a function of the correct
+     *                   prototype, the behavior is undefined. If there are values
+     *                   in the range which the comparator function does not expect
+     *                   or cannot properly compare, the behavior is undefined.
+     * @param context    A pointer-sized user-defined value, which is passed
+     *                   as the third parameter to the comparator function, but is
+     *                   otherwise unused by this function. If the context is not
+     *                   what is expected by the comparator function, the behavior is
+     *                   undefined.
      * @return The return value is either 1) the index of a value that
-     * 	matched, if the target value matches one or more in the
-     * 	range, 2) greater than or equal to the end point of the
-     * 	range, if the value is greater than all the values in the
-     * 	range, or 3) the index of the value greater than the target
-     * 	value, if the value lies between two of (or less than all
-     * 	of) the values in the range.
+     * matched, if the target value matches one or more in the
+     * range, 2) greater than or equal to the end point of the
+     * range, if the value is greater than all the values in the
+     * range, or 3) the index of the value greater than the target
+     * value, if the value lies between two of (or less than all
+     * of) the values in the range.
      */
     @Generated
     @CFunction
@@ -1238,16 +1238,16 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayAppendValue
      * Adds the value to the array giving it a new largest index.
-     * 
+     *
      * @param theArray The array to which the value is to be added. If this
-     * 	parameter is not a valid mutable CFArray, the behavior is
-     * 	undefined.
-     * @param value The value to add to the array. The value is retained by
-     * 	the array using the retain callback provided when the array
-     * 	was created. If the value is not of the sort expected by the
-     * 	retain callback, the behavior is undefined. The value is
-     * 	assigned to the index one larger than the previous largest
-     * 	index, and the count of the array is increased by one.
+     *                 parameter is not a valid mutable CFArray, the behavior is
+     *                 undefined.
+     * @param value    The value to add to the array. The value is retained by
+     *                 the array using the retain callback provided when the array
+     *                 was created. If the value is not of the sort expected by the
+     *                 retain callback, the behavior is undefined. The value is
+     *                 assigned to the index one larger than the previous largest
+     *                 index, and the count of the array is increased by one.
      */
     @Generated
     @CFunction
@@ -1256,21 +1256,21 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayInsertValueAtIndex
      * Adds the value to the array, giving it the given index.
-     * 
+     *
      * @param theArray The array to which the value is to be added. If this
-     * 	parameter is not a valid mutable CFArray, the behavior is
-     * 	undefined.
-     * @param idx The index to which to add the new value. If the index is
-     * 	outside the index space of the array (0 to N inclusive,
-     * 	where N is the count of the array before the operation), the
-     * 	behavior is undefined. If the index is the same as N, this
-     * 	function has the same effect as CFArrayAppendValue().
-     * @param value The value to add to the array. The value is retained by
-     * 	the array using the retain callback provided when the array
-     * 	was created. If the value is not of the sort expected by the
-     * 	retain callback, the behavior is undefined. The value is
-     * 	assigned to the given index, and all values with equal and
-     * 	larger indices have their indexes increased by one.
+     *                 parameter is not a valid mutable CFArray, the behavior is
+     *                 undefined.
+     * @param idx      The index to which to add the new value. If the index is
+     *                 outside the index space of the array (0 to N inclusive,
+     *                 where N is the count of the array before the operation), the
+     *                 behavior is undefined. If the index is the same as N, this
+     *                 function has the same effect as CFArrayAppendValue().
+     * @param value    The value to add to the array. The value is retained by
+     *                 the array using the retain callback provided when the array
+     *                 was created. If the value is not of the sort expected by the
+     *                 retain callback, the behavior is undefined. The value is
+     *                 assigned to the given index, and all values with equal and
+     *                 larger indices have their indexes increased by one.
      */
     @Generated
     @CFunction
@@ -1279,21 +1279,21 @@ public final class CoreFoundation {
     /**
      * [@function] CFArraySetValueAtIndex
      * Changes the value with the given index in the array.
-     * 
+     *
      * @param theArray The array in which the value is to be changed. If this
-     * 	parameter is not a valid mutable CFArray, the behavior is
-     * 	undefined.
-     * @param idx The index to which to set the new value. If the index is
-     * 	outside the index space of the array (0 to N inclusive,
-     * 	where N is the count of the array before the operation), the
-     * 	behavior is undefined. If the index is the same as N, this
-     * 	function has the same effect as CFArrayAppendValue().
-     * @param value The value to set in the array. The value is retained by
-     * 	the array using the retain callback provided when the array
-     * 	was created, and the previous value with that index is
-     * 	released. If the value is not of the sort expected by the
-     * 	retain callback, the behavior is undefined. The indices of
-     * 	other values is not affected.
+     *                 parameter is not a valid mutable CFArray, the behavior is
+     *                 undefined.
+     * @param idx      The index to which to set the new value. If the index is
+     *                 outside the index space of the array (0 to N inclusive,
+     *                 where N is the count of the array before the operation), the
+     *                 behavior is undefined. If the index is the same as N, this
+     *                 function has the same effect as CFArrayAppendValue().
+     * @param value    The value to set in the array. The value is retained by
+     *                 the array using the retain callback provided when the array
+     *                 was created, and the previous value with that index is
+     *                 released. If the value is not of the sort expected by the
+     *                 retain callback, the behavior is undefined. The indices of
+     *                 other values is not affected.
      */
     @Generated
     @CFunction
@@ -1302,14 +1302,14 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayRemoveValueAtIndex
      * Removes the value with the given index from the array.
-     * 
+     *
      * @param theArray The array from which the value is to be removed. If
-     * 	this parameter is not a valid mutable CFArray, the behavior
-     * 	is undefined.
-     * @param idx The index from which to remove the value. If the index is
-     * 	outside the index space of the array (0 to N-1 inclusive,
-     * 	where N is the count of the array before the operation), the
-     * 	behavior is undefined.
+     *                 this parameter is not a valid mutable CFArray, the behavior
+     *                 is undefined.
+     * @param idx      The index from which to remove the value. If the index is
+     *                 outside the index space of the array (0 to N-1 inclusive,
+     *                 where N is the count of the array before the operation), the
+     *                 behavior is undefined.
      */
     @Generated
     @CFunction
@@ -1318,10 +1318,10 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayRemoveAllValues
      * Removes all the values from the array, making it empty.
-     * 
+     *
      * @param theArray The array from which all of the values are to be
-     * 	removed. If this parameter is not a valid mutable CFArray,
-     * 	the behavior is undefined.
+     *                 removed. If this parameter is not a valid mutable CFArray,
+     *                 the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -1330,34 +1330,34 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayReplaceValues
      * Replaces a range of values in the array.
-     * 
-     * @param theArray The array from which all of the values are to be
-     * 	removed. If this parameter is not a valid mutable CFArray,
-     * 	the behavior is undefined.
-     * @param range The range of values within the array to replace. If the
-     * 	range location or end point (defined by the location plus
-     * 	length minus 1) is outside the index space of the array (0
-     * 	to N inclusive, where N is the count of the array), the
-     * 	behavior is undefined. If the range length is negative, the
-     * 	behavior is undefined. The range may be empty (length 0),
-     * 	in which case the new values are merely inserted at the
-     * 	range location.
+     *
+     * @param theArray  The array from which all of the values are to be
+     *                  removed. If this parameter is not a valid mutable CFArray,
+     *                  the behavior is undefined.
+     * @param range     The range of values within the array to replace. If the
+     *                  range location or end point (defined by the location plus
+     *                  length minus 1) is outside the index space of the array (0
+     *                  to N inclusive, where N is the count of the array), the
+     *                  behavior is undefined. If the range length is negative, the
+     *                  behavior is undefined. The range may be empty (length 0),
+     *                  in which case the new values are merely inserted at the
+     *                  range location.
      * @param newValues A C array of the pointer-sized values to be placed
-     * 	into the array. The new values in the array are ordered in
-     * 	the same order in which they appear in this C array. This
-     * 	parameter may be NULL if the newCount parameter is 0. This
-     * 	C array is not changed or freed by this function. If this
-     * 	parameter is not a valid pointer to a C array of at least
-     * 	newCount pointers, the behavior is undefined.
-     * @param newCount The number of values to copy from the values C
-     * 	array into the CFArray. If this parameter is different than
-     * 	the range length, the excess newCount values will be
-     * 	inserted after the range, or the excess range values will be
-     * 	deleted. This parameter may be 0, in which case no new
-     * 	values are replaced into the array and the values in the
-     * 	range are simply removed. If this parameter is negative, or
-     * 	greater than the number of values actually in the newValues
-     * 	C array, the behavior is undefined.
+     *                  into the array. The new values in the array are ordered in
+     *                  the same order in which they appear in this C array. This
+     *                  parameter may be NULL if the newCount parameter is 0. This
+     *                  C array is not changed or freed by this function. If this
+     *                  parameter is not a valid pointer to a C array of at least
+     *                  newCount pointers, the behavior is undefined.
+     * @param newCount  The number of values to copy from the values C
+     *                  array into the CFArray. If this parameter is different than
+     *                  the range length, the excess newCount values will be
+     *                  inserted after the range, or the excess range values will be
+     *                  deleted. This parameter may be 0, in which case no new
+     *                  values are replaced into the array and the values in the
+     *                  range are simply removed. If this parameter is negative, or
+     *                  greater than the number of values actually in the newValues
+     *                  C array, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -1367,18 +1367,18 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayExchangeValuesAtIndices
      * Exchanges the values at two indices of the array.
-     * 
+     *
      * @param theArray The array of which the values are to be swapped. If
-     * 	this parameter is not a valid mutable CFArray, the behavior
-     * 	is undefined.
-     * @param idx1 The first index whose values should be swapped. If the
-     * 	index is outside the index space of the array (0 to N-1
-     * 	inclusive, where N is the count of the array before the
-     * 	operation), the behavior is undefined.
-     * @param idx2 The second index whose values should be swapped. If the
-     * 	index is outside the index space of the array (0 to N-1
-     * 	inclusive, where N is the count of the array before the
-     * 	operation), the behavior is undefined.
+     *                 this parameter is not a valid mutable CFArray, the behavior
+     *                 is undefined.
+     * @param idx1     The first index whose values should be swapped. If the
+     *                 index is outside the index space of the array (0 to N-1
+     *                 inclusive, where N is the count of the array before the
+     *                 operation), the behavior is undefined.
+     * @param idx2     The second index whose values should be swapped. If the
+     *                 index is outside the index space of the array (0 to N-1
+     *                 inclusive, where N is the count of the array before the
+     *                 operation), the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -1388,30 +1388,30 @@ public final class CoreFoundation {
     /**
      * [@function] CFArraySortValues
      * Sorts the values in the array using the given comparison function.
-     * 
-     * @param theArray The array whose values are to be sorted. If this
-     * 	parameter is not a valid mutable CFArray, the behavior is
-     * 	undefined.
-     * @param range The range of values within the array to sort. If the
-     * 	range location or end point (defined by the location plus
-     * 	length minus 1) is outside the index space of the array (0
-     * 	to N-1 inclusive, where N is the count of the array), the
-     * 	behavior is undefined. If the range length is negative, the
-     * 	behavior is undefined. The range may be empty (length 0).
+     *
+     * @param theArray   The array whose values are to be sorted. If this
+     *                   parameter is not a valid mutable CFArray, the behavior is
+     *                   undefined.
+     * @param range      The range of values within the array to sort. If the
+     *                   range location or end point (defined by the location plus
+     *                   length minus 1) is outside the index space of the array (0
+     *                   to N-1 inclusive, where N is the count of the array), the
+     *                   behavior is undefined. If the range length is negative, the
+     *                   behavior is undefined. The range may be empty (length 0).
      * @param comparator The function with the comparator function type
-     * 	signature which is used in the sort operation to compare
-     * 	values in the array with the given value. If this parameter
-     * 	is not a pointer to a function of the correct prototype, the
-     * 	the behavior is undefined. If there are values in the array
-     * 	which the comparator function does not expect or cannot
-     * 	properly compare, the behavior is undefined. The values in
-     * 	the range are sorted from least to greatest according to
-     * 	this function.
-     * @param context A pointer-sized user-defined value, which is passed
-     * 	as the third parameter to the comparator function, but is
-     * 	otherwise unused by this function. If the context is not
-     * 	what is expected by the comparator function, the behavior is
-     * 	undefined.
+     *                   signature which is used in the sort operation to compare
+     *                   values in the array with the given value. If this parameter
+     *                   is not a pointer to a function of the correct prototype, the
+     *                   the behavior is undefined. If there are values in the array
+     *                   which the comparator function does not expect or cannot
+     *                   properly compare, the behavior is undefined. The values in
+     *                   the range are sorted from least to greatest according to
+     *                   this function.
+     * @param context    A pointer-sized user-defined value, which is passed
+     *                   as the third parameter to the comparator function, but is
+     *                   otherwise unused by this function. If the context is not
+     *                   what is expected by the comparator function, the behavior is
+     *                   undefined.
      */
     @Generated
     @CFunction
@@ -1421,27 +1421,27 @@ public final class CoreFoundation {
     /**
      * [@function] CFArrayAppendArray
      * Adds the values from an array to another array.
-     * 
-     * @param theArray The array to which values from the otherArray are to
-     * 	be added. If this parameter is not a valid mutable CFArray,
-     * 	the behavior is undefined.
+     *
+     * @param theArray   The array to which values from the otherArray are to
+     *                   be added. If this parameter is not a valid mutable CFArray,
+     *                   the behavior is undefined.
      * @param otherArray The array providing the values to be added to the
-     * 	array. If this parameter is not a valid CFArray, the
-     * 	behavior is undefined.
+     *                   array. If this parameter is not a valid CFArray, the
+     *                   behavior is undefined.
      * @param otherRange The range within the otherArray from which to add
-     * 	the values to the array. If the range location or end point
-     * 	(defined by the location plus length minus 1) is outside
-     * 	the index space of the otherArray (0 to N-1 inclusive, where
-     * 	N is the count of the otherArray), the behavior is
-     * 	undefined. The new values are retained by the array using
-     * 	the retain callback provided when the array was created. If
-     * 	the values are not of the sort expected by the retain
-     * 	callback, the behavior is undefined. The values are assigned
-     * 	to the indices one larger than the previous largest index
-     * 	in the array, and beyond, and the count of the array is
-     * 	increased by range.length. The values are assigned new
-     * 	indices in the array from smallest to largest index in the
-     * 	order in which they appear in the otherArray.
+     *                   the values to the array. If the range location or end point
+     *                   (defined by the location plus length minus 1) is outside
+     *                   the index space of the otherArray (0 to N-1 inclusive, where
+     *                   N is the count of the otherArray), the behavior is
+     *                   undefined. The new values are retained by the array using
+     *                   the retain callback provided when the array was created. If
+     *                   the values are not of the sort expected by the retain
+     *                   callback, the behavior is undefined. The values are assigned
+     *                   to the indices one larger than the previous largest index
+     *                   in the array, and beyond, and the count of the array is
+     *                   increased by range.length. The values are assigned new
+     *                   indices in the array from smallest to largest index in the
+     *                   order in which they appear in the otherArray.
      */
     @Generated
     @CFunction
@@ -1460,13 +1460,13 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetGetPredefined
      * Returns a predefined CFCharacterSet instance.
-     * 
+     *
      * @param theSetIdentifier The CFCharacterSetPredefinedSet selector
-     *                which specifies the predefined character set.  If the
-     *                value is not in CFCharacterSetPredefinedSet, the behavior
-     *                is undefined.
+     *                         which specifies the predefined character set.  If the
+     *                         value is not in CFCharacterSetPredefinedSet, the behavior
+     *                         is undefined.
      * @return A reference to the predefined immutable CFCharacterSet.
-     *                This instance is owned by CF.
+     * This instance is owned by CF.
      */
     @Generated
     @CFunction
@@ -1475,18 +1475,18 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetCreateWithCharactersInRange
      * Creates a new immutable character set with the values from the given range.
-     * 
-     * @param alloc The CFAllocator which should be used to allocate
-     * 	memory for the array and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
+     *
+     * @param alloc    The CFAllocator which should be used to allocate
+     *                 memory for the array and its storage for values. This
+     *                 parameter may be NULL in which case the current default
+     *                 CFAllocator is used. If this reference is not a valid
+     *                 CFAllocator, the behavior is undefined.
      * @param theRange The CFRange which should be used to specify the
-     *                Unicode range the character set is filled with.  It
-     *                accepts the range in 32-bit in the UTF-32 format.  The
-     *                valid character point range is from 0x00000 to 0x10FFFF.
-     *                If the range is outside of the valid Unicode character
-     *                point, the behavior is undefined.
+     *                 Unicode range the character set is filled with.  It
+     *                 accepts the range in 32-bit in the UTF-32 format.  The
+     *                 valid character point range is from 0x00000 to 0x10FFFF.
+     *                 If the range is outside of the valid Unicode character
+     *                 point, the behavior is undefined.
      * @return A reference to the new immutable CFCharacterSet.
      */
     @Generated
@@ -1497,17 +1497,17 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetCreateWithCharactersInString
      * Creates a new immutable character set with the values in the given string.
-     * 
-     * @param alloc The CFAllocator which should be used to allocate
-     * 	memory for the array and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
+     *
+     * @param alloc     The CFAllocator which should be used to allocate
+     *                  memory for the array and its storage for values. This
+     *                  parameter may be NULL in which case the current default
+     *                  CFAllocator is used. If this reference is not a valid
+     *                  CFAllocator, the behavior is undefined.
      * @param theString The CFString which should be used to specify
-     *                the Unicode characters the character set is filled with.
-     *                If this parameter is not a valid CFString, the behavior
-     *                is undefined.
-     *        @return A reference to the new immutable CFCharacterSet.
+     *                  the Unicode characters the character set is filled with.
+     *                  If this parameter is not a valid CFString, the behavior
+     *                  is undefined.
+     * @return A reference to the new immutable CFCharacterSet.
      */
     @Generated
     @CFunction
@@ -1517,12 +1517,12 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetCreateWithBitmapRepresentation
      * Creates a new immutable character set with the bitmap representtion in the given data.
-     * 
-     * @param alloc The CFAllocator which should be used to allocate
-     * 	memory for the array and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
+     *
+     * @param alloc   The CFAllocator which should be used to allocate
+     *                memory for the array and its storage for values. This
+     *                parameter may be NULL in which case the current default
+     *                CFAllocator is used. If this reference is not a valid
+     *                CFAllocator, the behavior is undefined.
      * @param theData The CFData which should be used to specify the
      *                bitmap representation of the Unicode character points
      *                the character set is filled with.  The bitmap
@@ -1538,7 +1538,7 @@ public final class CoreFoundation {
      *                this parameter is not a valid CFData or it contains a
      *                Plane index byte outside of the valid Plane range
      *                (1 to 16), the behavior is undefined.
-     *        @return A reference to the new immutable CFCharacterSet.
+     * @return A reference to the new immutable CFCharacterSet.
      */
     @Generated
     @CFunction
@@ -1548,15 +1548,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetCreateInvertedSet
      * Creates a new immutable character set that is the invert of the specified character set.
-     * 
-     * @param alloc The CFAllocator which should be used to allocate
-     * 		memory for the array and its storage for values. This
-     * 		parameter may be NULL in which case the current default
-     * 		CFAllocator is used. If this reference is not a valid
-     * 		CFAllocator, the behavior is undefined.
+     *
+     * @param alloc  The CFAllocator which should be used to allocate
+     *               memory for the array and its storage for values. This
+     *               parameter may be NULL in which case the current default
+     *               CFAllocator is used. If this reference is not a valid
+     *               CFAllocator, the behavior is undefined.
      * @param theSet The CFCharacterSet which is to be inverted.  If this
-     *                		parameter is not a valid CFCharacterSet, the behavior is
-     *              		undefined.
+     *               parameter is not a valid CFCharacterSet, the behavior is
+     *               undefined.
      * @return A reference to the new immutable CFCharacterSet.
      */
     @Generated
@@ -1567,11 +1567,11 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetIsSupersetOfSet
      * Reports whether or not the character set is a superset of the character set specified as the second parameter.
-     * 
-     * @param theSet  The character set to be checked for the membership of theOtherSet.
-     * 	If this parameter is not a valid CFCharacterSet, the behavior is undefined.
-     * @param theOtherset  The character set to be checked whether or not it is a subset of theSet.
-     * 	If this parameter is not a valid CFCharacterSet, the behavior is undefined.
+     *
+     * @param theSet      The character set to be checked for the membership of theOtherSet.
+     *                    If this parameter is not a valid CFCharacterSet, the behavior is undefined.
+     * @param theOtherset The character set to be checked whether or not it is a subset of theSet.
+     *                    If this parameter is not a valid CFCharacterSet, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -1580,12 +1580,12 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetHasMemberInPlane
      * Reports whether or not the character set contains at least one member character in the specified plane.
-     * 
-     * @param theSet  The character set to be checked for the membership.  If this
-     * 	parameter is not a valid CFCharacterSet, the behavior is undefined.
-     * @param thePlane  The plane number to be checked for the membership.
-     * 	The valid value range is from 0 to 16.  If the value is outside of the valid
-     * 	plane number range, the behavior is undefined.
+     *
+     * @param theSet   The character set to be checked for the membership.  If this
+     *                 parameter is not a valid CFCharacterSet, the behavior is undefined.
+     * @param thePlane The plane number to be checked for the membership.
+     *                 The valid value range is from 0 to 16.  If the value is outside of the valid
+     *                 plane number range, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -1594,12 +1594,12 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetCreateMutable
      * Creates a new empty mutable character set.
-     * 
+     *
      * @param alloc The CFAllocator which should be used to allocate
-     * 	memory for the array and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
+     *              memory for the array and its storage for values. This
+     *              parameter may be NULL in which case the current default
+     *              CFAllocator is used. If this reference is not a valid
+     *              CFAllocator, the behavior is undefined.
      * @return A reference to the new mutable CFCharacterSet.
      */
     @Generated
@@ -1609,15 +1609,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetCreateCopy
      * Creates a new character set with the values from the given character set.  This function tries to compact the backing store where applicable.
-     * 
-     * @param alloc The CFAllocator which should be used to allocate
-     * 	memory for the array and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
+     *
+     * @param alloc  The CFAllocator which should be used to allocate
+     *               memory for the array and its storage for values. This
+     *               parameter may be NULL in which case the current default
+     *               CFAllocator is used. If this reference is not a valid
+     *               CFAllocator, the behavior is undefined.
      * @param theSet The CFCharacterSet which is to be copied.  If this
-     *                parameter is not a valid CFCharacterSet, the behavior is
-     *                undefined.
+     *               parameter is not a valid CFCharacterSet, the behavior is
+     *               undefined.
      * @return A reference to the new CFCharacterSet.
      */
     @Generated
@@ -1627,15 +1627,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetCreateMutableCopy
      * Creates a new mutable character set with the values from the given character set.
-     * 
-     * @param alloc The CFAllocator which should be used to allocate
-     * 	memory for the array and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
+     *
+     * @param alloc  The CFAllocator which should be used to allocate
+     *               memory for the array and its storage for values. This
+     *               parameter may be NULL in which case the current default
+     *               CFAllocator is used. If this reference is not a valid
+     *               CFAllocator, the behavior is undefined.
      * @param theSet The CFCharacterSet which is to be copied.  If this
-     *                parameter is not a valid CFCharacterSet, the behavior is
-     *                undefined.
+     *               parameter is not a valid CFCharacterSet, the behavior is
+     *               undefined.
      * @return A reference to the new mutable CFCharacterSet.
      */
     @Generated
@@ -1646,14 +1646,14 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetIsCharacterMember
      * Reports whether or not the Unicode character is in the character set.
-     * 
-     * @param theSet The character set to be searched. If this parameter
+     *
+     * @param theSet  The character set to be searched. If this parameter
      *                is not a valid CFCharacterSet, the behavior is undefined.
      * @param theChar The Unicode character for which to test against the
      *                character set.  Note that this function takes 16-bit Unicode
      *                character value; hence, it does not support access to the
-     *                non-BMP planes.  
-     *        @return true, if the value is in the character set, otherwise false.
+     *                non-BMP planes.
+     * @return true, if the value is in the character set, otherwise false.
      */
     @Generated
     @CFunction
@@ -1662,12 +1662,12 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetIsLongCharacterMember
      * Reports whether or not the UTF-32 character is in the character set.
-     * 
-     * @param theSet The character set to be searched. If this parameter
-     *               		 is not a valid CFCharacterSet, the behavior is undefined.
+     *
+     * @param theSet  The character set to be searched. If this parameter
+     *                is not a valid CFCharacterSet, the behavior is undefined.
      * @param theChar The UTF-32 character for which to test against the
-     * 		character set.
-     *        @return true, if the value is in the character set, otherwise false.
+     *                character set.
+     * @return true, if the value is in the character set, otherwise false.
      */
     @Generated
     @CFunction
@@ -1676,18 +1676,18 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetCreateBitmapRepresentation
      * Creates a new immutable data with the bitmap representation from the given character set.
-     * 
-     * @param alloc The CFAllocator which should be used to allocate
-     * 	memory for the array and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
+     *
+     * @param alloc  The CFAllocator which should be used to allocate
+     *               memory for the array and its storage for values. This
+     *               parameter may be NULL in which case the current default
+     *               CFAllocator is used. If this reference is not a valid
+     *               CFAllocator, the behavior is undefined.
      * @param theSet The CFCharacterSet which is to be used create the
-     *                bitmap representation from.  Refer to the comments for
-     *                CFCharacterSetCreateWithBitmapRepresentation for the
-     *                detailed discussion of the bitmap representation format.
-     *                If this parameter is not a valid CFCharacterSet, the
-     *                behavior is undefined.
+     *               bitmap representation from.  Refer to the comments for
+     *               CFCharacterSetCreateWithBitmapRepresentation for the
+     *               detailed discussion of the bitmap representation format.
+     *               If this parameter is not a valid CFCharacterSet, the
+     *               behavior is undefined.
      * @return A reference to the new immutable CFData.
      */
     @Generated
@@ -1698,15 +1698,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetAddCharactersInRange
      * Adds the given range to the charaacter set.
-     * 
-     * @param theSet The character set to which the range is to be added.
-     *                If this parameter is not a valid mutable CFCharacterSet,
-     *                the behavior is undefined.
-     *        @param theRange The range to add to the character set.  It accepts
-     *                the range in 32-bit in the UTF-32 format.  The valid
-     *                character point range is from 0x00000 to 0x10FFFF.  If the
-     *                range is outside of the valid Unicode character point,
-     *                the behavior is undefined.
+     *
+     * @param theSet   The character set to which the range is to be added.
+     *                 If this parameter is not a valid mutable CFCharacterSet,
+     *                 the behavior is undefined.
+     * @param theRange The range to add to the character set.  It accepts
+     *                 the range in 32-bit in the UTF-32 format.  The valid
+     *                 character point range is from 0x00000 to 0x10FFFF.  If the
+     *                 range is outside of the valid Unicode character point,
+     *                 the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -1716,15 +1716,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetRemoveCharactersInRange
      * Removes the given range from the charaacter set.
-     * 
-     * @param theSet The character set from which the range is to be
-     *                removed.  If this parameter is not a valid mutable
-     *                CFCharacterSet, the behavior is undefined.
-     *        @param theRange The range to remove from the character set.
-     *                It accepts the range in 32-bit in the UTF-32 format.
-     *                The valid character point range is from 0x00000 to 0x10FFFF.
-     *                If the range is outside of the valid Unicode character point,
-     *                the behavior is undefined.
+     *
+     * @param theSet   The character set from which the range is to be
+     *                 removed.  If this parameter is not a valid mutable
+     *                 CFCharacterSet, the behavior is undefined.
+     * @param theRange The range to remove from the character set.
+     *                 It accepts the range in 32-bit in the UTF-32 format.
+     *                 The valid character point range is from 0x00000 to 0x10FFFF.
+     *                 If the range is outside of the valid Unicode character point,
+     *                 the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -1734,13 +1734,13 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetAddCharactersInString
      * Adds the characters in the given string to the charaacter set.
-     * 
-     * @param theSet The character set to which the characters in the
-     *                string are to be added.  If this parameter is not a
-     *                valid mutable CFCharacterSet, the behavior is undefined.
-     *        @param theString The string to add to the character set.
-     *                If this parameter is not a valid CFString, the behavior
-     *                is undefined.
+     *
+     * @param theSet    The character set to which the characters in the
+     *                  string are to be added.  If this parameter is not a
+     *                  valid mutable CFCharacterSet, the behavior is undefined.
+     * @param theString The string to add to the character set.
+     *                  If this parameter is not a valid CFString, the behavior
+     *                  is undefined.
      */
     @Generated
     @CFunction
@@ -1750,13 +1750,13 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetRemoveCharactersInString
      * Removes the characters in the given string from the charaacter set.
-     * 
-     * @param theSet The character set from which the characters in the
-     *                string are to be remove.  If this parameter is not a
-     *                valid mutable CFCharacterSet, the behavior is undefined.
-     *        @param theString The string to remove from the character set.
-     *                If this parameter is not a valid CFString, the behavior
-     *                is undefined.
+     *
+     * @param theSet    The character set from which the characters in the
+     *                  string are to be remove.  If this parameter is not a
+     *                  valid mutable CFCharacterSet, the behavior is undefined.
+     * @param theString The string to remove from the character set.
+     *                  If this parameter is not a valid CFString, the behavior
+     *                  is undefined.
      */
     @Generated
     @CFunction
@@ -1766,14 +1766,14 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetUnion
      * Forms the union with the given character set.
-     * 
-     * @param theSet The destination character set into which the
-     *                union of the two character sets is stored.  If this
-     *                parameter is not a valid mutable CFCharacterSet, the
-     *                behavior is undefined.
+     *
+     * @param theSet      The destination character set into which the
+     *                    union of the two character sets is stored.  If this
+     *                    parameter is not a valid mutable CFCharacterSet, the
+     *                    behavior is undefined.
      * @param theOtherSet The character set with which the union is
-     *                formed.  If this parameter is not a valid CFCharacterSet,
-     *                the behavior is undefined.
+     *                    formed.  If this parameter is not a valid CFCharacterSet,
+     *                    the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -1782,14 +1782,14 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetIntersect
      * Forms the intersection with the given character set.
-     * 
-     * @param theSet The destination character set into which the
-     *                intersection of the two character sets is stored.
-     *                If this parameter is not a valid mutable CFCharacterSet,
-     *                the behavior is undefined.
+     *
+     * @param theSet      The destination character set into which the
+     *                    intersection of the two character sets is stored.
+     *                    If this parameter is not a valid mutable CFCharacterSet,
+     *                    the behavior is undefined.
      * @param theOtherSet The character set with which the intersection
-     *                is formed.  If this parameter is not a valid CFCharacterSet,
-     *                the behavior is undefined.
+     *                    is formed.  If this parameter is not a valid CFCharacterSet,
+     *                    the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -1798,10 +1798,10 @@ public final class CoreFoundation {
     /**
      * [@function] CFCharacterSetInvert
      * Inverts the content of the given character set.
-     * 
+     *
      * @param theSet The character set to be inverted.
-     *                If this parameter is not a valid mutable CFCharacterSet,
-     *                the behavior is undefined.
+     *               If this parameter is not a valid mutable CFCharacterSet,
+     *               the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -2091,11 +2091,11 @@ public final class CoreFoundation {
      * These functions try not to copy the provided buffer. The buffer will be deallocated
      * with the provided contentsDeallocator when it's no longer needed; to not free
      * the buffer, specify kCFAllocatorNull here. As usual, NULL means default allocator.
-     * 
-     * NOTE: Do not count on these buffers as being used by the string; 
+     * <p>
+     * NOTE: Do not count on these buffers as being used by the string;
      * in some cases the CFString might free the buffer and use something else
-     * (for instance if it decides to always use Unicode encoding internally). 
-     * 
+     * (for instance if it decides to always use Unicode encoding internally).
+     * <p>
      * NOTE: If you are not transferring ownership of the buffer to the CFString
      * (for instance, you supplied contentsDeallocator = kCFAllocatorNull), it is your
      * responsibility to assure the buffer does not go away during the lifetime of the string.
@@ -2172,7 +2172,7 @@ public final class CoreFoundation {
      * This function creates a mutable string that has a developer supplied and directly editable backing store.
      * The string will be manipulated within the provided buffer (if any) until it outgrows capacity; then the
      * externalCharactersAllocator will be consulted for more memory. When the CFString is deallocated, the
-     * buffer will be freed with the externalCharactersAllocator. If you provide kCFAllocatorNull here, and the buffer 
+     * buffer will be freed with the externalCharactersAllocator. If you provide kCFAllocatorNull here, and the buffer
      * needs to grow, then CFString will switch to using the default allocator. See comments at top of this file for more info.
      */
     @Generated
@@ -2204,11 +2204,11 @@ public final class CoreFoundation {
 
     /**
      * These two convert into the provided buffer; they return false if conversion isn't possible
-     * (due to conversion error, or not enough space in the provided buffer). 
+     * (due to conversion error, or not enough space in the provided buffer).
      * These functions do zero-terminate or put the length byte; the provided bufferSize should include
      * space for this (so pass 256 for Str255). More sophisticated usages can go through CFStringGetBytes().
-     * These functions are equivalent to calling CFStringGetBytes() with 
-     * the range of the string; lossByte = 0; and isExternalRepresentation = false; 
+     * These functions are equivalent to calling CFStringGetBytes() with
+     * the range of the string; lossByte = 0; and isExternalRepresentation = false;
      * if successful, they then insert the leading length or terminating zero, as desired.
      */
     @Generated
@@ -2243,20 +2243,20 @@ public final class CoreFoundation {
 
     /**
      * The primitive conversion routine; allows you to convert a string piece at a time
-     *     into a fixed size buffer. Returns number of characters converted. 
+     * into a fixed size buffer. Returns number of characters converted.
      * Characters that cannot be converted to the specified encoding are represented
-     *     with the byte specified by lossByte; if lossByte is 0, then lossy conversion
-     *     is not allowed and conversion stops, returning partial results.
+     * with the byte specified by lossByte; if lossByte is 0, then lossy conversion
+     * is not allowed and conversion stops, returning partial results.
      * Pass buffer==NULL if you don't care about the converted string (but just the convertability,
-     *     or number of bytes required). 
+     * or number of bytes required).
      * maxBufLength indicates the maximum number of bytes to generate. It is ignored when buffer==NULL.
-     * Does not zero-terminate. If you want to create Pascal or C string, allow one extra byte at start or end. 
-     * Setting isExternalRepresentation causes any extra bytes that would allow 
-     *     the data to be made persistent to be included; for instance, the Unicode BOM. Note that
-     *     CFString prepends UTF encoded data with the Unicode BOM <http://www.unicode.org/faq/utf_bom.html> 
-     *     when generating external representation if the target encoding allows. It's important to note that
-     *     only UTF-8, UTF-16, and UTF-32 define the handling of the byte order mark character, and the "LE"
-     *     and "BE" variants of UTF-16 and UTF-32 don't.
+     * Does not zero-terminate. If you want to create Pascal or C string, allow one extra byte at start or end.
+     * Setting isExternalRepresentation causes any extra bytes that would allow
+     * the data to be made persistent to be included; for instance, the Unicode BOM. Note that
+     * CFString prepends UTF encoded data with the Unicode BOM <http://www.unicode.org/faq/utf_bom.html>
+     * when generating external representation if the target encoding allows. It's important to note that
+     * only UTF-8, UTF-16, and UTF-32 define the handling of the byte order mark character, and the "LE"
+     * and "BE" variants of UTF-16 and UTF-32 don't.
      */
     @Generated
     @CFunction
@@ -2267,8 +2267,8 @@ public final class CoreFoundation {
     /**
      * Convenience functions String <-> Data. These generate "external" formats, that is, formats that
      * can be written out to disk. For instance, if the encoding is Unicode,
-     * CFStringCreateFromExternalRepresentation() pays attention to the BOM character (if any) 
-     * and does byte swapping if necessary. Similarly CFStringCreateExternalRepresentation() will  
+     * CFStringCreateFromExternalRepresentation() pays attention to the BOM character (if any)
+     * and does byte swapping if necessary. Similarly CFStringCreateExternalRepresentation() will
      * include a BOM character if appropriate. See CFStringGetBytes() for more on this and lossByte.
      */
     @Generated
@@ -2387,7 +2387,7 @@ public final class CoreFoundation {
      * CFStringCreateArrayWithFindResults() returns an array of CFRange pointers, or NULL if there are no matches.
      * Overlapping instances are not found; so looking for "AA" in "AAA" finds just one range.
      * Post 10.1: If kCFCompareBackwards is provided, the scan is done from the end (which can give a different result), and
-     *    the results are stored in the array backwards (last found range in slot 0).
+     * the results are stored in the array backwards (last found range in slot 0).
      * If stringToFind is the empty string (zero length), nothing is found.
      * kCFCompareAnchored causes just the consecutive instances at start (or end, if kCFCompareBackwards) to be reported. So, searching for "AB" in "ABABXAB..." you just get the first two occurrences.
      * Ignores the kCFCompareNumerically option.
@@ -2418,15 +2418,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFStringGetRangeOfComposedCharactersAtIndex
      * Returns the range of the composed character sequence at the specified index.
-     * 
+     *
      * @param theString The CFString which is to be searched.  If this
-     *                		parameter is not a valid CFString, the behavior is
-     *              		undefined.
-     * @param theIndex The index of the character contained in the
-     * 		composed character sequence.  If the index is
-     * 		outside the index space of the string (0 to N-1 inclusive,
-     * 		where N is the length of the string), the behavior is
-     * 		undefined.
+     *                  parameter is not a valid CFString, the behavior is
+     *                  undefined.
+     * @param theIndex  The index of the character contained in the
+     *                  composed character sequence.  If the index is
+     *                  outside the index space of the string (0 to N-1 inclusive,
+     *                  where N is the length of the string), the behavior is
+     *                  undefined.
      * @return The range of the composed character sequence.
      */
     @Generated
@@ -2438,32 +2438,32 @@ public final class CoreFoundation {
     /**
      * [@function] CFStringFindCharacterFromSet
      * Query the range of the first character contained in the specified character set.
-     * 
-     * @param theString The CFString which is to be searched.  If this
-     *                		parameter is not a valid CFString, the behavior is
-     *              		undefined.
-     * @param theSet The CFCharacterSet against which the membership
-     * 		of characters is checked.  If this parameter is not a valid
-     * 		CFCharacterSet, the behavior is undefined.
+     *
+     * @param theString     The CFString which is to be searched.  If this
+     *                      parameter is not a valid CFString, the behavior is
+     *                      undefined.
+     * @param theSet        The CFCharacterSet against which the membership
+     *                      of characters is checked.  If this parameter is not a valid
+     *                      CFCharacterSet, the behavior is undefined.
      * @param rangeToSearch The range of characters within the string to search. If
-     * 		the range location or end point (defined by the location
-     * 		plus length minus 1) are outside the index space of the
-     * 		string (0 to N-1 inclusive, where N is the length of the
-     * 		string), the behavior is undefined. If the range length is
-     * 		negative, the behavior is undefined. The range may be empty
-     * 		(length 0), in which case no search is performed.
+     *                      the range location or end point (defined by the location
+     *                      plus length minus 1) are outside the index space of the
+     *                      string (0 to N-1 inclusive, where N is the length of the
+     *                      string), the behavior is undefined. If the range length is
+     *                      negative, the behavior is undefined. The range may be empty
+     *                      (length 0), in which case no search is performed.
      * @param searchOptions The bitwise-or'ed option flags to control
-     * 		the search behavior.  The supported options are
-     * 		kCFCompareBackwards andkCFCompareAnchored.
-     * 		If other option flags are specified, the behavior
-     *                        is undefined.
-     * @param result The pointer to a CFRange supplied by the caller in
-     * 		which the search result is stored.  Note that the length
-     * 		of this range can be more than 1, if for instance the 
-     * 		result is a composed character. If a pointer to an invalid
-     * 		memory is specified, the behavior is undefined.
+     *                      the search behavior.  The supported options are
+     *                      kCFCompareBackwards andkCFCompareAnchored.
+     *                      If other option flags are specified, the behavior
+     *                      is undefined.
+     * @param result        The pointer to a CFRange supplied by the caller in
+     *                      which the search result is stored.  Note that the length
+     *                      of this range can be more than 1, if for instance the
+     *                      result is a composed character. If a pointer to an invalid
+     *                      memory is specified, the behavior is undefined.
      * @return true, if at least a character which is a member of the character
-     * 		set is found and result is filled, otherwise, false.
+     * set is found and result is filled, otherwise, false.
      */
     @Generated
     @CFunction
@@ -2475,11 +2475,11 @@ public final class CoreFoundation {
      * Find range of bounds of the line(s) that span the indicated range (startIndex, numChars),
      * taking into account various possible line separator sequences (CR, CRLF, LF, and Unicode NextLine, LineSeparator, ParagraphSeparator).
      * All return values are "optional" (provide NULL if you don't want them)
-     *   lineBeginIndex: index of first character in line
-     *   lineEndIndex: index of first character of the next line (including terminating line separator characters)
-     *   contentsEndIndex: index of the first line separator character
+     * lineBeginIndex: index of first character in line
+     * lineEndIndex: index of first character of the next line (including terminating line separator characters)
+     * contentsEndIndex: index of the first line separator character
      * Thus, lineEndIndex - lineBeginIndex is the number of chars in the line, including the line separators
-     *       contentsEndIndex - lineBeginIndex is the number of chars in the line w/out the line separators
+     * contentsEndIndex - lineBeginIndex is the number of chars in the line w/out the line separators
      */
     @Generated
     @CFunction
@@ -2497,28 +2497,28 @@ public final class CoreFoundation {
     /**
      * [@function] CFStringGetHyphenationLocationBeforeIndex
      * Retrieve the first potential hyphenation location found before the specified location.
-     * 
-     * @param string The CFString which is to be hyphenated.  If this
-     *                		parameter is not a valid CFString, the behavior is
-     *              		undefined.
-     * @param location An index in the string.  If a valid hyphen index is returned, it 
-     *                 will be before this index.
+     *
+     * @param string     The CFString which is to be hyphenated.  If this
+     *                   parameter is not a valid CFString, the behavior is
+     *                   undefined.
+     * @param location   An index in the string.  If a valid hyphen index is returned, it
+     *                   will be before this index.
      * @param limitRange The range of characters within the string to search. If
-     * 		the range location or end point (defined by the location
-     * 		plus length minus 1) are outside the index space of the
-     * 		string (0 to N-1 inclusive, where N is the length of the
-     * 		string), the behavior is undefined. If the range length is
-     * 		negative, the behavior is undefined. The range may be empty
-     * 		(length 0), in which case no hyphen location is generated.
-     * @param options Reserved for future use.
-     * @param locale Specifies which language's hyphenation conventions to use.
-     * 		This must be a valid locale.  Hyphenation data is not available
-     * 		for all locales.  You can use CFStringIsHyphenationAvailableForLocale
-     * 		to test for availability of hyphenation data.
-     * @param character The suggested hyphen character to insert.  Pass NULL if you
-     * 		do not need this information.
+     *                   the range location or end point (defined by the location
+     *                   plus length minus 1) are outside the index space of the
+     *                   string (0 to N-1 inclusive, where N is the length of the
+     *                   string), the behavior is undefined. If the range length is
+     *                   negative, the behavior is undefined. The range may be empty
+     *                   (length 0), in which case no hyphen location is generated.
+     * @param options    Reserved for future use.
+     * @param locale     Specifies which language's hyphenation conventions to use.
+     *                   This must be a valid locale.  Hyphenation data is not available
+     *                   for all locales.  You can use CFStringIsHyphenationAvailableForLocale
+     *                   to test for availability of hyphenation data.
+     * @param character  The suggested hyphen character to insert.  Pass NULL if you
+     *                   do not need this information.
      * @return an index in the string where it is appropriate to insert a hyphen, if
-     * 		one exists; else kCFNotFound
+     * one exists; else kCFNotFound
      */
     @Generated
     @CFunction
@@ -2613,9 +2613,9 @@ public final class CoreFoundation {
      * Replace all occurrences of target in rangeToSearch of theString with replacement.
      * Pays attention to kCFCompareCaseInsensitive, kCFCompareBackwards, kCFCompareNonliteral, and kCFCompareAnchored.
      * kCFCompareBackwards can be used to do the replacement starting from the end, which could give a different result.
-     *   ex. AAAAA, replace AA with B -> BBA or ABB; latter if kCFCompareBackwards
+     * ex. AAAAA, replace AA with B -> BBA or ABB; latter if kCFCompareBackwards
      * kCFCompareAnchored assures only anchored but multiple instances are found (the instances must be consecutive at start or end)
-     *   ex. AAXAA, replace A with B -> BBXBB or BBXAA; latter if kCFCompareAnchored
+     * ex. AAXAA, replace A with B -> BBXBB or BBXAA; latter if kCFCompareAnchored
      * Returns number of replacements performed.
      */
     @Generated
@@ -2629,7 +2629,7 @@ public final class CoreFoundation {
      * It works only with CFStrings created with CFStringCreateMutableWithExternalCharactersNoCopy().
      * This function does not free the previous buffer.
      * The string will be manipulated within the provided buffer (if any) until it outgrows capacity; then the
-     *   externalCharactersAllocator will be consulted for more memory.
+     * externalCharactersAllocator will be consulted for more memory.
      * See comments at the top of this file for more info.
      */
     @Generated
@@ -2640,14 +2640,14 @@ public final class CoreFoundation {
     /**
      * CFStringPad() will pad or cut down a string to the specified size.
      * The pad string is used as the fill string; indexIntoPad specifies which character to start with.
-     *   CFStringPad("abc", " ", 9, 0) ->  "abc      "
-     *   CFStringPad("abc", ". ", 9, 1) -> "abc . . ."
-     *   CFStringPad("abcdef", ?, 3, ?) -> "abc"
-     * 
-     *   CFStringTrim() will trim the specified string from both ends of the string.
-     *   CFStringTrimWhitespace() will do the same with white space characters (tab, newline, etc)
-     *   CFStringTrim("  abc ", " ") -> "abc"
-     *   CFStringTrim("* * * *abc * ", "* ") -> "*abc "
+     * CFStringPad("abc", " ", 9, 0) ->  "abc      "
+     * CFStringPad("abc", ". ", 9, 1) -> "abc . . ."
+     * CFStringPad("abcdef", ?, 3, ?) -> "abc"
+     * <p>
+     * CFStringTrim() will trim the specified string from both ends of the string.
+     * CFStringTrimWhitespace() will do the same with white space characters (tab, newline, etc)
+     * CFStringTrim("  abc ", " ") -> "abc"
+     * CFStringTrim("* * * *abc * ", "* ") -> "*abc "
      */
     @Generated
     @CFunction
@@ -2678,13 +2678,13 @@ public final class CoreFoundation {
      * [@function] CFStringNormalize
      * Normalizes the string into the specified form as described in
      * Unicode Technical Report #15.
-     * 
-     * @param theString  The string which is to be normalized.  If this
-     * 	parameter is not a valid mutable CFString, the behavior is
-     * 	undefined.
-     * @param theForm  The form into which the string is to be normalized.
-     * 	If this parameter is not a valid CFStringNormalizationForm value,
-     * 	the behavior is undefined.
+     *
+     * @param theString The string which is to be normalized.  If this
+     *                  parameter is not a valid mutable CFString, the behavior is
+     *                  undefined.
+     * @param theForm   The form into which the string is to be normalized.
+     *                  If this parameter is not a valid CFStringNormalizationForm value,
+     *                  the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -2693,26 +2693,26 @@ public final class CoreFoundation {
     /**
      * [@function] CFStringFold
      * Folds the string into the form specified by the flags.
-     * 	Character foldings are operations that convert any of a set of characters
-     * 	sharing similar semantics into a single representative from that set.
-     * 	This function can be used to preprocess strings that are to be compared,
-     * 	searched, or indexed.
-     * 	Note that folding does not include normalization, so it is necessary
-     * 	to use CFStringNormalize in addition to CFStringFold in order to obtain
-     * 	the effect of kCFCompareNonliteral.
-     * 
-     * @param theString  The string which is to be folded.  If this parameter is not
-     * 	a valid mutable CFString, the behavior is undefined.
+     * Character foldings are operations that convert any of a set of characters
+     * sharing similar semantics into a single representative from that set.
+     * This function can be used to preprocess strings that are to be compared,
+     * searched, or indexed.
+     * Note that folding does not include normalization, so it is necessary
+     * to use CFStringNormalize in addition to CFStringFold in order to obtain
+     * the effect of kCFCompareNonliteral.
+     *
+     * @param theString The string which is to be folded.  If this parameter is not
+     *                  a valid mutable CFString, the behavior is undefined.
      * @param theFlags  The equivalency flags which describes the character folding form.
-     * 	Only those flags containing the word "insensitive" are recognized here; other flags are ignored.		
-     * 	Folding with kCFCompareCaseInsensitive removes case distinctions in accordance with the mapping
-     * 	specified by ftp://ftp.unicode.org/Public/UNIDATA/CaseFolding.txt.  Folding with
-     * 	kCFCompareDiacriticInsensitive removes distinctions of accents and other diacritics.  Folding
-     * 	with kCFCompareWidthInsensitive removes character width distinctions by mapping characters in
-     * 	the range U+FF00-U+FFEF to their ordinary equivalents.
+     *                  Only those flags containing the word "insensitive" are recognized here; other flags are ignored.
+     *                  Folding with kCFCompareCaseInsensitive removes case distinctions in accordance with the mapping
+     *                  specified by ftp://ftp.unicode.org/Public/UNIDATA/CaseFolding.txt.  Folding with
+     *                  kCFCompareDiacriticInsensitive removes distinctions of accents and other diacritics.  Folding
+     *                  with kCFCompareWidthInsensitive removes character width distinctions by mapping characters in
+     *                  the range U+FF00-U+FFEF to their ordinary equivalents.
      * @param theLocale The locale tailoring the character folding behavior. If NULL,
-     * 	it's considered to be the system locale returned from CFLocaleGetSystem().
-     * 	If non-NULL and not a valid CFLocale object, the behavior is undefined.
+     *                  it's considered to be the system locale returned from CFLocaleGetSystem().
+     *                  If non-NULL and not a valid CFLocale object, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -2720,7 +2720,7 @@ public final class CoreFoundation {
 
     /**
      * Perform string transliteration.  The transformation represented by transform is applied to the given range of string, modifying it in place. Only the specified range will be modified, but the transform may look at portions of the string outside that range for context. NULL range pointer causes the whole string to be transformed. On return, range is modified to reflect the new range corresponding to the original range. reverse indicates that the inverse transform should be used instead, if it exists. If the transform is successful, true is returned; if unsuccessful, false. Reasons for the transform being unsuccessful include an invalid transform identifier, or attempting to reverse an irreversible transform.
-     * 
+     * <p>
      * You can pass one of the predefined transforms below, or any valid ICU transform ID as defined in the ICU User Guide. Note that we do not support arbitrary set of ICU transform rules.
      */
     @Generated
@@ -2858,7 +2858,7 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFErrorGetTypeID
-     *     Returns the type identifier of all CFError instances.
+     * Returns the type identifier of all CFError instances.
      */
     @Generated
     @CFunction
@@ -2867,15 +2867,15 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFErrorCreate
-     * 
+     * <p>
      * Creates a new CFError.
-     * 
-     * @param allocator The CFAllocator which should be used to allocate memory for the error. This parameter may be NULL in which case the 
-     *     current default CFAllocator is used. If this reference is not a valid CFAllocator, the behavior is undefined.
-     * @param domain A CFString identifying the error domain. If this reference is NULL or is otherwise not a valid CFString, the behavior is undefined.
-     * @param code A CFIndex identifying the error code. The code is interpreted within the context of the error domain.
-     * @param userInfo A CFDictionary created with kCFCopyStringDictionaryKeyCallBacks and kCFTypeDictionaryValueCallBacks. It will be copied with CFDictionaryCreateCopy(). 
-     *     If no userInfo dictionary is desired, NULL may be passed in as a convenience, in which case an empty userInfo dictionary will be assigned.
+     *
+     * @param allocator The CFAllocator which should be used to allocate memory for the error. This parameter may be NULL in which case the
+     *                  current default CFAllocator is used. If this reference is not a valid CFAllocator, the behavior is undefined.
+     * @param domain    A CFString identifying the error domain. If this reference is NULL or is otherwise not a valid CFString, the behavior is undefined.
+     * @param code      A CFIndex identifying the error code. The code is interpreted within the context of the error domain.
+     * @param userInfo  A CFDictionary created with kCFCopyStringDictionaryKeyCallBacks and kCFTypeDictionaryValueCallBacks. It will be copied with CFDictionaryCreateCopy().
+     *                  If no userInfo dictionary is desired, NULL may be passed in as a convenience, in which case an empty userInfo dictionary will be assigned.
      * @return A reference to the new CFError.
      */
     @Generated
@@ -2885,15 +2885,15 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFErrorCreateWithUserInfoKeysAndValues
-     * 
+     * <p>
      * Creates a new CFError without having to create an intermediate userInfo dictionary.
-     * 
-     * @param allocator The CFAllocator which should be used to allocate memory for the error. This parameter may be NULL in which case the 
-     *     current default CFAllocator is used. If this reference is not a valid CFAllocator, the behavior is undefined.
-     * @param domain A CFString identifying the error domain. If this reference is NULL or is otherwise not a valid CFString, the behavior is undefined.
-     * @param code A CFIndex identifying the error code. The code is interpreted within the context of the error domain.
-     * @param userInfoKeys An array of numUserInfoValues CFStrings used as keys in creating the userInfo dictionary. NULL is valid only if numUserInfoValues is 0.
-     * @param userInfoValues An array of numUserInfoValues CF types used as values in creating the userInfo dictionary.  NULL is valid only if numUserInfoValues is 0.
+     *
+     * @param allocator         The CFAllocator which should be used to allocate memory for the error. This parameter may be NULL in which case the
+     *                          current default CFAllocator is used. If this reference is not a valid CFAllocator, the behavior is undefined.
+     * @param domain            A CFString identifying the error domain. If this reference is NULL or is otherwise not a valid CFString, the behavior is undefined.
+     * @param code              A CFIndex identifying the error code. The code is interpreted within the context of the error domain.
+     * @param userInfoKeys      An array of numUserInfoValues CFStrings used as keys in creating the userInfo dictionary. NULL is valid only if numUserInfoValues is 0.
+     * @param userInfoValues    An array of numUserInfoValues CF types used as values in creating the userInfo dictionary.  NULL is valid only if numUserInfoValues is 0.
      * @param numUserInfoValues CFIndex representing the number of keys and values in the userInfoKeys and userInfoValues arrays.
      * @return A reference to the new CFError. numUserInfoValues CF types are gathered from each of userInfoKeys and userInfoValues to create the userInfo dictionary.
      */
@@ -2905,9 +2905,9 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFErrorGetDomain
-     * 
+     * <p>
      * Returns the error domain the CFError was created with.
-     * 
+     *
      * @param err The CFError whose error domain is to be returned. If this reference is not a valid CFError, the behavior is undefined.
      * @return The error domain of the CFError. Since this is a "Get" function, the caller shouldn't CFRelease the return value.
      */
@@ -2917,9 +2917,9 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFErrorGetCode
-     * 
+     * <p>
      * Returns the error code the CFError was created with.
-     * 
+     *
      * @param err The CFError whose error code is to be returned. If this reference is not a valid CFError, the behavior is undefined.
      * @return The error code of the CFError (not an error return for the current call).
      */
@@ -2930,11 +2930,11 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFErrorCopyUserInfo
-     * 
+     * <p>
      * Returns CFError userInfo dictionary.
-     * 
+     * <p>
      * Returns a dictionary containing the same keys and values as in the userInfo dictionary the CFError was created with. Returns an empty dictionary if NULL was supplied to CFErrorCreate().
-     * 
+     *
      * @param err The CFError whose error user info is to be returned. If this reference is not a valid CFError, the behavior is undefined.
      * @return The user info of the CFError.
      */
@@ -2944,16 +2944,16 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFErrorCopyDescription
-     * 
+     * <p>
      * Returns a human-presentable description for the error. CFError creators should strive to make sure the return value is human-presentable and localized by providing a value for kCFErrorLocalizedDescriptionKey at the time of CFError creation.
-     * 
+     * <p>
      * This is a complete sentence or two which says what failed and why it failed. Please refer to header comments for -[NSError localizedDescription] for details on the steps used to compute this; but roughly:
-     *            - Use value of kCFErrorLocalizedDescriptionKey as-is if provided.
-     *            - Use value of kCFErrorLocalizedFailureKey if provided, optionally followed by kCFErrorLocalizedFailureReasonKey if available.
-     *            - Use value of kCFErrorLocalizedFailureReasonKey, combining with a generic failure message such as: "Operation code not be completed. " + kCFErrorLocalizedFailureReasonKey.
-     *            - If all of the above fail, generate a semi-user presentable string from kCFErrorDescriptionKey, the domain, and code. Something like: "Operation could not be completed. Error domain/code occurred. " or "Operation could not be completed. " + kCFErrorDescriptionKey + " (Error domain/code)"
-     *            Toll-free bridged NSError instances might provide additional behaviors for manufacturing a description string.  Do not count on the exact contents or format of the returned string, it might change.
-     * 
+     * - Use value of kCFErrorLocalizedDescriptionKey as-is if provided.
+     * - Use value of kCFErrorLocalizedFailureKey if provided, optionally followed by kCFErrorLocalizedFailureReasonKey if available.
+     * - Use value of kCFErrorLocalizedFailureReasonKey, combining with a generic failure message such as: "Operation code not be completed. " + kCFErrorLocalizedFailureReasonKey.
+     * - If all of the above fail, generate a semi-user presentable string from kCFErrorDescriptionKey, the domain, and code. Something like: "Operation could not be completed. Error domain/code occurred. " or "Operation could not be completed. " + kCFErrorDescriptionKey + " (Error domain/code)"
+     * Toll-free bridged NSError instances might provide additional behaviors for manufacturing a description string.  Do not count on the exact contents or format of the returned string, it might change.
+     *
      * @param err The CFError whose description is to be returned. If this reference is not a valid CFError, the behavior is undefined.
      * @return A CFString with human-presentable description of the CFError. Never NULL.
      */
@@ -2963,15 +2963,15 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFErrorCopyFailureReason
-     * 
+     * <p>
      * Returns a human-presentable failure reason for the error.  May return NULL.  CFError creators should strive to make sure the return value is human-presentable and localized by providing a value for kCFErrorLocalizedFailureReasonKey at the time of CFError creation.
-     * 
+     * <p>
      * This is a complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the description (but as a complete sentence, which makes localization easier). By default this looks for kCFErrorLocalizedFailureReasonKey in the user info. Toll-free bridged NSError instances might provide additional behaviors for manufacturing this value. If no user-presentable string is available, returns NULL.
-     *            Example Description: "Could not save file 'Letter' in folder 'Documents' because the volume 'MyDisk' doesn't have enough space."
-     *            Corresponding FailureReason: "The volume 'MyDisk' doesn't have enough space."
-     * 
+     * Example Description: "Could not save file 'Letter' in folder 'Documents' because the volume 'MyDisk' doesn't have enough space."
+     * Corresponding FailureReason: "The volume 'MyDisk' doesn't have enough space."
+     *
      * @param err The CFError whose failure reason is to be returned. If this reference is not a valid CFError, the behavior is undefined.
-     * @return A CFString with the localized, end-user presentable failure reason of the CFError, or NULL. 
+     * @return A CFString with the localized, end-user presentable failure reason of the CFError, or NULL.
      */
     @Generated
     @CFunction
@@ -2979,15 +2979,15 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFErrorCopyRecoverySuggestion
-     * 
+     * <p>
      * Returns a human presentable recovery suggestion for the error.  May return NULL.  CFError creators should strive to make sure the return value is human-presentable and localized by providing a value for kCFErrorLocalizedRecoverySuggestionKey at the time of CFError creation.
-     * 
+     * <p>
      * This is the string that can be displayed as the "informative" (aka "secondary") message on an alert panel. By default this looks for kCFErrorLocalizedRecoverySuggestionKey in the user info. Toll-free bridged NSError instances might provide additional behaviors for manufacturing this value. If no user-presentable string is available, returns NULL.
-     *            Example Description: "Could not save file 'Letter' in folder 'Documents' because the volume 'MyDisk' doesn't have enough space."
-     *            Corresponding RecoverySuggestion: "Remove some files from the volume and try again."
-     * 
+     * Example Description: "Could not save file 'Letter' in folder 'Documents' because the volume 'MyDisk' doesn't have enough space."
+     * Corresponding RecoverySuggestion: "Remove some files from the volume and try again."
+     *
      * @param err The CFError whose recovery suggestion is to be returned. If this reference is not a valid CFError, the behavior is undefined.
-     * @return A CFString with the localized, end-user presentable recovery suggestion of the CFError, or NULL. 
+     * @return A CFString with the localized, end-user presentable recovery suggestion of the CFError, or NULL.
      */
     @Generated
     @CFunction
@@ -3301,7 +3301,7 @@ public final class CoreFoundation {
      * Gets the  range of the requested component in the bytes of url, as
      * returned by CFURLGetBytes().  This range is only good for use in the
      * bytes returned by CFURLGetBytes!
-     * 
+     * <p>
      * If non-NULL, rangeIncludingSeparators gives the range of component
      * including the sequences that separate component from the previous and
      * next components.  If there is no previous or next component, that end of
@@ -3309,13 +3309,13 @@ public final class CoreFoundation {
      * If url does not contain the given component type, (kCFNotFound, 0) is
      * returned, and rangeIncludingSeparators is set to the location where the
      * component would be inserted.  Some examples -
-     * 
+     * <p>
      * For the URL http://www.apple.com/hotnews/
-     * 
+     * <p>
      * Component           returned range      rangeIncludingSeparators
      * scheme              (0, 4)              (0, 7)
      * net location        (7, 13)             (4, 16)
-     * path                (20, 9)             (20, 9)    
+     * path                (20, 9)             (20, 9)
      * resource specifier  (kCFNotFound, 0)    (29, 0)
      * user                (kCFNotFound, 0)    (7, 0)
      * password            (kCFNotFound, 0)    (7, 0)
@@ -3325,10 +3325,10 @@ public final class CoreFoundation {
      * parameter           (kCFNotFound, 0)    (29, 0)
      * query               (kCFNotFound, 0)    (29, 0)
      * fragment            (kCFNotFound, 0)    (29, 0)
-     * 
-     * 
+     * <p>
+     * <p>
      * For the URL ./relPath/file.html#fragment
-     * 
+     * <p>
      * Component           returned range      rangeIncludingSeparators
      * scheme              (kCFNotFound, 0)    (0, 0)
      * net location        (kCFNotFound, 0)    (0, 0)
@@ -3342,14 +3342,14 @@ public final class CoreFoundation {
      * parameter           (kCFNotFound, 0)    (19, 0)
      * query               (kCFNotFound, 0)    (19, 0)
      * fragment            (20, 8)             (19, 9)
-     * 
-     * 
+     * <p>
+     * <p>
      * For the URL scheme://user:pass@host:1/path/path2/file.html;params?query#fragment
-     * 
+     * <p>
      * Component           returned range      rangeIncludingSeparators
      * scheme              (0, 6)              (0, 9)
      * net location        (9, 16)             (6, 19)
-     * path                (25, 21)            (25, 22) 
+     * path                (25, 21)            (25, 22)
      * resource specifier  (47, 21)            (46, 22)
      * user                (9, 4)              (6, 8)
      * password            (14, 4)             (13, 6)
@@ -3412,12 +3412,12 @@ public final class CoreFoundation {
 
     /**
      * CFURLIsFileReferenceURL
-     * 
+     * <p>
      * Returns whether the URL is a file reference URL.
-     * 
+     * <p>
      * Parameters
-     *     url
-     *         The URL specifying the resource.
+     * url
+     * The URL specifying the resource.
      */
     @Generated
     @CFunction
@@ -3425,23 +3425,23 @@ public final class CoreFoundation {
 
     /**
      * CFURLCreateFileReferenceURL
-     * 
+     * <p>
      * Returns a new file reference URL that refers to the same resource as a specified URL.
-     * 
+     * <p>
      * Parameters
-     *     allocator
-     *         The memory allocator for creating the new URL.
-     *     url
-     *         The file URL specifying the resource.
-     *     error
-     *         On output when the result is NULL, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
-     * 
+     * allocator
+     * The memory allocator for creating the new URL.
+     * url
+     * The file URL specifying the resource.
+     * error
+     * On output when the result is NULL, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * <p>
      * Return Value
-     *     The new file reference URL, or NULL if an error occurs.
-     * 
+     * The new file reference URL, or NULL if an error occurs.
+     * <p>
      * Discussion
-     *     File reference URLs use a URL path syntax that identifies a file system object by reference, not by path. This form of file URL remains valid when the file system path of the URL’s underlying resource changes. An error will occur if the url parameter is not a file URL. File reference URLs cannot be created to file system objects which do not exist or are not reachable. In some areas of the file system hierarchy, file reference URLs cannot be generated to the leaf node of the URL path. A file reference URL's path should never be persistently stored because is not valid across system restarts, and across remounts of volumes -- if you want to create a persistent reference to a file system object, use a bookmark (see CFURLCreateBookmarkData). If this function returns NULL, the optional error is populated. This function is currently applicable only to URLs for file system resources.
-     *     Symbol is present in iOS 4, but performs no operation.
+     * File reference URLs use a URL path syntax that identifies a file system object by reference, not by path. This form of file URL remains valid when the file system path of the URL’s underlying resource changes. An error will occur if the url parameter is not a file URL. File reference URLs cannot be created to file system objects which do not exist or are not reachable. In some areas of the file system hierarchy, file reference URLs cannot be generated to the leaf node of the URL path. A file reference URL's path should never be persistently stored because is not valid across system restarts, and across remounts of volumes -- if you want to create a persistent reference to a file system object, use a bookmark (see CFURLCreateBookmarkData). If this function returns NULL, the optional error is populated. This function is currently applicable only to URLs for file system resources.
+     * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
     @CFunction
@@ -3450,23 +3450,23 @@ public final class CoreFoundation {
 
     /**
      * CFURLCreateFilePathURL
-     * 
+     * <p>
      * Returns a new file path URL that refers to the same resource as a specified URL.
-     * 
+     * <p>
      * Parameters
-     *     allocator
-     *         The memory allocator for creating the new URL.
-     *     url
-     *         The file URL specifying the resource.
-     *     error
-     *         On output when the result is NULL, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
-     * 
+     * allocator
+     * The memory allocator for creating the new URL.
+     * url
+     * The file URL specifying the resource.
+     * error
+     * On output when the result is NULL, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * <p>
      * Return Value
-     *     The new file path URL, or NULL if an error occurs.
-     * 
+     * The new file path URL, or NULL if an error occurs.
+     * <p>
      * Discussion
-     *     File path URLs use a file system style path. An error will occur if the url parameter is not a file URL. A file reference URL's resource must exist and be reachable to be converted to a file path URL. If this function returns NULL, the optional error is populated. This function is currently applicable only to URLs for file system resources.
-     *     Symbol is present in iOS 4, but performs no operation.
+     * File path URLs use a file system style path. An error will occur if the url parameter is not a file URL. A file reference URL's resource must exist and be reachable to be converted to a file path URL. If this function returns NULL, the optional error is populated. This function is currently applicable only to URLs for file system resources.
+     * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
     @CFunction
@@ -3487,25 +3487,25 @@ public final class CoreFoundation {
 
     /**
      * CFURLCopyResourcePropertyForKey
-     * 
+     * <p>
      * Returns the resource value identified by a given resource key.
-     * 
+     * <p>
      * Parameters
-     *     url
-     *         The URL specifying the resource.
-     *     key
-     *         The resource key that identifies the resource property.
-     *     propertyValueTypeRefPtr
-     *         On output when the result is true, the resource value or NULL.
-     *     error
-     *         On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
-     * 
+     * url
+     * The URL specifying the resource.
+     * key
+     * The resource key that identifies the resource property.
+     * propertyValueTypeRefPtr
+     * On output when the result is true, the resource value or NULL.
+     * error
+     * On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * <p>
      * Return Value
-     *     true if propertyValueTypeRefPtr is successfully populated; false if an error occurs.
-     * 
+     * true if propertyValueTypeRefPtr is successfully populated; false if an error occurs.
+     * <p>
      * Discussion
-     *     CFURLCopyResourcePropertyForKey first checks if the URL object already caches the resource value. If so, it returns the cached resource value to the caller. If not, then CFURLCopyResourcePropertyForKey synchronously obtains the resource value from the backing store, adds the resource value to the URL object's cache, and returns the resource value to the caller. The type of the resource value varies by resource property (see resource key definitions). If this function returns true and propertyValueTypeRefPtr is populated with NULL, it means the resource property is not available for the specified resource and no errors occurred when determining the resource property was not available. If this function returns false, the optional error is populated. This function is currently applicable only to URLs for file system resources.
-     *     Symbol is present in iOS 4, but performs no operation.
+     * CFURLCopyResourcePropertyForKey first checks if the URL object already caches the resource value. If so, it returns the cached resource value to the caller. If not, then CFURLCopyResourcePropertyForKey synchronously obtains the resource value from the backing store, adds the resource value to the URL object's cache, and returns the resource value to the caller. The type of the resource value varies by resource property (see resource key definitions). If this function returns true and propertyValueTypeRefPtr is populated with NULL, it means the resource property is not available for the specified resource and no errors occurred when determining the resource property was not available. If this function returns false, the optional error is populated. This function is currently applicable only to URLs for file system resources.
+     * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
     @CFunction
@@ -3514,23 +3514,23 @@ public final class CoreFoundation {
 
     /**
      * CFURLCopyResourcePropertiesForKeys
-     * 
+     * <p>
      * Returns the resource values identified by specified array of resource keys.
-     * 
+     * <p>
      * Parameters
-     *     url
-     *         The URL specifying the resource.
-     *     keys
-     *         An array of resource keys that identify the resource properties.
-     *     error
-     *         On output when the result is NULL, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
-     * 
+     * url
+     * The URL specifying the resource.
+     * keys
+     * An array of resource keys that identify the resource properties.
+     * error
+     * On output when the result is NULL, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * <p>
      * Return Value
-     *     A dictionary of resource values indexed by resource key; NULL if an error occurs.
-     * 
+     * A dictionary of resource values indexed by resource key; NULL if an error occurs.
+     * <p>
      * Discussion
-     *     CFURLCopyResourcePropertiesForKeys first checks if the URL object already caches the resource values. If so, it returns the cached resource values to the caller. If not, then CFURLCopyResourcePropertyForKey synchronously obtains the resource values from the backing store, adds the resource values to the URL object's cache, and returns the resource values to the caller. The type of the resource values vary by property (see resource key definitions). If the result dictionary does not contain a resource value for one or more of the requested resource keys, it means those resource properties are not available for the specified resource and no errors occurred when determining those resource properties were not available. If this function returns NULL, the optional error is populated. This function is currently applicable only to URLs for file system resources.
-     *     Symbol is present in iOS 4, but performs no operation.
+     * CFURLCopyResourcePropertiesForKeys first checks if the URL object already caches the resource values. If so, it returns the cached resource values to the caller. If not, then CFURLCopyResourcePropertyForKey synchronously obtains the resource values from the backing store, adds the resource values to the URL object's cache, and returns the resource values to the caller. The type of the resource values vary by property (see resource key definitions). If the result dictionary does not contain a resource value for one or more of the requested resource keys, it means those resource properties are not available for the specified resource and no errors occurred when determining those resource properties were not available. If this function returns NULL, the optional error is populated. This function is currently applicable only to URLs for file system resources.
+     * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
     @CFunction
@@ -3539,25 +3539,25 @@ public final class CoreFoundation {
 
     /**
      * CFURLSetResourcePropertyForKey
-     * 
+     * <p>
      * Sets the resource value identified by a given resource key.
-     * 
+     * <p>
      * Parameters
-     *     url
-     *         The URL specifying the resource.
-     *     key
-     *         The resource key that identifies the resource property.
-     *     propertyValue
-     *         The resource value.
-     *     error
-     *         On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
-     * 
+     * url
+     * The URL specifying the resource.
+     * key
+     * The resource key that identifies the resource property.
+     * propertyValue
+     * The resource value.
+     * error
+     * On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * <p>
      * Return Value
-     *     true if the attempt to set the resource value completed with no errors; otherwise, false.
-     * 
+     * true if the attempt to set the resource value completed with no errors; otherwise, false.
+     * <p>
      * Discussion
-     *     CFURLSetResourcePropertyForKey writes the new resource value out to the backing store. Attempts to set a read-only resource property or to set a resource property not supported by the resource are ignored and are not considered errors. If this function returns false, the optional error is populated. This function is currently applicable only to URLs for file system resources.
-     *     Symbol is present in iOS 4, but performs no operation.
+     * CFURLSetResourcePropertyForKey writes the new resource value out to the backing store. Attempts to set a read-only resource property or to set a resource property not supported by the resource are ignored and are not considered errors. If this function returns false, the optional error is populated. This function is currently applicable only to URLs for file system resources.
+     * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
     @CFunction
@@ -3566,23 +3566,23 @@ public final class CoreFoundation {
 
     /**
      * CFURLSetResourcePropertiesForKeys
-     * 
+     * <p>
      * Sets any number of resource values of a URL's resource.
-     * 
+     * <p>
      * Parameters
-     *     url
-     *         The URL specifying the resource.
-     *     keyedPropertyValues
-     *         A dictionary of resource values indexed by resource keys.
-     *     error
-     *         On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
-     * 
+     * url
+     * The URL specifying the resource.
+     * keyedPropertyValues
+     * A dictionary of resource values indexed by resource keys.
+     * error
+     * On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * <p>
      * Return Value
-     *     true if the attempt to set the resource values completed with no errors; otherwise, false.
-     * 
+     * true if the attempt to set the resource values completed with no errors; otherwise, false.
+     * <p>
      * Discussion
-     *     CFURLSetResourcePropertiesForKeys writes the new resource values out to the backing store. Attempts to set read-only resource properties or to set resource properties not supported by the resource are ignored and are not considered errors. If an error occurs after some resource properties have been successfully changed, the userInfo dictionary in the returned error contains an array of resource keys that were not set with the key kCFURLKeysOfUnsetValuesKey. The order in which the resource values are set is not defined. If you need to guarantee the order resource values are set, you should make multiple requests to CFURLSetResourcePropertiesForKeys or CFURLSetResourcePropertyForKey to guarantee the order. If this function returns false, the optional error is populated. This function is currently applicable only to URLs for file system resources.
-     *     Symbol is present in iOS 4, but performs no operation.
+     * CFURLSetResourcePropertiesForKeys writes the new resource values out to the backing store. Attempts to set read-only resource properties or to set resource properties not supported by the resource are ignored and are not considered errors. If an error occurs after some resource properties have been successfully changed, the userInfo dictionary in the returned error contains an array of resource keys that were not set with the key kCFURLKeysOfUnsetValuesKey. The order in which the resource values are set is not defined. If you need to guarantee the order resource values are set, you should make multiple requests to CFURLSetResourcePropertiesForKeys or CFURLSetResourcePropertyForKey to guarantee the order. If this function returns false, the optional error is populated. This function is currently applicable only to URLs for file system resources.
+     * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
     @CFunction
@@ -3591,18 +3591,18 @@ public final class CoreFoundation {
 
     /**
      * CFURLClearResourcePropertyCacheForKey
-     * 
+     * <p>
      * Discards a cached resource value of a URL.
-     * 
+     * <p>
      * Parameters
-     *     url
-     *         The URL specifying the resource.
-     *     key
-     *         The resource key that identifies the resource property.
-     * 
+     * url
+     * The URL specifying the resource.
+     * key
+     * The resource key that identifies the resource property.
+     * <p>
      * Discussion
-     *     Discarding a cached resource value may discard other cached resource values, because some resource values are cached as a set of values and because some resource values depend on other resource values (temporary properties have no dependencies). This function is currently applicable only to URLs for file system resources.
-     *     Symbol is present in iOS 4, but performs no operation.
+     * Discarding a cached resource value may discard other cached resource values, because some resource values are cached as a set of values and because some resource values depend on other resource values (temporary properties have no dependencies). This function is currently applicable only to URLs for file system resources.
+     * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
     @CFunction
@@ -3610,16 +3610,16 @@ public final class CoreFoundation {
 
     /**
      * CFURLClearResourcePropertyCache
-     * 
+     * <p>
      * Discards all cached resource values of a URL.
-     * 
+     * <p>
      * Parameters
-     *     url
-     *         The URL specifying the resource.
-     * 
+     * url
+     * The URL specifying the resource.
+     * <p>
      * Discussion
-     *     All temporary properties are also cleared from the URL object's cache. This function is currently applicable only to URLs for file system resources.
-     *     Symbol is present in iOS 4, but performs no operation.
+     * All temporary properties are also cleared from the URL object's cache. This function is currently applicable only to URLs for file system resources.
+     * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
     @CFunction
@@ -3627,20 +3627,20 @@ public final class CoreFoundation {
 
     /**
      * CFURLSetTemporaryResourcePropertyForKey
-     * 
+     * <p>
      * Sets a temporary resource value on the URL object.
-     * 
+     * <p>
      * Parameters
-     *     url
-     *         The URL object.
-     *     key
-     *         The resource key that identifies the temporary resource property.
-     *     propertyValue
-     *         The resource value.
-     * 
+     * url
+     * The URL object.
+     * key
+     * The resource key that identifies the temporary resource property.
+     * propertyValue
+     * The resource value.
+     * <p>
      * Discussion
-     *     Temporary properties are for client use. Temporary properties exist only in memory and are never written to the resource's backing store. Once set, a temporary value can be copied from the URL object with CFURLCopyResourcePropertyForKey and CFURLCopyResourcePropertiesForKeys. To remove a temporary value from the URL object, use CFURLClearResourcePropertyCacheForKey. Temporary values must be valid Core Foundation types, and will be retained by CFURLSetTemporaryResourcePropertyForKey. Care should be taken to ensure the key that identifies a temporary resource property is unique and does not conflict with system defined keys (using reverse domain name notation in your temporary resource property keys is recommended). This function is currently applicable only to URLs for file system resources.
-     *     Symbol is present in iOS 4, but performs no operation.
+     * Temporary properties are for client use. Temporary properties exist only in memory and are never written to the resource's backing store. Once set, a temporary value can be copied from the URL object with CFURLCopyResourcePropertyForKey and CFURLCopyResourcePropertiesForKeys. To remove a temporary value from the URL object, use CFURLClearResourcePropertyCacheForKey. Temporary values must be valid Core Foundation types, and will be retained by CFURLSetTemporaryResourcePropertyForKey. Care should be taken to ensure the key that identifies a temporary resource property is unique and does not conflict with system defined keys (using reverse domain name notation in your temporary resource property keys is recommended). This function is currently applicable only to URLs for file system resources.
+     * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
     @CFunction
@@ -3649,21 +3649,21 @@ public final class CoreFoundation {
 
     /**
      * CFURLResourceIsReachable
-     * 
+     * <p>
      * Returns whether the URL's resource exists and is reachable.
-     * 
+     * <p>
      * Parameters
-     *     url
-     *         The URL object.
-     *     error
-     *         On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
-     * 
+     * url
+     * The URL object.
+     * error
+     * On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * <p>
      * Return Value
-     *     true if the resource is reachable; otherwise, false.
-     * 
+     * true if the resource is reachable; otherwise, false.
+     * <p>
      * Discussion
-     *     CFURLResourceIsReachable synchronously checks if the resource's backing store is reachable. Checking reachability is appropriate when making decisions that do not require other immediate operations on the resource, e.g. periodic maintenance of UI state that depends on the existence of a specific document. When performing operations such as opening a file or copying resource properties, it is more efficient to simply try the operation and handle failures. This function is currently applicable only to URLs for file system resources. If this function returns false, the optional error is populated. For other URL types, false is returned. 
-     *     Symbol is present in iOS 4, but performs no operation.
+     * CFURLResourceIsReachable synchronously checks if the resource's backing store is reachable. Checking reachability is appropriate when making decisions that do not require other immediate operations on the resource, e.g. periodic maintenance of UI state that depends on the existence of a specific document. When performing operations such as opening a file or copying resource properties, it is more efficient to simply try the operation and handle failures. This function is currently applicable only to URLs for file system resources. If this function returns false, the optional error is populated. For other URL types, false is returned.
+     * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
     @CFunction
@@ -3893,44 +3893,44 @@ public final class CoreFoundation {
     /**
      * [@function] CFBinaryHeapCreate
      * Creates a new mutable binary heap with the given values.
-     * 
-     * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the binary heap and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     *        @param capacity A hint about the number of values that will be held
-     *                by the CFBinaryHeap. Pass 0 for no hint. The implementation may
-     *                ignore this hint, or may use it to optimize various
-     *                operations. A heap's actual capacity is only limited by 
-     *                address space and available memory constraints). If this 
-     *                parameter is negative, the behavior is undefined.
-     * @param callBacks A pointer to a CFBinaryHeapCallBacks structure
-     * 	initialized with the callbacks for the binary heap to use on
-     * 	each value in the binary heap. A copy of the contents of the
-     * 	callbacks structure is made, so that a pointer to a structure
-     * 	on the stack can be passed in, or can be reused for multiple
-     * 	binary heap creations. If the version field of this callbacks
-     * 	structure is not one of the defined ones for CFBinaryHeap, the
-     * 	behavior is undefined. The retain field may be NULL, in which
-     * 	case the CFBinaryHeap will do nothing to add a retain to values
-     * 	as they are put into the binary heap. The release field may be
-     * 	NULL, in which case the CFBinaryHeap will do nothing to remove
-     * 	the binary heap's retain (if any) on the values when the
-     * 	heap is destroyed or a key-value pair is removed. If the
-     * 	copyDescription field is NULL, the binary heap will create a
-     * 	simple description for a value. If the equal field is NULL, the
-     * 	binary heap will use pointer equality to test for equality of
-     * 	values. This callbacks parameter itself may be NULL, which is
-     * 	treated as if a valid structure of version 0 with all fields
-     * 	NULL had been passed in. Otherwise,
-     * 	if any of the fields are not valid pointers to functions
-     * 	of the correct type, or this parameter is not a valid
-     * 	pointer to a CFBinaryHeapCallBacks callbacks structure,
-     * 	the behavior is undefined. If any of the values put into the
-     * 	binary heap is not one understood by one of the callback functions
-     * 	the behavior when that callback function is used is undefined.
-     *        @param compareContext A pointer to a CFBinaryHeapCompareContext structure.
+     *
+     * @param allocator      The CFAllocator which should be used to allocate
+     *                       memory for the binary heap and its storage for values. This
+     *                       parameter may be NULL in which case the current default
+     *                       CFAllocator is used. If this reference is not a valid
+     *                       CFAllocator, the behavior is undefined.
+     * @param capacity       A hint about the number of values that will be held
+     *                       by the CFBinaryHeap. Pass 0 for no hint. The implementation may
+     *                       ignore this hint, or may use it to optimize various
+     *                       operations. A heap's actual capacity is only limited by
+     *                       address space and available memory constraints). If this
+     *                       parameter is negative, the behavior is undefined.
+     * @param callBacks      A pointer to a CFBinaryHeapCallBacks structure
+     *                       initialized with the callbacks for the binary heap to use on
+     *                       each value in the binary heap. A copy of the contents of the
+     *                       callbacks structure is made, so that a pointer to a structure
+     *                       on the stack can be passed in, or can be reused for multiple
+     *                       binary heap creations. If the version field of this callbacks
+     *                       structure is not one of the defined ones for CFBinaryHeap, the
+     *                       behavior is undefined. The retain field may be NULL, in which
+     *                       case the CFBinaryHeap will do nothing to add a retain to values
+     *                       as they are put into the binary heap. The release field may be
+     *                       NULL, in which case the CFBinaryHeap will do nothing to remove
+     *                       the binary heap's retain (if any) on the values when the
+     *                       heap is destroyed or a key-value pair is removed. If the
+     *                       copyDescription field is NULL, the binary heap will create a
+     *                       simple description for a value. If the equal field is NULL, the
+     *                       binary heap will use pointer equality to test for equality of
+     *                       values. This callbacks parameter itself may be NULL, which is
+     *                       treated as if a valid structure of version 0 with all fields
+     *                       NULL had been passed in. Otherwise,
+     *                       if any of the fields are not valid pointers to functions
+     *                       of the correct type, or this parameter is not a valid
+     *                       pointer to a CFBinaryHeapCallBacks callbacks structure,
+     *                       the behavior is undefined. If any of the values put into the
+     *                       binary heap is not one understood by one of the callback functions
+     *                       the behavior when that callback function is used is undefined.
+     * @param compareContext A pointer to a CFBinaryHeapCompareContext structure.
      * @return A reference to the new CFBinaryHeap.
      */
     @Generated
@@ -3942,29 +3942,29 @@ public final class CoreFoundation {
     /**
      * [@function] CFBinaryHeapCreateCopy
      * Creates a new mutable binary heap with the values from the given binary heap.
-     * 
+     *
      * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the binary heap and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     *        @param capacity A hint about the number of values that will be held
-     *                by the CFBinaryHeap. Pass 0 for no hint. The implementation may
-     *                ignore this hint, or may use it to optimize various
-     *                operations. A heap's actual capacity is only limited by
-     *                address space and available memory constraints). 
-     *                This parameter must be greater than or equal
-     *                to the count of the heap which is to be copied, or the
-     *                behavior is undefined. If this parameter is negative, the
-     *                behavior is undefined.
-     * @param heap The binary heap which is to be copied. The values from the
-     * 	binary heap are copied as pointers into the new binary heap (that is,
-     * 	the values themselves are copied, not that which the values
-     * 	point to, if anything). However, the values are also
-     * 	retained by the new binary heap. The count of the new binary will
-     * 	be the same as the given binary heap. The new binary heap uses the same
-     * 	callbacks as the binary heap to be copied. If this parameter is
-     * 	not a valid CFBinaryHeap, the behavior is undefined.
+     *                  memory for the binary heap and its storage for values. This
+     *                  parameter may be NULL in which case the current default
+     *                  CFAllocator is used. If this reference is not a valid
+     *                  CFAllocator, the behavior is undefined.
+     * @param capacity  A hint about the number of values that will be held
+     *                  by the CFBinaryHeap. Pass 0 for no hint. The implementation may
+     *                  ignore this hint, or may use it to optimize various
+     *                  operations. A heap's actual capacity is only limited by
+     *                  address space and available memory constraints).
+     *                  This parameter must be greater than or equal
+     *                  to the count of the heap which is to be copied, or the
+     *                  behavior is undefined. If this parameter is negative, the
+     *                  behavior is undefined.
+     * @param heap      The binary heap which is to be copied. The values from the
+     *                  binary heap are copied as pointers into the new binary heap (that is,
+     *                  the values themselves are copied, not that which the values
+     *                  point to, if anything). However, the values are also
+     *                  retained by the new binary heap. The count of the new binary will
+     *                  be the same as the given binary heap. The new binary heap uses the same
+     *                  callbacks as the binary heap to be copied. If this parameter is
+     *                  not a valid CFBinaryHeap, the behavior is undefined.
      * @return A reference to the new mutable binary heap.
      */
     @Generated
@@ -3975,9 +3975,9 @@ public final class CoreFoundation {
     /**
      * [@function] CFBinaryHeapGetCount
      * Returns the number of values currently in the binary heap.
-     * 
+     *
      * @param heap The binary heap to be queried. If this parameter is not a valid
-     * 	CFBinaryHeap, the behavior is undefined.
+     *             CFBinaryHeap, the behavior is undefined.
      * @return The number of values in the binary heap.
      */
     @Generated
@@ -3988,15 +3988,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFBinaryHeapGetCountOfValue
      * Counts the number of times the given value occurs in the binary heap.
-     * 
-     * @param heap The binary heap to be searched. If this parameter is not a
-     * 	valid CFBinaryHeap, the behavior is undefined.
+     *
+     * @param heap  The binary heap to be searched. If this parameter is not a
+     *              valid CFBinaryHeap, the behavior is undefined.
      * @param value The value for which to find matches in the binary heap. The
-     * 	compare() callback provided when the binary heap was created is
-     * 	used to compare. If the compare() callback was NULL, pointer
-     * 	equality (in C, ==) is used. If value, or any of the values
-     * 	in the binary heap, are not understood by the compare() callback,
-     * 	the behavior is undefined.
+     *              compare() callback provided when the binary heap was created is
+     *              used to compare. If the compare() callback was NULL, pointer
+     *              equality (in C, ==) is used. If value, or any of the values
+     *              in the binary heap, are not understood by the compare() callback,
+     *              the behavior is undefined.
      * @return The number of times the given value occurs in the binary heap.
      */
     @Generated
@@ -4007,15 +4007,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFBinaryHeapContainsValue
      * Reports whether or not the value is in the binary heap.
-     * 
-     * @param heap The binary heap to be searched. If this parameter is not a
-     * 	valid CFBinaryHeap, the behavior is undefined.
+     *
+     * @param heap  The binary heap to be searched. If this parameter is not a
+     *              valid CFBinaryHeap, the behavior is undefined.
      * @param value The value for which to find matches in the binary heap. The
-     * 	compare() callback provided when the binary heap was created is
-     * 	used to compare. If the compare() callback was NULL, pointer
-     * 	equality (in C, ==) is used. If value, or any of the values
-     * 	in the binary heap, are not understood by the compare() callback,
-     * 	the behavior is undefined.
+     *              compare() callback provided when the binary heap was created is
+     *              used to compare. If the compare() callback was NULL, pointer
+     *              equality (in C, ==) is used. If value, or any of the values
+     *              in the binary heap, are not understood by the compare() callback,
+     *              the behavior is undefined.
      * @return true, if the value is in the specified binary heap, otherwise false.
      */
     @Generated
@@ -4025,12 +4025,12 @@ public final class CoreFoundation {
     /**
      * [@function] CFBinaryHeapGetMinimum
      * Returns the minimum value is in the binary heap.  If the heap contains several equal
-     *                minimum values, any one may be returned.
-     * 
+     * minimum values, any one may be returned.
+     *
      * @param heap The binary heap to be searched. If this parameter is not a
-     * 	valid CFBinaryHeap, the behavior is undefined.
+     *             valid CFBinaryHeap, the behavior is undefined.
      * @return A reference to the minimum value in the binary heap, or NULL if the
-     *                binary heap contains no values.
+     * binary heap contains no values.
      */
     @Generated
     @CFunction
@@ -4039,14 +4039,14 @@ public final class CoreFoundation {
     /**
      * [@function] CFBinaryHeapGetMinimumIfPresent
      * Returns the minimum value is in the binary heap, if present.  If the heap contains several equal
-     *                minimum values, any one may be returned.
-     * 
-     * @param heap The binary heap to be searched. If this parameter is not a
-     * 	valid CFBinaryHeap, the behavior is undefined.
-     *        @param value A C pointer to pointer-sized storage to be filled with the minimum value in 
-     *                the binary heap.  If this value is not a valid C pointer to a pointer-sized block
-     *                of storage, the result is undefined.  If the result of the function is false, the value
-     *                stored at this address is undefined.
+     * minimum values, any one may be returned.
+     *
+     * @param heap  The binary heap to be searched. If this parameter is not a
+     *              valid CFBinaryHeap, the behavior is undefined.
+     * @param value A C pointer to pointer-sized storage to be filled with the minimum value in
+     *              the binary heap.  If this value is not a valid C pointer to a pointer-sized block
+     *              of storage, the result is undefined.  If the result of the function is false, the value
+     *              stored at this address is undefined.
      * @return true, if a minimum value was found in the specified binary heap, otherwise false.
      */
     @Generated
@@ -4056,13 +4056,13 @@ public final class CoreFoundation {
     /**
      * [@function] CFBinaryHeapGetValues
      * Fills the buffer with values from the binary heap.
-     * 
-     * @param heap The binary heap to be queried. If this parameter is not a
-     * 	valid CFBinaryHeap, the behavior is undefined.
+     *
+     * @param heap   The binary heap to be queried. If this parameter is not a
+     *               valid CFBinaryHeap, the behavior is undefined.
      * @param values A C array of pointer-sized values to be filled with
-     * 	values from the binary heap. The values in the C array are ordered
-     * 	from least to greatest. If this parameter is not a valid pointer to a 
-     *                C array of at least CFBinaryHeapGetCount() pointers, the behavior is undefined.
+     *               values from the binary heap. The values in the C array are ordered
+     *               from least to greatest. If this parameter is not a valid pointer to a
+     *               C array of at least CFBinaryHeapGetCount() pointers, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -4071,20 +4071,20 @@ public final class CoreFoundation {
     /**
      * [@function] CFBinaryHeapApplyFunction
      * Calls a function once for each value in the binary heap.
-     * 
-     * @param heap The binary heap to be operated upon. If this parameter is not a
-     * 	valid CFBinaryHeap, the behavior is undefined.
+     *
+     * @param heap    The binary heap to be operated upon. If this parameter is not a
+     *                valid CFBinaryHeap, the behavior is undefined.
      * @param applier The callback function to call once for each value in
-     * 	the given binary heap. If this parameter is not a
-     * 	pointer to a function of the correct prototype, the behavior
-     * 	is undefined. If there are values in the binary heap which the
-     * 	applier function does not expect or cannot properly apply
-     * 	to, the behavior is undefined. 
+     *                the given binary heap. If this parameter is not a
+     *                pointer to a function of the correct prototype, the behavior
+     *                is undefined. If there are values in the binary heap which the
+     *                applier function does not expect or cannot properly apply
+     *                to, the behavior is undefined.
      * @param context A pointer-sized user-defined value, which is passed
-     * 	as the second parameter to the applier function, but is
-     * 	otherwise unused by this function. If the context is not
-     * 	what is expected by the applier function, the behavior is
-     * 	undefined.
+     *                as the second parameter to the applier function, but is
+     *                otherwise unused by this function. If the context is not
+     *                what is expected by the applier function, the behavior is
+     *                undefined.
      */
     @Generated
     @CFunction
@@ -4095,13 +4095,13 @@ public final class CoreFoundation {
     /**
      * [@function] CFBinaryHeapAddValue
      * Adds the value to the binary heap.
-     * 
-     * @param heap The binary heap to which the value is to be added. If this parameter is not a
-     * 	valid mutable CFBinaryHeap, the behavior is undefined.
+     *
+     * @param heap  The binary heap to which the value is to be added. If this parameter is not a
+     *              valid mutable CFBinaryHeap, the behavior is undefined.
      * @param value The value to add to the binary heap. The value is retained by
-     * 	the binary heap using the retain callback provided when the binary heap
-     * 	was created. If the value is not of the sort expected by the
-     * 	retain callback, the behavior is undefined.
+     *              the binary heap using the retain callback provided when the binary heap
+     *              was created. If the value is not of the sort expected by the
+     *              retain callback, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -4110,9 +4110,9 @@ public final class CoreFoundation {
     /**
      * [@function] CFBinaryHeapRemoveMinimumValue
      * Removes the minimum value from the binary heap.
-     * 
-     * @param heap The binary heap from which the minimum value is to be removed. If this 
-     *                parameter is not a valid mutable CFBinaryHeap, the behavior is undefined.
+     *
+     * @param heap The binary heap from which the minimum value is to be removed. If this
+     *             parameter is not a valid mutable CFBinaryHeap, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -4121,10 +4121,10 @@ public final class CoreFoundation {
     /**
      * [@function] CFBinaryHeapRemoveAllValues
      * Removes all the values from the binary heap, making it empty.
-     * 
+     *
      * @param heap The binary heap from which all of the values are to be
-     * 	removed. If this parameter is not a valid mutable CFBinaryHeap,
-     * 	the behavior is undefined.
+     *             removed. If this parameter is not a valid mutable CFBinaryHeap,
+     *             the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -4812,7 +4812,7 @@ public final class CoreFoundation {
      * Searches the various sources of application defaults to find the
      * value for the given key. key must not be NULL.  If a value is found,
      * it returns it; otherwise returns NULL.  Caller must release the
-     * returned value 
+     * returned value
      */
     @Generated
     @CFunction
@@ -4821,7 +4821,7 @@ public final class CoreFoundation {
     /**
      * Convenience to interpret a preferences value as a boolean directly.
      * Returns false if the key doesn't exist, or has an improper format; under
-     * those conditions, keyExistsAndHasValidFormat (if non-NULL) is set to false 
+     * those conditions, keyExistsAndHasValidFormat (if non-NULL) is set to false
      */
     @Generated
     @CFunction
@@ -4831,7 +4831,7 @@ public final class CoreFoundation {
     /**
      * Convenience to interpret a preferences value as an integer directly.
      * Returns 0 if the key doesn't exist, or has an improper format; under
-     * those conditions, keyExistsAndHasValidFormat (if non-NULL) is set to false 
+     * those conditions, keyExistsAndHasValidFormat (if non-NULL) is set to false
      */
     @Generated
     @CFunction
@@ -4842,7 +4842,7 @@ public final class CoreFoundation {
     /**
      * Sets the given value for the given key in the "normal" place for
      * application preferences.  key must not be NULL.  If value is NULL,
-     * key is removed instead. 
+     * key is removed instead.
      */
     @Generated
     @CFunction
@@ -4852,7 +4852,7 @@ public final class CoreFoundation {
      * Adds the preferences for the given suite to the app preferences for
      * the specified application.  To write to the suite domain, use
      * CFPreferencesSetValue(), below, using the suiteName in place
-     * of the appName 
+     * of the appName
      */
     @Generated
     @CFunction
@@ -4865,7 +4865,7 @@ public final class CoreFoundation {
 
     /**
      * Writes all changes in all sources of application defaults.
-     * Returns success or failure. 
+     * Returns success or failure.
      */
     @Generated
     @CFunction
@@ -4875,7 +4875,7 @@ public final class CoreFoundation {
      * The primitive get mechanism; all arguments must be non-NULL
      * (use the constants above for common values).  Only the exact
      * location specified by app-user-host is searched.  The returned
-     * CFType must be released by the caller when it is finished with it. 
+     * CFType must be released by the caller when it is finished with it.
      */
     @Generated
     @CFunction
@@ -4886,7 +4886,7 @@ public final class CoreFoundation {
      * Convenience to fetch multiple keys at once.  Keys in
      * keysToFetch that are not present in the returned dictionary
      * are not present in the domain.  If keysToFetch is NULL, all
-     * keys are fetched. 
+     * keys are fetched.
      */
     @Generated
     @CFunction
@@ -4895,7 +4895,7 @@ public final class CoreFoundation {
 
     /**
      * The primitive set function; all arguments except value must be
-     * non-NULL.  If value is NULL, the given key is removed 
+     * non-NULL.  If value is NULL, the given key is removed
      */
     @Generated
     @CFunction
@@ -4904,7 +4904,7 @@ public final class CoreFoundation {
 
     /**
      * Convenience to set multiple values at once.  Behavior is undefined
-     * if a key is in both keysToSet and keysToRemove 
+     * if a key is in both keysToSet and keysToRemove
      */
     @Generated
     @CFunction
@@ -4920,7 +4920,7 @@ public final class CoreFoundation {
      * Constructs and returns the list of the name of all applications
      * which have preferences in the scope of the given user and host, or NULL if no applications are there.
      * The returned value must be released by the caller; neither argument
-     * may be NULL. Does not supported sandboxed applications. 
+     * may be NULL. Does not supported sandboxed applications.
      */
     @Generated
     @Deprecated
@@ -4930,7 +4930,7 @@ public final class CoreFoundation {
     /**
      * Constructs and returns the list of all keys set in the given
      * location, or NULL if no keys are set.  The returned value must be released by the caller;
-     * all arguments must be non-NULL 
+     * all arguments must be non-NULL
      */
     @Generated
     @CFunction
@@ -4941,7 +4941,7 @@ public final class CoreFoundation {
      * Function to determine whether or not a given key has been imposed on the
      * user - In cases where machines and/or users are under some kind of management,
      * callers should use this function to determine whether or not to disable UI elements
-     * corresponding to those preference keys. 
+     * corresponding to those preference keys.
      */
     @Generated
     @CFunction
@@ -5445,10 +5445,10 @@ public final class CoreFoundation {
 
     /**
      * Returns success/failure.  Opening a stream causes it to reserve all the system
-     * resources it requires.  If the stream can open non-blocking, this will always 
+     * resources it requires.  If the stream can open non-blocking, this will always
      * return TRUE; listen to the run loop source to find out when the open completes
-     * and whether it was successful, or poll using CFRead/WriteStreamGetStatus(), waiting 
-     * for a status of kCFStreamStatusOpen or kCFStreamStatusError.  
+     * and whether it was successful, or poll using CFRead/WriteStreamGetStatus(), waiting
+     * for a status of kCFStreamStatusOpen or kCFStreamStatusError.
      */
     @Generated
     @CFunction
@@ -5460,8 +5460,8 @@ public final class CoreFoundation {
 
     /**
      * Terminates the flow of bytes; releases any system resources required by the
-     * stream.  The stream may not fail to close.  You may call CFStreamClose() to 
-     * effectively abort a stream. 
+     * stream.  The stream may not fail to close.  You may call CFStreamClose() to
+     * effectively abort a stream.
      */
     @Generated
     @CFunction
@@ -5473,7 +5473,7 @@ public final class CoreFoundation {
 
     /**
      * Whether there is data currently available for reading; returns TRUE if it's
-     * impossible to tell without trying 
+     * impossible to tell without trying
      */
     @Generated
     @CFunction
@@ -5481,12 +5481,12 @@ public final class CoreFoundation {
 
     /**
      * Returns the number of bytes read, or -1 if an error occurs preventing any
-     * bytes from being read, or 0 if the stream's end was encountered.  
-     * It is an error to try and read from a stream that hasn't been opened first.  
+     * bytes from being read, or 0 if the stream's end was encountered.
+     * It is an error to try and read from a stream that hasn't been opened first.
      * This call will block until at least one byte is available; it will NOT block
      * until the entire buffer can be filled.  To avoid blocking, either poll using
-     * CFReadStreamHasBytesAvailable() or use the run loop and listen for the 
-     * kCFStreamEventHasBytesAvailable event for notification of data available. 
+     * CFReadStreamHasBytesAvailable() or use the run loop and listen for the
+     * kCFStreamEventHasBytesAvailable event for notification of data available.
      */
     @Generated
     @CFunction
@@ -5502,7 +5502,7 @@ public final class CoreFoundation {
      * as are readily available will be returned.  The returned buffer is good only
      * until the next stream operation called on the stream.  Caller should neither
      * change the contents of the returned buffer nor attempt to deallocate the buffer;
-     * it is still owned by the stream. 
+     * it is still owned by the stream.
      */
     @Generated
     @CFunction
@@ -5512,7 +5512,7 @@ public final class CoreFoundation {
 
     /**
      * Whether the stream can currently be written to without blocking;
-     * returns TRUE if it's impossible to tell without trying 
+     * returns TRUE if it's impossible to tell without trying
      */
     @Generated
     @CFunction
@@ -5523,7 +5523,7 @@ public final class CoreFoundation {
      * occurred, or 0 if the stream has been filled to capacity (for fixed-length
      * streams).  If the stream is not full, this call will block until at least
      * one byte is written.  To avoid blocking, either poll via CFWriteStreamCanAcceptBytes
-     * or use the run loop and listen for the kCFStreamEventCanAcceptBytes event. 
+     * or use the run loop and listen for the kCFStreamEventCanAcceptBytes event.
      */
     @Generated
     @CFunction
@@ -5536,11 +5536,11 @@ public final class CoreFoundation {
      * Particular streams can name properties and assign meanings to them; you
      * access these properties through the following calls.  A property is any interesting
      * information about the stream other than the data being transmitted itself.
-     * Examples include the headers from an HTTP transmission, or the expected 
+     * Examples include the headers from an HTTP transmission, or the expected
      * number of bytes, or permission information, etc.  Properties that can be set
      * configure the behavior of the stream, and may only be settable at particular times
-     * (like before the stream has been opened).  See the documentation for particular 
-     * properties to determine their get- and set-ability. 
+     * (like before the stream has been opened).  See the documentation for particular
+     * properties to determine their get- and set-ability.
      */
     @Generated
     @CFunction
@@ -5552,7 +5552,7 @@ public final class CoreFoundation {
 
     /**
      * Returns TRUE if the stream recognizes and accepts the given property-value pair;
-     * FALSE otherwise. 
+     * FALSE otherwise.
      */
     @Generated
     @CFunction
@@ -5568,12 +5568,12 @@ public final class CoreFoundation {
      * Asynchronous processing - If you wish to neither poll nor block, you may register
      * a client to hear about interesting events that occur on a stream.  Only one client
      * per stream is allowed; registering a new client replaces the previous one.
-     * 
+     * <p>
      * Once you have set a client, the stream must be scheduled to provide the context in
      * which the client will be called.  Streams may be scheduled on a single dispatch queue
      * or on one or more run loops.  If scheduled on a run loop, it is the caller's responsibility
      * to ensure that at least one of the scheduled run loops is being run.
-     * 
+     * <p>
      * NOTE: Unlike other CoreFoundation APIs, pasing a NULL clientContext here will remove
      * the client.  If you do not care about the client context (i.e. your only concern
      * is that your callback be called), you should pass in a valid context where every
@@ -5656,8 +5656,8 @@ public final class CoreFoundation {
      * and errorString is non-NULL, a human-readable description of the failure
      * is returned in errorString. It is the caller's responsibility to release
      * either the returned object or the error string, whichever is applicable.
-     * 
-     *        This function is deprecated. See CFPropertyListCreateWithData() for a replacement.
+     * <p>
+     * This function is deprecated. See CFPropertyListCreateWithData() for a replacement.
      */
     @Generated
     @Deprecated
@@ -5674,8 +5674,8 @@ public final class CoreFoundation {
      * appropriate for writing out to an XML file. Note that a data, not a
      * string, is returned because the bytes contain in them a description
      * of the string encoding used.
-     * 
-     *        This function is deprecated. See CFPropertyListCreateData() for a replacement.
+     * <p>
+     * This function is deprecated. See CFPropertyListCreateData() for a replacement.
      */
     @Generated
     @Deprecated
@@ -5713,7 +5713,7 @@ public final class CoreFoundation {
      * end of the plist data can be identified. Returns the number of bytes
      * written, or 0 on error. Error messages are not currently localized, but
      * may be in the future, so they are not suitable for comparison.
-     * 
+     * <p>
      * This function is deprecated. See CFPropertyListWrite() for a replacement.
      */
     @Generated
@@ -5733,7 +5733,7 @@ public final class CoreFoundation {
      * number of bytes given by the length parameter if it is not 0. Error messages
      * are not currently localized, but may be in the future, so they are not
      * suitable for comparison.
-     * 
+     * <p>
      * This function is deprecated. See CFPropertyListCreateWithStream() for a replacement.
      */
     @Generated
@@ -5785,50 +5785,50 @@ public final class CoreFoundation {
     public static native long CFSetGetTypeID();
 
     /**
-     *        [@function] CFSetCreate
-     *        Creates a new immutable set with the given values.
-     * 
+     * [@function] CFSetCreate
+     * Creates a new immutable set with the given values.
+     *
      * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the set and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     * @param values A C array of the pointer-sized values to be in the
-     * 	set.  This C array is not changed or freed by this function. 
-     *                If this parameter is not a valid pointer to a C array of at
-     *                least numValues pointers, the behavior is undefined.
+     *                  memory for the set and its storage for values. This
+     *                  parameter may be NULL in which case the current default
+     *                  CFAllocator is used. If this reference is not a valid
+     *                  CFAllocator, the behavior is undefined.
+     * @param values    A C array of the pointer-sized values to be in the
+     *                  set.  This C array is not changed or freed by this function.
+     *                  If this parameter is not a valid pointer to a C array of at
+     *                  least numValues pointers, the behavior is undefined.
      * @param numValues The number of values to copy from the values C
-     * 	array into the CFSet. This number will be the count of the
-     * 	set.  If this parameter is zero, negative, or greater than 
-     *                the number of values actually in the values C array, the 
-     *                behavior is undefined.
+     *                  array into the CFSet. This number will be the count of the
+     *                  set.  If this parameter is zero, negative, or greater than
+     *                  the number of values actually in the values C array, the
+     *                  behavior is undefined.
      * @param callBacks A C pointer to a CFSetCallBacks structure
-     * 	initialized with the callbacks for the set to use on each
-     * 	value in the set. A copy of the contents of the
-     * 	callbacks structure is made, so that a pointer to a
-     * 	structure on the stack can be passed in, or can be reused
-     * 	for multiple set creations. If the version field of this
-     * 	callbacks structure is not one of the defined ones for
-     * 	CFSet, the behavior is undefined. The retain field may be
-     * 	NULL, in which case the CFSet will do nothing to add a
-     * 	retain to the contained values for the set. The release
-     * 	field may be NULL, in which case the CFSet will do nothing
-     * 	to remove the set's retain (if any) on the values when the
-     * 	set is destroyed. If the copyDescription field is NULL,
-     * 	the set will create a simple description for the value. If
-     * 	the equal field is NULL, the set will use pointer equality
-     * 	to test for equality of values. The hash field may be NULL,
-     *                in which case the CFSet will determine uniqueness by pointer
-     *                equality. This callbacks parameter
-     * 	itself may be NULL, which is treated as if a valid structure
-     * 	of version 0 with all fields NULL had been passed in.
-     * 	Otherwise, if any of the fields are not valid pointers to
-     * 	functions of the correct type, or this parameter is not a
-     * 	valid pointer to a  CFSetCallBacks callbacks structure,
-     * 	the behavior is undefined. If any of the values put into the
-     * 	set is not one understood by one of the callback functions
-     * 	the behavior when that callback function is used is
-     * 	undefined.
+     *                  initialized with the callbacks for the set to use on each
+     *                  value in the set. A copy of the contents of the
+     *                  callbacks structure is made, so that a pointer to a
+     *                  structure on the stack can be passed in, or can be reused
+     *                  for multiple set creations. If the version field of this
+     *                  callbacks structure is not one of the defined ones for
+     *                  CFSet, the behavior is undefined. The retain field may be
+     *                  NULL, in which case the CFSet will do nothing to add a
+     *                  retain to the contained values for the set. The release
+     *                  field may be NULL, in which case the CFSet will do nothing
+     *                  to remove the set's retain (if any) on the values when the
+     *                  set is destroyed. If the copyDescription field is NULL,
+     *                  the set will create a simple description for the value. If
+     *                  the equal field is NULL, the set will use pointer equality
+     *                  to test for equality of values. The hash field may be NULL,
+     *                  in which case the CFSet will determine uniqueness by pointer
+     *                  equality. This callbacks parameter
+     *                  itself may be NULL, which is treated as if a valid structure
+     *                  of version 0 with all fields NULL had been passed in.
+     *                  Otherwise, if any of the fields are not valid pointers to
+     *                  functions of the correct type, or this parameter is not a
+     *                  valid pointer to a  CFSetCallBacks callbacks structure,
+     *                  the behavior is undefined. If any of the values put into the
+     *                  set is not one understood by one of the callback functions
+     *                  the behavior when that callback function is used is
+     *                  undefined.
      * @return A reference to the new immutable CFSet.
      */
     @Generated
@@ -5839,20 +5839,20 @@ public final class CoreFoundation {
     /**
      * [@function] CFSetCreateCopy
      * Creates a new immutable set with the values from the given set.
-     * 
+     *
      * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the set and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     * @param theSet The set which is to be copied. The values from the
-     * 	set are copied as pointers into the new set (that is,
-     * 	the values themselves are copied, not that which the values
-     * 	point to, if anything). However, the values are also
-     * 	retained by the new set. The count of the new set will
-     * 	be the same as the copied set. The new set uses the same
-     * 	callbacks as the set to be copied. If this parameter is
-     * 	not a valid CFSet, the behavior is undefined.
+     *                  memory for the set and its storage for values. This
+     *                  parameter may be NULL in which case the current default
+     *                  CFAllocator is used. If this reference is not a valid
+     *                  CFAllocator, the behavior is undefined.
+     * @param theSet    The set which is to be copied. The values from the
+     *                  set are copied as pointers into the new set (that is,
+     *                  the values themselves are copied, not that which the values
+     *                  point to, if anything). However, the values are also
+     *                  retained by the new set. The count of the new set will
+     *                  be the same as the copied set. The new set uses the same
+     *                  callbacks as the set to be copied. If this parameter is
+     *                  not a valid CFSet, the behavior is undefined.
      * @return A reference to the new immutable CFSet.
      */
     @Generated
@@ -5862,45 +5862,45 @@ public final class CoreFoundation {
     /**
      * [@function] CFSetCreateMutable
      * Creates a new empty mutable set.
-     * 
+     *
      * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the set and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     *        @param capacity A hint about the number of values that will be held
-     *                by the CFSet. Pass 0 for no hint. The implementation may
-     *                ignore this hint, or may use it to optimize various
-     *                operations. A set's actual capacity is only limited by 
-     *                address space and available memory constraints). If this 
-     *                parameter is negative, the behavior is undefined.
+     *                  memory for the set and its storage for values. This
+     *                  parameter may be NULL in which case the current default
+     *                  CFAllocator is used. If this reference is not a valid
+     *                  CFAllocator, the behavior is undefined.
+     * @param capacity  A hint about the number of values that will be held
+     *                  by the CFSet. Pass 0 for no hint. The implementation may
+     *                  ignore this hint, or may use it to optimize various
+     *                  operations. A set's actual capacity is only limited by
+     *                  address space and available memory constraints). If this
+     *                  parameter is negative, the behavior is undefined.
      * @param callBacks A C pointer to a CFSetCallBacks structure
-     * 	initialized with the callbacks for the set to use on each
-     * 	value in the set. A copy of the contents of the
-     * 	callbacks structure is made, so that a pointer to a
-     * 	structure on the stack can be passed in, or can be reused
-     * 	for multiple set creations. If the version field of this
-     * 	callbacks structure is not one of the defined ones for
-     * 	CFSet, the behavior is undefined. The retain field may be
-     * 	NULL, in which case the CFSet will do nothing to add a
-     * 	retain to the contained values for the set. The release
-     * 	field may be NULL, in which case the CFSet will do nothing
-     * 	to remove the set's retain (if any) on the values when the
-     * 	set is destroyed. If the copyDescription field is NULL,
-     * 	the set will create a simple description for the value. If
-     * 	the equal field is NULL, the set will use pointer equality
-     * 	to test for equality of values. The hash field may be NULL,
-     *                in which case the CFSet will determine uniqueness by pointer
-     *                equality. This callbacks parameter
-     * 	itself may be NULL, which is treated as if a valid structure
-     * 	of version 0 with all fields NULL had been passed in.
-     * 	Otherwise, if any of the fields are not valid pointers to
-     * 	functions of the correct type, or this parameter is not a
-     * 	valid pointer to a  CFSetCallBacks callbacks structure,
-     * 	the behavior is undefined. If any of the values put into the
-     * 	set is not one understood by one of the callback functions
-     * 	the behavior when that callback function is used is
-     * 	undefined.
+     *                  initialized with the callbacks for the set to use on each
+     *                  value in the set. A copy of the contents of the
+     *                  callbacks structure is made, so that a pointer to a
+     *                  structure on the stack can be passed in, or can be reused
+     *                  for multiple set creations. If the version field of this
+     *                  callbacks structure is not one of the defined ones for
+     *                  CFSet, the behavior is undefined. The retain field may be
+     *                  NULL, in which case the CFSet will do nothing to add a
+     *                  retain to the contained values for the set. The release
+     *                  field may be NULL, in which case the CFSet will do nothing
+     *                  to remove the set's retain (if any) on the values when the
+     *                  set is destroyed. If the copyDescription field is NULL,
+     *                  the set will create a simple description for the value. If
+     *                  the equal field is NULL, the set will use pointer equality
+     *                  to test for equality of values. The hash field may be NULL,
+     *                  in which case the CFSet will determine uniqueness by pointer
+     *                  equality. This callbacks parameter
+     *                  itself may be NULL, which is treated as if a valid structure
+     *                  of version 0 with all fields NULL had been passed in.
+     *                  Otherwise, if any of the fields are not valid pointers to
+     *                  functions of the correct type, or this parameter is not a
+     *                  valid pointer to a  CFSetCallBacks callbacks structure,
+     *                  the behavior is undefined. If any of the values put into the
+     *                  set is not one understood by one of the callback functions
+     *                  the behavior when that callback function is used is
+     *                  undefined.
      * @return A reference to the new mutable CFSet.
      */
     @Generated
@@ -5911,29 +5911,29 @@ public final class CoreFoundation {
     /**
      * [@function] CFSetCreateMutableCopy
      * Creates a new immutable set with the values from the given set.
-     * 
+     *
      * @param allocator The CFAllocator which should be used to allocate
-     * 	memory for the set and its storage for values. This
-     * 	parameter may be NULL in which case the current default
-     * 	CFAllocator is used. If this reference is not a valid
-     * 	CFAllocator, the behavior is undefined.
-     *        @param capacity A hint about the number of values that will be held
-     *                by the CFSet. Pass 0 for no hint. The implementation may
-     *                ignore this hint, or may use it to optimize various
-     *                operations. A set's actual capacity is only limited by
-     *                address space and available memory constraints). 
-     *                This parameter must be greater than or equal
-     *                to the count of the set which is to be copied, or the
-     *                behavior is undefined. If this parameter is negative, the
-     *                behavior is undefined.
-     * @param theSet The set which is to be copied. The values from the
-     * 	set are copied as pointers into the new set (that is,
-     * 	the values themselves are copied, not that which the values
-     * 	point to, if anything). However, the values are also
-     * 	retained by the new set. The count of the new set will
-     * 	be the same as the copied set. The new set uses the same
-     * 	callbacks as the set to be copied. If this parameter is
-     * 	not a valid CFSet, the behavior is undefined.
+     *                  memory for the set and its storage for values. This
+     *                  parameter may be NULL in which case the current default
+     *                  CFAllocator is used. If this reference is not a valid
+     *                  CFAllocator, the behavior is undefined.
+     * @param capacity  A hint about the number of values that will be held
+     *                  by the CFSet. Pass 0 for no hint. The implementation may
+     *                  ignore this hint, or may use it to optimize various
+     *                  operations. A set's actual capacity is only limited by
+     *                  address space and available memory constraints).
+     *                  This parameter must be greater than or equal
+     *                  to the count of the set which is to be copied, or the
+     *                  behavior is undefined. If this parameter is negative, the
+     *                  behavior is undefined.
+     * @param theSet    The set which is to be copied. The values from the
+     *                  set are copied as pointers into the new set (that is,
+     *                  the values themselves are copied, not that which the values
+     *                  point to, if anything). However, the values are also
+     *                  retained by the new set. The count of the new set will
+     *                  be the same as the copied set. The new set uses the same
+     *                  callbacks as the set to be copied. If this parameter is
+     *                  not a valid CFSet, the behavior is undefined.
      * @return A reference to the new mutable CFSet.
      */
     @Generated
@@ -5944,9 +5944,9 @@ public final class CoreFoundation {
     /**
      * [@function] CFSetGetCount
      * Returns the number of values currently in the set.
-     * 
+     *
      * @param theSet The set to be queried. If this parameter is not a valid
-     * 	CFSet, the behavior is undefined.
+     *               CFSet, the behavior is undefined.
      * @return The number of values in the set.
      */
     @Generated
@@ -5956,18 +5956,18 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFSetGetCountOfValue
-     * Counts the number of times the given value occurs in the set. Since 
-     *        sets by definition contain only one instance of a value, this function
-     *        is synonymous to CFSetContainsValue.
-     * 
+     * Counts the number of times the given value occurs in the set. Since
+     * sets by definition contain only one instance of a value, this function
+     * is synonymous to CFSetContainsValue.
+     *
      * @param theSet The set to be searched. If this parameter is not a
-     * 	valid CFSet, the behavior is undefined.
-     * @param value The value for which to find matches in the set. The
-     * 	equal() callback provided when the set was created is
-     * 	used to compare. If the equal() callback was NULL, pointer
-     * 	equality (in C, ==) is used. If value, or any of the values
-     * 	in the set, are not understood by the equal() callback,
-     * 	the behavior is undefined.
+     *               valid CFSet, the behavior is undefined.
+     * @param value  The value for which to find matches in the set. The
+     *               equal() callback provided when the set was created is
+     *               used to compare. If the equal() callback was NULL, pointer
+     *               equality (in C, ==) is used. If value, or any of the values
+     *               in the set, are not understood by the equal() callback,
+     *               the behavior is undefined.
      * @return The number of times the given value occurs in the set.
      */
     @Generated
@@ -5978,15 +5978,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFSetContainsValue
      * Reports whether or not the value is in the set.
-     * 
+     *
      * @param theSet The set to be searched. If this parameter is not a
-     * 	valid CFSet, the behavior is undefined.
-     * @param value The value for which to find matches in the set. The
-     * 	equal() callback provided when the set was created is
-     * 	used to compare. If the equal() callback was NULL, pointer
-     * 	equality (in C, ==) is used. If value, or any of the values
-     * 	in the set, are not understood by the equal() callback,
-     * 	the behavior is undefined.
+     *               valid CFSet, the behavior is undefined.
+     * @param value  The value for which to find matches in the set. The
+     *               equal() callback provided when the set was created is
+     *               used to compare. If the equal() callback was NULL, pointer
+     *               equality (in C, ==) is used. If value, or any of the values
+     *               in the set, are not understood by the equal() callback,
+     *               the behavior is undefined.
      * @return true, if the value is in the set, otherwise false.
      */
     @Generated
@@ -5996,15 +5996,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFSetGetValue
      * Retrieves a value in the set which hashes the same as the specified value.
-     * 
+     *
      * @param theSet The set to be queried. If this parameter is not a
-     * 	valid CFSet, the behavior is undefined.
-     * @param value The value to retrieve. The equal() callback provided when
-     *                the set was created is used to compare. If the equal() callback
-     *                was NULL, pointer equality (in C, ==) is used. If a value, or
-     *                any of the values in the set, are not understood by the equal()
-     *                callback, the behavior is undefined.
-     *        @return The value in the set with the given hash.
+     *               valid CFSet, the behavior is undefined.
+     * @param value  The value to retrieve. The equal() callback provided when
+     *               the set was created is used to compare. If the equal() callback
+     *               was NULL, pointer equality (in C, ==) is used. If a value, or
+     *               any of the values in the set, are not understood by the equal()
+     *               callback, the behavior is undefined.
+     * @return The value in the set with the given hash.
      */
     @Generated
     @CFunction
@@ -6013,24 +6013,24 @@ public final class CoreFoundation {
     /**
      * [@function] CFSetGetValueIfPresent
      * Retrieves a value in the set which hashes the same as the specified value,
-     *        if present.
-     * 
-     * @param theSet The set to be queried. If this parameter is not a
-     * 	valid CFSet, the behavior is undefined.
+     * if present.
+     *
+     * @param theSet    The set to be queried. If this parameter is not a
+     *                  valid CFSet, the behavior is undefined.
      * @param candidate This value is hashed and compared with values in the
-     *                set to determine which value to retrieve. The equal() callback provided when
-     *                the set was created is used to compare. If the equal() callback
-     *                was NULL, pointer equality (in C, ==) is used. If a value, or
-     *                any of the values in the set, are not understood by the equal()
-     *                callback, the behavior is undefined.
-     * @param value A pointer to memory which should be filled with the
-     * 	pointer-sized value if a matching value is found. If no
-     * 	match is found, the contents of the storage pointed to by
-     * 	this parameter are undefined. This parameter may be NULL,
-     * 	in which case the value from the dictionary is not returned
-     * 	(but the return value of this function still indicates
-     * 	whether or not the value was present).
-     *        @return True if the value was present in the set, otherwise false.
+     *                  set to determine which value to retrieve. The equal() callback provided when
+     *                  the set was created is used to compare. If the equal() callback
+     *                  was NULL, pointer equality (in C, ==) is used. If a value, or
+     *                  any of the values in the set, are not understood by the equal()
+     *                  callback, the behavior is undefined.
+     * @param value     A pointer to memory which should be filled with the
+     *                  pointer-sized value if a matching value is found. If no
+     *                  match is found, the contents of the storage pointed to by
+     *                  this parameter are undefined. This parameter may be NULL,
+     *                  in which case the value from the dictionary is not returned
+     *                  (but the return value of this function still indicates
+     *                  whether or not the value was present).
+     * @return True if the value was present in the set, otherwise false.
      */
     @Generated
     @CFunction
@@ -6039,14 +6039,14 @@ public final class CoreFoundation {
     /**
      * [@function] CFSetGetValues
      * Fills the buffer with values from the set.
-     * 
+     *
      * @param theSet The set to be queried. If this parameter is not a
-     * 	valid CFSet, the behavior is undefined.
+     *               valid CFSet, the behavior is undefined.
      * @param values A C array of pointer-sized values to be filled with
-     * 	values from the set. The values in the C array are ordered
-     * 	in the same order in which they appear in the set. If this
-     * 	parameter is not a valid pointer to a C array of at least
-     * 	CFSetGetCount() pointers, the behavior is undefined.
+     *               values from the set. The values in the C array are ordered
+     *               in the same order in which they appear in the set. If this
+     *               parameter is not a valid pointer to a C array of at least
+     *               CFSetGetCount() pointers, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -6055,20 +6055,20 @@ public final class CoreFoundation {
     /**
      * [@function] CFSetApplyFunction
      * Calls a function once for each value in the set.
-     * 
-     * @param theSet The set to be operated upon. If this parameter is not
-     * 	a valid CFSet, the behavior is undefined.
+     *
+     * @param theSet  The set to be operated upon. If this parameter is not
+     *                a valid CFSet, the behavior is undefined.
      * @param applier The callback function to call once for each value in
-     * 	the given set. If this parameter is not a
-     * 	pointer to a function of the correct prototype, the behavior
-     * 	is undefined. If there are values in the set which the
-     * 	applier function does not expect or cannot properly apply
-     * 	to, the behavior is undefined. 
+     *                the given set. If this parameter is not a
+     *                pointer to a function of the correct prototype, the behavior
+     *                is undefined. If there are values in the set which the
+     *                applier function does not expect or cannot properly apply
+     *                to, the behavior is undefined.
      * @param context A pointer-sized user-defined value, which is passed
-     * 	as the second parameter to the applier function, but is
-     * 	otherwise unused by this function. If the context is not
-     * 	what is expected by the applier function, the behavior is
-     * 	undefined.
+     *                as the second parameter to the applier function, but is
+     *                otherwise unused by this function. If the context is not
+     *                what is expected by the applier function, the behavior is
+     *                undefined.
      */
     @Generated
     @CFunction
@@ -6078,15 +6078,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFSetAddValue
      * Adds the value to the set if it is not already present.
-     * 
+     *
      * @param theSet The set to which the value is to be added. If this
-     * 	parameter is not a valid mutable CFSet, the behavior is
-     * 	undefined.
-     * @param value The value to add to the set. The value is retained by
-     * 	the set using the retain callback provided when the set
-     * 	was created. If the value is not of the sort expected by the
-     * 	retain callback, the behavior is undefined. The count of the 
-     *                set is increased by one.
+     *               parameter is not a valid mutable CFSet, the behavior is
+     *               undefined.
+     * @param value  The value to add to the set. The value is retained by
+     *               the set using the retain callback provided when the set
+     *               was created. If the value is not of the sort expected by the
+     *               retain callback, the behavior is undefined. The count of the
+     *               set is increased by one.
      */
     @Generated
     @CFunction
@@ -6095,19 +6095,19 @@ public final class CoreFoundation {
     /**
      * [@function] CFSetReplaceValue
      * Replaces the value in the set if it is present.
-     * 
+     *
      * @param theSet The set to which the value is to be replaced. If this
-     * 	parameter is not a valid mutable CFSet, the behavior is
-     * 	undefined.
-     *        @param value The value to replace in the set. The equal() callback provided when
-     *                the set was created is used to compare. If the equal() callback
-     *                was NULL, pointer equality (in C, ==) is used. If a value, or
-     *                any of the values in the set, are not understood by the equal()
-     *                callback, the behavior is undefined. The value is retained by
-     * 	the set using the retain callback provided when the set
-     * 	was created. If the value is not of the sort expected by the
-     * 	retain callback, the behavior is undefined. The count of the 
-     *                set is increased by one.
+     *               parameter is not a valid mutable CFSet, the behavior is
+     *               undefined.
+     * @param value  The value to replace in the set. The equal() callback provided when
+     *               the set was created is used to compare. If the equal() callback
+     *               was NULL, pointer equality (in C, ==) is used. If a value, or
+     *               any of the values in the set, are not understood by the equal()
+     *               callback, the behavior is undefined. The value is retained by
+     *               the set using the retain callback provided when the set
+     *               was created. If the value is not of the sort expected by the
+     *               retain callback, the behavior is undefined. The count of the
+     *               set is increased by one.
      */
     @Generated
     @CFunction
@@ -6115,21 +6115,21 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFSetSetValue
-     * Replaces the value in the set if it is present, or adds the value to 
-     *        the set if it is absent.
-     * 
+     * Replaces the value in the set if it is present, or adds the value to
+     * the set if it is absent.
+     *
      * @param theSet The set to which the value is to be replaced. If this
-     * 	parameter is not a valid mutable CFSet, the behavior is
-     * 	undefined.
-     *        @param value The value to set in the CFSet. The equal() callback provided when
-     *                the set was created is used to compare. If the equal() callback
-     *                was NULL, pointer equality (in C, ==) is used. If a value, or
-     *                any of the values in the set, are not understood by the equal()
-     *                callback, the behavior is undefined. The value is retained by
-     * 	the set using the retain callback provided when the set
-     * 	was created. If the value is not of the sort expected by the
-     * 	retain callback, the behavior is undefined. The count of the 
-     *                set is increased by one.
+     *               parameter is not a valid mutable CFSet, the behavior is
+     *               undefined.
+     * @param value  The value to set in the CFSet. The equal() callback provided when
+     *               the set was created is used to compare. If the equal() callback
+     *               was NULL, pointer equality (in C, ==) is used. If a value, or
+     *               any of the values in the set, are not understood by the equal()
+     *               callback, the behavior is undefined. The value is retained by
+     *               the set using the retain callback provided when the set
+     *               was created. If the value is not of the sort expected by the
+     *               retain callback, the behavior is undefined. The count of the
+     *               set is increased by one.
      */
     @Generated
     @CFunction
@@ -6138,15 +6138,15 @@ public final class CoreFoundation {
     /**
      * [@function] CFSetRemoveValue
      * Removes the specified value from the set.
-     * 
+     *
      * @param theSet The set from which the value is to be removed.
-     *                If this parameter is not a valid mutable CFSet,
-     * 	the behavior is undefined.
-     *        @param value The value to remove. The equal() callback provided when
-     *                the set was created is used to compare. If the equal() callback
-     *                was NULL, pointer equality (in C, ==) is used. If a value, or
-     *                any of the values in the set, are not understood by the equal()
-     *                callback, the behavior is undefined.
+     *               If this parameter is not a valid mutable CFSet,
+     *               the behavior is undefined.
+     * @param value  The value to remove. The equal() callback provided when
+     *               the set was created is used to compare. If the equal() callback
+     *               was NULL, pointer equality (in C, ==) is used. If a value, or
+     *               any of the values in the set, are not understood by the equal()
+     *               callback, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -6155,10 +6155,10 @@ public final class CoreFoundation {
     /**
      * [@function] CFSetRemoveAllValues
      * Removes all the values from the set, making it empty.
-     * 
+     *
      * @param theSet The set from which all of the values are to be
-     * 	removed. If this parameter is not a valid mutable CFSet,
-     * 	the behavior is undefined.
+     *               removed. If this parameter is not a valid mutable CFSet,
+     *               the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -6176,19 +6176,19 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreeCreate
      * Creates a new mutable tree.
-     * 
+     *
      * @param allocator The CFAllocator which should be used to allocate
-     *         memory for the tree and storage for its children.  This
-     *         parameter may be NULL in which case the current default
-     *         CFAllocator is used.  If this reference is not a valid
-     *         CFAllocator, the behavior is undefined.
-     * @param context A C pointer to a CFTreeContext structure to be copied 
-     *         and used as the context of the new tree.  The info parameter
-     *         will be retained by the tree if a retain function is provided.
-     *         If this value is not a valid C pointer to a CFTreeContext 
-     *         structure-sized block of storage, the result is undefined. 
-     *         If the version number of the storage is not a valid CFTreeContext
-     *         version number, the result is undefined.
+     *                  memory for the tree and storage for its children.  This
+     *                  parameter may be NULL in which case the current default
+     *                  CFAllocator is used.  If this reference is not a valid
+     *                  CFAllocator, the behavior is undefined.
+     * @param context   A C pointer to a CFTreeContext structure to be copied
+     *                  and used as the context of the new tree.  The info parameter
+     *                  will be retained by the tree if a retain function is provided.
+     *                  If this value is not a valid C pointer to a CFTreeContext
+     *                  structure-sized block of storage, the result is undefined.
+     *                  If the version number of the storage is not a valid CFTreeContext
+     *                  version number, the result is undefined.
      * @return A reference to the new CFTree.
      */
     @Generated
@@ -6199,9 +6199,9 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreeGetParent
      * Returns the parent of the specified tree.
-     * 
+     *
      * @param tree The tree to be queried.  If this parameter is not a valid
-     *         CFTree, the behavior is undefined.
+     *             CFTree, the behavior is undefined.
      * @return The parent of the tree.
      */
     @Generated
@@ -6211,9 +6211,9 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreeGetNextSibling
      * Returns the sibling after the specified tree in the parent tree's list.
-     * 
+     *
      * @param tree The tree to be queried.  If this parameter is not a valid
-     *         CFTree, the behavior is undefined.
+     *             CFTree, the behavior is undefined.
      * @return The next sibling of the tree.
      */
     @Generated
@@ -6223,9 +6223,9 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreeGetFirstChild
      * Returns the first child of the tree.
-     * 
+     *
      * @param tree The tree to be queried.  If this parameter is not a valid
-     *         CFTree, the behavior is undefined.
+     *             CFTree, the behavior is undefined.
      * @return The first child of the tree.
      */
     @Generated
@@ -6235,14 +6235,14 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreeGetContext
      * Returns the context of the specified tree.
-     * 
-     * @param tree The tree to be queried.  If this parameter is not a valid
-     *         CFTree, the behavior is undefined.
+     *
+     * @param tree    The tree to be queried.  If this parameter is not a valid
+     *                CFTree, the behavior is undefined.
      * @param context A C pointer to a CFTreeContext structure to be filled in with
-     *         the context of the specified tree.  If this value is not a valid C
-     *         pointer to a CFTreeContext structure-sized block of storage, the
-     *         result is undefined.  If the version number of the storage is not
-     *         a valid CFTreeContext version number, the result is undefined.
+     *                the context of the specified tree.  If this value is not a valid C
+     *                pointer to a CFTreeContext structure-sized block of storage, the
+     *                result is undefined.  If the version number of the storage is not
+     *                a valid CFTreeContext version number, the result is undefined.
      */
     @Generated
     @CFunction
@@ -6252,9 +6252,9 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreeGetChildCount
      * Returns the number of children of the specified tree.
-     * 
+     *
      * @param tree The tree to be queried.  If this parameter is not a valid
-     *         CFTree, the behavior is undefined.
+     *             CFTree, the behavior is undefined.
      * @return The number of children.
      */
     @Generated
@@ -6265,12 +6265,12 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreeGetChildAtIndex
      * Returns the nth child of the specified tree.
-     * 
+     *
      * @param tree The tree to be queried.  If this parameter is not a valid
-     *         CFTree, the behavior is undefined.
-     * @param idx The index of the child tree to be returned.  If this parameter
-     *         is less than zero or greater than the number of children of the
-     *         tree, the result is undefined.
+     *             CFTree, the behavior is undefined.
+     * @param idx  The index of the child tree to be returned.  If this parameter
+     *             is less than zero or greater than the number of children of the
+     *             tree, the result is undefined.
      * @return A reference to the specified child tree.
      */
     @Generated
@@ -6278,14 +6278,14 @@ public final class CoreFoundation {
     public static native CFTreeRef CFTreeGetChildAtIndex(CFTreeRef tree, @NInt long idx);
 
     /**
-     *        [@function] CFTreeGetChildren
-     *        Fills the buffer with children from the tree.
-     * 
-     *        @param tree The tree to be queried.  If this parameter is not a valid
-     *                CFTree, the behavior is undefined.
+     * [@function] CFTreeGetChildren
+     * Fills the buffer with children from the tree.
+     *
+     * @param tree     The tree to be queried.  If this parameter is not a valid
+     *                 CFTree, the behavior is undefined.
      * @param children A C array of pointer-sized values to be filled with
-     * 	children from the tree.  If this parameter is not a valid pointer to a 
-     *                C array of at least CFTreeGetChildCount() pointers, the behavior is undefined.
+     *                 children from the tree.  If this parameter is not a valid pointer to a
+     *                 C array of at least CFTreeGetChildCount() pointers, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -6294,21 +6294,21 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreeApplyFunctionToChildren
      * Calls a function once for each child of the tree.  Note that the applier
-     *        only operates one level deep, and does not operate on descendents further
-     *        removed than the immediate children of the tree.
-     * 
-     *        @param tree The tree to be operated upon.  If this parameter is not a
-     * 	valid CFTree, the behavior is undefined.
+     * only operates one level deep, and does not operate on descendents further
+     * removed than the immediate children of the tree.
+     *
+     * @param tree    The tree to be operated upon.  If this parameter is not a
+     *                valid CFTree, the behavior is undefined.
      * @param applier The callback function to call once for each child of
-     * 	the given tree.  If this parameter is not a pointer to a 
+     *                the given tree.  If this parameter is not a pointer to a
      *                function of the correct prototype, the behavior is undefined.
      *                If there are values in the tree which the applier function does
      *                not expect or cannot properly apply to, the behavior is undefined.
      * @param context A pointer-sized user-defined value, which is passed
-     * 	as the second parameter to the applier function, but is
-     * 	otherwise unused by this function.  If the context is not
-     * 	what is expected by the applier function, the behavior is
-     * 	undefined.
+     *                as the second parameter to the applier function, but is
+     *                otherwise unused by this function.  If the context is not
+     *                what is expected by the applier function, the behavior is
+     *                undefined.
      */
     @Generated
     @CFunction
@@ -6319,9 +6319,9 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreeFindRoot
      * Returns the root tree of which the specified tree is a descendent.
-     * 
+     *
      * @param tree The tree to be queried.  If this parameter is not a valid
-     *         CFTree, the behavior is undefined.
+     *             CFTree, the behavior is undefined.
      * @return A reference to the root of the tree.
      */
     @Generated
@@ -6332,16 +6332,16 @@ public final class CoreFoundation {
      * [@function] CFTreeSetContext
      * Replaces the context of a tree.  The tree releases its retain on the
      * info of the previous context, and retains the info of the new context.
-     * 
-     * @param tree The tree to be operated on.  If this parameter is not a valid
-     *         CFTree, the behavior is undefined.
-     * @param context A C pointer to a CFTreeContext structure to be copied 
-     *         and used as the context of the new tree.  The info parameter
-     *         will be retained by the tree if a retain function is provided.
-     *         If this value is not a valid C pointer to a CFTreeContext 
-     *         structure-sized block of storage, the result is undefined. 
-     *         If the version number of the storage is not a valid CFTreeContext
-     *         version number, the result is undefined.
+     *
+     * @param tree    The tree to be operated on.  If this parameter is not a valid
+     *                CFTree, the behavior is undefined.
+     * @param context A C pointer to a CFTreeContext structure to be copied
+     *                and used as the context of the new tree.  The info parameter
+     *                will be retained by the tree if a retain function is provided.
+     *                If this value is not a valid C pointer to a CFTreeContext
+     *                structure-sized block of storage, the result is undefined.
+     *                If the version number of the storage is not a valid CFTreeContext
+     *                version number, the result is undefined.
      */
     @Generated
     @CFunction
@@ -6351,13 +6351,13 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreePrependChild
      * Adds the newChild to the specified tree as the first in its list of children.
-     * 
-     * @param tree The tree to be operated on.  If this parameter is not a valid
-     *         CFTree, the behavior is undefined.
+     *
+     * @param tree     The tree to be operated on.  If this parameter is not a valid
+     *                 CFTree, the behavior is undefined.
      * @param newChild The child to be added.
-     *         If this parameter is not a valid CFTree, the behavior is undefined.
-     *         If this parameter is a tree which is already a child of any tree,
-     *         the behavior is undefined.
+     *                 If this parameter is not a valid CFTree, the behavior is undefined.
+     *                 If this parameter is a tree which is already a child of any tree,
+     *                 the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -6366,13 +6366,13 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreeAppendChild
      * Adds the newChild to the specified tree as the last in its list of children.
-     * 
-     * @param tree The tree to be operated on.  If this parameter is not a valid
-     *         CFTree, the behavior is undefined.
+     *
+     * @param tree     The tree to be operated on.  If this parameter is not a valid
+     *                 CFTree, the behavior is undefined.
      * @param newChild The child to be added.
-     *         If this parameter is not a valid CFTree, the behavior is undefined.
-     *         If this parameter is a tree which is already a child of any tree,
-     *         the behavior is undefined.
+     *                 If this parameter is not a valid CFTree, the behavior is undefined.
+     *                 If this parameter is a tree which is already a child of any tree,
+     *                 the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -6382,14 +6382,14 @@ public final class CoreFoundation {
      * [@function] CFTreeInsertSibling
      * Inserts newSibling into the the parent tree's linked list of children after
      * tree.  The newSibling will have the same parent as tree.
-     * 
-     * @param tree The tree to insert newSibling after.  If this parameter is not a valid
-     *         CFTree, the behavior is undefined.  If the tree does not have a
-     *         parent, the behavior is undefined.
+     *
+     * @param tree       The tree to insert newSibling after.  If this parameter is not a valid
+     *                   CFTree, the behavior is undefined.  If the tree does not have a
+     *                   parent, the behavior is undefined.
      * @param newSibling The sibling to be added.
-     *         If this parameter is not a valid CFTree, the behavior is undefined.
-     *         If this parameter is a tree which is already a child of any tree,
-     *         the behavior is undefined.  
+     *                   If this parameter is not a valid CFTree, the behavior is undefined.
+     *                   If this parameter is a tree which is already a child of any tree,
+     *                   the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -6398,9 +6398,9 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreeRemove
      * Removes the tree from its parent.
-     * 
+     *
      * @param tree The tree to be removed.  If this parameter is not a valid
-     *         CFTree, the behavior is undefined.
+     *             CFTree, the behavior is undefined.
      */
     @Generated
     @CFunction
@@ -6409,31 +6409,31 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreeRemoveAllChildren
      * Removes all the children of the tree.
-     * 
+     *
      * @param tree The tree to remove all children from.  If this parameter is not a valid
-     *         CFTree, the behavior is undefined.
+     *             CFTree, the behavior is undefined.
      */
     @Generated
     @CFunction
     public static native void CFTreeRemoveAllChildren(CFTreeRef tree);
 
     /**
-     *        [@function] CFTreeSortChildren
-     *        Sorts the children of the specified tree using the specified comparator function.
-     * 
-     *        @param tree The tree to be operated on.  If this parameter is not a valid
-     *                CFTree, the behavior is undefined.
+     * [@function] CFTreeSortChildren
+     * Sorts the children of the specified tree using the specified comparator function.
+     *
+     * @param tree       The tree to be operated on.  If this parameter is not a valid
+     *                   CFTree, the behavior is undefined.
      * @param comparator The function with the comparator function type
-     * 	signature which is used in the sort operation to compare
-     * 	children of the tree with the given value. If this parameter
-     * 	is not a pointer to a function of the correct prototype, the
-     * 	the behavior is undefined. The children of the tree are sorted 
-     *                from least to greatest according to this function.
-     * @param context A pointer-sized user-defined value, which is passed
-     * 	as the third parameter to the comparator function, but is
-     * 	otherwise unused by this function. If the context is not
-     * 	what is expected by the comparator function, the behavior is
-     * 	undefined.
+     *                   signature which is used in the sort operation to compare
+     *                   children of the tree with the given value. If this parameter
+     *                   is not a pointer to a function of the correct prototype, the
+     *                   the behavior is undefined. The children of the tree are sorted
+     *                   from least to greatest according to this function.
+     * @param context    A pointer-sized user-defined value, which is passed
+     *                   as the third parameter to the comparator function, but is
+     *                   otherwise unused by this function. If the context is not
+     *                   what is expected by the comparator function, the behavior is
+     *                   undefined.
      */
     @Generated
     @CFunction
@@ -6450,18 +6450,18 @@ public final class CoreFoundation {
      * fetched anyway. errorCode is set to 0 on success, and some other
      * value on failure.  If non-NULL, it is the caller 's responsibility
      * to release resourceData and properties.
-     * 
-     *     Apple reserves for its use all negative error code values; these
+     * <p>
+     * Apple reserves for its use all negative error code values; these
      * values represent errors common to any scheme.  Scheme-specific error
      * codes should be positive, non-zero, and should be used only if one of
      * the predefined Apple error codes does not apply.  Error codes should
      * be publicized and documented with the scheme-specific properties.
-     * 
+     * <p>
      * NOTE: When asking for the resource data, this call will allocate the entire
      * resource in memory. This can be very expensive, depending on the size of the
      * resource (file). Please use CFStream or other techniques if you are downloading
      * large files.
-     * 
+     * <p>
      * Deprecated -- see top of this file for suggested replacement classes
      */
     @Generated
@@ -7195,7 +7195,7 @@ public final class CoreFoundation {
     /**
      * [@function] CFAttributedStringGetAttributes
      * Returns the attributes at the specified location. If effectiveRange is not NULL, upon return *effectiveRange contains a range over which the exact same set of attributes apply. Note that for performance reasons, the returned effectiveRange is not necessarily the maximal range - for that, use CFAttributedStringGetAttributesAndLongestEffectiveRange().  It's a programming error for loc to specify a location outside the bounds of the attributed string.
-     * 
+     * <p>
      * Note that the returned attribute dictionary might change in unpredictable ways from under the caller if the attributed string is edited after this call. If you wish to hang on to the dictionary long-term, you should make an actual copy of it rather than just retaining it.  Also, no assumptions should be made about the relationship of the actual CFDictionaryRef returned by this call and the dictionary originally used to set the attributes, other than the fact that the values stored in the dictionary will be identical (that is, ==) to those originally specified.
      */
     @Generated
@@ -7253,8 +7253,8 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringReplaceString
-     * Modifies the string for the attributed string, much like CFStringReplace().  It's an error for range to specify characters outside the bounds of aStr. 
-     * 
+     * Modifies the string for the attributed string, much like CFStringReplace().  It's an error for range to specify characters outside the bounds of aStr.
+     * <p>
      * (Note: This function is a convenience on CFAttributedStringGetMutableString(); however, until CFAttributedStringGetMutableString() is implemented, it remains the only way to edit the string of the attributed string.)
      */
     @Generated
@@ -7265,7 +7265,7 @@ public final class CoreFoundation {
     /**
      * [@function] CFAttributedStringGetMutableString
      * Gets the string for the attributed string as a mutable string, allowing editing the character contents of the string as if it were an CFMutableString. Attributes corresponding to the edited range are appropriately modified. If, as a result of the edit, new characters are introduced into the string, they inherit the attributes of the first replaced character from range. If no existing characters are replaced by the edit, the new characters inherit the attributes of the character preceding range if it has any, otherwise of the character following range. If the initial string is empty, the attributes for the new characters are also empty.
-     * 
+     * <p>
      * (Note: This function is not yet implemented and will return NULL except for toll-free bridged instances.)
      */
     @Generated
@@ -7283,7 +7283,7 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringSetAttribute
-     * Sets the value of a single attribute over the specified range, which should be valid. value should not be NULL. 
+     * Sets the value of a single attribute over the specified range, which should be valid. value should not be NULL.
      */
     @Generated
     @CFunction
@@ -7301,7 +7301,7 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringReplaceAttributedString
-     * Replaces the attributed substring over the specified range with the attributed string specified in replacement. range should be valid. To delete a range of the attributed string, call CFAttributedStringReplaceString() with empty string and specified range. 
+     * Replaces the attributed substring over the specified range with the attributed string specified in replacement. range should be valid. To delete a range of the attributed string, call CFAttributedStringReplaceString() with empty string and specified range.
      */
     @Generated
     @CFunction
@@ -7310,7 +7310,7 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringBeginEditing
-     * In cases where attributed string might do a bunch of work to assure self-consistency, CFAttributedStringBeginEditing/CFAttributedStringEndEditing allow disabling that to allow deferring and coalescing any work. It's a good idea to call these around a set of related mutation calls which don't require the string to be in consistent state in between. These calls can be nested. 
+     * In cases where attributed string might do a bunch of work to assure self-consistency, CFAttributedStringBeginEditing/CFAttributedStringEndEditing allow disabling that to allow deferring and coalescing any work. It's a good idea to call these around a set of related mutation calls which don't require the string to be in consistent state in between. These calls can be nested.
      */
     @Generated
     @CFunction
@@ -7318,7 +7318,7 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringEndEditing
-     * In cases where attributed string might do a bunch of work to assure self-consistency, CFAttributedStringBeginEditing/CFAttributedStringEndEditing allow disabling that to allow deferring and coalescing any work. It's a good idea to call these around a set of related mutation calls which don't require the string to be in consistent state in between. These calls can be nested. 
+     * In cases where attributed string might do a bunch of work to assure self-consistency, CFAttributedStringBeginEditing/CFAttributedStringEndEditing allow disabling that to allow deferring and coalescing any work. It's a good idea to call these around a set of related mutation calls which don't require the string to be in consistent state in between. These calls can be nested.
      */
     @Generated
     @CFunction
@@ -7334,9 +7334,9 @@ public final class CoreFoundation {
 
     /**
      * CFURLEnumeratorCreateForDirectoryURL - Creates a directory enumerator, flat or recursive. Client specifies the directory URL to enumerate, a bit array of options, and an optional array of property keys to pre-fetch for the found URLs. Specifying pre-fetch properties allows the implementation to optimize device access by using bulk operations when available. Pre-fetching more properties than are actually needed may degrade performance.
-     * 
+     * <p>
      * A directory enumerator generates URLs with the same type as the directory URL being enumerated. If the directoryURL input parameter is a file reference URL, then generated URLs will be file reference URLs. If the directoryURL input parameter is a file path URL, then generated URLs will be file path URLs.
-     * 
+     * <p>
      * The kCFURLEnumeratorGenerateFileReferenceURLs option is ignored by CFURLEnumeratorCreateForDirectoryURL.
      */
     @Generated
@@ -7346,9 +7346,9 @@ public final class CoreFoundation {
 
     /**
      * CFURLEnumeratorCreateForMountedVolumes - Creates an enumerator for mounted filesystem volumes. Client specifies an allocator, a bit array of options, and an optional array of property keys to pre-fetch for the volume URLs. Specifying pre-fetch properties allows the implementation to optimize device access by using bulk operations when available. Pre-fetching more properties than are actually needed may degrade performance.
-     * 
+     * <p>
      * A volume enumerator generates file path URLs. If you want a volume enumerator to generate file reference URLs, pass the kCFURLEnumeratorGenerateFileReferenceURLs option.
-     * 
+     * <p>
      * The kCFURLEnumeratorDescendRecursively and kCFURLEnumeratorSkipPackageContents options are ignored by CFURLEnumeratorCreateForMountedVolumes.
      */
     @Generated
@@ -7358,7 +7358,7 @@ public final class CoreFoundation {
 
     /**
      * CFURLEnumeratorGetNextURL - Advances the enumerator. If kCFURLEnumeratorSuccess is returned, the url output parameter returns the next URL found. If kCFURLEnumeratorError is returned, an error has occured and the error output parameter describes the error. If kCFURLEnumeratorEnd, the enumeration is finished.
-     * 
+     * <p>
      * The url output parameter, if returned, is not retained. The error output parameter, if returned, is retained and must be released.
      */
     @Generated
@@ -7369,11 +7369,11 @@ public final class CoreFoundation {
 
     /**
      * CFURLEnumeratorSkipDescendents - Tells a recursive CFURLEnumerator not to descend into the directory of the last CFURLRef returned by CFURLEnumeratorGetNextURL.
-     * 
+     * <p>
      * Calls to CFURLEnumeratorSkipDescendents are ignored if:
-     *     * CFURLEnumeratorGetNextURL has never been called with the CFURLEnumerator.
-     *     * The last CFURL returned by CFURLEnumeratorGetNextURL is not a directory.
-     *     * The CFURLEnumerator was not created with CFURLEnumeratorCreateForDirectoryURL using the kCFURLEnumeratorDescendRecursively option.
+     * * CFURLEnumeratorGetNextURL has never been called with the CFURLEnumerator.
+     * * The last CFURL returned by CFURLEnumeratorGetNextURL is not a directory.
+     * * The CFURLEnumerator was not created with CFURLEnumeratorCreateForDirectoryURL using the kCFURLEnumeratorDescendRecursively option.
      */
     @Generated
     @CFunction
@@ -7389,7 +7389,7 @@ public final class CoreFoundation {
 
     /**
      * CFURLEnumeratorGetSourceDidChange is deprecated. If your program is interested in directory hierarchy changes during enumeration (and most programs are not interested), you should use the File System Events API.
-     * 
+     * <p>
      * CFURLEnumeratorGetSourceDidChange does nothing and always returns false.
      */
     @Generated
@@ -7399,9 +7399,9 @@ public final class CoreFoundation {
 
     /**
      * Returns the type identifier for the CFFileSecurity opaque type.
-     * 
+     * <p>
      * Return Value
-     * 	The type identifier for the CFFileSecurity opaque type.
+     * The type identifier for the CFFileSecurity opaque type.
      */
     @Generated
     @CFunction
@@ -7410,31 +7410,31 @@ public final class CoreFoundation {
 
     /**
      * Creates an CFFileSecurity object.
-     * 
+     * <p>
      * Parameters
-     * 	allocator
-     * 		The allocator to use to allocate memory for the new object. Pass
-     * 		NULL or kCFAllocatorDefault to use the current default allocator.
+     * allocator
+     * The allocator to use to allocate memory for the new object. Pass
+     * NULL or kCFAllocatorDefault to use the current default allocator.
      * Return Value
-     * 	A new CFFileSecurity object, or NULL if there was a problem creating the
-     * 	object. Ownership follows the Create Rule.
+     * A new CFFileSecurity object, or NULL if there was a problem creating the
+     * object. Ownership follows the Create Rule.
      */
     @Generated
     @CFunction
     public static native CFFileSecurityRef CFFileSecurityCreate(CFAllocatorRef allocator);
 
     /**
-     *  Creates a copy of a CFFileSecurity object.
-     * 
-     *  Parameters
-     * 	allocator
-     * 		The allocator to use to allocate memory for the new object. Pass
-     * 		NULL or kCFAllocatorDefault to use the current default allocator.
-     * 	fileSec
-     * 		The CFFileSecurity object to copy.
+     * Creates a copy of a CFFileSecurity object.
+     * <p>
+     * Parameters
+     * allocator
+     * The allocator to use to allocate memory for the new object. Pass
+     * NULL or kCFAllocatorDefault to use the current default allocator.
+     * fileSec
+     * The CFFileSecurity object to copy.
      * Return Value
-     * 	A copy of fileSec, or NULL if there was a problem creating the object.
-     * 	Ownership follows the Create Rule.
+     * A copy of fileSec, or NULL if there was a problem creating the object.
+     * Ownership follows the Create Rule.
      */
     @Generated
     @CFunction
@@ -7443,15 +7443,15 @@ public final class CoreFoundation {
 
     /**
      * This routine copies the owner UUID associated with an CFFileSecurity object.
-     * 
+     * <p>
      * Parameters
-     * 	fileSec
-     * 		The CFFileSecurity object.
-     * 	ownerUUID
-     * 		A pointer to storage for the owner UUID.
+     * fileSec
+     * The CFFileSecurity object.
+     * ownerUUID
+     * A pointer to storage for the owner UUID.
      * Return Value
-     * 	true if ownerUUID is successfully returned; false if there is no owner
-     * 	UUID property associated with an CFFileSecurity object.
+     * true if ownerUUID is successfully returned; false if there is no owner
+     * UUID property associated with an CFFileSecurity object.
      */
     @Generated
     @CFunction
@@ -7459,14 +7459,14 @@ public final class CoreFoundation {
 
     /**
      * This routine sets the owner UUID associated with an CFFileSecurity object.
-     * 
+     * <p>
      * Parameters
-     * 	fileSec
-     * 		The CFFileSecurity object.
-     * 	ownerUUID
-     * 		The owner UUID.
+     * fileSec
+     * The CFFileSecurity object.
+     * ownerUUID
+     * The owner UUID.
      * Return Value
-     * 	true if the owner UUID was successfully set; otherwise, false.
+     * true if the owner UUID was successfully set; otherwise, false.
      */
     @Generated
     @CFunction
@@ -7474,15 +7474,15 @@ public final class CoreFoundation {
 
     /**
      * This routine copies the group UUID associated with an CFFileSecurity object.
-     * 
+     * <p>
      * Parameters
-     * 	fileSec
-     * 		The CFFileSecurity object.
-     * 	groupUUID
-     * 		A pointer to storage for the group UUID.
+     * fileSec
+     * The CFFileSecurity object.
+     * groupUUID
+     * A pointer to storage for the group UUID.
      * Return Value
-     * 	true if groupUUID is successfully returned; false if there is no group
-     * 	UUID property associated with an CFFileSecurity object.
+     * true if groupUUID is successfully returned; false if there is no group
+     * UUID property associated with an CFFileSecurity object.
      */
     @Generated
     @CFunction
@@ -7490,14 +7490,14 @@ public final class CoreFoundation {
 
     /**
      * This routine sets the group UUID associated with an CFFileSecurity object.
-     * 
+     * <p>
      * Parameters
-     * 	fileSec
-     * 		The CFFileSecurity object.
-     * 	groupUUID
-     * 		The group UUID.
+     * fileSec
+     * The CFFileSecurity object.
+     * groupUUID
+     * The group UUID.
      * Return Value
-     * 	true if the group UUID was successfully set; otherwise, false.
+     * true if the group UUID was successfully set; otherwise, false.
      */
     @Generated
     @CFunction
@@ -7508,16 +7508,16 @@ public final class CoreFoundation {
      * CFFileSecurity object. The acl_t returned by this routine is a copy and must
      * be released using acl_free(3). The acl_t is meant to be manipulated using
      * the acl calls defined in <sys/acl.h>.
-     * 
+     * <p>
      * Parameters
-     * 	fileSec
-     * 		The CFFileSecurity object.
-     * 	accessControlList
-     * 		A pointer to storage for an acl_t. The acl_t be released using
-     * 		acl_free(3)
+     * fileSec
+     * The CFFileSecurity object.
+     * accessControlList
+     * A pointer to storage for an acl_t. The acl_t be released using
+     * acl_free(3)
      * Return Value
-     * 	true if the access control list is successfully copied; false if there is
-     * 	no access control list property associated with the CFFileSecurity object.
+     * true if the access control list is successfully copied; false if there is
+     * no access control list property associated with the CFFileSecurity object.
      */
     @Generated
     @CFunction
@@ -7531,15 +7531,15 @@ public final class CoreFoundation {
      * the fileSec on the target object using CFURLSetResourcePropertyForKey and
      * the kCFURLFileSecurityKey. Setting the accessControlList to NULL will result
      * in the property being unset.
-     * 
+     * <p>
      * Parameters
-     * 	fileSec
-     * 		The CFFileSecurity object.
-     * 	accessControlList
-     * 		The acl_t to set, or kCFFileSecurityRemoveACL to remove the access
-     * 		control list, or NULL to unset the accessControlList.
+     * fileSec
+     * The CFFileSecurity object.
+     * accessControlList
+     * The acl_t to set, or kCFFileSecurityRemoveACL to remove the access
+     * control list, or NULL to unset the accessControlList.
      * Return Value
-     * 	true if the access control list is successfully set; otherwise, false.
+     * true if the access control list is successfully set; otherwise, false.
      */
     @Generated
     @CFunction
@@ -7547,15 +7547,15 @@ public final class CoreFoundation {
 
     /**
      * This routine gets the owner uid_t associated with an CFFileSecurity object.
-     * 
+     * <p>
      * Parameters
-     * 	fileSec
-     * 		The CFFileSecurity object.
-     * 	owner
-     * 		A pointer to where the owner uid_t will be put.
+     * fileSec
+     * The CFFileSecurity object.
+     * owner
+     * A pointer to where the owner uid_t will be put.
      * Return Value
-     * 	true if owner uid_t is successfully obtained; false if there is no owner
-     * 	property associated with an CFFileSecurity object.
+     * true if owner uid_t is successfully obtained; false if there is no owner
+     * property associated with an CFFileSecurity object.
      */
     @Generated
     @CFunction
@@ -7563,14 +7563,14 @@ public final class CoreFoundation {
 
     /**
      * This routine sets the owner uid_t associated with an CFFileSecurity object.
-     * 
+     * <p>
      * Parameters
-     * 	fileSec
-     * 		The CFFileSecurity object.
-     * 	owner
-     * 		The owner uid_t.
+     * fileSec
+     * The CFFileSecurity object.
+     * owner
+     * The owner uid_t.
      * Return Value
-     * 	true if the owner uid_t was successfully set; otherwise, false.
+     * true if the owner uid_t was successfully set; otherwise, false.
      */
     @Generated
     @CFunction
@@ -7578,15 +7578,15 @@ public final class CoreFoundation {
 
     /**
      * This routine gets the group gid_t associated with an CFFileSecurity object.
-     * 
+     * <p>
      * Parameters
-     * 	fileSec
-     * 		The CFFileSecurity object.
-     * 	owner
-     * 		A pointer to where the group gid_t will be put.
+     * fileSec
+     * The CFFileSecurity object.
+     * owner
+     * A pointer to where the group gid_t will be put.
      * Return Value
-     * 	true if group gid_t is successfully obtained; false if there is no group
-     * 	property associated with an CFFileSecurity object.
+     * true if group gid_t is successfully obtained; false if there is no group
+     * property associated with an CFFileSecurity object.
      */
     @Generated
     @CFunction
@@ -7594,14 +7594,14 @@ public final class CoreFoundation {
 
     /**
      * This routine sets the group gid_t associated with an CFFileSecurity object.
-     * 
+     * <p>
      * Parameters
-     * 	fileSec
-     * 		The CFFileSecurity object.
-     * 	owner
-     * 		The group gid_t.
+     * fileSec
+     * The CFFileSecurity object.
+     * owner
+     * The group gid_t.
      * Return Value
-     * 	true if the group gid_t was successfully set; otherwise, false.
+     * true if the group gid_t was successfully set; otherwise, false.
      */
     @Generated
     @CFunction
@@ -7609,15 +7609,15 @@ public final class CoreFoundation {
 
     /**
      * This routine gets the mode_t associated with an CFFileSecurity object.
-     * 
+     * <p>
      * Parameters
-     * 	fileSec
-     * 		The CFFileSecurity object.
-     * 	owner
-     * 		A pointer to where the mode_t will be put.
+     * fileSec
+     * The CFFileSecurity object.
+     * owner
+     * A pointer to where the mode_t will be put.
      * Return Value
-     * 	true if mode_t is successfully obtained; false if there is no mode
-     * 	property associated with an CFFileSecurity object.
+     * true if mode_t is successfully obtained; false if there is no mode
+     * property associated with an CFFileSecurity object.
      */
     @Generated
     @CFunction
@@ -7625,14 +7625,14 @@ public final class CoreFoundation {
 
     /**
      * This routine sets the mode_t associated with an CFFileSecurity object.
-     * 
+     * <p>
      * Parameters
-     * 	fileSec
-     * 		The CFFileSecurity object.
-     * 	owner
-     * 		The mode_t.
+     * fileSec
+     * The CFFileSecurity object.
+     * owner
+     * The mode_t.
      * Return Value
-     * 	true if the mode_t was successfully set; otherwise, false.
+     * true if the mode_t was successfully set; otherwise, false.
      */
     @Generated
     @CFunction
@@ -7640,12 +7640,12 @@ public final class CoreFoundation {
 
     /**
      * This routine clears file security properties in the CFFileSecurity object.
-     * 
+     * <p>
      * Parameters
-     * 	clearPropertyMask
-     * 		The file security properties to clear.
+     * clearPropertyMask
+     * The file security properties to clear.
      * Return Value
-     * 	true if the file security properties were successfully cleared; otherwise, false.
+     * true if the file security properties were successfully cleared; otherwise, false.
      */
     @Generated
     @CFunction
@@ -7653,19 +7653,19 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFStringTokenizerCopyBestStringLanguage
-     * 
+     * <p>
      * Guesses the language of a string and returns the BCP 47 string of the
-     * 	language.
-     * 
+     * language.
+     * <p>
      * The result is not guaranteed to be accurate. Typically 200-400
-     * 	characters are required to reliably guess the language of a string.
-     * 
+     * characters are required to reliably guess the language of a string.
+     *
      * @param string The string whose language is to be guessed.
-     * @param range The range of characters in string whose language to be
-     * 	guessed. The specified range must not exceed the bounds of the string.
+     * @param range  The range of characters in string whose language to be
+     *               guessed. The specified range must not exceed the bounds of the string.
      * @return A language represented in BCP 47 string. NULL is returned either if
-     * 	string is NULL, the location of range is negative, the length of range
-     * 	is 0, or the language of the string cannot be guessed.
+     * string is NULL, the location of range is negative, the length of range
+     * is 0, or the language of the string cannot be guessed.
      */
     @Generated
     @CFunction
@@ -7674,9 +7674,9 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFStringTokenizerGetTypeID
-     * 
+     * <p>
      * Get the type identifier.
-     * 
+     *
      * @return the type identifier of all CFStringTokenizer instances.
      */
     @Generated
@@ -7686,21 +7686,21 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFStringTokenizerCreate
-     * 
+     * <p>
      * Creates a tokenizer instance.
-     * 
-     * @param alloc The CFAllocator which should be used to allocate memory for the
-     * 	tokenizer and its storage for values. This parameter may be NULL in which 
-     * 	case the current default CFAllocator is used. 	
-     * @param string The string to tokenize.
-     * @param range The range of characters within the string to be tokenized. The
-     * 	specified range must not exceed the length of the string.
-     * @param options Use one of the Tokenization Unit options to specify how the 
-     * 	string should be tokenized. Optionally specify one or more attribute
-     * 	specifiers to tell the tokenizer to prepare specified attributes when it
-     * 	tokenizes the string.
-     * @param locale The locale to specify language or region specific behavior. Pass
-     *               NULL if you want tokenizer to identify the locale automatically.
+     *
+     * @param alloc   The CFAllocator which should be used to allocate memory for the
+     *                tokenizer and its storage for values. This parameter may be NULL in which
+     *                case the current default CFAllocator is used.
+     * @param string  The string to tokenize.
+     * @param range   The range of characters within the string to be tokenized. The
+     *                specified range must not exceed the length of the string.
+     * @param options Use one of the Tokenization Unit options to specify how the
+     *                string should be tokenized. Optionally specify one or more attribute
+     *                specifiers to tell the tokenizer to prepare specified attributes when it
+     *                tokenizes the string.
+     * @param locale  The locale to specify language or region specific behavior. Pass
+     *                NULL if you want tokenizer to identify the locale automatically.
      * @return A reference to the new CFStringTokenizer.
      */
     @Generated
@@ -7710,14 +7710,14 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFStringTokenizerSetString
-     * 
+     * <p>
      * Set the string to tokenize.
-     * 
+     *
      * @param tokenizer The reference to CFStringTokenizer returned by
-     * 	CFStringTokenizerCreate.
-     * @param string The string to tokenize.
-     * @param range The range of characters within the string to be tokenized. The
-     * 	specified range must not exceed the length of the string.
+     *                  CFStringTokenizerCreate.
+     * @param string    The string to tokenize.
+     * @param range     The range of characters within the string to be tokenized. The
+     *                  specified range must not exceed the length of the string.
      */
     @Generated
     @CFunction
@@ -7726,21 +7726,21 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFStringTokenizerGoToTokenAtIndex
-     * 
+     * <p>
      * Random access to a token. Find a token that includes the character specified
-     * 	by character index, and set it as the current token.
-     * 
+     * by character index, and set it as the current token.
+     * <p>
      * The range and attribute of the token can be obtained by calling
-     * 	CFStringTokenizerGetCurrentTokenRange and CFStringTokenizerCopyCurrentTokenAttribute.
-     * 	If the token is a compound (with type kCFStringTokenizerTokenHasSubTokensMask or
-     * 	kCFStringTokenizerTokenHasDerivedSubTokensMask), its subtokens and
-     * 	(or) derived subtokens can be obtained by calling CFStringTokenizerGetCurrentSubTokens. 
-     * 
+     * CFStringTokenizerGetCurrentTokenRange and CFStringTokenizerCopyCurrentTokenAttribute.
+     * If the token is a compound (with type kCFStringTokenizerTokenHasSubTokensMask or
+     * kCFStringTokenizerTokenHasDerivedSubTokensMask), its subtokens and
+     * (or) derived subtokens can be obtained by calling CFStringTokenizerGetCurrentSubTokens.
+     *
      * @param tokenizer The reference to CFStringTokenizer returned by
-     * 	CFStringTokenizerCreate.
-     * @param index The index of the Unicode character in the CFString.
+     *                  CFStringTokenizerCreate.
+     * @param index     The index of the Unicode character in the CFString.
      * @return Type of the token if succeeded in finding a token and setting it as
-     * 	current token. kCFStringTokenizerTokenNone if failed in finding a token.
+     * current token. kCFStringTokenizerTokenNone if failed in finding a token.
      */
     @Generated
     @CFunction
@@ -7749,27 +7749,27 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFStringTokenizerAdvanceToNextToken
-     * 
+     * <p>
      * Token enumerator.
-     * 
+     * <p>
      * If there is no preceding call to CFStringTokenizerGoToTokenAtIndex
-     * 	or CFStringTokenizerAdvanceToNextToken, it finds the first token in the range
-     * 	specified to CFStringTokenizerCreate. If there is a current token after successful
-     * 	call to CFStringTokenizerGoToTokenAtIndex or CFStringTokenizerAdvanceToNextToken,
-     * 	it proceeds to the next token. If succeeded in finding a token, set it as current 
-     * 	token and return its token type. Otherwise invalidate current token and return
-     * 	kCFStringTokenizerTokenNone.
-     * 	The range and attribute of the token can be obtained by calling
-     * 	CFStringTokenizerGetCurrentTokenRange and 
-     *        CFStringTokenizerCopyCurrentTokenAttribute. If the token is a compound
-     * 	(with type kCFStringTokenizerTokenHasSubTokensMask or
-     * 	kCFStringTokenizerTokenHasDerivedSubTokensMask), its subtokens and
-     * 	(or) derived subtokens can be obtained by calling CFStringTokenizerGetCurrentSubTokens. 
-     * 
+     * or CFStringTokenizerAdvanceToNextToken, it finds the first token in the range
+     * specified to CFStringTokenizerCreate. If there is a current token after successful
+     * call to CFStringTokenizerGoToTokenAtIndex or CFStringTokenizerAdvanceToNextToken,
+     * it proceeds to the next token. If succeeded in finding a token, set it as current
+     * token and return its token type. Otherwise invalidate current token and return
+     * kCFStringTokenizerTokenNone.
+     * The range and attribute of the token can be obtained by calling
+     * CFStringTokenizerGetCurrentTokenRange and
+     * CFStringTokenizerCopyCurrentTokenAttribute. If the token is a compound
+     * (with type kCFStringTokenizerTokenHasSubTokensMask or
+     * kCFStringTokenizerTokenHasDerivedSubTokensMask), its subtokens and
+     * (or) derived subtokens can be obtained by calling CFStringTokenizerGetCurrentSubTokens.
+     *
      * @param tokenizer The reference to CFStringTokenizer returned by
-     * 	CFStringTokenizerCreate.
+     *                  CFStringTokenizerCreate.
      * @return Type of the token if succeeded in finding a token and setting it as
-     * 	current token. kCFStringTokenizerTokenNone if failed in finding a token.
+     * current token. kCFStringTokenizerTokenNone if failed in finding a token.
      */
     @Generated
     @CFunction
@@ -7778,11 +7778,11 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFStringTokenizerGetCurrentTokenRange
-     * 
+     * <p>
      * Returns the range of current token.
-     * 
+     *
      * @param tokenizer The reference to CFStringTokenizer returned by
-     * 	CFStringTokenizerCreate.
+     *                  CFStringTokenizerCreate.
      * @return Range of current token, or {kCFNotFound,0} if there is no current token.
      */
     @Generated
@@ -7792,16 +7792,16 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFStringTokenizerCopyCurrentTokenAttribute
-     * 
+     * <p>
      * Copies the specified attribute of current token.
-     * 
+     *
      * @param tokenizer The reference to CFStringTokenizer returned by
-     * 	CFStringTokenizerCreate.
+     *                  CFStringTokenizerCreate.
      * @param attribute Specify a token attribute you want to obtain. The value is
-     * 	one of kCFStringTokenizerAttributeLatinTranscription or
-     * 	kCFStringTokenizerAttributeLanguage.
+     *                  one of kCFStringTokenizerAttributeLatinTranscription or
+     *                  kCFStringTokenizerAttributeLanguage.
      * @return Token attribute, or NULL if current token does not have the specified
-     * 	attribute or if there is no current token.
+     * attribute or if there is no current token.
      */
     @Generated
     @CFunction
@@ -7810,29 +7810,29 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFStringTokenizerGetCurrentSubTokens
-     * 
+     * <p>
      * Retrieves the subtokens or derived subtokens contained in the compound token.
-     * 
+     * <p>
      * If token type is kCFStringTokenizerTokenNone, the ranges array and
-     * 	derivedSubTokens array are untouched and the return value is 0.
-     *        If token type is kCFStringTokenizerTokenNormal, the ranges array has one item
-     *        filled in with the entire range of the token (if maxRangeLength >= 1) and a string
-     * 	taken from the entire token range is added to the derivedSubTokens array and the 
-     * 	return value is 1.
-     * 	If token type is kCFStringTokenizerTokenHasSubTokensMask or
-     *        kCFStringTokenizerTokenHasDerivedSubTokensMask, the ranges array is filled
-     *        in with as many items as there are subtokens (up to a limit of maxRangeLength).
-     * 	The derivedSubTokens array will have sub tokens added even when the sub token is a 
-     * 	substring of the token. If token type is kCFStringTokenizerTokenHasSubTokensMask,
-     * 	the ordinary non-derived subtokens are added to the derivedSubTokens array. 
-     * 
-     * @param tokenizer The reference to CFStringTokenizer returned by CFStringTokenizerCreate.
-     * @param ranges An array of CFRange to fill in with the ranges of subtokens. The filled in 
-     * 	ranges are relative to the string specified to CFStringTokenizerCreate. This parameter
-     * 	can be NULL.
-     * @param maxRangeLength The maximum number of ranges to return.
+     * derivedSubTokens array are untouched and the return value is 0.
+     * If token type is kCFStringTokenizerTokenNormal, the ranges array has one item
+     * filled in with the entire range of the token (if maxRangeLength >= 1) and a string
+     * taken from the entire token range is added to the derivedSubTokens array and the
+     * return value is 1.
+     * If token type is kCFStringTokenizerTokenHasSubTokensMask or
+     * kCFStringTokenizerTokenHasDerivedSubTokensMask, the ranges array is filled
+     * in with as many items as there are subtokens (up to a limit of maxRangeLength).
+     * The derivedSubTokens array will have sub tokens added even when the sub token is a
+     * substring of the token. If token type is kCFStringTokenizerTokenHasSubTokensMask,
+     * the ordinary non-derived subtokens are added to the derivedSubTokens array.
+     *
+     * @param tokenizer        The reference to CFStringTokenizer returned by CFStringTokenizerCreate.
+     * @param ranges           An array of CFRange to fill in with the ranges of subtokens. The filled in
+     *                         ranges are relative to the string specified to CFStringTokenizerCreate. This parameter
+     *                         can be NULL.
+     * @param maxRangeLength   The maximum number of ranges to return.
      * @param derivedSubTokens An array of CFMutableArray to which the derived subtokens are to
-     * 	be added. This parameter can be NULL.
+     *                         be added. This parameter can be NULL.
      * @return number of subtokens.
      */
     @Generated
@@ -7932,7 +7932,7 @@ public final class CoreFoundation {
     /**
      * Null allocator which does nothing and allocates no memory. This allocator
      * is useful as the "bytesDeallocator" in CFData or "contentsDeallocator"
-     * in CFString where the memory should not be freed. 
+     * in CFString where the memory should not be freed.
      */
     @Generated
     @CVariable()
@@ -7941,7 +7941,7 @@ public final class CoreFoundation {
     /**
      * Special allocator argument to CFAllocatorCreate() which means
      * "use the functions given in the context to allocate the allocator
-     * itself as well". 
+     * itself as well".
      */
     @Generated
     @CVariable()
@@ -8696,8 +8696,8 @@ public final class CoreFoundation {
 
     /**
      * Total available capacity in bytes for "Opportunistic" resources, including space expected to be cleared by purging non-essential and cached resources. "Opportunistic" means something that the user is likely to want but does not expect to be present on the local system, but is ultimately non-essential and replaceable. This would include items that will be created or downloaded without an explicit request from the user on the current device.
-     * 
-     * Examples: A background download of a newly available episode of a TV series that a user has been recently watching, a piece of content explicitly requested on another device, or a new document saved to a network server by the current user from another device. (Read-only, value type CFNumber) 
+     * <p>
+     * Examples: A background download of a newly available episode of a TV series that a user has been recently watching, a piece of content explicitly requested on another device, or a new document saved to a network server by the current user from another device. (Read-only, value type CFNumber)
      */
     @Generated
     @CVariable()
@@ -9673,7 +9673,7 @@ public final class CoreFoundation {
      * [@constant] kCFCopyStringSetCallBacks
      * Predefined CFSetCallBacks structure containing a set of callbacks
      * appropriate for use when the values in a CFSet should be copies
-     *        of a CFString.
+     * of a CFString.
      */
     @Generated
     @CVariable()
@@ -10037,10 +10037,10 @@ public final class CoreFoundation {
 
     /**
      * Total available capacity in bytes for "Important" resources, including space expected to be cleared by purging non-essential and cached resources. "Important" means something that the user or application clearly expects to be present on the local system, but is ultimately replaceable. This would include items that the user has explicitly requested via the UI, and resources that an application requires in order to provide functionality.
-     * 
+     * <p>
      * Examples: A video that the user has explicitly requested to watch but has not yet finished watching or an audio file that the user has requested to download.
-     * 
-     * This value should not be used in determining if there is room for an irreplaceable resource. In the case of irreplaceable resources, always attempt to save the resource regardless of available capacity and handle failure as gracefully as possible. (Read-only, value type CFNumber) 
+     * <p>
+     * This value should not be used in determining if there is room for an irreplaceable resource. In the case of irreplaceable resources, always attempt to save the resource regardless of available capacity and handle failure as gracefully as possible. (Read-only, value type CFNumber)
      */
     @Generated
     @CVariable()
@@ -10062,9 +10062,9 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamErrorDomainSOCKS
-     * 
+     * <p>
      * Discussion:
-     *   SOCKS proxy error domain.  Errors formulated using inlines below.
+     * SOCKS proxy error domain.  Errors formulated using inlines below.
      */
     @Generated
     @CVariable()
@@ -10072,16 +10072,16 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamPropertySOCKSProxy
-     * 
+     * <p>
      * Discussion:
-     *   Stream property key, for both set and copy operations.  To set a
-     *   stream to use a SOCKS proxy, call CFReadStreamSetProperty or
-     *   CFWriteStreamSetProperty with the property name set to
-     *   kCFStreamPropertySOCKSProxy and the value being a dictionary with
-     *   at least the following two keys: kCFStreamPropertySOCKSProxyHost
-     *   and kCFStreamPropertySOCKSProxyPort.  The dictionary returned by
-     *   SystemConfiguration for SOCKS proxies will work without
-     *   alteration.
+     * Stream property key, for both set and copy operations.  To set a
+     * stream to use a SOCKS proxy, call CFReadStreamSetProperty or
+     * CFWriteStreamSetProperty with the property name set to
+     * kCFStreamPropertySOCKSProxy and the value being a dictionary with
+     * at least the following two keys: kCFStreamPropertySOCKSProxyHost
+     * and kCFStreamPropertySOCKSProxyPort.  The dictionary returned by
+     * SystemConfiguration for SOCKS proxies will work without
+     * alteration.
      */
     @Generated
     @CVariable()
@@ -10089,12 +10089,12 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamPropertySOCKSProxyHost
-     * 
+     * <p>
      * Discussion:
-     *   CFDictionary key for SOCKS proxy information.  The key
-     *   kCFStreamPropertySOCKSProxyHost should contain a CFStringRef
-     *   value representing the SOCKS proxy host.  Defined to match
-     *   kSCPropNetProxiesSOCKSProxy
+     * CFDictionary key for SOCKS proxy information.  The key
+     * kCFStreamPropertySOCKSProxyHost should contain a CFStringRef
+     * value representing the SOCKS proxy host.  Defined to match
+     * kSCPropNetProxiesSOCKSProxy
      */
     @Generated
     @CVariable()
@@ -10102,13 +10102,13 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamPropertySOCKSProxyPort
-     * 
+     * <p>
      * Discussion:
-     *   CFDictionary key for SOCKS proxy information.  The key
-     *   kCFStreamPropertySOCKSProxyPort should contain a CFNumberRef
-     *   which itself is of type kCFNumberSInt32Type.  This value should
-     *   represent the port on which the proxy is listening.  Defined to
-     *   match kSCPropNetProxiesSOCKSPort
+     * CFDictionary key for SOCKS proxy information.  The key
+     * kCFStreamPropertySOCKSProxyPort should contain a CFNumberRef
+     * which itself is of type kCFNumberSInt32Type.  This value should
+     * represent the port on which the proxy is listening.  Defined to
+     * match kSCPropNetProxiesSOCKSPort
      */
     @Generated
     @CVariable()
@@ -10116,13 +10116,13 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamPropertySOCKSVersion
-     * 
+     * <p>
      * Discussion:
-     *   CFDictionary key for SOCKS proxy information.  By default, SOCKS5
-     *   will be used unless there is a kCFStreamPropertySOCKSVersion key
-     *   in the dictionary.  Its value must be
-     *   kCFStreamSocketSOCKSVersion4 or kCFStreamSocketSOCKSVersion5 to
-     *   set SOCKS4 or SOCKS5, respectively.
+     * CFDictionary key for SOCKS proxy information.  By default, SOCKS5
+     * will be used unless there is a kCFStreamPropertySOCKSVersion key
+     * in the dictionary.  Its value must be
+     * kCFStreamSocketSOCKSVersion4 or kCFStreamSocketSOCKSVersion5 to
+     * set SOCKS4 or SOCKS5, respectively.
      */
     @Generated
     @CVariable()
@@ -10130,10 +10130,10 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamSocketSOCKSVersion4
-     * 
+     * <p>
      * Discussion:
-     *   CFDictionary value for SOCKS proxy information.  Indcates that
-     *   SOCKS will or is using version 4 of the SOCKS protocol.
+     * CFDictionary value for SOCKS proxy information.  Indcates that
+     * SOCKS will or is using version 4 of the SOCKS protocol.
      */
     @Generated
     @CVariable()
@@ -10141,10 +10141,10 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamSocketSOCKSVersion5
-     * 
+     * <p>
      * Discussion:
-     *   CFDictionary value for SOCKS proxy information.  Indcates that
-     *   SOCKS will or is using version 5 of the SOCKS protocol.
+     * CFDictionary value for SOCKS proxy information.  Indcates that
+     * SOCKS will or is using version 5 of the SOCKS protocol.
      */
     @Generated
     @CVariable()
@@ -10152,14 +10152,14 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamPropertySOCKSUser
-     * 
+     * <p>
      * Discussion:
-     *   CFDictionary key for SOCKS proxy information.  To set a user name
-     *   and/or password, if required, the dictionary must contain the
-     *   key(s) kCFStreamPropertySOCKSUser and/or
-     *   kCFStreamPropertySOCKSPassword with the value being the user's
-     *   name as a CFStringRef and/or the user's password as a
-     *   CFStringRef, respectively.
+     * CFDictionary key for SOCKS proxy information.  To set a user name
+     * and/or password, if required, the dictionary must contain the
+     * key(s) kCFStreamPropertySOCKSUser and/or
+     * kCFStreamPropertySOCKSPassword with the value being the user's
+     * name as a CFStringRef and/or the user's password as a
+     * CFStringRef, respectively.
      */
     @Generated
     @CVariable()
@@ -10167,14 +10167,14 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamPropertySOCKSPassword
-     * 
+     * <p>
      * Discussion:
-     *   CFDictionary key for SOCKS proxy information.  To set a user name
-     *   and/or password, if required, the dictionary must contain the
-     *   key(s) kCFStreamPropertySOCKSUser and/or
-     *   kCFStreamPropertySOCKSPassword with the value being the user's
-     *   name as a CFStringRef and/or the user's password as a
-     *   CFStringRef, respectively.
+     * CFDictionary key for SOCKS proxy information.  To set a user name
+     * and/or password, if required, the dictionary must contain the
+     * key(s) kCFStreamPropertySOCKSUser and/or
+     * kCFStreamPropertySOCKSPassword with the value being the user's
+     * name as a CFStringRef and/or the user's password as a
+     * CFStringRef, respectively.
      */
     @Generated
     @CVariable()
@@ -10182,9 +10182,9 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamErrorDomainSSL
-     * 
+     * <p>
      * Discussion:
-     *   Errors located in Security/SecureTransport.h
+     * Errors located in Security/SecureTransport.h
      */
     @Generated
     @CVariable()
@@ -10192,14 +10192,14 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamPropertySocketSecurityLevel
-     * 
+     * <p>
      * Discussion:
-     *   Stream property key, for both set and copy operations. To set a
-     *   stream to be secure, call CFReadStreamSetProperty or
-     *   CFWriteStreamSetPropertywith the property name set to
-     *   kCFStreamPropertySocketSecurityLevel and the value being one of
-     *   the following values.  Streams may set a security level after
-     *   open in order to allow on-the-fly securing of a stream.
+     * Stream property key, for both set and copy operations. To set a
+     * stream to be secure, call CFReadStreamSetProperty or
+     * CFWriteStreamSetPropertywith the property name set to
+     * kCFStreamPropertySocketSecurityLevel and the value being one of
+     * the following values.  Streams may set a security level after
+     * open in order to allow on-the-fly securing of a stream.
      */
     @Generated
     @CVariable()
@@ -10207,10 +10207,10 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamSocketSecurityLevelNone
-     * 
+     * <p>
      * Discussion:
-     *   Stream property value, for both set and copy operations.
-     *   Indicates to use no security (default setting).
+     * Stream property value, for both set and copy operations.
+     * Indicates to use no security (default setting).
      */
     @Generated
     @CVariable()
@@ -10218,12 +10218,12 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamSocketSecurityLevelSSLv2
-     * 
+     * <p>
      * Note: SSLv2 is DEPRECATED starting in OS X 10.12 and iOS 10.0.
-     * 
+     * <p>
      * Discussion:
-     *   Stream property value, for both set and copy operations.
-     *   Indicates to use SSLv2 security.
+     * Stream property value, for both set and copy operations.
+     * Indicates to use SSLv2 security.
      */
     @Generated
     @CVariable()
@@ -10231,12 +10231,12 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamSocketSecurityLevelSSLv3
-     * 
+     * <p>
      * Note: SSLv3 is DEPRECATED starting in OS X 10.12 and iOS 10.0.
-     * 
+     * <p>
      * Discussion:
-     *   Stream property value, for both set and copy operations.
-     *   Indicates to use SSLv3 security.
+     * Stream property value, for both set and copy operations.
+     * Indicates to use SSLv3 security.
      */
     @Generated
     @CVariable()
@@ -10244,10 +10244,10 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamSocketSecurityLevelTLSv1
-     * 
+     * <p>
      * Discussion:
-     *   Stream property value, for both set and copy operations.
-     *   Indicates to use TLSv1 security.
+     * Stream property value, for both set and copy operations.
+     * Indicates to use TLSv1 security.
      */
     @Generated
     @CVariable()
@@ -10255,11 +10255,11 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamSocketSecurityLevelNegotiatedSSL
-     * 
+     * <p>
      * Discussion:
-     *   Stream property value, for both set and copy operations.
-     *   Indicates to use TLS or SSL with fallback to lower versions. This
-     *   is what HTTPS does, for instance.
+     * Stream property value, for both set and copy operations.
+     * Indicates to use TLS or SSL with fallback to lower versions. This
+     * is what HTTPS does, for instance.
      */
     @Generated
     @CVariable()
@@ -10267,18 +10267,18 @@ public final class CoreFoundation {
 
     /**
      * kCFStreamPropertyShouldCloseNativeSocket
-     * 
+     * <p>
      * Discussion:
-     *   Set the value to kCFBooleanTrue if the stream should close and
-     *   release the underlying native socket when the stream is released.
-     *    Set the value to kCFBooleanFalse to keep the native socket from
-     *   closing and releasing when the stream is released. If the stream
-     *   was created with a native socket, the default property setting on
-     *   the stream is kCFBooleanFalse. The
-     *   kCFStreamPropertyShouldCloseNativeSocket can be set through
-     *   CFReadStreamSetProperty or CFWriteStreamSetProperty.  The
-     *   property can be copied through CFReadStreamCopyProperty or
-     *   CFWriteStreamCopyProperty.
+     * Set the value to kCFBooleanTrue if the stream should close and
+     * release the underlying native socket when the stream is released.
+     * Set the value to kCFBooleanFalse to keep the native socket from
+     * closing and releasing when the stream is released. If the stream
+     * was created with a native socket, the default property setting on
+     * the stream is kCFBooleanFalse. The
+     * kCFStreamPropertyShouldCloseNativeSocket can be set through
+     * CFReadStreamSetProperty or CFWriteStreamSetProperty.  The
+     * property can be copied through CFReadStreamCopyProperty or
+     * CFWriteStreamCopyProperty.
      */
     @Generated
     @CVariable()
@@ -10325,4 +10325,11 @@ public final class CoreFoundation {
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeSupportsFileProtectionKey();
+
+    /**
+     * returns the error when uploading the item to iCloud failed. See the NSUbiquitousFile section in FoundationErrors.h. (Read-only, value type CFError)
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLUbiquitousItemIsExcludedFromSyncKey();
 }

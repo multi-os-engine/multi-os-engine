@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * INSiriAuthorizationStatus
- * 
+ * <p>
  * Discussion:
- *     Represents the current authorization state of the application.
+ * Represents the current authorization state of the application.
  */
 @Generated
 public final class INSiriAuthorizationStatus {

@@ -110,9 +110,8 @@ public class HMDurationEvent extends HMTimeEvent implements NSCopying, NSMutable
 
     /**
      * Creates a duration time event.
-     * 
+     *
      * @param duration The duration of time in seconds.
-     * 
      * @return Instance object representing the duration event.
      */
     @Generated

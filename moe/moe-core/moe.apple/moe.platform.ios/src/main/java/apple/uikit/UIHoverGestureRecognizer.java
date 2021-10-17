@@ -32,9 +32,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Note: While buttons are pressed any currently active hover gesture recognizers
  * are effectively paused (letting other gesture recognizers work) until all
  * mouse buttons have been released.
- * 
+ * <p>
  * On iOS, this gesture recognizer doesn't recognize anything and is effectively
- * a noop.
+ * a no-op.
  */
 @Generated
 @Library("UIKit")

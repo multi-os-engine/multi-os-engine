@@ -106,13 +106,12 @@ public class CPAlertTemplate extends CPTemplate {
 
     /**
      * Initialize a @c CPAlertTemplate by specifying a list of title variants and at least one action.
-     * 
+     *
      * @param titleVariants An array of strings, ordered longest to shortest. The template will display
-     * the longest string that fits in the available space on the current size of the car screen,
-     * dropping down to shorter strings as necessary.
-     * 
-     * @param actions An array of alert actions to display in this alert template. You must specify at
-     * least one action.
+     *                      the longest string that fits in the available space on the current size of the car screen,
+     *                      dropping down to shorter strings as necessary.
+     * @param actions       An array of alert actions to display in this alert template. You must specify at
+     *                      least one action.
      */
     @Generated
     @Selector("initWithTitleVariants:actions:")

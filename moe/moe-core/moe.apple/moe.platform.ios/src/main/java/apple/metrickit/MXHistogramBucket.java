@@ -30,11 +30,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXHistogramBucket
- * 
+ * <p>
  * A class that represents a bucket within an MXHistogram
- * 
+ * <p>
  * Histogram buckets are sorted in ascending order.
- * 
+ * <p>
  * Histogram bucket start and end values are exclusive.
  */
 @Generated
@@ -71,7 +71,7 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
 
     /**
      * [@property]      bucketCount
-     * 
+     * <p>
      * An NSUInteger representing the number of samples in this histogram bucket.
      */
     @Generated
@@ -81,7 +81,7 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
 
     /**
      * [@property]      bucketEnd
-     * 
+     * <p>
      * An NSMeasurement representing the end of a histogram bucket.
      */
     @Generated
@@ -90,7 +90,7 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
 
     /**
      * [@property]      bucketStart
-     * 
+     * <p>
      * An NSMeasurement representing the start of a histogram bucket.
      */
     @Generated

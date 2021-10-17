@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]           EKSpan
- * 
+ * <p>
  * Values for controlling what occurrences to affect in a recurring event.
- * 
+ * <p>
  * This enumerated type is used to indicate the scope of a change being made to a repeating event. EKSpanThisEvent
- *                 indicates the changes should apply only to this event, EKSpanFutureEvents indicates the changes should apply to 
- *                 this event and all future events in the pattern.
+ * indicates the changes should apply only to this event, EKSpanFutureEvents indicates the changes should apply to
+ * this event and all future events in the pattern.
  * [@constant]       EKSpanThisEvent        Affect this event only.
  * [@constant]       EKSpanFutureEvents     Affect this event and all after it.
  */

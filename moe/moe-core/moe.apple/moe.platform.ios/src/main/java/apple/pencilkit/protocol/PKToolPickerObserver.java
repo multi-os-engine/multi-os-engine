@@ -18,8 +18,8 @@ public interface PKToolPickerObserver {
      * Tells the delegate that the frames the tool picker obscures changed.
      * Note, the obscured frames for a view can also change when that view
      * changes, not just when this delegate method is called.
-     * 
-     * @param toolPicker  The tool picker that changed.
+     *
+     * @param toolPicker The tool picker that changed.
      */
     @Generated
     @IsOptional
@@ -30,8 +30,8 @@ public interface PKToolPickerObserver {
 
     /**
      * Tells the delegate that the ruler active state was changed by the user.
-     * 
-     * @param toolPicker  The tool picker that changed.
+     *
+     * @param toolPicker The tool picker that changed.
      */
     @Generated
     @IsOptional
@@ -42,8 +42,8 @@ public interface PKToolPickerObserver {
 
     /**
      * Tells the delegate that the selected tool was changed by the user.
-     * 
-     * @param toolPicker  The tool picker that changed.
+     *
+     * @param toolPicker The tool picker that changed.
      */
     @Generated
     @IsOptional
@@ -54,8 +54,8 @@ public interface PKToolPickerObserver {
 
     /**
      * Tells the delegate that the tool picker UI changed visibility.
-     * 
-     * @param toolPicker  The tool picker that changed.
+     *
+     * @param toolPicker The tool picker that changed.
      */
     @Generated
     @IsOptional

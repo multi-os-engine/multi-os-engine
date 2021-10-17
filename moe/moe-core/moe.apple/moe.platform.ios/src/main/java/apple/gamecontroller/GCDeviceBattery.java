@@ -68,7 +68,7 @@ public class GCDeviceBattery extends NSObject {
 
     /**
      * A battery state for controller, defaults to GCControllerBatteryStateUnknown
-     * 
+     * <p>
      * [@note] This property might be useful if you display the information about currently connected controller for player's convenience
      */
     @Generated

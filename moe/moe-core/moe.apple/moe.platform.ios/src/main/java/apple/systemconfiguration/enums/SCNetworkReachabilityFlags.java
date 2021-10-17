@@ -20,66 +20,66 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] SCNetworkReachabilityFlags
- * 
+ * <p>
  * Flags that indicate whether the specified network
- * 	nodename or address is reachable, whether a connection is
- * 	required, and whether some user intervention may be required
- * 	when establishing a connection.
+ * nodename or address is reachable, whether a connection is
+ * required, and whether some user intervention may be required
+ * when establishing a connection.
  * [@constant] kSCNetworkReachabilityFlagsTransientConnection
- * 	This flag indicates that the specified nodename or address can
- * 	be reached via a transient connection, such as PPP.
+ * This flag indicates that the specified nodename or address can
+ * be reached via a transient connection, such as PPP.
  * [@constant] kSCNetworkReachabilityFlagsReachable
- * 	This flag indicates that the specified nodename or address can
- * 	be reached using the current network configuration.
+ * This flag indicates that the specified nodename or address can
+ * be reached using the current network configuration.
  * [@constant] kSCNetworkReachabilityFlagsConnectionRequired
- * 	This flag indicates that the specified nodename or address can
- * 	be reached using the current network configuration, but a
- * 	connection must first be established.
- * 
- * 	As an example, this status would be returned for a dialup
- * 	connection that was not currently active, but could handle
- * 	network traffic for the target system.
+ * This flag indicates that the specified nodename or address can
+ * be reached using the current network configuration, but a
+ * connection must first be established.
+ * <p>
+ * As an example, this status would be returned for a dialup
+ * connection that was not currently active, but could handle
+ * network traffic for the target system.
  * [@constant] kSCNetworkReachabilityFlagsConnectionOnTraffic
- * 	This flag indicates that the specified nodename or address can
- * 	be reached using the current network configuration, but a
- * 	connection must first be established.  Any traffic directed
- * 	to the specified name or address will initiate the connection.
- * 
- * 	Note: this flag was previously named kSCNetworkReachabilityFlagsConnectionAutomatic
+ * This flag indicates that the specified nodename or address can
+ * be reached using the current network configuration, but a
+ * connection must first be established.  Any traffic directed
+ * to the specified name or address will initiate the connection.
+ * <p>
+ * Note: this flag was previously named kSCNetworkReachabilityFlagsConnectionAutomatic
  * [@constant] kSCNetworkReachabilityFlagsInterventionRequired
- * 	This flag indicates that the specified nodename or address can
- * 	be reached using the current network configuration, but a
- * 	connection must first be established.  In addition, some
- * 	form of user intervention will be required to establish this
- * 	connection, such as providing a password, an authentication
- * 	token, etc.
- * 
- * 	Note: At the present time, this flag will only be returned
- * 	in the case where you have a dial-on-traffic configuration
- * 	(ConnectionOnTraffic), where an attempt to connect has
- * 	already been made, and where some error (e.g. no dial tone,
- * 	no answer, bad password, ...) was encountered during the
- * 	automatic connection attempt.  In this case the PPP controller
- * 	will stop attempting to establish a connection until the user
- * 	has intervened.
+ * This flag indicates that the specified nodename or address can
+ * be reached using the current network configuration, but a
+ * connection must first be established.  In addition, some
+ * form of user intervention will be required to establish this
+ * connection, such as providing a password, an authentication
+ * token, etc.
+ * <p>
+ * Note: At the present time, this flag will only be returned
+ * in the case where you have a dial-on-traffic configuration
+ * (ConnectionOnTraffic), where an attempt to connect has
+ * already been made, and where some error (e.g. no dial tone,
+ * no answer, bad password, ...) was encountered during the
+ * automatic connection attempt.  In this case the PPP controller
+ * will stop attempting to establish a connection until the user
+ * has intervened.
  * [@constant] kSCNetworkReachabilityFlagsConnectionOnDemand
- * 	This flag indicates that the specified nodename or address can
- * 	be reached using the current network configuration, but a
- * 	connection must first be established.
- * 	The connection will be established "On Demand" by the
- * 	CFSocketStream APIs.
- * 	Other APIs will not establish the connection.
+ * This flag indicates that the specified nodename or address can
+ * be reached using the current network configuration, but a
+ * connection must first be established.
+ * The connection will be established "On Demand" by the
+ * CFSocketStream APIs.
+ * Other APIs will not establish the connection.
  * [@constant] kSCNetworkReachabilityFlagsIsLocalAddress
- * 	This flag indicates that the specified nodename or address
- * 	is one associated with a network interface on the current
- * 	system.
+ * This flag indicates that the specified nodename or address
+ * is one associated with a network interface on the current
+ * system.
  * [@constant] kSCNetworkReachabilityFlagsIsDirect
- * 	This flag indicates that network traffic to the specified
- * 	nodename or address will not go through a gateway, but is
- * 	routed directly to one of the interfaces in the system.
+ * This flag indicates that network traffic to the specified
+ * nodename or address will not go through a gateway, but is
+ * routed directly to one of the interfaces in the system.
  * [@constant] kSCNetworkReachabilityFlagsIsWWAN
- * 	This flag indicates that the specified nodename or address can
- * 	be reached via an EDGE, GPRS, or other "cell" connection.
+ * This flag indicates that the specified nodename or address can
+ * be reached via an EDGE, GPRS, or other "cell" connection.
  */
 @Generated
 public final class SCNetworkReachabilityFlags {

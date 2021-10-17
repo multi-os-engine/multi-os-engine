@@ -30,7 +30,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * Optionally implement the following methods in a UIPickerView delegate
- * in order to provide accessibility information per component. 
+ * in order to provide accessibility information per component.
  * See UIAccessibility.h for more information about hints and labels.
  */
 @Generated

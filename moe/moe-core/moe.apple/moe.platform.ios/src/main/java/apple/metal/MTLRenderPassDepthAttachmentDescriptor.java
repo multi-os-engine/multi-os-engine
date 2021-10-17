@@ -152,7 +152,7 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
 
     /**
      * [@property] clearDepth
-     * 
+     * <p>
      * The clear depth value to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
@@ -161,7 +161,7 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
 
     /**
      * [@property] resolveFilter
-     * 
+     * <p>
      * The filter to be used for depth multisample resolve.  Defaults to MTLMultisampleDepthResolveFilterSample0.
      */
     @Generated
@@ -175,7 +175,7 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
 
     /**
      * [@property] clearDepth
-     * 
+     * <p>
      * The clear depth value to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
@@ -184,7 +184,7 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
 
     /**
      * [@property] resolveFilter
-     * 
+     * <p>
      * The filter to be used for depth multisample resolve.  Defaults to MTLMultisampleDepthResolveFilterSample0.
      */
     @Generated

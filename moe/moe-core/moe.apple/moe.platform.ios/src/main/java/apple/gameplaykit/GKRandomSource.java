@@ -47,10 +47,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A concrete random source that can generate random numbers. The implementation details are up to the system and
  * if a particular algorithm is needed then use one of the provided subclasses.
- * 
+ * <p>
  * For certain specialized applications a shared system source may be needed and for those instances there is
  * a wrapped interface over arc4random_*, accessible via +[GKRandomSource sharedRandom].
- * 
+ *
  * @see GKARC4RandomSource
  * @see GKLinearCongruentialRandomSource
  * @see GKMersenneTwisterRandomSource
@@ -163,7 +163,7 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
      * Using this instance modifies the outcome of future calls to the arc4random family of C calls. It is
      * also affected by calls to the C apis and should not be used for sources that are intended to
      * be deterministic.
-     * 
+     * <p>
      * Note that while it may seem semantically similar to a GKARC4RandomSource, this is not a drop in replacement.
      */
     @Generated
@@ -185,7 +185,7 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
 
     /**
      * Returns a shuffled instance of the given array. The objects in the array are shuffled based on a Fisher-Yates shuffle.
-     * 
+     * <p>
      * Any random, be it custom, source or a distribution, that can provide a number with an upper bound of at least the
      * array.count is suitable for this shuffle.
      */
@@ -208,7 +208,7 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
      * When used directly from the base class; this source is deterministic and performant but the underlying implementation
      * details are not specified. Use a subclass with a specific algorithm implementation guaranteed if your application requires
      * very stringent random source charateristics.
-     * 
+     *
      * @see GKARC4RandomSource
      * @see GKLinearCongruentialRandomSource
      * @see GKMersenneTwisterRandomSource

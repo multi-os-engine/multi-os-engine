@@ -30,10 +30,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CIBlendKernel is a special type of color kernel that blends two images.
- * 
+ * <p>
  * Blend kernel functions are declared akin to this example:
- *   kernel vec4 myBlendKernel (__sample fore, __sample back)
- * 
+ * kernel vec4 myBlendKernel (__sample fore, __sample back)
+ * <p>
  * A blend kernel function must have exactly two arguments of type __sample.
  * The first argument represents the value of the source pixel and the second
  * represents that of the old destination. The vec4 returned by the kernel will
@@ -72,7 +72,7 @@ public class CIBlendKernel extends CIColorKernel {
     /**
      * Apply the receiver CIBlendKernel to produce a new CIImage object
      * by blending a foreground and background images.
-     * 
+     * <p>
      * The 'extent' of the result image will be determined by the reciver and
      * the extent of the forground and background images.  For most of the
      * builtin blend kernels (as well as custom blend kernels) the result image
@@ -374,7 +374,7 @@ public class CIBlendKernel extends CIColorKernel {
     /**
      * Apply the receiver CIBlendKernel to produce a new CIImage object
      * by blending a foreground and background images in the specifid colorspace.
-     * 
+     * <p>
      * The 'extent' of the result image will be determined by the reciver and
      * the extent of the forground and background images.  For most of the
      * builtin blend kernels (as well as custom blend kernels) the result image
@@ -389,4 +389,9 @@ public class CIBlendKernel extends CIColorKernel {
     @Generated
     @Selector("kernelNamesFromMetalLibraryData:")
     public static native NSArray<String> kernelNamesFromMetalLibraryData(NSData data);
+
+    @Generated
+    @Selector("kernelsWithMetalString:error:")
+    public static native NSArray<? extends CIKernel> kernelsWithMetalStringError(String source,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

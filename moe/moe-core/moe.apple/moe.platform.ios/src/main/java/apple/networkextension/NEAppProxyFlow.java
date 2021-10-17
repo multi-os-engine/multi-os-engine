@@ -43,11 +43,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEAppProxyFlow
- * 
+ * <p>
  * The NEAppProxyFlow class is an abstract base class that declares the programmatic interface for a flow of network data.
- * 
+ * <p>
  * NEAppProxyFlow is part of NetworkExtension.framework.
- * 
+ * <p>
  * Instances of this class are thread safe.
  */
 @Generated
@@ -163,9 +163,9 @@ public class NEAppProxyFlow extends NSObject {
 
     /**
      * closeReadWithError:
-     * 
+     * <p>
      * This function is used by an NEProvider implementation to indicate that it does not want to receive any more data from the flow.
-     * 
+     *
      * @param error An error in NEAppProxyErrorDomain that should be passed to the flow's source application.
      */
     @Generated
@@ -174,9 +174,9 @@ public class NEAppProxyFlow extends NSObject {
 
     /**
      * closeWriteWithError:
-     * 
+     * <p>
      * This functions is used by an NEProvider implementation to indicate that it does not have any more data to write to the flow.
-     * 
+     *
      * @param error An error in NEAppProxyErrorDomain that should be passed to the flow's source application.
      */
     @Generated
@@ -189,7 +189,7 @@ public class NEAppProxyFlow extends NSObject {
 
     /**
      * [@property] metaData
-     * 
+     * <p>
      * An NEFlowMetaData object containing meta data for the flow.
      */
     @Generated
@@ -198,10 +198,10 @@ public class NEAppProxyFlow extends NSObject {
 
     /**
      * openWithLocalEndpoint:completionHandler:
-     * 
+     * <p>
      * This function is used by an NEProvider implementation to indicate that it is ready to handle flow data.
-     * 
-     * @param localEndpoint The address and port that should be used as the local endpoint of the socket associated with this flow. If the source application already specifed a local endpoint by binding the socket then this parameter is ignored.
+     *
+     * @param localEndpoint     The address and port that should be used as the local endpoint of the socket associated with this flow. If the source application already specifed a local endpoint by binding the socket then this parameter is ignored.
      * @param completionHandler A block that is called when the process of opening flow is complete. A nil value passed to this block indicates that the flow was opened successfully. A non-nil NSError value indicates that the flow failed to open successfully.
      */
     @Generated
@@ -218,9 +218,9 @@ public class NEAppProxyFlow extends NSObject {
 
     /**
      * [@property] networkInterface
-     * 
+     * <p>
      * An nw_interface_t containing information about the network interface used by the flow. If the flow's data is transported using a different interface, this property
-     *    should be set to that interface.
+     * should be set to that interface.
      */
     @Generated
     @Selector("networkInterface")
@@ -228,9 +228,9 @@ public class NEAppProxyFlow extends NSObject {
 
     /**
      * [@property] networkInterface
-     * 
+     * <p>
      * An nw_interface_t containing information about the network interface used by the flow. If the flow's data is transported using a different interface, this property
-     *    should be set to that interface.
+     * should be set to that interface.
      */
     @Generated
     @Selector("setNetworkInterface:")
@@ -238,11 +238,20 @@ public class NEAppProxyFlow extends NSObject {
 
     /**
      * [@property] remoteHostname
-     * 
+     * <p>
      * If the flow was created by passing a hostname to a "connect by name" API such as NSURLSession or Network.framework, this property is set to the
-     *     remote hostname.
+     * remote hostname.
      */
     @Generated
     @Selector("remoteHostname")
     public native String remoteHostname();
+
+    /**
+     * [@property] isBound
+     * <p>
+     * YES if the flow was bound by the application to a specific interface (contained in the networkInterface property), NO otherwise.
+     */
+    @Generated
+    @Selector("isBound")
+    public native boolean isBound();
 }

@@ -36,7 +36,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface MSStickerBrowserViewDataSource {
     /**
      * Returns the number of Stickers that the sticker browser should show.
-     * 
+     *
      * @param stickerBrowserView The sticker browser view .
      * @return The number of stickers.
      */
@@ -47,9 +47,9 @@ public interface MSStickerBrowserViewDataSource {
 
     /**
      * Returns the sticker that the sticker browser should show in the browser.
-     * 
+     *
      * @param stickerBrowserView The sticker browser view.
-     * @param index The index of the sticker to show.
+     * @param index              The index of the sticker to show.
      * @return A MSSticker object.
      */
     @Generated

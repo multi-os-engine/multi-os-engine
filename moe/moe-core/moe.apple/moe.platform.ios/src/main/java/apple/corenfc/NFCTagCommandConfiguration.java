@@ -26,7 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface]   NFCTagCommandConfiguration
- * 
+ * <p>
  * Define configuration parameters for tag commands.
  */
 @Generated

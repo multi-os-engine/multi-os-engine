@@ -31,9 +31,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNReshape
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Describes a reshape operation
- * 
+ * <p>
  * This functions copies data from source MPSImage intot the new shape in the destination MPSImage
  */
 @Generated
@@ -113,9 +113,9 @@ public class MPSNNReshape extends MPSCNNKernel {
 
     /**
      * Initialize a MPSNNReshape kernel
-     * 
-     * @param    device    The device the filter will run on
-     * @return   A valid MPSNNReshape object or nil, if failure.
+     *
+     * @param device The device the filter will run on
+     * @return A valid MPSNNReshape object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
@@ -181,15 +181,15 @@ public class MPSNNReshape extends MPSCNNKernel {
 
     /**
      * Encode a reshape to a command buffer for a given shape.
-     * 
-     * @param  commandBuffer                       The command buffer on which to encode the reshape operation.
-     * @param  outState                                A state to be created and autoreleased which will hold information about this execution
-     *                                 to be provided to a subsequent gradient pass.
-     * @param  isTemporary                      YES if the state is to be created as a temporary state, NO otherwise.
-     * @param  sourceImage                             The input image to be reshaped.
-     * @param  reshapedWidth                           The width of the resulting reshaped image.
-     * @param  reshapedHeight                          The height of the resulting reshaped image.
-     * @param  reshapedFeatureChannels     The number of feature channels in the resulting reshaped image.
+     *
+     * @param commandBuffer           The command buffer on which to encode the reshape operation.
+     * @param outState                A state to be created and autoreleased which will hold information about this execution
+     *                                to be provided to a subsequent gradient pass.
+     * @param isTemporary             YES if the state is to be created as a temporary state, NO otherwise.
+     * @param sourceImage             The input image to be reshaped.
+     * @param reshapedWidth           The width of the resulting reshaped image.
+     * @param reshapedHeight          The height of the resulting reshaped image.
+     * @param reshapedFeatureChannels The number of feature channels in the resulting reshaped image.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:destinationState:destinationStateIsTemporary:reshapedWidth:reshapedHeight:reshapedFeatureChannels:")
@@ -200,12 +200,12 @@ public class MPSNNReshape extends MPSCNNKernel {
 
     /**
      * Encode a reshape to a command buffer for a given shape.
-     * 
-     * @param  commandBuffer                       The command buffer on which to encode the reshape operation.
-     * @param  sourceImage                             The input image to be reshaped.
-     * @param  reshapedWidth                           The width of the resulting reshaped image.
-     * @param  reshapedHeight                          The height of the resulting reshaped image.
-     * @param  reshapedFeatureChannels     The number of feature channels in the resulting reshaped image.
+     *
+     * @param commandBuffer           The command buffer on which to encode the reshape operation.
+     * @param sourceImage             The input image to be reshaped.
+     * @param reshapedWidth           The width of the resulting reshaped image.
+     * @param reshapedHeight          The height of the resulting reshaped image.
+     * @param reshapedFeatureChannels The number of feature channels in the resulting reshaped image.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:reshapedWidth:reshapedHeight:reshapedFeatureChannels:")

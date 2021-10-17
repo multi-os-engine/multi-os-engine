@@ -45,11 +45,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents a home.
- * 
+ * <p>
  * This class represents a home and is the entry point to communicate and
- *             configure different accessories in the home. This is also used to manage
- *             all the rooms, zones, service groups, users, triggers, and action sets in
- *             the home.
+ * configure different accessories in the home. This is also used to manage
+ * all the rooms, zones, service groups, users, triggers, and action sets in
+ * the home.
  */
 @Generated
 @Library("HomeKit")
@@ -178,9 +178,8 @@ public class HMHome extends NSObject {
 
     /**
      * Adds a new accessory to the home.
-     * 
-     * @param accessory Accessory to add to the home.
-     * 
+     *
+     * @param accessory  Accessory to add to the home.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -192,13 +191,12 @@ public class HMHome extends NSObject {
 
     /**
      * Adds a new action set to the home.
-     * 
+     *
      * @param actionSetName Name of the action set to add to the home.
-     * 
-     * @param completion Block that is invoked once the request is processed.
-     * 	                 The HMActionSet parameter is the new action set added to the home.
-     *                   The NSError provides more information on the status of the request, error
-     *                   will be nil on success.
+     * @param completion    Block that is invoked once the request is processed.
+     *                      The HMActionSet parameter is the new action set added to the home.
+     *                      The NSError provides more information on the status of the request, error
+     *                      will be nil on success.
      */
     @Generated
     @Selector("addActionSetWithName:completionHandler:")
@@ -207,8 +205,8 @@ public class HMHome extends NSObject {
 
     /**
      * Find nearby accessories and add them to the home. During this process, each of the accessories added
-     *        to the home is assigned to a room and its services are configured.
-     * 
+     * to the home is assigned to a room and its services are configured.
+     *
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -220,11 +218,10 @@ public class HMHome extends NSObject {
 
     /**
      * Adds a room to the home.
-     * 
-     * @param roomName Name of the room to add to the home.
-     * 
+     *
+     * @param roomName   Name of the room to add to the home.
      * @param completion Block that is invoked once the request is processed.
-     * 	                 The HMRoom is the new room added to the home.
+     *                   The HMRoom is the new room added to the home.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
      */
@@ -235,13 +232,12 @@ public class HMHome extends NSObject {
 
     /**
      * Adds a service group to the home.
-     * 
+     *
      * @param serviceGroupName Name of the service group to add to the home.
-     * 
-     * @param completion Block that is invoked once the request is processed.
-     * 	                 The HMServiceGroup is the new service group added to the home.
-     *                   The NSError provides more information on the status of the request, error
-     *                   will be nil on success.
+     * @param completion       Block that is invoked once the request is processed.
+     *                         The HMServiceGroup is the new service group added to the home.
+     *                         The NSError provides more information on the status of the request, error
+     *                         will be nil on success.
      */
     @Generated
     @Selector("addServiceGroupWithName:completionHandler:")
@@ -250,15 +246,14 @@ public class HMHome extends NSObject {
 
     /**
      * Adds a trigger to the home. Unless the trigger object is added to the home, it cannot be
-     *        activated.
-     * 
+     * activated.
+     * <p>
      * Triggers are specific to an iOS device and are not synced across multiple devices to
-     *              ensure that the action sets are executed only once.
-     * 
-     * @param trigger Trigger to add to the home.
-     * 
+     * ensure that the action sets are executed only once.
+     *
+     * @param trigger    Trigger to add to the home.
      * @param completion Block that is invoked once the request is processed.
-     * 	                 The HMTrigger parameter is the new trigger added to the home.
+     *                   The HMTrigger parameter is the new trigger added to the home.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
      */
@@ -269,7 +264,7 @@ public class HMHome extends NSObject {
 
     /**
      * Adds a user to the home.
-     * 
+     *
      * @param completion Block that is invoked once the request is processed.
      *                   The HMUser object provides a reference to the user that was added to the home.
      *                   The NSError provides more information on the status of the request, error
@@ -284,11 +279,10 @@ public class HMHome extends NSObject {
 
     /**
      * Adds a zone to the home.
-     * 
-     * @param zoneName Name of the zone to add to the home.
-     * 
+     *
+     * @param zoneName   Name of the zone to add to the home.
      * @param completion Block that is invoked once the request is processed.
-     * 	                 The HMZone is the new zone added to the home.
+     *                   The HMZone is the new zone added to the home.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
      */
@@ -299,14 +293,12 @@ public class HMHome extends NSObject {
 
     /**
      * Assigns a new room for the accessory.
-     * 
+     * <p>
      * When an accessory is added to a home, it is automatically assigned the room corresponding to
-     *             + [HMHome roomForEntireHome]. This method is used to change the room assigned to an accessory.
-     * 
-     * @param accessory Accessory whose rooms needs to modified
-     * 
-     * @param room New room for the accessory.
-     * 
+     * + [HMHome roomForEntireHome]. This method is used to change the room assigned to an accessory.
+     *
+     * @param accessory  Accessory whose rooms needs to modified
+     * @param room       New room for the accessory.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -318,12 +310,11 @@ public class HMHome extends NSObject {
 
     /**
      * Retrieve a built-in action set for the home.
-     * 
+     *
      * @param actionSetType Type of the builtin action set. Supported action set types are HMActionSetTypeWakeUp,
      *                      HMActionSetTypeSleep, HMActionSetTypeHomeDeparture and HMActionSetTypeHomeArrival.
-     * 
      * @return Reference to the built-in action set corresponding to type argument,
-     *         nil if no matching action set is found.
+     * nil if no matching action set is found.
      */
     @Generated
     @Selector("builtinActionSetOfType:")
@@ -346,9 +337,8 @@ public class HMHome extends NSObject {
 
     /**
      * Executes all the actions within an action set.
-     * 
-     * @param actionSet Action set to execute.
-     * 
+     *
+     * @param actionSet  Action set to execute.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -378,9 +368,9 @@ public class HMHome extends NSObject {
 
     /**
      * Presents a view controller to manage users of the home.
-     * 
+     * <p>
      * This API is available only for users that have administrator access to the home.
-     * 
+     *
      * @param completion Block that is invoked once user management is completed.
      *                   The completion block is fired to allow clients to know when the user has dismissed the view.
      *                   The NSError provides more information on the status of the request, error
@@ -401,9 +391,8 @@ public class HMHome extends NSObject {
 
     /**
      * Removes an accessory from the home.
-     * 
-     * @param accessory Accessory to remove from the home.
-     * 
+     *
+     * @param accessory  Accessory to remove from the home.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -415,9 +404,8 @@ public class HMHome extends NSObject {
 
     /**
      * Removes an existing action set from the home.
-     * 
-     * @param actionSet Action set to remove from the home. A builtin action set cannot be removed.
-     * 
+     *
+     * @param actionSet  Action set to remove from the home. A builtin action set cannot be removed.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -429,14 +417,13 @@ public class HMHome extends NSObject {
 
     /**
      * Removes a room from the home.
-     * 
+     * <p>
      * Any references to this room will be removed from all properties
-     *             of the home. For example, the room will be removed from the zone.
-     *             Any accessories associated contained by this room will be moved to
-     *             the room provided by - [HMHome roomForEntireHome].
-     * 
-     * @param room Room to remove from the home.
-     * 
+     * of the home. For example, the room will be removed from the zone.
+     * Any accessories associated contained by this room will be moved to
+     * the room provided by - [HMHome roomForEntireHome].
+     *
+     * @param room       Room to remove from the home.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -448,9 +435,8 @@ public class HMHome extends NSObject {
 
     /**
      * Removes a service group from the home.
-     * 
-     * @param group Service group to remove from the home.
-     * 
+     *
+     * @param group      Service group to remove from the home.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -462,9 +448,8 @@ public class HMHome extends NSObject {
 
     /**
      * Removes a trigger from the home. If the trigger is active, they are automatically deactivated.
-     * 
-     * @param trigger Trigger to remove from the home.
-     * 
+     *
+     * @param trigger    Trigger to remove from the home.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -476,9 +461,8 @@ public class HMHome extends NSObject {
 
     /**
      * Removes a user from the home.
-     * 
-     * @param user HMUser whose access is being revoked.
-     * 
+     *
+     * @param user       HMUser whose access is being revoked.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success. The userInfo dictionary will contain the HMUserFailedAccessoriesKey which provides
@@ -492,9 +476,8 @@ public class HMHome extends NSObject {
 
     /**
      * Removes a zone from the home.
-     * 
-     * @param zone Zone to remove from the home.
-     * 
+     *
+     * @param zone       Zone to remove from the home.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -506,8 +489,8 @@ public class HMHome extends NSObject {
 
     /**
      * This method returns a room that represents the entire home. This can be used to assign a room
-     *        to a service that is not necessarily located in one particular room.
-     * 
+     * to a service that is not necessarily located in one particular room.
+     *
      * @return HMRoom that represents the home.
      */
     @Generated
@@ -530,11 +513,10 @@ public class HMHome extends NSObject {
 
     /**
      * Queries all services that match the specified types.
-     * 
+     *
      * @param serviceTypes Array of NSString objects that specifies the service types to match.
-     * 
      * @return Array of HMService objects that match the specified service types,
-     *         nil if no matching services were found.
+     * nil if no matching services were found.
      */
     @Generated
     @Selector("servicesWithTypes:")
@@ -571,13 +553,11 @@ public class HMHome extends NSObject {
 
     /**
      * unblock a blocked accessory.
-     * 
+     * <p>
      * A misbehaving accessory will automatically be blocked.  After that all requests to
-     *              the accessory will fail.  This API must be used to explicitly unblock the accessory
-     * 
-     * @param accessory accessory to be unblocked
-     * 
-     * 
+     * the accessory will fail.  This API must be used to explicitly unblock the accessory
+     *
+     * @param accessory  accessory to be unblocked
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -596,9 +576,8 @@ public class HMHome extends NSObject {
 
     /**
      * This method is used to change the name of the home.
-     * 
-     * @param name New name for the home.
-     * 
+     *
+     * @param name       New name for the home.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -773,8 +752,8 @@ public class HMHome extends NSObject {
 
     /**
      * Add accessory with the given setup payload to the home.
-     * [@note]  This SPI requires entitlement: com.apple.homekit.developer.allow-setup-payload
-     * 
+     * [@note]  This SPI requires entitlement: com.apple.developer.homekit.allow-setup-payload
+     *
      * @param completion Block that is invoked once the request is processed.
      *                   Accessories provides the list of added accessories.
      *                   The NSError provides more information on the status of the request, error

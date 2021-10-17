@@ -125,12 +125,12 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     /**
      * A field force with a custom force evaluator.
-     * 
-     * @param field the field being evaluated
-     * @param position The location to evaluate the force at
-     * @param velocity The velocity to be considered during force evaluation. Useful for calculating drag.
-     * @param mass The mass to be taken into account during force evaluation
-     * @param charge The charge to be taken into account during force evaluation
+     *
+     * @param field     the field being evaluated
+     * @param position  The location to evaluate the force at
+     * @param velocity  The velocity to be considered during force evaluation. Useful for calculating drag.
+     * @param mass      The mass to be taken into account during force evaluation
+     * @param charge    The charge to be taken into account during force evaluation
      * @param deltaTime The current time step
      */
     @Generated
@@ -168,9 +168,9 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     /**
      * Applies a force in the direction of the vector in the local space. To repel objects, use a negative strength.
      * The force is the same everywhere in the field. Varies with the mass of the object according to F = ma
-     * 
-     * @param direction The direction the force is applied in the x,y plane. The length of the direction vector is multiplied by 
-     * the field's strength property to get the final calculated force. All components of the direction vector are used to calculate the length.
+     *
+     * @param direction The direction the force is applied in the x,y plane. The length of the direction vector is multiplied by
+     *                  the field's strength property to get the final calculated force. All components of the direction vector are used to calculate the length.
      * @see direction
      */
     @Generated
@@ -179,11 +179,11 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     public static native Object linearGravityFieldWithVector(@ByValue CGVector direction);
 
     /**
-     * The magnetic field is a uniform field in the positive-z direction (coming out of the screen). When the velocity 
+     * The magnetic field is a uniform field in the positive-z direction (coming out of the screen). When the velocity
      * of a charged dynamic item is perpendicular to the uniform magnetic field, the item feels a resulting force normal
      * to both the velocity and the B field. This results CCW circular motion. You can adjust the strength of the B field
-     * to be negative which will result in circular motion being CW instead of CCW. An example use of this field is to make 
-     * objects behavior differently from one another when they enter a region, or to make an object's behavior different 
+     * to be negative which will result in circular motion being CW instead of CCW. An example use of this field is to make
+     * objects behavior differently from one another when they enter a region, or to make an object's behavior different
      * than its mass based behavior. This field models the second part of the Lorentz equation, F = qvB
      */
     @Generated
@@ -200,8 +200,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     /**
      * A time varying differentiable Perlin simplex noise field. By default a smooth noise is calculated,
      * and the field is time varying. To freeze the noise in place, set animationSpeed to 0.0. Mass is ignored.
-     * 
-     * @param smoothness value of 0 means as noisy as possible, 1 means as smooth as possible
+     *
+     * @param smoothness     value of 0 means as noisy as possible, 1 means as smooth as possible
      * @param animationSpeed is the general field rate of change in Hz
      * @see smoothness
      * @see animationSpeed
@@ -214,7 +214,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     /**
      * Applies a force in the direction of the origin of the field in local space. To repel objects, use a negative strength.
      * The force is proportional to the distance from the field origin. Varies with the mass of the object according to F = ma
-     * 
+     *
      * @param position the origin of the field
      * @see position
      */
@@ -251,8 +251,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     /**
      * Just like Noise, except the strength of the noise is proportional to the velocity of the object in the field.
-     * 
-     * @param smoothness value of 0 means as noisy as possible, 1 means as smooth as possible
+     *
+     * @param smoothness     value of 0 means as noisy as possible, 1 means as smooth as possible
      * @param animationSpeed is the general field rate of change in Hz
      * @see smoothness
      * @see animationSpeed
@@ -266,7 +266,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     /**
      * Uses the supplied velocity vector for any object entering the field’s region of effect.
      * Velocity fields override the effect of any other acceleration applied to the body.
-     * 
+     *
      * @param direction The directed velocity that will be applied to the body.
      * @see direction
      */
@@ -296,7 +296,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     /**
      * Fields that can be animated can have non zero values. A value of 2 will animate twice as fast as a value of 1.
-     * 
+     *
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
      */
@@ -308,7 +308,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     /**
      * The direction of the field.
      * If the field is non-directional, a zero vector will be returned
-     * 
+     *
      * @see linearGravityFieldWithVector:direction
      * @see velocityFieldWithVector:direction
      */
@@ -321,7 +321,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * The falloff exponent used to calculate field strength at a distance.
      * Falloff starts at the minimum radius.
      * The default exponent is zero, which results in a uniform field with no falloff.
-     * 
+     *
      * @see minimumRadius
      */
     @Generated
@@ -367,7 +367,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     /**
      * Fields that can be animated can have non zero values. A value of 2 will animate twice as fast as a value of 1.
-     * 
+     *
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
      */
@@ -378,7 +378,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     /**
      * The direction of the field.
      * If the field is non-directional, a zero vector will be returned
-     * 
+     *
      * @see linearGravityFieldWithVector:direction
      * @see velocityFieldWithVector:direction
      */
@@ -390,7 +390,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * The falloff exponent used to calculate field strength at a distance.
      * Falloff starts at the minimum radius.
      * The default exponent is zero, which results in a uniform field with no falloff.
-     * 
+     *
      * @see minimumRadius
      */
     @Generated
@@ -421,7 +421,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     /**
      * Fields without a smoothness component will return 0
-     * 
+     *
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
      */
@@ -438,7 +438,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     /**
      * Fields without a smoothness component will return 0
-     * 
+     *
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
      */

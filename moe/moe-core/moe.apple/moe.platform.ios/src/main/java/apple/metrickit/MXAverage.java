@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXAverage
- * 
+ * <p>
  * A class representing metric data that is averaged.
  */
 @Generated
@@ -67,7 +67,7 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      averageMeasurement
-     * 
+     * <p>
      * An NSMeasurement that contains the average measurement.
      */
     @Generated
@@ -154,9 +154,9 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      sampleCount
-     * 
+     * <p>
      * An NSInteger representation of the number of samples in the distribution used to formulate the average.
-     * 
+     * <p>
      * This value is negative if an unknown number of samples was used to compute the average.
      */
     @Generated
@@ -170,9 +170,9 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      standardDeviation
-     * 
+     * <p>
      * An double representation of the standard deviation of the distribution.
-     * 
+     * <p>
      * This value is negative an unknown number of samples was used to compute the standard deviation.
      */
     @Generated

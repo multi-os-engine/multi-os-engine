@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLSparseTextureRegionAlignmentMode
- * 
+ * <p>
  * MTLSparseTextureRegionAlignmentMode determines type of alignment used when converting from pixel region to tile region.
  */
 @Generated

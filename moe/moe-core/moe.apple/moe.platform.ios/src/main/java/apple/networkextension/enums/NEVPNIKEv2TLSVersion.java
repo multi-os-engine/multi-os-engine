@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEVPNIKEv2TLSVersion
- * 
+ * <p>
  * TLS Versions for use in EAP-TLS
  */
 @Generated

@@ -39,12 +39,12 @@ public final class HomeKit {
 
     /**
      * Key that provides more details on the accessories that failed during an
-     *        addUser:completionHandler: or removeUser:completionHandler: call.
-     * 
+     * addUser:completionHandler: or removeUser:completionHandler: call.
+     * <p>
      * The value associated with this key is an NSArray of NSDictionary objects. Each dictionary
-     *             contains the UUID of the accessory that failed to the added/removed and the value
-     *             corresponding to the dictionary key is an NSError that provides more details on the
-     *             underlying error for that accessory.
+     * contains the UUID of the accessory that failed to the added/removed and the value
+     * corresponding to the dictionary key is an NSError that provides more details on the
+     * underlying error for that accessory.
      */
     @Generated
     @CVariable()
@@ -357,9 +357,9 @@ public final class HomeKit {
 
     /**
      * This constant specifies that the characteristic supports notifications
-     *        using the event connection established by the controller. The
-     *        event connection provides unidirectional communication from the
-     *        accessory to the controller.
+     * using the event connection established by the controller. The
+     * event connection provides unidirectional communication from the
+     * accessory to the controller.
      */
     @Generated
     @CVariable()
@@ -551,7 +551,7 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeSerialNumber();
 
     /**
-     * Characteristic type for identify. The characteristic is write-only that takes a boolean.
+     * Characteristic type for identify. The value of the characteristic is a boolean.
      */
     @Generated
     @CVariable()
@@ -576,7 +576,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for outlet in use. The value of the characteristic is a boolean, which is true
-     *        if the outlet is in use.
+     * if the outlet is in use.
      */
     @Generated
     @CVariable()
@@ -617,8 +617,8 @@ public final class HomeKit {
 
     /**
      * Characteristic type for Security System Alarm Type. The value of the characteristic is a uint8.
-     *        indicating the type of alarm triggered by a security system service. This characteristic has a value
-     *        of 1 when the alarm type is not known and a value of 0 indicates that the alarm conditions are cleared.
+     * indicating the type of alarm triggered by a security system service. This characteristic has a value
+     * of 1 when the alarm type is not known and a value of 0 indicates that the alarm conditions are cleared.
      */
     @Generated
     @CVariable()
@@ -651,7 +651,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for the last known action for a lock mechanism. The value of the characteristic is one of the values
-     *        defined for HMCharacteristicValueLockMechanismLastKnownAction.
+     * defined for HMCharacteristicValueLockMechanismLastKnownAction.
      */
     @Generated
     @CVariable()
@@ -668,7 +668,7 @@ public final class HomeKit {
 
     /**
      * * @brief Characteristic type for the auto secure timeout for lock management. The value of the characteristic is an unsigned
-     *          32-bit integer representing the number of seconds.
+     * 32-bit integer representing the number of seconds.
      */
     @Generated
     @CVariable()
@@ -677,7 +677,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for density of air-particulate matter. The value of the characteristic is
-     *        in units of micrograms/m^3.
+     * in units of micrograms/m^3.
      */
     @Generated
     @CVariable()
@@ -686,7 +686,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for size of air-particulate matter. The value of the characteristic is
-     *        one of the values defined for HMCharacteristicValueAirParticulateSize.
+     * one of the values defined for HMCharacteristicValueAirParticulateSize.
      */
     @Generated
     @CVariable()
@@ -695,7 +695,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for air quality. The value of the characteristic is
-     *        one of the values defined for HMCharacteristicValueAirQuality.
+     * one of the values defined for HMCharacteristicValueAirQuality.
      */
     @Generated
     @CVariable()
@@ -712,7 +712,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for carbon dioxide detected. The value of the characteristic is a uint8 value.
-     *        A value of 0 indicates carbon dioxide levels are normal.
+     * A value of 0 indicates carbon dioxide levels are normal.
      */
     @Generated
     @CVariable()
@@ -721,7 +721,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for carbon dioxide level.
-     *        The value of the characteristic is a float value in units of ppm.
+     * The value of the characteristic is a float value in units of ppm.
      */
     @Generated
     @CVariable()
@@ -730,7 +730,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for carbon dioxide peak level.
-     *        The value of the characteristic is a float value in units of ppm.
+     * The value of the characteristic is a float value in units of ppm.
      */
     @Generated
     @CVariable()
@@ -739,7 +739,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for carbon monoxide detected. The value of the characteristic is a uint8 value.
-     *        A value of 0 indicates carbon monoxide levels are normal.
+     * A value of 0 indicates carbon monoxide levels are normal.
      */
     @Generated
     @CVariable()
@@ -748,7 +748,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for carbon monoxide level.
-     *        The value of the characteristic is a float value in units of ppm.
+     * The value of the characteristic is a float value in units of ppm.
      */
     @Generated
     @CVariable()
@@ -757,7 +757,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for carbon monoxide peak level.
-     *        The value of the characteristic is a float value in units of ppm.
+     * The value of the characteristic is a float value in units of ppm.
      */
     @Generated
     @CVariable()
@@ -774,7 +774,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for Contact sensor state. The value of the characteristic is a uint8 value.
-     *        A value of 0 indicates that contact is detected; a value of 1 indicates no contact is detected.
+     * A value of 0 indicates that contact is detected; a value of 1 indicates no contact is detected.
      */
     @Generated
     @CVariable()
@@ -799,8 +799,8 @@ public final class HomeKit {
 
     /**
      * Characteristic type for current position of a door/window. The value of the characteristic is an
-     *        uint8 value in percent. A value of 0 indicates closed/most shade/least light allowed state and a
-     *        value of 100 indicates open/no shade/most light allowed state.
+     * uint8 value in percent. A value of 0 indicates closed/most shade/least light allowed state and a
+     * value of 100 indicates open/no shade/most light allowed state.
      */
     @Generated
     @CVariable()
@@ -809,7 +809,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for current security system state. The value of the characteristic is one of
-     *        the values defined for HMCharacteristicValueCurrentSecuritySystemState.
+     * the values defined for HMCharacteristicValueCurrentSecuritySystemState.
      */
     @Generated
     @CVariable()
@@ -825,8 +825,7 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeCurrentVerticalTilt();
 
     /**
-     * Characteristic type for firmware version. The value of the characteristic is a string value
-     *        describing the firmware version of the accessory.
+     * Characteristic type for firmware version. The value of the characteristic is a string.
      */
     @Generated
     @CVariable()
@@ -834,8 +833,7 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeFirmwareVersion();
 
     /**
-     * Characteristic type for hardware version. The value of the characteristic is a string value
-     *        describing the hardware version of the accessory.
+     * Characteristic type for hardware version. The value of the characteristic is a string.
      */
     @Generated
     @CVariable()
@@ -844,7 +842,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for Hold Position. The value of the characteristic is a boolean
-     *        indicating that the current position should be held/maintained.
+     * indicating that the current position should be held/maintained.
      */
     @Generated
     @CVariable()
@@ -861,7 +859,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for leak detected. The value of the characteristic is a uint8 value.
-     *        A value of 0 indicates no leak is detected; a value of 1 indicates that a leak is detected.
+     * A value of 0 indicates no leak is detected; a value of 1 indicates that a leak is detected.
      */
     @Generated
     @CVariable()
@@ -870,7 +868,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for Occupancy Detected. The value of the characteristic is a uint8 value.
-     *        A value of 0 indicates no occupancy is detected; a value of 1 indicates that occupancy is detected.
+     * A value of 0 indicates no occupancy is detected; a value of 1 indicates that occupancy is detected.
      */
     @Generated
     @CVariable()
@@ -879,7 +877,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for programmable switch output state. This value is to be used for presentation
-     *        purposes. For a binary programmable switch, a value of 1 can be used to present a state of ON.
+     * purposes. For a binary programmable switch, a value of 1 can be used to present a state of ON.
      */
     @Generated
     @CVariable()
@@ -888,7 +886,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for Position state. The value of the characteristic is one of the
-     *        one of the values defined for HMCharacteristicValuePositionState.
+     * one of the values defined for HMCharacteristicValuePositionState.
      */
     @Generated
     @CVariable()
@@ -904,8 +902,7 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeSmokeDetected();
 
     /**
-     * Characteristic type for software version. The value of the characteristic is a string value
-     *        describing the software version of the accessory.
+     * Characteristic type for software version. The value of the characteristic is a string.
      */
     @Generated
     @CVariable()
@@ -930,7 +927,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type to indicate status of a service is jammed. The value of the characteristic is a uint8 value.
-     *        A value of 0 indicates that the service is not jammed; a value of 1 indicates that the service is jammed.
+     * A value of 0 indicates that the service is not jammed; a value of 1 indicates that the service is jammed.
      */
     @Generated
     @CVariable()
@@ -947,7 +944,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type to indicate status of a service is tampered. The value of the characteristic is a uint8 value.
-     *        A value of 0 indicates no tampering has been detected; a value of 1 indicates that a tampering has been detected.
+     * A value of 0 indicates no tampering has been detected; a value of 1 indicates that a tampering has been detected.
      */
     @Generated
     @CVariable()
@@ -964,7 +961,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for target security system state. The value of the characteristic is one of
-     *        the values defined for HMCharacteristicValueTargetSecuritySystemState.
+     * the values defined for HMCharacteristicValueTargetSecuritySystemState.
      */
     @Generated
     @CVariable()
@@ -973,8 +970,8 @@ public final class HomeKit {
 
     /**
      * Characteristic type for target position of a door/window/window covering. The value of the
-     *        characteristic is an uint8 value in percent. A value of 0 indicates closed/most shade/least
-     *        light allowed state and a value of 100 indicates open/no shade/most light allowed state.
+     * characteristic is an uint8 value in percent. A value of 0 indicates closed/most shade/least
+     * light allowed state and a value of 100 indicates open/no shade/most light allowed state.
      */
     @Generated
     @CVariable()
@@ -1103,7 +1100,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for air purifier current state. The value is
-     *        one of the value defined for HMCharacteristicValueCurrentAirPurifierState.
+     * one of the value defined for HMCharacteristicValueCurrentAirPurifierState.
      */
     @Generated
     @CVariable()
@@ -1112,7 +1109,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for air purifier target state. The value is
-     *        one of the value defined for HMCharacteristicValueTargetAirPurifierState.
+     * one of the value defined for HMCharacteristicValueTargetAirPurifierState.
      */
     @Generated
     @CVariable()
@@ -1145,7 +1142,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for current slat state. The value is
-     *        one of the values defined for HMCharacteristicValueCurrentSlatState.
+     * one of the values defined for HMCharacteristicValueCurrentSlatState.
      */
     @Generated
     @CVariable()
@@ -1162,7 +1159,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for filter change indication. The value is
-     *        one of the values defined for HMCharacteristicValueFilterChange.
+     * one of the values defined for HMCharacteristicValueFilterChange.
      */
     @Generated
     @CVariable()
@@ -1179,7 +1176,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for resetting filter change indication. The characteristic
-     *        is write-only that takes a boolean value of 1.
+     * is write-only that takes a boolean value of 1.
      */
     @Generated
     @CVariable()
@@ -1228,7 +1225,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for slat type. The value is
-     *        one of the values defined for HMCharacteristicValueSlatType.
+     * one of the values defined for HMCharacteristicValueSlatType.
      */
     @Generated
     @CVariable()
@@ -1253,7 +1250,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for density of ozone. The value of the characteristic is
-     *        in units of micrograms/m^3.
+     * in units of micrograms/m^3.
      */
     @Generated
     @CVariable()
@@ -1262,7 +1259,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for density of nitrogen dioxide. The value of the characteristic is
-     *        in units of micrograms/m^3.
+     * in units of micrograms/m^3.
      */
     @Generated
     @CVariable()
@@ -1271,7 +1268,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for density of sulphur dioxide. The value of the characteristic is
-     *        in units of micrograms/m^3.
+     * in units of micrograms/m^3.
      */
     @Generated
     @CVariable()
@@ -1280,7 +1277,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for density of air-particulate matter of size 2.5 micrograms. The
-     *        value of the characteristic is in units of micrograms/m^3.
+     * value of the characteristic is in units of micrograms/m^3.
      */
     @Generated
     @CVariable()
@@ -1289,7 +1286,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for density of air-particulate matter of size 10 micrograms. The
-     *        value of the characteristic is in units of micrograms/m^3.
+     * value of the characteristic is in units of micrograms/m^3.
      */
     @Generated
     @CVariable()
@@ -1298,7 +1295,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for density of volatile organic compounds. The value of the
-     *        characteristic is in units of micrograms/m^3.
+     * characteristic is in units of micrograms/m^3.
      */
     @Generated
     @CVariable()
@@ -1323,7 +1320,7 @@ public final class HomeKit {
 
     /**
      * Describes that the value format is boolean.
-     * 
+     * <p>
      * The value is an NSNumber containing the boolean value.
      */
     @Generated
@@ -1333,7 +1330,7 @@ public final class HomeKit {
 
     /**
      * Describes that the value format is an integer.
-     * 
+     * <p>
      * The value is an NSNumber containing a signed 32-bit integer with a range [-2147483648, 2147483647].
      */
     @Generated
@@ -1343,7 +1340,7 @@ public final class HomeKit {
 
     /**
      * Describes that the value format is a float.
-     * 
+     * <p>
      * The value is an NSNumber containing a 32-bit float.
      */
     @Generated
@@ -1353,7 +1350,7 @@ public final class HomeKit {
 
     /**
      * Describes that the value format is a string.
-     * 
+     * <p>
      * The value is an NSString.
      */
     @Generated
@@ -1363,7 +1360,7 @@ public final class HomeKit {
 
     /**
      * Describes that the value format is an array.
-     * 
+     * <p>
      * The value is an NSArray.
      */
     @Generated
@@ -1373,7 +1370,7 @@ public final class HomeKit {
 
     /**
      * Describes that the value format is a dictionary.
-     * 
+     * <p>
      * The value is an NSDictionary.
      */
     @Generated
@@ -1383,7 +1380,7 @@ public final class HomeKit {
 
     /**
      * Describes that the value format is an unsigned 8-bit integer.
-     * 
+     * <p>
      * The value is an NSNumber containing an unsigned 8-bit integer with a range [0, 255].
      */
     @Generated
@@ -1393,7 +1390,7 @@ public final class HomeKit {
 
     /**
      * Describes that the value format is an unsigned 16-bit integer.
-     * 
+     * <p>
      * The value is an NSNumber containing an unsigned 16-bit integer with a range [0, 65535].
      */
     @Generated
@@ -1403,7 +1400,7 @@ public final class HomeKit {
 
     /**
      * Describes that the value format is an unsigned 32-bit integer.
-     * 
+     * <p>
      * The value is an NSNumber containing an unsigned 32-bit integer with a range [0, 4294967295].
      */
     @Generated
@@ -1413,7 +1410,7 @@ public final class HomeKit {
 
     /**
      * Describes that the value format is an unsigned 64-bit integer.
-     * 
+     * <p>
      * The value is an NSNumber containing an unsigned 64-bit integer with a range [0, 18446744073709551615].
      */
     @Generated
@@ -1423,7 +1420,7 @@ public final class HomeKit {
 
     /**
      * Describes that the value format is a data blob.
-     * 
+     * <p>
      * The value is an NSData containing the bytes of data.
      */
     @Generated
@@ -1433,7 +1430,7 @@ public final class HomeKit {
 
     /**
      * Describes that the value format is a TLV8.
-     * 
+     * <p>
      * The value is an NSData containing a set of one or more TLV8's, which are packed type-length-value items with an 8-bit type, 8-bit length, and N-byte value.
      */
     @Generated
@@ -1547,10 +1544,10 @@ public final class HomeKit {
 
     /**
      * Type for trigger-owned action sets.
-     * 
+     * <p>
      * An action set of this type is owned by a trigger and is not listed
-     *             as part of the home. An action set of this type cannot be executed,
-     *             renamed, or associated with a different trigger.
+     * as part of the home. An action set of this type cannot be executed,
+     * renamed, or associated with a different trigger.
      */
     @Generated
     @CVariable()
@@ -1788,8 +1785,8 @@ public final class HomeKit {
 
     /**
      * Characteristic type for label namespace used to label the services on an accessory with
-     *        multiple services of the same type. The value of the characteristic is one of the values
-     *        defined for HMCharacteristicValueLabelNamespace.
+     * multiple services of the same type. The value of the characteristic is one of the values
+     * defined for HMCharacteristicValueLabelNamespace.
      */
     @Generated
     @CVariable()
@@ -1798,11 +1795,11 @@ public final class HomeKit {
 
     /**
      * Characteristic type describing the index of the label for the service on accessory with multiple
-     *        instances of the same service. The value is an integer and starts from 1.
-     *        For a label namespace of HMCharacteristicValueLabelNamespaceDot, label index indicates the
-     *        number of dots - ., .., ..., and so on.
-     *        For a label namespace of HMCharacteristicValueLabelNamespaceNumeral, label index indicates the arabic
-     *        numeral - 1, 2, 3, and so on.
+     * instances of the same service. The value is an integer and starts from 1.
+     * For a label namespace of HMCharacteristicValueLabelNamespaceDot, label index indicates the
+     * number of dots - ., .., ..., and so on.
+     * For a label namespace of HMCharacteristicValueLabelNamespaceNumeral, label index indicates the arabic
+     * numeral - 1, 2, 3, and so on.
      */
     @Generated
     @CVariable()
@@ -1851,7 +1848,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for program mode. The value of the characteristic is one of the values defined
-     *        for HMCharacteristicValueProgramMode.
+     * for HMCharacteristicValueProgramMode.
      */
     @Generated
     @CVariable()
@@ -1860,7 +1857,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for in use. The value of the characteristic is one of the values
-     *        defined for HMCharacteristicValueUsageState.
+     * defined for HMCharacteristicValueUsageState.
      */
     @Generated
     @CVariable()
@@ -1869,7 +1866,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for set duration. The value of the characteristic is an int value in
-     *        seconds.
+     * seconds.
      */
     @Generated
     @CVariable()
@@ -1878,7 +1875,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for remaining duration. The value of the characteristic is an int value in
-     *        seconds.
+     * seconds.
      */
     @Generated
     @CVariable()
@@ -1887,7 +1884,7 @@ public final class HomeKit {
 
     /**
      * Characteristic type for valve type. The value of the characteristic is one of the values
-     *        defined for HMCharacteristicValueValveType.
+     * defined for HMCharacteristicValueValveType.
      */
     @Generated
     @CVariable()

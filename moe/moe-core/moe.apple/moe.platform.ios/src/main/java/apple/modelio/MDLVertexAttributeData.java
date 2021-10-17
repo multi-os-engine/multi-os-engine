@@ -41,12 +41,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MDLVertexAttributeData
- * 
+ * <p>
  * convenience object to quickly access vertex attribute data
- * 
+ * <p>
  * created by MDLMesh's vertexAttributeData selector
- *             Setting values on this object has no effect on the
- *             underlying objects.
+ * Setting values on this object has no effect on the
+ * underlying objects.
  */
 @Generated
 @Library("ModelIO")

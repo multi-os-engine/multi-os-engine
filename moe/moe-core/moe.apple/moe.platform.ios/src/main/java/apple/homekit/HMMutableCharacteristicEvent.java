@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class represents an event that is evaluated based on the value of a characteristic
- *        set to a particular value.
+ * set to a particular value.
  */
 @Generated
 @Library("HomeKit")
@@ -154,7 +154,7 @@ public class HMMutableCharacteristicEvent<_TriggerValueType> extends HMCharacter
 
     /**
      * The value of the characteristic that triggers the event.
-     *        A value of nil corresponds to any change in the value of the characteristic.
+     * A value of nil corresponds to any change in the value of the characteristic.
      */
     @Generated
     @Selector("setTriggerValue:")
@@ -170,7 +170,7 @@ public class HMMutableCharacteristicEvent<_TriggerValueType> extends HMCharacter
 
     /**
      * The value of the characteristic that triggers the event.
-     *        A value of nil corresponds to any change in the value of the characteristic.
+     * A value of nil corresponds to any change in the value of the characteristic.
      */
     @Generated
     @Selector("triggerValue")

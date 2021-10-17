@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNUpsamplingBilinear
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * Specifies the bilinear spatial upsampling filter.
  */
 @Generated
@@ -114,11 +114,11 @@ public class MPSCNNUpsamplingBilinear extends MPSCNNUpsampling {
 
     /**
      * Initialize the bilinear spatial upsampling filter.
-     * 
-     * @param     device                   The device the filter will run on.
-     * @param     integerScaleFactorX      The upsampling factor for the x dimension.
-     * @param     integerScaleFactorY      The upsampling factor for the y dimension.
-     * @return    A valid MPSCNNUpsamplingBilinear object or nil, if failure.
+     *
+     * @param device              The device the filter will run on.
+     * @param integerScaleFactorX The upsampling factor for the x dimension.
+     * @param integerScaleFactorY The upsampling factor for the y dimension.
+     * @return A valid MPSCNNUpsamplingBilinear object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:integerScaleFactorX:integerScaleFactorY:")
@@ -186,13 +186,13 @@ public class MPSCNNUpsamplingBilinear extends MPSCNNUpsampling {
 
     /**
      * Initialize the bilinear spatial upsampling filter.
-     * 
-     * @param     device                   The device the filter will run on.
-     * @param     integerScaleFactorX      The upsampling factor for the x dimension.
-     * @param     integerScaleFactorY      The upsampling factor for the y dimension.
-     * @param     alignCorners             Specifier whether the centers of the 4 corner pixels of the input and output regions are aligned,
-     *                                     preserving the values at the corner pixels.
-     * @return    A valid MPSCNNUpsamplingBilinear object or nil, if failure.
+     *
+     * @param device              The device the filter will run on.
+     * @param integerScaleFactorX The upsampling factor for the x dimension.
+     * @param integerScaleFactorY The upsampling factor for the y dimension.
+     * @param alignCorners        Specifier whether the centers of the 4 corner pixels of the input and output regions are aligned,
+     *                            preserving the values at the corner pixels.
+     * @return A valid MPSCNNUpsamplingBilinear object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:integerScaleFactorX:integerScaleFactorY:alignCorners:")

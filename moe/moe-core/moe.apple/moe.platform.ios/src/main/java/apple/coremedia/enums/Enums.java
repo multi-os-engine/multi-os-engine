@@ -268,4 +268,13 @@ public final class Enums {
     @Generated public static final int kCMMemoryPoolError_AllocationFailed = 0xFFFFC37E;
     @Generated public static final int kCMMemoryPoolError_InvalidParameter = 0xFFFFC37D;
     @Generated public static final int kCMVideoCodecType_VP9 = 0x76703039;
+    @Generated public static final int kCMVideoCodecType_DolbyVisionHEVC = 0x64766831;
+    /**
+     * encodes kCVPixelFormatType_DisparityFloat16 in 10-bit monochrome HEVC
+     */
+    @Generated public static final int kCMVideoCodecType_DisparityHEVC = 0x64697368;
+    /**
+     * encodes kCVPixelFormatType_DepthFloat16 in 10-bit monochrome HEVC
+     */
+    @Generated public static final int kCMVideoCodecType_DepthHEVC = 0x64657068;
 }

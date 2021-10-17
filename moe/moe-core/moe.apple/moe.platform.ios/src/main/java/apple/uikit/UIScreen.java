@@ -222,17 +222,11 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @MappedReturn(ObjCObjectMapper.class)
     public native UICoordinateSpace fixedCoordinateSpace();
 
-    /**
-     * Returns the focused item for this screen's focus system. Use UIFocusSystem's focusedItem property instead – this property will be deprecated in a future release.
-     */
     @Generated
     @Selector("focusedItem")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIFocusItem focusedItem();
 
-    /**
-     * If focusedItem is not a view, this returns that item's containing view. Otherwise they are equal. Use UIFocusSystem's focusedItem property instead – this property will be deprecated in a future release.
-     */
     @Generated
     @Selector("focusedView")
     public native UIView focusedView();
@@ -314,7 +308,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     public native void setOverscanCompensation(@NInt long value);
 
     /**
-     * Default is NO. If YES, brightness levels lower than that of which the hardware is capable are emulated in software, if neccessary. Having enabled may entail performance cost.
+     * Default is NO. If YES, brightness levels lower than that of which the hardware is capable are emulated in software, if necessary. Having enabled may entail performance cost.
      */
     @Generated
     @Selector("setWantsSoftwareDimming:")
@@ -340,7 +334,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     public native void traitCollectionDidChange(UITraitCollection previousTraitCollection);
 
     /**
-     * Default is NO. If YES, brightness levels lower than that of which the hardware is capable are emulated in software, if neccessary. Having enabled may entail performance cost.
+     * Default is NO. If YES, brightness levels lower than that of which the hardware is capable are emulated in software, if necessary. Having enabled may entail performance cost.
      */
     @Generated
     @Selector("wantsSoftwareDimming")

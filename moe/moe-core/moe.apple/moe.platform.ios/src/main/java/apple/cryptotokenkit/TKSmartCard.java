@@ -75,11 +75,11 @@ public class TKSmartCard extends NSObject {
 
     /**
      * Begins session with the card.
-     * 
+     * <p>
      * When session exists, other requests for sessions from other card objects to the same card are blocked. Session is reference-counted, the same amount of 'end' calls must be done to really terminate the session. Note that finishing session does not automatically mean that the card is disconnected; it only happens when another session from different card object is requested.
-     * 
+     *
      * @param success Signals whether session was successfully started.
-     * @param error More information about error preventing the transaction to start
+     * @param error   More information about error preventing the transaction to start
      */
     @Generated
     @Selector("beginSessionWithReply:")
@@ -156,7 +156,7 @@ public class TKSmartCard extends NSObject {
 
     /**
      * Synchronous variant of session creation.  Begins the session, executes given block and ends session.
-     * 
+     *
      * @param error Error receiving more information when transaction failed to start or block failed for some reason.
      * @param block Block to be executed when the session was successfully begun.
      * @return Returns YES if the session was successfully begun and block returned YES, otherwise NO.
@@ -214,17 +214,17 @@ public class TKSmartCard extends NSObject {
 
     /**
      * Transmits APDU to the card and returns response.
-     * 
+     * <p>
      * Asynchronous high level variant of command for transmitting APDU to the card.  Handles all ISO7816-4 APDU cases translation to proper sequences according to used protocol.  Consults useExtendedAPDU and useCommandChaining properties and uses these modes whenever appropriate and beneficial for sending requested APDU request.
-     * 
-     * @param ins INS code of the APDU
-     * @param p1 P1 code of the APDU
-     * @param p2 P2 code of the APDU
+     *
+     * @param ins         INS code of the APDU
+     * @param p1          P1 code of the APDU
+     * @param p2          P2 code of the APDU
      * @param requestData Data field of the APDU, or nil if no input data field should be present (i.e case1 or case2 APDUs).  Length of the data serves as Lc field of the APDU.
-     * @param le Expected number of bytes to be returned, or nil if no output data are expected (i.e. case1 or case3 APDUs). To get as much bytes as card provides, pass @0.
-     * @param replyData Block of returned data without SW1SW2 bytes, or nil if an error occured.
-     * @param sw SW1SW2 result code, first two bytes of returned card's reply.
-     * @param error Contains error details when nil is returned.  Specific error is also filled in if there was no communication error, but card returned other SW code than 0x9000.
+     * @param le          Expected number of bytes to be returned, or nil if no output data are expected (i.e. case1 or case3 APDUs). To get as much bytes as card provides, pass @0.
+     * @param replyData   Block of returned data without SW1SW2 bytes, or nil if an error occured.
+     * @param sw          SW1SW2 result code, first two bytes of returned card's reply.
+     * @param error       Contains error details when nil is returned.  Specific error is also filled in if there was no communication error, but card returned other SW code than 0x9000.
      */
     @Generated
     @Selector("sendIns:p1:p2:data:le:reply:")
@@ -240,15 +240,15 @@ public class TKSmartCard extends NSObject {
 
     /**
      * Transmits APDU to the card and returns response.
-     * 
+     * <p>
      * Synchronous high level variant of command for transmitting APDU to the card.  Handles all ISO7816-4 APDU cases translation to proper sequences according to used protocol.  Should be used in block passed to -[TKSmartCard inSessionWithError:executeBlock:] method.
-     * 
-     * @param ins INS code of the APDU
-     * @param p1 P1 code of the APDU
-     * @param p2 P2 code of the APDU
-     * @param data Data field of the APDU.  Length of the data serves as Lc field of the APDU
-     * @param le Expected number of bytes to be returned, or nil if no output data are expected (i.e. case1 or case3 APDUs). To get as much bytes as card provides, pass @0.
-     * @param sw On output, filled with SW1SW2 result code
+     *
+     * @param ins   INS code of the APDU
+     * @param p1    P1 code of the APDU
+     * @param p2    P2 code of the APDU
+     * @param data  Data field of the APDU.  Length of the data serves as Lc field of the APDU
+     * @param le    Expected number of bytes to be returned, or nil if no output data are expected (i.e. case1 or case3 APDUs). To get as much bytes as card provides, pass @0.
+     * @param sw    On output, filled with SW1SW2 result code
      * @param error Contains error details when nil is returned.  Specific error is also filled in if there was no communication error, but card returned other SW code than 0x9000.
      * @return Returned data field, excluding SW status bytes.  If an error occured, returns nil.
      */
@@ -323,10 +323,10 @@ public class TKSmartCard extends NSObject {
 
     /**
      * Transmits raw command to the card.  This call is allowed only inside session.
-     * 
+     *
      * @param request Request part of APDU
      * @param reponse Response part of APDU, or nil if communication with the card failed
-     * @param error Error details when communication with the card failed
+     * @param error   Error details when communication with the card failed
      */
     @Generated
     @Selector("transmitRequest:reply:")
@@ -357,11 +357,11 @@ public class TKSmartCard extends NSObject {
     /**
      * Creates a new user interaction object for secure PIN change using the SmartCard reader facilities (typically a HW keypad).
      * [@note] This interaction is only allowed within a session.
-     * 
-     * @param PINFormat PIN format descriptor.
-     * @param APDU Predefined APDU in which the SmartCard reader fills in the PIN(s).
+     *
+     * @param PINFormat            PIN format descriptor.
+     * @param APDU                 Predefined APDU in which the SmartCard reader fills in the PIN(s).
      * @param currentPINByteOffset Offset in bytes within APDU data field to mark a location of a PIN block for filling in the current PIN.
-     * @param newPINByteOffset Offset in bytes within APDU data field to mark a location of a PIN block for filling in the new PIN.
+     * @param newPINByteOffset     Offset in bytes within APDU data field to mark a location of a PIN block for filling in the new PIN.
      * @return A new user interaction object, or nil if this feature is not supported by the SmartCard reader. After the interaction has been successfully completed the operation result is available in the result properites.
      */
     @Generated
@@ -372,9 +372,9 @@ public class TKSmartCard extends NSObject {
     /**
      * Creates a new user interaction object for secure PIN verification using the SmartCard reader facilities (typically a HW keypad).
      * [@note] This interaction is only allowed within a session.
-     * 
-     * @param PINFormat PIN format descriptor.
-     * @param APDU Predefined APDU in which the SmartCard reader fills in the PIN.
+     *
+     * @param PINFormat     PIN format descriptor.
+     * @param APDU          Predefined APDU in which the SmartCard reader fills in the PIN.
      * @param PINByteOffset Offset in bytes within APDU data field to mark a location of a PIN block for filling in the entered PIN (currently unused, must be 0).
      * @return A new user interaction object, or nil if this feature is not supported by the SmartCard reader. After the interaction has been successfully completed the operation result is available in the result properites.
      */

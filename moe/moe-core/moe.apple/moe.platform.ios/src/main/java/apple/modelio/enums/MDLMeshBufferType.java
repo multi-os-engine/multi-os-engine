@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MDLMeshBufferType
- * 
+ * <p>
  * Type of data a MDLMeshBuffer has been allocated for
  */
 @Generated
@@ -32,4 +32,6 @@ public final class MDLMeshBufferType {
     @Generated
     private MDLMeshBufferType() {
     }
+
+    @Generated @NUInt public static final long Custom = 0x0000000000000003L;
 }

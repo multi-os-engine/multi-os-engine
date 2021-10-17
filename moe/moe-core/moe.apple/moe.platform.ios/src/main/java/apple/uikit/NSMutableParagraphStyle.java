@@ -341,4 +341,12 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Generated
     @Selector("setLineBreakStrategy:")
     public native void setLineBreakStrategy(@NUInt long value);
+
+    @Generated
+    @Selector("setUsesDefaultHyphenation:")
+    public native void setUsesDefaultHyphenation(boolean value);
+
+    @Generated
+    @Selector("usesDefaultHyphenation")
+    public native boolean usesDefaultHyphenation();
 }

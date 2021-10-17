@@ -9,7 +9,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] MTLCounter
- * 
+ * <p>
  * A descriptor for a single counter.
  */
 @Generated

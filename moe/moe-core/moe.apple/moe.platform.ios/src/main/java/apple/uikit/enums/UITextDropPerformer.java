@@ -12,7 +12,7 @@ public final class UITextDropPerformer {
     /**
      * The text droppable view will handle the drop.
      * This is the default behavior.
-     * 
+     * <p>
      * Note: `-textDroppableView:willPerformDrop:` will be called, if it is implemented,
      * but it is not required.
      */
@@ -21,7 +21,7 @@ public final class UITextDropPerformer {
      * The delegate will be responsible for performing the drop, and
      * the default data loading provided by the text droppable view
      * will not be invoked.
-     * 
+     * <p>
      * The delegate must implement `-textDroppableView:willPerformDrop:`,
      * with custom code to start loading data. If it does not, then the text
      * droppable view will handle the drop, as if `UITextDropPerformerView`

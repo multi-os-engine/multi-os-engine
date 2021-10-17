@@ -42,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * __________________________________________________________________________________________________
  * MIDINetworkSession
- * 
+ * <p>
  * A network session represents one CoreMIDI entity (source/destination pair). One session can
  * have any number of connections. Output is broadcast to all connections; input from multiple
  * connections is merged.
@@ -187,7 +187,7 @@ public class MIDINetworkSession extends NSObject {
 
     /**
      * The driver maintains a directory of MIDINetworkHosts, "contacts," for user convenience in initiating
-     * connections, and for controlling incoming connection requests. 
+     * connections, and for controlling incoming connection requests.
      */
     @Generated
     @Selector("contacts")

@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] SecPadding
- * 
+ * <p>
  * Supported padding types.
  */
 @Generated
@@ -34,7 +34,7 @@ public final class SecPadding {
     /**
      * For SecKeyRawSign/SecKeyRawVerify only,
      * ECDSA signature is raw byte format {r,s}, big endian.
-     * First half is r, second half is s 
+     * First half is r, second half is s
      */
     @Generated public static final int SigRaw = 0x00004000;
     /**
@@ -48,7 +48,7 @@ public final class SecPadding {
     /**
      * For SecKeyRawSign/SecKeyRawVerify only, data to be signed is a SHA1
      * hash; standard ASN.1 padding will be done, as well as PKCS1 padding
-     * of the underlying RSA operation. 
+     * of the underlying RSA operation.
      */
     @Generated public static final int PKCS1SHA1 = 0x00008002;
     /**

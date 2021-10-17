@@ -67,32 +67,32 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     /**
      * Specify the alignment of the supplementary relative the containing geometry's coordinate space to
      * position the boundary supplementary item.
-     * 
-     *                                            +------------------------------------------+
-     *   +----------------------+                 |Boundary Supplementary Item               |
-     *   |                      |<----------------|* alignment: [.top, .leading]             |
-     *   +----------------------+                 |* absoluteOffset: CGPoint(x:0.0, y:-10.0) |
-     *                                            +------------------------------------------+
-     *   +----------------------------------+
-     *   |                                  |
-     *   |                                  |
-     *   |                                  |
-     *   |                                  |
-     *   |                                  |
-     *   |                                  |
-     *   |                                  |
-     *   |                                  |
-     *   |                                  |      +--------------------------------+
-     *   |                                  |<-----|        Section Geometry        |
-     *   |                                  |      +--------------------------------+
-     *   |                                  |
-     *   |                                  |
-     *   |                                  |
-     *   |                                  |
-     *   |                                  |
-     *   |                                  |
-     *   |                                  |
-     *   +----------------------------------+
+     * <p>
+     * +------------------------------------------+
+     * +----------------------+                 |Boundary Supplementary Item               |
+     * |                      |<----------------|* alignment: [.top, .leading]             |
+     * +----------------------+                 |* absoluteOffset: CGPoint(x:0.0, y:-10.0) |
+     * +------------------------------------------+
+     * +----------------------------------+
+     * |                                  |
+     * |                                  |
+     * |                                  |
+     * |                                  |
+     * |                                  |
+     * |                                  |
+     * |                                  |
+     * |                                  |
+     * |                                  |      +--------------------------------+
+     * |                                  |<-----|        Section Geometry        |
+     * |                                  |      +--------------------------------+
+     * |                                  |
+     * |                                  |
+     * |                                  |
+     * |                                  |
+     * |                                  |
+     * |                                  |
+     * |                                  |
+     * +----------------------------------+
      */
     @Generated
     @Selector("boundarySupplementaryItemWithLayoutSize:elementKind:alignment:")
@@ -139,7 +139,7 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
 
     /**
      * Default is YES. This will automatically extend the content area of the host geometry (e.g. section)
-     *   For .estimated sized supplementary items, this allows automatic adjustment of the layout. (e.g. dynamic text)
+     * For .estimated sized supplementary items, this allows automatic adjustment of the layout. (e.g. dynamic text)
      */
     @Generated
     @Selector("extendsBoundary")
@@ -199,7 +199,7 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
 
     /**
      * Default is NO. Specify YES to keep the supplementary visible while any portion of the host geometry (e.g. section) is visible.
-     *   Occlusion disambiguation between other supplementaries will be managed automatically (e.g. section header + footer both pinned)
+     * Occlusion disambiguation between other supplementaries will be managed automatically (e.g. section header + footer both pinned)
      */
     @Generated
     @Selector("pinToVisibleBounds")
@@ -215,7 +215,7 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
 
     /**
      * Default is YES. This will automatically extend the content area of the host geometry (e.g. section)
-     *   For .estimated sized supplementary items, this allows automatic adjustment of the layout. (e.g. dynamic text)
+     * For .estimated sized supplementary items, this allows automatic adjustment of the layout. (e.g. dynamic text)
      */
     @Generated
     @Selector("setExtendsBoundary:")
@@ -223,7 +223,7 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
 
     /**
      * Default is NO. Specify YES to keep the supplementary visible while any portion of the host geometry (e.g. section) is visible.
-     *   Occlusion disambiguation between other supplementaries will be managed automatically (e.g. section header + footer both pinned)
+     * Occlusion disambiguation between other supplementaries will be managed automatically (e.g. section header + footer both pinned)
      */
     @Generated
     @Selector("setPinToVisibleBounds:")

@@ -35,10 +35,10 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] CBPeripheralManagerDelegate
- * 
+ * <p>
  * The delegate of a @link CBPeripheralManager @/link object must adopt the <code>CBPeripheralManagerDelegate</code> protocol. The
- *             single required method indicates the availability of the peripheral manager, while the optional methods provide information about
- *             centrals, which can connect and access the local database.
+ * single required method indicates the availability of the peripheral manager, while the optional methods provide information about
+ * centrals, which can connect and access the local database.
  */
 @Generated
 @Library("CoreBluetooth")
@@ -47,13 +47,13 @@ import org.moe.natj.objc.ann.Selector;
 public interface CBPeripheralManagerDelegate {
     /**
      * peripheralManager:central:didSubscribeToCharacteristic:
-     * 
+     * <p>
      * This method is invoked when a central configures <i>characteristic</i> to notify or indicate.
-     *                         It should be used as a cue to start sending updates as the characteristic value changes.
-     * 
-     * @param peripheral       The peripheral manager providing this update.
-     * @param central          The central that issued the command.
-     * @param characteristic   The characteristic on which notifications or indications were enabled.
+     * It should be used as a cue to start sending updates as the characteristic value changes.
+     *
+     * @param peripheral     The peripheral manager providing this update.
+     * @param central        The central that issued the command.
+     * @param characteristic The characteristic on which notifications or indications were enabled.
      */
     @Generated
     @IsOptional
@@ -65,12 +65,12 @@ public interface CBPeripheralManagerDelegate {
 
     /**
      * peripheralManager:central:didUnsubscribeFromCharacteristic:
-     * 
+     * <p>
      * This method is invoked when a central removes notifications/indications from <i>characteristic</i>.
-     * 
-     * @param peripheral       The peripheral manager providing this update.
-     * @param central          The central that issued the command.
-     * @param characteristic   The characteristic on which notifications or indications were disabled.
+     *
+     * @param peripheral     The peripheral manager providing this update.
+     * @param central        The central that issued the command.
+     * @param characteristic The characteristic on which notifications or indications were disabled.
      */
     @Generated
     @IsOptional
@@ -82,13 +82,13 @@ public interface CBPeripheralManagerDelegate {
 
     /**
      * peripheralManager:didAddService:error:
-     * 
+     * <p>
      * This method returns the result of an @link addService: @/link call. If the service could
-     *                     not be published to the local database, the cause will be detailed in the <i>error</i> parameter.
-     * 
-     * @param peripheral   The peripheral manager providing this information.
-     * @param service      The service that was added to the local database.
-     * @param error        If an error occurred, the cause of the failure.
+     * not be published to the local database, the cause will be detailed in the <i>error</i> parameter.
+     *
+     * @param peripheral The peripheral manager providing this information.
+     * @param service    The service that was added to the local database.
+     * @param error      If an error occurred, the cause of the failure.
      */
     @Generated
     @IsOptional
@@ -99,14 +99,13 @@ public interface CBPeripheralManagerDelegate {
 
     /**
      * peripheralManager:didReceiveReadRequest:
-     * 
+     * <p>
      * This method is invoked when <i>peripheral</i> receives an ATT request for a characteristic with a dynamic value.
-     *                     For every invocation of this method, @link respondToRequest:withResult: @/link must be called.
-     * 
-     * @param peripheral   The peripheral manager requesting this information.
-     * @param request      A <code>CBATTRequest</code> object.
-     * 
-     * @see                CBATTRequest
+     * For every invocation of this method, @link respondToRequest:withResult: @/link must be called.
+     *
+     * @param peripheral The peripheral manager requesting this information.
+     * @param request    A <code>CBATTRequest</code> object.
+     * @see CBATTRequest
      */
     @Generated
     @IsOptional
@@ -117,16 +116,15 @@ public interface CBPeripheralManagerDelegate {
 
     /**
      * peripheralManager:didReceiveWriteRequests:
-     * 
+     * <p>
      * This method is invoked when <i>peripheral</i> receives an ATT request or command for one or more characteristics with a dynamic value.
-     *                     For every invocation of this method, @link respondToRequest:withResult: @/link should be called exactly once. If <i>requests</i> contains
-     *                     multiple requests, they must be treated as an atomic unit. If the execution of one of the requests would cause a failure, the request
-     *                     and error reason should be provided to <code>respondToRequest:withResult:</code> and none of the requests should be executed.
-     * 
-     * @param peripheral   The peripheral manager requesting this information.
-     * @param requests     A list of one or more <code>CBATTRequest</code> objects.
-     * 
-     * @see                CBATTRequest
+     * For every invocation of this method, @link respondToRequest:withResult: @/link should be called exactly once. If <i>requests</i> contains
+     * multiple requests, they must be treated as an atomic unit. If the execution of one of the requests would cause a failure, the request
+     * and error reason should be provided to <code>respondToRequest:withResult:</code> and none of the requests should be executed.
+     *
+     * @param peripheral The peripheral manager requesting this information.
+     * @param requests   A list of one or more <code>CBATTRequest</code> objects.
+     * @see CBATTRequest
      */
     @Generated
     @IsOptional
@@ -138,16 +136,15 @@ public interface CBPeripheralManagerDelegate {
 
     /**
      * peripheralManager:willRestoreState:
-     * 
+     * <p>
      * For apps that opt-in to state preservation and restoration, this is the first method invoked when your app is relaunched into
-     * 				the background to complete some Bluetooth-related task. Use this method to synchronize your app's state with the state of the
-     * 				Bluetooth system.
-     * 
-     * @param peripheral	The peripheral manager providing this information.
-     * @param dict			A dictionary containing information about <i>peripheral</i> that was preserved by the system at the time the app was terminated.
-     * 
-     * @see            CBPeripheralManagerRestoredStateServicesKey;
-     * @see            CBPeripheralManagerRestoredStateAdvertisementDataKey;
+     * the background to complete some Bluetooth-related task. Use this method to synchronize your app's state with the state of the
+     * Bluetooth system.
+     *
+     * @param peripheral The peripheral manager providing this information.
+     * @param dict       A dictionary containing information about <i>peripheral</i> that was preserved by the system at the time the app was terminated.
+     * @see CBPeripheralManagerRestoredStateServicesKey;
+     * @see CBPeripheralManagerRestoredStateAdvertisementDataKey;
      */
     @Generated
     @IsOptional
@@ -158,12 +155,12 @@ public interface CBPeripheralManagerDelegate {
 
     /**
      * peripheralManagerDidStartAdvertising:error:
-     * 
+     * <p>
      * This method returns the result of a @link startAdvertising: @/link call. If advertisement could
-     *                     not be started, the cause will be detailed in the <i>error</i> parameter.
-     * 
-     * @param peripheral   The peripheral manager providing this information.
-     * @param error        If an error occurred, the cause of the failure.
+     * not be started, the cause will be detailed in the <i>error</i> parameter.
+     *
+     * @param peripheral The peripheral manager providing this information.
+     * @param error      If an error occurred, the cause of the failure.
      */
     @Generated
     @IsOptional
@@ -174,16 +171,15 @@ public interface CBPeripheralManagerDelegate {
 
     /**
      * peripheralManagerDidUpdateState:
-     * 
+     * <p>
      * Invoked whenever the peripheral manager's state has been updated. Commands should only be issued when the state is
-     *                     <code>CBPeripheralManagerStatePoweredOn</code>. A state below <code>CBPeripheralManagerStatePoweredOn</code>
-     *                     implies that advertisement has paused and any connected centrals have been disconnected. If the state moves below
-     *                     <code>CBPeripheralManagerStatePoweredOff</code>, advertisement is stopped and must be explicitly restarted, and the
-     *                     local database is cleared and all services must be re-added.
-     * 
-     * @param peripheral   The peripheral manager whose state has changed.
-     * 
-     * @see                state
+     * <code>CBPeripheralManagerStatePoweredOn</code>. A state below <code>CBPeripheralManagerStatePoweredOn</code>
+     * implies that advertisement has paused and any connected centrals have been disconnected. If the state moves below
+     * <code>CBPeripheralManagerStatePoweredOff</code>, advertisement is stopped and must be explicitly restarted, and the
+     * local database is cleared and all services must be re-added.
+     *
+     * @param peripheral The peripheral manager whose state has changed.
+     * @see state
      */
     @Generated
     @Selector("peripheralManagerDidUpdateState:")
@@ -191,11 +187,11 @@ public interface CBPeripheralManagerDelegate {
 
     /**
      * peripheralManagerIsReadyToUpdateSubscribers:
-     * 
+     * <p>
      * This method is invoked after a failed call to @link updateValue:forCharacteristic:onSubscribedCentrals: @/link, when <i>peripheral</i> is again
-     *                     ready to send characteristic value updates.
-     * 
-     * @param peripheral   The peripheral manager providing this update.
+     * ready to send characteristic value updates.
+     *
+     * @param peripheral The peripheral manager providing this update.
      */
     @Generated
     @IsOptional
@@ -206,12 +202,12 @@ public interface CBPeripheralManagerDelegate {
 
     /**
      * peripheralManager:didOpenL2CAPChannel:error:
-     * 
+     * <p>
      * This method returns the result of establishing an incoming L2CAP channel , following publishing a channel using @link publishL2CAPChannel: @link call.
-     * 
-     *  @param peripheral   	The peripheral manager requesting this information.
-     *  @param channel	      	A <code>CBL2CAPChannel</code> object.
-     * @param error		If an error occurred, the cause of the failure.
+     *
+     * @param peripheral The peripheral manager requesting this information.
+     * @param channel    A <code>CBL2CAPChannel</code> object.
+     * @param error      If an error occurred, the cause of the failure.
      */
     @Generated
     @IsOptional
@@ -223,13 +219,13 @@ public interface CBPeripheralManagerDelegate {
 
     /**
      * peripheralManager:didPublishL2CAPChannel:error:
-     * 
+     * <p>
      * This method is the response to a  @link publishL2CAPChannel: @/link call.  The PSM will contain the PSM that was assigned for the published
-     * 				channel
-     * 
-     * @param peripheral   The peripheral manager requesting this information.
-     * @param PSM			The PSM of the channel that was published.
-     * @param error		If an error occurred, the cause of the failure.
+     * channel
+     *
+     * @param peripheral The peripheral manager requesting this information.
+     * @param PSM        The PSM of the channel that was published.
+     * @param error      If an error occurred, the cause of the failure.
      */
     @Generated
     @IsOptional
@@ -240,12 +236,12 @@ public interface CBPeripheralManagerDelegate {
 
     /**
      * peripheralManager:didUnublishL2CAPChannel:error:
-     * 
+     * <p>
      * This method is the response to a  @link unpublishL2CAPChannel: @/link call.
-     * 
-     * @param peripheral   The peripheral manager requesting this information.
-     * @param PSM			The PSM of the channel that was published.
-     * @param error		If an error occurred, the cause of the failure.
+     *
+     * @param peripheral The peripheral manager requesting this information.
+     * @param PSM        The PSM of the channel that was published.
+     * @param error      If an error occurred, the cause of the failure.
      */
     @Generated
     @IsOptional

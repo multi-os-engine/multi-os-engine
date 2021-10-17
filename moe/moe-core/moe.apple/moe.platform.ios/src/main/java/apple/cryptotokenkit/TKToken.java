@@ -108,9 +108,9 @@ public class TKToken extends NSObject {
 
     /**
      * Initializes token instance
-     * 
+     *
      * @param tokenDriver Creating token driver.
-     * @param instanceID Unique, persistent identifier of this token.
+     * @param instanceID  Unique, persistent identifier of this token.
      */
     @Generated
     @Selector("initWithTokenDriver:instanceID:")

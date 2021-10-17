@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKFitzpatrickSkinTypeObject
- * 
+ * <p>
  * A wrapper object for HKFitzpatrickSkinType enumeration.
  */
 @Generated

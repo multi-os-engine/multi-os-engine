@@ -179,16 +179,16 @@ public class MDLStereoscopicCamera extends MDLCamera {
     public native float interPupillaryDistance();
 
     /**
-     * Vergence in a stereoscopic camera can be controlled in two ways. A toed-in 
-     * binocular stereoscopic camera rotates the lens and sensor together such that a 
-     * ray projected from the center of either sensor and lens meets at a point. A 
-     * parallel binocular stereoscopic camera accomplishes the same thing by shifting 
+     * Vergence in a stereoscopic camera can be controlled in two ways. A toed-in
+     * binocular stereoscopic camera rotates the lens and sensor together such that a
+     * ray projected from the center of either sensor and lens meets at a point. A
+     * parallel binocular stereoscopic camera accomplishes the same thing by shifting
      * the relative centers of the sensor and lens.
-     * 
-     * If a parallel binocular stereoscopic camera is modeled, the sensor should be 
+     * <p>
+     * If a parallel binocular stereoscopic camera is modeled, the sensor should be
      * considered to have shifted by an amount h. If left and right vergence are equal,
-     *   h = (focal length * interOcularDistance) / distance to vergence point.
-     * 
+     * h = (focal length * interOcularDistance) / distance to vergence point.
+     * <p>
      * Vergence is measured in degrees towards center and is usually positive.
      */
     @Generated
@@ -196,8 +196,8 @@ public class MDLStereoscopicCamera extends MDLCamera {
     public native float leftVergence();
 
     /**
-     * The amount, as a percentage of image width to offset an image towards the other 
-     * camera. This value is used in a stereo grade to enhance or reduce the intensity 
+     * The amount, as a percentage of image width to offset an image towards the other
+     * camera. This value is used in a stereo grade to enhance or reduce the intensity
      * of the stereoscopic effect
      */
     @Generated
@@ -217,16 +217,16 @@ public class MDLStereoscopicCamera extends MDLCamera {
     public native void setInterPupillaryDistance(float value);
 
     /**
-     * Vergence in a stereoscopic camera can be controlled in two ways. A toed-in 
-     * binocular stereoscopic camera rotates the lens and sensor together such that a 
-     * ray projected from the center of either sensor and lens meets at a point. A 
-     * parallel binocular stereoscopic camera accomplishes the same thing by shifting 
+     * Vergence in a stereoscopic camera can be controlled in two ways. A toed-in
+     * binocular stereoscopic camera rotates the lens and sensor together such that a
+     * ray projected from the center of either sensor and lens meets at a point. A
+     * parallel binocular stereoscopic camera accomplishes the same thing by shifting
      * the relative centers of the sensor and lens.
-     * 
-     * If a parallel binocular stereoscopic camera is modeled, the sensor should be 
+     * <p>
+     * If a parallel binocular stereoscopic camera is modeled, the sensor should be
      * considered to have shifted by an amount h. If left and right vergence are equal,
-     *   h = (focal length * interOcularDistance) / distance to vergence point.
-     * 
+     * h = (focal length * interOcularDistance) / distance to vergence point.
+     * <p>
      * Vergence is measured in degrees towards center and is usually positive.
      */
     @Generated
@@ -234,8 +234,8 @@ public class MDLStereoscopicCamera extends MDLCamera {
     public native void setLeftVergence(float value);
 
     /**
-     * The amount, as a percentage of image width to offset an image towards the other 
-     * camera. This value is used in a stereo grade to enhance or reduce the intensity 
+     * The amount, as a percentage of image width to offset an image towards the other
+     * camera. This value is used in a stereo grade to enhance or reduce the intensity
      * of the stereoscopic effect
      */
     @Generated

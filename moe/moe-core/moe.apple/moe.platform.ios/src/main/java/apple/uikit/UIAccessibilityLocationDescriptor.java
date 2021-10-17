@@ -125,7 +125,7 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
     /**
      * Convenience initializer that uses the view's accessibilityActivationPoint. (This point will be
      * converted to the coordinate space of the view).
-     * 
+     * <p>
      * Note that by default, the accessibilityActivationPoint of a view is its center.
      */
     @Generated
@@ -198,7 +198,7 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
 
     /**
      * The view in which the described point resides.
-     * 
+     * <p>
      * This property is weak to make it simple to avoid reference cycles. Descriptors whose views have
      * been deallocated (or are no longer in a visible window, or are obscured) will be silently
      * ignored. That said, you should still clean up after yourself.

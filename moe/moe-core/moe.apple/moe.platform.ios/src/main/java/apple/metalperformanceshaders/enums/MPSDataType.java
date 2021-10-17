@@ -76,11 +76,17 @@ public final class MPSDataType {
     /**
      * signed integers
      */
-    @Generated
-    public static final int Int64 = 0x20000040;
+    @Generated public static final int Int64 = 0x20000040;
     /**
      * unsigned integers. Range: [0, UTYPE_MAX]
      */
-    @Generated
-    public static final int UInt64 = 0x00000040;
+    @Generated public static final int UInt64 = 0x00000040;
+    /**
+     * unsigned integers. Range: [0, UTYPE_MAX]
+     */
+    @Generated public static final int AlternateEncodingBit = 0x80000000;
+    /**
+     * unsigned integers. Range: [0, UTYPE_MAX]
+     */
+    @Generated public static final int Bool = 0x80000008;
 }

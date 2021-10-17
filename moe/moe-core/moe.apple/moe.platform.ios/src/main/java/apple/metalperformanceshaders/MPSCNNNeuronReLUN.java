@@ -29,14 +29,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNNeuronReLUN
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Specifies the ReLUN neuron filter.
- *             For each pixel, applies the following function: f(x) = [ x    , x >= 0
- *                                                                    [ a * x, x <  0
- *                                                                    [ b    , x >= b
- *             As an example, the TensorFlow Relu6 activation layer can be implemented
- *             by setting the parameter b to 6.0f:
- *             https://www.tensorflow.org/api_docs/cc/class/tensorflow/ops/relu6.
+ * For each pixel, applies the following function: f(x) = [ x    , x >= 0
+ * [ a * x, x <  0
+ * [ b    , x >= b
+ * As an example, the TensorFlow Relu6 activation layer can be implemented
+ * by setting the parameter b to 6.0f:
+ * https://www.tensorflow.org/api_docs/cc/class/tensorflow/ops/relu6.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -120,11 +120,11 @@ public class MPSCNNNeuronReLUN extends MPSCNNNeuron {
 
     /**
      * Initialize a ReLUN neuron filter
-     * 
-     * @param      device          The device the filter will run on
-     * @param      a               Filter property "a". See class discussion.
-     * @param      b               Filter property "b". See class discussion.
-     * @return     A valid MPSCNNNeuronReLUN object or nil, if failure.
+     *
+     * @param device The device the filter will run on
+     * @param a      Filter property "a". See class discussion.
+     * @param b      Filter property "b". See class discussion.
+     * @return A valid MPSCNNNeuronReLUN object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:a:b:")

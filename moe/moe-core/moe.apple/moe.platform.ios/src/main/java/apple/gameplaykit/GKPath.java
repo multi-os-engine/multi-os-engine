@@ -133,9 +133,9 @@ public class GKPath extends NSObject {
      * Creates a path from an array of graph nodes (often a result of pathfinding)
      * Accepts GKGraphNode2D and GKGraphNode3D
      * Cyclical is set to NO
-     * 
+     *
      * @param graphNodes an array of graph nodes to make a path from
-     * @param radius radius of the path to create
+     * @param radius     radius of the path to create
      * @see GKGraphNode
      */
     @Generated

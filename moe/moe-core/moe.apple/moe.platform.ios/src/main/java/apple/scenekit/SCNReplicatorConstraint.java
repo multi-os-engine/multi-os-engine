@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNReplicatorConstraint
- * 
+ * <p>
  * A SCNReplicatorConstraint replicates the position/orientation/scale of a target node
  */
 @Generated
@@ -133,7 +133,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] orientationOffset
-     * 
+     * <p>
      * Defines an addition orientation offset. Defaults to no offset. Animatable.
      */
     @Generated
@@ -143,7 +143,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] positionOffset
-     * 
+     * <p>
      * Defines an addition orientation offset. Defaults to no offset. Animatable.
      */
     @Generated
@@ -153,7 +153,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] replicatesOrientation
-     * 
+     * <p>
      * Defines whether or not the constraint should replicate the target orientation. Defaults to YES.
      */
     @Generated
@@ -162,7 +162,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] replicatesPosition
-     * 
+     * <p>
      * Defines whether or not the constraint should replicate the target position. Defaults to YES.
      */
     @Generated
@@ -171,7 +171,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] replicatesScale
-     * 
+     * <p>
      * Defines whether or not the constraint should replicate the target scale. Defaults to YES.
      */
     @Generated
@@ -180,7 +180,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * replicatorWithTargetNode
-     * 
+     * <p>
      * Creates and returns a SCNReplicatorConstraint constraint.
      */
     @Generated
@@ -197,7 +197,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] scaleOffset
-     * 
+     * <p>
      * Defines an addition scale offset. Defaults to no offset. Animatable.
      */
     @Generated
@@ -207,7 +207,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] orientationOffset
-     * 
+     * <p>
      * Defines an addition orientation offset. Defaults to no offset. Animatable.
      */
     @Generated
@@ -216,7 +216,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] positionOffset
-     * 
+     * <p>
      * Defines an addition orientation offset. Defaults to no offset. Animatable.
      */
     @Generated
@@ -225,7 +225,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] replicatesOrientation
-     * 
+     * <p>
      * Defines whether or not the constraint should replicate the target orientation. Defaults to YES.
      */
     @Generated
@@ -234,7 +234,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] replicatesPosition
-     * 
+     * <p>
      * Defines whether or not the constraint should replicate the target position. Defaults to YES.
      */
     @Generated
@@ -243,7 +243,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] replicatesScale
-     * 
+     * <p>
      * Defines whether or not the constraint should replicate the target scale. Defaults to YES.
      */
     @Generated
@@ -252,7 +252,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] scaleOffset
-     * 
+     * <p>
      * Defines an addition scale offset. Defaults to no offset. Animatable.
      */
     @Generated
@@ -261,7 +261,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] target
-     * 
+     * <p>
      * Defines the target node to replicate
      */
     @Generated
@@ -288,7 +288,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     /**
      * [@property] target
-     * 
+     * <p>
      * Defines the target node to replicate
      */
     @Generated

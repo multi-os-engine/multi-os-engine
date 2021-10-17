@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum]		AudioPanningMode
- * 
+ * <p>
  * Different panning algorithms.
  * [@constant]   kPanningMode_SoundField
- * 	Sound field panning algorithm
+ * Sound field panning algorithm
  * [@constant]   kPanningMode_VectorBasedPanning
- * 	Vector based panning algorithm
+ * Vector based panning algorithm
  */
 @Generated
 public final class AudioPanningMode {

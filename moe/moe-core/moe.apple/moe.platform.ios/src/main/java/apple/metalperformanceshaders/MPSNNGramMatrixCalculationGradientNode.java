@@ -56,7 +56,7 @@ public class MPSNNGramMatrixCalculationGradientNode extends MPSNNGradientFilterN
 
     /**
      * [@property]   alpha
-     * 
+     * <p>
      * Scaling factor for the output. Default: 1.0f.
      */
     @Generated

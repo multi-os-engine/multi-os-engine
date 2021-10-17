@@ -45,15 +45,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageSobel
- * 
+ * <p>
  * The MPSImageSobel implements the Sobel filter.
- *             When the color model (e.g. RGB, two-channel, grayscale, etc.) of source
- *             and destination textures match, the filter is applied to each channel
- *             separately. If the destination is monochrome (single channel) but source
- *             multichannel, the pixel values are converted to grayscale before applying Sobel
- *             operator using the linear gray color transform vector (v).
- * 
- *                 Luminance = v[0] * pixel.x + v[1] * pixel.y + v[2] * pixel.z;
+ * When the color model (e.g. RGB, two-channel, grayscale, etc.) of source
+ * and destination textures match, the filter is applied to each channel
+ * separately. If the destination is monochrome (single channel) but source
+ * multichannel, the pixel values are converted to grayscale before applying Sobel
+ * operator using the linear gray color transform vector (v).
+ * <p>
+ * Luminance = v[0] * pixel.x + v[1] * pixel.y + v[2] * pixel.z;
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -168,9 +168,9 @@ public class MPSImageSobel extends MPSUnaryImageKernel {
 
     /**
      * [@property]    colorTransform
-     * 
+     * <p>
      * Returns a pointer to the array of three floats used to convert RGBA, RGB or RG images
-     *              to the destination format when the destination is monochrome.
+     * to the destination format when the destination is monochrome.
      */
     @Generated
     @Selector("colorTransform")
@@ -182,12 +182,12 @@ public class MPSImageSobel extends MPSUnaryImageKernel {
 
     /**
      * Initialize a Sobel filter on a given device using the default color
-     *             transform. Default: BT.601/JPEG {0.299f, 0.587f, 0.114f}
-     * 
-     *             For non-default conversion matrices, use -initWithDevice:linearGrayColorTransform:
-     * 
-     * @param      device  The device the filter will run on
-     * @return     A valid object or nil, if failure.
+     * transform. Default: BT.601/JPEG {0.299f, 0.587f, 0.114f}
+     * <p>
+     * For non-default conversion matrices, use -initWithDevice:linearGrayColorTransform:
+     *
+     * @param device The device the filter will run on
+     * @return A valid object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
@@ -195,15 +195,15 @@ public class MPSImageSobel extends MPSUnaryImageKernel {
 
     /**
      * Initialize a Sobel filter on a given device with a non-default color transform
-     *               [@code]
-     *                         Luminance = transform[0] * pixel.x +
-     *                                     transform[1] * pixel.y +
-     *                                     transform[2] * pixel.z;
-     *               [@endcode]
-     * 
-     * @param      device          The device the filter will run on
-     * @param      transform       Array of three floats describing the rgb to gray scale color transform.
-     * @return     A valid object or nil, if failure.
+     * [@code]
+     * Luminance = transform[0] * pixel.x +
+     * transform[1] * pixel.y +
+     * transform[2] * pixel.z;
+     * [@endcode]
+     *
+     * @param device    The device the filter will run on
+     * @param transform Array of three floats describing the rgb to gray scale color transform.
+     * @return A valid object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:linearGrayColorTransform:")
@@ -216,16 +216,16 @@ public class MPSImageSobel extends MPSUnaryImageKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * While the standard NSSecureCoding/NSCoding method
-     *             -initWithCoder: should work, since the file can't
-     *             know which device your data is allocated on, we
-     *             have to guess and may guess incorrectly.  To avoid
-     *             that problem, use initWithCoder:device instead.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
-     * @param      device      The MTLDevice on which to make the MPSKernel
-     * @return     A new MPSKernel object, or nil if failure.
+     * -initWithCoder: should work, since the file can't
+     * know which device your data is allocated on, we
+     * have to guess and may guess incorrectly.  To avoid
+     * that problem, use initWithCoder:device instead.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSKernel
+     * @param device   The MTLDevice on which to make the MPSKernel
+     * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")

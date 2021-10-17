@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]          HKWheelchairUse
- * 
+ * <p>
  * This enumerated type is used to represent whether the user uses a wheelchair.
- * 
+ * <p>
  * [@constant]      HKWheelchairUseNo      The user does not use a wheelchair.
  * [@constant]      HKWheelchairUseYes     The user does use a wheelchair.
  */

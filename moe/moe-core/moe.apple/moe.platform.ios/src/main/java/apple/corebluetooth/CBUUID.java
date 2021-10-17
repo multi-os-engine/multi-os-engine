@@ -45,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CBUUID
- * 
- *      A 16-bit, 32-bit, or 128-bit Bluetooth UUID.
- *      16-bit and 32-bit UUIDs are implicitly pre-filled with the Bluetooth Base UUID.
+ * <p>
+ * A 16-bit, 32-bit, or 128-bit Bluetooth UUID.
+ * 16-bit and 32-bit UUIDs are implicitly pre-filled with the Bluetooth Base UUID.
  */
 @Generated
 @Library("CoreBluetooth")
@@ -65,8 +65,8 @@ public class CBUUID extends NSObject implements NSCopying {
 
     /**
      * UUIDWithCFUUID:
-     * 
-     *      Creates a CBUUID with a CFUUIDRef.
+     * <p>
+     * Creates a CBUUID with a CFUUIDRef.
      */
     @Generated
     @Deprecated
@@ -75,8 +75,8 @@ public class CBUUID extends NSObject implements NSCopying {
 
     /**
      * UUIDWithData:
-     * 
-     *      Creates a CBUUID with a 16-bit, 32-bit, or 128-bit UUID data container.
+     * <p>
+     * Creates a CBUUID with a 16-bit, 32-bit, or 128-bit UUID data container.
      */
     @Generated
     @Selector("UUIDWithData:")
@@ -84,8 +84,8 @@ public class CBUUID extends NSObject implements NSCopying {
 
     /**
      * UUIDWithNSUUID:
-     * 
-     *      Creates a CBUUID with an NSUUID.
+     * <p>
+     * Creates a CBUUID with an NSUUID.
      */
     @Generated
     @Selector("UUIDWithNSUUID:")
@@ -93,9 +93,9 @@ public class CBUUID extends NSObject implements NSCopying {
 
     /**
      * UUIDWithString:
-     * 
-     *      Creates a CBUUID with a 16-bit, 32-bit, or 128-bit UUID string representation.
-     *      The expected format for 128-bit UUIDs is a string punctuated by hyphens, for example 68753A44-4D6F-1226-9C60-0050E4C00067.
+     * <p>
+     * Creates a CBUUID with a 16-bit, 32-bit, or 128-bit UUID string representation.
+     * The expected format for 128-bit UUIDs is a string punctuated by hyphens, for example 68753A44-4D6F-1226-9C60-0050E4C00067.
      */
     @Generated
     @Selector("UUIDWithString:")
@@ -200,8 +200,8 @@ public class CBUUID extends NSObject implements NSCopying {
 
     /**
      * [@property] UUIDString
-     * 
-     *      The UUID as NSString.
+     * <p>
+     * The UUID as NSString.
      */
     @Generated
     @Selector("UUIDString")
@@ -215,8 +215,8 @@ public class CBUUID extends NSObject implements NSCopying {
 
     /**
      * [@property] data
-     * 
-     *      The UUID as NSData.
+     * <p>
+     * The UUID as NSData.
      */
     @Generated
     @Selector("data")

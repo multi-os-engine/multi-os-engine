@@ -315,7 +315,7 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     /**
      * For renderers which support vector drawing, controls whether the overlay is rendered
      * as a bitmap when being composited with the map.
-     * 
+     * <p>
      * When false (the default), the overlay will be rendered as vector geometry whenever possible.
      * Note that certain geometry or configurations may force rasterization even when the value
      * of this property is false.
@@ -327,7 +327,7 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     /**
      * For renderers which support vector drawing, controls whether the overlay is rendered
      * as a bitmap when being composited with the map.
-     * 
+     * <p>
      * When false (the default), the overlay will be rendered as vector geometry whenever possible.
      * Note that certain geometry or configurations may force rasterization even when the value
      * of this property is false.

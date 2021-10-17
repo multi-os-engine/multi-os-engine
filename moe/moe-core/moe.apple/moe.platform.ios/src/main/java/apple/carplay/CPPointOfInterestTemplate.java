@@ -99,12 +99,12 @@ public class CPPointOfInterestTemplate extends CPTemplate {
 
     /**
      * CPPointOfInterestTemplate displays a map view with selectable points of interest.
-     * 
+     * <p>
      * [@note] the maximum number of POIs is 12. If you provide more than 12, only the first 12 will be used.
-     * 
-     * @param title Template title
+     *
+     * @param title            Template title
      * @param pointsOfInterest Points of interest to be presented in the map.
-     * @param selectedIndex Index of selected point of interest instance referenced in the pointsOfInterest array. Use NSNotFound to indicate no selection.
+     * @param selectedIndex    Index of selected point of interest instance referenced in the pointsOfInterest array. Use NSNotFound to indicate no selection.
      */
     @Generated
     @Selector("initWithTitle:pointsOfInterest:selectedIndex:")
@@ -191,11 +191,11 @@ public class CPPointOfInterestTemplate extends CPTemplate {
 
     /**
      * Update the template with a list of points of interests to dispay
-     * 
+     * <p>
      * [@note] the maximum number of POIs is 12. If you provide more than 12, only the first 12 will be used.
-     * 
+     *
      * @param pointsOfInterest Points of interest to be presented in the map.
-     * @param selectedIndex  Index of selected point of interest instance referenced in the pointsOfInterest array. Use NSNotFound to indicate no selection.
+     * @param selectedIndex    Index of selected point of interest instance referenced in the pointsOfInterest array. Use NSNotFound to indicate no selection.
      */
     @Generated
     @Selector("setPointsOfInterest:selectedIndex:")

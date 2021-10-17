@@ -10,7 +10,7 @@ public final class UIPageControlInteractionState {
     }
 
     /**
-     * The default interaction state, where no interaction has occured.
+     * The default interaction state, where no interaction has occurred.
      */
     @Generated @NInt public static final long None = 0x0000000000000000L;
     /**

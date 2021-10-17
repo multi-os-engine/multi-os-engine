@@ -198,7 +198,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
 
     /**
      * Sets the blend mode to use when composing the effect with the final framebuffer.
-     * 
+     *
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -208,7 +208,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
 
     /**
      * A CIFilter to be used as an effect
-     * 
+     * <p>
      * Any CIFilter that requires only a single "inputImage" and produces an "outputImage" is allowed. The filter is applied to all children of the SKEffectNode. If the filter is nil, the children of this node is flattened before being drawn as long as the SKEffectNode is enabled.
      */
     @Generated
@@ -233,7 +233,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
 
     /**
      * Sets the blend mode to use when composing the effect with the final framebuffer.
-     * 
+     *
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -242,7 +242,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
 
     /**
      * A CIFilter to be used as an effect
-     * 
+     * <p>
      * Any CIFilter that requires only a single "inputImage" and produces an "outputImage" is allowed. The filter is applied to all children of the SKEffectNode. If the filter is nil, the children of this node is flattened before being drawn as long as the SKEffectNode is enabled.
      */
     @Generated
@@ -262,7 +262,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
 
     /**
      * Enable the SKEffectNode.
-     * 
+     * <p>
      * The SKEffectNode has no effect when appliesEffects is not enabled, this is useful for setting up an effect to use later on. Defaults to YES.
      */
     @Generated
@@ -271,7 +271,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
 
     /**
      * Enable the rasterization on the SKEffectNode.
-     * 
+     * <p>
      * The SKEffectNode's output is rasterized and cached internally. This cache is reused when rendering. When the SKEffectNode's children change, the cache is updated, but changing properties on the CIFilter does *not* cause an update (you must disable rasterization and then re-enable it for the changes to apply). This is more expensive than not rasterizing if the node's children change frequently, only enable this option if you know the children is largely static.
      */
     @Generated
@@ -303,7 +303,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
 
     /**
      * Enable the SKEffectNode.
-     * 
+     * <p>
      * The SKEffectNode has no effect when appliesEffects is not enabled, this is useful for setting up an effect to use later on. Defaults to YES.
      */
     @Generated
@@ -312,7 +312,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
 
     /**
      * Enable the rasterization on the SKEffectNode.
-     * 
+     * <p>
      * The SKEffectNode's output is rasterized and cached internally. This cache is reused when rendering. When the SKEffectNode's children change, the cache is updated, but changing properties on the CIFilter does *not* cause an update (you must disable rasterization and then re-enable it for the changes to apply). This is more expensive than not rasterizing if the node's children change frequently, only enable this option if you know the children is largely static.
      */
     @Generated

@@ -148,10 +148,6 @@ public class SFSafariViewController extends UIViewController {
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -194,7 +190,7 @@ public class SFSafariViewController extends UIViewController {
 
     /**
      * Returns a view controller that loads a URL.
-     * 
+     *
      * @param URL the initial URL to navigate to. Only supports initial URLs with http:// or https:// schemes.
      */
     @Generated
@@ -203,10 +199,10 @@ public class SFSafariViewController extends UIViewController {
 
     /**
      * Returns a view controller that loads a URL.
-     * 
-     * @param URL the initial URL to navigate to. Only supports initial URLs with http:// or https:// schemes.
+     *
+     * @param URL                     the initial URL to navigate to. Only supports initial URLs with http:// or https:// schemes.
      * @param entersReaderIfAvailable indicates if the Safari Reader version of content should be shown automatically
-     * when Safari Reader is available on a web page.
+     *                                when Safari Reader is available on a web page.
      */
     @Generated
     @Selector("initWithURL:entersReaderIfAvailable:")
@@ -272,7 +268,7 @@ public class SFSafariViewController extends UIViewController {
 
     /**
      * A copy of the configuration with which the view controller was
-     * initialized. 
+     * initialized.
      */
     @Generated
     @Selector("configuration")
@@ -292,11 +288,11 @@ public class SFSafariViewController extends UIViewController {
 
     /**
      * Returns a view controller that loads a URL.
-     * 
+     * <p>
      * This is a designated initializer. You can use
      * [@link] -initWithURL: @/link to initialize an instance with the default configuration. Mutating the configuration after invoking the initializer has no effect on the view controller.
-     * 
-     * @param URL the initial URL to navigate to. Only supports initial URLs with http:// or https:// schemes.
+     *
+     * @param URL           the initial URL to navigate to. Only supports initial URLs with http:// or https:// schemes.
      * @param configuration the configuration for the new view controller.
      */
     @Generated
@@ -314,4 +310,24 @@ public class SFSafariViewController extends UIViewController {
     @Generated
     @Selector("setDismissButtonStyle:")
     public native void setDismissButtonStyle(@NInt long value);
+
+    /**
+     * Prewarms a connection to each URL. SFSafariViewController will automatically use a
+     * prewarmed connection if possible when loading its initial URL.
+     * <p>
+     * This method uses a best-effort approach to prewarming connections, but may delay
+     * or drop requests based on the volume of requests made by your app. Use this method when you expect
+     * to present SFSafariViewController soon. Many HTTP servers time out connections after a few minutes.
+     * After a timeout, prewarming delivers less performance benefit.
+     *
+     * @param URLs the URLs of servers that SFSafariViewController should prewarm connections to.
+     *             Only supports URLs with http:// or https:// schemes.
+     * @return Returns a token object that corresponds to the requested URLs. You must keep a strong
+     * reference to this token as long as you expect the prewarmed connections to remain open. If the same
+     * server is requested in multiple calls to this method, all of the corresponding tokens must be
+     * invalidated or released to end the prewarmed connection to that server.
+     */
+    @Generated
+    @Selector("prewarmConnectionsToURLs:")
+    public static native SFSafariViewControllerPrewarmingToken prewarmConnectionsToURLs(NSArray<? extends NSURL> URLs);
 }

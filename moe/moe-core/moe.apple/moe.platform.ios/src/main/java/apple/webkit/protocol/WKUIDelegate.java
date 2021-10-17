@@ -24,12 +24,14 @@ import apple.webkit.WKContextMenuElementInfo;
 import apple.webkit.WKFrameInfo;
 import apple.webkit.WKNavigationAction;
 import apple.webkit.WKPreviewElementInfo;
+import apple.webkit.WKSecurityOrigin;
 import apple.webkit.WKWebView;
 import apple.webkit.WKWebViewConfiguration;
 import apple.webkit.WKWindowFeatures;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
@@ -49,8 +51,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface WKUIDelegate {
     /**
      * Allows your app to pop to the view controller it created.
-     * 
-     * @param webView The web view invoking the delegate method.
+     *
+     * @param webView                  The web view invoking the delegate method.
      * @param previewingViewController The view controller that is being popped.
      */
     @Generated
@@ -62,17 +64,17 @@ public interface WKUIDelegate {
 
     /**
      * Creates a new web view.
-     * 
+     * <p>
      * The web view returned must be created with the specified configuration. WebKit will load the request in the returned web view.
-     * 
+     * <p>
      * If you do not implement this method, the web view will cancel the navigation.
-     * 
-     * @param webView The web view invoking the delegate method.
-     * @param configuration The configuration to use when creating the new web
-     * view. This configuration is a copy of webView.configuration.
+     *
+     * @param webView          The web view invoking the delegate method.
+     * @param configuration    The configuration to use when creating the new web
+     *                         view. This configuration is a copy of webView.configuration.
      * @param navigationAction The navigation action causing the new web view to
-     * be created.
-     * @param windowFeatures Window features requested by the webpage.
+     *                         be created.
+     * @param windowFeatures   Window features requested by the webpage.
      * @return A new web view or nil.
      */
     @Generated
@@ -86,19 +88,19 @@ public interface WKUIDelegate {
 
     /**
      * Allows your app to provide a custom view controller to show when the given element is peeked.
-     * 
+     * <p>
      * Returning a view controller will result in that view controller being displayed as a peek preview.
-     * To use the defaultActions, your app is responsible for returning whichever of those actions it wants in your 
+     * To use the defaultActions, your app is responsible for returning whichever of those actions it wants in your
      * view controller's implementation of -previewActionItems.
-     * 
+     * <p>
      * Returning nil will result in WebKit's default preview behavior. webView:commitPreviewingViewController: will only be invoked
      * if a non-nil view controller was returned.
-     * 
-     * @param webView The web view invoking the delegate method.
-     * @param elementInfo The elementInfo for the element the user is peeking.
-     * @param defaultActions An array of the actions that WebKit would use as previewActionItems for this element by 
-     * default. These actions would be used if allowsLinkPreview is YES but these delegate methods have not been 
-     * implemented, or if this delegate method returns nil.
+     *
+     * @param webView        The web view invoking the delegate method.
+     * @param elementInfo    The elementInfo for the element the user is peeking.
+     * @param defaultActions An array of the actions that WebKit would use as previewActionItems for this element by
+     *                       default. These actions would be used if allowsLinkPreview is YES but these delegate methods have not been
+     *                       implemented, or if this delegate method returns nil.
      */
     @Generated
     @IsOptional
@@ -110,20 +112,20 @@ public interface WKUIDelegate {
 
     /**
      * Displays a JavaScript alert panel.
-     * 
+     * <p>
      * For user security, your app should call attention to the fact
      * that a specific website controls the content in this panel. A simple forumla
      * for identifying the controlling website is frame.request.URL.host.
      * The panel should have a single OK button.
-     * 
+     * <p>
      * If you do not implement this method, the web view will behave as if the user selected the OK button.
-     * 
-     * @param webView The web view invoking the delegate method.
-     * @param message The message to display.
-     * @param frame Information about the frame whose JavaScript initiated this
-     * call.
+     *
+     * @param webView           The web view invoking the delegate method.
+     * @param message           The message to display.
+     * @param frame             Information about the frame whose JavaScript initiated this
+     *                          call.
      * @param completionHandler The completion handler to call after the alert
-     * panel has been dismissed.
+     *                          panel has been dismissed.
      */
     @Generated
     @IsOptional
@@ -136,20 +138,20 @@ public interface WKUIDelegate {
 
     /**
      * Displays a JavaScript confirm panel.
-     * 
+     * <p>
      * For user security, your app should call attention to the fact
      * that a specific website controls the content in this panel. A simple forumla
      * for identifying the controlling website is frame.request.URL.host.
      * The panel should have two buttons, such as OK and Cancel.
-     * 
+     * <p>
      * If you do not implement this method, the web view will behave as if the user selected the Cancel button.
-     * 
-     * @param webView The web view invoking the delegate method.
-     * @param message The message to display.
-     * @param frame Information about the frame whose JavaScript initiated this call.
+     *
+     * @param webView           The web view invoking the delegate method.
+     * @param message           The message to display.
+     * @param frame             Information about the frame whose JavaScript initiated this call.
      * @param completionHandler The completion handler to call after the confirm
-     * panel has been dismissed. Pass YES if the user chose OK, NO if the user
-     * chose Cancel.
+     *                          panel has been dismissed. Pass YES if the user chose OK, NO if the user
+     *                          chose Cancel.
      */
     @Generated
     @IsOptional
@@ -162,22 +164,22 @@ public interface WKUIDelegate {
 
     /**
      * Displays a JavaScript text input panel.
-     * 
+     * <p>
      * For user security, your app should call attention to the fact
      * that a specific website controls the content in this panel. A simple forumla
      * for identifying the controlling website is frame.request.URL.host.
      * The panel should have two buttons, such as OK and Cancel, and a field in
      * which to enter text.
-     * 
+     * <p>
      * If you do not implement this method, the web view will behave as if the user selected the Cancel button.
-     * 
-     * @param webView The web view invoking the delegate method.
-     * @param prompt The prompt to display.
-     * @param defaultText The initial text to display in the text entry field.
-     * @param frame Information about the frame whose JavaScript initiated this call.
+     *
+     * @param webView           The web view invoking the delegate method.
+     * @param prompt            The prompt to display.
+     * @param defaultText       The initial text to display in the text entry field.
+     * @param frame             Information about the frame whose JavaScript initiated this call.
      * @param completionHandler The completion handler to call after the text
-     * input panel has been dismissed. Pass the entered text if the user chose
-     * OK, otherwise nil.
+     *                          input panel has been dismissed. Pass the entered text if the user chose
+     *                          OK, otherwise nil.
      */
     @Generated
     @IsOptional
@@ -190,15 +192,15 @@ public interface WKUIDelegate {
 
     /**
      * Allows your app to determine whether or not the given element should show a preview.
-     * 
+     * <p>
      * To disable previews entirely for the given element, return NO. Returning NO will prevent
      * webView:previewingViewControllerForElement:defaultActions: and webView:commitPreviewingViewController:
      * from being invoked.
-     * 
+     * <p>
      * This method will only be invoked for elements that have default preview in WebKit, which is
      * limited to links. In the future, it could be invoked for additional elements.
-     * 
-     * @param webView The web view invoking the delegate method.
+     *
+     * @param webView     The web view invoking the delegate method.
      * @param elementInfo The elementInfo for the element the user has started touching.
      */
     @Generated
@@ -210,10 +212,10 @@ public interface WKUIDelegate {
 
     /**
      * Notifies your app that the DOM window object's close() method completed successfully.
-     * 
+     * <p>
      * Your app should remove the web view from the view hierarchy and update
      * the UI as needed, such as by closing the containing browser tab or window.
-     * 
+     *
      * @param webView The web view invoking the delegate method.
      */
     @Generated
@@ -247,11 +249,11 @@ public interface WKUIDelegate {
 
     /**
      * Called when a context menu interaction begins.
-     * 
-     * @param webView The web view invoking the delegate method.
-     * @param elementInfo The elementInfo for the element the user is touching.
+     *
+     * @param webView           The web view invoking the delegate method.
+     * @param elementInfo       The elementInfo for the element the user is touching.
      * @param completionHandler A completion handler to call once a it has been decided whether or not to show a context menu.
-     * Pass a valid UIContextMenuConfiguration to show a context menu, or pass nil to not show a context menu.
+     *                          Pass a valid UIContextMenuConfiguration to show a context menu, or pass nil to not show a context menu.
      */
     @Generated
     @IsOptional
@@ -271,8 +273,8 @@ public interface WKUIDelegate {
 
     /**
      * Called when the context menu ends, either by being dismissed or when a menu action is taken.
-     * 
-     * @param webView The web view invoking the delegate method.
+     *
+     * @param webView     The web view invoking the delegate method.
      * @param elementInfo The elementInfo for the element the user is touching.
      */
     @Generated
@@ -286,10 +288,10 @@ public interface WKUIDelegate {
      * Called when the context menu configured by the UIContextMenuConfiguration from
      * webView:contextMenuConfigurationForElement:completionHandler: is committed. That is, when
      * the user has selected the view provided in the UIContextMenuContentPreviewProvider.
-     * 
-     * @param webView The web view invoking the delegate method.
+     *
+     * @param webView     The web view invoking the delegate method.
      * @param elementInfo The elementInfo for the element the user is touching.
-     * @param animator The animator to use for the commit animation.
+     * @param animator    The animator to use for the commit animation.
      */
     @Generated
     @IsOptional
@@ -302,8 +304,8 @@ public interface WKUIDelegate {
 
     /**
      * Called when the context menu will be presented.
-     * 
-     * @param webView The web view invoking the delegate method.
+     *
+     * @param webView     The web view invoking the delegate method.
      * @param elementInfo The elementInfo for the element the user is touching.
      */
     @Generated
@@ -311,5 +313,56 @@ public interface WKUIDelegate {
     @Selector("webView:contextMenuWillPresentForElement:")
     default void webViewContextMenuWillPresentForElement(WKWebView webView, WKContextMenuElementInfo elementInfo) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Allows your app to determine whether or not the given security origin should have access to the device's orientation and motion.
+     *
+     * @param securityOrigin  The security origin which requested access to the device's orientation and motion.
+     * @param frame           The frame that initiated the request.
+     * @param decisionHandler The decision handler to call once the app has made its decision.
+     */
+    @Generated
+    @IsOptional
+    @Selector("webView:requestDeviceOrientationAndMotionPermissionForOrigin:initiatedByFrame:decisionHandler:")
+    default void webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler(
+            WKWebView webView, WKSecurityOrigin origin, WKFrameInfo frame,
+            @ObjCBlock(name = "call_webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler") Block_webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler decisionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler {
+        @Generated
+        void call_webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler(
+                @NInt long decision);
+    }
+
+    /**
+     * A delegate to request permission for microphone audio and camera video access.
+     * <p>
+     * If not implemented, the result is the same as calling the decisionHandler with WKPermissionDecisionPrompt.
+     *
+     * @param webView         The web view invoking the delegate method.
+     * @param origin          The origin of the page.
+     * @param frame           Information about the frame whose JavaScript initiated this call.
+     * @param type            The type of capture (camera, microphone).
+     * @param decisionHandler The completion handler to call once the decision is made
+     */
+    @Generated
+    @IsOptional
+    @Selector("webView:requestMediaCapturePermissionForOrigin:initiatedByFrame:type:decisionHandler:")
+    default void webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler(WKWebView webView,
+            WKSecurityOrigin origin, WKFrameInfo frame, @NInt long type,
+            @ObjCBlock(name = "call_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler") Block_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler decisionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler {
+        @Generated
+        void call_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler(@NInt long decision);
     }
 }

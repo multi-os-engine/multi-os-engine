@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEDNSSettingsManagerError
- * 
+ * <p>
  * DNS Settings Manager error codes
  */
 @Generated

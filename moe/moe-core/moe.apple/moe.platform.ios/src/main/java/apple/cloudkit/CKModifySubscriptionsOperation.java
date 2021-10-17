@@ -163,9 +163,10 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of subscriptionIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * [@c] savedSubscriptions, @c deletedSubscriptionIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perSubscriptionSaveBlock and @c perSubscriptionDeleteBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -175,9 +176,10 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of subscriptionIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * [@c] savedSubscriptions, @c deletedSubscriptionIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perSubscriptionSaveBlock and @c perSubscriptionDeleteBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -215,5 +217,73 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
         @Generated
         void call_setModifySubscriptionsCompletionBlock(NSArray<? extends CKSubscription> arg0, NSArray<String> arg1,
                 NSError arg2);
+    }
+
+    /**
+     * Called on success or failure of a subscription deletion
+     * <p>
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("perSubscriptionDeleteBlock")
+    @ObjCBlock(name = "call_perSubscriptionDeleteBlock_ret")
+    public native Block_perSubscriptionDeleteBlock_ret perSubscriptionDeleteBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_perSubscriptionDeleteBlock_ret {
+        @Generated
+        void call_perSubscriptionDeleteBlock_ret(String arg0, NSError arg1);
+    }
+
+    /**
+     * Called on success or failure of a subscription save
+     * <p>
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("perSubscriptionSaveBlock")
+    @ObjCBlock(name = "call_perSubscriptionSaveBlock_ret")
+    public native Block_perSubscriptionSaveBlock_ret perSubscriptionSaveBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_perSubscriptionSaveBlock_ret {
+        @Generated
+        void call_perSubscriptionSaveBlock_ret(String arg0, CKSubscription arg1, NSError arg2);
+    }
+
+    /**
+     * Called on success or failure of a subscription deletion
+     * <p>
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("setPerSubscriptionDeleteBlock:")
+    public native void setPerSubscriptionDeleteBlock(
+            @ObjCBlock(name = "call_setPerSubscriptionDeleteBlock") Block_setPerSubscriptionDeleteBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setPerSubscriptionDeleteBlock {
+        @Generated
+        void call_setPerSubscriptionDeleteBlock(String arg0, NSError arg1);
+    }
+
+    /**
+     * Called on success or failure of a subscription save
+     * <p>
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("setPerSubscriptionSaveBlock:")
+    public native void setPerSubscriptionSaveBlock(
+            @ObjCBlock(name = "call_setPerSubscriptionSaveBlock") Block_setPerSubscriptionSaveBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setPerSubscriptionSaveBlock {
+        @Generated
+        void call_setPerSubscriptionSaveBlock(String arg0, CKSubscription arg1, NSError arg2);
     }
 }

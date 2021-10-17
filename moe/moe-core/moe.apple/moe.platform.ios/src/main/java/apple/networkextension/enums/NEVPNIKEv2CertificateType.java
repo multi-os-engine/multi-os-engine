@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEVPNIKEv2CertificateType
- * 
+ * <p>
  * IKEv2 Certificate types
  */
 @Generated

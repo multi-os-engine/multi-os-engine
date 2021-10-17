@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueCarbonDioxideDetectionStatus
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueCarbonDioxideDetectionStatusNotDetected    Carbon dioxide is not detected.
  * [@constant]  HMCharacteristicValueCarbonDioxideDetectionStatusDetected       Carbon dioxide is detected.
  */

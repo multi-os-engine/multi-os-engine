@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An acceleration structure built over polygonal shapes
- * 
+ * <p>
  * See MPSAccelerationStructure for more information
  */
 @Generated
@@ -97,7 +97,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Index buffer containing index data. Each index references a vertex in the vertex buffer.
      * May be nil.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].indexBuffer. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -111,7 +111,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
      * multiple of the index type. Changes to this property require rebuilding the acceleration
      * structure.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].indexBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -179,7 +179,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
      * type must be specified on the MPSRayIntersector with which it is used.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].maskBuffer. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -191,7 +191,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
 
     /**
      * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].maskBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -211,7 +211,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * Array of polygon buffers. Each buffer contains a vertex buffer and optional index and
      * mask buffer for an array of polygons. Changing the length of this array requires rebuilding the
      * acceleration structure.
-     * 
+     * <p>
      * Using more than one MPSPolygonBuffer will reduce performance. It is better to concatenate
      * these buffers into a single vertex buffer, index buffer, and mask buffer and use a single
      * MPSPolygonBuffer if possible. This also applies when using an MPSInstanceAccelerationStructure:
@@ -219,7 +219,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * the same vertex buffer, index buffer, and mask buffer, although each acceleration structure
      * may use different offsets into these buffers. This allows for the vertex, index, and mask
      * buffers to be bound directly instead of indirectly through an argument buffer.
-     * 
+     * <p>
      * There must be at least one MPSPolygonBuffer. On argument buffer tier 1 devices, there must be
      * be exactly one MPSPolygonBuffer. Use the argumentBuffersSupport property of the MTLDevice to
      * check for support.
@@ -231,7 +231,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Number of polygons. Changes to this property require rebuilding the acceleration
      * structure.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].polygonCount. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -261,7 +261,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Index buffer containing index data. Each index references a vertex in the vertex buffer.
      * May be nil.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].indexBuffer. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -274,7 +274,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
      * multiple of the index type. Changes to this property require rebuilding the acceleration
      * structure.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].indexBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -294,7 +294,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
      * type must be specified on the MPSRayIntersector with which it is used.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].maskBuffer. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -305,7 +305,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
 
     /**
      * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].maskBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -318,7 +318,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * Array of polygon buffers. Each buffer contains a vertex buffer and optional index and
      * mask buffer for an array of polygons. Changing the length of this array requires rebuilding the
      * acceleration structure.
-     * 
+     * <p>
      * Using more than one MPSPolygonBuffer will reduce performance. It is better to concatenate
      * these buffers into a single vertex buffer, index buffer, and mask buffer and use a single
      * MPSPolygonBuffer if possible. This also applies when using an MPSInstanceAccelerationStructure:
@@ -326,7 +326,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * the same vertex buffer, index buffer, and mask buffer, although each acceleration structure
      * may use different offsets into these buffers. This allows for the vertex, index, and mask
      * buffers to be bound directly instead of indirectly through an argument buffer.
-     * 
+     * <p>
      * There must be at least one MPSPolygonBuffer. On argument buffer tier 1 devices, there must be
      * be exactly one MPSPolygonBuffer. Use the argumentBuffersSupport property of the MTLDevice to
      * check for support.
@@ -338,7 +338,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Number of polygons. Changes to this property require rebuilding the acceleration
      * structure.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].polygonCount. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -364,17 +364,17 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * that by default each vertex is aligned to the alignment of the vector_float3 type: 16 bytes.
      * This can be changed using the vertexStride property. A vertex buffer must be provided before
      * the acceleration structure is built.
-     * 
+     * <p>
      * When using triangle polygons, degenerate (zero or negative area) triangles are ignored
      * during acceleration structure construction. This can be used to pad triangle indices if needed.
-     * 
+     * <p>
      * Quadrilateral polygons are internally treated as two triangles. If the quadrilateral has
      * vertices v0, v1, v2, and v3, the two triangles will have vertices v0, v1, v2 and v0, v2, v3.
      * A quadrilateral may be used to represent a triangle by repeating the last vertex. If the first
      * triangle is degenerate (zero or negative area), the entire quadrilateral will be ignored. This
      * can be used to pad quadrilateral indices if needed. All four vertices of a quadrilateral must
      * be coplanar and the quadrilateral must be convex.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].vertexBuffer. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -386,7 +386,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
      * bytes.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].vertexBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -399,7 +399,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * Offset, in bytes, between consecutive vertices in the vertex buffer. Defaults to 0 bytes,
      * indicating that the vertices are packed according to the natural alignment of the vector_float3
      * type: 16 bytes.
-     * 
+     * <p>
      * This can be used to skip past any additional per-vertex data which may be stored
      * alongside the position such as the vertex normal and texture coordinates. Must be a multiple of
      * 4 bytes, and must be at least 12 bytes. Changes to this property require rebuilding the
@@ -433,17 +433,17 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * that by default each vertex is aligned to the alignment of the vector_float3 type: 16 bytes.
      * This can be changed using the vertexStride property. A vertex buffer must be provided before
      * the acceleration structure is built.
-     * 
+     * <p>
      * When using triangle polygons, degenerate (zero or negative area) triangles are ignored
      * during acceleration structure construction. This can be used to pad triangle indices if needed.
-     * 
+     * <p>
      * Quadrilateral polygons are internally treated as two triangles. If the quadrilateral has
      * vertices v0, v1, v2, and v3, the two triangles will have vertices v0, v1, v2 and v0, v2, v3.
      * A quadrilateral may be used to represent a triangle by repeating the last vertex. If the first
      * triangle is degenerate (zero or negative area), the entire quadrilateral will be ignored. This
      * can be used to pad quadrilateral indices if needed. All four vertices of a quadrilateral must
      * be coplanar and the quadrilateral must be convex.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].vertexBuffer. There must be exactly one polygon buffer
      * to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -456,7 +456,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
      * bytes.
-     * 
+     * <p>
      * This is an alias for polygonBuffers[0].vertexBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
      * MPSPolygonBuffer will be created automatically.
@@ -470,7 +470,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
      * Offset, in bytes, between consecutive vertices in the vertex buffer. Defaults to 0 bytes,
      * indicating that the vertices are packed according to the natural alignment of the vector_float3
      * type: 16 bytes.
-     * 
+     * <p>
      * This can be used to skip past any additional per-vertex data which may be stored
      * alongside the position such as the vertex normal and texture coordinates. Must be a multiple of
      * 4 bytes, and must be at least 12 bytes. Changes to this property require rebuilding the

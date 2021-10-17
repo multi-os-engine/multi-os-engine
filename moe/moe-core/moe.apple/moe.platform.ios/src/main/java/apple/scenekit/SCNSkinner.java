@@ -47,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNSkinner
- * 
+ * <p>
  * SCNSkinner controls the deformation of skinned geometries
  */
 @Generated
@@ -154,14 +154,14 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     /**
      * skinnerWithBaseGeometry:bones:boneInverseBindTransforms:boneWeights:boneIndices:
-     * 
+     * <p>
      * Creates and initialize a skinner instance with the specified parameters.
-     * 
-     * @param baseGeometry Specifies the base geometry used by the skinner
-     * @param bones Specifies the array of bones.
+     *
+     * @param baseGeometry              Specifies the base geometry used by the skinner
+     * @param bones                     Specifies the array of bones.
      * @param boneInverseBindTransforms The inverse of the bone’s bind-space transformation matrix at the time the bind shape was bound to this bone.
-     * @param boneWeights A buffer of weights. This contains the weights of every influence of every vertex. The number of influence per vertex is controlled by the number of component in the geometry source.
-     * @param boneIndices A buffer of bone indexes. This buffer contains the corresponding index in the bones array for every weight in the weights buffer.
+     * @param boneWeights               A buffer of weights. This contains the weights of every influence of every vertex. The number of influence per vertex is controlled by the number of component in the geometry source.
+     * @param boneIndices               A buffer of bone indexes. This buffer contains the corresponding index in the bones array for every weight in the weights buffer.
      */
     @Generated
     @Selector("skinnerWithBaseGeometry:bones:boneInverseBindTransforms:boneWeights:boneIndices:")
@@ -185,9 +185,9 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] baseGeometry
-     * 
+     * <p>
      * Specifies the base geometry of the receiver.
-     * 
+     * <p>
      * Updating this will change the geometry of all the nodes sharing the skinner.
      * Access the node's geometry if you want to update this specific skinner properties (materials for example).
      * Access this property if you want a whole new geometry (which will necessarily be shared among the skinner instances), with
@@ -199,7 +199,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] baseGeometryBindTransform
-     * 
+     * <p>
      * Specifies the transform of the baseGeometry at the time when the mesh was bound to a skeleton. This transforms the baseGeometry from object space to a space on which the skinning then applies.
      */
     @Generated
@@ -209,7 +209,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] boneIndices
-     * 
+     * <p>
      * The bone indices of the receiver.
      */
     @Generated
@@ -218,9 +218,9 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] boneInverseBindTransforms
-     * 
+     * <p>
      * The inverse of the bone’s bind-space transformation matrix at the time the bind shape was bound to this bone.
-     * 
+     * <p>
      * boneInverseBindTransforms is an array of SCNMatrix4 wrapped into instances of NSValue.
      */
     @Generated
@@ -229,7 +229,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] boneWeights
-     * 
+     * <p>
      * The bone weights of the receiver.
      */
     @Generated
@@ -238,7 +238,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] bones
-     * 
+     * <p>
      * The bones of the skinner.
      */
     @Generated
@@ -259,9 +259,9 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] baseGeometry
-     * 
+     * <p>
      * Specifies the base geometry of the receiver.
-     * 
+     * <p>
      * Updating this will change the geometry of all the nodes sharing the skinner.
      * Access the node's geometry if you want to update this specific skinner properties (materials for example).
      * Access this property if you want a whole new geometry (which will necessarily be shared among the skinner instances), with
@@ -273,7 +273,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] baseGeometryBindTransform
-     * 
+     * <p>
      * Specifies the transform of the baseGeometry at the time when the mesh was bound to a skeleton. This transforms the baseGeometry from object space to a space on which the skinning then applies.
      */
     @Generated
@@ -282,9 +282,9 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] skeleton
-     * 
+     * <p>
      * Specifies the skeleton of the receiver.
-     * 
+     * <p>
      * When setting a new skeleton, the new skeleton must have the same hierarchy of joints.
      */
     @Generated
@@ -293,9 +293,9 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] skeleton
-     * 
+     * <p>
      * Specifies the skeleton of the receiver.
-     * 
+     * <p>
      * When setting a new skeleton, the new skeleton must have the same hierarchy of joints.
      */
     @Generated
@@ -310,9 +310,9 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] skeleton
-     * 
+     * <p>
      * Specifies the skeleton of the receiver.
-     * 
+     * <p>
      * When setting a new skeleton, the new skeleton must have the same hierarchy of joints.
      */
     @Generated

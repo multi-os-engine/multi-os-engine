@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Lets you access shortcuts that have been added to Siri
- * 
+ *
  * @see INVoiceShortcut
  */
 @Generated
@@ -166,7 +166,7 @@ public class INVoiceShortcutCenter extends NSObject {
 
     /**
      * Set some shortcuts that should be suggested to the user to add to Siri.
-     * 
+     * <p>
      * These suggestions are shown to the user in the Shortcuts app.
      */
     @Generated

@@ -49,10 +49,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * CIWarpKernel is an object that encapsulates a Core Image Kernel Language
  * function that processes only the geometry of an image.
- * 
+ * <p>
  * Warp kernel functions are declared akin to this example:
- *   kernel vec2 myWarpKernel (vec4 params)
- * 
+ * kernel vec2 myWarpKernel (vec4 params)
+ * <p>
  * Additional arguments can be of type float, vec2, vec3, vec4.
  * The destination pixel location is obtained by calling destCoord().
  * The kernel should not call sample(), samplerCoord(), or samplerTransform().
@@ -185,16 +185,16 @@ public class CIWarpKernel extends CIKernel {
 
     /**
      * Apply the receiver CIWarpKernel to produce a new CIImage object.
-     * 
+     * <p>
      * The 'extent' is the bounding box of all pixel coordinates that are warped by the
      * kernel to fall within the extent of 'image'.
-     * 
+     * <p>
      * The 'image' is the input image that will be warped into a new image.
-     * 
+     * <p>
      * The 'callback' is a block that should return the rectangle of the input image
      * that is needed to produce a given rectangle in the coordinate space of the
      * new image.
-     * 
+     * <p>
      * The 'args' is an array of parameters needed to describe the warping function.
      * The object types of the items in the array correspond to the argument types of the
      * kernel function.  For example, if the first argument in the kernel is a vec3,
@@ -231,4 +231,9 @@ public class CIWarpKernel extends CIKernel {
     @Generated
     @Selector("kernelNamesFromMetalLibraryData:")
     public static native NSArray<String> kernelNamesFromMetalLibraryData(NSData data);
+
+    @Generated
+    @Selector("kernelsWithMetalString:error:")
+    public static native NSArray<? extends CIKernel> kernelsWithMetalStringError(String source,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

@@ -37,7 +37,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An immutable variant holding a data value of a supported MLFeatureType
- * 
+ * <p>
  * MLFeatureValue does not support type conversion in its accessor properties. It
  * can also have a missing or undefined value of a well defined type.
  */

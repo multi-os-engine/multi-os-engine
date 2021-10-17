@@ -21,15 +21,15 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLSamplerBorderColor
- * 
+ * <p>
  * Specify the color value that will be clamped to when the sampler address mode is MTLSamplerAddressModeClampToBorderColor.
- * 
+ * <p>
  * [@constant] MTLSamplerBorderColorTransparentBlack
  * Transparent black returns {0,0,0,0} for clamped texture values.
- * 
+ * <p>
  * [@constant] MTLSamplerBorderColorOpaqueBlack
  * OpaqueBlack returns {0,0,0,1} for clamped texture values.
- * 
+ * <p>
  * [@constant] MTLSamplerBorderColorOpaqueWhite
  * OpaqueWhite returns {1,1,1,1} for clamped texture values.
  */

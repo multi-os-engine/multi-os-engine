@@ -518,9 +518,9 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     /**
      * If backgroundImage is an image returned from -[UIImage resizableImageWithCapInsets:] the cap widths will be calculated from that information, otherwise, the cap width will be calculated by subtracting one from the image's width then dividing by 2. The cap widths will also be used as the margins for text placement. To adjust the margin use the margin adjustment methods.
-     * 
+     * <p>
      * In general, you should specify a value for the normal state to be used by other states which don't have a custom value set.
-     * 
+     * <p>
      * Similarly, when a property is dependent on the bar metrics, be sure to specify a value for UIBarMetricsDefault.
      * In the case of the segmented control, appearance properties for UIBarMetricsCompact are only respected for segmented controls in the smaller navigation and toolbars.
      */

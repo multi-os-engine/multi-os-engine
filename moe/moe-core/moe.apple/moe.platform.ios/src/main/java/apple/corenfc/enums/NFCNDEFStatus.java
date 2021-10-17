@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] NFCNDEFStatus
- * 
+ * <p>
  * [@constant] NFCNDEFStatusNotSupport    Tag is not NDEF formatted; NDEF read and write are disallowed.
  * [@constant] NFCNDEFStatusReadWrite     Tag is NDEF read and writable.
  * [@constant] NFCNDEFStatusReadOnly      Tag is NDEF read-only; NDEF writing is disallowed.

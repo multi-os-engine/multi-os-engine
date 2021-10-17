@@ -216,11 +216,11 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Creates an action that plays a sound
-     * 
+     *
      * @param source The audio source to play (see SCNAudioSource.h)
-     * @param wait If YES, then the duration of this action is the same
-     * as the length of the audio playback. If NO, the action is considered
-     * to have completed immediately.
+     * @param wait   If YES, then the duration of this action is the same
+     *               as the length of the audio playback. If NO, the action is considered
+     *               to have completed immediately.
      */
     @Generated
     @Selector("playAudioSource:waitForCompletion:")
@@ -367,7 +367,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] duration
-     * 
+     * <p>
      * This is the expected duration of an action’s animation. The actual time an action takes to complete is modified by the speed property of the action.
      */
     @Generated
@@ -388,7 +388,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * reversedAction
-     * 
+     * <p>
      * Creates an action that reverses the behavior of another action.
      */
     @Generated
@@ -397,7 +397,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] duration
-     * 
+     * <p>
      * This is the expected duration of an action’s animation. The actual time an action takes to complete is modified by the speed property of the action.
      */
     @Generated
@@ -406,7 +406,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] speed
-     * 
+     * <p>
      * A speed factor that modifies how fast an action runs. Defaults to 1.
      */
     @Generated
@@ -416,7 +416,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * When set, prodives a custom timing via a block. Applies after
      * the 'timingMode' property is taken into account, defaults to nil
-     * 
+     *
      * @see SCNActionTimingFunction
      */
     @Generated
@@ -425,7 +425,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] timingMode
-     * 
+     * <p>
      * The timing mode used to execute an action.
      */
     @Generated
@@ -434,7 +434,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] speed
-     * 
+     * <p>
      * A speed factor that modifies how fast an action runs. Defaults to 1.
      */
     @Generated
@@ -451,7 +451,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * When set, prodives a custom timing via a block. Applies after
      * the 'timingMode' property is taken into account, defaults to nil
-     * 
+     *
      * @see SCNActionTimingFunction
      */
     @Generated
@@ -461,7 +461,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] timingMode
-     * 
+     * <p>
      * The timing mode used to execute an action.
      */
     @Generated

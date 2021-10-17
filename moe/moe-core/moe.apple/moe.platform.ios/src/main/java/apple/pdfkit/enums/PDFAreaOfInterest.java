@@ -22,4 +22,7 @@ public final class PDFAreaOfInterest {
     @Generated @NInt public static final long IconArea = 0x0000000000000040L;
     @Generated @NInt public static final long PopupArea = 0x0000000000000080L;
     @Generated @NInt public static final long ImageArea = 0x0000000000000100L;
+    @Generated @NInt public static final long AnyArea = org.moe.natj.general.NatJ.is64Bit() ?
+            0x7FFFFFFFFFFFFFFFL :
+            0x000000007FFFFFFFL;
 }

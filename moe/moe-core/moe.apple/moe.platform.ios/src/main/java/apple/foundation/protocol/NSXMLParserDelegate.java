@@ -39,9 +39,9 @@ public interface NSXMLParserDelegate {
     /**
      * sent when the parser finds an element start tag.
      * In the case of the cvslog tag, the following is what the delegate receives:
-     *   elementName == cvslog, namespaceURI == http://xml.apple.com/cvslog, qualifiedName == cvslog
+     * elementName == cvslog, namespaceURI == http://xml.apple.com/cvslog, qualifiedName == cvslog
      * In the case of the radar tag, the following is what's passed in:
-     *    elementName == radar, namespaceURI == http://xml.apple.com/radar, qualifiedName == radar:radar
+     * elementName == radar, namespaceURI == http://xml.apple.com/radar, qualifiedName == radar:radar
      * If namespace processing >isn't< on, the xmlns:radar="http://xml.apple.com/radar" is returned as an attribute pair, the elementName is 'radar:radar' and there is no qualifiedName.
      */
     @Generated

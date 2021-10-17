@@ -43,11 +43,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFilterManager
- * 
+ * <p>
  * The NEFilterManager class declares the programmatic interface for an object that manages content filtering configurations.
- * 
+ * <p>
  * NEFilterManager declares methods and properties for configuring and controlling a filter.
- * 
+ * <p>
  * Instances of this class are thread safe.
  */
 @Generated
@@ -154,7 +154,7 @@ public class NEFilterManager extends NSObject {
 
     /**
      * sharedManager
-     * 
+     *
      * @return The singleton NEFilterManager object for the calling process.
      */
     @Generated
@@ -176,9 +176,9 @@ public class NEFilterManager extends NSObject {
 
     /**
      * [@property] enabled
-     * 
+     * <p>
      * Toggles the enabled status of the filter. On iOS, setting this property will disable filter configurations of other apps, and this property will be set to NO when other filter configurations are enabled.
-     *     On macOS, up to 4 filter configurations of the same grade can be enabled simultaneously.
+     * On macOS, up to 4 filter configurations of the same grade can be enabled simultaneously.
      */
     @Generated
     @Selector("isEnabled")
@@ -186,9 +186,9 @@ public class NEFilterManager extends NSObject {
 
     /**
      * [@property] enabled
-     * 
+     * <p>
      * Toggles the enabled status of the filter. On iOS, setting this property will disable filter configurations of other apps, and this property will be set to NO when other filter configurations are enabled.
-     *     On macOS, up to 4 filter configurations of the same grade can be enabled simultaneously.
+     * On macOS, up to 4 filter configurations of the same grade can be enabled simultaneously.
      */
     @Generated
     @Selector("setEnabled:")
@@ -196,9 +196,9 @@ public class NEFilterManager extends NSObject {
 
     /**
      * loadFromPreferencesWithCompletionHandler:
-     * 
+     * <p>
      * This function loads the current filter configuration from the caller's filter preferences.
-     * 
+     *
      * @param completionHandler A block that will be called when the load operation is completed. The NSError passed to this block will be nil if the load operation succeeded, non-nil otherwise.
      */
     @Generated
@@ -208,7 +208,7 @@ public class NEFilterManager extends NSObject {
 
     /**
      * [@property] localizedDescription
-     * 
+     * <p>
      * A string containing a description of the filter.
      */
     @Generated
@@ -217,7 +217,7 @@ public class NEFilterManager extends NSObject {
 
     /**
      * [@property] providerConfiguration
-     * 
+     * <p>
      * An NEFilterProviderConfiguration object containing the provider-specific portion of the filter configuration.
      */
     @Generated
@@ -226,9 +226,9 @@ public class NEFilterManager extends NSObject {
 
     /**
      * removeFromPreferencesWithCompletionHandler:
-     * 
+     * <p>
      * This function removes the filter configuration from the caller's filter preferences. If the filter is enabled, the filter becomes disabled.
-     * 
+     *
      * @param completionHandler A block that will be called when the remove operation is completed. The NSError passed to this block will be nil if the remove operation succeeded, non-nil otherwise.
      */
     @Generated
@@ -238,9 +238,9 @@ public class NEFilterManager extends NSObject {
 
     /**
      * saveToPreferencesWithCompletionHandler:
-     * 
+     * <p>
      * This function saves the filter configuration in the caller's filter preferences. If the filter is enabled, it will become active.
-     * 
+     *
      * @param completionHandler A block that will be called when the save operation is completed. The NSError passed to this block will be nil if the save operation succeeded, non-nil otherwise.
      */
     @Generated
@@ -250,7 +250,7 @@ public class NEFilterManager extends NSObject {
 
     /**
      * [@property] localizedDescription
-     * 
+     * <p>
      * A string containing a description of the filter.
      */
     @Generated
@@ -259,7 +259,7 @@ public class NEFilterManager extends NSObject {
 
     /**
      * [@property] providerConfiguration
-     * 
+     * <p>
      * An NEFilterProviderConfiguration object containing the provider-specific portion of the filter configuration.
      */
     @Generated

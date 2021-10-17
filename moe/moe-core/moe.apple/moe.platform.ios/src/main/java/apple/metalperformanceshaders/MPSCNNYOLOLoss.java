@@ -92,14 +92,14 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
 
     /**
      * Encode a MPSCNNLoss filter and return a gradient.
-     * 
+     * <p>
      * This -encode call is similar to the encodeToCommandBuffer:sourceImage:labels:destinationImage: above,
-     *             except that it creates and returns the MPSImage with the loss gradient result.
-     * 
-     * @param      commandBuffer       The MTLCommandBuffer on which to encode.
-     * @param      sourceImage         The source image from the previous filter in the graph (in the inference direction).
-     * @param      labels              The object containing the target data (labels) and optionally, weights for the labels.
-     * @return     The MPSImage containing the gradient result.
+     * except that it creates and returns the MPSImage with the loss gradient result.
+     *
+     * @param commandBuffer The MTLCommandBuffer on which to encode.
+     * @param sourceImage   The source image from the previous filter in the graph (in the inference direction).
+     * @param labels        The object containing the target data (labels) and optionally, weights for the labels.
+     * @return The MPSImage containing the gradient result.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:labels:")
@@ -109,17 +109,17 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
 
     /**
      * Encode a MPSCNNYOLOLoss filter and return a gradient in the destinationImage.
-     * 
+     * <p>
      * This filter consumes the output of a previous layer and the MPSCNNLossLabels object containing
-     *             the target data (labels) and optionally, weights for the labels.
-     *             The destinationImage contains the computed gradient for the loss layer.
-     *             It serves as a source gradient input image to the first gradient layer (in the backward direction).
-     *             For information on the data-layout see @ref MPSCNNYOLOLossDescriptor.
-     * 
-     * @param      commandBuffer       The MTLCommandBuffer on which to encode.
-     * @param      sourceImage         The source image from the previous filter in the graph (in the inference direction).
-     * @param      labels              The object containing the target data (labels) and optionally, weights for the labels.
-     * @param      destinationImage    The MPSImage into which to write the gradient result.
+     * the target data (labels) and optionally, weights for the labels.
+     * The destinationImage contains the computed gradient for the loss layer.
+     * It serves as a source gradient input image to the first gradient layer (in the backward direction).
+     * For information on the data-layout see @ref MPSCNNYOLOLossDescriptor.
+     *
+     * @param commandBuffer    The MTLCommandBuffer on which to encode.
+     * @param sourceImage      The source image from the previous filter in the graph (in the inference direction).
+     * @param labels           The object containing the target data (labels) and optionally, weights for the labels.
+     * @param destinationImage The MPSImage into which to write the gradient result.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:labels:destinationImage:")
@@ -153,10 +153,10 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
 
     /**
      * Initialize the loss filter with a loss descriptor.
-     * 
-     * @param      device                   The device the filter will run on.
-     * @param      lossDescriptor           The loss descriptor.
-     * @return     A valid MPSCNNLoss object or nil, if failure.
+     *
+     * @param device         The device the filter will run on.
+     * @param lossDescriptor The loss descriptor.
+     * @return A valid MPSCNNLoss object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:lossDescriptor:")
@@ -186,7 +186,7 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
 
     /**
      * [@property]   lossClasses
-     * 
+     * <p>
      * loss filter for prediction of bounding box predicted class of the detected object
      */
     @Generated
@@ -195,7 +195,7 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
 
     /**
      * [@property]   lossConfidence
-     * 
+     * <p>
      * loss filter for prediction of bounding box probability of presence of object
      */
     @Generated
@@ -204,7 +204,7 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
 
     /**
      * [@property]   lossWH
-     * 
+     * <p>
      * loss filter for prediction of bounding box size
      */
     @Generated
@@ -213,7 +213,7 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
 
     /**
      * [@property]   lossXY
-     * 
+     * <p>
      * loss filter for prediction of bounding box position
      */
     @Generated

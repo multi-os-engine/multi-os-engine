@@ -25,10 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A node representing a MPSCNNNeuronAbsolute kernel
- * 
+ * <p>
  * For each pixel, applies the following function:
  * [@code]
- *     f(x) = fabs(x)
+ * f(x) = fabs(x)
  * [@endcode]
  */
 @Generated

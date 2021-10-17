@@ -160,9 +160,10 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of zoneIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * [@c] recordZonesByZoneID and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perRecordZoneCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
      */
     @Generated
@@ -184,9 +185,10 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of zoneIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * [@c] recordZonesByZoneID and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perRecordZoneCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
      */
     @Generated
@@ -212,5 +214,39 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
         @Generated
         void call_setFetchRecordZonesCompletionBlock(
                 NSDictionary<? extends CKRecordZoneID, ? extends CKRecordZone> arg0, NSError arg1);
+    }
+
+    /**
+     * Called on success or failure for each record zone.
+     * <p>
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("perRecordZoneCompletionBlock")
+    @ObjCBlock(name = "call_perRecordZoneCompletionBlock_ret")
+    public native Block_perRecordZoneCompletionBlock_ret perRecordZoneCompletionBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_perRecordZoneCompletionBlock_ret {
+        @Generated
+        void call_perRecordZoneCompletionBlock_ret(CKRecordZoneID arg0, CKRecordZone arg1, NSError arg2);
+    }
+
+    /**
+     * Called on success or failure for each record zone.
+     * <p>
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("setPerRecordZoneCompletionBlock:")
+    public native void setPerRecordZoneCompletionBlock(
+            @ObjCBlock(name = "call_setPerRecordZoneCompletionBlock") Block_setPerRecordZoneCompletionBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setPerRecordZoneCompletionBlock {
+        @Generated
+        void call_setPerRecordZoneCompletionBlock(CKRecordZoneID arg0, CKRecordZone arg1, NSError arg2);
     }
 }

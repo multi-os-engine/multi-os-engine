@@ -43,15 +43,15 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * GLKEffectPropertyTransformm 
- * 
+ * GLKEffectPropertyTransformm
+ * <p>
  * GLKEffectPropertyTransform maintains three primary matrices:
- * 
- *      _projectionMatrix
- *      _modelviewMatrix
- * 
+ * <p>
+ * _projectionMatrix
+ * _modelviewMatrix
+ * <p>
  * and 1 derived matrix: _normalMatrix.
- * 
+ * <p>
  * When the modelview matrix is changed the normalMatrix is marked as stale.
  * If the normalMatrix is subsequently retrieved after being marked stale
  * the normalMatrix selector will recalculate the normalMatrix to return

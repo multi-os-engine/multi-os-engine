@@ -192,7 +192,7 @@ public class NSAtomicStoreCacheNode extends NSObject {
 
     /**
      * Returns the value for the specified key.  Subclasses must return the appropriate object value for all property keys (as specified by the names of the NSPropertyDescriptions for the entity of this cache node.)  For attributes, these are instances of NSObject; for to-one relationships, the return value must be another cache node instance; for a to-many relationship, the return value must be an NSSet of the related cache nodes.
-     * 
+     * <p>
      * The default implementation forwards the request to the -propertyCache dictionary if the key matches a property name of the entity for the cache node.  If the key does not represent a property, the standard -valueForKey: implementation will be used.
      */
     @Generated

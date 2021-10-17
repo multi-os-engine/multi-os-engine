@@ -30,4 +30,7 @@ public final class CHHapticErrorCode {
     @Generated @NInt public static final long InvalidTime = 0xFFFFFFFFFFFFED18L;
     @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFFECDEL;
     @Generated @NInt public static final long MemoryError = 0xFFFFFFFFFFFFECDDL;
+    @Generated @NInt public static final long InvalidEngineParameter = 0xFFFFFFFFFFFFED30L;
+    @Generated @NInt public static final long FileNotFound = 0xFFFFFFFFFFFFED0DL;
+    @Generated @NInt public static final long InsufficientPower = 0xFFFFFFFFFFFFECDFL;
 }

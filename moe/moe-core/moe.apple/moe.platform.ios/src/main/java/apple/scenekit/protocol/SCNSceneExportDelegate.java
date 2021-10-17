@@ -33,11 +33,11 @@ import org.moe.natj.objc.ann.Selector;
 public interface SCNSceneExportDelegate {
     /**
      * writeImage:withSceneDocumentURL:originalImageURL:
-     * 
+     * <p>
      * Invoked on the delegate to write the referenced image and return the destination url.
-     * 
-     * @param image The image to write.
-     * @param documentURL The url where the scene is currently exported to.
+     *
+     * @param image            The image to write.
+     * @param documentURL      The url where the scene is currently exported to.
      * @param originalImageURL The original url for the image. May be nil if the image was not previously loaded from a url.
      * @return The delegate must returns the url of the image that was exported or nil if it didn't export any image. If the returned value is nil, the image will be exported to a default destination in a default format.
      */

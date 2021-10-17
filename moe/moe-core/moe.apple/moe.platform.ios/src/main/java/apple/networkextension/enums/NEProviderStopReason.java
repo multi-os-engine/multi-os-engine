@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEProviderStopReason
- * 
+ * <p>
  * Provider stop reasons
  */
 @Generated

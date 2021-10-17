@@ -95,12 +95,12 @@ public class MPSNNReshapeNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSNNReshape kernel
-     * 
-     * @param      source                  The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      resultWidth             The width of the reshaped image.
-     * @param      resultHeight            The height of the reshaped image.
-     * @param      resultFeatureChannels   The number of feature channels in the reshaped image.
-     * @return     A new MPSNNFilter node for a MPSNNReshape kernel.
+     *
+     * @param source                The MPSNNImageNode representing the source MPSImage for the filter
+     * @param resultWidth           The width of the reshaped image.
+     * @param resultHeight          The height of the reshaped image.
+     * @param resultFeatureChannels The number of feature channels in the reshaped image.
+     * @return A new MPSNNFilter node for a MPSNNReshape kernel.
      */
     @Generated
     @Selector("initWithSource:resultWidth:resultHeight:resultFeatureChannels:")
@@ -136,12 +136,12 @@ public class MPSNNReshapeNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a autoreleased MPSNNReshape kernel
-     * 
-     * @param      source                  The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      resultWidth             The width of the reshaped image.
-     * @param      resultHeight            The height of the reshaped image.
-     * @param      resultFeatureChannels   The number of feature channels in the reshaped image.
-     * @return     A new MPSNNFilter node for a MPSNNReshape kernel.
+     *
+     * @param source                The MPSNNImageNode representing the source MPSImage for the filter
+     * @param resultWidth           The width of the reshaped image.
+     * @param resultHeight          The height of the reshaped image.
+     * @param resultFeatureChannels The number of feature channels in the reshaped image.
+     * @return A new MPSNNFilter node for a MPSNNReshape kernel.
      */
     @Generated
     @Selector("nodeWithSource:resultWidth:resultHeight:resultFeatureChannels:")

@@ -254,7 +254,7 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
 
     /**
      * Drawing support ***********************
-     *  These methods are primitives for drawing.  You can override these to perform additional drawing, or to replace text drawing entirely, but not to change layout.  You can call them if you want, but focus must already be locked on the destination view or image.  -drawBackgroundForGlyphRange:atPoint: draws the background color and selection and marked range aspects of the text display, along with block decoration such as table backgrounds and borders.  -drawGlyphsForGlyphRange:atPoint: draws the actual glyphs, including attachments, as well as any underlines or strikethroughs.  In either case all of the specified glyphs must lie in a single container.
+     * These methods are primitives for drawing.  You can override these to perform additional drawing, or to replace text drawing entirely, but not to change layout.  You can call them if you want, but focus must already be locked on the destination view or image.  -drawBackgroundForGlyphRange:atPoint: draws the background color and selection and marked range aspects of the text display, along with block decoration such as table backgrounds and borders.  -drawGlyphsForGlyphRange:atPoint: draws the actual glyphs, including attachments, as well as any underlines or strikethroughs.  In either case all of the specified glyphs must lie in a single container.
      */
     @Generated
     @Selector("drawBackgroundForGlyphRange:atPoint:")

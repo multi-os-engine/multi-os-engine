@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CLProximity
- * 
+ * <p>
  * Discussion:
- *    Represents the current proximity of an entity.
+ * Represents the current proximity of an entity.
  */
 @Generated
 public final class CLProximity {

@@ -29,6 +29,7 @@ import apple.foundation.struct.NSRange;
 import apple.uikit.NSStringDrawingContext;
 import apple.uikit.NSTextAttachment;
 import org.moe.natj.c.ann.FunctionPtr;
+import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
@@ -42,6 +43,7 @@ import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
+import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
@@ -420,15 +422,15 @@ public class NSAttributedString extends NSObject
 
     /**
      * Converts HTML data into an attributed string.
-     * 
+     * <p>
      * The completionHandler is passed the attributed string result along with any
      * document-level attributes, or an error. If neither NSTextEncodingNameDocumentOption nor
      * NSCharacterEncodingDocumentOption is supplied, a best-guess encoding is used.
-     * 
-     * @param data The HTML data to use as the contents.
-     * @param options Document attributes for interpreting the document contents.
-     * NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption, NSTextEncodingNameDocumentOption,
-     * and NSCharacterEncodingDocumentOption are supported option keys.
+     *
+     * @param data              The HTML data to use as the contents.
+     * @param options           Document attributes for interpreting the document contents.
+     *                          NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption, NSTextEncodingNameDocumentOption,
+     *                          and NSCharacterEncodingDocumentOption are supported option keys.
      * @param completionHandler A block to invoke when the operation completes or fails.
      */
     @Generated
@@ -446,16 +448,16 @@ public class NSAttributedString extends NSObject
 
     /**
      * Converts a local HTML file into an attributed string.
-     * 
+     * <p>
      * The completionHandler is passed the attributed string result along with any
      * document-level attributes, or an error. If NSReadAccessURLDocumentOption references a single file,
      * only that file may be loaded by WebKit. If NSReadAccessURLDocumentOption references a directory,
      * files inside that directory may be loaded by WebKit.
-     * 
-     * @param fileURL The file URL to load.
-     * @param options Document attributes for interpreting the document contents.
-     * NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption and NSReadAccessURLDocumentOption
-     * are supported option keys.
+     *
+     * @param fileURL           The file URL to load.
+     * @param options           Document attributes for interpreting the document contents.
+     *                          NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption and NSReadAccessURLDocumentOption
+     *                          are supported option keys.
      * @param completionHandler A block to invoke when the operation completes or fails.
      */
     @Generated
@@ -474,13 +476,13 @@ public class NSAttributedString extends NSObject
 
     /**
      * Loads an HTML URL request and converts the contents into an attributed string.
-     * 
+     * <p>
      * The completionHandler is passed the attributed string result along with any
      * document-level attributes, or an error.
-     * 
-     * @param request The request specifying the URL to load.
-     * @param options Document attributes for interpreting the document contents.
-     * NSTextSizeMultiplierDocumentOption and NSTimeoutDocumentOption are supported option keys.
+     *
+     * @param request           The request specifying the URL to load.
+     * @param options           Document attributes for interpreting the document contents.
+     *                          NSTextSizeMultiplierDocumentOption and NSTimeoutDocumentOption are supported option keys.
      * @param completionHandler A block to invoke when the operation completes or fails.
      */
     @Generated
@@ -499,15 +501,15 @@ public class NSAttributedString extends NSObject
 
     /**
      * Converts an HTML string into an attributed string.
-     * 
+     * <p>
      * The completionHandler is passed the attributed string result along with any
      * document-level attributes, or an error. NSBaseURLDocumentOption is used to resolve relative URLs
      * within the document.
-     * 
-     * @param string The HTML string to use as the contents.
-     * @param options Document attributes for interpreting the document contents.
-     * NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption and NSBaseURLDocumentOption
-     * are supported option keys.
+     *
+     * @param string            The HTML string to use as the contents.
+     * @param options           Document attributes for interpreting the document contents.
+     *                          NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption and NSBaseURLDocumentOption
+     *                          are supported option keys.
      * @param completionHandler A block to invoke when the operation completes or fails.
      */
     @Generated
@@ -523,4 +525,71 @@ public class NSAttributedString extends NSObject
         void call_loadFromHTMLWithStringOptionsCompletionHandler(NSAttributedString arg0, NSDictionary<String, ?> arg1,
                 NSError arg2);
     }
+
+    /**
+     * If the string has portions tagged with NSInflectionRuleAttributeName
+     * that have no format specifiers, create a new string with those portions inflected
+     * by following the rule in the attribute.
+     */
+    @Generated
+    @Selector("attributedStringByInflectingString")
+    public native NSAttributedString attributedStringByInflectingString();
+
+    /**
+     * These constructors have a 'baseURL' parameter. If specified, links in the document will be relative to this URL, and images in the document will be looked for relative to this URL (if the other options allow image loading).
+     * Defaults to nil. If set to nil, paths will not be resolved.
+     */
+    @Generated
+    @Selector("initWithContentsOfMarkdownFileAtURL:options:baseURL:error:")
+    public native NSAttributedString initWithContentsOfMarkdownFileAtURLOptionsBaseURLError(NSURL markdownFile,
+            NSAttributedStringMarkdownParsingOptions options, NSURL baseURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * Formats the string using the specified locale (or the canonical one, if nil).
+     */
+    @Generated
+    @Variadic()
+    @Selector("initWithFormat:options:locale:")
+    public native NSAttributedString initWithFormatOptionsLocale(NSAttributedString format, @NUInt long options,
+            NSLocale locale, Object... varargs);
+
+    /**
+     * Formats the string using the arguments list and the specified locale (or the canonical one, if nil).
+     */
+    @Generated
+    @Selector("initWithFormat:options:locale:arguments:")
+    public native NSAttributedString initWithFormatOptionsLocaleArguments(NSAttributedString format,
+            @NUInt long options, NSLocale locale, BytePtr arguments);
+
+    @Generated
+    @Selector("initWithMarkdown:options:baseURL:error:")
+    public native NSAttributedString initWithMarkdownOptionsBaseURLError(NSData markdown,
+            NSAttributedStringMarkdownParsingOptions options, NSURL baseURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("initWithMarkdownString:options:baseURL:error:")
+    public native NSAttributedString initWithMarkdownStringOptionsBaseURLError(String markdownString,
+            NSAttributedStringMarkdownParsingOptions options, NSURL baseURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * Formats the string using the current locale and default options.
+     */
+    @Generated
+    @Variadic()
+    @Selector("localizedAttributedStringWithFormat:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object localizedAttributedStringWithFormat(NSAttributedString format, Object... varargs);
+
+    /**
+     * Formats the string using the current locale and the specified options.
+     */
+    @Generated
+    @Variadic()
+    @Selector("localizedAttributedStringWithFormat:options:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object localizedAttributedStringWithFormatOptions(NSAttributedString format,
+            @NUInt long options, Object... varargs);
 }

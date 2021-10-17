@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * RPBroadcastController
- * 
+ * <p>
  * Available once a user has successfully initiated a broadcast using an RPBroadcastActivityViewController. Can be used to start, pause and stop a broadcast.
  */
 @Generated
@@ -184,7 +184,7 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * Finish the broadcast.
-     * 
+     *
      * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has finished successfully.
      */
     @Generated
@@ -255,7 +255,7 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * Start the broadcast.
-     * 
+     *
      * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has started successfully.
      */
     @Generated

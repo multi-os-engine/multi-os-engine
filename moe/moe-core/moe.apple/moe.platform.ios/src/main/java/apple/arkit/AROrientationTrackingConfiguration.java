@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A configuration for running orientation tracking.
- * 
+ * <p>
  * Orientation tracking provides 3 degrees of freedom tracking of the device.
  */
 @Generated
@@ -149,7 +149,7 @@ public class AROrientationTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * 
+     * <p>
      * Enabled by default.
      */
     @Generated
@@ -158,7 +158,7 @@ public class AROrientationTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * 
+     * <p>
      * Enabled by default.
      */
     @Generated

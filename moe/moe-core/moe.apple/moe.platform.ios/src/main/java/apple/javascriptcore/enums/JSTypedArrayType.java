@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] JSTypedArrayType
- * 
+ * <p>
  * A constant identifying the Typed Array type of a JSObjectRef.
  * [@constant]     kJSTypedArrayTypeInt8Array            Int8Array
  * [@constant]     kJSTypedArrayTypeInt16Array           Int16Array
@@ -31,6 +31,8 @@ import org.moe.natj.general.ann.Generated;
  * [@constant]     kJSTypedArrayTypeUint32Array          Uint32Array
  * [@constant]     kJSTypedArrayTypeFloat32Array         Float32Array
  * [@constant]     kJSTypedArrayTypeFloat64Array         Float64Array
+ * [@constant]     kJSTypedArrayTypeBigInt64Array        BigInt64Array
+ * [@constant]     kJSTypedArrayTypeBigUint64Array       BigUint64Array
  * [@constant]     kJSTypedArrayTypeArrayBuffer          ArrayBuffer
  * [@constant]     kJSTypedArrayTypeNone                 Not a Typed Array
  */
@@ -51,4 +53,7 @@ public final class JSTypedArrayType {
     @Generated
     private JSTypedArrayType() {
     }
+
+    @Generated public static final int kJSTypedArrayTypeBigInt64Array = 0x0000000B;
+    @Generated public static final int kJSTypedArrayTypeBigUint64Array = 0x0000000C;
 }

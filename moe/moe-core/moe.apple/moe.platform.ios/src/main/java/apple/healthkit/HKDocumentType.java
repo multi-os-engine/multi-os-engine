@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKDocumentType
- * 
+ * <p>
  * Represents a type of HKDocument.
  */
 @Generated

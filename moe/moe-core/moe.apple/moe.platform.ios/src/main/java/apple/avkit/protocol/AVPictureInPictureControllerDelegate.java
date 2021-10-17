@@ -29,7 +29,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol]	AVPictureInPictureControllerDelegate
- * 
+ * <p>
  * A protocol for delegates of AVPictureInPictureController.
  */
 @Generated
@@ -39,13 +39,11 @@ import org.moe.natj.objc.ann.Selector;
 public interface AVPictureInPictureControllerDelegate {
     /**
      * pictureInPictureController:failedToStartPictureInPictureWithError:
-     * 
+     * <p>
      * Delegate can implement this method to be notified when Picture in Picture failed to start.
-     * 
-     * @param		pictureInPictureController
-     * 			The Picture in Picture controller.
-     * @param		error
-     * 			An error describing why it failed.
+     *
+     * @param        pictureInPictureController The Picture in Picture controller.
+     * @param        error An error describing why it failed.
      */
     @Generated
     @IsOptional
@@ -57,13 +55,11 @@ public interface AVPictureInPictureControllerDelegate {
 
     /**
      * pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:
-     * 
+     * <p>
      * Delegate can implement this method to restore the user interface before Picture in Picture stops.
-     * 
-     * @param		pictureInPictureController
-     * 			The Picture in Picture controller.
-     * @param		completionHandler
-     * 			The completion handler the delegate needs to call after restore.
+     *
+     * @param        pictureInPictureController The Picture in Picture controller.
+     * @param        completionHandler The completion handler the delegate needs to call after restore.
      */
     @Generated
     @IsOptional
@@ -76,11 +72,10 @@ public interface AVPictureInPictureControllerDelegate {
 
     /**
      * pictureInPictureControllerDidStartPictureInPicture:
-     * 
+     * <p>
      * Delegate can implement this method to be notified when Picture in Picture did start.
-     * 
-     * @param		pictureInPictureController
-     * 			The Picture in Picture controller.
+     *
+     * @param        pictureInPictureController The Picture in Picture controller.
      */
     @Generated
     @IsOptional
@@ -92,11 +87,10 @@ public interface AVPictureInPictureControllerDelegate {
 
     /**
      * pictureInPictureControllerDidStopPictureInPicture:
-     * 
+     * <p>
      * Delegate can implement this method to be notified when Picture in Picture did stop.
-     * 
-     * @param		pictureInPictureController
-     * 			The Picture in Picture controller.
+     *
+     * @param        pictureInPictureController The Picture in Picture controller.
      */
     @Generated
     @IsOptional
@@ -108,11 +102,10 @@ public interface AVPictureInPictureControllerDelegate {
 
     /**
      * pictureInPictureControllerWillStartPictureInPicture:
-     * 
+     * <p>
      * Delegate can implement this method to be notified when Picture in Picture will start.
-     * 
-     * @param		pictureInPictureController
-     * 			The Picture in Picture controller.
+     *
+     * @param        pictureInPictureController The Picture in Picture controller.
      */
     @Generated
     @IsOptional
@@ -124,11 +117,10 @@ public interface AVPictureInPictureControllerDelegate {
 
     /**
      * pictureInPictureControllerWillStopPictureInPicture:
-     * 
+     * <p>
      * Delegate can implement this method to be notified when Picture in Picture will stop.
-     * 
-     * @param		pictureInPictureController
-     * 			The Picture in Picture controller.
+     *
+     * @param        pictureInPictureController The Picture in Picture controller.
      */
     @Generated
     @IsOptional

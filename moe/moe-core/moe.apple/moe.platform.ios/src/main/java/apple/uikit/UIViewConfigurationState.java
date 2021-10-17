@@ -226,4 +226,12 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("isPinned")
+    public native boolean isPinned();
+
+    @Generated
+    @Selector("setPinned:")
+    public native void setPinned(boolean value);
 }

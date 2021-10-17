@@ -137,8 +137,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     /**
      * Similar to mergeChangesFromContextDidSaveNotification, this method handles changes from potentially other processes or serialized state.  It more efficiently
      * merges changes into multiple contexts, as well as nested context. The keys in the dictionary should be one those from an
-     *  NSManagedObjectContextObjectsDidChangeNotification: NSInsertedObjectsKey, NSUpdatedObjectsKey, etc.
-     *  the values should be an NSArray of either NSManagedObjectID or NSURL objects conforming to valid results from -URIRepresentation
+     * NSManagedObjectContextObjectsDidChangeNotification: NSInsertedObjectsKey, NSUpdatedObjectsKey, etc.
+     * the values should be an NSArray of either NSManagedObjectID or NSURL objects conforming to valid results from -URIRepresentation
      */
     @Generated
     @Selector("mergeChangesFromRemoteContextSave:intoContexts:")
@@ -376,7 +376,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * Return the query generation currently in use by this context. Will be one of the following:
      * - nil, default value => this context is not using generational querying
      * - an opaque token => specifies the generation of data this context is vending
-     * 
+     * <p>
      * All child contexts will return nil.
      */
     @Generated
@@ -468,18 +468,18 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * - nil => this context will not use generational querying
      * - the value returned by +[NSQueryGenerationToken currentQueryGenerationToken] => this context will pin itself to the generation of the database when it first loads data
      * - the result of calling -[NSManagedObjectContext queryGenerationToken] on another managed object context => this context will be set to whatever query generation the original context is currently using;
-     * 
+     * <p>
      * Query generations are for fetched data only; they are not used during saving. If a pinned context saves,
      * its query generation will be updated after the save. Executing a NSBatchUpdateRequest or NSBatchDeleteRequest
      * will not cause the query generation to advance, since these do not otherwise consider or affect the
      * managed object context's content.
-     * 
+     * <p>
      * All nested contexts will defer to their parent context’s data. It is a programmer error to try to set
      * the queryGenerationToken on a child context.
-     * 
+     * <p>
      * Query generations are tracked across the union of stores. Additions to the persistent store coordinator's
      * persistent stores will be ignored until the context's query generation is updated to include them.
-     * 
+     * <p>
      * May partially fail if one or more stores being tracked by the token are removed from the persistent
      * store coordinator.
      */

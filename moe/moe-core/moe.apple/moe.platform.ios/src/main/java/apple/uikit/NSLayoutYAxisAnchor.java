@@ -164,9 +164,9 @@ public class NSLayoutYAxisAnchor extends NSLayoutAnchor<NSLayoutYAxisAnchor> {
 
     /**
      * Constraints of the form,
-     * receiver [= | ≥ | ≤] 'anchor' + 'multiplier' * system space, 
+     * receiver [= | ≥ | ≤] 'anchor' + 'multiplier' * system space,
      * where the value of the system space is determined from information available from the anchors.
-     * The constraint affects how far the receiver will be positioned below 'anchor'. 
+     * The constraint affects how far the receiver will be positioned below 'anchor'.
      * If either the receiver or 'anchor' is the firstBaselineAnchor or lastBaselineAnchor of a view with text content
      * then the spacing will depend on the fonts involved and will change when those do.
      */

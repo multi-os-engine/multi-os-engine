@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueTargetHeaterCoolerState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueTargetHeaterCoolerStateAutomatic  Heat or Cool.
  * [@constant]  HMCharacteristicValueTargetHeaterCoolerStateHeat       Heat.
  * [@constant]  HMCharacteristicValueTargetHeaterCoolerStateCool       Cool.

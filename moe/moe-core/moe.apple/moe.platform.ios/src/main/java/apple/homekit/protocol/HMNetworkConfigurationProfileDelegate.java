@@ -16,7 +16,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface HMNetworkConfigurationProfileDelegate {
     /**
      * Informs the delegate that the network access mode has updated.
-     * 
+     *
      * @param profile Sender of the message.
      */
     @Generated

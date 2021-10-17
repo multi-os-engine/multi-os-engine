@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NETunnelProviderError
- * 
+ * <p>
  * Tunnel Provider error codes
  */
 @Generated

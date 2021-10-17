@@ -45,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKRecordZoneSubscription
- * 
+ * <p>
  * A subscription that fires whenever any change happens in the indicated Record Zone.
- * 
+ * <p>
  * The RecordZone must have the capability @c CKRecordZoneCapabilityFetchChanges
  * [@c] CKRecordZoneSubscriptions are not supported in a @c sharedCloudDatabase
  */

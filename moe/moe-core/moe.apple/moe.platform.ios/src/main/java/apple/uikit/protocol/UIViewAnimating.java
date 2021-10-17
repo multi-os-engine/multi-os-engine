@@ -41,7 +41,7 @@ public interface UIViewAnimating {
     /**
      * fractionComplete values are typically between 0 and 1. Some adopters may choose to give
      * meaning to values less than zero and greater than 1 to facilitate over and
-     * undershooting.  The setter is usually a nop when the animation is
+     * undershooting.  The setter is usually a no-op when the animation is
      * running. Adopters are free to change this if it makes sense. An adopter
      * may also choose to only return a meaningful result for this property if it
      * is read while the animation is not running.
@@ -86,7 +86,7 @@ public interface UIViewAnimating {
     /**
      * fractionComplete values are typically between 0 and 1. Some adopters may choose to give
      * meaning to values less than zero and greater than 1 to facilitate over and
-     * undershooting.  The setter is usually a nop when the animation is
+     * undershooting.  The setter is usually a no-op when the animation is
      * running. Adopters are free to change this if it makes sense. An adopter
      * may also choose to only return a meaningful result for this property if it
      * is read while the animation is not running.

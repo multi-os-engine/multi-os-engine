@@ -19,6 +19,7 @@ package apple.metal.c;
 import apple.metal.struct.MTLClearColor;
 import apple.metal.struct.MTLIndirectCommandBufferExecutionRange;
 import apple.metal.struct.MTLOrigin;
+import apple.metal.struct.MTLPackedFloat3;
 import apple.metal.struct.MTLRegion;
 import apple.metal.struct.MTLSamplePosition;
 import apple.metal.struct.MTLSize;
@@ -82,7 +83,7 @@ public final class Metal {
 
     /**
      * Returns a reference to the preferred system default Metal device.
-     * 
+     * <p>
      * On Mac OS X systems that support automatic graphics switching, calling
      * this API to get a Metal device will cause the system to switch to the high power
      * GPU.  On other systems that support more than one GPU it will return the GPU that
@@ -101,7 +102,7 @@ public final class Metal {
 
     /**
      * [@constant] MTLLibraryErrorDomain
-     * 
+     * <p>
      * NSErrors raised when creating a library.
      */
     @Generated
@@ -111,7 +112,7 @@ public final class Metal {
 
     /**
      * [@constant] MTLCommandBufferErrorDomain
-     * 
+     * <p>
      * An error domain for NSError objects produced by MTLCommandBuffer
      */
     @Generated
@@ -127,7 +128,7 @@ public final class Metal {
 
     /**
      * [@function] MTLCoordinate2DMake
-     * 
+     * <p>
      * Convenience function to create a 2D coordinate from 2 values.
      */
     @Generated
@@ -246,7 +247,7 @@ public final class Metal {
 
     /**
      * [@constant] MTLCounterErrorDomain
-     * 
+     * <p>
      * NSErrors raised when creating a counter sample buffer.
      */
     @Generated
@@ -271,4 +272,10 @@ public final class Metal {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLBinaryArchiveDomain();
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MTLPackedFloat3 MTLPackedFloat3Make(float x, float y, float z);
 }

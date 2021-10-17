@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKWorkoutConfiguration
- * 
+ * <p>
  * An HKWorkoutConfiguration is an object that can be used to describe the workout activity.
  */
 @Generated
@@ -165,7 +165,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property]      activityType
-     * 
+     * <p>
      * Indicates the type of workout for the configuration.
      */
     @Generated
@@ -193,11 +193,11 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property]      lapLength
-     * 
+     * <p>
      * Indicates the length of the pool, when the workout location type is pool.
-     * 
+     * <p>
      * This metric represents the length of the pool where the workout takes place. It should be a quantity with
-     *                a unit representing length.
+     * a unit representing length.
      */
     @Generated
     @Selector("lapLength")
@@ -205,7 +205,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property]      locationType
-     * 
+     * <p>
      * Indicates the type of location (indoors vs. outdoors) for the configuration.
      */
     @Generated
@@ -215,7 +215,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property]      activityType
-     * 
+     * <p>
      * Indicates the type of workout for the configuration.
      */
     @Generated
@@ -224,11 +224,11 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property]      lapLength
-     * 
+     * <p>
      * Indicates the length of the pool, when the workout location type is pool.
-     * 
+     * <p>
      * This metric represents the length of the pool where the workout takes place. It should be a quantity with
-     *                a unit representing length.
+     * a unit representing length.
      */
     @Generated
     @Selector("setLapLength:")
@@ -236,7 +236,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property]      locationType
-     * 
+     * <p>
      * Indicates the type of location (indoors vs. outdoors) for the configuration.
      */
     @Generated
@@ -245,7 +245,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property]      swimmingLocationType
-     * 
+     * <p>
      * Indicates the type of swimming location (pool vs. open water) where the workout will take place.
      */
     @Generated
@@ -260,7 +260,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
 
     /**
      * [@property]      swimmingLocationType
-     * 
+     * <p>
      * Indicates the type of swimming location (pool vs. open water) where the workout will take place.
      */
     @Generated

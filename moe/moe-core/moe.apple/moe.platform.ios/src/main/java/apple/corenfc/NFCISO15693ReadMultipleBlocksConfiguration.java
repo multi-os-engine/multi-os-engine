@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NFCISO15693ReadMultipleBlocksConfiguration
- * 
+ * <p>
  * Configuration options for the Read Multiple Blocks command.
  */
 @Generated
@@ -115,11 +115,11 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
 
     /**
      * initWithRange:chunkSize:maximumRetries:retryInterval:
-     * 
-     * @param range             Read range specify by the starting block index and the total number of blocks.
-     * @param chunkSize         Specify number of blocks parameter for the Read multiple blocks command.
-     * @param maximumRetries    Maximum number of retry attempt when tag response is not recevied.
-     * @param retryInterval     Time interval wait between each retry attempt.
+     *
+     * @param range          Read range specify by the starting block index and the total number of blocks.
+     * @param chunkSize      Specify number of blocks parameter for the Read multiple blocks command.
+     * @param maximumRetries Maximum number of retry attempt when tag response is not recevied.
+     * @param retryInterval  Time interval wait between each retry attempt.
      */
     @Generated
     @Selector("initWithRange:chunkSize:maximumRetries:retryInterval:")

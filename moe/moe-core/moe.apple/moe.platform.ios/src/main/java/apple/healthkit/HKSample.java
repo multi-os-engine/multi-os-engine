@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKSample
- * 
+ * <p>
  * An abstract class representing measurements taken over a period of time.
  */
 @Generated
@@ -187,4 +187,15 @@ public class HKSample extends HKObject {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * [@property]      hasUndeterminedDuration
+     * <p>
+     * Indicates whether a sample has an undetermined duration.
+     * <p>
+     * Computed based on the endDate of a sample.
+     */
+    @Generated
+    @Selector("hasUndeterminedDuration")
+    public native boolean hasUndeterminedDuration();
 }

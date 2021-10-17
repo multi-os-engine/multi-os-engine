@@ -28,9 +28,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNGridSample
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Given an input and a flow-field grid, computes the output using input values and pixel locations from the grid.
- * 
+ * <p>
  * More details at https://pytorch.org/docs/stable/nn.html#grid-sample.
  */
 @Generated
@@ -106,16 +106,16 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * While the standard NSSecureCoding/NSCoding method
-     *             -initWithCoder: should work, since the file can't
-     *             know which device your data is allocated on, we
-     *             have to guess and may guess incorrectly.  To avoid
-     *             that problem, use initWithCoder:device instead.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
-     * @param      device      The MTLDevice on which to make the MPSKernel
-     * @return     A new MPSKernel object, or nil if failure.
+     * -initWithCoder: should work, since the file can't
+     * know which device your data is allocated on, we
+     * have to guess and may guess incorrectly.  To avoid
+     * that problem, use initWithCoder:device instead.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSKernel
+     * @param device   The MTLDevice on which to make the MPSKernel
+     * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -123,9 +123,9 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
 
     /**
      * Create a grid sample kernel.
-     * 
-     * @param    device            The device the filter will run on
-     * @return     A valid MPSNNGridSample object or nil, if failure.
+     *
+     * @param device The device the filter will run on
+     * @return A valid MPSNNGridSample object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
@@ -168,10 +168,10 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
 
     /**
      * [@property]   useGridValueAsInputCoordinate
-     * 
+     * <p>
      * This determines whether the pixel locations from the grid are used as the input coordinate (if set to YES) or
-     *             is added to the input coordinate (if set to NO).
-     *             The default value is YES.
+     * is added to the input coordinate (if set to NO).
+     * The default value is YES.
      */
     @Generated
     @Selector("setUseGridValueAsInputCoordinate:")
@@ -197,10 +197,10 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
 
     /**
      * [@property]   useGridValueAsInputCoordinate
-     * 
+     * <p>
      * This determines whether the pixel locations from the grid are used as the input coordinate (if set to YES) or
-     *             is added to the input coordinate (if set to NO).
-     *             The default value is YES.
+     * is added to the input coordinate (if set to NO).
+     * The default value is YES.
      */
     @Generated
     @Selector("useGridValueAsInputCoordinate")

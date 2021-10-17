@@ -33,7 +33,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSKeyedUnarchiver
- * 
+ * <p>
  * A NSKeyedArchiver that supports the MPSDeviceProvider protocol for MPSKernel decoding
  */
 @Generated

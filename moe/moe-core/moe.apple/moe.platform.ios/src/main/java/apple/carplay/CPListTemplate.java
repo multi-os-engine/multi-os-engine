@@ -245,11 +245,11 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
      * An optional array of strings, ordered from most to least preferred.
      * The variant strings should be provided as localized, displayable content.
      * The system will select the first variant that fits the available space.
-     * 
+     * <p>
      * If the list template does not contain any items (itemCount == 0), then
      * the template will display an empty view with a title and subtitle to indicate
      * that the template has no list items.
-     * 
+     * <p>
      * If the list template is updated to contain items, the empty view will be automatically
      * removed.
      */
@@ -261,11 +261,11 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
      * An optional array of strings, ordered from most to least preferred.
      * The variant strings should be provided as localized, displayable content.
      * The system will select the first variant that fits the available space.
-     * 
+     * <p>
      * If the list template does not contain any items (itemCount == 0), then
      * the template will display an empty view with a title and subtitle to indicate
      * that the template has no list items.
-     * 
+     * <p>
      * If the list template is updated to contain items, the empty view will be automatically
      * removed.
      */
@@ -291,7 +291,7 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * The maximum number of items, across all sections, that may appear in a @c CPListTemplate.
-     * 
+     * <p>
      * [@note] Your list template will display the first @c maximumItemCount items, across all sections.
      * Any items or sections beyond that limit will be trimmed.
      */
@@ -302,7 +302,7 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * The maximum number of sections that may appear in a @c CPListTemplate.
-     * 
+     * <p>
      * [@note] Your list template will display the first @c maximumSectionCount sections.
      * Any sections beyond that limit will be trimmed.
      */
@@ -323,11 +323,11 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
      * An optional array of strings, ordered from most to least preferred.
      * The variant strings should be provided as localized, displayable content.
      * The system will select the first variant that fits the available space.
-     * 
+     * <p>
      * If the list template does not contain any items (itemCount == 0), then
      * the template will display an empty view with a title and subtitle to indicate
      * that the template has no list items.
-     * 
+     * <p>
      * If the list template is updated to contain items, the empty view will be automatically
      * removed.
      */
@@ -339,15 +339,59 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
      * An optional array of strings, ordered from most to least preferred.
      * The variant strings should be provided as localized, displayable content.
      * The system will select the first variant that fits the available space.
-     * 
+     * <p>
      * If the list template does not contain any items (itemCount == 0), then
      * the template will display an empty view with a title and subtitle to indicate
      * that the template has no list items.
-     * 
+     * <p>
      * If the list template is updated to contain items, the empty view will be automatically
      * removed.
      */
     @Generated
     @Selector("setEmptyViewTitleVariants:")
     public native void setEmptyViewTitleVariants(NSArray<String> value);
+
+    /**
+     * The configuration of the Assistant Cell.
+     * <p>
+     * Assigning to this property will dynamically update the List Template to reflect the visibility, position, and intent identifier of the Assistant Cell.
+     * <p>
+     * [@note] The Assistant Cell is only supported by CarPlay Audio and Communication Apps.
+     * <p>
+     * Unlike @c CPListItem, your application will not receive a callback when the user selects the cell.
+     * Instead, configure an Intents app extention to receive user requests from SiriKit, in order to turn the requests into an
+     * app-specific actions.
+     */
+    @Generated
+    @Selector("assistantCellConfiguration")
+    public native CPAssistantCellConfiguration assistantCellConfiguration();
+
+    /**
+     * Initialize a list template with one or more sections of items, an optional title, and configuration for the assistant cell via a @c CPAssistantCellConfiguration object.
+     * <p>
+     * [@note] The Assistant Cell is only supported by CarPlay Audio and Communication Apps.
+     * <p>
+     * Unlike @c CPListItem, your application will not receive a callback when the user selects the cell.
+     * Instead, configure an Intents app extention to receive user requests from SiriKit, in order to turn the requests into an
+     * app-specific actions.
+     */
+    @Generated
+    @Selector("initWithTitle:sections:assistantCellConfiguration:")
+    public native CPListTemplate initWithTitleSectionsAssistantCellConfiguration(String title,
+            NSArray<? extends CPListSection> sections, CPAssistantCellConfiguration assistantCellConfiguration);
+
+    /**
+     * The configuration of the Assistant Cell.
+     * <p>
+     * Assigning to this property will dynamically update the List Template to reflect the visibility, position, and intent identifier of the Assistant Cell.
+     * <p>
+     * [@note] The Assistant Cell is only supported by CarPlay Audio and Communication Apps.
+     * <p>
+     * Unlike @c CPListItem, your application will not receive a callback when the user selects the cell.
+     * Instead, configure an Intents app extention to receive user requests from SiriKit, in order to turn the requests into an
+     * app-specific actions.
+     */
+    @Generated
+    @Selector("setAssistantCellConfiguration:")
+    public native void setAssistantCellConfiguration(CPAssistantCellConfiguration value);
 }

@@ -96,16 +96,16 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * create a new arithmetic gradient node
-     * 
+     * <p>
      * See also -[MPSCNNNeuronNode gradientFilterNodesWithSources:]
-     *             for an easier way to do this.
-     * 
-     * @param      gradientImages          The input gradient from the 'downstream' gradient filter and the source input image
-     *                                     from the forward pass (primary or secondary).
-     * @param      filter                  The matching filter node from the forward pass.
-     * @param      isSecondarySourceFilter The isSecondarySourceFilter property is used to indicate whether the arithmetic
-     *                                     gradient filter is operating on the primary or secondary source image from the
-     *                                     forward pass.
+     * for an easier way to do this.
+     *
+     * @param gradientImages          The input gradient from the 'downstream' gradient filter and the source input image
+     *                                from the forward pass (primary or secondary).
+     * @param filter                  The matching filter node from the forward pass.
+     * @param isSecondarySourceFilter The isSecondarySourceFilter property is used to indicate whether the arithmetic
+     *                                gradient filter is operating on the primary or secondary source image from the
+     *                                forward pass.
      */
     @Generated
     @Selector("initWithGradientImages:forwardFilter:isSecondarySourceFilter:")
@@ -114,13 +114,13 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * create a new arithmetic gradient node
-     * 
+     * <p>
      * See also -[MPSCNNNeuronNode gradientFilterNodesWithSources:]
-     *             for an easier way to do this.
-     * 
-     * @param      sourceGradient          The input gradient from the 'downstream' gradient filter.
-     * @param      sourceImage             The source input image from the forward pass (primary or secondary).
-     * @param      gradientState           The gradient state produced by the concatenation filter, consumed by this filter.
+     * for an easier way to do this.
+     *
+     * @param sourceGradient The input gradient from the 'downstream' gradient filter.
+     * @param sourceImage    The source input image from the forward pass (primary or secondary).
+     * @param gradientState  The gradient state produced by the concatenation filter, consumed by this filter.
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:isSecondarySourceFilter:")
@@ -169,13 +169,13 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * create a new arithmetic gradient node
-     * 
+     * <p>
      * See also -[MPSCNNNeuronNode gradientFilterNodesWithSources:]
-     *             for an easier way to do this.
-     * 
-     * @param      sourceGradient          The input gradient from the 'downstream' gradient filter.
-     * @param      sourceImage             The source input image from the forward pass (primary or secondary).
-     * @param      gradientState           The gradient state produced by the concatenation filter, consumed by this filter.
+     * for an easier way to do this.
+     *
+     * @param sourceGradient The input gradient from the 'downstream' gradient filter.
+     * @param sourceImage    The source input image from the forward pass (primary or secondary).
+     * @param gradientState  The gradient state produced by the concatenation filter, consumed by this filter.
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:isSecondarySourceFilter:")

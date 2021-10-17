@@ -19,9 +19,9 @@ package apple.cfnetwork.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- *  CFNetDiagnosticStatusValues
- * 
- *  Discussion:
+ * CFNetDiagnosticStatusValues
+ * <p>
+ * Discussion:
  * Values for CFNetDiagnosticStatus
  */
 @Generated

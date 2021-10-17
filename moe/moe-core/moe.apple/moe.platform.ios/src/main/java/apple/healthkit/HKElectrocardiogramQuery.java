@@ -4,6 +4,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSDateComponents;
+import apple.foundation.NSDateInterval;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
@@ -31,9 +32,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKElectrocardiogramQuery
- * 
+ * <p>
  * An HKElectrocardiogramQuery is used to access voltage data associated with an HKElectrocardiogram.
- * 
+ * <p>
  * Once instantiated, call HKHealthStore executeQuery to begin enumerating the HKElectrocardiogram voltage data.
  */
 @Generated
@@ -105,12 +106,12 @@ public class HKElectrocardiogramQuery extends HKQuery {
 
     /**
      * initWithElectrocardiogram:dataHandler:
-     * 
+     * <p>
      * Returns a query that will enumerate over voltages recorded across leads in
-     *                an electrocardiogram.
-     * 
-     *  @param         electrocardiogram    The sample for which the lead data will be returned.
-     *  @param         dataHandler          The block to invoke with results from the query. It will be called once for each voltage measurement. Call [query stop] to stop enumeration, if desired.
+     * an electrocardiogram.
+     *
+     * @param electrocardiogram The sample for which the lead data will be returned.
+     * @param dataHandler       The block to invoke with results from the query. It will be called once for each voltage measurement. Call [query stop] to stop enumeration, if desired.
      */
     @Generated
     @Selector("initWithElectrocardiogram:dataHandler:")
@@ -299,4 +300,9 @@ public class HKElectrocardiogramQuery extends HKQuery {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:")
+    public static native NSPredicate predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval(
+            NSDateInterval dateInterval);
 }

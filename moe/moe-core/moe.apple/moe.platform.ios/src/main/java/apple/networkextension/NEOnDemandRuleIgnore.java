@@ -43,11 +43,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEOnDemandRuleIgnore
- * 
+ * <p>
  * The NEOnDemandRuleIgnore class declares the programmatic interface for an object that defines an On Demand rule with the "Ignore" action.
- * 
+ * <p>
  * When rules of this class match, the VPN connection is not started, and the current status of the VPN connection is left unchanged.
- * 
+ * <p>
  * Instances of this class are thread safe.
  */
 @Generated

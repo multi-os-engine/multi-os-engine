@@ -152,8 +152,8 @@ public class CBAttribute extends NSObject {
 
     /**
      * [@property] UUID
-     * 
-     *      The Bluetooth UUID of the attribute.
+     * <p>
+     * The Bluetooth UUID of the attribute.
      */
     @Generated
     @Selector("UUID")

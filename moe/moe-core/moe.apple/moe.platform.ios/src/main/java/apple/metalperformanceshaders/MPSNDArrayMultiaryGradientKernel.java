@@ -133,11 +133,11 @@ public class MPSNDArrayMultiaryGradientKernel extends MPSNDArrayMultiaryBase {
 
     /**
      * Initialize a MPSNDArrayMultiaryKernel
-     * 
-     * @param      device                The device on which the kernel will run
-     * @param      count                 The maximum number of NDArrays read by the kernel
-     * @param      sourceGradientIndex   The source index for which gradient will be calculated
-     * @return     A valid MPSNDArrayMultiaryKernel, or nil if allocation failure.
+     *
+     * @param device              The device on which the kernel will run
+     * @param count               The maximum number of NDArrays read by the kernel
+     * @param sourceGradientIndex The source index for which gradient will be calculated
+     * @return A valid MPSNDArrayMultiaryKernel, or nil if allocation failure.
      */
     @Generated
     @Selector("initWithDevice:sourceCount:sourceGradientIndex:")

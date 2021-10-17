@@ -11,9 +11,9 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * CMHeadphoneMotionManagerDelegate
- * 
+ * <p>
  * Discussion:
- *   Delegate for CMHeadphoneMotionManager.
+ * Delegate for CMHeadphoneMotionManager.
  */
 @Generated
 @Library("CoreMotion")
@@ -22,10 +22,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface CMHeadphoneMotionManagerDelegate {
     /**
      * headphoneMotionManagerDidConnect:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when a headphone is connected. Execution of the delegate callback occurs on the operation queue used to
-     *   deliver the device motion updates. The main thread is used if the queue was not specified.
+     * Invoked when a headphone is connected. Execution of the delegate callback occurs on the operation queue used to
+     * deliver the device motion updates. The main thread is used if the queue was not specified.
      */
     @Generated
     @IsOptional
@@ -36,10 +36,10 @@ public interface CMHeadphoneMotionManagerDelegate {
 
     /**
      * headphoneMotionManagerDidDisconnect:
-     * 
+     * <p>
      * Discussion:
-     *   Invoked when a headphone is disconnected. Execution of the delegate callback occurs on the operation queue used to
-     *   deliver the device motion updates. The main thread is used if the queue was not specified.
+     * Invoked when a headphone is disconnected. Execution of the delegate callback occurs on the operation queue used to
+     * deliver the device motion updates. The main thread is used if the queue was not specified.
      */
     @Generated
     @IsOptional

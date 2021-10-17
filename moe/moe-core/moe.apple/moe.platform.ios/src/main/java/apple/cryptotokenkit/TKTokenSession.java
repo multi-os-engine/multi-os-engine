@@ -26,11 +26,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * TKTokenSession represents token session which shares authentication status.
- * 
+ * <p>
  * Token implementation must inherit its own session implementation from TKTokenSession (or its subclass TKSmartCardTokenSession in case of SmartCard tokens).
- * 
+ * <p>
  * TKTokenSession should keep an authentication state of the token.  Authentication status (e.g. entered PIN to unlock SmartCard) should not be shared across borders of single TKTokenSession instance.
- * 
+ * <p>
  * TKTokenSession is always instantiated by TKToken when framework detects access to the token from new authentication session.
  */
 @Generated

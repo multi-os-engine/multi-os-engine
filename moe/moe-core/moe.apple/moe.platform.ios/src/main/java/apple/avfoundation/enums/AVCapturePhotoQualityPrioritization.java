@@ -5,15 +5,15 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVCapturePhotoQualityPrioritization
- * 
- *    Constants indicating how photo quality should be prioritized against speed.
- * 
+ * <p>
+ * Constants indicating how photo quality should be prioritized against speed.
+ * <p>
  * [@constant] AVCapturePhotoQualityPrioritizationSpeed
- *    Indicates that speed of photo delivery is most important, even at the expense of quality.
+ * Indicates that speed of photo delivery is most important, even at the expense of quality.
  * [@constant] AVCapturePhotoQualityPrioritizationBalanced
- *    Indicates that photo quality and speed of delivery are balanced in priority.
+ * Indicates that photo quality and speed of delivery are balanced in priority.
  * [@constant] AVCapturePhotoQualityPrioritizationQuality
- *    Indicates that photo quality is paramount, even at the expense of shot-to-shot time.
+ * Indicates that photo quality is paramount, even at the expense of shot-to-shot time.
  */
 @Generated
 public final class AVCapturePhotoQualityPrioritization {

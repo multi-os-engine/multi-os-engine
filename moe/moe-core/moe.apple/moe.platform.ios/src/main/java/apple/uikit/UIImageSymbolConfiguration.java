@@ -246,4 +246,17 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("configurationPreferringMulticolor")
+    public static native UIImageSymbolConfiguration configurationPreferringMulticolor();
+
+    @Generated
+    @Selector("configurationWithHierarchicalColor:")
+    public static native UIImageSymbolConfiguration configurationWithHierarchicalColor(UIColor hierarchicalColor);
+
+    @Generated
+    @Selector("configurationWithPaletteColors:")
+    public static native UIImageSymbolConfiguration configurationWithPaletteColors(
+            NSArray<? extends UIColor> paletteColors);
 }

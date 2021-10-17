@@ -141,7 +141,7 @@ public class UIView extends UIResponder
             @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     /**
-     * Performs `animations` using a timing curve described by the motion of a spring. When `dampingRatio` is 1, the animation will smoothly decelerate to its final model values without oscillating. Damping ratios less than 1 will oscillate more and more before coming to a complete stop. You can use the initial spring velocity to specify how fast the object at the end of the simulated spring was moving before it was attached. It's a unit coordinate system, where 1 is defined as travelling the total animation distance in a second. So if you're changing an object's position by 200pt in this animation, and you want the animation to behave as if the object was moving at 100pt/s before the animation started, you'd pass 0.5. You'll typically want to pass 0 for the velocity.
+     * Performs `animations` using a timing curve described by the motion of a spring. When `dampingRatio` is 1, the animation will smoothly decelerate to its final model values without oscillating. Damping ratios less than 1 will oscillate more and more before coming to a complete stop. You can use the initial spring velocity to specify how fast the object at the end of the simulated spring was moving before it was attached. It's a unit coordinate system, where 1 is defined as traveling the total animation distance in a second. So if you're changing an object's position by 200pt in this animation, and you want the animation to behave as if the object was moving at 100pt/s before the animation started, you'd pass 0.5. You'll typically want to pass 0 for the velocity.
      */
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
@@ -280,7 +280,7 @@ public class UIView extends UIResponder
     public static native Object new_objc();
 
     /**
-     * Performs the requested system-provided animation on one or more views. Specify addtional animations in the parallelAnimations block. These additional animations will run alongside the system animation with the same timing and duration that the system animation defines/inherits. Additional animations should not modify properties of the view on which the system animation is being performed. Not all system animations honor all available options.
+     * Performs the requested system-provided animation on one or more views. Specify additional animations in the parallelAnimations block. These additional animations will run alongside the system animation with the same timing and duration that the system animation defines/inherits. Additional animations should not modify properties of the view on which the system animation is being performed. Not all system animations honor all available options.
      */
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
@@ -444,9 +444,9 @@ public class UIView extends UIResponder
     /**
      * Begins applying `effect` to the receiver. The effect's emitted keyPath/value pairs will be
      * applied to the view's presentation layer.
-     * 
+     * <p>
      * Animates the transition to the motion effect's values using the present UIView animation
-     * context. 
+     * context.
      */
     @Generated
     @Selector("addMotionEffect:")
@@ -459,8 +459,8 @@ public class UIView extends UIResponder
     /**
      * These two methods should be inverses of each other.  UIKit will call both as part of layout computation.
      * They may be overridden to provide arbitrary transforms between frame and alignment rect, though the two methods must be inverses of each other.
-     * However, the default implementation uses -alignmentRectInsets, so just override that if it's applicable.  It's easier to get right. 
-     * A view that displayed an image with some ornament would typically override these, because the ornamental part of an image would scale up with the size of the frame.  
+     * However, the default implementation uses -alignmentRectInsets, so just override that if it's applicable.  It's easier to get right.
+     * A view that displayed an image with some ornament would typically override these, because the ornamental part of an image would scale up with the size of the frame.
      * Set the NSUserDefault UIViewShowAlignmentRects to YES to see alignment rects drawn.
      */
     @Generated
@@ -805,7 +805,7 @@ public class UIView extends UIResponder
      * If there aren't enough constraints in the system to uniquely determine layout, we say the layout is ambiguous.  For example, if the only constraint in the system was x = y + 100, then there are lots of different possible values for x and y.  This situation is not automatically detected by UIKit, due to performance considerations and details of the algorithm used for layout.
      * The symptom of ambiguity is that views sometimes jump from place to place, or possibly are just in the wrong place.
      * -hasAmbiguousLayout runs a check for whether there is another center and bounds the receiver could have that could also satisfy the constraints.
-     * -exerciseAmbiguousLayout does more.  It randomly changes the view layout to a different valid layout.  Making the UI jump back and forth can be helpful for figuring out where you're missing a constraint.  
+     * -exerciseAmbiguousLayout does more.  It randomly changes the view layout to a different valid layout.  Making the UI jump back and forth can be helpful for figuring out where you're missing a constraint.
      */
     @Generated
     @Selector("hasAmbiguousLayout")
@@ -971,9 +971,9 @@ public class UIView extends UIResponder
      * If preservesSuperviewLayoutMargins is YES, margins cascade down the view tree, adjusting for geometry offsets, so that setting
      * the left value of layoutMargins on a superview will affect the left value of layoutMargins for subviews positioned close to the
      * left edge of their superview's bounds
-     *   If your view subclass uses layoutMargins in its layout or drawing, override -layoutMarginsDidChange in order to refresh your 
+     * If your view subclass uses layoutMargins in its layout or drawing, override -layoutMarginsDidChange in order to refresh your
      * view if the margins change.
-     *   On iOS 11.0 and later, please support both user interface layout directions by setting the directionalLayoutMargins property
+     * On iOS 11.0 and later, please support both user interface layout directions by setting the directionalLayoutMargins property
      * instead of the layoutMargins property. After setting the directionalLayoutMargins property, the values in the left and right
      * fields of the layoutMargins property will depend on the user interface layout direction.
      */
@@ -1089,7 +1089,7 @@ public class UIView extends UIResponder
 
     /**
      * Stops applying `effect` to the receiver. Any affected presentation values will animate to
-     * their post-removal values using the present UIView animation context. 
+     * their post-removal values using the present UIView animation context.
      */
     @Generated
     @Selector("removeMotionEffect:")
@@ -1220,9 +1220,9 @@ public class UIView extends UIResponder
      * If preservesSuperviewLayoutMargins is YES, margins cascade down the view tree, adjusting for geometry offsets, so that setting
      * the left value of layoutMargins on a superview will affect the left value of layoutMargins for subviews positioned close to the
      * left edge of their superview's bounds
-     *   If your view subclass uses layoutMargins in its layout or drawing, override -layoutMarginsDidChange in order to refresh your 
+     * If your view subclass uses layoutMargins in its layout or drawing, override -layoutMarginsDidChange in order to refresh your
      * view if the margins change.
-     *   On iOS 11.0 and later, please support both user interface layout directions by setting the directionalLayoutMargins property
+     * On iOS 11.0 and later, please support both user interface layout directions by setting the directionalLayoutMargins property
      * instead of the layoutMargins property. After setting the directionalLayoutMargins property, the values in the left and right
      * fields of the layoutMargins property will depend on the user interface layout direction.
      */
@@ -1334,17 +1334,17 @@ public class UIView extends UIResponder
     public native void sizeToFit();
 
     /**
-     * * When requesting a snapshot, 'afterUpdates' defines whether the snapshot is representative of what's currently on screen or if you wish to include any recent changes before taking the snapshot. 
-     * 
-     *  If called during layout from a committing transaction, snapshots occurring after the screen updates will include all changes made, regardless of when the snapshot is taken and the changes are made. For example:
-     * 
-     *      - (void)layoutSubviews {
-     *          UIView *snapshot = [self snapshotViewAfterScreenUpdates:YES];
-     *          self.alpha = 0.0;
-     *      }
-     * 
-     *  The snapshot will appear to be empty since the change in alpha will be captured by the snapshot. If you need to animate the view during layout, animate the snapshot instead.
-     * 
+     * * When requesting a snapshot, 'afterUpdates' defines whether the snapshot is representative of what's currently on screen or if you wish to include any recent changes before taking the snapshot.
+     * <p>
+     * If called during layout from a committing transaction, snapshots occurring after the screen updates will include all changes made, regardless of when the snapshot is taken and the changes are made. For example:
+     * <p>
+     * - (void)layoutSubviews {
+     * UIView *snapshot = [self snapshotViewAfterScreenUpdates:YES];
+     * self.alpha = 0.0;
+     * }
+     * <p>
+     * The snapshot will appear to be empty since the change in alpha will be captured by the snapshot. If you need to animate the view during layout, animate the snapshot instead.
+     * <p>
      * * Creating snapshots from existing snapshots (as a method to duplicate, crop or create a resizable variant) is supported. In cases where many snapshots are needed, creating a snapshot from a common superview and making subsequent snapshots from it can be more performant. Please keep in mind that if 'afterUpdates' is YES, the original snapshot is committed and any changes made to it, not the view originally snapshotted, will be included.
      */
     @Generated
@@ -1463,10 +1463,10 @@ public class UIView extends UIResponder
     /**
      * -viewForFirstBaselineLayout is called by the constraints system when interpreting
      * the firstBaseline attribute for a view.
-     *    For complex custom UIView subclasses, override this method to return the text-based
+     * For complex custom UIView subclasses, override this method to return the text-based
      * (i.e., UILabel or non-scrollable UITextView) descendant of the receiver whose first baseline
      * is appropriate for alignment.
-     *    UIView's implementation returns [self viewForLastBaselineLayout], so if the same 
+     * UIView's implementation returns [self viewForLastBaselineLayout], so if the same
      * descendant is appropriate for both first- and last-baseline layout you may override
      * just -viewForLastBaselineLayout.
      */
@@ -1477,10 +1477,10 @@ public class UIView extends UIResponder
     /**
      * -viewForLastBaselineLayout is called by the constraints system when interpreting
      * the lastBaseline attribute for a view.
-     *    For complex custom UIView subclasses, override this method to return the text-based
+     * For complex custom UIView subclasses, override this method to return the text-based
      * (i.e., UILabel or non-scrollable UITextView) descendant of the receiver whose last baseline
      * is appropriate for alignment.
-     *    UIView's implementation returns self.
+     * UIView's implementation returns self.
      */
     @Generated
     @Selector("viewForLastBaselineLayout")
@@ -1756,21 +1756,21 @@ public class UIView extends UIResponder
     /**
      * Set `overrideUserInterfaceStyle` to cause this view and its subviews to have a specific `UIUserInterfaceStyle`.
      * Reading this property does not return the current `UIUserInterfaceStyle`. Use `traitCollection.userInterfaceStyle` instead.
-     * 
+     * <p>
      * Whenever possible, use the `overrideUserInterfaceStyle` property on `UIViewController` instead.
-     * 
+     * <p>
      * Use this property only when:
      * - You want a particular style on a single view or small view hierarchy.
      * - You want a particular style on an entire `UIWindow` and its view controllers and presentations,
-     *   but don't want to force your entire application to have that style.
-     * 
-     *  (If you do want your entire application to have a certain style, don't use this, but instead
-     *   set the `UIUserInterfaceStyle" key in your Info.plist.)
-     * 
+     * but don't want to force your entire application to have that style.
+     * <p>
+     * (If you do want your entire application to have a certain style, don't use this, but instead
+     * set the `UIUserInterfaceStyle" key in your Info.plist.)
+     * <p>
      * When set on an ordinary `UIView`:
      * - This property affects only the traits of this view and its subviews.
      * - It does not affect any view controllers, or any subviews that are owned by different view controllers.
-     * 
+     * <p>
      * When set on a `UIWindow`:
      * - This property affects the `rootViewController` and thus the entire view controller and view hierarchy.
      * - It also affects presentations that happen inside the window.
@@ -1813,21 +1813,21 @@ public class UIView extends UIResponder
     /**
      * Set `overrideUserInterfaceStyle` to cause this view and its subviews to have a specific `UIUserInterfaceStyle`.
      * Reading this property does not return the current `UIUserInterfaceStyle`. Use `traitCollection.userInterfaceStyle` instead.
-     * 
+     * <p>
      * Whenever possible, use the `overrideUserInterfaceStyle` property on `UIViewController` instead.
-     * 
+     * <p>
      * Use this property only when:
      * - You want a particular style on a single view or small view hierarchy.
      * - You want a particular style on an entire `UIWindow` and its view controllers and presentations,
-     *   but don't want to force your entire application to have that style.
-     * 
-     *  (If you do want your entire application to have a certain style, don't use this, but instead
-     *   set the `UIUserInterfaceStyle" key in your Info.plist.)
-     * 
+     * but don't want to force your entire application to have that style.
+     * <p>
+     * (If you do want your entire application to have a certain style, don't use this, but instead
+     * set the `UIUserInterfaceStyle" key in your Info.plist.)
+     * <p>
      * When set on an ordinary `UIView`:
      * - This property affects only the traits of this view and its subviews.
      * - It does not affect any view controllers, or any subviews that are owned by different view controllers.
-     * 
+     * <p>
      * When set on a `UIWindow`:
      * - This property affects the `rootViewController` and thus the entire view controller and view hierarchy.
      * - It also affects presentations that happen inside the window.
@@ -1879,4 +1879,97 @@ public class UIView extends UIResponder
     @Generated
     @Selector("setFocusGroupIdentifier:")
     public native void setFocusGroupIdentifier(String value);
+
+    /**
+     * Will return a string with a log of all the superviews of this view, alongside with what
+     * content size category each view has and if that view has limits applied.
+     * This is for debugging purposes only.
+     */
+    @Generated
+    @Selector("appliedContentSizeCategoryLimitsDescription")
+    public native String appliedContentSizeCategoryLimitsDescription();
+
+    @Generated
+    @Selector("focusEffect")
+    public native UIFocusEffect focusEffect();
+
+    @Generated
+    @Selector("focusGroupPriority")
+    @NInt
+    public native long focusGroupPriority();
+
+    @Generated
+    @IsOptional
+    @Selector("isTransparentFocusItem")
+    public native boolean isTransparentFocusItem();
+
+    /**
+     * Follows the keyboard when on screen and docked. When the keyboard is offscreen or undocked, keyboardLayoutGuide.topAnchor matches the view's safeAreaLayoutGuide.bottomAnchor.
+     */
+    @Generated
+    @Selector("keyboardLayoutGuide")
+    public native UIKeyboardLayoutGuide keyboardLayoutGuide();
+
+    @Generated
+    @Selector("maximumContentSizeCategory")
+    public native String maximumContentSizeCategory();
+
+    /**
+     * Specify content size category limits. Setting one or both of these properties will limit the
+     * content size category for this view (and its subviews) to a minimum or a maximum value.
+     * You can use this to limit the support content size categories on part of your view hierarchy.
+     * Setting this to nil removes the limit on the minimum or maximum.
+     * Limits will be applied immediately and when future content size category updates occur.
+     * <p>
+     * Specifying a minimum limit that is greater than the maximum limit (or vice versa) will effectively
+     * only use the maximum limit.
+     * <p>
+     * Example:
+     * <p>
+     * // limit the support content size categories between .medium and .accessibilityExtraLarge (included).
+     * view.minimumContentSizeCategory = UIContentSizeCategoryMedium;
+     * view.maximumContentSizeCategory = UIContentSizeCategoryAccessibilityExtraLarge;
+     */
+    @Generated
+    @Selector("minimumContentSizeCategory")
+    public native String minimumContentSizeCategory();
+
+    /**
+     * Describes a visual effect to apply when this item is focused. If this property is nil no effect will be applied when this view becomes focused.
+     */
+    @Generated
+    @Selector("setFocusEffect:")
+    public native void setFocusEffect(UIFocusEffect value);
+
+    /**
+     * The priority this item has in its focus group. The higher the priority, the more likely it is to get picked when focus moves into this group.
+     * Note: this method can only be used to increase an item's priority, not decrease it. For example if an item is currently selected, the actual priority of this item will be determined by MAX(focusGroupPriority, UIFocusGroupPrioritySelected).
+     */
+    @Generated
+    @Selector("setFocusGroupPriority:")
+    public native void setFocusGroupPriority(@NInt long value);
+
+    @Generated
+    @Selector("setMaximumContentSizeCategory:")
+    public native void setMaximumContentSizeCategory(String value);
+
+    /**
+     * Specify content size category limits. Setting one or both of these properties will limit the
+     * content size category for this view (and its subviews) to a minimum or a maximum value.
+     * You can use this to limit the support content size categories on part of your view hierarchy.
+     * Setting this to nil removes the limit on the minimum or maximum.
+     * Limits will be applied immediately and when future content size category updates occur.
+     * <p>
+     * Specifying a minimum limit that is greater than the maximum limit (or vice versa) will effectively
+     * only use the maximum limit.
+     * <p>
+     * Example:
+     * <p>
+     * // limit the support content size categories between .medium and .accessibilityExtraLarge (included).
+     * view.minimumContentSizeCategory = UIContentSizeCategoryMedium;
+     * view.maximumContentSizeCategory = UIContentSizeCategoryAccessibilityExtraLarge;
+     */
+    @Generated
+    @Selector("setMinimumContentSizeCategory:")
+    public native void setMinimumContentSizeCategory(String value);
 }

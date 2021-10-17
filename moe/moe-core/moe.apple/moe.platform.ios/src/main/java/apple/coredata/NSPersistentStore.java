@@ -130,7 +130,7 @@ public class NSPersistentStore extends NSObject {
 
     /**
      * Get metadata from the persistent store at url. Must be overriden by subclasses.
-     * Subclasses should validate that the URL is the type of URL they are expecting, and 
+     * Subclasses should validate that the URL is the type of URL they are expecting, and
      * should verify that the file contents are appropriate for the store type before
      * attempting to read from it. This method should never raise an exception.
      */
@@ -289,7 +289,7 @@ public class NSPersistentStore extends NSObject {
 
     /**
      * Return the Core Spotlight exporter if one exists for this store. The exporter
-     * can be set as part of the store options when it is added to the coordinator. 
+     * can be set as part of the store options when it is added to the coordinator.
      */
     @Generated
     @Selector("coreSpotlightExporter")

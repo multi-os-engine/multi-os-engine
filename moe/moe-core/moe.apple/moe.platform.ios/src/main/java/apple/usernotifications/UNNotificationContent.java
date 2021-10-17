@@ -20,12 +20,14 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSMutableCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.usernotifications.protocol.UNNotificationContentProviding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -36,7 +38,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -285,4 +289,30 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     @Generated
     @Selector("targetContentIdentifier")
     public native String targetContentIdentifier();
+
+    /**
+     * Contextualizes your UNNotificationContent object with other Apple SDK objects conforming to UNNotificationContentProviding. This will specialize the notification and decorate its look and behavior accordingly. For example, the notification will be treated as a message with an avatar and be promoted to the top of notification center if the object passed in is a valid INSendMessageIntent<UNNotificationContentProviding>. This throws an error with a UNErrorCode found in UNError.h if the UNNotificationContentProviding object is invalid. A valid UNNotificationContent result should not be mutated and be passed directly to UNUserNotificationCenter.
+     * <p>
+     * This should be called in the UNNotificationServiceExtension in didReceiveNotificationRequest:withContentHandler: and the returned UNNotificationContent should be passed to the contentHandler for incoming push notifications.
+     */
+    @Generated
+    @Selector("contentByUpdatingWithProvider:error:")
+    public native UNNotificationContent contentByUpdatingWithProviderError(
+            @Mapped(ObjCObjectMapper.class) UNNotificationContentProviding provider,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    /**
+     * The interruption level determines the degree of interruption associated with the notification
+     */
+    @Generated
+    @Selector("interruptionLevel")
+    @NUInt
+    public native long interruptionLevel();
+
+    /**
+     * Relevance score determines the sorting for the notification across app notifications. The expected range is between 0.0f and 1.0f.
+     */
+    @Generated
+    @Selector("relevanceScore")
+    public native double relevanceScore();
 }

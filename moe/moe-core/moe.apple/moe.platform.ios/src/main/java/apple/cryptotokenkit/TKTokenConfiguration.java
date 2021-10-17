@@ -90,7 +90,7 @@ public class TKTokenConfiguration extends NSObject {
 
     /**
      * Additional configuration available for token instance.
-     * 
+     * <p>
      * Token implementation and its hosting application can use this data for specifying any additional configuration for the token. System does not interpret this data in any way. For example, network-based HSM can store here (using Codable or other serialization mechanisms) target network address, access credentials and the list of identities accessible in the HSM.
      */
     @Generated
@@ -173,7 +173,7 @@ public class TKTokenConfiguration extends NSObject {
 
     /**
      * Additional configuration available for token instance.
-     * 
+     * <p>
      * Token implementation and its hosting application can use this data for specifying any additional configuration for the token. System does not interpret this data in any way. For example, network-based HSM can store here (using Codable or other serialization mechanisms) target network address, access credentials and the list of identities accessible in the HSM.
      */
     @Generated

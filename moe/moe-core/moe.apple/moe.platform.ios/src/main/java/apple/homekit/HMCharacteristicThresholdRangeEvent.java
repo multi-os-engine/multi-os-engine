@@ -111,12 +111,10 @@ public class HMCharacteristicThresholdRangeEvent extends HMEvent implements NSCo
 
     /**
      * Initializes a new characteristic number range event object
-     * 
+     *
      * @param characteristic The characteristic bound to the event. The characteristic must
      *                       support notification. An exception will be thrown otherwise.
-     * 
      * @param thresholdRange The range for the characteristic value to trigger the event.
-     * 
      * @return Instance object representing the characteristic event.
      */
     @Generated

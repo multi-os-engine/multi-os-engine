@@ -22,7 +22,7 @@ import org.moe.natj.general.ann.NInt;
 /**
  * UITextItemInteraction.h
  * UIKit
- * 
+ * <p>
  * Copyright (c) 2016-2018 Apple Inc. All rights reserved.
  */
 @Generated

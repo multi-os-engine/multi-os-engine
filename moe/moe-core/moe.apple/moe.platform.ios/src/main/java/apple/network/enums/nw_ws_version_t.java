@@ -4,8 +4,8 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_ws_version_t
- * 
- * 	The WebSocket Protocol version.
+ * <p>
+ * The WebSocket Protocol version.
  */
 @Generated
 public final class nw_ws_version_t {

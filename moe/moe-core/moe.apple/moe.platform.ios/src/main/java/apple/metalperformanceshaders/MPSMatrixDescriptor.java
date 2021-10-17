@@ -41,12 +41,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSMatrixDescriptor
- * 
+ * <p>
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * A MPSMatrixDescriptor describes the sizes, strides, and data type of a
- *             an array of 2-dimensional matrices.  All storage is assumed to be in
- *             "matrix-major".  See the description for MPSMatrix for further details.
+ * an array of 2-dimensional matrices.  All storage is assumed to be in
+ * "matrix-major".  See the description for MPSMatrix for further details.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -134,21 +134,18 @@ public class MPSMatrixDescriptor extends NSObject {
 
     /**
      * Create a MPSMatrixDescriptor with the specified dimensions and data type.
-     * 
+     * <p>
      * For performance considerations the optimal row stride may not necessarily be equal
-     *             to the number of columns in the matrix.  The MPSMatrix class provides a method which
-     *             may be used to determine this value, see the rowBytesForColumns API in the MPSMatrix
-     *             class.
-     *             The number of matrices described is initialized to 1.
-     * 
-     * @param      rows                The number of rows of the matrix.
-     * 
-     * @param      columns             The number of columns of the matrix.
-     * 
-     * @param      rowBytes            The number of bytes between starting elements of consecutive
-     *                                 rows.  Must be a multiple of the element size.
-     * 
-     * @param      dataType            The type of the data to be stored in the matrix.
+     * to the number of columns in the matrix.  The MPSMatrix class provides a method which
+     * may be used to determine this value, see the rowBytesForColumns API in the MPSMatrix
+     * class.
+     * The number of matrices described is initialized to 1.
+     *
+     * @param rows     The number of rows of the matrix.
+     * @param columns  The number of columns of the matrix.
+     * @param rowBytes The number of bytes between starting elements of consecutive
+     *                 rows.  Must be a multiple of the element size.
+     * @param dataType The type of the data to be stored in the matrix.
      */
     @Generated
     @Selector("matrixDescriptorWithDimensions:columns:rowBytes:dataType:")
@@ -171,18 +168,17 @@ public class MPSMatrixDescriptor extends NSObject {
 
     /**
      * Return the recommended row stride, in bytes, for a given number of
-     *             columns.
-     * 
+     * columns.
+     * <p>
      * To achieve best performance the optimal stride between rows of a matrix is not
-     *             necessarily equivalent to the number of columns.  This method returns the row stride, in
-     *             bytes, which gives best performance for a given number of columns.  Using this row stride
-     *             to construct your array is recommended, but not required (provided that the stride
-     *             used is still large enough to allocate a full row of data).
-     * 
-     * @param      columns         The number of columns in the matrix for which the recommended
-     *                             row stride, in bytes, is to be determined.
-     * 
-     * @param      dataType        The type of matrix data values.
+     * necessarily equivalent to the number of columns.  This method returns the row stride, in
+     * bytes, which gives best performance for a given number of columns.  Using this row stride
+     * to construct your array is recommended, but not required (provided that the stride
+     * used is still large enough to allocate a full row of data).
+     *
+     * @param columns  The number of columns in the matrix for which the recommended
+     *                 row stride, in bytes, is to be determined.
+     * @param dataType The type of matrix data values.
      */
     @Generated
     @Selector("rowBytesFromColumns:dataType:")
@@ -204,7 +200,7 @@ public class MPSMatrixDescriptor extends NSObject {
 
     /**
      * [@property]   columns
-     * 
+     * <p>
      * The number of columns in a matrix.
      */
     @Generated
@@ -214,7 +210,7 @@ public class MPSMatrixDescriptor extends NSObject {
 
     /**
      * [@property]   dataType
-     * 
+     * <p>
      * The type of the data which makes up the values of the matrix.
      */
     @Generated
@@ -227,9 +223,9 @@ public class MPSMatrixDescriptor extends NSObject {
 
     /**
      * [@property]   rowBytes
-     * 
+     * <p>
      * The stride, in bytes, between corresponding elements of
-     *             consecutive rows.  Must be a multiple of the element size.
+     * consecutive rows.  Must be a multiple of the element size.
      */
     @Generated
     @Selector("rowBytes")
@@ -238,7 +234,7 @@ public class MPSMatrixDescriptor extends NSObject {
 
     /**
      * [@property]   rows
-     * 
+     * <p>
      * The number of rows in a matrix.
      */
     @Generated
@@ -248,7 +244,7 @@ public class MPSMatrixDescriptor extends NSObject {
 
     /**
      * [@property]   columns
-     * 
+     * <p>
      * The number of columns in a matrix.
      */
     @Generated
@@ -257,7 +253,7 @@ public class MPSMatrixDescriptor extends NSObject {
 
     /**
      * [@property]   dataType
-     * 
+     * <p>
      * The type of the data which makes up the values of the matrix.
      */
     @Generated
@@ -266,9 +262,9 @@ public class MPSMatrixDescriptor extends NSObject {
 
     /**
      * [@property]   rowBytes
-     * 
+     * <p>
      * The stride, in bytes, between corresponding elements of
-     *             consecutive rows.  Must be a multiple of the element size.
+     * consecutive rows.  Must be a multiple of the element size.
      */
     @Generated
     @Selector("setRowBytes:")
@@ -276,7 +272,7 @@ public class MPSMatrixDescriptor extends NSObject {
 
     /**
      * [@property]   rows
-     * 
+     * <p>
      * The number of rows in a matrix.
      */
     @Generated
@@ -285,7 +281,7 @@ public class MPSMatrixDescriptor extends NSObject {
 
     /**
      * [@property]   matrices
-     * 
+     * <p>
      * The number of matrices.
      */
     @Generated
@@ -295,9 +291,9 @@ public class MPSMatrixDescriptor extends NSObject {
 
     /**
      * [@property]   matrixBytes
-     * 
+     * <p>
      * The stride, in bytes, between corresponding elements of
-     *             consecutive matrices.  Must be a multiple of rowBytes.
+     * consecutive matrices.  Must be a multiple of rowBytes.
      */
     @Generated
     @Selector("matrixBytes")
@@ -306,25 +302,20 @@ public class MPSMatrixDescriptor extends NSObject {
 
     /**
      * Create a MPSMatrixDescriptor with the specified dimensions and data type.
-     * 
+     * <p>
      * For performance considerations the optimal row stride may not necessarily be equal
-     *             to the number of columns in the matrix.  The MPSMatrix class provides a method which
-     *             may be used to determine this value, see the rowBytesForColumns API in the MPSMatrix
-     *             class.
-     * 
-     * @param      rows                The number of rows of a single matrix.
-     * 
-     * @param      columns             The number of columns of a single matrix.
-     * 
-     * @param      matrices            The number of matrices in the MPSMatrix object.
-     * 
-     * @param      rowBytes            The number of bytes between starting elements of consecutive
-     *                                 rows.  Must be a multiple of the element size.
-     * 
-     * @param      matrixBytes         The number of bytes between starting elements of consecutive
-     *                                 matrices.  Must be a multiple of rowBytes.
-     * 
-     * @param      dataType            The type of the data to be stored in the matrix.
+     * to the number of columns in the matrix.  The MPSMatrix class provides a method which
+     * may be used to determine this value, see the rowBytesForColumns API in the MPSMatrix
+     * class.
+     *
+     * @param rows        The number of rows of a single matrix.
+     * @param columns     The number of columns of a single matrix.
+     * @param matrices    The number of matrices in the MPSMatrix object.
+     * @param rowBytes    The number of bytes between starting elements of consecutive
+     *                    rows.  Must be a multiple of the element size.
+     * @param matrixBytes The number of bytes between starting elements of consecutive
+     *                    matrices.  Must be a multiple of rowBytes.
+     * @param dataType    The type of the data to be stored in the matrix.
      */
     @Generated
     @Selector("matrixDescriptorWithRows:columns:matrices:rowBytes:matrixBytes:dataType:")

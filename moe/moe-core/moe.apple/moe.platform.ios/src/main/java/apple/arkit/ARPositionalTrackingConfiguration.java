@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A configuration for running positional tracking.
- * 
+ * <p>
  * Positional tracking provides 6 degrees of freedom tracking of the device by running the camera at lowest possible resolution and frame rate.
  */
 @Generated
@@ -97,7 +97,7 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
 
     /**
      * The initial map of the physical space that world tracking will localize to and track.
-     * 
+     * <p>
      * If set, the session will attempt to localize to the provided map with
      * a limited tracking state until localization is successful or run is called again
      * with a different (or no) initial map specified. Once localized, the map will be extended
@@ -140,7 +140,7 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * 
+     * <p>
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to ARPlaneDetectionNone.
      */
@@ -159,7 +159,7 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
 
     /**
      * The initial map of the physical space that world tracking will localize to and track.
-     * 
+     * <p>
      * If set, the session will attempt to localize to the provided map with
      * a limited tracking state until localization is successful or run is called again
      * with a different (or no) initial map specified. Once localized, the map will be extended
@@ -171,7 +171,7 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * 
+     * <p>
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to ARPlaneDetectionNone.
      */

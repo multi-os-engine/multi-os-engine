@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]          HKSwimmingStrokeStyle
- * 
+ * <p>
  * Represents a style of stroke used during a swimming workout.
  */
 @Generated

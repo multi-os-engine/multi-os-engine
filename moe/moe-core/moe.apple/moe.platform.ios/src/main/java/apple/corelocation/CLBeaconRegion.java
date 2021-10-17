@@ -48,17 +48,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLBeaconRegion
- * 
+ * <p>
  * Discussion:
- *   A region containing similar beacons.
- * 
- *   Such a region can be defined by UUID, major and minor values.
- *   UUID must be specified. If only UUID is specified, the major and
- *   minor values will be wildcarded and the region will match any
- *   beacons with the same UUID. Similarly if only UUID and major
- *   value are specified, the minor value will be wildcarded and the
- *   region will match against any beacons with the same UUID and
- *   major value.
+ * A region containing similar beacons.
+ * <p>
+ * Such a region can be defined by UUID, major and minor values.
+ * UUID must be specified. If only UUID is specified, the major and
+ * minor values will be wildcarded and the region will match any
+ * beacons with the same UUID. Similarly if only UUID and major
+ * value are specified, the minor value will be wildcarded and the
+ * region will match against any beacons with the same UUID and
+ * major value.
  */
 @Generated
 @Library("CoreLocation")
@@ -205,9 +205,9 @@ public class CLBeaconRegion extends CLRegion {
 
     /**
      * major
-     * 
+     * <p>
      * Discussion:
-     *   Most significant value associated with the region. If a major value wasn't specified, this will be nil.
+     * Most significant value associated with the region. If a major value wasn't specified, this will be nil.
      */
     @Generated
     @Selector("major")
@@ -215,9 +215,9 @@ public class CLBeaconRegion extends CLRegion {
 
     /**
      * minor
-     * 
+     * <p>
      * Discussion:
-     *   Least significant value associated with the region. If a minor value wasn't specified, this will be nil.
+     * Least significant value associated with the region. If a minor value wasn't specified, this will be nil.
      */
     @Generated
     @Selector("minor")
@@ -225,10 +225,10 @@ public class CLBeaconRegion extends CLRegion {
 
     /**
      * notifyEntryStateOnDisplay
-     * 
+     * <p>
      * Discussion:
-     *   App will be launched and the delegate will be notified via locationManager:didDetermineState:forRegion:
-     *   when the device's screen is turned on and the user is in the region. By default, this is NO.
+     * App will be launched and the delegate will be notified via locationManager:didDetermineState:forRegion:
+     * when the device's screen is turned on and the user is in the region. By default, this is NO.
      */
     @Generated
     @Selector("notifyEntryStateOnDisplay")
@@ -236,15 +236,15 @@ public class CLBeaconRegion extends CLRegion {
 
     /**
      * peripheralDataWithMeasuredPower:
-     * 
+     * <p>
      * Discussion:
-     *   This dictionary can be used to advertise the current device as a beacon when
-     *   used in conjunction with CoreBluetooth's CBPeripheralManager startAdvertising: method.
-     *   The dictionary will contain data that represents the current region in addition to a measured power value.
-     * 
-     *   measuredPower is the RSSI of the device observed from one meter in its intended environment.
-     *   This value is optional, but should be specified to achieve the best ranging performance.
-     *   If not specified, it will default to a pre-determined value for the device.
+     * This dictionary can be used to advertise the current device as a beacon when
+     * used in conjunction with CoreBluetooth's CBPeripheralManager startAdvertising: method.
+     * The dictionary will contain data that represents the current region in addition to a measured power value.
+     * <p>
+     * measuredPower is the RSSI of the device observed from one meter in its intended environment.
+     * This value is optional, but should be specified to achieve the best ranging performance.
+     * If not specified, it will default to a pre-determined value for the device.
      */
     @Generated
     @Selector("peripheralDataWithMeasuredPower:")
@@ -256,10 +256,10 @@ public class CLBeaconRegion extends CLRegion {
 
     /**
      * notifyEntryStateOnDisplay
-     * 
+     * <p>
      * Discussion:
-     *   App will be launched and the delegate will be notified via locationManager:didDetermineState:forRegion:
-     *   when the device's screen is turned on and the user is in the region. By default, this is NO.
+     * App will be launched and the delegate will be notified via locationManager:didDetermineState:forRegion:
+     * when the device's screen is turned on and the user is in the region. By default, this is NO.
      */
     @Generated
     @Selector("setNotifyEntryStateOnDisplay:")
@@ -273,9 +273,9 @@ public class CLBeaconRegion extends CLRegion {
 
     /**
      * UUID
-     * 
+     * <p>
      * Discussion:
-     *   UUID associated with the region.
+     * UUID associated with the region.
      */
     @Generated
     @Selector("UUID")
@@ -283,9 +283,9 @@ public class CLBeaconRegion extends CLRegion {
 
     /**
      * beaconIdentityConstraint
-     * 
+     * <p>
      * Discussion:
-     *   Returns a CLBeaconIdentityConstraint describing the beacons this region monitors.
+     * Returns a CLBeaconIdentityConstraint describing the beacons this region monitors.
      */
     @Generated
     @Selector("beaconIdentityConstraint")
@@ -293,10 +293,10 @@ public class CLBeaconRegion extends CLRegion {
 
     /**
      * initWithBeaconIdentityConstraint:identifier:
-     * 
+     * <p>
      * Discussion:
-     *   Initialize a beacon region described by a beacon identity
-     *   constraint.
+     * Initialize a beacon region described by a beacon identity
+     * constraint.
      */
     @Generated
     @Selector("initWithBeaconIdentityConstraint:identifier:")
@@ -305,9 +305,9 @@ public class CLBeaconRegion extends CLRegion {
 
     /**
      * initWithUUID:identifier:
-     * 
+     * <p>
      * Discussion:
-     *   Initialize a beacon region with a UUID. Major and minor values will be wildcarded.
+     * Initialize a beacon region with a UUID. Major and minor values will be wildcarded.
      */
     @Generated
     @Selector("initWithUUID:identifier:")
@@ -315,9 +315,9 @@ public class CLBeaconRegion extends CLRegion {
 
     /**
      * initWithUUID:major:identifier:
-     * 
+     * <p>
      * Discussion:
-     *   Initialize a beacon region with a UUID and major value. Minor value will be wildcarded.
+     * Initialize a beacon region with a UUID and major value. Minor value will be wildcarded.
      */
     @Generated
     @Selector("initWithUUID:major:identifier:")
@@ -325,9 +325,9 @@ public class CLBeaconRegion extends CLRegion {
 
     /**
      * initWithUUID:major:minor:identifier:
-     * 
+     * <p>
      * Discussion:
-     *   Initialize a beacon region identified by a UUID, major and minor values.
+     * Initialize a beacon region identified by a UUID, major and minor values.
      */
     @Generated
     @Selector("initWithUUID:major:minor:identifier:")

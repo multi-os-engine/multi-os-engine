@@ -27,13 +27,13 @@ public final class UIInterpolatingMotionEffectType {
     /**
      * Tracks the device being tilted left/right relative to the viewer. The minimum
      * relative values maps to the device being tilted all the way to the left, the
-     * maximum to the right. 
+     * maximum to the right.
      */
     @Generated @NInt public static final long HorizontalAxis = 0x0000000000000000L;
     /**
      * Tracks the device being tilted up/down relative to the viewer. The minimum
      * relative values maps to the device being tilted all the way down, the maximum
-     * all the way up. 
+     * all the way up.
      */
     @Generated @NInt public static final long VerticalAxis = 0x0000000000000001L;
 

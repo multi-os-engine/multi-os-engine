@@ -20,18 +20,18 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum]       CTWritingDirection
- * 
+ * <p>
  * These constants specify the writing direction
- * 
+ * <p>
  * [@constant]   kCTWritingDirectionNatural
- *             The writing direction is algorithmically determined
- *             using the Unicode Bidirectional Algorithm rules P2 and P3.
- * 
+ * The writing direction is algorithmically determined
+ * using the Unicode Bidirectional Algorithm rules P2 and P3.
+ * <p>
  * [@constant]   kCTWritingDirectionLeftToRight
- *             The writing direction is left to right.
- * 
+ * The writing direction is left to right.
+ * <p>
  * [@constant]   kCTWritingDirectionRightToLeft
- *             The writing direction is right to left.
+ * The writing direction is right to left.
  */
 @Generated
 public final class CTWritingDirection {

@@ -154,10 +154,10 @@ public class CTSubscriber extends NSObject {
 
     /**
      * carrierToken
-     * 
+     * <p>
      * Description:
-     *     A data blob containing authorization information about the subscriber.
-     *     This API is deprecated without replacement. Starting in iOS 11.3, this API returns nil.
+     * A data blob containing authorization information about the subscriber.
+     * This API is deprecated without replacement. Starting in iOS 11.3, this API returns nil.
      */
     @Generated
     @Selector("carrierToken")
@@ -174,12 +174,12 @@ public class CTSubscriber extends NSObject {
 
     /**
      * identifier
-     * 
+     * <p>
      * Description:
-     *     An implementation-defined identifier that can be used to correlate this CTSubscriber
-     *     with information vended by other API's.
-     *     The format of the identifier can change across software releases. Therefore, applications
-     *     should not persist it.
+     * An implementation-defined identifier that can be used to correlate this CTSubscriber
+     * with information vended by other API's.
+     * The format of the identifier can change across software releases. Therefore, applications
+     * should not persist it.
      */
     @Generated
     @Selector("identifier")

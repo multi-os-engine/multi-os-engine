@@ -41,8 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CBDescriptor
- * 
- *      Represents a characteristic's descriptor.
+ * <p>
+ * Represents a characteristic's descriptor.
  */
 @Generated
 @Library("CoreBluetooth")
@@ -157,8 +157,8 @@ public class CBDescriptor extends CBAttribute {
 
     /**
      * [@property] characteristic
-     * 
-     *     A back-pointer to the characteristic this descriptor belongs to.
+     * <p>
+     * A back-pointer to the characteristic this descriptor belongs to.
      */
     @Generated
     @Selector("characteristic")
@@ -170,8 +170,8 @@ public class CBDescriptor extends CBAttribute {
 
     /**
      * [@property] value
-     * 
-     *     The value of the descriptor. The corresponding value types for the various descriptors are detailed in @link CBUUID.h @/link.
+     * <p>
+     * The value of the descriptor. The corresponding value types for the various descriptors are detailed in @link CBUUID.h @/link.
      */
     @Generated
     @Selector("value")

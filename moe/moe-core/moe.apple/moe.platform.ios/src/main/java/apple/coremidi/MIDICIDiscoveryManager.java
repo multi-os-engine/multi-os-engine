@@ -26,9 +26,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MIDICIDiscoveryManager
- * 
+ * <p>
  * Singleton object that performs system-wide MIDI Capability Inquiry discovery
- * 
+ * <p>
  * MIDICIDiscoveryManager is used to retrieve information about nodes in the MIDI subsystem
  * that are MIDI-CI capable. Only MIDI destinations discovered via this API can be used to
  * create MIDICISessions.

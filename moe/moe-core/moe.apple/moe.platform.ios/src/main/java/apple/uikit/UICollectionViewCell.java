@@ -470,7 +470,7 @@ public class UICollectionViewCell extends UICollectionReusableView {
     /**
      * Override this method to modify the visual appearance for a particular
      * dragState.
-     * 
+     * <p>
      * Call super if you want to add to the existing default implementation.
      */
     @Generated
@@ -573,4 +573,36 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Generated
     @Selector("updateConfigurationUsingState:")
     public native void updateConfigurationUsingState(UICellConfigurationState state);
+
+    /**
+     * Optional block-based alternative to overriding `-updateConfigurationUsingState:` in a subclass. This handler
+     * is called after `-updateConfigurationUsingState:`. Setting a new handler triggers `setNeedsUpdateConfiguration`.
+     */
+    @Generated
+    @Selector("configurationUpdateHandler")
+    @ObjCBlock(name = "call_configurationUpdateHandler_ret")
+    public native Block_configurationUpdateHandler_ret configurationUpdateHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_configurationUpdateHandler_ret {
+        @Generated
+        void call_configurationUpdateHandler_ret(UICollectionViewCell cell, UICellConfigurationState state);
+    }
+
+    /**
+     * Optional block-based alternative to overriding `-updateConfigurationUsingState:` in a subclass. This handler
+     * is called after `-updateConfigurationUsingState:`. Setting a new handler triggers `setNeedsUpdateConfiguration`.
+     */
+    @Generated
+    @Selector("setConfigurationUpdateHandler:")
+    public native void setConfigurationUpdateHandler(
+            @ObjCBlock(name = "call_setConfigurationUpdateHandler") Block_setConfigurationUpdateHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setConfigurationUpdateHandler {
+        @Generated
+        void call_setConfigurationUpdateHandler(UICollectionViewCell cell, UICellConfigurationState state);
+    }
 }

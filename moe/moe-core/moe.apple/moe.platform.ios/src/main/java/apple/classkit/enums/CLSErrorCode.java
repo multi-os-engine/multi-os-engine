@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      CLSErrorCode
- * 
+ * <p>
  * [@constant]  CLSErrorCodeNone                         No error.
  * [@constant]  CLSErrorCodeClassKitUnavailable       	 ClassKit is not available on this device.
  * [@constant]  CLSErrorCodeInvalidArgument              An invalid argument was provided to the API.

@@ -94,8 +94,8 @@ public class ASAuthorizationAppleIDProvider extends NSObject implements ASAuthor
     /**
      * This method can be used to get the current state of an opaque user ID previously given.
      * [@note] If credentialState is @see ASAuthorizationAppleIDProviderCredentialNotFound, an error will also be passed in the completion block.
-     * 
-     * @param userID Opaque user identifier that will be checked for state.
+     *
+     * @param userID     Opaque user identifier that will be checked for state.
      * @param completion A completion block that will return one of 3 possible states @see ASAuthorizationAppleIDProviderCredentialState.
      */
     @Generated

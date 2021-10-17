@@ -60,4 +60,8 @@ public final class GKErrorCode {
     @Generated @NInt public static final long NotAuthorized = 0x0000000000000020L;
     @Generated @NInt public static final long ConnectionTimeout = 0x0000000000000021L;
     @Generated @NInt public static final long APIObsolete = 0x0000000000000022L;
+    @Generated @NInt public static final long FriendListDescriptionMissing = 0x0000000000000064L;
+    @Generated @NInt public static final long FriendListRestricted = 0x0000000000000065L;
+    @Generated @NInt public static final long FriendListDenied = 0x0000000000000066L;
+    @Generated @NInt public static final long FriendRequestNotAvailable = 0x0000000000000067L;
 }

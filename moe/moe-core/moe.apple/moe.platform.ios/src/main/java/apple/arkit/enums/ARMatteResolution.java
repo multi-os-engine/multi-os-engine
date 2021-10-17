@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * The resolution at which the matte is to be generated.
- * 
+ * <p>
  * The matte generated per frame can be full resolution of the captured camera image or half resolution. The caller chooses one of the options from ARMatteResolution during initialization.
  */
 @Generated

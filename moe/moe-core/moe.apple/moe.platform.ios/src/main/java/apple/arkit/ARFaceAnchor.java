@@ -65,7 +65,7 @@ public class ARFaceAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * A dictionary of blend shape coefficients for each blend shape location.
-     * 
+     * <p>
      * Blend shapes coefficients define the amount of displacement of a neutral shape at a specific location on the face.
      */
     @Generated

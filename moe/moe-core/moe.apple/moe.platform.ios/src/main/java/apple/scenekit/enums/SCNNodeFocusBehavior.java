@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] SCNNodeFocusBehavior
- * 
+ * <p>
  * Control the focus (UIFocus) behavior.
  */
 @Generated

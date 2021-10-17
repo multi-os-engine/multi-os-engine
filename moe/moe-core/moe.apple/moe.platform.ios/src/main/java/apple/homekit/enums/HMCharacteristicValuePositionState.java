@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValuePositionState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValuePositionStateClosing           Position is moving towards minimum value.
  * [@constant]  HMCharacteristicValuePositionStateOpening           Position is moving towards maximum value.
  * [@constant]  HMCharacteristicValuePositionStateStopped           Position is Stopped.

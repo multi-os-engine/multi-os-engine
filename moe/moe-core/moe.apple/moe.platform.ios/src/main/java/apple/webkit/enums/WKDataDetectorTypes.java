@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] WKDataDetectorTypes
- * 
+ * <p>
  * The type of data detected.
  * [@constant] WKDataDetectorTypeNone No detection is performed.
  * [@constant] WKDataDetectorTypePhoneNumber Phone numbers are detected and turned into links.
@@ -41,7 +41,9 @@ public final class WKDataDetectorTypes {
     @Generated @NUInt public static final long TrackingNumber = 0x0000000000000010L;
     @Generated @NUInt public static final long FlightNumber = 0x0000000000000020L;
     @Generated @NUInt public static final long LookupSuggestion = 0x0000000000000040L;
-    @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ? 0xFFFFFFFFFFFFFFFFL : 0x00000000FFFFFFFFL;
+    @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ?
+            0xFFFFFFFFFFFFFFFFL :
+            0x00000000FFFFFFFFL;
     @Generated @NUInt public static final long SpotlightSuggestion = 0x0000000000000040L;
 
     @Generated

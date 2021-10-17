@@ -45,11 +45,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEAppRule
- * 
+ * <p>
  * The NEAppRule class declares the programmatic interface for an object that contains the match conditions for a rule that is used to match network traffic originated by applications.
- * 
+ * <p>
  * NEAppRule is used in the context of a Network Extension configuration to specify what traffic should be made available to the Network Extension.
- * 
+ * <p>
  * Instances of this class are thread safe.
  */
 @Generated
@@ -187,9 +187,9 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * initWithSigningIdentifier:
-     * 
+     * <p>
      * Initializes a newly-allocated NEAppRule object.
-     * 
+     *
      * @param signingIdentifier The signing identifier of the executable that matches the rule.
      */
     @Generated
@@ -198,7 +198,7 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * [@property] matchDomains
-     * 
+     * <p>
      * An array of strings. This property is actually read-only. If the destination host of the network traffic being evaluated has a suffix equal to one of the strings in this array and all other conditions of the rule match, then the rule matches. This property is optional.
      */
     @Generated
@@ -207,7 +207,7 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * [@property] matchPath
-     * 
+     * <p>
      * A string containing a file system path. If the file system path of the executable being evaluated is equal to this string and all other conditions of the rule match, then the rule matches. This property is optional.
      */
     @Generated
@@ -216,7 +216,7 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * [@property] matchSigningIdentifier
-     * 
+     * <p>
      * A string containing a signing identifier. If the code signature of the executable being evaluated has a signing identifier equal to this string and all other conditions of the rule match, then the rule matches.
      */
     @Generated
@@ -225,7 +225,7 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * [@property] matchDomains
-     * 
+     * <p>
      * An array of strings. This property is actually read-only. If the destination host of the network traffic being evaluated has a suffix equal to one of the strings in this array and all other conditions of the rule match, then the rule matches. This property is optional.
      */
     @Generated
@@ -234,7 +234,7 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * [@property] matchPath
-     * 
+     * <p>
      * A string containing a file system path. If the file system path of the executable being evaluated is equal to this string and all other conditions of the rule match, then the rule matches. This property is optional.
      */
     @Generated

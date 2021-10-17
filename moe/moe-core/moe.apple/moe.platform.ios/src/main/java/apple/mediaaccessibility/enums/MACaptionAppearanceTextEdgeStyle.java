@@ -21,21 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] MACaptionAppearanceTextEdgeStyle
- * 
+ * <p>
  * MACaptionAppearanceTextEdgeStyle is used to specify a text-edge style.
- * 
+ * <p>
  * [@constant] kMACaptionAppearanceTextEdgeStyleUndefined
- *    Undefined edge style.
+ * Undefined edge style.
  * [@constant] kMACaptionAppearanceTextEdgeStyleNone
- *    No edge style.
+ * No edge style.
  * [@constant] kMACaptionAppearanceTextEdgeStyleRaised
- *    Raised edge style.
+ * Raised edge style.
  * [@constant] kMACaptionAppearanceTextEdgeStyleDepressed
- *    Depressed edge style.
+ * Depressed edge style.
  * [@constant] kMACaptionAppearanceTextEdgeStyleUniform
- *    Uniform edge style.
+ * Uniform edge style.
  * [@constant] kMACaptionAppearanceTextEdgeStyleDropShadow
- *    Shadow edge style.
+ * Shadow edge style.
  */
 @Generated
 public final class MACaptionAppearanceTextEdgeStyle {

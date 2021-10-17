@@ -32,12 +32,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNCropAndResizeBilinear
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * The MPSNNCropAndResizeBilinear filter resizes the source image  using bilinear interpolation to
- *             a destination whose dimensions are given by resizeWidth and resizeHeight
- * 
- *             The number of output feature channels remains the same as the number of input feature
- *             channels.
+ * a destination whose dimensions are given by resizeWidth and resizeHeight
+ * <p>
+ * The number of output feature channels remains the same as the number of input feature
+ * channels.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -112,12 +112,12 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * See @ref MPSKernel#initWithCoder.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSNNCropAndResizeBilinear
-     * @param      device      The MTLDevice on which to make the MPSNNCropAndResizeBilinear
-     * @return     A new MPSNNResizeBilinear object, or nil if failure.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSNNCropAndResizeBilinear
+     * @param device   The MTLDevice on which to make the MPSNNCropAndResizeBilinear
+     * @return A new MPSNNResizeBilinear object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -130,14 +130,14 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * Initialize the crop and resize bilinear filter.
-     * 
-     * @param     device                   The device the filter will run on.
-     * @param     resizeWidth              The destination resize width in pixels
-     * @param     resizeHeight             The destination resize height in pixels
-     * @param     numberOfRegions          Specifies the number of bounding box i.e. regions to resize
-     * @param     regions                  This is a pointer to "numberOfRegions" boxes which specify the locations in the
-     *                                     source image to use for each box/region to perform the resize operation.
-     * @return    A valid MPSNNCropAndResizeBilinear object or nil, if failure.
+     *
+     * @param device          The device the filter will run on.
+     * @param resizeWidth     The destination resize width in pixels
+     * @param resizeHeight    The destination resize height in pixels
+     * @param numberOfRegions Specifies the number of bounding box i.e. regions to resize
+     * @param regions         This is a pointer to "numberOfRegions" boxes which specify the locations in the
+     *                        source image to use for each box/region to perform the resize operation.
+     * @return A valid MPSNNCropAndResizeBilinear object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:resizeWidth:resizeHeight:numberOfRegions:regions:")
@@ -175,7 +175,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property]   numberOfRegions
-     * 
+     * <p>
      * the number of bounding box i.e. regions to resize.
      */
     @Generated
@@ -185,12 +185,12 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property]   regions
-     * 
+     * <p>
      * This is a pointer to "numberOfRegions" boxes which specify the locations in the
-     *             source image to use for each box/region to perform the resize operation.
-     *             The coordinates specified are normalized values.  A normalized region outside the
-     *             [0, 1] range is allowed, in which case we use extrapolation_value to extrapolate
-     *             the input image values.
+     * source image to use for each box/region to perform the resize operation.
+     * The coordinates specified are normalized values.  A normalized region outside the
+     * [0, 1] range is allowed, in which case we use extrapolation_value to extrapolate
+     * the input image values.
      */
     @Generated
     @Selector("regions")
@@ -199,7 +199,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property]   resizeHeight
-     * 
+     * <p>
      * The resize height.
      */
     @Generated
@@ -209,7 +209,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property]   resizeWidth
-     * 
+     * <p>
      * The resize width.
      */
     @Generated

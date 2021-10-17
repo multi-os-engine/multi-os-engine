@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]          HKCategoryValuePresence
- * 
+ * <p>
  * Set of values to indicate whether a data type is present or not.
  */
 @Generated

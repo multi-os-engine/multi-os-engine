@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLReadWriteTextureTier
- * 
+ * <p>
  * MTLReadWriteTextureTier determines support level for read-write texture formats.
  */
 @Generated

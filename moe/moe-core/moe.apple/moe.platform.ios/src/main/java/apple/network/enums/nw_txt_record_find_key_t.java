@@ -4,9 +4,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_txt_record_find_key_t
- * 
- * 	An enumeration of possible find results when trying to find a key-value
- * 	pair in the TXT record object.
+ * <p>
+ * An enumeration of possible find results when trying to find a key-value
+ * pair in the TXT record object.
  */
 @Generated
 public final class nw_txt_record_find_key_t {
@@ -16,8 +16,8 @@ public final class nw_txt_record_find_key_t {
 
     /**
      * [@const] nw_txt_record_find_key_invalid The key is invalid. According
-     * 	to RFC 1464, a key is invalid if it is an empty string, contains
-     * 	non-ASCII characters, or has length greater than UINT8_MAX.
+     * to RFC 1464, a key is invalid if it is an empty string, contains
+     * non-ASCII characters, or has length greater than UINT8_MAX.
      */
     @Generated public static final int nw_txt_record_find_key_invalid = 0x00000000;
     /**

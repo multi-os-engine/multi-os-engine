@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * UITextSmartInsertDeleteType
- * 
+ * <p>
  * Controls the automatic insertion/removal of spaces for a text widget.
  */
 @Generated

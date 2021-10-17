@@ -21,32 +21,32 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEHotspotHelperResult
- * 
+ * <p>
  * The result of processing the NEHotspotHelperCommand.
- * 
+ * <p>
  * The HotspotHelper provides the result of
- *   processing the NEHotspotHelperCommand when it instantiates
- *   its NEHotspotHelperResponse.
+ * processing the NEHotspotHelperCommand when it instantiates
+ * its NEHotspotHelperResponse.
  * [@const] kNEHotspotHelperResultSuccess The operation was successful.
  * [@const] kNEHotspotHelperResultFailure The operation failed.
  * [@const] kNEHotspotHelperResultUIRequired The operation requires user
- *   interaction. This result is only valid in response to a command with type
- *   kNEHotspotHelperCommandTypeAuthenticate.
+ * interaction. This result is only valid in response to a command with type
+ * kNEHotspotHelperCommandTypeAuthenticate.
  * [@const] kNEHotspotHelperResultCommandNotRecognized The helper did not
- *   recognize the command type.
+ * recognize the command type.
  * [@const] kNEHotspotHelperResultAuthenticationRequired The network requires
- *   authentication again. This result is only valid in response to a
- *   command with type kNEHotspotHelperCommandTypeMaintain.
+ * authentication again. This result is only valid in response to a
+ * command with type kNEHotspotHelperCommandTypeMaintain.
  * [@const] kNEHotspotHelperResultUnsupportedNetwork After attempting to
- *   authenticate, the helper determined that it can't perform the
- *   authentication. This result is only valid in response to commands of type
- *   kNEHotspotHelperCommandTypeAuthenticate and
- *   kNEHotspotHelperCommandTypePresentUI.
+ * authenticate, the helper determined that it can't perform the
+ * authentication. This result is only valid in response to commands of type
+ * kNEHotspotHelperCommandTypeAuthenticate and
+ * kNEHotspotHelperCommandTypePresentUI.
  * [@const] kNEHotspotHelperResultTemporaryFailure The helper determined that
- *   it is temporarily unable to perform the authentication.
- *   This result is only valid in response to commands of type
- *   kNEHotspotHelperCommandTypeAuthenticate and
- *   kNEHotspotHelperCommandTypePresentUI.
+ * it is temporarily unable to perform the authentication.
+ * This result is only valid in response to commands of type
+ * kNEHotspotHelperCommandTypeAuthenticate and
+ * kNEHotspotHelperCommandTypePresentUI.
  */
 @Generated
 public final class NEHotspotHelperResult {

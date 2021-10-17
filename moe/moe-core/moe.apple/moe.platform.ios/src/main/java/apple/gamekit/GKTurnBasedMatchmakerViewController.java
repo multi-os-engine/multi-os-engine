@@ -143,10 +143,6 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -175,9 +171,6 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     @Selector("initWithCoder:")
     public native GKTurnBasedMatchmakerViewController initWithCoder(NSCoder coder);
 
-    /**
-     * defaults to YES
-     */
     @Generated
     @Selector("initWithMatchRequest:")
     public native GKTurnBasedMatchmakerViewController initWithMatchRequest(GKMatchRequest request);
@@ -226,4 +219,19 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     @Selector("turnBasedMatchmakerDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native GKTurnBasedMatchmakerViewControllerDelegate turnBasedMatchmakerDelegate();
+
+    /**
+     * This controls the mode of matchmaking to support in the UI (all, nearby only, automatch only, invite only). Throws an exception if you can not set to the desired mode (due to restrictions)
+     */
+    @Generated
+    @Selector("matchmakingMode")
+    @NInt
+    public native long matchmakingMode();
+
+    /**
+     * This controls the mode of matchmaking to support in the UI (all, nearby only, automatch only, invite only). Throws an exception if you can not set to the desired mode (due to restrictions)
+     */
+    @Generated
+    @Selector("setMatchmakingMode:")
+    public native void setMatchmakingMode(@NInt long value);
 }

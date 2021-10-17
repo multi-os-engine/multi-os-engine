@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Conform to this protocol if you want your objects to participate in state restoration.
- * 
+ * <p>
  * To participate in state restoration, the function registerObjectForStateRestoration must
  * be called for the object.
  */

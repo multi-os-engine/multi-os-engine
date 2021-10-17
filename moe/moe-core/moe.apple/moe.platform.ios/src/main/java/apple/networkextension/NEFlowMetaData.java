@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFlowMetaData
- * 
+ * <p>
  * The NEFlowMetaData class declares the programmatic interface for an object that contains extra information about a flow.
  */
 @Generated
@@ -184,7 +184,7 @@ public class NEFlowMetaData extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * [@property] sourceAppSigningIdentifier
-     * 
+     * <p>
      * A string containing the signing identifier (almost always equivalent to the bundle identifier) of the source app of the flow. The string may be empty in cases where the flow originates from a system process.
      */
     @Generated
@@ -193,7 +193,7 @@ public class NEFlowMetaData extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * [@property] sourceAppUniqueIdentifier
-     * 
+     * <p>
      * A byte string that uniquely identifies the binary for each build of the source application of the flow. The data object may be empty in cases where the flow originates from a system process.
      */
     @Generated

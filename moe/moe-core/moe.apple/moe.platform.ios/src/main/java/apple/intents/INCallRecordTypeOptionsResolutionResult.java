@@ -83,11 +83,6 @@ public class INCallRecordTypeOptionsResolutionResult extends INIntentResolutionR
             @NUInt long callRecordTypeOptionsToConfirm);
 
     @Generated
-    @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(@NUInt long valueToConfirm);
-
-    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
@@ -161,11 +156,6 @@ public class INCallRecordTypeOptionsResolutionResult extends INIntentResolutionR
     @Selector("successWithResolvedCallRecordTypeOptions:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedCallRecordTypeOptions(@NUInt long resolvedCallRecordTypeOptions);
-
-    @Generated
-    @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(@NUInt long resolvedValue);
 
     @Generated
     @Selector("superclass")

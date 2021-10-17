@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueSlatType
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueSlatTypeHorizontal          Slat type is horizontal.
  * [@constant]  HMCharacteristicValueSlatTypeVertical            Slat type is vertical.
  */

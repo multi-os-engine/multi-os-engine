@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * BGTaskScheduler
- * 
+ * <p>
  * The object you use to schedule deferrable work to be done in the background.
  */
 @Generated
@@ -83,7 +83,7 @@ public class BGTaskScheduler extends NSObject {
 
     /**
      * Cancel a previously submitted task request.
-     * 
+     *
      * @param identifier The identifier of the previously submitted task request to cancel.
      */
     @Generated
@@ -108,7 +108,7 @@ public class BGTaskScheduler extends NSObject {
 
     /**
      * Returns a list of all task requests that have been submitted but not yet completed.
-     * 
+     *
      * @param completionHandler A block for processing task requests. This block may be executed on a background thread. The block has no return value and takes a single parameter, taskRequests, which is an array of BGTaskRequest objects. If there are no pending requests, this array is empty. The task request objects returned are copies and changing their property values will have no immediate effect. To modify the parameters of a pending task request, submit it again to the scheduler with submitTaskRequest:error:.
      */
     @Generated
@@ -161,11 +161,11 @@ public class BGTaskScheduler extends NSObject {
 
     /**
      * Register a handler to be called for tasks that launch the app.
-     * 
+     * <p>
      * You must register launch handlers before your application finishes launching. Attempting to register a handler after launch or multiple handlers for the same identifier is an error. Although you may submit task requests from some extensions, only the host app will be launched to handle background work.
-     * 
-     * @param identifier The identifier for the task that will be handled by the provided launch handler.
-     * @param queue The queue on which the launch handler and the expiration handler for the task will be called. The queue should be serial to ensure consistent ordering. If you pass nil, handlers will be called on a background queue.
+     *
+     * @param identifier    The identifier for the task that will be handled by the provided launch handler.
+     * @param queue         The queue on which the launch handler and the expiration handler for the task will be called. The queue should be serial to ensure consistent ordering. If you pass nil, handlers will be called on a background queue.
      * @param launchHandler The block that will be called when the app is launched for the specified task. The block has no return value and takes a single parameter, task, a BGTask object. Assign an expiration handler to the task's expirationHandler property and call setTaskCompletedWithSuccess: when the background work is complete.
      * @return YES if the handler was registered, or NO if it was not because the provided identifier was not present in the BGTaskSchedulerPermittedIdentifiers array in the app's Info.plist.
      */
@@ -199,11 +199,11 @@ public class BGTaskScheduler extends NSObject {
 
     /**
      * Submit a request to be launched in the background to perform work.
-     * 
+     * <p>
      * Submitting a task request with the same identifier as an existing request will replace that request.
-     * 
+     *
      * @param taskRequest The task request object representing the parameters of the background task to be scheduled.
-     * @param error If an error occurs, upon return contains an error object that indicates why the request was rejected.
+     * @param error       If an error occurs, upon return contains an error object that indicates why the request was rejected.
      * @return YES if the request was successfully submitted, NO if there was an error
      */
     @Generated
